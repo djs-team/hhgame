@@ -18,6 +18,7 @@ load('module/mahjong/ui/DeskHeadLayerMdt', function () {
             return [
                 TableEvent.InitCardProto,
                 TableEvent.UpdateView,
+                TableEvent.TableChangeProto,
             ]
         },
         handleNotification: function (notification) {
@@ -30,6 +31,9 @@ load('module/mahjong/ui/DeskHeadLayerMdt', function () {
                 case TableEvent.InitCardProto:
                     this.InitCardProto()
                     break
+                case TableEvent.TableChangeProto:
+                    this.TableChangeProto()
+                    break
             }
         },
 
@@ -41,6 +45,11 @@ load('module/mahjong/ui/DeskHeadLayerMdt', function () {
         InitCardProto: function () {
             // let handCards = appInstance.dataManager().getPlayData()
             // this.view.InitCardProto()
+        },
+
+        TableChangeProto: function () {
+            let tData = appInstance.dataManager().getPlayData()
+            this.view.initView(tData)
         },
 
         initView: function () {

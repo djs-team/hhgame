@@ -13,8 +13,10 @@ load('module/mahjong/common/TableConfig', function () {
         'InitCardProto': 'InitCardProto',
         'DrawCardProto': 'DrawCardProto',
         'PutCardProto': 'PutCardProto',
+        'TableChangeProto': 'TableChangeProto',
         'PlayerSelectProto': 'PlayerSelectProto',
         'GameResultProto': 'GameResultProto',
+        'AutoPlayProto': 'AutoPlayProto'
     }
 
 

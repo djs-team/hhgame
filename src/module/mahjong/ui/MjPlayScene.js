@@ -41,10 +41,16 @@ load('module/mahjong/ui/MjPlayScene', function () {
             this.DeskTopLayer.clearView()
         },
 
+        TableChangeProto: function () {
+            if (this.DeskResultLayer) {
+                appInstance.uiManager().removeUI(this.DeskResultLayer)
+            }
+        },
+
         showGameResultLayer: function () {
             let DeskResultLayer = include('module/mahjong/ui/DeskResultLayer')
-            let DeskResultLayerUi = appInstance.uiManager().createUI(DeskResultLayer)
-            this.addChild(DeskResultLayerUi)
+            this.DeskResultLayer = appInstance.uiManager().createUI(DeskResultLayer)
+            this.addChild(this.DeskResultLayer)
         },
 
         onCreate: function () {

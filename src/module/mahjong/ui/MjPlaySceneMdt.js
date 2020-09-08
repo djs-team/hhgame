@@ -18,6 +18,7 @@ load('module/mahjong/ui/MjPlaySceneMdt', function () {
             return [
                 TableEvent.clearTableView,
                 TableEvent.GameResultProto,
+                TableEvent.TableChangeProto,
             ]
         },
         handleNotification: function (notification) {
@@ -30,8 +31,16 @@ load('module/mahjong/ui/MjPlaySceneMdt', function () {
                 case TableEvent.GameResultProto:
                     this.GameResultProto()
                     break
+                case TableEvent.TableChangeProto:
+                    this.TableChangeProto()
+                    break
             }
         },
+
+        TableChangeProto: function () {
+            this.view.TableChangeProto()
+        },
+
 
         GameResultProto: function () {
             this.view.clearTableView()

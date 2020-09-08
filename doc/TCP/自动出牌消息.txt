@@ -1,0 +1,10 @@
+	/**
+	 * 自动出牌消息
+	 */
+	int	MJ_GAME_ROBOT = MJ_GAME_MATCHGAME_ID + 25;
+消息体:
+	private int seatID;//当前人座位号
+	private int choiceType;//1 选项  2出牌
+	private int choiceSelection;//选项 选择的action
+	private Card takeOutCard;//出牌
+	private String extended;//冗余字段

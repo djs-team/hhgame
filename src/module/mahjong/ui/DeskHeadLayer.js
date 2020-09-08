@@ -69,7 +69,7 @@ load('module/mahjong/ui/DeskHeadLayer', function () {
             let nameTxt = nameBg.getChildByName('nameTxt')
             nameTxt.setString(player.nickName)
 
-            let ani = appInstance.gameAgent().gameUtil().getAni(AniPlayer.FagePl)
+            let ani = appInstance.gameAgent().gameUtil().getAni(AniPlayer[player.pRole])
             ani.setScale(0.6)
             this._aniNd[uiSeat].addChild(ani)
             this._ani[uiSeat] = ani

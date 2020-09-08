@@ -181,7 +181,7 @@ load('module/mahjong/ui/DeskResultLayer', function () {
             name.setString(pinfo.nickName)
             winNum.setString(pinfo.pOffsetCoins)
             bigWin.setVisible(this._pData.pWinSeatID === pinfo.pSeatID)
-            let ani = appInstance.gameAgent().gameUtil().getAni(AniPlayer.FagePl)
+            let ani = appInstance.gameAgent().gameUtil().getAni(AniPlayer[pinfo.pRule])
             ani.setScale(0.25)
             aniNd.addChild(ani)
 

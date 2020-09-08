@@ -29,6 +29,7 @@ load('game/msghandler/TableChangeProto', function () {
             if (curSceneName === 'MjPlayScene') {
                 appInstance.sendNotification(TableEvent.clearTableView)
                 appInstance.sendNotification(TableEvent.initTableView)
+                appInstance.sendNotification(TableEvent.TableChangeProto)
             } else {
                 let PlayGameMj = include('module/mahjong/ui/MjPlayScene')
                 appInstance.sceneManager().replaceScene(new PlayGameMj())

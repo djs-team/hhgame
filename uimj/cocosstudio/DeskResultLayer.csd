@@ -79,7 +79,7 @@
                         <PreSize X="1.0000" Y="1.0000" />
                         <FileData Type="Normal" Path="result/ssc_22.png" Plist="" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="aniNd" ActionTag="-2133805403" Tag="50" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="115.0000" RightMargin="114.0000" TopMargin="276.0000" BottomMargin="73.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+                      <AbstractNodeData Name="aniNd" ActionTag="-2133805403" Tag="50" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="115.0000" RightMargin="114.0000" TopMargin="276.0000" BottomMargin="73.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                         <Size X="1.0000" Y="1.0000" />
                         <AnchorPoint />
                         <Position X="115.0000" Y="73.0000" />
@@ -295,10 +295,10 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="BaoCard" ActionTag="212513465" Tag="391" RotationSkewX="180.0000" IconVisible="False" LeftMargin="1138.9976" RightMargin="67.0024" TopMargin="533.0397" BottomMargin="79.9603" TouchEnable="True" LeftEage="24" RightEage="24" TopEage="35" BottomEage="35" Scale9OriginX="24" Scale9OriginY="35" Scale9Width="26" Scale9Height="37" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="BaoCard" ActionTag="212513465" Tag="391" IconVisible="False" LeftMargin="1138.9976" RightMargin="67.0024" TopMargin="533.0397" BottomMargin="79.9603" TouchEnable="True" LeftEage="24" RightEage="24" TopEage="35" BottomEage="35" Scale9OriginX="24" Scale9OriginY="35" Scale9Width="26" Scale9Height="37" ctype="ImageViewObjectData">
                 <Size X="74.0000" Y="107.0000" />
                 <Children>
-                  <AbstractNodeData Name="CardValue" ActionTag="1849132255" Tag="392" RotationSkewX="180.0000" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="-1.0000" RightMargin="-1.0000" TopMargin="8.8500" BottomMargin="-1.8500" LeftEage="24" RightEage="24" TopEage="35" BottomEage="35" Scale9OriginX="24" Scale9OriginY="35" Scale9Width="28" Scale9Height="30" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="CardValue" ActionTag="1849132255" Tag="392" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="-1.0000" RightMargin="-1.0000" TopMargin="8.8500" BottomMargin="-1.8500" LeftEage="24" RightEage="24" TopEage="35" BottomEage="35" Scale9OriginX="24" Scale9OriginY="35" Scale9Width="28" Scale9Height="30" ctype="ImageViewObjectData">
                     <Size X="76.0000" Y="100.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="37.0000" Y="48.1500" />
@@ -308,13 +308,13 @@
                     <PreSize X="1.0270" Y="0.9346" />
                     <FileData Type="Normal" Path="card/value/selfhand/feng_hand_1.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="BaoBg" ActionTag="-1597703485" Tag="399" RotationSkewX="180.0000" IconVisible="False" LeftMargin="1.7982" RightMargin="-4.7982" TopMargin="37.7638" BottomMargin="-4.7638" LeftEage="25" RightEage="25" TopEage="24" BottomEage="24" Scale9OriginX="25" Scale9OriginY="24" Scale9Width="27" Scale9Height="26" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="BaoBg" ActionTag="-1597703485" Tag="399" IconVisible="False" LeftMargin="-0.0655" RightMargin="-2.9345" TopMargin="2.3489" BottomMargin="30.6511" LeftEage="25" RightEage="25" TopEage="24" BottomEage="24" Scale9OriginX="25" Scale9OriginY="24" Scale9Width="27" Scale9Height="26" ctype="ImageViewObjectData">
                     <Size X="77.0000" Y="74.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="40.2982" Y="32.2362" />
+                    <Position X="38.4345" Y="67.6511" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.5446" Y="0.3013" />
+                    <PrePosition X="0.5194" Y="0.6323" />
                     <PreSize X="1.0405" Y="0.6916" />
                     <FileData Type="Normal" Path="result/ssc_10.png" Plist="" />
                   </AbstractNodeData>
@@ -330,10 +330,10 @@
               <AbstractNodeData Name="CardNd" ActionTag="-2068885827" Tag="395" IconVisible="True" LeftMargin="402.3148" RightMargin="877.6852" TopMargin="538.1842" BottomMargin="181.8158" ctype="SingleNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <Children>
-                  <AbstractNodeData Name="CardCell" ActionTag="1930238960" Tag="393" RotationSkewX="180.0000" IconVisible="False" LeftMargin="-37.0000" RightMargin="-37.0000" TopMargin="-53.5000" BottomMargin="-53.5000" TouchEnable="True" LeftEage="24" RightEage="24" TopEage="35" BottomEage="35" Scale9OriginX="24" Scale9OriginY="35" Scale9Width="26" Scale9Height="37" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="CardCell" ActionTag="1930238960" Tag="393" IconVisible="False" LeftMargin="-37.0000" RightMargin="-37.0000" TopMargin="-53.5000" BottomMargin="-53.5000" TouchEnable="True" LeftEage="24" RightEage="24" TopEage="35" BottomEage="35" Scale9OriginX="24" Scale9OriginY="35" Scale9Width="26" Scale9Height="37" ctype="ImageViewObjectData">
                     <Size X="74.0000" Y="107.0000" />
                     <Children>
-                      <AbstractNodeData Name="CardValue" ActionTag="-835913614" Tag="394" RotationSkewX="180.0000" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="-1.0000" RightMargin="-1.0000" TopMargin="8.8500" BottomMargin="-1.8500" LeftEage="24" RightEage="24" TopEage="35" BottomEage="35" Scale9OriginX="24" Scale9OriginY="35" Scale9Width="28" Scale9Height="30" ctype="ImageViewObjectData">
+                      <AbstractNodeData Name="CardValue" ActionTag="-835913614" Tag="394" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="-1.0000" RightMargin="-1.0000" TopMargin="8.8500" BottomMargin="-1.8500" LeftEage="24" RightEage="24" TopEage="35" BottomEage="35" Scale9OriginX="24" Scale9OriginY="35" Scale9Width="28" Scale9Height="30" ctype="ImageViewObjectData">
                         <Size X="76.0000" Y="100.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="37.0000" Y="48.1500" />

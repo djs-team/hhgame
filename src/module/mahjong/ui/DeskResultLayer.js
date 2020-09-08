@@ -73,10 +73,14 @@ load('module/mahjong/ui/DeskResultLayer', function () {
             this._playerNum = pData.pPlayerNum || 2
             this._players = pData.players
             this._pos = this._posConst[this._playerNum]
-            this._selfInfo = pData.getSelfInfo()
+            // this._selfInfo = pData.getSelfInfo()
+            this._selfInfo = pData.players[0]
         },
 
         initView: function (pData) {
+
+            pData = {"__instanceId":445,"players":{"0":{"__instanceId":447,"handCards":[{"nCardColor":2,"nCardNumber":9},{"nCardColor":2,"nCardNumber":9},{"nCardColor":2,"nCardNumber":8},{"nCardColor":2,"nCardNumber":9},{"nCardColor":2,"nCardNumber":8},{"nCardColor":0,"nCardNumber":3},{"nCardColor":0,"nCardNumber":5}],"putCards":[{"nCardColor":1,"nCardNumber":2},{"nCardColor":1,"nCardNumber":2},{"nCardColor":2,"nCardNumber":3}],"showCards":[{"pShowType":2,"pActionID":110,"pPengCardColor":2,"pPengCardNumber":1},{"pShowType":1,"pActionID":50,"pChiCardColor":2,"pBeginIndex":4}],"handCardCount":7,"pid":92562,"nickName":"麻将92562","coins":"0","robotModel":0,"age":0,"sex":1,"photo":"1","sdkPhotoUrl":"","exp":0,"vip":0,"pSeatID":0,"netIp":"","win":0,"lose":0,"role":4,"pIsTing":true,"pCoins":"40","pOffsetCoins":40,"pChiList":[{"pChiCardColor":2,"pBeginIndex":4,"pEndIndex":6}],"pPengList":[{"nCardColor":2,"nCardNumber":1}],"pGangList":[],"pIsQingYiSe":0,"pDoubleCount":3,"pDoubleList":[{"pDouble":3},{"pDouble":0},{"pDouble":95}],"pMaxDoubleID":0,"pJiangList":[],"pMaxWatchNum":5,"pAlreadyWatchNum":0,"pGameResultExtend":"{\"piao\":0}"},"1":{"__instanceId":446,"handCards":[{"nCardColor":0,"nCardNumber":1},{"nCardColor":0,"nCardNumber":1},{"nCardColor":0,"nCardNumber":6},{"nCardColor":0,"nCardNumber":6},{"nCardColor":0,"nCardNumber":6},{"nCardColor":1,"nCardNumber":3},{"nCardColor":2,"nCardNumber":4},{"nCardColor":2,"nCardNumber":8},{"nCardColor":2,"nCardNumber":8},{"nCardColor":2,"nCardNumber":9},{"nCardColor":2,"nCardNumber":9},{"nCardColor":2,"nCardNumber":9},{"nCardColor":0,"nCardNumber":3}],"putCards":[{"nCardColor":0,"nCardNumber":4}],"showCards":[],"handCardCount":13,"pid":92563,"nickName":"麻将92563","coins":"0","robotModel":0,"age":0,"sex":1,"photo":"1","sdkPhotoUrl":"","exp":0,"vip":0,"pSeatID":1,"netIp":"","win":0,"lose":0,"role":4,"pCoins":"-40","pOffsetCoins":-40,"pChiList":[],"pPengList":[],"pGangList":[],"pIsQingYiSe":0,"pDoubleCount":40,"pDoubleList":[{"pDouble":49},{"pDouble":37}],"pMaxDoubleID":0,"pJiangList":[],"pMaxWatchNum":5,"pAlreadyWatchNum":0,"pGameResultExtend":"{\"piao\":0}"}},"tableData":{"__instanceId":448,"pMustOutCard":[],"pTableID":"P_R2_M4_1599551231128","pMySeatID":1,"pChangePid":92563,"pChangeSeatID":1,"pEnterOrQuite":1,"pKeyPrivateTable":"","pSoundAppId":"-1","pIsOpenSoundApp":1,"pDongSeatID":1,"pChoiceRule":"99,37,96,1128","pTableStatus":100,"pRoomID":"R2","pMode":2,"pPlayMode":"zhaoyuan","pGameType":"M4","pBaseCoin":1,"pTaskFlag":1,"msgId":-2146369528,"msgName":"TableChangeProto","pPlayerNum":2,"nZhuangSeatID":0,"nDeckCardNum":34,"pCurSeatID":-1,"pTStatus":5,"pActions":[],"pPutSeatID":1,"lastPutCard":{"nCardColor":0,"nCardNumber":4},"pWinSeatID":0,"pHuType":[{"pHu":3},{"pHu":44}],"pBaoCard":{"nCardColor":0,"nCardNumber":7},"pBaseScore":1,"pIsLiuJu":0,"pBigWinSeatID":0,"pGameResultExtend":""},"pMySeatID":1,"pPlayerNum":2,"pDongSeatID":1,"uiSeatArray":[0,2]}
+            cc.log('=========gameResult========pData====' + JSON.stringify(pData))
             this.initData(pData)
 
             this.PlayerCell.setVisible(false)
@@ -85,6 +89,10 @@ load('module/mahjong/ui/DeskResultLayer', function () {
             }
 
             this.initSelfCard()
+
+
+            let baoImg = appInstance.gameAgent().mjUtil().getCardValueImg(0, 'selfhand', this._pData.tableData.pBaoCard)
+            this.BaoCard.getChildByName('CardValue').loadTexture(baoImg)
         },
 
         initSelfCard: function () {
@@ -93,7 +101,8 @@ load('module/mahjong/ui/DeskResultLayer', function () {
             let pPengList = this._selfInfo.pPengList
             let pGangList = this._selfInfo.pGangList
 
-            let cardLen = 100
+            let cardLen = 45
+            let offLen = 20
 
             let posX = 0
             for (let i = 0; i < handCards.length; ++i) {
@@ -106,7 +115,7 @@ load('module/mahjong/ui/DeskResultLayer', function () {
             }
 
             if ( pChiList.length) {
-                posX += 100
+                posX += offLen
             }
             for (let i = 0; i < pChiList.length; ++i) {
                 for (let cardNum = pChiList[i].pBeginIndex; cardNum <= pChiList[i].pEndIndex; ++cardNum) {
@@ -124,7 +133,7 @@ load('module/mahjong/ui/DeskResultLayer', function () {
             }
 
             if (pPengList.length) {
-                posX += 100
+                posX += offLen
             }
             for (let index = 0; index < pPengList.length; ++index) {
                 for (let i = 0; i < 3; ++i) {
@@ -138,7 +147,7 @@ load('module/mahjong/ui/DeskResultLayer', function () {
             }
 
             if (pGangList.length) {
-                posX += 100
+                posX += offLen
             }
             for (let index = 0; index < pGangList.length; ++index) {
                 for (let i = 0; i < 4; ++i) {

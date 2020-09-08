@@ -61,7 +61,7 @@ load('module/mahjong/ui/DeskTopLayer', function () {
             let pActionInfo = sender.pActionInfo
             let pAction = pActionInfo.pAction
             let lastPutCard = pActionInfo.lastPutCard
-            if (pAction.pActionID === 120 ) {//chi
+            if (pAction.pActionID === 120 || pAction.pActionID === 50) {//吃 吃听
                 let sendMsg = {}
                 sendMsg.nSeatID = appInstance.dataManager().getPlayData().pMySeatID
                 sendMsg.pActionID = pAction.pActionID

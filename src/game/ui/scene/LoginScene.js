@@ -49,8 +49,8 @@ load('game/ui/scene/LoginScene', function () {
             // msg.platform = 1 // 登陆平台1游客2手机3微信4闲聊5账号登录
             // appInstance.gameAgent().httpGame().httpLogin(msg)
 
-            // appInstance.sceneManager().replaceScene(new HallScene())
-            this.goTest()
+            appInstance.sceneManager().replaceScene(new HallScene())
+            // this.goTest()
         },
 
         doPhoto: function () {

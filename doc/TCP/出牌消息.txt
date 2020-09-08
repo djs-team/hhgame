@@ -1,0 +1,5 @@
+和以前一样
+/**
+	 * 出牌
+	 */
+	int	MJ_GAMEID_TAKEOUT = MJ_GAME_MATCHGAME_ID + 7;

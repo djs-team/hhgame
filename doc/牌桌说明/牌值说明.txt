@@ -1,0 +1,37 @@
+﻿public static final int ECARDCOLOR_BEGIN = 0;
+
+ public static final int ECARDCOLOR_WAN = ECARDCOLOR_BEGIN;//万
+ 
+public static final int ECARDCOLOR_TONG = ECARDCOLOR_BEGIN + 1;//筒
+ 
+public static final int ECARDCOLOR_TIAO = ECARDCOLOR_BEGIN + 2;//条
+ 
+public static final int ECARDCOLOR_FENG_BEGIN = ECARDCOLOR_BEGIN + 3;//风牌
+ 
+public static final int ECARDCOLOR_DONG = ECARDCOLOR_FENG_BEGIN;//东
+ 
+public static final int ECARDCOLOR_NAN = ECARDCOLOR_FENG_BEGIN + 1;//南
+ 
+public static final int ECARDCOLOR_XI = ECARDCOLOR_FENG_BEGIN + 2;//西
+ 
+public static final int ECARDCOLOR_BEI = ECARDCOLOR_FENG_BEGIN + 3;//北
+ 
+public static final int ECARDCOLOR_FENG_END = ECARDCOLOR_BEI;
+ 
+public static final int ECARDCOLOR_JIAN_BEGIN = ECARDCOLOR_FENG_END + 1;//箭牌
+ 
+public static final int ECARDCOLOR_ZHONG = ECARDCOLOR_JIAN_BEGIN;//中
+ 
+public static final int ECARDCOLOR_FA = ECARDCOLOR_JIAN_BEGIN + 1;//发
+ 
+public static final int ECARDCOLOR_BAI = ECARDCOLOR_JIAN_BEGIN + 2;//白
+ 
+public static final int ECARDCOLOR_JIAN_END = ECARDCOLOR_BAI;
+
+花色：
+
+万是0 筒是1  条是2  
+3是东4是南5是西6是北
+7中8发9白
+
+风牌牌值都是0

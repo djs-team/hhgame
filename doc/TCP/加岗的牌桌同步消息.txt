@@ -1,0 +1,90 @@
+/**
+	 * 加钢同步牌桌
+	 */
+	int	MJ_GAME_SYNC_TABLE_JIAGANG = MJ_GAME_MATCHGAME_ID + 21;
+只有返回消息体：
+	private String playMode;//玩法
+	private String roomID;//房间ID
+	private String tableID;//桌子ID
+	private int mSeatId;//自己的座位id
+	private int zhuangSeatId;//庄的座位号
+	private int tableCardsCnt;//牌池数量
+	private int curCardPos;//牌池的指针
+	private int curPhaseID;//当前阶段
+	private int curSubPhaseID;//当前子阶段
+	private int lastSubPhaseID;//上一个子阶段
+	private int curSeatID;//当前操作的座位
+	
+	private int lastSelectSeatID;//最近一次选择的玩家座位
+	private int lastSelectActionID;//最近一次选择的玩家选择的actionID
+	private Card lastGangCard;//最近一次杠的牌
+	
+	private int lastTakeoutCardSeatID;//最近出牌玩家的座位ID
+	private Card lastTakeoutCard;//最近出的牌
+	private int isJiaGang;//牌桌加钢信息， 0 加钢 1不加钢
+	private int IsCanReceiveMagic;//是否允许接收魔法表情0.可以接收1.不可以
+	private String extend;//预留字段
+	private List<SelectAction> sa;//当前的选择
+	private List<Player> players;
+	private List<Record> records;
+	SelectAction的消息体：
+		private int actionID;//胡、碰听、吃听、听、吃、碰、杠、过
+		private List<Card> cards;//能操作的牌
+		private List<Card> notcards;//不能操作的牌
+	player消息体：
+		private int pid;
+		private String nickName;
+		private String coins;
+		private byte robotModel;
+		private byte age;
+		private byte sex;
+		private String photo;
+		private String sdkPhotoUrl;
+		private int win;
+		private int lose;
+		private int exp;
+		private byte vip;
+		private byte seatID;
+		private String netIp;// 冗餘字段
+		private int isReady;
+
+	Record的消息体：
+		private int seatID;
+		private List<Card> handCards;//手牌
+		private List<Card> takeoutCards;//出过的牌
+		private List<Fu> paiMianCards;//牌面
+		private int isTing;//玩家是否听  0  没听  1 听
+		private int handCardCount;//玩家手牌数量
+		private Card lastMoCard;//最后摸的牌
+		private int isJiaGang;//加钢相关字段， 0尚未选择加钢 1加钢 2不加钢 
+		private String extend;//预留字段
+	card的消息体：
+		private int cardColor;
+		private int cardFaceValue;
+	fu的消息体：private int type;
+		private Jiang jiang;
+		private Chi chi;
+		private KeZi keZi;
+		private Gang gang;
+		private Card laiZiCard;
+		private int laiZiCnt;
+		private Card chiCard;//被吃的牌
+	gang的消息体：
+		private int cardColor;
+		private int cardFaceValue;
+		private int gangType;//0:明杠or1:暗杠or2:加杠or3:旋风杠or4:幺腰杠or5:幺九杠6：喜儿 7:甩幺
+
+		private List<Card> gangCards;
+		
+	chi的消息体：
+		private int cardColor;
+		private int beginIndex;
+		private int endIndex;
+	jiang的消息体：
+		private int cardColor;
+		private int cardFaceValue;
+	kezi的消息体：
+		private int cardColor;
+		private int cardFaceValue;
+
+		

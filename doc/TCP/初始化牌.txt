@@ -1,0 +1,5 @@
+和以前一样
+/**
+	 * 发牌
+	 */
+	int	MJ_GAMEID_INITCARD = MJ_GAME_MATCHGAME_ID + 5;

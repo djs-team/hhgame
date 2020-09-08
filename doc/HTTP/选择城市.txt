@@ -1,0 +1,13 @@
+/**
+	 * 选择城市的玩法
+	 */
+	int MJ_HALL_CHOSSE_CITY = MJ_HALL_SERVER_ID + 59;
+请求消息体：
+	private int channel;//城市的编号
+返回消息体:
+	private String hostip;//客户端需要连接哪个网关的IP
+	private int hostport;//端口号
+	private int firstLogin;//是否每天第一次登陆0是1不是
+	private int vipFlag;//vip弹窗标记0：正常不弹窗1：弹vip界面 2：弹出vip不足三天提示
+	private int channel;//城市编号
+	private int status;//状态，0成功，其他失败

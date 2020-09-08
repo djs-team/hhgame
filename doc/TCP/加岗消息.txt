@@ -1,0 +1,13 @@
+/**
+	 * 加钢
+	 */
+	int	MJ_GAME_JIAGANG = MJ_GAME_MATCHGAME_ID + 20;
+请求消息体：
+	private String tableID;//桌子d
+	private int seatID;//座位id
+	private int isJiaGang;//是否加钢 0尚未选择加钢 1 加钢 2不加刚
+返回消息体：
+	private int seatID = -1;//加钢座位信息
+	private int isJiaGang;//是否需要加钢 0需要，1不需要
+	private int selectJiaGang;//0默认值 1加钢 2不加钢
+	private String extend;//预留字段

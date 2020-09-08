@@ -1,0 +1,16 @@
+/**
+	 * 进入房间  私房
+	 */
+	int	MJ_ROOM_ENTER								= MJ_ROOM_MATCHGAME_ID + 2;
+请求消息体:
+	private int gid;
+	private String mjChannel; //麻将 channel
+	private int roomMode;//房间mode1代表四人2代表两人
+	private String gameType; //麻将 场次M1新手场M2代表初级场M3高级场M4大市场
+	private String roomId;//房间人数标志R14人场次R2两人场次
+	private String ruleName;//玩法名称例如肇源传zhaoyuan
+	private String fromType;//来自客户端那个页面
+返回消息体:
+	private byte code;//0 成功
+	private String tableInstanceId;//牌桌id
+	private String fromType;//客户端来自哪个页面

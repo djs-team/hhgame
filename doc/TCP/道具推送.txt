@@ -1,0 +1,14 @@
+/**
+	 * 道具同步
+	 */
+	int PROP_SYNC_ID = BASIC_ID + 0x00000002;	
+	/**
+	 * 基础服务消息模块
+	 */
+	int BASIC_ID = MODULE_CLIENT + 0x00020000;
+返回消息体：（tcp）
+	private int reason;
+	private List<propInfo> changes;//道具变化
+	propInfo消息体：
+		private int propCode;//道具编码，这时变化的只有货币，1金币，2钻石，3福卡
+		private String propNum;//道具数量

@@ -1,0 +1,23 @@
+	public static final int EFUID_JIANG = 0;//将
+	涉及字段:
+		jiangnCardColor
+		jiangnCardNumber
+	public static final int EFUID_CHI = 1;//吃
+	涉及字段:
+		ChiNCardColor
+		beginIndex
+		endIndex
+		pChiCardColor//被吃的牌
+		pChiCardNumber//被吃的牌
+	public static final int EFUID_KEZI = 2;//刻子
+	涉及字段:
+		pPengCardColor
+		pPengCardNumber
+	public static final int EFUID_GANG = 3;//杠
+	涉及字段:
+		gangType
+		pGangCardColor
+		pGangCardNumber
+	下面这两个目前肇源没有用，是标记此行为来自哪个玩家哪张牌的
+	private Card laiZiCard;//触发行为的牌
+	private int laiZiCnt;//行为来自哪个座位

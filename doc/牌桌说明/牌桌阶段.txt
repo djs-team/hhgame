@@ -1,0 +1,5 @@
+	public static final int EPhase_Play	=  1;//开始玩
+	public static final int EPhasePlay_MoCard =  2;//play阶段的：摸牌
+	public static final int EPhasePlay_TakeOutCard =  3;//play阶段的：出牌
+	public static final int EPhasePlay_SelectAction =  4;//play阶段的：选择
+	public static final int EPhasePlay_Over = 5;//play阶段的：结束

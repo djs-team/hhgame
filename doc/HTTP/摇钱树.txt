@@ -1,0 +1,34 @@
+/**
+	 * 摇钱树总次数和用了的次数获取
+	 */
+	int MJ_HALL_CASH_COW_NUM = MJ_HALL_SERVER_ID + 71;
+请求消息:
+	基础数
+返回请求:
+	private int cashCowNum;//最大摇钱树次数
+	private int usedCashCowNum;//已经用掉的摇钱树次数
+	private int status;//0成功其他失败
+
+/**
+ * 摇钱树
+ */
+int MJ_HALL_CASH_COW = MJ_HALL_SERVER_ID + 70;
+请求消息:
+	基础数据
+返回消息:
+	private int coin;//数量
+	private int propCode;//道具编码
+	private int status;//0正常其他失败
+/**
+ * 摇钱树记录
+ */
+int MJ_HALL_CASH_COW_LOG = MJ_HALL_SERVER_ID + 88;
+请求消息:
+	基础数据
+返回消息:
+	private List<PlayerCashCowLog> logList;
+	private int status;//0正常其他失败
+	PlayerCashCowLog的消息体：
+		private int propCode;//道具编码
+		private int propNum;//数量
+		private long createTime;//时间

@@ -1,0 +1,49 @@
+/**
+	 * 玩家每日任务信息
+	 */
+	int MJ_HALL_PLAYER_TASK_DAILY = MJ_HALL_SERVER_ID + 62;
+请求消息：
+	基础消息体
+返回消息:
+	private int totalActivity;//已完成活跃度
+	private List<ActivityConfig> activityReward;//活跃度奖励配置
+	private List<PlayerTaskDaily> taskList;//任务列表
+	private int status;//状态0成功其他失败
+	ActivityConfig的消息体：
+		private int activityId;//宝箱ID
+		private int activity;//宝箱活跃度
+		private int status;//0.未完成1.以满足未领取2.已完成已领取
+		private String desc;//描述
+		private List<RewardProp> propList;//奖励
+		RewardProp的消息体:
+			private int propType;
+			private int propCode;
+			private int propNum;
+	PlayerTaskDaily的消息体:
+		private int taskId;//任务ID
+		private String taskName;//任务名称
+		private int taskType;//任务类型
+		private int taskNum;//条件数量
+		private int propType;//道具大类
+		private int propCode;//道具编码
+		private int propNum;//奖励道具数量
+		private int activity;//此任务的活跃度
+		private int reachNum;//已经达到数量
+		private int status;//状态0代表未完成1.未领取2.已完成
+/**
+	 * 玩家领取每日任务
+	 */
+	int MJ_HALL_PLAYER_TASK_DAILY_RECEIVE = MJ_HALL_SERVER_ID + 63;
+请求消息体:
+	private int code;//任务ID或者宝箱ID
+	private int type;//0代表任务1代表宝箱
+返回消息体：
+	private int status;//0成功其他失败
+	private List<RewardProp> rpList;//奖励列表
+	private int taskId;//如果是-1代表没有操作每日任务
+	private List<box> boxList;//宝箱状态集合
+	private int totalActivity;//已完成活跃度
+	private int maxActivity;//最大宝箱活跃度值
+	box的消息体：
+		private int activityId;//宝箱ID
+		private int status;//1.以满足未领取2.已完成已领取

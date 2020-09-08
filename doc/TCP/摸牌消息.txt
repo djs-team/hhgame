@@ -1,0 +1,5 @@
+和以前一样
+/**
+	 * 摸牌
+	 */
+	int	MJ_GAMEID_MOCARD = MJ_GAME_MATCHGAME_ID + 8;

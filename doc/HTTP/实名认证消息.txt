@@ -1,0 +1,10 @@
+	/**
+	 * 实名认证
+	 */
+	int MJ_HALL_REAL_NAME = MJ_HALL_SERVER_ID + 83;
+请求参数:
+	private String name;//名称
+	private String decumentCard;//身份证号
+返回参数:
+	private int status; // 返回0成功其他失败
+	private String mesg;//错误信息,错误是客户端弹出此提示

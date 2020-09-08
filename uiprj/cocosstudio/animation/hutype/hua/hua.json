@@ -1,0 +1,90 @@
+{
+"skeleton": { "hash": "/uNqph/XYmSYwC7wHR/rxSfzgSI", "spine": "3.7.94", "width": 378, "height": 311, "images": "", "audio": "" },
+"bones": [
+	{ "name": "root" },
+	{ "name": "hua_0001", "parent": "root", "length": 143.45, "rotation": 90.36, "x": -0.16, "y": -64.47 }
+],
+"slots": [
+	{ "name": "hua_0001", "bone": "hua_0001", "attachment": "hua_0001" }
+],
+"skins": {
+	"default": {
+		"hua_0001": {
+			"hua_0001": { "x": 64.96, "y": -0.56, "rotation": -90.36, "width": 378, "height": 311 },
+			"hua_0002": { "x": 64.96, "y": -0.56, "rotation": -90.36, "width": 378, "height": 311 },
+			"hua_0003": { "x": 64.96, "y": -0.56, "rotation": -90.36, "width": 378, "height": 311 },
+			"hua_0004": { "x": 64.96, "y": -0.56, "rotation": -90.36, "width": 378, "height": 311 },
+			"hua_0005": { "x": 64.96, "y": -0.56, "rotation": -90.36, "width": 378, "height": 311 },
+			"hua_0006": { "x": 64.96, "y": -0.56, "rotation": -90.36, "width": 378, "height": 311 },
+			"hua_0007": { "x": 64.96, "y": -0.56, "rotation": -90.36, "width": 378, "height": 311 },
+			"hua_0008": { "x": 64.96, "y": -0.56, "rotation": -90.36, "width": 378, "height": 311 },
+			"hua_0009": { "x": 64.96, "y": -0.56, "rotation": -90.36, "width": 378, "height": 311 },
+			"hua_0010": { "x": 64.96, "y": -0.56, "rotation": -90.36, "width": 378, "height": 311 },
+			"hua_0011": { "x": 64.96, "y": -0.56, "rotation": -90.36, "width": 378, "height": 311 },
+			"hua_0012": { "x": 64.96, "y": -0.56, "rotation": -90.36, "width": 378, "height": 311 },
+			"hua_0013": { "x": 64.96, "y": -0.56, "rotation": -90.36, "width": 378, "height": 311 },
+			"hua_0014": { "x": 64.96, "y": -0.56, "rotation": -90.36, "width": 378, "height": 311 },
+			"hua_0015": { "x": 64.96, "y": -0.56, "rotation": -90.36, "width": 378, "height": 311 },
+			"hua_0016": { "x": 64.96, "y": -0.56, "rotation": -90.36, "width": 378, "height": 311 },
+			"hua_0017": { "x": 64.96, "y": -0.56, "rotation": -90.36, "width": 378, "height": 311 },
+			"hua_0018": { "x": 64.96, "y": -0.56, "rotation": -90.36, "width": 378, "height": 311 },
+			"hua_0019": { "x": 64.96, "y": -0.56, "rotation": -90.36, "width": 378, "height": 311 },
+			"hua_0020": { "x": 64.96, "y": -0.56, "rotation": -90.36, "width": 378, "height": 311 },
+			"hua_0021": { "x": 64.96, "y": -0.56, "rotation": -90.36, "width": 378, "height": 311 },
+			"hua_0022": { "x": 64.96, "y": -0.56, "rotation": -90.36, "width": 378, "height": 311 },
+			"hua_0023": { "x": 64.96, "y": -0.56, "rotation": -90.36, "width": 378, "height": 311 },
+			"hua_0024": { "x": 64.96, "y": -0.56, "rotation": -90.36, "width": 378, "height": 311 },
+			"hua_0025": { "x": 64.96, "y": -0.56, "rotation": -90.36, "width": 378, "height": 311 }
+		}
+	}
+},
+"animations": {
+	"animation": {
+		"slots": {
+			"hua_0001": {
+				"attachment": [
+					{ "time": 0, "name": "hua_0001" },
+					{ "time": 0.0667, "name": "hua_0002" },
+					{ "time": 0.1333, "name": "hua_0003" },
+					{ "time": 0.2, "name": "hua_0004" },
+					{ "time": 0.2667, "name": "hua_0005" },
+					{ "time": 0.3333, "name": "hua_0006" },
+					{ "time": 0.4, "name": "hua_0007" },
+					{ "time": 0.4667, "name": "hua_0008" },
+					{ "time": 0.5333, "name": "hua_0009" },
+					{ "time": 0.6, "name": "hua_0010" },
+					{ "time": 0.6667, "name": "hua_0011" },
+					{ "time": 0.7333, "name": "hua_0012" },
+					{ "time": 0.8, "name": "hua_0013" },
+					{ "time": 0.8667, "name": "hua_0014" },
+					{ "time": 0.9333, "name": "hua_0015" },
+					{ "time": 1, "name": "hua_0016" },
+					{ "time": 1.0667, "name": "hua_0017" },
+					{ "time": 1.1333, "name": "hua_0018" },
+					{ "time": 1.2, "name": "hua_0019" },
+					{ "time": 1.2667, "name": "hua_0020" },
+					{ "time": 1.3333, "name": "hua_0021" },
+					{ "time": 1.4, "name": "hua_0022" },
+					{ "time": 1.4667, "name": "hua_0023" },
+					{ "time": 1.5333, "name": "hua_0024" },
+					{ "time": 1.6, "name": "hua_0025" },
+					{ "time": 2.3333, "name": "hua_0025" }
+				]
+			}
+		},
+		"bones": {
+			"hua_0001": {
+				"rotate": [
+					{ "time": 0, "angle": 0 }
+				],
+				"translate": [
+					{ "time": 0, "x": 0, "y": 0 }
+				],
+				"scale": [
+					{ "time": 0, "x": 1, "y": 1 }
+				]
+			}
+		}
+	}
+}
+}

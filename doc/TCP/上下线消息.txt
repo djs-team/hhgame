@@ -1,0 +1,5 @@
+和以前一样
+/**
+	 * 玩家上下线消息
+	 */
+	int	MJ_ROOM_TABLE_PLAYER_ONLINE					= MJ_ROOM_MATCHGAME_ID + 10;

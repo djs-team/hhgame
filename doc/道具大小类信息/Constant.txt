@@ -1,0 +1,17 @@
+
+	
+	/**
+	 * 下面是道具的大类型
+	 */
+	public static final int PROP_TYPE_CURRENCY = 1;//货币
+	public static final int PROP_TYPE_ROLE = 2;//角色
+	public static final int PROP_TYPE_GOODS= 3;//实物物品
+	
+	/**
+	 * 货币道具编码
+	 */
+	public static final int PROP_COIN = 1; // 金币
+	public static final int PROP_DIAMOND = 2; //钻石
+	public static final int PROP_FUKA = 3;//福卡
+	
+	

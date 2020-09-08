@@ -1,0 +1,83 @@
+{
+"skeleton": { "hash": "+SVgjLGn6G0+ClULeQe4hlAXSSQ", "spine": "3.7.94", "width": 593, "height": 596, "images": "", "audio": "" },
+"bones": [
+	{ "name": "root" },
+	{ "name": "bone", "parent": "root", "x": 0.51, "y": -0.13 },
+	{ "name": "aa", "parent": "root", "length": 199.3, "rotation": 90, "x": -0.13, "y": 20.41 }
+],
+"slots": [
+	{ "name": "zphd_2", "bone": "root", "attachment": "zphd_2" },
+	{ "name": "aa", "bone": "aa", "blend": "additive" },
+	{ "name": "zphd_1", "bone": "root" },
+	{ "name": "zphd_4", "bone": "root" },
+	{ "name": "220001", "bone": "root", "attachment": "220002" }
+],
+"skins": {
+	"default": {
+		"220001": {
+			"220001": { "x": 0.5, "width": 593, "height": 596 },
+			"220002": { "x": 0.5, "width": 593, "height": 596 }
+		},
+		"aa": {
+			"aa": { "x": 107.82, "y": -4.89, "rotation": -90, "width": 217, "height": 352 }
+		},
+		"zphd_1": {
+			"zphd_1": { "x": 0.5, "width": 203, "height": 248 }
+		},
+		"zphd_2": {
+			"zphd_2": { "x": 0.5, "y": 0.5, "width": 593, "height": 595 }
+		},
+		"zphd_4": {
+			"zphd_4": { "x": 0.5, "y": 0.5, "width": 47, "height": 47 },
+			"zphd_5": { "x": 0.5, "y": 0.5, "width": 47, "height": 47 }
+		}
+	}
+},
+"animations": {
+	"animation": {
+		"slots": {
+			"220001": {
+				"attachment": [
+					{ "time": 0, "name": "220001" },
+					{ "time": 0.1333, "name": "220002" },
+					{ "time": 0.2667, "name": "220001" },
+					{ "time": 0.4, "name": "220002" },
+					{ "time": 0.5667, "name": "220001" },
+					{ "time": 0.7, "name": "220002" },
+					{ "time": 0.8333, "name": "220001" },
+					{ "time": 0.9667, "name": "220002" },
+					{ "time": 1.1, "name": "220001" },
+					{ "time": 1.2333, "name": "220002" },
+					{ "time": 1.3333, "name": "220002" }
+				]
+			}
+		}
+	},
+	"animation2": {
+		"slots": {
+			"220001": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"aa": {
+				"color": [
+					{ "time": 0, "color": "ffffff6b" },
+					{ "time": 0.6667, "color": "ffffffff" },
+					{ "time": 1.3333, "color": "ffffff6b" }
+				],
+				"attachment": [
+					{ "time": 0, "name": "aa" },
+					{ "time": 0.6667, "name": "aa" },
+					{ "time": 1.3333, "name": "aa" }
+				]
+			},
+			"zphd_2": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			}
+		}
+	}
+}
+}

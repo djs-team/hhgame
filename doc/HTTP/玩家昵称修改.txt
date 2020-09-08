@@ -1,0 +1,11 @@
+	/**
+	 * 玩家个人信息  修改 
+	 */
+	int	MJ_HALL_PLAYER_DATA_CHANGE = MJ_HALL_SERVER_ID + 7;
+	请求消息体：
+			private String nickname; // 昵称
+			private int type;//0代表微信登录修改昵称1自己手动修改
+	返回消息体：
+			private int status; // 返回值0成功其他失败
+			private byte nameUpdate; // 0是可以修改1是不可以修改
+			private String pname;//昵称

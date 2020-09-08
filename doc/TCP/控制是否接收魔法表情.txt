@@ -1,0 +1,10 @@
+/**
+	 * 是否接收魔法表情
+	 */
+	int	MJ_GAME_CONTROL_RECEIVE_MAGIC = MJ_GAME_MATCHGAME_ID + 51;
+请求消息体:
+	private String tableId;//牌桌号
+	private int type;//0.允许接收1.禁止接收
+返回消息体:
+	private int status;//0.修改成功其他失败
+	private int type;//0.允许接收1.禁止接收

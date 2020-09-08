@@ -1,0 +1,5 @@
+和以前一样
+/**
+	 * 玩家进行选择操作
+	 */
+	int	MJ_GAMEID_SELECT = MJ_GAME_MATCHGAME_ID + 6;

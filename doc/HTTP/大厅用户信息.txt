@@ -1,0 +1,18 @@
+/**
+	 * 玩家个人信息
+	 */
+	int	MJ_HALL_PLAYER_DATA = MJ_HALL_SERVER_ID + 6;
+请求消息体：
+	基础数据
+返回消息体：
+	private String pname; // name
+	private String coin; // coin
+	private int diamonds;//钻石
+	private int fuKa;//福卡
+	private String photo; // 默认头像
+	private String sdkphotourl; // sdk头像
+	private int roleCode;//角色编码
+	private int nameUpdate;//0可修改1.不可修改
+	private int isAuthentication;//0已经认证1未实名认证
+	private int agentFlag;//代理级别0不是代理1是一级代理2是二级代理
+	private int status; // 返回值0正常其他失败

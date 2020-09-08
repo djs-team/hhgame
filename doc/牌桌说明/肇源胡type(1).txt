@@ -1,0 +1,13 @@
+	public static final int EHUTYPE_QIXIAODUI = 8;//七小对
+
+	public static final int EHUTYPE_DIAOHU = 43;;//调胡
+	public static final int EHUTYPE_MOBAOHU = 35;//摸宝胡：自摸宝牌且胡牌张!=宝牌
+	public static final int EHUTYPE_ZIMOHU = 4;//自摸胡
+	public static final int EHUTYPE_DIANPAOHU = 44;//点炮胡
+	public static final int EHUTYPE_JIAHU = 3;//夹胡
+	public static final int EHUTYPE_BAOZHONGBAO = 83;//宝中宝
+
+	public static final int EHUTYPE_DUIBAOHU = 5;//对宝胡：上听对宝、换宝对宝
+	public static final int EHUTYPE_KAIPAIZHA = 81;//开牌炸  刚起牌就有四张一样的
+	public static final int EHUTYPE_HAIDILAOYUE = 13;//海底捞月
+	Win_Guadafeng(68,"刮大风"),

@@ -1,0 +1,8 @@
+/**
+	 * 取消匹配
+	 */
+	int	MJ_ROOM_QUIT								= MJ_ROOM_MATCHGAME_ID + 3;
+请求消息体：
+	空
+返回消息体:
+	private byte code;//0成功其他失败

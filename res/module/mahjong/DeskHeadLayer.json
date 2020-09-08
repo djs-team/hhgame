@@ -1,0 +1,754 @@
+{
+  "ID": "4189ad4b-3c75-49c4-9304-d9a75d59c840",
+  "Version": "3.10.0.0",
+  "Name": "DeskHeadLayer",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 5,
+        "Children": [
+          {
+            "ClipAble": false,
+            "BackColorAlpha": 102,
+            "SingleColor": {
+              "R": 150,
+              "G": 200
+            },
+            "FirstColor": {
+              "R": 150,
+              "G": 200
+            },
+            "EndColor": {},
+            "ColorVector": {
+              "ScaleY": 1.0
+            },
+            "Scale9Width": 1,
+            "Scale9Height": 1,
+            "AnchorPoint": {
+              "ScaleX": 0.5
+            },
+            "Position": {
+              "X": 640.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PositionPercentXEnabled": true,
+            "PositionPercentYEnabled": true,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.0
+            },
+            "PercentWidthEnable": true,
+            "PercentHeightEnable": true,
+            "PercentWidthEnabled": true,
+            "PercentHeightEnabled": true,
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "UserData": "{\"layoutType\":\"showAll\",\"screenAlign\":\"bottom\"}",
+            "Tag": 358,
+            "Children": [
+              {
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 130.0,
+                  "Y": 580.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": true,
+                "PrePosition": {
+                  "X": 0.1016,
+                  "Y": 0.8056
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 130.0,
+                "RightMargin": 1150.0,
+                "TopMargin": 140.0,
+                "BottomMargin": 580.0,
+                "Tag": 365,
+                "Children": [
+                  {
+                    "AnchorPoint": {},
+                    "Position": {
+                      "X": 0.0,
+                      "Y": -380.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": true,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "TopMargin": 380.0,
+                    "BottomMargin": -380.0,
+                    "Tag": 16,
+                    "ActionTag": -798516039,
+                    "Size": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "Name": "AniNd",
+                    "ctype": "SingleNodeObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "desk/pz_13.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 55,
+                    "Scale9OriginY": 25,
+                    "Scale9Width": 59,
+                    "Scale9Height": 27,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 150.0,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 65.5,
+                    "RightMargin": -234.5,
+                    "TopMargin": -38.5,
+                    "BottomMargin": -38.5,
+                    "Tag": 366,
+                    "Children": [
+                      {
+                        "FontSize": 30,
+                        "LabelText": "玩家的名字叫啥呢",
+                        "HorizontalAlignmentType": "HT_Center",
+                        "VerticalAlignmentType": "VT_Center",
+                        "OutlineColor": {
+                          "G": 0,
+                          "B": 0
+                        },
+                        "ShadowColor": {
+                          "R": 110,
+                          "G": 110,
+                          "B": 110
+                        },
+                        "ShadowOffsetX": 2.0,
+                        "ShadowOffsetY": -2.0,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 84.5,
+                          "Y": 38.5
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PositionPercentXEnabled": true,
+                        "PositionPercentYEnabled": true,
+                        "PrePosition": {
+                          "X": 0.5,
+                          "Y": 0.5
+                        },
+                        "PreSize": {
+                          "X": 1.4201,
+                          "Y": 0.3896
+                        },
+                        "LeftMargin": -35.5,
+                        "RightMargin": -35.5,
+                        "TopMargin": 23.5,
+                        "BottomMargin": 23.5,
+                        "Tag": 367,
+                        "ActionTag": -394388831,
+                        "Size": {
+                          "X": 240.0,
+                          "Y": 30.0
+                        },
+                        "Name": "nameTxt",
+                        "ctype": "TextObjectData"
+                      }
+                    ],
+                    "ActionTag": 1398343822,
+                    "Size": {
+                      "X": 169.0,
+                      "Y": 77.0
+                    },
+                    "Name": "nameBg",
+                    "ctype": "ImageViewObjectData"
+                  }
+                ],
+                "ActionTag": 1447338167,
+                "Size": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Name": "headNd1",
+                "ctype": "SingleNodeObjectData"
+              },
+              {
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 640.0,
+                  "Y": 650.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": true,
+                "PrePosition": {
+                  "X": 0.5,
+                  "Y": 0.9028
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 640.0,
+                "RightMargin": 640.0,
+                "TopMargin": 70.0,
+                "BottomMargin": 650.0,
+                "Tag": 368,
+                "Children": [
+                  {
+                    "AnchorPoint": {},
+                    "Position": {
+                      "X": 0.0,
+                      "Y": -370.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": true,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "TopMargin": 370.0,
+                    "BottomMargin": -370.0,
+                    "Tag": 17,
+                    "ActionTag": -582052919,
+                    "Size": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "Name": "AniNd",
+                    "ctype": "SingleNodeObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "desk/pz_13.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 55,
+                    "Scale9OriginY": 25,
+                    "Scale9Width": 59,
+                    "Scale9Height": 27,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 180.0,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 95.5,
+                    "RightMargin": -264.5,
+                    "TopMargin": -38.5,
+                    "BottomMargin": -38.5,
+                    "Tag": 369,
+                    "Children": [
+                      {
+                        "FontSize": 30,
+                        "LabelText": "玩家的名字叫啥呢",
+                        "HorizontalAlignmentType": "HT_Center",
+                        "VerticalAlignmentType": "VT_Center",
+                        "OutlineColor": {
+                          "G": 0,
+                          "B": 0
+                        },
+                        "ShadowColor": {
+                          "R": 110,
+                          "G": 110,
+                          "B": 110
+                        },
+                        "ShadowOffsetX": 2.0,
+                        "ShadowOffsetY": -2.0,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 84.5,
+                          "Y": 38.5
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PositionPercentXEnabled": true,
+                        "PositionPercentYEnabled": true,
+                        "PrePosition": {
+                          "X": 0.5,
+                          "Y": 0.5
+                        },
+                        "PreSize": {
+                          "X": 1.4201,
+                          "Y": 0.3896
+                        },
+                        "LeftMargin": -35.5,
+                        "RightMargin": -35.5,
+                        "TopMargin": 23.5,
+                        "BottomMargin": 23.5,
+                        "Tag": 370,
+                        "ActionTag": 232848149,
+                        "Size": {
+                          "X": 240.0,
+                          "Y": 30.0
+                        },
+                        "Name": "nameTxt",
+                        "ctype": "TextObjectData"
+                      }
+                    ],
+                    "ActionTag": 1696454263,
+                    "Size": {
+                      "X": 169.0,
+                      "Y": 77.0
+                    },
+                    "Name": "nameBg",
+                    "ctype": "ImageViewObjectData"
+                  }
+                ],
+                "ActionTag": -8661288,
+                "Size": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Name": "headNd2",
+                "ctype": "SingleNodeObjectData"
+              },
+              {
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 1196.949,
+                  "Y": 500.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": true,
+                "PrePosition": {
+                  "X": 0.9351,
+                  "Y": 0.6944
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 1196.949,
+                "RightMargin": 83.051,
+                "TopMargin": 220.0,
+                "BottomMargin": 500.0,
+                "Tag": 371,
+                "Children": [
+                  {
+                    "AnchorPoint": {},
+                    "Position": {
+                      "X": 0.0,
+                      "Y": -360.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": true,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "TopMargin": 360.0,
+                    "BottomMargin": -360.0,
+                    "Tag": 18,
+                    "ActionTag": 760250958,
+                    "Size": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "Name": "AniNd",
+                    "ctype": "SingleNodeObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "desk/pz_13.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 55,
+                    "Scale9OriginY": 25,
+                    "Scale9Width": 59,
+                    "Scale9Height": 27,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -183.7385,
+                      "Y": 29.1092
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -268.2385,
+                    "RightMargin": 99.2385,
+                    "TopMargin": -67.6092,
+                    "BottomMargin": -9.3908,
+                    "Tag": 372,
+                    "Children": [
+                      {
+                        "FontSize": 30,
+                        "LabelText": "玩家的名字叫啥呢",
+                        "HorizontalAlignmentType": "HT_Center",
+                        "VerticalAlignmentType": "VT_Center",
+                        "OutlineColor": {
+                          "G": 0,
+                          "B": 0
+                        },
+                        "ShadowColor": {
+                          "R": 110,
+                          "G": 110,
+                          "B": 110
+                        },
+                        "ShadowOffsetX": 2.0,
+                        "ShadowOffsetY": -2.0,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 84.5,
+                          "Y": 38.5
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PositionPercentXEnabled": true,
+                        "PositionPercentYEnabled": true,
+                        "PrePosition": {
+                          "X": 0.5,
+                          "Y": 0.5
+                        },
+                        "PreSize": {
+                          "X": 1.4201,
+                          "Y": 0.3896
+                        },
+                        "LeftMargin": -35.5,
+                        "RightMargin": -35.5,
+                        "TopMargin": 23.5,
+                        "BottomMargin": 23.5,
+                        "Tag": 373,
+                        "ActionTag": -1191301848,
+                        "Size": {
+                          "X": 240.0,
+                          "Y": 30.0
+                        },
+                        "Name": "nameTxt",
+                        "ctype": "TextObjectData"
+                      }
+                    ],
+                    "ActionTag": -350495150,
+                    "Size": {
+                      "X": 169.0,
+                      "Y": 77.0
+                    },
+                    "Name": "nameBg",
+                    "ctype": "ImageViewObjectData"
+                  }
+                ],
+                "ActionTag": 1064805300,
+                "Size": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Name": "headNd3",
+                "ctype": "SingleNodeObjectData"
+              },
+              {
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 102.6913,
+                  "Y": 731.8598
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": true,
+                "PrePosition": {
+                  "X": 0.0802,
+                  "Y": 1.0165
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 102.6913,
+                "RightMargin": 1177.3087,
+                "TopMargin": -11.8598,
+                "BottomMargin": 731.8598,
+                "Tag": 359,
+                "Children": [
+                  {
+                    "AnchorPoint": {},
+                    "Position": {
+                      "X": 216.9301,
+                      "Y": -825.8181
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": true,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 216.9301,
+                    "RightMargin": -216.9301,
+                    "TopMargin": 825.8181,
+                    "BottomMargin": -825.8181,
+                    "Tag": 15,
+                    "ActionTag": -2102712341,
+                    "Size": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "Name": "AniNd",
+                    "ctype": "SingleNodeObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "desk/pz_13.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 55,
+                    "Scale9OriginY": 25,
+                    "Scale9Width": 59,
+                    "Scale9Height": 27,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -84.5,
+                    "RightMargin": -84.5,
+                    "TopMargin": -38.5,
+                    "BottomMargin": -38.5,
+                    "Tag": 363,
+                    "Children": [
+                      {
+                        "FontSize": 30,
+                        "LabelText": "玩家的名字叫啥呢",
+                        "HorizontalAlignmentType": "HT_Center",
+                        "VerticalAlignmentType": "VT_Center",
+                        "OutlineColor": {
+                          "G": 0,
+                          "B": 0
+                        },
+                        "ShadowColor": {
+                          "R": 110,
+                          "G": 110,
+                          "B": 110
+                        },
+                        "ShadowOffsetX": 2.0,
+                        "ShadowOffsetY": -2.0,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 84.5,
+                          "Y": 38.5
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PositionPercentXEnabled": true,
+                        "PositionPercentYEnabled": true,
+                        "PrePosition": {
+                          "X": 0.5,
+                          "Y": 0.5
+                        },
+                        "PreSize": {
+                          "X": 1.4201,
+                          "Y": 0.3896
+                        },
+                        "LeftMargin": -35.5,
+                        "RightMargin": -35.5,
+                        "TopMargin": 23.5,
+                        "BottomMargin": 23.5,
+                        "Tag": 364,
+                        "ActionTag": 259747757,
+                        "Size": {
+                          "X": 240.0,
+                          "Y": 30.0
+                        },
+                        "Name": "nameTxt",
+                        "ctype": "TextObjectData"
+                      }
+                    ],
+                    "ActionTag": 461097072,
+                    "Size": {
+                      "X": 169.0,
+                      "Y": 77.0
+                    },
+                    "Name": "nameBg",
+                    "ctype": "ImageViewObjectData"
+                  }
+                ],
+                "ActionTag": -1476786496,
+                "Size": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Name": "headNd0",
+                "ctype": "SingleNodeObjectData"
+              }
+            ],
+            "ActionTag": 1877831000,
+            "Size": {
+              "X": 1280.0,
+              "Y": 720.0
+            },
+            "Name": "bgPnl",
+            "ctype": "PanelObjectData"
+          }
+        ],
+        "Size": {
+          "X": 1280.0,
+          "Y": 720.0
+        },
+        "Name": "Layer",
+        "ctype": "LayerObjectData"
+      },
+      "UsedResources": [
+        "desk/pz_13.png"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Layer"
+}

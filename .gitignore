@@ -1,0 +1,8 @@
+*_Plist.Dir*
+*.udf
+.idea
+Debug.win32
+.vs
+.vscode
+node_modules
+publish

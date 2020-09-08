@@ -1,0 +1,15 @@
+/**
+	 * 游戏中发送消息
+	 */
+	int	MJ_GAME_SENDNEWS = MJ_GAME_MATCHGAME_ID + 50;
+请求消息体:
+	private int type;//1代表常用语2代表普通表情3.代表魔法表情
+	private int num;//语音和文字的编号
+	private int toPid;//针对哪个玩家发送，表情专用
+	private String tableId;//牌桌号
+返回消息体:
+	private int type;//1代表语言2代表表情3代表魔法表情
+	private int num;//表情和文字的编号
+	private int toPid;//针对哪个玩家发送，魔法表情专用
+	private int fromPid;//来自哪个玩家
+	private int code;//0正常其他失败(这个错误码到时候维护一个公共的。到时候统一发给你的)

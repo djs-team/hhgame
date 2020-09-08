@@ -1,0 +1,13 @@
+	public static final int ESELECT_ACTION_Takeout = 10;//出牌
+	public static final int ESELECT_ACTION_Hu = 20;//胡
+	public static final int ESELECT_ACTION_PengTing = 40;//碰听
+	public static final int ESELECT_ACTION_ChiTing = 50;//吃听
+	public static final int ESELECT_ACTION_Ting = 70;//听
+	public static final int ESELECT_ACTION_AnGang = 80;//暗杠
+	public static final int ESELECT_ACTION_JiaGang = 90;//加杠
+	public static final int ESELECT_ACTION_MingGang = 100;//明杠
+	public static final int ESELECT_ACTION_Peng = 110;//碰	
+	public static final int ESELECT_ACTION_Chi = 120;//吃
+	
+	
+

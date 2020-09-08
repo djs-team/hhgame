@@ -1,0 +1,172 @@
+{
+  "ID": "ffe69149-7680-43d2-975f-04273f3f4e6f",
+  "Version": "3.10.0.0",
+  "Name": "LoadingLayer",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 109,
+        "Children": [
+          {
+            "ClipAble": false,
+            "BackColorAlpha": 102,
+            "ComboBoxIndex": 1,
+            "SingleColor": {
+              "R": 26,
+              "G": 26,
+              "B": 26
+            },
+            "FirstColor": {
+              "R": 150,
+              "G": 200
+            },
+            "EndColor": {},
+            "ColorVector": {
+              "ScaleY": 1.0
+            },
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 640.0,
+              "Y": 360.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.5
+            },
+            "PercentWidthEnable": true,
+            "PercentHeightEnable": true,
+            "PercentWidthEnabled": true,
+            "PercentHeightEnabled": true,
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "Tag": 110,
+            "Children": [
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "animation/demo/DemoPlayer.ExportJson",
+                  "Plist": ""
+                },
+                "IsLoop": true,
+                "IsAutoPlay": true,
+                "CurrentAnimationName": "walk",
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 556.7901,
+                  "Y": 160.7408
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": true,
+                "PrePosition": {
+                  "X": 0.435,
+                  "Y": 0.2233
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 556.7901,
+                "RightMargin": 723.2099,
+                "TopMargin": 559.2592,
+                "BottomMargin": 160.7408,
+                "Tag": 113,
+                "ActionTag": -530277112,
+                "Size": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Name": "ArmatureNode_2",
+                "ctype": "ArmatureNodeObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Default",
+                  "Path": "Default/DemoPlayer.ExportJson",
+                  "Plist": ""
+                },
+                "IsLoop": true,
+                "IsAutoPlay": true,
+                "CurrentAnimationName": "walk",
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": true,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "RightMargin": 1280.0,
+                "TopMargin": 720.0,
+                "Tag": 114,
+                "ActionTag": 1490866040,
+                "Size": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Name": "ArmatureNode_3",
+                "ctype": "ArmatureNodeObjectData"
+              }
+            ],
+            "ActionTag": 1131805094,
+            "Size": {
+              "X": 1280.0,
+              "Y": 720.0
+            },
+            "Name": "pnl",
+            "ctype": "PanelObjectData"
+          }
+        ],
+        "Size": {
+          "X": 1280.0,
+          "Y": 720.0
+        },
+        "Name": "Layer",
+        "ctype": "LayerObjectData"
+      },
+      "UsedResources": [
+        "animation/demo/DemoPlayer.ExportJson",
+        "animation/demo/DemoPlayer0.plist",
+        "animation/demo/DemoPlayer0.png",
+        "Default/DemoPlayer.ExportJson",
+        "Default/DemoPlayer0.plist",
+        "Default/DemoPlayer0.png"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Layer"
+}

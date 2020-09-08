@@ -1,0 +1,9 @@
+	Play_qianhoukan(95,"前后砍"),
+	Play_lou(96,"漏"),
+
+	Play_bao(97,"宝"),
+	
+	Play_hongzhongsuanbao(99,"红中算宝"),
+	Play_Kaipaizha(82,"开牌炸"),
+	Play_hongzhongsuanbao(99,"红中算宝"),
+	Play_haohuaqidui(98,"刮大风"),

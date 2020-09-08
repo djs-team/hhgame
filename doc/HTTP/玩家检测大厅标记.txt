@@ -1,0 +1,12 @@
+	/**
+	 * 检测大厅红点标记
+	 */
+	int MJ_HALL_PLAYER_CHECK_HALL_FLAG = MJ_HALL_SERVER_ID + 77;
+请求消息体：
+	基础信息
+返回消息体:
+	private int mailFlag; //邮件红点标记0有红点1没有红点
+	private int taskFlag;//任务红点标记0有红点1没有红点
+	private int invitationFlag;//邀请有礼标记0有红点1没有红点
+	private int vipDailyFlag;//vip每日奖励是否可领取
+	private int status; // 返回值0正常其他失败

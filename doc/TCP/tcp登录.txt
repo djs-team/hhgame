@@ -1,0 +1,12 @@
+/**
+	 * 进入游戏
+	 */
+	int ENTRY_GAME = BASIC_ID + 1;
+请求消息体:
+		// 游戏ID
+	private byte gid;
+	// 秘钥
+	private String key;
+	private int channel;//渠道
+返回消息体:
+	private short status;// 状态

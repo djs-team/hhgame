@@ -1,0 +1,32 @@
+/**
+	 * 局结果   结果数据  客户端接受
+	 */
+	int	MJ_ROOM_TABLE_COIN_RESULT_FOR_CLIENT = MJ_ROOM_MATCHGAME_ID + 4
+返回消息:
+	private byte code;
+	private int zhuangSeatID;//庄座位
+	private int winSeatID;//赢座位
+	private List<Integer> huType;//胡牌方式ID
+	private Card baoCard;//宝牌
+	private int baseCoins;//牌局 基础低分
+	private List<Player> pList;
+	
+	private int isLiuJu;//是否留局 0 不留局  1 留局
+	private Card huPaiZhangCard;//胡牌张
+	private int dayingjiaSeatID;//大赢家座位号
+	private String extended;//json  扩展字段
+	palyer的消息体：
+		private int pid;//玩家id
+		private String coins;//玩家剩余金币数
+		private int deCoins;//玩家 金币 变化数
+		private byte seatID;//玩家座位id
+		private List<Chi> chiCards;//吃
+		private List<KeZi> pengCards;//碰
+		private List<Gang> gangCards;//杠
+		private List<Card> handCards;//手牌
+		private byte isQingYiSe;//是否清一色
+		private int doubleCount;//玩家翻翻倍数
+		private List<Integer> doubleList;//玩家翻倍 属性id
+		private int maxDoubleId;//最大翻数  id
+		private List<Jiang> jiangCards;//盯掌对
+		private String extended;//json  扩展字段

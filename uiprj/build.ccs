@@ -1,0 +1,786 @@
+<Solution>
+  <PropertyGroup Name="build" Version="3.10.0.0" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Folder Name="aaa">
+          <Image Name="1.png" />
+          <Image Name="10.png" />
+          <Image Name="10_1.png" />
+          <Image Name="10_2.png" />
+          <Image Name="11.png" />
+          <Image Name="12_1 (1).png" />
+          <Image Name="12_1 (2).png" />
+          <Image Name="12_1 (3).png" />
+          <Image Name="12_1 (4).png" />
+          <Image Name="12_1 (5).png" />
+          <Image Name="12_1 (6).png" />
+          <Image Name="13_1.png" />
+          <Image Name="13_2.png" />
+          <Image Name="14 (1).png" />
+          <Image Name="14 (2).png" />
+          <Image Name="14 (3).png" />
+          <Image Name="14 (4).png" />
+          <Image Name="14 (5).png" />
+          <Image Name="14 (6).png" />
+          <Image Name="14 (7).png" />
+          <Image Name="15.png" />
+          <Image Name="16.png" />
+          <Image Name="17.png" />
+          <Image Name="17_1.png" />
+          <Image Name="17_2.png" />
+          <Image Name="17_3.png" />
+          <Image Name="17_4.png" />
+          <Image Name="17_8.png" />
+          <Image Name="18 (1).png" />
+          <Image Name="18 (2).png" />
+          <Image Name="18 (3).png" />
+          <Image Name="18 (4).png" />
+          <Image Name="18 (5).png" />
+          <Image Name="18 (6).png" />
+          <Image Name="18(7).png" />
+          <Image Name="19.png" />
+          <Image Name="2.png" />
+          <Image Name="20 (1).png" />
+          <Image Name="20 (10).png" />
+          <Image Name="20 (11).png" />
+          <Image Name="20 (12).png" />
+          <Image Name="20 (13).png" />
+          <Image Name="20 (14).png" />
+          <Image Name="20 (15).png" />
+          <Image Name="20 (16).png" />
+          <Image Name="20 (17).png" />
+          <Image Name="20 (2).png" />
+          <Image Name="20 (3).png" />
+          <Image Name="20 (4).png" />
+          <Image Name="20 (5).png" />
+          <Image Name="20 (6).png" />
+          <Image Name="20 (7).png" />
+          <Image Name="20 (8).png" />
+          <Image Name="20 (9).png" />
+          <Image Name="21 (1).png" />
+          <Image Name="21 (10).png" />
+          <Image Name="21 (2).png" />
+          <Image Name="21 (3).png" />
+          <Image Name="21 (4).png" />
+          <Image Name="21 (5).png" />
+          <Image Name="21 (6).png" />
+          <Image Name="21 (7).png" />
+          <Image Name="21 (8).png" />
+          <Image Name="21 (9).png" />
+          <Image Name="22.png" />
+          <Image Name="22_1.png" />
+          <Image Name="23 (1).png" />
+          <Image Name="23 (2).png" />
+          <Image Name="23 (3).png" />
+          <Image Name="23 (4).png" />
+          <Image Name="23 (5).png" />
+          <Image Name="23 (6).png" />
+          <Image Name="23 (7).png" />
+          <Image Name="3.png" />
+          <Image Name="4.png" />
+          <Image Name="6 (1).png" />
+          <Image Name="6 (2).png" />
+          <Image Name="6 (3).png" />
+          <Image Name="6 (4).png" />
+          <Image Name="6 (5).png" />
+          <Image Name="6 (6).png" />
+          <Image Name="7 (1).png" />
+          <Image Name="7 (2).png" />
+          <Image Name="7 (3).png" />
+          <Image Name="7 (4).png" />
+          <Image Name="8.png" />
+          <Image Name="9.png" />
+          <Image Name="9_1.png" />
+          <Image Name="9_2.png" />
+          <Image Name="9_3.png" />
+          <Image Name="invitation (1).png" />
+          <Image Name="invitation (2).png" />
+          <Image Name="invitation (3).png" />
+          <Image Name="invitation (4).png" />
+          <Image Name="invitation (5).png" />
+          <Image Name="invitation (6).png" />
+        </Folder>
+        <Folder Name="animation">
+          <Folder Name="demo">
+            <ExportJsonFile Name="DemoPlayer.ExportJson" />
+          </Folder>
+          <Folder Name="hall">
+            <Folder Name="dating_gengduowanfa">
+              <File Name="dating_gengduowanfa.atlas" />
+              <File Name="dating_gengduowanfa.json" />
+              <Image Name="dating_gengduowanfa.png" />
+            </Folder>
+            <Folder Name="dating_jinbichang">
+              <File Name="dating_jinbichang.atlas" />
+              <File Name="dating_jinbichang.json" />
+              <Image Name="dating_jinbichang.png" />
+            </Folder>
+            <Folder Name="dating_libao">
+              <File Name="dating_libao.atlas" />
+              <File Name="dating_libao.json" />
+              <Image Name="dating_libao.png" />
+            </Folder>
+            <Folder Name="dating_majiang">
+              <File Name="dating_majiang.atlas" />
+              <File Name="dating_majiang.json" />
+              <Image Name="dating_majiang.png" />
+            </Folder>
+            <Folder Name="dating_saishichang">
+              <File Name="dating_saishichang.atlas" />
+              <File Name="dating_saishichang.json" />
+              <Image Name="dating_saishichang.png" />
+            </Folder>
+            <Folder Name="gongxihuode">
+              <File Name="gongxihuode.atlas" />
+              <File Name="gongxihuode.json" />
+              <Image Name="gongxihuode.png" />
+            </Folder>
+            <Folder Name="jiazaidonghua">
+              <File Name="jiazaidonghua.atlas" />
+              <File Name="jiazaidonghua.json" />
+              <Image Name="jiazaidonghua.png" />
+            </Folder>
+            <Folder Name="majiangche">
+              <File Name="majiangche.atlas" />
+              <File Name="majiangche.json" />
+              <Image Name="majiangche.png" />
+            </Folder>
+            <Folder Name="qiandao">
+              <File Name="qiandao.atlas" />
+              <File Name="qiandao.json" />
+              <Image Name="qiandao.png" />
+            </Folder>
+            <Folder Name="yaojinshu">
+              <File Name="dating_yaojinshu.atlas" />
+              <File Name="dating_yaojinshu.json" />
+              <Image Name="dating_yaojinshu.png" />
+              <File Name="yaojinshu.atlas" />
+              <File Name="yaojinshu.json" />
+              <Image Name="yaojinshu.png" />
+            </Folder>
+            <Folder Name="zhuanpan">
+              <File Name="dating_zhuanpan.atlas" />
+              <File Name="dating_zhuanpan.json" />
+              <Image Name="dating_zhuanpan.png" />
+              <File Name="zhuanpan.atlas" />
+              <File Name="zhuanpan.json" />
+              <Image Name="zhuanpan.png" />
+            </Folder>
+          </Folder>
+          <Folder Name="hutype">
+            <Folder Name="hua">
+              <File Name="hua.atlas" />
+              <File Name="hua.json" />
+              <Image Name="hua.png" />
+            </Folder>
+            <Folder Name="long">
+              <File Name="long.atlas" />
+              <File Name="long.json" />
+              <Image Name="long.png" />
+            </Folder>
+            <Folder Name="xuanfeng">
+              <File Name="xuanfeng.atlas" />
+              <File Name="xuanfeng.json" />
+              <Image Name="xuanfeng.png" />
+            </Folder>
+            <Folder Name="yanhua">
+              <File Name="yanhua.atlas" />
+              <File Name="yanhua.json" />
+              <Image Name="yanhua.png" />
+            </Folder>
+          </Folder>
+          <Folder Name="player">
+            <Folder Name="caishen">
+              <File Name="caishen.atlas" />
+              <File Name="caishen.json" />
+              <Image Name="caishen.png" />
+            </Folder>
+            <Folder Name="fage">
+              <File Name="fage.atlas" />
+              <File Name="fage.json" />
+              <Image Name="fage.png" />
+            </Folder>
+            <Folder Name="huamulan">
+              <File Name="huamulan.atlas" />
+              <File Name="huamulan.json" />
+              <Image Name="huamulan.png" />
+            </Folder>
+            <Folder Name="huangdi">
+              <File Name="huangdi.atlas" />
+              <File Name="huangdi.json" />
+              <Image Name="huangdi.png" />
+            </Folder>
+            <Folder Name="huxian">
+              <File Name="huxian.atlas" />
+              <File Name="huxian.json" />
+              <Image Name="huxian.png" />
+            </Folder>
+            <Folder Name="nanchushi">
+              <File Name="nanchushi.atlas" />
+              <File Name="nanchushi.json" />
+              <Image Name="nanchushi.png" />
+            </Folder>
+            <Folder Name="nvchushi">
+              <File Name="nvchushi.atlas" />
+              <File Name="nvchushi.json" />
+              <Image Name="nvchushi.png" />
+            </Folder>
+            <Folder Name="zhangzuolin">
+              <File Name="zhangzuolin.atlas" />
+              <File Name="zhangzuolin.json" />
+              <Image Name="zhangzuolin.png" />
+            </Folder>
+            <Folder Name="zhizunbao">
+              <File Name="zhizunbao.atlas" />
+              <File Name="zhizunbao.json" />
+              <Image Name="zhizunbao.png" />
+            </Folder>
+            <Folder Name="zixia">
+              <File Name="zixia.atlas" />
+              <File Name="zixia.json" />
+              <Image Name="zixia.png" />
+            </Folder>
+          </Folder>
+          <Folder Name="table">
+            <Folder Name="duijukaishi">
+              <File Name="duijukaishi.atlas" />
+              <File Name="duijukaishi.json" />
+              <Image Name="duijukaishi.png" />
+            </Folder>
+            <Folder Name="guangbiao">
+              <File Name="guangbiao.atlas" />
+              <File Name="guangbiao.json" />
+              <Image Name="guangbiao.png" />
+            </Folder>
+            <Folder Name="hupai">
+              <File Name="hupai.atlas" />
+              <File Name="hupai.json" />
+              <Image Name="hupai.png" />
+            </Folder>
+            <Folder Name="touzi">
+              <File Name="touzi.atlas" />
+              <File Name="touzi.json" />
+              <Image Name="touzi.png" />
+            </Folder>
+            <Folder Name="zhuangjia">
+              <File Name="zhuangjia.atlas" />
+              <File Name="zhuangjia.json" />
+              <Image Name="zhuangjia.png" />
+            </Folder>
+          </Folder>
+        </Folder>
+        <Folder Name="area">
+          <Image Name="dqxz_1.png" />
+          <Image Name="dqxz_10.png" />
+          <Image Name="dqxz_11.png" />
+          <Image Name="dqxz_12.png" />
+          <Image Name="dqxz_2.png" />
+          <Image Name="dqxz_3.png" />
+          <Image Name="dqxz_4.png" />
+          <Image Name="dqxz_5.png" />
+          <Image Name="dqxz_6.png" />
+          <Image Name="dqxz_7.png" />
+          <Image Name="dqxz_8.png" />
+          <Image Name="dqxz_9.png" />
+        </Folder>
+        <Folder Name="arena">
+          <Image Name="ssc_1.png" />
+          <Image Name="ssc_10.png" />
+          <Image Name="ssc_11.png" />
+          <Image Name="ssc_12.png" />
+          <Image Name="ssc_13.png" />
+          <Image Name="ssc_14.png" />
+          <Image Name="ssc_15.png" />
+          <Image Name="ssc_16.png" />
+          <Image Name="ssc_17.png" />
+          <Image Name="ssc_18.png" />
+          <Image Name="ssc_19.png" />
+          <Image Name="ssc_2.png" />
+          <Image Name="ssc_20.png" />
+          <Image Name="ssc_21.png" />
+          <Image Name="ssc_22.png" />
+          <Image Name="ssc_23.png" />
+          <Image Name="ssc_3.png" />
+          <Image Name="ssc_4.png" />
+          <Image Name="ssc_5.png" />
+          <Image Name="ssc_6.png" />
+          <Image Name="ssc_7.png" />
+          <Image Name="ssc_8.png" />
+          <Image Name="ssc_9.png" />
+        </Folder>
+        <Folder Name="cashcow">
+          <Image Name="yjs_1.png" />
+          <Image Name="yjs_10.png" />
+          <Image Name="yjs_11.png" />
+          <Image Name="yjs_12.png" />
+          <Image Name="yjs_14.png" />
+          <Image Name="yjs_2.png" />
+          <Image Name="yjs_3.png" />
+          <Image Name="yjs_3_1.png" />
+          <Image Name="yjs_3_2.png" />
+          <Image Name="yjs_4.png" />
+          <Image Name="yjs_5.png" />
+          <Image Name="yjs_6.png" />
+          <Image Name="yjs_7.png" />
+          <Image Name="yjs_8.png" />
+          <Image Name="yjs_9.png" />
+        </Folder>
+        <Folder Name="character">
+          <Image Name="canshen.png" />
+          <Image Name="chushi1.png" />
+          <Image Name="chushi2.png" />
+          <Image Name="fage.png" />
+          <Image Name="hangdi.png" />
+          <Image Name="huamulan.PNG" />
+          <Image Name="huxian.png" />
+          <Image Name="zhangzuolin.png" />
+          <Image Name="zhizunbao.png" />
+          <Image Name="zixia.png" />
+        </Folder>
+        <Folder Name="choosecity">
+          <Image Name="dqxz_1.png" />
+          <Image Name="dqxz_10.png" />
+          <Image Name="dqxz_11.png" />
+          <Image Name="dqxz_12.png" />
+          <Image Name="dqxz_2.png" />
+          <Image Name="dqxz_3.png" />
+          <Image Name="dqxz_4.png" />
+          <Image Name="dqxz_5.png" />
+          <Image Name="dqxz_6.png" />
+          <Image Name="dqxz_7.png" />
+          <Image Name="dqxz_8.png" />
+          <Image Name="dqxz_9.png" />
+        </Folder>
+        <Folder Name="coinshop">
+          <Image Name="scjb_1.png" />
+          <Image Name="scjb_10.png" />
+          <Image Name="scjb_11.png" />
+          <Image Name="scjb_12.png" />
+          <Image Name="scjb_13.png" />
+          <Image Name="scjb_14.png" />
+          <Image Name="scjb_15.png" />
+          <Image Name="scjb_16.png" />
+          <Image Name="scjb_17.png" />
+          <Image Name="scjb_2.png" />
+          <Image Name="scjb_3.png" />
+          <Image Name="scjb_4.png" />
+          <Image Name="scjb_5.png" />
+          <Image Name="scjb_6.png" />
+          <Image Name="scjb_7.png" />
+          <Image Name="scjb_8.png" />
+          <Image Name="scjb_9.png" />
+        </Folder>
+        <Folder Name="common">
+          <Image Name="bt_1.png" />
+          <Image Name="bt_2.png" />
+          <Image Name="bt_3.png" />
+          <Image Name="bt_4.png" />
+          <Image Name="bt_5.png" />
+          <Image Name="bt_5_1.png" />
+          <Image Name="bz_1.png" />
+          <Image Name="bz_2.png" />
+          <Image Name="bz_3.png" />
+          <Image Name="db.png" />
+          <Image Name="gb.png" />
+          <Image Name="gx_1.png" />
+          <Image Name="gx_2.png" />
+          <Image Name="gy_biankuang.png" />
+          <Image Name="gy_fh.png" />
+          <Image Name="gy_fk.png" />
+          <Image Name="gy_xtts.png" />
+          <Image Name="gy_yqy2.png" />
+          <Image Name="gy_yqy3.png" />
+          <Image Name="gy_yqyl.png" />
+          <Image Name="hb.png" />
+          <Image Name="hc_1.png" />
+          <Image Name="hc_2.png" />
+          <Image Name="hszz.png" />
+          <Image Name="jinbi.png" />
+          <Image Name="jsyy.png" />
+          <Image Name="pmd_1.png" />
+          <Image Name="pmd_2.png" />
+          <Image Name="pmd_3.png" />
+          <Image Name="pmd_4.png" />
+          <Image Name="rwzx_1.png" />
+          <Image Name="rwzx_2.png" />
+          <Image Name="rwzx_3.png" />
+          <Image Name="rwzx_4.png" />
+          <Image Name="scjb_3_1.png" />
+          <Image Name="texiangguang.png" />
+          <Image Name="zuanshi.png" />
+        </Folder>
+        <Folder Name="conf">
+          <Image Name="sz_1.png" />
+          <Image Name="sz_10.png" />
+          <Image Name="sz_11.png" />
+          <Image Name="sz_2.png" />
+          <Image Name="sz_3.png" />
+          <Image Name="sz_4.png" />
+          <Image Name="sz_5.png" />
+          <Image Name="sz_6.png" />
+          <Image Name="sz_7.png" />
+          <Image Name="sz_8.png" />
+          <Image Name="sz_9.png" />
+        </Folder>
+        <Folder Name="email">
+          <Image Name="yj_1.png" />
+          <Image Name="yj_2.png" />
+          <Image Name="yj_3.png" />
+          <Image Name="yj_4.png" />
+        </Folder>
+        <Folder Name="feedback">
+          <Image Name="yjfk_1.png" />
+          <Image Name="yjfk_2.png" />
+          <Image Name="yjfk_3.png" />
+        </Folder>
+        <Folder Name="font">
+          <TTF Name="hkhbtW12.ttc" />
+        </Folder>
+        <Folder Name="fukashop">
+          <Image Name="fk_1.png" />
+          <Image Name="fk_10.png" />
+          <Image Name="fk_11.png" />
+          <Image Name="fk_12.png" />
+          <Image Name="fk_13.png" />
+          <Image Name="fk_14.png" />
+          <Image Name="fk_15.png" />
+          <Image Name="fk_16.png" />
+          <Image Name="fk_17.png" />
+          <Image Name="fk_18.png" />
+          <Image Name="fk_19.png" />
+          <Image Name="fk_2.png" />
+          <Image Name="fk_20.png" />
+          <Image Name="fk_21.png" />
+          <Image Name="fk_22.png" />
+          <Image Name="fk_23.png" />
+          <Image Name="fk_24.png" />
+          <Image Name="fk_25.png" />
+          <Image Name="fk_26.png" />
+          <Image Name="fk_27.png" />
+          <Image Name="fk_28.png" />
+          <Image Name="fk_29.png" />
+          <Image Name="fk_3.png" />
+          <Image Name="fk_30.png" />
+          <Image Name="fk_31.png" />
+          <Image Name="fk_32.png" />
+          <Image Name="fk_33.png" />
+          <Image Name="fk_34.png" />
+          <Image Name="fk_35.png" />
+          <Image Name="fk_36.png" />
+          <Image Name="fk_37.png" />
+          <Image Name="fk_38.png" />
+          <Image Name="fk_39.png" />
+          <Image Name="fk_4.png" />
+          <Image Name="fk_40.png" />
+          <Image Name="fk_41.png" />
+          <Image Name="fk_42.png" />
+          <Image Name="fk_43.png" />
+          <Image Name="fk_5.png" />
+          <Image Name="fk_6.png" />
+          <Image Name="fk_7.png" />
+          <Image Name="fk_8.png" />
+          <Image Name="fk_9.png" />
+        </Folder>
+        <Folder Name="hall">
+          <Image Name="bs_Main_add.png" />
+          <Image Name="bs_Main_authors.png" />
+          <Image Name="bs_Main_Kefu.png" />
+          <Image Name="bs_Main_mail.png" />
+          <Image Name="bs_Main_notice.png" />
+          <Image Name="bs_Main_record.png" />
+          <Image Name="bs_Main_Setting.png" />
+          <Image Name="bs_Main_share.png" />
+          <Image Name="bs_Main_wanfa.png" />
+          <Image Name="dtjm_1.png" />
+          <Image Name="dtjm_1_1.png" />
+          <Image Name="dtjm_10.png" />
+          <Image Name="dtjm_11.png" />
+          <Image Name="dtjm_11_1.png" />
+          <Image Name="dtjm_12.png" />
+          <Image Name="dtjm_13.png" />
+          <Image Name="dtjm_14.png" />
+          <Image Name="dtjm_15.png" />
+          <Image Name="dtjm_16.png" />
+          <Image Name="dtjm_17.png" />
+          <Image Name="dtjm_18.png" />
+          <Image Name="dtjm_19.png" />
+          <Image Name="dtjm_2.png" />
+          <Image Name="dtjm_20.png" />
+          <Image Name="dtjm_21.png" />
+          <Image Name="dtjm_3.png" />
+          <Image Name="dtjm_4.png" />
+          <Image Name="dtjm_5.png" />
+          <Image Name="dtjm_6.png" />
+          <Image Name="dtjm_7.png" />
+          <Image Name="dtjm_8.png" />
+          <Image Name="dtjm_9.png" />
+          <Image Name="dtjm_f1.png" />
+          <Image Name="dtjm_f1_1.png" />
+          <Image Name="dtjm_f1_2.png" />
+          <Image Name="dtjm_f1_3.png" />
+          <Image Name="dtjm_f1_4.png" />
+          <Image Name="dtjm_f2.png" />
+          <Image Name="dtjm_f3.png" />
+          <Image Name="dtjm_f4.png" />
+          <Image Name="gy_xtts.png" />
+          <Image Name="pmd_2.png" />
+          <Image Name="pmd_3.png" />
+        </Folder>
+        <Folder Name="invitation">
+          <Image Name="yqyl_1.png" />
+          <Image Name="yqyl_2.png" />
+          <Image Name="yqyl_3.png" />
+          <Image Name="yqyl_4.png" />
+          <Image Name="yqyl_5.png" />
+          <Image Name="yqyl_6.png" />
+          <Image Name="yqyl_7.png" />
+          <Image Name="yqyl_8.png" />
+          <Image Name="yqyl_9.png" />
+        </Folder>
+        <Folder Name="login">
+          <Image Name="denglu_1.png" />
+          <Image Name="denglu_2.png" />
+          <Image Name="denglu_3.png" />
+          <Image Name="denglu_4.png" />
+          <Image Name="denglu_5.png" />
+          <Image Name="denglu_6.png" />
+          <Image Name="denglu_7.png" />
+          <Image Name="update_slider_bar.png" />
+          <Image Name="update_slider_bg.png" />
+        </Folder>
+        <Folder Name="matching">
+          <Image Name="ppc_1.png" />
+          <Image Name="ppc_2.png" />
+          <Image Name="ppc_3.png" />
+          <Image Name="ppc_4.png" />
+          <Image Name="ppc_5.png" />
+        </Folder>
+        <Folder Name="personal">
+          <Image Name="gexx_1.png" />
+          <Image Name="gexx_2.png" />
+          <Image Name="gexx_3.png" />
+          <Image Name="gexx_4.png" />
+          <Image Name="gexx_5.png" />
+          <Image Name="gexx_6.png" />
+          <Image Name="gexx_7.png" />
+        </Folder>
+        <Folder Name="png">
+          <Image Name="denglu_bg.png" />
+          <Image Name="dqxz_bg.png" />
+          <Image Name="dt_yqyl.png" />
+          <Image Name="dt_yqyl1.png" />
+          <Image Name="dtjm_bg.png" />
+          <Image Name="hall_bg.png" />
+          <Image Name="launch_bg.png" />
+          <Image Name="login_bg.png" />
+          <Image Name="scjn_bg.png" />
+          <Image Name="update_bg.png" />
+        </Folder>
+        <Folder Name="role">
+          <Image Name="js_1.png" />
+          <Image Name="js_2.png" />
+          <Image Name="js_3.png" />
+          <Image Name="js_4.png" />
+          <Image Name="js_cs1.png" />
+          <Image Name="js_cs1_1.png" />
+          <Image Name="js_fg1.png" />
+          <Image Name="js_fg1_1.png" />
+          <Image Name="js_hd1.png" />
+          <Image Name="js_hd1_1.png" />
+          <Image Name="js_hml1.png" />
+          <Image Name="js_hml1_1.png" />
+          <Image Name="js_hx1.png" />
+          <Image Name="js_hx1_1.png" />
+          <Image Name="js_ncs1.png" />
+          <Image Name="js_ncs1_1.png" />
+          <Image Name="js_nncs1.png" />
+          <Image Name="js_nncs1_1.png" />
+          <Image Name="js_zx1.png" />
+          <Image Name="js_zx1_1.png" />
+          <Image Name="js_zzb1.png" />
+          <Image Name="js_zzb1_1.png" />
+          <Image Name="js_zzl1.png" />
+          <Image Name="js_zzl1_1.png" />
+        </Folder>
+        <Folder Name="sign">
+          <Image Name="qd_1.png" />
+          <Image Name="qd_10.png" />
+          <Image Name="qd_11.png" />
+          <Image Name="qd_12.png" />
+          <Image Name="qd_13.png" />
+          <Image Name="qd_14.png" />
+          <Image Name="qd_15.png" />
+          <Image Name="qd_16.png" />
+          <Image Name="qd_17.png" />
+          <Image Name="qd_18.png" />
+          <Image Name="qd_19.png" />
+          <Image Name="qd_2.png" />
+          <Image Name="qd_20.png" />
+          <Image Name="qd_21.png" />
+          <Image Name="qd_22.png" />
+          <Image Name="qd_23.png" />
+          <Image Name="qd_24.png" />
+          <Image Name="qd_25.png" />
+          <Image Name="qd_3.png" />
+          <Image Name="qd_4.png" />
+          <Image Name="qd_5.png" />
+          <Image Name="qd_6.png" />
+          <Image Name="qd_7.png" />
+          <Image Name="qd_8.png" />
+          <Image Name="qd_9.png" />
+        </Folder>
+        <Folder Name="table">
+          <Image Name="pz_1.png" />
+          <Image Name="pz_10.png" />
+          <Image Name="pz_11.png" />
+          <Image Name="pz_12.png" />
+          <Image Name="pz_13.png" />
+          <Image Name="pz_14.png" />
+          <Image Name="pz_15.png" />
+          <Image Name="pz_16.png" />
+          <Image Name="pz_17.png" />
+          <Image Name="pz_18.png" />
+          <Image Name="pz_19.png" />
+          <Image Name="pz_2.png" />
+          <Image Name="pz_20.png" />
+          <Image Name="pz_21.png" />
+          <Image Name="pz_22.png" />
+          <Image Name="pz_23.png" />
+          <Image Name="pz_24.png" />
+          <Image Name="pz_25.png" />
+          <Image Name="pz_26.png" />
+          <Image Name="pz_27.png" />
+          <Image Name="pz_28.png" />
+          <Image Name="pz_29.png" />
+          <Image Name="pz_3.png" />
+          <Image Name="pz_30.png" />
+          <Image Name="pz_31.png" />
+          <Image Name="pz_32.png" />
+          <Image Name="pz_33.png" />
+          <Image Name="pz_34.png" />
+          <Image Name="pz_35.png" />
+          <Image Name="pz_36.png" />
+          <Image Name="pz_37.png" />
+          <Image Name="pz_38.png" />
+          <Image Name="pz_39.png" />
+          <Image Name="pz_4.png" />
+          <Image Name="pz_5.png" />
+          <Image Name="pz_6.png" />
+          <Image Name="pz_7.png" />
+          <Image Name="pz_8.png" />
+          <Image Name="pz_9.png" />
+          <Image Name="pz_pz.png" />
+        </Folder>
+        <Folder Name="task">
+          <Image Name="rwzx_10.png" />
+          <Image Name="rwzx_11.png" />
+          <Image Name="rwzx_12.png" />
+          <Image Name="rwzx_13.png" />
+          <Image Name="rwzx_14.png" />
+          <Image Name="rwzx_15.png" />
+          <Image Name="rwzx_5.png" />
+          <Image Name="rwzx_6.png" />
+          <Image Name="rwzx_7.png" />
+          <Image Name="rwzx_8.png" />
+          <Image Name="rwzx_9.png" />
+          <Image Name="ssc_1.png" />
+          <Image Name="ssc_10.png" />
+          <Image Name="ssc_11.png" />
+          <Image Name="ssc_12.png" />
+          <Image Name="ssc_13.png" />
+          <Image Name="ssc_14.png" />
+          <Image Name="ssc_15.png" />
+          <Image Name="ssc_16.png" />
+          <Image Name="ssc_17.png" />
+          <Image Name="ssc_18.png" />
+          <Image Name="ssc_19.png" />
+          <Image Name="ssc_2.png" />
+          <Image Name="ssc_20.png" />
+          <Image Name="ssc_21.png" />
+          <Image Name="ssc_22.png" />
+          <Image Name="ssc_23.png" />
+          <Image Name="ssc_3.png" />
+          <Image Name="ssc_4.png" />
+          <Image Name="ssc_5.png" />
+          <Image Name="ssc_6.png" />
+          <Image Name="ssc_7.png" />
+          <Image Name="ssc_8.png" />
+          <Image Name="ssc_9.png" />
+        </Folder>
+        <Folder Name="testCard">
+          <Image Name="down_hand_num19.png" />
+          <Image Name="down_hand_num29.png" />
+          <Image Name="down_hand_num31.png" />
+          <Image Name="down_hand_num9.png" />
+          <Image Name="left_out_num19.png" />
+          <Image Name="left_out_num29.png" />
+          <Image Name="left_out_num9.png" />
+        </Folder>
+        <Folder Name="turntable">
+          <Image Name="test.png" />
+          <Image Name="zphd_1.png" />
+          <Image Name="zphd_1_1.png" />
+          <Image Name="zphd_10.png" />
+          <Image Name="zphd_11.png" />
+          <Image Name="zphd_12.png" />
+          <Image Name="zphd_13.png" />
+          <Image Name="zphd_14.png" />
+          <Image Name="zphd_15.png" />
+          <Image Name="zphd_2.png" />
+          <Image Name="zphd_3.png" />
+          <Image Name="zphd_4.png" />
+          <Image Name="zphd_5.png" />
+          <Image Name="zphd_6.png" />
+          <Image Name="zphd_7.png" />
+          <Image Name="zphd_8.png" />
+          <Image Name="zphd_9.png" />
+        </Folder>
+        <Folder Name="vip">
+          <Image Name="vip_1.png" />
+          <Image Name="vip_1_1.png" />
+          <Image Name="vip_10.png" />
+          <Image Name="vip_2.png" />
+          <Image Name="vip_2_1.png" />
+          <Image Name="vip_3.png" />
+          <Image Name="vip_3_1.png" />
+          <Image Name="vip_4.png" />
+          <Image Name="vip_4_1.png" />
+          <Image Name="vip_5.png" />
+          <Image Name="vip_6.png" />
+          <Image Name="vip_7.png" />
+          <Image Name="vip_8.png" />
+          <Image Name="vip_9.png" />
+        </Folder>
+        <Project Name="ArenaLayer.csd" Type="Layer" />
+        <Project Name="AuthenticationLayer.csd" Type="Layer" />
+        <Project Name="CashCowLayer.csd" Type="Layer" />
+        <Project Name="ChooseCityLayer.csd" Type="Layer" />
+        <Project Name="CoinGameLayer.csd" Type="Layer" />
+        <Project Name="CoinShopLayer.csd" Type="Layer" />
+        <Project Name="ConfLayer.csd" Type="Layer" />
+        <Project Name="DialogLayer.csd" Type="Layer" />
+        <Project Name="EmailLayer.csd" Type="Layer" />
+        <Project Name="FeedbackLayer.csd" Type="Layer" />
+        <Project Name="FukaShopLayer.csd" Type="Layer" />
+        <Project Name="HallScene.csd" Type="Scene" />
+        <Project Name="InvitationLayer.csd" Type="Layer" />
+        <Project Name="LoadingLayer.csd" Type="Layer" />
+        <Project Name="LoginScene.csd" Type="Scene" />
+        <Project Name="MemberLayer.csd" Type="Layer" />
+        <Project Name="PersonalLayer.csd" Type="Layer" />
+        <Project Name="ReceivePropsLayer.csd" Type="Layer" />
+        <Project Name="RoleLayer.csd" Type="Layer" />
+        <Project Name="SettingLayer.csd" Type="Layer" />
+        <Project Name="ShopLayer.csd" Type="Layer" />
+        <Project Name="SignLayer.csd" Type="Layer" />
+        <Project Name="SystemTipsLayer.csd" Type="Layer" />
+        <Project Name="TaskLayer.csd" Type="Layer" />
+        <Project Name="TipsDialog.csd" Type="Layer" />
+        <Project Name="TipsFloat.csd" Type="Layer" />
+        <Project Name="TurnTableLayer.csd" Type="Layer" />
+        <Project Name="UpdateScene.csd" Type="Scene" />
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>

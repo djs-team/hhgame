@@ -1,0 +1,40 @@
+pripri/**
+	 * 私房牌桌人员变更
+	 */
+	int	MJ_ROOM_TABLE_PLAYER_CHANGE					= MJ_ROOM_MATCHGAME_ID + 8
+返回消息体:
+	private List<Player> pList;//玩家信息
+	private String tableInstanceId;//牌桌id
+	private int mSeatID;//玩家id
+	private int changePid;//变化玩家的pid
+	private int changeSeatId;//变化玩家的座位id
+	private int enterOrQuite;//进入或者退出  1  进入  2  断线重连
+	private String keyPrivateTable;//私房编号id
+	
+	private String soundAppId;//语音组链接id
+	private int isOpenSoundApp;//是否开启语音   0 开  1 不开
+	private int dongSeatId;//东  位置 seatid
+	private String choiceRule;//牌桌选择的规则
+	private int tablePhase;//牌桌阶段
+	private String roomId;//房间类型R1和R2
+	private int mode;//房间mode1代表四人2代表两人
+	private String ruldStr;//规则 名称 id
+	private String gameType;//麻将 场次M1新手场M2代表初级场M3高级场M4大师场
+	private int baseCoin;//底分
+	private int taskFlag;//0：代表没有课领取任务1：代表有可领取任务
+	玩家信息
+		private int pid;//玩家ID
+		private String nickName;//昵称
+		private String coins;//金币数量
+		private byte robotModel;//是否是机器人
+		private byte age;//年龄
+		private byte sex;//系别
+		private String photo;//系统默认头像
+		private String sdkPhotoUrl;//微信头像链接
+		private int exp;//玩家 
+		private byte vip;//vip等级
+		private byte seatID;//座位号
+		private String netIp;// 玩家ip地址
+		private int win;//赢得局数
+		private int lose;//输的局数
+		private int role;//角色

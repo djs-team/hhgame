@@ -1,0 +1,77 @@
+/**
+	 * 转盘配置
+	 */
+	int MJ_HALL_TURNTABLE = MJ_HALL_SERVER_ID + 72;
+请求消息:
+	基础信息
+返回消息:
+	private List<TurntableConfig> configList;
+	private int code;//0代表可以免费1代表不可以免费可看视频2不可以转盘
+	private List<LuckyPrize> luckyPrize;//幸运大奖
+	private int status;//0成功其他失败
+	TurntableConfig消息体:
+		private int turntableId;//转盘ID
+		private int propType;//道具大类
+		private int propCode;//道具编码
+		private int propNum;//道具数量
+		private String describe;//描述
+	LuckyPrize的消息体：
+		private String luckPrizeStr;//幸运大奖描述
+		private String pName;//玩家昵称
+		private long time;//产生大奖的时间
+/**
+	 * 玩家进行转盘随机奖励
+	 */
+	int MJ_HALL_PLAYER_TURNTABLE = MJ_HALL_SERVER_ID + 74;
+求消息:
+	基础信息
+返回消息:
+	private int turntableId;//转盘区域ID
+	private int propType;//道具奖励大类
+	private int propCode;//道具奖励编码
+	private int propNum;//道具奖励数量
+	private int multiple;//看视频的倍数
+	private int status;//0正确其他失败
+/**
+	 * 转盘奖励领取
+	 */
+	int MJ_HALL_PLAYER_TURNTABLE_RECEIVE = MJ_HALL_SERVER_ID + 73;
+求消息:
+	private int turntableId;//转盘区域ID
+	private int type;//0代表直接领取1代表看视频领取
+返回消息:
+	private int propType;//道具奖励大类
+	private int propCode;//道具奖励编码
+	private int propNum;//道具奖励数量
+	private int code;//0可以免费进行1可以看视频进行2不可以次数已用完
+	private int status;//0正确其他失败
+	/**
+	 * 玩家转盘奖励记录
+	 */
+	int MJ_HALL_PLAYER_TURNTABLE_LOG = MJ_HALL_SERVER_ID + 75;
+求消息:
+	基础信息
+返回消息:
+	private int status;//0正确其他失败
+	private List<TurntableLog> turntableLogList;//日志列表
+	TurntableLog的消息体:
+		private int propType;//道具奖励大类
+		private int propCode;//道具奖励编码
+		private int propNum;//道具奖励数量
+		private String propName;//道具名称
+		private String propUnit;//单位
+		private String describe;//描述
+		private long time;//时间
+/**
+	 * 幸运大奖
+	 */
+	int MJ_HALL_LUCKY_PRIZE = MJ_HALL_SERVER_ID + 89;
+求消息:
+	基础信息
+返回消息:
+	private List<LuckyPrize> luckyPrize;//幸运大奖
+	private int status;//0成功其他失败
+	LuckyPrize的消息体：
+		private String luckPrizeStr;//幸运大奖描述
+		private String pName;//玩家昵称
+		private long time;//产生大奖的时间

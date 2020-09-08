@@ -1,0 +1,335 @@
+<Solution>
+  <PropertyGroup Name="uimj" Version="3.10.0.0" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Folder Name="card">
+          <Folder Name="ground">
+            <Folder Name="deck">
+              <Image Name="left_deck_bm.png" />
+              <Image Name="left_deck_top.png" />
+              <Image Name="self_deck_1.png" />
+              <Image Name="self_deck_10.png" />
+              <Image Name="self_deck_2.png" />
+              <Image Name="self_deck_3.png" />
+              <Image Name="self_deck_4.png" />
+              <Image Name="self_deck_5.png" />
+              <Image Name="self_deck_6.png" />
+              <Image Name="self_deck_7.png" />
+              <Image Name="self_deck_8.png" />
+              <Image Name="self_deck_9.png" />
+            </Folder>
+            <Folder Name="hand">
+              <Image Name="left_hand.png" />
+              <Image Name="left_hand_0.png" />
+              <Image Name="self_hand_0.png" />
+              <Image Name="self_hand_1.png" />
+              <Image Name="self_hand_2.png" />
+              <Image Name="self_hand_3.png" />
+              <Image Name="self_hand_4.png" />
+              <Image Name="self_hand_5.png" />
+              <Image Name="self_hand_6.png" />
+              <Image Name="top_hand.png" />
+            </Folder>
+            <Folder Name="out">
+              <Image Name="left_out_bm.png" />
+              <Image Name="left_out_top.png" />
+              <Image Name="self_out_1.png" />
+              <Image Name="self_out_2.png" />
+              <Image Name="self_out_3.png" />
+              <Image Name="self_out_4.png" />
+              <Image Name="self_out_5.png" />
+            </Folder>
+          </Folder>
+          <Folder Name="value">
+            <Folder Name="leftshow">
+              <Image Name="feng_left_1.png" />
+              <Image Name="feng_left_10.png" />
+              <Image Name="feng_left_11.png" />
+              <Image Name="feng_left_2.png" />
+              <Image Name="feng_left_3.png" />
+              <Image Name="feng_left_4.png" />
+              <Image Name="feng_left_5.png" />
+              <Image Name="feng_left_6.png" />
+              <Image Name="feng_left_7.png" />
+              <Image Name="feng_left_8.png" />
+              <Image Name="feng_left_9.png" />
+              <Image Name="tiao_left_1.png" />
+              <Image Name="tiao_left_2.png" />
+              <Image Name="tiao_left_3.png" />
+              <Image Name="tiao_left_4.png" />
+              <Image Name="tiao_left_5.png" />
+              <Image Name="tiao_left_6.png" />
+              <Image Name="tiao_left_7.png" />
+              <Image Name="tiao_left_8.png" />
+              <Image Name="tiao_left_9.png" />
+              <Image Name="tong_left_1.png" />
+              <Image Name="tong_left_2.png" />
+              <Image Name="tong_left_3.png" />
+              <Image Name="tong_left_4.png" />
+              <Image Name="tong_left_5.png" />
+              <Image Name="tong_left_6.png" />
+              <Image Name="tong_left_7.png" />
+              <Image Name="tong_left_8.png" />
+              <Image Name="tong_left_9.png" />
+              <Image Name="wan_left_1.png" />
+              <Image Name="wan_left_2.png" />
+              <Image Name="wan_left_3.png" />
+              <Image Name="wan_left_4.png" />
+              <Image Name="wan_left_5.png" />
+              <Image Name="wan_left_6.png" />
+              <Image Name="wan_left_7.png" />
+              <Image Name="wan_left_8.png" />
+              <Image Name="wan_left_9.png" />
+            </Folder>
+            <Folder Name="selfhand">
+              <Image Name="feng_hand_1.png" />
+              <Image Name="feng_hand_10.png" />
+              <Image Name="feng_hand_11.png" />
+              <Image Name="feng_hand_2.png" />
+              <Image Name="feng_hand_3.png" />
+              <Image Name="feng_hand_4.png" />
+              <Image Name="feng_hand_5.png" />
+              <Image Name="feng_hand_6.png" />
+              <Image Name="feng_hand_7.png" />
+              <Image Name="feng_hand_8.png" />
+              <Image Name="feng_hand_9.png" />
+              <Image Name="tiao_hand_1.png" />
+              <Image Name="tiao_hand_2.png" />
+              <Image Name="tiao_hand_3.png" />
+              <Image Name="tiao_hand_4.png" />
+              <Image Name="tiao_hand_5.png" />
+              <Image Name="tiao_hand_6.png" />
+              <Image Name="tiao_hand_7.png" />
+              <Image Name="tiao_hand_8.png" />
+              <Image Name="tiao_hand_9.png" />
+              <Image Name="tong_hand_1.png" />
+              <Image Name="tong_hand_2.png" />
+              <Image Name="tong_hand_3.png" />
+              <Image Name="tong_hand_4.png" />
+              <Image Name="tong_hand_5.png" />
+              <Image Name="tong_hand_6.png" />
+              <Image Name="tong_hand_7.png" />
+              <Image Name="tong_hand_8.png" />
+              <Image Name="tong_hand_9.png" />
+              <Image Name="wan_hand_1.png" />
+              <Image Name="wan_hand_2.png" />
+              <Image Name="wan_hand_3.png" />
+              <Image Name="wan_hand_4.png" />
+              <Image Name="wan_hand_5.png" />
+              <Image Name="wan_hand_6.png" />
+              <Image Name="wan_hand_7.png" />
+              <Image Name="wan_hand_8.png" />
+              <Image Name="wan_hand_9.png" />
+            </Folder>
+            <Folder Name="selfshow">
+              <Image Name="feng_show_1.png" />
+              <Image Name="feng_show_10.png" />
+              <Image Name="feng_show_11.png" />
+              <Image Name="feng_show_2.png" />
+              <Image Name="feng_show_3.png" />
+              <Image Name="feng_show_4.png" />
+              <Image Name="feng_show_5.png" />
+              <Image Name="feng_show_6.png" />
+              <Image Name="feng_show_7.png" />
+              <Image Name="feng_show_8.png" />
+              <Image Name="feng_show_9.png" />
+              <Image Name="tiao_show_1.png" />
+              <Image Name="tiao_show_2.png" />
+              <Image Name="tiao_show_3.png" />
+              <Image Name="tiao_show_4.png" />
+              <Image Name="tiao_show_5.png" />
+              <Image Name="tiao_show_6.png" />
+              <Image Name="tiao_show_7.png" />
+              <Image Name="tiao_show_8.png" />
+              <Image Name="tiao_show_9.png" />
+              <Image Name="tong_show_1.png" />
+              <Image Name="tong_show_2.png" />
+              <Image Name="tong_show_3.png" />
+              <Image Name="tong_show_4.png" />
+              <Image Name="tong_show_5.png" />
+              <Image Name="tong_show_6.png" />
+              <Image Name="tong_show_7.png" />
+              <Image Name="tong_show_8.png" />
+              <Image Name="tong_show_9.png" />
+              <Image Name="wan_show_1.png" />
+              <Image Name="wan_show_2.png" />
+              <Image Name="wan_show_3.png" />
+              <Image Name="wan_show_4.png" />
+              <Image Name="wan_show_5.png" />
+              <Image Name="wan_show_6.png" />
+              <Image Name="wan_show_7.png" />
+              <Image Name="wan_show_8.png" />
+              <Image Name="wan_show_9.png" />
+            </Folder>
+            <Folder Name="topshow">
+              <Image Name="feng_top_1.png" />
+              <Image Name="feng_top_10.png" />
+              <Image Name="feng_top_11.png" />
+              <Image Name="feng_top_2.png" />
+              <Image Name="feng_top_3.png" />
+              <Image Name="feng_top_4.png" />
+              <Image Name="feng_top_5.png" />
+              <Image Name="feng_top_6.png" />
+              <Image Name="feng_top_7.png" />
+              <Image Name="feng_top_8.png" />
+              <Image Name="feng_top_9.png" />
+              <Image Name="tiao_top_1.png" />
+              <Image Name="tiao_top_2.png" />
+              <Image Name="tiao_top_3.png" />
+              <Image Name="tiao_top_4.png" />
+              <Image Name="tiao_top_5.png" />
+              <Image Name="tiao_top_6.png" />
+              <Image Name="tiao_top_7.png" />
+              <Image Name="tiao_top_8.png" />
+              <Image Name="tiao_top_9.png" />
+              <Image Name="tong_top_1.png" />
+              <Image Name="tong_top_2.png" />
+              <Image Name="tong_top_3.png" />
+              <Image Name="tong_top_4.png" />
+              <Image Name="tong_top_5.png" />
+              <Image Name="tong_top_6.png" />
+              <Image Name="tong_top_7.png" />
+              <Image Name="tong_top_8.png" />
+              <Image Name="tong_top_9.png" />
+              <Image Name="wan_top_1.png" />
+              <Image Name="wan_top_2.png" />
+              <Image Name="wan_top_3.png" />
+              <Image Name="wan_top_4.png" />
+              <Image Name="wan_top_5.png" />
+              <Image Name="wan_top_6.png" />
+              <Image Name="wan_top_7.png" />
+              <Image Name="wan_top_8.png" />
+              <Image Name="wan_top_9.png" />
+            </Folder>
+          </Folder>
+        </Folder>
+        <Folder Name="code">
+          <Folder Name="select">
+            <Image Name="chi.png" />
+            <Image Name="chiting.png" />
+            <Image Name="gang.png" />
+            <Image Name="guo.png" />
+            <Image Name="hu.png" />
+            <Image Name="peng.png" />
+            <Image Name="pengting.png" />
+            <Image Name="ting.png" />
+          </Folder>
+        </Folder>
+        <Folder Name="common">
+          <Image Name="bt_1.png" />
+          <Image Name="bt_2.png" />
+          <Image Name="bt_3.png" />
+          <Image Name="bt_4.png" />
+          <Image Name="bz_2.png" />
+          <Image Name="gy_fh.png" />
+          <Image Name="jinbi.png" />
+        </Folder>
+        <Folder Name="dele">
+          <Image Name="liangAction.png" />
+          <Image Name="liangpai.jpg" />
+          <Image Name="lipai.jpg" />
+          <Image Name="paidui.jpg" />
+          <Image Name="paihai.jpg" />
+        </Folder>
+        <Folder Name="desk">
+          <Image Name="j.png" />
+          <Image Name="j_1.png" />
+          <Image Name="m.png" />
+          <Image Name="m_1.png" />
+          <Image Name="pz_1.png" />
+          <Image Name="pz_10.png" />
+          <Image Name="pz_11.png" />
+          <Image Name="pz_12.png" />
+          <Image Name="pz_13.png" />
+          <Image Name="pz_14.png" />
+          <Image Name="pz_15.png" />
+          <Image Name="pz_16.png" />
+          <Image Name="pz_2.png" />
+          <Image Name="pz_20.png" />
+          <Image Name="pz_26.png" />
+          <Image Name="pz_27.png" />
+          <Image Name="pz_28.png" />
+          <Image Name="pz_29.png" />
+          <Image Name="pz_3.png" />
+          <Image Name="pz_30.png" />
+          <Image Name="pz_31.png" />
+          <Image Name="pz_32.png" />
+          <Image Name="pz_33.png" />
+          <Image Name="pz_34.png" />
+          <Image Name="pz_35.png" />
+          <Image Name="pz_36.png" />
+          <Image Name="pz_37.png" />
+          <Image Name="pz_38.png" />
+          <Image Name="pz_39.png" />
+          <Image Name="pz_4.png" />
+          <Image Name="pz_41.png" />
+          <Image Name="pz_42.png" />
+          <Image Name="pz_43.png" />
+          <Image Name="pz_44.png" />
+          <Image Name="pz_45.png" />
+          <Image Name="pz_5.png" />
+          <Image Name="pz_6.png" />
+          <Image Name="pz_7.png" />
+          <Image Name="pz_8.png" />
+          <Image Name="pz_9.png" />
+          <Image Name="pz_pz.png" />
+          <Image Name="sz_1.png" />
+          <Image Name="sz_2.png" />
+          <Image Name="sz_3.png" />
+          <Image Name="sz_4.png" />
+          <Image Name="sz_5.png" />
+          <Image Name="sz_6.png" />
+          <Image Name="t.png" />
+          <Image Name="t_1.png" />
+          <Image Name="x.png" />
+          <Image Name="x_1.png" />
+          <Image Name="xx.png" />
+          <Image Name="xx_1.png" />
+          <Image Name="z.png" />
+          <Image Name="z_1.png" />
+        </Folder>
+        <Folder Name="fnt">
+          <TTF Name="hkhbtW12.ttc" />
+        </Folder>
+        <Folder Name="png">
+          <Image Name="ssc_bg2.png" />
+          <Image Name="ssc_bg3.png" />
+        </Folder>
+        <Folder Name="result">
+          <Image Name="ssc_1.png" />
+          <Image Name="ssc_10.png" />
+          <Image Name="ssc_11.png" />
+          <Image Name="ssc_12.png" />
+          <Image Name="ssc_13.png" />
+          <Image Name="ssc_14.png" />
+          <Image Name="ssc_15.png" />
+          <Image Name="ssc_16.png" />
+          <Image Name="ssc_17.png" />
+          <Image Name="ssc_18.png" />
+          <Image Name="ssc_19.png" />
+          <Image Name="ssc_2.png" />
+          <Image Name="ssc_20.png" />
+          <Image Name="ssc_21.png" />
+          <Image Name="ssc_22.png" />
+          <Image Name="ssc_23.png" />
+          <Image Name="ssc_24.png" />
+          <Image Name="ssc_3.png" />
+          <Image Name="ssc_4.png" />
+          <Image Name="ssc_5.png" />
+          <Image Name="ssc_6.png" />
+          <Image Name="ssc_7.png" />
+          <Image Name="ssc_8.png" />
+          <Image Name="ssc_9.png" />
+        </Folder>
+        <Project Name="DeskBgLayer.csd" Type="Layer" />
+        <Project Name="DeskCardLayer.csd" Type="Layer" />
+        <Project Name="DeskHeadLayer.csd" Type="Layer" />
+        <Project Name="DeskLayer.csd" Type="Layer" />
+        <Project Name="DeskResultLayer.csd" Type="Layer" />
+        <Project Name="DeskTopLayer.csd" Type="Layer" />
+        <Project Name="MjPlayScene.csd" Type="Scene" />
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>

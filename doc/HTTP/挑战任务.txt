@@ -1,0 +1,55 @@
+	/**
+	 * 玩家挑战任务信息
+	 */
+	int MJ_HALL_PLAYER_TASK_CHALLENGE = MJ_HALL_SERVER_ID + 64;
+请求信息:
+	基础信息
+返回信息:
+	private List<PlayerTaskChallenge> taskList;//任务列表
+	private int status;//状态0成功，其他失败
+	PlayerTaskChallenge的消息体
+		private int taskId;//任务ID
+		private String taskName;//任务名称
+		private int taskType;//任务类型
+		private int taskNum;//条件数量
+		private int propType;//道具大类
+		private int propCode;//道具编码
+		private int propNum;//奖励道具数量
+		private int stage;//任务阶段
+		private int reachNum;//已经达到数量
+		private int status;//状态0代表未完成1.未领取2.已完成
+	/**
+	 * 玩家领取挑战任务
+	 */
+	int MJ_HALL_PLAYER_TASK_CHALLENGE_RECEIVE = MJ_HALL_SERVER_ID + 65;
+请求消息:
+	private int code;//任务ID
+	private int stage;//挑战任务阶段
+返回消息:
+	private int status;//0成功其他失败
+	private RewardProp rewardProp;//奖励道具
+	private int stage;//任务阶段
+	RewardProp的消息体:
+		private int propType;//道具大类
+		private int propCode;//道具大类
+		private int propNum;//奖励道具数量
+/**
+	 * 玩家刷新挑战任务信息
+	 */
+	int MJ_HALL_PLAYER_TASK_CHALLENGE_REFRESH = MJ_HALL_SERVER_ID + 66;
+请求消息:
+	基础信息
+返回消息:
+	private List<PlayerTaskChallenge> taskList;//任务列表
+	private int status;//状态0成功，其他失败
+	PlayerTaskChallenge的消息体:
+		private int taskId;//任务ID
+		private String taskName;//任务名称
+		private int taskType;//任务类型
+		private int taskNum;//条件数量
+		private int propType;//道具大类
+		private int propCode;//道具编码
+		private int propNum;//奖励道具数量
+		private int stage;//任务阶段
+		private int reachNum;//已经达到数量
+		private int status;//状态0代表未完成1.未领取2.已完成

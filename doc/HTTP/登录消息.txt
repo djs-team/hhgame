@@ -1,0 +1,27 @@
+/**
+	 * 登录 
+	 */
+	int	MJ_HALL_MESSAGE_LOGIN = MJ_HALL_SERVER_ID + 1;
+	
+请求消息体：
+	private byte platform; // 登陆平台1游客2手机3微信4闲聊5账号登录
+	private String account;// 账号
+	private String imei; // 手机唯一标识
+	private String device; // 设备
+	private String phoneModel;//登录手机设备  ios  android
+	private String unionId;//微信唯一标识
+返回消息体:
+
+	private short status; // 返回值
+	private byte platform;// 平台
+	private String account; // 账号
+	private String key; // 登陆成功后，服务端存的session KEY
+	private long timetamp; // 登陆时间戳
+    private int lastChannel;//玩家上次登录的城市
+
+    private int fistLogin;//0是第一次1代表不是第一次
+    private List<RewardProp> rewardList;//首次登陆奖励的东西
+	RewardProp列表信息：
+		private int propType;//道具大类
+		private int propCode;//道具编码
+		private int propNum;//道具数量

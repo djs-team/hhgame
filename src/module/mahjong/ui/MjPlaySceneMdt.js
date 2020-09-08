@@ -43,9 +43,7 @@ load('module/mahjong/ui/MjPlaySceneMdt', function () {
         },
 
         onRegister: function () {
-            let test = this.getNotificationList()
             this.initView()
-
         },
 
         onRemove: function () {

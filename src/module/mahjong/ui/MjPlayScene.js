@@ -36,7 +36,6 @@ load('module/mahjong/ui/MjPlayScene', function () {
         },
 
         clearTableView: function () {
-            cc.log('============MjPlayScene============clearTableView============')
             this.DeskHeadLayer.clearView()
             this.DeskCardLayer.clearView()
             this.DeskTopLayer.clearView()

@@ -16,12 +16,12 @@ load('game/msghandler/EnterTableProto', function () {
         handleMsg: function (msg) {
             this._super(msg)
             if (msg.code !== 0) {
-                appInstance.gameAgent().Tips(GameConfig.mjError[msg.code])
                 let curSceneName = appInstance.sceneManager().getCurSceneName()
                 if (curSceneName !== 'HallScene') {
                     let HallScene = include('game/ui/scene/HallScene')
                     appInstance.sceneManager().replaceScene(new HallScene())
                 }
+                appInstance.gameAgent().Tips(GameConfig.mjError[msg.code])
                 return
             }
             let dialogMsg = {

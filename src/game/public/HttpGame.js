@@ -824,7 +824,6 @@ load('game/public/HttpGame', function () {
             }
             msg.msgID = HttpEvent.MJ_HALL_COIN_STORE
             appInstance.httpAgent().sendPost(msg)
-
         },
 
 
@@ -833,8 +832,8 @@ load('game/public/HttpGame', function () {
                 cc.log('------------->>>httpGame COINSSHOPDATASBack error happen')
                 return
             }
-            appInstance.sendNotification(GameEvent.COINSHOP_GET, msg)
 
+            appInstance.sendNotification(GameEvent.COINSHOP_GET, msg)
         },
 
         COINSSHOPBUYReq: function (msg) {

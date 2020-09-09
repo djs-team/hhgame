@@ -119,6 +119,7 @@
           {
             "ClipAble": false,
             "BackColorAlpha": 0,
+            "ComboBoxIndex": 1,
             "SingleColor": {
               "R": 0,
               "G": 0,
@@ -275,7 +276,7 @@
                   "Y": 0.9362
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.0625
                 },
                 "LeftMargin": 744.544,
@@ -544,7 +545,7 @@
                   "Y": 0.9323
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.0625
                 },
                 "LeftMargin": 958.8101,

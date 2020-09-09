@@ -31,7 +31,7 @@ load('game/ui/scene/HallScene', function () {
 
 
                 'bmPnl/fuKaShopBtn': { onClicked: this.onFukaShopClick },
-                'bmPnl/coinShopBtn': { onClicked: this.onSettingClick },
+                'bmPnl/coinShopBtn': { onClicked: this.onCoinShopClick },
                 'bmPnl/bmListPnl/signPnl/signBtn': { onClicked: this.onSignBtnClick },
                 'bmPnl/bmListPnl/taskPnl': { onClicked: this.onTaskClick },
                 'bmPnl/bmListPnl/rolesPnl/rolesBtn': { onClicked: this.onRoleClick },
@@ -114,6 +114,10 @@ load('game/ui/scene/HallScene', function () {
 
         onMemberClick: function () {
             appInstance.gameAgent().addPopUI(ResConfig.Ui.MemberLayer)
+        },
+
+        onCoinShopClick: function () {
+            appInstance.gameAgent().addPopUI(ResConfig.Ui.CoinShopLayer)
         },
 
         onGoShopClick: function () {

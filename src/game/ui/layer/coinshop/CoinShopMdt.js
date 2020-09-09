@@ -51,7 +51,6 @@ load('game/ui/layer/coinshop/CoinShopMdt', function () {
             }
         },
 
-
         onRegister: function () {
 
             this.initView()
@@ -63,7 +62,7 @@ load('game/ui/layer/coinshop/CoinShopMdt', function () {
         initView: function () {
 
             let msg = {}
-            appInstance.gameAgent().httpGame().ROLESELECTEDBack(msg)
+            appInstance.gameAgent().httpGame().COINSSHOPDATASReq(msg)
             let data = {
                 'coin' : appInstance.dataManager().getUserData().coin,
                 'diamonds' : appInstance.dataManager().getUserData().diamonds,
@@ -98,7 +97,7 @@ load('game/ui/layer/coinshop/CoinShopMdt', function () {
         onBuyCoinsResult: function (body) {
 
             let data = {
-                propType : GameConfig.propType_role,
+                propType : GameConfig.propType_currency,
                 propCode : GameConfig.propType_currency_coin,
                 propNum : body.coins
             }
@@ -107,6 +106,7 @@ load('game/ui/layer/coinshop/CoinShopMdt', function () {
         },
 
         onFormatPropMsg: function (data) {
+
 
             let propData = {}
             GameUtil.getPropData(data,propData,GameUtil.CURRENCYTYPE_1,GameUtil.UNITLOCATION_BEFORE,'x')
@@ -129,7 +129,7 @@ load('game/ui/layer/coinshop/CoinShopMdt', function () {
 
         watchVideoResult: function (body) {
             let propData = {
-                propType : GameConfig.propType_role,
+                propType : GameConfig.propType_currency,
                 propCode : GameConfig.propType_currency_diamonds,
                 propNum : body.diamonds
             }
@@ -143,6 +143,7 @@ load('game/ui/layer/coinshop/CoinShopMdt', function () {
 
         onUpdateAddressResult: function () {
 
+            appInstance.gameAgent().Tips('修改成功！')
             this.view.onCloseUpdateAddressClicked()
 
         }

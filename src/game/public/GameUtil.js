@@ -109,6 +109,7 @@ load('game/public/GameUtil',function () {
         let propNum = prop.propNum = data.propNum
 
 
+
         if(currencyType == GameUtil.CURRENCYTYPE_1){
             prop.res = GameConfig.propsRes[propType]['propCode'][propCode][GameConfig.ICON_RESULT_CURRENCY]
         }else{

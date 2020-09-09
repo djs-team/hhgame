@@ -2,30 +2,35 @@
 load('game/ui/layer/coinshop/CoinShopLayer', function () {
     let ResConfig = include('game/config/ResConfig')
     let BaseLayer = include('public/ui/BaseLayer')
-    let shopLayer = BaseLayer.extend({
-        _className: 'shopLayer',
+    let CoinShopMdt = include('game/ui/layer/coinshop/CoinShopMdt')
+    let CoinShopLayer = BaseLayer.extend({
+        _className: 'CoinShopLayer',
+        _dataMsg : {},
         ctor: function () {
-            this._super(ResConfig.View.ShopLayer)
+            this._super(ResConfig.View.CoinShopLayer)
+            this.registerMediator(new CoinShopMdt(this))
         },
         RES_BINDING: function () {
             return {
-                'pnl/dataPnl/timesText': {  },
-                'pnl/dataPnl/coinPnl/coinsCnt': {  },
-                'pnl/dataPnl/diamondsPnl/diamondsCnt': {  },
-                'pnl/dataPnl/fuKaPnl/fuKaCnt': {  },
-                'pnl/dataPnl/goodsTopPnl': {  },
-                'pnl/dataPnl/goodsBottomPnl': {  },
-                'pnl/dataPnl/goodCell': {  },
+
+                'topPnl/closeBtn': {onClicked : this.onColseClicked  },
+
+                'topPnl/coinPnl': {  },
+                'topPnl/diamondsPnl': {  },
+                'topPnl/fuKaPnl': {  },
+
+                'btmPnl/midPnl/videoBtn': {onClicked : this.onVideoClicked  },
+                'btmPnl/midPnl/timesText': {  },
+
+                'btmPnl/rightPnl/goodMidNd': {  },
+                'btmPnl/rightPnl/goodCell': {  },
+                'btmPnl/rightPnl/addressBtn': {onClicked : this.onAddressClicked  },
 
 
-                'pnl/btnPnl/closeBtn': {onClicked : this.onColseClicked  },
-                'pnl/btnPnl/addressBtn': {onClicked : this.onAddressClicked  },
-                'pnl/btnPnl/videoBtn': {onClicked : this.onVideoClicked  },
 
-
-                'pnl/popUpPnl/addressPnl': {  },
-                'pnl/popUpPnl/addressPnl/confirmBtn': {onClicked : this.onConfirmClicked  },
-                'pnl/popUpPnl/addressPnl/updateAddressCloseBtn': {onClicked : this.onCloseUpdateAddressClicked  },
+                'popUpPnl/addressPnl': {  },
+                'popUpPnl/addressPnl/confirmBtn': {onClicked : this.onConfirmClicked  },
+                'popUpPnl/addressPnl/updateAddressCloseBtn': {onClicked : this.onCloseUpdateAddressClicked  },
             }
         },
         onCreate: function () {
@@ -33,6 +38,7 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
         },
         onEnter: function () {
             this._super()
+            this.initData()
             this.initView()
         },
         onExit: function () {
@@ -44,8 +50,8 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
 
         initData: function () {
 
-            this._dataMsg = {}
-
+            this.videoBtn.setBright(false)
+            this.videoBtn.setTouchEnabled(false)
         },
 
         initView: function () {
@@ -67,8 +73,7 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
 
         onColseClicked: function () {
 
-            appInstance.uiManager().remove(this)
-
+            appInstance.uiManager().removeUI(this)
         },
 
         onUpdatePropsData: function (data) {
@@ -127,34 +132,32 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
 
         onInitGoodsView: function (data) {
 
-            for(let i = 1; i <= data.goodsData.length; i++){
+            for(let i = 0; i < data.goodsData.length; i++){
 
                 let goodsData = data.goodsData[i]
                 let goodsCell = this.goodCell.clone()
+                goodsCell.setVisible(true)
 
+                this.goodMidNd.addChild(goodsCell)
 
-
-                let pnl
-                if(i < 4){
-                    pnl = this.goodsTopPnl
+                let cellPositionX = (i)%3 * 174
+                let cellPositionY
+                if( i < 3){
+                    cellPositionY = 18
                 }else{
-                    pnl = this.goodsBottomPnl
+                    cellPositionY = -180
                 }
 
-                pnl.addChild(goodsCell)
-                let positionX = pnl.getPositionX()
-                let positionY = pnl.getPositionY()
-
-                goodsCell.setPositionX(positionX + (i - 1)%3 * 174)
-                goodsCell.setPositionX(positionY)
+                goodsCell.setPositionX(cellPositionX)
+                goodsCell.setPositionY(cellPositionY)
 
                 let childPgName = 'coinsPg'
-                if(i > 5)
+                if(i > 4)
                     childPgName = 'coinsPg' + 5
                 else
-                    childPgName = 'coinsPg' + 1
+                    childPgName = 'coinsPg' + (i + 1)
 
-                this.goodCell.getChildByName(childPgName).setVisible(true)
+                goodsCell.getChildByName(childPgName).setVisible(true)
 
 
                 goodsCell._sendMsg = {
@@ -184,7 +187,7 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
 
             let msg
             let btnNameArray = {}
-            if(this._dataMsg.diamondsCnt < sender.diamonds){
+            if(this._dataMsg.diamondsCnt < sender._sendMsg.diamonds){
 
                 msg = '您的钻石数量不足，请先领取钻石'
                 btnNameArray.MidBtnName = '确 定'
@@ -222,12 +225,16 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
 
         onVideoClicked: function () {
 
+            this.videoBtn.setBright(true)
+            this.videoBtn.setTouchEnabled(true)
+
             appInstance.gameAgent().httpGame().VIDEOFORDIAMONDSReq()
 
         },
 
         onUpdateAddressData: function (data) {
 
+            cc.log('--------------onUpdateAddressData data : ' + JSON.stringify(data))
             if(data.hasOwnProperty('phone'))
                 this.addressPnl.getChildByName('phponeTextFiled').setString(data.phone)
 
@@ -279,5 +286,5 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
         }
 
     })
-    return shopLayer
+    return CoinShopLayer
 })

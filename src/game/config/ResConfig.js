@@ -102,7 +102,7 @@ load('game/config/ResConfig', function () {
         'RecordOthers': 'res/RecordOthers.json',
         'PersonalInfo': 'res/PersonalInfo.json',
         'Email': 'res/Email.json',
-        'ShopLayer': 'res/ShopLayer.json',
+        'CoinShopLayer': 'res/CoinShopLayer.json',
         'InvitationLayer': 'res/InvitationLayer.json',
         'TurnTableLayer': 'res/TurnTableLayer.json',
         'CashCowLayer': 'res/CashCowLayer.json',

@@ -128,7 +128,8 @@ load('module/mahjong/ui/DeskCardLayerMdt', function () {
         AutoPlayProto: function () {
             let pData = appInstance.dataManager().getPlayData()
             let selfInfo = pData.getSelfInfo()
-            this.view.updateHandCard(selfInfo.pSeatID, selfInfo)
+            let uiSeat = pData.seatId2UI(selfInfo.pSeatID)
+            this.view.updateHandCard(uiSeat, selfInfo)
         },
 
         DrawCardProto: function (msg) {

@@ -43,8 +43,8 @@ load('game/config/GameConfig', function () {
     GameConfig.FUNCTION_NAME_TURNTABLE = 'turntable'
     GameConfig.FUNCTION_NAME_SIGN = 'sign'
 
-    GameConfig.ICON_RESULT_BRIGHT = 'bright'
-    GameConfig.ICON_RESULT_ASH = 'ash'
+    GameConfig.ICON_RESULT_BRIGHT = 'brightImg'
+    GameConfig.ICON_RESULT_ASH = 'ashImg'
     GameConfig.ICON_RESULT_CURRENCY = 'currency'
     GameConfig.ICON_RESULT_LEAST = 'least'
     GameConfig.ICON_RESULT_MORE = 'more'

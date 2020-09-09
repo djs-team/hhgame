@@ -218,9 +218,9 @@ load('game/public/GameUtil',function () {
 
         let propCode = roleData[propCodeName]
         let propType = roleData[propTypeName]
-        for(let i = 0; i < roleData[needKeysArrayName].length; i++){
+        for(let i = 0; i < needKeysArrayName.length; i++){
 
-            let needKeyName = roleData[needKeysArrayName][i]
+            let needKeyName = needKeysArrayName[i]
             roleData[needKeyName] = GameConfig.propsRes[propType]['propCode'][propCode][needKeyName]
 
         }

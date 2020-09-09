@@ -33,6 +33,7 @@ load('game/ui/layer/role/RoleLayer', function () {
                 'pnl/dataPnl/coinPnl': {},
                 'pnl/dataPnl/coinPnl/coinAddBtn': {onClicked : this.goShopBtnClick},
 
+                'pnl/dataPnl/roleImg': {},
                 'pnl/dataPnl/roleName': {},
                 'pnl/dataPnl/roleVipName': {},
                 'pnl/dataPnl/timeText': {},
@@ -79,7 +80,6 @@ load('game/ui/layer/role/RoleLayer', function () {
             this.toBuyBtn.setVisible(false)
             this.listPnl.setVisible(false)
 
-            this.roleName.setVisible(false)
             this.roleVipName.setVisible(false)
             this.timeText.setVisible(false)
             this.roleImageCell.setVisible(false)
@@ -144,7 +144,6 @@ load('game/ui/layer/role/RoleLayer', function () {
                         this.initRoleCell(listPnl, cellIndex, dataList[dataIndex],cellData.roleCode == showRoleCode)
                     }
                 }
-
 
             }
         },
@@ -212,8 +211,7 @@ load('game/ui/layer/role/RoleLayer', function () {
         initRoleCell: function (listPnl, cellIndex,cellData,isSelected) {
 
             let cell = this.roleImageCell.clone()
-            listPnl.getChildren().splice(cellIndex,0,cell)
-
+            listPnl.addChild(cell)
 
             cell.setVisible(true)
             cell.setPositionY(0)
@@ -225,7 +223,8 @@ load('game/ui/layer/role/RoleLayer', function () {
                     cell.getChildByName('brightPg').setVisible(false)
                     cell.getChildByName('roleBrightPg').setVisible(false)
                     cell.getChildByName('usedPg').setVisible(false)
-                    cell.getChildByName('ashPg').loadTexture(cellData.ash)
+                    cell.getChildByName('ashPg').setVisible(true)
+                    cell.getChildByName('roleAshPg').loadTexture(cellData.ashImg)
 
                     break
                 case 1:
@@ -234,7 +233,8 @@ load('game/ui/layer/role/RoleLayer', function () {
                     cell.getChildByName('roleAshPg').setVisible(false)
                     if(status == 1)
                         cell.getChildByName('usedPg').setVisible(false)
-                    cell.getChildByName('roleBrightPg').loadTexture(cellData.bright)
+                    cell.getChildByName('brightPg').setVisible(true)
+                    cell.getChildByName('roleBrightPg').loadTexture(cellData.brightImg)
 
                     break
                 default:
@@ -243,13 +243,19 @@ load('game/ui/layer/role/RoleLayer', function () {
 
             if(isSelected){
 
-                this.onUpdateRoleDetailData(cell)
+                this.onUpdateRoleDetailData(cellData)
 
             }
 
             cell.addClickEventListener(function(sender, et) {
-                this.onRoleClick(sender)
+                this.onRoleClick(cellData)
             }.bind(this))
+
+        },
+
+        onRoleClick: function (sender) {
+
+            this.onUpdateRoleDetailData(sender)
 
         },
 
@@ -259,6 +265,7 @@ load('game/ui/layer/role/RoleLayer', function () {
             let status= cellData.status//0:未拥有1.已拥有2.已出战
 
             this.roleName.setString(cellData.roleName)
+            this.roleImg.loadTexture(cellData.currency)
 
             switch (getType) {
                 case 1:
@@ -280,6 +287,7 @@ load('game/ui/layer/role/RoleLayer', function () {
                     }
 
 
+                    this.timeText.setVisible(true)
                     this.timeText.setString(cellData.dueReminderText)
 
                     break
@@ -496,10 +504,10 @@ load('game/ui/layer/role/RoleLayer', function () {
                     break
             }
 
-            choiceBtn.setBright(true)
-            choiceBtn.setTouchEnabled(true)
-            otherBtn.setBright(false)
-            otherBtn.setTouchEnabled(false)
+            choiceBtn.setBright(false)
+            choiceBtn.setTouchEnabled(false)
+            otherBtn.setBright(true)
+            otherBtn.setTouchEnabled(true)
 
         },
 

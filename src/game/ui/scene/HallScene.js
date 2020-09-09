@@ -34,7 +34,7 @@ load('game/ui/scene/HallScene', function () {
                 'bmPnl/coinShopBtn': { onClicked: this.onCoinShopClick },
                 'bmPnl/bmListPnl/signPnl/signBtn': { onClicked: this.onSignBtnClick },
                 'bmPnl/bmListPnl/taskPnl': { onClicked: this.onTaskClick },
-                'bmPnl/bmListPnl/rolesPnl/rolesBtn': { onClicked: this.onRoleClick },
+                'bmPnl/bmListPnl/rolesPnl': { onClicked: this.onRoleClick },
                 'bmPnl/startQuickPnl/startQuickBtn': { onClicked: this.onSettingClick },
 
 

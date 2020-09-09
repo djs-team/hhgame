@@ -3,7 +3,7 @@
 	 */
 	int	MJ_GAME_REMOVEROBOT = MJ_GAME_MATCHGAME_ID + 26
 请求消息体：
-	private int state;//1 托管  2取消托管成功
+	private int state;//0解除托管状态 1托管
 	private String tableID;//桌子ID
 	private String extended;//冗余字段
 返回消息体:

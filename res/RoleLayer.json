@@ -1446,7 +1446,7 @@
                     "Children": [
                       {
                         "FontSize": 30,
-                        "LabelText": "出 战",
+                        "LabelText": " 出 战 ",
                         "FontResource": {
                           "Type": "Normal",
                           "Path": "font/hkhbtW12.ttc",
@@ -1488,17 +1488,17 @@
                           "Y": 0.514
                         },
                         "PreSize": {
-                          "X": 0.4239,
+                          "X": 0.5054,
                           "Y": 0.4348
                         },
-                        "LeftMargin": 47.4814,
-                        "RightMargin": 58.5186,
+                        "LeftMargin": 39.9814,
+                        "RightMargin": 51.0186,
                         "TopMargin": 18.5351,
                         "BottomMargin": 20.4649,
                         "Tag": 282,
                         "ActionTag": -72794224,
                         "Size": {
-                          "X": 78.0,
+                          "X": 93.0,
                           "Y": 30.0
                         },
                         "Name": "Text_57",

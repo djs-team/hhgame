@@ -90,6 +90,7 @@ load('game/ui/layer/sign/SignLayer', function () {
             }
             btnNameArray[data.showBtnName].setVisible(true)
 
+
             if(data.vipCode != 0){
                 this.ordinaryAcceptPnl.getChildByName('vipLevelText').setVisible(true)
                 this.ordinaryAcceptPnl.getChildByName('mulitAcceptText').setVisible(true)
@@ -178,7 +179,7 @@ load('game/ui/layer/sign/SignLayer', function () {
 
                 for(let j = 0; j < 6; j++){
 
-                  this.onInitCheckInCellData(data,i+j,listPnl)
+                  this.onInitCheckInCellData(data,6*i+j,listPnl)
 
                 }
 
@@ -190,14 +191,17 @@ load('game/ui/layer/sign/SignLayer', function () {
 
         onInitCheckInCellData: function (data,index,listPnl) {
 
+
             let cellData = data[index]
             let cell = this.signDataCell.clone()
             listPnl.addChild(cell)
 
+            cell.setPositionY(0)
+            cell.setPositionX(index%6*92)
             cell.setVisible(true)
             cell.setName(this._checkInName + cellData.checkinId)
             cell.getChildByName('awardsPg').loadTexture(cellData.res)
-            cell.getChildByName('awardsValueText').setString(cellData.awardsValueText)
+            cell.getChildByName('awardsValueText').setString(cellData.num)
             if(cellData.status != 2){
                 cell.getChildByName('acceptedPg').setVisible(false)
                 cell.getChildByName('blockPg').setVisible(false)
@@ -238,9 +242,10 @@ load('game/ui/layer/sign/SignLayer', function () {
             cell.getChildByName('treasureChestExplainPg').getChildByName('treasureChestExplainText').setString(data.bounsDesc)
 
 
-            let barPositionX = this.loadingBar.getPositionX()
+           // let barPositionX = this.loadingBar.getPositionX() + (data.id / this._maxSignNum * 465.00)
+            let barPositionX = this.loadingBar.getPositionX() - 10 + (data.id / this._maxSignNum * 450.00)
             let barPositionY = this.loadingBar.getPositionY()
-            cell.setPositionX(barPositionX + (data.id / this._maxSignNum * 465.00))
+            cell.setPositionX(barPositionX)
             cell.setPositionY(barPositionY)
 
             cell.addTouchEventListener(function (sender, et) {
@@ -253,6 +258,7 @@ load('game/ui/layer/sign/SignLayer', function () {
 
         onUpdateProCessBar: function (currentProcess,allProcess) {
 
+            cc.log('------------------currentProcess : ' + currentProcess + ' allProcess : ' + allProcess)
             this.loadingBar.setPercent(Math.round(currentProcess/allProcess*100))
 
         },
@@ -293,7 +299,7 @@ load('game/ui/layer/sign/SignLayer', function () {
             this.onUpdataReceiveFlag(0)
 
             this.currentSign += 1
-            this.onUpdateProCessBar(data.currentSign,this._maxSignNum)
+            this.onUpdateProCessBar(this.currentSign,this._maxSignNum)
 
             if(data.type == 1){
                 this.onUpdateTreasureChestData(data)
@@ -313,7 +319,7 @@ load('game/ui/layer/sign/SignLayer', function () {
 
         onUpdateSignData: function (data) {
 
-            let cell = this.signDataList.getChildByName(this._listPnlName + (parseInt(data.checkinId/6))).getChildByName(this.this._checkInName + data.checkinId)
+            let cell = this.signDataList.getChildByName(this._listPnlName + (parseInt(data.checkinId/6))).getChildByName(this._checkInName + data.checkinId)
             cell.getChildByName('acceptedPg').setVisible(true)
             cell.getChildByName('blockPg').setVisible(true)
         },
@@ -324,7 +330,7 @@ load('game/ui/layer/sign/SignLayer', function () {
 
         isCanReceiveRewards: function () {
 
-            if(this._flag == 1)
+            if(this._flag == 0)
                 return true
             else
                 return false

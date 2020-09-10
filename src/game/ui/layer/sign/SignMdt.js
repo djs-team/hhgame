@@ -58,13 +58,14 @@ load('game/ui/layer/sign/SignMdt', function () {
 
         initSignDatas: function (body) {
 
-            let data = []
+            let data = {}
             data.flag = body.flag
             data.vipCode = body.vipCode
             data.currentSign = 0
 
             data.bonusConfigList = []
             data.checkinList = []
+
 
             switch (body.vipCode) {
                 case 0 :
@@ -101,7 +102,7 @@ load('game/ui/layer/sign/SignMdt', function () {
                     break
             }
 
-            for(let i = 0; i < body.checkinList; i++){
+            for(let i = 0; i < body.checkinList.length; i++){
 
                 let checkIn = body.checkinList[i]
                 let item = {}
@@ -200,12 +201,13 @@ load('game/ui/layer/sign/SignMdt', function () {
                     data.treasureChestData.res = 'res/code/sign/qd_1.png'
             }
 
-
-            this.view.onReceiveAwardsData(data)
-
             let propList = []
             GameUtil.getPropsData(body.rewardPropList,propList,'',GameUtil.DATATYPE_1,GameUtil.CURRENCYTYPE_1,GameUtil.UNITLOCATION_BEFORE,'x','sign')
             appInstance.gameAgent().addReceivePropsUI(propList)
+
+            this.view.onReceiveAwardsData(data)
+
+
 
         },
 

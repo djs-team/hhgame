@@ -116,10 +116,9 @@ load('game/public/GameUtil',function () {
             if(global.isUndefined(functionName)){
                 prop.res = GameConfig.propsRes[propType]['propCode'][propCode][GameConfig.ICON_RESULT_CURRENCY]
             }else{
-
-                if(!GameUtil.haveMulityCurrency(functionName))
+                if(!GameUtil.haveMulityCurrency(functionName,propType,propCode)){
                     prop.res = GameConfig.propsRes[propType]['propCode'][propCode][GameConfig.ICON_RESULT_CURRENCY]
-                else{
+                }else{
                     let propsQuantityInterval = GameUtil.getPropsQuantityInterval(functionName,propType,propCode,propNum)
                     if(global.isUndefined(propsQuantityInterval))
                         prop.res = GameConfig.propsRes[propType]['propCode'][propCode][GameConfig.ICON_RESULT_CURRENCY]
@@ -127,11 +126,7 @@ load('game/public/GameUtil',function () {
                         prop.res = GameConfig.propsRes[propType]['propCode'][propCode][propsQuantityInterval]
                 }
             }
-
-
         }
-
-
 
         if(unitLocation == GameUtil.UNITLOCATION_BEFORE){
             prop.num = unitProperty + propNum
@@ -146,8 +141,8 @@ load('game/public/GameUtil',function () {
         let result = 'undefined'
         if(GameUtil.haveMulityCurrency(functionName,propType,propCode)){
 
-            let least = GameConfig.quantityInterval[functionName][propType][propCode][GameConfig.ICON_RESULT_LEAST]
-            let most = GameConfig.quantityInterval[functionName][propType][propCode][GameConfig.ICON_RESULT_MOST]
+            let least = GameConfig.quantityInterval[functionName][propType][propCode][GameConfig.ICON_RESULT_LEAST][GameConfig.QUANTITUINTERVAL_NUM_END]
+            let most = GameConfig.quantityInterval[functionName][propType][propCode][GameConfig.ICON_RESULT_MOST][GameConfig.QUANTITUINTERVAL_NUM_START]
 
             if(propNum <= least){
                 result = GameConfig.ICON_RESULT_LEAST
@@ -165,36 +160,46 @@ load('game/public/GameUtil',function () {
 
     GameUtil.haveMulityCurrency = function (functionName,propType,propCode) {
 
-        let flag = false
+        let flag = true
+
+
+
         if(global.isUndefined(functionName) || global.isUndefined(propType) || global.isUndefined(propCode)){
-            return flag
+            return false
         }
 
         switch (functionName) {
             case GameConfig.FUNCTION_NAME_TURNTABLE:
             case GameConfig.FUNCTION_NAME_SIGN:
 
-                flag = true
                 break
             default:
+                flag = false
                 break
         }
+
+        if(!flag)
+            return flag
 
         switch (propType) {
             case GameConfig.propType_currency:
-                flag = true
                 break
             default:
+                flag = false
                 break
-
         }
+
+
+        if(!flag)
+            return flag
 
         switch (propCode) {
             case GameConfig.propType_currency_coin:
             case GameConfig.propType_currency_diamonds:
-                flag = true
+
                 break
             default:
+                flag = false
                 break
 
         }

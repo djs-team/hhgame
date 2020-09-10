@@ -62,6 +62,7 @@
               "X": 1.0,
               "Y": 1.0
             },
+            "UserData": "{\"layoutType\":\"showAll\",\"screenAlign\":\"mid\"}",
             "Tag": 153,
             "ActionTag": -113838399,
             "Size": {
@@ -111,6 +112,7 @@
               "X": 1280.0,
               "Y": 720.0
             },
+            "VisibleForFrame": false,
             "Name": "dele",
             "ctype": "ImageViewObjectData"
           },

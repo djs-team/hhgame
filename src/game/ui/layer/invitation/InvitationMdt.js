@@ -6,6 +6,8 @@
 load('game/ui/layer/invitation/InvitationMdt', function () {
     let Mediator = include('public/components/Mediator')
     let GameEvent = include('game/config/GameEvent')
+    let GameUtil = include('game/public/GameUtil')
+    let GameConfig = include('game/config/GameConfig')
     let mdt = Mediator.extend({
         mediatorName: 'InvitationMdt',
         ctor: function (view) {
@@ -18,7 +20,7 @@ load('game/ui/layer/invitation/InvitationMdt', function () {
                 GameEvent.SHARE_INVITE,
             ]
         },
-        _page: 7,
+        _seq : 1,
         handleNotification: function (notification) {
             let name = notification.getName()
             let body = notification.getBody()
@@ -60,26 +62,22 @@ load('game/ui/layer/invitation/InvitationMdt', function () {
          * @param msg
          */
         receiveMyInvite: function (msg) {
+
+
+            let propData = {}
+            msg.propType = 1
+            GameUtil.getPropData(msg,propData,GameUtil.CURRENCYTYPE_1,GameUtil.UNITLOCATION_BEFORE,'x')
+
+            let propList = []
+            propList.push(propData)
+            appInstance.gameAgent().addReceivePropsUI(propList)
+
             let data = {}
             data.taskId = msg.taskId
-            data.rewards = {}
             data.status = 2
-            data.propNum = msg.propNum
-            switch (msg.propCode) {
-                case 1:
-                    data.propRes = 'res/code/task/jinbi.png'
-                    break
-                case 2:
-                    data.propRes = 'res/code/task/zuanshi.png'
-                    break
-                case 3:
-                    data.propRes = 'res/code/task/gy_fk.png'
-                    break
-                default:
-                    data.propRes = 'res/code/task/jinbi.png'
-                    break
-            }
-            this.view.onReceiveMyInviteReward(data)
+            this.view.updateTaskByTaskId(data)
+
+
         },
 
         /**
@@ -87,7 +85,7 @@ load('game/ui/layer/invitation/InvitationMdt', function () {
          * @param msg
          */
         myInviteData: function (msg) {
-            let data = {}
+            let data = []
             for (let i = 0; i < msg.taskList.length; i++) {
                 let myInviteTask = msg.taskList[i]
                 let myInviteTaskData = {}
@@ -115,25 +113,7 @@ load('game/ui/layer/invitation/InvitationMdt', function () {
                         break
                 }
 
-                //状态信息
-                switch (myInviteTask.status) {
-                    case 0:
-                        myInviteTaskData.statusRes = 'res/code/task/dqxz_3.png'
-                        myInviteTaskData.statusText = '去完成'
-                        break
-                    case 1:
-                        myInviteTaskData.statusRes = 'res/code/task/yqyl_7.png'
-                        myInviteTaskData.statusText = '未领取'
-                        break
-                    case 2:
-                        myInviteTaskData.statusRes = 'res/code/task/yj_3.png'
-                        break
-                    default:
-                        myInviteTaskData.statusRes = 'res/code/task/dqxz_3.png'
-                        myInviteTaskData.statusText = '去完成'
-                        break
-                }
-                data[i] = myInviteTaskData
+                data.push(myInviteTaskData)
             }
             this.view.onUpMyInviteData(data)
         },
@@ -143,21 +123,35 @@ load('game/ui/layer/invitation/InvitationMdt', function () {
          * @param msg
          */
         shareInviteData: function (msg) {
-            let inviteData = msg.inviteLogList
-            let data = {}
-            if (inviteData.length>0) {
-                for (let i = 0; i < inviteData.length; i++) {
-                    let info = {
-                        'id': i+1,
-                        'invitePid': inviteData[i].invitePid,
-                        'pName': inviteData[i].pName,
-                        'createTime': inviteData[i].createTime
-                    }
-                    data[i] = info
+
+            let data = []
+            for(let i = 0; i < msg.inviteLogList.length; i++){
+                let log = msg.inviteLogList[i]
+                let logData = {
+                    seq : this._seq,
+                    invitePid : log.invitePid,
+                    pName : log.pName,
                 }
+
+                this._seq++
+                this.onFormatTimes(log.pName,logData)
+                data.push(logData)
             }
-            this.view.onUpShareInviteData(data)
+
+            this.view.updateMyInvitationsData(data)
         },
+
+        onFormatTimes: function (timestamp,data) {
+
+            let date = new Date(timestamp)
+            data.timeDays = (date.getFullYear()) + "-" + (this.padLeftZero(date.getMonth() + 1)) + "-" + (this.padLeftZero(date.getDate()))
+            data.timeHours = (this.padLeftZero(date.getHours())) + "-" + (this.padLeftZero(date.getMinutes()))
+
+        },
+
+        padLeftZero: function (str) {
+            return ('00' + str).substr(str.length);
+        }
 
 
     })

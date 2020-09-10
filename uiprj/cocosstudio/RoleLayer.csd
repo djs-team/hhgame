@@ -89,7 +89,7 @@
                     <PreSize X="0.3641" Y="0.7347" />
                     <FileData Type="Normal" Path="personal/gexx_6.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Image_8" ActionTag="-2128812211" Tag="66" IconVisible="False" LeftMargin="743.3411" RightMargin="266.6589" TopMargin="174.2600" BottomMargin="263.7400" Scale9Enable="True" LeftEage="34" RightEage="34" TopEage="34" BottomEage="34" Scale9OriginX="34" Scale9OriginY="34" Scale9Width="37" Scale9Height="38" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="Image_8" ActionTag="-2128812211" VisibleForFrame="False" Tag="66" IconVisible="False" LeftMargin="743.3411" RightMargin="266.6589" TopMargin="174.2600" BottomMargin="263.7400" Scale9Enable="True" LeftEage="34" RightEage="34" TopEage="34" BottomEage="34" Scale9OriginX="34" Scale9OriginY="34" Scale9Width="37" Scale9Height="38" ctype="ImageViewObjectData">
                     <Size X="270.0000" Y="282.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="878.3411" Y="404.7400" />
@@ -542,23 +542,13 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="roleImg" ActionTag="-657357207" Tag="347" IconVisible="False" LeftMargin="847.2798" RightMargin="386.7202" TopMargin="283.4219" BottomMargin="390.5781" Scale9Width="46" Scale9Height="46" ctype="ImageViewObjectData">
-                    <Size X="46.0000" Y="46.0000" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="870.2798" Y="413.5781" />
-                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.6799" Y="0.5744" />
-                    <PreSize X="0.0359" Y="0.0639" />
-                    <FileData Type="Default" Path="Default/ImageFile.png" Plist="" />
-                  </AbstractNodeData>
-                  <AbstractNodeData Name="roleNd" ActionTag="2012688302" Tag="194" IconVisible="True" LeftMargin="881.1997" RightMargin="398.8003" TopMargin="435.7433" BottomMargin="284.2567" ctype="SingleNodeObjectData">
+                  <AbstractNodeData Name="roleNd" ActionTag="2012688302" Tag="194" IconVisible="True" LeftMargin="881.1997" RightMargin="398.8003" TopMargin="447.7433" BottomMargin="272.2567" ctype="SingleNodeObjectData">
                     <Size X="0.0000" Y="0.0000" />
                     <AnchorPoint />
-                    <Position X="881.1997" Y="284.2567" />
+                    <Position X="881.1997" Y="272.2567" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.6884" Y="0.3948" />
+                    <PrePosition X="0.6884" Y="0.3781" />
                     <PreSize X="0.0000" Y="0.0000" />
                   </AbstractNodeData>
                 </Children>

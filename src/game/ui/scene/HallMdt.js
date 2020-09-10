@@ -44,6 +44,8 @@ load('game/ui/scene/HallMdt', function () {
         },
 
         onRegister: function () {
+            let selfInfo = appInstance.dataManager().getUserData()
+            this.view.initView(selfInfo)
         },
 
         onRemove: function () {

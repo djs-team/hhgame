@@ -171,19 +171,17 @@ load('game/public/HttpGame', function () {
         },
 
         userDataBack: function (msg) {
-
-
             if (msg.status !== 0) {
                 cc.log('------------->>>httpGame error happen')
                 return
             }
-
+            msg.pRole = msg.roleCode
             let saveKey = [
                 'pname',
                 'coin',
                 'diamonds',
                 'fuKa',
-                'roleCode',
+                'pRole',
                 'nameUpdate',
                 'photo',
                 'sdkphotourl',

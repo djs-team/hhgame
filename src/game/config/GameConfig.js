@@ -50,11 +50,11 @@ load('game/config/GameConfig', function () {
     GameConfig.ICON_RESULT_MORE = 'more'
     GameConfig.ICON_RESULT_MOST = 'most'
 
-    GameConfig.VIP_LEVEL_0 = '0'//不是vip
-    GameConfig.VIP_LEVEL_1 = '1'//周vip
-    GameConfig.VIP_LEVEL_2 = '2'//月vip
-    GameConfig.VIP_LEVEL_3 = '3'//季vip
-    GameConfig.VIP_LEVEL_4 = '4'//年vip
+    GameConfig.VIP_LEVEL_0 = 0//不是vip
+    GameConfig.VIP_LEVEL_1 = 1//周vip
+    GameConfig.VIP_LEVEL_2 = 2//月vip
+    GameConfig.VIP_LEVEL_3 = 3//季vip
+    GameConfig.VIP_LEVEL_4 = 4//年vip
 
 
 
@@ -187,7 +187,7 @@ load('game/config/GameConfig', function () {
                 '6': {
                     'name': '花木兰',
                     'brightImg': 'res/code/props/js_hml1.png',
-                    'ashImg': 'res/code/props/js_hml1_1_1.png',
+                    'ashImg': 'res/code/props/js_hml1_1.png',
                     'currency': 'res/code/props/huamulan.png',
                 }
 

@@ -27,11 +27,11 @@ load('game/ui/layer/role/RoleLayer', function () {
                 'pnl/btnPnl/toBuyBtn': {},
 
                 'pnl/dataPnl/diamondsPnl': {},
-                'pnl/dataPnl/diamondsPnl/diamondsAddBtn': {onClicked : this.goShopBtnClick},
+                'pnl/dataPnl/diamondsPnl/diamondsAddBtn': {onClicked : this.onCoinShopClick},
 
 
                 'pnl/dataPnl/coinPnl': {},
-                'pnl/dataPnl/coinPnl/coinAddBtn': {onClicked : this.goShopBtnClick},
+                'pnl/dataPnl/coinPnl/coinAddBtn': {onClicked : this.onCoinShopClick},
 
                 'pnl/dataPnl/roleImg': {},
                 'pnl/dataPnl/roleName': {},
@@ -86,6 +86,11 @@ load('game/ui/layer/role/RoleLayer', function () {
 
 
 
+        },
+
+        onCoinShopClick: function () {
+            appInstance.gameAgent().addPopUI(ResConfig.Ui.CoinShopLayer)
+            this.onClseClick()
         },
 
         onUpdatePropsData: function (data) {
@@ -151,29 +156,43 @@ load('game/ui/layer/role/RoleLayer', function () {
         onReceiveRoleSelectedResule: function (data) {
 
             let roleCode = data.roleCode
-            let roleArrayName = data.roleArrayName
             let parmList = [
                 'allRoles',
                 'myRoles'
             ]
             this.onUpdateRoleStatus(parmList,roleCode,2)
-            this.onUpdateRoleDetailStatus(roleArrayName,roleCode,2)
-
+            this.onUpdateRoleImageListView(this._roleArrayName,roleCode)
 
         },
 
         onUpdateRoleStatus: function(parmList,roleCode,status){
 
+            let step1 = false
+            let step2 = false
             for(let key in parmList){
-                for(let i = 0; i < this._data[key].length; i++){
+                for(let i = 0; i < this._data[parmList[key]].length; i++){
 
-                    let role = this._data[key][i]
-                    if(role && role.roleCode == roleCode){
+                    let role = this._data[parmList[key]][i]
+
+                    if(!role){
+                        continue
+                    }
+
+                    if(role.status == 2){
+                        role.status = 1
+                        step1 = true
+                    }
+
+
+                    if(role.roleCode == roleCode){
                         if(role.status == 1){
                             role.status = status
+                            step2 = true
                         }
+                    }
+
+                    if(step1 && step2)
                         break
-                    }
 
                 }
             }
@@ -182,31 +201,6 @@ load('game/ui/layer/role/RoleLayer', function () {
 
         },
 
-        onUpdateRoleDetailStatus: function (roleArrayName,roleCode) {
-
-            for(let i = 0; i < this.roleImageListView.getChildren().length; i++){
-                let listPnl = this.roleImageListView.getChildren()[i]
-                let isHave = false
-                if(!listPnl){
-                    break
-                }
-
-                for(let j = 0; j < listPnl.getChildren().length; j++){
-                    let role = listPnl.getChildren()[j]
-                    if(role && role.roleCode == roleCode){
-                        isHave = true
-                        listPnl.getChildren().splice(j,1)
-                        let dataIndex = 2* i + j
-                        let cellData = this._data[this._roleArrayName][dataIndex]
-                        this.initRoleCell(listPnl,j,cellData,true)
-                    }
-                }
-
-                if(isHave)
-                    break
-            }
-
-        },
 
         initRoleCell: function (listPnl, cellIndex,cellData,isSelected) {
 
@@ -339,14 +333,14 @@ load('game/ui/layer/role/RoleLayer', function () {
                 this.toBuyBtn.setVisible(false)
                 this.toGetBtn.setVisible(true)
                 this.roleVipName.setVisible(true)
-                this.roleVipName.setString(cellData.roleName)
+                this.roleVipName.setString(cellData.levelName)
                 this.timeText.setVisible(true)
                 this.timeText.setString(cellData.dueReminderText)
                 buyBtn = this.toGetBtn
             }
 
 
-            this.buyBtn.addClickEventListener(function (sender,et) {
+            buyBtn.addClickEventListener(function (sender,et) {
                 this.onBuyRoleClicked(cellData)
             }.bind(this))
 
@@ -375,8 +369,8 @@ load('game/ui/layer/role/RoleLayer', function () {
                     this.renewMidBtn.setVisible(false)
                     this.useBtn.setVisible(true)
                     this.renewBtn.setVisible(true)
-                    useBtn = useBtn
-                    buyBtn = renewBtn
+                    useBtn = this.useBtn
+                    buyBtn = this.renewBtn
                     break
                 case 2:
 
@@ -384,8 +378,8 @@ load('game/ui/layer/role/RoleLayer', function () {
 
                     this.useBtn.setVisible(false)
                     this.renewBtn.setVisible(false)
-                    useBtn = useBtn
-                    buyBtn = renewBtn
+                    useBtn = this.useBtn
+                    buyBtn = this.renewMidBtn
 
                     break
                 default:
@@ -393,10 +387,10 @@ load('game/ui/layer/role/RoleLayer', function () {
 
             }
 
-            this.useBtn.addClickEventListener(function (sender,et) {
+            useBtn.addClickEventListener(function (sender,et) {
                 this.onUsedClicked(cellData)
             }.bind(this))
-            this.buyBtn.addClickEventListener(function (sender,et) {
+            buyBtn.addClickEventListener(function (sender,et) {
                 this.onBuyRoleClicked(cellData)
             }.bind(this))
 
@@ -404,6 +398,7 @@ load('game/ui/layer/role/RoleLayer', function () {
 
         //购买角色按钮点击
         onBuyRoleClicked: function(cellData){
+            cc.log('-------------------------------onBuyRoleClicked------------------------------')
 
             let getType = cellData.get_type
 
@@ -424,18 +419,18 @@ load('game/ui/layer/role/RoleLayer', function () {
                     if(cellData.code == GameConfig.propType_currency_coin){
 
                         propName = '金币'
-                        propNum = this.coinPnl.getChildByName('coinsCnt')
+                        propNum = this.coinPnl.getChildByName('coinsCnt').getString()
 
                     }else if(cellData.code == GameConfig.propType_currency_diamonds){
 
                         propName = '钻石'
-                        propNum = this.diamondsPnl.getChildByName('diamondsCnt')
+                        propNum = this.diamondsPnl.getChildByName('diamondsCnt').getString()
 
                     }else{
                         break
                     }
 
-                    if(propNum < propNum) {
+                    if(propNum < num) {
 
                         dialogMsg.TileName = '提 示'
                         dialogMsg.RightBtnName = '去领取'
@@ -518,6 +513,7 @@ load('game/ui/layer/role/RoleLayer', function () {
             this._data.myRoles = data.myRoles
             let showRoleCode = data.showRoleCode
 
+            cc.log('----------------------------------this._roleArrayName : ' + this._roleArrayName)
             this.onUpdateRolesChoiceType(this._roleArrayName)
             this.onUpdateRoleImageListView(this._roleArrayName,showRoleCode)
         },

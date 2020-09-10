@@ -34,7 +34,7 @@ load('game/ui/layer/role/RoleMdt', function () {
                     this.onInitRolesData(body)
                     break
                 case GameEvent.ROLES_SELECT:
-                    this.onReceiveRoleSelectedResule(body)
+                    this.view.onReceiveRoleSelectedResule(body)
                     break
                 case GameEvent.UPDATE_PROPSYNC:
                     this.view.onUpdatePropsData(body)
@@ -75,6 +75,9 @@ load('game/ui/layer/role/RoleMdt', function () {
             let data = {}
             data.myRoles = []
             data.allRoles = []
+
+            if(body.hasOwnProperty('showRoleCode'))
+                data.showRoleCode =  body.showRoleCode
 
             for(let i = 0; i < body.allRole.length; i++){
 
@@ -137,7 +140,7 @@ load('game/ui/layer/role/RoleMdt', function () {
                 }
 
                 data.allRoles.push(roleData)
-                if(roleData.status == 1){
+                if(roleData.status != 0){
                     data.myRoles.push(roleData)
                 }
 

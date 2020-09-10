@@ -230,7 +230,6 @@
                     <PreSize X="0.1437" Y="0.0958" />
                     <TextColor A="255" R="65" G="65" B="70" />
                     <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                    <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
                     <NormalFileData Type="Normal" Path="common/bt_3.png" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
@@ -259,7 +258,6 @@
                     <PreSize X="0.1437" Y="0.0958" />
                     <TextColor A="255" R="65" G="65" B="70" />
                     <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                    <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
                     <NormalFileData Type="Normal" Path="common/bt_3.png" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
@@ -288,7 +286,6 @@
                     <PreSize X="0.1437" Y="0.0958" />
                     <TextColor A="255" R="65" G="65" B="70" />
                     <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                    <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
                     <NormalFileData Type="Normal" Path="common/bt_3.png" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
@@ -296,7 +293,7 @@
                   <AbstractNodeData Name="useMidBtn" ActionTag="1399881084" Tag="281" IconVisible="False" LeftMargin="784.8687" RightMargin="311.1313" TopMargin="522.7786" BottomMargin="128.2214" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="59" RightEage="39" TopEage="11" BottomEage="11" Scale9OriginX="59" Scale9OriginY="11" Scale9Width="5" Scale9Height="51" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                     <Size X="184.0000" Y="69.0000" />
                     <Children>
-                      <AbstractNodeData Name="Text_57" ActionTag="-72794224" Tag="282" IconVisible="False" LeftMargin="47.4814" RightMargin="58.5186" TopMargin="18.5351" BottomMargin="20.4649" FontSize="30" LabelText="出 战" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                      <AbstractNodeData Name="Text_57" ActionTag="-72794224" Tag="282" IconVisible="False" LeftMargin="47.4814" RightMargin="58.5186" TopMargin="18.5351" BottomMargin="20.4649" FontSize="30" LabelText="出 战" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                         <Size X="78.0000" Y="30.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="86.4814" Y="35.4649" />
@@ -317,7 +314,6 @@
                     <PreSize X="0.1437" Y="0.0958" />
                     <TextColor A="255" R="65" G="65" B="70" />
                     <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                    <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
                     <NormalFileData Type="Normal" Path="common/bt_3.png" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
@@ -346,7 +342,6 @@
                     <PreSize X="0.1437" Y="0.0958" />
                     <TextColor A="255" R="65" G="65" B="70" />
                     <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                    <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
                     <NormalFileData Type="Normal" Path="common/bt_3.png" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
@@ -375,7 +370,6 @@
                     <PreSize X="0.1437" Y="0.0958" />
                     <TextColor A="255" R="65" G="65" B="70" />
                     <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                    <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
                     <NormalFileData Type="Normal" Path="common/bt_3.png" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
@@ -515,21 +509,21 @@
                     <EndColor A="255" R="255" G="255" B="255" />
                     <ColorVector ScaleY="1.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="roleName" ActionTag="-1131038463" Tag="291" IconVisible="False" LeftMargin="852.0560" RightMargin="377.9440" TopMargin="481.4920" BottomMargin="213.5080" FontSize="25" LabelText="发哥" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="50.0000" Y="25.0000" />
+                  <AbstractNodeData Name="roleName" ActionTag="-1131038463" Tag="291" IconVisible="False" LeftMargin="795.0560" RightMargin="320.9440" TopMargin="481.4920" BottomMargin="213.5080" FontSize="25" LabelText="月VIP专属角色" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="164.0000" Y="25.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="877.0560" Y="226.0080" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="183" G="100" B="30" />
                     <PrePosition X="0.6852" Y="0.3139" />
-                    <PreSize X="0.0391" Y="0.0347" />
+                    <PreSize X="0.1281" Y="0.0347" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="timeText" ActionTag="-361110888" Tag="292" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="754.7200" RightMargin="260.2800" TopMargin="610.3007" BottomMargin="84.6993" FontSize="25" LabelText="剩余时间：666天66小时" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                  <AbstractNodeData Name="timeText" ActionTag="-361110888" Tag="292" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="754.6680" RightMargin="260.3320" TopMargin="610.3000" BottomMargin="84.7000" FontSize="25" LabelText="剩余时间：666天66小时" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="265.0000" Y="25.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="887.2200" Y="97.1993" />
+                    <Position X="887.1680" Y="97.2000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="183" G="100" B="30" />
                     <PrePosition X="0.6931" Y="0.1350" />

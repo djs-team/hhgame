@@ -1002,11 +1002,6 @@
                       "Path": "Default/Button_Disable.png",
                       "Plist": ""
                     },
-                    "PressedFileData": {
-                      "Type": "Default",
-                      "Path": "Default/Button_Press.png",
-                      "Plist": ""
-                    },
                     "NormalFileData": {
                       "Type": "Normal",
                       "Path": "common/bt_3.png",
@@ -1139,11 +1134,6 @@
                       "Path": "Default/Button_Disable.png",
                       "Plist": ""
                     },
-                    "PressedFileData": {
-                      "Type": "Default",
-                      "Path": "Default/Button_Press.png",
-                      "Plist": ""
-                    },
                     "NormalFileData": {
                       "Type": "Normal",
                       "Path": "common/bt_3.png",
@@ -1272,11 +1262,6 @@
                     "DisabledFileData": {
                       "Type": "Default",
                       "Path": "Default/Button_Disable.png",
-                      "Plist": ""
-                    },
-                    "PressedFileData": {
-                      "Type": "Default",
-                      "Path": "Default/Button_Press.png",
                       "Plist": ""
                     },
                     "NormalFileData": {
@@ -1409,11 +1394,6 @@
                       "Path": "Default/Button_Disable.png",
                       "Plist": ""
                     },
-                    "PressedFileData": {
-                      "Type": "Default",
-                      "Path": "Default/Button_Press.png",
-                      "Plist": ""
-                    },
                     "NormalFileData": {
                       "Type": "Normal",
                       "Path": "common/bt_3.png",
@@ -1472,6 +1452,8 @@
                           "Path": "font/hkhbtW12.ttc",
                           "Plist": ""
                         },
+                        "HorizontalAlignmentType": "HT_Center",
+                        "VerticalAlignmentType": "VT_Center",
                         "OutlineColor": {
                           "G": 0,
                           "B": 0
@@ -1542,11 +1524,6 @@
                     "DisabledFileData": {
                       "Type": "Default",
                       "Path": "Default/Button_Disable.png",
-                      "Plist": ""
-                    },
-                    "PressedFileData": {
-                      "Type": "Default",
-                      "Path": "Default/Button_Press.png",
                       "Plist": ""
                     },
                     "NormalFileData": {
@@ -1677,11 +1654,6 @@
                     "DisabledFileData": {
                       "Type": "Default",
                       "Path": "Default/Button_Disable.png",
-                      "Plist": ""
-                    },
-                    "PressedFileData": {
-                      "Type": "Default",
-                      "Path": "Default/Button_Press.png",
                       "Plist": ""
                     },
                     "NormalFileData": {
@@ -2399,7 +2371,7 @@
                   },
                   {
                     "FontSize": 25,
-                    "LabelText": "发哥",
+                    "LabelText": "月VIP专属角色",
                     "HorizontalAlignmentType": "HT_Center",
                     "VerticalAlignmentType": "VT_Center",
                     "OutlineColor": {
@@ -2436,17 +2408,17 @@
                       "Y": 0.3139
                     },
                     "PreSize": {
-                      "X": 0.0391,
+                      "X": 0.1281,
                       "Y": 0.0347
                     },
-                    "LeftMargin": 852.056,
-                    "RightMargin": 377.944,
+                    "LeftMargin": 795.056,
+                    "RightMargin": 320.944,
                     "TopMargin": 481.492,
                     "BottomMargin": 213.508,
                     "Tag": 291,
                     "ActionTag": -1131038463,
                     "Size": {
-                      "X": 50.0,
+                      "X": 164.0,
                       "Y": 25.0
                     },
                     "Name": "roleName",
@@ -2471,8 +2443,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 887.22,
-                      "Y": 97.1993
+                      "X": 887.168,
+                      "Y": 97.2
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -2494,10 +2466,10 @@
                       "X": 0.207,
                       "Y": 0.0347
                     },
-                    "LeftMargin": 754.72,
-                    "RightMargin": 260.28,
-                    "TopMargin": 610.3007,
-                    "BottomMargin": 84.6993,
+                    "LeftMargin": 754.668,
+                    "RightMargin": 260.332,
+                    "TopMargin": 610.3,
+                    "BottomMargin": 84.7,
                     "Tag": 292,
                     "ActionTag": -361110888,
                     "Size": {
@@ -3023,7 +2995,6 @@
         "common/jinbi.png",
         "common/zuanshi.png",
         "Default/Button_Disable.png",
-        "Default/Button_Press.png",
         "Default/ImageFile.png",
         "font/hkhbtW12.ttc",
         "hall/dtjm_4.png",

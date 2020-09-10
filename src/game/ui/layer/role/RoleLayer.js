@@ -4,6 +4,8 @@ load('game/ui/layer/role/RoleLayer', function () {
     let BaseLayer = include('public/ui/BaseLayer')
     let RoleMdt = include('game/ui/layer/role/RoleMdt')
     let GameConfig = include('game/config/GameConfig')
+    let AniPlayer = ResConfig.AniPlayer
+    let PlayerPlay = ResConfig.PlayerPlay
     let RoleLayer = BaseLayer.extend({
         _className: 'RoleLayer',
         _rolesChoiceBtn_all : 'allRolesBtn',
@@ -34,6 +36,7 @@ load('game/ui/layer/role/RoleLayer', function () {
                 'pnl/dataPnl/coinPnl/coinAddBtn': {onClicked : this.onCoinShopClick},
 
                 'pnl/dataPnl/roleImg': {},
+                'pnl/dataPnl/roleNd': {},
                 'pnl/dataPnl/roleName': {},
                 'pnl/dataPnl/roleVipName': {},
                 'pnl/dataPnl/timeText': {},
@@ -260,6 +263,12 @@ load('game/ui/layer/role/RoleLayer', function () {
 
             this.roleName.setString(cellData.roleName)
             this.roleImg.loadTexture(cellData.currency)
+            this.roleNd.removeAllChildren()
+            let ani = appInstance.gameAgent().gameUtil().getAni(AniPlayer['3'])
+            this.roleNd.addChild(ani)
+            ani.setPosition(cc.p(0,0))
+            ani.setScale(0.35)
+            ani.setAnimation(0, PlayerPlay.stand, true)
 
             switch (getType) {
                 case 1:

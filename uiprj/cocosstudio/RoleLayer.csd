@@ -542,15 +542,24 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="roleImg" ActionTag="-657357207" Tag="347" IconVisible="False" LeftMargin="847.2797" RightMargin="386.7203" TopMargin="284.4219" BottomMargin="389.5781" Scale9Width="46" Scale9Height="46" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="roleImg" ActionTag="-657357207" Tag="347" IconVisible="False" LeftMargin="847.2798" RightMargin="386.7202" TopMargin="283.4219" BottomMargin="390.5781" Scale9Width="46" Scale9Height="46" ctype="ImageViewObjectData">
                     <Size X="46.0000" Y="46.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="870.2797" Y="412.5781" />
+                    <Position X="870.2798" Y="413.5781" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.6799" Y="0.5730" />
+                    <PrePosition X="0.6799" Y="0.5744" />
                     <PreSize X="0.0359" Y="0.0639" />
                     <FileData Type="Default" Path="Default/ImageFile.png" Plist="" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="roleNd" ActionTag="2012688302" Tag="194" IconVisible="True" LeftMargin="881.1997" RightMargin="398.8003" TopMargin="435.7433" BottomMargin="284.2567" ctype="SingleNodeObjectData">
+                    <Size X="0.0000" Y="0.0000" />
+                    <AnchorPoint />
+                    <Position X="881.1997" Y="284.2567" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.6884" Y="0.3948" />
+                    <PreSize X="0.0000" Y="0.0000" />
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />

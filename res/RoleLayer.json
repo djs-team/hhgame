@@ -2547,8 +2547,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 870.2797,
-                      "Y": 412.5781
+                      "X": 870.2798,
+                      "Y": 413.5781
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -2558,16 +2558,16 @@
                     "IconVisible": false,
                     "PrePosition": {
                       "X": 0.6799,
-                      "Y": 0.573
+                      "Y": 0.5744
                     },
                     "PreSize": {
                       "X": 0.0359,
                       "Y": 0.0639
                     },
-                    "LeftMargin": 847.2797,
-                    "RightMargin": 386.7203,
-                    "TopMargin": 284.4219,
-                    "BottomMargin": 389.5781,
+                    "LeftMargin": 847.2798,
+                    "RightMargin": 386.7202,
+                    "TopMargin": 283.4219,
+                    "BottomMargin": 390.5781,
                     "Tag": 347,
                     "ActionTag": -657357207,
                     "Size": {
@@ -2576,6 +2576,39 @@
                     },
                     "Name": "roleImg",
                     "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "AnchorPoint": {},
+                    "Position": {
+                      "X": 881.1997,
+                      "Y": 284.2567
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": true,
+                    "PrePosition": {
+                      "X": 0.6884,
+                      "Y": 0.3948
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 881.1997,
+                    "RightMargin": 398.8003,
+                    "TopMargin": 435.7433,
+                    "BottomMargin": 284.2567,
+                    "Tag": 194,
+                    "ActionTag": 2012688302,
+                    "Size": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "Name": "roleNd",
+                    "ctype": "SingleNodeObjectData"
                   }
                 ],
                 "ActionTag": -1631630035,

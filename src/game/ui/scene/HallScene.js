@@ -6,6 +6,8 @@ load('game/ui/scene/HallScene', function () {
     let BaseScene = include('public/ui/BaseScene')
     let ResConfig = include('game/config/ResConfig')
     let HallMdt =  include('game/ui/scene/HallMdt')
+    let AniPlayer = ResConfig.AniPlayer
+    let PlayerPlay = ResConfig.PlayerPlay
     let HallScene = BaseScene.extend({
         _className: 'HallScene',
         RES_BINDING: function () {
@@ -42,6 +44,7 @@ load('game/ui/scene/HallScene', function () {
                 'leftPnl/turnTablePnl/turnTableBtn': { onClicked: this.onTurnTableClick },
                 'leftPnl/cashCowPnl/cashCowBtn': { onClicked: this.onCashCowClick },
 
+                'rightPnl/aniNd': { },
                 'rightPnl/coinGameNd': { },
                 'rightPnl/coinGameNd/coinGameBtn': { onClicked: this.onCoinGameClick },
                 'rightPnl/liveBroadcastBtn': { onClicked: this.onShareClick },
@@ -206,29 +209,44 @@ load('game/ui/scene/HallScene', function () {
 
         onEnter: function () {
             this._super()
-            this.initData()
-            this.initView()
-            this.showView()
         },
 
         onExit: function () {
             this._super()
         },
 
-        initData: function () {
+        initData: function (selfInfo) {
+            this._selfInfo = selfInfo
+            this._pRole = selfInfo.pRole
 
             this.onInitUserData();
 
         },
 
-        initView: function () {
+        updatePlayerAni: function (pRole) {
+
+            pRole = pRole || this._pRole
+
+            if (pRole !=0 && !pRole) {
+                return
+            }
+
+            this.aniNd.removeAllChildren()
+            let ani = appInstance.gameAgent().gameUtil().getAni(AniPlayer[pRole])
+            this.aniNd.addChild(ani)
+            ani.setPosition(cc.p(0,0))
+            ani.setScale(0.6)
+            ani.setAnimation(0, PlayerPlay.stand, true)
+        },
+
+        initView: function (selfInfo) {
+            this.initData(selfInfo)
+
             let jinbichangAni = appInstance.gameAgent().gameUtil().getAni(ResConfig.AniHall.DatingJinbichang)
             jinbichangAni.setAnimation(0, 'animation', true)
             this.coinGameNd.addChild(jinbichangAni)
-        },
 
-        showView: function () {
-
+            this.updatePlayerAni()
         },
 
         onInitUserData: function () {
@@ -260,6 +278,8 @@ load('game/ui/scene/HallScene', function () {
            if(data.hasOwnProperty('fuKa')){
                fuKaCnt.setString(data.fuKa)
            }
+
+           this.updatePlayerAni(data.pRole)
 
        }
 

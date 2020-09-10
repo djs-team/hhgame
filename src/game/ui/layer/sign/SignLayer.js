@@ -12,7 +12,10 @@ load('game/ui/layer/sign/SignLayer', function () {
         RES_BINDING: function () {
             return {
 
-                'pnl/btnPnl/goVIPBtn': { onClicked: this.onGoVIPBtnClicked},
+                'pnl/btnPnl/becomeBtn': { onClicked: this.onGoVIPBtnClicked},
+                'pnl/btnPnl/upgradeBtn': { onClicked: this.onGoVIPBtnClicked},
+                'pnl/btnPnl/renewBtn': { onClicked: this.onGoVIPBtnClicked},
+
                 'pnl/btnPnl/mulitAcceptBtn': { onClicked: this.onVideoAcceptClicked},
                 'pnl/btnPnl/ordinaryAcceptPnl': { onClicked: this.onOrdinaryAcceptClicked},
                 'pnl/btnPnl/explainBtn': { },
@@ -57,11 +60,11 @@ load('game/ui/layer/sign/SignLayer', function () {
 
         initView: function () {
 
+            this.becomeBtn.setVisible(false)
+            this.upgradeBtn.setVisible(false)
+            this.renewBtn.setVisible(false)
             this.treasureChestCell.setVisible(false)
             this.signDataCell.setVisible(false)
-            this.rewardOnePnl.setVisible(false)
-            this.rewardTwoPnl.setVisible(false)
-            this.rewardThreePnl.setVisible(false)
             this.signDataListCell.setVisible(false)
 
             this.ordinaryAcceptPnl.getChildByName('singleAcceptText').setVisible(false)
@@ -79,7 +82,14 @@ load('game/ui/layer/sign/SignLayer', function () {
 
         onInitSignDatas: function (data) {
 
-            this.goVIPBtn.getChildByName('goVIPText').setString(data.goVIPText)
+            let btnNameArray = {
+                becomeBtn : this.becomeBtn,
+                upgradeBtn : this.upgradeBtn,
+                renewBtn : this.renewBtn
+
+            }
+            btnNameArray[data.showBtnName].setVisible(true)
+
             if(data.vipCode != 0){
                 this.ordinaryAcceptPnl.getChildByName('vipLevelText').setVisible(true)
                 this.ordinaryAcceptPnl.getChildByName('mulitAcceptText').setVisible(true)
@@ -326,6 +336,9 @@ load('game/ui/layer/sign/SignLayer', function () {
         },
 
         onGoVIPBtnClicked: function () {
+
+            appInstance.gameAgent().addPopUI(ResConfig.Ui.MemberLayer)
+            this.onCloseClick()
 
         },
     })

@@ -597,7 +597,7 @@
                   "Y": 0.9457
                 },
                 "PreSize": {
-                  "X": 0.1562,
+                  "X": 0.1563,
                   "Y": 0.0625
                 },
                 "LeftMargin": 323.296,
@@ -866,7 +866,7 @@
                   "Y": 0.9458
                 },
                 "PreSize": {
-                  "X": 0.1562,
+                  "X": 0.1563,
                   "Y": 0.0625
                 },
                 "LeftMargin": 551.08,
@@ -1135,7 +1135,7 @@
                   "Y": 0.9444
                 },
                 "PreSize": {
-                  "X": 0.1562,
+                  "X": 0.1563,
                   "Y": 0.0625
                 },
                 "LeftMargin": 780.08,
@@ -3776,39 +3776,6 @@
                 },
                 "Name": "changeAreaBtn",
                 "ctype": "ButtonObjectData"
-              },
-              {
-                "AnchorPoint": {},
-                "Position": {
-                  "X": 350.0,
-                  "Y": 100.0
-                },
-                "Scale": {
-                  "ScaleX": 1.0,
-                  "ScaleY": 1.0
-                },
-                "CColor": {},
-                "IconVisible": true,
-                "PrePosition": {
-                  "X": 0.2734,
-                  "Y": 0.1389
-                },
-                "PreSize": {
-                  "X": 0.0,
-                  "Y": 0.0
-                },
-                "LeftMargin": 350.0,
-                "RightMargin": 930.0,
-                "TopMargin": 620.0,
-                "BottomMargin": 100.0,
-                "Tag": 195,
-                "ActionTag": 1295246783,
-                "Size": {
-                  "X": 0.0,
-                  "Y": 0.0
-                },
-                "Name": "aniNd",
-                "ctype": "SingleNodeObjectData"
               }
             ],
             "ActionTag": 1278362623,

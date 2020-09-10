@@ -68,35 +68,35 @@ load('game/ui/layer/sign/SignMdt', function () {
 
             switch (body.vipCode) {
                 case 0 :
-                    data.goVIPText = '成为VIP'
+                    data.showBtnName = 'becomeBtn'
                     data.videoAcceptText = body.watchNum + '倍签到'
                     break
                 case 1 :
-                    data.goVIPText = '升级VIP'
+                    data.showBtnName = 'upgradeBtn'
                     data.vipLevel = '周VIP会员'
                     data.mulitAcceptText = body.vipNum + '倍签到'
                     data.videoAcceptText = body.watchNum + '倍签到'
                     break
                 case 2 :
-                    data.goVIPText = '升级VIP'
+                    data.showBtnName = 'upgradeBtn'
                     data.vipLevel = '月VIP会员'
                     data.mulitAcceptText = body.vipNum + '倍签到'
                     data.videoAcceptText = body.watchNum + '倍签到'
                     break
                 case 3 :
-                    data.goVIPText = '升级VIP'
+                    data.showBtnName = 'upgradeBtn'
                     data.vipLevel = '季VIP会员'
                     data.mulitAcceptText = body.vipNum + '倍签到'
                     data.videoAcceptText = body.watchNum + '倍签到'
                     break
                 case 4 :
-                    data.goVIPText = '续费VIP'
+                    data.showBtnName = 'renewBtn'
                     data.vipLevel = '年VIP会员'
                     data.mulitAcceptText = body.vipNum + '倍签到'
                     data.videoAcceptText = body.watchNum + '倍签到'
                     break
                 default:
-                    data.goVIPText = '成为VIP'
+                    data.showBtnName = 'becomeBtn'
                     data.videoAcceptText = body.watchNum + '倍签到'
                     break
             }

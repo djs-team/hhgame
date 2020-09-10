@@ -36,11 +36,26 @@ load('module/mahjong/ui/DeskTopLayer', function () {
                 'pnl/ActionNd/ActionCell': { onClicked: this.onActionCellClick },
                 'pnl/ChiNd': {  },
                 'pnl/ChiNd/ChiCell': { onClicked: this.onChiCellClick  },
+                'HostingPnl': { onClicked: this.onHostingClick }
             }
         },
         ctor: function () {
             this._super(ResConfig.View.DeskTopLayer)
             this.registerMediator(new DeskTopLayerMdt(this))
+        },
+
+        onHostingClick: function () {
+            let msg = {}
+            msg.pHosting = 0
+            appInstance.gameAgent().tcpGame().TableHostingProto(msg)
+        },
+
+        TableHostingProto: function (pHosting) {
+            if (pHosting === 2) {
+                this.HostingPnl.setVisible(false)
+            } else if (pHosting === 1) {
+                this.HostingPnl.setVisible(true)
+            }
         },
 
         onChiCellClick: function (sender) {
@@ -61,7 +76,7 @@ load('module/mahjong/ui/DeskTopLayer', function () {
             let pActionInfo = sender.pActionInfo
             let pAction = pActionInfo.pAction
             let lastPutCard = pActionInfo.lastPutCard
-            if (pAction.pActionID === 120 ) {//chi
+            if (pAction.pActionID === 120 || pAction.pActionID === 50) {//吃 吃听
                 let sendMsg = {}
                 sendMsg.nSeatID = appInstance.dataManager().getPlayData().pMySeatID
                 sendMsg.pActionID = pAction.pActionID
@@ -93,6 +108,8 @@ load('module/mahjong/ui/DeskTopLayer', function () {
             this.initData(pData)
             this.ActionCell.setVisible(false)
             this.ChiCell.setVisible(false)
+
+            this.HostingPnl.setVisible(false)
 
 
             for (let i = 0; i < this._maxChi; ++i) {

@@ -48,7 +48,7 @@
               <AbstractNodeData Name="ChiNd" ActionTag="-525767856" Tag="361" IconVisible="True" PositionPercentXEnabled="True" LeftMargin="640.0000" RightMargin="640.0000" TopMargin="390.0000" BottomMargin="330.0000" ctype="SingleNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <Children>
-                  <AbstractNodeData Name="ChiCell" ActionTag="1414917216" Tag="362" IconVisible="False" LeftMargin="-125.0000" RightMargin="-125.0000" TopMargin="-65.0000" BottomMargin="-65.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+                  <AbstractNodeData Name="ChiCell" ActionTag="1414917216" Tag="362" IconVisible="False" LeftMargin="-125.0000" RightMargin="-125.0000" TopMargin="-65.0000" BottomMargin="-65.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="250.0000" Y="130.0000" />
                     <Children>
                       <AbstractNodeData Name="Card2" ActionTag="1199323595" Tag="364" IconVisible="False" PositionPercentYEnabled="True" LeftMargin="15.0000" RightMargin="161.0000" TopMargin="11.5000" BottomMargin="11.5000" LeftEage="24" RightEage="24" TopEage="35" BottomEage="35" Scale9OriginX="24" Scale9OriginY="35" Scale9Width="26" Scale9Height="37" ctype="ImageViewObjectData">
@@ -145,6 +145,19 @@
             <PrePosition X="0.5000" />
             <PreSize X="1.0000" Y="1.0000" />
             <SingleColor A="255" R="150" G="200" B="255" />
+            <FirstColor A="255" R="150" G="200" B="255" />
+            <EndColor A="255" R="255" G="255" B="255" />
+            <ColorVector ScaleY="1.0000" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="HostingPnl" ActionTag="-1958923638" UserData="{&quot;layoutType&quot;:&quot;maxArea&quot;,&quot;screenAlign&quot;:&quot;mid&quot;}" Tag="63" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+            <Size X="1280.0000" Y="720.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="640.0000" Y="360.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.5000" Y="0.5000" />
+            <PreSize X="1.0000" Y="1.0000" />
+            <SingleColor A="255" R="0" G="0" B="0" />
             <FirstColor A="255" R="150" G="200" B="255" />
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />

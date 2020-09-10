@@ -33,16 +33,16 @@ load('game/config/ResConfig', function () {
      *  角色骨骼动画资源
      */
     ResConfig.AniPlayer = {
-        "CaishenPl": { json: 'res/animation/player/caishen/caishen.json', atlas: 'res/animation/player/caishen/caishen.atlas', png: 'res/animation/player/caishen/caishen.png' },
-        "FagePl": { json: 'res/animation/player/fage/fage.json', atlas: 'res/animation/player/fage/fage.atlas', png: 'res/animation/player/fage/fage.png' },
-        "HuamulanPl": { json: 'res/animation/player/huamulan/huamulan.json', atlas: 'res/animation/player/huamulan/huamulan.atlas', png: 'res/animation/player/huamulan/huamulan.png' },
-        "HuangdiPl": { json: 'res/animation/player/huangdi/huangdi.json', atlas: 'res/animation/player/huangdi/huangdi.atlas', png: 'res/animation/player/huangdi/huangdi.png' },
-        "HuxianPl": { json: 'res/animation/player/huxian/huxian.json', atlas: 'res/animation/player/huxian/huxian.atlas', png: 'res/animation/player/huxian/huxian.png' },
-        "NanchushiPl": { json: 'res/animation/player/nanchushi/nanchushi.json', atlas: 'res/animation/player/nanchushi/nanchushi.atlas', png: 'res/animation/player/nanchushi/nanchushi.png' },
-        "NvchushiPl": { json: 'res/animation/player/nvchushi/nvchushi.json', atlas: 'res/animation/player/nvchushi/nvchushi.atlas', png: 'res/animation/player/nvchushi/nvchushi.png' },
-        "ZhangzuolinPl": { json: 'res/animation/player/zhangzuolin/zhangzuolin.json', atlas: 'res/animation/player/zhangzuolin/zhangzuolin.atlas', png: 'res/animation/player/zhangzuolin/zhangzuolin.png' },
-        "ZhizunbaoPl": { json: 'res/animation/player/zhizunbao/zhizunbao.json', atlas: 'res/animation/player/zhizunbao/zhizunbao.atlas', png: 'res/animation/player/zhizunbao/zhizunbao.png' },
-        "ZixiaPl": { json: 'res/animation/player/zixia/zixia.json', atlas: 'res/animation/player/zixia/zixia.atlas', png: 'res/animation/player/zixia/zixia.png' },
+        "1": { json: 'res/animation/player/caishen/caishen.json', atlas: 'res/animation/player/caishen/caishen.atlas', png: 'res/animation/player/caishen/caishen.png' },
+        "4": { json: 'res/animation/player/fage/fage.json', atlas: 'res/animation/player/fage/fage.atlas', png: 'res/animation/player/fage/fage.png' },
+        "6": { json: 'res/animation/player/huamulan/huamulan.json', atlas: 'res/animation/player/huamulan/huamulan.atlas', png: 'res/animation/player/huamulan/huamulan.png' },
+        "5": { json: 'res/animation/player/huangdi/huangdi.json', atlas: 'res/animation/player/huangdi/huangdi.atlas', png: 'res/animation/player/huangdi/huangdi.png' },
+        "7": { json: 'res/animation/player/huxian/huxian.json', atlas: 'res/animation/player/huxian/huxian.atlas', png: 'res/animation/player/huxian/huxian.png' },
+        "2": { json: 'res/animation/player/nanchushi/nanchushi.json', atlas: 'res/animation/player/nanchushi/nanchushi.atlas', png: 'res/animation/player/nanchushi/nanchushi.png' },
+        "3": { json: 'res/animation/player/nvchushi/nvchushi.json', atlas: 'res/animation/player/nvchushi/nvchushi.atlas', png: 'res/animation/player/nvchushi/nvchushi.png' },
+        "8": { json: 'res/animation/player/zhangzuolin/zhangzuolin.json', atlas: 'res/animation/player/zhangzuolin/zhangzuolin.atlas', png: 'res/animation/player/zhangzuolin/zhangzuolin.png' },
+        "9": { json: 'res/animation/player/zhizunbao/zhizunbao.json', atlas: 'res/animation/player/zhizunbao/zhizunbao.atlas', png: 'res/animation/player/zhizunbao/zhizunbao.png' },
+        "10": { json: 'res/animation/player/zixia/zixia.json', atlas: 'res/animation/player/zixia/zixia.atlas', png: 'res/animation/player/zixia/zixia.png' },
     }
 
     /**

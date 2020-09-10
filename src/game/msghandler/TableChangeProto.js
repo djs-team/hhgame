@@ -29,6 +29,7 @@ load('game/msghandler/TableChangeProto', function () {
             if (curSceneName === 'MjPlayScene') {
                 appInstance.sendNotification(TableEvent.clearTableView)
                 appInstance.sendNotification(TableEvent.initTableView)
+                appInstance.sendNotification(TableEvent.TableChangeProto)
             } else {
                 let PlayGameMj = include('module/mahjong/ui/MjPlayScene')
                 appInstance.sceneManager().replaceScene(new PlayGameMj())
@@ -58,7 +59,7 @@ load('game/msghandler/TableChangeProto', function () {
                 { key: 'netIp', type: this._byteType.UTF8},// 玩家ip地址
                 { key: 'win', type: this._byteType.Int},//赢得局数
                 { key: 'lose', type: this._byteType.Int},//输的局数
-                { key: 'role', type: this._byteType.Int},//角色
+                { key: 'pRole', type: this._byteType.Int},//角色
             ]
 
             this._reData = [

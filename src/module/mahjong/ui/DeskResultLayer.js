@@ -29,16 +29,16 @@ load('module/mahjong/ui/DeskResultLayer', function () {
                 'topPnl/BackBtn': { onClicked: this.onBackHallBtnClick },
                 'midPnl/midNd': {  },
                 'midPnl/midNd/PlayerCell': {  },
+                'bmPnl': {  },
                 'bmPnl/BackHallBtn': { onClicked: this.onBackHallBtnClick },
                 'bmPnl/InviteFriendBtn': { onClicked: this.onInviteFriendBtnClick },
                 'bmPnl/NextGameBtn': { onClicked: this.onNextGameBtnClick },
-                'bmPnl/nameTxt': {  },
-                'bmPnl/ruleTxt': {  },
                 'bmPnl/BaoCard': {  },
-                'bmPnl/CardNd': {  },
-                'bmPnl/CardNd/CardCell': {  },
+                'bmPnl/CardCell': {  },
+                'bmPnl/InfoCell': {  },
             }
         },
+
         ctor: function () {
             this._super(ResConfig.View.DeskResultLayer)
             this.registerMediator(new DeskResultLayerMdt(this))
@@ -74,31 +74,57 @@ load('module/mahjong/ui/DeskResultLayer', function () {
             this._players = pData.players
             this._pos = this._posConst[this._playerNum]
             this._selfInfo = pData.getSelfInfo()
+
+            this._playerInfoCell = {}
+            this._playerCell = {}
         },
 
         initView: function (pData) {
+            cc.log('==============GameResult============' + JSON.stringify(pData))
             this.initData(pData)
 
             this.PlayerCell.setVisible(false)
+            this.InfoCell.setVisible(false)
+
             for (let i = 0; i < this._playerNum; ++i) {
                 this.initPlayerCell(i, this._players[i])
             }
 
-            this.initSelfCard()
+            let baoImg = appInstance.gameAgent().mjUtil().getCardValueImg(0, 'selfhand', this._pData.tableData.pBaoCard)
+            this.BaoCard.getChildByName('CardValue').loadTexture(baoImg)
         },
 
-        initSelfCard: function () {
-            let handCards = this._selfInfo.handCards
-            let pChiList = this._selfInfo.pChiList
-            let pPengList = this._selfInfo.pPengList
-            let pGangList = this._selfInfo.pGangList
+        onInfoBtnClick: function (sender) {
+            let index = sender._index
+            for (let i = 0; i < this._playerNum; ++i) {
+                this._playerCell[i].getChildByName('InfoBtn').setVisible(true)
+                this._playerInfoCell[i].setVisible(false)
+            }
+            this._playerCell[index].getChildByName('InfoBtn').setVisible(false)
+            this._playerInfoCell[index].setVisible(true)
+        },
 
-            let cardLen = 100
+        initPlayerInfo: function (index, pinfo) {
+            let infoCell = this.InfoCell.clone()
+            this._playerInfoCell[index] = infoCell
+            this.bmPnl.addChild(infoCell)
+            infoCell.getChildByName('nameTxt').setString(pinfo.nickName)
+
+            let ruleTxt = infoCell.getChildByName('ruleTxt')
+            let CardNd = infoCell.getChildByName('CardNd')
+
+            let handCards = pinfo.handCards
+            let pChiList = pinfo.pChiList
+            let pPengList = pinfo.pPengList
+            let pGangList = pinfo.pGangList
+
+            let cardLen = 45
+            let offLen = 20
 
             let posX = 0
             for (let i = 0; i < handCards.length; ++i) {
                 let card = this.CardCell.clone()
-                this.CardNd.addChild(card)
+                CardNd.addChild(card)
                 card.setPosition(cc.p(posX, 0))
                 let cardImg = appInstance.gameAgent().mjUtil().getCardValueImg(0, 'selfhand', handCards[i])
                 card.getChildByName('CardValue').loadTexture(cardImg)
@@ -106,12 +132,12 @@ load('module/mahjong/ui/DeskResultLayer', function () {
             }
 
             if ( pChiList.length) {
-                posX += 100
+                posX += offLen
             }
             for (let i = 0; i < pChiList.length; ++i) {
                 for (let cardNum = pChiList[i].pBeginIndex; cardNum <= pChiList[i].pEndIndex; ++cardNum) {
                     let card = this.CardCell.clone()
-                    this.CardNd.addChild(card)
+                    CardNd.addChild(card)
                     card.setPosition(cc.p(posX, 0))
                     let cardInfo = {
                         nCardColor: pChiList[i].pChiCardColor,
@@ -124,12 +150,12 @@ load('module/mahjong/ui/DeskResultLayer', function () {
             }
 
             if (pPengList.length) {
-                posX += 100
+                posX += offLen
             }
             for (let index = 0; index < pPengList.length; ++index) {
                 for (let i = 0; i < 3; ++i) {
                     let card = this.CardCell.clone()
-                    this.CardNd.addChild(card)
+                    CardNd.addChild(card)
                     card.setPosition(cc.p(posX, 0))
                     let cardImg = appInstance.gameAgent().mjUtil().getCardValueImg(0, 'selfhand', pPengList[index])
                     card.getChildByName('CardValue').loadTexture(cardImg)
@@ -138,12 +164,12 @@ load('module/mahjong/ui/DeskResultLayer', function () {
             }
 
             if (pGangList.length) {
-                posX += 100
+                posX += offLen
             }
             for (let index = 0; index < pGangList.length; ++index) {
                 for (let i = 0; i < 4; ++i) {
                     let card = this.CardCell.clone()
-                    this.CardNd.addChild(card)
+                    CardNd.addChild(card)
                     let cardImg = appInstance.gameAgent().mjUtil().getCardValueImg(0, 'selfhand', pGangList[index])
                     card.getChildByName('CardValue').loadTexture(cardImg)
                     if (i) {
@@ -152,13 +178,15 @@ load('module/mahjong/ui/DeskResultLayer', function () {
                         card.setPosition(cc.p(posX, 0))
                         posX += cardLen
                     }
-
                 }
             }
         },
 
         initPlayerCell: function (index, pinfo) {
+            this.initPlayerInfo(index, pinfo)
+
             let cell = this.PlayerCell.clone()
+            this._playerCell[index] = cell
             cell.setPosition(this._pos[index])
             cell.setVisible(true)
             this.midNd.addChild(cell)
@@ -172,7 +200,7 @@ load('module/mahjong/ui/DeskResultLayer', function () {
             name.setString(pinfo.nickName)
             winNum.setString(pinfo.pOffsetCoins)
             bigWin.setVisible(this._pData.pWinSeatID === pinfo.pSeatID)
-            let ani = appInstance.gameAgent().gameUtil().getAni(AniPlayer.FagePl)
+            let ani = appInstance.gameAgent().gameUtil().getAni(AniPlayer[pinfo.pRole])
             ani.setScale(0.25)
             aniNd.addChild(ani)
 
@@ -181,6 +209,12 @@ load('module/mahjong/ui/DeskResultLayer', function () {
             } else {
                 ani.setAnimation(0, PlayerPlay.lose, true)
             }
+
+            let InfoBtn = cell.getChildByName('InfoBtn')
+            InfoBtn._index = index
+            InfoBtn.addClickEventListener(function(sender, et) {
+                this.onInfoBtnClick(sender)
+            }.bind(this))
         },
 
         onEnter: function () {

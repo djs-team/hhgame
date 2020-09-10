@@ -23,29 +23,34 @@ load('module/mahjong/ui/MjPlayScene', function () {
         },
 
         initView: function () {
-            // this.DeskBgLayer = appInstance.uiManager().createUI(DeskBgLayer)
-            // this.addChild(this.DeskBgLayer)
-            // this.DeskHeadLayer = appInstance.uiManager().createUI(DeskHeadLayer)
-            // this.addChild(this.DeskHeadLayer)
-            // this.DeskCardLayer = appInstance.uiManager().createUI(DeskCardLayer)
-            // this.addChild(this.DeskCardLayer)
-            // this.DeskTopLayer = appInstance.uiManager().createUI(DeskTopLayer)
-            // this.addChild(this.DeskTopLayer)
-            this.DeskResultLayer = appInstance.uiManager().createUI(DeskResultLayer)
-            this.addChild(this.DeskResultLayer)
+            this.DeskBgLayer = appInstance.uiManager().createUI(DeskBgLayer)
+            this.addChild(this.DeskBgLayer)
+            this.DeskHeadLayer = appInstance.uiManager().createUI(DeskHeadLayer)
+            this.addChild(this.DeskHeadLayer)
+            this.DeskCardLayer = appInstance.uiManager().createUI(DeskCardLayer)
+            this.addChild(this.DeskCardLayer)
+            this.DeskTopLayer = appInstance.uiManager().createUI(DeskTopLayer)
+            this.addChild(this.DeskTopLayer)
+            // this.DeskResultLayer = appInstance.uiManager().createUI(DeskResultLayer)
+            // this.addChild(this.DeskResultLayer)
         },
 
         clearTableView: function () {
-            cc.log('============MjPlayScene============clearTableView============')
             this.DeskHeadLayer.clearView()
             this.DeskCardLayer.clearView()
             this.DeskTopLayer.clearView()
         },
 
+        TableChangeProto: function () {
+            if (this.DeskResultLayer) {
+                appInstance.uiManager().removeUI(this.DeskResultLayer)
+            }
+        },
+
         showGameResultLayer: function () {
             let DeskResultLayer = include('module/mahjong/ui/DeskResultLayer')
-            let DeskResultLayerUi = appInstance.uiManager().createUI(DeskResultLayer)
-            this.addChild(DeskResultLayerUi)
+            this.DeskResultLayer = appInstance.uiManager().createUI(DeskResultLayer)
+            this.addChild(this.DeskResultLayer)
         },
 
         onCreate: function () {

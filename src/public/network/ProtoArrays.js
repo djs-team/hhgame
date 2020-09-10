@@ -32,10 +32,10 @@ load('public/network/ProtoArrays', function () {
 
         getTbGangInfo: function () {
             let proto = [
-                { key: 'pGangType', type: this._byteType.Int},//0:明杠or1:暗杠or2:加杠or3:旋风杠or4:幺腰杠or5:幺九杠6：喜儿 7:甩幺
-                { key: 'pGangCards', type: this._byteType.Barray, proto: this.getTbCardsInfo()},// gang
                 { key: 'pGangCardColor', type: this._byteType.Int},
                 { key: 'pGangCardNumber', type: this._byteType.Int},//gang
+                { key: 'pGangType', type: this._byteType.Int},//0:明杠or1:暗杠or2:加杠or3:旋风杠or4:幺腰杠or5:幺九杠6：喜儿 7:甩幺
+                { key: 'pGangCards', type: this._byteType.Barray, proto: this.getTbCardsInfo()},// gang
             ]
             return proto
         },

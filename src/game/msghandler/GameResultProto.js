@@ -45,8 +45,10 @@ load('game/msghandler/GameResultProto', function () {
             for (let i = 0; i < pPlayer.length; ++i) {
                 let player = pData.getPlayer(pPlayer[i].pSeatID)
                 global.mergeData(player, pPlayer[i])
+                cc.log('=========player===========' + JSON.stringify(player))
             }
 
+            cc.log('====GameResultProto=====pData===========' + JSON.stringify(pData))
             appInstance.sendNotification(TableEvent.GameResultProto)
         },
 

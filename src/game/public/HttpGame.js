@@ -30,7 +30,8 @@ load('game/public/HttpGame', function () {
             if (cc.sys.OS_WINDOWS === cc.sys.os) {
                 let imeiStr = global.localStorage.getStringForKey(LocalSave.LocalImei)
                 if (!imeiStr) {
-                    imeiStr = 'windows imei ' + Math.floor(Math.random() * 1000)
+                    imeiStr = 'windows imei random' + Math.floor(Math.random() * 1000000)
+                    cc.log('=====imei====' + imeiStr)
                     global.localStorage.setStringForKey(LocalSave.LocalImei, imeiStr)
                 }
                 sendMsg.imei = imeiStr

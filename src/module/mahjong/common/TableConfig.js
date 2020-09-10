@@ -12,9 +12,13 @@ load('module/mahjong/common/TableConfig', function () {
         'prePutCard': 'prePutCard',
         'InitCardProto': 'InitCardProto',
         'DrawCardProto': 'DrawCardProto',
+        'updateSelfHandCard': 'updateSelfHandCard',
         'PutCardProto': 'PutCardProto',
+        'TableChangeProto': 'TableChangeProto',
         'PlayerSelectProto': 'PlayerSelectProto',
         'GameResultProto': 'GameResultProto',
+        'AutoPlayProto': 'AutoPlayProto',
+        'TableHostingProto': 'TableHostingProto'
     }
 
 

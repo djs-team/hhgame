@@ -209,14 +209,14 @@
                   <AbstractNodeData Name="useBtn" ActionTag="-661190230" Tag="73" IconVisible="False" LeftMargin="691.5920" RightMargin="404.4080" TopMargin="522.8300" BottomMargin="128.1700" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="59" RightEage="39" TopEage="11" BottomEage="11" Scale9OriginX="59" Scale9OriginY="11" Scale9Width="5" Scale9Height="51" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                     <Size X="184.0000" Y="69.0000" />
                     <Children>
-                      <AbstractNodeData Name="Text_57" ActionTag="1489458825" Tag="272" IconVisible="False" LeftMargin="54.9814" RightMargin="66.0186" TopMargin="18.5351" BottomMargin="20.4649" FontSize="30" LabelText="出战" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                        <Size X="63.0000" Y="30.0000" />
+                      <AbstractNodeData Name="Text_57" ActionTag="1489458825" Tag="272" IconVisible="False" LeftMargin="47.4814" RightMargin="58.5186" TopMargin="18.5351" BottomMargin="20.4649" FontSize="30" LabelText=" 出战 " HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="78.0000" Y="30.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="86.4814" Y="35.4649" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="183" G="100" B="30" />
                         <PrePosition X="0.4700" Y="0.5140" />
-                        <PreSize X="0.3424" Y="0.4348" />
+                        <PreSize X="0.4239" Y="0.4348" />
                         <FontResource Type="Normal" Path="font/hkhbtW12.ttc" Plist="" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />

@@ -437,7 +437,7 @@ load('game/ui/layer/role/RoleLayer', function () {
                         dialogMsg.RightBtnClick = function () {
                             appInstance.gameAgent().addPopUI(ResConfig.Ui.MemberLayer)
                             appInstance.uiManager().removeUI(this)
-                        }
+                        }.bind(this)
 
                         dialogMsg.SayText = '您的' + propName + '不足'
 

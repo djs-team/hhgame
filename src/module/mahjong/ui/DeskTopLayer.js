@@ -36,7 +36,7 @@ load('module/mahjong/ui/DeskTopLayer', function () {
                 'pnl/ActionNd/ActionCell': { onClicked: this.onActionCellClick },
                 'pnl/ChiNd': {  },
                 'pnl/ChiNd/ChiCell': { onClicked: this.onChiCellClick  },
-                'pnl/HostingPnl': { onClicked: this.onHostingClick }
+                'HostingPnl': { onClicked: this.onHostingClick }
             }
         },
         ctor: function () {

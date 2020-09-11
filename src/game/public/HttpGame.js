@@ -104,7 +104,7 @@ load('game/public/HttpGame', function () {
                 'firstLogin',
                 'vipFlag',
                 'channel',
-                'agentFlag'
+
             ]
             appInstance.dataManager().getUserData().saveMsg(msg, saveKey)
 
@@ -187,7 +187,8 @@ load('game/public/HttpGame', function () {
                 'photo',
                 'sdkphotourl',
                 'nameUpdate',
-                'isAuthentication'
+                'isAuthentication',
+                'agentFlag'
             ]
             appInstance.dataManager().getUserData().saveMsg(msg, saveKey)
             appInstance.sendNotification(GameEvent.USERDATA, msg)

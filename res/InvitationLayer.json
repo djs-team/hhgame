@@ -166,7 +166,6 @@
               {
                 "ClipAble": false,
                 "BackColorAlpha": 102,
-                "ComboBoxIndex": 1,
                 "SingleColor": {
                   "R": 0,
                   "G": 0,
@@ -212,7 +211,6 @@
                 "RightMargin": -3.0701,
                 "TopMargin": -1.152,
                 "BottomMargin": 1.152,
-                "UserData": "{\"layoutType\":\"maxArea\",\"screenAlign\":\"mid\"}",
                 "Tag": 27,
                 "Children": [
                   {

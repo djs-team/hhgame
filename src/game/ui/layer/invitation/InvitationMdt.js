@@ -50,11 +50,18 @@ load('game/ui/layer/invitation/InvitationMdt', function () {
          * 初始化我的邀请喝分享详情的数据
          */
         initView: function () {
-            let msg = {}
-            appInstance.gameAgent().httpGame().myInviteReq(msg)
-            // if (this.view._agentFlag == 0) {
+            this._agentFlag = appInstance.dataManager().getUserData().agentFlag//0不是代理 1是1级代理 2是2级代理
+            appInstance.gameAgent().httpGame().myInviteReq()
+            if(this._agentFlag == 0){
+                let msg = {
+                    'startIndex' : 0,
+                    'endIndex' : 6
+                }
+
                 appInstance.gameAgent().httpGame().shareInviteReq(msg)
-            // }
+            }
+
+
         },
 
         /**
@@ -125,6 +132,7 @@ load('game/ui/layer/invitation/InvitationMdt', function () {
         shareInviteData: function (msg) {
 
             let data = []
+
             for(let i = 0; i < msg.inviteLogList.length; i++){
                 let log = msg.inviteLogList[i]
                 let logData = {
@@ -134,7 +142,7 @@ load('game/ui/layer/invitation/InvitationMdt', function () {
                 }
 
                 this._seq++
-                this.onFormatTimes(log.pName,logData)
+                this.onFormatTimes(log.createTime,logData)
                 data.push(logData)
             }
 
@@ -150,7 +158,8 @@ load('game/ui/layer/invitation/InvitationMdt', function () {
         },
 
         padLeftZero: function (str) {
-            return ('00' + str).substr(str.length);
+
+            return ('00' + str).substr(str.toString().length);
         }
 
 

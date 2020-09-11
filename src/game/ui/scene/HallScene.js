@@ -91,7 +91,7 @@ load('game/ui/scene/HallScene', function () {
         },
         onInvitationClick: function () {
 
-            appInstance.gameAgent().addPopUI(ResConfig.Ui.InvitationLayer)
+            appInstance.gameAgent().addUI(ResConfig.Ui.InvitationLayer)
         },
 
         onHideMorePnlClick: function () {

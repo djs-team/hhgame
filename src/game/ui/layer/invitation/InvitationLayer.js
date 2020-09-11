@@ -5,6 +5,13 @@ load('game/ui/layer/invitation/InvitationLayer', function () {
     let InvitationMdt = include('game/ui/layer/invitation/InvitationMdt')
     let invitationLayer = BaseLayer.extend({
         _className: 'invitationLayer',
+        _returnType : 1,//1是关闭当前界面，2是返回邀请好友界面
+        _inviChoiceType : 1,//1代表邀请好友，2代表我的邀请，3代表分享详情
+        _startIndex : 0,//邀请记录，开始行
+        _endIndex : 6,//邀请记录，结束行
+        _indexLength : 6,//邀请记录，记录长度
+        _isCanRefreshMyInvitationsData : true,
+
         ctor: function () {
             this._super(ResConfig.View.InvitationLayer)
             this.registerMediator(new InvitationMdt(this))
@@ -16,10 +23,11 @@ load('game/ui/layer/invitation/InvitationLayer', function () {
 
                 'pnl/invitationPnl': {},
                 'pnl/invitationPnl/invitNowPnl': {},
-                'pnl/invitationPnl/inviteNowBtn': {onClicked : this.onInviteNowClick},
+                'pnl/invitationPnl/invitNowPnl/inviteNowBtn': {onClicked : this.onInviteNowClick},
                 'pnl/invitationPnl/sfpPnl': {},
                 'pnl/invitationPnl/sfpPnl/sftWxBtn': {onClicked : this.onWxShareClick},
                 'pnl/invitationPnl/sfpPnl/sftWxCircleBtn': {onClicked : this.onWxCircleShareClick},
+                'pnl/invitationTasksPnl': {},
                 'pnl/invitationTasksPnl/myTaskList': {},
                 'pnl/invitationTasksPnl/myTaskCell': {},
 
@@ -35,6 +43,8 @@ load('game/ui/layer/invitation/InvitationLayer', function () {
 
             }
         },
+
+
 
         onCreate: function () {
             this._super()
@@ -53,13 +63,8 @@ load('game/ui/layer/invitation/InvitationLayer', function () {
         },
 
         initData: function () {
-            this._agentFlag = appInstance.dataManager().getUserData().agentFlag//0不是代理 1是1级代理 2是2级代理
-            this._returnType = 1//1是关闭当前界面，2是返回邀请好友界面
-            this._inviChoiceType = 1//1代表邀请好友，2代表我的邀请，3代表分享详情
-            this._startIndex = 0//邀请记录，开始行
-            this._endIndex = 5//邀请记录，结束行
-            this._indexLength = 5//邀请记录，记录长度
-            this._isCanRefreshMyInvitationsData = true
+
+
 
             this.myTaskList.setVisible(false)
             this.myTaskCell.setVisible(false)
@@ -69,13 +74,25 @@ load('game/ui/layer/invitation/InvitationLayer', function () {
 
             this.invitationTasksPnl.setVisible(false)
             this.myInvitationsPnl.setVisible(false)
-            this.dataText.setVisible(false)
 
-           // this.myTaskList.addEventListener(this.selectedItemEvent,this)
+            this.shareTaskCell.setVisible(false)
+
+            this.shareTaskList.addEventListener(this.selectedItemEvent,this)
+
+
+        },
+
+        onWxShareClick: function () {
+
+        },
+
+        onWxCircleShareClick: function () {
+
         },
 
         onInviteNowClick : function () {
 
+            this._returnType = 2
             this.leftPnl.setVisible(false)
             this.myTaskList.setVisible(false)
             this.myTaskCell.setVisible(false)
@@ -102,6 +119,7 @@ load('game/ui/layer/invitation/InvitationLayer', function () {
             if(this._returnType == 1){
                 appInstance.uiManager().removeUI(this)
             }else{
+                this._returnType = 1
                 this.leftPnl.setVisible(true)
                 this.updateInviChoiceBtn()
             }
@@ -113,12 +131,11 @@ load('game/ui/layer/invitation/InvitationLayer', function () {
             if (type !== ccui.ListView.EVENT_SELECTED_ITEM) {
                 return
             }
-            let curIndex = sender.getCurSelectedIndex()
-            cc.log('-----------------------curIndex---------------')
-            let offIndex = 3 //一页展示的子节点cell
+            let curIndex = sender.getCurSelectedIndex()//当前手指点击的行，坐标以0开始
+            let offIndex = 6 //一页展示的子节点cell
             let childLen = sender.getItems().length
             if ( curIndex > (childLen - offIndex)) {
-                cc.log('=======滑动到底了===========')
+                this.refreshMyInvitationsData()
             }
         },
 
@@ -153,14 +170,13 @@ load('game/ui/layer/invitation/InvitationLayer', function () {
                 selectEdBtn = this.invitationBtn
 
             for(let key in btnArray){
-                if(key === selectEdBtn){
-                    key.setVisible(true)
-                    key.setTouchEnabled(true)
-                    key.setBright(true)
+                let _btn = btnArray[key]
+                if(_btn === selectEdBtn){
+                    _btn.setTouchEnabled(false)
+                    _btn.setBright(false)
                 }else{
-                    key.setVisible(false)
-                    key.setTouchEnabled(false)
-                    key.setBright(false)
+                    _btn.setTouchEnabled(true)
+                    _btn.setBright(true)
                 }
 
             }
@@ -186,7 +202,13 @@ load('game/ui/layer/invitation/InvitationLayer', function () {
 
         showInvitationTasksData: function () {
 
-            appInstance.gameAgent().httpGame().myInviteReq()
+            this.myTaskList.setVisible(true)
+            this.myTaskCell.setVisible(false)
+            this.invitNowPnl.setVisible(false)
+            this.sfpPnl.setVisible(false)
+            this.invitationTasksPnl.setVisible(true)
+            this.myInvitationsPnl.setVisible(false)
+            this.dataText.setVisible(false)
 
         },
 
@@ -209,14 +231,17 @@ load('game/ui/layer/invitation/InvitationLayer', function () {
             this.sfpPnl.setVisible(false)
             this.invitationTasksPnl.setVisible(false)
             this.myInvitationsPnl.setVisible(true)
+            if(this.shareTaskList.getChildrenCount() <= 0)
+                this.dataText.setVisible(true)
 
-            if(this._agentFlag == 0){
+
+            /*if(this._agentFlag == 0){
                 this.dataText.setVisible(true)
                 return
             }
 
 
-            this.refreshMyInvitationsParam(0)
+            this.refreshMyInvitationsParam(0)*/
 
         },
 
@@ -244,30 +269,34 @@ load('game/ui/layer/invitation/InvitationLayer', function () {
 
             if(data.length < this._indexLength){
                 this._isCanRefreshMyInvitationsData = false
-                if(this.myTaskList.getChildrenCount() <= 0){
-
-                    this.myTaskList.setVisible(false)
-                    this.dataText.setVisible(true)
-                    this.dataText.setString('当前无数据分享')
-                    return
+                if(this.shareTaskList.getChildrenCount() <= 0){
+                    if(data.length > 0){
+                        this.dataText.setVisible(false)
+                    }else{
+                        this.dataText.setVisible(true)
+                        this.shareTaskList.setVisible(false)
+                        this.dataText.setString('当前无数据分享')
+                        return
+                    }
 
                 }
+                this.dataText.setVisible(false)
             }else{
                 if( this._startIndex == 0){
-                    this.myTaskList.removeAllChildren()
-                    this.myTaskList.setVisible(true)
+
+                    this.dataText.setVisible(false)
+                    this.shareTaskList.setVisible(true)
                 }
 
                 this.refreshMyInvitationsParam(this._endIndex)
             }
-
 
             for(let i = 0; i < data.length; i++){
 
                 let log = data[i]
                 let cell = this.shareTaskCell.clone()
                 cell.setVisible(true)
-                this.myTaskList.pushBackCustomItem(cell)
+                this.shareTaskList.pushBackCustomItem(cell)
 
                 cell.getChildByName('numberText').setString(log.seq)
                 cell.getChildByName('timeDaysText').setString(log.timeDays)
@@ -299,7 +328,7 @@ load('game/ui/layer/invitation/InvitationLayer', function () {
             cell.setName(dailyTask.taskId)
             cell.getChildByName('myInviteNameText').setString(dailyTask.taskName)
             cell.getChildByName('moneyText').setString('x' + dailyTask.propNum)
-            cell.getChildByName('acceptedBg').getChildByName('moneyPic').loadTexture(dailyTask.propRes)
+            cell.getChildByName('moneyByPic').getChildByName('moneyPic').loadTexture(dailyTask.propRes)
             cell.getChildByName('progressBarPnl').getChildByName('progressBar').setPercent(Math.round(dailyTask.reachNum/dailyTask.taskNum*100))
             cell.getChildByName('progressBarPnl').getChildByName('progressBarText').setString(dailyTask.reachNum + '/' + dailyTask.taskNum)
 
@@ -374,6 +403,7 @@ load('game/ui/layer/invitation/InvitationLayer', function () {
 
             this.myTaskList.getChildByName(data.taskId).getChildByName('myInviteProcessingBtn').setVisible(false)
             this.myTaskList.getChildByName(data.taskId).getChildByName('myInviteFinishedBtn').setVisible(false)
+            this.myTaskList.getChildByName(data.taskId).getChildByName('myInviteFinishedBtn').setVisible(true)
             this.myTaskList.getChildByName(data.taskId)._data.status = data.status
 
         },

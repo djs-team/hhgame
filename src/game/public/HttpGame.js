@@ -103,7 +103,8 @@ load('game/public/HttpGame', function () {
                 'hostport',
                 'firstLogin',
                 'vipFlag',
-                'channel'
+                'channel',
+                'agentFlag'
             ]
             appInstance.dataManager().getUserData().saveMsg(msg, saveKey)
 

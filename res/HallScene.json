@@ -6623,6 +6623,8 @@
                                   "ScaleX": 1.0,
                                   "ScaleY": 1.0
                                 },
+                                "RotationSkewX": 0.9871,
+                                "RotationSkewY": 0.9871,
                                 "CColor": {},
                                 "IconVisible": false,
                                 "PositionPercentXEnabled": true,

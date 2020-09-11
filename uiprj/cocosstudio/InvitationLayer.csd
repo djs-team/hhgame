@@ -280,7 +280,7 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="invitationTasksPnl" ActionTag="-1476095303" Tag="523" IconVisible="False" LeftMargin="404.6700" RightMargin="181.3301" TopMargin="114.9856" BottomMargin="133.0144" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="invitationTasksPnl" Visible="False" ActionTag="-1476095303" Tag="523" IconVisible="False" LeftMargin="404.6700" RightMargin="181.3301" TopMargin="114.9856" BottomMargin="133.0144" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="694.0000" Y="472.0000" />
                 <Children>
                   <AbstractNodeData Name="myTaskList" ActionTag="-151934554" Tag="240" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="-7.7744" RightMargin="13.6008" TopMargin="1.9843" BottomMargin="12.0851" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" IsBounceEnabled="True" ScrollDirectionType="0" DirectionType="Vertical" ctype="ListViewObjectData">
@@ -510,7 +510,7 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="myInvitationsPnl" Visible="False" ActionTag="-266815369" Tag="524" IconVisible="False" LeftMargin="403.9542" RightMargin="182.0458" TopMargin="114.2739" BottomMargin="133.7261" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="myInvitationsPnl" ActionTag="-266815369" Tag="524" IconVisible="False" LeftMargin="403.9542" RightMargin="182.0458" TopMargin="114.2739" BottomMargin="133.7261" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="694.0000" Y="472.0000" />
                 <Children>
                   <AbstractNodeData Name="dataText" ActionTag="-1442440843" Tag="428" IconVisible="False" LeftMargin="138.2377" RightMargin="230.7623" TopMargin="230.3845" BottomMargin="205.6155" FontSize="36" LabelText="请移至代理后台查询" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">

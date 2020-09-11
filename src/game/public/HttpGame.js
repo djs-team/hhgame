@@ -916,6 +916,26 @@ load('game/public/HttpGame', function () {
             appInstance.sendNotification(GameEvent.VIDEO_WATCH_DIAMONDS, msg)
 
         },
+
+        VIPPaysOrderReq: function (msg) {
+            msg = msg || {}
+            if (!this._requestBackCall[HttpEvent.MJ_HALL_PLAYER_BUY_VIP_ORDER]) {
+                this._requestBackCall[HttpEvent.MJ_HALL_PLAYER_BUY_VIP_ORDER] = this.VIPPaysOrderBack
+            }
+            msg.msgID = HttpEvent.MJ_HALL_PLAYER_BUY_VIP_ORDER
+            appInstance.httpAgent().sendPost(msg)
+
+        },
+
+
+        VIPPaysOrderBack: function (msg) {
+            if (msg.status !== 0) {
+                cc.log('------------->>>httpGame VIPPaysOrderBack error happen')
+                return
+            }
+            appInstance.sendNotification(GameEvent.PLAYER_BUY_VIP_ORDER, msg)
+
+        },
     })
     return HttpGame
 })

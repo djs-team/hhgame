@@ -4,6 +4,8 @@ load('game/ui/layer/member/MemberLayer', function () {
     let GameConfig = include('game/config/GameConfig')
     let BaseLayer = include('public/ui/BaseLayer')
     let MemberMdt = include('game/ui/layer/member/MemberMdt')
+    let AniPlayer = ResConfig.AniPlayer
+    let PlayerPlay = ResConfig.PlayerPlay
     let MemberLayer = BaseLayer.extend({
         _className: 'MemberLayer',
         ctor: function () {
@@ -18,12 +20,14 @@ load('game/ui/layer/member/MemberLayer', function () {
                 'pnl/privilegePnl': { },
                 'pnl/privilegePnl/privilegePgPnl/interestsBg/vipSignText': { },
                 'pnl/privilegePnl/dataPnl/vipLevelPg': { },
-                'pnl/privilegePnl/dataPnl/characterPg': { },
+                'pnl/privilegePnl/dataPnl/characterNd': { },
                 'pnl/privilegePnl/dataPnl/dueReminderText': { },
+                'pnl/privilegePnl/dataPnl/firstPnl': { },
                 'pnl/privilegePnl/dataPnl/firstPnl/firstCoinsBg': { },
                 'pnl/privilegePnl/dataPnl/firstPnl/firstDiamondsBg': { },
                 'pnl/privilegePnl/dataPnl/firstPnl/firstBlockPnl': { },
                 'pnl/privilegePnl/dataPnl/firstPnl/acceptedPg': { },
+                'pnl/privilegePnl/dataPnl/everyDayPnl': { },
                 'pnl/privilegePnl/dataPnl/everyDayPnl/everyDayCoinsBg': { },
                 'pnl/privilegePnl/dataPnl/everyDayPnl/everyDayDiamondsBg': { },
                 'pnl/privilegePnl/dataPnl/everyDayPnl/everyDayBlockPnl': { },
@@ -70,9 +74,12 @@ load('game/ui/layer/member/MemberLayer', function () {
 
         initData: function () {
 
+            this.dueReminderText.setVisible(false)
             this.rechargePnl.setVisible(false)
             this.turnNextBtn.setVisible(false)
             this.turnPreviousBtn.setVisible(false)
+            this.rechargeCell.setVisible(false)
+            this.memberCell.setVisible(false)
 
         },
 
@@ -114,10 +121,10 @@ load('game/ui/layer/member/MemberLayer', function () {
 
         onInitRechargeDatas: function () {
 
-            for(let i = 0; i < this.rechargeList.length; i++){
+            for(let i = 0; i < this._RechargeListData.length; i++){
                 let cell = this.rechargeCell.clone()
-                let rechargeData = rechargeList[i]
-                this.rechargeListView.addchild(cell)
+                let rechargeData = this._RechargeListData[i]
+                this.rechargeListView.addChild(cell)
                 cell.setVisible(true)
                 cell.getChildByName('rechageBg').loadTexture(rechargeData.rechageBg)
                 cell.getChildByName('memberLevelPg').loadTexture(rechargeData.memberLevelPg)
@@ -130,6 +137,7 @@ load('game/ui/layer/member/MemberLayer', function () {
                 }
 
                 cell.setPositionX(210 * i)
+                cell.setPositionY(0)
 
                 cell.addClickEventListener(function (sender,et) {
 
@@ -143,23 +151,37 @@ load('game/ui/layer/member/MemberLayer', function () {
 
         onRechargeClicked : function (sender) {
 
-            let _sendData = sender.getParent()._sendData
+            let _sendData = sender._sendData
+            let msg = {
+                vipCode : _sendData.vipCode,
+                payType : 1
+            }
+
+            appInstance.gameAgent().httpGame().VIPPaysOrderReq(msg)
             //调用充值接口
-            appInstance.gameAgent().Tips('-----------------------------调用充值接口-----------------vipCode ：' + _sendData.vipCode)
 
         },
 
         onInitMemberDatas: function () {
 
-            for(let i = 0; i < this.memberList.length; i++){
+
+            for(let i = 0; i < this._MemberListData.length; i++){
                 let cell = this.memberCell.clone()
-                let memberData = memberList[i]
-                this.memberListView.addchild(cell)
+                let memberData = this._MemberListData[i]
+                this.memberListView.addChild(cell)
                 cell.setVisible(true)
-                cell.getChildByName('memberImage').loadTexture(memberData.memberRes)
+
+
+                let ani = appInstance.gameAgent().gameUtil().getAni(AniPlayer[memberData.roleCode])
+                cell.getChildByName('memberNd').addChild(ani)
+                ani.setPosition(cc.p(0,0))
+                ani.setScale(0.25)
+                ani.setAnimation(0, PlayerPlay.stand, true)
+
                 cell.getChildByName('memberNameText').setString(memberData.memberName)
 
                 cell.setPositionX(172 * i)
+                cell.setPositionY(0)
 
             }
 
@@ -170,12 +192,14 @@ load('game/ui/layer/member/MemberLayer', function () {
         onTurnNextCliecked: function () {
 
             let nextCode = this._PublicData.turnCodeData.turnNextCode
-            this.changeTurnBtn(nextCode)
+            this.onChangePrivilegeData(nextCode)
         },
 
         onTurnPreviousCliecked: function () {
-            let nextCode = this._PublicData.turnCodeData.turnPreviousCode
-            this.changeTurnBtn(nextCode)
+            let previousCode = this._PublicData.turnCodeData.turnPreviousCode
+            this.onChangePrivilegeData(previousCode)
+
+
         },
 
 
@@ -246,10 +270,10 @@ load('game/ui/layer/member/MemberLayer', function () {
                 let privilege = privilegeList[i-1]
                 let privilegeData = {}
                 privilegeData.vipCode = privilege.vipCode
+                privilegeData.roleCode = privilege.roleCode
                 privilegeData.equityMulti = privilege.equityMulti
                 privilegeData.firstChargeGift = privilege.firstChargeGift
                 privilegeData.dailyGift = privilege.dailyGift
-                privilegeData.memberRes = privilege.res
                 privilegeData.memberLevelPg = privilege.memberLevelPg
 
                 this._PrivilegeListData[i] = privilegeData
@@ -274,13 +298,20 @@ load('game/ui/layer/member/MemberLayer', function () {
                 memberLevel = GameConfig.VIP_LEVEL_1
 
             let privilege = this._PrivilegeListData[memberLevel]
+
             this._PublicData.vipCode = privilege.vipCode
 
             this.vipLevelPg.loadTexture(privilege.memberLevelPg)
-            this.characterPg.loadTexture(privilege.memberRes)
+            this.characterNd.removeAllChildren()
+            let ani = appInstance.gameAgent().gameUtil().getAni(AniPlayer[privilege.roleCode])
+            this.characterNd.addChild(ani)
+            ani.setPosition(cc.p(0,0))
+            ani.setScale(0.35)
+            ani.setAnimation(0, PlayerPlay.stand, true)
+
             this.vipSignText.setString(privilege.equityMulti)
 
-            for(let i = 0; i < privilege.firstChargeGift; i++){
+            for(let i = 0; i < privilege.firstChargeGift.length; i++){
                 let _data = privilege.firstChargeGift[i]
                 let _nodeProject
                 if(_data.propCode == GameConfig.propType_currency_coin){
@@ -289,12 +320,12 @@ load('game/ui/layer/member/MemberLayer', function () {
                     _nodeProject = this.firstDiamondsBg
                 }
 
-                this._nodeProject.getChildByName('acceptedTypePg').loadTexture(_data.res)
-                this._nodeProject.getChildByName('awardsVal').setString(_data.num)
+                _nodeProject.getChildByName('acceptedTypePg').loadTexture(_data.res)
+                _nodeProject.getChildByName('awardsVal').setString(_data.num)
 
             }
 
-            for(let i = 0; i < privilege.dailyGift; i++){
+            for(let i = 0; i < privilege.dailyGift.length; i++){
                 let _data = privilege.dailyGift[i]
                 let _nodeProject
                 if(_data.propCode == GameConfig.propType_currency_coin){
@@ -303,8 +334,8 @@ load('game/ui/layer/member/MemberLayer', function () {
                     _nodeProject = this.everyDayDiamondsBg
                 }
 
-                this._nodeProject.getChildByName('acceptedTypePg').loadTexture(_data.res)
-                this._nodeProject.getChildByName('awardsVal').setString(_data.num)
+                _nodeProject.getChildByName('acceptedTypePg').loadTexture(_data.res)
+                _nodeProject.getChildByName('awardsVal').setString(_data.num)
 
             }
 
@@ -372,6 +403,8 @@ load('game/ui/layer/member/MemberLayer', function () {
                 this.toBeVIPBtn.setVisible(true)
                 this.renewBtn.setVisible(false)
                 this.renew1Btn.setVisible(false)
+                this.levelLowerBtn.setVisible(false)
+                this.acceptBtn.setVisible(false)
                 this.upgradeBtn.setVisible(false)
             }
 
@@ -404,7 +437,8 @@ load('game/ui/layer/member/MemberLayer', function () {
                 let mmeber = memberList[i]
                 let memberData = {}
                 memberData.memberName = mmeber.memberName
-                memberData.memberRes = mmeber.res
+                memberData.vipCode = mmeber.vipCode
+                memberData.roleCode = mmeber.roleCode
 
                 this._MemberListData[i] = memberData
 

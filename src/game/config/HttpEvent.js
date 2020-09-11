@@ -45,6 +45,7 @@ load('game/config/HttpEvent', function () {
 
 
 
+        MJ_HALL_PLAYER_BUY_VIP_ORDER  : HTTP_HALL_BASE + 101,
         MJ_HALL_CHECK_IN_INFO  : HTTP_HALL_BASE + 104,
         MJ_HALL_CHECK_IN  : HTTP_HALL_BASE + 105,
 

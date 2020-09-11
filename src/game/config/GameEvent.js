@@ -50,6 +50,7 @@ load('game/config/GameEvent', function () {
         'ADRESS_GET': 'ADRESS_GET',
         'ADRESS_UPDATE': 'ADRESS_UPDATE',
         'VIDEO_WATCH_DIAMONDS': 'VIDEO_WATCH_DIAMONDS',
+        'PLAYER_BUY_VIP_ORDER': 'PLAYER_BUY_VIP_ORDER',
     }
 
     return GameEvent

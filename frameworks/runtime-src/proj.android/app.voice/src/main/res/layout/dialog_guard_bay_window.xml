@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:background="@drawable/bg_guard_bay_window"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/avatar_rl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp">
+
+            <ImageView
+                android:id="@+id/avatar_iv"
+
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginTop="1dp"
+                android:src="@drawable/ic_place" />
+
+            <ImageView
+                android:id="@+id/avatar_guard_bg"
+                android:layout_width="38dp"
+                android:layout_height="42dp"
+                android:src="@drawable/bg_profile_guard" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_marginLeft="3dp"
+            android:id="@+id/tv_level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_room_msg_guard"
+            android:gravity="center"
+            android:text="LV1"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:textColor="@color/white"
+            android:textSize="11sp"/>
+
+        <LinearLayout
+            android:id="@+id/ll_msg_guard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:background="@drawable/bg_room_msg_guard"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_guard_sign"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:text="合合小可爱的守护"
+                android:textColor="#ffffffff"
+                android:textSize="11sp" />
+
+        </LinearLayout>
+        <TextView
+            android:id="@+id/tv_user_name"
+            android:layout_marginLeft="3dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="小妹"
+            android:textColor="#fff0365e"
+            android:textSize="14sp"
+            />
+        <TextView
+            android:layout_marginLeft="3dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="进入房间"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            />
+    </LinearLayout>
+</layout>

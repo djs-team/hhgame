@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <com.deepsea.mua.stub.view.MaxRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/dialog_corner_bg"
+        android:minHeight="448dp"
+        app:maxHeight="448dp">
+        <RelativeLayout
+            android:id="@+id/title_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/online_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="房间内游客"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+
+            <ImageView
+                android:id="@+id/close_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="3dp"
+                android:padding="12dp"
+                android:src="@drawable/ic_black_close" />
+        </RelativeLayout>
+        <LinearLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="29dp"
+            android:layout_below="@id/title_layout"
+            android:layout_centerHorizontal="true">
+            <TextView
+                android:id="@+id/boy_tab"
+                android:layout_width="115dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/online_boy_tab"
+                android:gravity="center"
+                android:text="男嘉宾"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/girl_tab"
+                android:layout_width="115dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/online_girl_tab"
+                android:gravity="center"
+                android:text="女嘉宾"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <com.deepsea.mua.core.view.NoScrollViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/tab_layout"
+            android:overScrollMode="never" />
+    </com.deepsea.mua.stub.view.MaxRelativeLayout>
+</layout>

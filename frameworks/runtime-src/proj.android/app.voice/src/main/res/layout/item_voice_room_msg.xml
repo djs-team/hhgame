@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:radiostyle="http://schemas.android.com/tools"
+    android:id="@+id/cl_group"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:alpha="0.3"
+        android:background="@drawable/room_msg_bg"
+        app:layout_constraintBottom_toBottomOf="@id/msg_layout"
+        app:layout_constraintTop_toTopOf="@id/msg_layout" />
+
+    <RelativeLayout
+        android:id="@+id/msg_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
+        android:orientation="horizontal"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:id="@+id/avatar_rl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="3dp">
+
+            <ImageView
+                android:id="@+id/avatar_iv"
+
+                android:layout_width="24.5dp"
+                android:layout_height="24.5dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginTop="1dp"
+                android:src="@drawable/ic_place" />
+
+            <ImageView
+                android:id="@+id/avatar_guard_bg"
+                android:layout_width="26dp"
+                android:layout_height="29dp"
+                android:src="@drawable/bg_profile_guard" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/room_msg_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="10dp"
+            android:layout_toRightOf="@id/avatar_rl"
+            android:gravity="center_vertical"
+            android:includeFontPadding="false"
+            android:minHeight="29dp"
+            android:textSize="14sp" />
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

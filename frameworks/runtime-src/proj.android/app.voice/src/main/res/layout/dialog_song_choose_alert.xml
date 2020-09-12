@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <LinearLayout android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="39dp"
+        android:background="@drawable/icon_choose_song_bg">
+
+        <TextView
+            android:layout_marginTop="100dp"
+
+            android:id="@+id/tv_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="21dp"
+            android:layout_marginRight="18dp"
+            android:gravity="center_horizontal"
+            android:text="该你唱歌了，带上有线耳机，耳返\n效果帮你发挥更加出色"
+            android:textColor="#ff333333"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/iv_confirm"
+            android:layout_width="130dp"
+            android:layout_height="39dp"
+            android:layout_below="@id/tv_content"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/icon_song_error_alert_confrim" />
+    </LinearLayout>
+</layout>

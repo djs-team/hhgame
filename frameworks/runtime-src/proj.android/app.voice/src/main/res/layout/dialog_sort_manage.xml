@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.deepsea.mua.stub.view.MaxRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="435dp"
+        app:maxHeight="435dp">
+
+        <com.deepsea.mua.stub.view.FixedTabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            app:lineHeight="0dp"
+            app:tabBackground="@drawable/sort_manage_tab"
+            app:textNormalColor="@color/black"
+            app:textSelectColor="@color/black"
+            app:textSize="15sp" />
+
+        <com.deepsea.mua.core.view.NoScrollViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/tab_layout"
+            android:overScrollMode="never"
+            android:paddingTop="8dp"
+            app:bl_gradient_angle="270"
+            app:bl_gradient_endColor="#E7E7E7"
+            app:bl_gradient_startColor="@color/white" />
+    </com.deepsea.mua.stub.view.MaxRelativeLayout>
+</layout>

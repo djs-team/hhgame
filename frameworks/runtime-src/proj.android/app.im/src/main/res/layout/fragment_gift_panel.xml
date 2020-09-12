@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:attrs="http://schemas.android.com/tools">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <android.support.v4.view.ViewPager
+            android:id="@+id/v_pager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="11dp"
+            android:layout_marginRight="11dp"
+            android:layout_weight="1" />
+
+
+        <de.markusressel.android.library.pageindicatorview.PageIndicatorView
+            android:id="@+id/pageIndicator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            app:piv_activeIndicatorFillColor="#F8705F"
+            app:piv_activeIndicatorFillSize="5dp"
+            app:piv_inactiveIndicatorFillColor="#D8D8D8"
+            app:piv_inactiveIndicatorFillSize="5dp"
+            app:piv_initialPageIndex="0"
+            android:layout_marginBottom="5dp"/>
+
+    </LinearLayout>
+</layout>

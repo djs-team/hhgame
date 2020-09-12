@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_marginTop="6dp"
+        android:id="@+id/cons_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_head"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/ic_place_default"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_marginLeft="10dp"
+            app:layout_constraintLeft_toRightOf="@id/iv_head"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="合合小可爱"
+            android:textColor="@color/white"
+            android:textSize="17sp" />
+        <TextView
+            android:id="@+id/tv_redpackage_price"
+            android:layout_marginRight="54dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12元"
+            android:textColor="#ffffffff"
+            android:textSize="17sp" />
+        <ImageView
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/iv_redpackage_rank"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:src="@drawable/ic_redpackage_rank_first"/>
+    </android.support.constraint.ConstraintLayout>
+</layout>

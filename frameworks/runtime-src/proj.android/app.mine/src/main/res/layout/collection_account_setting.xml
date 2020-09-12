@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.deepsea.mua.stub.view.TitleBar
+            android:id="@+id/cons_titlebar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:backgroundRes="@color/transparent"
+            app:title="收款账号设置" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="17dp"
+            android:layout_marginTop="23dp"
+            android:layout_marginRight="17dp"
+            android:text="主持必须在合合交友中完成实名认证。\n然后使用实名认证相同的姓名的支付宝账号完成收款。\n请上传和支付宝账号实名认证相同的身份证正反面照片。"
+            android:textColor="#ff333333"
+            android:textSize="14sp" />
+
+        <RelativeLayout
+            android:id="@+id/rl_balance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cons_titlebar"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/bg_account_setting">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="33dp"
+                android:text="支付宝账号"
+                android:textColor="#ff333333"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/et_alipay_acount"
+                android:layout_width="match_parent"
+                android:layout_height="37dp"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="77dp"
+                android:layout_marginRight="35dp"
+                android:background="@drawable/bg_et_alipay_account"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp" />
+
+            <RelativeLayout
+                android:id="@+id/ll_identity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/et_alipay_acount"
+                android:layout_marginTop="20dp">
+
+                <RelativeLayout
+                    android:layout_width="140dp"
+                    android:layout_marginLeft="34dp"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/iv_identity_front"
+                        android:layout_width="140dp"
+                        android:layout_height="90dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_place_room_bg" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/iv_identity_front"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
+                        android:text="身份证正面照片"
+                        android:textSize="14sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_marginRight="34dp"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true">
+
+                    <ImageView
+                        android:id="@+id/iv_identity_back"
+                        android:layout_width="140dp"
+                        android:layout_height="90dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_place_room_bg" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/iv_identity_back"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="34dp"
+                        android:layout_marginTop="5dp"
+                        android:text="身份证反面照片"
+                        android:textSize="14sp" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_submit"
+                android:layout_width="202dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/ll_identity"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="36dp"
+                android:background="@drawable/bg_btn_crash_withdrawal"
+                android:gravity="center"
+                android:text="提交"
+                android:textColor="#ffffffff"
+                android:textSize="17sp" />
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>

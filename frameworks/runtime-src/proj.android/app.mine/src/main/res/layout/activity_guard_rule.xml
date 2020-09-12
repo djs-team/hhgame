@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <com.deepsea.mua.stub.view.TitleBar
+            android:id="@+id/title_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:backgroundRes="@color/transparent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:leftImgRes="@drawable/ic_back_black"
+            app:title="守护榜规则"
+            app:titleBold="true"
+            app:titleColor="@color/black"
+            app:titleSize="18sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:paddingLeft="25dp"
+            android:paddingRight="35dp"
+            android:text="守护榜规则："
+            android:textColor="#ff000000"
+            android:textSize="14sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_marginTop="16dp"
+            android:paddingLeft="25dp"
+            android:paddingRight="35dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1.七日内为该用户赠送礼物价值达到520支玫瑰，且在守护榜排名前三的为该用户守护。\n
+2.每个用户最多可以有3个守护。\n
+3.一个用户可以成为多人的守护。\n
+"
+            android:textColor="#ff000000"
+            android:textSize="11sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:paddingLeft="25dp"
+            android:paddingRight="35dp"
+            android:text="守护特权："
+            android:textColor="#ff000000"
+            android:textSize="14sp"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_marginTop="16dp"
+            android:paddingLeft="25dp"
+            android:paddingRight="35dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1.直播间进场特效\n2.守护专属头像框
+"
+            android:textColor="#ff000000"
+            android:textSize="11sp" />
+    </LinearLayout>
+</layout>

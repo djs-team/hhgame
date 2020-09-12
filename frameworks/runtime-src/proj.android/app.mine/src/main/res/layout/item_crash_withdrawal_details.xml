@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:background="@drawable/bg_item_income">
+
+        <TextView
+            android:layout_marginLeft="17dp"
+            android:id="@+id/tv_cashwithdrawal_info_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColor="#ff3e3e3e"
+            android:textSize="14sp"
+            android:lineSpacingExtra="1dp"
+            android:layout_marginBottom="7dp"/>
+
+
+        <TextView
+            android:layout_marginTop="16dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="17dp"
+            android:id="@+id/tv_cashwithdrawal_info_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#ff3e3e3e"
+            android:textSize="14sp"
+            android:lineSpacingExtra="1dp"
+            android:layout_marginBottom="7dp" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="13dp"/>
+    </RelativeLayout>
+</layout>

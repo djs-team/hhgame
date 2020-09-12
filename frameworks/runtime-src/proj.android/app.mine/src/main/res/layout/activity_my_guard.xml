@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <com.deepsea.mua.stub.view.TitleBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:backgroundRes="@color/white"
+            app:leftImgRes="@drawable/ic_back_black"
+            app:title="我的守护"
+            app:titleColor="@color/black"
+            app:titleSize="21sp" />
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_horizontal">
+
+            <RelativeLayout
+                android:id="@+id/rl_tab_guard_mine"
+
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/guardmine_tab"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="我守护得人"
+                    android:textColor="@color/select_message_tab"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    />
+
+                <View
+                    android:id="@+id/view_guardmine"
+                    android:layout_width="8dp"
+                    android:layout_height="2dp"
+                    android:layout_below="@id/guardmine_tab"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="4dp"
+                    android:background="#773BE7" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_tab_guard_be"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/rl_tab_guard_mine"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/guardbe_tab"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="守护我的人"
+                    android:textColor="@color/select_message_tab"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+
+                <View
+                    android:id="@+id/view_guardbe"
+                    android:layout_width="8dp"
+                    android:layout_height="2dp"
+                    android:layout_below="@id/guardbe_tab"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="4dp"
+                    android:background="#773BE7"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+        <View
+            android:id="@+id/line"
+            android:layout_marginLeft="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#BBBBBB"/>
+        <com.deepsea.mua.core.view.NoScrollViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:overScrollMode="never" />
+    </LinearLayout>
+</layout>

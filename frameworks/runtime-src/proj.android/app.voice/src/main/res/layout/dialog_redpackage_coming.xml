@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="312dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="312dp"
+            android:layout_height="452dp"
+            android:background="@drawable/bg_redpackage_result">
+
+
+            <TextView
+                android:id="@+id/tv_down_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="31dp"
+                android:layout_marginRight="17dp"
+                android:text="8s"
+                android:textColor="#ffffffff"
+                android:textSize="21sp"
+                android:textStyle="bold"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <RelativeLayout
+                android:layout_marginBottom="45dp"
+                android:id="@+id/rl_rop"
+                android:layout_width="177dp"
+                android:layout_height="51dp"
+                android:background="@drawable/bg_gradients_yellow_radius_26"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent">
+
+                <TextView
+                    android:id="@+id/tv_rop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="马上抢"
+                    android:layout_centerInParent="true"
+                    android:textColor="#ffff2e4d"
+                    android:textSize="21sp" />
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/tv_rop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FF2E4D"
+                    android:textSize="21sp"
+                    android:text=">>"
+                    android:layout_centerVertical="true"/>
+            </RelativeLayout>
+
+        </android.support.constraint.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="22dp"
+            android:src="@drawable/close" />
+    </LinearLayout>
+</layout>

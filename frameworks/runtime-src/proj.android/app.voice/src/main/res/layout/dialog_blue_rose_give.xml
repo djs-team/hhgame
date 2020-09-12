@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:background="@drawable/icon_give_blue_rose_bg"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="27dp"
+                android:text="赠送蓝玫瑰"
+                android:textColor="#ff291657"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/iv_close"
+                android:layout_width="37dp"
+                android:layout_height="37dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/icon_give_blue_rose_close" />
+
+
+
+
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="113dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="数量:"
+                android:textColor="#ff666666"
+                android:textSize="17sp" />
+
+            <EditText
+                android:id="@+id/et_give_num"
+                android:layout_width="69dp"
+                android:layout_height="23dp"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/bg_give_blue_rose_input"
+                android:inputType="number"
+                android:paddingLeft="7dp"
+                android:textSize="16sp"
+                android:maxEms="6"/>
+
+        </LinearLayout>
+        <TextView
+            android:id="@+id/tv_ok"
+            android:layout_width="91dp"
+            android:layout_height="29dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="27dp"
+            android:background="@drawable/icon_btn_give_bg"
+            android:gravity="center"
+            android:text="赠送"
+            android:textColor="#ffffffff"
+            android:textSize="16sp" />
+    </LinearLayout>
+</layout>

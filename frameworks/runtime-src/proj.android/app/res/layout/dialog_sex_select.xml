@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="dlg"
+            type="org.cocos2dx.javascript.view.dialog.SexSelectDialog" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:bl_corners_radius="12dp"
+        app:bl_solid_color="@color/white">
+
+        <TextView
+            android:id="@+id/previous_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{dlg::onClick}"
+            android:padding="18dp"
+            android:text="上一步"
+            android:textColor="#BBBBBB"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/mine_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="18dp"
+            android:padding="18dp"
+            android:text="我是"
+            android:textColor="#333333"
+            android:textSize="19sp" />
+
+        <ImageView
+            android:id="@+id/xgg_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mine_tv"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="26dp"
+            android:onClick="@{dlg::onClick}"
+            android:src="@drawable/selector_xgg_bg" />
+
+        <ImageView
+            android:id="@+id/xjj_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/xgg_iv"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="31dp"
+            android:onClick="@{dlg::onClick}"
+            android:src="@drawable/selector_xjj_bg" />
+
+        <TextView
+            android:id="@+id/next_btn"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:layout_below="@id/xjj_iv"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginRight="50dp"
+            android:background="@drawable/selector_login_btn_bg"
+            android:enabled="false"
+            android:gravity="center"
+            android:onClick="@{dlg::onClick}"
+            android:text="下一步"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/next_btn"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="16dp"
+            android:text="性别选定后，将无法更改"
+            android:textColor="#BBBBBB"
+            android:textSize="12sp" />
+    </RelativeLayout>
+</layout>

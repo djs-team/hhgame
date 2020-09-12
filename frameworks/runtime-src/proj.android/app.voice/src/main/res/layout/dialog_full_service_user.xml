@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:background="@drawable/dialog_corner_white_bg">
+
+        <RelativeLayout
+            android:layout_gravity="right"
+
+            android:id="@+id/rl_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:paddingLeft="13dp"
+            android:paddingTop="13dp"
+            android:paddingRight="13dp"
+            android:paddingBottom="13dp">
+
+            <ImageView
+                android:id="@+id/iv_close"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/icon_close" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rl_close"
+            android:layout_centerHorizontal="true"
+            android:text="全服在线列表"
+            android:textColor="#ff333333"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <com.deepsea.mua.stub.view.FixedTabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_below="@id/tv_title"
+            android:layout_marginLeft="40dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="40dp"
+            app:lineHeight="0dp"
+            app:tabBackground="@drawable/full_service_tab"
+            app:textNormalColor="@color/white"
+            app:textSelectColor="@color/white"
+            app:textSize="16sp"
+            android:visibility="gone"/>
+        <LinearLayout
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:id="@+id/tab_ll_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="29dp"
+            android:layout_below="@id/title_layout"
+            android:layout_centerHorizontal="true">
+            <TextView
+                android:id="@+id/boy_tab"
+                android:layout_width="115dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/online_boy_tab"
+                android:gravity="center"
+                android:text="男嘉宾"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/girl_tab"
+                android:layout_width="115dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/online_girl_tab"
+                android:gravity="center"
+                android:text="女嘉宾"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+        </LinearLayout>
+            <com.deepsea.mua.core.view.NoScrollViewPager
+                android:id="@+id/view_pager"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:layout_marginBottom="8dp"
+                android:overScrollMode="never"
+                android:background="@color/white"
+                android:layout_weight="1"
+                android:paddingTop="8dp"
+                app:bl_gradient_angle="270"
+                app:bl_gradient_endColor="#E7E7E7"
+                app:bl_gradient_startColor="@color/white" />
+    </LinearLayout>
+</layout>

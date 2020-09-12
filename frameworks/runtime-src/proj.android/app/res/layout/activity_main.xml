@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_test1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/btn_test2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <FrameLayout
+                android:id="@+id/container"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <android.support.design.widget.BottomNavigationView
+                android:id="@+id/navigation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:itemBackground="@null"
+                app:itemTextAppearanceActive="@style/NavTextAppearanceActive"
+                app:itemTextAppearanceInactive="@style/NavTextAppearanceInactive"
+                app:labelVisibilityMode="labeled"
+                app:menu="@menu/navigation" />
+        </LinearLayout>
+        <com.deepsea.mua.stub.view.WithBackgroundTextView
+            android:layout_marginLeft="191dp"
+            android:layout_marginBottom="36dp"
+            android:id="@+id/tv_msg_unread"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="@color/white"
+            android:textSize="9sp"
+            app:radius="90dp"
+            android:layout_alignParentBottom="true"
+            app:withBackgroundColor="#F70505" />
+    </RelativeLayout>
+</layout>

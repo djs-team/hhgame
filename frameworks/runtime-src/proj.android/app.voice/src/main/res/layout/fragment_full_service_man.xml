@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <com.deepsea.mua.stub.view.WrapRefreshLayout
+        android:id="@+id/refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clipToPadding="false"
+                android:overScrollMode="never" />
+
+            <RelativeLayout
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="35dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+
+                <LinearLayout
+                    android:id="@+id/ll_invite_free"
+                    android:layout_width="113dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="7dp"
+                    android:background="@drawable/bg_friend_agree"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <com.deepsea.mua.stub.view.TextViewWithoutPadding
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="免费邀请"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_alignParentRight="true"
+                    android:id="@+id/ll_invite_cost"
+                    android:layout_width="113dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="7dp"
+                    android:layout_marginRight="25dp"
+                    android:background="@drawable/bg_friend_disagree"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <com.deepsea.mua.stub.view.TextViewWithoutPadding
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="收费邀请"
+                        android:textColor="#ff888888"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_cost_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="11sp"
+                        android:textColor="#ff8140ef"/>
+                </LinearLayout>
+            </RelativeLayout>
+
+        </LinearLayout>
+    </com.deepsea.mua.stub.view.WrapRefreshLayout>
+
+</layout>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <com.deepsea.mua.stub.view.TitleBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:backgroundRes="@color/white"
+            app:leftImgRes="@drawable/ic_back_black"
+            app:title="我的好友"
+            app:titleColor="@color/black"
+            app:titleSize="21sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_horizontal">
+
+            <RelativeLayout
+                android:id="@+id/rl_tab_friend"
+
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/myfriend_tab"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="我的好友"
+                    android:textColor="@color/select_message_tab"
+                    android:textSize="21sp" />
+
+                <View
+                    android:id="@+id/view_myfriend"
+                    android:layout_width="8dp"
+                    android:layout_height="2dp"
+                    android:layout_below="@id/myfriend_tab"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="4dp"
+                    android:background="#773BE7" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_tab_friendapply"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/rl_tab_friend"
+                android:orientation="vertical">
+
+                <com.deepsea.mua.stub.view.WithBackgroundTextView
+                    android:id="@+id/tv_friendapply_unread"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textColor="@color/white"
+                    android:textSize="9sp"
+                    app:radius="90dp"
+                    app:withBackgroundColor="#F70505" />
+
+                <TextView
+                    android:id="@+id/friendapply_tab"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="好友申请"
+                    android:textColor="@color/select_message_tab"
+                    android:textSize="21sp" />
+
+                <View
+                    android:id="@+id/view_friendapply"
+                    android:layout_width="8dp"
+                    android:layout_height="2dp"
+                    android:layout_below="@id/friendapply_tab"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="4dp"
+                    android:background="#773BE7"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_tab_myapply"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/rl_tab_friendapply"
+                android:orientation="vertical">
+
+                <com.deepsea.mua.stub.view.WithBackgroundTextView
+                    android:id="@+id/tv_myapply_unread"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textColor="@color/white"
+                    android:textSize="9sp"
+                    app:radius="90dp"
+                    app:withBackgroundColor="#F70505" />
+
+                <TextView
+                    android:id="@+id/myapply_tab"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="我的申请"
+                    android:textColor="@color/select_message_tab"
+                    android:textSize="21sp" />
+
+                <View
+                    android:id="@+id/view_myapply"
+                    android:layout_width="8dp"
+                    android:layout_height="2dp"
+                    android:layout_below="@id/myapply_tab"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="4dp"
+                    android:background="#773BE7"
+                    android:visibility="gone" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <com.deepsea.mua.core.view.NoScrollViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:overScrollMode="never" />
+    </LinearLayout>
+</layout>

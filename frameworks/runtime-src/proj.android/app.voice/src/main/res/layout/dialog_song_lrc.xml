@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_gradients_pink_and_violet"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_song_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="25dp"
+            android:text="全世界谁倾听你"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_song_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:text="林宥嘉-《从你的全世界路过》（插曲）"
+            android:textColor="#ffa0a0a0"
+            android:textSize="9sp" />
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="245dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginBottom="15dp">
+
+            <android.support.v7.widget.RecyclerView
+
+                android:id="@+id/rv_lrc"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="25dp"
+            android:layout_marginRight="12dp"
+            android:orientation="horizontal"
+            android:paddingLeft="13dp">
+
+            <TextView
+                android:id="@+id/tv_song_time_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="00.00"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <SeekBar
+                android:id="@+id/seekbar_song_progress"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:maxHeight="3.4dp"
+                android:minHeight="5dp"
+                android:paddingStart="8dp"
+                android:paddingTop="2dp"
+                android:paddingRight="0dp"
+                android:paddingBottom="2dp"
+                android:progressDrawable="@drawable/seekbar_violet_bg"
+                android:thumb="@drawable/shap_seekbar_white" />
+
+            <TextView
+                android:id="@+id/tv_song_time_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="00.00"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

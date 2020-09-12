@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <LinearLayout android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="39dp"
+        android:background="@drawable/icon_music_dialog_error_bg">
+
+        <ImageView
+            android:layout_gravity="center_horizontal"
+            android:layout_width="72dp"
+            android:layout_height="69dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/icon_song_alert_logo" />
+
+        <TextView
+            android:layout_marginTop="19dp"
+
+            android:id="@+id/tv_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="95dp"
+            android:layout_marginRight="95dp"
+            android:gravity="center_horizontal"
+            android:text="指定嘉宾已经不在麦上，歌曲被取消"
+            android:textColor="#ff333333"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/iv_confirm"
+            android:layout_width="130dp"
+            android:layout_height="39dp"
+            android:layout_below="@id/tv_content"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/icon_song_error_alert_confrim" />
+    </LinearLayout>
+</layout>

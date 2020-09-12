@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dialog_corner_white_bg"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <!--        <RelativeLayout-->
+        <!--            android:id="@+id/rl_close"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_alignParentRight="true"-->
+        <!--            android:layout_gravity="right"-->
+        <!--            android:paddingLeft="13dp"-->
+        <!--            android:paddingTop="13dp"-->
+        <!--            android:paddingRight="13dp"-->
+        <!--            android:paddingBottom="13dp">-->
+
+        <!--            <ImageView-->
+        <!--                android:id="@+id/iv_close"-->
+        <!--                android:layout_width="20dp"-->
+        <!--                android:layout_height="20dp"-->
+        <!--                android:src="@drawable/icon_close" />-->
+        <!--        </RelativeLayout>-->
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rl_close"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="11dp"
+            android:layout_marginBottom="13dp"
+            android:text="麦位管理"
+            android:textColor="#ff333333"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/ll_tab_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="11dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="0.5dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/sofa_micro_tab"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:gravity="center"
+                    android:text="沙发座"
+                    android:textColor="@color/color_FFEB1FC7"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/line_sofa_tab"
+                    android:layout_width="19dp"
+                    android:layout_height="2dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="4dp"
+                    android:background="@color/color_FFEB1FC7" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/common_micro_tab"
+                android:layout_width="70dp"
+                android:layout_height="30dp"
+                android:background="@drawable/tab_micro_manage"
+                android:gravity="center"
+                android:text="普通座"
+                android:textColor="@color/color_FF272727"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/line_common_tab"
+                android:layout_width="19dp"
+                android:layout_height="2dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="4dp"
+                android:background="@color/color_FFEB1FC7"
+                android:visibility="invisible" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="11dp"
+            android:background="@drawable/ranklist_tab_bg"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="0.5dp">
+
+
+            <TextView
+                android:id="@+id/apply_tab"
+                android:layout_width="70dp"
+                android:layout_height="30dp"
+                android:background="@drawable/tab_micro_manage"
+                android:gravity="center"
+                android:text="已申请"
+                android:textColor="@color/rank_list_tab_color"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/in_room_tab"
+                android:layout_width="70dp"
+                android:layout_height="30dp"
+                android:background="@drawable/tab_micro_manage"
+                android:gravity="center"
+                android:text="房间内"
+                android:textColor="@color/rank_list_tab_color"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/current_active_tab"
+                android:layout_width="70dp"
+                android:layout_height="30dp"
+                android:background="@drawable/tab_micro_manage"
+                android:gravity="center"
+                android:text="最近活跃"
+                android:textColor="@color/rank_list_tab_color"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/friend_tab"
+                android:layout_width="70dp"
+                android:layout_height="30dp"
+                android:background="@drawable/tab_micro_manage"
+                android:gravity="center"
+                android:text="好友"
+                android:textColor="@color/rank_list_tab_color"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <com.deepsea.mua.core.view.NoScrollViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:overScrollMode="never"
+            android:paddingTop="8dp"
+            app:bl_gradient_angle="270"
+            app:bl_gradient_endColor="#E7E7E7"
+            app:bl_gradient_startColor="@color/white" />
+    </LinearLayout>
+</layout>

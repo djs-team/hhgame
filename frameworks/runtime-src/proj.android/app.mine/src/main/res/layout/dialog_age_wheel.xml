@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+
+        <LinearLayout
+            android:layout_width="289dp"
+            android:layout_height="225dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            app:bl_corners_radius="8dp"
+            app:bl_stroke_width="0.5dp"
+            app:bl_solid_color="@color/white">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginTop="16dp">
+
+                <TextView
+                    android:id="@+id/title_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="请选择年龄"
+                    android:textColor="#ff282828"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/confirm_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:text="确定"
+                    android:textColor="#ff7d3ef1"
+                    android:textSize="13sp" />
+            </RelativeLayout>
+
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginRight="13dp"
+                    android:layout_marginBottom="40dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="#878787" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="#878787" />
+                </RelativeLayout>
+
+
+                <com.deepsea.mua.mine.view.wheel.WheelView
+                    android:id="@+id/wheel_no1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/wheel_no2"
+                    app:wheelCyclic="false"
+                    app:wheelItemCount="5"
+                    app:wheelItemHeight="30dp"
+                    app:wheelSelectedTextColor="#ff7d3ef1"
+                    app:wheelTextColor="#ff333333"
+                    app:wheelTextSize="14sp" />
+
+                <com.deepsea.mua.mine.view.wheel.WheelView
+                    android:id="@+id/wheel_no2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:layout_constraintLeft_toRightOf="@id/wheel_no1"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:wheelCyclic="false"
+                    app:wheelItemCount="5"
+                    app:wheelItemHeight="30dp"
+                    app:wheelSelectedTextColor="#ff7d3ef1"
+                    app:wheelTextColor="#ff333333"
+                    app:wheelTextSize="14sp" />
+            </android.support.constraint.ConstraintLayout>
+
+
+        </LinearLayout>
+</layout>

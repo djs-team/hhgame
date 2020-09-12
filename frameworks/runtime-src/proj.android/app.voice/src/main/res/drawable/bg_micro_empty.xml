@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?><!-- 带圆角 白色背景 黄色色边框  长方体 -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#ffffffff" />
+            <gradient
+                android:angle="0"
+                android:centerColor="#ff5b095f"
+                android:endColor="#ffb32cf4"
+                android:startColor="#ff000000"
+                android:type="linear"
+                android:useLevel="true" />
+            <corners
+                android:bottomLeftRadius="6dp"
+                android:bottomRightRadius="6dp"
+                android:topLeftRadius="6dp"
+                android:topRightRadius="6dp" />
+        </shape>
+    </item>
+</layer-list>

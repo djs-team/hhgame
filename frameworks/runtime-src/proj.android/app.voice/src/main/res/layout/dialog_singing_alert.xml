@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/icon_singing_alert_bg"
+        android:orientation="vertical"
+        android:paddingBottom="39dp">
+
+        <ImageView
+            android:layout_width="73dp"
+            android:layout_height="67dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/icon_singing_alert_logo" />
+
+        <TextView
+            android:id="@+id/tv_content"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginRight="18dp"
+            android:gravity="center_horizontal"
+            android:textColor="#ff333333"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/iv_confirm"
+            android:layout_width="130dp"
+            android:layout_height="39dp"
+            android:layout_below="@id/tv_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/icon_song_error_alert_confrim" />
+    </LinearLayout>
+</layout>

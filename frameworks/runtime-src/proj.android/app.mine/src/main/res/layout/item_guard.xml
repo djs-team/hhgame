@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        app:bl_corners_radius="12dp">
+
+
+        <ImageView
+            android:id="@+id/rank_iv"
+            android:layout_width="57dp"
+            android:layout_height="57dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/ic_place"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:text="小包子"
+            android:textColor="#ff333333"
+            android:textSize="19sp"
+            app:layout_constraintLeft_toRightOf="@id/rank_iv"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RelativeLayout
+            android:id="@+id/rl_sex"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginLeft="9dp"
+            android:background="@drawable/bg_sex_man"
+            app:layout_constraintBottom_toBottomOf="@id/tv_name"
+            app:layout_constraintLeft_toRightOf="@id/tv_name"
+            app:layout_constraintTop_toTopOf="@id/tv_name">
+
+            <ImageView
+                android:id="@+id/sex_iv"
+                android:layout_width="9dp"
+                android:layout_height="9dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/icon_find_sex_man" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="35"
+            android:textColor="#ff818181"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/tv_name"
+            app:layout_constraintLeft_toRightOf="@id/rl_sex"
+            app:layout_constraintTop_toTopOf="@id/tv_name" />
+
+
+        <ImageView
+            android:id="@+id/iv_location"
+            android:layout_width="10dp"
+            android:layout_height="12dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="13dp"
+            android:src="@drawable/ic_location"
+            app:layout_constraintLeft_toRightOf="@id/rank_iv"
+            app:layout_constraintTop_toBottomOf="@id/tv_name" />
+
+        <TextView
+            android:id="@+id/tv_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="11dp"
+            android:text="河北省石家庄"
+            android:textColor="#ff4a4a4a"
+            android:textSize="12sp"
+            app:layout_constraintLeft_toRightOf="@id/iv_location"
+            app:layout_constraintTop_toBottomOf="@id/tv_name" />
+
+        <TextView
+            android:id="@+id/tv_intimacy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="15dp"
+            android:text="亲密值：8888"
+            android:textColor="#ff803ff0"
+            android:textSize="11sp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_due_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="15dp"
+            android:text="还有7天到期"
+            android:textColor="#ffff010d"
+            android:textSize="11sp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_intimacy" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@color/line"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+</layout>

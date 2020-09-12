@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_gradients_pink_and_violet"
+        android:orientation="vertical">
+
+        <com.deepsea.mua.stub.view.TitleBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:backgroundRes="@color/white"
+            app:leftImgRes="@drawable/ic_back_black"
+            app:title="送礼物"
+            app:titleColor="@color/black" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@drawable/bg_mast_addfriend_desc"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:text="如果对方拒绝好友请求，玫瑰原路退回"
+            android:textColor="#FBFBFB"
+            android:textSize="10sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp">
+
+            <ImageView
+                android:id="@+id/iv_userhead"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="12dp"
+                android:src="@drawable/ic_place" />
+
+            <TextView
+                android:id="@+id/tv_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="2dp"
+                android:layout_toRightOf="@id/iv_userhead"
+                android:text="@string/msg_leaving_words"
+                android:textColor="#fbfbfb"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_username"
+                android:layout_marginTop="8dp"
+                android:layout_toRightOf="@id/iv_userhead"
+                android:text="她都不好意思回绝你的热情～"
+                android:textColor="#fbfbfb"
+                android:textSize="12sp" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="26dp"
+            android:layout_marginTop="17dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tv_account_partone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@id/iv_account_parttwo"
+                android:text="你有"
+                android:textColor="#fbfbfb"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:id="@+id/iv_account_parttwo"
+                android:layout_width="17dp"
+                android:layout_height="26dp"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@id/tv_account_num"
+                android:src="@drawable/icon_flowers" />
+
+            <TextView
+                android:id="@+id/tv_account_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="6dp"
+                android:layout_toLeftOf="@id/btn_buy_more"
+                android:text="x10"
+                android:textColor="#fbfbfb"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/btn_buy_more"
+                android:layout_width="53dp"
+                android:layout_height="16dp"
+android:layout_centerVertical="true"                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:gravity="center"
+                android:text="购买更多"
+                android:textSize="@dimen/text_size_12"
+                android:textColor="#9344E5"
+                android:background="@drawable/white_radius_5dp"/>
+
+        </RelativeLayout>
+
+        <com.deepsea.mua.stub.view.FixedTabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_marginLeft="11dp"
+            android:layout_marginTop="17dp"
+            app:lineHeight="0dp"
+            app:lineWidth="89dp"
+            app:tabBackground="@drawable/tab_addfriend"
+            app:tabWidth="89dp"
+            app:textNormalColor="#ffffff"
+            app:textSelectColor="#CE54C8"
+            app:textSize="12sp" />
+
+        <com.deepsea.mua.core.view.NoScrollViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:overScrollMode="never" />
+
+
+        <Button
+            android:id="@+id/btn_add_friend_nogift"
+            android:layout_width="154dp"
+            android:layout_height="34dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="17dp"
+            android:background="@drawable/bg_nogift_add_friend"
+            android:text="不送礼加好友"
+            android:textColor="#464646"
+            android:textSize="@dimen/text_size_16"
+            android:visibility="gone" />
+    </LinearLayout>
+</layout>

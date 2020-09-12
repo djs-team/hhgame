@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CXLiveRoomGuardGroupView">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7cD-2p-VLe">
+                    <rect key="frame" x="179" y="8" width="56" height="56"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="56" id="1fZ-F7-X1h"/>
+                        <constraint firstAttribute="width" constant="56" id="1ol-NE-mwc"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的守护团" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qxd-l2-0P9">
+                    <rect key="frame" x="166" y="72" width="82" height="19.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="0.1960526407" green="0.19609326120000001" blue="0.1960500479" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Hc8-af-Hc2">
+                    <rect key="frame" x="15" y="101.5" width="384" height="248.5"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VIt-9B-Fzb">
+                    <rect key="frame" x="15" y="101.5" width="384" height="248.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="守护后将会获得以下特权" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jX7-rQ-5Yv">
+                            <rect key="frame" x="0.0" y="20" width="180" height="20"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="liveroom_guard_texiao_logo" translatesAutoresizingMaskIntoConstraints="NO" id="C8h-VL-kRq">
+                            <rect key="frame" x="172" y="70" width="40" height="55"/>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="liveroom_guard_xunzhang_logo" translatesAutoresizingMaskIntoConstraints="NO" id="YPO-YC-iRi">
+                            <rect key="frame" x="48" y="71.5" width="42.5" height="52"/>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="liveroom_guard_gift_logo" translatesAutoresizingMaskIntoConstraints="NO" id="cWe-gr-xeM">
+                            <rect key="frame" x="294.5" y="78" width="41.5" height="39.5"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="进场特效" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wrm-kq-8ZC">
+                            <rect key="frame" x="163.5" y="133" width="57.5" height="17"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                            <color key="textColor" red="0.52941176470588236" green="0.52941176470588236" blue="0.52941176470588236" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="专属勋章" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HCL-Fm-KSP">
+                            <rect key="frame" x="40.5" y="133" width="57.5" height="17"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                            <color key="textColor" red="0.52941176469999995" green="0.52941176469999995" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="守护专属礼物" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S8q-Cg-k7o">
+                            <rect key="frame" x="272.5" y="133" width="86" height="17"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                            <color key="textColor" red="0.52941176469999995" green="0.52941176469999995" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bBH-Ex-My6">
+                            <rect key="frame" x="59" y="174" width="266" height="38"/>
+                            <color key="backgroundColor" red="0.50196078430000002" green="0.2470588235" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="266" id="CLf-cn-S8k"/>
+                                <constraint firstAttribute="height" constant="38" id="gx7-o5-3Hg"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                            <state key="normal" title="立即守护">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="open_guard_btnAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="uG8-Ot-zCT"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="jX7-rQ-5Yv" firstAttribute="top" secondItem="VIt-9B-Fzb" secondAttribute="top" constant="20" id="5vA-Wd-ldY"/>
+                        <constraint firstItem="cWe-gr-xeM" firstAttribute="centerY" secondItem="C8h-VL-kRq" secondAttribute="centerY" id="Eal-Am-dZc"/>
+                        <constraint firstItem="YPO-YC-iRi" firstAttribute="centerY" secondItem="C8h-VL-kRq" secondAttribute="centerY" id="FXK-FF-D0a"/>
+                        <constraint firstItem="S8q-Cg-k7o" firstAttribute="centerX" secondItem="cWe-gr-xeM" secondAttribute="centerX" id="MpX-Pw-iYx"/>
+                        <constraint firstAttribute="trailing" secondItem="cWe-gr-xeM" secondAttribute="trailing" constant="48" id="Ns6-K2-Vjk"/>
+                        <constraint firstItem="S8q-Cg-k7o" firstAttribute="centerY" secondItem="wrm-kq-8ZC" secondAttribute="centerY" id="QGl-GW-PZz"/>
+                        <constraint firstItem="bBH-Ex-My6" firstAttribute="centerX" secondItem="VIt-9B-Fzb" secondAttribute="centerX" id="UH6-3R-KxD"/>
+                        <constraint firstItem="jX7-rQ-5Yv" firstAttribute="leading" secondItem="VIt-9B-Fzb" secondAttribute="leading" id="YuC-Rb-5aD"/>
+                        <constraint firstItem="C8h-VL-kRq" firstAttribute="centerX" secondItem="VIt-9B-Fzb" secondAttribute="centerX" id="b8M-SI-Fni"/>
+                        <constraint firstItem="bBH-Ex-My6" firstAttribute="top" secondItem="wrm-kq-8ZC" secondAttribute="bottom" constant="24" id="bqI-lm-xwB"/>
+                        <constraint firstItem="wrm-kq-8ZC" firstAttribute="top" secondItem="C8h-VL-kRq" secondAttribute="bottom" constant="8" id="cyR-eX-Faa"/>
+                        <constraint firstItem="HCL-Fm-KSP" firstAttribute="centerX" secondItem="YPO-YC-iRi" secondAttribute="centerX" id="p2F-II-xAm"/>
+                        <constraint firstItem="wrm-kq-8ZC" firstAttribute="centerX" secondItem="C8h-VL-kRq" secondAttribute="centerX" id="s7z-nE-HHV"/>
+                        <constraint firstItem="HCL-Fm-KSP" firstAttribute="centerY" secondItem="wrm-kq-8ZC" secondAttribute="centerY" id="si1-bK-ARi"/>
+                        <constraint firstItem="YPO-YC-iRi" firstAttribute="leading" secondItem="VIt-9B-Fzb" secondAttribute="leading" constant="48" id="uXW-hL-2Wf"/>
+                        <constraint firstItem="C8h-VL-kRq" firstAttribute="top" secondItem="jX7-rQ-5Yv" secondAttribute="bottom" constant="30" id="xKR-UR-bMN"/>
+                    </constraints>
+                </view>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gd9-oN-WdA">
+                    <rect key="frame" x="74" y="352" width="266" height="38"/>
+                    <color key="backgroundColor" red="0.50196078430000002" green="0.2470588235" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="38" id="3Rd-pk-Rwe"/>
+                        <constraint firstAttribute="width" constant="266" id="7oF-uX-hVz"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                    <state key="normal" title="续费">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="open_guard_btnAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="jS6-Wd-HiE"/>
+                        <action selector="renew_guard_btnAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="1Uw-lT-PvB"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="VIt-9B-Fzb" firstAttribute="top" secondItem="Hc8-af-Hc2" secondAttribute="top" id="3g4-iN-G2C"/>
+                <constraint firstItem="VIt-9B-Fzb" firstAttribute="trailing" secondItem="Hc8-af-Hc2" secondAttribute="trailing" id="9dB-1Q-2y3"/>
+                <constraint firstItem="VIt-9B-Fzb" firstAttribute="leading" secondItem="Hc8-af-Hc2" secondAttribute="leading" id="CpS-jc-K70"/>
+                <constraint firstItem="Hc8-af-Hc2" firstAttribute="top" secondItem="Qxd-l2-0P9" secondAttribute="bottom" constant="10" id="E3u-Mw-tXs"/>
+                <constraint firstItem="7cD-2p-VLe" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="HQM-VI-7oy"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Hc8-af-Hc2" secondAttribute="bottom" constant="50" id="Qls-ze-uqc"/>
+                <constraint firstItem="7cD-2p-VLe" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="TSP-jd-Ry0"/>
+                <constraint firstItem="VIt-9B-Fzb" firstAttribute="bottom" secondItem="Hc8-af-Hc2" secondAttribute="bottom" id="Xm7-1W-me0"/>
+                <constraint firstItem="gd9-oN-WdA" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" constant="-10" id="bha-8K-gNb"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Hc8-af-Hc2" secondAttribute="trailing" constant="15" id="edY-wy-pQi"/>
+                <constraint firstItem="Hc8-af-Hc2" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="kSV-e5-WCt"/>
+                <constraint firstItem="Qxd-l2-0P9" firstAttribute="top" secondItem="7cD-2p-VLe" secondAttribute="bottom" constant="8" id="sEx-6G-Mu8"/>
+                <constraint firstItem="Qxd-l2-0P9" firstAttribute="centerX" secondItem="7cD-2p-VLe" secondAttribute="centerX" id="sHJ-cK-8PR"/>
+                <constraint firstItem="gd9-oN-WdA" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="vBL-EW-vW5"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="avatar" destination="7cD-2p-VLe" id="cMc-8D-hKn"/>
+                <outlet property="mainTableView" destination="Hc8-af-Hc2" id="NpB-ub-UKg"/>
+                <outlet property="numberLabel" destination="Qxd-l2-0P9" id="HeF-Ef-AhJ"/>
+                <outlet property="open_guard_btn" destination="bBH-Ex-My6" id="GYE-ui-zw0"/>
+                <outlet property="open_guard_view" destination="VIt-9B-Fzb" id="HsT-TZ-aFM"/>
+                <outlet property="renew_guard_btn" destination="gd9-oN-WdA" id="8im-h8-3WQ"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="119.86607142857142"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="liveroom_guard_gift_logo" width="41.5" height="39.5"/>
+        <image name="liveroom_guard_texiao_logo" width="40" height="55"/>
+        <image name="liveroom_guard_xunzhang_logo" width="42.5" height="52"/>
+    </resources>
+</document>

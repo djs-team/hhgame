@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CXSystemMessageCellID" rowHeight="111" id="KGk-i7-Jjw" customClass="CXSystemMessageCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="111"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="111"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cbI-2H-Lyw">
+                        <rect key="frame" x="9" y="12" width="302" height="99"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pzX-pR-S3y">
+                                <rect key="frame" x="5" y="13" width="31" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r2V-8T-OkN">
+                                <rect key="frame" x="5" y="39" width="292" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pzX-pR-S3y" firstAttribute="top" secondItem="cbI-2H-Lyw" secondAttribute="top" constant="13" id="JX2-hw-igO"/>
+                            <constraint firstAttribute="bottom" secondItem="r2V-8T-OkN" secondAttribute="bottom" constant="15" id="PMZ-nz-JaM"/>
+                            <constraint firstItem="r2V-8T-OkN" firstAttribute="top" secondItem="cbI-2H-Lyw" secondAttribute="top" constant="39" id="Rt7-Z5-Fqd"/>
+                            <constraint firstItem="pzX-pR-S3y" firstAttribute="leading" secondItem="cbI-2H-Lyw" secondAttribute="leading" constant="5" id="erC-D0-IEx"/>
+                            <constraint firstAttribute="trailing" secondItem="r2V-8T-OkN" secondAttribute="trailing" constant="5" id="jUE-KK-fyZ"/>
+                            <constraint firstItem="r2V-8T-OkN" firstAttribute="leading" secondItem="cbI-2H-Lyw" secondAttribute="leading" constant="5" id="jmc-KT-aGL"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="cbI-2H-Lyw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="9" id="6VE-04-ZI5"/>
+                    <constraint firstAttribute="bottom" secondItem="cbI-2H-Lyw" secondAttribute="bottom" id="Kom-7k-V5e"/>
+                    <constraint firstItem="cbI-2H-Lyw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="njL-1M-JUe"/>
+                    <constraint firstAttribute="trailing" secondItem="cbI-2H-Lyw" secondAttribute="trailing" constant="9" id="qua-pC-xSt"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="contentBGView" destination="cbI-2H-Lyw" id="jSK-De-xc8"/>
+                <outlet property="contentLabel" destination="r2V-8T-OkN" id="PIS-Pq-hLj"/>
+                <outlet property="timeLabel" destination="pzX-pR-S3y" id="7d7-rs-F0E"/>
+            </connections>
+            <point key="canvasLocation" x="163.768115942029" y="39.174107142857139"/>
+        </tableViewCell>
+    </objects>
+</document>

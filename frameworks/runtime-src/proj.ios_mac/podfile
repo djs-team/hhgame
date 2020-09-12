@@ -26,7 +26,6 @@ target 'hhgame-mobile' do
   pod 'AlipaySDK-iOS'
   pod 'JPush'
   pod 'JVerification'
-  pod 'Bytedance-UnionAD'
   
   pod 'YYKit'
   pod 'AFNetworking'

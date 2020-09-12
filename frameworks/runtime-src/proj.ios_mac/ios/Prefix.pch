@@ -5,4 +5,71 @@
 #ifdef __OBJC__
 	#import <Foundation/Foundation.h>
 	#import <UIKit/UIKit.h>
+
+    #import <HyphenateLite/HyphenateLite.h>
+    #import "EMDefines.h"
+    #import "EMHeaders.h"
+    #import <YYKit/YYKit.h>
+    #import <MJRefresh/MJRefresh.h>
+    #import <SDWebImage/SDWebImage.h>
+    #import <CocoaSecurity/CocoaSecurity.h>
+    #import "Masonry.h"
+    #import "LEEAlert.h"
+    #import "LewPopupViewController.h"
+    #import "TPKeyboardAvoidingScrollView.h"
+
+    #import "CXTools.h"
+    #import "CXClientModel.h"
+    #import "SocketManager.h"
+    #import "AppController.h"
+    #import "CXHTTPRequest.h"
+    #import "CXUserModel.h"
+    #import "CXSytemModel.h"
+
+    #import "CXSystemAlertView.h"
+
+    #import "UIViewController+CXCategory.h"
+    #import "MBProgressHUD+CXCategory.h"
+    #import "UIImage+CXCategory.h"
+    #import "NSString+CXCategory.h"
+    #import "NSDate+CXCategory.h"
+
+    #import "CXRechargeViewController.h"
+    #import "CXIPAPurchaseManager.h"
+    #import "CXThirdPayManager.h"
+
+    //微信
+    #define WX_AppKey @"wx36f02225e13d7261"
+    #define WX_AppSecret @"ec838b83af52186b2c62eafec742de94"
+    //极光
+    #define jPush_appKey @"63fc9c5b80e873aee27415ed"
+    //穿山甲
+    #define BUDAd_appKey @"5000546"
+    #define BUDAd_SlotID @"800546808"
+
+    // ********** NSNotificationCenter Name **********
+    NSString *const kNSNotificationCenter_CXBaseTabBarViewController_leaveOut = @"NSNotificationCenter_CXBaseTabBarViewController_leaveOut";
+    NSString *const kNSNotificationCenter_CXHomeChildViewController_Filter = @"NSNotificationCenter_CXHomeChildViewController_Filter";
+
+    NSString *const kNSNotificationCenter_CXRechargeViewController_weixin = @"NSNotificationCenter_CXRechargeViewController_weixin";
+    NSString *const kNSNotificationCenter_CXRechargeViewController_alipay = @"NSNotificationCenter_CXRechargeViewController_alipay";
+
+    // ********** define **********
+    // frame
+    #define IS_IPHONE_X         [[UIScreen mainScreen] bounds].size.height >= 800.0f
+    #define kStatusHeight       (IS_IPHONE_X ? 44 : 20)
+    #define kNavHeight          (IS_IPHONE_X ? 88 : 64)
+    #define kBottomArea         (IS_IPHONE_X ? 34 : 0)
+
+    #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+    #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+    #define SCALE_W (SCREEN_WIDTH/375)
+
+    // public
+    #define kWeakSelf __weak typeof(self) weakSelf = self;
+
+
+    // close
+    #define rgba(R255, G255, B255, A1)  [UIColor colorWithRed:(R255)/255.f green:(G255)/255.f blue:(B255)/255.f alpha:A1]
+
 #endif

@@ -16,6 +16,7 @@
 #import "CXSelectedPhotoView.h"
 #import <AliyunOSSiOS/AliyunOSSiOS.h>
 #import "CXMineBlockViewController.h"
+#import "CXAliRPManager.h"
 
 @interface CXMineViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *avatar;
@@ -216,6 +217,13 @@
     } else if ([title isEqualToString:@"黑名单"]) {
         CXMineBlockViewController *vc = [CXMineBlockViewController new];
         [self.navigationController pushViewController:vc animated:YES];
+    } else if ([title isEqualToString:@"实名认证"]) {
+        kWeakSelf
+        [[CXAliRPManager sharedInstance] startWithSuccess:^{
+            [weakSelf toast:@"认证成功"];
+        } failure:^(int code, NSString * _Nonnull reason) {
+            [weakSelf toast:reason];
+        } nav:self.navigationController];
     }
 }
 

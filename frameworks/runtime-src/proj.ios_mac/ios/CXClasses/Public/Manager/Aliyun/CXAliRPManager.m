@@ -6,7 +6,7 @@
 //
 
 #import "CXAliRPManager.h"
-//#import <RPSDK/RPSDK.h>
+#import <RPSDK/RPSDK.h>
 
 @implementation CXAliRPManager
 
@@ -16,7 +16,7 @@
     dispatch_once(&onceToken, ^{
         sinstance = [[CXAliRPManager alloc] initInternal];
         
-//        [RPSDK setup];
+        [RPSDK setup];
     });
     return sinstance;
 }
@@ -40,16 +40,15 @@
     kWeakSelf
     [CXHTTPRequest POSTWithURL:@"/index.php/Api/Approvice/getVerifyToken" parameters:@{@"signature": signature} callback:^(id responseObject, BOOL isCache, NSError *error) {
        if (!error) {
-//           [RPSDK startWithVerifyToken:responseObject[@"data"][@"Token"] viewController:nav completion:^(RPResult * _Nonnull result) {
-//               if (result.state == RPStatePass) {
-//                   [weakSelf verifySuccessCreateapproveWithSuccess:success failure:failure];
-//                   if (success) success ();
-//               } else if (result.state == RPStateNotVerify) {
-//                   if (failure) failure ([result.errorCode intValue], @"未认证");
-//               } else if (result.state == RPStateFail) {
-//                   if (failure) failure ([result.errorCode intValue], @"认证失败");
-//               }
-//           }];
+           [RPSDK startWithVerifyToken:responseObject[@"data"][@"Token"] viewController:nav completion:^(RPResult * _Nonnull result) {
+               if (result.state == RPStatePass) {
+                   [weakSelf verifySuccessCreateapproveWithSuccess:success failure:failure];
+               } else if (result.state == RPStateNotVerify) {
+                   if (failure) failure ([result.errorCode intValue], @"未认证");
+               } else if (result.state == RPStateFail) {
+                   if (failure) failure ([result.errorCode intValue], @"认证失败");
+               }
+           }];
        }
     }];
 }

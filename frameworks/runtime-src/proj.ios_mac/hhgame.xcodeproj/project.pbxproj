@@ -707,6 +707,12 @@
 		00802AB4250CA91000F43A32 /* BUFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00802AAF250CA91000F43A32 /* BUFoundation.framework */; };
 		00802AB5250CA91000F43A32 /* BUAdSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 00802AB0250CA91000F43A32 /* BUAdSDK.bundle */; };
 		00802AB9250CAB9000F43A32 /* CXBUAdRewardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00802AB8250CAB9000F43A32 /* CXBUAdRewardViewController.m */; };
+		00802AC1250CC55300F43A32 /* RPSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00802ABB250CC55200F43A32 /* RPSDK.framework */; };
+		00802AC2250CC55300F43A32 /* SGMain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00802ABC250CC55200F43A32 /* SGMain.framework */; };
+		00802AC3250CC55300F43A32 /* yw_1222_0769.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00802ABD250CC55200F43A32 /* yw_1222_0769.jpg */; };
+		00802AC4250CC55300F43A32 /* RPSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 00802ABE250CC55200F43A32 /* RPSDK.bundle */; };
+		00802AC5250CC55300F43A32 /* SGSecurityBody.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00802ABF250CC55300F43A32 /* SGSecurityBody.framework */; };
+		00802AC6250CC55300F43A32 /* SecurityGuardSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00802AC0250CC55300F43A32 /* SecurityGuardSDK.framework */; };
 		1A2EA1861FC3DA6C0062C870 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A2EA1851FC3DA6B0062C870 /* Images.xcassets */; };
 		1A67682A180E9C060076BC67 /* libcocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB48180E9ACB004C840B /* libcocos2d Mac.a */; };
 		1A676839180E9C1E0076BC67 /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB56180E9ACB004C840B /* libcocos2d iOS.a */; };
@@ -1931,6 +1937,12 @@
 		00802AB0250CA91000F43A32 /* BUAdSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BUAdSDK.bundle; sourceTree = "<group>"; };
 		00802AB7250CAB9000F43A32 /* CXBUAdRewardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXBUAdRewardViewController.h; sourceTree = "<group>"; };
 		00802AB8250CAB9000F43A32 /* CXBUAdRewardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXBUAdRewardViewController.m; sourceTree = "<group>"; };
+		00802ABB250CC55200F43A32 /* RPSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RPSDK.framework; sourceTree = "<group>"; };
+		00802ABC250CC55200F43A32 /* SGMain.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SGMain.framework; sourceTree = "<group>"; };
+		00802ABD250CC55200F43A32 /* yw_1222_0769.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yw_1222_0769.jpg; sourceTree = "<group>"; };
+		00802ABE250CC55200F43A32 /* RPSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = RPSDK.bundle; sourceTree = "<group>"; };
+		00802ABF250CC55300F43A32 /* SGSecurityBody.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SGSecurityBody.framework; sourceTree = "<group>"; };
+		00802AC0250CC55300F43A32 /* SecurityGuardSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SecurityGuardSDK.framework; sourceTree = "<group>"; };
 		1A1A081B18C9DF05005C6854 /* project.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = project.json; path = ../../../project.json; sourceTree = "<group>"; };
 		1A2EA1851FC3DA6B0062C870 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ios/Images.xcassets; sourceTree = "<group>"; };
 		1A6BF21418C9DB5900FB0E1C /* main.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = main.js; path = ../../../main.js; sourceTree = "<group>"; };
@@ -2021,8 +2033,10 @@
 				0020BB5B250BA14700E2979B /* ImageIO.framework in Frameworks */,
 				00802AA8250C6E0000F43A32 /* libxml2.tbd in Frameworks */,
 				00802AA6250C6DFA00F43A32 /* libbz2.tbd in Frameworks */,
+				00802AC5250CC55300F43A32 /* SGSecurityBody.framework in Frameworks */,
 				0020BB53250BA12500E2979B /* libsqlite3.tbd in Frameworks */,
 				0020BB3B250BA0A800E2979B /* libz.tbd in Frameworks */,
+				00802AC1250CC55300F43A32 /* RPSDK.framework in Frameworks */,
 				0020BB39250BA0A000E2979B /* libc++.tbd in Frameworks */,
 				00802AA4250C6DD200F43A32 /* libresolv.9.tbd in Frameworks */,
 				0020BB57250BA13300E2979B /* Accelerate.framework in Frameworks */,
@@ -2055,11 +2069,13 @@
 				0020BB43250BA0CA00E2979B /* AVFoundation.framework in Frameworks */,
 				0020BB41250BA0BD00E2979B /* AVKit.framework in Frameworks */,
 				0020BB3F250BA0B700E2979B /* VideoToolbox.framework in Frameworks */,
+				00802AC6250CC55300F43A32 /* SecurityGuardSDK.framework in Frameworks */,
 				294D0D681D0D56F400F7F5D4 /* CoreText.framework in Frameworks */,
 				9FA3AE461BE9BBCA00FC9645 /* GameController.framework in Frameworks */,
 				00614E45250B94CE00BB7620 /* AGMCapturer.framework in Frameworks */,
 				ED545A821B68A21500C3958E /* libiconv.dylib in Frameworks */,
 				BA3A85EC1A724AE900924D24 /* Security.framework in Frameworks */,
+				00802AC2250CC55300F43A32 /* SGMain.framework in Frameworks */,
 				BA4E718119EB6E3F00932425 /* MediaPlayer.framework in Frameworks */,
 				C037820C18BF77C500FE4F13 /* libjscocos2d iOS.a in Frameworks */,
 				1A676839180E9C1E0076BC67 /* libcocos2d iOS.a in Frameworks */,
@@ -4410,6 +4426,7 @@
 		00802AAD250CA91000F43A32 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				00802ABA250CC51D00F43A32 /* Aliyun */,
 				00802AAE250CA91000F43A32 /* BUAdSDK.framework */,
 				00802AAF250CA91000F43A32 /* BUFoundation.framework */,
 				00802AB0250CA91000F43A32 /* BUAdSDK.bundle */,
@@ -4425,6 +4442,19 @@
 				00802AB8250CAB9000F43A32 /* CXBUAdRewardViewController.m */,
 			);
 			path = BUAd;
+			sourceTree = "<group>";
+		};
+		00802ABA250CC51D00F43A32 /* Aliyun */ = {
+			isa = PBXGroup;
+			children = (
+				00802ABE250CC55200F43A32 /* RPSDK.bundle */,
+				00802ABB250CC55200F43A32 /* RPSDK.framework */,
+				00802AC0250CC55300F43A32 /* SecurityGuardSDK.framework */,
+				00802ABC250CC55200F43A32 /* SGMain.framework */,
+				00802ABF250CC55300F43A32 /* SGSecurityBody.framework */,
+				00802ABD250CC55200F43A32 /* yw_1222_0769.jpg */,
+			);
+			path = Aliyun;
 			sourceTree = "<group>";
 		};
 		15628F5B15F0F5C2000CF24B /* Resources */ = {
@@ -4882,6 +4912,7 @@
 				00614FF0250B94CF00BB7620 /* icon_024.gif in Resources */,
 				00615000250B94CF00BB7620 /* chat_audio_blue@2x.png in Resources */,
 				00614FEF250B94CF00BB7620 /* icon_030.gif in Resources */,
+				00802AC3250CC55300F43A32 /* yw_1222_0769.jpg in Resources */,
 				1AD7E0A818C9DB93004817A6 /* main.js in Resources */,
 				00614E08250B94CE00BB7620 /* CXLiveRoomSetupTypeHelpCell.xib in Resources */,
 				00614E84250B94CE00BB7620 /* CXGameMusicView.xib in Resources */,
@@ -4986,6 +5017,7 @@
 				0061509E250B94D000BB7620 /* alert_info@2x.png in Resources */,
 				00614FDA250B94CF00BB7620 /* icon_010_cover.png in Resources */,
 				00614EB9250B94CE00BB7620 /* CXRedPacketAwardRecordCell.xib in Resources */,
+				00802AC4250CC55300F43A32 /* RPSDK.bundle in Resources */,
 				00614EAC250B94CE00BB7620 /* CXLiveRoomRecommendCell.xib in Resources */,
 				00614E5F250B94CE00BB7620 /* CXGameMusicAdjustView.xib in Resources */,
 				00614E2E250B94CE00BB7620 /* CXChatRoomPlayGiftView.xib in Resources */,
@@ -5710,6 +5742,7 @@
 					"\"$(SRCROOT)/ios/CXClasses/Modules/LiveRoom/FaceUnity\"",
 					"$(PROJECT_DIR)/ios/Frameworks",
 					"\"$(SRCROOT)/ios/Frameworks\"",
+					"$(PROJECT_DIR)/ios/Frameworks/Aliyun",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -5757,6 +5790,7 @@
 					"\"$(SRCROOT)/ios/CXClasses/Modules/LiveRoom/FaceUnity\"",
 					"$(PROJECT_DIR)/ios/Frameworks",
 					"\"$(SRCROOT)/ios/Frameworks\"",
+					"$(PROJECT_DIR)/ios/Frameworks/Aliyun",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;

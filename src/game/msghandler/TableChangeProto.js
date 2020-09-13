@@ -51,8 +51,7 @@ load('game/msghandler/TableChangeProto', function () {
                 { key: 'robotModel', type: this._byteType.Byte},//是否是机器人
                 { key: 'age', type: this._byteType.Byte},//年龄
                 { key: 'sex', type: this._byteType.Byte},//系别
-                { key: 'photo', type: this._byteType.UTF8},//系统默认头像
-                { key: 'sdkPhotoUrl', type: this._byteType.UTF8},//微信头像链接
+                { key: 'pPhoto', type: this._byteType.UTF8},//系统默认头像
                 { key: 'exp', type: this._byteType.Int},//玩家
                 { key: 'vip', type: this._byteType.Byte},//vip等级
                 { key: 'pSeatID', type: this._byteType.Byte},//座位号

@@ -521,14 +521,14 @@
                         <EndColor A="255" R="255" G="255" B="255" />
                         <ColorVector ScaleY="1.0000" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="dueReminderText" ActionTag="-2086777974" Tag="283" IconVisible="False" LeftMargin="559.5465" RightMargin="170.4535" TopMargin="621.9617" BottomMargin="78.0383" FontSize="20" LabelText="尊敬的xxVIP会员，您的VIP有效时限距离到期还有：xxx天xx时" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                        <Size X="550.0000" Y="20.0000" />
+                      <AbstractNodeData Name="dueReminderText" ActionTag="-2086777974" Tag="283" IconVisible="False" LeftMargin="549.5465" RightMargin="160.4535" TopMargin="621.9617" BottomMargin="78.0383" FontSize="20" LabelText="尊敬的xxVIP会员，您的VIP有效时限距离到期还有：xxxxx天xx时" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="570.0000" Y="20.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="834.5465" Y="88.0383" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="183" G="100" B="30" />
                         <PrePosition X="0.6520" Y="0.1223" />
-                        <PreSize X="0.4297" Y="0.0278" />
+                        <PreSize X="0.4453" Y="0.0278" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
@@ -925,7 +925,7 @@
                     <EndColor A="255" R="255" G="255" B="255" />
                     <ColorVector ScaleY="1.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="rechargeListView" ActionTag="1764953601" Tag="115" IconVisible="False" LeftMargin="222.5800" RightMargin="200.4199" TopMargin="333.8400" BottomMargin="86.1600" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                  <AbstractNodeData Name="rechargeListView" ActionTag="1764953601" Tag="115" IconVisible="False" LeftMargin="222.5800" RightMargin="200.4200" TopMargin="333.8400" BottomMargin="86.1600" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="857.0000" Y="300.0000" />
                     <AnchorPoint />
                     <Position X="222.5800" Y="86.1600" />
@@ -1068,7 +1068,7 @@
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="memberNd" ActionTag="1716137996" Tag="171" IconVisible="False" LeftMargin="74.0000" RightMargin="62.0000" TopMargin="200.0000" BottomMargin="3.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+                      <AbstractNodeData Name="memberNd" ActionTag="1716137996" Tag="171" IconVisible="False" LeftMargin="74.0000" RightMargin="62.0000" TopMargin="200.0000" BottomMargin="3.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                         <Size X="1.0000" Y="1.0000" />
                         <AnchorPoint />
                         <Position X="74.0000" Y="3.0000" />

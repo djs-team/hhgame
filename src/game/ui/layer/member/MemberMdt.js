@@ -59,6 +59,7 @@ load('game/ui/layer/member/MemberMdt', function () {
         initViewData: function (body) {
 
 
+            cc.log('------------------------ body : ' + JSON.stringify(body))
             let data = {}
             data.privilegeList = []
             data.memberList = []
@@ -141,7 +142,7 @@ load('game/ui/layer/member/MemberMdt', function () {
 
 
             }
-
+            cc.log('------------------------ data : ' + JSON.stringify(data))
             this.view.initViewData(data)
 
 

@@ -1,5 +1,5 @@
 
-load('game/ui/layer/fuka/FukaShopLayer', function () {
+load('game/ui/layer/fukashop/FukaShopLayer', function () {
     let ResConfig = include('game/config/ResConfig')
     let BaseLayer = include('public/ui/BaseLayer')
     let Layer = BaseLayer.extend({
@@ -8,7 +8,6 @@ load('game/ui/layer/fuka/FukaShopLayer', function () {
             return {
                 'pnl': {  },
                 'leftPnl': {  },
-                'leftPnl/closeBtn': { onClicked: this.onCloseClick },
             }
         },
         ctor: function () {

@@ -299,6 +299,9 @@ load('game/ui/layer/member/MemberLayer', function () {
 
             let privilege = this._PrivilegeListData[memberLevel]
 
+            cc.log('------------------------------memberLevel : ' + memberLevel)
+            cc.log('------------------------------privilege : ' + JSON.stringify(privilege))
+
             this._PublicData.vipCode = privilege.vipCode
 
             this.vipLevelPg.loadTexture(privilege.memberLevelPg)
@@ -334,6 +337,7 @@ load('game/ui/layer/member/MemberLayer', function () {
                     _nodeProject = this.everyDayDiamondsBg
                 }
 
+
                 _nodeProject.getChildByName('acceptedTypePg').loadTexture(_data.res)
                 _nodeProject.getChildByName('awardsVal').setString(_data.num)
 
@@ -350,6 +354,7 @@ load('game/ui/layer/member/MemberLayer', function () {
 
             if(this._PublicData.playerVipCode != GameConfig.VIP_LEVEL_0){
 
+                this.dueReminderText.setVisible(true)
                 this.dueReminderText.setString(this._PublicData.dueReminderText)
 
                 let isHaveAcceptRewards = false
@@ -357,17 +362,23 @@ load('game/ui/layer/member/MemberLayer', function () {
                     this.acceptBtn.setVisible(false)
                     this.levelLowerBtn.setVisible(true)
                 }else if(this._PublicData.playerVipCode == privilege.vipCode){
-                    this.levelLowerBtn.setVisible(true)
+                    this.levelLowerBtn.setVisible(false)
                     this.acceptBtn.setVisible(true)
                     if(this._PublicData.canVipDaily == 1){//已领取每日奖励
                         isHaveAcceptRewards = true
                         this.acceptBtn.setTouchEnabled(false)
                         this.acceptBtn.setBright(false)
+                    }else{
+                        isHaveAcceptRewards = false
+                        this.acceptBtn.setTouchEnabled(true)
+                        this.acceptBtn.setBright(true)
                     }
                 }else{
                     isHaveAcceptRewards = true
-                    this.levelLowerBtn.setVisible(true)
+                    this.levelLowerBtn.setVisible(false)
                     this.acceptBtn.setVisible(true)
+                    this.acceptBtn.setTouchEnabled(false)
+                    this.acceptBtn.setBright(false)
                     this.acceptBtn.setTouchEnabled(false)
                     this.acceptBtn.setBright(false)
                 }

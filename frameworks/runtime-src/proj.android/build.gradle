@@ -25,7 +25,9 @@ allprojects {
         flatDir {
             dirs '../lib.core/libs',
                     '../lib.faceliveness/libs',
-                    '../app+stub/libs'
+                    '../app+stub/libs',
+                    '../advertisement/libs'
+
 
         }
         google()

@@ -434,7 +434,6 @@ public class AppActivity extends Cocos2dxActivity {
                 break;
             case "rssi":
                 info = NetWorkUtils.getWifiRssi(ccActivity);
-
                 break;
         }
 

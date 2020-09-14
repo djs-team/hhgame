@@ -90,11 +90,11 @@
     </content>
     <orderEntry type="jdk" jdkName="Android API 28 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Gradle: __local_aars__:D.\project\hhgame\frameworks\runtime-src\proj.android\lib.core\libs\agora-rtc-sdk.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:D.\project\hhgame\frameworks\runtime-src\proj.android\lib.core\libs\android-logging-log4j-1.0.3.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:D.\project\hhgame\frameworks\runtime-src\proj.android\lib.core\libs\log4j-1.2.17.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:D.\project\hhgame\frameworks\runtime-src\proj.android\lib.core\libs\umeng-share-core-6.9.8.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:D.\project\hhgame\frameworks\runtime-src\proj.android\lib.core\libs\umeng-share-wechat-full-6.9.8.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" name="Gradle: __local_aars__:D.\project\hhgame-new\frameworks\runtime-src\proj.android\lib.core\libs\agora-rtc-sdk.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" name="Gradle: __local_aars__:D.\project\hhgame-new\frameworks\runtime-src\proj.android\lib.core\libs\android-logging-log4j-1.0.3.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" name="Gradle: __local_aars__:D.\project\hhgame-new\frameworks\runtime-src\proj.android\lib.core\libs\log4j-1.2.17.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" name="Gradle: __local_aars__:D.\project\hhgame-new\frameworks\runtime-src\proj.android\lib.core\libs\umeng-share-core-6.9.8.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" name="Gradle: __local_aars__:D.\project\hhgame-new\frameworks\runtime-src\proj.android\lib.core\libs\umeng-share-wechat-full-6.9.8.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.tencent.mm.opensdk:wechat-sdk-android-without-mta:6.6.4@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.github.bumptech.glide:annotations:4.9.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.dagger:dagger:2.12@jar" level="project" />

@@ -27,14 +27,17 @@ package org.cocos2dx.javascript;
 import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.Display;
 
+import org.cocos2dx.javascript.ui.splash.activity.SplashActivity;
 import org.cocos2dx.lib.Cocos2dxActivity;
 import org.cocos2dx.lib.Cocos2dxGLSurfaceView;
 import org.cocos2dx.lib.Cocos2dxHelper;
@@ -67,6 +70,11 @@ import com.deepsea.mua.stub.utils.BitmapUtils;
 import com.deepsea.mua.stub.utils.Constant;
 import com.deepsea.mua.stub.utils.SharedPrefrencesUtil;
 import com.deepsea.mua.stub.utils.UserUtils;
+import com.fm.openinstall.OpenInstall;
+import com.fm.openinstall.listener.AppInstallAdapter;
+import com.fm.openinstall.listener.AppWakeUpAdapter;
+import com.fm.openinstall.model.AppData;
+import com.fm.openinstall.model.Error;
 import com.hh.game.R;
 import com.hhgame.httpClient.httpClient;
 import com.tbruyelle.rxpermissions2.RxPermissions;
@@ -77,6 +85,9 @@ import com.umeng.socialize.media.UMImage;
 import com.umeng.socialize.media.UMWeb;
 import com.uuzuche.lib_zxing.activity.CodeUtils;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import cn.jiguang.verifysdk.api.AuthPageEventListener;
 import cn.jiguang.verifysdk.api.JVerificationInterface;
 import cn.jiguang.verifysdk.api.PreLoginListener;
@@ -84,6 +95,8 @@ import cn.jiguang.verifysdk.api.RequestCallback;
 import cn.jiguang.verifysdk.api.VerifyListener;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
+
+import static android.content.pm.PackageManager.PERMISSION_GRANTED;
 
 public class AppActivity extends Cocos2dxActivity {
 
@@ -112,9 +125,35 @@ public class AppActivity extends Cocos2dxActivity {
         });
 
         ccActivity = this;
-
+        OpenInstall.getWakeUp(getIntent(), wakeUpAdapter);
 
     }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        // 此处要调用，否则App在后台运行时，会无法截获
+        OpenInstall.getWakeUp(intent, wakeUpAdapter);
+
+    }
+
+    AppWakeUpAdapter wakeUpAdapter = new AppWakeUpAdapter() {
+        @Override
+        public void onWakeUp(AppData appData) {
+            //获取渠道数据
+            String channelCode = appData.getChannel();
+            //获取绑定数据
+            String bindData = appData.getData();
+            ccActivity.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    SharedPrefrencesUtil.saveData(ccActivity, "inviteCode", "inviteCode", bindData);
+                    SharedPrefrencesUtil.saveData(ccActivity, "channelCode", "channelCode", channelCode);
+                }
+            });
+
+        }
+    };
 
     //param 是{} 对象的
     public void RunJS_obj(String name, String param) {
@@ -501,6 +540,7 @@ public class AppActivity extends Cocos2dxActivity {
             }
         });
 
+
     }
 
     /**
@@ -522,10 +562,71 @@ public class AppActivity extends Cocos2dxActivity {
      * @param url return 本地路径
      */
     public static void getInvitationCode(String url) {
+        boolean hasPermission = PermissionUtil.hasSelfPermission(ccActivity, "android.permission.WRITE_EXTERNAL_STORAGE");
+        if (!hasPermission) {
+            ActivityCompat.requestPermissions(ccActivity, new String[]{Manifest.permission.READ_PHONE_STATE}, 2);
+            return;
+        }
         Bitmap mBitmap = CodeUtils.createImage(url, 400, 400, null);
         String picPath = BitmapUtils.saveBitmap(ccActivity, mBitmap);
         ToastUtils.showToast(picPath);
-        Log.d("AppActivity", picPath);
+    }
+
+    /**
+     * 申请动态权限
+     */
+    public static void requestPermission() {
+        List<String> mPermissionList = new ArrayList<>();
+
+        String[] permissions = new String[]{
+                Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                Manifest.permission.RECORD_AUDIO,
+                Manifest.permission.ACCESS_FINE_LOCATION,
+                Manifest.permission.CAMERA};
+        for (int i = 0; i < permissions.length; i++) {
+            if (ContextCompat.checkSelfPermission(ccActivity, permissions[i]) != PackageManager.PERMISSION_GRANTED) {
+                mPermissionList.add(permissions[i]);//添加还未授予的权限
+            }
+        }
+        ToastUtils.showToast(mPermissionList.size() + "");
+        if (mPermissionList.size() > 0) {
+            ActivityCompat.requestPermissions(ccActivity, permissions, 3);
+        }
+
+    }
+
+    /**
+     * 获取安装参数
+     */
+
+    public static void getInstallParam() {
+        //获取OpenInstall安装数
+        OpenInstall.getInstall(new AppInstallAdapter() {
+            @Override
+            public void onInstall(AppData appData) {
+                ToastUtils.showToast(JsonConverter.toJson(appData));
+                //获取渠道数据
+                String channelCode = appData.getChannel();
+                //获取自定义数据
+                String bindData = appData.getData();
+                Log.d("OpenInstall", "getInstall : inviteCode = " + bindData);
+                ccActivity.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        SharedPrefrencesUtil.saveData(ccActivity, "inviteCode", "inviteCode", bindData);
+                        SharedPrefrencesUtil.saveData(ccActivity, "channelCode", "channelCode", channelCode);
+                    }
+                });
+            }
+
+            @Override
+            public void onInstallFinish(AppData appData, Error error) {
+                super.onInstallFinish(appData, error);
+                SharedPrefrencesUtil.saveData(ccActivity, "isFirstInstall", "isFirstInstall", false);
+
+            }
+        });
+
     }
 
     @Override
@@ -533,6 +634,8 @@ public class AppActivity extends Cocos2dxActivity {
         super.onDestroy();
         JVerificationInterface.clearPreLoginCache();
         unregisterWxpayResult();
+        wakeUpAdapter = null;
+
     }
 
 

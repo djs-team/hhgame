@@ -281,5 +281,6 @@ dependencies {
     annotationProcessor deps.dagger.android_support_compiler
     annotationProcessor deps.router.compiler
     implementation project(':beauty')
+    implementation project(':advertisement')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }

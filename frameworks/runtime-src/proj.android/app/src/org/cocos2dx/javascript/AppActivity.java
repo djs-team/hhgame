@@ -27,9 +27,11 @@ package org.cocos2dx.javascript;
 import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.Display;
 
@@ -40,23 +42,30 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 
+import com.bytedance.sdk.openadsdk.TTAdConstant;
+import com.bytedance.sdk.openadsdk.activity.base.TTDelegateActivity;
+import com.deepsea.mua.advertisement.AdManage;
 import com.deepsea.mua.core.alipay.Alipay;
 import com.deepsea.mua.core.alipay.PayResult;
 import com.deepsea.mua.core.login.ApiUser;
 import com.deepsea.mua.core.login.LoginApi;
 import com.deepsea.mua.core.login.OnLoginListener;
+import com.deepsea.mua.core.utils.JsonConverter;
 import com.deepsea.mua.core.utils.NetWorkUtils;
 import com.deepsea.mua.core.utils.ToastUtils;
 import com.deepsea.mua.core.view.floatwindow.permission.PermissionUtil;
 import com.deepsea.mua.core.wxpay.WxPay;
 import com.deepsea.mua.core.wxpay.WxpayBroadcast;
 import com.deepsea.mua.stub.api.RetrofitApi;
+import com.deepsea.mua.stub.data.User;
 import com.deepsea.mua.stub.entity.WxOrder;
 import com.deepsea.mua.stub.jpush.JpushUtils;
 import com.deepsea.mua.stub.jpush.OnJpushClickListener;
 import com.deepsea.mua.stub.mvp.NewSubscriberCallBack;
 import com.deepsea.mua.stub.network.HttpHelper;
+import com.deepsea.mua.stub.utils.BitmapUtils;
 import com.deepsea.mua.stub.utils.Constant;
+import com.deepsea.mua.stub.utils.SharedPrefrencesUtil;
 import com.deepsea.mua.stub.utils.UserUtils;
 import com.hh.game.R;
 import com.hhgame.httpClient.httpClient;
@@ -66,6 +75,7 @@ import com.umeng.socialize.bean.SHARE_MEDIA;
 import com.umeng.socialize.editorpage.ShareActivity;
 import com.umeng.socialize.media.UMImage;
 import com.umeng.socialize.media.UMWeb;
+import com.uuzuche.lib_zxing.activity.CodeUtils;
 
 import cn.jiguang.verifysdk.api.AuthPageEventListener;
 import cn.jiguang.verifysdk.api.JVerificationInterface;
@@ -434,6 +444,7 @@ public class AppActivity extends Cocos2dxActivity {
                 break;
             case "rssi":
                 info = NetWorkUtils.getWifiRssi(ccActivity);
+
                 break;
         }
 
@@ -469,6 +480,52 @@ public class AppActivity extends Cocos2dxActivity {
             new ShareAction(ccActivity).setPlatform(SHARE_MEDIA.WEIXIN_CIRCLE).withMedia(web).share();
         }
 
+    }
+
+    /**
+     * 激励视频
+     */
+    public static void showRewardVideo(String codeId) {
+        String userId = "123";
+        ccActivity.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                AdManage adManage = new AdManage();
+                adManage.init(ccActivity);
+                adManage.loadAd(codeId, userId, new AdManage.OnLoadAdListener() {
+                    @Override
+                    public void onRewardVideoCached() {
+                        adManage.playAd();
+                    }
+                });
+            }
+        });
+
+    }
+
+    /**
+     * 用户信息
+     * 如果为空则删除用户信息,定义空为“”
+     */
+    public static void operateUserInfo(String data) {
+        if (TextUtils.isEmpty(data)) {
+            UserUtils.clearUser();
+        } else {
+            User user = JsonConverter.fromJson(data, User.class);
+            UserUtils.saveUser(user);
+        }
+    }
+
+    /**
+     * 生成二维码
+     *
+     * @param url return 本地路径
+     */
+    public static void getInvitationCode(String url) {
+        Bitmap mBitmap = CodeUtils.createImage(url, 400, 400, null);
+        String picPath = BitmapUtils.saveBitmap(ccActivity, mBitmap);
+        ToastUtils.showToast(picPath);
+        Log.d("AppActivity", picPath);
     }
 
     @Override

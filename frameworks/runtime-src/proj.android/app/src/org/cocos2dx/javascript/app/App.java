@@ -6,6 +6,7 @@ import android.content.Context;
 import android.support.multidex.MultiDexApplication;
 
 import com.android.beauty.faceunity.FaceUnityEngine;
+import com.deepsea.mua.advertisement.TTAdManagerHolder;
 import com.deepsea.mua.core.network.AppExecutors;
 import com.deepsea.mua.kit.app.MuaEngine;
 import com.deepsea.mua.stub.app.ActivityCache;
@@ -51,6 +52,8 @@ public class App extends MultiDexApplication implements HasActivityInjector {
             OpenInstall.init(this);
         }
         FaceUnityEngine.create().register(this);
+        TTAdManagerHolder.init(this);//穿山甲
+
     }
 
     public static App getApp() {

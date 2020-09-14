@@ -6,8 +6,6 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
         _className: 'FukaShopLayer',
         RES_BINDING: function () {
             return {
-                'pnl': {  },
-                'leftPnl': {  },
             }
         },
         ctor: function () {

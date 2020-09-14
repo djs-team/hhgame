@@ -1,0 +1,7 @@
+/**
+	 * 通知对宝
+	 */
+	int	MJ_GAME_NOTIFY_DUIBAO = MJ_GAME_MATCHGAME_ID + 12;
+返回消息:
+	private int duiBaoType;//对宝类型。0：上听对宝  1：换宝对宝
+	private int duiBaoSeatID;//对宝类型是换宝时，此字段为导致换宝的玩家座位ID；对宝类型是上听时，此字段代表上听对宝的玩家座位ID

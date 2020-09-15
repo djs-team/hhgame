@@ -1,19 +1,18 @@
-
 /**
  * LoginScene
  */
 load('game/ui/scene/LoginScene', function () {
     let BaseScene = include('public/ui/BaseScene')
     let ResConfig = include('game/config/ResConfig')
-    let LoginMdt =  include('game/ui/scene/LoginMdt')
+    let LoginMdt = include('game/ui/scene/LoginMdt')
     let HallScene = include('game/ui/scene/HallScene')
     let LoginScene = BaseScene.extend({
         _className: 'LoginScene',
         RES_BINDING: function () {
             return {
-                'pnl/phoneLogin': { onClicked: this.onphoneLoginClick },
-                'pnl/wxLogin': { onClicked: this.onwxLoginClick },
-                'pnl/agreeBtn': { onClicked: this.onagreeBtnClick },
+                'pnl/phoneLogin': {onClicked: this.onphoneLoginClick},
+                'pnl/wxLogin': {onClicked: this.onwxLoginClick},
+                'pnl/agreeBtn': {onClicked: this.onagreeBtnClick},
             }
         },
 
@@ -24,6 +23,7 @@ load('game/ui/scene/LoginScene', function () {
             this.registerEventListener('GET_PHOTO_FROM_ALBUM', this.onPhotoSuccess)
             this.registerEventListener('GET_PHOTO_UPLOADPIC', this.onUpLoadPhotoSuccess)
             this.registerEventListener('PIC_SIZE_WARNING', this.onSizeWarning)
+            this.registerEventListener('THIRD_LOGIN_RESULT', this.onThirdLogin)
 
             this.uploadUrl = [
                 'http://download.jxlwgame.com/weixin/uploadimg',
@@ -37,20 +37,12 @@ load('game/ui/scene/LoginScene', function () {
 
         onphoneLoginClick: function () {
 
-            let msg = {}
-            msg.platform = 1 // 登陆平台1游客2手机3微信4闲聊5账号登录
-            appInstance.gameAgent().httpGame().httpLogin(msg)
+            appInstance.nativeApi().oneClickLogin()
+
         },
 
         onwxLoginClick: function () {
-            // let LocalSave = include('game/public/LocalSave')
-            // global.localStorage.setStringForKey(LocalSave.LocalImei, '')
-            // let msg = {}
-            // msg.platform = 1 // 登陆平台1游客2手机3微信4闲聊5账号登录
-            // appInstance.gameAgent().httpGame().httpLogin(msg)
-
-            appInstance.sceneManager().replaceScene(new HallScene())
-            // this.goTest()
+            appInstance.nativeApi().wxLogin()
         },
 
         doPhoto: function () {
@@ -67,17 +59,15 @@ load('game/ui/scene/LoginScene', function () {
         },
 
 
-
         goChooseCity: function () {
             appInstance.gameAgent().addPopUI(ResConfig.Ui.ChooseCityLayer)
         },
 
 
-
         onBtnSendPhoto: function () {
             let pInfo = appInstance.dataManager().getUserData()
             if (pInfo && pInfo.accessToken) {
-              appInstance.nativeApi().getPictureFromPhoneAlbum(this.uploadUrl[type], pInfo.accessToken)
+                appInstance.nativeApi().getPictureFromPhoneAlbum(this.uploadUrl[type], pInfo.accessToken)
             }
         },
 
@@ -105,6 +95,10 @@ load('game/ui/scene/LoginScene', function () {
             } else {
                 // utils.showMsg('图片上传失败，请重试！')
             }
+        },
+        onThirdLogin: function (msg) {
+            cc.log('=============' + JSON.stringify(msg))
+            appInstance.gameAgent().httpGame().httpLogin(msg)
         },
 
         onSizeWarning: function (msg) {

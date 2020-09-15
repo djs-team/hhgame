@@ -1,4 +1,3 @@
-
 /**
  *  Native 跨平台接口封装
  */
@@ -31,12 +30,22 @@ load('public/suport/NativeApi', function () {
         wxLogin: function () {
             try {
                 if (cc.sys.OS_ANDROID === cc.sys.os) {
-                    jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'StartWxLogin', '()V')
+                    jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'login', '(Ljava/lang/String;)V', "wx")
                 } else if (cc.sys.OS_IOS === cc.sys.os) {
                     jsb.reflection.callStaticMethod('AppController', 'sendAuthRequest')
                 }
             } catch (e) {
                 this.HelloOC('wxLogin throw: ' + JSON.stringify(e))
+            }
+        }, oneClickLogin: function () {
+            try {
+                if (cc.sys.OS_ANDROID === cc.sys.os) {
+                    jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'login', '(Ljava/lang/String;)V', "jpush")
+                } else if (cc.sys.OS_IOS === cc.sys.os) {
+
+                }
+            } catch (e) {
+                this.HelloOC('oneCLickLogin throw: ' + JSON.stringify(e))
             }
         },
         wxShareUrl: function (url, title, description, shareIds) {

@@ -45,6 +45,7 @@ load('game/public/HttpGame', function () {
         },
 
         httpLoginBack: function (msg) {
+            cc.log('=========httpLoginBack============error================'+JSON.stringify(msg))
 
             if (msg.status !== 0) {
                 cc.log('=========httpLoginBack============error================')

@@ -30,6 +30,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Point;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -44,9 +45,6 @@ import org.cocos2dx.lib.Cocos2dxHelper;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-
-import com.bytedance.sdk.openadsdk.TTAdConstant;
-import com.bytedance.sdk.openadsdk.activity.base.TTDelegateActivity;
 import com.deepsea.mua.advertisement.AdManage;
 import com.deepsea.mua.core.alipay.Alipay;
 import com.deepsea.mua.core.alipay.PayResult;
@@ -63,7 +61,6 @@ import com.deepsea.mua.stub.api.RetrofitApi;
 import com.deepsea.mua.stub.data.User;
 import com.deepsea.mua.stub.entity.WxOrder;
 import com.deepsea.mua.stub.jpush.JpushUtils;
-import com.deepsea.mua.stub.jpush.OnJpushClickListener;
 import com.deepsea.mua.stub.mvp.NewSubscriberCallBack;
 import com.deepsea.mua.stub.network.HttpHelper;
 import com.deepsea.mua.stub.utils.BitmapUtils;
@@ -85,6 +82,8 @@ import com.umeng.socialize.media.UMImage;
 import com.umeng.socialize.media.UMWeb;
 import com.uuzuche.lib_zxing.activity.CodeUtils;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -398,6 +397,11 @@ public class AppActivity extends Cocos2dxActivity {
      * jpush 极光一键登录
      */
     public static void login(String type) {
+        boolean hasPermission = PermissionUtil.hasSelfPermission(ccActivity, "android.permission.READ_PHONE_STATE");
+        if (!hasPermission) {
+            ActivityCompat.requestPermissions(ccActivity, new String[]{Manifest.permission.READ_PHONE_STATE}, 1);
+            return;
+        }
         if (type.equals("wx")) {
             loginWx();
         } else if (type.equals("jpush")) {
@@ -416,11 +420,22 @@ public class AppActivity extends Cocos2dxActivity {
             @Override
             public void onResult(int code, String content, String operator) {
                 if (code == 6000) {
-                    ToastUtils.showToast(content);
-                } else if (code == 6002) {
-                    return;
+                    String myContent = content.replace("+", "%2B");
+                    Log.d("=========content", content);
+                    JSONObject result = new JSONObject();
+                    try {
+                        result.put("platform", 2);
+                        result.put("accounttype", 1);
+                        result.put("device", Build.MODEL);
+                        result.put("phoneModel", "android");
+                        result.put("account", myContent);
+                        result.put("imei", NetWorkUtils.getImei(ccActivity));
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                    ccActivity.RunJS_obj("THIRD_LOGIN_RESULT", result.toString());
                 } else {
-//                    startActivity(new Intent(mContext, LoginActivity.class));
+                    ToastUtils.showToast("一键登录失败，请尝试其他登录方式");
                 }
                 JVerificationInterface.dismissLoginAuthActivity(false, new RequestCallback<String>() {
                     @Override
@@ -444,7 +459,22 @@ public class AppActivity extends Cocos2dxActivity {
         loginApi.setOnLoginListener(new OnLoginListener() {
             @Override
             public void onLogin(ApiUser apiUser) {
-                ToastUtils.showToast(apiUser.getOpenId());
+                Log.d("=============", JsonConverter.toJson(apiUser));
+                JSONObject result = new JSONObject();
+                try {
+                    result.put("platform", 3);
+                    result.put("accounttype", 0);
+                    result.put("device", Build.MODEL);
+                    result.put("phoneModel", "android");
+                    result.put("unionId", apiUser.getOpenId());
+                    result.put("account", apiUser.getOpenId());
+                    result.put("imei", NetWorkUtils.getImei(ccActivity));
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                ccActivity.RunJS_obj("THIRD_LOGIN_RESULT", result.toString());
+
             }
 
             @Override
@@ -559,7 +589,7 @@ public class AppActivity extends Cocos2dxActivity {
     /**
      * 生成二维码
      *
-     * @param url return 本地路径
+     * @param url return 本地路径JPUSH_PKGNAME
      */
     public static void getInvitationCode(String url) {
         boolean hasPermission = PermissionUtil.hasSelfPermission(ccActivity, "android.permission.WRITE_EXTERNAL_STORAGE");

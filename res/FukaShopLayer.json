@@ -117,6 +117,7 @@
               "X": 720.0,
               "Y": 1280.0
             },
+            "VisibleForFrame": false,
             "Name": "dele",
             "ctype": "ImageViewObjectData"
           },
@@ -537,23 +538,25 @@
                     "ctype": "PageViewObjectData"
                   },
                   {
-                    "FileData": {
-                      "Type": "Normal",
-                      "Path": "fukashop/fk_9.png",
-                      "Plist": ""
+                    "ClipAble": false,
+                    "BackColorAlpha": 102,
+                    "SingleColor": {
+                      "R": 150,
+                      "G": 200
                     },
-                    "Scale9Enable": true,
-                    "Scale9OriginX": 19,
-                    "Scale9OriginY": 20,
-                    "Scale9Width": 22,
-                    "Scale9Height": 21,
-                    "AnchorPoint": {
-                      "ScaleX": 0.5,
-                      "ScaleY": 0.5
+                    "FirstColor": {
+                      "R": 150,
+                      "G": 200
                     },
+                    "EndColor": {},
+                    "ColorVector": {
+                      "ScaleY": 1.0
+                    },
+                    "TouchEnable": true,
+                    "AnchorPoint": {},
                     "Position": {
-                      "X": 269.24,
-                      "Y": 361.93
+                      "X": 148.0463,
+                      "Y": 42.4207
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -562,25 +565,73 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.2103,
-                      "Y": 0.5027
+                      "X": 0.1157,
+                      "Y": 0.0589
                     },
                     "PreSize": {
                       "X": 0.1859,
                       "Y": 0.8875
                     },
-                    "LeftMargin": 150.24,
-                    "RightMargin": 891.76,
-                    "TopMargin": 38.57,
-                    "BottomMargin": 42.43,
-                    "Tag": 156,
-                    "ActionTag": 2019993654,
+                    "LeftMargin": 148.0463,
+                    "RightMargin": 893.9537,
+                    "TopMargin": 38.5793,
+                    "BottomMargin": 42.4207,
+                    "Tag": 158,
+                    "Children": [
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "fukashop/fk_9.png",
+                          "Plist": ""
+                        },
+                        "Scale9Enable": true,
+                        "Scale9OriginX": 19,
+                        "Scale9OriginY": 20,
+                        "Scale9Width": 22,
+                        "Scale9Height": 21,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 124.1748,
+                          "Y": 323.3687
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.5217,
+                          "Y": 0.5061
+                        },
+                        "PreSize": {
+                          "X": 1.0,
+                          "Y": 1.0
+                        },
+                        "LeftMargin": 5.1748,
+                        "RightMargin": -5.1748,
+                        "TopMargin": -3.8687,
+                        "BottomMargin": 3.8687,
+                        "Tag": 156,
+                        "ActionTag": 2019993654,
+                        "Size": {
+                          "X": 238.0,
+                          "Y": 639.0
+                        },
+                        "Name": "slideImg",
+                        "ctype": "ImageViewObjectData"
+                      }
+                    ],
+                    "ActionTag": 1975261828,
                     "Size": {
                       "X": 238.0,
                       "Y": 639.0
                     },
-                    "Name": "Image_4",
-                    "ctype": "ImageViewObjectData"
+                    "Name": "imgPageCell",
+                    "ctype": "PanelObjectData"
                   }
                 ],
                 "ActionTag": 292336037,
@@ -1811,6 +1862,8 @@
             "ColorVector": {
               "ScaleY": 1.0
             },
+            "Scale9Width": 1,
+            "Scale9Height": 1,
             "AnchorPoint": {
               "ScaleX": 0.5,
               "ScaleY": 0.5
@@ -1858,6 +1911,8 @@
                 "ColorVector": {
                   "ScaleY": 1.0
                 },
+                "Scale9Width": 1,
+                "Scale9Height": 1,
                 "TouchEnable": true,
                 "AnchorPoint": {},
                 "Position": {
@@ -2116,6 +2171,8 @@
             "ColorVector": {
               "ScaleY": 1.0
             },
+            "Scale9Width": 1,
+            "Scale9Height": 1,
             "AnchorPoint": {
               "ScaleX": 0.5,
               "ScaleY": 0.5
@@ -2162,6 +2219,8 @@
                 "ColorVector": {
                   "ScaleY": 1.0
                 },
+                "Scale9Width": 1,
+                "Scale9Height": 1,
                 "TouchEnable": true,
                 "AnchorPoint": {},
                 "Position": {
@@ -2212,6 +2271,8 @@
                 "ColorVector": {
                   "ScaleY": 1.0
                 },
+                "Scale9Width": 1,
+                "Scale9Height": 1,
                 "AnchorPoint": {},
                 "Position": {
                   "X": 108.3366,
@@ -2407,6 +2468,8 @@
                     "ColorVector": {
                       "ScaleY": 1.0
                     },
+                    "Scale9Width": 1,
+                    "Scale9Height": 1,
                     "TouchEnable": true,
                     "AnchorPoint": {
                       "ScaleX": 0.5,
@@ -2701,8 +2764,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 315.7439,
-                      "Y": 138.5745
+                      "X": 315.7387,
+                      "Y": 138.5718
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -2722,10 +2785,10 @@
                       "X": 0.2784,
                       "Y": 0.0763
                     },
-                    "LeftMargin": 250.7439,
-                    "RightMargin": 86.2561,
-                    "TopMargin": 113.4255,
-                    "BottomMargin": 128.5745,
+                    "LeftMargin": 250.7387,
+                    "RightMargin": 86.2613,
+                    "TopMargin": 113.4282,
+                    "BottomMargin": 128.5718,
                     "Tag": 279,
                     "ActionTag": -262885947,
                     "Size": {
@@ -2945,6 +3008,8 @@
             "ColorVector": {
               "ScaleY": 1.0
             },
+            "Scale9Width": 1,
+            "Scale9Height": 1,
             "AnchorPoint": {
               "ScaleX": 0.5,
               "ScaleY": 0.5
@@ -2990,6 +3055,8 @@
                 "ColorVector": {
                   "ScaleY": 1.0
                 },
+                "Scale9Width": 1,
+                "Scale9Height": 1,
                 "AnchorPoint": {
                   "ScaleX": 0.5,
                   "ScaleY": 0.5
@@ -3038,6 +3105,8 @@
                     "ColorVector": {
                       "ScaleY": 1.0
                     },
+                    "Scale9Width": 1,
+                    "Scale9Height": 1,
                     "TouchEnable": true,
                     "AnchorPoint": {},
                     "Position": {
@@ -3086,6 +3155,8 @@
                     "ColorVector": {
                       "ScaleY": 1.0
                     },
+                    "Scale9Width": 1,
+                    "Scale9Height": 1,
                     "TouchEnable": true,
                     "AnchorPoint": {},
                     "Position": {
@@ -3232,6 +3303,8 @@
                 "ColorVector": {
                   "ScaleY": 1.0
                 },
+                "Scale9Width": 1,
+                "Scale9Height": 1,
                 "TouchEnable": true,
                 "AnchorPoint": {
                   "ScaleX": 0.5,
@@ -3415,7 +3488,7 @@
                     },
                     "LeftMargin": 58.6901,
                     "RightMargin": -37.6901,
-                    "TopMargin": 597.0323,
+                    "TopMargin": 597.0324,
                     "BottomMargin": 92.9676,
                     "Tag": 291,
                     "ActionTag": 1447587082,
@@ -3566,6 +3639,8 @@
                 "ColorVector": {
                   "ScaleY": 1.0
                 },
+                "Scale9Width": 1,
+                "Scale9Height": 1,
                 "AnchorPoint": {
                   "ScaleX": 0.5,
                   "ScaleY": 0.5
@@ -3736,7 +3811,7 @@
                       "X": 46.0,
                       "Y": 46.0
                     },
-                    "Name": "Image_69",
+                    "Name": "detailImg",
                     "ctype": "ImageViewObjectData"
                   },
                   {
@@ -3879,6 +3954,8 @@
                 "ColorVector": {
                   "ScaleY": 1.0
                 },
+                "Scale9Width": 1,
+                "Scale9Height": 1,
                 "TouchEnable": true,
                 "AnchorPoint": {
                   "ScaleX": 0.5,
@@ -3904,7 +3981,6 @@
                 },
                 "LeftMargin": 1176.8049,
                 "RightMargin": -0.8049,
-                "BottomMargin": 0.0,
                 "Tag": 300,
                 "ActionTag": 1361599527,
                 "Size": {
@@ -3938,6 +4014,8 @@
             "ColorVector": {
               "ScaleY": 1.0
             },
+            "Scale9Width": 1,
+            "Scale9Height": 1,
             "AnchorPoint": {
               "ScaleX": 0.5,
               "ScaleY": 0.5
@@ -4144,6 +4222,8 @@
                 "ColorVector": {
                   "ScaleY": 1.0
                 },
+                "Scale9Width": 1,
+                "Scale9Height": 1,
                 "TouchEnable": true,
                 "AnchorPoint": {},
                 "Position": {
@@ -4193,6 +4273,8 @@
                 "ColorVector": {
                   "ScaleY": 1.0
                 },
+                "Scale9Width": 1,
+                "Scale9Height": 1,
                 "TouchEnable": true,
                 "AnchorPoint": {},
                 "Position": {
@@ -4505,6 +4587,8 @@
                 "ColorVector": {
                   "ScaleY": 1.0
                 },
+                "Scale9Width": 1,
+                "Scale9Height": 1,
                 "AnchorPoint": {
                   "ScaleX": 0.5,
                   "ScaleY": 0.5
@@ -4535,52 +4619,6 @@
                 },
                 "Tag": 340,
                 "Children": [
-                  {
-                    "FileData": {
-                      "Type": "Normal",
-                      "Path": "fukashop/fk_39.png",
-                      "Plist": ""
-                    },
-                    "Scale9Enable": true,
-                    "Scale9OriginX": 15,
-                    "Scale9OriginY": 27,
-                    "Scale9Width": 78,
-                    "Scale9Height": 30,
-                    "AnchorPoint": {
-                      "ScaleX": 0.5,
-                      "ScaleY": 0.5
-                    },
-                    "Position": {
-                      "X": 360.61,
-                      "Y": 359.04
-                    },
-                    "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
-                    },
-                    "CColor": {},
-                    "IconVisible": false,
-                    "PrePosition": {
-                      "X": 0.2817,
-                      "Y": 0.4987
-                    },
-                    "PreSize": {
-                      "X": 0.2039,
-                      "Y": 0.9194
-                    },
-                    "LeftMargin": 230.11,
-                    "RightMargin": 788.89,
-                    "TopMargin": 29.96,
-                    "BottomMargin": 28.04,
-                    "Tag": 343,
-                    "ActionTag": 2001082147,
-                    "Size": {
-                      "X": 261.0,
-                      "Y": 662.0
-                    },
-                    "Name": "Image_79",
-                    "ctype": "ImageViewObjectData"
-                  },
                   {
                     "FontSize": 26,
                     "LabelText": "我的奖品",
@@ -4627,7 +4665,7 @@
                     },
                     "LeftMargin": 125.427,
                     "RightMargin": 1050.573,
-                    "TopMargin": 578.0591,
+                    "TopMargin": 578.0592,
                     "BottomMargin": 115.9408,
                     "Tag": 317,
                     "ActionTag": -1470057589,
@@ -4792,8 +4830,8 @@
                       "Y": 1.0
                     },
                     "LeftMargin": 221.83,
-                    "RightMargin": -1.8301,
-                    "TopMargin": -721.0358,
+                    "RightMargin": -1.83,
+                    "TopMargin": -721.0359,
                     "BottomMargin": 721.0358,
                     "Tag": 319,
                     "ActionTag": 1116122027,
@@ -5647,6 +5685,8 @@
                 "ColorVector": {
                   "ScaleY": 1.0
                 },
+                "Scale9Width": 1,
+                "Scale9Height": 1,
                 "AnchorPoint": {
                   "ScaleX": 0.5,
                   "ScaleY": 0.5
@@ -5692,6 +5732,8 @@
                     "ColorVector": {
                       "ScaleY": 1.0
                     },
+                    "Scale9Width": 1,
+                    "Scale9Height": 1,
                     "AnchorPoint": {
                       "ScaleX": 0.5,
                       "ScaleY": 0.5
@@ -5802,7 +5844,7 @@
                         },
                         "LeftMargin": 173.8435,
                         "RightMargin": 972.1565,
-                        "TopMargin": 526.1052,
+                        "TopMargin": 526.1051,
                         "BottomMargin": 59.8949,
                         "Tag": 344,
                         "ActionTag": -843424652,
@@ -6002,7 +6044,7 @@
                           "X": 306.0,
                           "Y": 23.0
                         },
-                        "Name": "TextField_1",
+                        "Name": "phoneNumTextField",
                         "ctype": "TextFieldObjectData"
                       }
                     ],
@@ -6029,6 +6071,8 @@
                     "ColorVector": {
                       "ScaleY": 1.0
                     },
+                    "Scale9Width": 1,
+                    "Scale9Height": 1,
                     "AnchorPoint": {
                       "ScaleX": 0.5,
                       "ScaleY": 0.5
@@ -6275,6 +6319,8 @@
             "ColorVector": {
               "ScaleY": 1.0
             },
+            "Scale9Width": 1,
+            "Scale9Height": 1,
             "TouchEnable": true,
             "AnchorPoint": {
               "ScaleX": 0.5,
@@ -6282,7 +6328,7 @@
             },
             "Position": {
               "X": 640.0,
-              "Y": 360.6221
+              "Y": 360.648
             },
             "Scale": {
               "ScaleX": 1.0,
@@ -6300,8 +6346,8 @@
               "X": 1.0,
               "Y": 1.0
             },
-            "TopMargin": -0.6221,
-            "BottomMargin": 0.6221,
+            "TopMargin": -0.6479,
+            "BottomMargin": 0.648,
             "Tag": 108,
             "Children": [
               {
@@ -6570,6 +6616,8 @@
                 "ColorVector": {
                   "ScaleY": 1.0
                 },
+                "Scale9Width": 1,
+                "Scale9Height": 1,
                 "TouchEnable": true,
                 "AnchorPoint": {
                   "ScaleX": 0.5,
@@ -6803,6 +6851,8 @@
             "ColorVector": {
               "ScaleY": 1.0
             },
+            "Scale9Width": 1,
+            "Scale9Height": 1,
             "TouchEnable": true,
             "AnchorPoint": {
               "ScaleX": 0.5,
@@ -6849,6 +6899,8 @@
                 "ColorVector": {
                   "ScaleY": 1.0
                 },
+                "Scale9Width": 1,
+                "Scale9Height": 1,
                 "AnchorPoint": {
                   "ScaleX": 0.5,
                   "ScaleY": 0.5
@@ -6945,8 +6997,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 424.6564,
-                      "Y": 347.012
+                      "X": 424.704,
+                      "Y": 347.04
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -6966,10 +7018,10 @@
                       "X": 0.1094,
                       "Y": 0.0486
                     },
-                    "LeftMargin": 354.6564,
-                    "RightMargin": 785.3436,
-                    "TopMargin": 355.488,
-                    "BottomMargin": 329.512,
+                    "LeftMargin": 354.704,
+                    "RightMargin": 785.296,
+                    "TopMargin": 355.46,
+                    "BottomMargin": 329.54,
                     "Tag": 357,
                     "ActionTag": -213685166,
                     "Size": {
@@ -7003,6 +7055,8 @@
                 "ColorVector": {
                   "ScaleY": 1.0
                 },
+                "Scale9Width": 1,
+                "Scale9Height": 1,
                 "AnchorPoint": {
                   "ScaleX": 0.5,
                   "ScaleY": 0.5
@@ -7068,7 +7122,7 @@
                     },
                     "LeftMargin": 460.2083,
                     "RightMargin": 394.7917,
-                    "TopMargin": 88.8193,
+                    "TopMargin": 88.8194,
                     "BottomMargin": 98.1806,
                     "Tag": 359,
                     "ActionTag": 939005946,
@@ -7094,6 +7148,8 @@
                     "ColorVector": {
                       "ScaleY": 1.0
                     },
+                    "Scale9Width": 1,
+                    "Scale9Height": 1,
                     "AnchorPoint": {
                       "ScaleX": 0.5,
                       "ScaleY": 0.5
@@ -7210,8 +7266,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 650.0001,
-                      "Y": 350.0
+                      "X": 649.984,
+                      "Y": 349.992
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -7233,10 +7289,10 @@
                       "X": 1.0,
                       "Y": 1.0
                     },
-                    "LeftMargin": 10.0001,
-                    "RightMargin": -10.0,
-                    "TopMargin": 10.0,
-                    "BottomMargin": -10.0,
+                    "LeftMargin": 9.984,
+                    "RightMargin": -9.984,
+                    "TopMargin": 10.008,
+                    "BottomMargin": -10.008,
                     "Tag": 362,
                     "Children": [
                       {
@@ -7370,8 +7426,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 660.0001,
-                      "Y": 340.0
+                      "X": 659.968,
+                      "Y": 339.984
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -7393,10 +7449,10 @@
                       "X": 1.0,
                       "Y": 1.0
                     },
-                    "LeftMargin": 20.0001,
-                    "RightMargin": -20.0001,
-                    "TopMargin": 20.0,
-                    "BottomMargin": -20.0,
+                    "LeftMargin": 19.968,
+                    "RightMargin": -19.968,
+                    "TopMargin": 20.016,
+                    "BottomMargin": -20.016,
                     "Tag": 364,
                     "Children": [
                       {
@@ -7622,8 +7678,8 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 680.0391,
-                          "Y": 246.3757
+                          "X": 680.064,
+                          "Y": 246.384
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -7647,10 +7703,10 @@
                           "X": 0.0875,
                           "Y": 0.0389
                         },
-                        "LeftMargin": 624.0391,
-                        "RightMargin": 543.9609,
-                        "TopMargin": 459.6243,
-                        "BottomMargin": 232.3757,
+                        "LeftMargin": 624.064,
+                        "RightMargin": 543.936,
+                        "TopMargin": 459.616,
+                        "BottomMargin": 232.384,
                         "Tag": 371,
                         "ActionTag": -2114912061,
                         "Size": {
@@ -7694,7 +7750,7 @@
                         },
                         "LeftMargin": 667.5,
                         "RightMargin": 588.5,
-                        "TopMargin": 174.8428,
+                        "TopMargin": 174.8427,
                         "BottomMargin": 330.1573,
                         "Tag": 372,
                         "ActionTag": -1418778641,
@@ -7770,8 +7826,8 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 652.4987,
-                          "Y": 431.3754
+                          "X": 652.544,
+                          "Y": 431.352
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -7795,10 +7851,10 @@
                           "X": 0.1016,
                           "Y": 0.0278
                         },
-                        "LeftMargin": 587.4987,
-                        "RightMargin": 562.5013,
-                        "TopMargin": 278.6246,
-                        "BottomMargin": 421.3754,
+                        "LeftMargin": 587.544,
+                        "RightMargin": 562.456,
+                        "TopMargin": 278.648,
+                        "BottomMargin": 421.352,
                         "Tag": 374,
                         "ActionTag": 197925455,
                         "Size": {
@@ -7841,6 +7897,8 @@
                 "ColorVector": {
                   "ScaleY": 1.0
                 },
+                "Scale9Width": 1,
+                "Scale9Height": 1,
                 "AnchorPoint": {
                   "ScaleX": 0.5,
                   "ScaleY": 0.5

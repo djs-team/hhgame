@@ -51,6 +51,10 @@ load('game/config/GameEvent', function () {
         'ADRESS_UPDATE': 'ADRESS_UPDATE',
         'VIDEO_WATCH_DIAMONDS': 'VIDEO_WATCH_DIAMONDS',
         'PLAYER_BUY_VIP_ORDER': 'PLAYER_BUY_VIP_ORDER',
+        'GETROLLIMGLIST': 'GETROLLIMGLIST',
+        'MENULIST': 'MENULIST',
+        'GOODSLIST': 'GOODSLIST',
+        'FUKA_BUGGOODS': 'FUKA_BUGGOODS',
     }
 
     return GameEvent

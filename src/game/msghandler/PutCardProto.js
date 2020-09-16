@@ -14,35 +14,44 @@ load('game/msghandler/PutCardProto', function () {
 
         handleMsg: function (msg) {
             this._super(msg)
-            if ( msg.pResult !== 0) {
-                appInstance.gameAgent().Tips('出牌错误！ code is ' + msg.pResult)
-                return
-            }
-
             let pData = appInstance.dataManager().getPlayData()
-            let saveKey = [
-                'pPutSeatID',
-                'pTStatus',
-                'pCurSeatID',
-            ]
-            pData.saveTableData(msg,saveKey)
+            if ( msg.pResult === 0) {
+                let saveKey = [
+                    'pPutSeatID',
+                    'pTStatus',
+                    'pCurSeatID',
+                ]
+                pData.saveTableData(msg,saveKey)
 
-            let card = {
-                nCardColor: msg.nCardColor,
-                nCardNumber: msg.nCardNumber
+                let card = {
+                    nCardColor: msg.nCardColor,
+                    nCardNumber: msg.nCardNumber
+                }
+
+                let putPlayer = pData.players[msg.pPutSeatID]
+                putPlayer.handCardCount = msg.handCardCount
+                putPlayer.putCards.push(card)
+
+                pData.tableData.pActions = msg.pActions
+                pData.tableData.lastPutCard = card
+                pData.tableData.pMustOutCard = []
+
+                let tmpMsg = {}
+                tmpMsg.card = card
+                appInstance.sendNotification(Event.PutCardProto, tmpMsg)
+            } else {
+                appInstance.gameAgent().Tips('出牌异常！ code is ' + msg.pResult)
+                let card = {
+                    nCardColor: msg.nCardColor,
+                    nCardNumber: msg.nCardNumber
+                }
+                let selfInfo = pData.getSelfInfo()
+                if (selfInfo.pSeatID === msg.pPutSeatID) {
+                    selfInfo.handCards.push(card)
+                    appInstance.gameAgent().mjUtil().sortCard(selfInfo.handCards)
+                    appInstance.sendNotification(Event.updateSelfHandCard)
+                }
             }
-
-            let putPlayer = pData.players[msg.pPutSeatID]
-            putPlayer.handCardCount = msg.handCardCount
-            putPlayer.putCards.push(card)
-
-            pData.tableData.pActions = msg.pActions
-            pData.tableData.lastPutCard = card
-            pData.tableData.pMustOutCard = []
-
-            let tmpMsg = {}
-            tmpMsg.card = card
-            appInstance.sendNotification(Event.PutCardProto, tmpMsg)
         },
 
         initData: function () {

@@ -1,0 +1,268 @@
+﻿
+
+/**
+ * 玩家点击比赛场，获得比赛场相关信息
+ */
+int	MJ_ROOM_GAME_MATCH				= MJ_ROOM_MATCHGAME_ID + 23;
+ 请求消息:
+	  GetMatchsReqMessage
+	 	private String channel;
+		private int matchType;//1金币赛 2大奖赛 3会员赛
+
+ 返回消息:
+		GetMatchsResqMessage
+		private List<MatchRoomInfo> matchList;
+		MatchRoomInfo的消息体
+			private String matchId;//比赛id
+			private String matchtitle;//标题
+			private String wanFaID;//rule配置文件信息，如songyuankuaiting
+			private String wanFaName;//rule配置文件信息，如松原快听
+			private long starttime;//开始时间
+			private long endtime;//结束时间
+			private String format;//赛制
+			private String rule;//规则
+			private String gameplayoptions;//玩法
+			private int consumptionType;//比赛场入场费消耗类型 1金币2钻石
+			private int matchfee;//比赛场入场费数量
+			private int state;//状态 ；0 尚未开始比赛  1 即将开始比赛  2 报名截止 3 正在比赛 4 已结束
+			private int matchplayersnum;//参与人数
+			private int matchMode;//比赛mode
+			private String extens;//预留字段
+			private List<Rewordmessage> rewordmessageList;//奖励信息
+			Rewordmessage的消息体
+				private int startRanking;//开始排名
+				private int endRanking;//结束排名
+				private List<RewardInfo> rewardInfoList;//奖励
+				RewardInfo的消息体
+					private int propType;//道具大类
+					private int propCode;//道具编码
+					private int propNum;//道具数量
+
+/**
+* 进入房间  报名
+*/
+int	MJ_ROOM_ENTER								= MJ_ROOM_MATCHGAME_ID + 2;
+	请求消息:
+		EnterMJRoomReqMessage
+		private int gid;
+		private String mjChannel; //麻将 channel
+		private int roomMode;//房间mode
+		private String gameType; //麻将 场次
+		private String roomId;//比赛场 matchId
+		private String ruleName;//玩法名称
+		private String fromType;//来自客户端那个页面
+	返回消息:
+		EnterMJRoomRespMessage
+		private byte code;//0 成功
+		private String tableInstanceId;//牌桌id
+		private String fromType;//客户端来自哪个页面
+	
+	
+/**
+* 退赛
+*/
+int	MJ_ROOM_AGENT_DELPLAYER = MJ_ROOM_MATCHGAME_ID + 33;
+	请求消息:
+		AgentDelPlayerReqMessage
+		private int gid;
+		private String mjChannel; //麻将 channel
+		private String roomId;//比赛场 matchId
+		private int roomMode;//房间mode
+		private String keyPrivateTable;//如果是退出私房  需要加私房id
+		private int delPlayerId;//被删玩家id
+	返回消息:
+		AgentDelPlayerResqMessage
+		private byte code;
+		private String extended;//扩展字段
+		
+		
+/**
+ * 比赛，匹配消息
+ */
+int	MJ_ROOM_MATCHMATCHING = MJ_ROOM_MATCHGAME_ID + 24;
+	返回消息:
+		MatchMatchingRespMessage
+		private int state;//0 报名 1晋级 2淘汰 3可以取消匹配  4 比赛未成形 被销毁
+		private int allNum;//当前晋级所需总人数
+		private String allNums;//晋级所需人数集合
+		private int etcTable;//晋级时等待结束的桌子数
+		
+		/**
+		 * 传给客户端，点击退赛时客户端穿回来
+		 */
+		private int gid;
+		private String mjChannel;
+		private String roomId;
+		private int roomMode;
+		
+		private String extend;//冗余字段  consolebut是否显示取消按钮 0显示 1不显示  CountDown还差多少时间可以显示取消按钮
+		private List<PlayerInfo> playerInfo;//人员信息
+		PlayerInfo的消息体
+		private String userName;//当前玩家姓名
+			private int sex;//0 男 1女
+			private String coins;//本轮得分
+			private int curRanking;//本轮排名
+			private int totalRanking;//总排名
+			private String extend;//冗余字段
+			
+			
+/**
+ * 比赛，状态通知消息  比赛开始推送
+ */
+int	MJ_ROOM_MATCHSTATE = MJ_ROOM_MATCHGAME_ID + 25;
+	返回消息:
+		MatchTableStateRespMessage
+		private int matchState;//比赛状态  0 尚未开始  1开始  2进行中  3结束
+		private String extend;//冗余字段
+	
+	
+/**
+ * 比赛，开始游戏时
+ */
+int	MJ_ROOM_MATCHTABLEPLAYERCHANGE = MJ_ROOM_MATCHGAME_ID + 26;
+	返回消息:
+		MatchTablePlayerChangeRespMessage
+		private List<Player> pList;
+		private String tableInstanceId;//牌桌id
+		private int mSeatID;//玩家id
+		private int changePid;//变化玩家的pid
+		private int changeSeatId;//变化玩家的座位id
+		private int enterOrQuite;//进入或者退出  1  进入 0 退出  2  断线重连
+		private String keyPrivateTable;//私房编号id
+		private int isOpenSoundApp;//是否开启语音   0 开  1 不开
+		private String soundAppId;//语音组链接id
+		private int dongSeatId;//东  位置 seatid
+		private int isGamesOrRound;//是按 局打  还是按 圈打  0  圈  1 局
+		private int countDenominator;//总的圈数或局数
+		private int countNumber;//当前圈数或局数
+		private String choiceRule;//牌桌选择的规则
+		private int tablePhase;//牌桌阶段
+		private String roomId;
+		private int mode;
+		private String ruldStr;//规则 名称 id
+		private int isWaitingPlayerDissmissTable; // 0  不是  1 是
+		private int isOpenGPS;//是否开启GPS   0 开  1 不开
+		private int dismissTablePlayer;//解散房间发起者   pid   -1 没有
+		private int timer;//比赛场机器人等待时间
+		
+		private String denNum;//比赛  多少进多少  轮局
+		Player的消息体
+			private int pid;//玩家ID
+			private String nickName;//昵称
+			private String coins;//金币数量
+			private byte robotModel;//是否是机器人
+			private byte age;//年龄
+			private byte sex;//性别0 男 1女
+			private String photo;//系统默认头像
+			private String sdkPhotoUrl;//微信头像链接
+			private int win;//赢得局数
+			private int lose;//输的局数
+			private int exp;//玩家 经验
+			private byte vip;//vip等级
+			private byte seatID;//座位号
+			private int role;//角色
+			
+			private String netIp;// 玩家ip地址
+		
+	
+	
+/**
+* 牌桌人员  ready消息 准备
+*/
+int	MJ_ROOM_TABLE_PLAYER_READY					= MJ_ROOM_MATCHGAME_ID + 9;
+	请求消息:
+		TablePlayerReadyReqMessage
+		private int gid;
+		private String roomId;//比赛场 matchId
+		private int roomMode;//房间mode
+		private String tableInstanceId;//牌桌实例id
+		private int isReady;// 0 准备  1 不准备
+	
+	返回消息:
+		TablePlayerReadyRespMessage
+		private int fPlayer;//准备的玩家
+		private int isReady;//准备的状态  0 准备  1 不准备  2 玩家不存在  3 房间不存在  4 牌桌不存在  5 牌桌已经开始 6俱乐部已开房间已达最大值 7俱乐部已被禁用
+		private int pSeatId;//玩家座位号
+	
+	
+/**
+* 比赛，总结果消息，包括淘汰和获奖
+*/
+int	MJ_ROOM_MATCHRESULT = MJ_ROOM_MATCHGAME_ID + 27;
+ 返回消息:
+		MatchResultRespMessage
+		private int state;//状态  0 获奖  1淘汰
+		private int tableRanking;//牌桌排名 ，用于淘汰
+		private int oldPerNum;//原人数
+		private int proPerNum;//晋级人数
+		private int ranking;//获奖排名
+		private String playerName;//玩家姓名
+		private String matchName;//比赛名称
+		private String tableId ;// 牌桌id
+  	private String extended;//冗余字段
+		private List<RewardProp> rewardPropList;//获奖时的奖励信息
+			RewardProp的消息体
+				private int propType;//道具大类
+				private int propCode;//道具编码
+				private int propNum;//奖励道具数量
+		
+/**
+* 局结果   结果数据  客户端接受
+*/
+int	MJ_ROOM_TABLE_RESULT_FOR_CLIENT				= MJ_ROOM_MATCHGAME_ID + 6;
+ 返回消息:
+		GameTablesResultMJForClientRespMessage
+		private byte code;
+		private int zhuangSeatID;//庄座位
+		private int winSeatID;//赢座位
+		private List<Integer> huType;//胡牌方式ID
+		private Card baoCard;//宝牌
+		private int baseCoins;//牌局 基础低分
+		private List<Player> pList;
+		
+		private int isLiuJu;//是否留局 0 不留局  1 留局
+		private int isGamesOrRound;//是按 局打  还是按 圈打  0  圈  1 局
+		private int countDenominator;//当前圈数或局数
+		private int countNumber;//当前圈数或局数
+		private Card huPaiZhangCard;//胡牌张
+		
+		private int isOver;//是不是最后一局  0  不是  1 是
+		private int dayingjiaSeatID;//大赢家座位号
+		private String extended;//json  扩展字段
+		Player的消息体
+			private int pid;//玩家id
+			private int coins;//玩家剩余金币数
+			private int deCoins;//玩家 金币 变化数
+			private byte seatID;//玩家座位id
+			private List<Chi> chiCards;//吃
+			private List<KeZi> pengCards;//碰
+			private List<Gang> gangCards;//杠
+			private List<Card> handCards;//手牌
+			private byte isQingYiSe;//是否清一色
+			private int doubleCount;//玩家翻翻倍数
+			private List<Integer> doubleList;//玩家翻倍 属性id
+			private int maxDoubleId;//最大翻数  id
+			private List<Jiang> jiangCards;//盯掌对
+			private String extended;//json  扩展字段
+			
+		
+/**
+ * 整个游戏结果   结果数据  客户端接受有扩展字段
+ */
+int	MJ_ROOM_GAME_RESULT_FOR_CLIENTEXT				= MJ_ROOM_MATCHGAME_ID + 39;
+ 返回消息:
+		GameResultMJForClientExtRespMessage
+		private byte code;
+		private List<Player> pList;
+		private String extended;//扩展字段 winPid   dianPaoPid   tableId 
+		Player的消息体
+			private int pid;//玩家id
+			private int coins;//玩家剩余金币数
+			private int deCoins;//玩家 金币 变化数
+			private byte seatID;//玩家座位id
+			private int count_ZuoZhuang;//坐庄次数
+			private int count_Hu;//胡次数
+			private int count_DianPao;//点炮次数
+			private int count_MoBao;//摸宝次数
+			private int count_BaoZhongBao;//宝中宝次数
+			private String extended;//扩展字段

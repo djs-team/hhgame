@@ -62,6 +62,7 @@
               "X": 1.0,
               "Y": 1.0
             },
+            "UserData": "{\"layoutType\":\"maxArea\",\"screenAlign\":\"mid\"}",
             "Tag": 198,
             "ActionTag": -472143597,
             "Size": {
@@ -111,6 +112,7 @@
               "X": 1280.0,
               "Y": 720.0
             },
+            "VisibleForFrame": false,
             "Name": "dele",
             "ctype": "ImageViewObjectData"
           },
@@ -497,6 +499,7 @@
                       "X": 270.0,
                       "Y": 282.0
                     },
+                    "VisibleForFrame": false,
                     "Name": "Image_8",
                     "ctype": "ImageViewObjectData"
                   },
@@ -1000,11 +1003,6 @@
                       "Path": "Default/Button_Disable.png",
                       "Plist": ""
                     },
-                    "PressedFileData": {
-                      "Type": "Default",
-                      "Path": "Default/Button_Press.png",
-                      "Plist": ""
-                    },
                     "NormalFileData": {
                       "Type": "Normal",
                       "Path": "common/bt_3.png",
@@ -1057,12 +1055,14 @@
                     "Children": [
                       {
                         "FontSize": 30,
-                        "LabelText": "出 战",
+                        "LabelText": " 出战 ",
                         "FontResource": {
                           "Type": "Normal",
                           "Path": "font/hkhbtW12.ttc",
                           "Plist": ""
                         },
+                        "HorizontalAlignmentType": "HT_Center",
+                        "VerticalAlignmentType": "VT_Center",
                         "OutlineColor": {
                           "G": 0,
                           "B": 0
@@ -1133,11 +1133,6 @@
                     "DisabledFileData": {
                       "Type": "Default",
                       "Path": "Default/Button_Disable.png",
-                      "Plist": ""
-                    },
-                    "PressedFileData": {
-                      "Type": "Default",
-                      "Path": "Default/Button_Press.png",
                       "Plist": ""
                     },
                     "NormalFileData": {
@@ -1270,11 +1265,6 @@
                       "Path": "Default/Button_Disable.png",
                       "Plist": ""
                     },
-                    "PressedFileData": {
-                      "Type": "Default",
-                      "Path": "Default/Button_Press.png",
-                      "Plist": ""
-                    },
                     "NormalFileData": {
                       "Type": "Normal",
                       "Path": "common/bt_3.png",
@@ -1405,11 +1395,6 @@
                       "Path": "Default/Button_Disable.png",
                       "Plist": ""
                     },
-                    "PressedFileData": {
-                      "Type": "Default",
-                      "Path": "Default/Button_Press.png",
-                      "Plist": ""
-                    },
                     "NormalFileData": {
                       "Type": "Normal",
                       "Path": "common/bt_3.png",
@@ -1462,12 +1447,14 @@
                     "Children": [
                       {
                         "FontSize": 30,
-                        "LabelText": "出 战",
+                        "LabelText": " 出 战 ",
                         "FontResource": {
                           "Type": "Normal",
                           "Path": "font/hkhbtW12.ttc",
                           "Plist": ""
                         },
+                        "HorizontalAlignmentType": "HT_Center",
+                        "VerticalAlignmentType": "VT_Center",
                         "OutlineColor": {
                           "G": 0,
                           "B": 0
@@ -1502,17 +1489,17 @@
                           "Y": 0.514
                         },
                         "PreSize": {
-                          "X": 0.4239,
+                          "X": 0.5054,
                           "Y": 0.4348
                         },
-                        "LeftMargin": 47.4814,
-                        "RightMargin": 58.5186,
+                        "LeftMargin": 39.9814,
+                        "RightMargin": 51.0186,
                         "TopMargin": 18.5351,
                         "BottomMargin": 20.4649,
                         "Tag": 282,
                         "ActionTag": -72794224,
                         "Size": {
-                          "X": 78.0,
+                          "X": 93.0,
                           "Y": 30.0
                         },
                         "Name": "Text_57",
@@ -1538,11 +1525,6 @@
                     "DisabledFileData": {
                       "Type": "Default",
                       "Path": "Default/Button_Disable.png",
-                      "Plist": ""
-                    },
-                    "PressedFileData": {
-                      "Type": "Default",
-                      "Path": "Default/Button_Press.png",
                       "Plist": ""
                     },
                     "NormalFileData": {
@@ -1673,11 +1655,6 @@
                     "DisabledFileData": {
                       "Type": "Default",
                       "Path": "Default/Button_Disable.png",
-                      "Plist": ""
-                    },
-                    "PressedFileData": {
-                      "Type": "Default",
-                      "Path": "Default/Button_Press.png",
                       "Plist": ""
                     },
                     "NormalFileData": {
@@ -2394,8 +2371,10 @@
                     "ctype": "PanelObjectData"
                   },
                   {
-                    "FontSize": 20,
-                    "LabelText": "琴始皇陛下",
+                    "FontSize": 25,
+                    "LabelText": "月VIP专属角色",
+                    "HorizontalAlignmentType": "HT_Center",
+                    "VerticalAlignmentType": "VT_Center",
                     "OutlineColor": {
                       "G": 0,
                       "B": 0
@@ -2425,31 +2404,29 @@
                       "B": 30
                     },
                     "IconVisible": false,
-                    "PositionPercentXEnabled": true,
-                    "PositionPercentYEnabled": true,
                     "PrePosition": {
                       "X": 0.6852,
                       "Y": 0.3139
                     },
                     "PreSize": {
-                      "X": 0.0781,
-                      "Y": 0.0278
+                      "X": 0.1281,
+                      "Y": 0.0347
                     },
-                    "LeftMargin": 827.056,
-                    "RightMargin": 352.944,
-                    "TopMargin": 483.992,
-                    "BottomMargin": 216.008,
+                    "LeftMargin": 795.056,
+                    "RightMargin": 320.944,
+                    "TopMargin": 481.492,
+                    "BottomMargin": 213.508,
                     "Tag": 291,
                     "ActionTag": -1131038463,
                     "Size": {
-                      "X": 100.0,
-                      "Y": 20.0
+                      "X": 164.0,
+                      "Y": 25.0
                     },
                     "Name": "roleName",
                     "ctype": "TextObjectData"
                   },
                   {
-                    "FontSize": 20,
+                    "FontSize": 25,
                     "LabelText": "剩余时间：666天66小时",
                     "OutlineColor": {
                       "G": 0,
@@ -2467,8 +2444,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 888.832,
-                      "Y": 76.248
+                      "X": 887.168,
+                      "Y": 97.2
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -2483,29 +2460,31 @@
                     "PositionPercentXEnabled": true,
                     "PositionPercentYEnabled": true,
                     "PrePosition": {
-                      "X": 0.6944,
-                      "Y": 0.1059
+                      "X": 0.6931,
+                      "Y": 0.135
                     },
                     "PreSize": {
-                      "X": 0.1641,
-                      "Y": 0.0278
+                      "X": 0.207,
+                      "Y": 0.0347
                     },
-                    "LeftMargin": 783.832,
-                    "RightMargin": 286.168,
-                    "TopMargin": 633.752,
-                    "BottomMargin": 66.248,
+                    "LeftMargin": 754.668,
+                    "RightMargin": 260.332,
+                    "TopMargin": 610.3,
+                    "BottomMargin": 84.7,
                     "Tag": 292,
                     "ActionTag": -361110888,
                     "Size": {
-                      "X": 210.0,
-                      "Y": 20.0
+                      "X": 265.0,
+                      "Y": 25.0
                     },
                     "Name": "timeText",
                     "ctype": "TextObjectData"
                   },
                   {
-                    "FontSize": 20,
+                    "FontSize": 25,
                     "LabelText": "月VIP专属角色",
+                    "HorizontalAlignmentType": "HT_Center",
+                    "VerticalAlignmentType": "VT_Center",
                     "OutlineColor": {
                       "G": 0,
                       "B": 0
@@ -2522,8 +2501,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 877.952,
-                      "Y": 189.0
+                      "X": 877.06,
+                      "Y": 194.01
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -2535,28 +2514,59 @@
                       "B": 30
                     },
                     "IconVisible": false,
-                    "PositionPercentXEnabled": true,
-                    "PositionPercentYEnabled": true,
                     "PrePosition": {
-                      "X": 0.6859,
-                      "Y": 0.2625
+                      "X": 0.6852,
+                      "Y": 0.2695
                     },
                     "PreSize": {
-                      "X": 0.1016,
-                      "Y": 0.0278
+                      "X": 0.1281,
+                      "Y": 0.0347
                     },
-                    "LeftMargin": 812.952,
-                    "RightMargin": 337.048,
-                    "TopMargin": 521.0,
-                    "BottomMargin": 179.0,
+                    "LeftMargin": 795.06,
+                    "RightMargin": 320.94,
+                    "TopMargin": 513.49,
+                    "BottomMargin": 181.51,
                     "Tag": 293,
                     "ActionTag": -1331279389,
                     "Size": {
-                      "X": 130.0,
-                      "Y": 20.0
+                      "X": 164.0,
+                      "Y": 25.0
                     },
                     "Name": "roleVipName",
                     "ctype": "TextObjectData"
+                  },
+                  {
+                    "AnchorPoint": {},
+                    "Position": {
+                      "X": 881.1997,
+                      "Y": 272.2567
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": true,
+                    "PrePosition": {
+                      "X": 0.6884,
+                      "Y": 0.3781
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 881.1997,
+                    "RightMargin": 398.8003,
+                    "TopMargin": 447.7433,
+                    "BottomMargin": 272.2567,
+                    "Tag": 194,
+                    "ActionTag": 2012688302,
+                    "Size": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "Name": "roleNd",
+                    "ctype": "SingleNodeObjectData"
                   }
                 ],
                 "ActionTag": -1631630035,
@@ -2912,6 +2922,8 @@
                 "ColorVector": {
                   "ScaleY": 1.0
                 },
+                "Scale9Width": 1,
+                "Scale9Height": 1,
                 "AnchorPoint": {},
                 "Position": {
                   "X": 390.0128,
@@ -2974,7 +2986,6 @@
         "common/jinbi.png",
         "common/zuanshi.png",
         "Default/Button_Disable.png",
-        "Default/Button_Press.png",
         "font/hkhbtW12.ttc",
         "hall/dtjm_4.png",
         "hall/dtjm_5.png",

@@ -34,7 +34,7 @@ load('game/ui/layer/role/RoleMdt', function () {
                     this.onInitRolesData(body)
                     break
                 case GameEvent.ROLES_SELECT:
-                    this.onReceiveRoleSelectedResule(body)
+                    this.view.onReceiveRoleSelectedResule(body)
                     break
                 case GameEvent.UPDATE_PROPSYNC:
                     this.view.onUpdatePropsData(body)
@@ -75,26 +75,32 @@ load('game/ui/layer/role/RoleMdt', function () {
             let data = {}
             data.myRoles = []
             data.allRoles = []
-            if(body.indexOf('showRoleCode') == -1)
-                body.showRoleCode = 1
 
-            data.showRoleCode = body.showRoleCode
+            if(body.hasOwnProperty('showRoleCode'))
+                data.showRoleCode =  body.showRoleCode
+
             for(let i = 0; i < body.allRole.length; i++){
 
+
                 let role = body.allRole[i]
-                let roleGetInfo = role[rgInfoList][0]
+                let roleGetInfo = role.rgInfoList[0]
                 let roleData = {}
 
-                roleData.getId = role.getId
+                roleData.getId = roleGetInfo.getId
                 roleData.status = role.status
                 roleData.roleCode = role.roleCode
                 roleData.roleName = role.roleName
                 roleData.currency = role.currency
-                roleData.get_type = role.get_type
-                roleData.code = role.code
-                roleData.num = role.num
-                roleData.dueReminderText = '剩余时间：无限制'
+                roleData.get_type = roleGetInfo.get_type
+                roleData.code = roleGetInfo.code
+                roleData.num = roleGetInfo.num
+                if(roleData.status != 0){
+                    roleData.dueReminderText = '剩余时间：无限制'
+                }
 
+
+                if(i == 0 && !body.hasOwnProperty('showRoleCode'))
+                    data.showRoleCode =  roleData.roleCode
 
                 roleData.propType = GameConfig.propType_role
                 let needKeysArrayName = [
@@ -106,10 +112,13 @@ load('game/ui/layer/role/RoleMdt', function () {
 
 
                 if(roleGetInfo.get_type != 1){
-                    this.formatDate(roleData,role.surplusTime)
+                    if(roleData.status != 0){
+                        this.formatDate(roleData,role.surplusTime)
+                    }
+
                     let vipLvel
 
-                    switch (role.code) {
+                    switch (roleData.code) {
                         case GameConfig.VIP_LEVEL_1:
                             vipLvel = '周'
                             break
@@ -131,7 +140,7 @@ load('game/ui/layer/role/RoleMdt', function () {
                 }
 
                 data.allRoles.push(roleData)
-                if(roleData.status == 1){
+                if(roleData.status != 0){
                     data.myRoles.push(roleData)
                 }
 

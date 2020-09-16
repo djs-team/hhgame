@@ -4,6 +4,8 @@ load('game/ui/layer/role/RoleLayer', function () {
     let BaseLayer = include('public/ui/BaseLayer')
     let RoleMdt = include('game/ui/layer/role/RoleMdt')
     let GameConfig = include('game/config/GameConfig')
+    let AniPlayer = ResConfig.AniPlayer
+    let PlayerPlay = ResConfig.PlayerPlay
     let RoleLayer = BaseLayer.extend({
         _className: 'RoleLayer',
         _rolesChoiceBtn_all : 'allRolesBtn',
@@ -27,12 +29,13 @@ load('game/ui/layer/role/RoleLayer', function () {
                 'pnl/btnPnl/toBuyBtn': {},
 
                 'pnl/dataPnl/diamondsPnl': {},
-                'pnl/dataPnl/diamondsPnl/diamondsAddBtn': {onClicked : this.goShopBtnClick},
+                'pnl/dataPnl/diamondsPnl/diamondsAddBtn': {onClicked : this.onCoinShopClick},
 
 
                 'pnl/dataPnl/coinPnl': {},
-                'pnl/dataPnl/coinPnl/coinAddBtn': {onClicked : this.goShopBtnClick},
+                'pnl/dataPnl/coinPnl/coinAddBtn': {onClicked : this.onCoinShopClick},
 
+                'pnl/dataPnl/roleNd': {},
                 'pnl/dataPnl/roleName': {},
                 'pnl/dataPnl/roleVipName': {},
                 'pnl/dataPnl/timeText': {},
@@ -79,13 +82,17 @@ load('game/ui/layer/role/RoleLayer', function () {
             this.toBuyBtn.setVisible(false)
             this.listPnl.setVisible(false)
 
-            this.roleName.setVisible(false)
             this.roleVipName.setVisible(false)
             this.timeText.setVisible(false)
             this.roleImageCell.setVisible(false)
 
 
 
+        },
+
+        onCoinShopClick: function () {
+            appInstance.gameAgent().addPopUI(ResConfig.Ui.CoinShopLayer)
+            this.onClseClick()
         },
 
         onUpdatePropsData: function (data) {
@@ -145,36 +152,49 @@ load('game/ui/layer/role/RoleLayer', function () {
                     }
                 }
 
-
             }
         },
 
         onReceiveRoleSelectedResule: function (data) {
 
             let roleCode = data.roleCode
-            let roleArrayName = data.roleArrayName
             let parmList = [
                 'allRoles',
                 'myRoles'
             ]
             this.onUpdateRoleStatus(parmList,roleCode,2)
-            this.onUpdateRoleDetailStatus(roleArrayName,roleCode,2)
-
+            this.onUpdateRoleImageListView(this._roleArrayName,roleCode)
 
         },
 
         onUpdateRoleStatus: function(parmList,roleCode,status){
 
+            let step1 = false
+            let step2 = false
             for(let key in parmList){
-                for(let i = 0; i < this._data[key].length; i++){
+                for(let i = 0; i < this._data[parmList[key]].length; i++){
 
-                    let role = this._data[key][i]
-                    if(role && role.roleCode == roleCode){
+                    let role = this._data[parmList[key]][i]
+
+                    if(!role){
+                        continue
+                    }
+
+                    if(role.status == 2){
+                        role.status = 1
+                        step1 = true
+                    }
+
+
+                    if(role.roleCode == roleCode){
                         if(role.status == 1){
                             role.status = status
+                            step2 = true
                         }
+                    }
+
+                    if(step1 && step2)
                         break
-                    }
 
                 }
             }
@@ -183,37 +203,11 @@ load('game/ui/layer/role/RoleLayer', function () {
 
         },
 
-        onUpdateRoleDetailStatus: function (roleArrayName,roleCode) {
-
-            for(let i = 0; i < this.roleImageListView.getChildren().length; i++){
-                let listPnl = this.roleImageListView.getChildren()[i]
-                let isHave = false
-                if(!listPnl){
-                    break
-                }
-
-                for(let j = 0; j < listPnl.getChildren().length; j++){
-                    let role = listPnl.getChildren()[j]
-                    if(role && role.roleCode == roleCode){
-                        isHave = true
-                        listPnl.getChildren().splice(j,1)
-                        let dataIndex = 2* i + j
-                        let cellData = this._data[this._roleArrayName][dataIndex]
-                        this.initRoleCell(listPnl,j,cellData,true)
-                    }
-                }
-
-                if(isHave)
-                    break
-            }
-
-        },
 
         initRoleCell: function (listPnl, cellIndex,cellData,isSelected) {
 
             let cell = this.roleImageCell.clone()
-            listPnl.getChildren().splice(cellIndex,0,cell)
-
+            listPnl.addChild(cell)
 
             cell.setVisible(true)
             cell.setPositionY(0)
@@ -225,7 +219,8 @@ load('game/ui/layer/role/RoleLayer', function () {
                     cell.getChildByName('brightPg').setVisible(false)
                     cell.getChildByName('roleBrightPg').setVisible(false)
                     cell.getChildByName('usedPg').setVisible(false)
-                    cell.getChildByName('ashPg').loadTexture(cellData.ash)
+                    cell.getChildByName('ashPg').setVisible(true)
+                    cell.getChildByName('roleAshPg').loadTexture(cellData.ashImg)
 
                     break
                 case 1:
@@ -234,7 +229,8 @@ load('game/ui/layer/role/RoleLayer', function () {
                     cell.getChildByName('roleAshPg').setVisible(false)
                     if(status == 1)
                         cell.getChildByName('usedPg').setVisible(false)
-                    cell.getChildByName('roleBrightPg').loadTexture(cellData.bright)
+                    cell.getChildByName('brightPg').setVisible(true)
+                    cell.getChildByName('roleBrightPg').loadTexture(cellData.brightImg)
 
                     break
                 default:
@@ -243,13 +239,19 @@ load('game/ui/layer/role/RoleLayer', function () {
 
             if(isSelected){
 
-                this.onUpdateRoleDetailData(cell)
+                this.onUpdateRoleDetailData(cellData)
 
             }
 
             cell.addClickEventListener(function(sender, et) {
-                this.onRoleClick(sender)
+                this.onRoleClick(cellData)
             }.bind(this))
+
+        },
+
+        onRoleClick: function (sender) {
+
+            this.onUpdateRoleDetailData(sender)
 
         },
 
@@ -259,6 +261,12 @@ load('game/ui/layer/role/RoleLayer', function () {
             let status= cellData.status//0:未拥有1.已拥有2.已出战
 
             this.roleName.setString(cellData.roleName)
+            this.roleNd.removeAllChildren()
+            let ani = appInstance.gameAgent().gameUtil().getAni(AniPlayer[cellData.roleCode])
+            this.roleNd.addChild(ani)
+            ani.setPosition(cc.p(0,0))
+            ani.setScale(0.35)
+            ani.setAnimation(0, PlayerPlay.stand, true)
 
             switch (getType) {
                 case 1:
@@ -280,6 +288,7 @@ load('game/ui/layer/role/RoleLayer', function () {
                     }
 
 
+                    this.timeText.setVisible(true)
                     this.timeText.setString(cellData.dueReminderText)
 
                     break
@@ -331,14 +340,14 @@ load('game/ui/layer/role/RoleLayer', function () {
                 this.toBuyBtn.setVisible(false)
                 this.toGetBtn.setVisible(true)
                 this.roleVipName.setVisible(true)
-                this.roleVipName.setString(cellData.roleName)
+                this.roleVipName.setString(cellData.levelName)
                 this.timeText.setVisible(true)
                 this.timeText.setString(cellData.dueReminderText)
                 buyBtn = this.toGetBtn
             }
 
 
-            this.buyBtn.addClickEventListener(function (sender,et) {
+            buyBtn.addClickEventListener(function (sender,et) {
                 this.onBuyRoleClicked(cellData)
             }.bind(this))
 
@@ -367,8 +376,8 @@ load('game/ui/layer/role/RoleLayer', function () {
                     this.renewMidBtn.setVisible(false)
                     this.useBtn.setVisible(true)
                     this.renewBtn.setVisible(true)
-                    useBtn = useBtn
-                    buyBtn = renewBtn
+                    useBtn = this.useBtn
+                    buyBtn = this.renewBtn
                     break
                 case 2:
 
@@ -376,8 +385,8 @@ load('game/ui/layer/role/RoleLayer', function () {
 
                     this.useBtn.setVisible(false)
                     this.renewBtn.setVisible(false)
-                    useBtn = useBtn
-                    buyBtn = renewBtn
+                    useBtn = this.useBtn
+                    buyBtn = this.renewMidBtn
 
                     break
                 default:
@@ -385,10 +394,10 @@ load('game/ui/layer/role/RoleLayer', function () {
 
             }
 
-            this.useBtn.addClickEventListener(function (sender,et) {
+            useBtn.addClickEventListener(function (sender,et) {
                 this.onUsedClicked(cellData)
             }.bind(this))
-            this.buyBtn.addClickEventListener(function (sender,et) {
+            buyBtn.addClickEventListener(function (sender,et) {
                 this.onBuyRoleClicked(cellData)
             }.bind(this))
 
@@ -396,6 +405,7 @@ load('game/ui/layer/role/RoleLayer', function () {
 
         //购买角色按钮点击
         onBuyRoleClicked: function(cellData){
+            cc.log('-------------------------------onBuyRoleClicked------------------------------')
 
             let getType = cellData.get_type
 
@@ -416,25 +426,25 @@ load('game/ui/layer/role/RoleLayer', function () {
                     if(cellData.code == GameConfig.propType_currency_coin){
 
                         propName = '金币'
-                        propNum = this.coinPnl.getChildByName('coinsCnt')
+                        propNum = this.coinPnl.getChildByName('coinsCnt').getString()
 
                     }else if(cellData.code == GameConfig.propType_currency_diamonds){
 
                         propName = '钻石'
-                        propNum = this.diamondsPnl.getChildByName('diamondsCnt')
+                        propNum = this.diamondsPnl.getChildByName('diamondsCnt').getString()
 
                     }else{
                         break
                     }
 
-                    if(propNum < propNum) {
+                    if(propNum < num) {
 
                         dialogMsg.TileName = '提 示'
                         dialogMsg.RightBtnName = '去领取'
                         dialogMsg.RightBtnClick = function () {
                             appInstance.gameAgent().addPopUI(ResConfig.Ui.MemberLayer)
                             appInstance.uiManager().removeUI(this)
-                        }
+                        }.bind(this)
 
                         dialogMsg.SayText = '您的' + propName + '不足'
 
@@ -496,10 +506,10 @@ load('game/ui/layer/role/RoleLayer', function () {
                     break
             }
 
-            choiceBtn.setBright(true)
-            choiceBtn.setTouchEnabled(true)
-            otherBtn.setBright(false)
-            otherBtn.setTouchEnabled(false)
+            choiceBtn.setBright(false)
+            choiceBtn.setTouchEnabled(false)
+            otherBtn.setBright(true)
+            otherBtn.setTouchEnabled(true)
 
         },
 
@@ -510,6 +520,7 @@ load('game/ui/layer/role/RoleLayer', function () {
             this._data.myRoles = data.myRoles
             let showRoleCode = data.showRoleCode
 
+            cc.log('----------------------------------this._roleArrayName : ' + this._roleArrayName)
             this.onUpdateRolesChoiceType(this._roleArrayName)
             this.onUpdateRoleImageListView(this._roleArrayName,showRoleCode)
         },

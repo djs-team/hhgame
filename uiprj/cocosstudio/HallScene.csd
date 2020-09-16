@@ -384,7 +384,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="coinShopBtn" ActionTag="-1851542946" Tag="46" IconVisible="False" LeftMargin="208.4500" RightMargin="898.5500" TopMargin="591.2400" BottomMargin="13.7600" TouchEnable="True" FontSize="14" ButtonText="Button" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="143" Scale9Height="93" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="coinShopBtn" ActionTag="-1851542946" Tag="46" IconVisible="False" LeftMargin="208.4500" RightMargin="898.5500" TopMargin="591.2400" BottomMargin="13.7600" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="143" Scale9Height="93" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="173.0000" Y="115.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="294.9500" Y="71.2600" />
@@ -787,7 +787,7 @@
               <AbstractNodeData Name="coinGameNd" ActionTag="1937855139" Tag="208" IconVisible="True" LeftMargin="676.2563" RightMargin="603.7437" TopMargin="290.5911" BottomMargin="429.4089" ctype="SingleNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <Children>
-                  <AbstractNodeData Name="coinGameBtn" ActionTag="1111583263" Tag="209" IconVisible="False" LeftMargin="-100.0000" RightMargin="-100.0000" TopMargin="-100.0000" BottomMargin="-100.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+                  <AbstractNodeData Name="coinGameBtn" ActionTag="1111583263" Tag="209" IconVisible="False" LeftMargin="-100.0000" RightMargin="-100.0000" TopMargin="-100.0000" BottomMargin="-100.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="200.0000" Y="200.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position />
@@ -849,6 +849,15 @@
                 <NormalFileData Type="Normal" Path="hall/dtjm_f4.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="aniNd" ActionTag="1295246783" Tag="195" IconVisible="True" LeftMargin="350.0000" RightMargin="930.0000" TopMargin="620.0000" BottomMargin="100.0000" ctype="SingleNodeObjectData">
+                <Size X="0.0000" Y="0.0000" />
+                <AnchorPoint />
+                <Position X="350.0000" Y="100.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.2734" Y="0.1389" />
+                <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -1448,7 +1457,7 @@
                                 <PreSize X="0.6081" Y="0.5610" />
                                 <FileData Type="Normal" Path="common/gx_2.png" Plist="" />
                               </AbstractNodeData>
-                              <AbstractNodeData Name="Image_50" ActionTag="-531814260" Tag="249" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="74.0076" RightMargin="29.9924" TopMargin="74.6616" BottomMargin="45.3384" LeftEage="13" RightEage="13" TopEage="13" BottomEage="13" Scale9OriginX="13" Scale9OriginY="13" Scale9Width="14" Scale9Height="14" ctype="ImageViewObjectData">
+                              <AbstractNodeData Name="Image_50" ActionTag="-531814260" Tag="249" RotationSkewX="0.9871" RotationSkewY="0.9871" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="74.0076" RightMargin="29.9924" TopMargin="74.6616" BottomMargin="45.3384" LeftEage="13" RightEage="13" TopEage="13" BottomEage="13" Scale9OriginX="13" Scale9OriginY="13" Scale9Width="14" Scale9Height="14" ctype="ImageViewObjectData">
                                 <Size X="44.0000" Y="44.0000" />
                                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                                 <Position X="96.0076" Y="67.3384" />

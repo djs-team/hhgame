@@ -644,7 +644,7 @@
                         "ctype": "ImageViewObjectData"
                       },
                       {
-                        "FontSize": 20,
+                        "FontSize": 25,
                         "LabelText": "+888888",
                         "VerticalAlignmentType": "VT_Center",
                         "OutlineColor": {
@@ -659,12 +659,11 @@
                         "ShadowOffsetX": 2.0,
                         "ShadowOffsetY": -2.0,
                         "AnchorPoint": {
-                          "ScaleX": 0.5,
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 135.6834,
-                          "Y": 51.0115
+                          "X": 71.203,
+                          "Y": 50.6023
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -676,25 +675,137 @@
                         },
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 0.5899,
-                          "Y": 0.1457
+                          "X": 0.3096,
+                          "Y": 0.1446
                         },
                         "PreSize": {
-                          "X": 0.3043,
-                          "Y": 0.0571
+                          "X": 0.3957,
+                          "Y": 0.0714
                         },
-                        "LeftMargin": 100.6834,
-                        "RightMargin": 59.3166,
-                        "TopMargin": 288.9885,
-                        "BottomMargin": 41.0115,
+                        "LeftMargin": 71.203,
+                        "RightMargin": 67.797,
+                        "TopMargin": 286.8977,
+                        "BottomMargin": 38.1023,
                         "Tag": 405,
                         "ActionTag": 804885693,
                         "Size": {
-                          "X": 70.0,
-                          "Y": 20.0
+                          "X": 91.0,
+                          "Y": 25.0
                         },
                         "Name": "winNum",
                         "ctype": "TextObjectData"
+                      },
+                      {
+                        "ClipAble": false,
+                        "BackColorAlpha": 102,
+                        "ComboBoxIndex": 1,
+                        "SingleColor": {
+                          "R": 150,
+                          "G": 200
+                        },
+                        "FirstColor": {
+                          "R": 150,
+                          "G": 200
+                        },
+                        "EndColor": {},
+                        "ColorVector": {
+                          "ScaleY": 1.0
+                        },
+                        "Scale9Width": 1,
+                        "Scale9Height": 1,
+                        "TouchEnable": true,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 186.7694,
+                          "Y": 48.8924
+                        },
+                        "Scale": {
+                          "ScaleX": 0.6,
+                          "ScaleY": 0.6
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.812,
+                          "Y": 0.1397
+                        },
+                        "PreSize": {
+                          "X": 0.3478,
+                          "Y": 0.1429
+                        },
+                        "LeftMargin": 146.7694,
+                        "RightMargin": 3.2306,
+                        "TopMargin": 276.1076,
+                        "BottomMargin": 23.8924,
+                        "Tag": 450,
+                        "Children": [
+                          {
+                            "FontSize": 30,
+                            "LabelText": "详情",
+                            "HorizontalAlignmentType": "HT_Center",
+                            "VerticalAlignmentType": "VT_Center",
+                            "OutlineColor": {
+                              "G": 0,
+                              "B": 0
+                            },
+                            "ShadowColor": {
+                              "R": 110,
+                              "G": 110,
+                              "B": 110
+                            },
+                            "ShadowOffsetX": 2.0,
+                            "ShadowOffsetY": -2.0,
+                            "AnchorPoint": {
+                              "ScaleX": 0.5,
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 40.0,
+                              "Y": 25.0
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {
+                              "G": 165,
+                              "B": 0
+                            },
+                            "IconVisible": false,
+                            "PositionPercentXEnabled": true,
+                            "PositionPercentYEnabled": true,
+                            "PrePosition": {
+                              "X": 0.5,
+                              "Y": 0.5
+                            },
+                            "PreSize": {
+                              "X": 0.75,
+                              "Y": 0.6
+                            },
+                            "LeftMargin": 10.0,
+                            "RightMargin": 10.0,
+                            "TopMargin": 10.0,
+                            "BottomMargin": 10.0,
+                            "Tag": 451,
+                            "ActionTag": 1020726819,
+                            "Size": {
+                              "X": 60.0,
+                              "Y": 30.0
+                            },
+                            "Name": "Text_2",
+                            "ctype": "TextObjectData"
+                          }
+                        ],
+                        "ActionTag": 195539330,
+                        "Size": {
+                          "X": 80.0,
+                          "Y": 50.0
+                        },
+                        "Name": "InfoBtn",
+                        "ctype": "PanelObjectData"
                       }
                     ],
                     "ActionTag": -1201441900,
@@ -768,7 +879,7 @@
               "Y": 1.0
             },
             "UserData": "{\"layoutType\":\"showAll\",\"screenAlign\":\"bottom\"}",
-            "Tag": 24,
+            "Tag": 452,
             "Children": [
               {
                 "FileData": {
@@ -804,13 +915,365 @@
                   "Y": 0.3472
                 },
                 "TopMargin": 470.0,
-                "Tag": 33,
-                "ActionTag": -55315927,
+                "Tag": 453,
+                "ActionTag": 136634389,
                 "Size": {
                   "X": 1280.0,
                   "Y": 250.0
                 },
                 "Name": "Image_2",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "ClipAble": false,
+                "BackColorAlpha": 102,
+                "SingleColor": {
+                  "R": 150,
+                  "G": 200
+                },
+                "FirstColor": {
+                  "R": 150,
+                  "G": 200
+                },
+                "EndColor": {},
+                "ColorVector": {
+                  "ScaleY": 1.0
+                },
+                "Scale9Width": 1,
+                "Scale9Height": 1,
+                "AnchorPoint": {
+                  "ScaleX": 0.5
+                },
+                "Position": {
+                  "X": 640.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PositionPercentXEnabled": true,
+                "PositionPercentYEnabled": true,
+                "PrePosition": {
+                  "X": 0.5,
+                  "Y": 0.0
+                },
+                "PercentWidthEnable": true,
+                "PercentHeightEnable": true,
+                "PercentWidthEnabled": true,
+                "PercentHeightEnabled": true,
+                "PreSize": {
+                  "X": 1.0,
+                  "Y": 1.0
+                },
+                "UserData": "{\"layoutType\":\"showAll\",\"screenAlign\":\"bottom\"}",
+                "Tag": 24,
+                "Children": [
+                  {
+                    "FontSize": 30,
+                    "LabelText": "玩家应该叫什么呢",
+                    "VerticalAlignmentType": "VT_Center",
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "AnchorPoint": {
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 52.3898,
+                      "Y": 203.2463
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {
+                      "R": 218,
+                      "G": 25,
+                      "B": 218
+                    },
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0409,
+                      "Y": 0.2823
+                    },
+                    "PreSize": {
+                      "X": 0.1875,
+                      "Y": 0.0417
+                    },
+                    "LeftMargin": 52.3898,
+                    "RightMargin": 987.6102,
+                    "TopMargin": 501.7537,
+                    "BottomMargin": 188.2463,
+                    "Tag": 32,
+                    "ActionTag": 1873035343,
+                    "Size": {
+                      "X": 240.0,
+                      "Y": 30.0
+                    },
+                    "Name": "nameTxt",
+                    "ctype": "TextObjectData"
+                  },
+                  {
+                    "FontSize": 30,
+                    "LabelText": "清一色   一条龙     \n清一色   一条龙\n清一色   一条龙\n清一色   一条龙",
+                    "VerticalAlignmentType": "VT_Center",
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "AnchorPoint": {
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 37.2445,
+                      "Y": 98.4703
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {
+                      "G": 165,
+                      "B": 0
+                    },
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0291,
+                      "Y": 0.1368
+                    },
+                    "PreSize": {
+                      "X": 0.2344,
+                      "Y": 0.1667
+                    },
+                    "LeftMargin": 37.2445,
+                    "RightMargin": 942.7555,
+                    "TopMargin": 561.5297,
+                    "BottomMargin": 38.4703,
+                    "Tag": 34,
+                    "ActionTag": -126175670,
+                    "Size": {
+                      "X": 300.0,
+                      "Y": 120.0
+                    },
+                    "Name": "ruleTxt",
+                    "ctype": "TextObjectData"
+                  },
+                  {
+                    "ClipAble": false,
+                    "BackColorAlpha": 102,
+                    "ComboBoxIndex": 1,
+                    "SingleColor": {
+                      "R": 150,
+                      "G": 200
+                    },
+                    "FirstColor": {
+                      "R": 150,
+                      "G": 200
+                    },
+                    "EndColor": {},
+                    "ColorVector": {
+                      "ScaleY": 1.0
+                    },
+                    "Scale9Width": 1,
+                    "Scale9Height": 1,
+                    "TouchEnable": true,
+                    "AnchorPoint": {},
+                    "Position": {
+                      "X": 402.31,
+                      "Y": 181.82
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.3143,
+                      "Y": 0.2525
+                    },
+                    "PreSize": {
+                      "X": 0.0008,
+                      "Y": 0.0014
+                    },
+                    "LeftMargin": 402.31,
+                    "RightMargin": 876.69,
+                    "TopMargin": 537.18,
+                    "BottomMargin": 181.82,
+                    "Tag": 468,
+                    "ActionTag": -428900083,
+                    "Size": {
+                      "X": 1.0,
+                      "Y": 1.0
+                    },
+                    "Name": "CardNd",
+                    "ctype": "PanelObjectData"
+                  }
+                ],
+                "ActionTag": 1031068280,
+                "Size": {
+                  "X": 1280.0,
+                  "Y": 720.0
+                },
+                "Name": "InfoCell",
+                "ctype": "PanelObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "card/ground/hand/self_hand_0.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 24,
+                "Scale9OriginY": 35,
+                "Scale9Width": 26,
+                "Scale9Height": 37,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 1175.9976,
+                  "Y": 133.4603
+                },
+                "Scale": {
+                  "ScaleX": 1.2,
+                  "ScaleY": 1.2
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.9187,
+                  "Y": 0.1854
+                },
+                "PreSize": {
+                  "X": 0.0578,
+                  "Y": 0.1486
+                },
+                "LeftMargin": 1138.9976,
+                "RightMargin": 67.0024,
+                "TopMargin": 533.0397,
+                "BottomMargin": 79.9603,
+                "Tag": 462,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "card/value/selfhand/feng_hand_1.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 24,
+                    "Scale9OriginY": 35,
+                    "Scale9Width": 28,
+                    "Scale9Height": 30,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 37.0,
+                      "Y": 48.15
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PositionPercentXEnabled": true,
+                    "PositionPercentYEnabled": true,
+                    "PrePosition": {
+                      "X": 0.5,
+                      "Y": 0.45
+                    },
+                    "PreSize": {
+                      "X": 1.027,
+                      "Y": 0.9346
+                    },
+                    "LeftMargin": -1.0,
+                    "RightMargin": -1.0,
+                    "TopMargin": 8.85,
+                    "BottomMargin": -1.85,
+                    "Tag": 463,
+                    "ActionTag": -1407692072,
+                    "Size": {
+                      "X": 76.0,
+                      "Y": 100.0
+                    },
+                    "Name": "CardValue",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "result/ssc_10.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 25,
+                    "Scale9OriginY": 24,
+                    "Scale9Width": 27,
+                    "Scale9Height": 26,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 38.4345,
+                      "Y": 67.6511
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.5194,
+                      "Y": 0.6323
+                    },
+                    "PreSize": {
+                      "X": 1.0405,
+                      "Y": 0.6916
+                    },
+                    "LeftMargin": -0.0655,
+                    "RightMargin": -2.9345,
+                    "TopMargin": 2.3489,
+                    "BottomMargin": 30.6511,
+                    "Tag": 464,
+                    "ActionTag": -733500371,
+                    "Size": {
+                      "X": 77.0,
+                      "Y": 74.0
+                    },
+                    "Name": "BaoBg",
+                    "ctype": "ImageViewObjectData"
+                  }
+                ],
+                "ActionTag": -961882062,
+                "Size": {
+                  "X": 74.0,
+                  "Y": 107.0
+                },
+                "Name": "BaoCard",
                 "ctype": "ImageViewObjectData"
               },
               {
@@ -1216,111 +1679,6 @@
                 "ctype": "ButtonObjectData"
               },
               {
-                "FontSize": 30,
-                "LabelText": "玩家应该叫什么呢",
-                "VerticalAlignmentType": "VT_Center",
-                "OutlineColor": {
-                  "G": 0,
-                  "B": 0
-                },
-                "ShadowColor": {
-                  "R": 110,
-                  "G": 110,
-                  "B": 110
-                },
-                "ShadowOffsetX": 2.0,
-                "ShadowOffsetY": -2.0,
-                "AnchorPoint": {
-                  "ScaleY": 0.5
-                },
-                "Position": {
-                  "X": 52.3898,
-                  "Y": 203.2463
-                },
-                "Scale": {
-                  "ScaleX": 1.0,
-                  "ScaleY": 1.0
-                },
-                "CColor": {
-                  "R": 218,
-                  "G": 25,
-                  "B": 218
-                },
-                "IconVisible": false,
-                "PrePosition": {
-                  "X": 0.0409,
-                  "Y": 0.2823
-                },
-                "PreSize": {
-                  "X": 0.1875,
-                  "Y": 0.0417
-                },
-                "LeftMargin": 52.3898,
-                "RightMargin": 987.6102,
-                "TopMargin": 501.7537,
-                "BottomMargin": 188.2463,
-                "Tag": 32,
-                "ActionTag": 1873035343,
-                "Size": {
-                  "X": 240.0,
-                  "Y": 30.0
-                },
-                "Name": "nameTxt",
-                "ctype": "TextObjectData"
-              },
-              {
-                "FontSize": 30,
-                "LabelText": "清一色   一条龙     \n清一色   一条龙\n清一色   一条龙\n清一色   一条龙",
-                "VerticalAlignmentType": "VT_Center",
-                "OutlineColor": {
-                  "G": 0,
-                  "B": 0
-                },
-                "ShadowColor": {
-                  "R": 110,
-                  "G": 110,
-                  "B": 110
-                },
-                "ShadowOffsetX": 2.0,
-                "ShadowOffsetY": -2.0,
-                "AnchorPoint": {
-                  "ScaleY": 0.5
-                },
-                "Position": {
-                  "X": 37.2445,
-                  "Y": 98.4703
-                },
-                "Scale": {
-                  "ScaleX": 1.0,
-                  "ScaleY": 1.0
-                },
-                "CColor": {
-                  "G": 165,
-                  "B": 0
-                },
-                "IconVisible": false,
-                "PrePosition": {
-                  "X": 0.0291,
-                  "Y": 0.1368
-                },
-                "PreSize": {
-                  "X": 0.2344,
-                  "Y": 0.1667
-                },
-                "LeftMargin": 37.2445,
-                "RightMargin": 942.7555,
-                "TopMargin": 561.5297,
-                "BottomMargin": 38.4703,
-                "Tag": 34,
-                "ActionTag": -126175670,
-                "Size": {
-                  "X": 300.0,
-                  "Y": 120.0
-                },
-                "Name": "ruleTxt",
-                "ctype": "TextObjectData"
-              },
-              {
                 "FileData": {
                   "Type": "Normal",
                   "Path": "card/ground/hand/self_hand_0.png",
@@ -1336,28 +1694,28 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 1175.9976,
-                  "Y": 133.4603
+                  "X": 0.0,
+                  "Y": 0.0
                 },
                 "Scale": {
-                  "ScaleX": 1.2,
-                  "ScaleY": 1.2
+                  "ScaleX": 0.6,
+                  "ScaleY": 0.6
                 },
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.9187,
-                  "Y": 0.1854
+                  "X": 0.0,
+                  "Y": 0.0
                 },
                 "PreSize": {
                   "X": 0.0578,
                   "Y": 0.1486
                 },
-                "LeftMargin": 1138.9976,
-                "RightMargin": 67.0024,
-                "TopMargin": 533.0397,
-                "BottomMargin": 79.9603,
-                "Tag": 391,
+                "LeftMargin": -37.0,
+                "RightMargin": 1243.0,
+                "TopMargin": 666.5,
+                "BottomMargin": -53.5,
+                "Tag": 393,
                 "Children": [
                   {
                     "FileData": {
@@ -1397,201 +1755,26 @@
                     "RightMargin": -1.0,
                     "TopMargin": 8.85,
                     "BottomMargin": -1.85,
-                    "Tag": 392,
-                    "ActionTag": 1849132255,
+                    "Tag": 394,
+                    "ActionTag": -835913614,
                     "Size": {
                       "X": 76.0,
                       "Y": 100.0
                     },
                     "Name": "CardValue",
                     "ctype": "ImageViewObjectData"
-                  },
-                  {
-                    "FileData": {
-                      "Type": "Normal",
-                      "Path": "result/ssc_10.png",
-                      "Plist": ""
-                    },
-                    "Scale9OriginX": 25,
-                    "Scale9OriginY": 24,
-                    "Scale9Width": 27,
-                    "Scale9Height": 26,
-                    "AnchorPoint": {
-                      "ScaleX": 0.5,
-                      "ScaleY": 0.5
-                    },
-                    "Position": {
-                      "X": 38.4345,
-                      "Y": 67.6511
-                    },
-                    "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
-                    },
-                    "CColor": {},
-                    "IconVisible": false,
-                    "PrePosition": {
-                      "X": 0.5194,
-                      "Y": 0.6323
-                    },
-                    "PreSize": {
-                      "X": 1.0405,
-                      "Y": 0.6916
-                    },
-                    "LeftMargin": -0.0655,
-                    "RightMargin": -2.9345,
-                    "TopMargin": 2.3489,
-                    "BottomMargin": 30.6511,
-                    "Tag": 399,
-                    "ActionTag": -1597703485,
-                    "Size": {
-                      "X": 77.0,
-                      "Y": 74.0
-                    },
-                    "Name": "BaoBg",
-                    "ctype": "ImageViewObjectData"
                   }
                 ],
-                "ActionTag": 212513465,
+                "ActionTag": 1930238960,
                 "Size": {
                   "X": 74.0,
                   "Y": 107.0
                 },
-                "Name": "BaoCard",
+                "Name": "CardCell",
                 "ctype": "ImageViewObjectData"
-              },
-              {
-                "AnchorPoint": {},
-                "Position": {
-                  "X": 402.3148,
-                  "Y": 181.8158
-                },
-                "Scale": {
-                  "ScaleX": 1.0,
-                  "ScaleY": 1.0
-                },
-                "CColor": {},
-                "IconVisible": true,
-                "PrePosition": {
-                  "X": 0.3143,
-                  "Y": 0.2525
-                },
-                "PreSize": {
-                  "X": 0.0,
-                  "Y": 0.0
-                },
-                "LeftMargin": 402.3148,
-                "RightMargin": 877.6852,
-                "TopMargin": 538.1842,
-                "BottomMargin": 181.8158,
-                "Tag": 395,
-                "Children": [
-                  {
-                    "FileData": {
-                      "Type": "Normal",
-                      "Path": "card/ground/hand/self_hand_0.png",
-                      "Plist": ""
-                    },
-                    "Scale9OriginX": 24,
-                    "Scale9OriginY": 35,
-                    "Scale9Width": 26,
-                    "Scale9Height": 37,
-                    "TouchEnable": true,
-                    "AnchorPoint": {
-                      "ScaleX": 0.5,
-                      "ScaleY": 0.5
-                    },
-                    "Position": {
-                      "X": 0.0,
-                      "Y": 0.0
-                    },
-                    "Scale": {
-                      "ScaleX": 0.6,
-                      "ScaleY": 0.6
-                    },
-                    "CColor": {},
-                    "IconVisible": false,
-                    "PrePosition": {
-                      "X": 0.0,
-                      "Y": 0.0
-                    },
-                    "PreSize": {
-                      "X": 0.0,
-                      "Y": 0.0
-                    },
-                    "LeftMargin": -37.0,
-                    "RightMargin": -37.0,
-                    "TopMargin": -53.5,
-                    "BottomMargin": -53.5,
-                    "Tag": 393,
-                    "Children": [
-                      {
-                        "FileData": {
-                          "Type": "Normal",
-                          "Path": "card/value/selfhand/feng_hand_1.png",
-                          "Plist": ""
-                        },
-                        "Scale9OriginX": 24,
-                        "Scale9OriginY": 35,
-                        "Scale9Width": 28,
-                        "Scale9Height": 30,
-                        "AnchorPoint": {
-                          "ScaleX": 0.5,
-                          "ScaleY": 0.5
-                        },
-                        "Position": {
-                          "X": 37.0,
-                          "Y": 48.15
-                        },
-                        "Scale": {
-                          "ScaleX": 1.0,
-                          "ScaleY": 1.0
-                        },
-                        "CColor": {},
-                        "IconVisible": false,
-                        "PositionPercentXEnabled": true,
-                        "PositionPercentYEnabled": true,
-                        "PrePosition": {
-                          "X": 0.5,
-                          "Y": 0.45
-                        },
-                        "PreSize": {
-                          "X": 1.027,
-                          "Y": 0.9346
-                        },
-                        "LeftMargin": -1.0,
-                        "RightMargin": -1.0,
-                        "TopMargin": 8.85,
-                        "BottomMargin": -1.85,
-                        "Tag": 394,
-                        "ActionTag": -835913614,
-                        "Size": {
-                          "X": 76.0,
-                          "Y": 100.0
-                        },
-                        "Name": "CardValue",
-                        "ctype": "ImageViewObjectData"
-                      }
-                    ],
-                    "ActionTag": 1930238960,
-                    "Size": {
-                      "X": 74.0,
-                      "Y": 107.0
-                    },
-                    "Name": "CardCell",
-                    "ctype": "ImageViewObjectData"
-                  }
-                ],
-                "ActionTag": -2068885827,
-                "Size": {
-                  "X": 0.0,
-                  "Y": 0.0
-                },
-                "Name": "CardNd",
-                "ctype": "SingleNodeObjectData"
               }
             ],
-            "ActionTag": 1031068280,
+            "ActionTag": 1539901368,
             "Size": {
               "X": 1280.0,
               "Y": 720.0

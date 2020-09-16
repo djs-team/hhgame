@@ -104,7 +104,8 @@ load('game/public/HttpGame', function () {
                 'hostport',
                 'firstLogin',
                 'vipFlag',
-                'channel'
+                'channel',
+
             ]
             appInstance.dataManager().getUserData().saveMsg(msg, saveKey)
 
@@ -172,24 +173,23 @@ load('game/public/HttpGame', function () {
         },
 
         userDataBack: function (msg) {
-
-
             if (msg.status !== 0) {
                 cc.log('------------->>>httpGame error happen')
                 return
             }
-
+            msg.pRole = msg.roleCode
             let saveKey = [
                 'pname',
                 'coin',
                 'diamonds',
                 'fuKa',
-                'roleCode',
+                'pRole',
                 'nameUpdate',
                 'photo',
                 'sdkphotourl',
                 'nameUpdate',
-                'isAuthentication'
+                'isAuthentication',
+                'agentFlag'
             ]
             appInstance.dataManager().getUserData().saveMsg(msg, saveKey)
             appInstance.sendNotification(GameEvent.USERDATA, msg)
@@ -826,7 +826,6 @@ load('game/public/HttpGame', function () {
             }
             msg.msgID = HttpEvent.MJ_HALL_COIN_STORE
             appInstance.httpAgent().sendPost(msg)
-
         },
 
 
@@ -835,8 +834,8 @@ load('game/public/HttpGame', function () {
                 cc.log('------------->>>httpGame COINSSHOPDATASBack error happen')
                 return
             }
-            appInstance.sendNotification(GameEvent.COINSHOP_GET, msg)
 
+            appInstance.sendNotification(GameEvent.COINSHOP_GET, msg)
         },
 
         COINSSHOPBUYReq: function (msg) {
@@ -916,6 +915,127 @@ load('game/public/HttpGame', function () {
                 return
             }
             appInstance.sendNotification(GameEvent.VIDEO_WATCH_DIAMONDS, msg)
+
+        },
+
+        VIPPaysOrderReq: function (msg) {
+            msg = msg || {}
+            if (!this._requestBackCall[HttpEvent.MJ_HALL_PLAYER_BUY_VIP_ORDER]) {
+                this._requestBackCall[HttpEvent.MJ_HALL_PLAYER_BUY_VIP_ORDER] = this.VIPPaysOrderBack
+            }
+            msg.msgID = HttpEvent.MJ_HALL_PLAYER_BUY_VIP_ORDER
+            appInstance.httpAgent().sendPost(msg)
+
+        },
+
+
+        VIPPaysOrderBack: function (msg) {
+            if (msg.status !== 0) {
+                cc.log('------------->>>httpGame VIPPaysOrderBack error happen')
+                return
+            }
+            appInstance.sendNotification(GameEvent.PLAYER_BUY_VIP_ORDER, msg)
+
+        },
+
+
+        ROLLIMGLISTReq: function (msg) {
+            msg = msg || {}
+            if (!this._requestBackCall[HttpEvent.MJ_HALL_STORE_OUT_GOODS]) {
+                this._requestBackCall[HttpEvent.MJ_HALL_STORE_OUT_GOODS] = this.ROLLIMGLISTBack
+            }
+            msg.msgID = HttpEvent.MJ_HALL_STORE_OUT_GOODS
+            appInstance.httpAgent().sendPost(msg)
+
+        },
+
+
+        ROLLIMGLISTBack: function (msg) {
+            if (msg.status !== 0) {
+                cc.log('------------->>>httpGame ROLLIMGLISTBack error happen')
+                return
+            }
+            appInstance.sendNotification(GameEvent.GETROLLIMGLIST, msg)
+
+        },
+
+        MENULISTReq: function (msg) {
+            msg = msg || {}
+            if (!this._requestBackCall[HttpEvent.MJ_HALL_STORE_GOODS_TYPE]) {
+                this._requestBackCall[HttpEvent.MJ_HALL_STORE_GOODS_TYPE] = this.MENULISTBack
+            }
+            msg.msgID = HttpEvent.MJ_HALL_STORE_GOODS_TYPE
+            appInstance.httpAgent().sendPost(msg)
+
+        },
+
+
+        MENULISTBack: function (msg) {
+            if (msg.status !== 0) {
+                cc.log('------------->>>httpGame MENULISTBack error happen')
+                return
+            }
+            appInstance.sendNotification(GameEvent.MENULIST, msg)
+
+        },
+
+        GOODSLISTReq: function (msg) {
+            msg = msg || {}
+            if (!this._requestBackCall[HttpEvent.PLAYER_SHOPPING]) {
+                this._requestBackCall[HttpEvent.PLAYER_SHOPPING] = this.GOODSLISTBack
+            }
+            msg.msgID = HttpEvent.PLAYER_SHOPPING
+            appInstance.httpAgent().sendPost(msg)
+
+        },
+
+
+        GOODSLISTBack: function (msg) {
+            if (msg.status !== 0) {
+                cc.log('------------->>>httpGame GOODSLISTBack error happen')
+                return
+            }
+            appInstance.sendNotification(GameEvent.GOODSLIST, msg)
+
+        },
+
+        FUKA_BUYGOODSReq: function (msg) {
+            msg = msg || {}
+            if (!this._requestBackCall[HttpEvent.MJ_HALL_PLAYER_GOODS_BUY]) {
+                this._requestBackCall[HttpEvent.MJ_HALL_PLAYER_GOODS_BUY] = this.FUKA_BUYGOODSBack
+            }
+            msg.msgID = HttpEvent.MJ_HALL_PLAYER_GOODS_BUY
+            appInstance.httpAgent().sendPost(msg)
+
+        },
+
+
+        FUKA_BUYGOODSBack: function (msg) {
+            if (msg.status !== 0) {
+                cc.log('------------->>>httpGame FUKA_BUYGOODSBack error happen')
+                return
+            }
+            appInstance.sendNotification(GameEvent.FUKA_BUGGOODS, msg)
+
+        },
+
+        FUKA_ROBReq: function (msg) {
+            msg = msg || {}
+            if (!this._requestBackCall[HttpEvent.MJ_HALL_FUKA_DUOBAO]) {
+                this._requestBackCall[HttpEvent.MJ_HALL_FUKA_DUOBAO] = this.FUKA_ROBBack
+            }
+            msg.msgID = HttpEvent.MJ_HALL_FUKA_DUOBAO
+            appInstance.httpAgent().sendPost(msg)
+
+        },
+
+
+        FUKA_ROBBack: function (msg) {
+            if (msg.status !== 0) {
+                cc.log('------------->>>httpGame FUKA_ROBBack error happen')
+                return
+            }
+            appInstance.sendNotification(GameEvent.FUKA_BUGGOODS, msg)
 
         },
     })

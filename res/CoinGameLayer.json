@@ -119,6 +119,7 @@
           {
             "ClipAble": false,
             "BackColorAlpha": 0,
+            "ComboBoxIndex": 1,
             "SingleColor": {
               "R": 0,
               "G": 0,

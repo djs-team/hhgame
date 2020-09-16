@@ -8,6 +8,7 @@ load('game/public/TcpGame', function () {
     let HeartBeatProto = include('game/msghandler/HeartBeatProto')
     let PutCardProto = include('game/msghandler/PutCardProto')
     let PlayerSelectProto = include('game/msghandler/PlayerSelectProto')
+    let TableHostingProto = include('game/msghandler/TableHostingProto')
     let TcpGame  = cc.Class.extend({
         ctor: function () {
 
@@ -59,6 +60,15 @@ load('game/public/TcpGame', function () {
             packetProto.setValue(msg)
             appInstance.gameNet().send(packetProto)
         },
+
+        TableHostingProto: function (msg) {
+            msg = msg || {}
+            msg.pTableID = appInstance.dataManager().getPlayData().tableData.pTableID
+            msg.pHostingExt = ''
+            let packetProto = new Packet(new TableHostingProto())
+            packetProto.setValue(msg)
+            appInstance.gameNet().send(packetProto)
+        }
 
     })
     return TcpGame

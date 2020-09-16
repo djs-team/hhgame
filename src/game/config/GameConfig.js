@@ -43,18 +43,18 @@ load('game/config/GameConfig', function () {
     GameConfig.FUNCTION_NAME_TURNTABLE = 'turntable'
     GameConfig.FUNCTION_NAME_SIGN = 'sign'
 
-    GameConfig.ICON_RESULT_BRIGHT = 'bright'
-    GameConfig.ICON_RESULT_ASH = 'ash'
+    GameConfig.ICON_RESULT_BRIGHT = 'brightImg'
+    GameConfig.ICON_RESULT_ASH = 'ashImg'
     GameConfig.ICON_RESULT_CURRENCY = 'currency'
     GameConfig.ICON_RESULT_LEAST = 'least'
     GameConfig.ICON_RESULT_MORE = 'more'
     GameConfig.ICON_RESULT_MOST = 'most'
 
-    GameConfig.VIP_LEVEL_0 = '0'//不是vip
-    GameConfig.VIP_LEVEL_1 = '1'//周vip
-    GameConfig.VIP_LEVEL_2 = '2'//月vip
-    GameConfig.VIP_LEVEL_3 = '3'//季vip
-    GameConfig.VIP_LEVEL_4 = '4'//年vip
+    GameConfig.VIP_LEVEL_0 = 0//不是vip
+    GameConfig.VIP_LEVEL_1 = 1//周vip
+    GameConfig.VIP_LEVEL_2 = 2//月vip
+    GameConfig.VIP_LEVEL_3 = 3//季vip
+    GameConfig.VIP_LEVEL_4 = 4//年vip
 
 
 
@@ -117,138 +117,138 @@ load('game/config/GameConfig', function () {
     GameConfig.propsRes = {
 
         '1' : {
-            'name' : '货币',
-            'propCode' :[
-                {'1' : {
-                        'name' : '金币',
-                        'currency' : 'res/code/props/jinbi1.png',
-                        'least' : 'res/code/props/jinbi1.png',
-                        'more' : 'res/code/props/jinbi2.png',
-                        'most' : 'res/code/props/jinbi3.png',
-                    }
-                },
-                {'2' : {
-                        'name' : '钻石',
-                        'currency' : 'res/code/props/zuanshi1.png',
-                        'least' : 'res/code/props/zuanshi1.png',
-                        'more' : 'res/code/props/zuanshi2.png',
-                        'most' : 'res/code/props/zuanshi3.png',
-                    }
-                },
-                {'3' : {
-                        'name' : '福卡',
-                        'currency' : 'res/code/props/fuka.png',
-                    }
-                },
-            ]
+            'name': '货币',
+            'propCode': {
+                '1': {
+                    'name': '金币',
+                    'currency': 'res/code/props/jinbi1.png',
+                    'least': 'res/code/props/jinbi1.png',
+                    'more': 'res/code/props/jinbi2.png',
+                    'most': 'res/code/props/jinbi3.png',
+                }
+                ,
+                '2': {
+                    'name': '钻石',
+                    'currency': 'res/code/props/zuanshi1.png',
+                    'least': 'res/code/props/zuanshi1.png',
+                    'more': 'res/code/props/zuanshi2.png',
+                    'most': 'res/code/props/zuanshi3.png',
+                }
+                ,
+                '3': {
+                    'name': '福卡',
+                    'currency': 'res/code/props/fuka.png',
+                }
+                ,
+            }
         },
         '2' : {
             'name' : '角色',
-            'propCode' :[
-                {'1' : {
-                        'name' : '财神',
-                        'brightImg' : 'res/code/props/js_cs1.png',
-                        'ashImg' : 'res/code/props/js_cs1_1.png',
-                        'currency' : 'res/code/props/canshen.png',
-                    }
-                 },
-                {'2' : {
-                        'name' : '草帽男孩',
-                        'brightImg' : 'res/code/props/js_nncs1.png',
-                        'ashImg' : 'res/code/props/js_nncs1_1.png',
-                        'currency' : 'res/code/props/chushi1.png',
-                    }
+            'propCode' : {
+                '1': {
+                    'name': '财神',
+                    'brightImg': 'res/code/props/js_cs1.png',
+                    'ashImg': 'res/code/props/js_cs1_1.png',
+                    'currency': 'res/code/props/canshen.png',
+                }
+                ,
+                '2': {
+                    'name': '草帽男孩',
+                    'brightImg': 'res/code/props/js_nncs1.png',
+                    'ashImg': 'res/code/props/js_nncs1_1.png',
+                    'currency': 'res/code/props/chushi1.png',
+                }
 
-                },
-                {'3' : {
-                        'name' : '秧歌小妞',
-                        'brightImg' : 'res/code/props/js_ncs1.png',
-                        'ashImg' : 'res/code/props/js_ncs1_1.png',
-                        'currency' : 'res/code/props/chushi2.png',
-                    }
+                ,
+                '3': {
+                    'name': '秧歌小妞',
+                    'brightImg': 'res/code/props/js_ncs1.png',
+                    'ashImg': 'res/code/props/js_ncs1_1.png',
+                    'currency': 'res/code/props/chushi2.png',
+                }
 
-                },
-                {'4' : {
-                        'name' : '发哥',
-                        'brightImg' : 'res/code/props/js_fg1.png',
-                        'ashImg' : 'res/code/props/js_fg1_1.png',
-                        'currency' : 'res/code/props/fage.png',
-                    }
+                ,
+                '4': {
+                    'name': '发哥',
+                    'brightImg': 'res/code/props/js_fg1.png',
+                    'ashImg': 'res/code/props/js_fg1_1.png',
+                    'currency': 'res/code/props/fage.png',
+                }
 
-                },
-                {'5' : {
-                        'name' : '皇帝',
-                        'brightImg' : 'res/code/props/js_hd1.png',
-                        'ashImg' : 'res/code/props/js_hd1_1.png',
-                        'currency' : 'res/code/props/hangdi.png',
-                    }
+                ,
+                '5': {
+                    'name': '皇帝',
+                    'brightImg': 'res/code/props/js_hd1.png',
+                    'ashImg': 'res/code/props/js_hd1_1.png',
+                    'currency': 'res/code/props/hangdi.png',
+                }
 
-                },
-                {'6' : {
-                        'name' : '花木兰',
-                        'brightImg' : 'res/code/props/js_hml1.png',
-                        'ashImg' : 'res/code/props/js_hml1_1_1.png',
-                        'currency' : 'res/code/props/huamulan.png',
-                    }
+                ,
+                '6': {
+                    'name': '花木兰',
+                    'brightImg': 'res/code/props/js_hml1.png',
+                    'ashImg': 'res/code/props/js_hml1_1.png',
+                    'currency': 'res/code/props/huamulan.png',
+                }
 
-                },
-                {'7' : {
-                        'name' : '狐仙小妞',
-                        'brightImg' : 'res/code/props/js_hx1.png',
-                        'ashImg' : 'res/code/props/js_hx1_1.png',
-                        'currency' : 'res/code/props/huxian.png',
-                    }
+                ,
+                '7': {
+                    'name': '狐仙小妞',
+                    'brightImg': 'res/code/props/js_hx1.png',
+                    'ashImg': 'res/code/props/js_hx1_1.png',
+                    'currency': 'res/code/props/huxian.png',
+                }
 
-                },
-                {'8' : {
-                        'name' : '张作霖',
-                        'brightImg' : 'res/code/props/js_zzl1.png',
-                        'ashImg' : 'res/code/props/js_zzl1_1.png',
-                        'currency' : 'res/code/props/zhangzuolin.png',
-                    }
+                ,
+                '8': {
+                    'name': '张作霖',
+                    'brightImg': 'res/code/props/js_zzl1.png',
+                    'ashImg': 'res/code/props/js_zzl1_1.png',
+                    'currency': 'res/code/props/zhangzuolin.png',
+                }
 
-                },
-                {'9' : {
-                        'name' : '至尊宝',
-                        'brightImg' : 'res/code/props/js_zzb1.png',
-                        'ashImg' : 'res/code/props/js_zzb1_1.png',
-                        'currency' : 'res/code/props/zhizunbao.png',
-                    }
+                ,
+                '9': {
+                    'name': '至尊宝',
+                    'brightImg': 'res/code/props/js_zzb1.png',
+                    'ashImg': 'res/code/props/js_zzb1_1.png',
+                    'currency': 'res/code/props/zhizunbao.png',
+                }
 
-                },
-                {'10' : {
-                        'name' : '紫霞',
-                        'brightImg' : 'res/code/props/js_zx1.png',
-                        'ashImg' : 'res/code/props/js_zx1_1.png',
-                        'currency' : 'res/code/props/zixia.png',
-                    }
+                ,
+                '10': {
+                    'name': '紫霞',
+                    'brightImg': 'res/code/props/js_zx1.png',
+                    'ashImg': 'res/code/props/js_zx1_1.png',
+                    'currency': 'res/code/props/zixia.png',
+                }
 
-                },
+                ,
 
-            ]
+            }
         },
         '3' :  {
             'name' : '实物',
-            'propCode' :[
+            'propCode' : {
 
-                {'1' : {
-                        'name' : '手机',
-                        'currency' : 'res/code/props/zphd_12.png',
-                    }
-                },
-                {'2' : {
-                        'name' : '京东卡',
-                        'currency' : 'res/code/props/zphd_12.png',
-                    }
+                '1': {
+                    'name': '手机',
+                    'currency': 'res/code/props/zphd_12.png',
+                }
+                ,
+                '2': {
+                    'name': '京东卡',
+                    'currency': 'res/code/props/zphd_12.png',
+                }
 
-                },
-                {'3' : {
-                        'name' : '话费卡',
-                        'currency' : 'res/code/props/zphd_12.png',
-                    }
+                ,
+                '3': {
+                    'name': '话费卡',
+                    'currency': 'res/code/props/zphd_12.png',
+                }
 
-                },
-            ]
+                ,
+            }
         },
 
 

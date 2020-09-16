@@ -62,6 +62,7 @@
               "X": 1.0,
               "Y": 1.0
             },
+            "UserData": "{\"layoutType\":\"showAll\",\"screenAlign\":\"mid\"}",
             "Tag": 153,
             "ActionTag": -113838399,
             "Size": {
@@ -752,7 +753,7 @@
                       "Plist": ""
                     },
                     "Scale9Enable": true,
-                    "Scale9OriginX": 41,
+                    "Scale9OriginX": 46,
                     "Scale9OriginY": 72,
                     "Scale9Width": 13,
                     "Scale9Height": 1,
@@ -860,7 +861,7 @@
                       "X": 122.0,
                       "Y": 49.0
                     },
-                    "Name": "goVIPBtn",
+                    "Name": "becomeBtn",
                     "ctype": "ButtonObjectData"
                   },
                   {
@@ -876,9 +877,264 @@
                       "Path": "Default/Button_Disable.png",
                       "Plist": ""
                     },
-                    "PressedFileData": {
+                    "NormalFileData": {
+                      "Type": "Normal",
+                      "Path": "common/bt_3.png",
+                      "Plist": ""
+                    },
+                    "Scale9Enable": true,
+                    "Scale9OriginX": 46,
+                    "Scale9OriginY": 72,
+                    "Scale9Width": 13,
+                    "Scale9Height": 1,
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 985.72,
+                      "Y": 261.62
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.7701,
+                      "Y": 0.3634
+                    },
+                    "PreSize": {
+                      "X": 0.0953,
+                      "Y": 0.0681
+                    },
+                    "LeftMargin": 924.72,
+                    "RightMargin": 233.28,
+                    "TopMargin": 433.88,
+                    "BottomMargin": 237.12,
+                    "Tag": 231,
+                    "Children": [
+                      {
+                        "FontSize": 18,
+                        "LabelText": "升级VIP",
+                        "FontResource": {
+                          "Type": "Normal",
+                          "Path": "font/hkhbtW12.ttc",
+                          "Plist": ""
+                        },
+                        "OutlineColor": {
+                          "G": 0,
+                          "B": 0
+                        },
+                        "ShadowColor": {
+                          "R": 110,
+                          "G": 110,
+                          "B": 110
+                        },
+                        "ShadowOffsetX": 2.0,
+                        "ShadowOffsetY": -2.0,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 60.7112,
+                          "Y": 26.6906
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {
+                          "R": 152,
+                          "G": 73,
+                          "B": 0
+                        },
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.4976,
+                          "Y": 0.5447
+                        },
+                        "PreSize": {
+                          "X": 0.541,
+                          "Y": 0.3673
+                        },
+                        "LeftMargin": 27.7112,
+                        "RightMargin": 28.2888,
+                        "TopMargin": 13.3094,
+                        "BottomMargin": 17.6906,
+                        "Tag": 232,
+                        "ActionTag": 328356138,
+                        "Size": {
+                          "X": 66.0,
+                          "Y": 18.0
+                        },
+                        "Name": "goVIPText",
+                        "ctype": "TextObjectData"
+                      }
+                    ],
+                    "ActionTag": -276406237,
+                    "Size": {
+                      "X": 122.0,
+                      "Y": 49.0
+                    },
+                    "Name": "upgradeBtn",
+                    "ctype": "ButtonObjectData"
+                  },
+                  {
+                    "FontSize": 14,
+                    "ButtonText": "",
+                    "TextColor": {
+                      "R": 65,
+                      "G": 65,
+                      "B": 70
+                    },
+                    "DisabledFileData": {
                       "Type": "Default",
-                      "Path": "Default/Button_Press.png",
+                      "Path": "Default/Button_Disable.png",
+                      "Plist": ""
+                    },
+                    "NormalFileData": {
+                      "Type": "Normal",
+                      "Path": "common/bt_3.png",
+                      "Plist": ""
+                    },
+                    "Scale9Enable": true,
+                    "Scale9OriginX": 46,
+                    "Scale9OriginY": 72,
+                    "Scale9Width": 13,
+                    "Scale9Height": 1,
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 985.72,
+                      "Y": 261.62
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.7701,
+                      "Y": 0.3634
+                    },
+                    "PreSize": {
+                      "X": 0.0953,
+                      "Y": 0.0681
+                    },
+                    "LeftMargin": 924.72,
+                    "RightMargin": 233.28,
+                    "TopMargin": 433.88,
+                    "BottomMargin": 237.12,
+                    "Tag": 229,
+                    "Children": [
+                      {
+                        "FontSize": 18,
+                        "LabelText": "续费VIP",
+                        "FontResource": {
+                          "Type": "Normal",
+                          "Path": "font/hkhbtW12.ttc",
+                          "Plist": ""
+                        },
+                        "OutlineColor": {
+                          "G": 0,
+                          "B": 0
+                        },
+                        "ShadowColor": {
+                          "R": 110,
+                          "G": 110,
+                          "B": 110
+                        },
+                        "ShadowOffsetX": 2.0,
+                        "ShadowOffsetY": -2.0,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 60.7112,
+                          "Y": 26.6906
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {
+                          "R": 152,
+                          "G": 73,
+                          "B": 0
+                        },
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.4976,
+                          "Y": 0.5447
+                        },
+                        "PreSize": {
+                          "X": 0.541,
+                          "Y": 0.3673
+                        },
+                        "LeftMargin": 27.7112,
+                        "RightMargin": 28.2888,
+                        "TopMargin": 13.3094,
+                        "BottomMargin": 17.6906,
+                        "Tag": 230,
+                        "ActionTag": 385891032,
+                        "Size": {
+                          "X": 66.0,
+                          "Y": 18.0
+                        },
+                        "Name": "goVIPText",
+                        "ctype": "TextObjectData"
+                      }
+                    ],
+                    "ActionTag": 1772592791,
+                    "Size": {
+                      "X": 122.0,
+                      "Y": 49.0
+                    },
+                    "Name": "renewBtn",
+                    "ctype": "ButtonObjectData"
+                  },
+                  {
+                    "FontSize": 14,
+                    "ButtonText": "",
+                    "TextColor": {
+                      "R": 65,
+                      "G": 65,
+                      "B": 70
+                    },
+                    "DisabledFileData": {
+                      "Type": "Default",
+                      "Path": "Default/Button_Disable.png",
                       "Plist": ""
                     },
                     "NormalFileData": {
@@ -1500,13 +1756,10 @@
                       "Path": "sign/qd_16.png",
                       "Plist": ""
                     },
-                    "AnchorPoint": {
-                      "ScaleX": 0.5,
-                      "ScaleY": 0.5
-                    },
+                    "AnchorPoint": {},
                     "Position": {
-                      "X": 241.49,
-                      "Y": 7.34
+                      "X": 8.99,
+                      "Y": -4.16
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -1515,8 +1768,8 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.4888,
-                      "Y": 0.3336
+                      "X": 0.0182,
+                      "Y": -0.1891
                     },
                     "PreSize": {
                       "X": 0.9413,
@@ -1546,13 +1799,10 @@
                         "Scale9Width": 1,
                         "Scale9Height": 1,
                         "TouchEnable": true,
-                        "AnchorPoint": {
-                          "ScaleX": 0.5,
-                          "ScaleY": 0.5
-                        },
+                        "AnchorPoint": {},
                         "Position": {
-                          "X": 63.0075,
-                          "Y": 12.2475
+                          "X": 36.0075,
+                          "Y": -10.7525
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -1563,8 +1813,8 @@
                         "PositionPercentXEnabled": true,
                         "PositionPercentYEnabled": true,
                         "PrePosition": {
-                          "X": 0.1355,
-                          "Y": 0.5325
+                          "X": 0.0774,
+                          "Y": -0.4675
                         },
                         "PreSize": {
                           "X": 0.1161,
@@ -1872,6 +2122,7 @@
                 },
                 "Scale9Width": 1,
                 "Scale9Height": 1,
+                "TouchEnable": true,
                 "AnchorPoint": {},
                 "Position": {
                   "X": 123.1704,
@@ -1908,8 +2159,9 @@
                 "ClipAble": true,
                 "BackColorAlpha": 102,
                 "SingleColor": {
-                  "R": 150,
-                  "G": 200
+                  "R": 0,
+                  "G": 0,
+                  "B": 0
                 },
                 "FirstColor": {
                   "R": 150,
@@ -1974,8 +2226,8 @@
                 "TouchEnable": true,
                 "AnchorPoint": {},
                 "Position": {
-                  "X": 153.6487,
-                  "Y": 360.9961
+                  "X": 245.61,
+                  "Y": 363.324
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -1984,17 +2236,17 @@
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.12,
-                  "Y": 0.5014
+                  "X": 0.1919,
+                  "Y": 0.5046
                 },
                 "PreSize": {
                   "X": 0.0836,
                   "Y": 0.1583
                 },
-                "LeftMargin": 153.6487,
-                "RightMargin": 1019.3513,
-                "TopMargin": 245.0039,
-                "BottomMargin": 360.9961,
+                "LeftMargin": 245.61,
+                "RightMargin": 927.39,
+                "TopMargin": 242.676,
+                "BottomMargin": 363.324,
                 "Tag": 192,
                 "Children": [
                   {
@@ -2261,7 +2513,6 @@
         "coinshop/scjb_14.png",
         "common/bt_3.png",
         "Default/Button_Disable.png",
-        "Default/Button_Press.png",
         "font/hkhbtW12.ttc",
         "sign/qd_10.png",
         "sign/qd_11.png",

@@ -29,7 +29,7 @@
             <PreSize X="1.0000" Y="1.0000" />
             <FileData Type="Normal" Path="png/scjn_bg.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="topPnl" ActionTag="1859398032" UserData="{&quot;layoutType&quot;:&quot;showAll&quot;,&quot;screenAlign&quot;:&quot;top&quot;}" Tag="27" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="0" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+          <AbstractNodeData Name="topPnl" ActionTag="1859398032" UserData="{&quot;layoutType&quot;:&quot;showAll&quot;,&quot;screenAlign&quot;:&quot;top&quot;}" Tag="27" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <Children>
               <AbstractNodeData Name="closeBtn" ActionTag="-1785149619" Tag="29" IconVisible="False" LeftMargin="8.9904" RightMargin="1183.0096" TopMargin="8.8989" BottomMargin="623.1011" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="58" Scale9Height="66" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">

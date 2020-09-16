@@ -6,6 +6,8 @@ load('game/ui/scene/HallScene', function () {
     let BaseScene = include('public/ui/BaseScene')
     let ResConfig = include('game/config/ResConfig')
     let HallMdt =  include('game/ui/scene/HallMdt')
+    let AniPlayer = ResConfig.AniPlayer
+    let PlayerPlay = ResConfig.PlayerPlay
     let HallScene = BaseScene.extend({
         _className: 'HallScene',
         RES_BINDING: function () {
@@ -13,12 +15,12 @@ load('game/ui/scene/HallScene', function () {
                 'topPnl/photoBtn': { onClicked: this.onPhotoClick  },
                 'topPnl/guiZuBtn': { onClicked: this.onMemberClick },
                 'topPnl/namePnl': { onClicked: this.onGonggaoClick  },
-                'topPnl/coinPnl': { onClicked: this.onSettingClick },
-                'topPnl/coinPnl/coinAddBtn': { onClicked: this.onSettingClick },
-                'topPnl/diamondsPnl': { onClicked: this.onSettingClick },
-                'topPnl/diamondsPnl/diamondsAddBtn': { onClicked: this.onSettingClick },
-                'topPnl/fuKaPnl': { onClicked: this.onSettingClick },
-                'topPnl/fuKaPnl/fuKaAddBtn': { onClicked: this.onSettingClick },
+                'topPnl/coinPnl': {  },
+                'topPnl/coinPnl/coinAddBtn': { onClicked: this.onCoinShopClick },
+                'topPnl/diamondsPnl': {  },
+                'topPnl/diamondsPnl/diamondsAddBtn': { onClicked: this.onCoinShopClick },
+                'topPnl/fuKaPnl': {  },
+                'topPnl/fuKaPnl/fuKaAddBtn': { onClicked: this.onCoinShopClick },
                 'topPnl/emailBtn': { onClicked: this.onSettingClick },
                 'topPnl/moreBtn': { onClicked: this.onMoreClick },
 
@@ -31,10 +33,10 @@ load('game/ui/scene/HallScene', function () {
 
 
                 'bmPnl/fuKaShopBtn': { onClicked: this.onFukaShopClick },
-                'bmPnl/coinShopBtn': { onClicked: this.onSettingClick },
+                'bmPnl/coinShopBtn': { onClicked: this.onCoinShopClick },
                 'bmPnl/bmListPnl/signPnl/signBtn': { onClicked: this.onSignBtnClick },
                 'bmPnl/bmListPnl/taskPnl': { onClicked: this.onTaskClick },
-                'bmPnl/bmListPnl/rolesPnl/rolesBtn': { onClicked: this.onRoleClick },
+                'bmPnl/bmListPnl/rolesPnl': { onClicked: this.onRoleClick },
                 'bmPnl/startQuickPnl/startQuickBtn': { onClicked: this.onSettingClick },
 
 
@@ -42,11 +44,12 @@ load('game/ui/scene/HallScene', function () {
                 'leftPnl/turnTablePnl/turnTableBtn': { onClicked: this.onTurnTableClick },
                 'leftPnl/cashCowPnl/cashCowBtn': { onClicked: this.onCashCowClick },
 
+                'rightPnl/aniNd': { },
                 'rightPnl/coinGameNd': { },
                 'rightPnl/coinGameNd/coinGameBtn': { onClicked: this.onCoinGameClick },
-                'rightPnl/liveBroadcastBtn': { onClicked: this.onShareClick },
-                'rightPnl/matchBtn': { onClicked: this.onShareClick },
-                'rightPnl/changeAreaBtn': { onClicked: this.onShareClick },
+                'rightPnl/liveBroadcastBtn': { onClicked: this.onLiveBroadcastClick },
+                'rightPnl/matchBtn': { onClicked: this.onGoAreanClick },
+                'rightPnl/changeAreaBtn': { onClicked: this.goChooseCity },
 
 
 
@@ -64,6 +67,10 @@ load('game/ui/scene/HallScene', function () {
 
         onFukaShopClick: function() {
             appInstance.gameAgent().addPopUI(ResConfig.Ui.FukaShopLayer)
+        },
+
+        onGoAreanClick: function () {
+
         },
 
         onPhotoClick: function () {
@@ -84,7 +91,7 @@ load('game/ui/scene/HallScene', function () {
         },
         onInvitationClick: function () {
 
-            appInstance.gameAgent().addPopUI(ResConfig.Ui.InvitationLayer)
+            appInstance.gameAgent().addUI(ResConfig.Ui.InvitationLayer)
         },
 
         onHideMorePnlClick: function () {
@@ -114,6 +121,10 @@ load('game/ui/scene/HallScene', function () {
 
         onMemberClick: function () {
             appInstance.gameAgent().addPopUI(ResConfig.Ui.MemberLayer)
+        },
+
+        onCoinShopClick: function () {
+            appInstance.gameAgent().addPopUI(ResConfig.Ui.CoinShopLayer)
         },
 
         onGoShopClick: function () {
@@ -148,8 +159,8 @@ load('game/ui/scene/HallScene', function () {
             let settingUI = appInstance.uiManager().createPopUI(settingClass)
             appInstance.sceneManager().getCurScene().addChild(settingUI)
         },
-        onShareClick: function () {
-
+        goChooseCity: function () {
+            appInstance.gameAgent().addPopUI(ResConfig.Ui.ChooseCityLayer)
         },
 
         onMoreClick: function () {
@@ -202,29 +213,44 @@ load('game/ui/scene/HallScene', function () {
 
         onEnter: function () {
             this._super()
-            this.initData()
-            this.initView()
-            this.showView()
         },
 
         onExit: function () {
             this._super()
         },
 
-        initData: function () {
+        initData: function (selfInfo) {
+            this._selfInfo = selfInfo
+            this._pRole = selfInfo.pRole
 
             this.onInitUserData();
 
         },
 
-        initView: function () {
+        updatePlayerAni: function (pRole) {
+
+            pRole = pRole || this._pRole
+
+            if (pRole !=0 && !pRole) {
+                return
+            }
+
+            this.aniNd.removeAllChildren()
+            let ani = appInstance.gameAgent().gameUtil().getAni(AniPlayer[pRole])
+            this.aniNd.addChild(ani)
+            ani.setPosition(cc.p(0,0))
+            ani.setScale(0.6)
+            ani.setAnimation(0, PlayerPlay.stand, true)
+        },
+
+        initView: function (selfInfo) {
+            this.initData(selfInfo)
+
             let jinbichangAni = appInstance.gameAgent().gameUtil().getAni(ResConfig.AniHall.DatingJinbichang)
             jinbichangAni.setAnimation(0, 'animation', true)
             this.coinGameNd.addChild(jinbichangAni)
-        },
 
-        showView: function () {
-
+            this.updatePlayerAni()
         },
 
         onInitUserData: function () {
@@ -256,6 +282,8 @@ load('game/ui/scene/HallScene', function () {
            if(data.hasOwnProperty('fuKa')){
                fuKaCnt.setString(data.fuKa)
            }
+
+           this.updatePlayerAni(data.pRole)
 
        }
 

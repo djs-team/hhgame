@@ -4,6 +4,8 @@
  */
 load('game/msghandler/TableHostingProto', function () {
     let baseProto = include('public/network/BaseProto')
+    let TableConfig = include('module/mahjong/common/TableConfig')
+    let TableEvent = TableConfig.Event
     let proto = baseProto.extend({
         _name: 'TableHostingProto',
         _offMsgId: 26,
@@ -13,6 +15,13 @@ load('game/msghandler/TableHostingProto', function () {
 
         handleMsg: function (msg) {
             this._super(msg)
+            let pData = appInstance.dataManager().getPlayData()
+            let player = pData.getPlayer(msg.pSeatID)
+            player.pHosting = msg.pHosting
+            let info = {}
+            info.pSeatID = msg.pSeatID
+            info.pHosting = msg.pHosting
+            appInstance.sendNotification(TableEvent.TableHostingProto, info)
         },
 
         initData: function () {

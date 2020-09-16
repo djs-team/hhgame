@@ -32,7 +32,7 @@
           <AbstractNodeData Name="pnl" ActionTag="-424990080" Tag="217" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <Children>
-              <AbstractNodeData Name="bgPnl" ActionTag="1859398032" UserData="{&quot;layoutType&quot;:&quot;maxArea&quot;,&quot;screenAlign&quot;:&quot;mid&quot;}" Tag="27" IconVisible="False" PositionPercentYEnabled="True" PercentHeightEnable="True" PercentHeightEnabled="True" LeftMargin="3.0700" RightMargin="-3.0701" TopMargin="-1.1520" BottomMargin="1.1520" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="bgPnl" ActionTag="1859398032" Tag="27" IconVisible="False" PositionPercentYEnabled="True" PercentHeightEnable="True" PercentHeightEnabled="True" LeftMargin="3.0700" RightMargin="-3.0701" TopMargin="-1.1520" BottomMargin="1.1520" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="1280.0000" Y="720.0000" />
                 <Children>
                   <AbstractNodeData Name="titleImg" ActionTag="-988518584" Tag="516" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="495.7960" RightMargin="479.9240" TopMargin="28.1490" BottomMargin="616.1010" Scale9Enable="True" LeftEage="32" RightEage="32" TopEage="22" BottomEage="22" Scale9OriginX="32" Scale9OriginY="22" Scale9Width="35" Scale9Height="23" ctype="ImageViewObjectData">
@@ -111,7 +111,7 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="invitationPnl" ActionTag="1132894349" Tag="522" IconVisible="False" LeftMargin="392.2676" RightMargin="193.7324" TopMargin="122.8461" BottomMargin="125.1539" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="invitationPnl" Visible="False" ActionTag="1132894349" Tag="522" IconVisible="False" LeftMargin="392.2676" RightMargin="193.7324" TopMargin="122.8461" BottomMargin="125.1539" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="694.0000" Y="472.0000" />
                 <Children>
                   <AbstractNodeData Name="invitNowPnl" ActionTag="579026604" Tag="686" IconVisible="False" LeftMargin="-1.6381" RightMargin="-7.3619" TopMargin="-15.2499" BottomMargin="-51.7501" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
@@ -510,7 +510,7 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="myInvitationsPnl" Visible="False" ActionTag="-266815369" Tag="524" IconVisible="False" LeftMargin="403.9542" RightMargin="182.0458" TopMargin="114.2739" BottomMargin="133.7261" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="myInvitationsPnl" ActionTag="-266815369" Tag="524" IconVisible="False" LeftMargin="403.9542" RightMargin="182.0458" TopMargin="114.2739" BottomMargin="133.7261" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="694.0000" Y="472.0000" />
                 <Children>
                   <AbstractNodeData Name="dataText" ActionTag="-1442440843" Tag="428" IconVisible="False" LeftMargin="138.2377" RightMargin="230.7623" TopMargin="230.3845" BottomMargin="205.6155" FontSize="36" LabelText="请移至代理后台查询" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">

@@ -35,7 +35,6 @@ load('game/ui/layer/role/RoleLayer', function () {
                 'pnl/dataPnl/coinPnl': {},
                 'pnl/dataPnl/coinPnl/coinAddBtn': {onClicked : this.onCoinShopClick},
 
-                'pnl/dataPnl/roleImg': {},
                 'pnl/dataPnl/roleNd': {},
                 'pnl/dataPnl/roleName': {},
                 'pnl/dataPnl/roleVipName': {},
@@ -262,9 +261,8 @@ load('game/ui/layer/role/RoleLayer', function () {
             let status= cellData.status//0:未拥有1.已拥有2.已出战
 
             this.roleName.setString(cellData.roleName)
-            this.roleImg.loadTexture(cellData.currency)
             this.roleNd.removeAllChildren()
-            let ani = appInstance.gameAgent().gameUtil().getAni(AniPlayer['3'])
+            let ani = appInstance.gameAgent().gameUtil().getAni(AniPlayer[cellData.roleCode])
             this.roleNd.addChild(ani)
             ani.setPosition(cc.p(0,0))
             ani.setScale(0.35)

@@ -1457,7 +1457,7 @@
                                 <PreSize X="0.6081" Y="0.5610" />
                                 <FileData Type="Normal" Path="common/gx_2.png" Plist="" />
                               </AbstractNodeData>
-                              <AbstractNodeData Name="Image_50" ActionTag="-531814260" Tag="249" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="74.0076" RightMargin="29.9924" TopMargin="74.6616" BottomMargin="45.3384" LeftEage="13" RightEage="13" TopEage="13" BottomEage="13" Scale9OriginX="13" Scale9OriginY="13" Scale9Width="14" Scale9Height="14" ctype="ImageViewObjectData">
+                              <AbstractNodeData Name="Image_50" ActionTag="-531814260" Tag="249" RotationSkewX="0.9871" RotationSkewY="0.9871" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="74.0076" RightMargin="29.9924" TopMargin="74.6616" BottomMargin="45.3384" LeftEage="13" RightEage="13" TopEage="13" BottomEage="13" Scale9OriginX="13" Scale9OriginY="13" Scale9Width="14" Scale9Height="14" ctype="ImageViewObjectData">
                                 <Size X="44.0000" Y="44.0000" />
                                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                                 <Position X="96.0076" Y="67.3384" />

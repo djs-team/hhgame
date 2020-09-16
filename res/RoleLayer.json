@@ -499,6 +499,7 @@
                       "X": 270.0,
                       "Y": 282.0
                     },
+                    "VisibleForFrame": false,
                     "Name": "Image_8",
                     "ctype": "ImageViewObjectData"
                   },
@@ -2535,53 +2536,10 @@
                     "ctype": "TextObjectData"
                   },
                   {
-                    "FileData": {
-                      "Type": "Default",
-                      "Path": "Default/ImageFile.png",
-                      "Plist": ""
-                    },
-                    "Scale9Width": 46,
-                    "Scale9Height": 46,
-                    "AnchorPoint": {
-                      "ScaleX": 0.5,
-                      "ScaleY": 0.5
-                    },
-                    "Position": {
-                      "X": 870.2798,
-                      "Y": 413.5781
-                    },
-                    "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
-                    },
-                    "CColor": {},
-                    "IconVisible": false,
-                    "PrePosition": {
-                      "X": 0.6799,
-                      "Y": 0.5744
-                    },
-                    "PreSize": {
-                      "X": 0.0359,
-                      "Y": 0.0639
-                    },
-                    "LeftMargin": 847.2798,
-                    "RightMargin": 386.7202,
-                    "TopMargin": 283.4219,
-                    "BottomMargin": 390.5781,
-                    "Tag": 347,
-                    "ActionTag": -657357207,
-                    "Size": {
-                      "X": 46.0,
-                      "Y": 46.0
-                    },
-                    "Name": "roleImg",
-                    "ctype": "ImageViewObjectData"
-                  },
-                  {
                     "AnchorPoint": {},
                     "Position": {
                       "X": 881.1997,
-                      "Y": 284.2567
+                      "Y": 272.2567
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -2591,7 +2549,7 @@
                     "IconVisible": true,
                     "PrePosition": {
                       "X": 0.6884,
-                      "Y": 0.3948
+                      "Y": 0.3781
                     },
                     "PreSize": {
                       "X": 0.0,
@@ -2599,8 +2557,8 @@
                     },
                     "LeftMargin": 881.1997,
                     "RightMargin": 398.8003,
-                    "TopMargin": 435.7433,
-                    "BottomMargin": 284.2567,
+                    "TopMargin": 447.7433,
+                    "BottomMargin": 272.2567,
                     "Tag": 194,
                     "ActionTag": 2012688302,
                     "Size": {
@@ -3028,7 +2986,6 @@
         "common/jinbi.png",
         "common/zuanshi.png",
         "Default/Button_Disable.png",
-        "Default/ImageFile.png",
         "font/hkhbtW12.ttc",
         "hall/dtjm_4.png",
         "hall/dtjm_5.png",

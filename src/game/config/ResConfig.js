@@ -76,7 +76,7 @@ load('game/config/ResConfig', function () {
         'EmailLayer': 'game/ui/layer/email/EmailLayer',
         'MemberLayer': 'game/ui/layer/member/MemberLayer',
         'RoleLayer': 'game/ui/layer/role/RoleLayer',
-        'FukaShopLayer': 'game/ui/layer/fuka/FukaShopLayer',
+        'FukaShopLayer': 'game/ui/layer/fukashop/FukaShopLayer',
 
     }
 

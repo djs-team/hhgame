@@ -597,7 +597,7 @@
                   "Y": 0.9457
                 },
                 "PreSize": {
-                  "X": 0.1562,
+                  "X": 0.1563,
                   "Y": 0.0625
                 },
                 "LeftMargin": 323.296,
@@ -866,7 +866,7 @@
                   "Y": 0.9458
                 },
                 "PreSize": {
-                  "X": 0.1562,
+                  "X": 0.1563,
                   "Y": 0.0625
                 },
                 "LeftMargin": 551.08,
@@ -1135,7 +1135,7 @@
                   "Y": 0.9444
                 },
                 "PreSize": {
-                  "X": 0.1562,
+                  "X": 0.1563,
                   "Y": 0.0625
                 },
                 "LeftMargin": 780.08,
@@ -6623,6 +6623,8 @@
                                   "ScaleX": 1.0,
                                   "ScaleY": 1.0
                                 },
+                                "RotationSkewX": 0.9871,
+                                "RotationSkewY": 0.9871,
                                 "CColor": {},
                                 "IconVisible": false,
                                 "PositionPercentXEnabled": true,

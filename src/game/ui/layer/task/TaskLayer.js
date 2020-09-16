@@ -417,7 +417,6 @@ load('game/ui/layer/task/TaskLayer', function () {
 
         initChallengeTaskData: function (data) {
 
-            cc.log('------------------ initChallengeTaskData data : ' + JSON.stringify(data))
             let cell = this.challengeTaskCell.clone()
             cell._data = {
                 'stage' : data.stage,

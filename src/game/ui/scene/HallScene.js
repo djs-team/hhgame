@@ -47,9 +47,9 @@ load('game/ui/scene/HallScene', function () {
                 'rightPnl/aniNd': { },
                 'rightPnl/coinGameNd': { },
                 'rightPnl/coinGameNd/coinGameBtn': { onClicked: this.onCoinGameClick },
-                'rightPnl/liveBroadcastBtn': { onClicked: this.onShareClick },
-                'rightPnl/matchBtn': { onClicked: this.onShareClick },
-                'rightPnl/changeAreaBtn': { onClicked: this.onShareClick },
+                'rightPnl/liveBroadcastBtn': { onClicked: this.onLiveBroadcastClick },
+                'rightPnl/matchBtn': { onClicked: this.onGoAreanClick },
+                'rightPnl/changeAreaBtn': { onClicked: this.goChooseCity },
 
 
 
@@ -67,6 +67,10 @@ load('game/ui/scene/HallScene', function () {
 
         onFukaShopClick: function() {
             appInstance.gameAgent().addPopUI(ResConfig.Ui.FukaShopLayer)
+        },
+
+        onGoAreanClick: function () {
+
         },
 
         onPhotoClick: function () {
@@ -87,7 +91,7 @@ load('game/ui/scene/HallScene', function () {
         },
         onInvitationClick: function () {
 
-            appInstance.gameAgent().addPopUI(ResConfig.Ui.InvitationLayer)
+            appInstance.gameAgent().addUI(ResConfig.Ui.InvitationLayer)
         },
 
         onHideMorePnlClick: function () {
@@ -155,8 +159,8 @@ load('game/ui/scene/HallScene', function () {
             let settingUI = appInstance.uiManager().createPopUI(settingClass)
             appInstance.sceneManager().getCurScene().addChild(settingUI)
         },
-        onShareClick: function () {
-
+        goChooseCity: function () {
+            appInstance.gameAgent().addPopUI(ResConfig.Ui.ChooseCityLayer)
         },
 
         onMoreClick: function () {

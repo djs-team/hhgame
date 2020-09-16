@@ -28,6 +28,8 @@
 #import "AppController+Login.h"
 
 #import "cocos2d.h"
+#include "scripting/js-bindings/manual/ScriptingCore.h"
+
 #import "AppDelegate.h"
 #import "RootViewController.h"
 
@@ -60,6 +62,9 @@
 #import <BUAdSDK/BUAdSDKManager.h>
 #import <BUAdSDK/BUSplashAdView.h>
 #import "CXBUAdRewardViewController.h"
+
+// 设备信息
+#import "CXPhoneBasicTools.h"
 
 @interface AppController() <JPUSHRegisterDelegate, WXApiDelegate, BUSplashAdDelegate>
 
@@ -124,10 +129,10 @@ static AppDelegate s_sharedApplication;
     [self configureJPushOptions:launchOptions];
     
     // 微信注册
-    [WXApi registerApp:WX_AppKey universalLink:@"https://hehe/"];
+    [WXApi registerApp:WX_AppKey universalLink:@"https://heyin666/"];
     
     // 穿山甲
-//    [self setupBUAdSDK];
+    [self setupBUAdSDK];
 
     return YES;
 }
@@ -177,8 +182,8 @@ static AppDelegate s_sharedApplication;
             
 //            [[NSNotificationCenter defaultCenter] postNotificationName:kNSNotificationCenter_CXRechargeViewController_alipay object:resultDic];
         }];
-    } else if ([url.host isEqualToString:@"pay"]) {
-        return [WXApi handleOpenURL:url delegate:self];
+    } else {
+        [WXApi handleOpenURL:url delegate:self];
     }
     return YES;
 }
@@ -428,7 +433,10 @@ static AppDelegate s_sharedApplication;
 #pragma mark - ================ 广告 ===================
 // 打开激励视频
 + (void)openBUAdRewardViewController {
-   [[CXBUAdRewardViewController manager] openAd];
+    //激励视频
+    CXBUAdRewardViewController *rewardVC = [[CXBUAdRewardViewController alloc] init];
+    [[CXBUAdRewardViewController manager] openAd];
+    [[CXTools currentViewController] presentViewController:rewardVC animated:YES completion:nil];
 }
 
 - (void)setupBUAdSDK {
@@ -463,10 +471,6 @@ static AppDelegate s_sharedApplication;
     [splashAdView loadAdData];
     [keyWindow.rootViewController.view addSubview:splashAdView];
     splashAdView.rootViewController = keyWindow.rootViewController;
-
-    //激励视频
-    CXBUAdRewardViewController *rewardVC = [[CXBUAdRewardViewController alloc] init];
-    [_viewController.view addSubview:rewardVC.view];
 }
 
 - (void)splashAdDidLoad:(BUSplashAdView *)splashAd {
@@ -500,6 +504,24 @@ static AppDelegate s_sharedApplication;
     [AppController setOrientation:@""];    //强制竖屏转横屏
 }
 
+#pragma mark - 获取手机基本信息
++ (NSString *)getImei {
+    NSString *imei = [NSString stringWithFormat:@"%@%@", [CXPhoneBasicTools getUUID], [CXPhoneBasicTools getIdentifierForAdvertising]];
+    return imei;
+}
+
+#pragma mark - OC调用JS
+
+/// 派发JS事件
+/// @param method 方法名
+/// @param param 参数
++ (void)dispatchCustomEventWithMethod:(NSString *)method param:(NSString *)param {
+    std::string strParam = [param UTF8String];
+    std::string strMethod = [method UTF8String];
+    std::string jsCallStr = cocos2d::StringUtils::format("cc.eventManager.dispatchCustomEvent(\"%s\",'%s');", strMethod.c_str(),strParam.c_str());
+    ScriptingCore::getInstance()->evalString(jsCallStr.c_str());
+}
+
 #pragma mark - ================ 横竖屏 ===================
 UIInterfaceOrientationMask oMask = UIInterfaceOrientationMaskLandscape;
 
@@ -508,15 +530,15 @@ UIInterfaceOrientationMask oMask = UIInterfaceOrientationMaskLandscape;
 }
 
 + (void)setOrientation:(NSString*)dir {
-    [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIDeviceOrientationUnknown] forKey:@"orientation"];
-    
-    if([dir isEqualToString:@"V"]){
-        oMask = UIInterfaceOrientationMaskPortrait;
-        [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIInterfaceOrientationPortrait] forKey:@"orientation"];
-    } else {
-        oMask = UIInterfaceOrientationMaskLandscape;
-        [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIInterfaceOrientationLandscapeLeft] forKey:@"orientation"];
-    }
+//    [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIDeviceOrientationUnknown] forKey:@"orientation"];
+//    
+//    if([dir isEqualToString:@"V"]){
+//        oMask = UIInterfaceOrientationMaskPortrait;
+//        [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIInterfaceOrientationPortrait] forKey:@"orientation"];
+//    } else {
+//        oMask = UIInterfaceOrientationMaskLandscape;
+//        [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIInterfaceOrientationLandscapeLeft] forKey:@"orientation"];
+//    }
 }
 
 #pragma mark - ================ 直播相关 ===================

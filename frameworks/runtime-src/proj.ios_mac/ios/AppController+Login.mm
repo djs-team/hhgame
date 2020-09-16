@@ -8,6 +8,8 @@
 #import "AppController+Login.h"
 #import "JVERIFICATIONService.h"
 #import "HJNetwork.h"
+#import "cocos2d.h"
+#include "scripting/js-bindings/manual/ScriptingCore.h"
 
 @implementation AppController (Login)
 
@@ -26,9 +28,9 @@
     [HJNetwork GETWithURL:url parameters:nil cachePolicy:HJCachePolicyIgnoreCache callback:^(id responseObject, BOOL isCache, NSError *error) {
         if (!error) {
             NSDictionary *resp = (NSDictionary*)responseObject;
-            NSString *openid = resp[@"openid"];
-            NSString *accessToken = resp[@"access_token"];
-            NSLog(@"%@  %@", openid, accessToken);
+            NSString *respStr = [resp jsonStringEncoded];
+            
+            [AppController dispatchCustomEventWithMethod:@"WX_LOGIN_CALLBACK" param:respStr];
         }
     }];
 }

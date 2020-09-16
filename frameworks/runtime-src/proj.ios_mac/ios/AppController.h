@@ -72,5 +72,15 @@
 /// 打开激励视频
 + (void)openBUAdRewardViewController;
 
+#pragma mark - 获取手机基本信息
++ (NSString *_Nullable)getImei;
+
+#pragma mark - OC调用JS
+
+/// 派发JS事件
+/// @param method 方法名
+/// @param param 参数
++ (void)dispatchCustomEventWithMethod:(NSString *)method param:(NSString *)param;
+
 @end
 

@@ -44,8 +44,8 @@
     //极光
     #define jPush_appKey @"63fc9c5b80e873aee27415ed"
     //穿山甲
-    #define BUDAd_appKey @"5000546"
-    #define BUDAd_SlotID @"800546808"
+    #define BUDAd_appKey @"5105251"
+    #define BUDAd_SlotID @"945477184"
 
     // ********** NSNotificationCenter Name **********
     NSString *const kNSNotificationCenter_CXBaseTabBarViewController_leaveOut = @"NSNotificationCenter_CXBaseTabBarViewController_leaveOut";

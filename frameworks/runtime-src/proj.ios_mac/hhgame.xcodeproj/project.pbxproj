@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0020BB34250B9A5A00E2979B /* AppController+Login.m in Sources */ = {isa = PBXBuildFile; fileRef = 0020BB32250B9A5A00E2979B /* AppController+Login.m */; };
+		0020BB34250B9A5A00E2979B /* AppController+Login.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0020BB32250B9A5A00E2979B /* AppController+Login.mm */; };
 		0020BB39250BA0A000E2979B /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0020BB38250BA09F00E2979B /* libc++.tbd */; };
 		0020BB3B250BA0A800E2979B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0020BB3A250BA0A700E2979B /* libz.tbd */; };
 		0020BB3D250BA0AE00E2979B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0020BB3C250BA0AE00E2979B /* AudioToolbox.framework */; };
@@ -846,7 +846,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0020BB32250B9A5A00E2979B /* AppController+Login.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "AppController+Login.m"; path = "ios/AppController+Login.m"; sourceTree = "<group>"; };
+		0020BB32250B9A5A00E2979B /* AppController+Login.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "AppController+Login.mm"; path = "ios/AppController+Login.mm"; sourceTree = "<group>"; };
 		0020BB33250B9A5A00E2979B /* AppController+Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AppController+Login.h"; path = "ios/AppController+Login.h"; sourceTree = "<group>"; };
 		0020BB37250B9C4800E2979B /* CXSystemMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXSystemMessageViewController.h; sourceTree = "<group>"; };
 		0020BB38250BA09F00E2979B /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.7.sdk/usr/lib/libc++.tbd"; sourceTree = DEVELOPER_DIR; };
@@ -1974,7 +1974,7 @@
 		7B1E3B1E58E35A99F7DD4FB2 /* Pods_hhgame_mobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hhgame_mobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9094C6438650C3D1BA8DFECA /* Pods-hhgame-mobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hhgame-mobile.debug.xcconfig"; path = "Target Support Files/Pods-hhgame-mobile/Pods-hhgame-mobile.debug.xcconfig"; sourceTree = "<group>"; };
 		9FA3AE451BE9BBCA00FC9645 /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GameController.framework; sourceTree = DEVELOPER_DIR; };
-		A922753D1517C094001B78AA /* hhgame-mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "hhgame-mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A922753D1517C094001B78AA /* 合合全集.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "合合全集.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A92275411517C094001B78AA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A92275431517C094001B78AA /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		A92275451517C094001B78AA /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
@@ -2192,18 +2192,18 @@
 		006148FB250B94C500BB7620 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				006148FC250B94C500BB7620 /* CXHomeChildViewController.xib */,
-				006148FD250B94C500BB7620 /* 筛选 */,
+				0061491C250B94C600BB7620 /* CXHomeViewController.h */,
 				00614901250B94C500BB7620 /* CXHomeViewController.m */,
 				00614902250B94C500BB7620 /* CXHomeChildViewController.h */,
-				00614903250B94C500BB7620 /* RoomSetup */,
-				0061491A250B94C600BB7620 /* CXHomeSearchViewController.m */,
 				0061491B250B94C600BB7620 /* CXHomeChildViewController.m */,
-				0061491C250B94C600BB7620 /* CXHomeViewController.h */,
+				006148FC250B94C500BB7620 /* CXHomeChildViewController.xib */,
+				0061492E250B94C600BB7620 /* CXHomeSearchViewController.h */,
+				0061491A250B94C600BB7620 /* CXHomeSearchViewController.m */,
+				0061492D250B94C600BB7620 /* CXHomeSearchViewController.xib */,
+				006148FD250B94C500BB7620 /* 筛选 */,
+				00614903250B94C500BB7620 /* RoomSetup */,
 				0061491D250B94C600BB7620 /* Model */,
 				00614920250B94C600BB7620 /* View */,
-				0061492D250B94C600BB7620 /* CXHomeSearchViewController.xib */,
-				0061492E250B94C600BB7620 /* CXHomeSearchViewController.h */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -3296,7 +3296,6 @@
 				00614BBA250B94C900BB7620 /* 我的守护 */,
 				00614BCE250B94CA00BB7620 /* 我的钱包 */,
 				00614BFD250B94CA00BB7620 /* 黑名单 */,
-				00614C08250B94CA00BB7620 /* 实名认证 */,
 				00614C0A250B94CA00BB7620 /* View */,
 				00614C13250B94CA00BB7620 /* 编辑资料 */,
 				00614C30250B94CA00BB7620 /* 用户资料页 */,
@@ -3466,13 +3465,6 @@
 				00614C07250B94CA00BB7620 /* CXMineBlockActionView.m */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		00614C08250B94CA00BB7620 /* 实名认证 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "实名认证";
 			sourceTree = "<group>";
 		};
 		00614C0A250B94CA00BB7620 /* View */ = {
@@ -4520,7 +4512,7 @@
 		A922753E1517C094001B78AA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A922753D1517C094001B78AA /* hhgame-mobile.app */,
+				A922753D1517C094001B78AA /* 合合全集.app */,
 				509D4AAA17EBB24E00697056 /* hhgame-desktop.app */,
 			);
 			name = Products;
@@ -4615,7 +4607,7 @@
 				509D4AAB17EBB2AB00697056 /* AppController.h */,
 				509D4AAC17EBB2AB00697056 /* AppController.mm */,
 				0020BB33250B9A5A00E2979B /* AppController+Login.h */,
-				0020BB32250B9A5A00E2979B /* AppController+Login.m */,
+				0020BB32250B9A5A00E2979B /* AppController+Login.mm */,
 				509D4AB717EBB2AB00697056 /* Info.plist */,
 				509D4AB817EBB2AB00697056 /* main.m */,
 				509D4AB917EBB2AB00697056 /* Prefix.pch */,
@@ -4677,7 +4669,7 @@
 			);
 			name = "hhgame-mobile";
 			productName = hhgame;
-			productReference = A922753D1517C094001B78AA /* hhgame-mobile.app */;
+			productReference = A922753D1517C094001B78AA /* 合合全集.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -4689,7 +4681,8 @@
 				LastUpgradeCheck = 0500;
 				TargetAttributes = {
 					A922753C1517C094001B78AA = {
-						DevelopmentTeam = C966MAAFRF;
+						DevelopmentTeam = KGMBMD5H3G;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -5385,7 +5378,7 @@
 				00614E6E250B94CE00BB7620 /* CXGameMusicChooseSongerView.m in Sources */,
 				00614E63250B94CE00BB7620 /* CXGameMusicAdjustEffectsCell.m in Sources */,
 				00614F94250B94CF00BB7620 /* CXDateSelectedView.m in Sources */,
-				0020BB34250B9A5A00E2979B /* AppController+Login.m in Sources */,
+				0020BB34250B9A5A00E2979B /* AppController+Login.mm in Sources */,
 				00614F84250B94CF00BB7620 /* CXExchangeBlueRoseViewController.m in Sources */,
 				00615085250B94D000BB7620 /* PSTGridLayoutInfo.m in Sources */,
 				0061507D250B94D000BB7620 /* MWPhoto.m in Sources */,
@@ -5732,10 +5725,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = "hhgame-mobile.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMPRESS_PNG_FILES = NO;
 				CURRENT_PROJECT_VERSION = 0;
-				DEVELOPMENT_TEAM = C966MAAFRF;
+				DEVELOPMENT_TEAM = KGMBMD5H3G;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -5751,7 +5745,10 @@
 				GCC_PREFIX_HEADER = ios/Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
-				HEADER_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../cocos2d-x/cocos/scripting/js-bindings/proj.ios_mac/cocos2d_js_bindings.xcodeproj\"",
+				);
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LIBRARY_SEARCH_PATHS = (
@@ -5764,7 +5761,9 @@
 					"$(inherited)",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hehegames.hhyuejumajiang;
+				PRODUCT_BUNDLE_IDENTIFIER = heyin.dating.online.face;
+				PRODUCT_NAME = "合合全集";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				STRIP_PNG_TEXT = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -5781,9 +5780,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = "hhgame-mobile.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMPRESS_PNG_FILES = NO;
 				CURRENT_PROJECT_VERSION = 0;
+				DEVELOPMENT_TEAM = KGMBMD5H3G;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -5798,7 +5799,10 @@
 				GCC_PREFIX_HEADER = ios/Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
-				HEADER_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../cocos2d-x/cocos/scripting/js-bindings/proj.ios_mac/cocos2d_js_bindings.xcodeproj\"",
+				);
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LIBRARY_SEARCH_PATHS = (
@@ -5811,7 +5815,9 @@
 					"$(inherited)",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hehegames.hhyuejumajiang;
+				PRODUCT_BUNDLE_IDENTIFIER = heyin.dating.online.face;
+				PRODUCT_NAME = "合合全集";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				STRIP_PNG_TEXT = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";

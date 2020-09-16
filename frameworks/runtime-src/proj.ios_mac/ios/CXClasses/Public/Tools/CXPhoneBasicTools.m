@@ -7,15 +7,25 @@
 
 #import "CXPhoneBasicTools.h"
 #import <sys/utsname.h>
+#import <AdSupport/AdSupport.h>
 
 @implementation CXPhoneBasicTools
 
 // 获取设备uuid
-+ (NSString*)getUUID {
-    CFUUIDRef puuid = CFUUIDCreate( nil );
-    CFStringRef uuidString = CFUUIDCreateString( nil, puuid );
-    NSString * result = (NSString *)CFBridgingRelease(CFStringCreateCopy( NULL, uuidString));
-    return result;
++ (NSString *)getUUID {
+//    CFUUIDRef puuid = CFUUIDCreate( nil );
+//    CFStringRef uuidString = CFUUIDCreateString( nil, puuid );
+//    NSString * result = (NSString *)CFBridgingRelease(CFStringCreateCopy( NULL, uuidString));
+//    return result;
+    
+    NSString *identifierForVendor = [[UIDevice currentDevice].identifierForVendor UUIDString];
+    return identifierForVendor;
+}
+
+// 获取设备广告标示符
++ (NSString *)getIdentifierForAdvertising {
+    NSString *identifierForAdvertising = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+    return identifierForAdvertising;
 }
 
 // 获取版本号

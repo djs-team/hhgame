@@ -11,7 +11,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CXPhoneBasicTools : NSObject
 // 获取设备uuid
-+ (NSString*)getUUID;
++ (NSString *)getUUID;
+
+// 获取设备广告标示符
++ (NSString *)getIdentifierForAdvertising;
 
 // 获取版本号
 + (NSString *)getVersion;

@@ -1,0 +1,17 @@
+/**
+* 牌桌人员  ready消息 准备
+*/
+int	MJ_ROOM_TABLE_PLAYER_READY					= MJ_ROOM_MATCHGAME_ID + 9;
+	请求消息:
+		
+		private int gid;
+		private String roomId;//比赛场 matchId
+		private int roomMode;//房间mode
+		private String tableInstanceId;//牌桌实例id
+		private int isReady;// 0 准备  1 不准备
+	
+	返回消息:
+		
+		private int fPlayer;//准备的玩家
+		private int isReady;//准备的状态  0 准备  1 不准备  2 玩家不存在  3 房间不存在  4 牌桌不存在  5 牌桌已经开始 6俱乐部已开房间已达最大值 7俱乐部已被禁用
+		private int pSeatId;//玩家座位号

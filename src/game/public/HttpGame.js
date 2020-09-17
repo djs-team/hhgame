@@ -931,7 +931,7 @@ load('game/public/HttpGame', function () {
 
         VIPPaysOrderBack: function (msg) {
             if (msg.status !== 0) {
-                cc.log('------------->>>httpGame VIPPaysOrderBack error happen')
+                cc.log('------------->>>httpGame VIPPaysOrderBack error happen'+JSON.stringify(msg))
                 return
             }
             appInstance.sendNotification(GameEvent.PLAYER_BUY_VIP_ORDER, msg)

@@ -23,6 +23,8 @@ public class AdManage {
 
     public interface OnLoadAdListener {
         void onRewardVideoCached();
+
+        void onVidioPlayComplete(String result);
     }
 
     private OnLoadAdListener onLoadAdListener;
@@ -82,20 +84,18 @@ public class AdManage {
                     .build();
         }
         if (mTTAdNative == null) {
-            TToast.show(mContext, "mTTAdNative==null");
+
         }
         //step5:请求广告
         mTTAdNative.loadRewardVideoAd(adSlot, new TTAdNative.RewardVideoAdListener() {
             @Override
             public void onError(int code, String message) {
-                TToast.show(mContext, message);
             }
 
             //视频广告加载后，视频资源缓存到本地的回调，在此回调后，播放本地视频，流畅不阻塞。
             @Override
             public void onRewardVideoCached() {
                 mIsLoaded = true;
-                TToast.show(mContext, "Callback --> rewardVideoAd video cached");
                 if (onLoadAdListener != null) {
                     onLoadAdListener.onRewardVideoCached();
                 }
@@ -111,28 +111,31 @@ public class AdManage {
 
                     @Override
                     public void onAdShow() {
-                        TToast.show(mContext, "rewardVideoAd show");
                     }
 
                     @Override
                     public void onAdVideoBarClick() {
-                        TToast.show(mContext, "rewardVideoAd bar click");
                     }
 
                     @Override
                     public void onAdClose() {
-                        TToast.show(mContext, "rewardVideoAd close");
+
                     }
 
                     //视频播放完成回调
                     @Override
                     public void onVideoComplete() {
-                        TToast.show(mContext, "rewardVideoAd complete");
+
+                        if (onLoadAdListener != null) {
+                            onLoadAdListener.onVidioPlayComplete("0");
+                        }
                     }
 
                     @Override
                     public void onVideoError() {
-                        TToast.show(mContext, "rewardVideoAd error");
+                        if (onLoadAdListener != null) {
+                            onLoadAdListener.onVidioPlayComplete("-1");
+                        }
                     }
 
                     //视频播放完成后，奖励验证回调，rewardVerify：是否有效，rewardAmount：奖励梳理，rewardName：奖励名称
@@ -140,12 +143,10 @@ public class AdManage {
                     public void onRewardVerify(boolean rewardVerify, int rewardAmount, String rewardName) {
                         String logString = "verify:" + rewardVerify + " amount:" + rewardAmount +
                                 " name:" + rewardName;
-                        TToast.show(mContext, logString);
                     }
 
                     @Override
                     public void onSkippedVideo() {
-                        TToast.show(mContext, "rewardVideoAd has onSkippedVideo");
                     }
                 });
                 mttRewardVideoAd.setDownloadListener(new TTAppDownloadListener() {
@@ -160,50 +161,33 @@ public class AdManage {
 
                         if (!mHasShowDownloadActive) {
                             mHasShowDownloadActive = true;
-                            TToast.show(mContext, "下载中，点击下载区域暂停", Toast.LENGTH_LONG);
                         }
                     }
 
                     @Override
                     public void onDownloadPaused(long totalBytes, long currBytes, String fileName, String appName) {
                         Log.d("DML", "onDownloadPaused===totalBytes=" + totalBytes + ",currBytes=" + currBytes + ",fileName=" + fileName + ",appName=" + appName);
-                        TToast.show(mContext, "下载暂停，点击下载区域继续", Toast.LENGTH_LONG);
                     }
 
                     @Override
                     public void onDownloadFailed(long totalBytes, long currBytes, String fileName, String appName) {
                         Log.d("DML", "onDownloadFailed==totalBytes=" + totalBytes + ",currBytes=" + currBytes + ",fileName=" + fileName + ",appName=" + appName);
-                        TToast.show(mContext, "下载失败，点击下载区域重新下载", Toast.LENGTH_LONG);
                     }
 
                     @Override
                     public void onDownloadFinished(long totalBytes, String fileName, String appName) {
                         Log.d("DML", "onDownloadFinished==totalBytes=" + totalBytes + ",fileName=" + fileName + ",appName=" + appName);
-                        TToast.show(mContext, "下载完成，点击下载区域重新下载", Toast.LENGTH_LONG);
                     }
 
                     @Override
                     public void onInstalled(String fileName, String appName) {
                         Log.d("DML", "onInstalled==" + ",fileName=" + fileName + ",appName=" + appName);
-                        TToast.show(mContext, "安装完成，点击下载区域打开", Toast.LENGTH_LONG);
                     }
                 });
             }
         });
     }
 
-    static class TToast {
-        public static void show(Context mContext, String s, int lengthLong) {
-            Toast.makeText(mContext, s, lengthLong).show();
-
-        }
-
-        public static void show(Context mContext, String s) {
-            Toast.makeText(mContext, s, Toast.LENGTH_LONG).show();
-
-        }
-
-    }
 
     public void playAd() {
         if (mttRewardVideoAd != null && mIsLoaded) {
@@ -214,8 +198,6 @@ public class AdManage {
             //展示广告，并传入广告展示的场景
             mttRewardVideoAd.showRewardVideoAd(mContext, TTAdConstant.RitScenes.CUSTOMIZE_SCENES, "scenes_test");
             mttRewardVideoAd = null;
-        } else {
-            TToast.show(mContext, "请先加载广告");
         }
     }
 

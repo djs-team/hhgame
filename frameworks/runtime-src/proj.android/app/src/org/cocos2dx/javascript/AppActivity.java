@@ -26,6 +26,9 @@ package org.cocos2dx.javascript;
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -59,6 +62,7 @@ import com.deepsea.mua.core.wxpay.WxPay;
 import com.deepsea.mua.core.wxpay.WxpayBroadcast;
 import com.deepsea.mua.stub.api.RetrofitApi;
 import com.deepsea.mua.stub.data.User;
+import com.deepsea.mua.stub.entity.QPWxOrder;
 import com.deepsea.mua.stub.entity.WxOrder;
 import com.deepsea.mua.stub.jpush.JpushUtils;
 import com.deepsea.mua.stub.mvp.NewSubscriberCallBack;
@@ -74,16 +78,12 @@ import com.fm.openinstall.model.AppData;
 import com.fm.openinstall.model.Error;
 import com.hh.game.R;
 import com.hhgame.httpClient.httpClient;
-import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.umeng.socialize.ShareAction;
 import com.umeng.socialize.bean.SHARE_MEDIA;
-import com.umeng.socialize.editorpage.ShareActivity;
 import com.umeng.socialize.media.UMImage;
 import com.umeng.socialize.media.UMWeb;
 import com.uuzuche.lib_zxing.activity.CodeUtils;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -92,10 +92,6 @@ import cn.jiguang.verifysdk.api.JVerificationInterface;
 import cn.jiguang.verifysdk.api.PreLoginListener;
 import cn.jiguang.verifysdk.api.RequestCallback;
 import cn.jiguang.verifysdk.api.VerifyListener;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
-
-import static android.content.pm.PackageManager.PERMISSION_GRANTED;
 
 public class AppActivity extends Cocos2dxActivity {
 
@@ -280,68 +276,68 @@ public class AppActivity extends Cocos2dxActivity {
     }
 
     /**
-     * 微信支付
+     * 第三方支付
      *
-     * @param rmb
-     * @param chargeid
+     * @param type alipay  支付宝
+     * @param sign 签名信息
+     *             返回onThirdPayCallBack(String code) 0是成功  -1 失败
      */
-    private static void wxpay(String rmb, String chargeid) {
-        String uid = UserUtils.getUser().getUid();
-        HttpHelper.instance().getApi(RetrofitApi.class).js_wxpay(rmb, Constant.CHARGE_WX, Constant.CHARGE_NORMAL, Constant.CHARGE_ACT_N, uid, chargeid, "", "", "")
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new NewSubscriberCallBack<WxOrder>() {
-                    @Override
-                    protected void onSuccess(WxOrder result) {
-                        if (result != null) {
-                            WxPay.WXPayBuilder builder = new WxPay.WXPayBuilder();
-                            builder.setAppId(result.getAppid());
-                            builder.setNonceStr(result.getNoncestr());
-                            builder.setPackageValue(result.getPackageX());
-                            builder.setPartnerId(result.getPartnerid());
-                            builder.setPrepayId(result.getPrepayid());
-                            builder.setSign(result.getSign());
-                            builder.setTimeStamp(result.getTimestamp());
-                            mWxPay = builder.build();
-                            mWxPay.startPay(ccActivity);
-                            mWxPay.registerWxpayResult(mWxpayReceiver);
-                        }
-
-                    }
-
-                    @Override
-                    protected void onError(int errorCode, String errorMsg) {
-
-                    }
-                });
+    public static void thirdPay(String type, String sign) {
+        Log.d("==================", "thirdPay:" + "type:" + type + "sign" + sign);
+        if (type.equals("alipay")) {
+            ccActivity.alipay(sign);
+        } else {
+            ccActivity.wxpay(sign);
+        }
 
     }
 
-    private static void alipay(String rmb, String chargeid) {
-        String uid = UserUtils.getUser().getUid();
-        HttpHelper.instance().getApi(RetrofitApi.class).js_alipay(rmb, Constant.CHARGE_ALI, Constant.CHARGE_NORMAL, Constant.CHARGE_ACT_N, uid, chargeid, "", "", "")
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new NewSubscriberCallBack<String>() {
-                    @Override
-                    protected void onSuccess(String response) {
-                        onStartAlipay(response);
+    /**
+     * 微信支付
+     */
+    private void wxpay(String wxInfo) {
+        Log.d("===========wxpay", wxInfo);
+        String json = JsonConverter.toJson(wxInfo);
+        Log.d("===========json", json);
+        QPWxOrder result = JsonConverter.fromJson(wxInfo, QPWxOrder.class);
+        Log.d("===========QPWxOrder", result.getAppId());
 
-                    }
+        if (result != null) {
+            WxPay.WXPayBuilder builder = new WxPay.WXPayBuilder();
+            builder.setAppId(result.getAppId());
+            builder.setNonceStr(result.getNoncestr());
+            builder.setPackageValue("Sign=WXPay");
+            builder.setPartnerId(result.getMch_id());
+            builder.setPrepayId(result.getPrepay_id());
+            builder.setSign(result.getSign());
+            builder.setTimeStamp(result.getTimestamp());
+            mWxPay = builder.build();
+            mWxPay.startPay(ccActivity);
+            mWxPay.registerWxpayResult(mWxpayReceiver);
+        } else {
+            Log.d("===========", "wxpay null");
 
-                    @Override
-                    protected void onError(int errorCode, String errorMsg) {
+        }
 
-                    }
-                });
+
     }
 
-    private static void onStartAlipay(String signature) {
+    /**
+     * 支付宝支付
+     *
+     * @param signature
+     */
+    private void alipay(String signature) {
+        onStartAlipay(signature);
+    }
+
+    private void onStartAlipay(String signature) {
         Alipay alipay = new Alipay(ccActivity);
         alipay.startPay(signature);
         alipay.setAlipayListener(new Alipay.AlipayListener() {
             @Override
             public void onSuccess(PayResult result) {
+                Log.d("==================", "thirdPay-ali-result" + result);
                 onPayResult(0);
                 ToastUtils.showToast(result.getResult());
             }
@@ -354,7 +350,7 @@ public class AppActivity extends Cocos2dxActivity {
         });
     }
 
-    private static WxpayBroadcast.WxpayReceiver mWxpayReceiver = new WxpayBroadcast.WxpayReceiver() {
+    private WxpayBroadcast.WxpayReceiver mWxpayReceiver = new WxpayBroadcast.WxpayReceiver() {
         @Override
         public void onSuccess() {
             ToastUtils.showToast("成功");
@@ -376,16 +372,12 @@ public class AppActivity extends Cocos2dxActivity {
      *
      * @param success
      */
-    private static void onPayResult(int success) {
-        ccActivity.runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-//                Cocos2dxJavascriptJavaBridge.evalString("window.myLayer.testAndroid()"); // java to js
-            }
-        });
+    private void onPayResult(int success) {
+        Log.d("====== wxpay result", success + "");
+        ccActivity.RunJS("ThirdPayCallback", String.valueOf(success));
     }
 
-    private static void unregisterWxpayResult() {
+    private void unregisterWxpayResult() {
         if (mWxPay != null) {
             mWxPay.unregisterWxpayResult(mWxpayReceiver);
         }
@@ -469,6 +461,9 @@ public class AppActivity extends Cocos2dxActivity {
                     result.put("unionId", apiUser.getOpenId());
                     result.put("account", apiUser.getOpenId());
                     result.put("imei", NetWorkUtils.getImei(ccActivity));
+                    result.put("nickName", apiUser.getUserName());
+                    result.put("photo", apiUser.getUserIcon());
+
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -553,6 +548,7 @@ public class AppActivity extends Cocos2dxActivity {
 
     /**
      * 激励视频
+     * 返回 rewardVideoCallback（）0成功 -1 失败
      */
     public static void showRewardVideo(String codeId) {
         String userId = "123";
@@ -561,10 +557,15 @@ public class AppActivity extends Cocos2dxActivity {
             public void run() {
                 AdManage adManage = new AdManage();
                 adManage.init(ccActivity);
-                adManage.loadAd(codeId, userId, new AdManage.OnLoadAdListener() {
+                adManage.loadAd("945477184", userId, new AdManage.OnLoadAdListener() {
                     @Override
                     public void onRewardVideoCached() {
                         adManage.playAd();
+                    }
+
+                    @Override
+                    public void onVidioPlayComplete(String result) {
+                        ccActivity.RunJS("rewardVideoCallback",result);
                     }
                 });
             }
@@ -658,6 +659,18 @@ public class AppActivity extends Cocos2dxActivity {
         });
 
     }
+
+    /**
+     * 复制到剪切板
+     *
+     * @param content
+     */
+    public static void copy(String content) {
+        ClipboardManager cm = (ClipboardManager) ccActivity.getSystemService(Context.CLIPBOARD_SERVICE);
+        ClipData mClipData = ClipData.newPlainText("Label", content);
+        cm.setPrimaryClip(mClipData);
+    }
+
 
     @Override
     protected void onDestroy() {

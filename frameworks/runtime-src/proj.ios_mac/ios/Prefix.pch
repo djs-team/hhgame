@@ -37,6 +37,7 @@
     #import "CXRechargeViewController.h"
     #import "CXIPAPurchaseManager.h"
     #import "CXThirdPayManager.h"
+    #import "CXOCJSBrigeManager.h"
 
     //微信
     #define WX_AppKey @"wx36f02225e13d7261"

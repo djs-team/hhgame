@@ -111,6 +111,12 @@ static const NSInteger titleFontSize = 15;
     [hud hideAnimated:YES afterDelay:hideTime];
     
 }
+
++ (void)showHUD {
+    UIView *winView =(UIView*)[UIApplication sharedApplication].delegate.window;
+    [self showHUDAddedTo:winView animated:YES];
+}
+
 + (void)hideHUD
 {
     UIView *winView =(UIView*)[UIApplication sharedApplication].delegate.window;

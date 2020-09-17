@@ -36,6 +36,7 @@
 		0020BB6B250BA1A300E2979B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0020BB6A250BA1A200E2979B /* CoreMotion.framework */; };
 		0020BB6D250BA1D200E2979B /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0020BB6C250BA1D200E2979B /* OpenGLES.framework */; };
 		0020BB6F250BA1DA00E2979B /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0020BB6E250BA1DA00E2979B /* OpenAL.framework */; };
+		00557A692512FB010056E685 /* CXOCJSBrigeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 00557A682512FB010056E685 /* CXOCJSBrigeManager.m */; };
 		006148B2250B27F200BB7620 /* CXIPAPurchaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 006148AC250B27F100BB7620 /* CXIPAPurchaseManager.m */; };
 		006148B3250B27F200BB7620 /* SandBoxHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 006148AD250B27F100BB7620 /* SandBoxHelper.m */; };
 		006148B8250B4CA600BB7620 /* CXThirdPayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 006148B7250B4CA600BB7620 /* CXThirdPayManager.m */; };
@@ -877,6 +878,8 @@
 		0020BB6A250BA1A200E2979B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.7.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
 		0020BB6C250BA1D200E2979B /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.7.sdk/System/Library/Frameworks/OpenGLES.framework; sourceTree = DEVELOPER_DIR; };
 		0020BB6E250BA1DA00E2979B /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.7.sdk/System/Library/Frameworks/OpenAL.framework; sourceTree = DEVELOPER_DIR; };
+		00557A672512FB010056E685 /* CXOCJSBrigeManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXOCJSBrigeManager.h; sourceTree = "<group>"; };
+		00557A682512FB010056E685 /* CXOCJSBrigeManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXOCJSBrigeManager.m; sourceTree = "<group>"; };
 		006148A9250B27F100BB7620 /* SandBoxHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SandBoxHelper.h; sourceTree = "<group>"; };
 		006148AC250B27F100BB7620 /* CXIPAPurchaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXIPAPurchaseManager.m; sourceTree = "<group>"; };
 		006148AD250B27F100BB7620 /* SandBoxHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SandBoxHelper.m; sourceTree = "<group>"; };
@@ -2102,6 +2105,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00557A662512FACD0056E685 /* OC_JSBrigeManager */ = {
+			isa = PBXGroup;
+			children = (
+				00557A672512FB010056E685 /* CXOCJSBrigeManager.h */,
+				00557A682512FB010056E685 /* CXOCJSBrigeManager.m */,
+			);
+			path = OC_JSBrigeManager;
+			sourceTree = "<group>";
+		};
 		0061488D250B1CCC00BB7620 /* CXClasses */ = {
 			isa = PBXGroup;
 			children = (
@@ -2158,6 +2170,7 @@
 		006148F2250B90A700BB7620 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				00557A662512FACD0056E685 /* OC_JSBrigeManager */,
 				00802AB6250CAB7200F43A32 /* BUAd */,
 				00614AFB250B94C800BB7620 /* Aliyun */,
 				00614B12250B94C800BB7620 /* SocketManager */,
@@ -5275,6 +5288,7 @@
 				00614F7F250B94CF00BB7620 /* MuaExchangeVC.m in Sources */,
 				00614FFF250B94CF00BB7620 /* EMChatBarRecordAudioView.m in Sources */,
 				00614FC9250B94CF00BB7620 /* CXRechargeViewController.m in Sources */,
+				00557A692512FB010056E685 /* CXOCJSBrigeManager.m in Sources */,
 				006150A8250B94D000BB7620 /* DDAudioLRCParser.m in Sources */,
 				00614F3D250B94CF00BB7620 /* SocketMessageRoomInit.m in Sources */,
 				00614EFE250B94CF00BB7620 /* CXLiveRoomShareHelpView.m in Sources */,

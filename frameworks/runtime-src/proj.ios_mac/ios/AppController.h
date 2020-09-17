@@ -32,7 +32,7 @@
 
 }
 
-@property(nonatomic, readonly) RootViewController* viewController;
+@property(nonatomic, readonly) RootViewController* _Nonnull viewController;
 
 #pragma mark - 直播相关
 /// 进入直播间
@@ -57,7 +57,8 @@
 /// @param payType 支付渠道类型：1:苹果内购 2:支付宝 3:微信
 /// @param payParam 支付参数：
 /// @param userID 当前支付用户ID
-+ (void)appPurchaseWithPayType:(NSInteger)payType payParam:(NSString *)payParam userID:(NSString *)userID;
+/// @param paySuccessMethod 支付成功通知的方法名
++ (void)appPurchaseWithPayType:(NSInteger)payType payParam:(NSString *_Nonnull)payParam userID:(NSString *_Nonnull)userID paySuccessMethod:(NSString *_Nonnull)paySuccessMethod;
 
 #pragma mark - Photo
 + (void)selectedOnePhoto;
@@ -66,21 +67,35 @@
 /// 生成二维码
 /// @param codeString 二维码字符串
 /// @param centerImage 中心图片
-+ (UIImage *_Nonnull)createQRCodeImageWithString:(nonnull NSString *)codeString andCenterImage:(nullable UIImage *)centerImage;
++ (UIImage *_Nonnull)createQRCodeImageWithString:(nonnull NSString *)codeString;
 
 #pragma mark - 广告
 /// 打开激励视频
-+ (void)openBUAdRewardViewController;
+/// @param method 广告看完通知方法
++ (void)openBUAdRewardViewControllerWithMethod:(NSString *_Nonnull)method;
 
 #pragma mark - 获取手机基本信息
+/// 获取Imei
 + (NSString *_Nullable)getImei;
+
+#pragma mark - 复制到剪贴板
+
+/// 复制到剪贴板
+/// @param copyStr 复制的字符串
++ (void)copyToPasteboard:(NSString *_Nonnull)copyStr;
+
+#pragma mark - OpenInstall
+
+/// 获取OpenInstall收到的参数
+/// @param method 监听方法名
++ (void)getOpenInstallParamWithMethod:(NSString *_Nonnull)method;
 
 #pragma mark - OC调用JS
 
 /// 派发JS事件
 /// @param method 方法名
 /// @param param 参数
-+ (void)dispatchCustomEventWithMethod:(NSString *)method param:(NSString *)param;
++ (void)dispatchCustomEventWithMethod:(NSString *_Nonnull)method param:(NSString *_Nullable)param;
 
 @end
 

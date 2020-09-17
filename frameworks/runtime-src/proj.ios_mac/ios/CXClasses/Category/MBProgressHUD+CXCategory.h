@@ -32,7 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)showCustomIconInWindow:(NSString *)iconName message:(NSString *)message;
 + (void)showCustomIconInView:(NSString *)iconName message:(NSString *)message;
 
-
++ (void)showHUD;
 + (void)hideHUD;
 
 @end

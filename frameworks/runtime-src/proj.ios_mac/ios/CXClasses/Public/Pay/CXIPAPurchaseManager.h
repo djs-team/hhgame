@@ -20,7 +20,7 @@ typedef enum : NSUInteger {
  @param certificate 支付成功得到的凭证（用于在自己服务器验证）
  @param errorMsg 错误信息
  */
-typedef void(^InAppPurchaseResult)(BOOL isSuccess,NSString *certificate,NSString *errorMsg);
+typedef void(^InAppPurchaseResult)(BOOL isSuccess, NSDictionary *param,NSString *errorMsg);
 
 @interface CXIPAPurchaseManager : NSObject
 @property (nonatomic, copy)InAppPurchaseResult iapResultBlock;

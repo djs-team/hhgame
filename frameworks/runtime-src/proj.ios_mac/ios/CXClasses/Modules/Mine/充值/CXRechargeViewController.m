@@ -172,6 +172,7 @@
     } else { // 内购
         kWeakSelf
         [CXIPAPurchaseManager manager].userid = [CXClientModel instance].userId;
+        [CXIPAPurchaseManager manager].purchaseType = LiveBroadcast;
         [[CXIPAPurchaseManager manager] inAppPurchaseWithProductID:_selectedItem.iosflag iapResult:^(BOOL isSuccess, NSString *certificate, NSString *errorMsg) {
             if (isSuccess) {
                 [weakSelf toast:@"购买成功"];

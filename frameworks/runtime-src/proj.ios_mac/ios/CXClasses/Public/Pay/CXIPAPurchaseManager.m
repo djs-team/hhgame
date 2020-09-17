@@ -59,7 +59,7 @@ static CXIPAPurchaseManager * manager = nil;
     
     dispatch_sync(iap_queue(), ^{
     
-    [[SKPaymentQueue defaultQueue] addTransactionObserver:manager];
+        [[SKPaymentQueue defaultQueue] addTransactionObserver:manager];
 
     });
 
@@ -78,44 +78,25 @@ static CXIPAPurchaseManager * manager = nil;
 
 #pragma mark -- 发起购买的方法
 -(void)inAppPurchaseWithProductID:(NSString *)productID iapResult:(InAppPurchaseResult)iapResult{
-    
+    [MBProgressHUD showHUD];
     [self removeAllUncompleteTransactionsBeforeNewPurchase];
     
     self.iapResultBlock = iapResult;
-    
-//    [RRHUD showWithContainerView:UL_rootVC.view status:NSLocalizedString(@"Purchasing...", @"")];
-    
-    self.profductId = productID;
-    
-    if (!self.profductId.length) {
-    
-//        UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Warm prompt" message:@"There is no corresponding product." preferredStyle:UIAlertControllerStyleAlert];
-//        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-//
-//        }]];
         
-//        [UL_rootVC presentViewController:alert animated:YES completion:nil];
-    }
+    self.profductId = productID;
 
     if ([SKPaymentQueue canMakePayments]) {
         
         [self requestProductInfo:self.profductId];
         
     } else {
-//
-//        UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Warm prompt" message:@"Please turn on the in-app paid purchase function first." preferredStyle:UIAlertControllerStyleAlert];
-//        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-//
-//        }]];
-//
-//        [UL_rootVC presentViewController:alert animated:YES completion:nil];
-        
+        [MBProgressHUD hideHUD];
     }
     
 }
 
 #pragma mark -- 结束上次未完成的交易
--(void)removeAllUncompleteTransactionsBeforeNewPurchase{
+-(void)removeAllUncompleteTransactionsBeforeNewPurchase {
     
     NSArray* transactions = [SKPaymentQueue defaultQueue].transactions;
     
@@ -140,7 +121,7 @@ static CXIPAPurchaseManager * manager = nil;
 
 
 #pragma mark -- 发起购买请求
--(void)requestProductInfo:(NSString *)productID{
+- (void)requestProductInfo:(NSString *)productID{
     
     NSArray * productArray = [[NSArray alloc]initWithObjects:productID,nil];
     
@@ -160,10 +141,7 @@ static CXIPAPurchaseManager * manager = nil;
     NSArray *myProduct = response.products;
     
     if (myProduct.count == 0) {
-        
-//        [RRHUD hide];
-//        [RRHUD showErrorWithContainerView:UL_rootVC.view status:NSLocalizedString(@"No Product Info", @"")];
-        
+        [MBProgressHUD hideHUD];
         if (self.iapResultBlock) {
             self.iapResultBlock(NO, nil, @"无法获取商品信息，购买失败");
         }
@@ -175,12 +153,6 @@ static CXIPAPurchaseManager * manager = nil;
     
     for(SKProduct * pro in myProduct){
         
-        NSLog(@"SKProduct 描述信息%@", [pro description]);
-        NSLog(@"产品标题 %@" , pro.localizedTitle);
-        NSLog(@"产品描述信息: %@" , pro.localizedDescription);
-        NSLog(@"价格: %@" , pro.price);
-        NSLog(@"Product id: %@" , pro.productIdentifier);
-        
         if ([pro.productIdentifier isEqualToString:self.profductId]) {
             
             product = pro;
@@ -190,29 +162,28 @@ static CXIPAPurchaseManager * manager = nil;
     }
     
     if (product) {
-        
         SKMutablePayment * payment = [SKMutablePayment paymentWithProduct:product];
         //使用苹果提供的属性,将平台订单号复制给这个属性作为透传参数
         payment.applicationUsername = self.order;
         
         [[SKPaymentQueue defaultQueue] addPayment:payment];
         
-    }else{
-        
+    } else {
+        [MBProgressHUD hideHUD];
         NSLog(@"没有此商品信息");
     }
 }
 
 //查询失败后的回调
 - (void)request:(SKRequest *)request didFailWithError:(NSError *)error {
-    
+    [MBProgressHUD hideHUD];
     if (self.iapResultBlock) {
         self.iapResultBlock(NO, nil, [error localizedDescription]);
     }
 }
 
 //如果没有设置监听购买结果将直接跳至反馈结束；
--(void)requestDidFinish:(SKRequest *)request{
+- (void)requestDidFinish:(SKRequest *)request{
     
 }
 
@@ -228,25 +199,29 @@ static CXIPAPurchaseManager * manager = nil;
                 
                 [self completeTransaction:transaction];
                 
-            }break;
+            }
+                break;
                 
             case SKPaymentTransactionStateFailed:{
                 
                 [self failedTransaction:transaction];
                 
-            }break;
+            }
+                break;
                 
             case SKPaymentTransactionStateRestored:{//已经购买过该商品
                 
                 [self restoreTransaction:transaction];
                 
-            }break;
+            }
+                break;
                 
             case SKPaymentTransactionStatePurchasing:{
                 
                 NSLog(@"正在购买中...");
                 
-            }break;
+            }
+                break;
                 
             case SKPaymentTransactionStateDeferred:{
                 
@@ -261,7 +236,7 @@ static CXIPAPurchaseManager * manager = nil;
 }
 
 
--(BOOL)paymentQueue:(SKPaymentQueue *)queue shouldAddStorePayment:(SKPayment *)payment forProduct:(SKProduct *)product{
+- (BOOL)paymentQueue:(SKPaymentQueue *)queue shouldAddStorePayment:(SKPayment *)payment forProduct:(SKProduct *)product{
     
     
 //    UIAlertController *  alert  = [UIAlertController alertControllerWithTitle:@"提示" message:@"你有一笔来自appStore的优惠订单未使用,请点击使用,以防失效." preferredStyle:UIAlertControllerStyleAlert];
@@ -280,7 +255,7 @@ static CXIPAPurchaseManager * manager = nil;
 #pragma mark -- 根据存储凭证存储Order
     if(self.order) {
         
-     [self saveOrderByInAppPurchase:transaction];
+        [self saveOrderByInAppPurchase:transaction];
         
     }
 #pragma mark -- 获取购买凭证并且发送服务器验证
@@ -290,21 +265,14 @@ static CXIPAPurchaseManager * manager = nil;
 
 #pragma mark -- 处理交易失败回调
 - (void)failedTransaction:(SKPaymentTransaction *)transaction{
-    
-//    [RRHUD hide];
-    
+    [MBProgressHUD hideHUD];
     NSString * error = nil;
 
     if(transaction.error.code != SKErrorPaymentCancelled) {
-        
-//        [RRHUD showInfoWithContainerView:UL_rootVC.view status:NSLocalizedString(@"Purchase Failed", @"")];
         error = [NSString stringWithFormat:@"%ld",transaction.error.code];
         
     } else {
-        
-//        [RRHUD showInfoWithContainerView:UL_rootVC.view status:NSLocalizedString(@"Purchase Canceled", @"")];
         error = [NSString stringWithFormat:@"%ld",transaction.error.code];
-        
     }
     
     if (self.iapResultBlock) {
@@ -317,7 +285,7 @@ static CXIPAPurchaseManager * manager = nil;
 
 - (void)restoreTransaction:(SKPaymentTransaction *)transaction{
     
-//    [RRHUD hide];
+    [MBProgressHUD hideHUD];
     [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
 }
 
@@ -351,7 +319,7 @@ static CXIPAPurchaseManager * manager = nil;
         if ([localdic valueForKey:transId]) {
             order = [localdic valueForKey:transId];
             
-        }else{
+        } else {
             continue;
         }
     }
@@ -360,7 +328,7 @@ static CXIPAPurchaseManager * manager = nil;
         
       return order;
         
-    }else{
+    } else {
         
       return @"";
         
@@ -386,10 +354,8 @@ static CXIPAPurchaseManager * manager = nil;
     if (order == nil||[order length] == 0) {
         
         if (self.order) {
-            
             order = self.order;
-            
-        }else{
+        } else {
             
             if ([[self getOrderWithTransactionId:transaction.transactionIdentifier] length] > 0) {
               
@@ -485,7 +451,7 @@ static CXIPAPurchaseManager * manager = nil;
             NSLog(@"写入购买凭据成功");
         }
         
-    }else{
+    } else {
        
         if (error == nil) {
          
@@ -504,7 +470,7 @@ static CXIPAPurchaseManager * manager = nil;
                 }
             }
             
-        }else{
+        } else {
             
             NSLog(@"读取本文存储凭据失败");
         }
@@ -532,7 +498,7 @@ static CXIPAPurchaseManager * manager = nil;
 }
 
 #pragma mark -- 获取系统时间的方法
--(NSString *)getCurrentZoneTime {
+- (NSString *)getCurrentZoneTime {
     
     NSDate * date = [NSDate date];
     NSDateFormatter*formatter = [[NSDateFormatter alloc]init];
@@ -546,9 +512,43 @@ static CXIPAPurchaseManager * manager = nil;
 -(void)sendAppStoreRequestToPhpWithReceipt:(NSString *)receipt userId:(NSString *)userId paltFormOrder:(NSString * )order trans:(SKPaymentTransaction *)transaction {
     
     if (_purchaseType == LiveBroadcast) { // 直播
-        
+        NSString *signature = [CocoaSecurity md5:[CXClientModel instance].token].hexLower;
+        NSDictionary *param = @{
+            @"signature":signature,
+            @"receipt":receipt,
+            @"user_id":_userid,
+            @"transaction_id":transaction.transactionIdentifier,
+        };
+        kWeakSelf
+        [CXHTTPRequest POSTWithURL:@"/index.php/Api/ApplePay/getreceiptdata" parameters:param callback:^(id responseObject, BOOL isCache, NSError *error) {
+            [MBProgressHUD hideHUD];
+            if (!error) {
+                //结束交易方法
+                [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
+    
+                [weakSelf getPlatformAmountInfoWithOrder:order];
+    
+                //这里将成功但存储起来
+                [weakSelf SaveIapSuccessReceiptDataWithReceipt:receipt Order:order UserId:userId transId:transaction.transactionIdentifier];
+                [weakSelf successConsumptionOfGoodsWithTransId:transaction.transactionIdentifier];
+    
+                //adjust 上报充值次数打点
+                [weakSelf userRechargeTotalEventWithUserId:userId];
+                if (weakSelf.iapResultBlock) {
+                    weakSelf.iapResultBlock(YES, param, nil);
+                }
+            }
+        }];
     } else {
-        
+        NSDictionary *param = @{
+            @"receipt":receipt,
+            @"user_id":_userid,
+            @"transaction_id":transaction.transactionIdentifier,
+            @"order": [self getOrderWithTransactionId:transaction.transactionIdentifier],
+        };
+        if (self.iapResultBlock) {
+            self.iapResultBlock(YES, param, nil);
+        }
     }
     
 //    [[ULSDKAPI shareAPI]sendLineWithPlatformOrder:order Receipt:receipt LineNumber:@"IPAPurchase.m 542"];

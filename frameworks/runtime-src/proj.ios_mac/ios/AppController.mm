@@ -66,7 +66,10 @@
 // 设备信息
 #import "CXPhoneBasicTools.h"
 
-@interface AppController() <JPUSHRegisterDelegate, WXApiDelegate, BUSplashAdDelegate>
+// OpenInstall
+#import "OpenInstallSDK.h"
+
+@interface AppController() <JPUSHRegisterDelegate, WXApiDelegate, BUSplashAdDelegate, OpenInstallDelegate>
 
 @property (nonatomic, copy) NSString *registration_id;
 
@@ -133,6 +136,9 @@ static AppDelegate s_sharedApplication;
     
     // 穿山甲
     [self setupBUAdSDK];
+    
+    // OpenInstall
+    [OpenInstallSDK initWithDelegate:self];
 
     return YES;
 }
@@ -173,18 +179,21 @@ static AppDelegate s_sharedApplication;
     if ([url.host isEqualToString:@"safepay"]) {
         // 支付跳转支付宝钱包进行支付，处理支付结果
         [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
-            
-//            [[NSNotificationCenter defaultCenter] postNotificationName:@"MUAAlipayCallBackNotification" object:resultDic];
+            [[NSNotificationCenter defaultCenter] postNotificationName:kNSNotificationCenter_CXRechargeViewController_alipay object:resultDic];
+            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].openInstallParamMethod param:[resultDic jsonStringEncoded]];
         }];
         
         // 授权跳转支付宝钱包进行支付，处理支付结果
         [[AlipaySDK defaultService] processAuth_V2Result:url standbyCallback:^(NSDictionary *resultDic) {
-            
-//            [[NSNotificationCenter defaultCenter] postNotificationName:kNSNotificationCenter_CXRechargeViewController_alipay object:resultDic];
+            [[NSNotificationCenter defaultCenter] postNotificationName:kNSNotificationCenter_CXRechargeViewController_alipay object:resultDic];
+            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].openInstallParamMethod param:[resultDic jsonStringEncoded]];
         }];
     } else {
         [WXApi handleOpenURL:url delegate:self];
     }
+    
+    [OpenInstallSDK handLinkURL:url];
+    
     return YES;
 }
 
@@ -377,7 +386,8 @@ static AppDelegate s_sharedApplication;
 #pragma mark - ================ WXApiDelegate ===================
 - (void)onResp:(BaseResp *)resp {
     if ([resp isKindOfClass:[PayResp class]]){
-//        [[NSNotificationCenter defaultCenter] postNotificationName:kNSNotificationCenter_CXRechargeViewController_weixin object:[resp modelToJSONObject]];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kNSNotificationCenter_CXRechargeViewController_weixin object:[resp modelToJSONObject]];
+        [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].openInstallParamMethod param:[[resp modelToJSONObject] jsonStringEncoded]];
     } else if ([resp isKindOfClass:[SendAuthResp class]]){
         SendAuthResp *resp2 = (SendAuthResp *)resp;
 //        [[NSNotificationCenter defaultCenter] postNotificationName:@"CXLoginLaunchControllerWXLogin" object:resp2];
@@ -394,23 +404,26 @@ static AppDelegate s_sharedApplication;
 /// @param payType 支付渠道类型：1:苹果内购 2:支付宝 3:微信
 /// @param payParam 支付参数：
 /// @param userID 当前支付用户ID
-+ (void)appPurchaseWithPayType:(NSInteger)payType payParam:(NSString *)payParam userID:(NSString *)userID {
+/// @param paySuccessMethod 支付成功通知的方法名
++ (void)appPurchaseWithPayType:(NSInteger)payType payParam:(NSString *)payParam userID:(NSString *)userID paySuccessMethod:(NSString *)paySuccessMethod {
+    [CXOCJSBrigeManager manager].paySuccessMethod = paySuccessMethod;
     if (payType == 1) {
         [CXIPAPurchaseManager manager].userid = userID;
-        [[CXIPAPurchaseManager manager] inAppPurchaseWithProductID:payParam iapResult:^(BOOL isSuccess, NSString *certificate, NSString *errorMsg) {
-            
+        [CXIPAPurchaseManager manager].purchaseType = MaJiang;
+        [[CXIPAPurchaseManager manager] inAppPurchaseWithProductID:payParam iapResult:^(BOOL isSuccess, NSDictionary *param, NSString *errorMsg) {
+            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].openInstallParamMethod param:[param jsonStringEncoded]];
         }];
     } else if (payType == 2) {
         [[CXThirdPayManager sharedApi] aliPayWithPayParam:payParam success:^(PayCode code) {
-            
+            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].openInstallParamMethod param:@"success"];
         } failure:^(PayCode code) {
-            
+            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].openInstallParamMethod param:@"failure"];
         }];
     } else if (payType == 3) {
         [[CXThirdPayManager sharedApi] wxPayWithPayParam:payParam success:^(PayCode code) {
-            
+            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].openInstallParamMethod param:@"success"];
         } failure:^(PayCode code) {
-            
+            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].openInstallParamMethod param:@"failure"];
         }];
     }
 }
@@ -426,17 +439,18 @@ static AppDelegate s_sharedApplication;
 /// 生成二维码
 /// @param codeString 二维码字符串
 /// @param centerImage 中心图片
-+ (UIImage *_Nonnull)createQRCodeImageWithString:(nonnull NSString *)codeString andCenterImage:(nullable UIImage *)centerImage {
++ (UIImage *_Nonnull)createQRCodeImageWithString:(nonnull NSString *)codeString {
     return [WSLNativeScanTool createQRCodeImageWithString:codeString andSize:CGSizeMake(200, 200) andBackColor:[UIColor whiteColor] andFrontColor:[UIColor orangeColor] andCenterImage:nil];
 }
 
 #pragma mark - ================ 广告 ===================
 // 打开激励视频
-+ (void)openBUAdRewardViewController {
++ (void)openBUAdRewardViewControllerWithMethod:(NSString *_Nonnull)method {
+    [CXOCJSBrigeManager manager].BUAdRewardMethod = method;
     //激励视频
     CXBUAdRewardViewController *rewardVC = [[CXBUAdRewardViewController alloc] init];
-    [[CXBUAdRewardViewController manager] openAd];
     [[CXTools currentViewController] presentViewController:rewardVC animated:YES completion:nil];
+    [[CXBUAdRewardViewController manager] openAd];
 }
 
 - (void)setupBUAdSDK {
@@ -504,13 +518,40 @@ static AppDelegate s_sharedApplication;
     [AppController setOrientation:@""];    //强制竖屏转横屏
 }
 
+#pragma mark -  ================ OpenInstall ===================
+- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring>> * _Nullable))restorationHandler {
+    //判断是否通过OpenInstall Universal Link 唤起App
+    if ([OpenInstallSDK continueUserActivity:userActivity]){//如果使用了Universal link ，此方法必写
+    
+        return YES;
+    }
+    //其他第三方回调；
+    return YES;
+}
+
++ (void)getOpenInstallParamWithMethod:(NSString *_Nonnull)method {
+    [CXOCJSBrigeManager manager].openInstallParamMethod = method;
+    [[OpenInstallSDK defaultManager] getInstallParmsCompleted:^(OpeninstallData * _Nullable appData) {
+        [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].openInstallParamMethod param:[appData.data jsonStringEncoded]];
+    }];
+}
+
 #pragma mark - 获取手机基本信息
 + (NSString *)getImei {
     NSString *imei = [NSString stringWithFormat:@"%@%@", [CXPhoneBasicTools getUUID], [CXPhoneBasicTools getIdentifierForAdvertising]];
     return imei;
 }
 
-#pragma mark - OC调用JS
+#pragma mark - ================ 复制到剪贴板 ===================
+
+/// 复制到剪贴板
+/// @param copyStr 复制的字符串
++ (void)copyToPasteboard:(NSString *)copyStr {
+    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+    pasteboard.string = copyStr;
+}
+
+#pragma mark - ================ OC调用JS ===================
 
 /// 派发JS事件
 /// @param method 方法名

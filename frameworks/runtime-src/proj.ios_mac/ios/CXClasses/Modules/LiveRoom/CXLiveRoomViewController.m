@@ -1486,6 +1486,7 @@
 - (void)rechargeWithProductId:(NSString *)productId {
     kWeakSelf
     [CXIPAPurchaseManager manager].userid = [CXClientModel instance].userId;
+    [CXIPAPurchaseManager manager].purchaseType = LiveBroadcast;
     [[CXIPAPurchaseManager manager] inAppPurchaseWithProductID:productId iapResult:^(BOOL isSuccess, NSString *certificate, NSString *errorMsg) {
         if (isSuccess) {
             [weakSelf toast:@"购买成功"];

@@ -13,7 +13,9 @@
 
 @implementation AppController (Login)
 
-+ (void)weChatLogin {
++ (void)weChatLoginWithMethod:(NSString *)method {
+    [CXOCJSBrigeManager manager].wxLoginMethod = method;
+    
     SendAuthReq *req = [[SendAuthReq alloc] init];
     req.scope = @"snsapi_userinfo";
     req.state = @"123";
@@ -29,30 +31,18 @@
         if (!error) {
             NSDictionary *resp = (NSDictionary*)responseObject;
             NSString *respStr = [resp jsonStringEncoded];
-            
-            [AppController dispatchCustomEventWithMethod:@"WX_LOGIN_CALLBACK" param:respStr];
+            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].wxLoginMethod param:respStr];
+        } else {
+            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].wxLoginMethod param:@""];
         }
     }];
 }
 
-+ (void)JPushLogin {
++ (void)JPushLoginWithMethod:(NSString *)method {
+    [CXOCJSBrigeManager manager].jpushLoginMethod = method;
     [JVERIFICATIONService getAuthorizationWithController:[CXTools currentViewController] completion:^(NSDictionary *result) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if ([result.allKeys containsObject:@"loginToken"]) {
-                NSString *token = result[@"loginToken"];
-    //            NSInteger code = [result[@"code"] integerValue];
-                
-                if (token) {
-                    
-                } else {
-                    // 失败
-                }
-            } else {
-                // 失败
-            }
-            
-            [JVERIFICATIONService dismissLoginControllerAnimated:YES completion:nil];
-        });
+        [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].jpushLoginMethod param:[result jsonStringEncoded]];
+        [JVERIFICATIONService dismissLoginControllerAnimated:YES completion:nil];
     }];
 }
 

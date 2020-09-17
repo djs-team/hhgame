@@ -13,7 +13,7 @@ load('public/components/Command', function () {
      * 收到notification
      * @param notification
      */
-    execute: function (notification) {
+    execute (notification) {
     }
   })
 

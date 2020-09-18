@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Qel-TV-pLX" customClass="XYRoomAlreadApplyListView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="447"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="50c-zE-d1r">
+                    <rect key="frame" x="0.0" y="49" width="375" height="398"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="Qel-TV-pLX" id="WBg-hc-lwl"/>
+                        <outlet property="delegate" destination="Qel-TV-pLX" id="WW8-OD-SCj"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RjO-B1-PKc">
+                    <rect key="frame" x="0.0" y="-10" width="100" height="49"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="49" id="2Nr-BY-IpM"/>
+                        <constraint firstAttribute="width" constant="100" id="44I-JC-H9f"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                    <state key="normal" title="男嘉宾">
+                        <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="manClick:" destination="Qel-TV-pLX" eventType="touchUpInside" id="2M9-BP-nNG"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2kf-Ec-0Jj">
+                    <rect key="frame" x="100" y="-10" width="275" height="49"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="49" id="iY8-it-Rzs"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                    <state key="normal" title="女嘉宾">
+                        <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="womanClick:" destination="Qel-TV-pLX" eventType="touchUpInside" id="ZmK-te-Xax"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="RjO-B1-PKc" firstAttribute="top" secondItem="Qel-TV-pLX" secondAttribute="top" constant="-10" id="9Xf-YI-RTW"/>
+                <constraint firstItem="pS6-Yh-HOm" firstAttribute="trailing" secondItem="50c-zE-d1r" secondAttribute="trailing" id="9ei-zd-ate"/>
+                <constraint firstItem="50c-zE-d1r" firstAttribute="top" secondItem="pS6-Yh-HOm" secondAttribute="top" constant="49" id="OfY-Kz-JG9"/>
+                <constraint firstItem="2kf-Ec-0Jj" firstAttribute="trailing" secondItem="pS6-Yh-HOm" secondAttribute="trailing" id="PMI-0E-IeX"/>
+                <constraint firstItem="2kf-Ec-0Jj" firstAttribute="top" secondItem="RjO-B1-PKc" secondAttribute="bottom" constant="-49" id="bNF-AK-2bA"/>
+                <constraint firstItem="50c-zE-d1r" firstAttribute="leading" secondItem="pS6-Yh-HOm" secondAttribute="leading" id="eSx-LT-n4Y"/>
+                <constraint firstItem="RjO-B1-PKc" firstAttribute="leading" secondItem="pS6-Yh-HOm" secondAttribute="leading" id="fs8-Q1-aBR"/>
+                <constraint firstItem="pS6-Yh-HOm" firstAttribute="bottom" secondItem="50c-zE-d1r" secondAttribute="bottom" id="gLv-1H-uy9"/>
+                <constraint firstItem="2kf-Ec-0Jj" firstAttribute="leading" secondItem="RjO-B1-PKc" secondAttribute="trailing" id="i5P-TB-SUO"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="pS6-Yh-HOm"/>
+            <connections>
+                <outlet property="butWidth" destination="44I-JC-H9f" id="STa-IB-QH1"/>
+                <outlet property="manBut" destination="RjO-B1-PKc" id="vMV-37-70w"/>
+                <outlet property="tableView" destination="50c-zE-d1r" id="8RW-Dc-IY9"/>
+                <outlet property="womanBut" destination="2kf-Ec-0Jj" id="Eil-on-PlR"/>
+            </connections>
+            <point key="canvasLocation" x="24.800000000000001" y="111.54422788605699"/>
+        </view>
+    </objects>
+</document>

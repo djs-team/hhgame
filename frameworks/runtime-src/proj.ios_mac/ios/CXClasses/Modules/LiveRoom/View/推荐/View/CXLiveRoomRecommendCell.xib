@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CXLiveRoomRecommendCellID" id="gTV-IL-0wX" customClass="CXLiveRoomRecommendCell">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JkZ-zW-1uC">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zbs-cz-fhf">
+                        <rect key="frame" x="0.0" y="60" width="100" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="b9m-Hz-hbP"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="31岁|165cm|女" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YMx-6x-Ap2">
+                        <rect key="frame" x="6" y="83.5" width="83.5" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="31岁|165cm|女" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x20-a7-BL9">
+                        <rect key="frame" x="6" y="66.5" width="94" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYb-K7-1o3">
+                        <rect key="frame" x="8" y="4" width="47" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <state key="normal" title="相亲中" backgroundImage="live_room_recommend_state2">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                    </button>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="YMx-6x-Ap2" firstAttribute="top" secondItem="x20-a7-BL9" secondAttribute="bottom" id="2Bt-SL-fd4"/>
+                <constraint firstItem="cYb-K7-1o3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="4GK-5P-BJU"/>
+                <constraint firstAttribute="bottom" secondItem="YMx-6x-Ap2" secondAttribute="bottom" constant="2" id="4Wb-fz-vfx"/>
+                <constraint firstItem="YMx-6x-Ap2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="6" id="Cod-Rf-fLy"/>
+                <constraint firstAttribute="trailing" secondItem="x20-a7-BL9" secondAttribute="trailing" id="FKi-aT-X1o"/>
+                <constraint firstItem="cYb-K7-1o3" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="GVc-qw-LBr"/>
+                <constraint firstItem="Zbs-cz-fhf" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="K5g-SL-fMP"/>
+                <constraint firstAttribute="trailing" secondItem="JkZ-zW-1uC" secondAttribute="trailing" id="Syw-Px-eMO"/>
+                <constraint firstItem="x20-a7-BL9" firstAttribute="leading" secondItem="YMx-6x-Ap2" secondAttribute="leading" id="VbJ-Yj-VTZ"/>
+                <constraint firstItem="JkZ-zW-1uC" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Xis-Ii-MDg"/>
+                <constraint firstAttribute="bottom" secondItem="JkZ-zW-1uC" secondAttribute="bottom" id="fYk-hj-3bo"/>
+                <constraint firstAttribute="bottom" secondItem="Zbs-cz-fhf" secondAttribute="bottom" id="sMA-xP-PSy"/>
+                <constraint firstAttribute="trailing" secondItem="Zbs-cz-fhf" secondAttribute="trailing" id="sae-vV-1dx"/>
+                <constraint firstItem="JkZ-zW-1uC" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="sx7-S7-S32"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
+            <connections>
+                <outlet property="descLabel" destination="YMx-6x-Ap2" id="ir0-cO-fGh"/>
+                <outlet property="g_bgImage" destination="Zbs-cz-fhf" id="YdR-kq-6rG"/>
+                <outlet property="logo" destination="JkZ-zW-1uC" id="1bP-gf-V07"/>
+                <outlet property="nameLabel" destination="x20-a7-BL9" id="YUD-CP-IlJ"/>
+                <outlet property="tagLabel" destination="cYb-K7-1o3" id="KBZ-16-GAb"/>
+            </connections>
+            <point key="canvasLocation" x="115.94202898550725" y="116.51785714285714"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="live_room_recommend_state2" width="47" height="15"/>
+    </resources>
+</document>

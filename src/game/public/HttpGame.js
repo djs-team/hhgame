@@ -998,10 +998,10 @@ load('game/public/HttpGame', function () {
 
         },
 
-        FUKA_BUYGOODSReq: function (msg) {
+        FUKABUYGOODSReq: function (msg) {
             msg = msg || {}
             if (!this._requestBackCall[HttpEvent.MJ_HALL_PLAYER_GOODS_BUY]) {
-                this._requestBackCall[HttpEvent.MJ_HALL_PLAYER_GOODS_BUY] = this.FUKA_BUYGOODSBack
+                this._requestBackCall[HttpEvent.MJ_HALL_PLAYER_GOODS_BUY] = this.FUKABUYGOODSBack
             }
             msg.msgID = HttpEvent.MJ_HALL_PLAYER_GOODS_BUY
             appInstance.httpAgent().sendPost(msg)
@@ -1009,7 +1009,7 @@ load('game/public/HttpGame', function () {
         },
 
 
-        FUKA_BUYGOODSBack: function (msg) {
+        FUKABUYGOODSBack: function (msg) {
             if (msg.status !== 0) {
                 cc.log('------------->>>httpGame FUKA_BUYGOODSBack error happen')
                 return
@@ -1018,10 +1018,10 @@ load('game/public/HttpGame', function () {
 
         },
 
-        FUKA_ROBReq: function (msg) {
+        FUKAROBLISTReq: function (msg) {
             msg = msg || {}
             if (!this._requestBackCall[HttpEvent.MJ_HALL_FUKA_DUOBAO]) {
-                this._requestBackCall[HttpEvent.MJ_HALL_FUKA_DUOBAO] = this.FUKA_ROBBack
+                this._requestBackCall[HttpEvent.MJ_HALL_FUKA_DUOBAO] = this.FUKAROBLISTBack
             }
             msg.msgID = HttpEvent.MJ_HALL_FUKA_DUOBAO
             appInstance.httpAgent().sendPost(msg)
@@ -1029,12 +1029,130 @@ load('game/public/HttpGame', function () {
         },
 
 
-        FUKA_ROBBack: function (msg) {
+        FUKAROBLISTBack: function (msg) {
             if (msg.status !== 0) {
-                cc.log('------------->>>httpGame FUKA_ROBBack error happen')
+                cc.log('------------->>>httpGame FUKA_ROBLISTBack error happen')
                 return
             }
-            appInstance.sendNotification(GameEvent.FUKA_BUGGOODS, msg)
+            appInstance.sendNotification(GameEvent.FUKA_ROBLIST, msg)
+
+        },
+
+
+        FUKACARDLISTReq: function (msg) {
+            msg = msg || {}
+            if (!this._requestBackCall[HttpEvent.MJ_HALL_CARD_GOODS]) {
+                this._requestBackCall[HttpEvent.MJ_HALL_CARD_GOODS] = this.FUKACARDLISTBack
+            }
+            msg.msgID = HttpEvent.MJ_HALL_CARD_GOODS
+            appInstance.httpAgent().sendPost(msg)
+
+        },
+
+
+        FUKACARDLISTBack: function (msg) {
+            if (msg.status !== 0) {
+                cc.log('------------->>>httpGame FUKA_ROBLISTBack error happen')
+                return
+            }
+            appInstance.sendNotification(GameEvent.FUKA_CARDLIST, msg)
+
+        },
+
+        FUKAROBReq: function (msg) {
+            msg = msg || {}
+            if (!this._requestBackCall[HttpEvent.MJ_HALL_PLAYER_DUO_BAO]) {
+                this._requestBackCall[HttpEvent.MJ_HALL_PLAYER_DUO_BAO] = this.FUKAROBBack
+            }
+            msg.msgID = HttpEvent.MJ_HALL_PLAYER_DUO_BAO
+            appInstance.httpAgent().sendPost(msg)
+
+        },
+
+
+        FUKAROBBack: function (msg) {
+
+            appInstance.sendNotification(GameEvent.FUKA_ROB, msg)
+
+        },
+
+        FUKAROBLOGReq: function (msg) {
+            msg = msg || {}
+            if (!this._requestBackCall[HttpEvent.MJ_HALL_PLAYER_DUO_BAO_LOG]) {
+                this._requestBackCall[HttpEvent.MJ_HALL_PLAYER_DUO_BAO_LOG] = this.FUKAROBLOGBack
+            }
+            msg.msgID = HttpEvent.MJ_HALL_PLAYER_DUO_BAO_LOG
+            appInstance.httpAgent().sendPost(msg)
+
+        },
+
+
+        FUKAROBLOGBack: function (msg) {
+            if (msg.status !== 0) {
+                cc.log('------------->>>httpGame FUKAROBLOGBack error happen')
+                return
+            }
+            appInstance.sendNotification(GameEvent.FUKA_ROBLOG, msg)
+
+        },
+
+        FUKAMATERIALLISTReq: function (msg) {
+            msg = msg || {}
+            if (!this._requestBackCall[HttpEvent.MJ_HALL_ENTITY_GOODS]) {
+                this._requestBackCall[HttpEvent.MJ_HALL_ENTITY_GOODS] = this.FUKAMATERIALLISTBack
+            }
+            msg.msgID = HttpEvent.MJ_HALL_ENTITY_GOODS
+            appInstance.httpAgent().sendPost(msg)
+
+        },
+
+
+        FUKAMATERIALLISTBack: function (msg) {
+            if (msg.status !== 0) {
+                cc.log('------------->>>httpGame FUKAMATERIALLISTBack error happen')
+                return
+            }
+            appInstance.sendNotification(GameEvent.FUKA_MATERIAL_LIST, msg)
+
+        },
+
+        FUKAMATERIALOGReq: function (msg) {
+            msg = msg || {}
+            if (!this._requestBackCall[HttpEvent.MJ_HALL_PLAYER_GOODS_LOG]) {
+                this._requestBackCall[HttpEvent.MJ_HALL_PLAYER_GOODS_LOG] = this.FUKAMATERIALOGReqBack
+            }
+            msg.msgID = HttpEvent.MJ_HALL_PLAYER_GOODS_LOG
+            appInstance.httpAgent().sendPost(msg)
+
+        },
+
+
+        FUKAMATERIALOGReqBack: function (msg) {
+            if (msg.status !== 0) {
+                cc.log('------------->>>httpGame FUKAMATERIALOGReqBack error happen')
+                return
+            }
+            appInstance.sendNotification(GameEvent.FUKA_MATERIA_LOG, msg)
+
+        },
+
+        FUKAMATERIAEXCHANGEReq: function (msg) {
+            msg = msg || {}
+            if (!this._requestBackCall[HttpEvent.MJ_HALL_PLAYER_ONLINE_EXCHANGE]) {
+                this._requestBackCall[HttpEvent.MJ_HALL_PLAYER_ONLINE_EXCHANGE] = this.FUKAMATERIAEXCHANGEReq
+            }
+            msg.msgID = HttpEvent.MJ_HALL_PLAYER_ONLINE_EXCHANGE
+            appInstance.httpAgent().sendPost(msg)
+
+        },
+
+
+        FUKAMATERIAEXCHANGEReq: function (msg) {
+            if (msg.status !== 0) {
+                cc.log('------------->>>httpGame FUKAMATERIAEXCHANGEReq error happen')
+                return
+            }
+            appInstance.sendNotification(GameEvent.FUKA_MATERIA_EXCHANGE, msg)
 
         },
     })

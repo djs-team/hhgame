@@ -55,6 +55,13 @@ load('game/config/GameEvent', function () {
         'MENULIST': 'MENULIST',
         'GOODSLIST': 'GOODSLIST',
         'FUKA_BUGGOODS': 'FUKA_BUGGOODS',
+        'FUKA_ROBLIST': 'FUKA_ROBLIST',
+        'FUKA_CARDLIST': 'FUKA_CARDLIST',
+        'FUKA_ROB': 'FUKA_ROB',
+        'FUKA_ROBLOG': 'FUKA_ROBLOG',
+        'FUKA_MATERIAL_LIST': 'FUKA_MATERIAL_LIST',
+        'FUKA_MATERIA_LOG': 'FUKA_MATERIA_LOG',
+        'FUKA_MATERIA_EXCHANGE': 'FUKA_MATERIA_EXCHANGE',
     }
 
     return GameEvent

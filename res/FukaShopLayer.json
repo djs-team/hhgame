@@ -123,12 +123,9 @@
           },
           {
             "ClipAble": false,
-            "BackColorAlpha": 102,
-            "SingleColor": {
-              "R": 0,
-              "G": 0,
-              "B": 0
-            },
+            "BackColorAlpha": 237,
+            "ComboBoxIndex": 1,
+            "SingleColor": {},
             "FirstColor": {
               "R": 150,
               "G": 200
@@ -485,7 +482,6 @@
                     "ScrollDirectionType": 0,
                     "ClipAble": false,
                     "BackColorAlpha": 102,
-                    "ComboBoxIndex": 1,
                     "SingleColor": {
                       "R": 150,
                       "G": 150,
@@ -534,7 +530,7 @@
                       "X": 629.0,
                       "Y": 227.0
                     },
-                    "Name": "ImgPageView",
+                    "Name": "imgPageView",
                     "ctype": "PageViewObjectData"
                   },
                   {
@@ -552,6 +548,8 @@
                     "ColorVector": {
                       "ScaleY": 1.0
                     },
+                    "Scale9Width": 1,
+                    "Scale9Height": 1,
                     "TouchEnable": true,
                     "AnchorPoint": {},
                     "Position": {
@@ -1286,8 +1284,9 @@
                   },
                   {
                     "DirectionType": "Vertical",
+                    "IsBounceEnabled": true,
                     "ScrollDirectionType": 0,
-                    "ClipAble": false,
+                    "ClipAble": true,
                     "BackColorAlpha": 102,
                     "SingleColor": {
                       "R": 150,
@@ -1649,6 +1648,55 @@
                     },
                     "Scale9Width": 1,
                     "Scale9Height": 1,
+                    "AnchorPoint": {},
+                    "Position": {
+                      "X": 701.0565,
+                      "Y": 54.7953
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.5477,
+                      "Y": 0.0761
+                    },
+                    "PreSize": {
+                      "X": 0.2188,
+                      "Y": 0.8542
+                    },
+                    "LeftMargin": 701.0565,
+                    "RightMargin": 298.9435,
+                    "TopMargin": 50.2047,
+                    "BottomMargin": 54.7953,
+                    "Tag": 163,
+                    "ActionTag": -1776103951,
+                    "Size": {
+                      "X": 280.0,
+                      "Y": 615.0
+                    },
+                    "Name": "goodsPnl",
+                    "ctype": "PanelObjectData"
+                  },
+                  {
+                    "ClipAble": false,
+                    "BackColorAlpha": 102,
+                    "SingleColor": {
+                      "R": 150,
+                      "G": 200
+                    },
+                    "FirstColor": {
+                      "R": 150,
+                      "G": 200
+                    },
+                    "EndColor": {},
+                    "ColorVector": {
+                      "ScaleY": 1.0
+                    },
+                    "Scale9Width": 1,
+                    "Scale9Height": 1,
                     "TouchEnable": true,
                     "AnchorPoint": {},
                     "Position": {
@@ -1896,8 +1944,9 @@
             "Children": [
               {
                 "DirectionType": "Vertical",
+                "IsBounceEnabled": true,
                 "ScrollDirectionType": 0,
-                "ClipAble": false,
+                "ClipAble": true,
                 "BackColorAlpha": 102,
                 "SingleColor": {
                   "R": 150,
@@ -2145,6 +2194,55 @@
                   "Y": 196.0
                 },
                 "Name": "exangeGoodsCell",
+                "ctype": "PanelObjectData"
+              },
+              {
+                "ClipAble": false,
+                "BackColorAlpha": 102,
+                "SingleColor": {
+                  "R": 150,
+                  "G": 200
+                },
+                "FirstColor": {
+                  "R": 150,
+                  "G": 200
+                },
+                "EndColor": {},
+                "ColorVector": {
+                  "ScaleY": 1.0
+                },
+                "Scale9Width": 1,
+                "Scale9Height": 1,
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 132.1528,
+                  "Y": 35.4559
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.1032,
+                  "Y": 0.0492
+                },
+                "PreSize": {
+                  "X": 0.2156,
+                  "Y": 0.9125
+                },
+                "LeftMargin": 132.1528,
+                "RightMargin": 871.8472,
+                "TopMargin": 27.5441,
+                "BottomMargin": 35.4559,
+                "Tag": 164,
+                "ActionTag": -1555156440,
+                "Size": {
+                  "X": 276.0,
+                  "Y": 657.0
+                },
+                "Name": "exchangeListPnl",
                 "ctype": "PanelObjectData"
               }
             ],
@@ -2852,7 +2950,7 @@
                       "X": 203.0,
                       "Y": 25.0
                     },
-                    "Name": "goodsPriceText",
+                    "Name": "numText",
                     "ctype": "TextObjectData"
                   },
                   {
@@ -3336,7 +3434,7 @@
                 "Children": [
                   {
                     "FontSize": 26,
-                    "LabelText": "商品名称",
+                    "LabelText": "商品名称商品名称商品名称",
                     "OutlineColor": {
                       "G": 0,
                       "B": 0
@@ -3353,8 +3451,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 35.021,
-                      "Y": 80.3666
+                      "X": 31.7977,
+                      "Y": 177.0648
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -3369,24 +3467,24 @@
                     },
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.2048,
-                      "Y": 0.1116
+                      "X": 0.186,
+                      "Y": 0.2459
                     },
                     "PreSize": {
-                      "X": 0.6082,
+                      "X": 1.8246,
                       "Y": 0.0361
                     },
-                    "LeftMargin": -16.979,
-                    "RightMargin": 83.979,
-                    "TopMargin": 626.6334,
-                    "BottomMargin": 67.3666,
+                    "LeftMargin": -124.2023,
+                    "RightMargin": -16.7977,
+                    "TopMargin": 529.9352,
+                    "BottomMargin": 164.0648,
                     "Tag": 289,
                     "ActionTag": -1856897359,
                     "Size": {
-                      "X": 104.0,
+                      "X": 312.0,
                       "Y": 26.0
                     },
-                    "Name": "Text_44",
+                    "Name": "goodsNameText",
                     "ctype": "TextObjectData"
                   },
                   {
@@ -3624,6 +3722,55 @@
                   "Y": 720.0
                 },
                 "Name": "detailMidPnl",
+                "ctype": "PanelObjectData"
+              },
+              {
+                "ClipAble": false,
+                "BackColorAlpha": 102,
+                "ComboBoxIndex": 1,
+                "SingleColor": {},
+                "FirstColor": {
+                  "R": 150,
+                  "G": 200
+                },
+                "EndColor": {},
+                "ColorVector": {
+                  "ScaleY": 1.0
+                },
+                "Scale9Width": 1,
+                "Scale9Height": 1,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 1228.8049,
+                  "Y": 360.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.96,
+                  "Y": 0.5
+                },
+                "PreSize": {
+                  "X": 0.0812,
+                  "Y": 1.0
+                },
+                "LeftMargin": 1176.8049,
+                "RightMargin": -0.8049,
+                "Tag": 300,
+                "ActionTag": 1361599527,
+                "Size": {
+                  "X": 104.0,
+                  "Y": 720.0
+                },
+                "Name": "bottomWhiltPnl",
                 "ctype": "PanelObjectData"
               },
               {
@@ -3939,55 +4086,6 @@
                   "Y": 720.0
                 },
                 "Name": "detailBottomPnl",
-                "ctype": "PanelObjectData"
-              },
-              {
-                "ClipAble": false,
-                "BackColorAlpha": 102,
-                "ComboBoxIndex": 1,
-                "SingleColor": {},
-                "FirstColor": {
-                  "R": 150,
-                  "G": 200
-                },
-                "EndColor": {},
-                "ColorVector": {
-                  "ScaleY": 1.0
-                },
-                "Scale9Width": 1,
-                "Scale9Height": 1,
-                "TouchEnable": true,
-                "AnchorPoint": {
-                  "ScaleX": 0.5,
-                  "ScaleY": 0.5
-                },
-                "Position": {
-                  "X": 1228.8049,
-                  "Y": 360.0
-                },
-                "Scale": {
-                  "ScaleX": 1.0,
-                  "ScaleY": 1.0
-                },
-                "CColor": {},
-                "IconVisible": false,
-                "PrePosition": {
-                  "X": 0.96,
-                  "Y": 0.5
-                },
-                "PreSize": {
-                  "X": 0.0812,
-                  "Y": 1.0
-                },
-                "LeftMargin": 1176.8049,
-                "RightMargin": -0.8049,
-                "Tag": 300,
-                "ActionTag": 1361599527,
-                "Size": {
-                  "X": 104.0,
-                  "Y": 720.0
-                },
-                "Name": "bottomWhiltPnl",
                 "ctype": "PanelObjectData"
               }
             ],
@@ -5021,61 +5119,6 @@
                       },
                       {
                         "FontSize": 24,
-                        "LabelText": "商品名称：",
-                        "OutlineColor": {
-                          "G": 0,
-                          "B": 0
-                        },
-                        "ShadowColor": {
-                          "R": 110,
-                          "G": 110,
-                          "B": 110
-                        },
-                        "ShadowOffsetX": 2.0,
-                        "ShadowOffsetY": -2.0,
-                        "AnchorPoint": {
-                          "ScaleX": 0.5,
-                          "ScaleY": 0.5
-                        },
-                        "Position": {
-                          "X": 191.7423,
-                          "Y": 111.1281
-                        },
-                        "Scale": {
-                          "ScaleX": 1.0,
-                          "ScaleY": 1.0
-                        },
-                        "RotationSkewX": -90.0,
-                        "RotationSkewY": -90.0,
-                        "CColor": {
-                          "R": 100,
-                          "G": 100,
-                          "B": 100
-                        },
-                        "IconVisible": false,
-                        "PrePosition": {
-                          "X": 0.6998,
-                          "Y": 0.1679
-                        },
-                        "PreSize": {
-                          "X": 0.438,
-                          "Y": 0.0363
-                        },
-                        "LeftMargin": 131.7423,
-                        "RightMargin": 22.2577,
-                        "TopMargin": 538.8719,
-                        "BottomMargin": 99.1281,
-                        "Tag": 327,
-                        "ActionTag": -1143948447,
-                        "Size": {
-                          "X": 120.0,
-                          "Y": 24.0
-                        },
-                        "Name": "goodsNameKeyText",
-                        "ctype": "TextObjectData"
-                      },
-                      {
-                        "FontSize": 24,
                         "LabelText": "运单号：",
                         "OutlineColor": {
                           "G": 0,
@@ -5149,7 +5192,7 @@
                         },
                         "Position": {
                           "X": 191.74,
-                          "Y": 336.35
+                          "Y": 221.35
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -5165,7 +5208,7 @@
                         "IconVisible": false,
                         "PrePosition": {
                           "X": 0.6998,
-                          "Y": 0.5081
+                          "Y": 0.3344
                         },
                         "PreSize": {
                           "X": 1.2263,
@@ -5173,15 +5216,15 @@
                         },
                         "LeftMargin": 23.74,
                         "RightMargin": -85.74,
-                        "TopMargin": 313.65,
-                        "BottomMargin": 324.35,
+                        "TopMargin": 428.65,
+                        "BottomMargin": 209.35,
                         "Tag": 329,
                         "ActionTag": -1654473343,
                         "Size": {
                           "X": 336.0,
                           "Y": 24.0
                         },
-                        "Name": "goodsNameValueText",
+                        "Name": "goodsNameText",
                         "ctype": "TextObjectData"
                       },
                       {
@@ -5351,7 +5394,7 @@
                       },
                       {
                         "FontSize": 20,
-                        "LabelText": "受理中",
+                        "LabelText": "已受理中",
                         "OutlineColor": {
                           "G": 0,
                           "B": 0
@@ -5388,17 +5431,17 @@
                           "Y": 0.8582
                         },
                         "PreSize": {
-                          "X": 0.219,
+                          "X": 0.292,
                           "Y": 0.0302
                         },
-                        "LeftMargin": 14.6037,
-                        "RightMargin": 199.3963,
+                        "LeftMargin": 4.6037,
+                        "RightMargin": 189.3963,
                         "TopMargin": 83.847,
                         "BottomMargin": 558.153,
                         "Tag": 333,
                         "ActionTag": 576879432,
                         "Size": {
-                          "X": 60.0,
+                          "X": 80.0,
                           "Y": 20.0
                         },
                         "Name": "statusText",
@@ -6321,7 +6364,6 @@
             },
             "Scale9Width": 1,
             "Scale9Height": 1,
-            "TouchEnable": true,
             "AnchorPoint": {
               "ScaleX": 0.5,
               "ScaleY": 0.5
@@ -6710,7 +6752,7 @@
                   "X": 38.0,
                   "Y": 150.0
                 },
-                "Name": "giftLogPnl",
+                "Name": "giftLogBtnPnl",
                 "ctype": "PanelObjectData"
               },
               {
@@ -6822,7 +6864,7 @@
                   "X": 38.0,
                   "Y": 150.0
                 },
-                "Name": "robLogPnl",
+                "Name": "robLogBtnPnl",
                 "ctype": "PanelObjectData"
               }
             ],
@@ -7232,7 +7274,7 @@
                           "X": 480.0,
                           "Y": 66.0
                         },
-                        "Name": "Text_73",
+                        "Name": "wordsText",
                         "ctype": "TextObjectData"
                       }
                     ],
@@ -7349,7 +7391,7 @@
                           "X": 288.0,
                           "Y": 33.0
                         },
-                        "Name": "Text_73",
+                        "Name": "imgNameText",
                         "ctype": "TextObjectData"
                       },
                       {

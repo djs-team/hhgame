@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TitleBar">
+        <attr name="title" format="string" />
+        <attr name="leftImgVisibility" format="boolean" />
+        <attr name="leftImgRes" format="reference" />
+        <attr name="rightImgRes" format="reference" />
+        <attr name="rightText" format="string" />
+        <attr name="leftText" format="string" />
+        <attr name="backgroundRes" format="reference" />
+        <attr name="titleColor" format="color" />
+        <attr name="titleSize" format="dimension" />
+        <attr name="rightTextSize" format="dimension" />
+        <attr name="rightTitleColor" format="color" />
+        <attr name="titleBold" format="boolean" />
+        <attr name="rightTitleDrawableLeft" format="reference" />
+    </declare-styleable>
+
+
+    <declare-styleable name="AlignTextView">
+        <attr name="alignOnlyOneLine" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="MaxRelativeLayout">
+        <attr name="maxHeight" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="FixedTabLayout">
+        <attr name="textSize" format="dimension" />
+        <attr name="textNormalColor" format="color" />
+        <attr name="textSelectColor" format="color" />
+        <attr name="lineHeight" format="dimension" />
+        <attr name="lineWidth" format="dimension" />
+        <attr name="lineBackground" format="reference" />
+        <attr name="horizontalMargin" format="dimension" />
+        <attr name="tabPadding" format="dimension" />
+        <attr name="tabBackground" format="reference" />
+        <attr name="tabWidth" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="TagFlowLayout">
+        <attr name="max_select" format="integer"></attr>
+        <attr name="tag_gravity">
+            <enum name="left" value="-1" />
+            <enum name="center" value="0" />
+            <enum name="right" value="1" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="ColorTextView">
+        <attr name="ctvText" format="string" />
+        <attr name="ctvBackground" format="color"/>
+        <attr name="ctvTextSize" format="dimension"/>
+        <attr name="ctvTextColor" format="color"/>
+        <attr name="ctvCornerSize" format="integer"/>
+    </declare-styleable>
+    <declare-styleable name="WithBackgroundTextView">
+        <attr name="radius" format="dimension" />
+        <attr name="withTopLeftRadius" format="dimension" />
+        <attr name="withTopRightRadius" format="dimension" />
+        <attr name="withBottomLeftRadius" format="dimension" />
+        <attr name="withBottomRightRadius" format="dimension" />
+        <attr name="withLeftRadius" format="dimension" />
+        <attr name="withRightRadius" format="dimension" />
+        <attr name="withBackgroundColor" format="color" />
+        <attr name="withStrokeWidth" format="dimension" />
+        <attr name="withStrokeColor" format="color" />
+
+    </declare-styleable>
+    <declare-styleable name="BidirectionalSeekBar">
+        <attr name="pb_within_color" format="color" />
+        <attr name="pb_without_color" format="color" />
+        <attr name="pb_height" format="dimension" />
+        <attr name="ball_left_solid_color" format="color" />
+        <attr name="ball_right_solid_color" format="color" />
+        <attr name="ball_left_stroke_color" format="color" />
+        <attr name="ball_right_stroke_color" format="color" />
+        <attr name="ball_radius_size" format="dimension" />
+        <attr name="ball_stroke_size" format="dimension" />
+        <attr name="text_left_num" format="integer"/>
+        <attr name="text_right_num" format="integer"/>
+        <attr name="text_min_unit" format="integer"/>
+        <attr name="text_units" format="string"/>
+        <attr name="ball_left_drawable" format="reference"/>
+        <attr name="ball_right_drawable" format="reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="heartimageview">
+        <attr name="border_size" format="dimension" />
+        <attr name="in_border_color" format="color" />
+        <attr name="out_border_color" format="color"/>
+        <attr name="shape_type" format="string"/>
+    </declare-styleable>
+</resources>

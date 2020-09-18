@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="136dp"
+    android:layout_height="160dp"
+    android:orientation="vertical"
+    android:paddingLeft="7dp"
+    android:paddingTop="15dp"
+    android:paddingRight="7dp"
+    android:paddingBottom="15dp"
+    android:background="#e6ffffff">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="22dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="开播"
+            android:textColor="#FF333333"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_sshow_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="¥2"
+            android:textColor="#ffff5b56"
+            android:textSize="13sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="22dp">
+
+        <ProgressBar
+            android:id="@+id/progress_live"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:max="100"
+            android:progress="70"
+            android:progressDrawable="@drawable/progressbar_bg" />
+
+        <TextView
+            android:id="@+id/tv_live_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="直播"
+            android:textColor="#FF333333"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_live_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="7dp"
+            android:layout_toRightOf="@id/tv_live_name"
+            android:text="1:32/3:00"
+            android:textColor="#FF333333"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_live_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="¥2"
+            android:textColor="#ffff5b56"
+            android:textSize="13sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="22dp">
+        <ProgressBar
+            android:id="@+id/progress_manmic"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="22dp"
+            android:layout_gravity="center"
+            android:max="100"
+            android:progress="80"
+            android:progressDrawable="@drawable/progressbar_bg" />
+        <TextView
+            android:id="@+id/tv_manmic_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="♂位"
+            android:textColor="#FF333333"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_manmic_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="7dp"
+            android:layout_toRightOf="@id/tv_manmic_desc"
+            android:text="1:32/3:00"
+            android:textColor="#FF333333"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_manmicro_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="¥2"
+            android:textColor="#ffff5b56"
+            android:textSize="13sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="22dp">
+
+        <TextView
+            android:id="@+id/tv_inmic_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="♂♀连麦"
+            android:textColor="#FF333333"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_inmic_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="¥2"
+            android:textColor="#ffff5b56"
+            android:textSize="13sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+
+        android:layout_height="22dp">
+
+        <TextView
+            android:id="@+id/tv_pnum_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="人数"
+            android:textColor="#FF333333"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_pnum_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="7dp"
+            android:layout_toRightOf="@id/tv_pnum_desc"
+            android:text="12/15"
+            android:textColor="#FF333333"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_pnum_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="¥2"
+            android:textColor="#ffff5b56"
+            android:textSize="13sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="22dp">
+
+        <TextView
+            android:id="@+id/tv_rose_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="玫瑰"
+            android:textColor="#FF333333"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_rose_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="7dp"
+            android:layout_toRightOf="@id/tv_rose_desc"
+            android:text="12/1500"
+            android:textColor="#FF333333"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_rose_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="¥2"
+            android:textColor="#ffff5b56"
+            android:textSize="13sp" />
+    </RelativeLayout>
+</LinearLayout>

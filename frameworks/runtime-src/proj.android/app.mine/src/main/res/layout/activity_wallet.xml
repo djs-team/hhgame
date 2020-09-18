@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="151dp"
+                android:background="@drawable/bg_index_top">
+
+            </RelativeLayout>
+            <com.deepsea.mua.stub.view.TitleBar
+                android:id="@+id/title_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:title="我的钱包"
+                app:backgroundRes="@color/transparent"
+                app:leftImgRes="@drawable/ic_back"
+                app:titleColor="@color/white"/>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/md_layout"
+                android:layout_width="match_parent"
+                android:layout_height="129dp"
+                android:layout_marginLeft="9dp"
+                android:layout_marginTop="73dp"
+                android:layout_marginRight="7dp"
+                android:background="@drawable/wallet_red_rose_bg">
+
+                <TextView
+                    android:id="@+id/md_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="37dp"
+                    android:text="玫瑰"
+                    android:textColor="#ff333333"
+                    android:textSize="19sp"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/balance_md_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="12dp"
+                    android:text="888888"
+                    android:textColor="#ff818181"
+                    android:textSize="19sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/md_title" />
+
+                <TextView
+                    android:id="@+id/md_recharge_tv"
+                    android:layout_width="80dp"
+                    android:layout_height="25dp"
+                    android:layout_marginRight="35dp"
+                    android:background="@drawable/bg_friend_agree"
+                    android:gravity="center"
+                    android:text="充值"
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_red_rose_question"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="11dp"
+                    android:paddingTop="9dp"
+                    android:paddingRight="11dp"
+                    android:paddingBottom="9dp"
+                    android:visibility="gone"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:layout_width="11dp"
+                        android:layout_height="11dp"
+                        android:src="@drawable/icon_question_mark" />
+                </RelativeLayout>
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/diamond_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/md_layout"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="21dp">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="280dp"
+                    android:layout_marginTop="10dp"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/diamond_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="19dp"
+                        android:layout_marginTop="22dp"
+                        android:text="余额"
+                        android:textColor="#ff783eef"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/diamond_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginTop="12dp"
+                        android:text="888888"
+                        android:textColor="#ff818181"
+                        android:textSize="16sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/diamond_title" />
+
+                    <TextView
+                        android:id="@+id/diamond_recharge_tv"
+                        android:layout_width="80dp"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="28dp"
+                        android:layout_marginRight="19dp"
+                        android:background="@drawable/bg_wallet_operate_purple"
+                        android:gravity="center"
+                        android:text="兑换"
+                        android:textColor="#ff878787"
+                        android:textSize="11sp"
+                        android:visibility="visible"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        android:id="@+id/line"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="19dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="20dp"
+                        android:background="#BBBBBB"
+                        app:layout_constraintTop_toBottomOf="@id/diamond_tv" />
+
+                    <TextView
+                        android:id="@+id/tv_income_details"
+                        android:layout_width="81dp"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="13dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@drawable/bg_wallet_operate_purple"
+                        android:gravity="center"
+                        android:text="收入明细"
+                        android:textColor="#ff878787"
+                        android:textSize="11sp"
+
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/line" />
+
+                    <TextView
+                        android:id="@+id/tv_crash_withdrawal_details"
+                        android:layout_width="81dp"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="11dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@drawable/bg_wallet_operate_purple"
+                        android:gravity="center"
+                        android:text="提现明细"
+                        android:textColor="#ff878787"
+                        android:textSize="11sp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_income_details" />
+
+                    <TextView
+                        android:id="@+id/tv_crash_withdrawal"
+                        android:layout_width="81dp"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="11dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@drawable/bg_wallet_operate_purple"
+                        android:gravity="center"
+                        android:text="提现"
+                        android:textColor="#ff878787"
+                        android:textSize="11sp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_crash_withdrawal_details" />
+
+                    <TextView
+                        android:id="@+id/tv_receiving_account"
+                        android:layout_width="81dp"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="11dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@drawable/bg_wallet_operate_purple"
+                        android:gravity="center"
+                        android:text="收款账号"
+                        android:textColor="#ff878787"
+                        android:textSize="11sp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_crash_withdrawal" />
+
+                    <TextView
+                        android:id="@+id/tv_under_review"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="8dp"
+                        android:textColor="#ffffffff"
+                        android:textSize="13sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/diamond_tv" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="21dp"
+                        android:layout_marginTop="15dp"
+                        android:orientation="vertical"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_under_review">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="收入汇总"
+                            android:textColor="#ff878787"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/tv_income_today"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:textColor="#ff878787"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            android:id="@+id/tv_income_yesterday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:textColor="#ff878787"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            android:id="@+id/tv_income_week"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:textColor="#ff878787"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            android:id="@+id/tv_income_month"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:textColor="#ff878787"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+
+
+                </android.support.constraint.ConstraintLayout>
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:layout_marginTop="12dp"
+                android:id="@+id/redpakage_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/diamond_layout"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="21dp">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="280dp"
+                    android:layout_marginTop="10dp"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/redpakage_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="19dp"
+                        android:layout_marginTop="22dp"
+                        android:text="红包余额"
+                        android:textColor="#ffeb5bba"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/redpakage_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginTop="12dp"
+                        android:text="888888"
+                        android:textColor="#ff818181"
+                        android:textSize="16sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/redpakage_title" />
+
+                    <TextView
+                        android:id="@+id/redpakage_recharge_tv"
+                        android:layout_width="80dp"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="28dp"
+                        android:layout_marginRight="19dp"
+                        android:background="@drawable/bg_wallet_operate_pink"
+                        android:gravity="center"
+                        android:text="兑换"
+                        android:textColor="#ff878787"
+                        android:textSize="11sp"
+                        android:visibility="visible"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        android:id="@+id/line2"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="19dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="20dp"
+                        android:background="#BBBBBB"
+                        app:layout_constraintTop_toBottomOf="@id/redpakage_tv" />
+
+                    <TextView
+                        android:id="@+id/tv_redpakage_income_details"
+                        android:layout_width="81dp"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="13dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@drawable/bg_wallet_operate_pink"
+                        android:gravity="center"
+                        android:text="收入明细"
+                        android:textColor="#ff878787"
+                        android:textSize="11sp"
+
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/line2" />
+
+                    <TextView
+                        android:id="@+id/tv_redpakage_crash_withdrawal_details"
+                        android:layout_width="81dp"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="11dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@drawable/bg_wallet_operate_pink"
+                        android:gravity="center"
+                        android:text="提现明细"
+                        android:textColor="#ff878787"
+                        android:textSize="11sp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_redpakage_income_details" />
+
+                    <TextView
+                        android:id="@+id/tv_redpakage_crash_withdrawal"
+                        android:layout_width="81dp"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="11dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@drawable/bg_wallet_operate_pink"
+                        android:gravity="center"
+                        android:text="提现"
+                        android:textColor="#ff878787"
+                        android:textSize="11sp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_redpakage_crash_withdrawal_details" />
+
+                    <TextView
+                        android:id="@+id/tv_redpakage_receiving_account"
+                        android:layout_width="81dp"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="11dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@drawable/bg_wallet_operate_pink"
+                        android:gravity="center"
+                        android:text="收款账号"
+                        android:textColor="#ff878787"
+                        android:textSize="11sp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_redpakage_crash_withdrawal" />
+
+                    <TextView
+                        android:id="@+id/tv_redpakage_under_review"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="8dp"
+                        android:textColor="#ffffffff"
+                        android:textSize="13sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/redpakage_tv" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="21dp"
+                        android:layout_marginTop="15dp"
+                        android:orientation="vertical"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_redpakage_under_review">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="收入汇总"
+                            android:textColor="#ff878787"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/tv_redpakage_income_today"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:textColor="#ff878787"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            android:id="@+id/tv_redpakage_income_yesterday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:textColor="#ff878787"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            android:id="@+id/tv_redpakage_income_week"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:textColor="#ff878787"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            android:id="@+id/tv_redpakage_income_month"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:textColor="#ff878787"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+
+
+                </android.support.constraint.ConstraintLayout>
+            </android.support.v7.widget.CardView>
+        </RelativeLayout>
+    </ScrollView>
+</layout>

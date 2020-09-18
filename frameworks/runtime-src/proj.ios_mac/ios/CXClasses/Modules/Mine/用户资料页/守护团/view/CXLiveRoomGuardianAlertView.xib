@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CXLiveRoomGuardianAlertView">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="live_room_guiardian_alertView_bg" translatesAutoresizingMaskIntoConstraints="NO" id="kci-M5-jhi">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="alb-R5-5sd">
+                    <rect key="frame" x="3" y="2" width="36" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="36" id="ExA-xI-md3"/>
+                        <constraint firstAttribute="width" constant="36" id="fOS-nx-OMJ"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="live_room_guiardian_avatar" translatesAutoresizingMaskIntoConstraints="NO" id="vL0-Yu-mpF">
+                    <rect key="frame" x="2" y="0.0" width="38" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="38" id="9Vw-EM-ygI"/>
+                        <constraint firstAttribute="height" constant="40" id="aUt-KZ-anx"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="kci-M5-jhi" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="5VB-it-a53"/>
+                <constraint firstItem="alb-R5-5sd" firstAttribute="centerY" secondItem="vL0-Yu-mpF" secondAttribute="centerY" id="9YY-O1-hhT"/>
+                <constraint firstItem="alb-R5-5sd" firstAttribute="centerX" secondItem="vL0-Yu-mpF" secondAttribute="centerX" id="9fh-I5-Hhb"/>
+                <constraint firstItem="vL0-Yu-mpF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="2" id="FIY-iN-adk"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="kci-M5-jhi" secondAttribute="bottom" id="Q8B-rg-l67"/>
+                <constraint firstAttribute="trailing" secondItem="kci-M5-jhi" secondAttribute="trailing" id="SZP-gl-zQK"/>
+                <constraint firstItem="kci-M5-jhi" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Y4L-Dj-me1"/>
+                <constraint firstItem="vL0-Yu-mpF" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="ebf-Iq-N6I"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="avatar" destination="alb-R5-5sd" id="Ale-oo-NlJ"/>
+            </connections>
+            <point key="canvasLocation" x="-52.173913043478265" y="3.3482142857142856"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="live_room_guiardian_alertView_bg" width="375" height="41.5"/>
+        <image name="live_room_guiardian_avatar" width="38" height="42.5"/>
+    </resources>
+</document>

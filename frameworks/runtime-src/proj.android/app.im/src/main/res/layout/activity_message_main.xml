@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <fragment
+            android:id="@+id/message_fragment"
+            android:name="com.deepsea.mua.app.im.ui.MessageMainFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <RelativeLayout
+            android:id="@+id/rl_finish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.deepsea.mua.stub.view.TitleBar
+                android:layout_width="40dp"
+                android:layout_height="65dp"
+                app:backgroundRes="@color/transparent"
+                app:leftImgRes="@drawable/ic_back_black"
+                app:titleColor="@color/white"
+                app:titleSize="17sp" />
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

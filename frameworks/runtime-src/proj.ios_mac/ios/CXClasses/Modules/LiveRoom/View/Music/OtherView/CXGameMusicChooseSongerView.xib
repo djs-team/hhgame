@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CXGameMusicChooseSongerView">
+            <rect key="frame" x="0.0" y="0.0" width="345" height="400"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rho-1t-dHS">
+                    <rect key="frame" x="63" y="16" width="219" height="29"/>
+                    <string key="text">请选择你的演唱嘉宾
+</string>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="（只有麦上嘉宾可以演唱）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dgb-hf-Jcn">
+                    <rect key="frame" x="87" y="45.5" width="171.5" height="17"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uuJ-67-dIE">
+                    <rect key="frame" x="10" y="232.5" width="157.5" height="157.5"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="uuJ-67-dIE" secondAttribute="height" multiplier="1:1" id="GI2-VG-wbq"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oiW-pO-ZiF">
+                    <rect key="frame" x="177.5" y="232.5" width="157.5" height="157.5"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="oiW-pO-ZiF" secondAttribute="height" multiplier="1:1" id="pnI-hv-9bl"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="oiW-pO-ZiF" secondAttribute="trailing" constant="10" id="3U5-T7-tqx"/>
+                <constraint firstItem="oiW-pO-ZiF" firstAttribute="width" secondItem="uuJ-67-dIE" secondAttribute="width" id="6jF-12-KiK"/>
+                <constraint firstItem="uuJ-67-dIE" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="TNV-ib-kOz"/>
+                <constraint firstItem="oiW-pO-ZiF" firstAttribute="centerY" secondItem="uuJ-67-dIE" secondAttribute="centerY" id="VDH-dp-hdg"/>
+                <constraint firstItem="rho-1t-dHS" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="XyD-sc-n1u"/>
+                <constraint firstAttribute="bottom" secondItem="uuJ-67-dIE" secondAttribute="bottom" constant="10" id="fkK-0C-6vs"/>
+                <constraint firstItem="Dgb-hf-Jcn" firstAttribute="top" secondItem="rho-1t-dHS" secondAttribute="bottom" constant="0.5" id="gHu-i9-UUY"/>
+                <constraint firstItem="oiW-pO-ZiF" firstAttribute="leading" secondItem="uuJ-67-dIE" secondAttribute="trailing" constant="10" id="lK9-cE-H7n"/>
+                <constraint firstItem="Dgb-hf-Jcn" firstAttribute="centerX" secondItem="rho-1t-dHS" secondAttribute="centerX" id="tfb-4u-nFB"/>
+                <constraint firstItem="rho-1t-dHS" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="xet-7L-M7m"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="16.666666666666668" y="-278.57142857142856"/>
+        </view>
+    </objects>
+</document>

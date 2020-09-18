@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/primary_bg"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/title_rl"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/title_height"
+            android:background="@color/white">
+
+            <EditText
+                android:id="@+id/search_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="60dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/transparent"
+                android:drawableLeft="@drawable/ic_room_search_gray"
+                android:gravity="center_vertical"
+                android:hint="搜索昵称、ID"
+                android:imeOptions="actionDone"
+                android:maxLength="20"
+                android:minHeight="26dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="#DCDCDC"
+                android:textCursorDrawable="@null"
+                android:textSize="12sp"
+                app:bl_corners_radius="13dp"
+                app:bl_solid_color="@color/primary_bg"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <TextView
+                android:id="@+id/cancel_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingTop="10dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="10dp"
+                android:text="取消"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@id/search_edit"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/search_edit" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/primary_bg"
+                app:layout_constraintBottom_toBottomOf="parent" />
+        </android.support.constraint.ConstraintLayout>
+
+        <!--最近访问-->
+        <RelativeLayout
+            android:id="@+id/latest_rl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/title_rl">
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/constraint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/content_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="搜索准确内容"
+                    android:textColor="#BBBBBB"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <View
+                    android:id="@+id/line"
+                    android:layout_width="2dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="11dp"
+                    android:background="#DCDCDC"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/content_tv" />
+
+                <TextView
+                    android:id="@+id/people_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="36dp"
+                    android:padding="10dp"
+                    android:text="玩家"
+                    android:textColor="#ff6b8cd5"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@id/line"
+                    app:layout_constraintRight_toLeftOf="@id/line"
+                    app:layout_constraintTop_toTopOf="@id/line" />
+
+                <TextView
+                    android:id="@+id/room_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="36dp"
+                    android:padding="10dp"
+                    android:text="房间 "
+                    android:textColor="#ff6b8cd5"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@id/line"
+                    app:layout_constraintLeft_toRightOf="@id/line"
+                    app:layout_constraintTop_toTopOf="@id/line" />
+            </android.support.constraint.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/latest_tv"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@id/constraint"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingLeft="12dp"
+                android:text="最近访问" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/latest_rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/latest_tv"
+                android:overScrollMode="never" />
+        </RelativeLayout>
+
+        <!--搜索结果-->
+        <android.support.v4.widget.NestedScrollView
+            android:id="@+id/scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/title_rl"
+            android:overScrollMode="never"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/people_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="12dp"
+                        android:layout_weight="1"
+                        android:text="用户"
+                        android:textColor="#ffbbbbbb"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/people_more"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="12dp"
+                        android:drawableRight="@drawable/ic_arrow_r_gray"
+                        android:drawablePadding="10dp"
+                        android:gravity="center_vertical"
+                        android:text="查看更多"
+                        android:textColor="#ffbbbbbb"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/people_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:overScrollMode="never" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+                    android:background="@color/primary_bg" />
+
+                <LinearLayout
+                    android:id="@+id/room_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="12dp"
+                        android:layout_weight="1"
+                        android:text="房间"
+                        android:textColor="#ffbbbbbb"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/room_more"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="12dp"
+                        android:drawableRight="@drawable/ic_arrow_r_gray"
+                        android:drawablePadding="10dp"
+                        android:gravity="center_vertical"
+                        android:text="查看更多"
+                        android:textColor="#ffbbbbbb"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/room_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:overScrollMode="never" />
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+        <!--空数据-->
+        <LinearLayout
+            android:id="@+id/empty_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/title_rl"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_search_empty"
+                android:gravity="center"
+                android:paddingRight="16dp"
+                android:text="无搜索结果"
+                android:textColor="#FFA67B"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="85dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="30dp"
+                android:text="换个词试试～"
+                android:textColor="#ff666666"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

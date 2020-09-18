@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rl_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_sys_msg"
+            android:paddingLeft="9dp"
+            android:paddingTop="13dp"
+            android:paddingRight="14dp"
+            android:paddingBottom="13dp">
+
+            <ImageView
+                android:id="@+id/iv_photo"
+                android:layout_width="57dp"
+                android:layout_height="57dp"
+                android:layout_marginRight="14dp"
+                android:src="@drawable/ic_place_default" />
+
+            <RelativeLayout
+                android:layout_marginLeft="9dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/iv_photo">
+
+                <com.deepsea.mua.stub.view.WithBackgroundTextView
+                    android:id="@+id/tv_state_desc"
+                    android:layout_width="38dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="center"
+                    android:text="热聊中"
+                    android:textColor="@color/white"
+                    android:textSize="9sp"
+                    app:radius="8dp"
+                    app:withBackgroundColor="#EF51B2"
+                    android:visibility="gone"/>
+                <com.deepsea.mua.stub.view.WithBackgroundTextView
+                    android:id="@+id/tv_state_bg"
+                    android:layout_marginLeft="17dp"
+                    android:layout_width="7dp"
+                    android:layout_height="7dp"
+                    app:withBackgroundColor="#0FE770"
+                    app:radius="90dp"
+                    />
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/tv_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/iv_photo"
+                android:text="用户名称"
+                android:textColor="#ff282828"
+                android:textSize="19sp" />
+
+            <RelativeLayout
+                android:layout_marginTop="8dp"
+                android:id="@+id/rl_sex"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginLeft="7dp"
+                android:layout_toRightOf="@id/tv_username"
+                android:background="@drawable/bg_sex_man">
+
+                <ImageView
+                    android:id="@+id/sex_iv"
+                    android:layout_width="9dp"
+                    android:layout_height="9dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/icon_find_sex_man" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/age_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@id/rl_sex"
+                android:text="14"
+                android:textColor="#ff818181"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/iv_location"
+                android:layout_width="10dp"
+                android:layout_height="12dp"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="9dp"
+                android:layout_toRightOf="@id/age_tv"
+                android:src="@drawable/ic_location" />
+
+            <TextView
+                android:id="@+id/tv_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="7dp"
+                android:layout_toRightOf="@id/iv_location"
+                android:text="河北省"
+                android:textColor="#ff4a4a4a"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_last_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_username"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="50dp"
+                android:layout_toRightOf="@id/iv_photo"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="我想寻觅一个有缘的异性"
+                android:textColor="#ff4a4a4a"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="6dp"
+                android:text="10:00"
+                android:textColor="#ff656565"
+                android:textSize="14sp" />
+
+            <com.deepsea.mua.stub.view.WithBackgroundTextView
+                android:id="@+id/unread_msg_number"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_below="@id/tv_time"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="1"
+                android:textColor="@android:color/white"
+                android:textSize="9sp"
+                android:visibility="visible"
+                app:radius="90dp"
+                app:withBackgroundColor="#F70505" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="13dp"
+            android:background="#BCBCBC" />
+    </LinearLayout>
+</layout>

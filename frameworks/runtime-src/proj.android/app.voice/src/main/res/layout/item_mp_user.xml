@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/mp_user_iv"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginRight="9dp"
+            android:background="@drawable/selector_send_user"
+            android:src="@drawable/ic_place"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/mp_select_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_map_user_select"
+            app:layout_constraintBottom_toBottomOf="@id/mp_user_iv"
+            app:layout_constraintRight_toRightOf="@id/mp_user_iv" />
+    </android.support.constraint.ConstraintLayout>
+</layout>

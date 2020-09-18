@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_radius_12dp"
+        android:orientation="vertical"
+        android:paddingBottom="18dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="54dp"
+            android:text="您已经完成新手任务【首次上麦】"
+            android:textColor="#ff000000"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="23dp"
+            android:src="@drawable/ic_task_rose" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="23dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="获得"
+                android:textColor="#ff000000"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_rose_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="2玫瑰"
+                android:textColor="#FE366A"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="11dp"
+            android:text="可在【个人中心-任务中心】领取奖励"
+            android:textColor="#ff999999"
+            android:textSize="12sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp">
+
+            <com.deepsea.mua.stub.view.WithBackgroundTextView
+                android:id="@+id/tv_cancel"
+                android:layout_width="115dp"
+                android:layout_height="36dp"
+                android:layout_marginLeft="23dp"
+                android:gravity="center"
+                android:text="稍后领取"
+                android:textColor="@color/white"
+                app:radius="22dp"
+                app:withBackgroundColor="#FE366A" />
+
+            <com.deepsea.mua.stub.view.WithBackgroundTextView
+                android:id="@+id/tv_confirm"
+                android:layout_width="115dp"
+                android:layout_height="36dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="23dp"
+                android:gravity="center"
+                android:text="立即领取"
+                android:textColor="@color/white"
+                app:radius="22dp"
+                app:withBackgroundColor="#FE366A" />
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

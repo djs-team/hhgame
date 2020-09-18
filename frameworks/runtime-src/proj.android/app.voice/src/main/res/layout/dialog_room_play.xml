@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="playIntro"
+            type="String" />
+
+        <variable
+            name="dlg"
+            type="com.deepsea.mua.voice.dialog.RoomPlayDialog" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dialog_corner_bg">
+
+        <ImageView
+            android:id="@+id/close_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:onClick="@{()->dlg.close()}"
+            android:paddingLeft="15dp"
+            android:paddingTop="15dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="7dp"
+            android:src="@drawable/ic_black_close" />
+
+        <TextView
+            android:id="@+id/title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/close_iv"
+            android:layout_centerHorizontal="true"
+            android:text="相亲规则"
+            android:textColor="#333333"
+            android:textSize="18sp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title_tv">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginRight="18dp"
+                android:layout_marginBottom="26dp"
+                android:text="@{playIntro}"
+                android:textColor="#666666"
+                android:textSize="15sp" />
+        </ScrollView>
+    </RelativeLayout>
+</layout>

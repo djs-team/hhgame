@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/ll_content"
+            android:layout_width="match_parent"
+            android:layout_height="355dp"
+            android:layout_gravity="center"
+            android:background="@drawable/icon_upmicro_card"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/tv_ok"
+                android:layout_width="185dp"
+                android:layout_height="42dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="282dp"
+                android:background="@drawable/bg_early_access"
+                android:gravity="center"
+                android:text="抢先体验"
+                android:textColor="#ff78482f"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="13dp"
+                android:text="上麦卡有效期为24小时  新人前7天每日登录赠送一张"
+                android:textColor="#ffffffff"
+                android:textSize="9sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="18dp"
+            android:text="新人福利"
+            android:textColor="#ffc63016"
+            android:textSize="24sp" />
+
+        <ImageView
+            android:id="@+id/close_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="14dp"
+            android:padding="15dp"
+            android:src="@drawable/close"
+            android:visibility="visible" />
+    </RelativeLayout>
+</layout>

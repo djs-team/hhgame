@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CXLiveRoomUserProfileJinyanDateCellID" id="gTV-IL-0wX" customClass="CXLiveRoomUserProfileJinyanDateCell">
+            <rect key="frame" x="0.0" y="0.0" width="135" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="135" height="50"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="doW-XU-GJk">
+                        <rect key="frame" x="4" y="4" width="127" height="42"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                        <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <inset key="imageEdgeInsets" minX="-4" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <state key="normal" title="10分钟" image="home_selected_off">
+                            <color key="titleColor" red="0.73333333329999995" green="0.73333333329999995" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                    </button>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="doW-XU-GJk" secondAttribute="trailing" constant="4" id="Eg6-hs-zxc"/>
+                <constraint firstAttribute="bottom" secondItem="doW-XU-GJk" secondAttribute="bottom" constant="4" id="lrk-wO-LDK"/>
+                <constraint firstItem="doW-XU-GJk" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="pnd-Jc-C0w"/>
+                <constraint firstItem="doW-XU-GJk" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="4" id="trz-tF-Xef"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
+            <size key="customSize" width="135" height="50"/>
+            <connections>
+                <outlet property="dateBtn" destination="doW-XU-GJk" id="E3F-QM-MRx"/>
+            </connections>
+            <point key="canvasLocation" x="199.27536231884059" y="115.84821428571428"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="home_selected_off" width="10.5" height="10.5"/>
+    </resources>
+</document>

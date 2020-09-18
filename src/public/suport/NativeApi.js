@@ -1,4 +1,3 @@
-
 /**
  *  Native 跨平台接口封装
  */
@@ -28,15 +27,37 @@ load('public/suport/NativeApi', function () {
                 console.log('虽然我挂掉了,但是我还是坚持打印了了log: ' + String(message))
             }
         },
+        thirdPay: function (type,message) {
+            try {
+                if (cc.sys.OS_ANDROID === cc.sys.os) {
+                    console.log('thirdPay-start')
+                    jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'thirdPay', '(Ljava/lang/String;Ljava/lang/String;)V', type, message)
+                } else if (cc.sys.OS_IOS === cc.sys.os) {
+                    console.log(String(message))
+                }
+            } catch (e) {
+                console.log('虽然我挂掉了,但是我还是坚持打印了了log: ' + String(e))
+            }
+        },
         wxLogin: function () {
             try {
                 if (cc.sys.OS_ANDROID === cc.sys.os) {
-                    jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'StartWxLogin', '()V')
+                    jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'login', '(Ljava/lang/String;)V', "wx")
                 } else if (cc.sys.OS_IOS === cc.sys.os) {
                     jsb.reflection.callStaticMethod('AppController', 'sendAuthRequest')
                 }
             } catch (e) {
                 this.HelloOC('wxLogin throw: ' + JSON.stringify(e))
+            }
+        }, oneClickLogin: function () {
+            try {
+                if (cc.sys.OS_ANDROID === cc.sys.os) {
+                    jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'login', '(Ljava/lang/String;)V', "jpush")
+                } else if (cc.sys.OS_IOS === cc.sys.os) {
+
+                }
+            } catch (e) {
+                this.HelloOC('oneCLickLogin throw: ' + JSON.stringify(e))
             }
         },
         wxShareUrl: function (url, title, description, shareIds) {

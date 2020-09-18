@@ -45,6 +45,7 @@ load('game/public/HttpGame', function () {
         },
 
         httpLoginBack: function (msg) {
+            cc.log('=========httpLoginBack============error================'+JSON.stringify(msg))
 
             if (msg.status !== 0) {
                 cc.log('=========httpLoginBack============error================')
@@ -149,7 +150,7 @@ load('game/public/HttpGame', function () {
 
         requestBack: function (msg) {
             if (msg.code !== 0) {
-                cc.log('------------->>>httpGame error happen')
+                cc.log('----requestBack--------->>>httpGame error happen===' + JSON.stringify(msg))
                 return
             }
             let data = msg.data
@@ -173,7 +174,7 @@ load('game/public/HttpGame', function () {
 
         userDataBack: function (msg) {
             if (msg.status !== 0) {
-                cc.log('------------->>>httpGame error happen')
+                cc.log('------userDataBack------->>>httpGame error happen')
                 return
             }
             msg.pRole = msg.roleCode
@@ -211,7 +212,7 @@ load('game/public/HttpGame', function () {
         updateUserNameBack: function (msg) {
 
             if (msg.status !== 0) {
-                cc.log('------------->>>httpGame updateUserNameBack error happen')
+                cc.log('-----updateUserNameBack-------->>>httpGame updateUserNameBack error happen')
                 return
             }
 
@@ -239,7 +240,7 @@ load('game/public/HttpGame', function () {
         authenticationBack: function (msg) {
 
             if (msg.status !== 0) {
-                cc.log('------------->>>httpGame authenticationBack error happen')
+                cc.log('------authenticationBack------->>>httpGame authenticationBack error happen')
                 return
             }
 
@@ -266,7 +267,7 @@ load('game/public/HttpGame', function () {
         cashCowNumBack: function (msg) {
 
             if (msg.status !== 0) {
-                cc.log('------------->>>httpGame cashCowNumBack error happen')
+                cc.log('-----cashCowNumBack-------->>>httpGame cashCowNumBack error happen')
                 return
             }
 
@@ -295,7 +296,7 @@ load('game/public/HttpGame', function () {
         cashCowBack: function (msg) {
 
             if (msg.status !== 0) {
-                cc.log('------------->>>httpGame cashCowBack error happen')
+                cc.log('------cashCowBack------->>>httpGame cashCowBack error happen')
                 return
             }
 
@@ -331,7 +332,7 @@ load('game/public/HttpGame', function () {
         cashCowRecordBack: function (msg) {
 
             if (msg.status !== 0) {
-                cc.log('------------->>>httpGame cashCowRecordBack error happen')
+                cc.log('------cashCowRecordBack------->>>httpGame cashCowRecordBack error happen')
                 return
             }
 
@@ -354,7 +355,7 @@ load('game/public/HttpGame', function () {
         TURNTABLEBack: function (msg) {
 
             if (msg.status !== 0) {
-                cc.log('------------->>>httpGame TURNTABLEBack error happen')
+                cc.log('----TURNTABLEBack--------->>>httpGame TURNTABLEBack error happen')
                 return
             }
 
@@ -940,7 +941,7 @@ load('game/public/HttpGame', function () {
 
         VIPPaysOrderBack: function (msg) {
             if (msg.status !== 0) {
-                cc.log('------------->>>httpGame VIPPaysOrderBack error happen')
+                cc.log('------------->>>httpGame VIPPaysOrderBack error happen'+JSON.stringify(msg))
                 return
             }
             appInstance.sendNotification(GameEvent.PLAYER_BUY_VIP_ORDER, msg)

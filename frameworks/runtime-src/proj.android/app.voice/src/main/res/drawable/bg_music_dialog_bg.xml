@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?><!-- 带圆角 白色背景 黄色色边框  长方体 -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#ffef0000" />
+            <gradient
+                android:angle="180"
+                android:endColor="#ff9351fe"
+                android:startColor="#ff4b7cff"
+                android:type="linear"
+                android:useLevel="true" />
+            <corners
+                android:topLeftRadius="10dp"
+                android:topRightRadius="10dp" />
+        </shape>
+    </item>
+</layer-list>

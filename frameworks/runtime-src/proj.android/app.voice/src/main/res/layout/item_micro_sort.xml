@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="isManager"
+            type="boolean" />
+
+        <variable
+            name="isSelf"
+            type="boolean" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingTop="7dp"
+        android:paddingBottom="7dp">
+
+        <TextView
+            android:id="@+id/sort_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:text="1"
+            android:textColor="#ffa9a9a9"
+            android:textSize="13sp" />
+
+        <LinearLayout
+            android:layout_width="66dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/avatar_iv"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_place" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/nick_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:text="情深深雨蒙蒙萌"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/info_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="25岁 | 北京 | 175"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:visibility="@{isManager ? View.VISIBLE : View.GONE}" />
+
+            <TextView
+                android:id="@+id/micro_sort_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="前方还有20名用户"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                android:visibility="@{isSelf ? View.VISIBLE : View.GONE}" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/on_wheat_micro_tv"
+            android:layout_width="48dp"
+            android:layout_height="24dp"
+            android:layout_marginRight="5dp"
+            android:gravity="center"
+            android:text="入座"
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            android:visibility="@{isManager ? View.VISIBLE : View.GONE}"
+            app:bl_corners_radius="4dp"
+            android:background="@drawable/seated_bg"
+            />
+
+        <TextView
+            android:id="@+id/top_micro_tv"
+            android:layout_width="48dp"
+            android:layout_height="24dp"
+            android:layout_marginRight="6dp"
+            android:gravity="center"
+            android:text="置顶"
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            android:visibility="@{isManager ? View.VISIBLE : View.GONE}"
+            app:bl_corners_radius="4dp"
+            app:bl_solid_color="#4BDFD0" />
+
+        <TextView
+            android:id="@+id/remove_micro"
+            android:layout_width="48dp"
+            android:layout_height="24dp"
+            android:layout_marginRight="14dp"
+            android:gravity="center"
+            android:text="移除"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            android:visibility="@{isManager ? View.VISIBLE : View.GONE}"
+            app:bl_corners_radius="4dp"
+            app:bl_solid_color="#FF8B8B" />
+    </LinearLayout>
+</layout>

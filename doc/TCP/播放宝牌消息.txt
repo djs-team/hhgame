@@ -1,0 +1,6 @@
+/**
+	 * 宝牌消息
+	 */
+返回消息:
+	private Card baoCard;//上一个宝牌
+	private List<Integer> shaiZi;//暂时没什么用

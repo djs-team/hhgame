@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_dialog_first_recharge">
+
+        <RelativeLayout
+            android:id="@+id/rl_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="84dp"
+            android:padding="5dp">
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/close" />
+        </RelativeLayout>
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="98dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="首充福利"
+            android:textColor="#ffffffff"
+            android:textSize="42sp"
+            android:shadowDx="2"
+            android:shadowDy="5"
+            android:shadowRadius="3.0"
+            android:shadowColor="#21851708"
+            android:textStyle="italic|bold"
+            />
+        <ImageView
+            android:visibility="invisible"
+            android:id="@+id/iv_recharge_welfare_logo"
+            android:layout_width="140dp"
+            android:layout_height="32dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="98dp"
+            android:src="@drawable/icon_rechage_welfare_logo" />
+
+        <RelativeLayout
+            android:id="@+id/rl_rose"
+            android:layout_width="108dp"
+            android:layout_height="61dp"
+            android:layout_below="@id/iv_recharge_welfare_logo"
+            android:layout_marginLeft="46dp"
+            android:layout_marginTop="38dp"
+            android:background="@drawable/bg_first_recharge_receive">
+
+            <TextView
+                android:id="@+id/tv_rose_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="14dp"
+                android:text="30"
+                android:textColor="#F8603D"
+                android:textSize="24sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="3dp"
+                android:layout_toRightOf="@id/tv_rose_num"
+                android:text="朵玫瑰"
+                android:textColor="#ffe53611"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_recharge_welfare_logo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="34dp"
+            android:text="="
+            android:textColor="#ffffffff"
+            android:textSize="41sp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="108dp"
+            android:layout_height="62dp"
+            android:layout_below="@id/iv_recharge_welfare_logo"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="38dp"
+            android:layout_marginRight="44dp"
+     >
+
+
+
+
+            <RelativeLayout
+                android:layout_width="108dp"
+                android:layout_height="61dp"
+                android:background="@drawable/bg_first_recharge_receive"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/tv_now_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="14dp"
+                    android:text="3"
+                    android:textColor="#F8603D"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="3dp"
+                    android:layout_toRightOf="@id/tv_now_price"
+                    android:text="元"
+                    android:textColor="#F8603D"
+                    android:textSize="17sp" />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="52dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/bg_first_recharge_price_old">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
+                    android:background="#824A31" />
+
+                <TextView
+                    android:id="@+id/tv_old_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="原价3元"
+                    android:textColor="#ffe53611"
+                    android:textSize="13sp" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:id="@+id/tv_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rl_rose"
+            android:layout_marginTop="33dp"
+            android:layout_marginBottom="12dp"
+            android:text="充值成功再赠送一张麦卡"
+            android:textColor="#fffde02c"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/tv_desc"
+            android:id="@+id/tv_ok"
+            android:layout_width="230dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="53dp"
+            android:background="@drawable/bg_white_radius_24"
+            android:gravity="center"
+            android:text="领取福利"
+            android:textColor="#F8603D"
+            android:textSize="21sp" />
+
+    </RelativeLayout>
+
+</layout>

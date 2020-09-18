@@ -38,7 +38,6 @@
 		private byte robotModel;
 		private byte age;
 		private byte sex;
-		private String photo;
 		private String sdkPhotoUrl;
 		private int win;
 		private int lose;

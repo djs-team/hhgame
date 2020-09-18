@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="168dp"
+        android:background="@drawable/bg_gradients_pink_and_violet">
+
+        <TextView
+            android:id="@+id/tv_total_assets"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="40dp"
+            android:text="总资产"
+            android:textColor="#ffffffff"
+            android:textSize="15sp" />
+
+        <RelativeLayout
+            android:id="@+id/rl_eye"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_toRightOf="@id/tv_total_assets"
+            android:paddingLeft="13dp"
+            android:paddingTop="3dp"
+            android:paddingRight="13dp"
+            android:paddingBottom="3dp">
+
+            <ImageView
+                android:id="@+id/iv_eye"
+                android:layout_width="14dp"
+                android:layout_height="10dp"
+                android:src="@drawable/selector_eye" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_balance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rl_eye"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:text="￥0"
+            android:textColor="#ffffffff"
+            android:textSize="25sp" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="16dp"
+        android:text="明细"
+        android:textColor="#ff1b1b1b"
+        android:textSize="15sp" />
+</LinearLayout>

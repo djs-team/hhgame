@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_radius_12dp"
+        android:orientation="vertical"
+        android:paddingTop="26dp"
+        android:paddingBottom="23dp">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="开通守护自动续费"
+            android:textColor="#ff333333"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+       <android.support.v7.widget.RecyclerView
+           android:layout_marginTop="12dp"
+           android:id="@+id/rv_renew_day"
+           android:layout_marginLeft="25dp"
+           android:layout_marginRight="25dp"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           app:layout_constraintTop_toBottomOf="@id/tv_title"/>
+        <TextView
+            android:layout_marginTop="19dp"
+            android:id="@+id/tv_renew_money"
+            android:layout_marginLeft="27dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rv_renew_day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="续费金额：15元"
+            android:textColor="#ff333333"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/tv_guard_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="27dp"
+            android:layout_marginTop="22dp"
+            android:text="守护人："
+            android:textColor="#ff333333"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_renew_money" />
+
+        <TextView
+            android:id="@+id/tv_guard_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:layout_marginRight="27dp"
+            android:text="合合小可爱（ID:1111222553）"
+            android:textColor="#8140EF"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="@id/tv_guard_title"
+            app:layout_constraintTop_toBottomOf="@id/tv_renew_money" />
+
+        <TextView
+            android:id="@+id/tv_endtime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="27dp"
+            android:layout_marginTop="8dp"
+            android:text="守护到期时间：2020年7月7号 10：00："
+            android:textColor="#ff333333"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_guard_title" />
+
+        <TextView
+            android:id="@+id/tv_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="29dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginRight="37dp"
+            android:text="请保证余额充值，扣费失败将会失去守护身份。"
+            android:textColor="#ffeb5bbb"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_endtime" />
+
+        <TextView
+            android:id="@+id/tv_confirm"
+            android:layout_width="113dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/bg_friend_agree"
+            android:gravity="center"
+            android:text="确定"
+            android:textColor="#ffffffff"
+            android:textSize="16sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_desc" />
+
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="113dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/bg_wallet_operate_purple"
+            android:gravity="center"
+            android:text="取消"
+            android:textColor="#ff878787"
+            android:textSize="16sp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_desc" />
+    </android.support.constraint.ConstraintLayout>
+</layout>

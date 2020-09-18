@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:attrs="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/v_pager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="11dp"
+            android:layout_marginRight="3dp"
+            android:layout_marginBottom="11dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#ffd4d4d4" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="49dp">
+
+            <de.markusressel.android.library.pageindicatorview.PageIndicatorView
+                android:id="@+id/pageIndicator"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="0"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                app:piv_activeIndicatorFillColor="#F8705F"
+                app:piv_activeIndicatorFillSize="5dp"
+                app:piv_inactiveIndicatorFillColor="#D8D8D8"
+                app:piv_inactiveIndicatorFillSize="5dp"
+                app:piv_initialPageIndex="0" />
+
+            <RelativeLayout
+                android:id="@+id/rl_recharge"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/iv_flowers"
+                    android:layout_width="15dp"
+                    android:layout_height="21dp"
+                    android:layout_marginLeft="11dp"
+                    android:layout_marginTop="13dp"
+                    android:src="@drawable/icon_flowers" />
+
+                <TextView
+                    android:id="@+id/tv_user_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="17dp"
+                    android:layout_toRightOf="@id/iv_flowers"
+                    android:text=""
+                    android:textColor="#fff8705f"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/tv_recharge"
+                    android:layout_width="27dp"
+                    android:layout_height="18dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="17dp"
+                    android:layout_toRightOf="@id/tv_user_count"
+                    android:text="充值"
+                    android:textColor="#ff666666"
+                    android:textSize="13sp" />
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/tv_send"
+                android:layout_width="59dp"
+                android:layout_height="28dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/bg_btn_send"
+                android:gravity="center"
+                android:text="发送"
+                android:textColor="#ffffffff"
+                android:textSize="13sp" />
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

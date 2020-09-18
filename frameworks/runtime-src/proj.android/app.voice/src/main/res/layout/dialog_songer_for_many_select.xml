@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dialog_corner_white_bg"
+        android:orientation="vertical"
+        android:paddingBottom="19dp">
+
+        <TextView
+            android:id="@+id/tv_invite_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="请选择你的演唱嘉宾"
+            android:textColor="#FF000000"
+            android:textSize="23sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="6dp"
+            android:gravity="center"
+            android:text="（只有麦上嘉宾可以演唱）"
+            android:textColor="#FF000000"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:id="@+id/rl_user_matchmaker"
+            android:layout_width="120dp"
+            android:layout_height="130dp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="13dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/dialog_music_songer_select_round_bg"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_matchmaker_big_avatar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_place_room_bg" />
+
+            <RelativeLayout
+                android:id="@+id/tl_matchmaker"
+                android:layout_width="match_parent"
+                android:layout_height="18dp"
+                android:layout_alignBottom="@id/iv_matchmaker_big_avatar"
+                android:layout_alignParentLeft="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="9dp"
+                android:layout_marginBottom="3dp"
+                android:layout_toLeftOf="@id/rl_matchmaker_microphone"
+                android:background="@drawable/invite_item_corner_bg"
+                android:paddingLeft="2dp"
+                android:paddingTop="2dp"
+                android:paddingRight="12dp"
+                android:paddingBottom="2dp">
+
+                <ImageView
+                    android:id="@+id/iv_matchmaker_small_avatar"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="8dp"
+                    android:src="@drawable/ic_place_avatar" />
+
+                <TextView
+                    android:id="@+id/tv_matchmaker_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/iv_matchmaker_small_avatar"
+                    android:textColor="#ffffffff"
+                    android:textSize="10sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_matchmaker_microphone"
+                android:layout_width="21dp"
+                android:layout_height="21dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginRight="4dp"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/oval_red_bg">
+
+                <ImageView
+                    android:id="@+id/iv_matchmaker_microphone"
+                    android:layout_width="12dp"
+                    android:layout_height="15dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/icon_micro" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rl_matchmaker_select"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:background="@color/color_song_select">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_centerInParent="true"
+                    android:text="主播将演唱你点的歌"/>
+                <com.deepsea.mua.stub.view.WithBackgroundTextView
+                    android:id="@+id/iv_matchmaker_select_confirm"
+                    android:layout_width="70dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="4dp"
+                    app:radius="22dp"
+                    app:withBackgroundColor="#AA06F1"
+                    android:text="确定"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:gravity="center"/>
+
+
+            </RelativeLayout>
+        </RelativeLayout>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_micro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</layout>

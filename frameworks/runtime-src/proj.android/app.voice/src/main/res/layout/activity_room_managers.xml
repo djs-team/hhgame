@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="searching"
+            type="Boolean" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F8F8F8"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="63dp"
+            android:background="@color/white">
+
+            <com.deepsea.mua.stub.view.TitleBar
+                android:id="@+id/title_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:visibility="@{searching ? View.INVISIBLE : View.VISIBLE}"
+                app:rightImgRes="@drawable/ic_room_search_gray"
+                app:title="管理列表" />
+
+            <RelativeLayout
+                android:id="@+id/search_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="5dp"
+                android:visibility="@{searching ? View.VISIBLE : View.GONE}">
+
+                <EditText
+                    android:id="@+id/search_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="26dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="60dp"
+                    android:background="@color/transparent"
+                    android:drawableLeft="@drawable/ic_room_search_gray"
+                    android:drawablePadding="7dp"
+                    android:gravity="center_vertical"
+                    android:hint="搜索昵称、ID"
+                    android:imeOptions="actionDone"
+                    android:maxLength="20"
+                    android:paddingLeft="9dp"
+                    android:paddingRight="9dp"
+                    android:singleLine="true"
+                    android:textColor="#333333"
+                    android:textColorHint="#DCDCDC"
+                    android:textCursorDrawable="@null"
+                    android:textSize="12sp"
+                    app:bl_corners_radius="13dp"
+                    app:bl_solid_color="@color/primary_bg" />
+
+                <TextView
+                    android:id="@+id/cancel_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:paddingRight="14dp"
+                    android:text="取消"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+        </FrameLayout>
+
+        <com.deepsea.mua.stub.view.WrapRefreshLayout
+            android:id="@+id/refresh_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srlPrimaryColor="@color/white">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/room_managers_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:overScrollMode="never" />
+        </com.deepsea.mua.stub.view.WrapRefreshLayout>
+    </LinearLayout>
+</layout>

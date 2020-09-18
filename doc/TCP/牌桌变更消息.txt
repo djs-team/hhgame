@@ -29,7 +29,6 @@ pripri/**
 		private byte robotModel;//是否是机器人
 		private byte age;//年龄
 		private byte sex;//系别
-		private String photo;//系统默认头像
 		private String sdkPhotoUrl;//微信头像链接
 		private int exp;//玩家 
 		private byte vip;//vip等级

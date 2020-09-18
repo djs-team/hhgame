@@ -9,7 +9,7 @@ load('public/suport/NativeApi', function () {
                 if (cc.sys.OS_ANDROID === cc.sys.os) {
                     return 'TODO'
                 } else if (cc.sys.OS_IOS === cc.sys.os) {
-                    jsb.reflection.callStaticMethod('AppController', 'HelloOC:', String(message))
+                    return jsb.reflection.callStaticMethod('AppController', 'getImei')
                 }
             } catch (e) {
                 console.log('getImei error: ')
@@ -33,7 +33,7 @@ load('public/suport/NativeApi', function () {
                     console.log('thirdPay-start')
                     jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'thirdPay', '(Ljava/lang/String;Ljava/lang/String;)V', type, message)
                 } else if (cc.sys.OS_IOS === cc.sys.os) {
-                    console.log(String(message))
+                    jsb.reflection.callStaticMethod('AppController', 'appPurchaseWithPayType:payParam:userID:paySuccessMethod:', type, message,"","ThirdPayCallback")
                 }
             } catch (e) {
                 console.log('虽然我挂掉了,但是我还是坚持打印了了log: ' + String(e))
@@ -44,7 +44,7 @@ load('public/suport/NativeApi', function () {
                 if (cc.sys.OS_ANDROID === cc.sys.os) {
                     jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'login', '(Ljava/lang/String;)V', "wx")
                 } else if (cc.sys.OS_IOS === cc.sys.os) {
-                    jsb.reflection.callStaticMethod('AppController', 'sendAuthRequest')
+                    jsb.reflection.callStaticMethod('AppController', 'weChatLoginWithMethod:', "THIRD_LOGIN_RESULT")
                 }
             } catch (e) {
                 this.HelloOC('wxLogin throw: ' + JSON.stringify(e))
@@ -54,7 +54,7 @@ load('public/suport/NativeApi', function () {
                 if (cc.sys.OS_ANDROID === cc.sys.os) {
                     jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'login', '(Ljava/lang/String;)V', "jpush")
                 } else if (cc.sys.OS_IOS === cc.sys.os) {
-
+                    jsb.reflection.callStaticMethod('AppController', 'JPushLoginWithMethod:', "THIRD_LOGIN_RESULT")
                 }
             } catch (e) {
                 this.HelloOC('oneCLickLogin throw: ' + JSON.stringify(e))

@@ -101,7 +101,14 @@ load('game/ui/scene/LoginScene', function () {
         },
         onThirdLogin: function (msg) {
             cc.log('=============' + JSON.stringify(msg))
-            appInstance.gameAgent().httpGame().httpLogin(msg)
+            if (cc.sys.OS_ANDROID === cc.sys.os) {
+                appInstance.gameAgent().httpGame().httpLogin(msg)
+            }
+            if (cc.sys.OS_IOS === cc.sys.os) {
+                msg = JSON.parse(msg)
+                cc.log('-------------' + JSON.stringify(msg))
+                appInstance.gameAgent().httpGame().httpLogin(msg)
+            }
         },
 
         onSizeWarning: function (msg) {

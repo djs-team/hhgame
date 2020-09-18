@@ -58,7 +58,7 @@
 /// @param payParam 支付参数：
 /// @param userID 当前支付用户ID
 /// @param paySuccessMethod 支付成功通知的方法名
-+ (void)appPurchaseWithPayType:(NSInteger)payType payParam:(NSString *_Nonnull)payParam userID:(NSString *_Nonnull)userID paySuccessMethod:(NSString *_Nonnull)paySuccessMethod;
++ (void)appPurchaseWithPayType:(NSString *_Nonnull)payType payParam:(NSString *_Nonnull)payParam userID:(NSString *_Nonnull)userID paySuccessMethod:(NSString *_Nonnull)paySuccessMethod;
 
 #pragma mark - Photo
 + (void)selectedOnePhoto;
@@ -77,6 +77,9 @@
 #pragma mark - 获取手机基本信息
 /// 获取Imei
 + (NSString *_Nullable)getImei;
+
+/// 获取Device
++ (NSString *_Nullable)getDevice;
 
 #pragma mark - 复制到剪贴板
 

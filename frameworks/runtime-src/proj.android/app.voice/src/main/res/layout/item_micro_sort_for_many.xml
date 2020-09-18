@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="isManager"
+            type="boolean" />
+
+        <variable
+            name="isSelf"
+            type="boolean" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="58dp">
+
+        <LinearLayout
+            android:layout_centerVertical="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_isFree"
+                android:layout_width="21dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="6dp"
+                android:src="@drawable/icon_flowers" />
+
+            <TextView
+                android:id="@+id/sort_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:text="1"
+                android:textColor="#ffa9a9a9"
+                android:textSize="13sp"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingLeft="4dp"
+                android:paddingRight="14dp">
+
+                <ImageView
+                    android:id="@+id/avatar_iv"
+                    android:layout_width="43dp"
+                    android:layout_height="43dp"
+                    android:src="@drawable/ic_place" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/nick_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:text="情深深雨蒙蒙萌"
+                        android:textColor="#ff282828"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tv_level"
+                        android:layout_width="35dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/bg_micro_manage_level"
+                        android:gravity="center"
+                        android:text="LV.1"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/info_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="25岁 | 北京 | 175"
+                        android:textColor="#ff575757"
+                        android:textSize="11sp"
+
+                        android:visibility="@{isManager ? View.VISIBLE : View.GONE}" />
+
+                    <ImageView
+                        android:id="@+id/iv_sex"
+                        android:layout_width="10dp"
+                        android:layout_height="11dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="11dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/micro_sort_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="前方还有20名用户"
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    android:visibility="gone" />
+                <!--                android:visibility="@{isSelf ? View.VISIBLE : View.GONE}" />-->
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/on_wheat_micro_rl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="7dp"
+                android:paddingRight="7dp">
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="19dp"
+                    android:layout_marginRight="5dp"
+                    android:src="@drawable/icon_micro_manage_upmicro"
+                    android:visibility="@{isManager ? View.VISIBLE : View.GONE}" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/top_micro_rl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="7dp"
+                android:paddingRight="7dp">
+
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="18dp"
+                    android:layout_marginRight="6dp"
+                    android:gravity="center"
+                    android:src="@drawable/icon_micro_manage_top"
+                    android:visibility="@{isManager ? View.VISIBLE : View.GONE}" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/remove_micro_rl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="7dp"
+                android:paddingRight="7dp">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="20dp"
+                    android:layout_marginRight="14dp"
+                    android:gravity="center"
+                    android:src="@drawable/icon_micro_manage_delete"
+                    android:text="移除"
+                    android:visibility="@{isManager ? View.VISIBLE : View.GONE}" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#BBBBBB" />
+    </RelativeLayout>
+</layout>

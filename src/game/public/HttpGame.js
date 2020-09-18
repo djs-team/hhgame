@@ -45,6 +45,7 @@ load('game/public/HttpGame', function () {
         },
 
         httpLoginBack: function (msg) {
+            cc.log('=========httpLoginBack============error================'+JSON.stringify(msg))
 
             if (msg.status !== 0) {
                 cc.log('=========httpLoginBack============error================')
@@ -930,7 +931,7 @@ load('game/public/HttpGame', function () {
 
         VIPPaysOrderBack: function (msg) {
             if (msg.status !== 0) {
-                cc.log('------------->>>httpGame VIPPaysOrderBack error happen')
+                cc.log('------------->>>httpGame VIPPaysOrderBack error happen'+JSON.stringify(msg))
                 return
             }
             appInstance.sendNotification(GameEvent.PLAYER_BUY_VIP_ORDER, msg)

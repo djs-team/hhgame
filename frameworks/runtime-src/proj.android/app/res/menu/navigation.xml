@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_voice"
+        android:icon="@drawable/nav_voice_a"
+        android:title="大厅" />
+
+    <item
+        android:id="@+id/navigation_msg"
+        android:icon="@drawable/nav_message"
+        android:title="消息" />
+    <item
+        android:id="@+id/navigation_mine"
+        android:icon="@drawable/nav_mine"
+        android:title="我" />
+</menu>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cons_group"
+        android:layout_width="91dp"
+        android:layout_height="116dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="11dp"
+        android:background="@drawable/bg_gradients_radius_10">
+        <!--        android:background="@drawable/bg_grayborder_radius_10">-->
+
+        <TextView
+            android:layout_width="46dp"
+            android:layout_height="19dp"
+            android:background="@drawable/bg_renew_setmeal_tag"
+            android:gravity="center"
+            android:text="特惠"
+            android:textColor="#ffffffff"
+            android:textSize="12sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_setmeal_day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="30天"
+            android:textColor="#ffffffff"
+            android:textSize="21sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_setmeal_current_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="15元"
+            android:textColor="#ffffffff"
+            android:textSize="14sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_setmeal_day" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:gravity="center_vertical|center_horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_setmeal_current_price">
+
+            <TextView
+                android:id="@+id/tv_setmeal_original_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="原价25元"
+                android:textColor="#ff818181"
+                android:textSize="12sp" />
+
+            <View
+                android:id="@+id/line"
+                android:layout_width="51dp"
+                android:layout_height="0.5dp"
+                android:layout_centerInParent="true"
+                android:background="#333333" />
+        </RelativeLayout>
+    </android.support.constraint.ConstraintLayout>
+</layout>

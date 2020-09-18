@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+    <!--    android:paddingTop="1dp"-->
+    <!--    android:paddingLeft="1dp"-->
+    <!--    android:paddingRight="1dp"-->
+    <LinearLayout
+        android:id="@+id/ll_check_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.deepsea.mua.core.view.WaveView
+                android:id="@+id/wave_view"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/avatar_iv"
+                app:layout_constraintLeft_toLeftOf="@id/avatar_iv"
+                app:layout_constraintRight_toRightOf="@id/avatar_iv"
+                app:layout_constraintTop_toTopOf="@id/avatar_iv"
+                app:waveInitialRadius="27dp"
+                app:waveMaxRadius="45dp" />
+
+            <ImageView
+                android:id="@+id/avatar_iv"
+                android:layout_width="54dp"
+                android:layout_height="54dp"
+                android:src="@drawable/ic_place"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/pretty_avatar_iv"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                app:layout_constraintBottom_toBottomOf="@id/avatar_iv"
+                app:layout_constraintLeft_toLeftOf="@id/avatar_iv"
+                app:layout_constraintRight_toRightOf="@id/avatar_iv"
+                app:layout_constraintTop_toTopOf="@id/avatar_iv" />
+
+            <ImageView
+                android:id="@+id/lock_iv"
+                android:layout_width="54dp"
+                android:layout_height="54dp"
+                android:src="@drawable/ic_lock_micro"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/avatar_iv"
+                app:layout_constraintLeft_toLeftOf="@id/avatar_iv"
+                app:layout_constraintRight_toRightOf="@id/avatar_iv"
+                app:layout_constraintTop_toTopOf="@id/avatar_iv" />
+
+            <com.deepsea.mua.stub.view.SkipTextView
+                android:id="@+id/skip_tv"
+                android:layout_width="54dp"
+                android:layout_height="54dp"
+                android:background="@drawable/ic_count_down"
+                android:gravity="bottom|center_horizontal"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@id/avatar_iv"
+                app:layout_constraintLeft_toLeftOf="@id/avatar_iv"
+                app:layout_constraintRight_toRightOf="@id/avatar_iv"
+                app:layout_constraintTop_toTopOf="@id/avatar_iv" />
+
+            <View
+                android:id="@+id/anchor"
+                android:layout_width="1px"
+                android:layout_height="1dp"
+                app:layout_constraintLeft_toRightOf="@id/avatar_iv"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/forbid_micro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/ic_forbid_micro"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@id/avatar_iv"
+                app:layout_constraintLeft_toLeftOf="@id/anchor"
+                app:layout_constraintRight_toRightOf="@id/anchor" />
+
+            <TextView
+                android:id="@+id/micro_xd_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="14dp"
+                android:layout_marginLeft="38dp"
+                android:background="@drawable/micro_heart_positive"
+                android:gravity="center"
+                android:minWidth="32dp"
+                android:text="100"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                app:layout_constraintLeft_toLeftOf="@id/avatar_iv"
+                app:layout_constraintTop_toTopOf="@id/avatar_iv" />
+
+            <com.deepsea.mua.voice.view.MicroFaceView
+                android:id="@+id/face_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.deepsea.mua.voice.view.MicroAnimView
+                android:id="@+id/anim_iv"
+                android:layout_width="86dp"
+                android:layout_height="86dp"
+                android:src="@drawable/ic_lock_micro"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </android.support.constraint.ConstraintLayout>
+    </LinearLayout>
+</layout>

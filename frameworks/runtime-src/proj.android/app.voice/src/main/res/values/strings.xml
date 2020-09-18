@@ -1,0 +1,16 @@
+<resources>
+    <string name="voiceapp_name">app.voice</string>
+
+    <string name="apply_face">申请相亲</string>
+    <string name="end_face">结束相亲</string>
+    <string name="apply_manager">申请管理</string>
+    <string name="song_flower_cost">消耗玫瑰%1$s朵/首</string>
+
+    <string name="effet_poplular">流行</string>
+    <string name="effet_rb">R&#038;B</string>
+    <string name="effet_rock">摇滚</string>
+    <string name="effet_hip_pop">嘻哈</string>
+    <string name="effet_vocal_concert">演唱会</string>
+    <string name="effet_ktv">KTV</string>
+    <string name="effet_studio">录音棚</string>
+</resources>

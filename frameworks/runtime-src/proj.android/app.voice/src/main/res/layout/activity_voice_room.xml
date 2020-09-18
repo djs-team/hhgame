@@ -1,0 +1,1275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/room_bg_iv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bg_voice_room" />
+
+            <View
+                android:id="@+id/notch_view"
+                android:layout_width="match_parent"
+                android:layout_height="14dp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--房间信息-->
+            <RelativeLayout
+                android:id="@+id/owner_rl"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginTop="21dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/notch_view">
+
+                <RelativeLayout
+                    android:id="@+id/rl_room_close"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="6dp"
+                    android:paddingRight="6dp"
+                    android:paddingBottom="6dp">
+
+                    <ImageView
+                        android:layout_width="17dp"
+                        android:layout_height="17dp"
+                        android:src="@drawable/icon_close_white" />
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/ll_room_setting"
+                    android:layout_width="129dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/rl_room_close"
+                    android:background="@drawable/bg_room_black_radius"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <ImageView
+                        android:id="@+id/owner_iv"
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        android:layout_marginLeft="1.5dp"
+                        android:src="@drawable/ic_place_default" />
+
+                    <TextView
+                        android:id="@+id/room_name_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="12dp"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="欢迎来到...."
+                        android:textColor="#ffffffff"
+                        android:textSize="16sp" />
+
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_guard_group"
+                android:layout_width="160dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/bg_room_black_radius"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/owner_rl">
+
+                <TextView
+                    android:layout_width="48dp"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="4dp"
+                    android:background="@drawable/bg_guardiangroup_radius"
+                    android:gravity="center"
+                    android:text="守护团"
+                    android:textColor="#ffffffff"
+                    android:textSize="12sp" />
+                <!--排行榜-->
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/ranking_rv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginRight="15dp"
+                    android:overScrollMode="never" />
+
+                <ImageView
+                    android:id="@+id/operate_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="4dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="8dp"
+                    android:src="@drawable/icon_room_arrow" />
+
+            </LinearLayout>
+
+            <!--ID-->
+            <TextView
+                android:id="@+id/room_id_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="-1dp"
+                android:alpha="0.6"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/owner_rl" />
+
+            <LinearLayout
+                android:id="@+id/ll_test"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/room_id_tv">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/tv_voice_low"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:text="低音质" />
+
+                    <Button
+                        android:id="@+id/tv_voice_medium"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:text="中音质" />
+
+                    <Button
+                        android:id="@+id/tv_voice_hight"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:text="高音质" />
+
+                    <Button
+                        android:id="@+id/tv_wav"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:text=".wav" />
+
+                    <Button
+                        android:id="@+id/tv_aac"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:text=".aac" />
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="高音质 - .aac"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"></TextView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_look_full_service"
+                        android:layout_width="50dp"
+                        android:layout_height="26dp"
+                        android:layout_marginLeft="7dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/bg_full_service_btn"
+                        android:gravity="center"
+                        android:text="开始录音"
+                        android:textColor="@color/black"
+                        android:textSize="10sp"
+                        android:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/tv_stop_record"
+                        android:layout_width="50dp"
+                        android:layout_height="26dp"
+                        android:layout_marginLeft="7dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/bg_full_service_btn"
+                        android:gravity="center"
+                        android:text="停止录音"
+                        android:textColor="@color/black"
+                        android:textSize="10sp"
+                        android:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/tv_play_record"
+                        android:layout_width="50dp"
+                        android:layout_height="26dp"
+                        android:layout_marginLeft="7dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/bg_full_service_btn"
+                        android:gravity="center"
+                        android:text="播放录音"
+                        android:textColor="@color/black"
+                        android:textSize="10sp"
+                        android:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/tv_stop_play_record"
+                        android:layout_width="70dp"
+                        android:layout_height="26dp"
+                        android:layout_marginLeft="7dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/bg_full_service_btn"
+                        android:gravity="center"
+                        android:text="停止播放录音"
+                        android:textColor="@color/black"
+                        android:textSize="10sp"
+                        android:visibility="visible" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_marquee"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:background="@drawable/icon_maquee_horse_bg"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_test">
+
+
+                <com.deepsea.mua.stub.view.MarqueeTextView
+
+                    android:id="@+id/tv_marquee"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:ellipsize="marquee"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="left"
+                    android:paddingLeft="33dp"
+                    android:paddingRight="33dp"
+                    android:singleLine="true"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_recommend"
+                android:layout_width="wrap_content"
+                android:layout_height="73dp"
+                android:layout_marginTop="52dp"
+                android:background="@drawable/bg_recommend_logo"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/rl_micros_views">
+
+                <ImageView
+                    android:layout_width="6dp"
+                    android:layout_height="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="2dp"
+                    android:src="@drawable/ic_back" />
+
+                <TextView
+                    android:layout_width="12dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5.5dp"
+                    android:layout_marginRight="5.5dp"
+                    android:text="为你推荐"
+                    android:textColor="#ffffffff"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+
+            <!--            <android.support.constraint.ConstraintLayout-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                app:layout_constraintTop_toBottomOf="@id/rl_marquee">-->
+
+            <!--                <RelativeLayout-->
+            <!--                    android:id="@+id/rl_second_main_face_view"-->
+            <!--                    android:layout_width="184dp"-->
+            <!--                    android:layout_height="343dp"-->
+            <!--                    app:layout_constraintLeft_toLeftOf="parent"-->
+            <!--                    app:layout_constraintTop_toTopOf="parent">-->
+
+            <!--                    <com.deepsea.mua.voice.view.MicroFaceView-->
+            <!--                        android:id="@+id/main_second_main_face_view"-->
+            <!--                        android:layout_width="match_parent"-->
+            <!--                        android:layout_height="match_parent" />-->
+            <!--                </RelativeLayout>-->
+
+            <!--                <com.deepsea.mua.voice.view.MicroAnimView-->
+            <!--                    android:id="@+id/anim_second_main_iv"-->
+            <!--                    android:layout_width="86dp"-->
+            <!--                    android:layout_height="86dp"-->
+            <!--                    android:visibility="gone"-->
+            <!--                    app:layout_constraintBottom_toBottomOf="@id/rl_second_main_face_view"-->
+            <!--                    app:layout_constraintLeft_toLeftOf="@id/rl_second_main_face_view"-->
+            <!--                    app:layout_constraintRight_toRightOf="@id/rl_second_main_face_view"-->
+            <!--                    app:layout_constraintTop_toTopOf="@id/rl_second_main_face_view" />-->
+
+            <!--                <RelativeLayout-->
+
+            <!--                    android:id="@+id/rl_second_guest_face_view"-->
+            <!--                    android:layout_width="184dp"-->
+            <!--                    android:layout_height="343dp"-->
+            <!--                    app:layout_constraintRight_toRightOf="parent"-->
+            <!--                    app:layout_constraintTop_toTopOf="parent">-->
+
+            <!--                    <com.deepsea.mua.voice.view.MicroFaceView-->
+            <!--                        android:id="@+id/main_second_face_view"-->
+            <!--                        android:layout_width="match_parent"-->
+            <!--                        android:layout_height="match_parent" />-->
+            <!--                </RelativeLayout>-->
+
+            <!--                <com.deepsea.mua.voice.view.MicroAnimView-->
+            <!--                    android:id="@+id/anim_second_guest_iv"-->
+            <!--                    android:layout_width="86dp"-->
+            <!--                    android:layout_height="86dp"-->
+            <!--                    android:visibility="gone"-->
+            <!--                    app:layout_constraintBottom_toBottomOf="@id/rl_second_guest_face_view"-->
+            <!--                    app:layout_constraintLeft_toLeftOf="@id/rl_second_guest_face_view"-->
+            <!--                    app:layout_constraintRight_toRightOf="@id/rl_second_guest_face_view"-->
+            <!--                    app:layout_constraintTop_toTopOf="@id/rl_second_guest_face_view" />-->
+            <!--            </android.support.constraint.ConstraintLayout>-->
+
+
+            <RelativeLayout
+                android:id="@+id/rl_micros_views"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rl_marquee">
+
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/cns_second_views"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible">
+
+                    <RelativeLayout
+                        android:id="@+id/rl_second_one_view"
+                        android:layout_width="184dp"
+                        android:layout_height="343dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.deepsea.mua.voice.view.MicroFaceView
+                            android:id="@+id/main_second_one_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+                    </RelativeLayout>
+
+                    <com.deepsea.mua.voice.view.MicroAnimView
+                        android:id="@+id/anim_second_one_iv"
+                        android:layout_width="86dp"
+                        android:layout_height="86dp"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@id/rl_second_one_view"
+                        app:layout_constraintLeft_toLeftOf="@id/rl_second_one_view"
+                        app:layout_constraintRight_toRightOf="@id/rl_second_one_view"
+                        app:layout_constraintTop_toTopOf="@id/rl_second_one_view" />
+
+                    <RelativeLayout
+                        android:id="@+id/rl_second_two_view"
+                        android:layout_width="184dp"
+                        android:layout_height="343dp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.deepsea.mua.voice.view.MicroFaceView
+                            android:id="@+id/main_second_two_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+                    </RelativeLayout>
+
+                    <com.deepsea.mua.voice.view.MicroAnimView
+                        android:id="@+id/anim_second_two_iv"
+                        android:layout_width="86dp"
+                        android:layout_height="86dp"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@id/rl_second_two_view"
+                        app:layout_constraintLeft_toLeftOf="@id/rl_second_two_view"
+                        app:layout_constraintRight_toRightOf="@id/rl_second_two_view"
+                        app:layout_constraintTop_toTopOf="@id/rl_second_two_view" />
+                </android.support.constraint.ConstraintLayout>
+
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/cns_second_music_views"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+
+                    <RelativeLayout
+                        android:id="@+id/rl_second_one_music_view"
+                        android:layout_width="184dp"
+                        android:layout_height="343dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.deepsea.mua.voice.view.MicroFaceView
+                            android:id="@+id/main_second_one_music_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+                    </RelativeLayout>
+
+                    <com.deepsea.mua.voice.view.MicroAnimView
+                        android:id="@+id/anim_second_one_music_iv"
+                        android:layout_width="86dp"
+                        android:layout_height="86dp"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@id/rl_second_one_music_view"
+                        app:layout_constraintLeft_toLeftOf="@id/rl_second_one_music_view"
+                        app:layout_constraintRight_toRightOf="@id/rl_second_one_music_view"
+                        app:layout_constraintTop_toTopOf="@id/rl_second_one_music_view" />
+
+                    <RelativeLayout
+                        android:id="@+id/rl_second_two_music_view"
+                        android:layout_width="184dp"
+                        android:layout_height="343dp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.deepsea.mua.voice.view.MicroFaceView
+                            android:id="@+id/main_second_two_music_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+                    </RelativeLayout>
+
+                    <com.deepsea.mua.voice.view.MicroAnimView
+                        android:id="@+id/anim_second_two_music_iv"
+                        android:layout_width="86dp"
+                        android:layout_height="86dp"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@id/rl_second_two_music_view"
+                        app:layout_constraintLeft_toLeftOf="@id/rl_second_two_music_view"
+                        app:layout_constraintRight_toRightOf="@id/rl_second_two_music_view"
+                        app:layout_constraintTop_toTopOf="@id/rl_second_two_music_view" />
+                </android.support.constraint.ConstraintLayout>
+
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/cns_micros_common_views"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:visibility="visible">
+
+                    <RelativeLayout
+                        android:id="@+id/rl_main_face_view"
+                        android:layout_width="169dp"
+                        android:layout_height="167dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.deepsea.mua.voice.view.MicroFaceView
+                            android:id="@+id/main_face_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+                    </RelativeLayout>
+
+                    <com.deepsea.mua.voice.view.MicroAnimView
+                        android:id="@+id/anim_iv"
+                        android:layout_width="86dp"
+                        android:layout_height="86dp"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@id/rl_main_face_view"
+                        app:layout_constraintLeft_toLeftOf="@id/rl_main_face_view"
+                        app:layout_constraintRight_toRightOf="@id/rl_main_face_view"
+                        app:layout_constraintTop_toTopOf="@id/rl_main_face_view" />
+                    <!--麦位-->
+                    <RelativeLayout
+                        android:id="@+id/rl_group_common_rv"
+                        android:layout_width="match_parent"
+                        android:layout_height="167dp"
+                        android:layout_marginTop="9dp"
+                        android:overScrollMode="never"
+                        app:layout_constraintTop_toBottomOf="@id/rl_main_face_view">
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/vice_phone_rv"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:clipChildren="false"
+                            android:clipToPadding="false" />
+
+                    </RelativeLayout>
+
+                </android.support.constraint.ConstraintLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_micros_music_views"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+                    <!--麦位-->
+                    <RelativeLayout
+                        android:id="@+id/rl_group_music_rv"
+                        android:layout_width="157dp"
+                        android:layout_height="343dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="12dp">
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/vice_phone_music_rv"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:clipChildren="false"
+                            android:clipToPadding="false"
+                            android:overScrollMode="never" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/rl_group_music_rv">
+
+                        <RelativeLayout
+                            android:id="@+id/rl_main_face_music_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="343dp">
+
+                            <com.deepsea.mua.voice.view.MicroFaceView
+                                android:id="@+id/main_face_music_view"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" />
+                        </RelativeLayout>
+
+                        <com.deepsea.mua.voice.view.MicroAnimView
+                            android:id="@+id/anim_music_iv"
+                            android:layout_width="86dp"
+                            android:layout_height="86dp"
+                            android:layout_centerInParent="true"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_redpackage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="9dp"
+                android:layout_marginTop="98dp"
+                android:orientation="horizontal"
+                android:visibility="visible"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:id="@+id/ll_redpackage_hide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="6dp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="红"
+                        android:textColor="#FE0000"
+                        android:textSize="23sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="包"
+                        android:textColor="#FE0000"
+                        android:textSize="23sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_redpackage_show"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:id="@+id/ll_redpackage_rule"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="13dp"
+                            android:layout_height="13dp"
+                            android:src="@drawable/icon_question_mark" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:text="红包规则"
+                            android:textColor="#ffe8e5ee"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/iv_redpackage_show"
+                        android:layout_width="65dp"
+                        android:layout_height="77dp"
+                        android:layout_below="@id/ll_redpackage_rule"
+                        android:layout_marginTop="4dp"
+                        android:src="@drawable/icon_room_readpackage_show" />
+
+                    <ImageView
+                        android:id="@+id/seekbar_redpackage_progress"
+                        android:layout_width="51dp"
+                        android:layout_height="3.5dp"
+                        android:layout_below="@id/iv_redpackage_show"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="3dp"
+                        android:src="@drawable/icon_redpackage_seek_black"/>
+
+                    <TextView
+                        android:id="@+id/tv_redpackage_progress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/seekbar_redpackage_progress"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="4dp"
+                        android:text="0%"
+                        android:textColor="#fffcb903"
+                        android:textSize="9sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_readpackage_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:paddingTop="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="15dp">
+
+                    <ImageView
+                        android:layout_width="9dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/ic_back" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_music"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="17dp"
+                android:layout_marginBottom="3dp"
+                android:background="@drawable/bg_room_black_radius"
+                android:visibility="gone"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rl_micros_views">
+
+                <ImageView
+                    android:id="@+id/iv_disc_gif"
+                    android:layout_width="45dp"
+                    android:layout_height="41dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="1dp"
+                    android:src="@drawable/icon_music_diange_gif_bg" />
+
+                <TextView
+                    android:id="@+id/tv_music_song_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_toRightOf="@id/iv_disc_gif"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="祝你生日快乐/"
+                    android:textColor="#ffffffff"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tv_music_song_singer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
+                    android:layout_toRightOf="@id/tv_music_song_name"
+                    android:includeFontPadding="false"
+                    android:text="演唱者：佚名"
+                    android:textColor="#ffffffff"
+                    android:textSize="12sp" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_lyric"
+                    android:layout_width="202dp"
+                    android:layout_height="35dp"
+                    android:layout_below="@id/tv_music_song_name"
+                    android:layout_marginBottom="1dp"
+                    android:layout_toRightOf="@id/iv_disc_gif">
+
+                    <TextView
+                        android:id="@+id/leadsinger_lrcView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:lineSpacingExtra="1dp"
+                        android:textColor="#EF51B2"
+                        android:textSize="12sp"
+                        app:layout_constraintRight_toRightOf="parent" />
+
+                    <com.deepsea.mua.voice.lrc.impl.LrcView
+                        android:id="@+id/lrcView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="invisible"
+                        app:layout_constraintRight_toRightOf="parent" />
+
+                    <TextView
+                        android:id="@+id/audience_lrcView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:lineSpacingExtra="1dp"
+                        android:textColor="#EF51B2"
+                        android:textSize="12sp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/lrcView" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="65dp"
+                    android:layout_height="38dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="2dp"
+                    android:background="@drawable/bg_pink_radius_21"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_applause"
+                        android:layout_width="15.5dp"
+                        android:layout_height="17dp"
+                        android:layout_marginTop="2dp"
+                        android:src="@drawable/icon_flower_recharge" />
+
+                    <TextView
+                        android:id="@+id/tv_applause_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/iv_applause"
+                        android:textColor="#ffffffff"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_rule"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="13dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginRight="15dp"
+                android:orientation="horizontal"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rl_music">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="31dp"
+                        android:layout_height="16dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/bg_room_black_radius"
+                        android:gravity="center"
+                        android:text="规则"
+                        android:textColor="#ffe3dbe6"
+                        android:textSize="9sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_rule_click"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:background="@drawable/bg_room_black_radius"
+                    android:orientation="horizontal"
+                    android:paddingRight="10dp">
+
+                    <ImageView
+                        android:id="@+id/iv_rule"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginRight="5dp"
+                        android:src="@drawable/icon_rule_more" />
+
+                    <TextView
+                        android:id="@+id/tv_rule"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:textColor="#ffef51b2"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <com.deepsea.mua.core.view.chat.SimpleChatView
+                android:id="@+id/room_msg_rv"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="13dp"
+                android:layout_marginTop="19dp"
+                android:layout_marginRight="87dp"
+                android:layout_marginBottom="6dp"
+                android:overScrollMode="never"
+                app:layout_constraintBottom_toTopOf="@+id/bottom_layout"
+                app:layout_constraintTop_toBottomOf="@id/ll_rule" />
+
+
+            <!--相亲规则-->
+            <TextView
+                android:id="@+id/play_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:minWidth="69dp"
+                android:minHeight="26dp"
+                android:text="相亲规则"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:visibility="gone"
+                app:bl_corners_bottomLeftRadius="13dp"
+                app:bl_corners_topLeftRadius="13dp"
+                app:bl_solid_color="#7F8BA8"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/room_msg_rv" />
+
+
+            <LinearLayout
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@id/bottom_layout"
+                app:layout_constraintRight_toRightOf="parent">
+
+
+                <!--                <com.deepsea.mua.stub.view.BannerView-->
+                <!--                    android:id="@+id/bannerview"-->
+                <!--                    android:layout_width="48dp"-->
+                <!--                    android:layout_height="40dp"-->
+                <!--                    />-->
+                <com.bigkoo.convenientbanner.ConvenientBanner
+                    android:id="@+id/banner"
+                    android:layout_width="50dp"
+                    android:layout_height="64dp"
+                    android:layout_marginRight="26dp"
+                    android:visibility="visible"
+                    app:canLoop="true" />
+
+
+                <LinearLayout
+                    android:id="@+id/rl_micro_manage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="13dp"
+                    android:background="@drawable/bg_room_black_radius"
+                    android:orientation="vertical"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="5dp">
+
+                    <TextView
+                        android:id="@+id/tv_micro_manage_desc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:paddingTop="8dp"
+                        android:text="上麦管理"
+                        android:textColor="#ffffe42a"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tv_micro_manage_cost"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:textColor="#ffef51b2"
+                        android:textSize="12sp" />
+
+
+                    <LinearLayout
+                        android:id="@+id/ll_micmanage_num"
+                        android:layout_width="wrap_content"
+
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/tv_micro_manage_num"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#CF469D"
+                            android:textSize="13sp" />
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="人申请中"
+                            android:textColor="@color/white"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <ImageView
+                android:id="@+id/iv_song_hint"
+                android:layout_width="43dp"
+                android:layout_height="33dp"
+                android:layout_marginRight="90dp"
+                android:layout_marginBottom="50dp"
+                android:src="@drawable/icon_hint_new_function"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/bottom_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <LinearLayout
+                    android:id="@+id/ll_room_chat"
+                    android:layout_width="129dp"
+                    android:layout_height="39dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/bg_room_black_radius"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="21dp"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/icon_room_chats" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="9dp"
+                        android:text="想说点什么"
+                        android:textColor="#80ffffff"
+                        android:textSize="13sp" />
+
+
+                </LinearLayout>
+
+
+                <ImageView
+                    android:id="@+id/ll_room_share"
+                    android:layout_width="38.5dp"
+                    android:layout_height="38.5dp"
+                    android:layout_marginLeft="45dp"
+                    android:layout_marginBottom="16dp"
+                    android:src="@drawable/icon_room_share" />
+
+                <ImageView
+                    android:id="@+id/ll_room_friend"
+                    android:layout_width="38.5dp"
+                    android:layout_height="38.5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="16dp"
+                    android:src="@drawable/icon_room_friend" />
+
+
+                <LinearLayout
+                    android:id="@+id/ll_room_media"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="bottom|center_horizontal"
+                    android:orientation="vertical"
+                    android:paddingBottom="10dp"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="23dp"
+                        android:layout_height="19dp"
+                        android:src="@drawable/icon_room_media" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_room_identity"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="bottom|center_horizontal"
+                    android:orientation="vertical"
+                    android:paddingBottom="10dp"
+                    android:visibility="gone">
+
+                    <ImageView
+
+                        android:layout_width="20dp"
+                        android:layout_height="18dp"
+                        android:src="@drawable/icon_room_identity" />
+
+                </LinearLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/ll_room_music"
+                    android:layout_width="38.5dp"
+                    android:layout_height="38.5dp"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginBottom="16dp">
+
+
+                    <ImageView
+                        android:id="@+id/iv_room_music"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/icon_room_ktv"
+                        android:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/tv_appointment_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="14dp"
+                        android:gravity="bottom"
+                        android:textColor="#ffffffff"
+                        android:textSize="6sp" />
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/ll_room_gift"
+                    android:layout_width="38.5dp"
+                    android:layout_height="38.5dp"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/white_circle"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_gift"
+                        android:layout_width="24dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/icon_room_gift" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="17dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:id="@+id/msg_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="27dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="21dp"
+                    android:text="说点啥呢……"
+                    android:textColor="#66ffffff"
+                    android:textSize="12sp"
+                    app:bl_corners_radius="15dp"
+                    app:bl_solid_color="#66ffffff" />
+
+                <ImageView
+                    android:id="@+id/iv_room_share"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/icon_share" />
+
+                <ImageView
+                    android:id="@+id/iv_song_choose"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/icon_song_chose" />
+
+                <ImageView
+                    android:id="@+id/emoji_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="44dp"
+                    android:paddingRight="9dp"
+                    android:src="@drawable/ic_room_emoji"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/mute_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="44dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:src="@drawable/ic_mute_cancel"
+                    android:visibility="gone" />
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/msg_iv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="44dp"
+                        android:paddingLeft="6dp"
+                        android:paddingRight="7dp"
+                        android:src="@drawable/ic_room_msg" />
+
+                    <View
+                        android:id="@+id/unread_msg"
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:layout_gravity="right"
+                        android:layout_marginTop="9dp"
+                        android:layout_marginRight="5dp"
+                        android:visibility="gone"
+                        app:bl_shape="oval"
+                        app:bl_solid_color="#FF5E5C" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <com.deepsea.mua.lib.svga.SVGAImageView
+                android:id="@+id/svga_iv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible"
+                app:autoPlay="true"
+                app:loopCount="1" />
+
+            <com.deepsea.mua.stub.view.RedPacketView
+                android:id="@+id/red_packets_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                app:count="10"
+                app:speed="100" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/rl_recommend"
+            android:layout_width="154dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:layout_marginTop="57dp"
+            android:clickable="true"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/tv_recommend_close"
+                android:layout_width="30dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="194dp"
+                android:src="@drawable/icon_recommend_drawar_close" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bg_recommend_list"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
+                    android:text="为你推荐"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <com.deepsea.mua.stub.view.WrapRefreshLayout
+                    android:id="@+id/refresh_layout"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    app:srlEnableLoadMore="true"
+                    app:srlEnableRefresh="true">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rv_recommend"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="3dp" />
+                </com.deepsea.mua.stub.view.WrapRefreshLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.v4.widget.DrawerLayout>
+</layout>

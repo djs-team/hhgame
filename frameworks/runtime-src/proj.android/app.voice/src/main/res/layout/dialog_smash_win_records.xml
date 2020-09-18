@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gray_radius_10dp">
+
+        <LinearLayout
+            android:id="@+id/desc_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="时间"
+                    android:layout_gravity="center"
+                    android:textColor="#ff666666"
+                    android:textSize="14sp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    /><TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="蛋"
+                    android:layout_gravity="center"
+                    android:textColor="#ff666666"
+                    android:textSize="14sp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    /><TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="锤子"
+                    android:layout_gravity="center"
+                    android:textColor="#ff666666"
+                    android:textSize="14sp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    /><TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="奖励"
+                    android:layout_gravity="center"
+                    android:textColor="#ff666666"
+                    android:textSize="14sp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    />
+
+            </LinearLayout>
+
+            <com.deepsea.mua.stub.view.WrapRefreshLayout
+                android:id="@+id/refresh_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:srlEnableRefresh="false"
+                    app:srlEnableLoadMore="false">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:overScrollMode="never" />
+            </com.deepsea.mua.stub.view.WrapRefreshLayout>
+        </LinearLayout>
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.deepsea.mua.stub.view.TitleBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:backgroundRes="@color/transparent"
+            app:leftImgRes="@drawable/ic_back_black"
+            app:title="常见问题" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="53dp"
+            android:text="常见问题："
+            android:textColor="#ff000000"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="22dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="23dp"
+            android:orientation="horizontal">
+
+            <com.deepsea.mua.stub.view.WithBackgroundTextView
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:gravity="center"
+                android:text="1"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                app:withBackgroundColor="#FC698F"
+                app:withBottomLeftRadius="1dp"
+                app:withBottomRightRadius="1dp"
+                app:withTopLeftRadius="1dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="一项新手任务只能完成一次，完成任务要求可获得相应任务奖励。"
+                android:textColor="#ff000000"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="22dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="23dp"
+            android:orientation="horizontal">
+
+            <com.deepsea.mua.stub.view.WithBackgroundTextView
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:gravity="center"
+                android:text="2"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                app:withBackgroundColor="#FC698F"
+                app:withBottomLeftRadius="1dp"
+                app:withBottomRightRadius="1dp"
+                app:withTopLeftRadius="1dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="每日任务-邀请好友，此任务仅限通过邀请链接成功邀请的好友才可以获得相应奖励；通过邀请码邀请不会获得奖励。次任务没有次数限制，多劳多得。"
+                android:textColor="#ff000000"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,46 @@
+package com.deepsea.mua.stub.utils;
+
+import android.text.TextUtils;
+import android.view.View;
+
+import com.deepsea.mua.stub.view.WithBackgroundTextView;
+
+public class StateUtils {
+    public static String getState(String state) {
+        String stateMsg = "";
+        switch (state) {
+            case "1":
+                stateMsg = "房间内";
+                break;
+            case "2":
+                stateMsg = "等待相亲中";
+                break;
+            case "3":
+                stateMsg = "相亲中";
+                break;
+        }
+        return stateMsg;
+    }
+
+    public static void setRoomState(WithBackgroundTextView textView, String state) {
+        if (!TextUtils.isEmpty(state)) {
+            if (state.equals("2") || state.equals("3")) {
+                textView.setVisibility(View.VISIBLE);
+                textView.setText("相亲中");
+            } else if (state.equals("4") || state.equals("5")) {
+                textView.setVisibility(View.VISIBLE);
+                textView.setText("热聊中");
+            } else if (state.equals("6")) {
+                textView.setVisibility(View.VISIBLE);
+                textView.setText("开播中");
+            } else {
+                textView.setVisibility(View.GONE);
+
+            }
+
+        } else {
+            textView.setVisibility(View.GONE);
+        }
+
+    }
+}

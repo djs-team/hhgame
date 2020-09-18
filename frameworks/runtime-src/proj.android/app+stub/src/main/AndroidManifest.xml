@@ -1,0 +1,18 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.deepsea.mua.stub"
+    tools:overrideLibrary="com.luck.picture.lib">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- Required -->
+    <permission
+
+        android:name="harmony.dating.online.face.ad.permission.JPUSH_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <application>
+
+    </application>
+
+</manifest>

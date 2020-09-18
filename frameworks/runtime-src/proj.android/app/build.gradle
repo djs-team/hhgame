@@ -19,12 +19,26 @@ android {
     compileSdkVersion PROP_COMPILE_SDK_VERSION.toInteger()
 
     defaultConfig {
-        applicationId "com.hh.game"
+        applicationId "harmony.dating.online.face.ad"
         minSdkVersion PROP_MIN_SDK_VERSION
         targetSdkVersion PROP_TARGET_SDK_VERSION
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
 
+        packagingOptions {
+            exclude 'META-INF/rxjava.properties'
+        }
+        manifestPlaceholders = [
+                JPUSH_PKGNAME: "harmony.dating.online.face.ad",
+                JPUSH_APPKEY : "63fc9c5b80e873aee27415ed", //JPush 上注册的包名对应的 Appkey.
+                JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+        ]
         externalNativeBuild {
             if (PROP_BUILD_TYPE == 'ndk-build') {
                 ndkBuild {
@@ -56,14 +70,25 @@ android {
             abiFilters.addAll(PROP_APP_ABI.split(':').collect{it as String})
         }
     }
-
+    dataBinding {
+        enabled = true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
     sourceSets.main {
         java.srcDir "src"
         res.srcDir "res"
         jniLibs.srcDir "libs"
         manifest.srcFile "AndroidManifest.xml"
     }
-
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
     externalNativeBuild {
         if (PROP_BUILD_TYPE == 'ndk-build') {
             ndkBuild {
@@ -77,19 +102,34 @@ android {
         }
     }
 
+//    signingConfigs {
+//
+//       release {
+//            if (project.hasProperty("RELEASE_STORE_FILE")) {
+//                storeFile file(RELEASE_STORE_FILE)
+//                storePassword RELEASE_STORE_PASSWORD
+//                keyAlias RELEASE_KEY_ALIAS
+//                keyPassword RELEASE_KEY_PASSWORD
+//            }
+//        }
+//    }
     signingConfigs {
-
-       release {
-            if (project.hasProperty("RELEASE_STORE_FILE")) {
-                storeFile file(RELEASE_STORE_FILE)
-                storePassword RELEASE_STORE_PASSWORD
-                keyAlias RELEASE_KEY_ALIAS
-                keyPassword RELEASE_KEY_PASSWORD
-            }
+        release {
+            storeFile file('../sign/harmonydating.jks')
+            storePassword "harmonydating"
+            keyAlias "harmonydating"
+            keyPassword "harmonydating"
+        }
+        debug {
+            storeFile file('../sign/harmonydating.jks')
+            storePassword "harmonydating"
+            keyAlias "harmonydating"
+            keyPassword "harmonydating"
         }
     }
 
-buildTypes {
+
+    buildTypes {
         release {
             debuggable false
             jniDebuggable false
@@ -97,9 +137,8 @@ buildTypes {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            if (project.hasProperty("RELEASE_STORE_FILE")) {
-                signingConfig signingConfigs.release
-            }
+            signingConfig signingConfigs.release
+
 
             externalNativeBuild {
                 ndkBuild {
@@ -172,8 +211,8 @@ android.applicationVariants.all { variant ->
 
     variant.mergeAssets.doLast {
         copy {
-           from "${buildDir}/../../../../../res"
-           into "${buildDir}/intermediates/assets/${variant.dirName}/res"
+            from "${buildDir}/../../../../../res"
+            into "${buildDir}/intermediates/assets/${variant.dirName}/res"
         }
 
         copy {
@@ -200,7 +239,7 @@ android.applicationVariants.all { variant ->
 
         if (compileScript) {
             compileJS("${buildDir}/intermediates/assets/${variant.dirName}",
-                      "${buildDir}/intermediates/assets/${variant.dirName}")
+                    "${buildDir}/intermediates/assets/${variant.dirName}")
         }
     }
     variant.outputs.each { output ->
@@ -229,4 +268,18 @@ def releaseTime() {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':libcocos2dx')
+    implementation project(':app.voice')
+    implementation project(':app.mine')
+    implementation project(':app.im')
+    implementation project(':app+stub')
+    implementation project(':app+kit')
+    implementation deps.support.app_compat
+    implementation deps.support.design
+    implementation deps.multidex
+    annotationProcessor deps.dagger.compiler
+    annotationProcessor deps.dagger.android_support_compiler
+    annotationProcessor deps.router.compiler
+    implementation project(':beauty')
+    implementation project(':advertisement')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }

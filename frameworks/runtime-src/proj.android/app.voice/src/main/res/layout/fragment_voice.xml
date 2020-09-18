@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="207dp"
+            android:background="@drawable/bg_index_top">
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_scrollFlags="scroll">
+
+                <RelativeLayout
+                    android:id="@+id/rl_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:gravity="center_vertical"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <RelativeLayout
+                        android:id="@+id/rl_back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:paddingLeft="14dp"
+                        android:paddingRight="14dp">
+
+                        <ImageView
+                            android:layout_width="12dp"
+                            android:layout_height="21dp"
+                            android:src="@drawable/ic_back" />
+                    </RelativeLayout>
+
+
+                    <com.deepsea.mua.core.view.xtablayout.XTabLayout
+                        android:id="@+id/tab_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/rl_back"
+                        android:minWidth="70dp"
+                        android:overScrollMode="never"
+                        app:xTabIndicatorCenter="true"
+                        app:xTabIndicatorColor="@color/white"
+                        app:xTabIndicatorHeight="2dp"
+                        app:xTabIndicatorWidth="26dp"
+                        app:xTabMode="scrollable"
+                        app:xTabPaddingEnd="8dp"
+                        app:xTabPaddingStart="8dp"
+                        app:xTabSelectedTextColor="@color/white"
+                        app:xTabSelectedTextSize="23sp"
+                        app:xTabTextColor="@color/white"
+                        app:xTabTextSelectedBold="true"
+                        app:xTabTextSize="16sp" />
+
+                    <LinearLayout
+                        android:id="@+id/title_layout"
+                        android:layout_width="wrap_content"
+
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="4dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:visibility="visible">
+
+                        <ImageView
+                            android:id="@+id/iv_search"
+                            android:layout_width="22dp"
+                            android:layout_height="19dp"
+                            android:layout_marginRight="8dp"
+                            android:src="@drawable/ic_search_white" />
+
+                        <LinearLayout
+                            android:id="@+id/ll_create_room"
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="15dp"
+                            android:orientation="horizontal">
+
+                            <com.deepsea.mua.stub.view.WithBackgroundTextView
+                                android:id="@+id/tv_apply_host"
+                                android:layout_width="81dp"
+                                android:layout_height="28dp"
+                                android:gravity="center"
+                                android:text="申请主持"
+                                android:textColor="@color/white"
+                                android:visibility="gone"
+                                app:radius="22dp"
+                                app:withBackgroundColor="#FD487C" />
+
+                            <ImageView
+                                android:id="@+id/room_iv"
+                                android:layout_width="22dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="center_vertical"
+                                android:src="@drawable/ic_room" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_filter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="15dp"
+                            android:orientation="horizontal"
+                            android:visibility="visible">
+                            <ImageView
+                                android:layout_width="22dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="center_vertical"
+                                android:src="@drawable/ic_filter" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_marquee"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/icon_maquee_horse_bg"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@id/rl_title">
+
+
+                    <com.deepsea.mua.stub.view.MarqueeTextView
+                        android:id="@+id/tv_marquee"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:ellipsize="marquee"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:gravity="left"
+                        android:paddingLeft="33dp"
+                        android:paddingRight="33dp"
+                        android:singleLine="true"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+
+                <com.deepsea.mua.core.view.banner.SlidingPlayView
+                    android:id="@+id/banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="119dp"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginTop="38dp"
+                    android:layout_marginRight="13dp"
+                    android:background="@color/primary_red"
+                    android:visibility="visible"
+                    app:duration="3000"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rl_marquee" />
+
+                <RelativeLayout
+                    android:id="@+id/tl_time_recommend"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="13dp"
+                    android:layout_marginRight="16dp"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@id/banner">
+
+                    <ImageView
+                        android:id="@+id/iv_recommond_userbg"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_place_room_bg" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginBottom="10dp"
+                        android:shadowColor="#ff000000"
+                        android:shadowDx="0"
+                        android:shadowDy="1"
+                        android:shadowRadius="3.0"
+                        android:text="欢迎来到小可爱的直播间"
+                        android:textColor="#ffffffff"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="79dp"
+                        android:layout_height="27dp"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/bg_time_recommend"
+                        android:gravity="center"
+                        android:text="时段推荐 1"
+                        android:textColor="#ffffffff"
+                        android:textSize="13sp" />
+
+                    <ImageView
+                        android:id="@+id/tv_red_package"
+                        android:layout_width="17dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="9dp"
+                        android:layout_marginRight="11dp"
+                        android:src="@drawable/ic_red_package" />
+                </RelativeLayout>
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/view_pager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

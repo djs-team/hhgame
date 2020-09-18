@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="65dp"
+        android:layout_marginTop="8dp">
+
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/charge_layout"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/selector_charge">
+
+            <ImageView
+                android:id="@+id/md_iv"
+                android:layout_width="13dp"
+                android:layout_height="14dp"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/icon_flower_recharge"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <com.deepsea.mua.stub.view.TextViewWithoutPadding
+                android:id="@+id/md_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
+                android:includeFontPadding="false"
+                android:text="600000000000000"
+                android:textColor="@color/select_recharge_item_rose_color"
+                android:textSize="20sp"
+                app:layout_constraintLeft_toRightOf="@id/md_iv"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.deepsea.mua.stub.view.TextViewWithoutPadding
+                android:id="@+id/money_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/md_tv"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="6dp"
+                android:text="6.0元"
+                android:textColor="@color/select_recharge_item_rmb_color"
+                android:textSize="12sp"
+                app:layout_constraintLeft_toRightOf="@id/md_iv"
+                app:layout_constraintTop_toBottomOf="@id/md_tv" />
+        </android.support.constraint.ConstraintLayout>
+        <com.deepsea.mua.stub.view.WithBackgroundTextView
+            android:id="@+id/tv_give_rose"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="7dp"
+            android:paddingRight="8dp"
+            android:paddingBottom="2dp"
+            app:withBackgroundColor="#EA5BBB"
+            app:withTopLeftRadius="0dp"
+            app:withTopRightRadius="2dp"
+            app:withBottomLeftRadius="2dp"
+            app:withBottomRightRadius="0dp"
+            android:text="赠30玫瑰"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            android:gravity="center"
+            />
+        <TextView
+            android:visibility="gone"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:id="@+id/tv_discount"
+            android:layout_width="match_parent"
+            android:layout_height="17dp"
+            android:textSize="10sp"
+            android:textColor="@color/white"
+            android:text="超值特惠"
+            android:gravity="center"
+            android:background="@drawable/bg_recharge_item_discount"/>
+    </RelativeLayout>
+</layout>

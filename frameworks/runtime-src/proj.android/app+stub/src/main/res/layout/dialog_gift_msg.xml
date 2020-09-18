@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="30dp"
+        android:paddingBottom="10dp"
+        app:bl_corners_radius="12dp"
+        app:bl_solid_color="@color/white">
+
+        <TextView
+            android:id="@+id/tv_gift_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="送给小熊泰迪"
+            android:textColor="#ff333333"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:id="@+id/iv_gift_photo"
+            android:layout_width="158dp"
+            android:layout_height="135dp"
+            android:layout_below="@id/tv_gift_user"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="17dp"/>
+
+        <EditText
+            android:id="@+id/et_gift_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="40dp"
+            android:layout_below="@id/iv_gift_photo"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="9dp"
+            android:layout_marginTop="19dp"
+            android:layout_marginRight="9dp"
+            android:background="#CACACA"
+            android:gravity="center"
+            android:hint="点击输入礼物寄语"
+            android:paddingLeft="15dp"
+            android:textColor="#ff666666"
+            android:textSize="18sp"
+            android:maxLength="15"
+            />
+
+
+        <TextView
+            android:id="@+id/tv_refuse_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/et_gift_message"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="5dp"
+            android:text="如果对方拒绝好友请求，玫瑰原路退回"
+            android:textColor="#ff666666"
+            android:textSize="@dimen/text_size_10" />
+
+        <Button
+            android:layout_marginTop="16dp"
+            android:id="@+id/btn_add_friend"
+            android:layout_width="111dp"
+            android:layout_height="27dp"
+            android:layout_below="@id/tv_refuse_desc"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/bg_orange_radius_13"
+            android:textColor="#ff333333"
+            android:textSize="@dimen/text_size_12"
+            android:text="送礼加好友" />
+    </RelativeLayout>
+</layout>

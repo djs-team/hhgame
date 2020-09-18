@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cons_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/white_radius_12dp"
+            android:paddingBottom="47dp"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="32dp"
+                android:text="守护特权"
+                android:textColor="#ff333333"
+                android:textSize="21sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_medal"
+                android:layout_width="43dp"
+                android:layout_height="53dp"
+                android:layout_marginLeft="48dp"
+                android:layout_marginTop="24dp"
+                android:src="@drawable/ic_group_medal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+            <TextView
+                android:id="@+id/tv_medal"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:text="专属勋章"
+                android:textColor="#ff878787"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toLeftOf="@id/iv_medal"
+                app:layout_constraintRight_toRightOf="@id/iv_medal"
+                app:layout_constraintTop_toBottomOf="@id/iv_medal" />
+
+            <ImageView
+                android:id="@+id/iv_effects"
+                android:layout_width="40dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="24dp"
+                android:src="@drawable/ic_group_effects"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:text="进场特效"
+                android:textColor="#ff878787"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toLeftOf="@id/iv_effects"
+                app:layout_constraintRight_toRightOf="@id/iv_effects"
+                app:layout_constraintTop_toBottomOf="@id/iv_effects" />
+
+            <ImageView
+                android:id="@+id/iv_gift"
+                android:layout_width="40dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginRight="50dp"
+                android:src="@drawable/ic_group_gift"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:text="守护专属礼物"
+                android:textColor="#ff878787"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toLeftOf="@id/iv_gift"
+                app:layout_constraintRight_toRightOf="@id/iv_gift"
+                app:layout_constraintTop_toBottomOf="@id/iv_gift" />
+        </android.support.constraint.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="22dp"
+            android:src="@drawable/close" />
+    </LinearLayout>
+</layout>

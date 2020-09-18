@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <RelativeLayout
+                android:id="@+id/auth_bg_rl"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@drawable/auth_bg">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="19dp">
+
+                    <LinearLayout
+                        android:id="@+id/back_iv_ll"
+                        android:layout_width="30dp"
+                        android:layout_height="52dp"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/back_iv"
+                            android:layout_width="12dp"
+                            android:layout_height="20dp"/>
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:id="@+id/title_nick_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="52dp"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center"
+                        android:text="身份认证"
+                        android:textColor="@color/FFFFFF"
+                        android:textSize="18dp" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:id="@+id/identity_auth"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="94dp"
+                android:layout_marginRight="14dp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:bl_corners_radius="22dp"
+                app:bl_solid_color="@color/white"
+                app:bl_stroke_dashGap="5dp"
+                app:bl_stroke_dashWidth="10dp"
+                app:bl_stroke_width="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/identityauth_round"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingLeft="20dp"
+                        android:paddingTop="20dp"
+                        android:paddingRight="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="姓名"
+                            android:textColor="@color/F333333"
+                            android:textSize="16dp" />
+
+                        <EditText
+                            android:id="@+id/nick_tv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="67dp"
+                            android:background="@null"
+                            android:hint="请输入您的真实姓名"
+                            android:textColorHint="@color/CDCDCD"
+                            android:textSize="15dp" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="28dp"
+                        android:orientation="horizontal"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingBottom="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="身份证号"
+                            android:textColor="@color/F333333"
+                            android:textSize="16dp" />
+
+                        <EditText
+                            android:id="@+id/identity_number"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="35dp"
+                            android:background="@null"
+                            android:hint="填错将无法提交认证"
+                            android:textColorHint="@color/CDCDCD"
+                            android:textSize="15dp" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+                <Button
+                    android:id="@+id/submit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginRight="35dp"
+                    android:text="提交"
+                    android:textColor="@color/FFFFFF"
+                    android:textSize="17dp"
+                    app:bl_corners_radius="25dp"
+                    app:bl_solid_color="#A3A6FF"
+                    app:bl_stroke_dashGap="5dp"
+                    app:bl_stroke_dashWidth="10dp"
+                    app:bl_stroke_width="2dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/instructions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="提交成功后无法修改，请谨慎填写。" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="根据《互联网用户账号名称管理规定》的要求，申请 开通聊天室，上麦发言，发动态需要上传身份证号。 mua将会严格保护你的数据和隐私安全。" />
+
+            </LinearLayout>
+
+
+            <!--<LinearLayout-->
+            <!--android:id="@+id/certification"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_marginTop="123dp"-->
+            <!--android:gravity="center_horizontal"-->
+            <!--android:orientation="vertical"-->
+            <!--android:visibility="gone">-->
+
+            <!--<ImageView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="@drawable/submit_success" />-->
+
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="20dp"-->
+            <!--android:text="提交成功"-->
+            <!--android:textColor="@color/F313131"-->
+            <!--android:textSize="16dp" />-->
+
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:text="我们将在三个工作日内审核完成，请耐心等候" />-->
+
+            <!--<Button-->
+            <!--android:id="@+id/confirm"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="35dp"-->
+            <!--android:layout_marginTop="24dp"-->
+            <!--android:layout_marginRight="35dp"-->
+            <!--android:text="确定"-->
+            <!--android:textColor="@color/F333333"-->
+            <!--android:textSize="17dp"-->
+            <!--app:bl_corners_radius="25dp"-->
+            <!--app:bl_solid_color="#A3A6FF"-->
+            <!--app:bl_stroke_dashGap="5dp"-->
+            <!--app:bl_stroke_dashWidth="10dp"-->
+            <!--app:bl_stroke_width="2dp" />-->
+            <!--</LinearLayout>-->
+
+
+            <LinearLayout
+                android:id="@+id/has_certification"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="123dp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/submit_success" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:text="您已认证"
+                    android:textColor="@color/F313131"
+                    android:textSize="16dp" />
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+</layout>

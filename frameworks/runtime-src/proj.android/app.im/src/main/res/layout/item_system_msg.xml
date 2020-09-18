@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/msg_time_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="12dp"
+            android:text="刚刚"
+            android:textColor="#ffbbbbbb"
+            android:textSize="12sp" />
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/dynamic_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="13dp"
+            app:bl_corners_radius="6dp"
+            app:bl_solid_color="@color/white">
+
+            <ImageView
+                android:id="@+id/avatar_iv"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="10dp"
+                app:layout_constraintBottom_toBottomOf="@id/title_tv"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@id/title_tv" />
+
+            <TextView
+                android:id="@+id/title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:text="用户名称 回复了你的评论"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                app:layout_constraintLeft_toRightOf="@id/avatar_iv"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/reply_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginRight="10dp"
+                android:singleLine="true"
+                android:text="厉害厉害厉害厉害厉害厉害厉害厉害厉害厉害……"
+                android:textColor="@color/gray"
+                android:textSize="13sp"
+                app:layout_constraintTop_toBottomOf="@id/title_tv" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:background="@color/primary_bg"
+                app:layout_constraintTop_toBottomOf="@id/reply_tv" />
+
+            <TextView
+                android:id="@+id/content_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:singleLine="true"
+                android:text="时间慢慢地带走了本不该留下的，我已经快要想不……"
+                android:textColor="#ffbbbbbb"
+                android:textSize="12sp"
+                app:layout_constraintTop_toBottomOf="@id/reply_tv" />
+
+            <TextView
+                android:id="@+id/create_time_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="10dp"
+                android:text="2019年12月1日"
+                android:textColor="#ffd0d0d0"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/content_tv" />
+
+            <TextView
+                android:id="@+id/reply_num_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:text="12评论"
+                android:textColor="#ffd0d0d0"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/create_time_tv"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/create_time_tv" />
+        </android.support.constraint.ConstraintLayout>
+    </LinearLayout>
+</layout>

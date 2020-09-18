@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="sendNum">
+        <item>1</item>
+        <item>5</item>
+        <item>10</item>
+        <item>21</item>
+        <item>30</item>
+        <item>66</item>
+        <item>188</item>
+        <item>520</item>
+        <item>999</item>
+        <item>1314</item>
+    </integer-array>
+    <string-array name="sendDesc">
+        <item>一心一意</item>
+        <item>五福临门</item>
+        <item>十全十美</item>
+        <item>爱你爱你</item>
+        <item>想你</item>
+        <item>诸事顺利</item>
+        <item>要抱抱</item>
+        <item>我爱你</item>
+        <item>天长地久</item>
+        <item>一生一世</item>
+    </string-array>
+</resources>

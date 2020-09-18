@@ -1,4 +1,4 @@
-include ':libcocos2dx'
+include ':libcocos2dx', ':lib.core', ':lib.svga', ':beauty', ':app.voice', ':lib.faceliveness', ':lib.hyphenate', ':app+stub', ':app.im', ':app.mine', ':app+kit', ':advertisement'
 project(':libcocos2dx').projectDir = new File(settingsDir, '../../cocos2d-x/cocos/platform/android/libcocos2dx')
 include ':hhgame'
 project(':hhgame').projectDir = new File(settingsDir, 'app')

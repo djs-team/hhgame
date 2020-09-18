@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+        android:id="@+id/rl_march_users"
+        android:layout_width="154dp"
+        android:layout_height="53dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="72dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/icon_login_same_city_photo" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_matching"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_march_users"
+        android:layout_marginTop="14dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tv_hint_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/tv_match_num"
+            android:text="为您匹配到"
+            android:textColor="#ffffffff"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_match_num"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="2536"
+            android:textColor="#FFF3CF32"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tv_match_num"
+            android:text="位同城异性对象"
+            android:textColor="#ffffffff"
+            android:textSize="14sp" />
+
+
+    </RelativeLayout>
+    </RelativeLayout>

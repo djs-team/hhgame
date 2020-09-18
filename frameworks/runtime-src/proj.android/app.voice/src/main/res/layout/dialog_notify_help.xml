@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_notify_help"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+        <TextView
+            android:layout_marginTop="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="指定接受助力的嘉宾"
+            android:textColor="#ff000000"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="28dp"
+            />
+        <com.deepsea.mua.stub.view.MaxRelativeLayout
+            android:id="@+id/multi_smash_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            app:maxHeight="357dp">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_micro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:overScrollMode="never" />
+        </com.deepsea.mua.stub.view.MaxRelativeLayout>
+        <TextView
+            android:layout_marginBottom="34dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="把该视频房分享给你的好友，好友免费给你
+指定的嘉宾送礼物"
+            android:textColor="#ff000000"
+            android:textSize="14sp"
+            />
+    </LinearLayout>
+</layout>

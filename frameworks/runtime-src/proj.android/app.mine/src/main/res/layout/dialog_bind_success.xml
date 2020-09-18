@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:background="@drawable/icon_bind_inviteer_bg"
+                android:orientation="vertical">
+                <RelativeLayout
+                    android:layout_alignParentRight="true"
+                    android:id="@+id/rl_close"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+
+                    android:padding="15dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_black_close" />
+                </RelativeLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="24dp"
+                    android:text="完成绑定"
+                    android:textColor="@color/black"
+                    android:textSize="21sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_invitecode_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="242dp"
+                    android:layout_marginRight="32dp"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/black"
+                    android:lines="3"
+                    android:textSize="16sp" />
+
+
+                <EditText
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/edit_text"
+                    android:layout_width="250dp"
+                    android:layout_height="44dp"
+                    android:layout_below="@id/tv_invitecode_desc"
+                    android:layout_marginTop="45dp"
+                    android:background="@drawable/icon_input_invite_code"
+                    android:gravity="center"
+                    android:hint="请输入您的邀请人邀请码"
+                    android:maxLength="16"
+                    android:singleLine="true"
+                    android:paddingLeft="12dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="#fb4460"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/iv_submit"
+                    android:layout_width="250dp"
+                    android:layout_height="44dp"
+                    android:layout_below="@id/edit_text"
+                    android:layout_marginTop="16dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/icon_bind_inviter_submit" />
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.deepsea.mua.stub.view.TitleBar
+            android:id="@+id/title_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:backgroundRes="@color/transparent"
+            app:title="注销账户" />
+
+        <ScrollView
+            android:layout_below="@+id/title_bar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:paddingLeft="13dp"
+                android:paddingRight="13dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:text="在您注销合合账号前，请您充分阅读、理解并同意以下内容：\n
+一、 您所申请注销的账号是您依照合合用户协议约定进行注册并由合合提供给您的账号；\n
+二、 您所申请注销的账号处于安全状态，即账号未发生过被盗、被封禁等情形\n
+三、 您注销成功后将视为您放弃该账号下的如下资产或权益，该等资产或权益将被清空及/或删除，且无法恢复：\n
+1． 您的个人身份信息、好友信息、账户信息、认证信息、粉丝数量等；\n
+2． 您发布的任何信息（包括但不限于动态、视频、音频、图片、文字、评论等）数据内容；\n
+3． 您账号内虚拟礼物、收益、余额、等将全部被删除，请您在申请注销前务必妥善处理账号中的资金问题；其中未消耗的虚拟礼物不支持提现，如需要清您在完成消耗后进行注销；\n
+四、 您确认您申请注销账号的行为不违反任何法律法规、不侵犯任何第三方的合法权益，否则因此产生的任何纠纷及赔偿由您自行承担，并赔偿因此给伊对造成的全部损失；\n
+五、 在账号注销前及注销期间，如被第三方投诉、被国家机关调查或正处于诉讼、仲裁程序中，合合有权自行终止您账号注销的申请，且无需经您同意；\n
+六、 您注销合合账号并不视为您注销前的所有账号行为和相关责任得到豁免或减轻；\n"
+                android:textSize="14sp"
+                android:textColor="#666666"/>
+        </ScrollView>
+
+        <TextView
+            android:layout_alignParentBottom="true"
+            android:id="@+id/cancellation_account_tv"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginLeft="34dp"
+            android:layout_marginRight="34dp"
+            android:layout_marginBottom="24dp"
+            android:gravity="center"
+            android:text="注销账户"
+            android:background="@drawable/selector_cancellation_account"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            android:enabled="false" />
+    </RelativeLayout>
+</layout>

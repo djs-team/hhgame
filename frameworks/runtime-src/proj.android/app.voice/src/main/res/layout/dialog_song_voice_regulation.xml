@@ -1,0 +1,1551 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:background="@drawable/icon_dialog_manage_bg"
+        android:orientation="vertical">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="混响调节"
+        android:textColor="#ffffffff"
+        android:textSize="14sp"
+        android:layout_centerHorizontal="true"
+        />
+    <View
+        android:layout_marginTop="2dp"
+        android:layout_below="@id/tv_title"
+        android:layout_centerHorizontal="true"
+        android:layout_width="16dp"
+        android:layout_height="1dp"
+        android:background="@color/white"
+        android:layout_marginBottom="2dp"/>
+    <RelativeLayout
+        android:id="@+id/rl_reverberation_close"
+        android:layout_width="29dp"
+        android:layout_marginRight="5dp"
+        android:layout_height="28dp"
+        android:layout_alignParentRight="true">
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="11dp"
+            android:layout_height="11dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/icon_song_diaog_hide" />
+    </RelativeLayout>
+</RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="混响调节"
+                android:textColor="#ff272727"
+                android:textSize="24sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/ll_effect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_sound_effect_popular"
+                    android:layout_width="48dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/selector_voice_regulation_bg"
+                    android:gravity="center"
+                    android:tag="1"
+                    android:text="@string/effet_poplular"
+                    android:textColor="#ffffffff"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_sound_effect_rb"
+                    android:layout_width="48dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/selector_voice_regulation_bg"
+                    android:gravity="center"
+                    android:tag="2"
+                    android:text="@string/effet_rb"
+                    android:textColor="#ffffffff"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_sound_effect_rock"
+                    android:layout_width="48dp"
+
+                    android:layout_height="20dp"
+
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/selector_voice_regulation_bg"
+                    android:gravity="center"
+                    android:tag="3"
+                    android:text="@string/effet_rock"
+                    android:textColor="#ffffffff"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_sound_effect_hiphop"
+
+                    android:layout_width="48dp"
+                    android:layout_height="20dp"
+
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/selector_voice_regulation_bg"
+                    android:gravity="center"
+                    android:tag="4"
+                    android:text="@string/effet_hip_pop"
+                    android:textColor="#ffffffff"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_sound_effect_vocalconcer"
+                    android:layout_width="48dp"
+
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/selector_voice_regulation_bg"
+                    android:gravity="center"
+                    android:tag="5"
+                    android:text="@string/effet_vocal_concert"
+                    android:textColor="#ffffffff"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_sound_effect_ktv"
+
+                    android:layout_width="48dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/selector_voice_regulation_bg"
+                    android:gravity="center"
+                    android:tag="6"
+                    android:text="@string/effet_ktv"
+                    android:textColor="#ffffffff"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_sound_effect_studio"
+
+                    android:layout_width="48dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/selector_voice_regulation_bg"
+                    android:gravity="center"
+                    android:tag="7"
+                    android:text="@string/effet_studio"
+                    android:textColor="#ffffffff"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_voice_reverb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ll_effect"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="ROOM\nSIZE"
+                    android:textColor="#FFA933CA"
+                    android:textSize="14sp"
+
+                    />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="WET\nDELAY"
+
+                    android:textColor="#FFA933CA"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="STRENG\nTHEN"
+
+                    android:textColor="#FFA933CA"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="WET\n
+LEVEL"
+                    android:textColor="#FFA933CA"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="DRY\nLEVEL"
+                    android:textColor="#FFA933CA"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_voice_reverb_seekbar"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_below="@id/ll_voice_reverb"
+                android:layout_marginTop="3dp"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal">
+
+                    <com.deepsea.mua.voice.view.VerticalSeekBar
+                        android:id="@+id/seekbar_reverb_roomsize"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:max="100"
+                        android:maxHeight="8dp"
+                        android:paddingStart="10dp"
+                        android:paddingRight="10dp"
+                        android:progress="0"
+                        android:progressDrawable="@drawable/seekbar_pink_bg"
+                        android:tag="2"
+                        android:thumb="@drawable/selector_regule_bar_key" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal">
+
+                    <com.deepsea.mua.voice.view.VerticalSeekBar
+                        android:id="@+id/seekbar_reverb_wetdelay"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:background="@null"
+                        android:max="200"
+                        android:maxHeight="8dp"
+                        android:paddingStart="10dp"
+                        android:paddingRight="10dp"
+                        android:progress="0"
+                        android:progressDrawable="@drawable/seekbar_pink_bg"
+                        android:tag="3"
+
+                        android:thumb="@drawable/selector_regule_bar_key" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal">
+
+                    <com.deepsea.mua.voice.view.VerticalSeekBar
+                        android:id="@+id/seekbar_reverb_strength"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:background="@null"
+                        android:max="100"
+                        android:maxHeight="8dp"
+                        android:minHeight="5dp"
+                        android:paddingStart="10dp"
+                        android:paddingRight="10dp"
+                        android:progress="0"
+                        android:progressDrawable="@drawable/seekbar_pink_bg"
+                        android:tag="4"
+                        android:thumb="@drawable/selector_regule_bar_key" />
+                </RelativeLayout>
+                ]
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal">
+
+                    <com.deepsea.mua.voice.view.VerticalSeekBar
+                        android:id="@+id/seekbar_reverb_wetlevel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:background="@null"
+                        android:max="30"
+                        android:maxHeight="8dp"
+                        android:paddingStart="10dp"
+                        android:paddingRight="10dp"
+
+                        android:progress="0"
+                        android:progressDrawable="@drawable/seekbar_pink_bg"
+                        android:tag="1"
+                        android:thumb="@drawable/selector_regule_bar_key" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal">
+
+                    <com.deepsea.mua.voice.view.VerticalSeekBar
+                        android:id="@+id/seekbar_reverb_dryevel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:background="@null"
+                        android:max="30"
+                        android:maxHeight="8dp"
+                        android:paddingStart="10dp"
+                        android:paddingRight="10dp"
+                        android:progress="0"
+
+                        android:progressDrawable="@drawable/seekbar_pink_bg"
+                        android:tag="0"
+                        android:thumb="@drawable/selector_regule_bar_key" />
+                </RelativeLayout>
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:id="@+id/ll_fband"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/ll_effect"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="均衡/频带"
+                    android:textColor="#ff000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/ll_kedu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="150dp"
+                        android:orientation="vertical"
+                        android:paddingRight="-3dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="-15 一"
+                            android:textSize="9sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="11dp"
+                            android:text="-10 一"
+                            android:textSize="9sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="11dp"
+                            android:text=" -5 一"
+                            android:textSize="9sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="11dp"
+                            android:text="  0 一"
+                            android:textSize="9sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="11dp"
+                            android:text="  5 一"
+                            android:textSize="9sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="11dp"
+                            android:text=" 10 一"
+                            android:textSize="9sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="11dp"
+                            android:text=" 15 一"
+                            android:textSize="9sp" />
+
+                    </LinearLayout>
+
+                    <com.deepsea.mua.voice.view.VerticalSeekBar
+                        android:id="@+id/seekbar_fband_one"
+                        android:layout_width="wrap_content"
+                        android:layout_height="157dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="-5dp"
+                        android:layout_toRightOf="@id/ll_kedu"
+                        android:max="30"
+                        android:maxHeight="3.4dp"
+                        android:minHeight="5dp"
+                        android:paddingStart="3dp"
+                        android:paddingRight="0dp"
+                        android:progress="15"
+                        android:progressDrawable="@drawable/seekbar_pink_bg"
+                        android:tag="0"
+                        android:thumb="@drawable/selector_conmon_bar_key" />
+
+                    <com.deepsea.mua.voice.view.VerticalSeekBar
+                        android:id="@+id/seekbar_fband_two"
+                        android:layout_width="wrap_content"
+                        android:layout_height="157dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="15dp"
+                        android:layout_toRightOf="@id/seekbar_fband_one"
+                        android:max="30"
+                        android:maxHeight="3.4dp"
+                        android:minHeight="5dp"
+                        android:paddingStart="3dp"
+                        android:paddingRight="0dp"
+                        android:progress="15"
+                        android:progressDrawable="@drawable/seekbar_pink_bg"
+                        android:tag="1"
+                        android:thumb="@drawable/selector_conmon_bar_key" />
+
+                    <com.deepsea.mua.voice.view.VerticalSeekBar
+                        android:id="@+id/seekbar_fband_three"
+                        android:layout_width="wrap_content"
+                        android:layout_height="157dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="15dp"
+                        android:layout_toRightOf="@id/seekbar_fband_two"
+                        android:max="30"
+                        android:maxHeight="3.4dp"
+                        android:minHeight="5dp"
+                        android:paddingStart="3dp"
+                        android:paddingRight="0dp"
+                        android:progress="15"
+                        android:progressDrawable="@drawable/seekbar_pink_bg"
+                        android:tag="2"
+                        android:thumb="@drawable/selector_conmon_bar_key" />
+
+                    <com.deepsea.mua.voice.view.VerticalSeekBar
+                        android:id="@+id/seekbar_fband_four"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="157dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="15dp"
+                        android:layout_toRightOf="@id/seekbar_fband_three"
+                        android:max="30"
+                        android:maxHeight="3.4dp"
+                        android:minHeight="5dp"
+                        android:paddingStart="3dp"
+                        android:paddingRight="0dp"
+                        android:progress="15"
+                        android:progressDrawable="@drawable/seekbar_pink_bg"
+                        android:tag="3"
+                        android:thumb="@drawable/selector_conmon_bar_key" />
+
+                    <com.deepsea.mua.voice.view.VerticalSeekBar
+                        android:id="@+id/seekbar_fband_five"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="157dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="15dp"
+                        android:layout_toRightOf="@id/seekbar_fband_four"
+                        android:max="30"
+                        android:maxHeight="3.4dp"
+                        android:minHeight="5dp"
+                        android:paddingStart="3dp"
+                        android:paddingRight="0dp"
+                        android:progress="15"
+                        android:progressDrawable="@drawable/seekbar_pink_bg"
+                        android:tag="4"
+                        android:thumb="@drawable/selector_conmon_bar_key" />
+
+                    <com.deepsea.mua.voice.view.VerticalSeekBar
+                        android:id="@+id/seekbar_fband_six"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="157dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="15dp"
+                        android:layout_toRightOf="@id/seekbar_fband_five"
+                        android:max="30"
+                        android:maxHeight="3.4dp"
+                        android:minHeight="5dp"
+                        android:paddingStart="3dp"
+                        android:paddingRight="0dp"
+                        android:progress="15"
+                        android:progressDrawable="@drawable/seekbar_pink_bg"
+                        android:tag="5"
+                        android:thumb="@drawable/selector_conmon_bar_key" />
+
+                    <com.deepsea.mua.voice.view.VerticalSeekBar
+                        android:id="@+id/seekbar_fband_seven"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="157dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="15dp"
+                        android:layout_toRightOf="@id/seekbar_fband_six"
+                        android:max="30"
+                        android:maxHeight="3.4dp"
+                        android:minHeight="5dp"
+                        android:paddingStart="3dp"
+                        android:paddingRight="0dp"
+                        android:progress="15"
+                        android:progressDrawable="@drawable/seekbar_pink_bg"
+                        android:tag="6"
+                        android:thumb="@drawable/selector_conmon_bar_key" />
+
+                    <com.deepsea.mua.voice.view.VerticalSeekBar
+                        android:id="@+id/seekbar_fband_eight"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="157dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="15dp"
+                        android:layout_toRightOf="@id/seekbar_fband_seven"
+                        android:max="30"
+                        android:maxHeight="3.4dp"
+                        android:minHeight="5dp"
+                        android:paddingStart="3dp"
+                        android:paddingRight="0dp"
+                        android:progress="15"
+                        android:progressDrawable="@drawable/seekbar_pink_bg"
+                        android:tag="7"
+                        android:thumb="@drawable/selector_conmon_bar_key" />
+
+                    <com.deepsea.mua.voice.view.VerticalSeekBar
+                        android:id="@+id/seekbar_fband_nine"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="157dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="15dp"
+                        android:layout_toRightOf="@id/seekbar_fband_eight"
+                        android:max="30"
+                        android:maxHeight="3.4dp"
+                        android:minHeight="5dp"
+                        android:paddingStart="3dp"
+                        android:paddingRight="0dp"
+                        android:progress="15"
+                        android:progressDrawable="@drawable/seekbar_pink_bg"
+                        android:tag="8"
+                        android:thumb="@drawable/selector_conmon_bar_key" />
+
+                    <com.deepsea.mua.voice.view.VerticalSeekBar
+                        android:id="@+id/seekbar_fband_ten"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="157dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="15dp"
+                        android:layout_toRightOf="@id/seekbar_fband_nine"
+                        android:max="30"
+                        android:maxHeight="3.4dp"
+                        android:minHeight="5dp"
+                        android:paddingStart="3dp"
+                        android:paddingRight="0dp"
+                        android:progress="15"
+                        android:progressDrawable="@drawable/seekbar_pink_bg"
+                        android:tag="9"
+                        android:thumb="@drawable/selector_conmon_bar_key" />
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ll_fband"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="3dp"
+                android:layout_toRightOf="@id/ll_effect"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:textColor="#ff000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="2"
+                    android:textColor="#ff000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="3"
+                    android:textColor="#ff000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="4"
+                    android:textColor="#ff000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="5"
+                    android:textColor="#ff000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="6"
+                    android:textColor="#ff000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="7"
+                    android:textColor="#ff000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="8"
+                    android:textColor="#ff000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="9"
+                    android:textColor="#ff000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="10"
+                    android:textColor="#ff000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:id="@+id/ll_hunxiang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="4dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="19dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="混响"
+                    android:textColor="#ff000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="原始声音强度"
+                    android:textColor="#ff000000"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:text="早期反射信号强度"
+                    android:textColor="#ff000000"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:text="混响效果房间尺寸"
+                    android:textColor="#ff000000"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:text="初始延迟长度"
+                    android:textColor="#ff000000"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:text="混响持续强度"
+                    android:textColor="#ff000000"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_reverberation_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:layout_toRightOf="@id/ll_hunxiang"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="185dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="-3dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="-20"
+                        android:textSize="9sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:text="-10"
+                        android:textSize="9sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textSize="9sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:text="10"
+                        android:textSize="9sp" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="185dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="5dp"
+                            android:background="@color/line_color" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="5dp"
+                            android:layout_marginLeft="28dp"
+                            android:background="@color/line_color" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="5dp"
+                            android:layout_marginLeft="28dp"
+                            android:background="@color/line_color" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="5dp"
+                            android:layout_marginLeft="28dp"
+                            android:background="@color/line_color" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="5dp"
+                            android:layout_marginLeft="28dp"
+                            android:background="@color/line_color" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="5dp"
+                            android:layout_marginLeft="28dp"
+                            android:background="@color/line_color" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="5dp"
+                            android:layout_marginLeft="29dp"
+                            android:background="@color/line_color" />
+                    </LinearLayout>
+
+                    <SeekBar
+                        android:layout_width="185dp"
+                        android:layout_height="20dp"
+                        android:layout_centerVertical="true"
+                        android:max="30"
+                        android:maxHeight="3.4dp"
+                        android:minHeight="5dp"
+                        android:paddingStart="0dp"
+                        android:paddingRight="0dp"
+                        android:progress="20"
+                        android:progressDrawable="@drawable/seekbar_violet_bg"
+                        android:tag="0"
+                        android:thumb="@drawable/selector_conmon_bar_key" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="185dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="-3dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="-20"
+                        android:textSize="9sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:text="-10"
+                        android:textSize="9sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textSize="9sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:text="10"
+                        android:textSize="9sp" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="185dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="5dp"
+                            android:background="@color/line_color" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="5dp"
+                            android:layout_marginLeft="28dp"
+                            android:background="@color/line_color" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="5dp"
+                            android:layout_marginLeft="28dp"
+                            android:background="@color/line_color" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="5dp"
+                            android:layout_marginLeft="28dp"
+                            android:background="@color/line_color" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="5dp"
+                            android:layout_marginLeft="28dp"
+                            android:background="@color/line_color" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="5dp"
+                            android:layout_marginLeft="28dp"
+                            android:background="@color/line_color" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="5dp"
+                            android:layout_marginLeft="28dp"
+                            android:background="@color/line_color" />
+                    </LinearLayout>
+
+                    <SeekBar
+                        android:layout_width="185dp"
+                        android:layout_height="20dp"
+                        android:layout_centerVertical="true"
+                        android:max="30"
+                        android:maxHeight="3.4dp"
+                        android:minHeight="5dp"
+                        android:paddingStart="0dp"
+                        android:paddingRight="0dp"
+                        android:progress="20"
+                        android:progressDrawable="@drawable/seekbar_violet_bg"
+                        android:tag="1"
+                        android:thumb="@drawable/selector_conmon_bar_key" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="185dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginBottom="-3dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text=" 0"
+                        android:textSize="9sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:text="25"
+                        android:textSize="9sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:text="50"
+                        android:textSize="9sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:text="75"
+                        android:textSize="9sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:text="100"
+                        android:textSize="9sp" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="185dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="5dp"
+                            android:background="@color/line_color" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="5dp"
+                            android:layout_marginLeft="22dp"
+                            android:background="@color/line_color" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="5dp"
+                            android:layout_marginLeft="22dp"
+                            android:background="@color/line_color" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="5dp"
+                            android:layout_marginLeft="22dp"
+                            android:background="@color/line_color" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="5dp"
+                            android:layout_marginLeft="22dp"
+                            android:background="@color/line_color" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="5dp"
+                            android:layout_marginLeft="21.5dp"
+                            android:background="@color/line_color" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="5dp"
+                            android:layout_marginLeft="22dp"
+                            android:background="@color/line_color" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="5dp"
+                            android:layout_marginLeft="22dp"
+                            android:background="@color/line_color" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="5dp"
+                            android:layout_marginLeft="22dp"
+                            android:background="@color/line_color" />
+                    </LinearLayout>
+
+                    <SeekBar
+                        android:id="@+id/seekbar_room_size"
+                        android:layout_width="185dp"
+                        android:layout_height="20dp"
+                        android:layout_centerVertical="true"
+                        android:max="100"
+                        android:maxHeight="3.4dp"
+                        android:minHeight="5dp"
+                        android:paddingStart="0dp"
+                        android:paddingRight="0dp"
+                        android:progress="0"
+                        android:progressDrawable="@drawable/seekbar_violet_bg"
+                        android:tag="2"
+                        android:thumb="@drawable/selector_conmon_bar_key" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="185dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginBottom="-3dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text=" 0"
+                        android:textSize="9sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:text="50"
+                        android:textSize="9sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:text="100"
+                        android:textSize="9sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:text="150"
+                        android:textSize="9sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:text="200"
+                        android:textSize="9sp" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="185dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="5dp"
+                            android:background="@color/line_color" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="5dp"
+                            android:layout_marginLeft="22dp"
+                            android:background="@color/line_color" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="5dp"
+                            android:layout_marginLeft="22dp"
+                            android:background="@color/line_color" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="5dp"
+                            android:layout_marginLeft="22dp"
+                            android:background="@color/line_color" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="5dp"
+                            android:layout_marginLeft="22dp"
+                            android:background="@color/line_color" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="5dp"
+                            android:layout_marginLeft="21.5dp"
+                            android:background="@color/line_color" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="5dp"
+                            android:layout_marginLeft="22dp"
+                            android:background="@color/line_color" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="5dp"
+                            android:layout_marginLeft="22dp"
+                            android:background="@color/line_color" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="5dp"
+                            android:layout_marginLeft="22dp"
+                            android:background="@color/line_color" />
+                    </LinearLayout>
+
+                    <SeekBar
+                        android:id="@+id/seekbar_delay_size"
+                        android:layout_width="185dp"
+                        android:layout_height="20dp"
+                        android:layout_centerVertical="true"
+                        android:max="200"
+                        android:maxHeight="3.4dp"
+                        android:minHeight="5dp"
+                        android:paddingStart="0dp"
+                        android:paddingRight="0dp"
+                        android:progressDrawable="@drawable/seekbar_violet_bg"
+                        android:thumb="@drawable/selector_conmon_bar_key" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="185dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginBottom="-3dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text=" 0"
+                        android:textSize="9sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:text="25"
+                        android:textSize="9sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:text="50"
+                        android:textSize="9sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:text="75"
+                        android:textSize="9sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:text="100"
+                        android:textSize="9sp" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="185dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="5dp"
+                            android:background="@color/line_color" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="5dp"
+                            android:layout_marginLeft="22dp"
+                            android:background="@color/line_color" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="5dp"
+                            android:layout_marginLeft="22dp"
+                            android:background="@color/line_color" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="5dp"
+                            android:layout_marginLeft="22dp"
+                            android:background="@color/line_color" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="5dp"
+                            android:layout_marginLeft="22dp"
+                            android:background="@color/line_color" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="5dp"
+                            android:layout_marginLeft="21.5dp"
+                            android:background="@color/line_color" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="5dp"
+                            android:layout_marginLeft="22dp"
+                            android:background="@color/line_color" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="5dp"
+                            android:layout_marginLeft="22dp"
+                            android:background="@color/line_color" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="5dp"
+                            android:layout_marginLeft="22dp"
+                            android:background="@color/line_color" />
+                    </LinearLayout>
+
+                    <SeekBar
+                        android:id="@+id/seekbar_continue_strength"
+                        android:layout_width="185dp"
+                        android:layout_height="20dp"
+                        android:layout_centerVertical="true"
+                        android:max="100"
+                        android:maxHeight="3.4dp"
+                        android:minHeight="5dp"
+                        android:paddingStart="0dp"
+                        android:paddingRight="0dp"
+                        android:progress="0"
+                        android:progressDrawable="@drawable/seekbar_violet_bg"
+                        android:tag="4"
+                        android:thumb="@drawable/selector_conmon_bar_key" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/ll_reverberation_value"
+
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="音调"
+                    android:textColor="#ff000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <com.deepsea.mua.voice.view.VerticalSeekBar
+                        android:id="@+id/seekbar_tone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="135dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="-4dp"
+                        android:max="15"
+                        android:maxHeight="3.4dp"
+                        android:minHeight="5dp"
+                        android:paddingStart="0dp"
+                        android:paddingTop="0dp"
+                        android:paddingRight="0dp"
+                        android:paddingBottom="0dp"
+                        android:progress="10"
+                        android:progressDrawable="@drawable/seekbar_no_gchange_gray_bg"
+                        android:thumb="@drawable/selector_conmon_bar_key" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_tone_line"
+                        android:layout_width="wrap_content"
+                        android:layout_height="130dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_toRightOf="@id/seekbar_tone"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:text="一"
+                            android:textSize="9sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+
+                            android:text="一"
+                            android:textSize="9sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="一"
+
+                            android:textSize="9sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="bottom"
+                            android:text="一"
+                            android:textSize="9sp" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_tone_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="130dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginTop="12dp"
+
+                        android:layout_toRightOf="@id/ll_tone_line"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:text="0.5"
+                            android:textColor="@color/black"
+                            android:textSize="9sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text=" 1"
+                            android:textColor="@color/black"
+                            android:textSize="9sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="1.5"
+
+                            android:textColor="@color/black"
+                            android:textSize="9sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:layout_weight="1"
+                            android:gravity="bottom"
+                            android:text=" 2"
+                            android:textColor="@color/black"
+                            android:textSize="9sp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

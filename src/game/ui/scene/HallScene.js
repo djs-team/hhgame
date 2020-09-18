@@ -47,9 +47,13 @@ load('game/ui/scene/HallScene', function () {
                 'rightPnl/aniNd': { },
                 'rightPnl/coinGameNd': { },
                 'rightPnl/coinGameNd/coinGameBtn': { onClicked: this.onCoinGameClick },
-                'rightPnl/liveBroadcastBtn': { onClicked: this.onLiveBroadcastClick },
-                'rightPnl/matchBtn': { onClicked: this.onGoAreanClick },
-                'rightPnl/changeAreaBtn': { onClicked: this.goChooseCity },
+                'rightPnl/liveBroadcastNd': { },
+                'rightPnl/liveBroadcastNd/liveBroadcastBtn': { onClicked: this.onLiveBroadcastClick },
+                'rightPnl/matchNd': { },
+                'rightPnl/matchNd/matchBtn': { onClicked: this.onGoAreanClick },
+                'rightPnl/changeAreaNd': { },
+                'rightPnl/changeAreaNd/changeAreaBtn': { onClicked: this.goChooseCity },
+
 
 
 
@@ -249,6 +253,18 @@ load('game/ui/scene/HallScene', function () {
             let jinbichangAni = appInstance.gameAgent().gameUtil().getAni(ResConfig.AniHall.DatingJinbichang)
             jinbichangAni.setAnimation(0, 'animation', true)
             this.coinGameNd.addChild(jinbichangAni)
+
+            let xiangqinAni = appInstance.gameAgent().gameUtil().getAni(ResConfig.AniHall.DatingXiangQin)
+            xiangqinAni.setAnimation(0, 'animation', true)
+            this.liveBroadcastNd.addChild(xiangqinAni)
+
+            let saishichangAni = appInstance.gameAgent().gameUtil().getAni(ResConfig.AniHall.DatingSaiShiChang)
+            saishichangAni.setAnimation(0, 'animation', true)
+            this.matchNd.addChild(saishichangAni)
+
+            let gengduowanfaAni = appInstance.gameAgent().gameUtil().getAni(ResConfig.AniHall.DatingGengDuoWanFa)
+            gengduowanfaAni.setAnimation(0, 'animation', true)
+            this.changeAreaNd.addChild(gengduowanfaAni)
 
             this.updatePlayerAni()
         },

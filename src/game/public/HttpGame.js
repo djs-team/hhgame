@@ -188,7 +188,8 @@ load('game/public/HttpGame', function () {
                 'sdkphotourl',
                 'nameUpdate',
                 'isAuthentication',
-                'agentFlag'
+                'agentFlag',
+                'isHaveAdress'//0未填写，1填写
             ]
             appInstance.dataManager().getUserData().saveMsg(msg, saveKey)
             appInstance.sendNotification(GameEvent.USERDATA, msg)
@@ -873,6 +874,15 @@ load('game/public/HttpGame', function () {
                 cc.log('------------->>>httpGame UPDATEADDRESSBack error happen')
                 return
             }
+            let saveKey = [
+                'isHaveAdress'//0未填写，1填写
+            ]
+            let saveData = {
+
+                'isHaveAdress' : 1
+
+            }
+            appInstance.dataManager().getUserData().saveMsg(saveData, saveKey)
             appInstance.sendNotification(GameEvent.ADRESS_UPDATE, msg)
 
         },
@@ -1010,10 +1020,7 @@ load('game/public/HttpGame', function () {
 
 
         FUKABUYGOODSBack: function (msg) {
-            if (msg.status !== 0) {
-                cc.log('------------->>>httpGame FUKA_BUYGOODSBack error happen')
-                return
-            }
+
             appInstance.sendNotification(GameEvent.FUKA_BUGGOODS, msg)
 
         },
@@ -1139,7 +1146,7 @@ load('game/public/HttpGame', function () {
         FUKAMATERIAEXCHANGEReq: function (msg) {
             msg = msg || {}
             if (!this._requestBackCall[HttpEvent.MJ_HALL_PLAYER_ONLINE_EXCHANGE]) {
-                this._requestBackCall[HttpEvent.MJ_HALL_PLAYER_ONLINE_EXCHANGE] = this.FUKAMATERIAEXCHANGEReq
+                this._requestBackCall[HttpEvent.MJ_HALL_PLAYER_ONLINE_EXCHANGE] = this.FUKAMATERIAEXCHANGEBack
             }
             msg.msgID = HttpEvent.MJ_HALL_PLAYER_ONLINE_EXCHANGE
             appInstance.httpAgent().sendPost(msg)
@@ -1147,11 +1154,8 @@ load('game/public/HttpGame', function () {
         },
 
 
-        FUKAMATERIAEXCHANGEReq: function (msg) {
-            if (msg.status !== 0) {
-                cc.log('------------->>>httpGame FUKAMATERIAEXCHANGEReq error happen')
-                return
-            }
+        FUKAMATERIAEXCHANGEBack: function (msg) {
+
             appInstance.sendNotification(GameEvent.FUKA_MATERIA_EXCHANGE, msg)
 
         },

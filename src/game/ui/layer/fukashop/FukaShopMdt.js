@@ -43,7 +43,7 @@ load('game/ui/layer/fukashop/FukaShopMdt', function () {
                     this.onUpdateMenuGoodsList(body)
                     break
                 case GameEvent.FUKA_BUGGOODS:
-                    this.view.buyGoodsResult()
+                    this.view.buyGoodsResult(body)
                     break
                 case GameEvent.FUKA_CARDLIST:
                     this.onForMatCardList(body)
@@ -62,6 +62,9 @@ load('game/ui/layer/fukashop/FukaShopMdt', function () {
                     break
                 case GameEvent.FUKA_MATERIA_LOG:
                     this.onFormatMaterialLog(body)
+                    break
+                case GameEvent.FUKA_MATERIA_EXCHANGE:
+                    this.view.onExchangeOnlineResult(body)
                     break
                 default:
                     break
@@ -151,7 +154,7 @@ load('game/ui/layer/fukashop/FukaShopMdt', function () {
 
         },
 
-        onForMatMaterialList: function () {
+        onForMatMaterialList: function (body) {
 
             let data = []
             this.onFormatGoodsData(data,body.goodsInfoList)
@@ -161,7 +164,6 @@ load('game/ui/layer/fukashop/FukaShopMdt', function () {
 
         onUpdateMenuGoodsList: function (body) {
 
-            cc.log('------------------------ onUpdateMenuGoodsList : body ' + JSON.stringify(body))
             let data = {}
             data.currGoodsCode = body.currGoodsCode
             data.currGoodsIntoList = []
@@ -209,7 +211,7 @@ load('game/ui/layer/fukashop/FukaShopMdt', function () {
                 baoData.hallPictureUrl = info.hallPictureUrl
                 baoData.nickName = info.nickName
                 baoData.sdkPhotoUrl = info.sdkPhotoUrl
-                baoData.fuKaCnt = appInstance.gameAgent().getUserData().fuka
+                baoData.fuKaCnt = appInstance.dataManager().getUserData().fuka
 
 
                 data.push(baoData)
@@ -238,6 +240,8 @@ load('game/ui/layer/fukashop/FukaShopMdt', function () {
 
         onFormatMaterialLog: function (body) {
 
+
+
             let data = []
 
             for(let i = 0; i < body.playerGoodsLogList.length; i++){
@@ -255,7 +259,7 @@ load('game/ui/layer/fukashop/FukaShopMdt', function () {
                 if(logData.status == 0){
                     logData.statusText = '未处理'
                 }else if(logData.status == 1){
-                    logData.statusText = '未处理'
+                    logData.statusText = '处理中'
                 }else if(logData.status == 2){
                     logData.statusText = '已完成'
                 }else{
@@ -266,6 +270,7 @@ load('game/ui/layer/fukashop/FukaShopMdt', function () {
 
                 data.push(logData)
             }
+            cc.log('--------------- data : ' + JSON.stringify(data))
             this.view.onFormatMaterialLog(data)
         },
 
@@ -288,6 +293,10 @@ load('game/ui/layer/fukashop/FukaShopMdt', function () {
         },
 
 
+        padLeftZero: function (str) {
+
+            return ('00' + str).substr(str.toString().length);
+        }
     })
     return mdt
 })

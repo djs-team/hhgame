@@ -234,7 +234,6 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
 
         onUpdateAddressData: function (data) {
 
-            cc.log('--------------onUpdateAddressData data : ' + JSON.stringify(data))
             if(data.hasOwnProperty('phone'))
                 this.addressPnl.getChildByName('phponeTextFiled').setString(data.phone)
 

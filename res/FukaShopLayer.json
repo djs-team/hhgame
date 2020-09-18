@@ -74,7 +74,7 @@
           {
             "FileData": {
               "Type": "Normal",
-              "Path": "aaa/fuKa (12).png",
+              "Path": "aaa/fuKa (10).png",
               "Plist": ""
             },
             "Scale9OriginX": 237,
@@ -1581,8 +1581,9 @@
                     "ctype": "PanelObjectData"
                   },
                   {
+                    "IsBounceEnabled": true,
                     "ScrollDirectionType": 0,
-                    "ClipAble": false,
+                    "ClipAble": true,
                     "BackColorAlpha": 102,
                     "SingleColor": {
                       "R": 150,
@@ -1615,18 +1616,18 @@
                       "Y": 0.0718
                     },
                     "PreSize": {
-                      "X": 0.4477,
-                      "Y": 0.8639
+                      "X": 0.4586,
+                      "Y": 0.8569
                     },
                     "LeftMargin": 693.5809,
-                    "RightMargin": 13.4192,
-                    "TopMargin": 46.3006,
+                    "RightMargin": -0.5808,
+                    "TopMargin": 51.3006,
                     "BottomMargin": 51.6994,
                     "Tag": 414,
                     "ActionTag": 210883289,
                     "Size": {
-                      "X": 573.0,
-                      "Y": 622.0
+                      "X": 587.0,
+                      "Y": 617.0
                     },
                     "Name": "goodsListView",
                     "ctype": "ListViewObjectData"
@@ -2302,8 +2303,9 @@
             "Tag": 268,
             "Children": [
               {
+                "IsBounceEnabled": true,
                 "ScrollDirectionType": 0,
-                "ClipAble": false,
+                "ClipAble": true,
                 "BackColorAlpha": 102,
                 "SingleColor": {
                   "R": 150,
@@ -2322,33 +2324,34 @@
                 "TouchEnable": true,
                 "AnchorPoint": {},
                 "Position": {
-                  "X": 105.84,
-                  "Y": 654.07
+                  "X": 1279.8306,
+                  "Y": 653.4114
                 },
                 "Scale": {
                   "ScaleX": 1.0,
                   "ScaleY": 1.0
                 },
                 "RotationSkewX": 180.0,
+                "RotationSkewY": 180.0,
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.0827,
-                  "Y": 0.9084
+                  "X": 0.9999,
+                  "Y": 0.9075
                 },
                 "PreSize": {
-                  "X": 0.918,
-                  "Y": 0.8056
+                  "X": 0.9273,
+                  "Y": 0.8542
                 },
-                "LeftMargin": 105.84,
-                "RightMargin": -0.84,
-                "TopMargin": -514.0701,
-                "BottomMargin": 654.07,
+                "LeftMargin": 1279.8306,
+                "RightMargin": -1186.8306,
+                "TopMargin": -548.4114,
+                "BottomMargin": 653.4114,
                 "Tag": 270,
                 "ActionTag": 224986441,
                 "Size": {
-                  "X": 1175.0,
-                  "Y": 580.0
+                  "X": 1187.0,
+                  "Y": 615.0
                 },
                 "Alpha": 83,
                 "Name": "robListView",
@@ -2373,28 +2376,27 @@
                 "Scale9Height": 1,
                 "AnchorPoint": {},
                 "Position": {
-                  "X": 108.3366,
-                  "Y": 653.07
+                  "X": 569.2852,
+                  "Y": 75.8071
                 },
                 "Scale": {
                   "ScaleX": 1.0,
                   "ScaleY": 1.0
                 },
-                "RotationSkewX": 180.0,
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.0846,
-                  "Y": 0.907
+                  "X": 0.4448,
+                  "Y": 0.1053
                 },
                 "PreSize": {
                   "X": 0.3617,
                   "Y": 0.8042
                 },
-                "LeftMargin": 108.3366,
-                "RightMargin": 708.6634,
-                "TopMargin": -512.0701,
-                "BottomMargin": 653.07,
+                "LeftMargin": 569.2852,
+                "RightMargin": 247.7148,
+                "TopMargin": 65.1929,
+                "BottomMargin": 75.8071,
                 "Tag": 271,
                 "ActionTag": 425596552,
                 "Size": {
@@ -2431,7 +2433,6 @@
                   "ScaleX": 1.0,
                   "ScaleY": 1.0
                 },
-                "RotationSkewX": 180.0,
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
@@ -3390,7 +3391,7 @@
               },
               {
                 "ClipAble": false,
-                "BackColorAlpha": 102,
+                "BackColorAlpha": 237,
                 "ComboBoxIndex": 1,
                 "SingleColor": {},
                 "FirstColor": {
@@ -3726,7 +3727,7 @@
               },
               {
                 "ClipAble": false,
-                "BackColorAlpha": 102,
+                "BackColorAlpha": 237,
                 "ComboBoxIndex": 1,
                 "SingleColor": {},
                 "FirstColor": {
@@ -3775,7 +3776,7 @@
               },
               {
                 "ClipAble": false,
-                "BackColorAlpha": 102,
+                "BackColorAlpha": 237,
                 "ComboBoxIndex": 1,
                 "SingleColor": {},
                 "FirstColor": {
@@ -4305,8 +4306,9 @@
                 "ctype": "TextObjectData"
               },
               {
+                "IsBounceEnabled": true,
                 "ScrollDirectionType": 0,
-                "ClipAble": false,
+                "ClipAble": true,
                 "BackColorAlpha": 102,
                 "SingleColor": {
                   "R": 150,
@@ -4323,34 +4325,36 @@
                 "Scale9Width": 1,
                 "Scale9Height": 1,
                 "TouchEnable": true,
-                "AnchorPoint": {},
+                "AnchorPoint": {
+                  "ScaleX": 1.0
+                },
                 "Position": {
-                  "X": 221.83,
-                  "Y": 719.4243
+                  "X": 219.1462,
+                  "Y": 2.8722
                 },
                 "Scale": {
                   "ScaleX": 1.0,
                   "ScaleY": 1.0
                 },
-                "RotationSkewX": 180.0,
+                "RotationSkewY": -180.0,
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.1733,
-                  "Y": 0.9992
+                  "X": 0.1712,
+                  "Y": 0.004
                 },
                 "PreSize": {
-                  "X": 0.8281,
+                  "X": 0.8289,
                   "Y": 1.0
                 },
-                "LeftMargin": 221.83,
-                "RightMargin": -1.83,
-                "TopMargin": -719.4243,
-                "BottomMargin": 719.4243,
+                "LeftMargin": -841.8538,
+                "RightMargin": 1060.8538,
+                "TopMargin": -2.8723,
+                "BottomMargin": 2.8722,
                 "Tag": 306,
                 "ActionTag": 591534312,
                 "Size": {
-                  "X": 1060.0,
+                  "X": 1061.0,
                   "Y": 720.0
                 },
                 "Name": "robLogListView",
@@ -4907,10 +4911,12 @@
                     "Scale9Width": 1,
                     "Scale9Height": 1,
                     "TouchEnable": true,
-                    "AnchorPoint": {},
+                    "AnchorPoint": {
+                      "ScaleY": 1.0
+                    },
                     "Position": {
-                      "X": 221.83,
-                      "Y": 721.0358
+                      "X": 221.8298,
+                      "Y": 1.0358
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -4921,16 +4927,16 @@
                     "IconVisible": false,
                     "PrePosition": {
                       "X": 0.1733,
-                      "Y": 1.0014
+                      "Y": 0.0014
                     },
                     "PreSize": {
                       "X": 0.8281,
                       "Y": 1.0
                     },
-                    "LeftMargin": 221.83,
-                    "RightMargin": -1.83,
-                    "TopMargin": -721.0359,
-                    "BottomMargin": 721.0358,
+                    "LeftMargin": 221.8298,
+                    "RightMargin": -1.8298,
+                    "TopMargin": 718.9642,
+                    "BottomMargin": -718.9642,
                     "Tag": 319,
                     "ActionTag": 1116122027,
                     "Size": {
@@ -7225,6 +7231,8 @@
                       {
                         "FontSize": 32,
                         "LabelText": "您还未完整填写收货地址，为保证\n货物顺利到达，请完善收货地址",
+                        "HorizontalAlignmentType": "HT_Center",
+                        "VerticalAlignmentType": "VT_Center",
                         "OutlineColor": {
                           "G": 0,
                           "B": 0
@@ -8372,7 +8380,7 @@
         "ctype": "LayerObjectData"
       },
       "UsedResources": [
-        "aaa/fuKa (12).png",
+        "aaa/fuKa (10).png",
         "common/hb.png",
         "Default/Button_Disable.png",
         "Default/Button_Press.png",

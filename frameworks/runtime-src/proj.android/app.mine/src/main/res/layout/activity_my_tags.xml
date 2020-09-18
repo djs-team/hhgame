@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:zhy="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.deepsea.mua.stub.view.TitleBar
+            android:id="@+id/title_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:backgroundRes="@color/transparent"
+            app:title="个性标签" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/title_bar"
+            android:layout_marginBottom="60dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#F6F8F7"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#F6F8F7"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="选择个性爱好，快速建立个人印象标签"
+                    android:textSize="12sp"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:id="@+id/tv_hobby_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="15dp"
+                    android:text="兴趣爱好"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"/>
+
+                <com.deepsea.mua.stub.view.flowlayout.TagFlowLayout
+                    android:id="@+id/hobby_flowlayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:padding="15dp"
+                    zhy:max_select="4" />
+
+                <TextView
+                    android:id="@+id/tv_character_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/white"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="15dp"
+                    android:text="个性特征"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"/>
+
+                <com.deepsea.mua.stub.view.flowlayout.TagFlowLayout
+                    android:id="@+id/character_flowlayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:padding="15dp"
+                    zhy:max_select="4" />
+            </LinearLayout>
+        </ScrollView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_alignParentBottom="true">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/divider_list" />
+
+            <TextView
+                android:id="@+id/save_tv"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="34dp"
+                android:layout_marginRight="34dp"
+                android:gravity="center"
+                android:text="保存"
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                app:bl_corners_radius="24dp"
+                app:bl_solid_color="@color/primary_yellow" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+</layout>

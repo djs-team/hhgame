@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:bl_corners_topLeftRadius="12dp"
+        app:bl_corners_topRightRadius="12dp"
+        app:bl_gradient_angle="270"
+        app:bl_gradient_endColor="#E7E7E7"
+        app:bl_gradient_startColor="@color/white">
+
+        <LinearLayout
+            android:id="@+id/self_sort_layout"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:background="@drawable/ic_self_micro"
+            android:gravity="center_vertical">
+
+            <include
+                android:id="@+id/include"
+                layout="@layout/item_micro_sort"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="316dp"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/micro_sort_rv"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:overScrollMode="never"
+                android:paddingTop="5dp"
+                android:paddingBottom="1dp" />
+
+            <TextView
+                android:id="@+id/cancel_sort"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginBottom="12dp"
+                android:gravity="center"
+                android:text="取消排麦"
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                app:bl_corners_radius="20dp"
+                app:bl_solid_color="@color/primary_yellow" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

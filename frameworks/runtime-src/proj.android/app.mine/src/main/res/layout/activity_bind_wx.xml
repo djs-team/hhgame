@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.deepsea.mua.stub.view.TitleBar
+            android:id="@+id/title_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:backgroundRes="@color/transparent"
+            app:title="绑定"
+            app:titleSize="21sp"
+            app:titleColor="#ff3b3b3b"
+            app:titleBold="true"/>
+
+        <TextView
+            android:layout_below="@id/title_bar"
+            android:id="@+id/tv_login_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="30dp"
+            android:text="当前登陆"
+            android:textColor="#ff282828"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:visibility="gone"/>
+
+        <RelativeLayout
+            android:id="@+id/rl_phone"
+            android:layout_width="match_parent"
+            android:layout_height="22dp"
+            android:layout_below="@id/tv_login_type"
+            android:layout_marginTop="14dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
+
+            <ImageView
+                android:id="@+id/iv_bindwx_phone"
+                android:layout_width="13dp"
+                android:layout_height="19dp"
+                android:src="@drawable/icon_bindwx_phone" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="11dp"
+                android:layout_toRightOf="@id/iv_bindwx_phone"
+                android:text="手机号"
+                android:textColor="#ff333333"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/tv_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:textColor="#ff282828"
+                android:textSize="13sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/tv_bindphone"
+                android:layout_width="80dp"
+                android:layout_height="25dp"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/bg_friend_agree"
+                android:text="绑定"
+                android:textColor="#ffffffff"
+                android:textSize="13sp"
+                android:gravity="center"
+               android:visibility="gone" />
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_marginRight="14dp"
+            android:layout_marginLeft="14dp"
+            android:id="@+id/iv_divide"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/rl_phone"
+            android:layout_marginTop="28dp"
+            android:background="@drawable/icon_bindwx_line" />
+
+        <TextView
+            android:layout_marginTop="30dp"
+            android:id="@+id/tv_bindwx_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_divide"
+            android:layout_marginLeft="14dp"
+            android:text="使用此手机号绑定微信"
+            android:textColor="#ff282828"
+            android:textSize="13sp"
+            android:textStyle="bold"/>
+
+        <RelativeLayout
+            android:id="@+id/rl_bind_wx"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="29dp"
+            android:layout_below="@id/tv_bindwx_desc"
+            android:paddingLeft="14dp"
+            android:paddingRight="13dp">
+
+            <ImageView
+                android:id="@+id/iv_wx_logo"
+                android:layout_width="20dp"
+                android:layout_height="17dp"
+                android:src="@drawable/icon_bindwx_wx" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="14dp"
+                android:layout_toRightOf="@id/iv_wx_logo"
+                android:text="微信"
+                android:textColor="#ff333333"
+                android:textSize="16sp" />
+
+
+        </RelativeLayout>
+        <TextView
+            android:layout_marginRight="16dp"
+            android:layout_below="@id/tv_bindwx_desc"
+            android:id="@+id/iv_bindwx"
+            android:layout_width="80dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/bg_friend_agree"
+            android:text="绑定"
+            android:textColor="#ffffffff"
+            android:textSize="13sp"
+            android:gravity="center"/>
+        <ImageView
+            android:layout_marginRight="14dp"
+            android:layout_marginLeft="14dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/iv_bindwx"
+            android:layout_marginTop="28dp"
+            android:background="@drawable/icon_bindwx_line" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="67dp"
+            android:text="注意：每个微信号只能与一个手机号绑定，不可重复绑定"
+            android:textColor="#ffe85abc"
+            android:textSize="13sp"
+            />
+    </RelativeLayout>
+</layout>

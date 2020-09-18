@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dialog_corner_white_bg"
+        android:orientation="vertical">
+
+        <RelativeLayout
+
+            android:id="@+id/rl_user_guest"
+            android:layout_width="120dp"
+            android:layout_height="144dp"
+            android:layout_centerInParent="true"
+            android:layout_toRightOf="@id/rl_user_matchmaker"
+            android:background="@drawable/dialog_music_songer_select_round_bg"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_guest_big_avatar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_place_room_bg" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/iv_guest_big_avatar"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="4dp"
+                android:layout_marginBottom="6dp"
+                android:layout_toLeftOf="@id/rl_guest_microphone"
+                android:background="@drawable/invite_item_corner_bg"
+                android:paddingLeft="3dp"
+                android:paddingTop="2dp">
+
+
+                <ImageView
+                    android:id="@+id/iv_guest_small_avatar"
+                    android:layout_width="19dp"
+                    android:layout_height="19dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:src="@drawable/ic_place_avatar" />
+
+                <TextView
+                    android:id="@+id/tv_guest_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/iv_guest_small_avatar"
+                    android:textColor="#ffffffff"
+                    android:textSize="10sp"
+                    />
+
+
+                <TextView
+                    android:id="@+id/tv_guest_introduction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_guest_name"
+                    android:layout_toRightOf="@id/iv_guest_small_avatar"
+                    android:textColor="#ffffffff"
+                    android:textSize="7sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_guest_microphone"
+                android:layout_width="21dp"
+                android:layout_height="21dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="13dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="6dp"
+                android:background="@drawable/oval_red_bg">
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="15dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/icon_micro" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_guest_select"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:background="@color/color_song_select">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_centerInParent="true"
+                    android:text="嘉宾将演唱你点的歌"/>
+                <com.deepsea.mua.stub.view.WithBackgroundTextView
+                    android:id="@+id/iv_guest_select_confirm"
+                    android:layout_width="70dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="4dp"
+                    app:radius="22dp"
+                    app:withBackgroundColor="#AA06F1"
+                    android:text="确定"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:gravity="center"/>
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>

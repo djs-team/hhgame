@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/rank_wealth_bg"
+        android:orientation="vertical">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="58dp">
+
+            <ImageView
+                android:id="@+id/back_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="14dp"
+                android:src="@drawable/ic_back"
+                app:layout_constraintBottom_toBottomOf="@id/tab_layout"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tab_layout" />
+
+            <com.deepsea.mua.stub.view.FixedTabLayout
+                android:id="@+id/tab_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="29dp"
+                android:layout_gravity="center_horizontal"
+                app:horizontalMargin="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:lineHeight="0dp"
+                app:tabBackground="@drawable/rank_tab_bg"
+                app:tabWidth="72dp"
+                app:textNormalColor="@color/white"
+                app:textSelectColor="#E15EA9"
+                app:textSize="17sp" />
+        </android.support.constraint.ConstraintLayout>
+
+        <com.deepsea.mua.core.view.NoScrollViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never" />
+    </LinearLayout>
+</layout>

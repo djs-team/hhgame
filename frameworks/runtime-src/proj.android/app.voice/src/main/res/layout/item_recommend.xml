@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_marginTop="11dp"
+        android:layout_width="100dp"
+        android:layout_height="99dp">
+        <ImageView
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:id="@+id/iv_head"
+            android:layout_width="100dp"
+            android:layout_height="99dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_place_room_bg"
+            />
+
+        <TextView
+            android:id="@+id/tv_state"
+            android:layout_width="47dp"
+            android:layout_height="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/bg_microstate_blindate"
+            android:gravity="center"
+            android:text="等待中"
+            android:textColor="#fffafafa"
+            android:textSize="11sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_user_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:layout_marginBottom="3dp"
+            android:text="31岁|165cm|女"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_goneMarginBottom="3dp" />
+
+        <TextView
+            android:id="@+id/tv_guest_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:text="男嘉宾"
+            android:textColor="#ffffffff"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@id/tv_user_info"
+            app:layout_constraintLeft_toLeftOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+</layout>

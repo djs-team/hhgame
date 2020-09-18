@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <TextView
+        android:layout_marginRight="10dp"
+        android:id="@+id/tv_song_tag"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:background="@drawable/selector_song_tag_bg"
+        android:gravity="center"
+        android:paddingLeft="9dp"
+        android:paddingRight="9dp"
+        android:text="热推"
+        android:textColor="@color/white"
+        android:textSize="12sp" />
+</layout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:background="@drawable/bg_item_income">
+
+        <TextView
+            android:id="@+id/tv_income_info_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="24dp"
+            android:lineSpacingExtra="1dp"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            android:text="2020-12-19 14：13：02"
+            android:layout_marginBottom="7dp"/>
+
+
+        <TextView
+            android:id="@+id/tv_income_info_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="24dp"
+            android:layout_marginRight="11dp"
+            android:lineSpacingExtra="1dp"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            android:text="2020-12-19 14：13：02"
+            android:layout_marginBottom="7dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="9dp"
+            android:layout_marginRight="9dp"
+            android:background="@color/white" />
+    </RelativeLayout>
+</layout>

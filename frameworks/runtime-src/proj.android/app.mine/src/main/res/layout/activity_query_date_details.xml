@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.deepsea.mua.stub.view.TitleBar
+            android:id="@+id/cons_titlebar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:backgroundRes="@color/transparent"
+            app:title="按日期查询" />
+
+        <RelativeLayout
+            android:id="@+id/rl_balance"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_below="@id/cons_titlebar"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/bg_account_setting">
+
+            <LinearLayout
+                android:id="@+id/ll_date_start"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:orientation="horizontal"
+                android:paddingTop="11dp"
+                android:paddingBottom="11dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="开始日期"
+                    android:textColor="#ff343434"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_date_start"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="56dp"
+                    android:text="---- -- --"
+                    android:textColor="#343434"
+                    android:textSize="12sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_date_end"
+                android:layout_below="@id/ll_date_start"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:orientation="horizontal"
+                android:paddingTop="11dp"
+                android:paddingBottom="11dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="结束日期"
+                    android:textColor="#ff343434"
+                    android:textSize="12sp"/>
+
+                <TextView
+                    android:id="@+id/tv_date_end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="56dp"
+                    android:text="---- -- --"
+                    android:textColor="#343434"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/tv_submit"
+                android:layout_width="114dp"
+                android:layout_height="27dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/bg_gradients_pink_and_violet_radius_21"
+                android:gravity="center"
+                android:text="提交"
+                android:textColor="#ffffffff"
+                android:textSize="17sp" />
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>

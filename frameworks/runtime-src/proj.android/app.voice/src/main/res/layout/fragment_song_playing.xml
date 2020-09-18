@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black">
+
+        <RelativeLayout
+            android:id="@+id/rl_song_empty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/iv_no_song"
+                android:layout_width="204dp"
+                android:layout_height="255dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="32dp"
+                android:src="@drawable/icon_no_song_bg" />
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_song_exist"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+
+            <TextView
+                android:id="@+id/tv_current_song_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="亲密爱人"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:text="小可爱"
+                android:textColor="#a6ffffff"
+                android:textSize="12sp" />
+
+
+            <RelativeLayout
+                android:id="@+id/rl_song_operate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp">
+
+                <ImageView
+                    android:id="@+id/iv_song_play"
+                    android:layout_width="39dp"
+                    android:layout_height="39dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/icon_song_play"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/iv_song_replay"
+                    android:layout_width="23dp"
+                    android:layout_height="31dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="50dp"
+                    android:layout_toLeftOf="@id/iv_song_play"
+                    android:src="@drawable/icon_song_replay" />
+
+                <ImageView
+                    android:id="@+id/iv_song_next"
+                    android:layout_width="21dp"
+                    android:layout_height="19dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="47dp"
+                    android:layout_toRightOf="@id/iv_song_play"
+                    android:src="@drawable/icon_song_next" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="34dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="34dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_demand_user"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:text="点播：-- -- "
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tv_conser_user"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:text="演唱者：-- -- "
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+            <RelativeLayout
+                android:id="@+id/rl_song_voice_reverberation_operate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="34dp"
+                android:layout_marginRight="15dp"
+                android:gravity="center_vertical"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/iv_song_voice"
+                    android:layout_width="15dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/icon_horn_white" />
+
+                <SeekBar
+                    android:id="@+id/seek_song_voice"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="23dp"
+                    android:layout_toRightOf="@id/iv_song_voice"
+                    android:maxHeight="2dp"
+                    android:minHeight="1dp"
+                    android:paddingStart="3dp"
+                    android:paddingLeft="8dp"
+                    android:progressDrawable="@drawable/seekbar_violet_bg"
+                    android:thumb="@drawable/selector_conmon_small_bar_key" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_voice_regulation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/iv_voice_regulation"
+                        android:layout_width="18dp"
+                        android:layout_height="15dp"
+                        android:src="@drawable/icon_voice_regulation" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="43dp"
+                        android:layout_toRightOf="@id/iv_voice_regulation"
+                        android:textColor="#ff282828"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_marginTop="17dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp">
+
+                <LinearLayout
+                    android:id="@+id/ll_song_progress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="17dp"
+                        android:layout_height="16dp"
+                        android:background="@drawable/ic_voice_white" />
+                    <SeekBar
+                        android:id="@+id/seekbar_song_progress"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:layout_toRightOf="@id/iv_song_voice"
+                        android:maxHeight="2dp"
+                        android:minHeight="1dp"
+                        android:paddingStart="3dp"
+                        android:paddingLeft="8dp"
+                        android:progressDrawable="@drawable/seekbar_pink_bg"
+                        android:thumb="@drawable/selector_conmon_small_bar_key" />
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_marginTop="9dp"
+                    android:layout_marginLeft="39dp"
+                    android:id="@+id/tv_song_time_start"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ll_song_progress"
+                    android:textColor="#a6ffffff"
+                    android:textSize="12sp"
+                    android:text="00：18"/>
+
+                <TextView
+                    android:layout_marginTop="9dp"
+                    android:id="@+id/tv_song_time_end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ll_song_progress"
+                    android:layout_alignParentRight="true"
+                    android:textColor="#a6ffffff"
+                    android:textSize="12sp"
+                    android:text="00：18"/>
+
+            </RelativeLayout>
+
+
+
+
+            <LinearLayout
+                android:id="@+id/ll_song_next"
+                android:layout_width="match_parent"
+                android:layout_height="136dp"
+                android:layout_marginLeft="26dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginRight="24dp"
+                android:background="@drawable/icon_song_next_bg"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="24dp"
+                    android:text="下一首"
+                    android:textColor="#ff333333"
+                    android:textSize="16sp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp">
+
+                    <RelativeLayout
+                        android:id="@+id/rl_song_next_music"
+                        android:layout_width="29dp"
+
+                        android:layout_height="29dp"
+                        android:layout_marginLeft="16dp"
+                        android:background="@drawable/bg_music_dialog_song_logo">
+
+                        <ImageView
+                            android:layout_width="19dp"
+                            android:layout_height="21dp"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/icon_room_music" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/tv_song_next_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/rl_song_next_music"
+                        android:text="-- -- "
+                        android:textColor="#ff515151"
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:id="@+id/tv_padding"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/tv_song_next_name"
+                        android:text="—"
+                        android:textColor="#ff656565"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tv_song_next_singer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_toRightOf="@id/tv_padding"
+                        android:text="-- -- "
+                        android:textColor="#ff656565"
+                        android:textSize="12sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/rl_song_next_music"
+                        android:layout_marginTop="15dp">
+
+                        <TextView
+                            android:id="@+id/tv_song_next_demand_user"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="点播：-- -- "
+                            android:textColor="#ff656565"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/tv_song_next_conser_user"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="演唱上麦嘉宾：-- -- "
+                            android:textColor="#ff656565"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_hint_click_play"
+            android:layout_width="65dp"
+            android:layout_height="39dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="85dp"
+            android:src="@drawable/icon_hint_click_playsong"
+            android:visibility="gone" />
+    </RelativeLayout>
+</layout>

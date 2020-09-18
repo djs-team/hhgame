@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/rl_login_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <com.deepsea.mua.stub.view.LGvideoview
+            android:id="@+id/login_vv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:id="@+id/iv_login_logo"
+            android:layout_width="204dp"
+            android:layout_height="223dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="54dp"
+            android:src="@drawable/icon_login_logo" />
+
+        <TextView
+            android:id="@+id/tv_login_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_login_logo"
+            android:layout_centerHorizontal="true"
+            android:text="合合相亲交友 真实交友平台"
+            android:textColor="#ffffffff"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="17dp"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/rl_agreement_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/iv_agreement_check"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/selector_agreement" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/protocol_tv"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp"
+                android:text="注册代表您同意"
+                android:textColor="#ffffffff"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+
+        <ImageView
+            android:id="@+id/iv_login_phone"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="53dp"
+            android:layout_marginRight="53dp"
+            android:layout_marginBottom="184dp"
+            android:src="@drawable/icon_login_and_register" />
+        <View
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="53dp"
+            android:layout_width="80dp"
+            android:layout_height="1dp"
+            android:layout_marginBottom="148dp"
+            android:background="#80ffffff"/>
+        <TextView
+            android:layout_alignParentBottom="true"
+            android:id="@+id/tv_login_type_desc"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="143dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="其他登录方式"
+            android:textColor="#ffcbcbcb"
+            android:textSize="11sp"
+            />
+        <View
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="53dp"
+            android:layout_width="80dp"
+            android:layout_height="1dp"
+            android:layout_marginBottom="148dp"
+            android:background="#80ffffff"/>
+        <ImageView
+            android:id="@+id/iv_login_wechat"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+         android:layout_centerHorizontal="true"
+            android:layout_marginBottom="75dp"
+            android:src="@drawable/ic_wx" />
+
+    </RelativeLayout>
+</layout>

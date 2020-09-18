@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_song_index"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="19dp"
+            android:text="1"
+            android:textColor="#ff282828"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:id="@+id/iv_userhead"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="41.5dp"
+            android:layout_marginTop="5.5dp"
+            android:layout_marginRight="11dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_place_default" />
+
+        <ImageView
+            android:id="@+id/iv_achievement"
+            android:layout_width="37dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="37.5dp"
+            android:src="@drawable/icon_ranking_champion" />
+
+        <TextView
+            android:id="@+id/tv_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@id/iv_userhead"
+            android:textColor="#FF282828"
+            android:textSize="16sp" />
+    <LinearLayout
+            android:layout_width="174dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_user_name"
+            android:layout_marginTop="5.5dp"
+            android:layout_toRightOf="@id/iv_userhead"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/tv_song_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FF282828"
+                android:textSize="12sp"
+                android:maxWidth="174dp"
+                android:singleLine="true"
+                android:ellipsize="end"
+                />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="21dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="64dp"
+            android:src="@drawable/icon_rank_rose" />
+
+        <TextView
+            android:id="@+id/tv_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="14dp"
+            android:textColor="#ff1b1b1b"
+            android:textSize="12sp" />
+
+        <View
+            android:id="@+id/view_line"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="17dp"
+            android:background="@color/line" />
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <com.deepsea.mua.stub.view.TitleBar
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            app:backgroundRes="@color/transparent"
+            app:leftImgRes="@drawable/ic_back_black"
+            app:title="兑换记录（24小时内）"
+            app:titleColor="#ff333333"
+            app:titleSize="17sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/icon_mashegg_bg">
+
+            <ImageView
+                android:layout_marginTop="26dp"
+                android:id="@+id/iv_logo"
+                android:layout_width="212dp"
+                android:layout_height="62dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/icon_exchange_records" />
+
+            <ImageView
+                android:id="@+id/iv_twenty_four"
+                android:layout_marginTop="8dp"
+                android:layout_width="66dp"
+                android:layout_height="23dp"
+                android:layout_below="@id/iv_logo"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/icon_twenty_four" />
+
+            <com.deepsea.mua.stub.view.WrapRefreshLayout
+                android:layout_below="@id/iv_twenty_four"
+                android:id="@+id/refresh_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="46dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="17dp"
+                app:srlEnableLoadMore="true"
+                app:srlEnableRefresh="true">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/gray_radius_10dp"
+                    android:overScrollMode="never" />
+            </com.deepsea.mua.stub.view.WrapRefreshLayout>
+        </RelativeLayout>
+
+
+    </LinearLayout>
+</layout>

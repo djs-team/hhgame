@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="KTV唱歌"
+            android:textColor="#ffffffff"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/iv_close"
+            android:layout_width="56dp"
+            android:layout_height="24dp"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/bg_song_manage_close"
+            android:gravity="center"
+            android:text="隐藏"
+            android:textColor="#ffffffff"
+            android:textSize="12sp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.deepsea.mua.core.view.xtablayout.XTabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:overScrollMode="never"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            app:xTabIndicatorCenter="true"
+            app:xTabIndicatorColor="#773BE7"
+            app:xTabIndicatorHeight="5dp"
+            app:xTabIndicatorWidth="16dp"
+            app:xTabMinWidth="81dp"
+            app:xTabMode="scrollable"
+            app:xTabPaddingBottom="0dp"
+            app:xTabPaddingEnd="8dp"
+            app:xTabPaddingStart="8dp"
+            app:xTabSelectedTextColor="@color/white"
+            app:xTabSelectedTextSize="16sp"
+            app:xTabTextSelectedBold="true"
+            app:xTabTextSize="16sp" />
+
+        <com.deepsea.mua.core.view.NoScrollViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="366dp"
+            android:overScrollMode="never"
+            android:layout_marginTop="23dp"
+            app:layout_constraintTop_toBottomOf="@id/tab_layout" />
+    </android.support.constraint.ConstraintLayout>
+</layout>

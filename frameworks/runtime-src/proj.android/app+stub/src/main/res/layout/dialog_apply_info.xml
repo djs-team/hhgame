@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="14dp"
+        android:paddingBottom="19dp"
+        app:bl_corners_radius="12dp"
+        app:bl_solid_color="@color/white">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="填写资料"
+            android:textColor="#ff333333"
+            android:textSize="@dimen/text_size_18" />
+
+        <LinearLayout
+            android:id="@+id/ll_wx"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_title"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="26dp"
+                android:text="微信号："
+                android:textColor="@color/F333333"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/et_wxnum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="9dp"
+                android:layout_marginRight="26dp"
+                android:background="@drawable/dialog_changewx_edittext_bg"
+                android:gravity="center_vertical"
+                android:hint="点击输入微信号"
+                android:maxLength="15"
+                android:minHeight="40dp"
+                android:paddingLeft="15dp"
+                android:textColor="#ff666666"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_age"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll_wx"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="26dp"
+                android:text="年    龄："
+                android:textColor="@color/F333333"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/et_age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="9dp"
+                android:layout_marginRight="26dp"
+                android:background="@drawable/dialog_changewx_edittext_bg"
+                android:gravity="center_vertical"
+                android:hint="点击输入年龄"
+                android:maxLength="15"
+                android:minHeight="40dp"
+                android:paddingLeft="15dp"
+                android:textColor="#ff666666"
+                android:textSize="14sp" />
+        </LinearLayout>
+        <TextView
+            android:layout_marginLeft="26dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/ll_age"
+            android:id="@+id/tv_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/F333333"
+            android:textSize="12sp"
+            android:text="注意：请填写正确的微信号和实际年龄"/>
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/tv_desc"
+            android:id="@+id/tv_ok"
+            android:layout_width="160dp"
+            android:layout_height="40dp"
+            android:background="@drawable/dialog_changewx_submit_bg"
+            android:text="确定"
+            android:gravity="center"
+            android:textColor="#FD5957"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+</layout>

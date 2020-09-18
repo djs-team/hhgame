@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/icon_authen_fail_bg">
+
+<!--        <ImageView-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:id="@+id/authen_img"-->
+<!--            android:layout_width="150dp"-->
+<!--            android:layout_height="150dp"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:background="@color/gray_pressed" />-->
+
+
+        <TextView
+            android:layout_marginTop="217dp"
+            android:id="@+id/tv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textSize="12sp"/>
+        <TextView
+            android:layout_below="@id/tv_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:id="@+id/confirm_tv"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="34dp"
+            android:layout_marginRight="34dp"
+            android:gravity="center"
+            android:text="确定"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            app:bl_corners_radius="24dp"
+            app:bl_solid_color="@color/primary_yellow" />
+    </RelativeLayout>
+</layout>

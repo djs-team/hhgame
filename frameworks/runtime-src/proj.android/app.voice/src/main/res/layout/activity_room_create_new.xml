@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <com.deepsea.mua.stub.view.TitleBar
+            android:id="@+id/title_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:title="房间设置"
+            app:titleColor="#ff3b3b3b"
+            app:titleSize="21sp" />
+
+        <LinearLayout
+            android:id="@+id/ll_room_name"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:layout_below="@id/title_bar"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:paddingTop="8dp">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="14dp"
+                android:src="@drawable/icon_roomset_name" />
+
+            <TextView
+                android:id="@+id/name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="4dp"
+                android:gravity="center_vertical"
+                android:text="房间名称:"
+                android:textColor="#ff282828"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/name_edit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/bg_room_name"
+                android:gravity="center_vertical"
+                android:hint="必填（限八个字）"
+                android:maxLength="16"
+                android:paddingLeft="12dp"
+                android:singleLine="true"
+                android:textColor="#333333"
+                android:textColorHint="#ffa6a6a6"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_tags"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll_room_name"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1px"
+                android:background="@color/white"
+                android:paddingLeft="14dp"
+                android:paddingTop="18dp"
+                android:paddingBottom="2dp"
+                android:text="请选择一个标签"
+                android:textColor="#333333"
+                android:textSize="14sp" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/label_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:overScrollMode="never"
+                android:paddingLeft="14dp"
+                android:paddingRight="14dp"
+                android:paddingBottom="18dp" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_room_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll_tags"
+            android:layout_marginTop="15dp"
+            android:background="@color/white"
+            android:paddingBottom="15dp">
+
+            <ImageView
+                android:id="@+id/iv_roomset_type"
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:layout_marginLeft="15dp"
+                android:src="@drawable/icon_roomset_type" />
+
+            <TextView
+                android:id="@+id/tv_title_roomtype"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="9dp"
+                android:layout_toRightOf="@id/iv_roomset_type"
+                android:text="房间类型:"
+                android:textColor="#ff333333"
+                android:textSize="13sp" />
+            <android.support.v7.widget.RecyclerView
+                android:layout_toRightOf="@id/tv_title_roomtype"
+                android:id="@+id/rv_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp" />
+
+            <LinearLayout
+                android:id="@+id/ll_mode_help"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="29dp"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginRight="2dp"
+                    android:src="@drawable/icon_question_mark" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="类型帮助"
+                    android:textColor="#ff3f99ff"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+
+
+
+        </RelativeLayout>
+
+
+
+        <LinearLayout
+            android:id="@+id/ll_exclusive_room"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:layout_below="@id/rl_room_type"
+            android:layout_marginTop="6dp"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="13dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="14dp"
+                android:src="@drawable/icon_exclusive_room" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:minEms="6"
+                android:text="专属房间"
+                android:textColor="#ff282828"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:id="@+id/ll_exclusive_room_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="23dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/selector_room_type" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="9dp"
+                    android:text="否"
+                    android:textColor="#ff656565"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_exclusive_room_yes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="23dp"
+                android:orientation="horizontal"
+                >
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/selector_room_type" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="9dp"
+                    android:text="是"
+                    android:textColor="#ff656565"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_audio_micro"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:layout_below="@id/ll_exclusive_room"
+            android:layout_marginTop="6dp"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="13dp"
+                android:layout_height="18dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="14dp"
+                android:src="@drawable/icon_roomset_micro" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:minEms="6"
+                android:text="允许音频上麦"
+                android:textColor="#ff282828"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:id="@+id/ll_audio_micro_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="23dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/selector_room_type" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="9dp"
+                    android:text="否"
+                    android:textColor="#ff656565"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_audio_micro_yes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="23dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/selector_room_type" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="9dp"
+                    android:text="是"
+                    android:textColor="#ff656565"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_room_function"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/ll_audio_micro"
+            android:layout_marginTop="6dp"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/iv_room_function"
+                android:layout_width="14dp"
+                android:layout_height="12dp"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="13dp"
+                android:src="@drawable/icon_roomset_fuction"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_title_room_function"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="9dp"
+                android:layout_marginTop="9dp"
+                android:layout_toRightOf="@id/iv_room_function"
+                android:text="房间功能"
+                android:textColor="#ff282828"
+                android:textSize="16sp"
+                android:visibility="gone" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_function"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_title_room_function"
+                android:layout_marginLeft="57dp"
+                android:visibility="gone" />
+
+            <!--            <ImageView-->
+            <!--                android:id="@+id/create_tv"-->
+            <!--                android:layout_width="250dp"-->
+            <!--                android:layout_height="34dp"-->
+            <!--                android:layout_alignParentBottom="true"-->
+            <!--                android:layout_centerHorizontal="true"-->
+            <!--                android:layout_marginBottom="49dp"-->
+            <!--                android:src="@drawable/icon_room_open" />-->
+        </RelativeLayout>
+
+        <TextView
+            android:layout_marginTop="90dp"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/create_tv"
+            android:layout_width="267dp"
+            android:layout_height="38dp"
+            android:layout_below="@id/rl_room_function"
+            android:text="开启直播"
+            android:gravity="center"
+            android:textColor="#ffffffff"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:background="@drawable/bg_friend_agree" />
+    </RelativeLayout>
+
+
+</layout>

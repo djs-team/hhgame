@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/diamond_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/md_layout"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        app:cardCornerRadius="15dp"
+        android:layout_marginBottom="11dp"
+        app:cardElevation="21dp">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_photo"
+                android:layout_width="57dp"
+                android:layout_height="57dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="13dp"
+                android:src="@drawable/ic_place"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.deepsea.mua.stub.view.WithBackgroundTextView
+                android:id="@+id/tv_state"
+                android:layout_width="38dp"
+                android:layout_height="15dp"
+                android:layout_alignParentBottom="true"
+                android:gravity="center"
+                android:text="热聊中"
+                android:textColor="@color/white"
+                android:textSize="9sp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/iv_photo"
+                app:layout_constraintLeft_toLeftOf="@id/iv_photo"
+                app:layout_constraintRight_toRightOf="@id/iv_photo"
+                app:radius="8dp"
+                app:withBackgroundColor="#EF51B2" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="13dp"
+                android:layout_marginTop="12dp"
+                android:text="小包子"
+                android:textColor="#ff333333"
+                android:textSize="19sp"
+                app:layout_constraintLeft_toRightOf="@id/iv_photo"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <RelativeLayout
+                android:id="@+id/rl_sex"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginLeft="9dp"
+                android:background="@drawable/bg_sex_man"
+                app:layout_constraintBottom_toBottomOf="@id/tv_name"
+                app:layout_constraintLeft_toRightOf="@id/tv_name"
+                app:layout_constraintTop_toTopOf="@id/tv_name">
+
+                <ImageView
+                    android:id="@+id/sex_iv"
+                    android:layout_width="9dp"
+                    android:layout_height="9dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/icon_find_sex_man" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="35"
+                android:textColor="#ff818181"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/tv_name"
+                app:layout_constraintLeft_toRightOf="@id/rl_sex"
+                app:layout_constraintTop_toTopOf="@id/tv_name" />
+
+            <ImageView
+                android:id="@+id/iv_location"
+                android:layout_width="10dp"
+                android:layout_height="12dp"
+                android:layout_marginLeft="13dp"
+                android:layout_marginTop="13dp"
+                android:src="@drawable/ic_location"
+                app:layout_constraintLeft_toRightOf="@id/iv_photo"
+                app:layout_constraintTop_toBottomOf="@id/tv_name" />
+
+            <TextView
+                android:id="@+id/tv_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="11dp"
+                android:text="河北省石家庄"
+                android:textColor="#ff4a4a4a"
+                android:textSize="12sp"
+                app:layout_constraintLeft_toRightOf="@id/iv_location"
+                app:layout_constraintTop_toBottomOf="@id/tv_name" />
+
+            <TextView
+                android:id="@+id/tv_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="12dp"
+                android:text="我是天上的星星"
+                android:textColor="#ff4a4a4a"
+                android:textSize="12sp"
+                app:layout_constraintLeft_toRightOf="@id/iv_photo"
+                app:layout_constraintTop_toBottomOf="@id/tv_location" />
+
+            <TextView
+                android:id="@+id/tv_date_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="19dp"
+                android:layout_marginTop="30dp"
+                android:paddingBottom="14dp"
+                android:text="守护到期时间：2020年7月20日 10：00"
+                android:textColor="#ff818181"
+                android:textSize="11sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_desc" />
+
+            <TextView
+                android:id="@+id/tv_renew"
+                android:layout_width="75dp"
+                android:layout_height="23dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/bg_wallet_operate_purple"
+                android:gravity="center"
+                android:text="续费"
+                android:textColor="#ff878787"
+                android:textSize="10sp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_auto_renew"
+                android:layout_width="75dp"
+                android:layout_height="23dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/bg_friend_agree"
+                android:gravity="center"
+                android:visibility="gone"
+                android:text="自动续费"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_renew" />
+
+            <TextView
+                android:id="@+id/tv_due_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="14dp"
+                android:text="还有29天到期"
+                android:textColor="#FF010D"
+                android:textSize="11sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_intimacy_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="5dp"
+                android:text="亲密值：8888"
+                android:textColor="#ff803ff0"
+                android:textSize="11sp"
+                app:layout_constraintBottom_toTopOf="@id/tv_due_date"
+                app:layout_constraintRight_toRightOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+</layout>

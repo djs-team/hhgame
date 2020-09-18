@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@drawable/bg_apply_host"
+            >
+
+            <com.deepsea.mua.stub.view.TitleBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:backgroundRes="@color/transparent"
+                app:leftImgRes="@drawable/ic_back" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="393dp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/ll_title_one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="18dp"
+                        android:layout_marginTop="3dp"
+                        android:src="@drawable/icon_applyhost_akey" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="26dp"
+                        android:layout_marginRight="36dp"
+                        android:text="如何成为主持？"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="18dp"
+                        android:layout_marginTop="3dp"
+                        android:src="@drawable/icon_applyhost_akey" />
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_title_two"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ll_title_one"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_horizontal"
+                    android:text="(满足其一即可）"
+                    android:textColor="#ffffffff"
+                    android:textSize="14sp" />
+
+                <LinearLayout
+                    android:id="@+id/rl_applyhost_option"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_title_two"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/bg_apphost_option"
+                    android:orientation="vertical">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rv_apply"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="33dp"
+                        android:layout_marginBottom="45dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_ok"
+                    android:layout_width="200dp"
+                    android:layout_height="32dp"
+                    android:layout_below="@id/rl_applyhost_option"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:text="申请成为主持"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:background="@drawable/selector_apply_host_ok"
+                    android:enabled="true"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_ok"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="17dp"
+                    android:layout_marginTop="57dp"
+                    android:text="团队入驻联系"
+                    android:textColor="#ffffffff"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_wx_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="17dp"
+                    android:layout_marginTop="10dp"
+                    android:text="官方运营微信号：am79622231"
+                    android:textColor="#ffffffff"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_service_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="17dp"
+                    android:layout_marginTop="7dp"
+                    android:text="服务时间：9：00-22：00"
+                    android:textColor="#ffffffff"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+
+        </RelativeLayout>
+    </ScrollView>
+</layout>

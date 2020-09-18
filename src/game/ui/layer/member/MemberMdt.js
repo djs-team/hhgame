@@ -1,4 +1,3 @@
-
 /**
  *  CashCowMdt Mediator
  *
@@ -11,7 +10,7 @@ load('game/ui/layer/member/MemberMdt', function () {
     let mdt = Mediator.extend({
         mediatorName: 'MemberMdt',
         ctor: function (view) {
-            this._super(this.mediatorName,view)
+            this._super(this.mediatorName, view)
         },
         getNotificationList: function () {
             return [
@@ -33,6 +32,16 @@ load('game/ui/layer/member/MemberMdt', function () {
                     break
                 case GameEvent.PLAYER_BUY_VIP_ORDER:
                     appInstance.gameAgent().Tips('------------------------------------订单调用成功！！！')
+                    cc.log('=============' + JSON.stringify(body))
+                    let payType = body.payType;
+                    if (payType == 1) {
+                        cc.log('=============' + "调用支付宝")
+                        appInstance.nativeApi().thirdPay("alipay", body.zhifubaoSign)
+                    } else if (payType == 2) {
+                        let wxSign=JSON.stringify(body.wxinfo)
+                        cc.log('=============' + "调用微信"+wxSign)
+                        appInstance.nativeApi().thirdPay("wx", wxSign)
+                    }
                     break
                 default:
                     break
@@ -58,7 +67,6 @@ load('game/ui/layer/member/MemberMdt', function () {
 
         initViewData: function (body) {
 
-
             cc.log('------------------------ body : ' + JSON.stringify(body))
             let data = {}
             data.privilegeList = []
@@ -70,14 +78,13 @@ load('game/ui/layer/member/MemberMdt', function () {
             data.vipCodeList = body.vipCodeList
 
 
-            if(body.playerVipCode > 0){
-                this.formatDate(data,body.surplusTime)
+            if (body.playerVipCode > 0) {
+                this.formatDate(data, body.surplusTime)
 
             }
 
 
-
-            for(let i = 0; i < body.vipList.length; i++){
+            for (let i = 0; i < body.vipList.length; i++) {
 
                 let _vip = body.vipList[i]
                 let privilegeData = {}
@@ -88,10 +95,6 @@ load('game/ui/layer/member/MemberMdt', function () {
                 data.rechargeList.push(rechargeData)
 
 
-
-
-
-
                 privilegeData.vipCode = _vip.vipCode
                 rechargeData.vipCode = _vip.vipCode
                 memberData.vipCode = _vip.vipCode
@@ -100,9 +103,9 @@ load('game/ui/layer/member/MemberMdt', function () {
                 memberData.roleCode = _vip.roleCode
                 privilegeData.equityMulti = '5、最多领取' + _vip.equityMulti + '倍签到奖励'
 
-                GameUtil.getPropsData(_vip.firstChargeGift,privilegeData,'firstChargeGift',GameUtil.DATATYPE_2,GameUtil.CURRENCYTYPE_1,GameUtil.UNITLOCATION_BEFORE,'x')
+                GameUtil.getPropsData(_vip.firstChargeGift, privilegeData, 'firstChargeGift', GameUtil.DATATYPE_2, GameUtil.CURRENCYTYPE_1, GameUtil.UNITLOCATION_BEFORE, 'x')
 
-                GameUtil.getPropsData(_vip.dailyGift,privilegeData,'dailyGift',GameUtil.DATATYPE_2,GameUtil.CURRENCYTYPE_1,GameUtil.UNITLOCATION_BEFORE,'x')
+                GameUtil.getPropsData(_vip.dailyGift, privilegeData, 'dailyGift', GameUtil.DATATYPE_2, GameUtil.CURRENCYTYPE_1, GameUtil.UNITLOCATION_BEFORE, 'x')
 
 
                 let level = '周'
@@ -136,7 +139,6 @@ load('game/ui/layer/member/MemberMdt', function () {
                 }
 
                 memberData.memberName = level + 'VIP专属角色'
-
                 rechargeData.time = '时限：' + _vip.time + '天'
                 rechargeData.money = _vip.money + 'RMB'
 
@@ -148,10 +150,10 @@ load('game/ui/layer/member/MemberMdt', function () {
 
         },
 
-        formatDate: function (data,timeStamp) {
+        formatDate: function (data, timeStamp) {
 
-            let days = parseInt(timeStamp/1000/60/60/24)
-            let hours = Math.round(timeStamp/1000/60/60%24)
+            let days = parseInt(timeStamp / 1000 / 60 / 60 / 24)
+            let hours = Math.round(timeStamp / 1000 / 60 / 60 % 24)
             data.dueReminderText = '尊敬的xxVIP会员，您的VIP有效时限距离到期还有：' + days + '天' + hours + '时'
 
         },
@@ -159,7 +161,7 @@ load('game/ui/layer/member/MemberMdt', function () {
         onReceiveRewards: function (body) {
 
             let propList = []
-            GameUtil.getPropsData(body.dailyGift,propList,'',GameUtil.DATATYPE_1,GameUtil.CURRENCYTYPE_1,GameUtil.UNITLOCATION_BEFORE,'x','member')
+            GameUtil.getPropsData(body.dailyGift, propList, '', GameUtil.DATATYPE_1, GameUtil.CURRENCYTYPE_1, GameUtil.UNITLOCATION_BEFORE, 'x', 'member')
             appInstance.gameAgent().addReceivePropsUI(propList)
 
             this.view.onReceiveRewards()

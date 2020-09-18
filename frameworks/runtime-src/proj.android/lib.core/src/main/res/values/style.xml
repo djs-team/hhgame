@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="dialog" parent="@android:style/Theme.Dialog">
+        <!--边框-->
+        <item name="android:windowFrame">@null</item>
+        <!--是否浮现在activity之上-->
+        <item name="android:windowIsFloating">true</item>
+        <!--半透明-->
+        <item name="android:windowIsTranslucent">true</item>
+        <!--无标题-->
+        <item name="android:windowNoTitle">true</item>
+        <!--背景透明-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--模糊-->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!--适应键盘-->
+        <item name="android:windowSoftInputMode">adjustResize|stateHidden</item>
+        <item name="android:configChanges">orientation|keyboardHidden</item>
+    </style>
+
+    <style name="pop_y_spread_anim" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/pop_y_spread_enter</item>
+        <item name="android:windowExitAnimation">@anim/pop_y_spread_exit</item>
+    </style>
+
+    <style name="NoDisplay" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+</resources>

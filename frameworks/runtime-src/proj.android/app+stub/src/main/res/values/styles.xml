@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="FullscreenDialog" parent="dialog">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowIsFloating">false</item>
+    </style>
+
+    <style name="PopScaleAnim" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/pop_scale_enter</item>
+        <item name="android:windowExitAnimation">@anim/pop_scale_exit</item>
+    </style>
+
+    <style name="TranslucentWindow" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="HalfTranslucentWindow" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@color/translucent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <!--QQ数字风格样式，注意每一项都不能少-->
+    <style name="picture.QQ.style" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <!--标题栏背景色-->
+        <item name="colorPrimary">@color/white</item>
+        <!--状态栏背景色-->
+        <item name="colorPrimaryDark">@color/white</item>
+        <!--是否改变图片列表界面状态栏字体颜色为黑色-->
+        <item name="picture.statusFontColor">true</item>
+        <!--返回键图标-->
+        <item name="picture.leftBack.icon">@drawable/ic_back_black</item>
+        <!--标题下拉箭头-->
+        <item name="picture.arrow_down.icon">@drawable/arrow_down</item>
+        <!--标题上拉箭头-->
+        <item name="picture.arrow_up.icon">@drawable/arrow_up</item>
+        <!--标题文字颜色-->
+        <item name="picture.title.textColor">#282828</item>
+        <!--标题栏右边文字-->
+        <item name="picture.right.textColor">#282828</item>
+        <!--图片列表勾选样式-->
+        <item name="picture.checked.style">@drawable/checkbox_num_selector</item>
+        <!--开启图片列表勾选数字模式,开启的话勾选样式要换-->
+        <item name="picture.style.checkNumMode">true</item>
+        <!--选择图片样式0/9-->
+        <item name="picture.style.numComplete">false</item>
+        <!--图片列表底部背景色-->
+        <item name="picture.bottom.bg">@color/color_fa</item>
+        <!--图片列表预览文字颜色-->
+        <item name="picture.preview.textColor">#282828</item>
+        <!--图片列表已完成文字颜色-->
+        <item name="picture.complete.textColor">#282828</item>
+        <!--图片已选数量圆点背景色-->
+        <item name="picture.num.style">@drawable/num_oval_blue</item>
+        <!--预览界面标题文字颜色-->
+        <item name="picture.ac_preview.title.textColor">#282828</item>
+        <!--预览界面已完成文字颜色-->
+        <item name="picture.ac_preview.complete.textColor">#282828</item>
+        <!--预览界面标题栏背景色-->
+        <item name="picture.ac_preview.title.bg">@color/white</item>
+        <!--预览界面底部背景色-->
+        <item name="picture.ac_preview.bottom.bg">@color/color_fa</item>
+        <!--预览界面返回箭头-->
+        <item name="picture.preview.leftBack.icon">@drawable/ic_back_black</item>
+        <!--裁剪页面标题背景色-->
+        <item name="picture.crop.toolbar.bg">@color/bar_grey</item>
+        <!--裁剪页面状态栏颜色-->
+        <item name="picture.crop.status.color">@color/bar_grey</item>
+        <!--裁剪页面标题文字颜色-->
+        <item name="picture.crop.title.color">@color/white</item>
+        <!--相册文件夹列表选中图标-->
+        <item name="picture.folder_checked_dot">@drawable/orange_oval</item>
+    </style>
+    <!--自定义对话框样式-->
+    <style name="dialog_guard_style" parent="android:Animation">
+        <!--进入时的动画-->
+        <item name="android:windowEnterAnimation">@anim/guard_dialog_inter</item>
+        <!--退出时的动画-->
+        <item name="android:windowExitAnimation">@anim/guard_dialog_exit</item>
+    </style>
+    <style name="style_color_FE0707">
+        <item name="android:textColor">@color/color_FE0707</item>
+    </style>
+    <declare-styleable name="RedPacketStyle">
+        <attr name="count" format="integer" />
+        <attr name="speed" format="integer" />
+        <attr name="max_size" format="float" />
+        <attr name="min_size" format="float" />
+    </declare-styleable>
+</resources>

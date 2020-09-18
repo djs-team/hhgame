@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/bg_iv"
+            android:layout_width="156dp"
+            android:layout_height="54dp"
+            android:background="@drawable/ic_room_mini_bg"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/room_iv"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginLeft="3dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.deepsea.mua.core.view.VoicePlaying
+            android:id="@+id/music_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="12dp"
+            app:layout_constraintBottom_toBottomOf="@id/room_iv"
+            app:layout_constraintLeft_toLeftOf="@id/room_iv"
+            app:layout_constraintRight_toRightOf="@id/room_iv"
+            app:layout_constraintTop_toTopOf="@id/room_iv"
+            app:pointer_color="@color/white"
+            app:pointer_num="4"
+            app:pointer_padding="2dp"
+            app:pointer_width="3dp" />
+
+        <LinearLayout
+            android:id="@+id/room_info_layout"
+            android:layout_width="84dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="7dp"
+            android:paddingRight="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/room_iv"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/room_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/room_id_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/close_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="54dp"
+            android:paddingRight="17dp"
+            android:src="@drawable/ic_close_mini"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/room_info_layout"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+</layout>

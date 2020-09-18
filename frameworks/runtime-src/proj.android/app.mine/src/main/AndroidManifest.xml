@@ -1,0 +1,82 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.deepsea.mua.mine">
+
+    <application>
+
+        <activity
+            android:name="com.deepsea.mua.mine.activity.ProfileActivity"
+            android:launchMode="singleTask" />
+        <activity android:name="com.deepsea.mua.mine.activity.RechargeActivity" />
+        <activity
+            android:name="com.deepsea.mua.mine.activity.ProfileEditActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name="com.deepsea.mua.mine.activity.PersonalLevelActivity" />
+        <activity android:name="com.deepsea.mua.mine.activity.PresentWallActivity" />
+        <activity android:name="com.deepsea.mua.mine.activity.PresentIdentityAuthActivity" />
+        <activity android:name="com.deepsea.mua.mine.activity.FollowAndFanActivity" />
+        <activity android:name="com.deepsea.mua.mine.activity.WalletActivity" />
+        <activity android:name="com.deepsea.mua.mine.activity.WalletRecordActivity" />
+        <activity android:name="com.deepsea.mua.mine.activity.IncomeRedpackageDetailsActivity" />
+        <activity
+            android:name="com.deepsea.mua.mine.activity.ExchangeMdActivity"
+            android:windowSoftInputMode="stateVisible" />
+        <activity android:name="com.deepsea.mua.mine.activity.FeedResultActivity" />
+        <activity android:name="com.deepsea.mua.mine.activity.SettingActivity" />
+        <activity android:name="com.deepsea.mua.mine.activity.FeedbackActivity" />
+
+        <activity android:name="com.deepsea.mua.mine.activity.VisitorsActivity" />
+        <activity android:name="com.deepsea.mua.mine.activity.WebActivity" />
+        <activity
+            android:name=".activity.UpdateActivity"
+            android:theme="@style/TranslucentWindow" />
+        <activity
+            android:name=".activity.InviteDialogActivity"
+            android:theme="@style/TranslucentWindow" />
+        <activity
+            android:name=".activity.RechargeDialogActivity"
+            android:theme="@style/TranslucentWindow" />
+        <activity
+            android:name=".activity.ScreenDialogActivity"
+            android:theme="@style/HalfTranslucentWindow" />
+        <activity
+            android:name=".activity.TaskCenterDialogActivity"
+            android:theme="@style/HalfTranslucentWindow" />
+        <activity android:name="com.deepsea.mua.mine.activity.MePackActivity" />
+        <activity android:name="com.deepsea.mua.mine.activity.AssistActivity" />
+        <activity android:name="com.deepsea.mua.mine.activity.MarriageSeekingActivity" />
+        <activity android:name="com.deepsea.mua.mine.activity.InvitationMineActivity" />
+        <activity android:name="com.deepsea.mua.mine.activity.CrashWithdrawalActivity" />
+        <activity android:name="com.deepsea.mua.mine.activity.CollectionAccountSettingActivity" />
+        <activity android:name="com.deepsea.mua.mine.activity.CrashWithDrawalDetailsActivity" />
+        <activity android:name="com.deepsea.mua.mine.activity.IncomeDetailsActivity" />
+        <activity android:name="com.deepsea.mua.mine.activity.QueryDateDetailsActivity" />
+        <activity android:name="com.deepsea.mua.mine.activity.SafetyCenterActivity" />
+        <activity android:name="com.deepsea.mua.mine.activity.CancellationActivity" />
+        <activity android:name="com.deepsea.mua.mine.activity.CodeOfConductActivity" />
+        <activity android:name="com.deepsea.mua.mine.activity.ExchangeMdDetailsActivity" />
+        <activity android:name="com.deepsea.mua.mine.activity.MyTagsActivity" />
+        <activity android:name="com.deepsea.mua.mine.activity.InviteAlertActivity" />
+        <activity android:name="com.deepsea.mua.mine.activity.BlueRoseExchangeActivity" />
+        <activity android:name="com.deepsea.mua.mine.activity.BindWechatActivity" />
+        <activity android:name="com.deepsea.mua.mine.activity.ExchangeBlueRoseExchangeActivity" />
+        <activity android:name="com.deepsea.mua.mine.activity.ApplyHostActivity" />
+        <activity android:name="com.deepsea.mua.mine.activity.GuardActivity" />
+        <activity android:name="com.deepsea.mua.mine.activity.GuardRuleActivity" />
+        <activity android:name="com.deepsea.mua.mine.activity.TaskCenterActivity" />
+        <activity android:name="com.deepsea.mua.mine.activity.TaskProblemActivity" />
+        <activity android:name="com.deepsea.mua.mine.activity.MyGuardActivity" />
+        <activity android:name="com.deepsea.mua.mine.activity.BlockListActivity" />
+        <activity android:name="com.deepsea.mua.mine.activity.BindPhoneActivity" />
+        <activity android:name=".activity.InvitationCodeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:screenOrientation="portrait" />
+    </application>
+
+
+</manifest>

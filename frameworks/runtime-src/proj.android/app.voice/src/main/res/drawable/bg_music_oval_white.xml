@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 带圆角 白色背景 黄色色边框  长方体 -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item >
+        <shape android:shape="oval">
+            <solid android:color="#ffffffff" />
+            <item android:name="android:shadowDx">0</item>
+            <item android:name="android:shadowDy">1</item>
+            <item android:name="android:shadowColor">#260b0a09</item>
+        </shape>
+    </item>
+</layer-list>

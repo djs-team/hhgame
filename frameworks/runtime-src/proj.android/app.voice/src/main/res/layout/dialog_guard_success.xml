@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:heartview="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="667dp">
+
+        <ImageView
+            android:id="@+id/iv_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/bg_guard_success" />
+
+        <RelativeLayout
+            android:id="@+id/rl_user_info"
+            android:layout_width="152dp"
+            android:layout_height="152.5dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="155dp">
+
+
+            <ImageView
+                android:id="@+id/iv_host_user"
+                android:layout_width="86.5dp"
+                android:layout_height="86.5dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="33dp"
+                android:src="@drawable/ic_place" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/icon_guard_dialog_user" />
+
+            <RelativeLayout
+                android:layout_width="93dp"
+                android:layout_height="140dp"
+                android:layout_centerHorizontal="true">
+
+                <com.deepsea.mua.stub.view.HeartImageView
+                    android:layout_marginRight="4.5dp"
+                    android:layout_marginBottom="1dp"
+                    android:id="@+id/iv_heart_user"
+                    android:layout_width="56dp"
+                    android:layout_height="55dp"
+                    android:rotation="22"
+                    android:src="@drawable/ic_place"
+                    heartview:shape_type="heart"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/icon_guard_heart" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="320dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/rl_user_info"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_guard_dialog_desc">
+
+            <TextView
+                android:id="@+id/tv_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textColor="#ffffffff"
+                android:textSize="14sp" />
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

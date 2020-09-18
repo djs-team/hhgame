@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_friend_photo"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                 />
+
+            <TextView
+                android:id="@+id/tv_friend_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_4"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/iv_friend_photo"
+                android:text="平原"
+                android:textColor="#ff333333"
+                android:textSize="16sp" />
+
+            <ImageView
+
+                android:id="@+id/iv_friend_sex"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginLeft="@dimen/dp_4"
+                android:layout_marginTop="13dp"
+                android:layout_toRightOf="@id/tv_friend_name"
+       />
+
+            <TextView
+                android:id="@+id/tv_friend_age_and_area"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_friend_name"
+                android:layout_marginLeft="@dimen/dp_4"
+                android:layout_toRightOf="@id/iv_friend_photo"
+                android:textColor="#ff333333"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_friend_request_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/dp_4"
+                android:layout_marginTop="13dp"
+                android:layout_marginRight="12dp"
+                android:text="10月12日"
+                android:textColor="#ff666666"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_tofriend_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_friend_age_and_area"
+                android:layout_marginLeft="@dimen/dp_4"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="8dp"
+                android:layout_toRightOf="@id/iv_friend_photo"
+                android:text="请求和你成为好友"
+                android:textColor="#ff999999"
+                android:textSize="12sp" />
+
+            <RelativeLayout
+                android:id="@+id/rl_friend_gift"
+                android:layout_width="wrap_content"
+                android:layout_height="65dp"
+                android:layout_below="@id/tv_tofriend_desc"
+                android:layout_marginLeft="14dp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/iv_fiend_gift"
+                    android:layout_width="41dp"
+                    android:layout_height="37dp"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_gift_heart"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_toRightOf="@id/iv_fiend_gift"
+                    android:text="礼物心语："
+                    android:textColor="#ffff45a2"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_friend_words"
+                    android:layout_width="134dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_gift_heart"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_toRightOf="@id/iv_fiend_gift"
+                    android:text="我觉着咱们两个很合适，加我好友吧！ "
+                    android:textColor="#ffff45a2"
+                    android:textSize="12sp" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="20dp">
+
+
+                    <TextView
+                        android:id="@+id/tv_agree2"
+                        android:layout_width="59dp"
+                        android:layout_height="24dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_toLeftOf="@id/tv_refuse2"
+                        android:background="@drawable/bg_btn_sure"
+                        android:gravity="center"
+                        android:text="同意"
+
+                        android:textColor="#ffffffff"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tv_refuse2"
+                        android:layout_width="59dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="12dp"
+                        android:background="@drawable/bg_btn_refuse"
+                        android:gravity="center"
+                        android:text="拒绝"
+                        android:textColor="#ff999999"
+                        android:textSize="12dp"/>
+                    <TextView
+                        android:id="@+id/tv_statu2"
+                        android:layout_width="59dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="12dp"
+                        android:background="@drawable/bg_btn_refuse"
+                        android:gravity="center"
+                        android:textColor="#ff999999"
+                        android:textSize="12dp"
+                        android:visibility="gone"/>/>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_addfriend_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_friend_age_and_area"
+                android:layout_alignBottom="@id/rl_friend_gift"
+                android:layout_marginBottom="7dp"
+                android:layout_toRightOf="@id/rl_friend_gift"
+                android:gravity="bottom"
+                android:visibility="visible">
+
+
+                <TextView
+                    android:id="@+id/tv_agree"
+                    android:layout_width="59dp"
+                    android:layout_height="24dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_toLeftOf="@id/tv_refuse"
+                    android:background="@drawable/bg_btn_sure"
+                    android:gravity="center"
+                    android:text="同意"
+
+                    android:textColor="#ffffffff"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_refuse"
+                    android:layout_width="59dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="12dp"
+                    android:background="@drawable/bg_btn_refuse"
+                    android:gravity="center"
+                    android:text="拒绝"
+                    android:textColor="#ff999999"
+                    android:textSize="12dp" />
+                <TextView
+                    android:id="@+id/tv_status"
+                    android:layout_width="59dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="12dp"
+                    android:background="@drawable/bg_btn_refuse"
+                    android:gravity="center"
+                    android:textColor="#ff999999"
+                    android:textSize="12dp"
+                    android:visibility="gone"/>
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/rl_addfriend_group"
+            android:background="@color/primary_line" />
+    </LinearLayout>
+</layout>

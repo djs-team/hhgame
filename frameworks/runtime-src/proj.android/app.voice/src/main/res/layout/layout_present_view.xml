@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/black_corner_10dp"
+        android:orientation="vertical">
+
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/title_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:text="送给"
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/all_map_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="9dp"
+                    android:layout_marginRight="9dp"
+                    android:background="@drawable/all_map_bg"
+                    android:gravity="center"
+                    android:minWidth="38dp"
+                    android:minHeight="38dp"
+                    android:text="全麦"
+                    android:textColor="#EF51B2"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/mp_user_rv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clipToPadding="false"
+                    android:overScrollMode="never"
+                    android:paddingRight="5dp" />
+
+                <TextView
+                    android:id="@+id/tv_send_gift_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/white"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/indicator_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="30dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/title_layout">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="32dp"
+                    android:gravity="center_horizontal"
+
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/present_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="普通礼物"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:id="@+id/view_common_gift_line"
+                        android:layout_width="8dp"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="25dp"
+                        android:background="@color/white" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
+
+                    <TextView
+                        android:id="@+id/pack_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="守护礼物"
+                        android:textColor="#818181"
+                        android:textSize="15sp" />
+                    <View
+                        android:visibility="invisible"
+                        android:id="@+id/view_guard_gift_line"
+                        android:layout_width="8dp"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="25dp"
+                        android:background="@color/white" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#293148"
+                app:layout_constraintTop_toBottomOf="@id/indicator_layout" />
+
+            <com.deepsea.mua.core.view.NoScrollViewPager
+                android:id="@+id/view_pager"
+                android:layout_width="match_parent"
+                android:layout_height="232dp"
+                android:layout_marginBottom="1dp"
+                android:overScrollMode="never"
+                app:layout_constraintTop_toBottomOf="@id/indicator_layout" />
+
+<!--            <TextView-->
+<!--                android:id="@+id/no_pack_tv"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="您的背包空空如也…"-->
+<!--                android:textColor="#ff676767"-->
+<!--                android:textSize="15sp"-->
+<!--                android:visibility="gone"-->
+<!--                app:layout_constraintBottom_toBottomOf="@id/view_pager"-->
+<!--                app:layout_constraintLeft_toLeftOf="parent"-->
+<!--                app:layout_constraintRight_toRightOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="@id/view_pager" />-->
+
+
+            <com.deepsea.mua.core.view.indicator.CircleIndicator
+                android:id="@+id/indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="5dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="7dp"
+                app:ci_background="@color/white"
+                app:ci_gravity="center"
+                app:ci_margin="7dp"
+                app:ci_mode="solo"
+                app:ci_radius="2.5dp"
+                app:ci_selected_background="#FF8036"
+                app:layout_constraintTop_toBottomOf="@id/view_pager"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"/>
+            <View
+                android:id="@+id/view_line"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#293148"
+                app:layout_constraintTop_toBottomOf="@id/indicator" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@id/view_line">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="47dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="17dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/icon_flower_recharge" />
+
+                    <TextView
+                        android:id="@+id/amount_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/recharge_tv"
+                        android:layout_width="75dp"
+                        android:layout_height="29dp"
+                        android:layout_marginLeft="16dp"
+                        android:background="@drawable/bg_pink_border_radius_21"
+                        android:gravity="center"
+                        android:text="充值"
+                        android:textColor="#ffef51b2"
+                        android:textSize="16sp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="28dp"
+                        android:minWidth="115dp"
+                        android:visibility="gone"
+                        app:bl_corners_radius="14dp"
+                        app:bl_stroke_color="#F8705F"
+                        app:bl_stroke_width="1dp">
+
+                        <TextView
+                            android:id="@+id/send_number_tv"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:drawableLeft="@drawable/ic_triangle"
+                            android:drawablePadding="4dp"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="10dp"
+                            android:textColor="@color/white"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/send_tv"
+                            android:layout_width="59dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="right"
+                            android:layout_marginLeft="4dp"
+                            android:gravity="center"
+                            android:text="发送"
+                            android:textColor="@color/white"
+                            android:textSize="13sp"
+                            app:bl_corners_radius="14dp"
+                            app:bl_solid_color="#F8705F" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            <com.deepsea.mua.stub.view.MaxRelativeLayout
+                android:id="@+id/number_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="40dp"
+                android:visibility="gone"
+                app:bl_corners_radius="13dp"
+                app:bl_solid_color="#3D4358"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/number_rv"
+                    android:layout_width="113dp"
+                    android:layout_height="wrap_content"
+                    android:overScrollMode="never" />
+            </com.deepsea.mua.stub.view.MaxRelativeLayout>
+        </android.support.constraint.ConstraintLayout>
+    </LinearLayout>
+</layout>

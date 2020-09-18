@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="235dp">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="235dp"
+            android:background="#1F2434"
+            android:overScrollMode="never"
+            android:paddingTop="17dp" />
+
+        <com.deepsea.mua.core.view.indicator.CircleIndicator
+            android:id="@+id/indicator"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_alignBottom="@id/view_pager"
+            android:layout_marginBottom="13dp"
+            app:ci_background="@color/white"
+            app:ci_gravity="center"
+            app:ci_margin="7dp"
+            app:ci_mode="solo"
+            app:ci_radius="2.5dp"
+            app:ci_selected_background="#FF8036" />
+    </RelativeLayout>
+</layout>

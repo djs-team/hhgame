@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/rl_marquee"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/icon_marquee_bg"
+    android:paddingTop="3dp"
+    android:paddingBottom="3dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/tv_notice_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="13dp"
+        android:text="公告:"
+        android:textColor="#ffdf4c"
+        android:textSize="13sp" />
+
+    <com.deepsea.mua.stub.view.MarqueeTextView
+        android:id="@+id/tv_marquee"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/tv_notice_title"
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:paddingLeft="7dp"
+        android:singleLine="true"
+        android:textColor="#ffdf4c"
+        android:textSize="13sp" />
+</RelativeLayout>
+

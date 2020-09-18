@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:background="@color/white"
+    android:layout_marginTop="15dp"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:id="@+id/image_ll"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:background="@drawable/bg_round_gray_border">
+
+        <ImageView
+            android:id="@+id/present_iv"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_centerInParent="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_place" />
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/present_name_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:gravity="center"
+        android:text="礼物名称"
+        android:textColor="#818181"
+        android:textSize="14dp"/>
+
+    <TextView
+        android:id="@+id/present_count_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="x2"
+        android:textColor="#EF51B2"
+        android:textSize="14dp"
+        android:textStyle="bold" />
+
+</LinearLayout>

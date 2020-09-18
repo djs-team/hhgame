@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="isManager"
+            type="boolean" />
+
+        <variable
+            name="isSelf"
+            type="boolean" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/ll_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingTop="7dp"
+        android:paddingBottom="7dp">
+
+        <CheckBox
+            android:id="@+id/cb_select"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/avatar_iv"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="14dp"
+            android:src="@drawable/ic_place" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="9dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/nick_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:singleLine="true"
+                    android:text="情深深雨蒙蒙萌"
+                    android:textColor="#ff333333"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tv_lv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="16dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_toRightOf="@id/nick_tv"
+                    android:background="@drawable/icon_user_lv"
+                    android:gravity="center"
+                    android:paddingLeft="6dp"
+                    android:paddingRight="6dp"
+                    android:text="LV4"
+                    android:textColor="#ffffffff"
+                    android:textSize="10sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/info_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:text="25岁 | 北京 | 175"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:id="@+id/iv_sex"
+                    android:layout_width="12dp"
+                    android:layout_height="13dp"
+                    android:layout_marginLeft="7dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@id/info_tv"
+                    android:src="@drawable/ic_rank_man" />
+            </RelativeLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+</layout>

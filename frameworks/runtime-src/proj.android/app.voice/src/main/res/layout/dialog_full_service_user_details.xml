@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="isManager"
+            type="boolean" />
+
+        <variable
+            name="isSelf"
+            type="boolean" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dialog_corner_white_bg"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp">
+
+            <ImageView
+                android:id="@+id/avatar_iv"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="14dp"
+                android:src="@drawable/ic_place" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="9dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/nick_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:singleLine="true"
+                        android:text="情深深雨蒙蒙萌"
+                        android:textColor="#ff333333"
+                        android:textSize="16sp" />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/info_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="25岁 | 北京 | 175"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+
+                    <ImageView
+                        android:id="@+id/iv_sex"
+                        android:layout_width="12dp"
+                        android:layout_height="13dp"
+                        android:layout_marginLeft="7dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_toRightOf="@id/info_tv"
+                        android:src="@drawable/ic_rank_man" />
+
+                    <TextView
+                        android:id="@+id/tv_lv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="16dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_toRightOf="@id/iv_sex"
+                        android:background="@drawable/icon_user_lv"
+                        android:gravity="center"
+                        android:paddingLeft="6dp"
+                        android:paddingRight="6dp"
+                        android:text="LV4"
+                        android:textColor="#ffffffff"
+                        android:textSize="10sp" />
+                </RelativeLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_add_friend"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="+加好友"
+                android:textColor="#ff666666"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_personal_center"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="个人资料"
+                android:textColor="#ff666666"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_send_gift"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="送礼物"
+                android:textColor="#ffff4e73"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_invite"
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:gravity="center"
+            android:text="邀请上麦"
+            android:textColor="#ff5996ee"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+</layout>

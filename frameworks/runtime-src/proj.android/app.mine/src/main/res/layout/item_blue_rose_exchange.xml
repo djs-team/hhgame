@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="105dp"
+        android:layout_height="110dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/blue_rose_item_bg">
+
+        <ImageView
+            android:layout_marginTop="4dp"
+            android:id="@+id/gift_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="62dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_selected"
+            android:scaleType="fitCenter"/>
+
+        <TextView
+            android:id="@+id/gift_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="9dp"
+            android:text="蓝玫瑰：100
+礼物数量：2"
+            android:textColor="#ff404040"
+            android:textSize="11sp" />
+
+    </RelativeLayout>
+</layout>

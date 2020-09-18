@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/root_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:id="@+id/input_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white">
+
+            <EditText
+                android:id="@+id/input_edit"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/bg_et_chat"
+                android:hint="来聊几句吧..."
+                android:imeOptions="actionDone"
+                android:maxLength="32"
+                android:minHeight="30dp"
+                android:paddingLeft="6dp"
+                android:paddingRight="60dp"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="#ff878686"
+                android:textSize="15sp" />
+            <ImageView
+                android:layout_marginRight="9dp"
+                android:id="@+id/iv_chat_send"
+                android:layout_gravity="center_vertical"
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+                android:src="@drawable/icon_chat_send"/>
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/input_rl"
+            android:background="@color/primary_line" />
+    </RelativeLayout>
+</layout>

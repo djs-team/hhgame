@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:alpha="0.15"
+            android:background="@drawable/room_msg_bg"
+            app:layout_constraintBottom_toBottomOf="@id/notice_tv"
+            app:layout_constraintTop_toTopOf="@id/notice_tv" />
+
+        <!--官方公告-->
+        <com.deepsea.mua.stub.view.AlignTextView
+            android:id="@+id/notice_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="6dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="6dp"
+            android:textColor="#38ECF4"
+            android:textSize="13sp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@id/welcome_tv"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:alpha="0.15"
+            android:background="@drawable/room_msg_bg"
+            app:layout_constraintBottom_toBottomOf="@id/welcome_tv"
+            app:layout_constraintTop_toTopOf="@id/welcome_tv" />
+
+        <!--欢迎语-->
+        <com.deepsea.mua.stub.view.AlignTextView
+            android:id="@+id/welcome_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="6dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="6dp"
+            android:textColor="#38ECF4"
+            android:textSize="10sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+</layout>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_centerInParent="true">
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/report_list_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:overScrollMode="never" />
+
+        <RelativeLayout
+            android:id="@+id/rl_img_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/report_list_rv"
+            android:layout_marginLeft="14dp"
+            android:layout_marginRight="14dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="上传证据（必填）"
+                android:textColor="#ff333333"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_img_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="0/3张"
+                android:textColor="#ff818181"
+                android:textSize="14sp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_img_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rl_img_title"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="14dp"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_report_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <RelativeLayout
+                android:id="@+id/rl_plug"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:background="@drawable/bg_report_img">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="22dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/icon_image_plug" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_desc_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll_img_content"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="14dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="违规描述（选填）"
+                android:textColor="#ff333333"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_desc_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="0/100字"
+                android:textColor="#ff818181"
+                android:textSize="14sp" />
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/et_report_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rl_desc_title"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginRight="15dp"
+            android:background="#33818181"
+            android:maxEms="100"
+            android:minLines="6"
+            android:gravity="start"
+            android:textSize="14sp"
+            android:textColor="@color/black"/>
+
+        <LinearLayout
+            android:id="@+id/ll_block_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/et_report_desc"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="15dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="14dp"
+                android:layout_height="14dp">
+
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:src="@drawable/icon_guard_renew_cicle" />
+
+                <ImageView
+                    android:id="@+id/iv_block_switch"
+                    android:layout_width="10.5dp"
+                    android:layout_height="10.5dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/icon_guard_renew_check_mark" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="14dp"
+                android:text="同时拉黑该用户"
+                android:textColor="#ff333333"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_below="@id/ll_block_check"
+            android:id="@+id/commit_btn"
+            android:layout_width="266dp"
+            android:layout_height="38dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="22dp"
+            android:background="@drawable/bg_friend_agree"
+            android:gravity="center"
+            android:text="提交"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp" />
+    </RelativeLayout>
+</RelativeLayout>
+</layout>

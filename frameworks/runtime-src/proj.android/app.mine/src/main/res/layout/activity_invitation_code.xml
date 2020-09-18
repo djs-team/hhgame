@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.deepsea.mua.stub.view.TitleBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:backgroundRes="@color/transparent"
+            app:title="邀请码" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFEE333"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/rl_qr_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFEE333"
+                android:paddingBottom="32dp">
+
+                <ImageView
+                    android:id="@+id/iv_userhead"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="33dp"
+                    android:src="@drawable/ic_place_default" />
+
+                <TextView
+                    android:id="@+id/tv_my_invitecode_desc"
+                    android:layout_marginLeft="34dp"
+                    android:layout_toRightOf="@id/iv_userhead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="我的邀请码："
+                    android:textColor="#333333"
+                    android:textSize="16sp"
+                    android:layout_marginTop="40dp"/>
+
+                <TextView
+                    android:layout_below="@id/tv_my_invitecode_desc"
+                    android:id="@+id/tv_my_invitecode"
+                    android:layout_marginLeft="34dp"
+                    android:layout_toRightOf="@id/iv_userhead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#333333"
+                    android:textSize="16sp"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_invite_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/iv_userhead"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="12dp"
+                    android:text="XXX邀请您体验合合交友"
+                    android:textColor="#ff333333"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:id="@+id/iv_qr_code"
+                    android:layout_width="280dp"
+                    android:layout_height="280dp"
+                    android:layout_below="@id/tv_invite_title"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="24dp"
+                    android:background="@color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/iv_qr_code"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="12dp"
+                    android:text="长按识别图片中二维码开始下载"
+                    android:textColor="#ff333333"
+                    android:textSize="17sp" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_share"
+                android:layout_width="280dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/icon_bg_share"
+                android:gravity="center"
+                android:text="分享"
+                android:textColor="@color/white"
+                android:textSize="17dp" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

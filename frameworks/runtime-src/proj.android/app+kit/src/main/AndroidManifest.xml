@@ -1,0 +1,80 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.deepsea.mua.kit">
+
+
+    <application
+        android:allowBackup="true"
+        android:supportsRtl="true">
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+        <!--全局设计图尺寸 (单位 dp)-->
+        <meta-data
+            android:name="design_width_in_dp"
+            android:value="375" />
+        <meta-data
+            android:name="design_height_in_dp"
+            android:value="669" />
+
+        <provider
+            android:name=".provider.MuaFileProvider"
+            android:authorities="${applicationId}.host.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <!-- 设置环信应用的AppKey -->
+        <meta-data
+            android:name="EASEMOB_APPKEY"
+            android:value="1111191107042495#hehexq" />
+        <!--<meta-data-->
+        <!--android:name="EASEMOB_APPKEY"-->
+        <!--android:value="1100191011055637#mau-zhibo" />-->
+        <!-- 声明SDK所需的service SDK核心功能-->
+        <service
+            android:name="com.hyphenate.chat.EMChatService"
+            android:exported="true" />
+        <service
+            android:name="com.hyphenate.chat.EMJobService"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <!-- 声明SDK所需的receiver -->
+        <receiver android:name="com.hyphenate.chat.EMMonitorReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <data android:scheme="package" />
+            </intent-filter>
+            <!-- 可选filter -->
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+        </receiver>
+
+        <!--UMENG-->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="5dfb2bd8cb23d236f9000134" />
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="Ali" />
+
+        <!-- share sdk -->
+        <meta-data
+            android:name="Mob-AppKey"
+            android:value="" />
+        <meta-data
+            android:name="Mob-AppSecret"
+            android:value="" />
+        <!--微信登录、分享回调-->
+        <activity
+            android:name="harmony.dating.online.face.ad.wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+    </application>
+</manifest>

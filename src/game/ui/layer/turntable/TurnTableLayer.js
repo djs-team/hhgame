@@ -7,6 +7,7 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
         _className: 'turnTableLayer',
         _requestDeley: 5,
         _requestCache: 0,
+        _isHaveInitUserData : false,
         ctor: function () {
             this._super(ResConfig.View.TurnTableLayer)
 
@@ -28,7 +29,6 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
                 'bmPnl/zhuanPnl/pointerBtn': { onClicked: this.onTurnPointClick},
                 'bmPnl/zhuanPnl/turnTablePic': {},
                 'bmPnl/zhuanPnl/turnTablePic/goodsNd': {},
-                'popUpPnl/popBlockPnl': {},
                 'popUpPnl/timesEndPnl': {},
                 'popUpPnl/explainPnl': {},
                 'popUpPnl/recordsPnl': {},
@@ -64,16 +64,18 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
         },
 
         onUpdate: function (dt) {
+            if(!this._isHaveInitUserData)
+                return
+
             this._requestCache += dt
             if (this._requestCache > this._requestDeley) {
                 this._requestCache = 0
-                cc.log('===========去做一件事儿')
+                appInstance.gameAgent().httpGame().REFRESHAWARDSDATAReq()
             }
         },
 
         initView: function () {
 
-            this.popBlockPnl.setVisible(false)
             this.timesEndPnl.setVisible(false)
             this.explainPnl.setVisible(false)
             this.recordsPnl.setVisible(false)
@@ -100,6 +102,8 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
             for (let i = 0; i < userData.length; ++i) {
                 this.updateUserCell(userData, i)
             }
+
+            this._isHaveInitUserData = true
         },
 
         updateUserCell: function (userData, index) {
@@ -118,14 +122,12 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
 
 
         onCloseClick: function () {
-            cc.log('=============onCloseClick=========')
             // appInstance.gameAgent().tcpGame().enterTable()
             appInstance.uiManager().removeUI(this)
         },
 
         onDataInit: function (data) {
 
-            cc.log('===============turntable onDataInit======' + JSON.stringify(data))
 
             this._goodsArray = {}
             for (let i = 1; i < 11; ++i) {
@@ -140,7 +142,6 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
 
         onTurnPointClick: function () {
 
-            this.popBlockPnl.setVisible(true)
             let msg = {}
             appInstance.gameAgent().httpGame().TURNPOINTReq(msg)
 
@@ -202,7 +203,6 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
             }
 
             this.awardsPnl.setVisible(true)
-            this.popBlockPnl.setVisible(false)
 
         },
 
@@ -238,6 +238,7 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
 
             this.awardsPnl.setVisible(false)
             this.acceptedPnl.setVisible(true)
+
         },
 
         onHideAcceptPnlClick: function () {
@@ -282,7 +283,6 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
 
             let record = list[index]
             let awardsText = record.propName+record.propNum+record.propUnit
-            cc.log('----awardsText : ' + awardsText)
             recordCell.getChildByName('timeText').setString(this.onFormatDateTime(record.time))
             recordCell.getChildByName('awardsText').setString(awardsText)
         },

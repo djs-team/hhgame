@@ -116,6 +116,7 @@
               "X": 1280.0,
               "Y": 720.0
             },
+            "VisibleForFrame": false,
             "Name": "dele",
             "ctype": "ImageViewObjectData"
           },
@@ -161,6 +162,7 @@
             },
             "LeftMargin": 2.6322,
             "RightMargin": -2.6322,
+            "UserData": "{\"layoutType\":\"showAll\",\"screenAlign\":\"top\"}",
             "Tag": 258,
             "Children": [
               {
@@ -537,7 +539,7 @@
               "Y": 0.1555
             },
             "PreSize": {
-              "X": 0.1563,
+              "X": 0.1562,
               "Y": 0.725
             },
             "LeftMargin": 1077.3888,
@@ -3512,66 +3514,12 @@
               "X": 1.0,
               "Y": 1.0
             },
+            "UserData": "{\"layoutType\":\"maxArea\",\"screenAlign\":\"mid\"}",
             "Tag": 298,
             "Children": [
               {
                 "ClipAble": false,
-                "BackColorAlpha": 102,
-                "SingleColor": {
-                  "R": 150,
-                  "G": 200
-                },
-                "FirstColor": {
-                  "R": 150,
-                  "G": 200
-                },
-                "EndColor": {},
-                "ColorVector": {
-                  "ScaleY": 1.0
-                },
-                "Scale9Width": 1,
-                "Scale9Height": 1,
-                "TouchEnable": true,
-                "AnchorPoint": {
-                  "ScaleX": 0.5,
-                  "ScaleY": 0.5
-                },
-                "Position": {
-                  "X": 640.0,
-                  "Y": 360.0
-                },
-                "Scale": {
-                  "ScaleX": 1.0,
-                  "ScaleY": 1.0
-                },
-                "CColor": {},
-                "IconVisible": false,
-                "PositionPercentXEnabled": true,
-                "PositionPercentYEnabled": true,
-                "PrePosition": {
-                  "X": 0.5,
-                  "Y": 0.5
-                },
-                "PercentWidthEnable": true,
-                "PercentHeightEnable": true,
-                "PercentWidthEnabled": true,
-                "PercentHeightEnabled": true,
-                "PreSize": {
-                  "X": 1.0,
-                  "Y": 1.0
-                },
-                "Tag": 287,
-                "ActionTag": 2048816148,
-                "Size": {
-                  "X": 1280.0,
-                  "Y": 720.0
-                },
-                "Name": "popBlockPnl",
-                "ctype": "PanelObjectData"
-              },
-              {
-                "ClipAble": false,
-                "BackColorAlpha": 102,
+                "BackColorAlpha": 153,
                 "ComboBoxIndex": 1,
                 "SingleColor": {
                   "R": 0,
@@ -3617,6 +3565,7 @@
                   "X": 1.0,
                   "Y": 1.0
                 },
+                "UserData": "{\"layoutType\":\"maxArea\",\"screenAlign\":\"mid\"}",
                 "Tag": 299,
                 "Children": [
                   {
@@ -4087,7 +4036,7 @@
               },
               {
                 "ClipAble": false,
-                "BackColorAlpha": 102,
+                "BackColorAlpha": 153,
                 "ComboBoxIndex": 1,
                 "SingleColor": {
                   "R": 0,
@@ -4129,6 +4078,7 @@
                   "X": 1.0,
                   "Y": 1.0
                 },
+                "UserData": "{\"layoutType\":\"maxArea\",\"screenAlign\":\"mid\"}",
                 "Tag": 309,
                 "Children": [
                   {
@@ -4657,7 +4607,7 @@
               },
               {
                 "ClipAble": false,
-                "BackColorAlpha": 102,
+                "BackColorAlpha": 153,
                 "ComboBoxIndex": 1,
                 "SingleColor": {
                   "R": 0,
@@ -4702,6 +4652,7 @@
                   "X": 1.0,
                   "Y": 1.0
                 },
+                "UserData": "{\"layoutType\":\"maxArea\",\"screenAlign\":\"mid\"}",
                 "Tag": 745,
                 "Children": [
                   {
@@ -5437,7 +5388,7 @@
               },
               {
                 "ClipAble": false,
-                "BackColorAlpha": 102,
+                "BackColorAlpha": 153,
                 "ComboBoxIndex": 1,
                 "SingleColor": {
                   "R": 0,
@@ -5483,6 +5434,7 @@
                   "X": 1.0,
                   "Y": 1.0
                 },
+                "UserData": "{\"layoutType\":\"maxArea\",\"screenAlign\":\"mid\"}",
                 "Tag": 352,
                 "Children": [
                   {
@@ -6397,7 +6349,7 @@
               },
               {
                 "ClipAble": false,
-                "BackColorAlpha": 102,
+                "BackColorAlpha": 153,
                 "ComboBoxIndex": 1,
                 "SingleColor": {
                   "R": 0,
@@ -6445,6 +6397,7 @@
                 },
                 "TopMargin": -1.4399,
                 "BottomMargin": 1.44,
+                "UserData": "{\"layoutType\":\"maxArea\",\"screenAlign\":\"mid\"}",
                 "Tag": 133,
                 "Children": [
                   {
@@ -6693,7 +6646,9 @@
                   },
                   {
                     "FontSize": 25,
-                    "LabelText": "x20000",
+                    "LabelText": "x2000000",
+                    "HorizontalAlignmentType": "HT_Center",
+                    "VerticalAlignmentType": "VT_Center",
                     "OutlineColor": {
                       "G": 0,
                       "B": 0
@@ -6728,17 +6683,17 @@
                       "Y": 0.3426
                     },
                     "PreSize": {
-                      "X": 0.0609,
+                      "X": 0.0812,
                       "Y": 0.0347
                     },
-                    "LeftMargin": 564.0492,
-                    "RightMargin": 637.9508,
+                    "LeftMargin": 551.0492,
+                    "RightMargin": 624.9508,
                     "TopMargin": 460.8412,
                     "BottomMargin": 234.1588,
                     "Tag": 282,
                     "ActionTag": 1175927747,
                     "Size": {
-                      "X": 78.0,
+                      "X": 104.0,
                       "Y": 25.0
                     },
                     "Name": "awardsVal",

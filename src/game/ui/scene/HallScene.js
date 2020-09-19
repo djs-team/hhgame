@@ -23,13 +23,11 @@ load('game/ui/scene/HallScene', function () {
                 'topPnl/fuKaPnl/fuKaAddBtn': { onClicked: this.onCoinShopClick },
                 'topPnl/emailBtn': { onClicked: this.onSettingClick },
                 'topPnl/moreBtn': { onClicked: this.onMoreClick },
-
-
-                'morePnl': { onClicked: this.onHideMorePnlClick },
-                'morePnl/confBtn': { onClicked: this.onHideMorePnlClick },
-                'morePnl/feedbackBtn': { onClicked: this.onHideMorePnlClick },
-                'morePnl/customerServiceBtn': { onClicked: this.onHideMorePnlClick },
-                'morePnl/authenticationBtn': { onClicked: this.onAuthenticationClick },
+                'topPnl/morePnl': { onClicked: this.onHideMorePnlClick },
+                'topPnl/morePnl/confBtn': { onClicked: this.onHideMorePnlClick },
+                'topPnl/morePnl/feedbackBtn': { onClicked: this.onHideMorePnlClick },
+                'topPnl/morePnl/customerServiceBtn': { onClicked: this.onHideMorePnlClick },
+                'topPnl/morePnl/authenticationBtn': { onClicked: this.onAuthenticationClick },
 
 
                 'bmPnl/fuKaShopBtn': { onClicked: this.onFukaShopClick },
@@ -41,8 +39,10 @@ load('game/ui/scene/HallScene', function () {
 
 
                 'leftPnl/invitationPnl/invitationBtn': { onClicked: this.onInvitationClick },
-                'leftPnl/turnTablePnl/turnTableBtn': { onClicked: this.onTurnTableClick },
-                'leftPnl/cashCowPnl/cashCowBtn': { onClicked: this.onCashCowClick },
+                'leftPnl/turnTablePnl/turnTableNd': {  },
+                'leftPnl/turnTablePnl/turnTableNd/turnTableBtn': { onClicked: this.onTurnTableClick },
+                'leftPnl/cashCowPnl/cashCowNd': {  },
+                'leftPnl/cashCowPnl/cashCowNd/cashCowBtn': { onClicked: this.onCashCowClick },
 
                 'rightPnl/aniNd': { },
                 'rightPnl/coinGameNd': { },
@@ -164,6 +164,7 @@ load('game/ui/scene/HallScene', function () {
             appInstance.sceneManager().getCurScene().addChild(settingUI)
         },
         goChooseCity: function () {
+            cc.log('----------11111111111111111111111111---------------------------')
             appInstance.gameAgent().addPopUI(ResConfig.Ui.ChooseCityLayer)
         },
 
@@ -265,6 +266,14 @@ load('game/ui/scene/HallScene', function () {
             let gengduowanfaAni = appInstance.gameAgent().gameUtil().getAni(ResConfig.AniHall.DatingGengDuoWanFa)
             gengduowanfaAni.setAnimation(0, 'animation', true)
             this.changeAreaNd.addChild(gengduowanfaAni)
+
+            let yaojinshuAni = appInstance.gameAgent().gameUtil().getAni(ResConfig.AniHall.DatingYaoJinShu)
+            yaojinshuAni.setAnimation(0, 'animation', true)
+            this.cashCowNd.addChild(yaojinshuAni)
+
+            let zhuanpanAni = appInstance.gameAgent().gameUtil().getAni(ResConfig.AniHall.DatingZhuanPan)
+            zhuanpanAni.setAnimation(0, 'animation', true)
+            this.turnTableNd.addChild(zhuanpanAni)
 
             this.updatePlayerAni()
         },

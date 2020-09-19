@@ -232,10 +232,21 @@
                     <EndColor A="255" R="255" G="255" B="255" />
                     <ColorVector ScaleY="1.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="awardsUserDataPnl" ActionTag="866300984" Tag="331" IconVisible="False" LeftMargin="158.4396" RightMargin="177.5604" TopMargin="214.7059" BottomMargin="92.2941" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                  <AbstractNodeData Name="awardsUserDataNd" ActionTag="691249579" Tag="150" IconVisible="False" LeftMargin="158.4400" RightMargin="177.5600" TopMargin="214.7100" BottomMargin="92.2900" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="400.0000" Y="280.0000" />
+                    <Children>
+                      <AbstractNodeData Name="awardsUserDataPnl" ActionTag="1729902117" Tag="151" IconVisible="True" RightMargin="400.0000" TopMargin="380.0000" BottomMargin="-100.0000" ctype="SingleNodeObjectData">
+                        <Size X="0.0000" Y="0.0000" />
+                        <AnchorPoint />
+                        <Position Y="-100.0000" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition Y="-0.3571" />
+                        <PreSize X="0.0000" Y="0.0000" />
+                      </AbstractNodeData>
+                    </Children>
                     <AnchorPoint ScaleY="1.0000" />
-                    <Position X="158.4396" Y="372.2941" />
+                    <Position X="158.4400" Y="372.2900" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.2153" Y="0.6342" />
@@ -245,10 +256,10 @@
                     <EndColor A="255" R="255" G="255" B="255" />
                     <ColorVector ScaleY="1.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="awardsScrollPnl" ActionTag="-1160425466" Tag="338" IconVisible="False" LeftMargin="141.8773" RightMargin="194.1227" TopMargin="713.7279" BottomMargin="-406.7279" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                  <AbstractNodeData Name="awardsScrollPnl" ActionTag="-1160425466" Tag="338" IconVisible="False" LeftMargin="141.8773" RightMargin="194.1227" TopMargin="713.7300" BottomMargin="-406.7300" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="400.0000" Y="280.0000" />
                     <AnchorPoint />
-                    <Position X="141.8773" Y="-406.7279" />
+                    <Position X="141.8773" Y="-406.7300" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.1928" Y="-0.6929" />

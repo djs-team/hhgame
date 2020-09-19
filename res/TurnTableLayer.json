@@ -1077,9 +1077,8 @@
                     "ctype": "PanelObjectData"
                   },
                   {
-                    "ClipAble": false,
+                    "ClipAble": true,
                     "BackColorAlpha": 102,
-                    "ComboBoxIndex": 1,
                     "SingleColor": {
                       "R": 150,
                       "G": 200
@@ -1099,8 +1098,8 @@
                       "ScaleY": 1.0
                     },
                     "Position": {
-                      "X": 158.4396,
-                      "Y": 372.2941
+                      "X": 158.44,
+                      "Y": 372.29
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -1116,17 +1115,51 @@
                       "X": 0.5435,
                       "Y": 0.477
                     },
-                    "LeftMargin": 158.4396,
-                    "RightMargin": 177.5604,
-                    "TopMargin": 214.7059,
-                    "BottomMargin": 92.2941,
-                    "Tag": 331,
-                    "ActionTag": 866300984,
+                    "LeftMargin": 158.44,
+                    "RightMargin": 177.56,
+                    "TopMargin": 214.71,
+                    "BottomMargin": 92.29,
+                    "Tag": 150,
+                    "Children": [
+                      {
+                        "AnchorPoint": {},
+                        "Position": {
+                          "X": 0.0,
+                          "Y": -100.0
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": true,
+                        "PrePosition": {
+                          "X": 0.0,
+                          "Y": -0.3571
+                        },
+                        "PreSize": {
+                          "X": 0.0,
+                          "Y": 0.0
+                        },
+                        "RightMargin": 400.0,
+                        "TopMargin": 380.0,
+                        "BottomMargin": -100.0,
+                        "Tag": 151,
+                        "ActionTag": 1729902117,
+                        "Size": {
+                          "X": 0.0,
+                          "Y": 0.0
+                        },
+                        "Name": "awardsUserDataPnl",
+                        "ctype": "SingleNodeObjectData"
+                      }
+                    ],
+                    "ActionTag": 691249579,
                     "Size": {
                       "X": 400.0,
                       "Y": 280.0
                     },
-                    "Name": "awardsUserDataPnl",
+                    "Name": "awardsUserDataNd",
                     "ctype": "PanelObjectData"
                   },
                   {
@@ -1151,7 +1184,7 @@
                     "AnchorPoint": {},
                     "Position": {
                       "X": 141.8773,
-                      "Y": -406.7279
+                      "Y": -406.73
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -1169,8 +1202,8 @@
                     },
                     "LeftMargin": 141.8773,
                     "RightMargin": 194.1227,
-                    "TopMargin": 713.7279,
-                    "BottomMargin": -406.7279,
+                    "TopMargin": 713.73,
+                    "BottomMargin": -406.73,
                     "Tag": 338,
                     "ActionTag": -1160425466,
                     "Size": {

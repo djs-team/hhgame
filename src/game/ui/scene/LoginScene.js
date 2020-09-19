@@ -33,7 +33,7 @@ load('game/ui/scene/LoginScene', function () {
         },
 
         initView: function () {
-            this.goTest()
+            // this.goTest()
         },
 
         onphoneLoginClick: function () {

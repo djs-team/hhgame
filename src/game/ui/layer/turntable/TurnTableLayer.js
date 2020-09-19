@@ -25,7 +25,8 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
 
 
                 'bmPnl/awardsPnl/awardsScrollPnl': {},
-                'bmPnl/awardsPnl/awardsUserDataPnl': {},
+                'bmPnl/awardsPnl/awardsUserDataNd': {},
+                'bmPnl/awardsPnl/awardsUserDataNd/awardsUserDataPnl': {},
                 'bmPnl/awardsPnl/userDataCell': {},
                 'bmPnl/zhuanPnl': {},
                 'bmPnl/zhuanPnl/pointerBtn': { onClicked: this.onTurnPointClick},
@@ -73,8 +74,6 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
         },
 
         onUpdate: function (dt) {
-
-
             if (this._isHaveInitUserData) {
                 this._requestCache += dt
                 if (this._requestCache > this._requestDeley) {
@@ -88,6 +87,22 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
                 this._lightTime = 0
                 this.playLight()
             }
+        },
+
+
+        playRewadInfo: function () {
+            if (!this._rewardUserData){
+                return
+            }
+            this.awardsUserDataPnl.stopAllActions()
+            this.awardsUserDataPnl.setPosition(cc.p(0,-50))
+
+            let moveto = cc.moveTo(5, cc.p(0, 30 * this._rewardUserData.length + 300))
+            let callBack = function () {
+                this.awardsUserDataPnl.setPosition(cc.p(0,-50))
+            }.bind(this)
+
+            this.awardsUserDataPnl.runAction(cc.sequence(moveto,cc.callFunc(callBack)))
         },
 
         initView: function () {
@@ -105,7 +120,6 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
 
         initZhuanView: function (zhuanData) {
 
-
             for (let i = 1; i < 11; ++i) {
                 let cell = this._goodsArray['goods_' + i]
                 cell.getChildByName('name').setString(zhuanData[i - 1].name)
@@ -114,12 +128,14 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
         },
 
         updateUserDataView: function (userData) {
-
             this.awardsUserDataPnl.removeAllChildren()
+
+            this._rewardUserData = userData
             for (let i = 0; i < userData.length; ++i) {
                 this.updateUserCell(userData, i)
             }
 
+            this.playRewadInfo()
             this._isHaveInitUserData = true
         },
 
@@ -134,7 +150,6 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
             let gooodsNd = userCell.getChildByName('goodsName')
             nameNd.setString(user.pName)
             gooodsNd.setString(user.luckPrizeStr)
-
         },
 
 
@@ -159,7 +174,7 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
             // let msg = {}
             // appInstance.gameAgent().httpGame().TURNPOINTReq(msg)
 
-
+            this.playRewadInfo()
             this.playTurnTable(5)
         },
 

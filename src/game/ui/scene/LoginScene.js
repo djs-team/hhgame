@@ -37,7 +37,7 @@ load('game/ui/scene/LoginScene', function () {
 
         onphoneLoginClick: function () {
 
-            appInstance.nativeApi().oneClickLogin()
+            appInstance.gameAgent().httpGame().httpLogin()
 
         },
 

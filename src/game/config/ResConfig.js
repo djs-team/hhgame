@@ -53,7 +53,9 @@ load('game/config/ResConfig', function () {
         "DatingGengDuoWanFa": { json: 'res/animation/hall/dating_gengduowanfa/dating_gengduowanfa.json', atlas: 'res/animation/hall/dating_gengduowanfa/dating_gengduowanfa.atlas', png: 'res/animation/hall/dating_gengduowanfa/dating_gengduowanfa.png' },
         "DatingXiangQin": { json: 'res/animation/hall/dating_xiangqin/dating_majiang.json', atlas: 'res/animation/hall/dating_xiangqin/dating_majiang.atlas', png: 'res/animation/hall/dating_xiangqin/dating_majiang.png' },
         "DatingSaiShiChang": { json: 'res/animation/hall/dating_saishichang/dating_saishichang.json', atlas: 'res/animation/hall/dating_saishichang/dating_saishichang.atlas', png: 'res/animation/hall/dating_saishichang/dating_saishichang.png' },
-        "Yaojingshu": { json: 'res/animation/hall/yaojinshu/yaojinshu.json', atlas: 'res/animation/hall/yaojinshu/yaojinshu.atlas', png: 'res/animation/hall/yaojinshu/yaojinshu.png' },
+        "DatingQianDao": { json: 'res/animation/hall/qiandao/qiandao.json', atlas: 'res/animation/hall/qiandao/qiandao.atlas', png: 'res/animation/hall/qiandao/qiandao.png' },
+        "DatingYaoJinShu": { json: 'res/animation/hall/yaojinshu/dating_yaojinshu.json', atlas: 'res/animation/hall/yaojinshu/dating_yaojinshu.atlas', png: 'res/animation/hall/yaojinshu/dating_yaojinshu.png' },
+        "DatingZhuanPan": { json: 'res/animation/hall/zhuanpan/dating_zhuanpan.json', atlas: 'res/animation/hall/zhuanpan/dating_zhuanpan.atlas', png: 'res/animation/hall/zhuanpan/dating_zhuanpan.png' },
 
     }
 

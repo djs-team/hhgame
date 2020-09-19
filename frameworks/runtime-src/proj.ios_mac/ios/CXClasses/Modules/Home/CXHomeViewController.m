@@ -133,15 +133,15 @@
 }
 
 - (void)setupSubViews {
-    UIImage *gImage = [UIImage gradientImageWithSize:CGSizeMake(kScreenWidth, 207*SCALE_W) Color1:UIColorHex(0xEB5BBA) color2:UIColorHex(0x793EF2)];
+    UIImage *gImage = [UIImage gradientImageWithSize:CGSizeMake(kScreenWidth, 190*SCALE_W) Color1:UIColorHex(0xEB5BBA) color2:UIColorHex(0x793EF2)];
     UIImageView *gImageView = [[UIImageView alloc] initWithImage:gImage];
-    gImageView.frame = CGRectMake(0, 0, kScreenWidth, 207*SCALE_W);
+    gImageView.frame = CGRectMake(0, 0, kScreenWidth, 190*SCALE_W);
     [self.view addSubview:gImageView];
     
     UIBezierPath *path = [[UIBezierPath alloc] init];
     [path moveToPoint:CGPointMake(0, 0)];
-    [path addLineToPoint:CGPointMake(0, 180*SCALE_W)];
-    [path addQuadCurveToPoint:CGPointMake(SCREEN_WIDTH, 180*SCALE_W) controlPoint:CGPointMake(SCREEN_WIDTH/2, 207*SCALE_W)];
+    [path addLineToPoint:CGPointMake(0, 150*SCALE_W)];
+    [path addQuadCurveToPoint:CGPointMake(SCREEN_WIDTH, 150*SCALE_W) controlPoint:CGPointMake(SCREEN_WIDTH/2, 190*SCALE_W)];
     [path addLineToPoint:CGPointMake(SCREEN_WIDTH, 0)];
     CAShapeLayer *layer = [[CAShapeLayer alloc] init];
     layer.path = path.CGPath;

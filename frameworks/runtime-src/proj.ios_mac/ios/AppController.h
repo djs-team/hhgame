@@ -35,13 +35,16 @@
 @property(nonatomic, readonly) RootViewController* _Nonnull viewController;
 
 #pragma mark - 直播相关
+/// 从麻将进入视频
++ (void)enterLiveBroadcast;
+
 /// 进入直播间
 /// @param roomId 直播间ID
-+ (void)joinRoom:(NSString *)roomId;
++ (void)joinRoom:(NSString *_Nonnull)roomId;
 
 /// 进入用户详情资料页
 /// @param userId 用户ID
-+ (void)showUserProfile:(NSString *)userId;
++ (void)showUserProfile:(NSString *_Nonnull)userId;
 
 /// 退出登录
 + (void)logout;
@@ -49,7 +52,7 @@
 #pragma mark - 屏幕横竖屏
 /// 改变屏幕旋转
 /// @param dir横竖屏标志  V：竖屏  其他：横屏
-+ (void)setOrientation:(NSString*)dir;
++ (void)setOrientation:(NSString*_Nonnull)dir;
 
 #pragma mark - Pay
 

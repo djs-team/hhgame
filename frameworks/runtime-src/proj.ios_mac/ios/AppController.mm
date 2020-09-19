@@ -69,6 +69,9 @@
 // OpenInstall
 #import "OpenInstallSDK.h"
 
+// 直播
+#import "CXConfigObject.h"
+
 @interface AppController() <JPUSHRegisterDelegate, WXApiDelegate, BUSplashAdDelegate, OpenInstallDelegate>
 
 @property (nonatomic, copy) NSString *registration_id;
@@ -575,18 +578,23 @@ UIInterfaceOrientationMask oMask = UIInterfaceOrientationMaskLandscape;
 }
 
 + (void)setOrientation:(NSString*)dir {
-//    [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIDeviceOrientationUnknown] forKey:@"orientation"];
-//    
-//    if([dir isEqualToString:@"V"]){
-//        oMask = UIInterfaceOrientationMaskPortrait;
-//        [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIInterfaceOrientationPortrait] forKey:@"orientation"];
-//    } else {
-//        oMask = UIInterfaceOrientationMaskLandscape;
-//        [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIInterfaceOrientationLandscapeLeft] forKey:@"orientation"];
-//    }
+    [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIDeviceOrientationUnknown] forKey:@"orientation"];
+    
+    if([dir isEqualToString:@"V"]){
+        oMask = UIInterfaceOrientationMaskPortrait;
+        [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIInterfaceOrientationPortrait] forKey:@"orientation"];
+    } else {
+        oMask = UIInterfaceOrientationMaskLandscape;
+        [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIInterfaceOrientationLandscapeRight] forKey:@"orientation"];
+    }
 }
 
 #pragma mark - ================ 直播相关 ===================
+/// 从麻将进入视频
++ (void)enterLiveBroadcast {
+    [CXConfigObject enterOnline];
+}
+
 + (void)joinRoom:(NSString *)roomId {
     if (roomId.length <= 0) {
         return;

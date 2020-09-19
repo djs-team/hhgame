@@ -381,7 +381,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="CardCell" ActionTag="1930238960" Tag="393" IconVisible="False" LeftMargin="-37.0000" RightMargin="1243.0000" TopMargin="666.5000" BottomMargin="-53.5000" TouchEnable="True" LeftEage="24" RightEage="24" TopEage="35" BottomEage="35" Scale9OriginX="24" Scale9OriginY="35" Scale9Width="26" Scale9Height="37" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="CardCell" ActionTag="1930238960" Tag="393" IconVisible="False" LeftMargin="-52.2889" RightMargin="1258.2888" TopMargin="795.7611" BottomMargin="-182.7611" TouchEnable="True" LeftEage="24" RightEage="24" TopEage="35" BottomEage="35" Scale9OriginX="24" Scale9OriginY="35" Scale9Width="26" Scale9Height="37" ctype="ImageViewObjectData">
                 <Size X="74.0000" Y="107.0000" />
                 <Children>
                   <AbstractNodeData Name="CardValue" ActionTag="-835913614" Tag="394" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="-1.0000" RightMargin="-1.0000" TopMargin="8.8500" BottomMargin="-1.8500" LeftEage="24" RightEage="24" TopEage="35" BottomEage="35" Scale9OriginX="24" Scale9OriginY="35" Scale9Width="28" Scale9Height="30" ctype="ImageViewObjectData">
@@ -396,10 +396,10 @@
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position />
+                <Position X="-15.2889" Y="-129.2611" />
                 <Scale ScaleX="0.6000" ScaleY="0.6000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition />
+                <PrePosition X="-0.0119" Y="-0.1795" />
                 <PreSize X="0.0578" Y="0.1486" />
                 <FileData Type="Normal" Path="card/ground/hand/self_hand_0.png" Plist="" />
               </AbstractNodeData>

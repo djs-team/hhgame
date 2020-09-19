@@ -33,7 +33,7 @@ load('game/ui/scene/LoginScene', function () {
         },
 
         initView: function () {
-            // this.goTest()
+            this.goTest()
         },
 
         onphoneLoginClick: function () {
@@ -70,9 +70,9 @@ load('game/ui/scene/LoginScene', function () {
         goTest: function () {
             // let MjPlayScene = include('module/mahjong/ui/MjPlayScene')
             // appInstance.sceneManager().replaceScene(new MjPlayScene())
-            let feedbackClass = include('game/ui/layer/feedback/FeedbackLayer')
-            let feedbackUI = appInstance.uiManager().createPopUI(feedbackClass)
-            appInstance.sceneManager().getCurScene().addChild(feedbackUI)
+            let TurnTableLayer = include('game/ui/layer/turntable/TurnTableLayer')
+            let TurnTableLayerUI = appInstance.uiManager().createPopUI(TurnTableLayer)
+            appInstance.sceneManager().getCurScene().addChild(TurnTableLayerUI)
         },
 
         onagreeBtnClick: function () {

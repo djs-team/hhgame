@@ -8,6 +8,8 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
         _requestDeley: 5,
         _requestCache: 0,
         _isHaveInitUserData : false,
+        _lightTime: 0,
+        _lightInterval: 0.5,
         ctor: function () {
             this._super(ResConfig.View.TurnTableLayer)
 
@@ -29,6 +31,8 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
                 'bmPnl/zhuanPnl/pointerBtn': { onClicked: this.onTurnPointClick},
                 'bmPnl/zhuanPnl/turnTablePic': {},
                 'bmPnl/zhuanPnl/turnTablePic/goodsNd': {},
+                'bmPnl/zhuanPnl/turnTablePic/pointNd0': {},
+                'bmPnl/zhuanPnl/turnTablePic/pointNd1': {},
                 'popUpPnl/timesEndPnl': {},
                 'popUpPnl/explainPnl': {},
                 'popUpPnl/recordsPnl': {},
@@ -56,6 +60,7 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
         },
         onEnter: function () {
             this._super()
+            this.initData()
             this.initView()
 
         },
@@ -63,14 +68,25 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
             this._super()
         },
 
-        onUpdate: function (dt) {
-            if(!this._isHaveInitUserData)
-                return
+        initData: function () {
+            this._lightBg = 0
+        },
 
-            this._requestCache += dt
-            if (this._requestCache > this._requestDeley) {
-                this._requestCache = 0
-                appInstance.gameAgent().httpGame().REFRESHAWARDSDATAReq()
+        onUpdate: function (dt) {
+
+
+            if (this._isHaveInitUserData) {
+                this._requestCache += dt
+                if (this._requestCache > this._requestDeley) {
+                    this._requestCache = 0
+                    appInstance.gameAgent().httpGame().REFRESHAWARDSDATAReq()
+                }
+            }
+
+            this._lightTime += dt
+            if (this._lightTime > this._lightInterval) {
+                this._lightTime = 0
+                this.playLight()
             }
         },
 
@@ -83,6 +99,7 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
             this.awardsPnl.setVisible(false)
             this.acceptedPnl.setVisible(false)
             this.recordDataCell.setVisible(false)
+            this.pointNd1.setVisible(false)
 
         },
 
@@ -136,15 +153,38 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
 
             this.initZhuanView(data.configList)
             this.updateUserDataView(data.luckyPrize)
-
-
         },
 
         onTurnPointClick: function () {
+            // let msg = {}
+            // appInstance.gameAgent().httpGame().TURNPOINTReq(msg)
 
-            let msg = {}
-            appInstance.gameAgent().httpGame().TURNPOINTReq(msg)
 
+            this.playTurnTable(5)
+        },
+
+
+        playTurnTable: function (num) {
+            this.pointerBtn.stopAllActions()
+
+            this._lightInterval = 0.08
+
+            let firstTime = 0.5
+            let rotateAngle = 360 * num
+            let action = cc.RotateBy(firstTime, rotateAngle)
+            let firstEaseAction = cc.EaseCubicActionInOut(action)
+            let callResult = function () {
+                cc.log('===========结果========')
+                this._lightInterval = 0.5
+            }.bind(this)
+            this.pointerBtn.runAction(cc.Sequence(firstEaseAction, cc.CallFunc(callResult)))
+        },
+
+        playLight: function () {
+
+            this['pointNd' + this._lightBg].setVisible(false)
+            this['pointNd' + (1 - this._lightBg)].setVisible(true)
+            this._lightBg = 1 - this._lightBg
         },
 
         onTurnPointResult: function (data) {

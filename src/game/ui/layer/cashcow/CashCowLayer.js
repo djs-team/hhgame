@@ -52,7 +52,7 @@ load('game/ui/layer/cashcow/CashCowLayer', function () {
             this.propPnl.setVisible(false)
             this.recordsPnl.setVisible(false)
 
-            this._coinTreeAni = appInstance.gameAgent().gameUtil().getAni(ResConfig.AniHall.Yaojingshu)
+            this._coinTreeAni = appInstance.gameAgent().gameUtil().getAni(ResConfig.AniHall.YaoJinShu)
             this.cointreeNd.addChild(this._coinTreeAni)
             this._coinTreeAni.setAnimation(0, 'animation', true)
 
@@ -114,7 +114,8 @@ load('game/ui/layer/cashcow/CashCowLayer', function () {
                 appInstance.gameAgent().httpGame().cashCowReq(msg)
                 this.shakeBtn.setTouchEnabled(true)
             }.bind(this)
-            this.cointreeNd.runAction(cc.sequence(deleAction,cc.CallFunc(callBack)))
+            //this.cointreeNd.runAction(cc.sequence(deleAction,cc.CallFunc(callBack)))
+            this.cointreeNd.runAction(cc.sequence(cc.CallFunc(callBack)))
         },
 
         onShowPropPnl: function (data) {

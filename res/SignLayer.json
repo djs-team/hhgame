@@ -1801,7 +1801,7 @@
                         "TouchEnable": true,
                         "AnchorPoint": {},
                         "Position": {
-                          "X": 36.0075,
+                          "X": 35.991,
                           "Y": -10.7525
                         },
                         "Scale": {
@@ -1820,8 +1820,8 @@
                           "X": 0.1161,
                           "Y": 2.0
                         },
-                        "LeftMargin": 36.0075,
-                        "RightMargin": 374.9925,
+                        "LeftMargin": 35.991,
+                        "RightMargin": 375.009,
                         "TopMargin": -12.2475,
                         "BottomMargin": -10.7525,
                         "Tag": 182,

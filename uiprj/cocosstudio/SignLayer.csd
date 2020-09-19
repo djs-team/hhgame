@@ -380,7 +380,7 @@
                   <AbstractNodeData Name="loadingBar" ActionTag="-1391631431" Tag="181" IconVisible="False" LeftMargin="8.9900" RightMargin="20.0100" TopMargin="3.1600" BottomMargin="-4.1600" ProgressInfo="35" ctype="LoadingBarObjectData">
                     <Size X="465.0000" Y="23.0000" />
                     <Children>
-                      <AbstractNodeData Name="treasureChestCell" ActionTag="-135355781" Tag="182" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="36.0075" RightMargin="374.9925" TopMargin="-12.2475" BottomMargin="-10.7525" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                      <AbstractNodeData Name="treasureChestCell" ActionTag="-135355781" Tag="182" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="35.9910" RightMargin="375.0090" TopMargin="-12.2475" BottomMargin="-10.7525" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                         <Size X="54.0000" Y="46.0000" />
                         <Children>
                           <AbstractNodeData Name="signDaysText" ActionTag="-670527274" Tag="186" IconVisible="False" LeftMargin="3.8978" RightMargin="-21.8978" TopMargin="-18.6171" BottomMargin="46.6171" FontSize="18" LabelText="签到10天" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -441,7 +441,7 @@
                           </AbstractNodeData>
                         </Children>
                         <AnchorPoint />
-                        <Position X="36.0075" Y="-10.7525" />
+                        <Position X="35.9910" Y="-10.7525" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
                         <PrePosition X="0.0774" Y="-0.4675" />

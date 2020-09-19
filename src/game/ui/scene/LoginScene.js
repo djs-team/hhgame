@@ -6,6 +6,7 @@ load('game/ui/scene/LoginScene', function () {
     let ResConfig = include('game/config/ResConfig')
     let LoginMdt = include('game/ui/scene/LoginMdt')
     let HallScene = include('game/ui/scene/HallScene')
+    let LocalSave = include('game/public/LocalSave')
     let LoginScene = BaseScene.extend({
         _className: 'LoginScene',
         RES_BINDING: function () {
@@ -36,13 +37,30 @@ load('game/ui/scene/LoginScene', function () {
         },
 
         onphoneLoginClick: function () {
+            if (cc.sys.OS_WINDOWS === cc.sys.os) {
+                this.debugLogin()
+            } else {
+                appInstance.nativeApi().oneClickLogin()
+            }
+        },
 
-            appInstance.nativeApi().oneClickLogin()
-
+        debugLogin: function () {
+            let msg = {}
+            let imeiStr = global.localStorage.getStringForKey(LocalSave.LocalImei)
+            if (!imeiStr) {
+                imeiStr = 'windows imei random' + Math.floor(Math.random() * 1000000)
+                global.localStorage.setStringForKey(LocalSave.LocalImei, imeiStr)
+            }
+            msg.imei = imeiStr
+            appInstance.gameAgent().httpGame().httpLogin(msg)
         },
 
         onwxLoginClick: function () {
-            appInstance.nativeApi().wxLogin()
+            if (cc.sys.OS_WINDOWS === cc.sys.os) {
+                this.debugLogin()
+            } else {
+                appInstance.nativeApi().wxLogin()
+            }
         },
 
         doPhoto: function () {
@@ -100,7 +118,8 @@ load('game/ui/scene/LoginScene', function () {
             }
         },
         onThirdLogin: function (msg) {
-            cc.log('=============' + JSON.stringify(msg))
+            cc.log('======onThirdLogin=======' + JSON.stringify(msg))
+            msg.imei = appInstance.nativeApi().getImei()
             appInstance.gameAgent().httpGame().httpLogin(msg)
         },
 

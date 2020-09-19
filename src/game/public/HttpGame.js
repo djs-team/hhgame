@@ -27,26 +27,12 @@ load('game/public/HttpGame', function () {
                 phoneModel: cc.sys.os,
                 unionId: '',
             }
-            if (cc.sys.OS_WINDOWS === cc.sys.os) {
-                let imeiStr = global.localStorage.getStringForKey(LocalSave.LocalImei)
-                if (!imeiStr) {
-                    imeiStr = 'windows imei random' + Math.floor(Math.random() * 1000000)
-                    cc.log('=====imei====' + imeiStr)
-                    global.localStorage.setStringForKey(LocalSave.LocalImei, imeiStr)
-                }
-                sendMsg.imei = imeiStr
-            } else {
-                sendMsg.imei = appInstance.nativeApi().getImei()
-            }
-
             this.checkSendMsg(sendMsg, msg)
             sendMsg.msgID = HttpEvent.MJ_HALL_MESSAGE_LOGIN
             appInstance.httpAgent().sendPost(sendMsg)
         },
 
         httpLoginBack: function (msg) {
-            cc.log('=========httpLoginBack============error================'+JSON.stringify(msg))
-
             if (msg.status !== 0) {
                 cc.log('=========httpLoginBack============error================')
                 return

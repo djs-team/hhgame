@@ -148,6 +148,11 @@
               <File Name="dating_saishichang.json" />
               <Image Name="dating_saishichang.png" />
             </Folder>
+            <Folder Name="dating_xiangqin">
+              <File Name="dating_majiang.atlas" />
+              <File Name="dating_majiang.json" />
+              <Image Name="dating_majiang.png" />
+            </Folder>
             <Folder Name="gongxihuode">
               <File Name="gongxihuode.atlas" />
               <File Name="gongxihuode.json" />
@@ -183,11 +188,6 @@
               <File Name="zhuanpan.atlas" />
               <File Name="zhuanpan.json" />
               <Image Name="zhuanpan.png" />
-            </Folder>
-            <Folder Name="dating_xiangqin">
-              <File Name="dating_majiang.atlas" />
-              <File Name="dating_majiang.json" />
-              <Image Name="dating_majiang.png" />
             </Folder>
           </Folder>
           <Folder Name="hutype">

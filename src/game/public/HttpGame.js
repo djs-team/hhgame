@@ -25,6 +25,7 @@ load('game/public/HttpGame', function () {
                 account:'',
                 device: 'devicestr',
                 phoneModel: cc.sys.os,
+                imei:'',
                 unionId: '',
             }
             this.checkSendMsg(sendMsg, msg)

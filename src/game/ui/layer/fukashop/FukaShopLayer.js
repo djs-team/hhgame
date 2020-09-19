@@ -315,15 +315,21 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
         },
 
         initRollImgList: function (data) {
-
             for(let i = 0; i < data.length; i++){
-
                 let cell = this.imgPageCell.clone()
                 cell.setVisible(true)
                 this.imgPageView.pushBackCustomItem(cell)
-
-                cell.getChildByName('slideImg').loadTexture(data[i])
-
+                let size = cell.getContentSize()
+                let url = 'http://p3.itc.cn/q_70/images03/20200911/b7c565cbc87848538cace549fb609e7b.jpeg'
+                cc.loader.loadImg(url, { isCrossOrigin: false },function(err,texture){
+                    if (!err && texture) {
+                        let sp = new cc.Sprite(texture)
+                        sp.setContentSize(size)
+                        sp.setPosition(cc.p(size.width/2,size.height/2))
+                        // sp.setRotationX(-90)
+                        cell.addChild(sp)
+                    }
+                })
             }
         },
 

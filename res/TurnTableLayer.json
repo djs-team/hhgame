@@ -1077,9 +1077,8 @@
                     "ctype": "PanelObjectData"
                   },
                   {
-                    "ClipAble": false,
+                    "ClipAble": true,
                     "BackColorAlpha": 102,
-                    "ComboBoxIndex": 1,
                     "SingleColor": {
                       "R": 150,
                       "G": 200
@@ -1099,8 +1098,8 @@
                       "ScaleY": 1.0
                     },
                     "Position": {
-                      "X": 158.4396,
-                      "Y": 372.2941
+                      "X": 158.44,
+                      "Y": 372.29
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -1116,17 +1115,51 @@
                       "X": 0.5435,
                       "Y": 0.477
                     },
-                    "LeftMargin": 158.4396,
-                    "RightMargin": 177.5604,
-                    "TopMargin": 214.7059,
-                    "BottomMargin": 92.2941,
-                    "Tag": 331,
-                    "ActionTag": 866300984,
+                    "LeftMargin": 158.44,
+                    "RightMargin": 177.56,
+                    "TopMargin": 214.71,
+                    "BottomMargin": 92.29,
+                    "Tag": 150,
+                    "Children": [
+                      {
+                        "AnchorPoint": {},
+                        "Position": {
+                          "X": 0.0,
+                          "Y": -100.0
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": true,
+                        "PrePosition": {
+                          "X": 0.0,
+                          "Y": -0.3571
+                        },
+                        "PreSize": {
+                          "X": 0.0,
+                          "Y": 0.0
+                        },
+                        "RightMargin": 400.0,
+                        "TopMargin": 380.0,
+                        "BottomMargin": -100.0,
+                        "Tag": 151,
+                        "ActionTag": 1729902117,
+                        "Size": {
+                          "X": 0.0,
+                          "Y": 0.0
+                        },
+                        "Name": "awardsUserDataPnl",
+                        "ctype": "SingleNodeObjectData"
+                      }
+                    ],
+                    "ActionTag": 691249579,
                     "Size": {
                       "X": 400.0,
                       "Y": 280.0
                     },
-                    "Name": "awardsUserDataPnl",
+                    "Name": "awardsUserDataNd",
                     "ctype": "PanelObjectData"
                   },
                   {
@@ -1151,7 +1184,7 @@
                     "AnchorPoint": {},
                     "Position": {
                       "X": 141.8773,
-                      "Y": -406.7279
+                      "Y": -406.73
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -1169,8 +1202,8 @@
                     },
                     "LeftMargin": 141.8773,
                     "RightMargin": 194.1227,
-                    "TopMargin": 713.7279,
-                    "BottomMargin": -406.7279,
+                    "TopMargin": 713.73,
+                    "BottomMargin": -406.73,
                     "Tag": 338,
                     "ActionTag": -1160425466,
                     "Size": {
@@ -2349,7 +2382,764 @@
                           "X": 0.0,
                           "Y": 0.0
                         },
-                        "Name": "pointNd",
+                        "Name": "pointNd0",
+                        "ctype": "SingleNodeObjectData"
+                      },
+                      {
+                        "AnchorPoint": {},
+                        "Position": {
+                          "X": -107.6412,
+                          "Y": 237.5465
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "RotationSkewX": 35.9998,
+                        "RotationSkewY": 36.001,
+                        "CColor": {},
+                        "IconVisible": true,
+                        "PrePosition": {
+                          "X": -0.1815,
+                          "Y": 0.3992
+                        },
+                        "PreSize": {
+                          "X": 0.0,
+                          "Y": 0.0
+                        },
+                        "LeftMargin": -107.6412,
+                        "RightMargin": 700.6412,
+                        "TopMargin": 357.4535,
+                        "BottomMargin": 237.5465,
+                        "Tag": 133,
+                        "Children": [
+                          {
+                            "FileData": {
+                              "Type": "Normal",
+                              "Path": "turntable/zphd_5.png",
+                              "Plist": ""
+                            },
+                            "Scale9OriginX": 15,
+                            "Scale9OriginY": 15,
+                            "Scale9Width": 17,
+                            "Scale9Height": 17,
+                            "AnchorPoint": {
+                              "ScaleX": 0.5,
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 293.9228,
+                              "Y": 561.1627
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {},
+                            "IconVisible": false,
+                            "PrePosition": {
+                              "X": 0.0,
+                              "Y": 0.0
+                            },
+                            "PreSize": {
+                              "X": 0.0,
+                              "Y": 0.0
+                            },
+                            "LeftMargin": 270.4228,
+                            "RightMargin": -317.4228,
+                            "TopMargin": -584.6627,
+                            "BottomMargin": 537.6627,
+                            "Tag": 134,
+                            "ActionTag": 1992848058,
+                            "Size": {
+                              "X": 47.0,
+                              "Y": 47.0
+                            },
+                            "Name": "lampPic_1",
+                            "ctype": "ImageViewObjectData"
+                          },
+                          {
+                            "FileData": {
+                              "Type": "Normal",
+                              "Path": "turntable/zphd_4.png",
+                              "Plist": ""
+                            },
+                            "Scale9OriginX": 15,
+                            "Scale9OriginY": 15,
+                            "Scale9Width": 17,
+                            "Scale9Height": 17,
+                            "AnchorPoint": {
+                              "ScaleX": 0.5,
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 393.9689,
+                              "Y": 539.2582
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {},
+                            "IconVisible": false,
+                            "PrePosition": {
+                              "X": 0.0,
+                              "Y": 0.0
+                            },
+                            "PreSize": {
+                              "X": 0.0,
+                              "Y": 0.0
+                            },
+                            "LeftMargin": 370.4689,
+                            "RightMargin": -417.4689,
+                            "TopMargin": -562.7582,
+                            "BottomMargin": 515.7582,
+                            "Tag": 135,
+                            "ActionTag": -999892110,
+                            "Size": {
+                              "X": 47.0,
+                              "Y": 47.0
+                            },
+                            "Name": "ampPic_2",
+                            "ctype": "ImageViewObjectData"
+                          },
+                          {
+                            "FileData": {
+                              "Type": "Normal",
+                              "Path": "turntable/zphd_5.png",
+                              "Plist": ""
+                            },
+                            "Scale9OriginX": 15,
+                            "Scale9OriginY": 15,
+                            "Scale9Width": 17,
+                            "Scale9Height": 17,
+                            "AnchorPoint": {
+                              "ScaleX": 0.5,
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 482.0874,
+                              "Y": 478.9362
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {},
+                            "IconVisible": false,
+                            "PrePosition": {
+                              "X": 0.0,
+                              "Y": 0.0
+                            },
+                            "PreSize": {
+                              "X": 0.0,
+                              "Y": 0.0
+                            },
+                            "LeftMargin": 458.5874,
+                            "RightMargin": -505.5874,
+                            "TopMargin": -502.4362,
+                            "BottomMargin": 455.4362,
+                            "Tag": 136,
+                            "ActionTag": 859039695,
+                            "Size": {
+                              "X": 47.0,
+                              "Y": 47.0
+                            },
+                            "Name": "ampPic_3",
+                            "ctype": "ImageViewObjectData"
+                          },
+                          {
+                            "FileData": {
+                              "Type": "Normal",
+                              "Path": "turntable/zphd_4.png",
+                              "Plist": ""
+                            },
+                            "Scale9OriginX": 15,
+                            "Scale9OriginY": 15,
+                            "Scale9Width": 17,
+                            "Scale9Height": 17,
+                            "AnchorPoint": {
+                              "ScaleX": 0.5,
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 539.8932,
+                              "Y": 397.2947
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {},
+                            "IconVisible": false,
+                            "PrePosition": {
+                              "X": 0.0,
+                              "Y": 0.0
+                            },
+                            "PreSize": {
+                              "X": 0.0,
+                              "Y": 0.0
+                            },
+                            "LeftMargin": 516.3932,
+                            "RightMargin": -563.3932,
+                            "TopMargin": -420.7947,
+                            "BottomMargin": 373.7947,
+                            "Tag": 137,
+                            "ActionTag": 1203302746,
+                            "Size": {
+                              "X": 47.0,
+                              "Y": 47.0
+                            },
+                            "Name": "lampPic_4",
+                            "ctype": "ImageViewObjectData"
+                          },
+                          {
+                            "FileData": {
+                              "Type": "Normal",
+                              "Path": "turntable/zphd_5.png",
+                              "Plist": ""
+                            },
+                            "Scale9OriginX": 15,
+                            "Scale9OriginY": 15,
+                            "Scale9Width": 17,
+                            "Scale9Height": 17,
+                            "AnchorPoint": {
+                              "ScaleX": 0.5,
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 561.8083,
+                              "Y": 290.6347
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {},
+                            "IconVisible": false,
+                            "PrePosition": {
+                              "X": 0.0,
+                              "Y": 0.0
+                            },
+                            "PreSize": {
+                              "X": 0.0,
+                              "Y": 0.0
+                            },
+                            "LeftMargin": 538.3083,
+                            "RightMargin": -585.3083,
+                            "TopMargin": -314.1347,
+                            "BottomMargin": 267.1347,
+                            "Tag": 138,
+                            "ActionTag": -2026741493,
+                            "Size": {
+                              "X": 47.0,
+                              "Y": 47.0
+                            },
+                            "Name": "lampPic_5",
+                            "ctype": "ImageViewObjectData"
+                          },
+                          {
+                            "FileData": {
+                              "Type": "Normal",
+                              "Path": "turntable/zphd_4.png",
+                              "Plist": ""
+                            },
+                            "Scale9OriginX": 15,
+                            "Scale9OriginY": 15,
+                            "Scale9Width": 17,
+                            "Scale9Height": 17,
+                            "AnchorPoint": {
+                              "ScaleX": 0.5,
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 544.0039,
+                              "Y": 189.2711
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {},
+                            "IconVisible": false,
+                            "PrePosition": {
+                              "X": 0.0,
+                              "Y": 0.0
+                            },
+                            "PreSize": {
+                              "X": 0.0,
+                              "Y": 0.0
+                            },
+                            "LeftMargin": 520.5039,
+                            "RightMargin": -567.5039,
+                            "TopMargin": -212.7711,
+                            "BottomMargin": 165.7711,
+                            "Tag": 139,
+                            "ActionTag": 1894421037,
+                            "Size": {
+                              "X": 47.0,
+                              "Y": 47.0
+                            },
+                            "Name": "lampPic_6",
+                            "ctype": "ImageViewObjectData"
+                          },
+                          {
+                            "FileData": {
+                              "Type": "Normal",
+                              "Path": "turntable/zphd_5.png",
+                              "Plist": ""
+                            },
+                            "Scale9OriginX": 15,
+                            "Scale9OriginY": 15,
+                            "Scale9Width": 17,
+                            "Scale9Height": 17,
+                            "AnchorPoint": {
+                              "ScaleX": 0.5,
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 483.8274,
+                              "Y": 97.1781
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {},
+                            "IconVisible": false,
+                            "PrePosition": {
+                              "X": 0.0,
+                              "Y": 0.0
+                            },
+                            "PreSize": {
+                              "X": 0.0,
+                              "Y": 0.0
+                            },
+                            "LeftMargin": 460.3274,
+                            "RightMargin": -507.3274,
+                            "TopMargin": -120.6781,
+                            "BottomMargin": 73.6781,
+                            "Tag": 140,
+                            "ActionTag": -501867339,
+                            "Size": {
+                              "X": 47.0,
+                              "Y": 47.0
+                            },
+                            "Name": "lampPic_7",
+                            "ctype": "ImageViewObjectData"
+                          },
+                          {
+                            "FileData": {
+                              "Type": "Normal",
+                              "Path": "turntable/zphd_4.png",
+                              "Plist": ""
+                            },
+                            "Scale9OriginX": 15,
+                            "Scale9OriginY": 15,
+                            "Scale9Width": 17,
+                            "Scale9Height": 17,
+                            "AnchorPoint": {
+                              "ScaleX": 0.5,
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 397.1684,
+                              "Y": 40.8342
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {},
+                            "IconVisible": false,
+                            "PrePosition": {
+                              "X": 0.0,
+                              "Y": 0.0
+                            },
+                            "PreSize": {
+                              "X": 0.0,
+                              "Y": 0.0
+                            },
+                            "LeftMargin": 373.6684,
+                            "RightMargin": -420.6684,
+                            "TopMargin": -64.3342,
+                            "BottomMargin": 17.3342,
+                            "Tag": 141,
+                            "ActionTag": 418129005,
+                            "Size": {
+                              "X": 47.0,
+                              "Y": 47.0
+                            },
+                            "Name": "lampPic_8",
+                            "ctype": "ImageViewObjectData"
+                          },
+                          {
+                            "FileData": {
+                              "Type": "Normal",
+                              "Path": "turntable/zphd_5.png",
+                              "Plist": ""
+                            },
+                            "Scale9OriginX": 15,
+                            "Scale9OriginY": 15,
+                            "Scale9Width": 17,
+                            "Scale9Height": 17,
+                            "AnchorPoint": {
+                              "ScaleX": 0.5,
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 294.6184,
+                              "Y": 22.8913
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {},
+                            "IconVisible": false,
+                            "PrePosition": {
+                              "X": 0.0,
+                              "Y": 0.0
+                            },
+                            "PreSize": {
+                              "X": 0.0,
+                              "Y": 0.0
+                            },
+                            "LeftMargin": 271.1184,
+                            "RightMargin": -318.1184,
+                            "TopMargin": -46.3913,
+                            "BottomMargin": -0.6087,
+                            "Tag": 142,
+                            "ActionTag": -16924666,
+                            "Size": {
+                              "X": 47.0,
+                              "Y": 47.0
+                            },
+                            "Name": "lampPic_9",
+                            "ctype": "ImageViewObjectData"
+                          },
+                          {
+                            "FileData": {
+                              "Type": "Normal",
+                              "Path": "turntable/zphd_4.png",
+                              "Plist": ""
+                            },
+                            "Scale9OriginX": 15,
+                            "Scale9OriginY": 15,
+                            "Scale9Width": 17,
+                            "Scale9Height": 17,
+                            "AnchorPoint": {
+                              "ScaleX": 0.5,
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 196.0412,
+                              "Y": 39.3729
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {},
+                            "IconVisible": false,
+                            "PrePosition": {
+                              "X": 0.0,
+                              "Y": 0.0
+                            },
+                            "PreSize": {
+                              "X": 0.0,
+                              "Y": 0.0
+                            },
+                            "LeftMargin": 172.5412,
+                            "RightMargin": -219.5412,
+                            "TopMargin": -62.8729,
+                            "BottomMargin": 15.8729,
+                            "Tag": 143,
+                            "ActionTag": -1673831722,
+                            "Size": {
+                              "X": 47.0,
+                              "Y": 47.0
+                            },
+                            "Name": "lampPic_10",
+                            "ctype": "ImageViewObjectData"
+                          },
+                          {
+                            "FileData": {
+                              "Type": "Normal",
+                              "Path": "turntable/zphd_5.png",
+                              "Plist": ""
+                            },
+                            "Scale9OriginX": 15,
+                            "Scale9OriginY": 15,
+                            "Scale9Width": 17,
+                            "Scale9Height": 17,
+                            "AnchorPoint": {
+                              "ScaleX": 0.5,
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 102.7636,
+                              "Y": 99.5512
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {},
+                            "IconVisible": false,
+                            "PrePosition": {
+                              "X": 0.0,
+                              "Y": 0.0
+                            },
+                            "PreSize": {
+                              "X": 0.0,
+                              "Y": 0.0
+                            },
+                            "LeftMargin": 79.2636,
+                            "RightMargin": -126.2636,
+                            "TopMargin": -123.0512,
+                            "BottomMargin": 76.0512,
+                            "Tag": 144,
+                            "ActionTag": 1894011108,
+                            "Size": {
+                              "X": 47.0,
+                              "Y": 47.0
+                            },
+                            "Name": "lampPic_11",
+                            "ctype": "ImageViewObjectData"
+                          },
+                          {
+                            "FileData": {
+                              "Type": "Normal",
+                              "Path": "turntable/zphd_4.png",
+                              "Plist": ""
+                            },
+                            "Scale9OriginX": 15,
+                            "Scale9OriginY": 15,
+                            "Scale9Width": 17,
+                            "Scale9Height": 17,
+                            "AnchorPoint": {
+                              "ScaleX": 0.5,
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 46.56,
+                              "Y": 180.9132
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {},
+                            "IconVisible": false,
+                            "PrePosition": {
+                              "X": 0.0,
+                              "Y": 0.0
+                            },
+                            "PreSize": {
+                              "X": 0.0,
+                              "Y": 0.0
+                            },
+                            "LeftMargin": 23.06,
+                            "RightMargin": -70.06,
+                            "TopMargin": -204.4132,
+                            "BottomMargin": 157.4132,
+                            "Tag": 145,
+                            "ActionTag": 487615068,
+                            "Size": {
+                              "X": 47.0,
+                              "Y": 47.0
+                            },
+                            "Name": "lampPic_12",
+                            "ctype": "ImageViewObjectData"
+                          },
+                          {
+                            "FileData": {
+                              "Type": "Normal",
+                              "Path": "turntable/zphd_5.png",
+                              "Plist": ""
+                            },
+                            "Scale9OriginX": 15,
+                            "Scale9OriginY": 15,
+                            "Scale9Width": 17,
+                            "Scale9Height": 17,
+                            "AnchorPoint": {
+                              "ScaleX": 0.5,
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 22.1345,
+                              "Y": 292.7326
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {},
+                            "IconVisible": false,
+                            "PrePosition": {
+                              "X": 0.0,
+                              "Y": 0.0
+                            },
+                            "PreSize": {
+                              "X": 0.0,
+                              "Y": 0.0
+                            },
+                            "LeftMargin": -1.3655,
+                            "RightMargin": -45.6345,
+                            "TopMargin": -316.2326,
+                            "BottomMargin": 269.2326,
+                            "Tag": 146,
+                            "ActionTag": -1604222731,
+                            "Size": {
+                              "X": 47.0,
+                              "Y": 47.0
+                            },
+                            "Name": "lampPic_13",
+                            "ctype": "ImageViewObjectData"
+                          },
+                          {
+                            "FileData": {
+                              "Type": "Normal",
+                              "Path": "turntable/zphd_4.png",
+                              "Plist": ""
+                            },
+                            "Scale9OriginX": 15,
+                            "Scale9OriginY": 15,
+                            "Scale9Width": 17,
+                            "Scale9Height": 17,
+                            "AnchorPoint": {
+                              "ScaleX": 0.5,
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 38.7546,
+                              "Y": 388.6622
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {},
+                            "IconVisible": false,
+                            "PrePosition": {
+                              "X": 0.0,
+                              "Y": 0.0
+                            },
+                            "PreSize": {
+                              "X": 0.0,
+                              "Y": 0.0
+                            },
+                            "LeftMargin": 15.2546,
+                            "RightMargin": -62.2546,
+                            "TopMargin": -412.1622,
+                            "BottomMargin": 365.1622,
+                            "Tag": 147,
+                            "ActionTag": 1447838072,
+                            "Size": {
+                              "X": 47.0,
+                              "Y": 47.0
+                            },
+                            "Name": "lampPic_14",
+                            "ctype": "ImageViewObjectData"
+                          },
+                          {
+                            "FileData": {
+                              "Type": "Normal",
+                              "Path": "turntable/zphd_5.png",
+                              "Plist": ""
+                            },
+                            "Scale9OriginX": 15,
+                            "Scale9OriginY": 15,
+                            "Scale9Width": 17,
+                            "Scale9Height": 17,
+                            "AnchorPoint": {
+                              "ScaleX": 0.5,
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 101.7181,
+                              "Y": 483.2679
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {},
+                            "IconVisible": false,
+                            "PrePosition": {
+                              "X": 0.0,
+                              "Y": 0.0
+                            },
+                            "PreSize": {
+                              "X": 0.0,
+                              "Y": 0.0
+                            },
+                            "LeftMargin": 78.2181,
+                            "RightMargin": -125.2181,
+                            "TopMargin": -506.7679,
+                            "BottomMargin": 459.7679,
+                            "Tag": 148,
+                            "ActionTag": -555245667,
+                            "Size": {
+                              "X": 47.0,
+                              "Y": 47.0
+                            },
+                            "Name": "lampPic_15",
+                            "ctype": "ImageViewObjectData"
+                          },
+                          {
+                            "FileData": {
+                              "Type": "Normal",
+                              "Path": "turntable/zphd_4.png",
+                              "Plist": ""
+                            },
+                            "Scale9OriginX": 15,
+                            "Scale9OriginY": 15,
+                            "Scale9Width": 17,
+                            "Scale9Height": 17,
+                            "AnchorPoint": {
+                              "ScaleX": 0.5,
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 184.5444,
+                              "Y": 538.1447
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {},
+                            "IconVisible": false,
+                            "PrePosition": {
+                              "X": 0.0,
+                              "Y": 0.0
+                            },
+                            "PreSize": {
+                              "X": 0.0,
+                              "Y": 0.0
+                            },
+                            "LeftMargin": 161.0444,
+                            "RightMargin": -208.0444,
+                            "TopMargin": -561.6447,
+                            "BottomMargin": 514.6447,
+                            "Tag": 149,
+                            "ActionTag": -967897975,
+                            "Size": {
+                              "X": 47.0,
+                              "Y": 47.0
+                            },
+                            "Name": "lampPic_16",
+                            "ctype": "ImageViewObjectData"
+                          }
+                        ],
+                        "ActionTag": -768747117,
+                        "Size": {
+                          "X": 0.0,
+                          "Y": 0.0
+                        },
+                        "Name": "pointNd1",
                         "ctype": "SingleNodeObjectData"
                       },
                       {
@@ -2393,8 +3183,8 @@
                               "ScaleY": 0.5
                             },
                             "Position": {
-                              "X": -0.1089,
-                              "Y": 183.7779
+                              "X": 0.0,
+                              "Y": 180.0
                             },
                             "Scale": {
                               "ScaleX": 1.0,
@@ -2410,15 +3200,15 @@
                               "X": 0.0,
                               "Y": 0.0
                             },
-                            "LeftMargin": -36.1089,
-                            "RightMargin": -35.8911,
-                            "TopMargin": -208.2779,
-                            "BottomMargin": 159.2779,
+                            "LeftMargin": -36.0,
+                            "RightMargin": -36.0,
+                            "TopMargin": -204.5,
+                            "BottomMargin": 155.5,
                             "Tag": 342,
                             "Children": [
                               {
                                 "FontSize": 20,
-                                "LabelText": "钻石",
+                                "LabelText": "钻石2",
                                 "OutlineColor": {
                                   "G": 0,
                                   "B": 0
@@ -2450,17 +3240,17 @@
                                   "Y": 1.4286
                                 },
                                 "PreSize": {
-                                  "X": 0.5556,
+                                  "X": 0.6944,
                                   "Y": 0.4082
                                 },
-                                "LeftMargin": 16.0,
-                                "RightMargin": 16.0,
+                                "LeftMargin": 11.0,
+                                "RightMargin": 11.0,
                                 "TopMargin": -31.0,
                                 "BottomMargin": 60.0,
                                 "Tag": 345,
                                 "ActionTag": -836346202,
                                 "Size": {
-                                  "X": 40.0,
+                                  "X": 50.0,
                                   "Y": 20.0
                                 },
                                 "Name": "name",

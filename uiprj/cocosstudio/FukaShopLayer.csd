@@ -14,7 +14,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5000" Y="0.5000" />
             <PreSize X="1.0000" Y="1.0000" />
-            <SingleColor A="255" R="127" G="127" B="127" />
+            <SingleColor A="255" R="255" G="255" B="255" />
             <FirstColor A="255" R="150" G="200" B="255" />
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
@@ -29,10 +29,10 @@
             <PreSize X="0.5625" Y="1.7778" />
             <FileData Type="Normal" Path="aaa/fuKa (10).png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="goodsListPnl" Visible="False" ActionTag="1396762689" Tag="419" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="237" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+          <AbstractNodeData Name="goodsListPnl" ActionTag="1396762689" UserData="{&quot;layoutType&quot;:&quot;maxArea&quot;,&quot;screenAlign&quot;:&quot;left&quot;}" Tag="419" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="237" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <Children>
-              <AbstractNodeData Name="leftPnl" ActionTag="292336037" Tag="319" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="leftPnl" ActionTag="292336037" UserData="{&quot;layoutType&quot;:&quot;maxArea&quot;,&quot;screenAlign&quot;:&quot;left&quot;}" Tag="319" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="1280.0000" Y="720.0000" />
                 <Children>
                   <AbstractNodeData Name="pgPnl" ActionTag="-1397132208" Tag="157" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
@@ -108,18 +108,6 @@
                   </AbstractNodeData>
                   <AbstractNodeData Name="imgPageCell" ActionTag="1975261828" Tag="158" IconVisible="False" LeftMargin="148.0463" RightMargin="893.9537" TopMargin="38.5793" BottomMargin="42.4207" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="238.0000" Y="639.0000" />
-                    <Children>
-                      <AbstractNodeData Name="slideImg" ActionTag="2019993654" Tag="156" IconVisible="False" LeftMargin="5.1748" RightMargin="-5.1748" TopMargin="-3.8687" BottomMargin="3.8687" Scale9Enable="True" LeftEage="19" RightEage="19" TopEage="20" BottomEage="20" Scale9OriginX="19" Scale9OriginY="20" Scale9Width="22" Scale9Height="21" ctype="ImageViewObjectData">
-                        <Size X="238.0000" Y="639.0000" />
-                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="124.1748" Y="323.3687" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.5217" Y="0.5061" />
-                        <PreSize X="1.0000" Y="1.0000" />
-                        <FileData Type="Normal" Path="fukashop/fk_9.png" Plist="" />
-                      </AbstractNodeData>
-                    </Children>
                     <AnchorPoint />
                     <Position X="148.0463" Y="42.4207" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -132,11 +120,11 @@
                     <ColorVector ScaleY="1.0000" />
                   </AbstractNodeData>
                 </Children>
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="640.0000" Y="360.0000" />
+                <AnchorPoint ScaleY="0.5000" />
+                <Position Y="360.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5000" Y="0.5000" />
+                <PrePosition Y="0.5000" />
                 <PreSize X="1.0000" Y="1.0000" />
                 <SingleColor A="255" R="0" G="128" B="0" />
                 <FirstColor A="255" R="0" G="128" B="0" />
@@ -433,11 +421,11 @@
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
             </Children>
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="640.0000" Y="360.0000" />
+            <AnchorPoint ScaleY="0.5000" />
+            <Position Y="360.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5000" Y="0.5000" />
+            <PrePosition Y="0.5000" />
             <PreSize X="1.0000" Y="1.0000" />
             <SingleColor A="255" R="255" G="255" B="255" />
             <FirstColor A="255" R="150" G="200" B="255" />
@@ -531,7 +519,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="robPnl" ActionTag="-978527675" Tag="268" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+          <AbstractNodeData Name="robPnl" Visible="False" ActionTag="-978527675" Tag="268" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <Children>
               <AbstractNodeData Name="robListView" ActionTag="224986441" Alpha="83" Tag="270" RotationSkewX="180.0000" RotationSkewY="180.0000" IconVisible="False" LeftMargin="1279.8306" RightMargin="-1186.8306" TopMargin="-548.4114" BottomMargin="653.4114" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" IsBounceEnabled="True" ScrollDirectionType="0" ctype="ListViewObjectData">
@@ -994,7 +982,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="robLogListView" ActionTag="591534312" Tag="306" RotationSkewY="-180.0000" IconVisible="False" LeftMargin="-841.8538" RightMargin="1060.8538" TopMargin="-2.8723" BottomMargin="2.8722" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" IsBounceEnabled="True" ScrollDirectionType="0" ctype="ListViewObjectData">
+              <AbstractNodeData Name="robLogListView" ActionTag="591534312" Tag="306" RotationSkewY="-180.0000" IconVisible="False" LeftMargin="-841.8538" RightMargin="1060.8538" TopMargin="-2.8722" BottomMargin="2.8722" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" IsBounceEnabled="True" ScrollDirectionType="0" ctype="ListViewObjectData">
                 <Size X="1061.0000" Y="720.0000" />
                 <AnchorPoint ScaleX="1.0000" />
                 <Position X="219.1462" Y="2.8722" />

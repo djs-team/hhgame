@@ -315,22 +315,21 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
         },
 
         initRollImgList: function (data) {
-            cc.log('===============data====' + JSON.stringify(data))
             for(let i = 0; i < data.length; i++){
-
                 let cell = this.imgPageCell.clone()
                 cell.setVisible(true)
                 this.imgPageView.pushBackCustomItem(cell)
-                cc.log('===============data==iii==' + data[i])
-                let cellImg = cell.getChildByName('slideImg')
-                let url = 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1600501930088&di=d25e3c47c0d1bef6dc9a11040f8ad554&imgtype=0&src=http%3A%2F%2Fpic4.zhimg.com%2F50%2Fv2-f41af535c044d503346cc4be802b7724_hd.jpg'
-                // cc.loader.loadImg(url, { isCrossOrigin: false },function(err,texture){
-                //     cc.log('=====loadImg======' + JSON.stringify(err))
-                //     if (!err && texture) {
-                //         cellImg.loadTexture(texture)
-                //     }
-                // })
-                // cell.getChildByName('slideImg').loadTexture(data[i].upPictureUrl)
+                let size = cell.getContentSize()
+                let url = 'http://p3.itc.cn/q_70/images03/20200911/b7c565cbc87848538cace549fb609e7b.jpeg'
+                cc.loader.loadImg(url, { isCrossOrigin: false },function(err,texture){
+                    if (!err && texture) {
+                        let sp = new cc.Sprite(texture)
+                        sp.setContentSize(size)
+                        sp.setPosition(cc.p(size.width/2,size.height/2))
+                        // sp.setRotationX(-90)
+                        cell.addChild(sp)
+                    }
+                })
             }
         },
 

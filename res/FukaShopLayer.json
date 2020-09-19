@@ -17,11 +17,7 @@
           {
             "ClipAble": false,
             "ComboBoxIndex": 1,
-            "SingleColor": {
-              "R": 127,
-              "G": 127,
-              "B": 127
-            },
+            "SingleColor": {},
             "FirstColor": {
               "R": 150,
               "G": 200
@@ -137,11 +133,10 @@
             "Scale9Width": 1,
             "Scale9Height": 1,
             "AnchorPoint": {
-              "ScaleX": 0.5,
               "ScaleY": 0.5
             },
             "Position": {
-              "X": 640.0,
+              "X": 0.0,
               "Y": 360.0
             },
             "Scale": {
@@ -153,7 +148,7 @@
             "PositionPercentXEnabled": true,
             "PositionPercentYEnabled": true,
             "PrePosition": {
-              "X": 0.5,
+              "X": 0.0,
               "Y": 0.5
             },
             "PercentWidthEnable": true,
@@ -164,6 +159,7 @@
               "X": 1.0,
               "Y": 1.0
             },
+            "UserData": "{\"layoutType\":\"maxArea\",\"screenAlign\":\"left\"}",
             "Tag": 419,
             "Children": [
               {
@@ -185,11 +181,10 @@
                 "Scale9Width": 1,
                 "Scale9Height": 1,
                 "AnchorPoint": {
-                  "ScaleX": 0.5,
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 640.0,
+                  "X": 0.0,
                   "Y": 360.0
                 },
                 "Scale": {
@@ -201,7 +196,7 @@
                 "PositionPercentXEnabled": true,
                 "PositionPercentYEnabled": true,
                 "PrePosition": {
-                  "X": 0.5,
+                  "X": 0.0,
                   "Y": 0.5
                 },
                 "PercentWidthEnable": true,
@@ -212,6 +207,7 @@
                   "X": 1.0,
                   "Y": 1.0
                 },
+                "UserData": "{\"layoutType\":\"maxArea\",\"screenAlign\":\"left\"}",
                 "Tag": 319,
                 "Children": [
                   {
@@ -575,54 +571,6 @@
                     "TopMargin": 38.5793,
                     "BottomMargin": 42.4207,
                     "Tag": 158,
-                    "Children": [
-                      {
-                        "FileData": {
-                          "Type": "Normal",
-                          "Path": "fukashop/fk_9.png",
-                          "Plist": ""
-                        },
-                        "Scale9Enable": true,
-                        "Scale9OriginX": 19,
-                        "Scale9OriginY": 20,
-                        "Scale9Width": 22,
-                        "Scale9Height": 21,
-                        "AnchorPoint": {
-                          "ScaleX": 0.5,
-                          "ScaleY": 0.5
-                        },
-                        "Position": {
-                          "X": 124.1748,
-                          "Y": 323.3687
-                        },
-                        "Scale": {
-                          "ScaleX": 1.0,
-                          "ScaleY": 1.0
-                        },
-                        "CColor": {},
-                        "IconVisible": false,
-                        "PrePosition": {
-                          "X": 0.5217,
-                          "Y": 0.5061
-                        },
-                        "PreSize": {
-                          "X": 1.0,
-                          "Y": 1.0
-                        },
-                        "LeftMargin": 5.1748,
-                        "RightMargin": -5.1748,
-                        "TopMargin": -3.8687,
-                        "BottomMargin": 3.8687,
-                        "Tag": 156,
-                        "ActionTag": 2019993654,
-                        "Size": {
-                          "X": 238.0,
-                          "Y": 639.0
-                        },
-                        "Name": "slideImg",
-                        "ctype": "ImageViewObjectData"
-                      }
-                    ],
                     "ActionTag": 1975261828,
                     "Size": {
                       "X": 238.0,
@@ -4349,7 +4297,7 @@
                 },
                 "LeftMargin": -841.8538,
                 "RightMargin": 1060.8538,
-                "TopMargin": -2.8723,
+                "TopMargin": -2.8722,
                 "BottomMargin": 2.8722,
                 "Tag": 306,
                 "ActionTag": 591534312,
@@ -6436,7 +6384,7 @@
                   "Y": 0.9444
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.0625
                 },
                 "LeftMargin": 780.08,
@@ -8411,8 +8359,7 @@
         "fukashop/fk_40.png",
         "fukashop/fk_41.png",
         "fukashop/fk_5.png",
-        "fukashop/fk_8.png",
-        "fukashop/fk_9.png"
+        "fukashop/fk_8.png"
       ],
       "ctype": "GameFileData"
     }

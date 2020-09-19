@@ -41,6 +41,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.Display;
 
+import org.cocos2dx.javascript.ui.main.MainActivity;
 import org.cocos2dx.javascript.ui.splash.activity.SplashActivity;
 import org.cocos2dx.lib.Cocos2dxActivity;
 import org.cocos2dx.lib.Cocos2dxGLSurfaceView;
@@ -520,30 +521,50 @@ public class AppActivity extends Cocos2dxActivity {
     }
 
     /**
-     * 分享
-     * WEIXIN, 微信
-     * WEIXIN_CIRCLE 微信朋友圈
+     * 分享-图片
      *
-     * @param type
+     * @param platform 平台WEIXIN, 微信  WEIXIN_CIRCLE 微信朋友圈
+     * @param url      图片地址
      */
-    public static void share(String type) {
-        String img = "https://dss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1812993978,4158651947&fm=26&gp=0.jpg";
-        UMImage th = new UMImage(ccActivity, img);//网络图片
-        UMImage image = new UMImage(ccActivity, img);//网络图片
-        image.setThumb(th);
-        if (type.equals("WEIXIN")) {
-            ToastUtils.showToast("wexin");
-            new ShareAction(ccActivity).setPlatform(SHARE_MEDIA.WEIXIN).withText("hello").withMedia(image).share();
-        } else if (type.equals("WEIXIN_CIRCLE")) {
-            ToastUtils.showToast("wexin_cicle");
-
-            UMWeb web = new UMWeb("http://www.baidu.com");
-            web.setTitle("This is music title");//标题
-            web.setThumb(image);  //缩略图
-            web.setDescription("my description");//描述
-            new ShareAction(ccActivity).setPlatform(SHARE_MEDIA.WEIXIN_CIRCLE).withMedia(web).share();
+    public static void shareImage(String platform, String url) {
+//        String img = "https://dss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1812993978,4158651947&fm=26&gp=0.jpg";
+//        UMImage th = new UMImage(ccActivity, url);//网络图片
+        UMImage image = new UMImage(ccActivity, url);//网络图片
+        SHARE_MEDIA share_media;
+        if (platform.equals("WEIXIN")) {
+            share_media = SHARE_MEDIA.WEIXIN;
+        } else {
+            share_media = SHARE_MEDIA.WEIXIN_CIRCLE;
         }
+        new ShareAction(ccActivity).setPlatform(share_media).withMedia(image).share();
+    }
 
+    /**
+     * 分享-文章
+     *
+     * @param title       标题
+     * @param platform    平台WEIXIN, 微信  WEIXIN_CIRCLE 微信朋友圈
+     * @param description 描述
+     * @param thumbUrl    缩略图
+     */
+    public static void shareArticle(String platform, String title, String description, String url, String thumbUrl) {
+        UMImage thumb = null;
+        if (!TextUtils.isEmpty(thumbUrl)) {
+            thumb = new UMImage(ccActivity, thumbUrl);//网络图片
+        } else {
+            thumb = new UMImage(ccActivity, R.mipmap.ic_launcher);//本地图片
+        }
+        UMWeb web = new UMWeb(url);
+        web.setTitle(title);//标题
+        web.setThumb(thumb);  //缩略图
+        web.setDescription(description);//描述
+        SHARE_MEDIA share_media;
+        if (platform.equals("WEIXIN")) {
+            share_media = SHARE_MEDIA.WEIXIN;
+        } else {
+            share_media = SHARE_MEDIA.WEIXIN_CIRCLE;
+        }
+        new ShareAction(ccActivity).setPlatform(share_media).withMedia(web).share();
     }
 
     /**
@@ -565,7 +586,7 @@ public class AppActivity extends Cocos2dxActivity {
 
                     @Override
                     public void onVidioPlayComplete(String result) {
-                        ccActivity.RunJS("rewardVideoCallback",result);
+                        ccActivity.RunJS("rewardVideoCallback", result);
                     }
                 });
             }
@@ -669,6 +690,17 @@ public class AppActivity extends Cocos2dxActivity {
         ClipboardManager cm = (ClipboardManager) ccActivity.getSystemService(Context.CLIPBOARD_SERVICE);
         ClipData mClipData = ClipData.newPlainText("Label", content);
         cm.setPrimaryClip(mClipData);
+    }
+
+    /**
+     * 跳转到相亲
+     */
+    public static void jumpToBlindDate(String userInfo) {
+        Log.d("=====jumpToBlindDate", userInfo);
+        operateUserInfo(userInfo);
+        Intent intent = new Intent(ccActivity, SplashActivity.class);
+        ccActivity.startActivity(intent);
+
     }
 
 

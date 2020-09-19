@@ -142,9 +142,8 @@ load('game/ui/scene/HallScene', function () {
 
         onLiveBroadcastClick: function () {
             //跳转直播界面
+            appInstance.nativeApi().jumpToBlindDate()
 
-            appInstance.gameAgent().Tips('想看什么呀？')
-           // appInstance.gameAgent().tcpGame().enterTable()
         },
         onMatchClick: function () {
             let matchClass = include('game/ui/layer/match/MatchLayer')

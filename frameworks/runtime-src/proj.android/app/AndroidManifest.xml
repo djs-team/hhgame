@@ -184,6 +184,7 @@
             android:name="org.cocos2dx.javascript.ui.main.MainActivity"
             android:launchMode="singleTask" />
         <activity android:name="org.cocos2dx.javascript.ui.login.activity.RegisterActivity" />
+        <activity android:name="org.cocos2dx.javascript.ui.login.activity.BindPhoneActivity" />
         <!-- 适配Android 7.0, 需要将下方的com.hyphenate.chatuidemo替换为你的app包名 -->
         <provider
             android:name="android.support.v4.content.FileProvider"

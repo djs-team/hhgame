@@ -1,4 +1,3 @@
-
 load('game/public/HttpGame', function () {
     let HttpEvent = include('game/config/HttpEvent')
     let AppConfig = include('game/public/AppConfig')
@@ -7,8 +6,10 @@ load('game/public/HttpGame', function () {
     let LocalSave = include('game/public/LocalSave')
 
     let Ui = ResConfig.Ui
+    let nickName = "";
+    let photo = "";
 
-    let HttpGame  = cc.Class.extend({
+    let HttpGame = cc.Class.extend({
         _requestBackCall: {},
         ctor: function () {
             appInstance.httpAgent().setUrl(AppConfig.httpUrl)
@@ -16,13 +17,17 @@ load('game/public/HttpGame', function () {
         },
 
         httpLogin: function (msg) {
+            if (msg.platform == 3) {
+                nickName = msg.nickName;
+                photo = msg.photo;
+            }
             msg = msg || {}
             if (!this._requestBackCall[HttpEvent.MJ_HALL_MESSAGE_LOGIN]) {
                 this._requestBackCall[HttpEvent.MJ_HALL_MESSAGE_LOGIN] = this.httpLoginBack
             }
             let sendMsg = {
                 platform: 1,
-                account:'',
+                account: '',
                 device: 'devicestr',
                 phoneModel: cc.sys.os,
                 unionId: '',
@@ -42,10 +47,11 @@ load('game/public/HttpGame', function () {
             this.checkSendMsg(sendMsg, msg)
             sendMsg.msgID = HttpEvent.MJ_HALL_MESSAGE_LOGIN
             appInstance.httpAgent().sendPost(sendMsg)
+
         },
 
         httpLoginBack: function (msg) {
-            cc.log('=========httpLoginBack============error================'+JSON.stringify(msg))
+            cc.log('=========httpLoginBack============error================' + JSON.stringify(msg))
 
             if (msg.status !== 0) {
                 cc.log('=========httpLoginBack============error================')
@@ -76,6 +82,20 @@ load('game/public/HttpGame', function () {
                 appInstance.gameAgent().httpGame().chooseCity(sendData)
             } else {
                 appInstance.gameAgent().addPopUI(Ui.ChooseCityLayer)
+            }
+
+            if (msg.platform == 3) {
+                // 更新昵称
+                let msgNickName = {}
+                msgNickName.nickname = nickName;
+                msgNickName.type = 0;
+                cc.log("=============updateUserNameReq" + JSON.stringify(msg))
+                appInstance.gameAgent().httpGame().updateUserNameReq(msgNickName)
+                //更新头像
+                let msgPhoto = {}
+                msgPhoto.photoUrl = photo;
+                cc.log("=============updatePhoto" + JSON.stringify(msgPhoto))
+                appInstance.gameAgent().httpGame().updateUserPhotoReq(msgPhoto)
             }
         },
 
@@ -133,7 +153,6 @@ load('game/public/HttpGame', function () {
 
         checkHallRedBack: function (msg) {
             cc.log('   检测大厅红点:::checkHallRed>>>\n' + JSON.stringify(msg))
-
 
 
         },
@@ -197,7 +216,7 @@ load('game/public/HttpGame', function () {
         },
 
         updateUserNameReq: function (msg) {
-
+            cc.log("========开始请求updateUserName")
             msg = msg || {}
             if (!this._requestBackCall[HttpEvent.MJ_HALL_MESSAGE_UPDATEUSERNAME]) {
                 this._requestBackCall[HttpEvent.MJ_HALL_MESSAGE_UPDATEUSERNAME] = this.updateUserNameBack
@@ -214,6 +233,7 @@ load('game/public/HttpGame', function () {
                 cc.log('------------->>>httpGame updateUserNameBack error happen')
                 return
             }
+            cc.log('------------->>>httpGame updateUserNameBack ' + JSON.stringify(msg))
 
             let saveKey = [
                 'pname',
@@ -221,6 +241,34 @@ load('game/public/HttpGame', function () {
             ]
             appInstance.dataManager().getUserData().saveMsg(msg, saveKey)
             appInstance.sendNotification(GameEvent.UPDATE_USERNAME, msg)
+
+        },
+        updateUserPhotoReq: function (msg) {
+            cc.log("========开始请求updateUserPhotoReq")
+            msg = msg || {}
+            if (!this._requestBackCall[HttpEvent.MJ_HALL_PLAYER_PHOTO_CHANGE]) {
+                this._requestBackCall[HttpEvent.MJ_HALL_PLAYER_PHOTO_CHANGE] = this.updateUserPhotoBack
+            }
+
+            msg.msgID = HttpEvent.MJ_HALL_PLAYER_PHOTO_CHANGE
+            appInstance.httpAgent().sendPost(msg)
+
+        },
+
+        updateUserPhotoBack: function (msg) {
+
+            if (msg.status !== 0) {
+                cc.log('------------->>>httpGame updateUserPhotoBack error happen')
+                return
+            }
+            cc.log('------------->>>httpGame updateUserPhotoBack ' + JSON.stringify(msg))
+
+            // let saveKey = [
+            //     'pphoto',
+            //     'photoUpdate'
+            // ]
+            // appInstance.dataManager().getUserData().saveMsg(msg, saveKey)
+            appInstance.sendNotification(GameEvent.UPDATE_USERPHOTO, msg)
 
         },
 
@@ -246,7 +294,7 @@ load('game/public/HttpGame', function () {
             let saveKey = [
                 'isAuthentication'
             ]
-            let data = {'isAuthentication':0}
+            let data = {'isAuthentication': 0}
             appInstance.dataManager().getUserData().saveMsg(data, saveKey)
             appInstance.sendNotification(GameEvent.AUTHENICATION, msg)
 
@@ -308,7 +356,7 @@ load('game/public/HttpGame', function () {
             let _usedCashCowNum = appInstance.dataManager().getUserData().usedCashCowNum + 1
             let saveData = {
 
-                'usedCashCowNum' : _usedCashCowNum
+                'usedCashCowNum': _usedCashCowNum
 
             }
 
@@ -391,11 +439,11 @@ load('game/public/HttpGame', function () {
 
             let saveData = {
 
-                'turntableId' : msg.turntableId
+                'turntableId': msg.turntableId
 
             }
 
-            appInstance.dataManager().getGameData().saveMsg(saveData,saveKey)
+            appInstance.dataManager().getGameData().saveMsg(saveData, saveKey)
             appInstance.sendNotification(GameEvent.TURNTABLE_POINT, msg)
 
         },
@@ -558,7 +606,6 @@ load('game/public/HttpGame', function () {
             }
 
 
-
             appInstance.sendNotification(GameEvent.TASK_CHALLENGE_RECEIVE, msg)
 
         },
@@ -714,7 +761,6 @@ load('game/public/HttpGame', function () {
             appInstance.sendNotification(GameEvent.SHARE_INVITE, msg)
 
         },
-
 
 
         GETVIPINFOReq: function (msg) {
@@ -931,7 +977,7 @@ load('game/public/HttpGame', function () {
 
         VIPPaysOrderBack: function (msg) {
             if (msg.status !== 0) {
-                cc.log('------------->>>httpGame VIPPaysOrderBack error happen'+JSON.stringify(msg))
+                cc.log('------------->>>httpGame VIPPaysOrderBack error happen' + JSON.stringify(msg))
                 return
             }
             appInstance.sendNotification(GameEvent.PLAYER_BUY_VIP_ORDER, msg)

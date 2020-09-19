@@ -55,6 +55,7 @@ load('game/config/GameEvent', function () {
         'MENULIST': 'MENULIST',
         'GOODSLIST': 'GOODSLIST',
         'FUKA_BUGGOODS': 'FUKA_BUGGOODS',
+        'UPDATE_USERPHOTO': 'UPDATE_USERPHOTO',
     }
 
     return GameEvent

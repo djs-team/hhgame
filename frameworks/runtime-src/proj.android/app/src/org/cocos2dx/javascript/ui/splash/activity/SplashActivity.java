@@ -77,8 +77,6 @@ public class SplashActivity extends BaseActivity<ActivitySplashBinding> {
 //        mVideoManager.allocate(width, height, -1, com.android.beauty.constant.Constant.CAMERA_FACING_FRONT);
 //        mVideoManager.stopCapture();
 //        mVideoManager.deallocate();
-
-
         OpenInstall.getWakeUp(getIntent(), wakeUpAdapter);
         boolean isFirst = SharedPrefrencesUtil.getData(this, "isFirstInstall", "isFirstInstall", true);
         if (isFirst) {
@@ -170,7 +168,7 @@ public class SplashActivity extends BaseActivity<ActivitySplashBinding> {
             @Override
             public void run() {
                 startSplash();
-                autoLogin();
+//                autoLogin();
                 loadAllConversations();
             }
         });
@@ -207,7 +205,6 @@ public class SplashActivity extends BaseActivity<ActivitySplashBinding> {
                         }
                     }
                     startActivity(intent);
-//                    PageJumpUtils.jumpToWeb("file:////android_asset/test.html");
                     finish();
                     break;
             }

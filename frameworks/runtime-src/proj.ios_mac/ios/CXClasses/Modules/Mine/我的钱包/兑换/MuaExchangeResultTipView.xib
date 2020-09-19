@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MuaExchangeResultTipView">
+            <rect key="frame" x="0.0" y="0.0" width="220" height="244"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sfe-ZL-mEH">
+                    <rect key="frame" x="0.0" y="0.0" width="220" height="244"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="12"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zEW-cW-bVq">
+                    <rect key="frame" x="23" y="191" width="174" height="36"/>
+                    <color key="backgroundColor" red="1" green="0.40000000000000002" blue="0.36862745098039218" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="174" id="6z2-U4-qZV"/>
+                        <constraint firstAttribute="height" constant="36" id="UcF-KN-K0I"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="返回首页"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="18"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="button2Click:" destination="iN0-l3-epB" eventType="touchUpInside" id="dEq-Kb-8ZX"/>
+                    </connections>
+                </button>
+                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVf-Ei-Ugi">
+                    <rect key="frame" x="23" y="143" width="174" height="36"/>
+                    <color key="backgroundColor" red="1" green="0.40000000000000002" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="174" id="GC0-r2-H9m"/>
+                        <constraint firstAttribute="height" constant="36" id="iaY-72-GFm"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="继续兑换"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="18"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="button1Click:" destination="iN0-l3-epB" eventType="touchUpInside" id="3jo-oJ-Fyk"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="兑换成功" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="exK-qT-sf3">
+                    <rect key="frame" x="61.5" y="49" width="97.5" height="29"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="zEW-cW-bVq" firstAttribute="top" secondItem="cVf-Ei-Ugi" secondAttribute="bottom" constant="12" id="2h7-Q5-DpW"/>
+                <constraint firstItem="exK-qT-sf3" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="4xn-Vx-AyX"/>
+                <constraint firstItem="cVf-Ei-Ugi" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="EIh-GR-H2m"/>
+                <constraint firstItem="cVf-Ei-Ugi" firstAttribute="top" secondItem="exK-qT-sf3" secondAttribute="bottom" constant="65" id="FU6-GO-gXv"/>
+                <constraint firstAttribute="bottom" secondItem="sfe-ZL-mEH" secondAttribute="bottom" id="Ndp-6p-jBd"/>
+                <constraint firstItem="sfe-ZL-mEH" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="OKk-sg-W3v"/>
+                <constraint firstAttribute="trailing" secondItem="sfe-ZL-mEH" secondAttribute="trailing" id="P6T-6U-JHk"/>
+                <constraint firstAttribute="bottom" secondItem="zEW-cW-bVq" secondAttribute="bottom" constant="17" id="VbV-2F-Id4"/>
+                <constraint firstItem="sfe-ZL-mEH" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="lOG-cb-zfq"/>
+                <constraint firstItem="zEW-cW-bVq" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="z9h-LA-x10"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="button1" destination="cVf-Ei-Ugi" id="8nc-Qe-NZS"/>
+                <outlet property="button2" destination="zEW-cW-bVq" id="HIb-Di-fci"/>
+                <outlet property="statusLabel" destination="exK-qT-sf3" id="nya-CY-xJp"/>
+            </connections>
+            <point key="canvasLocation" x="-176.81159420289856" y="27.455357142857142"/>
+        </view>
+    </objects>
+</document>

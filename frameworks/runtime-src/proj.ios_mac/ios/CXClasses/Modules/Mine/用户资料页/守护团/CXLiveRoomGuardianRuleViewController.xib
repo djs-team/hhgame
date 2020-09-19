@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CXLiveRoomGuardianRuleViewController">
+            <connections>
+                <outlet property="privilegeLabel" destination="rd9-ET-CRx" id="fM6-bg-Jno"/>
+                <outlet property="ruleLabel" destination="hJz-D9-US1" id="ARs-jS-lXk"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="守护榜规则：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHH-cA-bgx">
+                    <rect key="frame" x="25" y="81" width="86" height="17"/>
+                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="守护榜规则：" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJz-D9-US1">
+                    <rect key="frame" x="25" y="106" width="364" height="13.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="11"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKD-3d-1wT">
+                    <rect key="frame" x="25" y="159.5" width="369" height="17"/>
+                    <string key="text">守护特权:</string>
+                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="守护榜规则：" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rd9-ET-CRx">
+                    <rect key="frame" x="25" y="184.5" width="364" height="13.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="11"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="rd9-ET-CRx" firstAttribute="top" secondItem="eKD-3d-1wT" secondAttribute="bottom" constant="8" id="9Lw-iZ-loX"/>
+                <constraint firstItem="wHH-cA-bgx" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="37" id="IlH-nE-auE"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="hJz-D9-US1" secondAttribute="trailing" constant="25" id="JNm-rt-qam"/>
+                <constraint firstItem="eKD-3d-1wT" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="25" id="Joz-hc-kSr"/>
+                <constraint firstItem="hJz-D9-US1" firstAttribute="top" secondItem="wHH-cA-bgx" secondAttribute="bottom" constant="8" id="NH9-eA-UFA"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="eKD-3d-1wT" secondAttribute="trailing" constant="20" id="PvH-CP-MfJ"/>
+                <constraint firstItem="wHH-cA-bgx" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="25" id="Rmu-3a-qoa"/>
+                <constraint firstItem="rd9-ET-CRx" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="25" id="WwS-lc-E7E"/>
+                <constraint firstItem="hJz-D9-US1" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="25" id="avW-fC-RNR"/>
+                <constraint firstItem="eKD-3d-1wT" firstAttribute="top" secondItem="hJz-D9-US1" secondAttribute="bottom" constant="40" id="f44-Bc-gfc"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="rd9-ET-CRx" secondAttribute="trailing" constant="25" id="ytw-BP-lKR"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="137.68115942028987" y="113.83928571428571"/>
+        </view>
+    </objects>
+</document>

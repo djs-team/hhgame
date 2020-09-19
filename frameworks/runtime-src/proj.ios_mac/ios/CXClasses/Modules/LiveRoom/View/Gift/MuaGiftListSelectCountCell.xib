@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14854.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14806.4"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="49" id="KGk-i7-Jjw" customClass="MuaGiftListSelectCountCell">
+            <rect key="frame" x="0.0" y="0.0" width="132" height="49"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="132" height="49"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lq3-0A-Hje">
+                        <rect key="frame" x="15" y="17.5" width="60.5" height="14.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="giZ-35-PKf">
+                                <rect key="frame" x="0.0" y="0.0" width="6" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.97254901960784312" green="0.4392156862745098" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="一心一意" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFc-GO-rOX">
+                                <rect key="frame" x="11" y="0.0" width="49.5" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="AFc-GO-rOX" secondAttribute="trailing" id="6IG-VS-NE3"/>
+                            <constraint firstAttribute="bottom" secondItem="giZ-35-PKf" secondAttribute="bottom" id="Cpt-Um-MNl"/>
+                            <constraint firstItem="AFc-GO-rOX" firstAttribute="leading" secondItem="giZ-35-PKf" secondAttribute="trailing" constant="5" id="Ej4-H9-IGG"/>
+                            <constraint firstAttribute="bottom" secondItem="AFc-GO-rOX" secondAttribute="bottom" id="G0Z-UP-OmX"/>
+                            <constraint firstItem="AFc-GO-rOX" firstAttribute="top" secondItem="Lq3-0A-Hje" secondAttribute="top" id="GAt-0X-v1B"/>
+                            <constraint firstItem="giZ-35-PKf" firstAttribute="leading" secondItem="Lq3-0A-Hje" secondAttribute="leading" id="Xw8-vt-xzF"/>
+                            <constraint firstItem="giZ-35-PKf" firstAttribute="top" secondItem="Lq3-0A-Hje" secondAttribute="top" id="u8B-jq-wOO"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Lq3-0A-Hje" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="uFd-0D-p3O"/>
+                    <constraint firstItem="Lq3-0A-Hje" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="yzu-2D-duJ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="desc" destination="AFc-GO-rOX" id="gHY-DL-Dln"/>
+                <outlet property="number" destination="giZ-35-PKf" id="CzL-VT-hkc"/>
+            </connections>
+            <point key="canvasLocation" x="0.0" y="148.32589285714286"/>
+        </tableViewCell>
+    </objects>
+</document>

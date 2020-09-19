@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CXGameMusicPlayingCollectionCellID" id="gTV-IL-0wX" customClass="CXGameMusicPlayingCollectionCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="360"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="360"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="歌曲名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vH4-gW-hN4">
+                        <rect key="frame" x="160" y="17" width="55.5" height="21.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hUc-lt-UW4">
+                        <rect key="frame" x="87.5" y="82" width="200" height="50"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EOJ-bm-Lqp">
+                                <rect key="frame" x="80.5" y="5.5" width="39" height="39.5"/>
+                                <state key="normal" image="home_game_music_play"/>
+                                <connections>
+                                    <action selector="playAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="r3l-SM-uKU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQq-k0-4Fw">
+                                <rect key="frame" x="179.5" y="14" width="20.5" height="22"/>
+                                <state key="normal" image="home_game_music_next"/>
+                                <connections>
+                                    <action selector="nextAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="nlk-vj-5zh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eiv-NO-1YR">
+                                <rect key="frame" x="0.0" y="9.5" width="23" height="31"/>
+                                <state key="normal" image="home_game_music_replay"/>
+                                <connections>
+                                    <action selector="replayAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="kf0-qo-Our"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="EOJ-bm-Lqp" firstAttribute="centerY" secondItem="hUc-lt-UW4" secondAttribute="centerY" id="4dK-UP-fiM"/>
+                            <constraint firstItem="eiv-NO-1YR" firstAttribute="leading" secondItem="hUc-lt-UW4" secondAttribute="leading" id="5i7-e9-9D3"/>
+                            <constraint firstItem="eiv-NO-1YR" firstAttribute="centerY" secondItem="hUc-lt-UW4" secondAttribute="centerY" id="8LI-Re-hRw"/>
+                            <constraint firstItem="EOJ-bm-Lqp" firstAttribute="centerX" secondItem="hUc-lt-UW4" secondAttribute="centerX" id="WJ0-RL-pIU"/>
+                            <constraint firstItem="nQq-k0-4Fw" firstAttribute="centerY" secondItem="hUc-lt-UW4" secondAttribute="centerY" id="ahT-Zr-gQi"/>
+                            <constraint firstAttribute="trailing" secondItem="nQq-k0-4Fw" secondAttribute="trailing" id="cRz-K6-EF2"/>
+                            <constraint firstAttribute="width" constant="200" id="ktM-gh-gmE"/>
+                            <constraint firstAttribute="height" constant="50" id="qxR-Dg-ONK"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="点播:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpR-hp-yWY">
+                        <rect key="frame" x="173.5" y="47" width="28.5" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PrH-2c-ZdJ">
+                        <rect key="frame" x="50" y="307.5" width="34" height="14"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WqT-2g-32z">
+                        <rect key="frame" x="326" y="307.5" width="34" height="14"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="演唱者：小可爱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3uQ-89-ySR">
+                        <rect key="frame" x="195.5" y="153" width="114.5" height="19.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="点播:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FfO-HD-MXL">
+                        <rect key="frame" x="133.5" y="153" width="38" height="20"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="30" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="HY2-fe-bUl">
+                        <rect key="frame" x="48" y="233" width="314" height="31"/>
+                        <color key="tintColor" red="0.46666666666666667" green="0.23137254901960785" blue="0.90588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="maximumTrackTintColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                    </slider>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="liveroom_music_laba" translatesAutoresizingMaskIntoConstraints="NO" id="vUE-Y4-evR">
+                        <rect key="frame" x="14" y="240" width="17" height="15.5"/>
+                    </imageView>
+                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tdj-Wv-IZf">
+                        <rect key="frame" x="50" y="289.5" width="310" height="2"/>
+                        <color key="progressTintColor" red="0.99903267620000002" green="0.19832858440000001" blue="0.39804124829999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="trackTintColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                    </progressView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="liveroom_music_luyin" translatesAutoresizingMaskIntoConstraints="NO" id="c6u-V7-iSr">
+                        <rect key="frame" x="15" y="280.5" width="15" height="19.5"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vFG-yu-GEd">
+                        <rect key="frame" x="344.5" y="263" width="15.5" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="HY2-fe-bUl" firstAttribute="trailing" secondItem="tdj-Wv-IZf" secondAttribute="trailing" id="0Hc-Zp-H1s"/>
+                <constraint firstItem="hpR-hp-yWY" firstAttribute="top" secondItem="vH4-gW-hN4" secondAttribute="bottom" constant="8.5" id="4nn-vq-oNh"/>
+                <constraint firstItem="PrH-2c-ZdJ" firstAttribute="leading" secondItem="tdj-Wv-IZf" secondAttribute="leading" id="7n1-mG-7YO"/>
+                <constraint firstItem="tdj-Wv-IZf" firstAttribute="centerY" secondItem="c6u-V7-iSr" secondAttribute="centerY" id="DQc-8y-vuv"/>
+                <constraint firstItem="3uQ-89-ySR" firstAttribute="leading" secondItem="FfO-HD-MXL" secondAttribute="trailing" constant="24" id="Hhy-VY-Scd"/>
+                <constraint firstItem="FfO-HD-MXL" firstAttribute="centerY" secondItem="3uQ-89-ySR" secondAttribute="centerY" id="Jfi-w8-vCy"/>
+                <constraint firstItem="3uQ-89-ySR" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" constant="65" id="NNK-iD-6RO"/>
+                <constraint firstItem="HY2-fe-bUl" firstAttribute="leading" secondItem="tdj-Wv-IZf" secondAttribute="leading" id="Nla-EX-EsV"/>
+                <constraint firstItem="hUc-lt-UW4" firstAttribute="top" secondItem="hpR-hp-yWY" secondAttribute="bottom" constant="20" id="Qy2-Ha-Zdx"/>
+                <constraint firstAttribute="bottom" secondItem="c6u-V7-iSr" secondAttribute="bottom" constant="60" id="VIg-DI-J6f"/>
+                <constraint firstItem="vFG-yu-GEd" firstAttribute="top" secondItem="HY2-fe-bUl" secondAttribute="bottom" id="WDT-3M-r3S"/>
+                <constraint firstItem="vH4-gW-hN4" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="17" id="X0q-N7-7RV"/>
+                <constraint firstAttribute="trailing" secondItem="tdj-Wv-IZf" secondAttribute="trailing" constant="15" id="aCV-34-Hbw"/>
+                <constraint firstItem="HY2-fe-bUl" firstAttribute="centerY" secondItem="vUE-Y4-evR" secondAttribute="centerY" id="apk-i8-DlZ"/>
+                <constraint firstItem="tdj-Wv-IZf" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="50" id="b6M-6M-TOv"/>
+                <constraint firstItem="c6u-V7-iSr" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="hvx-PS-AMA"/>
+                <constraint firstItem="hpR-hp-yWY" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="i9y-3y-byf"/>
+                <constraint firstItem="3uQ-89-ySR" firstAttribute="top" secondItem="hUc-lt-UW4" secondAttribute="bottom" constant="21" id="mM0-lQ-Upu"/>
+                <constraint firstItem="WqT-2g-32z" firstAttribute="centerY" secondItem="PrH-2c-ZdJ" secondAttribute="centerY" id="mgU-Wv-LRH"/>
+                <constraint firstItem="PrH-2c-ZdJ" firstAttribute="top" secondItem="tdj-Wv-IZf" secondAttribute="bottom" constant="16" id="mij-dA-JwL"/>
+                <constraint firstItem="WqT-2g-32z" firstAttribute="trailing" secondItem="tdj-Wv-IZf" secondAttribute="trailing" id="soA-ar-I1Q"/>
+                <constraint firstItem="vUE-Y4-evR" firstAttribute="centerX" secondItem="c6u-V7-iSr" secondAttribute="centerX" id="tUK-TR-Xf1"/>
+                <constraint firstItem="hUc-lt-UW4" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="wIV-kh-Bju"/>
+                <constraint firstItem="c6u-V7-iSr" firstAttribute="top" secondItem="vUE-Y4-evR" secondAttribute="bottom" constant="25" id="wX2-kM-Dmf"/>
+                <constraint firstItem="vH4-gW-hN4" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="yzI-rb-ezl"/>
+                <constraint firstItem="vFG-yu-GEd" firstAttribute="trailing" secondItem="HY2-fe-bUl" secondAttribute="trailing" id="znU-Ld-AiN"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
+            <size key="customSize" width="316" height="248"/>
+            <connections>
+                <outlet property="action_bgView" destination="hUc-lt-UW4" id="Oo9-et-YSk"/>
+                <outlet property="cur_changNameLabel" destination="3uQ-89-ySR" id="cfe-p7-Gv5"/>
+                <outlet property="cur_dianNameLabel" destination="FfO-HD-MXL" id="QX8-4L-VrC"/>
+                <outlet property="cur_nameLabel" destination="vH4-gW-hN4" id="hNv-5d-OyR"/>
+                <outlet property="cur_originNameLabel" destination="hpR-hp-yWY" id="YGy-0j-i3t"/>
+                <outlet property="playBtn" destination="EOJ-bm-Lqp" id="r1J-wA-qKJ"/>
+                <outlet property="pro_allTimeLabel" destination="WqT-2g-32z" id="mR4-MU-AJv"/>
+                <outlet property="pro_curTimeLabel" destination="PrH-2c-ZdJ" id="TCY-do-bKp"/>
+                <outlet property="pro_progressView" destination="tdj-Wv-IZf" id="CNE-Yd-jXW"/>
+                <outlet property="pro_volumLabel" destination="vFG-yu-GEd" id="qYo-3h-JuJ"/>
+                <outlet property="pro_volume" destination="HY2-fe-bUl" id="zC8-Oj-G7v"/>
+            </connections>
+            <point key="canvasLocation" x="132.60869565217394" y="182.14285714285714"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="home_game_music_next" width="20.5" height="18.5"/>
+        <image name="home_game_music_play" width="39" height="39.5"/>
+        <image name="home_game_music_replay" width="23" height="31"/>
+        <image name="liveroom_music_laba" width="17" height="15.5"/>
+        <image name="liveroom_music_luyin" width="14.5" height="19.5"/>
+    </resources>
+</document>

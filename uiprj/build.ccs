@@ -184,6 +184,11 @@
               <File Name="zhuanpan.json" />
               <Image Name="zhuanpan.png" />
             </Folder>
+            <Folder Name="dating_xiangqin">
+              <File Name="dating_majiang.atlas" />
+              <File Name="dating_majiang.json" />
+              <Image Name="dating_majiang.png" />
+            </Folder>
           </Folder>
           <Folder Name="hutype">
             <Folder Name="hua">

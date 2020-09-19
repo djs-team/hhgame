@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CXChatRoomPlayGiftView">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7eY-ek-ASB" customClass="FLAnimatedImageView">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ar6-nE-fS1">
+                    <rect key="frame" x="340" y="44" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="44" id="4Ia-0O-RGC"/>
+                        <constraint firstAttribute="height" constant="44" id="ca6-gh-F8I"/>
+                    </constraints>
+                    <state key="normal" image="LuckyDraw_close"/>
+                    <connections>
+                        <action selector="closeAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="jum-Wi-WuA"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.39377604166666669" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="7eY-ek-ASB" secondAttribute="bottom" id="3nh-9i-YKJ"/>
+                <constraint firstItem="7eY-ek-ASB" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="8nZ-4e-1lF"/>
+                <constraint firstItem="7eY-ek-ASB" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="dU4-vQ-vMH"/>
+                <constraint firstItem="7eY-ek-ASB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="nc1-7U-yCm"/>
+                <constraint firstItem="ar6-nE-fS1" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="ofb-No-IjL"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ar6-nE-fS1" secondAttribute="trailing" constant="30" id="p8E-6c-9qF"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="animatedImageView" destination="7eY-ek-ASB" id="wJi-G2-KCb"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="114.50892857142857"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="LuckyDraw_close" width="27" height="27"/>
+    </resources>
+</document>

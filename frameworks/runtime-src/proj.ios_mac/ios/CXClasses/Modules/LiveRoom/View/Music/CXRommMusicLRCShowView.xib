@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CXRommMusicLRCShowView">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="42"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E4r-u1-bSd">
+                    <rect key="frame" x="16" y="0.0" width="382" height="42"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lGr-9G-X5U">
+                            <rect key="frame" x="2" y="0.5" width="45" height="41"/>
+                            <state key="normal" image="heijiaochangpian"/>
+                            <connections>
+                                <action selector="showFullLRCAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="veq-G0-9hC"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gOm-Im-gW8">
+                            <rect key="frame" x="52" y="5" width="35.5" height="16"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPo-bK-BrC">
+                            <rect key="frame" x="87.5" y="9" width="27" height="12"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ea6-G8-zLi">
+                            <rect key="frame" x="315" y="4" width="65" height="34"/>
+                            <color key="backgroundColor" red="0.93725490199999995" green="0.31764705879999999" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="34" id="Wyz-dE-aN8"/>
+                                <constraint firstAttribute="width" constant="65" id="wny-ju-gd4"/>
+                            </constraints>
+                            <state key="normal" title="+0" image="liveroom_rose"/>
+                            <connections>
+                                <action selector="sendGiftRedRoseAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="oY9-D7-4QG"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LoE-8m-T77">
+                            <rect key="frame" x="52" y="21" width="31" height="14.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" red="0.93725490199999995" green="0.31764705879999999" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="LoE-8m-T77" firstAttribute="top" secondItem="gOm-Im-gW8" secondAttribute="bottom" id="NJi-SK-kNw"/>
+                        <constraint firstAttribute="trailing" secondItem="ea6-G8-zLi" secondAttribute="trailing" constant="2" id="URr-1c-o4k"/>
+                        <constraint firstItem="gOm-Im-gW8" firstAttribute="top" secondItem="E4r-u1-bSd" secondAttribute="top" constant="5" id="brB-3S-yc0"/>
+                        <constraint firstItem="ea6-G8-zLi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="LoE-8m-T77" secondAttribute="trailing" constant="8" id="cBg-yD-bhg"/>
+                        <constraint firstItem="UPo-bK-BrC" firstAttribute="leading" secondItem="gOm-Im-gW8" secondAttribute="trailing" id="dd0-8V-Qae"/>
+                        <constraint firstItem="gOm-Im-gW8" firstAttribute="leading" secondItem="lGr-9G-X5U" secondAttribute="trailing" constant="5" id="gj8-Tx-hbx"/>
+                        <constraint firstItem="UPo-bK-BrC" firstAttribute="bottom" secondItem="gOm-Im-gW8" secondAttribute="bottom" id="oZh-yR-Dhx"/>
+                        <constraint firstItem="lGr-9G-X5U" firstAttribute="centerY" secondItem="E4r-u1-bSd" secondAttribute="centerY" id="rUF-KO-Abi"/>
+                        <constraint firstItem="lGr-9G-X5U" firstAttribute="leading" secondItem="E4r-u1-bSd" secondAttribute="leading" constant="2" id="sLW-2r-YOW"/>
+                        <constraint firstItem="LoE-8m-T77" firstAttribute="leading" secondItem="gOm-Im-gW8" secondAttribute="leading" id="yFn-As-pV1"/>
+                        <constraint firstItem="ea6-G8-zLi" firstAttribute="centerY" secondItem="E4r-u1-bSd" secondAttribute="centerY" id="yG1-LG-eIk"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="E4r-u1-bSd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="6VJ-rZ-p7r"/>
+                <constraint firstItem="E4r-u1-bSd" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="Ekb-ia-dbm"/>
+                <constraint firstItem="E4r-u1-bSd" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" constant="-16" id="caF-ZQ-KpC"/>
+                <constraint firstItem="E4r-u1-bSd" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="fGm-bz-Bbj"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="bgView" destination="E4r-u1-bSd" id="8zA-SQ-fJy"/>
+                <outlet property="lrc_music_lrcLabel" destination="LoE-8m-T77" id="6ha-KD-vQw"/>
+                <outlet property="lrc_music_nameLabel" destination="gOm-Im-gW8" id="upq-aN-O6L"/>
+                <outlet property="lrc_music_roseNumBtn" destination="ea6-G8-zLi" id="tmM-te-u1F"/>
+                <outlet property="lrc_music_songerLabel" destination="UPo-bK-BrC" id="8Yo-JH-uZB"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="-111.83035714285714"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="heijiaochangpian" width="44.5" height="41"/>
+        <image name="liveroom_rose" width="15.5" height="17"/>
+    </resources>
+</document>

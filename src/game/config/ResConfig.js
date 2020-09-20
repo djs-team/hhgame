@@ -83,6 +83,7 @@ load('game/config/ResConfig', function () {
         'MemberLayer': 'game/ui/layer/member/MemberLayer',
         'RoleLayer': 'game/ui/layer/role/RoleLayer',
         'FukaShopLayer': 'game/ui/layer/fukashop/FukaShopLayer',
+        'FeedbackLayer': 'game/ui/layer/feedback/FeedbackLayer',
 
     }
 

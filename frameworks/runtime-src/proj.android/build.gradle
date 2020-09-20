@@ -4,8 +4,8 @@ buildscript {
     ext.kotlin_version = '1.3.50'
     apply from: './versions.gradle'
     repositories {
-        google()
-        jcenter()
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }  // <= here
+        maven { url 'https://maven.aliyun.com/repository/google' }  // <= here
     }
 
     dependencies {
@@ -27,11 +27,9 @@ allprojects {
                     '../lib.faceliveness/libs',
                     '../app+stub/libs',
                     '../advertisement/libs'
-
-
         }
-        google()
-        jcenter()
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }  // <= here
+        maven { url 'https://maven.aliyun.com/repository/google' }  // <= here
         maven { url 'https://jitpack.io' }
         maven { url 'https://dl.bintray.com/umsdk/release' }
     }

@@ -2,11 +2,11 @@ import org.gradle.internal.os.OperatingSystem;
 
 apply plugin: 'com.android.application'
 
-def getReleaseStoreFile(){
-    if("true".equals(IS_JENKINS)){
-        return file("../publish/debugkeystore")
-    }else{
-        return file("../publish/debugkeystore")
+def getReleaseStoreFile() {
+    if ("true".equals(IS_JENKINS)) {
+        return file("../sign/harmonydating.jkse")
+    } else {
+        return file("../sign/harmonydating.jks")
     }
 }
 
@@ -22,8 +22,8 @@ android {
         applicationId "harmony.dating.online.face.ad"
         minSdkVersion PROP_MIN_SDK_VERSION
         targetSdkVersion PROP_TARGET_SDK_VERSION
-        versionCode 1
-        versionName "1.0"
+        versionCode 2001
+        versionName "2.0.1"
         multiDexEnabled true
         javaCompileOptions {
             annotationProcessorOptions {
@@ -50,15 +50,13 @@ android {
                                         project.file("../../../cocos2d-x/cocos").absolutePath,
                                         project.file("../../../cocos2d-x/external").absolutePath]
                     if (OperatingSystem.current().isWindows()) {
-                        module_paths = module_paths.collect {it.replaceAll('\\\\', '/')}
+                        module_paths = module_paths.collect { it.replaceAll('\\\\', '/') }
                         arguments 'NDK_MODULE_PATH=' + module_paths.join(";")
-                    }
-                    else {
+                    } else {
                         arguments 'NDK_MODULE_PATH=' + module_paths.join(':')
                     }
                 }
-            }
-            else if (PROP_BUILD_TYPE == 'cmake') {
+            } else if (PROP_BUILD_TYPE == 'cmake') {
                 cmake {
                     arguments "-DCMAKE_FIND_ROOT_PATH=", "-DANDROID_STL=c++_static", "-DANDROID_TOOLCHAIN=clang", "-DANDROID_ARM_NEON=TRUE"
                     cppFlags "-frtti -fexceptions -fsigned-char"
@@ -67,7 +65,7 @@ android {
         }
         ndk {
             abiFilters = []
-            abiFilters.addAll(PROP_APP_ABI.split(':').collect{it as String})
+            abiFilters.addAll(PROP_APP_ABI.split(':').collect { it as String })
         }
     }
     dataBinding {
@@ -94,8 +92,7 @@ android {
             ndkBuild {
                 path "jni/Android.mk"
             }
-        }
-        else if (PROP_BUILD_TYPE == 'cmake') {
+        } else if (PROP_BUILD_TYPE == 'cmake') {
             cmake {
                 path "../../../../CMakeLists.txt"
             }
@@ -134,8 +131,8 @@ android {
             debuggable false
             jniDebuggable false
             renderscriptDebuggable false
-            minifyEnabled true
-            shrinkResources true
+            minifyEnabled false
+            shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release
 
@@ -163,8 +160,7 @@ android {
 def getCocosCommandPath() {
     if (OperatingSystem.current().isWindows()) {
         return 'cocos.bat'
-    }
-    else {
+    } else {
         // on unix like system, can not get environments variables easily
         // so run a shell script to get environment variable sets by cocos2d-x setup.py
         new ByteArrayOutputStream().withStream { os ->
@@ -193,7 +189,7 @@ def compileJS(srcDir, dstDir) {
         if (OperatingSystem.current().isWindows()) {
             executable 'cocos.bat'
             args compileArgs
-        }else{
+        } else {
             executable 'cocos'
             args compileArgs
         }
@@ -222,7 +218,7 @@ android.applicationVariants.all { variant ->
 
         copy {
             from "${buildDir}/../../../../cocos2d-x/cocos/scripting/js-bindings/script"
-            into  "${buildDir}/intermediates/assets/${variant.dirName}/script"
+            into "${buildDir}/intermediates/assets/${variant.dirName}/script"
         }
 
         copy {
@@ -254,7 +250,7 @@ android.applicationVariants.all { variant ->
 
             outDirectory = BUILD_PATH_LOCAL
             fileName = "${APPNAME}_V${variant.versionName}_${releaseTime()}.apk"
-            output.outputFileName= new File(outDirectory, fileName)
+            output.outputFileName = new File(outDirectory, fileName)
         }
     }
 

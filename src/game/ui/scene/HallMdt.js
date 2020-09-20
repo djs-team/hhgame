@@ -1,4 +1,3 @@
-
 /**
  *  HallScene Mediator
  *
@@ -10,7 +9,7 @@ load('game/ui/scene/HallMdt', function () {
     let HallMdt = Mediator.extend({
         mediatorName: 'HallMdt',
         ctor: function (view) {
-            this._super(this.mediatorName,view)
+            this._super(this.mediatorName, view)
         },
         getNotificationList: function () {
             return [
@@ -19,6 +18,8 @@ load('game/ui/scene/HallMdt', function () {
                 GameEvent.UPDATE_USERNAME,
                 GameEvent.GET_CASHCOWNUM,
                 GameEvent.UPDATE_PROPSYNC,
+                GameEvent.UPDATE_USERPHOTO,
+
             ]
         },
         handleNotification: function (notification) {
@@ -29,7 +30,7 @@ load('game/ui/scene/HallMdt', function () {
                     this.view.remoteConfigFinish_local(body)
                     break
                 case GameEvent.USERDATA:
-                   this.view.onUpdateUserData(body)
+                    this.view.onUpdateUserData(body)
                     break
                 case GameEvent.UPDATE_USERNAME:
                     this.view.onUpdateUserData(body)
@@ -38,6 +39,10 @@ load('game/ui/scene/HallMdt', function () {
                     this.view.onGoCashCowLayer()
                     break
                 case GameEvent.UPDATE_PROPSYNC:
+                    this.view.onUpdateUserData(body)
+                    break
+                case GameEvent.UPDATE_USERPHOTO:
+                    cc.log("----------收到UPDATE_USERPHOTO事件")
                     this.view.onUpdateUserData(body)
                     break
             }

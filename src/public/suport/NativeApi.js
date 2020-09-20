@@ -27,7 +27,7 @@ load('public/suport/NativeApi', function () {
                 console.log('虽然我挂掉了,但是我还是坚持打印了了log: ' + String(message))
             }
         },
-        thirdPay: function (type,message) {
+        thirdPay: function (type, message) {
             try {
                 if (cc.sys.OS_ANDROID === cc.sys.os) {
                     console.log('thirdPay-start')
@@ -399,6 +399,48 @@ load('public/suport/NativeApi', function () {
                 }
             } catch (e) {
                 NativeApi.HelloOC('UploadFile throw: ' + JSON.stringify(e))
+            }
+        },
+        //跳转相亲视频
+        jumpToBlindDate: function () {
+            try {
+                if (cc.sys.OS_ANDROID === cc.sys.os) {
+                    let userInfo = {};
+                    userInfo.nickname = appInstance.dataManager().getUserData().pname
+                    userInfo.uid = appInstance.dataManager().getUserData().pid
+                    userInfo.token = appInstance.dataManager().getUserData().key
+                    jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'jumpToBlindDate', '(Ljava/lang/String;)V', JSON.stringify(userInfo))
+                } else if (cc.sys.OS_IOS === cc.sys.os) {
+
+                }
+            } catch (e) {
+                NativeApi.HelloOC('UploadFile throw: ' + JSON.stringify(e))
+            }
+        },
+        //分享图片------  WEIXIN, 微信  WEIXIN_CIRCLE 微信朋友圈
+        shareImage: function (platform, imgPath) {
+            try {
+                if (cc.sys.OS_ANDROID === cc.sys.os) {
+
+                    jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'shareImage', '(Ljava/lang/String;Ljava/lang/String;)V', platform, imgPath)
+                } else if (cc.sys.OS_IOS === cc.sys.os) {
+
+                }
+            } catch (e) {
+                NativeApi.HelloOC('shareImage throw: ' + JSON.stringify(e))
+            }
+        },
+        //分享文章------  WEIXIN, 微信  WEIXIN_CIRCLE 微信朋友圈
+        shareArticle: function (platform, title, description, url, thumbUrl) {
+            try {
+                if (cc.sys.OS_ANDROID === cc.sys.os) {
+
+                    jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'shareArticle', '(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V', platform, title, description, url, thumbUrl)
+                } else if (cc.sys.OS_IOS === cc.sys.os) {
+
+                }
+            } catch (e) {
+                NativeApi.HelloOC('shareImage throw: ' + JSON.stringify(e))
             }
         }
     })

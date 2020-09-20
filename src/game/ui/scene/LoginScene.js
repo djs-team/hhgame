@@ -60,7 +60,10 @@ load('game/ui/scene/LoginScene', function () {
                 this.debugLogin()
             } else {
                 appInstance.nativeApi().wxLogin()
+                // appInstance.nativeApi().shareImage("WEIXIN", "https://dss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1812993978,4158651947&fm=26&gp=0.jpg")
+                // appInstance.nativeApi().shareArticle("WEIXIN", "title", "desc", "http://www.baidu.com", "https://dss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1812993978,4158651947&fm=26&gp=0.jpg")
             }
+
         },
 
         doPhoto: function () {

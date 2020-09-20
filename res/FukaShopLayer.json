@@ -8046,11 +8046,6 @@
                       "G": 65,
                       "B": 70
                     },
-                    "DisabledFileData": {
-                      "Type": "Default",
-                      "Path": "Default/Button_Disable.png",
-                      "Plist": ""
-                    },
                     "NormalFileData": {
                       "Type": "Normal",
                       "Path": "fukashop/fk_23.png",

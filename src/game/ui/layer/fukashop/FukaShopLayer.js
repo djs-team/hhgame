@@ -85,7 +85,8 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 'commonPnl/robLogBtnPnl' : { onClicked: this.onGetRobLogClick},
 
 
-                'popupPnl' : { onClicked: this.onClosePopupPnlClick},
+               // 'popupPnl' : { onClicked: this.onClosePopupPnlClick},
+                'popupPnl' : { },
                 'popupPnl/titlePnl' : {},
                 'popupPnl/contextPnl' : {},
                 'popupPnl/btnsPnl' : {},
@@ -324,7 +325,6 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
         },
 
         initRollImgList: function (data) {
-            cc.log('=======initRollImgList=====' + JSON.stringify(data))
             for(let i = 0; i < data.length; i++){
                 let cell = this.imgPageCell.clone()
                 cell.setVisible(true)
@@ -506,8 +506,6 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 this[listViewName].removeAllChildren()
 
             let rowNum = Math.ceil(data.length / rowLength)
-            cc.log('======rowNum===========' + rowNum)
-            cc.log('======rowLength===========' + rowLength)
             for(let i = 0; i < rowNum; i++){
 
                 let goodsPnl = this[listPnlName].clone()
@@ -666,6 +664,8 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
 
             if(msg.rightBtnFunction){
                 this.btnsPnl.getChildByName('rightBtn').setVisible(true)
+                this.btnsPnl.getChildByName('rightBtn').setEnabled(true)
+                this.btnsPnl.getChildByName('rightBtn').setBright(true)
                 this.btnsPnl.getChildByName('rightBtn').addClickEventListener(function (sender,dt) {
                     msg.rightBtnFunction()
                     sender.setEnabled(false)

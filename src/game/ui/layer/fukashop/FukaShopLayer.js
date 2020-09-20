@@ -315,12 +315,14 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
         },
 
         initRollImgList: function (data) {
+            cc.log('=======initRollImgList=====' + JSON.stringify(data))
             for(let i = 0; i < data.length; i++){
                 let cell = this.imgPageCell.clone()
                 cell.setVisible(true)
                 this.imgPageView.pushBackCustomItem(cell)
                 let size = cell.getContentSize()
                 let url = 'http://p3.itc.cn/q_70/images03/20200911/b7c565cbc87848538cace549fb609e7b.jpeg'
+                // url = data[i].hallPictureUrl
                 cc.loader.loadImg(url, { isCrossOrigin: false },function(err,texture){
                     if (!err && texture) {
                         let sp = new cc.Sprite(texture)
@@ -490,6 +492,8 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 this[listViewName].removeAllChildren()
 
             let rowNum = Math.ceil(data.length / rowLength)
+            cc.log('======rowNum===========' + rowNum)
+            cc.log('======rowLength===========' + rowLength)
             for(let i = 0; i < rowNum; i++){
 
                 let goodsPnl = this[listPnlName].clone()
@@ -513,8 +517,8 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 return
             let cell = this[cellName].clone()
             cell.setVisible(true)
-            cell.setPositionX(0)
-            cell.setPositionY((index % rowLength) * cellInterval)
+            cell.setPositionY(0)
+            cell.setPositionX((index % rowLength) * cellInterval)
             goodsPnl.addChild(cell)
 
             cell.getChildByName(fuKaNumName).setString(goodsData.fuKaNums+'福卡')

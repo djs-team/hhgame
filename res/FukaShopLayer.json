@@ -159,7 +159,7 @@
               "X": 1.0,
               "Y": 1.0
             },
-            "UserData": "{\"layoutType\":\"maxArea\",\"screenAlign\":\"left\"}",
+            "UserData": "{\"layoutType\":\"showAll\",\"screenAlign\":\"left\"}",
             "Tag": 419,
             "Children": [
               {
@@ -1892,61 +1892,6 @@
             "Tag": 261,
             "Children": [
               {
-                "DirectionType": "Vertical",
-                "IsBounceEnabled": true,
-                "ScrollDirectionType": 0,
-                "ClipAble": true,
-                "BackColorAlpha": 102,
-                "SingleColor": {
-                  "R": 150,
-                  "G": 150
-                },
-                "FirstColor": {
-                  "R": 150,
-                  "G": 150
-                },
-                "EndColor": {},
-                "ColorVector": {
-                  "ScaleY": 1.0
-                },
-                "Scale9Width": 1,
-                "Scale9Height": 1,
-                "TouchEnable": true,
-                "AnchorPoint": {},
-                "Position": {
-                  "X": 125.4968,
-                  "Y": 29.358
-                },
-                "Scale": {
-                  "ScaleX": 1.0,
-                  "ScaleY": 1.0
-                },
-                "RotationSkewX": 90.0,
-                "RotationSkewY": 270.0,
-                "CColor": {},
-                "IconVisible": false,
-                "PrePosition": {
-                  "X": 0.098,
-                  "Y": 0.0408
-                },
-                "PreSize": {
-                  "X": 0.5211,
-                  "Y": 1.6014
-                },
-                "LeftMargin": 125.4968,
-                "RightMargin": 487.5032,
-                "TopMargin": -462.358,
-                "BottomMargin": 29.358,
-                "Tag": 262,
-                "ActionTag": -591055158,
-                "Size": {
-                  "X": 667.0,
-                  "Y": 1153.0
-                },
-                "Name": "exangeListView",
-                "ctype": "ListViewObjectData"
-              },
-              {
                 "ClipAble": false,
                 "BackColorAlpha": 102,
                 "SingleColor": {
@@ -1966,8 +1911,8 @@
                 "TouchEnable": true,
                 "AnchorPoint": {},
                 "Position": {
-                  "X": 129.8112,
-                  "Y": 29.5176
+                  "X": 0.0,
+                  "Y": 957.0
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -1976,17 +1921,16 @@
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.1014,
-                  "Y": 0.041
+                  "X": 0.0,
+                  "Y": 1.3292
                 },
                 "PreSize": {
-                  "X": 0.2117,
-                  "Y": 0.2722
+                  "X": 0.1641,
+                  "Y": 0.3819
                 },
-                "LeftMargin": 129.8112,
-                "RightMargin": 879.1888,
-                "TopMargin": 494.4824,
-                "BottomMargin": 29.5176,
+                "RightMargin": 1070.0,
+                "TopMargin": -512.0,
+                "BottomMargin": 957.0,
                 "Tag": 264,
                 "Children": [
                   {
@@ -2004,8 +1948,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 136.9686,
-                      "Y": 104.0023
+                      "X": 105.0,
+                      "Y": 137.5
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -2013,23 +1957,25 @@
                     },
                     "CColor": {},
                     "IconVisible": false,
+                    "PositionPercentXEnabled": true,
+                    "PositionPercentYEnabled": true,
                     "PrePosition": {
-                      "X": 0.5054,
-                      "Y": 0.5306
+                      "X": 0.5,
+                      "Y": 0.5
                     },
+                    "PercentWidthEnable": true,
+                    "PercentHeightEnable": true,
+                    "PercentWidthEnabled": true,
+                    "PercentHeightEnabled": true,
                     "PreSize": {
                       "X": 1.0,
-                      "Y": 0.9949
+                      "Y": 1.0
                     },
-                    "LeftMargin": 1.4686,
-                    "RightMargin": -1.4686,
-                    "TopMargin": -5.5023,
-                    "BottomMargin": 6.5023,
                     "Tag": 265,
                     "ActionTag": 270339092,
                     "Size": {
-                      "X": 271.0,
-                      "Y": 195.0
+                      "X": 210.0,
+                      "Y": 275.0
                     },
                     "Name": "Image_49",
                     "ctype": "ImageViewObjectData"
@@ -2059,16 +2005,16 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.412,
-                      "Y": 0.5067
+                      "X": 0.5316,
+                      "Y": 0.3611
                     },
                     "PreSize": {
-                      "X": 0.1697,
-                      "Y": 0.2347
+                      "X": 0.219,
+                      "Y": 0.1673
                     },
                     "LeftMargin": 88.6387,
-                    "RightMargin": 136.3613,
-                    "TopMargin": 73.6892,
+                    "RightMargin": 75.3613,
+                    "TopMargin": 152.6892,
                     "BottomMargin": 76.3108,
                     "Tag": 266,
                     "ActionTag": 1996922512,
@@ -2100,15 +2046,13 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 248.735,
-                      "Y": 99.9541
+                      "X": 101.0264,
+                      "Y": 15.4742
                     },
                     "Scale": {
                       "ScaleX": 1.0,
                       "ScaleY": 1.0
                     },
-                    "RotationSkewX": -90.0,
-                    "RotationSkewY": -90.0,
                     "CColor": {
                       "R": 217,
                       "G": 63,
@@ -2116,17 +2060,17 @@
                     },
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.9178,
-                      "Y": 0.51
+                      "X": 0.4811,
+                      "Y": 0.0563
                     },
                     "PreSize": {
-                      "X": 0.3321,
-                      "Y": 0.102
+                      "X": 0.4286,
+                      "Y": 0.0727
                     },
-                    "LeftMargin": 203.735,
-                    "RightMargin": -22.735,
-                    "TopMargin": 86.0459,
-                    "BottomMargin": 89.9541,
+                    "LeftMargin": 56.0264,
+                    "RightMargin": 63.9736,
+                    "TopMargin": 249.5258,
+                    "BottomMargin": 5.4742,
                     "Tag": 267,
                     "ActionTag": -612534318,
                     "Size": {
@@ -2139,11 +2083,66 @@
                 ],
                 "ActionTag": -1747837071,
                 "Size": {
-                  "X": 271.0,
-                  "Y": 196.0
+                  "X": 210.0,
+                  "Y": 275.0
                 },
                 "Name": "exangeGoodsCell",
                 "ctype": "PanelObjectData"
+              },
+              {
+                "DirectionType": "Vertical",
+                "IsBounceEnabled": true,
+                "ScrollDirectionType": 0,
+                "ClipAble": true,
+                "BackColorAlpha": 102,
+                "SingleColor": {
+                  "R": 150,
+                  "G": 150
+                },
+                "FirstColor": {
+                  "R": 150,
+                  "G": 150
+                },
+                "EndColor": {},
+                "ColorVector": {
+                  "ScaleY": 1.0
+                },
+                "Scale9Width": 1,
+                "Scale9Height": 1,
+                "TouchEnable": true,
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 1265.5319,
+                  "Y": 24.7882
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "RotationSkewX": -90.0,
+                "RotationSkewY": -90.0,
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.9887,
+                  "Y": 0.0344
+                },
+                "PreSize": {
+                  "X": 0.5211,
+                  "Y": 1.6014
+                },
+                "LeftMargin": 1265.5319,
+                "RightMargin": -652.5319,
+                "TopMargin": -457.7882,
+                "BottomMargin": 24.7882,
+                "Tag": 262,
+                "ActionTag": -591055158,
+                "Size": {
+                  "X": 667.0,
+                  "Y": 1153.0
+                },
+                "Name": "exangeListView",
+                "ctype": "ListViewObjectData"
               },
               {
                 "ClipAble": false,
@@ -2164,8 +2163,8 @@
                 "Scale9Height": 1,
                 "AnchorPoint": {},
                 "Position": {
-                  "X": 132.1528,
-                  "Y": 35.4559
+                  "X": -536.8726,
+                  "Y": 878.0527
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -2174,22 +2173,22 @@
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.1032,
-                  "Y": 0.0492
+                  "X": -0.4194,
+                  "Y": 1.2195
                 },
                 "PreSize": {
-                  "X": 0.2156,
-                  "Y": 0.9125
+                  "X": 0.5133,
+                  "Y": 0.3833
                 },
-                "LeftMargin": 132.1528,
-                "RightMargin": 871.8472,
-                "TopMargin": 27.5441,
-                "BottomMargin": 35.4559,
+                "LeftMargin": -536.8726,
+                "RightMargin": 1159.8726,
+                "TopMargin": -434.0527,
+                "BottomMargin": 878.0527,
                 "Tag": 164,
                 "ActionTag": -1555156440,
                 "Size": {
-                  "X": 276.0,
-                  "Y": 657.0
+                  "X": 657.0,
+                  "Y": 276.0
                 },
                 "Name": "exchangeListPnl",
                 "ctype": "PanelObjectData"
@@ -2471,8 +2470,6 @@
                       "ScaleX": 1.0,
                       "ScaleY": 1.0
                     },
-                    "RotationSkewX": -90.0,
-                    "RotationSkewY": -270.0,
                     "CColor": {
                       "R": 92,
                       "G": 93,
@@ -2572,8 +2569,6 @@
                           "ScaleX": 1.0,
                           "ScaleY": 1.0
                         },
-                        "RotationSkewX": -90.0,
-                        "RotationSkewY": -270.0,
                         "CColor": {
                           "R": 224,
                           "G": 82,
@@ -2765,8 +2760,6 @@
                       "ScaleX": 1.0,
                       "ScaleY": 1.0
                     },
-                    "RotationSkewX": 90.0,
-                    "RotationSkewY": 90.0,
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
@@ -2818,8 +2811,6 @@
                       "ScaleX": 1.0,
                       "ScaleY": 1.0
                     },
-                    "RotationSkewX": -90.0,
-                    "RotationSkewY": -90.0,
                     "CColor": {},
                     "IconVisible": false,
                     "PositionPercentXEnabled": true,
@@ -2873,8 +2864,6 @@
                       "ScaleX": 1.0,
                       "ScaleY": 1.0
                     },
-                    "RotationSkewX": -90.0,
-                    "RotationSkewY": -270.0,
                     "CColor": {
                       "R": 0,
                       "G": 0,
@@ -2988,8 +2977,6 @@
                           "ScaleX": 1.0,
                           "ScaleY": 1.0
                         },
-                        "RotationSkewX": -90.0,
-                        "RotationSkewY": -270.0,
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {

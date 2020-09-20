@@ -725,23 +725,23 @@
                             <PreSize X="0.0000" Y="0.0000" />
                             <FileData Type="Normal" Path="turntable/zphd_7.png" Plist="" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="goods2" ActionTag="509886360" Tag="346" RotationSkewX="35.9998" RotationSkewY="36.0001" IconVisible="False" LeftMargin="61.3340" RightMargin="-133.3340" TopMargin="-162.5211" BottomMargin="113.5211" LeftEage="23" RightEage="23" TopEage="16" BottomEage="16" Scale9OriginX="23" Scale9OriginY="16" Scale9Width="26" Scale9Height="17" ctype="ImageViewObjectData">
+                          <AbstractNodeData Name="goods2" ActionTag="1007315316" Tag="380" RotationSkewX="35.9998" RotationSkewY="36.0001" IconVisible="False" LeftMargin="62.0438" RightMargin="-134.0438" TopMargin="-166.0128" BottomMargin="117.0128" LeftEage="23" RightEage="23" TopEage="16" BottomEage="16" Scale9OriginX="23" Scale9OriginY="16" Scale9Width="26" Scale9Height="17" ctype="ImageViewObjectData">
                             <Size X="72.0000" Y="49.0000" />
                             <Children>
-                              <AbstractNodeData Name="name" ActionTag="-1641488603" Tag="347" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="16.0000" RightMargin="16.0000" TopMargin="-31.0000" BottomMargin="60.0000" FontSize="20" LabelText="钻石" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                                <Size X="40.0000" Y="20.0000" />
+                              <AbstractNodeData Name="name" ActionTag="-518596438" Tag="381" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="11.0000" RightMargin="11.0000" TopMargin="-31.0000" BottomMargin="60.0000" FontSize="20" LabelText="钻石2" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                                <Size X="50.0000" Y="20.0000" />
                                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                                 <Position X="36.0000" Y="70.0000" />
                                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                                 <CColor A="255" R="255" G="255" B="255" />
                                 <PrePosition X="0.5000" Y="1.4286" />
-                                <PreSize X="0.5556" Y="0.4082" />
+                                <PreSize X="0.6944" Y="0.4082" />
                                 <OutlineColor A="255" R="255" G="0" B="0" />
                                 <ShadowColor A="255" R="110" G="110" B="110" />
                               </AbstractNodeData>
                             </Children>
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="97.3340" Y="138.0211" />
+                            <Position X="98.0438" Y="141.5128" />
                             <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="255" G="255" B="255" />
                             <PrePosition />

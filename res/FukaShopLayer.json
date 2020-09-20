@@ -17,7 +17,11 @@
           {
             "ClipAble": false,
             "ComboBoxIndex": 1,
-            "SingleColor": {},
+            "SingleColor": {
+              "R": 230,
+              "G": 230,
+              "B": 250
+            },
             "FirstColor": {
               "R": 150,
               "G": 200
@@ -89,8 +93,6 @@
               "ScaleX": 1.0,
               "ScaleY": 1.0
             },
-            "RotationSkewX": -90.0,
-            "RotationSkewY": -90.0,
             "CColor": {},
             "IconVisible": false,
             "PositionPercentXEnabled": true,
@@ -120,7 +122,6 @@
           {
             "ClipAble": false,
             "BackColorAlpha": 237,
-            "ComboBoxIndex": 1,
             "SingleColor": {},
             "FirstColor": {
               "R": 150,
@@ -1647,48 +1648,52 @@
                     "Scale9Width": 1,
                     "Scale9Height": 1,
                     "TouchEnable": true,
-                    "AnchorPoint": {},
+                    "AnchorPoint": {
+                      "ScaleY": 1.0
+                    },
                     "Position": {
-                      "X": 702.4927,
-                      "Y": 53.76
+                      "X": 705.6438,
+                      "Y": 59.9776
                     },
                     "Scale": {
                       "ScaleX": 1.0,
                       "ScaleY": 1.0
                     },
+                    "RotationSkewX": -90.0,
+                    "RotationSkewY": -90.0,
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.5488,
-                      "Y": 0.0747
+                      "X": 0.5513,
+                      "Y": 0.0833
                     },
                     "PreSize": {
-                      "X": 0.2117,
-                      "Y": 0.2722
+                      "X": 0.1602,
+                      "Y": 0.3847
                     },
-                    "LeftMargin": 702.4927,
-                    "RightMargin": 306.5073,
-                    "TopMargin": 470.24,
-                    "BottomMargin": 53.76,
+                    "LeftMargin": 705.6438,
+                    "RightMargin": 369.3562,
+                    "TopMargin": 660.0224,
+                    "BottomMargin": -217.0224,
                     "Tag": 415,
                     "Children": [
                       {
                         "FileData": {
                           "Type": "Normal",
-                          "Path": "fukashop/fk_22.png",
+                          "Path": "fukashop/fk_22_zheng.png",
                           "Plist": ""
                         },
                         "Scale9OriginX": 13,
                         "Scale9OriginY": 8,
-                        "Scale9Width": 245,
-                        "Scale9Height": 179,
+                        "Scale9Width": 169,
+                        "Scale9Height": 256,
                         "AnchorPoint": {
                           "ScaleX": 0.5,
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 136.9686,
-                          "Y": 104.0023
+                          "X": 102.0107,
+                          "Y": 138.9633
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -1697,22 +1702,22 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 0.5054,
-                          "Y": 0.5306
+                          "X": 0.4976,
+                          "Y": 0.5017
                         },
                         "PreSize": {
-                          "X": 1.0,
-                          "Y": 0.9949
+                          "X": 0.9512,
+                          "Y": 0.9819
                         },
-                        "LeftMargin": 1.4686,
-                        "RightMargin": -1.4686,
-                        "TopMargin": -5.5023,
-                        "BottomMargin": 6.5023,
+                        "LeftMargin": 4.5107,
+                        "RightMargin": 5.4893,
+                        "TopMargin": 2.0367,
+                        "BottomMargin": 2.9633,
                         "Tag": 416,
                         "ActionTag": 407769184,
                         "Size": {
-                          "X": 271.0,
-                          "Y": 195.0
+                          "X": 195.0,
+                          "Y": 272.0
                         },
                         "Name": "Image_49",
                         "ctype": "ImageViewObjectData"
@@ -1742,16 +1747,16 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 0.412,
-                          "Y": 0.5067
+                          "X": 0.5446,
+                          "Y": 0.3585
                         },
                         "PreSize": {
-                          "X": 0.1697,
-                          "Y": 0.2347
+                          "X": 0.2244,
+                          "Y": 0.1661
                         },
                         "LeftMargin": 88.6387,
-                        "RightMargin": 136.3613,
-                        "TopMargin": 73.6892,
+                        "RightMargin": 70.3613,
+                        "TopMargin": 154.6892,
                         "BottomMargin": 76.3108,
                         "Tag": 417,
                         "ActionTag": 966345457,
@@ -1781,33 +1786,33 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 235.4565,
-                          "Y": 103.6926
+                          "X": 99.63,
+                          "Y": 35.0959
                         },
                         "Scale": {
                           "ScaleX": 1.0,
                           "ScaleY": 1.0
                         },
-                        "RotationSkewX": -90.0,
-                        "RotationSkewY": -90.0,
                         "CColor": {
                           "R": 217,
                           "G": 63,
                           "B": 74
                         },
                         "IconVisible": false,
+                        "PositionPercentXEnabled": true,
+                        "PositionPercentYEnabled": true,
                         "PrePosition": {
-                          "X": 0.8688,
-                          "Y": 0.529
+                          "X": 0.486,
+                          "Y": 0.1267
                         },
                         "PreSize": {
-                          "X": 0.3321,
-                          "Y": 0.102
+                          "X": 0.439,
+                          "Y": 0.0722
                         },
-                        "LeftMargin": 190.4565,
-                        "RightMargin": -9.4565,
-                        "TopMargin": 82.3074,
-                        "BottomMargin": 93.6926,
+                        "LeftMargin": 54.63,
+                        "RightMargin": 60.37,
+                        "TopMargin": 231.9041,
+                        "BottomMargin": 25.0959,
                         "Tag": 418,
                         "ActionTag": -41807370,
                         "Size": {
@@ -1820,8 +1825,8 @@
                     ],
                     "ActionTag": -1345910195,
                     "Size": {
-                      "X": 271.0,
-                      "Y": 196.0
+                      "X": 205.0,
+                      "Y": 277.0
                     },
                     "Name": "goodsCell",
                     "ctype": "PanelObjectData"
@@ -1909,40 +1914,45 @@
                 "Scale9Width": 1,
                 "Scale9Height": 1,
                 "TouchEnable": true,
-                "AnchorPoint": {},
+                "AnchorPoint": {
+                  "ScaleY": 1.0
+                },
                 "Position": {
-                  "X": 0.0,
-                  "Y": 957.0
+                  "X": 177.3297,
+                  "Y": 229.4287
                 },
                 "Scale": {
                   "ScaleX": 1.0,
                   "ScaleY": 1.0
                 },
+                "RotationSkewX": -90.0,
+                "RotationSkewY": -90.0,
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.0,
-                  "Y": 1.3292
+                  "X": 0.1385,
+                  "Y": 0.3187
                 },
                 "PreSize": {
                   "X": 0.1641,
                   "Y": 0.3819
                 },
-                "RightMargin": 1070.0,
-                "TopMargin": -512.0,
-                "BottomMargin": 957.0,
+                "LeftMargin": 177.3297,
+                "RightMargin": 892.6703,
+                "TopMargin": 490.5713,
+                "BottomMargin": -45.5713,
                 "Tag": 264,
                 "Children": [
                   {
                     "FileData": {
                       "Type": "Normal",
-                      "Path": "fukashop/fk_22.png",
+                      "Path": "fukashop/fk_22_zheng.png",
                       "Plist": ""
                     },
                     "Scale9OriginX": 13,
                     "Scale9OriginY": 8,
-                    "Scale9Width": 245,
-                    "Scale9Height": 179,
+                    "Scale9Width": 169,
+                    "Scale9Height": 256,
                     "AnchorPoint": {
                       "ScaleX": 0.5,
                       "ScaleY": 0.5
@@ -1968,14 +1978,18 @@
                     "PercentWidthEnabled": true,
                     "PercentHeightEnabled": true,
                     "PreSize": {
-                      "X": 1.0,
-                      "Y": 1.0
+                      "X": 0.9286,
+                      "Y": 0.9891
                     },
+                    "LeftMargin": 7.497,
+                    "RightMargin": 7.497,
+                    "TopMargin": 1.4987,
+                    "BottomMargin": 1.4987,
                     "Tag": 265,
                     "ActionTag": 270339092,
                     "Size": {
-                      "X": 210.0,
-                      "Y": 275.0
+                      "X": 195.006,
+                      "Y": 272.0025
                     },
                     "Name": "Image_49",
                     "ctype": "ImageViewObjectData"
@@ -2090,7 +2104,6 @@
                 "ctype": "PanelObjectData"
               },
               {
-                "DirectionType": "Vertical",
                 "IsBounceEnabled": true,
                 "ScrollDirectionType": 0,
                 "ClipAble": true,
@@ -2112,34 +2125,32 @@
                 "TouchEnable": true,
                 "AnchorPoint": {},
                 "Position": {
-                  "X": 1265.5319,
-                  "Y": 24.7882
+                  "X": 128.2953,
+                  "Y": 18.3839
                 },
                 "Scale": {
                   "ScaleX": 1.0,
                   "ScaleY": 1.0
                 },
-                "RotationSkewX": -90.0,
-                "RotationSkewY": -90.0,
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.9887,
-                  "Y": 0.0344
+                  "X": 0.1002,
+                  "Y": 0.0255
                 },
                 "PreSize": {
-                  "X": 0.5211,
-                  "Y": 1.6014
+                  "X": 0.8953,
+                  "Y": 0.9431
                 },
-                "LeftMargin": 1265.5319,
-                "RightMargin": -652.5319,
-                "TopMargin": -457.7882,
-                "BottomMargin": 24.7882,
+                "LeftMargin": 128.2953,
+                "RightMargin": 5.7047,
+                "TopMargin": 22.6161,
+                "BottomMargin": 18.3839,
                 "Tag": 262,
                 "ActionTag": -591055158,
                 "Size": {
-                  "X": 667.0,
-                  "Y": 1153.0
+                  "X": 1146.0,
+                  "Y": 679.0
                 },
                 "Name": "exangeListView",
                 "ctype": "ListViewObjectData"
@@ -2163,8 +2174,8 @@
                 "Scale9Height": 1,
                 "AnchorPoint": {},
                 "Position": {
-                  "X": -536.8726,
-                  "Y": 878.0527
+                  "X": 132.713,
+                  "Y": 25.1593
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -2173,22 +2184,22 @@
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": -0.4194,
-                  "Y": 1.2195
+                  "X": 0.1037,
+                  "Y": 0.0349
                 },
                 "PreSize": {
-                  "X": 0.5133,
-                  "Y": 0.3833
+                  "X": 0.2242,
+                  "Y": 0.9417
                 },
-                "LeftMargin": -536.8726,
-                "RightMargin": 1159.8726,
-                "TopMargin": -434.0527,
-                "BottomMargin": 878.0527,
+                "LeftMargin": 132.713,
+                "RightMargin": 860.287,
+                "TopMargin": 16.8407,
+                "BottomMargin": 25.1593,
                 "Tag": 164,
                 "ActionTag": -1555156440,
                 "Size": {
-                  "X": 657.0,
-                  "Y": 276.0
+                  "X": 287.0,
+                  "Y": 678.0
                 },
                 "Name": "exchangeListPnl",
                 "ctype": "PanelObjectData"
@@ -2271,36 +2282,33 @@
                 "TouchEnable": true,
                 "AnchorPoint": {},
                 "Position": {
-                  "X": 1279.8306,
-                  "Y": 653.4114
+                  "X": 95.9633,
+                  "Y": 62.7459
                 },
                 "Scale": {
                   "ScaleX": 1.0,
                   "ScaleY": 1.0
                 },
-                "RotationSkewX": 180.0,
-                "RotationSkewY": 180.0,
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.9999,
-                  "Y": 0.9075
+                  "X": 0.075,
+                  "Y": 0.0871
                 },
                 "PreSize": {
                   "X": 0.9273,
-                  "Y": 0.8542
+                  "Y": 0.8528
                 },
-                "LeftMargin": 1279.8306,
-                "RightMargin": -1186.8306,
-                "TopMargin": -548.4114,
-                "BottomMargin": 653.4114,
+                "LeftMargin": 95.9633,
+                "RightMargin": -2.9633,
+                "TopMargin": 43.2541,
+                "BottomMargin": 62.7459,
                 "Tag": 270,
                 "ActionTag": 224986441,
                 "Size": {
                   "X": 1187.0,
-                  "Y": 615.0
+                  "Y": 614.0
                 },
-                "Alpha": 83,
                 "Name": "robListView",
                 "ctype": "ListViewObjectData"
               },
@@ -2371,49 +2379,53 @@
                 "Scale9Width": 1,
                 "Scale9Height": 1,
                 "TouchEnable": true,
-                "AnchorPoint": {},
+                "AnchorPoint": {
+                  "ScaleY": 1.0
+                },
                 "Position": {
-                  "X": 103.61,
-                  "Y": 338.3046
+                  "X": 202.3854,
+                  "Y": -66.6382
                 },
                 "Scale": {
                   "ScaleX": 1.0,
                   "ScaleY": 1.0
                 },
+                "RotationSkewX": -90.0,
+                "RotationSkewY": -90.0,
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.0809,
-                  "Y": 0.4699
+                  "X": 0.1581,
+                  "Y": -0.0926
                 },
                 "PreSize": {
-                  "X": 0.3648,
-                  "Y": 0.3639
+                  "X": 0.207,
+                  "Y": 0.6486
                 },
-                "LeftMargin": 103.61,
-                "RightMargin": 709.39,
-                "TopMargin": 119.6954,
-                "BottomMargin": 338.3046,
+                "LeftMargin": 202.3854,
+                "RightMargin": 812.6146,
+                "TopMargin": 786.6382,
+                "BottomMargin": -533.6382,
                 "Tag": 272,
                 "Children": [
                   {
                     "FileData": {
                       "Type": "Normal",
-                      "Path": "fukashop/fk_35.png",
+                      "Path": "fukashop/fk_35_z.png",
                       "Plist": ""
                     },
                     "Scale9Enable": true,
-                    "Scale9OriginX": 89,
-                    "Scale9OriginY": 45,
-                    "Scale9Width": 4,
-                    "Scale9Height": 7,
+                    "Scale9OriginX": 29,
+                    "Scale9OriginY": 81,
+                    "Scale9Width": 31,
+                    "Scale9Height": 12,
                     "AnchorPoint": {
                       "ScaleX": 0.5,
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 183.68,
-                      "Y": 129.19
+                      "X": 131.9847,
+                      "Y": 282.43
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -2422,22 +2434,22 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.3933,
-                      "Y": 0.4931
+                      "X": 0.4981,
+                      "Y": 0.6048
                     },
                     "PreSize": {
-                      "X": 0.803,
-                      "Y": 0.958
+                      "X": 0.9811,
+                      "Y": 0.773
                     },
-                    "LeftMargin": -3.82,
-                    "RightMargin": 95.82,
-                    "TopMargin": 7.31,
-                    "BottomMargin": 3.69,
+                    "LeftMargin": 1.9847,
+                    "RightMargin": 3.0153,
+                    "TopMargin": 4.07,
+                    "BottomMargin": 101.93,
                     "Tag": 273,
                     "ActionTag": -1862180994,
                     "Size": {
-                      "X": 375.0,
-                      "Y": 251.0
+                      "X": 260.0,
+                      "Y": 361.0
                     },
                     "Name": "Image_49",
                     "ctype": "ImageViewObjectData"
@@ -2463,8 +2475,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 18.1279,
-                      "Y": 129.4846
+                      "X": 132.5501,
+                      "Y": 440.53
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -2477,17 +2489,17 @@
                     },
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.0388,
-                      "Y": 0.4942
+                      "X": 0.5002,
+                      "Y": 0.9433
                     },
                     "PreSize": {
-                      "X": 0.4625,
-                      "Y": 0.0916
+                      "X": 0.8151,
+                      "Y": 0.0514
                     },
-                    "LeftMargin": -89.8721,
-                    "RightMargin": 340.8721,
-                    "TopMargin": 120.5154,
-                    "BottomMargin": 117.4846,
+                    "LeftMargin": 24.5501,
+                    "RightMargin": 24.4499,
+                    "TopMargin": 14.47,
+                    "BottomMargin": 428.53,
                     "Tag": 301,
                     "ActionTag": -42334440,
                     "Size": {
@@ -2520,8 +2532,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 57.9612,
-                      "Y": 127.59
+                      "X": 133.7044,
+                      "Y": 398.3443
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -2530,17 +2542,17 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.1241,
-                      "Y": 0.487
+                      "X": 0.5045,
+                      "Y": 0.853
                     },
                     "PreSize": {
-                      "X": 0.0985,
-                      "Y": 0.9122
+                      "X": 0.9925,
+                      "Y": 0.0985
                     },
-                    "LeftMargin": 34.9612,
-                    "RightMargin": 386.0388,
-                    "TopMargin": 14.91,
-                    "BottomMargin": 8.09,
+                    "LeftMargin": 2.2044,
+                    "RightMargin": -0.2044,
+                    "TopMargin": 45.6557,
+                    "BottomMargin": 375.3443,
                     "Tag": 304,
                     "Children": [
                       {
@@ -2562,8 +2574,8 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 23.3084,
-                          "Y": 125.5958
+                          "X": 122.9103,
+                          "Y": 27.8506
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -2576,17 +2588,17 @@
                         },
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 0.5067,
-                          "Y": 0.5255
+                          "X": 0.4673,
+                          "Y": 0.6054
                         },
                         "PreSize": {
-                          "X": 2.1739,
-                          "Y": 0.0837
+                          "X": 0.3802,
+                          "Y": 0.4348
                         },
-                        "LeftMargin": -26.6916,
-                        "RightMargin": -27.3084,
-                        "TopMargin": 103.4042,
-                        "BottomMargin": 115.5958,
+                        "LeftMargin": 72.9103,
+                        "RightMargin": 90.0897,
+                        "TopMargin": 8.1494,
+                        "BottomMargin": 17.8506,
                         "Tag": 302,
                         "ActionTag": -1225232599,
                         "Size": {
@@ -2599,57 +2611,11 @@
                     ],
                     "ActionTag": 562372292,
                     "Size": {
-                      "X": 46.0,
-                      "Y": 239.0
+                      "X": 263.0,
+                      "Y": 46.0
                     },
                     "Name": "luckyPnl",
                     "ctype": "PanelObjectData"
-                  },
-                  {
-                    "FileData": {
-                      "Type": "Normal",
-                      "Path": "fukashop/fk_27.png",
-                      "Plist": ""
-                    },
-                    "Scale9Enable": true,
-                    "Scale9OriginX": 31,
-                    "Scale9OriginY": 35,
-                    "Scale9Width": 32,
-                    "Scale9Height": 39,
-                    "AnchorPoint": {
-                      "ScaleX": 0.5,
-                      "ScaleY": 0.5
-                    },
-                    "Position": {
-                      "X": 187.56,
-                      "Y": 132.287
-                    },
-                    "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
-                    },
-                    "CColor": {},
-                    "IconVisible": false,
-                    "PrePosition": {
-                      "X": 0.4016,
-                      "Y": 0.5049
-                    },
-                    "PreSize": {
-                      "X": 0.4283,
-                      "Y": 0.7748
-                    },
-                    "LeftMargin": 87.56,
-                    "RightMargin": 179.44,
-                    "TopMargin": 28.213,
-                    "BottomMargin": 30.787,
-                    "Tag": 276,
-                    "ActionTag": -1651042804,
-                    "Size": {
-                      "X": 200.0,
-                      "Y": 203.0
-                    },
-                    "Name": "Image_65",
-                    "ctype": "ImageViewObjectData"
                   },
                   {
                     "FileData": {
@@ -2666,8 +2632,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 186.9961,
-                      "Y": 124.5888
+                      "X": 117.6941,
+                      "Y": 285.752
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -2676,17 +2642,17 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.4004,
-                      "Y": 0.4755
+                      "X": 0.4441,
+                      "Y": 0.6119
                     },
                     "PreSize": {
-                      "X": 0.0985,
-                      "Y": 0.1756
+                      "X": 0.1736,
+                      "Y": 0.0985
                     },
-                    "LeftMargin": 163.9961,
-                    "RightMargin": 257.0039,
-                    "TopMargin": 114.4112,
-                    "BottomMargin": 101.5888,
+                    "LeftMargin": 94.6941,
+                    "RightMargin": 124.3059,
+                    "TopMargin": 158.248,
+                    "BottomMargin": 262.752,
                     "Tag": 274,
                     "ActionTag": -1984011377,
                     "Size": {
@@ -2699,20 +2665,20 @@
                   {
                     "FileData": {
                       "Type": "Normal",
-                      "Path": "fukashop/fk_37.png",
+                      "Path": "fukashop/fk_34_z.png",
                       "Plist": ""
                     },
                     "Scale9OriginX": 7,
                     "Scale9OriginY": 5,
-                    "Scale9Width": 10,
-                    "Scale9Height": 205,
+                    "Scale9Width": 175,
+                    "Scale9Height": 7,
                     "AnchorPoint": {
                       "ScaleX": 0.5,
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 315.94,
-                      "Y": 129.12
+                      "X": 131.1179,
+                      "Y": 149.3187
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -2721,22 +2687,22 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.6765,
-                      "Y": 0.4928
+                      "X": 0.4948,
+                      "Y": 0.3197
                     },
                     "PreSize": {
-                      "X": 0.0364,
-                      "Y": 0.7328
+                      "X": 0.7132,
+                      "Y": 0.0364
                     },
-                    "LeftMargin": 307.44,
-                    "RightMargin": 142.56,
-                    "TopMargin": 36.88,
-                    "BottomMargin": 33.12,
+                    "LeftMargin": 36.6179,
+                    "RightMargin": 39.3821,
+                    "TopMargin": 309.1813,
+                    "BottomMargin": 140.8187,
                     "Tag": 303,
                     "ActionTag": -1678809053,
                     "Size": {
-                      "X": 17.0,
-                      "Y": 192.0
+                      "X": 189.0,
+                      "Y": 17.0
                     },
                     "Name": "robBarImg",
                     "ctype": "ImageViewObjectData"
@@ -2753,8 +2719,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 315.94,
-                      "Y": 129.12
+                      "X": 131.12,
+                      "Y": 149.32
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -2763,17 +2729,17 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.6765,
-                      "Y": 0.4928
+                      "X": 0.4948,
+                      "Y": 0.3197
                     },
                     "PreSize": {
-                      "X": 0.4047,
-                      "Y": 0.0649
+                      "X": 0.7132,
+                      "Y": 0.0364
                     },
-                    "LeftMargin": 221.44,
-                    "RightMargin": 56.56,
-                    "TopMargin": 124.38,
-                    "BottomMargin": 120.62,
+                    "LeftMargin": 36.62,
+                    "RightMargin": 39.38,
+                    "TopMargin": 309.18,
+                    "BottomMargin": 140.82,
                     "Tag": 277,
                     "ActionTag": -2108403826,
                     "Size": {
@@ -2785,7 +2751,7 @@
                   },
                   {
                     "FontSize": 20,
-                    "LabelText": "100000/100000",
+                    "LabelText": "1000000/1000000",
                     "HorizontalAlignmentType": "HT_Center",
                     "VerticalAlignmentType": "VT_Center",
                     "OutlineColor": {
@@ -2804,8 +2770,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 315.7387,
-                      "Y": 138.5718
+                      "X": 134.6465,
+                      "Y": 149.3466
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -2816,21 +2782,21 @@
                     "PositionPercentXEnabled": true,
                     "PositionPercentYEnabled": true,
                     "PrePosition": {
-                      "X": 0.6761,
-                      "Y": 0.5289
+                      "X": 0.5081,
+                      "Y": 0.3198
                     },
                     "PreSize": {
-                      "X": 0.2784,
-                      "Y": 0.0763
+                      "X": 0.566,
+                      "Y": 0.0428
                     },
-                    "LeftMargin": 250.7387,
-                    "RightMargin": 86.2613,
-                    "TopMargin": 113.4282,
-                    "BottomMargin": 128.5718,
+                    "LeftMargin": 59.6465,
+                    "RightMargin": 55.3535,
+                    "TopMargin": 307.6534,
+                    "BottomMargin": 139.3466,
                     "Tag": 279,
                     "ActionTag": -262885947,
                     "Size": {
-                      "X": 130.0,
+                      "X": 150.0,
                       "Y": 20.0
                     },
                     "Name": "robPercent",
@@ -2857,8 +2823,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 343.8239,
-                      "Y": 141.8558
+                      "X": 134.1682,
+                      "Y": 118.88
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -2871,17 +2837,17 @@
                     },
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.7362,
-                      "Y": 0.5414
+                      "X": 0.5063,
+                      "Y": 0.2546
                     },
                     "PreSize": {
-                      "X": 0.4347,
-                      "Y": 0.0954
+                      "X": 0.766,
+                      "Y": 0.0535
                     },
-                    "LeftMargin": 242.3239,
-                    "RightMargin": 21.6761,
-                    "TopMargin": 107.6442,
-                    "BottomMargin": 129.3558,
+                    "LeftMargin": 32.6682,
+                    "RightMargin": 29.3318,
+                    "TopMargin": 335.62,
+                    "BottomMargin": 106.38,
                     "Tag": 275,
                     "ActionTag": -610493642,
                     "Size": {
@@ -2901,14 +2867,14 @@
                     },
                     "NormalFileData": {
                       "Type": "Normal",
-                      "Path": "fukashop/fk_23.png",
+                      "Path": "fukashop/fk_23_z.png",
                       "Plist": ""
                     },
                     "Scale9Enable": true,
                     "Scale9OriginX": 15,
                     "Scale9OriginY": 11,
-                    "Scale9Width": 52,
-                    "Scale9Height": 205,
+                    "Scale9Width": 197,
+                    "Scale9Height": 60,
                     "OutlineColor": {
                       "G": 0,
                       "B": 0
@@ -2926,8 +2892,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 424.4349,
-                      "Y": 133.2248
+                      "X": 128.623,
+                      "Y": 39.8863
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -2936,22 +2902,22 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.9089,
-                      "Y": 0.5085
+                      "X": 0.4854,
+                      "Y": 0.0854
                     },
                     "PreSize": {
-                      "X": 0.1756,
-                      "Y": 0.8664
+                      "X": 0.8566,
+                      "Y": 0.1756
                     },
-                    "LeftMargin": 383.4349,
-                    "RightMargin": 1.5651,
-                    "TopMargin": 15.2752,
-                    "BottomMargin": 19.7248,
+                    "LeftMargin": 15.123,
+                    "RightMargin": 22.877,
+                    "TopMargin": 386.1137,
+                    "BottomMargin": -1.1137,
                     "Tag": 280,
                     "Children": [
                       {
                         "FontSize": 30,
-                        "LabelText": "夺 宝",
+                        "LabelText": "夺 宝  ",
                         "HorizontalAlignmentType": "HT_Center",
                         "VerticalAlignmentType": "VT_Center",
                         "OutlineColor": {
@@ -2970,8 +2936,8 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 39.4137,
-                          "Y": 110.9983
+                          "X": 119.8287,
+                          "Y": 43.5073
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -2980,21 +2946,21 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 0.4807,
-                          "Y": 0.489
+                          "X": 0.5279,
+                          "Y": 0.5306
                         },
                         "PreSize": {
-                          "X": 0.9146,
-                          "Y": 0.1322
+                          "X": 0.4626,
+                          "Y": 0.3659
                         },
-                        "LeftMargin": 1.9137,
-                        "RightMargin": 5.0863,
-                        "TopMargin": 101.0017,
-                        "BottomMargin": 95.9983,
+                        "LeftMargin": 67.3287,
+                        "RightMargin": 54.6713,
+                        "TopMargin": 23.4927,
+                        "BottomMargin": 28.5073,
                         "Tag": 281,
                         "ActionTag": -747751518,
                         "Size": {
-                          "X": 75.0,
+                          "X": 105.0,
                           "Y": 30.0
                         },
                         "Name": "btnNameText",
@@ -3003,8 +2969,8 @@
                     ],
                     "ActionTag": 199053346,
                     "Size": {
-                      "X": 82.0,
-                      "Y": 227.0
+                      "X": 227.0,
+                      "Y": 82.0
                     },
                     "Name": "robBtn",
                     "ctype": "ButtonObjectData"
@@ -3012,8 +2978,8 @@
                 ],
                 "ActionTag": -1179889595,
                 "Size": {
-                  "X": 467.0,
-                  "Y": 262.0
+                  "X": 265.0,
+                  "Y": 467.0
                 },
                 "Name": "robGoodsCell",
                 "ctype": "PanelObjectData"
@@ -8319,8 +8285,9 @@
         "fukashop/fk_2.png",
         "fukashop/fk_20.png",
         "fukashop/fk_21.png",
-        "fukashop/fk_22.png",
+        "fukashop/fk_22_zheng.png",
         "fukashop/fk_23.png",
+        "fukashop/fk_23_z.png",
         "fukashop/fk_24.png",
         "fukashop/fk_27.png",
         "fukashop/fk_28.png",
@@ -8328,7 +8295,8 @@
         "fukashop/fk_30.png",
         "fukashop/fk_31.png",
         "fukashop/fk_33.png",
-        "fukashop/fk_35.png",
+        "fukashop/fk_34_z.png",
+        "fukashop/fk_35_z.png",
         "fukashop/fk_36.png",
         "fukashop/fk_37.png",
         "fukashop/fk_39.png",

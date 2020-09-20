@@ -14,12 +14,12 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5000" Y="0.5000" />
             <PreSize X="1.0000" Y="1.0000" />
-            <SingleColor A="255" R="255" G="255" B="255" />
+            <SingleColor A="255" R="230" G="230" B="250" />
             <FirstColor A="255" R="150" G="200" B="255" />
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="dele" ActionTag="528381295" VisibleForFrame="False" Tag="149" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="280.0000" RightMargin="280.0000" TopMargin="-280.0000" BottomMargin="-280.0000" LeftEage="237" RightEage="237" TopEage="422" BottomEage="422" Scale9OriginX="237" Scale9OriginY="422" Scale9Width="246" Scale9Height="436" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="dele" ActionTag="528381295" VisibleForFrame="False" Tag="149" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="280.0000" RightMargin="280.0000" TopMargin="-280.0000" BottomMargin="-280.0000" LeftEage="237" RightEage="237" TopEage="422" BottomEage="422" Scale9OriginX="237" Scale9OriginY="422" Scale9Width="246" Scale9Height="436" ctype="ImageViewObjectData">
             <Size X="720.0000" Y="1280.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="640.0000" Y="360.0000" />
@@ -29,10 +29,10 @@
             <PreSize X="0.5625" Y="1.7778" />
             <FileData Type="Normal" Path="aaa/fuKa (10).png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="goodsListPnl" Visible="False" ActionTag="1396762689" UserData="{&quot;layoutType&quot;:&quot;showAll&quot;,&quot;screenAlign&quot;:&quot;left&quot;}" Tag="419" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="237" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+          <AbstractNodeData Name="goodsListPnl" ActionTag="1396762689" UserData="{&quot;layoutType&quot;:&quot;showAll&quot;,&quot;screenAlign&quot;:&quot;left&quot;}" Tag="419" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="237" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <Children>
-              <AbstractNodeData Name="leftPnl" ActionTag="292336037" UserData="{&quot;layoutType&quot;:&quot;maxArea&quot;,&quot;screenAlign&quot;:&quot;left&quot;}" Tag="319" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="leftPnl" Visible="False" ActionTag="292336037" UserData="{&quot;layoutType&quot;:&quot;maxArea&quot;,&quot;screenAlign&quot;:&quot;left&quot;}" Tag="319" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="1280.0000" Y="720.0000" />
                 <Children>
                   <AbstractNodeData Name="pgPnl" ActionTag="-1397132208" Tag="157" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
@@ -131,7 +131,7 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="midPnl" ActionTag="1608634028" Tag="158" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="midPnl" Visible="False" ActionTag="1608634028" Tag="158" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="1280.0000" Y="720.0000" />
                 <Children>
                   <AbstractNodeData Name="cardExchangeBtn" ActionTag="-678668065" Tag="159" IconVisible="False" LeftMargin="409.4800" RightMargin="780.5200" TopMargin="520.2828" BottomMargin="109.7172" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="60" Scale9Height="68" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
@@ -267,20 +267,7 @@
                     <PreSize X="0.0867" Y="0.9917" />
                     <FileData Type="Normal" Path="fukashop/fk_21.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="menuListView" ActionTag="-1886086934" Tag="409" IconVisible="False" LeftMargin="558.8386" RightMargin="606.1614" TopMargin="-0.3130" BottomMargin="0.3130" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" IsBounceEnabled="True" ScrollDirectionType="0" DirectionType="Vertical" ctype="ListViewObjectData">
-                    <Size X="115.0000" Y="720.0000" />
-                    <AnchorPoint />
-                    <Position X="558.8386" Y="0.3130" />
-                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.4366" Y="0.0004" />
-                    <PreSize X="0.0898" Y="1.0000" />
-                    <SingleColor A="255" R="150" G="150" B="255" />
-                    <FirstColor A="255" R="150" G="150" B="255" />
-                    <EndColor A="255" R="255" G="255" B="255" />
-                    <ColorVector ScaleY="1.0000" />
-                  </AbstractNodeData>
-                  <AbstractNodeData Name="menuCell" ActionTag="1211443111" Tag="408" IconVisible="False" LeftMargin="560.0306" RightMargin="602.9694" TopMargin="429.1300" BottomMargin="163.8700" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                  <AbstractNodeData Name="menuCell" ActionTag="1211443111" Tag="408" IconVisible="False" RightMargin="1163.0000" TopMargin="3.0000" BottomMargin="590.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="117.0000" Y="127.0000" />
                     <Children>
                       <AbstractNodeData Name="menuImg" ActionTag="1966689284" Tag="410" IconVisible="False" LeftMargin="11.7731" RightMargin="51.2269" TopMargin="45.3811" BottomMargin="47.6189" LeftEage="17" RightEage="17" TopEage="11" BottomEage="11" Scale9OriginX="17" Scale9OriginY="11" Scale9Width="20" Scale9Height="12" ctype="ImageViewObjectData">
@@ -326,13 +313,26 @@
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint />
-                    <Position X="560.0306" Y="163.8700" />
+                    <Position Y="590.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.4375" Y="0.2276" />
+                    <PrePosition Y="0.8194" />
                     <PreSize X="0.0914" Y="0.1764" />
                     <SingleColor A="255" R="150" G="200" B="255" />
                     <FirstColor A="255" R="150" G="200" B="255" />
+                    <EndColor A="255" R="255" G="255" B="255" />
+                    <ColorVector ScaleY="1.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="menuListView" ActionTag="-1886086934" Tag="409" IconVisible="False" LeftMargin="558.8386" RightMargin="603.1614" TopMargin="2.6870" BottomMargin="0.3130" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" IsBounceEnabled="True" ScrollDirectionType="0" DirectionType="Vertical" ctype="ListViewObjectData">
+                    <Size X="118.0000" Y="717.0000" />
+                    <AnchorPoint />
+                    <Position X="558.8386" Y="0.3130" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4366" Y="0.0004" />
+                    <PreSize X="0.0922" Y="0.9958" />
+                    <SingleColor A="255" R="150" G="150" B="255" />
+                    <FirstColor A="255" R="150" G="150" B="255" />
                     <EndColor A="255" R="255" G="255" B="255" />
                     <ColorVector ScaleY="1.0000" />
                   </AbstractNodeData>
@@ -362,47 +362,47 @@
                     <EndColor A="255" R="255" G="255" B="255" />
                     <ColorVector ScaleY="1.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="goodsCell" ActionTag="-1345910195" Tag="415" IconVisible="False" LeftMargin="702.4927" RightMargin="306.5073" TopMargin="470.2400" BottomMargin="53.7600" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
-                    <Size X="271.0000" Y="196.0000" />
+                  <AbstractNodeData Name="goodsCell" ActionTag="-1345910195" Tag="415" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" LeftMargin="705.6438" RightMargin="369.3562" TopMargin="660.0224" BottomMargin="-217.0224" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                    <Size X="205.0000" Y="277.0000" />
                     <Children>
-                      <AbstractNodeData Name="Image_49" Visible="False" ActionTag="407769184" Tag="416" IconVisible="False" LeftMargin="1.4686" RightMargin="-1.4686" TopMargin="-5.5023" BottomMargin="6.5023" LeftEage="13" RightEage="13" TopEage="8" BottomEage="8" Scale9OriginX="13" Scale9OriginY="8" Scale9Width="245" Scale9Height="179" ctype="ImageViewObjectData">
-                        <Size X="271.0000" Y="195.0000" />
+                      <AbstractNodeData Name="Image_49" ActionTag="407769184" Tag="416" IconVisible="False" LeftMargin="4.5107" RightMargin="5.4893" TopMargin="2.0367" BottomMargin="2.9633" LeftEage="13" RightEage="13" TopEage="8" BottomEage="8" Scale9OriginX="13" Scale9OriginY="8" Scale9Width="169" Scale9Height="256" ctype="ImageViewObjectData">
+                        <Size X="195.0000" Y="272.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="136.9686" Y="104.0023" />
+                        <Position X="102.0107" Y="138.9633" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.5054" Y="0.5306" />
-                        <PreSize X="1.0000" Y="0.9949" />
-                        <FileData Type="Normal" Path="fukashop/fk_22.png" Plist="" />
+                        <PrePosition X="0.4976" Y="0.5017" />
+                        <PreSize X="0.9512" Y="0.9819" />
+                        <FileData Type="Normal" Path="fukashop/fk_22_zheng.png" Plist="" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="goodImg" ActionTag="966345457" Tag="417" IconVisible="False" LeftMargin="88.6387" RightMargin="136.3613" TopMargin="73.6892" BottomMargin="76.3108" LeftEage="4" RightEage="4" TopEage="4" BottomEage="4" Scale9OriginX="4" Scale9OriginY="4" Scale9Width="38" Scale9Height="38" ctype="ImageViewObjectData">
+                      <AbstractNodeData Name="goodImg" ActionTag="966345457" Tag="417" IconVisible="False" LeftMargin="88.6387" RightMargin="70.3613" TopMargin="154.6892" BottomMargin="76.3108" LeftEage="4" RightEage="4" TopEage="4" BottomEage="4" Scale9OriginX="4" Scale9OriginY="4" Scale9Width="38" Scale9Height="38" ctype="ImageViewObjectData">
                         <Size X="46.0000" Y="46.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="111.6387" Y="99.3108" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.4120" Y="0.5067" />
-                        <PreSize X="0.1697" Y="0.2347" />
+                        <PrePosition X="0.5446" Y="0.3585" />
+                        <PreSize X="0.2244" Y="0.1661" />
                         <FileData Type="Default" Path="Default/ImageFile.png" Plist="" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="goodsPriceText" ActionTag="-41807370" Tag="418" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" LeftMargin="190.4565" RightMargin="-9.4565" TopMargin="82.3074" BottomMargin="93.6926" FontSize="20" LabelText="50000福卡" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                      <AbstractNodeData Name="goodsPriceText" ActionTag="-41807370" Tag="418" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="54.6300" RightMargin="60.3700" TopMargin="231.9041" BottomMargin="25.0959" FontSize="20" LabelText="50000福卡" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                         <Size X="90.0000" Y="20.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="235.4565" Y="103.6926" />
+                        <Position X="99.6300" Y="35.0959" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="217" G="63" B="74" />
-                        <PrePosition X="0.8688" Y="0.5290" />
-                        <PreSize X="0.3321" Y="0.1020" />
+                        <PrePosition X="0.4860" Y="0.1267" />
+                        <PreSize X="0.4390" Y="0.0722" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
                     </Children>
-                    <AnchorPoint />
-                    <Position X="702.4927" Y="53.7600" />
+                    <AnchorPoint ScaleY="1.0000" />
+                    <Position X="705.6438" Y="59.9776" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.5488" Y="0.0747" />
-                    <PreSize X="0.2117" Y="0.2722" />
+                    <PrePosition X="0.5513" Y="0.0833" />
+                    <PreSize X="0.1602" Y="0.3847" />
                     <SingleColor A="255" R="150" G="200" B="255" />
                     <FirstColor A="255" R="150" G="200" B="255" />
                     <EndColor A="255" R="255" G="255" B="255" />
@@ -435,18 +435,18 @@
           <AbstractNodeData Name="exchangePnl" Visible="False" ActionTag="1280552929" Tag="261" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <Children>
-              <AbstractNodeData Name="exangeGoodsCell" ActionTag="-1747837071" Tag="264" IconVisible="False" RightMargin="1070.0000" TopMargin="-512.0000" BottomMargin="957.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="exangeGoodsCell" ActionTag="-1747837071" Tag="264" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" LeftMargin="177.3297" RightMargin="892.6703" TopMargin="490.5713" BottomMargin="-45.5713" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="210.0000" Y="275.0000" />
                 <Children>
-                  <AbstractNodeData Name="Image_49" ActionTag="270339092" Tag="265" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftEage="13" RightEage="13" TopEage="8" BottomEage="8" Scale9OriginX="13" Scale9OriginY="8" Scale9Width="245" Scale9Height="179" ctype="ImageViewObjectData">
-                    <Size X="210.0000" Y="275.0000" />
+                  <AbstractNodeData Name="Image_49" ActionTag="270339092" Tag="265" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="7.4970" RightMargin="7.4970" TopMargin="1.4987" BottomMargin="1.4987" LeftEage="13" RightEage="13" TopEage="8" BottomEage="8" Scale9OriginX="13" Scale9OriginY="8" Scale9Width="169" Scale9Height="256" ctype="ImageViewObjectData">
+                    <Size X="195.0060" Y="272.0025" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="105.0000" Y="137.5000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.5000" Y="0.5000" />
-                    <PreSize X="1.0000" Y="1.0000" />
-                    <FileData Type="Normal" Path="fukashop/fk_22.png" Plist="" />
+                    <PreSize X="0.9286" Y="0.9891" />
+                    <FileData Type="Normal" Path="fukashop/fk_22_zheng.png" Plist="" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="goodImg" ActionTag="1996922512" Tag="266" IconVisible="False" LeftMargin="88.6387" RightMargin="75.3613" TopMargin="152.6892" BottomMargin="76.3108" LeftEage="4" RightEage="4" TopEage="4" BottomEage="4" Scale9OriginX="4" Scale9OriginY="4" Scale9Width="38" Scale9Height="38" ctype="ImageViewObjectData">
                     <Size X="46.0000" Y="46.0000" />
@@ -470,38 +470,38 @@
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
                 </Children>
-                <AnchorPoint />
-                <Position Y="957.0000" />
+                <AnchorPoint ScaleY="1.0000" />
+                <Position X="177.3297" Y="229.4287" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition Y="1.3292" />
+                <PrePosition X="0.1385" Y="0.3187" />
                 <PreSize X="0.1641" Y="0.3819" />
                 <SingleColor A="255" R="150" G="200" B="255" />
                 <FirstColor A="255" R="150" G="200" B="255" />
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="exangeListView" ActionTag="-591055158" Tag="262" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" LeftMargin="1265.5319" RightMargin="-652.5319" TopMargin="-457.7882" BottomMargin="24.7882" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" IsBounceEnabled="True" ScrollDirectionType="0" DirectionType="Vertical" ctype="ListViewObjectData">
-                <Size X="667.0000" Y="1153.0000" />
+              <AbstractNodeData Name="exangeListView" ActionTag="-591055158" Tag="262" IconVisible="False" LeftMargin="128.2953" RightMargin="5.7047" TopMargin="22.6161" BottomMargin="18.3839" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" IsBounceEnabled="True" ScrollDirectionType="0" ctype="ListViewObjectData">
+                <Size X="1146.0000" Y="679.0000" />
                 <AnchorPoint />
-                <Position X="1265.5319" Y="24.7882" />
+                <Position X="128.2953" Y="18.3839" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.9887" Y="0.0344" />
-                <PreSize X="0.5211" Y="1.6014" />
+                <PrePosition X="0.1002" Y="0.0255" />
+                <PreSize X="0.8953" Y="0.9431" />
                 <SingleColor A="255" R="150" G="150" B="255" />
                 <FirstColor A="255" R="150" G="150" B="255" />
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="exchangeListPnl" ActionTag="-1555156440" Tag="164" IconVisible="False" LeftMargin="-536.8726" RightMargin="1159.8726" TopMargin="-434.0527" BottomMargin="878.0527" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
-                <Size X="657.0000" Y="276.0000" />
+              <AbstractNodeData Name="exchangeListPnl" ActionTag="-1555156440" Tag="164" IconVisible="False" LeftMargin="132.7130" RightMargin="860.2870" TopMargin="16.8407" BottomMargin="25.1593" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                <Size X="287.0000" Y="678.0000" />
                 <AnchorPoint />
-                <Position X="-536.8726" Y="878.0527" />
+                <Position X="132.7130" Y="25.1593" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="-0.4194" Y="1.2195" />
-                <PreSize X="0.5133" Y="0.3833" />
+                <PrePosition X="0.1037" Y="0.0349" />
+                <PreSize X="0.2242" Y="0.9417" />
                 <SingleColor A="255" R="150" G="200" B="255" />
                 <FirstColor A="255" R="150" G="200" B="255" />
                 <EndColor A="255" R="255" G="255" B="255" />
@@ -522,20 +522,20 @@
           <AbstractNodeData Name="robPnl" Visible="False" ActionTag="-978527675" Tag="268" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <Children>
-              <AbstractNodeData Name="robListView" ActionTag="224986441" Alpha="83" Tag="270" RotationSkewX="180.0000" RotationSkewY="180.0000" IconVisible="False" LeftMargin="1279.8306" RightMargin="-1186.8306" TopMargin="-548.4114" BottomMargin="653.4114" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" IsBounceEnabled="True" ScrollDirectionType="0" ctype="ListViewObjectData">
-                <Size X="1187.0000" Y="615.0000" />
+              <AbstractNodeData Name="robListView" ActionTag="224986441" Tag="270" IconVisible="False" LeftMargin="95.9633" RightMargin="-2.9633" TopMargin="43.2541" BottomMargin="62.7459" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" IsBounceEnabled="True" ScrollDirectionType="0" ctype="ListViewObjectData">
+                <Size X="1187.0000" Y="614.0000" />
                 <AnchorPoint />
-                <Position X="1279.8306" Y="653.4114" />
+                <Position X="95.9633" Y="62.7459" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.9999" Y="0.9075" />
-                <PreSize X="0.9273" Y="0.8542" />
+                <PrePosition X="0.0750" Y="0.0871" />
+                <PreSize X="0.9273" Y="0.8528" />
                 <SingleColor A="255" R="150" G="150" B="255" />
                 <FirstColor A="255" R="150" G="150" B="255" />
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="robListPnl" ActionTag="425596552" Tag="271" IconVisible="False" LeftMargin="569.2852" RightMargin="247.7148" TopMargin="65.1929" BottomMargin="75.8071" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="robListPnl" Visible="False" ActionTag="425596552" Tag="271" IconVisible="False" LeftMargin="569.2852" RightMargin="247.7148" TopMargin="65.1929" BottomMargin="75.8071" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="463.0000" Y="579.0000" />
                 <AnchorPoint />
                 <Position X="569.2852" Y="75.8071" />
@@ -548,151 +548,141 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="robGoodsCell" ActionTag="-1179889595" Tag="272" IconVisible="False" LeftMargin="103.6100" RightMargin="709.3900" TopMargin="119.6954" BottomMargin="338.3046" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
-                <Size X="467.0000" Y="262.0000" />
+              <AbstractNodeData Name="robGoodsCell" ActionTag="-1179889595" Tag="272" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" LeftMargin="202.3854" RightMargin="812.6146" TopMargin="786.6382" BottomMargin="-533.6382" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                <Size X="265.0000" Y="467.0000" />
                 <Children>
-                  <AbstractNodeData Name="Image_49" ActionTag="-1862180994" Tag="273" IconVisible="False" LeftMargin="-3.8200" RightMargin="95.8200" TopMargin="7.3100" BottomMargin="3.6900" Scale9Enable="True" LeftEage="89" RightEage="40" TopEage="45" BottomEage="37" Scale9OriginX="89" Scale9OriginY="45" Scale9Width="4" Scale9Height="7" ctype="ImageViewObjectData">
-                    <Size X="375.0000" Y="251.0000" />
+                  <AbstractNodeData Name="Image_49" Visible="False" ActionTag="-1862180994" Tag="273" IconVisible="False" LeftMargin="1.9847" RightMargin="3.0153" TopMargin="4.0700" BottomMargin="101.9300" Scale9Enable="True" LeftEage="29" RightEage="29" TopEage="81" BottomEage="37" Scale9OriginX="29" Scale9OriginY="81" Scale9Width="31" Scale9Height="12" ctype="ImageViewObjectData">
+                    <Size X="260.0000" Y="361.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="183.6800" Y="129.1900" />
+                    <Position X="131.9847" Y="282.4300" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.3933" Y="0.4931" />
-                    <PreSize X="0.8030" Y="0.9580" />
-                    <FileData Type="Normal" Path="fukashop/fk_35.png" Plist="" />
+                    <PrePosition X="0.4981" Y="0.6048" />
+                    <PreSize X="0.9811" Y="0.7730" />
+                    <FileData Type="Normal" Path="fukashop/fk_35_z.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="robGoodsNameText" ActionTag="-42334440" Tag="301" IconVisible="False" LeftMargin="-89.8721" RightMargin="340.8721" TopMargin="120.5154" BottomMargin="117.4846" FontSize="24" LabelText="这是好东西呀好东西" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                  <AbstractNodeData Name="robGoodsNameText" ActionTag="-42334440" Tag="301" IconVisible="False" LeftMargin="24.5501" RightMargin="24.4499" TopMargin="14.4700" BottomMargin="428.5300" FontSize="24" LabelText="这是好东西呀好东西" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="216.0000" Y="24.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="18.1279" Y="129.4846" />
+                    <Position X="132.5501" Y="440.5300" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="92" G="93" B="93" />
-                    <PrePosition X="0.0388" Y="0.4942" />
-                    <PreSize X="0.4625" Y="0.0916" />
+                    <PrePosition X="0.5002" Y="0.9433" />
+                    <PreSize X="0.8151" Y="0.0514" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="luckyPnl" ActionTag="562372292" Tag="304" IconVisible="False" LeftMargin="34.9612" RightMargin="386.0388" TopMargin="14.9100" BottomMargin="8.0900" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
-                    <Size X="46.0000" Y="239.0000" />
+                  <AbstractNodeData Name="luckyPnl" ActionTag="562372292" Tag="304" IconVisible="False" LeftMargin="2.2044" RightMargin="-0.2044" TopMargin="45.6557" BottomMargin="375.3443" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                    <Size X="263.0000" Y="46.0000" />
                     <Children>
-                      <AbstractNodeData Name="Text_51" ActionTag="-1225232599" Tag="302" IconVisible="False" LeftMargin="-26.6916" RightMargin="-27.3084" TopMargin="103.4042" BottomMargin="115.5958" FontSize="20" LabelText="上期幸运儿" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                      <AbstractNodeData Name="Text_51" ActionTag="-1225232599" Tag="302" IconVisible="False" LeftMargin="72.9103" RightMargin="90.0897" TopMargin="8.1494" BottomMargin="17.8506" FontSize="20" LabelText="上期幸运儿" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                         <Size X="100.0000" Y="20.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="23.3084" Y="125.5958" />
+                        <Position X="122.9103" Y="27.8506" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="224" G="82" B="65" />
-                        <PrePosition X="0.5067" Y="0.5255" />
-                        <PreSize X="2.1739" Y="0.0837" />
+                        <PrePosition X="0.4673" Y="0.6054" />
+                        <PreSize X="0.3802" Y="0.4348" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="57.9612" Y="127.5900" />
+                    <Position X="133.7044" Y="398.3443" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.1241" Y="0.4870" />
-                    <PreSize X="0.0985" Y="0.9122" />
+                    <PrePosition X="0.5045" Y="0.8530" />
+                    <PreSize X="0.9925" Y="0.0985" />
                     <SingleColor A="255" R="150" G="200" B="255" />
                     <FirstColor A="255" R="150" G="200" B="255" />
                     <EndColor A="255" R="255" G="255" B="255" />
                     <ColorVector ScaleY="1.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Image_65" ActionTag="-1651042804" Tag="276" IconVisible="False" LeftMargin="87.5600" RightMargin="179.4400" TopMargin="28.2130" BottomMargin="30.7870" Scale9Enable="True" LeftEage="31" RightEage="31" TopEage="35" BottomEage="35" Scale9OriginX="31" Scale9OriginY="35" Scale9Width="32" Scale9Height="39" ctype="ImageViewObjectData">
-                    <Size X="200.0000" Y="203.0000" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="187.5600" Y="132.2870" />
-                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.4016" Y="0.5049" />
-                    <PreSize X="0.4283" Y="0.7748" />
-                    <FileData Type="Normal" Path="fukashop/fk_27.png" Plist="" />
-                  </AbstractNodeData>
-                  <AbstractNodeData Name="goodImg" ActionTag="-1984011377" Tag="274" IconVisible="False" LeftMargin="163.9961" RightMargin="257.0039" TopMargin="114.4112" BottomMargin="101.5888" LeftEage="4" RightEage="4" TopEage="4" BottomEage="4" Scale9OriginX="4" Scale9OriginY="4" Scale9Width="38" Scale9Height="38" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="goodImg" ActionTag="-1984011377" Tag="274" IconVisible="False" LeftMargin="94.6941" RightMargin="124.3059" TopMargin="158.2480" BottomMargin="262.7520" LeftEage="4" RightEage="4" TopEage="4" BottomEage="4" Scale9OriginX="4" Scale9OriginY="4" Scale9Width="38" Scale9Height="38" ctype="ImageViewObjectData">
                     <Size X="46.0000" Y="46.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="186.9961" Y="124.5888" />
+                    <Position X="117.6941" Y="285.7520" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.4004" Y="0.4755" />
-                    <PreSize X="0.0985" Y="0.1756" />
+                    <PrePosition X="0.4441" Y="0.6119" />
+                    <PreSize X="0.1736" Y="0.0985" />
                     <FileData Type="Default" Path="Default/ImageFile.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="robBarImg" ActionTag="-1678809053" Tag="303" IconVisible="False" LeftMargin="307.4400" RightMargin="142.5600" TopMargin="36.8800" BottomMargin="33.1200" LeftEage="7" RightEage="7" TopEage="5" BottomEage="5" Scale9OriginX="7" Scale9OriginY="5" Scale9Width="10" Scale9Height="205" ctype="ImageViewObjectData">
-                    <Size X="17.0000" Y="192.0000" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="315.9400" Y="129.1200" />
-                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.6765" Y="0.4928" />
-                    <PreSize X="0.0364" Y="0.7328" />
-                    <FileData Type="Normal" Path="fukashop/fk_37.png" Plist="" />
-                  </AbstractNodeData>
-                  <AbstractNodeData Name="robLoadingBar" ActionTag="-2108403826" Tag="277" IconVisible="False" LeftMargin="221.4400" RightMargin="56.5600" TopMargin="124.3800" BottomMargin="120.6200" ProgressInfo="100" ctype="LoadingBarObjectData">
+                  <AbstractNodeData Name="robBarImg" ActionTag="-1678809053" Tag="303" IconVisible="False" LeftMargin="36.6179" RightMargin="39.3821" TopMargin="309.1813" BottomMargin="140.8187" LeftEage="7" RightEage="7" TopEage="5" BottomEage="5" Scale9OriginX="7" Scale9OriginY="5" Scale9Width="175" Scale9Height="7" ctype="ImageViewObjectData">
                     <Size X="189.0000" Y="17.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="315.9400" Y="129.1200" />
+                    <Position X="131.1179" Y="149.3187" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.6765" Y="0.4928" />
-                    <PreSize X="0.4047" Y="0.0649" />
+                    <PrePosition X="0.4948" Y="0.3197" />
+                    <PreSize X="0.7132" Y="0.0364" />
+                    <FileData Type="Normal" Path="fukashop/fk_34_z.png" Plist="" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="robLoadingBar" ActionTag="-2108403826" Tag="277" IconVisible="False" LeftMargin="36.6200" RightMargin="39.3800" TopMargin="309.1800" BottomMargin="140.8200" ProgressInfo="100" ctype="LoadingBarObjectData">
+                    <Size X="189.0000" Y="17.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="131.1200" Y="149.3200" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4948" Y="0.3197" />
+                    <PreSize X="0.7132" Y="0.0364" />
                     <ImageFileData Type="Normal" Path="fukashop/fk_33.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="robPercent" ActionTag="-262885947" Tag="279" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="250.7387" RightMargin="86.2613" TopMargin="113.4282" BottomMargin="128.5718" FontSize="20" LabelText="100000/100000" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="130.0000" Y="20.0000" />
+                  <AbstractNodeData Name="robPercent" ActionTag="-262885947" Tag="279" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="59.6465" RightMargin="55.3535" TopMargin="307.6534" BottomMargin="139.3466" FontSize="20" LabelText="1000000/1000000" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="150.0000" Y="20.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="315.7387" Y="138.5718" />
+                    <Position X="134.6465" Y="149.3466" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.6761" Y="0.5289" />
-                    <PreSize X="0.2784" Y="0.0763" />
+                    <PrePosition X="0.5081" Y="0.3198" />
+                    <PreSize X="0.5660" Y="0.0428" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="numText" ActionTag="-610493642" Tag="275" IconVisible="False" LeftMargin="242.3239" RightMargin="21.6761" TopMargin="107.6442" BottomMargin="129.3558" FontSize="25" LabelText="我已夺宝100000次" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                  <AbstractNodeData Name="numText" ActionTag="-610493642" Tag="275" IconVisible="False" LeftMargin="32.6682" RightMargin="29.3318" TopMargin="335.6200" BottomMargin="106.3800" FontSize="25" LabelText="我已夺宝100000次" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="203.0000" Y="25.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="343.8239" Y="141.8558" />
+                    <Position X="134.1682" Y="118.8800" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="0" G="0" B="0" />
-                    <PrePosition X="0.7362" Y="0.5414" />
-                    <PreSize X="0.4347" Y="0.0954" />
+                    <PrePosition X="0.5063" Y="0.2546" />
+                    <PreSize X="0.7660" Y="0.0535" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="robBtn" ActionTag="199053346" Tag="280" IconVisible="False" LeftMargin="383.4349" RightMargin="1.5651" TopMargin="15.2752" BottomMargin="19.7248" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="52" Scale9Height="205" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                    <Size X="82.0000" Y="227.0000" />
+                  <AbstractNodeData Name="robBtn" ActionTag="199053346" Tag="280" IconVisible="False" LeftMargin="15.1230" RightMargin="22.8770" TopMargin="386.1137" BottomMargin="-1.1137" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="197" Scale9Height="60" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                    <Size X="227.0000" Y="82.0000" />
                     <Children>
-                      <AbstractNodeData Name="btnNameText" ActionTag="-747751518" Tag="281" IconVisible="False" LeftMargin="1.9137" RightMargin="5.0863" TopMargin="101.0017" BottomMargin="95.9983" FontSize="30" LabelText="夺 宝" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                        <Size X="75.0000" Y="30.0000" />
+                      <AbstractNodeData Name="btnNameText" ActionTag="-747751518" Tag="281" IconVisible="False" LeftMargin="67.3287" RightMargin="54.6713" TopMargin="23.4927" BottomMargin="28.5073" FontSize="30" LabelText="夺 宝  " HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="105.0000" Y="30.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="39.4137" Y="110.9983" />
+                        <Position X="119.8287" Y="43.5073" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.4807" Y="0.4890" />
-                        <PreSize X="0.9146" Y="0.1322" />
+                        <PrePosition X="0.5279" Y="0.5306" />
+                        <PreSize X="0.4626" Y="0.3659" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="424.4349" Y="133.2248" />
+                    <Position X="128.6230" Y="39.8863" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.9089" Y="0.5085" />
-                    <PreSize X="0.1756" Y="0.8664" />
+                    <PrePosition X="0.4854" Y="0.0854" />
+                    <PreSize X="0.8566" Y="0.1756" />
                     <TextColor A="255" R="65" G="65" B="70" />
-                    <NormalFileData Type="Normal" Path="fukashop/fk_23.png" Plist="" />
+                    <NormalFileData Type="Normal" Path="fukashop/fk_23_z.png" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
                 </Children>
-                <AnchorPoint />
-                <Position X="103.6100" Y="338.3046" />
+                <AnchorPoint ScaleY="1.0000" />
+                <Position X="202.3854" Y="-66.6382" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.0809" Y="0.4699" />
-                <PreSize X="0.3648" Y="0.3639" />
+                <PrePosition X="0.1581" Y="-0.0926" />
+                <PreSize X="0.2070" Y="0.6486" />
                 <SingleColor A="255" R="150" G="200" B="255" />
                 <FirstColor A="255" R="150" G="200" B="255" />
                 <EndColor A="255" R="255" G="255" B="255" />
@@ -1448,7 +1438,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="commonPnl" ActionTag="978645323" Tag="108" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" TopMargin="-0.6479" BottomMargin="0.6480" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+          <AbstractNodeData Name="commonPnl" Visible="False" ActionTag="978645323" Tag="108" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" TopMargin="-0.6479" BottomMargin="0.6480" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <Children>
               <AbstractNodeData Name="fuKaPnl" ActionTag="805138259" Tag="249" IconVisible="False" LeftMargin="780.0800" RightMargin="299.9200" TopMargin="17.5500" BottomMargin="657.4500" TouchEnable="True" ClipAble="False" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
@@ -1571,7 +1561,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="popupPnl" ActionTag="-1453665968" Tag="354" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+          <AbstractNodeData Name="popupPnl" Visible="False" ActionTag="-1453665968" Tag="354" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <Children>
               <AbstractNodeData Name="titlePnl" ActionTag="1415602104" Tag="355" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
@@ -1685,7 +1675,7 @@
                     <EndColor A="255" R="255" G="255" B="255" />
                     <ColorVector ScaleY="1.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="robPnl" ActionTag="-1561463107" Tag="364" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="19.9680" RightMargin="-19.9680" TopMargin="20.0160" BottomMargin="-20.0160" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                  <AbstractNodeData Name="robPnl" Visible="False" ActionTag="-1561463107" Tag="364" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="19.9680" RightMargin="-19.9680" TopMargin="20.0160" BottomMargin="-20.0160" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="1280.0000" Y="720.0000" />
                     <Children>
                       <AbstractNodeData Name="Text_73" ActionTag="-351049617" Tag="365" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" LeftMargin="442.4663" RightMargin="709.5337" TopMargin="366.8553" BottomMargin="320.1447" FontSize="32" LabelText="我的福卡" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">

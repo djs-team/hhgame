@@ -293,6 +293,7 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                         goodsid : goodsId
                     }
                     appInstance.gameAgent().httpGame().FUKABUYGOODSReq(sendMsg)
+                    return true
                 }
 
             }else{
@@ -509,10 +510,11 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
             for(let i = 0; i < rowNum; i++){
 
                 let goodsPnl = this[listPnlName].clone()
+                this[listViewName].pushBackCustomItem(goodsPnl)
                 goodsPnl.setVisible(true)
                 goodsPnl.setPositionY(0)
                 goodsPnl.setPositionX((this[listViewName].getChildrenCount() + i) * 20)
-                this[listViewName].pushBackCustomItem(goodsPnl)
+
 
                 for(let j = 0; j < rowLength; j++){
                     this.onInitMenuCellData(data,goodsPnl,rowLength * i+j,rowLength,cellName,cellInterval,fuKaNumName,imgName)
@@ -529,8 +531,8 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 return
             let cell = this[cellName].clone()
             cell.setVisible(true)
-            cell.setPositionY(0)
-            cell.setPositionX((index % rowLength) * cellInterval)
+            cell.setPositionX(0)
+            cell.setPositionY((index % rowLength) * cellInterval)
             goodsPnl.addChild(cell)
 
             cell.getChildByName(fuKaNumName).setString(goodsData.fuKaNums+'福卡')
@@ -616,6 +618,8 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 this.titlePnl.setVisible(false)
             }
 
+
+
             switch (msg.contextType) {
                 case 1:
                     this.contextPnl.getChildByName('wordsPnl').setVisible(true)
@@ -636,9 +640,11 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                     this.contextPnl.getChildByName('imgPnl').setVisible(false)
                     this.contextPnl.getChildByName('robPnl').setVisible(true)
 
+                    this.contextPnl.getChildByName('robPnl').getChildByName('fuKaFiled').setString('')
                     this.contextPnl.getChildByName('robPnl').getChildByName('fuaVauleText').setString(msg.fuaVauleText)
+
                     this.contextPnl.getChildByName('robPnl').getChildByName('prizePercentText').setString(msg.currentNum + '/' + msg.allNum)
-                    this.contextPnl.getChildByName('robPnl').getChildByName('prizeLoadingBar').setParent(msg.currentNum / msg.allNum * 100)
+                    this.contextPnl.getChildByName('robPnl').getChildByName('prizeLoadingBar').setPercent(msg.currentNum / msg.allNum * 100)
                     break
                 default:
                     break
@@ -667,9 +673,11 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 this.btnsPnl.getChildByName('rightBtn').setEnabled(true)
                 this.btnsPnl.getChildByName('rightBtn').setBright(true)
                 this.btnsPnl.getChildByName('rightBtn').addClickEventListener(function (sender,dt) {
-                    msg.rightBtnFunction()
-                    sender.setEnabled(false)
-                    sender.setBright(false)
+                    let flag = msg.rightBtnFunction()
+                    if(flag){
+                        sender.setEnabled(false)
+                        sender.setBright(false)
+                    }
                 }.bind(this))
             }else{
                 this.btnsPnl.getChildByName('rightBtn').setVisible(false)
@@ -708,10 +716,10 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
 
                 let goodsPnl = this.robListPnl.clone()
                 goodsPnl.setVisible(true)
-
+                this.robListView.pushBackCustomItem(goodsPnl)
                 goodsPnl.setPositionY(0)
                 goodsPnl.setPositionX((this.robListView.getChildrenCount() + i) * 20)
-                this.robListView.pushBackCustomItem(goodsPnl)
+
 
                 for(let j = 0; j < rowLength; j++){
                     this.onInitRobGoodsCell(data,goodsPnl,rowLength * i+j,rowLength)
@@ -725,14 +733,15 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
 
             let goodsData = data[index]
             let cell = this.robGoodsCell.clone()
+            goodsPnl.addChild(cell)
+
             cell.setVisible(true)
             cell.setPositionX(0)
-            cell.setPositionY((index % rowLength) * cellInterval)
-            goodsPnl.addChild(cell)
+            cell.setPositionY((index % rowLength) * 300)
 
             cell.getChildByName('robGoodsNameText').setString(goodsData.goodsName)
             cell.getChildByName('goodImg').loadTexture(goodsData.hallPictureUrl)
-            cell.getChildByName('robLoadingBar').setParent(goodsData.currentNum / goodsData.allNum * 100)
+            cell.getChildByName('robLoadingBar').setPercent(goodsData.currentNum / goodsData.allNum * 100)
             cell.getChildByName('robPercent').setString(goodsData.currentNum + '/' + goodsData.allNum)
             cell.getChildByName('numText').setString(goodsData.playerConsumeFuka)
             cell._sendMsg = {
@@ -775,11 +784,11 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 fuaVauleText : data.fuKaCnt,
                 currentNum : data.currentNum,
                 allNum : data.allNum,
-                leftBtn : function () {
+                leftBtnFunction : function () {
                     this.onClosePopupPnlClick()
                 }.bind(this),
 
-                rightBtn : function () {
+                rightBtnFunction : function () {
 
                     let robFuKaNum = this.contextPnl.getChildByName('robPnl').getChildByName('fuKaFiled').getString()
                     let fuKaCnt = this.contextPnl.getChildByName('robPnl').getChildByName('fuaVauleText').getString()
@@ -787,12 +796,17 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                     let diffCnt = diffCntArray[1] - diffCntArray[0]
                     if(robFuKaNum < fuKaCnt){
                         appInstance.gameAgent().Tips('您的福卡不足')
-                        return
+                        return false
+                    }
+
+                    if(!this.onTest(robFuKaNum)){
+                        appInstance.gameAgent().Tips('您输入的福卡数量有误，请检查后重新输入')
+                        return false
                     }
 
                     if(robFuKaNum > diffCnt){
                         appInstance.gameAgent().Tips('您的福卡数量超过剩余值，请核实后再次夺宝')
-                        return
+                        return false
                     }
 
                     let msg = {
@@ -803,11 +817,21 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
 
                     appInstance.gameAgent().httpGame().FUKAROBReq(msg)
 
-                }
+                    return true
+
+                }.bind(this)
             }
 
             this.onShowPopubUI(msg)
 
+        },
+
+        onTest: function (str) {
+            if (str == '')
+                return false
+            if (!(/(^[1-9]\d*$)/.test(str)))
+                return false
+            return true
         },
 
         onRobResult: function (data) {

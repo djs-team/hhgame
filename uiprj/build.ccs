@@ -586,7 +586,9 @@
           <Image Name="fk_20.png" />
           <Image Name="fk_21.png" />
           <Image Name="fk_22.png" />
+          <Image Name="fk_22_zheng.png" />
           <Image Name="fk_23.png" />
+          <Image Name="fk_23_z.png" />
           <Image Name="fk_24.png" />
           <Image Name="fk_25.png" />
           <Image Name="fk_26.png" />
@@ -599,10 +601,14 @@
           <Image Name="fk_32.png" />
           <Image Name="fk_33.png" />
           <Image Name="fk_34.png" />
+          <Image Name="fk_34_z.png" />
           <Image Name="fk_35.png" />
+          <Image Name="fk_35_z.png" />
           <Image Name="fk_36.png" />
           <Image Name="fk_37.png" />
+          <Image Name="fk_37_z.png" />
           <Image Name="fk_38.png" />
+          <Image Name="fk_38_z.png" />
           <Image Name="fk_39.png" />
           <Image Name="fk_4.png" />
           <Image Name="fk_40.png" />

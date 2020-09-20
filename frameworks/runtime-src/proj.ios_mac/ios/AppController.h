@@ -35,13 +35,16 @@
 @property(nonatomic, readonly) RootViewController* _Nonnull viewController;
 
 #pragma mark - 直播相关
+/// 从麻将进入视频
++ (void)enterLiveBroadcast;
+
 /// 进入直播间
 /// @param roomId 直播间ID
-+ (void)joinRoom:(NSString *)roomId;
++ (void)joinRoom:(NSString *_Nonnull)roomId;
 
 /// 进入用户详情资料页
 /// @param userId 用户ID
-+ (void)showUserProfile:(NSString *)userId;
++ (void)showUserProfile:(NSString *_Nonnull)userId;
 
 /// 退出登录
 + (void)logout;
@@ -49,7 +52,7 @@
 #pragma mark - 屏幕横竖屏
 /// 改变屏幕旋转
 /// @param dir横竖屏标志  V：竖屏  其他：横屏
-+ (void)setOrientation:(NSString*)dir;
++ (void)setOrientation:(NSString*_Nonnull)dir;
 
 #pragma mark - Pay
 
@@ -58,7 +61,7 @@
 /// @param payParam 支付参数：
 /// @param userID 当前支付用户ID
 /// @param paySuccessMethod 支付成功通知的方法名
-+ (void)appPurchaseWithPayType:(NSInteger)payType payParam:(NSString *_Nonnull)payParam userID:(NSString *_Nonnull)userID paySuccessMethod:(NSString *_Nonnull)paySuccessMethod;
++ (void)appPurchaseWithPayType:(NSString *_Nonnull)payType payParam:(NSString *_Nonnull)payParam userID:(NSString *_Nonnull)userID paySuccessMethod:(NSString *_Nonnull)paySuccessMethod;
 
 #pragma mark - Photo
 + (void)selectedOnePhoto;
@@ -77,6 +80,9 @@
 #pragma mark - 获取手机基本信息
 /// 获取Imei
 + (NSString *_Nullable)getImei;
+
+/// 获取Device
++ (NSString *_Nullable)getDevice;
 
 #pragma mark - 复制到剪贴板
 

@@ -69,6 +69,9 @@
 // OpenInstall
 #import "OpenInstallSDK.h"
 
+// 直播
+#import "CXConfigObject.h"
+
 @interface AppController() <JPUSHRegisterDelegate, WXApiDelegate, BUSplashAdDelegate, OpenInstallDelegate>
 
 @property (nonatomic, copy) NSString *registration_id;
@@ -135,7 +138,7 @@ static AppDelegate s_sharedApplication;
     [WXApi registerApp:WX_AppKey universalLink:@"https://heyin666/"];
     
     // 穿山甲
-    [self setupBUAdSDK];
+//    [self setupBUAdSDK];
     
     // OpenInstall
     [OpenInstallSDK initWithDelegate:self];
@@ -405,21 +408,21 @@ static AppDelegate s_sharedApplication;
 /// @param payParam 支付参数：
 /// @param userID 当前支付用户ID
 /// @param paySuccessMethod 支付成功通知的方法名
-+ (void)appPurchaseWithPayType:(NSInteger)payType payParam:(NSString *)payParam userID:(NSString *)userID paySuccessMethod:(NSString *)paySuccessMethod {
++ (void)appPurchaseWithPayType:(NSString *_Nonnull)payType payParam:(NSString *)payParam userID:(NSString *)userID paySuccessMethod:(NSString *)paySuccessMethod {
     [CXOCJSBrigeManager manager].paySuccessMethod = paySuccessMethod;
-    if (payType == 1) {
+    if ([payType isEqualToString:@"ios"]) {
         [CXIPAPurchaseManager manager].userid = userID;
         [CXIPAPurchaseManager manager].purchaseType = MaJiang;
         [[CXIPAPurchaseManager manager] inAppPurchaseWithProductID:payParam iapResult:^(BOOL isSuccess, NSDictionary *param, NSString *errorMsg) {
             [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].openInstallParamMethod param:[param jsonStringEncoded]];
         }];
-    } else if (payType == 2) {
+    } else if ([payType isEqualToString:@"alipay"]) {
         [[CXThirdPayManager sharedApi] aliPayWithPayParam:payParam success:^(PayCode code) {
             [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].openInstallParamMethod param:@"success"];
         } failure:^(PayCode code) {
             [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].openInstallParamMethod param:@"failure"];
         }];
-    } else if (payType == 3) {
+    } else if ([payType isEqualToString:@"wx"]) {
         [[CXThirdPayManager sharedApi] wxPayWithPayParam:payParam success:^(PayCode code) {
             [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].openInstallParamMethod param:@"success"];
         } failure:^(PayCode code) {
@@ -542,6 +545,10 @@ static AppDelegate s_sharedApplication;
     return imei;
 }
 
++ (NSString *_Nullable)getDevice {
+    return [CXPhoneBasicTools deviceName];
+}
+
 #pragma mark - ================ 复制到剪贴板 ===================
 
 /// 复制到剪贴板
@@ -571,18 +578,23 @@ UIInterfaceOrientationMask oMask = UIInterfaceOrientationMaskLandscape;
 }
 
 + (void)setOrientation:(NSString*)dir {
-//    [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIDeviceOrientationUnknown] forKey:@"orientation"];
-//    
-//    if([dir isEqualToString:@"V"]){
-//        oMask = UIInterfaceOrientationMaskPortrait;
-//        [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIInterfaceOrientationPortrait] forKey:@"orientation"];
-//    } else {
-//        oMask = UIInterfaceOrientationMaskLandscape;
-//        [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIInterfaceOrientationLandscapeLeft] forKey:@"orientation"];
-//    }
+    [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIDeviceOrientationUnknown] forKey:@"orientation"];
+    
+    if([dir isEqualToString:@"V"]){
+        oMask = UIInterfaceOrientationMaskPortrait;
+        [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIInterfaceOrientationPortrait] forKey:@"orientation"];
+    } else {
+        oMask = UIInterfaceOrientationMaskLandscape;
+        [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIInterfaceOrientationLandscapeRight] forKey:@"orientation"];
+    }
 }
 
 #pragma mark - ================ 直播相关 ===================
+/// 从麻将进入视频
++ (void)enterLiveBroadcast {
+    [CXConfigObject enterOnline];
+}
+
 + (void)joinRoom:(NSString *)roomId {
     if (roomId.length <= 0) {
         return;

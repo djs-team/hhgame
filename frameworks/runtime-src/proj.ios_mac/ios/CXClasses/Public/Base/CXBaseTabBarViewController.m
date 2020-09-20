@@ -81,9 +81,8 @@
 }
 
 - (void)back {
+    [AppController setOrientation:@""];
     [self dismissViewControllerAnimated:YES completion:nil];
-      
-//    [AppController setOrientation:@""];
 }
 
 - (void)setupChildController {

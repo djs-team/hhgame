@@ -753,10 +753,10 @@
                       "Plist": ""
                     },
                     "Scale9Enable": true,
-                    "Scale9OriginX": 46,
-                    "Scale9OriginY": 72,
-                    "Scale9Width": 13,
-                    "Scale9Height": 1,
+                    "Scale9OriginX": 65,
+                    "Scale9OriginY": 64,
+                    "Scale9Width": 2,
+                    "Scale9Height": 2,
                     "OutlineColor": {
                       "G": 0,
                       "B": 0
@@ -775,11 +775,11 @@
                     },
                     "Position": {
                       "X": 985.716,
-                      "Y": 261.6159
+                      "Y": 261.62
                     },
                     "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
+                      "ScaleX": 0.6,
+                      "ScaleY": 0.6
                     },
                     "CColor": {},
                     "IconVisible": false,
@@ -788,18 +788,18 @@
                       "Y": 0.3634
                     },
                     "PreSize": {
-                      "X": 0.0953,
-                      "Y": 0.0681
+                      "X": 0.1406,
+                      "Y": 0.1014
                     },
-                    "LeftMargin": 924.716,
-                    "RightMargin": 233.2839,
-                    "TopMargin": 433.8841,
-                    "BottomMargin": 237.1159,
+                    "LeftMargin": 895.716,
+                    "RightMargin": 204.2839,
+                    "TopMargin": 421.88,
+                    "BottomMargin": 225.12,
                     "Tag": 172,
                     "Children": [
                       {
                         "FontSize": 18,
-                        "LabelText": "成为VIP",
+                        "LabelText": " 成为VIP ",
                         "FontResource": {
                           "Type": "Normal",
                           "Path": "font/hkhbtW12.ttc",
@@ -821,8 +821,8 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 60.7112,
-                          "Y": 26.6906
+                          "X": 90.0,
+                          "Y": 40.15
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -834,22 +834,24 @@
                           "B": 0
                         },
                         "IconVisible": false,
+                        "PositionPercentXEnabled": true,
+                        "PositionPercentYEnabled": true,
                         "PrePosition": {
-                          "X": 0.4976,
-                          "Y": 0.5447
+                          "X": 0.5,
+                          "Y": 0.55
                         },
                         "PreSize": {
-                          "X": 0.541,
-                          "Y": 0.3673
+                          "X": 0.4167,
+                          "Y": 0.2466
                         },
-                        "LeftMargin": 27.7112,
-                        "RightMargin": 28.2888,
-                        "TopMargin": 13.3094,
-                        "BottomMargin": 17.6906,
+                        "LeftMargin": 52.5,
+                        "RightMargin": 52.5,
+                        "TopMargin": 23.85,
+                        "BottomMargin": 31.15,
                         "Tag": 173,
                         "ActionTag": -1832364403,
                         "Size": {
-                          "X": 66.0,
+                          "X": 75.0,
                           "Y": 18.0
                         },
                         "Name": "goVIPText",
@@ -858,8 +860,8 @@
                     ],
                     "ActionTag": -1937164870,
                     "Size": {
-                      "X": 122.0,
-                      "Y": 49.0
+                      "X": 180.0,
+                      "Y": 73.0
                     },
                     "Name": "becomeBtn",
                     "ctype": "ButtonObjectData"
@@ -883,9 +885,9 @@
                       "Plist": ""
                     },
                     "Scale9Enable": true,
-                    "Scale9OriginX": 46,
+                    "Scale9OriginX": 65,
                     "Scale9OriginY": 72,
-                    "Scale9Width": 13,
+                    "Scale9Width": 2,
                     "Scale9Height": 1,
                     "OutlineColor": {
                       "G": 0,
@@ -904,32 +906,32 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 985.72,
-                      "Y": 261.62
+                      "X": 984.8688,
+                      "Y": 260.3619
                     },
                     "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
+                      "ScaleX": 0.6,
+                      "ScaleY": 0.6
                     },
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.7701,
-                      "Y": 0.3634
+                      "X": 0.7694,
+                      "Y": 0.3616
                     },
                     "PreSize": {
-                      "X": 0.0953,
-                      "Y": 0.0681
+                      "X": 0.1406,
+                      "Y": 0.1014
                     },
-                    "LeftMargin": 924.72,
-                    "RightMargin": 233.28,
-                    "TopMargin": 433.88,
-                    "BottomMargin": 237.12,
+                    "LeftMargin": 894.8688,
+                    "RightMargin": 205.1312,
+                    "TopMargin": 423.1381,
+                    "BottomMargin": 223.8619,
                     "Tag": 231,
                     "Children": [
                       {
                         "FontSize": 18,
-                        "LabelText": "升级VIP",
+                        "LabelText": " 升级VIP ",
                         "FontResource": {
                           "Type": "Normal",
                           "Path": "font/hkhbtW12.ttc",
@@ -951,8 +953,8 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 60.7112,
-                          "Y": 26.6906
+                          "X": 90.0,
+                          "Y": 40.15
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -964,22 +966,24 @@
                           "B": 0
                         },
                         "IconVisible": false,
+                        "PositionPercentXEnabled": true,
+                        "PositionPercentYEnabled": true,
                         "PrePosition": {
-                          "X": 0.4976,
-                          "Y": 0.5447
+                          "X": 0.5,
+                          "Y": 0.55
                         },
                         "PreSize": {
-                          "X": 0.541,
-                          "Y": 0.3673
+                          "X": 0.4167,
+                          "Y": 0.2466
                         },
-                        "LeftMargin": 27.7112,
-                        "RightMargin": 28.2888,
-                        "TopMargin": 13.3094,
-                        "BottomMargin": 17.6906,
+                        "LeftMargin": 52.5,
+                        "RightMargin": 52.5,
+                        "TopMargin": 23.85,
+                        "BottomMargin": 31.15,
                         "Tag": 232,
                         "ActionTag": 328356138,
                         "Size": {
-                          "X": 66.0,
+                          "X": 75.0,
                           "Y": 18.0
                         },
                         "Name": "goVIPText",
@@ -988,8 +992,8 @@
                     ],
                     "ActionTag": -276406237,
                     "Size": {
-                      "X": 122.0,
-                      "Y": 49.0
+                      "X": 180.0,
+                      "Y": 73.0
                     },
                     "Name": "upgradeBtn",
                     "ctype": "ButtonObjectData"
@@ -1013,9 +1017,9 @@
                       "Plist": ""
                     },
                     "Scale9Enable": true,
-                    "Scale9OriginX": 46,
+                    "Scale9OriginX": 65,
                     "Scale9OriginY": 72,
-                    "Scale9Width": 13,
+                    "Scale9Width": 2,
                     "Scale9Height": 1,
                     "OutlineColor": {
                       "G": 0,
@@ -1034,32 +1038,32 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 985.72,
-                      "Y": 261.62
+                      "X": 985.322,
+                      "Y": 260.8535
                     },
                     "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
+                      "ScaleX": 0.6,
+                      "ScaleY": 0.6
                     },
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.7701,
-                      "Y": 0.3634
+                      "X": 0.7698,
+                      "Y": 0.3623
                     },
                     "PreSize": {
-                      "X": 0.0953,
-                      "Y": 0.0681
+                      "X": 0.1406,
+                      "Y": 0.1014
                     },
-                    "LeftMargin": 924.72,
-                    "RightMargin": 233.28,
-                    "TopMargin": 433.88,
-                    "BottomMargin": 237.12,
+                    "LeftMargin": 895.322,
+                    "RightMargin": 204.678,
+                    "TopMargin": 422.6465,
+                    "BottomMargin": 224.3535,
                     "Tag": 229,
                     "Children": [
                       {
                         "FontSize": 18,
-                        "LabelText": "续费VIP",
+                        "LabelText": " 续费VIP ",
                         "FontResource": {
                           "Type": "Normal",
                           "Path": "font/hkhbtW12.ttc",
@@ -1081,8 +1085,8 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 60.7112,
-                          "Y": 26.6906
+                          "X": 90.0,
+                          "Y": 40.15
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -1094,22 +1098,24 @@
                           "B": 0
                         },
                         "IconVisible": false,
+                        "PositionPercentXEnabled": true,
+                        "PositionPercentYEnabled": true,
                         "PrePosition": {
-                          "X": 0.4976,
-                          "Y": 0.5447
+                          "X": 0.5,
+                          "Y": 0.55
                         },
                         "PreSize": {
-                          "X": 0.541,
-                          "Y": 0.3673
+                          "X": 0.4167,
+                          "Y": 0.2466
                         },
-                        "LeftMargin": 27.7112,
-                        "RightMargin": 28.2888,
-                        "TopMargin": 13.3094,
-                        "BottomMargin": 17.6906,
+                        "LeftMargin": 52.5,
+                        "RightMargin": 52.5,
+                        "TopMargin": 23.85,
+                        "BottomMargin": 31.15,
                         "Tag": 230,
                         "ActionTag": 385891032,
                         "Size": {
-                          "X": 66.0,
+                          "X": 75.0,
                           "Y": 18.0
                         },
                         "Name": "goVIPText",
@@ -1118,8 +1124,8 @@
                     ],
                     "ActionTag": 1772592791,
                     "Size": {
-                      "X": 122.0,
-                      "Y": 49.0
+                      "X": 180.0,
+                      "Y": 73.0
                     },
                     "Name": "renewBtn",
                     "ctype": "ButtonObjectData"

@@ -154,84 +154,84 @@
               <AbstractNodeData Name="btnPnl" ActionTag="632562851" Tag="169" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="1280.0000" Y="720.0000" />
                 <Children>
-                  <AbstractNodeData Name="becomeBtn" ActionTag="-1937164870" Tag="172" IconVisible="False" LeftMargin="924.7160" RightMargin="233.2839" TopMargin="433.8841" BottomMargin="237.1159" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="46" RightEage="44" TopEage="72" Scale9OriginX="46" Scale9OriginY="72" Scale9Width="13" Scale9Height="1" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                    <Size X="122.0000" Y="49.0000" />
+                  <AbstractNodeData Name="becomeBtn" ActionTag="-1937164870" Tag="172" IconVisible="False" LeftMargin="895.7160" RightMargin="204.2839" TopMargin="421.8800" BottomMargin="225.1200" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="65" RightEage="36" TopEage="64" BottomEage="7" Scale9OriginX="65" Scale9OriginY="64" Scale9Width="2" Scale9Height="2" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                    <Size X="180.0000" Y="73.0000" />
                     <Children>
-                      <AbstractNodeData Name="goVIPText" ActionTag="-1832364403" Tag="173" IconVisible="False" LeftMargin="27.7112" RightMargin="28.2888" TopMargin="13.3094" BottomMargin="17.6906" FontSize="18" LabelText="成为VIP" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                        <Size X="66.0000" Y="18.0000" />
+                      <AbstractNodeData Name="goVIPText" ActionTag="-1832364403" Tag="173" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="52.5000" RightMargin="52.5000" TopMargin="23.8500" BottomMargin="31.1500" FontSize="18" LabelText=" 成为VIP " ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="75.0000" Y="18.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="60.7112" Y="26.6906" />
+                        <Position X="90.0000" Y="40.1500" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="152" G="73" B="0" />
-                        <PrePosition X="0.4976" Y="0.5447" />
-                        <PreSize X="0.5410" Y="0.3673" />
+                        <PrePosition X="0.5000" Y="0.5500" />
+                        <PreSize X="0.4167" Y="0.2466" />
                         <FontResource Type="Normal" Path="font/hkhbtW12.ttc" Plist="" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="985.7160" Y="261.6159" />
-                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <Position X="985.7160" Y="261.6200" />
+                    <Scale ScaleX="0.6000" ScaleY="0.6000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.7701" Y="0.3634" />
-                    <PreSize X="0.0953" Y="0.0681" />
+                    <PreSize X="0.1406" Y="0.1014" />
                     <TextColor A="255" R="65" G="65" B="70" />
                     <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
                     <NormalFileData Type="Normal" Path="common/bt_3.png" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="upgradeBtn" Visible="False" ActionTag="-276406237" Tag="231" IconVisible="False" LeftMargin="924.7200" RightMargin="233.2800" TopMargin="433.8800" BottomMargin="237.1200" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="46" RightEage="44" TopEage="72" Scale9OriginX="46" Scale9OriginY="72" Scale9Width="13" Scale9Height="1" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                    <Size X="122.0000" Y="49.0000" />
+                  <AbstractNodeData Name="upgradeBtn" ActionTag="-276406237" Tag="231" IconVisible="False" LeftMargin="894.8688" RightMargin="205.1312" TopMargin="423.1381" BottomMargin="223.8619" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="65" RightEage="36" TopEage="72" Scale9OriginX="65" Scale9OriginY="72" Scale9Width="2" Scale9Height="1" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                    <Size X="180.0000" Y="73.0000" />
                     <Children>
-                      <AbstractNodeData Name="goVIPText" ActionTag="328356138" Tag="232" IconVisible="False" LeftMargin="27.7112" RightMargin="28.2888" TopMargin="13.3094" BottomMargin="17.6906" FontSize="18" LabelText="升级VIP" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                        <Size X="66.0000" Y="18.0000" />
+                      <AbstractNodeData Name="goVIPText" ActionTag="328356138" Tag="232" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="52.5000" RightMargin="52.5000" TopMargin="23.8500" BottomMargin="31.1500" FontSize="18" LabelText=" 升级VIP " ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="75.0000" Y="18.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="60.7112" Y="26.6906" />
+                        <Position X="90.0000" Y="40.1500" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="152" G="73" B="0" />
-                        <PrePosition X="0.4976" Y="0.5447" />
-                        <PreSize X="0.5410" Y="0.3673" />
+                        <PrePosition X="0.5000" Y="0.5500" />
+                        <PreSize X="0.4167" Y="0.2466" />
                         <FontResource Type="Normal" Path="font/hkhbtW12.ttc" Plist="" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="985.7200" Y="261.6200" />
-                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <Position X="984.8688" Y="260.3619" />
+                    <Scale ScaleX="0.6000" ScaleY="0.6000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.7701" Y="0.3634" />
-                    <PreSize X="0.0953" Y="0.0681" />
+                    <PrePosition X="0.7694" Y="0.3616" />
+                    <PreSize X="0.1406" Y="0.1014" />
                     <TextColor A="255" R="65" G="65" B="70" />
                     <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
                     <NormalFileData Type="Normal" Path="common/bt_3.png" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="renewBtn" Visible="False" ActionTag="1772592791" Tag="229" IconVisible="False" LeftMargin="924.7200" RightMargin="233.2800" TopMargin="433.8800" BottomMargin="237.1200" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="46" RightEage="44" TopEage="72" Scale9OriginX="46" Scale9OriginY="72" Scale9Width="13" Scale9Height="1" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                    <Size X="122.0000" Y="49.0000" />
+                  <AbstractNodeData Name="renewBtn" ActionTag="1772592791" Tag="229" IconVisible="False" LeftMargin="895.3220" RightMargin="204.6780" TopMargin="422.6465" BottomMargin="224.3535" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="65" RightEage="36" TopEage="72" Scale9OriginX="65" Scale9OriginY="72" Scale9Width="2" Scale9Height="1" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                    <Size X="180.0000" Y="73.0000" />
                     <Children>
-                      <AbstractNodeData Name="goVIPText" ActionTag="385891032" Tag="230" IconVisible="False" LeftMargin="27.7112" RightMargin="28.2888" TopMargin="13.3094" BottomMargin="17.6906" FontSize="18" LabelText="续费VIP" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                        <Size X="66.0000" Y="18.0000" />
+                      <AbstractNodeData Name="goVIPText" ActionTag="385891032" Tag="230" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="52.5000" RightMargin="52.5000" TopMargin="23.8500" BottomMargin="31.1500" FontSize="18" LabelText=" 续费VIP " ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="75.0000" Y="18.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="60.7112" Y="26.6906" />
+                        <Position X="90.0000" Y="40.1500" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="152" G="73" B="0" />
-                        <PrePosition X="0.4976" Y="0.5447" />
-                        <PreSize X="0.5410" Y="0.3673" />
+                        <PrePosition X="0.5000" Y="0.5500" />
+                        <PreSize X="0.4167" Y="0.2466" />
                         <FontResource Type="Normal" Path="font/hkhbtW12.ttc" Plist="" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="985.7200" Y="261.6200" />
-                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <Position X="985.3220" Y="260.8535" />
+                    <Scale ScaleX="0.6000" ScaleY="0.6000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.7701" Y="0.3634" />
-                    <PreSize X="0.0953" Y="0.0681" />
+                    <PrePosition X="0.7698" Y="0.3623" />
+                    <PreSize X="0.1406" Y="0.1014" />
                     <TextColor A="255" R="65" G="65" B="70" />
                     <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
                     <NormalFileData Type="Normal" Path="common/bt_3.png" Plist="" />

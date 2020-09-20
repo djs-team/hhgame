@@ -643,6 +643,7 @@
                           {
                             "FontSize": 20,
                             "LabelText": "1、专属会员大奖赛参赛资格",
+                            "VerticalAlignmentType": "VT_Center",
                             "OutlineColor": {
                               "G": 0,
                               "B": 0
@@ -655,11 +656,10 @@
                             "ShadowOffsetX": 2.0,
                             "ShadowOffsetY": -2.0,
                             "AnchorPoint": {
-                              "ScaleX": 0.5,
                               "ScaleY": 0.5
                             },
                             "Position": {
-                              "X": 349.9028,
+                              "X": 224.9028,
                               "Y": 280.8058
                             },
                             "Scale": {
@@ -673,7 +673,7 @@
                             },
                             "IconVisible": false,
                             "PrePosition": {
-                              "X": 0.6847,
+                              "X": 0.4401,
                               "Y": 0.7736
                             },
                             "PreSize": {
@@ -696,6 +696,7 @@
                           {
                             "FontSize": 20,
                             "LabelText": "2、麻将情缘畅游权限",
+                            "VerticalAlignmentType": "VT_Center",
                             "OutlineColor": {
                               "G": 0,
                               "B": 0
@@ -708,11 +709,10 @@
                             "ShadowOffsetX": 2.0,
                             "ShadowOffsetY": -2.0,
                             "AnchorPoint": {
-                              "ScaleX": 0.5,
                               "ScaleY": 0.5
                             },
                             "Position": {
-                              "X": 318.9013,
+                              "X": 223.9013,
                               "Y": 247.6082
                             },
                             "Scale": {
@@ -726,7 +726,7 @@
                             },
                             "IconVisible": false,
                             "PrePosition": {
-                              "X": 0.6241,
+                              "X": 0.4382,
                               "Y": 0.6821
                             },
                             "PreSize": {
@@ -749,6 +749,7 @@
                           {
                             "FontSize": 20,
                             "LabelText": "3、vip会员福利礼包一直领",
+                            "VerticalAlignmentType": "VT_Center",
                             "OutlineColor": {
                               "G": 0,
                               "B": 0
@@ -761,11 +762,10 @@
                             "ShadowOffsetX": 2.0,
                             "ShadowOffsetY": -2.0,
                             "AnchorPoint": {
-                              "ScaleX": 0.5,
                               "ScaleY": 0.5
                             },
                             "Position": {
-                              "X": 343.2024,
+                              "X": 223.2024,
                               "Y": 215.9216
                             },
                             "Scale": {
@@ -779,7 +779,7 @@
                             },
                             "IconVisible": false,
                             "PrePosition": {
-                              "X": 0.6716,
+                              "X": 0.4368,
                               "Y": 0.5948
                             },
                             "PreSize": {
@@ -802,6 +802,7 @@
                           {
                             "FontSize": 20,
                             "LabelText": "4、vip会员专属角色免费玩",
+                            "VerticalAlignmentType": "VT_Center",
                             "OutlineColor": {
                               "G": 0,
                               "B": 0
@@ -814,11 +815,10 @@
                             "ShadowOffsetX": 2.0,
                             "ShadowOffsetY": -2.0,
                             "AnchorPoint": {
-                              "ScaleX": 0.5,
                               "ScaleY": 0.5
                             },
                             "Position": {
-                              "X": 344.593,
+                              "X": 224.593,
                               "Y": 183.8355
                             },
                             "Scale": {
@@ -832,7 +832,7 @@
                             },
                             "IconVisible": false,
                             "PrePosition": {
-                              "X": 0.6744,
+                              "X": 0.4395,
                               "Y": 0.5064
                             },
                             "PreSize": {
@@ -855,6 +855,7 @@
                           {
                             "FontSize": 20,
                             "LabelText": "5、最多领取x倍签到奖励",
+                            "VerticalAlignmentType": "VT_Center",
                             "OutlineColor": {
                               "G": 0,
                               "B": 0
@@ -867,11 +868,10 @@
                             "ShadowOffsetX": 2.0,
                             "ShadowOffsetY": -2.0,
                             "AnchorPoint": {
-                              "ScaleX": 0.5,
                               "ScaleY": 0.5
                             },
                             "Position": {
-                              "X": 334.2217,
+                              "X": 224.2217,
                               "Y": 148.254
                             },
                             "Scale": {
@@ -885,7 +885,7 @@
                             },
                             "IconVisible": false,
                             "PrePosition": {
-                              "X": 0.6541,
+                              "X": 0.4388,
                               "Y": 0.4084
                             },
                             "PreSize": {
@@ -908,6 +908,7 @@
                           {
                             "FontSize": 20,
                             "LabelText": "6、与众不同，专属的会员标识",
+                            "VerticalAlignmentType": "VT_Center",
                             "OutlineColor": {
                               "G": 0,
                               "B": 0
@@ -920,11 +921,10 @@
                             "ShadowOffsetX": 2.0,
                             "ShadowOffsetY": -2.0,
                             "AnchorPoint": {
-                              "ScaleX": 0.5,
                               "ScaleY": 0.5
                             },
                             "Position": {
-                              "X": 359.2322,
+                              "X": 224.2322,
                               "Y": 115.9344
                             },
                             "Scale": {
@@ -938,7 +938,7 @@
                             },
                             "IconVisible": false,
                             "PrePosition": {
-                              "X": 0.703,
+                              "X": 0.4388,
                               "Y": 0.3194
                             },
                             "PreSize": {
@@ -961,6 +961,7 @@
                           {
                             "FontSize": 20,
                             "LabelText": "7、更多特权，敬请期待......",
+                            "VerticalAlignmentType": "VT_Center",
                             "OutlineColor": {
                               "G": 0,
                               "B": 0
@@ -973,11 +974,10 @@
                             "ShadowOffsetX": 2.0,
                             "ShadowOffsetY": -2.0,
                             "AnchorPoint": {
-                              "ScaleX": 0.5,
                               "ScaleY": 0.5
                             },
                             "Position": {
-                              "X": 360.138,
+                              "X": 225.138,
                               "Y": 81.32
                             },
                             "Scale": {
@@ -991,7 +991,7 @@
                             },
                             "IconVisible": false,
                             "PrePosition": {
-                              "X": 0.7048,
+                              "X": 0.4406,
                               "Y": 0.224
                             },
                             "PreSize": {
@@ -1152,7 +1152,7 @@
                           "Y": 0.3159
                         },
                         "PreSize": {
-                          "X": 0.1563,
+                          "X": 0.1562,
                           "Y": 0.0583
                         },
                         "LeftMargin": 616.1543,
@@ -4294,7 +4294,7 @@
                       "Y": 0.124
                     },
                     "PreSize": {
-                      "X": 0.1563,
+                      "X": 0.1562,
                       "Y": 0.3958
                     },
                     "LeftMargin": 436.6302,

@@ -6371,7 +6371,7 @@
                   "Y": 0.9444
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.0625
                 },
                 "LeftMargin": 780.08,
@@ -8170,11 +8170,6 @@
                       "R": 65,
                       "G": 65,
                       "B": 70
-                    },
-                    "DisabledFileData": {
-                      "Type": "Default",
-                      "Path": "Default/Button_Disable.png",
-                      "Plist": ""
                     },
                     "NormalFileData": {
                       "Type": "Normal",

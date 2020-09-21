@@ -24,6 +24,7 @@ PODS:
   - AZCategory/Gradient (0.0.2)
   - AZCategory/PushAndPop (0.0.2)
   - AZCategory/SafeArea (0.0.2)
+  - Bytedance-UnionAD (3.1.0.4)
   - CocoaSecurity (1.2.4)
   - FLAnimatedImage (1.0.12)
   - HyphenateLite (3.6.9)
@@ -69,6 +70,7 @@ DEPENDENCIES:
   - AlipaySDK-iOS
   - AliyunOSSiOS
   - AZCategory
+  - Bytedance-UnionAD
   - CocoaSecurity
   - FLAnimatedImage
   - HyphenateLite
@@ -97,6 +99,7 @@ SPEC REPOS:
     - AlipaySDK-iOS
     - AliyunOSSiOS
     - AZCategory
+    - Bytedance-UnionAD
     - CocoaSecurity
     - FLAnimatedImage
     - HyphenateLite
@@ -127,6 +130,7 @@ SPEC CHECKSUMS:
   AlipaySDK-iOS: 8659cdb4403de7e5f26ad8b699864a9cbe53384c
   AliyunOSSiOS: 8db92936545593b9e5c66d680ef2ac0738946651
   AZCategory: fbcb0ba6e1da3790cd3aefe13216b5adc25f6b56
+  Bytedance-UnionAD: d2d9e3ce0891ddb99fc96ad76c847cdcfabd6c73
   CocoaSecurity: d288a6f87e0f363823d2cb83e753814a6944f71a
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   HyphenateLite: 753cd75b6f9a85fb812c63224955c31c136a7969
@@ -151,6 +155,6 @@ SPEC CHECKSUMS:
   WMPageController: 0c7624d2b48e4f1ab92371688cf6744ed701575d
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 62ffae8b54b6639956ba3f323b52df36ef3d9ac6
+PODFILE CHECKSUM: 428597118cb585a48e0c272a53882adcf852a9a2
 
 COCOAPODS: 1.9.3

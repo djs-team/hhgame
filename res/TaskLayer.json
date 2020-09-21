@@ -940,12 +940,14 @@
                             "Children": [
                               {
                                 "FontSize": 25,
-                                "LabelText": "55",
+                                "LabelText": "100",
                                 "FontResource": {
                                   "Type": "Normal",
                                   "Path": "font/hkhbtW12.ttc",
                                   "Plist": ""
                                 },
+                                "HorizontalAlignmentType": "HT_Center",
+                                "VerticalAlignmentType": "VT_Center",
                                 "OutlineColor": {
                                   "G": 0,
                                   "B": 0
@@ -976,17 +978,17 @@
                                   "Y": 0.6216
                                 },
                                 "PreSize": {
-                                  "X": 0.2417,
+                                  "X": 0.35,
                                   "Y": 0.2451
                                 },
-                                "LeftMargin": 43.87,
-                                "RightMargin": 47.13,
+                                "LeftMargin": 37.37,
+                                "RightMargin": 40.63,
                                 "TopMargin": 26.094,
                                 "BottomMargin": 50.906,
                                 "Tag": 319,
                                 "ActionTag": 1795308259,
                                 "Size": {
-                                  "X": 29.0,
+                                  "X": 42.0,
                                   "Y": 25.0
                                 },
                                 "Name": "activityValue",

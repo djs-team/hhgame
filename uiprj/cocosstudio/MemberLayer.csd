@@ -101,7 +101,7 @@
           <AbstractNodeData Name="pnl" ActionTag="1823591232" Tag="25" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <Children>
-              <AbstractNodeData Name="privilegePnl" ActionTag="450871004" Tag="27" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="privilegePnl" Visible="False" ActionTag="450871004" Tag="27" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="1280.0000" Y="720.0000" />
                 <Children>
                   <AbstractNodeData Name="privilegePgPnl" ActionTag="-1672360260" Tag="4" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="-1.4080" RightMargin="1.4080" TopMargin="1.2960" BottomMargin="-1.2960" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
@@ -769,7 +769,7 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="rechargePnl" Visible="False" ActionTag="836706072" Tag="292" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="rechargePnl" ActionTag="836706072" Tag="292" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="1280.0000" Y="720.0000" />
                 <Children>
                   <AbstractNodeData Name="rechargePgPnl" ActionTag="-165416144" Tag="295" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
@@ -883,7 +883,7 @@
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Image_35" ActionTag="264825231" Tag="311" IconVisible="False" LeftMargin="583.4744" RightMargin="651.5256" TopMargin="214.5866" BottomMargin="461.4134" LeftEage="29" RightEage="29" TopEage="29" BottomEage="29" Scale9OriginX="29" Scale9OriginY="29" Scale9Width="30" Scale9Height="32" ctype="ImageViewObjectData">
+                      <AbstractNodeData Name="Image_35" ActionTag="264825231" VisibleForFrame="False" Tag="311" IconVisible="False" LeftMargin="583.4744" RightMargin="651.5256" TopMargin="214.5866" BottomMargin="461.4134" LeftEage="29" RightEage="29" TopEage="29" BottomEage="29" Scale9OriginX="29" Scale9OriginY="29" Scale9Width="30" Scale9Height="32" ctype="ImageViewObjectData">
                         <Size X="45.0000" Y="44.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="605.9744" Y="483.4134" />
@@ -893,7 +893,7 @@
                         <PreSize X="0.0352" Y="0.0611" />
                         <FileData Type="Normal" Path="vip/vip_8.png" Plist="" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Image_35_0" ActionTag="-1568986019" Tag="312" IconVisible="False" LeftMargin="741.9216" RightMargin="493.0784" TopMargin="214.9815" BottomMargin="461.0185" LeftEage="29" RightEage="29" TopEage="29" BottomEage="29" Scale9OriginX="29" Scale9OriginY="29" Scale9Width="30" Scale9Height="32" ctype="ImageViewObjectData">
+                      <AbstractNodeData Name="Image_35_0" ActionTag="-1568986019" VisibleForFrame="False" Tag="312" IconVisible="False" LeftMargin="741.9216" RightMargin="493.0784" TopMargin="214.9815" BottomMargin="461.0185" LeftEage="29" RightEage="29" TopEage="29" BottomEage="29" Scale9OriginX="29" Scale9OriginY="29" Scale9Width="30" Scale9Height="32" ctype="ImageViewObjectData">
                         <Size X="45.0000" Y="44.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="764.4216" Y="483.0185" />
@@ -903,7 +903,7 @@
                         <PreSize X="0.0352" Y="0.0611" />
                         <FileData Type="Normal" Path="vip/vip_8.png" Plist="" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Image_35_1" ActionTag="181948267" Tag="313" IconVisible="False" LeftMargin="897.5455" RightMargin="337.4545" TopMargin="214.6620" BottomMargin="461.3380" LeftEage="29" RightEage="29" TopEage="29" BottomEage="29" Scale9OriginX="29" Scale9OriginY="29" Scale9Width="30" Scale9Height="32" ctype="ImageViewObjectData">
+                      <AbstractNodeData Name="Image_35_1" ActionTag="181948267" VisibleForFrame="False" Tag="313" IconVisible="False" LeftMargin="897.5455" RightMargin="337.4545" TopMargin="214.6620" BottomMargin="461.3380" LeftEage="29" RightEage="29" TopEage="29" BottomEage="29" Scale9OriginX="29" Scale9OriginY="29" Scale9Width="30" Scale9Height="32" ctype="ImageViewObjectData">
                         <Size X="45.0000" Y="44.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="920.0455" Y="483.3380" />
@@ -975,7 +975,7 @@
                             <OutlineColor A="255" R="255" G="0" B="0" />
                             <ShadowColor A="255" R="110" G="110" B="110" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="priceText" ActionTag="511669216" Tag="330" IconVisible="False" LeftMargin="19.5164" RightMargin="14.4836" TopMargin="56.8646" BottomMargin="19.1354" FontSize="22" LabelText="888RMB 888元" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                          <AbstractNodeData Name="priceText" ActionTag="511669216" Tag="330" IconVisible="False" LeftMargin="19.5164" RightMargin="14.4836" TopMargin="56.8646" BottomMargin="19.1354" FontSize="22" LabelText="888RMB 888元" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                             <Size X="132.0000" Y="22.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                             <Position X="85.5164" Y="30.1354" />

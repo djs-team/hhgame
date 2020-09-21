@@ -204,7 +204,7 @@ load('game/ui/layer/fukashop/FukaShopMdt', function () {
 
                 baoData.goodsid = info.goodsid
                 baoData.allNum = info.fuKaNum
-                baoData.currentNum = info.goodsid
+                baoData.currentNum = info.process
                 baoData.playerConsumeFuka =  '我已夺宝' + info.playerConsumeFuka + '次'
                 baoData.num = info.num
                 baoData.goodsName = info.goodsName

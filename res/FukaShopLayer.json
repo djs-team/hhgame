@@ -1232,59 +1232,6 @@
                     "ctype": "ImageViewObjectData"
                   },
                   {
-                    "DirectionType": "Vertical",
-                    "IsBounceEnabled": true,
-                    "ScrollDirectionType": 0,
-                    "ClipAble": true,
-                    "BackColorAlpha": 102,
-                    "SingleColor": {
-                      "R": 150,
-                      "G": 150
-                    },
-                    "FirstColor": {
-                      "R": 150,
-                      "G": 150
-                    },
-                    "EndColor": {},
-                    "ColorVector": {
-                      "ScaleY": 1.0
-                    },
-                    "Scale9Width": 1,
-                    "Scale9Height": 1,
-                    "TouchEnable": true,
-                    "AnchorPoint": {},
-                    "Position": {
-                      "X": 558.8386,
-                      "Y": 0.313
-                    },
-                    "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
-                    },
-                    "CColor": {},
-                    "IconVisible": false,
-                    "PrePosition": {
-                      "X": 0.4366,
-                      "Y": 0.0004
-                    },
-                    "PreSize": {
-                      "X": 0.0898,
-                      "Y": 1.0
-                    },
-                    "LeftMargin": 558.8386,
-                    "RightMargin": 606.1614,
-                    "TopMargin": -0.313,
-                    "BottomMargin": 0.313,
-                    "Tag": 409,
-                    "ActionTag": -1886086934,
-                    "Size": {
-                      "X": 115.0,
-                      "Y": 720.0
-                    },
-                    "Name": "menuListView",
-                    "ctype": "ListViewObjectData"
-                  },
-                  {
                     "ClipAble": false,
                     "BackColorAlpha": 102,
                     "SingleColor": {
@@ -1304,8 +1251,8 @@
                     "TouchEnable": true,
                     "AnchorPoint": {},
                     "Position": {
-                      "X": 560.0306,
-                      "Y": 163.87
+                      "X": 0.0,
+                      "Y": 590.0
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -1314,17 +1261,16 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.4375,
-                      "Y": 0.2276
+                      "X": 0.0,
+                      "Y": 0.8194
                     },
                     "PreSize": {
                       "X": 0.0914,
                       "Y": 0.1764
                     },
-                    "LeftMargin": 560.0306,
-                    "RightMargin": 602.9694,
-                    "TopMargin": 429.13,
-                    "BottomMargin": 163.87,
+                    "RightMargin": 1163.0,
+                    "TopMargin": 3.0,
+                    "BottomMargin": 590.0,
                     "Tag": 408,
                     "Children": [
                       {
@@ -1528,6 +1474,59 @@
                     },
                     "Name": "menuCell",
                     "ctype": "PanelObjectData"
+                  },
+                  {
+                    "DirectionType": "Vertical",
+                    "IsBounceEnabled": true,
+                    "ScrollDirectionType": 0,
+                    "ClipAble": true,
+                    "BackColorAlpha": 102,
+                    "SingleColor": {
+                      "R": 150,
+                      "G": 150
+                    },
+                    "FirstColor": {
+                      "R": 150,
+                      "G": 150
+                    },
+                    "EndColor": {},
+                    "ColorVector": {
+                      "ScaleY": 1.0
+                    },
+                    "Scale9Width": 1,
+                    "Scale9Height": 1,
+                    "TouchEnable": true,
+                    "AnchorPoint": {},
+                    "Position": {
+                      "X": 558.8386,
+                      "Y": 0.313
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.4366,
+                      "Y": 0.0004
+                    },
+                    "PreSize": {
+                      "X": 0.0922,
+                      "Y": 0.9958
+                    },
+                    "LeftMargin": 558.8386,
+                    "RightMargin": 603.1614,
+                    "TopMargin": 2.687,
+                    "BottomMargin": 0.313,
+                    "Tag": 409,
+                    "ActionTag": -1886086934,
+                    "Size": {
+                      "X": 118.0,
+                      "Y": 717.0
+                    },
+                    "Name": "menuListView",
+                    "ctype": "ListViewObjectData"
                   },
                   {
                     "IsBounceEnabled": true,
@@ -6337,7 +6336,7 @@
                   "Y": 0.9444
                 },
                 "PreSize": {
-                  "X": 0.1562,
+                  "X": 0.1563,
                   "Y": 0.0625
                 },
                 "LeftMargin": 780.08,

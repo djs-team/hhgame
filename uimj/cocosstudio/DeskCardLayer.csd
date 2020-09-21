@@ -85,13 +85,13 @@
           <AbstractNodeData Name="CardPnl" ActionTag="-559160522" UserData="{&quot;layoutType&quot;:&quot;showAll&quot;,&quot;screenAlign&quot;:&quot;bottom&quot;}" Tag="16" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <Children>
-              <AbstractNodeData Name="OutNd0" ActionTag="1409049972" Tag="14" IconVisible="True" LeftMargin="508.0000" RightMargin="772.0000" TopMargin="525.0000" BottomMargin="195.0000" ctype="SingleNodeObjectData">
+              <AbstractNodeData Name="OutNd0" ActionTag="1409049972" Tag="14" IconVisible="True" LeftMargin="508.0000" RightMargin="772.0000" TopMargin="530.0000" BottomMargin="190.0000" ctype="SingleNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <AnchorPoint />
-                <Position X="508.0000" Y="195.0000" />
+                <Position X="508.0000" Y="190.0000" />
                 <Scale ScaleX="0.8300" ScaleY="0.8300" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.3969" Y="0.2708" />
+                <PrePosition X="0.3969" Y="0.2639" />
                 <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
               <AbstractNodeData Name="OutNd3" ActionTag="1898389742" Tag="15" IconVisible="True" LeftMargin="835.0000" RightMargin="445.0000" TopMargin="560.0000" BottomMargin="160.0000" ctype="SingleNodeObjectData">

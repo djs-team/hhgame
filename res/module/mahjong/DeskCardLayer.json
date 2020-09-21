@@ -389,7 +389,7 @@
                 "AnchorPoint": {},
                 "Position": {
                   "X": 508.0,
-                  "Y": 195.0
+                  "Y": 190.0
                 },
                 "Scale": {
                   "ScaleX": 0.83,
@@ -399,7 +399,7 @@
                 "IconVisible": true,
                 "PrePosition": {
                   "X": 0.3969,
-                  "Y": 0.2708
+                  "Y": 0.2639
                 },
                 "PreSize": {
                   "X": 0.0,
@@ -407,8 +407,8 @@
                 },
                 "LeftMargin": 508.0,
                 "RightMargin": 772.0,
-                "TopMargin": 525.0,
-                "BottomMargin": 195.0,
+                "TopMargin": 530.0,
+                "BottomMargin": 190.0,
                 "Tag": 14,
                 "ActionTag": 1409049972,
                 "Size": {

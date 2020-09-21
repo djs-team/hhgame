@@ -435,8 +435,8 @@ load('module/mahjong/ui/DeskCardLayer', function () {
                     }
                 } else if (uiSeat === 1) {
                     zorder = lineIndex
-                    pos.y = -16 * lineIndex
-                    pos.x = -10 * lineIndex
+                    pos.y = -15 * lineIndex
+                    pos.x = -8 * lineIndex
 
                     if (isFirstLine) {
                     } else {
@@ -472,16 +472,16 @@ load('module/mahjong/ui/DeskCardLayer', function () {
             let valueSkewY = 0
             let lineIndex = Math.floor(cardIndex % 10)
             let tmp02Pos = [
-                cc.p(26,30),
-                cc.p(25,30),
-                cc.p(24.5,30),
-                cc.p(21,30),
-                cc.p(20,30),
-                cc.p(20,30),
-                cc.p(21,30),
-                cc.p(24.5,30),
-                cc.p(25,30),
-                cc.p(26,30),
+                cc.p(26,35),
+                cc.p(25,35),
+                cc.p(24.5,35),
+                cc.p(21,35),
+                cc.p(20,35),
+                cc.p(20,35),
+                cc.p(21,35),
+                cc.p(24.5,35),
+                cc.p(25,35),
+                cc.p(26,35),
             ]
             let tmp02SkewX = [
                 25,
@@ -521,7 +521,7 @@ load('module/mahjong/ui/DeskCardLayer', function () {
                         5
                     ]
                     valueSkewY = tmpSkewY[lineIndex]
-                    valuePos = cc.p(26.5,24)
+                    valuePos = cc.p(26.5,31)
                     valueScaleX = 0.7
                     valueScaleY = 0.4
                     if (uiSeat === 3) {

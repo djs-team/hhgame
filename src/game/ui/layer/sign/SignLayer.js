@@ -1,4 +1,3 @@
-
 load('game/ui/layer/sign/SignLayer', function () {
     let ResConfig = include('game/config/ResConfig')
     let BaseLayer = include('public/ui/BaseLayer')
@@ -8,25 +7,26 @@ load('game/ui/layer/sign/SignLayer', function () {
         ctor: function () {
             this._super(ResConfig.View.SignLayer)
             this.registerMediator(new SignMdt(this))
+            this.registerEventListener('rewardVideoCallback', this.onRewardVideoCallback)
         },
         RES_BINDING: function () {
             return {
 
-                'pnl/btnPnl/becomeBtn': { onClicked: this.onGoVIPBtnClicked},
-                'pnl/btnPnl/upgradeBtn': { onClicked: this.onGoVIPBtnClicked},
-                'pnl/btnPnl/renewBtn': { onClicked: this.onGoVIPBtnClicked},
+                'pnl/btnPnl/becomeBtn': {onClicked: this.onGoVIPBtnClicked},
+                'pnl/btnPnl/upgradeBtn': {onClicked: this.onGoVIPBtnClicked},
+                'pnl/btnPnl/renewBtn': {onClicked: this.onGoVIPBtnClicked},
 
-                'pnl/btnPnl/mulitAcceptBtn': { onClicked: this.onVideoAcceptClicked},
-                'pnl/btnPnl/ordinaryAcceptPnl': { onClicked: this.onOrdinaryAcceptClicked},
-                'pnl/btnPnl/explainBtn': { },
-                'pnl/btnPnl/cancleBtn': { onClicked: this.onCloseClick},
+                'pnl/btnPnl/mulitAcceptBtn': {onClicked: this.onVideoAcceptClicked},
+                'pnl/btnPnl/ordinaryAcceptPnl': {onClicked: this.onOrdinaryAcceptClicked},
+                'pnl/btnPnl/explainBtn': {},
+                'pnl/btnPnl/cancleBtn': {onClicked: this.onCloseClick},
 
-                'pnl/loadingBarPnl/loadingBar': { },
-                'pnl/loadingBarPnl/loadingBar/treasureChestCell': { },
+                'pnl/loadingBarPnl/loadingBar': {},
+                'pnl/loadingBarPnl/loadingBar/treasureChestCell': {},
 
-                'pnl/signDataList': { },
-                'pnl/signDataListCell': { },
-                'pnl/signDataCell': { },
+                'pnl/signDataList': {},
+                'pnl/signDataListCell': {},
+                'pnl/signDataCell': {},
 
 
             }
@@ -71,7 +71,6 @@ load('game/ui/layer/sign/SignLayer', function () {
         },
 
 
-
         showView: function () {
 
         },
@@ -83,22 +82,22 @@ load('game/ui/layer/sign/SignLayer', function () {
         onInitSignDatas: function (data) {
 
             let btnNameArray = {
-                becomeBtn : this.becomeBtn,
-                upgradeBtn : this.upgradeBtn,
-                renewBtn : this.renewBtn
+                becomeBtn: this.becomeBtn,
+                upgradeBtn: this.upgradeBtn,
+                renewBtn: this.renewBtn
 
             }
             btnNameArray[data.showBtnName].setVisible(true)
 
 
-            if(data.vipCode != 0){
+            if (data.vipCode != 0) {
                 this.ordinaryAcceptPnl.getChildByName('vipLevelText').setVisible(true)
                 this.ordinaryAcceptPnl.getChildByName('mulitAcceptText').setVisible(true)
                 this.ordinaryAcceptPnl.getChildByName('singleAcceptText').setVisible(false)
 
                 this.ordinaryAcceptPnl.getChildByName('vipLevelText').setString(data.vipLevel)
                 this.ordinaryAcceptPnl.getChildByName('mulitAcceptText').setString(data.mulitAcceptText)
-            }else{
+            } else {
                 this.ordinaryAcceptPnl.getChildByName('vipLevelText').setVisible(false)
                 this.ordinaryAcceptPnl.getChildByName('mulitAcceptText').setVisible(false)
                 this.ordinaryAcceptPnl.getChildByName('singleAcceptText').setVisible(true)
@@ -107,13 +106,13 @@ load('game/ui/layer/sign/SignLayer', function () {
             this.mulitAcceptBtn.getChildByName('videoAcceptText').setString(data.videoAcceptText)
 
             this.onUpdataReceiveFlag(data.flag)
-            if(this._flag == 1)
+            if (this._flag == 1)
                 this._checkinId = data.checkinId
             else
                 this._checkinId = data.checkinId - 1
             this.currentSign = data.currentSign
 
-            this.onUpdateProCessBar(data.currentSign,this._maxSignNum)
+            this.onUpdateProCessBar(data.currentSign, this._maxSignNum)
             this.onInitCheckinListDatas(data.checkinList)
             this.onInitBonusConfigListDatas(data.bonusConfigList)
 
@@ -121,8 +120,17 @@ load('game/ui/layer/sign/SignLayer', function () {
 
         onVideoAcceptClicked: function () {
 
-            this.onAcceptSignAwards(0)
+            if (cc.sys.OS_ANDROID === cc.sys.os) {
+                appInstance.nativeApi().showRewardVideo()
+            }
 
+        },
+        onRewardVideoCallback: function (msg) {
+            if (msg == "0") {
+                this.onAcceptSignAwards(0)
+            } else {
+                this.shakeBtn.setTouchEnabled(true)
+            }
         },
 
         onOrdinaryAcceptClicked: function () {
@@ -133,7 +141,7 @@ load('game/ui/layer/sign/SignLayer', function () {
 
         onAcceptSignAwards: function (isWatch) {
 
-            if( this.isCanReceiveRewards()){
+            if (this.isCanReceiveRewards()) {
                 appInstance.gameAgent().Tips('已领取，请勿重复领取！')
                 return
             }
@@ -170,16 +178,16 @@ load('game/ui/layer/sign/SignLayer', function () {
         //初始化签到列表
         onInitCheckinListDatas: function (data) {
 
-            for(let i = 0; i < 5; i++){
+            for (let i = 0; i < 5; i++) {
 
                 let listPnl = this.signDataListCell.clone()
-                listPnl.setName(this._listPnlName+i)
+                listPnl.setName(this._listPnlName + i)
                 listPnl.setVisible(true)
                 this.signDataList.pushBackCustomItem(listPnl)
 
-                for(let j = 0; j < 6; j++){
+                for (let j = 0; j < 6; j++) {
 
-                  this.onInitCheckInCellData(data,6*i+j,listPnl)
+                    this.onInitCheckInCellData(data, 6 * i + j, listPnl)
 
                 }
 
@@ -189,7 +197,7 @@ load('game/ui/layer/sign/SignLayer', function () {
         },
 
 
-        onInitCheckInCellData: function (data,index,listPnl) {
+        onInitCheckInCellData: function (data, index, listPnl) {
 
 
             let cellData = data[index]
@@ -197,12 +205,12 @@ load('game/ui/layer/sign/SignLayer', function () {
             listPnl.addChild(cell)
 
             cell.setPositionY(0)
-            cell.setPositionX(index%6*92)
+            cell.setPositionX(index % 6 * 92)
             cell.setVisible(true)
             cell.setName(this._checkInName + cellData.checkinId)
             cell.getChildByName('awardsPg').loadTexture(cellData.res)
             cell.getChildByName('awardsValueText').setString(cellData.num)
-            if(cellData.status != 2){
+            if (cellData.status != 2) {
                 cell.getChildByName('acceptedPg').setVisible(false)
                 cell.getChildByName('blockPg').setVisible(false)
             }
@@ -214,7 +222,7 @@ load('game/ui/layer/sign/SignLayer', function () {
         onInitBonusConfigListDatas: function (data) {
 
 
-            for(let i = 0; i < data.length; i++){
+            for (let i = 0; i < data.length; i++) {
 
                 this.onInitBonusConfigData(data[i])
 
@@ -229,8 +237,8 @@ load('game/ui/layer/sign/SignLayer', function () {
             this.loadingBar.addChild(cell)
 
             cell._data = {
-                'status' : data.status,
-                'id' : data.id,
+                'status': data.status,
+                'id': data.id,
             }
 
             cell.setVisible(true)
@@ -242,7 +250,7 @@ load('game/ui/layer/sign/SignLayer', function () {
             cell.getChildByName('treasureChestExplainPg').getChildByName('treasureChestExplainText').setString(data.bounsDesc)
 
 
-           // let barPositionX = this.loadingBar.getPositionX() + (data.id / this._maxSignNum * 465.00)
+            // let barPositionX = this.loadingBar.getPositionX() + (data.id / this._maxSignNum * 465.00)
             let barPositionX = this.loadingBar.getPositionX() - 10 + (data.id / this._maxSignNum * 450.00)
             let barPositionY = this.loadingBar.getPositionY()
             cell.setPositionX(barPositionX)
@@ -256,10 +264,10 @@ load('game/ui/layer/sign/SignLayer', function () {
 
         },
 
-        onUpdateProCessBar: function (currentProcess,allProcess) {
+        onUpdateProCessBar: function (currentProcess, allProcess) {
 
             cc.log('------------------currentProcess : ' + currentProcess + ' allProcess : ' + allProcess)
-            this.loadingBar.setPercent(Math.round(currentProcess/allProcess*100))
+            this.loadingBar.setPercent(Math.round(currentProcess / allProcess * 100))
 
         },
 
@@ -299,11 +307,11 @@ load('game/ui/layer/sign/SignLayer', function () {
             this.onUpdataReceiveFlag(0)
 
             this.currentSign += 1
-            this.onUpdateProCessBar(this.currentSign,this._maxSignNum)
+            this.onUpdateProCessBar(this.currentSign, this._maxSignNum)
 
-            if(data.type == 1){
+            if (data.type == 1) {
                 this.onUpdateTreasureChestData(data)
-            }else{
+            } else {
                 this.onUpdateSignData(data)
             }
 
@@ -319,18 +327,15 @@ load('game/ui/layer/sign/SignLayer', function () {
 
         onUpdateSignData: function (data) {
 
-            let cell = this.signDataList.getChildByName(this._listPnlName + (parseInt(data.checkinId/6))).getChildByName(this._checkInName + data.checkinId)
+            let cell = this.signDataList.getChildByName(this._listPnlName + (parseInt(data.checkinId / 6))).getChildByName(this._checkInName + data.checkinId)
             cell.getChildByName('acceptedPg').setVisible(true)
             cell.getChildByName('blockPg').setVisible(true)
         },
 
 
-
-
-
         isCanReceiveRewards: function () {
 
-            if(this._flag == 0)
+            if (this._flag == 0)
                 return true
             else
                 return false

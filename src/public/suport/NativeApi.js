@@ -33,7 +33,7 @@ load('public/suport/NativeApi', function () {
                     console.log('thirdPay-start')
                     jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'thirdPay', '(Ljava/lang/String;Ljava/lang/String;)V', type, message)
                 } else if (cc.sys.OS_IOS === cc.sys.os) {
-                    jsb.reflection.callStaticMethod('AppController', 'appPurchaseWithPayType:payParam:userID:paySuccessMethod:', type, message,"","ThirdPayCallback")
+                    jsb.reflection.callStaticMethod('AppController', 'appPurchaseWithPayType:payParam:userID:paySuccessMethod:', type, message, "", "ThirdPayCallback")
                 }
             } catch (e) {
                 console.log('虽然我挂掉了,但是我还是坚持打印了了log: ' + String(e))
@@ -436,6 +436,28 @@ load('public/suport/NativeApi', function () {
                 if (cc.sys.OS_ANDROID === cc.sys.os) {
 
                     jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'shareArticle', '(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V', platform, title, description, url, thumbUrl)
+                } else if (cc.sys.OS_IOS === cc.sys.os) {
+
+                }
+            } catch (e) {
+                NativeApi.HelloOC('shareImage throw: ' + JSON.stringify(e))
+            }
+        },//激励视频
+        showRewardVideo: function () {
+            try {
+                if (cc.sys.OS_ANDROID === cc.sys.os) {
+                    let uid = appInstance.dataManager().getUserData().pid
+                    jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'showRewardVideo', '(Ljava/lang/String;)V', uid)
+                } else if (cc.sys.OS_IOS === cc.sys.os) {
+
+                }
+            } catch (e) {
+                NativeApi.HelloOC('shareImage throw: ' + JSON.stringify(e))
+            }
+        }, copy: function (msg) {
+            try {
+                if (cc.sys.OS_ANDROID === cc.sys.os) {
+                    jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'copy', '(Ljava/lang/String;)V', msg)
                 } else if (cc.sys.OS_IOS === cc.sys.os) {
 
                 }

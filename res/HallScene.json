@@ -597,7 +597,7 @@
                   "Y": 0.9457
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.0625
                 },
                 "LeftMargin": 323.296,
@@ -866,7 +866,7 @@
                   "Y": 0.9458
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.0625
                 },
                 "LeftMargin": 551.08,
@@ -1135,7 +1135,7 @@
                   "Y": 0.9444
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.0625
                 },
                 "LeftMargin": 780.08,
@@ -3580,6 +3580,11 @@
                     "IsCustomSize": true,
                     "FontSize": 30,
                     "LabelText": "快速开始",
+                    "FontResource": {
+                      "Type": "Normal",
+                      "Path": "",
+                      "Plist": ""
+                    },
                     "OutlineColor": {
                       "G": 0,
                       "B": 0

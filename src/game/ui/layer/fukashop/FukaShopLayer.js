@@ -751,7 +751,8 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 nickName : goodsData.nickName,
                 sdkPhotoUrl : goodsData.sdkPhotoUrl,
                 goodsId : goodsData.goodsid,
-                roundNum : goodsData.playerConsumeFuka
+                roundNum : goodsData.duoBaoNum,
+                duoBaoId : goodsData.duoBaoId,
             }
 
             cell.getChildByName('luckyPnl').addClickEventListener(function (sender,dt) {
@@ -810,11 +811,12 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                     }
 
                     let msg = {
-                        duoBaoId : data.goodsId,
+                        duoBaoId : data.duoBaoId,
                         duoBaoNum : data.roundNum,
-                        fukaNum : data.robFuKaNum,
+                        fukaNum : robFuKaNum,
                     }
 
+                    cc.log('-------------------rightBtnFunction : ' + JSON.stringify(msg))
                     appInstance.gameAgent().httpGame().FUKAROBReq(msg)
 
                     return true
@@ -848,16 +850,19 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
             switch (status) {
                 case 0:
                     msg.titleName = '兑换成功'
-                    msg.wordsText = '我们将在2-3个工作日内向您发货'
+                    msg.wordsText = '恭喜您参与成功，敬请期待夺宝结果'
                     break
                 case 100:
                     msg.wordsText = '当论夺宝已结束，请参加下一轮夺宝'
                     break
-                case 7:
+                case 73:
                     msg.wordsText = '您的福卡不足，请充值后再参与夺宝'
                     break
                 case 101:
                     msg.wordsText = '已超上限，请核实后再参与夺宝'
+                    break
+                case 110:
+                    msg.wordsText = '参与福卡数量不可为0，请重新参与夺宝'
                     break
                 default:
                     msg.wordsText = '夺宝失败，请刷新后再操作'
@@ -935,10 +940,12 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 let data = robList[i]
                 let cell = this.robLogCell.clone()
                 cell.setVisible(true)
+                cell.setPositionX(0)
+                cell.setPositionY(80 * i)
                 cell.getChildByName('numText').setString(data.bettingNum)
                 cell.getChildByName('timeText').setString(data.createTime)
 
-                robLogListView.pushBackCustomItem(cell)
+                this.robLogListView.pushBackCustomItem(cell)
 
             }
 

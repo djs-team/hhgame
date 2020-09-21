@@ -801,6 +801,7 @@
                     <CColor A="255" R="110" G="59" B="0" />
                     <PrePosition X="0.4829" Y="0.4952" />
                     <PreSize X="0.4715" Y="0.3714" />
+                    <FontResource Type="Normal" Path="" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>

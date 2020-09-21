@@ -388,40 +388,7 @@
               {
                 "AnchorPoint": {},
                 "Position": {
-                  "X": 508.0,
-                  "Y": 190.0
-                },
-                "Scale": {
-                  "ScaleX": 0.83,
-                  "ScaleY": 0.83
-                },
-                "CColor": {},
-                "IconVisible": true,
-                "PrePosition": {
-                  "X": 0.3969,
-                  "Y": 0.2639
-                },
-                "PreSize": {
-                  "X": 0.0,
-                  "Y": 0.0
-                },
-                "LeftMargin": 508.0,
-                "RightMargin": 772.0,
-                "TopMargin": 530.0,
-                "BottomMargin": 190.0,
-                "Tag": 14,
-                "ActionTag": 1409049972,
-                "Size": {
-                  "X": 0.0,
-                  "Y": 0.0
-                },
-                "Name": "OutNd0",
-                "ctype": "SingleNodeObjectData"
-              },
-              {
-                "AnchorPoint": {},
-                "Position": {
-                  "X": 835.0,
+                  "X": 840.0,
                   "Y": 160.0
                 },
                 "Scale": {
@@ -431,15 +398,15 @@
                 "CColor": {},
                 "IconVisible": true,
                 "PrePosition": {
-                  "X": 0.6523,
+                  "X": 0.6562,
                   "Y": 0.2222
                 },
                 "PreSize": {
                   "X": 0.0,
                   "Y": 0.0
                 },
-                "LeftMargin": 835.0,
-                "RightMargin": 445.0,
+                "LeftMargin": 840.0,
+                "RightMargin": 440.0,
                 "TopMargin": 560.0,
                 "BottomMargin": 160.0,
                 "Tag": 15,
@@ -454,7 +421,7 @@
               {
                 "AnchorPoint": {},
                 "Position": {
-                  "X": 515.0,
+                  "X": 510.0,
                   "Y": 300.0
                 },
                 "Scale": {
@@ -464,15 +431,15 @@
                 "CColor": {},
                 "IconVisible": true,
                 "PrePosition": {
-                  "X": 0.4023,
+                  "X": 0.3984,
                   "Y": 0.4167
                 },
                 "PreSize": {
                   "X": 0.0,
                   "Y": 0.0
                 },
-                "LeftMargin": 515.0,
-                "RightMargin": 765.0,
+                "LeftMargin": 510.0,
+                "RightMargin": 770.0,
                 "TopMargin": 420.0,
                 "BottomMargin": 300.0,
                 "Tag": 17,
@@ -487,7 +454,40 @@
               {
                 "AnchorPoint": {},
                 "Position": {
-                  "X": 655.5444,
+                  "X": 501.0,
+                  "Y": 195.0
+                },
+                "Scale": {
+                  "ScaleX": 0.83,
+                  "ScaleY": 0.83
+                },
+                "CColor": {},
+                "IconVisible": true,
+                "PrePosition": {
+                  "X": 0.3914,
+                  "Y": 0.2708
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 501.0,
+                "RightMargin": 779.0,
+                "TopMargin": 525.0,
+                "BottomMargin": 195.0,
+                "Tag": 14,
+                "ActionTag": 1409049972,
+                "Size": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Name": "OutNd0",
+                "ctype": "SingleNodeObjectData"
+              },
+              {
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 655.54,
                   "Y": 105.0
                 },
                 "Scale": {
@@ -504,8 +504,8 @@
                   "X": 0.0,
                   "Y": 0.0
                 },
-                "LeftMargin": 655.5444,
-                "RightMargin": 624.4556,
+                "LeftMargin": 655.54,
+                "RightMargin": 624.46,
                 "TopMargin": 615.0,
                 "BottomMargin": 105.0,
                 "Tag": 17,

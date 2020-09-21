@@ -364,10 +364,10 @@ load('module/mahjong/ui/DeskCardLayer', function () {
                         zorder = 10 - lineIndex
                     }
                     if (isFirstLine) {
-                        scale = 1
+                        scale = 1.08
                         pos.x = lineIndex * 33.5 * scale
                     } else {
-                        scale = 1.12
+                        scale = 1.2
                         pos.x = lineIndex * 33.5 * scale
                         pos.x = pos.x - 18
                         pos.y -= 35
@@ -378,7 +378,7 @@ load('module/mahjong/ui/DeskCardLayer', function () {
 
                     } else {
                         pos.x -= 2.5
-                        pos.y += 15
+                        pos.y += 20
                         zorder += 500
                     }
                 } else if (uiSeat === 2) {
@@ -405,7 +405,7 @@ load('module/mahjong/ui/DeskCardLayer', function () {
 
                     } else {
                         pos.x += 1.5
-                        pos.y += 16
+                        pos.y += 14
                         zorder += 500
                     }
                 }
@@ -509,20 +509,20 @@ load('module/mahjong/ui/DeskCardLayer', function () {
                 case 1:
                 case 3:
                     let tmpSkewY = [
-                        5,
-                        5,
-                        5,
-                        5,
-                        5,
-                        5,
-                        5,
-                        5,
-                        5,
-                        5
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
                     ]
                     valueSkewY = tmpSkewY[lineIndex]
-                    valuePos = cc.p(26.5,31)
-                    valueScaleX = 0.7
+                    valuePos = cc.p(30,30)
+                    valueScaleX = 0.8
                     valueScaleY = 0.4
                     if (uiSeat === 3) {
                         cardValueSp.setRotationY(180)

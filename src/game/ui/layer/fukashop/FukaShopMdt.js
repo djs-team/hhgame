@@ -26,6 +26,7 @@ load('game/ui/layer/fukashop/FukaShopMdt', function () {
                 GameEvent.FUKA_MATERIAL_LIST,
                 GameEvent.FUKA_MATERIA_LOG,
                 GameEvent.FUKA_MATERIA_EXCHANGE,
+                GameEvent.UPDATE_PROPSYNC,
 
             ]
         },
@@ -65,6 +66,9 @@ load('game/ui/layer/fukashop/FukaShopMdt', function () {
                     break
                 case GameEvent.FUKA_MATERIA_EXCHANGE:
                     this.view.onExchangeOnlineResult(body)
+                    break
+                case GameEvent.UPDATE_PROPSYNC:
+                    this.view.onUpdateUserData(body)
                     break
                 default:
                     break

@@ -38,12 +38,16 @@
 }
 
 // (文本)
-+ (void)WXShareIOSforDescription:(NSString *)des
++ (void)WXShareIOSforDescription:(NSString *)des isTimeLine:(BOOL)isTimeLine
 {
     SendMessageToWXReq * req= [[SendMessageToWXReq alloc]init];
     req.text = des;
     req.bText = YES;
-    req.scene = WXSceneTimeline; // 朋友圈
+    if (isTimeLine == YES) {
+        req.scene = WXSceneTimeline; // 朋友圈
+    } else {
+        req.scene = WXSceneSession; 
+    }
     
     [WXApi sendReq:req completion:nil];
 }

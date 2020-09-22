@@ -1439,6 +1439,8 @@
                         "ColorVector": {
                           "ScaleY": 1.0
                         },
+                        "Scale9Width": 1,
+                        "Scale9Height": 1,
                         "AnchorPoint": {},
                         "Position": {
                           "X": 17.7276,
@@ -6301,7 +6303,6 @@
               {
                 "ClipAble": false,
                 "BackColorAlpha": 0,
-                "ComboBoxIndex": 1,
                 "SingleColor": {
                   "R": 150,
                   "G": 200
@@ -6772,6 +6773,71 @@
                 },
                 "Name": "robLogBtnPnl",
                 "ctype": "PanelObjectData"
+              },
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "fukashop/fk_1.png",
+                  "Plist": ""
+                },
+                "Scale9Enable": true,
+                "Scale9OriginX": 15,
+                "Scale9OriginY": 11,
+                "Scale9Width": 12,
+                "Scale9Height": 4,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 41.4354,
+                  "Y": 53.0887
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0324,
+                  "Y": 0.0737
+                },
+                "PreSize": {
+                  "X": 0.0328,
+                  "Y": 0.0361
+                },
+                "LeftMargin": 20.4354,
+                "RightMargin": 1217.5646,
+                "TopMargin": 653.9113,
+                "BottomMargin": 40.0887,
+                "Tag": 371,
+                "ActionTag": -743076086,
+                "Size": {
+                  "X": 42.0,
+                  "Y": 26.0
+                },
+                "Name": "returnBtn",
+                "ctype": "ButtonObjectData"
               }
             ],
             "ActionTag": 978645323,
@@ -8275,6 +8341,7 @@
         "Default/Button_Disable.png",
         "Default/Button_Press.png",
         "Default/ImageFile.png",
+        "fukashop/fk_1.png",
         "fukashop/fk_10.png",
         "fukashop/fk_11.png",
         "fukashop/fk_12.png",

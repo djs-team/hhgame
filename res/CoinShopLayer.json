@@ -375,7 +375,7 @@
                   "Y": 0.9287
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.0625
                 },
                 "LeftMargin": 1058.8909,
@@ -574,7 +574,7 @@
                   "Y": 0.9279
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.0625
                 },
                 "LeftMargin": 862.1223,
@@ -775,7 +775,7 @@
                   "Y": 0.9278
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.0625
                 },
                 "LeftMargin": 666.592,
@@ -1819,7 +1819,7 @@
                       "Y": 0.811
                     },
                     "PreSize": {
-                      "X": 0.1563,
+                      "X": 0.1562,
                       "Y": 0.1194
                     },
                     "LeftMargin": 810.7819,
@@ -1979,7 +1979,7 @@
                         },
                         "PreSize": {
                           "X": 0.9778,
-                          "Y": 1.0313
+                          "Y": 1.0312
                         },
                         "LeftMargin": 0.93,
                         "RightMargin": 2.07,
@@ -2214,7 +2214,7 @@
                         },
                         "PreSize": {
                           "X": 0.4074,
-                          "Y": 0.4063
+                          "Y": 0.4062
                         },
                         "LeftMargin": 38.4402,
                         "RightMargin": 41.5598,
@@ -2259,7 +2259,7 @@
                         },
                         "PreSize": {
                           "X": 0.4074,
-                          "Y": 0.4063
+                          "Y": 0.4062
                         },
                         "LeftMargin": 36.2951,
                         "RightMargin": 43.7049,
@@ -2451,7 +2451,7 @@
                           },
                           {
                             "FontSize": 16,
-                            "LabelText": "5555",
+                            "LabelText": "555555",
                             "HorizontalAlignmentType": "HT_Center",
                             "VerticalAlignmentType": "VT_Center",
                             "OutlineColor": {
@@ -2470,7 +2470,7 @@
                               "ScaleY": 0.5
                             },
                             "Position": {
-                              "X": 55.4003,
+                              "X": 61.4004,
                               "Y": 14.9417
                             },
                             "Scale": {
@@ -2480,21 +2480,21 @@
                             "CColor": {},
                             "IconVisible": false,
                             "PrePosition": {
-                              "X": 0.5596,
+                              "X": 0.6202,
                               "Y": 0.5152
                             },
                             "PreSize": {
-                              "X": 0.3232,
+                              "X": 0.4848,
                               "Y": 0.5517
                             },
-                            "LeftMargin": 39.4003,
-                            "RightMargin": 27.5997,
+                            "LeftMargin": 37.4004,
+                            "RightMargin": 13.5996,
                             "TopMargin": 6.0583,
                             "BottomMargin": 6.9417,
                             "Tag": 314,
                             "ActionTag": -1915352809,
                             "Size": {
-                              "X": 32.0,
+                              "X": 48.0,
                               "Y": 16.0
                             },
                             "Name": "priceText",
@@ -2521,7 +2521,7 @@
                   {
                     "AnchorPoint": {},
                     "Position": {
-                      "X": 673.1469,
+                      "X": 673.152,
                       "Y": 308.11
                     },
                     "Scale": {
@@ -2539,8 +2539,8 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 673.1469,
-                    "RightMargin": 606.8531,
+                    "LeftMargin": 673.152,
+                    "RightMargin": 606.848,
                     "TopMargin": 411.89,
                     "BottomMargin": 308.11,
                     "Tag": 122,

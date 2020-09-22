@@ -232,28 +232,6 @@ load('game/ui/scene/HallScene', function () {
             this._selfInfo = selfInfo
             this._pRole = selfInfo.pRole
 
-            this.onInitUserData();
-
-        },
-
-        updatePlayerAni: function (pRole) {
-
-            pRole = pRole || this._pRole
-
-            if (pRole !=0 && !pRole) {
-                return
-            }
-
-            this.aniNd.removeAllChildren()
-            let ani = appInstance.gameAgent().gameUtil().getAni(AniPlayer[pRole])
-            this.aniNd.addChild(ani)
-            ani.setPosition(cc.p(0,0))
-            ani.setScale(0.6)
-            ani.setAnimation(0, PlayerPlay.stand, true)
-        },
-
-        initView: function (selfInfo) {
-            this.initData(selfInfo)
 
             let jinbichangAni = appInstance.gameAgent().gameUtil().getAni(ResConfig.AniHall.DatingJinbichang)
             jinbichangAni.setAnimation(0, 'animation', true)
@@ -280,6 +258,33 @@ load('game/ui/scene/HallScene', function () {
             this.turnTableNd.addChild(zhuanpanAni)
 
             this.updatePlayerAni()
+
+
+            this.onInitUserData();
+
+        },
+
+        updatePlayerAni: function (pRole) {
+
+            pRole = pRole || this._pRole
+
+            if (pRole !=0 && !pRole) {
+                return
+            }
+
+            this.aniNd.removeAllChildren()
+            let ani = appInstance.gameAgent().gameUtil().getAni(AniPlayer[pRole])
+            this.aniNd.addChild(ani)
+            ani.setPosition(cc.p(0,0))
+            ani.setScale(0.6)
+            ani.setAnimation(0, PlayerPlay.stand, true)
+        },
+
+        initView: function (selfInfo) {
+
+            this.initData(selfInfo)
+            this.morePnl.setVisible(false)
+
         },
 
         onInitUserData: function () {

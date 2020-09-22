@@ -85,37 +85,37 @@
           <AbstractNodeData Name="CardPnl" ActionTag="-559160522" UserData="{&quot;layoutType&quot;:&quot;showAll&quot;,&quot;screenAlign&quot;:&quot;bottom&quot;}" Tag="16" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <Children>
-              <AbstractNodeData Name="OutNd0" ActionTag="1409049972" Tag="14" IconVisible="True" LeftMargin="508.0000" RightMargin="772.0000" TopMargin="525.0000" BottomMargin="195.0000" ctype="SingleNodeObjectData">
+              <AbstractNodeData Name="OutNd3" ActionTag="1898389742" Tag="15" IconVisible="True" LeftMargin="840.0000" RightMargin="440.0000" TopMargin="560.0000" BottomMargin="160.0000" ctype="SingleNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <AnchorPoint />
-                <Position X="508.0000" Y="195.0000" />
+                <Position X="840.0000" Y="160.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.6563" Y="0.2222" />
+                <PreSize X="0.0000" Y="0.0000" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="OutNd1" ActionTag="1899788278" Tag="17" IconVisible="True" LeftMargin="510.0000" RightMargin="770.0000" TopMargin="420.0000" BottomMargin="300.0000" ctype="SingleNodeObjectData">
+                <Size X="0.0000" Y="0.0000" />
+                <AnchorPoint />
+                <Position X="510.0000" Y="300.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.3984" Y="0.4167" />
+                <PreSize X="0.0000" Y="0.0000" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="OutNd0" ActionTag="1409049972" Tag="14" IconVisible="True" LeftMargin="501.0000" RightMargin="779.0000" TopMargin="525.0000" BottomMargin="195.0000" ctype="SingleNodeObjectData">
+                <Size X="0.0000" Y="0.0000" />
+                <AnchorPoint />
+                <Position X="501.0000" Y="195.0000" />
                 <Scale ScaleX="0.8300" ScaleY="0.8300" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.3969" Y="0.2708" />
+                <PrePosition X="0.3914" Y="0.2708" />
                 <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="OutNd3" ActionTag="1898389742" Tag="15" IconVisible="True" LeftMargin="835.0000" RightMargin="445.0000" TopMargin="560.0000" BottomMargin="160.0000" ctype="SingleNodeObjectData">
+              <AbstractNodeData Name="DeckNd0" ActionTag="657387221" Tag="17" IconVisible="True" LeftMargin="655.5400" RightMargin="624.4600" TopMargin="615.0000" BottomMargin="105.0000" ctype="SingleNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <AnchorPoint />
-                <Position X="835.0000" Y="160.0000" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.6523" Y="0.2222" />
-                <PreSize X="0.0000" Y="0.0000" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="OutNd1" ActionTag="1899788278" Tag="17" IconVisible="True" LeftMargin="515.0000" RightMargin="765.0000" TopMargin="420.0000" BottomMargin="300.0000" ctype="SingleNodeObjectData">
-                <Size X="0.0000" Y="0.0000" />
-                <AnchorPoint />
-                <Position X="515.0000" Y="300.0000" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.4023" Y="0.4167" />
-                <PreSize X="0.0000" Y="0.0000" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="DeckNd0" ActionTag="657387221" Tag="17" IconVisible="True" LeftMargin="655.5444" RightMargin="624.4556" TopMargin="615.0000" BottomMargin="105.0000" ctype="SingleNodeObjectData">
-                <Size X="0.0000" Y="0.0000" />
-                <AnchorPoint />
-                <Position X="655.5444" Y="105.0000" />
+                <Position X="655.5400" Y="105.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5121" Y="0.1458" />

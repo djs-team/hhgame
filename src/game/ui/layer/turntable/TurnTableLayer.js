@@ -30,6 +30,7 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
                 'bmPnl/awardsPnl/userDataCell': {},
                 'bmPnl/zhuanPnl': {},
                 'bmPnl/zhuanPnl/pointPnl': { onClicked: this.onTurnPointClick},
+                'bmPnl/zhuanPnl/pointPnl/TurnPoint': { },
                 'bmPnl/zhuanPnl/turnTablePic': {},
                 'bmPnl/zhuanPnl/turnTablePic/goodsNd': {},
                 'bmPnl/zhuanPnl/turnTablePic/pointNd0': {},
@@ -171,8 +172,16 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
         },
 
         onTurnPointClick: function () {
-             let msg = {}
-             appInstance.gameAgent().httpGame().TURNPOINTReq(msg)
+            let msg = {}
+            appInstance.gameAgent().httpGame().TURNPOINTReq(msg)
+
+            this.TurnPoint.stopAllActions()
+
+            let time = 10
+            let rotateAngle = 360 * 5
+            let action = cc.RotateBy(time, rotateAngle)
+            let beginEaseAction = cc.EaseCubicActionIn(action)
+            this.TurnPoint.runAction(beginEaseAction)
 
         },
 
@@ -180,21 +189,46 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
 
 
         playTurnTable: function (data) {
-            this.pointPnl.getChildByName('pointerImg').stopAllActions()
+            this.TurnPoint.stopAllActions()
+            let endtime = 11
+            let rotateAngle = 360 * 20 + 36 * (data.turntableId - 1)
+            let endAction = cc.RotateBy(endtime, rotateAngle)
+            let endEaseAction = cc.EaseCubicActionOut(endAction)
+            this.TurnPoint.runAction(endEaseAction)
 
-            this._lightInterval = 0.08
-
-            let num = 5
-            let firstTime = 0.5
-            let rotateAngle = 360 * num + 36 * (data.turntableId - 1)
-            let action = cc.RotateBy(firstTime, rotateAngle)
-            let firstEaseAction = cc.EaseCubicActionInOut(action)
-            let callResult = function () {
+            let endCallFunc = function () {
                 this._lightInterval = 0.5
                 this.onShowTurnPointRewards(data)
             }.bind(this)
-            this.pointPnl.getChildByName('pointerImg').runAction(cc.Sequence(firstEaseAction, cc.CallFunc(callResult)))
 
+            let delayTime = [
+                3,2,1,2,3
+            ]
+
+            let callLightInterval = [
+                0.3,
+                0.2,
+                0.1,
+                0.2,
+                0.3
+            ]
+
+            let tmpIndex = 0
+            let lightCallFunc = function () {
+                if (tmpIndex > 4) {
+                    tmpIndex = 0
+                }
+                this._lightInterval = callLightInterval[tmpIndex]
+                tmpIndex += 1
+            }.bind(this)
+
+            this.runAction(cc.Sequence( cc.CallFunc(lightCallFunc),cc.DelayTime(delayTime[0]),
+                cc.CallFunc(lightCallFunc),cc.DelayTime(delayTime[1]),
+                cc.CallFunc(lightCallFunc),cc.DelayTime(delayTime[2]),
+                cc.CallFunc(lightCallFunc),cc.DelayTime(delayTime[3]),
+                cc.CallFunc(lightCallFunc),cc.DelayTime(delayTime[4]),
+                cc.CallFunc(endCallFunc)
+                ))
         },
 
         playLight: function () {

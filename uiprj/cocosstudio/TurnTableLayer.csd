@@ -685,10 +685,10 @@
                           <AbstractNodeData Name="goods1" ActionTag="188457684" Tag="342" IconVisible="False" LeftMargin="-34.9100" RightMargin="-40.0900" TopMargin="-197.8465" BottomMargin="138.8465" LeftEage="23" RightEage="23" TopEage="16" BottomEage="16" Scale9OriginX="23" Scale9OriginY="16" Scale9Width="29" Scale9Height="27" ctype="ImageViewObjectData">
                             <Size X="75.0000" Y="59.0000" />
                             <Children>
-                              <AbstractNodeData Name="name" ActionTag="-836346202" Tag="345" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="-7.4999" RightMargin="-7.5001" TopMargin="-35.2432" BottomMargin="74.2432" FontSize="20" LabelText="iphone 12" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                              <AbstractNodeData Name="name" ActionTag="-836346202" Tag="345" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="-7.5000" RightMargin="-7.5000" TopMargin="-35.2432" BottomMargin="74.2432" FontSize="20" LabelText="iphone 12" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                                 <Size X="90.0000" Y="20.0000" />
                                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                                <Position X="37.5001" Y="84.2432" />
+                                <Position X="37.5000" Y="84.2432" />
                                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                                 <CColor A="255" R="255" G="255" B="255" />
                                 <PrePosition X="0.5000" Y="1.4279" />
@@ -708,10 +708,10 @@
                           <AbstractNodeData Name="goods2" ActionTag="1514477467" Tag="312" RotationSkewX="35.9998" RotationSkewY="36.0001" IconVisible="False" LeftMargin="61.8454" RightMargin="-136.8454" TopMargin="-172.3084" BottomMargin="113.3084" LeftEage="23" RightEage="23" TopEage="16" BottomEage="16" Scale9OriginX="23" Scale9OriginY="16" Scale9Width="29" Scale9Height="27" ctype="ImageViewObjectData">
                             <Size X="75.0000" Y="59.0000" />
                             <Children>
-                              <AbstractNodeData Name="name" ActionTag="-623762206" Tag="313" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="-7.4999" RightMargin="-7.5001" TopMargin="-35.2432" BottomMargin="74.2432" FontSize="20" LabelText="iphone 12" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                              <AbstractNodeData Name="name" ActionTag="-623762206" Tag="313" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="-7.5000" RightMargin="-7.5000" TopMargin="-35.2432" BottomMargin="74.2432" FontSize="20" LabelText="iphone 12" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                                 <Size X="90.0000" Y="20.0000" />
                                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                                <Position X="37.5001" Y="84.2432" />
+                                <Position X="37.5000" Y="84.2432" />
                                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                                 <CColor A="255" R="255" G="255" B="255" />
                                 <PrePosition X="0.5000" Y="1.4279" />
@@ -731,10 +731,10 @@
                           <AbstractNodeData Name="goods3" ActionTag="29122357" Tag="314" RotationSkewX="71.9997" RotationSkewY="71.9998" IconVisible="False" LeftMargin="123.9989" RightMargin="-198.9989" TopMargin="-84.2590" BottomMargin="25.2590" LeftEage="23" RightEage="23" TopEage="16" BottomEage="16" Scale9OriginX="23" Scale9OriginY="16" Scale9Width="29" Scale9Height="27" ctype="ImageViewObjectData">
                             <Size X="75.0000" Y="59.0000" />
                             <Children>
-                              <AbstractNodeData Name="name" ActionTag="-705642256" Tag="315" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="-7.4999" RightMargin="-7.5001" TopMargin="-35.2432" BottomMargin="74.2432" FontSize="20" LabelText="iphone 12" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                              <AbstractNodeData Name="name" ActionTag="-705642256" Tag="315" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="-7.5000" RightMargin="-7.5000" TopMargin="-35.2432" BottomMargin="74.2432" FontSize="20" LabelText="iphone 12" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                                 <Size X="90.0000" Y="20.0000" />
                                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                                <Position X="37.5001" Y="84.2432" />
+                                <Position X="37.5000" Y="84.2432" />
                                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                                 <CColor A="255" R="255" G="255" B="255" />
                                 <PrePosition X="0.5000" Y="1.4279" />
@@ -754,10 +754,10 @@
                           <AbstractNodeData Name="goods4" ActionTag="-1572436631" Tag="316" RotationSkewX="108.0007" RotationSkewY="108.0002" IconVisible="False" LeftMargin="128.8180" RightMargin="-203.8180" TopMargin="18.9702" BottomMargin="-77.9702" LeftEage="23" RightEage="23" TopEage="16" BottomEage="16" Scale9OriginX="23" Scale9OriginY="16" Scale9Width="29" Scale9Height="27" ctype="ImageViewObjectData">
                             <Size X="75.0000" Y="59.0000" />
                             <Children>
-                              <AbstractNodeData Name="name" ActionTag="-1190292691" Tag="317" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="-7.4999" RightMargin="-7.5001" TopMargin="-35.2432" BottomMargin="74.2432" FontSize="20" LabelText="iphone 12" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                              <AbstractNodeData Name="name" ActionTag="-1190292691" Tag="317" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="-7.5000" RightMargin="-7.5000" TopMargin="-35.2432" BottomMargin="74.2432" FontSize="20" LabelText="iphone 12" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                                 <Size X="90.0000" Y="20.0000" />
                                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                                <Position X="37.5001" Y="84.2432" />
+                                <Position X="37.5000" Y="84.2432" />
                                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                                 <CColor A="255" R="255" G="255" B="255" />
                                 <PrePosition X="0.5000" Y="1.4279" />
@@ -777,10 +777,10 @@
                           <AbstractNodeData Name="goods5" ActionTag="-1483059861" Tag="318" RotationSkewX="144.0000" RotationSkewY="144.0000" IconVisible="False" LeftMargin="67.6013" RightMargin="-142.6013" TopMargin="101.4804" BottomMargin="-160.4804" LeftEage="23" RightEage="23" TopEage="16" BottomEage="16" Scale9OriginX="23" Scale9OriginY="16" Scale9Width="29" Scale9Height="27" ctype="ImageViewObjectData">
                             <Size X="75.0000" Y="59.0000" />
                             <Children>
-                              <AbstractNodeData Name="name" ActionTag="-929631465" Tag="319" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="-7.4999" RightMargin="-7.5001" TopMargin="-35.2432" BottomMargin="74.2432" FontSize="20" LabelText="iphone 12" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                              <AbstractNodeData Name="name" ActionTag="-929631465" Tag="319" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="-7.5000" RightMargin="-7.5000" TopMargin="-35.2432" BottomMargin="74.2432" FontSize="20" LabelText="iphone 12" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                                 <Size X="90.0000" Y="20.0000" />
                                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                                <Position X="37.5001" Y="84.2432" />
+                                <Position X="37.5000" Y="84.2432" />
                                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                                 <CColor A="255" R="255" G="255" B="255" />
                                 <PrePosition X="0.5000" Y="1.4279" />
@@ -800,10 +800,10 @@
                           <AbstractNodeData Name="goods6" ActionTag="231772705" Tag="320" RotationSkewX="180.0000" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-33.7557" RightMargin="-41.2443" TopMargin="141.2605" BottomMargin="-200.2605" LeftEage="23" RightEage="23" TopEage="16" BottomEage="16" Scale9OriginX="23" Scale9OriginY="16" Scale9Width="29" Scale9Height="27" ctype="ImageViewObjectData">
                             <Size X="75.0000" Y="59.0000" />
                             <Children>
-                              <AbstractNodeData Name="name" ActionTag="1166604987" Tag="321" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="-7.4999" RightMargin="-7.5001" TopMargin="-35.2432" BottomMargin="74.2432" FontSize="20" LabelText="iphone 12" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                              <AbstractNodeData Name="name" ActionTag="1166604987" Tag="321" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="-7.5000" RightMargin="-7.5000" TopMargin="-35.2432" BottomMargin="74.2432" FontSize="20" LabelText="iphone 12" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                                 <Size X="90.0000" Y="20.0000" />
                                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                                <Position X="37.5001" Y="84.2432" />
+                                <Position X="37.5000" Y="84.2432" />
                                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                                 <CColor A="255" R="255" G="255" B="255" />
                                 <PrePosition X="0.5000" Y="1.4279" />
@@ -823,10 +823,10 @@
                           <AbstractNodeData Name="goods7" ActionTag="-813471631" Tag="322" RotationSkewX="216.0000" RotationSkewY="216.0002" IconVisible="False" LeftMargin="-128.6379" RightMargin="53.6379" TopMargin="120.1822" BottomMargin="-179.1822" LeftEage="23" RightEage="23" TopEage="16" BottomEage="16" Scale9OriginX="23" Scale9OriginY="16" Scale9Width="29" Scale9Height="27" ctype="ImageViewObjectData">
                             <Size X="75.0000" Y="59.0000" />
                             <Children>
-                              <AbstractNodeData Name="name" ActionTag="2093617247" Tag="323" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="-7.4999" RightMargin="-7.5001" TopMargin="-35.2432" BottomMargin="74.2432" FontSize="20" LabelText="iphone 12" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                              <AbstractNodeData Name="name" ActionTag="2093617247" Tag="323" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="-7.5000" RightMargin="-7.5000" TopMargin="-35.2432" BottomMargin="74.2432" FontSize="20" LabelText="iphone 12" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                                 <Size X="90.0000" Y="20.0000" />
                                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                                <Position X="37.5001" Y="84.2432" />
+                                <Position X="37.5000" Y="84.2432" />
                                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                                 <CColor A="255" R="255" G="255" B="255" />
                                 <PrePosition X="0.5000" Y="1.4279" />
@@ -846,10 +846,10 @@
                           <AbstractNodeData Name="goods8" ActionTag="-2034930765" Tag="324" RotationSkewX="252.0000" RotationSkewY="252.0000" IconVisible="False" LeftMargin="-195.0341" RightMargin="120.0341" TopMargin="42.1326" BottomMargin="-101.1326" LeftEage="23" RightEage="23" TopEage="16" BottomEage="16" Scale9OriginX="23" Scale9OriginY="16" Scale9Width="29" Scale9Height="27" ctype="ImageViewObjectData">
                             <Size X="75.0000" Y="59.0000" />
                             <Children>
-                              <AbstractNodeData Name="name" ActionTag="-309801554" Tag="325" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="-7.4999" RightMargin="-7.5001" TopMargin="-35.2432" BottomMargin="74.2432" FontSize="20" LabelText="iphone 12" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                              <AbstractNodeData Name="name" ActionTag="-309801554" Tag="325" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="-7.5000" RightMargin="-7.5000" TopMargin="-35.2432" BottomMargin="74.2432" FontSize="20" LabelText="iphone 12" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                                 <Size X="90.0000" Y="20.0000" />
                                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                                <Position X="37.5001" Y="84.2432" />
+                                <Position X="37.5000" Y="84.2432" />
                                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                                 <CColor A="255" R="255" G="255" B="255" />
                                 <PrePosition X="0.5000" Y="1.4279" />
@@ -869,10 +869,10 @@
                           <AbstractNodeData Name="goods9" ActionTag="-131993208" Tag="326" RotationSkewX="288.0000" RotationSkewY="287.9998" IconVisible="False" LeftMargin="-213.5206" RightMargin="138.5206" TopMargin="-61.8141" BottomMargin="2.8141" LeftEage="23" RightEage="23" TopEage="16" BottomEage="16" Scale9OriginX="23" Scale9OriginY="16" Scale9Width="29" Scale9Height="27" ctype="ImageViewObjectData">
                             <Size X="75.0000" Y="59.0000" />
                             <Children>
-                              <AbstractNodeData Name="name" ActionTag="-1255932708" Tag="327" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="-7.4999" RightMargin="-7.5001" TopMargin="-35.2432" BottomMargin="74.2432" FontSize="20" LabelText="iphone 12" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                              <AbstractNodeData Name="name" ActionTag="-1255932708" Tag="327" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="-7.5000" RightMargin="-7.5000" TopMargin="-35.2432" BottomMargin="74.2432" FontSize="20" LabelText="iphone 12" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                                 <Size X="90.0000" Y="20.0000" />
                                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                                <Position X="37.5001" Y="84.2432" />
+                                <Position X="37.5000" Y="84.2432" />
                                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                                 <CColor A="255" R="255" G="255" B="255" />
                                 <PrePosition X="0.5000" Y="1.4279" />
@@ -892,10 +892,10 @@
                           <AbstractNodeData Name="goods10" ActionTag="1949997980" Tag="328" RotationSkewX="324.0000" RotationSkewY="324.0000" IconVisible="False" LeftMargin="-149.1367" RightMargin="74.1367" TopMargin="-160.5805" BottomMargin="101.5805" LeftEage="23" RightEage="23" TopEage="16" BottomEage="16" Scale9OriginX="23" Scale9OriginY="16" Scale9Width="29" Scale9Height="27" ctype="ImageViewObjectData">
                             <Size X="75.0000" Y="59.0000" />
                             <Children>
-                              <AbstractNodeData Name="name" ActionTag="185191478" Tag="329" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="-7.4999" RightMargin="-7.5001" TopMargin="-35.2432" BottomMargin="74.2432" FontSize="20" LabelText="iphone 12" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                              <AbstractNodeData Name="name" ActionTag="185191478" Tag="329" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="-7.5000" RightMargin="-7.5000" TopMargin="-35.2432" BottomMargin="74.2432" FontSize="20" LabelText="iphone 12" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                                 <Size X="90.0000" Y="20.0000" />
                                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                                <Position X="37.5001" Y="84.2432" />
+                                <Position X="37.5000" Y="84.2432" />
                                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                                 <CColor A="255" R="255" G="255" B="255" />
                                 <PrePosition X="0.5000" Y="1.4279" />
@@ -929,35 +929,35 @@
                     <PreSize X="0.4633" Y="0.8264" />
                     <FileData Type="Normal" Path="turntable/zphd_2.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="pointPnl" ActionTag="-128271136" Tag="335" IconVisible="False" LeftMargin="260.2643" RightMargin="819.7357" TopMargin="266.2104" BottomMargin="253.7896" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+                  <AbstractNodeData Name="pointPnl" ActionTag="-128271136" Tag="335" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="258.9124" RightMargin="821.0875" TopMargin="263.7826" BottomMargin="256.2174" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="200.0000" Y="200.0000" />
                     <Children>
-                      <AbstractNodeData Name="pointerImg" ActionTag="1235357127" Tag="330" IconVisible="False" LeftMargin="-47.0900" RightMargin="-43.9100" TopMargin="-29.0900" BottomMargin="-61.9100" LeftEage="96" RightEage="96" TopEage="96" BottomEage="96" Scale9OriginX="96" Scale9OriginY="96" Scale9Width="99" Scale9Height="99" ctype="ImageViewObjectData">
+                      <AbstractNodeData Name="Image_24" ActionTag="608176967" Tag="336" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="-45.5000" RightMargin="-45.5000" TopMargin="-45.5000" BottomMargin="-45.5000" LeftEage="96" RightEage="96" TopEage="96" BottomEage="96" Scale9OriginX="96" Scale9OriginY="96" Scale9Width="99" Scale9Height="99" ctype="ImageViewObjectData">
                         <Size X="291.0000" Y="291.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="98.4100" Y="83.5900" />
+                        <Position X="100.0000" Y="100.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.4921" Y="0.4179" />
-                        <PreSize X="1.4550" Y="1.4550" />
-                        <FileData Type="Normal" Path="turntable/zphd_1_2.png" Plist="" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Image_24" ActionTag="608176967" Tag="336" IconVisible="False" LeftMargin="-47.0894" RightMargin="-43.9106" TopMargin="-49.0877" BottomMargin="-41.9123" LeftEage="96" RightEage="96" TopEage="96" BottomEage="96" Scale9OriginX="96" Scale9OriginY="96" Scale9Width="99" Scale9Height="99" ctype="ImageViewObjectData">
-                        <Size X="291.0000" Y="291.0000" />
-                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="98.4106" Y="103.5877" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.4921" Y="0.5179" />
+                        <PrePosition X="0.5000" Y="0.5000" />
                         <PreSize X="1.4550" Y="1.4550" />
                         <FileData Type="Normal" Path="turntable/zphd_1_3.png" Plist="" />
                       </AbstractNodeData>
+                      <AbstractNodeData Name="TurnPoint" ActionTag="1235357127" Tag="330" RotationSkewX="180.0000" RotationSkewY="180.0000" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="-45.5000" RightMargin="-45.5000" TopMargin="-45.5000" BottomMargin="-45.5000" LeftEage="96" RightEage="96" TopEage="96" BottomEage="96" Scale9OriginX="96" Scale9OriginY="96" Scale9Width="99" Scale9Height="99" ctype="ImageViewObjectData">
+                        <Size X="291.0000" Y="291.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="100.0000" Y="100.0000" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="0.5000" Y="0.5000" />
+                        <PreSize X="1.4550" Y="1.4550" />
+                        <FileData Type="Normal" Path="turntable/zphd_1_2.png" Plist="" />
+                      </AbstractNodeData>
                     </Children>
-                    <AnchorPoint />
-                    <Position X="260.2643" Y="253.7896" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="358.9124" Y="356.2174" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.2033" Y="0.3525" />
+                    <PrePosition X="0.2804" Y="0.4947" />
                     <PreSize X="0.1563" Y="0.2778" />
                     <SingleColor A="255" R="150" G="200" B="255" />
                     <FirstColor A="255" R="150" G="200" B="255" />

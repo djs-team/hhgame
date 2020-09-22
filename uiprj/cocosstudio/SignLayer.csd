@@ -32,7 +32,7 @@
           <AbstractNodeData Name="pnl" ActionTag="-1793723175" Tag="154" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <Children>
-              <AbstractNodeData Name="pgPnl" Visible="False" ActionTag="1297954733" Tag="155" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="pgPnl" ActionTag="1297954733" Tag="155" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="1280.0000" Y="720.0000" />
                 <Children>
                   <AbstractNodeData Name="Image_8" ActionTag="-352151530" Tag="162" IconVisible="False" LeftMargin="560.6129" RightMargin="390.3871" TopMargin="48.3842" BottomMargin="576.6158" LeftEage="108" RightEage="108" TopEage="31" BottomEage="31" Scale9OriginX="108" Scale9OriginY="31" Scale9Width="113" Scale9Height="33" ctype="ImageViewObjectData">
@@ -472,32 +472,6 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="signDataList" ActionTag="174139044" Tag="191" IconVisible="False" LeftMargin="123.1704" RightMargin="556.8296" TopMargin="236.7602" BottomMargin="129.2398" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" IsBounceEnabled="True" ScrollDirectionType="0" DirectionType="Vertical" ctype="ListViewObjectData">
-                <Size X="600.0000" Y="354.0000" />
-                <AnchorPoint />
-                <Position X="123.1704" Y="129.2398" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.0962" Y="0.1795" />
-                <PreSize X="0.4688" Y="0.4917" />
-                <SingleColor A="255" R="150" G="150" B="255" />
-                <FirstColor A="255" R="150" G="150" B="255" />
-                <EndColor A="255" R="255" G="255" B="255" />
-                <ColorVector ScaleY="1.0000" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="signDataListCell" ActionTag="1184176267" Tag="138" IconVisible="False" LeftMargin="198.4280" RightMargin="481.5720" TopMargin="787.3596" BottomMargin="-181.3596" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
-                <Size X="600.0000" Y="114.0000" />
-                <AnchorPoint />
-                <Position X="198.4280" Y="-181.3596" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.1550" Y="-0.2519" />
-                <PreSize X="0.4688" Y="0.1583" />
-                <SingleColor A="255" R="0" G="0" B="0" />
-                <FirstColor A="255" R="150" G="200" B="255" />
-                <EndColor A="255" R="255" G="255" B="255" />
-                <ColorVector ScaleY="1.0000" />
-              </AbstractNodeData>
               <AbstractNodeData Name="signDataCell" ActionTag="-1860708756" Tag="192" IconVisible="False" LeftMargin="245.6100" RightMargin="927.3900" TopMargin="242.6760" BottomMargin="363.3240" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="107.0000" Y="114.0000" />
                 <Children>
@@ -561,6 +535,32 @@
                 <PreSize X="0.0836" Y="0.1583" />
                 <SingleColor A="255" R="150" G="200" B="255" />
                 <FirstColor A="255" R="150" G="200" B="255" />
+                <EndColor A="255" R="255" G="255" B="255" />
+                <ColorVector ScaleY="1.0000" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="signDataListCell" ActionTag="1184176267" Tag="138" IconVisible="False" RightMargin="680.0000" TopMargin="366.0000" BottomMargin="240.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                <Size X="600.0000" Y="114.0000" />
+                <AnchorPoint />
+                <Position Y="240.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition Y="0.3333" />
+                <PreSize X="0.4688" Y="0.1583" />
+                <SingleColor A="255" R="0" G="0" B="0" />
+                <FirstColor A="255" R="150" G="200" B="255" />
+                <EndColor A="255" R="255" G="255" B="255" />
+                <ColorVector ScaleY="1.0000" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="signDataList" ActionTag="174139044" Tag="191" IconVisible="False" LeftMargin="107.1700" RightMargin="554.8300" TopMargin="236.7602" BottomMargin="129.2398" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" IsBounceEnabled="True" ScrollDirectionType="0" DirectionType="Vertical" ctype="ListViewObjectData">
+                <Size X="618.0000" Y="354.0000" />
+                <AnchorPoint />
+                <Position X="107.1700" Y="129.2398" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.0837" Y="0.1795" />
+                <PreSize X="0.4828" Y="0.4917" />
+                <SingleColor A="255" R="150" G="150" B="255" />
+                <FirstColor A="255" R="150" G="150" B="255" />
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>

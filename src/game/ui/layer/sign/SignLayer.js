@@ -175,11 +175,14 @@ load('game/ui/layer/sign/SignLayer', function () {
                 let listPnl = this.signDataListCell.clone()
                 listPnl.setName(this._listPnlName+i)
                 listPnl.setVisible(true)
+
+
+
                 this.signDataList.pushBackCustomItem(listPnl)
 
                 for(let j = 0; j < 6; j++){
 
-                  this.onInitCheckInCellData(data,6*i+j,listPnl)
+                  this.onInitCheckInCellData(data,6*i+j,listPnl,i)
 
                 }
 
@@ -189,15 +192,15 @@ load('game/ui/layer/sign/SignLayer', function () {
         },
 
 
-        onInitCheckInCellData: function (data,index,listPnl) {
+        onInitCheckInCellData: function (data,index,listPnl,i) {
 
 
             let cellData = data[index]
             let cell = this.signDataCell.clone()
             listPnl.addChild(cell)
 
-            cell.setPositionY(0)
-            cell.setPositionX(index%6*92)
+            cell.setPositionY(0 - i * 5)
+            cell.setPositionX( 55 + index%6*90 - i * 13)
             cell.setVisible(true)
             cell.setName(this._checkInName + cellData.checkinId)
             cell.getChildByName('awardsPg').loadTexture(cellData.res)

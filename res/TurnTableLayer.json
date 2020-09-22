@@ -1125,7 +1125,7 @@
                         "AnchorPoint": {},
                         "Position": {
                           "X": 0.0,
-                          "Y": -100.0
+                          "Y": -30.0
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -1135,15 +1135,15 @@
                         "IconVisible": true,
                         "PrePosition": {
                           "X": 0.0,
-                          "Y": -0.3571
+                          "Y": -0.1071
                         },
                         "PreSize": {
                           "X": 0.0,
                           "Y": 0.0
                         },
                         "RightMargin": 400.0,
-                        "TopMargin": 380.0,
-                        "BottomMargin": -100.0,
+                        "TopMargin": 310.0,
+                        "BottomMargin": -30.0,
                         "Tag": 151,
                         "ActionTag": 1729902117,
                         "Size": {
@@ -3280,8 +3280,8 @@
                               "ScaleY": 0.5
                             },
                             "Position": {
-                              "X": 97.334,
-                              "Y": 138.0211
+                              "X": 98.0438,
+                              "Y": 141.5128
                             },
                             "Scale": {
                               "ScaleX": 1.0,
@@ -3299,15 +3299,15 @@
                               "X": 0.0,
                               "Y": 0.0
                             },
-                            "LeftMargin": 61.334,
-                            "RightMargin": -133.334,
-                            "TopMargin": -162.5211,
-                            "BottomMargin": 113.5211,
-                            "Tag": 346,
+                            "LeftMargin": 62.0438,
+                            "RightMargin": -134.0438,
+                            "TopMargin": -166.0128,
+                            "BottomMargin": 117.0128,
+                            "Tag": 380,
                             "Children": [
                               {
                                 "FontSize": 20,
-                                "LabelText": "钻石",
+                                "LabelText": "钻石2",
                                 "OutlineColor": {
                                   "G": 0,
                                   "B": 0
@@ -3339,24 +3339,24 @@
                                   "Y": 1.4286
                                 },
                                 "PreSize": {
-                                  "X": 0.5556,
+                                  "X": 0.6944,
                                   "Y": 0.4082
                                 },
-                                "LeftMargin": 16.0,
-                                "RightMargin": 16.0,
+                                "LeftMargin": 11.0,
+                                "RightMargin": 11.0,
                                 "TopMargin": -31.0,
                                 "BottomMargin": 60.0,
-                                "Tag": 347,
-                                "ActionTag": -1641488603,
+                                "Tag": 381,
+                                "ActionTag": -518596438,
                                 "Size": {
-                                  "X": 40.0,
+                                  "X": 50.0,
                                   "Y": 20.0
                                 },
                                 "Name": "name",
                                 "ctype": "TextObjectData"
                               }
                             ],
-                            "ActionTag": 509886360,
+                            "ActionTag": 1007315316,
                             "Size": {
                               "X": 72.0,
                               "Y": 49.0

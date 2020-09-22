@@ -178,6 +178,7 @@ load('module/mahjong/ui/DeskCardLayerMdt', function () {
         onRegister: function () {
             this.initView()
 
+            this.updateView()
         },
 
         onRemove: function () {

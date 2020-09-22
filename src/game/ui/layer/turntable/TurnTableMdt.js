@@ -214,9 +214,7 @@ load('game/ui/layer/turntable/TurnTableMdt', function () {
 
             let msg = {}
             appInstance.gameAgent().httpGame().TURNTABLEReq(msg)
-
-
-
+            
         },
 
         onRefreshView: function () {

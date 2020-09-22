@@ -61,7 +61,9 @@ load('game/ui/layer/coinshop/CoinShopMdt', function () {
 
         initView: function () {
 
-            let msg = {}
+            let msg = {
+                storeType : 1
+            }
             appInstance.gameAgent().httpGame().COINSSHOPDATASReq(msg)
             let data = {
                 'coin' : appInstance.dataManager().getUserData().coin,

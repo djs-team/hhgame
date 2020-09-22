@@ -71,6 +71,7 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
 
         initData: function () {
             this._lightBg = 0
+            this._rewardUserData = []
         },
 
         onUpdate: function (dt) {
@@ -78,7 +79,7 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
                 this._requestCache += dt
                 if (this._requestCache > this._requestDeley) {
                     this._requestCache = 0
-                    appInstance.gameAgent().httpGame().REFRESHAWARDSDATAReq()
+                    // appInstance.gameAgent().httpGame().REFRESHAWARDSDATAReq()
                 }
             }
 
@@ -91,14 +92,13 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
 
 
         playRewadInfo: function () {
-            if (!this._rewardUserData){
-                return
-            }
+
             this.awardsUserDataPnl.stopAllActions()
             this.awardsUserDataPnl.setPosition(cc.p(0,-50))
 
             let moveto = cc.moveTo(5, cc.p(0, 30 * this._rewardUserData.length + 300))
             let callBack = function () {
+                appInstance.gameAgent().httpGame().REFRESHAWARDSDATAReq()
                 this.awardsUserDataPnl.setPosition(cc.p(0,-50))
             }.bind(this)
 
@@ -116,6 +116,8 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
             this.recordDataCell.setVisible(false)
             this.pointNd1.setVisible(false)
 
+            // this.pointerBtn.setRotation(36 * 3)
+
         },
 
         initZhuanView: function (zhuanData) {
@@ -129,10 +131,9 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
 
         updateUserDataView: function (userData) {
             this.awardsUserDataPnl.removeAllChildren()
-
             this._rewardUserData = userData
             for (let i = 0; i < userData.length; ++i) {
-                this.updateUserCell(userData, i)
+                this.updateUserCell(userData[i],  i)
             }
 
             this.playRewadInfo()
@@ -145,11 +146,10 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
             this.awardsUserDataPnl.addChild(userCell)
             userCell.setPosition(cc.p(0, 0 - 30 * index))
 
-            let user = userData[index]
             let nameNd = userCell.getChildByName('userName')
             let gooodsNd = userCell.getChildByName('goodsName')
-            nameNd.setString(user.pName)
-            gooodsNd.setString(user.luckPrizeStr)
+            nameNd.setString(userData.pName)
+            gooodsNd.setString(userData.luckPrizeStr)
         },
 
 
@@ -173,8 +173,6 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
         onTurnPointClick: function () {
             // let msg = {}
             // appInstance.gameAgent().httpGame().TURNPOINTReq(msg)
-
-            this.playRewadInfo()
             this.playTurnTable(5)
         },
 
@@ -193,6 +191,7 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
                 this._lightInterval = 0.5
             }.bind(this)
             this.pointerBtn.runAction(cc.Sequence(firstEaseAction, cc.CallFunc(callResult)))
+
         },
 
         playLight: function () {

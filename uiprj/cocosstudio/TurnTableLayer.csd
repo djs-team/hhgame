@@ -114,7 +114,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="rightPnl" Visible="False" ActionTag="-286327436" Tag="266" IconVisible="False" LeftMargin="1077.3888" RightMargin="2.6112" TopMargin="86.0264" BottomMargin="111.9736" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+          <AbstractNodeData Name="rightPnl" ActionTag="-286327436" Tag="266" IconVisible="False" LeftMargin="1077.3888" RightMargin="2.6112" TopMargin="86.0264" BottomMargin="111.9736" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="200.0000" Y="522.0000" />
             <Children>
               <AbstractNodeData Name="Image_5" ActionTag="573960386" Tag="267" IconVisible="False" LeftMargin="-134.1146" RightMargin="-3.8854" TopMargin="-13.3857" BottomMargin="-56.6143" LeftEage="111" RightEage="111" TopEage="195" BottomEage="195" Scale9OriginX="111" Scale9OriginY="195" Scale9Width="116" Scale9Height="202" ctype="ImageViewObjectData">
@@ -235,13 +235,13 @@
                   <AbstractNodeData Name="awardsUserDataNd" ActionTag="691249579" Tag="150" IconVisible="False" LeftMargin="158.4400" RightMargin="177.5600" TopMargin="214.7100" BottomMargin="92.2900" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="400.0000" Y="280.0000" />
                     <Children>
-                      <AbstractNodeData Name="awardsUserDataPnl" ActionTag="1729902117" Tag="151" IconVisible="True" RightMargin="400.0000" TopMargin="380.0000" BottomMargin="-100.0000" ctype="SingleNodeObjectData">
+                      <AbstractNodeData Name="awardsUserDataPnl" ActionTag="1729902117" Tag="151" IconVisible="True" RightMargin="400.0000" TopMargin="310.0000" BottomMargin="-30.0000" ctype="SingleNodeObjectData">
                         <Size X="0.0000" Y="0.0000" />
                         <AnchorPoint />
-                        <Position Y="-100.0000" />
+                        <Position Y="-30.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition Y="-0.3571" />
+                        <PrePosition Y="-0.1071" />
                         <PreSize X="0.0000" Y="0.0000" />
                       </AbstractNodeData>
                     </Children>
@@ -357,7 +357,7 @@
                   <AbstractNodeData Name="turnTablePic" ActionTag="-91730695" Tag="280" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="58.7000" RightMargin="628.3000" TopMargin="79.2760" BottomMargin="45.7240" LeftEage="195" RightEage="195" TopEage="196" BottomEage="196" Scale9OriginX="195" Scale9OriginY="196" Scale9Width="203" Scale9Height="203" ctype="ImageViewObjectData">
                     <Size X="593.0000" Y="595.0000" />
                     <Children>
-                      <AbstractNodeData Name="pointNd0" ActionTag="-122947338" Tag="340" IconVisible="True" LeftMargin="10.8578" RightMargin="582.1422" TopMargin="579.0116" BottomMargin="15.9884" ctype="SingleNodeObjectData">
+                      <AbstractNodeData Name="pointNd0" Visible="False" ActionTag="-122947338" Tag="340" IconVisible="True" LeftMargin="10.8578" RightMargin="582.1422" TopMargin="579.0116" BottomMargin="15.9884" ctype="SingleNodeObjectData">
                         <Size X="0.0000" Y="0.0000" />
                         <Children>
                           <AbstractNodeData Name="lampPic_1" ActionTag="1984560580" Tag="282" IconVisible="False" LeftMargin="270.4228" RightMargin="-317.4228" TopMargin="-584.6627" BottomMargin="537.6627" LeftEage="15" RightEage="15" TopEage="15" BottomEage="15" Scale9OriginX="15" Scale9OriginY="15" Scale9Width="17" Scale9Height="17" ctype="ImageViewObjectData">
@@ -725,23 +725,23 @@
                             <PreSize X="0.0000" Y="0.0000" />
                             <FileData Type="Normal" Path="turntable/zphd_7.png" Plist="" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="goods2" ActionTag="509886360" Tag="346" RotationSkewX="35.9998" RotationSkewY="36.0001" IconVisible="False" LeftMargin="61.3340" RightMargin="-133.3340" TopMargin="-162.5211" BottomMargin="113.5211" LeftEage="23" RightEage="23" TopEage="16" BottomEage="16" Scale9OriginX="23" Scale9OriginY="16" Scale9Width="26" Scale9Height="17" ctype="ImageViewObjectData">
+                          <AbstractNodeData Name="goods2" ActionTag="1007315316" Tag="380" RotationSkewX="35.9998" RotationSkewY="36.0001" IconVisible="False" LeftMargin="62.0438" RightMargin="-134.0438" TopMargin="-166.0128" BottomMargin="117.0128" LeftEage="23" RightEage="23" TopEage="16" BottomEage="16" Scale9OriginX="23" Scale9OriginY="16" Scale9Width="26" Scale9Height="17" ctype="ImageViewObjectData">
                             <Size X="72.0000" Y="49.0000" />
                             <Children>
-                              <AbstractNodeData Name="name" ActionTag="-1641488603" Tag="347" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="16.0000" RightMargin="16.0000" TopMargin="-31.0000" BottomMargin="60.0000" FontSize="20" LabelText="钻石" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                                <Size X="40.0000" Y="20.0000" />
+                              <AbstractNodeData Name="name" ActionTag="-518596438" Tag="381" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="11.0000" RightMargin="11.0000" TopMargin="-31.0000" BottomMargin="60.0000" FontSize="20" LabelText="钻石2" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                                <Size X="50.0000" Y="20.0000" />
                                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                                 <Position X="36.0000" Y="70.0000" />
                                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                                 <CColor A="255" R="255" G="255" B="255" />
                                 <PrePosition X="0.5000" Y="1.4286" />
-                                <PreSize X="0.5556" Y="0.4082" />
+                                <PreSize X="0.6944" Y="0.4082" />
                                 <OutlineColor A="255" R="255" G="0" B="0" />
                                 <ShadowColor A="255" R="110" G="110" B="110" />
                               </AbstractNodeData>
                             </Children>
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="97.3340" Y="138.0211" />
+                            <Position X="98.0438" Y="141.5128" />
                             <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="255" G="255" B="255" />
                             <PrePosition />
@@ -1237,7 +1237,7 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="recordsPnl" ActionTag="-1955045022" UserData="{&quot;layoutType&quot;:&quot;maxArea&quot;,&quot;screenAlign&quot;:&quot;mid&quot;}" Tag="745" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="153" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="recordsPnl" Visible="False" ActionTag="-1955045022" UserData="{&quot;layoutType&quot;:&quot;maxArea&quot;,&quot;screenAlign&quot;:&quot;mid&quot;}" Tag="745" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="153" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="1280.0000" Y="720.0000" />
                 <Children>
                   <AbstractNodeData Name="pgPnl" ActionTag="-1934029978" Tag="746" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">

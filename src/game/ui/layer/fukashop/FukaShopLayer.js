@@ -394,8 +394,8 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                     height : 227.00,
                     width : 629.00
                 }
-                let url = 'http://p3.itc.cn/q_70/images03/20200911/b7c565cbc87848538cace549fb609e7b.jpeg'
-               //let  url = data[i].hallPictureUrl
+                //let url = 'http://p3.itc.cn/q_70/images03/20200911/b7c565cbc87848538cace549fb609e7b.jpeg'
+               let  url = data[i].hallPictureUrl
                 this.onLoadUrlImg(url,size,cell)
             }
 
@@ -403,6 +403,7 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
 
         onLoadUrlImg: function (url,size,cell) {
             cc.loader.loadImg(url, { isCrossOrigin: false },function(err,texture){
+              //  cc.log('----------------------------err : ' + JSON.stringify(err))
                 if (!err && texture) {
                     let sp = new cc.Sprite(texture)
                     sp.setContentSize(size)
@@ -613,8 +614,11 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 height : sizeHight,
                 width : sizeWidth
             }
-            //this.onLoadUrlImg(goodsData.hallPictureUrl,size,cell.getChildByName(imgName))
-            this.onLoadUrlImg('http://p3.itc.cn/q_70/images03/20200911/b7c565cbc87848538cace549fb609e7b.jpeg',size,cell.getChildByName(imgName))
+            cc.log('----------------------------------goodsData.hallPictureUrl : ' + goodsData.hallPictureUrl)
+            //this.onLoadUrlImg('http://47.105.94.107:80/public/uploads/goods_image/5f688a4bbdfe8.jpg',size,cell.getChildByName(imgName))
+            //this.onLoadUrlImg('http://abcpic.harmonygames.cn:80/public/uploads/goods_image/1578452618347005.png',size,cell.getChildByName(imgName))
+            this.onLoadUrlImg(goodsData.hallPictureUrl,size,cell.getChildByName(imgName))
+            //this.onLoadUrlImg('http://p3.itc.cn/q_70/images03/20200911/b7c565cbc87848538cace549fb609e7b.jpeg',size,cell.getChildByName(imgName))
             cell.addClickEventListener(function (sender,dt) {
                 this.onShowGoodsDetailMsg(sender)
             }.bind(this))

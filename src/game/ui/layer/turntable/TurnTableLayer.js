@@ -29,7 +29,7 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
                 'bmPnl/awardsPnl/awardsUserDataNd/awardsUserDataPnl': {},
                 'bmPnl/awardsPnl/userDataCell': {},
                 'bmPnl/zhuanPnl': {},
-                'bmPnl/zhuanPnl/pointerBtn': { onClicked: this.onTurnPointClick},
+                'bmPnl/zhuanPnl/pointPnl': { onClicked: this.onTurnPointClick},
                 'bmPnl/zhuanPnl/turnTablePic': {},
                 'bmPnl/zhuanPnl/turnTablePic/goodsNd': {},
                 'bmPnl/zhuanPnl/turnTablePic/pointNd0': {},
@@ -171,26 +171,29 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
         },
 
         onTurnPointClick: function () {
-            // let msg = {}
-            // appInstance.gameAgent().httpGame().TURNPOINTReq(msg)
-            this.playTurnTable(5)
+             let msg = {}
+             appInstance.gameAgent().httpGame().TURNPOINTReq(msg)
+
         },
 
 
-        playTurnTable: function (num) {
-            this.pointerBtn.stopAllActions()
+
+
+        playTurnTable: function (data) {
+            this.pointPnl.getChildByName('pointerImg').stopAllActions()
 
             this._lightInterval = 0.08
 
+            let num = 5
             let firstTime = 0.5
-            let rotateAngle = 360 * num
+            let rotateAngle = 360 * num + 36 * (data.turntableId - 1)
             let action = cc.RotateBy(firstTime, rotateAngle)
             let firstEaseAction = cc.EaseCubicActionInOut(action)
             let callResult = function () {
-                cc.log('===========结果========')
                 this._lightInterval = 0.5
+                this.onShowTurnPointRewards(data)
             }.bind(this)
-            this.pointerBtn.runAction(cc.Sequence(firstEaseAction, cc.CallFunc(callResult)))
+            this.pointPnl.getChildByName('pointerImg').runAction(cc.Sequence(firstEaseAction, cc.CallFunc(callResult)))
 
         },
 
@@ -204,7 +207,12 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
         onTurnPointResult: function (data) {
 
             //指针转动动画
+            this.playTurnTable(data)
 
+
+        },
+
+        onShowTurnPointRewards: function (data) {
             //初始化奖励信息
             this.pgPnl.getChildByName('awardsPg').getChildByName('awardsTypePg').loadTexture(data.res)
             this.pgPnl.getChildByName('awardsPg').getChildByName('awardsVal').setString('x'+data.propNum)
@@ -257,7 +265,6 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
             }
 
             this.awardsPnl.setVisible(true)
-
         },
 
         onUpdateRewardsPnl: function (data) {

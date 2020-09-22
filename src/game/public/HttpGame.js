@@ -418,7 +418,6 @@ load('game/public/HttpGame', function () {
                 return
             }
 
-            console.log('-------------------TURNPOINTBack data : ' + JSON.stringify(msg))
 
             let saveKey = [
 

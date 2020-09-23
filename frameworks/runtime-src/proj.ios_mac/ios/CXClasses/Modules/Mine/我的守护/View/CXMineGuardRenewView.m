@@ -57,6 +57,10 @@
     _userId = userId;
     
     [self getGuardData];
+    
+    if ([[CXClientModel instance].applePayType isEqualToString:@"Apple"]) { // 苹果支付
+        self.thirdPayView.hidden = YES;
+    }
 }
 
 - (void)getGuardData {
@@ -139,35 +143,44 @@
         [self showAlertWithMessage:@"请选择守护时间"];
         return;
     }
-    if (_action.length <= 0) {
-        [self showAlertWithMessage:@"请选择支付方式"];
-        return;
-    }
-
-    NSDictionary *param = @{
-        @"rmb":_currentModel.coin,
-        @"action":_action,
-        @"uid":[CXClientModel instance].userId,
-        @"type":@"2",
-        @"is_active": _is_shouhu == YES ? @"1" : @"2",
-        @"chargeid":_currentModel.charge_id,
-        @"target_id":_userId,
-        @"guard_id":_currentModel.guard_id,
-        @"long_day":_currentModel.long_time,
-    };
-    kWeakSelf
-    [CXHTTPRequest POSTWithURL:@"/index.php/Api/Order/pay" parameters:param callback:^(id responseObject, BOOL isCache, NSError *error) {
-        if (!error) {
-            if ([_action isEqualToString:@"weixin"]) {
-                NSString *str = [responseObject jsonStringEncoded];
-                [[CXThirdPayManager sharedApi] wxPayWithPayParam:str success:nil failure:nil];
-            } else {
-                [[CXThirdPayManager sharedApi] aliPayWithPayParam:responseObject[@"data"] success:nil failure:nil];
-            }
-            
-            [weakSelf hide];
+    
+    if ([[CXClientModel instance].applePayType isEqualToString:@"Apple"]) { // 苹果支付
+        [CXIPAPurchaseManager manager].purchaseType = LiveBroadcast;
+        [[CXIPAPurchaseManager manager] inAppPurchaseWithProductID:_currentModel.iosflag iapResult:^(BOOL isSuccess, NSDictionary *param, NSString *errorMsg) {
+            NSLog(@"");
+        }];
+    } else {
+        if (_action.length <= 0) {
+            [self showAlertWithMessage:@"请选择支付方式"];
+            return;
         }
-    }];
+
+        NSDictionary *param = @{
+            @"rmb":_currentModel.coin,
+            @"action":_action,
+            @"uid":[CXClientModel instance].userId,
+            @"type":@"2",
+            @"is_active": _is_shouhu == YES ? @"1" : @"2",
+            @"chargeid":_currentModel.charge_id,
+            @"target_id":_userId,
+            @"guard_id":_currentModel.guard_id,
+            @"long_day":_currentModel.long_time,
+        };
+        kWeakSelf
+        [CXHTTPRequest POSTWithURL:@"/index.php/Api/Order/pay" parameters:param callback:^(id responseObject, BOOL isCache, NSError *error) {
+            if (!error) {
+                if ([_action isEqualToString:@"weixin"]) {
+                    NSString *str = [responseObject jsonStringEncoded];
+                    [[CXThirdPayManager sharedApi] wxPayWithPayParam:str success:nil failure:nil];
+                } else {
+                    [[CXThirdPayManager sharedApi] aliPayWithPayParam:responseObject[@"data"] success:nil failure:nil];
+                }
+                
+                [weakSelf hide];
+            }
+        }];
+    }
+    
 }
 
 @end

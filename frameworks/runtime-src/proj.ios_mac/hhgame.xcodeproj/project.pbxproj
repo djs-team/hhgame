@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0018054625187E5700A47927 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0018054325187E5700A47927 /* AdSupport.framework */; };
+		0018058825188F0500A47927 /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0018058725188F0500A47927 /* AppTrackingTransparency.framework */; };
 		0020BB34250B9A5A00E2979B /* AppController+Login.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0020BB32250B9A5A00E2979B /* AppController+Login.mm */; };
 		0020BB39250BA0A000E2979B /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0020BB38250BA09F00E2979B /* libc++.tbd */; };
 		0020BB3B250BA0A800E2979B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0020BB3A250BA0A700E2979B /* libz.tbd */; };
@@ -705,9 +707,6 @@
 		00802AA4250C6DD200F43A32 /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 00802AA3250C6DD200F43A32 /* libresolv.9.tbd */; };
 		00802AA6250C6DFA00F43A32 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 00802AA5250C6DFA00F43A32 /* libbz2.tbd */; };
 		00802AA8250C6E0000F43A32 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 00802AA7250C6E0000F43A32 /* libxml2.tbd */; };
-		00802AB3250CA91000F43A32 /* BUAdSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00802AAE250CA91000F43A32 /* BUAdSDK.framework */; };
-		00802AB4250CA91000F43A32 /* BUFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00802AAF250CA91000F43A32 /* BUFoundation.framework */; };
-		00802AB5250CA91000F43A32 /* BUAdSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 00802AB0250CA91000F43A32 /* BUAdSDK.bundle */; };
 		00802AB9250CAB9000F43A32 /* CXBUAdRewardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00802AB8250CAB9000F43A32 /* CXBUAdRewardViewController.m */; };
 		00802AC1250CC55300F43A32 /* RPSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00802ABB250CC55200F43A32 /* RPSDK.framework */; };
 		00802AC2250CC55300F43A32 /* SGMain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00802ABC250CC55200F43A32 /* SGMain.framework */; };
@@ -848,6 +847,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0018054325187E5700A47927 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/AdSupport.framework; sourceTree = DEVELOPER_DIR; };
+		0018058725188F0500A47927 /* AppTrackingTransparency.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppTrackingTransparency.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/AppTrackingTransparency.framework; sourceTree = DEVELOPER_DIR; };
 		0020BB32250B9A5A00E2979B /* AppController+Login.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "AppController+Login.mm"; path = "ios/AppController+Login.mm"; sourceTree = "<group>"; };
 		0020BB33250B9A5A00E2979B /* AppController+Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AppController+Login.h"; path = "ios/AppController+Login.h"; sourceTree = "<group>"; };
 		0020BB37250B9C4800E2979B /* CXSystemMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXSystemMessageViewController.h; sourceTree = "<group>"; };
@@ -1938,9 +1939,6 @@
 		00802AA3250C6DD200F43A32 /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.7.sdk/usr/lib/libresolv.9.tbd; sourceTree = DEVELOPER_DIR; };
 		00802AA5250C6DFA00F43A32 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.7.sdk/usr/lib/libbz2.tbd; sourceTree = DEVELOPER_DIR; };
 		00802AA7250C6E0000F43A32 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.7.sdk/usr/lib/libxml2.tbd; sourceTree = DEVELOPER_DIR; };
-		00802AAE250CA91000F43A32 /* BUAdSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BUAdSDK.framework; sourceTree = "<group>"; };
-		00802AAF250CA91000F43A32 /* BUFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BUFoundation.framework; sourceTree = "<group>"; };
-		00802AB0250CA91000F43A32 /* BUAdSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BUAdSDK.bundle; sourceTree = "<group>"; };
 		00802AB7250CAB9000F43A32 /* CXBUAdRewardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXBUAdRewardViewController.h; sourceTree = "<group>"; };
 		00802AB8250CAB9000F43A32 /* CXBUAdRewardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXBUAdRewardViewController.m; sourceTree = "<group>"; };
 		00802ABB250CC55200F43A32 /* RPSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RPSDK.framework; sourceTree = "<group>"; };
@@ -2036,6 +2034,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0018058825188F0500A47927 /* AppTrackingTransparency.framework in Frameworks */,
+				0018054625187E5700A47927 /* AdSupport.framework in Frameworks */,
 				0020BB5B250BA14700E2979B /* ImageIO.framework in Frameworks */,
 				00802AA8250C6E0000F43A32 /* libxml2.tbd in Frameworks */,
 				00802AA6250C6DFA00F43A32 /* libbz2.tbd in Frameworks */,
@@ -2053,8 +2053,6 @@
 				0020BB4D250BA0FA00E2979B /* CoreLocation.framework in Frameworks */,
 				00802A9E250C6DA100F43A32 /* CoreMedia.framework in Frameworks */,
 				0020BB69250BA19700E2979B /* MediaPlayer.framework in Frameworks */,
-				00802AB3250CA91000F43A32 /* BUAdSDK.framework in Frameworks */,
-				00802AB4250CA91000F43A32 /* BUFoundation.framework in Frameworks */,
 				0020BB55250BA12C00E2979B /* MobileCoreServices.framework in Frameworks */,
 				0020BB3D250BA0AE00E2979B /* AudioToolbox.framework in Frameworks */,
 				0020BB6F250BA1DA00E2979B /* OpenAL.framework in Frameworks */,
@@ -2409,10 +2407,10 @@
 			isa = PBXGroup;
 			children = (
 				0061496F250B94C600BB7620 /* CXLiveRoomViewController.h */,
+				00614AD8250B94C800BB7620 /* CXLiveRoomViewController.m */,
 				00614970250B94C600BB7620 /* FaceUnity */,
 				00614996250B94C600BB7620 /* Model */,
 				006149A6250B94C600BB7620 /* View */,
-				00614AD8250B94C800BB7620 /* CXLiveRoomViewController.m */,
 			);
 			path = LiveRoom;
 			sourceTree = "<group>";
@@ -3375,11 +3373,11 @@
 			isa = PBXGroup;
 			children = (
 				00614BCF250B94CA00BB7620 /* 提现 */,
-				00614BE0250B94CA00BB7620 /* CXMyWalletViewController.xib */,
+				00614BFC250B94CA00BB7620 /* CXMyWalletViewController.h */,
 				00614BE1250B94CA00BB7620 /* CXMyWalletViewController.m */,
+				00614BE0250B94CA00BB7620 /* CXMyWalletViewController.xib */,
 				00614BE2250B94CA00BB7620 /* 兑换 */,
 				00614BF9250B94CA00BB7620 /* Model */,
-				00614BFC250B94CA00BB7620 /* CXMyWalletViewController.h */,
 			);
 			path = "我的钱包";
 			sourceTree = "<group>";
@@ -4435,9 +4433,6 @@
 			isa = PBXGroup;
 			children = (
 				00802ABA250CC51D00F43A32 /* Aliyun */,
-				00802AAE250CA91000F43A32 /* BUAdSDK.framework */,
-				00802AAF250CA91000F43A32 /* BUFoundation.framework */,
-				00802AB0250CA91000F43A32 /* BUAdSDK.bundle */,
 			);
 			name = Frameworks;
 			path = ios/Frameworks;
@@ -4537,6 +4532,8 @@
 		A92275401517C094001B78AA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0018058725188F0500A47927 /* AppTrackingTransparency.framework */,
+				0018054325187E5700A47927 /* AdSupport.framework */,
 				00802AA7250C6E0000F43A32 /* libxml2.tbd */,
 				00802AA5250C6DFA00F43A32 /* libbz2.tbd */,
 				00802AA3250C6DD200F43A32 /* libresolv.9.tbd */,
@@ -4699,7 +4696,7 @@
 				LastUpgradeCheck = 0500;
 				TargetAttributes = {
 					A922753C1517C094001B78AA = {
-						DevelopmentTeam = KGMBMD5H3G;
+						DevelopmentTeam = C966MAAFRF;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -4810,7 +4807,6 @@
 				0061501D250B94D000BB7620 /* chatbar_call@2x.png in Resources */,
 				00614EF7250B94CF00BB7620 /* CXLiveRoomRechargeCell.xib in Resources */,
 				00614F85250B94CF00BB7620 /* MuaExchangeResultTipView.xib in Resources */,
-				00802AB5250CA91000F43A32 /* BUAdSDK.bundle in Resources */,
 				00615032250B94D000BB7620 /* msg_location_white@2x.png in Resources */,
 				00614EB5250B94CE00BB7620 /* CXRedPacketProgressView.xib in Resources */,
 				00614E37250B94CE00BB7620 /* CXFriendMessageCell.xib in Resources */,
@@ -5208,10 +5204,12 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-hhgame-mobile/Pods-hhgame-mobile-resources.sh",
 				"${PODS_ROOT}/AlipaySDK-iOS/AlipaySDK.bundle",
+				"${PODS_ROOT}/Bytedance-UnionAD/Bytedance-UnionAd/Frameworks/BUAdSDK.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AlipaySDK.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BUAdSDK.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -5749,7 +5747,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMPRESS_PNG_FILES = NO;
 				CURRENT_PROJECT_VERSION = 0;
-				DEVELOPMENT_TEAM = KGMBMD5H3G;
+				DEVELOPMENT_TEAM = C966MAAFRF;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -5776,17 +5774,17 @@
 					"\"$(SRCROOT)/ios/CXClasses/Modules/LiveRoom/FaceUnity/FaceUnity-SDK-iOS\"",
 					"\"$(SRCROOT)/ios/CXClasses/lib/Ease/Helper/3rdParty/VoiceConvert\"",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 5.0.4;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = heyin.dating.online.face;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hehegames.hhyuejumajiang;
 				PRODUCT_NAME = "合合全集";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				STRIP_PNG_TEXT = NO;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../cocos2d-x/external/spidermonkey/include/ios $(SRCROOT)/../../cocos2d-x/plugin/jsbindings/auto $(SRCROOT)/../../cocos2d-x/plugin/jsbindings/manual $(SRCROOT)/../../cocos2d-x/cocos";
 				VALID_ARCHS = "arm64 armv7 $(inherited)";
 			};
@@ -5804,7 +5802,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMPRESS_PNG_FILES = NO;
 				CURRENT_PROJECT_VERSION = 0;
-				DEVELOPMENT_TEAM = KGMBMD5H3G;
+				DEVELOPMENT_TEAM = C966MAAFRF;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -5830,17 +5828,17 @@
 					"\"$(SRCROOT)/ios/CXClasses/Modules/LiveRoom/FaceUnity/FaceUnity-SDK-iOS\"",
 					"\"$(SRCROOT)/ios/CXClasses/lib/Ease/Helper/3rdParty/VoiceConvert\"",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 5.0.4;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = heyin.dating.online.face;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hehegames.hhyuejumajiang;
 				PRODUCT_NAME = "合合全集";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				STRIP_PNG_TEXT = NO;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../cocos2d-x/external/spidermonkey/include/ios $(SRCROOT)/../../cocos2d-x/plugin/jsbindings/auto $(SRCROOT)/../../cocos2d-x/plugin/jsbindings/manual $(SRCROOT)/../../cocos2d-x/cocos";
 				VALID_ARCHS = "arm64 armv7 $(inherited)";
 			};

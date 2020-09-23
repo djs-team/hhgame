@@ -2407,10 +2407,10 @@
 			isa = PBXGroup;
 			children = (
 				0061496F250B94C600BB7620 /* CXLiveRoomViewController.h */,
+				00614AD8250B94C800BB7620 /* CXLiveRoomViewController.m */,
 				00614970250B94C600BB7620 /* FaceUnity */,
 				00614996250B94C600BB7620 /* Model */,
 				006149A6250B94C600BB7620 /* View */,
-				00614AD8250B94C800BB7620 /* CXLiveRoomViewController.m */,
 			);
 			path = LiveRoom;
 			sourceTree = "<group>";
@@ -3373,11 +3373,11 @@
 			isa = PBXGroup;
 			children = (
 				00614BCF250B94CA00BB7620 /* 提现 */,
-				00614BE0250B94CA00BB7620 /* CXMyWalletViewController.xib */,
+				00614BFC250B94CA00BB7620 /* CXMyWalletViewController.h */,
 				00614BE1250B94CA00BB7620 /* CXMyWalletViewController.m */,
+				00614BE0250B94CA00BB7620 /* CXMyWalletViewController.xib */,
 				00614BE2250B94CA00BB7620 /* 兑换 */,
 				00614BF9250B94CA00BB7620 /* Model */,
-				00614BFC250B94CA00BB7620 /* CXMyWalletViewController.h */,
 			);
 			path = "我的钱包";
 			sourceTree = "<group>";
@@ -4696,7 +4696,7 @@
 				LastUpgradeCheck = 0500;
 				TargetAttributes = {
 					A922753C1517C094001B78AA = {
-						DevelopmentTeam = KGMBMD5H3G;
+						DevelopmentTeam = C966MAAFRF;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -5747,7 +5747,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMPRESS_PNG_FILES = NO;
 				CURRENT_PROJECT_VERSION = 0;
-				DEVELOPMENT_TEAM = KGMBMD5H3G;
+				DEVELOPMENT_TEAM = C966MAAFRF;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -5774,17 +5774,17 @@
 					"\"$(SRCROOT)/ios/CXClasses/Modules/LiveRoom/FaceUnity/FaceUnity-SDK-iOS\"",
 					"\"$(SRCROOT)/ios/CXClasses/lib/Ease/Helper/3rdParty/VoiceConvert\"",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 5.0.4;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = heyin.dating.online.face;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hehegames.hhyuejumajiang;
 				PRODUCT_NAME = "合合全集";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				STRIP_PNG_TEXT = NO;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../cocos2d-x/external/spidermonkey/include/ios $(SRCROOT)/../../cocos2d-x/plugin/jsbindings/auto $(SRCROOT)/../../cocos2d-x/plugin/jsbindings/manual $(SRCROOT)/../../cocos2d-x/cocos";
 				VALID_ARCHS = "arm64 armv7 $(inherited)";
 			};
@@ -5802,7 +5802,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMPRESS_PNG_FILES = NO;
 				CURRENT_PROJECT_VERSION = 0;
-				DEVELOPMENT_TEAM = KGMBMD5H3G;
+				DEVELOPMENT_TEAM = C966MAAFRF;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -5828,17 +5828,17 @@
 					"\"$(SRCROOT)/ios/CXClasses/Modules/LiveRoom/FaceUnity/FaceUnity-SDK-iOS\"",
 					"\"$(SRCROOT)/ios/CXClasses/lib/Ease/Helper/3rdParty/VoiceConvert\"",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 5.0.4;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = heyin.dating.online.face;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hehegames.hhyuejumajiang;
 				PRODUCT_NAME = "合合全集";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				STRIP_PNG_TEXT = NO;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../cocos2d-x/external/spidermonkey/include/ios $(SRCROOT)/../../cocos2d-x/plugin/jsbindings/auto $(SRCROOT)/../../cocos2d-x/plugin/jsbindings/manual $(SRCROOT)/../../cocos2d-x/cocos";
 				VALID_ARCHS = "arm64 armv7 $(inherited)";
 			};

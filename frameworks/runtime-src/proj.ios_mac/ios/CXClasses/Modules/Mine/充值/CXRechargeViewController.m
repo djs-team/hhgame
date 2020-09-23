@@ -52,6 +52,10 @@
 
     // 监听微信支付回调
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(weChatCallBack:) name:kNSNotificationCenter_CXRechargeViewController_weixin object:nil];
+    
+    if ([[CXClientModel instance].applePayType isEqualToString:@"Apple"]) { // 苹果支付
+        self.thirdPayView.hidden = YES;
+    }
 }
 
 - (void)loadBalances {
@@ -130,14 +134,30 @@
 }
 
 - (IBAction)rechargeAction:(id)sender {
-    if (self.payMethod <= 0) {
-        [self toast:@"请选择支付方式"];
-        return;
-    }
-    
     if (self.selectedItem.charge_id.length <= 0) {
         [self toast:@"请选择支付金额"];
         return;
+    }
+    if ([[CXClientModel instance].applePayType isEqualToString:@"Apple"]) { // 苹果支付
+        [CXIPAPurchaseManager manager].purchaseType = LiveBroadcast;
+        kWeakSelf
+        [CXIPAPurchaseManager manager].userid = [CXClientModel instance].userId;
+        [CXIPAPurchaseManager manager].purchaseType = LiveBroadcast;
+        [[CXIPAPurchaseManager manager] inAppPurchaseWithProductID:_selectedItem.iosflag iapResult:^(BOOL isSuccess, NSDictionary *param, NSString *errorMsg) {
+            if (isSuccess) {
+                [weakSelf toast:@"购买成功"];
+                [weakSelf loadBalances];
+            } else {
+                [weakSelf toast:errorMsg];
+            }
+        }];
+        
+        return;
+    } else {
+        if (self.payMethod <= 0) {
+            [self toast:@"请选择支付方式"];
+            return;
+        }
     }
     
     if (_payMethod == 1) { // 微信
@@ -167,18 +187,6 @@
         [CXHTTPRequest POSTWithURL:@"/index.php/Api/Order/pay" parameters:param callback:^(id responseObject, BOOL isCache, NSError *error) {
             if (!error) {
                 [[CXThirdPayManager sharedApi] aliPayWithPayParam:responseObject[@"data"] success:nil failure:nil];
-            }
-        }];
-    } else { // 内购
-        kWeakSelf
-        [CXIPAPurchaseManager manager].userid = [CXClientModel instance].userId;
-        [CXIPAPurchaseManager manager].purchaseType = LiveBroadcast;
-        [[CXIPAPurchaseManager manager] inAppPurchaseWithProductID:_selectedItem.iosflag iapResult:^(BOOL isSuccess, NSDictionary *param, NSString *errorMsg) {
-            if (isSuccess) {
-                [weakSelf toast:@"购买成功"];
-                [weakSelf loadBalances];
-            } else {
-                [weakSelf toast:errorMsg];
             }
         }];
     }

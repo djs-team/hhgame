@@ -137,7 +137,7 @@ static AppDelegate s_sharedApplication;
     [self configureJPushOptions:launchOptions];
     
     // 微信注册
-    [WXApi registerApp:WX_AppKey universalLink:@"https://heyin666/"];
+    [WXApi registerApp:WX_AppKey universalLink:WX_UniversalLinks];
     
     // 穿山甲
     [self setupBUAdSDK];
@@ -604,7 +604,18 @@ UIInterfaceOrientationMask oMask = UIInterfaceOrientationMaskLandscape;
 
 #pragma mark - ================ 直播相关 ===================
 /// 从麻将进入视频
-+ (void)enterLiveBroadcast {
++ (void)enterLiveBroadcastWithToken:(NSString *)param {
+    if (param.length <= 0 ) {
+        return;
+    }
+    NSDictionary *dict = [param jsonValueDecoded];
+    if ([dict.allKeys containsObject:@"token"]) {
+        [CXClientModel instance].token = dict[@"token"];
+    }
+    if ([dict.allKeys containsObject:@"applePayType"]) {
+        [CXClientModel instance].applePayType = dict[@"applePayType"];
+    }
+    
     [CXConfigObject enterOnline];
 }
 

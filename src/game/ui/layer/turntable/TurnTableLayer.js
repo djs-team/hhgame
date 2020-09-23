@@ -190,6 +190,7 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
 
         playTurnTable: function (data) {
             this.TurnPoint.stopAllActions()
+            this.TurnPoint.setRotation(0)
             let endtime = 11
             let rotateAngle = 360 * 20 + 36 * (data.turntableId - 1)
             let endAction = cc.RotateBy(endtime, rotateAngle)

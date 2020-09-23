@@ -62,7 +62,7 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 'goodsDetailsPnl/detailMidPnl/goodsExchangeMidBtn' : {},
 
                 'goodsDetailsPnl/detailBottomPnl' : {},
-                'goodsDetailsPnl/detailBottomPnl/detailImg' : {},
+                'goodsDetailsPnl/detailBottomPnl/detailImgPnl' : {},
                 'goodsDetailsPnl/detailBottomPnl/goodsExchangeBottomBtn' : {},
 
 
@@ -395,7 +395,7 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                     width : 629.00
                 }
                 //let url = 'http://p3.itc.cn/q_70/images03/20200911/b7c565cbc87848538cace549fb609e7b.jpeg'
-               let  url = data[i].hallPictureUrl
+               let  url = data[i].outerPictureUrl
                 this.onLoadUrlImg(url,size,cell)
             }
 
@@ -643,10 +643,14 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
             for(let i = 0; i < data.upPictureUrls.length; i++){
 
                 let cell = this.goodsDetailCell.clone()
-                cell.setVisible(false)
+                cell.setVisible(true)
                 this.goodDetailPageView.pushBackCustomItem(cell)
+                let size = {
+                    height : 556,
+                    width : 416
+                }
 
-                cell.getChildByName('goodsDetailImg').loadTexture(data.upPictureUrls[i])
+                this.onLoadUrlImg(data.upPictureUrls[i],size,cell)
 
             }
 
@@ -660,7 +664,15 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 this.bottomWhiltPnl.setVisible(false)
                 this.detailBottomPnl.setVisible(true)
                 btn = this.goodsExchangeBottomBtn
-                this.detailImg.loadTexture(data.detailsPictureUrl)
+
+                let size = {
+                    height : 395.00,
+                    width : 709.00
+                }
+                let  url = ' https://bg-test-mj.heheshow.cn/public/uploads/goods_image/5f688a4bbdfe8.jpg'
+                //let  url = data.detailsPictureUrl
+                cc.log('------------------onShowGoodsDetailMsg detailsPictureUrl : ' + url)
+                this.onLoadUrlImg(url,size,this.detailImgPnl)
 
             }else{
                 this.goodsExchangeMidBtn.setVisible(true)

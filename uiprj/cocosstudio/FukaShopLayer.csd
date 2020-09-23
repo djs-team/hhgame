@@ -89,7 +89,7 @@
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="107.1100" Y="394.7300" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="255" G="255" B="255" />
+                    <CColor A="255" R="171" G="166" B="163" />
                     <PrePosition X="0.0837" Y="0.5482" />
                     <PreSize X="0.4313" Y="0.0375" />
                   </AbstractNodeData>
@@ -864,7 +864,7 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="detailImgPnl" ActionTag="786027686" Tag="309" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" LeftMargin="476.2507" RightMargin="-608.2507" TopMargin="324.0414" BottomMargin="0.9586" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+                  <AbstractNodeData Name="detailImgPnl" ActionTag="786027686" Tag="309" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" LeftMargin="476.2507" RightMargin="-608.2507" TopMargin="324.0414" BottomMargin="0.9586" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="709.0000" Y="395.0000" />
                     <AnchorPoint />
                     <Position X="476.2507" Y="0.9586" />
@@ -1459,7 +1459,7 @@
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="-736.6199" Y="-399.1725" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="0" G="0" B="0" />
+                    <CColor A="255" R="197" G="195" B="194" />
                     <PrePosition X="-3.6831" Y="-8.8705" />
                     <PreSize X="0.4500" Y="0.4444" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
@@ -1495,7 +1495,7 @@
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="17.2338" Y="76.1111" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="217" G="63" B="74" />
+                    <CColor A="255" R="224" G="82" B="65" />
                     <PrePosition X="0.4535" Y="0.5074" />
                     <PreSize X="3.4737" Y="0.1467" />
                     <OutlineColor A="255" R="255" G="0" B="0" />

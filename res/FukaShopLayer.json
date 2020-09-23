@@ -454,7 +454,11 @@
                     },
                     "RotationSkewX": -90.0,
                     "RotationSkewY": -90.0,
-                    "CColor": {},
+                    "CColor": {
+                      "R": 171,
+                      "G": 166,
+                      "B": 163
+                    },
                     "IconVisible": false,
                     "PrePosition": {
                       "X": 0.0837,
@@ -3753,6 +3757,8 @@
                     "ColorVector": {
                       "ScaleY": 1.0
                     },
+                    "Scale9Width": 1,
+                    "Scale9Height": 1,
                     "AnchorPoint": {},
                     "Position": {
                       "X": 476.2507,
@@ -6381,9 +6387,9 @@
                     "RotationSkewX": -90.0,
                     "RotationSkewY": -90.0,
                     "CColor": {
-                      "R": 0,
-                      "G": 0,
-                      "B": 0
+                      "R": 197,
+                      "G": 195,
+                      "B": 194
                     },
                     "IconVisible": false,
                     "PrePosition": {
@@ -6540,9 +6546,9 @@
                     "RotationSkewX": -90.0,
                     "RotationSkewY": -90.0,
                     "CColor": {
-                      "R": 217,
-                      "G": 63,
-                      "B": 74
+                      "R": 224,
+                      "G": 82,
+                      "B": 65
                     },
                     "IconVisible": false,
                     "PrePosition": {

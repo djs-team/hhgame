@@ -485,15 +485,15 @@
                     <PreSize X="0.9813" Y="0.9474" />
                     <FileData Type="Normal" Path="sign/qd_15.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="awardsPg" ActionTag="-67243932" Tag="197" IconVisible="False" LeftMargin="33.6964" RightMargin="31.3036" TopMargin="36.6204" BottomMargin="49.3796" LeftEage="13" RightEage="13" TopEage="9" BottomEage="9" Scale9OriginX="13" Scale9OriginY="9" Scale9Width="16" Scale9Height="10" ctype="ImageViewObjectData">
-                    <Size X="42.0000" Y="28.0000" />
+                  <AbstractNodeData Name="awardsPg" ActionTag="-67243932" Tag="197" IconVisible="False" LeftMargin="15.6964" RightMargin="13.3036" TopMargin="13.6204" BottomMargin="26.3796" LeftEage="13" RightEage="13" TopEage="9" BottomEage="9" Scale9OriginX="13" Scale9OriginY="9" Scale9Width="52" Scale9Height="56" ctype="ImageViewObjectData">
+                    <Size X="78.0000" Y="74.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="54.6964" Y="63.3796" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.5112" Y="0.5560" />
-                    <PreSize X="0.3925" Y="0.2456" />
-                    <FileData Type="Normal" Path="coinshop/scjb_14.png" Plist="" />
+                    <PreSize X="0.7290" Y="0.6491" />
+                    <FileData Type="Normal" Path="sign/qd_jl_9.png" Plist="" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="awardsValueText" ActionTag="1462170359" Tag="198" IconVisible="False" LeftMargin="27.8557" RightMargin="34.1443" TopMargin="91.1086" BottomMargin="4.8914" FontSize="18" LabelText="x1888" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="45.0000" Y="18.0000" />
@@ -506,7 +506,7 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="acceptedPg" ActionTag="1945313742" Tag="196" IconVisible="False" LeftMargin="18.6543" RightMargin="14.3457" TopMargin="30.2888" BottomMargin="42.7112" LeftEage="24" RightEage="24" TopEage="13" BottomEage="13" Scale9OriginX="24" Scale9OriginY="13" Scale9Width="26" Scale9Height="15" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="acceptedPg" Visible="False" ActionTag="1945313742" Tag="196" IconVisible="False" LeftMargin="18.6543" RightMargin="14.3457" TopMargin="30.2888" BottomMargin="42.7112" LeftEage="24" RightEage="24" TopEage="13" BottomEage="13" Scale9OriginX="24" Scale9OriginY="13" Scale9Width="26" Scale9Height="15" ctype="ImageViewObjectData">
                     <Size X="74.0000" Y="41.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="55.6543" Y="63.2112" />
@@ -516,7 +516,7 @@
                     <PreSize X="0.6916" Y="0.3596" />
                     <FileData Type="Normal" Path="sign/qd_25.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="blockPg" ActionTag="1589420874" Tag="194" IconVisible="False" LeftMargin="-0.2800" RightMargin="2.2800" TopMargin="1.6000" BottomMargin="4.4000" LeftEage="33" RightEage="33" TopEage="35" BottomEage="35" Scale9OriginX="33" Scale9OriginY="35" Scale9Width="35" Scale9Height="39" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="blockPg" Visible="False" ActionTag="1589420874" Tag="194" IconVisible="False" LeftMargin="-0.2800" RightMargin="2.2800" TopMargin="1.6000" BottomMargin="4.4000" LeftEage="33" RightEage="33" TopEage="35" BottomEage="35" Scale9OriginX="33" Scale9OriginY="35" Scale9Width="35" Scale9Height="39" ctype="ImageViewObjectData">
                     <Size X="105.0000" Y="108.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="52.2200" Y="58.4000" />
@@ -538,23 +538,23 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="signDataListCell" ActionTag="1184176267" Tag="138" IconVisible="False" RightMargin="680.0000" TopMargin="366.0000" BottomMargin="240.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="signDataListCell" ActionTag="1184176267" Tag="138" IconVisible="False" LeftMargin="108.9282" RightMargin="571.0718" TopMargin="240.6600" BottomMargin="365.3400" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="600.0000" Y="114.0000" />
                 <AnchorPoint />
-                <Position Y="240.0000" />
+                <Position X="108.9282" Y="365.3400" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition Y="0.3333" />
+                <PrePosition X="0.0851" Y="0.5074" />
                 <PreSize X="0.4688" Y="0.1583" />
                 <SingleColor A="255" R="0" G="0" B="0" />
                 <FirstColor A="255" R="150" G="200" B="255" />
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="signDataList" ActionTag="174139044" Tag="191" IconVisible="False" LeftMargin="107.1700" RightMargin="554.8300" TopMargin="236.7602" BottomMargin="129.2398" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" IsBounceEnabled="True" ScrollDirectionType="0" DirectionType="Vertical" ctype="ListViewObjectData">
+              <AbstractNodeData Name="signDataList" ActionTag="174139044" Tag="191" IconVisible="False" LeftMargin="107.1700" RightMargin="554.8300" TopMargin="236.7600" BottomMargin="129.2400" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" IsBounceEnabled="True" ScrollDirectionType="0" DirectionType="Vertical" ctype="ListViewObjectData">
                 <Size X="618.0000" Y="354.0000" />
                 <AnchorPoint />
-                <Position X="107.1700" Y="129.2398" />
+                <Position X="107.1700" Y="129.2400" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.0837" Y="0.1795" />

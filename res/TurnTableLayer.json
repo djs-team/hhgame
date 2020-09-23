@@ -539,7 +539,7 @@
               "Y": 0.1555
             },
             "PreSize": {
-              "X": 0.1563,
+              "X": 0.1562,
               "Y": 0.725
             },
             "LeftMargin": 1077.3888,
@@ -1008,7 +1008,7 @@
                     },
                     "Position": {
                       "X": 158.44,
-                      "Y": 372.29
+                      "Y": 408.29
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -1018,7 +1018,7 @@
                     "IconVisible": false,
                     "PrePosition": {
                       "X": 0.2153,
-                      "Y": 0.6342
+                      "Y": 0.6956
                     },
                     "PreSize": {
                       "X": 0.5435,
@@ -1026,8 +1026,8 @@
                     },
                     "LeftMargin": 158.44,
                     "RightMargin": 177.56,
-                    "TopMargin": 214.71,
-                    "BottomMargin": 92.29,
+                    "TopMargin": 178.71,
+                    "BottomMargin": 128.29,
                     "Tag": 150,
                     "Children": [
                       {
@@ -1069,57 +1069,6 @@
                       "Y": 280.0
                     },
                     "Name": "awardsUserDataNd",
-                    "ctype": "PanelObjectData"
-                  },
-                  {
-                    "ClipAble": false,
-                    "BackColorAlpha": 102,
-                    "ComboBoxIndex": 1,
-                    "SingleColor": {
-                      "R": 150,
-                      "G": 200
-                    },
-                    "FirstColor": {
-                      "R": 150,
-                      "G": 200
-                    },
-                    "EndColor": {},
-                    "ColorVector": {
-                      "ScaleY": 1.0
-                    },
-                    "Scale9Width": 1,
-                    "Scale9Height": 1,
-                    "TouchEnable": true,
-                    "AnchorPoint": {},
-                    "Position": {
-                      "X": 141.8773,
-                      "Y": -406.73
-                    },
-                    "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
-                    },
-                    "CColor": {},
-                    "IconVisible": false,
-                    "PrePosition": {
-                      "X": 0.1928,
-                      "Y": -0.6929
-                    },
-                    "PreSize": {
-                      "X": 0.5435,
-                      "Y": 0.477
-                    },
-                    "LeftMargin": 141.8773,
-                    "RightMargin": 194.1227,
-                    "TopMargin": 713.73,
-                    "BottomMargin": -406.73,
-                    "Tag": 338,
-                    "ActionTag": -1160425466,
-                    "Size": {
-                      "X": 400.0,
-                      "Y": 280.0
-                    },
-                    "Name": "awardsScrollPnl",
                     "ctype": "PanelObjectData"
                   },
                   {
@@ -4126,8 +4075,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 358.9124,
-                      "Y": 356.2174
+                      "X": 358.912,
+                      "Y": 356.184
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -4142,25 +4091,25 @@
                       "Y": 0.4947
                     },
                     "PreSize": {
-                      "X": 0.1563,
+                      "X": 0.1562,
                       "Y": 0.2778
                     },
-                    "LeftMargin": 258.9124,
-                    "RightMargin": 821.0875,
-                    "TopMargin": 263.7826,
-                    "BottomMargin": 256.2174,
+                    "LeftMargin": 258.912,
+                    "RightMargin": 821.088,
+                    "TopMargin": 263.816,
+                    "BottomMargin": 256.184,
                     "Tag": 335,
                     "Children": [
                       {
                         "FileData": {
                           "Type": "Normal",
-                          "Path": "turntable/zphd_1_3.png",
+                          "Path": "turntable/zphd_1_4.png",
                           "Plist": ""
                         },
-                        "Scale9OriginX": 96,
-                        "Scale9OriginY": 96,
-                        "Scale9Width": 99,
-                        "Scale9Height": 99,
+                        "Scale9OriginX": 15,
+                        "Scale9OriginY": 15,
+                        "Scale9Width": 262,
+                        "Scale9Height": 262,
                         "AnchorPoint": {
                           "ScaleX": 0.5,
                           "ScaleY": 0.5
@@ -4182,32 +4131,32 @@
                           "Y": 0.5
                         },
                         "PreSize": {
-                          "X": 1.455,
-                          "Y": 1.455
+                          "X": 1.46,
+                          "Y": 1.46
                         },
-                        "LeftMargin": -45.5,
-                        "RightMargin": -45.5,
-                        "TopMargin": -45.5,
-                        "BottomMargin": -45.5,
-                        "Tag": 336,
-                        "ActionTag": 608176967,
+                        "LeftMargin": -46.0,
+                        "RightMargin": -46.0,
+                        "TopMargin": -46.0,
+                        "BottomMargin": -46.0,
+                        "Tag": 330,
+                        "ActionTag": 1235357127,
                         "Size": {
-                          "X": 291.0,
-                          "Y": 291.0
+                          "X": 292.0,
+                          "Y": 292.0
                         },
-                        "Name": "Image_24",
+                        "Name": "TurnPointImg",
                         "ctype": "ImageViewObjectData"
                       },
                       {
                         "FileData": {
                           "Type": "Normal",
-                          "Path": "turntable/zphd_1_2.png",
+                          "Path": "turntable/zphd_1_5.png",
                           "Plist": ""
                         },
-                        "Scale9OriginX": 96,
-                        "Scale9OriginY": 96,
-                        "Scale9Width": 99,
-                        "Scale9Height": 99,
+                        "Scale9OriginX": 15,
+                        "Scale9OriginY": 15,
+                        "Scale9Width": 262,
+                        "Scale9Height": 262,
                         "AnchorPoint": {
                           "ScaleX": 0.5,
                           "ScaleY": 0.5
@@ -4220,8 +4169,6 @@
                           "ScaleX": 1.0,
                           "ScaleY": 1.0
                         },
-                        "RotationSkewX": 180.0,
-                        "RotationSkewY": 180.0,
                         "CColor": {},
                         "IconVisible": false,
                         "PositionPercentXEnabled": true,
@@ -4231,20 +4178,20 @@
                           "Y": 0.5
                         },
                         "PreSize": {
-                          "X": 1.455,
-                          "Y": 1.455
+                          "X": 1.46,
+                          "Y": 1.46
                         },
-                        "LeftMargin": -45.5,
-                        "RightMargin": -45.5,
-                        "TopMargin": -45.5,
-                        "BottomMargin": -45.5,
-                        "Tag": 330,
-                        "ActionTag": 1235357127,
+                        "LeftMargin": -46.0,
+                        "RightMargin": -46.0,
+                        "TopMargin": -46.0,
+                        "BottomMargin": -46.0,
+                        "Tag": 336,
+                        "ActionTag": 608176967,
                         "Size": {
-                          "X": 291.0,
-                          "Y": 291.0
+                          "X": 292.0,
+                          "Y": 292.0
                         },
-                        "Name": "TurnPoint",
+                        "Name": "Image_24",
                         "ctype": "ImageViewObjectData"
                       }
                     ],
@@ -5659,21 +5606,21 @@
                       {
                         "FileData": {
                           "Type": "Normal",
-                          "Path": "cashcow/yjs_14.png",
+                          "Path": "turntable/zphd_20.png",
                           "Plist": ""
                         },
                         "Scale9Enable": true,
-                        "Scale9OriginX": 23,
-                        "Scale9OriginY": 37,
-                        "Scale9Width": 26,
-                        "Scale9Height": 213,
+                        "Scale9OriginX": 48,
+                        "Scale9OriginY": 42,
+                        "Scale9Width": 10,
+                        "Scale9Height": 24,
                         "AnchorPoint": {
                           "ScaleX": 0.5,
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 639.6108,
-                          "Y": 361.4679
+                          "X": 638.6108,
+                          "Y": 358.4679
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -5682,17 +5629,17 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 0.4997,
-                          "Y": 0.502
+                          "X": 0.4989,
+                          "Y": 0.4979
                         },
                         "PreSize": {
-                          "X": 0.3836,
-                          "Y": 0.3861
+                          "X": 0.3844,
+                          "Y": 0.3847
                         },
-                        "LeftMargin": 394.1108,
-                        "RightMargin": 394.8892,
-                        "TopMargin": 219.5321,
-                        "BottomMargin": 222.4679,
+                        "LeftMargin": 392.6108,
+                        "RightMargin": 395.3892,
+                        "TopMargin": 223.0321,
+                        "BottomMargin": 219.9679,
                         "Tag": 750,
                         "Children": [
                           {
@@ -5728,16 +5675,16 @@
                             },
                             "IconVisible": false,
                             "PrePosition": {
-                              "X": 0.4919,
-                              "Y": 0.9092
+                              "X": 0.4909,
+                              "Y": 0.9125
                             },
                             "PreSize": {
-                              "X": 0.7149,
-                              "Y": 0.0935
+                              "X": 0.7134,
+                              "Y": 0.0939
                             },
                             "LeftMargin": 66.0079,
-                            "RightMargin": 73.9921,
-                            "TopMargin": 12.2508,
+                            "RightMargin": 74.9921,
+                            "TopMargin": 11.2508,
                             "BottomMargin": 239.7492,
                             "Tag": 751,
                             "ActionTag": 1431341488,
@@ -5751,8 +5698,8 @@
                         ],
                         "ActionTag": 1676322215,
                         "Size": {
-                          "X": 491.0,
-                          "Y": 278.0
+                          "X": 492.0,
+                          "Y": 277.0
                         },
                         "Name": "dataPic",
                         "ctype": "ImageViewObjectData"
@@ -5858,59 +5805,6 @@
                     "ctype": "PanelObjectData"
                   },
                   {
-                    "DirectionType": "Vertical",
-                    "IsBounceEnabled": true,
-                    "ScrollDirectionType": 0,
-                    "ClipAble": true,
-                    "BackColorAlpha": 102,
-                    "SingleColor": {
-                      "R": 150,
-                      "G": 150
-                    },
-                    "FirstColor": {
-                      "R": 150,
-                      "G": 150
-                    },
-                    "EndColor": {},
-                    "ColorVector": {
-                      "ScaleY": 1.0
-                    },
-                    "Scale9Width": 1,
-                    "Scale9Height": 1,
-                    "TouchEnable": true,
-                    "AnchorPoint": {},
-                    "Position": {
-                      "X": 394.3745,
-                      "Y": 251.5564
-                    },
-                    "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
-                    },
-                    "CColor": {},
-                    "IconVisible": false,
-                    "PrePosition": {
-                      "X": 0.3081,
-                      "Y": 0.3494
-                    },
-                    "PreSize": {
-                      "X": 0.3836,
-                      "Y": 0.2861
-                    },
-                    "LeftMargin": 394.3745,
-                    "RightMargin": 394.6255,
-                    "TopMargin": 262.4436,
-                    "BottomMargin": 251.5564,
-                    "Tag": 754,
-                    "ActionTag": 770423362,
-                    "Size": {
-                      "X": 491.0,
-                      "Y": 206.0
-                    },
-                    "Name": "dataListPnl",
-                    "ctype": "ListViewObjectData"
-                  },
-                  {
                     "FontSize": 14,
                     "ButtonText": "",
                     "TextColor": {
@@ -5983,7 +5877,6 @@
                   {
                     "ClipAble": false,
                     "BackColorAlpha": 102,
-                    "ComboBoxIndex": 1,
                     "SingleColor": {
                       "R": 150,
                       "G": 200
@@ -6000,8 +5893,8 @@
                     "Scale9Height": 1,
                     "AnchorPoint": {},
                     "Position": {
-                      "X": 394.8562,
-                      "Y": 417.894
+                      "X": 0.0,
+                      "Y": 168.0
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -6010,33 +5903,34 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.3085,
-                      "Y": 0.5804
+                      "X": 0.0,
+                      "Y": 0.2333
                     },
                     "PreSize": {
                       "X": 0.3836,
                       "Y": 0.0556
                     },
-                    "LeftMargin": 394.8562,
-                    "RightMargin": 394.1438,
-                    "TopMargin": 262.106,
-                    "BottomMargin": 417.894,
+                    "RightMargin": 789.0,
+                    "TopMargin": 512.0,
+                    "BottomMargin": 168.0,
                     "Tag": 756,
                     "Children": [
                       {
                         "FileData": {
-                          "Type": "Default",
-                          "Path": "Default/ImageFile.png",
+                          "Type": "Normal",
+                          "Path": "turntable/zphd_21.png",
                           "Plist": ""
                         },
-                        "Scale9Width": 46,
-                        "Scale9Height": 46,
+                        "Scale9OriginX": 162,
+                        "Scale9OriginY": 12,
+                        "Scale9Width": 168,
+                        "Scale9Height": 13,
                         "AnchorPoint": {
                           "ScaleX": 0.5,
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 245.5,
+                          "X": 243.5,
                           "Y": 20.0
                         },
                         "Scale": {
@@ -6045,21 +5939,24 @@
                         },
                         "CColor": {},
                         "IconVisible": false,
-                        "PositionPercentXEnabled": true,
                         "PositionPercentYEnabled": true,
                         "PrePosition": {
-                          "X": 0.5,
+                          "X": 0.4959,
                           "Y": 0.5
                         },
                         "PreSize": {
-                          "X": 1.0,
-                          "Y": 1.0
+                          "X": 1.002,
+                          "Y": 0.925
                         },
+                        "LeftMargin": -2.5,
+                        "RightMargin": 1.5,
+                        "TopMargin": 1.5,
+                        "BottomMargin": 1.5,
                         "Tag": 757,
                         "ActionTag": 578730296,
                         "Size": {
-                          "X": 491.0,
-                          "Y": 40.0
+                          "X": 492.0,
+                          "Y": 37.0
                         },
                         "Name": "bg",
                         "ctype": "ImageViewObjectData"
@@ -6119,7 +6016,9 @@
                       },
                       {
                         "FontSize": 20,
-                        "LabelText": "xxxx",
+                        "LabelText": "xxxxxxxxx",
+                        "HorizontalAlignmentType": "HT_Center",
+                        "VerticalAlignmentType": "VT_Center",
                         "OutlineColor": {
                           "G": 0,
                           "B": 0
@@ -6154,17 +6053,17 @@
                           "Y": 0.432
                         },
                         "PreSize": {
-                          "X": 0.0815,
+                          "X": 0.1833,
                           "Y": 0.5
                         },
-                        "LeftMargin": 368.7297,
-                        "RightMargin": 82.2703,
+                        "LeftMargin": 343.7297,
+                        "RightMargin": 57.2703,
                         "TopMargin": 12.7202,
                         "BottomMargin": 7.2798,
                         "Tag": 760,
                         "ActionTag": 1715887122,
                         "Size": {
-                          "X": 40.0,
+                          "X": 90.0,
                           "Y": 20.0
                         },
                         "Name": "awardsText",
@@ -6178,6 +6077,57 @@
                     },
                     "Name": "recordDataCell",
                     "ctype": "PanelObjectData"
+                  },
+                  {
+                    "DirectionType": "Vertical",
+                    "IsBounceEnabled": true,
+                    "ScrollDirectionType": 0,
+                    "ClipAble": true,
+                    "BackColorAlpha": 102,
+                    "SingleColor": {
+                      "R": 150,
+                      "G": 150
+                    },
+                    "FirstColor": {
+                      "R": 150,
+                      "G": 150
+                    },
+                    "EndColor": {},
+                    "ColorVector": {
+                      "ScaleY": 1.0
+                    },
+                    "TouchEnable": true,
+                    "AnchorPoint": {},
+                    "Position": {
+                      "X": 395.0,
+                      "Y": 245.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.3086,
+                      "Y": 0.3403
+                    },
+                    "PreSize": {
+                      "X": 0.3812,
+                      "Y": 0.2889
+                    },
+                    "LeftMargin": 395.0,
+                    "RightMargin": 397.0,
+                    "TopMargin": 267.0,
+                    "BottomMargin": 245.0,
+                    "Tag": 307,
+                    "ActionTag": -2110474560,
+                    "Size": {
+                      "X": 488.0,
+                      "Y": 208.0
+                    },
+                    "Name": "recordLogListView",
+                    "ctype": "ListViewObjectData"
                   }
                 ],
                 "ActionTag": -1955045022,
@@ -7529,7 +7479,6 @@
       },
       "UsedResources": [
         "aaa/17_8.png",
-        "cashcow/yjs_14.png",
         "common/bt_3.png",
         "common/bz_1.png",
         "common/bz_2.png",
@@ -7544,15 +7493,16 @@
         "Default/Button_Disable.png",
         "Default/Button_Normal.png",
         "Default/Button_Press.png",
-        "Default/ImageFile.png",
         "font/hkhbtW12.ttc",
-        "turntable/zphd_1_2.png",
-        "turntable/zphd_1_3.png",
+        "turntable/zphd_1_4.png",
+        "turntable/zphd_1_5.png",
         "turntable/zphd_11.png",
         "turntable/zphd_13.png",
         "turntable/zphd_14.png",
         "turntable/zphd_15.png",
         "turntable/zphd_2.png",
+        "turntable/zphd_20.png",
+        "turntable/zphd_21.png",
         "turntable/zphd_3.png",
         "turntable/zphd_4.png",
         "turntable/zphd_5.png",

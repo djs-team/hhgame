@@ -24,13 +24,12 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
 
 
 
-                'bmPnl/awardsPnl/awardsScrollPnl': {},
                 'bmPnl/awardsPnl/awardsUserDataNd': {},
                 'bmPnl/awardsPnl/awardsUserDataNd/awardsUserDataPnl': {},
                 'bmPnl/awardsPnl/userDataCell': {},
                 'bmPnl/zhuanPnl': {},
                 'bmPnl/zhuanPnl/pointPnl': { onClicked: this.onTurnPointClick},
-                'bmPnl/zhuanPnl/pointPnl/TurnPoint': { },
+                'bmPnl/zhuanPnl/pointPnl/TurnPointImg': { },
                 'bmPnl/zhuanPnl/turnTablePic': {},
                 'bmPnl/zhuanPnl/turnTablePic/goodsNd': {},
                 'bmPnl/zhuanPnl/turnTablePic/pointNd0': {},
@@ -47,7 +46,7 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
                 'popUpPnl/awardsPnl/singleClaimBtn': { onClicked: this.onSingleClaimClick },
                 'popUpPnl/explainPnl/explainDataPnl/closeBtn': { onClicked: this.onGoShopClick },
 
-                'popUpPnl/recordsPnl/dataListPnl': { },
+                'popUpPnl/recordsPnl/recordLogListView': { },
                 'popUpPnl/recordsPnl/recordDataCell': { },
                 'popUpPnl/recordsPnl/recordCloseBtn': { onClicked: this.onHideRecordPnlClick },
 
@@ -172,30 +171,31 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
         },
 
         onTurnPointClick: function () {
+            this.pointPnl.setEnabled(false)
+
             let msg = {}
             appInstance.gameAgent().httpGame().TURNPOINTReq(msg)
 
-            this.TurnPoint.stopAllActions()
+            this.TurnPointImg.stopAllActions()
 
-            let time = 10
+            let time = 5
             let rotateAngle = 360 * 5
             let action = cc.RotateBy(time, rotateAngle)
             let beginEaseAction = cc.EaseCubicActionIn(action)
-            this.TurnPoint.runAction(beginEaseAction)
+
+            this.TurnPointImg.runAction(beginEaseAction)
 
         },
 
 
-
-
         playTurnTable: function (data) {
-            this.TurnPoint.stopAllActions()
-            this.TurnPoint.setRotation(0)
+            this.TurnPointImg.stopAllActions()
+            this.TurnPointImg.setRotation(0)
             let endtime = 11
             let rotateAngle = 360 * 20 + 36 * (data.turntableId - 1)
             let endAction = cc.RotateBy(endtime, rotateAngle)
             let endEaseAction = cc.EaseCubicActionOut(endAction)
-            this.TurnPoint.runAction(endEaseAction)
+            this.TurnPointImg.runAction(endEaseAction)
 
             let endCallFunc = function () {
                 this._lightInterval = 0.5
@@ -242,9 +242,7 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
         onTurnPointResult: function (data) {
 
             //指针转动动画
-            this.playTurnTable(data)
-
-
+           this.playTurnTable(data)
         },
 
         onShowTurnPointRewards: function (data) {
@@ -300,6 +298,8 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
             }
 
             this.awardsPnl.setVisible(true)
+            this.pointPnl.setEnabled(true)
+            this.TurnPointImg.setRotation(0)
         },
 
         onUpdateRewardsPnl: function (data) {
@@ -357,7 +357,7 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
         onShowRecordPnlClick: function (data) {
 
 
-            this.dataListPnl.removeAllChildren()
+            this.recordLogListView.removeAllChildren()
             for (let i = 0; i < data.length; i++) {
                 this.onUpdateDataCell(data,i)
             }
@@ -369,12 +369,12 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
         onUpdateDataCell: function (list,index) {
             let recordCell = this.recordDataCell.clone()
             recordCell.setVisible(true)
-            this.dataListPnl.addChild(recordCell)
+            this.recordLogListView.pushBackCustomItem(recordCell)
 
             if (Math.floor(index % 2) ) {
-                recordCell.getChildByName('bg').setVisible(false)
-            } else {
                 recordCell.getChildByName('bg').setVisible(true)
+            } else {
+                recordCell.getChildByName('bg').setVisible(false)
             }
 
             let record = list[index]

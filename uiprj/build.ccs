@@ -772,6 +772,23 @@
           <Image Name="qd_7.png" />
           <Image Name="qd_8.png" />
           <Image Name="qd_9.png" />
+          <Image Name="qd_jl_10.png" />
+          <Image Name="qd_jl_11.png" />
+          <Image Name="qd_jl_12.png" />
+          <Image Name="qd_jl_13.png" />
+          <Image Name="qd_jl_9.png" />
+          <Image Name="qd_js_1.png" />
+          <Image Name="qd_js_2.png" />
+          <Image Name="qd_js_3.png" />
+          <Image Name="qd_js_4.png" />
+          <Image Name="qd_js_5.png" />
+          <Image Name="qd_js_6.png" />
+          <Image Name="qd_js_7.png" />
+          <Image Name="qd_js_8.png" />
+          <Image Name="zphd_12.png" />
+          <Image Name="zphd_18.png" />
+          <Image Name="zphf_1.png" />
+          <Image Name="zpjd_1.png" />
         </Folder>
         <Folder Name="table">
           <Image Name="pz_1.png" />
@@ -866,6 +883,8 @@
           <Image Name="zphd_1_1.png" />
           <Image Name="zphd_1_2.png" />
           <Image Name="zphd_1_3.png" />
+          <Image Name="zphd_1_4.png" />
+          <Image Name="zphd_1_5.png" />
           <Image Name="zphd_10.png" />
           <Image Name="zphd_11.png" />
           <Image Name="zphd_12.png" />

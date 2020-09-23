@@ -550,7 +550,6 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 indexLength : this._menuIndexLength,
             }
 
-            cc.log('-------------onGetGoodsList-------- msg : ' + JSON.stringify(msg))
             appInstance.gameAgent().httpGame().GOODSLISTReq(msg)
         },
 

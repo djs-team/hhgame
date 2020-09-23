@@ -486,6 +486,7 @@
           </Folder>
         </Folder>
         <Folder Name="coinshop">
+          <Image Name="coin_1.png" />
           <Image Name="scjb_1.png" />
           <Image Name="scjb_10.png" />
           <Image Name="scjb_11.png" />
@@ -496,6 +497,7 @@
           <Image Name="scjb_16.png" />
           <Image Name="scjb_17.png" />
           <Image Name="scjb_2.png" />
+          <Image Name="scjb_21.png" />
           <Image Name="scjb_3.png" />
           <Image Name="scjb_4.png" />
           <Image Name="scjb_5.png" />

@@ -184,7 +184,10 @@
                           "ScaleX": 1.0,
                           "ScaleY": 1.0
                         },
-                        "CColor": {},
+                        "CColor": {
+                          "G": 165,
+                          "B": 0
+                        },
                         "IconVisible": false,
                         "PositionPercentXEnabled": true,
                         "PositionPercentYEnabled": true,
@@ -350,7 +353,10 @@
                           "ScaleX": 1.0,
                           "ScaleY": 1.0
                         },
-                        "CColor": {},
+                        "CColor": {
+                          "G": 165,
+                          "B": 0
+                        },
                         "IconVisible": false,
                         "PositionPercentXEnabled": true,
                         "PositionPercentYEnabled": true,
@@ -516,7 +522,10 @@
                           "ScaleX": 1.0,
                           "ScaleY": 1.0
                         },
-                        "CColor": {},
+                        "CColor": {
+                          "G": 165,
+                          "B": 0
+                        },
                         "IconVisible": false,
                         "PositionPercentXEnabled": true,
                         "PositionPercentYEnabled": true,
@@ -562,8 +571,8 @@
               {
                 "AnchorPoint": {},
                 "Position": {
-                  "X": 102.6913,
-                  "Y": 731.8598
+                  "X": -654.5312,
+                  "Y": -219.4314
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -572,17 +581,17 @@
                 "CColor": {},
                 "IconVisible": true,
                 "PrePosition": {
-                  "X": 0.0802,
-                  "Y": 1.0165
+                  "X": -0.5114,
+                  "Y": -0.3048
                 },
                 "PreSize": {
                   "X": 0.0,
                   "Y": 0.0
                 },
-                "LeftMargin": 102.6913,
-                "RightMargin": 1177.3087,
-                "TopMargin": -11.8598,
-                "BottomMargin": 731.8598,
+                "LeftMargin": -654.5312,
+                "RightMargin": 1934.5312,
+                "TopMargin": 939.4315,
+                "BottomMargin": -219.4314,
                 "Tag": 359,
                 "Children": [
                   {

@@ -5,6 +5,7 @@ load('game/ui/layer/member/MemberLayer', function () {
     let MemberMdt = include('game/ui/layer/member/MemberMdt')
     let AniPlayer = ResConfig.AniPlayer
     let PlayerPlay = ResConfig.PlayerPlay
+    let sender={};
     let MemberLayer = BaseLayer.extend({
         _className: 'MemberLayer',
         ctor: function () {
@@ -18,6 +19,9 @@ load('game/ui/layer/member/MemberLayer', function () {
             return {
 
                 'pnl/closeBtn': {onClicked: this.onCloseClick},
+                'PayType': {},
+                'PayType/bgAli/ivAli': {onClicked: this.onAliPayClick},
+                'PayType/bgWx/ivWx': {onClicked: this.onWxClick},
 
                 'pnl/privilegePnl': {},
                 'pnl/privilegePnl/privilegePgPnl/interestsBg/vipSignText': {},
@@ -84,6 +88,7 @@ load('game/ui/layer/member/MemberLayer', function () {
             this.turnPreviousBtn.setVisible(false)
             this.rechargeCell.setVisible(false)
             this.memberCell.setVisible(false)
+            this.PayType.setVisible(false)
 
         },
 
@@ -150,16 +155,32 @@ load('game/ui/layer/member/MemberLayer', function () {
 
         },
 
-        onRechargeClicked: function (sender) {
+        onRechargeClicked: function (s) {
+            sender = s;
+            this.PayType.setVisible(true)
+
+        },
+        onAliPayClick: function () {
+            cc.log("----------------------onAliPayClick")
+            this.PayType.setVisible(false)
 
             let _sendData = sender._sendData
             let msg = {
                 vipCode: _sendData.vipCode,
                 payType: 1
             }
-
             appInstance.gameAgent().httpGame().VIPPaysOrderReq(msg)
-            //调用充值接口
+
+        }, onWxClick: function () {
+            cc.log("----------------------onWxClick")
+
+            this.PayType.setVisible(false)
+            let _sendData = sender._sendData
+            let msg = {
+                vipCode: _sendData.vipCode,
+                payType: 2
+            }
+            appInstance.gameAgent().httpGame().VIPPaysOrderReq(msg)
 
         },
 

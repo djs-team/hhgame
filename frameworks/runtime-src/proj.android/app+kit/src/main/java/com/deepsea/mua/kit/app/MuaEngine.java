@@ -12,6 +12,7 @@ import com.deepsea.mua.core.log.Logg;
 import com.deepsea.mua.core.network.AppExecutors;
 import com.deepsea.mua.core.utils.AppUtils;
 import com.deepsea.mua.core.utils.ViewDataBindingComponent;
+import com.deepsea.mua.core.wxpay.WxCons;
 import com.deepsea.mua.faceliveness.helper.AuditHelper;
 import com.deepsea.mua.kit.BuildConfig;
 import com.deepsea.mua.stub.app.ActivityCache;
@@ -74,7 +75,7 @@ public class MuaEngine {
         MobclickAgent.setPageCollectionMode(MobclickAgent.PageMode.AUTO);
 
         UMConfigure.setLogEnabled(true);
-        PlatformConfig.setWeixin("wx36f02225e13d7261","ec838b83af52186b2c62eafec742de94");
+        PlatformConfig.setWeixin(WxCons.APP_ID_WX,WxCons.APP_SECRET_WX);
         HxHelper.getInstance().init();
         AppClient.getInstance().init(app);
         AgoraClient.create().setUpAgora(app, BuildConfig.Agora_ID);

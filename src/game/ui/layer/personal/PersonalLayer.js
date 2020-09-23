@@ -1,4 +1,3 @@
-
 load('game/ui/layer/personal/PersonalLayer', function () {
     let ResConfig = include('game/config/ResConfig')
     let BaseLayer = include('public/ui/BaseLayer')
@@ -13,20 +12,21 @@ load('game/ui/layer/personal/PersonalLayer', function () {
         RES_BINDING: function () {
             return {
 
-                'personalDataPnl/dataBtn': {  },
-                'personalDataPnl/personalDataCloseBtn': { onClicked: this.onPersonalDataCloseClick },
-                'personalDataPnl/changePicBtn': {  },
-                'personalDataPnl/cancellationBtn': {  },
-                'personalDataPnl/namePnl': {  },
-                'personalDataPnl/namePnl/updateNameBtn': { onClicked: this.onUpdateNameClick },
-                'personalDataPnl/idPnl': {  },
-                'personalDataPnl/currencyPnl': {  },
-                'personalDataPnl/rolePnl': {  },
+                'personalDataPnl/dataBtn': {},
+                'personalDataPnl/photoPic': {},
+                'personalDataPnl/personalDataCloseBtn': {onClicked: this.onPersonalDataCloseClick},
+                'personalDataPnl/changePicBtn': {},
+                'personalDataPnl/cancellationBtn': {},
+                'personalDataPnl/namePnl': {},
+                'personalDataPnl/namePnl/updateNameBtn': {onClicked: this.onUpdateNameClick},
+                'personalDataPnl/idPnl': {},
+                'personalDataPnl/currencyPnl': {},
+                'personalDataPnl/rolePnl': {},
 
-                'updateNamePnl': {  },
-                'updateNamePnl/closeUpdateNameBtn': { onClicked: this.onCloseUpdateNameClick },
-                'updateNamePnl/confirmUpdateNameBtn': { onClicked: this.onConfirmUpdateNameClick },
-                'updateNamePnl/updataPnl': {  },
+                'updateNamePnl': {},
+                'updateNamePnl/closeUpdateNameBtn': {onClicked: this.onCloseUpdateNameClick},
+                'updateNamePnl/confirmUpdateNameBtn': {onClicked: this.onConfirmUpdateNameClick},
+                'updateNamePnl/updataPnl': {},
 
 
             }
@@ -61,41 +61,58 @@ load('game/ui/layer/personal/PersonalLayer', function () {
 
         },
 
-        onInitUserData: function (data) {
 
-            if(data.hasOwnProperty('pname')){
+        loadUrlImage: function (url, cell) {
+            let size = cell.getContentSize();
+            cc.loader.loadImg(url, null, function (err, img) {
+
+                var logo = new cc.Sprite(img);
+                logo.setContentSize(size)
+                logo.setPosition(cc.p(size.width / 2, size.height / 2))
+                // logo.setRadius(20)
+                // logo.setScale9Enabled(true)
+                cell.addChild(logo);
+            });
+        },
+        onInitUserData: function (data) {
+            cc.log("=================onInitUserData" + JSON.stringify(data))
+
+            if (data.hasOwnProperty('pname')) {
 
                 this.namePnl.getChildByName('nameText').setString(data.pname)
 
             }
-            if(data.hasOwnProperty('pid')){
+            if (data.hasOwnProperty('pid')) {
 
                 this.idPnl.getChildByName('idVale').setString(data.pid)
 
             }
-            if(data.hasOwnProperty('coin')){
+            if (data.hasOwnProperty('coin')) {
 
                 this.currencyPnl.getChildByName('coinPnl').getChildByName('coinVaule').setString(data.coin)
 
             }
-            if(data.hasOwnProperty('diamonds')){
+            if (data.hasOwnProperty('diamonds')) {
 
                 this.currencyPnl.getChildByName('diamondPnl').getChildByName('diamondVaule').setString(data.diamonds)
 
             }
 
-            if(data.hasOwnProperty('fuKa')){
+            if (data.hasOwnProperty('fuKa')) {
 
                 this.currencyPnl.getChildByName('fuKaPnl').getChildByName('fuKaVaule').setString(data.fuKa)
-
             }
+            if (data.hasOwnProperty('photo')) {
+                this.loadUrlImage(data.photo, this.photoPic)
+            }
+
 
         },
 
         onUpdateNameClick: function () {
 
             let _nameUpdate = appInstance.dataManager().getUserData().nameUpdate
-            if(_nameUpdate != 0){
+            if (_nameUpdate != 0) {
                 cc.log('can not updateName!!')
                 return
             }
@@ -116,7 +133,7 @@ load('game/ui/layer/personal/PersonalLayer', function () {
 
         },
 
-        onCheckedNameLength:  function(str) {
+        onCheckedNameLength: function (str) {
 
             let strLength = 0;
             for (let i = 0; i < str.length; i++) {
@@ -133,12 +150,12 @@ load('game/ui/layer/personal/PersonalLayer', function () {
         onConfirmUpdateNameClick: function () {
 
             let nameNd = this.updataPnl.getChildByName('updateText').getString()
-            if(nameNd == null || nameNd.length == 0){
+            if (nameNd == null || nameNd.length == 0) {
                 cc.log("onConfirmUpdateNameClick nameNd is null!")
                 return;
             }
             let nameLength = this.onCheckedNameLength(nameNd);
-            if(nameLength > 12){
+            if (nameLength > 12) {
                 cc.log("onConfirmUpdateNameClick nameNd is too long!")
                 return;
             }
@@ -156,9 +173,6 @@ load('game/ui/layer/personal/PersonalLayer', function () {
             this.onCloseUpdateNameClick()
 
         }
-
-
-
 
 
     })

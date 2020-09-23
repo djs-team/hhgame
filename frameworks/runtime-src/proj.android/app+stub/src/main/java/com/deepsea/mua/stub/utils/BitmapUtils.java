@@ -14,14 +14,7 @@ public class BitmapUtils {
     private static final String SD_PATH = "/sdcard/hehexq/pic/";
     private static final String IN_PATH = "/hehexq/pic/";
 
-    /**
-     * 随机生产文件名
-     *
-     * @return
-     */
-    private static String generateFileName() {
-        return UUID.randomUUID().toString();
-    }
+
     /**
      * 保存bitmap到本地
      *
@@ -29,7 +22,7 @@ public class BitmapUtils {
      * @param mBitmap
      * @return
      */
-    public static String saveBitmap(Context context, Bitmap mBitmap) {
+    public static String saveBitmap(Context context, Bitmap mBitmap, String uid) {
         String savePath;
         File filePic;
         if (Environment.getExternalStorageState().equals(
@@ -41,7 +34,7 @@ public class BitmapUtils {
                     + IN_PATH;
         }
         try {
-            filePic = new File(savePath + generateFileName() + ".jpg");
+            filePic = new File(savePath + uid + ".jpg");
             if (!filePic.exists()) {
                 filePic.getParentFile().mkdirs();
                 filePic.createNewFile();

@@ -1,4 +1,4 @@
-package harmony.dating.online.face.ad.wxapi;
+package com.hehegame.chess.wxapi;
 
 import android.app.Activity;
 import android.content.Intent;

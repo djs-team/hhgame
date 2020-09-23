@@ -26,8 +26,8 @@ public class MyNotifyService extends Service {
         super.onCreate();
         //设置点击跳转
 
-        String id = "harmony.dating.online.face.ad";
-        String name = "hehe";
+        String id = "com.hehegame.chess";
+        String name = "hehegame";
         NotificationManager notificationManager = (NotificationManager) getBaseContext().getSystemService(Context.NOTIFICATION_SERVICE);
         Notification notification = null;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {

@@ -58,6 +58,7 @@ import com.umeng.socialize.media.UMImage;
 import com.umeng.socialize.media.UMWeb;
 import com.uuzuche.lib_zxing.activity.CodeUtils;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -401,7 +402,7 @@ public class AppActivity extends Cocos2dxActivity {
                     }
                     ccActivity.RunJS_obj("THIRD_LOGIN_RESULT", result.toString());
                 } else {
-                    ToastUtils.showToast("一键登录失败，请尝试其他登录方式");
+                    ToastUtils.showToast("一键登录失败，请尝试其他登录方式"+code);
                 }
                 JVerificationInterface.dismissLoginAuthActivity(false, new RequestCallback<String>() {
                     @Override
@@ -500,9 +501,10 @@ public class AppActivity extends Cocos2dxActivity {
      * @param url      图片地址
      */
     public static void shareImage(String platform, String url) {
+        ToastUtils.showToast(platform + url);
 //        String img = "https://dss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1812993978,4158651947&fm=26&gp=0.jpg";
 //        UMImage th = new UMImage(ccActivity, url);//网络图片
-        UMImage image = new UMImage(ccActivity, url);//网络图片
+        UMImage image = new UMImage(ccActivity, new File(url));//网络图片
         SHARE_MEDIA share_media;
         if (platform.equals("WEIXIN")) {
             share_media = SHARE_MEDIA.WEIXIN;
@@ -585,15 +587,15 @@ public class AppActivity extends Cocos2dxActivity {
      *
      * @param url return 本地路径JPUSH_PKGNAME
      */
-    public static void getInvitationCode(String url) {
+    public static void getInvitationCode(String url, String uid) {
         boolean hasPermission = PermissionUtil.hasSelfPermission(ccActivity, "android.permission.WRITE_EXTERNAL_STORAGE");
         if (!hasPermission) {
             ActivityCompat.requestPermissions(ccActivity, new String[]{Manifest.permission.READ_PHONE_STATE}, 2);
             return;
         }
         Bitmap mBitmap = CodeUtils.createImage(url, 400, 400, null);
-        String picPath = BitmapUtils.saveBitmap(ccActivity, mBitmap);
-        ToastUtils.showToast(picPath);
+        String picPath = BitmapUtils.saveBitmap(ccActivity, mBitmap, uid);
+        ccActivity.RunJS("inviteCodeCallback", picPath);
     }
 
     /**
@@ -662,6 +664,7 @@ public class AppActivity extends Cocos2dxActivity {
         ClipboardManager cm = (ClipboardManager) ccActivity.getSystemService(Context.CLIPBOARD_SERVICE);
         ClipData mClipData = ClipData.newPlainText("Label", content);
         cm.setPrimaryClip(mClipData);
+        ToastUtils.showToast("复制成功");
     }
 
     /**
@@ -682,7 +685,6 @@ public class AppActivity extends Cocos2dxActivity {
         JVerificationInterface.clearPreLoginCache();
         unregisterWxpayResult();
         wakeUpAdapter = null;
-
     }
 
 

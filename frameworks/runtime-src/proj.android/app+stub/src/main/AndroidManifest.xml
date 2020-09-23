@@ -12,7 +12,9 @@
         android:protectionLevel="signature" />
 
     <application>
-
+        <activity
+            android:name=".permission.PermissionActivity"
+            android:theme="@style/Translucent" />
     </application>
 
 </manifest>

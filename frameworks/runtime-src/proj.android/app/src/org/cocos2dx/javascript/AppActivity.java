@@ -41,6 +41,7 @@ import com.deepsea.mua.stub.entity.WxOrder;
 import com.deepsea.mua.stub.jpush.JpushUtils;
 import com.deepsea.mua.stub.mvp.NewSubscriberCallBack;
 import com.deepsea.mua.stub.network.HttpHelper;
+import com.deepsea.mua.stub.permission.PermissionCallback;
 import com.deepsea.mua.stub.utils.BitmapUtils;
 import com.deepsea.mua.stub.utils.Constant;
 import com.deepsea.mua.stub.utils.SharedPrefrencesUtil;
@@ -402,7 +403,7 @@ public class AppActivity extends Cocos2dxActivity {
                     }
                     ccActivity.RunJS_obj("THIRD_LOGIN_RESULT", result.toString());
                 } else {
-                    ToastUtils.showToast("一键登录失败，请尝试其他登录方式"+code);
+                    ToastUtils.showToast("一键登录失败，请尝试其他登录方式" + code);
                 }
                 JVerificationInterface.dismissLoginAuthActivity(false, new RequestCallback<String>() {
                     @Override
@@ -588,11 +589,31 @@ public class AppActivity extends Cocos2dxActivity {
      * @param url return 本地路径JPUSH_PKGNAME
      */
     public static void getInvitationCode(String url, String uid) {
-        boolean hasPermission = PermissionUtil.hasSelfPermission(ccActivity, "android.permission.WRITE_EXTERNAL_STORAGE");
-        if (!hasPermission) {
-            ActivityCompat.requestPermissions(ccActivity, new String[]{Manifest.permission.READ_PHONE_STATE}, 2);
-            return;
+        String[] permission = new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE};
+        boolean hasPermission = PermissionUtil.hasSelfPermission(ccActivity, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        if (hasPermission) {
+            operateGetInvitationCode(url, uid);
+        } else {
+            com.deepsea.mua.stub.permission.PermissionUtil.request(ccActivity, permission, new PermissionCallback() {
+                @Override
+                public void onPermissionGranted() {
+                    operateGetInvitationCode(url, uid);
+                }
+
+                @Override
+                public void shouldShowRational(String[] rationalPermissons, boolean before) {
+
+                }
+
+                @Override
+                public void onPermissonReject(String[] rejectPermissons) {
+
+                }
+            });
         }
+    }
+
+    private static void operateGetInvitationCode(String url, String uid) {
         Bitmap mBitmap = CodeUtils.createImage(url, 400, 400, null);
         String picPath = BitmapUtils.saveBitmap(ccActivity, mBitmap, uid);
         ccActivity.RunJS("inviteCodeCallback", picPath);

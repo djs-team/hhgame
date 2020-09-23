@@ -7,4 +7,7 @@
     <string name="parent_lock_charge">您的监护人已开启家长监控模式，您无法充值、打赏</string>
     <string name="pack_max_limit">背包内“%s”数量已达到上限，本次您将不能通过砸蛋获得该礼物。</string>
     <string name="smash_egg_desc">1.砸蛋条件\n每次砸蛋消耗一个锤子，多次砸蛋消耗对应次数的锤子。每个锤子%d玫瑰。\n\n2.砸蛋奖励\n砸蛋%s中奖，有几率获得以下礼物。\n\n3.礼物数量上限\n礼物在背包内堆叠上限为10万</string>
+    <string name="dialog_cancel">取消</string>
+    <string name="dialog_comfirm">确定</string>
+    <string name="dialog_go_setting">去设置</string>
 </resources>

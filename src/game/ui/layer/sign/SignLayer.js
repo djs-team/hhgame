@@ -198,8 +198,8 @@ load('game/ui/layer/sign/SignLayer', function () {
             let cellData = data[index]
             let cell = this.signDataCell.clone()
             listPnl.addChild(cell)
-
-            cell.setPositionY(0 - i * 5)
+            
+            cell.setPositionY(0)
             cell.setPositionX( 55 + index%6*90 - i * 13)
             cell.setVisible(true)
             cell.setName(this._checkInName + cellData.checkinId)

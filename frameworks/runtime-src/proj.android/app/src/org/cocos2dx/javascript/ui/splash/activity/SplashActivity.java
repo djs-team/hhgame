@@ -168,7 +168,7 @@ public class SplashActivity extends BaseActivity<ActivitySplashBinding> {
             @Override
             public void run() {
                 startSplash();
-//                autoLogin();
+                autoLogin();
                 loadAllConversations();
             }
         });

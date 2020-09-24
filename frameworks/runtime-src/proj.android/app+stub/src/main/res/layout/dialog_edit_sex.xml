@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_radius_12dp"
+        android:paddingBottom="10dp">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="请选择您的性别"
+            android:textColor="#ff333333"
+            android:textSize="12sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_man"
+            android:layout_width="45dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="23dp"
+            android:src="@drawable/ic_sex_select_man"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+        <ImageView
+            android:id="@+id/iv_woman"
+            android:layout_width="45dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="23dp"
+            android:layout_marginRight="25dp"
+            android:src="@drawable/ic_sex_select_women"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+        <RelativeLayout
+            android:id="@+id/rl_sex_man_select"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="4dp"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toLeftOf="@id/iv_man"
+            app:layout_constraintRight_toRightOf="@id/iv_man"
+            app:layout_constraintTop_toBottomOf="@id/iv_man">
+
+            <ImageView
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_sex_select_circle" />
+
+            <ImageView
+                android:id="@+id/iv_man_cmark"
+                android:layout_width="7.5dp"
+                android:layout_height="5dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_sex_select_cmark" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+
+            android:id="@+id/rl_sex_woman_select"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="4dp"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toLeftOf="@id/iv_woman"
+            app:layout_constraintRight_toRightOf="@id/iv_woman"
+            app:layout_constraintTop_toBottomOf="@id/iv_woman">
+
+            <ImageView
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_sex_select_circle" />
+
+            <ImageView
+                android:id="@+id/iv_woman_cmark"
+                android:layout_width="7.5dp"
+                android:layout_height="5dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_sex_select_cmark" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_hint_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="注册成功后，性别将不可修改"
+            android:textColor="#ff333333"
+            android:textSize="10sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rl_sex_man_select" />
+
+        <TextView
+            android:id="@+id/tv_hint_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:text="如需修改其他资料，点击我的-编辑资料"
+            android:textColor="#ff333333"
+            android:textSize="10sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_hint_one" />
+
+        <TextView
+            android:id="@+id/tv_confirm"
+            android:layout_width="95dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_friend_agree"
+            android:gravity="center"
+            android:text="确定"
+            android:textColor="#ffffffff"
+            android:textSize="10sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_hint_two" />
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

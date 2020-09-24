@@ -41,7 +41,7 @@ load('game/public/HttpGame', function () {
 
         httpLoginBack: function (msg) {
             if (msg.status !== 0) {
-                cc.log('=========httpLoginBack============error================')
+                cc.log('=========httpLoginBack============error================'+JSON.stringify(msg))
                 return
             }
             let saveKey = [

@@ -6,12 +6,7 @@
  * Copyright (c) 2013年 mob.com. All rights reserved.
  */
 
-package harmony.dating.online.face.ad.wxapi;
-
-import android.util.Log;
-
-import com.tencent.mm.opensdk.modelbase.BaseReq;
-import com.tencent.mm.opensdk.modelbase.BaseResp;
+package com.hehegame.chess.wxapi;
 import com.umeng.socialize.weixin.view.WXCallbackActivity;
 
 

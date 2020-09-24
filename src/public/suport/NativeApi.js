@@ -46,6 +46,7 @@ load('public/suport/NativeApi', function () {
             try {
                 if (cc.sys.OS_IOS === cc.sys.os) {
                     jsb.reflection.callStaticMethod('AppController', 'appPurchaseWithPayType:payParam:userID:orderNo:paySuccessMethod:', "ios", message,"",orderNo,"ApplePayCallback")
+                    // jsb.reflection.callStaticMethod('AppController', 'appPurchaseWithPayType:payParam:userID:paySuccessMethod:', type, message, "", "ThirdPayCallback")
                 }
             } catch (e) {
                 console.log('虽然我挂掉了,但是我还是坚持打印了了log: ' + String(e))
@@ -436,7 +437,6 @@ load('public/suport/NativeApi', function () {
         shareImage: function (platform, imgPath) {
             try {
                 if (cc.sys.OS_ANDROID === cc.sys.os) {
-
                     jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'shareImage', '(Ljava/lang/String;Ljava/lang/String;)V', platform, imgPath)
                 } else if (cc.sys.OS_IOS === cc.sys.os) {
 
@@ -449,13 +449,47 @@ load('public/suport/NativeApi', function () {
         shareArticle: function (platform, title, description, url, thumbUrl) {
             try {
                 if (cc.sys.OS_ANDROID === cc.sys.os) {
-
                     jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'shareArticle', '(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V', platform, title, description, url, thumbUrl)
                 } else if (cc.sys.OS_IOS === cc.sys.os) {
 
                 }
             } catch (e) {
-                NativeApi.HelloOC('shareImage throw: ' + JSON.stringify(e))
+                NativeApi.HelloOC('shareArticle throw: ' + JSON.stringify(e))
+            }
+        },//激励视频
+        showRewardVideo: function () {
+            try {
+                if (cc.sys.OS_ANDROID === cc.sys.os) {
+                    let uid = appInstance.dataManager().getUserData().pid
+                    jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'showRewardVideo', '(Ljava/lang/String;)V', uid)
+                } else if (cc.sys.OS_IOS === cc.sys.os) {
+
+                }
+            } catch (e) {
+                NativeApi.HelloOC('showRewardVideo throw: ' + JSON.stringify(e))
+            }
+        }, //复制
+        copy: function (msg) {
+            try {
+                if (cc.sys.OS_ANDROID === cc.sys.os) {
+                    jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'copy', '(Ljava/lang/String;)V', msg)
+                } else if (cc.sys.OS_IOS === cc.sys.os) {
+
+                }
+            } catch (e) {
+                NativeApi.HelloOC('copy throw: ' + JSON.stringify(e))
+            }
+        }, //获取二维码
+        getInvitationCode: function (msg) {
+            try {
+                if (cc.sys.OS_ANDROID === cc.sys.os) {
+                    let uid = appInstance.dataManager().getUserData().pid
+                    jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'getInvitationCode', '(Ljava/lang/String;Ljava/lang/String;)V', msg, uid)
+                } else if (cc.sys.OS_IOS === cc.sys.os) {
+
+                }
+            } catch (e) {
+                NativeApi.HelloOC('getInvitationCode throw: ' + JSON.stringify(e))
             }
         }
     })

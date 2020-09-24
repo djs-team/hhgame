@@ -64,6 +64,7 @@ load('game/config/GameEvent', function () {
         'FUKA_MATERIA_LOG': 'FUKA_MATERIA_LOG',
         'FUKA_MATERIA_EXCHANGE': 'FUKA_MATERIA_EXCHANGE',
         'UPDATE_USERPHOTO': 'UPDATE_USERPHOTO',
+        'GET_ARENAMESSAGE': 'GET_ARENAMESSAGE',
     }
 
     return GameEvent

@@ -70,7 +70,7 @@ load('game/ui/scene/HallScene', function () {
         },
 
         onGoAreanClick: function () {
-
+            appInstance.gameAgent().addPopUI(ResConfig.Ui.ArenaLayer)
         },
 
         onPhotoClick: function () {

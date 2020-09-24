@@ -74,7 +74,7 @@ load('game/config/ResConfig', function () {
         'CashCowLayer': 'game/ui/layer/cashcow/CashCowLayer',
         'TaskLayer': 'game/ui/layer/task/TaskLayer',
         'InvitationLayer': 'game/ui/layer/invitation/InvitationLayer',
-        'ArenaLayer': 'game/ui/layer/match/ArenaLayer',
+        'ArenaLayer': 'game/ui/layer/arena/ArenaLayer',
         'CoinGameLayer': 'game/ui/layer/coingame/CoinGameLayer',
         'CoinShopLayer': 'game/ui/layer/coinshop/CoinShopLayer',
         'ShopLayer': 'game/ui/layer/shop/ShopLayer',

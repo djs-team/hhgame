@@ -82,12 +82,12 @@ load('game/config/GameConfig', function () {
         '7': 'CoinGameLayer',
         '8': 'CoinGameLayer',
         '9': 'InvitationLayer',
-        '10': 'MatchLayer',
+        '10': 'ArenaLayer',
         '11': 'TurnTableLayer',
         '12': 'CashCowLayer',
         '13': 'CoinShopLayer',
         '14': 'CoinShopLayer',
-        '15': 'ShopLayer',
+        '15': 'FukaShopLayer',
 
     }
 

@@ -58,7 +58,6 @@
           <Image Name="20 (7).png" />
           <Image Name="20 (8).png" />
           <Image Name="20 (9).png" />
-          <Image Name="20(18).png" />
           <Image Name="21 (1).png" />
           <Image Name="21 (10).png" />
           <Image Name="21 (2).png" />
@@ -110,6 +109,7 @@
           <Image Name="arena (7).png" />
           <Image Name="arena (8).png" />
           <Image Name="arena (9).png" />
+          <Image Name="arena1.png" />
           <Image Name="fuKa (1).png" />
           <Image Name="fuKa (10).png" />
           <Image Name="fuKa (11).png" />
@@ -352,6 +352,10 @@
           <Image Name="ssc_29.png" />
           <Image Name="ssc_3.png" />
           <Image Name="ssc_30.png" />
+          <Image Name="ssc_31.png" />
+          <Image Name="ssc_32.png" />
+          <Image Name="ssc_33.png" />
+          <Image Name="ssc_34.png" />
           <Image Name="ssc_4.png" />
           <Image Name="ssc_5.png" />
           <Image Name="ssc_6.png" />

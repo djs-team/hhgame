@@ -60,8 +60,9 @@
 /// @param payType 支付渠道类型：1:苹果内购 2:支付宝 3:微信
 /// @param payParam 支付参数：
 /// @param userID 当前支付用户ID
+/// @param orderNo 己方订单号
 /// @param paySuccessMethod 支付成功通知的方法名
-+ (void)appPurchaseWithPayType:(NSString *_Nonnull)payType payParam:(NSString *_Nonnull)payParam userID:(NSString *_Nonnull)userID paySuccessMethod:(NSString *_Nonnull)paySuccessMethod;
++ (void)appPurchaseWithPayType:(NSString *_Nonnull)payType payParam:(NSString *_Nonnull)payParam userID:(NSString *_Nonnull)userID orderNo:(NSString *_Nonnull)orderNo paySuccessMethod:(NSString *_Nonnull)paySuccessMethod;
 
 #pragma mark - Photo
 + (void)selectedOnePhoto;
@@ -102,6 +103,8 @@
 /// @param method 方法名
 /// @param param 参数
 + (void)dispatchCustomEventWithMethod:(NSString *_Nonnull)method param:(NSString *_Nullable)param;
+
++ (void)JsCallBack:(NSString *_Nonnull)funcNameStr param:(NSString *_Nonnull)param;
 
 @end
 

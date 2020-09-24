@@ -17,7 +17,7 @@ load('game/ui/layer/member/MemberMdt', function () {
                 GameEvent.VIP_INFO_GET,
                 GameEvent.VIP_INFO_RECEIVE,
                 GameEvent.PLAYER_BUY_VIP_ORDER,
-
+                GameEvent.PLAYER_BUY_VIP_ORDER_APPLE_CHECK,
             ]
         },
         handleNotification: function (notification) {
@@ -41,7 +41,23 @@ load('game/ui/layer/member/MemberMdt', function () {
                         let wxSign=JSON.stringify(body.wxinfo)
                         cc.log('=============' + "调用微信"+wxSign)
                         appInstance.nativeApi().thirdPay("wx", wxSign)
+                    } else if (payType == 3) {
+                        // 苹果支付
+                        let vipCode = body.vipCode;
+                        var iosFlag = "";
+                        if (parseInt(vipCode) < 5) {
+                          // VIP
+                          iosFlag = "com.hehegames.hhyuejumajiang.v." + vipCode;
+                        } else {
+                          iosFlag = "com.hehegames.hhyuejumajiang.s." + vipCode;
+                        }
+
+                        appInstance.nativeApi().applyPay(iosFlag, body.orderId);
                     }
+                    break
+                case GameEvent.PLAYER_BUY_VIP_ORDER_APPLE_CHECK:
+                    // 苹果支付检验成功
+                    appInstance.gameAgent().Tips('------------------------------------苹果支付订单校验成功！！！')
                     break
                 default:
                     break

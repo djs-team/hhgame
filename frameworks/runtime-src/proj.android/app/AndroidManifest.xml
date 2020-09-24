@@ -34,11 +34,11 @@
     <!-- Required -->
     <permission
 
-        android:name="harmony.dating.online.face.ad.permission.JPUSH_MESSAGE"
+        android:name="com.hehegame.chess.permission.JPUSH_MESSAGE"
         android:protectionLevel="signature" />
 
     <!-- Required -->
-    <uses-permission android:name="harmony.dating.online.face.ad.permission.JPUSH_MESSAGE" />
+    <uses-permission android:name="com.hehegame.chess.permission.JPUSH_MESSAGE" />
     <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
@@ -126,23 +126,23 @@
             android:value="true" />
         <meta-data
             android:name="com.openinstall.APP_KEY"
-            android:value="eeqtj8" />
+            android:value="wt4hq6" />
 
         <!--微信支付回调-->
         <activity
-            android:name="harmony.dating.online.face.ad.wxapi.WXPayEntryActivity"
+            android:name="com.hehegame.chess.wxapi.WXPayEntryActivity"
             android:exported="true"
             android:launchMode="singleTop"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
         <activity
-            android:name="harmony.dating.online.face.ad.wxapi.WXEntryActivity"
+            android:name="com.hehegame.chess.wxapi.WXEntryActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
         <receiver
-            android:name="harmony.dating.online.face.ad.wxapi.AppRegister"
+            android:name="com.hehegame.chess.wxapi.AppRegister"
             android:permission="com.tencent.mm.plugin.permission.SEND">
             <intent-filter>
                 <action android:name="com.tencent.mm.plugin.openapi.Intent.ACTION_REFRESH_WXAPP" />
@@ -188,7 +188,7 @@
         <!-- 适配Android 7.0, 需要将下方的com.hyphenate.chatuidemo替换为你的app包名 -->
         <provider
             android:name="android.support.v4.content.FileProvider"
-            android:authorities="com.deepsea.mua.fileProvider"
+            android:authorities="com.hehegame.chess.fileProvider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
@@ -222,7 +222,7 @@
                 <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" /> <!--Required  用户接收SDK通知栏信息的intent-->
                 <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" /> <!--Required  用户打开自定义通知栏的intent-->
                 <action android:name="cn.jpush.android.intent.CONNECTION" /><!-- 接收网络变化 连接/断开 since 1.6.3 -->
-                <category android:name="harmony.dating.online.face.ad" />
+                <category android:name="com.hehegame.chess" />
             </intent-filter>
         </receiver>
 
@@ -230,7 +230,7 @@
         <receiver android:name="com.deepsea.mua.stub.jpush.MyJPushMessageReceiver">
             <intent-filter>
                 <action android:name="cn.jpush.android.intent.RECEIVE_MESSAGE" />
-                <category android:name="harmony.dating.online.face.ad"></category>
+                <category android:name="com.hehegame.chess"></category>
             </intent-filter>
         </receiver>
     </application>

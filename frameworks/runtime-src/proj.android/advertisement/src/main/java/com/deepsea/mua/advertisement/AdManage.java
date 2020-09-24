@@ -111,10 +111,12 @@ public class AdManage {
 
                     @Override
                     public void onAdShow() {
+
                     }
 
                     @Override
                     public void onAdVideoBarClick() {
+
                     }
 
                     @Override
@@ -126,9 +128,6 @@ public class AdManage {
                     @Override
                     public void onVideoComplete() {
 
-                        if (onLoadAdListener != null) {
-                            onLoadAdListener.onVidioPlayComplete("0");
-                        }
                     }
 
                     @Override
@@ -141,12 +140,16 @@ public class AdManage {
                     //视频播放完成后，奖励验证回调，rewardVerify：是否有效，rewardAmount：奖励梳理，rewardName：奖励名称
                     @Override
                     public void onRewardVerify(boolean rewardVerify, int rewardAmount, String rewardName) {
-                        String logString = "verify:" + rewardVerify + " amount:" + rewardAmount +
-                                " name:" + rewardName;
+                        if (onLoadAdListener != null) {
+                            onLoadAdListener.onVidioPlayComplete("0");
+                        }
                     }
 
                     @Override
                     public void onSkippedVideo() {
+                        if (onLoadAdListener != null) {
+                            onLoadAdListener.onVidioPlayComplete("-1");
+                        }
                     }
                 });
                 mttRewardVideoAd.setDownloadListener(new TTAppDownloadListener() {

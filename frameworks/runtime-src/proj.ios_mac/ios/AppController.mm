@@ -74,6 +74,8 @@
 // 直播
 #import "CXConfigObject.h"
 
+//#import <StoreKit/StoreKit.h>
+
 @interface AppController() <JPUSHRegisterDelegate, WXApiDelegate, BUSplashAdDelegate, OpenInstallDelegate>
 
 @property (nonatomic, copy) NSString *registration_id;
@@ -129,9 +131,6 @@ static AppDelegate s_sharedApplication;
     
     //run the cocos2d-x game scene
     app->run();
-        
-    // 苹果内购监听
-    [[CXIPAPurchaseManager manager] startManager];
     
     // 极光
     [self configureJPushOptions:launchOptions];
@@ -144,10 +143,19 @@ static AppDelegate s_sharedApplication;
     
     // OpenInstall
     [OpenInstallSDK initWithDelegate:self];
+    
+    // 苹果内购监听
+//    [[CXIPAPurchaseManager manager] startManager];
 
     return YES;
 }
-
+//#pragma mark - SKPaymentTransactionObserver
+//
+//- (void)paymentQueue:(SKPaymentQueue *)queue updatedTransactions:(NSArray<SKPaymentTransaction *> *)transactions {
+//    if (transactions) {
+//
+//    }
+//}
 #pragma mark - ======================== JPush =============================
 - (void)configureJPushOptions:(NSDictionary *)launchOptions {
     JPUSHRegisterEntity * entity = [[JPUSHRegisterEntity alloc] init];
@@ -409,26 +417,31 @@ static AppDelegate s_sharedApplication;
 /// @param payType 支付渠道类型：1:苹果内购 2:支付宝 3:微信
 /// @param payParam 支付参数：
 /// @param userID 当前支付用户ID
+/// @param orderNo 己方订单号
 /// @param paySuccessMethod 支付成功通知的方法名
-+ (void)appPurchaseWithPayType:(NSString *_Nonnull)payType payParam:(NSString *)payParam userID:(NSString *)userID paySuccessMethod:(NSString *)paySuccessMethod {
++ (void)appPurchaseWithPayType:(NSString *_Nonnull)payType payParam:(NSString *)payParam userID:(NSString *)userID orderNo:(NSString *_Nonnull)orderNo paySuccessMethod:(NSString *)paySuccessMethod {
     [CXOCJSBrigeManager manager].paySuccessMethod = paySuccessMethod;
     if ([payType isEqualToString:@"ios"]) {
         [CXIPAPurchaseManager manager].userid = userID;
         [CXIPAPurchaseManager manager].purchaseType = MaJiang;
+        [CXIPAPurchaseManager manager].order_sn = orderNo;
         [[CXIPAPurchaseManager manager] inAppPurchaseWithProductID:payParam iapResult:^(BOOL isSuccess, NSDictionary *param, NSString *errorMsg) {
-            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].openInstallParamMethod param:[param jsonStringEncoded]];
+            if (isSuccess == YES) {
+                NSString *paramStr = [param jsonStringEncoded];
+                [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].paySuccessMethod param:paramStr];
+            }
         }];
     } else if ([payType isEqualToString:@"alipay"]) {
         [[CXThirdPayManager sharedApi] aliPayWithPayParam:payParam success:^(PayCode code) {
-            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].openInstallParamMethod param:@"success"];
+            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].paySuccessMethod param:@"success"];
         } failure:^(PayCode code) {
-            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].openInstallParamMethod param:@"failure"];
+            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].paySuccessMethod param:@"failure"];
         }];
     } else if ([payType isEqualToString:@"wx"]) {
         [[CXThirdPayManager sharedApi] wxPayWithPayParam:payParam success:^(PayCode code) {
-            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].openInstallParamMethod param:@"success"];
+            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].paySuccessMethod param:@"success"];
         } failure:^(PayCode code) {
-            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].openInstallParamMethod param:@"failure"];
+            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].paySuccessMethod param:@"failure"];
         }];
     }
 }
@@ -580,6 +593,13 @@ static AppDelegate s_sharedApplication;
     std::string strParam = [param UTF8String];
     std::string strMethod = [method UTF8String];
     std::string jsCallStr = cocos2d::StringUtils::format("cc.eventManager.dispatchCustomEvent(\"%s\",'%s');", strMethod.c_str(),strParam.c_str());
+    ScriptingCore::getInstance()->evalString(jsCallStr.c_str());
+}
+
++ (void)JsCallBack:(NSString *)funcNameStr param:(NSString *)param {
+    std::string funcName = [funcNameStr UTF8String];
+    std::string paramStr  = [param UTF8String];
+    std::string jsCallStr = cocos2d::StringUtils::format("%s(\"%s\");",funcName.c_str(), paramStr.c_str());
     ScriptingCore::getInstance()->evalString(jsCallStr.c_str());
 }
 

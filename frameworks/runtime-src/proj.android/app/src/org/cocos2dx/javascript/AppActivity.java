@@ -1,27 +1,3 @@
-/****************************************************************************
- Copyright (c) 2015-2016 Chukong Technologies Inc.
- Copyright (c) 2017-2018 Xiamen Yaji Software Co., Ltd.
-
- http://www.cocos2d-x.org
-
- Permission is hereby granted, free of charge, to any person obtaining a copy
- of this software and associated documentation files (the "Software"), to deal
- in the Software without restriction, including without limitation the rights
- to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- copies of the Software, and to permit persons to whom the Software is
- furnished to do so, subject to the following conditions:
-
- The above copyright notice and this permission notice shall be included in
- all copies or substantial portions of the Software.
-
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- THE SOFTWARE.
- ****************************************************************************/
 package org.cocos2dx.javascript;
 
 import android.Manifest;
@@ -39,12 +15,9 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
 import android.util.Log;
-import android.view.Display;
 
-import org.cocos2dx.javascript.ui.main.MainActivity;
 import org.cocos2dx.javascript.ui.splash.activity.SplashActivity;
 import org.cocos2dx.lib.Cocos2dxActivity;
-import org.cocos2dx.lib.Cocos2dxGLSurfaceView;
 import org.cocos2dx.lib.Cocos2dxHelper;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -68,6 +41,7 @@ import com.deepsea.mua.stub.entity.WxOrder;
 import com.deepsea.mua.stub.jpush.JpushUtils;
 import com.deepsea.mua.stub.mvp.NewSubscriberCallBack;
 import com.deepsea.mua.stub.network.HttpHelper;
+import com.deepsea.mua.stub.permission.PermissionCallback;
 import com.deepsea.mua.stub.utils.BitmapUtils;
 import com.deepsea.mua.stub.utils.Constant;
 import com.deepsea.mua.stub.utils.SharedPrefrencesUtil;
@@ -85,6 +59,7 @@ import com.umeng.socialize.media.UMImage;
 import com.umeng.socialize.media.UMWeb;
 import com.uuzuche.lib_zxing.activity.CodeUtils;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -428,7 +403,7 @@ public class AppActivity extends Cocos2dxActivity {
                     }
                     ccActivity.RunJS_obj("THIRD_LOGIN_RESULT", result.toString());
                 } else {
-                    ToastUtils.showToast("一键登录失败，请尝试其他登录方式");
+                    ToastUtils.showToast("一键登录失败，请尝试其他登录方式" + code);
                 }
                 JVerificationInterface.dismissLoginAuthActivity(false, new RequestCallback<String>() {
                     @Override
@@ -527,9 +502,10 @@ public class AppActivity extends Cocos2dxActivity {
      * @param url      图片地址
      */
     public static void shareImage(String platform, String url) {
+        ToastUtils.showToast(platform + url);
 //        String img = "https://dss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1812993978,4158651947&fm=26&gp=0.jpg";
 //        UMImage th = new UMImage(ccActivity, url);//网络图片
-        UMImage image = new UMImage(ccActivity, url);//网络图片
+        UMImage image = new UMImage(ccActivity, new File(url));//网络图片
         SHARE_MEDIA share_media;
         if (platform.equals("WEIXIN")) {
             share_media = SHARE_MEDIA.WEIXIN;
@@ -571,8 +547,7 @@ public class AppActivity extends Cocos2dxActivity {
      * 激励视频
      * 返回 rewardVideoCallback（）0成功 -1 失败
      */
-    public static void showRewardVideo(String codeId) {
-        String userId = "123";
+    public static void showRewardVideo(String userId) {
         ccActivity.runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -613,15 +588,35 @@ public class AppActivity extends Cocos2dxActivity {
      *
      * @param url return 本地路径JPUSH_PKGNAME
      */
-    public static void getInvitationCode(String url) {
-        boolean hasPermission = PermissionUtil.hasSelfPermission(ccActivity, "android.permission.WRITE_EXTERNAL_STORAGE");
-        if (!hasPermission) {
-            ActivityCompat.requestPermissions(ccActivity, new String[]{Manifest.permission.READ_PHONE_STATE}, 2);
-            return;
+    public static void getInvitationCode(String url, String uid) {
+        String[] permission = new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE};
+        boolean hasPermission = PermissionUtil.hasSelfPermission(ccActivity, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        if (hasPermission) {
+            operateGetInvitationCode(url, uid);
+        } else {
+            com.deepsea.mua.stub.permission.PermissionUtil.request(ccActivity, permission, new PermissionCallback() {
+                @Override
+                public void onPermissionGranted() {
+                    operateGetInvitationCode(url, uid);
+                }
+
+                @Override
+                public void shouldShowRational(String[] rationalPermissons, boolean before) {
+
+                }
+
+                @Override
+                public void onPermissonReject(String[] rejectPermissons) {
+
+                }
+            });
         }
+    }
+
+    private static void operateGetInvitationCode(String url, String uid) {
         Bitmap mBitmap = CodeUtils.createImage(url, 400, 400, null);
-        String picPath = BitmapUtils.saveBitmap(ccActivity, mBitmap);
-        ToastUtils.showToast(picPath);
+        String picPath = BitmapUtils.saveBitmap(ccActivity, mBitmap, uid);
+        ccActivity.RunJS("inviteCodeCallback", picPath);
     }
 
     /**
@@ -690,6 +685,7 @@ public class AppActivity extends Cocos2dxActivity {
         ClipboardManager cm = (ClipboardManager) ccActivity.getSystemService(Context.CLIPBOARD_SERVICE);
         ClipData mClipData = ClipData.newPlainText("Label", content);
         cm.setPrimaryClip(mClipData);
+        ToastUtils.showToast("复制成功");
     }
 
     /**
@@ -710,7 +706,6 @@ public class AppActivity extends Cocos2dxActivity {
         JVerificationInterface.clearPreLoginCache();
         unregisterWxpayResult();
         wakeUpAdapter = null;
-
     }
 
 

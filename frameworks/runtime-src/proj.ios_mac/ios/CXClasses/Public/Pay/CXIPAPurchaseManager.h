@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 
 typedef enum : NSUInteger {
-    MaJiang = 0, // 麻将
-    LiveBroadcast, // 直播
+    LiveBroadcast = 0, // 直播
+    MaJiang, // 麻将
 } IPAPurchaseType;
 
 /**
@@ -28,28 +28,8 @@ typedef void(^InAppPurchaseResult)(BOOL isSuccess, NSDictionary *param,NSString 
 @property (nonatomic, assign) IPAPurchaseType purchaseType;
 
 //内购注册相关
-@property (nonatomic,copy)NSString * order;//callback 返回的订单号
-//@property (nonatomic,copy)NSString * order_sn ;//平台订单号
+@property (nonatomic,copy)NSString * order_sn ;//平台订单号
 @property (nonatomic,copy)NSString * userid;//游戏用户ID
-//@property (nonatomic,copy)NSString * money;//充值金额
-//@property (nonatomic,copy)NSString * money_type;//货币类型
-//@property (nonatomic,copy)NSString * extend;//平台扩展参数
-//@property (nonatomic,copy)NSString * FF_type;//支付类型
-//@property (nonatomic,copy)NSString * server_id;//服务器ID
-//@property (nonatomic,copy)NSString * server_name;//服务器名
-//@property (nonatomic,copy)NSString * role_id;//角色ID
-//@property (nonatomic,copy)NSString * role_name;//角色名
-//@property (nonatomic,copy)NSString * role_level;//角色等级
-//@property (nonatomic,copy)NSString * goods_id;//cp商品ID
-//@property (nonatomic,copy)NSString * goods_name;//cp商品名称
-//@property (nonatomic,copy)NSString * third_goods_id;//我们苹果商品ID
-//@property (nonatomic,copy)NSString * third_goods_name;//苹果商品名称
-//@property (nonatomic,copy)NSString * cp_trade_sn;//cp订单号
-//@property (nonatomic,copy)NSString * ext_data;//cp扩展参数
-//@property (nonatomic,copy)NSString * app_channel;//付费所属渠道
-//@property (nonatomic,copy)NSString * channel_trade_sn;//channel_trade_sn
-//@property(nonatomic,copy)NSString * amount_type; //货币类型
-//@property(nonatomic,copy)NSString * platformAmount; //货币金额
 
 + (instancetype)manager;
 

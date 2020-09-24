@@ -1,36 +1,35 @@
-
 load('game/ui/layer/coinshop/CoinShopLayer', function () {
     let ResConfig = include('game/config/ResConfig')
     let BaseLayer = include('public/ui/BaseLayer')
     let CoinShopMdt = include('game/ui/layer/coinshop/CoinShopMdt')
     let CoinShopLayer = BaseLayer.extend({
         _className: 'CoinShopLayer',
-        _dataMsg : {},
+        _dataMsg: {},
         ctor: function () {
             this._super(ResConfig.View.CoinShopLayer)
             this.registerMediator(new CoinShopMdt(this))
+            this.registerEventListener('rewardVideoCallback', this.onRewardVideoCallback)
         },
         RES_BINDING: function () {
             return {
 
-                'topPnl/closeBtn': {onClicked : this.onColseClicked  },
+                'topPnl/closeBtn': {onClicked: this.onColseClicked},
 
-                'topPnl/coinPnl': {  },
-                'topPnl/diamondsPnl': {  },
-                'topPnl/fuKaPnl': {  },
+                'topPnl/coinPnl': {},
+                'topPnl/diamondsPnl': {},
+                'topPnl/fuKaPnl': {},
 
-                'btmPnl/midPnl/videoBtn': {onClicked : this.onVideoClicked  },
-                'btmPnl/midPnl/timesText': {  },
+                'btmPnl/midPnl/videoBtn': {onClicked: this.onVideoClicked},
+                'btmPnl/midPnl/timesText': {},
 
-                'btmPnl/rightPnl/goodMidNd': {  },
-                'btmPnl/rightPnl/goodCell': {  },
-                'btmPnl/rightPnl/addressBtn': {onClicked : this.onAddressClicked  },
+                'btmPnl/rightPnl/goodMidNd': {},
+                'btmPnl/rightPnl/goodCell': {},
+                'btmPnl/rightPnl/addressBtn': {onClicked: this.onAddressClicked},
 
 
-
-                'popUpPnl/addressPnl': {  },
-                'popUpPnl/addressPnl/confirmBtn': {onClicked : this.onConfirmClicked  },
-                'popUpPnl/addressPnl/updateAddressCloseBtn': {onClicked : this.onCloseUpdateAddressClicked  },
+                'popUpPnl/addressPnl': {},
+                'popUpPnl/addressPnl/confirmBtn': {onClicked: this.onConfirmClicked},
+                'popUpPnl/addressPnl/updateAddressCloseBtn': {onClicked: this.onCloseUpdateAddressClicked},
             }
         },
         onCreate: function () {
@@ -78,22 +77,22 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
 
         onUpdatePropsData: function (data) {
 
-            let coinsCnt =  this.coinPnl.getChildByName('coinsCnt')
-            let diamondsCnt =  this.diamondsPnl.getChildByName('diamondsCnt')
-            let fuKaCnt =  this.fuKaPnl.getChildByName('fuKaCnt')
+            let coinsCnt = this.coinPnl.getChildByName('coinsCnt')
+            let diamondsCnt = this.diamondsPnl.getChildByName('diamondsCnt')
+            let fuKaCnt = this.fuKaPnl.getChildByName('fuKaCnt')
 
-            if(data.hasOwnProperty('coin')){
+            if (data.hasOwnProperty('coin')) {
                 coinsCnt.setString(data.coin)
                 this._dataMsg.coinsCnt = data.coin
             }
 
-            if(data.hasOwnProperty('diamonds')){
+            if (data.hasOwnProperty('diamonds')) {
                 diamondsCnt.setString(data.diamonds)
                 this._dataMsg.diamondsCnt = data.diamonds
 
             }
 
-            if(data.hasOwnProperty('fuKa')){
+            if (data.hasOwnProperty('fuKa')) {
                 fuKaCnt.setString(data.fuKa)
                 this._dataMsg.fuKaCnt = data.fuKa
 
@@ -112,7 +111,7 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
         onUpdateTime: function (data) {
 
             this.timesText.setString(data.timesText)
-            if(data.canWatchVideo){
+            if (data.canWatchVideo) {
 
                 this.videoBtn.getChildByName('canWatchPg').setVisible(true)
                 this.videoBtn.getChildByName('noCanWatchPg').setVisible(false)
@@ -120,7 +119,7 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
                 this.videoBtn.setBright(true)
                 this.videoBtn.setTouchEnabled(true)
 
-            }else{
+            } else {
                 this.videoBtn.getChildByName('canWatchPg').setVisible(false)
                 this.videoBtn.getChildByName('noCanWatchPg').setVisible(true)
 
@@ -132,7 +131,7 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
 
         onInitGoodsView: function (data) {
 
-            for(let i = 0; i < data.goodsData.length; i++){
+            for (let i = 0; i < data.goodsData.length; i++) {
 
                 let goodsData = data.goodsData[i]
                 let goodsCell = this.goodCell.clone()
@@ -140,11 +139,11 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
 
                 this.goodMidNd.addChild(goodsCell)
 
-                let cellPositionX = (i)%3 * 174
+                let cellPositionX = (i) % 3 * 174
                 let cellPositionY
-                if( i < 3){
+                if (i < 3) {
                     cellPositionY = 18
-                }else{
+                } else {
                     cellPositionY = -180
                 }
 
@@ -152,7 +151,7 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
                 goodsCell.setPositionY(cellPositionY)
 
                 let childPgName = 'coinsPg'
-                if(i > 4)
+                if (i > 4)
                     childPgName = 'coinsPg' + 5
                 else
                     childPgName = 'coinsPg' + (i + 1)
@@ -161,14 +160,14 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
 
 
                 goodsCell._sendMsg = {
-                    'goodsid' : goodsData.id,
-                    'diamonds' : goodsData.diamonds
+                    'goodsid': goodsData.id,
+                    'diamonds': goodsData.diamonds
                 }
 
                 goodsCell.getChildByName('coinsVueText').setString(goodsData.coin)
                 goodsCell.getChildByName('pricePg').getChildByName('priceText').setString(goodsData.diamonds)
 
-                goodsCell.addClickEventListener(function (sender,et) {
+                goodsCell.addClickEventListener(function (sender, et) {
 
                     this.onBuyCoinsFunction(sender)
 
@@ -182,16 +181,16 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
 
             let dialogMsg = {
                 ViewType: 1,
-                TileName : '提 示',
+                TileName: '提 示',
             }
 
             let msg
             let btnNameArray = {}
-            if(this._dataMsg.diamondsCnt < sender._sendMsg.diamonds){
+            if (this._dataMsg.diamondsCnt < sender._sendMsg.diamonds) {
 
                 msg = '您的钻石数量不足，请先领取钻石'
                 btnNameArray.MidBtnName = '确 定'
-            }else{
+            } else {
                 msg = '您是否确定兑换'
                 btnNameArray.LeftBtnName = '取 消'
                 btnNameArray.RightBtnName = '确 定'
@@ -199,15 +198,15 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
 
             dialogMsg.SayText = msg
 
-            if(btnNameArray.hasOwnProperty('LeftBtnName')){
+            if (btnNameArray.hasOwnProperty('LeftBtnName')) {
                 dialogMsg.LeftBtnName = btnNameArray.LeftBtnName
             }
 
-            if(btnNameArray.hasOwnProperty('MidBtnName')){
+            if (btnNameArray.hasOwnProperty('MidBtnName')) {
                 dialogMsg.MidBtnName = btnNameArray.MidBtnName
             }
 
-            if(btnNameArray.hasOwnProperty('RightBtnName')){
+            if (btnNameArray.hasOwnProperty('RightBtnName')) {
                 dialogMsg.RightBtnName = btnNameArray.RightBtnName
                 dialogMsg.RightBtnClick = function () {
 
@@ -227,20 +226,29 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
 
             this.videoBtn.setBright(true)
             this.videoBtn.setTouchEnabled(true)
+            if (cc.sys.OS_ANDROID === cc.sys.os) {
+                appInstance.nativeApi().showRewardVideo()
+            }
 
-            appInstance.gameAgent().httpGame().VIDEOFORDIAMONDSReq()
 
+        },
+        onRewardVideoCallback: function (msg) {
+            if (msg == "0") {
+                appInstance.gameAgent().httpGame().VIDEOFORDIAMONDSReq()
+            } else {
+                this.shakeBtn.setTouchEnabled(true)
+            }
         },
 
         onUpdateAddressData: function (data) {
 
-            if(data.hasOwnProperty('phone'))
+            if (data.hasOwnProperty('phone'))
                 this.addressPnl.getChildByName('phponeTextFiled').setString(data.phone)
 
-            if(data.hasOwnProperty('name'))
+            if (data.hasOwnProperty('name'))
                 this.addressPnl.getChildByName('nameTextFiled').setString(data.name)
 
-            if(data.hasOwnProperty('address'))
+            if (data.hasOwnProperty('address'))
                 this.addressPnl.getChildByName('addressTextFiled').setString(data.address)
 
         },
@@ -251,19 +259,19 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
             let name = this.addressPnl.getChildByName('nameTextFiled').getString()
             let address = this.addressPnl.getChildByName('addressTextFiled').getString()
 
-            if(!(/^1[3|4|5|7|8][0-9]\d{8,11}$/.test(phone))){
+            if (!(/^1[3|4|5|7|8][0-9]\d{8,11}$/.test(phone))) {
                 appInstance.gameAgent().Tips('手机号格式异常，请检查后重新输入')
                 return
             }
 
-            if(name.length >= 50){
+            if (name.length >= 50) {
 
                 appInstance.gameAgent().Tips('名字超长，请检查后重新输入')
                 return
 
             }
 
-            if(name.length >= 50){
+            if (name.length >= 50) {
 
                 appInstance.gameAgent().Tips('地址超长，请检查后重新输入')
                 return

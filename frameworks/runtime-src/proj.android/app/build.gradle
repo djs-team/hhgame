@@ -4,9 +4,9 @@ apply plugin: 'com.android.application'
 
 def getReleaseStoreFile() {
     if ("true".equals(IS_JENKINS)) {
-        return file("../sign/harmonydating.jkse")
+        return file(RELEASE_STORE_FILE)
     } else {
-        return file("../sign/harmonydating.jks")
+        return file(RELEASE_STORE_FILE)
     }
 }
 
@@ -19,7 +19,7 @@ android {
     compileSdkVersion PROP_COMPILE_SDK_VERSION.toInteger()
 
     defaultConfig {
-        applicationId "harmony.dating.online.face.ad"
+        applicationId "com.hehegame.chess"
         minSdkVersion PROP_MIN_SDK_VERSION
         targetSdkVersion PROP_TARGET_SDK_VERSION
         versionCode 2001
@@ -35,8 +35,8 @@ android {
             exclude 'META-INF/rxjava.properties'
         }
         manifestPlaceholders = [
-                JPUSH_PKGNAME: "harmony.dating.online.face.ad",
-                JPUSH_APPKEY : "63fc9c5b80e873aee27415ed", //JPush 上注册的包名对应的 Appkey.
+                JPUSH_PKGNAME: "com.hehegame.chess",
+                JPUSH_APPKEY : "e1f41c1d0fc62f37b80845f3", //JPush 上注册的包名对应的 Appkey.
                 JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
         ]
         externalNativeBuild {
@@ -112,16 +112,16 @@ android {
 //    }
     signingConfigs {
         release {
-            storeFile file('../sign/harmonydating.jks')
-            storePassword "harmonydating"
-            keyAlias "harmonydating"
-            keyPassword "harmonydating"
+            storeFile file(RELEASE_STORE_FILE)
+            storePassword RELEASE_STORE_PASSWORD
+            keyAlias RELEASE_KEY_ALIAS
+            keyPassword RELEASE_KEY_PASSWORD
         }
         debug {
-            storeFile file('../sign/harmonydating.jks')
-            storePassword "harmonydating"
-            keyAlias "harmonydating"
-            keyPassword "harmonydating"
+            storeFile file(RELEASE_STORE_FILE)
+            storePassword RELEASE_STORE_PASSWORD
+            keyAlias RELEASE_KEY_ALIAS
+            keyPassword RELEASE_KEY_PASSWORD
         }
     }
 

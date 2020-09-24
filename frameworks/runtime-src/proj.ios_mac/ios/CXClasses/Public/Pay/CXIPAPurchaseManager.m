@@ -75,6 +75,8 @@ static CXIPAPurchaseManager * manager = nil;
 
 #pragma mark -- 发起购买的方法
 - (void)inAppPurchaseWithProductID:(NSString *)productID iapResult:(InAppPurchaseResult)iapResult{
+    [self startManager];
+    
     [MBProgressHUD showHUD];
     [self removeAllUncompleteTransactionsBeforeNewPurchase];
     

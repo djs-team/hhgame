@@ -36,7 +36,7 @@
 
 #pragma mark - 直播相关
 /// 从麻将进入视频
-+ (void)enterLiveBroadcast;
++ (void)enterLiveBroadcastWithToken:(NSString *_Nonnull)param;
 
 /// 进入直播间
 /// @param roomId 直播间ID

@@ -114,14 +114,19 @@ static const NSInteger titleFontSize = 15;
 
 + (void)showHUD {
     UIView *winView =(UIView*)[UIApplication sharedApplication].delegate.window;
+    [self hideHUDForView:winView animated:YES];
     [self showHUDAddedTo:winView animated:YES];
 }
 
 + (void)hideHUD
 {
-    UIView *winView =(UIView*)[UIApplication sharedApplication].delegate.window;
-    [self hideHUDForView:winView animated:YES];
-    [self hideHUDForView:[self getCurrentUIVC].view animated:YES];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        UIView *winView =(UIView*)[UIApplication sharedApplication].delegate.window;
+        [self hideHUDForView:winView animated:YES];
+//        if ([self getCurrentUIVC].view.subviews.count > 0) {
+//            [self hideHUDForView:[self getCurrentUIVC].view animated:YES];
+//        }
+    });
 }
 #pragma mark --- 获取当前Window试图---------
 //获取当前屏幕显示的viewcontroller

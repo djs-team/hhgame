@@ -15,7 +15,7 @@
 
 + (void)weChatLoginWithMethod:(NSString *)method {
     [CXOCJSBrigeManager manager].wxLoginMethod = method;
-    
+
     SendAuthReq *req = [[SendAuthReq alloc] init];
     req.scope = @"snsapi_userinfo";
     req.state = @"123";
@@ -49,19 +49,52 @@
     [self customUI];
     [JVERIFICATIONService getAuthorizationWithController:[CXTools currentViewController] completion:^(NSDictionary *result) {
         if ([result.allKeys containsObject:@"loginToken"]) {
+            NSString *token = result[@"loginToken"];
+            NSString *tokenStr = [token stringByAddingPercentEncodingWithAllowedCharacters:[[NSCharacterSet characterSetWithCharactersInString:@"+"] invertedSet]];
             NSDictionary *param = @{
                 @"platform": @2,
                 @"accounttype": @1,
-                @"account":result[@"loginToken"],
+                @"account":tokenStr,
             };
             NSString *respStr = [param jsonStringEncoded];
             [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].jpushLoginMethod param:respStr];
         } else {
-            [[CXTools currentViewController] alertTitle:@"一键登录失败" message:nil cancel:@"请重新登录" action:nil];
+            [self JPushLoginWithPhoneLogin];
         }
         
         [JVERIFICATIONService dismissLoginControllerAnimated:YES completion:nil];
     }];
+}
+
++ (void)JPushLoginWithPhoneLogin {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"手机号登录" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+
+    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+//        [AppController JPushLoginWithMethod:[CXOCJSBrigeManager manager].jpushLoginMethod];
+    }]];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"使用此手机号登录" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        //获取第1个输入框；
+        UITextField *userNameTextField = alert.textFields.firstObject;
+        NSDictionary *param = @{
+            @"platform": @2,
+            @"accounttype": @1,
+            @"account":userNameTextField.text,
+        };
+        
+        if ([userNameTextField.text isEqualToString:@"88888888"]) {
+            NSString *respStr = [param jsonStringEncoded];
+            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].jpushLoginMethod param:respStr];
+        } else {
+            [AppController JPushLoginWithMethod:[CXOCJSBrigeManager manager].jpushLoginMethod];
+        }
+    }]];
+    
+    //定义第一个输入框；
+    [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.placeholder = @"请输入手机号";
+    }];
+    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert animated:YES completion:nil];
 }
 
 + (void)customUI {

@@ -933,7 +933,7 @@
         <Project Name="PersonalLayer.csd" Type="Layer" />
         <Project Name="ReceivePropsLayer.csd" Type="Layer" />
         <Project Name="RoleLayer.csd" Type="Layer" />
-        <Project Name="SettingLayer.csd" Type="Layer" />
+        <Project Name="SetLayer.csd" Type="Layer" />
         <Project Name="ShopLayer.csd" Type="Layer" />
         <Project Name="SignLayer.csd" Type="Layer" />
         <Project Name="SystemTipsLayer.csd" Type="Layer" />

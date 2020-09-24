@@ -73,53 +73,6 @@
           {
             "FileData": {
               "Type": "Normal",
-              "Path": "aaa/20(18).png",
-              "Plist": ""
-            },
-            "Scale9OriginX": 422,
-            "Scale9OriginY": 237,
-            "Scale9Width": 436,
-            "Scale9Height": 246,
-            "AnchorPoint": {
-              "ScaleX": 0.5,
-              "ScaleY": 0.5
-            },
-            "Position": {
-              "X": 646.1373,
-              "Y": 357.6932
-            },
-            "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 1.0
-            },
-            "CColor": {},
-            "IconVisible": false,
-            "PositionPercentXEnabled": true,
-            "PositionPercentYEnabled": true,
-            "PrePosition": {
-              "X": 0.5048,
-              "Y": 0.4968
-            },
-            "PreSize": {
-              "X": 1.0,
-              "Y": 1.0
-            },
-            "LeftMargin": 6.1373,
-            "RightMargin": -6.1373,
-            "TopMargin": 2.3068,
-            "BottomMargin": -2.3068,
-            "Tag": 178,
-            "ActionTag": 57313476,
-            "Size": {
-              "X": 1280.0,
-              "Y": 720.0
-            },
-            "Name": "dele_0",
-            "ctype": "ImageViewObjectData"
-          },
-          {
-            "FileData": {
-              "Type": "Normal",
               "Path": "aaa/20 (16).png",
               "Plist": ""
             },
@@ -5109,14 +5062,16 @@
             "ColorVector": {
               "ScaleY": 1.0
             },
+            "Scale9Width": 1,
+            "Scale9Height": 1,
             "TouchEnable": true,
             "AnchorPoint": {
               "ScaleX": 0.5,
               "ScaleY": 0.5
             },
             "Position": {
-              "X": 645.6411,
-              "Y": 380.1298
+              "X": 645.632,
+              "Y": 380.16
             },
             "Scale": {
               "ScaleX": 1.0,
@@ -5134,10 +5089,10 @@
               "X": 1.0,
               "Y": 1.0
             },
-            "LeftMargin": 5.6411,
-            "RightMargin": -5.6411,
-            "TopMargin": -20.1298,
-            "BottomMargin": 20.1298,
+            "LeftMargin": 5.632,
+            "RightMargin": -5.6321,
+            "TopMargin": -20.16,
+            "BottomMargin": 20.16,
             "Tag": 97,
             "Children": [
               {
@@ -5175,7 +5130,7 @@
                 },
                 "LeftMargin": 349.0095,
                 "RightMargin": 333.9905,
-                "TopMargin": 172.2811,
+                "TopMargin": 172.2812,
                 "BottomMargin": 185.7188,
                 "Tag": 166,
                 "ActionTag": -564562846,
@@ -5202,7 +5157,7 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 648.022,
+                  "X": 648.064,
                   "Y": 519.8814
                 },
                 "Scale": {
@@ -5220,8 +5175,8 @@
                   "X": 0.2547,
                   "Y": 0.0889
                 },
-                "LeftMargin": 485.022,
-                "RightMargin": 468.978,
+                "LeftMargin": 485.064,
+                "RightMargin": 468.936,
                 "TopMargin": 168.1186,
                 "BottomMargin": 487.8814,
                 "Tag": 164,
@@ -5450,10 +5405,10 @@
                   "X": 0.3828,
                   "Y": 0.2194
                 },
-                "LeftMargin": 263.4619,
-                "RightMargin": 526.5381,
-                "TopMargin": 260.0706,
-                "BottomMargin": 301.9294,
+                "LeftMargin": 263.4852,
+                "RightMargin": 526.5148,
+                "TopMargin": 260.0712,
+                "BottomMargin": 301.9288,
                 "Tag": 169,
                 "Children": [
                   {
@@ -5518,10 +5473,10 @@
                       "X": 0.1592,
                       "Y": 0.4937
                     },
-                    "LeftMargin": -705.4799,
-                    "RightMargin": 1117.4799,
-                    "TopMargin": 106.0702,
-                    "BottomMargin": -26.0702,
+                    "LeftMargin": -705.4808,
+                    "RightMargin": 1117.4808,
+                    "TopMargin": 106.0727,
+                    "BottomMargin": -26.0727,
                     "Tag": 172,
                     "ActionTag": 552959041,
                     "Size": {
@@ -5559,7 +5514,6 @@
       },
       "UsedResources": [
         "aaa/20 (16).png",
-        "aaa/20(18).png",
         "common/bt_3.png",
         "common/bt_5.png",
         "common/bt_5_1.png",

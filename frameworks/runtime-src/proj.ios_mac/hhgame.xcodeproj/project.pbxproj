@@ -714,6 +714,8 @@
 		00802AC4250CC55300F43A32 /* RPSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 00802ABE250CC55200F43A32 /* RPSDK.bundle */; };
 		00802AC5250CC55300F43A32 /* SGSecurityBody.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00802ABF250CC55300F43A32 /* SGSecurityBody.framework */; };
 		00802AC6250CC55300F43A32 /* SecurityGuardSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00802AC0250CC55300F43A32 /* SecurityGuardSDK.framework */; };
+		008F040F251C4E0E00F207D2 /* CXChangeAgeAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 008F040E251C4E0E00F207D2 /* CXChangeAgeAlertView.m */; };
+		008F0413251C4E1800F207D2 /* CXChangeAgeAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008F0412251C4E1800F207D2 /* CXChangeAgeAlertView.xib */; };
 		1A2EA1861FC3DA6C0062C870 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A2EA1851FC3DA6B0062C870 /* Images.xcassets */; };
 		1A67682A180E9C060076BC67 /* libcocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB48180E9ACB004C840B /* libcocos2d Mac.a */; };
 		1A676839180E9C1E0076BC67 /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB56180E9ACB004C840B /* libcocos2d iOS.a */; };
@@ -1947,6 +1949,9 @@
 		00802ABE250CC55200F43A32 /* RPSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = RPSDK.bundle; sourceTree = "<group>"; };
 		00802ABF250CC55300F43A32 /* SGSecurityBody.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SGSecurityBody.framework; sourceTree = "<group>"; };
 		00802AC0250CC55300F43A32 /* SecurityGuardSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SecurityGuardSDK.framework; sourceTree = "<group>"; };
+		008F040D251C4E0E00F207D2 /* CXChangeAgeAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXChangeAgeAlertView.h; sourceTree = "<group>"; };
+		008F040E251C4E0E00F207D2 /* CXChangeAgeAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXChangeAgeAlertView.m; sourceTree = "<group>"; };
+		008F0412251C4E1800F207D2 /* CXChangeAgeAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CXChangeAgeAlertView.xib; sourceTree = "<group>"; };
 		1A1A081B18C9DF05005C6854 /* project.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = project.json; path = ../../../project.json; sourceTree = "<group>"; };
 		1A2EA1851FC3DA6B0062C870 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ios/Images.xcassets; sourceTree = "<group>"; };
 		1A6BF21418C9DB5900FB0E1C /* main.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = main.js; path = ../../../main.js; sourceTree = "<group>"; };
@@ -2530,13 +2535,11 @@
 				006149AC250B94C600BB7620 /* Music */,
 				00614A32250B94C700BB7620 /* RoomUIView */,
 				00614A3B250B94C700BB7620 /* 推荐 */,
-				00614A4A250B94C700BB7620 /* RoomSetup */,
 				00614A4C250B94C700BB7620 /* 红包 */,
 				00614A5C250B94C700BB7620 /* Gift */,
 				00614A73250B94C700BB7620 /* 守护榜 */,
 				00614A7B250B94C800BB7620 /* 用户资料 */,
 				00614A8B250B94C800BB7620 /* GameMessageListItemView */,
-				00614AA7250B94C800BB7620 /* AlertMessageView */,
 				00614AA8250B94C800BB7620 /* RoomSeatView */,
 				00614ABA250B94C800BB7620 /* 麦位管理 */,
 				00614AC4250B94C800BB7620 /* 充值 */,
@@ -2685,21 +2688,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		00614A4A250B94C700BB7620 /* RoomSetup */ = {
-			isa = PBXGroup;
-			children = (
-				00614A4B250B94C700BB7620 /* Views */,
-			);
-			path = RoomSetup;
-			sourceTree = "<group>";
-		};
-		00614A4B250B94C700BB7620 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		00614A4C250B94C700BB7620 /* 红包 */ = {
 			isa = PBXGroup;
 			children = (
@@ -2780,17 +2768,9 @@
 				00614A76250B94C800BB7620 /* CXLiveRoomGuardGroupView.h */,
 				00614A77250B94C800BB7620 /* CXLiveRoomGuardGroupView.m */,
 				00614A78250B94C800BB7620 /* CXLiveRoomGuardRankView.h */,
-				00614A79250B94C800BB7620 /* view */,
 				00614A7A250B94C800BB7620 /* CXLiveRoomGuardGroupView.xib */,
 			);
 			path = "守护榜";
-			sourceTree = "<group>";
-		};
-		00614A79250B94C800BB7620 /* view */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = view;
 			sourceTree = "<group>";
 		};
 		00614A7B250B94C800BB7620 /* 用户资料 */ = {
@@ -2847,13 +2827,6 @@
 				00614AA6250B94C800BB7620 /* GameMessageListItemUserSitdownView.m */,
 			);
 			path = GameMessageListItemView;
-			sourceTree = "<group>";
-		};
-		00614AA7250B94C800BB7620 /* AlertMessageView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = AlertMessageView;
 			sourceTree = "<group>";
 		};
 		00614AA8250B94C800BB7620 /* RoomSeatView */ = {
@@ -2940,6 +2913,7 @@
 		00614ADA250B94C800BB7620 /* CXAlertView */ = {
 			isa = PBXGroup;
 			children = (
+				008F040A251C4DE600F207D2 /* 修改性别 */,
 				00614ADB250B94C800BB7620 /* AllOnline */,
 				00614AE5250B94C800BB7620 /* 上麦卡 */,
 				00614AE9250B94C800BB7620 /* Alert提示框 */,
@@ -4460,6 +4434,16 @@
 			path = Aliyun;
 			sourceTree = "<group>";
 		};
+		008F040A251C4DE600F207D2 /* 修改性别 */ = {
+			isa = PBXGroup;
+			children = (
+				008F040D251C4E0E00F207D2 /* CXChangeAgeAlertView.h */,
+				008F040E251C4E0E00F207D2 /* CXChangeAgeAlertView.m */,
+				008F0412251C4E1800F207D2 /* CXChangeAgeAlertView.xib */,
+			);
+			path = "修改性别";
+			sourceTree = "<group>";
+		};
 		15628F5B15F0F5C2000CF24B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -4960,6 +4944,7 @@
 				00614DFF250B94CE00BB7620 /* CXHomeChildViewController.xib in Resources */,
 				0061500F250B94CF00BB7620 /* chatbar_photo_blue@3x.png in Resources */,
 				00614FFD250B94CF00BB7620 /* chat_audio_red@3x.png in Resources */,
+				008F0413251C4E1800F207D2 /* CXChangeAgeAlertView.xib in Resources */,
 				00614E20250B94CE00BB7620 /* CXFriendInviteCell.xib in Resources */,
 				00614FA5250B94CF00BB7620 /* XYTableViewAlertCell.xib in Resources */,
 				0061502E250B94D000BB7620 /* msg_bg_send@3x.png in Resources */,
@@ -5249,6 +5234,7 @@
 				509D4AC917EBB2AB00697056 /* RootViewController.mm in Sources */,
 				00614ED8250B94CE00BB7620 /* GameMessageListItemUserJoinRoomView.m in Sources */,
 				00614E61250B94CE00BB7620 /* CXGameMusicAdjustRateCell.m in Sources */,
+				008F040F251C4E0E00F207D2 /* CXChangeAgeAlertView.m in Sources */,
 				00614E72250B94CE00BB7620 /* CXGameMusicView.m in Sources */,
 				0061505A250B94D000BB7620 /* NSObject+Alert.m in Sources */,
 				00614EDE250B94CE00BB7620 /* GameMessageListItemTextWelcomeView.m in Sources */,

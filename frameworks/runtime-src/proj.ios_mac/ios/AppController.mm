@@ -37,6 +37,8 @@
 #import "CXUserInfoViewController.h"
 #import "CXBaseNavigationController.h"
 
+#import "CXChangeAgeAlertView.h"
+
 // Pay
 #import <AlipaySDK/AlipaySDK.h>
 #import <WXApi.h>
@@ -73,6 +75,7 @@
 
 // 直播
 #import "CXConfigObject.h"
+
 
 //#import <StoreKit/StoreKit.h>
 
@@ -635,11 +638,25 @@ UIInterfaceOrientationMask oMask = UIInterfaceOrientationMaskLandscape;
     if ([dict.allKeys containsObject:@"applePayType"]) {
         [CXClientModel instance].applePayType = dict[@"applePayType"];
     }
+    if ([dict.allKeys containsObject:@"username"]) {
+        [CXClientModel instance].username = dict[@"username"];
+    }
+    if ([dict.allKeys containsObject:@"nickname"]) {
+        [CXClientModel instance].nickname = dict[@"nickname"];
+    }
+    if ([dict.allKeys containsObject:@"avatar"]) {
+        [CXClientModel instance].avatar = dict[@"avatar"];
+    }
     
     [CXConfigObject enterOnline];
 }
 
 + (void)joinRoom:(NSString *)roomId {
+    if ([CXClientModel instance].sex.integerValue < 1) { // 未设置性别
+        CXChangeAgeAlertView *ageView = [[NSBundle mainBundle] loadNibNamed:@"CXChangeAgeAlertView" owner:nil options:nil].lastObject;
+        [ageView show];
+        return;
+    }
     if (roomId.length <= 0) {
         return;
     }

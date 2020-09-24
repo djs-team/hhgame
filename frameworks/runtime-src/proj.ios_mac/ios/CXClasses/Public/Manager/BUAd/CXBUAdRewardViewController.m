@@ -34,9 +34,9 @@ static id _manager;
 }
 
 //打开激励视频的方法
-- (void)openAd{
+- (void)openAdWithUserId:(NSString *)userId; {
     BURewardedVideoModel *model = [[BURewardedVideoModel alloc] init];
-    model.userId = @"123";
+    model.userId = userId;
     self.rewardedAd = [[BUNativeExpressRewardedVideoAd alloc] initWithSlotID:BUDAd_SlotID rewardedVideoModel:model];
     self.rewardedAd.delegate = self;
     [self.rewardedAd loadAdData];

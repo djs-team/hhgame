@@ -30,16 +30,29 @@
     [HJNetwork GETWithURL:url parameters:nil cachePolicy:HJCachePolicyIgnoreCache callback:^(id responseObject, BOOL isCache, NSError *error) {
         if (!error) {
             NSDictionary *resp = (NSDictionary*)responseObject;
+            NSString *openid = resp[@"openid"];
+            NSString *accessToken = resp[@"access_token"];
+            NSString *unionid = resp[@"unionid"];
+            [self getWeChatUserInfo:openid accessToken:accessToken unionid:unionid];
+        }
+    }];
+}
+
+- (void)getWeChatUserInfo:(NSString *)openId accessToken:(NSString *)accessToken unionid:(NSString *)unionid {
+    NSString *url = [NSString stringWithFormat:@"https://api.weixin.qq.com/sns/userinfo?access_token=%@&openid=%@", accessToken, openId];
+    [HJNetwork GETWithURL:url parameters:nil cachePolicy:HJCachePolicyIgnoreCache callback:^(id responseObject, BOOL isCache, NSError *error) {
+        if (!error) {
+            NSDictionary *resp = (NSDictionary*)responseObject;
             NSDictionary *param = @{
                 @"platform": @3,
+                @"nickName" : resp[@"nickname"] ?: @"",
+                @"photo" : resp[@"headimgurl"] ?: @"",
                 @"accounttype": @0,
                 @"unionId" : resp[@"unionid"],
                 @"account":resp[@"unionid"],
             };
             NSString *respStr = [param jsonStringEncoded];
             [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].wxLoginMethod param:respStr];
-        } else {
-            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].wxLoginMethod param:@""];
         }
     }];
 }
@@ -69,11 +82,11 @@
 + (void)JPushLoginWithPhoneLogin {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"手机号登录" message:@"" preferredStyle:UIAlertControllerStyleAlert];
 
-    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-//        [AppController JPushLoginWithMethod:[CXOCJSBrigeManager manager].jpushLoginMethod];
-    }]];
+//    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+////        [AppController JPushLoginWithMethod:[CXOCJSBrigeManager manager].jpushLoginMethod];
+//    }]];
     
-    [alert addAction:[UIAlertAction actionWithTitle:@"使用此手机号登录" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:@"登录" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         //获取第1个输入框；
         UITextField *userNameTextField = alert.textFields.firstObject;
         NSDictionary *param = @{

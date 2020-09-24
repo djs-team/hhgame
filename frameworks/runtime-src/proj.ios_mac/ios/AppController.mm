@@ -56,6 +56,7 @@
 
 // Photo
 #import "CXPhotoManager.h"
+#import <Photos/Photos.h>
 
 // QRCode
 #import "WSLNativeScanTool.h"
@@ -74,14 +75,12 @@
 #import "OpenInstallSDK.h"
 
 // 直播
-#import "CXConfigObject.h"
-
+#import "CXBaseTabBarViewController.h"
+#import "CXUserModel.h"
 
 //#import <StoreKit/StoreKit.h>
 
 @interface AppController() <JPUSHRegisterDelegate, WXApiDelegate, BUSplashAdDelegate, OpenInstallDelegate>
-
-@property (nonatomic, copy) NSString *registration_id;
 
 @end
 
@@ -176,7 +175,7 @@ static AppDelegate s_sharedApplication;
     [JPUSHService registrationIDCompletionHandler:^(int resCode, NSString *registrationID) {
         if(resCode == 0){
             NSLog(@"registrationID获取成功：%@",registrationID);
-            self.registration_id = registrationID;
+            [CXClientModel instance].registration_id = registrationID;
         } else {
             NSLog(@"registrationID获取失败，code：%d",resCode);
         }
@@ -450,26 +449,72 @@ static AppDelegate s_sharedApplication;
 }
 
 #pragma mark -  ================ Photo ===================
-+ (void)selectedOnePhoto {
++ (void)selectedOnePhotoWithMethod:(NSString *_Nonnull)method {
     [[CXPhotoManager manager] showPickerWith:[CXTools currentViewController] allowEdit:YES completeBlock:^(NSString * _Nonnull imageUrl) {
         NSLog(@"imageUrl=%@", imageUrl);
+        [AppController dispatchCustomEventWithMethod:method param:imageUrl];
     }];
 }
 
 #pragma mark - ================ QRCode ===================
 /// 生成二维码
 /// @param codeString 二维码字符串
-/// @param centerImage 中心图片
 + (UIImage *_Nonnull)createQRCodeImageWithString:(nonnull NSString *)codeString {
-    return [WSLNativeScanTool createQRCodeImageWithString:codeString andSize:CGSizeMake(200, 200) andBackColor:[UIColor whiteColor] andFrontColor:[UIColor orangeColor] andCenterImage:nil];
+    UIImage *tempImage = [WSLNativeScanTool createQRCodeImageWithString:codeString andSize:CGSizeMake(200, 200) andBackColor:[UIColor whiteColor] andFrontColor:[UIColor orangeColor] andCenterImage:nil];
+//    NSMutableArray *imageIds = [NSMutableArray array];
+//    [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
+//        //写入图片到相册
+//        PHAssetChangeRequest *req = [PHAssetChangeRequest creationRequestForAssetFromImage:tempImage];
+//        //记录本地标识，等待完成后取到相册中的图片对象
+//        [imageIds addObject:req.placeholderForCreatedAsset.localIdentifier];
+//    } completionHandler:^(BOOL success, NSError * _Nullable error) {
+//        NSLog(@"success = %d, error = %@", success, error);
+//        if (success)
+//        {
+//            //成功后取相册中的图片对象
+//            __block PHAsset *imageAsset = nil;
+//            PHFetchResult *result = [PHAsset fetchAssetsWithLocalIdentifiers:imageIds options:nil];
+//            [result enumerateObjectsUsingBlock:^(PHAsset * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//                imageAsset = obj;
+//                *stop = YES;
+//
+//            }];
+//
+//            if (imageAsset)
+//            {
+//                //加载图片数据
+//                [[PHImageManager defaultManager] requestImageDataForAsset:imageAsset
+//                  options:nil
+//                  resultHandler:^(NSData * _Nullable imageData, NSString * _Nullable dataUTI, UIImageOrientation orientation, NSDictionary * _Nullable info) {
+//
+//                    NSLog(@"%@", info);
+//                  }];
+//            }
+//        }
+//    }];
+    
+    
+//    //  绘制二维码图片
+//    [tempImage drawInRect:CGRectMake(0, 0, 200, 200)];
+//
+//    //  从图片上下文中取出图片
+//    tempImage = UIGraphicsGetImageFromCurrentImageContext();
+//
+//    //  关闭图片上下文
+//    UIGraphicsEndImageContext();
+//    //保存图片到相册
+//    UIImageWriteToSavedPhotosAlbum(tempImage, self, @selector(image:didFinishSavingWithError:contextInfo:), (__bridge void *)self);
+//    UIImageWriteToSavedPhotosAlbum(tempImage, nil, nil, NULL);
+    
+    return tempImage;
 }
 
 #pragma mark - ================ 广告 ===================
 // 打开激励视频
-+ (void)openBUAdRewardViewControllerWithMethod:(NSString *_Nonnull)method {
++ (void)openBUAdRewardWithUserId:(NSString *_Nonnull)userId method:(NSString *_Nonnull)method {
     [CXOCJSBrigeManager manager].BUAdRewardMethod = method;
     //激励视频
-    [[CXBUAdRewardViewController manager] openAd];
+    [[CXBUAdRewardViewController manager] openAdWithUserId:userId];
 }
 
 - (void)setupBUAdSDK {
@@ -632,23 +677,41 @@ UIInterfaceOrientationMask oMask = UIInterfaceOrientationMaskLandscape;
         return;
     }
     NSDictionary *dict = [param jsonValueDecoded];
-    if ([dict.allKeys containsObject:@"token"]) {
-        [CXClientModel instance].token = dict[@"token"];
-    }
     if ([dict.allKeys containsObject:@"applePayType"]) {
         [CXClientModel instance].applePayType = dict[@"applePayType"];
     }
-    if ([dict.allKeys containsObject:@"username"]) {
-        [CXClientModel instance].username = dict[@"username"];
+    NSMutableDictionary *paramDict = [[NSMutableDictionary alloc] init];
+    NSString *url = @"/index.php/Api/Member/login";
+    if ([dict[@"platform"] integerValue] == 3) { // 微信登录
+        [paramDict setValue:dict[@"username"] forKey:@"wx_id"];
+        url = @"/index.php/Api/Member/wx_login";
+    } else {
+        [paramDict setValue:dict[@"username"] forKey:@"username"];
     }
-    if ([dict.allKeys containsObject:@"nickname"]) {
-        [CXClientModel instance].nickname = dict[@"nickname"];
-    }
-    if ([dict.allKeys containsObject:@"avatar"]) {
-        [CXClientModel instance].avatar = dict[@"avatar"];
-    }
+    [paramDict setValue:dict[@"nickname"] forKey:@"nickname"];
+    [paramDict setValue:dict[@"avatar"] forKey:@"avatar"];
+    [paramDict setValue:[CXClientModel instance].registration_id forKey:@"registration_id"];
     
-    [CXConfigObject enterOnline];
+    [CXHTTPRequest POSTWithURL:url parameters:paramDict callback:^(id responseObject, BOOL isCache, NSError *error) {
+        if (!error) {
+            CXUserModel *user = [CXUserModel modelWithJSON:responseObject[@"data"][@"info"]];
+            [CXClientModel instance].token = user.token;
+            [CXClientModel instance].userId = user.user_id;
+            [CXClientModel instance].username = user.username;
+            [CXClientModel instance].nickname = user.nickname;
+            [CXClientModel instance].avatar = user.avatar;
+            [CXClientModel instance].sex = user.sex;
+            
+            [[CXClientModel instance].easemob login:user.user_id];
+            
+            [AppController setOrientation:@"V"];
+            CXBaseTabBarViewController *tabbarVC = [CXBaseTabBarViewController new];
+            tabbarVC.modalPresentationStyle = UIModalPresentationFullScreen;
+            [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:tabbarVC animated:YES completion:nil];
+        } else {
+            [CXTools showAlertWithMessage:responseObject[@"desc"]];
+        }
+    }];
 }
 
 + (void)joinRoom:(NSString *)roomId {

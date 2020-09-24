@@ -92,7 +92,7 @@
                         <constraint firstAttribute="height" constant="38" id="pct-I3-BeS"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                    <state key="normal" title="充值¥00.00">
+                    <state key="normal" title="充值">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>

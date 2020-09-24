@@ -103,9 +103,7 @@ load('game/ui/layer/cashcow/CashCowLayer', function () {
 
         onShakeClick: function () {
             this.shakeBtn.setTouchEnabled(false)
-            if (cc.sys.OS_ANDROID === cc.sys.os) {
-                appInstance.nativeApi().showRewardVideo()
-            }
+            appInstance.nativeApi().showRewardVideo()
         },
         onRewardVideoCallback: function (msg) {
             if (msg == "0") {

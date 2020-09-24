@@ -56,18 +56,6 @@
                         android:textSize="19sp"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/tv_online_state"
-                        android:layout_width="38dp"
-                        android:layout_height="15dp"
-                        android:layout_marginLeft="9dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_toRightOf="@id/nick_tv"
-                        android:background="@drawable/bg_green_radius_21"
-                        android:gravity="center"
-                        android:text="在线"
-                        android:textColor="#ffffffff"
-                        android:textSize="9sp" />
 
                     <TextView
                         android:id="@+id/tv_state"
@@ -75,7 +63,7 @@
                         android:layout_height="15dp"
                         android:layout_marginLeft="9dp"
                         android:layout_marginTop="5dp"
-                        android:layout_toRightOf="@id/tv_online_state"
+                        android:layout_toRightOf="@id/nick_tv"
                         android:background="@drawable/bg_violet_radius_21"
                         android:gravity="center"
                         android:text="相亲中"
@@ -130,7 +118,7 @@
                         android:id="@+id/view_line"
                         android:layout_width="match_parent"
                         android:layout_height="0.5dp"
-                        android:layout_below="@id/rl_sex"
+                        android:layout_below="@id/uid_tv"
                         android:layout_marginLeft="15dp"
                         android:layout_marginTop="23dp"
                         android:layout_marginRight="15dp"

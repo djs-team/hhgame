@@ -6,15 +6,10 @@ import android.arch.lifecycle.ViewModel;
 import com.deepsea.mua.core.network.resource.Resource;
 import com.deepsea.mua.mine.repository.ProfileRepository;
 import com.deepsea.mua.stub.data.BaseApiResult;
-import com.deepsea.mua.stub.entity.ApplyHost;
 import com.deepsea.mua.stub.entity.AreaVo;
 import com.deepsea.mua.stub.entity.AuditBean;
-import com.deepsea.mua.stub.entity.AuthenticationBean;
 import com.deepsea.mua.stub.entity.BlockVo;
-import com.deepsea.mua.stub.entity.ExchangeMdDetailListBean;
 import com.deepsea.mua.stub.entity.GuardInfoBean;
-import com.deepsea.mua.stub.entity.GuardResultBean;
-import com.deepsea.mua.stub.entity.HaiPayBean;
 import com.deepsea.mua.stub.entity.InitInviteBean;
 import com.deepsea.mua.stub.entity.JumpRoomVo;
 import com.deepsea.mua.stub.entity.LookGuardUserVo;
@@ -76,9 +71,7 @@ public class ProfileViewModel extends ViewModel {
         return repository.bindReferrer(referrer_code);
     }
 
-    public LiveData<Resource<ApplyHost>> init_apply() {
-        return repository.init_apply();
-    }
+
 
     /**
      * 随机跳转前六直播间接口

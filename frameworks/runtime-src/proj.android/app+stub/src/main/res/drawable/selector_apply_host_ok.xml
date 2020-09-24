@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@drawable/bg_apply_host_ok_enable_btn" android:state_enabled="true" />
-    <item android:drawable="@drawable/bg_apply_host_ok_unenable_btn" android:state_enabled="false" />
-    <item android:drawable="@drawable/bg_apply_host_ok_enable_btn" />
-
-</selector>

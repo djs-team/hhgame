@@ -4,11 +4,9 @@ import android.content.Context;
 import android.graphics.Color;
 
 import com.deepsea.mua.mine.R;
-import com.deepsea.mua.mine.databinding.ItemApplyHostBinding;
 import com.deepsea.mua.mine.databinding.ItemTaskBinding;
 import com.deepsea.mua.stub.adapter.BaseBindingAdapter;
 import com.deepsea.mua.stub.adapter.BindingViewHolder;
-import com.deepsea.mua.stub.entity.ApplyHost;
 import com.deepsea.mua.stub.entity.TaskBean;
 import com.deepsea.mua.stub.utils.ViewBindUtils;
 

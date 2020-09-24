@@ -73,12 +73,18 @@ public class BindWechatActivity extends BaseActivity<ActivityBindWxBinding> {
             ViewBindUtils.setVisible(mBinding.tvLoginType, true);
             ViewBindUtils.setVisible(mBinding.tvPhone, true);
             ViewBindUtils.setVisible(mBinding.tvBindphone, false);
+            ViewBindUtils.setVisible(mBinding.ivBindwx, true);
+            ViewBindUtils.setVisible(mBinding.ivBindwxLine, true);
+
             isBindWx();
         } else {
             ViewBindUtils.setVisible(mBinding.rlBindWx, false);
             ViewBindUtils.setVisible(mBinding.tvBindwxDesc, false);
             ViewBindUtils.setVisible(mBinding.tvLoginType, false);
             ViewBindUtils.setVisible(mBinding.tvPhone, false);
+            ViewBindUtils.setVisible(mBinding.ivBindwx, false);
+            ViewBindUtils.setVisible(mBinding.ivBindwxLine, false);
+
             String phone = UserUtils.getUser().getUsername();
             ViewBindUtils.setVisible(mBinding.tvBindphone, TextUtils.isEmpty(phone));
         }

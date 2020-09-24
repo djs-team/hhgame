@@ -122,13 +122,7 @@ public class PageJumpUtils {
                 .navigation();
     }
 
-    /**
-     * 申请主持
-     */
-    public static void jumpToApplyHost() {
-        ArouterUtils.build(ArouterConst.PAGE_ME_MINE_APPLYHOST)
-                .navigation();
-    }
+
 
 
     /**

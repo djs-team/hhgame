@@ -8,20 +8,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
-import android.graphics.Point;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
 import android.util.Log;
-
 import org.cocos2dx.javascript.ui.splash.activity.SplashActivity;
 import org.cocos2dx.lib.Cocos2dxActivity;
 import org.cocos2dx.lib.Cocos2dxHelper;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import com.deepsea.mua.advertisement.AdManage;
 import com.deepsea.mua.core.alipay.Alipay;
 import com.deepsea.mua.core.alipay.PayResult;
@@ -34,18 +31,12 @@ import com.deepsea.mua.core.utils.ToastUtils;
 import com.deepsea.mua.core.view.floatwindow.permission.PermissionUtil;
 import com.deepsea.mua.core.wxpay.WxPay;
 import com.deepsea.mua.core.wxpay.WxpayBroadcast;
-import com.deepsea.mua.stub.api.RetrofitApi;
-import com.deepsea.mua.stub.data.User;
+import com.deepsea.mua.stub.entity.ChessLoginParam;
 import com.deepsea.mua.stub.entity.QPWxOrder;
-import com.deepsea.mua.stub.entity.WxOrder;
 import com.deepsea.mua.stub.jpush.JpushUtils;
-import com.deepsea.mua.stub.mvp.NewSubscriberCallBack;
-import com.deepsea.mua.stub.network.HttpHelper;
 import com.deepsea.mua.stub.permission.PermissionCallback;
 import com.deepsea.mua.stub.utils.BitmapUtils;
-import com.deepsea.mua.stub.utils.Constant;
 import com.deepsea.mua.stub.utils.SharedPrefrencesUtil;
-import com.deepsea.mua.stub.utils.UserUtils;
 import com.fm.openinstall.OpenInstall;
 import com.fm.openinstall.listener.AppInstallAdapter;
 import com.fm.openinstall.listener.AppWakeUpAdapter;
@@ -365,11 +356,33 @@ public class AppActivity extends Cocos2dxActivity {
      * jpush 极光一键登录
      */
     public static void login(String type) {
-        boolean hasPermission = PermissionUtil.hasSelfPermission(ccActivity, "android.permission.READ_PHONE_STATE");
-        if (!hasPermission) {
-            ActivityCompat.requestPermissions(ccActivity, new String[]{Manifest.permission.READ_PHONE_STATE}, 1);
-            return;
+        String[] permission = new String[]{Manifest.permission.READ_PHONE_STATE};
+        boolean hasPermission = PermissionUtil.hasSelfPermission(ccActivity, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        if (hasPermission) {
+            operateLogin(type);
+        } else {
+            com.deepsea.mua.stub.permission.PermissionUtil.request(ccActivity, permission, new PermissionCallback() {
+                @Override
+                public void onPermissionGranted() {
+                    operateLogin(type);
+                }
+
+                @Override
+                public void shouldShowRational(String[] rationalPermissons, boolean before) {
+
+                }
+
+                @Override
+                public void onPermissonReject(String[] rejectPermissons) {
+
+                }
+            });
         }
+
+
+    }
+
+    private static void operateLogin(String type) {
         if (type.equals("wx")) {
             loginWx();
         } else if (type.equals("jpush")) {
@@ -469,11 +482,32 @@ public class AppActivity extends Cocos2dxActivity {
      * rssi wifi强度
      */
     public static void getPhoneInfo(String type) {
-        boolean hasPermission = PermissionUtil.hasSelfPermission(ccActivity, "android.permission.READ_PHONE_STATE");
-        if (!hasPermission) {
-            ActivityCompat.requestPermissions(ccActivity, new String[]{Manifest.permission.READ_PHONE_STATE}, 1);
-            return;
+
+        String[] permission = new String[]{Manifest.permission.READ_PHONE_STATE};
+        boolean hasPermission = PermissionUtil.hasSelfPermission(ccActivity, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        if (hasPermission) {
+            operateGetphoneInfo(type);
+        } else {
+            com.deepsea.mua.stub.permission.PermissionUtil.request(ccActivity, permission, new PermissionCallback() {
+                @Override
+                public void onPermissionGranted() {
+                    operateGetphoneInfo(type);
+                }
+
+                @Override
+                public void shouldShowRational(String[] rationalPermissons, boolean before) {
+
+                }
+
+                @Override
+                public void onPermissonReject(String[] rejectPermissons) {
+
+                }
+            });
         }
+    }
+
+    private static void operateGetphoneInfo(String type) {
         String info = "";
         switch (type) {
             case "imei":
@@ -570,18 +604,6 @@ public class AppActivity extends Cocos2dxActivity {
 
     }
 
-    /**
-     * 用户信息
-     * 如果为空则删除用户信息,定义空为“”
-     */
-    public static void operateUserInfo(String data) {
-        if (TextUtils.isEmpty(data)) {
-            UserUtils.clearUser();
-        } else {
-            User user = JsonConverter.fromJson(data, User.class);
-            UserUtils.saveUser(user);
-        }
-    }
 
     /**
      * 生成二维码
@@ -693,8 +715,9 @@ public class AppActivity extends Cocos2dxActivity {
      */
     public static void jumpToBlindDate(String userInfo) {
         Log.d("=====jumpToBlindDate", userInfo);
-        operateUserInfo(userInfo);
+        ChessLoginParam param = JsonConverter.fromJson(userInfo, ChessLoginParam.class);
         Intent intent = new Intent(ccActivity, SplashActivity.class);
+        intent.putExtra("chessLoginParam", param);
         ccActivity.startActivity(intent);
 
     }

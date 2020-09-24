@@ -40,8 +40,8 @@ load('game/public/HttpGame', function () {
         },
 
         httpLoginBack: function (msg) {
+            cc.log('=========httpLoginBack================'+JSON.stringify(msg))
             if (msg.status !== 0) {
-                cc.log('=========httpLoginBack============error================'+JSON.stringify(msg))
                 return
             }
             let saveKey = [
@@ -53,7 +53,6 @@ load('game/public/HttpGame', function () {
                 'lastChannel',
                 'fistLogin'
             ]
-
             appInstance.dataManager().getUserData().saveMsg(msg, saveKey)
 
             let msgCommon = {}

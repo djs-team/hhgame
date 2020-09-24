@@ -14,7 +14,6 @@ import com.deepsea.mua.faceliveness.helper.AuditHelper;
 import com.deepsea.mua.faceliveness.listener.RPAuditListener;
 import com.deepsea.mua.mine.R;
 import com.deepsea.mua.mine.adapter.TaskAdapter;
-import com.deepsea.mua.mine.databinding.ActivityApplyHostBinding;
 import com.deepsea.mua.mine.databinding.ActivityTaskCenterBinding;
 import com.deepsea.mua.mine.viewmodel.ProfileViewModel;
 import com.deepsea.mua.stub.base.BaseActivity;

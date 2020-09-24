@@ -103,7 +103,7 @@ public class BindPhoneActivity extends BaseActivity<ActivitySettingBindPhoneBind
                 }
             }
         });
-        mViewModel.initSendCaptchaTv(mBinding.etPhonePcode);
+        mViewModel.initSendCaptchaTv(mBinding.tvSendCode);
         mBinding.etPhonePcode.setFocusable(true);
         mBinding.etPhonePcode.setFocusableInTouchMode(true);
         mBinding.etPhonePcode.requestFocus();

@@ -8,7 +8,6 @@ import com.deepsea.mua.stub.entity.BlockVo;
 import com.deepsea.mua.stub.entity.CheckBlackVo;
 import com.deepsea.mua.stub.entity.LookGuardUserVo;
 import com.deepsea.mua.stub.entity.ApplyFriendListBean;
-import com.deepsea.mua.stub.entity.ApplyHost;
 import com.deepsea.mua.stub.entity.AreaVo;
 import com.deepsea.mua.stub.entity.AttenDynamicBean;
 import com.deepsea.mua.stub.entity.AuditBean;
@@ -132,6 +131,35 @@ public interface RetrofitApi {
             @Field("registration_id") String registration_id);
 
     /**
+     * 麻将- 登录
+     *
+     * @param username
+     * @return
+     */
+    @FormUrlEncoded
+    @POST("index.php/Api/Member/login")
+    LiveData<ApiResponse<BaseApiResult<UserBean>>> login(
+            @Field("username") String username,
+            @Field("nickname") String nickname,
+            @Field("avatar") String avatar
+    );
+
+    /**
+     * 麻将- 微信登录
+     *
+     * @param wx_id
+     * @return
+     */
+    @FormUrlEncoded
+    @POST("index.php/Api/Member/wx_login")
+    LiveData<ApiResponse<BaseApiResult<UserBean>>> wxLogin(
+            @Field("wx_id") String wx_id,
+            @Field("registration_id") String registration_id,
+            @Field("nickname") String nickname,
+            @Field("avatar") String avatar
+    );
+
+    /**
      * 一键登录
      *
      * @param login_token token
@@ -161,6 +189,7 @@ public interface RetrofitApi {
                                                              @Query("locality") String locality);
 
     /**
+     * /**
      * 获取验证码
      *
      * @param phone
@@ -879,13 +908,7 @@ public interface RetrofitApi {
     @POST("index.php/Api/AliPay/redpacket_initExchange")
     LiveData<ApiResponse<BaseApiResult<WalletBean>>> redpacketInitExchange();
 
-    /**
-     * 初始化申请主持页面
-     *
-     * @return
-     */
-    @POST("index.php/Api/Languageroom/init_apply")
-    LiveData<ApiResponse<BaseApiResult<ApplyHost>>> init_apply();
+
 
     /**
      * 兑换M豆
@@ -1627,6 +1650,16 @@ public interface RetrofitApi {
     @FormUrlEncoded
     @POST("index.php/api/user/realuser")
     Observable<ResponseModel<String>> realuser(@Field("name") String name, @Field("idcard") String idcard);
+
+
+    /**
+     * 修改性别
+     *
+     * @return
+     */
+    @FormUrlEncoded
+    @POST("index.php/Api/Languageroom/setSex")
+    Observable<ResponseModel<BaseApiResult>> sexEdit(@Field("sex") String sex);
 
     /**
      * 用户在线状态更新

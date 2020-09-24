@@ -406,9 +406,10 @@ load('public/suport/NativeApi', function () {
             try {
                 if (cc.sys.OS_ANDROID === cc.sys.os) {
                     let userInfo = {};
+                    userInfo.username = appInstance.dataManager().getUserData().account
                     userInfo.nickname = appInstance.dataManager().getUserData().pname
-                    userInfo.uid = appInstance.dataManager().getUserData().pid
-                    userInfo.token = appInstance.dataManager().getUserData().key
+                    userInfo.avatar = appInstance.dataManager().getUserData().sdkphotourl
+                    userInfo.platform = appInstance.dataManager().getUserData().platform
                     jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'jumpToBlindDate', '(Ljava/lang/String;)V', JSON.stringify(userInfo))
                 } else if (cc.sys.OS_IOS === cc.sys.os) {
 

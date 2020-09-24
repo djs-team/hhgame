@@ -4,9 +4,11 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 
 import com.deepsea.mua.core.dialog.BaseDialog;
+import com.deepsea.mua.core.utils.ToastUtils;
 import com.deepsea.mua.stub.R;
 import com.deepsea.mua.stub.api.RetrofitApi;
 import com.deepsea.mua.stub.controller.RoomController;
+import com.deepsea.mua.stub.data.BaseApiResult;
 import com.deepsea.mua.stub.databinding.DialogEditSexBinding;
 import com.deepsea.mua.stub.databinding.DialogOpenVipBinding;
 import com.deepsea.mua.stub.entity.HeartBeatBean;
@@ -88,18 +90,18 @@ public class SexEditDialog extends BaseDialog<DialogEditSexBinding> {
 
     //请求接口修改性别
     private void fetchSexEdit() {
-        HttpHelper.instance().getApi(RetrofitApi.class).addMember()
+        HttpHelper.instance().getApi(RetrofitApi.class).sexEdit(defaultSextFlag)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new NewSubscriberCallBack<HeartBeatBean>() {
+                .subscribe(new NewSubscriberCallBack<BaseApiResult>() {
                     @Override
                     protected void onError(int errorCode, String errorMsg) {
-
+                        ToastUtils.showToast(errorMsg);
                     }
 
                     @Override
-                    protected void onSuccess(HeartBeatBean response) {
-
+                    protected void onSuccess(BaseApiResult result) {
+ToastUtils.showToast("");
                     }
                 });
     }

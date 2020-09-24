@@ -6,6 +6,7 @@ import android.arch.lifecycle.ViewModel;
 import com.deepsea.mua.core.network.resource.Resource;
 import com.deepsea.mua.stub.client.hyphenate.HyphenateClient;
 import com.deepsea.mua.stub.data.User;
+import com.deepsea.mua.stub.entity.ChessLoginParam;
 
 import org.cocos2dx.javascript.repository.SplashRepository;
 
@@ -25,6 +26,13 @@ public class SplashViewModel extends ViewModel {
 
     public LiveData<Resource<User>> autologin() {
         return mRepository.autologin();
+    }
+
+    //platform 2手机 3微信
+    public LiveData<Resource<User>> login(ChessLoginParam param) {
+
+            return mRepository.login(param);
+
     }
 
     /**

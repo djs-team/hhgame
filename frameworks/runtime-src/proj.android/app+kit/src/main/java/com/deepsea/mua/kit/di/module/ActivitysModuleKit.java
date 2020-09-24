@@ -11,7 +11,6 @@ import com.deepsea.mua.app.im.mua.SystemMsgActivity;
 import com.deepsea.mua.app.im.ui.ChatActivity;
 import com.deepsea.mua.app.im.ui.MessageMainFragment;
 import com.deepsea.mua.kit.di.scope.ActivityScope;
-import com.deepsea.mua.mine.activity.ApplyHostActivity;
 import com.deepsea.mua.mine.activity.AssistActivity;
 import com.deepsea.mua.mine.activity.BindPhoneActivity;
 import com.deepsea.mua.mine.activity.BindWechatActivity;
@@ -342,9 +341,6 @@ public abstract class ActivitysModuleKit {
     @ContributesAndroidInjector
     abstract RoomCreateNewActivity contributeRoomCreateNewActivity();
 
-    @ActivityScope
-    @ContributesAndroidInjector
-    abstract ApplyHostActivity contributeApplyHostActivity();
 
     @ActivityScope
     @ContributesAndroidInjector

@@ -59,7 +59,6 @@
         <activity android:name="com.deepsea.mua.mine.activity.BlueRoseExchangeActivity" />
         <activity android:name="com.deepsea.mua.mine.activity.BindWechatActivity" />
         <activity android:name="com.deepsea.mua.mine.activity.ExchangeBlueRoseExchangeActivity" />
-        <activity android:name="com.deepsea.mua.mine.activity.ApplyHostActivity" />
         <activity android:name="com.deepsea.mua.mine.activity.GuardActivity" />
         <activity android:name="com.deepsea.mua.mine.activity.GuardRuleActivity" />
         <activity android:name="com.deepsea.mua.mine.activity.TaskCenterActivity" />

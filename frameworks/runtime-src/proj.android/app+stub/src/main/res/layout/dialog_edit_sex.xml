@@ -7,7 +7,7 @@
     </data>
 
     <android.support.constraint.ConstraintLayout
-        android:layout_width="match_parent"
+        android:layout_width="206dp"
         android:layout_height="wrap_content"
         android:background="@drawable/white_radius_12dp"
         android:paddingBottom="10dp">
@@ -26,7 +26,7 @@
 
         <ImageView
             android:id="@+id/iv_man"
-            android:layout_width="45dp"
+            android:layout_width="48dp"
             android:layout_height="55dp"
             android:layout_marginLeft="25dp"
             android:layout_marginTop="23dp"
@@ -36,7 +36,7 @@
 
         <ImageView
             android:id="@+id/iv_woman"
-            android:layout_width="45dp"
+            android:layout_width="48dp"
             android:layout_height="55dp"
             android:layout_marginTop="23dp"
             android:layout_marginRight="25dp"

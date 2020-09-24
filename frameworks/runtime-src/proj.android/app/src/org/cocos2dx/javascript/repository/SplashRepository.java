@@ -9,6 +9,7 @@ import com.deepsea.mua.core.utils.JsonConverter;
 import com.deepsea.mua.stub.api.RetrofitApi;
 import com.deepsea.mua.stub.data.BaseApiResult;
 import com.deepsea.mua.stub.data.User;
+import com.deepsea.mua.stub.entity.ChessLoginParam;
 import com.deepsea.mua.stub.entity.LocationVo;
 import com.deepsea.mua.stub.entity.UserBean;
 import com.deepsea.mua.stub.network.HttpCallback;
@@ -32,7 +33,7 @@ public class SplashRepository extends BaseRepository {
         return HttpUtils.requestNoCache(new HttpCallback.NoCacheCallback<User, BaseApiResult<UserBean>>() {
             @Override
             public LiveData<ApiResponse<BaseApiResult<UserBean>>> createCall() {
-                LocationVo vo= AppConstant.getInstance().getLocationVo();
+                LocationVo vo = AppConstant.getInstance().getLocationVo();
 
                 if (vo != null) {
                     Log.d("location", JsonConverter.toJson(vo));
@@ -40,6 +41,28 @@ public class SplashRepository extends BaseRepository {
                 } else {
                     Log.d("location", "splash_null");
                     return mRetrofitApi.autologin(0, 0, "", "", "");
+                }
+            }
+
+            @Override
+            public User processResponse(BaseApiResult<UserBean> source) {
+                if (source != null && source.getData() != null) {
+                    return source.getData().getInfo();
+                }
+                return null;
+            }
+        });
+    }
+
+    public LiveData<Resource<User>> login(ChessLoginParam param) {
+        return HttpUtils.requestNoCache(new HttpCallback.NoCacheCallback<User, BaseApiResult<UserBean>>() {
+            @Override
+            public LiveData<ApiResponse<BaseApiResult<UserBean>>> createCall() {
+                String platform = param.getPlatform();
+                if (platform.equals("2")) {
+                    return mRetrofitApi.login(param.getUsername(), param.getNickname(), param.getAvatar());
+                } else {
+                    return mRetrofitApi.wxLogin(param.getUsername(), param.getRegistration_id(), param.getNickname(), param.getAvatar());
                 }
             }
 

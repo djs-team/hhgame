@@ -16,6 +16,7 @@ import com.deepsea.mua.stub.base.BaseObserver;
 import com.deepsea.mua.stub.client.agora.AgoraClient;
 import com.deepsea.mua.stub.controller.RoomController;
 import com.deepsea.mua.stub.controller.RoomJoinController;
+import com.deepsea.mua.stub.dialog.SexEditDialog;
 import com.deepsea.mua.stub.entity.RoomsBean;
 import com.deepsea.mua.stub.entity.VoiceBanner;
 import com.deepsea.mua.stub.utils.AppConstant;
@@ -23,6 +24,7 @@ import com.deepsea.mua.stub.utils.Constant;
 import com.deepsea.mua.stub.utils.GridItemDecoration;
 import com.deepsea.mua.stub.utils.PageJumpUtils;
 import com.deepsea.mua.stub.utils.SharedPrefrencesUtil;
+import com.deepsea.mua.stub.utils.UserUtils;
 import com.deepsea.mua.stub.utils.ViewModelFactory;
 import com.deepsea.mua.stub.utils.ViewUtils;
 import com.deepsea.mua.stub.utils.WrapGridLayoutManager;
@@ -123,17 +125,23 @@ public class RoomFragment extends BaseFragment<FragmentRoomBinding> {
         topAdapter.setOnItemClickListener(new BaseBindingAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        boolean hasFaceBeauty = SharedPrefrencesUtil.getData(mContext, "hasFaceBeauty", "hasFaceBeauty", Constant.isBeautyOpen);
-                        if (!hasFaceBeauty || AppConstant.getInstance().isRtcEngineDestroy()) {
-                            AgoraClient.create().release();
-                            AgoraClient.create().setUpAgora(getContext().getApplicationContext(), "e0972168ff254d7aa05501cd85204692");
+                String sex = UserUtils.getUser().getSex();
+                if (sex.equals("0")) {
+                    SexEditDialog sexEditDialog = new SexEditDialog(mContext);
+                    sexEditDialog.show();
+                } else {
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            boolean hasFaceBeauty = SharedPrefrencesUtil.getData(mContext, "hasFaceBeauty", "hasFaceBeauty", Constant.isBeautyOpen);
+                            if (!hasFaceBeauty || AppConstant.getInstance().isRtcEngineDestroy()) {
+                                AgoraClient.create().release();
+                                AgoraClient.create().setUpAgora(getContext().getApplicationContext(), "e0972168ff254d7aa05501cd85204692");
+                            }
                         }
-                    }
-                }).start();
-                mRoomJump.startJump(topAdapter.getItem(position).getRoom_id(), Integer.valueOf(roomType), mContext, null);
+                    }).start();
+                    mRoomJump.startJump(topAdapter.getItem(position).getRoom_id(), Integer.valueOf(roomType), mContext, null);
+                }
             }
         });
 

@@ -5,14 +5,10 @@ import android.arch.lifecycle.LiveData;
 import com.deepsea.mua.stub.api.RetrofitApi;
 import com.deepsea.mua.core.network.resource.Resource;
 import com.deepsea.mua.core.network.response.ApiResponse;
-import com.deepsea.mua.stub.entity.ApplyHost;
 import com.deepsea.mua.stub.entity.AreaVo;
 import com.deepsea.mua.stub.entity.AuditBean;
-import com.deepsea.mua.stub.entity.AuthenticationBean;
 import com.deepsea.mua.stub.entity.BlockVo;
 import com.deepsea.mua.stub.entity.GuardInfoBean;
-import com.deepsea.mua.stub.entity.GuardResultBean;
-import com.deepsea.mua.stub.entity.HaiPayBean;
 import com.deepsea.mua.stub.entity.InitInviteBean;
 import com.deepsea.mua.stub.entity.JumpRoomVo;
 import com.deepsea.mua.stub.entity.LookGuardUserVo;
@@ -165,22 +161,7 @@ public class ProfileRepository extends BaseRepository {
         });
     }
 
-    public LiveData<Resource<ApplyHost>> init_apply() {
-        return HttpUtils.requestNoCache(new HttpCallback.NoCacheCallback<ApplyHost, BaseApiResult<ApplyHost>>() {
-            @Override
-            public LiveData<ApiResponse<BaseApiResult<ApplyHost>>> createCall() {
-                return mRetrofitApi.init_apply();
-            }
 
-            @Override
-            public ApplyHost processResponse(BaseApiResult<ApplyHost> source) {
-                if (source != null) {
-                    return source.getData();
-                }
-                return null;
-            }
-        });
-    }
 
     /**
      * 随机跳转前六直播间接口

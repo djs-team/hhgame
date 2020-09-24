@@ -343,6 +343,7 @@ public class MineFragment extends BaseFragment<FragmentMineBinding> {
         //sex
         SexResUtils.setSexImgInFindPage(mBinding.rlSex, mBinding.sexIv, result.getUser_info().getSex());
         ViewBindUtils.setText(mBinding.ageTv, String.valueOf(result.getUser_info().getAge()));
+        ViewBindUtils.setVisible(mBinding.ageTv, result.getUser_info().getAge() != 0);
         //city
         if (!TextUtils.isEmpty(result.getUser_info().getCity())) {
             mBinding.cityTv.setText(result.getUser_info().getCity());

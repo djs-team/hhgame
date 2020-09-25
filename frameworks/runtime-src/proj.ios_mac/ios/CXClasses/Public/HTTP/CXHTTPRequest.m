@@ -8,8 +8,8 @@
 #import "CXHTTPRequest.h"
 #import "FuncUtiles.h"
 
-#define DevelopSever 1
-#define TestSever    0
+#define DevelopSever 0
+#define TestSever    1
 #define ProductSever 0
 
 #if DevelopSever

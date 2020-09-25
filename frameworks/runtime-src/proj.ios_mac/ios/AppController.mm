@@ -459,9 +459,49 @@ static AppDelegate s_sharedApplication;
 #pragma mark - ================ QRCode ===================
 /// 生成二维码
 /// @param codeString 二维码字符串
-+ (UIImage *_Nonnull)createQRCodeImageWithString:(nonnull NSString *)codeString {
-    UIImage *tempImage = [WSLNativeScanTool createQRCodeImageWithString:codeString andSize:CGSizeMake(200, 200) andBackColor:[UIColor whiteColor] andFrontColor:[UIColor orangeColor] andCenterImage:nil];
++ (void)createQRCodeImageWithString:(nonnull NSString *)codeString method:(NSString *_Nonnull)method {
+    UIImage *tempImage = [WSLNativeScanTool createQRCodeImageWithString:codeString andSize:CGSizeMake(200, 200) andBackColor:[UIColor whiteColor] andFrontColor:[UIColor blackColor] andCenterImage:nil];
+
+    //图片保存路径
+    //这里将图片放在沙盒的documents/image文件夹中
+    NSString *documentsPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
+    NSString *imgPath = [documentsPath stringByAppendingPathComponent:@"image"];
+
+    //文件管理器
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    //生成唯一字符串
+    NSString *uuid = [[NSUUID UUID]UUIDString];
+    //生成文件名
+    NSString *fileName = [NSString stringWithFormat:@"%@.png",uuid];
+
+    //把刚刚由图片转成的data对象拷贝至沙盒中 并保存为xxxxx-xxxx-xxx...xxx.png
+    /******保存之前最好先清空下，不然占用磁盘越来越大********/
+    [fileManager removeItemAtPath:imgPath error:nil];
+    /************************************************/
+
+    [fileManager createDirectoryAtPath:imgPath withIntermediateDirectories:YES attributes:nil error:nil];
+    NSData *data = UIImageJPEGRepresentation(tempImage, 1);
+    [fileManager createFileAtPath:[imgPath stringByAppendingPathComponent:fileName] contents:data attributes:nil];
+
+    //得到选择后沙盒中图片的完整路径
+    NSString *filePath = [[NSString alloc]initWithFormat:@"%@",[imgPath stringByAppendingPathComponent:fileName]];
+
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [AppController dispatchCustomEventWithMethod:method param:filePath];
+    });
+    
+//
+//    UIGraphicsBeginImageContext(tempImage.size);
+//    //  绘制二维码图片
+//    [tempImage drawInRect:CGRectMake(0, 0, tempImage.size.width, tempImage.size.height)];
+//    //  从图片上下文中取出图片
+//    tempImage  = UIGraphicsGetImageFromCurrentImageContext();
+//    //  关闭图片上下文
+//    UIGraphicsEndImageContext();
+//
+//    NSString *identifier = @"09998B56-1729-48B6-9239-BE76028A69F1/L0/001";
 //    NSMutableArray *imageIds = [NSMutableArray array];
+//    [imageIds addObject:identifier];
 //    [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
 //        //写入图片到相册
 //        PHAssetChangeRequest *req = [PHAssetChangeRequest creationRequestForAssetFromImage:tempImage];
@@ -469,19 +509,24 @@ static AppDelegate s_sharedApplication;
 //        [imageIds addObject:req.placeholderForCreatedAsset.localIdentifier];
 //    } completionHandler:^(BOOL success, NSError * _Nullable error) {
 //        NSLog(@"success = %d, error = %@", success, error);
-//        if (success)
-//        {
-//            //成功后取相册中的图片对象
+//        if (success) {
+            //成功后取相册中的图片对象
 //            __block PHAsset *imageAsset = nil;
 //            PHFetchResult *result = [PHAsset fetchAssetsWithLocalIdentifiers:imageIds options:nil];
 //            [result enumerateObjectsUsingBlock:^(PHAsset * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
 //                imageAsset = obj;
 //                *stop = YES;
-//
 //            }];
 //
-//            if (imageAsset)
-//            {
+//            if (imageAsset) {
+//
+//                NSArray *resources = [PHAssetResource assetResourcesForAsset:imageAsset];
+//                PHAssetResource *first = resources.firstObject;
+//                if (first) {
+//
+//                }
+                
+
 //                //加载图片数据
 //                [[PHImageManager defaultManager] requestImageDataForAsset:imageAsset
 //                  options:nil
@@ -492,21 +537,6 @@ static AppDelegate s_sharedApplication;
 //            }
 //        }
 //    }];
-    
-    
-//    //  绘制二维码图片
-//    [tempImage drawInRect:CGRectMake(0, 0, 200, 200)];
-//
-//    //  从图片上下文中取出图片
-//    tempImage = UIGraphicsGetImageFromCurrentImageContext();
-//
-//    //  关闭图片上下文
-//    UIGraphicsEndImageContext();
-//    //保存图片到相册
-//    UIImageWriteToSavedPhotosAlbum(tempImage, self, @selector(image:didFinishSavingWithError:contextInfo:), (__bridge void *)self);
-//    UIImageWriteToSavedPhotosAlbum(tempImage, nil, nil, NULL);
-    
-    return tempImage;
 }
 
 #pragma mark - ================ 广告 ===================
@@ -745,6 +775,7 @@ UIInterfaceOrientationMask oMask = UIInterfaceOrientationMaskLandscape;
 
 + (void)logout {
     NSLog(@"登录异常，请重新登录");
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNSNotificationCenter_CXBaseTabBarViewController_leaveOut object:nil];
 }
 
 #pragma mark -

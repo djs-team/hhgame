@@ -70,7 +70,7 @@
 #pragma mark - QRCode
 /// 生成二维码
 /// @param codeString 二维码字符串
-+ (UIImage *_Nonnull)createQRCodeImageWithString:(nonnull NSString *)codeString;
++ (void)createQRCodeImageWithString:(nonnull NSString *)codeString method:(NSString *_Nonnull)method;
 
 #pragma mark - 广告
 /// 打开激励视频

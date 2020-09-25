@@ -492,7 +492,7 @@ load('public/suport/NativeApi', function () {
                     let uid = appInstance.dataManager().getUserData().pid
                     jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'getInvitationCode', '(Ljava/lang/String;Ljava/lang/String;)V', msg, uid)
                 } else if (cc.sys.OS_IOS === cc.sys.os) {
-                    jsb.reflection.callStaticMethod('AppController', 'createQRCodeImageWithString:', msg)
+                    jsb.reflection.callStaticMethod('AppController', 'createQRCodeImageWithString:method:', msg, "inviteCodeCallback")
                 }
             } catch (e) {
                 NativeApi.HelloOC('getInvitationCode throw: ' + JSON.stringify(e))

@@ -58,8 +58,10 @@
 }
 
 + (void)JPushLoginWithMethod:(NSString *)method {
+    [MBProgressHUD showHUD];
     [CXOCJSBrigeManager manager].jpushLoginMethod = method;
     [self customUI];
+    [MBProgressHUD hideHUD];
     [JVERIFICATIONService getAuthorizationWithController:[CXTools currentViewController] completion:^(NSDictionary *result) {
         if ([result.allKeys containsObject:@"loginToken"]) {
             NSString *token = result[@"loginToken"];

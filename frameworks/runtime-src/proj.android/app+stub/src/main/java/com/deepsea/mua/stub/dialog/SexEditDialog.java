@@ -9,12 +9,14 @@ import com.deepsea.mua.stub.R;
 import com.deepsea.mua.stub.api.RetrofitApi;
 import com.deepsea.mua.stub.controller.RoomController;
 import com.deepsea.mua.stub.data.BaseApiResult;
+import com.deepsea.mua.stub.data.User;
 import com.deepsea.mua.stub.databinding.DialogEditSexBinding;
 import com.deepsea.mua.stub.databinding.DialogOpenVipBinding;
 import com.deepsea.mua.stub.entity.HeartBeatBean;
 import com.deepsea.mua.stub.mvp.NewSubscriberCallBack;
 import com.deepsea.mua.stub.network.HttpHelper;
 import com.deepsea.mua.stub.utils.AppUtils;
+import com.deepsea.mua.stub.utils.UserUtils;
 import com.deepsea.mua.stub.utils.ViewBindUtils;
 import com.deepsea.mua.stub.utils.eventbus.HeartBeatEvent;
 import com.deepsea.mua.stub.utils.eventbus.InviteDialogEvent;
@@ -101,7 +103,8 @@ public class SexEditDialog extends BaseDialog<DialogEditSexBinding> {
 
                     @Override
                     protected void onSuccess(BaseApiResult result) {
-ToastUtils.showToast("");
+                        User user = UserUtils.getUser();
+                        user.setSex(defaultSextFlag);
                     }
                 });
     }

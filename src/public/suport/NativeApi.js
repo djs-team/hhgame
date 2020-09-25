@@ -476,6 +476,17 @@ load('public/suport/NativeApi', function () {
             } catch (e) {
                 NativeApi.HelloOC('getInvitationCode throw: ' + JSON.stringify(e))
             }
+        }, //获取安装参数
+        getInstallParam: function () {
+            try {
+                if (cc.sys.OS_ANDROID === cc.sys.os) {
+                    jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'getInstallParam', '()V')
+                } else if (cc.sys.OS_IOS === cc.sys.os) {
+
+                }
+            } catch (e) {
+                NativeApi.HelloOC('getInvitationCode throw: ' + JSON.stringify(e))
+            }
         }
     })
     return NativeApi

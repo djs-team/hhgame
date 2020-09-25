@@ -251,6 +251,7 @@ public class MineFragment extends BaseFragment<FragmentMineBinding> {
         //黑名单
         subscribeClick(mBinding.blockLayout, o -> {
             startActivity(new Intent(mContext, BlockListActivity.class));
+
         });
 
 
@@ -351,8 +352,6 @@ public class MineFragment extends BaseFragment<FragmentMineBinding> {
             mBinding.cityTv.setText("");
         }
         ViewBindUtils.setVisible(mBinding.ivLocation, !TextUtils.isEmpty(result.getUser_info().getCity().trim()));
-
-
         //认证
         mBinding.authTv.setSelected(TextUtils.equals(userInfo.getAttestation(), "1"));
         mBinding.authTv.setText(TextUtils.equals(userInfo.getAttestation(), "1") ? "已认证" : "未认证");

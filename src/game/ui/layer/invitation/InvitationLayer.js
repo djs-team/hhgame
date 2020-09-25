@@ -2,7 +2,7 @@ load('game/ui/layer/invitation/InvitationLayer', function () {
     let ResConfig = include('game/config/ResConfig')
     let BaseLayer = include('public/ui/BaseLayer')
     let imgUrl = "";
-    let inviteUrl = "http://baidu.com"
+    let inviteUrl = ""
     let InvitationMdt = include('game/ui/layer/invitation/InvitationMdt')
     let invitationLayer = BaseLayer.extend({
         _className: 'invitationLayer',
@@ -79,8 +79,8 @@ load('game/ui/layer/invitation/InvitationLayer', function () {
             this.shareTaskCell.setVisible(false)
 
             this.shareTaskList.addEventListener(this.selectedItemEvent, this)
-
-
+            let myPid = appInstance.dataManager().getUserData().pid;
+            inviteUrl = 'https://test-lin.hehe555.com:85/Public/Download?installPid=' + myPid;
         },
 
         onWxShareClick: function () {

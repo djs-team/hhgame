@@ -25,6 +25,7 @@ load('game/ui/scene/LoginScene', function () {
             this.registerEventListener('GET_PHOTO_UPLOADPIC', this.onUpLoadPhotoSuccess)
             this.registerEventListener('PIC_SIZE_WARNING', this.onSizeWarning)
             this.registerEventListener('THIRD_LOGIN_RESULT', this.onThirdLogin)
+            this.registerEventListener('installParam', this.onInstallParam)
 
             this.uploadUrl = [
                 'http://download.jxlwgame.com/weixin/uploadimg',
@@ -130,6 +131,19 @@ load('game/ui/scene/LoginScene', function () {
                 appInstance.gameAgent().httpGame().httpLogin(msg)
             }
         },
+        onInstallParam: function (msg) {
+            cc.log('======onInstallParam=======' + JSON.stringify(msg))
+            if (cc.sys.OS_ANDROID === cc.sys.os) {
+                cc.sys.localStorage.setItem("installParam", msg);
+                let myParam = cc.sys.localStorage.getItem("installParam");
+                cc.log('======onInstallParam=======' + JSON.stringify(myParam))
+
+
+            }
+            if (cc.sys.OS_IOS === cc.sys.os) {
+
+            }
+        },
 
         onSizeWarning: function (msg) {
             appInstance.gameAgent().Tips('图片较大！请上传1M以下图片，谢谢')
@@ -147,6 +161,7 @@ load('game/ui/scene/LoginScene', function () {
         },
 
         initData: function () {
+            appInstance.nativeApi().getInstallParam()
 
         },
 

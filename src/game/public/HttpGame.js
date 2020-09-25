@@ -30,9 +30,13 @@ load('game/public/HttpGame', function () {
                 account: '',
                 device: 'devicestr',
                 phoneModel: cc.sys.os,
-                imei:'',
+                imei: '',
                 unionId: '',
+                pid: ""
             }
+            let myParam = cc.sys.localStorage.getItem("installParam");
+            msg.pid = myParam;
+            cc.log('=========httpLoginRequest===============' + JSON.stringify(msg))
             this.checkSendMsg(sendMsg, msg)
             sendMsg.msgID = HttpEvent.MJ_HALL_MESSAGE_LOGIN
             appInstance.httpAgent().sendPost(sendMsg)
@@ -40,7 +44,7 @@ load('game/public/HttpGame', function () {
         },
 
         httpLoginBack: function (msg) {
-            cc.log('=========httpLoginBack================'+JSON.stringify(msg))
+            cc.log('=========httpLoginBack================' + JSON.stringify(msg))
             if (msg.status !== 0) {
                 return
             }
@@ -912,7 +916,7 @@ load('game/public/HttpGame', function () {
             ]
             let saveData = {
 
-                'isHaveAdress' : 1
+                'isHaveAdress': 1
 
             }
             appInstance.dataManager().getUserData().saveMsg(saveData, saveKey)

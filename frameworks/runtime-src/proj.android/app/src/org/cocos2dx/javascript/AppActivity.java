@@ -14,11 +14,13 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
 import android.util.Log;
+
 import org.cocos2dx.javascript.ui.splash.activity.SplashActivity;
 import org.cocos2dx.lib.Cocos2dxActivity;
 import org.cocos2dx.lib.Cocos2dxHelper;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import com.deepsea.mua.advertisement.AdManage;
 import com.deepsea.mua.core.alipay.Alipay;
 import com.deepsea.mua.core.alipay.PayResult;
@@ -32,6 +34,7 @@ import com.deepsea.mua.core.view.floatwindow.permission.PermissionUtil;
 import com.deepsea.mua.core.wxpay.WxPay;
 import com.deepsea.mua.core.wxpay.WxpayBroadcast;
 import com.deepsea.mua.stub.entity.ChessLoginParam;
+import com.deepsea.mua.stub.entity.InstallParamVo;
 import com.deepsea.mua.stub.entity.QPWxOrder;
 import com.deepsea.mua.stub.jpush.JpushUtils;
 import com.deepsea.mua.stub.permission.PermissionCallback;
@@ -669,11 +672,12 @@ public class AppActivity extends Cocos2dxActivity {
      */
 
     public static void getInstallParam() {
+        Log.d("OpenInstall", "OpenInstall");
+
         //获取OpenInstall安装数
         OpenInstall.getInstall(new AppInstallAdapter() {
             @Override
             public void onInstall(AppData appData) {
-                ToastUtils.showToast(JsonConverter.toJson(appData));
                 //获取渠道数据
                 String channelCode = appData.getChannel();
                 //获取自定义数据
@@ -682,8 +686,12 @@ public class AppActivity extends Cocos2dxActivity {
                 ccActivity.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        SharedPrefrencesUtil.saveData(ccActivity, "inviteCode", "inviteCode", bindData);
-                        SharedPrefrencesUtil.saveData(ccActivity, "channelCode", "channelCode", channelCode);
+                        String pid = "";
+                        if (!TextUtils.isEmpty(bindData)) {
+                            InstallParamVo vo = JsonConverter.fromJson(bindData, InstallParamVo.class);
+                            pid = vo.getInstallPid();
+                        }
+                        ccActivity.RunJS("installParam", pid);
                     }
                 });
             }
@@ -691,7 +699,6 @@ public class AppActivity extends Cocos2dxActivity {
             @Override
             public void onInstallFinish(AppData appData, Error error) {
                 super.onInstallFinish(appData, error);
-                SharedPrefrencesUtil.saveData(ccActivity, "isFirstInstall", "isFirstInstall", false);
 
             }
         });

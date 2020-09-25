@@ -1,11 +1,13 @@
 package org.cocos2dx.javascript.ui.splash.activity;
 
 import android.Manifest;
+import android.app.Dialog;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.view.View;
 
 import com.deepsea.mua.app.im.HxHelper;
 import com.deepsea.mua.core.network.AppExecutors;
@@ -15,6 +17,7 @@ import com.deepsea.mua.stub.base.BaseActivity;
 import com.deepsea.mua.stub.base.BaseObserver;
 import com.deepsea.mua.stub.client.app.AppClient;
 import com.deepsea.mua.stub.data.User;
+import com.deepsea.mua.stub.dialog.AAlertDialog;
 import com.deepsea.mua.stub.entity.ChessLoginParam;
 import com.deepsea.mua.stub.entity.LocationVo;
 import com.deepsea.mua.stub.utils.SPUtils;
@@ -136,7 +139,20 @@ public class SplashActivity extends BaseActivity<ActivitySplashBinding> {
             @Override
             public void onError(String msg, int code) {
                 Log.d("-login----------", code + msg);
-                ToastUtils.showToast("登录失败");
+                if (code == 2002) {
+                    AAlertDialog dialog = new AAlertDialog(mContext);
+                    dialog.setTitle("提示");
+                    dialog.setMessage(msg);
+                    dialog.setButton("确定", new AAlertDialog.OnClickListener() {
+                        @Override
+                        public void onClick(View v, Dialog d) {
+                            dialog.dismiss();
+                            finish();
+                        }
+                    });
+                    dialog.show();
+                }
+                ToastUtils.showToast(msg);
             }
 
             @Override

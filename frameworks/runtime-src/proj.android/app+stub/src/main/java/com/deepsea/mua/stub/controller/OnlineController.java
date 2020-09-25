@@ -11,6 +11,7 @@ import com.deepsea.mua.stub.network.HttpHelper;
 import com.deepsea.mua.stub.utils.AppConstant;
 import com.deepsea.mua.stub.utils.AppUtils;
 import com.deepsea.mua.stub.utils.SharedPrefrencesUtil;
+import com.deepsea.mua.stub.utils.UserUtils;
 import com.deepsea.mua.stub.utils.eventbus.HeartBeatEvent;
 import com.deepsea.mua.stub.utils.eventbus.InviteDialogEvent;
 import com.deepsea.mua.stub.utils.eventbus.MarqueeEvent;
@@ -120,7 +121,7 @@ public class OnlineController {
                 .subscribe(new NewSubscriberCallBack<HeartBeatBean>() {
                     @Override
                     protected void onError(int errorCode, String errorMsg) {
-
+                        UserUtils.clearUser();
                     }
 
                     @Override

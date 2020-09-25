@@ -175,57 +175,7 @@
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/rl_marquee" />
 
-                <RelativeLayout
-                    android:id="@+id/tl_time_recommend"
-                    android:layout_width="match_parent"
-                    android:layout_height="180dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="13dp"
-                    android:layout_marginRight="16dp"
-                    android:visibility="gone"
-                    app:layout_constraintTop_toBottomOf="@id/banner">
 
-                    <ImageView
-                        android:id="@+id/iv_recommond_userbg"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/ic_place_room_bg" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentBottom="true"
-                        android:layout_marginLeft="14dp"
-                        android:layout_marginBottom="10dp"
-                        android:shadowColor="#ff000000"
-                        android:shadowDx="0"
-                        android:shadowDy="1"
-                        android:shadowRadius="3.0"
-                        android:text="欢迎来到小可爱的直播间"
-                        android:textColor="#ffffffff"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:layout_width="79dp"
-                        android:layout_height="27dp"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginTop="12dp"
-                        android:background="@drawable/bg_time_recommend"
-                        android:gravity="center"
-                        android:text="时段推荐 1"
-                        android:textColor="#ffffffff"
-                        android:textSize="13sp" />
-
-                    <ImageView
-                        android:id="@+id/tv_red_package"
-                        android:layout_width="17dp"
-                        android:layout_height="24dp"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginTop="9dp"
-                        android:layout_marginRight="11dp"
-                        android:src="@drawable/ic_red_package" />
-                </RelativeLayout>
             </android.support.constraint.ConstraintLayout>
 
             <android.support.v4.view.ViewPager

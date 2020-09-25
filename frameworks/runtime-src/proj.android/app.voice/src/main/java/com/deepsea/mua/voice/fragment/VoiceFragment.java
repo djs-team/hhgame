@@ -12,6 +12,7 @@ import android.widget.RelativeLayout;
 
 import com.deepsea.mua.core.utils.GlideUtils;
 import com.deepsea.mua.core.view.xtablayout.XTabLayout;
+import com.deepsea.mua.stub.app.ActivityCache;
 import com.deepsea.mua.stub.base.BaseFragment;
 import com.deepsea.mua.stub.base.BaseObserver;
 import com.deepsea.mua.stub.dialog.SexEditDialog;
@@ -110,6 +111,8 @@ public class VoiceFragment extends BaseFragment<FragmentVoiceBinding> {
     public void onEvent(GotoShowEvent event) {
         jumpToMineRooms();
     }
+
+    public static final String ACTION_TOKEN_EXPIRED = "com.deepsea.mua.token_expired";
 
     @Override
     protected void initListener() {

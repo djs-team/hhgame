@@ -1890,7 +1890,7 @@
                       "X": 150.0,
                       "Y": 65.0
                     },
-                    "Name": "SetBtn",
+                    "Name": "setBtn",
                     "ctype": "PanelObjectData"
                   },
                   {

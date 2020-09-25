@@ -9,6 +9,7 @@ load('game/public/TcpGame', function () {
     let PutCardProto = include('game/msghandler/PutCardProto')
     let PlayerSelectProto = include('game/msghandler/PlayerSelectProto')
     let TableHostingProto = include('game/msghandler/TableHostingProto')
+    let GetArenaProto = include('game/msghandler/GetArenaProto')
     let TcpGame  = cc.Class.extend({
         ctor: function () {
 
@@ -66,6 +67,14 @@ load('game/public/TcpGame', function () {
             msg.pTableID = appInstance.dataManager().getPlayData().tableData.pTableID
             msg.pHostingExt = ''
             let packetProto = new Packet(new TableHostingProto())
+            packetProto.setValue(msg)
+            appInstance.gameNet().send(packetProto)
+        },
+
+        GetArenaMessageProto: function (msg) {
+            msg = msg || {}
+            msg.channel = appInstance.dataManager().getUserData().getMjChannel()
+            let packetProto = new Packet(new GetArenaProto())
             packetProto.setValue(msg)
             appInstance.gameNet().send(packetProto)
         }

@@ -108,22 +108,28 @@ load('game/public/GameUtil',function () {
         let propCode = prop.propCode = data.propCode
         let propNum = prop.propNum = data.propNum
 
+        let propsResName = 'propsRes'
+        if(functionName == GameConfig.FUNCTION_NAME_TURNTABLE)
+            propsResName = 'turnTableRewardsRes'
+        else if(functionName == GameConfig.FUNCTION_NAME_SIGN)
+            propsResName = 'signRewardsRes'
+
 
 
         if(currencyType == GameUtil.CURRENCYTYPE_1){
-            prop.res = GameConfig.propsRes[propType]['propCode'][propCode][GameConfig.ICON_RESULT_CURRENCY]
+            prop.res = GameConfig[propsResName][propType]['propCode'][propCode][GameConfig.ICON_RESULT_CURRENCY]
         }else{
             if(global.isUndefined(functionName)){
-                prop.res = GameConfig.propsRes[propType]['propCode'][propCode][GameConfig.ICON_RESULT_CURRENCY]
+                prop.res = GameConfig[propsResName][propType]['propCode'][propCode][GameConfig.ICON_RESULT_CURRENCY]
             }else{
                 if(!GameUtil.haveMulityCurrency(functionName,propType,propCode)){
-                    prop.res = GameConfig.propsRes[propType]['propCode'][propCode][GameConfig.ICON_RESULT_CURRENCY]
+                    prop.res = GameConfig[propsResName][propType]['propCode'][propCode][GameConfig.ICON_RESULT_CURRENCY]
                 }else{
                     let propsQuantityInterval = GameUtil.getPropsQuantityInterval(functionName,propType,propCode,propNum)
                     if(global.isUndefined(propsQuantityInterval))
-                        prop.res = GameConfig.propsRes[propType]['propCode'][propCode][GameConfig.ICON_RESULT_CURRENCY]
+                        prop.res = GameConfig[propsResName][propType]['propCode'][propCode][GameConfig.ICON_RESULT_CURRENCY]
                     else
-                        prop.res = GameConfig.propsRes[propType]['propCode'][propCode][propsQuantityInterval]
+                        prop.res = GameConfig[propsResName][propType]['propCode'][propCode][propsQuantityInterval]
                 }
             }
         }
@@ -137,48 +143,6 @@ load('game/public/GameUtil',function () {
     }
 
 
-
-    /**
-     * 转换道具列表格式
-     * @param functionName 功能名称，同layer名称
-     * @param data 原数据结构
-     * @param prop 转换后的数据结构
-     * @param currencyType 货币图片有多个，按照现在的业务，如果是转盘以及签到会根据货币的数量显示多种图片，但是其他的（例如
-     * 领取奖励，以及任务等不分数量，一种货币只有一种资源），不需要按照数量获取的传GameUtil.CURRENCYTYPE_1，否则传GameUtil.CURRENCYTYPE_2
-     * @param unitLocation 数量单位位置，0不需要 1在前，2在后
-     * @param unitProperty  数量单位
-     *
-     *
-     *
-     */
-    GameUtil.getTurnTableRewardsData = function (data,prop,currencyType,unitLocation) {
-
-        let propType = data.propType
-        let propCode = data.propCode
-        let propNum = data.propNum
-
-
-        if(currencyType == GameUtil.CURRENCYTYPE_1){
-            prop.res = GameConfig.turnTableRewardsRes[propType]['propCode'][propCode][GameConfig.ICON_RESULT_CURRENCY]
-        }else{
-            if(!GameUtil.haveMulityCurrency(GameConfig.FUNCTION_NAME_TURNTABLE,propType,propCode)){
-                prop.res = GameConfig.turnTableRewardsRes[propType]['propCode'][propCode][GameConfig.ICON_RESULT_CURRENCY]
-            }else{
-                let propsQuantityInterval = GameUtil.getPropsQuantityInterval(GameConfig.FUNCTION_NAME_TURNTABLE,propType,propCode,propNum)
-                if(global.isUndefined(propsQuantityInterval))
-                    prop.res = GameConfig.turnTableRewardsRes[propType]['propCode'][propCode][GameConfig.ICON_RESULT_CURRENCY]
-                else
-                    prop.res = GameConfig.turnTableRewardsRes[propType]['propCode'][propCode][propsQuantityInterval]
-            }
-        }
-
-        if(unitLocation == GameUtil.UNITLOCATION_BEFORE){
-            prop.num = unitProperty + propNum
-        }else if(unitLocation == GameUtil.CURRENCYTYPE_AFTER){
-            prop.num = propNum + unitProperty
-        }
-
-    }
 
     GameUtil.getPropsQuantityInterval = function (functionName,propType,propCode,propNum) {
 

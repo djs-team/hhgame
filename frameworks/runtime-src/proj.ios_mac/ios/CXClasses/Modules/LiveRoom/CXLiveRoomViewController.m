@@ -167,7 +167,10 @@
     
     [[UIApplication sharedApplication] endReceivingRemoteControlEvents];
     
+    [[UIApplication sharedApplication] setIdleTimerDisabled: NO];
+    
     [[CXClientModel instance].room.roomMessages removeAllObjects];
+    
 }
 
 - (void)viewDidLoad {
@@ -231,6 +234,8 @@
     [self getGiftListData];
     [self getGuardGiftListData];
     [self getFriendListData];
+    
+    [[UIApplication sharedApplication] setIdleTimerDisabled: YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

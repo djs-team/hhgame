@@ -70,6 +70,10 @@
         
     [self sendLoadProductsRequest];
     [self loadMoney];
+    
+    if ([[CXClientModel instance].applePayType isEqualToString:@"Apple"]) { // 苹果支付
+        self.thirdPayView.hidden = YES;
+    }
 }
 
 - (void)loadMoney {

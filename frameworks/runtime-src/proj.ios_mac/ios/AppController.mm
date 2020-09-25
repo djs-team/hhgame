@@ -46,7 +46,7 @@
 // 引入 JPush 功能所需头文件
 #import "JPUSHService.h"
 #import "JVERIFICATIONService.h"
-#import <AdSupport/AdSupport.h>
+
 // iOS10 注册 APNs 所需头文件
 #ifdef NSFoundationVersionNumber_iOS_9_x_Max
 #import <UserNotifications/UserNotifications.h>
@@ -62,6 +62,8 @@
 #import <BUAdSDK/BUAdSDKManager.h>
 #import <BUAdSDK/BUSplashAdView.h>
 #import "CXBUAdRewardViewController.h"
+#import <AppTrackingTransparency/AppTrackingTransparency.h>
+#import <AdSupport/ASIdentifierManager.h>
 
 // 设备信息
 #import "CXPhoneBasicTools.h"
@@ -71,6 +73,8 @@
 
 // 直播
 #import "CXConfigObject.h"
+
+//#import <StoreKit/StoreKit.h>
 
 @interface AppController() <JPUSHRegisterDelegate, WXApiDelegate, BUSplashAdDelegate, OpenInstallDelegate>
 
@@ -127,25 +131,31 @@ static AppDelegate s_sharedApplication;
     
     //run the cocos2d-x game scene
     app->run();
-        
-    // 苹果内购监听
-    [[CXIPAPurchaseManager manager] startManager];
     
     // 极光
     [self configureJPushOptions:launchOptions];
     
     // 微信注册
-    [WXApi registerApp:WX_AppKey universalLink:@"https://heyin666/"];
+    [WXApi registerApp:WX_AppKey universalLink:WX_UniversalLinks];
     
     // 穿山甲
-//    [self setupBUAdSDK];
+    [self setupBUAdSDK];
     
     // OpenInstall
     [OpenInstallSDK initWithDelegate:self];
+    
+    // 苹果内购监听
+//    [[CXIPAPurchaseManager manager] startManager];
 
     return YES;
 }
-
+//#pragma mark - SKPaymentTransactionObserver
+//
+//- (void)paymentQueue:(SKPaymentQueue *)queue updatedTransactions:(NSArray<SKPaymentTransaction *> *)transactions {
+//    if (transactions) {
+//
+//    }
+//}
 #pragma mark - ======================== JPush =============================
 - (void)configureJPushOptions:(NSDictionary *)launchOptions {
     JPUSHRegisterEntity * entity = [[JPUSHRegisterEntity alloc] init];
@@ -407,26 +417,31 @@ static AppDelegate s_sharedApplication;
 /// @param payType 支付渠道类型：1:苹果内购 2:支付宝 3:微信
 /// @param payParam 支付参数：
 /// @param userID 当前支付用户ID
+/// @param orderNo 己方订单号
 /// @param paySuccessMethod 支付成功通知的方法名
-+ (void)appPurchaseWithPayType:(NSString *_Nonnull)payType payParam:(NSString *)payParam userID:(NSString *)userID paySuccessMethod:(NSString *)paySuccessMethod {
++ (void)appPurchaseWithPayType:(NSString *_Nonnull)payType payParam:(NSString *)payParam userID:(NSString *)userID orderNo:(NSString *_Nonnull)orderNo paySuccessMethod:(NSString *)paySuccessMethod {
     [CXOCJSBrigeManager manager].paySuccessMethod = paySuccessMethod;
     if ([payType isEqualToString:@"ios"]) {
         [CXIPAPurchaseManager manager].userid = userID;
         [CXIPAPurchaseManager manager].purchaseType = MaJiang;
+        [CXIPAPurchaseManager manager].order_sn = orderNo;
         [[CXIPAPurchaseManager manager] inAppPurchaseWithProductID:payParam iapResult:^(BOOL isSuccess, NSDictionary *param, NSString *errorMsg) {
-            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].openInstallParamMethod param:[param jsonStringEncoded]];
+            if (isSuccess == YES) {
+                NSString *paramStr = [param jsonStringEncoded];
+                [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].paySuccessMethod param:paramStr];
+            }
         }];
     } else if ([payType isEqualToString:@"alipay"]) {
         [[CXThirdPayManager sharedApi] aliPayWithPayParam:payParam success:^(PayCode code) {
-            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].openInstallParamMethod param:@"success"];
+            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].paySuccessMethod param:@"success"];
         } failure:^(PayCode code) {
-            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].openInstallParamMethod param:@"failure"];
+            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].paySuccessMethod param:@"failure"];
         }];
     } else if ([payType isEqualToString:@"wx"]) {
         [[CXThirdPayManager sharedApi] wxPayWithPayParam:payParam success:^(PayCode code) {
-            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].openInstallParamMethod param:@"success"];
+            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].paySuccessMethod param:@"success"];
         } failure:^(PayCode code) {
-            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].openInstallParamMethod param:@"failure"];
+            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].paySuccessMethod param:@"failure"];
         }];
     }
 }
@@ -451,8 +466,6 @@ static AppDelegate s_sharedApplication;
 + (void)openBUAdRewardViewControllerWithMethod:(NSString *_Nonnull)method {
     [CXOCJSBrigeManager manager].BUAdRewardMethod = method;
     //激励视频
-    CXBUAdRewardViewController *rewardVC = [[CXBUAdRewardViewController alloc] init];
-    [[CXTools currentViewController] presentViewController:rewardVC animated:YES completion:nil];
     [[CXBUAdRewardViewController manager] openAd];
 }
 
@@ -463,18 +476,35 @@ static AppDelegate s_sharedApplication;
     //optional
     //Coppa 0 adult, 1 child
     [BUAdSDKManager setCoppa:0];
-    
-#if DEBUG
-    // Whether to open log. default is none.
-    [BUAdSDKManager setLoglevel:BUAdSDKLogLevelDebug];
-//    [BUAdSDKManager setDisableSKAdNetwork:YES];
-#endif
     //BUAdSDK requires iOS 9 and up
     [BUAdSDKManager setAppID:BUDAd_appKey];
 
     [BUAdSDKManager setIsPaidApp:NO];
+    
     // splash AD demo
-    [self addSplashAD];
+//    [self addSplashAD];
+    
+    if (@available(iOS 14, *)) {
+        // iOS14及以上版本需要先请求权限
+        [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status) {
+            // 获取到权限后，依然使用老方法获取idfa
+            if (status == ATTrackingManagerAuthorizationStatusAuthorized) {
+                NSString *idfa = [[ASIdentifierManager sharedManager].advertisingIdentifier UUIDString];
+                NSLog(@"%@",idfa);
+            } else {
+//                [CXTools showAlertWithMessage:@"请在设置-隐私-Tracking 允许App请求跟踪"];
+            }
+        }];
+    } else {
+        // iOS14以下版本依然使用老方法
+        // 判断在设置-隐私里用户是否打开了广告跟踪
+        if ([[ASIdentifierManager sharedManager] isAdvertisingTrackingEnabled]) {
+            NSString *idfa = [[ASIdentifierManager sharedManager].advertisingIdentifier UUIDString];
+            NSLog(@"%@",idfa);
+        } else {
+//            [CXTools showAlertWithMessage:@"请在设置-隐私-广告 打开广告跟踪功能"];
+        }
+    }
 }
 
 - (void)addSplashAD {
@@ -491,34 +521,30 @@ static AppDelegate s_sharedApplication;
 }
 
 - (void)splashAdDidLoad:(BUSplashAdView *)splashAd {
-    if (splashAd.zoomOutView) {
-        UIViewController *parentVC = [UIApplication sharedApplication].keyWindow.rootViewController;
-        [parentVC.view addSubview:splashAd.zoomOutView];
-        [parentVC.view bringSubviewToFront:splashAd];
-        //Add this view to your container
-        [parentVC.view insertSubview:splashAd.zoomOutView belowSubview:splashAd];
-        splashAd.zoomOutView.rootViewController = parentVC;
-    }
+//    if (splashAd.zoomOutView) {
+//        UIViewController *parentVC = [UIApplication sharedApplication].keyWindow.rootViewController;
+//        [parentVC.view addSubview:splashAd.zoomOutView];
+//        [parentVC.view bringSubviewToFront:splashAd];
+//        //Add this view to your container
+//        [parentVC.view insertSubview:splashAd.zoomOutView belowSubview:splashAd];
+//        splashAd.zoomOutView.rootViewController = parentVC;
+//    }
 }
 
 - (void)splashAdDidClose:(BUSplashAdView *)splashAd {
     [splashAd removeFromSuperview];
-    [AppController setOrientation:@""];    //强制竖屏转横屏
 }
 
 - (void)splashAdDidClick:(BUSplashAdView *)splashAd {
     [splashAd removeFromSuperview];
-    [AppController setOrientation:@""];    //强制竖屏转横屏
 }
 
 - (void)splashAdDidClickSkip:(BUSplashAdView *)splashAd {
     [splashAd removeFromSuperview];
-    [AppController setOrientation:@""];    //强制竖屏转横屏
 }
 
 - (void)splashAd:(BUSplashAdView *)splashAd didFailWithError:(NSError *)error {
     [splashAd removeFromSuperview];
-    [AppController setOrientation:@""];    //强制竖屏转横屏
 }
 
 #pragma mark -  ================ OpenInstall ===================
@@ -570,6 +596,13 @@ static AppDelegate s_sharedApplication;
     ScriptingCore::getInstance()->evalString(jsCallStr.c_str());
 }
 
++ (void)JsCallBack:(NSString *)funcNameStr param:(NSString *)param {
+    std::string funcName = [funcNameStr UTF8String];
+    std::string paramStr  = [param UTF8String];
+    std::string jsCallStr = cocos2d::StringUtils::format("%s(\"%s\");",funcName.c_str(), paramStr.c_str());
+    ScriptingCore::getInstance()->evalString(jsCallStr.c_str());
+}
+
 #pragma mark - ================ 横竖屏 ===================
 UIInterfaceOrientationMask oMask = UIInterfaceOrientationMaskLandscape;
 
@@ -591,7 +624,18 @@ UIInterfaceOrientationMask oMask = UIInterfaceOrientationMaskLandscape;
 
 #pragma mark - ================ 直播相关 ===================
 /// 从麻将进入视频
-+ (void)enterLiveBroadcast {
++ (void)enterLiveBroadcastWithToken:(NSString *)param {
+    if (param.length <= 0 ) {
+        return;
+    }
+    NSDictionary *dict = [param jsonValueDecoded];
+    if ([dict.allKeys containsObject:@"token"]) {
+        [CXClientModel instance].token = dict[@"token"];
+    }
+    if ([dict.allKeys containsObject:@"applePayType"]) {
+        [CXClientModel instance].applePayType = dict[@"applePayType"];
+    }
+    
     [CXConfigObject enterOnline];
 }
 

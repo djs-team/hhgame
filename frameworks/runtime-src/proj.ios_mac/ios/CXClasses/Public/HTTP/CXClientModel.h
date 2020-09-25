@@ -49,6 +49,7 @@ typedef void(^CXClientModelLeaveRoomCallBack)(NSString *roomId, BOOL success);
 @property (nullable, nonatomic) EasemobManager * easemob;
 
 // 用户相关
+@property (nonatomic, strong) NSString *applePayType; // 苹果支付方式
 @property (nonatomic, strong) NSString *userId;
 @property (nonatomic, strong) NSString *token;
 @property (nonatomic, strong) NSNumber *sex; // 1:男 2:女

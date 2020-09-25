@@ -29,7 +29,7 @@
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="84.5000" Y="38.5000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
+                        <CColor A="255" R="255" G="165" B="0" />
                         <PrePosition X="0.5000" Y="0.5000" />
                         <PreSize X="1.4201" Y="0.3896" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
@@ -72,7 +72,7 @@
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="84.5000" Y="38.5000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
+                        <CColor A="255" R="255" G="165" B="0" />
                         <PrePosition X="0.5000" Y="0.5000" />
                         <PreSize X="1.4201" Y="0.3896" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
@@ -115,7 +115,7 @@
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="84.5000" Y="38.5000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
+                        <CColor A="255" R="255" G="165" B="0" />
                         <PrePosition X="0.5000" Y="0.5000" />
                         <PreSize X="1.4201" Y="0.3896" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
@@ -138,7 +138,7 @@
                 <PrePosition X="0.9351" Y="0.6944" />
                 <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="headNd0" ActionTag="-1476786496" Tag="359" IconVisible="True" LeftMargin="102.6913" RightMargin="1177.3087" TopMargin="-11.8598" BottomMargin="731.8598" ctype="SingleNodeObjectData">
+              <AbstractNodeData Name="headNd0" ActionTag="-1476786496" Tag="359" IconVisible="True" LeftMargin="-654.5312" RightMargin="1934.5313" TopMargin="939.4315" BottomMargin="-219.4314" ctype="SingleNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <Children>
                   <AbstractNodeData Name="AniNd" ActionTag="-2102712341" Tag="15" IconVisible="True" LeftMargin="216.9301" RightMargin="-216.9301" TopMargin="825.8181" BottomMargin="-825.8181" ctype="SingleNodeObjectData">
@@ -175,10 +175,10 @@
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint />
-                <Position X="102.6913" Y="731.8598" />
+                <Position X="-654.5312" Y="-219.4314" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.0802" Y="1.0165" />
+                <PrePosition X="-0.5114" Y="-0.3048" />
                 <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
             </Children>

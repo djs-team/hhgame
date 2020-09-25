@@ -255,6 +255,125 @@ load('game/config/GameConfig', function () {
     }
 
 
+    GameConfig.turnTableRewardsRes = {
+
+        '1' : {
+            'name': '货币',
+            'propCode': {
+                '1': {
+                    'name': '金币',
+                    'currency': 'res/turntable/zphd_10.png',
+                    'least': 'res/turntable/zphd_10.png',
+                    'more': 'res/turntable/zphd_17.png',
+                    'most': 'res/turntable/zphd_19.png',
+                }
+                ,
+                '2': {
+                    'name': '钻石',
+                    'currency': 'res/turntable/zphd_6.png',
+                    'least': 'res/turntable/zphd_6.png',
+                    'more': 'res/turntable/zphd_7.png',
+                    'most': 'res/turntable/zphd_8.png',
+                }
+                ,
+                '3': {
+                    'name': '福卡',
+                    'currency': 'res/code/props/zphd_18.png',
+                }
+                ,
+            }
+        },
+        '2' : {
+            'name' : '角色',
+            'propCode' : {
+                '1': {
+                    'name': '财神',
+                    'currency': 'res/turntable/zphd_26.png',
+                }
+                ,
+                '2': {
+                    'name': '草帽男孩',
+                    'currency': 'res/turntable/zphd_26.png',
+                }
+
+                ,
+                '3': {
+                    'name': '秧歌小妞',
+                    'currency': 'res/turntable/zphd_27.png',
+                }
+
+                ,
+                '4': {
+                    'name': '发哥',
+                    'currency': 'res/turntable/zphd_22.png',
+                }
+
+                ,
+                '5': {
+                    'name': '皇帝',
+                    'currency': 'res/turntable/zphd_23.png',
+                }
+
+                ,
+                '6': {
+                    'name': '花木兰',
+                    'currency': 'res/turntable/zphd_28.png',
+                }
+
+                ,
+                '7': {
+                    'name': '狐仙小妞',
+                    'currency': 'res/turntable/zphd_27.png',
+                }
+
+                ,
+                '8': {
+                    'name': '张作霖',
+                    'currency': 'res/turntable/zphd_25.png',
+                }
+
+                ,
+                '9': {
+                    'name': '至尊宝',
+                    'currency': 'res/turntable/zphd_29.png',
+                }
+
+                ,
+                '10': {
+                    'name': '紫霞',
+                    'currency': 'res/turntable/zphd_28.png',
+                }
+
+                ,
+
+            }
+        },
+        '3' :  {
+            'name' : '实物',
+            'propCode' : {
+
+                '1': {
+                    'name': '手机',
+                    'currency': 'res/turntable/zphd_12.png',
+                }
+                ,
+                '2': {
+                    'name': '京东卡',
+                    'currency': 'res/turntable/zpjd_1.png',
+                }
+                ,
+                '3': {
+                    'name': '话费卡',
+                    'currency': 'res/turntable/zphf_1.png',
+                }
+
+                ,
+            }
+        },
+
+
+    }
+
     GameConfig.quantityInterval = {
         'turntable' : {
             '1' : {//大类，货币

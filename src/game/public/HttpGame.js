@@ -421,7 +421,6 @@ load('game/public/HttpGame', function () {
                 return
             }
 
-            console.log('-------------------TURNPOINTBack data : ' + JSON.stringify(msg))
 
             let saveKey = [
 
@@ -984,6 +983,25 @@ load('game/public/HttpGame', function () {
 
         },
 
+        // 苹果支付成功订单校验
+        VIPPaysOrderAppleCheckReq: function (msg) {
+            msg = msg || {}
+            cc.log('-------------VIPPaysOrderAppleCheckReq---Request-----：' + JSON.stringify(msg))
+            if (!this._requestBackCall[HttpEvent.MJ_HALL_PLAYER_BUY_VIP_ORDER_APPLE_CHECK]) {
+                this._requestBackCall[HttpEvent.MJ_HALL_PLAYER_BUY_VIP_ORDER_APPLE_CHECK] = this.VIPPaysOrderAppleCheckBack
+            }
+            msg.msgID = HttpEvent.MJ_HALL_PLAYER_BUY_VIP_ORDER_APPLE_CHECK
+            appInstance.httpAgent().sendPost(msg)
+        },
+        
+        VIPPaysOrderAppleCheckBack: function (msg) {
+            if (msg.status !== 0) {
+                cc.log('------------->>>httpGame VIPPaysOrderAppleCheckBack error happen' + JSON.stringify(msg))
+                return
+            }
+            appInstance.sendNotification(GameEvent.PLAYER_BUY_VIP_ORDER_APPLE_CHECK, msg)
+
+        },
 
         ROLLIMGLISTReq: function (msg) {
             msg = msg || {}

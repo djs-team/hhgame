@@ -20,7 +20,8 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
         _giftLogIndexLength : 4,//获得商品记录开始位
         _robLogStartIndex : 0,//福卡夺宝记录开始位
         _robLogIndexLength : 15,//福卡夺宝记录开始位
-        _currentLayer : 'goodsList',
+        _currentLayer : 'goodsListPnl',
+
         RES_BINDING: function () {
             return {
                 'goodsListPnl' : {},
@@ -29,9 +30,9 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 'goodsListPnl/leftPnl/imgPageView' : { },
                 'goodsListPnl/leftPnl/imgPageCell' : { },
 
-                'goodsListPnl/midPnl/cardExchangeBtn' : { onClicked: this.onCardExchangeBtnClick},
-                'goodsListPnl/midPnl/seizeBtn' : { onClicked: this.onSeizeBtnClick},
-                'goodsListPnl/midPnl/objectExchangeBtn' : { onClicked: this.onObjectExchangeBtnClick },
+                'goodsListPnl/midPnl/cardExchangeBtn' : { },
+                'goodsListPnl/midPnl/seizeBtn' : {},
+                'goodsListPnl/midPnl/objectExchangeBtn' : {},
 
 
                 'goodsListPnl/bmPnl/menuListView' : {  },
@@ -81,11 +82,13 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
 
                 'commonPnl' : {},
                 'commonPnl/fuKaPnl' : {},
-                'commonPnl/giftLogBtnPnl' : { onClicked : this.onGetGiftLogClick},
-                'commonPnl/robLogBtnPnl' : { onClicked: this.onGetRobLogClick},
+                'commonPnl/giftLogBtnPnl' : {},
+                'commonPnl/robLogBtnPnl' : { },
+                'commonPnl/returnBtn' : { onClicked: this.onReturnBtnClick},
 
 
-                'popupPnl' : { onClicked: this.onClosePopupPnlClick},
+               // 'popupPnl' : { onClicked: this.onClosePopupPnlClick},
+                'popupPnl' : { },
                 'popupPnl/titlePnl' : {},
                 'popupPnl/contextPnl' : {},
                 'popupPnl/btnsPnl' : {},
@@ -117,6 +120,50 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 'phoneExchangePnl',
                 'popupPnl'
             ]
+
+            this.giftLogBtnPnl._sendMsg = {
+                actionType : 'click'
+            }
+            this.giftLogBtnPnl.addClickEventListener(function (sender,dt) {
+                this.onGetGiftLogClick(sender)
+            }.bind(this))
+
+            this.robLogBtnPnl._sendMsg = {
+                actionType : 'click'
+            }
+            this.robLogBtnPnl.addClickEventListener(function (sender,dt) {
+                this.onGetRobLogClick(sender)
+            }.bind(this))
+
+            this.cardExchangeBtn._sendMsg = {
+                actionType : 'click'
+            }
+            this.cardExchangeBtn.addClickEventListener(function (sender,dt) {
+                this.onCardExchangeBtnClick(sender)
+            }.bind(this))
+
+            this.seizeBtn._sendMsg = {
+                actionType : 'click'
+            }
+            this.seizeBtn.addClickEventListener(function (sender,dt) {
+                this.onSeizeBtnClick(sender)
+            }.bind(this))
+
+            this.objectExchangeBtn._sendMsg = {
+                actionType : 'click'
+            }
+            this.objectExchangeBtn.addClickEventListener(function (sender,dt) {
+                this.onObjectExchangeBtnClick(sender)
+            }.bind(this))
+
+            this.jumpArrayStep = [
+
+            ]
+
+            this.fuKaPnl.getChildByName('fuKaCnt').setString(appInstance.dataManager().getUserData().fuKa)
+            this.fuKaPnl.getChildByName('fuKaCnt').setTextColor(cc.color(255,255,255))
+            this.giftLogBtnPnl.getChildByName('giftLogPnlNameText').setTextColor(cc.color(255,255,255))
+            this.robLogBtnPnl.getChildByName('robLogPnlNameText').setTextColor(cc.color(255,255,255))
         },
 
         initView: function () {
@@ -184,13 +231,17 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
 
         },
 
-        onCardExchangeBtnClick: function () {
+        onCardExchangeBtnClick: function (sender) {
             let elementNameArray = [
+                'cardExchange',
                 'exchangePnl'
             ]
 
-            this._currentLayer = 'cardExchange'
-            this.onSetShowElementFunction(elementNameArray)
+            let flag = false
+            if(sender)
+                flag = true
+
+            this.onSetShowElementFunction(elementNameArray,flag)
             this.onRefreshCardListParams()
 
             this.onGetCardListData(this._cardListStartIndex)
@@ -209,13 +260,17 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
             this._cardListStartIndex = 0
         },
 
-        onObjectExchangeBtnClick: function () {
+        onObjectExchangeBtnClick: function (sender) {
             let elementNameArray = [
+                'objectExchange',
                 'exchangePnl'
             ]
 
-            this._currentLayer = 'objectExchange'
-            this.onSetShowElementFunction(elementNameArray)
+            let flag = false
+            if(sender)
+                flag = true
+
+            this.onSetShowElementFunction(elementNameArray,flag)
             this.onRefreshMateriaListParams()
 
             this.onGetMateriaListData(this._materiaListStartIndex)
@@ -233,13 +288,17 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
             this._materiaListStartIndex = 0
         },
 
-        onSeizeBtnClick: function () {
+        onSeizeBtnClick: function (sender) {
 
             let elementNameArray = [
                 'robPnl'
             ]
 
-            this.onSetShowElementFunction(elementNameArray)
+            let flag = false
+            if(sender)
+                flag = true
+
+            this.onSetShowElementFunction(elementNameArray,sender)
             this.onRefreshRobListParams()
 
             this.onGetRobListData(this._robListStartIndex)
@@ -279,7 +338,7 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 return
             }
 
-            let fuka = appInstance.dataManager().getUserData().fuKa
+            let fuka =  this.fuKaPnl.getChildByName('fuKaCnt').getString()
             if(fuka >= price){
 
                 msg.wordsText = '您确定兑换吗'
@@ -292,6 +351,7 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                         goodsid : goodsId
                     }
                     appInstance.gameAgent().httpGame().FUKABUYGOODSReq(sendMsg)
+                    return true
                 }
 
             }else{
@@ -324,29 +384,34 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
         },
 
         initRollImgList: function (data) {
-            cc.log('=======initRollImgList=====' + JSON.stringify(data))
+            this.imgPageView.removeAllChildren()
             for(let i = 0; i < data.length; i++){
                 let cell = this.imgPageCell.clone()
                 cell.setVisible(true)
                 this.imgPageView.pushBackCustomItem(cell)
-                let size = cell.getContentSize()
-                let url = 'http://p3.itc.cn/q_70/images03/20200911/b7c565cbc87848538cace549fb609e7b.jpeg'
-                // url = data[i].hallPictureUrl
-                cc.loader.loadImg(url, { isCrossOrigin: false },function(err,texture){
-                    if (!err && texture) {
-                        let sp = new cc.Sprite(texture)
-                        sp.setContentSize(size)
-                        sp.setPosition(cc.p(size.width/2,size.height/2))
-                        // sp.setRotationX(-90)
-                        cell.addChild(sp)
-                    }
-                })
+               // let size = cell.getContentSize()
+                let size = {
+                    height : 227.00,
+                    width : 629.00
+                }
+                //let url = 'http://p3.itc.cn/q_70/images03/20200911/b7c565cbc87848538cace549fb609e7b.jpeg'
+               let  url = data[i].hallPictureUrl
+                this.onLoadUrlImg(url,size,cell)
             }
 
+        },
 
-
-
-
+        onLoadUrlImg: function (url,size,cell) {
+            cc.loader.loadImg(url, { isCrossOrigin: false },function(err,texture){
+              //  cc.log('----------------------------err : ' + JSON.stringify(err))
+                if (!err && texture) {
+                    let sp = new cc.Sprite(texture)
+                    sp.setContentSize(size)
+                    sp.setPosition(cc.p(size.width/2,size.height/2))
+                    //sp.setRotationX(-90)
+                    cell.addChild(sp)
+                }
+            })
         },
 
         initMenuList: function (data) {
@@ -394,7 +459,7 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
 
         onMenuItemClick: function (sender) {
 
-            this._currentLayer = 'goodsList'
+            this._menuStartIndex = 0
             let data = sender._sendMsg
             if(data.status != 0)
                 return
@@ -497,46 +562,44 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
 
         onUpdateMenuGoodsList: function (data) {
 
-            this.onForMatGoodsList(data,'_menuStartIndex','goodsListView','goodsPnl',3,20,'goodsCell',220,'goodsPriceText','goodImg')
+            this.onForMatGoodsList(data,'_menuStartIndex','goodsListView','goodsPnl',3,20,'goodsCell',220,'goodsPriceText','goodsImgPnl',200,168)
 
         },
 
-        onForMatGoodsList: function (data,startIndex,listViewName,listPnlName,rowLength,rowInterval,cellName,cellInterval,fuKaNumName,imgName) {
+        onForMatGoodsList: function (data,startIndex,listViewName,listPnlName,rowLength,rowInterval,cellName,cellInterval,fuKaNumName,imgName,sizeHight,sizeWidth) {
             if(this[startIndex] == 0)
                 this[listViewName].removeAllChildren()
 
             let rowNum = Math.ceil(data.length / rowLength)
-            cc.log('======rowNum===========' + rowNum)
-            cc.log('======rowLength===========' + rowLength)
             for(let i = 0; i < rowNum; i++){
 
                 let goodsPnl = this[listPnlName].clone()
+                this[listViewName].pushBackCustomItem(goodsPnl)
                 goodsPnl.setVisible(true)
                 goodsPnl.setPositionY(0)
                 goodsPnl.setPositionX((this[listViewName].getChildrenCount() + i) * 20)
-                this[listViewName].pushBackCustomItem(goodsPnl)
+
 
                 for(let j = 0; j < rowLength; j++){
-                    this.onInitMenuCellData(data,goodsPnl,rowLength * i+j,rowLength,cellName,cellInterval,fuKaNumName,imgName)
+                    this.onInitMenuCellData(data,goodsPnl,rowLength * i+j,rowLength,cellName,cellInterval,fuKaNumName,imgName,sizeHight,sizeWidth)
                 }
 
 
             }
         },
 
-        onInitMenuCellData: function (data,goodsPnl,index,rowLength,cellName,cellInterval,fuKaNumName,imgName) {
+        onInitMenuCellData: function (data,goodsPnl,index,rowLength,cellName,cellInterval,fuKaNumName,imgName,sizeHight,sizeWidth) {
 
             let goodsData = data[index]
             if(!goodsData)
                 return
             let cell = this[cellName].clone()
             cell.setVisible(true)
-            cell.setPositionY(0)
-            cell.setPositionX((index % rowLength) * cellInterval)
+            cell.setPositionX(0)
+            cell.setPositionY((index % rowLength) * cellInterval)
             goodsPnl.addChild(cell)
 
             cell.getChildByName(fuKaNumName).setString(goodsData.fuKaNums+'福卡')
-            cell.getChildByName(imgName).loadTexture(goodsData.hallPictureUrl)
             cell._sendMsg = {
                 goodsName : goodsData.goodsName,
                 goodsDesc : goodsData.goodsDesc,
@@ -546,6 +609,16 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 goodsId : goodsData.goodsId
             }
 
+            cc.log('------------------------sizeHight : ' + sizeHight + ' sizeWidth :' + sizeWidth)
+            let size = {
+                height : sizeHight,
+                width : sizeWidth
+            }
+            cc.log('----------------------------------goodsData.hallPictureUrl : ' + goodsData.hallPictureUrl)
+            //this.onLoadUrlImg('http://47.105.94.107:80/public/uploads/goods_image/5f688a4bbdfe8.jpg',size,cell.getChildByName(imgName))
+           // this.onLoadUrlImg('https://bg-test-mj.heheshow.cn/public/uploads/goods_image/5f688a4bbdfe8.jpg',size,cell.getChildByName(imgName))
+            this.onLoadUrlImg(goodsData.hallPictureUrl,size,cell.getChildByName(imgName))
+            //this.onLoadUrlImg('http://p3.itc.cn/q_70/images03/20200911/b7c565cbc87848538cace549fb609e7b.jpeg',size,cell.getChildByName(imgName))
             cell.addClickEventListener(function (sender,dt) {
                 this.onShowGoodsDetailMsg(sender)
             }.bind(this))
@@ -559,7 +632,12 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
             let elementNameArray = [
                 'goodsDetailsPnl'
             ]
-            this.onSetShowElementFunction(elementNameArray)
+
+            let flag = false
+            if(sender)
+                flag = true
+
+            this.onSetShowElementFunction(elementNameArray,flag)
 
             let data = sender._sendMsg
             for(let i = 0; i < data.upPictureUrls.length; i++){
@@ -597,7 +675,12 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
 
         },
 
-        onSetShowElementFunction: function (elementNameArray) {
+        onSetShowElementFunction: function (elementNameArray,flag) {
+
+            if(flag && this.jumpArrayStep.indexOf(this._currentLayer) == -1)
+                this.jumpArrayStep.push(this._currentLayer)
+
+            this._currentLayer = elementNameArray[0]
 
             for(let i = 0; i < this._allElementArray.length; i++){
                 if(elementNameArray.indexOf(this._allElementArray[i]) != -1)
@@ -617,6 +700,8 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
             }else{
                 this.titlePnl.setVisible(false)
             }
+
+
 
             switch (msg.contextType) {
                 case 1:
@@ -638,9 +723,11 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                     this.contextPnl.getChildByName('imgPnl').setVisible(false)
                     this.contextPnl.getChildByName('robPnl').setVisible(true)
 
+                    this.contextPnl.getChildByName('robPnl').getChildByName('fuKaFiled').setString('')
                     this.contextPnl.getChildByName('robPnl').getChildByName('fuaVauleText').setString(msg.fuaVauleText)
+
                     this.contextPnl.getChildByName('robPnl').getChildByName('prizePercentText').setString(msg.currentNum + '/' + msg.allNum)
-                    this.contextPnl.getChildByName('robPnl').getChildByName('prizeLoadingBar').setParent(msg.currentNum / msg.allNum * 100)
+                    this.contextPnl.getChildByName('robPnl').getChildByName('prizeLoadingBar').setPercent(msg.currentNum / msg.allNum * 100)
                     break
                 default:
                     break
@@ -666,10 +753,14 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
 
             if(msg.rightBtnFunction){
                 this.btnsPnl.getChildByName('rightBtn').setVisible(true)
+                this.btnsPnl.getChildByName('rightBtn').setEnabled(true)
+                this.btnsPnl.getChildByName('rightBtn').setBright(true)
                 this.btnsPnl.getChildByName('rightBtn').addClickEventListener(function (sender,dt) {
-                    msg.rightBtnFunction()
-                    sender.setEnabled(false)
-                    sender.setBright(false)
+                    let flag = msg.rightBtnFunction()
+                    if(flag){
+                        sender.setEnabled(false)
+                        sender.setBright(false)
+                    }
                 }.bind(this))
             }else{
                 this.btnsPnl.getChildByName('rightBtn').setVisible(false)
@@ -688,13 +779,13 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
 
         onUpdatecardListFunction: function (data) {
 
-            this.onForMatGoodsList(data,'_cardListStartIndex','exangeListView','exchangeListPnl',3,20,'exangeGoodsCell',220,'goodsPriceText','goodImg')
+            this.onForMatGoodsList(data,'_cardListStartIndex','exangeListView','exchangeListPnl',3,20,'exangeGoodsCell',220,'goodsPriceText','goodsImgPnl',200,168)
 
         },
 
         onUpdateMaterialListFunction: function (data) {
 
-            this.onForMatGoodsList(data,'_materiaListStartIndex','exangeListView','exchangeListPnl',3,20,'exangeGoodsCell',220,'goodsPriceText','goodImg')
+            this.onForMatGoodsList(data,'_materiaListStartIndex','exangeListView','exchangeListPnl',3,20,'exangeGoodsCell',220,'goodsPriceText','goodsImgPnl',200,168)
 
         },
 
@@ -708,10 +799,10 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
 
                 let goodsPnl = this.robListPnl.clone()
                 goodsPnl.setVisible(true)
-
+                this.robListView.pushBackCustomItem(goodsPnl)
                 goodsPnl.setPositionY(0)
                 goodsPnl.setPositionX((this.robListView.getChildrenCount() + i) * 20)
-                this.robListView.pushBackCustomItem(goodsPnl)
+
 
                 for(let j = 0; j < rowLength; j++){
                     this.onInitRobGoodsCell(data,goodsPnl,rowLength * i+j,rowLength)
@@ -725,14 +816,15 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
 
             let goodsData = data[index]
             let cell = this.robGoodsCell.clone()
+            goodsPnl.addChild(cell)
+
             cell.setVisible(true)
             cell.setPositionX(0)
-            cell.setPositionY((index % rowLength) * cellInterval)
-            goodsPnl.addChild(cell)
+            cell.setPositionY((index % rowLength) * 300)
 
             cell.getChildByName('robGoodsNameText').setString(goodsData.goodsName)
             cell.getChildByName('goodImg').loadTexture(goodsData.hallPictureUrl)
-            cell.getChildByName('robLoadingBar').setParent(goodsData.currentNum / goodsData.allNum * 100)
+            cell.getChildByName('robLoadingBar').setPercent(goodsData.currentNum / goodsData.allNum * 100)
             cell.getChildByName('robPercent').setString(goodsData.currentNum + '/' + goodsData.allNum)
             cell.getChildByName('numText').setString(goodsData.playerConsumeFuka)
             cell._sendMsg = {
@@ -742,7 +834,8 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 nickName : goodsData.nickName,
                 sdkPhotoUrl : goodsData.sdkPhotoUrl,
                 goodsId : goodsData.goodsid,
-                roundNum : goodsData.playerConsumeFuka
+                roundNum : goodsData.duoBaoNum,
+                duoBaoId : goodsData.duoBaoId,
             }
 
             cell.getChildByName('luckyPnl').addClickEventListener(function (sender,dt) {
@@ -775,11 +868,11 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 fuaVauleText : data.fuKaCnt,
                 currentNum : data.currentNum,
                 allNum : data.allNum,
-                leftBtn : function () {
+                leftBtnFunction : function () {
                     this.onClosePopupPnlClick()
                 }.bind(this),
 
-                rightBtn : function () {
+                rightBtnFunction : function () {
 
                     let robFuKaNum = this.contextPnl.getChildByName('robPnl').getChildByName('fuKaFiled').getString()
                     let fuKaCnt = this.contextPnl.getChildByName('robPnl').getChildByName('fuaVauleText').getString()
@@ -787,27 +880,42 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                     let diffCnt = diffCntArray[1] - diffCntArray[0]
                     if(robFuKaNum < fuKaCnt){
                         appInstance.gameAgent().Tips('您的福卡不足')
-                        return
+                        return false
+                    }
+
+                    if(!this.onTest(robFuKaNum)){
+                        appInstance.gameAgent().Tips('您输入的福卡数量有误，请检查后重新输入')
+                        return false
                     }
 
                     if(robFuKaNum > diffCnt){
                         appInstance.gameAgent().Tips('您的福卡数量超过剩余值，请核实后再次夺宝')
-                        return
+                        return false
                     }
 
                     let msg = {
-                        duoBaoId : data.goodsId,
+                        duoBaoId : data.duoBaoId,
                         duoBaoNum : data.roundNum,
-                        fukaNum : data.robFuKaNum,
+                        fukaNum : robFuKaNum,
                     }
 
                     appInstance.gameAgent().httpGame().FUKAROBReq(msg)
 
-                }
+                    return true
+
+                }.bind(this)
             }
 
             this.onShowPopubUI(msg)
 
+        },
+
+        onTest: function (str) {
+            if (str == '')
+                return false
+            if (!(/(^[1-9]\d*$)/.test(str)))
+                return false
+            return true
         },
 
         onRobResult: function (data) {
@@ -824,16 +932,19 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
             switch (status) {
                 case 0:
                     msg.titleName = '兑换成功'
-                    msg.wordsText = '我们将在2-3个工作日内向您发货'
+                    msg.wordsText = '恭喜您参与成功，敬请期待夺宝结果'
                     break
                 case 100:
                     msg.wordsText = '当论夺宝已结束，请参加下一轮夺宝'
                     break
-                case 7:
+                case 73:
                     msg.wordsText = '您的福卡不足，请充值后再参与夺宝'
                     break
                 case 101:
                     msg.wordsText = '已超上限，请核实后再参与夺宝'
+                    break
+                case 110:
+                    msg.wordsText = '参与福卡数量不可为0，请重新参与夺宝'
                     break
                 default:
                     msg.wordsText = '夺宝失败，请刷新后再操作'
@@ -852,12 +963,14 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 contextType : 1,
                 midBtnFunction : function () {
                     this.onClosePopupPnlClick()
-                    if(this.this._currentLayer == 'goodsList')
-                        this.this.onGetGoodsList(this._currentMenuItemCode,1)
-                    else if(this.this._currentLayer == 'cardExchange')
+                    if(this.this._currentLayer == 'goodsListPnl'){
+                       this.onShowGoodsListLayer()
+                    }else if(this.this._currentLayer == 'cardExchange'){
                         this.onCardExchangeBtnClick()
-                    else if(this.this._currentLayer == 'objectExchange')
+                    }else if(this.this._currentLayer == 'objectExchange'){
                         this.onObjectExchangeBtnClick()
+                    }
+
                 }.bind(this)
             }
             switch (status) {
@@ -887,12 +1000,16 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
             this.onShowPopubUI(msg)
         },
 
-        onGetRobLogClick: function () {
+        onGetRobLogClick: function (sender) {
             let elementNameArray = [
                 'robLogPnl'
             ]
 
-            this.onSetShowElementFunction(elementNameArray)
+            let flag = false
+            if(sender)
+                flag = true
+
+            this.onSetShowElementFunction(elementNameArray,flag)
 
             this.onGetRobLogData()
 
@@ -911,23 +1028,30 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 let data = robList[i]
                 let cell = this.robLogCell.clone()
                 cell.setVisible(true)
+                cell.setPositionX(0)
+                cell.setPositionY(80 * i)
                 cell.getChildByName('numText').setString(data.bettingNum)
                 cell.getChildByName('timeText').setString(data.createTime)
 
-                robLogListView.pushBackCustomItem(cell)
+                this.robLogListView.pushBackCustomItem(cell)
 
             }
 
         },
 
-        onGetGiftLogClick: function () {
+        onGetGiftLogClick: function (sender) {
+
+            let flag = false
+            if(sender)
+                flag = true
 
             let elementNameArray = [
-                'rewardsLogPnl',
-                'logPnl'
+                'logPnl',
+                'rewardsLogPnl'
+
             ]
 
-            this.onSetShowElementFunction(elementNameArray)
+            this.onSetShowElementFunction(elementNameArray,flag)
             this.onGetGiftLogData()
         },
 
@@ -984,8 +1108,9 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
         onExchangeOnline: function (data) {
 
             let elementNameArray = [
-                'rewardsLogPnl',
-                'phoneExchangePnl'
+                'phoneExchangePnl',
+                'rewardsLogPnl'
+
             ]
             this.onSetShowElementFunction(elementNameArray)
             this.rechargePhoneBtn.addClickEventListener(function (sender,et) {
@@ -1040,12 +1165,81 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
             }
 
             let elementNameArray = [
-                'rewardsLogPnl',
-                'logPnl'
+                'logPnl',
+                'rewardsLogPnl'
+
             ]
             this.onSetShowElementFunction(elementNameArray)
 
-        }
+        },
+
+        onUpdateUserData: function (data) {
+
+            if(data.hasOwnProperty('fuKa')){
+                this.fuKaPnl.getChildByName('fuKaCnt').setString(data.fuKa)
+            }
+
+        },
+
+        onReturnBtnClick: function () {
+
+            if(this.jumpArrayStep.length == 0){
+                appInstance.uiManager().removeUI(this)
+            }else{
+                let lastStepName = this.jumpArrayStep.pop()
+                switch (lastStepName) {
+                    case 'logPnl':
+                        this.onGetGiftLogClick()
+                        break
+                    case 'phoneExchangePnl':
+                        this.onReturnBtnClick()
+                        break
+                    case 'robLogPnl':
+                        this.onReturnBtnClick()
+                        break
+                    case 'goodsDetailsPnl':
+                        this.onReturnBtnClick()
+                        break
+                    case 'robPnl':
+                        this.onSeizeBtnClick()
+                        break
+                    case 'objectExchange':
+                        this.onObjectExchangeBtnClick()
+                        break
+                    case 'cardExchange':
+                        this.onCardExchangeBtnClick()
+                        break
+                    case 'goodsListPnl':
+                        this.onShowGoodsListLayer()
+                        break
+                    default:
+                        appInstance.uiManager().removeUI(this)
+                        break
+
+                }
+            }
+
+        },
+
+        onShowGoodsListLayer: function () {
+
+            let elementNameArray = [
+                'goodsListPnl',
+                'goodsPnl'
+
+            ]
+
+            this.onSetShowElementFunction(elementNameArray)
+            this.onRefreshGoodsListParams()
+
+            appInstance.gameAgent().httpGame().ROLLIMGLISTReq()
+            appInstance.gameAgent().httpGame().MENULISTReq()
+
+        },
+
+        onRefreshGoodsListParams: function (){
+            this._menuStartIndex = 0
+        },
 
     })
     return Layer

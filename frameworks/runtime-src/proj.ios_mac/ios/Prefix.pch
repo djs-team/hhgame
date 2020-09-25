@@ -40,10 +40,13 @@
     #import "CXOCJSBrigeManager.h"
 
     //微信
-    #define WX_AppKey @"wx36f02225e13d7261"
-    #define WX_AppSecret @"ec838b83af52186b2c62eafec742de94"
+    #define WX_AppKey @"wx0b0dfb4c61044a8b"
+    #define WX_AppSecret @"88c540f1f030c762be4ee5ecb1f41071"
+    #define WX_UniversalLinks @"https://hehegames/app/"
+
     //极光
-    #define jPush_appKey @"63fc9c5b80e873aee27415ed"
+    #define jPush_appKey @"e1f41c1d0fc62f37b80845f3"
+
     //穿山甲
     #define BUDAd_appKey @"5105251"
     #define BUDAd_SlotID @"945477184"

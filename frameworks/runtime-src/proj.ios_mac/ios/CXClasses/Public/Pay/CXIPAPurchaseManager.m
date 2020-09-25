@@ -27,9 +27,6 @@ SKProductsRequestDelegate>
 {
     SKProductsRequest *request;
 }
-//购买凭证
-//@property (nonatomic,copy)NSString *receipt;
-//存储base64编码的交易凭证
 
 //产品ID
 @property (nonnull,copy)NSString * profductId;
@@ -58,7 +55,7 @@ static CXIPAPurchaseManager * manager = nil;
 -(void)startManager{
     
     dispatch_sync(iap_queue(), ^{
-    
+        
         [[SKPaymentQueue defaultQueue] addTransactionObserver:manager];
 
     });
@@ -66,7 +63,7 @@ static CXIPAPurchaseManager * manager = nil;
 }
 
 #pragma mark -- 移除内购监听者
--(void)stopManager{
+- (void)stopManager{
     
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         
@@ -77,7 +74,7 @@ static CXIPAPurchaseManager * manager = nil;
 }
 
 #pragma mark -- 发起购买的方法
--(void)inAppPurchaseWithProductID:(NSString *)productID iapResult:(InAppPurchaseResult)iapResult{
+- (void)inAppPurchaseWithProductID:(NSString *)productID iapResult:(InAppPurchaseResult)iapResult{
     [MBProgressHUD showHUD];
     [self removeAllUncompleteTransactionsBeforeNewPurchase];
     
@@ -96,7 +93,7 @@ static CXIPAPurchaseManager * manager = nil;
 }
 
 #pragma mark -- 结束上次未完成的交易
--(void)removeAllUncompleteTransactionsBeforeNewPurchase {
+- (void)removeAllUncompleteTransactionsBeforeNewPurchase {
     
     NSArray* transactions = [SKPaymentQueue defaultQueue].transactions;
     
@@ -164,7 +161,9 @@ static CXIPAPurchaseManager * manager = nil;
     if (product) {
         SKMutablePayment * payment = [SKMutablePayment paymentWithProduct:product];
         //使用苹果提供的属性,将平台订单号复制给这个属性作为透传参数
-        payment.applicationUsername = self.order;
+        if (self.order_sn.length > 0) {
+            payment.applicationUsername = self.order_sn;
+        }
         
         [[SKPaymentQueue defaultQueue] addPayment:payment];
         
@@ -184,12 +183,12 @@ static CXIPAPurchaseManager * manager = nil;
 
 //如果没有设置监听购买结果将直接跳至反馈结束；
 - (void)requestDidFinish:(SKRequest *)request{
-    
+    [MBProgressHUD hideHUD];
 }
 
 #pragma mark -- 监听结果
 - (void)paymentQueue:(SKPaymentQueue *)queue updatedTransactions:(NSArray<SKPaymentTransaction *> *)transactions{
-    
+    [MBProgressHUD hideHUD];
     //当用户购买的操作有结果时，就会触发下面的回调函数，
     for (SKPaymentTransaction * transaction in transactions) {
         
@@ -197,6 +196,7 @@ static CXIPAPurchaseManager * manager = nil;
                 
             case SKPaymentTransactionStatePurchased:{
                 
+                [MBProgressHUD showHUD];
                 [self completeTransaction:transaction];
                 
             }
@@ -251,17 +251,79 @@ static CXIPAPurchaseManager * manager = nil;
 
 //完成交易
 #pragma mark -- 交易完成的回调
-- (void)completeTransaction:(SKPaymentTransaction *)transaction{
-#pragma mark -- 根据存储凭证存储Order
-    if(self.order) {
-        
-        [self saveOrderByInAppPurchase:transaction];
-        
+- (void)completeTransaction:(SKPaymentTransaction *)transaction {
+    if (self.order_sn.length <= 0) {
+        self.order_sn = transaction.transactionIdentifier;
     }
-#pragma mark -- 获取购买凭证并且发送服务器验证
-    [self getAndSaveReceipt:transaction]; //获取交易成功后的购买凭证
+//    // 根据存储凭证存储Order
+//    [self saveOrderByInAppPurchase:transaction];
+//    // 获取购买凭证并且发送服务器验证
+//    [self getAndSaveReceipt:transaction];
     
+    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:[[NSUserDefaults standardUserDefaults] objectForKey:@"CXIPAPurchaseManager_NSUserDefaults"]];
+    if (![dict.allKeys containsObject:transaction.transactionIdentifier]) {
+        NSDictionary *item = @{
+            @"user_id":self.userid ? self.userid : @"",
+            @"order_sn":self.order_sn,
+            @"purchaseType": @(self.purchaseType),
+        };
+        [dict setValue:item forKey:transaction.transactionIdentifier];
+        [[NSUserDefaults standardUserDefaults] setObject:dict forKey:@"CXIPAPurchaseManager_NSUserDefaults"];
+    }
+    
+    //获取交易凭证
+    NSURL * receiptUrl = [[NSBundle mainBundle] appStoreReceiptURL];
+    NSData * receiptData = [NSData dataWithContentsOfURL:receiptUrl];
+    NSString * base64String = [receiptData base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed];
+    
+    [self sendAppStoreRequestToPhpWithReceipt:base64String userId:self.userid paltFormOrder:self.order_sn trans:transaction];
 }
+
+#pragma mark -- 去服务器验证购买
+- (void)sendAppStoreRequestToPhpWithReceipt:(NSString *)receipt userId:(NSString *)userId paltFormOrder:(NSString * )order trans:(SKPaymentTransaction *)transaction {
+    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:[[NSUserDefaults standardUserDefaults] objectForKey:@"CXIPAPurchaseManager_NSUserDefaults"]];
+    NSDictionary *item = [dict objectForKey:transaction.transactionIdentifier];
+    
+    if ([item[@"purchaseType"] integerValue] == LiveBroadcast) { // 直播
+        NSString *signature = [CocoaSecurity md5:[CXClientModel instance].token].hexLower;
+        NSDictionary *param = @{
+            @"signature":signature,
+            @"receipt":receipt,
+            @"user_id":item[@"user_id"],
+            @"transaction_id":transaction.transactionIdentifier,
+        };
+        kWeakSelf
+        [CXHTTPRequest POSTWithURL:@"/index.php/Api/ApplePay/getreceiptdata" parameters:param callback:^(id responseObject, BOOL isCache, NSError *error) {
+            [MBProgressHUD hideHUD];
+            if (!error) {
+                //结束交易方法
+                [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
+                [dict removeObjectForKey:transaction.transactionIdentifier];
+                [[NSUserDefaults standardUserDefaults] setObject:dict forKey:@"CXIPAPurchaseManager_NSUserDefaults"];
+                if (weakSelf.iapResultBlock) {
+                    weakSelf.iapResultBlock(YES, param, nil);
+                }
+            }
+        }];
+    } else {
+        [MBProgressHUD hideHUD];
+        NSString *receiptStr = [receipt stringByAddingPercentEncodingWithAllowedCharacters:[[NSCharacterSet characterSetWithCharactersInString:@"+"] invertedSet]];
+        NSDictionary *param = @{
+            @"purchaseData":receiptStr,
+            @"orderNo": item[@"order_sn"],
+        };
+        
+        if ([CXOCJSBrigeManager manager].paySuccessMethod) {
+            if (self.iapResultBlock) {
+                self.iapResultBlock(YES, param, nil);
+            }
+        } else {
+//            [AppController applePayCheckOrder:[param jsonStringEncoded]];
+            [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
+        }
+    }
+}
+
 
 #pragma mark -- 处理交易失败回调
 - (void)failedTransaction:(SKPaymentTransaction *)transaction{
@@ -269,155 +331,22 @@ static CXIPAPurchaseManager * manager = nil;
     NSString * error = nil;
 
     if(transaction.error.code != SKErrorPaymentCancelled) {
-        error = [NSString stringWithFormat:@"%ld",transaction.error.code];
+        error = [NSString stringWithFormat:@"%@",transaction.error.description];
         
     } else {
-        error = [NSString stringWithFormat:@"%ld",transaction.error.code];
+        error = [NSString stringWithFormat:@"%@",transaction.error.description];
     }
     
     if (self.iapResultBlock) {
         self.iapResultBlock(NO, nil, error);
     }
     
-    [[SKPaymentQueue defaultQueue]finishTransaction:transaction];
-    
-}
-
-- (void)restoreTransaction:(SKPaymentTransaction *)transaction{
-    
-    [MBProgressHUD hideHUD];
     [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
 }
 
-#pragma mark -- 存储订单,防止走漏单流程是获取不到Order 且苹果返回order为nil
--(void)saveOrderByInAppPurchase:(SKPaymentTransaction *)transaction{
-    
-    NSMutableDictionary * dic = [[NSMutableDictionary alloc]init];
-    NSString * order = self.order;
-    NSString *savedPath = [NSString stringWithFormat:@"%@/%@.plist", [SandBoxHelper tempOrderPath], order];
-    [dic setValue:order forKey:transaction.transactionIdentifier];
-    BOOL ifWriteSuccess = [dic writeToFile:savedPath atomically:YES];
-    
-    if (ifWriteSuccess) {
-        
-        NSLog(@"根据事务id存储订单号成功!订单号为:%@  事务id为:%@",order,transaction.transactionIdentifier);
-    }
-}
-
-#pragma mark -- 根据凭证存储的列表里获取Order
--(NSString *)getOrderWithTransactionId:(NSString *)transId{
-    
-    NSString * order;
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSError * error;
-    NSArray * cacheFileNameArray = [fileManager contentsOfDirectoryAtPath:[SandBoxHelper tempOrderPath] error:&error];
-    
-    for (NSString * name in cacheFileNameArray) {
-        
-       NSString * filePath = [NSString stringWithFormat:@"%@/%@", [SandBoxHelper tempOrderPath], name];
-        NSMutableDictionary *localdic = [NSMutableDictionary dictionaryWithContentsOfFile:filePath];
-        if ([localdic valueForKey:transId]) {
-            order = [localdic valueForKey:transId];
-            
-        } else {
-            continue;
-        }
-    }
-    
-    if ([order length]>0) {
-        
-      return order;
-        
-    } else {
-        
-      return @"";
-        
-    }
-}
-#pragma mark -- 获取购买凭证
--(void)getAndSaveReceipt:(SKPaymentTransaction *)transaction{
-    
-    //获取交易凭证
-    NSURL * receiptUrl = [[NSBundle mainBundle] appStoreReceiptURL];
-    NSData * receiptData = [NSData dataWithContentsOfURL:receiptUrl];
-    NSString * base64String = [receiptData base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed];
-    //初始化字典
-    NSMutableDictionary * dic = [[NSMutableDictionary alloc]init];
-    NSString * order = transaction.payment.applicationUsername;
-    NSString * userId = self.userid;
-    
-    if (userId == nil||[userId length] == 0) {
-        
-        userId = @"走漏单流程未传入userId";
-    }
-    
-    if (order == nil||[order length] == 0) {
-        
-        if (self.order) {
-            order = self.order;
-        } else {
-            
-            if ([[self getOrderWithTransactionId:transaction.transactionIdentifier] length] > 0) {
-              
-                order = [self getOrderWithTransactionId:transaction.transactionIdentifier];
-                
-            }else{
-                
-                order = @"苹果返回透传参数为nil";
-            }
-        }
-    }
-
-    NSLog(@"后台订单号为%@",order);
-    //如果这时候
-    [dic setValue: base64String forKey:receiptKey];
-    [dic setValue:transaction.transactionIdentifier forKey:@"unlock_transactionId"];
-    [dic setValue: order forKey:@"order"];
-    [dic setValue:[self getCurrentZoneTime] forKey:@"time"];
-    [dic setValue: userId forKey:@"user_id"];
-    
-//    [[ULSDKAPI shareAPI]sendLineWithPlatformOrder:order Receipt:base64String LineNumber:@"IPAPurchase.m 405"];
-
-    NSString *savedPath = [NSString stringWithFormat:@"%@/%@.plist", [SandBoxHelper iapReceiptPath], transaction.transactionIdentifier];
-    
-    //这个存储成功与否其实无关紧要
-    BOOL ifWriteSuccess = [dic writeToFile:savedPath atomically:YES];
-
-    if (ifWriteSuccess){
-
-        NSLog(@"购买凭据存储成功!");
-
-    }else{
-        
-        NSLog(@"购买凭据存储失败");
-    }
-    
-    [self sendAppStoreRequestToPhpWithReceipt:base64String userId:userId paltFormOrder:order trans:transaction];
-
-}
-
-#pragma mark -- 获取平台订单号去后台获取订单先关的订单信息
--(void)getPlatformAmountInfoWithOrder:(NSString *)transOrder{
-    
-//    [[ULSDKAPI shareAPI]getPlatformAmountWithOrder:transOrder success:^(id responseObject) {
-//
-//        if (REQUESTSUCCESS) {
-//
-//            self->_platformAmount = [GETRESPONSEDATA:@"amount"];
-//            self->_amount_type = [GETRESPONSEDATA:@"amount_type"];
-//            self->_third_goods_id = [GETRESPONSEDATA:@"third_goods_id"];
-//
-//            [FBSDKAppEvents logEvent:@"pay_in_sdk" valueToSum:[self->_platformAmount doubleValue] parameters:@{@"fb_currency":@"USD",@"amount":_platformAmount,@"amount_type":_amount_type,@"third_goods_id":_third_goods_id}];
-//
-//        }else{
-//            //如果获取不到qing'qi
-//            NSLog(@"%@",[responseObject objectForKey:@"message"]);
-//        }
-//
-//    } failure:^(NSString *failure) {
-//
-//    }];
-    
+- (void)restoreTransaction:(SKPaymentTransaction *)transaction{
+    [MBProgressHUD hideHUD];
+    [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
 }
 
 #pragma mark -- 存储成功订单
@@ -508,317 +437,7 @@ static CXIPAPurchaseManager * manager = nil;
     
 }
 
-#pragma mark -- 去服务器验证购买
--(void)sendAppStoreRequestToPhpWithReceipt:(NSString *)receipt userId:(NSString *)userId paltFormOrder:(NSString * )order trans:(SKPaymentTransaction *)transaction {
-    
-    if (_purchaseType == LiveBroadcast) { // 直播
-        NSString *signature = [CocoaSecurity md5:[CXClientModel instance].token].hexLower;
-        NSDictionary *param = @{
-            @"signature":signature,
-            @"receipt":receipt,
-            @"user_id":_userid,
-            @"transaction_id":transaction.transactionIdentifier,
-        };
-        kWeakSelf
-        [CXHTTPRequest POSTWithURL:@"/index.php/Api/ApplePay/getreceiptdata" parameters:param callback:^(id responseObject, BOOL isCache, NSError *error) {
-            [MBProgressHUD hideHUD];
-            if (!error) {
-                //结束交易方法
-                [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
-    
-                [weakSelf getPlatformAmountInfoWithOrder:order];
-    
-                //这里将成功但存储起来
-                [weakSelf SaveIapSuccessReceiptDataWithReceipt:receipt Order:order UserId:userId transId:transaction.transactionIdentifier];
-                [weakSelf successConsumptionOfGoodsWithTransId:transaction.transactionIdentifier];
-    
-                //adjust 上报充值次数打点
-                [weakSelf userRechargeTotalEventWithUserId:userId];
-                if (weakSelf.iapResultBlock) {
-                    weakSelf.iapResultBlock(YES, param, nil);
-                }
-            }
-        }];
-    } else {
-        NSDictionary *param = @{
-            @"receipt":receipt,
-            @"user_id":_userid,
-            @"transaction_id":transaction.transactionIdentifier,
-            @"order": [self getOrderWithTransactionId:transaction.transactionIdentifier],
-        };
-        if (self.iapResultBlock) {
-            self.iapResultBlock(YES, param, nil);
-        }
-    }
-    
-//    [[ULSDKAPI shareAPI]sendLineWithPlatformOrder:order Receipt:receipt LineNumber:@"IPAPurchase.m 542"];
-//    #pragma mark -- 发送信息去验证是否成功
-//    [[ULSDKAPI shareAPI] sendVertifyWithReceipt:receipt order:order userId:userId  success:^(ULSDKAPI *api, id responseObject) {
-//
-//        if (REQUESTSUCCESS) {
-//
-//            [RRHUD hide];
-//            [RRHUD showSuccessWithContainerView:UL_rootVC.view status:NSLocalizedString(@"Purchase Succeed", @"")];
-//            //结束交易方法
-//            [[SKPaymentQueue defaultQueue]finishTransaction:transaction];
-//
-//            [self getPlatformAmountInfoWithOrder:order];
-//
-//            NSData * data = [NSData dataWithContentsOfFile:[[[NSBundle mainBundle] appStoreReceiptURL] path]];
-//            NSString *result = [data base64EncodedStringWithOptions:0];
-//
-//            //这里将成功但存储起来
-//            [self SaveIapSuccessReceiptDataWithReceipt:receipt Order:order UserId:userId transId:transaction.transactionIdentifier];
-//            [self successConsumptionOfGoodsWithTransId:transaction.transactionIdentifier];
-//
-//            //adjust 上报充值次数打点
-//            [self userRechargeTotalEventWithUserId:userId];
-//
-//            //检查是否发货成功
-//            [api checkIapIfSuccessWithUserid:userId Order:order success:^(ULSDKAPI *api, id responseObject) {
-//
-//                if (REQUESTSUCCESS) {
-//
-//                    if (self.iapResultBlock) {
-//                        self.iapResultBlock(YES, result, nil);
-//                    }
-//
-//                }else{
-//
-//                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//                        //验证是否发货通过
-//                        [api checkIapIfSuccessWithUserid:userId Order:order success:^(ULSDKAPI *api, id responseObject) {
-//#pragma 校验发货失败 2
-//                            if (REQUESTSUCCESS) {
-//
-//                                if (self.iapResultBlock) {
-//                                    self.iapResultBlock(YES, result, nil);
-//                                }
-//
-//                            }else{
-//                                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//
-//                                    [api checkIapIfSuccessWithUserid:userId Order:order success:^(ULSDKAPI *api, id responseObject) {
-//
-//                                        if (REQUESTSUCCESS) {
-//
-//                                            if (self.iapResultBlock) {
-//                                            self.iapResultBlock(YES, result, nil);
-//                                            }
-//
-//                                        }else{
-//
-//                                        }
-//
-//                                    } failure:^(ULSDKAPI *api, NSString *failure) {
-//
-//                                        [RRHUD showErrorWithContainerView:UL_rootVC.view status:NSLocalizedString(@"Request Error", @"")];
-//                                    }];
-//                                });
-//
-//                            }
-//#pragma 校验发货失败 3
-//                        } failure:^(ULSDKAPI *api, NSString *failure) {
-//
-//                            [RRHUD hide];
-//
-//                            [RRHUD showErrorWithContainerView:UL_rootVC.view status:NSLocalizedString(@"Request Error", @"")];
-//                        }];
-//
-//                    });
-//                }
-//#pragma 校验发货失败 1
-//            } failure:^(ULSDKAPI *api, NSString *failure) {
-//
-//                [RRHUD hide];
-//                [RRHUD showErrorWithContainerView:UL_rootVC.view status:NSLocalizedString(@"Request Error", @"")];
-//
-//            }];
-//
-//        }else{
-//#pragma mark -- callBack 回调
-//            [api sendVertifyWithReceipt:receipt order:order userId:userId success:^(ULSDKAPI *api, id responseObject) {
-//
-//                if (REQUESTSUCCESS) {
-//
-//                    [RRHUD hide];
-//
-//                    [RRHUD showSuccessWithContainerView:UL_rootVC.view status:NSLocalizedString(@"Purchase Succeed", @"")];
-//
-//                    [[SKPaymentQueue defaultQueue]finishTransaction:transaction];
-//
-//                    [self getPlatformAmountInfoWithOrder:order];
-//
-//                    NSData *data = [NSData dataWithContentsOfFile:[[[NSBundle mainBundle] appStoreReceiptURL] path]];
-//
-//                    NSString *result = [data base64EncodedStringWithOptions:0];
-//
-//                    //存储成功订单
-//
-//                    [self SaveIapSuccessReceiptDataWithReceipt:receipt Order:order UserId:userId transId:transaction.transactionIdentifier];
-//                    //删除已成功订单
-//                    [self successConsumptionOfGoodsWithTransId:transaction.transactionIdentifier];
-//
-//                    [self userRechargeTotalEventWithUserId:userId];
-//
-//                    [api checkIapIfSuccessWithUserid:userId Order:order success:^(ULSDKAPI *api, id responseObject) {
-//
-//                        if (REQUESTSUCCESS) {
-//
-//                            if (self.iapResultBlock) {
-//                                self.iapResultBlock(YES, result, nil);
-//                            }
-//
-//                        }else{
-//                            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//
-//                                [api checkIapIfSuccessWithUserid:userId Order:order success:^(ULSDKAPI *api, id responseObject) {
-//#pragma 校验发货失败 2
-//                                    if (REQUESTSUCCESS) {
-//
-//                                        if (self.iapResultBlock) {
-//                                            self.iapResultBlock(YES, result, nil);
-//                                        }
-//
-//                                    }else{
-//                                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//
-//                                            [api checkIapIfSuccessWithUserid:userId Order:order success:^(ULSDKAPI *api, id responseObject) {
-//
-//                                            if (REQUESTSUCCESS) {
-//
-//                                                if (self.iapResultBlock) {
-//                                                    self.iapResultBlock(YES, result, nil);
-//                                                }
-//
-//                                                }else{
-//
-//                                                    [api sendFailureReoprtWithReceipt:receipt order:order success:^(ULSDKAPI *api, id responseObject) {
-//
-//                                                    } failure:^(ULSDKAPI *api, NSString *failure) {
-//
-//                                                    }];
-//
-//                                                }
-//
-//                                            } failure:^(ULSDKAPI *api, NSString *failure) {
-//
-//                                            [RRHUD showErrorWithContainerView:UL_rootVC.view status:NSLocalizedString(@"Request Error", @"")];
-//
-//                                            }];
-//                                        });
-//                                    }
-//#pragma 校验发货失败 3
-//                                } failure:^(ULSDKAPI *api, NSString *failure) {
-//
-//                                    [RRHUD hide];
-//
-//                                    [RRHUD showErrorWithContainerView:UL_rootVC.view status:NSLocalizedString(@"Request Error", @"")];
-//
-//                                }];
-//
-//                            });
-//                        }
-//#pragma 校验发货失败 1
-//                    } failure:^(ULSDKAPI *api, NSString *failure) {
-//
-//                        [RRHUD hide];
-//                        [RRHUD showErrorWithContainerView:UL_rootVC.view status:NSLocalizedString(@"Request Error", @"")];
-//
-//                    }];
-//
-//                }else{
-//
-//                    [RRHUD hide];
-//#pragma mark --发送错误报告
-//                    [api sendFailureReoprtWithReceipt:receipt order:order success:^(ULSDKAPI *api, id responseObject) {
-//
-//                    } failure:^(ULSDKAPI *api, NSString *failure) {
-//
-//                        [RRHUD hide];
-//                    }];
-//
-//                }
-//
-//            } failure:^(ULSDKAPI *api, NSString *failure) {
-//
-//                [RRHUD hide];
-//            }];
-//
-//        }
-//
-//    } failure:^(ULSDKAPI *api, NSString *failure) {
-//
-//        [RRHUD hide];
-//
-//        [api VertfyFailedRePostWithOrder:order jsonStr:failure];
-//
-//    }];
-}
-
-
-
-#pragma mark  -- 玩家累计成功充值次数
-
--(void)userRechargeTotalEventWithUserId:(NSString *)userId{
-    
-//    if (![[NSUserDefaults standardUserDefaults]valueForKey:[NSString stringWithFormat:@"%@_AccumulatedThreeTimesSuccessfulPayment",userId]]) {
-//
-//         [[NSUserDefaults standardUserDefaults]setValue:@"1" forKey:[NSString stringWithFormat:@"%@_AccumulatedThreeTimesSuccessfulPayment",userId]];
-//
-//    }else{
-//
-//        NSInteger successPayCount = [[[NSUserDefaults standardUserDefaults]valueForKey:[NSString stringWithFormat:@"%@_AccumulatedThreeTimesSuccessfulPayment",userId]]integerValue];
-//
-//        successPayCount += 1 ;
-//
-//        //存储充值次数
-//        [[NSUserDefaults standardUserDefaults]setValue:[NSString stringWithFormat:@"%ld",(long)successPayCount]forKey:[NSString stringWithFormat:@"%@_AccumulatedThreeTimesSuccessfulPayment",userId]];
-//
-//        if (successPayCount >= 10) {
-//
-//            [[ULSDKAPI shareAPI]adjustPayTotalCountReportSuccess:^(ULSDKAPI *api, id responseObject) {
-//
-//                if (REQUESTSUCCESS) {
-//
-//                NSString * token = [GETRESPONSEDATA:@"AccumulatedTenTimesSuccessfulPayment"];
-//
-//                NSLog(@"adjust注册上报事件AccumulatedTenTimesSuccessfulPayment --%@",token);
-//                ADJEvent * event = [[ADJEvent alloc]initWithEventToken:token];
-//                [Adjust trackEvent:event];
-//
-//                }
-//
-//            } Failure:^(ULSDKAPI *api, NSString *failure) {
-//
-//            }];
-//
-//        }else if (successPayCount >= 3){
-//
-//            [[ULSDKAPI shareAPI]adjustPayTotalCountReportSuccess:^(ULSDKAPI *api, id responseObject) {
-//
-//                if (REQUESTSUCCESS) {
-//
-//                    NSString * token = [GETRESPONSEDATA:@"AccumulatedThreeTimesSuccessfulPayment"];
-//
-//                    NSLog(@"adjust注册上报事件AccumulatedThreeTimesSuccessfulPayment --%@",token);
-//                    ADJEvent * event = [[ADJEvent alloc]initWithEventToken:token];
-//                    [Adjust trackEvent:event];
-//
-//                }
-//
-//            } Failure:^(ULSDKAPI *api, NSString *failure) {
-//
-//            }];
-//
-//        }else{
-//
-//            NSLog(@"Go ReCharge,GO!");
-//        }
-//    }
-}
-
-#pragma mark -- 根据购买拼争来移除本地凭证的方法
+#pragma mark -- 根据购买凭证来移除本地凭证的方法
 -(void)successConsumptionOfGoodsWithTransId:(NSString * )transcationId{
     
     NSFileManager *fileManager = [NSFileManager defaultManager];
@@ -865,5 +484,99 @@ static CXIPAPurchaseManager * manager = nil;
         NSLog(@"本地无与之匹配的订单");
     }
 }
+
+
+//#pragma mark -- 存储订单,防止走漏单流程是获取不到Order 且苹果返回order为nil
+//- (void)saveOrderByInAppPurchase:(SKPaymentTransaction *)transaction{
+//
+//    NSMutableDictionary * dic = [[NSMutableDictionary alloc]init];
+//    NSString * order = self.order_sn;
+//    NSString *savedPath = [NSString stringWithFormat:@"%@/%@.plist", [SandBoxHelper tempOrderPath], order];
+//    [dic setValue:order forKey:transaction.transactionIdentifier];
+//    BOOL ifWriteSuccess = [dic writeToFile:savedPath atomically:YES];
+//
+//    if (ifWriteSuccess) {
+//
+//        NSLog(@"根据事务id存储订单号成功!订单号为:%@  事务id为:%@",order,transaction.transactionIdentifier);
+//    }
+//}
+
+//#pragma mark -- 根据凭证存储的列表里获取Order
+//- (NSString *)getOrderWithTransactionId:(NSString *)transId{
+//
+//    NSString * order;
+//    NSFileManager *fileManager = [NSFileManager defaultManager];
+//    NSError * error;
+//    NSArray * cacheFileNameArray = [fileManager contentsOfDirectoryAtPath:[SandBoxHelper tempOrderPath] error:&error];
+//
+//    for (NSString * name in cacheFileNameArray) {
+//
+//       NSString * filePath = [NSString stringWithFormat:@"%@/%@", [SandBoxHelper tempOrderPath], name];
+//        NSMutableDictionary *localdic = [NSMutableDictionary dictionaryWithContentsOfFile:filePath];
+//        if ([localdic valueForKey:transId]) {
+//            order = [localdic valueForKey:transId];
+//
+//        } else {
+//            continue;
+//        }
+//    }
+//
+//    if ([order length]>0) {
+//
+//      return order;
+//
+//    } else {
+//
+//      return @"";
+//
+//    }
+//}
+//#pragma mark -- 获取购买凭证
+//-(void)getAndSaveReceipt:(SKPaymentTransaction *)transaction{
+//
+//    //获取交易凭证
+//    NSURL * receiptUrl = [[NSBundle mainBundle] appStoreReceiptURL];
+//    NSData * receiptData = [NSData dataWithContentsOfURL:receiptUrl];
+//    NSString * base64String = [receiptData base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed];
+//    //初始化字典
+//    NSMutableDictionary * dic = [[NSMutableDictionary alloc]init];
+//    NSString * order = transaction.payment.applicationUsername;
+//    NSString * userId = self.userid;
+//
+//    if (userId == nil||[userId length] == 0) {
+//
+//        userId = @"走漏单流程未传入userId";
+//    }
+//
+//    if (order == nil||[order length] == 0) {
+//
+//        if (self.order_sn) {
+//            order = self.order_sn;
+//        } else {
+//            order = [self getOrderWithTransactionId:transaction.transactionIdentifier];
+//        }
+//    }
+//
+//    //如果这时候
+//    [dic setValue: base64String forKey:receiptKey];
+//    [dic setValue:transaction.transactionIdentifier forKey:@"unlock_transactionId"];
+//    [dic setValue: order forKey:@"order"];
+//    [dic setValue:[self getCurrentZoneTime] forKey:@"time"];
+//    [dic setValue: userId forKey:@"user_id"];
+//
+//    NSString *savedPath = [NSString stringWithFormat:@"%@/%@.plist", [SandBoxHelper iapReceiptPath], transaction.transactionIdentifier];
+//
+//    //这个存储成功与否其实无关紧要
+//    BOOL ifWriteSuccess = [dic writeToFile:savedPath atomically:YES];
+//
+//    if (ifWriteSuccess){
+//        NSLog(@"购买凭据存储成功!");
+//    } else {
+//        NSLog(@"购买凭据存储失败");
+//    }
+//
+//    [self sendAppStoreRequestToPhpWithReceipt:base64String userId:userId paltFormOrder:order trans:transaction];
+//
+//}
 
 @end

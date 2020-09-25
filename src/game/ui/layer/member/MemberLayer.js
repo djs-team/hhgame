@@ -12,7 +12,7 @@ load('game/ui/layer/member/MemberLayer', function () {
             this._super(ResConfig.View.MemberLayer)
             this.registerMediator(new MemberMdt(this))
             this.registerEventListener('ThirdPayCallback', this.onThirdPayCallBack)
-
+            this.registerEventListener('ApplePayCallback', this.onApplePayCallBack)
 
         },
         RES_BINDING: function () {
@@ -78,7 +78,15 @@ load('game/ui/layer/member/MemberLayer', function () {
             cc.log('=============onThirdPayCallBack' + msg)
 
         },
-
+        
+        onApplePayCallBack: function (msg) {
+            cc.log('=============onApplePayCallBack' + msg)
+            msg = JSON.parse(msg)
+            
+            appInstance.gameAgent().httpGame().VIPPaysOrderAppleCheckReq(msg)
+            
+        },
+        
 
         initData: function () {
 

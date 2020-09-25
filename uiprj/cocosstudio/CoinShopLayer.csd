@@ -225,7 +225,7 @@
           <AbstractNodeData Name="btmPnl" ActionTag="-1392086517" UserData="{&quot;layoutType&quot;:&quot;showAll&quot;,&quot;screenAlign&quot;:&quot;bottom&quot;}" Tag="125" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <Children>
-              <AbstractNodeData Name="leftPnl" Visible="False" ActionTag="1977439574" Tag="332" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="leftPnl" ActionTag="1977439574" Tag="332" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="1280.0000" Y="720.0000" />
                 <Children>
                   <AbstractNodeData Name="Image_6" ActionTag="250940592" Tag="131" IconVisible="False" LeftMargin="87.6799" RightMargin="1147.3201" TopMargin="177.0002" BottomMargin="280.9998" LeftEage="14" RightEage="14" TopEage="86" BottomEage="86" Scale9OriginX="14" Scale9OriginY="86" Scale9Width="17" Scale9Height="90" ctype="ImageViewObjectData">
@@ -534,14 +534,14 @@
                             <PreSize X="0.2424" Y="0.7586" />
                             <FileData Type="Normal" Path="common/zuanshi.png" Plist="" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="priceText" ActionTag="-1915352809" Tag="314" IconVisible="False" LeftMargin="39.4003" RightMargin="27.5997" TopMargin="6.0583" BottomMargin="6.9417" FontSize="16" LabelText="5555" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                            <Size X="32.0000" Y="16.0000" />
+                          <AbstractNodeData Name="priceText" ActionTag="-1915352809" Tag="314" IconVisible="False" LeftMargin="37.4004" RightMargin="13.5996" TopMargin="6.0583" BottomMargin="6.9417" FontSize="16" LabelText="555555" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                            <Size X="48.0000" Y="16.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="55.4003" Y="14.9417" />
+                            <Position X="61.4004" Y="14.9417" />
                             <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.5596" Y="0.5152" />
-                            <PreSize X="0.3232" Y="0.5517" />
+                            <PrePosition X="0.6202" Y="0.5152" />
+                            <PreSize X="0.4848" Y="0.5517" />
                             <OutlineColor A="255" R="255" G="0" B="0" />
                             <ShadowColor A="255" R="110" G="110" B="110" />
                           </AbstractNodeData>
@@ -566,10 +566,10 @@
                     <EndColor A="255" R="255" G="255" B="255" />
                     <ColorVector ScaleY="1.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="goodMidNd" ActionTag="-341517468" Tag="122" IconVisible="True" PositionPercentXEnabled="True" LeftMargin="673.1469" RightMargin="606.8531" TopMargin="411.8900" BottomMargin="308.1100" ctype="SingleNodeObjectData">
+                  <AbstractNodeData Name="goodMidNd" ActionTag="-341517468" Tag="122" IconVisible="True" PositionPercentXEnabled="True" LeftMargin="673.1520" RightMargin="606.8480" TopMargin="411.8900" BottomMargin="308.1100" ctype="SingleNodeObjectData">
                     <Size X="0.0000" Y="0.0000" />
                     <AnchorPoint />
-                    <Position X="673.1469" Y="308.1100" />
+                    <Position X="673.1520" Y="308.1100" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.5259" Y="0.4279" />
@@ -599,7 +599,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="popUpPnl" ActionTag="-2097570789" Tag="316" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+          <AbstractNodeData Name="popUpPnl" Visible="False" ActionTag="-2097570789" Tag="316" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <Children>
               <AbstractNodeData Name="addressPnl" ActionTag="2052708176" Tag="317" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">

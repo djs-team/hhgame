@@ -111,7 +111,7 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="invitationPnl" Visible="False" ActionTag="1132894349" Tag="522" IconVisible="False" LeftMargin="392.2676" RightMargin="193.7324" TopMargin="122.8461" BottomMargin="125.1539" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="invitationPnl" ActionTag="1132894349" Tag="522" IconVisible="False" LeftMargin="392.2676" RightMargin="193.7324" TopMargin="122.8461" BottomMargin="125.1539" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="694.0000" Y="472.0000" />
                 <Children>
                   <AbstractNodeData Name="invitNowPnl" ActionTag="579026604" Tag="686" IconVisible="False" LeftMargin="-1.6381" RightMargin="-7.3619" TopMargin="-15.2499" BottomMargin="-51.7501" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
@@ -127,15 +127,18 @@
                         <PreSize X="0.9531" Y="0.7124" />
                         <FileData Type="Normal" Path="png/dt_yqyl.png" Plist="" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="qrCodePg" ActionTag="1905684486" Tag="679" IconVisible="False" LeftMargin="267.0294" RightMargin="389.9706" TopMargin="322.4202" BottomMargin="170.5798" Scale9Width="46" Scale9Height="46" ctype="ImageViewObjectData">
-                        <Size X="46.0000" Y="46.0000" />
+                      <AbstractNodeData Name="qrCodePg1" ActionTag="-118132835" Tag="73" IconVisible="False" LeftMargin="243.9160" RightMargin="359.0840" TopMargin="294.0455" BottomMargin="144.9545" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+                        <Size X="100.0000" Y="100.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="290.0294" Y="193.5798" />
+                        <Position X="293.9160" Y="194.9545" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.4126" Y="0.3591" />
-                        <PreSize X="0.0654" Y="0.0853" />
-                        <FileData Type="Default" Path="Default/ImageFile.png" Plist="" />
+                        <PrePosition X="0.4181" Y="0.3617" />
+                        <PreSize X="0.1422" Y="0.1855" />
+                        <SingleColor A="255" R="150" G="200" B="255" />
+                        <FirstColor A="255" R="150" G="200" B="255" />
+                        <EndColor A="255" R="255" G="255" B="255" />
+                        <ColorVector ScaleY="1.0000" />
                       </AbstractNodeData>
                       <AbstractNodeData Name="inviteNowBtn" ActionTag="289119277" Tag="316" IconVisible="False" LeftMargin="412.7228" RightMargin="120.2772" TopMargin="366.4151" BottomMargin="104.5849" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="24" RightEage="25" TopEage="8" BottomEage="2" Scale9OriginX="24" Scale9OriginY="8" Scale9Width="6" Scale9Height="42" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                         <Size X="170.0000" Y="68.0000" />
@@ -177,7 +180,7 @@
                     <EndColor A="255" R="255" G="255" B="255" />
                     <ColorVector ScaleY="1.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="sfpPnl" Visible="False" ActionTag="-2013452821" Tag="864" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                  <AbstractNodeData Name="sfpPnl" ActionTag="-2013452821" Tag="864" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="694.0000" Y="472.0000" />
                     <Children>
                       <AbstractNodeData Name="sftSharePic" ActionTag="-1761569088" Tag="879" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="-187.5222" RightMargin="19.0122" TopMargin="8.8444" BottomMargin="53.4956" LeftEage="284" RightEage="284" TopEage="134" BottomEage="134" Scale9OriginX="284" Scale9OriginY="134" Scale9Width="295" Scale9Height="140" ctype="ImageViewObjectData">
@@ -190,15 +193,18 @@
                         <PreSize X="1.2428" Y="0.8679" />
                         <FileData Type="Normal" Path="png/dt_yqyl1.png" Plist="" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="qrCodePg" ActionTag="1488680157" Tag="687" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="-103.8510" RightMargin="751.8510" TopMargin="293.8064" BottomMargin="132.1936" Scale9Width="46" Scale9Height="46" ctype="ImageViewObjectData">
-                        <Size X="46.0000" Y="46.0000" />
+                      <AbstractNodeData Name="qrCodePg2" ActionTag="407204860" Tag="74" IconVisible="False" LeftMargin="-127.4464" RightMargin="711.4464" TopMargin="264.3408" BottomMargin="97.6592" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                        <Size X="110.0000" Y="110.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="-80.8510" Y="155.1936" />
+                        <Position X="-72.4464" Y="152.6592" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="-0.1165" Y="0.3288" />
-                        <PreSize X="0.0663" Y="0.0975" />
-                        <FileData Type="Default" Path="Default/ImageFile.png" Plist="" />
+                        <PrePosition X="-0.1044" Y="0.3234" />
+                        <PreSize X="0.1585" Y="0.2331" />
+                        <SingleColor A="255" R="150" G="200" B="255" />
+                        <FirstColor A="255" R="150" G="200" B="255" />
+                        <EndColor A="255" R="255" G="255" B="255" />
+                        <ColorVector ScaleY="1.0000" />
                       </AbstractNodeData>
                       <AbstractNodeData Name="sftWxBtn" ActionTag="-400961088" Tag="312" IconVisible="False" LeftMargin="-50.7062" RightMargin="476.2362" TopMargin="428.3920" BottomMargin="-39.2120" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="56" RightEage="53" BottomEage="1" Scale9OriginX="56" Scale9Width="16" Scale9Height="88" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                         <Size X="268.4700" Y="82.8200" />
@@ -280,7 +286,7 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="invitationTasksPnl" Visible="False" ActionTag="-1476095303" Tag="523" IconVisible="False" LeftMargin="404.6700" RightMargin="181.3301" TopMargin="114.9856" BottomMargin="133.0144" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="invitationTasksPnl" ActionTag="-1476095303" Tag="523" IconVisible="False" LeftMargin="404.6700" RightMargin="181.3301" TopMargin="114.9856" BottomMargin="133.0144" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="694.0000" Y="472.0000" />
                 <Children>
                   <AbstractNodeData Name="myTaskList" ActionTag="-151934554" Tag="240" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="-7.7744" RightMargin="13.6008" TopMargin="1.9843" BottomMargin="12.0851" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" IsBounceEnabled="True" ScrollDirectionType="0" DirectionType="Vertical" ctype="ListViewObjectData">

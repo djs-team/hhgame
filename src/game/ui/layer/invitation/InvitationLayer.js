@@ -25,8 +25,10 @@ load('game/ui/layer/invitation/InvitationLayer', function () {
 
                 'pnl/invitationPnl': {},
                 'pnl/invitationPnl/invitNowPnl': {},
+                'pnl/invitationPnl/invitNowPnl/qrCodePg1': {},
                 'pnl/invitationPnl/invitNowPnl/inviteNowBtn': {onClicked: this.onInviteNowClick},
                 'pnl/invitationPnl/sfpPnl': {},
+                'pnl/invitationPnl/sfpPnl/qrCodePg2': {},
                 'pnl/invitationPnl/sfpPnl/sftWxBtn': {onClicked: this.onWxShareClick},
                 'pnl/invitationPnl/sfpPnl/sftWxCircleBtn': {onClicked: this.onWxCircleShareClick},
                 'pnl/invitationTasksPnl': {},
@@ -54,7 +56,7 @@ load('game/ui/layer/invitation/InvitationLayer', function () {
             this._super()
             this.initData()
             this.initView()
-
+            appInstance.nativeApi().getInvitationCode(inviteUrl)
         },
         onExit: function () {
             this._super()
@@ -95,11 +97,21 @@ load('game/ui/layer/invitation/InvitationLayer', function () {
 
         },
         onInviteCodeCallback: function (msg) {
-            imgUrl = msg;//sd卡二维码路径
-            this.loadUrlImage(msg, this.invitNowPnl.getChildByName('qrCodePg'));
-            this.loadUrlImage(msg, this.sfpPnl.getChildByName('qrCodePg'));
-
+            this.loadCodePg(this.qrCodePg1 ,msg)
+            this.loadCodePg(this.qrCodePg2 ,msg)
+            // imgUrl = msg;//sd卡二维码路径
+            // this.loadUrlImage(msg, this.invitNowPnl.getChildByName('qrCodePg'));
+            // this.loadUrlImage(msg, this.sfpPnl.getChildByName('qrCodePg'));
         },
+
+        loadCodePg: function (parent, img) {
+            let size = parent.getContentSize()
+            let sp = new cc.Sprite(img);
+            sp.setContentSize(size)
+            sp.setPosition(cc.p(size.width / 2, size.height / 2))
+            parent.addChild(sp);
+        },
+
         loadUrlImage: function (url, cell) {
             let size = cell.getContentSize();
             cc.loader.loadImg(url, null, function (err, img) {
@@ -248,7 +260,7 @@ load('game/ui/layer/invitation/InvitationLayer', function () {
             this.sfpPnl.setVisible(false)
             this.invitationTasksPnl.setVisible(false)
             this.myInvitationsPnl.setVisible(false)
-            appInstance.nativeApi().getInvitationCode(inviteUrl)
+            // appInstance.nativeApi().getInvitationCode(inviteUrl)
         },
 
         showMyInvitationsData: function () {

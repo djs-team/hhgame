@@ -2199,13 +2199,13 @@
                   {
                     "FileData": {
                       "Type": "Normal",
-                      "Path": "coinshop/scjb_14.png",
+                      "Path": "sign/qd_jl_9.png",
                       "Plist": ""
                     },
                     "Scale9OriginX": 13,
                     "Scale9OriginY": 9,
-                    "Scale9Width": 16,
-                    "Scale9Height": 10,
+                    "Scale9Width": 52,
+                    "Scale9Height": 56,
                     "AnchorPoint": {
                       "ScaleX": 0.5,
                       "ScaleY": 0.5
@@ -2225,18 +2225,18 @@
                       "Y": 0.556
                     },
                     "PreSize": {
-                      "X": 0.3925,
-                      "Y": 0.2456
+                      "X": 0.729,
+                      "Y": 0.6491
                     },
-                    "LeftMargin": 33.6964,
-                    "RightMargin": 31.3036,
-                    "TopMargin": 36.6204,
-                    "BottomMargin": 49.3796,
+                    "LeftMargin": 15.6964,
+                    "RightMargin": 13.3036,
+                    "TopMargin": 13.6204,
+                    "BottomMargin": 26.3796,
                     "Tag": 197,
                     "ActionTag": -67243932,
                     "Size": {
-                      "X": 42.0,
-                      "Y": 28.0
+                      "X": 78.0,
+                      "Y": 74.0
                     },
                     "Name": "awardsPg",
                     "ctype": "ImageViewObjectData"
@@ -2414,8 +2414,8 @@
                 "TouchEnable": true,
                 "AnchorPoint": {},
                 "Position": {
-                  "X": 0.0,
-                  "Y": 240.0
+                  "X": 108.9282,
+                  "Y": 365.34
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -2424,16 +2424,17 @@
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.0,
-                  "Y": 0.3333
+                  "X": 0.0851,
+                  "Y": 0.5074
                 },
                 "PreSize": {
                   "X": 0.4688,
                   "Y": 0.1583
                 },
-                "RightMargin": 680.0,
-                "TopMargin": 366.0,
-                "BottomMargin": 240.0,
+                "LeftMargin": 108.9282,
+                "RightMargin": 571.0718,
+                "TopMargin": 240.66,
+                "BottomMargin": 365.34,
                 "Tag": 138,
                 "ActionTag": 1184176267,
                 "Size": {
@@ -2467,7 +2468,7 @@
                 "AnchorPoint": {},
                 "Position": {
                   "X": 107.17,
-                  "Y": 129.2398
+                  "Y": 129.24
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -2485,8 +2486,8 @@
                 },
                 "LeftMargin": 107.17,
                 "RightMargin": 554.83,
-                "TopMargin": 236.7602,
-                "BottomMargin": 129.2398,
+                "TopMargin": 236.76,
+                "BottomMargin": 129.24,
                 "Tag": 191,
                 "ActionTag": 174139044,
                 "Size": {
@@ -2515,7 +2516,6 @@
       },
       "UsedResources": [
         "aaa/19.png",
-        "coinshop/scjb_14.png",
         "common/bt_3.png",
         "Default/Button_Disable.png",
         "font/hkhbtW12.ttc",
@@ -2534,7 +2534,8 @@
         "sign/qd_22.png",
         "sign/qd_23.png",
         "sign/qd_24.png",
-        "sign/qd_25.png"
+        "sign/qd_25.png",
+        "sign/qd_jl_9.png"
       ],
       "ctype": "GameFileData"
     }

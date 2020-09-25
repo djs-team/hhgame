@@ -22,6 +22,7 @@ load('game/msghandler/index', function () {
     let PlayerTrustProto = include('game/msghandler/PlayerTrustProto')
     let GameResultProto = include('game/msghandler/GameResultProto')
     let AutoPlayProto = include('game/msghandler/AutoPlayProto')
+    let GetArenaProto = include('game/msghandler/GetArenaProto')
 
 
     let objArray = [
@@ -43,7 +44,8 @@ load('game/msghandler/index', function () {
         new JiaGangTableProto(),
         new PlayerTrustProto(),
         new GameResultProto(),
-        new AutoPlayProto()
+        new AutoPlayProto(),
+        new GetArenaProto(),
     ]
 
     let index = {}

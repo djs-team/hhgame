@@ -1,0 +1,7 @@
+/**
+ * 比赛，状态通知消息  比赛开始推送
+ */
+int	MJ_ROOM_MATCHSTATE = MJ_ROOM_MATCHGAME_ID + 25;
+	返回消息:
+		private int matchState;//比赛状态  0 尚未开始  1开始  2进行中  3结束
+		private String extend;//冗余字段

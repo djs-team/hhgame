@@ -58,7 +58,7 @@ load('game/ui/layer/turntable/TurnTableMdt', function () {
                 config.name = configData.describe
                 config.turntableId = configData.turntableId
 
-                GameUtil.getTurnTableRewardsData(configData,config,GameUtil.CURRENCYTYPE_2,GameUtil.UNITLOCATION_NULL)
+                GameUtil.getPropData(configData,config,GameUtil.CURRENCYTYPE_2,GameUtil.UNITLOCATION_NULL,'',GameConfig.FUNCTION_NAME_TURNTABLE)
                 configList[i] = config
             }
 

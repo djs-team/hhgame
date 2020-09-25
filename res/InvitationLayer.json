@@ -646,20 +646,29 @@
                         "ctype": "ImageViewObjectData"
                       },
                       {
-                        "FileData": {
-                          "Type": "Default",
-                          "Path": "Default/ImageFile.png",
-                          "Plist": ""
+                        "ClipAble": false,
+                        "BackColorAlpha": 102,
+                        "ComboBoxIndex": 1,
+                        "SingleColor": {
+                          "R": 150,
+                          "G": 200
                         },
-                        "Scale9Width": 46,
-                        "Scale9Height": 46,
+                        "FirstColor": {
+                          "R": 150,
+                          "G": 200
+                        },
+                        "EndColor": {},
+                        "ColorVector": {
+                          "ScaleY": 1.0
+                        },
+                        "TouchEnable": true,
                         "AnchorPoint": {
                           "ScaleX": 0.5,
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 290.0294,
-                          "Y": 193.5798
+                          "X": 293.916,
+                          "Y": 194.9545
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -668,25 +677,25 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 0.4126,
-                          "Y": 0.3591
+                          "X": 0.4181,
+                          "Y": 0.3617
                         },
                         "PreSize": {
-                          "X": 0.0654,
-                          "Y": 0.0853
+                          "X": 0.1422,
+                          "Y": 0.1855
                         },
-                        "LeftMargin": 267.0294,
-                        "RightMargin": 389.9706,
-                        "TopMargin": 322.4202,
-                        "BottomMargin": 170.5798,
-                        "Tag": 679,
-                        "ActionTag": 1905684486,
+                        "LeftMargin": 243.916,
+                        "RightMargin": 359.084,
+                        "TopMargin": 294.0455,
+                        "BottomMargin": 144.9545,
+                        "Tag": 73,
+                        "ActionTag": -118132835,
                         "Size": {
-                          "X": 46.0,
-                          "Y": 46.0
+                          "X": 100.0,
+                          "Y": 100.0
                         },
-                        "Name": "qrCodePg",
-                        "ctype": "ImageViewObjectData"
+                        "Name": "qrCodePg1",
+                        "ctype": "PanelObjectData"
                       },
                       {
                         "FontSize": 14,
@@ -919,20 +928,31 @@
                         "ctype": "ImageViewObjectData"
                       },
                       {
-                        "FileData": {
-                          "Type": "Default",
-                          "Path": "Default/ImageFile.png",
-                          "Plist": ""
+                        "ClipAble": false,
+                        "BackColorAlpha": 102,
+                        "ComboBoxIndex": 1,
+                        "SingleColor": {
+                          "R": 150,
+                          "G": 200
                         },
-                        "Scale9Width": 46,
-                        "Scale9Height": 46,
+                        "FirstColor": {
+                          "R": 150,
+                          "G": 200
+                        },
+                        "EndColor": {},
+                        "ColorVector": {
+                          "ScaleY": 1.0
+                        },
+                        "Scale9Width": 1,
+                        "Scale9Height": 1,
+                        "TouchEnable": true,
                         "AnchorPoint": {
                           "ScaleX": 0.5,
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": -80.851,
-                          "Y": 155.1936
+                          "X": -72.4464,
+                          "Y": 152.6592
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -940,28 +960,26 @@
                         },
                         "CColor": {},
                         "IconVisible": false,
-                        "PositionPercentXEnabled": true,
-                        "PositionPercentYEnabled": true,
                         "PrePosition": {
-                          "X": -0.1165,
-                          "Y": 0.3288
+                          "X": -0.1044,
+                          "Y": 0.3234
                         },
                         "PreSize": {
-                          "X": 0.0663,
-                          "Y": 0.0975
+                          "X": 0.1585,
+                          "Y": 0.2331
                         },
-                        "LeftMargin": -103.851,
-                        "RightMargin": 751.851,
-                        "TopMargin": 293.8064,
-                        "BottomMargin": 132.1936,
-                        "Tag": 687,
-                        "ActionTag": 1488680157,
+                        "LeftMargin": -127.4464,
+                        "RightMargin": 711.4464,
+                        "TopMargin": 264.3408,
+                        "BottomMargin": 97.6592,
+                        "Tag": 74,
+                        "ActionTag": 407204860,
                         "Size": {
-                          "X": 46.0,
-                          "Y": 46.0
+                          "X": 110.0,
+                          "Y": 110.0
                         },
-                        "Name": "qrCodePg",
-                        "ctype": "ImageViewObjectData"
+                        "Name": "qrCodePg2",
+                        "ctype": "PanelObjectData"
                       },
                       {
                         "FontSize": 14,
@@ -3965,7 +3983,6 @@
         "common/gy_yqy3.png",
         "common/jinbi.png",
         "Default/Button_Disable.png",
-        "Default/ImageFile.png",
         "font/hkhbtW12.ttc",
         "invitation/yqyl_1.png",
         "invitation/yqyl_2.png",

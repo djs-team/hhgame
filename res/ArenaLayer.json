@@ -112,7 +112,6 @@
               "X": 1280.0,
               "Y": 720.0
             },
-            "VisibleForFrame": false,
             "Name": "dele",
             "ctype": "ImageViewObjectData"
           },
@@ -2981,7 +2980,7 @@
                       "Y": 0.4171
                     },
                     "PreSize": {
-                      "X": 0.2812,
+                      "X": 0.2813,
                       "Y": 0.1944
                     },
                     "LeftMargin": 526.0671,

@@ -20,10 +20,10 @@ load('game/ui/scene/HallScene', function () {
                 'topPnl/diamondsPnl/diamondsAddBtn': {onClicked: this.onCoinShopClick},
                 'topPnl/fuKaPnl': {},
                 'topPnl/fuKaPnl/fuKaAddBtn': {onClicked: this.onCoinShopClick},
-                'topPnl/emailBtn': {onClicked: this.onSettingClick},
+                'topPnl/emailBtn': {onClicked: this.onEmailBtnClick},
                 'topPnl/moreBtn': {onClicked: this.onMoreClick},
                 'topPnl/morePnl': {onClicked: this.onHideMorePnlClick},
-                'topPnl/morePnl/confBtn': {onClicked: this.onHideMorePnlClick},
+                'topPnl/morePnl/SetBtn': {onClicked: this.onSetBtnClick},
                 'topPnl/morePnl/feedbackBtn': {onClicked: this.onFeedbackBtnClick},
                 'topPnl/morePnl/customerServiceBtn': {onClicked: this.onHideMorePnlClick},
                 'topPnl/morePnl/authenticationBtn': {onClicked: this.onAuthenticationClick},
@@ -34,7 +34,7 @@ load('game/ui/scene/HallScene', function () {
                 'bmPnl/bmListPnl/signPnl/signBtn': {onClicked: this.onSignBtnClick},
                 'bmPnl/bmListPnl/taskPnl': {onClicked: this.onTaskClick},
                 'bmPnl/bmListPnl/rolesPnl': {onClicked: this.onRoleClick},
-                'bmPnl/startQuickPnl/startQuickBtn': {onClicked: this.onSettingClick},
+                'bmPnl/startQuickPnl/startQuickBtn': {onClicked: this.onRoleClick},
 
 
                 'leftPnl/invitationPnl/invitationBtn': {onClicked: this.onInvitationClick},
@@ -63,6 +63,10 @@ load('game/ui/scene/HallScene', function () {
 
 
             }
+        },
+
+        onEmailBtnClick: function () {
+            appInstance.gameAgent().Tips('敬请期待！！！')
         },
 
         onFukaShopClick: function () {
@@ -158,11 +162,12 @@ load('game/ui/scene/HallScene', function () {
         onGonggaoClick: function () {
 
         },
-        onSettingClick: function () {
-            let settingClass = include('game/ui/layer/setting/SettingLayer')
-            let settingUI = appInstance.uiManager().createPopUI(settingClass)
-            appInstance.sceneManager().getCurScene().addChild(settingUI)
+
+        onSetBtnClick: function () {
+            this.onHideMorePnlClick()
+            appInstance.gameAgent().addPopUI(ResConfig.Ui.SetLayer)
         },
+
         goChooseCity: function () {
             cc.log('----------11111111111111111111111111---------------------------')
             appInstance.gameAgent().addPopUI(ResConfig.Ui.ChooseCityLayer)

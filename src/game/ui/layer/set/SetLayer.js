@@ -1,15 +1,15 @@
 
-load('game/ui/layer/setting/SettingLayer', function () {
+load('game/ui/layer/set/SetLayer', function () {
     let ResConfig = include('game/config/ResConfig')
     let BaseLayer = include('public/ui/BaseLayer')
-    let settingLayer = BaseLayer.extend({
-        _className: 'settingLayer',
+    let layer = BaseLayer.extend({
+        _className: 'SetLayer',
         ctor: function () {
-            this._super(ResConfig.View.SettingLayer)
+            this._super(ResConfig.View.SetLayer)
         },
         RES_BINDING: function () {
             return {
-                'pnl/closeBtn': { onClicked: this.onClose }
+                'pnl/CloseBtn': { onClicked: this.onCloseClick }
             }
         },
         onCreate: function () {
@@ -21,9 +21,9 @@ load('game/ui/layer/setting/SettingLayer', function () {
         onExit: function () {
             this._super()
         },
-        onClose: function () {
+        onCloseClick: function () {
             appInstance.uiManager().removeUI(this)
         }
     })
-    return settingLayer
+    return layer
 })

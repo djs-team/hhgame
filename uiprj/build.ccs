@@ -361,7 +361,9 @@
           <Image Name="ssc_6.png" />
           <Image Name="ssc_7.png" />
           <Image Name="ssc_8.png" />
+          <Image Name="ssc_8_1.png" />
           <Image Name="ssc_9.png" />
+          <Image Name="ssc_9_1.png" />
         </Folder>
         <Folder Name="cashcow">
           <Image Name="yjs_1.png" />

@@ -28,16 +28,16 @@ load('game/msghandler/GetArenaProto', function () {
                 { key: 'matchType', type: this._byteType.Int},//1金币赛 2大奖赛 3会员赛
             ]
 
-            let rewardInfoArray = [
+            let rewardArray = [
                 { key: 'propType', type: this._byteType.Int},//道具大类
                 { key: 'propCode', type: this._byteType.Int},//道具编码
                 { key: 'propNum', type: this._byteType.Int},//道具数量
             ]
 
-            let rewardMessageArray = [
+            let rankingArray = [
                 { key: 'startRanking', type: this._byteType.Int},//开始排名
                 { key: 'endRanking', type: this._byteType.Int},//结束排名
-                { key: 'rewardInfoList', type: this._byteType.Barray, proto: rewardInfoArray}, //玩家数据
+                { key: 'rewardInfoList', type: this._byteType.Barray, proto: rewardArray}, //奖励数据
             ]
 
             let matchArray = [
@@ -56,7 +56,7 @@ load('game/msghandler/GetArenaProto', function () {
                 { key: 'matchplayersnum', type: this._byteType.Int},//参与人数
                 { key: 'matchMode', type: this._byteType.Int},//服务器比赛mode
                 { key: 'extens', type: this._byteType.UTF8},//预留字段
-                { key: 'rewordmessageList', type: this._byteType.Barray, proto: rewardMessageArray}, //玩家数据
+                { key: 'rangkingList', type: this._byteType.Barray, proto: rankingArray}, //玩家数据
             ]
 
             this._reData = [

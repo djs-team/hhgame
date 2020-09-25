@@ -6,7 +6,7 @@
       <ObjectData Name="Layer" ctype="GameLayerObjectData">
         <Size X="1280.0000" Y="720.0000" />
         <Children>
-          <AbstractNodeData Name="block" Visible="False" ActionTag="1142371939" Tag="3" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+          <AbstractNodeData Name="block" ActionTag="1142371939" Tag="3" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="640.0000" Y="360.0000" />
@@ -1143,7 +1143,7 @@
           <AbstractNodeData Name="PayType" ActionTag="1881666257" Tag="97" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <Children>
-              <AbstractNodeData Name="bgPic" Visible="False" ActionTag="-564562846" Tag="166" IconVisible="False" LeftMargin="349.0095" RightMargin="333.9905" TopMargin="172.2812" BottomMargin="185.7188" Scale9Enable="True" LeftEage="44" RightEage="44" TopEage="43" BottomEage="43" Scale9OriginX="44" Scale9OriginY="43" Scale9Width="48" Scale9Height="47" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="bgPic" ActionTag="-564562846" Tag="166" IconVisible="False" LeftMargin="349.0095" RightMargin="333.9905" TopMargin="172.2812" BottomMargin="185.7188" Scale9Enable="True" LeftEage="44" RightEage="44" TopEage="43" BottomEage="43" Scale9OriginX="44" Scale9OriginY="43" Scale9Width="48" Scale9Height="47" ctype="ImageViewObjectData">
                 <Size X="597.0000" Y="362.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="647.5095" Y="366.7188" />
@@ -1177,7 +1177,7 @@
                 <PreSize X="0.2547" Y="0.0889" />
                 <FileData Type="Normal" Path="common/bz_1.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="bgAli" Visible="False" ActionTag="-196608741" Tag="167" IconVisible="False" LeftMargin="308.3758" RightMargin="481.6242" TopMargin="257.0854" BottomMargin="304.9146" Scale9Enable="True" LeftEage="30" RightEage="30" TopEage="30" BottomEage="30" Scale9OriginX="30" Scale9OriginY="30" Scale9Width="26" Scale9Height="15" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="bgAli" ActionTag="-196608741" Tag="167" IconVisible="False" LeftMargin="308.3758" RightMargin="481.6242" TopMargin="257.0854" BottomMargin="304.9146" Scale9Enable="True" LeftEage="30" RightEage="30" TopEage="30" BottomEage="30" Scale9OriginX="30" Scale9OriginY="30" Scale9Width="26" Scale9Height="15" ctype="ImageViewObjectData">
                 <Size X="490.0000" Y="158.0000" />
                 <Children>
                   <AbstractNodeData Name="ivAli" ActionTag="129573694" Tag="171" IconVisible="False" LeftMargin="209.2451" RightMargin="202.7549" TopMargin="40.1331" BottomMargin="39.8669" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="48" Scale9Height="56" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
@@ -1204,7 +1204,7 @@
                 <PreSize X="0.3828" Y="0.2194" />
                 <FileData Type="Normal" Path="common/db.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="bgWx" Visible="False" ActionTag="1715574156" Tag="169" IconVisible="False" LeftMargin="263.4852" RightMargin="526.5148" TopMargin="260.0712" BottomMargin="301.9288" Scale9Enable="True" LeftEage="28" RightEage="28" TopEage="24" BottomEage="24" Scale9OriginX="28" Scale9OriginY="24" Scale9Width="30" Scale9Height="27" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="bgWx" ActionTag="1715574156" Tag="169" IconVisible="False" LeftMargin="263.4852" RightMargin="526.5148" TopMargin="260.0712" BottomMargin="301.9288" Scale9Enable="True" LeftEage="28" RightEage="28" TopEage="24" BottomEage="24" Scale9OriginX="28" Scale9OriginY="24" Scale9Width="30" Scale9Height="27" ctype="ImageViewObjectData">
                 <Size X="490.0000" Y="158.0000" />
                 <Children>
                   <AbstractNodeData Name="ivWx" ActionTag="552959041" Tag="172" IconVisible="False" LeftMargin="-705.4808" RightMargin="1117.4808" TopMargin="106.0727" BottomMargin="-26.0727" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="51" Scale9Height="59" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">

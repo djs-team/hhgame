@@ -23,7 +23,7 @@ load('game/ui/scene/HallScene', function () {
                 'topPnl/emailBtn': {onClicked: this.onEmailBtnClick},
                 'topPnl/moreBtn': {onClicked: this.onMoreClick},
                 'topPnl/morePnl': {onClicked: this.onHideMorePnlClick},
-                'topPnl/morePnl/SetBtn': {onClicked: this.onSetBtnClick},
+                'topPnl/morePnl/setBtn': {onClicked: this.onSetBtnClick},
                 'topPnl/morePnl/feedbackBtn': {onClicked: this.onFeedbackBtnClick},
                 'topPnl/morePnl/customerServiceBtn': {onClicked: this.onHideMorePnlClick},
                 'topPnl/morePnl/authenticationBtn': {onClicked: this.onAuthenticationClick},

@@ -31,6 +31,7 @@ load('game/config/GameConfig', function () {
     GameConfig.propType_kind_phone = 1//手机
     GameConfig.propType_kind_jdCard = 2//京东卡
     GameConfig.propType_kind_hfCard = 3//话费卡
+    GameConfig.propType_kind_hb = 4//现金红包
 
 
     GameConfig.QUANTITUINTERVAL_RESULT_LESS = 'least'
@@ -71,6 +72,10 @@ load('game/config/GameConfig', function () {
     GameConfig.channel = {
         '10047': 'zhaoyuan',
         'zhaoyuan': '10047',
+    }
+
+    GameConfig.areaName = {
+        'zhaoyuan': '肇源麻将',
     }
 
     GameConfig.jumping = {
@@ -240,13 +245,16 @@ load('game/config/GameConfig', function () {
                     'name': '京东卡',
                     'currency': 'res/code/props/zphd_12.png',
                 }
-
                 ,
                 '3': {
                     'name': '话费卡',
                     'currency': 'res/code/props/zphd_12.png',
                 }
-
+                ,
+                '4': {
+                    'name': '现金红包',
+                    'currency': 'res/code/props/zphd_12.png',
+                }
                 ,
             }
         },

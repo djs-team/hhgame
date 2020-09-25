@@ -134,6 +134,25 @@ load('game/ui/layer/invitation/InvitationLayer', function () {
             this.dataText.setVisible(false)
 
             this.sfpPnl.setVisible(true)
+
+            this.beforShareImg()
+            // 调用前  将自己想要分享的图片 弄全屏 在截取完后 再重置回原来的状态
+            appInstance.gameAgent().saveCanvas()
+            this.shareImg()
+            this.afterShareImg()
+            //调用完后 重置状态
+        },
+        // 分享接口
+        shareImg: function () {
+
+        },
+        //分享前处理界面
+        beforShareImg: function () {
+
+        },
+        //屏幕截取后  重置界面
+        afterShareImg: function () {
+
         },
 
 

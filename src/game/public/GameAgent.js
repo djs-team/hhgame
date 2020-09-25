@@ -57,6 +57,21 @@ load('game/public/GameAgent', function () {
             return this._mjUtil
         },
 
+        saveCanvas: function () {
+            let size = cc.director.getWinSize();
+            let fileName = "result_share.jpg";
+            let fullPath = jsb.fileUtils.getWritablePath() + fileName; //拿到可写路径，将图片保存在本地，可以在ios端或者java端读取该文件
+            if (jsb.fileUtils.isFileExist(fullPath)) {
+                jsb.fileUtils.removeFile(fullPath);
+            }
+            let texture = new cc.RenderTexture(Math.floor(size.width), Math.floor(size.height));
+            texture.setPosition(cc.p(size.width / 2, size.height / 2));
+            texture.begin();
+            cc.director.getRunningScene().visit(); //这里可以设置要截图的节点，设置后只会截取指定节点和其子节点
+            texture.end();
+            texture.saveToFile(fileName, cc.IMAGE_FORMAT_JPG);
+        },
+
         addPopUI: function (resUi) {
             let layer = include(resUi)
             let UI = appInstance.uiManager().createPopUI(layer)

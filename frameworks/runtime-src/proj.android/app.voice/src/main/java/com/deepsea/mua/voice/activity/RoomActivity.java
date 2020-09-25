@@ -10,7 +10,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.os.Build;
 import android.os.Bundle;
@@ -80,7 +79,6 @@ import com.deepsea.mua.stub.dialog.AuthenticationAlertDialog;
 import com.deepsea.mua.stub.dialog.AutoHideLoading;
 import com.deepsea.mua.stub.dialog.GuardRenewDialog;
 import com.deepsea.mua.stub.dialog.RechargeFirstWelfareDialog;
-import com.deepsea.mua.stub.dialog.UpMicroCardReceiveDialog;
 import com.deepsea.mua.stub.entity.AuditBean;
 import com.deepsea.mua.stub.entity.EmojiBean;
 import com.deepsea.mua.stub.entity.FirstRechargeVo;
@@ -186,7 +184,6 @@ import com.deepsea.mua.voice.dialog.SongManagerDialog;
 import com.deepsea.mua.voice.dialog.SongSingingAlertDialog;
 import com.deepsea.mua.voice.dialog.SortCheckDialog;
 import com.deepsea.mua.voice.dialog.SortManageDialog;
-import com.deepsea.mua.voice.dialog.TaskRoseReceiveDialog;
 import com.deepsea.mua.voice.dialog.UserAvatarDialog;
 import com.deepsea.mua.voice.dialog.UserFansDialog;
 import com.deepsea.mua.stub.utils.ForbiddenStateUtils;
@@ -4008,24 +4005,7 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
         }
     }
 
-    @Override
-    public void showTaskFinish(UpdateFinishTaskToClientParam bean) {
-        if (bean.getAwardType() == 1) {
-            //玫瑰
-            TaskRoseReceiveDialog taskRoseReceiveDialog = new TaskRoseReceiveDialog(mContext);
-            taskRoseReceiveDialog.setOnClickListener(new TaskRoseReceiveDialog.OnClickListener() {
-                @Override
-                public void onReceive() {
-                    PageJumpUtils.jumpToDialogTaskCenter(RoomActivity.this);
-                }
-            });
-            taskRoseReceiveDialog.setData(bean);
-            taskRoseReceiveDialog.show();
-        } else if (bean.getAwardType() == 2) {
-            //上麦卡
-            showCardDialog();
-        }
-    }
+
 
     @Override
     public void showRedPackageRule(String content) {
@@ -4090,21 +4070,7 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
         }
     }
 
-    private void showCardDialog() {
-        UpMicroCardReceiveDialog dialog = new UpMicroCardReceiveDialog(mContext);
-        dialog.setOnClickListener(new UpMicroCardReceiveDialog.OnClickListener() {
-            @Override
-            public void onDismiss() {
 
-            }
-
-            @Override
-            public void onConfirm() {
-                PageJumpUtils.jumpToDialogTaskCenter(RoomActivity.this);
-            }
-        });
-        dialog.show();
-    }
 
     private void showGuardBayWindowDiallog(JoinUser joinUser) {
         if (joinUser != null && joinUser.isRoomGuard()) {

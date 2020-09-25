@@ -92,27 +92,4 @@ public class AppConstant {
         }
         return mSingleton;
     }
-
-    public List<Integer> getNewuserTaskIcons() {
-        List<Integer> icons = new ArrayList<>();
-        icons.add(R.drawable.ic_task_user_photo);
-        icons.add(R.drawable.ic_task_certification);
-        icons.add(R.drawable.ic_task_data);
-        icons.add(R.drawable.ic_task_wechat);
-        icons.add(R.drawable.ic_task_recharge);
-        icons.add(R.drawable.ic_task_micro);
-        icons.add(R.drawable.ic_task_speak);
-        icons.add(R.drawable.ic_task_gifts);
-        icons.add(R.drawable.ic_task_addfriend);
-        icons.add(R.drawable.ic_task_ktv);
-        return icons;
-    }
-    public List<Integer> getDailyTaskIcons() {
-        List<Integer> icons = new ArrayList<>();
-        icons.add(R.drawable.ic_task_recharge);
-        icons.add(R.drawable.ic_task_share);
-        icons.add(R.drawable.ic_task_micro);
-        icons.add(R.drawable.ic_task_invite);
-        return icons;
-    }
 }

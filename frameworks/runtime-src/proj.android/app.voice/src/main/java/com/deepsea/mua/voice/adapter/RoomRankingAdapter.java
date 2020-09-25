@@ -26,24 +26,7 @@ public class RoomRankingAdapter extends BaseBindingAdapter<String, ItemRankingBi
 
     @Override
     protected void bind(BindingViewHolder<ItemRankingBinding> holder, String item) {
-        int position = holder.getAdapterPosition();
-//        int bgRes = R.drawable.ic_gold_bg;
         int errorRes = R.drawable.ic_place;
-//        switch (position) {
-//            case 0:
-//                bgRes = R.drawable.ic_gold_bg;
-//                errorRes = R.drawable.ic_place_gold;
-//                break;
-//            case 1:
-//                bgRes = R.drawable.ic_silver_bg;
-//                errorRes = R.drawable.ic_place_silver;
-//                break;
-//            case 2:
-//                bgRes = R.drawable.ic_copper_bg;
-//                errorRes = R.drawable.ic_place_copper;
-//                break;
-//        }
-//        ViewBindUtils.setImageRes(holder.binding.rankBgIv,bgRes);
         if (TextUtils.isEmpty(item)) {
             holder.binding.rankIv.setImageResource(errorRes);
         } else {

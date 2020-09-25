@@ -12,7 +12,6 @@ public interface ArouterConst {
     String PAGE_ROOM = "/voice/room";  //RoomActivity
 
     String PAGE_REPORT = "/voice/report";  //RoomReportActivity
-    String PAGE_FANS_RANK = "/voice/fansrank/"; //FansRankActivity
     String PAGE_EGG = "/voice/Egg/"; //FansRankActivity
 
     /* --- MINE --- */
@@ -36,12 +35,9 @@ public interface ArouterConst {
     String PAGE_ME_FOLLOW_AND_FAN = "/mine/follow_and_fan";
     String PAGE_ME_VISITORS = "/mine/vistors";
     String PAGE_ME_MINE_INVITOR = "/mine/myinvite";
-    String PAGE_ME_MINE_BLUEROSE = "/mine/blueRoseExchange";
     String PAGE_ME_MINE_REDROSE = "/mine/redRoseExchange";
-    String PAGE_ME_MINE_APPLYHOST = "/mine/applyHost";
     String PAGE_ME_MINE_GUARD = "/mine/guard";
-    String PAGE_ME_TASK_CENTER = "/mine/taskcenter";
-    String PAGE_ME_DIALOG_TASK_CENTER = "/mine/dialog_taskcenter";
+  ;
 
 
     /* --- MESSAGE --- */
@@ -55,6 +51,5 @@ public interface ArouterConst {
 
 
     /* --- DYNAMIC --- */
-    String PAGE_MY_DYNAMIC = "/dynamic/my";   //MyDynamicActivity
     String PAGE_DYNAMIC_DETAIL = "/dynamic/detail";   //DynamicDetailsActivity
 }

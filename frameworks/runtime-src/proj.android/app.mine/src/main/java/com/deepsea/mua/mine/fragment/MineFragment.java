@@ -152,9 +152,7 @@ public class MineFragment extends BaseFragment<FragmentMineBinding> {
 
     @Override
     protected void initListener() {
-//        subscribeClick(mBinding.taskLayout, o -> {
-//            PageJumpUtils.jumpToTaskCenter(mContext);
-//        });
+
         subscribeClick(mBinding.avatarIv, o -> {
             showPhotoDialog();
         });
@@ -182,12 +180,6 @@ public class MineFragment extends BaseFragment<FragmentMineBinding> {
         //联系我们
         subscribeClick(mBinding.assistLayout, o -> {
             startActivity(new Intent(mContext, AssistActivity.class));
-        });
-
-
-        //粉丝贡献
-        subscribeClick(mBinding.fansRankLayout, o -> {
-            ArouterUtils.build(ArouterConst.PAGE_FANS_RANK).navigation();
         });
         //家长模式
         subscribeClick(mBinding.parentLayout, o -> {
@@ -355,47 +347,7 @@ public class MineFragment extends BaseFragment<FragmentMineBinding> {
         //认证
         mBinding.authTv.setSelected(TextUtils.equals(userInfo.getAttestation(), "1"));
         mBinding.authTv.setText(TextUtils.equals(userInfo.getAttestation(), "1") ? "已认证" : "未认证");
-//        ViewBindUtils.setVisible(mBinding.taskProcessLayout, userInfo.getIs_matchmaker().equals("1"));
-//        ViewBindUtils.setVisible(mBinding.codeOfConductLayout, userInfo.getIs_matchmaker().equals("1"));
-//        ProfileBean.GradeInfoBean gradeInfo = result.getGrade_info();
-//
-//        ProfileBean.NumberInfoBean numberInfo = result.getNumber_info();
 
-//        //输入邀请码
-//        ViewBindUtils.setVisible(mBinding.inputInviteCodeLayout, userInfo.getIs_bind() == 1);
-//        if (userInfo.getIs_bind() == 1) {
-//            //如果显示绑定邀请码一栏
-//            if (!TextUtils.isEmpty(userInfo.getBelongId()) && !userInfo.getBelongId().equals("0")) {
-//                //已经绑定邀请人
-//                belongId = userInfo.getBelongId();
-//                ViewBindUtils.setText(mBinding.tvBindinviteTitle, "邀请码绑定（完成）");
-//                ViewBindUtils.setText(mBinding.tvBelongName, userInfo.getBelongName());
-//            } else {
-//                ViewBindUtils.setText(mBinding.tvBindinviteTitle, "邀请码绑定（获得" + userInfo.getCoin_num() + "朵玫瑰）");
-//            }
-//        }
-        //粉丝贡献
-        List<ProfileBean.FansRank> fansRanks = result.getRank_list();
-        if (fansRanks != null) {
-            for (int i = 0; i < fansRanks.size(); i++) {
-                ProfileBean.FansRank bean = fansRanks.get(i);
-                ImageView fansIv = null;
-                switch (i) {
-                    case 0:
-                        fansIv = mBinding.goldIv;
-                        break;
-                    case 1:
-                        fansIv = mBinding.silverIv;
-                        break;
-                    case 2:
-                        fansIv = mBinding.copperIv;
-                        break;
-                }
-                if (fansIv != null) {
-                    GlideUtils.circleImage(fansIv, bean.getAvatar(), R.drawable.ic_place_avatar, R.drawable.ic_place_avatar);
-                }
-            }
-        }
         //家长、青少年模式
         ProfileBean.SafetyBean info = result.getMonitoring_info();
         boolean isOpenParent = info != null && info.getParents_status() == 1;

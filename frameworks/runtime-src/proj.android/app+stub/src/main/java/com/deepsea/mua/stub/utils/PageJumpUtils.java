@@ -140,10 +140,6 @@ public class PageJumpUtils {
                 .navigation(activity, Constant.BALANCE_CODE);
     }
 
-    public static void jumpToTaskDialog(Activity activity) {
-        ArouterUtils.build(ArouterConst.PAGE_ME_DIALOG_TASK_CENTER)
-                .navigation(activity, Constant.BALANCE_CODE);
-    }
 
     /**
      * 地区选择 {@link Activity#startActivityForResult(Intent, int)}
@@ -209,21 +205,6 @@ public class PageJumpUtils {
                 .navigation();
     }
 
-    /**
-     * 蓝玫瑰兑换
-     */
-    public static void jumpToBlueRoseExchange(Activity mContext) {
-        ArouterUtils.build(ArouterConst.PAGE_ME_MINE_BLUEROSE)
-                .navigation(mContext, Constant.RequestCode.RQ_BLUE_ROSE_EXCHANGE);
-    }
-
-    /**
-     * 蓝玫瑰兑换
-     */
-    public static void jumpToRedRoseExchange(Activity mContext) {
-        ArouterUtils.build(ArouterConst.PAGE_ME_MINE_REDROSE)
-                .navigation(mContext, Constant.RequestCode.RQ_RED_ROSE_EXCHANGE);
-    }
 
     /**
      * 跳转充值 {@link Activity#startActivityForResult(Intent, int)}
@@ -332,18 +313,8 @@ public class PageJumpUtils {
                 .navigation(mContext);
     }
 
-    /**
-     *
-     */
-    public static void jumpToDialogTaskCenter(Activity mContext) {
-        ArouterUtils.build(ArouterConst.PAGE_ME_DIALOG_TASK_CENTER)
-                .navigation(mContext, Constant.RequestCode.RQ_TASK_CODE);
-    }
 
-    public static void jumpToTaskCenter(Context mContext) {
-        ArouterUtils.build(ArouterConst.PAGE_ME_TASK_CENTER)
-                .navigation(mContext);
-    }
+
 
     /**
      * 举报

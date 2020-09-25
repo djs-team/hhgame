@@ -565,7 +565,7 @@ public class AppActivity extends Cocos2dxActivity {
         if (!TextUtils.isEmpty(thumbUrl)) {
             thumb = new UMImage(ccActivity, thumbUrl);//网络图片
         } else {
-            thumb = new UMImage(ccActivity, R.mipmap.ic_launcher);//本地图片
+            thumb = new UMImage(ccActivity, R.mipmap.logo);//本地图片
         }
         UMWeb web = new UMWeb(url);
         web.setTitle(title);//标题

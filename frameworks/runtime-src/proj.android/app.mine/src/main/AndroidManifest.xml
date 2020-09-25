@@ -38,9 +38,6 @@
         <activity
             android:name=".activity.ScreenDialogActivity"
             android:theme="@style/HalfTranslucentWindow" />
-        <activity
-            android:name=".activity.TaskCenterDialogActivity"
-            android:theme="@style/HalfTranslucentWindow" />
         <activity android:name="com.deepsea.mua.mine.activity.MePackActivity" />
         <activity android:name="com.deepsea.mua.mine.activity.AssistActivity" />
         <activity android:name="com.deepsea.mua.mine.activity.MarriageSeekingActivity" />
@@ -56,13 +53,9 @@
         <activity android:name="com.deepsea.mua.mine.activity.ExchangeMdDetailsActivity" />
         <activity android:name="com.deepsea.mua.mine.activity.MyTagsActivity" />
         <activity android:name="com.deepsea.mua.mine.activity.InviteAlertActivity" />
-        <activity android:name="com.deepsea.mua.mine.activity.BlueRoseExchangeActivity" />
         <activity android:name="com.deepsea.mua.mine.activity.BindWechatActivity" />
-        <activity android:name="com.deepsea.mua.mine.activity.ExchangeBlueRoseExchangeActivity" />
         <activity android:name="com.deepsea.mua.mine.activity.GuardActivity" />
         <activity android:name="com.deepsea.mua.mine.activity.GuardRuleActivity" />
-        <activity android:name="com.deepsea.mua.mine.activity.TaskCenterActivity" />
-        <activity android:name="com.deepsea.mua.mine.activity.TaskProblemActivity" />
         <activity android:name="com.deepsea.mua.mine.activity.MyGuardActivity" />
         <activity android:name="com.deepsea.mua.mine.activity.BlockListActivity" />
         <activity android:name="com.deepsea.mua.mine.activity.BindPhoneActivity" />

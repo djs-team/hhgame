@@ -37,7 +37,6 @@ import com.deepsea.mua.stub.utils.eventbus.OpenRoom;
 import com.deepsea.mua.stub.utils.eventbus.ShowRankStepOne;
 import com.deepsea.mua.stub.utils.eventbus.ShowRankStepTwo;
 import com.deepsea.mua.voice.R;
-import com.deepsea.mua.voice.activity.RoomRankActivity;
 import com.deepsea.mua.voice.adapter.RoomAdapter;
 import com.deepsea.mua.voice.databinding.FragmentRoomBinding;
 import com.deepsea.mua.voice.viewmodel.RoomsViewModel;

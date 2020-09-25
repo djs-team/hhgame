@@ -1977,12 +1977,6 @@ public class RoomController implements IRoomController, RoomMsgHandler.OnMsgEven
                     mView.showGuardGif(showGuardAnimationToClientParam);
                 }
                 break;
-            case 131:
-                UpdateFinishTaskToClientParam updateFinishTaskToClientParam = JsonConverter.fromJson(message, UpdateFinishTaskToClientParam.class);
-                if (mView != null) {
-                    mView.showTaskFinish(updateFinishTaskToClientParam);
-                }
-                break;
             case 134://红包列表
                 NotifyRedPacketResultToClientParam redList = JsonConverter.fromJson(message, NotifyRedPacketResultToClientParam.class);
                 if (mView != null) {

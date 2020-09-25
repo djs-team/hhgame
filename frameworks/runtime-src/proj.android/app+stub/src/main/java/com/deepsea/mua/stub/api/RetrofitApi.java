@@ -13,7 +13,6 @@ import com.deepsea.mua.stub.entity.AttenDynamicBean;
 import com.deepsea.mua.stub.entity.AuditBean;
 import com.deepsea.mua.stub.entity.BindWx;
 import com.deepsea.mua.stub.entity.BlindDateBean;
-import com.deepsea.mua.stub.entity.BlueRoseExchange;
 import com.deepsea.mua.stub.entity.CashInfo;
 import com.deepsea.mua.stub.entity.CashWListBean;
 import com.deepsea.mua.stub.entity.ChargeBean;
@@ -22,7 +21,6 @@ import com.deepsea.mua.stub.entity.DukeListBean;
 import com.deepsea.mua.stub.entity.DynamicDetailReplylistBean;
 import com.deepsea.mua.stub.entity.DynamicLisistBean;
 import com.deepsea.mua.stub.entity.EmojiBean;
-import com.deepsea.mua.stub.entity.ExchangeBlueRoseRecordListParam;
 import com.deepsea.mua.stub.entity.ExchangeMdDetailListBean;
 import com.deepsea.mua.stub.entity.FaceRequestBean;
 import com.deepsea.mua.stub.entity.FansRankBean;
@@ -786,16 +784,7 @@ public interface RetrofitApi {
             @Field("stime") String stime,
             @Field("etime") String etime);
 
-    /**
-     * 蓝玫瑰兑换记录
-     *
-     * @param page
-     * @return
-     */
-    @FormUrlEncoded
-    @POST("index.php/Api/AliPay/blueExchangeInfo")
-    LiveData<ApiResponse<BaseApiResult<ExchangeBlueRoseRecordListParam>>> blueExchangeInfo(
-            @Field("page") int page);
+
 
     /**
      * 我的钱包
@@ -813,13 +802,7 @@ public interface RetrofitApi {
     @POST("index.php/Api/AliPay/initcash")
     LiveData<ApiResponse<BaseApiResult<InitCash>>> initCash();
 
-    /**
-     * 初始化提现接口
-     *
-     * @return
-     */
-    @POST("index.php/Api/AliPay/initBlueExchange")
-    LiveData<ApiResponse<BaseApiResult<List<BlueRoseExchange>>>> initBlueExchange();
+
 
     /**
      * 余额兑换玫瑰
@@ -830,14 +813,7 @@ public interface RetrofitApi {
     @POST("index.php/Api/AliPay/exchangeRose")
     LiveData<ApiResponse<BaseApiResult>> exchangeRose(@Field("coin") int coin);
 
-    /**
-     * 换蓝色玫瑰
-     *
-     * @return
-     */
-    @FormUrlEncoded
-    @POST("index.php/Api/AliPay/exchangeBlue")
-    LiveData<ApiResponse<BaseApiResult>> exchangeBlue(@Field("num") String num, @Field("gift_id") String gift_id);
+
 
     /**
      * 提现页面接口

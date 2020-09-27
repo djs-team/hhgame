@@ -427,6 +427,11 @@ load('public/suport/NativeApi', function () {
                     let userInfo = {};
                     userInfo.applePayType = AppConfig.applePayType
                     userInfo.token = appInstance.dataManager().getUserData().key
+                    userInfo.platform = appInstance.dataManager().getUserData().platform
+                    userInfo.nickname = appInstance.dataManager().getUserData().pname
+                    userInfo.username = appInstance.dataManager().getUserData().account
+                    userInfo.avatar = appInstance.dataManager().getUserData().sdkphotourl
+                    
                     jsb.reflection.callStaticMethod('AppController', 'enterLiveBroadcastWithToken:', JSON.stringify(userInfo))
                 }
             } catch (e) {
@@ -439,7 +444,7 @@ load('public/suport/NativeApi', function () {
                 if (cc.sys.OS_ANDROID === cc.sys.os) {
                     jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'shareImage', '(Ljava/lang/String;Ljava/lang/String;)V', platform, imgPath)
                 } else if (cc.sys.OS_IOS === cc.sys.os) {
-
+                    jsb.reflection.callStaticMethod('AppController', 'WXShareIOSforImage:', imgPath)
                 }
             } catch (e) {
                 NativeApi.HelloOC('shareImage throw: ' + JSON.stringify(e))
@@ -451,7 +456,7 @@ load('public/suport/NativeApi', function () {
                 if (cc.sys.OS_ANDROID === cc.sys.os) {
                     jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'shareArticle', '(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V', platform, title, description, url, thumbUrl)
                 } else if (cc.sys.OS_IOS === cc.sys.os) {
-
+                    jsb.reflection.callStaticMethod('AppController', 'WXShareIOSforUrl:Title:Desc:', url, title, description)
                 }
             } catch (e) {
                 NativeApi.HelloOC('shareArticle throw: ' + JSON.stringify(e))
@@ -463,7 +468,8 @@ load('public/suport/NativeApi', function () {
                     let uid = appInstance.dataManager().getUserData().pid
                     jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'showRewardVideo', '(Ljava/lang/String;)V', uid)
                 } else if (cc.sys.OS_IOS === cc.sys.os) {
-
+                    let uid = appInstance.dataManager().getUserData().pid
+                    jsb.reflection.callStaticMethod('AppController', 'openBUAdRewardWithUserId:method:', uid, "rewardVideoCallback")
                 }
             } catch (e) {
                 NativeApi.HelloOC('showRewardVideo throw: ' + JSON.stringify(e))
@@ -474,7 +480,7 @@ load('public/suport/NativeApi', function () {
                 if (cc.sys.OS_ANDROID === cc.sys.os) {
                     jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'copy', '(Ljava/lang/String;)V', msg)
                 } else if (cc.sys.OS_IOS === cc.sys.os) {
-
+                    jsb.reflection.callStaticMethod('AppController', 'copyToPasteboard:', msg)
                 }
             } catch (e) {
                 NativeApi.HelloOC('copy throw: ' + JSON.stringify(e))
@@ -486,7 +492,7 @@ load('public/suport/NativeApi', function () {
                     let uid = appInstance.dataManager().getUserData().pid
                     jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'getInvitationCode', '(Ljava/lang/String;Ljava/lang/String;)V', msg, uid)
                 } else if (cc.sys.OS_IOS === cc.sys.os) {
-
+                    jsb.reflection.callStaticMethod('AppController', 'createQRCodeImageWithString:method:', msg, "inviteCodeCallback")
                 }
             } catch (e) {
                 NativeApi.HelloOC('getInvitationCode throw: ' + JSON.stringify(e))

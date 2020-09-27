@@ -55,6 +55,9 @@
 // (截图)
 + (void)WXShareIOSforImage:(NSString *)path
 {
+    if (path.length <= 0) {
+        return;
+    }
     NSLog(@"从cocos发过来的图片地址----> %@",path);
     UIImage * img = [UIImage imageWithContentsOfFile:path];
     // 根据原图压缩一半分辨率

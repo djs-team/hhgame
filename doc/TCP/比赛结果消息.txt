@@ -1,0 +1,20 @@
+/**
+* 比赛，总结果消息，包括淘汰和获奖
+*/
+int	MJ_ROOM_MATCHRESULT = MJ_ROOM_MATCHGAME_ID + 27;
+ 返回消息:
+		
+		private int state;//状态  0 获奖  1淘汰
+		private int tableRanking;//牌桌排名 ，用于淘汰
+		private int oldPerNum;//原人数
+		private int proPerNum;//晋级人数
+		private int ranking;//获奖排名
+		private String playerName;//玩家姓名
+		private String matchName;//比赛名称
+		private String tableId ;// 牌桌id
+		private String extended;//冗余字段
+		private List<RewardProp> rewardPropList;//获奖时的奖励信息
+			RewardProp的消息体
+				private int propType;//道具大类
+				private int propCode;//道具编码
+				private int propNum;//奖励道具数量

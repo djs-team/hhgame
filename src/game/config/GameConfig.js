@@ -31,6 +31,7 @@ load('game/config/GameConfig', function () {
     GameConfig.propType_kind_phone = 1//手机
     GameConfig.propType_kind_jdCard = 2//京东卡
     GameConfig.propType_kind_hfCard = 3//话费卡
+    GameConfig.propType_kind_hb = 4//现金红包
 
 
     GameConfig.QUANTITUINTERVAL_RESULT_LESS = 'least'
@@ -73,6 +74,10 @@ load('game/config/GameConfig', function () {
         'zhaoyuan': '10047',
     }
 
+    GameConfig.areaName = {
+        'zhaoyuan': '肇源麻将',
+    }
+
     GameConfig.jumping = {
         '2': 'CoinGameLayer',
         '3': 'CoinGameLayer',
@@ -82,12 +87,12 @@ load('game/config/GameConfig', function () {
         '7': 'CoinGameLayer',
         '8': 'CoinGameLayer',
         '9': 'InvitationLayer',
-        '10': 'MatchLayer',
+        '10': 'ArenaLayer',
         '11': 'TurnTableLayer',
         '12': 'CashCowLayer',
         '13': 'CoinShopLayer',
         '14': 'CoinShopLayer',
-        '15': 'ShopLayer',
+        '15': 'FukaShopLayer',
 
     }
 
@@ -240,13 +245,16 @@ load('game/config/GameConfig', function () {
                     'name': '京东卡',
                     'currency': 'res/code/props/zphd_12.png',
                 }
-
                 ,
                 '3': {
                     'name': '话费卡',
                     'currency': 'res/code/props/zphd_12.png',
                 }
-
+                ,
+                '4': {
+                    'name': '现金红包',
+                    'currency': 'res/code/props/zphd_12.png',
+                }
                 ,
             }
         },
@@ -278,7 +286,7 @@ load('game/config/GameConfig', function () {
                 ,
                 '3': {
                     'name': '福卡',
-                    'currency': 'res/code/props/zphd_18.png',
+                    'currency': 'res/turntable/zphd_18.png',
                 }
                 ,
             }
@@ -373,6 +381,127 @@ load('game/config/GameConfig', function () {
 
 
     }
+
+
+    GameConfig.signRewardsRes = {
+
+        '1' : {
+            'name': '货币',
+            'propCode': {
+                '1': {
+                    'name': '金币',
+                    'currency': 'res/sign/qd_jl_13.png',
+                    'least': 'res/sign/qd_jl_13.png',
+                    'more': 'res/sign/qd_jl_11.png',
+                    'most': 'res/sign/qd_jl_9.png',
+                }
+                ,
+                '2': {
+                    'name': '钻石',
+                    'currency': 'res/sign/qd_jl_12.png',
+                    'least': 'res/sign/qd_jl_12.png',
+                    'more': 'res/sign/qd_jl_10.png',
+                    'most': 'res/sign/qd_jl_10.png',
+                }
+                ,
+                '3': {
+                    'name': '福卡',
+                    'currency': 'res/sign/zphd_18.png',
+                }
+                ,
+            }
+        },
+        '2' : {
+            'name' : '角色',
+            'propCode' : {
+                '1': {
+                    'name': '财神',
+                    'currency': 'res/sign/qd_js_6.png',
+                }
+                ,
+                '2': {
+                    'name': '草帽男孩',
+                    'currency': 'res/sign/qd_js_6.png',
+                }
+
+                ,
+                '3': {
+                    'name': '秧歌小妞',
+                    'currency': 'res/sign/qd_js_4.png',
+                }
+
+                ,
+                '4': {
+                    'name': '发哥',
+                    'currency': 'res/sign/qd_js_2.png',
+                }
+
+                ,
+                '5': {
+                    'name': '皇帝',
+                    'currency': 'res/sign/qd_js_3.png',
+                }
+
+                ,
+                '6': {
+                    'name': '花木兰',
+                    'currency': 'res/sign/qd_js_8.png',
+                }
+
+                ,
+                '7': {
+                    'name': '狐仙小妞',
+                    'currency': 'res/sign/qd_js_7.png',
+                }
+
+                ,
+                '8': {
+                    'name': '张作霖',
+                    'currency': 'res/sign/qd_js_5.png',
+                }
+
+                ,
+                '9': {
+                    'name': '至尊宝',
+                    'currency': 'res/sign/qd_js_1.png',
+                }
+
+                ,
+                '10': {
+                    'name': '紫霞',
+                    'currency': 'res/sign/qd_js_8.png',
+                }
+
+                ,
+
+            }
+        },
+        '3' :  {
+            'name' : '实物',
+            'propCode' : {
+
+                '1': {
+                    'name': '手机',
+                    'currency': 'res/sign/zphd_12.png',
+                }
+                ,
+                '2': {
+                    'name': '京东卡',
+                    'currency': 'res/sign/zpjd_1.png',
+                }
+                ,
+                '3': {
+                    'name': '话费卡',
+                    'currency': 'res/sign/zphf_1.png',
+                }
+
+                ,
+            }
+        },
+
+
+    }
+
 
     GameConfig.quantityInterval = {
         'turntable' : {

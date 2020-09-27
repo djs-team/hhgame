@@ -1,0 +1,47 @@
+/**
+ * 比赛，开始游戏时玩家信息数据
+ */
+int	MJ_ROOM_MATCHTABLEPLAYERCHANGE = MJ_ROOM_MATCHGAME_ID + 26;
+	返回消息:
+		MatchTablePlayerChangeRespMessage
+		private List<Player> pList;
+		private String tableInstanceId;//牌桌id
+		private int mSeatID;//玩家id
+		private int changePid;//变化玩家的pid
+		private int changeSeatId;//变化玩家的座位id
+		private int enterOrQuite;//进入或者退出  1  进入 0 退出  2  断线重连
+		private String keyPrivateTable;//私房编号id
+		private int isOpenSoundApp;//是否开启语音   0 开  1 不开
+		private String soundAppId;//语音组链接id
+		private int dongSeatId;//东  位置 seatid
+		private int isGamesOrRound;//是按 局打  还是按 圈打  0  圈  1 局
+		private int countDenominator;//总的圈数或局数
+		private int countNumber;//当前圈数或局数
+		private String choiceRule;//牌桌选择的规则
+		private int tablePhase;//牌桌阶段
+		private String roomId;
+		private int mode;
+		private String ruldStr;//规则 名称 id
+		private int isWaitingPlayerDissmissTable; // 0  不是  1 是
+		private int isOpenGPS;//是否开启GPS   0 开  1 不开
+		private int dismissTablePlayer;//解散房间发起者   pid   -1 没有
+		private int timer;//比赛场机器人等待时间
+		
+		private String denNum;//比赛  多少进多少  轮局
+		Player的消息体
+			private int pid;//玩家ID
+			private String nickName;//昵称
+			private String coins;//金币数量
+			private byte robotModel;//是否是机器人
+			private byte age;//年龄
+			private byte sex;//性别0 男 1女
+			private String photo;//系统默认头像
+			private String sdkPhotoUrl;//微信头像链接
+			private int win;//赢得局数
+			private int lose;//输的局数
+			private int exp;//玩家 经验
+			private byte vip;//vip等级
+			private byte seatID;//座位号
+			private int role;//角色
+			
+			private String netIp;// 玩家ip地址

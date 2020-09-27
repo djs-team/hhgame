@@ -395,7 +395,6 @@ load('game/public/HttpGame', function () {
             }
 
 
-            console.log('-------------------TURNTABLEBack data : ' + JSON.stringify(msg))
             appInstance.sendNotification(GameEvent.TURNTABLE_INIT, msg)
 
         },
@@ -476,7 +475,6 @@ load('game/public/HttpGame', function () {
                 return
             }
 
-            console.log('-------------------REFRESHAWARDSDATABack data : ' + JSON.stringify(msg))
             appInstance.sendNotification(GameEvent.TURNTABLE_LUCKY_PRIZE, msg)
 
         },

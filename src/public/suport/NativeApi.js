@@ -445,7 +445,9 @@ load('public/suport/NativeApi', function () {
                 if (cc.sys.OS_ANDROID === cc.sys.os) {
                     jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'shareImage', '(Ljava/lang/String;Ljava/lang/String;)V', platform, fileName)
                 } else if (cc.sys.OS_IOS === cc.sys.os) {
-                    jsb.reflection.callStaticMethod('AppController', 'WXShareIOSforImage:', imgPath)
+                    let writePath = jsb.fileUtils.getWritablePath()
+                    let sharePath = writePath + fileName
+                    jsb.reflection.callStaticMethod('AppController', 'WXShareIOSforImage:', sharePath)
                 }
             } catch (e) {
                 NativeApi.HelloOC('shareImage throw: ' + JSON.stringify(e))
@@ -457,7 +459,9 @@ load('public/suport/NativeApi', function () {
                 if (cc.sys.OS_ANDROID === cc.sys.os) {
                     jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'shareArticle', '(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V', platform, title, description, url, thumbUrl)
                 } else if (cc.sys.OS_IOS === cc.sys.os) {
-                    jsb.reflection.callStaticMethod('AppController', 'WXShareIOSforUrl:Title:Desc:', url, title, description)
+                    let writePath = jsb.fileUtils.getWritablePath()
+                    let sharePath = writePath + thumbUrl
+                    jsb.reflection.callStaticMethod('AppController', 'WXShareIOSforUrl:Title:Desc:image:', url, title, description, sharePath)
                 }
             } catch (e) {
                 NativeApi.HelloOC('shareArticle throw: ' + JSON.stringify(e))

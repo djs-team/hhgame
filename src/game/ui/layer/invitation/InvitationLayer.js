@@ -88,18 +88,13 @@ load('game/ui/layer/invitation/InvitationLayer', function () {
         },
 
         onWxShareClick: function () {
-            if (cc.sys.OS_ANDROID === cc.sys.os) {
-                let fileName = "result_share.jpg";
-                appInstance.nativeApi().shareArticle('WEIXIN', "老铁，三缺一，就差你了", "邀请你来打麻将，还有话费和实物等你来赢哦", inviteUrl, fileName)
-            }
-
+            let fileName = "result_share.jpg";
+            appInstance.nativeApi().shareArticle('WEIXIN', "老铁，三缺一，就差你了", "邀请你来打麻将，还有话费和实物等你来赢哦", inviteUrl, fileName)
         },
 
         onWxCircleShareClick: function () {
-            if (cc.sys.OS_ANDROID === cc.sys.os) {
-                let fileName = "result_share.jpg";
-                appInstance.nativeApi().shareImage('WEIXIN_CIRCLE', fileName)
-            }
+            let fileName = "result_share.jpg";
+            appInstance.nativeApi().shareImage('WEIXIN_CIRCLE', fileName)
         },
         onInviteCodeCallback: function (msg) {
             this.loadCodePg(this.qrCodePg1, msg)

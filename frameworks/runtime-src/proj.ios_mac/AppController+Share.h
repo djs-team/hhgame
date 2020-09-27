@@ -17,7 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param url 网页链接
 /// @param tit 标题
 /// @param desc 描述
-+ (void)WXShareIOSforUrl:(NSString *)url Title:(NSString *)tit Desc:(NSString *)desc;
+/// @param image 图片
++ (void)WXShareIOSforUrl:(NSString *)url Title:(NSString *)tit Desc:(NSString *)desc image:(NSString *)image;
 
 /// 微信分享文本
 /// @param des 文本内容

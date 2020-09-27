@@ -15,6 +15,11 @@ load('module/mahjong/ui/DeskCardLayer', function () {
         _outCardLen: 10,
         RES_BINDING: function () {
             return {
+                'bgPnl/DirectionBg': {  },
+                'bgPnl/DirectionBg/Direction0': {  },
+                'bgPnl/DirectionBg/Direction1': {  },
+                'bgPnl/DirectionBg/Direction2': {  },
+                'bgPnl/DirectionBg/Direction3': {  },
                 'CardPnl': {  },
             }
         },

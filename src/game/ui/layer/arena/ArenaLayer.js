@@ -232,10 +232,10 @@ load('game/ui/layer/arena/ArenaLayer', function () {
             let propName
 
             if(consumptionType == 1){
-                myPropCnt = appInstance.dataManager().userData.coin
+                myPropCnt = appInstance.dataManager().getUserData().coin
                 propName = '金币'
             }else{
-                myPropCnt = appInstance.dataManager().userData.diamonds
+                myPropCnt = appInstance.dataManager().getUserData().diamonds
                 propName = '钻石'
             }
 

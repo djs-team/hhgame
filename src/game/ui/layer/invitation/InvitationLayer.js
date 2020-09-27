@@ -1,7 +1,6 @@
 load('game/ui/layer/invitation/InvitationLayer', function () {
     let ResConfig = include('game/config/ResConfig')
     let BaseLayer = include('public/ui/BaseLayer')
-    let imgUrl = "";
     let inviteUrl = ""
     let InvitationMdt = include('game/ui/layer/invitation/InvitationMdt')
     let invitationLayer = BaseLayer.extend({
@@ -23,6 +22,8 @@ load('game/ui/layer/invitation/InvitationLayer', function () {
                 'pnl/returnBtn': {onClicked: this.returnClike},
                 'pnl/bgPnl': {},
 
+                'screenLayout': {},
+                'screenLayout/qrCodePg3': {},
                 'pnl/invitationPnl': {},
                 'pnl/invitationPnl/invitNowPnl': {},
                 'pnl/invitationPnl/invitNowPnl/qrCodePg1': {},
@@ -79,6 +80,7 @@ load('game/ui/layer/invitation/InvitationLayer', function () {
             this.myInvitationsPnl.setVisible(false)
 
             this.shareTaskCell.setVisible(false)
+            this.screenLayout.setVisible(false)
 
             this.shareTaskList.addEventListener(this.selectedItemEvent, this)
             let myPid = appInstance.dataManager().getUserData().pid;
@@ -86,19 +88,23 @@ load('game/ui/layer/invitation/InvitationLayer', function () {
         },
 
         onWxShareClick: function () {
-            cc.log('------------------onWxShareClick')
+            if (cc.sys.OS_ANDROID === cc.sys.os) {
+                let fileName = "result_share.jpg";
+                appInstance.nativeApi().shareArticle('WEIXIN', "老铁，三缺一，就差你了", "邀请你来打麻将，还有话费和实物等你来赢哦", inviteUrl, fileName)
+            }
 
-            appInstance.nativeApi().shareArticle('WEIXIN', "老铁，三缺一，就差你了", "邀请你来打麻将，还有话费和实物等你来赢哦", inviteUrl, "")
         },
 
         onWxCircleShareClick: function () {
-            cc.log('------------------onWxCircleShareClick')
-            appInstance.nativeApi().shareImage('WEIXIN_CIRCLE', imgUrl)
-
+            if (cc.sys.OS_ANDROID === cc.sys.os) {
+                let fileName = "result_share.jpg";
+                appInstance.nativeApi().shareImage('WEIXIN_CIRCLE', fileName)
+            }
         },
         onInviteCodeCallback: function (msg) {
-            this.loadCodePg(this.qrCodePg1 ,msg)
-            this.loadCodePg(this.qrCodePg2 ,msg)
+            this.loadCodePg(this.qrCodePg1, msg)
+            this.loadCodePg(this.qrCodePg2, msg)
+            this.loadCodePg(this.qrCodePg3, msg)
             // imgUrl = msg;//sd卡二维码路径
             // this.loadUrlImage(msg, this.invitNowPnl.getChildByName('qrCodePg'));
             // this.loadUrlImage(msg, this.sfpPnl.getChildByName('qrCodePg'));
@@ -133,7 +139,6 @@ load('game/ui/layer/invitation/InvitationLayer', function () {
             this.myInvitationsPnl.setVisible(false)
             this.dataText.setVisible(false)
 
-            this.sfpPnl.setVisible(true)
 
             this.beforShareImg()
             // 调用前  将自己想要分享的图片 弄全屏 在截取完后 再重置回原来的状态
@@ -148,11 +153,13 @@ load('game/ui/layer/invitation/InvitationLayer', function () {
         },
         //分享前处理界面
         beforShareImg: function () {
+            this.screenLayout.setVisible(true)
 
         },
         //屏幕截取后  重置界面
         afterShareImg: function () {
-
+            this.screenLayout.setVisible(false)
+            this.sfpPnl.setVisible(true)
         },
 
 
@@ -160,17 +167,7 @@ load('game/ui/layer/invitation/InvitationLayer', function () {
          * 初始化样式
          */
         initView: function () {
-            // var that = this;
-            // var url = "https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1906469856,4113625838&fm=26&gp=0.jpg";
-            // cc.loader.loadImg(url, null, function (err, img) {
-            //     var logo = new cc.Sprite(img);
-            //     that.invitNowPnl.getChildByName('qrCodePg').addChild(logo);
-            //     logo.x = size.width / 2;
-            //     logo.y = size.height / 2;
-            // });
             this.updateInviChoiceBtn()
-
-
         },
 
         returnClike: function () {

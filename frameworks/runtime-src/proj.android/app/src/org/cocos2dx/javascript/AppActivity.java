@@ -8,8 +8,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
@@ -536,13 +538,15 @@ public class AppActivity extends Cocos2dxActivity {
      * 分享-图片
      *
      * @param platform 平台WEIXIN, 微信  WEIXIN_CIRCLE 微信朋友圈
-     * @param url      图片地址
+     * @param fileName 图片名字
      */
-    public static void shareImage(String platform, String url) {
-        ToastUtils.showToast(platform + url);
-//        String img = "https://dss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1812993978,4158651947&fm=26&gp=0.jpg";
+    public static void shareImage(String platform, String fileName) {
+
+        File file = ccActivity.getFilesDir();
+        File imgFile = new File(file, fileName);
+        Bitmap bitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath(), getBitmapOption(2));
 //        UMImage th = new UMImage(ccActivity, url);//网络图片
-        UMImage image = new UMImage(ccActivity, new File(url));//网络图片
+        UMImage image = new UMImage(ccActivity, bitmap);//data/data图片
         SHARE_MEDIA share_media;
         if (platform.equals("WEIXIN")) {
             share_media = SHARE_MEDIA.WEIXIN;
@@ -552,18 +556,29 @@ public class AppActivity extends Cocos2dxActivity {
         new ShareAction(ccActivity).setPlatform(share_media).withMedia(image).share();
     }
 
+    private static BitmapFactory.Options getBitmapOption(int inSampleSize) {
+        System.gc();
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inPurgeable = true;
+        options.inSampleSize = inSampleSize;
+        return options;
+    }
+
     /**
      * 分享-文章
      *
      * @param title       标题
      * @param platform    平台WEIXIN, 微信  WEIXIN_CIRCLE 微信朋友圈
      * @param description 描述
-     * @param thumbUrl    缩略图
+     * @param fileName    缩略图
      */
-    public static void shareArticle(String platform, String title, String description, String url, String thumbUrl) {
+    public static void shareArticle(String platform, String title, String description, String url, String fileName) {
         UMImage thumb = null;
-        if (!TextUtils.isEmpty(thumbUrl)) {
-            thumb = new UMImage(ccActivity, thumbUrl);//网络图片
+        if (!TextUtils.isEmpty(fileName)) {
+            File file = ccActivity.getFilesDir();
+            File imgFile = new File(file, fileName);
+            Bitmap bitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath(), getBitmapOption(2));
+            thumb = new UMImage(ccActivity, bitmap);//data/data图片
         } else {
             thumb = new UMImage(ccActivity, R.mipmap.logo);//本地图片
         }

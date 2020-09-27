@@ -4,7 +4,7 @@
 
 load('public/suport/NativeApi', function () {
     let AppConfig = include('game/public/AppConfig')
-    
+
     let NativeApi = cc.Class.extend({
         getImei: function () {
             try {
@@ -35,7 +35,7 @@ load('public/suport/NativeApi', function () {
                     console.log('thirdPay-start')
                     jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'thirdPay', '(Ljava/lang/String;Ljava/lang/String;)V', type, message)
                 } else if (cc.sys.OS_IOS === cc.sys.os) {
-                    jsb.reflection.callStaticMethod('AppController', 'appPurchaseWithPayType:payParam:userID:orderNo:paySuccessMethod:', type, message,"","","ThirdPayCallback")
+                    jsb.reflection.callStaticMethod('AppController', 'appPurchaseWithPayType:payParam:userID:orderNo:paySuccessMethod:', type, message, "", "", "ThirdPayCallback")
                 }
             } catch (e) {
                 console.log('虽然我挂掉了,但是我还是坚持打印了了log: ' + String(e))
@@ -45,7 +45,7 @@ load('public/suport/NativeApi', function () {
         applyPay: function (message, orderNo) {
             try {
                 if (cc.sys.OS_IOS === cc.sys.os) {
-                    jsb.reflection.callStaticMethod('AppController', 'appPurchaseWithPayType:payParam:userID:orderNo:paySuccessMethod:', "ios", message,"",orderNo,"ApplePayCallback")
+                    jsb.reflection.callStaticMethod('AppController', 'appPurchaseWithPayType:payParam:userID:orderNo:paySuccessMethod:', "ios", message, "", orderNo, "ApplePayCallback")
                     // jsb.reflection.callStaticMethod('AppController', 'appPurchaseWithPayType:payParam:userID:paySuccessMethod:', type, message, "", "ThirdPayCallback")
                 }
             } catch (e) {
@@ -435,10 +435,10 @@ load('public/suport/NativeApi', function () {
             }
         },
         //分享图片------  WEIXIN, 微信  WEIXIN_CIRCLE 微信朋友圈
-        shareImage: function (platform, imgPath) {
+        shareImage: function (platform, fileName) {
             try {
                 if (cc.sys.OS_ANDROID === cc.sys.os) {
-                    jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'shareImage', '(Ljava/lang/String;Ljava/lang/String;)V', platform, imgPath)
+                    jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'shareImage', '(Ljava/lang/String;Ljava/lang/String;)V', platform, fileName)
                 } else if (cc.sys.OS_IOS === cc.sys.os) {
 
                 }
@@ -447,10 +447,10 @@ load('public/suport/NativeApi', function () {
             }
         },
         //分享文章------  WEIXIN, 微信  WEIXIN_CIRCLE 微信朋友圈
-        shareArticle: function (platform, title, description, url, thumbUrl) {
+        shareArticle: function (platform, title, description, url, fileName) {
             try {
                 if (cc.sys.OS_ANDROID === cc.sys.os) {
-                    jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'shareArticle', '(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V', platform, title, description, url, thumbUrl)
+                    jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'shareArticle', '(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V', platform, title, description, url, fileName)
                 } else if (cc.sys.OS_IOS === cc.sys.os) {
 
                 }

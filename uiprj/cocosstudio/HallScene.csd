@@ -367,7 +367,7 @@
                     <PreSize X="0.1117" Y="0.3903" />
                     <FileData Type="Normal" Path="hall/dtjm_30.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="SetBtn" ActionTag="-74830355" Tag="343" IconVisible="False" LeftMargin="1120.9471" RightMargin="9.0529" TopMargin="87.5293" BottomMargin="567.4707" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                  <AbstractNodeData Name="setBtn" ActionTag="-74830355" Tag="343" IconVisible="False" LeftMargin="1120.9471" RightMargin="9.0529" TopMargin="87.5293" BottomMargin="567.4707" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="150.0000" Y="65.0000" />
                     <Children>
                       <AbstractNodeData Name="Image_5_0" ActionTag="-363719697" Tag="185" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="3.6850" RightMargin="1.3150" TopMargin="55.4506" BottomMargin="0.5494" LeftEage="11" RightEage="11" TopEage="2" BottomEage="2" Scale9OriginX="11" Scale9OriginY="2" Scale9Width="474" Scale9Height="5" ctype="ImageViewObjectData">

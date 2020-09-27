@@ -252,6 +252,10 @@ load('game/ui/scene/HallScene', function () {
             ani.setAnimation(0, PlayerPlay.stand, true)
         },
 
+        /**
+         * 初始化样式
+         * @param selfInfo
+         */
         initView: function (selfInfo) {
             this.initData(selfInfo)
 
@@ -282,6 +286,9 @@ load('game/ui/scene/HallScene', function () {
             this.updatePlayerAni()
         },
 
+        /**
+         * 初始化用户数据
+         */
         onInitUserData: function () {
 
             let msg = {}
@@ -289,6 +296,10 @@ load('game/ui/scene/HallScene', function () {
 
         },
 
+        /**
+         * 更新用户数据
+         * @param data
+         */
        onUpdateUserData: function (data) {
           //  cc.log('-----------------onUpdateUserData :' + JSON.stringify(data))
            let nameNd =  this.namePnl.getChildByName('name')

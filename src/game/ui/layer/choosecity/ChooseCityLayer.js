@@ -48,12 +48,19 @@ load('game/ui/layer/choosecity/ChooseCityLayer', function () {
             this.updateCellList()
         },
 
+        /**
+         * 初始化左侧列表
+         */
         initLeftList: function () {
             for (let index = 0; index < this._city.length; ++index) {
                 this.initLeftListCell(index)
             }
         },
 
+        /**
+         * 左侧列表cell
+         * @param index
+         */
         initLeftListCell: function (index) {
             let cell = this._leftCell[index] = this.leftCell.clone()
             cell.setVisible(true)
@@ -69,12 +76,21 @@ load('game/ui/layer/choosecity/ChooseCityLayer', function () {
             }.bind(this))
         },
 
+        /**
+         * 左侧地区点击事件
+         * @param sender
+         */
         onLeftBtnClick: function (sender) {
             this._leftIndex = sender._leftIndex
             this.updateLeftList()
             this.updateCellList()
         },
 
+        /**
+         * 更新左侧城市样式
+         * @param leftCell
+         * @param isSelect
+         */
         setLeftCellStatus: function (leftCell, isSelect) {
             let common = leftCell.getChildByName('common')
             let select = leftCell.getChildByName('select')
@@ -87,12 +103,18 @@ load('game/ui/layer/choosecity/ChooseCityLayer', function () {
             }
         },
 
+        /**
+         * 更新左侧城市样式
+         */
         updateLeftList: function () {
             for (let i = 0; i < this._leftCell.length; ++i) {
                 this.setLeftCellStatus(this._leftCell[i], i === this._leftIndex)
             }
         },
 
+        /**
+         * 横向城市
+         */
         updateCellList: function () {
             this.cityListView.removeAllChildren()
             let data = this._city[this._leftIndex].cell
@@ -112,6 +134,12 @@ load('game/ui/layer/choosecity/ChooseCityLayer', function () {
             }
         },
 
+        /**
+         * 初始化城市
+         * @param listPnl
+         * @param cellIndex
+         * @param cellData
+         */
         initCityCell: function (listPnl, cellIndex, cellData) {
             let cell = this.cityCell.clone()
             cell.setVisible(true)
@@ -121,7 +149,7 @@ load('game/ui/layer/choosecity/ChooseCityLayer', function () {
 
             let nameNd = cell.getChildByName('name')
             nameNd.setString(cellData.name)
-            cc.log('======cellData==' + cellData.name)
+            console.log('======cellData==' + cellData.name)
 
             cell._sendMsg = cellData._sendMsg
 
@@ -130,6 +158,10 @@ load('game/ui/layer/choosecity/ChooseCityLayer', function () {
             }.bind(this))
         },
 
+        /**
+         * 城市点击事件
+         * @param sender
+         */
         onCityCellClick: function (sender) {
             appInstance.gameAgent().httpGame().chooseCity(sender._sendMsg)
         },

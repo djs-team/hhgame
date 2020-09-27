@@ -16,6 +16,10 @@ load('game/public/HttpGame', function () {
             appInstance.httpAgent().setCallBack(this.requestBack)
         },
 
+        /**
+         * 登录请求
+         * @param msg
+         */
         httpLogin: function (msg) {
             if (msg.platform == 3) {
                 nickName = msg.nickName;
@@ -26,12 +30,12 @@ load('game/public/HttpGame', function () {
                 this._requestBackCall[HttpEvent.MJ_HALL_MESSAGE_LOGIN] = this.httpLoginBack
             }
             let sendMsg = {
-                platform: 1,
-                account: '',
-                device: 'devicestr',
-                phoneModel: cc.sys.os,
-                imei:'',
-                unionId: '',
+                platform: 1,  //登陆平台1游客2手机3微信4闲聊5账号登录
+                account: '',  //账号
+                device: 'devicestr', //设备
+                phoneModel: cc.sys.os,  //登录手机设备  ios  android
+                imei:'', //手机唯一标识
+                unionId: '', //微信唯一标识
             }
             this.checkSendMsg(sendMsg, msg)
             sendMsg.msgID = HttpEvent.MJ_HALL_MESSAGE_LOGIN
@@ -39,6 +43,10 @@ load('game/public/HttpGame', function () {
 
         },
 
+        /**
+         * 登录回调
+         * @param msg
+         */
         httpLoginBack: function (msg) {
             if (msg.status !== 0) {
                 cc.log('=========httpLoginBack============error================')
@@ -47,7 +55,7 @@ load('game/public/HttpGame', function () {
             let saveKey = [
                 'platform',
                 'account',
-                'key',
+                'key',   //登陆成功后，服务端存的session KEY
                 'pid',
                 'timetamp',
                 'lastChannel',
@@ -63,6 +71,7 @@ load('game/public/HttpGame', function () {
 
             appInstance.msgTool().setHeadPid(msg.pid)
 
+            //判断是否要跳到选择城市layer
             if (msg.lastChannel) {
                 let sendData = {}
                 sendData.channel = msg.lastChannel
@@ -86,7 +95,10 @@ load('game/public/HttpGame', function () {
             }
         },
 
-
+        /**
+         * 城市请求
+         * @param msg
+         */
         chooseCity: function (msg) {
             msg = msg || {}
             if (!this._requestBackCall[HttpEvent.MJ_HALL_CHOOSE_CITY]) {
@@ -101,18 +113,21 @@ load('game/public/HttpGame', function () {
             appInstance.httpAgent().sendPost(msg)
         },
 
+        /**
+         * 回调城市
+         * @param msg
+         */
         chooseCityBack: function (msg) {
             cc.log('   选择城市:::chooseCityBack>>>\n' + JSON.stringify(msg))
             if (msg.status !== 0) {
                 return
             }
             let saveKey = [
-                'hostip',
-                'hostport',
-                'firstLogin',
-                'vipFlag',
-                'channel',
-
+                'hostip',  //客户端需要连接哪个网关的IP
+                'hostport',  //端口号
+                'firstLogin',  //是否每天第一次登陆0是1不是
+                'vipFlag',  //vip弹窗标记0：正常不弹窗1：弹vip界面 2：弹出vip不足三天提示
+                'channel', //城市编号
             ]
             appInstance.dataManager().getUserData().saveMsg(msg, saveKey)
 
@@ -168,6 +183,10 @@ load('game/public/HttpGame', function () {
             }
         },
 
+        /**
+         * 用户数据请求
+         * @param msg
+         */
         userDataReq: function (msg) {
             msg = msg || {}
             if (!this._requestBackCall[HttpEvent.MJ_HALL_MESSAGE_USERDATA]) {
@@ -178,6 +197,10 @@ load('game/public/HttpGame', function () {
             appInstance.httpAgent().sendPost(msg)
         },
 
+        /**
+         * 用户数据返回
+         * @param msg
+         */
         userDataBack: function (msg) {
             if (msg.status !== 0) {
                 cc.log('------userDataBack------->>>httpGame error happen')

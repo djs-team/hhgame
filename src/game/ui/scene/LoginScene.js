@@ -36,7 +36,11 @@ load('game/ui/scene/LoginScene', function () {
             // this.goTest()
         },
 
+        /**
+         * 一键登录
+         */
         onphoneLoginClick: function () {
+            //判断当前系统
             if (cc.sys.OS_WINDOWS === cc.sys.os) {
                 this.debugLogin()
             } else {

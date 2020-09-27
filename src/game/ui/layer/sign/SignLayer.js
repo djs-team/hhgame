@@ -120,9 +120,7 @@ load('game/ui/layer/sign/SignLayer', function () {
 
         onVideoAcceptClicked: function () {
 
-            if (cc.sys.OS_ANDROID === cc.sys.os) {
-                appInstance.nativeApi().showRewardVideo()
-            }
+            appInstance.nativeApi().showRewardVideo()
 
         },
         onRewardVideoCallback: function (msg) {

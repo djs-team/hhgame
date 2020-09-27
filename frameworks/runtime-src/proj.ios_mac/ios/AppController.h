@@ -65,18 +65,18 @@
 + (void)appPurchaseWithPayType:(NSString *_Nonnull)payType payParam:(NSString *_Nonnull)payParam userID:(NSString *_Nonnull)userID orderNo:(NSString *_Nonnull)orderNo paySuccessMethod:(NSString *_Nonnull)paySuccessMethod;
 
 #pragma mark - Photo
-+ (void)selectedOnePhoto;
++ (void)selectedOnePhotoWithMethod:(NSString *_Nonnull)method;
 
 #pragma mark - QRCode
 /// 生成二维码
 /// @param codeString 二维码字符串
-/// @param centerImage 中心图片
-+ (UIImage *_Nonnull)createQRCodeImageWithString:(nonnull NSString *)codeString;
++ (void)createQRCodeImageWithString:(nonnull NSString *)codeString method:(NSString *_Nonnull)method;
 
 #pragma mark - 广告
 /// 打开激励视频
+/// @param userId userId
 /// @param method 广告看完通知方法
-+ (void)openBUAdRewardViewControllerWithMethod:(NSString *_Nonnull)method;
++ (void)openBUAdRewardWithUserId:(NSString *_Nonnull)userId method:(NSString *_Nonnull)method;
 
 #pragma mark - 获取手机基本信息
 /// 获取Imei

@@ -1,4 +1,5 @@
 load('game/ui/layer/member/MemberLayer', function () {
+    let AppConfig = include('game/public/AppConfig')
     let ResConfig = include('game/config/ResConfig')
     let GameConfig = include('game/config/GameConfig')
     let BaseLayer = include('public/ui/BaseLayer')
@@ -165,8 +166,22 @@ load('game/ui/layer/member/MemberLayer', function () {
 
         onRechargeClicked: function (s) {
             sender = s;
-            this.PayType.setVisible(true)
-
+            if (cc.sys.OS_IOS === cc.sys.os) {
+                if (AppConfig.applePayType == "Apple") {
+                    let _sendData = sender._sendData
+                    let msg = {
+                        vipCode: _sendData.vipCode,
+                        payType: 3
+                    }
+                    appInstance.gameAgent().httpGame().VIPPaysOrderReq(msg)
+                    cc.log("----------------------onAliPayClick")
+                } else {
+                    this.PayType.setVisible(true)
+                }
+            } else {
+                this.PayType.setVisible(true)
+            }
+            
         },
         onAliPayClick: function () {
             cc.log("----------------------onAliPayClick")

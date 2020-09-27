@@ -133,6 +133,8 @@ load('module/mahjong/ui/DeskTopLayer', function () {
 
             this.HostingPnl.setVisible(false)
 
+            this.BaoNd.setVisible(false)
+
 
             this.NameTxt.setString(this._selfInfo.nickName)
             this.TableLevelTxt.setString(this._tableLevel[this._tData.pGameType])

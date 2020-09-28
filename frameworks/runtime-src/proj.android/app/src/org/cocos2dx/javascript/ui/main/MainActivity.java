@@ -82,7 +82,6 @@ import com.hyphenate.chat.EMMessage;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import org.cocos2dx.javascript.ui.main.viewmodel.MainViewModel;
-import org.cocos2dx.javascript.utils.LocaltionUtils;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
@@ -183,7 +182,6 @@ public class MainActivity extends BaseActivity<ActivityMainBinding>
             hideProgress();
 
         }
-        requestPermissions();
         Intent intent = getIntent();
         if (null != intent) {
             Bundle bundle = getIntent().getExtras();
@@ -315,14 +313,6 @@ public class MainActivity extends BaseActivity<ActivityMainBinding>
     }
 
 
-    private void requestPermissions() {
-        RxPermissions permissions = new RxPermissions(this);
-        permissions.request(Manifest.permission.ACCESS_FINE_LOCATION)
-                .as(autoDisposable())
-                .subscribe(aBoolean -> {
-                    LocaltionUtils.getInstance().location(getApplicationContext(), null);
-                });
-    }
 
 
     @Override

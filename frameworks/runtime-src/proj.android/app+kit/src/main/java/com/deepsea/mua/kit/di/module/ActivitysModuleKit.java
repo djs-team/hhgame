@@ -28,16 +28,11 @@ import com.deepsea.mua.mine.activity.GuardActivity;
 import com.deepsea.mua.mine.activity.GuardRuleActivity;
 import com.deepsea.mua.mine.activity.IncomeDetailsActivity;
 import com.deepsea.mua.mine.activity.IncomeRedpackageDetailsActivity;
-import com.deepsea.mua.mine.activity.InvitationCodeActivity;
-import com.deepsea.mua.mine.activity.InvitationMineActivity;
-import com.deepsea.mua.mine.activity.InviteAlertActivity;
 import com.deepsea.mua.mine.activity.InviteDialogActivity;
 import com.deepsea.mua.mine.activity.MarriageSeekingActivity;
 import com.deepsea.mua.mine.activity.MePackActivity;
 import com.deepsea.mua.mine.activity.MyGuardActivity;
 import com.deepsea.mua.mine.activity.MyTagsActivity;
-import com.deepsea.mua.mine.activity.PersonalLevelActivity;
-import com.deepsea.mua.mine.activity.PresentIdentityAuthActivity;
 import com.deepsea.mua.mine.activity.PresentWallActivity;
 import com.deepsea.mua.mine.activity.ProfileActivity;
 import com.deepsea.mua.mine.activity.ProfileEditActivity;
@@ -206,13 +201,9 @@ public abstract class ActivitysModuleKit {
     abstract ProfileActivity contributesProfileActivity();
 
 
-    @ActivityScope
-    @ContributesAndroidInjector
-    abstract PersonalLevelActivity contributesPersonalLevelActivity();
 
-    @ActivityScope
-    @ContributesAndroidInjector
-    abstract PresentIdentityAuthActivity contributesPresentIdentityAuthActivity();
+
+
 
     @ActivityScope
     @ContributesAndroidInjector
@@ -226,14 +217,6 @@ public abstract class ActivitysModuleKit {
     @ContributesAndroidInjector
     abstract FriendRequestActivity contributesPresentFriendRequestActivity();
 
-
-    @ActivityScope
-    @ContributesAndroidInjector
-    abstract InvitationCodeActivity contributesPresentInvitationCodeActivity();
-
-    @ActivityScope
-    @ContributesAndroidInjector
-    abstract InvitationMineActivity contributesPresentInvitationMineActivity();
 
     @ActivityScope
     @ContributesAndroidInjector
@@ -283,9 +266,6 @@ public abstract class ActivitysModuleKit {
     @ContributesAndroidInjector
     abstract MyTagsActivity contributesMyTagsActivity();
 
-    @ActivityScope
-    @ContributesAndroidInjector
-    abstract InviteAlertActivity contributesInviteAlertActivity();
 
     @ActivityScope
     @ContributesAndroidInjector

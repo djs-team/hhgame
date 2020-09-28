@@ -9,7 +9,6 @@ import com.deepsea.mua.stub.entity.AreaVo;
 import com.deepsea.mua.stub.entity.AuditBean;
 import com.deepsea.mua.stub.entity.BlockVo;
 import com.deepsea.mua.stub.entity.GuardInfoBean;
-import com.deepsea.mua.stub.entity.InitInviteBean;
 import com.deepsea.mua.stub.entity.JumpRoomVo;
 import com.deepsea.mua.stub.entity.LookGuardUserVo;
 import com.deepsea.mua.stub.entity.ProfileBean;
@@ -112,22 +111,7 @@ public class ProfileRepository extends BaseRepository {
         });
     }
 
-    public LiveData<Resource<InitInviteBean>> initInvite() {
-        return HttpUtils.requestNoCache(new HttpCallback.NoCacheCallback<InitInviteBean, BaseApiResult<InitInviteBean>>() {
-            @Override
-            public LiveData<ApiResponse<BaseApiResult<InitInviteBean>>> createCall() {
-                return mRetrofitApi.initInvite();
-            }
 
-            @Override
-            public InitInviteBean processResponse(BaseApiResult<InitInviteBean> source) {
-                if (source != null) {
-                    return source.getData();
-                }
-                return null;
-            }
-        });
-    }
 
 
     public LiveData<Resource<BaseApiResult>> createapprove(String signature) {
@@ -147,19 +131,7 @@ public class ProfileRepository extends BaseRepository {
         });
     }
 
-    public LiveData<Resource<BaseApiResult>> bindReferrer(String referrer_code) {
-        return HttpUtils.requestNoCache(new HttpCallback.NoCacheCallback<BaseApiResult, BaseApiResult>() {
-            @Override
-            public LiveData<ApiResponse<BaseApiResult>> createCall() {
-                return mRetrofitApi.bindReferrer(referrer_code);
-            }
 
-            @Override
-            public BaseApiResult processResponse(BaseApiResult source) {
-                return source;
-            }
-        });
-    }
 
 
 

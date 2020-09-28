@@ -11,7 +11,6 @@ import android.widget.LinearLayout;
 import com.deepsea.mua.core.utils.ResUtils;
 import com.deepsea.mua.stub.base.BaseActivity;
 import com.deepsea.mua.stub.base.BaseObserver;
-import com.deepsea.mua.stub.dialog.UnauthorizedDialog;
 import com.deepsea.mua.stub.entity.RoomTags;
 import com.deepsea.mua.stub.entity.VoiceRoomBean;
 import com.deepsea.mua.stub.utils.CollectionUtils;
@@ -98,11 +97,9 @@ public class RoomCreateActivity extends BaseActivity<ActivityRoomCreateBinding> 
                         @Override
                         public void onError(String msg, int code) {
                             hideProgress();
-                            if (code == 900) {
-                                new UnauthorizedDialog(mContext).show();
-                            } else {
+
                                 toastShort(msg);
-                            }
+
                         }
                     });
         });

@@ -14,7 +14,6 @@ import com.deepsea.mua.app.im.viewmodel.GiftPanelViewModel;
 import com.deepsea.mua.app.im.viewmodel.SysMsgViewModel;
 import com.deepsea.mua.core.di.mapkey.ViewModelKey;
 import com.deepsea.mua.kit.app.MuaViewModel;
-import com.deepsea.mua.mine.activity.CollectionAccountSettingActivity;
 import com.deepsea.mua.mine.viewmodel.BlindDateModel;
 import com.deepsea.mua.mine.viewmodel.CancellationAccountModel;
 import com.deepsea.mua.mine.viewmodel.CashWithdrawalDetailsModel;
@@ -25,9 +24,6 @@ import com.deepsea.mua.mine.viewmodel.ExchangeMdViewModel;
 import com.deepsea.mua.mine.viewmodel.FollowFanViewModel;
 import com.deepsea.mua.mine.viewmodel.H5ViewModel;
 import com.deepsea.mua.mine.viewmodel.IncomeDetailsModel;
-import com.deepsea.mua.mine.viewmodel.InvitationMineViewModel;
-import com.deepsea.mua.mine.viewmodel.InviteAlertModel;
-import com.deepsea.mua.mine.viewmodel.InviteCodeModel;
 import com.deepsea.mua.mine.viewmodel.InviteDialogViewModel;
 import com.deepsea.mua.mine.viewmodel.MePackViewModel;
 import com.deepsea.mua.mine.viewmodel.ProfileEditViewModel;
@@ -233,10 +229,6 @@ public abstract class ViewModelModuleKit {
     @ViewModelKey(GiftKnapsackModel.class)
     abstract ViewModel bindsGiftKnapsackModel(GiftKnapsackModel viewModel);
 
-    @Binds
-    @IntoMap
-    @ViewModelKey(InvitationMineViewModel.class)
-    abstract ViewModel bindsInvitationMineViewModel(InvitationMineViewModel viewModel);
 
     @Binds
     @IntoMap
@@ -258,10 +250,6 @@ public abstract class ViewModelModuleKit {
     @ViewModelKey(CollectionAccountModel.class)
     abstract ViewModel bindsCollectionAccountModel(CollectionAccountModel viewModel);
 
-    @Binds
-    @IntoMap
-    @ViewModelKey(InviteCodeModel.class)
-    abstract ViewModel bindsInviteCodeModel(InviteCodeModel viewModel);
     @Binds
     @IntoMap
     @ViewModelKey(InviteDialogViewModel.class)
@@ -290,10 +278,6 @@ public abstract class ViewModelModuleKit {
     @IntoMap
     @ViewModelKey(TagsModel.class)
     abstract ViewModel bindsTagsModel(TagsModel viewModel);
-    @Binds
-    @IntoMap
-    @ViewModelKey(InviteAlertModel.class)
-    abstract ViewModel bindsInviteAlertModel(InviteAlertModel viewModel);
     @Binds
     @IntoMap
     @ViewModelKey(SongOriginalViewModel.class)

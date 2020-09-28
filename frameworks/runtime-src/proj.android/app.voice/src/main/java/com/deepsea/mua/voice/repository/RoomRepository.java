@@ -285,19 +285,7 @@ public class RoomRepository extends BaseRepository {
             }
         });
     }
-    public LiveData<Resource<BaseApiResult>> shareCallback() {
-        return HttpUtils.requestNoCache(new HttpCallback.NoCacheCallback<BaseApiResult, BaseApiResult>() {
-            @Override
-            public LiveData<ApiResponse<BaseApiResult>> createCall() {
-                return mRetrofitApi.shareCallBack();
-            }
 
-            @Override
-            public BaseApiResult processResponse(BaseApiResult source) {
-                return source;
-            }
-        });
-    }
     public LiveData<Resource<BaseApiResult>> defriend(String uid, String signature) {
         return HttpUtils.requestNoCache(new HttpCallback.NoCacheCallback<BaseApiResult, BaseApiResult>() {
             @Override
@@ -391,6 +379,19 @@ public class RoomRepository extends BaseRepository {
                     return source.getData();
                 }
                 return null;
+            }
+        });
+    }
+    public LiveData<Resource<BaseApiResult>> shareCallback() {
+        return HttpUtils.requestNoCache(new HttpCallback.NoCacheCallback<BaseApiResult, BaseApiResult>() {
+            @Override
+            public LiveData<ApiResponse<BaseApiResult>> createCall() {
+                return mRetrofitApi.shareCallBack();
+            }
+
+            @Override
+            public BaseApiResult processResponse(BaseApiResult source) {
+                return source;
             }
         });
     }

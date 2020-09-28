@@ -186,16 +186,7 @@ public class PageJumpUtils {
                 .navigation();
     }
 
-    /**
-     * 邀请
-     *
-     * @param code
-     */
-    public static void jumpToInviteAlert(String code) {
-        ArouterUtils.build(ArouterConst.PAGE_ME_INVITEALERT)
-                .withString("code", code)
-                .navigation();
-    }
+
 
     /**
      * 跳转充值
@@ -218,16 +209,7 @@ public class PageJumpUtils {
                 .navigation(activity, Constant.BALANCE_CODE);
     }
 
-    /**
-     * 跳转实名认证
-     *
-     * @param type
-     */
-    public static void jumpToAuth(int type) {
-        ArouterUtils.build(ArouterConst.PAGE_AUTH)
-                .withInt("type", type)
-                .navigation();
-    }
+
 
     /**
      * 跳转到私聊

@@ -15,8 +15,6 @@ import com.deepsea.mua.stub.base.BaseActivity;
 import com.deepsea.mua.stub.base.BaseObserver;
 import com.deepsea.mua.stub.client.agora.AgoraClient;
 import com.deepsea.mua.stub.controller.RoomJoinController;
-import com.deepsea.mua.stub.dialog.UnauthorizedDialog;
-import com.deepsea.mua.stub.entity.MineRooms;
 import com.deepsea.mua.stub.entity.RoomTagListBean;
 import com.deepsea.mua.stub.entity.RoomTags;
 import com.deepsea.mua.stub.entity.VoiceRoomBean;

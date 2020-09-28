@@ -10,9 +10,7 @@
         <activity
             android:name="com.deepsea.mua.mine.activity.ProfileEditActivity"
             android:windowSoftInputMode="stateHidden" />
-        <activity android:name="com.deepsea.mua.mine.activity.PersonalLevelActivity" />
         <activity android:name="com.deepsea.mua.mine.activity.PresentWallActivity" />
-        <activity android:name="com.deepsea.mua.mine.activity.PresentIdentityAuthActivity" />
         <activity android:name="com.deepsea.mua.mine.activity.FollowAndFanActivity" />
         <activity android:name="com.deepsea.mua.mine.activity.WalletActivity" />
         <activity android:name="com.deepsea.mua.mine.activity.WalletRecordActivity" />
@@ -41,7 +39,6 @@
         <activity android:name="com.deepsea.mua.mine.activity.MePackActivity" />
         <activity android:name="com.deepsea.mua.mine.activity.AssistActivity" />
         <activity android:name="com.deepsea.mua.mine.activity.MarriageSeekingActivity" />
-        <activity android:name="com.deepsea.mua.mine.activity.InvitationMineActivity" />
         <activity android:name="com.deepsea.mua.mine.activity.CrashWithdrawalActivity" />
         <activity android:name="com.deepsea.mua.mine.activity.CollectionAccountSettingActivity" />
         <activity android:name="com.deepsea.mua.mine.activity.CrashWithDrawalDetailsActivity" />
@@ -52,19 +49,13 @@
         <activity android:name="com.deepsea.mua.mine.activity.CodeOfConductActivity" />
         <activity android:name="com.deepsea.mua.mine.activity.ExchangeMdDetailsActivity" />
         <activity android:name="com.deepsea.mua.mine.activity.MyTagsActivity" />
-        <activity android:name="com.deepsea.mua.mine.activity.InviteAlertActivity" />
         <activity android:name="com.deepsea.mua.mine.activity.BindWechatActivity" />
         <activity android:name="com.deepsea.mua.mine.activity.GuardActivity" />
         <activity android:name="com.deepsea.mua.mine.activity.GuardRuleActivity" />
         <activity android:name="com.deepsea.mua.mine.activity.MyGuardActivity" />
         <activity android:name="com.deepsea.mua.mine.activity.BlockListActivity" />
         <activity android:name="com.deepsea.mua.mine.activity.BindPhoneActivity" />
-        <activity android:name=".activity.InvitationCodeActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.SEND" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
+
         <activity
             android:name="com.yalantis.ucrop.UCropActivity"
             android:screenOrientation="portrait" />

@@ -20,7 +20,6 @@ public interface ArouterConst {
     String PAGE_RECHARGE = "/mine/recharge";  //RechargeActivity
     String PAGE_RECHARGE_DIALOG = "/mine/recharge_dialog";  //RechargeDialogActivity
     String PAGE_SCREEN_DIALOG = "/mine/screen_dialog";  //RechargeDialogActivity
-    String PAGE_AUTH = "/mine/auth";   //PresentIdentityAuthActivity
     String PAGE_UPDATE = "/mine/update";   //UpdateActivity
     String PAGE_INVITE_DIALOG = "/mine/invite_dialog";   //InviteDialogActivity
     String PAGE_YOUNGER = "/mine/younger";
@@ -31,7 +30,6 @@ public interface ArouterConst {
     String PARENT_PWD_ENSURE = "/mine/parentPwdEnsure";
     String PAGE_ME_PACK = "/mine/mePack";
     String PAGE_ME_WALLET = "/mine/wallet";
-    String PAGE_ME_INVITEALERT = "/mine/inviteAlert";
     String PAGE_ME_FOLLOW_AND_FAN = "/mine/follow_and_fan";
     String PAGE_ME_VISITORS = "/mine/vistors";
     String PAGE_ME_MINE_INVITOR = "/mine/myinvite";

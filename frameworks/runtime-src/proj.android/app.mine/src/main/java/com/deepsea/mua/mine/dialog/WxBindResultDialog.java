@@ -7,7 +7,6 @@ import android.view.View;
 
 import com.deepsea.mua.core.dialog.BaseDialog;
 import com.deepsea.mua.mine.R;
-import com.deepsea.mua.mine.databinding.DialogBindSuccessBinding;
 import com.deepsea.mua.mine.databinding.DialogWxbindResultBinding;
 
 /**

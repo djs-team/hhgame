@@ -157,6 +157,7 @@ public class RoomFragment extends BaseFragment<FragmentRoomBinding> {
         mViewModel.refresh(roomType, age, city, city_two, city_three).observe(this, new BaseObserver<RoomsBean>() {
             @Override
             public void onSuccess(RoomsBean result) {
+                mBinding.refreshLayout.finishRefresh();
                 if (result != null) {
                     if (result.getRoom_list() != null && result.getRoom_list().size() > 0) {
                         setRecommendRoom(result.getRoom_list().get(0));
@@ -164,7 +165,6 @@ public class RoomFragment extends BaseFragment<FragmentRoomBinding> {
                         if (result.getRoom_list().size() > 1) {
                             mAdapter.setNewData(result.getRoom_list().subList(1, result.getRoom_list().size()));
                         }
-                        mBinding.refreshLayout.finishRefresh();
                         boolean enableLoadMore = pageInfo.getPage() < pageInfo.getTotalPage();
                         mBinding.refreshLayout.setEnableLoadMore(enableLoadMore);
                         mAdapterWithHF.showFooterView(!enableLoadMore);

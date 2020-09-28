@@ -16,7 +16,6 @@ import com.deepsea.mua.stub.app.ActivityCache;
 import com.deepsea.mua.stub.base.BaseFragment;
 import com.deepsea.mua.stub.base.BaseObserver;
 import com.deepsea.mua.stub.dialog.SexEditDialog;
-import com.deepsea.mua.stub.dialog.UnauthorizedDialog;
 import com.deepsea.mua.stub.entity.IsCreateRoomVo;
 import com.deepsea.mua.stub.entity.RoomModes;
 import com.deepsea.mua.stub.entity.VoiceBanner;
@@ -218,11 +217,7 @@ public class VoiceFragment extends BaseFragment<FragmentVoiceBinding> {
                     @Override
                     public void onError(String msg, int code) {
                         hideProgress();
-                        if (code == 900) {
-                            new UnauthorizedDialog(mContext).show();
-                        } else {
-                            toastShort(msg);
-                        }
+                        toastShort(msg);
                     }
                 });
     }

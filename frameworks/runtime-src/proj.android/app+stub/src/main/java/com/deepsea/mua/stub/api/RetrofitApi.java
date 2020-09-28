@@ -38,10 +38,6 @@ import com.deepsea.mua.stub.entity.HaiPayBean;
 import com.deepsea.mua.stub.entity.HeartBeatBean;
 import com.deepsea.mua.stub.entity.IncomeListBean;
 import com.deepsea.mua.stub.entity.InitCash;
-import com.deepsea.mua.stub.entity.InitInviteBean;
-import com.deepsea.mua.stub.entity.InviteAlertMemberBean;
-import com.deepsea.mua.stub.entity.InviteCodeBean;
-import com.deepsea.mua.stub.entity.InviteListBean;
 import com.deepsea.mua.stub.entity.IsCreateRoomVo;
 import com.deepsea.mua.stub.entity.JumpRoomVo;
 import com.deepsea.mua.stub.entity.MDRecord;
@@ -695,18 +691,7 @@ public interface RetrofitApi {
             @Query("type") String type,
             @Query("page") int page);
 
-    /**
-     * 获取自己邀请的人列表
-     *
-     * @param pagenum
-     * @param page
-     * @return
-     */
-    @GET("index.php/Api/Member/getMyInviteUserList")
-    LiveData<ApiResponse<BaseApiResult<InviteListBean>>> getMyInviteUserList(
-            @Query("page") int page,
-            @Query("pagenum") int pagenum
-    );
+
 
     /**
      * 提现记录
@@ -831,13 +816,7 @@ public interface RetrofitApi {
     @POST("index.php/Api/AliPay/redpacket_cashinfo")
     LiveData<ApiResponse<BaseApiResult<CashInfo>>> redpacketCashinfo();
 
-    /**
-     * 邀请码页面
-     *
-     * @return
-     */
-    @POST("index.php/Api/Member/getInviteDownUrl")
-    LiveData<ApiResponse<BaseApiResult<InviteCodeBean>>> getInviteDownUrl();
+
 
     /**
      * 充值列表接口
@@ -1423,28 +1402,8 @@ public interface RetrofitApi {
     @GET("index.php/Api/Ranklist/indexrank")
     LiveData<ApiResponse<BaseApiResult<RankList>>> indexrank();
 
-    /**
-     * 邀请提示属性页
-     *
-     * @return
-     */
-    @GET("index.php/Api/Member/inviteMemberInfo")
-    LiveData<ApiResponse<BaseApiResult<InviteAlertMemberBean>>> inviteMemberInfo(@Query("code") String code);
 
-    /**
-     * 初始化绑定邀请人接口
-     *
-     * @return
-     */
-    @GET("index.php/Api/Member/initInvite")
-    LiveData<ApiResponse<BaseApiResult<InitInviteBean>>> initInvite();
 
-//
-//    // 关注动态
-//    @GET("dynamic/findDynamicVoPages4Follow")
-//    Observable<ResponseModel<AttenDynamicBean>> loadDynamicList(@Field("content") String content,
-//                                                                @Field("image") String image,
-//                                                                @Query("voice") String voice);
 
 
     /**
@@ -1954,13 +1913,7 @@ public interface RetrofitApi {
     @POST("index.php/Api/Member/task_reward_receive")
     LiveData<ApiResponse<BaseApiResult>> taskReceive(@Field("type") String type, @Field("task_id") String task_id);
 
-    /**
-     * 分享回调
-     *
-     * @return
-     */
-    @POST("index.php/Api/Member/share")
-    LiveData<ApiResponse<BaseApiResult>> shareCallBack();
+
 
     /**
      * 我的守护/守护我的
@@ -2011,4 +1964,12 @@ public interface RetrofitApi {
      */
     @POST("index.php/Api/Member/listBlack")
     LiveData<ApiResponse<BaseApiResult<List<BlockVo>>>> getBlockList();
+
+    /**
+     * 分享回调
+     *
+     * @return
+     */
+    @POST("index.php/Api/Member/share")
+    LiveData<ApiResponse<BaseApiResult>> shareCallBack();
 }

@@ -12,11 +12,8 @@ import android.widget.TextView;
 
 import com.deepsea.mua.mine.R;
 import com.deepsea.mua.mine.adapter.IncomeAdapter;
-import com.deepsea.mua.mine.adapter.InvitationMineAdapter;
 import com.deepsea.mua.mine.databinding.ActivityIncomeDetailsBinding;
-import com.deepsea.mua.mine.databinding.ActivityInvitationMineBinding;
 import com.deepsea.mua.mine.viewmodel.IncomeDetailsModel;
-import com.deepsea.mua.mine.viewmodel.InvitationMineViewModel;
 import com.deepsea.mua.stub.adapter.RecyclerAdapterWithHF;
 import com.deepsea.mua.stub.base.BaseActivity;
 import com.deepsea.mua.stub.base.BaseObserver;

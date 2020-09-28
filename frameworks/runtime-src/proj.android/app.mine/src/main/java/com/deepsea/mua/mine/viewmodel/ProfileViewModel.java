@@ -10,7 +10,6 @@ import com.deepsea.mua.stub.entity.AreaVo;
 import com.deepsea.mua.stub.entity.AuditBean;
 import com.deepsea.mua.stub.entity.BlockVo;
 import com.deepsea.mua.stub.entity.GuardInfoBean;
-import com.deepsea.mua.stub.entity.InitInviteBean;
 import com.deepsea.mua.stub.entity.JumpRoomVo;
 import com.deepsea.mua.stub.entity.LookGuardUserVo;
 import com.deepsea.mua.stub.entity.ProfileBean;
@@ -58,18 +57,12 @@ public class ProfileViewModel extends ViewModel {
         return repository.getVerifyToken(signature);
     }
 
-    public LiveData<Resource<InitInviteBean>> initInvite() {
-        return repository.initInvite();
-    }
 
     public LiveData<Resource<BaseApiResult>> createapprove() {
         String signature = SignatureUtils.signByToken();
         return repository.createapprove(signature);
     }
 
-    public LiveData<Resource<BaseApiResult>> bindReferrer(String referrer_code) {
-        return repository.bindReferrer(referrer_code);
-    }
 
 
 

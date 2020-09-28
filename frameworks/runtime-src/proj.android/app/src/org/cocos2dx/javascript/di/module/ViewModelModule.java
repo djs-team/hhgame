@@ -6,8 +6,6 @@ import com.deepsea.mua.core.di.mapkey.ViewModelKey;
 import com.deepsea.mua.kit.di.module.ViewModelModuleKit;
 import com.deepsea.mua.voice.viewmodel.FullServiceSortModel;
 
-import org.cocos2dx.javascript.ui.login.viewmodel.LoginViewModel;
-import org.cocos2dx.javascript.ui.login.viewmodel.RegisterViewModel;
 import org.cocos2dx.javascript.ui.main.viewmodel.MainViewModel;
 import org.cocos2dx.javascript.ui.splash.viewmodel.SplashViewModel;
 
@@ -21,10 +19,7 @@ import dagger.multibindings.IntoMap;
 @Module(includes = ViewModelModuleKit.class)
 public abstract class ViewModelModule {
 
-    @Binds
-    @IntoMap
-    @ViewModelKey(RegisterViewModel.class)
-    abstract ViewModel bindsRegisterViewModel(RegisterViewModel viewModel);
+
 
     @Binds
     @IntoMap
@@ -36,10 +31,6 @@ public abstract class ViewModelModule {
     @ViewModelKey(SplashViewModel.class)
     abstract ViewModel bindsSplashViewModel(SplashViewModel viewModel);
 
-    @Binds
-    @IntoMap
-    @ViewModelKey(LoginViewModel.class)
-    abstract ViewModel bindLoginViewModel(LoginViewModel viewModel);
     @Binds
     @IntoMap
     @ViewModelKey(FullServiceSortModel.class)

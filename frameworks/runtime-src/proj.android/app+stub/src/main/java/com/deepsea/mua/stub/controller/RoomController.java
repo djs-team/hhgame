@@ -22,7 +22,6 @@ import com.deepsea.mua.stub.client.hyphenate.IEMMessageListener;
 import com.deepsea.mua.stub.client.hyphenate.IHyphenateClient;
 import com.deepsea.mua.stub.client.soket.SocketCons;
 import com.deepsea.mua.stub.dialog.AAlertDialog;
-import com.deepsea.mua.stub.dialog.UnauthorizedDialog;
 import com.deepsea.mua.stub.entity.EmojiBean;
 import com.deepsea.mua.stub.entity.ShareBeanItem;
 import com.deepsea.mua.stub.entity.model.RoomMsgBean;
@@ -1168,8 +1167,7 @@ public class RoomController implements IRoomController, RoomMsgHandler.OnMsgEven
                 }
                 //未身份验证
                 else if (success == 10) {
-                    new UnauthorizedDialog(ActivityCache.getInstance().getTopActivity()).show();
-                } else {
+
                     showToast("上麦失败");
                 }
                 break;

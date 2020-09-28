@@ -35,10 +35,8 @@ import com.hyphenate.chat.EMClient;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import org.cocos2dx.javascript.app.App;
-import org.cocos2dx.javascript.ui.login.activity.LoginMainActivity;
 import org.cocos2dx.javascript.ui.main.MainActivity;
 import org.cocos2dx.javascript.ui.splash.viewmodel.SplashViewModel;
-import org.cocos2dx.javascript.utils.LocaltionUtils;
 
 import javax.inject.Inject;
 
@@ -110,16 +108,7 @@ public class SplashActivity extends BaseActivity<ActivitySplashBinding> {
 
     private void startNext() {
 
-//            switch (mLoginStatus) {
-//                case 1:
-//                    Intent intent = new Intent(mContext, LoginMainActivity.class);
-//                    startActivity(intent);
-//                    finish();
-//                    break;
-//                case 2:
-//
-//                    break;
-//            }
+
         Intent intent = new Intent(mContext, MainActivity.class);
         if (null != getIntent()) {
             Bundle bundle = getIntent().getExtras();

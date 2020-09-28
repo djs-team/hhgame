@@ -53,11 +53,7 @@ public class MineRoomActivity extends BaseActivity<ActivityMineRoomsBinding> {
     @Override
     protected void initListener() {
         subscribeClick(mBinding.addRoom, o -> {
-//            if (UserUtils.getUser() != null && UserUtils.getUser().getAttestation().equals("1")) {
             startActivity(new Intent(mContext, RoomCreateActivity.class));
-//            } else {
-//                new UnauthorizedDialog(mContext).show();
-//            }
         });
     }
 

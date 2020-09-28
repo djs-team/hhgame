@@ -24,29 +24,24 @@ import com.deepsea.mua.mine.activity.AssistActivity;
 import com.deepsea.mua.mine.activity.BindWechatActivity;
 import com.deepsea.mua.mine.activity.BlockListActivity;
 import com.deepsea.mua.mine.activity.CodeOfConductActivity;
-import com.deepsea.mua.mine.activity.InvitationMineActivity;
 import com.deepsea.mua.mine.activity.MarriageSeekingActivity;
 import com.deepsea.mua.mine.activity.MyGuardActivity;
 import com.deepsea.mua.mine.activity.MyTagsActivity;
-import com.deepsea.mua.mine.activity.PersonalLevelActivity;
 import com.deepsea.mua.mine.activity.ProfileEditActivity;
 import com.deepsea.mua.mine.activity.SettingActivity;
 import com.deepsea.mua.mine.activity.VisitorsActivity;
 import com.deepsea.mua.mine.activity.WalletActivity;
 import com.deepsea.mua.mine.databinding.FragmentMineBinding;
-import com.deepsea.mua.mine.dialog.InputBindSuccessDialog;
 import com.deepsea.mua.mine.viewmodel.ProfileEditViewModel;
 import com.deepsea.mua.mine.viewmodel.ProfileViewModel;
 import com.deepsea.mua.stub.apiaddress.AddressCenter;
 import com.deepsea.mua.stub.base.BaseFragment;
 import com.deepsea.mua.stub.base.BaseObserver;
-import com.deepsea.mua.stub.callback.CommonCallback;
 import com.deepsea.mua.stub.data.BaseApiResult;
 import com.deepsea.mua.stub.data.User;
 import com.deepsea.mua.stub.dialog.AuthenticationAlertDialog;
 import com.deepsea.mua.stub.dialog.PhotoDialog;
 import com.deepsea.mua.stub.entity.AuditBean;
-import com.deepsea.mua.stub.entity.InitInviteBean;
 import com.deepsea.mua.stub.entity.OSSConfigBean;
 import com.deepsea.mua.stub.entity.ProfileBean;
 import com.deepsea.mua.stub.utils.ArouterConst;
@@ -57,7 +52,6 @@ import com.deepsea.mua.stub.utils.PageJumpUtils;
 import com.deepsea.mua.stub.utils.SexResUtils;
 import com.deepsea.mua.stub.utils.UserUtils;
 import com.deepsea.mua.stub.utils.ViewBindUtils;
-import com.deepsea.mua.stub.utils.ViewModelFactory;
 import com.deepsea.mua.stub.utils.ViewModelFactory;
 import com.deepsea.mua.stub.utils.eventbus.ShowMineDialog;
 import com.tbruyelle.rxpermissions2.RxPermissions;
@@ -160,11 +154,7 @@ public class MineFragment extends BaseFragment<FragmentMineBinding> {
             PageJumpUtils.jumpToProfile(mUser.getUid());
         });
 
-        //我的邀请
-        subscribeClick(mBinding.invitionLayout, o -> {
-            Intent intent = new Intent(mContext, InvitationMineActivity.class);
-            startActivity(intent);
-        });
+
         //认证
         subscribeClick(mBinding.authLayout, o -> {
             auth();
@@ -207,14 +197,7 @@ public class MineFragment extends BaseFragment<FragmentMineBinding> {
         subscribeClick(mBinding.conditionLayout, o -> {
             startActivity(new Intent(mContext, MarriageSeekingActivity.class));
         });
-        //输入邀请码
-        subscribeClick(mBinding.inputInviteCodeLayout, o -> {
-            if (TextUtils.isEmpty(belongId.trim())) {
-                initInvite();
-            } else {
-                PageJumpUtils.jumpToProfile(belongId.trim());
-            }
-        });
+
         //主持行为规范
         subscribeClick(mBinding.codeOfConductLayout, o -> {
             startActivity(new Intent(mContext, CodeOfConductActivity.class));
@@ -259,62 +242,11 @@ public class MineFragment extends BaseFragment<FragmentMineBinding> {
                 });
     }
 
-    InputBindSuccessDialog mInputDialog = null;
-
-    private void showInputInviteCodeDialog(String coin) {
-        if (mInputDialog == null) {
-            mInputDialog = new InputBindSuccessDialog(mContext);
-        }
-        mInputDialog.setEnsureCallback(new CommonCallback<String>() {
-            @Override
-            public void onSuccess(String data) {
-                bindInviteCode(data);
-            }
-        });
-        mInputDialog.setContent(coin);
-//        mInputDialog.setData(name);
-        mInputDialog.show();
-    }
-
-    private void initInvite() {
-        mViewModel.initInvite().observe(this, new BaseObserver<InitInviteBean>() {
-            @Override
-            public void onSuccess(InitInviteBean result) {
-                if (result != null) {
-                    showInputInviteCodeDialog(result.getCoin());
-                }
-            }
-
-            @Override
-            public void onError(String msg, int code) {
-                super.onError(msg, code);
-                toastShort(msg);
-            }
-        });
 
 
-    }
 
-    private void bindInviteCode(String referrer_code) {
-        mViewModel.bindReferrer(referrer_code).observe(this, new BaseObserver<BaseApiResult>() {
-            @Override
-            public void onSuccess(BaseApiResult result) {
-                toastShort(result.getDesc());
-                if (result.getCode() == 200) {
-                    ViewBindUtils.setVisible(mBinding.inputInviteCodeLayout, false);
-                    toastShort(result.getDesc());
 
-                }
-            }
 
-            @Override
-            public void onError(String msg, int code) {
-                super.onError(msg, code);
-                toastShort(msg);
-            }
-        });
-
-    }
 
     private String belongId = "";
 

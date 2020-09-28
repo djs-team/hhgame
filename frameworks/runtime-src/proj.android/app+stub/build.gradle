@@ -63,6 +63,4 @@ dependencies {
 
     api 'com.cxz:networklib:1.0.0'
     api files('libs/OpenInstall_v2.3.0.jar')
-    //    api files('libs/BaiduLBS_Android.jar')
-    api files('libs/BaiduLBS_Android.jar')
 }

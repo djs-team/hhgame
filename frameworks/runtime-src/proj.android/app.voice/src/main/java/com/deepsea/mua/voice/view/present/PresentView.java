@@ -179,12 +179,8 @@ public class PresentView extends FrameLayout {
         giftView.setOnSelectedListener(data -> {
             if (data != null) {
                 packView.releaseSelected();
-                if (data.getGift_type().equals("4")) {
-                    List<Integer> userIds = getMicroUserIds();
-                    mListener.onBlueRoseSend(userIds);
-                } else {
-                    sendGift();
-                }
+                sendGift();
+
             }
         });
         packView.setOnSelectedListener(data -> {

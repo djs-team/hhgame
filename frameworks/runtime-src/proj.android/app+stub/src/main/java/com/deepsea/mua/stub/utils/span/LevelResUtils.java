@@ -38,20 +38,7 @@ public class LevelResUtils {
         }
     }
 
-    /**
-     * vip等级图片资源
-     *
-     * @param level
-     * @return
-     */
-    public static int getVipLevelRes(int level) {
-        switch (level) {
-            case 1:
-                return R.drawable.ic_vip_1;
-            default:
-                return R.drawable.ic_vip_1;
-        }
-    }
+
 
     /**
      * 用户等级图片资源

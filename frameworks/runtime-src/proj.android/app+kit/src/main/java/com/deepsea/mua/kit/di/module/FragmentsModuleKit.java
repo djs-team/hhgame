@@ -10,8 +10,6 @@ import com.deepsea.mua.app.im.mua.GiftPanelFragment;
 import com.deepsea.mua.app.im.mua.MessageFragment;
 import com.deepsea.mua.app.im.mua.SystemMsgFragment;
 import com.deepsea.mua.app.im.ui.MessageMainFragment;
-import com.deepsea.mua.mine.fragment.FanFragment;
-import com.deepsea.mua.mine.fragment.FollowFragment;
 import com.deepsea.mua.mine.fragment.GuardInfoFragment;
 import com.deepsea.mua.mine.fragment.MDFragment;
 import com.deepsea.mua.mine.fragment.MineFragment;
@@ -44,11 +42,6 @@ public abstract class FragmentsModuleKit {
     @ContributesAndroidInjector
     abstract ConversationFragment contributesConversationFragment();
 
-    @ContributesAndroidInjector
-    abstract FollowFragment contributesFollowFragment();
-
-    @ContributesAndroidInjector
-    abstract FanFragment contributesFanFragment();
 
     @ContributesAndroidInjector
     abstract MDFragment contributesMDFragment();

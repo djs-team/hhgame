@@ -7,7 +7,6 @@ import com.deepsea.mua.stub.R;
 import com.deepsea.mua.stub.adapter.BaseBindingAdapter;
 import com.deepsea.mua.stub.adapter.BindingViewHolder;
 import com.deepsea.mua.stub.databinding.ItemGuardRenewSetmealBinding;
-import com.deepsea.mua.stub.entity.FollowFanBean;
 import com.deepsea.mua.stub.entity.RenewInitVo;
 import com.deepsea.mua.stub.utils.ViewBindUtils;
 

@@ -42,19 +42,7 @@ public class RoomRepository extends BaseRepository {
         super(retrofitApi);
     }
 
-    public LiveData<Resource<BaseApiResult>> attention_member(String uid, String type) {
-        return HttpUtils.requestNoCache(new HttpCallback.NoCacheCallback<BaseApiResult, BaseApiResult>() {
-            @Override
-            public LiveData<ApiResponse<BaseApiResult>> createCall() {
-                return mRetrofitApi.attention_member(uid, type);
-            }
 
-            @Override
-            public BaseApiResult processResponse(BaseApiResult source) {
-                return source;
-            }
-        });
-    }
 
     public LiveData<Resource<List<GiftBean>>> getGifts(String type, String status, String signature) {
         return HttpUtils.requestNoCache(new HttpCallback.NoCacheCallback<List<GiftBean>, BaseApiResult<GiftInfoBean>>() {

@@ -15,7 +15,7 @@ import com.deepsea.mua.mine.databinding.ActivityBindWxBinding;
 import com.deepsea.mua.mine.dialog.WxBindResultDialog;
 import com.deepsea.mua.mine.dialog.WxUnbindConfrimDialog;
 import com.deepsea.mua.mine.dialog.WxUnbindResultDialog;
-import com.deepsea.mua.mine.viewmodel.SettingViewModel;
+import com.deepsea.mua.mine.viewmodel.ProfileViewModel;
 import com.deepsea.mua.stub.base.BaseActivity;
 import com.deepsea.mua.stub.base.BaseObserver;
 import com.deepsea.mua.stub.base.ProgressObserver;
@@ -37,7 +37,7 @@ import javax.inject.Inject;
 public class BindWechatActivity extends BaseActivity<ActivityBindWxBinding> {
     @Inject
     ViewModelFactory mViewModelFactory;
-    private SettingViewModel mViewModel;
+    private ProfileViewModel mViewModel;
     private int isBindWx;
     private String wx_id = "";
 
@@ -57,7 +57,7 @@ public class BindWechatActivity extends BaseActivity<ActivityBindWxBinding> {
 
     @Override
     protected void initView() {
-        mViewModel = ViewModelProviders.of(this, mViewModelFactory).get(SettingViewModel.class);
+        mViewModel = ViewModelProviders.of(this, mViewModelFactory).get(ProfileViewModel.class);
         bind_type = getIntent().getIntExtra("bind_type", 1);
         initBindView();
     }

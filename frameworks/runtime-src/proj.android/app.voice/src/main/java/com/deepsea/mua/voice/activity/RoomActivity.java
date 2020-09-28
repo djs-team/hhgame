@@ -160,7 +160,6 @@ import com.deepsea.mua.voice.databinding.ActivityVoiceRoomBinding;
 import com.deepsea.mua.voice.dialog.ApplyMicroDialog;
 import com.deepsea.mua.voice.dialog.EmojiDialog;
 import com.deepsea.mua.voice.dialog.ForbiddenUserDialog;
-import com.deepsea.mua.voice.dialog.GiveBlueRoseDialog;
 import com.deepsea.mua.voice.dialog.GuardBayWindowDialog;
 import com.deepsea.mua.voice.dialog.GuardGroupDialog;
 import com.deepsea.mua.voice.dialog.GuardSuccessDialog;
@@ -1482,14 +1481,8 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
 
     //底部功能栏
     private void initBottom() {
-        boolean isHelp = mRoomData.isHelpShare();
-//        ViewBindUtils.setImageRes(mBinding.ivShare, isHelp ? R.drawable.icon_share_notify_help : R.drawable.icon_room_share);
-        ViewBindUtils.setImageRes(mBinding.muteIv, mRoomModel.isMute() ? R.drawable.ic_mute_cancel : R.drawable.ic_mute);
-        boolean hasClickNewFuction = SharedPrefrencesUtil.getData(mContext, "hasClickNewFuction", "hasClickNewFuction", false);
-        ViewBindUtils.setVisible(mBinding.ivSongHint, !hasClickNewFuction);
-        if (!hasClickNewFuction) {
-            GlideUtils.loadGif(mBinding.ivSongHint, R.drawable.icon_hint_new_function);
-        }
+
+
         setMpIntroText();
         if (mJoinRoom != null) {
 //            ViewBindUtils.setVisible(mBinding.llRoomMusic, mJoinRoom.isOpenPickSong());//是否开启点歌
@@ -1703,18 +1696,6 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
                 PageJumpUtils.jumpToProfile(uid);
             }
 
-            @Override
-            public void onFollow(String uid, String type) {
-                mViewModel.attention_member(uid, type).observe(RoomActivity.this,
-                        new BaseObserver<BaseApiResult>() {
-                            @Override
-                            public void onSuccess(BaseApiResult result) {
-                                if (result != null) {
-                                    toastShort(result.getDesc());
-                                }
-                            }
-                        });
-            }
 
             @Override
             public void onSendGift(String uid) {
@@ -2051,18 +2032,7 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
                 PageJumpUtils.jumpToRechargeDialog(RoomActivity.this, "", false, "", "");
             }
 
-            @Override
-            public void onBlueRoseSend(List<Integer> userIds) {
-                GiveBlueRoseDialog dialog = new GiveBlueRoseDialog(mContext);
-                dialog.setOnClickListener(new GiveBlueRoseDialog.OnClickListener() {
-                    @Override
-                    public void onClick(int num) {
-                        dialog.dismiss();
-                        mViewModel.giveBlueRose(userIds, num);
-                    }
-                });
-                dialog.show();
-            }
+
         });
 
         if (single) {
@@ -2236,35 +2206,13 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
             groupDialog.setMsg(String.valueOf(hongId));
             groupDialog.showAtBottom();
         });
-        //emoji
-        subscribeClick(mBinding.emojiIv, o -> {
-            showEmojiDialog();
-        });
-        //跳转到私聊会话列表
-        subscribeClick(mBinding.msgIv, o -> {
-            ArouterUtils.build(ArouterConst.PAGE_MESSAGE).navigation();
-        });
+
+
         //礼物
         subscribeClick(mBinding.llRoomGift, o -> {
             judgeFirstRecharge(true, false, null, "0");
         });
-        //静音/取消静音
-        subscribeClick(mBinding.muteIv, o -> {
-            if (mRoomModel.isOnMp()) {
-                List<RoomData.MicroInfosBean> data = mMpAdapter.getData();
-                for (RoomData.MicroInfosBean bean : data) {
-                    if (bean.getUser() == null || !bean.isIsDisabled()) {
-                        continue;
-                    }
-                    if (TextUtils.equals(bean.getUser().getUserId(), mUser.getUid())) {
-                        return;
-                    }
-                }
-            }
-            mRoomModel.setMute(!mRoomModel.isMute());
-            AgoraClient.create().muteLocalAudioStream(mRoomModel.isMute());
-            mBinding.muteIv.setImageResource(mRoomModel.isMute() ? R.drawable.ic_mute_cancel : R.drawable.ic_mute);
-        });
+
 
         //发消息
         subscribeClick(mBinding.llRoomChat, o -> {
@@ -2545,8 +2493,7 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
     }
 
     private void showMusicManage() {
-        SharedPrefrencesUtil.saveData(mContext, "hasClickNewFuction", "hasClickNewFuction", true);
-        ViewBindUtils.setVisible(mBinding.ivSongHint, false);
+
         RxPermissions permissions = new RxPermissions(this);
 
         permissions.request(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE)
@@ -3755,15 +3702,13 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
 
     @Override
     public void onNewMessage(int unreadCount) {
-        ViewBindUtils.setVisible(mBinding.unreadMsg, unreadCount > 0);
+//        ViewBindUtils.setVisible(mBinding.unreadMsg, unreadCount > 0);
     }
 
     @Override
     public void onClientRoleChanged(int oldRole, int newRole) {
         //主播
         if (newRole == Constants.CLIENT_ROLE_BROADCASTER) {
-//            mBinding.muteIv.setVisibility(View.VISIBLE);
-            ViewBindUtils.setImageRes(mBinding.muteIv, R.drawable.ic_mute_cancel);
             setMicroSort();
         }
         //观众

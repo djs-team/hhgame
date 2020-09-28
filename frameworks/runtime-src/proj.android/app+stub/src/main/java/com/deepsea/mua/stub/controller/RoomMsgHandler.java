@@ -62,16 +62,7 @@ public class RoomMsgHandler {
         this.mListener = listener;
     }
 
-    private void appendVipLevel(SpannableStringBuilder spannable, int level) {
-        if (level <= 0)
-            return;
-        String temp = "V" + level;
-        spannable.append(temp);
-        Drawable levelDraw = ResUtils.getDrawable(mContext, LevelResUtils.getVipLevelRes(level));
-        levelDraw.setBounds(0, 0, levelDraw.getIntrinsicWidth(), levelDraw.getIntrinsicHeight());
-        LevelImageSpan levelSpan = new LevelImageSpan(levelDraw, mContext);
-        spannable.setSpan(levelSpan, spannable.length() - temp.length(), spannable.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
-    }
+
 
     private void appendLevel(SpannableStringBuilder spannable, int level) {
         if (level <= 0)

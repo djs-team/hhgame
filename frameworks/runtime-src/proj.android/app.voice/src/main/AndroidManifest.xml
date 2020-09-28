@@ -17,15 +17,12 @@
         <activity android:name="com.deepsea.mua.voice.activity.RoomSetActivity" />
         <activity android:name="com.deepsea.mua.voice.activity.RoomModeSetActivity" />
         <activity android:name="com.deepsea.mua.voice.activity.RoomWelSetActivity" />
-        <activity
-            android:name="com.deepsea.mua.voice.activity.RoomCreateActivity"
-            android:windowSoftInputMode="stateHidden|adjustNothing" />
+
         <activity
             android:name="com.deepsea.mua.voice.activity.RoomReportActivity"
             android:theme="@style/TranslucentWindow" />
         <activity android:name="com.deepsea.mua.voice.activity.RoomNameSetActivity" />
 
-        <activity android:name="com.deepsea.mua.voice.activity.MineRoomActivity" />
         <activity
             android:name="com.deepsea.mua.voice.activity.RoomSearchActivity"
             android:windowSoftInputMode="stateHidden|adjustNothing" />

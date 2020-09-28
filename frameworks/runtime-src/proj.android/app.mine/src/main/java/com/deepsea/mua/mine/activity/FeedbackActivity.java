@@ -6,7 +6,7 @@ import android.text.TextUtils;
 
 import com.deepsea.mua.mine.R;
 import com.deepsea.mua.mine.databinding.ActivityFeedbackBinding;
-import com.deepsea.mua.mine.viewmodel.SettingViewModel;
+import com.deepsea.mua.mine.viewmodel.ProfileViewModel;
 import com.deepsea.mua.stub.base.BaseActivity;
 import com.deepsea.mua.stub.base.ProgressObserver;
 import com.deepsea.mua.stub.data.BaseApiResult;
@@ -21,7 +21,7 @@ public class FeedbackActivity extends BaseActivity<ActivityFeedbackBinding> {
 
     @Inject
     ViewModelFactory mModelFactory;
-    private SettingViewModel mViewModel;
+    private ProfileViewModel mViewModel;
 
     @Override
     protected int getLayoutId() {
@@ -30,7 +30,7 @@ public class FeedbackActivity extends BaseActivity<ActivityFeedbackBinding> {
 
     @Override
     protected void initView() {
-        mViewModel = ViewModelProviders.of(this, mModelFactory).get(SettingViewModel.class);
+        mViewModel = ViewModelProviders.of(this, mModelFactory).get(ProfileViewModel.class);
     }
 
     @Override

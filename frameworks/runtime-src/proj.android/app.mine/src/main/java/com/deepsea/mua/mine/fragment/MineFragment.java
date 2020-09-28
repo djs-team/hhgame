@@ -23,13 +23,10 @@ import com.deepsea.mua.mine.R;
 import com.deepsea.mua.mine.activity.AssistActivity;
 import com.deepsea.mua.mine.activity.BindWechatActivity;
 import com.deepsea.mua.mine.activity.BlockListActivity;
-import com.deepsea.mua.mine.activity.CodeOfConductActivity;
 import com.deepsea.mua.mine.activity.MarriageSeekingActivity;
 import com.deepsea.mua.mine.activity.MyGuardActivity;
 import com.deepsea.mua.mine.activity.MyTagsActivity;
 import com.deepsea.mua.mine.activity.ProfileEditActivity;
-import com.deepsea.mua.mine.activity.SettingActivity;
-import com.deepsea.mua.mine.activity.VisitorsActivity;
 import com.deepsea.mua.mine.activity.WalletActivity;
 import com.deepsea.mua.mine.databinding.FragmentMineBinding;
 import com.deepsea.mua.mine.viewmodel.ProfileEditViewModel;
@@ -44,9 +41,6 @@ import com.deepsea.mua.stub.dialog.PhotoDialog;
 import com.deepsea.mua.stub.entity.AuditBean;
 import com.deepsea.mua.stub.entity.OSSConfigBean;
 import com.deepsea.mua.stub.entity.ProfileBean;
-import com.deepsea.mua.stub.utils.ArouterConst;
-import com.deepsea.mua.stub.utils.ArouterUtils;
-import com.deepsea.mua.stub.utils.FormatUtils;
 import com.deepsea.mua.stub.utils.OssUpUtil;
 import com.deepsea.mua.stub.utils.PageJumpUtils;
 import com.deepsea.mua.stub.utils.SexResUtils;
@@ -109,7 +103,6 @@ public class MineFragment extends BaseFragment<FragmentMineBinding> {
         mViewModel = ViewModelProviders.of(this, mModelFactory).get(ProfileViewModel.class);
         mEditViewModel = ViewModelProviders.of(this, mModelFactory).get(ProfileEditViewModel.class);
         mUser = UserUtils.getUser();
-//        ViewBindUtils.setVisible(mBinding.assistLayout, "HuaWei".equals(ApkUtils.getChannelName(mContext)));
     }
 
     @Override
@@ -171,24 +164,7 @@ public class MineFragment extends BaseFragment<FragmentMineBinding> {
         subscribeClick(mBinding.assistLayout, o -> {
             startActivity(new Intent(mContext, AssistActivity.class));
         });
-        //家长模式
-        subscribeClick(mBinding.parentLayout, o -> {
-            boolean isOpenParentMode = mProfile != null && mProfile.getMonitoring_info() != null
-                    && mProfile.getMonitoring_info().getParents_status() == 1;
 
-            ArouterUtils.build(ArouterConst.PAGE_PARENT)
-                    .withBoolean("open", isOpenParentMode)
-                    .navigation();
-        });
-        //青少年模式
-        subscribeClick(mBinding.youngerLayout, o -> {
-            boolean isOpenYoungerMode = mProfile != null && mProfile.getMonitoring_info() != null
-                    && mProfile.getMonitoring_info().getMonitoring_status() == 1;
-
-            ArouterUtils.build(ArouterConst.PAGE_YOUNGER)
-                    .withBoolean("open", isOpenYoungerMode)
-                    .navigation();
-        });
         //基本资料
         subscribeClick(mBinding.basicLayout, o -> {
             startActivity(new Intent(mContext, ProfileEditActivity.class));
@@ -198,10 +174,7 @@ public class MineFragment extends BaseFragment<FragmentMineBinding> {
             startActivity(new Intent(mContext, MarriageSeekingActivity.class));
         });
 
-        //主持行为规范
-        subscribeClick(mBinding.codeOfConductLayout, o -> {
-            startActivity(new Intent(mContext, CodeOfConductActivity.class));
-        });
+
         //我的标签
         subscribeClick(mBinding.tagsLayout, o -> {
             startActivity(new Intent(mContext, MyTagsActivity.class));
@@ -279,17 +252,6 @@ public class MineFragment extends BaseFragment<FragmentMineBinding> {
         //认证
         mBinding.authTv.setSelected(TextUtils.equals(userInfo.getAttestation(), "1"));
         mBinding.authTv.setText(TextUtils.equals(userInfo.getAttestation(), "1") ? "已认证" : "未认证");
-
-        //家长、青少年模式
-        ProfileBean.SafetyBean info = result.getMonitoring_info();
-        boolean isOpenParent = info != null && info.getParents_status() == 1;
-        boolean isOpenYounger = info != null && info.getMonitoring_status() == 1;
-        mBinding.parentTv.setSelected(isOpenParent);
-        mBinding.parentTv.setText(isOpenParent ? "已开启" : "未开启");
-        mBinding.youngerTv.setSelected(isOpenYounger);
-        mBinding.youngerTv.setText(isOpenYounger ? "已开启" : "未开启");
-        UserUtils.getUser().setOpenParent(isOpenParent);
-        UserUtils.getUser().setOpenYounger(isOpenYounger);
 
         bind_type = mProfile.getBind_type();//显示绑定信息 1:绑定微信   2:绑定手机号
         ViewBindUtils.setText(mBinding.tvBindTitle, bind_type == 2 ? "绑定手机号" : "绑定微信");

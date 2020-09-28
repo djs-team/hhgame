@@ -44,9 +44,11 @@ public class SortFriendsAdapter extends BaseBindingAdapter<FriendInfoBean, ItemF
     public void setNewData(List<FriendInfoBean> data) {
         super.setNewData(data);
         booleanlist.clear();
-        for (int i = 0; i < data.size(); i++) {
-            //设置默认的显示
-            booleanlist.add(false);
+        if (data!=null) {
+            for (int i = 0; i < data.size(); i++) {
+                //设置默认的显示
+                booleanlist.add(false);
+            }
         }
     }
 

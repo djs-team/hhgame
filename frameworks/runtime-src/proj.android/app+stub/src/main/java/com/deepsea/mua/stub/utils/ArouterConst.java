@@ -41,7 +41,6 @@ public interface ArouterConst {
     /* --- MESSAGE --- */
     String PAGE_MESSAGE = "/message/message";  //MessageActivity
     String PAGE_CHAT = "/message/chat";  //ChatActivity
-    String PAGE_MSG_SETTING = "/message/setting";   //MsgSettingActivity
     String PAGE_MSG_ADDFRIEND = "/message/addFriend";   //FriendAddActivity
     String PAGE_MSG_MESSAGEMAIN = "/message/messageManActivityy";   //MessageManActivityy
     String PAGE_MSG_CHAT_SETTING = "/message/chatSetting";   //MsgSettingActivity

@@ -981,7 +981,6 @@
                 android:layout_height="33dp"
                 android:layout_marginRight="90dp"
                 android:layout_marginBottom="50dp"
-                android:src="@drawable/icon_hint_new_function"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintRight_toRightOf="parent" />
 
@@ -1124,91 +1123,13 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="17dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="parent">
 
-                <TextView
-                    android:id="@+id/msg_tv"
-                    android:layout_width="0dp"
-                    android:layout_height="30dp"
-                    android:layout_marginLeft="27dp"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="21dp"
-                    android:text="说点啥呢……"
-                    android:textColor="#66ffffff"
-                    android:textSize="12sp"
-                    app:bl_corners_radius="15dp"
-                    app:bl_solid_color="#66ffffff" />
-
-                <ImageView
-                    android:id="@+id/iv_room_share"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_marginLeft="10dp"
-                    android:src="@drawable/icon_share" />
-
-                <ImageView
-                    android:id="@+id/iv_song_choose"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_marginLeft="10dp"
-                    android:src="@drawable/icon_song_chose" />
-
-                <ImageView
-                    android:id="@+id/emoji_iv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="44dp"
-                    android:paddingRight="9dp"
-                    android:src="@drawable/ic_room_emoji"
-                    android:visibility="gone" />
-
-                <ImageView
-                    android:id="@+id/mute_iv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="44dp"
-                    android:paddingLeft="8dp"
-                    android:paddingRight="8dp"
-                    android:src="@drawable/ic_mute_cancel"
-                    android:visibility="gone" />
-
-                <FrameLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:visibility="gone">
-
-                    <ImageView
-                        android:id="@+id/msg_iv"
-                        android:layout_width="wrap_content"
-                        android:layout_height="44dp"
-                        android:paddingLeft="6dp"
-                        android:paddingRight="7dp"
-                        android:src="@drawable/ic_room_msg" />
-
-                    <View
-                        android:id="@+id/unread_msg"
-                        android:layout_width="8dp"
-                        android:layout_height="8dp"
-                        android:layout_gravity="right"
-                        android:layout_marginTop="9dp"
-                        android:layout_marginRight="5dp"
-                        android:visibility="gone"
-                        app:bl_shape="oval"
-                        app:bl_solid_color="#FF5E5C" />
-                </FrameLayout>
-            </LinearLayout>
 
             <com.deepsea.mua.lib.svga.SVGAImageView
                 android:id="@+id/svga_iv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:visibility="visible"
+                android:visibility="gone"
                 app:autoPlay="true"
                 app:loopCount="1" />
 

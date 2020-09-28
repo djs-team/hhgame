@@ -68,13 +68,7 @@ public class RoomGiftDialog extends BaseDialog<DialogVoiceGiftBinding> {
                 }
             }
 
-            @Override
-            public void onBlueRoseSend(List<Integer> userIds) {
-                dismiss();
-                if (mListener!=null){
-                    mListener.onBlueRoseSend(userIds);
-                }
-            }
+
         });
     }
 

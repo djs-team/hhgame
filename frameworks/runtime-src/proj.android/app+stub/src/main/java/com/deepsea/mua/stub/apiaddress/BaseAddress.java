@@ -12,15 +12,14 @@ public class BaseAddress {
 //     private static final String RELEASE_URL = "https://test-lin.hehe555.com:85/";
 //    private static final String RELEASE_WSOCKET = "http://10.66.66.77:95/Master/GetGate";
 ////    外网测试
-    private static final String RELEASE_URL = "https://test-lin.hehe555.com:85/";
-//    private static final String RELEASE_WSOCKET = "http://10.66.6.207:444/Master/GetGate";
-    private static final String RELEASE_WSOCKET = "https://test-win.hehe555.com:444/Master/GetGate";
+//    private static final String RELEASE_URL = "https://test-lin.hehe555.com:85/";
+//    private static final String RELEASE_WSOCKET = "https://test-win.hehe555.com:444/Master/GetGate";
 
 
     ////    正式
     public static boolean isRelease = true;
-//    private static final String RELEASE_URL = "https://lin01.hehe555.com:85/";
-//    private static final String RELEASE_WSOCKET = "https://win02.hehe555.com:444/Master/GetGate";
+    private static final String RELEASE_URL = "https://vpser.harmonygames.cn:39911/";
+    private static final String RELEASE_WSOCKET = " https://vfhser.harmonygames.cn:39921/Master/GetGate";
 
     public String getLrcCode() {
         return "gbk";

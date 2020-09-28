@@ -2,10 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:gravity="center"
-    android:background="@color/white"
     android:layout_marginTop="15dp"
+    android:background="@color/white"
+    android:gravity="center"
     android:orientation="vertical">
+
     <RelativeLayout
         android:id="@+id/image_ll"
         android:layout_width="65dp"
@@ -31,7 +32,7 @@
         android:gravity="center"
         android:text="礼物名称"
         android:textColor="#818181"
-        android:textSize="14dp"/>
+        android:textSize="14dp" />
 
     <TextView
         android:id="@+id/present_count_tv"

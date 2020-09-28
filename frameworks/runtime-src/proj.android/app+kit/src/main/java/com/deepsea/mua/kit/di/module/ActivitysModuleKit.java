@@ -5,7 +5,6 @@ import com.deepsea.mua.app.im.mua.FriendAddActivity;
 import com.deepsea.mua.app.im.mua.FriendRequestActivity;
 import com.deepsea.mua.app.im.mua.MessageActivity;
 import com.deepsea.mua.app.im.mua.MessageMainActivity;
-import com.deepsea.mua.app.im.mua.MsgSettingActivity;
 import com.deepsea.mua.app.im.mua.MyFriendActivity;
 import com.deepsea.mua.app.im.mua.SystemMsgActivity;
 import com.deepsea.mua.app.im.ui.ChatActivity;
@@ -14,8 +13,6 @@ import com.deepsea.mua.mine.activity.AssistActivity;
 import com.deepsea.mua.mine.activity.BindPhoneActivity;
 import com.deepsea.mua.mine.activity.BindWechatActivity;
 import com.deepsea.mua.mine.activity.BlockListActivity;
-import com.deepsea.mua.mine.activity.CancellationActivity;
-import com.deepsea.mua.mine.activity.CodeOfConductActivity;
 import com.deepsea.mua.mine.activity.CollectionAccountSettingActivity;
 import com.deepsea.mua.mine.activity.CrashWithDrawalDetailsActivity;
 import com.deepsea.mua.mine.activity.CrashWithdrawalActivity;
@@ -23,14 +20,12 @@ import com.deepsea.mua.mine.activity.ExchangeMdActivity;
 import com.deepsea.mua.mine.activity.ExchangeMdDetailsActivity;
 import com.deepsea.mua.mine.activity.FeedResultActivity;
 import com.deepsea.mua.mine.activity.FeedbackActivity;
-import com.deepsea.mua.mine.activity.FollowAndFanActivity;
 import com.deepsea.mua.mine.activity.GuardActivity;
 import com.deepsea.mua.mine.activity.GuardRuleActivity;
 import com.deepsea.mua.mine.activity.IncomeDetailsActivity;
 import com.deepsea.mua.mine.activity.IncomeRedpackageDetailsActivity;
 import com.deepsea.mua.mine.activity.InviteDialogActivity;
 import com.deepsea.mua.mine.activity.MarriageSeekingActivity;
-import com.deepsea.mua.mine.activity.MePackActivity;
 import com.deepsea.mua.mine.activity.MyGuardActivity;
 import com.deepsea.mua.mine.activity.MyTagsActivity;
 import com.deepsea.mua.mine.activity.PresentWallActivity;
@@ -39,16 +34,11 @@ import com.deepsea.mua.mine.activity.ProfileEditActivity;
 import com.deepsea.mua.mine.activity.QueryDateDetailsActivity;
 import com.deepsea.mua.mine.activity.RechargeActivity;
 import com.deepsea.mua.mine.activity.RechargeDialogActivity;
-import com.deepsea.mua.mine.activity.SafetyCenterActivity;
 import com.deepsea.mua.mine.activity.ScreenDialogActivity;
-import com.deepsea.mua.mine.activity.SettingActivity;
-import com.deepsea.mua.mine.activity.VisitorsActivity;
 import com.deepsea.mua.mine.activity.WalletActivity;
 import com.deepsea.mua.mine.activity.WalletRecordActivity;
 import com.deepsea.mua.mine.activity.WebActivity;
-import com.deepsea.mua.voice.activity.MineRoomActivity;
 import com.deepsea.mua.voice.activity.RoomActivity;
-import com.deepsea.mua.voice.activity.RoomCreateActivity;
 import com.deepsea.mua.voice.activity.RoomCreateNewActivity;
 import com.deepsea.mua.voice.activity.RoomModeSetActivity;
 import com.deepsea.mua.voice.activity.RoomModelHelpActivity;
@@ -82,10 +72,6 @@ public abstract class ActivitysModuleKit {
 
     @ActivityScope
     @ContributesAndroidInjector
-    abstract MePackActivity contributesMePackActivity();
-
-    @ActivityScope
-    @ContributesAndroidInjector
     abstract MessageActivity contributesMessageActivity();
 
     @ActivityScope
@@ -98,19 +84,7 @@ public abstract class ActivitysModuleKit {
 
     @ActivityScope
     @ContributesAndroidInjector
-    abstract VisitorsActivity contributesVisitorsActivity();
-
-    @ActivityScope
-    @ContributesAndroidInjector
-    abstract MsgSettingActivity contributesMsgSettingActivity();
-
-    @ActivityScope
-    @ContributesAndroidInjector
     abstract FeedbackActivity contributesFeedbackActivity();
-
-    @ActivityScope
-    @ContributesAndroidInjector
-    abstract SettingActivity contributesSettingActivity();
 
     @ActivityScope
     @ContributesAndroidInjector
@@ -128,9 +102,6 @@ public abstract class ActivitysModuleKit {
     @ContributesAndroidInjector
     abstract WalletActivity contributesWalletActivity();
 
-    @ActivityScope
-    @ContributesAndroidInjector
-    abstract FollowAndFanActivity contributesFollowAndFanActivity();
 
     @ActivityScope
     @ContributesAndroidInjector
@@ -139,10 +110,6 @@ public abstract class ActivitysModuleKit {
     @ActivityScope
     @ContributesAndroidInjector
     abstract RoomSearchActivity contributesRoomSearchActivity();
-
-    @ActivityScope
-    @ContributesAndroidInjector
-    abstract MineRoomActivity contributesMineRoomActivity();
 
     @ActivityScope
     @ContributesAndroidInjector
@@ -188,9 +155,6 @@ public abstract class ActivitysModuleKit {
     @ContributesAndroidInjector
     abstract RoomModeSetActivity contributesRoomModeSetActivity();
 
-    @ActivityScope
-    @ContributesAndroidInjector
-    abstract RoomCreateActivity contributesVoiceRoomCreateActivity();
 
     @ActivityScope
     @ContributesAndroidInjector
@@ -246,17 +210,6 @@ public abstract class ActivitysModuleKit {
     @ContributesAndroidInjector
     abstract RechargeDialogActivity contributesPresentRechargeDialogActivity();
 
-    @ActivityScope
-    @ContributesAndroidInjector
-    abstract SafetyCenterActivity contributesPresentSafetyCenterActivity();
-
-    @ActivityScope
-    @ContributesAndroidInjector
-    abstract CancellationActivity contributesPresentCancellationActivity();
-
-    @ActivityScope
-    @ContributesAndroidInjector
-    abstract CodeOfConductActivity contributesPresentCodeOfConductActivity();
 
     @ActivityScope
     @ContributesAndroidInjector

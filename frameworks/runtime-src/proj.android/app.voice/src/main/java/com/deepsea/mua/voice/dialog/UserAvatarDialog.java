@@ -55,13 +55,7 @@ public class UserAvatarDialog extends BaseDialog<DialogUserAvatarBinding> {
          */
         void onProfile(String uid);
 
-        /**
-         * 关注/取消
-         *
-         * @param uid
-         * @param type 1关注2取消关注
-         */
-        void onFollow(String uid, String type);
+
 
         /**
          * 打赏

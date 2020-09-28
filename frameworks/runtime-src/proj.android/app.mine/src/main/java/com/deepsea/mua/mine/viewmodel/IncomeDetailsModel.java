@@ -7,7 +7,6 @@ import com.deepsea.mua.core.network.resource.Resource;
 import com.deepsea.mua.mine.repository.IncomeDetailsRepository;
 import com.deepsea.mua.stub.data.BaseApiResult;
 import com.deepsea.mua.stub.entity.CashWListBean;
-import com.deepsea.mua.stub.entity.FollowFanBean;
 import com.deepsea.mua.stub.entity.IncomeListBean;
 import com.deepsea.mua.stub.entity.IncomeListItemBean;
 

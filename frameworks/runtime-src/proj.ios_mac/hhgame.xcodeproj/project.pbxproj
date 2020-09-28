@@ -2875,12 +2875,12 @@
 				00614AC5250B94C800BB7620 /* CXLiveRoomRechargeSheepView.h */,
 				00614ACA250B94C800BB7620 /* CXLiveRoomRechargeSheepView.m */,
 				00614ACD250B94C800BB7620 /* CXLiveRoomRechargeSheepView.xib */,
-				00614AC6250B94C800BB7620 /* CXLiveRoomRechargeCell.m */,
+				00614ACC250B94C800BB7620 /* CXLiveRoomRechargeView.h */,
 				00614AC7250B94C800BB7620 /* CXLiveRoomRechargeView.m */,
 				00614AC8250B94C800BB7620 /* CXLiveRoomRechargeView.xib */,
 				00614AC9250B94C800BB7620 /* CXLiveRoomRechargeCell.xib */,
 				00614ACB250B94C800BB7620 /* CXLiveRoomRechargeCell.h */,
-				00614ACC250B94C800BB7620 /* CXLiveRoomRechargeView.h */,
+				00614AC6250B94C800BB7620 /* CXLiveRoomRechargeCell.m */,
 			);
 			path = "充值";
 			sourceTree = "<group>";

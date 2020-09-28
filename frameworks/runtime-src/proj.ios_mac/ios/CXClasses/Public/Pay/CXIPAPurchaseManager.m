@@ -183,11 +183,6 @@ static CXIPAPurchaseManager * manager = nil;
     }
 }
 
-//如果没有设置监听购买结果将直接跳至反馈结束；
-- (void)requestDidFinish:(SKRequest *)request{
-    [MBProgressHUD hideHUD];
-}
-
 #pragma mark -- 监听结果
 - (void)paymentQueue:(SKPaymentQueue *)queue updatedTransactions:(NSArray<SKPaymentTransaction *> *)transactions{
     [MBProgressHUD hideHUD];

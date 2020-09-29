@@ -78,7 +78,7 @@ static id _manager;
     put.contentType = @"image/jpg";
     put.bucketName = uploadImageModel.BucketName;
     //memberpid/用户id/身份证图片
-    put.objectKey = [NSString stringWithFormat:@"memberpid/user/%@.jpg", [NSDate currentTime]];
+    put.objectKey = [NSString stringWithFormat:@"Avatar/%@/%@.jpg", [CXClientModel instance].userId, [NSDate currentTime]];
     NSData *imageData = UIImageJPEGRepresentation(image, 0.5);
     put.uploadingData = imageData;
     

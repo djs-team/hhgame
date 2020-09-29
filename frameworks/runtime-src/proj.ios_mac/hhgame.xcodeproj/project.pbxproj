@@ -2832,17 +2832,17 @@
 		00614AA8250B94C800BB7620 /* RoomSeatView */ = {
 			isa = PBXGroup;
 			children = (
+				00614AB3250B94C800BB7620 /* CXLiveRoomSeatView.h */,
+				00614AAF250B94C800BB7620 /* CXLiveRoomSeatView.m */,
 				00614AA9250B94C800BB7620 /* CXLiveRoomSeatView.xib */,
 				00614AAA250B94C800BB7620 /* CXLiveRoomSeatFansCell.m */,
 				00614AAB250B94C800BB7620 /* CXLiveRoomSeatsView.xib */,
 				00614AAC250B94C800BB7620 /* CXLiveRoomSeatsView.m */,
 				00614AAD250B94C800BB7620 /* CXLiveRoomSeatFansView.m */,
 				00614AAE250B94C800BB7620 /* CXLiveRoomBottomApplySeatAlertView.h */,
-				00614AAF250B94C800BB7620 /* CXLiveRoomSeatView.m */,
 				00614AB0250B94C800BB7620 /* VideoSession.h */,
 				00614AB1250B94C800BB7620 /* CXLiveRoomSeatFansView.xib */,
 				00614AB2250B94C800BB7620 /* CXLiveRoomSeatFansCell.h */,
-				00614AB3250B94C800BB7620 /* CXLiveRoomSeatView.h */,
 				00614AB4250B94C800BB7620 /* CXLiveRoomSeatFansCell.xib */,
 				00614AB5250B94C800BB7620 /* CXLiveRoomBottomApplySeatAlertView.m */,
 				00614AB6250B94C800BB7620 /* CXLiveRoomSeatFansView.h */,

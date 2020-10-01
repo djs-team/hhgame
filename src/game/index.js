@@ -31,6 +31,8 @@ load('game/index', function () {
     }
 
     index.run = function () {
+        appInstance.audioManager().setButtonClickEffect('res/sound/btnClick.mp3')
+
         this.addSearchPath()
         this.initGame()
 

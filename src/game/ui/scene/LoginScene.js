@@ -163,6 +163,7 @@ load('game/ui/scene/LoginScene', function () {
         initData: function () {
             appInstance.nativeApi().getInstallParam()
 
+            appInstance.audioManager().playMusic(ResConfig.Sound.bg1)
         },
 
         showView: function () {

@@ -129,6 +129,17 @@ load('game/config/ResConfig', function () {
 
     }
 
+
+    /**
+     *  声音配置
+     */
+    ResConfig.Sound = {
+        bg1: 'res/sound/bg/bg1.mp3',
+        bg2: 'res/sound/bg/bg2.mp3',
+        btnEffect: 'res/sound/btnClick.mp3',
+
+    }
+
     ResConfig.prefixPath = { }
     ResConfig.prefixPath.CommonUI = ''
     ResConfig.prefixPath.DeleteRoom = ''

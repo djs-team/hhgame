@@ -48,6 +48,7 @@ load('module/mahjong/ui/DeskCardLayer', function () {
             this._outCardNd = []
             this._handCardNd = []
             this._selfHandCard = []
+            this._directionNd = []
 
 
 
@@ -62,6 +63,8 @@ load('module/mahjong/ui/DeskCardLayer', function () {
             this.initData(pData)
 
             for (let i = 0; i < 4; ++i) {
+                this._directionNd[i] = this['Direction' + i]
+                this._directionNd[i].setVisible(false)
                 this._deckCardNd[i].removeAllChildren()
                 this._outCardNd[i].removeAllChildren()
                 this._handCardNd[i].setVisible(true)
@@ -86,6 +89,21 @@ load('module/mahjong/ui/DeskCardLayer', function () {
             }
         },
 
+
+        runDirection: function (seatUI) {
+            this.stopDirection()
+            if (seatUI === 10) {
+                return
+            }
+            this._directionNd[seatUI].setVisible(true)
+            this._directionNd[seatUI].runAction(cc.repeatForever(cc.sequence(cc.fadeIn(0.8),cc.fadeOut(0.8))))
+        },
+        stopDirection: function () {
+            for (let i = 0; i < 4; ++i) {
+                this._directionNd[i].stopAllActions()
+                this._directionNd[i].setVisible(false)
+            }
+        },
         onSelfCardClick: function (sender) {
             let card = sender.getParent()
             let isDoubleClick = false

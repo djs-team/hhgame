@@ -301,10 +301,12 @@ load('game/ui/scene/HallScene', function () {
         loadUrlImage: function (url, cell) {
             let size = cell.getContentSize();
             cc.loader.loadImg(url, null, function (err, img) {
-                var logo = new cc.Sprite(img);
-                logo.setContentSize(size)
-                logo.setPosition(cc.p(size.width / 2, size.height / 2))
-                cell.addChild(logo);
+                if ( !err && img) {
+                    var logo = new cc.Sprite(img);
+                    logo.setContentSize(size)
+                    logo.setPosition(cc.p(size.width / 2, size.height / 2))
+                    cell.addChild(logo);
+                }
             });
         },
         onUpdateUserData: function (data) {

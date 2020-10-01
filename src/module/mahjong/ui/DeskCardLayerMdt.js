@@ -42,18 +42,22 @@ load('module/mahjong/ui/DeskCardLayerMdt', function () {
                     break
                 case TableEvent.DrawCardProto:
                     this.DrawCardProto(body)
+                    this.runDirection()
                     break
                 case TableEvent.PutCardProto:
                     this.PutCardProto(body)
+                    this.runDirection()
                     break
                 case TableEvent.prePutCard:
                     this.prePutCard(body)
                     break
                 case TableEvent.PlayerSelectProto:
                     this.PlayerSelectProto(body)
+                    this.runDirection()
                     break
                 case TableEvent.AutoPlayProto:
                     this.AutoPlayProto(body)
+                    this.runDirection()
                     break
                 case TableEvent.updateSelfHandCard:
                     this.updateSelfHandCard(body)
@@ -77,6 +81,14 @@ load('module/mahjong/ui/DeskCardLayerMdt', function () {
             }
 
             this.updateDeckCard()
+            this.runDirection()
+        },
+
+        runDirection: function () {
+            let pData = appInstance.dataManager().getPlayData()
+            let pCurSeatID = pData.tableData.pCurSeatID
+            let pCurUiSeatId = pData.seatId2UI(pCurSeatID)
+            this.view.runDirection(pCurUiSeatId)
         },
 
         PlayerSelectProto: function (msg) {

@@ -185,10 +185,14 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
 
             this.TurnPointImg.runAction(beginEaseAction)
 
+            appInstance.audioManager().playEffect(ResConfig.Sound.turnTableBegin)
+
         },
 
 
         playTurnTable: function (data) {
+            appInstance.audioManager().playEffect(ResConfig.Sound.turnTableInd)
+
             this.TurnPointImg.stopAllActions()
             this.TurnPointImg.setRotation(0)
             let endtime = 11
@@ -200,6 +204,7 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
             let endCallFunc = function () {
                 this._lightInterval = 0.5
                 this.onShowTurnPointRewards(data)
+                appInstance.audioManager().playEffect(ResConfig.Sound.turnTableEnd)
             }.bind(this)
 
             let delayTime = [

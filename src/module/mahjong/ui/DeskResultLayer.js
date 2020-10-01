@@ -10,6 +10,7 @@ load('module/mahjong/ui/DeskResultLayer', function () {
     let BaseLayer = include('public/ui/BaseLayer')
     let DeskResultLayerMdt = include('module/mahjong/ui/DeskResultLayerMdt')
     let TableConfig = include('module/mahjong/common/TableConfig')
+    let HuType = TableConfig.HuType
     let Layer = BaseLayer.extend({
         _className: 'DeskResultLayer',
         _posConst: {
@@ -92,6 +93,10 @@ load('module/mahjong/ui/DeskResultLayer', function () {
 
             let baoImg = appInstance.gameAgent().mjUtil().getCardValueImg(0, 'selfhand', this._pData.tableData.pBaoCard)
             this.BaoCard.getChildByName('CardValue').loadTexture(baoImg)
+
+            let initInfo = {}
+            initInfo._index = 0
+            this.onInfoBtnClick(initInfo)
         },
 
         onInfoBtnClick: function (sender) {
@@ -180,6 +185,15 @@ load('module/mahjong/ui/DeskResultLayer', function () {
                     }
                 }
             }
+
+            let HuList = pinfo.pDoubleList
+            let huTxt = ''
+            for (let i = 0; i < HuList.length; ++i) {
+                let txtTmp = HuType[HuList[i].pDouble] || '胡类型:' + HuList[i].pDouble
+                huTxt += txtTmp
+                huTxt += '   '
+            }
+            ruleTxt.setString(huTxt)
         },
 
         initPlayerCell: function (index, pinfo) {

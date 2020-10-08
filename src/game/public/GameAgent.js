@@ -109,6 +109,12 @@ load('game/public/GameAgent', function () {
             TipsUi.runTips(text)
         },
 
+        goLoginScene: function () {
+            let LoginScene = include('game/ui/scene/LoginScene')
+            appInstance.sceneManager().replaceScene(new LoginScene())
+            appInstance.gameAgent().setLoginOk(false)
+        },
+
         reSetHeartBeatTimes: function () {
             this._heartBeatTimes = 0
         },

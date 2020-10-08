@@ -5,7 +5,6 @@ load('game/ui/scene/LoginScene', function () {
     let BaseScene = include('public/ui/BaseScene')
     let ResConfig = include('game/config/ResConfig')
     let LoginMdt = include('game/ui/scene/LoginMdt')
-    let HallScene = include('game/ui/scene/HallScene')
     let LocalSave = include('game/public/LocalSave')
     let LoginScene = BaseScene.extend({
         _className: 'LoginScene',
@@ -163,7 +162,7 @@ load('game/ui/scene/LoginScene', function () {
         initData: function () {
             appInstance.nativeApi().getInstallParam()
 
-            appInstance.audioManager().playMusic(ResConfig.Sound.bg1)
+            appInstance.audioManager().playMusic(ResConfig.Sound.bg1, true)
         },
 
         showView: function () {

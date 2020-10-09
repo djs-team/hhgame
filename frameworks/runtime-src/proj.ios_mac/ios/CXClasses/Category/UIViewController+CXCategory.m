@@ -44,7 +44,10 @@
 @implementation UIViewController(Toast)
 
 - (void)toast:(NSString*)message {
-    [MBProgressHUD showTipMessageInView:message];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [MBProgressHUD showTipMessageInView:message];
+    });
+    
 }
 
 @end

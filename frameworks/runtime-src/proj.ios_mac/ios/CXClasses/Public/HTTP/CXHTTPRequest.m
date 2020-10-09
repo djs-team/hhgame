@@ -18,8 +18,8 @@ NSString *const kApiPrefix = @"https://test-lin.hehe555.com:85";
 NSString *const kCSharpApiPrefix = @"http://10.66.6.207:444";
 #elif TestSever
 /** 接口前缀-测试服务器*/
-NSString *const kApiPrefix = @"https://test-lin.hehe555.com:85";
-NSString *const kCSharpApiPrefix = @"https://test-win.hehe555.com:444";
+NSString *const kApiPrefix = @"https://vpser.harmonygames.cn:39911";
+NSString *const kCSharpApiPrefix = @"https://vfhser.harmonygames.cn:39921";
 #elif ProductSever
 /** 接口前缀-生产服务器*/
 NSString *const kApiPrefix = @"https://lin01.hehe555.com:85";

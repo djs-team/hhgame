@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)setupRoseNumber:(NSString *)roseNumber roseRMB:(NSString *)reoseRMB;
 
-@property (nonatomic, copy) void(^rechargeSheetViewBlcok)(BOOL isRecharge, BOOL isCancel);
+@property (nonatomic, copy) void(^rechargeSheetViewBlcok)(BOOL isRecharge, BOOL isCancel, NSString *payAction);
 
 @end
 

@@ -168,7 +168,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property BOOL IsFirstCharge; // 是不是首充
 @property (nonatomic, strong) NSString *rmb;
 @property (nonatomic, strong) NSString *diamond;
-@property (nonatomic, strong) NSString *iosflag; 
+@property (nonatomic, strong) NSString *iosflag;
+@property (nonatomic, strong) NSString *chargeId; 
 
 @property (nonatomic, strong) NSString * GuardSign; // 守护榜标签
 @property BOOL IsRoomGuard; // 进房间是否播放进场特效的字段

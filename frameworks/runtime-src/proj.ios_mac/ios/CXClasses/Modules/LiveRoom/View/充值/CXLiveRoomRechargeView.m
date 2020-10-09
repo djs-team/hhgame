@@ -89,7 +89,11 @@
 - (void)sendLoadProductsRequest {
     kWeakSelf
     NSString *signature = [CocoaSecurity md5:[CXClientModel instance].token].hexLower;
-    [CXHTTPRequest POSTWithURL:@"/index.php/Api/ApplePay/chargelist" parameters:@{@"signature":signature} callback:^(id responseObject, BOOL isCache, NSError *error) {
+    NSString *url = @"/index.php/Api/Order/chargelist";
+    if ([[CXClientModel instance].applePayType isEqualToString:@"Apple"]) {
+        url = @"/index.php/Api/ApplePay/chargelist";
+    }
+    [CXHTTPRequest POSTWithURL:url parameters:@{@"signature":signature} callback:^(id responseObject, BOOL isCache, NSError *error) {
         if (!error) {
             NSArray *array = [NSArray modelArrayWithClass:[CXRechargeModel class] json:responseObject[@"data"][@"charge_list"]];
             weakSelf.products = [NSArray arrayWithArray:array];

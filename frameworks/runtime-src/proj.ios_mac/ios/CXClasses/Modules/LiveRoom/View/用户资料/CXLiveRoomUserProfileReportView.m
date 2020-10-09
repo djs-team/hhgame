@@ -173,7 +173,7 @@
     put.contentType = @"image/jpg";
     put.bucketName = self.uploadImageModel.BucketName;
     //memberpid/用户id/身份证图片
-    put.objectKey = [NSString stringWithFormat:@"memberpid/%@/%@.jpg", [CXClientModel instance].userId, [NSDate currentTime]];
+    put.objectKey = [NSString stringWithFormat:@"MyReport/%@/%@.jpg", [CXClientModel instance].userId, [NSDate currentTime]];
     NSData *imageData = UIImageJPEGRepresentation(photo, 0.5);
     put.uploadingData = imageData;
     

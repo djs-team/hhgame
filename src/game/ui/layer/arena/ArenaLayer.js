@@ -192,7 +192,7 @@ load('game/ui/layer/arena/ArenaLayer', function () {
                 cell.getChildByName('signBtn').getChildByName('signPropCnt').setString(arenaData.matchfee)
 
                 cell._sendData = {
-                    fromType: 'arena',//请求参加比赛时，传给服务器
+                    pExtend: 'match_arena',//请求参加比赛时，传给服务器
                     roomMode: arenaData.matchMode,//请求参加比赛时，传给服务器
                     roomId: arenaData.matchId,//请求参加比赛时，传给服务器
                     startTime: arenaData.time,
@@ -258,15 +258,16 @@ load('game/ui/layer/arena/ArenaLayer', function () {
 
             }
 
-            this.onSignMatchFunction(data.roomMode,data.roomId,data.fromType)
+            this.onSignMatchFunction(data.roomMode,data.roomId,data.pExtend)
         },
 
-        onSignMatchFunction: function (roomMode,roomId,fromType) {
+        onSignMatchFunction: function (roomMode,roomId,pExtend) {
 
             let msg = {
                 roomMode: roomMode,
                 roomId: roomId,
-                fromType: fromType
+                pExtend: pExtend,
+                gameType: ''
             }
 
             appInstance.gameAgent().tcpGame().enterTable(msg)

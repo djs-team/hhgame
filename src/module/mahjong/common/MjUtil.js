@@ -22,6 +22,35 @@ load('module/mahjong/common/MjUtil', function () {
             }
         },
 
+        putCardSound: function (card) {
+            let effectType = 'putong'
+            // let effectType = 'dongbei'
+            let SEX = [
+                'man',
+                'woman'
+            ]
+            let sexStr = SEX[appInstance.dataManager().getPlayData().getSelfInfo().sex]
+            let soundPath = 'res/module/mahjong/sound/' + effectType + '/' + sexStr + '/card/'
+            let COLOR = [
+                'wan',
+                'tong',
+                'tiao',
+                'feng'
+            ]
+            let cardColor = card.nCardColor
+            let cardNumber = card.nCardNumber
+
+            if (cardColor > 2) {
+                cardNumber = cardColor - 2
+                cardColor = 3
+            }
+            soundPath += COLOR[cardColor]
+            soundPath += '_'
+            soundPath += cardNumber
+            soundPath += '.mp3'
+            appInstance.audioManager().playEffect(soundPath)
+        },
+
         isCardInArray: function (cardArray, card) {
             for (let i = 0; i < cardArray.length; ++i) {
                 if (cardArray[i].nCardColor === card.nCardColor && cardArray[i].nCardNumber === card.nCardNumber) {

@@ -132,7 +132,7 @@ load('module/mahjong/ui/DeskCardLayerMdt', function () {
 
         PutCardProto: function (msg) {
             let pData = appInstance.dataManager().getPlayData()
-            cc.log('=========putCard==========' + JSON.stringify(pData))
+
             let tData = pData.tableData
             let players = pData.players
             let pCurSeatID = tData.pCurSeatID
@@ -141,10 +141,12 @@ load('module/mahjong/ui/DeskCardLayerMdt', function () {
             let card = msg.card
 
             this.view.onePutCard(uiSeat, card)
-            cc.log('=========uiSeat=======' + uiSeat)
+
             if (pPutSeatID !== pData.pMySeatID) {
                 this.view.updateHandCard(uiSeat, players[pPutSeatID], pCurSeatID === pData.pMySeatID)
             }
+
+            appInstance.gameAgent().mjUtil().putCardSound(card)
         },
 
         AutoPlayProto: function () {

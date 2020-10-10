@@ -188,6 +188,7 @@ load('game/public/HttpGame', function () {
             }
             msg.pRole = msg.roleCode
             let saveKey = [
+                'pid',
                 'pname',
                 'coin',
                 'diamonds',

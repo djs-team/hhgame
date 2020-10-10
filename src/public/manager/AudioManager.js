@@ -159,7 +159,6 @@ load('public/manager/AudioManager', function () {
          * @param val [0-1]
          */
         setMusicVolume: function (val) {
-            cc.log('===setMusicVolume========'  + val)
             this._musicVolume = val
             if (this._bgMusicID || this._bgMusicID === 0) {
                 jsb.AudioEngine.setVolume(this._bgMusicID, this._musicVolume)
@@ -169,7 +168,6 @@ load('public/manager/AudioManager', function () {
          * 设置音效音量的大小
          */
         setEffectVolume: function (val) {
-            cc.log('===setEffectVolume========'  + val)
             this._effectVolume = val
             for (let i = 0; i < this._effectArray.length; i++) {
                 let audioID = this._effectArray[i]

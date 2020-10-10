@@ -184,26 +184,14 @@
               <AbstractNodeData Name="startQuickBtn" ActionTag="336815022" Tag="125" IconVisible="False" LeftMargin="973.6655" RightMargin="26.3345" TopMargin="583.1113" BottomMargin="48.8887" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="78" RightEage="48" TopEage="37" BottomEage="33" Scale9OriginX="78" Scale9OriginY="37" Scale9Width="4" Scale9Height="18" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="280.0000" Y="88.0000" />
                 <Children>
-                  <AbstractNodeData Name="topName" ActionTag="1253386480" Tag="126" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="78.0000" RightMargin="78.0000" TopMargin="8.9219" BottomMargin="40.0781" IsCustomSize="True" FontSize="28" LabelText="快速开始" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                  <AbstractNodeData Name="topName" ActionTag="1253386480" Tag="126" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="78.0000" RightMargin="78.0000" TopMargin="23.9200" BottomMargin="25.0800" IsCustomSize="True" FontSize="28" LabelText="快速开始" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="124.0000" Y="39.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="140.0000" Y="59.5781" />
+                    <Position X="140.0000" Y="44.5800" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="110" G="59" B="0" />
-                    <PrePosition X="0.5000" Y="0.6770" />
+                    <PrePosition X="0.5000" Y="0.5066" />
                     <PreSize X="0.4429" Y="0.4432" />
-                    <FontResource Type="Normal" Path="font/hkhbtW12.ttc" Plist="" />
-                    <OutlineColor A="255" R="255" G="0" B="0" />
-                    <ShadowColor A="255" R="110" G="110" B="110" />
-                  </AbstractNodeData>
-                  <AbstractNodeData Name="StartQuickName" ActionTag="-780203270" Tag="127" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="92.0000" RightMargin="92.0000" TopMargin="36.5777" BottomMargin="13.4223" IsCustomSize="True" FontSize="20" LabelText="高级场" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="96.0000" Y="38.0000" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="140.0000" Y="32.4223" />
-                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="110" G="59" B="0" />
-                    <PrePosition X="0.5000" Y="0.3684" />
-                    <PreSize X="0.3429" Y="0.4318" />
                     <FontResource Type="Normal" Path="font/hkhbtW12.ttc" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />

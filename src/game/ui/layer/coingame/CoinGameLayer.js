@@ -19,6 +19,7 @@ load('game/ui/layer/coingame/CoinGameLayer', function () {
             return {
                 'topPnl/closeBtn': { onClicked: this.onCloseClick },
                 'bmPnl/startQuickBtn': { onClicked: this.onStartQuickBtnClick },
+                'bmPnl/startQuickBtn/StartQuickName': {  },
                 'leftPnl/PeopleBtn2': { onClicked: this.onPeopleClick },
                 'leftPnl/PeopleBtn4': { onClicked: this.onPeopleClick },
                 'MidPnl': { },
@@ -46,6 +47,11 @@ load('game/ui/layer/coingame/CoinGameLayer', function () {
                 this.initGoBtn(this.MidPnl.getChildByName('goBtn' + i), this._goBtnData[i - 1])
             }
             this.updatePeopleBtn()
+            if (this._peopleNum === 2) {
+                this.StartQuickName.setString('二人')
+            } else if (this._peopleNum === 4) {
+                this.StartQuickName.setString('四人')
+            }
         },
 
         goRoomClick: function (sender) {

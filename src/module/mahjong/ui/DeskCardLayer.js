@@ -92,7 +92,7 @@ load('module/mahjong/ui/DeskCardLayer', function () {
 
         runDirection: function (seatUI) {
             this.stopDirection()
-            if (seatUI === 10) {
+            if ( typeof seatUI !== 'number') {
                 return
             }
             this._directionNd[seatUI].setVisible(true)

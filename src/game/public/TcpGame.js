@@ -5,6 +5,7 @@ load('game/public/TcpGame', function () {
     let LoginProto = include('game/msghandler/LoginProto')
     let EnterTableProto = include('game/msghandler/EnterTableProto')
     let EnterTableCancelProto = include('game/msghandler/EnterTableCancelProto')
+    let MatchEnterTableCancelProto = include('game/msghandler/MatchEnterTableCancelProto')
     let HeartBeatProto = include('game/msghandler/HeartBeatProto')
     let PutCardProto = include('game/msghandler/PutCardProto')
     let PlayerSelectProto = include('game/msghandler/PlayerSelectProto')
@@ -43,6 +44,13 @@ load('game/public/TcpGame', function () {
         cancelEnterTable: function(msg) {
             msg = msg || {}
             let packetProto = new Packet(new EnterTableCancelProto())
+            packetProto.setValue(msg)
+            appInstance.gameNet().send(packetProto)
+        },
+
+        cancelEnterTableMatch: function(msg) {
+            msg = msg || {}
+            let packetProto = new Packet(new MatchEnterTableCancelProto())
             packetProto.setValue(msg)
             appInstance.gameNet().send(packetProto)
         },

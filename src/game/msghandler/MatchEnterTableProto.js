@@ -16,6 +16,37 @@ load('game/msghandler/MatchEnterTableProto', function () {
         handleMsg: function (msg) {
             this._super(msg)
 
+            switch (msg.mcState) {
+                case 0:
+                    break
+                case 1:
+                    break
+                case 2:
+                    break
+                case 3:
+                    break
+                case 4:
+                    break
+            }
+
+            let dialogMsg = {
+                ViewType: 1,
+                SayText: '比赛场State ' + msg.mcState,
+                MidBtnName: '取消'
+            }
+            dialogMsg.MidBtnClick = function () {
+                let send = {}
+                send.gid = msg.mcGid
+                send.mjChannel = msg.mcMjChannel
+                send.roomId = msg.mcRoomId
+                send.roomMode = msg.mcRoomMode
+                send.keyPrivateTable = ''
+                send.delPlayerId = appInstance.dataManager().getUserData().pid
+                appInstance.gameAgent().tcpGame().cancelEnterTableMatch(send)
+            }
+
+            appInstance.sendNotification(GameEvent.DIALOG_HIDE_ALL)
+            appInstance.gameAgent().addDialogUI(dialogMsg)
         },
 
         initData: function () {

@@ -221,7 +221,9 @@
           <Image Name="bt_2.png" />
           <Image Name="bt_3.png" />
           <Image Name="bt_4.png" />
+          <Image Name="bz_1.png" />
           <Image Name="bz_2.png" />
+          <Image Name="gb.png" />
           <Image Name="gy_fh.png" />
           <Image Name="jinbi.png" />
         </Folder>
@@ -292,7 +294,46 @@
         <Folder Name="fnt">
           <TTF Name="hkhbtW12.ttc" />
         </Folder>
+        <Folder Name="match">
+          <Image Name="ssc_1.png" />
+          <Image Name="ssc_10.png" />
+          <Image Name="ssc_11.png" />
+          <Image Name="ssc_12.png" />
+          <Image Name="ssc_13.png" />
+          <Image Name="ssc_14.png" />
+          <Image Name="ssc_15.png" />
+          <Image Name="ssc_16.png" />
+          <Image Name="ssc_17.png" />
+          <Image Name="ssc_18.png" />
+          <Image Name="ssc_19.png" />
+          <Image Name="ssc_2.png" />
+          <Image Name="ssc_20.png" />
+          <Image Name="ssc_21.png" />
+          <Image Name="ssc_22.png" />
+          <Image Name="ssc_23.png" />
+          <Image Name="ssc_24.png" />
+          <Image Name="ssc_25.png" />
+          <Image Name="ssc_26.png" />
+          <Image Name="ssc_27.png" />
+          <Image Name="ssc_28.png" />
+          <Image Name="ssc_29.png" />
+          <Image Name="ssc_3.png" />
+          <Image Name="ssc_30.png" />
+          <Image Name="ssc_31.png" />
+          <Image Name="ssc_32.png" />
+          <Image Name="ssc_33.png" />
+          <Image Name="ssc_34.png" />
+          <Image Name="ssc_4.png" />
+          <Image Name="ssc_5.png" />
+          <Image Name="ssc_6.png" />
+          <Image Name="ssc_7.png" />
+          <Image Name="ssc_8.png" />
+          <Image Name="ssc_8_1.png" />
+          <Image Name="ssc_9.png" />
+          <Image Name="ssc_9_1.png" />
+        </Folder>
         <Folder Name="png">
+          <Image Name="ssc_bg1.png" />
           <Image Name="ssc_bg2.png" />
           <Image Name="ssc_bg3.png" />
         </Folder>
@@ -328,6 +369,9 @@
         <Project Name="DeskLayer.csd" Type="Layer" />
         <Project Name="DeskResultLayer.csd" Type="Layer" />
         <Project Name="DeskTopLayer.csd" Type="Layer" />
+        <Project Name="MatchBigResultLayer.csd" Type="Layer" />
+        <Project Name="MatchJinjiLayer.csd" Type="Layer" />
+        <Project Name="MatchTaotaiLayer.csd" Type="Layer" />
         <Project Name="MjPlayScene.csd" Type="Scene" />
       </RootFolder>
     </Group>

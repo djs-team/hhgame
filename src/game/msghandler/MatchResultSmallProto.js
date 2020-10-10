@@ -1,6 +1,6 @@
 
 /**
- * 牌局结算消息结构体
+ * 比赛小结算消息
  */
 load('game/msghandler/MatchResultSmallProto', function () {
     let baseProto = include('public/network/BaseProto')
@@ -17,6 +17,39 @@ load('game/msghandler/MatchResultSmallProto', function () {
 
         handleMsg: function (msg) {
             this._super(msg)
+            let pData = appInstance.dataManager().getPlayData()
+
+            msg.pBaoCard = {
+                nCardColor: msg.pBaoCardColor,
+                nCardNumber: msg.pBaoCardNumber
+            }
+            msg.pHuCard = {
+                nCardColor: msg.pHuCardColor,
+                nCardNumber: msg.pHuCardNumber
+            }
+
+            let saveKey = [
+                'nZhuangSeatID',
+                'pWinSeatID',
+                'pHuType',
+                'pBaoCard',
+                'pBaseScore',
+                'pIsLiuJu',
+                'pBigWinSeatID',
+                'pGameResultExtend'
+            ]
+            pData.saveTableData(msg,saveKey)
+
+
+            let pPlayer = msg.pPlayer
+            for (let i = 0; i < pPlayer.length; ++i) {
+                let player = pData.getPlayer(pPlayer[i].pSeatID)
+                global.mergeData(player, pPlayer[i])
+                cc.log('=========player===========' + JSON.stringify(player))
+            }
+
+            cc.log('====MatchResultSmallProto=====pData===========' + JSON.stringify(pData))
+            appInstance.sendNotification(TableEvent.GameResultProto)
 
         },
 

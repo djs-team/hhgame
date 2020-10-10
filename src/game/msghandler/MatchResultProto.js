@@ -1,6 +1,6 @@
 
 /**
- * 出牌消息结构体
+ * 比赛状态消息
  */
 load('game/msghandler/MatchResultProto', function () {
     let baseProto = include('public/network/BaseProto')

@@ -1,6 +1,6 @@
 
 /**
- * 牌局结算消息结构体
+ * 比赛总结算消息
  */
 load('game/msghandler/MatchResultBigProto', function () {
     let baseProto = include('public/network/BaseProto')

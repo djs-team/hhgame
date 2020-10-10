@@ -142,121 +142,6 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/owner_rl" />
 
-            <LinearLayout
-                android:id="@+id/ll_test"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:visibility="gone"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="@id/room_id_tv">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <Button
-                        android:id="@+id/tv_voice_low"
-                        android:layout_width="70dp"
-                        android:layout_height="wrap_content"
-                        android:text="低音质" />
-
-                    <Button
-                        android:id="@+id/tv_voice_medium"
-                        android:layout_width="70dp"
-                        android:layout_height="wrap_content"
-                        android:text="中音质" />
-
-                    <Button
-                        android:id="@+id/tv_voice_hight"
-                        android:layout_width="70dp"
-                        android:layout_height="wrap_content"
-                        android:text="高音质" />
-
-                    <Button
-                        android:id="@+id/tv_wav"
-                        android:layout_width="70dp"
-                        android:layout_height="wrap_content"
-                        android:text=".wav" />
-
-                    <Button
-                        android:id="@+id/tv_aac"
-                        android:layout_width="70dp"
-                        android:layout_height="wrap_content"
-                        android:text=".aac" />
-
-
-                </LinearLayout>
-
-                <TextView
-                    android:id="@+id/tv_desc"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:text="高音质 - .aac"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"></TextView>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/tv_look_full_service"
-                        android:layout_width="50dp"
-                        android:layout_height="26dp"
-                        android:layout_marginLeft="7dp"
-                        android:layout_marginTop="5dp"
-                        android:background="@drawable/bg_full_service_btn"
-                        android:gravity="center"
-                        android:text="开始录音"
-                        android:textColor="@color/black"
-                        android:textSize="10sp"
-                        android:visibility="visible" />
-
-                    <TextView
-                        android:id="@+id/tv_stop_record"
-                        android:layout_width="50dp"
-                        android:layout_height="26dp"
-                        android:layout_marginLeft="7dp"
-                        android:layout_marginTop="5dp"
-                        android:background="@drawable/bg_full_service_btn"
-                        android:gravity="center"
-                        android:text="停止录音"
-                        android:textColor="@color/black"
-                        android:textSize="10sp"
-                        android:visibility="visible" />
-
-                    <TextView
-                        android:id="@+id/tv_play_record"
-                        android:layout_width="50dp"
-                        android:layout_height="26dp"
-                        android:layout_marginLeft="7dp"
-                        android:layout_marginTop="5dp"
-                        android:background="@drawable/bg_full_service_btn"
-                        android:gravity="center"
-                        android:text="播放录音"
-                        android:textColor="@color/black"
-                        android:textSize="10sp"
-                        android:visibility="visible" />
-
-                    <TextView
-                        android:id="@+id/tv_stop_play_record"
-                        android:layout_width="70dp"
-                        android:layout_height="26dp"
-                        android:layout_marginLeft="7dp"
-                        android:layout_marginTop="5dp"
-                        android:background="@drawable/bg_full_service_btn"
-                        android:gravity="center"
-                        android:text="停止播放录音"
-                        android:textColor="@color/black"
-                        android:textSize="10sp"
-                        android:visibility="visible" />
-                </LinearLayout>
-            </LinearLayout>
 
             <RelativeLayout
                 android:id="@+id/rl_marquee"
@@ -266,7 +151,7 @@
                 android:visibility="gone"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ll_test">
+                app:layout_constraintTop_toBottomOf="@id/room_id_tv">
 
 
                 <com.deepsea.mua.stub.view.MarqueeTextView
@@ -660,7 +545,7 @@
                         android:layout_below="@id/iv_redpackage_show"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="3dp"
-                        android:src="@drawable/icon_redpackage_seek_black"/>
+                        android:src="@drawable/icon_redpackage_seek_black" />
 
                     <TextView
                         android:id="@+id/tv_redpackage_progress"
@@ -1122,7 +1007,6 @@
                 </LinearLayout>
 
             </LinearLayout>
-
 
 
             <com.deepsea.mua.lib.svga.SVGAImageView

@@ -131,6 +131,9 @@ public class VoiceFragment extends BaseFragment<FragmentVoiceBinding> {
         subscribeClick(mBinding.llFilter, o -> {
             PageJumpUtils.jumpScreenAreaDialog(getActivity());
         });
+        subscribeClick(mBinding.rlBack, o -> {
+            ActivityCache.getInstance().getTopActivity().finish();
+        });
     }
 
     XTabLayout.Tab lastTab = null;

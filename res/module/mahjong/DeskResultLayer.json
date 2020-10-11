@@ -229,7 +229,7 @@
                   "X": 88.0,
                   "Y": 88.0
                 },
-                "Name": "BackBtn",
+                "Name": "CloseBtn",
                 "ctype": "ButtonObjectData"
               }
             ],

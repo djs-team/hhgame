@@ -3,6 +3,7 @@
  * DeskHeadLayer
  */
 load('module/mahjong/ui/DeskTopLayer', function () {
+    let HallResConfig = include('game/config/ResConfig')
     let ResConfig = include('module/mahjong/common/ResConfig')
     let BaseLayer = include('public/ui/BaseLayer')
     let DeskTopLayerMdt = include('module/mahjong/ui/DeskTopLayerMdt')
@@ -60,7 +61,7 @@ load('module/mahjong/ui/DeskTopLayer', function () {
         },
 
         onSetBtnClick: function () {
-            cc.log('====onsetBtnClick===')
+            appInstance.gameAgent().addPopUI(HallResConfig.Ui.SetLayer, {isDesk: true})
         },
 
         onHostingClick: function () {

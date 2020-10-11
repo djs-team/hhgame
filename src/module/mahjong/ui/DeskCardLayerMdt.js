@@ -25,6 +25,7 @@ load('module/mahjong/ui/DeskCardLayerMdt', function () {
                 TableEvent.PlayerSelectProto,
                 TableEvent.AutoPlayProto,
                 TableEvent.updateSelfHandCard,
+                TableEvent.clearTableGaming,
             ]
         },
         handleNotification: function (notification) {
@@ -61,6 +62,9 @@ load('module/mahjong/ui/DeskCardLayerMdt', function () {
                     break
                 case TableEvent.updateSelfHandCard:
                     this.updateSelfHandCard(body)
+                    break
+                case TableEvent.clearTableGaming:
+                    this.view.clearTableGaming(body)
                     break
             }
         },

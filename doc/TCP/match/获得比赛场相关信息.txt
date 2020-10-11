@@ -14,14 +14,14 @@ int	MJ_ROOM_GAME_MATCH				= MJ_ROOM_MATCHGAME_ID + 23;
 			private String matchtitle;//标题
 			private String wanFaID;//rule配置文件信息，如songyuankuaiting
 			private String wanFaName;//rule配置文件信息，如松原快听
-			private long starttime;//开始时间
-			private long endtime;//结束时间
+			private String starttime;//开始时间
+			private String endtime;//结束时间
 			private String format;//赛制
 			private String rule;//规则
 			private String gameplayoptions;//玩法
 			private int consumptionType;//比赛场入场费消耗类型 1金币2钻石
 			private int matchfee;//比赛场入场费数量
-			private int state;//状态 ；0 尚未开始比赛  1 即将开始比赛  2 报名截止 3 正在比赛 4 已结束
+			private int state;//状态 ；0 尚未开始比赛 不可报名  1正在比赛可以报名
 			private int matchplayersnum;//参与人数
 			private int matchMode;//比赛mode
 			private String extens;//预留字段

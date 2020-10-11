@@ -6,6 +6,7 @@ load('game/msghandler/MatchEnterTableProto', function () {
     let baseProto = include('public/network/BaseProto')
     let GameEvent = include('game/config/GameEvent')
     let GameConfig = include('game/config/GameConfig')
+    let Event = include('module/mahjong/common/TableConfig').Event
     let proto = baseProto.extend({
         _name: 'MatchEnterTableProto',
         _offMsgId: 24,
@@ -15,38 +16,50 @@ load('game/msghandler/MatchEnterTableProto', function () {
 
         handleMsg: function (msg) {
             this._super(msg)
+            let dialogMsg
 
             switch (msg.mcState) {
                 case 0:
+                     dialogMsg = {
+                        ViewType: 1,
+                        SayText: '比赛不可取消 ',
+                        MidBtnName: '取消'
+                    }
+                    dialogMsg.MidBtnClick = function () {
+                        appInstance.gameAgent().Tips('比赛不可取消！！！')
+                    }
+                    appInstance.sendNotification(GameEvent.DIALOG_HIDE_ALL)
+                    appInstance.gameAgent().addDialogUI(dialogMsg)
                     break
                 case 1:
+                    appInstance.sendNotification(Event.MatchJinjiGaming, msg)
                     break
                 case 2:
+                    appInstance.gameAgent().Tips('MatchEnterTableProto 这条消息state为 2 淘汰')
                     break
                 case 3:
+                     dialogMsg = {
+                        ViewType: 1,
+                        SayText: '比赛可以取消 ',
+                        MidBtnName: '取消'
+                    }
+                    dialogMsg.MidBtnClick = function () {
+                        let send = {}
+                        send.gid = msg.mcGid
+                        send.mjChannel = msg.mcMjChannel
+                        send.roomId = msg.mcRoomId
+                        send.roomMode = msg.mcRoomMode
+                        send.keyPrivateTable = ''
+                        send.delPlayerId = appInstance.dataManager().getUserData().pid
+                        appInstance.gameAgent().tcpGame().cancelEnterTableMatch(send)
+                    }
+                    appInstance.sendNotification(GameEvent.DIALOG_HIDE_ALL)
+                    appInstance.gameAgent().addDialogUI(dialogMsg)
                     break
                 case 4:
+                    appInstance.gameAgent().Tips('比赛已被销毁！！！')
                     break
             }
-
-            let dialogMsg = {
-                ViewType: 1,
-                SayText: '比赛场State ' + msg.mcState,
-                MidBtnName: '取消'
-            }
-            dialogMsg.MidBtnClick = function () {
-                let send = {}
-                send.gid = msg.mcGid
-                send.mjChannel = msg.mcMjChannel
-                send.roomId = msg.mcRoomId
-                send.roomMode = msg.mcRoomMode
-                send.keyPrivateTable = ''
-                send.delPlayerId = appInstance.dataManager().getUserData().pid
-                appInstance.gameAgent().tcpGame().cancelEnterTableMatch(send)
-            }
-
-            appInstance.sendNotification(GameEvent.DIALOG_HIDE_ALL)
-            appInstance.gameAgent().addDialogUI(dialogMsg)
         },
 
         initData: function () {

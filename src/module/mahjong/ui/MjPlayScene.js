@@ -11,6 +11,9 @@ load('module/mahjong/ui/MjPlayScene', function () {
     let DeskHeadLayer = include('module/mahjong/ui/DeskHeadLayer')
     let DeskTopLayer = include('module/mahjong/ui/DeskTopLayer')
     let DeskResultLayer = include('module/mahjong/ui/DeskResultLayer')
+    let MatchJinjiLayer = include('module/mahjong/ui/MatchJinjiLayer')
+    let MatchResultLayer = include('module/mahjong/ui/MatchResultLayer')
+    let MatchBigResultLayer = include('module/mahjong/ui/MatchBigResultLayer')
     let Scene = BaseScene.extend({
         _className: 'MjPlayScene',
         RES_BINDING: function () {
@@ -31,8 +34,32 @@ load('module/mahjong/ui/MjPlayScene', function () {
             this.addChild(this.DeskCardLayer)
             this.DeskTopLayer = appInstance.uiManager().createUI(DeskTopLayer)
             this.addChild(this.DeskTopLayer)
-            // this.DeskResultLayer = appInstance.uiManager().createUI(DeskResultLayer)
-            // this.addChild(this.DeskResultLayer)
+        },
+
+        showMatchJinjiLayer: function (msg) {
+            if (!this.MatchJinjiLayer) {
+                this.MatchJinjiLayer = appInstance.uiManager().createUI(MatchJinjiLayer)
+                this.addChild(this.MatchJinjiLayer)
+            }
+            this.MatchJinjiLayer.updateView(msg)
+        },
+
+        showMatchResultLayer: function (msg) {
+            cc.log('===================showMatchResultLayer===============' + JSON.stringify(msg))
+            if (!this.MatchResultLayer) {
+                this.MatchResultLayer = appInstance.uiManager().createUI(MatchResultLayer)
+                this.addChild(this.MatchResultLayer)
+            }
+            this.MatchResultLayer.updateView(msg)
+        },
+
+        showMatchBigResultLayer: function (msg) {
+            cc.log('===================showMatchBigResultLayer===============' + JSON.stringify(msg))
+            if (!this.MatchBigResultLayer) {
+                this.MatchBigResultLayer = appInstance.uiManager().createUI(MatchBigResultLayer)
+                this.addChild(this.MatchBigResultLayer)
+            }
+            this.MatchBigResultLayer.updateView(msg)
         },
 
         clearTableView: function () {
@@ -41,15 +68,15 @@ load('module/mahjong/ui/MjPlayScene', function () {
             this.DeskTopLayer.clearView()
         },
 
-        TableChangeProto: function () {
+        clearGameResult: function () {
             if (this.DeskResultLayer) {
                 appInstance.uiManager().removeUI(this.DeskResultLayer)
             }
         },
 
-        showGameResultLayer: function () {
+        showGameResultLayer: function (msg) {
             let DeskResultLayer = include('module/mahjong/ui/DeskResultLayer')
-            this.DeskResultLayer = appInstance.uiManager().createUI(DeskResultLayer)
+            this.DeskResultLayer = appInstance.uiManager().createUI(DeskResultLayer, msg)
             this.addChild(this.DeskResultLayer)
         },
 

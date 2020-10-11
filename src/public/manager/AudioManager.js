@@ -1,6 +1,7 @@
 
 load('public/manager/AudioManager', function () {
     let audioManager = cc.Class.extend({
+        _defaultVolume: 0,
         _bgMusic: null, // 背景音乐
         _bgMusicID: null, // 背景音乐的ID
         _musicVolume: null, // 背景音乐的音量
@@ -13,8 +14,8 @@ load('public/manager/AudioManager', function () {
         ctor: function () {
             this._bgMusic = null
             this._bgMusicID = jsb.AudioEngine.INVALID_AUDIO_ID
-            this._musicVolume = global.localStorage.getNumberForKey('MusicVolume') !== null ? global.localStorage.getNumberForKey('MusicVolume') : 0.5
-            this._effectVolume = global.localStorage.getNumberForKey('EffectVolume') !== null ? global.localStorage.getNumberForKey('EffectVolume') : 0.5
+            this._musicVolume = global.localStorage.getNumberForKey('MusicVolume') !== null ? global.localStorage.getNumberForKey('MusicVolume') : this._defaultVolume
+            this._effectVolume = global.localStorage.getNumberForKey('EffectVolume') !== null ? global.localStorage.getNumberForKey('EffectVolume') : this._defaultVolume
             this._isMute = this.getSaveIsMute()
             let clickEffect = global.localStorage.getStringForKey('BtClickEffect')|| 'res/sound/audio_button_click.mp3'
             this.setButtonClickEffect(clickEffect)

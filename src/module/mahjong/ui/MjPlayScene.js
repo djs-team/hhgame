@@ -31,8 +31,6 @@ load('module/mahjong/ui/MjPlayScene', function () {
             this.addChild(this.DeskCardLayer)
             this.DeskTopLayer = appInstance.uiManager().createUI(DeskTopLayer)
             this.addChild(this.DeskTopLayer)
-            // this.DeskResultLayer = appInstance.uiManager().createUI(DeskResultLayer)
-            // this.addChild(this.DeskResultLayer)
         },
 
         clearTableView: function () {

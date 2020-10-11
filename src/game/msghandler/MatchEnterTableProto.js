@@ -24,11 +24,7 @@ load('game/msghandler/MatchEnterTableProto', function () {
                      dialogMsg = {
                         ViewType: 1,
                         SayText: '比赛不可取消 '
-                        // MidBtnName: '取消'
                     }
-                    // dialogMsg.MidBtnClick = function () {
-                    //     appInstance.gameAgent().Tips('比赛不可取消！！！')
-                    // }
                     appInstance.sendNotification(GameEvent.DIALOG_HIDE_ALL)
                     appInstance.gameAgent().addDialogUI(dialogMsg)
 

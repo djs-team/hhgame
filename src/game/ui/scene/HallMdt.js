@@ -5,7 +5,6 @@
 load('game/ui/scene/HallMdt', function () {
     let Mediator = include('public/components/Mediator')
     let GameEvent = include('game/config/GameEvent')
-
     let HallMdt = Mediator.extend({
         mediatorName: 'HallMdt',
         ctor: function (view) {
@@ -19,6 +18,7 @@ load('game/ui/scene/HallMdt', function () {
                 GameEvent.GET_CASHCOWNUM,
                 GameEvent.UPDATE_PROPSYNC,
                 GameEvent.UPDATE_USERPHOTO,
+                GameEvent.MatchJinjiGaming,
 
             ]
         },
@@ -44,6 +44,9 @@ load('game/ui/scene/HallMdt', function () {
                 case GameEvent.UPDATE_USERPHOTO:
                     cc.log("----------收到UPDATE_USERPHOTO事件")
                     this.view.onUpdateUserData(body)
+                    break
+                case GameEvent.MatchJinjiGaming:
+                    this.view.showMatchJinjiLayer(body)
                     break
             }
         },

@@ -14,6 +14,16 @@ load('game/msghandler/InitCardProto', function () {
 
         handleMsg: function (msg) {
             this._super(msg)
+
+            let pData = appInstance.dataManager().getPlayData()
+            let tData = pData.tableData
+            let players = pData.players
+
+            for (let i = 0; i < players.length; ++i) {
+                players.showCards = []
+            }
+
+
             let saveKey = [
                 'nZhuangSeatID',
                 'nDeckCardNum'

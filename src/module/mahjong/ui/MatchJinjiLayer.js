@@ -17,18 +17,22 @@ load('module/mahjong/ui/MatchJinjiLayer', function () {
         ctor: function () {
             this._super(ResConfig.View.MatchJinjiLayer)
         },
+        
+        updateView: function (msg) {
+            msg = {}
+            msg.bm1 = 5
+            msg.bm2 = 65
+            msg.bm3 = 17
 
-        initData: function (pData) {
-            cc.log('=====================topLayer=========' + JSON.stringify(pData))
-            this._selfInfo = pData.getSelfInfo()
-            this._tData = pData.tableData
-            this._actionCell = {}
-            this._chiCell = []
-        },
+            msg.bm5 = 3
 
-        initView: function (pData) {
-            this.initData(pData)
+            let topStr = cc.formatStr('第%s轮(%s进%s)', msg.bm1.toString(), msg.bm2.toString(),msg.bm3.toString())
+            this.TopTxt.setString(topStr)
 
+            let bmStr = cc.formatStr('等待%s桌对局结束，确定晋级名单', msg.bm5.toString())
+            this.BmTxt.setString(bmStr)
+
+            this.Slider.setPercent(10)
         },
 
         onEnter: function () {

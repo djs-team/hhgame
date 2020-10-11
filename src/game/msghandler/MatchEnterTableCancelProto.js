@@ -1,6 +1,6 @@
 
 /**
- * 出牌消息结构体
+ * 比赛场取消比赛
  */
 load('game/msghandler/MatchEnterTableCancelProto', function () {
     let baseProto = include('public/network/BaseProto')
@@ -16,7 +16,7 @@ load('game/msghandler/MatchEnterTableCancelProto', function () {
         handleMsg: function (msg) {
             this._super(msg)
 
-            if (msg.code === 0) {
+            if (msg.code === 100) {
                 appInstance.gameAgent().Tips('取消成功！')
             } else {
                 appInstance.gameAgent().Tips('取消失败！error code: ' + msg.code)

@@ -717,6 +717,10 @@ load('module/mahjong/ui/DeskCardLayer', function () {
                 this._outCardNd[i].removeAllChildren()
                 this._handCardNd[i].setVisible(false)
                 this._deckCardNd[i].setVisible(false)
+
+                for (let j = 0; j < 4; ++j) {
+                    this._handCardNd[i].getChildByName('Group' + j).setVisible(false)
+                }
             }
         },
 

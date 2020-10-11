@@ -19,17 +19,11 @@ load('module/mahjong/ui/MatchJinjiLayer', function () {
         },
 
         updateView: function (msg) {
-            msg = {}
-            msg.bm1 = 5
-            msg.bm2 = 65
-            msg.bm3 = 17
-
-            msg.bm5 = 3
-
-            let topStr = cc.formatStr('第%s轮(%s进%s)', msg.bm1.toString(), msg.bm2.toString(),msg.bm3.toString())
+            // 服务器这块信息需要核对一下 对应的proto是 MatchEnterTableProto
+            let topStr = cc.formatStr('第%s轮(%s进%s)', msg.mcRoomMode.toString(), msg.mcAllNums.toString(),msg.mcAllNum.toString())
             this.TopTxt.setString(topStr)
 
-            let bmStr = cc.formatStr('等待%s桌对局结束，确定晋级名单', msg.bm5.toString())
+            let bmStr = cc.formatStr('等待%s桌对局结束，确定晋级名单', msg.mcEtcTable.toString())
             this.BmTxt.setString(bmStr)
 
             this.Slider.setPercent(10)

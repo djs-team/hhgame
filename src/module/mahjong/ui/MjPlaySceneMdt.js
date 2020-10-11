@@ -34,6 +34,9 @@ load('module/mahjong/ui/MjPlaySceneMdt', function () {
                 case TableEvent.TableChangeProto:
                     this.TableChangeProto()
                     break
+                case TableEvent.MatchJinjiGaming:
+                    this.view.showMatchJinjiLayer(body)
+                    break
             }
         },
 

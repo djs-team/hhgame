@@ -5,8 +5,9 @@ load('game/ui/layer/set/SetLayer', function () {
 
     let layer = BaseLayer.extend({
         _className: 'SetLayer',
-        ctor: function () {
+        ctor: function (data) {
             this._super(ResConfig.View.SetLayer)
+            this._data = data
         },
         RES_BINDING: function () {
             return {
@@ -41,6 +42,12 @@ load('game/ui/layer/set/SetLayer', function () {
 
             this.MusicSlider.addEventListener(this.MusicSliderTouch, this)
             this.EffectSlider.addEventListener(this.EffectSliderTouch, this)
+
+            if (this._data ) {
+                if (this._data.isDesk) {
+                    this.ExitBtn.setVisible(false)
+                }
+            }
         },
 
         EffectSliderTouch: function (sender, event) {

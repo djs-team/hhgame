@@ -72,9 +72,9 @@ load('game/public/GameAgent', function () {
             texture.saveToFile(fileName, cc.IMAGE_FORMAT_JPG);
         },
 
-        addPopUI: function (resUi) {
+        addPopUI: function (resUi, data) {
             let layer = include(resUi)
-            let UI = appInstance.uiManager().createPopUI(layer)
+            let UI = appInstance.uiManager().createPopUI(layer, data)
             appInstance.sceneManager().getCurScene().addChild(UI)
         },
 

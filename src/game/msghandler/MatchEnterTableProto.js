@@ -16,20 +16,22 @@ load('game/msghandler/MatchEnterTableProto', function () {
 
         handleMsg: function (msg) {
             this._super(msg)
+            let userData = appInstance.dataManager().getUserData()
             let dialogMsg
 
             switch (msg.mcState) {
                 case 0:
                      dialogMsg = {
                         ViewType: 1,
-                        SayText: '比赛不可取消 ',
-                        MidBtnName: '取消'
+                        SayText: '比赛不可取消 '
+                        // MidBtnName: '取消'
                     }
-                    dialogMsg.MidBtnClick = function () {
-                        appInstance.gameAgent().Tips('比赛不可取消！！！')
-                    }
+                    // dialogMsg.MidBtnClick = function () {
+                    //     appInstance.gameAgent().Tips('比赛不可取消！！！')
+                    // }
                     appInstance.sendNotification(GameEvent.DIALOG_HIDE_ALL)
                     appInstance.gameAgent().addDialogUI(dialogMsg)
+
                     break
                 case 1:
                     appInstance.sendNotification(Event.MatchJinjiGaming, msg)
@@ -50,7 +52,7 @@ load('game/msghandler/MatchEnterTableProto', function () {
                         send.roomId = msg.mcRoomId
                         send.roomMode = msg.mcRoomMode
                         send.keyPrivateTable = ''
-                        send.delPlayerId = appInstance.dataManager().getUserData().pid
+                        send.delPlayerId = userData.pid
                         appInstance.gameAgent().tcpGame().cancelEnterTableMatch(send)
                     }
                     appInstance.sendNotification(GameEvent.DIALOG_HIDE_ALL)

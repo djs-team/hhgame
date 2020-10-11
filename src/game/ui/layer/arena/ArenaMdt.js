@@ -136,7 +136,6 @@ load('game/ui/layer/arena/ArenaMdt', function () {
                 if(currentpropType > maxPropType)
                     maxPropType = currentpropType
 
-                cc.log('---------------------onFormatRankingList   rankingData : ' + JSON.stringify(rankingData))
                 data.rankingList.push(rankingData)
             }
 

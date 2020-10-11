@@ -15,6 +15,11 @@ load('module/mahjong/ui/DeskCardLayer', function () {
         _outCardLen: 10,
         RES_BINDING: function () {
             return {
+                'bgPnl/DirectionBg': {  },
+                'bgPnl/DirectionBg/Direction0': {  },
+                'bgPnl/DirectionBg/Direction1': {  },
+                'bgPnl/DirectionBg/Direction2': {  },
+                'bgPnl/DirectionBg/Direction3': {  },
                 'CardPnl': {  },
             }
         },
@@ -43,6 +48,7 @@ load('module/mahjong/ui/DeskCardLayer', function () {
             this._outCardNd = []
             this._handCardNd = []
             this._selfHandCard = []
+            this._directionNd = []
 
 
 
@@ -57,6 +63,8 @@ load('module/mahjong/ui/DeskCardLayer', function () {
             this.initData(pData)
 
             for (let i = 0; i < 4; ++i) {
+                this._directionNd[i] = this['Direction' + i]
+                this._directionNd[i].setVisible(false)
                 this._deckCardNd[i].removeAllChildren()
                 this._outCardNd[i].removeAllChildren()
                 this._handCardNd[i].setVisible(true)
@@ -81,6 +89,20 @@ load('module/mahjong/ui/DeskCardLayer', function () {
             }
         },
 
+        runDirection: function (seatUI) {
+            this.stopDirection()
+            if ( typeof seatUI !== 'number') {
+                return
+            }
+            this._directionNd[seatUI].setVisible(true)
+            this._directionNd[seatUI].runAction(cc.repeatForever(cc.sequence(cc.fadeIn(0.8),cc.fadeOut(0.8))))
+        },
+        stopDirection: function () {
+            for (let i = 0; i < 4; ++i) {
+                this._directionNd[i].stopAllActions()
+                this._directionNd[i].setVisible(false)
+            }
+        },
         onSelfCardClick: function (sender) {
             let card = sender.getParent()
             let isDoubleClick = false
@@ -120,18 +142,16 @@ load('module/mahjong/ui/DeskCardLayer', function () {
             for ( let i = this._deckCardTag; i <= endTag; ++i) {
                 let pIndex = Math.floor((i - 1) / this._deckCardLen / 2)
                 let pNd = this._deckCardNd[pConfig[pIndex]]
+                pNd.setVisible(true)
                 pNd.getChildByTag(i).setVisible(false)
             }
-
         },
 
         updateHandCard: function (uiSeat, player, isTurn) {
             let handNd = this._handCardNd[uiSeat]
+            handNd.setVisible(true)
             let handCards = player.handCards
             let handCardCount = player.handCardCount
-            cc.log('=======uiSeat======' + uiSeat)
-            cc.log('=======isTurn======' + isTurn)
-            cc.log('=======player======' + JSON.stringify(player))
             if (uiSeat === 0) {
                 for (let i = 0; i < 14; ++i) {
                     let card = handNd.getChildByName('Card' + i)
@@ -688,6 +708,22 @@ load('module/mahjong/ui/DeskCardLayer', function () {
                 this._deckCardNd[i].removeAllChildren()
                 this._outCardNd[i].removeAllChildren()
                 this._handCardNd[i].setVisible(false)
+                for (let j = 0; j < 4; ++j) {
+                    this._handCardNd[i].getChildByName('Group' + j).setVisible(false)
+                }
+            }
+        },
+
+        clearTableGaming: function () {
+            cc.log('=============clearTableGaming===============')
+            for (let i = 0; i < 4; ++i) {
+                this._outCardNd[i].removeAllChildren()
+                this._handCardNd[i].setVisible(false)
+                this._deckCardNd[i].setVisible(false)
+
+                for (let j = 0; j < 4; ++j) {
+                    this._handCardNd[i].getChildByName('Group' + j).setVisible(false)
+                }
             }
         },
 

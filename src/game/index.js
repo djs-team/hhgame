@@ -8,6 +8,7 @@ load('game/index', function () {
     let dataIndex = include('game/data/index')
     let msgHandlerIndex = include('game/msghandler/index')
     let mjDataIndex = include('module/mahjong/data/index')
+    let ResConfig = include('game/config/ResConfig')
 
     let index = {}
     /**
@@ -31,6 +32,8 @@ load('game/index', function () {
     }
 
     index.run = function () {
+        appInstance.audioManager().setButtonClickEffect(ResConfig.Sound.btnEffect)
+
         this.addSearchPath()
         this.initGame()
 

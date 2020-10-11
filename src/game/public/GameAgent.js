@@ -72,9 +72,9 @@ load('game/public/GameAgent', function () {
             texture.saveToFile(fileName, cc.IMAGE_FORMAT_JPG);
         },
 
-        addPopUI: function (resUi) {
+        addPopUI: function (resUi, data) {
             let layer = include(resUi)
-            let UI = appInstance.uiManager().createPopUI(layer)
+            let UI = appInstance.uiManager().createPopUI(layer, data)
             appInstance.sceneManager().getCurScene().addChild(UI)
         },
 
@@ -107,6 +107,12 @@ load('game/public/GameAgent', function () {
             let TipsUi = appInstance.uiManager().createUI(SystemTips)
             appInstance.sceneManager().getCurScene().addChild(TipsUi)
             TipsUi.runTips(text)
+        },
+
+        goLoginScene: function () {
+            let LoginScene = include('game/ui/scene/LoginScene')
+            appInstance.sceneManager().replaceScene(new LoginScene())
+            appInstance.gameAgent().setLoginOk(false)
         },
 
         reSetHeartBeatTimes: function () {

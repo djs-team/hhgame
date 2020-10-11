@@ -23,8 +23,12 @@ load('game/msghandler/index', function () {
     let GameResultProto = include('game/msghandler/GameResultProto')
     let AutoPlayProto = include('game/msghandler/AutoPlayProto')
     let GetArenaProto = include('game/msghandler/GetArenaProto')
-
-
+    let MatchEnterTableProto = include('game/msghandler/MatchEnterTableProto')
+    let MatchEnterTableCancelProto = include('game/msghandler/MatchEnterTableCancelProto')
+    let MatchTableChangeProto = include('game/msghandler/MatchTableChangeProto')
+    let MatchResultProto = include('game/msghandler/MatchResultProto')
+    let MatchResultBigProto = include('game/msghandler/MatchResultBigProto')
+    let MatchResultSmallProto = include('game/msghandler/MatchResultSmallProto')
     let objArray = [
         new DrawCardProto(),
         new EnterTableCancelProto(),
@@ -46,6 +50,12 @@ load('game/msghandler/index', function () {
         new GameResultProto(),
         new AutoPlayProto(),
         new GetArenaProto(),
+        new MatchEnterTableProto(),
+        new MatchEnterTableCancelProto(),
+        new MatchTableChangeProto(),
+        new MatchResultProto(),
+        new MatchResultBigProto(),
+        new MatchResultSmallProto(),
     ]
 
     let index = {}

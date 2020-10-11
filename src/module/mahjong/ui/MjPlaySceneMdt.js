@@ -19,6 +19,10 @@ load('module/mahjong/ui/MjPlaySceneMdt', function () {
                 TableEvent.clearTableView,
                 TableEvent.GameResultProto,
                 TableEvent.TableChangeProto,
+                TableEvent.InitCardProto,
+                TableEvent.MatchJinjiGaming,
+                TableEvent.MatchResultProto,
+                TableEvent.MatchResultBigProto,
             ]
         },
         handleNotification: function (notification) {
@@ -29,22 +33,33 @@ load('module/mahjong/ui/MjPlaySceneMdt', function () {
                     this.view.clearTableView()
                     break
                 case TableEvent.GameResultProto:
-                    this.GameResultProto()
+                    this.GameResultProto(body)
                     break
                 case TableEvent.TableChangeProto:
                     this.TableChangeProto()
+                    break
+                case TableEvent.InitCardProto:
+                    this.view.clearGameResult()
+                    break
+                case TableEvent.MatchJinjiGaming:
+                    this.view.showMatchJinjiLayer(body)
+                    break
+                case TableEvent.MatchResultProto:
+                    this.view.showMatchResultLayer(body)
+                    break
+                case TableEvent.MatchResultBigProto:
+                    this.view.showMatchBigResultLayer(body)
                     break
             }
         },
 
         TableChangeProto: function () {
-            this.view.TableChangeProto()
+            this.view.clearGameResult()
         },
 
 
-        GameResultProto: function () {
-            this.view.clearTableView()
-            this.view.showGameResultLayer()
+        GameResultProto: function (msg) {
+            this.view.showGameResultLayer(msg)
         },
 
         initView: function () {

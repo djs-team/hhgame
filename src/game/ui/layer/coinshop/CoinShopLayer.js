@@ -226,10 +226,7 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
 
             this.videoBtn.setBright(true)
             this.videoBtn.setTouchEnabled(true)
-            if (cc.sys.OS_ANDROID === cc.sys.os) {
-                appInstance.nativeApi().showRewardVideo()
-            }
-
+            appInstance.nativeApi().showRewardVideo()
 
         },
         onRewardVideoCallback: function (msg) {

@@ -10,6 +10,8 @@ load('module/mahjong/ui/DeskResultLayer', function () {
     let BaseLayer = include('public/ui/BaseLayer')
     let DeskResultLayerMdt = include('module/mahjong/ui/DeskResultLayerMdt')
     let TableConfig = include('module/mahjong/common/TableConfig')
+    let TableEvent = TableConfig.Event
+    let HuType = TableConfig.HuType
     let Layer = BaseLayer.extend({
         _className: 'DeskResultLayer',
         _posConst: {
@@ -26,7 +28,7 @@ load('module/mahjong/ui/DeskResultLayer', function () {
         },
         RES_BINDING: function () {
             return {
-                'topPnl/BackBtn': { onClicked: this.onBackHallBtnClick },
+                'topPnl/CloseBtn': { onClicked: this.onCloseBtnClick },
                 'midPnl/midNd': {  },
                 'midPnl/midNd/PlayerCell': {  },
                 'bmPnl': {  },
@@ -39,9 +41,19 @@ load('module/mahjong/ui/DeskResultLayer', function () {
             }
         },
 
-        ctor: function () {
+        ctor: function (msg) {
             this._super(ResConfig.View.DeskResultLayer)
+            this._msg = msg
             this.registerMediator(new DeskResultLayerMdt(this))
+            cc.log('=======DeskResultLayer==========' + JSON.stringify(msg))
+        },
+
+        onCloseBtnClick: function () {
+            if (this._isMatch) {
+                appInstance.uiManager().removeUI(this)
+            } else {
+                this.onBackHallBtnClick()
+            }
         },
 
         onBackHallBtnClick: function () {
@@ -70,6 +82,7 @@ load('module/mahjong/ui/DeskResultLayer', function () {
 
         initData: function (pData) {
             this._pData = pData
+            this._isMatch = pData.isMatch
             this._playerNum = pData.pPlayerNum || 2
             this._players = pData.players
             this._pos = this._posConst[this._playerNum]
@@ -92,6 +105,28 @@ load('module/mahjong/ui/DeskResultLayer', function () {
 
             let baoImg = appInstance.gameAgent().mjUtil().getCardValueImg(0, 'selfhand', this._pData.tableData.pBaoCard)
             this.BaoCard.getChildByName('CardValue').loadTexture(baoImg)
+
+            let initInfo = {}
+            initInfo._index = 0
+            this.onInfoBtnClick(initInfo)
+
+            if (this._isMatch) {
+                this.BackHallBtn.setVisible(false)
+                this.InviteFriendBtn.setVisible(false)
+                this.NextGameBtn.setVisible(false)
+                cc.log('===========msg============' + JSON.stringify(this._msg))
+                if (this._msg) {
+                    cc.log('=============this._msg.pIsOver==========' + this._msg.pIsOver)
+                    if (this._msg.pIsOver === 1) {
+                        appInstance.sendNotification(TableEvent.clearTableView)
+                    } else {
+                        cc.log('===========================清理其他数据===============')
+                        appInstance.sendNotification(TableEvent.clearTableGaming)
+                    }
+                }
+            } else {
+                appInstance.sendNotification(TableEvent.clearTableView)
+            }
         },
 
         onInfoBtnClick: function (sender) {
@@ -180,6 +215,15 @@ load('module/mahjong/ui/DeskResultLayer', function () {
                     }
                 }
             }
+
+            let HuList = pinfo.pDoubleList
+            let huTxt = ''
+            for (let i = 0; i < HuList.length; ++i) {
+                let txtTmp = HuType[HuList[i].pDouble] || '胡类型:' + HuList[i].pDouble
+                huTxt += txtTmp
+                huTxt += '   '
+            }
+            ruleTxt.setString(huTxt)
         },
 
         initPlayerCell: function (index, pinfo) {

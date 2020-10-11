@@ -1413,7 +1413,11 @@
 - (void)getFirstRechargeData {
     if ([CXClientModel instance].room.IsFirstCharge == YES) {
         kWeakSelf
-        [CXHTTPRequest POSTWithURL:@"/index.php/Api/ApplePay/room_charge" parameters:nil callback:^(id responseObject, BOOL isCache, NSError *error) {
+        NSString *url = @"/index.php/Api/Order/room_charge";
+        if ([[CXClientModel instance].applePayType isEqualToString:@"Apple"]) {
+            url = @"/index.php/Api/ApplePay/room_charge";
+        }
+        [CXHTTPRequest POSTWithURL:url parameters:nil callback:^(id responseObject, BOOL isCache, NSError *error) {
             if (!error) {
                 // 是否首冲 1:是 2:不是
                 NSNumber *is_first = responseObject[@"data"][@"is_first"];
@@ -1421,9 +1425,11 @@
                     NSString *rmb = responseObject[@"data"][@"rmb"];
                     NSString *diamond = responseObject[@"data"][@"diamond"];
                     NSString *iosflag = responseObject[@"data"][@"iosflag"];
+                    NSString *chargeid = responseObject[@"data"][@"chargeid"];
                     [CXClientModel instance].room.rmb = rmb;
                     [CXClientModel instance].room.diamond = diamond;
                     [CXClientModel instance].room.iosflag = iosflag;
+                    [CXClientModel instance].room.chargeId = chargeid;
                     [CXClientModel instance].room.IsFirstCharge = YES;
                 } else {
                     [CXClientModel instance].room.IsFirstCharge = NO;
@@ -1440,7 +1446,11 @@
 // rechargeType: 0: 充值 1:送礼 2:麦位送礼
 - (void)roomRechargeRechargeType:(NSInteger)rechargeType seatUser:(LiveRoomUser *)seatUser {
     kWeakSelf
-    [CXHTTPRequest POSTWithURL:@"/index.php/Api/ApplePay/room_charge" parameters:nil callback:^(id responseObject, BOOL isCache, NSError *error) {
+    NSString *url = @"/index.php/Api/Order/room_charge";
+    if ([[CXClientModel instance].applePayType isEqualToString:@"Apple"]) {
+        url = @"/index.php/Api/ApplePay/room_charge";
+    }
+    [CXHTTPRequest POSTWithURL:url parameters:nil callback:^(id responseObject, BOOL isCache, NSError *error) {
         if (!error) {
             // 是否首冲 1:是 2:不是
             NSNumber *is_first = responseObject[@"data"][@"is_first"];
@@ -1448,7 +1458,8 @@
                 NSString *rmb = responseObject[@"data"][@"rmb"];
                 NSString *diamond = responseObject[@"data"][@"diamond"];
                 NSString *iosflag = responseObject[@"data"][@"iosflag"];
-                [weakSelf showRechargeSheetViewRMB:rmb diamond:diamond iosflag:iosflag rechargeType:rechargeType seatUser:seatUser];
+                NSString *chargeid = responseObject[@"data"][@"chargeid"];
+                [weakSelf showRechargeSheetViewRMB:rmb diamond:diamond iosflag:iosflag chargeid:chargeid rechargeType:rechargeType seatUser:seatUser];
             } else {
                 [weakSelf showRechargeView];
             }
@@ -1459,14 +1470,14 @@
 }
 
 // rechargeType: 0: 充值 1:送礼 2:麦位送礼
-- (void)showRechargeSheetViewRMB:(NSString *)rmb diamond:(NSString *)diamond iosflag:(NSString *)iosflag rechargeType:(NSInteger)rechargeType seatUser:(LiveRoomUser *)seatUser {
+- (void)showRechargeSheetViewRMB:(NSString *)rmb diamond:(NSString *)diamond iosflag:(NSString *)iosflag chargeid:(NSString *)chargeid rechargeType:(NSInteger)rechargeType seatUser:(LiveRoomUser *)seatUser {
     if ([rmb integerValue] <= 0) {
         return;
     }
     CXLiveRoomRechargeSheepView *sheetView = [[NSBundle mainBundle] loadNibNamed:@"CXLiveRoomRechargeSheepView" owner:self options:nil].firstObject;
     [sheetView setupRoseNumber:diamond roseRMB:rmb];
     kWeakSelf
-    sheetView.rechargeSheetViewBlcok = ^(BOOL isRecharge, BOOL isCancel) {
+    sheetView.rechargeSheetViewBlcok = ^(BOOL isRecharge, BOOL isCancel, NSString *payAction) {
         if (isCancel) {
             if (rechargeType == 1) { // 送礼
                 [weakSelf sendGiftWithUser:nil status:@"0" isSeat:YES];
@@ -1482,7 +1493,38 @@
             }
             
         } else {
-            [weakSelf rechargeWithProductId:iosflag];
+            if ([payAction isEqualToString:@"weixin"]) {
+                NSDictionary *param = @{
+                    @"rmb":rmb,
+                    @"action" : @"weixin",
+                    @"uid" : [CXClientModel instance].userId,
+                    @"type" : @"1",
+                    @"is_active" : @"0",
+                    @"chargeid": chargeid,
+                };
+                [CXHTTPRequest POSTWithURL:@"/index.php/Api/Order/pay" parameters:param callback:^(id responseObject, BOOL isCache, NSError *error) {
+                    if (!error) {
+                        NSString *str = [responseObject jsonStringEncoded];
+                        [[CXThirdPayManager sharedApi] wxPayWithPayParam:str success:nil failure:nil];
+                    }
+                }];
+            } else if ([payAction isEqualToString:@"alipay"]) {
+                NSDictionary *param = @{
+                    @"rmb":rmb,
+                    @"action" : @"alipay",
+                    @"uid" : [CXClientModel instance].userId,
+                    @"type" : @"1",
+                    @"is_active" : @"0",
+                    @"chargeid": chargeid,
+                };
+                [CXHTTPRequest POSTWithURL:@"/index.php/Api/Order/pay" parameters:param callback:^(id responseObject, BOOL isCache, NSError *error) {
+                    if (!error) {
+                        [[CXThirdPayManager sharedApi] aliPayWithPayParam:responseObject[@"data"] success:nil failure:nil];
+                    }
+                }];
+            } else {
+                [weakSelf rechargeWithProductId:iosflag];
+            }
         }
     };
     [sheetView show];
@@ -2609,7 +2651,7 @@
 //                    CXLiveRoomLuckDrawViewController *vc = [CXLiveRoomLuckDrawViewController new];
 //                    [weakSelf.navigationController pushViewController:vc animated:YES];
                 } else if ([cycleItem.ui_type integerValue] == 1001) { // 首充
-                    [weakSelf showRechargeSheetViewRMB:[CXClientModel instance].room.rmb diamond:[CXClientModel instance].room.diamond iosflag:[CXClientModel instance].room.iosflag rechargeType:0 seatUser:nil];
+                    [weakSelf showRechargeSheetViewRMB:[CXClientModel instance].room.rmb diamond:[CXClientModel instance].room.diamond iosflag:[CXClientModel instance].room.iosflag chargeid:[CXClientModel instance].room.chargeId rechargeType:0 seatUser:nil];
                 }
             } else {
                 NSString * linkurl = [cycleItem.linkurl copy];

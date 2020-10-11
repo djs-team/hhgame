@@ -37,23 +37,21 @@
         [self.sexBtn setImage:[UIImage imageNamed:@"nv2"] forState:UIControlStateNormal];
     }
     
-    if (model.state.integerValue == 2 || model.state.integerValue == 3) {
+    if (model.online.integerValue == 3) {
         _stateLabel.text = @"相亲中";
         _stateLabel.backgroundColor = UIColorHex(0x7F3EF0);
-    } else if (model.state.integerValue == 4 || model.state.integerValue == 5) {
+    } else if (model.online.integerValue == 5) {
         _stateLabel.text = @"热聊中";
         _stateLabel.backgroundColor = UIColorHex(0xEF51B2);
-    } else if (model.state.integerValue == 6) {
+    } else if (model.online.integerValue == 6) {
         _stateLabel.text = @"开播中";
         _stateLabel.backgroundColor = UIColorHex(0xFEBF00);
+    } else if (model.online.integerValue == 0) {
+        _stateLabel.text = @"离线";
+        _stateLabel.backgroundColor = UIColorHex(0x818181);
     } else {
-        if ([model.online_str isEqualToString:@"在线"]) {
-            _stateLabel.text = @"在线";
-            _stateLabel.backgroundColor = UIColorHex(0x10E770);
-        } else {
-            _stateLabel.text = @"离线";
-            _stateLabel.backgroundColor = UIColorHex(0x818181);
-        }
+        _stateLabel.text = @"在线";
+        _stateLabel.backgroundColor = UIColorHex(0x10E770);
     }
 }
 

@@ -6,7 +6,7 @@
       <ObjectData Name="Layer" Tag="179" ctype="GameLayerObjectData">
         <Size X="1280.0000" Y="720.0000" />
         <Children>
-          <AbstractNodeData Name="bolck" ActionTag="-310517500" Tag="313" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+          <AbstractNodeData Name="bolck" ActionTag="-310517500" UserData="{&quot;layoutType&quot;:&quot;maxArea&quot;,&quot;screenAlign&quot;:&quot;mid&quot;}" Tag="313" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="640.0000" Y="360.0000" />
@@ -59,16 +59,6 @@
                     <PreSize X="0.5766" Y="0.5903" />
                     <FileData Type="Normal" Path="common/bz_2.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="dataPic" ActionTag="-2122198935" Tag="320" IconVisible="False" LeftMargin="442.3800" RightMargin="299.6200" TopMargin="176.3699" BottomMargin="170.6301" Scale9Enable="True" LeftEage="46" RightEage="28" TopEage="37" BottomEage="28" Scale9OriginX="46" Scale9OriginY="37" Scale9Width="12" Scale9Height="10" ctype="ImageViewObjectData">
-                    <Size X="538.0000" Y="373.0000" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="711.3800" Y="357.1301" />
-                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.5558" Y="0.4960" />
-                    <PreSize X="0.4203" Y="0.5181" />
-                    <FileData Type="Normal" Path="common/db.png" Plist="" />
-                  </AbstractNodeData>
                   <AbstractNodeData Name="Image_20" ActionTag="226107716" Tag="322" IconVisible="False" LeftMargin="334.0704" RightMargin="897.9296" TopMargin="497.6742" BottomMargin="176.3258" LeftEage="15" RightEage="15" TopEage="15" BottomEage="15" Scale9OriginX="15" Scale9OriginY="15" Scale9Width="18" Scale9Height="16" ctype="ImageViewObjectData">
                     <Size X="48.0000" Y="46.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -115,19 +105,194 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="cancellationBtn" ActionTag="638875090" Tag="346" IconVisible="False" LeftMargin="550.4200" RightMargin="527.5800" TopMargin="458.7800" BottomMargin="191.2200" TouchEnable="True" FontSize="38" ButtonText="注销" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="73" Scale9Height="10" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="ExitBtn" ActionTag="638875090" Tag="346" IconVisible="False" LeftMargin="550.4200" RightMargin="527.5800" TopMargin="475.0000" BottomMargin="175.0000" TouchEnable="True" FontSize="38" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="73" Scale9Height="10" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="202.0000" Y="70.0000" />
+                <Children>
+                  <AbstractNodeData Name="Text_35" ActionTag="-1887370636" Tag="260" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="40.5000" RightMargin="40.5000" TopMargin="13.0000" BottomMargin="27.0000" FontSize="30" LabelText="退出登录" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="121.0000" Y="30.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="101.0000" Y="42.0000" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5000" Y="0.6000" />
+                    <PreSize X="0.5990" Y="0.4286" />
+                    <FontResource Type="Normal" Path="font/hkhbtW12.ttc" Plist="" />
+                    <OutlineColor A="255" R="255" G="0" B="0" />
+                    <ShadowColor A="255" R="110" G="110" B="110" />
+                  </AbstractNodeData>
+                </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="651.4200" Y="226.2200" />
+                <Position X="651.4200" Y="210.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5089" Y="0.3142" />
+                <PrePosition X="0.5089" Y="0.2917" />
                 <PreSize X="0.1578" Y="0.0972" />
                 <TextColor A="255" R="255" G="255" B="255" />
                 <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
                 <NormalFileData Type="Normal" Path="personal/gexx_7.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Node1" ActionTag="-1682740495" Tag="261" IconVisible="True" PositionPercentXEnabled="True" LeftMargin="640.0000" RightMargin="640.0000" TopMargin="270.0000" BottomMargin="450.0000" ctype="SingleNodeObjectData">
+                <Size X="0.0000" Y="0.0000" />
+                <Children>
+                  <AbstractNodeData Name="Name" ActionTag="975298752" Tag="262" IconVisible="False" LeftMargin="-295.0000" RightMargin="205.0000" TopMargin="-15.0000" BottomMargin="-15.0000" FontSize="30" LabelText="音乐：" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="90.0000" Y="30.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="-250.0000" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="139" G="105" B="20" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <OutlineColor A="255" R="255" G="0" B="0" />
+                    <ShadowColor A="255" R="110" G="110" B="110" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="MusicSlider" ActionTag="669313452" Tag="264" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="-169.0000" RightMargin="-169.0000" TopMargin="-15.0000" BottomMargin="-15.0000" TouchEnable="True" PercentInfo="60" ctype="SliderObjectData">
+                    <Size X="338.0000" Y="30.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <BackGroundData Type="Normal" Path="set/sz_1.png" Plist="" />
+                    <ProgressBarData Type="Normal" Path="set/sz_3.png" Plist="" />
+                    <BallNormalData Type="Normal" Path="set/sz_2.png" Plist="" />
+                    <BallPressedData Type="Normal" Path="set/sz_2.png" Plist="" />
+                    <BallDisabledData Type="Normal" Path="set/sz_2.png" Plist="" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="MusicBtn" ActionTag="-1311041773" Tag="279" IconVisible="False" LeftMargin="222.0000" RightMargin="-278.0000" TopMargin="-29.0000" BottomMargin="-29.0000" TouchEnable="True" CheckedState="True" ctype="CheckBoxObjectData">
+                    <Size X="56.0000" Y="58.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="250.0000" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <NormalBackFileData Type="Normal" Path="set/sz_9.png" Plist="" />
+                    <PressedBackFileData Type="Normal" Path="set/sz_9.png" Plist="" />
+                    <DisableBackFileData Type="Normal" Path="set/sz_9.png" Plist="" />
+                    <NodeNormalFileData Type="Normal" Path="set/sz_8.png" Plist="" />
+                    <NodeDisableFileData Type="Normal" Path="set/sz_8.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint />
+                <Position X="640.0000" Y="450.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5000" Y="0.6250" />
+                <PreSize X="0.0000" Y="0.0000" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Node2" ActionTag="1473202287" Tag="266" IconVisible="True" PositionPercentXEnabled="True" LeftMargin="640.0000" RightMargin="640.0000" TopMargin="340.0000" BottomMargin="380.0000" ctype="SingleNodeObjectData">
+                <Size X="0.0000" Y="0.0000" />
+                <Children>
+                  <AbstractNodeData Name="Name" ActionTag="-1170066782" Tag="267" IconVisible="False" LeftMargin="-295.0000" RightMargin="205.0000" TopMargin="-15.0000" BottomMargin="-15.0000" FontSize="30" LabelText="音效：" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="90.0000" Y="30.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="-250.0000" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="139" G="105" B="20" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <OutlineColor A="255" R="255" G="0" B="0" />
+                    <ShadowColor A="255" R="110" G="110" B="110" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="EffectSlider" ActionTag="-413651650" Tag="268" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="-169.0000" RightMargin="-169.0000" TopMargin="-15.0000" BottomMargin="-15.0000" TouchEnable="True" PercentInfo="60" ctype="SliderObjectData">
+                    <Size X="338.0000" Y="30.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <BackGroundData Type="Normal" Path="set/sz_1.png" Plist="" />
+                    <ProgressBarData Type="Normal" Path="set/sz_3.png" Plist="" />
+                    <BallNormalData Type="Normal" Path="set/sz_2.png" Plist="" />
+                    <BallPressedData Type="Normal" Path="set/sz_2.png" Plist="" />
+                    <BallDisabledData Type="Normal" Path="set/sz_2.png" Plist="" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="EffectBtn" ActionTag="-371134851" Tag="278" IconVisible="False" LeftMargin="222.5000" RightMargin="-277.5000" TopMargin="-28.0000" BottomMargin="-28.0000" TouchEnable="True" CheckedState="True" ctype="CheckBoxObjectData">
+                    <Size X="55.0000" Y="56.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="250.0000" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <NormalBackFileData Type="Normal" Path="set/sz_6.png" Plist="" />
+                    <PressedBackFileData Type="Normal" Path="set/sz_6.png" Plist="" />
+                    <DisableBackFileData Type="Normal" Path="set/sz_6.png" Plist="" />
+                    <NodeNormalFileData Type="Normal" Path="set/sz_7.png" Plist="" />
+                    <NodeDisableFileData Type="Normal" Path="set/sz_7.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint />
+                <Position X="640.0000" Y="380.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5000" Y="0.5278" />
+                <PreSize X="0.0000" Y="0.0000" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Node3" ActionTag="-522213" Tag="270" IconVisible="True" PositionPercentXEnabled="True" LeftMargin="640.0000" RightMargin="640.0000" TopMargin="420.0000" BottomMargin="300.0000" ctype="SingleNodeObjectData">
+                <Size X="0.0000" Y="0.0000" />
+                <Children>
+                  <AbstractNodeData Name="Name" ActionTag="-1587333089" Tag="271" IconVisible="False" LeftMargin="-295.0000" RightMargin="205.0000" TopMargin="-15.0000" BottomMargin="-15.0000" FontSize="30" LabelText="表情：" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="90.0000" Y="30.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="-250.0000" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="139" G="105" B="20" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <OutlineColor A="255" R="255" G="0" B="0" />
+                    <ShadowColor A="255" R="110" G="110" B="110" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="EmojBtn" ActionTag="1047162224" Tag="275" IconVisible="False" LeftMargin="-155.9774" RightMargin="69.9774" TopMargin="-12.3890" BottomMargin="-21.6110" TouchEnable="True" CheckedState="True" ctype="CheckBoxObjectData">
+                    <Size X="86.0000" Y="34.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="-112.9774" Y="-4.6110" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <NormalBackFileData Type="Normal" Path="set/sz_4.png" Plist="" />
+                    <PressedBackFileData Type="Normal" Path="set/sz_4.png" Plist="" />
+                    <DisableBackFileData Type="Default" Path="Default/CheckBox_Disable.png" Plist="" />
+                    <NodeNormalFileData Type="Normal" Path="set/sz_2.png" Plist="" />
+                    <NodeDisableFileData Type="Normal" Path="set/sz_2.png" Plist="" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Name_0" ActionTag="583244140" Tag="274" IconVisible="False" LeftMargin="45.3264" RightMargin="-135.3264" TopMargin="-13.3154" BottomMargin="-16.6846" FontSize="30" LabelText="方言：" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="90.0000" Y="30.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="90.3264" Y="-1.6846" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="139" G="105" B="20" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <OutlineColor A="255" R="255" G="0" B="0" />
+                    <ShadowColor A="255" R="110" G="110" B="110" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="LaguageBtn" ActionTag="1960847788" Tag="276" IconVisible="False" LeftMargin="170.6758" RightMargin="-256.6758" TopMargin="-13.6307" BottomMargin="-20.3693" TouchEnable="True" CheckedState="True" ctype="CheckBoxObjectData">
+                    <Size X="86.0000" Y="34.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="213.6758" Y="-3.3693" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <NormalBackFileData Type="Normal" Path="set/sz_4.png" Plist="" />
+                    <PressedBackFileData Type="Normal" Path="set/sz_4.png" Plist="" />
+                    <DisableBackFileData Type="Default" Path="Default/CheckBox_Disable.png" Plist="" />
+                    <NodeNormalFileData Type="Normal" Path="set/sz_2.png" Plist="" />
+                    <NodeDisableFileData Type="Normal" Path="set/sz_2.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint />
+                <Position X="640.0000" Y="300.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5000" Y="0.4167" />
+                <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />

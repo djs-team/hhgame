@@ -192,11 +192,13 @@ load('game/ui/layer/arena/ArenaLayer', function () {
                 cell.getChildByName('signBtn').getChildByName('signPropCnt').setString(arenaData.matchfee)
 
                 cell._sendData = {
-                    fromType: 'arena',//请求参加比赛时，传给服务器
+                    pExtend: 'match_arena',//请求参加比赛时，传给服务器
                     roomMode: arenaData.matchMode,//请求参加比赛时，传给服务器
                     roomId: arenaData.matchId,//请求参加比赛时，传给服务器
                     startTime: arenaData.time,
                     format: arenaData.format,
+                    consumptionType: arenaData.consumptionType,//比赛场入场费消耗类型 1金币2钻石
+                    matchfee: arenaData.matchfee,//报名费
                     rankingList: arenaData.rankingList,
                 }
 
@@ -222,6 +224,53 @@ load('game/ui/layer/arena/ArenaLayer', function () {
         },
 
         onSignMatchClick: function (sender) {
+
+            let data = sender.getParent()._sendData
+            let consumptionType = data.consumptionType
+            let matchfee = data.matchfee
+            let myPropCnt
+            let propName
+
+            if(consumptionType == 1){
+                myPropCnt = appInstance.dataManager().getUserData().coin
+                propName = '金币'
+            }else{
+                myPropCnt = appInstance.dataManager().getUserData().diamonds
+                propName = '钻石'
+            }
+
+
+            if(matchfee > myPropCnt ){
+                let dialogMsg = {
+                    ViewType: 1,
+                    TileName : '提 示',
+                    LeftBtnName: '取 消',
+                    RightBtnName : '确认',
+                    RightBtnClick : function () {
+                        appInstance.gameAgent().addPopUI(ResConfig.Ui.CoinShopLayer)
+                        appInstance.uiManager().removeUI(this)
+                    }.bind(this),
+
+                    SayText : '您的' + propName + '不足,是否购买'
+                }
+                appInstance.gameAgent().addDialogUI(dialogMsg)
+                return
+
+            }
+
+            this.onSignMatchFunction(data.roomMode,data.roomId,data.pExtend)
+        },
+
+        onSignMatchFunction: function (roomMode,roomId,pExtend) {
+
+            let msg = {
+                roomMode: roomMode,
+                roomId: roomId,
+                pExtend: pExtend,
+                gameType: ''
+            }
+
+            appInstance.gameAgent().tcpGame().enterTable(msg)
 
         },
 

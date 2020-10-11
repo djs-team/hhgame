@@ -75,6 +75,8 @@ static CXIPAPurchaseManager * manager = nil;
 
 #pragma mark -- 发起购买的方法
 - (void)inAppPurchaseWithProductID:(NSString *)productID iapResult:(InAppPurchaseResult)iapResult{
+    [self startManager];
+    
     [MBProgressHUD showHUD];
     [self removeAllUncompleteTransactionsBeforeNewPurchase];
     
@@ -179,11 +181,6 @@ static CXIPAPurchaseManager * manager = nil;
     if (self.iapResultBlock) {
         self.iapResultBlock(NO, nil, [error localizedDescription]);
     }
-}
-
-//如果没有设置监听购买结果将直接跳至反馈结束；
-- (void)requestDidFinish:(SKRequest *)request{
-    [MBProgressHUD hideHUD];
 }
 
 #pragma mark -- 监听结果

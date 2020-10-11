@@ -3,6 +3,7 @@ load('game/data/UserData', function () {
     let GameConfig = include('game/config/GameConfig')
     let UserData = cc.Class.extend({
         platform: -1, //平台
+        pid: 0, //玩家ID
         account: -1, // 账号
         token: -1, // 临时令牌
         key: -1, // 登陆成功后，服务端存的session KEY

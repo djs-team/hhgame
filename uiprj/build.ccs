@@ -780,6 +780,19 @@
           <Image Name="js_zzl1.png" />
           <Image Name="js_zzl1_1.png" />
         </Folder>
+        <Folder Name="set">
+          <Image Name="sz_1.png" />
+          <Image Name="sz_10.png" />
+          <Image Name="sz_11.png" />
+          <Image Name="sz_2.png" />
+          <Image Name="sz_3.png" />
+          <Image Name="sz_4.png" />
+          <Image Name="sz_5.png" />
+          <Image Name="sz_6.png" />
+          <Image Name="sz_7.png" />
+          <Image Name="sz_8.png" />
+          <Image Name="sz_9.png" />
+        </Folder>
         <Folder Name="sign">
           <Image Name="qd_1.png" />
           <Image Name="qd_10.png" />

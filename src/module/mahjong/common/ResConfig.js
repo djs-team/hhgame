@@ -17,6 +17,9 @@ load('module/mahjong/common/ResConfig', function () {
       DeskBgLayer: PrefixPath.codePath + 'ui/DeskBgLayer',
       DeskCardLayer: PrefixPath.codePath + 'ui/DeskCardLayer',
       DeskHeadLayer: PrefixPath.codePath + 'ui/DeskHeadLayer',
+      MatchBigResultLayer: PrefixPath.codePath + 'ui/MatchBigResultLayer',
+      MatchJinjiLayer: PrefixPath.codePath + 'ui/MatchJinjiLayer',
+      MatchTaotaiLayer: PrefixPath.codePath + 'ui/MatchTaotaiLayer',
     },
 
     /**
@@ -29,6 +32,11 @@ load('module/mahjong/common/ResConfig', function () {
       DeskHeadLayer: PrefixPath.resPath + 'DeskHeadLayer.json',
       DeskTopLayer: PrefixPath.resPath + 'DeskTopLayer.json',
       DeskResultLayer: PrefixPath.resPath + 'DeskResultLayer.json',
+      MatchBigResultLayer: PrefixPath.resPath + 'MatchBigResultLayer.json',
+      MatchJinjiLayer: PrefixPath.resPath + 'MatchJinjiLayer.json',
+      MatchTaotaiLayer: PrefixPath.resPath + 'MatchTaotaiLayer.json',
+
+
     },
     /**
      *  模块的需要的大图文件

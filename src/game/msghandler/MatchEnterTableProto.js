@@ -35,6 +35,7 @@ load('game/msghandler/MatchEnterTableProto', function () {
                     appInstance.sendNotification(Event.MatchJinjiGaming, msg)
                     break
                 case 2:
+                    appInstance.gameAgent().Tips('MatchEnterTableProto 这条消息state为 2 淘汰')
                     break
                 case 3:
                      dialogMsg = {

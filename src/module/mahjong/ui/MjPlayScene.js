@@ -12,7 +12,7 @@ load('module/mahjong/ui/MjPlayScene', function () {
     let DeskTopLayer = include('module/mahjong/ui/DeskTopLayer')
     let DeskResultLayer = include('module/mahjong/ui/DeskResultLayer')
     let MatchJinjiLayer = include('module/mahjong/ui/MatchJinjiLayer')
-    let MatchTaotaiLayer = include('module/mahjong/ui/MatchTaotaiLayer')
+    let MatchResultLayer = include('module/mahjong/ui/MatchResultLayer')
     let MatchBigResultLayer = include('module/mahjong/ui/MatchBigResultLayer')
     let Scene = BaseScene.extend({
         _className: 'MjPlayScene',
@@ -44,12 +44,12 @@ load('module/mahjong/ui/MjPlayScene', function () {
             this.MatchJinjiLayer.updateView(msg)
         },
 
-        showMatchTaotaiLayer: function (pData) {
-            if (!this.MatchTaotaiLayer) {
-                this.MatchTaotaiLayer = appInstance.uiManager().createUI(MatchTaotaiLayer)
-                this.addChild(this.MatchTaotaiLayer)
+        showMatchResultLayer: function (msg) {
+            if (!this.MatchResultLayer) {
+                this.MatchResultLayer = appInstance.uiManager().createUI(MatchResultLayer)
+                this.addChild(this.MatchResultLayer)
             }
-            this.MatchTaotaiLayer.updateView(pData)
+            this.MatchResultLayer.updateView(msg)
         },
 
         showMatchBigResultLayer: function (pData) {

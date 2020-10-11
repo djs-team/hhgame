@@ -20,6 +20,8 @@ load('module/mahjong/common/TableConfig', function () {
         'AutoPlayProto': 'AutoPlayProto',
         'TableHostingProto': 'TableHostingProto',
         'MatchJinjiGaming': 'MatchJinjiGaming',
+        'MatchResultProto': 'MatchResultProto',
+        'MatchResultBigProto': 'MatchResultBigProto'
     }
 
 

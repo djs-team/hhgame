@@ -1,12 +1,12 @@
 
 /**
- * MatchTaotaiLayer
+ * MatchResultLayer
  */
-load('module/mahjong/ui/MatchTaotaiLayer', function () {
+load('module/mahjong/ui/MatchResultLayer', function () {
     let ResConfig = include('module/mahjong/common/ResConfig')
     let BaseLayer = include('public/ui/BaseLayer')
     let Layer = BaseLayer.extend({
-        _className: 'MatchTaotaiLayer',
+        _className: 'MatchResultLayer',
         RES_BINDING: function () {
             return {
                 'pnl/HeadNd': {  },
@@ -35,13 +35,19 @@ load('module/mahjong/ui/MatchTaotaiLayer', function () {
         },
 
         ctor: function () {
-            this._super(ResConfig.View.MatchTaotaiLayer)
+            this._super(ResConfig.View.MatchResultLayer)
         },
 
         updateView: function (msg) {
-            this.NameTxt.setString('玩家名字')
-            this.MatchNameTxt.setString('比赛名字')
-            this.RankTxt.setString('第一名')
+            let reward
+            if (msg.mcState === 0) {
+                reward = '  获奖'
+            } else if (msg.mcState === 1) {
+                reward = '  淘汰'
+            }
+            this.NameTxt.setString(msg.playerName + reward)
+            this.MatchNameTxt.setString(msg.matchName)
+            this.RankTxt.setString('第' + msg.ranking + '名')
         },
 
         onEnter: function () {

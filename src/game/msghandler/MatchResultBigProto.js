@@ -6,8 +6,7 @@ load('game/msghandler/MatchResultBigProto', function () {
     let baseProto = include('public/network/BaseProto')
     let GameEvent = include('game/config/GameEvent')
     let GameConfig = include('game/config/GameConfig')
-    let TableConfig = include('module/mahjong/common/TableConfig')
-    let TableEvent = TableConfig.Event
+    let Event = include('module/mahjong/common/TableConfig').Event
     let proto = baseProto.extend({
         _name: 'MatchResultBigProto',
         _offMsgId: 39,
@@ -17,6 +16,7 @@ load('game/msghandler/MatchResultBigProto', function () {
 
         handleMsg: function (msg) {
             this._super(msg)
+            appInstance.sendNotification(Event.MatchResultProto, msg)
         },
 
         initData: function () {

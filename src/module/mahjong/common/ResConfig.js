@@ -19,7 +19,7 @@ load('module/mahjong/common/ResConfig', function () {
       DeskHeadLayer: PrefixPath.codePath + 'ui/DeskHeadLayer',
       MatchBigResultLayer: PrefixPath.codePath + 'ui/MatchBigResultLayer',
       MatchJinjiLayer: PrefixPath.codePath + 'ui/MatchJinjiLayer',
-      MatchTaotaiLayer: PrefixPath.codePath + 'ui/MatchTaotaiLayer',
+      MatchResultLayer: PrefixPath.codePath + 'ui/MatchResultLayer',
     },
 
     /**
@@ -34,7 +34,7 @@ load('module/mahjong/common/ResConfig', function () {
       DeskResultLayer: PrefixPath.resPath + 'DeskResultLayer.json',
       MatchBigResultLayer: PrefixPath.resPath + 'MatchBigResultLayer.json',
       MatchJinjiLayer: PrefixPath.resPath + 'MatchJinjiLayer.json',
-      MatchTaotaiLayer: PrefixPath.resPath + 'MatchTaotaiLayer.json',
+      MatchResultLayer: PrefixPath.resPath + 'MatchResultLayer.json',
 
 
     },

@@ -371,7 +371,7 @@
         <Project Name="DeskTopLayer.csd" Type="Layer" />
         <Project Name="MatchBigResultLayer.csd" Type="Layer" />
         <Project Name="MatchJinjiLayer.csd" Type="Layer" />
-        <Project Name="MatchTaotaiLayer.csd" Type="Layer" />
+        <Project Name="MatchResultLayer.csd" Type="Layer" />
         <Project Name="MjPlayScene.csd" Type="Scene" />
       </RootFolder>
     </Group>

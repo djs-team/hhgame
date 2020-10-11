@@ -15,11 +15,11 @@ load('module/mahjong/ui/MatchBigResultLayer', function () {
             cc.p(360, 0)
         ],
         _itemInfo: [
-            {name: '坐庄次数'},
-            {name: '胡牌次数'},
-            {name: '点炮次数'},
-            {name: '摸宝次数'},
-            {name: '宝中宝'},
+            {name: '坐庄次数', key: 'pZuoZhuang'},
+            {name: '胡牌次数', key: 'pHuTimes'},
+            {name: '点炮次数', key: 'pDianPao'},
+            {name: '摸宝次数', key: 'pMoBao'},
+            {name: '宝中宝', key: 'pBaozhongBao'},
         ],
         RES_BINDING: function () {
             return {
@@ -40,29 +40,37 @@ load('module/mahjong/ui/MatchBigResultLayer', function () {
         },
 
         updateView: function (msg) {
-            for (let i = 0; i < 4; ++i) {
-                this.updatePlayerInfo(i)
+            let players = msg.pPlayer
+            for (let i = 0; i < players.length; ++i) {
+                this.updatePlayerInfo(players[i], i)
             }
         },
 
-        updatePlayerInfo: function (pinfo) {
+        updatePlayerInfo: function (pinfo, index) {
             let pCell = this.PlayerCell.clone()
             pCell.setVisible(true)
             this.midNd.addChild(pCell)
-            pCell.setPosition(this._playerPos[pinfo])
+            pCell.setPosition(this._playerPos[index])
 
-            pCell.getChildByName('name').setString(pinfo)
-            pCell.getChildByName('Win').setVisible(true)
+            pCell.getChildByName('name').setString(pinfo.pid)
+
+            // 这个晋级与否 需要跟服务器核对一下
+            pCell.getChildByName('Win').setVisible(pinfo.pOffsetCoins > 0)
+
             pCell.getChildByName('Head').setVisible(true)
-            pCell.getChildByName('winNum').setString('总积分不知道')
-
+            pCell.getChildByName('winNum').setString('总积分  ' + pinfo.pCoins)
+            let max = 0
             for (let i = 0; i < 5; ++i) {
-                pCell.getChildByName('Item' + i).getChildByName('Name').setString(this._itemInfo[i].name)
-                pCell.getChildByName('Item' + i).getChildByName('Num').setString(22)
-                pCell.getChildByName('Item' + i).getChildByName('LoadingBar').setPercent(10)
+                max = max < pinfo[this._itemInfo[i].key] ? pinfo[this._itemInfo[i].key] : max
             }
 
 
+            for (let i = 0; i < 5; ++i) {
+                pCell.getChildByName('Item' + i).getChildByName('Name').setString(this._itemInfo[i].name)
+                let num = pinfo[this._itemInfo[i].key]
+                pCell.getChildByName('Item' + i).getChildByName('Num').setString(num)
+                pCell.getChildByName('Item' + i).getChildByName('LoadingBar').setPercent(Math.floor(num / max * 100))
+            }
         },
 
         initView: function () {

@@ -17,7 +17,7 @@ load('module/mahjong/ui/MatchJinjiLayer', function () {
         ctor: function () {
             this._super(ResConfig.View.MatchJinjiLayer)
         },
-        
+
         updateView: function (msg) {
             msg = {}
             msg.bm1 = 5

@@ -8,6 +8,19 @@ load('module/mahjong/ui/MatchBigResultLayer', function () {
     let TableConfig = include('module/mahjong/common/TableConfig')
     let Layer = BaseLayer.extend({
         _className: 'MatchBigResultLayer',
+        _playerPos: [
+            cc.p(-360, 0),
+            cc.p(-120, 0),
+            cc.p(120, 0),
+            cc.p(360, 0)
+        ],
+        _itemInfo: [
+            {name: '坐庄次数'},
+            {name: '胡牌次数'},
+            {name: '点炮次数'},
+            {name: '摸宝次数'},
+            {name: '宝中宝'},
+        ],
         RES_BINDING: function () {
             return {
                 'topPnl/BackBtn': { onClicked: this.onBackBtnClick },
@@ -17,32 +30,45 @@ load('module/mahjong/ui/MatchBigResultLayer', function () {
         },
 
         onBackBtnClick: function () {
-
+            let HallScene = include('game/ui/scene/HallScene')
+            appInstance.sceneManager().replaceScene(new HallScene())
         },
+
         ctor: function () {
             this._super(ResConfig.View.MatchBigResultLayer)
+            this.initView()
         },
 
-        initData: function (pData) {
-            cc.log('=====================topLayer=========' + JSON.stringify(pData))
-            this._selfInfo = pData.getSelfInfo()
-            this._tData = pData.tableData
-            this._actionCell = {}
-            this._chiCell = []
+        updateView: function (msg) {
+            for (let i = 0; i < 4; ++i) {
+                this.updatePlayerInfo(i)
+            }
         },
 
-        initView: function (pData) {
+        updatePlayerInfo: function (pinfo) {
+            let pCell = this.PlayerCell.clone()
+            pCell.setVisible(true)
+            this.midNd.addChild(pCell)
+            pCell.setPosition(this._playerPos[pinfo])
+
+            pCell.getChildByName('name').setString(pinfo)
+            pCell.getChildByName('Win').setVisible(true)
+            pCell.getChildByName('Head').setVisible(true)
+            pCell.getChildByName('winNum').setString('总积分不知道')
+
+            for (let i = 0; i < 5; ++i) {
+                pCell.getChildByName('Item' + i).getChildByName('Name').setString(this._itemInfo[i].name)
+                pCell.getChildByName('Item' + i).getChildByName('Num').setString(22)
+                pCell.getChildByName('Item' + i).getChildByName('LoadingBar').setPercent(10)
+            }
+
 
         },
 
-
-        clearView: function () {
-            this.hideAction()
+        initView: function () {
+            this.PlayerCell.setVisible(false)
         },
 
-        updateView: function (tData) {
-
-        },
         onEnter: function () {
             this._super()
         },

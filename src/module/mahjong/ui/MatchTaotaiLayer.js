@@ -38,16 +38,10 @@ load('module/mahjong/ui/MatchTaotaiLayer', function () {
             this._super(ResConfig.View.MatchTaotaiLayer)
         },
 
-        initData: function (pData) {
-            cc.log('=====================topLayer=========' + JSON.stringify(pData))
-            this._selfInfo = pData.getSelfInfo()
-            this._tData = pData.tableData
-            this._actionCell = {}
-            this._chiCell = []
-        },
-
-        initView: function (pData) {
-            this.initData(pData)
+        updateView: function (msg) {
+            this.NameTxt.setString('玩家名字')
+            this.MatchNameTxt.setString('比赛名字')
+            this.RankTxt.setString('第一名')
         },
 
         onEnter: function () {

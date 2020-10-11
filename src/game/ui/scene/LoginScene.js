@@ -69,11 +69,11 @@ load('game/ui/scene/LoginScene', function () {
         },
 
         goTest: function () {
-            // let MjPlayScene = include('module/mahjong/ui/MjPlayScene')
-            // appInstance.sceneManager().replaceScene(new MjPlayScene())
-            let TurnTableLayer = include('game/ui/layer/turntable/TurnTableLayer')
-            let TurnTableLayerUI = appInstance.uiManager().createPopUI(TurnTableLayer)
-            appInstance.sceneManager().getCurScene().addChild(TurnTableLayerUI)
+            let MjPlayScene = include('module/mahjong/ui/MjPlayScene')
+            appInstance.sceneManager().replaceScene(new MjPlayScene())
+            // let TurnTableLayer = include('game/ui/layer/turntable/TurnTableLayer')
+            // let TurnTableLayerUI = appInstance.uiManager().createPopUI(TurnTableLayer)
+            // appInstance.sceneManager().getCurScene().addChild(TurnTableLayerUI)
         },
 
         onagreeBtnClick: function () {

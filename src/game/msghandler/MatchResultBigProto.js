@@ -16,7 +16,7 @@ load('game/msghandler/MatchResultBigProto', function () {
 
         handleMsg: function (msg) {
             this._super(msg)
-            appInstance.sendNotification(Event.MatchResultProto, msg)
+            appInstance.sendNotification(Event.MatchResultBigProto, msg)
         },
 
         initData: function () {

@@ -69,10 +69,12 @@ load('module/mahjong/ui/DeskTopLayerMdt', function () {
         initView: function () {
             let pData = appInstance.dataManager().getPlayData()
             this.view.initView(pData)
+            this.UpdateView()
         },
 
         onRegister: function () {
             this.initView()
+
 
         },
 

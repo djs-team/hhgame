@@ -10,6 +10,7 @@ load('module/mahjong/ui/DeskResultLayer', function () {
     let BaseLayer = include('public/ui/BaseLayer')
     let DeskResultLayerMdt = include('module/mahjong/ui/DeskResultLayerMdt')
     let TableConfig = include('module/mahjong/common/TableConfig')
+    let TableEvent = TableConfig.Event
     let HuType = TableConfig.HuType
     let Layer = BaseLayer.extend({
         _className: 'DeskResultLayer',
@@ -27,7 +28,7 @@ load('module/mahjong/ui/DeskResultLayer', function () {
         },
         RES_BINDING: function () {
             return {
-                'topPnl/BackBtn': { onClicked: this.onBackHallBtnClick },
+                'topPnl/CloseBtn': { onClicked: this.onCloseBtnClick },
                 'midPnl/midNd': {  },
                 'midPnl/midNd/PlayerCell': {  },
                 'bmPnl': {  },
@@ -40,9 +41,19 @@ load('module/mahjong/ui/DeskResultLayer', function () {
             }
         },
 
-        ctor: function () {
+        ctor: function (msg) {
             this._super(ResConfig.View.DeskResultLayer)
+            this._msg = msg
             this.registerMediator(new DeskResultLayerMdt(this))
+            cc.log('=======DeskResultLayer==========' + JSON.stringify(msg))
+        },
+
+        onCloseBtnClick: function () {
+            if (this._isMatch) {
+                appInstance.uiManager().removeUI(this)
+            } else {
+                this.onBackHallBtnClick()
+            }
         },
 
         onBackHallBtnClick: function () {
@@ -71,6 +82,7 @@ load('module/mahjong/ui/DeskResultLayer', function () {
 
         initData: function (pData) {
             this._pData = pData
+            this._isMatch = pData.isMatch
             this._playerNum = pData.pPlayerNum || 2
             this._players = pData.players
             this._pos = this._posConst[this._playerNum]
@@ -97,6 +109,24 @@ load('module/mahjong/ui/DeskResultLayer', function () {
             let initInfo = {}
             initInfo._index = 0
             this.onInfoBtnClick(initInfo)
+
+            if (this._isMatch) {
+                this.BackHallBtn.setVisible(false)
+                this.InviteFriendBtn.setVisible(false)
+                this.NextGameBtn.setVisible(false)
+                cc.log('===========msg============' + JSON.stringify(this._msg))
+                if (this._msg) {
+                    cc.log('=============this._msg.pIsOver==========' + this._msg.pIsOver)
+                    if (this._msg.pIsOver === 1) {
+                        appInstance.sendNotification(TableEvent.clearTableView)
+                    } else {
+                        cc.log('===========================清理其他数据===============')
+                        appInstance.sendNotification(TableEvent.clearTableGaming)
+                    }
+                }
+            } else {
+                appInstance.sendNotification(TableEvent.clearTableView)
+            }
         },
 
         onInfoBtnClick: function (sender) {

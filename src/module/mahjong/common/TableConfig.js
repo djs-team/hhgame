@@ -21,7 +21,8 @@ load('module/mahjong/common/TableConfig', function () {
         'TableHostingProto': 'TableHostingProto',
         'MatchJinjiGaming': 'MatchJinjiGaming',
         'MatchResultProto': 'MatchResultProto',
-        'MatchResultBigProto': 'MatchResultBigProto'
+        'MatchResultBigProto': 'MatchResultBigProto',
+        'clearTableGaming': 'clearTableGaming'
     }
 
 

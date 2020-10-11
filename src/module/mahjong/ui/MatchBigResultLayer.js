@@ -37,6 +37,7 @@ load('module/mahjong/ui/MatchBigResultLayer', function () {
         ctor: function () {
             this._super(ResConfig.View.MatchBigResultLayer)
             this.initView()
+            cc.log('==================MatchBigResultLayer==========')
         },
 
         updateView: function (msg) {
@@ -64,12 +65,15 @@ load('module/mahjong/ui/MatchBigResultLayer', function () {
                 max = max < pinfo[this._itemInfo[i].key] ? pinfo[this._itemInfo[i].key] : max
             }
 
-
             for (let i = 0; i < 5; ++i) {
                 pCell.getChildByName('Item' + i).getChildByName('Name').setString(this._itemInfo[i].name)
                 let num = pinfo[this._itemInfo[i].key]
                 pCell.getChildByName('Item' + i).getChildByName('Num').setString(num)
-                pCell.getChildByName('Item' + i).getChildByName('LoadingBar').setPercent(Math.floor(num / max * 100))
+                let percentNum = max
+                if (max !== 0) {
+                    percentNum = Math.floor(num / max * 100)
+                }
+                pCell.getChildByName('Item' + i).getChildByName('LoadingBar').setPercent(percentNum)
             }
         },
 

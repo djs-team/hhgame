@@ -149,7 +149,7 @@
                   "Y": 0.5
                 },
                 "PreSize": {
-                  "X": 0.5313,
+                  "X": 0.5312,
                   "Y": 0.625
                 },
                 "LeftMargin": 300.0,
@@ -252,6 +252,8 @@
                     "ColorVector": {
                       "ScaleY": 1.0
                     },
+                    "Scale9Width": 1,
+                    "Scale9Height": 1,
                     "TouchEnable": true,
                     "AnchorPoint": {
                       "ScaleX": 0.5,
@@ -290,7 +292,7 @@
                   },
                   {
                     "FontSize": 25,
-                    "LabelText": "玩家昵称几个字",
+                    "LabelText": "玩家昵称几个字获奖",
                     "VerticalAlignmentType": "VT_Center",
                     "OutlineColor": {
                       "G": 0,
@@ -329,13 +331,13 @@
                       "Y": 0.0
                     },
                     "LeftMargin": 50.0,
-                    "RightMargin": -225.0,
+                    "RightMargin": -275.0,
                     "TopMargin": -23.983,
                     "BottomMargin": -1.017,
                     "Tag": 60,
                     "ActionTag": 972849979,
                     "Size": {
-                      "X": 175.0,
+                      "X": 225.0,
                       "Y": 25.0
                     },
                     "Name": "NameTxt",

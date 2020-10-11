@@ -89,7 +89,7 @@
                         <PreSize X="1.0000" Y="1.0000" />
                         <FileData Type="Normal" Path="result/ssc_22.png" Plist="" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Head" ActionTag="-1193272307" Tag="45" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="75.0000" RightMargin="75.0000" TopMargin="11.8925" BottomMargin="258.1075" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+                      <AbstractNodeData Name="Head" ActionTag="-1193272307" Tag="45" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="75.0000" RightMargin="75.0000" TopMargin="11.8925" BottomMargin="258.1075" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                         <Size X="80.0000" Y="80.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="115.0000" Y="298.1075" />
@@ -123,18 +123,18 @@
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="winNum" ActionTag="804885693" Tag="405" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="44.5000" RightMargin="44.5000" TopMargin="297.5000" BottomMargin="27.5000" FontSize="25" LabelText="积分    800" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                        <Size X="141.0000" Y="25.0000" />
+                      <AbstractNodeData Name="winNum" ActionTag="804885693" Tag="405" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="35.0000" RightMargin="35.0000" TopMargin="300.0000" BottomMargin="30.0000" FontSize="20" LabelText="积分    80000000" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="160.0000" Y="20.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="115.0000" Y="40.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="165" B="0" />
                         <PrePosition X="0.5000" Y="0.1143" />
-                        <PreSize X="0.6130" Y="0.0714" />
+                        <PreSize X="0.6957" Y="0.0571" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Item0" ActionTag="197765804" Tag="46" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="14.9751" RightMargin="15.0249" TopMargin="132.0000" BottomMargin="182.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+                      <AbstractNodeData Name="Item0" ActionTag="197765804" Tag="46" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="14.9770" RightMargin="15.0230" TopMargin="132.0000" BottomMargin="182.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                         <Size X="200.0000" Y="36.0000" />
                         <Children>
                           <AbstractNodeData Name="Name" ActionTag="-785773599" Tag="47" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="10.0000" RightMargin="126.0000" TopMargin="10.0000" BottomMargin="10.0000" FontSize="16" LabelText="坐庄次数" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -171,7 +171,7 @@
                           </AbstractNodeData>
                         </Children>
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="114.9751" Y="200.0000" />
+                        <Position X="114.9770" Y="200.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
                         <PrePosition X="0.4999" Y="0.5714" />
@@ -181,7 +181,7 @@
                         <EndColor A="255" R="255" G="255" B="255" />
                         <ColorVector ScaleY="1.0000" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Item1" ActionTag="1234581565" Tag="50" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="14.9751" RightMargin="15.0249" TopMargin="162.0000" BottomMargin="152.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                      <AbstractNodeData Name="Item1" ActionTag="1234581565" Tag="50" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="14.9770" RightMargin="15.0230" TopMargin="162.0000" BottomMargin="152.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                         <Size X="200.0000" Y="36.0000" />
                         <Children>
                           <AbstractNodeData Name="Name" ActionTag="-1209566681" Tag="51" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="10.0000" RightMargin="126.0000" TopMargin="10.0000" BottomMargin="10.0000" FontSize="16" LabelText="坐庄次数" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -218,7 +218,7 @@
                           </AbstractNodeData>
                         </Children>
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="114.9751" Y="170.0000" />
+                        <Position X="114.9770" Y="170.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
                         <PrePosition X="0.4999" Y="0.4857" />
@@ -228,7 +228,7 @@
                         <EndColor A="255" R="255" G="255" B="255" />
                         <ColorVector ScaleY="1.0000" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Item2" ActionTag="1261408964" Tag="54" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="14.9751" RightMargin="15.0249" TopMargin="192.0000" BottomMargin="122.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                      <AbstractNodeData Name="Item2" ActionTag="1261408964" Tag="54" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="14.9770" RightMargin="15.0230" TopMargin="192.0000" BottomMargin="122.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                         <Size X="200.0000" Y="36.0000" />
                         <Children>
                           <AbstractNodeData Name="Name" ActionTag="1665133356" Tag="55" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="10.0000" RightMargin="126.0000" TopMargin="10.0000" BottomMargin="10.0000" FontSize="16" LabelText="坐庄次数" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -265,7 +265,7 @@
                           </AbstractNodeData>
                         </Children>
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="114.9751" Y="140.0000" />
+                        <Position X="114.9770" Y="140.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
                         <PrePosition X="0.4999" Y="0.4000" />
@@ -275,7 +275,7 @@
                         <EndColor A="255" R="255" G="255" B="255" />
                         <ColorVector ScaleY="1.0000" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Item3" ActionTag="414887695" Tag="58" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="14.9751" RightMargin="15.0249" TopMargin="222.0000" BottomMargin="92.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                      <AbstractNodeData Name="Item3" ActionTag="414887695" Tag="58" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="14.9770" RightMargin="15.0230" TopMargin="222.0000" BottomMargin="92.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                         <Size X="200.0000" Y="36.0000" />
                         <Children>
                           <AbstractNodeData Name="Name" ActionTag="536709746" Tag="59" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="10.0000" RightMargin="126.0000" TopMargin="10.0000" BottomMargin="10.0000" FontSize="16" LabelText="坐庄次数" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -312,7 +312,7 @@
                           </AbstractNodeData>
                         </Children>
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="114.9751" Y="110.0000" />
+                        <Position X="114.9770" Y="110.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
                         <PrePosition X="0.4999" Y="0.3143" />
@@ -322,7 +322,7 @@
                         <EndColor A="255" R="255" G="255" B="255" />
                         <ColorVector ScaleY="1.0000" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Item4" ActionTag="1503270745" Tag="62" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="14.9751" RightMargin="15.0249" TopMargin="252.0000" BottomMargin="62.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                      <AbstractNodeData Name="Item4" ActionTag="1503270745" Tag="62" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="14.9770" RightMargin="15.0230" TopMargin="252.0000" BottomMargin="62.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                         <Size X="200.0000" Y="36.0000" />
                         <Children>
                           <AbstractNodeData Name="Name" ActionTag="-913373197" Tag="63" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="10.0000" RightMargin="126.0000" TopMargin="10.0000" BottomMargin="10.0000" FontSize="16" LabelText="坐庄次数" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -359,7 +359,7 @@
                           </AbstractNodeData>
                         </Children>
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="114.9751" Y="80.0000" />
+                        <Position X="114.9770" Y="80.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
                         <PrePosition X="0.4999" Y="0.2286" />

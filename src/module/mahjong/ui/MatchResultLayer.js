@@ -31,11 +31,12 @@ load('module/mahjong/ui/MatchResultLayer', function () {
         },
 
         onCloseBtnClick: function () {
-
+            appInstance.uiManager().removeUI(this)
         },
 
         ctor: function () {
             this._super(ResConfig.View.MatchResultLayer)
+            cc.log('==================MatchResultLayer==========')
         },
 
         updateView: function (msg) {

@@ -1,5 +1,5 @@
 <GameFile>
-  <PropertyGroup Name="MatchTaotaiLayer" Type="Layer" ID="49ddc963-54ca-4945-9d0e-87ffbf8a1d0d" Version="3.10.0.0" />
+  <PropertyGroup Name="MatchResultLayer" Type="Layer" ID="49ddc963-54ca-4945-9d0e-87ffbf8a1d0d" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
@@ -45,7 +45,7 @@
               <AbstractNodeData Name="HeadNd" ActionTag="914718044" Tag="62" IconVisible="True" LeftMargin="639.2181" RightMargin="640.7819" TopMargin="248.8541" BottomMargin="471.1459" ctype="SingleNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <Children>
-                  <AbstractNodeData Name="Head" ActionTag="-1207060698" Tag="63" IconVisible="False" LeftMargin="-40.0000" RightMargin="-40.0000" TopMargin="-40.0000" BottomMargin="-40.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+                  <AbstractNodeData Name="Head" ActionTag="-1207060698" Tag="63" IconVisible="False" LeftMargin="-40.0000" RightMargin="-40.0000" TopMargin="-40.0000" BottomMargin="-40.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="80.0000" Y="80.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position />
@@ -58,8 +58,8 @@
                     <EndColor A="255" R="255" G="255" B="255" />
                     <ColorVector ScaleY="1.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="NameTxt" ActionTag="972849979" Tag="60" IconVisible="False" LeftMargin="50.0000" RightMargin="-225.0000" TopMargin="-23.9830" BottomMargin="-1.0170" FontSize="25" LabelText="玩家昵称几个字" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="175.0000" Y="25.0000" />
+                  <AbstractNodeData Name="NameTxt" ActionTag="972849979" Tag="60" IconVisible="False" LeftMargin="50.0000" RightMargin="-275.0000" TopMargin="-23.9830" BottomMargin="-1.0170" FontSize="25" LabelText="玩家昵称几个字获奖" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="225.0000" Y="25.0000" />
                     <AnchorPoint ScaleY="0.5000" />
                     <Position X="50.0000" Y="11.4830" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />

@@ -39,6 +39,7 @@ load('game/msghandler/MatchResultSmallProto', function () {
                 'pGameResultExtend'
             ]
             pData.saveTableData(msg,saveKey)
+            pData.isMatch = true
 
 
             let pPlayer = msg.pPlayer
@@ -49,8 +50,7 @@ load('game/msghandler/MatchResultSmallProto', function () {
             }
 
             cc.log('====MatchResultSmallProto=====pData===========' + JSON.stringify(pData))
-            appInstance.sendNotification(TableEvent.GameResultProto)
-
+            appInstance.sendNotification(TableEvent.GameResultProto, msg)
         },
 
         initData: function () {

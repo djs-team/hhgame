@@ -468,6 +468,8 @@
                         "ColorVector": {
                           "ScaleY": 1.0
                         },
+                        "Scale9Width": 1,
+                        "Scale9Height": 1,
                         "TouchEnable": true,
                         "AnchorPoint": {
                           "ScaleX": 0.5,
@@ -607,8 +609,8 @@
                         "ctype": "TextObjectData"
                       },
                       {
-                        "FontSize": 25,
-                        "LabelText": "积分    800",
+                        "FontSize": 20,
+                        "LabelText": "积分    80000000",
                         "VerticalAlignmentType": "VT_Center",
                         "OutlineColor": {
                           "G": 0,
@@ -644,18 +646,18 @@
                           "Y": 0.1143
                         },
                         "PreSize": {
-                          "X": 0.613,
-                          "Y": 0.0714
+                          "X": 0.6957,
+                          "Y": 0.0571
                         },
-                        "LeftMargin": 44.5,
-                        "RightMargin": 44.5,
-                        "TopMargin": 297.5,
-                        "BottomMargin": 27.5,
+                        "LeftMargin": 35.0,
+                        "RightMargin": 35.0,
+                        "TopMargin": 300.0,
+                        "BottomMargin": 30.0,
                         "Tag": 405,
                         "ActionTag": 804885693,
                         "Size": {
-                          "X": 141.0,
-                          "Y": 25.0
+                          "X": 160.0,
+                          "Y": 20.0
                         },
                         "Name": "winNum",
                         "ctype": "TextObjectData"
@@ -675,13 +677,15 @@
                         "ColorVector": {
                           "ScaleY": 1.0
                         },
+                        "Scale9Width": 1,
+                        "Scale9Height": 1,
                         "TouchEnable": true,
                         "AnchorPoint": {
                           "ScaleX": 0.5,
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 114.9751,
+                          "X": 114.977,
                           "Y": 200.0
                         },
                         "Scale": {
@@ -699,8 +703,8 @@
                           "X": 0.8696,
                           "Y": 0.1029
                         },
-                        "LeftMargin": 14.9751,
-                        "RightMargin": 15.0249,
+                        "LeftMargin": 14.977,
+                        "RightMargin": 15.023,
                         "TopMargin": 132.0,
                         "BottomMargin": 182.0,
                         "Tag": 46,
@@ -889,7 +893,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 114.9751,
+                          "X": 114.977,
                           "Y": 170.0
                         },
                         "Scale": {
@@ -907,8 +911,8 @@
                           "X": 0.8696,
                           "Y": 0.1029
                         },
-                        "LeftMargin": 14.9751,
-                        "RightMargin": 15.0249,
+                        "LeftMargin": 14.977,
+                        "RightMargin": 15.023,
                         "TopMargin": 162.0,
                         "BottomMargin": 152.0,
                         "Tag": 50,
@@ -1097,7 +1101,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 114.9751,
+                          "X": 114.977,
                           "Y": 140.0
                         },
                         "Scale": {
@@ -1115,8 +1119,8 @@
                           "X": 0.8696,
                           "Y": 0.1029
                         },
-                        "LeftMargin": 14.9751,
-                        "RightMargin": 15.0249,
+                        "LeftMargin": 14.977,
+                        "RightMargin": 15.023,
                         "TopMargin": 192.0,
                         "BottomMargin": 122.0,
                         "Tag": 54,
@@ -1305,7 +1309,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 114.9751,
+                          "X": 114.977,
                           "Y": 110.0
                         },
                         "Scale": {
@@ -1323,8 +1327,8 @@
                           "X": 0.8696,
                           "Y": 0.1029
                         },
-                        "LeftMargin": 14.9751,
-                        "RightMargin": 15.0249,
+                        "LeftMargin": 14.977,
+                        "RightMargin": 15.023,
                         "TopMargin": 222.0,
                         "BottomMargin": 92.0,
                         "Tag": 58,
@@ -1513,7 +1517,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 114.9751,
+                          "X": 114.977,
                           "Y": 80.0
                         },
                         "Scale": {
@@ -1531,8 +1535,8 @@
                           "X": 0.8696,
                           "Y": 0.1029
                         },
-                        "LeftMargin": 14.9751,
-                        "RightMargin": 15.0249,
+                        "LeftMargin": 14.977,
+                        "RightMargin": 15.023,
                         "TopMargin": 252.0,
                         "BottomMargin": 62.0,
                         "Tag": 62,

@@ -108,6 +108,7 @@ public class PageJumpUtils {
      */
     public static void jumpToRecharge(String balance) {
         ArouterUtils.build(ArouterConst.PAGE_RECHARGE)
+                .withFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP)
                 .withString("balance", balance)
                 .navigation();
     }

@@ -8,7 +8,7 @@
         <activity android:name="com.deepsea.mua.mine.activity.RechargeActivity" />
         <activity
             android:name="com.deepsea.mua.mine.activity.ProfileEditActivity"
-            android:windowSoftInputMode="stateHidden" />
+            android:windowSoftInputMode="stateHidden"/>
         <activity android:name="com.deepsea.mua.mine.activity.PresentWallActivity" />
         <activity android:name="com.deepsea.mua.mine.activity.WalletActivity" />
         <activity android:name="com.deepsea.mua.mine.activity.WalletRecordActivity" />

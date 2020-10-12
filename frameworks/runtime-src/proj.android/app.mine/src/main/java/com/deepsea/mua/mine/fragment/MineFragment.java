@@ -199,7 +199,6 @@ public class MineFragment extends BaseFragment<FragmentMineBinding> {
         //黑名单
         subscribeClick(mBinding.blockLayout, o -> {
             startActivity(new Intent(mContext, BlockListActivity.class));
-
         });
 
 

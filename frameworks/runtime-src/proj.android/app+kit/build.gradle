@@ -20,11 +20,11 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            buildConfigField("String", "Agora_ID", "\"e0972168ff254d7aa05501cd85204692\"")
+            buildConfigField("String", "Agora_ID", "\"30870262f27a4642a99e67cc1851f90a\"")
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         debug {
-            buildConfigField("String", "Agora_ID", "\"e0972168ff254d7aa05501cd85204692\"")
+            buildConfigField("String", "Agora_ID", "\"30870262f27a4642a99e67cc1851f90a\"")
         }
     }
     dataBinding {

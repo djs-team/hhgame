@@ -323,7 +323,7 @@ public class RoomController implements IRoomController, RoomMsgHandler.OnMsgEven
         HyphenateClient.getInstance().sendMessage(message, new IHyphenateClient.HyphenateCallback() {
             @Override
             public void apply() {
-//                Logg.d(TAG, "消息成功回调 " + message.toString());
+                Log.d("msg", "消息成功回调 " + message.toString());
                 MobEventUtils.onSendMsg(AppUtils.getApp());
                 ReceiveMessage sendMsg = new ReceiveMessage();
 //                if (user != null) {

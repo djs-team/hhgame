@@ -99,12 +99,14 @@ public class SexEditDialog extends BaseDialog<DialogEditSexBinding> {
                     @Override
                     protected void onError(int errorCode, String errorMsg) {
                         ToastUtils.showToast(errorMsg);
+                        dismiss();
                     }
 
                     @Override
                     protected void onSuccess(BaseApiResult result) {
                         User user = UserUtils.getUser();
                         user.setSex(defaultSextFlag);
+                        dismiss();
                     }
                 });
     }

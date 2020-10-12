@@ -152,16 +152,6 @@ public class RoomCreateNewActivity extends BaseActivity<ActivityRoomCreateNewBin
         joinRoom.setOpenVideoFrame(is_open_video_frame);
         joinRoom.setRoomMode(roomMode);
         AppConstant.getInstance().setJoinRoom(joinRoom);
-//        new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//                boolean hasFaceBeauty = SharedPrefrencesUtil.getData(mContext, "hasFaceBeauty", "hasFaceBeauty", Constant.isBeautyOpen);
-//                if (!hasFaceBeauty || AppConstant.getInstance().isRtcEngineDestroy()) {
-//                    AgoraClient.create().release();
-//                    AgoraClient.create().setUpAgora(getApplicationContext(), "e0972168ff254d7aa05501cd85204692");
-//                }
-//            }
-//        }).start();
         mRoomJump.startJump(roomId, roomMode, mContext, new RoomJoinController.CallBack() {
             @Override
             public void onResult() {

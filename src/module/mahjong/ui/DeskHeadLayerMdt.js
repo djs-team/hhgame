@@ -19,6 +19,7 @@ load('module/mahjong/ui/DeskHeadLayerMdt', function () {
                 TableEvent.InitCardProto,
                 TableEvent.UpdateView,
                 TableEvent.TableChangeProto,
+                TableEvent.MatchReadyProto,
             ]
         },
         handleNotification: function (notification) {
@@ -33,6 +34,9 @@ load('module/mahjong/ui/DeskHeadLayerMdt', function () {
                     break
                 case TableEvent.TableChangeProto:
                     this.TableChangeProto()
+                    break
+                case TableEvent.MatchReadyProto:
+                    cc.log('============在这处理玩家头像上的准备状态')
                     break
             }
         },

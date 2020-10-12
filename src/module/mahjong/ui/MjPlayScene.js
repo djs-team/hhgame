@@ -67,10 +67,12 @@ load('module/mahjong/ui/MjPlayScene', function () {
             this.DeskCardLayer.clearView()
             this.DeskTopLayer.clearView()
             if (this.MatchBigResultLayer) {
-                appInstance.uiManager().removeUI(this.MatchBigResultLayer)
+                this.MatchBigResultLayer.removeFromParent()
+                // appInstance.uiManager().removeUI(this.MatchBigResultLayer)
             }
             if (this.MatchJinjiLayer) {
-                appInstance.uiManager().removeUI(this.MatchJinjiLayer)
+                this.MatchJinjiLayer.removeFromParent()
+                // appInstance.uiManager().removeUI(this.MatchJinjiLayer)
             }
             
         },

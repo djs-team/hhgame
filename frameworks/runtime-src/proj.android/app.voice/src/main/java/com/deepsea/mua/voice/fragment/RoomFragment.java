@@ -114,7 +114,7 @@ public class RoomFragment extends BaseFragment<FragmentRoomBinding> {
                         boolean hasFaceBeauty = SharedPrefrencesUtil.getData(mContext, "hasFaceBeauty", "hasFaceBeauty", Constant.isBeautyOpen);
                         if (!hasFaceBeauty || AppConstant.getInstance().isRtcEngineDestroy()) {
                             AgoraClient.create().release();
-                            AgoraClient.create().setUpAgora(getContext().getApplicationContext(), "e0972168ff254d7aa05501cd85204692");
+                            AgoraClient.create().setUpAgora(getContext().getApplicationContext(), "30870262f27a4642a99e67cc1851f90a");
                         }
                     }
                 }).start();
@@ -195,7 +195,7 @@ public class RoomFragment extends BaseFragment<FragmentRoomBinding> {
                     boolean hasFaceBeauty = SharedPrefrencesUtil.getData(mContext, "hasFaceBeauty", "hasFaceBeauty", Constant.isBeautyOpen);
                     if (!hasFaceBeauty || AppConstant.getInstance().isRtcEngineDestroy()) {
                         AgoraClient.create().release();
-                        AgoraClient.create().setUpAgora(getContext().getApplicationContext(), "e0972168ff254d7aa05501cd85204692");
+                        AgoraClient.create().setUpAgora(getContext().getApplicationContext(), "30870262f27a4642a99e67cc1851f90a");
                     }
                 }
             }).start();

@@ -84,7 +84,7 @@ load('game/ui/layer/invitation/InvitationLayer', function () {
 
             this.shareTaskList.addEventListener(this.selectedItemEvent, this)
             let myPid = appInstance.dataManager().getUserData().pid;
-            inviteUrl = 'https://test-lin.hehe555.com:85/Public/Download?installPid=' + myPid;
+            inviteUrl = 'https://share.hehefun.cn/index.html?installPid=' + myPid;
         },
 
         onWxShareClick: function () {

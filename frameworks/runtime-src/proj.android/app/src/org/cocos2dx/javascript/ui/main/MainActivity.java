@@ -25,6 +25,7 @@ import com.deepsea.mua.app.im.ui.MessageMainFragment;
 import com.deepsea.mua.core.log.Logg;
 import com.deepsea.mua.core.utils.JsonConverter;
 import com.deepsea.mua.core.utils.ResUtils;
+import com.deepsea.mua.kit.BuildConfig;
 import com.deepsea.mua.mine.activity.InviteDialogActivity;
 import com.deepsea.mua.mine.fragment.MineFragment;
 import com.deepsea.mua.stub.base.BaseActivity;
@@ -239,7 +240,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding>
         RtcEngine.destroy();
         RoomController.getInstance().release();
         AgoraClient.create().release();
-        AgoraClient.create().setUpAgora(getApplicationContext(), "e0972168ff254d7aa05501cd85204692");
+        AgoraClient.create().setUpAgora(getApplicationContext(), BuildConfig.Agora_ID);
     }
 
     private void reset() {
@@ -294,7 +295,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding>
                                     boolean hasFaceBeauty = SharedPrefrencesUtil.getData(mContext, "hasFaceBeauty", "hasFaceBeauty", Constant.isBeautyOpen);
                                     if (!hasFaceBeauty || com.deepsea.mua.stub.utils.AppConstant.getInstance().isRtcEngineDestroy()) {
                                         AgoraClient.create().release();
-                                        AgoraClient.create().setUpAgora(getApplicationContext(), "e0972168ff254d7aa05501cd85204692");
+                                        AgoraClient.create().setUpAgora(getApplicationContext(), BuildConfig.Agora_ID);
                                     }
                                 }
                             }).start();
@@ -644,7 +645,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding>
                 if (!hasFaceBeauty || com.deepsea.mua.stub.utils.AppConstant.getInstance().isRtcEngineDestroy()) {
 //                            RoomController.getInstance().release();
                     AgoraClient.create().release();
-                    AgoraClient.create().setUpAgora(mContext.getApplicationContext(), "e0972168ff254d7aa05501cd85204692");
+                    AgoraClient.create().setUpAgora(mContext.getApplicationContext(), BuildConfig.Agora_ID);
                 }
             }
         }).start();

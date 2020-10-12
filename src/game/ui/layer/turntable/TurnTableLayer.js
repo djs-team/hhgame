@@ -14,6 +14,8 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
             this._super(ResConfig.View.TurnTableLayer)
 
             this.registerMediator(new TurnTableMdt(this))
+            this.registerEventListener('rewardVideoCallback', this.onRewardVideoCallback)
+
         },
         RES_BINDING: function () {
             return {
@@ -324,12 +326,20 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
 
         onMultipleClaimClick: function () {
 
-            let msg = {}
-            msg.turntableId = appInstance.dataManager().getGameData().turntableId
-            msg.type = 1
-            appInstance.gameAgent().httpGame().ACCCPTAWARDSReq(msg)
+            if (cc.sys.OS_ANDROID === cc.sys.os) {
+                appInstance.nativeApi().showRewardVideo()
+            }
 
         },
+        onRewardVideoCallback: function (msg) {
+            if (msg == "0") {
+                let msg = {}
+                msg.turntableId = appInstance.dataManager().getGameData().turntableId
+                msg.type = 1
+                appInstance.gameAgent().httpGame().ACCCPTAWARDSReq(msg)
+            }
+        },
+
 
         onReceiveAwardsResult: function (data) {
 

@@ -2,20 +2,26 @@ package org.cocos2dx.javascript;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.provider.Settings;
+import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.View;
 
 import org.cocos2dx.javascript.ui.splash.activity.SplashActivity;
 import org.cocos2dx.lib.Cocos2dxActivity;
@@ -35,6 +41,7 @@ import com.deepsea.mua.core.utils.ToastUtils;
 import com.deepsea.mua.core.view.floatwindow.permission.PermissionUtil;
 import com.deepsea.mua.core.wxpay.WxPay;
 import com.deepsea.mua.core.wxpay.WxpayBroadcast;
+import com.deepsea.mua.stub.dialog.AAlertDialog;
 import com.deepsea.mua.stub.entity.ChessLoginParam;
 import com.deepsea.mua.stub.entity.InstallParamVo;
 import com.deepsea.mua.stub.entity.QPWxOrder;
@@ -361,30 +368,104 @@ public class AppActivity extends Cocos2dxActivity {
      * jpush 极光一键登录
      */
     public static void login(String type) {
-        String[] permission = new String[]{Manifest.permission.READ_PHONE_STATE};
-        boolean hasPermission = PermissionUtil.hasSelfPermission(ccActivity, Manifest.permission.WRITE_EXTERNAL_STORAGE);
-        if (hasPermission) {
-            operateLogin(type);
-        } else {
-            com.deepsea.mua.stub.permission.PermissionUtil.request(ccActivity, permission, new PermissionCallback() {
-                @Override
-                public void onPermissionGranted() {
-                    operateLogin(type);
+        String permissionStr = Manifest.permission.READ_PHONE_STATE;
+
+        String[] permission = new String[]{permissionStr};
+        boolean hasPermission = PermissionUtil.hasSelfPermission(ccActivity, permissionStr);
+        Log.d("shouldShowRational", "hasPermission" + hasPermission);
+
+        com.deepsea.mua.stub.permission.PermissionUtil.request(ccActivity, permission, new PermissionCallback() {
+            @Override
+            public void onPermissionGranted() {
+                operateLogin(type);
+            }
+
+            @Override
+            public void shouldShowRational(String[] rationalPermissons, boolean before) {
+                if (type.equals("wx")) {
+                    ActivityCompat.requestPermissions(ccActivity, new String[]{permissionStr}, request_code_wx);
+                } else {
+                    ActivityCompat.requestPermissions(ccActivity, new String[]{permissionStr}, request_code_jpush);
+
                 }
 
-                @Override
-                public void shouldShowRational(String[] rationalPermissons, boolean before) {
+            }
+
+            @Override
+            public void onPermissonReject(String[] rejectPermissons) {
+                Log.d("shouldShowRational", "onPermissonReject");
+                showPermissionSettingDialog(0);
+            }
+        });
+
+
+    }
+
+    private static void showPermissionSettingDialog(int type) {
+        ccActivity.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                AAlertDialog aAlertDialog = new AAlertDialog(ccActivity);
+                String alert = "";
+                if (type == 0) {
+                    alert = "请前往 应用->权限管理中打开《获取手机信息》权限，否则功能无法正常运行！";
+                } else {
+                    alert = "请前往 应用->权限管理中打开《读写手机存储》权限，否则功能无法正常运行！";
 
                 }
+                aAlertDialog.setMessage(alert);
+                aAlertDialog.setMessageSize(10);
+                aAlertDialog.setButtonInLogin("确定", new AAlertDialog.OnClickListener() {
+                    @Override
+                    public void onClick(View v, Dialog dialog) {
+                        dialog.dismiss();
+                        Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION);
+                        intent.setData(Uri.parse("package:" + ccActivity.getPackageName()));
+                        ccActivity.startActivityForResult(intent, 0);
+                    }
+                });
+                aAlertDialog.show();
+            }
+        });
 
-                @Override
-                public void onPermissonReject(String[] rejectPermissons) {
 
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        switch (requestCode) {
+            case request_code_invite:
+                if (ContextCompat.checkSelfPermission(ccActivity,
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                        != PackageManager.PERMISSION_GRANTED) {
+                    getInvitationCode(invireUrl, uid);
+                } else {
+                    operateGetInvitationCode(invireUrl, uid);
                 }
-            });
+                break;
+            case request_code_wx:
+                if (ContextCompat.checkSelfPermission(ccActivity,
+                        Manifest.permission.READ_PHONE_STATE)
+                        == PackageManager.PERMISSION_GRANTED) {
+                    operateLogin("wx");
+                }
+                break;
+            case request_code_jpush:
+                if (ContextCompat.checkSelfPermission(ccActivity,
+                        Manifest.permission.READ_PHONE_STATE)
+                        == PackageManager.PERMISSION_GRANTED) {
+                    operateLogin("jpush");
+                }
+                break;
+            case request_code_deviceInfo:
+                if (ContextCompat.checkSelfPermission(ccActivity,
+                        Manifest.permission.READ_PHONE_STATE)
+                        == PackageManager.PERMISSION_GRANTED) {
+                    getPhoneInfo(phoneInfoType);
+                }
+                break;
         }
-
-
     }
 
     private static void operateLogin(String type) {
@@ -486,30 +567,34 @@ public class AppActivity extends Cocos2dxActivity {
      * model 手机型号
      * rssi wifi强度
      */
+    private String phoneInfoType;
+
     public static void getPhoneInfo(String type) {
+        ccActivity.phoneInfoType = type;
+        String permissionStr = Manifest.permission.READ_PHONE_STATE;
+        String[] permission = new String[]{permissionStr};
+        boolean hasPermission = PermissionUtil.hasSelfPermission(ccActivity, permissionStr);
+        Log.d("getPhoneInfo", hasPermission + "");
+        com.deepsea.mua.stub.permission.PermissionUtil.request(ccActivity, permission, new PermissionCallback() {
+            @Override
+            public void onPermissionGranted() {
+                operateGetphoneInfo(type);
+            }
 
-        String[] permission = new String[]{Manifest.permission.READ_PHONE_STATE};
-        boolean hasPermission = PermissionUtil.hasSelfPermission(ccActivity, Manifest.permission.WRITE_EXTERNAL_STORAGE);
-        if (hasPermission) {
-            operateGetphoneInfo(type);
-        } else {
-            com.deepsea.mua.stub.permission.PermissionUtil.request(ccActivity, permission, new PermissionCallback() {
-                @Override
-                public void onPermissionGranted() {
-                    operateGetphoneInfo(type);
-                }
+            @Override
+            public void shouldShowRational(String[] rationalPermissons, boolean before) {
 
-                @Override
-                public void shouldShowRational(String[] rationalPermissons, boolean before) {
+                ActivityCompat.requestPermissions(ccActivity, new String[]{permissionStr}, request_code_deviceInfo);
 
-                }
 
-                @Override
-                public void onPermissonReject(String[] rejectPermissons) {
+            }
 
-                }
-            });
-        }
+            @Override
+            public void onPermissonReject(String[] rejectPermissons) {
+                showPermissionSettingDialog(0);
+            }
+        });
+//        }
     }
 
     private static void operateGetphoneInfo(String type) {
@@ -530,9 +615,6 @@ public class AppActivity extends Cocos2dxActivity {
         ccActivity.RunJS("deviceInfo", info);
     }
 
-    public static void toast(String msg) {
-        ToastUtils.showToast(msg);
-    }
 
     /**
      * 分享-图片
@@ -628,9 +710,21 @@ public class AppActivity extends Cocos2dxActivity {
      *
      * @param url return 本地路径JPUSH_PKGNAME
      */
+    private static final int request_code_invite = 1001;
+    private static final int request_code_wx = 1002;
+    private static final int request_code_jpush = 1003;
+    private static final int request_code_deviceInfo = 1004;
+    private String invireUrl;
+    private String uid;
+
     public static void getInvitationCode(String url, String uid) {
-        String[] permission = new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE};
-        boolean hasPermission = PermissionUtil.hasSelfPermission(ccActivity, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        ccActivity.invireUrl = url;
+        ccActivity.uid = uid;
+        String permissionStr = Manifest.permission.WRITE_EXTERNAL_STORAGE;
+        String[] permission = new String[]{permissionStr};
+
+        boolean hasPermission = PermissionUtil.hasSelfPermission(ccActivity, permissionStr);
+
         if (hasPermission) {
             operateGetInvitationCode(url, uid);
         } else {
@@ -642,12 +736,12 @@ public class AppActivity extends Cocos2dxActivity {
 
                 @Override
                 public void shouldShowRational(String[] rationalPermissons, boolean before) {
-
+                    ActivityCompat.requestPermissions(ccActivity, new String[]{permissionStr}, request_code_invite);
                 }
 
                 @Override
                 public void onPermissonReject(String[] rejectPermissons) {
-
+                    showPermissionSettingDialog(1);
                 }
             });
         }
@@ -659,28 +753,6 @@ public class AppActivity extends Cocos2dxActivity {
         ccActivity.RunJS("inviteCodeCallback", picPath);
     }
 
-    /**
-     * 申请动态权限
-     */
-    public static void requestPermission() {
-        List<String> mPermissionList = new ArrayList<>();
-
-        String[] permissions = new String[]{
-                Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                Manifest.permission.RECORD_AUDIO,
-                Manifest.permission.ACCESS_FINE_LOCATION,
-                Manifest.permission.CAMERA};
-        for (int i = 0; i < permissions.length; i++) {
-            if (ContextCompat.checkSelfPermission(ccActivity, permissions[i]) != PackageManager.PERMISSION_GRANTED) {
-                mPermissionList.add(permissions[i]);//添加还未授予的权限
-            }
-        }
-        ToastUtils.showToast(mPermissionList.size() + "");
-        if (mPermissionList.size() > 0) {
-            ActivityCompat.requestPermissions(ccActivity, permissions, 3);
-        }
-
-    }
 
     /**
      * 获取安装参数

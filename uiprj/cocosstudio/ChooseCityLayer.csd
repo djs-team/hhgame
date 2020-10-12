@@ -19,7 +19,17 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="bg" ActionTag="-2011295980" UserData="{&quot;layoutType&quot;:&quot;maxArea&quot;,&quot;screenAlign&quot;:&quot;mid&quot;}" Tag="28" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftEage="422" RightEage="422" TopEage="237" BottomEage="237" Scale9OriginX="422" Scale9OriginY="237" Scale9Width="436" Scale9Height="246" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="dele" ActionTag="320451614" Tag="270" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftEage="422" RightEage="422" TopEage="237" BottomEage="237" Scale9OriginX="422" Scale9OriginY="237" Scale9Width="436" Scale9Height="246" ctype="ImageViewObjectData">
+            <Size X="1280.0000" Y="720.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="640.0000" Y="360.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.5000" Y="0.5000" />
+            <PreSize X="1.0000" Y="1.0000" />
+            <FileData Type="Normal" Path="aaa/3.png" Plist="" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="bg" Visible="False" ActionTag="-2011295980" UserData="{&quot;layoutType&quot;:&quot;maxArea&quot;,&quot;screenAlign&quot;:&quot;mid&quot;}" Tag="28" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftEage="422" RightEage="422" TopEage="237" BottomEage="237" Scale9OriginX="422" Scale9OriginY="237" Scale9Width="436" Scale9Height="246" ctype="ImageViewObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="640.0000" Y="360.0000" />
@@ -29,41 +39,41 @@
             <PreSize X="1.0000" Y="1.0000" />
             <FileData Type="Normal" Path="png/dqxz_bg.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="pnl_bg" ActionTag="-2071983906" UserData="{&quot;layoutType&quot;:&quot;showAll&quot;,&quot;screenAlign&quot;:&quot;mid&quot;}" Tag="51" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+          <AbstractNodeData Name="pnl_bg" Visible="False" ActionTag="-2071983906" UserData="{&quot;layoutType&quot;:&quot;showAll&quot;,&quot;screenAlign&quot;:&quot;mid&quot;}" Tag="51" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <Children>
-              <AbstractNodeData Name="Image_1" ActionTag="366010650" Tag="33" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="140.0000" RightMargin="140.0000" TopMargin="90.0000" BottomMargin="30.0000" Scale9Enable="True" LeftEage="241" RightEage="110" TopEage="27" BottomEage="118" Scale9OriginX="241" Scale9OriginY="27" Scale9Width="14" Scale9Height="24" ctype="ImageViewObjectData">
-                <Size X="1000.0000" Y="600.0000" />
+              <AbstractNodeData Name="Image_1" ActionTag="366010650" Tag="33" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="138.4682" RightMargin="133.9307" TopMargin="95.9847" BottomMargin="27.9850" Scale9Enable="True" LeftEage="241" RightEage="110" TopEage="27" BottomEage="118" Scale9OriginX="241" Scale9OriginY="27" Scale9Width="14" Scale9Height="24" ctype="ImageViewObjectData">
+                <Size X="1007.6012" Y="596.0303" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="640.0000" Y="330.0000" />
+                <Position X="642.2688" Y="326.0001" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5000" Y="0.4583" />
-                <PreSize X="0.7813" Y="0.8333" />
+                <PrePosition X="0.5018" Y="0.4528" />
+                <PreSize X="0.7872" Y="0.8278" />
                 <FileData Type="Normal" Path="choosecity/dqxz_7.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Image_6" ActionTag="1911808691" Tag="44" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="485.0000" RightMargin="485.0000" BottomMargin="652.0000" Scale9Enable="True" LeftEage="32" RightEage="32" TopEage="22" BottomEage="22" Scale9OriginX="32" Scale9OriginY="22" Scale9Width="34" Scale9Height="24" ctype="ImageViewObjectData">
-                <Size X="310.0000" Y="68.0000" />
+              <AbstractNodeData Name="Image_6" ActionTag="1911808691" Tag="44" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="490.0000" RightMargin="480.0000" TopMargin="-0.0001" BottomMargin="653.5609" Scale9Enable="True" LeftEage="32" RightEage="32" TopEage="22" BottomEage="22" Scale9OriginX="32" Scale9OriginY="22" Scale9Width="34" Scale9Height="24" ctype="ImageViewObjectData">
+                <Size X="310.0000" Y="66.4392" />
                 <Children>
-                  <AbstractNodeData Name="Text_3" ActionTag="1145499840" Tag="45" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="78.0000" RightMargin="78.0000" TopMargin="11.6000" BottomMargin="18.4000" FontSize="38" LabelText="选择城市" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                  <AbstractNodeData Name="Text_3" ActionTag="1145499840" Tag="45" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="78.0000" RightMargin="78.0000" TopMargin="10.8976" BottomMargin="17.5416" FontSize="38" LabelText="选择城市" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="154.0000" Y="38.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="155.0000" Y="37.4000" />
+                    <Position X="155.0000" Y="36.5416" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.5000" Y="0.5500" />
-                    <PreSize X="0.4968" Y="0.5588" />
+                    <PreSize X="0.4968" Y="0.5720" />
                     <FontResource Type="Normal" Path="font/hkhbtW12.ttc" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="1.0000" />
-                <Position X="640.0000" Y="720.0000" />
+                <Position X="645.0000" Y="720.0001" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5000" Y="1.0000" />
-                <PreSize X="0.2422" Y="0.0944" />
+                <PrePosition X="0.5039" Y="1.0000" />
+                <PreSize X="0.2422" Y="0.0923" />
                 <FileData Type="Normal" Path="choosecity/dqxz_1.png" Plist="" />
               </AbstractNodeData>
               <AbstractNodeData Name="Image_4" ActionTag="1486313503" Tag="37" IconVisible="False" LeftMargin="74.7864" RightMargin="925.2136" TopMargin="15.2682" BottomMargin="662.7318" Scale9Enable="True" LeftEage="19" RightEage="19" TopEage="13" BottomEage="13" Scale9OriginX="19" Scale9OriginY="13" Scale9Width="22" Scale9Height="16" ctype="ImageViewObjectData">
@@ -76,24 +86,24 @@
                 <PreSize X="0.2188" Y="0.0583" />
                 <FileData Type="Normal" Path="choosecity/dqxz_2.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Image_4_0" ActionTag="-1445074278" Tag="38" IconVisible="False" LeftMargin="1033.8795" RightMargin="46.1205" TopMargin="19.5973" BottomMargin="658.4027" Scale9Enable="True" LeftEage="19" RightEage="19" TopEage="13" BottomEage="13" Scale9OriginX="19" Scale9OriginY="13" Scale9Width="22" Scale9Height="16" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="Image_4_0" ActionTag="-1445074278" Tag="38" IconVisible="False" LeftMargin="1033.8799" RightMargin="46.1201" TopMargin="20.5973" BottomMargin="657.4027" Scale9Enable="True" LeftEage="19" RightEage="19" TopEage="13" BottomEage="13" Scale9OriginX="19" Scale9OriginY="13" Scale9Width="22" Scale9Height="16" ctype="ImageViewObjectData">
                 <Size X="200.0000" Y="42.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="1133.8795" Y="679.4027" />
+                <Position X="1133.8799" Y="678.4027" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.8858" Y="0.9436" />
+                <PrePosition X="0.8858" Y="0.9422" />
                 <PreSize X="0.1563" Y="0.0583" />
                 <FileData Type="Normal" Path="choosecity/dqxz_2.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Text_2" ActionTag="1527636473" Tag="43" IconVisible="False" LeftMargin="817.2982" RightMargin="300.7018" TopMargin="24.1687" BottomMargin="659.8313" FontSize="18" LabelText="没有您想要的玩法？&#xA;点击这里" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="162.0000" Y="36.0000" />
+              <AbstractNodeData Name="Text_2" ActionTag="1527636473" Tag="43" IconVisible="False" LeftMargin="837.7508" RightMargin="298.2492" TopMargin="24.1400" BottomMargin="663.8600" FontSize="16" LabelText="没有您想要的玩法？&#xA;点击这里" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="144.0000" Y="32.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="898.2982" Y="677.8313" />
+                <Position X="909.7508" Y="679.8600" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="245" G="225" B="177" />
-                <PrePosition X="0.7018" Y="0.9414" />
-                <PreSize X="0.1266" Y="0.0500" />
+                <PrePosition X="0.7107" Y="0.9442" />
+                <PreSize X="0.1125" Y="0.0444" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>

@@ -16,6 +16,10 @@ load('game/public/HttpGame', function () {
             appInstance.httpAgent().setCallBack(this.requestBack)
         },
 
+        /**
+         * 登录请求
+         * @param msg
+         */
         httpLogin: function (msg) {
             if (msg.platform == 3) {
                 nickName = msg.nickName;
@@ -43,6 +47,10 @@ load('game/public/HttpGame', function () {
 
         },
 
+        /**
+         * 登录回调
+         * @param msg
+         */
         httpLoginBack: function (msg) {
             cc.log('=========httpLoginBack================' + JSON.stringify(msg))
             if (msg.status !== 0) {
@@ -51,7 +59,7 @@ load('game/public/HttpGame', function () {
             let saveKey = [
                 'platform',
                 'account',
-                'key',
+                'key',   //登陆成功后，服务端存的session KEY
                 'pid',
                 'timetamp',
                 'lastChannel',
@@ -66,6 +74,7 @@ load('game/public/HttpGame', function () {
 
             appInstance.msgTool().setHeadPid(msg.pid)
 
+            //判断是否要跳到选择城市layer
             if (msg.lastChannel) {
                 let sendData = {}
                 sendData.channel = msg.lastChannel
@@ -89,7 +98,10 @@ load('game/public/HttpGame', function () {
             }
         },
 
-
+        /**
+         * 城市请求
+         * @param msg
+         */
         chooseCity: function (msg) {
             msg = msg || {}
             if (!this._requestBackCall[HttpEvent.MJ_HALL_CHOOSE_CITY]) {
@@ -104,18 +116,21 @@ load('game/public/HttpGame', function () {
             appInstance.httpAgent().sendPost(msg)
         },
 
+        /**
+         * 回调城市
+         * @param msg
+         */
         chooseCityBack: function (msg) {
             cc.log('   选择城市:::chooseCityBack>>>\n' + JSON.stringify(msg))
             if (msg.status !== 0) {
                 return
             }
             let saveKey = [
-                'hostip',
-                'hostport',
-                'firstLogin',
-                'vipFlag',
-                'channel',
-
+                'hostip',  //客户端需要连接哪个网关的IP
+                'hostport',  //端口号
+                'firstLogin',  //是否每天第一次登陆0是1不是
+                'vipFlag',  //vip弹窗标记0：正常不弹窗1：弹vip界面 2：弹出vip不足三天提示
+                'channel', //城市编号
             ]
             appInstance.dataManager().getUserData().saveMsg(msg, saveKey)
 
@@ -171,6 +186,10 @@ load('game/public/HttpGame', function () {
             }
         },
 
+        /**
+         * 用户数据请求
+         * @param msg
+         */
         userDataReq: function (msg) {
             msg = msg || {}
             if (!this._requestBackCall[HttpEvent.MJ_HALL_MESSAGE_USERDATA]) {
@@ -181,6 +200,10 @@ load('game/public/HttpGame', function () {
             appInstance.httpAgent().sendPost(msg)
         },
 
+        /**
+         * 用户数据返回
+         * @param msg
+         */
         userDataBack: function (msg) {
             if (msg.status !== 0) {
                 cc.log('------userDataBack------->>>httpGame error happen')
@@ -854,6 +877,11 @@ load('game/public/HttpGame', function () {
 
         },
 
+        /**
+         * 发起商城请求
+         * @param msg
+         * @constructor
+         */
         COINSSHOPDATASReq: function (msg) {
             msg = msg || {}
             if (!this._requestBackCall[HttpEvent.MJ_HALL_COIN_STORE]) {
@@ -863,7 +891,11 @@ load('game/public/HttpGame', function () {
             appInstance.httpAgent().sendPost(msg)
         },
 
-
+        /**
+         * 接收商城请求
+         * @param msg
+         * @constructor
+         */
         COINSSHOPDATASBack: function (msg) {
             if (msg.status !== 0) {
                 cc.log('------------->>>httpGame COINSSHOPDATASBack error happen')
@@ -873,6 +905,11 @@ load('game/public/HttpGame', function () {
             appInstance.sendNotification(GameEvent.COINSHOP_GET, msg)
         },
 
+        /**
+         * 购买请求
+         * @param msg
+         * @constructor
+         */
         COINSSHOPBUYReq: function (msg) {
             msg = msg || {}
             if (!this._requestBackCall[HttpEvent.MJ_HALL_PLAYER_COIN_BUY]) {
@@ -883,7 +920,11 @@ load('game/public/HttpGame', function () {
 
         },
 
-
+        /**
+         * 购买回调
+         * @param msg
+         * @constructor
+         */
         COINSSHOPBUYBack: function (msg) {
             if (msg.status !== 0) {
                 cc.log('------------->>>httpGame COINSSHOPBUYBack error happen')
@@ -893,6 +934,11 @@ load('game/public/HttpGame', function () {
 
         },
 
+        /**
+         * 地址请求
+         * @param msg
+         * @constructor
+         */
         UPDATEADDRESSReq: function (msg) {
             msg = msg || {}
             if (!this._requestBackCall[HttpEvent.MJ_HALL_PLAYER_UPDATE_DELIVERY_ADDRESS]) {
@@ -903,7 +949,11 @@ load('game/public/HttpGame', function () {
 
         },
 
-
+        /**
+         * 地址回调
+         * @param msg
+         * @constructor
+         */
         UPDATEADDRESSBack: function (msg) {
             if (msg.status !== 0) {
                 cc.log('------------->>>httpGame UPDATEADDRESSBack error happen')
@@ -922,6 +972,11 @@ load('game/public/HttpGame', function () {
 
         },
 
+        /**
+         * 请求获取玩家信息
+         * @param msg
+         * @constructor
+         */
         GETADDRESSReq: function (msg) {
             msg = msg || {}
             if (!this._requestBackCall[HttpEvent.MJ_HALL_PLAYER_GET_DELIVERY_ADDRESS]) {
@@ -932,7 +987,11 @@ load('game/public/HttpGame', function () {
 
         },
 
-
+        /**
+         * 回收玩家信息
+         * @param msg
+         * @constructor
+         */
         GETADDRESSBack: function (msg) {
             if (msg.status !== 0) {
                 cc.log('------------->>>httpGame GETADDRESSBack error happen')
@@ -942,6 +1001,11 @@ load('game/public/HttpGame', function () {
 
         },
 
+        /**
+         * 观看视频请求
+         * @param msg
+         * @constructor
+         */
         VIDEOFORDIAMONDSReq: function (msg) {
             msg = msg || {}
             if (!this._requestBackCall[HttpEvent.MJ_HALL_PLAYER_WATCH_VIDEO_GET_DIAMONDS]) {
@@ -952,7 +1016,11 @@ load('game/public/HttpGame', function () {
 
         },
 
-
+        /**
+         * 视频请求回调
+         * @param msg
+         * @constructor
+         */
         VIDEOFORDIAMONDSBack: function (msg) {
             if (msg.status !== 0) {
                 cc.log('------------->>>httpGame VIDEOFORDIAMONDSBack error happen')

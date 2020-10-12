@@ -32,8 +32,8 @@
 - (instancetype)_init {
     if (self = [super init]) {
         
-        _agoraEngineManager = [AgoraRtcEngineManager instanceWithAppId:@"e0972168ff254d7aa05501cd85204692"];
-        _easemob = [EasemobManager instanceWithAppKey:@"1111191107042495#hehexq"];
+        _agoraEngineManager = [AgoraRtcEngineManager instanceWithAppId:@"0a2913454a64465fb0193aee33341c1e"];
+        _easemob = [EasemobManager instanceWithAppKey:@"1101191012041033#hehequanji"];
 //
 //        _agoraEngineManager.delegate = self;
 //        _easemob.delegate = self;

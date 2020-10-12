@@ -12,7 +12,7 @@ load('game/public/AppConfig', function () {
     
     
     // 苹果支付方式控制: Apple:苹果内购 其他: 支付宝微信
-    Appconfig.applePayType = 'Apple'
+    Appconfig.applePayType = 'Other'
     
     return Appconfig
 })

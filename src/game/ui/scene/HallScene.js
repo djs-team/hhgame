@@ -223,6 +223,10 @@ load('game/ui/scene/HallScene', function () {
 
         onEnter: function () {
             this._super()
+            if (appInstance.dataManager().getUserData().MatchJinjiGaming) {
+                this.showMatchJinjiLayer(appInstance.dataManager().getUserData().MatchJinjiGaming)
+                appInstance.dataManager().getUserData().MatchJinjiGaming = null
+            }
         },
 
         onExit: function () {
@@ -310,7 +314,6 @@ load('game/ui/scene/HallScene', function () {
             });
         },
         showMatchJinjiLayer: function (msg) {
-
             if (!this.MatchJinjiLayer) {
                 let MatchJinjiLayer = include('module/mahjong/ui/MatchJinjiLayer')
                 this.MatchJinjiLayer = appInstance.uiManager().createUI(MatchJinjiLayer)

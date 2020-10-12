@@ -36,9 +36,11 @@ load('module/mahjong/ui/MjPlayScene', function () {
             this.addChild(this.DeskTopLayer)
         },
 
+        //为避免遮挡 晋级就不再这里面显示了 显示到大厅去
         showMatchJinjiLayer: function (msg) {
             if (!this.MatchJinjiLayer) {
                 this.MatchJinjiLayer = appInstance.uiManager().createUI(MatchJinjiLayer)
+                this.MatchJinjiLayer.setLocalZOrder(100)
                 this.addChild(this.MatchJinjiLayer)
             }
             this.MatchJinjiLayer.updateView(msg)
@@ -48,6 +50,7 @@ load('module/mahjong/ui/MjPlayScene', function () {
             cc.log('===================showMatchResultLayer===============' + JSON.stringify(msg))
             if (!this.MatchResultLayer) {
                 this.MatchResultLayer = appInstance.uiManager().createUI(MatchResultLayer)
+                this.MatchResultLayer.setLocalZOrder(300)
                 this.addChild(this.MatchResultLayer)
             }
             this.MatchResultLayer.updateView(msg)
@@ -57,6 +60,7 @@ load('module/mahjong/ui/MjPlayScene', function () {
             cc.log('===================showMatchBigResultLayer===============' + JSON.stringify(msg))
             if (!this.MatchBigResultLayer) {
                 this.MatchBigResultLayer = appInstance.uiManager().createUI(MatchBigResultLayer)
+                this.MatchBigResultLayer.setLocalZOrder(200)
                 this.addChild(this.MatchBigResultLayer)
             }
             this.MatchBigResultLayer.updateView(msg)

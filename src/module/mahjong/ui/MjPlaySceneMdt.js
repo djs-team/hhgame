@@ -42,7 +42,8 @@ load('module/mahjong/ui/MjPlaySceneMdt', function () {
                     this.view.clearGameResult()
                     break
                 case TableEvent.MatchJinjiGaming:
-                    this.view.showMatchJinjiLayer(body)
+                    //为避免遮挡 晋级就不再这里面显示了 显示到大厅去
+                    // this.view.showMatchJinjiLayer(body)
                     break
                 case TableEvent.MatchResultProto:
                     this.view.showMatchResultLayer(body)

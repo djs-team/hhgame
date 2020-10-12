@@ -22,7 +22,8 @@ load('module/mahjong/common/TableConfig', function () {
         'MatchJinjiGaming': 'MatchJinjiGaming',
         'MatchResultProto': 'MatchResultProto',
         'MatchResultBigProto': 'MatchResultBigProto',
-        'clearTableGaming': 'clearTableGaming'
+        'clearTableGaming': 'clearTableGaming',
+        'MatchReadyProto': 'MatchReadyProto',
     }
 
 

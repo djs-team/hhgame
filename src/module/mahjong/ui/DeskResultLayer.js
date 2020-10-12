@@ -50,6 +50,10 @@ load('module/mahjong/ui/DeskResultLayer', function () {
 
         onCloseBtnClick: function () {
             if (this._isMatch) {
+                if (this._msg && this._msg.pIsOver === 0) {
+                    cc.log('=============发送准备消息')
+                    appInstance.gameAgent().tcpGame().matchReady()
+                }
                 appInstance.uiManager().removeUI(this)
             } else {
                 this.onBackHallBtnClick()

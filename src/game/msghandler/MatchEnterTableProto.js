@@ -30,7 +30,9 @@ load('game/msghandler/MatchEnterTableProto', function () {
 
                     break
                 case 1:
+                    //为避免遮挡 晋级就不再这里面显示了 显示到大厅去
                     appInstance.sendNotification(Event.MatchJinjiGaming, msg)
+                    appInstance.dataManager().getUserData().MatchJinjiGaming = msg
                     break
                 case 2:
                     appInstance.gameAgent().Tips('MatchEnterTableProto 这条消息state为 2 淘汰')

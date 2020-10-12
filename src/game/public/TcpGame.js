@@ -6,6 +6,7 @@ load('game/public/TcpGame', function () {
     let EnterTableProto = include('game/msghandler/EnterTableProto')
     let EnterTableCancelProto = include('game/msghandler/EnterTableCancelProto')
     let MatchEnterTableCancelProto = include('game/msghandler/MatchEnterTableCancelProto')
+    let MatchReadyProto = include('game/msghandler/MatchReadyProto')
     let HeartBeatProto = include('game/msghandler/HeartBeatProto')
     let PutCardProto = include('game/msghandler/PutCardProto')
     let PlayerSelectProto = include('game/msghandler/PlayerSelectProto')
@@ -51,6 +52,20 @@ load('game/public/TcpGame', function () {
         cancelEnterTableMatch: function(msg) {
             msg = msg || {}
             let packetProto = new Packet(new MatchEnterTableCancelProto())
+            packetProto.setValue(msg)
+            appInstance.gameNet().send(packetProto)
+        },
+
+        matchReady: function (msg) {
+            let pData = appInstance.dataManager().getPlayData()
+            let tData = pData.tableData
+            msg = msg || {}
+            msg.gid = msg.gid || 5
+            msg.pRoomID = msg.pRoomID || tData.pRoomID
+            msg.pMode = msg.pMode || tData.pMode
+            msg.pTableID = msg.pTableID || tData.pTableID
+            msg.pReady = msg.pReady || 0
+            let packetProto = new Packet(new MatchReadyProto())
             packetProto.setValue(msg)
             appInstance.gameNet().send(packetProto)
         },

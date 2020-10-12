@@ -309,6 +309,15 @@ load('game/ui/scene/HallScene', function () {
                 }
             });
         },
+        showMatchJinjiLayer: function (msg) {
+
+            if (!this.MatchJinjiLayer) {
+                let MatchJinjiLayer = include('module/mahjong/ui/MatchJinjiLayer')
+                this.MatchJinjiLayer = appInstance.uiManager().createUI(MatchJinjiLayer)
+                this.addChild(this.MatchJinjiLayer)
+            }
+            this.MatchJinjiLayer.updateView(msg)
+        },
         onUpdateUserData: function (data) {
             cc.log('-----------------half-onUpdateUserData :' + JSON.stringify(data))
             let nameNd = this.namePnl.getChildByName('name')

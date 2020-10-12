@@ -9,15 +9,22 @@ load('module/mahjong/ui/MatchResultLayer', function () {
         _className: 'MatchResultLayer',
         RES_BINDING: function () {
             return {
-                'pnl/HeadNd': {  },
-                'pnl/HeadNd/Head': {  },
-                'pnl/HeadNd/NameTxt': {  },
-                'pnl/HeadNd/MatchNameTxt': {  },
-                'pnl/HeadNd/RankTxt': {  },
+                'LosePnl': {  },
+                'LosePnl/HeadNd': {  },
+                'LosePnl/HeadNd/Head': {  },
+                'LosePnl/HeadNd/NameTxt': {  },
+                'LosePnl/HeadNd/MatchNameTxt': {  },
+                'LosePnl/HeadNd/RankTxt': {  },
 
-                'pnl/ShareWxBtn': { onClicked: this.onShareWxBtnClick   },
-                'pnl/ShareFriendBtn': { onClicked: this.onShareFriendBtnClick  },
-                'pnl/CloseBtn': { onClicked: this.onCloseBtnClick  },
+                'LosePnl/ShareWxBtn': { onClicked: this.onShareWxBtnClick   },
+                'LosePnl/ShareFriendBtn': { onClicked: this.onShareFriendBtnClick  },
+                'LosePnl/CloseBtn': { onClicked: this.onCloseBtnClick  },
+
+                'WinPnl': {  },
+                'WinPnl/WinRankTxt': {  },
+                'WinPnl/WinReward': {  },
+                'WinPnl/WinSureBtn': { onClicked: this.onCloseBtnClick },
+                'WinPnl/WinRightBtn': { onClicked: this.onShareFriendBtnClick  },
 
             }
         },
@@ -40,15 +47,24 @@ load('module/mahjong/ui/MatchResultLayer', function () {
         },
 
         updateView: function (msg) {
-            let reward
             if (msg.mcState === 0) {
-                reward = '  获奖'
+                this.WinPnl.setVisible(true)
+                this.LosePnl.setVisible(false)
+                this.WinRankTxt.setString('第' + msg.ranking + '名')
+                let rewardList = msg.mcRewardList
+                let rewardStr = '比赛奖励：'
+                for (let i = 0; i< rewardList.length; ++i) {
+                    rewardStr += cc.formatStr('道具编码(%s) 数量(%s) \n', rewardList[i].propCode.toString(), rewardList[i].propNum.toString())
+                }
+                this.WinReward.setString(rewardStr)
             } else if (msg.mcState === 1) {
-                reward = '  淘汰'
+                this.WinPnl.setVisible(false)
+                this.LosePnl.setVisible(true)
+                this.NameTxt.setString(msg.playerName)
+                this.MatchNameTxt.setString(msg.matchName)
+                this.RankTxt.setString('第' + msg.ranking + '名')
             }
-            this.NameTxt.setString(msg.playerName + reward)
-            this.MatchNameTxt.setString(msg.matchName)
-            this.RankTxt.setString('第' + msg.ranking + '名')
+
         },
 
         onEnter: function () {

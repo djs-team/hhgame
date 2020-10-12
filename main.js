@@ -151,7 +151,7 @@ cc.game.onStart = function(){
     //     cc.director.runScene(new HelloWorldScene());
     // }, this);
 
-    let gameIndex = include('game/index ')
+    let gameIndex = include('game/index')
     gameIndex.run()
 };
 cc.game.run();

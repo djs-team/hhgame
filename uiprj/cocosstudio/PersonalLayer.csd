@@ -6,7 +6,7 @@
       <ObjectData Name="Layer" Tag="179" ctype="GameLayerObjectData">
         <Size X="1280.0000" Y="720.0000" />
         <Children>
-          <AbstractNodeData Name="bolck" ActionTag="-310517500" Tag="313" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+          <AbstractNodeData Name="bolck" ActionTag="-310517500" UserData="{&quot;layoutType&quot;:&quot;maxArea&quot;,&quot;screenAlign&quot;:&quot;mid&quot;}" Tag="313" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="640.0000" Y="360.0000" />
@@ -110,17 +110,17 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="dataBtn" ActionTag="-1965977754" Tag="319" IconVisible="False" LeftMargin="297.0546" RightMargin="830.9454" TopMargin="186.3493" BottomMargin="460.6507" FontSize="26" ButtonText="基本资料" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="73" Scale9Height="51" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                <Size X="152.0000" Y="73.0000" />
+              <AbstractNodeData Name="dataBtn" ActionTag="-1965977754" Tag="319" IconVisible="False" LeftMargin="301.5500" RightMargin="841.4500" TopMargin="193.8500" BottomMargin="468.1500" FontSize="26" ButtonText="基本资料" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="152" Scale9Height="49" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                <Size X="137.0000" Y="58.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="373.0546" Y="497.1507" />
+                <Position X="370.0500" Y="497.1500" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.2914" Y="0.6905" />
-                <PreSize X="0.1187" Y="0.1014" />
+                <PrePosition X="0.2891" Y="0.6905" />
+                <PreSize X="0.1070" Y="0.0806" />
                 <TextColor A="255" R="115" G="62" B="0" />
-                <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                <NormalFileData Type="Normal" Path="common/bt_3.png" Plist="" />
+                <PressedFileData Type="Normal" Path="button/xin_anniu_8.png" Plist="" />
+                <NormalFileData Type="Normal" Path="button/xin_anniu_8.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
@@ -200,18 +200,17 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="updateNameBtn" ActionTag="-1895661144" Tag="328" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="101.7800" RightMargin="-47.7800" TopMargin="-0.1260" BottomMargin="-5.8740" TouchEnable="True" FontSize="14" ButtonText="Button" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="16" Scale9Height="14" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                    <Size X="46.0000" Y="36.0000" />
+                  <AbstractNodeData Name="updateNameBtn" ActionTag="-1895661144" Tag="328" IconVisible="False" LeftMargin="98.2800" RightMargin="-31.2800" TopMargin="-3.1300" BottomMargin="-0.8700" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="4" BottomEage="4" Scale9OriginX="15" Scale9OriginY="4" Scale9Width="3" Scale9Height="26" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                    <Size X="33.0000" Y="34.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="124.7800" Y="12.1260" />
+                    <Position X="114.7800" Y="16.1300" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="1.2478" Y="0.4042" />
-                    <PreSize X="0.4600" Y="1.2000" />
+                    <PrePosition X="1.1478" Y="0.5377" />
+                    <PreSize X="0.3300" Y="1.1333" />
                     <TextColor A="255" R="65" G="65" B="70" />
-                    <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                    <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
-                    <NormalFileData Type="Default" Path="Default/Button_Normal.png" Plist="" />
+                    <PressedFileData Type="Normal" Path="personal/gexx_8.png" Plist="" />
+                    <NormalFileData Type="Normal" Path="personal/gexx_8.png" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
@@ -441,15 +440,14 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Image_34" ActionTag="112444869" Tag="349" IconVisible="False" LeftMargin="46.0051" RightMargin="107.9949" TopMargin="136.9984" BottomMargin="116.0016" Scale9Width="46" Scale9Height="46" ctype="ImageViewObjectData">
-                    <Size X="46.0000" Y="46.0000" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="69.0051" Y="139.0016" />
+                  <AbstractNodeData Name="aniNd" ActionTag="741570487" Tag="48" IconVisible="True" LeftMargin="91.5820" RightMargin="108.4180" TopMargin="255.3231" BottomMargin="43.6769" ctype="SingleNodeObjectData">
+                    <Size X="0.0000" Y="0.0000" />
+                    <AnchorPoint />
+                    <Position X="91.5820" Y="43.6769" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.3450" Y="0.4649" />
-                    <PreSize X="0.2300" Y="0.1538" />
-                    <FileData Type="Default" Path="Default/ImageFile.png" Plist="" />
+                    <PrePosition X="0.4579" Y="0.1461" />
+                    <PreSize X="0.0000" Y="0.0000" />
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint />

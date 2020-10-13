@@ -365,6 +365,33 @@
           <Image Name="ssc_9.png" />
           <Image Name="ssc_9_1.png" />
         </Folder>
+        <Folder Name="button">
+          <Image Name="xin_anniu_1.png" />
+          <Image Name="xin_anniu_1_1.png" />
+          <Image Name="xin_anniu_10.png" />
+          <Image Name="xin_anniu_11.png" />
+          <Image Name="xin_anniu_12.png" />
+          <Image Name="xin_anniu_13.png" />
+          <Image Name="xin_anniu_14.png" />
+          <Image Name="xin_anniu_15.png" />
+          <Image Name="xin_anniu_16.png" />
+          <Image Name="xin_anniu_17.png" />
+          <Image Name="xin_anniu_18.png" />
+          <Image Name="xin_anniu_19.png" />
+          <Image Name="xin_anniu_2.png" />
+          <Image Name="xin_anniu_20.png" />
+          <Image Name="xin_anniu_21.png" />
+          <Image Name="xin_anniu_22.png" />
+          <Image Name="xin_anniu_23.png" />
+          <Image Name="xin_anniu_24.png" />
+          <Image Name="xin_anniu_3.png" />
+          <Image Name="xin_anniu_4.png" />
+          <Image Name="xin_anniu_5.png" />
+          <Image Name="xin_anniu_6.png" />
+          <Image Name="xin_anniu_7.png" />
+          <Image Name="xin_anniu_8.png" />
+          <Image Name="xin_anniu_9.png" />
+        </Folder>
         <Folder Name="cashcow">
           <Image Name="yjs_1.png" />
           <Image Name="yjs_10.png" />
@@ -743,6 +770,7 @@
           <Image Name="gexx_5.png" />
           <Image Name="gexx_6.png" />
           <Image Name="gexx_7.png" />
+          <Image Name="gexx_8.png" />
         </Folder>
         <Folder Name="png">
           <Image Name="denglu_bg.png" />

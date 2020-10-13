@@ -46,8 +46,8 @@ load('game/ui/layer/personal/PersonalMdt', function () {
             data.coin = appInstance.dataManager().getUserData().coin
             data.diamonds = appInstance.dataManager().getUserData().diamonds
             data.fuKa = appInstance.dataManager().getUserData().fuKa
+            data.pRole = appInstance.dataManager().getUserData().pRole
             data.photo = sdkUrl;
-            cc.log("---------------------sdkphotourl" + appInstance.dataManager().getUserData().sdkphotourl)
             this.view.onInitUserData(data)
 
 

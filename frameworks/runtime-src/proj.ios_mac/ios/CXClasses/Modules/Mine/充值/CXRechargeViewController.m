@@ -175,7 +175,7 @@
         };
         [CXHTTPRequest POSTWithURL:@"/index.php/Api/Order/pay" parameters:param callback:^(id responseObject, BOOL isCache, NSError *error) {
             if (!error) {
-                NSString *str = [responseObject jsonStringEncoded];
+                NSString *str = [responseObject[@"data"] jsonStringEncoded];
                 [[CXThirdPayManager sharedApi] wxPayWithPayParam:str success:nil failure:nil];
             }
         }];

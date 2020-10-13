@@ -195,13 +195,18 @@ static AppDelegate s_sharedApplication;
         // 支付跳转支付宝钱包进行支付，处理支付结果
         [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
             [[NSNotificationCenter defaultCenter] postNotificationName:kNSNotificationCenter_CXRechargeViewController_alipay object:resultDic];
-            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].openInstallParamMethod param:[resultDic jsonStringEncoded]];
+            if ([CXOCJSBrigeManager manager].paySuccessMethod.length > 0) {
+                [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].paySuccessMethod param:[resultDic jsonStringEncoded]];
+            }
+            
         }];
         
         // 授权跳转支付宝钱包进行支付，处理支付结果
         [[AlipaySDK defaultService] processAuth_V2Result:url standbyCallback:^(NSDictionary *resultDic) {
             [[NSNotificationCenter defaultCenter] postNotificationName:kNSNotificationCenter_CXRechargeViewController_alipay object:resultDic];
-            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].openInstallParamMethod param:[resultDic jsonStringEncoded]];
+            if ([CXOCJSBrigeManager manager].paySuccessMethod.length > 0) {
+                [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].paySuccessMethod param:[resultDic jsonStringEncoded]];
+            }
         }];
     } else {
         [WXApi handleOpenURL:url delegate:self];
@@ -402,7 +407,9 @@ static AppDelegate s_sharedApplication;
 - (void)onResp:(BaseResp *)resp {
     if ([resp isKindOfClass:[PayResp class]]){
         [[NSNotificationCenter defaultCenter] postNotificationName:kNSNotificationCenter_CXRechargeViewController_weixin object:[resp modelToJSONObject]];
-        [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].openInstallParamMethod param:[[resp modelToJSONObject] jsonStringEncoded]];
+        if ([CXOCJSBrigeManager manager].paySuccessMethod.length > 0) {
+            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].paySuccessMethod param:[[resp modelToJSONObject] jsonStringEncoded]];
+        }
     } else if ([resp isKindOfClass:[SendAuthResp class]]){
         SendAuthResp *resp2 = (SendAuthResp *)resp;
 //        [[NSNotificationCenter defaultCenter] postNotificationName:@"CXLoginLaunchControllerWXLogin" object:resp2];

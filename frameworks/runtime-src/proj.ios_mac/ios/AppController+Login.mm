@@ -84,9 +84,9 @@
 + (void)JPushLoginWithPhoneLogin {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"手机号登录" message:@"" preferredStyle:UIAlertControllerStyleAlert];
 
-//    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-////        [AppController JPushLoginWithMethod:[CXOCJSBrigeManager manager].jpushLoginMethod];
-//    }]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+//        [AppController JPushLoginWithMethod:[CXOCJSBrigeManager manager].jpushLoginMethod];
+    }]];
     
     [alert addAction:[UIAlertAction actionWithTitle:@"登录" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         //获取第1个输入框；
@@ -101,7 +101,7 @@
             NSString *respStr = [param jsonStringEncoded];
             [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].jpushLoginMethod param:respStr];
         } else {
-            [AppController JPushLoginWithMethod:[CXOCJSBrigeManager manager].jpushLoginMethod];
+//            [AppController JPushLoginWithMethod:[CXOCJSBrigeManager manager].jpushLoginMethod];
         }
     }]];
     

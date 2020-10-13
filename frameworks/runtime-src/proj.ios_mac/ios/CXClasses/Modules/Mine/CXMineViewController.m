@@ -175,7 +175,7 @@
             cell.itemDescLabel.text = @"已认证";
             cell.itemDescLabel.textColor = UIColorHex(0xF3BB49);
         } else {
-            cell.itemDescLabel.text = @"认证得玫瑰";
+            cell.itemDescLabel.text = @"";
             cell.itemDescLabel.textColor = UIColorHex(0x818181);
         }
     } else if ([title isEqualToString:@"绑定"]) {
@@ -221,6 +221,7 @@
         kWeakSelf
         [[CXAliRPManager sharedInstance] startWithSuccess:^{
             [weakSelf toast:@"认证成功"];
+            [weakSelf getUserData];
         } failure:^(int code, NSString * _Nonnull reason) {
             [weakSelf toast:reason];
         } nav:self.navigationController];

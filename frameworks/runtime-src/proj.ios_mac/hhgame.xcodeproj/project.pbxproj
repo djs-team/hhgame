@@ -3308,20 +3308,12 @@
 			children = (
 				00614BBB250B94C900BB7620 /* CXMineGuardListViewController.m */,
 				00614BBC250B94C900BB7620 /* CXMineGuardViewController.h */,
-				00614BBD250B94C900BB7620 /* Model */,
 				00614BBE250B94C900BB7620 /* View */,
 				00614BCB250B94CA00BB7620 /* CXMineGuardListViewController.xib */,
 				00614BCC250B94CA00BB7620 /* CXMineGuardListViewController.h */,
 				00614BCD250B94CA00BB7620 /* CXMineGuardViewController.m */,
 			);
 			path = "我的守护";
-			sourceTree = "<group>";
-		};
-		00614BBD250B94C900BB7620 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		00614BBE250B94C900BB7620 /* View */ = {

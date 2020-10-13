@@ -170,7 +170,7 @@
         [CXHTTPRequest POSTWithURL:@"/index.php/Api/Order/pay" parameters:param callback:^(id responseObject, BOOL isCache, NSError *error) {
             if (!error) {
                 if ([_action isEqualToString:@"weixin"]) {
-                    NSString *str = [responseObject jsonStringEncoded];
+                    NSString *str = [responseObject[@"data"] jsonStringEncoded];
                     [[CXThirdPayManager sharedApi] wxPayWithPayParam:str success:nil failure:nil];
                 } else {
                     [[CXThirdPayManager sharedApi] aliPayWithPayParam:responseObject[@"data"] success:nil failure:nil];

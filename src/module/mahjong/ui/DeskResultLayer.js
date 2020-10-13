@@ -10,6 +10,7 @@ load('module/mahjong/ui/DeskResultLayer', function () {
     let BaseLayer = include('public/ui/BaseLayer')
     let DeskResultLayerMdt = include('module/mahjong/ui/DeskResultLayerMdt')
     let TableConfig = include('module/mahjong/common/TableConfig')
+    let GameUtil = include('game/public/GameUtil')
     let TableEvent = TableConfig.Event
     let HuType = TableConfig.HuType
     let Layer = BaseLayer.extend({
@@ -244,6 +245,8 @@ load('module/mahjong/ui/DeskResultLayer', function () {
             let bigWin = cell.getChildByName('bigWin')
             let aniNd = cell.getChildByName('aniNd')
             let winNum = cell.getChildByName('winNum')
+
+            GameUtil.loadUrlImg(pinfo.pPhoto,head)
 
             name.setString(pinfo.nickName)
             winNum.setString(pinfo.pOffsetCoins)

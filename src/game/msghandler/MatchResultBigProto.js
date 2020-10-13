@@ -16,6 +16,13 @@ load('game/msghandler/MatchResultBigProto', function () {
 
         handleMsg: function (msg) {
             this._super(msg)
+            let pData = appInstance.dataManager().getPlayData()
+            let players = pData.players
+
+            for (let i = 0 ; i < msg.pPlayer.length; ++i) {
+                let seatid = msg.pPlayer[i].pSeatID
+                global.mergeData(msg.pPlayer[i], players[seatid])
+            }
             appInstance.sendNotification(Event.MatchResultBigProto, msg)
         },
 

@@ -38,6 +38,21 @@ load('game/public/GameUtil',function () {
         return armature
     }
 
+    GameUtil.loadUrlImg = function (url, parent) {
+        if (!url || !parent) {
+            return
+        }
+        cc.loader.loadImg(url, null, function (err, img) {
+            if (!err && img) {
+                let size = parent.getContentSize()
+                let sp = new cc.Sprite(img);
+                sp.setContentSize(size)
+                sp.setPosition(cc.p(size.width / 2, size.height / 2))
+                parent.addChild(sp);
+            }
+        });
+    }
+
 
 
     GameUtil.DATATYPE_1 = '1'

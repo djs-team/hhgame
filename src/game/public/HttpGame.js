@@ -873,7 +873,20 @@ load('game/public/HttpGame', function () {
                 cc.log('------------->>>httpGame ROLESELECTEDBack error happen')
                 return
             }
+
+            let saveKey = [
+
+                'pRole',
+            ]
+
+            let saveData = {
+
+                'pRole': msg.roleCode
+            }
+            appInstance.dataManager().getUserData().saveMsg(saveData, saveKey)
             appInstance.sendNotification(GameEvent.ROLES_SELECT, msg)
+            let ruleMsg = {}
+            appInstance.sendNotification(GameEvent.URLE_USED_UPDATE, ruleMsg)
 
         },
 

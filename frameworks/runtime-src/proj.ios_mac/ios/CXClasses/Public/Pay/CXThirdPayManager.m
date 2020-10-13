@@ -46,12 +46,12 @@ static id _instance;
     }
     
     NSString *appid = dic[@"appId"];
-    NSString *partnerid = dic[@"mchId"];
+    NSString *partnerid = dic[@"partnerid"];
     NSString *prepayid = dic[@"prepayId"];
-    NSString *package = @"Sign=WXPay";
+    NSString *package = dic[@"package"];
     NSString *noncestr = dic[@"nonceStr"];
     NSString *timestamp = dic[@"timeStamp"];
-    NSString *sign = dic[@"paySign"];
+    NSString *sign = dic[@"sign"];
         
     if(![WXApi isWXAppInstalled]) {
         failBlock(WXERROR_NOTINSTALL);
@@ -86,7 +86,7 @@ static id _instance;
 {
     self.PaySuccess = successBlock;
     self.PayError = failBlock;
-    NSString * appScheme =  @"hehe666";
+    NSString * appScheme =  @"hehegames";
     
     [[AlipaySDK defaultService] payOrder:pay_param fromScheme:appScheme callback:nil];
 }

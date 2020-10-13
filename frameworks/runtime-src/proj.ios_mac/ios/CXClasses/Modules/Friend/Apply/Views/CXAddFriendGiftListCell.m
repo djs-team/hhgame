@@ -18,7 +18,7 @@
 - (void)setGiftModel:(CXFriendGiftModel *)giftModel {
     _giftModel = giftModel;
     
-    [self.giftLogo sd_setImageWithURL:[NSURL URLWithString:giftModel.gift_image] placeholderImage:[UIImage imageNamed:@"avatar_default"]];
+    [self.giftLogo sd_setImageWithURL:[NSURL URLWithString:giftModel.gift_image]];
     if ([giftModel.pack_num integerValue] > 0) {
         self.giftNameLabel.text = [NSString stringWithFormat:@"%@X%@",giftModel.gift_name, giftModel.pack_num];
     } else {

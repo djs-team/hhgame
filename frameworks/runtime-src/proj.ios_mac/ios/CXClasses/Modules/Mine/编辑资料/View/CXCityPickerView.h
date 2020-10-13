@@ -11,6 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CXCityPickerView : MMPopupView
 
+@property (nonatomic, copy) void (^cityPickerSureBlock)(NSString *city);
+
 @end
 
 NS_ASSUME_NONNULL_END

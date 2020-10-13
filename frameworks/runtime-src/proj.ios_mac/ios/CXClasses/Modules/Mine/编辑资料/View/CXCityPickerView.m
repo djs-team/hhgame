@@ -111,7 +111,10 @@
     NSString *province = [self.provinceArray objectAtIndex:[self.mainPickerView selectedRowInComponent:0]];
     NSString *city  = [self.cityArray objectAtIndex:[self.mainPickerView selectedRowInComponent:1]];
     
-    NSLog(@"%@===%@", province, city);
+    NSString *cityStr = [NSString stringWithFormat:@"%@,%@", province, city];
+    if (self.cityPickerSureBlock) {
+        self.cityPickerSureBlock(cityStr);
+    }
     
     [self hide];
 }

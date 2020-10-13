@@ -35,7 +35,7 @@ load('public/suport/NativeApi', function () {
                     console.log('thirdPay-start')
                     jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'thirdPay', '(Ljava/lang/String;Ljava/lang/String;)V', type, message)
                 } else if (cc.sys.OS_IOS === cc.sys.os) {
-                    jsb.reflection.callStaticMethod('AppController', 'appPurchaseWithPayType:payParam:userID:orderNo:paySuccessMethod:', type, message,"","","ThirdPayCallback")
+                    jsb.reflection.callStaticMethod('AppController', 'appPurchaseWithPayType:payParam:userID:orderNo:paySuccessMethod:', type, message, "", "", "ThirdPayCallback")
                 }
             } catch (e) {
                 console.log('虽然我挂掉了,但是我还是坚持打印了了log: ' + String(e))
@@ -45,7 +45,7 @@ load('public/suport/NativeApi', function () {
         applyPay: function (message, orderNo) {
             try {
                 if (cc.sys.OS_IOS === cc.sys.os) {
-                    jsb.reflection.callStaticMethod('AppController', 'appPurchaseWithPayType:payParam:userID:orderNo:paySuccessMethod:', "ios", message,"",orderNo,"ApplePayCallback")
+                    jsb.reflection.callStaticMethod('AppController', 'appPurchaseWithPayType:payParam:userID:orderNo:paySuccessMethod:', "ios", message, "", orderNo, "ApplePayCallback")
                     // jsb.reflection.callStaticMethod('AppController', 'appPurchaseWithPayType:payParam:userID:paySuccessMethod:', type, message, "", "ThirdPayCallback")
                 }
             } catch (e) {
@@ -62,7 +62,8 @@ load('public/suport/NativeApi', function () {
             } catch (e) {
                 this.HelloOC('wxLogin throw: ' + JSON.stringify(e))
             }
-        }, oneClickLogin: function () {
+        },
+        oneClickLogin: function () {
             try {
                 if (cc.sys.OS_ANDROID === cc.sys.os) {
                     jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'login', '(Ljava/lang/String;)V', "jpush")
@@ -324,11 +325,9 @@ load('public/suport/NativeApi', function () {
 
                         xhr.open('GET', httpUrl)
                         xhr.onreadystatechange = function () {
-                            if (xhr.readyState === 4 && xhr.status === 200) {
-                            }
+                            if (xhr.readyState === 4 && xhr.status === 200) {}
                         }
-                        xhr.onerror = function () {
-                        }
+                        xhr.onerror = function () {}
                         xhr.send()
                     }
                 }
@@ -432,7 +431,7 @@ load('public/suport/NativeApi', function () {
                     userInfo.nickname = appInstance.dataManager().getUserData().pname
                     userInfo.username = appInstance.dataManager().getUserData().account
                     userInfo.avatar = appInstance.dataManager().getUserData().sdkphotourl
-                    
+
                     jsb.reflection.callStaticMethod('AppController', 'enterLiveBroadcastWithToken:', JSON.stringify(userInfo))
                 }
             } catch (e) {
@@ -466,7 +465,8 @@ load('public/suport/NativeApi', function () {
             } catch (e) {
                 NativeApi.HelloOC('shareArticle throw: ' + JSON.stringify(e))
             }
-        },//激励视频
+        },
+        //激励视频
         showRewardVideo: function () {
             try {
                 if (cc.sys.OS_ANDROID === cc.sys.os) {
@@ -479,7 +479,8 @@ load('public/suport/NativeApi', function () {
             } catch (e) {
                 NativeApi.HelloOC('showRewardVideo throw: ' + JSON.stringify(e))
             }
-        }, //复制
+        },
+        //复制
         copy: function (msg) {
             try {
                 if (cc.sys.OS_ANDROID === cc.sys.os) {
@@ -490,7 +491,8 @@ load('public/suport/NativeApi', function () {
             } catch (e) {
                 NativeApi.HelloOC('copy throw: ' + JSON.stringify(e))
             }
-        }, //获取二维码
+        },
+        //获取二维码
         getInvitationCode: function (msg) {
             try {
                 if (cc.sys.OS_ANDROID === cc.sys.os) {
@@ -502,7 +504,8 @@ load('public/suport/NativeApi', function () {
             } catch (e) {
                 NativeApi.HelloOC('getInvitationCode throw: ' + JSON.stringify(e))
             }
-        }, //获取安装参数
+        },
+        //获取安装参数
         getInstallParam: function () {
             try {
                 if (cc.sys.OS_ANDROID === cc.sys.os) {

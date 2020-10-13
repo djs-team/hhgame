@@ -68,7 +68,6 @@ public class RoomViewModel extends ViewModel {
     }
 
 
-
     public LiveData<Resource<List<GiftBean>>> getGifts(String status) {
         String type = "1";
         return mRepository.getGifts(type, status, SignatureUtils.signWith(type));
@@ -756,6 +755,18 @@ public class RoomViewModel extends ViewModel {
         jsonObject.addProperty("Number", Number);
         RoomController.getInstance().sendRoomMsg(jsonObject.toString());
         Log.d("AG_EX_AV", "getMicroRank:" + jsonObject.toString());
+
+    }
+
+    /**
+     * 139获取守护榜单（亲密值排序）
+     */
+    public void getGuardItemList(int Page, String UserId) {
+        JsonObject jsonObject = new JsonObject();
+        jsonObject.addProperty("MsgId", 139);
+        jsonObject.addProperty("Page", Page);
+        jsonObject.addProperty("UserId", UserId);
+        RoomController.getInstance().sendRoomMsg(jsonObject.toString());
 
     }
 

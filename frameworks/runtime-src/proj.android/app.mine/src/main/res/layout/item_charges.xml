@@ -8,16 +8,16 @@
 
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="65dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp">
 
 
         <android.support.constraint.ConstraintLayout
             android:id="@+id/charge_layout"
             android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:layout_alignParentBottom="true"
-            android:background="@drawable/selector_charge">
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_charge"
+            android:paddingBottom="6dp">
 
             <ImageView
                 android:id="@+id/md_iv"
@@ -34,7 +34,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="24dp"
                 android:includeFontPadding="false"
                 android:text="600000000000000"
                 android:textColor="@color/select_recharge_item_rose_color"
@@ -59,7 +59,7 @@
             android:id="@+id/tv_give_rose"
             android:layout_alignParentRight="true"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="17dp"
             android:paddingLeft="7dp"
             android:paddingRight="8dp"
             android:paddingBottom="2dp"
@@ -75,8 +75,6 @@
             />
         <TextView
             android:visibility="gone"
-            android:paddingTop="2dp"
-            android:paddingBottom="2dp"
             android:id="@+id/tv_discount"
             android:layout_width="match_parent"
             android:layout_height="17dp"

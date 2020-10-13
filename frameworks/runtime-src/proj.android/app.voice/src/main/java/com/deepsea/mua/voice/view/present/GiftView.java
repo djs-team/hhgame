@@ -47,13 +47,6 @@ public class GiftView extends ViewPager {
     }
 
     public void setData(List<GiftBean> list) {
-        //蓝玫瑰赠送的功能
-        GiftBean giftBean = new GiftBean();
-        giftBean.setGift_type("4");
-        giftBean.setGift_name("蓝玫瑰");
-        giftBean.setGift_coin(1);
-        giftBean.setGift_number(1);
-        list.add(giftBean);
         List<List<GiftBean>> datas = new ArrayList<>();
         if (list != null) {
             int index = 0;

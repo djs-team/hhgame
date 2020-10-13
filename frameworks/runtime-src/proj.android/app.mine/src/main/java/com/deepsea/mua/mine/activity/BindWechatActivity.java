@@ -158,12 +158,9 @@ public class BindWechatActivity extends BaseActivity<ActivityBindWxBinding> {
 
     private void updateWxBindUi(int isBind) {
         isBindWx = isBind;
-        ViewBindUtils.setVisible(mBinding.ivBindwx, isBindWx != 1);
         WxBindResultDialog dialog = new WxBindResultDialog(mContext);
         dialog.setDialogType(isBindWx);
         dialog.show();
-
-
     }
 
 

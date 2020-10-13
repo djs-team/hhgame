@@ -76,17 +76,6 @@ public class FriendMessageFragment extends BaseFragment<FragmentFriendMessageBin
         registerEventBus(this);
     }
 
-    @Subscribe(threadMode = ThreadMode.MAIN)
-    public void onEvent(HeartBeatEvent heartBeatEvent) {
-        //是否有未处理的好友请求，0代表无，1代表有
-        int isRequest = heartBeatEvent.getIsRequest();
-        if (isRequest == 0) {
-            mBinding.tvFriendRequest.setVisibility(View.GONE);
-        } else {
-            mBinding.tvFriendRequest.setVisibility(View.VISIBLE);
-        }
-    }
-
 
     @Override
     protected int getLayoutId() {
@@ -133,9 +122,11 @@ public class FriendMessageFragment extends BaseFragment<FragmentFriendMessageBin
             public void onClick(View v, Dialog d) {
                 dialog.dismiss();
                 EMClient.getInstance().chatManager().markAllConversationsAsRead();
-                for (FriendInfoBean bean : mAdapter.getData()) {
-                    bean.setUnReadCount(0);
-                    mAdapter.notifyDataSetChanged();
+                if (mAdapter.getData() != null) {
+                    for (FriendInfoBean bean : mAdapter.getData()) {
+                        bean.setUnReadCount(0);
+                        mAdapter.notifyDataSetChanged();
+                    }
                 }
                 EventBus.getDefault().post(new UpdateUnreadMsgEvent());
 
@@ -146,20 +137,7 @@ public class FriendMessageFragment extends BaseFragment<FragmentFriendMessageBin
 
     @Override
     protected void initView(View view) {
-        int isRequest = OnlineController.getInstance(mContext).getIsRequest();
-        if (isRequest == 0) {
-            mBinding.tvFriendRequest.setVisibility(View.GONE);
-        } else {
-            mBinding.tvFriendRequest.setVisibility(View.VISIBLE);
-        }
         mViewModel = ViewModelProviders.of(this, mModelFactory).get(FriendListViewModel.class);
-
-        mBinding.tvFriendRequest.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getActivity(), FriendRequestActivity.class));
-            }
-        });
         initRecyclerView();
         initRefreshLayout();
         initHX();
@@ -334,8 +312,6 @@ public class FriendMessageFragment extends BaseFragment<FragmentFriendMessageBin
             refresh();
         });
     }
-
-
 
 
     private void refresh() {

@@ -69,18 +69,6 @@ public class FriendMineFragment extends BaseFragment<FragmentFriendMessageBindin
         registerEventBus(this);
     }
 
-    @Subscribe(threadMode = ThreadMode.MAIN)
-    public void onEvent(HeartBeatEvent heartBeatEvent) {
-        //是否有未处理的好友请求，0代表无，1代表有
-        int isRequest = heartBeatEvent.getIsRequest();
-        if (isRequest == 0) {
-            mBinding.tvFriendRequest.setVisibility(View.GONE);
-        } else {
-            mBinding.tvFriendRequest.setVisibility(View.VISIBLE);
-        }
-    }
-
-
     @Override
     protected int getLayoutId() {
         return R.layout.fragment_friend_message;
@@ -88,20 +76,8 @@ public class FriendMineFragment extends BaseFragment<FragmentFriendMessageBindin
 
     @Override
     protected void initView(View view) {
-        int isRequest = OnlineController.getInstance(mContext).getIsRequest();
-        if (isRequest == 0) {
-            mBinding.tvFriendRequest.setVisibility(View.GONE);
-        } else {
-            mBinding.tvFriendRequest.setVisibility(View.VISIBLE);
-        }
-        mViewModel = ViewModelProviders.of(this, mModelFactory).get(FriendListViewModel.class);
 
-        mBinding.tvFriendRequest.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getActivity(), FriendRequestActivity.class));
-            }
-        });
+        mViewModel = ViewModelProviders.of(this, mModelFactory).get(FriendListViewModel.class);
         initRecyclerView();
         initRefreshLayout();
         initHX();

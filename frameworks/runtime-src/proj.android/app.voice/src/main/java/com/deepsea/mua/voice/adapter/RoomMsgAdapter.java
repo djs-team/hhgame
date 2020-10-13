@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
+import android.text.Html;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.text.TextUtils;
@@ -196,7 +197,7 @@ public class RoomMsgAdapter extends BaseChatAdapter<RoomMsgBean> {
 //            levelTv.setWithBackgroundColor(LevelResUtils.getSystemMsgColor(item.getLevel()));
 //            levelTv.setText("LV" + item.getLevel());
             ConstraintLayout msg_layout = (ConstraintLayout) getView(R.id.cl_group);
-            avatarGuardBg.setVisibility(TextUtils.isEmpty(item.getGuardSign())?View.GONE:View.VISIBLE);
+            avatarGuardBg.setVisibility(TextUtils.isEmpty(item.getGuardSign()) ? View.GONE : View.VISIBLE);
 
 
             if (item == null)
@@ -263,7 +264,11 @@ public class RoomMsgAdapter extends BaseChatAdapter<RoomMsgBean> {
                     builder.setSpan(msgSpan, builder.length() - count.length(), builder.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
                 }
             }
-            msgTv.setText(item.getMsg());
+            if (!TextUtils.isEmpty(item.getLocalMsg())) {
+                msgTv.setText(Html.fromHtml(item.getLocalMsg()));
+            } else {
+                msgTv.setText(item.getMsg());
+            }
             msgTv.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

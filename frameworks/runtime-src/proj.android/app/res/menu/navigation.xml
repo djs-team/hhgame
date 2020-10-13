@@ -3,7 +3,7 @@
     <item
         android:id="@+id/navigation_voice"
         android:icon="@drawable/nav_voice_a"
-        android:title="大厅" />
+        android:title="交友" />
 
     <item
         android:id="@+id/navigation_msg"

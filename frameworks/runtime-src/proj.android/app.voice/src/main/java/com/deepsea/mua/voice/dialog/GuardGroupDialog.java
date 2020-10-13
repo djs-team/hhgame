@@ -5,23 +5,15 @@ import android.databinding.DataBindingUtil;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
 import android.text.TextUtils;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.LinearLayout;
-
 import com.deepsea.mua.core.dialog.BaseDialog;
 import com.deepsea.mua.core.utils.GlideUtils;
 import com.deepsea.mua.core.utils.JsonConverter;
 import com.deepsea.mua.core.websocket.WsocketListener;
 import com.deepsea.mua.core.websocket.WsocketManager;
-import com.deepsea.mua.stub.adapter.RecyclerAdapterWithHF;
-import com.deepsea.mua.stub.api.RetrofitApi;
-import com.deepsea.mua.stub.entity.GuardInfoBean;
-import com.deepsea.mua.stub.entity.LookGuardUserVo;
-import com.deepsea.mua.stub.entity.MaqueeBean;
-import com.deepsea.mua.stub.entity.socket.WsUser;
+import com.deepsea.mua.stub.entity.socket.receive.GetGuardItemListParam;
 import com.deepsea.mua.stub.entity.socket.receive.GetMicroRanksParam;
+import com.deepsea.mua.stub.entity.socket.receive.GuardItem;
 import com.deepsea.mua.stub.entity.socket.receive.MicroRankData;
 import com.deepsea.mua.stub.mvp.NewSubscriberCallBack;
 import com.deepsea.mua.stub.network.HttpHelper;
@@ -42,25 +34,25 @@ import com.google.gson.JsonParser;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
-import com.umeng.commonsdk.statistics.proto.Response;
 
 import org.greenrobot.eventbus.EventBus;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
+import okhttp3.Response;
+
 
 /**
  * Created by JUN on 2018/9/27
  * 守护团
  */
 public class GuardGroupDialog extends BaseDialog<DialogGuardGroupMineBinding> {
+    private RoomViewModel roomViewModel;
 
-    public GuardGroupDialog(@NonNull Context context) {
+    public GuardGroupDialog(@NonNull Context context, RoomViewModel roomViewModel) {
         super(context);
-
+        this.roomViewModel = roomViewModel;
+        addSocketListener();
     }
 
 
@@ -91,9 +83,11 @@ public class GuardGroupDialog extends BaseDialog<DialogGuardGroupMineBinding> {
 
 
     GuardGroupAdapter mAdapter;
-    private int page = 1;
+    private int page = 0;
+    private String guardUserId;
 
     public void setMsg(String userId) {
+        this.guardUserId = userId;
         mAdapter = new GuardGroupAdapter(mContext);
         mBinding.rvFans.setLayoutManager(new LinearLayoutManager(mContext));
         mBinding.rvFans.setAdapter(mAdapter);
@@ -103,15 +97,14 @@ public class GuardGroupDialog extends BaseDialog<DialogGuardGroupMineBinding> {
             @Override
             public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
                 page++;
-                fetchGuardData(userId, page);
-
+                roomViewModel.getGuardItemList(page, UserUtils.getUser().getUid());
             }
         });
         mBinding.refreshLayout.setOnRefreshListener(new OnRefreshListener() {
             @Override
             public void onRefresh(@NonNull RefreshLayout refreshLayout) {
-                page = 1;
-                fetchGuardData(userId, page);
+                page = 0;
+                roomViewModel.getGuardItemList(page, UserUtils.getUser().getUid());
 
             }
         });
@@ -123,50 +116,69 @@ public class GuardGroupDialog extends BaseDialog<DialogGuardGroupMineBinding> {
         });
     }
 
-    private void setViewData(LookGuardUserVo data) {
-        LookGuardUserVo.UserInfoBean userInfoBean = data.getUser_info();
-        ViewBindUtils.setText(mBinding.tvName, userInfoBean.getNickname() + "的守护团");
-        GlideUtils.circleImage(mBinding.ivHead, userInfoBean.getAvatar(), R.drawable.ic_place, R.drawable.ic_place);
-//        ViewBindUtils.setText(mBinding.tvName,userInfoBean.get()+"的守护团");
-        int isGuard = data.getIs_guard();
-        if (isGuard == 2&& !TextUtils.equals(UserUtils.getUser().getUid(),userInfoBean.getId())) {
+    private void setViewData(boolean isGuard, String nickName, String guardHeard) {
+        ViewBindUtils.setText(mBinding.tvName, nickName + "的守护团");
+        GlideUtils.circleImage(mBinding.ivHead, guardHeard, R.drawable.ic_place, R.drawable.ic_place);
+        if (isGuard == false && !TextUtils.equals(UserUtils.getUser().getUid(), guardUserId)) {
             mBinding.consGroup.setVisibility(View.VISIBLE);
             mBinding.refreshLayout.setVisibility(View.GONE);
         } else {
             mBinding.refreshLayout.setVisibility(View.VISIBLE);
             mBinding.consGroup.setVisibility(View.GONE);
         }
-
     }
 
-    private void fetchGuardData(String userId, int page) {
-        HttpHelper.instance().getApi(RetrofitApi.class).getGuardUserList(userId, page)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new NewSubscriberCallBack<LookGuardUserVo>() {
-                    @Override
-                    protected void onSuccess(LookGuardUserVo result) {
-                        if (result != null) {
-                            if (page == 1) {
-                                setViewData(result);
-                                LookGuardUserVo.PageInfoBean pageInfo = result.getPageInfo();
-                                mAdapter.setNewData(result.getGuard_memberlist());
-                                mBinding.refreshLayout.finishRefresh();
-                                mBinding.refreshLayout.setEnableLoadMore(pageInfo.getPage() < pageInfo.getTotalPage());
-                            } else {
-                                LookGuardUserVo.PageInfoBean pageInfo = result.getPageInfo();
-                                mAdapter.addData(result.getGuard_memberlist());
-                                mBinding.refreshLayout.finishLoadMore();
-                                mBinding.refreshLayout.setEnableLoadMore(pageInfo.getPage() < pageInfo.getTotalPage());
-                            }
+    private void addSocketListener() {
+        WsocketManager.create().addWsocketListener(mWsocketListener);
+    }
+
+    private void removeSocketListener() {
+        WsocketManager.create().removeWsocketListener(mWsocketListener);
+    }
+
+    private WsocketListener mWsocketListener = new WsocketListener() {
+        public void onMessage(String message) {
+            JsonParser parser = new JsonParser();
+            JsonObject object = parser.parse(message).getAsJsonObject();
+            int msgId = object.get("MsgId").getAsInt();
+            switch (msgId) {
+                case 139:
+                    GetGuardItemListParam data = JsonConverter.fromJson(message, GetGuardItemListParam.class);
+                    List<GuardItem> itemList = data.getGuardItems();
+                    if (itemList != null && itemList.size() > 0) {
+                        if (page == 0) {
+                            mAdapter.setNewData(itemList);
+                        } else {
+                            mAdapter.addData(itemList);
                         }
                     }
+                    if (page == 0) {
+                        setViewData(data.isGuard(), data.getGuardName(), data.getGuardHead());
 
-                    @Override
-                    protected void onError(int errorCode, String errorMsg) {
+                        mBinding.refreshLayout.finishRefresh();
+                    } else {
+                        mBinding.refreshLayout.finishLoadMore();
 
                     }
-                });
-    }
+                    if (data.getAllPage() > page) {
+                        mBinding.refreshLayout.setEnableLoadMore(true);
+                    } else {
+                        mBinding.refreshLayout.setEnableLoadMore(false);
+                    }
+                    break;
 
+            }
+        }
+
+        public void onFailure(Throwable t, Response response) {
+        }
+    };
+
+
+
+    @Override
+    public void dismiss() {
+        super.dismiss();
+        removeSocketListener();
+    }
 }

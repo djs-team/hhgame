@@ -176,6 +176,7 @@ load('module/mahjong/ui/DeskCardLayerMdt', function () {
             let players = pData.players
             for (let k in players) {
                 let uiSeat = pData.seatId2UI(k)
+                players[k].showCards = []
                 this.view.updateHandCard(uiSeat,players[k])
             }
             let nDeckCardNum = pData.tableData.nDeckCardNum

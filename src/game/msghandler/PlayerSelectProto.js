@@ -159,6 +159,10 @@ load('game/msghandler/PlayerSelectProto', function () {
                         lastSelectPlayer.handCardCount -= 3
                     }
                     break
+                case 130: //过
+
+                    tData.pMustOutCard = []
+                    break
             }
 
             switch (pActionID) {

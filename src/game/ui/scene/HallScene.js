@@ -304,14 +304,16 @@ load('game/ui/scene/HallScene', function () {
 
         loadUrlImage: function (url, cell) {
             let size = cell.getContentSize();
+            cell.retain()
             cc.loader.loadImg(url, null, function (err, img) {
                 if ( !err && img) {
                     var logo = new cc.Sprite(img);
                     logo.setContentSize(size)
                     logo.setPosition(cc.p(size.width / 2, size.height / 2))
                     cell.addChild(logo);
+                    cell.release()
                 }
-            });
+            }.bind(this));
         },
         showMatchJinjiLayer: function (msg) {
             if (!this.MatchJinjiLayer) {

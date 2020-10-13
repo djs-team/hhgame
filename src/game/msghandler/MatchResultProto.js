@@ -16,7 +16,8 @@ load('game/msghandler/MatchResultProto', function () {
 
         handleMsg: function (msg) {
             this._super(msg)
-
+            //重置掉之前的晋级记录 为避免遮挡 晋级界面放到大厅
+            appInstance.dataManager().getUserData().MatchJinjiGaming = null
             appInstance.sendNotification(Event.MatchResultProto, msg)
         },
 

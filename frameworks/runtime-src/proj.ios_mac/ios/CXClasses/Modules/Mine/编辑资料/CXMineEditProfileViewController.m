@@ -13,6 +13,7 @@
 #import "XYTableViewAlertView.h"
 #import "CXTwoPickerViewAlertView.h"
 #import "CXProfessionSelectedView.h"
+#import "CXCityPickerView.h"
 
 @interface CXMineEditProfileViewController ()<UITableViewDataSource,UITableViewDelegate, UITextViewDelegate>
 {
@@ -441,6 +442,8 @@
                 [weakSelf.tableView reloadRowAtIndexPath:indexPath withRowAnimation:UITableViewRowAnimationNone];
             };
             [self lew_presentPopupView:alertView animation:nil];
+//            CXCityPickerView *cityView = [[[NSBundle mainBundle] loadNibNamed:@"CXCityPickerView" owner:self options:nil] lastObject];
+//            [cityView show];
 
         } else if ([model.column isEqualToString:@"education"]) {
             CXPickerViewAlertView *alertView = [[[NSBundle mainBundle] loadNibNamed:@"CXPickerViewAlertView" owner:self options:nil] lastObject];

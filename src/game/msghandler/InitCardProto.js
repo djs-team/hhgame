@@ -20,7 +20,7 @@ load('game/msghandler/InitCardProto', function () {
             let players = pData.players
 
             for (let i = 0; i < players.length; ++i) {
-                players.showCards = []
+                players[i].showCards = []
             }
 
 

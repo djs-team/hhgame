@@ -14,9 +14,9 @@ static const NSInteger titleFontSize = 15;
 
 + (MBProgressHUD*)createMBProgressHUDviewWithMessage:(NSString*)message isWindiw:(BOOL)isWindow
 {
-    UIView *view = isWindow? (UIView*)[UIApplication sharedApplication].delegate.window:[self getCurrentUIVC].view;
+    UIView *view = isWindow? (UIView*)[UIApplication sharedApplication].delegate.window:[self currentViewController].view;
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
-    hud.detailsLabel.text = message?message:@"加载中.....";
+    hud.detailsLabel.text = message ? message:@"加载中.....";
     hud.detailsLabel.font = [UIFont systemFontOfSize:titleFontSize];
     hud.removeFromSuperViewOnHide = YES;
     hud.userInteractionEnabled = NO;
@@ -66,7 +66,7 @@ static const NSInteger titleFontSize = 15;
 }
 + (void)showActivityMessage:(NSString*)message isWindow:(BOOL)isWindow timer:(int)aTimer
 {
-    MBProgressHUD *hud  =  [self createMBProgressHUDviewWithMessage:message isWindiw:isWindow];
+    MBProgressHUD *hud = [self createMBProgressHUDviewWithMessage:message isWindiw:isWindow];
     hud.mode = MBProgressHUDModeIndeterminate;
     if (aTimer > 0) {
         [hud hideAnimated:YES afterDelay:aTimer];
@@ -113,113 +113,51 @@ static const NSInteger titleFontSize = 15;
 }
 
 + (void)showHUD {
-    UIView *winView =(UIView*)[UIApplication sharedApplication].delegate.window;
-    [self showHUDAddedTo:winView animated:YES];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        UIView *winView =(UIView*)[UIApplication sharedApplication].delegate.window;
+        [self showHUDAddedTo:winView animated:YES];
+    });
 }
 
 + (void)hideHUD
 {
-    UIView *winView =(UIView*)[UIApplication sharedApplication].delegate.window;
-    [self hideHUDForView:winView animated:YES];
-    [self hideHUDForView:[self getCurrentUIVC].view animated:YES];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        //主线程执行
+        UIView  *winView =(UIView*)[UIApplication sharedApplication].delegate.window;
+        [self hideHUDForView:winView animated:YES];
+        [self hideHUDForView:[self currentViewController].view animated:YES];
+    });
 }
-#pragma mark --- 获取当前Window试图---------
-//获取当前屏幕显示的viewcontroller
-+ (UIViewController*)getCurrentWindowVC {
-    UIWindow * window = [[UIApplication sharedApplication] keyWindow];
-    //app默认windowLevel是UIWindowLevelNormal，如果不是，找到它
-    if (window.windowLevel != UIWindowLevelNormal) {
-        NSArray *windows = [[UIApplication sharedApplication] windows];
-        for(UIWindow * tmpWin in windows) {
-            if (tmpWin.windowLevel == UIWindowLevelNormal) {
-                window = tmpWin;
-                break;
-            }
-        }
-    }
-    id nextResponder = nil;
-    UIViewController *appRootVC = window.rootViewController;
-    if ([appRootVC isKindOfClass:[UITabBarController class]]) {
-        nextResponder = appRootVC;
-    }else
-    if (appRootVC.presentedViewController) {
-    //1、通过present弹出VC，appRootVC.presentedViewController不为nil
-        nextResponder = appRootVC.presentedViewController;
-    }else
-    if (appRootVC.childViewControllers>0) {
-           nextResponder = appRootVC.childViewControllers[0];
-    }else
-    {
-        //2、通过navigationcontroller弹出VC
-        //        NSLog(@"subviews == %@",[window subviews]);
-        UIView *frontView = [[window subviews] objectAtIndex:0];
-        nextResponder = [frontView nextResponder];
-    }
-    return nextResponder;
-}
-
-+(UINavigationController*)getCurrentNaVC
-{
+#pragma mark --- 获取当前Window视图---------
++ (UIViewController *)currentViewController {
     
-    UIViewController  *viewVC = (UIViewController*)[ self getCurrentWindowVC ];
-    UINavigationController  *naVC;
-    if ([viewVC isKindOfClass:[UITabBarController class]]) {
-        UITabBarController  *tabbar = (UITabBarController*)viewVC;
-        naVC = (UINavigationController *)tabbar.viewControllers[tabbar.selectedIndex];
-        if (naVC.presentedViewController) {
-            while (naVC.presentedViewController) {
-                naVC = (UINavigationController*)naVC.presentedViewController;
-            }
-        }
-    }else
-        if ([viewVC isKindOfClass:[UINavigationController class]]) {
-            
-            naVC  = (UINavigationController*)viewVC;
-            if (naVC.presentedViewController) {
-                while (naVC.presentedViewController) {
-                    naVC = (UINavigationController*)naVC.presentedViewController;
-                }
-            }
-        }else
-            if ([viewVC isKindOfClass:[UIViewController class]])
-            {
-                if (viewVC.navigationController) {
-                    return viewVC.navigationController;
-                }
-                return  (UINavigationController*)viewVC;
-            }
-    return naVC;
-}
+    UIViewController* vc = [UIApplication sharedApplication].keyWindow.rootViewController;
 
-+(UIViewController*)getCurrentUIVC
-{
-    UIViewController   *cc;
-    UINavigationController  *na = (UINavigationController*)[[self class] getCurrentNaVC];
-    if ([na isKindOfClass:[UINavigationController class]]) {
-        cc =  na.viewControllers.lastObject;
+    while (1) {
         
-        if (cc.childViewControllers.count>0) {
+        if ([vc isKindOfClass:[UITabBarController class]]) {
             
-            cc = [[self class] getSubUIVCWithVC:cc];
+            vc = ((UITabBarController*)vc).selectedViewController;
+            
         }
-    }else
-    {
-        cc = (UIViewController*)na;
-    }
-    return cc;
-}
-+(UIViewController *)getSubUIVCWithVC:(UIViewController*)vc
-{
-    UIViewController   *cc;
-    cc =  vc.childViewControllers.lastObject;
-    if (cc.childViewControllers>0) {
         
-        [[self class] getSubUIVCWithVC:cc];
-    }else
-    {
-        return cc;
+        if ([vc isKindOfClass:[UINavigationController class]]) {
+            
+            vc = ((UINavigationController*)vc).visibleViewController;
+            
+        }
+        
+        if (vc.presentedViewController) {
+            
+            vc = vc.presentedViewController;
+            
+        } else {
+            
+            break;
+            
+        }
     }
-    return cc;
+    return vc;
 }
 
 @end

@@ -30,13 +30,17 @@ load('game/public/HttpGame', function () {
                 this._requestBackCall[HttpEvent.MJ_HALL_MESSAGE_LOGIN] = this.httpLoginBack
             }
             let sendMsg = {
-                platform: 1,  //登陆平台1游客2手机3微信4闲聊5账号登录
-                account: '',  //账号
-                device: 'devicestr', //设备
-                phoneModel: cc.sys.os,  //登录手机设备  ios  android
-                imei:'', //手机唯一标识
-                unionId: '', //微信唯一标识
+                platform: 1,
+                account: '',
+                device: 'devicestr',
+                phoneModel: cc.sys.os,
+                imei: '',
+                unionId: '',
+                pid: ""
             }
+            let myParam = cc.sys.localStorage.getItem("installParam");
+            msg.pid = myParam;
+            cc.log('=========httpLoginRequest===============' + JSON.stringify(msg))
             this.checkSendMsg(sendMsg, msg)
             sendMsg.msgID = HttpEvent.MJ_HALL_MESSAGE_LOGIN
             appInstance.httpAgent().sendPost(sendMsg)
@@ -48,8 +52,8 @@ load('game/public/HttpGame', function () {
          * @param msg
          */
         httpLoginBack: function (msg) {
+            cc.log('=========httpLoginBack================' + JSON.stringify(msg))
             if (msg.status !== 0) {
-                cc.log('=========httpLoginBack============error================')
                 return
             }
             let saveKey = [
@@ -61,7 +65,6 @@ load('game/public/HttpGame', function () {
                 'lastChannel',
                 'fistLogin'
             ]
-
             appInstance.dataManager().getUserData().saveMsg(msg, saveKey)
 
             let msgCommon = {}
@@ -208,6 +211,7 @@ load('game/public/HttpGame', function () {
             }
             msg.pRole = msg.roleCode
             let saveKey = [
+                'pid',
                 'pname',
                 'coin',
                 'diamonds',
@@ -418,7 +422,6 @@ load('game/public/HttpGame', function () {
             }
 
 
-            console.log('-------------------TURNTABLEBack data : ' + JSON.stringify(msg))
             appInstance.sendNotification(GameEvent.TURNTABLE_INIT, msg)
 
         },
@@ -441,7 +444,6 @@ load('game/public/HttpGame', function () {
                 return
             }
 
-            console.log('-------------------TURNPOINTBack data : ' + JSON.stringify(msg))
 
             let saveKey = [
 
@@ -500,7 +502,6 @@ load('game/public/HttpGame', function () {
                 return
             }
 
-            console.log('-------------------REFRESHAWARDSDATABack data : ' + JSON.stringify(msg))
             appInstance.sendNotification(GameEvent.TURNTABLE_LUCKY_PRIZE, msg)
 
         },
@@ -963,7 +964,7 @@ load('game/public/HttpGame', function () {
             ]
             let saveData = {
 
-                'isHaveAdress' : 1
+                'isHaveAdress': 1
 
             }
             appInstance.dataManager().getUserData().saveMsg(saveData, saveKey)
@@ -1049,6 +1050,25 @@ load('game/public/HttpGame', function () {
 
         },
 
+        // 苹果支付成功订单校验
+        VIPPaysOrderAppleCheckReq: function (msg) {
+            msg = msg || {}
+            cc.log('-------------VIPPaysOrderAppleCheckReq---Request-----：' + JSON.stringify(msg))
+            if (!this._requestBackCall[HttpEvent.MJ_HALL_PLAYER_BUY_VIP_ORDER_APPLE_CHECK]) {
+                this._requestBackCall[HttpEvent.MJ_HALL_PLAYER_BUY_VIP_ORDER_APPLE_CHECK] = this.VIPPaysOrderAppleCheckBack
+            }
+            msg.msgID = HttpEvent.MJ_HALL_PLAYER_BUY_VIP_ORDER_APPLE_CHECK
+            appInstance.httpAgent().sendPost(msg)
+        },
+        
+        VIPPaysOrderAppleCheckBack: function (msg) {
+            if (msg.status !== 0) {
+                cc.log('------------->>>httpGame VIPPaysOrderAppleCheckBack error happen' + JSON.stringify(msg))
+                return
+            }
+            appInstance.sendNotification(GameEvent.PLAYER_BUY_VIP_ORDER_APPLE_CHECK, msg)
+
+        },
 
         ROLLIMGLISTReq: function (msg) {
             msg = msg || {}

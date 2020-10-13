@@ -108,22 +108,28 @@ load('game/public/GameUtil',function () {
         let propCode = prop.propCode = data.propCode
         let propNum = prop.propNum = data.propNum
 
+        let propsResName = 'propsRes'
+        if(functionName == GameConfig.FUNCTION_NAME_TURNTABLE)
+            propsResName = 'turnTableRewardsRes'
+        else if(functionName == GameConfig.FUNCTION_NAME_SIGN)
+            propsResName = 'signRewardsRes'
+
 
 
         if(currencyType == GameUtil.CURRENCYTYPE_1){
-            prop.res = GameConfig.propsRes[propType]['propCode'][propCode][GameConfig.ICON_RESULT_CURRENCY]
+            prop.res = GameConfig[propsResName][propType]['propCode'][propCode][GameConfig.ICON_RESULT_CURRENCY]
         }else{
             if(global.isUndefined(functionName)){
-                prop.res = GameConfig.propsRes[propType]['propCode'][propCode][GameConfig.ICON_RESULT_CURRENCY]
+                prop.res = GameConfig[propsResName][propType]['propCode'][propCode][GameConfig.ICON_RESULT_CURRENCY]
             }else{
                 if(!GameUtil.haveMulityCurrency(functionName,propType,propCode)){
-                    prop.res = GameConfig.propsRes[propType]['propCode'][propCode][GameConfig.ICON_RESULT_CURRENCY]
+                    prop.res = GameConfig[propsResName][propType]['propCode'][propCode][GameConfig.ICON_RESULT_CURRENCY]
                 }else{
                     let propsQuantityInterval = GameUtil.getPropsQuantityInterval(functionName,propType,propCode,propNum)
                     if(global.isUndefined(propsQuantityInterval))
-                        prop.res = GameConfig.propsRes[propType]['propCode'][propCode][GameConfig.ICON_RESULT_CURRENCY]
+                        prop.res = GameConfig[propsResName][propType]['propCode'][propCode][GameConfig.ICON_RESULT_CURRENCY]
                     else
-                        prop.res = GameConfig.propsRes[propType]['propCode'][propCode][propsQuantityInterval]
+                        prop.res = GameConfig[propsResName][propType]['propCode'][propCode][propsQuantityInterval]
                 }
             }
         }
@@ -135,6 +141,8 @@ load('game/public/GameUtil',function () {
         }
 
     }
+
+
 
     GameUtil.getPropsQuantityInterval = function (functionName,propType,propCode,propNum) {
 

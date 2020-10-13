@@ -14,7 +14,6 @@ import com.deepsea.mua.stub.utils.TimeUtils;
 import com.deepsea.mua.stub.utils.ViewBindUtils;
 import com.deepsea.mua.voice.R;
 import com.deepsea.mua.voice.adapter.SongLrcAdapter;
-import com.deepsea.mua.voice.databinding.DialogBlueRoseGiveBinding;
 import com.deepsea.mua.voice.databinding.DialogSongLrcBinding;
 import com.deepsea.mua.voice.lrc.impl.LrcRow;
 

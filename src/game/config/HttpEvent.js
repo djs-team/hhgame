@@ -62,6 +62,9 @@ load('game/config/HttpEvent', function () {
         MJ_HALL_PLAYER_GOODS_LOG: HTTP_HALL_BASE + 114,
         MJ_HALL_PLAYER_ONLINE_EXCHANGE: HTTP_HALL_BASE + 115,
         MJ_HALL_PLAYER_PHOTO_CHANGE: HTTP_HALL_BASE + 117,
+        
+        
+        MJ_HALL_PLAYER_BUY_VIP_ORDER_APPLE_CHECK: HTTP_HALL_BASE + 27, // VIP购买苹果支付订单校验
 
     }
     return HttpEvent

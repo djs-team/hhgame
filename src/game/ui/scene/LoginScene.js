@@ -5,7 +5,6 @@ load('game/ui/scene/LoginScene', function () {
     let BaseScene = include('public/ui/BaseScene')
     let ResConfig = include('game/config/ResConfig')
     let LoginMdt = include('game/ui/scene/LoginMdt')
-    let HallScene = include('game/ui/scene/HallScene')
     let LocalSave = include('game/public/LocalSave')
     let LoginScene = BaseScene.extend({
         _className: 'LoginScene',
@@ -25,6 +24,7 @@ load('game/ui/scene/LoginScene', function () {
             this.registerEventListener('GET_PHOTO_UPLOADPIC', this.onUpLoadPhotoSuccess)
             this.registerEventListener('PIC_SIZE_WARNING', this.onSizeWarning)
             this.registerEventListener('THIRD_LOGIN_RESULT', this.onThirdLogin)
+            this.registerEventListener('installParam', this.onInstallParam)
 
             this.uploadUrl = [
                 'http://download.jxlwgame.com/weixin/uploadimg',
@@ -64,8 +64,6 @@ load('game/ui/scene/LoginScene', function () {
                 this.debugLogin()
             } else {
                 appInstance.nativeApi().wxLogin()
-                // appInstance.nativeApi().shareImage("WEIXIN", "https://dss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1812993978,4158651947&fm=26&gp=0.jpg")
-                // appInstance.nativeApi().shareArticle("WEIXIN", "title", "desc", "http://www.baidu.com", "https://dss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1812993978,4158651947&fm=26&gp=0.jpg")
             }
 
         },
@@ -75,11 +73,11 @@ load('game/ui/scene/LoginScene', function () {
         },
 
         goTest: function () {
-            // let MjPlayScene = include('module/mahjong/ui/MjPlayScene')
-            // appInstance.sceneManager().replaceScene(new MjPlayScene())
-            let TurnTableLayer = include('game/ui/layer/turntable/TurnTableLayer')
-            let TurnTableLayerUI = appInstance.uiManager().createPopUI(TurnTableLayer)
-            appInstance.sceneManager().getCurScene().addChild(TurnTableLayerUI)
+            let MjPlayScene = include('module/mahjong/ui/MjPlayScene')
+            appInstance.sceneManager().replaceScene(new MjPlayScene())
+            // let TurnTableLayer = include('game/ui/layer/turntable/TurnTableLayer')
+            // let TurnTableLayerUI = appInstance.uiManager().createPopUI(TurnTableLayer)
+            // appInstance.sceneManager().getCurScene().addChild(TurnTableLayerUI)
         },
 
         onagreeBtnClick: function () {
@@ -136,6 +134,19 @@ load('game/ui/scene/LoginScene', function () {
                 appInstance.gameAgent().httpGame().httpLogin(msg)
             }
         },
+        onInstallParam: function (msg) {
+            cc.log('======onInstallParam=======' + JSON.stringify(msg))
+            if (cc.sys.OS_ANDROID === cc.sys.os) {
+                cc.sys.localStorage.setItem("installParam", msg);
+                let myParam = cc.sys.localStorage.getItem("installParam");
+                cc.log('======onInstallParam=======' + JSON.stringify(myParam))
+
+
+            }
+            if (cc.sys.OS_IOS === cc.sys.os) {
+
+            }
+        },
 
         onSizeWarning: function (msg) {
             appInstance.gameAgent().Tips('图片较大！请上传1M以下图片，谢谢')
@@ -153,7 +164,9 @@ load('game/ui/scene/LoginScene', function () {
         },
 
         initData: function () {
+            appInstance.nativeApi().getInstallParam()
 
+            appInstance.audioManager().playMusic(ResConfig.Sound.bg1, true)
         },
 
         showView: function () {

@@ -84,7 +84,7 @@ public class RoomAdapter extends BaseBindingAdapter<HomeInfo.RoomBean, ItemRoomB
         }
         ViewBindUtils.setText(holder.binding.tvWelcome, "欢迎来到" + item.getRoom_name() + "的直播间");
 
-        Shader shader = new LinearGradient(0, 0, 0, 20, Color.parseColor("#FD1E1D"), Color.parseColor("#FE711C"), Shader.TileMode.CLAMP);
-        holder.binding.tvHuigou.getPaint().setShader(shader);
+//        Shader shader = new LinearGradient(0, 0, 0, 20, Color.parseColor("#FD1E1D"), Color.parseColor("#FE711C"), Shader.TileMode.CLAMP);
+//        holder.binding.tvHuigou.getPaint().setShader(shader);
     }
 }

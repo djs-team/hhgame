@@ -51,6 +51,7 @@ load('game/config/GameEvent', function () {
         'ADRESS_UPDATE': 'ADRESS_UPDATE',
         'VIDEO_WATCH_DIAMONDS': 'VIDEO_WATCH_DIAMONDS',
         'PLAYER_BUY_VIP_ORDER': 'PLAYER_BUY_VIP_ORDER',
+        'PLAYER_BUY_VIP_ORDER_APPLE_CHECK': 'PLAYER_BUY_VIP_ORDER_APPLE_CHECK',
         'GETROLLIMGLIST': 'GETROLLIMGLIST',
         'MENULIST': 'MENULIST',
         'GOODSLIST': 'GOODSLIST',
@@ -63,6 +64,8 @@ load('game/config/GameEvent', function () {
         'FUKA_MATERIA_LOG': 'FUKA_MATERIA_LOG',
         'FUKA_MATERIA_EXCHANGE': 'FUKA_MATERIA_EXCHANGE',
         'UPDATE_USERPHOTO': 'UPDATE_USERPHOTO',
+        'GET_ARENAMESSAGE': 'GET_ARENAMESSAGE',
+        'MatchJinjiGaming': 'MatchJinjiGaming',
     }
 
     return GameEvent

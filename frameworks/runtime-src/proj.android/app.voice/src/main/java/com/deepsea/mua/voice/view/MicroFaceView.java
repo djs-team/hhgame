@@ -536,25 +536,6 @@ public class MicroFaceView extends FrameLayout {
         }
     }
 
-    private int getEmptyMicroRes(int type) {
-        int res = R.drawable.icon_accompany_empty_bg;
-        JoinRoom joinRoom = com.deepsea.mua.stub.utils.AppConstant.getInstance().getJoinRoom();
-
-        switch (type) {
-            case 1:
-//                if (joinRoom != null && (joinRoom.getRoomMode() == 5 || joinRoom.getRoomMode() == 6)) {
-////                    res = R.drawable.ic_face_man;
-//                }
-                break;
-            case 2:
-//                if (joinRoom != null && (joinRoom.getRoomMode() == 5 || joinRoom.getRoomMode() == 6)) {
-////                    res = R.drawable.ic_face_woman;
-//                }
-                break;
-        }
-        return res;
-
-    }
 
     public void updateFriendState(RoomData.MicroInfosBean bean) {
         Log.d("AG_EX_AV", JsonConverter.toJson(bean));

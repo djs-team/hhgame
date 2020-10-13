@@ -19,11 +19,11 @@ public class SexResUtils {
         switch (sex) {
             case "1":
                 ViewBindUtils.setVisible(sexIv, true);
-                sexIv.setImageResource(R.drawable.ic_rank_man);
+                sexIv.setImageResource(R.drawable.man);
                 break;
             case "2":
                 ViewBindUtils.setVisible(sexIv, true);
-                sexIv.setImageResource(R.drawable.ic_rank_woman);
+                sexIv.setImageResource(R.drawable.woman);
                 break;
             default:
                 ViewBindUtils.setVisible(sexIv, false);

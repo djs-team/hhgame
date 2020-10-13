@@ -127,6 +127,8 @@
         make.bottom.equalTo(self.regularView.mas_top).offset(-5);
     }];
     
+    self.top_roomHotBtn.hidden = YES;
+    
 }
 
 - (void)reloadLayoutSubViews {

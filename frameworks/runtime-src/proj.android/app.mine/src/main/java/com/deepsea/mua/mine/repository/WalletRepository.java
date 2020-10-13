@@ -5,12 +5,9 @@ import android.arch.lifecycle.LiveData;
 import com.deepsea.mua.stub.api.RetrofitApi;
 import com.deepsea.mua.core.network.resource.Resource;
 import com.deepsea.mua.core.network.response.ApiResponse;
-import com.deepsea.mua.stub.entity.BlueRoseExchange;
-import com.deepsea.mua.stub.entity.ExchangeBlueRoseRecordListParam;
 import com.deepsea.mua.stub.entity.InitCash;
 import com.deepsea.mua.stub.entity.WalletBean;
 import com.deepsea.mua.stub.data.BaseApiResult;
-import com.deepsea.mua.stub.mvp.ResponseModel;
 import com.deepsea.mua.stub.network.HttpCallback;
 import com.deepsea.mua.stub.network.HttpUtils;
 import com.deepsea.mua.stub.repository.BaseRepository;
@@ -63,38 +60,6 @@ public class WalletRepository extends BaseRepository {
         });
     }
 
-    public LiveData<Resource<List<BlueRoseExchange>>> initBlueExchange() {
-        return HttpUtils.requestNoCache(new HttpCallback.NoCacheCallback<List<BlueRoseExchange>, BaseApiResult<List<BlueRoseExchange>>>() {
-            @Override
-            public LiveData<ApiResponse<BaseApiResult<List<BlueRoseExchange>>>> createCall() {
-                return mRetrofitApi.initBlueExchange();
-            }
-
-            @Override
-            public List<BlueRoseExchange> processResponse(BaseApiResult<List<BlueRoseExchange>> source) {
-                if (source != null) {
-                    return source.getData();
-                }
-                return null;
-            }
-        });
-    }
-    public LiveData<Resource<ExchangeBlueRoseRecordListParam>> blueExchangeInfo(int page) {
-        return HttpUtils.requestNoCache(new HttpCallback.NoCacheCallback<ExchangeBlueRoseRecordListParam, BaseApiResult<ExchangeBlueRoseRecordListParam>>() {
-            @Override
-            public LiveData<ApiResponse<BaseApiResult<ExchangeBlueRoseRecordListParam>>> createCall() {
-                return mRetrofitApi.blueExchangeInfo(page);
-            }
-
-            @Override
-            public ExchangeBlueRoseRecordListParam processResponse(BaseApiResult<ExchangeBlueRoseRecordListParam> source) {
-                if (source != null) {
-                    return source.getData();
-                }
-                return null;
-            }
-        });
-    }
 
     public LiveData<Resource<BaseApiResult>> checkSatus() {
         return HttpUtils.requestNoCache(new HttpCallback.NoCacheCallback<BaseApiResult, BaseApiResult>() {
@@ -124,17 +89,5 @@ public class WalletRepository extends BaseRepository {
         });
     }
 
-    public LiveData<Resource<BaseApiResult>> exchangeBlue(String num, String giftId) {
-        return HttpUtils.requestNoCache(new HttpCallback.NoCacheCallback<BaseApiResult, BaseApiResult>() {
-            @Override
-            public LiveData<ApiResponse<BaseApiResult>> createCall() {
-                return mRetrofitApi.exchangeBlue(num, giftId);
-            }
 
-            @Override
-            public BaseApiResult processResponse(BaseApiResult source) {
-                return source;
-            }
-        });
-    }
 }

@@ -35,7 +35,6 @@ public class StateUtils {
                 textView.setText("开播中");
             } else {
                 textView.setVisibility(View.GONE);
-
             }
 
         } else {

@@ -23,41 +23,29 @@ import com.deepsea.mua.mine.R;
 import com.deepsea.mua.mine.activity.AssistActivity;
 import com.deepsea.mua.mine.activity.BindWechatActivity;
 import com.deepsea.mua.mine.activity.BlockListActivity;
-import com.deepsea.mua.mine.activity.CodeOfConductActivity;
-import com.deepsea.mua.mine.activity.InvitationMineActivity;
 import com.deepsea.mua.mine.activity.MarriageSeekingActivity;
 import com.deepsea.mua.mine.activity.MyGuardActivity;
 import com.deepsea.mua.mine.activity.MyTagsActivity;
-import com.deepsea.mua.mine.activity.PersonalLevelActivity;
 import com.deepsea.mua.mine.activity.ProfileEditActivity;
-import com.deepsea.mua.mine.activity.SettingActivity;
-import com.deepsea.mua.mine.activity.VisitorsActivity;
 import com.deepsea.mua.mine.activity.WalletActivity;
 import com.deepsea.mua.mine.databinding.FragmentMineBinding;
-import com.deepsea.mua.mine.dialog.InputBindSuccessDialog;
 import com.deepsea.mua.mine.viewmodel.ProfileEditViewModel;
 import com.deepsea.mua.mine.viewmodel.ProfileViewModel;
 import com.deepsea.mua.stub.apiaddress.AddressCenter;
 import com.deepsea.mua.stub.base.BaseFragment;
 import com.deepsea.mua.stub.base.BaseObserver;
-import com.deepsea.mua.stub.callback.CommonCallback;
 import com.deepsea.mua.stub.data.BaseApiResult;
 import com.deepsea.mua.stub.data.User;
 import com.deepsea.mua.stub.dialog.AuthenticationAlertDialog;
 import com.deepsea.mua.stub.dialog.PhotoDialog;
 import com.deepsea.mua.stub.entity.AuditBean;
-import com.deepsea.mua.stub.entity.InitInviteBean;
 import com.deepsea.mua.stub.entity.OSSConfigBean;
 import com.deepsea.mua.stub.entity.ProfileBean;
-import com.deepsea.mua.stub.utils.ArouterConst;
-import com.deepsea.mua.stub.utils.ArouterUtils;
-import com.deepsea.mua.stub.utils.FormatUtils;
 import com.deepsea.mua.stub.utils.OssUpUtil;
 import com.deepsea.mua.stub.utils.PageJumpUtils;
 import com.deepsea.mua.stub.utils.SexResUtils;
 import com.deepsea.mua.stub.utils.UserUtils;
 import com.deepsea.mua.stub.utils.ViewBindUtils;
-import com.deepsea.mua.stub.utils.ViewModelFactory;
 import com.deepsea.mua.stub.utils.ViewModelFactory;
 import com.deepsea.mua.stub.utils.eventbus.ShowMineDialog;
 import com.tbruyelle.rxpermissions2.RxPermissions;
@@ -115,7 +103,6 @@ public class MineFragment extends BaseFragment<FragmentMineBinding> {
         mViewModel = ViewModelProviders.of(this, mModelFactory).get(ProfileViewModel.class);
         mEditViewModel = ViewModelProviders.of(this, mModelFactory).get(ProfileEditViewModel.class);
         mUser = UserUtils.getUser();
-//        ViewBindUtils.setVisible(mBinding.assistLayout, "HuaWei".equals(ApkUtils.getChannelName(mContext)));
     }
 
     @Override
@@ -152,9 +139,7 @@ public class MineFragment extends BaseFragment<FragmentMineBinding> {
 
     @Override
     protected void initListener() {
-//        subscribeClick(mBinding.taskLayout, o -> {
-//            PageJumpUtils.jumpToTaskCenter(mContext);
-//        });
+
         subscribeClick(mBinding.avatarIv, o -> {
             showPhotoDialog();
         });
@@ -162,11 +147,7 @@ public class MineFragment extends BaseFragment<FragmentMineBinding> {
             PageJumpUtils.jumpToProfile(mUser.getUid());
         });
 
-        //我的邀请
-        subscribeClick(mBinding.invitionLayout, o -> {
-            Intent intent = new Intent(mContext, InvitationMineActivity.class);
-            startActivity(intent);
-        });
+
         //认证
         subscribeClick(mBinding.authLayout, o -> {
             auth();
@@ -184,29 +165,6 @@ public class MineFragment extends BaseFragment<FragmentMineBinding> {
             startActivity(new Intent(mContext, AssistActivity.class));
         });
 
-
-        //粉丝贡献
-        subscribeClick(mBinding.fansRankLayout, o -> {
-            ArouterUtils.build(ArouterConst.PAGE_FANS_RANK).navigation();
-        });
-        //家长模式
-        subscribeClick(mBinding.parentLayout, o -> {
-            boolean isOpenParentMode = mProfile != null && mProfile.getMonitoring_info() != null
-                    && mProfile.getMonitoring_info().getParents_status() == 1;
-
-            ArouterUtils.build(ArouterConst.PAGE_PARENT)
-                    .withBoolean("open", isOpenParentMode)
-                    .navigation();
-        });
-        //青少年模式
-        subscribeClick(mBinding.youngerLayout, o -> {
-            boolean isOpenYoungerMode = mProfile != null && mProfile.getMonitoring_info() != null
-                    && mProfile.getMonitoring_info().getMonitoring_status() == 1;
-
-            ArouterUtils.build(ArouterConst.PAGE_YOUNGER)
-                    .withBoolean("open", isOpenYoungerMode)
-                    .navigation();
-        });
         //基本资料
         subscribeClick(mBinding.basicLayout, o -> {
             startActivity(new Intent(mContext, ProfileEditActivity.class));
@@ -215,18 +173,8 @@ public class MineFragment extends BaseFragment<FragmentMineBinding> {
         subscribeClick(mBinding.conditionLayout, o -> {
             startActivity(new Intent(mContext, MarriageSeekingActivity.class));
         });
-        //输入邀请码
-        subscribeClick(mBinding.inputInviteCodeLayout, o -> {
-            if (TextUtils.isEmpty(belongId.trim())) {
-                initInvite();
-            } else {
-                PageJumpUtils.jumpToProfile(belongId.trim());
-            }
-        });
-        //主持行为规范
-        subscribeClick(mBinding.codeOfConductLayout, o -> {
-            startActivity(new Intent(mContext, CodeOfConductActivity.class));
-        });
+
+
         //我的标签
         subscribeClick(mBinding.tagsLayout, o -> {
             startActivity(new Intent(mContext, MyTagsActivity.class));
@@ -266,62 +214,11 @@ public class MineFragment extends BaseFragment<FragmentMineBinding> {
                 });
     }
 
-    InputBindSuccessDialog mInputDialog = null;
-
-    private void showInputInviteCodeDialog(String coin) {
-        if (mInputDialog == null) {
-            mInputDialog = new InputBindSuccessDialog(mContext);
-        }
-        mInputDialog.setEnsureCallback(new CommonCallback<String>() {
-            @Override
-            public void onSuccess(String data) {
-                bindInviteCode(data);
-            }
-        });
-        mInputDialog.setContent(coin);
-//        mInputDialog.setData(name);
-        mInputDialog.show();
-    }
-
-    private void initInvite() {
-        mViewModel.initInvite().observe(this, new BaseObserver<InitInviteBean>() {
-            @Override
-            public void onSuccess(InitInviteBean result) {
-                if (result != null) {
-                    showInputInviteCodeDialog(result.getCoin());
-                }
-            }
-
-            @Override
-            public void onError(String msg, int code) {
-                super.onError(msg, code);
-                toastShort(msg);
-            }
-        });
 
 
-    }
 
-    private void bindInviteCode(String referrer_code) {
-        mViewModel.bindReferrer(referrer_code).observe(this, new BaseObserver<BaseApiResult>() {
-            @Override
-            public void onSuccess(BaseApiResult result) {
-                toastShort(result.getDesc());
-                if (result.getCode() == 200) {
-                    ViewBindUtils.setVisible(mBinding.inputInviteCodeLayout, false);
-                    toastShort(result.getDesc());
 
-                }
-            }
 
-            @Override
-            public void onError(String msg, int code) {
-                super.onError(msg, code);
-                toastShort(msg);
-            }
-        });
-
-    }
 
     private String belongId = "";
 
@@ -343,6 +240,7 @@ public class MineFragment extends BaseFragment<FragmentMineBinding> {
         //sex
         SexResUtils.setSexImgInFindPage(mBinding.rlSex, mBinding.sexIv, result.getUser_info().getSex());
         ViewBindUtils.setText(mBinding.ageTv, String.valueOf(result.getUser_info().getAge()));
+        ViewBindUtils.setVisible(mBinding.ageTv, result.getUser_info().getAge() != 0);
         //city
         if (!TextUtils.isEmpty(result.getUser_info().getCity())) {
             mBinding.cityTv.setText(result.getUser_info().getCity());
@@ -350,62 +248,9 @@ public class MineFragment extends BaseFragment<FragmentMineBinding> {
             mBinding.cityTv.setText("");
         }
         ViewBindUtils.setVisible(mBinding.ivLocation, !TextUtils.isEmpty(result.getUser_info().getCity().trim()));
-
-
         //认证
         mBinding.authTv.setSelected(TextUtils.equals(userInfo.getAttestation(), "1"));
         mBinding.authTv.setText(TextUtils.equals(userInfo.getAttestation(), "1") ? "已认证" : "未认证");
-//        ViewBindUtils.setVisible(mBinding.taskProcessLayout, userInfo.getIs_matchmaker().equals("1"));
-//        ViewBindUtils.setVisible(mBinding.codeOfConductLayout, userInfo.getIs_matchmaker().equals("1"));
-//        ProfileBean.GradeInfoBean gradeInfo = result.getGrade_info();
-//
-//        ProfileBean.NumberInfoBean numberInfo = result.getNumber_info();
-
-//        //输入邀请码
-//        ViewBindUtils.setVisible(mBinding.inputInviteCodeLayout, userInfo.getIs_bind() == 1);
-//        if (userInfo.getIs_bind() == 1) {
-//            //如果显示绑定邀请码一栏
-//            if (!TextUtils.isEmpty(userInfo.getBelongId()) && !userInfo.getBelongId().equals("0")) {
-//                //已经绑定邀请人
-//                belongId = userInfo.getBelongId();
-//                ViewBindUtils.setText(mBinding.tvBindinviteTitle, "邀请码绑定（完成）");
-//                ViewBindUtils.setText(mBinding.tvBelongName, userInfo.getBelongName());
-//            } else {
-//                ViewBindUtils.setText(mBinding.tvBindinviteTitle, "邀请码绑定（获得" + userInfo.getCoin_num() + "朵玫瑰）");
-//            }
-//        }
-        //粉丝贡献
-        List<ProfileBean.FansRank> fansRanks = result.getRank_list();
-        if (fansRanks != null) {
-            for (int i = 0; i < fansRanks.size(); i++) {
-                ProfileBean.FansRank bean = fansRanks.get(i);
-                ImageView fansIv = null;
-                switch (i) {
-                    case 0:
-                        fansIv = mBinding.goldIv;
-                        break;
-                    case 1:
-                        fansIv = mBinding.silverIv;
-                        break;
-                    case 2:
-                        fansIv = mBinding.copperIv;
-                        break;
-                }
-                if (fansIv != null) {
-                    GlideUtils.circleImage(fansIv, bean.getAvatar(), R.drawable.ic_place_avatar, R.drawable.ic_place_avatar);
-                }
-            }
-        }
-        //家长、青少年模式
-        ProfileBean.SafetyBean info = result.getMonitoring_info();
-        boolean isOpenParent = info != null && info.getParents_status() == 1;
-        boolean isOpenYounger = info != null && info.getMonitoring_status() == 1;
-        mBinding.parentTv.setSelected(isOpenParent);
-        mBinding.parentTv.setText(isOpenParent ? "已开启" : "未开启");
-        mBinding.youngerTv.setSelected(isOpenYounger);
-        mBinding.youngerTv.setText(isOpenYounger ? "已开启" : "未开启");
-        UserUtils.getUser().setOpenParent(isOpenParent);
-        UserUtils.getUser().setOpenYounger(isOpenYounger);
 
         bind_type = mProfile.getBind_type();//显示绑定信息 1:绑定微信   2:绑定手机号
         ViewBindUtils.setText(mBinding.tvBindTitle, bind_type == 2 ? "绑定手机号" : "绑定微信");

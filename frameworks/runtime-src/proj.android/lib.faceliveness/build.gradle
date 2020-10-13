@@ -38,9 +38,10 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':lib.core')
 
-    implementation(name: 'FaceLivenessOpen-2.2.0.4', ext: 'aar')
+    implementation(name: 'MiddleTierSDK-external-release-5.5.13874142', ext: 'aar')
     implementation(name: 'oss-android-sdk-2.9.2', ext: 'aar')
-    implementation(name: 'rpsdk-3.2.0.3', ext: 'aar')
-    implementation(name: 'SecurityBodySDK-external-release-5.4.12129577', ext: 'aar')
-    implementation(name: 'SecurityGuardSDK-external-release-5.4.178', ext: 'aar')
+    implementation(name: 'rpsdk-4.4.1-open', ext: 'aar')
+    implementation(name: 'SecurityGuardSDK-external-release-5.5.13873794', ext: 'aar')
+    implementation(name: 'SecurityBodySDK-external-release-5.5.19', ext: 'aar')
+    implementation(name: 'windvane', ext: 'aar')
 }

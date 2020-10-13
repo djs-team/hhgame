@@ -67,9 +67,7 @@ public class RoomViewModel extends ViewModel {
         this.mRoomModel = roomModel;
     }
 
-    public LiveData<Resource<BaseApiResult>> attention_member(String uid, String type) {
-        return mRepository.attention_member(uid, type);
-    }
+
 
     public LiveData<Resource<List<GiftBean>>> getGifts(String status) {
         String type = "1";

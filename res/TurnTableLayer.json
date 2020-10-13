@@ -738,112 +738,21 @@
                       {
                         "FileData": {
                           "Type": "Normal",
-                          "Path": "common/bz_2.png",
-                          "Plist": ""
-                        },
-                        "Scale9Enable": true,
-                        "Scale9OriginX": 26,
-                        "Scale9OriginY": 49,
-                        "Scale9Width": 60,
-                        "Scale9Height": 37,
-                        "AnchorPoint": {
-                          "ScaleX": 0.5,
-                          "ScaleY": 0.5
-                        },
-                        "Position": {
-                          "X": 280.8832,
-                          "Y": 203.8098
-                        },
-                        "Scale": {
-                          "ScaleX": 1.0,
-                          "ScaleY": 1.0
-                        },
-                        "CColor": {},
-                        "IconVisible": false,
-                        "PrePosition": {
-                          "X": 0.4174,
-                          "Y": 0.6252
-                        },
-                        "PreSize": {
-                          "X": 0.9465,
-                          "Y": 1.4264
-                        },
-                        "LeftMargin": -37.6168,
-                        "RightMargin": 73.6168,
-                        "TopMargin": -110.3098,
-                        "BottomMargin": -28.6902,
-                        "Tag": 270,
-                        "ActionTag": 1484126824,
-                        "Size": {
-                          "X": 637.0,
-                          "Y": 465.0
-                        },
-                        "Name": "dataPic",
-                        "ctype": "ImageViewObjectData"
-                      },
-                      {
-                        "FileData": {
-                          "Type": "Normal",
-                          "Path": "common/db.png",
-                          "Plist": ""
-                        },
-                        "Scale9Enable": true,
-                        "Scale9OriginX": 28,
-                        "Scale9OriginY": 24,
-                        "Scale9Width": 30,
-                        "Scale9Height": 27,
-                        "AnchorPoint": {
-                          "ScaleX": 0.5,
-                          "ScaleY": 0.5
-                        },
-                        "Position": {
-                          "X": 357.7821,
-                          "Y": 160.97
-                        },
-                        "Scale": {
-                          "ScaleX": 1.0,
-                          "ScaleY": 1.0
-                        },
-                        "CColor": {},
-                        "IconVisible": false,
-                        "PrePosition": {
-                          "X": 0.5316,
-                          "Y": 0.4938
-                        },
-                        "PreSize": {
-                          "X": 0.9242,
-                          "Y": 0.9018
-                        },
-                        "LeftMargin": 46.7821,
-                        "RightMargin": 4.2179,
-                        "TopMargin": 18.03,
-                        "BottomMargin": 13.97,
-                        "Tag": 272,
-                        "ActionTag": -797586638,
-                        "Size": {
-                          "X": 622.0,
-                          "Y": 294.0
-                        },
-                        "Name": "dataAreaPic",
-                        "ctype": "ImageViewObjectData"
-                      },
-                      {
-                        "FileData": {
-                          "Type": "Normal",
                           "Path": "turntable/zphd_3.png",
                           "Plist": ""
                         },
-                        "Scale9OriginX": 122,
-                        "Scale9OriginY": 154,
-                        "Scale9Width": 128,
-                        "Scale9Height": 159,
+                        "Scale9Enable": true,
+                        "Scale9OriginX": 175,
+                        "Scale9OriginY": 107,
+                        "Scale9Width": 11,
+                        "Scale9Height": 229,
                         "AnchorPoint": {
                           "ScaleX": 0.5,
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 565.4,
-                          "Y": 208.7092
+                          "X": 259.84,
+                          "Y": 260.61
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -852,22 +761,22 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 0.8401,
-                          "Y": 0.6402
+                          "X": 0.3861,
+                          "Y": 0.7994
                         },
                         "PreSize": {
-                          "X": 0.5527,
-                          "Y": 1.4387
+                          "X": 1.4502,
+                          "Y": 1.4785
                         },
-                        "LeftMargin": 379.4,
-                        "RightMargin": -78.4,
-                        "TopMargin": -117.2092,
-                        "BottomMargin": -25.7908,
+                        "LeftMargin": -228.16,
+                        "RightMargin": -74.84,
+                        "TopMargin": -175.61,
+                        "BottomMargin": 19.61,
                         "Tag": 273,
                         "ActionTag": -1115640908,
                         "Size": {
-                          "X": 372.0,
-                          "Y": 469.0
+                          "X": 976.0,
+                          "Y": 482.0
                         },
                         "Name": "Image_108",
                         "ctype": "ImageViewObjectData"
@@ -888,7 +797,7 @@
                         },
                         "Position": {
                           "X": 406.6276,
-                          "Y": 434.7953
+                          "Y": 434.8
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -906,8 +815,8 @@
                         },
                         "LeftMargin": 133.1276,
                         "RightMargin": -7.1276,
-                        "TopMargin": -214.7953,
-                        "BottomMargin": 328.7953,
+                        "TopMargin": -214.8,
+                        "BottomMargin": 328.8,
                         "Tag": 276,
                         "ActionTag": -507613455,
                         "Size": {
@@ -932,7 +841,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 692.1036,
+                          "X": 722.1,
                           "Y": 389.2538
                         },
                         "Scale": {
@@ -942,15 +851,15 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 1.0284,
+                          "X": 1.073,
                           "Y": 1.194
                         },
                         "PreSize": {
                           "X": 0.0698,
                           "Y": 0.6564
                         },
-                        "LeftMargin": 668.6036,
-                        "RightMargin": -42.6036,
+                        "LeftMargin": 698.6,
+                        "RightMargin": -72.6,
                         "TopMargin": -170.2538,
                         "BottomMargin": 282.2538,
                         "Tag": 277,
@@ -977,8 +886,8 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 643.9862,
-                          "Y": 102.9542
+                          "X": 598.6675,
+                          "Y": 84.8262
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -987,17 +896,17 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 0.9569,
-                          "Y": 0.3158
+                          "X": 0.8896,
+                          "Y": 0.2602
                         },
                         "PreSize": {
                           "X": 0.3135,
                           "Y": 0.6442
                         },
-                        "LeftMargin": 538.4862,
-                        "RightMargin": -76.4862,
-                        "TopMargin": 118.0458,
-                        "BottomMargin": -2.0458,
+                        "LeftMargin": 493.1675,
+                        "RightMargin": -31.1675,
+                        "TopMargin": 136.1738,
+                        "BottomMargin": -20.1738,
                         "Tag": 278,
                         "ActionTag": 577374996,
                         "Size": {
@@ -1099,7 +1008,7 @@
                     },
                     "Position": {
                       "X": 158.44,
-                      "Y": 372.29
+                      "Y": 408.29
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -1109,7 +1018,7 @@
                     "IconVisible": false,
                     "PrePosition": {
                       "X": 0.2153,
-                      "Y": 0.6342
+                      "Y": 0.6956
                     },
                     "PreSize": {
                       "X": 0.5435,
@@ -1117,8 +1026,8 @@
                     },
                     "LeftMargin": 158.44,
                     "RightMargin": 177.56,
-                    "TopMargin": 214.71,
-                    "BottomMargin": 92.29,
+                    "TopMargin": 178.71,
+                    "BottomMargin": 128.29,
                     "Tag": 150,
                     "Children": [
                       {
@@ -1160,57 +1069,6 @@
                       "Y": 280.0
                     },
                     "Name": "awardsUserDataNd",
-                    "ctype": "PanelObjectData"
-                  },
-                  {
-                    "ClipAble": false,
-                    "BackColorAlpha": 102,
-                    "ComboBoxIndex": 1,
-                    "SingleColor": {
-                      "R": 150,
-                      "G": 200
-                    },
-                    "FirstColor": {
-                      "R": 150,
-                      "G": 200
-                    },
-                    "EndColor": {},
-                    "ColorVector": {
-                      "ScaleY": 1.0
-                    },
-                    "Scale9Width": 1,
-                    "Scale9Height": 1,
-                    "TouchEnable": true,
-                    "AnchorPoint": {},
-                    "Position": {
-                      "X": 141.8773,
-                      "Y": -406.73
-                    },
-                    "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
-                    },
-                    "CColor": {},
-                    "IconVisible": false,
-                    "PrePosition": {
-                      "X": 0.1928,
-                      "Y": -0.6929
-                    },
-                    "PreSize": {
-                      "X": 0.5435,
-                      "Y": 0.477
-                    },
-                    "LeftMargin": 141.8773,
-                    "RightMargin": 194.1227,
-                    "TopMargin": 713.73,
-                    "BottomMargin": -406.73,
-                    "Tag": 338,
-                    "ActionTag": -1160425466,
-                    "Size": {
-                      "X": 400.0,
-                      "Y": 280.0
-                    },
-                    "Name": "awardsScrollPnl",
                     "ctype": "PanelObjectData"
                   },
                   {
@@ -3171,20 +3029,20 @@
                           {
                             "FileData": {
                               "Type": "Normal",
-                              "Path": "turntable/zphd_7.png",
+                              "Path": "turntable/zphd_6.png",
                               "Plist": ""
                             },
                             "Scale9OriginX": 23,
                             "Scale9OriginY": 16,
-                            "Scale9Width": 26,
-                            "Scale9Height": 17,
+                            "Scale9Width": 29,
+                            "Scale9Height": 27,
                             "AnchorPoint": {
                               "ScaleX": 0.5,
                               "ScaleY": 0.5
                             },
                             "Position": {
-                              "X": 0.0,
-                              "Y": 180.0
+                              "X": 2.59,
+                              "Y": 168.3465
                             },
                             "Scale": {
                               "ScaleX": 1.0,
@@ -3200,15 +3058,17 @@
                               "X": 0.0,
                               "Y": 0.0
                             },
-                            "LeftMargin": -36.0,
-                            "RightMargin": -36.0,
-                            "TopMargin": -204.5,
-                            "BottomMargin": 155.5,
+                            "LeftMargin": -34.91,
+                            "RightMargin": -40.09,
+                            "TopMargin": -197.8465,
+                            "BottomMargin": 138.8465,
                             "Tag": 342,
                             "Children": [
                               {
                                 "FontSize": 20,
-                                "LabelText": "钻石2",
+                                "LabelText": "iphone 12",
+                                "HorizontalAlignmentType": "HT_Center",
+                                "VerticalAlignmentType": "VT_Center",
                                 "OutlineColor": {
                                   "G": 0,
                                   "B": 0
@@ -3225,8 +3085,8 @@
                                   "ScaleY": 0.5
                                 },
                                 "Position": {
-                                  "X": 36.0,
-                                  "Y": 70.0
+                                  "X": 37.5,
+                                  "Y": 84.2432
                                 },
                                 "Scale": {
                                   "ScaleX": 1.0,
@@ -3237,20 +3097,20 @@
                                 "PositionPercentXEnabled": true,
                                 "PrePosition": {
                                   "X": 0.5,
-                                  "Y": 1.4286
+                                  "Y": 1.4279
                                 },
                                 "PreSize": {
-                                  "X": 0.6944,
-                                  "Y": 0.4082
+                                  "X": 1.2,
+                                  "Y": 0.339
                                 },
-                                "LeftMargin": 11.0,
-                                "RightMargin": 11.0,
-                                "TopMargin": -31.0,
-                                "BottomMargin": 60.0,
+                                "LeftMargin": -7.5,
+                                "RightMargin": -7.5,
+                                "TopMargin": -35.2432,
+                                "BottomMargin": 74.2432,
                                 "Tag": 345,
                                 "ActionTag": -836346202,
                                 "Size": {
-                                  "X": 50.0,
+                                  "X": 90.0,
                                   "Y": 20.0
                                 },
                                 "Name": "name",
@@ -3259,8 +3119,8 @@
                             ],
                             "ActionTag": 188457684,
                             "Size": {
-                              "X": 72.0,
-                              "Y": 49.0
+                              "X": 75.0,
+                              "Y": 59.0
                             },
                             "Name": "goods1",
                             "ctype": "ImageViewObjectData"
@@ -3268,20 +3128,20 @@
                           {
                             "FileData": {
                               "Type": "Normal",
-                              "Path": "turntable/zphd_7.png",
+                              "Path": "turntable/zphd_6.png",
                               "Plist": ""
                             },
                             "Scale9OriginX": 23,
                             "Scale9OriginY": 16,
-                            "Scale9Width": 26,
-                            "Scale9Height": 17,
+                            "Scale9Width": 29,
+                            "Scale9Height": 27,
                             "AnchorPoint": {
                               "ScaleX": 0.5,
                               "ScaleY": 0.5
                             },
                             "Position": {
-                              "X": 98.0438,
-                              "Y": 141.5128
+                              "X": 99.3454,
+                              "Y": 142.8084
                             },
                             "Scale": {
                               "ScaleX": 1.0,
@@ -3299,15 +3159,17 @@
                               "X": 0.0,
                               "Y": 0.0
                             },
-                            "LeftMargin": 62.0438,
-                            "RightMargin": -134.0438,
-                            "TopMargin": -166.0128,
-                            "BottomMargin": 117.0128,
-                            "Tag": 380,
+                            "LeftMargin": 61.8454,
+                            "RightMargin": -136.8454,
+                            "TopMargin": -172.3084,
+                            "BottomMargin": 113.3084,
+                            "Tag": 312,
                             "Children": [
                               {
                                 "FontSize": 20,
-                                "LabelText": "钻石2",
+                                "LabelText": "iphone 12",
+                                "HorizontalAlignmentType": "HT_Center",
+                                "VerticalAlignmentType": "VT_Center",
                                 "OutlineColor": {
                                   "G": 0,
                                   "B": 0
@@ -3324,8 +3186,8 @@
                                   "ScaleY": 0.5
                                 },
                                 "Position": {
-                                  "X": 36.0,
-                                  "Y": 70.0
+                                  "X": 37.5,
+                                  "Y": 84.2432
                                 },
                                 "Scale": {
                                   "ScaleX": 1.0,
@@ -3336,30 +3198,30 @@
                                 "PositionPercentXEnabled": true,
                                 "PrePosition": {
                                   "X": 0.5,
-                                  "Y": 1.4286
+                                  "Y": 1.4279
                                 },
                                 "PreSize": {
-                                  "X": 0.6944,
-                                  "Y": 0.4082
+                                  "X": 1.2,
+                                  "Y": 0.339
                                 },
-                                "LeftMargin": 11.0,
-                                "RightMargin": 11.0,
-                                "TopMargin": -31.0,
-                                "BottomMargin": 60.0,
-                                "Tag": 381,
-                                "ActionTag": -518596438,
+                                "LeftMargin": -7.5,
+                                "RightMargin": -7.5,
+                                "TopMargin": -35.2432,
+                                "BottomMargin": 74.2432,
+                                "Tag": 313,
+                                "ActionTag": -623762206,
                                 "Size": {
-                                  "X": 50.0,
+                                  "X": 90.0,
                                   "Y": 20.0
                                 },
                                 "Name": "name",
                                 "ctype": "TextObjectData"
                               }
                             ],
-                            "ActionTag": 1007315316,
+                            "ActionTag": 1514477467,
                             "Size": {
-                              "X": 72.0,
-                              "Y": 49.0
+                              "X": 75.0,
+                              "Y": 59.0
                             },
                             "Name": "goods2",
                             "ctype": "ImageViewObjectData"
@@ -3367,27 +3229,27 @@
                           {
                             "FileData": {
                               "Type": "Normal",
-                              "Path": "turntable/zphd_7.png",
+                              "Path": "turntable/zphd_6.png",
                               "Plist": ""
                             },
                             "Scale9OriginX": 23,
                             "Scale9OriginY": 16,
-                            "Scale9Width": 26,
-                            "Scale9Height": 17,
+                            "Scale9Width": 29,
+                            "Scale9Height": 27,
                             "AnchorPoint": {
                               "ScaleX": 0.5,
                               "ScaleY": 0.5
                             },
                             "Position": {
-                              "X": 175.3498,
-                              "Y": 58.6715
+                              "X": 161.4989,
+                              "Y": 54.759
                             },
                             "Scale": {
                               "ScaleX": 1.0,
                               "ScaleY": 1.0
                             },
-                            "RotationSkewX": 72.0,
-                            "RotationSkewY": 71.9999,
+                            "RotationSkewX": 71.9997,
+                            "RotationSkewY": 71.9998,
                             "CColor": {},
                             "IconVisible": false,
                             "PrePosition": {
@@ -3398,15 +3260,17 @@
                               "X": 0.0,
                               "Y": 0.0
                             },
-                            "LeftMargin": 139.3498,
-                            "RightMargin": -211.3498,
-                            "TopMargin": -83.1715,
-                            "BottomMargin": 34.1715,
-                            "Tag": 348,
+                            "LeftMargin": 123.9989,
+                            "RightMargin": -198.9989,
+                            "TopMargin": -84.259,
+                            "BottomMargin": 25.259,
+                            "Tag": 314,
                             "Children": [
                               {
                                 "FontSize": 20,
-                                "LabelText": "钻石",
+                                "LabelText": "iphone 12",
+                                "HorizontalAlignmentType": "HT_Center",
+                                "VerticalAlignmentType": "VT_Center",
                                 "OutlineColor": {
                                   "G": 0,
                                   "B": 0
@@ -3423,8 +3287,8 @@
                                   "ScaleY": 0.5
                                 },
                                 "Position": {
-                                  "X": 36.0,
-                                  "Y": 70.0
+                                  "X": 37.5,
+                                  "Y": 84.2432
                                 },
                                 "Scale": {
                                   "ScaleX": 1.0,
@@ -3435,30 +3299,30 @@
                                 "PositionPercentXEnabled": true,
                                 "PrePosition": {
                                   "X": 0.5,
-                                  "Y": 1.4286
+                                  "Y": 1.4279
                                 },
                                 "PreSize": {
-                                  "X": 0.5556,
-                                  "Y": 0.4082
+                                  "X": 1.2,
+                                  "Y": 0.339
                                 },
-                                "LeftMargin": 16.0,
-                                "RightMargin": 16.0,
-                                "TopMargin": -31.0,
-                                "BottomMargin": 60.0,
-                                "Tag": 349,
-                                "ActionTag": 1748101512,
+                                "LeftMargin": -7.5,
+                                "RightMargin": -7.5,
+                                "TopMargin": -35.2432,
+                                "BottomMargin": 74.2432,
+                                "Tag": 315,
+                                "ActionTag": -705642256,
                                 "Size": {
-                                  "X": 40.0,
+                                  "X": 90.0,
                                   "Y": 20.0
                                 },
                                 "Name": "name",
                                 "ctype": "TextObjectData"
                               }
                             ],
-                            "ActionTag": 1293712976,
+                            "ActionTag": 29122357,
                             "Size": {
-                              "X": 72.0,
-                              "Y": 49.0
+                              "X": 75.0,
+                              "Y": 59.0
                             },
                             "Name": "goods3",
                             "ctype": "ImageViewObjectData"
@@ -3466,27 +3330,27 @@
                           {
                             "FileData": {
                               "Type": "Normal",
-                              "Path": "turntable/zphd_7.png",
+                              "Path": "turntable/zphd_6.png",
                               "Plist": ""
                             },
                             "Scale9OriginX": 23,
                             "Scale9OriginY": 16,
-                            "Scale9Width": 26,
-                            "Scale9Height": 17,
+                            "Scale9Width": 29,
+                            "Scale9Height": 27,
                             "AnchorPoint": {
                               "ScaleX": 0.5,
                               "ScaleY": 0.5
                             },
                             "Position": {
-                              "X": 180.0149,
-                              "Y": -48.6868
+                              "X": 166.318,
+                              "Y": -48.4702
                             },
                             "Scale": {
                               "ScaleX": 1.0,
                               "ScaleY": 1.0
                             },
-                            "RotationSkewX": 35.9999,
-                            "RotationSkewY": 35.9998,
+                            "RotationSkewX": 108.0007,
+                            "RotationSkewY": 108.0002,
                             "CColor": {},
                             "IconVisible": false,
                             "PrePosition": {
@@ -3497,15 +3361,17 @@
                               "X": 0.0,
                               "Y": 0.0
                             },
-                            "LeftMargin": 144.0149,
-                            "RightMargin": -216.0149,
-                            "TopMargin": 24.1868,
-                            "BottomMargin": -73.1868,
-                            "Tag": 350,
+                            "LeftMargin": 128.818,
+                            "RightMargin": -203.818,
+                            "TopMargin": 18.9702,
+                            "BottomMargin": -77.9702,
+                            "Tag": 316,
                             "Children": [
                               {
                                 "FontSize": 20,
-                                "LabelText": "钻石",
+                                "LabelText": "iphone 12",
+                                "HorizontalAlignmentType": "HT_Center",
+                                "VerticalAlignmentType": "VT_Center",
                                 "OutlineColor": {
                                   "G": 0,
                                   "B": 0
@@ -3522,8 +3388,8 @@
                                   "ScaleY": 0.5
                                 },
                                 "Position": {
-                                  "X": 36.0,
-                                  "Y": 70.0
+                                  "X": 37.5,
+                                  "Y": 84.2432
                                 },
                                 "Scale": {
                                   "ScaleX": 1.0,
@@ -3534,30 +3400,30 @@
                                 "PositionPercentXEnabled": true,
                                 "PrePosition": {
                                   "X": 0.5,
-                                  "Y": 1.4286
+                                  "Y": 1.4279
                                 },
                                 "PreSize": {
-                                  "X": 0.5556,
-                                  "Y": 0.4082
+                                  "X": 1.2,
+                                  "Y": 0.339
                                 },
-                                "LeftMargin": 16.0,
-                                "RightMargin": 16.0,
-                                "TopMargin": -31.0,
-                                "BottomMargin": 60.0,
-                                "Tag": 351,
-                                "ActionTag": 996158693,
+                                "LeftMargin": -7.5,
+                                "RightMargin": -7.5,
+                                "TopMargin": -35.2432,
+                                "BottomMargin": 74.2432,
+                                "Tag": 317,
+                                "ActionTag": -1190292691,
                                 "Size": {
-                                  "X": 40.0,
+                                  "X": 90.0,
                                   "Y": 20.0
                                 },
                                 "Name": "name",
                                 "ctype": "TextObjectData"
                               }
                             ],
-                            "ActionTag": -57946895,
+                            "ActionTag": -1572436631,
                             "Size": {
-                              "X": 72.0,
-                              "Y": 49.0
+                              "X": 75.0,
+                              "Y": 59.0
                             },
                             "Name": "goods4",
                             "ctype": "ImageViewObjectData"
@@ -3565,27 +3431,27 @@
                           {
                             "FileData": {
                               "Type": "Normal",
-                              "Path": "turntable/zphd_7.png",
+                              "Path": "turntable/zphd_6.png",
                               "Plist": ""
                             },
                             "Scale9OriginX": 23,
                             "Scale9OriginY": 16,
-                            "Scale9Width": 26,
-                            "Scale9Height": 17,
+                            "Scale9Width": 29,
+                            "Scale9Height": 27,
                             "AnchorPoint": {
                               "ScaleX": 0.5,
                               "ScaleY": 0.5
                             },
                             "Position": {
-                              "X": 105.9949,
-                              "Y": -137.3726
+                              "X": 105.1013,
+                              "Y": -130.9804
                             },
                             "Scale": {
                               "ScaleX": 1.0,
                               "ScaleY": 1.0
                             },
-                            "RotationSkewX": 35.9998,
-                            "RotationSkewY": 35.9998,
+                            "RotationSkewX": 144.0,
+                            "RotationSkewY": 144.0,
                             "CColor": {},
                             "IconVisible": false,
                             "PrePosition": {
@@ -3596,15 +3462,17 @@
                               "X": 0.0,
                               "Y": 0.0
                             },
-                            "LeftMargin": 69.9949,
-                            "RightMargin": -141.9949,
-                            "TopMargin": 112.8726,
-                            "BottomMargin": -161.8726,
-                            "Tag": 352,
+                            "LeftMargin": 67.6013,
+                            "RightMargin": -142.6013,
+                            "TopMargin": 101.4804,
+                            "BottomMargin": -160.4804,
+                            "Tag": 318,
                             "Children": [
                               {
                                 "FontSize": 20,
-                                "LabelText": "钻石",
+                                "LabelText": "iphone 12",
+                                "HorizontalAlignmentType": "HT_Center",
+                                "VerticalAlignmentType": "VT_Center",
                                 "OutlineColor": {
                                   "G": 0,
                                   "B": 0
@@ -3621,8 +3489,8 @@
                                   "ScaleY": 0.5
                                 },
                                 "Position": {
-                                  "X": 36.0,
-                                  "Y": 70.0
+                                  "X": 37.5,
+                                  "Y": 84.2432
                                 },
                                 "Scale": {
                                   "ScaleX": 1.0,
@@ -3633,30 +3501,30 @@
                                 "PositionPercentXEnabled": true,
                                 "PrePosition": {
                                   "X": 0.5,
-                                  "Y": 1.4286
+                                  "Y": 1.4279
                                 },
                                 "PreSize": {
-                                  "X": 0.5556,
-                                  "Y": 0.4082
+                                  "X": 1.2,
+                                  "Y": 0.339
                                 },
-                                "LeftMargin": 16.0,
-                                "RightMargin": 16.0,
-                                "TopMargin": -31.0,
-                                "BottomMargin": 60.0,
-                                "Tag": 353,
-                                "ActionTag": -2135237469,
+                                "LeftMargin": -7.5,
+                                "RightMargin": -7.5,
+                                "TopMargin": -35.2432,
+                                "BottomMargin": 74.2432,
+                                "Tag": 319,
+                                "ActionTag": -929631465,
                                 "Size": {
-                                  "X": 40.0,
+                                  "X": 90.0,
                                   "Y": 20.0
                                 },
                                 "Name": "name",
                                 "ctype": "TextObjectData"
                               }
                             ],
-                            "ActionTag": -1936107845,
+                            "ActionTag": -1483059861,
                             "Size": {
-                              "X": 72.0,
-                              "Y": 49.0
+                              "X": 75.0,
+                              "Y": 59.0
                             },
                             "Name": "goods5",
                             "ctype": "ImageViewObjectData"
@@ -3664,27 +3532,27 @@
                           {
                             "FileData": {
                               "Type": "Normal",
-                              "Path": "turntable/zphd_7.png",
+                              "Path": "turntable/zphd_6.png",
                               "Plist": ""
                             },
                             "Scale9OriginX": 23,
                             "Scale9OriginY": 16,
-                            "Scale9Width": 26,
-                            "Scale9Height": 17,
+                            "Scale9Width": 29,
+                            "Scale9Height": 27,
                             "AnchorPoint": {
                               "ScaleX": 0.5,
                               "ScaleY": 0.5
                             },
                             "Position": {
-                              "X": 2.6334,
-                              "Y": -192.7168
+                              "X": 3.7443,
+                              "Y": -170.7605
                             },
                             "Scale": {
                               "ScaleX": 1.0,
                               "ScaleY": 1.0
                             },
-                            "RotationSkewX": 35.9998,
-                            "RotationSkewY": 35.9999,
+                            "RotationSkewX": 180.0,
+                            "RotationSkewY": 180.0,
                             "CColor": {},
                             "IconVisible": false,
                             "PrePosition": {
@@ -3695,15 +3563,17 @@
                               "X": 0.0,
                               "Y": 0.0
                             },
-                            "LeftMargin": -33.3666,
-                            "RightMargin": -38.6334,
-                            "TopMargin": 168.2168,
-                            "BottomMargin": -217.2168,
-                            "Tag": 354,
+                            "LeftMargin": -33.7557,
+                            "RightMargin": -41.2443,
+                            "TopMargin": 141.2605,
+                            "BottomMargin": -200.2605,
+                            "Tag": 320,
                             "Children": [
                               {
                                 "FontSize": 20,
-                                "LabelText": "钻石",
+                                "LabelText": "iphone 12",
+                                "HorizontalAlignmentType": "HT_Center",
+                                "VerticalAlignmentType": "VT_Center",
                                 "OutlineColor": {
                                   "G": 0,
                                   "B": 0
@@ -3720,8 +3590,8 @@
                                   "ScaleY": 0.5
                                 },
                                 "Position": {
-                                  "X": 36.0,
-                                  "Y": 70.0
+                                  "X": 37.5,
+                                  "Y": 84.2432
                                 },
                                 "Scale": {
                                   "ScaleX": 1.0,
@@ -3732,30 +3602,30 @@
                                 "PositionPercentXEnabled": true,
                                 "PrePosition": {
                                   "X": 0.5,
-                                  "Y": 1.4286
+                                  "Y": 1.4279
                                 },
                                 "PreSize": {
-                                  "X": 0.5556,
-                                  "Y": 0.4082
+                                  "X": 1.2,
+                                  "Y": 0.339
                                 },
-                                "LeftMargin": 16.0,
-                                "RightMargin": 16.0,
-                                "TopMargin": -31.0,
-                                "BottomMargin": 60.0,
-                                "Tag": 355,
-                                "ActionTag": 1538157517,
+                                "LeftMargin": -7.5,
+                                "RightMargin": -7.5,
+                                "TopMargin": -35.2432,
+                                "BottomMargin": 74.2432,
+                                "Tag": 321,
+                                "ActionTag": 1166604987,
                                 "Size": {
-                                  "X": 40.0,
+                                  "X": 90.0,
                                   "Y": 20.0
                                 },
                                 "Name": "name",
                                 "ctype": "TextObjectData"
                               }
                             ],
-                            "ActionTag": 1711713645,
+                            "ActionTag": 231772705,
                             "Size": {
-                              "X": 72.0,
-                              "Y": 49.0
+                              "X": 75.0,
+                              "Y": 59.0
                             },
                             "Name": "goods6",
                             "ctype": "ImageViewObjectData"
@@ -3763,27 +3633,27 @@
                           {
                             "FileData": {
                               "Type": "Normal",
-                              "Path": "turntable/zphd_7.png",
+                              "Path": "turntable/zphd_6.png",
                               "Plist": ""
                             },
                             "Scale9OriginX": 23,
                             "Scale9OriginY": 16,
-                            "Scale9Width": 26,
-                            "Scale9Height": 17,
+                            "Scale9Width": 29,
+                            "Scale9Height": 27,
                             "AnchorPoint": {
                               "ScaleX": 0.5,
                               "ScaleY": 0.5
                             },
                             "Position": {
-                              "X": -94.0599,
-                              "Y": -158.706
+                              "X": -91.1379,
+                              "Y": -149.6822
                             },
                             "Scale": {
                               "ScaleX": 1.0,
                               "ScaleY": 1.0
                             },
-                            "RotationSkewX": 35.9998,
-                            "RotationSkewY": 35.9998,
+                            "RotationSkewX": 216.0,
+                            "RotationSkewY": 216.0002,
                             "CColor": {},
                             "IconVisible": false,
                             "PrePosition": {
@@ -3794,15 +3664,17 @@
                               "X": 0.0,
                               "Y": 0.0
                             },
-                            "LeftMargin": -130.0599,
-                            "RightMargin": 58.0599,
-                            "TopMargin": 134.206,
-                            "BottomMargin": -183.206,
-                            "Tag": 356,
+                            "LeftMargin": -128.6379,
+                            "RightMargin": 53.6379,
+                            "TopMargin": 120.1822,
+                            "BottomMargin": -179.1822,
+                            "Tag": 322,
                             "Children": [
                               {
                                 "FontSize": 20,
-                                "LabelText": "钻石",
+                                "LabelText": "iphone 12",
+                                "HorizontalAlignmentType": "HT_Center",
+                                "VerticalAlignmentType": "VT_Center",
                                 "OutlineColor": {
                                   "G": 0,
                                   "B": 0
@@ -3819,8 +3691,8 @@
                                   "ScaleY": 0.5
                                 },
                                 "Position": {
-                                  "X": 36.0,
-                                  "Y": 70.0
+                                  "X": 37.5,
+                                  "Y": 84.2432
                                 },
                                 "Scale": {
                                   "ScaleX": 1.0,
@@ -3831,30 +3703,30 @@
                                 "PositionPercentXEnabled": true,
                                 "PrePosition": {
                                   "X": 0.5,
-                                  "Y": 1.4286
+                                  "Y": 1.4279
                                 },
                                 "PreSize": {
-                                  "X": 0.5556,
-                                  "Y": 0.4082
+                                  "X": 1.2,
+                                  "Y": 0.339
                                 },
-                                "LeftMargin": 16.0,
-                                "RightMargin": 16.0,
-                                "TopMargin": -31.0,
-                                "BottomMargin": 60.0,
-                                "Tag": 357,
-                                "ActionTag": 1623424668,
+                                "LeftMargin": -7.5,
+                                "RightMargin": -7.5,
+                                "TopMargin": -35.2432,
+                                "BottomMargin": 74.2432,
+                                "Tag": 323,
+                                "ActionTag": 2093617247,
                                 "Size": {
-                                  "X": 40.0,
+                                  "X": 90.0,
                                   "Y": 20.0
                                 },
                                 "Name": "name",
                                 "ctype": "TextObjectData"
                               }
                             ],
-                            "ActionTag": -333905890,
+                            "ActionTag": -813471631,
                             "Size": {
-                              "X": 72.0,
-                              "Y": 49.0
+                              "X": 75.0,
+                              "Y": 59.0
                             },
                             "Name": "goods7",
                             "ctype": "ImageViewObjectData"
@@ -3862,27 +3734,27 @@
                           {
                             "FileData": {
                               "Type": "Normal",
-                              "Path": "turntable/zphd_7.png",
+                              "Path": "turntable/zphd_6.png",
                               "Plist": ""
                             },
                             "Scale9OriginX": 23,
                             "Scale9OriginY": 16,
-                            "Scale9Width": 26,
-                            "Scale9Height": 17,
+                            "Scale9Width": 29,
+                            "Scale9Height": 27,
                             "AnchorPoint": {
                               "ScaleX": 0.5,
                               "ScaleY": 0.5
                             },
                             "Position": {
-                              "X": -174.7492,
-                              "Y": -74.0159
+                              "X": -157.5341,
+                              "Y": -71.6326
                             },
                             "Scale": {
                               "ScaleX": 1.0,
                               "ScaleY": 1.0
                             },
-                            "RotationSkewX": 35.9998,
-                            "RotationSkewY": 35.9998,
+                            "RotationSkewX": 252.0,
+                            "RotationSkewY": 252.0,
                             "CColor": {},
                             "IconVisible": false,
                             "PrePosition": {
@@ -3893,15 +3765,17 @@
                               "X": 0.0,
                               "Y": 0.0
                             },
-                            "LeftMargin": -210.7492,
-                            "RightMargin": 138.7492,
-                            "TopMargin": 49.5159,
-                            "BottomMargin": -98.5159,
-                            "Tag": 358,
+                            "LeftMargin": -195.0341,
+                            "RightMargin": 120.0341,
+                            "TopMargin": 42.1326,
+                            "BottomMargin": -101.1326,
+                            "Tag": 324,
                             "Children": [
                               {
                                 "FontSize": 20,
-                                "LabelText": "钻石",
+                                "LabelText": "iphone 12",
+                                "HorizontalAlignmentType": "HT_Center",
+                                "VerticalAlignmentType": "VT_Center",
                                 "OutlineColor": {
                                   "G": 0,
                                   "B": 0
@@ -3918,8 +3792,8 @@
                                   "ScaleY": 0.5
                                 },
                                 "Position": {
-                                  "X": 36.0,
-                                  "Y": 70.0
+                                  "X": 37.5,
+                                  "Y": 84.2432
                                 },
                                 "Scale": {
                                   "ScaleX": 1.0,
@@ -3930,30 +3804,30 @@
                                 "PositionPercentXEnabled": true,
                                 "PrePosition": {
                                   "X": 0.5,
-                                  "Y": 1.4286
+                                  "Y": 1.4279
                                 },
                                 "PreSize": {
-                                  "X": 0.5556,
-                                  "Y": 0.4082
+                                  "X": 1.2,
+                                  "Y": 0.339
                                 },
-                                "LeftMargin": 16.0,
-                                "RightMargin": 16.0,
-                                "TopMargin": -31.0,
-                                "BottomMargin": 60.0,
-                                "Tag": 359,
-                                "ActionTag": -1135099739,
+                                "LeftMargin": -7.5,
+                                "RightMargin": -7.5,
+                                "TopMargin": -35.2432,
+                                "BottomMargin": 74.2432,
+                                "Tag": 325,
+                                "ActionTag": -309801554,
                                 "Size": {
-                                  "X": 40.0,
+                                  "X": 90.0,
                                   "Y": 20.0
                                 },
                                 "Name": "name",
                                 "ctype": "TextObjectData"
                               }
                             ],
-                            "ActionTag": -315592273,
+                            "ActionTag": -2034930765,
                             "Size": {
-                              "X": 72.0,
-                              "Y": 49.0
+                              "X": 75.0,
+                              "Y": 59.0
                             },
                             "Name": "goods8",
                             "ctype": "ImageViewObjectData"
@@ -3961,27 +3835,27 @@
                           {
                             "FileData": {
                               "Type": "Normal",
-                              "Path": "turntable/zphd_7.png",
+                              "Path": "turntable/zphd_6.png",
                               "Plist": ""
                             },
                             "Scale9OriginX": 23,
                             "Scale9OriginY": 16,
-                            "Scale9Width": 26,
-                            "Scale9Height": 17,
+                            "Scale9Width": 29,
+                            "Scale9Height": 27,
                             "AnchorPoint": {
                               "ScaleX": 0.5,
                               "ScaleY": 0.5
                             },
                             "Position": {
-                              "X": -186.0885,
-                              "Y": 28.0117
+                              "X": -176.0206,
+                              "Y": 32.3141
                             },
                             "Scale": {
                               "ScaleX": 1.0,
                               "ScaleY": 1.0
                             },
-                            "RotationSkewX": 35.9999,
-                            "RotationSkewY": 35.9998,
+                            "RotationSkewX": 288.0,
+                            "RotationSkewY": 287.9998,
                             "CColor": {},
                             "IconVisible": false,
                             "PrePosition": {
@@ -3992,15 +3866,17 @@
                               "X": 0.0,
                               "Y": 0.0
                             },
-                            "LeftMargin": -222.0885,
-                            "RightMargin": 150.0885,
-                            "TopMargin": -52.5117,
-                            "BottomMargin": 3.5117,
-                            "Tag": 360,
+                            "LeftMargin": -213.5206,
+                            "RightMargin": 138.5206,
+                            "TopMargin": -61.8141,
+                            "BottomMargin": 2.8141,
+                            "Tag": 326,
                             "Children": [
                               {
                                 "FontSize": 20,
-                                "LabelText": "钻石",
+                                "LabelText": "iphone 12",
+                                "HorizontalAlignmentType": "HT_Center",
+                                "VerticalAlignmentType": "VT_Center",
                                 "OutlineColor": {
                                   "G": 0,
                                   "B": 0
@@ -4017,8 +3893,8 @@
                                   "ScaleY": 0.5
                                 },
                                 "Position": {
-                                  "X": 36.0,
-                                  "Y": 70.0
+                                  "X": 37.5,
+                                  "Y": 84.2432
                                 },
                                 "Scale": {
                                   "ScaleX": 1.0,
@@ -4029,30 +3905,30 @@
                                 "PositionPercentXEnabled": true,
                                 "PrePosition": {
                                   "X": 0.5,
-                                  "Y": 1.4286
+                                  "Y": 1.4279
                                 },
                                 "PreSize": {
-                                  "X": 0.5556,
-                                  "Y": 0.4082
+                                  "X": 1.2,
+                                  "Y": 0.339
                                 },
-                                "LeftMargin": 16.0,
-                                "RightMargin": 16.0,
-                                "TopMargin": -31.0,
-                                "BottomMargin": 60.0,
-                                "Tag": 361,
-                                "ActionTag": 824996992,
+                                "LeftMargin": -7.5,
+                                "RightMargin": -7.5,
+                                "TopMargin": -35.2432,
+                                "BottomMargin": 74.2432,
+                                "Tag": 327,
+                                "ActionTag": -1255932708,
                                 "Size": {
-                                  "X": 40.0,
+                                  "X": 90.0,
                                   "Y": 20.0
                                 },
                                 "Name": "name",
                                 "ctype": "TextObjectData"
                               }
                             ],
-                            "ActionTag": 1221434945,
+                            "ActionTag": -131993208,
                             "Size": {
-                              "X": 72.0,
-                              "Y": 49.0
+                              "X": 75.0,
+                              "Y": 59.0
                             },
                             "Name": "goods9",
                             "ctype": "ImageViewObjectData"
@@ -4060,27 +3936,27 @@
                           {
                             "FileData": {
                               "Type": "Normal",
-                              "Path": "turntable/zphd_7.png",
+                              "Path": "turntable/zphd_6.png",
                               "Plist": ""
                             },
                             "Scale9OriginX": 23,
                             "Scale9OriginY": 16,
-                            "Scale9Width": 26,
-                            "Scale9Height": 17,
+                            "Scale9Width": 29,
+                            "Scale9Height": 27,
                             "AnchorPoint": {
                               "ScaleX": 0.5,
                               "ScaleY": 0.5
                             },
                             "Position": {
-                              "X": -116.0739,
-                              "Y": 136.7084
+                              "X": -111.6367,
+                              "Y": 131.0805
                             },
                             "Scale": {
                               "ScaleX": 1.0,
                               "ScaleY": 1.0
                             },
-                            "RotationSkewX": 35.9998,
-                            "RotationSkewY": 35.9998,
+                            "RotationSkewX": 324.0,
+                            "RotationSkewY": 324.0,
                             "CColor": {},
                             "IconVisible": false,
                             "PrePosition": {
@@ -4091,15 +3967,17 @@
                               "X": 0.0,
                               "Y": 0.0
                             },
-                            "LeftMargin": -152.0739,
-                            "RightMargin": 80.0739,
-                            "TopMargin": -161.2084,
-                            "BottomMargin": 112.2084,
-                            "Tag": 362,
+                            "LeftMargin": -149.1367,
+                            "RightMargin": 74.1367,
+                            "TopMargin": -160.5805,
+                            "BottomMargin": 101.5805,
+                            "Tag": 328,
                             "Children": [
                               {
                                 "FontSize": 20,
-                                "LabelText": "钻石",
+                                "LabelText": "iphone 12",
+                                "HorizontalAlignmentType": "HT_Center",
+                                "VerticalAlignmentType": "VT_Center",
                                 "OutlineColor": {
                                   "G": 0,
                                   "B": 0
@@ -4116,8 +3994,8 @@
                                   "ScaleY": 0.5
                                 },
                                 "Position": {
-                                  "X": 36.0,
-                                  "Y": 70.0
+                                  "X": 37.5,
+                                  "Y": 84.2432
                                 },
                                 "Scale": {
                                   "ScaleX": 1.0,
@@ -4128,30 +4006,30 @@
                                 "PositionPercentXEnabled": true,
                                 "PrePosition": {
                                   "X": 0.5,
-                                  "Y": 1.4286
+                                  "Y": 1.4279
                                 },
                                 "PreSize": {
-                                  "X": 0.5556,
-                                  "Y": 0.4082
+                                  "X": 1.2,
+                                  "Y": 0.339
                                 },
-                                "LeftMargin": 16.0,
-                                "RightMargin": 16.0,
-                                "TopMargin": -31.0,
-                                "BottomMargin": 60.0,
-                                "Tag": 363,
-                                "ActionTag": -1391483423,
+                                "LeftMargin": -7.5,
+                                "RightMargin": -7.5,
+                                "TopMargin": -35.2432,
+                                "BottomMargin": 74.2432,
+                                "Tag": 329,
+                                "ActionTag": 185191478,
                                 "Size": {
-                                  "X": 40.0,
+                                  "X": 90.0,
                                   "Y": 20.0
                                 },
                                 "Name": "name",
                                 "ctype": "TextObjectData"
                               }
                             ],
-                            "ActionTag": -322499173,
+                            "ActionTag": 1949997980,
                             "Size": {
-                              "X": 72.0,
-                              "Y": 49.0
+                              "X": 75.0,
+                              "Y": 59.0
                             },
                             "Name": "goods10",
                             "ctype": "ImageViewObjectData"
@@ -4175,47 +4053,30 @@
                     "ctype": "ImageViewObjectData"
                   },
                   {
-                    "FontSize": 14,
-                    "ButtonText": "",
-                    "TextColor": {
-                      "R": 65,
-                      "G": 65,
-                      "B": 70
+                    "ClipAble": false,
+                    "BackColorAlpha": 102,
+                    "SingleColor": {
+                      "R": 150,
+                      "G": 200
                     },
-                    "DisabledFileData": {
-                      "Type": "Default",
-                      "Path": "Default/Button_Disable.png",
-                      "Plist": ""
+                    "FirstColor": {
+                      "R": 150,
+                      "G": 200
                     },
-                    "NormalFileData": {
-                      "Type": "Normal",
-                      "Path": "turntable/zphd_1.png",
-                      "Plist": ""
+                    "EndColor": {},
+                    "ColorVector": {
+                      "ScaleY": 1.0
                     },
-                    "Scale9Enable": true,
-                    "Scale9OriginX": 15,
-                    "Scale9OriginY": 11,
-                    "Scale9Width": 173,
-                    "Scale9Height": 226,
-                    "OutlineColor": {
-                      "G": 0,
-                      "B": 0
-                    },
-                    "ShadowColor": {
-                      "R": 110,
-                      "G": 110,
-                      "B": 110
-                    },
-                    "ShadowOffsetX": 2.0,
-                    "ShadowOffsetY": -2.0,
+                    "Scale9Width": 1,
+                    "Scale9Height": 1,
                     "TouchEnable": true,
                     "AnchorPoint": {
                       "ScaleX": 0.5,
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 356.6432,
-                      "Y": 360.5792
+                      "X": 358.912,
+                      "Y": 356.184
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -4223,26 +4084,124 @@
                     },
                     "CColor": {},
                     "IconVisible": false,
+                    "PositionPercentXEnabled": true,
+                    "PositionPercentYEnabled": true,
                     "PrePosition": {
-                      "X": 0.2786,
-                      "Y": 0.5008
+                      "X": 0.2804,
+                      "Y": 0.4947
                     },
                     "PreSize": {
-                      "X": 0.1586,
-                      "Y": 0.3444
+                      "X": 0.1563,
+                      "Y": 0.2778
                     },
-                    "LeftMargin": 255.1432,
-                    "RightMargin": 821.8568,
-                    "TopMargin": 235.4208,
-                    "BottomMargin": 236.5792,
-                    "Tag": 281,
-                    "ActionTag": 1312035173,
+                    "LeftMargin": 258.912,
+                    "RightMargin": 821.088,
+                    "TopMargin": 263.816,
+                    "BottomMargin": 256.184,
+                    "Tag": 335,
+                    "Children": [
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "turntable/zphd_1_4.png",
+                          "Plist": ""
+                        },
+                        "Scale9OriginX": 15,
+                        "Scale9OriginY": 15,
+                        "Scale9Width": 262,
+                        "Scale9Height": 262,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 100.0,
+                          "Y": 100.0
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PositionPercentXEnabled": true,
+                        "PositionPercentYEnabled": true,
+                        "PrePosition": {
+                          "X": 0.5,
+                          "Y": 0.5
+                        },
+                        "PreSize": {
+                          "X": 1.46,
+                          "Y": 1.46
+                        },
+                        "LeftMargin": -46.0,
+                        "RightMargin": -46.0,
+                        "TopMargin": -46.0,
+                        "BottomMargin": -46.0,
+                        "Tag": 330,
+                        "ActionTag": 1235357127,
+                        "Size": {
+                          "X": 292.0,
+                          "Y": 292.0
+                        },
+                        "Name": "TurnPointImg",
+                        "ctype": "ImageViewObjectData"
+                      },
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "turntable/zphd_1_5.png",
+                          "Plist": ""
+                        },
+                        "Scale9OriginX": 15,
+                        "Scale9OriginY": 15,
+                        "Scale9Width": 262,
+                        "Scale9Height": 262,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 100.0,
+                          "Y": 100.0
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PositionPercentXEnabled": true,
+                        "PositionPercentYEnabled": true,
+                        "PrePosition": {
+                          "X": 0.5,
+                          "Y": 0.5
+                        },
+                        "PreSize": {
+                          "X": 1.46,
+                          "Y": 1.46
+                        },
+                        "LeftMargin": -46.0,
+                        "RightMargin": -46.0,
+                        "TopMargin": -46.0,
+                        "BottomMargin": -46.0,
+                        "Tag": 336,
+                        "ActionTag": 608176967,
+                        "Size": {
+                          "X": 292.0,
+                          "Y": 292.0
+                        },
+                        "Name": "Image_24",
+                        "ctype": "ImageViewObjectData"
+                      }
+                    ],
+                    "ActionTag": -128271136,
                     "Size": {
-                      "X": 203.0,
-                      "Y": 248.0
+                      "X": 200.0,
+                      "Y": 200.0
                     },
-                    "Name": "pointerBtn",
-                    "ctype": "ButtonObjectData"
+                    "Name": "pointPnl",
+                    "ctype": "PanelObjectData"
                   }
                 ],
                 "ActionTag": -1312811916,
@@ -5647,21 +5606,21 @@
                       {
                         "FileData": {
                           "Type": "Normal",
-                          "Path": "cashcow/yjs_14.png",
+                          "Path": "turntable/zphd_20.png",
                           "Plist": ""
                         },
                         "Scale9Enable": true,
-                        "Scale9OriginX": 23,
-                        "Scale9OriginY": 37,
-                        "Scale9Width": 26,
-                        "Scale9Height": 213,
+                        "Scale9OriginX": 48,
+                        "Scale9OriginY": 42,
+                        "Scale9Width": 10,
+                        "Scale9Height": 24,
                         "AnchorPoint": {
                           "ScaleX": 0.5,
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 639.6108,
-                          "Y": 361.4679
+                          "X": 638.6108,
+                          "Y": 358.4679
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -5670,17 +5629,17 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 0.4997,
-                          "Y": 0.502
+                          "X": 0.4989,
+                          "Y": 0.4979
                         },
                         "PreSize": {
-                          "X": 0.3836,
-                          "Y": 0.3861
+                          "X": 0.3844,
+                          "Y": 0.3847
                         },
-                        "LeftMargin": 394.1108,
-                        "RightMargin": 394.8892,
-                        "TopMargin": 219.5321,
-                        "BottomMargin": 222.4679,
+                        "LeftMargin": 392.6108,
+                        "RightMargin": 395.3892,
+                        "TopMargin": 223.0321,
+                        "BottomMargin": 219.9679,
                         "Tag": 750,
                         "Children": [
                           {
@@ -5716,16 +5675,16 @@
                             },
                             "IconVisible": false,
                             "PrePosition": {
-                              "X": 0.4919,
-                              "Y": 0.9092
+                              "X": 0.4909,
+                              "Y": 0.9125
                             },
                             "PreSize": {
-                              "X": 0.7149,
-                              "Y": 0.0935
+                              "X": 0.7134,
+                              "Y": 0.0939
                             },
                             "LeftMargin": 66.0079,
-                            "RightMargin": 73.9921,
-                            "TopMargin": 12.2508,
+                            "RightMargin": 74.9921,
+                            "TopMargin": 11.2508,
                             "BottomMargin": 239.7492,
                             "Tag": 751,
                             "ActionTag": 1431341488,
@@ -5739,8 +5698,8 @@
                         ],
                         "ActionTag": 1676322215,
                         "Size": {
-                          "X": 491.0,
-                          "Y": 278.0
+                          "X": 492.0,
+                          "Y": 277.0
                         },
                         "Name": "dataPic",
                         "ctype": "ImageViewObjectData"
@@ -5846,59 +5805,6 @@
                     "ctype": "PanelObjectData"
                   },
                   {
-                    "DirectionType": "Vertical",
-                    "IsBounceEnabled": true,
-                    "ScrollDirectionType": 0,
-                    "ClipAble": true,
-                    "BackColorAlpha": 102,
-                    "SingleColor": {
-                      "R": 150,
-                      "G": 150
-                    },
-                    "FirstColor": {
-                      "R": 150,
-                      "G": 150
-                    },
-                    "EndColor": {},
-                    "ColorVector": {
-                      "ScaleY": 1.0
-                    },
-                    "Scale9Width": 1,
-                    "Scale9Height": 1,
-                    "TouchEnable": true,
-                    "AnchorPoint": {},
-                    "Position": {
-                      "X": 394.3745,
-                      "Y": 251.5564
-                    },
-                    "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
-                    },
-                    "CColor": {},
-                    "IconVisible": false,
-                    "PrePosition": {
-                      "X": 0.3081,
-                      "Y": 0.3494
-                    },
-                    "PreSize": {
-                      "X": 0.3836,
-                      "Y": 0.2861
-                    },
-                    "LeftMargin": 394.3745,
-                    "RightMargin": 394.6255,
-                    "TopMargin": 262.4436,
-                    "BottomMargin": 251.5564,
-                    "Tag": 754,
-                    "ActionTag": 770423362,
-                    "Size": {
-                      "X": 491.0,
-                      "Y": 206.0
-                    },
-                    "Name": "dataListPnl",
-                    "ctype": "ListViewObjectData"
-                  },
-                  {
                     "FontSize": 14,
                     "ButtonText": "",
                     "TextColor": {
@@ -5971,7 +5877,6 @@
                   {
                     "ClipAble": false,
                     "BackColorAlpha": 102,
-                    "ComboBoxIndex": 1,
                     "SingleColor": {
                       "R": 150,
                       "G": 200
@@ -5988,8 +5893,8 @@
                     "Scale9Height": 1,
                     "AnchorPoint": {},
                     "Position": {
-                      "X": 394.8562,
-                      "Y": 417.894
+                      "X": 0.0,
+                      "Y": 168.0
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -5998,33 +5903,34 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.3085,
-                      "Y": 0.5804
+                      "X": 0.0,
+                      "Y": 0.2333
                     },
                     "PreSize": {
                       "X": 0.3836,
                       "Y": 0.0556
                     },
-                    "LeftMargin": 394.8562,
-                    "RightMargin": 394.1438,
-                    "TopMargin": 262.106,
-                    "BottomMargin": 417.894,
+                    "RightMargin": 789.0,
+                    "TopMargin": 512.0,
+                    "BottomMargin": 168.0,
                     "Tag": 756,
                     "Children": [
                       {
                         "FileData": {
-                          "Type": "Default",
-                          "Path": "Default/ImageFile.png",
+                          "Type": "Normal",
+                          "Path": "turntable/zphd_21.png",
                           "Plist": ""
                         },
-                        "Scale9Width": 46,
-                        "Scale9Height": 46,
+                        "Scale9OriginX": 162,
+                        "Scale9OriginY": 12,
+                        "Scale9Width": 168,
+                        "Scale9Height": 13,
                         "AnchorPoint": {
                           "ScaleX": 0.5,
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 245.5,
+                          "X": 243.5,
                           "Y": 20.0
                         },
                         "Scale": {
@@ -6033,21 +5939,24 @@
                         },
                         "CColor": {},
                         "IconVisible": false,
-                        "PositionPercentXEnabled": true,
                         "PositionPercentYEnabled": true,
                         "PrePosition": {
-                          "X": 0.5,
+                          "X": 0.4959,
                           "Y": 0.5
                         },
                         "PreSize": {
-                          "X": 1.0,
-                          "Y": 1.0
+                          "X": 1.002,
+                          "Y": 0.925
                         },
+                        "LeftMargin": -2.5,
+                        "RightMargin": 1.5,
+                        "TopMargin": 1.5,
+                        "BottomMargin": 1.5,
                         "Tag": 757,
                         "ActionTag": 578730296,
                         "Size": {
-                          "X": 491.0,
-                          "Y": 40.0
+                          "X": 492.0,
+                          "Y": 37.0
                         },
                         "Name": "bg",
                         "ctype": "ImageViewObjectData"
@@ -6107,7 +6016,9 @@
                       },
                       {
                         "FontSize": 20,
-                        "LabelText": "xxxx",
+                        "LabelText": "xxxxxxxxx",
+                        "HorizontalAlignmentType": "HT_Center",
+                        "VerticalAlignmentType": "VT_Center",
                         "OutlineColor": {
                           "G": 0,
                           "B": 0
@@ -6142,17 +6053,17 @@
                           "Y": 0.432
                         },
                         "PreSize": {
-                          "X": 0.0815,
+                          "X": 0.1833,
                           "Y": 0.5
                         },
-                        "LeftMargin": 368.7297,
-                        "RightMargin": 82.2703,
+                        "LeftMargin": 343.7297,
+                        "RightMargin": 57.2703,
                         "TopMargin": 12.7202,
                         "BottomMargin": 7.2798,
                         "Tag": 760,
                         "ActionTag": 1715887122,
                         "Size": {
-                          "X": 40.0,
+                          "X": 90.0,
                           "Y": 20.0
                         },
                         "Name": "awardsText",
@@ -6166,6 +6077,57 @@
                     },
                     "Name": "recordDataCell",
                     "ctype": "PanelObjectData"
+                  },
+                  {
+                    "DirectionType": "Vertical",
+                    "IsBounceEnabled": true,
+                    "ScrollDirectionType": 0,
+                    "ClipAble": true,
+                    "BackColorAlpha": 102,
+                    "SingleColor": {
+                      "R": 150,
+                      "G": 150
+                    },
+                    "FirstColor": {
+                      "R": 150,
+                      "G": 150
+                    },
+                    "EndColor": {},
+                    "ColorVector": {
+                      "ScaleY": 1.0
+                    },
+                    "TouchEnable": true,
+                    "AnchorPoint": {},
+                    "Position": {
+                      "X": 395.0,
+                      "Y": 245.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.3086,
+                      "Y": 0.3403
+                    },
+                    "PreSize": {
+                      "X": 0.3812,
+                      "Y": 0.2889
+                    },
+                    "LeftMargin": 395.0,
+                    "RightMargin": 397.0,
+                    "TopMargin": 267.0,
+                    "BottomMargin": 245.0,
+                    "Tag": 307,
+                    "ActionTag": -2110474560,
+                    "Size": {
+                      "X": 488.0,
+                      "Y": 208.0
+                    },
+                    "Name": "recordLogListView",
+                    "ctype": "ListViewObjectData"
                   }
                 ],
                 "ActionTag": -1955045022,
@@ -7517,7 +7479,6 @@
       },
       "UsedResources": [
         "aaa/17_8.png",
-        "cashcow/yjs_14.png",
         "common/bt_3.png",
         "common/bz_1.png",
         "common/bz_2.png",
@@ -7532,18 +7493,20 @@
         "Default/Button_Disable.png",
         "Default/Button_Normal.png",
         "Default/Button_Press.png",
-        "Default/ImageFile.png",
         "font/hkhbtW12.ttc",
-        "turntable/zphd_1.png",
+        "turntable/zphd_1_4.png",
+        "turntable/zphd_1_5.png",
         "turntable/zphd_11.png",
         "turntable/zphd_13.png",
         "turntable/zphd_14.png",
         "turntable/zphd_15.png",
         "turntable/zphd_2.png",
+        "turntable/zphd_20.png",
+        "turntable/zphd_21.png",
         "turntable/zphd_3.png",
         "turntable/zphd_4.png",
         "turntable/zphd_5.png",
-        "turntable/zphd_7.png",
+        "turntable/zphd_6.png",
         "turntable/zphd_9.png"
       ],
       "ctype": "GameFileData"

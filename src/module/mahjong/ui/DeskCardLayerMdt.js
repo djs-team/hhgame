@@ -25,6 +25,7 @@ load('module/mahjong/ui/DeskCardLayerMdt', function () {
                 TableEvent.PlayerSelectProto,
                 TableEvent.AutoPlayProto,
                 TableEvent.updateSelfHandCard,
+                TableEvent.clearTableGaming,
             ]
         },
         handleNotification: function (notification) {
@@ -42,21 +43,28 @@ load('module/mahjong/ui/DeskCardLayerMdt', function () {
                     break
                 case TableEvent.DrawCardProto:
                     this.DrawCardProto(body)
+                    this.runDirection()
                     break
                 case TableEvent.PutCardProto:
                     this.PutCardProto(body)
+                    this.runDirection()
                     break
                 case TableEvent.prePutCard:
                     this.prePutCard(body)
                     break
                 case TableEvent.PlayerSelectProto:
                     this.PlayerSelectProto(body)
+                    this.runDirection()
                     break
                 case TableEvent.AutoPlayProto:
                     this.AutoPlayProto(body)
+                    this.runDirection()
                     break
                 case TableEvent.updateSelfHandCard:
                     this.updateSelfHandCard(body)
+                    break
+                case TableEvent.clearTableGaming:
+                    this.view.clearTableGaming(body)
                     break
             }
         },
@@ -77,6 +85,14 @@ load('module/mahjong/ui/DeskCardLayerMdt', function () {
             }
 
             this.updateDeckCard()
+            this.runDirection()
+        },
+
+        runDirection: function () {
+            let pData = appInstance.dataManager().getPlayData()
+            let pCurSeatID = pData.tableData.pCurSeatID
+            let pCurUiSeatId = pData.seatId2UI(pCurSeatID)
+            this.view.runDirection(pCurUiSeatId)
         },
 
         PlayerSelectProto: function (msg) {
@@ -120,7 +136,7 @@ load('module/mahjong/ui/DeskCardLayerMdt', function () {
 
         PutCardProto: function (msg) {
             let pData = appInstance.dataManager().getPlayData()
-            cc.log('=========putCard==========' + JSON.stringify(pData))
+
             let tData = pData.tableData
             let players = pData.players
             let pCurSeatID = tData.pCurSeatID
@@ -129,10 +145,12 @@ load('module/mahjong/ui/DeskCardLayerMdt', function () {
             let card = msg.card
 
             this.view.onePutCard(uiSeat, card)
-            cc.log('=========uiSeat=======' + uiSeat)
+
             if (pPutSeatID !== pData.pMySeatID) {
                 this.view.updateHandCard(uiSeat, players[pPutSeatID], pCurSeatID === pData.pMySeatID)
             }
+
+            appInstance.gameAgent().mjUtil().putCardSound(card)
         },
 
         AutoPlayProto: function () {

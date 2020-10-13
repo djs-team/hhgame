@@ -29,6 +29,4 @@ public interface OnPresentListener {
      */
     void onRecharge();
 
-    //赠送蓝玫瑰
-    void onBlueRoseSend(List<Integer> userIds);
 }

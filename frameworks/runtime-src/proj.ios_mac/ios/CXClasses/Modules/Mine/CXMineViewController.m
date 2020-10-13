@@ -175,7 +175,7 @@
             cell.itemDescLabel.text = @"已认证";
             cell.itemDescLabel.textColor = UIColorHex(0xF3BB49);
         } else {
-            cell.itemDescLabel.text = @"认证得玫瑰";
+            cell.itemDescLabel.text = @"";
             cell.itemDescLabel.textColor = UIColorHex(0x818181);
         }
     } else if ([title isEqualToString:@"绑定"]) {
@@ -221,6 +221,7 @@
         kWeakSelf
         [[CXAliRPManager sharedInstance] startWithSuccess:^{
             [weakSelf toast:@"认证成功"];
+            [weakSelf getUserData];
         } failure:^(int code, NSString * _Nonnull reason) {
             [weakSelf toast:reason];
         } nav:self.navigationController];
@@ -260,7 +261,7 @@
     put.contentType = @"image/jpg";
     put.bucketName = self.uploadImageModel.BucketName;
     //memberpid/用户id/身份证图片
-    put.objectKey = [NSString stringWithFormat:@"memberpid/%@/%@.jpg", [CXClientModel instance].userId, [NSDate currentTime]];
+    put.objectKey = [NSString stringWithFormat:@"Avatar/%@/%@.jpg", [CXClientModel instance].userId, [NSDate currentTime]];
     NSData *imageData = UIImageJPEGRepresentation(_avatarImage, 0.5);
     put.uploadingData = imageData;
     

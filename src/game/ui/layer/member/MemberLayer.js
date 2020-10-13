@@ -1,23 +1,28 @@
 load('game/ui/layer/member/MemberLayer', function () {
+    let AppConfig = include('game/public/AppConfig')
     let ResConfig = include('game/config/ResConfig')
     let GameConfig = include('game/config/GameConfig')
     let BaseLayer = include('public/ui/BaseLayer')
     let MemberMdt = include('game/ui/layer/member/MemberMdt')
     let AniPlayer = ResConfig.AniPlayer
     let PlayerPlay = ResConfig.PlayerPlay
+    let sender={};
     let MemberLayer = BaseLayer.extend({
         _className: 'MemberLayer',
         ctor: function () {
             this._super(ResConfig.View.MemberLayer)
             this.registerMediator(new MemberMdt(this))
             this.registerEventListener('ThirdPayCallback', this.onThirdPayCallBack)
-
+            this.registerEventListener('ApplePayCallback', this.onApplePayCallBack)
 
         },
         RES_BINDING: function () {
             return {
 
                 'pnl/closeBtn': {onClicked: this.onCloseClick},
+                'PayType': {},
+                'PayType/bgAli/ivAli': {onClicked: this.onAliPayClick},
+                'PayType/bgWx/ivWx': {onClicked: this.onWxClick},
 
                 'pnl/privilegePnl': {},
                 'pnl/privilegePnl/privilegePgPnl/interestsBg/vipSignText': {},
@@ -74,7 +79,15 @@ load('game/ui/layer/member/MemberLayer', function () {
             cc.log('=============onThirdPayCallBack' + msg)
 
         },
-
+        
+        onApplePayCallBack: function (msg) {
+            cc.log('=============onApplePayCallBack' + msg)
+            msg = JSON.parse(msg)
+            
+            appInstance.gameAgent().httpGame().VIPPaysOrderAppleCheckReq(msg)
+            
+        },
+        
 
         initData: function () {
 
@@ -84,6 +97,7 @@ load('game/ui/layer/member/MemberLayer', function () {
             this.turnPreviousBtn.setVisible(false)
             this.rechargeCell.setVisible(false)
             this.memberCell.setVisible(false)
+            this.PayType.setVisible(false)
 
         },
 
@@ -150,16 +164,46 @@ load('game/ui/layer/member/MemberLayer', function () {
 
         },
 
-        onRechargeClicked: function (sender) {
+        onRechargeClicked: function (s) {
+            sender = s;
+            if (cc.sys.OS_IOS === cc.sys.os) {
+                if (AppConfig.applePayType == "Apple") {
+                    let _sendData = sender._sendData
+                    let msg = {
+                        vipCode: _sendData.vipCode,
+                        payType: 3
+                    }
+                    appInstance.gameAgent().httpGame().VIPPaysOrderReq(msg)
+                    cc.log("----------------------onAliPayClick")
+                } else {
+                    this.PayType.setVisible(true)
+                }
+            } else {
+                this.PayType.setVisible(true)
+            }
+            
+        },
+        onAliPayClick: function () {
+            cc.log("----------------------onAliPayClick")
+            this.PayType.setVisible(false)
 
             let _sendData = sender._sendData
             let msg = {
                 vipCode: _sendData.vipCode,
                 payType: 1
             }
-
             appInstance.gameAgent().httpGame().VIPPaysOrderReq(msg)
-            //调用充值接口
+
+        }, onWxClick: function () {
+            cc.log("----------------------onWxClick")
+
+            this.PayType.setVisible(false)
+            let _sendData = sender._sendData
+            let msg = {
+                vipCode: _sendData.vipCode,
+                payType: 2
+            }
+            appInstance.gameAgent().httpGame().VIPPaysOrderReq(msg)
 
         },
 

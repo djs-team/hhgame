@@ -30,7 +30,7 @@
         <!-- 设置环信应用的AppKey -->
         <meta-data
             android:name="EASEMOB_APPKEY"
-            android:value="1111191107042495#hehexq" />
+            android:value="1101191012041033#hehequanji" />
         <!--<meta-data-->
         <!--android:name="EASEMOB_APPKEY"-->
         <!--android:value="1100191011055637#mau-zhibo" />-->
@@ -72,7 +72,7 @@
             android:value="" />
         <!--微信登录、分享回调-->
         <activity
-            android:name="harmony.dating.online.face.ad.wxapi.WXEntryActivity"
+            android:name="com.hehegame.chess.wxapi.WXEntryActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />

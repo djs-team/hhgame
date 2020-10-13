@@ -26,6 +26,7 @@ load('game/ui/layer/fukashop/FukaShopMdt', function () {
                 GameEvent.FUKA_MATERIAL_LIST,
                 GameEvent.FUKA_MATERIA_LOG,
                 GameEvent.FUKA_MATERIA_EXCHANGE,
+                GameEvent.UPDATE_PROPSYNC,
 
             ]
         },
@@ -65,6 +66,9 @@ load('game/ui/layer/fukashop/FukaShopMdt', function () {
                     break
                 case GameEvent.FUKA_MATERIA_EXCHANGE:
                     this.view.onExchangeOnlineResult(body)
+                    break
+                case GameEvent.UPDATE_PROPSYNC:
+                    this.view.onUpdateUserData(body)
                     break
                 default:
                     break
@@ -122,22 +126,22 @@ load('game/ui/layer/fukashop/FukaShopMdt', function () {
             let res
             switch (code) {
                 case 1:
-                    res = 'res/code/fukashop/fk_15.png'
+                    res = 'res/fukashop/fk_15.png'
                     break
                 case 2:
-                    res = 'res/code/fukashop/fk_16.png'
+                    res = 'res/fukashop/fk_16.png'
                     break
                 case 3:
-                    res = 'res/code/fukashop/fk_17.png'
+                    res = 'res/fukashop/fk_17.png'
                     break
                 case 4:
-                    res = 'res/code/fukashop/fk_18.png'
+                    res = 'res/fukashop/fk_18.png'
                     break
                 case 5:
-                    res = 'res/code/fukashop/fk_19.png'
+                    res = 'res/fukashop/fk_19.png'
                     break
                 default:
-                    res = 'res/code/fukashop/fk_15.png'
+                    res = 'res/fukashop/fk_15.png'
                     break
 
             }
@@ -202,15 +206,17 @@ load('game/ui/layer/fukashop/FukaShopMdt', function () {
                 let baoData = {}
                 let info = body.fukaDuoBaoList[i]
 
+                baoData.duoBaoId = info.duoBaoId
                 baoData.goodsid = info.goodsid
                 baoData.allNum = info.fuKaNum
-                baoData.currentNum = info.goodsid
+                baoData.currentNum = info.process
                 baoData.playerConsumeFuka =  '我已夺宝' + info.playerConsumeFuka + '次'
-                baoData.num = info.num
+                baoData.goodsNum = info.goodsNum
                 baoData.goodsName = info.goodsName
                 baoData.hallPictureUrl = info.hallPictureUrl
                 baoData.nickName = info.nickName
                 baoData.sdkPhotoUrl = info.sdkPhotoUrl
+                baoData.duoBaoNum = info.duoBaoNum
                 baoData.fuKaCnt = appInstance.dataManager().getUserData().fuka
 
 
@@ -270,7 +276,6 @@ load('game/ui/layer/fukashop/FukaShopMdt', function () {
 
                 data.push(logData)
             }
-            cc.log('--------------- data : ' + JSON.stringify(data))
             this.view.onFormatMaterialLog(data)
         },
 
@@ -280,7 +285,7 @@ load('game/ui/layer/fukashop/FukaShopMdt', function () {
         onFormatTimesOne: function (timestamp) {
 
             let date = new Date(timestamp)
-            let time = (this.padLeftZero(date.getMonth() + 1)) + '-' + (this.padLeftZero(date.getDate())) + '     ' + (this.padLeftZero(date.getHours())) + ":" + (this.padLeftZero(date.getMinutes()))
+            let time = (this.padLeftZero(date.getMonth() + 1)) + '-' + (this.padLeftZero(date.getDate())) + '  ' + (this.padLeftZero(date.getHours())) + ":" + (this.padLeftZero(date.getMinutes()))
             return time
         },
 

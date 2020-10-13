@@ -308,38 +308,43 @@ public class ProfileActivity extends BaseActivity<ActivityProfileBinding> {
         mBinding.nickTv.setText(userInfo.getNickname());
         isMyFriend = userInfo.getIs_friend().equals("1");
         ViewBindUtils.setText(mBinding.addFriendTv, isMyFriend ? "私聊好友" : "送礼物加好友");
-        userInfo.getOnline();
         onlineState = userInfo.getOnline();
-        if (!TextUtils.isEmpty(onlineState)) {
-            mBinding.tvOnlineState.setText(onlineState.equals("0") ? "离线" : "在线");
-            mBinding.tvOnlineState.setBackgroundResource(onlineState.equals("0") ? R.drawable.bg_grayr_radius_21 : R.drawable.bg_green_radius_21);
+
+        String state = onlineState;
+        if (!TextUtils.isEmpty(state)) {
+            ViewBindUtils.setVisible(mBinding.tvState, true);
+
+            if (state.equals("0")) {
+                //相亲中
+                ViewBindUtils.setVisible(mBinding.tvState, true);
+                mBinding.tvState.setBackgroundResource(R.drawable.bg_grayr_radius_21);
+                ViewBindUtils.setText(mBinding.tvState, "离线");
+            } else if (state.equals("3")) {
+                //相亲中
+                ViewBindUtils.setVisible(mBinding.tvState, true);
+                mBinding.tvState.setBackgroundResource(R.drawable.bg_violet_radius_21);
+                ViewBindUtils.setText(mBinding.tvState, "相亲中");
+            } else if (state.equals("5")) {
+                ViewBindUtils.setVisible(mBinding.tvState, true);
+                mBinding.tvState.setBackgroundResource(R.drawable.bg_pink_radius_21);
+                ViewBindUtils.setText(mBinding.tvState, "热聊中");
+            } else if (state.equals("6")) {
+                ViewBindUtils.setVisible(mBinding.tvState, true);
+                mBinding.tvState.setBackgroundResource(R.drawable.bg_yellow_radius_21);
+                ViewBindUtils.setText(mBinding.tvState, "开播中");
+            } else {
+                ViewBindUtils.setVisible(mBinding.tvState, true);
+                mBinding.tvState.setBackgroundResource(R.drawable.bg_green_radius_21);
+                ViewBindUtils.setText(mBinding.tvState, "在线");
+            }
+        } else {
+            ViewBindUtils.setVisible(mBinding.tvState, false);
         }
-//        String state = item.getState();
-//        if (!TextUtils.isEmpty(state)) {
-//            ViewBindUtils.setVisible(mBinding.tvState, true);
-//            if (state.equals("2") || state.equals("3")) {
-//                //相亲中
-//                ViewBindUtils.setVisible(mBinding.tvState, true);
-//                mBinding.tvOnlineState.setBackgroundResource(R.drawable.bg_violet_radius_21);
-//                ViewBindUtils.setText(mBinding.tvState, "相亲中");
-//            } else if (state.equals("4") || state.equals("5")) {
-//                ViewBindUtils.setVisible(mBinding.tvState, true);
-//                mBinding.tvOnlineState.setBackgroundResource(R.drawable.bg_pink_radius_21);
-//                ViewBindUtils.setText(mBinding.tvState, "热聊中");
-//            } else if (state.equals("6")) {
-//                ViewBindUtils.setVisible(mBinding.tvState, true);
-//                mBinding.tvOnlineState.setBackgroundResource(R.drawable.bg_yellow_radius_21);
-//                ViewBindUtils.setText(mBinding.tvState, "开播中");
-//            } else {
-//                ViewBindUtils.setVisible(mBinding.tvState, false);
-//            }
-//        } else {
-//            ViewBindUtils.setVisible(mBinding.tvState, false);
-//        }
         mBinding.uidTv.setText("ID:" + userInfo.getPretty_id());
         setViewText(mBinding.singTv, "", userInfo.getIntro());
         SexResUtils.setSexImgInFindPage(mBinding.rlSex, mBinding.sexIv, userInfo.getSex());
-
+        mBinding.tvAge.setText(String.valueOf(userInfo.getAge()));
+        ViewBindUtils.setVisible(mBinding.tvAge, userInfo.getAge() != 0);
         mBinding.titleNickTv.setText(userInfo.getNickname());
         String hobby = userInfo.getHobby();
         String feature = userInfo.getFeature();
@@ -420,13 +425,15 @@ public class ProfileActivity extends BaseActivity<ActivityProfileBinding> {
     }
 
     private void upBlockView(boolean isBlock) {
-        ViewBindUtils.setVisible(mBinding.llGiftWall, !isBlock);
-        ViewBindUtils.setVisible(mBinding.userInfoLayout, !isBlock);
-        ViewBindUtils.setVisible(mBinding.voiceRoomCl, !isBlock);
-        ViewBindUtils.setVisible(mBinding.tvIntroTitle, !isBlock);
-        ViewBindUtils.setVisible(mBinding.singTv, !isBlock);
-        ViewBindUtils.setVisible(mBinding.rvTag, !isBlock);
-        ViewBindUtils.setVisible(mBinding.rlPrivacy, isBlock);
+        if (isBlock) {
+            ViewBindUtils.setVisible(mBinding.llGiftWall, false);
+            ViewBindUtils.setVisible(mBinding.userInfoLayout, false);
+            ViewBindUtils.setVisible(mBinding.voiceRoomCl, false);
+            ViewBindUtils.setVisible(mBinding.tvIntroTitle, false);
+            ViewBindUtils.setVisible(mBinding.singTv, false);
+            ViewBindUtils.setVisible(mBinding.rvTag, false);
+            ViewBindUtils.setVisible(mBinding.rlPrivacy, false);
+        }
     }
 
 

@@ -13,37 +13,23 @@ import com.deepsea.mua.app.im.viewmodel.GiftKnapsackModel;
 import com.deepsea.mua.app.im.viewmodel.GiftPanelViewModel;
 import com.deepsea.mua.app.im.viewmodel.SysMsgViewModel;
 import com.deepsea.mua.core.di.mapkey.ViewModelKey;
-import com.deepsea.mua.kit.app.MuaViewModel;
-import com.deepsea.mua.mine.activity.CollectionAccountSettingActivity;
 import com.deepsea.mua.mine.viewmodel.BlindDateModel;
-import com.deepsea.mua.mine.viewmodel.CancellationAccountModel;
 import com.deepsea.mua.mine.viewmodel.CashWithdrawalDetailsModel;
 import com.deepsea.mua.mine.viewmodel.CashWithdrawalModel;
 import com.deepsea.mua.mine.viewmodel.CollectionAccountModel;
 import com.deepsea.mua.mine.viewmodel.ExchangeMdDetailsModel;
 import com.deepsea.mua.mine.viewmodel.ExchangeMdViewModel;
-import com.deepsea.mua.mine.viewmodel.FollowFanViewModel;
 import com.deepsea.mua.mine.viewmodel.H5ViewModel;
 import com.deepsea.mua.mine.viewmodel.IncomeDetailsModel;
-import com.deepsea.mua.mine.viewmodel.InvitationMineViewModel;
-import com.deepsea.mua.mine.viewmodel.InviteAlertModel;
-import com.deepsea.mua.mine.viewmodel.InviteCodeModel;
 import com.deepsea.mua.mine.viewmodel.InviteDialogViewModel;
-import com.deepsea.mua.mine.viewmodel.MePackViewModel;
 import com.deepsea.mua.mine.viewmodel.ProfileEditViewModel;
 import com.deepsea.mua.mine.viewmodel.ProfileViewModel;
 import com.deepsea.mua.mine.viewmodel.RechargeViewModel;
-import com.deepsea.mua.mine.viewmodel.SafetyViewModel;
-import com.deepsea.mua.mine.viewmodel.SettingViewModel;
 import com.deepsea.mua.mine.viewmodel.TagsModel;
-import com.deepsea.mua.mine.viewmodel.TaskProcessModel;
-import com.deepsea.mua.mine.viewmodel.VisitorsViewModel;
 import com.deepsea.mua.mine.viewmodel.WalletRecordViewModel;
 import com.deepsea.mua.mine.viewmodel.WalletViewModel;
 import com.deepsea.mua.stub.utils.ViewModelFactory;
 import com.deepsea.mua.voice.viewmodel.HomeViewModel;
-import com.deepsea.mua.voice.viewmodel.MineRoomViewModel;
-import com.deepsea.mua.voice.viewmodel.RankViewModel;
 import com.deepsea.mua.voice.viewmodel.RoomCreateViewModel;
 import com.deepsea.mua.voice.viewmodel.RoomManagerViewModel;
 import com.deepsea.mua.voice.viewmodel.RoomReportViewModel;
@@ -67,36 +53,11 @@ public abstract class ViewModelModuleKit {
     abstract ViewModelProvider.Factory bindViewModelFactory(ViewModelFactory factory);
 
 
-
     @Binds
     @IntoMap
     @ViewModelKey(SystemMsgViewModel.class)
     abstract ViewModel bindsSystemMsgViewModel(SystemMsgViewModel viewModel);
 
-    @Binds
-    @IntoMap
-    @ViewModelKey(MePackViewModel.class)
-    abstract ViewModel bindsMePackViewModel(MePackViewModel viewModel);
-
-    @Binds
-    @IntoMap
-    @ViewModelKey(SafetyViewModel.class)
-    abstract ViewModel bindsSafetyViewModel(SafetyViewModel viewModel);
-
-    @Binds
-    @IntoMap
-    @ViewModelKey(MsgSettingViewModel.class)
-    abstract ViewModel bindsMsgSettingViewModel(MsgSettingViewModel viewModel);
-
-    @Binds
-    @IntoMap
-    @ViewModelKey(VisitorsViewModel.class)
-    abstract ViewModel bindsVisitorsViewModel(VisitorsViewModel viewModel);
-
-    @Binds
-    @IntoMap
-    @ViewModelKey(SettingViewModel.class)
-    abstract ViewModel bindsSettingViewModel(SettingViewModel viewModel);
 
     @Binds
     @IntoMap
@@ -113,20 +74,6 @@ public abstract class ViewModelModuleKit {
     @ViewModelKey(WalletViewModel.class)
     abstract ViewModel bindsWalletViewModel(WalletViewModel viewModel);
 
-    @Binds
-    @IntoMap
-    @ViewModelKey(FollowFanViewModel.class)
-    abstract ViewModel bindsFollowFanViewModel(FollowFanViewModel viewModel);
-
-    @Binds
-    @IntoMap
-    @ViewModelKey(RankViewModel.class)
-    abstract ViewModel bindsRankViewModel(RankViewModel viewModel);
-
-    @Binds
-    @IntoMap
-    @ViewModelKey(MineRoomViewModel.class)
-    abstract ViewModel bindsMineRoomViewModel(MineRoomViewModel viewModel);
 
     @Binds
     @IntoMap
@@ -193,10 +140,6 @@ public abstract class ViewModelModuleKit {
     @ViewModelKey(ProfileViewModel.class)
     abstract ViewModel bindProfileViewModel(ProfileViewModel viewModel);
 
-    @Binds
-    @IntoMap
-    @ViewModelKey(MuaViewModel.class)
-    abstract ViewModel bindsMuaViewModel(MuaViewModel viewModel);
 
     @Binds
     @IntoMap
@@ -233,10 +176,6 @@ public abstract class ViewModelModuleKit {
     @ViewModelKey(GiftKnapsackModel.class)
     abstract ViewModel bindsGiftKnapsackModel(GiftKnapsackModel viewModel);
 
-    @Binds
-    @IntoMap
-    @ViewModelKey(InvitationMineViewModel.class)
-    abstract ViewModel bindsInvitationMineViewModel(InvitationMineViewModel viewModel);
 
     @Binds
     @IntoMap
@@ -260,43 +199,36 @@ public abstract class ViewModelModuleKit {
 
     @Binds
     @IntoMap
-    @ViewModelKey(InviteCodeModel.class)
-    abstract ViewModel bindsInviteCodeModel(InviteCodeModel viewModel);
-    @Binds
-    @IntoMap
     @ViewModelKey(InviteDialogViewModel.class)
     abstract ViewModel bindsInviteDialogViewModel(InviteDialogViewModel viewModel);
+
     @Binds
     @IntoMap
     @ViewModelKey(H5ViewModel.class)
     abstract ViewModel bindsH5ViewModel(H5ViewModel viewModel);
-    @Binds
-    @IntoMap
-    @ViewModelKey(CancellationAccountModel.class)
-    abstract ViewModel bindsCancellationAccountModel(CancellationAccountModel viewModel);
+
     @Binds
     @IntoMap
     @ViewModelKey(ExchangeMdDetailsModel.class)
     abstract ViewModel bindsExchangeMdDetailsModel(ExchangeMdDetailsModel viewModel);
+
     @Binds
     @IntoMap
     @ViewModelKey(BlindDateModel.class)
     abstract ViewModel bindsBlindDateModel(BlindDateModel viewModel);
-    @Binds
-    @IntoMap
-    @ViewModelKey(TaskProcessModel.class)
-    abstract ViewModel bindsTaskProcessModel(TaskProcessModel viewModel);
+
     @Binds
     @IntoMap
     @ViewModelKey(TagsModel.class)
     abstract ViewModel bindsTagsModel(TagsModel viewModel);
-    @Binds
-    @IntoMap
-    @ViewModelKey(InviteAlertModel.class)
-    abstract ViewModel bindsInviteAlertModel(InviteAlertModel viewModel);
+
     @Binds
     @IntoMap
     @ViewModelKey(SongOriginalViewModel.class)
     abstract ViewModel bindsSongOriginalViewModel(SongOriginalViewModel viewModel);
 
+    @Binds
+    @IntoMap
+    @ViewModelKey(MsgSettingViewModel.class)
+    abstract ViewModel bindsMsgSettingViewModel(MsgSettingViewModel viewModel);
 }

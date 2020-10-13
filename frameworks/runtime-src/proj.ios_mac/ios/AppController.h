@@ -36,7 +36,7 @@
 
 #pragma mark - 直播相关
 /// 从麻将进入视频
-+ (void)enterLiveBroadcast;
++ (void)enterLiveBroadcastWithToken:(NSString *_Nonnull)param;
 
 /// 进入直播间
 /// @param roomId 直播间ID
@@ -60,22 +60,23 @@
 /// @param payType 支付渠道类型：1:苹果内购 2:支付宝 3:微信
 /// @param payParam 支付参数：
 /// @param userID 当前支付用户ID
+/// @param orderNo 己方订单号
 /// @param paySuccessMethod 支付成功通知的方法名
-+ (void)appPurchaseWithPayType:(NSString *_Nonnull)payType payParam:(NSString *_Nonnull)payParam userID:(NSString *_Nonnull)userID paySuccessMethod:(NSString *_Nonnull)paySuccessMethod;
++ (void)appPurchaseWithPayType:(NSString *_Nonnull)payType payParam:(NSString *_Nonnull)payParam userID:(NSString *_Nonnull)userID orderNo:(NSString *_Nonnull)orderNo paySuccessMethod:(NSString *_Nonnull)paySuccessMethod;
 
 #pragma mark - Photo
-+ (void)selectedOnePhoto;
++ (void)selectedOnePhotoWithMethod:(NSString *_Nonnull)method;
 
 #pragma mark - QRCode
 /// 生成二维码
 /// @param codeString 二维码字符串
-/// @param centerImage 中心图片
-+ (UIImage *_Nonnull)createQRCodeImageWithString:(nonnull NSString *)codeString;
++ (void)createQRCodeImageWithString:(nonnull NSString *)codeString method:(NSString *_Nonnull)method;
 
 #pragma mark - 广告
 /// 打开激励视频
+/// @param userId userId
 /// @param method 广告看完通知方法
-+ (void)openBUAdRewardViewControllerWithMethod:(NSString *_Nonnull)method;
++ (void)openBUAdRewardWithUserId:(NSString *_Nonnull)userId method:(NSString *_Nonnull)method;
 
 #pragma mark - 获取手机基本信息
 /// 获取Imei
@@ -102,6 +103,8 @@
 /// @param method 方法名
 /// @param param 参数
 + (void)dispatchCustomEventWithMethod:(NSString *_Nonnull)method param:(NSString *_Nullable)param;
+
++ (void)JsCallBack:(NSString *_Nonnull)funcNameStr param:(NSString *_Nonnull)param;
 
 @end
 

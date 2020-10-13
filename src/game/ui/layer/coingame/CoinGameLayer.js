@@ -6,10 +6,10 @@ load('game/ui/layer/coingame/CoinGameLayer', function () {
     let coinGameLayer = BaseLayer.extend({
         _className: 'coinGameLayer',
         _goBtnData: [
-            { name: '新手场', score: 100, cost: '100-1000', gameType: 'M1'},
-            { name: '初级场', score: 1000, cost: '1000-1万', gameType: 'M2'},
-            { name: '高级场', score: 10000, cost: '1万-10万', gameType: 'M3'},
-            { name: '大师场', score: 100000, cost: '10万-1000万', gameType: 'M4'},
+            { name: '新手场', score: 500, cost: '2000-6万', gameType: 'M1'},
+            { name: '初级场', score: 2000, cost: '6万-24万', gameType: 'M2'},
+            { name: '高级场', score: 5000, cost: '24万-60万', gameType: 'M3'},
+            { name: '大师场', score: 20000, cost: '60万以上', gameType: 'M4'},
         ],
         _roomId: {
             '4': 'R1',

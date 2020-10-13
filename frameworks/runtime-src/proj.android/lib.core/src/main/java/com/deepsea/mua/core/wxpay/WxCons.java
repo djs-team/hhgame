@@ -5,7 +5,8 @@ package com.deepsea.mua.core.wxpay;
  */
 public interface WxCons {
 
-    String APP_ID_WX = "wx36f02225e13d7261";
+    String APP_ID_WX = "wx0b0dfb4c61044a8b";
+    String APP_SECRET_WX = "88c540f1f030c762be4ee5ecb1f41071";
 
     String ACTION = "com.deepsea.mua.wxpay.action";
 

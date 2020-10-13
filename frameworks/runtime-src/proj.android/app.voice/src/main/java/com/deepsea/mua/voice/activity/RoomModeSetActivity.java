@@ -111,24 +111,7 @@ public class RoomModeSetActivity extends BaseActivity<ActivityRoomModeSetBinding
             }
 
             showProgress();
-//            mViewModel.create(name, mModeId, mTagId).observe(this,
-//                    new BaseObserver<VoiceRoomBean.RoomInfoBean>() {
-//                        @Override
-//                        public void onSuccess(VoiceRoomBean.RoomInfoBean result) {
-//                            hideProgress();
-//                            finish();
-//                        }
-//
-//                        @Override
-//                        public void onError(String msg, int code) {
-//                            hideProgress();
-//                            if (code == 900) {
-//                                new UnauthorizedDialog(mContext).show();
-//                            } else {
-//                                toastShort(msg);
-//                            }
-//                        }
-//                    });
+
             mViewModel.setRoomTagAndModel(mTagId, mModeId);
         });
     }

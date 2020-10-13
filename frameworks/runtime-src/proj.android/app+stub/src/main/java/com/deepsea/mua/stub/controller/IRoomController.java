@@ -506,8 +506,6 @@ public interface IRoomController {
 
         void showGuardGif(ShowGuardAnimationToClientParam bean);//弹出守护动画
 
-        void showTaskFinish(UpdateFinishTaskToClientParam bean);//任务完成
-
         void showRedPackageRule(String content);//红包规则
 
         void notifyRedPacketProgress(boolean visible, float progress);//红包进度

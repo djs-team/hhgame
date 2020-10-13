@@ -12,7 +12,6 @@ public interface ArouterConst {
     String PAGE_ROOM = "/voice/room";  //RoomActivity
 
     String PAGE_REPORT = "/voice/report";  //RoomReportActivity
-    String PAGE_FANS_RANK = "/voice/fansrank/"; //FansRankActivity
     String PAGE_EGG = "/voice/Egg/"; //FansRankActivity
 
     /* --- MINE --- */
@@ -21,7 +20,6 @@ public interface ArouterConst {
     String PAGE_RECHARGE = "/mine/recharge";  //RechargeActivity
     String PAGE_RECHARGE_DIALOG = "/mine/recharge_dialog";  //RechargeDialogActivity
     String PAGE_SCREEN_DIALOG = "/mine/screen_dialog";  //RechargeDialogActivity
-    String PAGE_AUTH = "/mine/auth";   //PresentIdentityAuthActivity
     String PAGE_UPDATE = "/mine/update";   //UpdateActivity
     String PAGE_INVITE_DIALOG = "/mine/invite_dialog";   //InviteDialogActivity
     String PAGE_YOUNGER = "/mine/younger";
@@ -32,22 +30,17 @@ public interface ArouterConst {
     String PARENT_PWD_ENSURE = "/mine/parentPwdEnsure";
     String PAGE_ME_PACK = "/mine/mePack";
     String PAGE_ME_WALLET = "/mine/wallet";
-    String PAGE_ME_INVITEALERT = "/mine/inviteAlert";
     String PAGE_ME_FOLLOW_AND_FAN = "/mine/follow_and_fan";
     String PAGE_ME_VISITORS = "/mine/vistors";
     String PAGE_ME_MINE_INVITOR = "/mine/myinvite";
-    String PAGE_ME_MINE_BLUEROSE = "/mine/blueRoseExchange";
     String PAGE_ME_MINE_REDROSE = "/mine/redRoseExchange";
-    String PAGE_ME_MINE_APPLYHOST = "/mine/applyHost";
     String PAGE_ME_MINE_GUARD = "/mine/guard";
-    String PAGE_ME_TASK_CENTER = "/mine/taskcenter";
-    String PAGE_ME_DIALOG_TASK_CENTER = "/mine/dialog_taskcenter";
+  ;
 
 
     /* --- MESSAGE --- */
     String PAGE_MESSAGE = "/message/message";  //MessageActivity
     String PAGE_CHAT = "/message/chat";  //ChatActivity
-    String PAGE_MSG_SETTING = "/message/setting";   //MsgSettingActivity
     String PAGE_MSG_ADDFRIEND = "/message/addFriend";   //FriendAddActivity
     String PAGE_MSG_MESSAGEMAIN = "/message/messageManActivityy";   //MessageManActivityy
     String PAGE_MSG_CHAT_SETTING = "/message/chatSetting";   //MsgSettingActivity
@@ -55,6 +48,5 @@ public interface ArouterConst {
 
 
     /* --- DYNAMIC --- */
-    String PAGE_MY_DYNAMIC = "/dynamic/my";   //MyDynamicActivity
     String PAGE_DYNAMIC_DETAIL = "/dynamic/detail";   //DynamicDetailsActivity
 }

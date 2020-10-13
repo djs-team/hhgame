@@ -7,7 +7,6 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSInteger, PayCode) {
     
@@ -54,4 +53,3 @@ typedef NS_ENUM(NSInteger, PayCode) {
 
 @end
 
-NS_ASSUME_NONNULL_END

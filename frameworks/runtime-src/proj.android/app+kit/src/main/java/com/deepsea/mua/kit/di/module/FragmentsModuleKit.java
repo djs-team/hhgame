@@ -10,18 +10,13 @@ import com.deepsea.mua.app.im.mua.GiftPanelFragment;
 import com.deepsea.mua.app.im.mua.MessageFragment;
 import com.deepsea.mua.app.im.mua.SystemMsgFragment;
 import com.deepsea.mua.app.im.ui.MessageMainFragment;
-import com.deepsea.mua.mine.fragment.FanFragment;
-import com.deepsea.mua.mine.fragment.FollowFragment;
 import com.deepsea.mua.mine.fragment.GuardInfoFragment;
 import com.deepsea.mua.mine.fragment.MDFragment;
 import com.deepsea.mua.mine.fragment.MineFragment;
-import com.deepsea.mua.voice.fragment.FansRankFragment;
 import com.deepsea.mua.voice.fragment.FullServiceManFragment;
 import com.deepsea.mua.voice.fragment.FullServiceWomenFragment;
-import com.deepsea.mua.voice.fragment.RankFragment;
 import com.deepsea.mua.voice.fragment.RecentActiveFragment;
 import com.deepsea.mua.voice.fragment.RoomFragment;
-import com.deepsea.mua.voice.fragment.RoomRankFragment;
 import com.deepsea.mua.voice.fragment.SongApointmentFragment;
 import com.deepsea.mua.voice.fragment.SongBanchangFragment;
 import com.deepsea.mua.voice.fragment.SongOriginalFragment;
@@ -33,7 +28,6 @@ import com.deepsea.mua.voice.fragment.SortFriendsFragment;
 import com.deepsea.mua.voice.fragment.SortRecentActiveForManyFragment;
 import com.deepsea.mua.voice.fragment.SortVisitorInRoomForManyFragment;
 import com.deepsea.mua.voice.fragment.SortVisitorInRoomFragment;
-import com.deepsea.mua.voice.fragment.TotalRankFragment;
 import com.deepsea.mua.voice.fragment.VoiceFragment;
 
 import dagger.Module;
@@ -45,21 +39,9 @@ import dagger.android.ContributesAndroidInjector;
 @Module
 public abstract class FragmentsModuleKit {
 
-
-    @ContributesAndroidInjector
-    abstract FansRankFragment contributesFansRankFragment();
-
-    @ContributesAndroidInjector
-    abstract TotalRankFragment contributesTotalRankFragment();
-
     @ContributesAndroidInjector
     abstract ConversationFragment contributesConversationFragment();
 
-    @ContributesAndroidInjector
-    abstract FollowFragment contributesFollowFragment();
-
-    @ContributesAndroidInjector
-    abstract FanFragment contributesFanFragment();
 
     @ContributesAndroidInjector
     abstract MDFragment contributesMDFragment();
@@ -72,12 +54,6 @@ public abstract class FragmentsModuleKit {
 
     @ContributesAndroidInjector
     abstract MineFragment contributesMineFragment();
-
-    @ContributesAndroidInjector
-    abstract RoomRankFragment contributesRoomRankFragment();
-
-    @ContributesAndroidInjector
-    abstract RankFragment contributesRankFragment();
 
     @ContributesAndroidInjector
     abstract RoomFragment contributesRoomFragment();

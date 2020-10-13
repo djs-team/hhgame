@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.Application;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.deepsea.mua.core.utils.AppUtils;
 import com.deepsea.mua.core.utils.LogUtils;
@@ -62,7 +63,10 @@ public class ActivityCache implements IActivityCache, Application.ActivityLifecy
             for (Map.Entry<Class<? extends Activity>, Activity> key : activityMap.entrySet()) {
                 Activity act = key.getValue();
                 if (act != null) {
-                    act.finish();
+                    Log.d("finishAll", act.getLocalClassName());
+                    if (!act.getLocalClassName().equals("org.cocos2dx.javascript.AppActivity")) {
+                        act.finish();
+                    }
                 }
             }
         } catch (Exception e) {

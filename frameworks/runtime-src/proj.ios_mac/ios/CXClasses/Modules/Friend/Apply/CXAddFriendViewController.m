@@ -166,7 +166,7 @@
     [[UIApplication sharedApplication].keyWindow addSubview:self.sendView];
     self.giftTextField.text = @"";
 
-    [self.giftLogoImageView sd_setImageWithURL:[NSURL URLWithString:model.gift_image] placeholderImage:[UIImage imageNamed:@"avatar_default"]];
+    [self.giftLogoImageView sd_setImageWithURL:[NSURL URLWithString:model.gift_image]];
     self.giftTitleLabel.text = [NSString stringWithFormat:@"送给%@%@",self.nickname, model.gift_name];
 }
 

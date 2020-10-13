@@ -73,48 +73,6 @@
             "ctype": "PanelObjectData"
           },
           {
-            "FileData": {
-              "Type": "Normal",
-              "Path": "aaa/22.png",
-              "Plist": ""
-            },
-            "Scale9OriginX": 422,
-            "Scale9OriginY": 237,
-            "Scale9Width": 436,
-            "Scale9Height": 246,
-            "AnchorPoint": {
-              "ScaleX": 0.5,
-              "ScaleY": 0.5
-            },
-            "Position": {
-              "X": 640.0,
-              "Y": 360.0
-            },
-            "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 1.0
-            },
-            "CColor": {},
-            "IconVisible": false,
-            "PositionPercentYEnabled": true,
-            "PrePosition": {
-              "X": 0.5,
-              "Y": 0.5
-            },
-            "PreSize": {
-              "X": 1.0,
-              "Y": 1.0
-            },
-            "Tag": 124,
-            "ActionTag": 2136255715,
-            "Size": {
-              "X": 1280.0,
-              "Y": 720.0
-            },
-            "Name": "dele",
-            "ctype": "ImageViewObjectData"
-          },
-          {
             "ClipAble": false,
             "BackColorAlpha": 102,
             "SingleColor": {
@@ -2612,11 +2570,11 @@
                             "CColor": {},
                             "IconVisible": false,
                             "PrePosition": {
-                              "X": 0.5596,
+                              "X": 0.6202,
                               "Y": 0.5152
                             },
                             "PreSize": {
-                              "X": 0.3232,
+                              "X": 0.4848,
                               "Y": 0.5517
                             },
                             "LeftMargin": 39.4,
@@ -3648,7 +3606,6 @@
         "ctype": "LayerObjectData"
       },
       "UsedResources": [
-        "aaa/22.png",
         "coinshop/coin_1.png",
         "coinshop/scjb_10.png",
         "coinshop/scjb_11.png",

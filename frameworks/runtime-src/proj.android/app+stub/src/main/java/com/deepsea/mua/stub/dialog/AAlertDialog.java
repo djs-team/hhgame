@@ -6,13 +6,16 @@ import android.support.annotation.NonNull;
 import android.text.TextUtils;
 import android.text.method.ScrollingMovementMethod;
 import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.deepsea.mua.core.dialog.BaseDialog;
 import com.deepsea.mua.stub.R;
 import com.deepsea.mua.stub.databinding.DialogAlertBinding;
 import com.deepsea.mua.stub.utils.ViewBindUtils;
+import com.uuzuche.lib_zxing.DisplayUtil;
 
 import java.util.concurrent.TimeUnit;
 
@@ -148,6 +151,20 @@ public class AAlertDialog extends BaseDialog<DialogAlertBinding> {
         ViewBindUtils.setVisible(mBinding.middleButton, true);
         ViewBindUtils.setVisible(mBinding.leftButton, false);
         ViewBindUtils.setVisible(mBinding.rightButton, false);
+        initButton(mBinding.middleButton, str, cli);
+        return this;
+    }
+    public AAlertDialog setButtonInLogin(String str, OnClickListener cli) {
+        ViewBindUtils.setVisible(mBinding.middleButton, true);
+        ViewBindUtils.setVisible(mBinding.leftButton, false);
+        ViewBindUtils.setVisible(mBinding.rightButton, false);
+//获取控件的布局参数，设置控件的宽高
+        ViewGroup.LayoutParams params = mBinding.middleButton.getLayoutParams();
+        params.width = DisplayUtil.dip2px(mContext,50);
+        params.height = DisplayUtil.dip2px(mContext,20);
+        mBinding.middleButton.setLayoutParams(params);
+        mBinding.middleButton.setGravity(Gravity.CENTER);
+        mBinding.middleButton.setTextSize(10);
         initButton(mBinding.middleButton, str, cli);
         return this;
     }

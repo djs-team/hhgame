@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (CXBUAdRewardViewController *)manager;
 
-- (void)openAd;
+- (void)openAdWithUserId:(NSString *)userId;
 
 @end
 

@@ -4,7 +4,6 @@ import android.content.Context;
 
 import com.deepsea.mua.stub.adapter.BaseBindingAdapter;
 import com.deepsea.mua.stub.adapter.BindingViewHolder;
-import com.deepsea.mua.stub.entity.FollowFanBean;
 import com.deepsea.mua.stub.entity.socket.receive.DisableMsgData;
 import com.deepsea.mua.stub.utils.ViewBindUtils;
 import com.deepsea.mua.voice.R;

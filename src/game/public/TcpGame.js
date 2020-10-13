@@ -5,10 +5,13 @@ load('game/public/TcpGame', function () {
     let LoginProto = include('game/msghandler/LoginProto')
     let EnterTableProto = include('game/msghandler/EnterTableProto')
     let EnterTableCancelProto = include('game/msghandler/EnterTableCancelProto')
+    let MatchEnterTableCancelProto = include('game/msghandler/MatchEnterTableCancelProto')
+    let MatchReadyProto = include('game/msghandler/MatchReadyProto')
     let HeartBeatProto = include('game/msghandler/HeartBeatProto')
     let PutCardProto = include('game/msghandler/PutCardProto')
     let PlayerSelectProto = include('game/msghandler/PlayerSelectProto')
     let TableHostingProto = include('game/msghandler/TableHostingProto')
+    let GetArenaProto = include('game/msghandler/GetArenaProto')
     let TcpGame  = cc.Class.extend({
         ctor: function () {
 
@@ -46,6 +49,27 @@ load('game/public/TcpGame', function () {
             appInstance.gameNet().send(packetProto)
         },
 
+        cancelEnterTableMatch: function(msg) {
+            msg = msg || {}
+            let packetProto = new Packet(new MatchEnterTableCancelProto())
+            packetProto.setValue(msg)
+            appInstance.gameNet().send(packetProto)
+        },
+
+        matchReady: function (msg) {
+            let pData = appInstance.dataManager().getPlayData()
+            let tData = pData.tableData
+            msg = msg || {}
+            msg.gid = msg.gid || 5
+            msg.pRoomID = msg.pRoomID || tData.pRoomID
+            msg.pMode = msg.pMode || tData.pMode
+            msg.pTableID = msg.pTableID || tData.pTableID
+            msg.pReady = msg.pReady || 0
+            let packetProto = new Packet(new MatchReadyProto())
+            packetProto.setValue(msg)
+            appInstance.gameNet().send(packetProto)
+        },
+
         putCardProto: function(msg) {
             msg = msg || {}
             msg.pTableID = appInstance.dataManager().getPlayData().tableData.pTableID
@@ -66,6 +90,14 @@ load('game/public/TcpGame', function () {
             msg.pTableID = appInstance.dataManager().getPlayData().tableData.pTableID
             msg.pHostingExt = ''
             let packetProto = new Packet(new TableHostingProto())
+            packetProto.setValue(msg)
+            appInstance.gameNet().send(packetProto)
+        },
+
+        GetArenaMessageProto: function (msg) {
+            msg = msg || {}
+            msg.channel = appInstance.dataManager().getUserData().getMjChannel()
+            let packetProto = new Packet(new GetArenaProto())
             packetProto.setValue(msg)
             appInstance.gameNet().send(packetProto)
         }

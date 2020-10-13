@@ -82,13 +82,27 @@
         <!--退出时的动画-->
         <item name="android:windowExitAnimation">@anim/guard_dialog_exit</item>
     </style>
+
     <style name="style_color_FE0707">
         <item name="android:textColor">@color/color_FE0707</item>
     </style>
+
     <declare-styleable name="RedPacketStyle">
         <attr name="count" format="integer" />
         <attr name="speed" format="integer" />
         <attr name="max_size" format="float" />
         <attr name="min_size" format="float" />
     </declare-styleable>
+
+    <style name="Translucent">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+    </style>
 </resources>

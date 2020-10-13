@@ -52,6 +52,10 @@
 
     // 监听微信支付回调
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(weChatCallBack:) name:kNSNotificationCenter_CXRechargeViewController_weixin object:nil];
+    
+    if ([[CXClientModel instance].applePayType isEqualToString:@"Apple"]) { // 苹果支付
+        self.thirdPayView.hidden = YES;
+    }
 }
 
 - (void)loadBalances {
@@ -66,7 +70,11 @@
 - (void)loadRechargeItems {
     kWeakSelf
     NSString *signature = [CocoaSecurity md5:[CXClientModel instance].token].hexLower;
-    [CXHTTPRequest POSTWithURL:@"/index.php/Api/ApplePay/chargelist" parameters:@{@"signature":signature} callback:^(id responseObject, BOOL isCache, NSError *error) {
+    NSString *url = @"/index.php/Api/Order/chargelist";
+    if ([[CXClientModel instance].applePayType isEqualToString:@"Apple"]) {
+        url = @"/index.php/Api/ApplePay/chargelist";
+    }
+    [CXHTTPRequest POSTWithURL:url parameters:@{@"signature":signature} callback:^(id responseObject, BOOL isCache, NSError *error) {
         if (!error) {
             NSArray *array = [NSArray modelArrayWithClass:[CXRechargeModel class] json:responseObject[@"data"][@"charge_list"]];
             weakSelf.rechargeItems = [NSMutableArray arrayWithArray:array];
@@ -130,14 +138,30 @@
 }
 
 - (IBAction)rechargeAction:(id)sender {
-    if (self.payMethod <= 0) {
-        [self toast:@"请选择支付方式"];
-        return;
-    }
-    
     if (self.selectedItem.charge_id.length <= 0) {
         [self toast:@"请选择支付金额"];
         return;
+    }
+    if ([[CXClientModel instance].applePayType isEqualToString:@"Apple"]) { // 苹果支付
+        [CXIPAPurchaseManager manager].purchaseType = LiveBroadcast;
+        kWeakSelf
+        [CXIPAPurchaseManager manager].userid = [CXClientModel instance].userId;
+        [CXIPAPurchaseManager manager].purchaseType = LiveBroadcast;
+        [[CXIPAPurchaseManager manager] inAppPurchaseWithProductID:_selectedItem.iosflag iapResult:^(BOOL isSuccess, NSDictionary *param, NSString *errorMsg) {
+            if (isSuccess) {
+                [weakSelf toast:@"购买成功"];
+                [weakSelf loadBalances];
+            } else {
+                [weakSelf toast:errorMsg];
+            }
+        }];
+        
+        return;
+    } else {
+        if (self.payMethod <= 0) {
+            [self toast:@"请选择支付方式"];
+            return;
+        }
     }
     
     if (_payMethod == 1) { // 微信
@@ -151,7 +175,7 @@
         };
         [CXHTTPRequest POSTWithURL:@"/index.php/Api/Order/pay" parameters:param callback:^(id responseObject, BOOL isCache, NSError *error) {
             if (!error) {
-                NSString *str = [responseObject jsonStringEncoded];
+                NSString *str = [responseObject[@"data"] jsonStringEncoded];
                 [[CXThirdPayManager sharedApi] wxPayWithPayParam:str success:nil failure:nil];
             }
         }];
@@ -167,18 +191,6 @@
         [CXHTTPRequest POSTWithURL:@"/index.php/Api/Order/pay" parameters:param callback:^(id responseObject, BOOL isCache, NSError *error) {
             if (!error) {
                 [[CXThirdPayManager sharedApi] aliPayWithPayParam:responseObject[@"data"] success:nil failure:nil];
-            }
-        }];
-    } else { // 内购
-        kWeakSelf
-        [CXIPAPurchaseManager manager].userid = [CXClientModel instance].userId;
-        [CXIPAPurchaseManager manager].purchaseType = LiveBroadcast;
-        [[CXIPAPurchaseManager manager] inAppPurchaseWithProductID:_selectedItem.iosflag iapResult:^(BOOL isSuccess, NSDictionary *param, NSString *errorMsg) {
-            if (isSuccess) {
-                [weakSelf toast:@"购买成功"];
-                [weakSelf loadBalances];
-            } else {
-                [weakSelf toast:errorMsg];
             }
         }];
     }

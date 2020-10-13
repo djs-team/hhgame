@@ -25,6 +25,7 @@ import com.deepsea.mua.app.im.ui.MessageMainFragment;
 import com.deepsea.mua.core.log.Logg;
 import com.deepsea.mua.core.utils.JsonConverter;
 import com.deepsea.mua.core.utils.ResUtils;
+import com.deepsea.mua.kit.BuildConfig;
 import com.deepsea.mua.mine.activity.InviteDialogActivity;
 import com.deepsea.mua.mine.fragment.MineFragment;
 import com.deepsea.mua.stub.base.BaseActivity;
@@ -79,10 +80,7 @@ import com.hh.game.databinding.ActivityMainBinding;
 import com.hyphenate.EMMessageListener;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMMessage;
-import com.tbruyelle.rxpermissions2.RxPermissions;
-
 import org.cocos2dx.javascript.ui.main.viewmodel.MainViewModel;
-import org.cocos2dx.javascript.utils.LocaltionUtils;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
@@ -183,7 +181,6 @@ public class MainActivity extends BaseActivity<ActivityMainBinding>
             hideProgress();
 
         }
-        requestPermissions();
         Intent intent = getIntent();
         if (null != intent) {
             Bundle bundle = getIntent().getExtras();
@@ -243,7 +240,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding>
         RtcEngine.destroy();
         RoomController.getInstance().release();
         AgoraClient.create().release();
-        AgoraClient.create().setUpAgora(getApplicationContext(), "e0972168ff254d7aa05501cd85204692");
+        AgoraClient.create().setUpAgora(getApplicationContext(), BuildConfig.Agora_ID);
     }
 
     private void reset() {
@@ -298,7 +295,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding>
                                     boolean hasFaceBeauty = SharedPrefrencesUtil.getData(mContext, "hasFaceBeauty", "hasFaceBeauty", Constant.isBeautyOpen);
                                     if (!hasFaceBeauty || com.deepsea.mua.stub.utils.AppConstant.getInstance().isRtcEngineDestroy()) {
                                         AgoraClient.create().release();
-                                        AgoraClient.create().setUpAgora(getApplicationContext(), "e0972168ff254d7aa05501cd85204692");
+                                        AgoraClient.create().setUpAgora(getApplicationContext(), BuildConfig.Agora_ID);
                                     }
                                 }
                             }).start();
@@ -315,14 +312,6 @@ public class MainActivity extends BaseActivity<ActivityMainBinding>
     }
 
 
-    private void requestPermissions() {
-        RxPermissions permissions = new RxPermissions(this);
-        permissions.request(Manifest.permission.ACCESS_FINE_LOCATION)
-                .as(autoDisposable())
-                .subscribe(aBoolean -> {
-                    LocaltionUtils.getInstance().location(getApplicationContext(), null);
-                });
-    }
 
 
     @Override
@@ -656,7 +645,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding>
                 if (!hasFaceBeauty || com.deepsea.mua.stub.utils.AppConstant.getInstance().isRtcEngineDestroy()) {
 //                            RoomController.getInstance().release();
                     AgoraClient.create().release();
-                    AgoraClient.create().setUpAgora(mContext.getApplicationContext(), "e0972168ff254d7aa05501cd85204692");
+                    AgoraClient.create().setUpAgora(mContext.getApplicationContext(), BuildConfig.Agora_ID);
                 }
             }
         }).start();

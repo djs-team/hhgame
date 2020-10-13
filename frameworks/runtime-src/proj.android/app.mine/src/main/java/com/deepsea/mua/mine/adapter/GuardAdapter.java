@@ -1,17 +1,11 @@
 package com.deepsea.mua.mine.adapter;
 
 import android.content.Context;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
-
 import com.deepsea.mua.core.utils.GlideUtils;
 import com.deepsea.mua.mine.R;
-import com.deepsea.mua.mine.databinding.ItemApplyHostBinding;
 import com.deepsea.mua.mine.databinding.ItemGuardBinding;
 import com.deepsea.mua.stub.adapter.BaseBindingAdapter;
 import com.deepsea.mua.stub.adapter.BindingViewHolder;
-import com.deepsea.mua.stub.entity.ApplyHost;
-import com.deepsea.mua.stub.entity.GuardResultBean;
 import com.deepsea.mua.stub.entity.LookGuardUserVo;
 import com.deepsea.mua.stub.utils.PageJumpUtils;
 import com.deepsea.mua.stub.utils.SexResUtils;

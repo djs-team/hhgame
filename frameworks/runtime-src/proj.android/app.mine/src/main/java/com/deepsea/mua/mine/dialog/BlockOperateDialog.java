@@ -7,9 +7,7 @@ import android.view.View;
 
 import com.deepsea.mua.core.dialog.BaseDialog;
 import com.deepsea.mua.mine.R;
-import com.deepsea.mua.mine.adapter.GuardRenewDaysAdapter;
 import com.deepsea.mua.mine.databinding.DialogBlockOperateBinding;
-import com.deepsea.mua.mine.databinding.DialogGuardRenewOpenBinding;
 
 /**
  * Created by JUN on 2019/10/18

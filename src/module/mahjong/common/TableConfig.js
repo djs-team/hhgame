@@ -18,7 +18,12 @@ load('module/mahjong/common/TableConfig', function () {
         'PlayerSelectProto': 'PlayerSelectProto',
         'GameResultProto': 'GameResultProto',
         'AutoPlayProto': 'AutoPlayProto',
-        'TableHostingProto': 'TableHostingProto'
+        'TableHostingProto': 'TableHostingProto',
+        'MatchJinjiGaming': 'MatchJinjiGaming',
+        'MatchResultProto': 'MatchResultProto',
+        'MatchResultBigProto': 'MatchResultBigProto',
+        'clearTableGaming': 'clearTableGaming',
+        'MatchReadyProto': 'MatchReadyProto',
     }
 
 
@@ -54,6 +59,23 @@ load('module/mahjong/common/TableConfig', function () {
         'fa',
         'bai'
     ]
+    // 不想展示 就配置为空字符串
+    TableConfig.HuType = {
+        '0': '上庄',
+        '1': '门清',
+        '3': '夹胡',
+        '4': '自摸胡',
+        '5': '对宝胡',
+        '8': '七小对',
+        '13': '海底捞月',
+        '35': '摸宝胡',//摸宝胡：自摸宝牌且胡牌张!=宝牌
+        '43': '调胡',
+        '44': '点炮胡',
+        '68': '刮大风',
+        '81': '开牌炸',//开牌炸  刚起牌就有四张一样的
+        '83': '宝中宝',
+        '95': '前后坎',
+    }
 
     //0:明杠or1:暗杠or2:加杠or3:旋风杠or4:幺腰杠or5:幺九杠6：喜儿 7:甩幺
 

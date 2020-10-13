@@ -22,7 +22,6 @@ import com.deepsea.mua.stub.client.hyphenate.IEMMessageListener;
 import com.deepsea.mua.stub.client.hyphenate.IHyphenateClient;
 import com.deepsea.mua.stub.client.soket.SocketCons;
 import com.deepsea.mua.stub.dialog.AAlertDialog;
-import com.deepsea.mua.stub.dialog.UnauthorizedDialog;
 import com.deepsea.mua.stub.entity.EmojiBean;
 import com.deepsea.mua.stub.entity.ShareBeanItem;
 import com.deepsea.mua.stub.entity.model.RoomMsgBean;
@@ -324,7 +323,7 @@ public class RoomController implements IRoomController, RoomMsgHandler.OnMsgEven
         HyphenateClient.getInstance().sendMessage(message, new IHyphenateClient.HyphenateCallback() {
             @Override
             public void apply() {
-//                Logg.d(TAG, "消息成功回调 " + message.toString());
+                Log.d("msg", "消息成功回调 " + message.toString());
                 MobEventUtils.onSendMsg(AppUtils.getApp());
                 ReceiveMessage sendMsg = new ReceiveMessage();
 //                if (user != null) {
@@ -1168,8 +1167,7 @@ public class RoomController implements IRoomController, RoomMsgHandler.OnMsgEven
                 }
                 //未身份验证
                 else if (success == 10) {
-                    new UnauthorizedDialog(ActivityCache.getInstance().getTopActivity()).show();
-                } else {
+
                     showToast("上麦失败");
                 }
                 break;
@@ -1975,12 +1973,6 @@ public class RoomController implements IRoomController, RoomMsgHandler.OnMsgEven
                 ShowGuardAnimationToClientParam showGuardAnimationToClientParam = JsonConverter.fromJson(message, ShowGuardAnimationToClientParam.class);
                 if (mView != null) {
                     mView.showGuardGif(showGuardAnimationToClientParam);
-                }
-                break;
-            case 131:
-                UpdateFinishTaskToClientParam updateFinishTaskToClientParam = JsonConverter.fromJson(message, UpdateFinishTaskToClientParam.class);
-                if (mView != null) {
-                    mView.showTaskFinish(updateFinishTaskToClientParam);
                 }
                 break;
             case 134://红包列表

@@ -90,7 +90,7 @@
     </content>
     <orderEntry type="jdk" jdkName="Android API 28 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Gradle: __local_aars__:D.\project\hhgame-new\frameworks\runtime-src\proj.android\lib.faceliveness\libs\windvane-min-8.0.3.2.3.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" name="Gradle: __local_aars__:D.\project\hhgame-new\frameworks\runtime-src\proj.android\lib.faceliveness\libs\fastjson-1.2.62.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: __local_aars__:D.\project\hhgame-new\frameworks\runtime-src\proj.android\lib.core\libs\agora-rtc-sdk.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: __local_aars__:D.\project\hhgame-new\frameworks\runtime-src\proj.android\lib.core\libs\android-logging-log4j-1.0.3.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: __local_aars__:D.\project\hhgame-new\frameworks\runtime-src\proj.android\lib.core\libs\log4j-1.2.17.jar:unspecified@jar" level="project" />
@@ -121,11 +121,12 @@
     <orderEntry type="library" name="Gradle: com.squareup.okio:okio:1.14.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.databinding:adapters:3.1.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.databinding:library:3.1.0@aar" level="project" />
-    <orderEntry type="library" name="Gradle: :FaceLivenessOpen-2.2.0.4:@aar" level="project" />
+    <orderEntry type="library" name="Gradle: :MiddleTierSDK-external-release-5.5.13874142:@aar" level="project" />
     <orderEntry type="library" name="Gradle: :oss-android-sdk-2.9.2:@aar" level="project" />
-    <orderEntry type="library" name="Gradle: :rpsdk-3.2.0.3:@aar" level="project" />
-    <orderEntry type="library" name="Gradle: :SecurityBodySDK-external-release-5.4.12129577:@aar" level="project" />
-    <orderEntry type="library" name="Gradle: :SecurityGuardSDK-external-release-5.4.178:@aar" level="project" />
+    <orderEntry type="library" name="Gradle: :rpsdk-4.4.1-open:@aar" level="project" />
+    <orderEntry type="library" name="Gradle: :SecurityGuardSDK-external-release-5.5.13873794:@aar" level="project" />
+    <orderEntry type="library" name="Gradle: :SecurityBodySDK-external-release-5.5.19:@aar" level="project" />
+    <orderEntry type="library" name="Gradle: :windvane:@aar" level="project" />
     <orderEntry type="library" name="Gradle: android.arch.lifecycle:extensions:1.1.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:design:28.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:recyclerview-v7:28.0.0@aar" level="project" />

@@ -24,7 +24,7 @@ public class LogoutUtils {
     public static void logout(Context mContext) {
         try {
             RoomMiniController.getInstance().destroy();
-            Activity activity = ActivityCache.getInstance().getTopActivity();
+            ActivityCache.getInstance().finishAll();
             UserUtils.clearUser();
             MobclickAgent.onProfileSignOff();
             HyphenateClient.getInstance().logout(true, null);
@@ -32,13 +32,7 @@ public class LogoutUtils {
             WsocketManager.create().clearWsocketListener();
             WsocketManager.create().stopConnect();
             OnlineController.getInstance(mContext).stopObservable();
-            Intent intent = new Intent();
-            intent.setClassName(activity, "com.deepsea.mua.ui.login.activity.LoginMainActivity");
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK |
-                    Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            AppConstant.getInstance().setLoginOut(true);
-            activity.startActivity(intent);
-            activity.finish();
+
         } catch (Exception e) {
             e.printStackTrace();
         }

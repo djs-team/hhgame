@@ -142,6 +142,7 @@
             android:textSize="13sp"
             android:gravity="center"/>
         <ImageView
+            android:id="@+id/iv_bindwx_line"
             android:layout_marginRight="14dp"
             android:layout_marginLeft="14dp"
             android:layout_width="match_parent"

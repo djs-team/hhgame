@@ -600,7 +600,7 @@
                   "Y": 0.9457
                 },
                 "PreSize": {
-                  "X": 0.1562,
+                  "X": 0.1563,
                   "Y": 0.0625
                 },
                 "LeftMargin": 323.296,
@@ -869,7 +869,7 @@
                   "Y": 0.9458
                 },
                 "PreSize": {
-                  "X": 0.1562,
+                  "X": 0.1563,
                   "Y": 0.0625
                 },
                 "LeftMargin": 551.08,
@@ -1138,7 +1138,7 @@
                   "Y": 0.9444
                 },
                 "PreSize": {
-                  "X": 0.1562,
+                  "X": 0.1563,
                   "Y": 0.0625
                 },
                 "LeftMargin": 780.08,
@@ -1503,11 +1503,6 @@
                   "G": 65,
                   "B": 70
                 },
-                "DisabledFileData": {
-                  "Type": "Default",
-                  "Path": "Default/Button_Disable.png",
-                  "Plist": ""
-                },
                 "NormalFileData": {
                   "Type": "Normal",
                   "Path": "hall/dtjm_7.png",
@@ -1546,16 +1541,16 @@
                 "IconVisible": false,
                 "PrePosition": {
                   "X": 0.9469,
-                  "Y": 0.9458
+                  "Y": 0.9444
                 },
                 "PreSize": {
-                  "X": 0.0367,
-                  "Y": 0.0653
+                  "X": 0.0383,
+                  "Y": 0.0708
                 },
-                "LeftMargin": 1188.5,
-                "RightMargin": 44.5,
-                "TopMargin": 15.5,
-                "BottomMargin": 657.5,
+                "LeftMargin": 1187.5,
+                "RightMargin": 43.5,
+                "TopMargin": 14.5,
+                "BottomMargin": 654.5,
                 "Tag": 81,
                 "Children": [
                   {
@@ -1590,17 +1585,17 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.5228,
-                      "Y": 0.0316
+                      "X": 0.4861,
+                      "Y": -0.0076
                     },
                     "PreSize": {
-                      "X": 0.8511,
-                      "Y": 0.383
+                      "X": 0.8163,
+                      "Y": 0.3529
                     },
-                    "LeftMargin": 4.5706,
-                    "RightMargin": 2.4294,
-                    "TopMargin": 36.5141,
-                    "BottomMargin": -7.5141,
+                    "LeftMargin": 3.82,
+                    "RightMargin": 5.18,
+                    "TopMargin": 42.39,
+                    "BottomMargin": -9.39,
                     "Tag": 135,
                     "ActionTag": 37719768,
                     "Size": {
@@ -1613,8 +1608,8 @@
                 ],
                 "ActionTag": 371629241,
                 "Size": {
-                  "X": 47.0,
-                  "Y": 47.0
+                  "X": 49.0,
+                  "Y": 51.0
                 },
                 "Name": "moreBtn",
                 "ctype": "ButtonObjectData"
@@ -1664,47 +1659,23 @@
                 "Tag": 98,
                 "Children": [
                   {
-                    "FontSize": 14,
-                    "ButtonText": "",
-                    "TextColor": {
-                      "R": 65,
-                      "G": 65,
-                      "B": 70
-                    },
-                    "DisabledFileData": {
-                      "Type": "Default",
-                      "Path": "Default/Button_Disable.png",
-                      "Plist": ""
-                    },
-                    "NormalFileData": {
+                    "FileData": {
                       "Type": "Normal",
-                      "Path": "hall/dtjm_3.png",
+                      "Path": "hall/dtjm_30.png",
                       "Plist": ""
                     },
                     "Scale9Enable": true,
-                    "Scale9OriginX": 15,
-                    "Scale9OriginY": 11,
-                    "Scale9Width": 74,
-                    "Scale9Height": 12,
-                    "OutlineColor": {
-                      "G": 0,
-                      "B": 0
-                    },
-                    "ShadowColor": {
-                      "R": 110,
-                      "G": 110,
-                      "B": 110
-                    },
-                    "ShadowOffsetX": 2.0,
-                    "ShadowOffsetY": -2.0,
-                    "TouchEnable": true,
+                    "Scale9OriginX": 47,
+                    "Scale9OriginY": 16,
+                    "Scale9Width": 49,
+                    "Scale9Height": 17,
                     "AnchorPoint": {
                       "ScaleX": 0.5,
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 1199.86,
-                      "Y": 602.3
+                      "X": 1198.7853,
+                      "Y": 496.36
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -1713,18 +1684,68 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.9374,
-                      "Y": 0.8365
+                      "X": 0.9366,
+                      "Y": 0.6894
                     },
                     "PreSize": {
-                      "X": 0.1133,
-                      "Y": 0.1042
+                      "X": 0.1117,
+                      "Y": 0.3903
                     },
-                    "LeftMargin": 1127.36,
-                    "RightMargin": 7.64,
-                    "TopMargin": 80.2,
-                    "BottomMargin": 564.8,
-                    "Tag": 249,
+                    "LeftMargin": 1127.2853,
+                    "RightMargin": 9.7147,
+                    "TopMargin": 83.14,
+                    "BottomMargin": 355.86,
+                    "Tag": 194,
+                    "ActionTag": -830468427,
+                    "Size": {
+                      "X": 143.0,
+                      "Y": 281.0
+                    },
+                    "Name": "Image_2",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "ClipAble": false,
+                    "BackColorAlpha": 102,
+                    "SingleColor": {
+                      "R": 150,
+                      "G": 200
+                    },
+                    "FirstColor": {
+                      "R": 150,
+                      "G": 200
+                    },
+                    "EndColor": {},
+                    "ColorVector": {
+                      "ScaleY": 1.0
+                    },
+                    "Scale9Width": 1,
+                    "Scale9Height": 1,
+                    "TouchEnable": true,
+                    "AnchorPoint": {},
+                    "Position": {
+                      "X": 1120.9471,
+                      "Y": 567.4707
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.8757,
+                      "Y": 0.7882
+                    },
+                    "PreSize": {
+                      "X": 0.1172,
+                      "Y": 0.0903
+                    },
+                    "LeftMargin": 1120.9471,
+                    "RightMargin": 9.0529,
+                    "TopMargin": 87.5293,
+                    "BottomMargin": 567.4707,
+                    "Tag": 343,
                     "Children": [
                       {
                         "FileData": {
@@ -1741,8 +1762,8 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 72.4992,
-                          "Y": 3.1202
+                          "X": 76.185,
+                          "Y": 5.0494
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -1752,17 +1773,17 @@
                         "IconVisible": false,
                         "PositionPercentXEnabled": true,
                         "PrePosition": {
-                          "X": 0.5,
-                          "Y": 0.0416
+                          "X": 0.5079,
+                          "Y": 0.0777
                         },
                         "PreSize": {
-                          "X": 1.0,
-                          "Y": 0.12
+                          "X": 0.9667,
+                          "Y": 0.1385
                         },
-                        "LeftMargin": -0.0008,
-                        "RightMargin": 0.0008,
-                        "TopMargin": 67.3798,
-                        "BottomMargin": -1.3798,
+                        "LeftMargin": 3.685,
+                        "RightMargin": 1.315,
+                        "TopMargin": 55.4506,
+                        "BottomMargin": 0.5494,
                         "Tag": 185,
                         "ActionTag": -363719697,
                         "Size": {
@@ -1787,8 +1808,8 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 32.1467,
-                          "Y": 31.0774
+                          "X": 36.619,
+                          "Y": 36.3279
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -1797,17 +1818,17 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 0.2217,
-                          "Y": 0.4144
+                          "X": 0.2441,
+                          "Y": 0.5589
                         },
                         "PreSize": {
-                          "X": 0.2345,
-                          "Y": 0.48
+                          "X": 0.2267,
+                          "Y": 0.5538
                         },
-                        "LeftMargin": 15.1467,
-                        "RightMargin": 95.8533,
-                        "TopMargin": 25.9226,
-                        "BottomMargin": 13.0774,
+                        "LeftMargin": 19.619,
+                        "RightMargin": 96.381,
+                        "TopMargin": 10.6721,
+                        "BottomMargin": 18.3279,
                         "Tag": 250,
                         "ActionTag": -1004023784,
                         "Size": {
@@ -1836,8 +1857,8 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 82.3929,
-                          "Y": 25.6804
+                          "X": 86.8748,
+                          "Y": 30.9297
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -1846,17 +1867,17 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 0.5682,
-                          "Y": 0.3424
+                          "X": 0.5792,
+                          "Y": 0.4758
                         },
                         "PreSize": {
-                          "X": 0.2759,
-                          "Y": 0.2667
+                          "X": 0.2667,
+                          "Y": 0.3077
                         },
-                        "LeftMargin": 62.3929,
-                        "RightMargin": 42.6071,
-                        "TopMargin": 39.3196,
-                        "BottomMargin": 15.6804,
+                        "LeftMargin": 66.8748,
+                        "RightMargin": 43.1252,
+                        "TopMargin": 24.0703,
+                        "BottomMargin": 20.9297,
                         "Tag": 251,
                         "ActionTag": 1690083844,
                         "Size": {
@@ -1867,56 +1888,37 @@
                         "ctype": "TextObjectData"
                       }
                     ],
-                    "ActionTag": 2046149682,
+                    "ActionTag": -74830355,
                     "Size": {
-                      "X": 145.0,
-                      "Y": 75.0
+                      "X": 150.0,
+                      "Y": 65.0
                     },
-                    "Name": "confBtn",
-                    "ctype": "ButtonObjectData"
+                    "Name": "setBtn",
+                    "ctype": "PanelObjectData"
                   },
                   {
-                    "FontSize": 14,
-                    "ButtonText": "",
-                    "TextColor": {
-                      "R": 65,
-                      "G": 65,
-                      "B": 70
+                    "ClipAble": false,
+                    "BackColorAlpha": 102,
+                    "SingleColor": {
+                      "R": 150,
+                      "G": 200
                     },
-                    "DisabledFileData": {
-                      "Type": "Default",
-                      "Path": "Default/Button_Disable.png",
-                      "Plist": ""
+                    "FirstColor": {
+                      "R": 150,
+                      "G": 200
                     },
-                    "NormalFileData": {
-                      "Type": "Normal",
-                      "Path": "hall/dtjm_3.png",
-                      "Plist": ""
+                    "EndColor": {},
+                    "ColorVector": {
+                      "ScaleY": 1.0
                     },
-                    "Scale9Enable": true,
-                    "Scale9OriginX": 15,
-                    "Scale9OriginY": 11,
-                    "Scale9Width": 74,
-                    "Scale9Height": 12,
-                    "OutlineColor": {
-                      "G": 0,
-                      "B": 0
-                    },
-                    "ShadowColor": {
-                      "R": 110,
-                      "G": 110,
-                      "B": 110
-                    },
-                    "ShadowOffsetX": 2.0,
-                    "ShadowOffsetY": -2.0,
                     "TouchEnable": true,
                     "AnchorPoint": {
                       "ScaleX": 0.5,
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 1199.86,
-                      "Y": 532.3
+                      "X": 1199.1025,
+                      "Y": 532.6254
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -1925,18 +1927,18 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.9374,
-                      "Y": 0.7393
+                      "X": 0.9368,
+                      "Y": 0.7398
                     },
                     "PreSize": {
-                      "X": 0.1133,
-                      "Y": 0.1042
+                      "X": 0.1117,
+                      "Y": 0.1097
                     },
-                    "LeftMargin": 1127.36,
-                    "RightMargin": 7.64,
-                    "TopMargin": 150.2,
-                    "BottomMargin": 494.8,
-                    "Tag": 252,
+                    "LeftMargin": 1127.6025,
+                    "RightMargin": 9.3975,
+                    "TopMargin": 147.8746,
+                    "BottomMargin": 493.1254,
+                    "Tag": 194,
                     "Children": [
                       {
                         "FileData": {
@@ -1953,8 +1955,8 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 72.5,
-                          "Y": 5.5
+                          "X": 70.14,
+                          "Y": 0.9028
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -1962,24 +1964,25 @@
                         },
                         "CColor": {},
                         "IconVisible": false,
-                        "PositionPercentXEnabled": true,
                         "PrePosition": {
-                          "X": 0.5,
-                          "Y": 0.0733
+                          "X": 0.4905,
+                          "Y": 0.0114
                         },
                         "PreSize": {
-                          "X": 1.0,
-                          "Y": 0.12
+                          "X": 1.014,
+                          "Y": 0.1139
                         },
-                        "TopMargin": 65.0,
-                        "BottomMargin": 1.0,
-                        "Tag": 254,
-                        "ActionTag": -5963604,
+                        "LeftMargin": -2.36,
+                        "RightMargin": 0.36,
+                        "TopMargin": 73.5972,
+                        "BottomMargin": -3.5972,
+                        "Tag": 195,
+                        "ActionTag": 1624062083,
                         "Size": {
                           "X": 145.0,
                           "Y": 9.0
                         },
-                        "Name": "Image_5_0",
+                        "Name": "Image_5_0_0",
                         "ctype": "ImageViewObjectData"
                       },
                       {
@@ -1997,8 +2000,8 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 32.1467,
-                          "Y": 31.0774
+                          "X": 32.0585,
+                          "Y": 33.8558
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -2007,24 +2010,24 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 0.2217,
-                          "Y": 0.4144
+                          "X": 0.2242,
+                          "Y": 0.4286
                         },
                         "PreSize": {
-                          "X": 0.2483,
-                          "Y": 0.5333
+                          "X": 0.2517,
+                          "Y": 0.5063
                         },
-                        "LeftMargin": 14.1467,
-                        "RightMargin": 94.8533,
-                        "TopMargin": 23.9226,
-                        "BottomMargin": 11.0774,
-                        "Tag": 255,
-                        "ActionTag": -825139100,
+                        "LeftMargin": 14.0585,
+                        "RightMargin": 92.9415,
+                        "TopMargin": 25.1442,
+                        "BottomMargin": 13.8558,
+                        "Tag": 196,
+                        "ActionTag": -1823612305,
                         "Size": {
                           "X": 36.0,
                           "Y": 40.0
                         },
-                        "Name": "Image_18",
+                        "Name": "Image_18_0",
                         "ctype": "ImageViewObjectData"
                       },
                       {
@@ -2046,8 +2049,8 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 82.9272,
-                          "Y": 30.4961
+                          "X": 82.8395,
+                          "Y": 33.2751
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -2056,77 +2059,60 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 0.5719,
-                          "Y": 0.4066
+                          "X": 0.5793,
+                          "Y": 0.4212
                         },
                         "PreSize": {
-                          "X": 0.2759,
-                          "Y": 0.2667
+                          "X": 0.2797,
+                          "Y": 0.2532
                         },
-                        "LeftMargin": 62.9272,
-                        "RightMargin": 42.0728,
-                        "TopMargin": 34.5039,
-                        "BottomMargin": 20.4961,
-                        "Tag": 256,
-                        "ActionTag": 640698717,
+                        "LeftMargin": 62.8395,
+                        "RightMargin": 40.1605,
+                        "TopMargin": 35.7249,
+                        "BottomMargin": 23.2751,
+                        "Tag": 197,
+                        "ActionTag": -1784744525,
                         "Size": {
                           "X": 40.0,
                           "Y": 20.0
                         },
-                        "Name": "Text_11",
+                        "Name": "Text_11_0",
                         "ctype": "TextObjectData"
                       }
                     ],
-                    "ActionTag": 980704766,
+                    "ActionTag": -348871052,
                     "Size": {
-                      "X": 145.0,
-                      "Y": 75.0
+                      "X": 143.0,
+                      "Y": 79.0
                     },
                     "Name": "feedbackBtn",
-                    "ctype": "ButtonObjectData"
+                    "ctype": "PanelObjectData"
                   },
                   {
-                    "FontSize": 14,
-                    "ButtonText": "",
-                    "TextColor": {
-                      "R": 65,
-                      "G": 65,
-                      "B": 70
+                    "ClipAble": false,
+                    "BackColorAlpha": 102,
+                    "SingleColor": {
+                      "R": 150,
+                      "G": 200
                     },
-                    "DisabledFileData": {
-                      "Type": "Default",
-                      "Path": "Default/Button_Disable.png",
-                      "Plist": ""
+                    "FirstColor": {
+                      "R": 150,
+                      "G": 200
                     },
-                    "NormalFileData": {
-                      "Type": "Normal",
-                      "Path": "hall/dtjm_3.png",
-                      "Plist": ""
+                    "EndColor": {},
+                    "ColorVector": {
+                      "ScaleY": 1.0
                     },
-                    "Scale9Enable": true,
-                    "Scale9OriginX": 15,
-                    "Scale9OriginY": 11,
-                    "Scale9Width": 74,
-                    "Scale9Height": 12,
-                    "OutlineColor": {
-                      "G": 0,
-                      "B": 0
-                    },
-                    "ShadowColor": {
-                      "R": 110,
-                      "G": 110,
-                      "B": 110
-                    },
-                    "ShadowOffsetX": 2.0,
-                    "ShadowOffsetY": -2.0,
+                    "Scale9Width": 1,
+                    "Scale9Height": 1,
                     "TouchEnable": true,
                     "AnchorPoint": {
                       "ScaleX": 0.5,
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 1199.86,
-                      "Y": 391.3
+                      "X": 1198.3137,
+                      "Y": 454.2963
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -2135,18 +2121,18 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.9374,
-                      "Y": 0.5435
+                      "X": 0.9362,
+                      "Y": 0.631
                     },
                     "PreSize": {
-                      "X": 0.1133,
-                      "Y": 0.1042
+                      "X": 0.1117,
+                      "Y": 0.1097
                     },
-                    "LeftMargin": 1127.36,
-                    "RightMargin": 7.64,
-                    "TopMargin": 291.2,
-                    "BottomMargin": 353.8,
-                    "Tag": 257,
+                    "LeftMargin": 1126.8137,
+                    "RightMargin": 10.1863,
+                    "TopMargin": 226.2037,
+                    "BottomMargin": 414.7963,
+                    "Tag": 198,
                     "Children": [
                       {
                         "FileData": {
@@ -2163,8 +2149,8 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 72.5,
-                          "Y": 5.5
+                          "X": 72.6474,
+                          "Y": 5.3239
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -2172,24 +2158,25 @@
                         },
                         "CColor": {},
                         "IconVisible": false,
-                        "PositionPercentXEnabled": true,
                         "PrePosition": {
-                          "X": 0.5,
-                          "Y": 0.0733
+                          "X": 0.508,
+                          "Y": 0.0674
                         },
                         "PreSize": {
-                          "X": 1.0,
-                          "Y": 0.12
+                          "X": 1.014,
+                          "Y": 0.1139
                         },
-                        "TopMargin": 65.0,
-                        "BottomMargin": 1.0,
-                        "Tag": 259,
-                        "ActionTag": 1926630965,
+                        "LeftMargin": 0.1474,
+                        "RightMargin": -2.1474,
+                        "TopMargin": 69.1761,
+                        "BottomMargin": 0.8239,
+                        "Tag": 199,
+                        "ActionTag": -1752068592,
                         "Size": {
                           "X": 145.0,
                           "Y": 9.0
                         },
-                        "Name": "Image_5_0",
+                        "Name": "Image_5_0_0",
                         "ctype": "ImageViewObjectData"
                       },
                       {
@@ -2207,8 +2194,8 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 32.1461,
-                          "Y": 36.4279
+                          "X": 34.4091,
+                          "Y": 44.4059
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -2217,24 +2204,24 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 0.2217,
-                          "Y": 0.4857
+                          "X": 0.2406,
+                          "Y": 0.5621
                         },
                         "PreSize": {
-                          "X": 0.2483,
-                          "Y": 0.5067
+                          "X": 0.2517,
+                          "Y": 0.481
                         },
-                        "LeftMargin": 14.1461,
-                        "RightMargin": 94.8539,
-                        "TopMargin": 19.5721,
-                        "BottomMargin": 17.4279,
-                        "Tag": 260,
-                        "ActionTag": -1704561245,
+                        "LeftMargin": 16.4091,
+                        "RightMargin": 90.5909,
+                        "TopMargin": 15.5941,
+                        "BottomMargin": 25.4059,
+                        "Tag": 202,
+                        "ActionTag": 62233463,
                         "Size": {
                           "X": 36.0,
                           "Y": 38.0
                         },
-                        "Name": "Image_18",
+                        "Name": "Image_18_0",
                         "ctype": "ImageViewObjectData"
                       },
                       {
@@ -2256,8 +2243,8 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 80.2509,
-                          "Y": 34.7761
+                          "X": 82.5164,
+                          "Y": 42.7533
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -2266,77 +2253,60 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 0.5535,
-                          "Y": 0.4637
+                          "X": 0.577,
+                          "Y": 0.5412
                         },
                         "PreSize": {
-                          "X": 0.2759,
-                          "Y": 0.2667
+                          "X": 0.2797,
+                          "Y": 0.2532
                         },
-                        "LeftMargin": 60.2509,
-                        "RightMargin": 44.7491,
-                        "TopMargin": 30.2239,
-                        "BottomMargin": 24.7761,
-                        "Tag": 261,
-                        "ActionTag": -1539434453,
+                        "LeftMargin": 62.5164,
+                        "RightMargin": 40.4836,
+                        "TopMargin": 26.2467,
+                        "BottomMargin": 32.7533,
+                        "Tag": 203,
+                        "ActionTag": 63696509,
                         "Size": {
                           "X": 40.0,
                           "Y": 20.0
                         },
-                        "Name": "Text_11",
+                        "Name": "Text_11_0",
                         "ctype": "TextObjectData"
                       }
                     ],
-                    "ActionTag": -1024639134,
+                    "ActionTag": 699490340,
                     "Size": {
-                      "X": 145.0,
-                      "Y": 75.0
+                      "X": 143.0,
+                      "Y": 79.0
                     },
                     "Name": "customerServiceBtn",
-                    "ctype": "ButtonObjectData"
+                    "ctype": "PanelObjectData"
                   },
                   {
-                    "FontSize": 14,
-                    "ButtonText": "",
-                    "TextColor": {
-                      "R": 65,
-                      "G": 65,
-                      "B": 70
+                    "ClipAble": false,
+                    "BackColorAlpha": 102,
+                    "SingleColor": {
+                      "R": 150,
+                      "G": 200
                     },
-                    "DisabledFileData": {
-                      "Type": "Default",
-                      "Path": "Default/Button_Disable.png",
-                      "Plist": ""
+                    "FirstColor": {
+                      "R": 150,
+                      "G": 200
                     },
-                    "NormalFileData": {
-                      "Type": "Normal",
-                      "Path": "hall/dtjm_3.png",
-                      "Plist": ""
+                    "EndColor": {},
+                    "ColorVector": {
+                      "ScaleY": 1.0
                     },
-                    "Scale9Enable": true,
-                    "Scale9OriginX": 15,
-                    "Scale9OriginY": 11,
-                    "Scale9Width": 74,
-                    "Scale9Height": 12,
-                    "OutlineColor": {
-                      "G": 0,
-                      "B": 0
-                    },
-                    "ShadowColor": {
-                      "R": 110,
-                      "G": 110,
-                      "B": 110
-                    },
-                    "ShadowOffsetX": 2.0,
-                    "ShadowOffsetY": -2.0,
+                    "Scale9Width": 1,
+                    "Scale9Height": 1,
                     "TouchEnable": true,
                     "AnchorPoint": {
                       "ScaleX": 0.5,
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 1199.86,
-                      "Y": 462.3
+                      "X": 1197.5938,
+                      "Y": 388.5597
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -2345,18 +2315,18 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.9374,
-                      "Y": 0.6421
+                      "X": 0.9356,
+                      "Y": 0.5397
                     },
                     "PreSize": {
-                      "X": 0.1133,
-                      "Y": 0.1042
+                      "X": 0.1117,
+                      "Y": 0.0847
                     },
-                    "LeftMargin": 1127.36,
-                    "RightMargin": 7.64,
-                    "TopMargin": 220.2,
-                    "BottomMargin": 424.8,
-                    "Tag": 262,
+                    "LeftMargin": 1126.0938,
+                    "RightMargin": 10.9063,
+                    "TopMargin": 300.9403,
+                    "BottomMargin": 358.0597,
+                    "Tag": 204,
                     "Children": [
                       {
                         "FileData": {
@@ -2373,8 +2343,8 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 32.8607,
-                          "Y": 36.0736
+                          "X": 30.3071,
+                          "Y": 30.8506
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -2383,24 +2353,24 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 0.2266,
-                          "Y": 0.481
+                          "X": 0.2119,
+                          "Y": 0.5057
                         },
                         "PreSize": {
-                          "X": 0.2276,
-                          "Y": 0.5333
+                          "X": 0.2308,
+                          "Y": 0.6557
                         },
-                        "LeftMargin": 16.3607,
-                        "RightMargin": 95.6393,
-                        "TopMargin": 18.9264,
-                        "BottomMargin": 16.0736,
-                        "Tag": 265,
-                        "ActionTag": 1108923094,
+                        "LeftMargin": 13.8071,
+                        "RightMargin": 96.1929,
+                        "TopMargin": 10.1494,
+                        "BottomMargin": 10.8506,
+                        "Tag": 208,
+                        "ActionTag": -1057108144,
                         "Size": {
                           "X": 33.0,
                           "Y": 40.0
                         },
-                        "Name": "Image_18",
+                        "Name": "Image_18_0",
                         "ctype": "ImageViewObjectData"
                       },
                       {
@@ -2422,8 +2392,8 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 100.2377,
-                          "Y": 33.5315
+                          "X": 98.4011,
+                          "Y": 29.0275
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -2432,34 +2402,34 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 0.6913,
-                          "Y": 0.4471
+                          "X": 0.6881,
+                          "Y": 0.4759
                         },
                         "PreSize": {
-                          "X": 0.5517,
-                          "Y": 0.2667
+                          "X": 0.5594,
+                          "Y": 0.3279
                         },
-                        "LeftMargin": 60.2377,
-                        "RightMargin": 4.7623,
-                        "TopMargin": 31.4685,
-                        "BottomMargin": 23.5315,
-                        "Tag": 266,
-                        "ActionTag": 1708492551,
+                        "LeftMargin": 58.4011,
+                        "RightMargin": 4.5989,
+                        "TopMargin": 21.9725,
+                        "BottomMargin": 19.0275,
+                        "Tag": 209,
+                        "ActionTag": 1647083329,
                         "Size": {
                           "X": 80.0,
                           "Y": 20.0
                         },
-                        "Name": "Text_11",
+                        "Name": "Text_11_0",
                         "ctype": "TextObjectData"
                       }
                     ],
-                    "ActionTag": 45294486,
+                    "ActionTag": 116463168,
                     "Size": {
-                      "X": 145.0,
-                      "Y": 75.0
+                      "X": 143.0,
+                      "Y": 61.0
                     },
                     "Name": "authenticationBtn",
-                    "ctype": "ButtonObjectData"
+                    "ctype": "PanelObjectData"
                   }
                 ],
                 "ActionTag": 2067292009,
@@ -2707,6 +2677,52 @@
                 "Tag": 148,
                 "Children": [
                   {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "hall/dtjm_29.png",
+                      "Plist": ""
+                    },
+                    "Scale9Enable": true,
+                    "Scale9OriginX": 34,
+                    "Scale9OriginY": 16,
+                    "Scale9Width": 38,
+                    "Scale9Height": 18,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 252.28,
+                      "Y": 24.7122
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.5046,
+                      "Y": 0.4119
+                    },
+                    "PreSize": {
+                      "X": 0.972,
+                      "Y": 0.8333
+                    },
+                    "LeftMargin": 9.28,
+                    "RightMargin": 4.72,
+                    "TopMargin": 10.2878,
+                    "BottomMargin": -0.2878,
+                    "Tag": 193,
+                    "ActionTag": -1855458960,
+                    "Size": {
+                      "X": 486.0,
+                      "Y": 50.0
+                    },
+                    "Name": "Image_1",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
                     "ClipAble": false,
                     "BackColorAlpha": 0,
                     "ComboBoxIndex": 1,
@@ -2750,54 +2766,6 @@
                     "BottomMargin": 0.5,
                     "Tag": 149,
                     "Children": [
-                      {
-                        "FileData": {
-                          "Type": "Normal",
-                          "Path": "hall/dtjm_4.png",
-                          "Plist": ""
-                        },
-                        "Scale9Enable": true,
-                        "Scale9OriginX": 12,
-                        "Scale9OriginY": 11,
-                        "Scale9Width": 5,
-                        "Scale9Height": 13,
-                        "AnchorPoint": {
-                          "ScaleX": 0.5,
-                          "ScaleY": 0.5
-                        },
-                        "Position": {
-                          "X": 92.9738,
-                          "Y": 24.07
-                        },
-                        "Scale": {
-                          "ScaleX": 1.0,
-                          "ScaleY": 1.0
-                        },
-                        "RotationSkewX": 180.0,
-                        "RotationSkewY": 180.0,
-                        "CColor": {},
-                        "IconVisible": false,
-                        "PrePosition": {
-                          "X": 0.5053,
-                          "Y": 0.4012
-                        },
-                        "PreSize": {
-                          "X": 0.9891,
-                          "Y": 0.8167
-                        },
-                        "LeftMargin": 1.9738,
-                        "RightMargin": 0.0262,
-                        "TopMargin": 11.43,
-                        "BottomMargin": -0.43,
-                        "Tag": 151,
-                        "ActionTag": 749501944,
-                        "Size": {
-                          "X": 182.0,
-                          "Y": 49.0
-                        },
-                        "Name": "pnlBg1",
-                        "ctype": "ImageViewObjectData"
-                      },
                       {
                         "FontSize": 14,
                         "ButtonText": "",
@@ -2855,10 +2823,10 @@
                           "X": 0.1902,
                           "Y": 0.7
                         },
-                        "LeftMargin": 74.5001,
-                        "RightMargin": 74.4999,
-                        "TopMargin": 15.0,
-                        "BottomMargin": 3.0,
+                        "LeftMargin": 74.5,
+                        "RightMargin": 74.5,
+                        "TopMargin": 17.0,
+                        "BottomMargin": 1.0,
                         "Tag": 31,
                         "ActionTag": 1017078881,
                         "Size": {
@@ -2973,54 +2941,6 @@
                     "Tag": 153,
                     "Children": [
                       {
-                        "FileData": {
-                          "Type": "Normal",
-                          "Path": "hall/dtjm_4.png",
-                          "Plist": ""
-                        },
-                        "Scale9Enable": true,
-                        "Scale9OriginX": 10,
-                        "Scale9OriginY": 18,
-                        "Scale9Width": 5,
-                        "Scale9Height": 5,
-                        "AnchorPoint": {
-                          "ScaleX": 0.5,
-                          "ScaleY": 0.5
-                        },
-                        "Position": {
-                          "X": 61.97,
-                          "Y": 24.074
-                        },
-                        "Scale": {
-                          "ScaleX": 1.0,
-                          "ScaleY": 1.0
-                        },
-                        "RotationSkewX": 180.0,
-                        "RotationSkewY": 180.0,
-                        "CColor": {},
-                        "IconVisible": false,
-                        "PrePosition": {
-                          "X": 0.4958,
-                          "Y": 0.4012
-                        },
-                        "PreSize": {
-                          "X": 1.0,
-                          "Y": 0.8167
-                        },
-                        "LeftMargin": -0.53,
-                        "RightMargin": 0.53,
-                        "TopMargin": 11.426,
-                        "BottomMargin": -0.426,
-                        "Tag": 154,
-                        "ActionTag": 700312844,
-                        "Size": {
-                          "X": 125.0,
-                          "Y": 49.0
-                        },
-                        "Name": "pnlBg1",
-                        "ctype": "ImageViewObjectData"
-                      },
-                      {
                         "FontSize": 14,
                         "ButtonText": "",
                         "TextColor": {
@@ -3079,8 +2999,8 @@
                         },
                         "LeftMargin": 21.6997,
                         "RightMargin": 68.3003,
-                        "TopMargin": 18.0,
-                        "BottomMargin": 4.0,
+                        "TopMargin": 17.2401,
+                        "BottomMargin": 4.7599,
                         "Tag": 33,
                         "ActionTag": 1191605026,
                         "Size": {
@@ -3196,52 +3116,6 @@
                     "Tag": 157,
                     "Children": [
                       {
-                        "FileData": {
-                          "Type": "Normal",
-                          "Path": "hall/dtjm_4.png",
-                          "Plist": ""
-                        },
-                        "Scale9Enable": true,
-                        "Scale9OriginX": 12,
-                        "Scale9OriginY": 11,
-                        "Scale9Width": 5,
-                        "Scale9Height": 13,
-                        "AnchorPoint": {
-                          "ScaleX": 0.5,
-                          "ScaleY": 0.5
-                        },
-                        "Position": {
-                          "X": 91.0962,
-                          "Y": 25.2
-                        },
-                        "Scale": {
-                          "ScaleX": 1.0,
-                          "ScaleY": 1.0
-                        },
-                        "CColor": {},
-                        "IconVisible": false,
-                        "PrePosition": {
-                          "X": 0.4951,
-                          "Y": 0.42
-                        },
-                        "PreSize": {
-                          "X": 0.9293,
-                          "Y": 0.8
-                        },
-                        "LeftMargin": 5.5962,
-                        "RightMargin": 7.4038,
-                        "TopMargin": 10.8,
-                        "BottomMargin": 1.2,
-                        "Tag": 158,
-                        "ActionTag": -801473523,
-                        "Size": {
-                          "X": 171.0,
-                          "Y": 48.0
-                        },
-                        "Name": "pnlBg1",
-                        "ctype": "ImageViewObjectData"
-                      },
-                      {
                         "FontSize": 14,
                         "ButtonText": "",
                         "TextColor": {
@@ -3299,8 +3173,8 @@
                         },
                         "LeftMargin": 24.7098,
                         "RightMargin": 118.2902,
-                        "TopMargin": 18.0,
-                        "BottomMargin": 2.0,
+                        "TopMargin": 18.0177,
+                        "BottomMargin": 1.9823,
                         "Tag": 34,
                         "ActionTag": -1231276662,
                         "Size": {
@@ -4318,8 +4192,8 @@
               {
                 "AnchorPoint": {},
                 "Position": {
-                  "X": 676.2563,
-                  "Y": 429.4089
+                  "X": 700.26,
+                  "Y": 440.41
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -4328,17 +4202,17 @@
                 "CColor": {},
                 "IconVisible": true,
                 "PrePosition": {
-                  "X": 0.5283,
-                  "Y": 0.5964
+                  "X": 0.5471,
+                  "Y": 0.6117
                 },
                 "PreSize": {
                   "X": 0.0,
                   "Y": 0.0
                 },
-                "LeftMargin": 676.2563,
-                "RightMargin": 603.7437,
-                "TopMargin": 290.5911,
-                "BottomMargin": 429.4089,
+                "LeftMargin": 700.26,
+                "RightMargin": 579.74,
+                "TopMargin": 279.59,
+                "BottomMargin": 440.41,
                 "Tag": 208,
                 "Children": [
                   {
@@ -4406,8 +4280,8 @@
               {
                 "AnchorPoint": {},
                 "Position": {
-                  "X": 983.5043,
-                  "Y": 386.3814
+                  "X": 977.5,
+                  "Y": 406.38
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -4416,17 +4290,17 @@
                 "CColor": {},
                 "IconVisible": true,
                 "PrePosition": {
-                  "X": 0.7684,
-                  "Y": 0.5366
+                  "X": 0.7637,
+                  "Y": 0.5644
                 },
                 "PreSize": {
                   "X": 0.0,
                   "Y": 0.0
                 },
-                "LeftMargin": 983.5043,
-                "RightMargin": 296.4957,
-                "TopMargin": 333.6186,
-                "BottomMargin": 386.3814,
+                "LeftMargin": 977.5,
+                "RightMargin": 302.5,
+                "TopMargin": 313.62,
+                "BottomMargin": 406.38,
                 "Tag": 475,
                 "Children": [
                   {
@@ -4494,8 +4368,8 @@
               {
                 "AnchorPoint": {},
                 "Position": {
-                  "X": 811.136,
-                  "Y": 227.0394
+                  "X": 822.14,
+                  "Y": 257.04
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -4504,17 +4378,17 @@
                 "CColor": {},
                 "IconVisible": true,
                 "PrePosition": {
-                  "X": 0.6337,
-                  "Y": 0.3153
+                  "X": 0.6423,
+                  "Y": 0.357
                 },
                 "PreSize": {
                   "X": 0.0,
                   "Y": 0.0
                 },
-                "LeftMargin": 811.136,
-                "RightMargin": 468.864,
-                "TopMargin": 492.9606,
-                "BottomMargin": 227.0394,
+                "LeftMargin": 822.14,
+                "RightMargin": 457.86,
+                "TopMargin": 462.96,
+                "BottomMargin": 257.04,
                 "Tag": 477,
                 "Children": [
                   {
@@ -4582,8 +4456,8 @@
               {
                 "AnchorPoint": {},
                 "Position": {
-                  "X": 1083.9192,
-                  "Y": 181.1403
+                  "X": 1107.92,
+                  "Y": 239.14
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -4592,17 +4466,17 @@
                 "CColor": {},
                 "IconVisible": true,
                 "PrePosition": {
-                  "X": 0.8468,
-                  "Y": 0.2516
+                  "X": 0.8656,
+                  "Y": 0.3321
                 },
                 "PreSize": {
                   "X": 0.0,
                   "Y": 0.0
                 },
-                "LeftMargin": 1083.9192,
-                "RightMargin": 196.0808,
-                "TopMargin": 538.8597,
-                "BottomMargin": 181.1403,
+                "LeftMargin": 1107.92,
+                "RightMargin": 172.08,
+                "TopMargin": 480.86,
+                "BottomMargin": 239.14,
                 "Tag": 479,
                 "Children": [
                   {
@@ -4670,8 +4544,8 @@
               {
                 "AnchorPoint": {},
                 "Position": {
-                  "X": 350.0,
-                  "Y": 100.0
+                  "X": 329.0,
+                  "Y": 183.0
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -4680,17 +4554,17 @@
                 "CColor": {},
                 "IconVisible": true,
                 "PrePosition": {
-                  "X": 0.2734,
-                  "Y": 0.1389
+                  "X": 0.257,
+                  "Y": 0.2542
                 },
                 "PreSize": {
                   "X": 0.0,
                   "Y": 0.0
                 },
-                "LeftMargin": 350.0,
-                "RightMargin": 930.0,
-                "TopMargin": 620.0,
-                "BottomMargin": 100.0,
+                "LeftMargin": 329.0,
+                "RightMargin": 951.0,
+                "TopMargin": 537.0,
+                "BottomMargin": 183.0,
                 "Tag": 195,
                 "ActionTag": 1295246783,
                 "Size": {
@@ -7612,7 +7486,9 @@
         "hall/dtjm_2.png",
         "hall/dtjm_20.png",
         "hall/dtjm_21.png",
+        "hall/dtjm_29.png",
         "hall/dtjm_3.png",
+        "hall/dtjm_30.png",
         "hall/dtjm_4.png",
         "hall/dtjm_5.png",
         "hall/dtjm_6.png",

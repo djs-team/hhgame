@@ -6,8 +6,6 @@ import android.text.TextUtils;
 import com.deepsea.mua.core.utils.GlideUtils;
 import com.deepsea.mua.stub.adapter.BaseBindingAdapter;
 import com.deepsea.mua.stub.adapter.BindingViewHolder;
-import com.deepsea.mua.stub.entity.RankVo;
-import com.deepsea.mua.stub.entity.socket.receive.SongInfo;
 import com.deepsea.mua.stub.entity.socket.receive.SongRankData;
 import com.deepsea.mua.stub.utils.PageJumpUtils;
 import com.deepsea.mua.stub.utils.ViewBindUtils;

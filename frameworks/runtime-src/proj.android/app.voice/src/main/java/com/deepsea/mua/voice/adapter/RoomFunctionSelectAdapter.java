@@ -7,7 +7,6 @@ import android.view.View;
 import com.deepsea.mua.core.utils.GlideUtils;
 import com.deepsea.mua.stub.adapter.BaseBindingAdapter;
 import com.deepsea.mua.stub.adapter.BindingViewHolder;
-import com.deepsea.mua.stub.entity.RankVo;
 import com.deepsea.mua.stub.entity.RoomTagListBean;
 import com.deepsea.mua.stub.utils.PageJumpUtils;
 import com.deepsea.mua.stub.utils.SexResUtils;

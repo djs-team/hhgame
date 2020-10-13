@@ -6,7 +6,6 @@ import android.arch.lifecycle.ViewModel;
 import com.deepsea.mua.core.network.resource.Resource;
 import com.deepsea.mua.stub.data.BaseApiResult;
 import com.deepsea.mua.stub.entity.IsCreateRoomVo;
-import com.deepsea.mua.stub.entity.RankList;
 import com.deepsea.mua.stub.entity.RoomModes;
 import com.deepsea.mua.stub.entity.VoiceBanner;
 import com.deepsea.mua.stub.entity.VoiceRoomBean;
@@ -33,9 +32,6 @@ public class HomeViewModel extends ViewModel {
         return mRepository.getRoomModes(SignatureUtils.signByToken());
     }
 
-    public LiveData<Resource<RankList>> indexrank() {
-        return mRepository.indexrank();
-    }
 
     public LiveData<Resource<IsCreateRoomVo>> iscreateroom() {
         return mRepository.iscreateroom();

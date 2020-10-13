@@ -72,9 +72,10 @@ load('game/config/ResConfig', function () {
         'PersonalLayer': 'game/ui/layer/personal/PersonalLayer',
         'Authentication': 'game/ui/layer/authentication/AuthenticationLayer',
         'CashCowLayer': 'game/ui/layer/cashcow/CashCowLayer',
+        'SetLayer': 'game/ui/layer/set/SetLayer',
         'TaskLayer': 'game/ui/layer/task/TaskLayer',
         'InvitationLayer': 'game/ui/layer/invitation/InvitationLayer',
-        'ArenaLayer': 'game/ui/layer/match/ArenaLayer',
+        'ArenaLayer': 'game/ui/layer/arena/ArenaLayer',
         'CoinGameLayer': 'game/ui/layer/coingame/CoinGameLayer',
         'CoinShopLayer': 'game/ui/layer/coinshop/CoinShopLayer',
         'ShopLayer': 'game/ui/layer/shop/ShopLayer',
@@ -99,7 +100,7 @@ load('game/config/ResConfig', function () {
         'DialogLayer': 'res/DialogLayer.json',
         'ReceivePropsLayer': 'res/ReceivePropsLayer.json',
         'ChooseCityLayer': 'res/ChooseCityLayer.json',
-        'SettingLayer': 'res/SettingLayer.json',
+        'SetLayer': 'res/SetLayer.json',
         'EmailLayer': 'res/EmailLayer.json',
         'EosBlock': 'res/EosBlock.json',
         'CreateRoom': 'res/CreateRoom.json',
@@ -126,6 +127,19 @@ load('game/config/ResConfig', function () {
         'RoleLayer': 'res/RoleLayer.json',
         'FukaShopLayer': 'res/FukaShopLayer.json',
 
+    }
+
+
+    /**
+     *  声音配置
+     */
+    ResConfig.Sound = {
+        bg1: 'res/sound/bg/bg1.mp3',
+        bg2: 'res/sound/bg/bg2.mp3',
+        btnEffect: 'res/sound/btnClick.mp3',
+        turnTableBegin: 'res/sound/turnTableBegin.mp3',
+        turnTableEnd: 'res/sound/turnTableEnd.mp3',
+        turnTableInd: 'res/sound/turnTableInd.mp3',
     }
 
     ResConfig.prefixPath = { }

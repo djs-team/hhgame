@@ -229,7 +229,7 @@
                   "X": 88.0,
                   "Y": 88.0
                 },
-                "Name": "BackBtn",
+                "Name": "CloseBtn",
                 "ctype": "ButtonObjectData"
               }
             ],
@@ -698,7 +698,6 @@
                       {
                         "ClipAble": false,
                         "BackColorAlpha": 102,
-                        "ComboBoxIndex": 1,
                         "SingleColor": {
                           "R": 150,
                           "G": 200
@@ -1330,7 +1329,7 @@
                   "Y": 0.0925
                 },
                 "PreSize": {
-                  "X": 0.1562,
+                  "X": 0.1563,
                   "Y": 0.1236
                 },
                 "LeftMargin": 365.2795,
@@ -1464,7 +1463,7 @@
                   "Y": 0.0932
                 },
                 "PreSize": {
-                  "X": 0.1562,
+                  "X": 0.1563,
                   "Y": 0.1222
                 },
                 "LeftMargin": 598.6682,
@@ -1598,7 +1597,7 @@
                   "Y": 0.0932
                 },
                 "PreSize": {
-                  "X": 0.1562,
+                  "X": 0.1563,
                   "Y": 0.1222
                 },
                 "LeftMargin": 832.0568,
@@ -1712,7 +1711,7 @@
                   "Y": 0.1486
                 },
                 "LeftMargin": -52.2889,
-                "RightMargin": 1258.2888,
+                "RightMargin": 1258.2889,
                 "TopMargin": 795.7611,
                 "BottomMargin": -182.7611,
                 "Tag": 393,

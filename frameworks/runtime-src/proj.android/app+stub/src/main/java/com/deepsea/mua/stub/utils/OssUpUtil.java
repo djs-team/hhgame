@@ -66,12 +66,12 @@ public class OssUpUtil {
 
     public OSSAsyncTask upToOss(int aType, String imgPath, OSS mOss, String bucketname, final OssUpUtil.OssUpCallback ossUpCallback) {
         String objectKey;
-        if (aType == 4) {
+        if (aType == 4) {//身份证
             objectKey = "memberpid/" + UserUtils.getUser().getUid() + "/" + System.currentTimeMillis() + ".jpg";
         } else if (aType == 3) {//上传个人头像
             String path = UserUtils.getUser() == null ? "register" : UserUtils.getUser().getUid();
             objectKey = "Avatar/" + path + "/" + System.currentTimeMillis() + ".jpg";
-        } else if (aType == 5) {//上传个人头像
+        } else if (aType == 5) {//举报
             String path = UserUtils.getUser() == null ? "register" : UserUtils.getUser().getUid();
             objectKey = "MyReport/" + path + "/" + System.currentTimeMillis() + ".jpg";
         } else {

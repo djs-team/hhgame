@@ -7,7 +7,6 @@ import com.deepsea.mua.core.network.response.ApiResponse;
 import com.deepsea.mua.stub.api.RetrofitApi;
 import com.deepsea.mua.stub.data.BaseApiResult;
 import com.deepsea.mua.stub.entity.IsCreateRoomVo;
-import com.deepsea.mua.stub.entity.RankList;
 import com.deepsea.mua.stub.entity.RoomModes;
 import com.deepsea.mua.stub.entity.VoiceBanner;
 import com.deepsea.mua.stub.entity.VoiceRoomBean;
@@ -45,22 +44,7 @@ public class HomeRepository extends BaseRepository {
             }
         });
     }
-    public LiveData<Resource<RankList>> indexrank() {
-        return HttpUtils.requestNoCache(new HttpCallback.NoCacheCallback<RankList, BaseApiResult<RankList>>() {
-            @Override
-            public LiveData<ApiResponse<BaseApiResult<RankList>>> createCall() {
-                return mRetrofitApi.indexrank();
-            }
 
-            @Override
-            public RankList processResponse(BaseApiResult<RankList> source) {
-                if (source != null) {
-                    return source.getData();
-                }
-                return null;
-            }
-        });
-    }
 
     public LiveData<Resource<IsCreateRoomVo>> iscreateroom() {
         return HttpUtils.requestNoCache(new HttpCallback.NoCacheCallback<IsCreateRoomVo, BaseApiResult<IsCreateRoomVo>>() {

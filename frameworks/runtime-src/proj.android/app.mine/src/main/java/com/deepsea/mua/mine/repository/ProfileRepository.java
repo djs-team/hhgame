@@ -5,15 +5,12 @@ import android.arch.lifecycle.LiveData;
 import com.deepsea.mua.stub.api.RetrofitApi;
 import com.deepsea.mua.core.network.resource.Resource;
 import com.deepsea.mua.core.network.response.ApiResponse;
-import com.deepsea.mua.stub.entity.ApplyHost;
 import com.deepsea.mua.stub.entity.AreaVo;
 import com.deepsea.mua.stub.entity.AuditBean;
-import com.deepsea.mua.stub.entity.AuthenticationBean;
+import com.deepsea.mua.stub.entity.BindWx;
 import com.deepsea.mua.stub.entity.BlockVo;
+import com.deepsea.mua.stub.entity.CheckBindWx;
 import com.deepsea.mua.stub.entity.GuardInfoBean;
-import com.deepsea.mua.stub.entity.GuardResultBean;
-import com.deepsea.mua.stub.entity.HaiPayBean;
-import com.deepsea.mua.stub.entity.InitInviteBean;
 import com.deepsea.mua.stub.entity.JumpRoomVo;
 import com.deepsea.mua.stub.entity.LookGuardUserVo;
 import com.deepsea.mua.stub.entity.ProfileBean;
@@ -57,19 +54,6 @@ public class ProfileRepository extends BaseRepository {
         });
     }
 
-    public LiveData<Resource<BaseApiResult>> attention_member(String uid, String type) {
-        return HttpUtils.requestNoCache(new HttpCallback.NoCacheCallback<BaseApiResult, BaseApiResult>() {
-            @Override
-            public LiveData<ApiResponse<BaseApiResult>> createCall() {
-                return mRetrofitApi.attention_member(uid, type);
-            }
-
-            @Override
-            public BaseApiResult processResponse(BaseApiResult source) {
-                return source;
-            }
-        });
-    }
 
     public LiveData<Resource<BaseApiResult>> defriend(String uid, String signature) {
         return HttpUtils.requestNoCache(new HttpCallback.NoCacheCallback<BaseApiResult, BaseApiResult>() {
@@ -116,22 +100,7 @@ public class ProfileRepository extends BaseRepository {
         });
     }
 
-    public LiveData<Resource<InitInviteBean>> initInvite() {
-        return HttpUtils.requestNoCache(new HttpCallback.NoCacheCallback<InitInviteBean, BaseApiResult<InitInviteBean>>() {
-            @Override
-            public LiveData<ApiResponse<BaseApiResult<InitInviteBean>>> createCall() {
-                return mRetrofitApi.initInvite();
-            }
 
-            @Override
-            public InitInviteBean processResponse(BaseApiResult<InitInviteBean> source) {
-                if (source != null) {
-                    return source.getData();
-                }
-                return null;
-            }
-        });
-    }
 
 
     public LiveData<Resource<BaseApiResult>> createapprove(String signature) {
@@ -151,36 +120,9 @@ public class ProfileRepository extends BaseRepository {
         });
     }
 
-    public LiveData<Resource<BaseApiResult>> bindReferrer(String referrer_code) {
-        return HttpUtils.requestNoCache(new HttpCallback.NoCacheCallback<BaseApiResult, BaseApiResult>() {
-            @Override
-            public LiveData<ApiResponse<BaseApiResult>> createCall() {
-                return mRetrofitApi.bindReferrer(referrer_code);
-            }
 
-            @Override
-            public BaseApiResult processResponse(BaseApiResult source) {
-                return source;
-            }
-        });
-    }
 
-    public LiveData<Resource<ApplyHost>> init_apply() {
-        return HttpUtils.requestNoCache(new HttpCallback.NoCacheCallback<ApplyHost, BaseApiResult<ApplyHost>>() {
-            @Override
-            public LiveData<ApiResponse<BaseApiResult<ApplyHost>>> createCall() {
-                return mRetrofitApi.init_apply();
-            }
 
-            @Override
-            public ApplyHost processResponse(BaseApiResult<ApplyHost> source) {
-                if (source != null) {
-                    return source.getData();
-                }
-                return null;
-            }
-        });
-    }
 
     /**
      * 随机跳转前六直播间接口
@@ -381,7 +323,19 @@ public class ProfileRepository extends BaseRepository {
             }
         });
     }
+    public LiveData<Resource<BaseApiResult>> setFeedback(String content, String signature) {
+        return HttpUtils.requestNoCache(new HttpCallback.NoCacheCallback<BaseApiResult, BaseApiResult>() {
+            @Override
+            public LiveData<ApiResponse<BaseApiResult>> createCall() {
+                return mRetrofitApi.setFeedback(content, signature);
+            }
 
+            @Override
+            public BaseApiResult processResponse(BaseApiResult source) {
+                return source;
+            }
+        });
+    }
     public LiveData<Resource<List<BlockVo>>> getBlockList() {
         return HttpUtils.requestNoCache(new HttpCallback.NoCacheCallback<List<BlockVo>, BaseApiResult<List<BlockVo>>>() {
             @Override
@@ -398,5 +352,80 @@ public class ProfileRepository extends BaseRepository {
             }
         });
     }
+    public LiveData<Resource<BaseApiResult>> unBindWx(String wx_id) {
+        return HttpUtils.requestNoCache(new HttpCallback.NoCacheCallback<BaseApiResult, BaseApiResult>() {
+            @Override
+            public LiveData<ApiResponse<BaseApiResult>> createCall() {
+                return mRetrofitApi.unBindWx(wx_id);
+            }
 
+            @Override
+            public BaseApiResult processResponse(BaseApiResult source) {
+                return source;
+            }
+        });
+    }
+
+    public LiveData<Resource<CheckBindWx>> isBindWx() {
+        return HttpUtils.requestNoCache(new HttpCallback.NoCacheCallback<CheckBindWx, BaseApiResult<CheckBindWx>>() {
+            @Override
+            public LiveData<ApiResponse<BaseApiResult<CheckBindWx>>> createCall() {
+                return mRetrofitApi.isBindWx();
+            }
+
+            @Override
+            public CheckBindWx processResponse(BaseApiResult<CheckBindWx> source) {
+                if (source != null) {
+                    return source.getData();
+                }
+                return null;
+            }
+        });
+    }
+
+    public LiveData<Resource<BaseApiResult<BindWx>>> bindWx(String wx_id) {
+        return HttpUtils.requestNoCache(new HttpCallback.NoCacheCallback<BaseApiResult<BindWx>, BaseApiResult<BindWx>>() {
+            @Override
+            public LiveData<ApiResponse<BaseApiResult<BindWx>>> createCall() {
+                return mRetrofitApi.bindWx(wx_id);
+            }
+
+            @Override
+            public BaseApiResult<BindWx> processResponse(BaseApiResult<BindWx> source) {
+                if (source != null) {
+                    return source;
+                }
+                return null;
+            }
+        });
+    }
+    public LiveData<Resource<BaseApiResult>> bindPhone(String phone, String pcode) {
+        return HttpUtils.requestNoCache(new HttpCallback.NoCacheCallback<BaseApiResult, BaseApiResult>() {
+            @Override
+            public LiveData<ApiResponse<BaseApiResult>> createCall() {
+                return mRetrofitApi.bindPhone(phone, pcode);
+            }
+
+            @Override
+            public BaseApiResult processResponse(BaseApiResult source) {
+                if (source != null) {
+                    return source;
+                }
+                return null;
+            }
+        });
+    }
+    public LiveData<Resource<BaseApiResult>> sendSMS(String phone, String type) {
+        return HttpUtils.requestNoCache(new HttpCallback.NoCacheCallback<BaseApiResult, BaseApiResult>() {
+            @Override
+            public LiveData<ApiResponse<BaseApiResult>> createCall() {
+                return mRetrofitApi.sendSMS(phone, type);
+            }
+
+            @Override
+            public BaseApiResult processResponse(BaseApiResult source) {
+                return source;
+            }
+        });
+    }
 }

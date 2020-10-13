@@ -29,6 +29,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *is_matchmaker; // 是否是红娘 0:不是 1:是
 @property (nonatomic, strong) NSString * is_friend; // 1是好友2不是
 
+@property (nonatomic, strong) NSString *online; // 用户状态 0离线 3相亲中 5热聊中 6开播中
+
 // 搜索
 @property (nonatomic, strong) NSString *room_id; // 房间id，如果为空就不在房间
 @property (nonatomic, strong) NSString *online_str; // 在线文字描述：在线、离线、刚刚在线

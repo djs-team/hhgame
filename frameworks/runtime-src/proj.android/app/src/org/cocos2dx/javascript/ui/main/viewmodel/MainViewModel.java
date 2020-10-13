@@ -17,8 +17,6 @@ import com.deepsea.mua.stub.entity.GiftBean;
 import com.deepsea.mua.stub.entity.GiftInfoBean;
 import com.deepsea.mua.stub.entity.JumpRoomVo;
 import com.deepsea.mua.stub.entity.MessageNumVo;
-import com.deepsea.mua.stub.entity.NightLockBean;
-import com.deepsea.mua.stub.entity.YoungerTimeBean;
 import com.deepsea.mua.stub.mvp.NewSubscriberCallBack;
 import com.deepsea.mua.stub.network.HttpHelper;
 import com.deepsea.mua.stub.utils.CollectionUtils;
@@ -54,21 +52,6 @@ public class MainViewModel extends ViewModel {
         mRepository = repository;
     }
 
-    public LiveData<Resource<YoungerTimeBean>> checkLock() {
-        return mRepository.checkLock();
-    }
-
-    public LiveData<Resource<BaseApiResult>> checkPop() {
-        return mRepository.checkPop();
-    }
-
-    public LiveData<Resource<NightLockBean>> checkConsLock() {
-        return mRepository.checkConsLock();
-    }
-
-    public LiveData<Resource<FaceRequestBean>> getMakeFace() {
-        return mRepository.getMakeFace();
-    }
 
     public Context getContext() {
         Activity activity = ActivityCache.getInstance().getTopActivity();
@@ -149,4 +132,7 @@ public class MainViewModel extends ViewModel {
         return mRepository.getMessageNum();
     }
 
+    public LiveData<Resource<FaceRequestBean>> getMakeFace() {
+        return mRepository.getMakeFace();
+    }
 }

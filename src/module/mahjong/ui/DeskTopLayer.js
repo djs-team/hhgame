@@ -3,6 +3,7 @@
  * DeskHeadLayer
  */
 load('module/mahjong/ui/DeskTopLayer', function () {
+    let HallResConfig = include('game/config/ResConfig')
     let ResConfig = include('module/mahjong/common/ResConfig')
     let BaseLayer = include('public/ui/BaseLayer')
     let DeskTopLayerMdt = include('module/mahjong/ui/DeskTopLayerMdt')
@@ -30,18 +31,37 @@ load('module/mahjong/ui/DeskTopLayer', function () {
                 cc.p(330,0)
             ],
         ],
+        _tableLevel: {
+            'M1': '新手场 底分500',
+            'M2': '初级场 底分2000',
+            'M3': '高级场 底分5000',
+            'M4': '大师场 底分20000',
+        },
         RES_BINDING: function () {
             return {
                 'pnl/ActionNd': {  },
                 'pnl/ActionNd/ActionCell': { onClicked: this.onActionCellClick },
                 'pnl/ChiNd': {  },
                 'pnl/ChiNd/ChiCell': { onClicked: this.onChiCellClick  },
-                'HostingPnl': { onClicked: this.onHostingClick }
+                'HostingPnl': { onClicked: this.onHostingClick },
+                'BmPnl/HeadNd': {},
+                'BmPnl/HeadNd/NameBg': {},
+                'BmPnl/HeadNd/NameBg/NameTxt': {},
+                'TopPnl/SetBtn': { onClicked: this.onSetBtnClick },
+                'TopPnl/BaoNd': {},
+                'TopPnl/BaoNd/BaoCard': {},
+                'TopPnl/BaoNd/BaoCard/BaoCardValue': {},
+                'TopPnl/TableLevelNd': {},
+                'TopPnl/TableLevelNd/TableLevelTxt': {},
             }
         },
         ctor: function () {
             this._super(ResConfig.View.DeskTopLayer)
             this.registerMediator(new DeskTopLayerMdt(this))
+        },
+
+        onSetBtnClick: function () {
+            appInstance.gameAgent().addPopUI(HallResConfig.Ui.SetLayer, {isDesk: true})
         },
 
         onHostingClick: function () {
@@ -100,6 +120,9 @@ load('module/mahjong/ui/DeskTopLayer', function () {
         },
 
         initData: function (pData) {
+            cc.log('=====================topLayer=========' + JSON.stringify(pData))
+            this._selfInfo = pData.getSelfInfo()
+            this._tData = pData.tableData
             this._actionCell = {}
             this._chiCell = []
         },
@@ -111,6 +134,11 @@ load('module/mahjong/ui/DeskTopLayer', function () {
 
             this.HostingPnl.setVisible(false)
 
+            this.BaoNd.setVisible(false)
+
+
+            this.NameTxt.setString(this._selfInfo.nickName)
+            this.TableLevelTxt.setString(this._tableLevel[this._tData.pGameType])
 
             for (let i = 0; i < this._maxChi; ++i) {
                 let chiCell = this.ChiCell.clone()

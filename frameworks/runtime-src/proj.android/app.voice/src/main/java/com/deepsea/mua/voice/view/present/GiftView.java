@@ -231,11 +231,7 @@ public class GiftView extends ViewPager {
 
         @Override
         protected void bind(BindingViewHolder<ItemRoomGiftBinding> holder, GiftBean item) {
-            if (item.getGift_type().equals("4")) {
-                ViewBindUtils.setImageRes(holder.binding.giftIv, R.drawable.icon_gift_blue_rose);
-            } else {
-                GlideUtils.loadImage(holder.binding.giftIv, item.getGift_image());
-            }
+            GlideUtils.loadImage(holder.binding.giftIv, item.getGift_image());
             holder.binding.giftNameTv.setText(item.getGift_name());
             holder.binding.giftPriceTv.setText(String.format(Locale.CHINA, "%d玫瑰", item.getGift_coin()));
 //            if (item.getGift_number() >= 0) {
@@ -247,7 +243,7 @@ public class GiftView extends ViewPager {
 //                holder.binding.heartTv.setBackgroundResource(R.drawable.gift_heart_negative);
 //                holder.binding.heartTv.setTextColor(0xFF37C592);
 //            }
-            ViewBindUtils.setVisible(holder.binding.heartTv,false);
+            ViewBindUtils.setVisible(holder.binding.heartTv, false);
             int position = holder.getAdapterPosition();
             holder.binding.getRoot().setSelected(mSelectPos == position);
         }

@@ -152,12 +152,12 @@ ccui.Widget.prototype.onTouched = function (callBack, obj) {
 ccui.Widget.prototype.onClicked = function (callBack, obj) {
     this.addTouchEventListener(function (sender, eventType) {
         if (eventType === ccui.Widget.TOUCH_BEGAN) {
-            if (sender.getDescription() === 'Button') {
+            // if (sender.getDescription() === 'Button') {
                 if (appInstance && appInstance.audioManager().getButtonClickEffectSwitch()) {
                     let effect  = sender.clickEffectRes || appInstance.audioManager().getButtonClickEffect()
                     appInstance.audioManager().playEffect(effect)
                 }
-            }
+            // }
         } else if (eventType === ccui.Widget.TOUCH_ENDED) {
 
             if (sender.onClicking) {

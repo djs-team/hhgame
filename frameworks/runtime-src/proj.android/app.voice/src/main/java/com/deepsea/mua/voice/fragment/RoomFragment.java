@@ -2,6 +2,7 @@ package com.deepsea.mua.voice.fragment;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -16,6 +17,8 @@ import com.deepsea.mua.stub.base.BaseObserver;
 import com.deepsea.mua.stub.client.agora.AgoraClient;
 import com.deepsea.mua.stub.controller.RoomController;
 import com.deepsea.mua.stub.controller.RoomJoinController;
+import com.deepsea.mua.stub.dialog.SexEditDialog;
+import com.deepsea.mua.stub.entity.HomeInfo;
 import com.deepsea.mua.stub.entity.RoomsBean;
 import com.deepsea.mua.stub.entity.VoiceBanner;
 import com.deepsea.mua.stub.utils.AppConstant;
@@ -23,6 +26,8 @@ import com.deepsea.mua.stub.utils.Constant;
 import com.deepsea.mua.stub.utils.GridItemDecoration;
 import com.deepsea.mua.stub.utils.PageJumpUtils;
 import com.deepsea.mua.stub.utils.SharedPrefrencesUtil;
+import com.deepsea.mua.stub.utils.UserUtils;
+import com.deepsea.mua.stub.utils.ViewBindUtils;
 import com.deepsea.mua.stub.utils.ViewModelFactory;
 import com.deepsea.mua.stub.utils.ViewUtils;
 import com.deepsea.mua.stub.utils.WrapGridLayoutManager;
@@ -32,7 +37,6 @@ import com.deepsea.mua.stub.utils.eventbus.OpenRoom;
 import com.deepsea.mua.stub.utils.eventbus.ShowRankStepOne;
 import com.deepsea.mua.stub.utils.eventbus.ShowRankStepTwo;
 import com.deepsea.mua.voice.R;
-import com.deepsea.mua.voice.activity.RoomRankActivity;
 import com.deepsea.mua.voice.adapter.RoomAdapter;
 import com.deepsea.mua.voice.databinding.FragmentRoomBinding;
 import com.deepsea.mua.voice.viewmodel.RoomsViewModel;
@@ -58,7 +62,6 @@ public class RoomFragment extends BaseFragment<FragmentRoomBinding> {
     RoomJoinController mRoomJump;
 
     private RoomAdapter mAdapter;
-    private RoomAdapter topAdapter;
     private RecyclerAdapterWithHF mAdapterWithHF;
 
     private String roomType;
@@ -111,7 +114,7 @@ public class RoomFragment extends BaseFragment<FragmentRoomBinding> {
                         boolean hasFaceBeauty = SharedPrefrencesUtil.getData(mContext, "hasFaceBeauty", "hasFaceBeauty", Constant.isBeautyOpen);
                         if (!hasFaceBeauty || AppConstant.getInstance().isRtcEngineDestroy()) {
                             AgoraClient.create().release();
-                            AgoraClient.create().setUpAgora(getContext().getApplicationContext(), "e0972168ff254d7aa05501cd85204692");
+                            AgoraClient.create().setUpAgora(getContext().getApplicationContext(), "30870262f27a4642a99e67cc1851f90a");
                         }
                     }
                 }).start();
@@ -119,24 +122,6 @@ public class RoomFragment extends BaseFragment<FragmentRoomBinding> {
 
             }
         });
-        topAdapter = new RoomAdapter(mContext);
-        topAdapter.setOnItemClickListener(new BaseBindingAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(View view, int position) {
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        boolean hasFaceBeauty = SharedPrefrencesUtil.getData(mContext, "hasFaceBeauty", "hasFaceBeauty", Constant.isBeautyOpen);
-                        if (!hasFaceBeauty || AppConstant.getInstance().isRtcEngineDestroy()) {
-                            AgoraClient.create().release();
-                            AgoraClient.create().setUpAgora(getContext().getApplicationContext(), "e0972168ff254d7aa05501cd85204692");
-                        }
-                    }
-                }).start();
-                mRoomJump.startJump(topAdapter.getItem(position).getRoom_id(), Integer.valueOf(roomType), mContext, null);
-            }
-        });
-
         mBinding.recyclerView.setLayoutManager(new WrapGridLayoutManager(mContext, 2));
         mBinding.recyclerView.addItemDecoration(new GridItemDecoration(2, ResUtils.dp2px(mContext, 16)));
         mAdapterWithHF = new RecyclerAdapterWithHF(mAdapter);
@@ -144,15 +129,6 @@ public class RoomFragment extends BaseFragment<FragmentRoomBinding> {
         mAdapterWithHF.setRecycleView(mBinding.recyclerView);
         mBinding.recyclerView.setAdapter(mAdapterWithHF);
 
-
-        mBinding.recyclerTop.setLayoutManager(new WrapGridLayoutManager(mContext, 2));
-        mBinding.recyclerTop.addItemDecoration(new GridItemDecoration(2, ResUtils.dp2px(mContext, 16)));
-        mBinding.recyclerTop.setAdapter(topAdapter);
-//解决数据加载不完的问题
-        mBinding.recyclerTop.setNestedScrollingEnabled(false);
-        mBinding.recyclerTop.setHasFixedSize(true);
-//解决数据加载完成后, 没有停留在顶部的问题
-        mBinding.recyclerTop.setFocusable(false);
 
         mBinding.recyclerView.setNestedScrollingEnabled(false);
         mBinding.recyclerView.setHasFixedSize(true);
@@ -181,24 +157,21 @@ public class RoomFragment extends BaseFragment<FragmentRoomBinding> {
         mViewModel.refresh(roomType, age, city, city_two, city_three).observe(this, new BaseObserver<RoomsBean>() {
             @Override
             public void onSuccess(RoomsBean result) {
+                mBinding.refreshLayout.finishRefresh();
                 if (result != null) {
-                    RoomsBean.PageInfoBean pageInfo = result.getPageInfo();
-                    if (result.getRoom_list() != null && result.getRoom_list().size() > 0 && pageInfo.getPage() == 1) {
-                        if (result.getRoom_list().size() <= 4) {
-                            topAdapter.setNewData(result.getRoom_list().subList(0, result.getRoom_list().size()));
-                            mAdapter.setNewData(null);
-                        } else {
-                            topAdapter.setNewData(result.getRoom_list().subList(0, 4));
-                            mAdapter.setNewData(result.getRoom_list().subList(4, result.getRoom_list().size()));
+                    if (result.getRoom_list() != null && result.getRoom_list().size() > 0) {
+                        setRecommendRoom(result.getRoom_list().get(0));
+                        RoomsBean.PageInfoBean pageInfo = result.getPageInfo();
+                        if (result.getRoom_list().size() > 1) {
+                            mAdapter.setNewData(result.getRoom_list().subList(1, result.getRoom_list().size()));
                         }
+                        boolean enableLoadMore = pageInfo.getPage() < pageInfo.getTotalPage();
+                        mBinding.refreshLayout.setEnableLoadMore(enableLoadMore);
+                        mAdapterWithHF.showFooterView(!enableLoadMore);
                     } else {
-                        topAdapter.setNewData(null);
                         mAdapter.setNewData(null);
+                        ViewBindUtils.setVisible(mBinding.tlTimeRecommend, false);
                     }
-                    mBinding.refreshLayout.finishRefresh();
-                    boolean enableLoadMore = pageInfo.getPage() < pageInfo.getTotalPage();
-                    mBinding.refreshLayout.setEnableLoadMore(enableLoadMore);
-                    mAdapterWithHF.showFooterView(!enableLoadMore);
                 }
             }
 
@@ -207,6 +180,27 @@ public class RoomFragment extends BaseFragment<FragmentRoomBinding> {
                 toastShort(msg);
                 mBinding.refreshLayout.finishRefresh();
             }
+        });
+    }
+
+    private void setRecommendRoom(HomeInfo.RoomBean topRoom) {
+        ViewBindUtils.setVisible(mBinding.tlTimeRecommend, true);
+        GlideUtils.roundImage(mBinding.ivRecommondUserbg, topRoom.getFm_room_image(), R.drawable.ic_place_room_bg, R.drawable.ic_place_room_bg, 10);
+        ViewBindUtils.setText(mBinding.tvRoomName, "欢迎来到" + topRoom.getRoom_name() + "的直播间");
+        ViewBindUtils.setVisible(mBinding.roomLockRl, TextUtils.equals("1", topRoom.getRoom_lock()));
+        ViewBindUtils.RxClicks(mBinding.tlTimeRecommend, o -> {
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    boolean hasFaceBeauty = SharedPrefrencesUtil.getData(mContext, "hasFaceBeauty", "hasFaceBeauty", Constant.isBeautyOpen);
+                    if (!hasFaceBeauty || AppConstant.getInstance().isRtcEngineDestroy()) {
+                        AgoraClient.create().release();
+                        AgoraClient.create().setUpAgora(getContext().getApplicationContext(), "30870262f27a4642a99e67cc1851f90a");
+                    }
+                }
+            }).start();
+            mRoomJump.startJump(topRoom.getRoom_id(), Integer.valueOf(roomType), mContext, null);
+
         });
     }
 

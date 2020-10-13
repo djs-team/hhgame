@@ -8,13 +8,11 @@ import com.deepsea.mua.stub.entity.BlockVo;
 import com.deepsea.mua.stub.entity.CheckBlackVo;
 import com.deepsea.mua.stub.entity.LookGuardUserVo;
 import com.deepsea.mua.stub.entity.ApplyFriendListBean;
-import com.deepsea.mua.stub.entity.ApplyHost;
 import com.deepsea.mua.stub.entity.AreaVo;
 import com.deepsea.mua.stub.entity.AttenDynamicBean;
 import com.deepsea.mua.stub.entity.AuditBean;
 import com.deepsea.mua.stub.entity.BindWx;
 import com.deepsea.mua.stub.entity.BlindDateBean;
-import com.deepsea.mua.stub.entity.BlueRoseExchange;
 import com.deepsea.mua.stub.entity.CashInfo;
 import com.deepsea.mua.stub.entity.CashWListBean;
 import com.deepsea.mua.stub.entity.ChargeBean;
@@ -23,12 +21,9 @@ import com.deepsea.mua.stub.entity.DukeListBean;
 import com.deepsea.mua.stub.entity.DynamicDetailReplylistBean;
 import com.deepsea.mua.stub.entity.DynamicLisistBean;
 import com.deepsea.mua.stub.entity.EmojiBean;
-import com.deepsea.mua.stub.entity.ExchangeBlueRoseRecordListParam;
 import com.deepsea.mua.stub.entity.ExchangeMdDetailListBean;
-import com.deepsea.mua.stub.entity.FaceRequestBean;
 import com.deepsea.mua.stub.entity.FansRankBean;
 import com.deepsea.mua.stub.entity.FirstRechargeVo;
-import com.deepsea.mua.stub.entity.FollowFanBean;
 import com.deepsea.mua.stub.entity.FriendInfoListBean;
 import com.deepsea.mua.stub.entity.GiftInfoBean;
 import com.deepsea.mua.stub.entity.GiftListBean;
@@ -41,24 +36,17 @@ import com.deepsea.mua.stub.entity.HaiPayBean;
 import com.deepsea.mua.stub.entity.HeartBeatBean;
 import com.deepsea.mua.stub.entity.IncomeListBean;
 import com.deepsea.mua.stub.entity.InitCash;
-import com.deepsea.mua.stub.entity.InitInviteBean;
-import com.deepsea.mua.stub.entity.InviteAlertMemberBean;
-import com.deepsea.mua.stub.entity.InviteCodeBean;
-import com.deepsea.mua.stub.entity.InviteListBean;
 import com.deepsea.mua.stub.entity.IsCreateRoomVo;
 import com.deepsea.mua.stub.entity.JumpRoomVo;
 import com.deepsea.mua.stub.entity.MDRecord;
 import com.deepsea.mua.stub.entity.MaqueeBean;
 import com.deepsea.mua.stub.entity.MessageNumVo;
-import com.deepsea.mua.stub.entity.MineRooms;
-import com.deepsea.mua.stub.entity.NightLockBean;
 import com.deepsea.mua.stub.entity.OSSConfigBean;
 import com.deepsea.mua.stub.entity.OnlinesBean;
 import com.deepsea.mua.stub.entity.PackBean;
 import com.deepsea.mua.stub.entity.PresentWallBean;
 import com.deepsea.mua.stub.entity.ProfileBean;
 import com.deepsea.mua.stub.entity.ProfileModel;
-import com.deepsea.mua.stub.entity.RankList;
 import com.deepsea.mua.stub.entity.RankListResult;
 import com.deepsea.mua.stub.entity.RecommendRoomResult;
 import com.deepsea.mua.stub.entity.RenewInitVo;
@@ -77,22 +65,18 @@ import com.deepsea.mua.stub.entity.SmashParamBean;
 import com.deepsea.mua.stub.entity.SystemMsgListBean;
 import com.deepsea.mua.stub.entity.TagBean;
 import com.deepsea.mua.stub.entity.TaskBean;
-import com.deepsea.mua.stub.entity.TaskProgressBean;
-import com.deepsea.mua.stub.entity.TotalRank;
 import com.deepsea.mua.stub.entity.UserBean;
 import com.deepsea.mua.stub.entity.VipBean;
-import com.deepsea.mua.stub.entity.VisitorBean;
 import com.deepsea.mua.stub.entity.VoiceBanner;
 import com.deepsea.mua.stub.entity.VoiceRoomBean;
 import com.deepsea.mua.stub.entity.WalletBean;
 import com.deepsea.mua.stub.entity.WxOrder;
-import com.deepsea.mua.stub.entity.YoungerTimeBean;
 import com.deepsea.mua.stub.mvp.ResponseModel;
-
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import com.deepsea.mua.stub.entity.FaceRequestBean;
 
 import okhttp3.RequestBody;
 import retrofit2.Call;
@@ -132,6 +116,35 @@ public interface RetrofitApi {
             @Field("registration_id") String registration_id);
 
     /**
+     * 麻将- 登录
+     *
+     * @param username
+     * @return
+     */
+    @FormUrlEncoded
+    @POST("index.php/Api/Member/login")
+    LiveData<ApiResponse<BaseApiResult<UserBean>>> login(
+            @Field("username") String username,
+            @Field("nickname") String nickname,
+            @Field("avatar") String avatar
+    );
+
+    /**
+     * 麻将- 微信登录
+     *
+     * @param wx_id
+     * @return
+     */
+    @FormUrlEncoded
+    @POST("index.php/Api/Member/wx_login")
+    LiveData<ApiResponse<BaseApiResult<UserBean>>> wxLogin(
+            @Field("wx_id") String wx_id,
+            @Field("registration_id") String registration_id,
+            @Field("nickname") String nickname,
+            @Field("avatar") String avatar
+    );
+
+    /**
      * 一键登录
      *
      * @param login_token token
@@ -161,6 +174,7 @@ public interface RetrofitApi {
                                                              @Query("locality") String locality);
 
     /**
+     * /**
      * 获取验证码
      *
      * @param phone
@@ -388,17 +402,6 @@ public interface RetrofitApi {
             @Field("user_id") String user_id,
             @Field("signature") String signature);
 
-    /**
-     * 关注、取消关注
-     *
-     * @param userided 被关注用户id
-     * @param type     1关注2取消关注
-     * @return
-     */
-    @GET("index.php/Api/Attention/attention_member")
-    LiveData<ApiResponse<BaseApiResult>> attention_member(
-            @Query("userided") String userided,
-            @Query("type") String type);
 
     /**
      * 拉黑用户
@@ -577,16 +580,6 @@ public interface RetrofitApi {
             @Query("type") String type);
 
 
-    /**
-     * 我的房间列表
-     *
-     * @param signature
-     * @return
-     */
-    @FormUrlEncoded
-    @POST("index.php/Api/Languageroom/myRoom")
-    LiveData<ApiResponse<BaseApiResult<MineRooms>>> myRoom(
-            @Field("signature") String signature);
 
     /**
      * 礼物列表接口
@@ -628,58 +621,7 @@ public interface RetrofitApi {
             @Field("type") String type,
             @Field("signature") String signature);
 
-    /**
-     * 排行榜
-     *
-     * @param type
-     * @param status
-     * @param roomid
-     * @return
-     */
-    @FormUrlEncoded
-    @POST("index.php/Api/Ranklist/ranklist")
-    LiveData<ApiResponse<BaseApiResult<List<TotalRank>>>> ranklist(
-            @Field("type") String type,
-            @Field("status") String status,
-            @Field("roomid") String roomid);
 
-    /**
-     * 粉丝贡献榜
-     *
-     * @param signature
-     * @param status
-     * @return
-     */
-    @FormUrlEncoded
-    @POST("index.php/Api/Member/rank_list")
-    LiveData<ApiResponse<BaseApiResult<List<FansRankBean>>>> fansRanks(
-            @Field("signature") String signature,
-            @Field("status") String status);
-
-    /**
-     * 关注粉丝列表
-     *
-     * @param type
-     * @param page
-     * @return
-     */
-    @GET("index.php/Api/Attention/attention_list")
-    LiveData<ApiResponse<BaseApiResult<FollowFanBean>>> getFollowFans(
-            @Query("type") String type,
-            @Query("page") int page);
-
-    /**
-     * 获取自己邀请的人列表
-     *
-     * @param pagenum
-     * @param page
-     * @return
-     */
-    @GET("index.php/Api/Member/getMyInviteUserList")
-    LiveData<ApiResponse<BaseApiResult<InviteListBean>>> getMyInviteUserList(
-            @Query("page") int page,
-            @Query("pagenum") int pagenum
-    );
 
     /**
      * 提现记录
@@ -757,16 +699,7 @@ public interface RetrofitApi {
             @Field("stime") String stime,
             @Field("etime") String etime);
 
-    /**
-     * 蓝玫瑰兑换记录
-     *
-     * @param page
-     * @return
-     */
-    @FormUrlEncoded
-    @POST("index.php/Api/AliPay/blueExchangeInfo")
-    LiveData<ApiResponse<BaseApiResult<ExchangeBlueRoseRecordListParam>>> blueExchangeInfo(
-            @Field("page") int page);
+
 
     /**
      * 我的钱包
@@ -784,13 +717,7 @@ public interface RetrofitApi {
     @POST("index.php/Api/AliPay/initcash")
     LiveData<ApiResponse<BaseApiResult<InitCash>>> initCash();
 
-    /**
-     * 初始化提现接口
-     *
-     * @return
-     */
-    @POST("index.php/Api/AliPay/initBlueExchange")
-    LiveData<ApiResponse<BaseApiResult<List<BlueRoseExchange>>>> initBlueExchange();
+
 
     /**
      * 余额兑换玫瑰
@@ -801,14 +728,7 @@ public interface RetrofitApi {
     @POST("index.php/Api/AliPay/exchangeRose")
     LiveData<ApiResponse<BaseApiResult>> exchangeRose(@Field("coin") int coin);
 
-    /**
-     * 换蓝色玫瑰
-     *
-     * @return
-     */
-    @FormUrlEncoded
-    @POST("index.php/Api/AliPay/exchangeBlue")
-    LiveData<ApiResponse<BaseApiResult>> exchangeBlue(@Field("num") String num, @Field("gift_id") String gift_id);
+
 
     /**
      * 提现页面接口
@@ -826,13 +746,7 @@ public interface RetrofitApi {
     @POST("index.php/Api/AliPay/redpacket_cashinfo")
     LiveData<ApiResponse<BaseApiResult<CashInfo>>> redpacketCashinfo();
 
-    /**
-     * 邀请码页面
-     *
-     * @return
-     */
-    @POST("index.php/Api/Member/getInviteDownUrl")
-    LiveData<ApiResponse<BaseApiResult<InviteCodeBean>>> getInviteDownUrl();
+
 
     /**
      * 充值列表接口
@@ -879,13 +793,7 @@ public interface RetrofitApi {
     @POST("index.php/Api/AliPay/redpacket_initExchange")
     LiveData<ApiResponse<BaseApiResult<WalletBean>>> redpacketInitExchange();
 
-    /**
-     * 初始化申请主持页面
-     *
-     * @return
-     */
-    @POST("index.php/Api/Languageroom/init_apply")
-    LiveData<ApiResponse<BaseApiResult<ApplyHost>>> init_apply();
+
 
     /**
      * 兑换M豆
@@ -917,13 +825,7 @@ public interface RetrofitApi {
     @GET("index.php/Api/Member/logout")
     LiveData<ApiResponse<BaseApiResult>> logout();
 
-    /**
-     * 退出登录
-     *
-     * @return
-     */
-    @GET("index.php/Api/member/cancell")
-    LiveData<ApiResponse<BaseApiResult>> cancell();
+
 
     /**
      * 意见反馈
@@ -948,18 +850,7 @@ public interface RetrofitApi {
     LiveData<ApiResponse<BaseApiResult>> fansmenusatatus(
             @Query("type") String type);
 
-    /**
-     * 最近访客
-     *
-     * @param page
-     * @param signature
-     * @return
-     */
-    @FormUrlEncoded
-    @POST("index.php/Api/VisitorMember/getList")
-    LiveData<ApiResponse<BaseApiResult<VisitorBean>>> visitorMember(
-            @Field("page") int page,
-            @Field("signature") String signature);
+
 
     /**
      * 上传头像
@@ -1125,175 +1016,6 @@ public interface RetrofitApi {
             @Field("type") String type);
 
     /**
-     * 检查是否开启青少年模式
-     *
-     * @return
-     */
-    @POST("index.php/Api/Monitoring/checkMoStatus")
-    LiveData<ApiResponse<BaseApiResult>> checkMoStatus();
-
-    /**
-     * 重启青少年模式
-     *
-     * @param monitoring_pwd
-     * @return
-     */
-    @FormUrlEncoded
-    @POST("index.php/Api/Monitoring/checkMoPwd")
-    LiveData<ApiResponse<BaseApiResult>> checkMoPwd(
-            @Field("monitoring_pwd") String monitoring_pwd);
-
-    /**
-     * 检查密码输入（青少年模式）
-     *
-     * @param monitoring_pwd
-     * @return
-     */
-    @FormUrlEncoded
-    @POST("index.php/Api/Monitoring/upCheckMoPwd")
-    LiveData<ApiResponse<BaseApiResult>> upCheckMoPwd(
-            @Field("monitoring_pwd") String monitoring_pwd);
-
-    /**
-     * 关闭青少年模式
-     *
-     * @param monitoring_pwd
-     * @return
-     */
-    @FormUrlEncoded
-    @POST("index.php/Api/Monitoring/closeMonitoring")
-    LiveData<ApiResponse<BaseApiResult>> closeMonitoring(
-            @Field("monitoring_pwd") String monitoring_pwd);
-
-    /**
-     * 设置青少年密码
-     *
-     * @param monitoring_pwd
-     * @return
-     */
-    @FormUrlEncoded
-    @POST("index.php/Api/Monitoring/setChildPwd")
-    LiveData<ApiResponse<BaseApiResult>> setChildPwd(
-            @Field("monitoring_pwd") String monitoring_pwd);
-
-    /**
-     * 修改青少年密码
-     *
-     * @param monitoring_pwd
-     * @return
-     */
-    @FormUrlEncoded
-    @POST("index.php/Api/Monitoring/upChildPwd")
-    LiveData<ApiResponse<BaseApiResult>> upChildPwd(
-            @Field("monitoring_pwd") String monitoring_pwd);
-
-    /**
-     * 检查是否开启家长模式
-     *
-     * @return
-     */
-    @POST("index.php/Api/Monitoring/checkParStatus")
-    LiveData<ApiResponse<BaseApiResult>> checkParStatus();
-
-    /**
-     * 重启家长模式
-     *
-     * @param parents_pwd
-     * @return
-     */
-    @FormUrlEncoded
-    @POST("index.php/Api/Monitoring/checkPaPwd")
-    LiveData<ApiResponse<BaseApiResult>> checkPaPwd(
-            @Field("parents_pwd") String parents_pwd);
-
-    /**
-     * 家长模式密码校验
-     *
-     * @param parents_pwd
-     * @return
-     */
-    @FormUrlEncoded
-    @POST("index.php/Api/Monitoring/upCheckPaPwd")
-    LiveData<ApiResponse<BaseApiResult>> upCheckPaPwd(
-            @Field("parents_pwd") String parents_pwd);
-
-    /**
-     * 关闭家长模式
-     *
-     * @param parents_pwd
-     * @return
-     */
-    @FormUrlEncoded
-    @POST("index.php/Api/Monitoring/closeParent")
-    LiveData<ApiResponse<BaseApiResult>> closeParent(
-            @Field("parents_pwd") String parents_pwd);
-
-    /**
-     * 设置家长模式密码
-     *
-     * @param parents_pwd
-     * @return
-     */
-    @FormUrlEncoded
-    @POST("index.php/Api/Monitoring/setParentPwd")
-    LiveData<ApiResponse<BaseApiResult>> setParentPwd(
-            @Field("parents_pwd") String parents_pwd);
-
-    /**
-     * 修改家长模式密码
-     *
-     * @param parents_pwd
-     * @return
-     */
-    @FormUrlEncoded
-    @POST("index.php/Api/Monitoring/upParentPwd")
-    LiveData<ApiResponse<BaseApiResult>> upParentPwd(
-            @Field("parents_pwd") String parents_pwd);
-
-    /**
-     * 青少年时间锁
-     *
-     * @return
-     */
-    @POST("index.php/Api/Monitoring/checkLock")
-    LiveData<ApiResponse<BaseApiResult<YoungerTimeBean>>> checkLock();
-
-    /**
-     * 开启家长模式或青少年模式后，弹防沉迷框
-     *
-     * @return
-     */
-    @POST("index.php/Api/Monitoring/checkPop")
-    LiveData<ApiResponse<BaseApiResult>> checkPop();
-
-    /**
-     * 22.00-6.00不允许任意操作
-     *
-     * @return
-     */
-    @POST("index.php/Api/Monitoring/checkConsLock")
-    LiveData<ApiResponse<BaseApiResult<NightLockBean>>> checkConsLock();
-
-    /**
-     * 22.00-6.00不允许任意操作
-     *
-     * @return
-     */
-    @GET("index.php/Api/Member/getMakeFace")
-    LiveData<ApiResponse<BaseApiResult<FaceRequestBean>>> getMakeFace();
-
-    /**
-     * 修改青少年上锁时间
-     *
-     * @param monitoring_pwd
-     * @return
-     */
-    @FormUrlEncoded
-    @POST("index.php/Api/Monitoring/startTeenagers")
-    LiveData<ApiResponse<BaseApiResult>> startTeenagers(
-            @Field("monitoring_pwd") String monitoring_pwd);
-
-    /**
      * 充值权限
      *
      * @return
@@ -1408,73 +1130,6 @@ public interface RetrofitApi {
     @POST("index.php/Api/Member/hobby_feature_edit")
     LiveData<ApiResponse<BaseApiResult>> hobby_feature_edit(@Field("hobby_id") String hobby_id, @Field("feature_id") String feature_id);
 
-    /**
-     * 嘉宾累计相亲时长
-     *
-     * @return
-     */
-    @POST("index.php/Api/Member/taskProgress")
-    LiveData<ApiResponse<BaseApiResult<TaskProgressBean>>> taskProgress();
-
-    /**
-     * 首页榜单
-     *
-     * @return
-     */
-    @GET("index.php/Api/Ranklist/indexrank")
-    LiveData<ApiResponse<BaseApiResult<RankList>>> indexrank();
-
-    /**
-     * 邀请提示属性页
-     *
-     * @return
-     */
-    @GET("index.php/Api/Member/inviteMemberInfo")
-    LiveData<ApiResponse<BaseApiResult<InviteAlertMemberBean>>> inviteMemberInfo(@Query("code") String code);
-
-    /**
-     * 初始化绑定邀请人接口
-     *
-     * @return
-     */
-    @GET("index.php/Api/Member/initInvite")
-    LiveData<ApiResponse<BaseApiResult<InitInviteBean>>> initInvite();
-
-//
-//    // 关注动态
-//    @GET("dynamic/findDynamicVoPages4Follow")
-//    Observable<ResponseModel<AttenDynamicBean>> loadDynamicList(@Field("content") String content,
-//                                                                @Field("image") String image,
-//                                                                @Query("voice") String voice);
-
-
-    /**
-     * 发布动态
-     *
-     * @param content 内容
-     * @param image   图片逗号分隔字符串
-     * @param voice   音频url
-     * @return
-     */
-    @FormUrlEncoded
-    @POST("index.php/api/forum/addforum")
-    Observable<ResponseModel<String>> addDynamic(@Field("content") String content,
-                                                 @Field("image") String image,
-                                                 @Field("voice") String voice,
-                                                 @Field("forum_voice_time") String forum_voice_time,
-                                                 @Field("SecurityToken") String SecurityToken);
-
-    /**
-     * 点赞
-     *
-     * @param forum_id 点赞贴id
-     * @param type     1点赞2取消赞
-     * @return
-     */
-    @FormUrlEncoded
-    @POST("index.php/api/report/enjoy")
-    Observable<ResponseModel<String>> toEnjoytDynamic(@Field("forum_id") String forum_id,
-                                                      @Field("type") String type);
 
     /**
      * 举报内容选项
@@ -1627,6 +1282,16 @@ public interface RetrofitApi {
     @FormUrlEncoded
     @POST("index.php/api/user/realuser")
     Observable<ResponseModel<String>> realuser(@Field("name") String name, @Field("idcard") String idcard);
+
+
+    /**
+     * 修改性别
+     *
+     * @return
+     */
+    @FormUrlEncoded
+    @POST("index.php/Api/Languageroom/setSex")
+    Observable<ResponseModel<BaseApiResult>> sexEdit(@Field("sex") String sex);
 
     /**
      * 用户在线状态更新
@@ -1945,13 +1610,7 @@ public interface RetrofitApi {
     @POST("index.php/Api/Member/task_reward_receive")
     LiveData<ApiResponse<BaseApiResult>> taskReceive(@Field("type") String type, @Field("task_id") String task_id);
 
-    /**
-     * 分享回调
-     *
-     * @return
-     */
-    @POST("index.php/Api/Member/share")
-    LiveData<ApiResponse<BaseApiResult>> shareCallBack();
+
 
     /**
      * 我的守护/守护我的
@@ -2002,4 +1661,19 @@ public interface RetrofitApi {
      */
     @POST("index.php/Api/Member/listBlack")
     LiveData<ApiResponse<BaseApiResult<List<BlockVo>>>> getBlockList();
+
+    /**
+     * 分享回调
+     *
+     * @return
+     */
+    @POST("index.php/Api/Member/share")
+    LiveData<ApiResponse<BaseApiResult>> shareCallBack();
+
+    /**
+     * 美艳参数
+     * @return
+     */
+    @GET("index.php/Api/Member/getMakeFace")
+    LiveData<ApiResponse<BaseApiResult<FaceRequestBean>>> getMakeFace();
 }

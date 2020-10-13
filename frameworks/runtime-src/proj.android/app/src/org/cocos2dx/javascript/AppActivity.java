@@ -1,50 +1,30 @@
-/****************************************************************************
- Copyright (c) 2015-2016 Chukong Technologies Inc.
- Copyright (c) 2017-2018 Xiamen Yaji Software Co., Ltd.
-
- http://www.cocos2d-x.org
-
- Permission is hereby granted, free of charge, to any person obtaining a copy
- of this software and associated documentation files (the "Software"), to deal
- in the Software without restriction, including without limitation the rights
- to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- copies of the Software, and to permit persons to whom the Software is
- furnished to do so, subject to the following conditions:
-
- The above copyright notice and this permission notice shall be included in
- all copies or substantial portions of the Software.
-
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- THE SOFTWARE.
- ****************************************************************************/
 package org.cocos2dx.javascript;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
-import android.graphics.Point;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.Settings;
+import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
 import android.util.Log;
-import android.view.Display;
+import android.view.View;
 
-import org.cocos2dx.javascript.ui.main.MainActivity;
 import org.cocos2dx.javascript.ui.splash.activity.SplashActivity;
 import org.cocos2dx.lib.Cocos2dxActivity;
-import org.cocos2dx.lib.Cocos2dxGLSurfaceView;
 import org.cocos2dx.lib.Cocos2dxHelper;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -61,17 +41,15 @@ import com.deepsea.mua.core.utils.ToastUtils;
 import com.deepsea.mua.core.view.floatwindow.permission.PermissionUtil;
 import com.deepsea.mua.core.wxpay.WxPay;
 import com.deepsea.mua.core.wxpay.WxpayBroadcast;
-import com.deepsea.mua.stub.api.RetrofitApi;
-import com.deepsea.mua.stub.data.User;
+import com.deepsea.mua.stub.dialog.AAlertDialog;
+import com.deepsea.mua.stub.entity.ChessLoginParam;
+import com.deepsea.mua.stub.entity.InstallParamVo;
 import com.deepsea.mua.stub.entity.QPWxOrder;
-import com.deepsea.mua.stub.entity.WxOrder;
 import com.deepsea.mua.stub.jpush.JpushUtils;
-import com.deepsea.mua.stub.mvp.NewSubscriberCallBack;
-import com.deepsea.mua.stub.network.HttpHelper;
+import com.deepsea.mua.stub.permission.PermissionCallback;
 import com.deepsea.mua.stub.utils.BitmapUtils;
 import com.deepsea.mua.stub.utils.Constant;
 import com.deepsea.mua.stub.utils.SharedPrefrencesUtil;
-import com.deepsea.mua.stub.utils.UserUtils;
 import com.fm.openinstall.OpenInstall;
 import com.fm.openinstall.listener.AppInstallAdapter;
 import com.fm.openinstall.listener.AppWakeUpAdapter;
@@ -85,6 +63,7 @@ import com.umeng.socialize.media.UMImage;
 import com.umeng.socialize.media.UMWeb;
 import com.uuzuche.lib_zxing.activity.CodeUtils;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -390,11 +369,107 @@ public class AppActivity extends Cocos2dxActivity {
      * jpush 极光一键登录
      */
     public static void login(String type) {
-        boolean hasPermission = PermissionUtil.hasSelfPermission(ccActivity, "android.permission.READ_PHONE_STATE");
-        if (!hasPermission) {
-            ActivityCompat.requestPermissions(ccActivity, new String[]{Manifest.permission.READ_PHONE_STATE}, 1);
-            return;
+        String permissionStr = Manifest.permission.READ_PHONE_STATE;
+
+        String[] permission = new String[]{permissionStr};
+        boolean hasPermission = PermissionUtil.hasSelfPermission(ccActivity, permissionStr);
+        Log.d("shouldShowRational", "hasPermission" + hasPermission);
+
+        com.deepsea.mua.stub.permission.PermissionUtil.request(ccActivity, permission, new PermissionCallback() {
+            @Override
+            public void onPermissionGranted() {
+                operateLogin(type);
+            }
+
+            @Override
+            public void shouldShowRational(String[] rationalPermissons, boolean before) {
+                if (type.equals("wx")) {
+                    ActivityCompat.requestPermissions(ccActivity, new String[]{permissionStr}, request_code_wx);
+                } else {
+                    ActivityCompat.requestPermissions(ccActivity, new String[]{permissionStr}, request_code_jpush);
+
+                }
+
+            }
+
+            @Override
+            public void onPermissonReject(String[] rejectPermissons) {
+                Log.d("shouldShowRational", "onPermissonReject");
+                showPermissionSettingDialog(0);
+            }
+        });
+
+
+    }
+
+    private static void showPermissionSettingDialog(int type) {
+        ccActivity.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                AAlertDialog aAlertDialog = new AAlertDialog(ccActivity);
+                String alert = "";
+                if (type == 0) {
+                    alert = "请前往 应用->权限管理中打开《获取手机信息》权限，否则功能无法正常运行！";
+                } else {
+                    alert = "请前往 应用->权限管理中打开《读写手机存储》权限，否则功能无法正常运行！";
+
+                }
+                aAlertDialog.setMessage(alert);
+                aAlertDialog.setMessageSize(10);
+                aAlertDialog.setButtonInLogin("确定", new AAlertDialog.OnClickListener() {
+                    @Override
+                    public void onClick(View v, Dialog dialog) {
+                        dialog.dismiss();
+                        Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION);
+                        intent.setData(Uri.parse("package:" + ccActivity.getPackageName()));
+                        ccActivity.startActivityForResult(intent, 0);
+                    }
+                });
+                aAlertDialog.show();
+            }
+        });
+
+
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        switch (requestCode) {
+            case request_code_invite:
+                if (ContextCompat.checkSelfPermission(ccActivity,
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                        != PackageManager.PERMISSION_GRANTED) {
+                    getInvitationCode(invireUrl, uid);
+                } else {
+                    operateGetInvitationCode(invireUrl, uid);
+                }
+                break;
+            case request_code_wx:
+                if (ContextCompat.checkSelfPermission(ccActivity,
+                        Manifest.permission.READ_PHONE_STATE)
+                        == PackageManager.PERMISSION_GRANTED) {
+                    operateLogin("wx");
+                }
+                break;
+            case request_code_jpush:
+                if (ContextCompat.checkSelfPermission(ccActivity,
+                        Manifest.permission.READ_PHONE_STATE)
+                        == PackageManager.PERMISSION_GRANTED) {
+                    operateLogin("jpush");
+                }
+                break;
+            case request_code_deviceInfo:
+                if (ContextCompat.checkSelfPermission(ccActivity,
+                        Manifest.permission.READ_PHONE_STATE)
+                        == PackageManager.PERMISSION_GRANTED) {
+                    getPhoneInfo(phoneInfoType);
+                }
+                break;
         }
+    }
+
+    private static void operateLogin(String type) {
         if (type.equals("wx")) {
             loginWx();
         } else if (type.equals("jpush")) {
@@ -428,7 +503,7 @@ public class AppActivity extends Cocos2dxActivity {
                     }
                     ccActivity.RunJS_obj("THIRD_LOGIN_RESULT", result.toString());
                 } else {
-                    ToastUtils.showToast("一键登录失败，请尝试其他登录方式");
+                    ToastUtils.showToast("一键登录失败，请尝试其他登录方式" + code);
                 }
                 JVerificationInterface.dismissLoginAuthActivity(false, new RequestCallback<String>() {
                     @Override
@@ -493,12 +568,37 @@ public class AppActivity extends Cocos2dxActivity {
      * model 手机型号
      * rssi wifi强度
      */
+    private String phoneInfoType;
+
     public static void getPhoneInfo(String type) {
-        boolean hasPermission = PermissionUtil.hasSelfPermission(ccActivity, "android.permission.READ_PHONE_STATE");
-        if (!hasPermission) {
-            ActivityCompat.requestPermissions(ccActivity, new String[]{Manifest.permission.READ_PHONE_STATE}, 1);
-            return;
-        }
+        ccActivity.phoneInfoType = type;
+        String permissionStr = Manifest.permission.READ_PHONE_STATE;
+        String[] permission = new String[]{permissionStr};
+        boolean hasPermission = PermissionUtil.hasSelfPermission(ccActivity, permissionStr);
+        Log.d("getPhoneInfo", hasPermission + "");
+        com.deepsea.mua.stub.permission.PermissionUtil.request(ccActivity, permission, new PermissionCallback() {
+            @Override
+            public void onPermissionGranted() {
+                operateGetphoneInfo(type);
+            }
+
+            @Override
+            public void shouldShowRational(String[] rationalPermissons, boolean before) {
+
+                ActivityCompat.requestPermissions(ccActivity, new String[]{permissionStr}, request_code_deviceInfo);
+
+
+            }
+
+            @Override
+            public void onPermissonReject(String[] rejectPermissons) {
+                showPermissionSettingDialog(0);
+            }
+        });
+//        }
+    }
+
+    private static void operateGetphoneInfo(String type) {
         String info = "";
         switch (type) {
             case "imei":
@@ -516,20 +616,20 @@ public class AppActivity extends Cocos2dxActivity {
         ccActivity.RunJS("deviceInfo", info);
     }
 
-    public static void toast(String msg) {
-        ToastUtils.showToast(msg);
-    }
 
     /**
      * 分享-图片
      *
      * @param platform 平台WEIXIN, 微信  WEIXIN_CIRCLE 微信朋友圈
-     * @param url      图片地址
+     * @param fileName 图片名字
      */
-    public static void shareImage(String platform, String url) {
-//        String img = "https://dss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1812993978,4158651947&fm=26&gp=0.jpg";
+    public static void shareImage(String platform, String fileName) {
+
+        File file = ccActivity.getFilesDir();
+        File imgFile = new File(file, fileName);
+        Bitmap bitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath(), getBitmapOption(2));
 //        UMImage th = new UMImage(ccActivity, url);//网络图片
-        UMImage image = new UMImage(ccActivity, url);//网络图片
+        UMImage image = new UMImage(ccActivity, bitmap);//data/data图片
         SHARE_MEDIA share_media;
         if (platform.equals("WEIXIN")) {
             share_media = SHARE_MEDIA.WEIXIN;
@@ -539,20 +639,31 @@ public class AppActivity extends Cocos2dxActivity {
         new ShareAction(ccActivity).setPlatform(share_media).withMedia(image).share();
     }
 
+    private static BitmapFactory.Options getBitmapOption(int inSampleSize) {
+        System.gc();
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inPurgeable = true;
+        options.inSampleSize = inSampleSize;
+        return options;
+    }
+
     /**
      * 分享-文章
      *
      * @param title       标题
      * @param platform    平台WEIXIN, 微信  WEIXIN_CIRCLE 微信朋友圈
      * @param description 描述
-     * @param thumbUrl    缩略图
+     * @param fileName    缩略图
      */
-    public static void shareArticle(String platform, String title, String description, String url, String thumbUrl) {
+    public static void shareArticle(String platform, String title, String description, String url, String fileName) {
         UMImage thumb = null;
-        if (!TextUtils.isEmpty(thumbUrl)) {
-            thumb = new UMImage(ccActivity, thumbUrl);//网络图片
+        if (!TextUtils.isEmpty(fileName)) {
+            File file = ccActivity.getFilesDir();
+            File imgFile = new File(file, fileName);
+            Bitmap bitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath(), getBitmapOption(2));
+            thumb = new UMImage(ccActivity, bitmap);//data/data图片
         } else {
-            thumb = new UMImage(ccActivity, R.mipmap.ic_launcher);//本地图片
+            thumb = new UMImage(ccActivity, R.mipmap.logo);//本地图片
         }
         UMWeb web = new UMWeb(url);
         web.setTitle(title);//标题
@@ -571,8 +682,7 @@ public class AppActivity extends Cocos2dxActivity {
      * 激励视频
      * 返回 rewardVideoCallback（）0成功 -1 失败
      */
-    public static void showRewardVideo(String codeId) {
-        String userId = "123";
+    public static void showRewardVideo(String userId) {
         ccActivity.runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -595,68 +705,67 @@ public class AppActivity extends Cocos2dxActivity {
 
     }
 
-    /**
-     * 用户信息
-     * 如果为空则删除用户信息,定义空为“”
-     */
-    public static void operateUserInfo(String data) {
-        if (TextUtils.isEmpty(data)) {
-            UserUtils.clearUser();
-        } else {
-            User user = JsonConverter.fromJson(data, User.class);
-            UserUtils.saveUser(user);
-        }
-    }
 
     /**
      * 生成二维码
      *
      * @param url return 本地路径JPUSH_PKGNAME
      */
-    public static void getInvitationCode(String url) {
-        boolean hasPermission = PermissionUtil.hasSelfPermission(ccActivity, "android.permission.WRITE_EXTERNAL_STORAGE");
-        if (!hasPermission) {
-            ActivityCompat.requestPermissions(ccActivity, new String[]{Manifest.permission.READ_PHONE_STATE}, 2);
-            return;
+    private static final int request_code_invite = 1001;
+    private static final int request_code_wx = 1002;
+    private static final int request_code_jpush = 1003;
+    private static final int request_code_deviceInfo = 1004;
+    private String invireUrl;
+    private String uid;
+
+    public static void getInvitationCode(String url, String uid) {
+        ccActivity.invireUrl = url;
+        ccActivity.uid = uid;
+        String permissionStr = Manifest.permission.WRITE_EXTERNAL_STORAGE;
+        String[] permission = new String[]{permissionStr};
+
+        boolean hasPermission = PermissionUtil.hasSelfPermission(ccActivity, permissionStr);
+
+        if (hasPermission) {
+            operateGetInvitationCode(url, uid);
+        } else {
+            com.deepsea.mua.stub.permission.PermissionUtil.request(ccActivity, permission, new PermissionCallback() {
+                @Override
+                public void onPermissionGranted() {
+                    operateGetInvitationCode(url, uid);
+                }
+
+                @Override
+                public void shouldShowRational(String[] rationalPermissons, boolean before) {
+                    ActivityCompat.requestPermissions(ccActivity, new String[]{permissionStr}, request_code_invite);
+                }
+
+                @Override
+                public void onPermissonReject(String[] rejectPermissons) {
+                    showPermissionSettingDialog(1);
+                }
+            });
         }
+    }
+
+    private static void operateGetInvitationCode(String url, String uid) {
         Bitmap mBitmap = CodeUtils.createImage(url, 400, 400, null);
-        String picPath = BitmapUtils.saveBitmap(ccActivity, mBitmap);
-        ToastUtils.showToast(picPath);
+        String picPath = BitmapUtils.saveBitmap(ccActivity, mBitmap, uid);
+        ccActivity.RunJS("inviteCodeCallback", picPath);
     }
 
-    /**
-     * 申请动态权限
-     */
-    public static void requestPermission() {
-        List<String> mPermissionList = new ArrayList<>();
-
-        String[] permissions = new String[]{
-                Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                Manifest.permission.RECORD_AUDIO,
-                Manifest.permission.ACCESS_FINE_LOCATION,
-                Manifest.permission.CAMERA};
-        for (int i = 0; i < permissions.length; i++) {
-            if (ContextCompat.checkSelfPermission(ccActivity, permissions[i]) != PackageManager.PERMISSION_GRANTED) {
-                mPermissionList.add(permissions[i]);//添加还未授予的权限
-            }
-        }
-        ToastUtils.showToast(mPermissionList.size() + "");
-        if (mPermissionList.size() > 0) {
-            ActivityCompat.requestPermissions(ccActivity, permissions, 3);
-        }
-
-    }
 
     /**
      * 获取安装参数
      */
 
     public static void getInstallParam() {
+        Log.d("OpenInstall", "OpenInstall");
+
         //获取OpenInstall安装数
         OpenInstall.getInstall(new AppInstallAdapter() {
             @Override
             public void onInstall(AppData appData) {
-                ToastUtils.showToast(JsonConverter.toJson(appData));
                 //获取渠道数据
                 String channelCode = appData.getChannel();
                 //获取自定义数据
@@ -665,8 +774,12 @@ public class AppActivity extends Cocos2dxActivity {
                 ccActivity.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        SharedPrefrencesUtil.saveData(ccActivity, "inviteCode", "inviteCode", bindData);
-                        SharedPrefrencesUtil.saveData(ccActivity, "channelCode", "channelCode", channelCode);
+                        String pid = "";
+                        if (!TextUtils.isEmpty(bindData)) {
+                            InstallParamVo vo = JsonConverter.fromJson(bindData, InstallParamVo.class);
+                            pid = vo.getInstallPid();
+                        }
+                        ccActivity.RunJS("installParam", pid);
                     }
                 });
             }
@@ -674,7 +787,6 @@ public class AppActivity extends Cocos2dxActivity {
             @Override
             public void onInstallFinish(AppData appData, Error error) {
                 super.onInstallFinish(appData, error);
-                SharedPrefrencesUtil.saveData(ccActivity, "isFirstInstall", "isFirstInstall", false);
 
             }
         });
@@ -690,6 +802,7 @@ public class AppActivity extends Cocos2dxActivity {
         ClipboardManager cm = (ClipboardManager) ccActivity.getSystemService(Context.CLIPBOARD_SERVICE);
         ClipData mClipData = ClipData.newPlainText("Label", content);
         cm.setPrimaryClip(mClipData);
+        ToastUtils.showToast("复制成功");
     }
 
     /**
@@ -697,8 +810,9 @@ public class AppActivity extends Cocos2dxActivity {
      */
     public static void jumpToBlindDate(String userInfo) {
         Log.d("=====jumpToBlindDate", userInfo);
-        operateUserInfo(userInfo);
+        ChessLoginParam param = JsonConverter.fromJson(userInfo, ChessLoginParam.class);
         Intent intent = new Intent(ccActivity, SplashActivity.class);
+        intent.putExtra("chessLoginParam", param);
         ccActivity.startActivity(intent);
 
     }
@@ -710,7 +824,6 @@ public class AppActivity extends Cocos2dxActivity {
         JVerificationInterface.clearPreLoginCache();
         unregisterWxpayResult();
         wakeUpAdapter = null;
-
     }
 
 

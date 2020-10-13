@@ -1,84 +1,84 @@
-
 /**
  * HallScene
  */
 load('game/ui/scene/HallScene', function () {
     let BaseScene = include('public/ui/BaseScene')
     let ResConfig = include('game/config/ResConfig')
-    let HallMdt =  include('game/ui/scene/HallMdt')
+    let HallMdt = include('game/ui/scene/HallMdt')
     let AniPlayer = ResConfig.AniPlayer
     let PlayerPlay = ResConfig.PlayerPlay
     let HallScene = BaseScene.extend({
         _className: 'HallScene',
         RES_BINDING: function () {
             return {
-                'topPnl/photoBtn': { onClicked: this.onPhotoClick  },
-                'topPnl/guiZuBtn': { onClicked: this.onMemberClick },
-                'topPnl/namePnl': { onClicked: this.onGonggaoClick  },
-                'topPnl/coinPnl': {  },
-                'topPnl/coinPnl/coinAddBtn': { onClicked: this.onCoinShopClick },
-                'topPnl/diamondsPnl': {  },
-                'topPnl/diamondsPnl/diamondsAddBtn': { onClicked: this.onCoinShopClick },
-                'topPnl/fuKaPnl': {  },
-                'topPnl/fuKaPnl/fuKaAddBtn': { onClicked: this.onCoinShopClick },
-                'topPnl/emailBtn': { onClicked: this.onSettingClick },
-                'topPnl/moreBtn': { onClicked: this.onMoreClick },
-                'topPnl/morePnl': { onClicked: this.onHideMorePnlClick },
-                'topPnl/morePnl/confBtn': { onClicked: this.onHideMorePnlClick },
-                'topPnl/morePnl/feedbackBtn': { onClicked: this.onFeedbackBtnClick },
-                'topPnl/morePnl/customerServiceBtn': { onClicked: this.onHideMorePnlClick },
-                'topPnl/morePnl/authenticationBtn': { onClicked: this.onAuthenticationClick },
+                'topPnl/photoBtn': {onClicked: this.onPhotoClick},
+                'topPnl/guiZuBtn': {onClicked: this.onMemberClick},
+                'topPnl/namePnl': {onClicked: this.onGonggaoClick},
+                'topPnl/coinPnl': {},
+                'topPnl/coinPnl/coinAddBtn': {onClicked: this.onCoinShopClick},
+                'topPnl/diamondsPnl': {},
+                'topPnl/diamondsPnl/diamondsAddBtn': {onClicked: this.onCoinShopClick},
+                'topPnl/fuKaPnl': {},
+                'topPnl/fuKaPnl/fuKaAddBtn': {onClicked: this.onCoinShopClick},
+                'topPnl/emailBtn': {onClicked: this.onEmailBtnClick},
+                'topPnl/moreBtn': {onClicked: this.onMoreClick},
+                'topPnl/morePnl': {onClicked: this.onHideMorePnlClick},
+                'topPnl/morePnl/setBtn': {onClicked: this.onSetBtnClick},
+                'topPnl/morePnl/feedbackBtn': {onClicked: this.onFeedbackBtnClick},
+                'topPnl/morePnl/customerServiceBtn': {onClicked: this.onHideMorePnlClick},
+                'topPnl/morePnl/authenticationBtn': {onClicked: this.onAuthenticationClick},
 
 
-                'bmPnl/fuKaShopBtn': { onClicked: this.onFukaShopClick },
-                'bmPnl/coinShopBtn': { onClicked: this.onCoinShopClick },
-                'bmPnl/bmListPnl/signPnl/signBtn': { onClicked: this.onSignBtnClick },
-                'bmPnl/bmListPnl/taskPnl': { onClicked: this.onTaskClick },
-                'bmPnl/bmListPnl/rolesPnl': { onClicked: this.onRoleClick },
-                'bmPnl/startQuickPnl/startQuickBtn': { onClicked: this.onSettingClick },
+                'bmPnl/fuKaShopBtn': {onClicked: this.onFukaShopClick},
+                'bmPnl/coinShopBtn': {onClicked: this.onCoinShopClick},
+                'bmPnl/bmListPnl/signPnl/signBtn': {onClicked: this.onSignBtnClick},
+                'bmPnl/bmListPnl/taskPnl': {onClicked: this.onTaskClick},
+                'bmPnl/bmListPnl/rolesPnl': {onClicked: this.onRoleClick},
+                'bmPnl/startQuickPnl/startQuickBtn': {onClicked: this.onRoleClick},
 
 
-                'leftPnl/invitationPnl/invitationBtn': { onClicked: this.onInvitationClick },
-                'leftPnl/turnTablePnl/turnTableNd': {  },
-                'leftPnl/turnTablePnl/turnTableNd/turnTableBtn': { onClicked: this.onTurnTableClick },
-                'leftPnl/cashCowPnl/cashCowNd': {  },
-                'leftPnl/cashCowPnl/cashCowNd/cashCowBtn': { onClicked: this.onCashCowClick },
+                'leftPnl/invitationPnl/invitationBtn': {onClicked: this.onInvitationClick},
+                'leftPnl/turnTablePnl/turnTableNd': {},
+                'leftPnl/turnTablePnl/turnTableNd/turnTableBtn': {onClicked: this.onTurnTableClick},
+                'leftPnl/cashCowPnl/cashCowNd': {},
+                'leftPnl/cashCowPnl/cashCowNd/cashCowBtn': {onClicked: this.onCashCowClick},
 
-                'rightPnl/aniNd': { },
-                'rightPnl/coinGameNd': { },
-                'rightPnl/coinGameNd/coinGameBtn': { onClicked: this.onCoinGameClick },
-                'rightPnl/liveBroadcastNd': { },
-                'rightPnl/liveBroadcastNd/liveBroadcastBtn': { onClicked: this.onLiveBroadcastClick },
-                'rightPnl/matchNd': { },
-                'rightPnl/matchNd/matchBtn': { onClicked: this.onGoAreanClick },
-                'rightPnl/changeAreaNd': { },
-                'rightPnl/changeAreaNd/changeAreaBtn': { onClicked: this.goChooseCity },
-
-
+                'rightPnl/aniNd': {},
+                'rightPnl/coinGameNd': {},
+                'rightPnl/coinGameNd/coinGameBtn': {onClicked: this.onCoinGameClick},
+                'rightPnl/liveBroadcastNd': {},
+                'rightPnl/liveBroadcastNd/liveBroadcastBtn': {onClicked: this.onLiveBroadcastClick},
+                'rightPnl/matchNd': {},
+                'rightPnl/matchNd/matchBtn': {onClicked: this.onGoAreanClick},
+                'rightPnl/changeAreaNd': {},
+                'rightPnl/changeAreaNd/changeAreaBtn': {onClicked: this.goChooseCity},
 
 
-                'popUpPnl/goShopPnl/canlBtn': { onClicked: this.onGoShopClick },
-                'popUpPnl/goShopPnl/exchangeBtn': { onClicked: this.onGoShopClick },
+                'popUpPnl/goShopPnl/canlBtn': {onClicked: this.onGoShopClick},
+                'popUpPnl/goShopPnl/exchangeBtn': {onClicked: this.onGoShopClick},
 
-                'popUpPnl/signPnl/acceptsPnl/closeBtn': { onClicked: this.onGoShopClick },
-                'popUpPnl/signPnl/acceptsPnl/determineBtn': { onClicked: this.onGoShopClick },
-                'popUpPnl/signPnl/rulePnl/closeBtn': { onClicked: this.onGoShopClick },
-
+                'popUpPnl/signPnl/acceptsPnl/closeBtn': {onClicked: this.onGoShopClick},
+                'popUpPnl/signPnl/acceptsPnl/determineBtn': {onClicked: this.onGoShopClick},
+                'popUpPnl/signPnl/rulePnl/closeBtn': {onClicked: this.onGoShopClick},
 
 
             }
         },
 
-        onFukaShopClick: function() {
+        onEmailBtnClick: function () {
+            appInstance.gameAgent().Tips('敬请期待！！！')
+        },
+
+        onFukaShopClick: function () {
             appInstance.gameAgent().addPopUI(ResConfig.Ui.FukaShopLayer)
         },
 
         onGoAreanClick: function () {
-
+            appInstance.gameAgent().addPopUI(ResConfig.Ui.ArenaLayer)
         },
 
         onPhotoClick: function () {
-          //  this.personalDataPnl.setVisible(true)
+            //  this.personalDataPnl.setVisible(true)
             appInstance.gameAgent().addPopUI(ResConfig.Ui.PersonalLayer)
         },
 
@@ -120,7 +120,7 @@ load('game/ui/scene/HallScene', function () {
 
         },
 
-        onGoCashCowLayer : function () {
+        onGoCashCowLayer: function () {
             appInstance.gameAgent().addPopUI(ResConfig.Ui.CashCowLayer)
         },
 
@@ -162,11 +162,12 @@ load('game/ui/scene/HallScene', function () {
         onGonggaoClick: function () {
 
         },
-        onSettingClick: function () {
-            let settingClass = include('game/ui/layer/setting/SettingLayer')
-            let settingUI = appInstance.uiManager().createPopUI(settingClass)
-            appInstance.sceneManager().getCurScene().addChild(settingUI)
+
+        onSetBtnClick: function () {
+            this.onHideMorePnlClick()
+            appInstance.gameAgent().addPopUI(ResConfig.Ui.SetLayer)
         },
+
         goChooseCity: function () {
             cc.log('----------11111111111111111111111111---------------------------')
             appInstance.gameAgent().addPopUI(ResConfig.Ui.ChooseCityLayer)
@@ -174,16 +175,16 @@ load('game/ui/scene/HallScene', function () {
 
         onMoreClick: function () {
             let isAuthentication = appInstance.dataManager().getUserData().isAuthentication
-            if(isAuthentication != 0){
+            if (isAuthentication != 0) {
                 this.authenticationBtn.setVisible(true)
-            }else{
+            } else {
                 this.authenticationBtn.setVisible(false)
             }
             this.morePnl.setVisible(true);
         },
 
         onChangeAreaClick: function () {
-           // 跳转到选择城市界面
+            // 跳转到选择城市界面
         },
 
         onStartQuickClick: function () {
@@ -211,7 +212,7 @@ load('game/ui/scene/HallScene', function () {
         },
 
         onCustomerServiceClick: function () {
-          //一个弹框
+            //一个弹框
             this.onHideMorePnlClick()
         },
 
@@ -222,6 +223,10 @@ load('game/ui/scene/HallScene', function () {
 
         onEnter: function () {
             this._super()
+            if (appInstance.dataManager().getUserData().MatchJinjiGaming) {
+                this.showMatchJinjiLayer(appInstance.dataManager().getUserData().MatchJinjiGaming)
+                appInstance.dataManager().getUserData().MatchJinjiGaming = null
+            }
         },
 
         onExit: function () {
@@ -236,26 +241,8 @@ load('game/ui/scene/HallScene', function () {
 
         },
 
-        updatePlayerAni: function (pRole) {
 
-            pRole = pRole || this._pRole
 
-            if (pRole !=0 && !pRole) {
-                return
-            }
-
-            this.aniNd.removeAllChildren()
-            let ani = appInstance.gameAgent().gameUtil().getAni(AniPlayer[pRole])
-            this.aniNd.addChild(ani)
-            ani.setPosition(cc.p(0,0))
-            ani.setScale(0.6)
-            ani.setAnimation(0, PlayerPlay.stand, true)
-        },
-
-        /**
-         * 初始化样式
-         * @param selfInfo
-         */
         initView: function (selfInfo) {
             this.initData(selfInfo)
 
@@ -284,49 +271,86 @@ load('game/ui/scene/HallScene', function () {
             this.turnTableNd.addChild(zhuanpanAni)
 
             this.updatePlayerAni()
+
+
+            this.onInitUserData();
+
+            this.morePnl.setVisible(false)
+
         },
 
-        /**
-         * 初始化用户数据
-         */
-        onInitUserData: function () {
+        updatePlayerAni: function (pRole) {
 
+            pRole = pRole || this._pRole
+
+            if (pRole !=0 && !pRole) {
+                return
+            }
+
+            this.aniNd.removeAllChildren()
+            let ani = appInstance.gameAgent().gameUtil().getAni(AniPlayer[pRole])
+            this.aniNd.addChild(ani)
+            ani.setPosition(cc.p(0,0))
+            ani.setScale(0.6)
+            ani.setAnimation(0, PlayerPlay.stand, true)
+        },
+        
+
+        onInitUserData: function () {
             let msg = {}
             appInstance.gameAgent().httpGame().userDataReq(msg)
 
         },
 
-        /**
-         * 更新用户数据
-         * @param data
-         */
-       onUpdateUserData: function (data) {
-          //  cc.log('-----------------onUpdateUserData :' + JSON.stringify(data))
-           let nameNd =  this.namePnl.getChildByName('name')
-           let coinsCnt =  this.coinPnl.getChildByName('coinsCnt')
-           let diamondsCnt =  this.diamondsPnl.getChildByName('diamondsCnt')
-           let fuKaCnt =  this.fuKaPnl.getChildByName('fuKaCnt')
+        loadUrlImage: function (url, cell) {
+            let size = cell.getContentSize();
+            cc.loader.loadImg(url, null, function (err, img) {
+                if ( !err && img) {
+                    var logo = new cc.Sprite(img);
+                    logo.setContentSize(size)
+                    logo.setPosition(cc.p(size.width / 2, size.height / 2))
+                    cell.addChild(logo);
+                }
+            });
+        },
+        showMatchJinjiLayer: function (msg) {
+            if (!this.MatchJinjiLayer) {
+                let MatchJinjiLayer = include('module/mahjong/ui/MatchJinjiLayer')
+                this.MatchJinjiLayer = appInstance.uiManager().createUI(MatchJinjiLayer)
+                this.addChild(this.MatchJinjiLayer)
+            }
+            this.MatchJinjiLayer.updateView(msg)
+        },
+        onUpdateUserData: function (data) {
+            cc.log('-----------------half-onUpdateUserData :' + JSON.stringify(data))
+            let nameNd = this.namePnl.getChildByName('name')
+            let coinsCnt = this.coinPnl.getChildByName('coinsCnt')
+            let diamondsCnt = this.diamondsPnl.getChildByName('diamondsCnt')
+            let fuKaCnt = this.fuKaPnl.getChildByName('fuKaCnt')
+            let photo = this.photoBtn;
 
-           if(data.hasOwnProperty('pname')){
-               nameNd.setString(data.pname)
-           }
+            if (data.hasOwnProperty('pname')) {
+                nameNd.setString(data.pname)
+            }
 
-           if(data.hasOwnProperty('coin')){
-               coinsCnt.setString(data.coin)
-           }
+            if (data.hasOwnProperty('coin')) {
+                coinsCnt.setString(data.coin)
+            }
 
-           if(data.hasOwnProperty('diamonds')){
-               diamondsCnt.setString(data.diamonds)
-           }
+            if (data.hasOwnProperty('diamonds')) {
+                diamondsCnt.setString(data.diamonds)
+            }
 
-           if(data.hasOwnProperty('fuKa')){
-               fuKaCnt.setString(data.fuKa)
-           }
+            if (data.hasOwnProperty('fuKa')) {
+                fuKaCnt.setString(data.fuKa)
+            }
+            if (data.hasOwnProperty('sdkphotourl')) {
+                this.loadUrlImage(data.sdkphotourl, photo)
+            }
 
-           this.updatePlayerAni(data.pRole)
+            this.updatePlayerAni(data.pRole)
 
-       }
-
+        }
 
 
     })

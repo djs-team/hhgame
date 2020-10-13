@@ -6,9 +6,6 @@ import android.arch.lifecycle.ViewModel;
 import com.deepsea.mua.core.network.resource.Resource;
 import com.deepsea.mua.mine.repository.WalletRepository;
 import com.deepsea.mua.stub.data.BaseApiResult;
-import com.deepsea.mua.stub.entity.BlueRoseExchange;
-import com.deepsea.mua.stub.entity.ExchangeBlueRoseRecordListParam;
-import com.deepsea.mua.stub.entity.ExchangeBuleRoseVo;
 import com.deepsea.mua.stub.entity.InitCash;
 import com.deepsea.mua.stub.entity.WalletBean;
 
@@ -32,34 +29,7 @@ public class WalletViewModel extends ViewModel {
         return mRepository.wallet();
     }
 
-    /**
-     * 初始化蓝玫瑰兑换
-     *
-     * @return
-     */
-    public LiveData<Resource<List<BlueRoseExchange>>> initBlueExchange() {
-        return mRepository.initBlueExchange();
-    }
-    public int pageNumber;
 
-    /**
-     * 蓝玫瑰兑换记录
-     *
-     * @return
-     */
-    public LiveData<Resource<ExchangeBlueRoseRecordListParam>> refreshBlueExchangeInfo() {
-        pageNumber=1;
-        return mRepository.blueExchangeInfo(pageNumber);
-    }
-    /**
-     * 蓝玫瑰兑换记录
-     *
-     * @return
-     */
-    public LiveData<Resource<ExchangeBlueRoseRecordListParam>> loadModeBlueExchangeInfo() {
-        pageNumber++;
-        return mRepository.blueExchangeInfo(pageNumber);
-    }
 
     public LiveData<Resource<BaseApiResult>> checkSatus() {
         return mRepository.checkSatus();
@@ -69,9 +39,6 @@ public class WalletViewModel extends ViewModel {
         return mRepository.exchangeRose(coin);
     }
 
-    public LiveData<Resource<BaseApiResult>> exchangeBlue(String num, String giftId) {
-        return mRepository.exchangeBlue(num, giftId);
-    }
 
     public LiveData<Resource<InitCash>> initCash() {
         return mRepository.initCash();

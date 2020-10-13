@@ -142,121 +142,6 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/owner_rl" />
 
-            <LinearLayout
-                android:id="@+id/ll_test"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:visibility="gone"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="@id/room_id_tv">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <Button
-                        android:id="@+id/tv_voice_low"
-                        android:layout_width="70dp"
-                        android:layout_height="wrap_content"
-                        android:text="低音质" />
-
-                    <Button
-                        android:id="@+id/tv_voice_medium"
-                        android:layout_width="70dp"
-                        android:layout_height="wrap_content"
-                        android:text="中音质" />
-
-                    <Button
-                        android:id="@+id/tv_voice_hight"
-                        android:layout_width="70dp"
-                        android:layout_height="wrap_content"
-                        android:text="高音质" />
-
-                    <Button
-                        android:id="@+id/tv_wav"
-                        android:layout_width="70dp"
-                        android:layout_height="wrap_content"
-                        android:text=".wav" />
-
-                    <Button
-                        android:id="@+id/tv_aac"
-                        android:layout_width="70dp"
-                        android:layout_height="wrap_content"
-                        android:text=".aac" />
-
-
-                </LinearLayout>
-
-                <TextView
-                    android:id="@+id/tv_desc"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:text="高音质 - .aac"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"></TextView>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/tv_look_full_service"
-                        android:layout_width="50dp"
-                        android:layout_height="26dp"
-                        android:layout_marginLeft="7dp"
-                        android:layout_marginTop="5dp"
-                        android:background="@drawable/bg_full_service_btn"
-                        android:gravity="center"
-                        android:text="开始录音"
-                        android:textColor="@color/black"
-                        android:textSize="10sp"
-                        android:visibility="visible" />
-
-                    <TextView
-                        android:id="@+id/tv_stop_record"
-                        android:layout_width="50dp"
-                        android:layout_height="26dp"
-                        android:layout_marginLeft="7dp"
-                        android:layout_marginTop="5dp"
-                        android:background="@drawable/bg_full_service_btn"
-                        android:gravity="center"
-                        android:text="停止录音"
-                        android:textColor="@color/black"
-                        android:textSize="10sp"
-                        android:visibility="visible" />
-
-                    <TextView
-                        android:id="@+id/tv_play_record"
-                        android:layout_width="50dp"
-                        android:layout_height="26dp"
-                        android:layout_marginLeft="7dp"
-                        android:layout_marginTop="5dp"
-                        android:background="@drawable/bg_full_service_btn"
-                        android:gravity="center"
-                        android:text="播放录音"
-                        android:textColor="@color/black"
-                        android:textSize="10sp"
-                        android:visibility="visible" />
-
-                    <TextView
-                        android:id="@+id/tv_stop_play_record"
-                        android:layout_width="70dp"
-                        android:layout_height="26dp"
-                        android:layout_marginLeft="7dp"
-                        android:layout_marginTop="5dp"
-                        android:background="@drawable/bg_full_service_btn"
-                        android:gravity="center"
-                        android:text="停止播放录音"
-                        android:textColor="@color/black"
-                        android:textSize="10sp"
-                        android:visibility="visible" />
-                </LinearLayout>
-            </LinearLayout>
 
             <RelativeLayout
                 android:id="@+id/rl_marquee"
@@ -266,7 +151,7 @@
                 android:visibility="gone"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ll_test">
+                app:layout_constraintTop_toBottomOf="@id/room_id_tv">
 
 
                 <com.deepsea.mua.stub.view.MarqueeTextView
@@ -660,7 +545,7 @@
                         android:layout_below="@id/iv_redpackage_show"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="3dp"
-                        android:src="@drawable/icon_redpackage_seek_black"/>
+                        android:src="@drawable/icon_redpackage_seek_black" />
 
                     <TextView
                         android:id="@+id/tv_redpackage_progress"
@@ -981,7 +866,6 @@
                 android:layout_height="33dp"
                 android:layout_marginRight="90dp"
                 android:layout_marginBottom="50dp"
-                android:src="@drawable/icon_hint_new_function"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintRight_toRightOf="parent" />
 
@@ -1124,91 +1008,12 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="17dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="parent">
-
-                <TextView
-                    android:id="@+id/msg_tv"
-                    android:layout_width="0dp"
-                    android:layout_height="30dp"
-                    android:layout_marginLeft="27dp"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="21dp"
-                    android:text="说点啥呢……"
-                    android:textColor="#66ffffff"
-                    android:textSize="12sp"
-                    app:bl_corners_radius="15dp"
-                    app:bl_solid_color="#66ffffff" />
-
-                <ImageView
-                    android:id="@+id/iv_room_share"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_marginLeft="10dp"
-                    android:src="@drawable/icon_share" />
-
-                <ImageView
-                    android:id="@+id/iv_song_choose"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_marginLeft="10dp"
-                    android:src="@drawable/icon_song_chose" />
-
-                <ImageView
-                    android:id="@+id/emoji_iv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="44dp"
-                    android:paddingRight="9dp"
-                    android:src="@drawable/ic_room_emoji"
-                    android:visibility="gone" />
-
-                <ImageView
-                    android:id="@+id/mute_iv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="44dp"
-                    android:paddingLeft="8dp"
-                    android:paddingRight="8dp"
-                    android:src="@drawable/ic_mute_cancel"
-                    android:visibility="gone" />
-
-                <FrameLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:visibility="gone">
-
-                    <ImageView
-                        android:id="@+id/msg_iv"
-                        android:layout_width="wrap_content"
-                        android:layout_height="44dp"
-                        android:paddingLeft="6dp"
-                        android:paddingRight="7dp"
-                        android:src="@drawable/ic_room_msg" />
-
-                    <View
-                        android:id="@+id/unread_msg"
-                        android:layout_width="8dp"
-                        android:layout_height="8dp"
-                        android:layout_gravity="right"
-                        android:layout_marginTop="9dp"
-                        android:layout_marginRight="5dp"
-                        android:visibility="gone"
-                        app:bl_shape="oval"
-                        app:bl_solid_color="#FF5E5C" />
-                </FrameLayout>
-            </LinearLayout>
 
             <com.deepsea.mua.lib.svga.SVGAImageView
                 android:id="@+id/svga_iv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:visibility="visible"
+                android:visibility="gone"
                 app:autoPlay="true"
                 app:loopCount="1" />
 

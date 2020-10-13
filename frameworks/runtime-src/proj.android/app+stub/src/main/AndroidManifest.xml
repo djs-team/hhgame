@@ -8,11 +8,13 @@
     <!-- Required -->
     <permission
 
-        android:name="harmony.dating.online.face.ad.permission.JPUSH_MESSAGE"
+        android:name="com.hehegame.chess.permission.JPUSH_MESSAGE"
         android:protectionLevel="signature" />
 
     <application>
-
+        <activity
+            android:name=".permission.PermissionActivity"
+            android:theme="@style/Translucent" />
     </application>
 
 </manifest>

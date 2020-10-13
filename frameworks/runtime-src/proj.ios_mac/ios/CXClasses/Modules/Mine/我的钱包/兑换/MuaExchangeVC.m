@@ -79,7 +79,7 @@
 
 - (void)rightClick {
     CXWithdrawIncomeListViewController *vc = [[CXWithdrawIncomeListViewController alloc] init];
-    vc.incomeType = _isRedPacket ? redpack_exchange : exchange;
+    vc.incomeType = _isRedPacket == YES ? redpack_exchange : exchange;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

@@ -66,6 +66,7 @@ load('game/config/GameEvent', function () {
         'UPDATE_USERPHOTO': 'UPDATE_USERPHOTO',
         'GET_ARENAMESSAGE': 'GET_ARENAMESSAGE',
         'MatchJinjiGaming': 'MatchJinjiGaming',
+        'URLE_USED_UPDATE': 'URLE_USED_UPDATE',
     }
 
     return GameEvent

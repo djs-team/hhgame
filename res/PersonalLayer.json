@@ -54,10 +54,15 @@
               "X": 0.5,
               "Y": 0.5
             },
+            "PercentWidthEnable": true,
+            "PercentHeightEnable": true,
+            "PercentWidthEnabled": true,
+            "PercentHeightEnabled": true,
             "PreSize": {
               "X": 1.0,
               "Y": 1.0
             },
+            "UserData": "{\"layoutType\":\"maxArea\",\"screenAlign\":\"mid\"}",
             "Tag": 313,
             "ActionTag": -310517500,
             "Size": {
@@ -502,21 +507,20 @@
                   "G": 62,
                   "B": 0
                 },
-                "DisabledFileData": {
-                  "Type": "Default",
-                  "Path": "Default/Button_Disable.png",
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "button/xin_anniu_8.png",
                   "Plist": ""
                 },
                 "NormalFileData": {
                   "Type": "Normal",
-                  "Path": "common/bt_3.png",
+                  "Path": "button/xin_anniu_8.png",
                   "Plist": ""
                 },
-                "Scale9Enable": true,
                 "Scale9OriginX": 15,
                 "Scale9OriginY": 11,
-                "Scale9Width": 73,
-                "Scale9Height": 51,
+                "Scale9Width": 152,
+                "Scale9Height": 49,
                 "OutlineColor": {
                   "G": 0,
                   "B": 0
@@ -533,8 +537,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 373.0546,
-                  "Y": 497.1507
+                  "X": 370.05,
+                  "Y": 497.15
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -543,22 +547,22 @@
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.2914,
+                  "X": 0.2891,
                   "Y": 0.6905
                 },
                 "PreSize": {
-                  "X": 0.1187,
-                  "Y": 0.1014
+                  "X": 0.107,
+                  "Y": 0.0806
                 },
-                "LeftMargin": 297.0546,
-                "RightMargin": 830.9454,
-                "TopMargin": 186.3493,
-                "BottomMargin": 460.6507,
+                "LeftMargin": 301.55,
+                "RightMargin": 841.45,
+                "TopMargin": 193.85,
+                "BottomMargin": 468.15,
                 "Tag": 319,
                 "ActionTag": -1965977754,
                 "Size": {
-                  "X": 152.0,
-                  "Y": 73.0
+                  "X": 137.0,
+                  "Y": 58.0
                 },
                 "Name": "dataBtn",
                 "ctype": "ButtonObjectData"
@@ -965,32 +969,27 @@
                   },
                   {
                     "FontSize": 14,
-                    "ButtonText": "Button",
+                    "ButtonText": "",
                     "TextColor": {
                       "R": 65,
                       "G": 65,
                       "B": 70
                     },
-                    "DisabledFileData": {
-                      "Type": "Default",
-                      "Path": "Default/Button_Disable.png",
-                      "Plist": ""
-                    },
                     "PressedFileData": {
-                      "Type": "Default",
-                      "Path": "Default/Button_Press.png",
+                      "Type": "Normal",
+                      "Path": "personal/gexx_8.png",
                       "Plist": ""
                     },
                     "NormalFileData": {
-                      "Type": "Default",
-                      "Path": "Default/Button_Normal.png",
+                      "Type": "Normal",
+                      "Path": "personal/gexx_8.png",
                       "Plist": ""
                     },
                     "Scale9Enable": true,
                     "Scale9OriginX": 15,
-                    "Scale9OriginY": 11,
-                    "Scale9Width": 16,
-                    "Scale9Height": 14,
+                    "Scale9OriginY": 4,
+                    "Scale9Width": 3,
+                    "Scale9Height": 26,
                     "OutlineColor": {
                       "G": 0,
                       "B": 0
@@ -1008,8 +1007,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 124.78,
-                      "Y": 12.126
+                      "X": 114.78,
+                      "Y": 16.13
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -1017,25 +1016,23 @@
                     },
                     "CColor": {},
                     "IconVisible": false,
-                    "PositionPercentXEnabled": true,
-                    "PositionPercentYEnabled": true,
                     "PrePosition": {
-                      "X": 1.2478,
-                      "Y": 0.4042
+                      "X": 1.1478,
+                      "Y": 0.5377
                     },
                     "PreSize": {
-                      "X": 0.46,
-                      "Y": 1.2
+                      "X": 0.33,
+                      "Y": 1.1333
                     },
-                    "LeftMargin": 101.78,
-                    "RightMargin": -47.78,
-                    "TopMargin": -0.126,
-                    "BottomMargin": -5.874,
+                    "LeftMargin": 98.28,
+                    "RightMargin": -31.28,
+                    "TopMargin": -3.13,
+                    "BottomMargin": -0.87,
                     "Tag": 328,
                     "ActionTag": -1895661144,
                     "Size": {
-                      "X": 46.0,
-                      "Y": 36.0
+                      "X": 33.0,
+                      "Y": 34.0
                     },
                     "Name": "updateNameBtn",
                     "ctype": "ButtonObjectData"
@@ -2002,47 +1999,37 @@
                     "ctype": "TextObjectData"
                   },
                   {
-                    "FileData": {
-                      "Type": "Default",
-                      "Path": "Default/ImageFile.png",
-                      "Plist": ""
-                    },
-                    "Scale9Width": 46,
-                    "Scale9Height": 46,
-                    "AnchorPoint": {
-                      "ScaleX": 0.5,
-                      "ScaleY": 0.5
-                    },
+                    "AnchorPoint": {},
                     "Position": {
-                      "X": 69.0051,
-                      "Y": 139.0016
+                      "X": 91.582,
+                      "Y": 43.6769
                     },
                     "Scale": {
                       "ScaleX": 1.0,
                       "ScaleY": 1.0
                     },
                     "CColor": {},
-                    "IconVisible": false,
+                    "IconVisible": true,
                     "PrePosition": {
-                      "X": 0.345,
-                      "Y": 0.4649
+                      "X": 0.4579,
+                      "Y": 0.1461
                     },
                     "PreSize": {
-                      "X": 0.23,
-                      "Y": 0.1538
+                      "X": 0.0,
+                      "Y": 0.0
                     },
-                    "LeftMargin": 46.0051,
-                    "RightMargin": 107.9949,
-                    "TopMargin": 136.9984,
-                    "BottomMargin": 116.0016,
-                    "Tag": 349,
-                    "ActionTag": 112444869,
+                    "LeftMargin": 91.582,
+                    "RightMargin": 108.418,
+                    "TopMargin": 255.3231,
+                    "BottomMargin": 43.6769,
+                    "Tag": 48,
+                    "ActionTag": 741570487,
                     "Size": {
-                      "X": 46.0,
-                      "Y": 46.0
+                      "X": 0.0,
+                      "Y": 0.0
                     },
-                    "Name": "Image_34",
-                    "ctype": "ImageViewObjectData"
+                    "Name": "aniNd",
+                    "ctype": "SingleNodeObjectData"
                   }
                 ],
                 "ActionTag": -346737783,
@@ -2454,7 +2441,7 @@
       },
       "UsedResources": [
         "aaa/10.png",
-        "common/bt_3.png",
+        "button/xin_anniu_8.png",
         "common/bz_1.png",
         "common/bz_2.png",
         "common/bz_3.png",
@@ -2464,14 +2451,12 @@
         "common/jinbi.png",
         "common/zuanshi.png",
         "Default/Button_Disable.png",
-        "Default/Button_Normal.png",
-        "Default/Button_Press.png",
-        "Default/ImageFile.png",
         "hall/dtjm_1_1.png",
         "personal/gexx_1.png",
         "personal/gexx_3.png",
         "personal/gexx_5.png",
-        "personal/gexx_7.png"
+        "personal/gexx_7.png",
+        "personal/gexx_8.png"
       ],
       "ctype": "GameFileData"
     }

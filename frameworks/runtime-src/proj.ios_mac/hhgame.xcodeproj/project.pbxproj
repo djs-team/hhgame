@@ -699,6 +699,10 @@
 		006150B7250B94D000BB7620 /* CXBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00614DFA250B94CD00BB7620 /* CXBaseViewController.m */; };
 		006150B8250B94D000BB7620 /* CXBaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00614DFE250B94CD00BB7620 /* CXBaseWebViewController.m */; };
 		006150BB250B960C00BB7620 /* CXConfigObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 006150BA250B960C00BB7620 /* CXConfigObject.m */; };
+		0072141A25359A7F006A2FCE /* live_room_online.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0072141925359A7F006A2FCE /* live_room_online.gif */; };
+		007214232535CC31006A2FCE /* Address.plist in Resources */ = {isa = PBXBuildFile; fileRef = 007214222535CC31006A2FCE /* Address.plist */; };
+		0072144D2535CEDC006A2FCE /* CXCityPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0072144C2535CEDC006A2FCE /* CXCityPickerView.m */; };
+		007214512535CEEA006A2FCE /* CXCityPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 007214502535CEEA006A2FCE /* CXCityPickerView.xib */; };
 		00802A9B250C651700F43A32 /* WSLScanView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00802A96250C651700F43A32 /* WSLScanView.m */; };
 		00802A9C250C651700F43A32 /* WSLNativeScanTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 00802A98250C651700F43A32 /* WSLNativeScanTool.m */; };
 		00802A9E250C6DA100F43A32 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00802A9D250C6DA000F43A32 /* CoreMedia.framework */; };
@@ -1931,6 +1935,11 @@
 		00614DFE250B94CD00BB7620 /* CXBaseWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXBaseWebViewController.m; sourceTree = "<group>"; };
 		006150B9250B960C00BB7620 /* CXConfigObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXConfigObject.h; sourceTree = "<group>"; };
 		006150BA250B960C00BB7620 /* CXConfigObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXConfigObject.m; sourceTree = "<group>"; };
+		0072141925359A7F006A2FCE /* live_room_online.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = live_room_online.gif; sourceTree = "<group>"; };
+		007214222535CC31006A2FCE /* Address.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Address.plist; sourceTree = "<group>"; };
+		0072144B2535CEDC006A2FCE /* CXCityPickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXCityPickerView.h; sourceTree = "<group>"; };
+		0072144C2535CEDC006A2FCE /* CXCityPickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXCityPickerView.m; sourceTree = "<group>"; };
+		007214502535CEEA006A2FCE /* CXCityPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CXCityPickerView.xib; sourceTree = "<group>"; };
 		00802A95250C651700F43A32 /* WSLNativeScanTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSLNativeScanTool.h; sourceTree = "<group>"; };
 		00802A96250C651700F43A32 /* WSLScanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSLScanView.m; sourceTree = "<group>"; };
 		00802A97250C651700F43A32 /* WSLScanView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSLScanView.h; sourceTree = "<group>"; };
@@ -3308,20 +3317,12 @@
 			children = (
 				00614BBB250B94C900BB7620 /* CXMineGuardListViewController.m */,
 				00614BBC250B94C900BB7620 /* CXMineGuardViewController.h */,
-				00614BBD250B94C900BB7620 /* Model */,
 				00614BBE250B94C900BB7620 /* View */,
 				00614BCB250B94CA00BB7620 /* CXMineGuardListViewController.xib */,
 				00614BCC250B94CA00BB7620 /* CXMineGuardListViewController.h */,
 				00614BCD250B94CA00BB7620 /* CXMineGuardViewController.m */,
 			);
 			path = "我的守护";
-			sourceTree = "<group>";
-		};
-		00614BBD250B94C900BB7620 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		00614BBE250B94C900BB7620 /* View */ = {
@@ -3473,12 +3474,13 @@
 		00614C13250B94CA00BB7620 /* 编辑资料 */ = {
 			isa = PBXGroup;
 			children = (
-				00614C14250B94CA00BB7620 /* city.json */,
+				00614C2F250B94CA00BB7620 /* CXMineEditProfileViewController.h */,
 				00614C15250B94CA00BB7620 /* CXMineEditProfileViewController.m */,
+				00614C2E250B94CA00BB7620 /* CXMineEditProfileViewController.xib */,
+				007214222535CC31006A2FCE /* Address.plist */,
+				00614C14250B94CA00BB7620 /* city.json */,
 				00614C16250B94CA00BB7620 /* userProfile.json */,
 				00614C17250B94CA00BB7620 /* View */,
-				00614C2E250B94CA00BB7620 /* CXMineEditProfileViewController.xib */,
-				00614C2F250B94CA00BB7620 /* CXMineEditProfileViewController.h */,
 			);
 			path = "编辑资料";
 			sourceTree = "<group>";
@@ -3486,27 +3488,30 @@
 		00614C17250B94CA00BB7620 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				00614C27250B94CA00BB7620 /* CXPickerViewAlertView.h */,
 				00614C18250B94CA00BB7620 /* CXPickerViewAlertView.m */,
+				00614C1D250B94CA00BB7620 /* CXPickerViewAlertView.xib */,
+				00614C2C250B94CA00BB7620 /* CXTwoPickerViewAlertView.h */,
+				00614C21250B94CA00BB7620 /* CXTwoPickerViewAlertView.m */,
+				00614C2B250B94CA00BB7620 /* CXTwoPickerViewAlertView.xib */,
+				0072144B2535CEDC006A2FCE /* CXCityPickerView.h */,
+				0072144C2535CEDC006A2FCE /* CXCityPickerView.m */,
+				007214502535CEEA006A2FCE /* CXCityPickerView.xib */,
 				00614C19250B94CA00BB7620 /* CXInfoTextViewCell.m */,
 				00614C1A250B94CA00BB7620 /* CXTextFieldAlertView.xib */,
 				00614C1B250B94CA00BB7620 /* XYTableViewAlertView.m */,
 				00614C1C250B94CA00BB7620 /* XYTableViewAlertCell.m */,
-				00614C1D250B94CA00BB7620 /* CXPickerViewAlertView.xib */,
 				00614C1E250B94CA00BB7620 /* CXMineEditProfileItemCell.h */,
 				00614C1F250B94CA00BB7620 /* CXTextFieldAlertView.h */,
 				00614C20250B94CA00BB7620 /* XYTableViewAlertView.xib */,
-				00614C21250B94CA00BB7620 /* CXTwoPickerViewAlertView.m */,
-				00614C22250B94CA00BB7620 /* CXProfessionSelectedView.m */,
 				00614C23250B94CA00BB7620 /* XYTableViewAlertCell.xib */,
 				00614C24250B94CA00BB7620 /* XYTableViewAlertView.h */,
 				00614C25250B94CA00BB7620 /* CXInfoTextViewCell.h */,
 				00614C26250B94CA00BB7620 /* CXInfoTextViewCell.xib */,
-				00614C27250B94CA00BB7620 /* CXPickerViewAlertView.h */,
 				00614C28250B94CA00BB7620 /* CXMineEditProfileItemCell.m */,
 				00614C29250B94CA00BB7620 /* XYTableViewAlertCell.h */,
 				00614C2A250B94CA00BB7620 /* CXProfessionSelectedView.h */,
-				00614C2B250B94CA00BB7620 /* CXTwoPickerViewAlertView.xib */,
-				00614C2C250B94CA00BB7620 /* CXTwoPickerViewAlertView.h */,
+				00614C22250B94CA00BB7620 /* CXProfessionSelectedView.m */,
 				00614C2D250B94CA00BB7620 /* CXTextFieldAlertView.m */,
 			);
 			path = View;
@@ -4392,6 +4397,15 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		0072141825359A6C006A2FCE /* Gif_Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0072141925359A7F006A2FCE /* live_room_online.gif */,
+			);
+			name = Gif_Resources;
+			path = ios/Gif_Resources;
+			sourceTree = "<group>";
+		};
 		00802A94250C651700F43A32 /* WSLNativeScanTool */ = {
 			isa = PBXGroup;
 			children = (
@@ -4601,6 +4615,7 @@
 				1A2EA1851FC3DA6B0062C870 /* Images.xcassets */,
 				1AF87B9B1F6F7C7B007BE51C /* LaunchScreen.storyboard */,
 				1AF87B9C1F6F7C7C007BE51C /* LaunchScreenBackground.png */,
+				0072141825359A6C006A2FCE /* Gif_Resources */,
 				509D4AAB17EBB2AB00697056 /* AppController.h */,
 				509D4AAC17EBB2AB00697056 /* AppController.mm */,
 				0020BB33250B9A5A00E2979B /* AppController+Login.h */,
@@ -4842,6 +4857,7 @@
 				00614F0A250B94CF00BB7620 /* CXSystemAlertView.xib in Resources */,
 				00615046250B94D000BB7620 /* msg_file@2x.png in Resources */,
 				00614EED250B94CE00BB7620 /* CXLiveRoomBottomApplySeatAlertView.xib in Resources */,
+				007214232535CC31006A2FCE /* Address.plist in Resources */,
 				00614E6F250B94CE00BB7620 /* CXGameMusicSongerTipView.xib in Resources */,
 				00614FF1250B94CF00BB7620 /* icon_019.gif in Resources */,
 				00615047250B94D000BB7620 /* msg_file_white@3x.png in Resources */,
@@ -4891,6 +4907,7 @@
 				00614FD4250B94CF00BB7620 /* close@3x.png in Resources */,
 				00614E83250B94CE00BB7620 /* home_game_music_loading.gif in Resources */,
 				00614FCC250B94CF00BB7620 /* CXRechargeItemCell.xib in Resources */,
+				007214512535CEEA006A2FCE /* CXCityPickerView.xib in Resources */,
 				0061504C250B94D000BB7620 /* chat_info@2x.png in Resources */,
 				00614E71250B94CE00BB7620 /* CXGameMusicChooseSongerView.xib in Resources */,
 				00615014250B94CF00BB7620 /* chatbar_audio_blue@3x.png in Resources */,
@@ -5066,6 +5083,7 @@
 				00615003250B94CF00BB7620 /* chatbar_photo@3x.png in Resources */,
 				00615040250B94D000BB7620 /* msg_img_broken@2x.png in Resources */,
 				0061504B250B94D000BB7620 /* chat_info@3x.png in Resources */,
+				0072141A25359A7F006A2FCE /* live_room_online.gif in Resources */,
 				0061503F250B94D000BB7620 /* msg_file@3x.png in Resources */,
 				0061502D250B94D000BB7620 /* msg_location_white@3x.png in Resources */,
 				00614FC4250B94CF00BB7620 /* CXMySettingPhoneBindViewController.xib in Resources */,
@@ -5585,6 +5603,7 @@
 				509D4ABC17EBB2AB00697056 /* AppController.mm in Sources */,
 				00614FC8250B94CF00BB7620 /* CXConsumeRecordViewController.m in Sources */,
 				00614EBE250B94CE00BB7620 /* MuaGiftListSelectCountCell.m in Sources */,
+				0072144D2535CEDC006A2FCE /* CXCityPickerView.m in Sources */,
 				006150BB250B960C00BB7620 /* CXConfigObject.m in Sources */,
 				00615022250B94D000BB7620 /* EMMsgRecallBubbleView.m in Sources */,
 				00615051250B94D000BB7620 /* EMAtGroupMembersViewController.m in Sources */,
@@ -5732,7 +5751,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMPRESS_PNG_FILES = NO;
-				CURRENT_PROJECT_VERSION = 0;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = C966MAAFRF;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -5787,7 +5806,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMPRESS_PNG_FILES = NO;
-				CURRENT_PROJECT_VERSION = 0;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = C966MAAFRF;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (

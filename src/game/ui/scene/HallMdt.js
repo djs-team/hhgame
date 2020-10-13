@@ -19,6 +19,7 @@ load('game/ui/scene/HallMdt', function () {
                 GameEvent.UPDATE_PROPSYNC,
                 GameEvent.UPDATE_USERPHOTO,
                 GameEvent.MatchJinjiGaming,
+                GameEvent.URLE_USED_UPDATE,
 
             ]
         },
@@ -48,12 +49,23 @@ load('game/ui/scene/HallMdt', function () {
                 case GameEvent.MatchJinjiGaming:
                     this.view.showMatchJinjiLayer(body)
                     break
+                case GameEvent.URLE_USED_UPDATE:
+                    this.onChangeUsedRole()
+                    break
+                default:
+                    break
             }
         },
 
         onRegister: function () {
             let selfInfo = appInstance.dataManager().getUserData()
             this.view.initView(selfInfo)
+        },
+
+        onChangeUsedRole: function () {
+            cc.log('--------HallMdt------- onChangeUsedRole : ')
+            let pRole = appInstance.dataManager().getUserData().pRole
+            this.view.updatePlayerAni(pRole)
         },
 
         onRemove: function () {

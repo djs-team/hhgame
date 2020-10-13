@@ -13,6 +13,7 @@
 #import "XYTableViewAlertView.h"
 #import "CXTwoPickerViewAlertView.h"
 #import "CXProfessionSelectedView.h"
+#import "CXCityPickerView.h"
 
 @interface CXMineEditProfileViewController ()<UITableViewDataSource,UITableViewDelegate, UITextViewDelegate>
 {
@@ -431,16 +432,23 @@
             };
             [self lew_presentPopupView:alertView animation:nil];
         } else if ([model.column isEqualToString:@"city"]) {
-            CXPickerViewAlertView *alertView = [[[NSBundle mainBundle] loadNibNamed:@"CXPickerViewAlertView" owner:self options:nil] lastObject];
-            alertView.parentVC = self;
-            alertView.title = @"修改城市";
-            alertView.dataSources = self.provinceArrays;
-            alertView.contenStr = cell.rightLabel.text;
-            alertView.sureActionBlock = ^(NSString * _Nonnull content) {
-                model.name = content;
+//            CXPickerViewAlertView *alertView = [[[NSBundle mainBundle] loadNibNamed:@"CXPickerViewAlertView" owner:self options:nil] lastObject];
+//            alertView.parentVC = self;
+//            alertView.title = @"修改城市";
+//            alertView.dataSources = self.provinceArrays;
+//            alertView.contenStr = cell.rightLabel.text;
+//            alertView.sureActionBlock = ^(NSString * _Nonnull content) {
+//                model.name = content;
+//                [weakSelf.tableView reloadRowAtIndexPath:indexPath withRowAnimation:UITableViewRowAnimationNone];
+//            };
+//            [self lew_presentPopupView:alertView animation:nil];
+            
+            CXCityPickerView *cityView = [[[NSBundle mainBundle] loadNibNamed:@"CXCityPickerView" owner:self options:nil] lastObject];
+            cityView.cityPickerSureBlock = ^(NSString * _Nonnull city) {
+                model.name = city;
                 [weakSelf.tableView reloadRowAtIndexPath:indexPath withRowAnimation:UITableViewRowAnimationNone];
             };
-            [self lew_presentPopupView:alertView animation:nil];
+            [cityView show];
 
         } else if ([model.column isEqualToString:@"education"]) {
             CXPickerViewAlertView *alertView = [[[NSBundle mainBundle] loadNibNamed:@"CXPickerViewAlertView" owner:self options:nil] lastObject];

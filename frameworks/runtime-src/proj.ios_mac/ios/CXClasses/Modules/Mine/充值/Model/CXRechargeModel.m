@@ -12,6 +12,7 @@
 + (NSDictionary *)modelCustomPropertyMapper {
     return @{
              @"guard_id" : @"id",
+             @"charge_id" : @[@"charge_id", @"chargeid"],
              };
 }
 

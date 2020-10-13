@@ -52,19 +52,24 @@ static id _manager;
 
 // 视频结束的回调
 - (void)nativeExpressRewardedVideoAdDidClose:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd {
-    [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].BUAdRewardMethod param:@"success"];
+    [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].BUAdRewardMethod param:@"0"];
     [self pbud_logWithSEL:_cmd msg:@""];
 }
-//
+
 //- (void)nativeExpressRewardedVideoAdDidPlayFinish:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd didFailWithError:(NSError *_Nullable)error {
-//    [self dismissViewControllerAnimated:YES completion:nil];
-//    [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].BUAdRewardMethod param:@"success"];
-//}
-//
-//- (void)nativeExpressRewardedVideoAd:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd didFailWithError:(NSError *)error {
-//    NSLog(@"fail");
+//    [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].BUAdRewardMethod param:@"-1"];
 //}
 
+- (void)nativeExpressRewardedVideoAd:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd didFailWithError:(NSError *_Nullable)error; {
+    [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].BUAdRewardMethod param:@"-1"];
+}
+
+- (void)nativeExpressRewardedVideoAdServerRewardDidFail:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd {
+    [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].BUAdRewardMethod param:@"-1"];
+}
+- (void)nativeExpressRewardedVideoAdViewRenderFail:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd error:(NSError *_Nullable)error {
+    [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].BUAdRewardMethod param:@"-1"];
+}
 
 //- (void)nativeExpressRewardedVideoAdDidLoad:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd {
 //    [self pbud_logWithSEL:_cmd msg:@""];
@@ -82,9 +87,7 @@ static id _manager;
 //    [self pbud_logWithSEL:_cmd msg:@""];
 //}
 //
-//- (void)nativeExpressRewardedVideoAdViewRenderFail:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd error:(NSError *_Nullable)error {
-//    [self pbud_logWithSEL:_cmd msg:[NSString stringWithFormat:@"%@", error]];
-//}
+
 //
 //- (void)nativeExpressRewardedVideoAdWillVisible:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd {
 //    [self pbud_logWithSEL:_cmd msg:@""];

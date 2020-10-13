@@ -81,6 +81,7 @@ load('game/ui/layer/task/TaskMdt', function () {
                 let propType = rewardData.propType
                 let propCode = rewardData.propCode
                 config.propNum = rewardData.propNum
+
                 switch (propType) {
                     case 1://货币
                         if(propCode == 1){
@@ -120,7 +121,6 @@ load('game/ui/layer/task/TaskMdt', function () {
                         break
 
                 }
-                cc.log('--------------------------- boxCell : ' + JSON.stringify(boxCell))
                 data.boxList[i] = boxCell
             }
 
@@ -193,9 +193,8 @@ load('game/ui/layer/task/TaskMdt', function () {
                 playerTaskDaily.reachNum =msgPlayerTaskDaily.reachNum
                 playerTaskDaily.status =msgPlayerTaskDaily.status
 
-                let propType = msgPlayerTaskDaily.propType
-
-                switch (propType) {
+                let propCode = msgPlayerTaskDaily.propCode
+                switch (propCode) {
                     case 1://货币
                         playerTaskDaily.res = 'res/code/task/jinbi.png'
                         break

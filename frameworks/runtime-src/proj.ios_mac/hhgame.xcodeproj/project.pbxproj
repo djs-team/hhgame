@@ -699,6 +699,7 @@
 		006150B7250B94D000BB7620 /* CXBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00614DFA250B94CD00BB7620 /* CXBaseViewController.m */; };
 		006150B8250B94D000BB7620 /* CXBaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00614DFE250B94CD00BB7620 /* CXBaseWebViewController.m */; };
 		006150BB250B960C00BB7620 /* CXConfigObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 006150BA250B960C00BB7620 /* CXConfigObject.m */; };
+		0072141A25359A7F006A2FCE /* live_room_online.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0072141925359A7F006A2FCE /* live_room_online.gif */; };
 		00802A9B250C651700F43A32 /* WSLScanView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00802A96250C651700F43A32 /* WSLScanView.m */; };
 		00802A9C250C651700F43A32 /* WSLNativeScanTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 00802A98250C651700F43A32 /* WSLNativeScanTool.m */; };
 		00802A9E250C6DA100F43A32 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00802A9D250C6DA000F43A32 /* CoreMedia.framework */; };
@@ -1931,6 +1932,7 @@
 		00614DFE250B94CD00BB7620 /* CXBaseWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXBaseWebViewController.m; sourceTree = "<group>"; };
 		006150B9250B960C00BB7620 /* CXConfigObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXConfigObject.h; sourceTree = "<group>"; };
 		006150BA250B960C00BB7620 /* CXConfigObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXConfigObject.m; sourceTree = "<group>"; };
+		0072141925359A7F006A2FCE /* live_room_online.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = live_room_online.gif; sourceTree = "<group>"; };
 		00802A95250C651700F43A32 /* WSLNativeScanTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSLNativeScanTool.h; sourceTree = "<group>"; };
 		00802A96250C651700F43A32 /* WSLScanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSLScanView.m; sourceTree = "<group>"; };
 		00802A97250C651700F43A32 /* WSLScanView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSLScanView.h; sourceTree = "<group>"; };
@@ -4384,6 +4386,15 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		0072141825359A6C006A2FCE /* Gif_Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0072141925359A7F006A2FCE /* live_room_online.gif */,
+			);
+			name = Gif_Resources;
+			path = ios/Gif_Resources;
+			sourceTree = "<group>";
+		};
 		00802A94250C651700F43A32 /* WSLNativeScanTool */ = {
 			isa = PBXGroup;
 			children = (
@@ -4593,6 +4604,7 @@
 				1A2EA1851FC3DA6B0062C870 /* Images.xcassets */,
 				1AF87B9B1F6F7C7B007BE51C /* LaunchScreen.storyboard */,
 				1AF87B9C1F6F7C7C007BE51C /* LaunchScreenBackground.png */,
+				0072141825359A6C006A2FCE /* Gif_Resources */,
 				509D4AAB17EBB2AB00697056 /* AppController.h */,
 				509D4AAC17EBB2AB00697056 /* AppController.mm */,
 				0020BB33250B9A5A00E2979B /* AppController+Login.h */,
@@ -5058,6 +5070,7 @@
 				00615003250B94CF00BB7620 /* chatbar_photo@3x.png in Resources */,
 				00615040250B94D000BB7620 /* msg_img_broken@2x.png in Resources */,
 				0061504B250B94D000BB7620 /* chat_info@3x.png in Resources */,
+				0072141A25359A7F006A2FCE /* live_room_online.gif in Resources */,
 				0061503F250B94D000BB7620 /* msg_file@3x.png in Resources */,
 				0061502D250B94D000BB7620 /* msg_location_white@3x.png in Resources */,
 				00614FC4250B94CF00BB7620 /* CXMySettingPhoneBindViewController.xib in Resources */,

@@ -43,7 +43,7 @@
 
 - (void)setModel:(CXHomeRoomModel *)model {
     _model = model;
-    [_room_image sd_setImageWithURL:[NSURL URLWithString:model.fm_room_image] placeholderImage:[UIImage imageNamed:@"applogo"]];
+    [_room_image sd_setImageWithURL:[NSURL URLWithString:model.fm_room_image]];
     _room_descLabel.text = [NSString stringWithFormat:@"%@岁 · %@",model.fm_age, model.fm_city];
     _room_nameLabel.text = model.room_name;
     
@@ -85,6 +85,7 @@
 //    if (_onlineStateImage) {
         NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"live_room_online" ofType:@"gif"];
         NSData *imageData = [NSData dataWithContentsOfFile:imagePath];
+    _onlineStateImage = [UIImage sd_imageWithGIFData:imageData];
 //        _onlineStateImage = [UIImage sd_animatedGIFWithData:imageData];
 //    }
     return _onlineStateImage;

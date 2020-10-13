@@ -1,7 +1,11 @@
 package com.deepsea.mua.faceliveness.helper;
 
 import android.content.Context;
+import android.util.Log;
 
+import com.alibaba.security.realidentity.RPEventListener;
+import com.alibaba.security.realidentity.RPResult;
+import com.alibaba.security.realidentity.RPVerify;
 import com.alibaba.security.rp.RPSDK;
 import com.deepsea.mua.faceliveness.listener.RPAuditListener;
 
@@ -11,25 +15,29 @@ import com.deepsea.mua.faceliveness.listener.RPAuditListener;
 public class AuditHelper {
 
     public static void initialize(Context ctx) {
-        RPSDK.initialize(ctx);
+        RPVerify.init(ctx);
     }
 
     public static void start(String verifyToken, Context context, RPAuditListener listener) {
-        RPSDK.start(verifyToken, context, (audit, code) -> {
-            if (listener == null)
-                return;
+        RPVerify.start(context, verifyToken, new RPEventListener() {
+            @Override
+            public void onFinish(RPResult rpResult, String code, String msg) {
+                Log.d("AuditHelper", code + ":" + msg);
 
-            switch (audit) {
-                case AUDIT_PASS:  //认证通过
+                if (listener == null)
+                    return;
+                if (rpResult == RPResult.AUDIT_PASS) {
                     listener.onAuditPass();
-                    break;
-                case AUDIT_FAIL:  //认证不通过
+                } else if (rpResult == RPResult.AUDIT_FAIL) {
                     listener.onAuditFail();
-                    break;
-                    case AUDIT_NOT:  //未认证，用户取消
+                } else if (rpResult == RPResult.AUDIT_NOT) {
                     listener.onAuditNot(code);
-                    break;
+
+                }
+
             }
         });
+
+
     }
 }

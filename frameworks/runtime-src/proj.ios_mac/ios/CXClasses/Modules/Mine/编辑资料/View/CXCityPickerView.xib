@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CXCityPickerView">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5vt-P8-xgo">
+                    <rect key="frame" x="20" y="67" width="374" height="255"/>
+                </pickerView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pov-PG-JWt">
+                    <rect key="frame" x="50" y="330" width="314" height="50"/>
+                    <color key="backgroundColor" red="0.99607843139999996" green="0.89019607840000003" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="HDR-vb-g3a"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                    <state key="normal" title="确定">
+                        <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="sureAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="jq4-E1-jCF"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="选择城市" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPH-10-WE8">
+                    <rect key="frame" x="174" y="2" width="66" height="55"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="55" id="vNv-B6-QdB"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="pov-PG-JWt" secondAttribute="trailing" constant="50" id="0Km-qp-phf"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="5vt-P8-xgo" secondAttribute="trailing" constant="20" id="436-he-TdH"/>
+                <constraint firstItem="pov-PG-JWt" firstAttribute="top" secondItem="5vt-P8-xgo" secondAttribute="bottom" constant="8" id="453-Br-s54"/>
+                <constraint firstItem="pov-PG-JWt" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="50" id="74T-gw-Bdw"/>
+                <constraint firstItem="pov-PG-JWt" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" constant="-20" id="RYE-Zl-vdr"/>
+                <constraint firstItem="5vt-P8-xgo" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="WCj-JZ-f1O"/>
+                <constraint firstItem="aPH-10-WE8" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Wgs-kp-OTj"/>
+                <constraint firstItem="5vt-P8-xgo" firstAttribute="top" secondItem="aPH-10-WE8" secondAttribute="bottom" constant="10" id="r89-wA-zIj"/>
+                <constraint firstItem="aPH-10-WE8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="2" id="xfv-gz-cf6"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="mainPickerView" destination="5vt-P8-xgo" id="cEf-AK-MWQ"/>
+                <outlet property="sureButton" destination="pov-PG-JWt" id="k3S-Eh-7Oi"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="104"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

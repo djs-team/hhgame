@@ -157,14 +157,14 @@
                   <AbstractNodeData Name="becomeBtn" ActionTag="-1937164870" Tag="172" IconVisible="False" LeftMargin="895.7160" RightMargin="204.2839" TopMargin="421.8800" BottomMargin="225.1200" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="65" RightEage="36" TopEage="64" BottomEage="7" Scale9OriginX="65" Scale9OriginY="64" Scale9Width="2" Scale9Height="2" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                     <Size X="180.0000" Y="73.0000" />
                     <Children>
-                      <AbstractNodeData Name="goVIPText" ActionTag="-1832364403" Tag="173" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="52.5000" RightMargin="52.5000" TopMargin="23.8500" BottomMargin="31.1500" FontSize="18" LabelText=" 成为VIP " ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                        <Size X="75.0000" Y="18.0000" />
+                      <AbstractNodeData Name="goVIPText" ActionTag="-1832364403" Tag="173" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="37.5000" RightMargin="37.5000" TopMargin="20.3500" BottomMargin="27.6500" FontSize="25" LabelText=" 成为VIP " HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="105.0000" Y="25.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="90.0000" Y="40.1500" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="152" G="73" B="0" />
                         <PrePosition X="0.5000" Y="0.5500" />
-                        <PreSize X="0.4167" Y="0.2466" />
+                        <PreSize X="0.5833" Y="0.3425" />
                         <FontResource Type="Normal" Path="font/hkhbtW12.ttc" Plist="" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
@@ -185,14 +185,14 @@
                   <AbstractNodeData Name="upgradeBtn" ActionTag="-276406237" Tag="231" IconVisible="False" LeftMargin="894.8688" RightMargin="205.1312" TopMargin="423.1381" BottomMargin="223.8619" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="65" RightEage="36" TopEage="72" Scale9OriginX="65" Scale9OriginY="72" Scale9Width="2" Scale9Height="1" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                     <Size X="180.0000" Y="73.0000" />
                     <Children>
-                      <AbstractNodeData Name="goVIPText" ActionTag="328356138" Tag="232" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="52.5000" RightMargin="52.5000" TopMargin="23.8500" BottomMargin="31.1500" FontSize="18" LabelText=" 升级VIP " ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                        <Size X="75.0000" Y="18.0000" />
+                      <AbstractNodeData Name="goVIPText" ActionTag="328356138" Tag="232" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="37.5000" RightMargin="37.5000" TopMargin="20.3500" BottomMargin="27.6500" FontSize="25" LabelText=" 升级VIP " HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="105.0000" Y="25.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="90.0000" Y="40.1500" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="152" G="73" B="0" />
                         <PrePosition X="0.5000" Y="0.5500" />
-                        <PreSize X="0.4167" Y="0.2466" />
+                        <PreSize X="0.5833" Y="0.3425" />
                         <FontResource Type="Normal" Path="font/hkhbtW12.ttc" Plist="" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
@@ -213,14 +213,14 @@
                   <AbstractNodeData Name="renewBtn" ActionTag="1772592791" Tag="229" IconVisible="False" LeftMargin="895.3220" RightMargin="204.6780" TopMargin="422.6465" BottomMargin="224.3535" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="65" RightEage="36" TopEage="72" Scale9OriginX="65" Scale9OriginY="72" Scale9Width="2" Scale9Height="1" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                     <Size X="180.0000" Y="73.0000" />
                     <Children>
-                      <AbstractNodeData Name="goVIPText" ActionTag="385891032" Tag="230" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="52.5000" RightMargin="52.5000" TopMargin="23.8500" BottomMargin="31.1500" FontSize="18" LabelText=" 续费VIP " ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                        <Size X="75.0000" Y="18.0000" />
+                      <AbstractNodeData Name="goVIPText" ActionTag="385891032" Tag="230" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="37.5000" RightMargin="37.5000" TopMargin="20.3500" BottomMargin="27.6500" FontSize="25" LabelText=" 续费VIP " HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="105.0000" Y="25.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="90.0000" Y="40.1500" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="152" G="73" B="0" />
                         <PrePosition X="0.5000" Y="0.5500" />
-                        <PreSize X="0.4167" Y="0.2466" />
+                        <PreSize X="0.5833" Y="0.3425" />
                         <FontResource Type="Normal" Path="font/hkhbtW12.ttc" Plist="" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
@@ -251,14 +251,14 @@
                         <PreSize X="0.1689" Y="0.3231" />
                         <FileData Type="Normal" Path="sign/qd_10.png" Plist="" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="videoAcceptText" ActionTag="-775292600" Tag="171" IconVisible="False" LeftMargin="52.9143" RightMargin="29.0857" TopMargin="20.7133" BottomMargin="26.2867" FontSize="18" LabelText="3倍签到" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                        <Size X="66.0000" Y="18.0000" />
+                      <AbstractNodeData Name="videoAcceptText" ActionTag="-775292600" Tag="171" IconVisible="False" LeftMargin="43.9143" RightMargin="20.0857" TopMargin="20.7133" BottomMargin="26.2867" FontSize="18" LabelText=" 25倍签到 " HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="84.0000" Y="18.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="85.9143" Y="35.2867" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="207" G="73" B="12" />
                         <PrePosition X="0.5805" Y="0.5429" />
-                        <PreSize X="0.4459" Y="0.2769" />
+                        <PreSize X="0.5676" Y="0.2769" />
                         <FontResource Type="Normal" Path="font/hkhbtW12.ttc" Plist="" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
@@ -276,7 +276,7 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="ordinaryAcceptPnl" Visible="False" ActionTag="-2107385341" Tag="175" IconVisible="False" LeftMargin="751.4976" RightMargin="414.5024" TopMargin="541.8688" BottomMargin="128.1312" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                  <AbstractNodeData Name="ordinaryAcceptPnl" ActionTag="-2107385341" Tag="175" IconVisible="False" LeftMargin="751.4976" RightMargin="414.5024" TopMargin="541.8688" BottomMargin="128.1312" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="114.0000" Y="50.0000" />
                     <Children>
                       <AbstractNodeData Name="vipLevelText" ActionTag="-1441908375" Tag="176" IconVisible="False" LeftMargin="12.4400" RightMargin="11.5600" TopMargin="0.6306" BottomMargin="29.3694" FontSize="20" LabelText="季VIP会员" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -495,13 +495,13 @@
                     <PreSize X="0.7290" Y="0.6491" />
                     <FileData Type="Normal" Path="sign/qd_jl_9.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="awardsValueText" ActionTag="1462170359" Tag="198" IconVisible="False" LeftMargin="27.8557" RightMargin="34.1443" TopMargin="91.1086" BottomMargin="4.8914" FontSize="18" LabelText="x1888" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                  <AbstractNodeData Name="awardsValueText" ActionTag="1462170359" Tag="198" IconVisible="False" LeftMargin="27.8557" RightMargin="34.1443" TopMargin="88.1100" BottomMargin="7.8900" FontSize="18" LabelText="x1888" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="45.0000" Y="18.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="50.3557" Y="13.8914" />
+                    <Position X="50.3557" Y="16.8900" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="177" G="52" B="0" />
-                    <PrePosition X="0.4706" Y="0.1219" />
+                    <PrePosition X="0.4706" Y="0.1482" />
                     <PreSize X="0.4206" Y="0.1579" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />

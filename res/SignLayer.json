@@ -798,13 +798,15 @@
                     "Tag": 172,
                     "Children": [
                       {
-                        "FontSize": 18,
+                        "FontSize": 25,
                         "LabelText": " 成为VIP ",
                         "FontResource": {
                           "Type": "Normal",
                           "Path": "font/hkhbtW12.ttc",
                           "Plist": ""
                         },
+                        "HorizontalAlignmentType": "HT_Center",
+                        "VerticalAlignmentType": "VT_Center",
                         "OutlineColor": {
                           "G": 0,
                           "B": 0
@@ -841,18 +843,18 @@
                           "Y": 0.55
                         },
                         "PreSize": {
-                          "X": 0.4167,
-                          "Y": 0.2466
+                          "X": 0.5833,
+                          "Y": 0.3425
                         },
-                        "LeftMargin": 52.5,
-                        "RightMargin": 52.5,
-                        "TopMargin": 23.85,
-                        "BottomMargin": 31.15,
+                        "LeftMargin": 37.5,
+                        "RightMargin": 37.5,
+                        "TopMargin": 20.35,
+                        "BottomMargin": 27.65,
                         "Tag": 173,
                         "ActionTag": -1832364403,
                         "Size": {
-                          "X": 75.0,
-                          "Y": 18.0
+                          "X": 105.0,
+                          "Y": 25.0
                         },
                         "Name": "goVIPText",
                         "ctype": "TextObjectData"
@@ -930,13 +932,15 @@
                     "Tag": 231,
                     "Children": [
                       {
-                        "FontSize": 18,
+                        "FontSize": 25,
                         "LabelText": " 升级VIP ",
                         "FontResource": {
                           "Type": "Normal",
                           "Path": "font/hkhbtW12.ttc",
                           "Plist": ""
                         },
+                        "HorizontalAlignmentType": "HT_Center",
+                        "VerticalAlignmentType": "VT_Center",
                         "OutlineColor": {
                           "G": 0,
                           "B": 0
@@ -973,18 +977,18 @@
                           "Y": 0.55
                         },
                         "PreSize": {
-                          "X": 0.4167,
-                          "Y": 0.2466
+                          "X": 0.5833,
+                          "Y": 0.3425
                         },
-                        "LeftMargin": 52.5,
-                        "RightMargin": 52.5,
-                        "TopMargin": 23.85,
-                        "BottomMargin": 31.15,
+                        "LeftMargin": 37.5,
+                        "RightMargin": 37.5,
+                        "TopMargin": 20.35,
+                        "BottomMargin": 27.65,
                         "Tag": 232,
                         "ActionTag": 328356138,
                         "Size": {
-                          "X": 75.0,
-                          "Y": 18.0
+                          "X": 105.0,
+                          "Y": 25.0
                         },
                         "Name": "goVIPText",
                         "ctype": "TextObjectData"
@@ -1062,13 +1066,15 @@
                     "Tag": 229,
                     "Children": [
                       {
-                        "FontSize": 18,
+                        "FontSize": 25,
                         "LabelText": " 续费VIP ",
                         "FontResource": {
                           "Type": "Normal",
                           "Path": "font/hkhbtW12.ttc",
                           "Plist": ""
                         },
+                        "HorizontalAlignmentType": "HT_Center",
+                        "VerticalAlignmentType": "VT_Center",
                         "OutlineColor": {
                           "G": 0,
                           "B": 0
@@ -1105,18 +1111,18 @@
                           "Y": 0.55
                         },
                         "PreSize": {
-                          "X": 0.4167,
-                          "Y": 0.2466
+                          "X": 0.5833,
+                          "Y": 0.3425
                         },
-                        "LeftMargin": 52.5,
-                        "RightMargin": 52.5,
-                        "TopMargin": 23.85,
-                        "BottomMargin": 31.15,
+                        "LeftMargin": 37.5,
+                        "RightMargin": 37.5,
+                        "TopMargin": 20.35,
+                        "BottomMargin": 27.65,
                         "Tag": 230,
                         "ActionTag": 385891032,
                         "Size": {
-                          "X": 75.0,
-                          "Y": 18.0
+                          "X": 105.0,
+                          "Y": 25.0
                         },
                         "Name": "goVIPText",
                         "ctype": "TextObjectData"
@@ -1240,12 +1246,14 @@
                       },
                       {
                         "FontSize": 18,
-                        "LabelText": "3倍签到",
+                        "LabelText": " 25倍签到 ",
                         "FontResource": {
                           "Type": "Normal",
                           "Path": "font/hkhbtW12.ttc",
                           "Plist": ""
                         },
+                        "HorizontalAlignmentType": "HT_Center",
+                        "VerticalAlignmentType": "VT_Center",
                         "OutlineColor": {
                           "G": 0,
                           "B": 0
@@ -1280,17 +1288,17 @@
                           "Y": 0.5429
                         },
                         "PreSize": {
-                          "X": 0.4459,
+                          "X": 0.5676,
                           "Y": 0.2769
                         },
-                        "LeftMargin": 52.9143,
-                        "RightMargin": 29.0857,
+                        "LeftMargin": 43.9143,
+                        "RightMargin": 20.0857,
                         "TopMargin": 20.7133,
                         "BottomMargin": 26.2867,
                         "Tag": 171,
                         "ActionTag": -775292600,
                         "Size": {
-                          "X": 66.0,
+                          "X": 84.0,
                           "Y": 18.0
                         },
                         "Name": "videoAcceptText",
@@ -2244,6 +2252,8 @@
                   {
                     "FontSize": 18,
                     "LabelText": "x1888",
+                    "HorizontalAlignmentType": "HT_Center",
+                    "VerticalAlignmentType": "VT_Center",
                     "OutlineColor": {
                       "G": 0,
                       "B": 0
@@ -2261,7 +2271,7 @@
                     },
                     "Position": {
                       "X": 50.3557,
-                      "Y": 13.8914
+                      "Y": 16.89
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -2275,7 +2285,7 @@
                     "IconVisible": false,
                     "PrePosition": {
                       "X": 0.4706,
-                      "Y": 0.1219
+                      "Y": 0.1482
                     },
                     "PreSize": {
                       "X": 0.4206,
@@ -2283,8 +2293,8 @@
                     },
                     "LeftMargin": 27.8557,
                     "RightMargin": 34.1443,
-                    "TopMargin": 91.1086,
-                    "BottomMargin": 4.8914,
+                    "TopMargin": 88.11,
+                    "BottomMargin": 7.89,
                     "Tag": 198,
                     "ActionTag": 1462170359,
                     "Size": {

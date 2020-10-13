@@ -61,7 +61,7 @@
     } else if (incomeType == redpack_tixian) {
         self.title = @"红包提现明细";
         [self redpack_getCashlistDate];
-    } else if (incomeType == redpack_tixian) {
+    } else if (incomeType == redpack_exchange) {
         self.title = @"红包兑换明细";
         [self redpack_getExchangeDate];
     }
@@ -367,12 +367,19 @@
 #pragma mark - MJRefresh
 - (void)headerRefresh {
     _page = 1;
-    if (self.incomeType == income) {
+    
+    if (_incomeType == income) {
         [self getIncomelistDate];
-    } else if (self.incomeType == tixian) {
+    } else if (_incomeType == tixian) {
         [self getCashlistDate];
-    } else if (self.incomeType == exchange) {
+    } else if (_incomeType == exchange) {
         [self getExchangeDate];
+    } else if (_incomeType == redpack_incom) {
+        [self redpack_getIncomelistDate];
+    } else if (_incomeType == redpack_tixian) {
+        [self redpack_getCashlistDate];
+    } else if (_incomeType == redpack_exchange) {
+        [self redpack_getExchangeDate];
     }
 }
 
@@ -381,12 +388,19 @@
         return;
     }
     _page++;
-    if (self.incomeType == income) {
+    
+    if (_incomeType == income) {
         [self getIncomelistDate];
-    } else if (self.incomeType == tixian) {
+    } else if (_incomeType == tixian) {
         [self getCashlistDate];
-    } else if (self.incomeType == exchange) {
+    } else if (_incomeType == exchange) {
         [self getExchangeDate];
+    } else if (_incomeType == redpack_incom) {
+        [self redpack_getIncomelistDate];
+    } else if (_incomeType == redpack_tixian) {
+        [self redpack_getCashlistDate];
+    } else if (_incomeType == redpack_exchange) {
+        [self redpack_getExchangeDate];
     }
 }
 

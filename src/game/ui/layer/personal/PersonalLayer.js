@@ -2,6 +2,8 @@ load('game/ui/layer/personal/PersonalLayer', function () {
     let ResConfig = include('game/config/ResConfig')
     let BaseLayer = include('public/ui/BaseLayer')
     let PersonalMdt = include('game/ui/layer/personal/PersonalMdt')
+    let AniPlayer = ResConfig.AniPlayer
+    let PlayerPlay = ResConfig.PlayerPlay
     let layer = BaseLayer.extend({
         _className: 'PersonalLayer',
         ctor: function () {
@@ -22,6 +24,7 @@ load('game/ui/layer/personal/PersonalLayer', function () {
                 'personalDataPnl/idPnl': {},
                 'personalDataPnl/currencyPnl': {},
                 'personalDataPnl/rolePnl': {},
+                'personalDataPnl/rolePnl/aniNd': {},
 
                 'updateNamePnl': {},
                 'updateNamePnl/closeUpdateNameBtn': {onClicked: this.onCloseUpdateNameClick},
@@ -49,6 +52,8 @@ load('game/ui/layer/personal/PersonalLayer', function () {
         },
 
         initData: function () {
+
+
 
 
         },
@@ -103,9 +108,20 @@ load('game/ui/layer/personal/PersonalLayer', function () {
                 this.currencyPnl.getChildByName('fuKaPnl').getChildByName('fuKaVaule').setString(data.fuKa)
             }
             if (data.hasOwnProperty('photo')) {
+
                 this.loadUrlImage(data.photo, this.photoPic)
             }
 
+            if (data.hasOwnProperty('pRole')) {
+
+                let pRole = data.pRole
+                this.aniNd.removeAllChildren()
+                let ani = appInstance.gameAgent().gameUtil().getAni(AniPlayer[pRole])
+                this.aniNd.addChild(ani)
+                ani.setPosition(cc.p(0,0))
+                ani.setScale(0.4)
+                ani.setAnimation(0, PlayerPlay.stand, true)
+            }
 
         },
 

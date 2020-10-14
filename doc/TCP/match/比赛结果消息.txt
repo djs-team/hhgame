@@ -14,6 +14,8 @@ int	MJ_ROOM_MATCHRESULT = MJ_ROOM_MATCHGAME_ID + 27;
 		private String tableId ;// 牌桌id
 		private String extended;//冗余字段
 		private List<RewardProp> rewardPropList;//获奖时的奖励信息
+		private String sdkPhotoUrl;//头像
+    		private int seatID;//座位号
 			RewardProp的消息体
 				private int propType;//道具大类
 				private int propCode;//道具编码

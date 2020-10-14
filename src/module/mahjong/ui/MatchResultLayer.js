@@ -64,7 +64,7 @@ load('module/mahjong/ui/MatchResultLayer', function () {
                 this.NameTxt.setString(msg.playerName)
                 this.MatchNameTxt.setString(msg.matchName)
                 this.RankTxt.setString('第' + msg.ranking + '名')
-                // GameUtil.loadUrlImage(msg.pPhoto, this.HeadLose)
+                GameUtil.loadUrlImg(msg.pPhoto, this.HeadLose)
             }
 
         },

@@ -3315,12 +3315,12 @@
 		00614BBA250B94C900BB7620 /* 我的守护 */ = {
 			isa = PBXGroup;
 			children = (
+				00614BCC250B94CA00BB7620 /* CXMineGuardListViewController.h */,
 				00614BBB250B94C900BB7620 /* CXMineGuardListViewController.m */,
 				00614BBC250B94C900BB7620 /* CXMineGuardViewController.h */,
-				00614BBE250B94C900BB7620 /* View */,
 				00614BCB250B94CA00BB7620 /* CXMineGuardListViewController.xib */,
-				00614BCC250B94CA00BB7620 /* CXMineGuardListViewController.h */,
 				00614BCD250B94CA00BB7620 /* CXMineGuardViewController.m */,
+				00614BBE250B94C900BB7620 /* View */,
 			);
 			path = "我的守护";
 			sourceTree = "<group>";

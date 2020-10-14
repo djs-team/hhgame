@@ -75,7 +75,7 @@
           {
             "FileData": {
               "Type": "Normal",
-              "Path": "aaa/3.png",
+              "Path": "aaa/chooseCity.png",
               "Plist": ""
             },
             "Scale9OriginX": 422,
@@ -224,7 +224,7 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 642.2688,
+                  "X": 642.304,
                   "Y": 326.0001
                 },
                 "Scale": {
@@ -242,8 +242,8 @@
                   "X": 0.7872,
                   "Y": 0.8278
                 },
-                "LeftMargin": 138.4682,
-                "RightMargin": 133.9307,
+                "LeftMargin": 138.5034,
+                "RightMargin": 133.8954,
                 "TopMargin": 95.9847,
                 "BottomMargin": 27.985,
                 "Tag": 33,
@@ -271,8 +271,8 @@
                   "ScaleY": 1.0
                 },
                 "Position": {
-                  "X": 645.0,
-                  "Y": 720.0001
+                  "X": 644.992,
+                  "Y": 720.0
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -290,10 +290,9 @@
                   "X": 0.2422,
                   "Y": 0.0923
                 },
-                "LeftMargin": 490.0,
-                "RightMargin": 480.0,
-                "TopMargin": -0.0001,
-                "BottomMargin": 653.5609,
+                "LeftMargin": 489.992,
+                "RightMargin": 480.008,
+                "BottomMargin": 653.5608,
                 "Tag": 44,
                 "Children": [
                   {
@@ -437,7 +436,7 @@
                   "Y": 0.9422
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.0583
                 },
                 "LeftMargin": 1033.8799,
@@ -567,6 +566,75 @@
             "UserData": "{\"layoutType\":\"showAll\",\"screenAlign\":\"mid\"}",
             "Tag": 27,
             "Children": [
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "common/gy_fh.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "common/gy_fh.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 15,
+                "Scale9OriginY": 11,
+                "Scale9Width": 58,
+                "Scale9Height": 66,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 36.22,
+                  "Y": 677.54
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0283,
+                  "Y": 0.941
+                },
+                "PreSize": {
+                  "X": 0.0469,
+                  "Y": 0.0861
+                },
+                "LeftMargin": 6.22,
+                "RightMargin": 1213.78,
+                "TopMargin": 11.46,
+                "BottomMargin": 646.54,
+                "Tag": 131,
+                "ActionTag": -1422866669,
+                "Size": {
+                  "X": 60.0,
+                  "Y": 62.0
+                },
+                "Name": "returnBtn",
+                "ctype": "ButtonObjectData"
+              },
               {
                 "FontSize": 14,
                 "ButtonText": "",
@@ -990,7 +1058,7 @@
                   "Y": 0.0903
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.7361
                 },
                 "LeftMargin": 170.0,
@@ -1094,7 +1162,7 @@
                   "Y": -0.4366
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.1389
                 },
                 "LeftMargin": 163.4928,
@@ -1579,7 +1647,7 @@
         "ctype": "LayerObjectData"
       },
       "UsedResources": [
-        "aaa/3.png",
+        "aaa/chooseCity.png",
         "choosecity/dqxz_1.png",
         "choosecity/dqxz_11.png",
         "choosecity/dqxz_12.png",
@@ -1590,6 +1658,7 @@
         "choosecity/dqxz_6.png",
         "choosecity/dqxz_7.png",
         "choosecity/dqxz_8.png",
+        "common/gy_fh.png",
         "Default/Button_Disable.png",
         "font/hkhbtW12.ttc",
         "png/dqxz_bg.png"

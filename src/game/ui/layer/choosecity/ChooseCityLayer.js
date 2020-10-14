@@ -6,10 +6,11 @@ load('game/ui/layer/choosecity/ChooseCityLayer', function () {
         _className: 'ChooseCityLayer',
         RES_BINDING: function () {
             return {
-                'pnl/closeBtn': { onClicked: this.onCloseClick },
+                'pnl/closeBtn': {},
                 'pnl/searchBtn': { onClicked: this.onsearchBtnClick },
                 'pnl/kefuBtn': { onClicked: this.onkefuBtnClick },
                 'pnl/copyBtn': { onClicked: this.oncopyBtnClick },
+                'pnl/returnBtn': { onClicked: this.onReturnBtnClick },
                 'pnl/leftListView': { },
                 'pnl/cityListView': { },
                 'pnl/cityCell': { },
@@ -185,6 +186,9 @@ load('game/ui/layer/choosecity/ChooseCityLayer', function () {
             this._super()
         },
         onCloseClick: function () {
+            appInstance.uiManager().removeUI(this)
+        },
+        onReturnBtnClick: function () {
             appInstance.uiManager().removeUI(this)
         }
     })

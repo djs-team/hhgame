@@ -161,6 +161,7 @@ load('game/ui/layer/coingame/CoinGameLayer', function () {
         },
 
         onUpdatePropsData: function (data) {
+            if( !data) return
 
             let coinsCnt = this.coinPnl.getChildByName('coinsCnt')
             let diamondsCnt = this.diamondsPnl.getChildByName('diamondsCnt')

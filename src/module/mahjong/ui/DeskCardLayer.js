@@ -137,7 +137,7 @@ load('module/mahjong/ui/DeskCardLayer', function () {
         updateDeckCard: function (nDeckCardNum) {
             let endTag = this._allCardNum - nDeckCardNum
             let pConfig = [
-                2,3,0,1
+                2,1,0,3
             ]
             for ( let i = this._deckCardTag; i <= endTag; ++i) {
                 let pIndex = Math.floor((i - 1) / this._deckCardLen / 2)
@@ -438,7 +438,7 @@ load('module/mahjong/ui/DeskCardLayer', function () {
                 } else {
                     imgPath += 'left_out_top.png'
                 }
-                if (uiSeat === 3) {
+                if (uiSeat === 1) {
                     zorder = 50 - lineIndex
                     isFlippedX = true
                     pos.y = 16 * lineIndex
@@ -453,7 +453,7 @@ load('module/mahjong/ui/DeskCardLayer', function () {
                     } else {
                         pos.y += 16.5
                     }
-                } else if (uiSeat === 1) {
+                } else if (uiSeat === 3) {
                     zorder = lineIndex
                     pos.y = -15 * lineIndex
                     pos.x = -8 * lineIndex
@@ -647,7 +647,7 @@ load('module/mahjong/ui/DeskCardLayer', function () {
                 if (cardLen % 2 === 0) {
                     scaleMid += 0.5
                 }
-                if (seatIndex === 3) {
+                if (seatIndex === 1) {
                     isFlippedX = true
                     scale = 0.7 - (cardIndex - scaleMid) * 0.02
                     pos.y = ( cardIndex - cardLenMid ) * 16 * scale
@@ -682,12 +682,12 @@ load('module/mahjong/ui/DeskCardLayer', function () {
             if (seatIndex === 0) {
                 cardTag = this._deckCardLen * 2 * 2
                 cardTag += (this._deckCardLen - cardIndex - 1) * 2
-            } else if (seatIndex === 3) {
+            } else if (seatIndex === 1) {
                 cardTag = this._deckCardLen * 2
                 cardTag += (this._deckCardLen - cardIndex - 1) * 2
             } else if (seatIndex === 2) {
                 cardTag += cardIndex * 2
-            } else if (seatIndex === 1) {
+            } else if (seatIndex === 3) {
                 cardTag = this._deckCardLen * 3 * 2
                 cardTag += cardIndex * 2
             }

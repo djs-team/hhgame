@@ -166,27 +166,27 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="shakeBtn" Visible="False" ActionTag="778034050" Tag="28" IconVisible="False" LeftMargin="518.6700" RightMargin="521.3300" TopMargin="579.6878" BottomMargin="52.3122" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="45" RightEage="47" TopEage="11" BottomEage="11" Scale9OriginX="45" Scale9OriginY="11" Scale9Width="2" Scale9Height="61" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                    <Size X="240.0000" Y="88.0000" />
+                  <AbstractNodeData Name="shakeBtn" ActionTag="778034050" Tag="28" IconVisible="False" LeftMargin="516.1700" RightMargin="518.8300" TopMargin="578.6878" BottomMargin="51.3122" TouchEnable="True" FontSize="14" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="108" Scale9Height="32" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                    <Size X="245.0000" Y="90.0000" />
                     <Children>
-                      <AbstractNodeData Name="Image_17" ActionTag="552662093" Tag="29" IconVisible="False" LeftMargin="39.5443" RightMargin="144.4557" TopMargin="15.4690" BottomMargin="22.5310" LeftEage="18" RightEage="18" TopEage="16" BottomEage="16" Scale9OriginX="18" Scale9OriginY="16" Scale9Width="20" Scale9Height="18" ctype="ImageViewObjectData">
+                      <AbstractNodeData Name="Image_17" ActionTag="552662093" Tag="29" IconVisible="False" LeftMargin="39.5443" RightMargin="149.4557" TopMargin="17.4690" BottomMargin="22.5310" LeftEage="18" RightEage="18" TopEage="16" BottomEage="16" Scale9OriginX="18" Scale9OriginY="16" Scale9Width="20" Scale9Height="18" ctype="ImageViewObjectData">
                         <Size X="56.0000" Y="50.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="67.5443" Y="47.5310" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.2814" Y="0.5401" />
-                        <PreSize X="0.2333" Y="0.5682" />
+                        <PrePosition X="0.2757" Y="0.5281" />
+                        <PreSize X="0.2286" Y="0.5556" />
                         <FileData Type="Normal" Path="cashcow/yjs_7.png" Plist="" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Text_4" ActionTag="-965669288" Tag="30" IconVisible="False" LeftMargin="100.5996" RightMargin="35.4004" TopMargin="23.4699" BottomMargin="30.5301" FontSize="34" LabelText="摇一摇" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                      <AbstractNodeData Name="Text_4" ActionTag="-965669288" Tag="30" IconVisible="False" LeftMargin="100.5996" RightMargin="40.4004" TopMargin="25.4699" BottomMargin="30.5301" FontSize="34" LabelText="摇一摇" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                         <Size X="104.0000" Y="34.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="152.5996" Y="47.5301" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="121" G="31" B="72" />
-                        <PrePosition X="0.6358" Y="0.5401" />
-                        <PreSize X="0.4333" Y="0.3864" />
+                        <PrePosition X="0.6229" Y="0.5281" />
+                        <PreSize X="0.4245" Y="0.3778" />
                         <FontResource Type="Normal" Path="font/hkhbtW12.ttc" Plist="" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
@@ -197,48 +197,11 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.4990" Y="0.1338" />
-                    <PreSize X="0.1875" Y="0.1222" />
+                    <PreSize X="0.1914" Y="0.1250" />
                     <TextColor A="255" R="65" G="65" B="70" />
-                    <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                    <NormalFileData Type="Normal" Path="cashcow/yjs_6.png" Plist="" />
-                    <OutlineColor A="255" R="255" G="0" B="0" />
-                    <ShadowColor A="255" R="110" G="110" B="110" />
-                  </AbstractNodeData>
-                  <AbstractNodeData Name="shakeCancleBtn" ActionTag="1252381875" Tag="33" IconVisible="False" LeftMargin="518.6700" RightMargin="521.3300" TopMargin="579.6900" BottomMargin="52.3100" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="45" RightEage="47" TopEage="11" BottomEage="11" Scale9OriginX="45" Scale9OriginY="11" Scale9Width="2" Scale9Height="61" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                    <Size X="240.0000" Y="88.0000" />
-                    <Children>
-                      <AbstractNodeData Name="Image_17" ActionTag="-184317264" Tag="34" IconVisible="False" LeftMargin="39.5443" RightMargin="144.4557" TopMargin="15.4690" BottomMargin="22.5310" LeftEage="18" RightEage="18" TopEage="16" BottomEage="16" Scale9OriginX="18" Scale9OriginY="16" Scale9Width="20" Scale9Height="18" ctype="ImageViewObjectData">
-                        <Size X="56.0000" Y="50.0000" />
-                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="67.5443" Y="47.5310" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.2814" Y="0.5401" />
-                        <PreSize X="0.2333" Y="0.5682" />
-                        <FileData Type="Normal" Path="cashcow/yjs_7.png" Plist="" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Text_4" ActionTag="-241823072" Tag="35" IconVisible="False" LeftMargin="100.5996" RightMargin="35.4004" TopMargin="23.4699" BottomMargin="30.5301" FontSize="34" LabelText="摇一摇" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                        <Size X="104.0000" Y="34.0000" />
-                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="152.5996" Y="47.5301" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="121" G="31" B="72" />
-                        <PrePosition X="0.6358" Y="0.5401" />
-                        <PreSize X="0.4333" Y="0.3864" />
-                        <FontResource Type="Normal" Path="font/hkhbtW12.ttc" Plist="" />
-                        <OutlineColor A="255" R="255" G="0" B="0" />
-                        <ShadowColor A="255" R="110" G="110" B="110" />
-                      </AbstractNodeData>
-                    </Children>
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="638.6700" Y="96.3100" />
-                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.4990" Y="0.1338" />
-                    <PreSize X="0.1875" Y="0.1222" />
-                    <TextColor A="255" R="65" G="65" B="70" />
-                    <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                    <NormalFileData Type="Normal" Path="cashcow/yjs_6.png" Plist="" />
+                    <DisabledFileData Type="Normal" Path="button/xin_anniu_10.png" Plist="" />
+                    <PressedFileData Type="Normal" Path="button/xin_anniu_19.png" Plist="" />
+                    <NormalFileData Type="Normal" Path="button/xin_anniu_19.png" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
@@ -254,7 +217,7 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="poupPnl" ActionTag="309483969" Tag="37" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="poupPnl" Visible="False" ActionTag="309483969" Tag="37" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="1280.0000" Y="720.0000" />
                 <Children>
                   <AbstractNodeData Name="propPnl" Visible="False" ActionTag="48330636" Tag="39" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">

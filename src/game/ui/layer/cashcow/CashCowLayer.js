@@ -18,7 +18,6 @@ load('game/ui/layer/cashcow/CashCowLayer', function () {
 
                 'pnl/btnPnl/closeBtn': {onClicked: this.onCloseClick},
                 'pnl/btnPnl/shakeBtn': {onClicked: this.onShakeClick},
-                'pnl/btnPnl/shakeCancleBtn': {},
                 'pnl/btnPnl/recordBtn': {onClicked: this.onRecordClick},
                 'pnl/btnPnl/cointreeNd': {},
                 'pnl/poupPnl/propPnl': {onClicked: this.onHideShowPropPnlClick},
@@ -67,17 +66,12 @@ load('game/ui/layer/cashcow/CashCowLayer', function () {
             let cashCowNum = appInstance.dataManager().getUserData().cashCowNum
             let usedCashCowNum = appInstance.dataManager().getUserData().usedCashCowNum
 
-            if (usedCashCowNum < cashCowNum) {
+            let flag = false
+            if (usedCashCowNum < cashCowNum)
+                flag = true
 
-                this.shakeBtn.setVisible(true)
-                this.shakeCancleBtn.setVisible(false)
-
-            } else {
-
-                this.shakeBtn.setVisible(false)
-                this.shakeCancleBtn.setVisible(true)
-
-            }
+            this.shakeBtn.setBright(flag)
+            this.shakeBtn.setTouchEnabled(flag)
 
             this.showView()
         },
@@ -87,14 +81,13 @@ load('game/ui/layer/cashcow/CashCowLayer', function () {
             let cashCowNum = appInstance.dataManager().getUserData().cashCowNum
             let usedCashCowNum = appInstance.dataManager().getUserData().usedCashCowNum
 
-            if (usedCashCowNum >= cashCowNum) {
-                this.shakeBtn.setVisible(false)
-                this.shakeCancleBtn.setVisible(true)
-            }else{
-                this.shakeBtn.setVisible(true)
-                this.shakeCancleBtn.setVisible(false)
-                this.shakeBtn.setTouchEnabled(true)
-            }
+            let flag = false
+            if (usedCashCowNum < cashCowNum)
+                flag = true
+
+            cc.log('------------------CashCowLayer--------onRefreshView------- flag : ' + flag)
+            this.shakeBtn.setBright(flag)
+            this.shakeBtn.setTouchEnabled(flag)
 
             this.onShowPropPnl(data)
 
@@ -110,6 +103,8 @@ load('game/ui/layer/cashcow/CashCowLayer', function () {
         },
 
         onShakeClick: function () {
+
+            cc.log('----------------CashCow--------onShakeClick----------')
             this.shakeBtn.setTouchEnabled(false)
             if(cc.sys.os !== cc.sys.OS_WINDOWS)
                 appInstance.nativeApi().showRewardVideo()

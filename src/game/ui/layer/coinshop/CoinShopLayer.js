@@ -15,6 +15,7 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
             this.registerMediator(new CoinShopMdt(this))
             this.registerEventListener('rewardVideoCallback', this.onRewardVideoCallback)
             this.registerEventListener('ThirdPayCallback', this.onThirdPayCallBack)
+            this.registerEventListener('ApplePayCallback', this.onApplePayCallBack)
 
         },
         RES_BINDING: function () {
@@ -240,7 +241,17 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
             sender = s;
             cc.log("----------------------onBuyZuanFunction" + JSON.stringify(sender))
             if (cc.sys.OS_IOS === cc.sys.os) {
-
+                if (AppConfig.applePayType == "Apple") {
+//                    let _sendData = sender._sendData
+//                    let msg = {
+//                        vipCode: _sendData.vipCode,
+//                        payType: 3
+//                    }
+//                    appInstance.gameAgent().httpGame().VIPPaysOrderReq(msg)
+//                    cc.log("----------------------onRechargeClicked")
+                } else {
+                    this.PayType.setVisible(true)
+                }
             } else {
                 this.PayType.setVisible(true)
             }
@@ -275,8 +286,14 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
             cc.log('------------onThirdPayCallBack' + msg)
 
         },
-
-
+        // 苹果支付成功订单校验
+        onApplePayCallBack: function (msg) {
+            cc.log('=============onApplePayCallBack' + msg)
+//            msg = JSON.parse(msg)
+//            
+//            appInstance.gameAgent().httpGame().VIPPaysOrderAppleCheckReq(msg)
+            
+        },
         /**
          * 触发购买事件
          * @param sender

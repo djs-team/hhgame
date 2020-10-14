@@ -111,6 +111,7 @@
               "X": 1280.0,
               "Y": 720.0
             },
+            "VisibleForFrame": false,
             "Name": "dele",
             "ctype": "ImageViewObjectData"
           },
@@ -1357,13 +1358,13 @@
                                           "Y": 0.1795
                                         },
                                         "PreSize": {
-                                          "X": 0.7848,
-                                          "Y": 0.25
+                                          "X": 0.8101,
+                                          "Y": 0.275
                                         },
-                                        "LeftMargin": 6.3358,
-                                        "RightMargin": 10.6642,
-                                        "TopMargin": 55.64,
-                                        "BottomMargin": 4.36,
+                                        "LeftMargin": 5.3358,
+                                        "RightMargin": 9.6642,
+                                        "TopMargin": 54.64,
+                                        "BottomMargin": 3.36,
                                         "Tag": 35,
                                         "ActionTag": -1597070288,
                                         "Size": {
@@ -3553,14 +3554,14 @@
                           {
                             "FileData": {
                               "Type": "Normal",
-                              "Path": "choosecity/dqxz_3.png",
+                              "Path": "choosecity/xin_anniu_19.png",
                               "Plist": ""
                             },
                             "Scale9Enable": true,
                             "Scale9OriginX": 22,
                             "Scale9OriginY": 12,
-                            "Scale9Width": 24,
-                            "Scale9Height": 18,
+                            "Scale9Width": 94,
+                            "Scale9Height": 30,
                             "TouchEnable": true,
                             "AnchorPoint": {
                               "ScaleX": 0.5,
@@ -3581,13 +3582,13 @@
                               "Y": 0.1628
                             },
                             "PreSize": {
-                              "X": 0.6377,
-                              "Y": 0.1328
+                              "X": 0.6667,
+                              "Y": 0.1406
                             },
-                            "LeftMargin": 37.0605,
-                            "RightMargin": 37.9395,
-                            "TopMargin": 295.99,
-                            "BottomMargin": 37.01,
+                            "LeftMargin": 34.0605,
+                            "RightMargin": 34.9395,
+                            "TopMargin": 294.49,
+                            "BottomMargin": 35.51,
                             "Tag": 160,
                             "Children": [
                               {
@@ -3624,16 +3625,16 @@
                                 "CColor": {},
                                 "IconVisible": false,
                                 "PrePosition": {
-                                  "X": 0.4998,
-                                  "Y": 0.559
+                                  "X": 0.4781,
+                                  "Y": 0.528
                                 },
                                 "PreSize": {
-                                  "X": 0.5833,
-                                  "Y": 0.4902
+                                  "X": 0.558,
+                                  "Y": 0.463
                                 },
                                 "LeftMargin": 27.4759,
-                                "RightMargin": 27.5241,
-                                "TopMargin": 9.99,
+                                "RightMargin": 33.5241,
+                                "TopMargin": 12.99,
                                 "BottomMargin": 16.01,
                                 "Tag": 161,
                                 "ActionTag": 1370111201,
@@ -3647,8 +3648,8 @@
                             ],
                             "ActionTag": 781605306,
                             "Size": {
-                              "X": 132.0,
-                              "Y": 51.0
+                              "X": 138.0,
+                              "Y": 54.0
                             },
                             "Name": "challegeBtnPg",
                             "ctype": "ImageViewObjectData"
@@ -5403,7 +5404,7 @@
       "UsedResources": [
         "aaa/12_1 (1).png",
         "aaa/18(7).png",
-        "choosecity/dqxz_3.png",
+        "choosecity/xin_anniu_19.png",
         "common/bt_5.png",
         "common/bz_2.png",
         "common/db.png",

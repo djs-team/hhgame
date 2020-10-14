@@ -277,18 +277,18 @@ load('game/ui/layer/task/TaskMdt', function () {
 
                 switch (data.status) {
                     case 0:
-                        challengeTask.statusRes = 'res/code/task/dqxz_3.png'
+                        challengeTask.statusRes = 'res/button/xin_anniu_19.png'
                         challengeTask.statusText = '去完成'
                         break
                     case 1:
-                        challengeTask.statusRes = 'res/code/task/yqyl_7.png'
+                        challengeTask.statusRes = 'res/button/xin_anniu_18.png'
                         challengeTask.statusText = '未领取'
                         break
                     case 2:
                         challengeTask.statusRes = 'res/code/task/yj_3.png'
                         break
                     default:
-                        challengeTask.statusRes = 'res/code/task/dqxz_3.png'
+                        challengeTask.statusRes = 'res/button/xin_anniu_19.png'
                         challengeTask.statusText = '去完成'
                         break
                 }

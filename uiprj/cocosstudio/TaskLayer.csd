@@ -880,7 +880,7 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="popUpPnl" Visible="False" ActionTag="-1622764222" Tag="100" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="popUpPnl" ActionTag="-1622764222" Tag="100" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="1280.0000" Y="720.0000" />
                 <Children>
                   <AbstractNodeData Name="rewardOnePnl" ActionTag="-864683893" Tag="452" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TopMargin="-1.4399" BottomMargin="1.4400" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
@@ -932,14 +932,14 @@
                             <PreSize X="0.5909" Y="0.5702" />
                             <FileData Type="Normal" Path="common/jinbi.png" Plist="" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="awardsVal" ActionTag="-653928573" Tag="458" IconVisible="False" LeftMargin="16.9440" RightMargin="15.0560" TopMargin="136.2935" BottomMargin="-47.2935" FontSize="25" LabelText="x20000" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                            <Size X="78.0000" Y="25.0000" />
+                          <AbstractNodeData Name="awardsVal" ActionTag="-653928573" Tag="458" IconVisible="False" LeftMargin="11.9440" RightMargin="10.0560" TopMargin="136.2935" BottomMargin="-47.2935" IsCustomSize="True" FontSize="25" LabelText="x20000" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                            <Size X="88.0000" Y="25.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                             <Position X="55.9440" Y="-34.7935" />
                             <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="0" G="0" B="0" />
                             <PrePosition X="0.5086" Y="-0.3052" />
-                            <PreSize X="0.7091" Y="0.2193" />
+                            <PreSize X="0.8000" Y="0.2193" />
                             <OutlineColor A="255" R="255" G="0" B="0" />
                             <ShadowColor A="255" R="110" G="110" B="110" />
                           </AbstractNodeData>
@@ -1013,14 +1013,14 @@
                             <PreSize X="0.5909" Y="0.5702" />
                             <FileData Type="Normal" Path="common/jinbi.png" Plist="" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="awardsVal" ActionTag="730597150" Tag="522" IconVisible="False" LeftMargin="14.0707" RightMargin="17.9293" TopMargin="130.5495" BottomMargin="-41.5495" FontSize="25" LabelText="x20000" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                            <Size X="78.0000" Y="25.0000" />
+                          <AbstractNodeData Name="awardsVal" ActionTag="730597150" Tag="522" IconVisible="False" LeftMargin="9.0707" RightMargin="12.9293" TopMargin="130.5495" BottomMargin="-41.5495" IsCustomSize="True" FontSize="25" LabelText="x20000" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                            <Size X="88.0000" Y="25.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                             <Position X="53.0707" Y="-29.0495" />
                             <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="0" G="0" B="0" />
                             <PrePosition X="0.4825" Y="-0.2548" />
-                            <PreSize X="0.7091" Y="0.2193" />
+                            <PreSize X="0.8000" Y="0.2193" />
                             <OutlineColor A="255" R="255" G="0" B="0" />
                             <ShadowColor A="255" R="110" G="110" B="110" />
                           </AbstractNodeData>
@@ -1046,14 +1046,14 @@
                             <PreSize X="0.5909" Y="0.5702" />
                             <FileData Type="Normal" Path="common/jinbi.png" Plist="" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="awardsVal" ActionTag="968731017" Tag="74" IconVisible="False" LeftMargin="14.0707" RightMargin="17.9293" TopMargin="130.5495" BottomMargin="-41.5495" FontSize="25" LabelText="x20000" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                            <Size X="78.0000" Y="25.0000" />
+                          <AbstractNodeData Name="awardsVal" ActionTag="968731017" Tag="74" IconVisible="False" LeftMargin="9.0707" RightMargin="12.9293" TopMargin="130.5495" BottomMargin="-41.5495" IsCustomSize="True" FontSize="25" LabelText="x20000" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                            <Size X="88.0000" Y="25.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                             <Position X="53.0707" Y="-29.0495" />
                             <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="0" G="0" B="0" />
                             <PrePosition X="0.4825" Y="-0.2548" />
-                            <PreSize X="0.7091" Y="0.2193" />
+                            <PreSize X="0.8000" Y="0.2193" />
                             <OutlineColor A="255" R="255" G="0" B="0" />
                             <ShadowColor A="255" R="110" G="110" B="110" />
                           </AbstractNodeData>
@@ -1127,14 +1127,14 @@
                             <PreSize X="0.5909" Y="0.5702" />
                             <FileData Type="Normal" Path="common/jinbi.png" Plist="" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="awardsVal" ActionTag="-1800393366" Tag="81" IconVisible="False" LeftMargin="14.0707" RightMargin="17.9293" TopMargin="130.5495" BottomMargin="-41.5495" FontSize="25" LabelText="x20000" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                            <Size X="78.0000" Y="25.0000" />
+                          <AbstractNodeData Name="awardsVal" ActionTag="-1800393366" Tag="81" IconVisible="False" LeftMargin="9.0707" RightMargin="12.9293" TopMargin="130.5495" BottomMargin="-41.5495" IsCustomSize="True" FontSize="25" LabelText="x20000" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                            <Size X="88.0000" Y="25.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                             <Position X="53.0707" Y="-29.0495" />
                             <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="0" G="0" B="0" />
                             <PrePosition X="0.4825" Y="-0.2548" />
-                            <PreSize X="0.7091" Y="0.2193" />
+                            <PreSize X="0.8000" Y="0.2193" />
                             <OutlineColor A="255" R="255" G="0" B="0" />
                             <ShadowColor A="255" R="110" G="110" B="110" />
                           </AbstractNodeData>
@@ -1160,14 +1160,14 @@
                             <PreSize X="0.5909" Y="0.5702" />
                             <FileData Type="Normal" Path="common/jinbi.png" Plist="" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="awardsVal" ActionTag="1296065028" Tag="84" IconVisible="False" LeftMargin="14.0707" RightMargin="17.9293" TopMargin="130.5495" BottomMargin="-41.5495" FontSize="25" LabelText="x20000" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                            <Size X="78.0000" Y="25.0000" />
+                          <AbstractNodeData Name="awardsVal" ActionTag="1296065028" Tag="84" IconVisible="False" LeftMargin="9.0707" RightMargin="12.9293" TopMargin="130.5495" BottomMargin="-41.5495" IsCustomSize="True" FontSize="25" LabelText="x20000" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                            <Size X="88.0000" Y="25.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                             <Position X="53.0707" Y="-29.0495" />
                             <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="0" G="0" B="0" />
                             <PrePosition X="0.4825" Y="-0.2548" />
-                            <PreSize X="0.7091" Y="0.2193" />
+                            <PreSize X="0.8000" Y="0.2193" />
                             <OutlineColor A="255" R="255" G="0" B="0" />
                             <ShadowColor A="255" R="110" G="110" B="110" />
                           </AbstractNodeData>
@@ -1193,14 +1193,14 @@
                             <PreSize X="0.5909" Y="0.5702" />
                             <FileData Type="Normal" Path="common/jinbi.png" Plist="" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="awardsVal" ActionTag="903498122" Tag="87" IconVisible="False" LeftMargin="14.0707" RightMargin="17.9293" TopMargin="130.5495" BottomMargin="-41.5495" FontSize="25" LabelText="x20000" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                            <Size X="78.0000" Y="25.0000" />
+                          <AbstractNodeData Name="awardsVal" ActionTag="903498122" Tag="87" IconVisible="False" LeftMargin="9.0707" RightMargin="12.9293" TopMargin="130.5495" BottomMargin="-41.5495" IsCustomSize="True" FontSize="25" LabelText="x20000" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                            <Size X="88.0000" Y="25.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                             <Position X="53.0707" Y="-29.0495" />
                             <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="0" G="0" B="0" />
                             <PrePosition X="0.4825" Y="-0.2548" />
-                            <PreSize X="0.7091" Y="0.2193" />
+                            <PreSize X="0.8000" Y="0.2193" />
                             <OutlineColor A="255" R="255" G="0" B="0" />
                             <ShadowColor A="255" R="110" G="110" B="110" />
                           </AbstractNodeData>

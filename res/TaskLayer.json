@@ -4144,8 +4144,10 @@
                             "ctype": "ImageViewObjectData"
                           },
                           {
+                            "IsCustomSize": true,
                             "FontSize": 25,
                             "LabelText": "x20000",
+                            "HorizontalAlignmentType": "HT_Center",
                             "OutlineColor": {
                               "G": 0,
                               "B": 0
@@ -4180,17 +4182,17 @@
                               "Y": -0.3052
                             },
                             "PreSize": {
-                              "X": 0.7091,
+                              "X": 0.8,
                               "Y": 0.2193
                             },
-                            "LeftMargin": 16.944,
-                            "RightMargin": 15.056,
+                            "LeftMargin": 11.944,
+                            "RightMargin": 10.056,
                             "TopMargin": 136.2935,
                             "BottomMargin": -47.2935,
                             "Tag": 458,
                             "ActionTag": -653928573,
                             "Size": {
-                              "X": 78.0,
+                              "X": 88.0,
                               "Y": 25.0
                             },
                             "Name": "awardsVal",
@@ -4504,8 +4506,10 @@
                             "ctype": "ImageViewObjectData"
                           },
                           {
+                            "IsCustomSize": true,
                             "FontSize": 25,
                             "LabelText": "x20000",
+                            "HorizontalAlignmentType": "HT_Center",
                             "OutlineColor": {
                               "G": 0,
                               "B": 0
@@ -4540,17 +4544,17 @@
                               "Y": -0.2548
                             },
                             "PreSize": {
-                              "X": 0.7091,
+                              "X": 0.8,
                               "Y": 0.2193
                             },
-                            "LeftMargin": 14.0707,
-                            "RightMargin": 17.9293,
+                            "LeftMargin": 9.0707,
+                            "RightMargin": 12.9293,
                             "TopMargin": 130.5495,
                             "BottomMargin": -41.5495,
                             "Tag": 522,
                             "ActionTag": 730597150,
                             "Size": {
-                              "X": 78.0,
+                              "X": 88.0,
                               "Y": 25.0
                             },
                             "Name": "awardsVal",
@@ -4651,8 +4655,10 @@
                             "ctype": "ImageViewObjectData"
                           },
                           {
+                            "IsCustomSize": true,
                             "FontSize": 25,
                             "LabelText": "x20000",
+                            "HorizontalAlignmentType": "HT_Center",
                             "OutlineColor": {
                               "G": 0,
                               "B": 0
@@ -4687,17 +4693,17 @@
                               "Y": -0.2548
                             },
                             "PreSize": {
-                              "X": 0.7091,
+                              "X": 0.8,
                               "Y": 0.2193
                             },
-                            "LeftMargin": 14.0707,
-                            "RightMargin": 17.9293,
+                            "LeftMargin": 9.0707,
+                            "RightMargin": 12.9293,
                             "TopMargin": 130.5495,
                             "BottomMargin": -41.5495,
                             "Tag": 74,
                             "ActionTag": 968731017,
                             "Size": {
-                              "X": 78.0,
+                              "X": 88.0,
                               "Y": 25.0
                             },
                             "Name": "awardsVal",
@@ -5011,8 +5017,10 @@
                             "ctype": "ImageViewObjectData"
                           },
                           {
+                            "IsCustomSize": true,
                             "FontSize": 25,
                             "LabelText": "x20000",
+                            "HorizontalAlignmentType": "HT_Center",
                             "OutlineColor": {
                               "G": 0,
                               "B": 0
@@ -5047,17 +5055,17 @@
                               "Y": -0.2548
                             },
                             "PreSize": {
-                              "X": 0.7091,
+                              "X": 0.8,
                               "Y": 0.2193
                             },
-                            "LeftMargin": 14.0707,
-                            "RightMargin": 17.9293,
+                            "LeftMargin": 9.0707,
+                            "RightMargin": 12.9293,
                             "TopMargin": 130.5495,
                             "BottomMargin": -41.5495,
                             "Tag": 81,
                             "ActionTag": -1800393366,
                             "Size": {
-                              "X": 78.0,
+                              "X": 88.0,
                               "Y": 25.0
                             },
                             "Name": "awardsVal",
@@ -5158,8 +5166,10 @@
                             "ctype": "ImageViewObjectData"
                           },
                           {
+                            "IsCustomSize": true,
                             "FontSize": 25,
                             "LabelText": "x20000",
+                            "HorizontalAlignmentType": "HT_Center",
                             "OutlineColor": {
                               "G": 0,
                               "B": 0
@@ -5194,17 +5204,17 @@
                               "Y": -0.2548
                             },
                             "PreSize": {
-                              "X": 0.7091,
+                              "X": 0.8,
                               "Y": 0.2193
                             },
-                            "LeftMargin": 14.0707,
-                            "RightMargin": 17.9293,
+                            "LeftMargin": 9.0707,
+                            "RightMargin": 12.9293,
                             "TopMargin": 130.5495,
                             "BottomMargin": -41.5495,
                             "Tag": 84,
                             "ActionTag": 1296065028,
                             "Size": {
-                              "X": 78.0,
+                              "X": 88.0,
                               "Y": 25.0
                             },
                             "Name": "awardsVal",
@@ -5305,8 +5315,10 @@
                             "ctype": "ImageViewObjectData"
                           },
                           {
+                            "IsCustomSize": true,
                             "FontSize": 25,
                             "LabelText": "x20000",
+                            "HorizontalAlignmentType": "HT_Center",
                             "OutlineColor": {
                               "G": 0,
                               "B": 0
@@ -5341,17 +5353,17 @@
                               "Y": -0.2548
                             },
                             "PreSize": {
-                              "X": 0.7091,
+                              "X": 0.8,
                               "Y": 0.2193
                             },
-                            "LeftMargin": 14.0707,
-                            "RightMargin": 17.9293,
+                            "LeftMargin": 9.0707,
+                            "RightMargin": 12.9293,
                             "TopMargin": 130.5495,
                             "BottomMargin": -41.5495,
                             "Tag": 87,
                             "ActionTag": 903498122,
                             "Size": {
-                              "X": 78.0,
+                              "X": 88.0,
                               "Y": 25.0
                             },
                             "Name": "awardsVal",

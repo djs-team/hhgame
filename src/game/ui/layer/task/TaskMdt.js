@@ -307,7 +307,7 @@ load('game/ui/layer/task/TaskMdt', function () {
 
 
         onReceiveChallegeReward: function (msg) {
-
+            console.log('--------onReceiveChallegeReward'+JSON.stringify(msg));
             let data = {}
             data.rewards = {}
             data.stage = msg.stage
@@ -316,8 +316,8 @@ load('game/ui/layer/task/TaskMdt', function () {
             data.statusRes = 'res/code/task/yj_3.png'
 
             let propConfig = {}
-            propConfig.propNum = msg.propNum
-            switch (msg.propCode) {
+            propConfig.propNum = msg.rewardProp.propNum
+            switch (msg.rewardProp.propCode) {
                 case 1://货币
                     propConfig.propRes = 'res/code/task/jinbi.png'
                     break

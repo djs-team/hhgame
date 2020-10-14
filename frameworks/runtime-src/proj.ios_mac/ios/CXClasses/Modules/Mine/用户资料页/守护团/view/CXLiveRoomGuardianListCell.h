@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *numberLabel;
 @property (weak, nonatomic) IBOutlet UILabel *expireLabel;
 
-@property (nonatomic, strong) CXUserModel *model;
+@property (nonatomic, strong) CXLiveRoomGuardItemModel *model;
 
 @end
 

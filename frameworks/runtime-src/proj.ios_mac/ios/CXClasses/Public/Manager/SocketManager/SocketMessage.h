@@ -170,7 +170,7 @@ typedef NS_ENUM(NSUInteger, SocketMessageID) {
     SocketMessageIDGetDisableMsgTemplates = 132,        // 禁言表数据获取
     SocketMessageIDSetUserIsDisableMsg = 28,            // 设置是否禁言
     SocketMessageIDUserDisableChatMessage = 47,         // 收到有没有被主持禁言
-    
+    SocketMessageIDGetGuardItemList = 139,              // 获取守护榜单（亲密值排序）
 };
 
 

@@ -15,8 +15,12 @@
 @property (nonatomic, strong) CXFriendMessageViewController *conversationVC;
 @property (nonatomic, strong) UIButton *applyBtn;
 @property (nonatomic, strong) UIButton *clearBtn;
+@property (nonatomic, strong) UILabel *applyCountLabel;
 
 @property (nonatomic, strong) NSMutableArray *titleArray;
+
+@property (nonatomic, assign) NSInteger messageCount;
+@property (nonatomic, assign) NSInteger systemCount;
 
 @end
 
@@ -75,6 +79,10 @@
     [self.titleArray replaceObjectAtIndex:0 withObject:friendItem];
     self.titles = [NSArray arrayWithArray:self.titleArray];
     [self reloadData];
+    
+    _messageCount = unreadCount;
+    
+    [self reloadTabBarBadge];
 }
 
 - (void)getUnReadCountData {
@@ -86,8 +94,29 @@
             [weakSelf.titleArray replaceObjectAtIndex:1 withObject:systemItem];
             weakSelf.titles = [NSArray arrayWithArray:weakSelf.titleArray];
             [weakSelf reloadData];
+            
+            NSString *my_apply = responseObject[@"data"][@"my_apply"];
+            NSString *apply_my = responseObject[@"data"][@"apply_my"];
+            
+            weakSelf.systemCount = [system_num integerValue] + [my_apply integerValue] + [apply_my integerValue];
+            
+            [weakSelf reloadTabBarBadge];
+            
+            NSInteger applyCount = [my_apply integerValue] + [apply_my integerValue];
+            if (applyCount > 0) {
+                weakSelf.applyCountLabel.hidden = NO;
+                weakSelf.applyCountLabel.text = [NSString stringWithFormat:@"%ld", applyCount];
+            } else {
+                weakSelf.applyCountLabel.hidden = YES;
+            }
         }
     }];
+}
+
+- (void)reloadTabBarBadge {
+    NSInteger unreadCount = _messageCount + _systemCount;
+    NSString *unreadCountStr = unreadCount > 0 ? @(MIN(unreadCount, 99)).stringValue : nil;
+    self.tabBarItem.badgeValue = unreadCountStr;
 }
 
 - (void)setupNavBack {
@@ -134,5 +163,16 @@
     [clear addTarget:self action:@selector(clearAction) forControlEvents:UIControlEventTouchUpInside];
     _clearBtn = clear;
     [self.view addSubview:clear];
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 20 - 15 + 15, kStatusHeight + 12 - 5, 14, 14)];
+    label.font = [UIFont systemFontOfSize:8];
+    label.textAlignment = NSTextAlignmentCenter;
+    label.textColor = [UIColor whiteColor];
+    label.backgroundColor = UIColorHex(0xF70505);
+    label.layer.masksToBounds = YES;
+    label.layer.cornerRadius = 7;
+    _applyCountLabel = label;
+    [self.view addSubview:label];
+    _applyCountLabel.hidden = YES;
 }
 @end

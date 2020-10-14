@@ -18,7 +18,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-
 @interface SocketMessageGetUserInfoResponseUser : NSObject
 
 @property (nonatomic, strong) NSString * UserId;
@@ -77,5 +76,30 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+// 获取守护榜单（亲密值排序）
+@class LiveRoomUser;
+@interface CXLiveRoomGuardItemModel : NSObject
+@property (nonatomic, strong) LiveRoomUser * UserInfo;
+@property (nonatomic, strong) NSString * eadlineTime;
+@property (nonatomic, strong) NSNumber * Days;
+@property (nonatomic, strong) NSNumber * Intimacy;
+@end
+
+@interface SocketMessageGetGuardItemListResponse : SocketMessageResponse
+@property (nonatomic, assign) BOOL IsGuard;
+@property (nonatomic, strong) NSString * GuardHead;
+@property (nonatomic, strong) NSString * GuardName;
+@property (nonatomic, strong) NSNumber * UserCount;
+@property (nonatomic, strong) NSNumber * AllPage;
+@property (nonatomic, strong) NSArray <CXLiveRoomGuardItemModel*>* GuardItems;
+
+@end
+@interface SocketMessageGetGuardItemListRequest : SocketMessageRequest
+
+@property (nonatomic, strong) SocketMessageGetGuardItemListResponse* response;
+@property (nonatomic, strong) NSNumber * UserId;
+@property (nonatomic, assign) NSInteger Page;
+
+@end
 
 NS_ASSUME_NONNULL_END

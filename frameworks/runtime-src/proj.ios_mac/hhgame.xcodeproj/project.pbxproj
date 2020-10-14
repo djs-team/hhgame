@@ -2325,14 +2325,14 @@
 		00614930250B94C600BB7620 /* Apply */ = {
 			isa = PBXGroup;
 			children = (
-				00614931250B94C600BB7620 /* CXFriendInviteListViewController.h */,
 				00614932250B94C600BB7620 /* CXFriendApplyViewController.h */,
-				00614933250B94C600BB7620 /* CXAddFriendViewController.xib */,
-				00614934250B94C600BB7620 /* CXAddFriendViewController.h */,
-				00614935250B94C600BB7620 /* CXFriendInviteListViewController.m */,
 				00614936250B94C600BB7620 /* CXFriendApplyViewController.m */,
-				0061493E250B94C600BB7620 /* CXFriendInviteListViewController.xib */,
+				00614931250B94C600BB7620 /* CXFriendInviteListViewController.h */,
+				00614935250B94C600BB7620 /* CXFriendInviteListViewController.m */,
+				00614934250B94C600BB7620 /* CXAddFriendViewController.h */,
 				0061493F250B94C600BB7620 /* CXAddFriendViewController.m */,
+				00614933250B94C600BB7620 /* CXAddFriendViewController.xib */,
+				0061493E250B94C600BB7620 /* CXFriendInviteListViewController.xib */,
 				00614937250B94C600BB7620 /* Views */,
 			);
 			path = Apply;

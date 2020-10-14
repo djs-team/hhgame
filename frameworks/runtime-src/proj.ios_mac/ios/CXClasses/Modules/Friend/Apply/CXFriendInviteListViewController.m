@@ -150,17 +150,22 @@
     
     if (self.friendApply == YES) {
         [cell.fromTipLabel setTitle:@"请求和你成为好友" forState:UIControlStateNormal];
-        //1.同意 2.拒绝 3.申请中
-        if ([model.mstatus integerValue] == 2) {
+        //1:同意 2:拒绝 3:申请中 4:已过期
+        if ([model.mstatus integerValue] == 1) {
             cell.rejestButton.hidden = YES;
             cell.agreeButton.hidden = YES;
             cell.stateLabel.hidden = NO;
             cell.stateLabel.text = @"    已添加    ";
-        } else if ([model.mstatus integerValue] == 1) {
+        } else if ([model.mstatus integerValue] == 2) {
             cell.rejestButton.hidden = YES;
             cell.agreeButton.hidden = YES;
             cell.stateLabel.hidden = NO;
             cell.stateLabel.text = @"    已拒绝    ";
+        } else if ([model.mstatus integerValue] == 4) {
+            cell.rejestButton.hidden = YES;
+            cell.agreeButton.hidden = YES;
+            cell.stateLabel.hidden = NO;
+            cell.stateLabel.text = @"    已过期    ";
         } else {
             cell.rejestButton.hidden = NO;
             cell.agreeButton.hidden = NO;
@@ -171,11 +176,13 @@
         cell.rejestButton.hidden = YES;
         cell.agreeButton.hidden = YES;
         cell.stateLabel.hidden = NO;
-        //1.同意 2.拒绝 3.申请中
+        //1:同意 2:拒绝 3:申请中 4:已过期
         if ([model.mstatus integerValue] == 2) {
-            cell.stateLabel.text = @" 对方以拒绝礼物已退回 ";
+            cell.stateLabel.text = @" 对方已拒绝礼物已退回 ";
         } else if ([model.mstatus integerValue] == 1) {
             cell.stateLabel.text = @"  已成为好友  ";
+        } else if ([model.mstatus integerValue] == 4) {
+            cell.stateLabel.text = @"  已过期  ";
         } else {
             cell.stateLabel.text = @"  等待对方通过  ";
         }

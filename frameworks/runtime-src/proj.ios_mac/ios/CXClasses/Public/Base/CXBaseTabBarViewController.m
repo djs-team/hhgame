@@ -28,6 +28,9 @@
 @property (nonatomic, strong) NSMutableArray *inviteMikeArrays; // 红娘邀请上麦列表
 @property (nonatomic, strong) CXInviteMikeView *mikeView;
 
+@property (nonatomic, assign) NSInteger messageCount;
+@property (nonatomic, assign) NSInteger systemCount;
+
 @end
 
 @implementation CXBaseTabBarViewController
@@ -48,11 +51,15 @@
     
     [self setupChildController];
     
+    _messageCount = 0;
+    _systemCount = 0;
+    
     //监听消息接收，主要更新会话tabbaritem的badge
     [[EMClient sharedClient].chatManager addDelegate:self delegateQueue:nil];
     
     [self checkUserDataUpdate];
     
+    [self getUnReadCountData];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -71,16 +78,23 @@
     self.isViewAppear = NO;
 }
 
-- (void)login {
-    [CXHTTPRequest GETWithURL:@"/index.php/Api/Member/autologin" parameters:@{} callback:^(id responseObject, BOOL isCache, NSError *error) {
-        if (responseObject) {
-            CXUserModel *user = [CXUserModel modelWithJSON:responseObject[@"data"][@"info"]];
-            [CXClientModel instance].userId = user.user_id;
+- (void)getUnReadCountData {
+    kWeakSelf
+    [CXHTTPRequest GETWithURL:@"/index.php/Api/Friend/messageNum" parameters:nil callback:^(id responseObject, BOOL isCache, NSError *error) {
+        if (!error) {
+            NSString *system_num = responseObject[@"data"][@"system_num"];
+            NSString *my_apply = responseObject[@"data"][@"my_apply"];
+            NSString *apply_my = responseObject[@"data"][@"apply_my"];
+            
+            weakSelf.systemCount = [system_num integerValue] + [my_apply integerValue] + [apply_my integerValue];
+            
+            [weakSelf reloadTabBarBadge];
         }
     }];
 }
 
 - (void)back {
+    [[EMClient sharedClient] logout:YES];
     [AppController setOrientation:@""];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -121,13 +135,10 @@
 
 #pragma mark - EMNotificationsDelegate
 
-- (void)didNotificationsUnreadCountUpdate:(NSInteger)aUnreadCount
-{
-    if (aUnreadCount > 0) {
-        self.friendController.tabBarItem.badgeValue = @(aUnreadCount).stringValue;
-    } else {
-        self.friendController.tabBarItem.badgeValue = nil;
-    }
+- (void)didNotificationsUnreadCountUpdate:(NSInteger)aUnreadCount {
+    self.messageCount = aUnreadCount;
+    
+    [self reloadTabBarBadge];
 }
 
 #pragma mark - Private
@@ -140,9 +151,15 @@
         unreadCount += conversation.unreadMessagesCount;
     }
     
-    NSString *unreadCountStr = unreadCount > 0 ? @(unreadCount).stringValue : nil;
+    self.messageCount = unreadCount;
+    
+    [self reloadTabBarBadge];
+}
+
+- (void)reloadTabBarBadge {
+    NSInteger unreadCount = _messageCount + _systemCount;
+    NSString *unreadCountStr = unreadCount > 0 ? @(MIN(unreadCount, 99)).stringValue : nil;
     self.friendController.tabBarItem.badgeValue = unreadCountStr;
-//    [EMRemindManager updateApplicationIconBadgeNumber:unreadCount];
 }
 
 - (void)_loadTabBarItemsBadge

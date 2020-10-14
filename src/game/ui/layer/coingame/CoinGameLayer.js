@@ -3,6 +3,7 @@ load('game/ui/layer/coingame/CoinGameLayer', function () {
     let ResConfig = include('game/config/ResConfig')
     let BaseLayer = include('public/ui/BaseLayer')
     let LocalSave = include('game/public/LocalSave')
+    let CoinGameMdt = include('game/ui/layer/coingame/CoinGameMdt')
     let coinGameLayer = BaseLayer.extend({
         _className: 'coinGameLayer',
         _goBtnData: [
@@ -18,6 +19,8 @@ load('game/ui/layer/coingame/CoinGameLayer', function () {
         RES_BINDING: function () {
             return {
                 'topPnl/closeBtn': { onClicked: this.onCloseClick },
+                'topPnl/coinPnl': { },
+                'topPnl/diamondsPnl': { },
                 'bmPnl/startQuickBtn': { onClicked: this.onStartQuickBtnClick },
                 'bmPnl/startQuickBtn/StartQuickName': {  },
                 'leftPnl/PeopleBtn2': { onClicked: this.onPeopleClick },
@@ -27,6 +30,7 @@ load('game/ui/layer/coingame/CoinGameLayer', function () {
         },
         ctor: function () {
             this._super(ResConfig.View.CoinGameLayer)
+            this.registerMediator(new CoinGameMdt(this))
         },
 
         onEnter: function () {
@@ -35,14 +39,16 @@ load('game/ui/layer/coingame/CoinGameLayer', function () {
             this.initView()
         },
 
-        initData: function () {
+        initData: function (data) {
             this._peopleNum = global.localStorage.getIntKey(LocalSave.CoinGamePeopleNum)
             if (!this._peopleNum) {
                 this._peopleNum = 2
             }
+            this.onUpdatePropsData(data)
         },
 
-        initView: function () {
+        initView: function (data) {
+            this.initData(data)
             for (let i = 1; i < 5; ++i) {
                 this.initGoBtn(this.MidPnl.getChildByName('goBtn' + i), this._goBtnData[i - 1])
             }
@@ -118,6 +124,24 @@ load('game/ui/layer/coingame/CoinGameLayer', function () {
             appInstance.gameAgent().tcpGame().enterTable(goMsg)
             global.localStorage.setIntKey(LocalSave.CoinGamePeopleNum, this._peopleNum)
         },
+
+        onUpdatePropsData: function (data) {
+
+            let coinsCnt = this.coinPnl.getChildByName('coinsCnt')
+            let diamondsCnt = this.diamondsPnl.getChildByName('diamondsCnt')
+
+            if (data.hasOwnProperty('coin')) {
+                coinsCnt.setString(data.coin)
+            }
+
+            if (data.hasOwnProperty('diamonds')) {
+                diamondsCnt.setString(data.diamonds)
+            }
+
+
+
+        },
+
         onCreate: function () {
             this._super()
         },

@@ -169,7 +169,6 @@ load('game/ui/scene/HallScene', function () {
         },
 
         goChooseCity: function () {
-            cc.log('----------11111111111111111111111111---------------------------')
             appInstance.gameAgent().addPopUI(ResConfig.Ui.ChooseCityLayer)
         },
 
@@ -271,10 +270,6 @@ load('game/ui/scene/HallScene', function () {
             this.turnTableNd.addChild(zhuanpanAni)
 
             this.updatePlayerAni()
-
-
-            this.onInitUserData();
-
             this.morePnl.setVisible(false)
 
         },
@@ -324,7 +319,6 @@ load('game/ui/scene/HallScene', function () {
             this.MatchJinjiLayer.updateView(msg)
         },
         onUpdateUserData: function (data) {
-            cc.log('-----------------half-onUpdateUserData :' + JSON.stringify(data))
             let nameNd = this.namePnl.getChildByName('name')
             let coinsCnt = this.coinPnl.getChildByName('coinsCnt')
             let diamondsCnt = this.diamondsPnl.getChildByName('diamondsCnt')

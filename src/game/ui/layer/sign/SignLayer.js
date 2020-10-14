@@ -120,6 +120,11 @@ load('game/ui/layer/sign/SignLayer', function () {
 
         onVideoAcceptClicked: function () {
 
+            if (this.isCanReceiveRewards()) {
+                appInstance.gameAgent().Tips('已领取，请勿重复领取！')
+                return
+            }
+
             appInstance.nativeApi().showRewardVideo()
 
         },
@@ -263,7 +268,6 @@ load('game/ui/layer/sign/SignLayer', function () {
 
         onUpdateProCessBar: function (currentProcess, allProcess) {
 
-            cc.log('------------------currentProcess : ' + currentProcess + ' allProcess : ' + allProcess)
             this.loadingBar.setPercent(Math.round(currentProcess / allProcess * 100))
 
         },

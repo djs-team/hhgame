@@ -30,9 +30,9 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *mainTableView;
 
-@property (nonatomic, strong) CXUserModel *firstModel;
-@property (nonatomic, strong) CXUserModel *secondModel;
-@property (nonatomic, strong) CXUserModel *thirdModel;
+@property (nonatomic, strong) CXLiveRoomGuardItemModel *firstModel;
+@property (nonatomic, strong) CXLiveRoomGuardItemModel *secondModel;
+@property (nonatomic, strong) CXLiveRoomGuardItemModel *thirdModel;
 
 @end
 
@@ -66,7 +66,7 @@
     _mainTableView.dataSource = self;
     _mainTableView.delegate = self;
     
-    _page = 1;
+    _page = 0;
     _dataSources = [NSMutableArray array];
     
     [self.mainTableView registerNib:[UINib nibWithNibName:@"CXLiveRoomGuardianListCell" bundle:nil] forCellReuseIdentifier:@"CXLiveRoomGuardianListCellID"];
@@ -79,21 +79,11 @@
 
 - (void)setUserId:(NSString *)userId {
     _userId = userId;
-    
-    __weak typeof(self) wself = self;
-    SocketMessageGetUserInfo * getInfo = [SocketMessageGetUserInfo new];
-    getInfo.UserId = [NSNumber numberWithString:userId];
-    [[CXClientModel instance] sendSocketRequest:getInfo withCallback:^(SocketMessageGetUserInfo * _Nonnull request) {
-        if (request.noError && request.response.isSuccess) {
-            LiveRoomUser *user = [LiveRoomUser modelWithJSON:[request.response.User modelToJSONObject]];
-            wself.titleLabel.text = [NSString stringWithFormat:@"%@的守护团", user.Name];
-            [wself getRankData];
-        }
-    }];
+    [self getRankData];
 }
 
 - (void)headerRefresh {
-    _page = 1;
+    _page = 0;
     [self getRankData];
 }
 
@@ -103,48 +93,43 @@
 }
 
 - (void)getRankData {
-    NSDictionary *param = @{
-        @"page":[NSString stringWithFormat:@"%ld", (long)_page],
-        @"pagenum" : @"20",
-        @"userid" : _userId,
-    };
     kWeakSelf
-    [CXHTTPRequest POSTWithURL:@"/index.php/Api/MemberOnline/rankingList_shouhu" parameters:param callback:^(id responseObject, BOOL isCache, NSError *error) {
-        [weakSelf.mainTableView.mj_header endRefreshing];
-        [weakSelf.mainTableView.mj_footer endRefreshing];
-        if (!error) {
-            NSArray *array = [NSArray modelArrayWithClass:[CXUserModel class] json:responseObject[@"data"][@"list"]];
+    SocketMessageGetGuardItemListRequest * request = [SocketMessageGetGuardItemListRequest new];
+    request.UserId = [NSNumber numberWithString:_userId];
+    request.Page = _page;
+    [[CXClientModel instance] sendSocketRequest:request withCallback:^(SocketMessageGetGuardItemListRequest * _Nonnull request) {
+        if (request.noError && request.response.isSuccess) {
+            NSArray *array = [NSArray arrayWithArray:request.response.GuardItems];
             if (self->_page == 1) {
                 [weakSelf reloadHeaderView:array];
             } else {
                 [weakSelf.dataSources addObjectsFromArray:array];
-                
+
                 [weakSelf.mainTableView reloadData];
             }
             if (array.count < 20) {
                 [weakSelf.mainTableView.mj_footer endRefreshingWithNoMoreData];
             }
+            
+            weakSelf.titleLabel.text = [NSString stringWithFormat:@"%@的守护团", request.response.GuardName];
         }
+        [weakSelf.mainTableView.mj_header endRefreshing];
+        [weakSelf.mainTableView.mj_footer endRefreshing];
     }];
 }
 
 - (void)reloadHeaderView:(NSArray *)array {
-    self.firstModel = [CXUserModel new];
-    self.secondModel = [CXUserModel new];
-    self.thirdModel = [CXUserModel new];
+    self.firstModel = [CXLiveRoomGuardItemModel new];
+    self.secondModel = [CXLiveRoomGuardItemModel new];
+    self.thirdModel = [CXLiveRoomGuardItemModel new];
     self.dataSources = [NSMutableArray arrayWithArray:array];
     if (array.count > 0) {
-        CXUserModel *firstModel = array.firstObject;
-        if (firstModel.type.intValue == 2) {
-            [self.mainTableView reloadData];
-            return;
-        } else {
-            [self.dataSources removeObject:firstModel];
-            [self.first_avatar sd_setImageWithURL:[NSURL URLWithString:firstModel.avatar]];
-            self.first_name.text = [firstModel.nickname substringToIndex:MIN(5, firstModel.nickname.length)];
-            self.first_number.text = firstModel.num;
-            self.firstModel = firstModel;
-        }
+        CXLiveRoomGuardItemModel *firstModel = array.firstObject;
+        [self.dataSources removeObject:firstModel];
+        [self.first_avatar sd_setImageWithURL:[NSURL URLWithString:firstModel.UserInfo.HeadImageUrl]];
+        self.first_name.text = [firstModel.UserInfo.Name substringToIndex:MIN(5, firstModel.UserInfo.Name.length)];
+        self.first_number.text = firstModel.Intimacy.stringValue;
+        self.firstModel = firstModel;
     } else {
         self.first_avatar.image = [UIImage new];
         self.first_name.text = @"";
@@ -152,17 +137,12 @@
     }
     
     if (array.count > 1) {
-        CXUserModel *firstModel = array[1];
-        if (firstModel.type.intValue == 2) {
-            [self.mainTableView reloadData];
-            return;
-        } else {
-            [self.dataSources removeObject:firstModel];
-            [self.second_avatar sd_setImageWithURL:[NSURL URLWithString:firstModel.avatar]];
-            self.second_name.text = [firstModel.nickname substringToIndex:MIN(5, firstModel.nickname.length)];
-            self.second_number.text = firstModel.num;
-            self.secondModel = firstModel;
-        }
+        CXLiveRoomGuardItemModel *firstModel = array[1];
+        [self.dataSources removeObject:firstModel];
+        [self.first_avatar sd_setImageWithURL:[NSURL URLWithString:firstModel.UserInfo.HeadImageUrl]];
+        self.first_name.text = [firstModel.UserInfo.Name substringToIndex:MIN(5, firstModel.UserInfo.Name.length)];
+        self.first_number.text = firstModel.Intimacy.stringValue;
+        self.firstModel = firstModel;
         
     } else {
         self.second_avatar.image = [UIImage new];
@@ -171,17 +151,12 @@
     }
     
     if (array.count > 2) {
-        CXUserModel *firstModel = array[2];
-        if (firstModel.type.integerValue == 2) {
-            [self.mainTableView reloadData];
-            return;
-        } else {
-            [self.dataSources removeObject:firstModel];
-            [self.third_avatar sd_setImageWithURL:[NSURL URLWithString:firstModel.avatar]];
-            self.third_name.text = [firstModel.nickname substringToIndex:MIN(5, firstModel.nickname.length)];
-            self.third_number.text = firstModel.num;
-            self.thirdModel = firstModel;
-        }
+        CXLiveRoomGuardItemModel *firstModel = array[2];
+        [self.dataSources removeObject:firstModel];
+        [self.first_avatar sd_setImageWithURL:[NSURL URLWithString:firstModel.UserInfo.HeadImageUrl]];
+        self.first_name.text = [firstModel.UserInfo.Name substringToIndex:MIN(5, firstModel.UserInfo.Name.length)];
+        self.first_number.text = firstModel.Intimacy.stringValue;
+        self.firstModel = firstModel;
     } else {
         self.third_avatar.image = [UIImage new];
         self.third_name.text = @"";
@@ -198,7 +173,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CXLiveRoomGuardianListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CXLiveRoomGuardianListCellID"];
-    CXUserModel *model = self.dataSources[indexPath.row];
+    CXLiveRoomGuardItemModel *model = self.dataSources[indexPath.row];
     cell.model = model;
     
     return cell;
@@ -214,12 +189,12 @@
 }
 
 - (IBAction)guardianAction:(UIButton *)sender {
-    if (sender.tag == 10 && self.firstModel && self.firstModel.user_id.length > 0) {
-        [AppController showUserProfile:_firstModel.user_id];
-    } else if (sender.tag == 11 && self.secondModel && self.secondModel.user_id.length > 0) {
-        [AppController showUserProfile:_secondModel.user_id];
-    } else if (sender.tag == 12 && self.thirdModel && self.thirdModel.user_id.length > 0) {
-        [AppController showUserProfile:_thirdModel.user_id];
+    if (sender.tag == 10 && self.firstModel && self.firstModel.UserInfo.UserId.length > 0) {
+        [AppController showUserProfile:_firstModel.UserInfo.UserId];
+    } else if (sender.tag == 11 && self.secondModel && self.secondModel.UserInfo.UserId.length > 0) {
+        [AppController showUserProfile:_secondModel.UserInfo.UserId];
+    } else if (sender.tag == 12 && self.thirdModel && self.thirdModel.UserInfo.UserId.length > 0) {
+        [AppController showUserProfile:_thirdModel.UserInfo.UserId];
     }
     
 }

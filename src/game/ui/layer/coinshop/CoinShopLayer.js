@@ -2,6 +2,8 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
     let ResConfig = include('game/config/ResConfig')
     let BaseLayer = include('public/ui/BaseLayer')
     let CoinShopMdt = include('game/ui/layer/coinshop/CoinShopMdt')
+    let sender = {};
+
     let CoinShopLayer = BaseLayer.extend({
         _className: 'CoinShopLayer',
         _dataMsg: {},
@@ -12,6 +14,9 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
             this._super(ResConfig.View.CoinShopLayer)
             this.registerMediator(new CoinShopMdt(this))
             this.registerEventListener('rewardVideoCallback', this.onRewardVideoCallback)
+            this.registerEventListener('ThirdPayCallback', this.onThirdPayCallBack)
+            this.registerEventListener('ApplePayCallback', this.onApplePayCallBack)
+
         },
         RES_BINDING: function () {
             return {
@@ -25,16 +30,19 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
                 'btmPnl/midPnl/videoBtn': {onClicked: this.onVideoClicked},
                 'btmPnl/midPnl/timesText': {},
 
-                'btmPnl/leftPnl/jinBtn': {onClicked : this.onJinBiClicked  },
-                'btmPnl/leftPnl/zuanBtn': {onClicked : this.onZuanShiClicked  },
+                'btmPnl/leftPnl/jinBtn': {onClicked: this.onJinBiClicked},
+                'btmPnl/leftPnl/zuanBtn': {onClicked: this.onZuanShiClicked},
 
-                'btmPnl/rightPnl/goodMidNd': {  },
-                'btmPnl/rightPnl/goodCell': {  },
-                'btmPnl/rightPnl/addressBtn': {onClicked : this.onAddressClicked  },
+                'btmPnl/rightPnl/goodMidNd': {},
+                'btmPnl/rightPnl/goodCell': {},
+                'btmPnl/rightPnl/addressBtn': {onClicked: this.onAddressClicked},
 
                 'popUpPnl/addressPnl': {},
                 'popUpPnl/addressPnl/confirmBtn': {onClicked: this.onConfirmClicked},
                 'popUpPnl/addressPnl/updateAddressCloseBtn': {onClicked: this.onCloseUpdateAddressClicked},
+                'PayType': {},
+                'PayType/bgAli/ivAli': {onClicked: this.onAliPayClick},
+                'PayType/bgWx/ivWx': {onClicked: this.onWxClick},
             }
         },
         onCreate: function () {
@@ -88,6 +96,8 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
             this.jinBtn.getChildByName('Image_34').setVisible(true)
             this.zuanBtn.getChildByName('Image_36').setVisible(true)
             this.zuanBtn.getChildByName('Image_37').setVisible(false)
+            this.PayType.setVisible(false)
+
         },
 
         /**
@@ -179,7 +189,7 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
          */
         onInitGoodsView: function (data, type) {
             var goodMidNd = this.goodMidNd;
-            for(let i = 0; i < data.length; i++){
+            for (let i = 0; i < data.length; i++) {
 
                 let goodsData = data[i]
                 let goodsCell = this.goodCell.clone()
@@ -211,14 +221,14 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
 
                 if (type == 1) {
                     goodsCell.getChildByName('pricePg').getChildByName('Image_79').setVisible(true)
-                    goodsCell.addClickEventListener(function (sender,et) {
+                    goodsCell.addClickEventListener(function (sender, et) {
                         this.onBuyCoinsFunction(sender)
 
                     }.bind(this))
                 } else {
                     goodsCell.getChildByName('pricePg').getChildByName('priceText').setPosition(49.4, 14.94)
                     goodsCell.getChildByName('pricePg').getChildByName('Image_79').setVisible(false)
-                    goodsCell.addClickEventListener(function (sender,et) {
+                    goodsCell.addClickEventListener(function (sender, et) {
                         this.onBuyZuanFunction(sender)
 
                     }.bind(this))
@@ -227,10 +237,63 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
 
         },
 
-        onBuyZuanFunction: function () {
+        onBuyZuanFunction: function (s) {
+            sender = s;
+            cc.log("----------------------onBuyZuanFunction" + JSON.stringify(sender))
+            if (cc.sys.OS_IOS === cc.sys.os) {
+                if (AppConfig.applePayType == "Apple") {
+//                    let _sendData = sender._sendData
+//                    let msg = {
+//                        vipCode: _sendData.vipCode,
+//                        payType: 3
+//                    }
+//                    appInstance.gameAgent().httpGame().VIPPaysOrderReq(msg)
+//                    cc.log("----------------------onRechargeClicked")
+                } else {
+                    this.PayType.setVisible(true)
+                }
+            } else {
+                this.PayType.setVisible(true)
+            }
 
         },
+        onAliPayClick: function () {
+            cc.log("----------------------onAliPayClick")
+            this.PayType.setVisible(false)
+            //下单
+            // let _sendData = sender._sendMsg
+            // let msg = {
+            //     goodsid: _sendData.goodsid,
+            //     payType: 1
+            // }
+            // appInstance.gameAgent().httpGame().VIPPaysOrderReq(msg)
 
+        }, onWxClick: function () {
+            cc.log("----------------------onWxClick")
+
+            this.PayType.setVisible(false)
+            //下单
+            // let _sendData = sender._sendMsg
+            // let msg = {
+            //     goodsid: _sendData.goodsid,
+            //     payType: 2
+            // }
+            // appInstance.gameAgent().httpGame().VIPPaysOrderReq(msg)
+
+        },
+        //第三方支付结果回调
+        onThirdPayCallBack: function (msg) {
+            cc.log('------------onThirdPayCallBack' + msg)
+
+        },
+        // 苹果支付成功订单校验
+        onApplePayCallBack: function (msg) {
+            cc.log('=============onApplePayCallBack' + msg)
+//            msg = JSON.parse(msg)
+//            
+//            appInstance.gameAgent().httpGame().VIPPaysOrderAppleCheckReq(msg)
+            
+        },
         /**
          * 触发购买事件
          * @param sender

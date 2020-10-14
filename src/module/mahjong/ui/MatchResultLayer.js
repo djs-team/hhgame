@@ -5,13 +5,14 @@
 load('module/mahjong/ui/MatchResultLayer', function () {
     let ResConfig = include('module/mahjong/common/ResConfig')
     let BaseLayer = include('public/ui/BaseLayer')
+    let GameUtil = include('game/public/GameUtil')
     let Layer = BaseLayer.extend({
         _className: 'MatchResultLayer',
         RES_BINDING: function () {
             return {
                 'LosePnl': {  },
                 'LosePnl/HeadNd': {  },
-                'LosePnl/HeadNd/Head': {  },
+                'LosePnl/HeadNd/HeadLose': {  },
                 'LosePnl/HeadNd/NameTxt': {  },
                 'LosePnl/HeadNd/MatchNameTxt': {  },
                 'LosePnl/HeadNd/RankTxt': {  },
@@ -63,6 +64,7 @@ load('module/mahjong/ui/MatchResultLayer', function () {
                 this.NameTxt.setString(msg.playerName)
                 this.MatchNameTxt.setString(msg.matchName)
                 this.RankTxt.setString('第' + msg.ranking + '名')
+                GameUtil.loadUrlImg(msg.pPhoto, this.HeadLose)
             }
 
         },

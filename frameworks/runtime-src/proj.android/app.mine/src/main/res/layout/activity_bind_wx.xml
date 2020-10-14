@@ -88,7 +88,7 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_below="@id/rl_phone"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/icon_bindwx_line" />
 
         <TextView
@@ -138,6 +138,7 @@
             android:layout_alignParentRight="true"
             android:background="@drawable/bg_friend_agree"
             android:text="绑定"
+            android:visibility="gone"
             android:textColor="#ffffffff"
             android:textSize="13sp"
             android:gravity="center"/>
@@ -147,8 +148,8 @@
             android:layout_marginLeft="14dp"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_below="@id/iv_bindwx"
-            android:layout_marginTop="28dp"
+            android:layout_below="@id/rl_bind_wx"
+            android:layout_marginTop="14dp"
             android:background="@drawable/icon_bindwx_line" />
         <TextView
             android:layout_width="wrap_content"

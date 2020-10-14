@@ -17,9 +17,11 @@
           {
             "ClipAble": false,
             "BackColorAlpha": 102,
+            "ComboBoxIndex": 1,
             "SingleColor": {
-              "R": 150,
-              "G": 200
+              "R": 0,
+              "G": 0,
+              "B": 0
             },
             "FirstColor": {
               "R": 150,
@@ -60,6 +62,7 @@
               "X": 1.0,
               "Y": 1.0
             },
+            "UserData": "{\"layoutType\":\"maxArea\",\"screenAlign\":\"mid\"}",
             "Tag": 54,
             "ActionTag": 1501055112,
             "Size": {
@@ -879,7 +882,7 @@
                       "X": 80.0,
                       "Y": 80.0
                     },
-                    "Name": "Head",
+                    "Name": "HeadLose",
                     "ctype": "PanelObjectData"
                   },
                   {

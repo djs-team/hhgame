@@ -6,6 +6,7 @@ load('module/mahjong/ui/MatchBigResultLayer', function () {
     let ResConfig = include('module/mahjong/common/ResConfig')
     let BaseLayer = include('public/ui/BaseLayer')
     let TableConfig = include('module/mahjong/common/TableConfig')
+    let GameUtil = include('game/public/GameUtil')
     let Layer = BaseLayer.extend({
         _className: 'MatchBigResultLayer',
         _playerPos: [
@@ -58,7 +59,9 @@ load('module/mahjong/ui/MatchBigResultLayer', function () {
             // 这个晋级与否 需要跟服务器核对一下
             pCell.getChildByName('Win').setVisible(pinfo.pOffsetCoins > 0)
 
-            pCell.getChildByName('Head').setVisible(true)
+
+            GameUtil.loadUrlImg(pinfo.pPhoto,pCell.getChildByName('Head'))
+
             pCell.getChildByName('winNum').setString('总积分  ' + pinfo.pCoins)
             let max = 0
             for (let i = 0; i < 5; ++i) {

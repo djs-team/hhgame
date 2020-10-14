@@ -73,22 +73,34 @@
             android:layout_width="10dp"
             android:layout_height="12dp"
             android:layout_marginLeft="13dp"
-            android:layout_marginTop="13dp"
+            android:layout_marginTop="7dp"
             android:src="@drawable/ic_location"
             app:layout_constraintLeft_toRightOf="@id/rank_iv"
             app:layout_constraintTop_toBottomOf="@id/tv_name" />
 
         <TextView
+            android:layout_marginTop="5dp"
             android:id="@+id/tv_location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="4dp"
-            android:layout_marginTop="11dp"
             android:text="河北省石家庄"
             android:textColor="#ff4a4a4a"
             android:textSize="12sp"
             app:layout_constraintLeft_toRightOf="@id/iv_location"
             app:layout_constraintTop_toBottomOf="@id/tv_name" />
+
+        <TextView
+            android:layout_marginTop="7dp"
+            android:id="@+id/tv_date_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:text="守护到期时间：2020年7月20日 10：00"
+            android:textColor="#ff828282"
+            android:textSize="11sp"
+            app:layout_constraintLeft_toRightOf="@id/rank_iv"
+            app:layout_constraintTop_toBottomOf="@id/tv_location" />
 
         <TextView
             android:id="@+id/tv_intimacy"

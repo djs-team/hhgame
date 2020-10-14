@@ -2196,7 +2196,7 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
 
         //跳转守护团
         subscribeClick(mBinding.llGuardGroup, o -> {
-            GuardGroupDialog groupDialog = new GuardGroupDialog(mContext);
+            GuardGroupDialog groupDialog = new GuardGroupDialog(mContext,mViewModel);
             groupDialog.setOnClickListener(new GuardGroupDialog.OnClickListener() {
                 @Override
                 public void onClick(String userId) {
@@ -3951,7 +3951,6 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
     }
 
 
-
     @Override
     public void showRedPackageRule(String content) {
         RedpackageRuleDialog redpackageRuleDialog = new RedpackageRuleDialog(mContext);
@@ -3977,11 +3976,8 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
     public void startRobRedPacket(String alert) {
         if (!TextUtils.isEmpty(alert)) {
             RoomMsgBean roomMsgBean = new RoomMsgBean();
-            SpannableStringBuilder spannable = new SpannableStringBuilder();
-            spannable.append(alert);
-            ForegroundColorSpan msgSpan = new ForegroundColorSpan(0xFFFFFFFF);
-            spannable.setSpan(msgSpan, spannable.length() - alert.length(), spannable.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
-            roomMsgBean.setMsg(spannable);
+
+            roomMsgBean.setLocalMsg(alert);
             List<RoomMsgBean> list = new ArrayList<>();
             list.add(roomMsgBean);
             onAddMsg(list);
@@ -4014,7 +4010,6 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
             ToastUtils.showHtmlCenter(mContext, content, 5000);
         }
     }
-
 
 
     private void showGuardBayWindowDiallog(JoinUser joinUser) {
@@ -4119,6 +4114,7 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
     public void onReceiveGift(ReceivePresent model) {
 //        mBinding.popularityTv.setText(FormatUtils.formatTenThousand(model.getVisitorNum()));
         if (isResumed) {
+            Log.d("onReceiveGift", "onReceiveGift");
             mSvgaUtils.startAnimator(model);
         }
 

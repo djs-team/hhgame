@@ -20,6 +20,7 @@ import com.deepsea.mua.stub.data.User;
 import com.deepsea.mua.stub.dialog.AAlertDialog;
 import com.deepsea.mua.stub.entity.ChessLoginParam;
 import com.deepsea.mua.stub.entity.LocationVo;
+import com.deepsea.mua.stub.utils.MobEventUtils;
 import com.deepsea.mua.stub.utils.SPUtils;
 import com.deepsea.mua.stub.utils.SharedPrefrencesUtil;
 import com.deepsea.mua.stub.utils.UserUtils;
@@ -33,6 +34,7 @@ import com.hh.game.R;
 import com.hh.game.databinding.ActivitySplashBinding;
 import com.hyphenate.chat.EMClient;
 import com.tbruyelle.rxpermissions2.RxPermissions;
+import com.umeng.analytics.MobclickAgent;
 
 import org.cocos2dx.javascript.app.App;
 import org.cocos2dx.javascript.ui.main.MainActivity;
@@ -146,10 +148,26 @@ public class SplashActivity extends BaseActivity<ActivitySplashBinding> {
 
             @Override
             public void onSuccess(User user) {
+                fetchLoginHX(user);
+
+            }
+        });
+    }
+
+    private void fetchLoginHX(User user) {
+        mViewModel.loginHx(user.getUid(), user.getUid()).observe(this, new BaseObserver<Object>() {
+            @Override
+            public void onSuccess(Object result) {
                 UserUtils.saveUser(user);
                 AppClient.getInstance().login(user.getUid());
-                mViewModel.loginHx(user.getUid());
                 startSplash();
+            }
+
+            @Override
+            public void onError(String msg, int code) {
+                ToastUtils.showToast(msg);
+                UserUtils.clearUser();
+                super.onError(msg, code);
             }
         });
     }

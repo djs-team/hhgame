@@ -43,6 +43,7 @@
                     android:textColor="@color/white"
                     android:textSize="9sp"
                     app:radius="90dp"
+                    android:visibility="gone"
                     app:withBackgroundColor="#F70505" />
 
                 <TextView
@@ -81,6 +82,8 @@
                     android:textColor="@color/white"
                     android:textSize="9sp"
                     app:radius="90dp"
+                    android:visibility="gone"
+
                     app:withBackgroundColor="#F70505" />
 
                 <TextView
@@ -129,6 +132,8 @@
                     android:textColor="@color/white"
                     android:textSize="9sp"
                     app:radius="90dp"
+                    android:visibility="gone"
+
                     app:withBackgroundColor="#F70505" />
 
                 <ImageView

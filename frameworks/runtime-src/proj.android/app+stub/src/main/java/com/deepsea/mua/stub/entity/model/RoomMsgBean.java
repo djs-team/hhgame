@@ -31,6 +31,16 @@ public class RoomMsgBean extends BaseChatMsg {
     private String uName;
     private int level;
     private String guardSign;
+    private String localMsg;
+
+    public String getLocalMsg() {
+        return localMsg;
+    }
+
+    public void setLocalMsg(String localMsg) {
+        this.localMsg = localMsg;
+    }
+
     public String getGuardSign() {
         return guardSign;
     }

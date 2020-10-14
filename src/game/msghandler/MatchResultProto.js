@@ -16,7 +16,8 @@ load('game/msghandler/MatchResultProto', function () {
 
         handleMsg: function (msg) {
             this._super(msg)
-
+            //重置掉之前的晋级记录 为避免遮挡 晋级界面放到大厅
+            appInstance.dataManager().getUserData().MatchJinjiGaming = null
             appInstance.sendNotification(Event.MatchResultProto, msg)
         },
 
@@ -43,6 +44,8 @@ load('game/msghandler/MatchResultProto', function () {
                 { key: 'pTableID', type: this._byteType.UTF8},// 牌桌id
                 { key: 'mcExtend', type: this._byteType.UTF8},//冗余字段
                 { key: 'mcRewardList', type: this._byteType.Barray, proto: rewardList},//获奖时的奖励信息
+                { key: 'pPhoto', type: this._byteType.UTF8},//玩家头像
+                { key: 'pSeatID', type: this._byteType.Int},//玩家座位号
             ]
         }
     })

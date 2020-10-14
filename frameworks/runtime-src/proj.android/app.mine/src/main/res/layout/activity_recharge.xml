@@ -53,7 +53,7 @@
                 app:layout_constraintLeft_toRightOf="@id/iv_rose_logo"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <com.deepsea.mua.stub.view.TextViewWithoutPadding
+            <TextView
                 android:id="@+id/balance_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

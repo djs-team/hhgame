@@ -20,16 +20,6 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tv_friend_request"
-                android:layout_width="match_parent"
-                android:layout_height="36dp"
-                android:background="#ffffa1a1"
-                android:gravity="center"
-                android:text="好友请求"
-                android:textColor="#ffffffff"
-                android:textSize="16sp"
-                android:visibility="gone" />
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/recycler_view"

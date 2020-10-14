@@ -1,4 +1,3 @@
-
 /**
  *  Turntable Mediator
  *
@@ -11,7 +10,7 @@ load('game/ui/layer/coinshop/CoinShopMdt', function () {
     let mdt = Mediator.extend({
         mediatorName: 'CoinShopMdt',
         ctor: function (view) {
-            this._super(this.mediatorName,view)
+            this._super(this.mediatorName, view)
         },
         getNotificationList: function () {
             return [
@@ -21,6 +20,7 @@ load('game/ui/layer/coinshop/CoinShopMdt', function () {
                 GameEvent.ADRESS_GET,
                 GameEvent.ADRESS_UPDATE,
                 GameEvent.VIDEO_WATCH_DIAMONDS,
+                GameEvent.DIAMONDS_BUY,
             ]
         },
         handleNotification: function (notification) {
@@ -44,6 +44,18 @@ load('game/ui/layer/coinshop/CoinShopMdt', function () {
                     break
                 case GameEvent.VIDEO_WATCH_DIAMONDS:
                     this.watchVideoResult(body)
+                    break
+                case GameEvent.DIAMONDS_BUY:
+                    cc.log('=============钻石购买下单成功' + JSON.stringify(body))
+                    let payType = body.payType;
+                    if (payType == 1) {
+                        cc.log('=============' + "调用支付宝")
+                        appInstance.nativeApi().thirdPay("alipay", body.zhifubaoSign)
+                    } else if (payType == 2) {
+                        let wxSign = JSON.stringify(body.wxinfo)
+                        cc.log('=============' + "调用微信" + wxSign)
+                        appInstance.nativeApi().thirdPay("wx", wxSign)
+                    }
                     break
                 default:
                     break
@@ -69,9 +81,9 @@ load('game/ui/layer/coinshop/CoinShopMdt', function () {
             // }
             appInstance.gameAgent().httpGame().COINSSHOPDATASReq()
             let data = {
-                'coin' : appInstance.dataManager().getUserData().coin,
-                'diamonds' : appInstance.dataManager().getUserData().diamonds,
-                'fuKa' : appInstance.dataManager().getUserData().fuKa,
+                'coin': appInstance.dataManager().getUserData().coin,
+                'diamonds': appInstance.dataManager().getUserData().diamonds,
+                'fuKa': appInstance.dataManager().getUserData().fuKa,
             }
 
             this.view.onUpdatePropsData(data)
@@ -87,14 +99,14 @@ load('game/ui/layer/coinshop/CoinShopMdt', function () {
             let data = {}
             data.goodsJinData = []
             data.goodsZuanData = []
-            this.onFormatTimeMsg(data,body)
-            for(let i = 0; i < body.coinStoreList.length; i++){
+            this.onFormatTimeMsg(data, body)
+            for (let i = 0; i < body.coinStoreList.length; i++) {
                 let goods = body.coinStoreList[i]
                 let goodsJinData = {}
                 let goodsZuanData = {}
-                if (goods.storeType==1) {
+                if (goods.storeType == 1) {
                     goodsJinData.id = goods.id
-                    goodsJinData.number = goods.number+'金币'
+                    goodsJinData.number = goods.number + '金币'
                     goodsJinData.price = goods.price
                     switch (goods.id) {
                         case 1:
@@ -119,8 +131,8 @@ load('game/ui/layer/coinshop/CoinShopMdt', function () {
                     data.goodsJinData.push(goodsJinData)
                 } else {
                     goodsZuanData.id = goods.id
-                    goodsZuanData.number = goods.number+'钻石'
-                    goodsZuanData.price = '￥'+goods.price
+                    goodsZuanData.number = goods.number + '钻石'
+                    goodsZuanData.price = '￥' + goods.price
                     switch (goods.id) {
                         case 7:
                             goodsZuanData.res = 'res/coinshop/diamond_1.png';
@@ -155,9 +167,9 @@ load('game/ui/layer/coinshop/CoinShopMdt', function () {
         onBuyCoinsResult: function (body) {
 
             let data = {
-                propType : GameConfig.propType_currency,
-                propCode : GameConfig.propType_currency_coin,
-                propNum : body.coins
+                propType: GameConfig.propType_currency,
+                propCode: GameConfig.propType_currency_coin,
+                propNum: body.coins
             }
             this.onFormatPropMsg(data)
 
@@ -171,7 +183,7 @@ load('game/ui/layer/coinshop/CoinShopMdt', function () {
 
 
             let propData = {}
-            GameUtil.getPropData(data,propData,GameUtil.CURRENCYTYPE_1,GameUtil.UNITLOCATION_BEFORE,'x')
+            GameUtil.getPropData(data, propData, GameUtil.CURRENCYTYPE_1, GameUtil.UNITLOCATION_BEFORE, 'x')
 
             let propList = []
             propList.push(propData)
@@ -184,11 +196,11 @@ load('game/ui/layer/coinshop/CoinShopMdt', function () {
          * @param data
          * @param body
          */
-        onFormatTimeMsg: function (data,body) {
+        onFormatTimeMsg: function (data, body) {
             data.timesText = '今日剩余' + body.usedWatchVideoNum + '/' + body.maxWatchVideoNum
-            if(body.usedWatchVideoNum < body.maxWatchVideoNum){
+            if (body.usedWatchVideoNum < body.maxWatchVideoNum) {
                 data.canWatchVideo = true
-            }else{
+            } else {
                 data.canWatchVideo = false
             }
         },
@@ -199,15 +211,15 @@ load('game/ui/layer/coinshop/CoinShopMdt', function () {
          */
         watchVideoResult: function (body) {
             let propData = {
-                propType : GameConfig.propType_currency,
-                propCode : GameConfig.propType_currency_diamonds,
-                propNum : body.diamonds
+                propType: GameConfig.propType_currency,
+                propCode: GameConfig.propType_currency_diamonds,
+                propNum: body.diamonds
             }
 
             this.onFormatPropMsg(propData)
 
             let timeData = {}
-            this.onFormatTimeMsg(timeData,body)
+            this.onFormatTimeMsg(timeData, body)
             this.view.onUpdateTime(timeData)
         },
 

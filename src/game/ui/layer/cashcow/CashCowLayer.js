@@ -73,7 +73,6 @@ load('game/ui/layer/cashcow/CashCowLayer', function () {
             this.shakeBtn.setBright(flag)
             this.shakeBtn.setTouchEnabled(flag)
 
-            this.showView()
         },
 
         onRefreshView: function (data) {
@@ -85,16 +84,11 @@ load('game/ui/layer/cashcow/CashCowLayer', function () {
             if (usedCashCowNum < cashCowNum)
                 flag = true
 
-            cc.log('------------------CashCowLayer--------onRefreshView------- flag : ' + flag)
             this.shakeBtn.setBright(flag)
             this.shakeBtn.setTouchEnabled(flag)
 
             this.onShowPropPnl(data)
 
-        },
-
-        showView: function () {
-            //  this.onShowRecordPnlClick()
         },
 
 
@@ -104,7 +98,6 @@ load('game/ui/layer/cashcow/CashCowLayer', function () {
 
         onShakeClick: function () {
 
-            cc.log('----------------CashCow--------onShakeClick----------')
             this.shakeBtn.setTouchEnabled(false)
             if(cc.sys.os !== cc.sys.OS_WINDOWS)
                 appInstance.nativeApi().showRewardVideo()

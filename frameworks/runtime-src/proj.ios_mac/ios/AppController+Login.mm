@@ -14,6 +14,9 @@
 @implementation AppController (Login)
 
 + (void)weChatLoginWithMethod:(NSString *)method {
+    
+    [[EMClient sharedClient] logout:YES];
+    
     [CXOCJSBrigeManager manager].wxLoginMethod = method;
 
     SendAuthReq *req = [[SendAuthReq alloc] init];
@@ -58,6 +61,8 @@
 }
 
 + (void)JPushLoginWithMethod:(NSString *)method {
+    [[EMClient sharedClient] logout:YES];
+    
     [MBProgressHUD showHUD];
     [CXOCJSBrigeManager manager].jpushLoginMethod = method;
     [self customUI];

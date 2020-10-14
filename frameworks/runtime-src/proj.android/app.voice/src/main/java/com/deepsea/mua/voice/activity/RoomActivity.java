@@ -2804,8 +2804,6 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
                                 toastShort("分享取消了");
                             }
                         }).share();
-
-
             }
         });
     }

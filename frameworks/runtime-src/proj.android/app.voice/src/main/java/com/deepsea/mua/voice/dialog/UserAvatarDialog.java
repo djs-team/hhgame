@@ -189,7 +189,7 @@ public class UserAvatarDialog extends BaseDialog<DialogUserAvatarBinding> {
         ViewBindUtils.setText(mBinding.levelTv, "LV" + mMicroUser.getLevel());
 
         StringBuilder sb = new StringBuilder();
-        if (user.getAge() > 0) {
+        if (!TextUtils.isEmpty(user.getAge())) {
             sb.append(user.getAge()).append("岁");
         }
         if (user.getStature() > 0) {

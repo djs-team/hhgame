@@ -7,9 +7,9 @@ import android.text.TextUtils;
  */
 public class ProfileUtils {
 
-    public static String getProfile(int age, String city, int stature) {
+    public static String getProfile(String age, String city, int stature) {
         StringBuilder sb = new StringBuilder();
-        if (age > 0) {
+        if (!TextUtils.isEmpty(age)) {
             sb.append(age).append("岁");
         }
         if (!TextUtils.isEmpty(city)) {
@@ -21,9 +21,9 @@ public class ProfileUtils {
         return sb.toString();
     }
 
-    public static String getProfile(int age, int stature, int sex) {
+    public static String getProfile(String age, int stature, int sex) {
         StringBuilder sb = new StringBuilder();
-        if (age > 0) {
+        if (!TextUtils.isEmpty(age)) {
             sb.append(age).append("岁");
         }
         if (stature > 0) {

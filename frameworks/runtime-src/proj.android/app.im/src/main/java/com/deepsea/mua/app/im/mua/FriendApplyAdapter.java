@@ -37,6 +37,21 @@ public class FriendApplyAdapter extends BaseBindingAdapter<ApplyFriendBean, Item
         super(context);
     }
 
+    private OnMyClickListener myClickListener;
+
+    public void setMyClickListener(OnMyClickListener myClickListener) {
+        this.myClickListener = myClickListener;
+    }
+
+    public interface OnMyClickListener {
+
+        void onAgreeClick(int pos, ApplyFriendBean applyFriendBean);
+
+        void onRefuseClick(int pos, ApplyFriendBean applyFriendBean);
+
+        void onHeadClick(int pos, ApplyFriendBean applyFriendBean);
+    }
+
     @Override
     protected int getLayoutId() {
         return R.layout.item_friend_apply;
@@ -93,6 +108,25 @@ public class FriendApplyAdapter extends BaseBindingAdapter<ApplyFriendBean, Item
             ViewBindUtils.setText(holder.binding.tvOverdue, "已过期");
             setAddfriendVisible(holder, false);
         }
+        ViewBindUtils.RxClicks(holder.binding.tvAgree, o -> {
+            if (myClickListener != null) {
+                myClickListener.onAgreeClick(holder.getLayoutPosition(), item);
+            }
+        });
+        ViewBindUtils.RxClicks(holder.binding.tvDisagree, o -> {
+            if (myClickListener != null) {
+                myClickListener.onRefuseClick(holder.getLayoutPosition(), item);
+            }
+        });
+        ViewBindUtils.RxClicks(holder.binding.ivPhoto, o -> {
+            if (myClickListener != null) {
+                myClickListener.onHeadClick(holder.getLayoutPosition(), item);
+            }
+        });
+        ViewBindUtils.RxClicks(holder.binding.consGroup, o -> {
+            PageJumpUtils.jumpToProfile(item.getUser_id());
+        });
+
     }
 
     private void setAddfriendVisible(BindingViewHolder<ItemFriendApplyBinding> holder, boolean isVisible) {

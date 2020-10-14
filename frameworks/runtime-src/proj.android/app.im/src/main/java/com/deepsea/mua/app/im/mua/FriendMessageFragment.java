@@ -76,6 +76,9 @@ public class FriendMessageFragment extends BaseFragment<FragmentFriendMessageBin
         registerEventBus(this);
     }
 
+    @Subscribe
+    public void onEvent(UpdateUnreadMsgEvent event) {
+    }
 
     @Override
     protected int getLayoutId() {

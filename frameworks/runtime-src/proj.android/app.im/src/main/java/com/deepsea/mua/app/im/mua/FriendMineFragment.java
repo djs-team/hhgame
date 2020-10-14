@@ -33,6 +33,7 @@ import com.deepsea.mua.stub.utils.TimeUtils;
 import com.deepsea.mua.stub.utils.UserUtils;
 import com.deepsea.mua.stub.utils.ViewModelFactory;
 import com.deepsea.mua.stub.utils.eventbus.HeartBeatEvent;
+import com.deepsea.mua.stub.utils.eventbus.UpdateUnreadMsgEvent;
 import com.hyphenate.EMConnectionListener;
 import com.hyphenate.EMError;
 import com.hyphenate.EMMessageListener;
@@ -40,11 +41,6 @@ import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMConversation;
 import com.hyphenate.chat.EMMessage;
 import com.hyphenate.util.NetUtils;
-
-import org.greenrobot.eventbus.EventBus;
-import org.greenrobot.eventbus.Subscribe;
-import org.greenrobot.eventbus.ThreadMode;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -66,8 +62,8 @@ public class FriendMineFragment extends BaseFragment<FragmentFriendMessageBindin
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        registerEventBus(this);
     }
+
 
     @Override
     protected int getLayoutId() {
@@ -314,7 +310,6 @@ public class FriendMineFragment extends BaseFragment<FragmentFriendMessageBindin
         EMClient.getInstance().removeConnectionListener(connectionListener);
         EMClient.getInstance().chatManager().removeMessageListener(messageListener);
         HxHelper.getInstance().getUserProfileManager().removeSyncContactInfoListener(mDataSyncListener);
-        unregisterEventBus(this);
     }
 
     private final int msg_refesh = 1001;

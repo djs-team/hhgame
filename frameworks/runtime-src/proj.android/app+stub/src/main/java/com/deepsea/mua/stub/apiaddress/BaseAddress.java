@@ -16,10 +16,10 @@ public class BaseAddress {
 //    private static final String RELEASE_WSOCKET = "https://test-win.hehe555.com:444/Master/GetGate";
 
 
-    ////    正式
     public static boolean isRelease = true;
     private static final String RELEASE_URL = "https://vpser.harmonygames.cn:39911/";
     private static final String RELEASE_WSOCKET = " https://vfhser.harmonygames.cn:39921/Master/GetGate";
+
 
     public String getLrcCode() {
         return "gbk";

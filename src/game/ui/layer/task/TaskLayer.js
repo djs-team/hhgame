@@ -471,7 +471,8 @@ load('game/ui/layer/task/TaskLayer', function () {
                     break
                 case 1:
                     //调用http方法，领取货币
-
+                    this.challengeTaskCell.getChildByName('challegeBtnPg').setTouchEnabled(false)
+                    this.challengeTaskCell.getChildByName('challegeBtnPg').setBright(false)
                     this.onReceiveChallengTaskRewards(data.taskId,data.stage)
 
                     break
@@ -499,7 +500,8 @@ load('game/ui/layer/task/TaskLayer', function () {
         },
 
         onReceiveChallegeReward: function (data) {
-
+            this.challengeTaskCell.getChildByName('challegeBtnPg').setTouchEnabled(true)
+            this.challengeTaskCell.getChildByName('challegeBtnPg').setBright(true)
             let cell = this.challengeTasksPnl.getChildByName('challegeTask' + data.stage)
 
             cell.getChildByName('completePg').setVisible(true)

@@ -32,9 +32,11 @@ import java.util.Locale;
  */
 public class FriendApplyAdapter extends BaseBindingAdapter<ApplyFriendBean, ItemFriendApplyBinding> {
 
+    private String type;
 
-    public FriendApplyAdapter(Context context) {
+    public FriendApplyAdapter(Context context, String type) {
         super(context);
+        this.type = type;
     }
 
     private OnMyClickListener myClickListener;
@@ -93,19 +95,22 @@ public class FriendApplyAdapter extends BaseBindingAdapter<ApplyFriendBean, Item
         ViewBindUtils.setVisible(holder.binding.tvDesc, !TextUtils.isEmpty(item.getIntro()));
 //        ViewBindUtils.setText(holder.binding.tvDate, TimeUtils.time2Date(item.getCtime(), "MM月dd日"));
         ViewBindUtils.setText(holder.binding.tvDate, item.getCtime());
+        ViewBindUtils.setText(holder.binding.tvApplyDesc, type.equals("1") ? "请求和你成为好友" : "申请成为ta的好友");
         String mStatus = item.getMstatus();
         if (mStatus.equals("1")) {
-            ViewBindUtils.setText(holder.binding.tvOverdue, "已添加");
+            ViewBindUtils.setText(holder.binding.tvOverdue, type.equals("1") ? "已添加" : "已成为好友");
             setAddfriendVisible(holder, false);
         } else if (mStatus.equals("2")) {
-            ViewBindUtils.setText(holder.binding.tvOverdue, "已拒绝");
+            String myApplyDesc = TextUtils.isEmpty(item.getGift_id()) ? "对方已经拒绝" : "对方已经拒绝|礼物已退回";
+            ViewBindUtils.setText(holder.binding.tvOverdue, type.equals("1") ? "已拒绝" : myApplyDesc);
             setAddfriendVisible(holder, false);
 
         } else if (mStatus.equals("3")) {
-            ViewBindUtils.setText(holder.binding.tvOverdue, "申请中");
-            setAddfriendVisible(holder, true);
+            ViewBindUtils.setText(holder.binding.tvOverdue, type.equals("1") ? "申请中" : "等待对方通过");
+            setAddfriendVisible(holder, type.equals("1") ? true : false);
         } else {
-            ViewBindUtils.setText(holder.binding.tvOverdue, "已过期");
+            String myApplyDesc = TextUtils.isEmpty(item.getGift_id()) ? "对方已经拒绝" : "对方已经拒绝|礼物已退回";
+            ViewBindUtils.setText(holder.binding.tvOverdue, type.equals("1") ? "已过期" : myApplyDesc);
             setAddfriendVisible(holder, false);
         }
         ViewBindUtils.RxClicks(holder.binding.tvAgree, o -> {

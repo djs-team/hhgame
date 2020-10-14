@@ -6,9 +6,10 @@ load('game/ui/layer/arena/ArenaLayer', function () {
     let matchLayer = BaseLayer.extend({
         _className: 'matchLayer',
         _arenaTypeBtnData: [
-            { name: '金币赛', type: 1 },
+
+            { name: '会员赛', type: 3 },
             { name: '大奖赛', type: 2 },
-            { name: '会员赛', type: 3 }
+            { name: '金币赛', type: 1 },
         ],
         _arenaBtnCellName: 'arenaBtn_',
 

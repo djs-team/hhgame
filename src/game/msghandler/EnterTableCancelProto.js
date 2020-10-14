@@ -13,7 +13,7 @@ load('game/msghandler/EnterTableCancelProto', function () {
 
         handleMsg: function (msg) {
             this._super(msg)
-            if (msg.code === 100) {
+            if (msg.code === 0) {
                 appInstance.gameAgent().Tips('取消成功！')
             } else {
                 appInstance.gameAgent().Tips('取消失败！ error code :' + msg.code)

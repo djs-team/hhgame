@@ -75,7 +75,7 @@
         @"etime": [_e_time stringWithFormat:@"yyyy-MM-dd"],
     };
     kWeakSelf
-    [CXHTTPRequest POSTWithURL:@"/index.php/Api/AliPay/redpacket_incomelist" parameters:param callback:^(id responseObject, BOOL isCache, NSError *error) {
+    [CXHTTPRequest POSTWithURL:@"/index.php/Api/AliPay/incomelist" parameters:param callback:^(id responseObject, BOOL isCache, NSError *error) {
         if (!error) {
             weakSelf.numberLabel.text = [NSString stringWithFormat:@"¥%.2f",[responseObject[@"data"][@"total_price"] doubleValue]];
             weakSelf.totalPage = [responseObject[@"data"][@"pageInfo"][@"totalPage"] integerValue];
@@ -106,7 +106,7 @@
         @"etime": [_e_time stringWithFormat:@"yyyy-MM-dd"],
     };
     kWeakSelf
-    [CXHTTPRequest POSTWithURL:@"/index.php/Api/AliPay/incomelist" parameters:param callback:^(id responseObject, BOOL isCache, NSError *error) {
+    [CXHTTPRequest POSTWithURL:@"/index.php/Api/AliPay/redpacket_incomelist" parameters:param callback:^(id responseObject, BOOL isCache, NSError *error) {
         if (!error) {
             weakSelf.numberLabel.text = [NSString stringWithFormat:@"¥%.2f",[responseObject[@"data"][@"total_price"] doubleValue]];
             weakSelf.totalPage = [responseObject[@"data"][@"pageInfo"][@"totalPage"] integerValue];
@@ -286,7 +286,7 @@
         
     } else if (self.incomeType == redpack_incom) {
         CXMineWalletCashModel *model = self.dataSources[indexPath.row];
-        NSString *leftStr = model.type;
+        NSString *leftStr = [NSString stringWithFormat:@"%@\n来自:%@",model.type, model.room_name];;
         cell.leftLabel.text = leftStr;
         NSString *rightStr = [NSString stringWithFormat:@"%@\n%@",model.value, model.time];
         cell.rightLabel.text = rightStr;

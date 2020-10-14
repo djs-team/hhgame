@@ -36,7 +36,7 @@
 
 @property (nonatomic, strong) CXUserModel *currentUser;
 @property (nonatomic, assign) BOOL isWechatBind;
-@property (nonatomic, strong) NSNumber *bind_type;
+@property (nonatomic, strong) NSNumber *bind_type; // 显示绑定信息 0:都已绑定 1:显示绑定微信 2:显示绑定手机号
 
 @end
 
@@ -89,16 +89,20 @@
             
             weakSelf.userIdLabel.text = [NSString stringWithFormat:@"ID:%@", user.user_id];
             
-            weakSelf.bind_type = responseObject[@"data"][@"bind_type"];
-            
-            if (weakSelf.bind_type.intValue != 1 || weakSelf.bind_type.intValue != 2) {
-                NSDictionary *item = weakSelf.itemArrays[4];
-                NSString *title = item[@"title"];
-                if ([title isEqualToString:@"绑定"]) {
-                    [weakSelf.itemArrays removeObjectAtIndex:4];
-                    weakSelf.mainTableViewHeightLayout.constant = 45*weakSelf.itemArrays.count;
+            NSDictionary *dict = responseObject[@"data"];
+            if ([[dict allKeys] containsObject:@"bind_type"]) {
+                weakSelf.bind_type = responseObject[@"data"][@"bind_type"];
+                
+                if (weakSelf.bind_type.intValue != 1 && weakSelf.bind_type.intValue != 2) {
+                    NSDictionary *item = weakSelf.itemArrays[4];
+                    NSString *title = item[@"title"];
+                    if ([title isEqualToString:@"绑定"]) {
+                        [weakSelf.itemArrays removeObjectAtIndex:4];
+                        weakSelf.mainTableViewHeightLayout.constant = 45*weakSelf.itemArrays.count;
+                    }
                 }
             }
+            
             
             [weakSelf.mainTableView reloadData];
             

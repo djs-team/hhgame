@@ -68,8 +68,8 @@
     [CXHTTPRequest POSTWithURL:@"/index.php/Api/Guard/initGuard" parameters:@{@"target_id":_userId} callback:^(id responseObject, BOOL isCache, NSError *error) {
         if (!error) {
             weakSelf.itemArrays = [NSArray modelArrayWithClass:[CXRechargeModel class] json:responseObject[@"data"][@"data"]];
-            weakSelf.is_shouhu = [[responseObject[@"data"][@"is_shouhu"] stringValue] isEqualToString:@"1"];
-            if ([[responseObject[@"data"][@"is_auto"] stringValue] isEqualToString:@"1"]) {
+            weakSelf.is_shouhu = [responseObject[@"data"][@"is_shouhu"] intValue] == 1;
+            if ([responseObject[@"data"][@"is_auto"] intValue] == 1) {
                 weakSelf.automaticBtn.hidden = NO;
             } else {
                 weakSelf.automaticBtn.hidden = YES;
@@ -109,7 +109,7 @@
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake((320-16*3)/3, 116);
+    return CGSizeMake((320-16*2)/3, 116);
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {

@@ -55,6 +55,17 @@ load('game/ui/layer/coinshop/CoinShopMdt', function () {
                         let wxSign = JSON.stringify(body.wxinfo)
                         cc.log('=============' + "调用微信" + wxSign)
                         appInstance.nativeApi().thirdPay("wx", wxSign)
+                    } else if (payType == 3) {
+                        // 苹果支付
+//                        let vipCode = body.vipCode;
+//                        var iosFlag = "";
+//                        if (parseInt(vipCode) < 5) {
+//                          // VIP
+//                          iosFlag = "com.hehegames.hhyuejumajiang.v." + vipCode;
+//                        } else {
+//                          iosFlag = "com.hehegames.hhyuejumajiang.s." + vipCode;
+//                        }
+//                        appInstance.nativeApi().applyPay(iosFlag, body.orderId);
                     }
                     break
                 default:

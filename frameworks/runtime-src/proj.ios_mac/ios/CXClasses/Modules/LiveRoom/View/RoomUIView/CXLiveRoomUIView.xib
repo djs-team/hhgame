@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -37,7 +38,7 @@
                                 <action selector="bottomBtnAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="vo6-X5-Ndx"/>
                             </connections>
                         </button>
-                        <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Nw-xx-x0h">
+                        <button hidden="YES" opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Nw-xx-x0h">
                             <rect key="frame" x="165" y="0.0" width="58.5" height="49"/>
                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                             <state key="normal" image="liveroom_share">
@@ -165,7 +166,7 @@
                                 <constraint firstAttribute="width" constant="20" id="zMw-Nv-jLR"/>
                             </constraints>
                         </imageView>
-                        <button opaque="NO" tag="23" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pt1-yB-GNN">
+                        <button opaque="NO" tag="23" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pt1-yB-GNN">
                             <rect key="frame" x="248" y="0.0" width="142" height="44"/>
                             <connections>
                                 <action selector="topBtnAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="Fq1-F0-TrA"/>
@@ -276,13 +277,14 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                     <state key="normal" title="红包" image="back_white">
-                        <color key="titleColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleColor" systemColor="systemPinkColor"/>
                     </state>
                     <connections>
                         <action selector="bottomBtnAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="MdV-m9-HDD"/>
                     </connections>
                 </button>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="5RU-eQ-L8j" firstAttribute="top" secondItem="Nz4-Fy-jY9" secondAttribute="bottom" constant="8" id="1cQ-Cs-FsS"/>
@@ -306,7 +308,6 @@
                 <constraint firstItem="Cd2-ut-oN4" firstAttribute="top" secondItem="5RU-eQ-L8j" secondAttribute="bottom" constant="8" id="qz5-LE-gv9"/>
                 <constraint firstItem="Bbv-4V-Fct" firstAttribute="top" secondItem="Ofk-z2-OH5" secondAttribute="bottom" constant="56" id="rG1-Jf-dOU"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="applySeatBtn" destination="5RU-eQ-L8j" id="slM-Tc-0ct"/>
                 <outlet property="bottom_friendBtn" destination="2Nw-xx-x0h" id="Xka-Ii-Zma"/>
@@ -340,5 +341,8 @@
         <image name="liveroom_message" width="38.5" height="38.5"/>
         <image name="liveroom_share" width="38.5" height="38.5"/>
         <image name="more_white" width="11" height="18.5"/>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

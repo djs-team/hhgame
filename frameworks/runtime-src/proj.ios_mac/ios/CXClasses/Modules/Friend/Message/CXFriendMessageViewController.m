@@ -175,7 +175,7 @@
         cell.avatarTapGestureBlock = ^{
             [AppController joinRoom:model.room_id];
         };
-
+        cell.userMessageLabel.hidden = NO;
         cell.userMessageLabel.text = [self _latestMessageTitleForConversationModel:conversation.emModel];
         cell.timeLabel.text = [self _latestMessageTimeForConversationModel:conversation.emModel];
         if (conversation.emModel.unreadMessagesCount == 0) {
@@ -187,6 +187,8 @@
     } else {
         CXFriendInviteModel *model = self.dataArrays[indexPath.row];
         cell.model = model;
+        cell.isConversation = NO;
+        cell.userMessageLabel.hidden = YES;
         cell.avatarTapGestureBlock = ^{
             [AppController joinRoom:model.room_id];
         };

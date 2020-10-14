@@ -94,7 +94,6 @@
 }
 
 - (void)back {
-    [[EMClient sharedClient] logout:YES];
     [AppController setOrientation:@""];
     [self dismissViewControllerAnimated:YES completion:nil];
 }

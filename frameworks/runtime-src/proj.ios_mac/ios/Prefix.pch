@@ -17,6 +17,7 @@
     #import "LEEAlert.h"
     #import "LewPopupViewController.h"
     #import "TPKeyboardAvoidingScrollView.h"
+    #import "WXApi.h"
 
     #import "CXTools.h"
     #import "CXClientModel.h"

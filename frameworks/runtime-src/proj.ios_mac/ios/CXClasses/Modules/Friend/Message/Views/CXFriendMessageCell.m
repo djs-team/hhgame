@@ -92,6 +92,14 @@
                 _stateLabel.backgroundColor = UIColorHex(0x818181);
             }
         }
+        
+        if (model.conversation.unreadMessagesCount > 99) {
+            self.unReadCount.text = @"99+";
+        } else if (model.conversation.unreadMessagesCount > 0) {
+            self.unReadCount.text = [NSString stringWithFormat:@"%d",model.conversation.unreadMessagesCount];
+        } else {
+            self.unReadCount.hidden = YES;
+        }
     } else {
         _stateLabel.hidden = NO;
         _onlineLabel.hidden = NO;
@@ -120,14 +128,6 @@
             _onlineLabel.textColor = UIColorHex(0xFBD711);
         } else {
             _onlineLabel.textColor = UIColorHex(0x818181);
-        }
-        
-        if (model.conversation.unreadMessagesCount > 99) {
-            self.unReadCount.text = @"99+";
-        } else if (model.conversation.unreadMessagesCount > 0) {
-            self.unReadCount.text = [NSString stringWithFormat:@"%d",model.conversation.unreadMessagesCount];
-        } else {
-            self.unReadCount.hidden = YES;
         }
     }
 }

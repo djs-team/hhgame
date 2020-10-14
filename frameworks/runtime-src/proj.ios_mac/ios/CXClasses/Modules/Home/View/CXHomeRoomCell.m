@@ -56,22 +56,22 @@
         if ([model.xq_type intValue] == 3) {
             [self.room_stateBtn setBackgroundImage:[UIImage imageWithColor:UIColorHex(0xCE58FA)] forState:UIControlStateNormal];
             [self.room_stateBtn setTitle:@"相亲中" forState:UIControlStateNormal];
-            [self.room_stateBtn setImage:self.onlineStateImage forState:UIControlStateNormal];
+//            [self.room_stateBtn setImage:self.onlineStateImage forState:UIControlStateNormal];
         } else if ([model.xq_type intValue] == 2) {
             [self.room_stateBtn setBackgroundImage:[UIImage gradientImageWithSize:CGSizeMake(58, 16) Color1:UIColorHex(0x0BF7AE) color2:UIColorHex(0x009EFD)] forState:UIControlStateNormal];
             [self.room_stateBtn setTitle:@"等待中" forState:UIControlStateNormal];
-            [self.room_stateBtn setImage:self.onlineStateImage forState:UIControlStateNormal];
+//            [self.room_stateBtn setImage:self.onlineStateImage forState:UIControlStateNormal];
             self.room_stateBtn_widthLayout.constant = 58;
         } else {
             [self.room_stateBtn setBackgroundImage:[UIImage imageWithColor:[UIColor clearColor]] forState:UIControlStateNormal];
             [self.room_stateBtn setTitle:@"" forState:UIControlStateNormal];
-            [self.room_stateBtn setImage:self.onlineStateImage forState:UIControlStateNormal];
+//            [self.room_stateBtn setImage:self.onlineStateImage forState:UIControlStateNormal];
         }
     } else {
         [self.room_stateBtn setBackgroundImage:[UIImage imageWithColor:[UIColor clearColor]] forState:UIControlStateNormal];
         self.room_stateBtn.backgroundColor = [UIColor clearColor];
         [self.room_stateBtn setTitle:@"" forState:UIControlStateNormal];
-        [self.room_stateBtn setImage:self.onlineStateImage forState:UIControlStateNormal];
+//        [self.room_stateBtn setImage:self.onlineStateImage forState:UIControlStateNormal];
     }
     
     if ([model.right_corn integerValue] == 1) {
@@ -83,9 +83,9 @@
 
 - (UIImage *)onlineStateImage {
 //    if (_onlineStateImage) {
-        NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"live_room_online" ofType:@"gif"];
-        NSData *imageData = [NSData dataWithContentsOfFile:imagePath];
-    _onlineStateImage = [UIImage sd_imageWithGIFData:imageData];
+//        NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"live_room_online" ofType:@"gif"];
+//        NSData *imageData = [NSData dataWithContentsOfFile:imagePath];
+//    _onlineStateImage = [UIImage sd_imageWithGIFData:imageData];
 //        _onlineStateImage = [UIImage sd_animatedGIFWithData:imageData];
 //    }
     return _onlineStateImage;

@@ -137,7 +137,7 @@ load('module/mahjong/ui/DeskCardLayer', function () {
         updateDeckCard: function (nDeckCardNum) {
             let endTag = this._allCardNum - nDeckCardNum
             let pConfig = [
-                2,1,0,3
+                2,3,0,1
             ]
             for ( let i = this._deckCardTag; i <= endTag; ++i) {
                 let pIndex = Math.floor((i - 1) / this._deckCardLen / 2)
@@ -681,13 +681,14 @@ load('module/mahjong/ui/DeskCardLayer', function () {
             let cardTag = 0
             if (seatIndex === 0) {
                 cardTag = this._deckCardLen * 2 * 2
-                cardTag += (this._deckCardLen - cardIndex - 1) * 2
-            } else if (seatIndex === 1) {
+                // cardTag += (this._deckCardLen - cardIndex - 1) * 2
+                cardTag += (cardIndex) * 2
+            } else if (seatIndex === 3) {
                 cardTag = this._deckCardLen * 2
                 cardTag += (this._deckCardLen - cardIndex - 1) * 2
             } else if (seatIndex === 2) {
                 cardTag += cardIndex * 2
-            } else if (seatIndex === 3) {
+            } else if (seatIndex === 1) {
                 cardTag = this._deckCardLen * 3 * 2
                 cardTag += cardIndex * 2
             }

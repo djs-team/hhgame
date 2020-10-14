@@ -60,6 +60,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *coin; // 消耗玫瑰
 
 @property (nonatomic, strong) NSString *value; // 红包金额
+@property (nonatomic, strong) NSString *room_name; // 红包直播间
 
 @end
 

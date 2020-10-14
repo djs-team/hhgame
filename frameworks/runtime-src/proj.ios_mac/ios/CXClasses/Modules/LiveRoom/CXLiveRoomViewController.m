@@ -1471,9 +1471,6 @@
 
 // rechargeType: 0: 充值 1:送礼 2:麦位送礼
 - (void)showRechargeSheetViewRMB:(NSString *)rmb diamond:(NSString *)diamond iosflag:(NSString *)iosflag chargeid:(NSString *)chargeid rechargeType:(NSInteger)rechargeType seatUser:(LiveRoomUser *)seatUser {
-    if ([rmb integerValue] <= 0) {
-        return;
-    }
     CXLiveRoomRechargeSheepView *sheetView = [[NSBundle mainBundle] loadNibNamed:@"CXLiveRoomRechargeSheepView" owner:self options:nil].firstObject;
     [sheetView setupRoseNumber:diamond roseRMB:rmb];
     kWeakSelf

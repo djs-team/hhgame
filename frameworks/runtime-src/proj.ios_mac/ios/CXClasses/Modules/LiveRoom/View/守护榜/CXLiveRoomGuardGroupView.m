@@ -115,16 +115,15 @@
     _is_guard = is_guard;
     if (_is_guard == YES) {
         self.open_guard_view.hidden = YES;
-        self.renew_guard_btn.hidden = NO;
-    } else {
         if ([_userId isEqualToString:[CXClientModel instance].userId]) {
-            self.open_guard_btn.hidden = YES;
             self.renew_guard_btn.hidden = YES;
-            self.open_guard_view.hidden = YES;
         } else {
-            self.open_guard_view.hidden = NO;
-            self.renew_guard_btn.hidden = YES;
+            self.renew_guard_btn.hidden = NO;
         }
+        
+    } else {
+        self.open_guard_view.hidden = NO;
+        self.renew_guard_btn.hidden = YES;
     }
 }
 

@@ -73,44 +73,9 @@ load('game/ui/layer/turntable/TurnTableMdt', function () {
             let _resultData = {}
 
             _resultData.multiple = body.multiple
-            _resultData.propNum = body.propNum
             _resultData.turntableId = body.turntableId
 
-            let propType = body.propType
-            let propCode = body.propCode
-            switch (propType) {
-                case 1://货币
-                    if(propCode == 1){
-                        _resultData.res = 'res/code/goods/zphd_10.png'
-                    }else if(propCode == 2){
-                        _resultData.res = 'res/code/goods/zphd_6.png'
-                    }else{
-                        _resultData.res = 'res/code/goods/gy_fk.png'
-                    }
-                    break
-                case 2://角色
-                    if(propCode == 1){//货币
-                        _resultData.res = 'res/code/goods/zphd_1.png'
-                    }else if(propCode == 2){
-                        _resultData.res = 'res/code/goods/zphd_2.png'
-                    }else{
-                        _resultData.res = 'res/code/goods/zphd_2.png'
-                    }
-                    break
-                case 3://实物
-                    if(propCode == 1){
-                        _resultData.res = 'res/code/goods/zphd_12.png'
-                    }else if(propCode == 2){
-                        _resultData.res = 'res/code/goods/zphd_13.png'
-                    }else{
-                        _resultData.res = 'res/code/goods/zphd_14.png'
-                    }
-                    break
-                default:
-                    break
-
-            }
-
+            GameUtil.getPropData(body,_resultData,GameUtil.CURRENCYTYPE_1,GameUtil.UNITLOCATION_BEFORE,'x')
 
             this.view.onTurnPointResult(_resultData)
         },
@@ -120,43 +85,7 @@ load('game/ui/layer/turntable/TurnTableMdt', function () {
             let _resultData = {}
 
             _resultData.code = body.code
-            _resultData.propNum = body.propNum
-
-            let propType = body.propType
-            let propCode = body.propCode
-            switch (propType) {
-                case 1://货币
-                    if(propCode == 1){
-                        _resultData.res = 'res/code/goods/zphd_10.png'
-                    }else if(propCode == 2){
-                        _resultData.res = 'res/code/goods/zphd_6.png'
-                    }else{
-                        _resultData.res = 'res/code/goods/gy_fk.png'
-                    }
-                    break
-                case 2://角色
-                    if(propCode == 1){//货币
-                        _resultData.res = 'res/code/goods/zphd_1.png'
-                    }else if(propCode == 2){
-                        _resultData.res = 'res/code/goods/zphd_2.png'
-                    }else{
-                        _resultData.res = 'res/code/goods/zphd_2.png'
-                    }
-                    break
-                case 3://实物
-                    if(propCode == 1){
-                        _resultData.res = 'res/code/goods/zphd_12.png'
-                    }else if(propCode == 2){
-                        _resultData.res = 'res/code/goods/zphd_13.png'
-                    }else{
-                        _resultData.res = 'res/code/goods/zphd_14.png'
-                    }
-                    break
-                default:
-                    break
-
-            }
-
+            GameUtil.getPropData(body,_resultData,GameUtil.CURRENCYTYPE_1,GameUtil.UNITLOCATION_BEFORE,'x')
 
             this.view.onReceiveAwardsResult(_resultData)
         },

@@ -237,18 +237,22 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
 
         },
 
+        /**
+         * 钻石购买
+         * @param s
+         */
         onBuyZuanFunction: function (s) {
             sender = s;
             cc.log("----------------------onBuyZuanFunction" + JSON.stringify(sender))
             if (cc.sys.OS_IOS === cc.sys.os) {
                 if (AppConfig.applePayType == "Apple") {
-//                    let _sendData = sender._sendData
-//                    let msg = {
-//                        vipCode: _sendData.vipCode,
-//                        payType: 3
-//                    }
-//                    appInstance.gameAgent().httpGame().VIPPaysOrderReq(msg)
-//                    cc.log("----------------------onRechargeClicked")
+                   let _sendData = sender._sendData
+                   let msg = {
+                       vipCode: _sendData.vipCode,
+                       payType: 3
+                   }
+                   appInstance.gameAgent().httpGame().ZuanPaysOrderReq(msg)
+                   cc.log("----------------------onRechargeClicked")
                 } else {
                     this.PayType.setVisible(true)
                 }
@@ -257,42 +261,48 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
             }
 
         },
+        /**
+         * 支付宝支付
+         */
         onAliPayClick: function () {
-            cc.log("----------------------onAliPayClick")
+            console.log("----------------------onAliPayClick")
             this.PayType.setVisible(false)
             //下单
-            // let _sendData = sender._sendMsg
-            // let msg = {
-            //     goodsid: _sendData.goodsid,
-            //     payType: 1
-            // }
-            // appInstance.gameAgent().httpGame().VIPPaysOrderReq(msg)
+            let _sendData = sender._sendMsg
+            let msg = {
+                goodsid: _sendData.goodsid,
+                payType: 1
+            }
+            appInstance.gameAgent().httpGame().ZuanPaysOrderReq(msg)
 
-        }, onWxClick: function () {
-            cc.log("----------------------onWxClick")
-
+        },
+        /**
+         * 微信支付
+         */
+        onWxClick: function () {
+            console.log("----------------------onWxClick")
             this.PayType.setVisible(false)
             //下单
-            // let _sendData = sender._sendMsg
-            // let msg = {
-            //     goodsid: _sendData.goodsid,
-            //     payType: 2
-            // }
-            // appInstance.gameAgent().httpGame().VIPPaysOrderReq(msg)
+            let _sendData = sender._sendMsg
+            let msg = {
+                goodsid: _sendData.goodsid,
+                payType: 2
+            }
+            appInstance.gameAgent().httpGame().ZuanPaysOrderReq(msg)
 
         },
         //第三方支付结果回调
         onThirdPayCallBack: function (msg) {
-            cc.log('------------onThirdPayCallBack' + msg)
-
+            if (msg == 0) {
+                appInstance.gameAgent().Tips('------------------------------------充值成功！！！')
+            } else {
+                appInstance.gameAgent().Tips('------------------------------------充值失败！！！')
+            }
         },
         // 苹果支付成功订单校验
         onApplePayCallBack: function (msg) {
-            cc.log('=============onApplePayCallBack' + msg)
-//            msg = JSON.parse(msg)
-//            
-//            appInstance.gameAgent().httpGame().VIPPaysOrderAppleCheckReq(msg)
-            
+           msg = JSON.parse(msg)
+           appInstance.gameAgent().httpGame().VIPPaysOrderAppleCheckReq(msg)
         },
         /**
          * 触发购买事件

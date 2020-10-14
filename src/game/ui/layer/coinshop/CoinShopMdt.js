@@ -57,15 +57,16 @@ load('game/ui/layer/coinshop/CoinShopMdt', function () {
                         appInstance.nativeApi().thirdPay("wx", wxSign)
                     } else if (payType == 3) {
                         // 苹果支付
-//                        let vipCode = body.vipCode;
-//                        var iosFlag = "";
-//                        if (parseInt(vipCode) < 5) {
-//                          // VIP
-//                          iosFlag = "com.hehegames.hhyuejumajiang.v." + vipCode;
-//                        } else {
-//                          iosFlag = "com.hehegames.hhyuejumajiang.s." + vipCode;
-//                        }
-//                        appInstance.nativeApi().applyPay(iosFlag, body.orderId);
+                       let vipCode = body.goodsid;
+                       console.log('-------------goodsidgoodsidgoodsid'+vipCode);
+                       var iosFlag = "";
+                       if (parseInt(vipCode) < 5) {
+                         // VIP
+                         iosFlag = "com.hehegames.hhyuejumajiang.v." + vipCode;
+                       } else {
+                         iosFlag = "com.hehegames.hhyuejumajiang.s." + vipCode;
+                       }
+                       appInstance.nativeApi().applyPay(iosFlag, body.orderId);
                     }
                     break
                 default:

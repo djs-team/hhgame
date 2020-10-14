@@ -2540,6 +2540,7 @@
                             "ctype": "ImageViewObjectData"
                           },
                           {
+                            "IsCustomSize": true,
                             "FontSize": 16,
                             "LabelText": "5555",
                             "HorizontalAlignmentType": "HT_Center",
@@ -2574,17 +2575,17 @@
                               "Y": 0.5152
                             },
                             "PreSize": {
-                              "X": 0.3232,
+                              "X": 0.404,
                               "Y": 0.5517
                             },
-                            "LeftMargin": 39.4,
-                            "RightMargin": 27.6,
+                            "LeftMargin": 35.4,
+                            "RightMargin": 23.6,
                             "TopMargin": 6.0583,
                             "BottomMargin": 6.9417,
                             "Tag": 314,
                             "ActionTag": -1915352809,
                             "Size": {
-                              "X": 32.0,
+                              "X": 40.0,
                               "Y": 16.0
                             },
                             "Name": "priceText",
@@ -3704,8 +3705,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 648.064,
-                  "Y": 519.8814
+                  "X": 648.0638,
+                  "Y": 512.8809
                 },
                 "Scale": {
                   "ScaleX": 0.6951,
@@ -3716,16 +3717,16 @@
                 "PositionPercentXEnabled": true,
                 "PrePosition": {
                   "X": 0.5063,
-                  "Y": 0.7221
+                  "Y": 0.7123
                 },
                 "PreSize": {
                   "X": 0.2547,
                   "Y": 0.0889
                 },
-                "LeftMargin": 485.064,
-                "RightMargin": 468.936,
-                "TopMargin": 168.1186,
-                "BottomMargin": 487.8814,
+                "LeftMargin": 485.0638,
+                "RightMargin": 468.9362,
+                "TopMargin": 175.1191,
+                "BottomMargin": 480.8809,
                 "Tag": 425,
                 "Children": [
                   {

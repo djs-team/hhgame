@@ -19,7 +19,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="dele" ActionTag="-1464592446" VisibleForFrame="False" Tag="521" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftEage="422" RightEage="422" TopEage="237" BottomEage="237" Scale9OriginX="422" Scale9OriginY="237" Scale9Width="436" Scale9Height="246" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="dele" Visible="False" ActionTag="-1464592446" VisibleForFrame="False" Tag="521" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftEage="422" RightEage="422" TopEage="237" BottomEage="237" Scale9OriginX="422" Scale9OriginY="237" Scale9Width="436" Scale9Height="246" ctype="ImageViewObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="640.0000" Y="360.0000" />
@@ -29,79 +29,99 @@
             <PreSize X="1.0000" Y="1.0000" />
             <FileData Type="Normal" Path="aaa/invitation (3).png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="pnl" ActionTag="-424990080" Tag="217" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+          <AbstractNodeData Name="dele2" Visible="False" ActionTag="1194765215" VisibleForFrame="False" Tag="75" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftEage="422" RightEage="422" TopEage="237" BottomEage="237" Scale9OriginX="422" Scale9OriginY="237" Scale9Width="436" Scale9Height="246" ctype="ImageViewObjectData">
+            <Size X="1280.0000" Y="720.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="640.0000" Y="360.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.5000" Y="0.5000" />
+            <PreSize X="1.0000" Y="1.0000" />
+            <FileData Type="Normal" Path="aaa/invitation (4).png" Plist="" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="dele2_0" ActionTag="1181600216" VisibleForFrame="False" Tag="76" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftEage="422" RightEage="422" TopEage="237" BottomEage="237" Scale9OriginX="422" Scale9OriginY="237" Scale9Width="436" Scale9Height="246" ctype="ImageViewObjectData">
+            <Size X="1280.0000" Y="720.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="640.0000" Y="360.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.5000" Y="0.5000" />
+            <PreSize X="1.0000" Y="1.0000" />
+            <FileData Type="Normal" Path="aaa/invitation (2).png" Plist="" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="pnl" ActionTag="-424990080" Tag="217" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TopMargin="-1.0800" BottomMargin="1.0800" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <Children>
-              <AbstractNodeData Name="bgPnl" ActionTag="1859398032" Tag="27" IconVisible="False" PositionPercentYEnabled="True" PercentHeightEnable="True" PercentHeightEnabled="True" LeftMargin="3.0705" RightMargin="-3.0706" TopMargin="-1.1521" BottomMargin="1.1521" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="bgPnl" Visible="False" ActionTag="1859398032" Tag="27" IconVisible="False" PositionPercentYEnabled="True" PercentHeightEnable="True" PercentHeightEnabled="True" LeftMargin="3.0705" RightMargin="-3.0706" TopMargin="-1.1520" BottomMargin="1.1520" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="1280.0000" Y="720.0000" />
                 <Children>
-                  <AbstractNodeData Name="titleImg" ActionTag="-988518584" Tag="516" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="495.7960" RightMargin="479.9240" TopMargin="28.1490" BottomMargin="616.1010" Scale9Enable="True" LeftEage="32" RightEage="32" TopEage="22" BottomEage="22" Scale9OriginX="32" Scale9OriginY="22" Scale9Width="35" Scale9Height="23" ctype="ImageViewObjectData">
-                    <Size X="304.2800" Y="75.7500" />
+                  <AbstractNodeData Name="titleImg" Visible="False" ActionTag="-988518584" Tag="516" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="494.9900" RightMargin="479.1179" TopMargin="26.1330" BottomMargin="618.1170" Scale9Enable="True" LeftEage="38" RightEage="32" TopEage="22" BottomEage="22" Scale9OriginX="38" Scale9OriginY="22" Scale9Width="29" Scale9Height="23" ctype="ImageViewObjectData">
+                    <Size X="305.8921" Y="75.7500" />
                     <Children>
-                      <AbstractNodeData Name="titleText" ActionTag="924906828" Tag="517" IconVisible="False" LeftMargin="76.1268" RightMargin="67.1532" TopMargin="12.8943" BottomMargin="22.8557" FontSize="40" LabelText="邀请有礼" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                      <AbstractNodeData Name="titleText" ActionTag="924906828" Tag="517" IconVisible="False" LeftMargin="69.6790" RightMargin="75.2131" TopMargin="17.7317" BottomMargin="18.0183" FontSize="40" LabelText="邀请有礼" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                         <Size X="161.0000" Y="40.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="156.6268" Y="42.8557" />
+                        <Position X="150.1790" Y="38.0183" />
                         <Scale ScaleX="1.0996" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.5147" Y="0.5658" />
-                        <PreSize X="0.5291" Y="0.5281" />
+                        <PrePosition X="0.4910" Y="0.5019" />
+                        <PreSize X="0.5263" Y="0.5281" />
                         <FontResource Type="Normal" Path="font/hkhbtW12.ttc" Plist="" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="647.9360" Y="653.9760" />
+                    <Position X="647.9360" Y="655.9920" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.5062" Y="0.9083" />
-                    <PreSize X="0.2377" Y="0.1052" />
+                    <PrePosition X="0.5062" Y="0.9111" />
+                    <PreSize X="0.2390" Y="0.1052" />
                     <FileData Type="Normal" Path="common/bz_1.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="bgPic" ActionTag="1634738854" Tag="518" IconVisible="False" LeftMargin="156.1411" RightMargin="160.8589" TopMargin="90.1083" BottomMargin="58.8917" Scale9Enable="True" LeftEage="44" RightEage="44" TopEage="43" BottomEage="43" Scale9OriginX="44" Scale9OriginY="43" Scale9Width="48" Scale9Height="47" ctype="ImageViewObjectData">
-                    <Size X="963.0000" Y="571.0000" />
+                  <AbstractNodeData Name="bgPic" ActionTag="1634738854" Tag="518" IconVisible="False" LeftMargin="153.1407" RightMargin="163.8594" TopMargin="88.6087" BottomMargin="57.3913" Scale9Enable="True" LeftEage="44" RightEage="44" TopEage="43" BottomEage="43" Scale9OriginX="44" Scale9OriginY="43" Scale9Width="48" Scale9Height="47" ctype="ImageViewObjectData">
+                    <Size X="963.0000" Y="574.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="637.6411" Y="344.3917" />
+                    <Position X="634.6407" Y="344.3913" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.4982" Y="0.4783" />
-                    <PreSize X="0.7523" Y="0.7931" />
+                    <PrePosition X="0.4958" Y="0.4783" />
+                    <PreSize X="0.7523" Y="0.7972" />
                     <FileData Type="Normal" Path="common/bz_2.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="dataPic" ActionTag="1871793044" Tag="519" IconVisible="False" LeftMargin="384.2963" RightMargin="185.4636" TopMargin="101.2307" BottomMargin="78.3493" Scale9Enable="True" LeftEage="43" RightEage="22" TopEage="37" BottomEage="24" Scale9OriginX="43" Scale9OriginY="37" Scale9Width="21" Scale9Height="14" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="dataPic" ActionTag="1871793044" Tag="519" IconVisible="False" LeftMargin="384.2960" RightMargin="185.4640" TopMargin="101.2309" BottomMargin="78.3491" Scale9Enable="True" LeftEage="24" RightEage="22" TopEage="37" BottomEage="24" Scale9OriginX="24" Scale9OriginY="37" Scale9Width="40" Scale9Height="14" ctype="ImageViewObjectData">
                     <Size X="710.2400" Y="540.4200" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="739.4163" Y="348.5593" />
+                    <Position X="739.4160" Y="348.5591" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.5777" Y="0.4841" />
                     <PreSize X="0.5549" Y="0.7506" />
                     <FileData Type="Normal" Path="common/db.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="leftBubblePic" ActionTag="-1700231620" Tag="520" IconVisible="False" LeftMargin="207.8380" RightMargin="1024.1620" TopMargin="563.3678" BottomMargin="110.6322" LeftEage="15" RightEage="15" TopEage="15" BottomEage="15" Scale9OriginX="15" Scale9OriginY="15" Scale9Width="18" Scale9Height="16" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="leftBubblePic" ActionTag="-1700231620" Tag="520" IconVisible="False" LeftMargin="208.8379" RightMargin="1023.1621" TopMargin="566.3679" BottomMargin="107.6321" LeftEage="15" RightEage="15" TopEage="15" BottomEage="15" Scale9OriginX="15" Scale9OriginY="15" Scale9Width="18" Scale9Height="16" ctype="ImageViewObjectData">
                     <Size X="48.0000" Y="46.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="231.8380" Y="133.6322" />
+                    <Position X="232.8379" Y="130.6321" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.1811" Y="0.1856" />
+                    <PrePosition X="0.1819" Y="0.1814" />
                     <PreSize X="0.0375" Y="0.0639" />
                     <FileData Type="Normal" Path="common/bz_3.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="rightBubblePic" ActionTag="1213437581" Tag="521" IconVisible="False" LeftMargin="1025.0303" RightMargin="206.9697" TopMargin="564.5925" BottomMargin="105.2601" FlipX="True" LeftEage="15" RightEage="15" TopEage="15" BottomEage="15" Scale9OriginX="15" Scale9OriginY="15" Scale9Width="18" Scale9Height="16" ctype="ImageViewObjectData">
-                    <Size X="48.0000" Y="50.1474" />
+                  <AbstractNodeData Name="rightBubblePic" ActionTag="1213437581" Tag="521" IconVisible="False" LeftMargin="1024.0295" RightMargin="207.9705" TopMargin="563.6672" BottomMargin="110.3328" FlipX="True" LeftEage="15" RightEage="15" TopEage="15" BottomEage="15" Scale9OriginX="15" Scale9OriginY="15" Scale9Width="18" Scale9Height="16" ctype="ImageViewObjectData">
+                    <Size X="48.0000" Y="46.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="1049.0303" Y="130.3338" />
+                    <Position X="1048.0295" Y="133.3328" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.8196" Y="0.1810" />
-                    <PreSize X="0.0375" Y="0.0696" />
+                    <PrePosition X="0.8188" Y="0.1852" />
+                    <PreSize X="0.0375" Y="0.0639" />
                     <FileData Type="Normal" Path="common/bz_3.png" Plist="" />
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="643.0705" Y="361.1521" />
+                <Position X="643.0705" Y="361.1520" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5024" Y="0.5016" />
@@ -111,57 +131,57 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="invitationPnl" ActionTag="1132894349" Tag="522" IconVisible="False" LeftMargin="392.2676" RightMargin="193.7324" TopMargin="122.8461" BottomMargin="125.1539" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="invitationPnl" Visible="False" ActionTag="1132894349" Tag="522" IconVisible="False" LeftMargin="392.2676" RightMargin="193.7324" TopMargin="122.8461" BottomMargin="125.1539" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="694.0000" Y="472.0000" />
                 <Children>
                   <AbstractNodeData Name="invitNowPnl" Visible="False" ActionTag="579026604" Tag="686" IconVisible="False" LeftMargin="-1.6381" RightMargin="-7.3619" TopMargin="-15.2499" BottomMargin="-51.7501" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="703.0000" Y="539.0000" />
                     <Children>
-                      <AbstractNodeData Name="inviteFriendsPic" ActionTag="88895582" Tag="525" IconVisible="False" LeftMargin="14.7709" RightMargin="18.2291" TopMargin="66.9858" BottomMargin="88.0142" LeftEage="221" RightEage="221" TopEage="126" BottomEage="126" Scale9OriginX="221" Scale9OriginY="126" Scale9Width="228" Scale9Height="132" ctype="ImageViewObjectData">
+                      <AbstractNodeData Name="inviteFriendsPic" ActionTag="88895582" Tag="525" IconVisible="False" LeftMargin="17.7709" RightMargin="15.2291" TopMargin="65.9858" BottomMargin="89.0142" LeftEage="221" RightEage="221" TopEage="126" BottomEage="126" Scale9OriginX="221" Scale9OriginY="126" Scale9Width="228" Scale9Height="132" ctype="ImageViewObjectData">
                         <Size X="670.0000" Y="384.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="349.7709" Y="280.0142" />
+                        <Position X="352.7709" Y="281.0142" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.4975" Y="0.5195" />
+                        <PrePosition X="0.5018" Y="0.5214" />
                         <PreSize X="0.9531" Y="0.7124" />
                         <FileData Type="Normal" Path="png/dt_yqyl.png" Plist="" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="qrCodePg1" ActionTag="-118132835" Tag="73" IconVisible="False" LeftMargin="243.9160" RightMargin="359.0840" TopMargin="294.0455" BottomMargin="144.9545" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                      <AbstractNodeData Name="qrCodePg1" ActionTag="-118132835" Tag="73" IconVisible="False" LeftMargin="246.9161" RightMargin="356.0839" TopMargin="294.0455" BottomMargin="144.9545" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                         <Size X="100.0000" Y="100.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="293.9160" Y="194.9545" />
+                        <Position X="296.9161" Y="194.9545" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.4181" Y="0.3617" />
+                        <PrePosition X="0.4224" Y="0.3617" />
                         <PreSize X="0.1422" Y="0.1855" />
                         <SingleColor A="255" R="150" G="200" B="255" />
                         <FirstColor A="255" R="150" G="200" B="255" />
                         <EndColor A="255" R="255" G="255" B="255" />
                         <ColorVector ScaleY="1.0000" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="inviteNowBtn" ActionTag="289119277" Tag="316" IconVisible="False" LeftMargin="412.7228" RightMargin="120.2772" TopMargin="366.4151" BottomMargin="104.5849" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="24" RightEage="25" TopEage="8" BottomEage="2" Scale9OriginX="24" Scale9OriginY="8" Scale9Width="6" Scale9Height="42" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                        <Size X="170.0000" Y="68.0000" />
+                      <AbstractNodeData Name="inviteNowBtn" ActionTag="289119277" Tag="316" IconVisible="False" LeftMargin="413.2200" RightMargin="116.7800" TopMargin="364.9200" BottomMargin="107.0800" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="24" RightEage="25" TopEage="3" BottomEage="2" Scale9OriginX="24" Scale9OriginY="3" Scale9Width="6" Scale9Height="47" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                        <Size X="173.0000" Y="67.0000" />
                         <Children>
-                          <AbstractNodeData Name="Text_28" ActionTag="1455344603" Tag="680" IconVisible="False" LeftMargin="23.2154" RightMargin="24.7846" TopMargin="12.1944" BottomMargin="25.8056" FontSize="30" LabelText="立即邀请" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                          <AbstractNodeData Name="Text_28" ActionTag="1455344603" Tag="680" IconVisible="False" LeftMargin="23.8249" RightMargin="27.1751" TopMargin="13.6314" BottomMargin="23.3686" FontSize="30" LabelText="立即邀请" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                             <Size X="122.0000" Y="30.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="84.2154" Y="40.8056" />
+                            <Position X="84.8249" Y="38.3686" />
                             <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.4954" Y="0.6001" />
-                            <PreSize X="0.7176" Y="0.4412" />
+                            <PrePosition X="0.4903" Y="0.5727" />
+                            <PreSize X="0.7052" Y="0.4478" />
                             <FontResource Type="Normal" Path="font/hkhbtW12.ttc" Plist="" />
                             <OutlineColor A="255" R="255" G="0" B="0" />
                             <ShadowColor A="255" R="110" G="110" B="110" />
                           </AbstractNodeData>
                         </Children>
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="497.7228" Y="138.5849" />
+                        <Position X="499.7200" Y="140.5800" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.7080" Y="0.2571" />
-                        <PreSize X="0.2418" Y="0.1262" />
+                        <PrePosition X="0.7108" Y="0.2608" />
+                        <PreSize X="0.2461" Y="0.1243" />
                         <TextColor A="255" R="65" G="65" B="70" />
                         <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
                         <NormalFileData Type="Normal" Path="invitation/yqyl_7.png" Plist="" />
@@ -183,79 +203,79 @@
                   <AbstractNodeData Name="sfpPnl" ActionTag="-2013452821" Tag="864" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="694.0000" Y="472.0000" />
                     <Children>
-                      <AbstractNodeData Name="sftSharePic" ActionTag="-1761569088" Tag="879" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="-187.5222" RightMargin="19.0122" TopMargin="8.8444" BottomMargin="53.4956" LeftEage="284" RightEage="284" TopEage="134" BottomEage="134" Scale9OriginX="284" Scale9OriginY="134" Scale9Width="295" Scale9Height="140" ctype="ImageViewObjectData">
-                        <Size X="862.5100" Y="409.6600" />
+                      <AbstractNodeData Name="sftSharePic" Visible="False" ActionTag="-1761569088" Tag="879" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="-185.9028" RightMargin="15.2184" TopMargin="7.8812" BottomMargin="55.4588" LeftEage="284" RightEage="284" TopEage="134" BottomEage="134" Scale9OriginX="284" Scale9OriginY="134" Scale9Width="295" Scale9Height="140" ctype="ImageViewObjectData">
+                        <Size X="864.6844" Y="408.6600" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="243.7328" Y="258.3256" />
+                        <Position X="246.4394" Y="259.7888" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.3512" Y="0.5473" />
-                        <PreSize X="1.2428" Y="0.8679" />
+                        <PrePosition X="0.3551" Y="0.5504" />
+                        <PreSize X="1.2459" Y="0.8658" />
                         <FileData Type="Normal" Path="png/dt_yqyl1.png" Plist="" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="qrCodePg2" ActionTag="407204860" Tag="74" IconVisible="False" LeftMargin="-127.4464" RightMargin="711.4464" TopMargin="264.3408" BottomMargin="97.6592" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                      <AbstractNodeData Name="qrCodePg2" ActionTag="407204860" Tag="74" IconVisible="False" LeftMargin="-125.4465" RightMargin="709.4465" TopMargin="260.3409" BottomMargin="101.6591" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                         <Size X="110.0000" Y="110.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="-72.4464" Y="152.6592" />
+                        <Position X="-70.4465" Y="156.6591" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="-0.1044" Y="0.3234" />
+                        <PrePosition X="-0.1015" Y="0.3319" />
                         <PreSize X="0.1585" Y="0.2331" />
                         <SingleColor A="255" R="150" G="200" B="255" />
                         <FirstColor A="255" R="150" G="200" B="255" />
                         <EndColor A="255" R="255" G="255" B="255" />
                         <ColorVector ScaleY="1.0000" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="sftWxBtn" ActionTag="-400961088" Tag="312" IconVisible="False" LeftMargin="-50.7062" RightMargin="476.2362" TopMargin="428.3920" BottomMargin="-39.2120" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="56" RightEage="53" BottomEage="1" Scale9OriginX="56" Scale9Width="16" Scale9Height="88" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                        <Size X="268.4700" Y="82.8200" />
+                      <AbstractNodeData Name="sftWxBtn" ActionTag="-400961088" Tag="312" IconVisible="False" LeftMargin="-51.2059" RightMargin="475.7359" TopMargin="430.3970" BottomMargin="-37.2070" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="56" RightEage="53" BottomEage="1" Scale9OriginX="56" Scale9Width="16" Scale9Height="88" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                        <Size X="269.4700" Y="78.8100" />
                         <Children>
-                          <AbstractNodeData Name="sftWxText" ActionTag="592336924" Tag="313" IconVisible="False" LeftMargin="50.9700" RightMargin="56.5000" TopMargin="23.2100" BottomMargin="27.6100" FontSize="32" LabelText="分享到微信" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                          <AbstractNodeData Name="sftWxText" ActionTag="592336924" Tag="313" IconVisible="False" LeftMargin="47.9700" RightMargin="60.5000" TopMargin="22.2000" BottomMargin="24.6100" FontSize="32" LabelText="分享到微信" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                             <Size X="161.0000" Y="32.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="131.4700" Y="43.6100" />
+                            <Position X="128.4700" Y="40.6100" />
                             <Scale ScaleX="1.0644" ScaleY="1.0000" />
                             <CColor A="255" R="138" G="74" B="0" />
-                            <PrePosition X="0.4897" Y="0.5266" />
-                            <PreSize X="0.5997" Y="0.3864" />
+                            <PrePosition X="0.4768" Y="0.5153" />
+                            <PreSize X="0.5975" Y="0.4060" />
                             <FontResource Type="Normal" Path="font/hkhbtW12.ttc" Plist="" />
                             <OutlineColor A="255" R="255" G="0" B="0" />
                             <ShadowColor A="255" R="110" G="110" B="110" />
                           </AbstractNodeData>
                         </Children>
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="83.5288" Y="2.1980" />
+                        <Position X="83.5291" Y="2.1980" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
                         <PrePosition X="0.1204" Y="0.0047" />
-                        <PreSize X="0.3868" Y="0.1755" />
+                        <PreSize X="0.3883" Y="0.1670" />
                         <TextColor A="255" R="65" G="65" B="70" />
                         <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
                         <NormalFileData Type="Normal" Path="common/bt_2.png" Plist="" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="sftWxCircleBtn" ActionTag="-1274575727" Tag="314" IconVisible="False" LeftMargin="275.9065" RightMargin="149.6235" TopMargin="428.3920" BottomMargin="-39.2120" TouchEnable="True" FontSize="14" ButtonText="Button" Scale9Enable="True" LeftEage="56" RightEage="53" BottomEage="1" Scale9OriginX="56" Scale9Width="21" Scale9Height="87" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                        <Size X="268.4700" Y="82.8200" />
+                      <AbstractNodeData Name="sftWxCircleBtn" ActionTag="-1274575727" Tag="314" IconVisible="False" LeftMargin="285.8583" RightMargin="144.1217" TopMargin="427.4224" BottomMargin="-34.2324" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="56" RightEage="53" BottomEage="1" Scale9OriginX="56" Scale9Width="21" Scale9Height="87" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                        <Size X="264.0200" Y="78.8100" />
                         <Children>
-                          <AbstractNodeData Name="sftWxCircleText" ActionTag="-756138037" Tag="315" IconVisible="False" LeftMargin="36.5000" RightMargin="37.9700" TopMargin="23.2100" BottomMargin="27.6100" FontSize="32" LabelText="分享到朋友圈" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                          <AbstractNodeData Name="sftWxCircleText" ActionTag="-756138037" Tag="315" IconVisible="False" LeftMargin="29.5000" RightMargin="40.5200" TopMargin="23.2000" BottomMargin="23.6100" FontSize="32" LabelText="分享到朋友圈" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                             <Size X="194.0000" Y="32.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="133.5000" Y="43.6100" />
+                            <Position X="126.5000" Y="39.6100" />
                             <Scale ScaleX="1.0641" ScaleY="1.0000" />
                             <CColor A="255" R="138" G="74" B="0" />
-                            <PrePosition X="0.4973" Y="0.5266" />
-                            <PreSize X="0.7226" Y="0.3864" />
+                            <PrePosition X="0.4791" Y="0.5026" />
+                            <PreSize X="0.7348" Y="0.4060" />
                             <FontResource Type="Normal" Path="font/hkhbtW12.ttc" Plist="" />
                             <OutlineColor A="255" R="255" G="0" B="0" />
                             <ShadowColor A="255" R="110" G="110" B="110" />
                           </AbstractNodeData>
                         </Children>
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="410.1415" Y="2.1980" />
+                        <Position X="417.8683" Y="5.1726" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.5910" Y="0.0047" />
-                        <PreSize X="0.3868" Y="0.1755" />
+                        <PrePosition X="0.6021" Y="0.0110" />
+                        <PreSize X="0.3804" Y="0.1670" />
                         <TextColor A="255" R="65" G="65" B="70" />
                         <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
                         <NormalFileData Type="Normal" Path="common/bt_1.png" Plist="" />
@@ -286,17 +306,17 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="invitationTasksPnl" Visible="False" ActionTag="-1476095303" Tag="523" IconVisible="False" LeftMargin="404.6700" RightMargin="181.3301" TopMargin="114.9856" BottomMargin="133.0144" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="invitationTasksPnl" ActionTag="-1476095303" Tag="523" IconVisible="False" LeftMargin="404.6700" RightMargin="181.3301" TopMargin="114.9856" BottomMargin="133.0144" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="694.0000" Y="472.0000" />
                 <Children>
-                  <AbstractNodeData Name="myTaskList" ActionTag="-151934554" Tag="240" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="-7.7744" RightMargin="13.6008" TopMargin="1.9843" BottomMargin="12.0851" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" IsBounceEnabled="True" ScrollDirectionType="0" DirectionType="Vertical" ctype="ListViewObjectData">
-                    <Size X="688.1735" Y="457.9305" />
+                  <AbstractNodeData Name="myTaskList" ActionTag="-151934554" Tag="240" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="-5.4148" RightMargin="11.2412" TopMargin="-0.1142" BottomMargin="9.4202" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" IsBounceEnabled="True" ScrollDirectionType="0" DirectionType="Vertical" ctype="ListViewObjectData">
+                    <Size X="688.1735" Y="462.6940" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="336.3124" Y="241.0504" />
+                    <Position X="338.6720" Y="240.7672" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.4846" Y="0.5107" />
-                    <PreSize X="0.9916" Y="0.9702" />
+                    <PrePosition X="0.4880" Y="0.5101" />
+                    <PreSize X="0.9916" Y="0.9803" />
                     <SingleColor A="255" R="150" G="150" B="255" />
                     <FirstColor A="255" R="150" G="150" B="255" />
                     <EndColor A="255" R="255" G="255" B="255" />
@@ -305,13 +325,13 @@
                   <AbstractNodeData Name="myTaskCell" ActionTag="-683578418" Tag="241" IconVisible="False" LeftMargin="1.2500" RightMargin="20.0636" TopMargin="8.1493" BottomMargin="308.8500" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="672.6864" Y="155.0007" />
                     <Children>
-                      <AbstractNodeData Name="myInvitePic" ActionTag="-716072876" Tag="314" IconVisible="False" LeftMargin="9.4411" RightMargin="7.9158" TopMargin="15.3015" BottomMargin="10.4761" Scale9Enable="True" LeftEage="43" RightEage="43" TopEage="11" BottomEage="11" Scale9OriginX="43" Scale9OriginY="11" Scale9Width="46" Scale9Height="41" ctype="ImageViewObjectData">
+                      <AbstractNodeData Name="myInvitePic" ActionTag="-716072876" Tag="314" IconVisible="False" LeftMargin="9.4411" RightMargin="7.9158" TopMargin="13.3015" BottomMargin="12.4762" Scale9Enable="True" LeftEage="43" RightEage="43" TopEage="11" BottomEage="11" Scale9OriginX="43" Scale9OriginY="11" Scale9Width="46" Scale9Height="41" ctype="ImageViewObjectData">
                         <Size X="655.3295" Y="129.2231" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="337.1059" Y="75.0876" />
+                        <Position X="337.1059" Y="77.0877" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.5011" Y="0.4844" />
+                        <PrePosition X="0.5011" Y="0.4973" />
                         <PreSize X="0.9742" Y="0.8337" />
                         <FileData Type="Normal" Path="task/rwzx_10.png" Plist="" />
                       </AbstractNodeData>
@@ -326,7 +346,7 @@
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="moneyByPic" ActionTag="1603263775" Tag="318" IconVisible="False" LeftMargin="43.0957" RightMargin="558.5907" TopMargin="33.2993" BottomMargin="51.7014" LeftEage="15" RightEage="15" TopEage="15" BottomEage="15" Scale9OriginX="15" Scale9OriginY="15" Scale9Width="51" Scale9Height="51" ctype="ImageViewObjectData">
+                      <AbstractNodeData Name="moneyByPic" ActionTag="1603263775" Tag="318" IconVisible="False" LeftMargin="43.0955" RightMargin="558.5909" TopMargin="29.2993" BottomMargin="55.7014" LeftEage="15" RightEage="15" TopEage="15" BottomEage="15" Scale9OriginX="15" Scale9OriginY="15" Scale9Width="51" Scale9Height="51" ctype="ImageViewObjectData">
                         <Size X="71.0000" Y="70.0000" />
                         <Children>
                           <AbstractNodeData Name="moneyPic" ActionTag="-58059711" Tag="319" IconVisible="False" LeftMargin="13.5599" RightMargin="17.4401" TopMargin="15.0300" BottomMargin="14.9700" LeftEage="13" RightEage="13" TopEage="13" BottomEage="13" Scale9OriginX="13" Scale9OriginY="13" Scale9Width="14" Scale9Height="14" ctype="ImageViewObjectData">
@@ -341,21 +361,21 @@
                           </AbstractNodeData>
                         </Children>
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="78.5957" Y="86.7014" />
+                        <Position X="78.5955" Y="90.7014" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.1168" Y="0.5594" />
+                        <PrePosition X="0.1168" Y="0.5852" />
                         <PreSize X="0.1055" Y="0.4516" />
                         <FileData Type="Normal" Path="common/gx_2.png" Plist="" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="moneyText" ActionTag="76166618" Tag="320" IconVisible="False" LeftMargin="42.7428" RightMargin="561.4440" TopMargin="112.1936" BottomMargin="22.8071" IsCustomSize="True" FontSize="20" LabelText="x666" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                        <Size X="68.4996" Y="20.0000" />
+                      <AbstractNodeData Name="moneyText" ActionTag="76166618" Tag="320" IconVisible="False" LeftMargin="41.0790" RightMargin="559.7800" TopMargin="107.1936" BottomMargin="27.8071" IsCustomSize="True" FontSize="20" LabelText="x666" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="71.8274" Y="20.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="76.9926" Y="32.8071" />
+                        <Position X="76.9927" Y="37.8071" />
                         <Scale ScaleX="1.4315" ScaleY="1.0000" />
                         <CColor A="255" R="0" G="0" B="0" />
-                        <PrePosition X="0.1145" Y="0.2117" />
-                        <PreSize X="0.1018" Y="0.1290" />
+                        <PrePosition X="0.1145" Y="0.2439" />
+                        <PreSize X="0.1068" Y="0.1290" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
@@ -372,23 +392,23 @@
                             <PreSize X="0.9270" Y="0.7677" />
                             <FileData Type="Normal" Path="invitation/yqyl_4.png" Plist="" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="progressBar" ActionTag="-1729911493" Tag="50" IconVisible="False" LeftMargin="-0.1800" RightMargin="25.0819" TopMargin="4.6374" BottomMargin="2.1100" ProgressInfo="100" ctype="LoadingBarObjectData">
+                          <AbstractNodeData Name="progressBar" ActionTag="-1729911493" Tag="50" IconVisible="False" LeftMargin="-0.1801" RightMargin="25.0820" TopMargin="1.6373" BottomMargin="5.1101" ProgressInfo="100" ctype="LoadingBarObjectData">
                             <Size X="371.0000" Y="35.2200" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="185.3200" Y="19.7200" />
+                            <Position X="185.3199" Y="22.7201" />
                             <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.4681" Y="0.4699" />
+                            <PrePosition X="0.4681" Y="0.5414" />
                             <PreSize X="0.9371" Y="0.8392" />
                             <ImageFileData Type="Normal" Path="invitation/yqyl_3.png" Plist="" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="progressBarText" ActionTag="1708095057" Tag="323" IconVisible="False" LeftMargin="160.3469" RightMargin="185.5550" TopMargin="9.7814" BottomMargin="12.1860" IsCustomSize="True" FontSize="20" LabelText="1/1" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                            <Size X="50.0000" Y="20.0000" />
+                          <AbstractNodeData Name="progressBarText" ActionTag="1708095057" Tag="323" IconVisible="False" LeftMargin="160.3469" RightMargin="185.5550" TopMargin="7.7814" BottomMargin="14.1862" IsCustomSize="True" FontSize="20" LabelText="1/1" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                            <Size X="50.0000" Y="19.9998" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="185.3469" Y="22.1860" />
+                            <Position X="185.3469" Y="24.1861" />
                             <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.4682" Y="0.5286" />
+                            <PrePosition X="0.4682" Y="0.5763" />
                             <PreSize X="0.1263" Y="0.4766" />
                             <OutlineColor A="255" R="255" G="0" B="0" />
                             <ShadowColor A="255" R="110" G="110" B="110" />
@@ -519,13 +539,13 @@
               <AbstractNodeData Name="myInvitationsPnl" Visible="False" ActionTag="-266815369" Tag="524" IconVisible="False" LeftMargin="403.9542" RightMargin="182.0458" TopMargin="114.2739" BottomMargin="133.7261" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="694.0000" Y="472.0000" />
                 <Children>
-                  <AbstractNodeData Name="dataText" ActionTag="-1442440843" Tag="428" IconVisible="False" LeftMargin="138.2377" RightMargin="230.7623" TopMargin="230.3845" BottomMargin="205.6155" FontSize="36" LabelText="请移至代理后台查询" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                  <AbstractNodeData Name="dataText" ActionTag="-1442440843" Tag="428" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="184.5000" RightMargin="184.5000" TopMargin="218.0000" BottomMargin="218.0000" FontSize="36" LabelText="请移至代理后台查询" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="325.0000" Y="36.0000" />
-                    <AnchorPoint ScaleX="0.2971" ScaleY="4.0087" />
-                    <Position X="234.7952" Y="349.9287" />
-                    <Scale ScaleX="1.1083" ScaleY="1.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="347.0000" Y="236.0000" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="147" G="111" B="21" />
-                    <PrePosition X="0.3383" Y="0.7414" />
+                    <PrePosition X="0.5000" Y="0.5000" />
                     <PreSize X="0.4683" Y="0.0763" />
                     <FontResource Type="Normal" Path="font/hkhbtW12.ttc" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
@@ -876,13 +896,13 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="returnBtn" ActionTag="1168954158" Tag="845" IconVisible="False" LeftMargin="34.4610" RightMargin="1157.5391" TopMargin="21.2635" BottomMargin="610.7365" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="58" Scale9Height="66" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="returnBtn" Visible="False" ActionTag="1168954158" Tag="845" IconVisible="False" LeftMargin="31.4610" RightMargin="1160.5391" TopMargin="26.2633" BottomMargin="605.7367" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="58" Scale9Height="66" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="88.0000" Y="88.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="78.4610" Y="654.7365" />
+                <Position X="75.4610" Y="649.7367" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.0613" Y="0.9094" />
+                <PrePosition X="0.0590" Y="0.9024" />
                 <PreSize X="0.0688" Y="0.1222" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
@@ -892,17 +912,17 @@
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="640.0000" Y="360.0000" />
+            <Position X="640.0000" Y="361.0800" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5000" Y="0.5000" />
+            <PrePosition X="0.5000" Y="0.5015" />
             <PreSize X="1.0000" Y="1.0000" />
             <SingleColor A="255" R="150" G="200" B="255" />
             <FirstColor A="255" R="150" G="200" B="255" />
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="screenLayout" ActionTag="-1202849292" UserData="{&quot;layoutType&quot;:&quot;maxArea&quot;,&quot;screenAlign&quot;:&quot;mid&quot;}" Tag="684" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftEage="422" RightEage="422" TopEage="134" BottomEage="134" Scale9OriginX="422" Scale9OriginY="134" Scale9Width="19" Scale9Height="140" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="screenLayout" Visible="False" ActionTag="-1202849292" UserData="{&quot;layoutType&quot;:&quot;maxArea&quot;,&quot;screenAlign&quot;:&quot;mid&quot;}" Tag="684" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftEage="422" RightEage="422" TopEage="134" BottomEage="134" Scale9OriginX="422" Scale9OriginY="134" Scale9Width="19" Scale9Height="140" ctype="ImageViewObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <Children>
               <AbstractNodeData Name="qrCodePg3" ActionTag="-1091143986" Tag="122" IconVisible="False" LeftMargin="158.6186" RightMargin="1063.3813" TopMargin="573.7065" BottomMargin="88.2935" Scale9Width="46" Scale9Height="46" ctype="ImageViewObjectData">

@@ -1842,7 +1842,7 @@
                         "Children": [
                           {
                             "FontSize": 18,
-                            "LabelText": "签到10天",
+                            "LabelText": " 签到10天 ",
                             "OutlineColor": {
                               "G": 0,
                               "B": 0
@@ -1873,17 +1873,17 @@
                               "Y": 1.2091
                             },
                             "PreSize": {
-                              "X": 1.3333,
+                              "X": 1.6667,
                               "Y": 0.3913
                             },
-                            "LeftMargin": 3.8978,
-                            "RightMargin": -21.8978,
+                            "LeftMargin": -5.1022,
+                            "RightMargin": -30.8978,
                             "TopMargin": -18.6171,
                             "BottomMargin": 46.6171,
                             "Tag": 186,
                             "ActionTag": -670527274,
                             "Size": {
-                              "X": 72.0,
+                              "X": 90.0,
                               "Y": 18.0
                             },
                             "Name": "signDaysText",
@@ -2251,7 +2251,7 @@
                   },
                   {
                     "FontSize": 18,
-                    "LabelText": "x1888",
+                    "LabelText": "x1888888",
                     "HorizontalAlignmentType": "HT_Center",
                     "VerticalAlignmentType": "VT_Center",
                     "OutlineColor": {
@@ -2288,17 +2288,17 @@
                       "Y": 0.1482
                     },
                     "PreSize": {
-                      "X": 0.4206,
+                      "X": 0.6729,
                       "Y": 0.1579
                     },
-                    "LeftMargin": 27.8557,
-                    "RightMargin": 34.1443,
+                    "LeftMargin": 14.3557,
+                    "RightMargin": 20.6443,
                     "TopMargin": 88.11,
                     "BottomMargin": 7.89,
                     "Tag": 198,
                     "ActionTag": 1462170359,
                     "Size": {
-                      "X": 45.0,
+                      "X": 72.0,
                       "Y": 18.0
                     },
                     "Name": "awardsValueText",

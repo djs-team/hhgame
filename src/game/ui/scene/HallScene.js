@@ -5,6 +5,7 @@ load('game/ui/scene/HallScene', function () {
     let BaseScene = include('public/ui/BaseScene')
     let ResConfig = include('game/config/ResConfig')
     let HallMdt = include('game/ui/scene/HallMdt')
+    let LocalSave = include('game/public/LocalSave')
     let AniPlayer = ResConfig.AniPlayer
     let PlayerPlay = ResConfig.PlayerPlay
     let HallScene = BaseScene.extend({
@@ -34,7 +35,7 @@ load('game/ui/scene/HallScene', function () {
                 'bmPnl/bmListPnl/signPnl': {onClicked: this.onSignBtnClick},
                 'bmPnl/bmListPnl/taskPnl': {onClicked: this.onTaskClick},
                 'bmPnl/bmListPnl/rolesPnl': {onClicked: this.onRoleClick},
-                'bmPnl/startQuickPnl/startQuickBtn': {onClicked: this.onRoleClick},
+                'bmPnl/startQuickPnl/startQuickBtn': {onClicked: this.onStartQuickBtnClick},
 
 
                 'leftPnl/invitationPnl/invitationBtn': {onClicked: this.onInvitationClick},
@@ -182,14 +183,6 @@ load('game/ui/scene/HallScene', function () {
             this.morePnl.setVisible(true);
         },
 
-        onChangeAreaClick: function () {
-            // 跳转到选择城市界面
-        },
-
-        onStartQuickClick: function () {
-            //跳转到匹配界面
-        },
-
         onConfBtnClick: function () {
             let confClass = include('game/ui/layer/config/ConfLayer')
             let confUI = appInstance.uiManager().createPopUI(confClass)
@@ -235,6 +228,11 @@ load('game/ui/scene/HallScene', function () {
         initData: function (selfInfo) {
             this._selfInfo = selfInfo
             this._pRole = selfInfo.pRole
+
+            this._peopleNum = global.localStorage.getIntKey(LocalSave.CoinGamePeopleNum)
+            if (!this._peopleNum) {
+                this._peopleNum = 2
+            }
 
             this.onInitUserData();
 
@@ -346,7 +344,22 @@ load('game/ui/scene/HallScene', function () {
 
             this.updatePlayerAni(data.pRole)
 
-        }
+        },
+
+        onStartQuickBtnClick: function () {
+            let goMsg = {}
+            if (this._peopleNum === 2) {
+                goMsg.roomMode = 2
+                goMsg.roomId = 'R2'
+            } else if (this._peopleNum === 4) {
+                goMsg.roomMode = 1
+                goMsg.roomId = 'R1'
+            }
+            goMsg.gameType = 'M5'
+            goMsg.pExtend = 'gameHall'
+            appInstance.gameAgent().tcpGame().enterTable(goMsg)
+            global.localStorage.setIntKey(LocalSave.CoinGamePeopleNum, this._peopleNum)
+        },
 
 
     })

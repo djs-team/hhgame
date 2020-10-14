@@ -565,7 +565,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="bmPnl" Visible="False" ActionTag="857310553" UserData="{&quot;layoutType&quot;:&quot;showAll&quot;,&quot;screenAlign&quot;:&quot;bottom&quot;}" Tag="26" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+          <AbstractNodeData Name="bmPnl" ActionTag="857310553" UserData="{&quot;layoutType&quot;:&quot;showAll&quot;,&quot;screenAlign&quot;:&quot;bottom&quot;}" Tag="26" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <Children>
               <AbstractNodeData Name="fuKaShopBtn" ActionTag="-1255417810" Tag="47" IconVisible="False" LeftMargin="21.2800" RightMargin="1088.7200" TopMargin="591.6650" BottomMargin="12.1850" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="139" Scale9Height="93" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
@@ -764,7 +764,7 @@
               <AbstractNodeData Name="startQuickPnl" ActionTag="2137162863" Tag="163" IconVisible="False" LeftMargin="985.8700" RightMargin="31.1300" TopMargin="599.0500" BottomMargin="15.9500" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="263.0000" Y="105.0000" />
                 <Children>
-                  <AbstractNodeData Name="startQuickBtn" Visible="False" ActionTag="979352636" Tag="83" IconVisible="False" LeftMargin="7.1908" RightMargin="10.8092" TopMargin="8.8200" BottomMargin="8.1800" FontSize="14" Scale9Enable="True" LeftEage="61" RightEage="52" TopEage="11" BottomEage="10" Scale9OriginX="61" Scale9OriginY="11" Scale9Width="17" Scale9Height="67" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                  <AbstractNodeData Name="startQuickBtn" ActionTag="979352636" Tag="83" IconVisible="False" LeftMargin="7.1908" RightMargin="10.8092" TopMargin="8.8200" BottomMargin="8.1800" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="61" RightEage="52" TopEage="11" BottomEage="10" Scale9OriginX="61" Scale9OriginY="11" Scale9Width="17" Scale9Height="67" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                     <Size X="245.0000" Y="88.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="129.6908" Y="52.1800" />

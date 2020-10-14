@@ -5645,7 +5645,7 @@
                         "Children": [
                           {
                             "FontSize": 26,
-                            "LabelText": "获得时间           获奖信息",
+                            "LabelText": "获得时间                       获奖信息",
                             "OutlineColor": {
                               "G": 0,
                               "B": 0
@@ -5680,17 +5680,17 @@
                               "Y": 0.9125
                             },
                             "PreSize": {
-                              "X": 0.7134,
+                              "X": 1.0305,
                               "Y": 0.0939
                             },
-                            "LeftMargin": 66.0079,
-                            "RightMargin": 74.9921,
+                            "LeftMargin": -11.9921,
+                            "RightMargin": -3.0079,
                             "TopMargin": 11.2508,
                             "BottomMargin": 239.7492,
                             "Tag": 751,
                             "ActionTag": 1431341488,
                             "Size": {
-                              "X": 351.0,
+                              "X": 507.0,
                               "Y": 26.0
                             },
                             "Name": "Text_32",
@@ -5894,8 +5894,8 @@
                     "Scale9Height": 1,
                     "AnchorPoint": {},
                     "Position": {
-                      "X": 0.0,
-                      "Y": 168.0
+                      "X": 391.0,
+                      "Y": 413.0
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -5904,16 +5904,17 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.0,
-                      "Y": 0.2333
+                      "X": 0.3055,
+                      "Y": 0.5736
                     },
                     "PreSize": {
                       "X": 0.3836,
                       "Y": 0.0556
                     },
-                    "RightMargin": 789.0,
-                    "TopMargin": 512.0,
-                    "BottomMargin": 168.0,
+                    "LeftMargin": 391.0,
+                    "RightMargin": 398.0,
+                    "TopMargin": 267.0,
+                    "BottomMargin": 413.0,
                     "Tag": 756,
                     "Children": [
                       {
@@ -6017,7 +6018,7 @@
                       },
                       {
                         "FontSize": 20,
-                        "LabelText": "xxxxxxxxx",
+                        "LabelText": "xxxxxxxxxxxxxxxxxx",
                         "HorizontalAlignmentType": "HT_Center",
                         "VerticalAlignmentType": "VT_Center",
                         "OutlineColor": {
@@ -6036,7 +6037,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 388.7297,
+                          "X": 363.73,
                           "Y": 17.2798
                         },
                         "Scale": {
@@ -6050,21 +6051,21 @@
                         },
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 0.7917,
+                          "X": 0.7408,
                           "Y": 0.432
                         },
                         "PreSize": {
-                          "X": 0.1833,
+                          "X": 0.3666,
                           "Y": 0.5
                         },
-                        "LeftMargin": 343.7297,
-                        "RightMargin": 57.2703,
+                        "LeftMargin": 273.73,
+                        "RightMargin": 37.27,
                         "TopMargin": 12.7202,
                         "BottomMargin": 7.2798,
                         "Tag": 760,
                         "ActionTag": 1715887122,
                         "Size": {
-                          "X": 90.0,
+                          "X": 180.0,
                           "Y": 20.0
                         },
                         "Name": "awardsText",

@@ -95,7 +95,6 @@ public class FriendRequestActivity extends BaseActivity<ActivityFriendRequestBin
     protected void sendTextMessage(String toChatUsername, String myNickName) {
         EMMessage message = EMMessage.createTxtSendMessage(myNickName + "接受了好友请求，开聊吧", toChatUsername);
         EMClient.getInstance().chatManager().sendMessage(message);
-
     }
 
     private void onAgreeEvent(int position, Map<String, String> map, String isFriend) {

@@ -44,6 +44,8 @@ load('game/msghandler/MatchResultProto', function () {
                 { key: 'pTableID', type: this._byteType.UTF8},// 牌桌id
                 { key: 'mcExtend', type: this._byteType.UTF8},//冗余字段
                 { key: 'mcRewardList', type: this._byteType.Barray, proto: rewardList},//获奖时的奖励信息
+                { key: 'pPhoto', type: this._byteType.UTF8},//玩家头像
+                { key: 'pSeatID', type: this._byteType.Int},//玩家座位号
             ]
         }
     })

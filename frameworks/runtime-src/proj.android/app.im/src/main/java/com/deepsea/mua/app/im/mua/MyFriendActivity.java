@@ -130,7 +130,6 @@ public class MyFriendActivity extends BaseActivity<ActivityMyFriendsBinding> {
         int myApplyUnreadNum = TextUtils.isEmpty(result.getMy_apply()) ? 0 : Integer.valueOf(result.getMy_apply());
         ViewBindUtils.setVisible(mBinding.tvFriendapplyUnread, applyUnreadNum > 0);
         ViewBindUtils.setText(mBinding.tvFriendapplyUnread, String.valueOf(applyUnreadNum));
-
         ViewBindUtils.setVisible(mBinding.tvMyapplyUnread, myApplyUnreadNum > 0);
         ViewBindUtils.setText(mBinding.tvMyapplyUnread, String.valueOf(myApplyUnreadNum));
 

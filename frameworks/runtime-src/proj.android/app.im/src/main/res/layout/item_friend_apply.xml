@@ -7,11 +7,12 @@
     </data>
 
     <android.support.constraint.ConstraintLayout
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
+        android:id="@+id/cons_group"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/bg_white_radius_8">
 
         <ImageView
@@ -23,10 +24,8 @@
             android:src="@drawable/ic_place"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
         <com.deepsea.mua.stub.view.WithBackgroundTextView
-            app:layout_constraintLeft_toLeftOf="@id/iv_photo"
-            app:layout_constraintRight_toRightOf="@id/iv_photo"
-            app:layout_constraintBottom_toBottomOf="@id/iv_photo"
             android:id="@+id/tv_state"
             android:layout_width="38dp"
             android:layout_height="15dp"
@@ -35,9 +34,13 @@
             android:text="热聊中"
             android:textColor="@color/white"
             android:textSize="9sp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@id/iv_photo"
+            app:layout_constraintLeft_toLeftOf="@id/iv_photo"
+            app:layout_constraintRight_toRightOf="@id/iv_photo"
             app:radius="8dp"
-            app:withBackgroundColor="#EF51B2"
-            android:visibility="visible"/>
+            app:withBackgroundColor="#EF51B2" />
+
         <TextView
             android:id="@+id/tv_name"
             android:layout_width="wrap_content"
@@ -86,11 +89,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="9dp"
+            android:layout_marginRight="16dp"
             android:text="ID:1888888"
             android:textColor="#ff333333"
             android:textSize="12sp"
+
             app:layout_constraintBottom_toBottomOf="@id/tv_name"
-            app:layout_constraintLeft_toRightOf="@id/tv_age"
+            app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="@id/tv_name" />
 
         <TextView
@@ -101,9 +106,9 @@
             android:text="7月18日"
             android:textColor="#ff818181"
             android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="@id/tv_name"
+            android:layout_marginTop="15dp"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="@id/tv_name" />
+            app:layout_constraintTop_toBottomOf="@id/tv_id" />
 
         <ImageView
             android:id="@+id/iv_location"
@@ -163,27 +168,28 @@
             app:layout_constraintTop_toBottomOf="@id/tv_apply_desc" />
 
         <LinearLayout
-            android:layout_marginTop="12dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
             android:orientation="horizontal"
             android:paddingBottom="18dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/view_line">
+
             <com.deepsea.mua.stub.view.WithBackgroundTextView
                 android:id="@+id/tv_overdue"
                 android:layout_width="108dp"
                 android:layout_height="22dp"
-                app:radius="20dp"
+                android:gravity="center"
+                android:text="已过期"
                 android:textColor="#ff282828"
                 android:textSize="12sp"
-                android:text="已过期"
-                android:gravity="center"
-                app:withBackgroundColor="#BABABA"
-                android:visibility="gone"/>
+                android:visibility="gone"
+                app:radius="20dp"
+                app:withBackgroundColor="#BABABA" />
+
             <TextView
-                android:visibility="visible"
                 android:id="@+id/tv_disagree"
                 android:layout_width="75dp"
                 android:layout_height="23dp"
@@ -191,18 +197,20 @@
                 android:gravity="center"
                 android:text="拒绝"
                 android:textColor="#ff878787"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+                android:visibility="visible" />
+
             <TextView
-                android:visibility="visible"
-                android:layout_marginLeft="25dp"
                 android:id="@+id/tv_agree"
                 android:layout_width="75dp"
                 android:layout_height="23dp"
+                android:layout_marginLeft="25dp"
                 android:background="@drawable/bg_friend_agree"
                 android:gravity="center"
                 android:text="同意"
                 android:textColor="#ffffffff"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+                android:visibility="visible" />
 
         </LinearLayout>
 

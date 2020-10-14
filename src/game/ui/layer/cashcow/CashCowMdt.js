@@ -25,7 +25,6 @@ load('game/ui/layer/cashcow/CashCowMdt', function () {
                     this.view.onRefreshView(body)
                     break
                 case GameEvent.GET_CASHCOWRECORD:
-                    cc.log('-----------------------------handleNotification GET_CASHCOWRECORD body : ' + JSON.stringify(body))
                     this.view.onShowRecordPnlClick(body)
                     break
             }

@@ -63,7 +63,6 @@ public class RoomMsgHandler {
     }
 
 
-
     private void appendLevel(SpannableStringBuilder spannable, int level) {
         if (level <= 0)
             return;
@@ -199,13 +198,10 @@ public class RoomMsgHandler {
             result.setuName(user.getName());
 
             SpannableStringBuilder builder = new SpannableStringBuilder();
-//            appendVipLevel(builder, user.getVipLevel());
-//            appendLevel(builder, user.getUserLevel());
-//            appendGuard(builder, user.getRoomGuardLevel());
-//            appendNobility(builder, user.getDukeLevel());
-//            appendIden(builder, user.getUserIdentity(), user.getUserId());
             int start = builder.length();
-            appendNick(builder, user.getName(), user.getSex());
+            result.setAvatar(user.getAvatar());
+            String desc = getUserInfo(user.getCity(), user.getAge(), user.getName());
+            appendNick(builder, desc, user.getSex());
             appendSysMsg(builder, " 进入房间", user.getUserLevel());
             setNickClick(builder, user.getName(), user.getUserId(), start);
             result.setMsg(builder);
@@ -227,10 +223,6 @@ public class RoomMsgHandler {
             result.setUid(manager.getUserId());
             result.setuName(manager.getName());
             SpannableStringBuilder builder = new SpannableStringBuilder();
-//            appendVipLevel(builder, manager.getVipLevel());
-//            appendLevel(builder, manager.getUserLevel());
-//            appendGuard(builder, manager.getRoomGuardLevel());
-//            appendNobility(builder, manager.getDukeLevel());
             appendGuard(builder, result.getGuardSign());
             int start = builder.length();
             appendNick(builder, manager.getName(), manager.getUserLevel());
@@ -260,10 +252,11 @@ public class RoomMsgHandler {
 
                 result.setUid(model.getGiftGiver().getUserId());
                 result.setuName(model.getGiftGiver().getName());
+                result.setAvatar(model.getGiftGiver().getHeadImageUrl());
                 int start = builder.length();
-                appendLevel(builder, model.getUserLevel());
                 appendGuard(builder, result.getGuardSign());
-                appendNick(builder, model.getGiftGiver().getName(), model.getGiftGiver().getSex());
+                String desc = getUserInfo(model.getGiftGiver().getCity(), model.getGiftGiver().getAge(), model.getGiftGiver().getName());
+                appendNick(builder, desc, model.getGiftGiver().getSex());
                 appendSysMsg(builder, "打赏", model.getUserLevel());
                 setNickClick(builder, model.getGiftGiver().getName(), model.getGiftGiver().getUserId(), start);
 //                start = builder.length();
@@ -277,6 +270,27 @@ public class RoomMsgHandler {
             }
         }
         return list;
+    }
+
+    private String getUserInfo(String city, String age, String nickName) {
+        StringBuilder descBuild = new StringBuilder();
+
+        if (!TextUtils.isEmpty(city)) {
+            descBuild.append(city);
+        }
+        if (!TextUtils.isEmpty(age)) {
+            if (TextUtils.isEmpty(city)) {
+                descBuild.append(age).append("岁");
+            } else {
+                descBuild.append("|").append(age).append("岁");
+            }
+        }
+        String desc = "";
+        if (!TextUtils.isEmpty(descBuild.toString())) {
+            desc = ("(" + descBuild.toString() + ")");
+        }
+        desc = nickName + desc;
+        return desc;
     }
 
     /**
@@ -293,18 +307,16 @@ public class RoomMsgHandler {
             result.setNormal(false);
 
             SpannableStringBuilder builder = new SpannableStringBuilder();
-//            appendVipLevel(builder, micro.getVipLevel());
-//            appendLevel(builder, micro.getUserLevel());
-//            appendGuard(builder, micro.getRoomGuardLevel());
-//            appendNobility(builder, micro.getDukeLevel());
-//            appendIden(builder, micro.getUserIdentity(), micro.getMicroInfo().getUser().getUserId());
             int start = builder.length();
             WsUser wsUser = micro.getMicroInfo().getUser();
             result.setUid(wsUser.getUserId());
             result.setuName(wsUser.getName());
-            appendLevel(builder, micro.getUserLevel());
+            result.setAvatar(wsUser.getHeadImageUrl());
             appendGuard(builder, result.getGuardSign());
-            appendNick(builder, wsUser.getName(), wsUser.getSex());
+
+            String desc = getUserInfo(wsUser.getCity(), wsUser.getAge(), wsUser.getName());
+
+            appendNick(builder, desc, wsUser.getSex());
             appendSysMsg(builder, " 上麦了", micro.getUserLevel());
             setNickClick(builder, wsUser.getName(), wsUser.getUserId(), start);
             result.setMsg(builder);
@@ -326,18 +338,14 @@ public class RoomMsgHandler {
             JoinUser user = msgBean.getUser();
             result.setGuardSign(user.getGuardSign());
             SpannableStringBuilder builder = new SpannableStringBuilder();
-//            appendVipLevel(builder, user.getVipLevel());
-//            appendLevel(builder, user.getUserLevel());
-//            appendGuard(builder, user.getRoomGuardLevel());
-//            appendNobility(builder, user.getDukeLevel());
-//            appendIden(builder, user.getUserIdentity(), user.getUserId());
             result.setAvatar(user.getAvatar());
             result.setUid(user.getUserId());
             result.setuName(user.getName());
+            result.setAvatar(user.getAvatar());
             int start = builder.length();
-            appendLevel(builder, user.getUserLevel());
             appendGuard(builder, result.getGuardSign());
-            appendNick(builder, user.getName() + "：", user.getSex());
+            String desc = getUserInfo(user.getCity(), user.getAge(), user.getName());
+            appendNick(builder, desc + "：", user.getSex());
             setNickClick(builder, user.getName(), user.getUserId(), start);
             if (!TextUtils.isEmpty(msgBean.getMsg())) {
                 appendMsg(builder, msgBean.getMsg(), user.getUserLevel());
@@ -393,7 +401,7 @@ public class RoomMsgHandler {
     }
 
     /**
-     * 砸蛋消息
+     * 助力
      *
      * @param bean
      * @return

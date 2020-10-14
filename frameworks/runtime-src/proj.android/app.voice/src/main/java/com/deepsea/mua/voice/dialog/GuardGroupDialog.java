@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
 import android.text.TextUtils;
 import android.view.View;
+
 import com.deepsea.mua.core.dialog.BaseDialog;
 import com.deepsea.mua.core.utils.GlideUtils;
 import com.deepsea.mua.core.utils.JsonConverter;
@@ -97,14 +98,14 @@ public class GuardGroupDialog extends BaseDialog<DialogGuardGroupMineBinding> {
             @Override
             public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
                 page++;
-                roomViewModel.getGuardItemList(page, UserUtils.getUser().getUid());
+                roomViewModel.getGuardItemList(page, guardUserId);
             }
         });
         mBinding.refreshLayout.setOnRefreshListener(new OnRefreshListener() {
             @Override
             public void onRefresh(@NonNull RefreshLayout refreshLayout) {
                 page = 0;
-                roomViewModel.getGuardItemList(page, UserUtils.getUser().getUid());
+                roomViewModel.getGuardItemList(page, guardUserId);
 
             }
         });
@@ -116,8 +117,9 @@ public class GuardGroupDialog extends BaseDialog<DialogGuardGroupMineBinding> {
         });
     }
 
-    private void setViewData(boolean isGuard, String nickName, String guardHeard) {
+    private void setViewData(boolean isGuard, String nickName, String guardHeard, int userCount) {
         ViewBindUtils.setText(mBinding.tvName, nickName + "的守护团");
+        ViewBindUtils.setText(mBinding.tvNum, "（" + userCount + "人）");
         GlideUtils.circleImage(mBinding.ivHead, guardHeard, R.drawable.ic_place, R.drawable.ic_place);
         if (isGuard == false && !TextUtils.equals(UserUtils.getUser().getUid(), guardUserId)) {
             mBinding.consGroup.setVisibility(View.VISIBLE);
@@ -153,7 +155,7 @@ public class GuardGroupDialog extends BaseDialog<DialogGuardGroupMineBinding> {
                         }
                     }
                     if (page == 0) {
-                        setViewData(data.isGuard(), data.getGuardName(), data.getGuardHead());
+                        setViewData(data.isGuard(), data.getGuardName(), data.getGuardHead(), data.getUserCount());
 
                         mBinding.refreshLayout.finishRefresh();
                     } else {
@@ -173,7 +175,6 @@ public class GuardGroupDialog extends BaseDialog<DialogGuardGroupMineBinding> {
         public void onFailure(Throwable t, Response response) {
         }
     };
-
 
 
     @Override

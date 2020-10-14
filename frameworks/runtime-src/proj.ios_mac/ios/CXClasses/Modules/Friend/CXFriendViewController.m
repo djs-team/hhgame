@@ -148,7 +148,9 @@
 }
 
 - (void)clearAction {
-    [_conversationVC clearConversationList];
+    [self alertTitle:@"是否要删除所有消息" message:@"删除后不可恢复" confirm:@"确定" cancel:@"取消" confirm:^{
+        [_conversationVC clearConversationList];
+    } cancel:nil];
 }
 
 - (void)setupSubViews {

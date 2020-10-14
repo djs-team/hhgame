@@ -134,6 +134,8 @@
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapTableViewAction:)];
     [self.tableView addGestureRecognizer:tap];
+    
+    [self getUserInfoData];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -181,8 +183,9 @@
 - (void)_setupChatSubviews
 {
     [self addPopBackLeftItemWithTarget:self action:@selector(backAction)];
-    [self _setupNavigationBarTitle];
     [self _setupNavigationBarRightItem];
+    [self _setupNavigationBarTitle];
+    
     self.view.backgroundColor = [UIColor whiteColor];
     self.showRefreshHeader = YES;
     
@@ -213,55 +216,92 @@
 
 - (void)_setupNavigationBarTitle
 {
-    UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width * 06, 40)];
+    UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 44)];
     
     self.titleLabel = [[UILabel alloc] init];
-    self.titleLabel.font = [UIFont systemFontOfSize:18];
+    self.titleLabel.font = [UIFont boldSystemFontOfSize:21];
     self.titleLabel.textColor = [UIColor blackColor];
-    self.titleLabel.textAlignment = NSTextAlignmentCenter;
     self.titleLabel.text = self.friendModel.nickname;
     [titleView addSubview:self.titleLabel];
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(titleView);
-        make.left.equalTo(titleView).offset(5);
-        make.right.equalTo(titleView).offset(-5);
+        make.height.top.equalTo(titleView);
+//        make.left.mas_offset(5);
+        make.center.mas_offset(-23);
     }];
-    
+
     self.titleDetailLabel = [[UILabel alloc] init];
-    self.titleDetailLabel.font = [UIFont systemFontOfSize:15];
-    self.titleDetailLabel.textColor = [UIColor grayColor];
+    self.titleDetailLabel.font = [UIFont systemFontOfSize:10];
+    self.titleDetailLabel.textColor = [UIColor whiteColor];
+    self.titleDetailLabel.backgroundColor = UIColorHex(0x10E770);
     self.titleDetailLabel.textAlignment = NSTextAlignmentCenter;
+    self.titleDetailLabel.layer.masksToBounds = YES;
+    self.titleDetailLabel.layer.cornerRadius = 8;
+    self.titleDetailLabel.text = @"在线";
     [titleView addSubview:self.titleDetailLabel];
     [self.titleDetailLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.titleLabel.mas_bottom);
-        make.left.equalTo(self.titleLabel);
-        make.right.equalTo(self.titleLabel);
-        make.bottom.equalTo(titleView);
+        make.centerY.equalTo(self.titleLabel);
+        make.left.equalTo(self.titleLabel.mas_right).offset(6);
+        make.height.mas_equalTo(16);
+        make.width.mas_equalTo(40);
     }];
     
     self.navigationItem.titleView = titleView;
-    
-    if (self.conversationModel.emModel.type != EMConversationTypeChat) {
-        self.titleDetailLabel.text = self.conversationModel.emModel.conversationId;
-    }
+}
+
+- (void)getUserInfoData {
+    NSString *signature = [CocoaSecurity md5:[CXClientModel instance].token].hexLower;
+    NSDictionary *param = @{
+        @"signature": signature,
+        @"user_id": _friendModel.user_id,
+        @"device": @"iOS",
+    };
+    kWeakSelf
+    [CXHTTPRequest POSTWithURL:@"/index.php/Api/Member/user_info" parameters:param callback:^(id responseObject, BOOL isCache, NSError *error) {
+        if (!error) {
+            CXUserModel *model = [CXUserModel modelWithJSON:responseObject[@"data"][@"user_info"]];
+            if (model.online.integerValue == 3) {
+                weakSelf.titleDetailLabel.text = @"相亲中";
+                weakSelf.titleDetailLabel.backgroundColor = UIColorHex(0x7F3EF0);
+            } else if (model.online.integerValue == 5) {
+                weakSelf.titleDetailLabel.text = @"热聊中";
+                weakSelf.titleDetailLabel.backgroundColor = UIColorHex(0xEF51B2);
+            } else if (model.online.integerValue == 6) {
+                weakSelf.titleDetailLabel.text = @"开播中";
+                weakSelf.titleDetailLabel.backgroundColor = UIColorHex(0xFEBF00);
+            } else if (model.online.integerValue == 0) {
+                weakSelf.titleDetailLabel.text = @"离线";
+                weakSelf.titleDetailLabel.backgroundColor = UIColorHex(0x818181);
+            } else {
+                weakSelf.titleDetailLabel.text = @"在线";
+                weakSelf.titleDetailLabel.backgroundColor = UIColorHex(0x10E770);
+            }
+        }
+    }];
 }
 
 - (void)_setupNavigationBarRightItem
 {
-    if (self.conversationModel.emModel.type == EMConversationTypeChat) {
-        UIImage *image = [[UIImage imageNamed:@"chat_clear"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(deleteAllMessageAction)];
-    } else {
-        if (self.conversationModel.emModel.type == EMConversationTypeGroupChat && (NSClassFromString(@"EMGroupInfoViewController")) == nil) {
-            return;
-        }
-        if (self.conversationModel.emModel.type == EMConversationTypeChatRoom && (NSClassFromString(@"EMChatroomInfoViewController")) == nil) {
-            return;
-        }
-        
-        UIImage *image = [[UIImage imageNamed:@"chat_info"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(groupOrChatroomInfoAction)];
-    }
+    UIImage *image = [[UIImage imageNamed:@"more_dian_dark"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(profileAction)];
+    
+//    if (self.conversationModel.emModel.type == EMConversationTypeChat) {
+//        UIImage *image = [[UIImage imageNamed:@"chat_clear"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+//        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(deleteAllMessageAction)];
+//    } else {
+//        if (self.conversationModel.emModel.type == EMConversationTypeGroupChat && (NSClassFromString(@"EMGroupInfoViewController")) == nil) {
+//            return;
+//        }
+//        if (self.conversationModel.emModel.type == EMConversationTypeChatRoom && (NSClassFromString(@"EMChatroomInfoViewController")) == nil) {
+//            return;
+//        }
+//
+//        UIImage *image = [[UIImage imageNamed:@"chat_info"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+//        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(groupOrChatroomInfoAction)];
+//    }
+}
+
+- (void)profileAction {
+    [AppController showUserProfile:_friendModel.user_id];
 }
 
 - (void)_setupChatBarMoreViews

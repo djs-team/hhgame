@@ -3315,12 +3315,12 @@
 		00614BBA250B94C900BB7620 /* 我的守护 */ = {
 			isa = PBXGroup;
 			children = (
+				00614BCC250B94CA00BB7620 /* CXMineGuardListViewController.h */,
 				00614BBB250B94C900BB7620 /* CXMineGuardListViewController.m */,
 				00614BBC250B94C900BB7620 /* CXMineGuardViewController.h */,
-				00614BBE250B94C900BB7620 /* View */,
 				00614BCB250B94CA00BB7620 /* CXMineGuardListViewController.xib */,
-				00614BCC250B94CA00BB7620 /* CXMineGuardListViewController.h */,
 				00614BCD250B94CA00BB7620 /* CXMineGuardViewController.m */,
+				00614BBE250B94C900BB7620 /* View */,
 			);
 			path = "我的守护";
 			sourceTree = "<group>";
@@ -3362,13 +3362,13 @@
 			children = (
 				00614BD0250B94CA00BB7620 /* CXWithdrawSelectedDateViewController.m */,
 				00614BD1250B94CA00BB7620 /* CXWithdrawIncomeListViewController.h */,
+				00614BD8250B94CA00BB7620 /* CXWithdrawIncomeListViewController.m */,
+				00614BD6250B94CA00BB7620 /* CXWithdrawIncomeListViewController.xib */,
 				00614BD2250B94CA00BB7620 /* CXWithdrawInfoViewController.xib */,
 				00614BD3250B94CA00BB7620 /* CXWithdrawAccountViewController.m */,
 				00614BD4250B94CA00BB7620 /* CXWithdrawInfoViewController.m */,
 				00614BD5250B94CA00BB7620 /* CXWithdrawSelectedDateViewController.h */,
-				00614BD6250B94CA00BB7620 /* CXWithdrawIncomeListViewController.xib */,
 				00614BD7250B94CA00BB7620 /* CXWithdrawAccountViewController.h */,
-				00614BD8250B94CA00BB7620 /* CXWithdrawIncomeListViewController.m */,
 				00614BD9250B94CA00BB7620 /* CXWithdrawSelectedDateViewController.xib */,
 				00614BDA250B94CA00BB7620 /* CXWithdrawInfoViewController.h */,
 				00614BDB250B94CA00BB7620 /* Views */,
@@ -3659,37 +3659,10 @@
 		00614C74250B94CB00BB7620 /* Ease */ = {
 			isa = PBXGroup;
 			children = (
-				00614C75250B94CB00BB7620 /* Contact */,
 				00614C78250B94CB00BB7620 /* Chat */,
-				00614D29250B94CC00BB7620 /* Group */,
-				00614D2C250B94CC00BB7620 /* Chatroom */,
 				00614D2F250B94CC00BB7620 /* Helper */,
-				00614DD6250B94CD00BB7620 /* Conversation */,
 			);
 			path = Ease;
-			sourceTree = "<group>";
-		};
-		00614C75250B94CB00BB7620 /* Contact */ = {
-			isa = PBXGroup;
-			children = (
-				00614C76250B94CB00BB7620 /* ContactImgs */,
-				00614C77250B94CB00BB7620 /* Blacklist */,
-			);
-			path = Contact;
-			sourceTree = "<group>";
-		};
-		00614C76250B94CB00BB7620 /* ContactImgs */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ContactImgs;
-			sourceTree = "<group>";
-		};
-		00614C77250B94CB00BB7620 /* Blacklist */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Blacklist;
 			sourceTree = "<group>";
 		};
 		00614C78250B94CB00BB7620 /* Chat */ = {
@@ -3697,6 +3670,7 @@
 			children = (
 				00614C79250B94CB00BB7620 /* EMMessageModel.h */,
 				00614C7A250B94CB00BB7620 /* EMChatViewController.h */,
+				00614D20250B94CC00BB7620 /* EMChatViewController.m */,
 				00614C7B250B94CB00BB7620 /* EMLocationViewController.h */,
 				00614C7C250B94CB00BB7620 /* EMAtGroupMembersViewController.h */,
 				00614C7D250B94CB00BB7620 /* ChatBar */,
@@ -3704,7 +3678,6 @@
 				00614D18250B94CC00BB7620 /* EMMsgTranspondViewController.h */,
 				00614D19250B94CC00BB7620 /* EMLocationViewController.m */,
 				00614D1A250B94CC00BB7620 /* ChatImgs */,
-				00614D20250B94CC00BB7620 /* EMChatViewController.m */,
 				00614D21250B94CC00BB7620 /* EMMessageModel.m */,
 				00614D22250B94CC00BB7620 /* EMAtGroupMembersViewController.m */,
 				00614D23250B94CC00BB7620 /* Helper */,
@@ -3971,52 +3944,6 @@
 				00614D27250B94CC00BB7620 /* EMAudioPlayerHelper.mm */,
 			);
 			path = Helper;
-			sourceTree = "<group>";
-		};
-		00614D29250B94CC00BB7620 /* Group */ = {
-			isa = PBXGroup;
-			children = (
-				00614D2A250B94CC00BB7620 /* GroupImgs */,
-				00614D2B250B94CC00BB7620 /* GroupInfo */,
-			);
-			path = Group;
-			sourceTree = "<group>";
-		};
-		00614D2A250B94CC00BB7620 /* GroupImgs */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = GroupImgs;
-			sourceTree = "<group>";
-		};
-		00614D2B250B94CC00BB7620 /* GroupInfo */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = GroupInfo;
-			sourceTree = "<group>";
-		};
-		00614D2C250B94CC00BB7620 /* Chatroom */ = {
-			isa = PBXGroup;
-			children = (
-				00614D2D250B94CC00BB7620 /* ChatroomImgs */,
-				00614D2E250B94CC00BB7620 /* ChatroomInfo */,
-			);
-			path = Chatroom;
-			sourceTree = "<group>";
-		};
-		00614D2D250B94CC00BB7620 /* ChatroomImgs */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ChatroomImgs;
-			sourceTree = "<group>";
-		};
-		00614D2E250B94CC00BB7620 /* ChatroomInfo */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ChatroomInfo;
 			sourceTree = "<group>";
 		};
 		00614D2F250B94CC00BB7620 /* Helper */ = {
@@ -4323,13 +4250,6 @@
 				00614DCE250B94CD00BB7620 /* EMSearchViewController.h */,
 			);
 			path = SearchController;
-			sourceTree = "<group>";
-		};
-		00614DD6250B94CD00BB7620 /* Conversation */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Conversation;
 			sourceTree = "<group>";
 		};
 		00614DD7250B94CD00BB7620 /* DDAudioLRCParser */ = {

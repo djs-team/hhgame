@@ -112,7 +112,7 @@ public class VisitorInRoomAdapter extends BaseBindingAdapter<OnlineUser.UserBasi
         GlideUtils.circleImage(holder.binding.avatarIv, item.getUser().getHeadImageUrl(), R.drawable.ic_place_avatar, R.drawable.ic_place_avatar);
         holder.binding.nickTv.setText(item.getUser().getName());
         SexResUtils.setSexImgInFindPage(holder.binding.rlSex, holder.binding.sexIv, String.valueOf(item.getUser().getSex()));
-        ViewBindUtils.setText(holder.binding.tvAge, item.getUser().getAge() == 0 ? "" : String.valueOf(item.getUser().getAge()));
+        ViewBindUtils.setText(holder.binding.tvAge, TextUtils.isEmpty(item.getUser().getAge()) ? "" : item.getUser().getAge());
         ViewBindUtils.setText(holder.binding.tvLocation, item.getUser().getCity());
         ViewBindUtils.setVisible(holder.binding.ivLocation, !TextUtils.isEmpty(item.getUser().getCity()));
         ViewBindUtils.RxClicks(holder.binding.avatarIv, o -> {

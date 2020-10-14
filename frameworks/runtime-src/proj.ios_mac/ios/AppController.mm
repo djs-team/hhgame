@@ -762,6 +762,7 @@ UIInterfaceOrientationMask oMask = UIInterfaceOrientationMaskLandscape;
     }
     [[CXClientModel instance] joinRoom:roomId callback:^(NSString * _Nonnull roomId, BOOL success) {
         if (success) {
+            [MBProgressHUD hideHUD];
             UIViewController *vc = [CXTools currentViewController];
             CXLiveRoomViewController *roomVC = [CXLiveRoomViewController new];
             CXBaseNavigationController *nav = [[CXBaseNavigationController alloc] initWithRootViewController:roomVC];

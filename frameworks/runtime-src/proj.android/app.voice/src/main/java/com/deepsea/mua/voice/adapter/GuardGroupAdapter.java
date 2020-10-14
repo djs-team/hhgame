@@ -44,7 +44,7 @@ public class GuardGroupAdapter extends BaseBindingAdapter<GuardItem, ItemGuardGr
         holder.binding.tvName.setText(user.getName());
         SexResUtils.setSexImgInFindPage(holder.binding.rlSex, holder.binding.sexIv, String.valueOf(user.getSex()));
         ViewBindUtils.setText(holder.binding.tvAge, String.valueOf(user.getAge()));
-        ViewBindUtils.setVisible(holder.binding.tvAge, user.getAge() != 0);
+        ViewBindUtils.setVisible(holder.binding.tvAge, !TextUtils.isEmpty(user.getAge()));
         ViewBindUtils.setVisible(holder.binding.tvLocation, !TextUtils.isEmpty(user.getCity()));
         if (!TextUtils.isEmpty(user.getCity())) {
             ViewBindUtils.setText(holder.binding.tvLocation, user.getCity());
@@ -52,6 +52,7 @@ public class GuardGroupAdapter extends BaseBindingAdapter<GuardItem, ItemGuardGr
         ViewBindUtils.setVisible(holder.binding.ivLocation, !TextUtils.isEmpty(user.getCity()));
         ViewBindUtils.setText(holder.binding.tvIntimacy, "亲密值" + item.getIntimacy());
         ViewBindUtils.setText(holder.binding.tvDueDate, "还有" + item.getDays() + "到期");
+        ViewBindUtils.setText(holder.binding.tvDueDate, "守护到期时间：" + item.getDeadlineTime());
 
     }
 }

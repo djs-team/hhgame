@@ -163,6 +163,8 @@
     
     NSString *CellIdentifier = @"CXFriendMessageCellID";
     CXFriendMessageCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UILongPressGestureRecognizer *longpress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(pressAction:)];
+    [cell addGestureRecognizer:longpress];
     
     if (self.isConversation) {
         cell.isConversation = YES;
@@ -175,7 +177,7 @@
         cell.avatarTapGestureBlock = ^{
             [AppController joinRoom:model.room_id];
         };
-
+        cell.userMessageLabel.hidden = NO;
         cell.userMessageLabel.text = [self _latestMessageTitleForConversationModel:conversation.emModel];
         cell.timeLabel.text = [self _latestMessageTimeForConversationModel:conversation.emModel];
         if (conversation.emModel.unreadMessagesCount == 0) {
@@ -187,6 +189,8 @@
     } else {
         CXFriendInviteModel *model = self.dataArrays[indexPath.row];
         cell.model = model;
+        cell.isConversation = NO;
+        cell.userMessageLabel.hidden = YES;
         cell.avatarTapGestureBlock = ^{
             [AppController joinRoom:model.room_id];
         };
@@ -278,6 +282,21 @@
 //        latestMessageTime = [formatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:timeInterval]];
     }
     return latestMessageTime;
+}
+
+- (void)pressAction:(UILongPressGestureRecognizer *)longPressGesture {
+    if (longPressGesture.state == UIGestureRecognizerStateBegan) {//手势开始
+        CGPoint point = [longPressGesture locationInView:self.tableView];
+        NSIndexPath *currentIndexPath = [self.tableView indexPathForRowAtPoint:point]; // 可以获取我们在哪个cell上长按
+        EMConversationModel *model = [self.dataArrays objectAtIndex:currentIndexPath.row];
+        kWeakSelf
+        [self alertTitle:@"是否要删除该会话" message:@"删除后不可恢复，但可收到对方消息" confirm:@"确定" cancel:@"取消" confirm:^{
+            [[EMClient sharedClient].chatManager deleteConversation:model.emModel.conversationId
+            isDeleteMessages:YES completion:^(NSString *aConversationId, EMError *aError) {
+                [weakSelf getFriendListData];
+            }];
+        } cancel:nil];
+    }
 }
 
 @end

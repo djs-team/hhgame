@@ -25,6 +25,24 @@ public class JoinUser {
     private int Sex;
     private String GuardSign;
     private boolean IsRoomGuard;
+    private String Age;
+    private String City;
+
+    public String getAge() {
+        return Age;
+    }
+
+    public void setAge(String age) {
+        Age = age;
+    }
+
+    public String getCity() {
+        return City;
+    }
+
+    public void setCity(String city) {
+        City = city;
+    }
 
     public boolean isRoomGuard() {
         return IsRoomGuard;

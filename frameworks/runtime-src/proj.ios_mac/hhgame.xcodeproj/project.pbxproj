@@ -2772,11 +2772,11 @@
 		00614A73250B94C700BB7620 /* 守护榜 */ = {
 			isa = PBXGroup;
 			children = (
-				00614A74250B94C800BB7620 /* CXLiveRoomGuardRankView.xib */,
+				00614A78250B94C800BB7620 /* CXLiveRoomGuardRankView.h */,
 				00614A75250B94C800BB7620 /* CXLiveRoomGuardRankView.m */,
+				00614A74250B94C800BB7620 /* CXLiveRoomGuardRankView.xib */,
 				00614A76250B94C800BB7620 /* CXLiveRoomGuardGroupView.h */,
 				00614A77250B94C800BB7620 /* CXLiveRoomGuardGroupView.m */,
-				00614A78250B94C800BB7620 /* CXLiveRoomGuardRankView.h */,
 				00614A7A250B94C800BB7620 /* CXLiveRoomGuardGroupView.xib */,
 			);
 			path = "守护榜";
@@ -3247,8 +3247,8 @@
 			isa = PBXGroup;
 			children = (
 				00614B9C250B94C900BB7620 /* SocketMessageGetUserInfo.h */,
-				00614B9D250B94C900BB7620 /* SocketMessageSeatMicDisable.h */,
 				00614B9E250B94C900BB7620 /* SocketMessageGetUserInfo.m */,
+				00614B9D250B94C900BB7620 /* SocketMessageSeatMicDisable.h */,
 				00614B9F250B94C900BB7620 /* SocketMessageSeatMicDisable.m */,
 			);
 			path = UserInfo;

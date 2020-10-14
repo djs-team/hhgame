@@ -24,8 +24,6 @@
 
 @property (nonatomic, assign) NSInteger page;
 
-@property (nonatomic, strong) CXUserModel *currentUser;
-
 @end
 
 @implementation CXLiveRoomGuardGroupView
@@ -59,7 +57,7 @@
     _mainTableView.dataSource = self;
     _mainTableView.delegate = self;
     
-    _page = 1;
+    _page = 0;
     _dataSources = [NSMutableArray array];
     
     self.mainTableView.tableFooterView = [UIView new];
@@ -74,7 +72,7 @@
 }
 
 - (void)headerRefresh {
-    _page = 1;
+    _page = 0;
     [self getRankData];
 }
 
@@ -84,33 +82,32 @@
 }
 
 - (void)getRankData {
-    NSDictionary *param = @{
-        @"page":[NSString stringWithFormat:@"%ld", (long)_page],
-        @"userId" : _userId,
-    };
     kWeakSelf
-    [CXHTTPRequest POSTWithURL:@"/index.php/Api/Guard/getUserList" parameters:param callback:^(id responseObject, BOOL isCache, NSError *error) {
-        [weakSelf.mainTableView.mj_header endRefreshing];
-        [weakSelf.mainTableView.mj_footer endRefreshing];
-        if (!error) {
-            NSArray *array = [NSArray modelArrayWithClass:[CXUserModel class] json:responseObject[@"data"][@"guard_memberlist"]];
+    SocketMessageGetGuardItemListRequest * request = [SocketMessageGetGuardItemListRequest new];
+    request.UserId = [NSNumber numberWithString:_userId];
+    request.Page = _page;
+    [[CXClientModel instance] sendSocketRequest:request withCallback:^(SocketMessageGetGuardItemListRequest * _Nonnull request) {
+        if (request.noError && request.response.isSuccess) {
+            NSArray *array = [NSArray arrayWithArray:request.response.GuardItems];
             if (self->_page == 1) {
                 [weakSelf.dataSources removeAllObjects];
             }
             
             [weakSelf.dataSources addObjectsFromArray:array];
-            
+
             [weakSelf.mainTableView reloadData];
-            if (weakSelf.page >= [responseObject[@"data"][@"pageInfo"][@"totalPage"] integerValue]) {
+            
+            if (_page >= request.Page) {
                 [weakSelf.mainTableView.mj_footer endRefreshingWithNoMoreData];
             }
             
-            CXUserModel *userInfo = [CXUserModel modelWithJSON:responseObject[@"data"][@"user_info"]];
-            weakSelf.numberLabel.text = [NSString stringWithFormat:@"%@的守护团", userInfo.nickname];
-            [weakSelf.avatar setImageURL:[NSURL URLWithString:userInfo.avatar]];
-            weakSelf.is_guard = [[responseObject[@"data"][@"is_guard"] stringValue] isEqualToString:@"1"];
-            weakSelf.currentUser = userInfo;
+            weakSelf.numberLabel.text = [NSString stringWithFormat:@"%@的守护团", request.response.GuardName];
+            [weakSelf.avatar setImageURL:[NSURL URLWithString:request.response.GuardHead]];
+            weakSelf.is_guard = request.response.IsGuard;
+            
         }
+        [weakSelf.mainTableView.mj_header endRefreshing];
+        [weakSelf.mainTableView.mj_footer endRefreshing];
     }];
 }
 
@@ -137,15 +134,15 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CXLiveRoomGuardianListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CXLiveRoomGuardianListCellID"];
-    CXUserModel *model = self.dataSources[indexPath.row];
+    CXLiveRoomGuardItemModel *model = self.dataSources[indexPath.row];
     cell.model = model;
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    CXUserModel *model = self.dataSources[indexPath.row];
-    [AppController showUserProfile:model.user_id];
+    CXLiveRoomGuardItemModel *model = self.dataSources[indexPath.row];
+    [AppController showUserProfile:model.UserInfo.UserId];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

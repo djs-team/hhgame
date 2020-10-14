@@ -1152,7 +1152,7 @@
                           "Y": 0.3159
                         },
                         "PreSize": {
-                          "X": 0.1563,
+                          "X": 0.1562,
                           "Y": 0.0583
                         },
                         "LeftMargin": 616.1543,
@@ -3699,6 +3699,7 @@
                       {
                         "FontSize": 18,
                         "LabelText": "1、专属会员大奖赛参赛资格",
+                        "VerticalAlignmentType": "VT_Center",
                         "OutlineColor": {
                           "G": 0,
                           "B": 0
@@ -3711,11 +3712,10 @@
                         "ShadowOffsetX": 2.0,
                         "ShadowOffsetY": -2.0,
                         "AnchorPoint": {
-                          "ScaleX": 0.5,
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 310.9028,
+                          "X": 195.73,
                           "Y": 567.8058
                         },
                         "Scale": {
@@ -3729,15 +3729,15 @@
                         },
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 0.2429,
+                          "X": 0.1529,
                           "Y": 0.7886
                         },
                         "PreSize": {
                           "X": 0.1758,
                           "Y": 0.025
                         },
-                        "LeftMargin": 198.4028,
-                        "RightMargin": 856.5972,
+                        "LeftMargin": 195.73,
+                        "RightMargin": 859.27,
                         "TopMargin": 143.1942,
                         "BottomMargin": 558.8058,
                         "Tag": 301,
@@ -3752,6 +3752,7 @@
                       {
                         "FontSize": 18,
                         "LabelText": "2、麻将情缘畅游权限",
+                        "VerticalAlignmentType": "VT_Center",
                         "OutlineColor": {
                           "G": 0,
                           "B": 0
@@ -3764,11 +3765,10 @@
                         "ShadowOffsetX": 2.0,
                         "ShadowOffsetY": -2.0,
                         "AnchorPoint": {
-                          "ScaleX": 0.5,
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 280.9013,
+                          "X": 195.73,
                           "Y": 540.6082
                         },
                         "Scale": {
@@ -3782,15 +3782,15 @@
                         },
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 0.2195,
+                          "X": 0.1529,
                           "Y": 0.7508
                         },
                         "PreSize": {
                           "X": 0.1336,
                           "Y": 0.025
                         },
-                        "LeftMargin": 195.4013,
-                        "RightMargin": 913.5987,
+                        "LeftMargin": 195.73,
+                        "RightMargin": 913.27,
                         "TopMargin": 170.3918,
                         "BottomMargin": 531.6082,
                         "Tag": 302,
@@ -3817,11 +3817,10 @@
                         "ShadowOffsetX": 2.0,
                         "ShadowOffsetY": -2.0,
                         "AnchorPoint": {
-                          "ScaleX": 0.5,
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 303.2024,
+                          "X": 195.73,
                           "Y": 512.9216
                         },
                         "Scale": {
@@ -3835,15 +3834,15 @@
                         },
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 0.2369,
+                          "X": 0.1529,
                           "Y": 0.7124
                         },
                         "PreSize": {
                           "X": 0.1688,
                           "Y": 0.025
                         },
-                        "LeftMargin": 195.2024,
-                        "RightMargin": 868.7976,
+                        "LeftMargin": 195.73,
+                        "RightMargin": 868.27,
                         "TopMargin": 198.0784,
                         "BottomMargin": 503.9216,
                         "Tag": 303,
@@ -3870,11 +3869,10 @@
                         "ShadowOffsetX": 2.0,
                         "ShadowOffsetY": -2.0,
                         "AnchorPoint": {
-                          "ScaleX": 0.5,
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 306.593,
+                          "X": 195.73,
                           "Y": 484.8354
                         },
                         "Scale": {
@@ -3888,15 +3886,15 @@
                         },
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 0.2395,
+                          "X": 0.1529,
                           "Y": 0.6734
                         },
                         "PreSize": {
                           "X": 0.1688,
                           "Y": 0.025
                         },
-                        "LeftMargin": 198.593,
-                        "RightMargin": 865.407,
+                        "LeftMargin": 195.73,
+                        "RightMargin": 868.27,
                         "TopMargin": 226.1646,
                         "BottomMargin": 475.8354,
                         "Tag": 304,
@@ -3923,11 +3921,10 @@
                         "ShadowOffsetX": 2.0,
                         "ShadowOffsetY": -2.0,
                         "AnchorPoint": {
-                          "ScaleX": 0.5,
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 300.2216,
+                          "X": 195.73,
                           "Y": 454.254
                         },
                         "Scale": {
@@ -3941,15 +3938,15 @@
                         },
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 0.2345,
+                          "X": 0.1529,
                           "Y": 0.6309
                         },
                         "PreSize": {
                           "X": 0.1617,
                           "Y": 0.025
                         },
-                        "LeftMargin": 196.7216,
-                        "RightMargin": 876.2784,
+                        "LeftMargin": 195.73,
+                        "RightMargin": 877.27,
                         "TopMargin": 256.746,
                         "BottomMargin": 445.254,
                         "Tag": 305,
@@ -3976,11 +3973,10 @@
                         "ShadowOffsetX": 2.0,
                         "ShadowOffsetY": -2.0,
                         "AnchorPoint": {
-                          "ScaleX": 0.5,
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 317.2321,
+                          "X": 195.73,
                           "Y": 426.9344
                         },
                         "Scale": {
@@ -3994,15 +3990,15 @@
                         },
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 0.2478,
+                          "X": 0.1529,
                           "Y": 0.593
                         },
                         "PreSize": {
                           "X": 0.1898,
                           "Y": 0.025
                         },
-                        "LeftMargin": 195.7321,
-                        "RightMargin": 841.2679,
+                        "LeftMargin": 195.73,
+                        "RightMargin": 841.27,
                         "TopMargin": 284.0656,
                         "BottomMargin": 417.9344,
                         "Tag": 306,
@@ -4029,11 +4025,10 @@
                         "ShadowOffsetX": 2.0,
                         "ShadowOffsetY": -2.0,
                         "AnchorPoint": {
-                          "ScaleX": 0.5,
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 317.23,
+                          "X": 195.73,
                           "Y": 398.32
                         },
                         "Scale": {
@@ -4047,7 +4042,7 @@
                         },
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 0.2478,
+                          "X": 0.1529,
                           "Y": 0.5532
                         },
                         "PreSize": {
@@ -4297,7 +4292,7 @@
                       "Y": 0.124
                     },
                     "PreSize": {
-                      "X": 0.1563,
+                      "X": 0.1562,
                       "Y": 0.3958
                     },
                     "LeftMargin": 436.6302,

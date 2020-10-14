@@ -98,7 +98,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="pnl" Visible="False" ActionTag="1823591232" Tag="25" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+          <AbstractNodeData Name="pnl" ActionTag="1823591232" Tag="25" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <Children>
               <AbstractNodeData Name="privilegePnl" Visible="False" ActionTag="450871004" Tag="27" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
@@ -806,79 +806,79 @@
                         <PreSize X="0.5023" Y="0.2903" />
                         <FileData Type="Normal" Path="feedback/yjfk_1.png" Plist="" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Text_2_1" ActionTag="-1880535113" Tag="301" IconVisible="False" LeftMargin="198.4028" RightMargin="856.5972" TopMargin="143.1942" BottomMargin="558.8058" FontSize="18" LabelText="1、专属会员大奖赛参赛资格" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                      <AbstractNodeData Name="Text_2_1" ActionTag="-1880535113" Tag="301" IconVisible="False" LeftMargin="195.7300" RightMargin="859.2700" TopMargin="143.1942" BottomMargin="558.8058" FontSize="18" LabelText="1、专属会员大奖赛参赛资格" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                         <Size X="225.0000" Y="18.0000" />
-                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="310.9028" Y="567.8058" />
+                        <AnchorPoint ScaleY="0.5000" />
+                        <Position X="195.7300" Y="567.8058" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="183" G="100" B="30" />
-                        <PrePosition X="0.2429" Y="0.7886" />
+                        <PrePosition X="0.1529" Y="0.7886" />
                         <PreSize X="0.1758" Y="0.0250" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Text_2_0_1" ActionTag="775313517" Tag="302" IconVisible="False" LeftMargin="195.4013" RightMargin="913.5987" TopMargin="170.3918" BottomMargin="531.6082" FontSize="18" LabelText="2、麻将情缘畅游权限" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                      <AbstractNodeData Name="Text_2_0_1" ActionTag="775313517" Tag="302" IconVisible="False" LeftMargin="195.7300" RightMargin="913.2700" TopMargin="170.3918" BottomMargin="531.6082" FontSize="18" LabelText="2、麻将情缘畅游权限" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                         <Size X="171.0000" Y="18.0000" />
-                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="280.9013" Y="540.6082" />
+                        <AnchorPoint ScaleY="0.5000" />
+                        <Position X="195.7300" Y="540.6082" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="183" G="100" B="30" />
-                        <PrePosition X="0.2195" Y="0.7508" />
+                        <PrePosition X="0.1529" Y="0.7508" />
                         <PreSize X="0.1336" Y="0.0250" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Text_2_0_0_1" ActionTag="-1196210024" Tag="303" IconVisible="False" LeftMargin="195.2024" RightMargin="868.7976" TopMargin="198.0784" BottomMargin="503.9216" FontSize="18" LabelText="3、vip会员福利礼包一直领" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                      <AbstractNodeData Name="Text_2_0_0_1" ActionTag="-1196210024" Tag="303" IconVisible="False" LeftMargin="195.7300" RightMargin="868.2700" TopMargin="198.0784" BottomMargin="503.9216" FontSize="18" LabelText="3、vip会员福利礼包一直领" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                         <Size X="216.0000" Y="18.0000" />
-                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="303.2024" Y="512.9216" />
+                        <AnchorPoint ScaleY="0.5000" />
+                        <Position X="195.7300" Y="512.9216" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="183" G="100" B="30" />
-                        <PrePosition X="0.2369" Y="0.7124" />
+                        <PrePosition X="0.1529" Y="0.7124" />
                         <PreSize X="0.1688" Y="0.0250" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Text_2_0_0_0_1" ActionTag="1161389839" Tag="304" IconVisible="False" LeftMargin="198.5930" RightMargin="865.4070" TopMargin="226.1646" BottomMargin="475.8354" FontSize="18" LabelText="4、vip会员专属角色免费玩" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                      <AbstractNodeData Name="Text_2_0_0_0_1" ActionTag="1161389839" Tag="304" IconVisible="False" LeftMargin="195.7300" RightMargin="868.2700" TopMargin="226.1646" BottomMargin="475.8354" FontSize="18" LabelText="4、vip会员专属角色免费玩" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                         <Size X="216.0000" Y="18.0000" />
-                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="306.5930" Y="484.8354" />
+                        <AnchorPoint ScaleY="0.5000" />
+                        <Position X="195.7300" Y="484.8354" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="183" G="100" B="30" />
-                        <PrePosition X="0.2395" Y="0.6734" />
+                        <PrePosition X="0.1529" Y="0.6734" />
                         <PreSize X="0.1688" Y="0.0250" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="vipSignText_0" ActionTag="1601416995" Tag="305" IconVisible="False" LeftMargin="196.7216" RightMargin="876.2784" TopMargin="256.7460" BottomMargin="445.2540" FontSize="18" LabelText="5、最多领取23倍签到奖励" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                      <AbstractNodeData Name="vipSignText_0" ActionTag="1601416995" Tag="305" IconVisible="False" LeftMargin="195.7300" RightMargin="877.2700" TopMargin="256.7460" BottomMargin="445.2540" FontSize="18" LabelText="5、最多领取23倍签到奖励" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                         <Size X="207.0000" Y="18.0000" />
-                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="300.2216" Y="454.2540" />
+                        <AnchorPoint ScaleY="0.5000" />
+                        <Position X="195.7300" Y="454.2540" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="183" G="100" B="30" />
-                        <PrePosition X="0.2345" Y="0.6309" />
+                        <PrePosition X="0.1529" Y="0.6309" />
                         <PreSize X="0.1617" Y="0.0250" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Text_2_0_0_0_0_1" ActionTag="1523439819" Tag="306" IconVisible="False" LeftMargin="195.7321" RightMargin="841.2679" TopMargin="284.0656" BottomMargin="417.9344" FontSize="18" LabelText="6、与众不同，专属的会员标识" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                      <AbstractNodeData Name="Text_2_0_0_0_0_1" ActionTag="1523439819" Tag="306" IconVisible="False" LeftMargin="195.7300" RightMargin="841.2700" TopMargin="284.0656" BottomMargin="417.9344" FontSize="18" LabelText="6、与众不同，专属的会员标识" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                         <Size X="243.0000" Y="18.0000" />
-                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="317.2321" Y="426.9344" />
+                        <AnchorPoint ScaleY="0.5000" />
+                        <Position X="195.7300" Y="426.9344" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="183" G="100" B="30" />
-                        <PrePosition X="0.2478" Y="0.5930" />
+                        <PrePosition X="0.1529" Y="0.5930" />
                         <PreSize X="0.1898" Y="0.0250" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
                       <AbstractNodeData Name="Text_2_0_0_0_0_0_0" ActionTag="1173290009" Tag="307" IconVisible="False" LeftMargin="195.7300" RightMargin="841.2700" TopMargin="312.6800" BottomMargin="389.3200" FontSize="18" LabelText="7、更多特权，敬请期待......" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                         <Size X="243.0000" Y="18.0000" />
-                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="317.2300" Y="398.3200" />
+                        <AnchorPoint ScaleY="0.5000" />
+                        <Position X="195.7300" Y="398.3200" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="183" G="100" B="30" />
-                        <PrePosition X="0.2478" Y="0.5532" />
+                        <PrePosition X="0.1529" Y="0.5532" />
                         <PreSize X="0.1898" Y="0.0250" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
@@ -1140,7 +1140,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="PayType" ActionTag="1881666257" Tag="97" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+          <AbstractNodeData Name="PayType" Visible="False" ActionTag="1881666257" Tag="97" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <Children>
               <AbstractNodeData Name="bgPic" ActionTag="-564562846" Tag="166" IconVisible="False" LeftMargin="349.0095" RightMargin="333.9905" TopMargin="172.2812" BottomMargin="185.7188" Scale9Enable="True" LeftEage="44" RightEage="44" TopEage="43" BottomEage="43" Scale9OriginX="44" Scale9OriginY="43" Scale9Width="48" Scale9Height="47" ctype="ImageViewObjectData">

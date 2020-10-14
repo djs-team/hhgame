@@ -1,4 +1,3 @@
-
 /**
  * 游戏内业务层的事件定义
  */
@@ -47,6 +46,7 @@ load('game/config/GameEvent', function () {
         'ROLES_SELECT': 'ROLES_SELECT',
         'COINSHOP_GET': 'COINSHOP_GET',
         'COINSHOP_BUY': 'COINSHOP_BUY',
+        'DIAMONDS_BUY': 'DIAMONDS_BUY',
         'ADRESS_GET': 'ADRESS_GET',
         'ADRESS_UPDATE': 'ADRESS_UPDATE',
         'VIDEO_WATCH_DIAMONDS': 'VIDEO_WATCH_DIAMONDS',

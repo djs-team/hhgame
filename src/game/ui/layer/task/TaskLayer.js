@@ -438,7 +438,7 @@ load('game/ui/layer/task/TaskLayer', function () {
             if(data.status == 2){
                 cell.getChildByName('completePg').setVisible(true)
                 cell.getChildByName('challengeTaskBolck').setVisible(true)
-                cell.getChildByName('challengBtnPg').setVisible(false)
+                cell.getChildByName('challegeBtnPg').setVisible(false)
 
             }else{
 

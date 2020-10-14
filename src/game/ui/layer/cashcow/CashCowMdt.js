@@ -41,10 +41,8 @@ load('game/ui/layer/cashcow/CashCowMdt', function () {
 
         initView: function () {
 
-
-
-
-
+            let pRole = appInstance.dataManager().getUserData().pRole
+            this.view.initView(pRole)
 
         }
 

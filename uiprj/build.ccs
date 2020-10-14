@@ -110,6 +110,7 @@
           <Image Name="arena (8).png" />
           <Image Name="arena (9).png" />
           <Image Name="arena1.png" />
+          <Image Name="chooseCity.png" />
           <Image Name="fuKa (1).png" />
           <Image Name="fuKa (10).png" />
           <Image Name="fuKa (11).png" />
@@ -434,6 +435,7 @@
           <Image Name="dqxz_7.png" />
           <Image Name="dqxz_8.png" />
           <Image Name="dqxz_9.png" />
+          <Image Name="xin_anniu_19.png" />
         </Folder>
         <Folder Name="code">
           <Folder Name="fukashop">
@@ -599,6 +601,7 @@
           <Image Name="pmd_3.png" />
           <Image Name="pmd_4.png" />
           <Image Name="rwzx_1.png" />
+          <Image Name="rwzx_17.png" />
           <Image Name="rwzx_2.png" />
           <Image Name="rwzx_3.png" />
           <Image Name="rwzx_4.png" />
@@ -734,6 +737,7 @@
           <Image Name="pmd_3.png" />
         </Folder>
         <Folder Name="invitation">
+          <Image Name="rwzx_16.png" />
           <Image Name="yqyl_1.png" />
           <Image Name="yqyl_2.png" />
           <Image Name="yqyl_3.png" />
@@ -916,6 +920,8 @@
           <Image Name="rwzx_13.png" />
           <Image Name="rwzx_14.png" />
           <Image Name="rwzx_15.png" />
+          <Image Name="rwzx_16.png" />
+          <Image Name="rwzx_17.png" />
           <Image Name="rwzx_5.png" />
           <Image Name="rwzx_6.png" />
           <Image Name="rwzx_7.png" />
@@ -1037,6 +1043,7 @@
         <Project Name="TipsFloat.csd" Type="Layer" />
         <Project Name="TurnTableLayer.csd" Type="Layer" />
         <Project Name="UpdateScene.csd" Type="Scene" />
+        <Image Name="zphd_21.png" />
       </RootFolder>
     </Group>
   </SolutionFolder>

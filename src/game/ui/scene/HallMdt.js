@@ -43,7 +43,6 @@ load('game/ui/scene/HallMdt', function () {
                     this.view.onUpdateUserData(body)
                     break
                 case GameEvent.UPDATE_USERPHOTO:
-                    cc.log("----------收到UPDATE_USERPHOTO事件")
                     this.view.onUpdateUserData(body)
                     break
                 case GameEvent.MatchJinjiGaming:
@@ -58,12 +57,12 @@ load('game/ui/scene/HallMdt', function () {
         },
 
         onRegister: function () {
+            cc.log('--------------hallMdt----------------onRegister')
             let selfInfo = appInstance.dataManager().getUserData()
             this.view.initView(selfInfo)
         },
 
         onChangeUsedRole: function () {
-            cc.log('--------HallMdt------- onChangeUsedRole : ')
             let pRole = appInstance.dataManager().getUserData().pRole
             this.view.updatePlayerAni(pRole)
         },

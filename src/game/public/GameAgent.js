@@ -113,6 +113,7 @@ load('game/public/GameAgent', function () {
             let LoginScene = include('game/ui/scene/LoginScene')
             appInstance.sceneManager().replaceScene(new LoginScene())
             appInstance.gameAgent().setLoginOk(false)
+            TcpClient.disconnect()
         },
 
         reSetHeartBeatTimes: function () {

@@ -27,14 +27,14 @@
     // Configure the view for the selected state
 }
 
-- (void)setModel:(CXUserModel *)model {
+- (void)setModel:(CXLiveRoomGuardItemModel *)model {
     _model = model;
     
-    [_avatar sd_setImageWithURL:[NSURL URLWithString:model.avatar]];
-    _nameLabel.text = model.nickname;
-    [_ageBtn setTitle:model.age forState:UIControlStateNormal];
-    [_locationBtn setTitle:[NSString stringWithFormat:@"%@%@",model.city,model.city_two] forState:UIControlStateNormal];
-    if ([model.sex integerValue] == 1) { // 男
+    [_avatar sd_setImageWithURL:[NSURL URLWithString:model.UserInfo.HeadImageUrl]];
+    _nameLabel.text = model.UserInfo.Name;
+    [_ageBtn setTitle:model.UserInfo.Age.stringValue forState:UIControlStateNormal];
+    [_locationBtn setTitle:[NSString stringWithFormat:@"%@",model.UserInfo.City] forState:UIControlStateNormal];
+    if (model.UserInfo.Sex == 1) { // 男
         [_ageBtn setImage:[UIImage imageNamed:@"nan2"] forState:UIControlStateNormal];
         _ageBtn.backgroundColor = UIColorHex(0x3F99FF);
     } else {
@@ -42,8 +42,8 @@
         _ageBtn.backgroundColor = UIColorHex(0xEB76E4);
     }
     
-    _numberLabel.text = [NSString stringWithFormat:@"亲密度：%@", model.intimacy];
-    _expireLabel.text = [NSString stringWithFormat:@"还有%@天到期", model.countdown_day.stringValue];
+    _numberLabel.text = [NSString stringWithFormat:@"亲密度：%@", model.Intimacy.stringValue];
+    _expireLabel.text = [NSString stringWithFormat:@"还有%@天到期", model.Days.stringValue];
     
 }
 

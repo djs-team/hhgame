@@ -27,7 +27,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5000" Y="0.5000" />
             <PreSize X="1.0000" Y="1.0000" />
-            <FileData Type="Normal" Path="aaa/3.png" Plist="" />
+            <FileData Type="Normal" Path="aaa/chooseCity.png" Plist="" />
           </AbstractNodeData>
           <AbstractNodeData Name="bg" Visible="False" ActionTag="-2011295980" UserData="{&quot;layoutType&quot;:&quot;maxArea&quot;,&quot;screenAlign&quot;:&quot;mid&quot;}" Tag="28" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftEage="422" RightEage="422" TopEage="237" BottomEage="237" Scale9OriginX="422" Scale9OriginY="237" Scale9Width="436" Scale9Height="246" ctype="ImageViewObjectData">
             <Size X="1280.0000" Y="720.0000" />
@@ -42,17 +42,17 @@
           <AbstractNodeData Name="pnl_bg" Visible="False" ActionTag="-2071983906" UserData="{&quot;layoutType&quot;:&quot;showAll&quot;,&quot;screenAlign&quot;:&quot;mid&quot;}" Tag="51" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <Children>
-              <AbstractNodeData Name="Image_1" ActionTag="366010650" Tag="33" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="138.4682" RightMargin="133.9307" TopMargin="95.9847" BottomMargin="27.9850" Scale9Enable="True" LeftEage="241" RightEage="110" TopEage="27" BottomEage="118" Scale9OriginX="241" Scale9OriginY="27" Scale9Width="14" Scale9Height="24" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="Image_1" ActionTag="366010650" Tag="33" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="138.5034" RightMargin="133.8954" TopMargin="95.9847" BottomMargin="27.9850" Scale9Enable="True" LeftEage="241" RightEage="110" TopEage="27" BottomEage="118" Scale9OriginX="241" Scale9OriginY="27" Scale9Width="14" Scale9Height="24" ctype="ImageViewObjectData">
                 <Size X="1007.6012" Y="596.0303" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="642.2688" Y="326.0001" />
+                <Position X="642.3040" Y="326.0001" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5018" Y="0.4528" />
                 <PreSize X="0.7872" Y="0.8278" />
                 <FileData Type="Normal" Path="choosecity/dqxz_7.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Image_6" ActionTag="1911808691" Tag="44" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="490.0000" RightMargin="480.0000" TopMargin="-0.0001" BottomMargin="653.5609" Scale9Enable="True" LeftEage="32" RightEage="32" TopEage="22" BottomEage="22" Scale9OriginX="32" Scale9OriginY="22" Scale9Width="34" Scale9Height="24" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="Image_6" ActionTag="1911808691" Tag="44" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="489.9920" RightMargin="480.0080" BottomMargin="653.5608" Scale9Enable="True" LeftEage="32" RightEage="32" TopEage="22" BottomEage="22" Scale9OriginX="32" Scale9OriginY="22" Scale9Width="34" Scale9Height="24" ctype="ImageViewObjectData">
                 <Size X="310.0000" Y="66.4392" />
                 <Children>
                   <AbstractNodeData Name="Text_3" ActionTag="1145499840" Tag="45" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="78.0000" RightMargin="78.0000" TopMargin="10.8976" BottomMargin="17.5416" FontSize="38" LabelText="选择城市" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -69,7 +69,7 @@
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="1.0000" />
-                <Position X="645.0000" Y="720.0001" />
+                <Position X="644.9920" Y="720.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5039" Y="1.0000" />
@@ -122,6 +122,20 @@
           <AbstractNodeData Name="pnl" ActionTag="1859398032" UserData="{&quot;layoutType&quot;:&quot;showAll&quot;,&quot;screenAlign&quot;:&quot;mid&quot;}" Tag="27" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <Children>
+              <AbstractNodeData Name="returnBtn" ActionTag="-1422866669" Tag="131" IconVisible="False" LeftMargin="6.2200" RightMargin="1213.7800" TopMargin="11.4600" BottomMargin="646.5400" TouchEnable="True" FontSize="14" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="58" Scale9Height="66" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                <Size X="60.0000" Y="62.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="36.2200" Y="677.5400" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.0283" Y="0.9410" />
+                <PreSize X="0.0469" Y="0.0861" />
+                <TextColor A="255" R="65" G="65" B="70" />
+                <PressedFileData Type="Normal" Path="common/gy_fh.png" Plist="" />
+                <NormalFileData Type="Normal" Path="common/gy_fh.png" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
               <AbstractNodeData Name="searchBtn" ActionTag="-673515250" Tag="35" IconVisible="False" LeftMargin="287.8975" RightMargin="924.1025" TopMargin="16.7744" BottomMargin="661.2256" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="38" Scale9Height="20" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="68.0000" Y="42.0000" />
                 <Children>

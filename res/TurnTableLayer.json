@@ -539,7 +539,7 @@
               "Y": 0.1555
             },
             "PreSize": {
-              "X": 0.1563,
+              "X": 0.1562,
               "Y": 0.725
             },
             "LeftMargin": 1077.3888,
@@ -1008,7 +1008,7 @@
                     },
                     "Position": {
                       "X": 158.44,
-                      "Y": 408.29
+                      "Y": 386.29
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -1018,16 +1018,16 @@
                     "IconVisible": false,
                     "PrePosition": {
                       "X": 0.2153,
-                      "Y": 0.6956
+                      "Y": 0.6581
                     },
                     "PreSize": {
                       "X": 0.5435,
-                      "Y": 0.477
+                      "Y": 0.4549
                     },
                     "LeftMargin": 158.44,
                     "RightMargin": 177.56,
-                    "TopMargin": 178.71,
-                    "BottomMargin": 128.29,
+                    "TopMargin": 200.71,
+                    "BottomMargin": 119.29,
                     "Tag": 150,
                     "Children": [
                       {
@@ -1044,14 +1044,14 @@
                         "IconVisible": true,
                         "PrePosition": {
                           "X": 0.0,
-                          "Y": -0.1071
+                          "Y": -0.1124
                         },
                         "PreSize": {
                           "X": 0.0,
                           "Y": 0.0
                         },
                         "RightMargin": 400.0,
-                        "TopMargin": 310.0,
+                        "TopMargin": 297.0,
                         "BottomMargin": -30.0,
                         "Tag": 151,
                         "ActionTag": 1729902117,
@@ -1066,7 +1066,7 @@
                     "ActionTag": 691249579,
                     "Size": {
                       "X": 400.0,
-                      "Y": 280.0
+                      "Y": 267.0
                     },
                     "Name": "awardsUserDataNd",
                     "ctype": "PanelObjectData"
@@ -1116,7 +1116,7 @@
                     "Children": [
                       {
                         "FontSize": 18,
-                        "LabelText": "恭喜\"",
+                        "LabelText": "恭喜“",
                         "HorizontalAlignmentType": "HT_Right",
                         "VerticalAlignmentType": "VT_Center",
                         "OutlineColor": {
@@ -1135,7 +1135,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 25.1171,
+                          "X": 25.12,
                           "Y": 30.0
                         },
                         "Scale": {
@@ -1153,17 +1153,17 @@
                           "Y": 0.5
                         },
                         "PreSize": {
-                          "X": 0.1125,
+                          "X": 0.135,
                           "Y": 0.3
                         },
-                        "LeftMargin": 2.6171,
-                        "RightMargin": 352.3829,
+                        "LeftMargin": -1.88,
+                        "RightMargin": 347.88,
                         "TopMargin": 21.0,
                         "BottomMargin": 21.0,
                         "Tag": 330,
                         "ActionTag": -523241275,
                         "Size": {
-                          "X": 45.0,
+                          "X": 54.0,
                           "Y": 18.0
                         },
                         "Name": "txt1",
@@ -1171,7 +1171,7 @@
                       },
                       {
                         "FontSize": 18,
-                        "LabelText": "\"玩家获得了\"",
+                        "LabelText": "”玩家获得了“",
                         "HorizontalAlignmentType": "HT_Center",
                         "VerticalAlignmentType": "VT_Center",
                         "OutlineColor": {
@@ -1190,7 +1190,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 190.0,
+                          "X": 224.0,
                           "Y": 30.0
                         },
                         "Scale": {
@@ -1204,21 +1204,21 @@
                         "IconVisible": false,
                         "PositionPercentYEnabled": true,
                         "PrePosition": {
-                          "X": 0.475,
+                          "X": 0.56,
                           "Y": 0.5
                         },
                         "PreSize": {
-                          "X": 0.27,
+                          "X": 0.315,
                           "Y": 0.3
                         },
-                        "LeftMargin": 136.0,
-                        "RightMargin": 156.0,
+                        "LeftMargin": 161.0,
+                        "RightMargin": 113.0,
                         "TopMargin": 21.0,
                         "BottomMargin": 21.0,
                         "Tag": 334,
                         "ActionTag": 914017760,
                         "Size": {
-                          "X": 108.0,
+                          "X": 126.0,
                           "Y": 18.0
                         },
                         "Name": "txt2",
@@ -1226,7 +1226,7 @@
                       },
                       {
                         "FontSize": 18,
-                        "LabelText": "\"奖励",
+                        "LabelText": " ”奖励",
                         "VerticalAlignmentType": "VT_Center",
                         "OutlineColor": {
                           "G": 0,
@@ -1244,7 +1244,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 375.4901,
+                          "X": 483.49,
                           "Y": 30.0
                         },
                         "Scale": {
@@ -1258,21 +1258,21 @@
                         "IconVisible": false,
                         "PositionPercentYEnabled": true,
                         "PrePosition": {
-                          "X": 0.9387,
+                          "X": 1.2087,
                           "Y": 0.5
                         },
                         "PreSize": {
-                          "X": 0.1125,
+                          "X": 0.1575,
                           "Y": 0.3
                         },
-                        "LeftMargin": 352.9901,
-                        "RightMargin": 2.0099,
+                        "LeftMargin": 451.99,
+                        "RightMargin": -114.99,
                         "TopMargin": 21.0,
                         "BottomMargin": 21.0,
                         "Tag": 333,
                         "ActionTag": -1147151812,
                         "Size": {
-                          "X": 45.0,
+                          "X": 63.0,
                           "Y": 18.0
                         },
                         "Name": "txt3",
@@ -1299,7 +1299,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 96.5096,
+                          "X": 106.51,
                           "Y": 30.0
                         },
                         "Scale": {
@@ -1313,15 +1313,15 @@
                         "IconVisible": false,
                         "PositionPercentYEnabled": true,
                         "PrePosition": {
-                          "X": 0.2413,
+                          "X": 0.2663,
                           "Y": 0.5
                         },
                         "PreSize": {
                           "X": 0.27,
                           "Y": 0.3
                         },
-                        "LeftMargin": 42.5096,
-                        "RightMargin": 249.4904,
+                        "LeftMargin": 52.51,
+                        "RightMargin": 239.49,
                         "TopMargin": 21.0,
                         "BottomMargin": 21.0,
                         "Tag": 335,
@@ -1335,7 +1335,8 @@
                       },
                       {
                         "FontSize": 18,
-                        "LabelText": "京东卡50元",
+                        "LabelText": "一个好奖励啊好奖励",
+                        "HorizontalAlignmentType": "HT_Center",
                         "VerticalAlignmentType": "VT_Center",
                         "OutlineColor": {
                           "G": 0,
@@ -1353,7 +1354,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 296.067,
+                          "X": 373.07,
                           "Y": 30.786
                         },
                         "Scale": {
@@ -1367,21 +1368,21 @@
                         "IconVisible": false,
                         "PositionPercentYEnabled": true,
                         "PrePosition": {
-                          "X": 0.7402,
+                          "X": 0.9327,
                           "Y": 0.5131
                         },
                         "PreSize": {
-                          "X": 0.225,
+                          "X": 0.405,
                           "Y": 0.3
                         },
-                        "LeftMargin": 251.067,
-                        "RightMargin": 58.933,
+                        "LeftMargin": 292.07,
+                        "RightMargin": -54.07,
                         "TopMargin": 20.214,
                         "BottomMargin": 21.786,
                         "Tag": 336,
                         "ActionTag": -67315230,
                         "Size": {
-                          "X": 90.0,
+                          "X": 162.0,
                           "Y": 18.0
                         },
                         "Name": "goodsName",
@@ -4091,7 +4092,7 @@
                       "Y": 0.4947
                     },
                     "PreSize": {
-                      "X": 0.1563,
+                      "X": 0.1562,
                       "Y": 0.2778
                     },
                     "LeftMargin": 258.912,
@@ -6096,6 +6097,8 @@
                     "ColorVector": {
                       "ScaleY": 1.0
                     },
+                    "Scale9Width": 1,
+                    "Scale9Height": 1,
                     "TouchEnable": true,
                     "AnchorPoint": {},
                     "Position": {

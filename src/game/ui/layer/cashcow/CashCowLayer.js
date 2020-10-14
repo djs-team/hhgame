@@ -2,6 +2,8 @@ load('game/ui/layer/cashcow/CashCowLayer', function () {
     let ResConfig = include('game/config/ResConfig')
     let BaseLayer = include('public/ui/BaseLayer')
     let CashCowMdt = include('game/ui/layer/cashcow/CashCowMdt')
+    let AniPlayer = ResConfig.AniPlayer
+    let PlayerPlay = ResConfig.PlayerPlay
     let cashCowLayer = BaseLayer.extend({
         _className: 'cashCowLayer',
         ctor: function () {
@@ -12,9 +14,10 @@ load('game/ui/layer/cashcow/CashCowLayer', function () {
         },
         RES_BINDING: function () {
             return {
+                'pnl/pgPnl/aniNd': {},
+
                 'pnl/btnPnl/closeBtn': {onClicked: this.onCloseClick},
                 'pnl/btnPnl/shakeBtn': {onClicked: this.onShakeClick},
-                'pnl/btnPnl/shakeCancleBtn': {},
                 'pnl/btnPnl/recordBtn': {onClicked: this.onRecordClick},
                 'pnl/btnPnl/cointreeNd': {},
                 'pnl/poupPnl/propPnl': {onClicked: this.onHideShowPropPnlClick},
@@ -31,9 +34,6 @@ load('game/ui/layer/cashcow/CashCowLayer', function () {
 
         onEnter: function () {
             this._super()
-            this.initData()
-            this.initView()
-            this.showView()
         },
 
         onExit: function () {
@@ -41,38 +41,37 @@ load('game/ui/layer/cashcow/CashCowLayer', function () {
         },
 
 
-        initData: function () {
-
-            this._coinTreeAni = null
-
-        },
-
-        initView: function () {
-            this.recordDataCell.setVisible(false)
-            this.propPnl.setVisible(false)
-            this.recordsPnl.setVisible(false)
+        initData: function (data) {
 
             this._coinTreeAni = appInstance.gameAgent().gameUtil().getAni(ResConfig.AniHall.YaoJinShu)
             this.cointreeNd.addChild(this._coinTreeAni)
             this._coinTreeAni.setAnimation(0, 'animation', true)
 
+            this.aniNd.removeAllChildren()
+            let ani = appInstance.gameAgent().gameUtil().getAni(AniPlayer[data])
+            this.aniNd.addChild(ani)
+            ani.setPosition(cc.p(0,0))
+            ani.setScale(0.4)
+            ani.setAnimation(0, PlayerPlay.stand, true)
+        },
+
+        initView: function (data) {
+
+            this.initData(data)
+
+            this.recordDataCell.setVisible(false)
+            this.propPnl.setVisible(false)
+            this.recordsPnl.setVisible(false)
 
             let cashCowNum = appInstance.dataManager().getUserData().cashCowNum
             let usedCashCowNum = appInstance.dataManager().getUserData().usedCashCowNum
 
+            let flag = false
+            if (usedCashCowNum < cashCowNum)
+                flag = true
 
-            if (usedCashCowNum < cashCowNum) {
-
-                this.shakeBtn.setVisible(true)
-                this.shakeCancleBtn.setVisible(false)
-
-            } else {
-
-                this.shakeBtn.setVisible(false)
-                this.shakeCancleBtn.setVisible(true)
-
-            }
-
+            this.shakeBtn.setBright(flag)
+            this.shakeBtn.setTouchEnabled(flag)
 
         },
 
@@ -81,19 +80,15 @@ load('game/ui/layer/cashcow/CashCowLayer', function () {
             let cashCowNum = appInstance.dataManager().getUserData().cashCowNum
             let usedCashCowNum = appInstance.dataManager().getUserData().usedCashCowNum
 
-            if (usedCashCowNum >= cashCowNum) {
+            let flag = false
+            if (usedCashCowNum < cashCowNum)
+                flag = true
 
-                this.shakeBtn.setVisible(false)
-                this.shakeCancleBtn.setVisible(true)
-
-            }
+            this.shakeBtn.setBright(flag)
+            this.shakeBtn.setTouchEnabled(flag)
 
             this.onShowPropPnl(data)
 
-        },
-
-        showView: function () {
-            //  this.onShowRecordPnlClick()
         },
 
 
@@ -102,8 +97,13 @@ load('game/ui/layer/cashcow/CashCowLayer', function () {
         },
 
         onShakeClick: function () {
+
             this.shakeBtn.setTouchEnabled(false)
-            appInstance.nativeApi().showRewardVideo()
+            if(cc.sys.os !== cc.sys.OS_WINDOWS)
+                appInstance.nativeApi().showRewardVideo()
+            else
+                appInstance.gameAgent().httpGame().cashCowReq()
+
         },
         onRewardVideoCallback: function (msg) {
             if (msg == "0") {
@@ -113,7 +113,7 @@ load('game/ui/layer/cashcow/CashCowLayer', function () {
                     this._coinTreeAni.setAnimation(0, 'animation', true)
                     let msg = {}
                     appInstance.gameAgent().httpGame().cashCowReq(msg)
-                    this.shakeBtn.setTouchEnabled(true)
+                    //this.shakeBtn.setTouchEnabled(true)
                 }.bind(this)
                 //this.cointreeNd.runAction(cc.sequence(deleAction,cc.CallFunc(callBack)))
                 this.cointreeNd.runAction(cc.sequence(cc.CallFunc(callBack)))
@@ -161,9 +161,9 @@ load('game/ui/layer/cashcow/CashCowLayer', function () {
             this.dataListPnl.addChild(recordCell)
 
             if (Math.floor(index % 2)) {
-                recordCell.getChildByName('bg').setVisible(false)
-            } else {
                 recordCell.getChildByName('bg').setVisible(true)
+            } else {
+                recordCell.getChildByName('bg').setVisible(false)
             }
 
             let record = list[index]

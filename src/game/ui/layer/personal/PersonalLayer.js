@@ -18,7 +18,7 @@ load('game/ui/layer/personal/PersonalLayer', function () {
                 'personalDataPnl/photoPic': {},
                 'personalDataPnl/personalDataCloseBtn': {onClicked: this.onPersonalDataCloseClick},
                 'personalDataPnl/changePicBtn': {},
-                'personalDataPnl/cancellationBtn': {},
+                'personalDataPnl/cancellationBtn': {onClicked: this.onExitBtnClick},
                 'personalDataPnl/namePnl': {},
                 'personalDataPnl/namePnl/updateNameBtn': {onClicked: this.onUpdateNameClick},
                 'personalDataPnl/idPnl': {},
@@ -188,7 +188,11 @@ load('game/ui/layer/personal/PersonalLayer', function () {
             this.onInitUserData(data)
             this.onCloseUpdateNameClick()
 
-        }
+        },
+
+        onExitBtnClick: function () {
+            appInstance.gameAgent().goLoginScene()
+        },
 
 
     })

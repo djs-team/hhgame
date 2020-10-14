@@ -52,10 +52,9 @@
         if (!error) {
             NSString *my_apply = responseObject[@"data"][@"my_apply"];
             NSString *apply_my = responseObject[@"data"][@"apply_my"];
-//            NSString *system_num = responseObject[@"data"][@"system_num"];
             NSDictionary *friendItem = @{@"title":@"我的好友", @"count":@"0"};
-            NSDictionary *friendapplyItem = @{@"title":@"好友申请", @"count":my_apply.integerValue > 0 ? my_apply : @"0"};
-            NSDictionary *mineItem = @{@"title":@"我的申请", @"count":apply_my.integerValue > 0 ? apply_my : @"0"};
+            NSDictionary *friendapplyItem = @{@"title":@"好友申请", @"count":apply_my.integerValue > 0 ? apply_my : @"0"};
+            NSDictionary *mineItem = @{@"title":@"我的申请", @"count":my_apply.integerValue > 0 ? my_apply : @"0"};
             weakSelf.titles = [NSArray arrayWithObjects:friendItem, friendapplyItem, mineItem, nil];
             [weakSelf reloadData];
         }

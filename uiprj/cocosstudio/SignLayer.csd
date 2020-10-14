@@ -383,14 +383,14 @@
                       <AbstractNodeData Name="treasureChestCell" ActionTag="-135355781" Tag="182" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="35.9910" RightMargin="375.0090" TopMargin="-12.2475" BottomMargin="-10.7525" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                         <Size X="54.0000" Y="46.0000" />
                         <Children>
-                          <AbstractNodeData Name="signDaysText" ActionTag="-670527274" Tag="186" IconVisible="False" LeftMargin="3.8978" RightMargin="-21.8978" TopMargin="-18.6171" BottomMargin="46.6171" FontSize="18" LabelText="签到10天" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                            <Size X="72.0000" Y="18.0000" />
+                          <AbstractNodeData Name="signDaysText" ActionTag="-670527274" Tag="186" IconVisible="False" LeftMargin="-5.1022" RightMargin="-30.8978" TopMargin="-18.6171" BottomMargin="46.6171" FontSize="18" LabelText=" 签到10天 " ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                            <Size X="90.0000" Y="18.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                             <Position X="39.8978" Y="55.6171" />
                             <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="255" G="255" B="255" />
                             <PrePosition X="0.7388" Y="1.2091" />
-                            <PreSize X="1.3333" Y="0.3913" />
+                            <PreSize X="1.6667" Y="0.3913" />
                             <OutlineColor A="255" R="255" G="0" B="0" />
                             <ShadowColor A="255" R="110" G="110" B="110" />
                           </AbstractNodeData>
@@ -495,14 +495,14 @@
                     <PreSize X="0.7290" Y="0.6491" />
                     <FileData Type="Normal" Path="sign/qd_jl_9.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="awardsValueText" ActionTag="1462170359" Tag="198" IconVisible="False" LeftMargin="27.8557" RightMargin="34.1443" TopMargin="88.1100" BottomMargin="7.8900" FontSize="18" LabelText="x1888" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="45.0000" Y="18.0000" />
+                  <AbstractNodeData Name="awardsValueText" ActionTag="1462170359" Tag="198" IconVisible="False" LeftMargin="14.3557" RightMargin="20.6443" TopMargin="88.1100" BottomMargin="7.8900" FontSize="18" LabelText="x1888888" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="72.0000" Y="18.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="50.3557" Y="16.8900" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="177" G="52" B="0" />
                     <PrePosition X="0.4706" Y="0.1482" />
-                    <PreSize X="0.4206" Y="0.1579" />
+                    <PreSize X="0.6729" Y="0.1579" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>

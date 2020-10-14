@@ -5,6 +5,7 @@ load('game/ui/scene/HallScene', function () {
     let BaseScene = include('public/ui/BaseScene')
     let ResConfig = include('game/config/ResConfig')
     let HallMdt = include('game/ui/scene/HallMdt')
+    let LocalSave = include('game/public/LocalSave')
     let AniPlayer = ResConfig.AniPlayer
     let PlayerPlay = ResConfig.PlayerPlay
     let HallScene = BaseScene.extend({
@@ -34,7 +35,7 @@ load('game/ui/scene/HallScene', function () {
                 'bmPnl/bmListPnl/signPnl': {onClicked: this.onSignBtnClick},
                 'bmPnl/bmListPnl/taskPnl': {onClicked: this.onTaskClick},
                 'bmPnl/bmListPnl/rolesPnl': {onClicked: this.onRoleClick},
-                'bmPnl/startQuickPnl/startQuickBtn': {onClicked: this.onRoleClick},
+                'bmPnl/startQuickPnl/startQuickBtn': {onClicked: this.onStartQuickBtnClick},
 
 
                 'leftPnl/invitationPnl/invitationBtn': {onClicked: this.onInvitationClick},
@@ -169,7 +170,6 @@ load('game/ui/scene/HallScene', function () {
         },
 
         goChooseCity: function () {
-            cc.log('----------11111111111111111111111111---------------------------')
             appInstance.gameAgent().addPopUI(ResConfig.Ui.ChooseCityLayer)
         },
 
@@ -181,14 +181,6 @@ load('game/ui/scene/HallScene', function () {
                 this.authenticationBtn.setVisible(false)
             }
             this.morePnl.setVisible(true);
-        },
-
-        onChangeAreaClick: function () {
-            // 跳转到选择城市界面
-        },
-
-        onStartQuickClick: function () {
-            //跳转到匹配界面
         },
 
         onConfBtnClick: function () {
@@ -237,6 +229,11 @@ load('game/ui/scene/HallScene', function () {
             this._selfInfo = selfInfo
             this._pRole = selfInfo.pRole
 
+            this._peopleNum = global.localStorage.getIntKey(LocalSave.CoinGamePeopleNum)
+            if (!this._peopleNum) {
+                this._peopleNum = 2
+            }
+
             this.onInitUserData();
 
         },
@@ -271,10 +268,6 @@ load('game/ui/scene/HallScene', function () {
             this.turnTableNd.addChild(zhuanpanAni)
 
             this.updatePlayerAni()
-
-
-            this.onInitUserData();
-
             this.morePnl.setVisible(false)
 
         },
@@ -324,7 +317,6 @@ load('game/ui/scene/HallScene', function () {
             this.MatchJinjiLayer.updateView(msg)
         },
         onUpdateUserData: function (data) {
-            cc.log('-----------------half-onUpdateUserData :' + JSON.stringify(data))
             let nameNd = this.namePnl.getChildByName('name')
             let coinsCnt = this.coinPnl.getChildByName('coinsCnt')
             let diamondsCnt = this.diamondsPnl.getChildByName('diamondsCnt')
@@ -352,7 +344,22 @@ load('game/ui/scene/HallScene', function () {
 
             this.updatePlayerAni(data.pRole)
 
-        }
+        },
+
+        onStartQuickBtnClick: function () {
+            let goMsg = {}
+            if (this._peopleNum === 2) {
+                goMsg.roomMode = 2
+                goMsg.roomId = 'R2'
+            } else if (this._peopleNum === 4) {
+                goMsg.roomMode = 1
+                goMsg.roomId = 'R1'
+            }
+            goMsg.gameType = 'M5'
+            goMsg.pExtend = 'gameHall'
+            appInstance.gameAgent().tcpGame().enterTable(goMsg)
+            global.localStorage.setIntKey(LocalSave.CoinGamePeopleNum, this._peopleNum)
+        },
 
 
     })

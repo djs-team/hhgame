@@ -65,3 +65,25 @@ SocketMessageInitMethod(SocketMessageIDGetDisableMsgTemplates)
 
 @end
 
+// 获取守护榜单（亲密值排序）
+@implementation CXLiveRoomGuardItemModel
+
+@end
+
+@implementation SocketMessageGetGuardItemListResponse
+
++ (NSDictionary *)modelContainerPropertyGenericClass {
+    return @{
+             @"GuardItems" : [CXLiveRoomGuardItemModel class],
+             };
+}
+
+@end
+@implementation SocketMessageGetGuardItemListRequest
+@dynamic response;
+- (Class)responseClass {
+    return SocketMessageGetGuardItemListResponse.class;
+}
+SocketMessageInitMethod(SocketMessageIDGetGuardItemList)
+
+@end

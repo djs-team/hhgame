@@ -76,12 +76,14 @@ load('game/ui/layer/member/MemberLayer', function () {
             this._super()
         },
         onThirdPayCallBack: function (msg) {
-            cc.log('=============onThirdPayCallBack' + msg)
-
+            if (msg == 0) {
+                appInstance.gameAgent().Tips('------------------------------------充值成功！！！')
+            } else {
+                appInstance.gameAgent().Tips('------------------------------------充值失败！！！')
+            }
         },
         
         onApplePayCallBack: function (msg) {
-            cc.log('=============onApplePayCallBack' + msg)
             msg = JSON.parse(msg)
             
             appInstance.gameAgent().httpGame().VIPPaysOrderAppleCheckReq(msg)

@@ -1630,9 +1630,8 @@
                     "ctype": "ImageViewObjectData"
                   },
                   {
-                    "IsCustomSize": true,
                     "FontSize": 36,
-                    "LabelText": "300",
+                    "LabelText": "30000000",
                     "HorizontalAlignmentType": "HT_Center",
                     "VerticalAlignmentType": "VT_Center",
                     "OutlineColor": {
@@ -1651,7 +1650,7 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 135.23,
+                      "X": 151.23,
                       "Y": 185.77
                     },
                     "Scale": {
@@ -1664,22 +1663,22 @@
                     },
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.5345,
+                      "X": 0.5977,
                       "Y": 0.4644
                     },
                     "PreSize": {
-                      "X": 0.3083,
-                      "Y": 0.085
+                      "X": 0.5692,
+                      "Y": 0.09
                     },
-                    "LeftMargin": 96.23,
-                    "RightMargin": 78.77,
-                    "TopMargin": 197.23,
-                    "BottomMargin": 168.77,
+                    "LeftMargin": 79.23,
+                    "RightMargin": 29.77,
+                    "TopMargin": 196.23,
+                    "BottomMargin": 167.77,
                     "Tag": 106,
                     "ActionTag": -1649414381,
                     "Size": {
-                      "X": 78.0,
-                      "Y": 34.0
+                      "X": 144.0,
+                      "Y": 36.0
                     },
                     "Name": "Score",
                     "ctype": "TextObjectData"
@@ -1952,9 +1951,8 @@
                     "ctype": "ImageViewObjectData"
                   },
                   {
-                    "IsCustomSize": true,
                     "FontSize": 36,
-                    "LabelText": "300",
+                    "LabelText": "30000000",
                     "HorizontalAlignmentType": "HT_Center",
                     "VerticalAlignmentType": "VT_Center",
                     "OutlineColor": {
@@ -1973,7 +1971,7 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 135.23,
+                      "X": 151.23,
                       "Y": 185.77
                     },
                     "Scale": {
@@ -1986,22 +1984,22 @@
                     },
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.5345,
+                      "X": 0.5977,
                       "Y": 0.4644
                     },
                     "PreSize": {
-                      "X": 0.3083,
-                      "Y": 0.085
+                      "X": 0.5692,
+                      "Y": 0.09
                     },
-                    "LeftMargin": 96.23,
-                    "RightMargin": 78.77,
-                    "TopMargin": 197.23,
-                    "BottomMargin": 168.77,
+                    "LeftMargin": 79.23,
+                    "RightMargin": 29.77,
+                    "TopMargin": 196.23,
+                    "BottomMargin": 167.77,
                     "Tag": 112,
                     "ActionTag": -1858175458,
                     "Size": {
-                      "X": 78.0,
-                      "Y": 34.0
+                      "X": 144.0,
+                      "Y": 36.0
                     },
                     "Name": "Score",
                     "ctype": "TextObjectData"
@@ -2274,9 +2272,8 @@
                     "ctype": "ImageViewObjectData"
                   },
                   {
-                    "IsCustomSize": true,
                     "FontSize": 36,
-                    "LabelText": "300000",
+                    "LabelText": "30000000",
                     "HorizontalAlignmentType": "HT_Center",
                     "VerticalAlignmentType": "VT_Center",
                     "OutlineColor": {
@@ -2295,7 +2292,7 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 140.0,
+                      "X": 153.0,
                       "Y": 185.77
                     },
                     "Scale": {
@@ -2308,21 +2305,21 @@
                     },
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.5534,
+                      "X": 0.6047,
                       "Y": 0.4644
                     },
                     "PreSize": {
-                      "X": 0.4269,
+                      "X": 0.5692,
                       "Y": 0.09
                     },
-                    "LeftMargin": 86.0,
-                    "RightMargin": 59.0,
+                    "LeftMargin": 81.0,
+                    "RightMargin": 28.0,
                     "TopMargin": 196.23,
                     "BottomMargin": 167.77,
                     "Tag": 117,
                     "ActionTag": -1976487500,
                     "Size": {
-                      "X": 108.0,
+                      "X": 144.0,
                       "Y": 36.0
                     },
                     "Name": "Score",
@@ -2596,7 +2593,6 @@
                     "ctype": "ImageViewObjectData"
                   },
                   {
-                    "IsCustomSize": true,
                     "FontSize": 36,
                     "LabelText": "30000000",
                     "HorizontalAlignmentType": "HT_Center",
@@ -2617,7 +2613,7 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 140.0,
+                      "X": 152.0,
                       "Y": 185.77
                     },
                     "Scale": {
@@ -2630,15 +2626,15 @@
                     },
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.5534,
+                      "X": 0.6008,
                       "Y": 0.4644
                     },
                     "PreSize": {
                       "X": 0.5692,
                       "Y": 0.09
                     },
-                    "LeftMargin": 68.0,
-                    "RightMargin": 41.0,
+                    "LeftMargin": 80.0,
+                    "RightMargin": 29.0,
                     "TopMargin": 196.23,
                     "BottomMargin": 167.77,
                     "Tag": 122,

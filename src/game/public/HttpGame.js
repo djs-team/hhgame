@@ -919,6 +919,35 @@ load('game/public/HttpGame', function () {
         },
 
         /**
+         * 钻石下单购买请求
+         * @param msg
+         * @constructor
+         */
+        ZuanPaysOrderReq: function (msg) {
+            msg = msg || {}
+            if (!this._requestBackCall[HttpEvent.MJ_HALL_PLAYER_BUY_DIAMONDS_ORDER]) {
+                this._requestBackCall[HttpEvent.MJ_HALL_PLAYER_BUY_DIAMONDS_ORDER] = this.ZuanPaysOrderBack
+            }
+            msg.msgID = HttpEvent.MJ_HALL_PLAYER_BUY_DIAMONDS_ORDER
+            appInstance.httpAgent().sendPost(msg)
+
+        },
+
+        /**
+         * 接收钻石下单购买
+         * @param msg
+         * @constructor
+         */
+        ZuanPaysOrderBack: function (msg) {
+            if (msg.status !== 0) {
+                cc.log('------------->>>httpGame VIPPaysOrderBack error happen' + JSON.stringify(msg))
+                return
+            }
+            appInstance.sendNotification(GameEvent.DIAMONDS_BUY, msg)
+
+        },
+
+        /**
          * 购买请求
          * @param msg
          * @constructor

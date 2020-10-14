@@ -313,7 +313,6 @@ public class RoomController implements IRoomController, RoomMsgHandler.OnMsgEven
     @Override
     public void sendTextMsg(String text) {
         JoinUser user = mRoomModel.getUser();
-//        Logg.d(TAG, "发送消息 " + text + "  " + user);
         if (user == null)
             return;
         EMMessage message = EMMessage.createTxtSendMessage(text, mChatRoomId);
@@ -326,9 +325,6 @@ public class RoomController implements IRoomController, RoomMsgHandler.OnMsgEven
                 Log.d("msg", "消息成功回调 " + message.toString());
                 MobEventUtils.onSendMsg(AppUtils.getApp());
                 ReceiveMessage sendMsg = new ReceiveMessage();
-//                if (user != null) {
-//                    user.setGuardSign(mRoomModel.getRoomData().getGuardSign());
-//                }
                 sendMsg.setMsg(text);
                 sendMsg.setUser(user);
                 onHyphenateMessage(sendMsg);

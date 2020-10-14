@@ -164,7 +164,7 @@
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/iv_rank_users"
                 android:layout_width="wrap_content"
-                android:layout_height="24dp"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="2dp"/>
 

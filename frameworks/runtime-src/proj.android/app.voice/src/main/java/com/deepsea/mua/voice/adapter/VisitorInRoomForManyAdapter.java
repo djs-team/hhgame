@@ -114,7 +114,7 @@ public class VisitorInRoomForManyAdapter extends BaseBindingAdapter<OnlineUser.U
         holder.binding.nickTv.setText(item.getUser().getName());
         WsUser user=item.getUser();
         SexResUtils.setSexImgInFindPage(holder.binding.rlSex, holder.binding.sexIv, String.valueOf(item.getSex()));
-        ViewBindUtils.setText(holder.binding.tvAge, user.getAge() == 0 ? "" : String.valueOf(user.getAge()));
+        ViewBindUtils.setText(holder.binding.tvAge, TextUtils.isEmpty(user.getAge())? "" : user.getAge());
         ViewBindUtils.setText(holder.binding.tvLocation, user.getCity());
         ViewBindUtils.setVisible(holder.binding.ivLocation, !TextUtils.isEmpty(user.getCity()));
 

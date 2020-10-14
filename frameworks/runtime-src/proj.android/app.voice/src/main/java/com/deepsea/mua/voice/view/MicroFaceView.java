@@ -230,6 +230,7 @@ public class MicroFaceView extends FrameLayout {
                 }
             });
             mBinding.tvUserInfo.setText(ProfileUtils.getProfile(user.getAge(), user.getStature(), user.getSex()));
+            List<String> list = new ArrayList<>();
             setRankHeards(bean.getRoseRanks(), user.getUserId());
             if (guardHeaderAdapter != null) {
                 guardHeaderAdapter.setOnItemClickListener(new BaseBindingAdapter.OnItemClickListener() {

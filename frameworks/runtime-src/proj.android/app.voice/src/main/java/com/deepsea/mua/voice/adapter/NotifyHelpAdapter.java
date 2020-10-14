@@ -52,7 +52,7 @@ public class NotifyHelpAdapter extends BaseBindingAdapter<RoomData.MicroInfosBea
         WsUser user=item.getUser();
 
         StringBuilder sb = new StringBuilder();
-        if (user.getAge() > 0) {
+        if (!TextUtils.isEmpty(user.getAge())) {
             sb.append(user.getAge()).append("岁");
         }
         if (user.getStature() > 0) {

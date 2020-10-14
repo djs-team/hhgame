@@ -11,7 +11,7 @@ public class WsUser implements Serializable {
     private String UserId;
     private String PrettyId;
     private String PrettyAvatar;
-    private int Age;
+    private String Age;
     private int Stature;
     private String City;
     private int Sex;
@@ -91,11 +91,11 @@ public class WsUser implements Serializable {
         PrettyAvatar = prettyAvatar;
     }
 
-    public int getAge() {
+    public String getAge() {
         return Age;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         Age = age;
     }
 

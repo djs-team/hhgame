@@ -98,14 +98,14 @@ public class GuardGroupDialog extends BaseDialog<DialogGuardGroupMineBinding> {
             @Override
             public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
                 page++;
-                roomViewModel.getGuardItemList(page, UserUtils.getUser().getUid());
+                roomViewModel.getGuardItemList(page, guardUserId);
             }
         });
         mBinding.refreshLayout.setOnRefreshListener(new OnRefreshListener() {
             @Override
             public void onRefresh(@NonNull RefreshLayout refreshLayout) {
                 page = 0;
-                roomViewModel.getGuardItemList(page, UserUtils.getUser().getUid());
+                roomViewModel.getGuardItemList(page, guardUserId);
 
             }
         });

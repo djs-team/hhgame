@@ -270,10 +270,6 @@ load('game/ui/scene/HallScene', function () {
             this.turnTableNd.addChild(zhuanpanAni)
 
             this.updatePlayerAni()
-
-
-            this.onInitUserData();
-
             this.morePnl.setVisible(false)
 
         },

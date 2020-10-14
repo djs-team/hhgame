@@ -1,0 +1,10 @@
+/**
+	 * 踢下线
+	 	/**
+	 * 后台管理消息
+	 */
+	int MANAGER_ID = MODULE_CLIENT + 0x00050000;
+	 */
+	int KICK_OFFLINE = MANAGER_ID + 2;
+返回消息体:
+	private short status;//12重复登录，互踢13服务器维护，踢出玩家

@@ -213,10 +213,7 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
                 flag = false
                 if (this._canTurnTableStatus === 1) {
                     //观看视频
-                    appInstance.gameAgent().Tips('转盘需要看视频哦~')
-                    if (cc.sys.OS_ANDROID === cc.sys.os) {
-                        appInstance.nativeApi().showRewardVideo()
-                    }
+                    appInstance.nativeApi().showRewardVideo()
 
                 } else {
                     appInstance.gameAgent().Tips('次数已用尽，比赛场也很好玩哦')

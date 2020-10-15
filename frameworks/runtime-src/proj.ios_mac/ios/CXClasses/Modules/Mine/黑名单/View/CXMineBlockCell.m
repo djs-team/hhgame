@@ -15,6 +15,8 @@
     
     self.avatar.layer.masksToBounds = YES;
     self.avatar.layer.cornerRadius = 22;
+    self.avatar.layer.borderWidth = 1;
+    self.avatar.layer.borderColor = UIColorHex(0x9645E0).CGColor;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

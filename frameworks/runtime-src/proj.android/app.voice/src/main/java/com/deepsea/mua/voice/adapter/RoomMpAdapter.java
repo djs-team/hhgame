@@ -53,7 +53,7 @@ public class RoomMpAdapter extends BaseBindingAdapter<RoomData.MicroInfosBean, I
 
         void sendOneRose(String userId);
 
-        void downMicro(String userId);//下麦
+        void downMicro(String userId,int level, int number);//下麦
 
         void microOperate(int pos, String userId, boolean isOpen);//闭麦/禁言
     }
@@ -268,9 +268,9 @@ public class RoomMpAdapter extends BaseBindingAdapter<RoomData.MicroInfosBean, I
             }
 
             @Override
-            public void downMicro(String userId) {
+            public void downMicro(String userId,int level, int number) {
                 if (onMicUserListener != null) {
-                    onMicUserListener.downMicro(userId);
+                    onMicUserListener.downMicro(userId,level,number);
                 }
             }
 

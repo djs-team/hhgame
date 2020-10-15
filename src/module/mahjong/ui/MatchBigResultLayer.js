@@ -55,9 +55,8 @@ load('module/mahjong/ui/MatchBigResultLayer', function () {
             pCell.setPosition(this._playerPos[index])
 
             pCell.getChildByName('name').setString(pinfo.pid)
-
-            // 这个晋级与否 需要跟服务器核对一下
-            pCell.getChildByName('Win').setVisible(pinfo.pOffsetCoins > 0)
+            
+            pCell.getChildByName('Win').setVisible(index === 0)
 
 
             GameUtil.loadUrlImg(pinfo.pPhoto,pCell.getChildByName('Head'))

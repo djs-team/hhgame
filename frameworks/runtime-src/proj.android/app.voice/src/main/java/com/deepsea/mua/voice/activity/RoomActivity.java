@@ -1248,8 +1248,15 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
         }
 
         @Override
-        public void downMicro(String userId) {
-            showAudience();
+        public void downMicro(String userId, int level, int number) {
+            if (MatchMakerUtils.isRoomOwner() && !UserUtils.getUser().getUid().equals(userId)) {
+                //红娘强制别人下麦
+                ToastUtils.showToast("功能待定");
+//                mViewModel.downMicro(level, number);
+            } else {
+                //主动下麦
+                showAudience();
+            }
         }
 
         @Override
@@ -1418,8 +1425,16 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
                 }
 
                 @Override
-                public void downMicro(String userId) {
-                    showAudience();
+                public void downMicro(String userId, int level, int number) {
+                    Log.d("AG_EX_AV", "downMicro：" + userId + level + "," + number);
+
+                    if (MatchMakerUtils.isRoomOwner() && !UserUtils.getUser().getUid().equals(userId)) {
+                        //红娘强制别人下麦
+//                        mViewModel.downMicro(level, number);
+                        ToastUtils.showToast("功能待定");
+                    } else {
+                        showAudience();
+                    }
                 }
 
                 @Override
@@ -1496,12 +1511,6 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
     }
 
     private void getBanners() {
-//        List<String> list=new ArrayList<>();
-//        list.add("https://ss3.bdstatic.com/yrwDcj7w0QhBkMak8IuT_XF5ehU5bvGh7c50/logopic/6dddd8aedceb1ea92c9df2f877effd25_fullsize.jpg");
-//        list.add("https://ss3.bdstatic.com/yrwDcj7w0QhBkMak8IuT_XF5ehU5bvGh7c50/logopic/6dddd8aedceb1ea92c9df2f877effd25_fullsize.jpg");
-//        mBinding.bannerview.setData(list);
-//
-
         mBinding.banner.setPageIndicator(new int[]{R.drawable.room_indicator, R.drawable.room_indicator_s});
         mViewModel.getBanners().observe(this, new BaseObserver<List<VoiceBanner.BannerListBean>>() {
             @Override
@@ -3414,10 +3423,14 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
                 ViewBindUtils.setVisible(mBinding.rlMicrosMusicViews, true);
                 ViewBindUtils.setVisible(mBinding.rlMusic, true);
                 mBinding.mainFaceView.setSurfaceViewVisible();
+                mBinding.mainFaceView.setVisibility(View.GONE);
+                mBinding.rlMainFaceView.setVisibility(View.GONE);
                 mBinding.rlGroupCommonRv.setVisibility(View.GONE);
             } else {
                 //切换非伴唱
                 singerUserId = "";
+                mBinding.mainFaceView.setVisibility(View.VISIBLE);
+                mBinding.rlMainFaceView.setVisibility(View.VISIBLE);
                 ViewBindUtils.setVisible(mBinding.cnsMicrosCommonViews, true);
                 ViewBindUtils.setVisible(mBinding.rlMicrosMusicViews, false);
                 ViewBindUtils.setVisible(mBinding.rlMusic, false);

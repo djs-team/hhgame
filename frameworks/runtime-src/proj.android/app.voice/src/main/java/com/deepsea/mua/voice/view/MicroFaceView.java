@@ -101,7 +101,7 @@ public class MicroFaceView extends FrameLayout {
 
         void sendOneRose(String userId);
 
-        void downMicro(String userId);//下麦
+        void downMicro(String userId, int level, int number);//下麦
 
         void microOperate(String userId, boolean isOpen);//闭麦/禁言
     }
@@ -110,7 +110,6 @@ public class MicroFaceView extends FrameLayout {
         this.onMicUserListener = onMicUserListener;
     }
 
-    //    RoomActivity activity;
     public MicroFaceView(@NonNull Context context) {
         this(context, null);
     }
@@ -168,7 +167,7 @@ public class MicroFaceView extends FrameLayout {
             boolean isMine = UserUtils.getUser().getUid().equals(user.getUserId());
             ViewBindUtils.setVisible(mBinding.rlOperateSendgift, !isMine);
             ViewBindUtils.setVisible(mBinding.ivGiveRose, !isMine);
-            ViewBindUtils.setVisible(mBinding.rlDownMp, isMine);
+            ViewBindUtils.setVisible(mBinding.rlDownMp, MatchMakerUtils.isRoomOwner() || isMine);
             mBinding.ivGiveRose.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -215,7 +214,7 @@ public class MicroFaceView extends FrameLayout {
             });
             ViewBindUtils.RxClicks(mBinding.rlDownMp, o -> {
                 if (onMicUserListener != null) {
-                    onMicUserListener.downMicro(user.getUserId());
+                    onMicUserListener.downMicro(user.getUserId(),user.getType(),user.getNumber());
                 }
             });
 
@@ -244,7 +243,7 @@ public class MicroFaceView extends FrameLayout {
                     }
                 });
             }
-            if (MatchMakerUtils.isRoomOwner()||user.getUserId().equals(UserUtils.getUser().getUid()) || bean.getType() == 0) {
+            if (MatchMakerUtils.isRoomOwner() || user.getUserId().equals(UserUtils.getUser().getUid()) || bean.getType() == 0) {
                 ViewBindUtils.setVisible(mBinding.llMicroOperate, true);
             } else {
                 ViewBindUtils.setVisible(mBinding.llMicroOperate, false);

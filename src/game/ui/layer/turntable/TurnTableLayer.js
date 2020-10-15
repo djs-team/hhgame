@@ -10,6 +10,7 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
         _isHaveInitUserData : false,
         _lightTime: 0,
         _lightInterval: 0.5,
+        _canTurnTableStatus: 0,//0代表可以免费1代表不可以免费可看视频2不可以转盘
         ctor: function () {
             this._super(ResConfig.View.TurnTableLayer)
 
@@ -163,6 +164,7 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
         onDataInit: function (data) {
 
 
+            this._canTurnTableStatus = data.code
             this._goodsArray = {}
             for (let i = 1; i < 11; ++i) {
                 this._goodsArray['goods_' + i] = this.goodsNd.getChildByName('goods' + i)
@@ -173,7 +175,32 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
         },
 
         onTurnPointClick: function () {
-            this.pointPnl.setEnabled(false)
+
+            this.pointPnl.setTouchEnabled(false)
+            if(!this.onCanTurnPointFunction())
+                return
+
+            this.onTurnPointFunction()
+        },
+
+        onCanTurnPointFunction: function () {
+
+            let flag = true
+            if(this._canTurnTableStatus !== 0) {
+                flag = false
+                if(this._canTurnTableStatus === 1){
+                    //观看视频
+                    appInstance.gameAgent().Tips('转盘需要看视频哦~')
+                }else{
+                    appInstance.gameAgent().Tips('次数已用尽，比赛场也很好玩哦')
+                    this.pointPnl.setTouchEnabled(true)
+                }
+            }
+
+            return flag
+        },
+
+        onTurnPointFunction : function () {
 
             let msg = {}
             appInstance.gameAgent().httpGame().TURNPOINTReq(msg)
@@ -186,9 +213,7 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
             let beginEaseAction = cc.EaseCubicActionIn(action)
 
             this.TurnPointImg.runAction(beginEaseAction)
-
             appInstance.audioManager().playEffect(ResConfig.Sound.turnTableBegin)
-
         },
 
 
@@ -197,8 +222,8 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
 
             this.TurnPointImg.stopAllActions()
             this.TurnPointImg.setRotation(0)
-            let endtime = 11
-            let rotateAngle = 360 * 20 + 36 * (data.turntableId - 1)
+            let endtime = 3
+            let rotateAngle = 360 * 5 + 36 * (data.turntableId - 1)
             let endAction = cc.RotateBy(endtime, rotateAngle)
             let endEaseAction = cc.EaseCubicActionOut(endAction)
             this.TurnPointImg.runAction(endEaseAction)
@@ -210,20 +235,18 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
             }.bind(this)
 
             let delayTime = [
-                3,2,1,2,3
+                1,1,1
             ]
 
             let callLightInterval = [
                 0.3,
-                0.2,
                 0.1,
-                0.2,
                 0.3
             ]
 
             let tmpIndex = 0
             let lightCallFunc = function () {
-                if (tmpIndex > 4) {
+                if (tmpIndex > 2) {
                     tmpIndex = 0
                 }
                 this._lightInterval = callLightInterval[tmpIndex]
@@ -233,8 +256,8 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
             this.runAction(cc.Sequence( cc.CallFunc(lightCallFunc),cc.DelayTime(delayTime[0]),
                 cc.CallFunc(lightCallFunc),cc.DelayTime(delayTime[1]),
                 cc.CallFunc(lightCallFunc),cc.DelayTime(delayTime[2]),
-                cc.CallFunc(lightCallFunc),cc.DelayTime(delayTime[3]),
-                cc.CallFunc(lightCallFunc),cc.DelayTime(delayTime[4]),
+      /*          cc.CallFunc(lightCallFunc),cc.DelayTime(delayTime[3]),
+                cc.CallFunc(lightCallFunc),cc.DelayTime(delayTime[4]),*/
                 cc.CallFunc(endCallFunc)
                 ))
         },
@@ -305,7 +328,7 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
             }
 
             this.awardsPnl.setVisible(true)
-            this.pointPnl.setEnabled(true)
+            this.pointPnl.setTouchEnabled(true)
             this.TurnPointImg.setRotation(0)
         },
 
@@ -346,7 +369,7 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
             this.acceptedTypePg.loadTexture(data.res)
             this.awardsVal.setString('x'+data.propNum)
 
-
+            this._canTurnTableStatus = data.code
             this.awardsPnl.setVisible(false)
             this.acceptedPnl.setVisible(true)
 

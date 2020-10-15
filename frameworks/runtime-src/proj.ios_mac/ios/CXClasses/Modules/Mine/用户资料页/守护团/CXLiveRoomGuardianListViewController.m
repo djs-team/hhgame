@@ -84,6 +84,38 @@
     _mainTableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(footerRefresh)];
     
     [self headerRefresh];
+    
+    // 监听支付宝支付回调
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(aliPayCallBack:) name:kNSNotificationCenter_CXRechargeViewController_alipay object:nil];
+
+    // 监听微信支付回调
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(weChatCallBack:) name:kNSNotificationCenter_CXRechargeViewController_weixin object:nil];
+}
+
+- (void)aliPayCallBack:(NSNotification *)info {
+
+    if ([[info.object objectForKey:@"resultStatus"] integerValue] == 9000) {
+        [self toast:@"守护成功"];
+        [self headerRefresh];
+    } else {
+        [self toast:@"支付失败"];
+    }
+}
+
+- (void)weChatCallBack:(NSNotification *)info {
+    NSDictionary *obj = info.object;
+    switch ([[obj objectForKey:@"errCode"] integerValue]) {
+        case WXSuccess:
+            [self toast:@"守护成功"];
+            [self headerRefresh];
+            break;
+        case WXErrCodeUserCancel:
+            [self toast:@"取消支付"];
+            break;
+        default:
+            [self toast:@"支付失败"];
+            break;
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -211,7 +243,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CXLiveRoomGuardianListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CXLiveRoomGuardianListCellID"];
     CXUserModel *model = self.dataSources[indexPath.row];
-    cell.model = model;
+    cell.userModel = model;
     
     return cell;
 }

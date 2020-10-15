@@ -47,4 +47,23 @@
     
 }
 
+- (void)setUserModel:(CXUserModel *)userModel {
+    _userModel = userModel;
+    
+    [_avatar sd_setImageWithURL:[NSURL URLWithString:userModel.avatar]];
+    _nameLabel.text = userModel.nickname;
+    [_ageBtn setTitle:userModel.age forState:UIControlStateNormal];
+    [_locationBtn setTitle:[NSString stringWithFormat:@"%@,%@",userModel.city, userModel.city_two] forState:UIControlStateNormal];
+    if (userModel.sex.intValue == 1) { // 男
+        [_ageBtn setImage:[UIImage imageNamed:@"nan2"] forState:UIControlStateNormal];
+        _ageBtn.backgroundColor = UIColorHex(0x3F99FF);
+    } else {
+        [_ageBtn setImage:[UIImage imageNamed:@"nv2"] forState:UIControlStateNormal];
+        _ageBtn.backgroundColor = UIColorHex(0xEB76E4);
+    }
+    
+    _numberLabel.text = [NSString stringWithFormat:@"亲密度：%@", userModel.intimacy];
+    _expireLabel.text = [NSString stringWithFormat:@"还有%@天到期", userModel.countdown_day.stringValue];
+}
+
 @end

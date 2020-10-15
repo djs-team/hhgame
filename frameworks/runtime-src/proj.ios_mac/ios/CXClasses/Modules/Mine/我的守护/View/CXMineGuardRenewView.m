@@ -75,7 +75,8 @@
                 weakSelf.automaticBtn.hidden = YES;
             }
             weakSelf.guardUserLabel.text = [NSString stringWithFormat:@"%@(ID:%@)",responseObject[@"data"][@"nickname"], weakSelf.userId];
-            // self.timeLabel.text = [NSString stringWithFormat:@"守护到期时间：%@", user.end_time];
+//             self.timeLabel.text = [NSString stringWithFormat:@"守护到期时间：%@", user.end_time];
+            weakSelf.timeLabel.text = @"";
             [weakSelf.mainTableView reloadData];
         }
     }];

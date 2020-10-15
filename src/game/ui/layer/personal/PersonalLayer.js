@@ -80,13 +80,22 @@ load('game/ui/layer/personal/PersonalLayer', function () {
             });
         },
         onInitUserData: function (data) {
-            cc.log("=================onInitUserData" + JSON.stringify(data))
+
+            if (data.hasOwnProperty('_nameUpdate')) {
+
+                if(data._nameUpdate != 0)
+                    this.updateNameBtn.setVisible(false)
+                else
+                    this.updateNameBtn.setVisible(true)
+
+            }
 
             if (data.hasOwnProperty('pname')) {
 
                 this.namePnl.getChildByName('nameText').setString(data.pname)
 
             }
+
             if (data.hasOwnProperty('pid')) {
 
                 this.idPnl.getChildByName('idVale').setString(data.pid)
@@ -127,14 +136,7 @@ load('game/ui/layer/personal/PersonalLayer', function () {
 
         onUpdateNameClick: function () {
 
-            let _nameUpdate = appInstance.dataManager().getUserData().nameUpdate
-            if (_nameUpdate != 0) {
-                cc.log('can not updateName!!')
-                return
-            }
-
             this.updateNamePnl.setVisible(true)
-
         },
 
         onCloseUpdateNameClick: function () {

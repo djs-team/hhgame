@@ -93,9 +93,9 @@ public class FriendApplyAdapter extends BaseBindingAdapter<ApplyFriendBean, Item
         ViewBindUtils.setVisible(holder.binding.tvLocation, !TextUtils.isEmpty(location));
         ViewBindUtils.setText(holder.binding.tvDesc, item.getIntro());
         ViewBindUtils.setVisible(holder.binding.tvDesc, !TextUtils.isEmpty(item.getIntro()));
-//        ViewBindUtils.setText(holder.binding.tvDate, TimeUtils.time2Date(item.getCtime(), "MM月dd日"));
-        ViewBindUtils.setText(holder.binding.tvDate, item.getCtime());
+        ViewBindUtils.setText(holder.binding.tvDate, TimeUtils.time2Date(item.getCtime(), "MM-dd"));
         ViewBindUtils.setText(holder.binding.tvApplyDesc, type.equals("1") ? "请求和你成为好友" : "申请成为ta的好友");
+        ViewBindUtils.setText(holder.binding.tvId, "ID:" + item.getUser_id());
         String mStatus = item.getMstatus();
         if (mStatus.equals("1")) {
             ViewBindUtils.setText(holder.binding.tvOverdue, type.equals("1") ? "已添加" : "已成为好友");

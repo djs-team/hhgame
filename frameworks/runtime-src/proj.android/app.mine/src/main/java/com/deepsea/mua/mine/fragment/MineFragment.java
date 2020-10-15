@@ -313,7 +313,6 @@ public class MineFragment extends BaseFragment<FragmentMineBinding> {
         mViewModel.createapprove().observe(this, new BaseObserver<BaseApiResult>() {
             @Override
             public void onSuccess(BaseApiResult result) {
-                toastShort(result.getDesc());
                 if (result.getCode() == 200) {
                     mBinding.authTv.setSelected(true);
                     mBinding.authTv.setText("已认证");

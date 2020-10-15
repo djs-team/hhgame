@@ -393,7 +393,8 @@
                         android:id="@+id/phone_bind_layout"
                         android:layout_width="match_parent"
                         android:layout_height="46dp"
-                        android:background="@color/white">
+                        android:background="@color/white"
+                        android:visibility="gone">
 
                         <ImageView
                             android:id="@+id/iv_phone_bind"

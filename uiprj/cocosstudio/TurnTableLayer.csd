@@ -929,8 +929,44 @@
                         <PreSize X="1.4600" Y="1.4600" />
                         <FileData Type="Normal" Path="turntable/zphd_1_4.png" Plist="" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Image_24" ActionTag="608176967" Tag="336" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="-46.0000" RightMargin="-46.0000" TopMargin="-46.0000" BottomMargin="-46.0000" LeftEage="15" RightEage="15" TopEage="15" BottomEage="15" Scale9OriginX="15" Scale9OriginY="15" Scale9Width="262" Scale9Height="262" ctype="ImageViewObjectData">
+                      <AbstractNodeData Name="turnPointStartImg" ActionTag="608176967" Tag="336" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="-46.0000" RightMargin="-46.0000" TopMargin="-46.0000" BottomMargin="-46.0000" LeftEage="15" RightEage="15" TopEage="15" BottomEage="15" Scale9OriginX="15" Scale9OriginY="15" Scale9Width="262" Scale9Height="262" ctype="ImageViewObjectData">
                         <Size X="292.0000" Y="292.0000" />
+                        <Children>
+                          <AbstractNodeData Name="videoImg" Visible="False" ActionTag="424781291" Tag="151" IconVisible="False" LeftMargin="112.9602" RightMargin="154.0398" TopMargin="167.6228" BottomMargin="102.3772" LeftEage="8" RightEage="8" TopEage="7" BottomEage="7" Scale9OriginX="8" Scale9OriginY="7" Scale9Width="9" Scale9Height="8" ctype="ImageViewObjectData">
+                            <Size X="25.0000" Y="22.0000" />
+                            <Children>
+                              <AbstractNodeData Name="Text_2" ActionTag="-1280758553" Tag="153" IconVisible="False" LeftMargin="26.5266" RightMargin="-49.5266" TopMargin="1.7700" BottomMargin="4.2300" FontSize="16" LabelText="看广告" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                                <Size X="48.0000" Y="16.0000" />
+                                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                                <Position X="50.5266" Y="12.2300" />
+                                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                                <CColor A="255" R="255" G="255" B="255" />
+                                <PrePosition X="2.0211" Y="0.5559" />
+                                <PreSize X="1.9200" Y="0.7273" />
+                                <OutlineColor A="255" R="255" G="0" B="0" />
+                                <ShadowColor A="255" R="110" G="110" B="110" />
+                              </AbstractNodeData>
+                            </Children>
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position X="125.4602" Y="113.3772" />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition X="0.4297" Y="0.3883" />
+                            <PreSize X="0.0856" Y="0.0753" />
+                            <FileData Type="Normal" Path="turntable/zphd_15.png" Plist="" />
+                          </AbstractNodeData>
+                          <AbstractNodeData Name="turnFreeText" ActionTag="-948904107" Tag="152" IconVisible="False" LeftMargin="127.0874" RightMargin="124.9126" TopMargin="164.1058" BottomMargin="107.8942" FontSize="20" LabelText="免费" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                            <Size X="40.0000" Y="20.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position X="147.0874" Y="117.8942" />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition X="0.5037" Y="0.4037" />
+                            <PreSize X="0.1370" Y="0.0685" />
+                            <OutlineColor A="255" R="255" G="0" B="0" />
+                            <ShadowColor A="255" R="110" G="110" B="110" />
+                          </AbstractNodeData>
+                        </Children>
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="100.0000" Y="100.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -938,6 +974,16 @@
                         <PrePosition X="0.5000" Y="0.5000" />
                         <PreSize X="1.4600" Y="1.4600" />
                         <FileData Type="Normal" Path="turntable/zphd_1_5.png" Plist="" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="turnPointAssImg" Visible="False" ActionTag="-1434358652" Tag="150" IconVisible="False" LeftMargin="-1.5000" RightMargin="-1.5000" TopMargin="-45.0000" BottomMargin="-3.0000" LeftEage="66" RightEage="66" TopEage="81" BottomEage="81" Scale9OriginX="66" Scale9OriginY="81" Scale9Width="71" Scale9Height="86" ctype="ImageViewObjectData">
+                        <Size X="203.0000" Y="248.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="100.0000" Y="121.0000" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="0.5000" Y="0.6050" />
+                        <PreSize X="1.0150" Y="1.2400" />
+                        <FileData Type="Normal" Path="turntable/zphd_1_1.png" Plist="" />
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />

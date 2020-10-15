@@ -25,14 +25,14 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
                 'topPnl/explainBtn': { },
                 'topPnl/recordBtn': { onClicked: this.onRecordClick },
 
-
-
                 'bmPnl/awardsPnl/awardsUserDataNd': {},
                 'bmPnl/awardsPnl/awardsUserDataNd/awardsUserDataPnl': {},
                 'bmPnl/awardsPnl/userDataCell': {},
                 'bmPnl/zhuanPnl': {},
                 'bmPnl/zhuanPnl/pointPnl': { onClicked: this.onTurnPointClick},
                 'bmPnl/zhuanPnl/pointPnl/TurnPointImg': { },
+                'bmPnl/zhuanPnl/pointPnl/turnPointStartImg': { },
+                'bmPnl/zhuanPnl/pointPnl/turnPointAssImg': { },
                 'bmPnl/zhuanPnl/turnTablePic': {},
                 'bmPnl/zhuanPnl/turnTablePic/goodsNd': {},
                 'bmPnl/zhuanPnl/turnTablePic/pointNd0': {},
@@ -170,8 +170,31 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
                 this._goodsArray['goods_' + i] = this.goodsNd.getChildByName('goods' + i)
             }
 
+            this.onUpdateTurnPointImg()
             this.initZhuanView(data.configList)
             this.updateUserDataView(data.luckyPrize)
+        },
+
+        onUpdateTurnPointImg: function () {
+
+            if(this._canTurnTableStatus == 2){
+                this.TurnPointImg.setVisible(false)
+                this.turnPointStartImg.setVisible(false)
+                this.turnPointAssImg.setVisible(true)
+            }else{
+                this.TurnPointImg.setVisible(true)
+                this.turnPointStartImg.setVisible(true)
+                this.turnPointAssImg.setVisible(false)
+                if(this._canTurnTableStatus == 0){
+                    this.turnPointStartImg.getChildByName('turnFreeText').setVisible(true)
+                    this.turnPointStartImg.getChildByName('videoImg').setVisible(false)
+                }else{
+                    this.turnPointStartImg.getChildByName('turnFreeText').setVisible(false)
+                    this.turnPointStartImg.getChildByName('videoImg').setVisible(true)
+                }
+
+            }
+
         },
 
         onTurnPointClick: function () {
@@ -370,6 +393,8 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
             this.awardsVal.setString('x'+data.propNum)
 
             this._canTurnTableStatus = data.code
+            this.onUpdateTurnPointImg()
+            
             this.awardsPnl.setVisible(false)
             this.acceptedPnl.setVisible(true)
 

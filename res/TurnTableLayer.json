@@ -539,7 +539,7 @@
               "Y": 0.1555
             },
             "PreSize": {
-              "X": 0.1563,
+              "X": 0.1562,
               "Y": 0.725
             },
             "LeftMargin": 1077.3888,
@@ -4091,7 +4091,7 @@
                       "Y": 0.4947
                     },
                     "PreSize": {
-                      "X": 0.1563,
+                      "X": 0.1562,
                       "Y": 0.2778
                     },
                     "LeftMargin": 258.912,
@@ -6208,8 +6208,9 @@
                         "ctype": "TextObjectData"
                       },
                       {
+                        "IsCustomSize": true,
                         "FontSize": 20,
-                        "LabelText": "xxxxxxxxxxxxxxxxxx",
+                        "LabelText": "xxxxxxxxxxxxxxxxxxxx",
                         "HorizontalAlignmentType": "HT_Center",
                         "VerticalAlignmentType": "VT_Center",
                         "OutlineColor": {
@@ -6246,17 +6247,17 @@
                           "Y": 0.432
                         },
                         "PreSize": {
-                          "X": 0.3666,
+                          "X": 0.4521,
                           "Y": 0.5
                         },
-                        "LeftMargin": 273.73,
-                        "RightMargin": 37.27,
+                        "LeftMargin": 252.73,
+                        "RightMargin": 16.27,
                         "TopMargin": 12.7202,
                         "BottomMargin": 7.2798,
                         "Tag": 760,
                         "ActionTag": 1715887122,
                         "Size": {
-                          "X": 180.0,
+                          "X": 222.0,
                           "Y": 20.0
                         },
                         "Name": "awardsText",

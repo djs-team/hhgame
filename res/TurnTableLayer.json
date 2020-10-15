@@ -249,20 +249,20 @@
                   "Plist": ""
                 },
                 "PressedFileData": {
-                  "Type": "Default",
-                  "Path": "Default/Button_Press.png",
+                  "Type": "Normal",
+                  "Path": "turntable/yjs_8.png",
                   "Plist": ""
                 },
                 "NormalFileData": {
-                  "Type": "Default",
-                  "Path": "Default/Button_Normal.png",
+                  "Type": "Normal",
+                  "Path": "turntable/yjs_8.png",
                   "Plist": ""
                 },
                 "Scale9Enable": true,
                 "Scale9OriginX": 15,
                 "Scale9OriginY": 11,
-                "Scale9Width": 16,
-                "Scale9Height": 14,
+                "Scale9Width": 10,
+                "Scale9Height": 21,
                 "OutlineColor": {
                   "G": 0,
                   "B": 0
@@ -280,8 +280,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 1078.0497,
-                  "Y": 673.0487
+                  "X": 1140.05,
+                  "Y": 676.05
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -290,17 +290,17 @@
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.8422,
-                  "Y": 0.9348
+                  "X": 0.8907,
+                  "Y": 0.939
                 },
                 "PreSize": {
-                  "X": 0.0359,
-                  "Y": 0.05
+                  "X": 0.0312,
+                  "Y": 0.0597
                 },
-                "LeftMargin": 1055.0497,
-                "RightMargin": 178.9503,
-                "TopMargin": 28.9513,
-                "BottomMargin": 655.0487,
+                "LeftMargin": 1120.05,
+                "RightMargin": 119.95,
+                "TopMargin": 22.45,
+                "BottomMargin": 654.55,
                 "Tag": 261,
                 "Children": [
                   {
@@ -322,31 +322,27 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 24.0132,
-                      "Y": 15.2067
+                      "X": 24.01,
+                      "Y": -9.79
                     },
                     "Scale": {
                       "ScaleX": 1.0,
                       "ScaleY": 1.0
                     },
-                    "CColor": {
-                      "R": 0,
-                      "G": 0,
-                      "B": 0
-                    },
+                    "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.522,
-                      "Y": 0.4224
+                      "X": 0.6003,
+                      "Y": -0.2277
                     },
                     "PreSize": {
-                      "X": 1.7391,
-                      "Y": 0.5556
+                      "X": 2.0,
+                      "Y": 0.4651
                     },
-                    "LeftMargin": -15.9868,
-                    "RightMargin": -18.0132,
-                    "TopMargin": 10.7933,
-                    "BottomMargin": 5.2067,
+                    "LeftMargin": -15.99,
+                    "RightMargin": -24.01,
+                    "TopMargin": 42.79,
+                    "BottomMargin": -19.79,
                     "Tag": 262,
                     "ActionTag": -236244572,
                     "Size": {
@@ -359,15 +355,15 @@
                 ],
                 "ActionTag": 1477769825,
                 "Size": {
-                  "X": 46.0,
-                  "Y": 36.0
+                  "X": 40.0,
+                  "Y": 43.0
                 },
                 "Name": "explainBtn",
                 "ctype": "ButtonObjectData"
               },
               {
                 "FontSize": 14,
-                "ButtonText": "Button",
+                "ButtonText": "",
                 "TextColor": {
                   "R": 65,
                   "G": 65,
@@ -379,20 +375,20 @@
                   "Plist": ""
                 },
                 "PressedFileData": {
-                  "Type": "Default",
-                  "Path": "Default/Button_Press.png",
+                  "Type": "Normal",
+                  "Path": "turntable/yjs_9.png",
                   "Plist": ""
                 },
                 "NormalFileData": {
-                  "Type": "Default",
-                  "Path": "Default/Button_Normal.png",
+                  "Type": "Normal",
+                  "Path": "turntable/yjs_9.png",
                   "Plist": ""
                 },
                 "Scale9Enable": true,
                 "Scale9OriginX": 15,
                 "Scale9OriginY": 11,
-                "Scale9Width": 16,
-                "Scale9Height": 14,
+                "Scale9Width": 1,
+                "Scale9Height": 18,
                 "OutlineColor": {
                   "G": 0,
                   "B": 0
@@ -410,8 +406,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 1184.6852,
-                  "Y": 670.5553
+                  "X": 1225.6899,
+                  "Y": 676.05
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -420,17 +416,17 @@
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.9255,
-                  "Y": 0.9313
+                  "X": 0.9576,
+                  "Y": 0.939
                 },
                 "PreSize": {
-                  "X": 0.0359,
-                  "Y": 0.05
+                  "X": 0.0234,
+                  "Y": 0.0556
                 },
-                "LeftMargin": 1161.6852,
-                "RightMargin": 72.3148,
-                "TopMargin": 31.4447,
-                "BottomMargin": 652.5553,
+                "LeftMargin": 1210.6899,
+                "RightMargin": 39.3101,
+                "TopMargin": 23.95,
+                "BottomMargin": 656.05,
                 "Tag": 264,
                 "Children": [
                   {
@@ -454,31 +450,27 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 47.2585,
-                      "Y": 23.5402
+                      "X": 22.26,
+                      "Y": -9.79
                     },
                     "Scale": {
                       "ScaleX": 1.0,
                       "ScaleY": 1.0
                     },
-                    "CColor": {
-                      "R": 0,
-                      "G": 0,
-                      "B": 0
-                    },
+                    "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 1.0274,
-                      "Y": 0.6539
+                      "X": 0.742,
+                      "Y": -0.2447
                     },
                     "PreSize": {
-                      "X": 1.7391,
-                      "Y": 0.5556
+                      "X": 2.6667,
+                      "Y": 0.5
                     },
-                    "LeftMargin": 7.2585,
-                    "RightMargin": -41.2585,
-                    "TopMargin": 2.4598,
-                    "BottomMargin": 13.5402,
+                    "LeftMargin": -17.74,
+                    "RightMargin": -32.26,
+                    "TopMargin": 39.79,
+                    "BottomMargin": -19.79,
                     "Tag": 265,
                     "ActionTag": -134009095,
                     "Size": {
@@ -491,8 +483,8 @@
                 ],
                 "ActionTag": 943879892,
                 "Size": {
-                  "X": 46.0,
-                  "Y": 36.0
+                  "X": 30.0,
+                  "Y": 40.0
                 },
                 "Name": "recordBtn",
                 "ctype": "ButtonObjectData"
@@ -539,7 +531,7 @@
               "Y": 0.1555
             },
             "PreSize": {
-              "X": 0.1563,
+              "X": 0.1562,
               "Y": 0.725
             },
             "LeftMargin": 1077.3888,
@@ -4091,7 +4083,7 @@
                       "Y": 0.4947
                     },
                     "PreSize": {
-                      "X": 0.1563,
+                      "X": 0.1562,
                       "Y": 0.2778
                     },
                     "LeftMargin": 258.912,
@@ -7687,9 +7679,9 @@
         "common/jinbi.png",
         "common/texiangguang.png",
         "Default/Button_Disable.png",
-        "Default/Button_Normal.png",
-        "Default/Button_Press.png",
         "font/hkhbtW12.ttc",
+        "turntable/yjs_8.png",
+        "turntable/yjs_9.png",
         "turntable/zphd_1_1.png",
         "turntable/zphd_1_4.png",
         "turntable/zphd_1_5.png",

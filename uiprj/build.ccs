@@ -963,6 +963,8 @@
         </Folder>
         <Folder Name="turntable">
           <Image Name="test.png" />
+          <Image Name="yjs_8.png" />
+          <Image Name="yjs_9.png" />
           <Image Name="zphd_1.png" />
           <Image Name="zphd_1_1.png" />
           <Image Name="zphd_1_2.png" />

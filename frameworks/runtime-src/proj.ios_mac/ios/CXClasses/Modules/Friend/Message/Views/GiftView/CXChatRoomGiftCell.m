@@ -15,15 +15,16 @@
     // Initialization code
     
     self.bgView.layer.masksToBounds = YES;
-    self.bgView.layer.cornerRadius = 22;
-    self.bgView.layer.borderColor = [UIColorHex(0xFFB5AB) CGColor];
+    self.bgView.layer.cornerRadius = 8;
     self.bgView.layer.borderWidth = 1;
-    self.bgView.backgroundColor = [UIColor whiteColor];
+    self.bgView.layer.borderColor = [UIColorHex(0xEEEEEE) CGColor];
+    self.bgView.backgroundColor = UIColorHex(0xEEEEEE);
     
-    self.numberLabel.layer.masksToBounds = YES;
-    self.numberLabel.layer.cornerRadius = 8;
-    self.numberLabel.layer.borderColor = [UIColorHex(0xFFB5AB) CGColor];
-    self.numberLabel.layer.borderWidth = 1;
+    self.numberLabel.hidden = YES;
+//    self.numberLabel.layer.masksToBounds = YES;
+//    self.numberLabel.layer.cornerRadius = 8;
+//    self.numberLabel.layer.borderColor = [UIColorHex(0xFFB5AB) CGColor];
+//    self.numberLabel.layer.borderWidth = 1;
 }
 
 - (IBAction)didSelectedAction:(UIButton *)sender {
@@ -39,30 +40,24 @@
     self.gift_nameLabel.text = model.gift_name;
     self.gift_valueLabel.text = [NSString stringWithFormat:@"%@玫瑰",model.gift_coin];
     
-    if ([model.gift_number integerValue] > 0) {
-        self.numberLabel.text = [NSString stringWithFormat:@"+%@",model.gift_number];
-        self.numberLabel.textColor = UIColorHex(0xF8705F);
-        self.numberLabel.layer.borderColor = [UIColor colorWithHexString:@"#F8705F"].CGColor;
-    } else {
-        self.numberLabel.text = [NSString stringWithFormat:@"-%@",model.gift_number];
-        self.numberLabel.textColor = UIColorHex(0x36C492);
-        self.numberLabel.layer.borderColor = [UIColor colorWithHexString:@"#36C492"].CGColor;
-        
-    }
+//    if ([model.gift_number integerValue] > 0) {
+//        self.numberLabel.text = [NSString stringWithFormat:@"+%@",model.gift_number];
+//        self.numberLabel.textColor = UIColorHex(0xF8705F);
+//        self.numberLabel.layer.borderColor = [UIColor colorWithHexString:@"#F8705F"].CGColor;
+//    } else {
+//        self.numberLabel.text = [NSString stringWithFormat:@"-%@",model.gift_number];
+//        self.numberLabel.textColor = UIColorHex(0x36C492);
+//        self.numberLabel.layer.borderColor = [UIColor colorWithHexString:@"#36C492"].CGColor;
+//
+//    }
 }
 
 - (void)setIsSelected:(BOOL)isSelected {
     if (isSelected == YES) {
-        self.bgView.layer.masksToBounds = YES;
-        self.bgView.layer.cornerRadius = 22;
         self.bgView.layer.borderColor = [UIColorHex(0xFFB5AB) CGColor];
-        self.bgView.layer.borderWidth = 1;
         self.bgView.backgroundColor = [UIColor whiteColor];
     } else {
-        self.bgView.layer.masksToBounds = YES;
-        self.bgView.layer.cornerRadius = 22;
         self.bgView.layer.borderColor = [UIColorHex(0xEEEEEE) CGColor];
-        self.bgView.layer.borderWidth = 1;
         self.bgView.backgroundColor = UIColorHex(0xEEEEEE);
     }
 }

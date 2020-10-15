@@ -64,8 +64,8 @@
         self.borderView.hidden = YES;
     } else {
         self.giftCountLabel.hidden = NO;
-        self.giftXLabel.hidden = NO;
-        self.borderView.hidden = NO;
+        self.giftXLabel.hidden = YES;
+        self.borderView.hidden = YES;
         
         [self.gifIconView sd_setImageWithURL:[NSURL URLWithString:model.gift_image] placeholderImage:[UIImage imageNamed:@"gift_logo_placeholder"]];
         self.giftNameLabel.text = model.gift_name;

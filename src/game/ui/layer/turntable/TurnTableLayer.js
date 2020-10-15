@@ -200,7 +200,7 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
         },
 
         onTurnPointClick: function () {
-            tabState = 0;
+            this.tabState = 0;
             this.pointPnl.setTouchEnabled(false)
             if (!this.onCanTurnPointFunction())
                 return
@@ -381,11 +381,11 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
         },
         onRewardVideoCallback: function (msg) {
             if (msg == "0") {
-                if (tabState == 0) {
-                    tabState = 1;
+                if (this.tabState == 0) {
+                    this.tabState = 1;
                     this.onTurnPointFunction()
                 } else {
-                    tabState = 0;
+                    this.tabState = 0;
                     let msg = {}
                     msg.turntableId = appInstance.dataManager().getGameData().turntableId
                     msg.type = 1

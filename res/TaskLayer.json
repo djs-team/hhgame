@@ -111,7 +111,6 @@
               "X": 1280.0,
               "Y": 720.0
             },
-            "VisibleForFrame": false,
             "Name": "dele",
             "ctype": "ImageViewObjectData"
           },
@@ -1847,7 +1846,7 @@
                               },
                               {
                                 "IsCustomSize": true,
-                                "FontSize": 25,
+                                "FontSize": 23,
                                 "LabelText": "x666",
                                 "HorizontalAlignmentType": "HT_Center",
                                 "OutlineColor": {
@@ -1867,7 +1866,7 @@
                                 },
                                 "Position": {
                                   "X": 118.722,
-                                  "Y": 27.8476
+                                  "Y": 28.85
                                 },
                                 "Scale": {
                                   "ScaleX": 1.0,
@@ -1881,7 +1880,7 @@
                                 "IconVisible": false,
                                 "PrePosition": {
                                   "X": 0.1554,
-                                  "Y": 0.2225
+                                  "Y": 0.2305
                                 },
                                 "PreSize": {
                                   "X": 0.1047,
@@ -1889,13 +1888,13 @@
                                 },
                                 "LeftMargin": 78.722,
                                 "RightMargin": 605.278,
-                                "TopMargin": 82.0232,
-                                "BottomMargin": 12.5434,
+                                "TopMargin": 81.0199,
+                                "BottomMargin": 13.545,
                                 "Tag": 462,
                                 "ActionTag": -969816681,
                                 "Size": {
                                   "X": 80.0,
-                                  "Y": 30.6083
+                                  "Y": 30.61
                                 },
                                 "Name": "awardsVal",
                                 "ctype": "TextObjectData"
@@ -3236,17 +3235,17 @@
                                 },
                                 "PreSize": {
                                   "X": 0.8235,
-                                  "Y": 0.3409
+                                  "Y": 0.4205
                                 },
                                 "LeftMargin": 5.7,
                                 "RightMargin": 9.3,
-                                "TopMargin": 91.55,
-                                "BottomMargin": -33.55,
+                                "TopMargin": 88.05,
+                                "BottomMargin": -37.05,
                                 "Tag": 154,
                                 "ActionTag": 614639366,
                                 "Size": {
                                   "X": 70.0,
-                                  "Y": 30.0
+                                  "Y": 37.0
                                 },
                                 "Name": "awardsVal",
                                 "ctype": "TextObjectData"
@@ -3481,17 +3480,17 @@
                                 },
                                 "PreSize": {
                                   "X": 0.2481,
-                                  "Y": 0.6571
+                                  "Y": 0.8571
                                 },
                                 "LeftMargin": 66.6504,
                                 "RightMargin": 72.7227,
-                                "TopMargin": 6.3617,
-                                "BottomMargin": 5.6383,
+                                "TopMargin": 2.8617,
+                                "BottomMargin": 2.1383,
                                 "Tag": 159,
                                 "ActionTag": -760519688,
                                 "Size": {
                                   "X": 46.0,
-                                  "Y": 23.0
+                                  "Y": 30.0
                                 },
                                 "Name": "progressValueText",
                                 "ctype": "TextObjectData"

@@ -167,7 +167,7 @@
               <AbstractNodeData Name="rightPnl" ActionTag="1911174910" Tag="316" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="307.9880" RightMargin="181.0120" TopMargin="88.1667" BottomMargin="71.8333" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="791.0000" Y="560.0000" />
                 <Children>
-                  <AbstractNodeData Name="everyTasksPnl" Visible="False" ActionTag="1051908061" Tag="48" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                  <AbstractNodeData Name="everyTasksPnl" ActionTag="1051908061" Tag="48" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="791.0000" Y="560.0000" />
                     <Children>
                       <AbstractNodeData Name="topPnl" ActionTag="912188927" Tag="317" IconVisible="False" LeftMargin="29.2311" RightMargin="3.7689" TopMargin="17.0883" BottomMargin="409.9203" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" LeftEage="8" RightEage="8" TopEage="21" BottomEage="21" Scale9OriginX="-8" Scale9OriginY="-21" Scale9Width="16" Scale9Height="42" ctype="PanelObjectData">
@@ -186,19 +186,19 @@
                           <AbstractNodeData Name="activityPg" ActionTag="1298821655" Tag="318" IconVisible="False" LeftMargin="60.9143" RightMargin="577.0857" TopMargin="18.2520" BottomMargin="12.7394" LeftEage="13" RightEage="13" TopEage="13" BottomEage="13" Scale9OriginX="13" Scale9OriginY="13" Scale9Width="94" Scale9Height="76" ctype="ImageViewObjectData">
                             <Size X="120.0000" Y="102.0000" />
                             <Children>
-                              <AbstractNodeData Name="activityValue" ActionTag="1795308259" Tag="312" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="45.5000" RightMargin="45.5000" TopMargin="26.0968" BottomMargin="50.9032" FontSize="25" LabelText="55" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                                <Size X="29.0000" Y="25.0000" />
+                              <AbstractNodeData Name="activityValue" ActionTag="1795308259" Tag="312" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="40.0000" RightMargin="40.0000" TopMargin="26.0968" BottomMargin="50.9032" IsCustomSize="True" FontSize="25" LabelText="55" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                                <Size X="40.0000" Y="25.0000" />
                                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                                 <Position X="60.0000" Y="63.4032" />
                                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                                 <CColor A="255" R="255" G="255" B="255" />
                                 <PrePosition X="0.5000" Y="0.6216" />
-                                <PreSize X="0.2417" Y="0.2451" />
+                                <PreSize X="0.3333" Y="0.2451" />
                                 <FontResource Type="Normal" Path="font/hkhbtW12.ttc" Plist="" />
                                 <OutlineColor A="255" R="255" G="0" B="0" />
                                 <ShadowColor A="255" R="110" G="110" B="110" />
                               </AbstractNodeData>
-                              <AbstractNodeData Name="Text_26" ActionTag="-1307718500" Tag="583" IconVisible="False" LeftMargin="12.4289" RightMargin="15.5711" TopMargin="63.4486" BottomMargin="20.5514" FontSize="18" LabelText="今日任务度" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                              <AbstractNodeData Name="Text_26" ActionTag="-1307718500" Tag="583" IconVisible="False" LeftMargin="12.4289" RightMargin="15.5711" TopMargin="63.4486" BottomMargin="20.5514" FontSize="18" LabelText="今日活跃度" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                                 <Size X="92.0000" Y="18.0000" />
                                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                                 <Position X="58.4289" Y="29.5514" />

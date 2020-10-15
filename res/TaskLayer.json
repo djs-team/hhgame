@@ -987,6 +987,7 @@
                             "Tag": 318,
                             "Children": [
                               {
+                                "IsCustomSize": true,
                                 "FontSize": 25,
                                 "LabelText": "55",
                                 "FontResource": {
@@ -1027,17 +1028,17 @@
                                   "Y": 0.6216
                                 },
                                 "PreSize": {
-                                  "X": 0.2417,
+                                  "X": 0.3333,
                                   "Y": 0.2451
                                 },
-                                "LeftMargin": 45.5,
-                                "RightMargin": 45.5,
+                                "LeftMargin": 40.0,
+                                "RightMargin": 40.0,
                                 "TopMargin": 26.0968,
                                 "BottomMargin": 50.9032,
                                 "Tag": 312,
                                 "ActionTag": 1795308259,
                                 "Size": {
-                                  "X": 29.0,
+                                  "X": 40.0,
                                   "Y": 25.0
                                 },
                                 "Name": "activityValue",
@@ -1045,7 +1046,7 @@
                               },
                               {
                                 "FontSize": 18,
-                                "LabelText": "今日任务度",
+                                "LabelText": "今日活跃度",
                                 "FontResource": {
                                   "Type": "Normal",
                                   "Path": "font/hkhbtW12.ttc",

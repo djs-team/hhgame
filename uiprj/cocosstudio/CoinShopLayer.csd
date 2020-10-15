@@ -817,7 +817,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="PayType" Visible="False" ActionTag="1937526080" Tag="423" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+          <AbstractNodeData Name="PayType" ActionTag="1937526080" UserData="{&quot;layoutType&quot;:&quot;maxArea&quot;,&quot;screenAlign&quot;:&quot;mid&quot;}" Tag="423" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <Children>
               <AbstractNodeData Name="bgPic" ActionTag="1186128376" Tag="424" IconVisible="False" LeftMargin="349.0095" RightMargin="333.9905" TopMargin="172.2812" BottomMargin="185.7188" Scale9Enable="True" LeftEage="44" RightEage="44" TopEage="43" BottomEage="43" Scale9OriginX="44" Scale9OriginY="43" Scale9Width="48" Scale9Height="47" ctype="ImageViewObjectData">
@@ -830,7 +830,7 @@
                 <PreSize X="0.4664" Y="0.5028" />
                 <FileData Type="Normal" Path="common/bz_2.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="TileBg" ActionTag="1864382507" Tag="425" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="485.0638" RightMargin="468.9362" TopMargin="175.1191" BottomMargin="480.8809" Scale9Enable="True" LeftEage="44" RightEage="32" TopEage="46" BottomEage="10" Scale9OriginX="44" Scale9OriginY="46" Scale9Width="23" Scale9Height="11" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="TileBg" ActionTag="1864382507" Tag="425" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="485.0640" RightMargin="468.9360" TopMargin="175.1191" BottomMargin="480.8809" Scale9Enable="True" LeftEage="44" RightEage="32" TopEage="46" BottomEage="10" Scale9OriginX="44" Scale9OriginY="46" Scale9Width="23" Scale9Height="11" ctype="ImageViewObjectData">
                 <Size X="326.0000" Y="64.0000" />
                 <Children>
                   <AbstractNodeData Name="name" ActionTag="1219715653" Tag="426" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="24.0000" RightMargin="24.0000" TopMargin="13.5000" BottomMargin="13.5000" IsCustomSize="True" FontSize="40" LabelText="支付方式" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -847,7 +847,7 @@
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="648.0638" Y="512.8809" />
+                <Position X="648.0640" Y="512.8809" />
                 <Scale ScaleX="0.6951" ScaleY="0.7950" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5063" Y="0.7123" />

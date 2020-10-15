@@ -40,7 +40,7 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
                 'popUpPnl/addressPnl': {},
                 'popUpPnl/addressPnl/confirmBtn': {onClicked: this.onConfirmClicked},
                 'popUpPnl/addressPnl/updateAddressCloseBtn': {onClicked: this.onCloseUpdateAddressClicked},
-                'PayType': {},
+                'PayType': {onClicked: this.onClosePayTypeClicked },
                 'PayType/bgAli/ivAli': {onClicked: this.onAliPayClick},
                 'PayType/bgWx/ivWx': {onClicked: this.onWxClick},
             }
@@ -431,6 +431,12 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
 
             this.addressPnl.setVisible(false)
 
+        },
+
+
+        onClosePayTypeClicked: function () {
+
+            this.PayType.setVisible(false)
         }
 
     })

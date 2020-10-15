@@ -957,7 +957,8 @@
                 } else {
                     self.redpacketProgressView.redpacketProgressView.progress = 0;
                 }
-                self.redpacketProgressView.redpacketProgressLabel.text = [NSString stringWithFormat:@"%0.f%%", MIN(progress.Progress*100, 100)];
+                int proVlaue = floorf(progress.Progress*100);
+                self.redpacketProgressView.redpacketProgressLabel.text = [NSString stringWithFormat:@"%d%%", MIN(proVlaue, 100)];
             }
                 break;
             case SocketMessageIDNotifyLetterEffectMessage: {

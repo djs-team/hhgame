@@ -38,6 +38,7 @@ load('game/ui/scene/HallScene', function () {
                 'bmPnl/startQuickPnl/startQuickBtn': {onClicked: this.onStartQuickBtnClick},
 
 
+                'leftPnl/invitationPnl': {},
                 'leftPnl/invitationPnl/invitationBtn': {onClicked: this.onInvitationClick},
                 'leftPnl/turnTablePnl/turnTableNd': {},
                 'leftPnl/turnTablePnl/turnTableNd/turnTableBtn': {onClicked: this.onTurnTableClick},
@@ -359,6 +360,31 @@ load('game/ui/scene/HallScene', function () {
             goMsg.pExtend = 'gameHall'
             appInstance.gameAgent().tcpGame().enterTable(goMsg)
             global.localStorage.setIntKey(LocalSave.CoinGamePeopleNum, this._peopleNum)
+        },
+
+        onUpdateHallRedStatus: function (data) {
+
+            if(data.hasOwnProperty('mailFlag'))
+                this.emailBtn.getChildByName('redImg').setVisible(true)
+            else
+                this.emailBtn.getChildByName('redImg').setVisible(false)
+
+            if(data.hasOwnProperty('vipDailyFlag'))
+                this.guiZuBtn.getChildByName('redImg').setVisible(true)
+            else
+                this.guiZuBtn.getChildByName('redImg').setVisible(false)
+
+            if(data.hasOwnProperty('invitationFlag'))
+                this.invitationPnl.getChildByName('redImg').setVisible(true)
+            else
+                this.invitationPnl.getChildByName('redImg').setVisible(false)
+
+            if(data.hasOwnProperty('taskFlag'))
+                this.taskPnl.getChildByName('redImg').setVisible(true)
+            else
+                this.taskPnl.getChildByName('redImg').setVisible(false)
+
+
         },
 
 

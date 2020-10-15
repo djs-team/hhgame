@@ -141,7 +141,6 @@ load('game/public/HttpGame', function () {
 
             appInstance.gameNet().connect(msg.hostip, msg.hostport)
 
-            appInstance.gameAgent().httpGame().checkHallRed()
         },
 
 
@@ -157,9 +156,7 @@ load('game/public/HttpGame', function () {
 
 
         checkHallRedBack: function (msg) {
-            cc.log('   检测大厅红点:::checkHallRed>>>\n' + JSON.stringify(msg))
-
-
+            appInstance.sendNotification(GameEvent.HALL_RED_BACK, msg)
         },
 
         checkSendMsg: function (sendMsg, msg) {

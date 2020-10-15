@@ -401,6 +401,53 @@
                 "TopMargin": 37.45,
                 "BottomMargin": 649.29,
                 "Tag": 136,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "hall/pz_31.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 7,
+                    "Scale9OriginY": 7,
+                    "Scale9Width": 9,
+                    "Scale9Height": 8,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 50.2758,
+                      "Y": 25.9009
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.9668,
+                      "Y": 0.7787
+                    },
+                    "PreSize": {
+                      "X": 0.4423,
+                      "Y": 0.6615
+                    },
+                    "LeftMargin": 38.7758,
+                    "RightMargin": -9.7758,
+                    "TopMargin": -3.6409,
+                    "BottomMargin": 14.9009,
+                    "Tag": 298,
+                    "ActionTag": 1798066918,
+                    "Size": {
+                      "X": 23.0,
+                      "Y": 22.0
+                    },
+                    "Name": "redImg",
+                    "ctype": "ImageViewObjectData"
+                  }
+                ],
                 "ActionTag": 1379166341,
                 "Size": {
                   "X": 52.0,
@@ -597,7 +644,7 @@
                   "Y": 0.9457
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.0625
                 },
                 "LeftMargin": 323.296,
@@ -866,7 +913,7 @@
                   "Y": 0.9458
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.0625
                 },
                 "LeftMargin": 551.08,
@@ -1135,7 +1182,7 @@
                   "Y": 0.9444
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.0625
                 },
                 "LeftMargin": 780.08,
@@ -1482,6 +1529,51 @@
                     },
                     "Name": "fuKaCnt_0",
                     "ctype": "TextObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "hall/pz_31.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 7,
+                    "Scale9OriginY": 7,
+                    "Scale9Width": 9,
+                    "Scale9Height": 8,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 40.2761,
+                      "Y": 35.9009
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.8756,
+                      "Y": 0.9448
+                    },
+                    "PreSize": {
+                      "X": 0.5,
+                      "Y": 0.5789
+                    },
+                    "LeftMargin": 28.7761,
+                    "RightMargin": -5.7761,
+                    "TopMargin": -8.9009,
+                    "BottomMargin": 24.9009,
+                    "Tag": 297,
+                    "ActionTag": 517721033,
+                    "Size": {
+                      "X": 23.0,
+                      "Y": 22.0
+                    },
+                    "Name": "redImg",
+                    "ctype": "ImageViewObjectData"
                   }
                 ],
                 "ActionTag": 1821571772,
@@ -2322,7 +2414,7 @@
                       "Y": 0.0847
                     },
                     "LeftMargin": 1126.0938,
-                    "RightMargin": 10.9063,
+                    "RightMargin": 10.9062,
                     "TopMargin": 300.9403,
                     "BottomMargin": 358.0597,
                     "Tag": 204,
@@ -3060,6 +3152,51 @@
                         },
                         "Name": "Text_16",
                         "ctype": "TextObjectData"
+                      },
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "hall/pz_31.png",
+                          "Plist": ""
+                        },
+                        "Scale9OriginX": 7,
+                        "Scale9OriginY": 7,
+                        "Scale9Width": 9,
+                        "Scale9Height": 8,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 54.7019,
+                          "Y": 41.5549
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.4376,
+                          "Y": 0.6926
+                        },
+                        "PreSize": {
+                          "X": 0.184,
+                          "Y": 0.3667
+                        },
+                        "LeftMargin": 43.2019,
+                        "RightMargin": 58.7981,
+                        "TopMargin": 7.4451,
+                        "BottomMargin": 30.5549,
+                        "Tag": 300,
+                        "ActionTag": -1780783609,
+                        "Size": {
+                          "X": 23.0,
+                          "Y": 22.0
+                        },
+                        "Name": "redImg",
+                        "ctype": "ImageViewObjectData"
                       }
                     ],
                     "ActionTag": -571636638,
@@ -3735,6 +3872,51 @@
                     },
                     "Name": "invitationText",
                     "ctype": "TextObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "hall/pz_31.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 7,
+                    "Scale9OriginY": 7,
+                    "Scale9Width": 9,
+                    "Scale9Height": 8,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 60.2757,
+                      "Y": 60.9
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.7091,
+                      "Y": 0.7165
+                    },
+                    "PreSize": {
+                      "X": 0.2706,
+                      "Y": 0.2588
+                    },
+                    "LeftMargin": 48.7757,
+                    "RightMargin": 13.2243,
+                    "TopMargin": 13.1,
+                    "BottomMargin": 49.9,
+                    "Tag": 299,
+                    "ActionTag": -62467574,
+                    "Size": {
+                      "X": 23.0,
+                      "Y": 22.0
+                    },
+                    "Name": "redImg",
+                    "ctype": "ImageViewObjectData"
                   }
                 ],
                 "ActionTag": -1986727088,
@@ -7495,6 +7677,7 @@
         "hall/dtjm_7.png",
         "hall/dtjm_8.png",
         "hall/pmd_2.png",
+        "hall/pz_31.png",
         "png/hall_bg.png"
       ],
       "ctype": "GameFileData"

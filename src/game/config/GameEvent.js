@@ -67,6 +67,8 @@ load('game/config/GameEvent', function () {
         'GET_ARENAMESSAGE': 'GET_ARENAMESSAGE',
         'MatchJinjiGaming': 'MatchJinjiGaming',
         'URLE_USED_UPDATE': 'URLE_USED_UPDATE',
+        'HALL_RED_GET': 'HALL_RED_GET',
+        'HALL_RED_BACK': 'HALL_RED_BACK',
     }
 
     return GameEvent

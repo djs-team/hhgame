@@ -149,6 +149,8 @@ static AppDelegate s_sharedApplication;
     // 苹果内购监听
 //    [[CXIPAPurchaseManager manager] startManager];
 
+    [[UIApplication sharedApplication] setIdleTimerDisabled: YES];
+    
     return YES;
 }
 //#pragma mark - SKPaymentTransactionObserver
@@ -412,11 +414,13 @@ static AppDelegate s_sharedApplication;
         }
     } else if ([resp isKindOfClass:[SendAuthResp class]]){
         SendAuthResp *resp2 = (SendAuthResp *)resp;
-//        [[NSNotificationCenter defaultCenter] postNotificationName:@"CXLoginLaunchControllerWXLogin" object:resp2];
-        [self weChatLoginSuccess:resp2];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kNSNotificationCenter_CXMySettingWechatBindViewController_weixin object:resp2];
+        if ([CXOCJSBrigeManager manager].wxLoginMethod.length > 0) {
+            [self weChatLoginSuccess:resp2];
+        }
     } else if ([resp isKindOfClass:[SendMessageToWXResp class]]) {
         SendMessageToWXResp *resp2 = (SendMessageToWXResp *)resp;
-//        [[NSNotificationCenter defaultCenter] postNotificationName:@"CXLiveRoomViewControllerWXShare" object:resp2];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"CXLiveRoomViewControllerWXShare" object:resp2];
     }
 }
 

@@ -5,6 +5,7 @@ import android.databinding.DataBindingUtil;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 
 import com.deepsea.mua.core.dialog.BaseDialog;
@@ -98,6 +99,7 @@ public class GuardGroupDialog extends BaseDialog<DialogGuardGroupMineBinding> {
             @Override
             public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
                 page++;
+                Log.d("AG_EX_AV-guardId",guardUserId);
                 roomViewModel.getGuardItemList(page, guardUserId);
             }
         });
@@ -105,6 +107,7 @@ public class GuardGroupDialog extends BaseDialog<DialogGuardGroupMineBinding> {
             @Override
             public void onRefresh(@NonNull RefreshLayout refreshLayout) {
                 page = 0;
+                Log.d("AG_EX_AV-guardId",guardUserId);
                 roomViewModel.getGuardItemList(page, guardUserId);
 
             }

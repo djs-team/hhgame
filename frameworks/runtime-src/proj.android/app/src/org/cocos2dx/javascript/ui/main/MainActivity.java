@@ -80,6 +80,7 @@ import com.hh.game.databinding.ActivityMainBinding;
 import com.hyphenate.EMMessageListener;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMMessage;
+
 import org.cocos2dx.javascript.ui.main.viewmodel.MainViewModel;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -312,8 +313,6 @@ public class MainActivity extends BaseActivity<ActivityMainBinding>
     }
 
 
-
-
     @Override
     protected void onNewIntent(Intent intent) {
         int index = intent.getIntExtra("index", 0);
@@ -473,6 +472,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding>
 
             mVideoManager = null;
         }
+        LogoutUtils.logout(mContext);
 
     }
 

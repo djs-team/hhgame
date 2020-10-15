@@ -172,7 +172,6 @@
             cell.stateLabel.hidden = YES;
         }
     } else {
-        cell.fromTipLabel.hidden = NO;
         [cell.fromTipLabel setTitle:@"申请成为Ta的好友" forState:UIControlStateNormal];
         cell.rejestButton.hidden = YES;
         cell.agreeButton.hidden = YES;
@@ -181,7 +180,6 @@
         if ([model.mstatus integerValue] == 2) {
             cell.stateLabel.text = @" 对方已拒绝礼物已退回 ";
         } else if ([model.mstatus integerValue] == 1) {
-            cell.fromTipLabel.hidden = YES;
             cell.stateLabel.text = @"  已成为好友  ";
         } else if ([model.mstatus integerValue] == 4) {
             cell.stateLabel.text = @"  已过期  ";

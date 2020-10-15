@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)shared;
 
-- (void)cache:(NSString*)urlString;
+- (void)cache:(NSString*)urlString completionBlock:(void ( ^ _Nonnull )(BOOL isSuccess))completionBlock;
 - (BOOL)isCached:(NSString*)urlString;
 
 - (SVGALoadOperator*)load:(NSString*)urlString completionBlock:(void ( ^ _Nonnull )(SVGAVideoEntity * _Nullable videoItem))completionBlock failureBlock:(void ( ^ _Nullable)(NSError * _Nullable error))failureBlock;

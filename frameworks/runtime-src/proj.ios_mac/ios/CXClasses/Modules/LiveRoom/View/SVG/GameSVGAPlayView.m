@@ -103,7 +103,6 @@ static CGSize fitSize(CGSize frameSize, CGSize contentSize)
         SocketMessageGiftData * giftInfo = self.urlQueue.firstObject;
         GiftInfoClassType class_type = giftInfo.ClassType.integerValue;
         [self.urlQueue removeFirstObject];
-        
         NSString * key = giftInfo.GiftAnimation;
         if ([[SVGAManager shared] isCached:key]) {
             __weak typeof (self) wself = self;
@@ -114,10 +113,19 @@ static CGSize fitSize(CGSize frameSize, CGSize contentSize)
                 self.isPlaying = NO;
                 [wself tryPlay];
             }];
-        }
-        else {
-            [[SVGAManager shared] cache:key];
-            [self tryPlay];
+        } else {
+            __weak typeof (self) wself = self;
+            [[SVGAManager shared] cache:key completionBlock:^(BOOL isSuccess) {
+                if (isSuccess) {
+                    wself.isPlaying = YES;
+                    [[SVGAManager shared] load:key completionBlock:^(SVGAVideoEntity * _Nullable videoItem) {
+                        [wself play:videoItem withType:class_type];
+                    } failureBlock:^(NSError * _Nullable error) {
+                        wself.isPlaying = NO;
+                        [wself tryPlay];
+                    }];
+                }
+            }];
         }
     }
 }

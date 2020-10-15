@@ -51,8 +51,8 @@ public class GuardGroupAdapter extends BaseBindingAdapter<GuardItem, ItemGuardGr
         }
         ViewBindUtils.setVisible(holder.binding.ivLocation, !TextUtils.isEmpty(user.getCity()));
         ViewBindUtils.setText(holder.binding.tvIntimacy, "亲密值" + item.getIntimacy());
-        ViewBindUtils.setText(holder.binding.tvDueDate, "还有" + item.getDays() + "到期");
-        ViewBindUtils.setText(holder.binding.tvDueDate, "守护到期时间：" + item.getDeadlineTime());
+        ViewBindUtils.setText(holder.binding.tvDueDate, "还有" + item.getDays() + "天到期");
+        ViewBindUtils.setText(holder.binding.tvDateLine, "守护到期时间：" + item.getDeadlineTime());
 
     }
 }

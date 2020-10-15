@@ -52,13 +52,12 @@ public class AdManage {
     }
 
     private boolean mHasShowDownloadActive = false;
-    boolean mIsExpress = true;
 
     public void loadAd(final String codeId, String userId, OnLoadAdListener listener) {
         this.onLoadAdListener = listener;
         //step4:创建广告请求参数AdSlot,具体参数含义参考文档
         AdSlot adSlot;
-        if (mIsExpress) {
+
             //个性化模板广告需要传入期望广告view的宽、高，单位dp，
             adSlot = new AdSlot.Builder()
                     .setCodeId(codeId)
@@ -71,18 +70,7 @@ public class AdManage {
                     .setMediaExtra("media_extra") //附加参数，可选
                     .setOrientation(TTAdConstant.HORIZONTAL) //必填参数，期望视频的播放方向：TTAdConstant.HORIZONTAL 或 TTAdConstant.VERTICAL
                     .build();
-        } else {
-            //模板广告需要设置期望个性化模板广告的大小,单位dp,代码位是否属于个性化模板广告，请在穿山甲平台查看
-            adSlot = new AdSlot.Builder()
-                    .setCodeId(codeId)
-                    .setSupportDeepLink(true)
-                    .setRewardName("玫瑰") //奖励的名称
-                    .setRewardAmount(2)  //奖励的数量
-                    .setUserID(userId)//用户id,必传参数
-                    .setMediaExtra("media_extra") //附加参数，可选
-                    .setOrientation(TTAdConstant.HORIZONTAL) //必填参数，期望视频的播放方向：TTAdConstant.HORIZONTAL 或 TTAdConstant.VERTICAL
-                    .build();
-        }
+
         if (mTTAdNative == null) {
 
         }

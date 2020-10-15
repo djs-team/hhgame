@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.inputmethod.EditorInfo;
 
 import com.deepsea.mua.core.utils.JsonConverter;
-import com.deepsea.mua.core.utils.KeyboardUtils;
 import com.deepsea.mua.core.utils.UiUtils;
 import com.deepsea.mua.core.websocket.WsocketListener;
 import com.deepsea.mua.core.websocket.WsocketManager;
@@ -18,11 +17,9 @@ import com.deepsea.mua.stub.entity.socket.receive.GetSongListParam;
 import com.deepsea.mua.stub.entity.socket.receive.SongParam;
 import com.deepsea.mua.stub.entity.socket.send.JoinRoom;
 import com.deepsea.mua.stub.utils.AppConstant;
-import com.deepsea.mua.stub.utils.ViewBindUtils;
 import com.deepsea.mua.stub.utils.ViewModelFactory;
 import com.deepsea.mua.voice.R;
 import com.deepsea.mua.voice.adapter.SongOriginalAdapter;
-import com.deepsea.mua.voice.adapter.SongTagAdapter;
 import com.deepsea.mua.voice.databinding.FragmentSongOriginalBinding;
 import com.deepsea.mua.voice.dialog.SongAlertDialog;
 import com.deepsea.mua.voice.dialog.SongerSelectDialog;
@@ -30,10 +27,6 @@ import com.deepsea.mua.voice.dialog.SongerSelectForManyDialog;
 import com.deepsea.mua.voice.viewmodel.SongOriginalViewModel;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.inject.Inject;
 
 import okhttp3.Response;
@@ -134,7 +127,6 @@ public class SongOriginalFragment extends BaseFragment<FragmentSongOriginalBindi
     }
 
     SongOriginalAdapter mAdapter;
-    SongTagAdapter songTagAdapter;
 
     private void initRecyclerView() {
         mBinding.recyclerView.setLayoutManager(new LinearLayoutManager(mContext));
@@ -153,20 +145,7 @@ public class SongOriginalFragment extends BaseFragment<FragmentSongOriginalBindi
             }
         });
         mBinding.recyclerView.setAdapter(mAdapter);
-        songTagAdapter=new SongTagAdapter(mContext);
-        mBinding.rvSongTag.setLayoutManager(new LinearLayoutManager(mContext,LinearLayoutManager.HORIZONTAL,false));
-        mBinding.rvSongTag.setAdapter(songTagAdapter);
-        List<String> tags=new ArrayList<>();
-        tags.add("热推");
-        tags.add("网络歌曲");
-        tags.add("热门");
-        songTagAdapter.setNewData(tags);
-        songTagAdapter.setmListener(new SongTagAdapter.OnSongTagSelectListener() {
-            @Override
-            public void onSelectTag(int position) {
 
-            }
-        });
     }
 
     SongerSelectDialog songerSelectDialog = null;

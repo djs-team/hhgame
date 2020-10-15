@@ -1,4 +1,5 @@
 load('game/ui/layer/coinshop/CoinShopLayer', function () {
+    let AppConfig = include('game/public/AppConfig')
     let ResConfig = include('game/config/ResConfig')
     let BaseLayer = include('public/ui/BaseLayer')
     let CoinShopMdt = include('game/ui/layer/coinshop/CoinShopMdt')

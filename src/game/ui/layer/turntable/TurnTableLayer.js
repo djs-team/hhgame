@@ -215,8 +215,10 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
                 flag = false
                 if (this._canTurnTableStatus === 1) {
                     //观看视频
-                    appInstance.nativeApi().showRewardVideo()
-
+                    if(cc.sys.os !== cc.sys.OS_WINDOWS)
+                        appInstance.nativeApi().showRewardVideo()
+                    else
+                        flag = true
                 } else {
                     appInstance.gameAgent().Tips('次数已用尽，比赛场也很好玩哦')
                     this.pointPnl.setTouchEnabled(true)

@@ -2,6 +2,7 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
     let ResConfig = include('game/config/ResConfig')
     let BaseLayer = include('public/ui/BaseLayer')
     let TurnTableMdt = include('game/ui/layer/turntable/TurnTableMdt')
+    let GameEvent = include('game/config/GameEvent')
     let tabState = 0;//0-转盘点击需要看视频 1可以领取三倍奖励
     let turnTableLayer = BaseLayer.extend({
         _className: 'turnTableLayer',
@@ -158,6 +159,7 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
 
         onCloseClick: function () {
             // appInstance.gameAgent().tcpGame().enterTable()
+            appInstance.sendNotification(GameEvent.HALL_RED_GET)
             appInstance.uiManager().removeUI(this)
         },
 

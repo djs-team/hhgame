@@ -5,6 +5,7 @@ load('game/ui/layer/role/RoleLayer', function () {
     let RoleMdt = include('game/ui/layer/role/RoleMdt')
     let GameConfig = include('game/config/GameConfig')
     let GameUtil = include('game/public/GameUtil')
+    let GameEvent = include('game/config/GameEvent')
     let AniPlayer = ResConfig.AniPlayer
     let PlayerPlay = ResConfig.PlayerPlay
     let RoleLayer = BaseLayer.extend({
@@ -66,6 +67,7 @@ load('game/ui/layer/role/RoleLayer', function () {
 
         },
         onClseClick: function () {
+            appInstance.sendNotification(GameEvent.HALL_RED_GET)
             appInstance.uiManager().removeUI(this)
         },
 

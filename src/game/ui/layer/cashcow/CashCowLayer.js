@@ -2,6 +2,7 @@ load('game/ui/layer/cashcow/CashCowLayer', function () {
     let ResConfig = include('game/config/ResConfig')
     let BaseLayer = include('public/ui/BaseLayer')
     let CashCowMdt = include('game/ui/layer/cashcow/CashCowMdt')
+    let GameEvent = include('game/config/GameEvent')
     let AniPlayer = ResConfig.AniPlayer
     let PlayerPlay = ResConfig.PlayerPlay
     let cashCowLayer = BaseLayer.extend({
@@ -93,6 +94,7 @@ load('game/ui/layer/cashcow/CashCowLayer', function () {
 
 
         onCloseClick: function () {
+            appInstance.sendNotification(GameEvent.HALL_RED_GET)
             appInstance.uiManager().removeUI(this)
         },
 

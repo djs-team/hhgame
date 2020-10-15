@@ -2,6 +2,7 @@
 load('game/ui/layer/email/EmailLayer', function () {
     let ResConfig = include('game/config/ResConfig')
     let BaseLayer = include('public/ui/BaseLayer')
+    let GameEvent = include('game/config/GameEvent')
     let EmailLayer = BaseLayer.extend({
         _className: 'EmailLayer',
         ctor: function () {
@@ -22,6 +23,7 @@ load('game/ui/layer/email/EmailLayer', function () {
             this._super()
         },
         onClose: function () {
+            appInstance.sendNotification(GameEvent.HALL_RED_GET)
             appInstance.uiManager().removeUI(this)
         }
     })

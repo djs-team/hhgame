@@ -2,6 +2,7 @@
 load('game/ui/layer/choosecity/ChooseCityLayer', function () {
     let ResConfig = include('game/config/ResConfig')
     let BaseLayer = include('public/ui/BaseLayer')
+    let GameEvent = include('game/config/GameEvent')
     let Layer = BaseLayer.extend({
         _className: 'ChooseCityLayer',
         RES_BINDING: function () {
@@ -189,6 +190,7 @@ load('game/ui/layer/choosecity/ChooseCityLayer', function () {
             appInstance.uiManager().removeUI(this)
         },
         onReturnBtnClick: function () {
+            appInstance.sendNotification(GameEvent.HALL_RED_GET)
             appInstance.uiManager().removeUI(this)
         }
     })

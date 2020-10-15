@@ -3,6 +3,7 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
     let ResConfig = include('game/config/ResConfig')
     let BaseLayer = include('public/ui/BaseLayer')
     let FukaShopMdt = include('game/ui/layer/fukashop/FukaShopMdt')
+    let GameEvent = include('game/config/GameEvent')
     let Layer = BaseLayer.extend({
         _className: 'FukaShopLayer',
         _menuItemName: 'menuItem_',//菜单cell名称前缀
@@ -1280,6 +1281,7 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
         onReturnBtnClick: function () {
 
             if(this.jumpArrayStep.length == 0){
+                appInstance.sendNotification(GameEvent.HALL_RED_GET)
                 appInstance.uiManager().removeUI(this)
             }else{
                 let lastStepName = this.jumpArrayStep.pop()

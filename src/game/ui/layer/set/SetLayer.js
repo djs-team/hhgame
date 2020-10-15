@@ -2,6 +2,7 @@
 load('game/ui/layer/set/SetLayer', function () {
     let ResConfig = include('game/config/ResConfig')
     let BaseLayer = include('public/ui/BaseLayer')
+    let GameEvent = include('game/config/GameEvent')
 
     let layer = BaseLayer.extend({
         _className: 'SetLayer',
@@ -115,6 +116,7 @@ load('game/ui/layer/set/SetLayer', function () {
         },
         onCloseClick: function () {
             appInstance.audioManager().flush()
+            appInstance.sendNotification(GameEvent.HALL_RED_GET)
             appInstance.uiManager().removeUI(this)
         }
     })

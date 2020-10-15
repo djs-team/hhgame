@@ -4,6 +4,7 @@ load('game/ui/layer/task/TaskLayer', function () {
     let BaseLayer = include('public/ui/BaseLayer')
     let TaskMdt = include('game/ui/layer/task/TaskMdt')
     let GameConfig = include('game/config/GameConfig')
+    let GameEvent = include('game/config/GameEvent')
     let taskLayer = BaseLayer.extend({
         _className: 'taskLayer',
         ctor: function () {
@@ -265,7 +266,7 @@ load('game/ui/layer/task/TaskLayer', function () {
         },
 
         onCancleBtnClick: function () {
-
+            appInstance.sendNotification(GameEvent.HALL_RED_GET)
             appInstance.uiManager().removeUI(this)
 
         },

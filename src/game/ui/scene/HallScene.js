@@ -69,6 +69,7 @@ load('game/ui/scene/HallScene', function () {
         },
 
         onEmailBtnClick: function () {
+            this.emailBtn.getChildByName('redImg').setVisible(false)
             appInstance.gameAgent().Tips('敬请期待！！！')
         },
 
@@ -98,6 +99,7 @@ load('game/ui/scene/HallScene', function () {
         },
         onInvitationClick: function () {
 
+            this.invitationPnl.getChildByName('redImg').setVisible(false)
             appInstance.gameAgent().addUI(ResConfig.Ui.InvitationLayer)
         },
 
@@ -114,6 +116,7 @@ load('game/ui/scene/HallScene', function () {
         },
 
         onTaskClick: function () {
+            this.taskPnl.getChildByName('redImg').setVisible(false)
             appInstance.gameAgent().addPopUI(ResConfig.Ui.TaskLayer)
         },
         onCashCowClick: function () {
@@ -132,6 +135,7 @@ load('game/ui/scene/HallScene', function () {
         },
 
         onMemberClick: function () {
+            this.guiZuBtn.getChildByName('redImg').setVisible(false)
             appInstance.gameAgent().addPopUI(ResConfig.Ui.MemberLayer)
         },
 

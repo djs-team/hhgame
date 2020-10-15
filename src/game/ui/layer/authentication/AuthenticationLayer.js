@@ -3,6 +3,7 @@ load('game/ui/layer/authentication/AuthenticationLayer', function () {
     let ResConfig = include('game/config/ResConfig')
     let BaseLayer = include('public/ui/BaseLayer')
     let AuthenticationMdt = include('game/ui/layer/authentication/AuthenticationMdt')
+    let GameEvent = include('game/config/GameEvent')
     let authenticationLayer = BaseLayer.extend({
         _className: 'authenticationLayer',
         ctor: function () {
@@ -29,7 +30,7 @@ load('game/ui/layer/authentication/AuthenticationLayer', function () {
 
 
         onCloseClick: function () {
-
+            appInstance.sendNotification(GameEvent.HALL_RED_GET)
             appInstance.uiManager().removeUI(this)
         },
         onDetermineClick: function () {

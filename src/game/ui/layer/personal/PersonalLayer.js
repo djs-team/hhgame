@@ -3,6 +3,7 @@ load('game/ui/layer/personal/PersonalLayer', function () {
     let BaseLayer = include('public/ui/BaseLayer')
     let PersonalMdt = include('game/ui/layer/personal/PersonalMdt')
     let GameUtil = include('game/public/GameUtil')
+    let GameEvent = include('game/config/GameEvent')
     let AniPlayer = ResConfig.AniPlayer
     let PlayerPlay = ResConfig.PlayerPlay
     let layer = BaseLayer.extend({
@@ -147,7 +148,7 @@ load('game/ui/layer/personal/PersonalLayer', function () {
         },
 
         onPersonalDataCloseClick: function () {
-
+            appInstance.sendNotification(GameEvent.HALL_RED_GET)
             appInstance.uiManager().removeUI(this)
 
         },

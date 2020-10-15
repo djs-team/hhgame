@@ -3,6 +3,7 @@ load('game/ui/layer/arena/ArenaLayer', function () {
     let ResConfig = include('game/config/ResConfig')
     let BaseLayer = include('public/ui/BaseLayer')
     let ArenaMdt = include('game/ui/layer/arena/ArenaMdt')
+    let GameEvent = include('game/config/GameEvent')
     let matchLayer = BaseLayer.extend({
         _className: 'matchLayer',
         _arenaTypeBtnData: [
@@ -60,6 +61,7 @@ load('game/ui/layer/arena/ArenaLayer', function () {
 
         },
         onCloseBtnClick: function () {
+            appInstance.sendNotification(GameEvent.HALL_RED_GET)
             appInstance.uiManager().removeUI(this)
         },
 

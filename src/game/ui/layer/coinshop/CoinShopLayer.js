@@ -3,6 +3,7 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
     let ResConfig = include('game/config/ResConfig')
     let BaseLayer = include('public/ui/BaseLayer')
     let CoinShopMdt = include('game/ui/layer/coinshop/CoinShopMdt')
+    let GameEvent = include('game/config/GameEvent')
     let GameUtil = include('game/public/GameUtil')
     let sender = {};
 
@@ -114,7 +115,7 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
          * 触发关闭按钮
          */
         onColseClicked: function () {
-
+            appInstance.sendNotification(GameEvent.HALL_RED_GET)
             appInstance.uiManager().removeUI(this)
         },
 

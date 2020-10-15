@@ -149,6 +149,8 @@ static AppDelegate s_sharedApplication;
     // 苹果内购监听
 //    [[CXIPAPurchaseManager manager] startManager];
 
+    [[UIApplication sharedApplication] setIdleTimerDisabled: YES];
+    
     return YES;
 }
 //#pragma mark - SKPaymentTransactionObserver

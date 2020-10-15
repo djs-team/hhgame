@@ -357,14 +357,14 @@
                                 <PreSize X="0.9241" Y="0.9267" />
                                 <FileData Type="Normal" Path="task/rwzx_10.png" Plist="" />
                               </AbstractNodeData>
-                              <AbstractNodeData Name="everyDayTaskNameText" ActionTag="-135668800" Tag="39" IconVisible="False" LeftMargin="182.9998" RightMargin="387.0002" TopMargin="11.9374" BottomMargin="93.2375" IsCustomSize="True" FontSize="20" LabelText="看视频3次" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                                <Size X="194.0000" Y="20.0000" />
+                              <AbstractNodeData Name="everyDayTaskNameText" ActionTag="-135668800" Tag="39" IconVisible="False" LeftMargin="182.9998" RightMargin="387.0002" TopMargin="8.4374" BottomMargin="89.7375" IsCustomSize="True" FontSize="20" LabelText="看视频3次" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                                <Size X="194.0000" Y="27.0000" />
                                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                                 <Position X="279.9998" Y="103.2375" />
                                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                                 <CColor A="255" R="183" G="100" B="30" />
                                 <PrePosition X="0.3665" Y="0.8247" />
-                                <PreSize X="0.2539" Y="0.1598" />
+                                <PreSize X="0.2539" Y="0.2157" />
                                 <OutlineColor A="255" R="255" G="0" B="0" />
                                 <ShadowColor A="255" R="110" G="110" B="110" />
                               </AbstractNodeData>
@@ -390,14 +390,14 @@
                                 <PreSize X="0.0903" Y="0.5512" />
                                 <FileData Type="Normal" Path="common/gx_2.png" Plist="" />
                               </AbstractNodeData>
-                              <AbstractNodeData Name="awardsVal" ActionTag="-969816681" Tag="462" IconVisible="False" LeftMargin="78.7220" RightMargin="605.2780" TopMargin="84.8273" BottomMargin="15.3476" IsCustomSize="True" FontSize="25" LabelText="x666" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                                <Size X="80.0000" Y="25.0000" />
+                              <AbstractNodeData Name="awardsVal" ActionTag="-969816681" Tag="462" IconVisible="False" LeftMargin="78.7220" RightMargin="605.2780" TopMargin="82.0232" BottomMargin="12.5434" IsCustomSize="True" FontSize="25" LabelText="x666" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                                <Size X="80.0000" Y="30.6083" />
                                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                                 <Position X="118.7220" Y="27.8476" />
                                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                                 <CColor A="255" R="0" G="0" B="0" />
                                 <PrePosition X="0.1554" Y="0.2225" />
-                                <PreSize X="0.1047" Y="0.1997" />
+                                <PreSize X="0.1047" Y="0.2445" />
                                 <OutlineColor A="255" R="255" G="0" B="0" />
                                 <ShadowColor A="255" R="110" G="110" B="110" />
                               </AbstractNodeData>
@@ -424,14 +424,14 @@
                                     <PreSize X="0.9700" Y="0.8780" />
                                     <ImageFileData Type="Normal" Path="task/rwzx_16.png" Plist="" />
                                   </AbstractNodeData>
-                                  <AbstractNodeData Name="progressValueText" ActionTag="483660258" Tag="38" IconVisible="False" LeftMargin="150.1296" RightMargin="166.8704" TopMargin="5.6292" BottomMargin="15.3708" IsCustomSize="True" FontSize="20" LabelText="2/3" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                                    <Size X="50.0000" Y="20.0000" />
+                                  <AbstractNodeData Name="progressValueText" ActionTag="483660258" Tag="38" IconVisible="False" LeftMargin="150.1296" RightMargin="166.8704" TopMargin="2.6292" BottomMargin="12.3708" IsCustomSize="True" FontSize="20" LabelText="2/3" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                                    <Size X="50.0000" Y="26.0000" />
                                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                                     <Position X="175.1296" Y="25.3708" />
                                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                                     <CColor A="255" R="255" G="255" B="255" />
                                     <PrePosition X="0.4772" Y="0.6188" />
-                                    <PreSize X="0.1362" Y="0.4878" />
+                                    <PreSize X="0.1362" Y="0.6341" />
                                     <OutlineColor A="255" R="255" G="0" B="0" />
                                     <ShadowColor A="255" R="110" G="110" B="110" />
                                   </AbstractNodeData>
@@ -447,14 +447,14 @@
                                 <EndColor A="255" R="255" G="255" B="255" />
                                 <ColorVector ScaleY="1.0000" />
                               </AbstractNodeData>
-                              <AbstractNodeData Name="activityNumText" ActionTag="448979393" Tag="40" IconVisible="False" LeftMargin="182.9998" RightMargin="387.0002" TopMargin="86.2173" BottomMargin="18.9576" IsCustomSize="True" FontSize="20" LabelText="活跃度+15" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                                <Size X="194.0000" Y="20.0000" />
+                              <AbstractNodeData Name="activityNumText" ActionTag="448979393" Tag="40" IconVisible="False" LeftMargin="182.9998" RightMargin="387.0002" TopMargin="83.2173" BottomMargin="15.9576" IsCustomSize="True" FontSize="20" LabelText="活跃度+15" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                                <Size X="194.0000" Y="26.0000" />
                                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                                 <Position X="279.9998" Y="28.9576" />
                                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                                 <CColor A="255" R="183" G="100" B="30" />
                                 <PrePosition X="0.3665" Y="0.2313" />
-                                <PreSize X="0.2539" Y="0.1598" />
+                                <PreSize X="0.2539" Y="0.2077" />
                                 <OutlineColor A="255" R="255" G="0" B="0" />
                                 <ShadowColor A="255" R="110" G="110" B="110" />
                               </AbstractNodeData>

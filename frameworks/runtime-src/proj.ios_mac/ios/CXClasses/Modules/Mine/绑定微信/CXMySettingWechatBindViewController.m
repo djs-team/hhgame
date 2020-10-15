@@ -57,7 +57,7 @@
         
         [self getWechatBindStatus];
         
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(wxLogin:) name:@"CXLoginLaunchControllerWXLogin" object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(wxLogin:) name:kNSNotificationCenter_CXMySettingWechatBindViewController_weixin object:nil];
         
         self.bind_weixinBGView.hidden = NO;
     } else {

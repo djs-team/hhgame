@@ -51,6 +51,9 @@
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [weakSelf getFriendListData];
     }];
+    
+    UILongPressGestureRecognizer *longpress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(pressAction:)];
+    [self.tableView addGestureRecognizer:longpress];
 }
 
 - (void)clearConversationList {
@@ -163,8 +166,6 @@
     
     NSString *CellIdentifier = @"CXFriendMessageCellID";
     CXFriendMessageCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    UILongPressGestureRecognizer *longpress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(pressAction:)];
-    [cell addGestureRecognizer:longpress];
     
     if (self.isConversation) {
         cell.isConversation = YES;

@@ -89,19 +89,26 @@
             
             weakSelf.userIdLabel.text = [NSString stringWithFormat:@"ID:%@", user.user_id];
             
-            NSDictionary *dict = responseObject[@"data"];
-            if ([[dict allKeys] containsObject:@"bind_type"]) {
-                weakSelf.bind_type = responseObject[@"data"][@"bind_type"];
-                
-                if (weakSelf.bind_type.intValue != 1 && weakSelf.bind_type.intValue != 2) {
-                    NSDictionary *item = weakSelf.itemArrays[4];
-                    NSString *title = item[@"title"];
-                    if ([title isEqualToString:@"绑定"]) {
-                        [weakSelf.itemArrays removeObjectAtIndex:4];
-                        weakSelf.mainTableViewHeightLayout.constant = 45*weakSelf.itemArrays.count;
-                    }
-                }
-            }
+//            NSDictionary *dict = responseObject[@"data"];
+//            if ([[dict allKeys] containsObject:@"bind_type"]) {
+//                weakSelf.bind_type = responseObject[@"data"][@"bind_type"];
+//
+//                if (weakSelf.bind_type.intValue != 1 && weakSelf.bind_type.intValue != 2) {
+//                    NSDictionary *item = weakSelf.itemArrays[4];
+//                    NSString *title = item[@"title"];
+//                    if ([title isEqualToString:@"绑定"]) {
+//                        [weakSelf.itemArrays removeObjectAtIndex:4];
+//                        weakSelf.mainTableViewHeightLayout.constant = 45*weakSelf.itemArrays.count;
+//                    }
+//                }
+//            } else {
+//                NSDictionary *item = weakSelf.itemArrays[4];
+//                NSString *title = item[@"title"];
+//                if ([title isEqualToString:@"绑定"]) {
+//                    [weakSelf.itemArrays removeObjectAtIndex:4];
+//                    weakSelf.mainTableViewHeightLayout.constant = 45*weakSelf.itemArrays.count;
+//                }
+//            }
             
             
             [weakSelf.mainTableView reloadData];
@@ -330,12 +337,12 @@
         };
         [_itemArrays addObject:dict3];
         
-        NSDictionary *dict4 = @{
-            @"logo": @"mine_bangdingshouji",
-            @"title": @"绑定",
-            @"desc": @"",
-        };
-        [_itemArrays addObject:dict4];
+//        NSDictionary *dict4 = @{
+//            @"logo": @"mine_bangdingshouji",
+//            @"title": @"绑定",
+//            @"desc": @"",
+//        };
+//        [_itemArrays addObject:dict4];
         
         NSDictionary *dict6 = @{
             @"logo": @"mine_block",

@@ -271,7 +271,7 @@
     [self.topScrollView removeAllSubviews];
     
     for (int i=0; i<itemUsers.count; i++) {
-        MuaGiftUserIconView *user = [[MuaGiftUserIconView alloc]initWithFrame:CGRectMake((38+10)*i, 0, 38+1, 38)];
+        MuaGiftUserIconView *user = [[MuaGiftUserIconView alloc]initWithFrame:CGRectMake((38+10)*i, 0, 38, 38)];
         user.backgroundColor = [UIColor clearColor];
         user.model = itemUsers[i];
         [user sw_whenTapped:^{

@@ -4,6 +4,7 @@ load('game/ui/layer/role/RoleLayer', function () {
     let BaseLayer = include('public/ui/BaseLayer')
     let RoleMdt = include('game/ui/layer/role/RoleMdt')
     let GameConfig = include('game/config/GameConfig')
+    let GameUtil = include('game/public/GameUtil')
     let AniPlayer = ResConfig.AniPlayer
     let PlayerPlay = ResConfig.PlayerPlay
     let RoleLayer = BaseLayer.extend({
@@ -101,11 +102,11 @@ load('game/ui/layer/role/RoleLayer', function () {
             let diamondsCnt =  this.diamondsPnl.getChildByName('diamondsCnt')
 
             if(data.hasOwnProperty('coin')){
-                coinsCnt.setString(data.coin)
+                coinsCnt.setString(GameUtil.getStringRule(data.coin))
             }
 
             if(data.hasOwnProperty('diamonds')){
-                diamondsCnt.setString(data.diamonds)
+                diamondsCnt.setString(GameUtil.getStringRule(data.diamonds))
             }
         },
 

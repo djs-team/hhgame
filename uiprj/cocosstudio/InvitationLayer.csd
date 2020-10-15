@@ -368,14 +368,14 @@
                         <PreSize X="0.1055" Y="0.4516" />
                         <FileData Type="Normal" Path="common/gx_2.png" Plist="" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="moneyText" ActionTag="76166618" Tag="320" IconVisible="False" LeftMargin="41.0790" RightMargin="559.7800" TopMargin="107.1936" BottomMargin="27.8071" IsCustomSize="True" FontSize="20" LabelText="x666" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                        <Size X="71.8274" Y="20.0000" />
+                      <AbstractNodeData Name="moneyText" ActionTag="76166618" Tag="320" IconVisible="False" LeftMargin="41.0790" RightMargin="559.7800" TopMargin="105.1936" BottomMargin="25.8071" IsCustomSize="True" FontSize="20" LabelText="x666" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="71.8274" Y="24.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="76.9927" Y="37.8071" />
                         <Scale ScaleX="1.4315" ScaleY="1.0000" />
                         <CColor A="255" R="0" G="0" B="0" />
                         <PrePosition X="0.1145" Y="0.2439" />
-                        <PreSize X="0.1068" Y="0.1290" />
+                        <PreSize X="0.1068" Y="0.1548" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
@@ -402,14 +402,14 @@
                             <PreSize X="0.9371" Y="0.8392" />
                             <ImageFileData Type="Normal" Path="invitation/yqyl_3.png" Plist="" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="progressBarText" ActionTag="1708095057" Tag="323" IconVisible="False" LeftMargin="160.3469" RightMargin="185.5550" TopMargin="7.7814" BottomMargin="14.1862" IsCustomSize="True" FontSize="20" LabelText="1/1" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                            <Size X="50.0000" Y="19.9998" />
+                          <AbstractNodeData Name="progressBarText" ActionTag="1708095057" Tag="323" IconVisible="False" LeftMargin="160.3469" RightMargin="185.5550" TopMargin="5.7813" BottomMargin="12.1861" IsCustomSize="True" FontSize="20" LabelText="1/1" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                            <Size X="50.0000" Y="24.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                             <Position X="185.3469" Y="24.1861" />
                             <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="255" G="255" B="255" />
                             <PrePosition X="0.4682" Y="0.5763" />
-                            <PreSize X="0.1263" Y="0.4766" />
+                            <PreSize X="0.1263" Y="0.5719" />
                             <OutlineColor A="255" R="255" G="0" B="0" />
                             <ShadowColor A="255" R="110" G="110" B="110" />
                           </AbstractNodeData>

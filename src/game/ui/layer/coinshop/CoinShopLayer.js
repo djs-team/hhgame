@@ -3,6 +3,7 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
     let ResConfig = include('game/config/ResConfig')
     let BaseLayer = include('public/ui/BaseLayer')
     let CoinShopMdt = include('game/ui/layer/coinshop/CoinShopMdt')
+    let GameUtil = include('game/public/GameUtil')
     let sender = {};
 
     let CoinShopLayer = BaseLayer.extend({
@@ -128,18 +129,18 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
             let fuKaCnt = this.fuKaPnl.getChildByName('fuKaCnt')
 
             if (data.hasOwnProperty('coin')) {
-                coinsCnt.setString(data.coin)
+                coinsCnt.setString(GameUtil.getStringRule(data.coin))
                 this._dataMsg.coinsCnt = data.coin
             }
 
             if (data.hasOwnProperty('diamonds')) {
-                diamondsCnt.setString(data.diamonds)
+                diamondsCnt.setString(GameUtil.getStringRule(data.diamonds))
                 this._dataMsg.diamondsCnt = data.diamonds
 
             }
 
             if (data.hasOwnProperty('fuKa')) {
-                fuKaCnt.setString(data.fuKa)
+                fuKaCnt.setString(GameUtil.getStringRule(data.fuKa))
                 this._dataMsg.fuKaCnt = data.fuKa
 
             }

@@ -189,8 +189,12 @@ load('game/ui/layer/task/TaskLayer', function () {
             cell.getChildByName('activityNumText').setString('活跃度+' + dailyTask.activity)
             cell.getChildByName('acceptedBg').getChildByName('acceptedTypePg').loadTexture(dailyTask.res)
             cell.getChildByName('everyDayProgressBarPnl').getChildByName('everyDayProgressBar').setPercent(Math.round(dailyTask.reachNum/dailyTask.taskNum*100))
-            cell.getChildByName('everyDayProgressBarPnl').getChildByName('progressValueText').setString(dailyTask.reachNum + '/' + dailyTask.taskNum)
 
+            if (dailyTask.reachNum>dailyTask.taskNum) {
+                cell.getChildByName('everyDayProgressBarPnl').getChildByName('progressValueText').setString(dailyTask.taskNum + '/' + dailyTask.taskNum)
+            } else {
+                cell.getChildByName('everyDayProgressBarPnl').getChildByName('progressValueText').setString(dailyTask.reachNum + '/' + dailyTask.taskNum)
+            }
 
             switch (dailyTask.status) {
                 case 0:
@@ -433,7 +437,12 @@ load('game/ui/layer/task/TaskLayer', function () {
             cell.getChildByName('taskName').setString(data.taskName)
 
             cell.getChildByName('challegeTaskProgressBarPnl').getChildByName('challegeTaskProgressBar').setPercent(Math.round(data.reachNum/data.taskNum*100))
-            cell.getChildByName('challegeTaskProgressBarPnl').getChildByName('progressValueText').setString(data.reachNum + '/' + data.taskNum)
+            if (data.reachNum>data.taskNum) {
+                cell.getChildByName('challegeTaskProgressBarPnl').getChildByName('progressValueText').setString(data.taskNum + '/' + data.taskNum)
+            } else {
+                cell.getChildByName('challegeTaskProgressBarPnl').getChildByName('progressValueText').setString(data.reachNum + '/' + data.taskNum)
+            }
+
 
             if(data.status == 2){
                 cell.getChildByName('completePg').setVisible(true)

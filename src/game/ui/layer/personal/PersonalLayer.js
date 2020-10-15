@@ -2,6 +2,7 @@ load('game/ui/layer/personal/PersonalLayer', function () {
     let ResConfig = include('game/config/ResConfig')
     let BaseLayer = include('public/ui/BaseLayer')
     let PersonalMdt = include('game/ui/layer/personal/PersonalMdt')
+    let GameUtil = include('game/public/GameUtil')
     let AniPlayer = ResConfig.AniPlayer
     let PlayerPlay = ResConfig.PlayerPlay
     let layer = BaseLayer.extend({
@@ -103,18 +104,18 @@ load('game/ui/layer/personal/PersonalLayer', function () {
             }
             if (data.hasOwnProperty('coin')) {
 
-                this.currencyPnl.getChildByName('coinPnl').getChildByName('coinVaule').setString(data.coin)
+                this.currencyPnl.getChildByName('coinPnl').getChildByName('coinVaule').setString(GameUtil.getStringRule(data.coin))
 
             }
             if (data.hasOwnProperty('diamonds')) {
 
-                this.currencyPnl.getChildByName('diamondPnl').getChildByName('diamondVaule').setString(data.diamonds)
+                this.currencyPnl.getChildByName('diamondPnl').getChildByName('diamondVaule').setString(GameUtil.getStringRule(data.diamonds))
 
             }
 
             if (data.hasOwnProperty('fuKa')) {
 
-                this.currencyPnl.getChildByName('fuKaPnl').getChildByName('fuKaVaule').setString(data.fuKa)
+                this.currencyPnl.getChildByName('fuKaPnl').getChildByName('fuKaVaule').setString(GameUtil.getStringRule(data.fuKa))
             }
             if (data.hasOwnProperty('photo')) {
 

@@ -101,6 +101,13 @@
                         weakSelf.mainTableViewHeightLayout.constant = 45*weakSelf.itemArrays.count;
                     }
                 }
+            } else {
+                NSDictionary *item = weakSelf.itemArrays[4];
+                NSString *title = item[@"title"];
+                if ([title isEqualToString:@"绑定"]) {
+                    [weakSelf.itemArrays removeObjectAtIndex:4];
+                    weakSelf.mainTableViewHeightLayout.constant = 45*weakSelf.itemArrays.count;
+                }
             }
             
             

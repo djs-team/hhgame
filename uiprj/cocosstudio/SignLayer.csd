@@ -394,7 +394,7 @@
                             <OutlineColor A="255" R="255" G="0" B="0" />
                             <ShadowColor A="255" R="110" G="110" B="110" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="loadingBarAwardsPg" ActionTag="1899214982" Tag="184" IconVisible="False" LeftMargin="-1.9461" RightMargin="-2.0539" TopMargin="2.5502" BottomMargin="1.4498" TouchEnable="True" LeftEage="13" RightEage="13" TopEage="12" BottomEage="12" Scale9OriginX="13" Scale9OriginY="12" Scale9Width="32" Scale9Height="18" ctype="ImageViewObjectData">
+                          <AbstractNodeData Name="loadingBarAwardsPg" ActionTag="1899214982" Tag="184" IconVisible="False" LeftMargin="-1.9461" RightMargin="-2.0539" TopMargin="2.5502" BottomMargin="1.4498" LeftEage="13" RightEage="13" TopEage="12" BottomEage="12" Scale9OriginX="13" Scale9OriginY="12" Scale9Width="32" Scale9Height="18" ctype="ImageViewObjectData">
                             <Size X="58.0000" Y="42.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                             <Position X="27.0539" Y="22.4498" />

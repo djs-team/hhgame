@@ -230,6 +230,7 @@ public class MicroFaceView extends FrameLayout {
                 }
             });
             mBinding.tvUserInfo.setText(ProfileUtils.getProfile(user.getAge(), user.getStature(), user.getSex()));
+            List<String> list = new ArrayList<>();
             setRankHeards(bean.getRoseRanks(), user.getUserId());
             if (guardHeaderAdapter != null) {
                 guardHeaderAdapter.setOnItemClickListener(new BaseBindingAdapter.OnItemClickListener() {
@@ -243,16 +244,12 @@ public class MicroFaceView extends FrameLayout {
                     }
                 });
             }
-            if (user.getUserId().equals(UserUtils.getUser().getUid()) || bean.getType() == 0) {
+            if (MatchMakerUtils.isRoomOwner()||user.getUserId().equals(UserUtils.getUser().getUid()) || bean.getType() == 0) {
                 ViewBindUtils.setVisible(mBinding.llMicroOperate, true);
             } else {
                 ViewBindUtils.setVisible(mBinding.llMicroOperate, false);
             }
-//            String u=mBinding.tvUserInfo.getText().toString();
-//            if (TextUtils.isEmpty(u)) {
             addSurfaceView(Integer.parseInt(user.getUserId()));
-
-//            }
         } else {
             releaseLayout(bean.getType());
         }

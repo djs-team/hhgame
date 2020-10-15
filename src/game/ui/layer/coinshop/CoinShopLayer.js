@@ -1,4 +1,5 @@
 load('game/ui/layer/coinshop/CoinShopLayer', function () {
+    let AppConfig = include('game/public/AppConfig')
     let ResConfig = include('game/config/ResConfig')
     let BaseLayer = include('public/ui/BaseLayer')
     let CoinShopMdt = include('game/ui/layer/coinshop/CoinShopMdt')
@@ -41,7 +42,7 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
                 'popUpPnl/addressPnl': {},
                 'popUpPnl/addressPnl/confirmBtn': {onClicked: this.onConfirmClicked},
                 'popUpPnl/addressPnl/updateAddressCloseBtn': {onClicked: this.onCloseUpdateAddressClicked},
-                'PayType': {},
+                'PayType': {onClicked: this.onClosePayTypeClicked },
                 'PayType/bgAli/ivAli': {onClicked: this.onAliPayClick},
                 'PayType/bgWx/ivWx': {onClicked: this.onWxClick},
             }
@@ -211,7 +212,7 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
 
                 goodsCell._sendMsg = {
                     'goodsid': goodsData.id,
-                    'diamonds': goodsData.diamonds
+                    'price': goodsData.price
                 }
 
                 goodsCell.getChildByName('coinsPg').loadTexture(goodsData.res)
@@ -244,7 +245,6 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
          */
         onBuyZuanFunction: function (s) {
             sender = s;
-            cc.log("----------------------onBuyZuanFunction" + JSON.stringify(sender))
             if (cc.sys.OS_IOS === cc.sys.os) {
                 if (AppConfig.applePayType == "Apple") {
                    let _sendData = sender._sendData
@@ -253,7 +253,6 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
                        payType: 3
                    }
                    appInstance.gameAgent().httpGame().ZuanPaysOrderReq(msg)
-                   cc.log("----------------------onRechargeClicked")
                 } else {
                     this.PayType.setVisible(true)
                 }
@@ -318,7 +317,7 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
 
             let msg
             let btnNameArray = {}
-            if (this._dataMsg.diamondsCnt < sender._sendMsg.diamonds) {
+            if (this._dataMsg.diamondsCnt < sender._sendMsg.price) {
 
                 msg = '您的钻石数量不足，请先领取钻石'
                 btnNameArray.MidBtnName = '确 定'
@@ -432,6 +431,12 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
 
             this.addressPnl.setVisible(false)
 
+        },
+
+
+        onClosePayTypeClicked: function () {
+
+            this.PayType.setVisible(false)
         }
 
     })

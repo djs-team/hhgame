@@ -438,7 +438,7 @@ load('module/mahjong/ui/DeskCardLayer', function () {
                 } else {
                     imgPath += 'left_out_top.png'
                 }
-                if (uiSeat === 3) {
+                if (uiSeat === 1) {
                     zorder = 50 - lineIndex
                     isFlippedX = true
                     pos.y = 16 * lineIndex
@@ -453,7 +453,7 @@ load('module/mahjong/ui/DeskCardLayer', function () {
                     } else {
                         pos.y += 16.5
                     }
-                } else if (uiSeat === 1) {
+                } else if (uiSeat === 3) {
                     zorder = lineIndex
                     pos.y = -15 * lineIndex
                     pos.x = -8 * lineIndex
@@ -647,7 +647,7 @@ load('module/mahjong/ui/DeskCardLayer', function () {
                 if (cardLen % 2 === 0) {
                     scaleMid += 0.5
                 }
-                if (seatIndex === 3) {
+                if (seatIndex === 1) {
                     isFlippedX = true
                     scale = 0.7 - (cardIndex - scaleMid) * 0.02
                     pos.y = ( cardIndex - cardLenMid ) * 16 * scale
@@ -681,7 +681,8 @@ load('module/mahjong/ui/DeskCardLayer', function () {
             let cardTag = 0
             if (seatIndex === 0) {
                 cardTag = this._deckCardLen * 2 * 2
-                cardTag += (this._deckCardLen - cardIndex - 1) * 2
+                // cardTag += (this._deckCardLen - cardIndex - 1) * 2
+                cardTag += (cardIndex) * 2
             } else if (seatIndex === 3) {
                 cardTag = this._deckCardLen * 2
                 cardTag += (this._deckCardLen - cardIndex - 1) * 2

@@ -1,15 +1,16 @@
-
 load('game/ui/layer/turntable/TurnTableLayer', function () {
     let ResConfig = include('game/config/ResConfig')
     let BaseLayer = include('public/ui/BaseLayer')
     let TurnTableMdt = include('game/ui/layer/turntable/TurnTableMdt')
+    let tabState = 0;//0-转盘点击需要看视频 1可以领取三倍奖励
     let turnTableLayer = BaseLayer.extend({
         _className: 'turnTableLayer',
         _requestDeley: 5,
         _requestCache: 0,
-        _isHaveInitUserData : false,
+        _isHaveInitUserData: false,
         _lightTime: 0,
         _lightInterval: 0.5,
+        _canTurnTableStatus: 0,//0代表可以免费1代表不可以免费可看视频2不可以转盘
         ctor: function () {
             this._super(ResConfig.View.TurnTableLayer)
 
@@ -20,18 +21,18 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
         RES_BINDING: function () {
             return {
 
-                'topPnl/returnBtn': { onClicked: this.onCloseClick },
-                'topPnl/explainBtn': { },
-                'topPnl/recordBtn': { onClicked: this.onRecordClick },
-
-
+                'topPnl/returnBtn': {onClicked: this.onCloseClick},
+                'topPnl/explainBtn': {},
+                'topPnl/recordBtn': {onClicked: this.onRecordClick},
 
                 'bmPnl/awardsPnl/awardsUserDataNd': {},
                 'bmPnl/awardsPnl/awardsUserDataNd/awardsUserDataPnl': {},
                 'bmPnl/awardsPnl/userDataCell': {},
                 'bmPnl/zhuanPnl': {},
-                'bmPnl/zhuanPnl/pointPnl': { onClicked: this.onTurnPointClick},
-                'bmPnl/zhuanPnl/pointPnl/TurnPointImg': { },
+                'bmPnl/zhuanPnl/pointPnl': {onClicked: this.onTurnPointClick},
+                'bmPnl/zhuanPnl/pointPnl/TurnPointImg': {},
+                'bmPnl/zhuanPnl/pointPnl/turnPointStartImg': {},
+                'bmPnl/zhuanPnl/pointPnl/turnPointAssImg': {},
                 'bmPnl/zhuanPnl/turnTablePic': {},
                 'bmPnl/zhuanPnl/turnTablePic/goodsNd': {},
                 'bmPnl/zhuanPnl/turnTablePic/pointNd0': {},
@@ -42,15 +43,15 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
 
                 'popUpPnl/awardsPnl': {},
                 'popUpPnl/awardsPnl/pgPnl': {},
-                'popUpPnl/awardsPnl/propAwardsCloseBtn': { onClicked: this.onSingleClaimClick },
-                'popUpPnl/awardsPnl/multipleClaimBtn': { onClicked: this.onMultipleClaimClick },
-                'popUpPnl/awardsPnl/multSingleClaimBtn': { onClicked: this.onSingleClaimClick },
-                'popUpPnl/awardsPnl/singleClaimBtn': { onClicked: this.onSingleClaimClick },
-                'popUpPnl/explainPnl/explainDataPnl/closeBtn': { onClicked: this.onGoShopClick },
+                'popUpPnl/awardsPnl/propAwardsCloseBtn': {onClicked: this.onSingleClaimClick},
+                'popUpPnl/awardsPnl/multipleClaimBtn': {onClicked: this.onMultipleClaimClick},
+                'popUpPnl/awardsPnl/multSingleClaimBtn': {onClicked: this.onSingleClaimClick},
+                'popUpPnl/awardsPnl/singleClaimBtn': {onClicked: this.onSingleClaimClick},
+                'popUpPnl/explainPnl/explainDataPnl/closeBtn': {onClicked: this.onGoShopClick},
 
-                'popUpPnl/recordsPnl/recordLogListView': { },
-                'popUpPnl/recordsPnl/recordDataCell': { },
-                'popUpPnl/recordsPnl/recordCloseBtn': { onClicked: this.onHideRecordPnlClick },
+                'popUpPnl/recordsPnl/recordLogListView': {},
+                'popUpPnl/recordsPnl/recordDataCell': {},
+                'popUpPnl/recordsPnl/recordCloseBtn': {onClicked: this.onHideRecordPnlClick},
 
                 'popUpPnl/acceptedPnl': {onClicked: this.onHideAcceptPnlClick},
                 'popUpPnl/acceptedPnl/awardsVal': {},
@@ -96,15 +97,15 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
         playRewadInfo: function () {
 
             this.awardsUserDataPnl.stopAllActions()
-            this.awardsUserDataPnl.setPosition(cc.p(0,-50))
+            this.awardsUserDataPnl.setPosition(cc.p(0, -50))
 
             let moveto = cc.moveTo(5, cc.p(0, 30 * this._rewardUserData.length + 300))
             let callBack = function () {
                 appInstance.gameAgent().httpGame().REFRESHAWARDSDATAReq()
-                this.awardsUserDataPnl.setPosition(cc.p(0,-50))
+                this.awardsUserDataPnl.setPosition(cc.p(0, -50))
             }.bind(this)
 
-            this.awardsUserDataPnl.runAction(cc.sequence(moveto,cc.callFunc(callBack)))
+            this.awardsUserDataPnl.runAction(cc.sequence(moveto, cc.callFunc(callBack)))
         },
 
         initView: function () {
@@ -135,7 +136,7 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
             this.awardsUserDataPnl.removeAllChildren()
             this._rewardUserData = userData
             for (let i = 0; i < userData.length; ++i) {
-                this.updateUserCell(userData[i],  i)
+                this.updateUserCell(userData[i], i)
             }
 
             this.playRewadInfo()
@@ -163,17 +164,67 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
         onDataInit: function (data) {
 
 
+            this._canTurnTableStatus = data.code
             this._goodsArray = {}
             for (let i = 1; i < 11; ++i) {
                 this._goodsArray['goods_' + i] = this.goodsNd.getChildByName('goods' + i)
             }
 
+            this.onUpdateTurnPointImg()
             this.initZhuanView(data.configList)
             this.updateUserDataView(data.luckyPrize)
         },
 
+        onUpdateTurnPointImg: function () {
+
+            if (this._canTurnTableStatus == 2) {
+                this.TurnPointImg.setVisible(false)
+                this.turnPointStartImg.setVisible(false)
+                this.turnPointAssImg.setVisible(true)
+            } else {
+                this.TurnPointImg.setVisible(true)
+                this.turnPointStartImg.setVisible(true)
+                this.turnPointAssImg.setVisible(false)
+                if (this._canTurnTableStatus == 0) {
+                    this.turnPointStartImg.getChildByName('turnFreeText').setVisible(true)
+                    this.turnPointStartImg.getChildByName('videoImg').setVisible(false)
+                } else {
+                    this.turnPointStartImg.getChildByName('turnFreeText').setVisible(false)
+                    this.turnPointStartImg.getChildByName('videoImg').setVisible(true)
+                }
+
+            }
+
+        },
+
         onTurnPointClick: function () {
-            this.pointPnl.setEnabled(false)
+            tabState = 0;
+            this.pointPnl.setTouchEnabled(false)
+            if (!this.onCanTurnPointFunction())
+                return
+            this.onTurnPointFunction()
+
+        },
+
+        onCanTurnPointFunction: function () {
+
+            let flag = true
+            if (this._canTurnTableStatus !== 0) {
+                flag = false
+                if (this._canTurnTableStatus === 1) {
+                    //观看视频
+                    appInstance.nativeApi().showRewardVideo()
+
+                } else {
+                    appInstance.gameAgent().Tips('次数已用尽，比赛场也很好玩哦')
+                    this.pointPnl.setTouchEnabled(true)
+                }
+            }
+
+            return flag
+        },
+
+        onTurnPointFunction: function () {
 
             let msg = {}
             appInstance.gameAgent().httpGame().TURNPOINTReq(msg)
@@ -186,9 +237,7 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
             let beginEaseAction = cc.EaseCubicActionIn(action)
 
             this.TurnPointImg.runAction(beginEaseAction)
-
             appInstance.audioManager().playEffect(ResConfig.Sound.turnTableBegin)
-
         },
 
 
@@ -197,8 +246,8 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
 
             this.TurnPointImg.stopAllActions()
             this.TurnPointImg.setRotation(0)
-            let endtime = 11
-            let rotateAngle = 360 * 20 + 36 * (data.turntableId - 1)
+            let endtime = 3
+            let rotateAngle = 360 * 5 + 36 * (data.turntableId - 1)
             let endAction = cc.RotateBy(endtime, rotateAngle)
             let endEaseAction = cc.EaseCubicActionOut(endAction)
             this.TurnPointImg.runAction(endEaseAction)
@@ -210,33 +259,31 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
             }.bind(this)
 
             let delayTime = [
-                3,2,1,2,3
+                1, 1, 1
             ]
 
             let callLightInterval = [
                 0.3,
-                0.2,
                 0.1,
-                0.2,
                 0.3
             ]
 
             let tmpIndex = 0
             let lightCallFunc = function () {
-                if (tmpIndex > 4) {
+                if (tmpIndex > 2) {
                     tmpIndex = 0
                 }
                 this._lightInterval = callLightInterval[tmpIndex]
                 tmpIndex += 1
             }.bind(this)
 
-            this.runAction(cc.Sequence( cc.CallFunc(lightCallFunc),cc.DelayTime(delayTime[0]),
-                cc.CallFunc(lightCallFunc),cc.DelayTime(delayTime[1]),
-                cc.CallFunc(lightCallFunc),cc.DelayTime(delayTime[2]),
-                cc.CallFunc(lightCallFunc),cc.DelayTime(delayTime[3]),
-                cc.CallFunc(lightCallFunc),cc.DelayTime(delayTime[4]),
+            this.runAction(cc.Sequence(cc.CallFunc(lightCallFunc), cc.DelayTime(delayTime[0]),
+                cc.CallFunc(lightCallFunc), cc.DelayTime(delayTime[1]),
+                cc.CallFunc(lightCallFunc), cc.DelayTime(delayTime[2]),
+                /*          cc.CallFunc(lightCallFunc),cc.DelayTime(delayTime[3]),
+                          cc.CallFunc(lightCallFunc),cc.DelayTime(delayTime[4]),*/
                 cc.CallFunc(endCallFunc)
-                ))
+            ))
         },
 
         playLight: function () {
@@ -249,21 +296,21 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
         onTurnPointResult: function (data) {
 
             //指针转动动画
-           this.playTurnTable(data)
+            this.playTurnTable(data)
         },
 
         onShowTurnPointRewards: function (data) {
             //初始化奖励信息
             this.pgPnl.getChildByName('awardsPg').getChildByName('awardsTypePg').loadTexture(data.res)
-            this.pgPnl.getChildByName('awardsPg').getChildByName('awardsVal').setString('x'+data.propNum)
+            this.pgPnl.getChildByName('awardsPg').getChildByName('awardsVal').setString('x' + data.propNum)
 
 
-            if(data.multiple <= 1){
+            if (data.multiple <= 1) {
 
                 this.multipleClaimBtn.setVisible(false)
                 this.multSingleClaimBtn.setVisible(false)
                 this.singleClaimBtn.setVisible(true)
-            }else{
+            } else {
                 let multipleClaimText = '一倍领取'
                 switch (data.multiple) {
                     case 2:
@@ -305,12 +352,11 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
             }
 
             this.awardsPnl.setVisible(true)
-            this.pointPnl.setEnabled(true)
+            this.pointPnl.setTouchEnabled(true)
             this.TurnPointImg.setRotation(0)
         },
 
         onUpdateRewardsPnl: function (data) {
-
 
 
         },
@@ -333,10 +379,16 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
         },
         onRewardVideoCallback: function (msg) {
             if (msg == "0") {
-                let msg = {}
-                msg.turntableId = appInstance.dataManager().getGameData().turntableId
-                msg.type = 1
-                appInstance.gameAgent().httpGame().ACCCPTAWARDSReq(msg)
+                if (tabState == 0) {
+                    tabState = 1;
+                    this.onTurnPointFunction()
+                } else {
+                    tabState = 0;
+                    let msg = {}
+                    msg.turntableId = appInstance.dataManager().getGameData().turntableId
+                    msg.type = 1
+                    appInstance.gameAgent().httpGame().ACCCPTAWARDSReq(msg)
+                }
             }
         },
 
@@ -344,8 +396,10 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
         onReceiveAwardsResult: function (data) {
 
             this.acceptedTypePg.loadTexture(data.res)
-            this.awardsVal.setString('x'+data.propNum)
+            this.awardsVal.setString('x' + data.propNum)
 
+            this._canTurnTableStatus = data.code
+            this.onUpdateTurnPointImg()
 
             this.awardsPnl.setVisible(false)
             this.acceptedPnl.setVisible(true)
@@ -374,39 +428,39 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
 
             this.recordLogListView.removeAllChildren()
             for (let i = 0; i < data.length; i++) {
-                this.onUpdateDataCell(data,i)
+                this.onUpdateDataCell(data, i)
             }
 
             this.recordsPnl.setVisible(true)
 
         },
 
-        onUpdateDataCell: function (list,index) {
+        onUpdateDataCell: function (list, index) {
             let recordCell = this.recordDataCell.clone()
             recordCell.setVisible(true)
             this.recordLogListView.pushBackCustomItem(recordCell)
 
-            if (Math.floor(index % 2) ) {
+            if (Math.floor(index % 2)) {
                 recordCell.getChildByName('bg').setVisible(true)
             } else {
                 recordCell.getChildByName('bg').setVisible(false)
             }
 
             let record = list[index]
-            let awardsText = record.propName+record.propNum+record.propUnit
+            let awardsText = record.propName + record.propNum + record.propUnit
             recordCell.getChildByName('timeText').setString(this.onFormatDateTime(record.time))
             recordCell.getChildByName('awardsText').setString(awardsText)
         },
 
         onFormatDateTime: function (timestamp) {
 
-            let d=new Date(parseInt(timestamp));
-            let month=(d.getMonth()+1)<10?(0+""+(d.getMonth()+1)):(d.getMonth()+1);
-            let day=d.getDate()<10?(0+""+d.getDate()):d.getDate();
-            let hour=d.getHours()<10?(0+""+d.getHours()):d.getHours();
-            let minute=d.getMinutes()<10?(0+""+d.getMinutes()):d.getMinutes();
-            let second=d.getSeconds()<10?(0+""+d.getSeconds()):d.getSeconds();
-            let dateString=d.getFullYear()+ "-" + month +"-"+day+" "+hour+": "+minute
+            let d = new Date(parseInt(timestamp));
+            let month = (d.getMonth() + 1) < 10 ? (0 + "" + (d.getMonth() + 1)) : (d.getMonth() + 1);
+            let day = d.getDate() < 10 ? (0 + "" + d.getDate()) : d.getDate();
+            let hour = d.getHours() < 10 ? (0 + "" + d.getHours()) : d.getHours();
+            let minute = d.getMinutes() < 10 ? (0 + "" + d.getMinutes()) : d.getMinutes();
+            let second = d.getSeconds() < 10 ? (0 + "" + d.getSeconds()) : d.getSeconds();
+            let dateString = d.getFullYear() + "-" + month + "-" + day + " " + hour + ": " + minute
 
             return dateString;
 

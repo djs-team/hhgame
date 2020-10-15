@@ -8,6 +8,7 @@ load('game/ui/scene/LoginScene', function () {
     let LocalSave = include('game/public/LocalSave')
     let LoginScene = BaseScene.extend({
         _className: 'LoginScene',
+        _canLogin: true,
         RES_BINDING: function () {
             return {
                 'pnl/phoneLogin': {onClicked: this.onphoneLoginClick},
@@ -40,12 +41,26 @@ load('game/ui/scene/LoginScene', function () {
          * 一键登录
          */
         onphoneLoginClick: function () {
+
+            if(!this.onCheckeCanLogin())
+                return
+
             //判断当前系统
             if (cc.sys.OS_WINDOWS === cc.sys.os) {
                 this.debugLogin()
             } else {
                 appInstance.nativeApi().oneClickLogin()
             }
+        },
+
+        onCheckeCanLogin: function () {
+
+            let flag = true
+            if(!this._canLogin){
+                appInstance.gameAgent().Tips('请同意《用户协议》！')
+                flag = false
+            }
+            return flag
         },
 
         debugLogin: function () {
@@ -60,6 +75,10 @@ load('game/ui/scene/LoginScene', function () {
         },
 
         onwxLoginClick: function () {
+
+            if(!this.onCheckeCanLogin())
+                return
+            
             if (cc.sys.OS_WINDOWS === cc.sys.os) {
                 this.debugLogin()
             } else {
@@ -82,6 +101,10 @@ load('game/ui/scene/LoginScene', function () {
 
         onagreeBtnClick: function () {
 
+            if(this._canLogin)
+                this._canLogin = false
+            else
+                this._canLogin = true
         },
 
 

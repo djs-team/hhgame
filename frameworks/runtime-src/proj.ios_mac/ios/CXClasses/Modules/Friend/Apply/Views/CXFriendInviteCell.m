@@ -63,7 +63,7 @@
         timeInterval = timeInterval / 1000;
     }
     NSDateFormatter* formatter = [[NSDateFormatter alloc]init];
-    [formatter setDateFormat:@"YYYY-MM-dd HH:mm"];
+    [formatter setDateFormat:@"MM月dd日"];
     NSString *latestMessageTime = [formatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:timeInterval]];
     self.timeLabel.text = latestMessageTime;
     

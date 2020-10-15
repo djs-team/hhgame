@@ -58,7 +58,7 @@
     [_rose_numberLabel setAttributedTitle:numberAttr forState:UIControlStateNormal];
     
     NSMutableAttributedString *rmbAttr = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@元", reoseRMB]];
-    [rmbAttr addAttribute:NSForegroundColorAttributeName value:UIColorHex(0xFFFFFF) range:NSMakeRange(0, reoseRMB.length+1)];
+    [rmbAttr addAttribute:NSForegroundColorAttributeName value:UIColorHex(0xE53611) range:NSMakeRange(0, reoseRMB.length+1)];
     [rmbAttr addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:18] range:NSMakeRange(0, reoseRMB.length+1)];
     [rmbAttr addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:24] range:NSMakeRange(0, reoseRMB.length)];
     [_reose_rmbLabel setAttributedTitle:rmbAttr forState:UIControlStateNormal];

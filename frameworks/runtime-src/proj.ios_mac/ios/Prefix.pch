@@ -17,6 +17,7 @@
     #import "LEEAlert.h"
     #import "LewPopupViewController.h"
     #import "TPKeyboardAvoidingScrollView.h"
+    #import "WXApi.h"
 
     #import "CXTools.h"
     #import "CXClientModel.h"
@@ -56,6 +57,7 @@
     NSString *const kNSNotificationCenter_CXHomeChildViewController_Filter = @"NSNotificationCenter_CXHomeChildViewController_Filter";
 
     NSString *const kNSNotificationCenter_CXRechargeViewController_weixin = @"NSNotificationCenter_CXRechargeViewController_weixin";
+    NSString *const kNSNotificationCenter_CXMySettingWechatBindViewController_weixin = @"NSNotificationCenter_CXMySettingWechatBindViewController_weixin";
     NSString *const kNSNotificationCenter_CXRechargeViewController_alipay = @"NSNotificationCenter_CXRechargeViewController_alipay";
 
     // ********** define **********

@@ -20,14 +20,17 @@ load('game/ui/layer/personal/PersonalMdt', function () {
             let body = notification.getBody()
             switch (name) {
                 case GameEvent.UPDATE_USERNAME:
-                    cc.log('=========TurnTableMdt==========deal something===========' + JSON.stringify(body))
                     this.updateUserName(body)
                     break
             }
         },
 
         updateUserName: function (body) {
-            this.view.updateUserName(body)
+
+            let data = {}
+            data.pname = appInstance.dataManager().getUserData().pname
+            data._nameUpdate = appInstance.dataManager().getUserData().nameUpdate
+            this.view.updateUserName(data)
         },
 
         onRegister: function () {
@@ -47,9 +50,9 @@ load('game/ui/layer/personal/PersonalMdt', function () {
             data.diamonds = appInstance.dataManager().getUserData().diamonds
             data.fuKa = appInstance.dataManager().getUserData().fuKa
             data.pRole = appInstance.dataManager().getUserData().pRole
-            data.photo = sdkUrl;
+            data.photo = sdkUrl
+            data._nameUpdate = appInstance.dataManager().getUserData().nameUpdate
             this.view.onInitUserData(data)
-
 
         }
 

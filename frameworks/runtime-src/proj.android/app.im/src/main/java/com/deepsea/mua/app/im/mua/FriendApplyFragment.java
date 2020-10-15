@@ -69,7 +69,7 @@ public class FriendApplyFragment extends BaseFragment<FragmentFriendApplyBinding
 
 
     private void initRecyclerView() {
-        mAdapter = new FriendApplyAdapter(mContext);
+        mAdapter = new FriendApplyAdapter(mContext,type);
 
         mAdapter.setOnItemClickListener((view, position) -> {
 

@@ -31,7 +31,7 @@ public class FriendRequestViewModel extends ViewModel {
         pageNumber = 1;
         if (type.equals("1")) {
             return mRepository.getApplyFriendList(SignatureUtils.signByToken(), pageNumber);
-        }else {
+        } else {
             return mRepository.getMyApplyList(SignatureUtils.signByToken(), pageNumber);
 
         }
@@ -41,7 +41,7 @@ public class FriendRequestViewModel extends ViewModel {
         pageNumber++;
         if (type.equals("1")) {
             return mRepository.getApplyFriendList(SignatureUtils.signByToken(), pageNumber);
-        }else {
+        } else {
             return mRepository.getMyApplyList(SignatureUtils.signByToken(), pageNumber);
 
         }

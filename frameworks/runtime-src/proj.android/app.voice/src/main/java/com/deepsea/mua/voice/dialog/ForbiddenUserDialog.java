@@ -60,7 +60,7 @@ public class ForbiddenUserDialog extends BaseDialog<DialogForbiddenUsersBinding>
         GlideUtils.circleImage(mBinding.ivPhoto, user.getHeadImageUrl(), R.drawable.ic_place, R.drawable.ic_place);
         ViewBindUtils.setText(mBinding.tvName, user.getName());
         SexResUtils.setSexImgInFindPage(mBinding.rlSex, mBinding.sexIv, String.valueOf(user.getSex()));
-        ViewBindUtils.setText(mBinding.tvAge, user.getAge() == 0 ? "" : String.valueOf(user.getAge()));
+        ViewBindUtils.setText(mBinding.tvAge, TextUtils.isEmpty(user.getAge()) ? "" : user.getAge());
         ViewBindUtils.setText(mBinding.ivLocation, user.getCity());
         ViewBindUtils.setVisible(mBinding.ivLocation, !TextUtils.isEmpty(user.getCity()));
     }

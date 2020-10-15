@@ -166,9 +166,7 @@
     [self dismissViewControllerAnimated:YES completion:nil];
     
     [[UIApplication sharedApplication] endReceivingRemoteControlEvents];
-    
-    [[UIApplication sharedApplication] setIdleTimerDisabled: NO];
-    
+        
     [[CXClientModel instance].room.roomMessages removeAllObjects];
     
 }
@@ -234,8 +232,6 @@
     [self getGiftListData];
     [self getGuardGiftListData];
     [self getFriendListData];
-    
-    [[UIApplication sharedApplication] setIdleTimerDisabled: YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -707,6 +703,8 @@
                         user.Name = userInfo.Name;
                         user.Avatar = userInfo.HeadImageUrl;
                         user.UserLevel = userInfo.VipLevel;
+                        user.Age = userInfo.Age.stringValue;
+                        user.City = userInfo.Age.stringValue;
                         [self listViewAddTextModel:@"申请上麦" user:user];
                         
                         [self.applySeatArrays addObject:order];
@@ -959,7 +957,8 @@
                 } else {
                     self.redpacketProgressView.redpacketProgressView.progress = 0;
                 }
-                self.redpacketProgressView.redpacketProgressLabel.text = [NSString stringWithFormat:@"%0.f%%", MIN(progress.Progress*100, 100)];
+                int proVlaue = floorf(progress.Progress*100);
+                self.redpacketProgressView.redpacketProgressLabel.text = [NSString stringWithFormat:@"%d%%", MIN(proVlaue, 100)];
             }
                 break;
             case SocketMessageIDNotifyLetterEffectMessage: {
@@ -1471,9 +1470,6 @@
 
 // rechargeType: 0: 充值 1:送礼 2:麦位送礼
 - (void)showRechargeSheetViewRMB:(NSString *)rmb diamond:(NSString *)diamond iosflag:(NSString *)iosflag chargeid:(NSString *)chargeid rechargeType:(NSInteger)rechargeType seatUser:(LiveRoomUser *)seatUser {
-    if ([rmb integerValue] <= 0) {
-        return;
-    }
     CXLiveRoomRechargeSheepView *sheetView = [[NSBundle mainBundle] loadNibNamed:@"CXLiveRoomRechargeSheepView" owner:self options:nil].firstObject;
     [sheetView setupRoseNumber:diamond roseRMB:rmb];
     kWeakSelf

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -37,12 +37,12 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="一天前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o1n-ou-jdr">
-                        <rect key="frame" x="271" y="9.5" width="37" height="14.5"/>
+                        <rect key="frame" x="271" y="33" width="37" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TjG-zA-aGv">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TjG-zA-aGv">
                         <rect key="frame" x="172" y="116" width="76" height="24"/>
                         <color key="backgroundColor" red="1" green="0.5725490196078431" blue="0.61176470588235299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -64,7 +64,6 @@
                         </constraints>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                         <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        <inset key="imageEdgeInsets" minX="-2" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <state key="normal" title="99" image="nan2">
                             <color key="titleColor" red="0.62352941179999999" green="0.61568627450000002" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
@@ -93,14 +92,14 @@
                             <color key="titleColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5dr-bw-2mn">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5dr-bw-2mn">
                         <rect key="frame" x="106.5" y="80" width="107" height="28"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <state key="normal" title="请求和你成为好友">
                             <color key="titleColor" red="0.1960526407" green="0.19609326120000001" blue="0.1960500479" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E2s-Ax-5xu">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E2s-Ax-5xu">
                         <rect key="frame" x="72" y="116" width="76" height="24"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                         <state key="normal" title="拒绝">
@@ -131,6 +130,7 @@
                 <constraints>
                     <constraint firstItem="6RT-4D-dfg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="003-md-3yU"/>
                     <constraint firstItem="VWo-TL-Jfp" firstAttribute="bottom" secondItem="6RT-4D-dfg" secondAttribute="bottom" constant="4" id="0Yu-9L-8dA"/>
+                    <constraint firstItem="o1n-ou-jdr" firstAttribute="centerY" secondItem="Gtg-tH-smZ" secondAttribute="centerY" id="7Tr-ZF-enJ"/>
                     <constraint firstItem="E2s-Ax-5xu" firstAttribute="height" secondItem="TjG-zA-aGv" secondAttribute="height" id="98n-8L-yfN"/>
                     <constraint firstItem="TjG-zA-aGv" firstAttribute="top" secondItem="5dr-bw-2mn" secondAttribute="bottom" constant="8" id="BN2-ux-rSO"/>
                     <constraint firstItem="Mo2-Qy-dse" firstAttribute="top" secondItem="5dr-bw-2mn" secondAttribute="bottom" constant="-4" id="CSy-ej-sAg"/>
@@ -156,7 +156,6 @@
                     <constraint firstItem="bJg-OE-wvh" firstAttribute="leading" secondItem="9Xw-DI-6uc" secondAttribute="trailing" constant="4.5" id="jJz-VB-B3i"/>
                     <constraint firstItem="5dr-bw-2mn" firstAttribute="top" secondItem="VWo-TL-Jfp" secondAttribute="bottom" constant="10" id="kn0-HE-TDL"/>
                     <constraint firstItem="E2s-Ax-5xu" firstAttribute="centerY" secondItem="TjG-zA-aGv" secondAttribute="centerY" id="tcM-rw-Yml"/>
-                    <constraint firstItem="o1n-ou-jdr" firstAttribute="centerY" secondItem="9Xw-DI-6uc" secondAttribute="centerY" id="tnM-rY-sSq"/>
                     <constraint firstItem="9Xw-DI-6uc" firstAttribute="leading" secondItem="6RT-4D-dfg" secondAttribute="trailing" constant="10" id="zQ6-8E-igv"/>
                     <constraint firstItem="Gtg-tH-smZ" firstAttribute="leading" secondItem="9Xw-DI-6uc" secondAttribute="leading" id="zaq-CH-h0U"/>
                 </constraints>

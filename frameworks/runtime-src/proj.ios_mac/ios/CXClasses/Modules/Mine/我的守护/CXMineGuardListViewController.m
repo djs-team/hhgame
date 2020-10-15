@@ -21,6 +21,10 @@
 
 @implementation CXMineGuardListViewController
 
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
@@ -43,6 +47,36 @@
     }];
     
     [self getGuardListData];
+    
+    // 监听支付宝支付回调
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(aliPayCallBack:) name:kNSNotificationCenter_CXRechargeViewController_alipay object:nil];
+
+    // 监听微信支付回调
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(weChatCallBack:) name:kNSNotificationCenter_CXRechargeViewController_weixin object:nil];
+}
+
+- (void)aliPayCallBack:(NSNotification *)info {
+    if ([[info.object objectForKey:@"resultStatus"] integerValue] == 9000) {
+        [self toast:@"支付成功"];
+        [self getGuardListData];
+    } else {
+        [self toast:@"支付失败"];
+    }
+}
+- (void)weChatCallBack:(NSNotification *)info {
+    NSDictionary *obj = info.object;
+    switch ([[obj objectForKey:@"errCode"] integerValue]) {
+        case WXSuccess:
+            [self toast:@"支付成功"];
+            [self getGuardListData];
+            break;
+        case WXErrCodeUserCancel:
+            [self toast:@"取消支付"];
+            break;
+        default:
+            [self toast:@"支付失败"];
+            break;
+    }
 }
 
 - (void)getGuardListData {
@@ -103,7 +137,7 @@
 
 - (void)renewAction:(CXUserModel *)user {
     CXMineGuardRenewView *renewView = [[NSBundle mainBundle] loadNibNamed:@"CXMineGuardRenewView" owner:self options:nil].firstObject;
-    renewView.userId= user.user_id;
+    renewView.userId = user.user_id;
     [renewView show];
 }
 

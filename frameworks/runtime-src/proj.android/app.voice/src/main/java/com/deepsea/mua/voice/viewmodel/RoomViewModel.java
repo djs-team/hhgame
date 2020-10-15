@@ -767,6 +767,7 @@ public class RoomViewModel extends ViewModel {
         jsonObject.addProperty("Page", Page);
         jsonObject.addProperty("UserId", UserId);
         RoomController.getInstance().sendRoomMsg(jsonObject.toString());
+        Log.d("getGuardItemList",UserId);
 
     }
 

@@ -2,6 +2,7 @@ load('game/ui/layer/sign/SignLayer', function () {
     let ResConfig = include('game/config/ResConfig')
     let BaseLayer = include('public/ui/BaseLayer')
     let SignMdt = include('game/ui/layer/sign/SignMdt')
+    let GameEvent = include('game/config/GameEvent')
     let SignLayer = BaseLayer.extend({
         _className: 'signLayer',
         ctor: function () {
@@ -76,6 +77,7 @@ load('game/ui/layer/sign/SignLayer', function () {
         },
 
         onCloseClick: function () {
+            appInstance.sendNotification(GameEvent.HALL_RED_GET)
             appInstance.uiManager().removeUI(this)
         },
 

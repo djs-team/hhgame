@@ -20,6 +20,8 @@ load('game/ui/scene/HallMdt', function () {
                 GameEvent.UPDATE_USERPHOTO,
                 GameEvent.MatchJinjiGaming,
                 GameEvent.URLE_USED_UPDATE,
+                GameEvent.HALL_RED_GET,
+                GameEvent.HALL_RED_BACK,
 
             ]
         },
@@ -51,15 +53,21 @@ load('game/ui/scene/HallMdt', function () {
                 case GameEvent.URLE_USED_UPDATE:
                     this.onChangeUsedRole()
                     break
+                case GameEvent.HALL_RED_GET:
+                    this.onGetHallRedFunction()
+                    break
+                case GameEvent.HALL_RED_BACK:
+                    this.onUpdateHallRedStatus(body)
+                    break
                 default:
                     break
             }
         },
 
         onRegister: function () {
-            cc.log('--------------hallMdt----------------onRegister')
             let selfInfo = appInstance.dataManager().getUserData()
             this.view.initView(selfInfo)
+            this.onGetHallRedFunction()
         },
 
         onChangeUsedRole: function () {
@@ -68,6 +76,24 @@ load('game/ui/scene/HallMdt', function () {
         },
 
         onRemove: function () {
+        },
+
+        onGetHallRedFunction: function () {
+            appInstance.gameAgent().httpGame().checkHallRed()
+        },
+
+        onUpdateHallRedStatus: function (body) {
+
+            let data = {}
+
+            for(let i in body){
+
+                let value = body[i] == 0 ? true : false
+                if(value)
+                    data[i] = value
+            }
+
+            this.view.onUpdateHallRedStatus(data)
         }
 
     })

@@ -2,6 +2,8 @@ load('game/ui/layer/personal/PersonalLayer', function () {
     let ResConfig = include('game/config/ResConfig')
     let BaseLayer = include('public/ui/BaseLayer')
     let PersonalMdt = include('game/ui/layer/personal/PersonalMdt')
+    let GameUtil = include('game/public/GameUtil')
+    let GameEvent = include('game/config/GameEvent')
     let AniPlayer = ResConfig.AniPlayer
     let PlayerPlay = ResConfig.PlayerPlay
     let layer = BaseLayer.extend({
@@ -80,13 +82,22 @@ load('game/ui/layer/personal/PersonalLayer', function () {
             });
         },
         onInitUserData: function (data) {
-            cc.log("=================onInitUserData" + JSON.stringify(data))
+
+            if (data.hasOwnProperty('_nameUpdate')) {
+
+                if(data._nameUpdate != 0)
+                    this.updateNameBtn.setVisible(false)
+                else
+                    this.updateNameBtn.setVisible(true)
+
+            }
 
             if (data.hasOwnProperty('pname')) {
 
                 this.namePnl.getChildByName('nameText').setString(data.pname)
 
             }
+
             if (data.hasOwnProperty('pid')) {
 
                 this.idPnl.getChildByName('idVale').setString(data.pid)
@@ -94,18 +105,18 @@ load('game/ui/layer/personal/PersonalLayer', function () {
             }
             if (data.hasOwnProperty('coin')) {
 
-                this.currencyPnl.getChildByName('coinPnl').getChildByName('coinVaule').setString(data.coin)
+                this.currencyPnl.getChildByName('coinPnl').getChildByName('coinVaule').setString(GameUtil.getStringRule(data.coin))
 
             }
             if (data.hasOwnProperty('diamonds')) {
 
-                this.currencyPnl.getChildByName('diamondPnl').getChildByName('diamondVaule').setString(data.diamonds)
+                this.currencyPnl.getChildByName('diamondPnl').getChildByName('diamondVaule').setString(GameUtil.getStringRule(data.diamonds))
 
             }
 
             if (data.hasOwnProperty('fuKa')) {
 
-                this.currencyPnl.getChildByName('fuKaPnl').getChildByName('fuKaVaule').setString(data.fuKa)
+                this.currencyPnl.getChildByName('fuKaPnl').getChildByName('fuKaVaule').setString(GameUtil.getStringRule(data.fuKa))
             }
             if (data.hasOwnProperty('photo')) {
 
@@ -127,14 +138,7 @@ load('game/ui/layer/personal/PersonalLayer', function () {
 
         onUpdateNameClick: function () {
 
-            let _nameUpdate = appInstance.dataManager().getUserData().nameUpdate
-            if (_nameUpdate != 0) {
-                cc.log('can not updateName!!')
-                return
-            }
-
             this.updateNamePnl.setVisible(true)
-
         },
 
         onCloseUpdateNameClick: function () {
@@ -144,7 +148,7 @@ load('game/ui/layer/personal/PersonalLayer', function () {
         },
 
         onPersonalDataCloseClick: function () {
-
+            appInstance.sendNotification(GameEvent.HALL_RED_GET)
             appInstance.uiManager().removeUI(this)
 
         },

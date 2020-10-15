@@ -539,7 +539,7 @@
               "Y": 0.1555
             },
             "PreSize": {
-              "X": 0.1562,
+              "X": 0.1563,
               "Y": 0.725
             },
             "LeftMargin": 1077.3888,
@@ -3066,8 +3066,8 @@
                             "Tag": 342,
                             "Children": [
                               {
-                                "FontSize": 20,
-                                "LabelText": "iphone 12",
+                                "FontSize": 18,
+                                "LabelText": "iphone12proMax",
                                 "HorizontalAlignmentType": "HT_Center",
                                 "VerticalAlignmentType": "VT_Center",
                                 "OutlineColor": {
@@ -3086,7 +3086,7 @@
                                   "ScaleY": 0.5
                                 },
                                 "Position": {
-                                  "X": 37.5,
+                                  "X": 31.5,
                                   "Y": 84.2432
                                 },
                                 "Scale": {
@@ -3095,24 +3095,23 @@
                                 },
                                 "CColor": {},
                                 "IconVisible": false,
-                                "PositionPercentXEnabled": true,
                                 "PrePosition": {
-                                  "X": 0.5,
+                                  "X": 0.42,
                                   "Y": 1.4279
                                 },
                                 "PreSize": {
-                                  "X": 1.2,
-                                  "Y": 0.339
+                                  "X": 1.68,
+                                  "Y": 0.3051
                                 },
-                                "LeftMargin": -7.5,
-                                "RightMargin": -7.5,
-                                "TopMargin": -35.2432,
-                                "BottomMargin": 74.2432,
+                                "LeftMargin": -31.5,
+                                "RightMargin": -19.5,
+                                "TopMargin": -34.2432,
+                                "BottomMargin": 75.2432,
                                 "Tag": 345,
                                 "ActionTag": -836346202,
                                 "Size": {
-                                  "X": 90.0,
-                                  "Y": 20.0
+                                  "X": 126.0,
+                                  "Y": 18.0
                                 },
                                 "Name": "name",
                                 "ctype": "TextObjectData"
@@ -3167,8 +3166,8 @@
                             "Tag": 312,
                             "Children": [
                               {
-                                "FontSize": 20,
-                                "LabelText": "iphone 12",
+                                "FontSize": 18,
+                                "LabelText": "iphone12proMax",
                                 "HorizontalAlignmentType": "HT_Center",
                                 "VerticalAlignmentType": "VT_Center",
                                 "OutlineColor": {
@@ -3202,18 +3201,18 @@
                                   "Y": 1.4279
                                 },
                                 "PreSize": {
-                                  "X": 1.2,
-                                  "Y": 0.339
+                                  "X": 1.68,
+                                  "Y": 0.3051
                                 },
-                                "LeftMargin": -7.5,
-                                "RightMargin": -7.5,
-                                "TopMargin": -35.2432,
-                                "BottomMargin": 74.2432,
+                                "LeftMargin": -25.5,
+                                "RightMargin": -25.5,
+                                "TopMargin": -34.2432,
+                                "BottomMargin": 75.2432,
                                 "Tag": 313,
                                 "ActionTag": -623762206,
                                 "Size": {
-                                  "X": 90.0,
-                                  "Y": 20.0
+                                  "X": 126.0,
+                                  "Y": 18.0
                                 },
                                 "Name": "name",
                                 "ctype": "TextObjectData"
@@ -3268,8 +3267,8 @@
                             "Tag": 314,
                             "Children": [
                               {
-                                "FontSize": 20,
-                                "LabelText": "iphone 12",
+                                "FontSize": 18,
+                                "LabelText": "iphone12proMax",
                                 "HorizontalAlignmentType": "HT_Center",
                                 "VerticalAlignmentType": "VT_Center",
                                 "OutlineColor": {
@@ -3303,18 +3302,18 @@
                                   "Y": 1.4279
                                 },
                                 "PreSize": {
-                                  "X": 1.2,
-                                  "Y": 0.339
+                                  "X": 1.68,
+                                  "Y": 0.3051
                                 },
-                                "LeftMargin": -7.5,
-                                "RightMargin": -7.5,
-                                "TopMargin": -35.2432,
-                                "BottomMargin": 74.2432,
+                                "LeftMargin": -25.5,
+                                "RightMargin": -25.5,
+                                "TopMargin": -34.2432,
+                                "BottomMargin": 75.2432,
                                 "Tag": 315,
                                 "ActionTag": -705642256,
                                 "Size": {
-                                  "X": 90.0,
-                                  "Y": 20.0
+                                  "X": 126.0,
+                                  "Y": 18.0
                                 },
                                 "Name": "name",
                                 "ctype": "TextObjectData"
@@ -3369,8 +3368,8 @@
                             "Tag": 316,
                             "Children": [
                               {
-                                "FontSize": 20,
-                                "LabelText": "iphone 12",
+                                "FontSize": 18,
+                                "LabelText": "iphone12proMax",
                                 "HorizontalAlignmentType": "HT_Center",
                                 "VerticalAlignmentType": "VT_Center",
                                 "OutlineColor": {
@@ -3404,18 +3403,18 @@
                                   "Y": 1.4279
                                 },
                                 "PreSize": {
-                                  "X": 1.2,
-                                  "Y": 0.339
+                                  "X": 1.68,
+                                  "Y": 0.3051
                                 },
-                                "LeftMargin": -7.5,
-                                "RightMargin": -7.5,
-                                "TopMargin": -35.2432,
-                                "BottomMargin": 74.2432,
+                                "LeftMargin": -25.5,
+                                "RightMargin": -25.5,
+                                "TopMargin": -34.2432,
+                                "BottomMargin": 75.2432,
                                 "Tag": 317,
                                 "ActionTag": -1190292691,
                                 "Size": {
-                                  "X": 90.0,
-                                  "Y": 20.0
+                                  "X": 126.0,
+                                  "Y": 18.0
                                 },
                                 "Name": "name",
                                 "ctype": "TextObjectData"
@@ -3470,8 +3469,8 @@
                             "Tag": 318,
                             "Children": [
                               {
-                                "FontSize": 20,
-                                "LabelText": "iphone 12",
+                                "FontSize": 18,
+                                "LabelText": "iphone12proMax",
                                 "HorizontalAlignmentType": "HT_Center",
                                 "VerticalAlignmentType": "VT_Center",
                                 "OutlineColor": {
@@ -3505,18 +3504,18 @@
                                   "Y": 1.4279
                                 },
                                 "PreSize": {
-                                  "X": 1.2,
-                                  "Y": 0.339
+                                  "X": 1.68,
+                                  "Y": 0.3051
                                 },
-                                "LeftMargin": -7.5,
-                                "RightMargin": -7.5,
-                                "TopMargin": -35.2432,
-                                "BottomMargin": 74.2432,
+                                "LeftMargin": -25.5,
+                                "RightMargin": -25.5,
+                                "TopMargin": -34.2432,
+                                "BottomMargin": 75.2432,
                                 "Tag": 319,
                                 "ActionTag": -929631465,
                                 "Size": {
-                                  "X": 90.0,
-                                  "Y": 20.0
+                                  "X": 126.0,
+                                  "Y": 18.0
                                 },
                                 "Name": "name",
                                 "ctype": "TextObjectData"
@@ -3571,8 +3570,8 @@
                             "Tag": 320,
                             "Children": [
                               {
-                                "FontSize": 20,
-                                "LabelText": "iphone 12",
+                                "FontSize": 18,
+                                "LabelText": "iphone12proMax",
                                 "HorizontalAlignmentType": "HT_Center",
                                 "VerticalAlignmentType": "VT_Center",
                                 "OutlineColor": {
@@ -3606,18 +3605,18 @@
                                   "Y": 1.4279
                                 },
                                 "PreSize": {
-                                  "X": 1.2,
-                                  "Y": 0.339
+                                  "X": 1.68,
+                                  "Y": 0.3051
                                 },
-                                "LeftMargin": -7.5,
-                                "RightMargin": -7.5,
-                                "TopMargin": -35.2432,
-                                "BottomMargin": 74.2432,
+                                "LeftMargin": -25.5,
+                                "RightMargin": -25.5,
+                                "TopMargin": -34.2432,
+                                "BottomMargin": 75.2432,
                                 "Tag": 321,
                                 "ActionTag": 1166604987,
                                 "Size": {
-                                  "X": 90.0,
-                                  "Y": 20.0
+                                  "X": 126.0,
+                                  "Y": 18.0
                                 },
                                 "Name": "name",
                                 "ctype": "TextObjectData"
@@ -3672,8 +3671,8 @@
                             "Tag": 322,
                             "Children": [
                               {
-                                "FontSize": 20,
-                                "LabelText": "iphone 12",
+                                "FontSize": 18,
+                                "LabelText": "iphone12proMax",
                                 "HorizontalAlignmentType": "HT_Center",
                                 "VerticalAlignmentType": "VT_Center",
                                 "OutlineColor": {
@@ -3707,18 +3706,18 @@
                                   "Y": 1.4279
                                 },
                                 "PreSize": {
-                                  "X": 1.2,
-                                  "Y": 0.339
+                                  "X": 1.68,
+                                  "Y": 0.3051
                                 },
-                                "LeftMargin": -7.5,
-                                "RightMargin": -7.5,
-                                "TopMargin": -35.2432,
-                                "BottomMargin": 74.2432,
+                                "LeftMargin": -25.5,
+                                "RightMargin": -25.5,
+                                "TopMargin": -34.2432,
+                                "BottomMargin": 75.2432,
                                 "Tag": 323,
                                 "ActionTag": 2093617247,
                                 "Size": {
-                                  "X": 90.0,
-                                  "Y": 20.0
+                                  "X": 126.0,
+                                  "Y": 18.0
                                 },
                                 "Name": "name",
                                 "ctype": "TextObjectData"
@@ -3773,8 +3772,8 @@
                             "Tag": 324,
                             "Children": [
                               {
-                                "FontSize": 20,
-                                "LabelText": "iphone 12",
+                                "FontSize": 18,
+                                "LabelText": "iphone12proMax",
                                 "HorizontalAlignmentType": "HT_Center",
                                 "VerticalAlignmentType": "VT_Center",
                                 "OutlineColor": {
@@ -3808,18 +3807,18 @@
                                   "Y": 1.4279
                                 },
                                 "PreSize": {
-                                  "X": 1.2,
-                                  "Y": 0.339
+                                  "X": 1.68,
+                                  "Y": 0.3051
                                 },
-                                "LeftMargin": -7.5,
-                                "RightMargin": -7.5,
-                                "TopMargin": -35.2432,
-                                "BottomMargin": 74.2432,
+                                "LeftMargin": -25.5,
+                                "RightMargin": -25.5,
+                                "TopMargin": -34.2432,
+                                "BottomMargin": 75.2432,
                                 "Tag": 325,
                                 "ActionTag": -309801554,
                                 "Size": {
-                                  "X": 90.0,
-                                  "Y": 20.0
+                                  "X": 126.0,
+                                  "Y": 18.0
                                 },
                                 "Name": "name",
                                 "ctype": "TextObjectData"
@@ -3874,8 +3873,8 @@
                             "Tag": 326,
                             "Children": [
                               {
-                                "FontSize": 20,
-                                "LabelText": "iphone 12",
+                                "FontSize": 18,
+                                "LabelText": "iphone12proMax",
                                 "HorizontalAlignmentType": "HT_Center",
                                 "VerticalAlignmentType": "VT_Center",
                                 "OutlineColor": {
@@ -3909,18 +3908,18 @@
                                   "Y": 1.4279
                                 },
                                 "PreSize": {
-                                  "X": 1.2,
-                                  "Y": 0.339
+                                  "X": 1.68,
+                                  "Y": 0.3051
                                 },
-                                "LeftMargin": -7.5,
-                                "RightMargin": -7.5,
-                                "TopMargin": -35.2432,
-                                "BottomMargin": 74.2432,
+                                "LeftMargin": -25.5,
+                                "RightMargin": -25.5,
+                                "TopMargin": -34.2432,
+                                "BottomMargin": 75.2432,
                                 "Tag": 327,
                                 "ActionTag": -1255932708,
                                 "Size": {
-                                  "X": 90.0,
-                                  "Y": 20.0
+                                  "X": 126.0,
+                                  "Y": 18.0
                                 },
                                 "Name": "name",
                                 "ctype": "TextObjectData"
@@ -3975,8 +3974,8 @@
                             "Tag": 328,
                             "Children": [
                               {
-                                "FontSize": 20,
-                                "LabelText": "iphone 12",
+                                "FontSize": 18,
+                                "LabelText": "iphone12proMax",
                                 "HorizontalAlignmentType": "HT_Center",
                                 "VerticalAlignmentType": "VT_Center",
                                 "OutlineColor": {
@@ -4010,18 +4009,18 @@
                                   "Y": 1.4279
                                 },
                                 "PreSize": {
-                                  "X": 1.2,
-                                  "Y": 0.339
+                                  "X": 1.68,
+                                  "Y": 0.3051
                                 },
-                                "LeftMargin": -7.5,
-                                "RightMargin": -7.5,
-                                "TopMargin": -35.2432,
-                                "BottomMargin": 74.2432,
+                                "LeftMargin": -25.5,
+                                "RightMargin": -25.5,
+                                "TopMargin": -34.2432,
+                                "BottomMargin": 75.2432,
                                 "Tag": 329,
                                 "ActionTag": 185191478,
                                 "Size": {
-                                  "X": 90.0,
-                                  "Y": 20.0
+                                  "X": 126.0,
+                                  "Y": 18.0
                                 },
                                 "Name": "name",
                                 "ctype": "TextObjectData"
@@ -4092,7 +4091,7 @@
                       "Y": 0.4947
                     },
                     "PreSize": {
-                      "X": 0.1562,
+                      "X": 0.1563,
                       "Y": 0.2778
                     },
                     "LeftMargin": 258.912,
@@ -4187,12 +4186,204 @@
                         "TopMargin": -46.0,
                         "BottomMargin": -46.0,
                         "Tag": 336,
+                        "Children": [
+                          {
+                            "FileData": {
+                              "Type": "Normal",
+                              "Path": "turntable/zphd_15.png",
+                              "Plist": ""
+                            },
+                            "Scale9OriginX": 8,
+                            "Scale9OriginY": 7,
+                            "Scale9Width": 9,
+                            "Scale9Height": 8,
+                            "AnchorPoint": {
+                              "ScaleX": 0.5,
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 125.4602,
+                              "Y": 113.3772
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {},
+                            "IconVisible": false,
+                            "PrePosition": {
+                              "X": 0.4297,
+                              "Y": 0.3883
+                            },
+                            "PreSize": {
+                              "X": 0.0856,
+                              "Y": 0.0753
+                            },
+                            "LeftMargin": 112.9602,
+                            "RightMargin": 154.0398,
+                            "TopMargin": 167.6228,
+                            "BottomMargin": 102.3772,
+                            "Tag": 151,
+                            "Children": [
+                              {
+                                "FontSize": 16,
+                                "LabelText": "看广告",
+                                "OutlineColor": {
+                                  "G": 0,
+                                  "B": 0
+                                },
+                                "ShadowColor": {
+                                  "R": 110,
+                                  "G": 110,
+                                  "B": 110
+                                },
+                                "ShadowOffsetX": 2.0,
+                                "ShadowOffsetY": -2.0,
+                                "AnchorPoint": {
+                                  "ScaleX": 0.5,
+                                  "ScaleY": 0.5
+                                },
+                                "Position": {
+                                  "X": 50.5266,
+                                  "Y": 12.23
+                                },
+                                "Scale": {
+                                  "ScaleX": 1.0,
+                                  "ScaleY": 1.0
+                                },
+                                "CColor": {},
+                                "IconVisible": false,
+                                "PrePosition": {
+                                  "X": 2.0211,
+                                  "Y": 0.5559
+                                },
+                                "PreSize": {
+                                  "X": 1.92,
+                                  "Y": 0.7273
+                                },
+                                "LeftMargin": 26.5266,
+                                "RightMargin": -49.5266,
+                                "TopMargin": 1.77,
+                                "BottomMargin": 4.23,
+                                "Tag": 153,
+                                "ActionTag": -1280758553,
+                                "Size": {
+                                  "X": 48.0,
+                                  "Y": 16.0
+                                },
+                                "Name": "Text_2",
+                                "ctype": "TextObjectData"
+                              }
+                            ],
+                            "ActionTag": 424781291,
+                            "Size": {
+                              "X": 25.0,
+                              "Y": 22.0
+                            },
+                            "Name": "videoImg",
+                            "ctype": "ImageViewObjectData"
+                          },
+                          {
+                            "FontSize": 20,
+                            "LabelText": "免费",
+                            "OutlineColor": {
+                              "G": 0,
+                              "B": 0
+                            },
+                            "ShadowColor": {
+                              "R": 110,
+                              "G": 110,
+                              "B": 110
+                            },
+                            "ShadowOffsetX": 2.0,
+                            "ShadowOffsetY": -2.0,
+                            "AnchorPoint": {
+                              "ScaleX": 0.5,
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 147.0874,
+                              "Y": 117.8942
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {},
+                            "IconVisible": false,
+                            "PrePosition": {
+                              "X": 0.5037,
+                              "Y": 0.4037
+                            },
+                            "PreSize": {
+                              "X": 0.137,
+                              "Y": 0.0685
+                            },
+                            "LeftMargin": 127.0874,
+                            "RightMargin": 124.9126,
+                            "TopMargin": 164.1058,
+                            "BottomMargin": 107.8942,
+                            "Tag": 152,
+                            "ActionTag": -948904107,
+                            "Size": {
+                              "X": 40.0,
+                              "Y": 20.0
+                            },
+                            "Name": "turnFreeText",
+                            "ctype": "TextObjectData"
+                          }
+                        ],
                         "ActionTag": 608176967,
                         "Size": {
                           "X": 292.0,
                           "Y": 292.0
                         },
-                        "Name": "Image_24",
+                        "Name": "turnPointStartImg",
+                        "ctype": "ImageViewObjectData"
+                      },
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "turntable/zphd_1_1.png",
+                          "Plist": ""
+                        },
+                        "Scale9OriginX": 66,
+                        "Scale9OriginY": 81,
+                        "Scale9Width": 71,
+                        "Scale9Height": 86,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 100.0,
+                          "Y": 121.0
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.5,
+                          "Y": 0.605
+                        },
+                        "PreSize": {
+                          "X": 1.015,
+                          "Y": 1.24
+                        },
+                        "LeftMargin": -1.5,
+                        "RightMargin": -1.5,
+                        "TopMargin": -45.0,
+                        "BottomMargin": -3.0,
+                        "Tag": 150,
+                        "ActionTag": -1434358652,
+                        "Size": {
+                          "X": 203.0,
+                          "Y": 248.0
+                        },
+                        "Name": "turnPointAssImg",
                         "ctype": "ImageViewObjectData"
                       }
                     ],
@@ -6017,8 +6208,9 @@
                         "ctype": "TextObjectData"
                       },
                       {
+                        "IsCustomSize": true,
                         "FontSize": 20,
-                        "LabelText": "xxxxxxxxxxxxxxxxxx",
+                        "LabelText": "xxxxxxxxxxxxxxxxxxxx",
                         "HorizontalAlignmentType": "HT_Center",
                         "VerticalAlignmentType": "VT_Center",
                         "OutlineColor": {
@@ -6055,17 +6247,17 @@
                           "Y": 0.432
                         },
                         "PreSize": {
-                          "X": 0.3666,
+                          "X": 0.4521,
                           "Y": 0.5
                         },
-                        "LeftMargin": 273.73,
-                        "RightMargin": 37.27,
+                        "LeftMargin": 252.73,
+                        "RightMargin": 16.27,
                         "TopMargin": 12.7202,
                         "BottomMargin": 7.2798,
                         "Tag": 760,
                         "ActionTag": 1715887122,
                         "Size": {
-                          "X": 180.0,
+                          "X": 222.0,
                           "Y": 20.0
                         },
                         "Name": "awardsText",
@@ -7498,6 +7690,7 @@
         "Default/Button_Normal.png",
         "Default/Button_Press.png",
         "font/hkhbtW12.ttc",
+        "turntable/zphd_1_1.png",
         "turntable/zphd_1_4.png",
         "turntable/zphd_1_5.png",
         "turntable/zphd_11.png",

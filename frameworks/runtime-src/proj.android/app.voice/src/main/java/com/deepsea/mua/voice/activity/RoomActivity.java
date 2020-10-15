@@ -977,10 +977,10 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
             ViewBindUtils.setText(mBinding.tvMicroManageDesc, "上麦管理");
 
         } else {
-            if (mRoomData.getWheatCardCount() > 0) {
+
+            if (mRoomData.getWheatCardCount() > 0 && !mRoomModel.isOnMp()) {
                 ViewBindUtils.setText(mBinding.tvMicroManageDesc, "免费上麦");
                 ViewBindUtils.setText(mBinding.tvMicroManageCost, mUser.getSex().equals("1") ? "剩余上麦卡x" + mRoomData.getWheatCardCount() : "");
-
             } else {
                 ViewBindUtils.setText(mBinding.tvMicroManageDesc, mRoomModel.isOnMp() ? "申请下麦" : "申请上麦");
                 if (mJoinRoom.getRoomMode() == 9) {
@@ -1015,6 +1015,10 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
     private RoomData.MicroInfosBean mainMpInfo = null;
 
     private void initSecondRoom() {
+        if (mRoomModel.getHostMicro().getUser() != null) {
+            hongId = Integer.valueOf(mRoomModel.getHostMicro().getUser().getUserId());
+        }
+
         Log.d("initSecondRoom", "initSecondRoom");
         if (!isChangeView) {
             Log.d("initSecondRoom", JsonConverter.toJson(mRoomModel.getHostMicro()));
@@ -2196,7 +2200,7 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
 
         //跳转守护团
         subscribeClick(mBinding.llGuardGroup, o -> {
-            GuardGroupDialog groupDialog = new GuardGroupDialog(mContext,mViewModel);
+            GuardGroupDialog groupDialog = new GuardGroupDialog(mContext, mViewModel);
             groupDialog.setOnClickListener(new GuardGroupDialog.OnClickListener() {
                 @Override
                 public void onClick(String userId) {
@@ -2258,6 +2262,7 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
                 songGuideDialog.setOnClickListener(new SongGuideDialog.OnClickListener() {
                     @Override
                     public void onClickKnow() {
+                        SharedPrefrencesUtil.saveData(mContext, "hasClickNewFuction", "hasClickNewFuction", true);
                         showMusicManage();
                     }
                 });
@@ -3017,6 +3022,8 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
         ILrcBuilder builder = new DefaultLrcBuilder();
         //解析歌词返回LrcRow集合
         List<LrcRow> rows = builder.getLrcRows(lrc);
+        Log.d("AG_EX_AV", "歌词：" + JsonConverter.toJson(rows));
+
         return rows;
     }
 
@@ -4121,8 +4128,11 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
     @Override
     public void onHeartValue(BaseMicroMsg msg, int heartValue) {
         if (msg.getLevel() != 0) {
-            int itemPos = mMpAdapter.getItemPos(msg.getLevel(), msg.getNumber());
-            mMpAdapter.onHeartValue(itemPos, heartValue);
+            if (mJoinRoom.getRoomMode() != 9) {
+
+                int itemPos = mMpAdapter.getItemPos(msg.getLevel(), msg.getNumber());
+                mMpAdapter.onHeartValue(itemPos, heartValue);
+            }
         }
     }
 

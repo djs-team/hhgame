@@ -180,11 +180,16 @@ public class RoomReportActivity extends FragmentActivity
         subscribeClick(mBinding.rlPlug, o -> {
             showPhotoDialog();
         });
+        subscribeClick(mBinding.rlGroup, o -> {
+            finish();
+        });
+        subscribeClick(mBinding.rlContent, o -> {
+        });
     }
 
     /*
-上传图片证据 ---------------------------------------------------
- */
+         上传图片证据 ---------------------------------------------------
+     */
     GalleryDialog mPhotoDialog;
 
     private void showPhotoDialog() {

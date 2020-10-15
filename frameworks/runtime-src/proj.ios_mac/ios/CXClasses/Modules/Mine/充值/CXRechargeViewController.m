@@ -151,6 +151,7 @@
             if (isSuccess) {
                 [weakSelf toast:@"购买成功"];
                 [weakSelf loadBalances];
+                [weakSelf loadRechargeItems];
             } else {
                 [weakSelf toast:errorMsg];
             }
@@ -213,6 +214,7 @@
     if ([[info.object objectForKey:@"resultStatus"] integerValue] == 9000) {
         [self toast:@"支付成功"];
         [self loadBalances];
+        [self loadRechargeItems];
     } else {
         [self toast:@"支付失败"];
     }
@@ -232,6 +234,7 @@
         case WXSuccess:
             [self toast:@"支付成功"];
             [self loadBalances];
+            [self loadRechargeItems];
             break;
         case WXErrCodeUserCancel:
             [self toast:@"取消支付"];

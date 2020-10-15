@@ -1,6 +1,7 @@
 load('game/ui/layer/invitation/InvitationLayer', function () {
     let ResConfig = include('game/config/ResConfig')
     let BaseLayer = include('public/ui/BaseLayer')
+    let GameEvent = include('game/config/GameEvent')
     let inviteUrl = ""
     let InvitationMdt = include('game/ui/layer/invitation/InvitationMdt')
     let invitationLayer = BaseLayer.extend({
@@ -168,6 +169,7 @@ load('game/ui/layer/invitation/InvitationLayer', function () {
         returnClike: function () {
 
             if (this._returnType == 1) {
+                appInstance.sendNotification(GameEvent.HALL_RED_GET)
                 appInstance.uiManager().removeUI(this)
             } else {
                 this._returnType = 1

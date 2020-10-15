@@ -16,6 +16,7 @@ import com.deepsea.mua.stub.base.BaseFragment;
 import com.deepsea.mua.stub.base.BaseObserver;
 import com.deepsea.mua.stub.client.hyphenate.IEMMessageListener;
 import com.deepsea.mua.stub.entity.MessageNumVo;
+import com.deepsea.mua.stub.utils.LogoutUtils;
 import com.deepsea.mua.stub.utils.ViewBindUtils;
 import com.deepsea.mua.stub.utils.ViewModelFactory;
 import com.deepsea.mua.stub.utils.eventbus.UpdateUnreadMsgEvent;
@@ -97,11 +98,20 @@ public class MessageMainFragment extends BaseFragment<FragmentMessageMainBinding
         });
     }
 
+    boolean isResume = false;
+
     @Override
     public void onResume() {
         super.onResume();
+        isResume = true;
         Log.d("onResume", "messageMan");
         getMessageNum();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        isResume = false;
     }
 
     //未读消息数量
@@ -124,13 +134,16 @@ public class MessageMainFragment extends BaseFragment<FragmentMessageMainBinding
     private EMMessageListener mEMListener = new IEMMessageListener() {
         @Override
         public void onMessageReceived(List<EMMessage> list) {
-            getMessageNum();
+            if (isResume) {
+                getMessageNum();
+            }
         }
 
         @Override
         public void onCmdMessageReceived(List<EMMessage> list) {
-            getMessageNum();
-
+            if (isResume) {
+                getMessageNum();
+            }
         }
 
         @Override

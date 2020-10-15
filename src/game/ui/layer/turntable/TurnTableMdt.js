@@ -62,6 +62,7 @@ load('game/ui/layer/turntable/TurnTableMdt', function () {
                 configList[i] = config
             }
 
+            tableData.code = body.code
             tableData.configList = configList
             tableData.luckyPrize = body.luckyPrize
 

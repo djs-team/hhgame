@@ -1811,7 +1811,7 @@
                           "Y": 0.5485
                         },
                         "PreSize": {
-                          "X": 0.2813,
+                          "X": 0.2812,
                           "Y": 0.9778
                         },
                         "LeftMargin": 1.46,
@@ -1933,7 +1933,7 @@
                   "Y": 0.305
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.4153
                 },
                 "LeftMargin": 780.9401,
@@ -1995,14 +1995,15 @@
                       "X": 90.0,
                       "Y": 25.0
                     },
+                    "VisibleForFrame": false,
                     "Name": "Text_21",
                     "ctype": "TextObjectData"
                   },
                   {
                     "AnchorPoint": {},
                     "Position": {
-                      "X": 91.582,
-                      "Y": 43.6769
+                      "X": 91.58,
+                      "Y": 5.68
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -2012,16 +2013,16 @@
                     "IconVisible": true,
                     "PrePosition": {
                       "X": 0.4579,
-                      "Y": 0.1461
+                      "Y": 0.019
                     },
                     "PreSize": {
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 91.582,
-                    "RightMargin": 108.418,
-                    "TopMargin": 255.3231,
-                    "BottomMargin": 43.6769,
+                    "LeftMargin": 91.58,
+                    "RightMargin": 108.42,
+                    "TopMargin": 293.32,
+                    "BottomMargin": 5.68,
                     "Tag": 48,
                     "ActionTag": 741570487,
                     "Size": {
@@ -2096,6 +2097,7 @@
               "X": 1.0,
               "Y": 1.0
             },
+            "UserData": "{\"layoutType\":\"maxArea\",\"screenAlign\":\"mid\"}",
             "Tag": 351,
             "Children": [
               {
@@ -2313,7 +2315,7 @@
                   "Y": 0.5003
                 },
                 "PreSize": {
-                  "X": 0.2813,
+                  "X": 0.2812,
                   "Y": 0.0792
                 },
                 "LeftMargin": 477.3901,

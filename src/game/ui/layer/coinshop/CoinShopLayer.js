@@ -1,7 +1,10 @@
 load('game/ui/layer/coinshop/CoinShopLayer', function () {
+    let AppConfig = include('game/public/AppConfig')
     let ResConfig = include('game/config/ResConfig')
     let BaseLayer = include('public/ui/BaseLayer')
     let CoinShopMdt = include('game/ui/layer/coinshop/CoinShopMdt')
+    let GameEvent = include('game/config/GameEvent')
+    let GameUtil = include('game/public/GameUtil')
     let sender = {};
 
     let CoinShopLayer = BaseLayer.extend({
@@ -40,7 +43,7 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
                 'popUpPnl/addressPnl': {},
                 'popUpPnl/addressPnl/confirmBtn': {onClicked: this.onConfirmClicked},
                 'popUpPnl/addressPnl/updateAddressCloseBtn': {onClicked: this.onCloseUpdateAddressClicked},
-                'PayType': {},
+                'PayType': {onClicked: this.onClosePayTypeClicked },
                 'PayType/bgAli/ivAli': {onClicked: this.onAliPayClick},
                 'PayType/bgWx/ivWx': {onClicked: this.onWxClick},
             }
@@ -112,7 +115,7 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
          * 触发关闭按钮
          */
         onColseClicked: function () {
-
+            appInstance.sendNotification(GameEvent.HALL_RED_GET)
             appInstance.uiManager().removeUI(this)
         },
 
@@ -127,18 +130,18 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
             let fuKaCnt = this.fuKaPnl.getChildByName('fuKaCnt')
 
             if (data.hasOwnProperty('coin')) {
-                coinsCnt.setString(data.coin)
+                coinsCnt.setString(GameUtil.getStringRule(data.coin))
                 this._dataMsg.coinsCnt = data.coin
             }
 
             if (data.hasOwnProperty('diamonds')) {
-                diamondsCnt.setString(data.diamonds)
+                diamondsCnt.setString(GameUtil.getStringRule(data.diamonds))
                 this._dataMsg.diamondsCnt = data.diamonds
 
             }
 
             if (data.hasOwnProperty('fuKa')) {
-                fuKaCnt.setString(data.fuKa)
+                fuKaCnt.setString(GameUtil.getStringRule(data.fuKa))
                 this._dataMsg.fuKaCnt = data.fuKa
 
             }
@@ -210,7 +213,7 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
 
                 goodsCell._sendMsg = {
                     'goodsid': goodsData.id,
-                    'diamonds': goodsData.diamonds
+                    'price': goodsData.price
                 }
 
                 goodsCell.getChildByName('coinsPg').loadTexture(goodsData.res)
@@ -243,7 +246,6 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
          */
         onBuyZuanFunction: function (s) {
             sender = s;
-            cc.log("----------------------onBuyZuanFunction" + JSON.stringify(sender))
             if (cc.sys.OS_IOS === cc.sys.os) {
                 if (AppConfig.applePayType == "Apple") {
                    let _sendData = sender._sendData
@@ -252,7 +254,6 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
                        payType: 3
                    }
                    appInstance.gameAgent().httpGame().ZuanPaysOrderReq(msg)
-                   cc.log("----------------------onRechargeClicked")
                 } else {
                     this.PayType.setVisible(true)
                 }
@@ -317,7 +318,7 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
 
             let msg
             let btnNameArray = {}
-            if (this._dataMsg.diamondsCnt < sender._sendMsg.diamonds) {
+            if (this._dataMsg.diamondsCnt < sender._sendMsg.price) {
 
                 msg = '您的钻石数量不足，请先领取钻石'
                 btnNameArray.MidBtnName = '确 定'
@@ -431,6 +432,12 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
 
             this.addressPnl.setVisible(false)
 
+        },
+
+
+        onClosePayTypeClicked: function () {
+
+            this.PayType.setVisible(false)
         }
 
     })

@@ -6,6 +6,7 @@ load('game/ui/scene/HallScene', function () {
     let ResConfig = include('game/config/ResConfig')
     let HallMdt = include('game/ui/scene/HallMdt')
     let LocalSave = include('game/public/LocalSave')
+    let GameUtil = include('game/public/GameUtil')
     let AniPlayer = ResConfig.AniPlayer
     let PlayerPlay = ResConfig.PlayerPlay
     let HallScene = BaseScene.extend({
@@ -38,6 +39,7 @@ load('game/ui/scene/HallScene', function () {
                 'bmPnl/startQuickPnl/startQuickBtn': {onClicked: this.onStartQuickBtnClick},
 
 
+                'leftPnl/invitationPnl': {},
                 'leftPnl/invitationPnl/invitationBtn': {onClicked: this.onInvitationClick},
                 'leftPnl/turnTablePnl/turnTableNd': {},
                 'leftPnl/turnTablePnl/turnTableNd/turnTableBtn': {onClicked: this.onTurnTableClick},
@@ -67,6 +69,7 @@ load('game/ui/scene/HallScene', function () {
         },
 
         onEmailBtnClick: function () {
+            this.emailBtn.getChildByName('redImg').setVisible(false)
             appInstance.gameAgent().Tips('敬请期待！！！')
         },
 
@@ -96,6 +99,7 @@ load('game/ui/scene/HallScene', function () {
         },
         onInvitationClick: function () {
 
+            this.invitationPnl.getChildByName('redImg').setVisible(false)
             appInstance.gameAgent().addUI(ResConfig.Ui.InvitationLayer)
         },
 
@@ -112,6 +116,7 @@ load('game/ui/scene/HallScene', function () {
         },
 
         onTaskClick: function () {
+            this.taskPnl.getChildByName('redImg').setVisible(false)
             appInstance.gameAgent().addPopUI(ResConfig.Ui.TaskLayer)
         },
         onCashCowClick: function () {
@@ -130,6 +135,7 @@ load('game/ui/scene/HallScene', function () {
         },
 
         onMemberClick: function () {
+            this.guiZuBtn.getChildByName('redImg').setVisible(false)
             appInstance.gameAgent().addPopUI(ResConfig.Ui.MemberLayer)
         },
 
@@ -328,15 +334,15 @@ load('game/ui/scene/HallScene', function () {
             }
 
             if (data.hasOwnProperty('coin')) {
-                coinsCnt.setString(data.coin)
+                coinsCnt.setString(GameUtil.getStringRule(data.coin))
             }
 
             if (data.hasOwnProperty('diamonds')) {
-                diamondsCnt.setString(data.diamonds)
+                diamondsCnt.setString(GameUtil.getStringRule(data.diamonds))
             }
 
             if (data.hasOwnProperty('fuKa')) {
-                fuKaCnt.setString(data.fuKa)
+                fuKaCnt.setString(GameUtil.getStringRule(data.fuKa))
             }
             if (data.hasOwnProperty('sdkphotourl')) {
                 this.loadUrlImage(data.sdkphotourl, photo)
@@ -359,6 +365,31 @@ load('game/ui/scene/HallScene', function () {
             goMsg.pExtend = 'gameHall'
             appInstance.gameAgent().tcpGame().enterTable(goMsg)
             global.localStorage.setIntKey(LocalSave.CoinGamePeopleNum, this._peopleNum)
+        },
+
+        onUpdateHallRedStatus: function (data) {
+
+            if(data.hasOwnProperty('mailFlag'))
+                this.emailBtn.getChildByName('redImg').setVisible(true)
+            else
+                this.emailBtn.getChildByName('redImg').setVisible(false)
+
+            if(data.hasOwnProperty('vipDailyFlag'))
+                this.guiZuBtn.getChildByName('redImg').setVisible(true)
+            else
+                this.guiZuBtn.getChildByName('redImg').setVisible(false)
+
+            if(data.hasOwnProperty('invitationFlag'))
+                this.invitationPnl.getChildByName('redImg').setVisible(true)
+            else
+                this.invitationPnl.getChildByName('redImg').setVisible(false)
+
+            if(data.hasOwnProperty('taskFlag'))
+                this.taskPnl.getChildByName('redImg').setVisible(true)
+            else
+                this.taskPnl.getChildByName('redImg').setVisible(false)
+
+
         },
 
 

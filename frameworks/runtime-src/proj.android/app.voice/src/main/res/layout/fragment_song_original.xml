@@ -56,21 +56,12 @@
                     android:imeOptions="actionSearch"
                     android:maxLength="20"
                     android:singleLine="true"
-                    android:textColor="#FF282828"
+                    android:textColor="@color/white"
                     android:textColorHint="#ff818181"
                     android:textSize="16sp" />
             </RelativeLayout>
         </RelativeLayout>
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/rv_song_tag"
-            android:paddingLeft="14dp"
-            android:paddingRight="16dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="42dp" />
 
         <com.deepsea.mua.stub.view.WrapRefreshLayout
             android:id="@+id/refresh_layout"

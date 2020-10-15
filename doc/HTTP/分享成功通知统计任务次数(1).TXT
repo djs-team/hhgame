@@ -1,0 +1,15 @@
+﻿
+
+
+	/**
+	 * 分享成功通知统计任务次数
+	 */
+	int MJ_HALL_SHARE_NOTICE = MJ_HALL_SERVER_ID + 106;
+	
+	请求信息:
+		基础信息
+	
+	返回消息:
+		private int status;//0成功
+		
+		

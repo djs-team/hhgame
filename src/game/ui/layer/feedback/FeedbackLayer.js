@@ -2,6 +2,7 @@
 load('game/ui/layer/feedback/FeedbackLayer', function () {
     let ResConfig = include('game/config/ResConfig')
     let BaseLayer = include('public/ui/BaseLayer')
+    let GameEvent = include('game/config/GameEvent')
     let feedbackLayer = BaseLayer.extend({
         _className: 'feedbackLayer',
         ctor: function () {
@@ -184,6 +185,7 @@ load('game/ui/layer/feedback/FeedbackLayer', function () {
         },
 
         oncloseBtnClick: function () {
+            appInstance.sendNotification(GameEvent.HALL_RED_GET)
             appInstance.uiManager().removeUI(this)
         },
         onExit: function () {

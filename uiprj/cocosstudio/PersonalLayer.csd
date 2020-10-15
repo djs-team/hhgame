@@ -429,7 +429,7 @@
               <AbstractNodeData Name="rolePnl" ActionTag="-346737783" Tag="347" IconVisible="False" LeftMargin="780.9401" RightMargin="299.0599" TopMargin="201.4200" BottomMargin="219.5800" ClipAble="False" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="200.0000" Y="299.0000" />
                 <Children>
-                  <AbstractNodeData Name="Text_21" ActionTag="956992051" Tag="348" IconVisible="False" LeftMargin="42.0066" RightMargin="67.9934" TopMargin="8.4986" BottomMargin="265.5014" IsCustomSize="True" FontSize="18" LabelText="角色" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                  <AbstractNodeData Name="Text_21" ActionTag="956992051" VisibleForFrame="False" Tag="348" IconVisible="False" LeftMargin="42.0066" RightMargin="67.9934" TopMargin="8.4986" BottomMargin="265.5014" IsCustomSize="True" FontSize="18" LabelText="角色" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="90.0000" Y="25.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="87.0066" Y="278.0014" />
@@ -440,13 +440,13 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="aniNd" ActionTag="741570487" Tag="48" IconVisible="True" LeftMargin="91.5820" RightMargin="108.4180" TopMargin="255.3231" BottomMargin="43.6769" ctype="SingleNodeObjectData">
+                  <AbstractNodeData Name="aniNd" ActionTag="741570487" Tag="48" IconVisible="True" LeftMargin="91.5800" RightMargin="108.4200" TopMargin="293.3200" BottomMargin="5.6800" ctype="SingleNodeObjectData">
                     <Size X="0.0000" Y="0.0000" />
                     <AnchorPoint />
-                    <Position X="91.5820" Y="43.6769" />
+                    <Position X="91.5800" Y="5.6800" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.4579" Y="0.1461" />
+                    <PrePosition X="0.4579" Y="0.0190" />
                     <PreSize X="0.0000" Y="0.0000" />
                   </AbstractNodeData>
                 </Children>
@@ -473,7 +473,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="updateNamePnl" ActionTag="2062223528" VisibleForFrame="False" Tag="351" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+          <AbstractNodeData Name="updateNamePnl" ActionTag="2062223528" VisibleForFrame="False" UserData="{&quot;layoutType&quot;:&quot;maxArea&quot;,&quot;screenAlign&quot;:&quot;mid&quot;}" Tag="351" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <Children>
               <AbstractNodeData Name="Image_1" ActionTag="-1719826098" Tag="352" IconVisible="False" LeftMargin="380.3900" RightMargin="347.6100" TopMargin="218.7800" BottomMargin="197.2200" Scale9Enable="True" LeftEage="44" RightEage="44" TopEage="43" BottomEage="43" Scale9OriginX="44" Scale9OriginY="43" Scale9Width="48" Scale9Height="47" ctype="ImageViewObjectData">

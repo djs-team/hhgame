@@ -4,6 +4,8 @@ load('game/ui/layer/coingame/CoinGameLayer', function () {
     let BaseLayer = include('public/ui/BaseLayer')
     let LocalSave = include('game/public/LocalSave')
     let CoinGameMdt = include('game/ui/layer/coingame/CoinGameMdt')
+    let GameUtil = include('game/public/GameUtil')
+    let GameEvent = include('game/config/GameEvent')
     let coinGameLayer = BaseLayer.extend({
         _className: 'coinGameLayer',
         _goBtnData: [
@@ -167,11 +169,11 @@ load('game/ui/layer/coingame/CoinGameLayer', function () {
             let diamondsCnt = this.diamondsPnl.getChildByName('diamondsCnt')
 
             if (data.hasOwnProperty('coin')) {
-                coinsCnt.setString(data.coin)
+                coinsCnt.setString(GameUtil.getStringRule(data.coin))
             }
 
             if (data.hasOwnProperty('diamonds')) {
-                diamondsCnt.setString(data.diamonds)
+                diamondsCnt.setString(GameUtil.getStringRule(data.diamonds))
             }
 
 
@@ -186,6 +188,7 @@ load('game/ui/layer/coingame/CoinGameLayer', function () {
             this._super()
         },
         onCloseClick: function () {
+            appInstance.sendNotification(GameEvent.HALL_RED_GET)
             appInstance.uiManager().removeUI(this)
         }
     })

@@ -2,6 +2,7 @@
 load('game/ui/layer/config/ConfLayer', function () {
     let ResConfig = include('game/config/ResConfig')
     let BaseLayer = include('public/ui/BaseLayer')
+    let GameEvent = include('game/config/GameEvent')
     let confLayer = BaseLayer.extend({
         _className: 'confLayer',
         ctor: function () {
@@ -22,6 +23,7 @@ load('game/ui/layer/config/ConfLayer', function () {
             this._super()
         },
         onClose: function () {
+            appInstance.sendNotification(GameEvent.HALL_RED_GET)
             appInstance.uiManager().removeUI(this)
         }
     })

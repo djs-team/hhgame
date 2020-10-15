@@ -391,7 +391,7 @@ public class SongPlayingFragment extends BaseFragment<FragmentSongPlayingBinding
             }
             SongInfo nextSongInfo = playSongParam.getNextSongInfo();
             if (nextSongInfo != null) {
-                ViewBindUtils.setVisible(mBinding.llSongNext, true);
+//                ViewBindUtils.setVisible(mBinding.llSongNext, true);
                 ViewBindUtils.setText(mBinding.tvSongNextName, nextSongInfo.getSongName());
                 ViewBindUtils.setText(mBinding.tvSongNextSinger, nextSongInfo.getSingerName());
                 ViewBindUtils.setText(mBinding.tvSongNextDemandUser, "点播：" + nextSongInfo.getDemandUserName());
@@ -402,7 +402,7 @@ public class SongPlayingFragment extends BaseFragment<FragmentSongPlayingBinding
 
                 }
             } else {
-                ViewBindUtils.setVisible(mBinding.llSongNext, false);
+//                ViewBindUtils.setVisible(mBinding.llSongNext, false);
                 ViewBindUtils.setText(mBinding.tvSongNextName, "--");
                 ViewBindUtils.setText(mBinding.tvSongNextSinger, "--");
                 ViewBindUtils.setText(mBinding.tvSongNextDemandUser, "点播：" + "--");
@@ -410,7 +410,7 @@ public class SongPlayingFragment extends BaseFragment<FragmentSongPlayingBinding
             }
 
         } else {
-            ViewBindUtils.setVisible(mBinding.llSongNext, false);
+//            ViewBindUtils.setVisible(mBinding.llSongNext, false);
         }
 
 

@@ -255,6 +255,19 @@ load('game/public/GameUtil',function () {
 
     }
 
+    GameUtil.getStringRule = function (num) {
+        let length = num.toString().length;
+        if (length>=9) {
+            num = num/100000000;
+            num = num.toFixed(1);
+            num = num+'亿';
+        } else if (length>4 && length<9) {
+            num = num/10000;
+            num = num.toFixed(1);
+            num = num+'万';
+        }
+        return num;
+    }
 
     return GameUtil
 })

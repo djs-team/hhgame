@@ -1727,17 +1727,17 @@
                         },
                         "PreSize": {
                           "X": 0.1068,
-                          "Y": 0.129
+                          "Y": 0.1548
                         },
                         "LeftMargin": 41.079,
                         "RightMargin": 559.78,
-                        "TopMargin": 107.1936,
-                        "BottomMargin": 27.8071,
+                        "TopMargin": 105.1936,
+                        "BottomMargin": 25.8071,
                         "Tag": 320,
                         "ActionTag": 76166618,
                         "Size": {
                           "X": 71.8274,
-                          "Y": 20.0
+                          "Y": 24.0
                         },
                         "Name": "moneyText",
                         "ctype": "TextObjectData"
@@ -1912,17 +1912,17 @@
                             },
                             "PreSize": {
                               "X": 0.1263,
-                              "Y": 0.4766
+                              "Y": 0.5719
                             },
                             "LeftMargin": 160.3469,
                             "RightMargin": 185.555,
-                            "TopMargin": 7.7814,
-                            "BottomMargin": 14.1862,
+                            "TopMargin": 5.7813,
+                            "BottomMargin": 12.1861,
                             "Tag": 323,
                             "ActionTag": 1708095057,
                             "Size": {
                               "X": 50.0,
-                              "Y": 19.9998
+                              "Y": 24.0
                             },
                             "Name": "progressBarText",
                             "ctype": "TextObjectData"

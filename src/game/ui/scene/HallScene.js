@@ -6,6 +6,7 @@ load('game/ui/scene/HallScene', function () {
     let ResConfig = include('game/config/ResConfig')
     let HallMdt = include('game/ui/scene/HallMdt')
     let LocalSave = include('game/public/LocalSave')
+    let GameUtil = include('game/public/GameUtil')
     let AniPlayer = ResConfig.AniPlayer
     let PlayerPlay = ResConfig.PlayerPlay
     let HallScene = BaseScene.extend({
@@ -328,15 +329,15 @@ load('game/ui/scene/HallScene', function () {
             }
 
             if (data.hasOwnProperty('coin')) {
-                coinsCnt.setString(data.coin)
+                coinsCnt.setString(GameUtil.getStringRule(data.coin))
             }
 
             if (data.hasOwnProperty('diamonds')) {
-                diamondsCnt.setString(data.diamonds)
+                diamondsCnt.setString(GameUtil.getStringRule(data.diamonds))
             }
 
             if (data.hasOwnProperty('fuKa')) {
-                fuKaCnt.setString(data.fuKa)
+                fuKaCnt.setString(GameUtil.getStringRule(data.fuKa))
             }
             if (data.hasOwnProperty('sdkphotourl')) {
                 this.loadUrlImage(data.sdkphotourl, photo)

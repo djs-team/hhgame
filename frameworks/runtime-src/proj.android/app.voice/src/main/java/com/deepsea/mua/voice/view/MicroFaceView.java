@@ -244,16 +244,12 @@ public class MicroFaceView extends FrameLayout {
                     }
                 });
             }
-            if (user.getUserId().equals(UserUtils.getUser().getUid()) || bean.getType() == 0) {
+            if (MatchMakerUtils.isRoomOwner()||user.getUserId().equals(UserUtils.getUser().getUid()) || bean.getType() == 0) {
                 ViewBindUtils.setVisible(mBinding.llMicroOperate, true);
             } else {
                 ViewBindUtils.setVisible(mBinding.llMicroOperate, false);
             }
-//            String u=mBinding.tvUserInfo.getText().toString();
-//            if (TextUtils.isEmpty(u)) {
             addSurfaceView(Integer.parseInt(user.getUserId()));
-
-//            }
         } else {
             releaseLayout(bean.getType());
         }

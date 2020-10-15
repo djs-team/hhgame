@@ -3538,9 +3538,9 @@
 				00614C34250B94CA00BB7620 /* CXLiveRoomGuardianListViewController.xib */,
 				00614C35250B94CA00BB7620 /* CXLiveRoomGuardianRuleViewController.m */,
 				00614C36250B94CA00BB7620 /* CXLiveRoomGuardianListViewController.h */,
+				00614C45250B94CA00BB7620 /* CXLiveRoomGuardianRuleViewController.h */,
 				00614C37250B94CA00BB7620 /* CXLiveRoomGuardianRuleViewController.xib */,
 				00614C38250B94CA00BB7620 /* view */,
-				00614C45250B94CA00BB7620 /* CXLiveRoomGuardianRuleViewController.h */,
 			);
 			path = "守护团";
 			sourceTree = "<group>";

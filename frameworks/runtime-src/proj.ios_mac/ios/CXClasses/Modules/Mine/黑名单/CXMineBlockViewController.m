@@ -9,6 +9,7 @@
 #import "CXMineBlockCell.h"
 #import "CXMineBlockActionView.h"
 #import "CXLiveRoomUserProfileReportView.h"
+#import "CXUserInfoViewController.h"
 
 @interface CXMineBlockViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -54,16 +55,20 @@
     CXUserModel *user = _dataArrays[indexPath.row];
     [cell.avatar sd_setImageWithURL:[NSURL URLWithString:user.avatar]];
     cell.nameLabel.text = user.nickname;
+    cell.timeLabel.text = user.createtime;
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     CXUserModel *user = _dataArrays[indexPath.row];
+//    [AppController showUserProfile:user.user_id];
     CXMineBlockActionView *view = [[NSBundle mainBundle] loadNibNamed:@"CXMineBlockActionView" owner:self options:nil].firstObject;
     kWeakSelf
     view.blockActionBlock = ^(NSInteger tag) {
         if (tag == 10) { // 查看详情
-            [AppController showUserProfile:user.user_id];
+            CXUserInfoViewController *vc = [CXUserInfoViewController new];
+            vc.user_Id = user.user_id;
+            [weakSelf.navigationController pushViewController:vc animated:YES];
         } else if (tag == 20) { // 取消拉黑
             CXSystemAlertView *alertView = [CXSystemAlertView loadNib];
             [alertView showAlertTitle:@"是否取消拉黑该用户？" message:nil cancel:nil sure:^{

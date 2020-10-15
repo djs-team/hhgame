@@ -72,6 +72,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString * friend_education;// 征友学历
 @property (nonatomic, strong) NSString * friend_pay;// 征友收入
 
+// 黑名单
+@property (nonatomic, strong) NSString * createtime;// 拉黑时间
 @end
 
 // 编辑资料

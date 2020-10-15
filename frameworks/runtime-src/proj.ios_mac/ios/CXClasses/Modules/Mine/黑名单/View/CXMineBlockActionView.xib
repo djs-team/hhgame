@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -20,7 +21,7 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5rf-RT-4Dc">
+                <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5rf-RT-4Dc">
                     <rect key="frame" x="66" y="49" width="58" height="29"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <state key="normal" title="查看详情">
@@ -30,7 +31,7 @@
                         <action selector="buttonActoin:" destination="iN0-l3-epB" eventType="touchUpInside" id="4GP-1g-2Bc"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2sd-CY-FGc">
+                <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2sd-CY-FGc">
                     <rect key="frame" x="66" y="78" width="58" height="29"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <state key="normal" title="取消拉黑">
@@ -40,7 +41,7 @@
                         <action selector="buttonActoin:" destination="iN0-l3-epB" eventType="touchUpInside" id="hyX-iO-lOx"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="30" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4k3-DX-oaf">
+                <button opaque="NO" tag="30" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4k3-DX-oaf">
                     <rect key="frame" x="80" y="107" width="30" height="29"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <state key="normal" title="举报">
@@ -51,22 +52,27 @@
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="XqU-Jx-dn1" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="32F-5u-Cyb"/>
                 <constraint firstItem="2sd-CY-FGc" firstAttribute="top" secondItem="5rf-RT-4Dc" secondAttribute="bottom" id="4AG-Jf-bVj"/>
+                <constraint firstItem="5rf-RT-4Dc" firstAttribute="top" secondItem="XqU-Jx-dn1" secondAttribute="bottom" constant="8" id="4Jq-jK-13k"/>
+                <constraint firstItem="5rf-RT-4Dc" firstAttribute="centerX" secondItem="XqU-Jx-dn1" secondAttribute="centerX" id="Ahh-U6-6c0"/>
                 <constraint firstItem="XqU-Jx-dn1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="Hz6-KJ-PH3"/>
                 <constraint firstItem="2sd-CY-FGc" firstAttribute="centerX" secondItem="5rf-RT-4Dc" secondAttribute="centerX" id="Nw4-pN-s9c"/>
                 <constraint firstItem="4k3-DX-oaf" firstAttribute="top" secondItem="2sd-CY-FGc" secondAttribute="bottom" id="bnD-C9-fyj"/>
                 <constraint firstItem="4k3-DX-oaf" firstAttribute="centerX" secondItem="2sd-CY-FGc" secondAttribute="centerX" id="mSF-H5-fT6"/>
-                <constraint firstItem="5rf-RT-4Dc" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="5" id="nr1-rW-6nQ"/>
-                <constraint firstItem="5rf-RT-4Dc" firstAttribute="centerX" secondItem="XqU-Jx-dn1" secondAttribute="centerX" id="nvW-aU-Z9Z"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="-125" y="109"/>
         </view>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

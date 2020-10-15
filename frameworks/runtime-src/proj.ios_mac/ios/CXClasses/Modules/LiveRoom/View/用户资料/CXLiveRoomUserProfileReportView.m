@@ -10,7 +10,7 @@
 #import "CXSelectedPhotoView.h"
 #import <AliyunOSSiOS/AliyunOSSiOS.h>
 
-@interface CXLiveRoomUserProfileReportView () <UITableViewDataSource, UITableViewDelegate, UITextViewDelegate>
+@interface CXLiveRoomUserProfileReportView () <UITableViewDataSource, UITableViewDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *commitbtn;
 @property (weak, nonatomic) IBOutlet UIButton *blockBtn;
@@ -25,7 +25,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *mainTableView;
 
-@property (nonatomic, strong) NSMutableArray *imageArrays;
+@property (nonatomic, strong) NSMutableArray <NSString *> *imageArrays;
 @property (nonatomic, strong) NSMutableArray *itemArrays;
 @property (nonatomic, strong) NSMutableArray *selectedItemArrays;
 @property (nonatomic, strong) NSMutableArray *selectedItemContentArrays;
@@ -36,6 +36,11 @@
 @end
 
 @implementation CXLiveRoomUserProfileReportView
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self endEditing:YES];
+}
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     
@@ -56,7 +61,7 @@
     
     self.reasonTextView.delegate = self;
     
-    _imageArrays = [NSMutableArray array];
+    _imageArrays = [NSMutableArray arrayWithObjects:@"", @"", @"", nil];
     _image1Btn.layer.borderColor = UIColorHex(0x888888).CGColor;
     _image1Btn.layer.borderWidth = 0.5;
     _image2Btn.layer.borderColor = UIColorHex(0x888888).CGColor;
@@ -140,17 +145,21 @@
 }
 
 - (void)reloadImageBtn {
-    if (_imageArrays.count == 0) {
+    if (_imageArrays[0].length <= 0) {
         _image2Btn.hidden = YES;
         _image3Btn.hidden = YES;
         [_image1Btn setImage:[UIImage imageNamed:@"add"] forState:UIControlStateNormal];
-    } else if (_imageArrays.count == 1) {
-        _image2Btn.hidden = NO;
-        _image3Btn.hidden = YES;
-        [_image2Btn setImage:[UIImage imageNamed:@"add"] forState:UIControlStateNormal];
     } else {
         _image2Btn.hidden = NO;
         _image3Btn.hidden = NO;
+    }
+    if (_imageArrays[1].length <= 0) {
+        _image3Btn.hidden = YES;
+        [_image2Btn setImage:[UIImage imageNamed:@"add"] forState:UIControlStateNormal];
+    } else {
+        _image3Btn.hidden = NO;
+    }
+    if (_imageArrays[2].length <= 0) {
         [_image3Btn setImage:[UIImage imageNamed:@"add"] forState:UIControlStateNormal];
     }
     
@@ -163,7 +172,7 @@
     photoView.selectedPhotoBlock = ^(UIImage * _Nonnull photo) {
         [weakSelf uploadImageRequest:photo btn:sender];
     };
-    [[CXTools currentViewController] lew_presentPopupView:photoView animation:nil];
+    [[UIApplication sharedApplication].keyWindow addSubview:photoView];
 }
 
 - (void)uploadImageRequest:(UIImage *)photo btn:(UIButton *)sender {
@@ -182,7 +191,8 @@
     [putTask continueWithBlock:^id _Nullable(OSSTask * _Nonnull task) {
         if (!task.error) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                [weakSelf.imageArrays insertObject:put.objectKey atIndex:sender.tag];
+                [weakSelf.imageArrays replaceObjectAtIndex:sender.tag withObject:put.objectKey];
+//                [weakSelf.imageArrays insertObject:put.objectKey atIndex:sender.tag];
                 [sender setImage:photo forState:UIControlStateNormal];
                 [weakSelf reloadImageBtn];
             });
@@ -210,13 +220,13 @@
         @"option_id": [_selectedItemArrays componentsJoinedByString:@","],
         @"contents": _reasonTextView.text,
         @"option_content":[_selectedItemContentArrays componentsJoinedByString:@","],
-        @"img1":_imageArrays.count >= 1 ? _imageArrays[0] : @"",
-        @"img2":_imageArrays.count >= 2 ? _imageArrays[1] : @"",
-        @"img3":_imageArrays.count >= 3 ? _imageArrays[2] : @"",
+        @"img1":_imageArrays[0],
+        @"img2":_imageArrays[1],
+        @"img3":_imageArrays[2],
         @"is_black":_isBlock == YES ? @"1" : @"2",
     };
     kWeakSelf
-    [CXHTTPRequest POSTWithURL:@"/index.php/Api/Report/addReport" parameters:param callback:^(id responseObject, BOOL isCache, NSError *error) {
+    [CXHTTPRequest GETWithURL:@"/index.php/Api/Report/addReport" parameters:param callback:^(id responseObject, BOOL isCache, NSError *error) {
         if (!error) {
             [CXTools showAlertWithMessage:@"举报成功"];
             [weakSelf hide];

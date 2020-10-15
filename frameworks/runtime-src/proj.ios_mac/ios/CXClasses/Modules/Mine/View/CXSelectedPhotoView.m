@@ -54,11 +54,11 @@ static CXSelectedPhotoView *_selectPhoto = nil;
 
 #pragma mark - Action
 - (void)cancleClick{
-    [[CXTools currentViewController]lew_dismissPopupView];
+    [self removeFromSuperview];
 }
 
 - (void)takephotoClick{
-    [[CXTools currentViewController]lew_dismissPopupView];
+    [self removeFromSuperview];
     UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
     imagePickerController.delegate = self;
     imagePickerController.allowsEditing = YES;
@@ -68,7 +68,7 @@ static CXSelectedPhotoView *_selectPhoto = nil;
 }
 
 - (void)photoClick{
-    [[CXTools currentViewController]lew_dismissPopupView];
+    [self removeFromSuperview];
     UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
     imagePickerController.delegate = self;
     imagePickerController.allowsEditing = YES;

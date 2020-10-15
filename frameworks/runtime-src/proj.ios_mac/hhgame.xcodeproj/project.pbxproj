@@ -3435,9 +3435,9 @@
 		00614BFD250B94CA00BB7620 /* 黑名单 */ = {
 			isa = PBXGroup;
 			children = (
+				00614C00250B94CA00BB7620 /* CXMineBlockViewController.h */,
 				00614BFE250B94CA00BB7620 /* CXMineBlockViewController.m */,
 				00614BFF250B94CA00BB7620 /* CXMineBlockViewController.xib */,
-				00614C00250B94CA00BB7620 /* CXMineBlockViewController.h */,
 				00614C01250B94CA00BB7620 /* View */,
 			);
 			path = "黑名单";
@@ -3520,13 +3520,13 @@
 		00614C30250B94CA00BB7620 /* 用户资料页 */ = {
 			isa = PBXGroup;
 			children = (
-				00614C31250B94CA00BB7620 /* CXUserInfoTotalGiftViewController.h */,
-				00614C32250B94CA00BB7620 /* 守护团 */,
-				00614C46250B94CA00BB7620 /* CXUserInfoViewController.xib */,
 				00614C47250B94CA00BB7620 /* CXUserInfoViewController.h */,
-				00614C48250B94CA00BB7620 /* CXUserInfoTotalGiftViewController.m */,
-				00614C49250B94CA00BB7620 /* View */,
 				00614C57250B94CA00BB7620 /* CXUserInfoViewController.m */,
+				00614C46250B94CA00BB7620 /* CXUserInfoViewController.xib */,
+				00614C31250B94CA00BB7620 /* CXUserInfoTotalGiftViewController.h */,
+				00614C48250B94CA00BB7620 /* CXUserInfoTotalGiftViewController.m */,
+				00614C32250B94CA00BB7620 /* 守护团 */,
+				00614C49250B94CA00BB7620 /* View */,
 			);
 			path = "用户资料页";
 			sourceTree = "<group>";
@@ -3538,9 +3538,9 @@
 				00614C34250B94CA00BB7620 /* CXLiveRoomGuardianListViewController.xib */,
 				00614C35250B94CA00BB7620 /* CXLiveRoomGuardianRuleViewController.m */,
 				00614C36250B94CA00BB7620 /* CXLiveRoomGuardianListViewController.h */,
+				00614C45250B94CA00BB7620 /* CXLiveRoomGuardianRuleViewController.h */,
 				00614C37250B94CA00BB7620 /* CXLiveRoomGuardianRuleViewController.xib */,
 				00614C38250B94CA00BB7620 /* view */,
-				00614C45250B94CA00BB7620 /* CXLiveRoomGuardianRuleViewController.h */,
 			);
 			path = "守护团";
 			sourceTree = "<group>";

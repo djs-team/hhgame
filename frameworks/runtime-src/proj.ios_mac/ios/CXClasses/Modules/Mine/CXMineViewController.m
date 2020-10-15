@@ -252,7 +252,7 @@
         weakSelf.avatarImage = photo;
         [weakSelf getUploadToken];
     };
-    [[CXTools currentViewController] lew_presentPopupView:photoView animation:nil];
+    [[UIApplication sharedApplication].keyWindow addSubview:photoView];
 }
 
 - (void)getUploadToken {

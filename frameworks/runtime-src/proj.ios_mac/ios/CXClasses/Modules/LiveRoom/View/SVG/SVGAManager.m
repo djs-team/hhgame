@@ -48,7 +48,7 @@
     return self;
 }
 
-- (void)cache:(NSString*)urlString {
+- (void)cache:(NSString*)urlString completionBlock:(void ( ^ _Nonnull )(BOOL isSuccess))completionBlock{
     if (!urlString.length) return;
     NSURL * url = [NSURL URLWithString:urlString];
     if (!url) return;
@@ -60,8 +60,10 @@
     [_preLoadParser parseWithURL:url completionBlock:^(SVGAVideoEntity * _Nullable videoItem) {
         [wself.requetURLs removeObject:urlString];
         [wself.completionURLs addObject:urlString];
+        completionBlock(YES);
     } failureBlock:^(NSError * _Nullable error) {
         [wself.requetURLs removeObject:urlString];
+        completionBlock(NO);
     }];
 }
 

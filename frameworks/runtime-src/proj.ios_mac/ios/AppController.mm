@@ -777,6 +777,10 @@ UIInterfaceOrientationMask oMask = UIInterfaceOrientationMaskLandscape;
     }];
 }
 
++ (void)reconnectRoom:(NSString *_Nonnull)roomId {
+    [[CXClientModel instance] reconnectRoom:roomId callback:nil];
+}
+
 + (void)showUserProfile:(NSString *)userId {
     CXUserInfoViewController *vc = [CXUserInfoViewController new];
     vc.user_Id = userId;

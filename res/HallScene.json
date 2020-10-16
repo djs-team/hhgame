@@ -644,7 +644,7 @@
                   "Y": 0.9457
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.0625
                 },
                 "LeftMargin": 323.296,
@@ -660,16 +660,16 @@
                       "Plist": ""
                     },
                     "Scale9Enable": true,
-                    "Scale9OriginX": 8,
+                    "Scale9OriginX": 7,
                     "Scale9OriginY": 11,
-                    "Scale9Width": 10,
+                    "Scale9Width": 11,
                     "Scale9Height": 13,
                     "AnchorPoint": {
                       "ScaleX": 0.5,
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 103.32,
+                      "X": 109.32,
                       "Y": 21.65
                     },
                     "Scale": {
@@ -679,29 +679,29 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.5166,
+                      "X": 0.5466,
                       "Y": 0.4811
                     },
                     "PreSize": {
-                      "X": 0.6069,
-                      "Y": 0.7556
+                      "X": 0.8119,
+                      "Y": 0.8444
                     },
-                    "LeftMargin": 42.6324,
-                    "RightMargin": 35.9924,
-                    "TopMargin": 6.35,
-                    "BottomMargin": 4.65,
+                    "LeftMargin": 28.13,
+                    "RightMargin": 9.49,
+                    "TopMargin": 4.35,
+                    "BottomMargin": 2.65,
                     "Tag": 115,
                     "ActionTag": -840924393,
                     "Size": {
-                      "X": 121.3752,
-                      "Y": 34.0
+                      "X": 162.38,
+                      "Y": 38.0
                     },
                     "Name": "coinsNum",
                     "ctype": "ImageViewObjectData"
                   },
                   {
                     "IsCustomSize": true,
-                    "FontSize": 26,
+                    "FontSize": 24,
                     "LabelText": "10.万",
                     "HorizontalAlignmentType": "HT_Center",
                     "VerticalAlignmentType": "VT_Center",
@@ -722,7 +722,7 @@
                     },
                     "Position": {
                       "X": 102.0,
-                      "Y": 22.0
+                      "Y": 21.0
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -732,21 +732,21 @@
                     "IconVisible": false,
                     "PrePosition": {
                       "X": 0.51,
-                      "Y": 0.4889
+                      "Y": 0.4667
                     },
                     "PreSize": {
-                      "X": 0.43,
-                      "Y": 0.7556
+                      "X": 0.558,
+                      "Y": 0.8444
                     },
-                    "LeftMargin": 59.0,
-                    "RightMargin": 55.0,
-                    "TopMargin": 6.0,
-                    "BottomMargin": 5.0,
+                    "LeftMargin": 46.2,
+                    "RightMargin": 42.2,
+                    "TopMargin": 5.0,
+                    "BottomMargin": 2.0,
                     "Tag": 124,
                     "ActionTag": -13001346,
                     "Size": {
-                      "X": 86.0,
-                      "Y": 34.0
+                      "X": 111.6,
+                      "Y": 38.0
                     },
                     "Name": "coinsCnt",
                     "ctype": "TextObjectData"
@@ -771,9 +771,9 @@
                     },
                     "Scale9Enable": true,
                     "Scale9OriginX": 15,
-                    "Scale9OriginY": 11,
+                    "Scale9OriginY": 13,
                     "Scale9Width": 8,
-                    "Scale9Height": 18,
+                    "Scale9Height": 16,
                     "OutlineColor": {
                       "G": 0,
                       "B": 0
@@ -791,8 +791,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 161.0,
-                      "Y": 22.0
+                      "X": 173.0,
+                      "Y": 21.65
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -801,22 +801,22 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.805,
-                      "Y": 0.4889
+                      "X": 0.865,
+                      "Y": 0.4811
                     },
                     "PreSize": {
-                      "X": 0.1897,
-                      "Y": 0.9222
+                      "X": 0.1947,
+                      "Y": 0.8889
                     },
-                    "LeftMargin": 142.03,
-                    "RightMargin": 20.03,
-                    "TopMargin": 2.25,
-                    "BottomMargin": 1.25,
+                    "LeftMargin": 153.53,
+                    "RightMargin": 7.53,
+                    "TopMargin": 3.35,
+                    "BottomMargin": 1.65,
                     "Tag": 21,
                     "ActionTag": 833893237,
                     "Size": {
-                      "X": 37.94,
-                      "Y": 41.5
+                      "X": 38.94,
+                      "Y": 40.0
                     },
                     "Name": "coinAddBtn",
                     "ctype": "ButtonObjectData"
@@ -836,8 +836,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 37.3901,
-                      "Y": 21.5003
+                      "X": 30.39,
+                      "Y": 21.5
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -846,17 +846,17 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.187,
+                      "X": 0.152,
                       "Y": 0.4778
                     },
                     "PreSize": {
                       "X": 0.2,
                       "Y": 0.8889
                     },
-                    "LeftMargin": 17.3901,
-                    "RightMargin": 142.6099,
-                    "TopMargin": 3.4997,
-                    "BottomMargin": 1.5003,
+                    "LeftMargin": 10.39,
+                    "RightMargin": 149.61,
+                    "TopMargin": 3.5,
+                    "BottomMargin": 1.5,
                     "Tag": 114,
                     "ActionTag": -1139096234,
                     "Size": {
@@ -899,7 +899,7 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 651.08,
+                  "X": 658.08,
                   "Y": 680.95
                 },
                 "Scale": {
@@ -909,15 +909,15 @@
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.5087,
+                  "X": 0.5141,
                   "Y": 0.9458
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.0625
                 },
-                "LeftMargin": 551.08,
-                "RightMargin": 528.92,
+                "LeftMargin": 558.08,
+                "RightMargin": 521.92,
                 "TopMargin": 16.55,
                 "BottomMargin": 658.45,
                 "Tag": 120,
@@ -952,25 +952,25 @@
                       "Y": 0.4811
                     },
                     "PreSize": {
-                      "X": 0.765,
-                      "Y": 0.7556
+                      "X": 0.8119,
+                      "Y": 0.8444
                     },
-                    "LeftMargin": 26.82,
-                    "RightMargin": 20.18,
-                    "TopMargin": 6.35,
-                    "BottomMargin": 4.65,
+                    "LeftMargin": 22.13,
+                    "RightMargin": 15.49,
+                    "TopMargin": 4.35,
+                    "BottomMargin": 2.65,
                     "Tag": 121,
                     "ActionTag": 770476341,
                     "Size": {
-                      "X": 153.0,
-                      "Y": 34.0
+                      "X": 162.38,
+                      "Y": 38.0
                     },
                     "Name": "diamondsNum",
                     "ctype": "ImageViewObjectData"
                   },
                   {
                     "IsCustomSize": true,
-                    "FontSize": 28,
+                    "FontSize": 24,
                     "LabelText": "50",
                     "HorizontalAlignmentType": "HT_Center",
                     "VerticalAlignmentType": "VT_Center",
@@ -990,8 +990,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 103.0001,
-                      "Y": 22.0
+                      "X": 100.0,
+                      "Y": 21.0
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -1000,22 +1000,22 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.515,
-                      "Y": 0.4889
+                      "X": 0.5,
+                      "Y": 0.4667
                     },
                     "PreSize": {
-                      "X": 0.43,
-                      "Y": 0.7556
+                      "X": 0.558,
+                      "Y": 0.8444
                     },
-                    "LeftMargin": 60.0001,
-                    "RightMargin": 53.9999,
-                    "TopMargin": 6.0,
-                    "BottomMargin": 5.0,
+                    "LeftMargin": 44.2,
+                    "RightMargin": 44.2,
+                    "TopMargin": 5.0,
+                    "BottomMargin": 2.0,
                     "Tag": 125,
                     "ActionTag": -1297075180,
                     "Size": {
-                      "X": 86.0,
-                      "Y": 34.0
+                      "X": 111.6,
+                      "Y": 38.0
                     },
                     "Name": "diamondsCnt",
                     "ctype": "TextObjectData"
@@ -1060,7 +1060,7 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 162.9998,
+                      "X": 168.0,
                       "Y": 22.0
                     },
                     "Scale": {
@@ -1070,22 +1070,22 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.815,
+                      "X": 0.84,
                       "Y": 0.4889
                     },
                     "PreSize": {
-                      "X": 0.1897,
-                      "Y": 0.9222
+                      "X": 0.1947,
+                      "Y": 0.8889
                     },
-                    "LeftMargin": 144.0298,
-                    "RightMargin": 18.0302,
-                    "TopMargin": 2.25,
-                    "BottomMargin": 1.25,
+                    "LeftMargin": 148.53,
+                    "RightMargin": 12.53,
+                    "TopMargin": 3.0,
+                    "BottomMargin": 2.0,
                     "Tag": 122,
                     "ActionTag": 1240390100,
                     "Size": {
-                      "X": 37.94,
-                      "Y": 41.5
+                      "X": 38.94,
+                      "Y": 40.0
                     },
                     "Name": "diamondsAddBtn",
                     "ctype": "ButtonObjectData"
@@ -1105,8 +1105,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 37.39,
-                      "Y": 21.5
+                      "X": 25.39,
+                      "Y": 24.5
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -1115,22 +1115,22 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.1869,
-                      "Y": 0.4778
+                      "X": 0.1269,
+                      "Y": 0.5444
                     },
                     "PreSize": {
-                      "X": 0.225,
-                      "Y": 0.9333
+                      "X": 0.22,
+                      "Y": 0.9556
                     },
-                    "LeftMargin": 14.89,
-                    "RightMargin": 140.11,
-                    "TopMargin": 2.5,
-                    "BottomMargin": 0.5,
+                    "LeftMargin": 3.39,
+                    "RightMargin": 152.61,
+                    "TopMargin": -1.0,
+                    "BottomMargin": 3.0,
                     "Tag": 123,
                     "ActionTag": 1218645053,
                     "Size": {
-                      "X": 45.0,
-                      "Y": 42.0
+                      "X": 44.0,
+                      "Y": 43.0
                     },
                     "Name": "diamonds",
                     "ctype": "ImageViewObjectData"
@@ -1182,7 +1182,7 @@
                   "Y": 0.9444
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.0625
                 },
                 "LeftMargin": 780.08,
@@ -1221,25 +1221,25 @@
                       "Y": 0.4811
                     },
                     "PreSize": {
-                      "X": 0.765,
-                      "Y": 0.7556
+                      "X": 0.8119,
+                      "Y": 0.8444
                     },
-                    "LeftMargin": 26.82,
-                    "RightMargin": 20.18,
-                    "TopMargin": 6.35,
-                    "BottomMargin": 4.65,
+                    "LeftMargin": 22.13,
+                    "RightMargin": 15.49,
+                    "TopMargin": 4.35,
+                    "BottomMargin": 2.65,
                     "Tag": 127,
                     "ActionTag": -205830087,
                     "Size": {
-                      "X": 153.0,
-                      "Y": 34.0
+                      "X": 162.38,
+                      "Y": 38.0
                     },
                     "Name": "fuKaNum",
                     "ctype": "ImageViewObjectData"
                   },
                   {
                     "IsCustomSize": true,
-                    "FontSize": 30,
+                    "FontSize": 24,
                     "LabelText": "300",
                     "HorizontalAlignmentType": "HT_Center",
                     "VerticalAlignmentType": "VT_Center",
@@ -1259,8 +1259,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 102.9999,
-                      "Y": 22.0
+                      "X": 101.0,
+                      "Y": 21.0
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -1269,22 +1269,22 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.515,
-                      "Y": 0.4889
+                      "X": 0.505,
+                      "Y": 0.4667
                     },
                     "PreSize": {
-                      "X": 0.43,
-                      "Y": 0.7556
+                      "X": 0.558,
+                      "Y": 0.8444
                     },
-                    "LeftMargin": 59.9999,
-                    "RightMargin": 54.0001,
-                    "TopMargin": 6.0,
-                    "BottomMargin": 5.0,
+                    "LeftMargin": 45.2,
+                    "RightMargin": 43.2,
+                    "TopMargin": 5.0,
+                    "BottomMargin": 2.0,
                     "Tag": 128,
                     "ActionTag": -498549214,
                     "Size": {
-                      "X": 86.0,
-                      "Y": 34.0
+                      "X": 111.6,
+                      "Y": 38.0
                     },
                     "Name": "fuKaCnt",
                     "ctype": "TextObjectData"
@@ -1329,7 +1329,7 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 162.9999,
+                      "X": 168.0,
                       "Y": 22.0
                     },
                     "Scale": {
@@ -1339,15 +1339,15 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.815,
+                      "X": 0.84,
                       "Y": 0.4889
                     },
                     "PreSize": {
                       "X": 0.1897,
                       "Y": 0.9222
                     },
-                    "LeftMargin": 144.0299,
-                    "RightMargin": 18.0301,
+                    "LeftMargin": 149.03,
+                    "RightMargin": 13.03,
                     "TopMargin": 2.25,
                     "BottomMargin": 1.25,
                     "Tag": 129,
@@ -1454,7 +1454,7 @@
                 },
                 "Position": {
                   "X": 1090.048,
-                  "Y": 674.784
+                  "Y": 676.8
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -1466,7 +1466,7 @@
                 "PositionPercentYEnabled": true,
                 "PrePosition": {
                   "X": 0.8516,
-                  "Y": 0.9372
+                  "Y": 0.94
                 },
                 "PreSize": {
                   "X": 0.0359,
@@ -1474,13 +1474,13 @@
                 },
                 "LeftMargin": 1067.048,
                 "RightMargin": 166.952,
-                "TopMargin": 26.216,
-                "BottomMargin": 655.784,
+                "TopMargin": 24.2,
+                "BottomMargin": 657.8,
                 "Tag": 30,
                 "Children": [
                   {
                     "IsCustomSize": true,
-                    "FontSize": 20,
+                    "FontSize": 19,
                     "LabelText": "邮件",
                     "HorizontalAlignmentType": "HT_Center",
                     "VerticalAlignmentType": "VT_Center",
@@ -1500,7 +1500,7 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 22.4427,
+                      "X": 22.44,
                       "Y": -1.641
                     },
                     "Scale": {
@@ -1510,22 +1510,22 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.4879,
+                      "X": 0.4878,
                       "Y": -0.0432
                     },
                     "PreSize": {
                       "X": 0.8696,
-                      "Y": 0.5263
+                      "Y": 0.5789
                     },
-                    "LeftMargin": 2.4427,
-                    "RightMargin": 3.5573,
-                    "TopMargin": 29.641,
-                    "BottomMargin": -11.641,
+                    "LeftMargin": 2.44,
+                    "RightMargin": 3.56,
+                    "TopMargin": 28.641,
+                    "BottomMargin": -12.641,
                     "Tag": 132,
                     "ActionTag": 1623445450,
                     "Size": {
                       "X": 40.0,
-                      "Y": 20.0
+                      "Y": 22.0
                     },
                     "Name": "fuKaCnt_0",
                     "ctype": "TextObjectData"
@@ -1546,7 +1546,7 @@
                     },
                     "Position": {
                       "X": 40.2761,
-                      "Y": 35.9009
+                      "Y": 35.9
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -1556,7 +1556,7 @@
                     "IconVisible": false,
                     "PrePosition": {
                       "X": 0.8756,
-                      "Y": 0.9448
+                      "Y": 0.9447
                     },
                     "PreSize": {
                       "X": 0.5,
@@ -1564,8 +1564,8 @@
                     },
                     "LeftMargin": 28.7761,
                     "RightMargin": -5.7761,
-                    "TopMargin": -8.9009,
-                    "BottomMargin": 24.9009,
+                    "TopMargin": -8.9,
+                    "BottomMargin": 24.9,
                     "Tag": 297,
                     "ActionTag": 517721033,
                     "Size": {
@@ -1597,7 +1597,6 @@
                   "Path": "hall/dtjm_7.png",
                   "Plist": ""
                 },
-                "Scale9Enable": true,
                 "Scale9OriginX": 15,
                 "Scale9OriginY": 11,
                 "Scale9Width": 19,
@@ -1619,8 +1618,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 1212.0,
-                  "Y": 681.0
+                  "X": 1212.032,
+                  "Y": 676.8
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -1628,18 +1627,20 @@
                 },
                 "CColor": {},
                 "IconVisible": false,
+                "PositionPercentXEnabled": true,
+                "PositionPercentYEnabled": true,
                 "PrePosition": {
                   "X": 0.9469,
-                  "Y": 0.9458
+                  "Y": 0.94
                 },
                 "PreSize": {
-                  "X": 0.0383,
-                  "Y": 0.0708
+                  "X": 0.0359,
+                  "Y": 0.0639
                 },
-                "LeftMargin": 1187.5,
-                "RightMargin": 43.5,
-                "TopMargin": 13.5,
-                "BottomMargin": 655.5,
+                "LeftMargin": 1189.032,
+                "RightMargin": 44.968,
+                "TopMargin": 20.2,
+                "BottomMargin": 653.8,
                 "Tag": 81,
                 "Children": [
                   {
@@ -1664,8 +1665,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 24.5706,
-                      "Y": 1.4859
+                      "X": 24.44,
+                      "Y": 2.36
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -1674,22 +1675,22 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.5014,
-                      "Y": 0.0291
+                      "X": 0.5313,
+                      "Y": 0.0513
                     },
                     "PreSize": {
-                      "X": 0.8163,
-                      "Y": 0.3529
+                      "X": 0.8696,
+                      "Y": 0.4783
                     },
-                    "LeftMargin": 4.5706,
-                    "RightMargin": 4.4294,
-                    "TopMargin": 40.5141,
-                    "BottomMargin": -7.5141,
+                    "LeftMargin": 4.44,
+                    "RightMargin": 1.56,
+                    "TopMargin": 32.64,
+                    "BottomMargin": -8.64,
                     "Tag": 135,
                     "ActionTag": 37719768,
                     "Size": {
                       "X": 40.0,
-                      "Y": 18.0
+                      "Y": 22.0
                     },
                     "Name": "fuKaCnt_0",
                     "ctype": "TextObjectData"
@@ -1697,8 +1698,8 @@
                 ],
                 "ActionTag": 371629241,
                 "Size": {
-                  "X": 49.0,
-                  "Y": 51.0
+                  "X": 46.0,
+                  "Y": 46.0
                 },
                 "Name": "moreBtn",
                 "ctype": "ButtonObjectData"
@@ -1763,7 +1764,7 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 1198.7853,
+                      "X": 1198.79,
                       "Y": 496.36
                     },
                     "Scale": {
@@ -1780,8 +1781,8 @@
                       "X": 0.1117,
                       "Y": 0.3903
                     },
-                    "LeftMargin": 1127.2853,
-                    "RightMargin": 9.7147,
+                    "LeftMargin": 1127.29,
+                    "RightMargin": 9.71,
                     "TopMargin": 83.14,
                     "BottomMargin": 355.86,
                     "Tag": 194,
@@ -2414,7 +2415,7 @@
                       "Y": 0.0847
                     },
                     "LeftMargin": 1126.0938,
-                    "RightMargin": 10.9063,
+                    "RightMargin": 10.9062,
                     "TopMargin": 300.9403,
                     "BottomMargin": 358.0597,
                     "Tag": 204,

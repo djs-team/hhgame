@@ -36,15 +36,14 @@
     [_locationBtn setTitle:[NSString stringWithFormat:@"%@",model.UserInfo.City] forState:UIControlStateNormal];
     if (model.UserInfo.Sex == 1) { // 男
         [_ageBtn setImage:[UIImage imageNamed:@"nan2"] forState:UIControlStateNormal];
-        _ageBtn.backgroundColor = UIColorHex(0x3F99FF);
     } else {
         [_ageBtn setImage:[UIImage imageNamed:@"nv2"] forState:UIControlStateNormal];
-        _ageBtn.backgroundColor = UIColorHex(0xEB76E4);
     }
     
     _numberLabel.text = [NSString stringWithFormat:@"亲密度：%@", model.Intimacy.stringValue];
     _expireLabel.text = [NSString stringWithFormat:@"还有%@天到期", model.Days.stringValue];
     
+    _endTimeLabel.text = [NSString stringWithFormat:@"守护到期时间：%@", model.DeadlineTime];
 }
 
 - (void)setUserModel:(CXUserModel *)userModel {
@@ -64,6 +63,8 @@
     
     _numberLabel.text = [NSString stringWithFormat:@"亲密度：%@", userModel.intimacy];
     _expireLabel.text = [NSString stringWithFormat:@"还有%@天到期", userModel.countdown_day.stringValue];
+    
+    _endTimeLabel.text = [NSString stringWithFormat:@"守护到期时间：%@", userModel.end_time];
 }
 
 @end

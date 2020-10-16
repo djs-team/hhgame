@@ -19,7 +19,7 @@ load('game/ui/layer/sign/SignLayer', function () {
 
                 'pnl/btnPnl/mulitAcceptBtn': {onClicked: this.onVideoAcceptClicked},
                 'pnl/btnPnl/ordinaryAcceptPnl': {onClicked: this.onOrdinaryAcceptClicked},
-                'pnl/btnPnl/explainBtn': {},
+                'pnl/btnPnl/explainBtn': {onClicked: this.onExplainClick},
                 'pnl/btnPnl/cancleBtn': {onClicked: this.onCloseClick},
 
                 'pnl/loadingBarPnl/loadingBar': {},
@@ -28,6 +28,10 @@ load('game/ui/layer/sign/SignLayer', function () {
                 'pnl/signDataList': {},
                 'pnl/signDataListCell': {},
                 'pnl/signDataCell': {},
+
+                'pnl/poupPnl': {},
+                'pnl/poupPnl/rulePnl': {},
+                'pnl/poupPnl/rulePnl/ruleCloseBtn': {onClicked: this.onHideRulePnlClick},
 
 
             }
@@ -67,10 +71,21 @@ load('game/ui/layer/sign/SignLayer', function () {
             this.treasureChestCell.setVisible(false)
             this.signDataCell.setVisible(false)
             this.signDataListCell.setVisible(false)
+            this.poupPnl.setVisible(false)
+            this.rulePnl.setVisible(false)
 
             this.ordinaryAcceptPnl.getChildByName('singleAcceptText').setVisible(false)
         },
 
+        onExplainClick: function () {
+            this.poupPnl.setVisible(true)
+            this.rulePnl.setVisible(true)
+        },
+
+        onHideRulePnlClick: function () {
+            this.poupPnl.setVisible(false)
+            this.rulePnl.setVisible(false)
+        },
 
         showView: function () {
 

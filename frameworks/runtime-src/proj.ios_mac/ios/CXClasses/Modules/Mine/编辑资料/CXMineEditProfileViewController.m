@@ -47,7 +47,6 @@
 
 @property (nonatomic, strong) NSMutableArray *ageArrays;
 @property (nonatomic, strong) NSMutableArray *statureArrays;
-@property (nonatomic, strong) NSMutableArray *provinceArrays;
 
 @property (nonatomic, strong) UITextView *introTextView;
 
@@ -92,8 +91,13 @@
             
             self.dataSources = [NSMutableArray array];
             [self.dataSources addObject: @"jyxs"];
-            [self.dataSources addObject: self.menusData.jbxx];
-            [self.dataSources addObject: self.menusData.grzl];
+            if (self.menusData.jbxx.menus.copy > 0) {
+                [self.dataSources addObject: self.menusData.jbxx];
+            }
+            if (self.menusData.grzl.menus.count > 0) {
+                [self.dataSources addObject: self.menusData.grzl];
+            }
+            
             
             [self.tableView reloadData];
         }
@@ -342,18 +346,14 @@
     
     if (_isFriendCondition) {
         if (indexPath.row == 0) {
-            CXPickerViewAlertView *alertView = [[[NSBundle mainBundle] loadNibNamed:@"CXPickerViewAlertView" owner:self options:nil] lastObject];
-            alertView.parentVC = self;
-            alertView.title = @"修改所在地";
-            alertView.dataSources = self.provinceArrays;
-            alertView.contenStr = cell.rightLabel.text;
-            alertView.sureActionBlock = ^(NSString * _Nonnull content) {
-                self->_friend_cityStr = content;
-                if (content.length > 0) {
-                    cell.rightLabel.text = content;
+            CXCityPickerView *cityView = [[[NSBundle mainBundle] loadNibNamed:@"CXCityPickerView" owner:self options:nil] lastObject];
+            cityView.cityPickerSureBlock = ^(NSString * _Nonnull city) {
+                self->_friend_cityStr = city;
+                if (city.length > 0) {
+                    cell.rightLabel.text = city;
                 }
             };
-            [self lew_presentPopupView:alertView animation:nil];
+            [cityView show];
 
         } else if (indexPath.row == 1) {
             
@@ -409,6 +409,9 @@
             [self lew_presentPopupView:alertView animation:nil];
         }
     } else {
+        if (indexPath.section == 0) {
+            return;
+        }
         CXUserInfoMenusDataMenusModel *menu = _dataSources[indexPath.section];
         CXUserInfoMenusModel *model = menu.menus[indexPath.row];
         if ([model.column isEqualToString:@"nickname"]) {
@@ -432,17 +435,6 @@
             };
             [self lew_presentPopupView:alertView animation:nil];
         } else if ([model.column isEqualToString:@"city"]) {
-//            CXPickerViewAlertView *alertView = [[[NSBundle mainBundle] loadNibNamed:@"CXPickerViewAlertView" owner:self options:nil] lastObject];
-//            alertView.parentVC = self;
-//            alertView.title = @"修改城市";
-//            alertView.dataSources = self.provinceArrays;
-//            alertView.contenStr = cell.rightLabel.text;
-//            alertView.sureActionBlock = ^(NSString * _Nonnull content) {
-//                model.name = content;
-//                [weakSelf.tableView reloadRowAtIndexPath:indexPath withRowAnimation:UITableViewRowAnimationNone];
-//            };
-//            [self lew_presentPopupView:alertView animation:nil];
-            
             CXCityPickerView *cityView = [[[NSBundle mainBundle] loadNibNamed:@"CXCityPickerView" owner:self options:nil] lastObject];
             cityView.cityPickerSureBlock = ^(NSString * _Nonnull city) {
                 model.name = city;
@@ -501,7 +493,7 @@
             v.selectSecondIndex = model.option.allValues.firstObject[0];
             v.parentVC = self;
             v.sureActionBlock = ^(NSString * _Nonnull content1, NSString * _Nonnull content2) {
-               model.name = content2;
+               model.name = [NSString stringWithFormat:@"%@,%@",content1,content2];
                 [weakSelf.tableView reloadRowAtIndexPath:indexPath withRowAnimation:UITableViewRowAnimationNone];
             };
             [self lew_presentPopupView:v animation:nil];
@@ -746,25 +738,6 @@
 
     return _profileJson;
 }
-
-- (NSMutableArray *)provinceArrays {
-    if (!_provinceArrays) {
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"city.json" ofType:nil];
-        NSData *data = [NSData dataWithContentsOfFile:path];
-        NSArray *arr = [NSJSONSerialization JSONObjectWithData:data
-                                                       options:NSJSONReadingMutableContainers error:nil];
-        
-        NSMutableArray *arrays = [NSMutableArray array];
-        [arr enumerateObjectsUsingBlock:^(NSDictionary * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            [arrays addObject:obj[@"name"]];
-        }];
-        
-        _provinceArrays = [NSMutableArray arrayWithArray:arrays];
-    }
-    
-    return _provinceArrays;
-}
-
 
 
 @end

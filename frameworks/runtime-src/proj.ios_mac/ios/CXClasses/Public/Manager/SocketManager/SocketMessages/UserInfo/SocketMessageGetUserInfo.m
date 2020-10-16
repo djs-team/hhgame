@@ -11,19 +11,6 @@
 
 @end
 
-@implementation SocketMessageGetUserInfoResponseUser
-
-- (NSString*)displayId {
-    NSString * display = self.PrettyId;
-    if (!display) {
-        display = self.UserId;
-    }
-    return display;
-}
-
-@end
-
-
 @implementation SocketMessageGetUserInfoResponse
 
 @end

@@ -16,10 +16,12 @@
 #import "EMChatViewController.h"
 #import "CXAddFriendViewController.h"
 #import "CXLiveRoomUserProfileReportView.h"
+#import "CXUserInfoCurrentRoomCell.h"
 
 @interface CXUserInfoViewController () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 {
     NSInteger _mainInfoSectionIndex;
+    NSInteger _currentRoomSectionIndex;
     NSInteger _introsectionIndex;
     NSInteger _profileSectionIndex;
     NSInteger _giftSectionIndex;
@@ -109,11 +111,12 @@
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     _mainInfoSectionIndex = 0;
-    _introsectionIndex = _mainInfoSectionIndex+1;
+    _currentRoomSectionIndex = _mainInfoSectionIndex+1;
+    _introsectionIndex = _currentRoomSectionIndex+1;
     _profileSectionIndex = _introsectionIndex+1;
     _giftSectionIndex = _profileSectionIndex+1;
     
-    return _giftSectionIndex;
+    return _giftSectionIndex+1;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -121,6 +124,8 @@
         return self.profileArrays.count;
     } else if (section == _giftSectionIndex) {
         return self.giftArrays.count;
+    } else if (section == _currentRoomSectionIndex) {
+        return _currentUser.currentRoomInfo.room_id.length > 0 ? 1 : 0;
     } else {
         return 1;
     }
@@ -137,6 +142,11 @@
             vc.userId = weakSelf.currentUser.user_id;
             [weakSelf.navigationController pushViewController:vc animated:YES];
         };
+        return infoCell;
+    } else if (indexPath.section == _currentRoomSectionIndex) {
+        CXUserInfoCurrentRoomCell *infoCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CXUserInfoCurrentRoomCellID" forIndexPath:indexPath];
+        [infoCell.room_Icon sd_setImageWithURL:[NSURL URLWithString:_currentUser.currentRoomInfo.avatar]];
+        infoCell.room_name.text=_currentUser.currentRoomInfo.room_name;
         return infoCell;
     } else if (indexPath.section == _giftSectionIndex) {
         CXUserInfoGiftCell *infoCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CXUserInfoGiftCellID" forIndexPath:indexPath];
@@ -174,6 +184,8 @@
             headerView.groupTitle.text=@"交友心声";
             headerView.MoreBtn.hidden=YES;
             reusableview = headerView;
+        } else if (indexPath.section == _currentRoomSectionIndex) {
+            reusableview = [UICollectionReusableView new];
         } else {
             CXUserInfoGroupTitleReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"CXUserInfoGroupTitleReusableView" forIndexPath:indexPath];
             NSString *numStr = [NSString stringWithFormat:@"累计获得礼物 (%@)", self.gift_num];
@@ -195,10 +207,18 @@
     }
     return reusableview;
 }
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == _currentRoomSectionIndex) {
+        [AppController joinRoom:_currentUser.currentRoomInfo.room_id];
+    }
+}
 #pragma mark  Header_CGSize
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
     if (section == _mainInfoSectionIndex) {
        return CGSizeMake(SCREEN_WIDTH,300*SCALE_W);
+    } else if (section == _currentRoomSectionIndex) {
+        return CGSizeZero;
     }
     return CGSizeMake(SCREEN_WIDTH, 40);
 }
@@ -313,6 +333,7 @@
     [_mainCollectionView registerNib:[UINib nibWithNibName:@"CXUserInfoMainInfoCell" bundle:nil] forCellWithReuseIdentifier:@"CXUserInfoMainInfoCellID"];
     [_mainCollectionView registerNib:[UINib nibWithNibName:@"CXUserInfoIntrosCell" bundle:nil] forCellWithReuseIdentifier:@"CXUserInfoIntrosCellID"];
     [_mainCollectionView registerNib:[UINib nibWithNibName:@"CXUserInfoGiftCell" bundle:nil] forCellWithReuseIdentifier:@"CXUserInfoGiftCellID"];
+    [_mainCollectionView registerClass:[CXUserInfoCurrentRoomCell class] forCellWithReuseIdentifier:@"CXUserInfoCurrentRoomCellID"];
     
     _mainCollectionView.delegate = self;
     _mainCollectionView.dataSource = self;

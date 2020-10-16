@@ -76,6 +76,8 @@
     };
     kWeakSelf
     [CXHTTPRequest POSTWithURL:@"/index.php/Api/AliPay/incomelist" parameters:param callback:^(id responseObject, BOOL isCache, NSError *error) {
+        [weakSelf.mainTableView.mj_header endRefreshing];
+        [weakSelf.mainTableView.mj_footer endRefreshing];
         if (!error) {
             weakSelf.numberLabel.text = [NSString stringWithFormat:@"¥%.2f",[responseObject[@"data"][@"total_price"] doubleValue]];
             weakSelf.totalPage = [responseObject[@"data"][@"pageInfo"][@"totalPage"] integerValue];
@@ -88,8 +90,6 @@
             
             [self.mainTableView reloadData];
             
-            [weakSelf.mainTableView.mj_header endRefreshing];
-            [weakSelf.mainTableView.mj_footer endRefreshing];
             if (array.count < 10) {
                 [weakSelf.mainTableView.mj_footer endRefreshingWithNoMoreData];
             }
@@ -107,6 +107,8 @@
     };
     kWeakSelf
     [CXHTTPRequest POSTWithURL:@"/index.php/Api/AliPay/redpacket_incomelist" parameters:param callback:^(id responseObject, BOOL isCache, NSError *error) {
+        [weakSelf.mainTableView.mj_header endRefreshing];
+        [weakSelf.mainTableView.mj_footer endRefreshing];
         if (!error) {
             weakSelf.numberLabel.text = [NSString stringWithFormat:@"¥%.2f",[responseObject[@"data"][@"total_price"] doubleValue]];
             weakSelf.totalPage = [responseObject[@"data"][@"pageInfo"][@"totalPage"] integerValue];
@@ -119,8 +121,6 @@
             
             [self.mainTableView reloadData];
             
-            [weakSelf.mainTableView.mj_header endRefreshing];
-            [weakSelf.mainTableView.mj_footer endRefreshing];
             if (array.count < 10) {
                 [weakSelf.mainTableView.mj_footer endRefreshingWithNoMoreData];
             }
@@ -138,6 +138,8 @@
     };
     kWeakSelf
     [CXHTTPRequest POSTWithURL:@"/index.php/Api/AliPay/cashlist" parameters:param callback:^(id responseObject, BOOL isCache, NSError *error) {
+        [weakSelf.mainTableView.mj_header endRefreshing];
+        [weakSelf.mainTableView.mj_footer endRefreshing];
         if (!error) {
             weakSelf.numberLabel.text = [NSString stringWithFormat:@"¥%.2f",[responseObject[@"data"][@"total_price"] doubleValue]];
             weakSelf.totalPage = [responseObject[@"data"][@"pageInfo"][@"totalPage"] integerValue];
@@ -150,8 +152,6 @@
             
             [self.mainTableView reloadData];
             
-            [weakSelf.mainTableView.mj_header endRefreshing];
-            [weakSelf.mainTableView.mj_footer endRefreshing];
             if (self->_totalPage <= self->_page) {
                 [weakSelf.mainTableView.mj_footer endRefreshingWithNoMoreData];
             }
@@ -168,6 +168,8 @@
     };
     kWeakSelf
     [CXHTTPRequest POSTWithURL:@"/index.php/Api/AliPay/redpacket_cashlist" parameters:param callback:^(id responseObject, BOOL isCache, NSError *error) {
+        [weakSelf.mainTableView.mj_header endRefreshing];
+        [weakSelf.mainTableView.mj_footer endRefreshing];
         if (!error) {
             weakSelf.numberLabel.text = [NSString stringWithFormat:@"¥%.2f",[responseObject[@"data"][@"total_price"] doubleValue]];
             weakSelf.totalPage = [responseObject[@"data"][@"pageInfo"][@"totalPage"] integerValue];
@@ -180,8 +182,6 @@
             
             [self.mainTableView reloadData];
             
-            [weakSelf.mainTableView.mj_header endRefreshing];
-            [weakSelf.mainTableView.mj_footer endRefreshing];
             if (self->_totalPage <= self->_page) {
                 [weakSelf.mainTableView.mj_footer endRefreshingWithNoMoreData];
             }
@@ -199,6 +199,8 @@
     };
     kWeakSelf
     [CXHTTPRequest POSTWithURL:@"/index.php/Api/AliPay/exchangeInfo" parameters:param callback:^(id responseObject, BOOL isCache, NSError *error) {
+        [weakSelf.mainTableView.mj_header endRefreshing];
+        [weakSelf.mainTableView.mj_footer endRefreshing];
         if (!error) {
             weakSelf.numberLabel.text = [NSString stringWithFormat:@"¥%.2f",[responseObject[@"data"][@"total_price"] doubleValue]];
             weakSelf.totalPage = [responseObject[@"data"][@"pageInfo"][@"totalPage"] integerValue];
@@ -211,8 +213,6 @@
             
             [self.mainTableView reloadData];
             
-            [weakSelf.mainTableView.mj_header endRefreshing];
-            [weakSelf.mainTableView.mj_footer endRefreshing];
             if (self->_totalPage <= self->_page) {
                 [weakSelf.mainTableView.mj_footer endRefreshingWithNoMoreData];
             }
@@ -230,6 +230,8 @@
     };
     kWeakSelf
     [CXHTTPRequest POSTWithURL:@"/index.php/Api/AliPay/redpacket_exchangeInfo" parameters:param callback:^(id responseObject, BOOL isCache, NSError *error) {
+        [weakSelf.mainTableView.mj_header endRefreshing];
+        [weakSelf.mainTableView.mj_footer endRefreshing];
         if (!error) {
             weakSelf.numberLabel.text = [NSString stringWithFormat:@"¥%.2f",[responseObject[@"data"][@"total_price"] doubleValue]];
             weakSelf.totalPage = [responseObject[@"data"][@"pageInfo"][@"totalPage"] integerValue];
@@ -242,8 +244,6 @@
             
             [self.mainTableView reloadData];
             
-            [weakSelf.mainTableView.mj_header endRefreshing];
-            [weakSelf.mainTableView.mj_footer endRefreshing];
             if (self->_totalPage <= self->_page) {
                 [weakSelf.mainTableView.mj_footer endRefreshingWithNoMoreData];
             }
@@ -353,13 +353,7 @@
         weakSelf.b_time = b_time;
         weakSelf.e_time = e_time;
         
-        if (self.incomeType == income) {
-            [self getIncomelistDate];
-        } else if (self.incomeType == tixian) {
-            [self getCashlistDate];
-        } else if (self.incomeType == exchange) {
-            [self getExchangeDate];
-        }
+        [weakSelf headerRefresh];
     };
     [self.navigationController pushViewController:vc animated:YES];
 }

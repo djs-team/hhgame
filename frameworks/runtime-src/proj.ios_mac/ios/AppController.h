@@ -41,6 +41,10 @@
 /// 进入直播间
 /// @param roomId 直播间ID
 + (void)joinRoom:(NSString *_Nonnull)roomId;
+/// 重连直播间
+/// @param roomId 直播间ID
++ (void)reconnectRoom:(NSString *_Nonnull)roomId;
+
 
 /// 进入用户详情资料页
 /// @param userId 用户ID

@@ -203,7 +203,7 @@
                   "Y": 0.4392
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.2778
                 },
                 "LeftMargin": 540.0,
@@ -593,7 +593,7 @@
                       "Y": 0.2107
                     },
                     "PreSize": {
-                      "X": 0.0313,
+                      "X": 0.0312,
                       "Y": 0.0597
                     },
                     "LeftMargin": 912.9454,
@@ -1946,7 +1946,7 @@
                           {
                             "FileData": {
                               "Type": "Normal",
-                              "Path": "zphd_21.png",
+                              "Path": "cashcow/zphd_21.png",
                               "Plist": ""
                             },
                             "Scale9OriginX": 162,
@@ -2197,6 +2197,7 @@
         "cashcow/yjs_7.png",
         "cashcow/yjs_8.png",
         "cashcow/yjs_9.png",
+        "cashcow/zphd_21.png",
         "common/bz_1.png",
         "common/bz_2.png",
         "common/bz_3.png",
@@ -2206,8 +2207,7 @@
         "common/jinbi.png",
         "Default/Button_Disable.png",
         "font/hkhbtW12.ttc",
-        "turntable/zphd_20.png",
-        "zphd_21.png"
+        "turntable/zphd_20.png"
       ],
       "ctype": "GameFileData"
     }

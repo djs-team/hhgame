@@ -409,6 +409,7 @@
           <Image Name="yjs_7.png" />
           <Image Name="yjs_8.png" />
           <Image Name="yjs_9.png" />
+          <Image Name="zphd_21.png" />
         </Folder>
         <Folder Name="character">
           <Image Name="canshen.png" />
@@ -1046,7 +1047,6 @@
         <Project Name="TipsFloat.csd" Type="Layer" />
         <Project Name="TurnTableLayer.csd" Type="Layer" />
         <Project Name="UpdateScene.csd" Type="Scene" />
-        <Image Name="zphd_21.png" />
       </RootFolder>
     </Group>
   </SolutionFolder>

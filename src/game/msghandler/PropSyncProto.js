@@ -33,11 +33,8 @@ load('game/msghandler/PropSyncProto', function () {
                         _saveData['diamonds'] = msg.changes[i].propNum
                         break
                     case 3:
-
-
-                        
                         _saveKey.push('fuKa')
-                        _saveData['fuKa'] = msg.changes.propNum
+                        _saveData['fuKa'] = msg.changes[i].propNum
                         break
                     default:
                         break

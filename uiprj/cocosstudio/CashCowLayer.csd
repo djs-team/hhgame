@@ -217,7 +217,7 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="poupPnl" Visible="False" ActionTag="309483969" Tag="37" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="poupPnl" ActionTag="309483969" Tag="37" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="1280.0000" Y="720.0000" />
                 <Children>
                   <AbstractNodeData Name="propPnl" Visible="False" ActionTag="48330636" Tag="39" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
@@ -422,7 +422,7 @@
                             <CColor A="255" R="255" G="255" B="255" />
                             <PrePosition X="0.5000" Y="0.5000" />
                             <PreSize X="1.0020" Y="0.9250" />
-                            <FileData Type="Normal" Path="zphd_21.png" Plist="" />
+                            <FileData Type="Normal" Path="cashcow/zphd_21.png" Plist="" />
                           </AbstractNodeData>
                           <AbstractNodeData Name="timeText" ActionTag="513530038" Tag="409" IconVisible="False" LeftMargin="31.4184" RightMargin="269.5816" TopMargin="13.0170" BottomMargin="6.9830" FontSize="20" LabelText="2020-06-28   14: 33" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                             <Size X="190.0000" Y="20.0000" />

@@ -91,8 +91,13 @@
             
             self.dataSources = [NSMutableArray array];
             [self.dataSources addObject: @"jyxs"];
-            [self.dataSources addObject: self.menusData.jbxx];
-            [self.dataSources addObject: self.menusData.grzl];
+            if (self.menusData.jbxx.menus.copy > 0) {
+                [self.dataSources addObject: self.menusData.jbxx];
+            }
+            if (self.menusData.grzl.menus.count > 0) {
+                [self.dataSources addObject: self.menusData.grzl];
+            }
+            
             
             [self.tableView reloadData];
         }

@@ -412,7 +412,6 @@
 		00614F96250B94CF00BB7620 /* CXMineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00614C0F250B94CA00BB7620 /* CXMineCell.xib */; };
 		00614F97250B94CF00BB7620 /* CXSelectedPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00614C10250B94CA00BB7620 /* CXSelectedPhotoView.m */; };
 		00614F98250B94CF00BB7620 /* CXMineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00614C11250B94CA00BB7620 /* CXMineCell.m */; };
-		00614F99250B94CF00BB7620 /* city.json in Resources */ = {isa = PBXBuildFile; fileRef = 00614C14250B94CA00BB7620 /* city.json */; };
 		00614F9A250B94CF00BB7620 /* CXMineEditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00614C15250B94CA00BB7620 /* CXMineEditProfileViewController.m */; };
 		00614F9B250B94CF00BB7620 /* userProfile.json in Resources */ = {isa = PBXBuildFile; fileRef = 00614C16250B94CA00BB7620 /* userProfile.json */; };
 		00614F9C250B94CF00BB7620 /* CXPickerViewAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00614C18250B94CA00BB7620 /* CXPickerViewAlertView.m */; };
@@ -1509,7 +1508,6 @@
 		00614C10250B94CA00BB7620 /* CXSelectedPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXSelectedPhotoView.m; sourceTree = "<group>"; };
 		00614C11250B94CA00BB7620 /* CXMineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMineCell.m; sourceTree = "<group>"; };
 		00614C12250B94CA00BB7620 /* CXDateSelectedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXDateSelectedView.h; sourceTree = "<group>"; };
-		00614C14250B94CA00BB7620 /* city.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = city.json; sourceTree = "<group>"; };
 		00614C15250B94CA00BB7620 /* CXMineEditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMineEditProfileViewController.m; sourceTree = "<group>"; };
 		00614C16250B94CA00BB7620 /* userProfile.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = userProfile.json; sourceTree = "<group>"; };
 		00614C18250B94CA00BB7620 /* CXPickerViewAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXPickerViewAlertView.m; sourceTree = "<group>"; };
@@ -3329,13 +3327,13 @@
 			isa = PBXGroup;
 			children = (
 				00614BBF250B94C900BB7620 /* CXMineGuardAutomaticView.xib */,
+				00614BC6250B94CA00BB7620 /* CXMineGuardRenewView.h */,
 				00614BC0250B94CA00BB7620 /* CXMineGuardRenewView.m */,
 				00614BC1250B94CA00BB7620 /* CXMineGuardRenewView.xib */,
 				00614BC2250B94CA00BB7620 /* CXMineGuardAutomaticView.m */,
 				00614BC3250B94CA00BB7620 /* CXMineGuardListCell.h */,
 				00614BC4250B94CA00BB7620 /* CXMineGuardRenewItemCell.h */,
 				00614BC5250B94CA00BB7620 /* CXMineGuardAutomaticView.h */,
-				00614BC6250B94CA00BB7620 /* CXMineGuardRenewView.h */,
 				00614BC7250B94CA00BB7620 /* CXMineGuardRenewItemCell.xib */,
 				00614BC8250B94CA00BB7620 /* CXMineGuardListCell.xib */,
 				00614BC9250B94CA00BB7620 /* CXMineGuardRenewItemCell.m */,
@@ -3478,7 +3476,6 @@
 				00614C15250B94CA00BB7620 /* CXMineEditProfileViewController.m */,
 				00614C2E250B94CA00BB7620 /* CXMineEditProfileViewController.xib */,
 				007214222535CC31006A2FCE /* Address.plist */,
-				00614C14250B94CA00BB7620 /* city.json */,
 				00614C16250B94CA00BB7620 /* userProfile.json */,
 				00614C17250B94CA00BB7620 /* View */,
 			);
@@ -4889,7 +4886,6 @@
 				1AF87B9D1F6F7C80007BE51C /* LaunchScreen.storyboard in Resources */,
 				00615064250B94D000BB7620 /* uncheck@2x.png in Resources */,
 				00614ED2250B94CE00BB7620 /* CXLiveRoomUserProfileReportView.xib in Resources */,
-				00614F99250B94CF00BB7620 /* city.json in Resources */,
 				00614EA5250B94CE00BB7620 /* CXLiveRoomUIView.xib in Resources */,
 				0061505D250B94D000BB7620 /* close_gray@3x.png in Resources */,
 				00615031250B94D000BB7620 /* msg_bg_send@2x.png in Resources */,

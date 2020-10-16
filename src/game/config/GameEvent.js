@@ -69,6 +69,9 @@ load('game/config/GameEvent', function () {
         'URLE_USED_UPDATE': 'URLE_USED_UPDATE',
         'HALL_RED_GET': 'HALL_RED_GET',
         'HALL_RED_BACK': 'HALL_RED_BACK',
+        'HALL_FEEDBACK_LIST': 'HALL_FEEDBACK_LIST',
+        'HALL_FEEDBACK_SUBMIT': 'HALL_FEEDBACK_SUBMIT',
+        'HALL_FEEDBACK_INFO': 'HALL_FEEDBACK_INFO',
     }
 
     return GameEvent

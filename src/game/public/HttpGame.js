@@ -1320,6 +1320,69 @@ load('game/public/HttpGame', function () {
             appInstance.sendNotification(GameEvent.FUKA_MATERIA_EXCHANGE, msg)
 
         },
+
+
+        FEEDBACKGETLISTReq: function (msg) {
+            msg = msg || {}
+            if (!this._requestBackCall[HttpEvent.MJ_HALL_PLAYER_FEEDBACK]) {
+                this._requestBackCall[HttpEvent.MJ_HALL_PLAYER_FEEDBACK] = this.FEEDBACKGETLISTBack
+            }
+            msg.msgID = HttpEvent.MJ_HALL_PLAYER_FEEDBACK
+            appInstance.httpAgent().sendPost(msg)
+
+        },
+
+
+        FEEDBACKGETLISTBack: function (msg) {
+            if (msg.status !== 0) {
+                appInstance.gameAgent().Tips('未知异常，请重试！')
+                return
+            }
+            appInstance.sendNotification(GameEvent.HALL_FEEDBACK_LIST, msg)
+
+        },
+
+
+        FEEDBACKSUBMITReq: function (msg) {
+            msg = msg || {}
+            if (!this._requestBackCall[HttpEvent.MJ_HALL_PLAYER_FEEDBACK_SUBMIT]) {
+                this._requestBackCall[HttpEvent.MJ_HALL_PLAYER_FEEDBACK_SUBMIT] = this.FEEDBACKSUBMITBack
+            }
+            msg.msgID = HttpEvent.MJ_HALL_PLAYER_FEEDBACK_SUBMIT
+            appInstance.httpAgent().sendPost(msg)
+
+        },
+
+
+        FEEDBACKSUBMITBack: function (msg) {
+            if (msg.status !== 0) {
+                appInstance.gameAgent().Tips('未知异常，请重试！')
+                return
+            }
+            appInstance.sendNotification(GameEvent.HALL_FEEDBACK_SUBMIT, msg)
+
+        },
+
+
+        FEEDBACKGETINFOReq: function (msg) {
+            msg = msg || {}
+            if (!this._requestBackCall[HttpEvent.MJ_HALL_PLAYER_FEEDBACK_INFO]) {
+                this._requestBackCall[HttpEvent.MJ_HALL_PLAYER_FEEDBACK_INFO] = this.FEEDBACKGETINFOBack
+            }
+            msg.msgID = HttpEvent.MJ_HALL_PLAYER_FEEDBACK_INFO
+            appInstance.httpAgent().sendPost(msg)
+
+        },
+
+
+        FEEDBACKGETINFOBack: function (msg) {
+            if (msg.status !== 0) {
+                appInstance.gameAgent().Tips('未知异常，请重试！')
+                return
+            }
+            appInstance.sendNotification(GameEvent.HALL_FEEDBACK_INFO, msg)
+
+        },
     })
     return HttpGame
 })

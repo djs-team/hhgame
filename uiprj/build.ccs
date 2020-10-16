@@ -111,6 +111,7 @@
           <Image Name="arena (9).png" />
           <Image Name="arena1.png" />
           <Image Name="chooseCity.png" />
+          <Image Name="feadBack.png" />
           <Image Name="fuKa (1).png" />
           <Image Name="fuKa (10).png" />
           <Image Name="fuKa (11).png" />
@@ -1028,7 +1029,7 @@
         <Project Name="ConfLayer.csd" Type="Layer" />
         <Project Name="DialogLayer.csd" Type="Layer" />
         <Project Name="EmailLayer.csd" Type="Layer" />
-        <Project Name="FeedbackLayer.csd" Type="Layer" />
+        <Project Name="FeedBackLayer.csd" Type="Layer" />
         <Project Name="FukaShopLayer.csd" Type="Layer" />
         <Project Name="HallScene.csd" Type="Scene" />
         <Project Name="InvitationLayer.csd" Type="Layer" />

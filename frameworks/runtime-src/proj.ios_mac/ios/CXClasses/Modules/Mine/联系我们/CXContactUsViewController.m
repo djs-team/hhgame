@@ -31,10 +31,10 @@
     
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];  
     // app版本
-    NSString *app_Version = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
+    NSString *app_Version = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
     // app build版本
-    NSString *app_build = [infoDictionary objectForKey:@"CFBundleVersion"];
-    self.versionLabel.text = [NSString stringWithFormat:@"v%@(%@)",app_Version,app_build];
+    NSString *app_build = [infoDictionary objectForKey:@"CFBundleVersion"];
+    self.versionLabel.text = [NSString stringWithFormat:@"v%@ (%@)",app_Version,app_build];
     
 }
 

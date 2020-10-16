@@ -717,6 +717,7 @@
 		00802AC4250CC55300F43A32 /* RPSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 00802ABE250CC55200F43A32 /* RPSDK.bundle */; };
 		00802AC5250CC55300F43A32 /* SGSecurityBody.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00802ABF250CC55300F43A32 /* SGSecurityBody.framework */; };
 		00802AC6250CC55300F43A32 /* SecurityGuardSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00802AC0250CC55300F43A32 /* SecurityGuardSDK.framework */; };
+		008588D12539860200649236 /* CXRefreshNormalTimeHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 008588D02539860200649236 /* CXRefreshNormalTimeHeader.m */; };
 		008F040F251C4E0E00F207D2 /* CXChangeAgeAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 008F040E251C4E0E00F207D2 /* CXChangeAgeAlertView.m */; };
 		008F0413251C4E1800F207D2 /* CXChangeAgeAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008F0412251C4E1800F207D2 /* CXChangeAgeAlertView.xib */; };
 		1A2EA1861FC3DA6C0062C870 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A2EA1851FC3DA6B0062C870 /* Images.xcassets */; };
@@ -1956,6 +1957,8 @@
 		00802ABE250CC55200F43A32 /* RPSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = RPSDK.bundle; sourceTree = "<group>"; };
 		00802ABF250CC55300F43A32 /* SGSecurityBody.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SGSecurityBody.framework; sourceTree = "<group>"; };
 		00802AC0250CC55300F43A32 /* SecurityGuardSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SecurityGuardSDK.framework; sourceTree = "<group>"; };
+		008588CF2539860200649236 /* CXRefreshNormalTimeHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXRefreshNormalTimeHeader.h; sourceTree = "<group>"; };
+		008588D02539860200649236 /* CXRefreshNormalTimeHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXRefreshNormalTimeHeader.m; sourceTree = "<group>"; };
 		008F040D251C4E0E00F207D2 /* CXChangeAgeAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXChangeAgeAlertView.h; sourceTree = "<group>"; };
 		008F040E251C4E0E00F207D2 /* CXChangeAgeAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXChangeAgeAlertView.m; sourceTree = "<group>"; };
 		008F0412251C4E1800F207D2 /* CXChangeAgeAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CXChangeAgeAlertView.xib; sourceTree = "<group>"; };
@@ -2677,10 +2680,12 @@
 		00614A3B250B94C700BB7620 /* 推荐 */ = {
 			isa = PBXGroup;
 			children = (
-				00614A3C250B94C700BB7620 /* CXLiveRoomRecommendView.xib */,
-				00614A3D250B94C700BB7620 /* CXLiveRoomRecommendView.m */,
-				00614A3E250B94C700BB7620 /* View */,
 				00614A42250B94C700BB7620 /* CXLiveRoomRecommendView.h */,
+				00614A3D250B94C700BB7620 /* CXLiveRoomRecommendView.m */,
+				00614A3C250B94C700BB7620 /* CXLiveRoomRecommendView.xib */,
+				00614A3E250B94C700BB7620 /* View */,
+				008588CF2539860200649236 /* CXRefreshNormalTimeHeader.h */,
+				008588D02539860200649236 /* CXRefreshNormalTimeHeader.m */,
 			);
 			path = "推荐";
 			sourceTree = "<group>";
@@ -5527,6 +5532,7 @@
 				00614F1A250B94CF00BB7620 /* CXSocketMessageMusic.m in Sources */,
 				00614E19250B94CE00BB7620 /* CXHomeRoomRecommendCell.m in Sources */,
 				00615024250B94D000BB7620 /* EMMsgAudioBubbleView.m in Sources */,
+				008588D12539860200649236 /* CXRefreshNormalTimeHeader.m in Sources */,
 				006150B2250B94D000BB7620 /* LewPopupViewAnimationDrop.m in Sources */,
 				005C3F8C2515E8E400DBCD02 /* AppController+Share.m in Sources */,
 				00614EF4250B94CE00BB7620 /* CXLiveRoomRechargeCell.m in Sources */,

@@ -9,6 +9,8 @@
 #import "CXLiveRoomRecommendView.h"
 #import "CXLiveRoomRecommendCell.h"
 
+#import "CXRefreshNormalTimeHeader.h"
+
 @interface CXLiveRoomRecommendView() <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
 @property (weak, nonatomic) IBOutlet UIButton *clickBtn;
@@ -30,10 +32,10 @@
     [self.mainCollectionView registerNib:[UINib nibWithNibName:@"CXLiveRoomRecommendCell" bundle:nil] forCellWithReuseIdentifier:@"CXLiveRoomRecommendCellID"];
     
     kWeakSelf
-    self.mainCollectionView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+    self.mainCollectionView.mj_header = [CXRefreshNormalTimeHeader headerWithRefreshingBlock:^{
         [weakSelf headerfresh];
     }];
-    self.mainCollectionView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+    self.mainCollectionView.mj_footer = [CXRefreshNormalFooter footerWithRefreshingBlock:^{
         [weakSelf footerFresh];
     }];
     

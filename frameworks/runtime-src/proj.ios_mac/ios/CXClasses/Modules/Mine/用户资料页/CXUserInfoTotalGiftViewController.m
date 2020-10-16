@@ -23,8 +23,11 @@
     
     self.title =@"累计收到礼物";
     
+    self.view.backgroundColor = [UIColor whiteColor];
+    
     UICollectionViewFlowLayout * layout = [UICollectionViewFlowLayout new];
     _giftDetailCollection =[[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
+    _giftDetailCollection.backgroundColor = [UIColor whiteColor];
     [_giftDetailCollection registerNib:[UINib nibWithNibName:@"CXUserInfoGiftCell" bundle:nil] forCellWithReuseIdentifier:@"CXUserInfoGiftCellID"];
     _giftDetailCollection.delegate=self;
     _giftDetailCollection.dataSource=self;

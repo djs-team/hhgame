@@ -113,7 +113,7 @@
     _profileSectionIndex = _introsectionIndex+1;
     _giftSectionIndex = _profileSectionIndex+1;
     
-    return _giftSectionIndex;
+    return _giftSectionIndex+1;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {

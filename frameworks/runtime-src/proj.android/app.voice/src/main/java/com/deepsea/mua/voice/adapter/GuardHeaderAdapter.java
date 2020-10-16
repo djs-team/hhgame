@@ -49,11 +49,11 @@ public class GuardHeaderAdapter extends BaseBindingAdapter<String, ItemGuardHead
     protected void bind(BindingViewHolder<ItemGuardHeadBinding> holder, String bean) {
         int pos = holder.getLayoutPosition();
         if (pos < getData().size() - 1) {
-            RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(DisplayUtil.dip2px(mContext, 25), DisplayUtil.dip2px(mContext, 33));
+            RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(DisplayUtil.dip2px(mContext, 22), DisplayUtil.dip2px(mContext, 22));
             layoutParams.setMargins(0, 0, DisplayUtil.dip2px(mContext, -8), 0);
             holder.binding.rlGroup.setLayoutParams(layoutParams);
         }else {
-            RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(DisplayUtil.dip2px(mContext, 25), DisplayUtil.dip2px(mContext, 33));
+            RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(DisplayUtil.dip2px(mContext, 22), DisplayUtil.dip2px(mContext, 22));
             layoutParams.setMargins(0, 0, DisplayUtil.dip2px(mContext, 0), 0);
             holder.binding.rlGroup.setLayoutParams(layoutParams);
         }

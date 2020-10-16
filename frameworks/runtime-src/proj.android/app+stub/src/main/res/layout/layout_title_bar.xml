@@ -38,7 +38,7 @@
             android:textColor="#ffffffff"
             android:textSize="14sp" />
 
-        <TextView
+        <com.deepsea.mua.stub.view.WithBackgroundTextView
             android:id="@+id/tv_state"
             android:layout_width="38dp"
             android:layout_height="15dp"
@@ -46,10 +46,11 @@
             android:layout_marginLeft="6dp"
             android:layout_toRightOf="@id/left_title_tv"
             android:gravity="center"
-            android:textColor="#ffffffff"
+            android:text="热聊中"
+            android:textColor="@color/white"
             android:textSize="9sp"
-            android:visibility="gone" />
-
+            android:visibility="gone"
+            app:radius="8dp" />
 
     </RelativeLayout>
 

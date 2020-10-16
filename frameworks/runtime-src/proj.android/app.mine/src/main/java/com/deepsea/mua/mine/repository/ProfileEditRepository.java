@@ -122,7 +122,7 @@ public class ProfileEditRepository extends BaseRepository {
                     }
 
                     ProfileModel.MenuBean grzl = data.getGrzl();
-                    if (!CollectionUtils.isEmpty(grzl.getMenus())) {
+                    if (grzl.getMenus() != null && !CollectionUtils.isEmpty(grzl.getMenus())) {
                         grzl.getMenus().get(0).setMenuName(grzl.getName());
                         list.addAll(grzl.getMenus());
                     }

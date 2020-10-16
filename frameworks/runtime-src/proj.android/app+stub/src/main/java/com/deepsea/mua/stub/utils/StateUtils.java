@@ -2,7 +2,9 @@ package com.deepsea.mua.stub.utils;
 
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.TextView;
 
+import com.deepsea.mua.stub.R;
 import com.deepsea.mua.stub.view.WithBackgroundTextView;
 
 public class StateUtils {
@@ -40,6 +42,28 @@ public class StateUtils {
         } else {
             textView.setVisibility(View.GONE);
         }
-
     }
+
+    public static void setState(WithBackgroundTextView textView, String str) {
+        if (!TextUtils.isEmpty(str)) {
+            textView.setVisibility(View.VISIBLE);
+            if (str.contains("离线")) {
+                textView.setWithBackgroundColor(R.color.state_color_grary);
+                ViewBindUtils.setText(textView, str);
+            } else if (str.contains("相亲")) {
+                textView.setWithBackgroundColor(R.color.state_color_violet);
+            } else if (str.contains("热聊")) {
+                textView.setWithBackgroundColor(R.color.state_color_pink);
+            } else if (str.contains("开播")) {
+                textView.setWithBackgroundColor(R.color.state_color_yellow);
+            } else {
+                textView.setWithBackgroundColor(R.color.state_color_green);
+            }
+            textView.setText(str);
+
+        } else {
+            textView.setVisibility(View.GONE);
+        }
+    }
+
 }

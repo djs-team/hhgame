@@ -51,8 +51,9 @@
                     android:layout_marginLeft="17dp"
                     android:layout_width="7dp"
                     android:layout_height="7dp"
-                    app:withBackgroundColor="#0FE770"
+                    app:withBackgroundColor="#aaa"
                     app:radius="90dp"
+
                     />
 
             </RelativeLayout>

@@ -870,7 +870,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="40dp"
-                android:text="实名认证成功，获得5朵玫瑰"
                 android:textColor="#ff7b3ef1"
                 android:textSize="14sp" />
         </LinearLayout>

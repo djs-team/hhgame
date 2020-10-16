@@ -979,7 +979,12 @@
 }
 
 - (void)modelClient:(CXClientModel *)client reconnectRoomSuccess:(BOOL)success {
-    NSLog(@"重联成功");
+    if (success == NO) {
+        NSError *error = [[NSError alloc] init];
+        [self modelClient:[CXClientModel instance] room:[CXClientModel instance].room.RoomData.RoomId error:error];
+        return;
+    }
+    
     NSIndexPath *seatIndex = [[CXClientModel instance].room.userSeats objectForKey:[CXClientModel instance].userId];
     if (!seatIndex) {
         [[CXClientModel instance].agoraEngineManager.engine setClientRole:AgoraClientRoleAudience];
@@ -1005,7 +1010,7 @@
     [[CXClientModel instance].easemob leaveRoom];
     kWeakSelf
     [self alertTitle:@"房间连接失败" message:@"是否重新连接" confirm:@"确定" cancel:@"取消" confirm:^{
-        [AppController joinRoom:roomId];
+        [AppController reconnectRoom:roomId];
     } cancel:^{
         [weakSelf leaveRoom];
     }];

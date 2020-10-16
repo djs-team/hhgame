@@ -718,6 +718,7 @@
 		00802AC5250CC55300F43A32 /* SGSecurityBody.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00802ABF250CC55300F43A32 /* SGSecurityBody.framework */; };
 		00802AC6250CC55300F43A32 /* SecurityGuardSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00802AC0250CC55300F43A32 /* SecurityGuardSDK.framework */; };
 		008588D12539860200649236 /* CXRefreshNormalTimeHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 008588D02539860200649236 /* CXRefreshNormalTimeHeader.m */; };
+		008588E82539C8E100649236 /* CXUserInfoCurrentRoomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 008588E72539C8E100649236 /* CXUserInfoCurrentRoomCell.m */; };
 		008F040F251C4E0E00F207D2 /* CXChangeAgeAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 008F040E251C4E0E00F207D2 /* CXChangeAgeAlertView.m */; };
 		008F0413251C4E1800F207D2 /* CXChangeAgeAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008F0412251C4E1800F207D2 /* CXChangeAgeAlertView.xib */; };
 		1A2EA1861FC3DA6C0062C870 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A2EA1851FC3DA6B0062C870 /* Images.xcassets */; };
@@ -1959,6 +1960,8 @@
 		00802AC0250CC55300F43A32 /* SecurityGuardSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SecurityGuardSDK.framework; sourceTree = "<group>"; };
 		008588CF2539860200649236 /* CXRefreshNormalTimeHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXRefreshNormalTimeHeader.h; sourceTree = "<group>"; };
 		008588D02539860200649236 /* CXRefreshNormalTimeHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXRefreshNormalTimeHeader.m; sourceTree = "<group>"; };
+		008588E62539C8E100649236 /* CXUserInfoCurrentRoomCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXUserInfoCurrentRoomCell.h; sourceTree = "<group>"; };
+		008588E72539C8E100649236 /* CXUserInfoCurrentRoomCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXUserInfoCurrentRoomCell.m; sourceTree = "<group>"; };
 		008F040D251C4E0E00F207D2 /* CXChangeAgeAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXChangeAgeAlertView.h; sourceTree = "<group>"; };
 		008F040E251C4E0E00F207D2 /* CXChangeAgeAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXChangeAgeAlertView.m; sourceTree = "<group>"; };
 		008F0412251C4E1800F207D2 /* CXChangeAgeAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CXChangeAgeAlertView.xib; sourceTree = "<group>"; };
@@ -3569,19 +3572,21 @@
 		00614C49250B94CA00BB7620 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				00614C4E250B94CA00BB7620 /* CXUserInfoGroupTitleReusableView.h */,
+				00614C56250B94CA00BB7620 /* CXUserInfoGroupTitleReusableView.m */,
+				00614C50250B94CA00BB7620 /* CXUserInfoHeaderReusableView.h */,
 				00614C4A250B94CA00BB7620 /* CXUserInfoHeaderReusableView.m */,
+				00614C4F250B94CA00BB7620 /* CXUserInfoGiftCell.h */,
+				00614C55250B94CA00BB7620 /* CXUserInfoGiftCell.m */,
 				00614C4B250B94CA00BB7620 /* CXUserInfoGiftCell.xib */,
 				00614C4C250B94CA00BB7620 /* CXUserInfoIntrosCell.h */,
 				00614C4D250B94CA00BB7620 /* CXUserInfoMainInfoCell.m */,
-				00614C4E250B94CA00BB7620 /* CXUserInfoGroupTitleReusableView.h */,
-				00614C4F250B94CA00BB7620 /* CXUserInfoGiftCell.h */,
-				00614C50250B94CA00BB7620 /* CXUserInfoHeaderReusableView.h */,
 				00614C51250B94CA00BB7620 /* CXUserInfoIntrosCell.m */,
 				00614C52250B94CA00BB7620 /* CXUserInfoIntrosCell.xib */,
 				00614C53250B94CA00BB7620 /* CXUserInfoMainInfoCell.xib */,
 				00614C54250B94CA00BB7620 /* CXUserInfoMainInfoCell.h */,
-				00614C55250B94CA00BB7620 /* CXUserInfoGiftCell.m */,
-				00614C56250B94CA00BB7620 /* CXUserInfoGroupTitleReusableView.m */,
+				008588E62539C8E100649236 /* CXUserInfoCurrentRoomCell.h */,
+				008588E72539C8E100649236 /* CXUserInfoCurrentRoomCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -5280,6 +5285,7 @@
 				00614F18250B94CF00BB7620 /* UIView+CXCategory.m in Sources */,
 				0061507C250B94D000BB7620 /* MWTapDetectingImageView.m in Sources */,
 				00614F52250B94CF00BB7620 /* SocketMessageSetName.m in Sources */,
+				008588E82539C8E100649236 /* CXUserInfoCurrentRoomCell.m in Sources */,
 				00614ED9250B94CE00BB7620 /* GameMessageListItemGiftEventView.m in Sources */,
 				00614E5C250B94CE00BB7620 /* SVGAManager.m in Sources */,
 				00614F40250B94CF00BB7620 /* SocketMessageUnlockSeat.m in Sources */,

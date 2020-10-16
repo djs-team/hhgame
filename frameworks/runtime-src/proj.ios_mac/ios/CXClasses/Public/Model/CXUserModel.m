@@ -6,6 +6,8 @@
 //
 
 #import "CXUserModel.h"
+@implementation CXUserCurrentRoomModel
+@end
 
 @implementation CXUserModel
 

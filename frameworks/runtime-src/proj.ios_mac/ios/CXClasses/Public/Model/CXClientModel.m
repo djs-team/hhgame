@@ -56,12 +56,33 @@
     _joinRoomCallBack = callback;
     kWeakSelf
     [CXHTTPRequest csharp_httpWithMethod:HJRequestMethodGET url:@"/Master/GetGate" parameters:@{} callback:^(id responseObject, BOOL isCache, NSError *error) {
-        if (responseObject) {
+        if (!error) {
             NSString *addr = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
             if ([weakSelf.socket joinRoom:roomId withToken:weakSelf.token atAddr:addr] == NO) {
                 callback ? callback(roomId, NO) : nil;
                 return;
             }
+        }
+    }];
+}
+
+- (void)reconnectRoom:(NSString *)roomId callback:(CXClientModelJoinRoomCallBack)callback {
+    if (!roomId) {
+        callback ? callback(roomId, NO) : nil;
+        return;
+    }
+    _joinRoomCallBack = callback;
+    kWeakSelf
+    [CXHTTPRequest csharp_httpWithMethod:HJRequestMethodGET url:@"/Master/GetGate" parameters:@{} callback:^(id responseObject, BOOL isCache, NSError *error) {
+        if (!error) {
+            NSString *addr = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+            if ([weakSelf.socket joinRoom:roomId withToken:weakSelf.token atAddr:addr] == NO) {
+                callback ? callback(roomId, NO) : nil;
+                return;
+            }
+        } else {
+            NSError *error = [[NSError alloc] init];
+            [weakSelf socketManager:weakSelf.socket room:roomId error:error];
         }
     }];
 }
@@ -93,6 +114,7 @@
             [obj modelClient:self reconnectRoomSuccess:success];
         }
     }];
+    
 }
 /// 房间内出错
 - (void)socketManager:(SocketManager*)mgr room:(NSString*)roomId error:(NSError*)error {

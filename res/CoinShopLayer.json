@@ -380,7 +380,7 @@
                   },
                   {
                     "IsCustomSize": true,
-                    "FontSize": 30,
+                    "FontSize": 24,
                     "LabelText": "300",
                     "HorizontalAlignmentType": "HT_Center",
                     "VerticalAlignmentType": "VT_Center",
@@ -400,7 +400,7 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 103.0,
+                      "X": 109.0,
                       "Y": 21.0
                     },
                     "Scale": {
@@ -410,21 +410,21 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.515,
+                      "X": 0.545,
                       "Y": 0.4667
                     },
                     "PreSize": {
-                      "X": 0.43,
+                      "X": 0.58,
                       "Y": 0.7556
                     },
-                    "LeftMargin": 60.0,
-                    "RightMargin": 54.0,
+                    "LeftMargin": 51.0,
+                    "RightMargin": 33.0,
                     "TopMargin": 7.0,
                     "BottomMargin": 4.0,
                     "Tag": 291,
                     "ActionTag": 1134884865,
                     "Size": {
-                      "X": 86.0,
+                      "X": 116.0,
                       "Y": 34.0
                     },
                     "Name": "fuKaCnt",
@@ -445,7 +445,7 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 29.39,
+                      "X": 32.39,
                       "Y": 20.5
                     },
                     "Scale": {
@@ -455,15 +455,15 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.1469,
+                      "X": 0.1619,
                       "Y": 0.4556
                     },
                     "PreSize": {
                       "X": 0.18,
                       "Y": 0.9778
                     },
-                    "LeftMargin": 11.39,
-                    "RightMargin": 152.61,
+                    "LeftMargin": 14.39,
+                    "RightMargin": 149.61,
                     "TopMargin": 2.5,
                     "BottomMargin": -1.5,
                     "Tag": 293,
@@ -508,7 +508,7 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 962.1223,
+                  "X": 966.12,
                   "Y": 668.0571
                 },
                 "Scale": {
@@ -518,15 +518,15 @@
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.7517,
+                  "X": 0.7548,
                   "Y": 0.9279
                 },
                 "PreSize": {
                   "X": 0.1562,
                   "Y": 0.0625
                 },
-                "LeftMargin": 862.1223,
-                "RightMargin": 217.8777,
+                "LeftMargin": 866.12,
+                "RightMargin": 213.88,
                 "TopMargin": 29.4429,
                 "BottomMargin": 645.5571,
                 "Tag": 279,
@@ -579,7 +579,7 @@
                   },
                   {
                     "IsCustomSize": true,
-                    "FontSize": 28,
+                    "FontSize": 24,
                     "LabelText": "50",
                     "HorizontalAlignmentType": "HT_Center",
                     "VerticalAlignmentType": "VT_Center",
@@ -599,7 +599,7 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 103.0,
+                      "X": 109.0,
                       "Y": 21.0
                     },
                     "Scale": {
@@ -609,21 +609,21 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.515,
+                      "X": 0.545,
                       "Y": 0.4667
                     },
                     "PreSize": {
-                      "X": 0.43,
+                      "X": 0.58,
                       "Y": 0.7556
                     },
-                    "LeftMargin": 60.0,
-                    "RightMargin": 54.0,
+                    "LeftMargin": 51.0,
+                    "RightMargin": 33.0,
                     "TopMargin": 7.0,
                     "BottomMargin": 4.0,
                     "Tag": 281,
                     "ActionTag": -638958815,
                     "Size": {
-                      "X": 86.0,
+                      "X": 116.0,
                       "Y": 34.0
                     },
                     "Name": "diamondsCnt",
@@ -644,8 +644,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 37.39,
-                      "Y": 21.5
+                      "X": 29.39,
+                      "Y": 22.5
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -654,17 +654,17 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.1869,
-                      "Y": 0.4778
+                      "X": 0.1469,
+                      "Y": 0.5
                     },
                     "PreSize": {
                       "X": 0.225,
                       "Y": 0.9333
                     },
-                    "LeftMargin": 14.89,
-                    "RightMargin": 140.11,
-                    "TopMargin": 2.5,
-                    "BottomMargin": 0.5,
+                    "LeftMargin": 6.89,
+                    "RightMargin": 148.11,
+                    "TopMargin": 1.5,
+                    "BottomMargin": 1.5,
                     "Tag": 283,
                     "ActionTag": -830638923,
                     "Size": {
@@ -780,7 +780,7 @@
                   },
                   {
                     "IsCustomSize": true,
-                    "FontSize": 26,
+                    "FontSize": 24,
                     "LabelText": "10.万",
                     "HorizontalAlignmentType": "HT_Center",
                     "VerticalAlignmentType": "VT_Center",
@@ -800,7 +800,7 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 102.0,
+                      "X": 109.0,
                       "Y": 21.0
                     },
                     "Scale": {
@@ -810,21 +810,21 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.51,
+                      "X": 0.545,
                       "Y": 0.4667
                     },
                     "PreSize": {
-                      "X": 0.43,
+                      "X": 0.58,
                       "Y": 0.7556
                     },
-                    "LeftMargin": 59.0,
-                    "RightMargin": 55.0,
+                    "LeftMargin": 51.0,
+                    "RightMargin": 33.0,
                     "TopMargin": 7.0,
                     "BottomMargin": 4.0,
                     "Tag": 286,
                     "ActionTag": 838415769,
                     "Size": {
-                      "X": 86.0,
+                      "X": 116.0,
                       "Y": 34.0
                     },
                     "Name": "coinsCnt",
@@ -845,7 +845,7 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 37.39,
+                      "X": 35.39,
                       "Y": 21.5
                     },
                     "Scale": {
@@ -855,15 +855,15 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.1869,
+                      "X": 0.1769,
                       "Y": 0.4778
                     },
                     "PreSize": {
                       "X": 0.2,
                       "Y": 0.8889
                     },
-                    "LeftMargin": 17.39,
-                    "RightMargin": 142.61,
+                    "LeftMargin": 15.39,
+                    "RightMargin": 144.61,
                     "TopMargin": 3.5,
                     "BottomMargin": 1.5,
                     "Tag": 288,

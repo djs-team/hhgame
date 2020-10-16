@@ -5150,7 +5150,7 @@
                 },
                 "Position": {
                   "X": 648.064,
-                  "Y": 519.8814
+                  "Y": 515.8815
                 },
                 "Scale": {
                   "ScaleX": 0.6951,
@@ -5161,7 +5161,7 @@
                 "PositionPercentXEnabled": true,
                 "PrePosition": {
                   "X": 0.5063,
-                  "Y": 0.7221
+                  "Y": 0.7165
                 },
                 "PreSize": {
                   "X": 0.2547,
@@ -5169,8 +5169,8 @@
                 },
                 "LeftMargin": 485.064,
                 "RightMargin": 468.936,
-                "TopMargin": 168.1186,
-                "BottomMargin": 487.8814,
+                "TopMargin": 172.1185,
+                "BottomMargin": 483.8815,
                 "Tag": 164,
                 "Children": [
                   {
@@ -5293,11 +5293,6 @@
                       "Path": "Default/Button_Disable.png",
                       "Plist": ""
                     },
-                    "PressedFileData": {
-                      "Type": "Default",
-                      "Path": "Default/Button_Press.png",
-                      "Plist": ""
-                    },
                     "NormalFileData": {
                       "Type": "Normal",
                       "Path": "vip/vip_9.png",
@@ -5416,11 +5411,6 @@
                       "Path": "Default/Button_Disable.png",
                       "Plist": ""
                     },
-                    "PressedFileData": {
-                      "Type": "Default",
-                      "Path": "Default/Button_Press.png",
-                      "Plist": ""
-                    },
                     "NormalFileData": {
                       "Type": "Normal",
                       "Path": "vip/vip_6.png",
@@ -5520,7 +5510,6 @@
         "common/jsyy.png",
         "common/zuanshi.png",
         "Default/Button_Disable.png",
-        "Default/Button_Press.png",
         "feedback/yjfk_1.png",
         "font/hkhbtW12.ttc",
         "personal/gexx_6.png",

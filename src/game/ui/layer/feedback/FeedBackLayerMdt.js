@@ -96,7 +96,8 @@ load('game/ui/layer/feedback/FeedBackLayerMdt', function () {
         onForMatSubMitResult: function (body) {
 
             let data = {}
-            this.onForMatPlayerFeedbackInfo(body,data)
+            cc.log('-------------onForMatSubMitResult---------body :' + JSON.stringify(body))
+            this.onForMatPlayerFeedbackInfo(body.playerFeedback,data)
             this.view.onDealSubMitResult(data)
 
         },

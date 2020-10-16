@@ -128,11 +128,10 @@ load('game/ui/layer/feedback/FeedBackLayer', function () {
         },
 
         updateMyMsgDetail: function (data) {
-            cc.log('-------updateMyMsgDetail----------data : ' + JSON.stringify(data))
 
-            this.MyMsgListPnl.setVisible(false)
-            this.FeedBackList.setVisible(true)
             this._subMitFeedId = data.feedbackId
+            this.MyMsgDetailPnl.setVisible(true)
+            this.MyMsgListPnl.setVisible(false)
 
             for (let i = 0; i < data.feedbackList.length; ++i) {
                 this.pushFeedBackCell(data.feedbackList[i])
@@ -153,7 +152,6 @@ load('game/ui/layer/feedback/FeedBackLayer', function () {
         },
 
         pushFeedBackCell: function (cellInfo) {
-            cc.log('-------pushFeedBackCell----------cellInfo : ' + JSON.stringify(cellInfo))
 
             let childCount = this.FeedBackList.getChildrenCount()
 
@@ -165,8 +163,10 @@ load('game/ui/layer/feedback/FeedBackLayer', function () {
 
             let TxtCell = this.TxtCell.clone()
             let txt = cellInfo.txt
+            let forMatLength = 35
 
-            let line = Math.ceil( txt.length / 35)
+            let line = Math.ceil( txt.length / forMatLength)
+            let forMatTxt = this.onForMatTxt(txt,forMatLength)
 
             let size = TxtCell.getContentSize()
             size.height = 50 * line
@@ -176,13 +176,26 @@ load('game/ui/layer/feedback/FeedBackLayer', function () {
             size.width = size.width - 30
             TxtCell.getChildByName('info').setContentSize(size)
 
-            TxtCell.getChildByName('info').setString(txt)
+            TxtCell.getChildByName('info').setString(forMatTxt)
             TxtCell.getChildByName('info').setPositionY(size.height/2)
 
             this.FeedBackList.insertCustomItem(TxtCell, childCount)
 
-            this.FeedBackList.forceDoLayout()
+            this.FeedBackList.refreshView()
             this.FeedBackList.jumpToBottom()
+        },
+
+        onForMatTxt: function (txt,forMatLength) {
+
+            let forMatTxt = ''
+            let cnt = 0
+            for(let i = 0; i < txt.length; i++){
+                if(i !== 0 && i%forMatLength === 0){
+                    forMatTxt = forMatTxt + '\n'
+                }
+                forMatTxt = forMatTxt + txt[i]
+            }
+            return forMatTxt
         },
 
 

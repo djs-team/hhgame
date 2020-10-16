@@ -77,6 +77,8 @@
     request.Level = self.level;
     request.Number = self.number;
     [[CXClientModel instance] sendSocketRequest:request withCallback:^(CXSocketMessageSeatsFansListRequest * _Nonnull request) {
+        [weakSelf.mainTableView.mj_header endRefreshing];
+        [weakSelf.mainTableView.mj_footer endRefreshing];
         if (request.response.isSuccess) {
             // 获取成功
             if (weakSelf.page == 0) {
@@ -90,8 +92,6 @@
             NSMutableAttributedString *attri = [[NSMutableAttributedString alloc] initWithString:str];
             [attri addAttribute:NSForegroundColorAttributeName value:UIColorHex(0x333333) range:NSMakeRange(0, 4)];
             weakSelf.roseCountLable.attributedText = attri;
-            [weakSelf.mainTableView.mj_header endRefreshing];
-            [weakSelf.mainTableView.mj_footer endRefreshing];
             
             if (weakSelf.page >= request.response.AllPage - 1) {
                 [weakSelf.mainTableView.mj_footer endRefreshingWithNoMoreData];

@@ -98,6 +98,8 @@
     request.UserId = [NSNumber numberWithString:_userId];
     request.Page = _page;
     [[CXClientModel instance] sendSocketRequest:request withCallback:^(SocketMessageGetGuardItemListRequest * _Nonnull request) {
+        [weakSelf.mainTableView.mj_header endRefreshing];
+        [weakSelf.mainTableView.mj_footer endRefreshing];
         if (request.noError && request.response.isSuccess) {
             NSArray *array = [NSArray arrayWithArray:request.response.GuardItems];
             if (self->_page == 1) {
@@ -113,8 +115,6 @@
             
             weakSelf.titleLabel.text = [NSString stringWithFormat:@"%@的守护团", request.response.GuardName];
         }
-        [weakSelf.mainTableView.mj_header endRefreshing];
-        [weakSelf.mainTableView.mj_footer endRefreshing];
     }];
 }
 
@@ -185,7 +185,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 60;
+    return 80;
 }
 
 - (IBAction)guardianAction:(UIButton *)sender {

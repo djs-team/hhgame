@@ -64,7 +64,7 @@ NS_ASSUME_NONNULL_BEGIN
 @class LiveRoomUser;
 @interface CXLiveRoomGuardItemModel : NSObject
 @property (nonatomic, strong) LiveRoomUser * UserInfo;
-@property (nonatomic, strong) NSString * eadlineTime;
+@property (nonatomic, strong) NSString * DeadlineTime;
 @property (nonatomic, strong) NSNumber * Days;
 @property (nonatomic, strong) NSNumber * Intimacy;
 @end

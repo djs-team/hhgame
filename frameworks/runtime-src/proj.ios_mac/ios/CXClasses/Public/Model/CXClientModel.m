@@ -34,9 +34,9 @@
         
         _agoraEngineManager = [AgoraRtcEngineManager instanceWithAppId:@"30870262f27a4642a99e67cc1851f90a"];
         _easemob = [EasemobManager instanceWithAppKey:@"1101191012041033#hehequanji"];
-//
-//        _agoraEngineManager.delegate = self;
-//        _easemob.delegate = self;
+
+        _agoraEngineManager.delegate = self;
+        _easemob.delegate = self;
         _listener = [NSHashTable weakObjectsHashTable];
         _room = [[CXLiveRoomModel alloc] init];
         _room.RoomData = [[CXLiveRoomDataModel alloc] init];

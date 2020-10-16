@@ -1017,14 +1017,10 @@
     kWeakSelf
     [msgs enumerateObjectsUsingBlock:^(EasemobRoomMessage * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if ([obj.ext.XYType isEqualToString:EasemobRoomMessageExtTypeEmoji]) {
-            
+//            [weakSelf listViewAddFaceModel:obj.ext.XYEmoji.face_image user:obj.ext.XYUser];
+//            [weakSelf addEmoji:obj.ext.XYEmoji ToUser:obj.ext.XYUser.UserId];
         } else {
-            SocketMessageTextMessage *textModel = [SocketMessageTextMessage new];
-            
-            textModel.JoinRoomUser = obj.ext.XYUser;
-            textModel.text = obj.text;
-            
-            [weakSelf.roomUIView.messageListView addModel:textModel];
+            [weakSelf listViewAddTextModel:obj.text user:obj.ext.XYUser];
         }
     }];
 }

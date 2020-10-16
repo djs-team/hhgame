@@ -66,6 +66,8 @@
     };
     kWeakSelf
     [CXHTTPRequest POSTWithURL:@"/index.php/Api/Languageroom/recommend_room" parameters:param callback:^(id responseObject, BOOL isCache, NSError *error) {
+        [weakSelf.mainCollectionView.mj_header endRefreshing];
+        [weakSelf.mainCollectionView.mj_footer endRefreshing];
         if (!error) {
             NSArray *array = [NSArray modelArrayWithClass:[CXLiveRoomRecommendModel class] json:responseObject[@"data"][@"list"]];
             if (weakSelf.page == 1) {
@@ -75,9 +77,6 @@
                 [weakSelf.dataSources addObjectsFromArray:array];
             }
             [weakSelf.mainCollectionView reloadData];
-            
-            [weakSelf.mainCollectionView.mj_header endRefreshing];
-            [weakSelf.mainCollectionView.mj_footer endRefreshing];
             
             if (array.count < 10) {
                 [weakSelf.mainCollectionView.mj_footer endRefreshingWithNoMoreData];

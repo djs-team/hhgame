@@ -3270,9 +3270,7 @@
 			isa = PBXGroup;
 			children = (
 				00614BAB250B94C900BB7620 /* CXHTTPRequest.m */,
-				00614BAC250B94C900BB7620 /* CXClientModel.h */,
 				00614BAD250B94C900BB7620 /* CXHTTPRequest.h */,
-				00614BAE250B94C900BB7620 /* CXClientModel.m */,
 			);
 			path = HTTP;
 			sourceTree = "<group>";
@@ -3280,6 +3278,8 @@
 		00614BAF250B94C900BB7620 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				00614BAC250B94C900BB7620 /* CXClientModel.h */,
+				00614BAE250B94C900BB7620 /* CXClientModel.m */,
 				00614BB0250B94C900BB7620 /* CXUserModel.h */,
 				00614BB1250B94C900BB7620 /* CXUserModel.m */,
 			);
@@ -3363,7 +3363,6 @@
 		00614BCF250B94CA00BB7620 /* 提现 */ = {
 			isa = PBXGroup;
 			children = (
-				00614BD0250B94CA00BB7620 /* CXWithdrawSelectedDateViewController.m */,
 				00614BD1250B94CA00BB7620 /* CXWithdrawIncomeListViewController.h */,
 				00614BD8250B94CA00BB7620 /* CXWithdrawIncomeListViewController.m */,
 				00614BD6250B94CA00BB7620 /* CXWithdrawIncomeListViewController.xib */,
@@ -3371,8 +3370,9 @@
 				00614BD3250B94CA00BB7620 /* CXWithdrawAccountViewController.m */,
 				00614BD4250B94CA00BB7620 /* CXWithdrawInfoViewController.m */,
 				00614BD5250B94CA00BB7620 /* CXWithdrawSelectedDateViewController.h */,
-				00614BD7250B94CA00BB7620 /* CXWithdrawAccountViewController.h */,
+				00614BD0250B94CA00BB7620 /* CXWithdrawSelectedDateViewController.m */,
 				00614BD9250B94CA00BB7620 /* CXWithdrawSelectedDateViewController.xib */,
+				00614BD7250B94CA00BB7620 /* CXWithdrawAccountViewController.h */,
 				00614BDA250B94CA00BB7620 /* CXWithdrawInfoViewController.h */,
 				00614BDB250B94CA00BB7620 /* Views */,
 				00614BDF250B94CA00BB7620 /* CXWithdrawAccountViewController.xib */,
@@ -3536,10 +3536,10 @@
 		00614C32250B94CA00BB7620 /* 守护团 */ = {
 			isa = PBXGroup;
 			children = (
+				00614C36250B94CA00BB7620 /* CXLiveRoomGuardianListViewController.h */,
 				00614C33250B94CA00BB7620 /* CXLiveRoomGuardianListViewController.m */,
 				00614C34250B94CA00BB7620 /* CXLiveRoomGuardianListViewController.xib */,
 				00614C35250B94CA00BB7620 /* CXLiveRoomGuardianRuleViewController.m */,
-				00614C36250B94CA00BB7620 /* CXLiveRoomGuardianListViewController.h */,
 				00614C45250B94CA00BB7620 /* CXLiveRoomGuardianRuleViewController.h */,
 				00614C37250B94CA00BB7620 /* CXLiveRoomGuardianRuleViewController.xib */,
 				00614C38250B94CA00BB7620 /* view */,
@@ -3550,18 +3550,18 @@
 		00614C38250B94CA00BB7620 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				00614C39250B94CA00BB7620 /* CXLiveRoomGuardianPrivilegeView.m */,
+				00614C3F250B94CA00BB7620 /* CXLiveRoomGuardianListCell.h */,
 				00614C3A250B94CA00BB7620 /* CXLiveRoomGuardianListCell.m */,
+				00614C44250B94CA00BB7620 /* CXLiveRoomGuardianListCell.xib */,
+				00614C39250B94CA00BB7620 /* CXLiveRoomGuardianPrivilegeView.m */,
 				00614C3B250B94CA00BB7620 /* CXLiveRoomGuardianPrivilegeView.xib */,
 				00614C3C250B94CA00BB7620 /* CXLiveRoomGuardianAlertView.h */,
 				00614C3D250B94CA00BB7620 /* CXLiveRoomGuardianAnimationView.m */,
 				00614C3E250B94CA00BB7620 /* CXLiveRoomGuardianAnimationView.xib */,
-				00614C3F250B94CA00BB7620 /* CXLiveRoomGuardianListCell.h */,
 				00614C40250B94CA00BB7620 /* CXLiveRoomGuardianPrivilegeView.h */,
 				00614C41250B94CA00BB7620 /* CXLiveRoomGuardianAlertView.xib */,
 				00614C42250B94CA00BB7620 /* CXLiveRoomGuardianAlertView.m */,
 				00614C43250B94CA00BB7620 /* CXLiveRoomGuardianAnimationView.h */,
-				00614C44250B94CA00BB7620 /* CXLiveRoomGuardianListCell.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";

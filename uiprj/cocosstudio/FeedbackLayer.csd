@@ -248,7 +248,7 @@
                   <AbstractNodeData Name="MyMsgDetailPnl" ActionTag="-1482579351" Tag="193" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="1280.0000" Y="720.0000" />
                     <Children>
-                      <AbstractNodeData Name="MyMsgList" Visible="False" ActionTag="161724034" Tag="110" IconVisible="False" LeftMargin="356.8552" RightMargin="143.1448" TopMargin="105.7490" BottomMargin="64.2510" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ScrollDirectionType="0" DirectionType="Vertical" ctype="ListViewObjectData">
+                      <AbstractNodeData Name="MyMsgList" Visible="False" ActionTag="161724034" Tag="110" IconVisible="False" LeftMargin="356.8552" RightMargin="143.1448" TopMargin="105.7490" BottomMargin="64.2510" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ScrollDirectionType="0" DirectionType="Vertical" ctype="ListViewObjectData">
                         <Size X="780.0000" Y="550.0000" />
                         <AnchorPoint />
                         <Position X="356.8552" Y="64.2510" />
@@ -349,7 +349,7 @@
                         <EndColor A="255" R="255" G="255" B="255" />
                         <ColorVector ScaleY="1.0000" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="CellPnl" Visible="False" ActionTag="2037477778" Tag="116" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TopMargin="1032.0480" BottomMargin="-1032.0480" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                      <AbstractNodeData Name="CellPnl" Visible="False" ActionTag="2037477778" Tag="116" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TopMargin="1032.0480" BottomMargin="-1032.0480" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                         <Size X="1280.0000" Y="720.0000" />
                         <Children>
                           <AbstractNodeData Name="TileCell" ActionTag="376271829" Tag="123" IconVisible="False" LeftMargin="159.6848" RightMargin="340.3152" TopMargin="986.1263" BottomMargin="-316.1263" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">

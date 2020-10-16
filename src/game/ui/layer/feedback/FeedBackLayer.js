@@ -133,6 +133,16 @@ load('game/ui/layer/feedback/FeedBackLayer', function () {
             this.MyMsgDetailPnl.setVisible(true)
             this.MyMsgListPnl.setVisible(false)
 
+            if(this.FeedBackList.childrenCount > 0){
+                for(let i = this.FeedBackList.childrenCount - 1; i > 0; i--){
+                    let removeData = this.FeedBackList.getChildren()[i]
+                    if(removeData === this.FeedBackBm)
+                        continue
+
+                    this.FeedBackList.removeChild(removeData)
+
+                }
+            }
             for (let i = 0; i < data.feedbackList.length; ++i) {
                 this.pushFeedBackCell(data.feedbackList[i])
             }

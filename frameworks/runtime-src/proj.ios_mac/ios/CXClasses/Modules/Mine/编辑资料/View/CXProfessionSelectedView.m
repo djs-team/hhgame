@@ -89,13 +89,13 @@
     if (component==0) {
         self.selectFirstIndex = [self.dataDict.allKeys objectAtIndex:row];
         [self.pickerView reloadComponent:1];
-    } else {
-        NSArray *array = [self.dataDict objectForKey:self.selectFirstIndex];
-        self.selectSecondIndex = array[row];
+        [pickerView selectedRowInComponent:1];
     }
 }
 -(void)sureClick{
-    
+    _selectFirstIndex = [self.dataDict.allKeys objectAtIndex:[self.pickerView selectedRowInComponent:0]];
+    NSArray *array = [self.dataDict objectForKey:self.selectFirstIndex];
+    _selectSecondIndex  = [array objectAtIndex:[self.pickerView selectedRowInComponent:1]];
     if (self.sureActionBlock) {
         self.sureActionBlock(_selectFirstIndex, _selectSecondIndex);
     }

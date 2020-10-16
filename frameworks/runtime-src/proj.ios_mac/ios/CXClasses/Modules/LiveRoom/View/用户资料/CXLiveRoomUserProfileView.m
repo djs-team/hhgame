@@ -80,7 +80,7 @@
         [_laheiBtn setTitle:@"拉黑" forState:UIControlStateNormal];
     }
     
-    LiveRoomUser *user = [LiveRoomUser modelWithJSON:[userInfo.User modelToJSONObject]];
+    LiveRoomUser *user = userInfo.User;
     
     [_avatar sd_setImageWithURL:[NSURL URLWithString:user.HeadImageUrl]];
     _nameLabel.text = user.Name;

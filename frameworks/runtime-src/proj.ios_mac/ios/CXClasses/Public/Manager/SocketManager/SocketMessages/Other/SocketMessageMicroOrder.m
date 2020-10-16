@@ -8,10 +8,6 @@
 
 #import "SocketMessageMicroOrder.h"
 
-@implementation SocketMessageMicroOrderDataUser
-
-@end
-
 @implementation SocketMessageMicroOrder
 
 @end
@@ -24,7 +20,7 @@
 
 + (NSDictionary *)modelContainerPropertyGenericClass {
     return @{
-             @"User" : SocketMessageMicroOrderDataUser.class
+             @"User" : LiveRoomUser.class
              };
 }
 

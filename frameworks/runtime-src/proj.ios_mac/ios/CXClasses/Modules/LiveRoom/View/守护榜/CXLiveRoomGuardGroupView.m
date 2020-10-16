@@ -87,9 +87,11 @@
     request.UserId = [NSNumber numberWithString:_userId];
     request.Page = _page;
     [[CXClientModel instance] sendSocketRequest:request withCallback:^(SocketMessageGetGuardItemListRequest * _Nonnull request) {
+        [weakSelf.mainTableView.mj_header endRefreshing];
+        [weakSelf.mainTableView.mj_footer endRefreshing];
         if (request.noError && request.response.isSuccess) {
             NSArray *array = [NSArray arrayWithArray:request.response.GuardItems];
-            if (self->_page == 1) {
+            if (self->_page == 0) {
                 [weakSelf.dataSources removeAllObjects];
             }
             
@@ -97,17 +99,20 @@
 
             [weakSelf.mainTableView reloadData];
             
-            if (_page >= request.Page) {
+            if (_page >= request.response.AllPage.intValue) {
                 [weakSelf.mainTableView.mj_footer endRefreshingWithNoMoreData];
             }
             
-            weakSelf.numberLabel.text = [NSString stringWithFormat:@"%@的守护团", request.response.GuardName];
+            NSString *str1 = [NSString stringWithFormat:@"%@的守护团 ",request.response.GuardName];
+            NSString *str2 = [NSString stringWithFormat:@"%@(%@人)", str1,request.response.UserCount.stringValue];
+            NSMutableAttributedString *attri = [[NSMutableAttributedString alloc] initWithString:str2];
+            [attri addAttribute:NSForegroundColorAttributeName value:UIColorHex(0x763CE5) range:NSMakeRange(0, str2.length)];
+            [attri addAttribute:NSForegroundColorAttributeName value:UIColorHex(0x343434) range:NSMakeRange(0, str1.length)];
+            weakSelf.numberLabel.attributedText = attri;
             [weakSelf.avatar setImageURL:[NSURL URLWithString:request.response.GuardHead]];
             weakSelf.is_guard = request.response.IsGuard;
             
         }
-        [weakSelf.mainTableView.mj_header endRefreshing];
-        [weakSelf.mainTableView.mj_footer endRefreshing];
     }];
 }
 
@@ -145,7 +150,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 60;
+    return 80;
 }
 
 - (IBAction)renew_guard_btnAction:(id)sender {

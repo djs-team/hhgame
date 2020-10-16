@@ -44,13 +44,35 @@ static id _instance;
         failBlock(WXERROR_PARAM);
         return ;
     }
+    NSString *partnerid = @"";
+    if ([dic.allKeys containsObject:@"partnerid"]) {
+        partnerid = dic[@"partnerid"];
+    } else {
+        partnerid = dic[@"mch_id"];
+    }
     
-    NSString *appid = dic[@"appId"];
-    NSString *partnerid = dic[@"partnerid"];
-    NSString *prepayid = dic[@"prepayId"];
-    NSString *package = dic[@"package"];
-    NSString *noncestr = dic[@"nonceStr"];
-    NSString *timestamp = dic[@"timeStamp"];
+    NSString *prepayid = @"";
+    if ([dic.allKeys containsObject:@"prepayId"]) {
+        prepayid = dic[@"prepayId"];
+    } else {
+        prepayid = dic[@"prepay_id"];
+    }
+    
+    NSString *noncestr = @"";
+    if ([dic.allKeys containsObject:@"noncestr"]) {
+        noncestr = dic[@"noncestr"];
+    } else {
+        noncestr = dic[@"noncestr"];
+    }
+    
+    NSString *timestamp = @"";
+    if ([dic.allKeys containsObject:@"timeStamp"]) {
+        timestamp = dic[@"timeStamp"];
+    } else {
+        timestamp = dic[@"timestamp"];
+    }
+     
+    NSString *package = @"Sign=WXPay";
     NSString *sign = dic[@"sign"];
         
     if(![WXApi isWXAppInstalled]) {

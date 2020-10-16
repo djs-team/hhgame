@@ -37,7 +37,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) NSString *online; // 用户状态 0离线 3相亲中 5热聊中 6开播中
 
-@property (nonatomic, strong) CXUserCurrentRoomModel *currentRoomInfo; // 当前所在房间信息
+@property (nonatomic, strong) CXUserCurrentRoomModel *room_info; // 当前所在房间信息
 
 // 搜索
 @property (nonatomic, strong) NSString *room_id; // 房间id，如果为空就不在房间

@@ -112,7 +112,7 @@ load('game/ui/scene/HallScene', function () {
 
         onFeedbackBtnClick: function () {
             this.morePnl.setVisible(false)
-            appInstance.gameAgent().addPopUI(ResConfig.Ui.FeedbackLayer)
+            appInstance.gameAgent().addPopUI(ResConfig.Ui.FeedBackLayer)
         },
 
         onTaskClick: function () {

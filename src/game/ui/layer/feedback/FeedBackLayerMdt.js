@@ -90,7 +90,7 @@ load('game/ui/layer/feedback/FeedBackLayerMdt', function () {
         onForMatPlayerFeedbackInfo: function (data,info) {
             info.tile = data.type == 0 ? '提交问题' : '客服回复'
             info.time = data.time
-            info.text = data.text
+            info.txt = data.text
         },
 
         onForMatSubMitResult: function (body) {

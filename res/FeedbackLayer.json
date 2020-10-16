@@ -952,7 +952,8 @@
                     "IsCustomSize": true,
                     "LabelText": "",
                     "PlaceHolderText": "这里是反馈的内容",
-                    "MaxLengthText": 10,
+                    "MaxLengthEnable": true,
+                    "MaxLengthText": 150,
                     "TouchEnable": true,
                     "AnchorPoint": {
                       "ScaleX": 0.5,
@@ -1471,7 +1472,8 @@
                                 "IsCustomSize": true,
                                 "LabelText": "",
                                 "PlaceHolderText": "这里是反馈的内容",
-                                "MaxLengthText": 10,
+                                "MaxLengthEnable": true,
+                                "MaxLengthText": 150,
                                 "TouchEnable": true,
                                 "AnchorPoint": {
                                   "ScaleX": 0.5,

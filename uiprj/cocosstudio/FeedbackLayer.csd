@@ -193,7 +193,7 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="EditMidTxt" ActionTag="1779545969" Tag="120" IconVisible="False" LeftMargin="14.9531" RightMargin="15.0469" TopMargin="89.2500" BottomMargin="110.7500" TouchEnable="True" FontSize="30" IsCustomSize="True" LabelText="" PlaceHolderText="这里是反馈的内容" MaxLengthText="10" ctype="TextFieldObjectData">
+                  <AbstractNodeData Name="EditMidTxt" ActionTag="1779545969" Tag="120" IconVisible="False" LeftMargin="14.9531" RightMargin="15.0469" TopMargin="89.2500" BottomMargin="110.7500" TouchEnable="True" FontSize="30" IsCustomSize="True" LabelText="" PlaceHolderText="这里是反馈的内容" MaxLengthEnable="True" MaxLengthText="150" ctype="TextFieldObjectData">
                     <Size X="750.0000" Y="300.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="389.9531" Y="260.7500" />
@@ -288,7 +288,7 @@
                                 <OutlineColor A="255" R="255" G="0" B="0" />
                                 <ShadowColor A="255" R="110" G="110" B="110" />
                               </AbstractNodeData>
-                              <AbstractNodeData Name="EditTxt" ActionTag="-1784439359" Tag="114" IconVisible="False" LeftMargin="14.9531" RightMargin="15.0469" TopMargin="91.2451" BottomMargin="108.7549" TouchEnable="True" FontSize="30" IsCustomSize="True" LabelText="" PlaceHolderText="这里是反馈的内容" MaxLengthText="10" ctype="TextFieldObjectData">
+                              <AbstractNodeData Name="EditTxt" ActionTag="-1784439359" Tag="114" IconVisible="False" LeftMargin="14.9531" RightMargin="15.0469" TopMargin="91.2451" BottomMargin="108.7549" TouchEnable="True" FontSize="30" IsCustomSize="True" LabelText="" PlaceHolderText="这里是反馈的内容" MaxLengthEnable="True" MaxLengthText="150" ctype="TextFieldObjectData">
                                 <Size X="750.0000" Y="200.0000" />
                                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                                 <Position X="389.9531" Y="208.7549" />

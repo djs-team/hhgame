@@ -5,7 +5,7 @@ load('game/ui/layer/feedback/FeedBackLayer', function () {
     let GameEvent = include('game/config/GameEvent')
     let FeedBackLayerMdt = include('game/ui/layer/feedback/FeedBackLayerMdt')
     let feedbackLayer = BaseLayer.extend({
-        _className: 'feedbackLayer',
+        _className: 'FeedBackLayer',
         _subMitType : 0,
         ctor: function () {
             this._super(ResConfig.View.FeedbackLayer)
@@ -21,6 +21,7 @@ load('game/ui/layer/feedback/FeedBackLayer', function () {
                 'pnl/FeedBackPnl/EditMidTxt': { },
                 'pnl/FeedBackPnl/SendMsgMidBtn': { onClicked: this.onSendMsgBtnClick },
 
+                'pnl/MyMsgPnl': { },
                 'pnl/MyMsgPnl/MyMsgDetailPnl': { },
                 'pnl/MyMsgPnl/MyMsgDetailPnl/MyMsgList': { },
                 'pnl/MyMsgPnl/MyMsgDetailPnl/FeedBackList': { },
@@ -29,6 +30,8 @@ load('game/ui/layer/feedback/FeedBackLayer', function () {
                 'pnl/MyMsgPnl/MyMsgDetailPnl/FeedBackList/FeedBackBm/EditTxt': { },
                 'pnl/MyMsgPnl/MyMsgDetailPnl/CellPnl': { },
                 'pnl/MyMsgPnl/MyMsgDetailPnl/CellPnl/TileCell': { },
+                'pnl/MyMsgPnl/MyMsgDetailPnl/CellPnl/TxtCell': { },
+                'pnl/MyMsgPnl/MyMsgListPnl': { },
                 'pnl/MyMsgPnl/MyMsgListPnl/MyMsgListView': { },
                 'pnl/MyMsgPnl/MyMsgListPnl/MyMsgCell': { },
 
@@ -66,14 +69,17 @@ load('game/ui/layer/feedback/FeedBackLayer', function () {
             this.MyMsgBtn.setTouchEnabled(false)
             this.MyMsgBtn.setBright(false)
 
-            this.MyMsgList.setVisible(false)
-            this.MyMsgDetailPnl.setVisible(false)
+
+            this.FeedBackPnl.setVisible(false)
+            this.MyMsgPnl.setVisible(true)
             this.MyMsgListPnl.setVisible(true)
+            this.MyMsgDetailPnl.setVisible(false)
 
             appInstance.gameAgent().httpGame().FEEDBACKGETLISTReq()
         },
 
         updateMyMsgList: function (data) {
+
             this.MyMsgListView.removeAllChildren()
             for(let i = 0; i < data.length; i++){
                 this.onInitMyMsgListCell(data[i])
@@ -81,7 +87,7 @@ load('game/ui/layer/feedback/FeedBackLayer', function () {
         },
 
         onInitMyMsgListCell: function (data) {
-            let cell = this.MyMsgCell.close()
+            let cell = this.MyMsgCell.clone()
             cell.setVisible(true)
             this.MyMsgListView.pushBackCustomItem(cell)
 
@@ -122,27 +128,33 @@ load('game/ui/layer/feedback/FeedBackLayer', function () {
         },
 
         updateMyMsgDetail: function (data) {
-
+            cc.log('-------updateMyMsgDetail----------data : ' + JSON.stringify(data))
 
             this.MyMsgListPnl.setVisible(false)
             this.FeedBackList.setVisible(true)
             this._subMitFeedId = data.feedbackId
 
             for (let i = 0; i < data.feedbackList.length; ++i) {
-                this.pushFeedBackCell(data[i])
+                this.pushFeedBackCell(data.feedbackList[i])
             }
 
         },
 
         onDealSubMitResult: function (data) {
 
-            if(this._subMitFeedId == 0){
-
+            if(this._subMitType == 0){
+                appInstance.gameAgent().Tips('提交成功！')
+                this.EditMidTxt.setString('')
+            }else{
+                this.EditTxt.setString('')
+                this.pushFeedBackCell(data)
             }
 
         },
 
         pushFeedBackCell: function (cellInfo) {
+            cc.log('-------pushFeedBackCell----------cellInfo : ' + JSON.stringify(cellInfo))
+
             let childCount = this.FeedBackList.getChildrenCount()
 
             let TileCell = this.TileCell.clone()
@@ -169,7 +181,7 @@ load('game/ui/layer/feedback/FeedBackLayer', function () {
 
             this.FeedBackList.insertCustomItem(TxtCell, childCount)
 
-            this.FeedBackList.refreshView()
+            this.FeedBackList.forceDoLayout()
             this.FeedBackList.jumpToBottom()
         },
 
@@ -186,26 +198,30 @@ load('game/ui/layer/feedback/FeedBackLayer', function () {
         },
 
         onSendMsgBtnClick: function (sender) {
-            let txtInfo = this.EditMidTxt.getString() || this.EditTxt.getString()
+            let txtInfo = ''
+            if(sender == this.SendMsgMidBtn){
+                this._subMitType = 0
+                txtInfo = this.EditMidTxt.getString()
+            }else{
+                this._subMitType = 1
+                txtInfo = this.EditTxt.getString()
+            }
+
             if (!txtInfo || txtInfo === '') {
                 appInstance.gameAgent().Tips('提交问题不能为空')
                 return
             }
 
-            if(txtInfo.length >= 150){
+            if(txtInfo.length > 150){
                 appInstance.gameAgent().Tips('请不要超过150个字')
                 return
             }
 
-            if(sender == this.SendMsgMidBtn)
-                this._subMitType = 0
-            else
-                this._subMitType = 1
 
             let msg = {
                 type: this._subMitType,
                 text: txtInfo,
-                feedbackId: this.this._subMitFeedId || 0
+                feedbackId: this._subMitFeedId || 0
             }
 
             appInstance.gameAgent().httpGame().FEEDBACKSUBMITReq(msg)

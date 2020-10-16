@@ -3013,12 +3013,12 @@
 				00614B02250B94C800BB7620 /* MBProgressHUD+CXCategory.m */,
 				00614B03250B94C800BB7620 /* UIViewController+CXCategory.m */,
 				00614B04250B94C800BB7620 /* NSDate+CXCategory.h */,
+				00614B0A250B94C800BB7620 /* NSDate+CXCategory.m */,
 				00614B05250B94C800BB7620 /* UIView+CXCategory.h */,
 				00614B06250B94C800BB7620 /* UIButton+CXCategory.m */,
 				00614B07250B94C800BB7620 /* NSString+CXCategory.h */,
 				00614B08250B94C800BB7620 /* UIGestureRecognizer+CXCategory.h */,
 				00614B09250B94C800BB7620 /* UIImage+CXCategory.h */,
-				00614B0A250B94C800BB7620 /* NSDate+CXCategory.m */,
 				00614B0B250B94C800BB7620 /* UIViewController+CXCategory.h */,
 				00614B0C250B94C800BB7620 /* MBProgressHUD+CXCategory.h */,
 				00614B0D250B94C800BB7620 /* UIButton+CXCategory.h */,
@@ -3313,11 +3313,11 @@
 		00614BBA250B94C900BB7620 /* 我的守护 */ = {
 			isa = PBXGroup;
 			children = (
+				00614BBC250B94C900BB7620 /* CXMineGuardViewController.h */,
+				00614BCD250B94CA00BB7620 /* CXMineGuardViewController.m */,
 				00614BCC250B94CA00BB7620 /* CXMineGuardListViewController.h */,
 				00614BBB250B94C900BB7620 /* CXMineGuardListViewController.m */,
-				00614BBC250B94C900BB7620 /* CXMineGuardViewController.h */,
 				00614BCB250B94CA00BB7620 /* CXMineGuardListViewController.xib */,
-				00614BCD250B94CA00BB7620 /* CXMineGuardViewController.m */,
 				00614BBE250B94C900BB7620 /* View */,
 			);
 			path = "我的守护";
@@ -3326,11 +3326,11 @@
 		00614BBE250B94C900BB7620 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				00614BBF250B94C900BB7620 /* CXMineGuardAutomaticView.xib */,
 				00614BC6250B94CA00BB7620 /* CXMineGuardRenewView.h */,
 				00614BC0250B94CA00BB7620 /* CXMineGuardRenewView.m */,
 				00614BC1250B94CA00BB7620 /* CXMineGuardRenewView.xib */,
 				00614BC2250B94CA00BB7620 /* CXMineGuardAutomaticView.m */,
+				00614BBF250B94C900BB7620 /* CXMineGuardAutomaticView.xib */,
 				00614BC3250B94CA00BB7620 /* CXMineGuardListCell.h */,
 				00614BC4250B94CA00BB7620 /* CXMineGuardRenewItemCell.h */,
 				00614BC5250B94CA00BB7620 /* CXMineGuardAutomaticView.h */,

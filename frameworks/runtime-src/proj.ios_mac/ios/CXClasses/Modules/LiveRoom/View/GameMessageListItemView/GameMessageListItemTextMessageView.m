@@ -46,11 +46,12 @@
     NSMutableAttributedString *result = [self resultWithRoomGuardLevel:joinroom.GuardSign DukeLevel:joinroom.DukeLevel UserLevel:joinroom.UserLevel UserIdentity:joinroom.UserIdentity Font:font UserID:model.JoinRoomUser.UserId];
     
     // 昵称
-    NSMutableAttributedString *user = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@（%@|%@岁）", model.JoinRoomUser.Name, model.JoinRoomUser.City.length > 0 ? model.JoinRoomUser.City : @"城市", model.JoinRoomUser.Age.length > 0 ? model.JoinRoomUser.Age : @"18"]];
+    NSString *nameStr = [NSString stringWithFormat:@"%@（%@|%@岁）", model.JoinRoomUser.Name, model.JoinRoomUser.City.length > 0 ? model.JoinRoomUser.City : @"城市", model.JoinRoomUser.Age.length > 0 ? model.JoinRoomUser.Age : @"18"];
+    NSMutableAttributedString *user = [[NSMutableAttributedString alloc] initWithString:nameStr];
     [user setColor:color];
     user.font = font;
     __weak typeof(self) weakSelf = self;
-    [user setTextHighlightRange:NSMakeRange(0, model.JoinRoomUser.Name.length) color:color backgroundColor:[UIColor clearColor] tapAction:^(UIView * _Nonnull containerView, NSAttributedString * _Nonnull text, NSRange range, CGRect rect) {
+    [user setTextHighlightRange:NSMakeRange(0, nameStr.length) color:color backgroundColor:[UIColor clearColor] tapAction:^(UIView * _Nonnull containerView, NSAttributedString * _Nonnull text, NSRange range, CGRect rect) {
         if (weakSelf.clickUserInfo) {
             weakSelf.clickUserInfo(model.JoinRoomUser.UserId);
         }

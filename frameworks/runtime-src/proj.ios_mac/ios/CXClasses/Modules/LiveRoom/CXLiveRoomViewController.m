@@ -697,14 +697,14 @@
                 if (microInfo && microInfo.Type == LiveRoomMicroInfoTypeHost) {//红娘
                     SocketMessageMicroOrder * order = notification;
                     if (order.MicroOrderData.User) {
-                        LiveRoomUser * userInfo = [LiveRoomUser modelWithJSON:[order.MicroOrderData.User modelToJSONObject]];
-//                        NSString *title = [NSString stringWithFormat:@"%@已经申请上麦",userInfo.Name];
+                        LiveRoomUser * userInfo = order.MicroOrderData.User;
                         SocketMessageUserJoinRoom *user = [SocketMessageUserJoinRoom new];
                         user.Name = userInfo.Name;
                         user.Avatar = userInfo.HeadImageUrl;
                         user.UserLevel = userInfo.VipLevel;
                         user.Age = userInfo.Age.stringValue;
-                        user.City = userInfo.Age.stringValue;
+                        user.City = userInfo.City;
+                        user.Sex = @(userInfo.Sex);
                         [self listViewAddTextModel:@"申请上麦" user:user];
                         
                         [self.applySeatArrays addObject:order];
@@ -1044,7 +1044,7 @@
 // 显示用户信息
 - (void)showUserInfoViewWithUserInfo:(SocketMessageGetUserInfoResponse *)userInfo {
     CXLiveRoomUserProfileView *profileView = [[NSBundle mainBundle] loadNibNamed:@"CXLiveRoomUserProfileView" owner:self options:nil].firstObject;
-    LiveRoomUser *user = [LiveRoomUser modelWithJSON:[userInfo.User modelToJSONObject]];
+    LiveRoomUser *user = userInfo.User;
     profileView.userInfo = userInfo;
     kWeakSelf
     profileView.userProfileActionBlock = ^(NSInteger tag) {
@@ -1102,10 +1102,6 @@
                 break;
             case 32: // 送TA礼物
             {
-                LiveRoomUser * user = [LiveRoomUser new];
-                user.UserId = userInfo.User.UserId;
-                user.Name = userInfo.User.Name;
-                user.HeadImageUrl = userInfo.User.HeadImageUrl;
                 NSIndexPath *index = [[CXClientModel instance].room.userSeats objectForKey:user.UserId];
                 if (index) {
                     user.modelSeat = [[LiveRoomMicroInfo alloc] init];

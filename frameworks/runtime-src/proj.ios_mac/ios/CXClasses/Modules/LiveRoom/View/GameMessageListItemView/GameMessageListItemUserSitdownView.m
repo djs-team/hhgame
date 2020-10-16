@@ -44,11 +44,12 @@
     NSMutableAttributedString *result = [self resultWithRoomGuardLevel:model.GuardSign DukeLevel:model.DukeLevel UserLevel:model.UserLevel UserIdentity:model.UserIdentity Font:font UserID:model.MicroInfo.User.UserId];
     
     // 昵称
-    NSMutableAttributedString *user = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@（%@|%@岁）", model.MicroInfo.User.Name, model.MicroInfo.User.City.length > 0 ? model.MicroInfo.User.City : @"城市", model.MicroInfo.User.Age.length > 0 ? model.MicroInfo.User.Age : @"18"]];
+    NSString *nameStr = [NSString stringWithFormat:@"%@（%@|%@岁）", model.MicroInfo.User.Name, model.MicroInfo.User.City.length > 0 ? model.MicroInfo.User.City : @"城市", model.MicroInfo.User.Age.length > 0 ? model.MicroInfo.User.Age : @"18"];
+    NSMutableAttributedString *user = [[NSMutableAttributedString alloc] initWithString:nameStr];
     [user setColor:color];
     user.font = font;
     __weak typeof(self) weakSelf = self;
-    [user setTextHighlightRange:NSMakeRange(0, model.MicroInfo.User.Name.length) color:color backgroundColor:[UIColor clearColor] tapAction:^(UIView * _Nonnull containerView, NSAttributedString * _Nonnull text, NSRange range, CGRect rect) {
+    [user setTextHighlightRange:NSMakeRange(0, nameStr.length) color:color backgroundColor:[UIColor clearColor] tapAction:^(UIView * _Nonnull containerView, NSAttributedString * _Nonnull text, NSRange range, CGRect rect) {
         if (weakSelf.clickUserInfo) {
             weakSelf.clickUserInfo(model.MicroInfo.User.UserId);
         }

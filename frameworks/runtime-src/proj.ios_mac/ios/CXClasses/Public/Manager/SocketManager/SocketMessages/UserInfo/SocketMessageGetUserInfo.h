@@ -18,25 +18,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface SocketMessageGetUserInfoResponseUser : NSObject
-
-@property (nonatomic, strong) NSString * UserId;
-@property (nonatomic, strong) NSString * City;
-@property (nonatomic, strong) NSNumber * Stature;
-@property (nonatomic, strong) NSNumber * Age;
-@property (nonatomic, strong) NSString * Name;
-@property (nonatomic, strong) NSString * HeadImageUrl;
-@property (nonatomic, strong) NSString * PrettyId;
-@property (nonatomic, strong) NSString * PrettyAvatar;
-
-- (NSString*)displayId;
-
-@end
-
+@class LiveRoomUser;
 @interface SocketMessageGetUserInfoResponse : SocketMessageResponse
-
-@property (nonatomic, strong) SocketMessageGetUserInfoResponseUser * User;
-@property (nonatomic, strong) NSNumber * Sex;
+@property (nonatomic, strong) LiveRoomUser * User;
 @property (nonatomic, strong) NSNumber * Level;
 @property (nonatomic, strong) NSNumber * UserIdentity;
 @property (nonatomic, strong) NSNumber * IsOnMicro;

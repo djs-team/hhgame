@@ -1231,7 +1231,6 @@
                         "ScrollDirectionType": 0,
                         "ClipAble": false,
                         "BackColorAlpha": 102,
-                        "ComboBoxIndex": 1,
                         "SingleColor": {
                           "R": 150,
                           "G": 150
@@ -1663,7 +1662,6 @@
                       {
                         "ClipAble": false,
                         "BackColorAlpha": 102,
-                        "ComboBoxIndex": 1,
                         "SingleColor": {
                           "R": 150,
                           "G": 200

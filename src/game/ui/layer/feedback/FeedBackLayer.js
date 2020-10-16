@@ -128,21 +128,19 @@ load('game/ui/layer/feedback/FeedBackLayer', function () {
         },
 
         updateMyMsgDetail: function (data) {
-
             this._subMitFeedId = data.feedbackId
             this.MyMsgDetailPnl.setVisible(true)
             this.MyMsgListPnl.setVisible(false)
 
-            if(this.FeedBackList.childrenCount > 0){
-                for(let i = this.FeedBackList.childrenCount - 1; i > 0; i--){
-                    let removeData = this.FeedBackList.getChildren()[i]
-                    if(removeData === this.FeedBackBm)
-                        continue
+            let listChilds = this.FeedBackList.getChildren()
 
-                    this.FeedBackList.removeChild(removeData)
-
+            for (let i = 0; i < listChilds.length; ++i) {
+                if (listChilds[i] === this.FeedBackBm) {
+                    continue
                 }
+                this.FeedBackList.removeChild(listChilds[i])
             }
+
             for (let i = 0; i < data.feedbackList.length; ++i) {
                 this.pushFeedBackCell(data.feedbackList[i])
             }

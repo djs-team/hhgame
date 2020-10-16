@@ -16,6 +16,16 @@ import com.deepsea.mua.stub.utils.ViewBindUtils;
  */
 public class BlockAdapter extends BaseBindingAdapter<BlockVo, ItemBlockBinding> {
 
+    private OnMyClickListener mListener;
+
+    public void setmListener(OnMyClickListener mListener) {
+        this.mListener = mListener;
+    }
+
+    public interface OnMyClickListener {
+
+        void operate(int pos);
+    }
 
     public BlockAdapter(Context context) {
         super(context);
@@ -30,10 +40,16 @@ public class BlockAdapter extends BaseBindingAdapter<BlockVo, ItemBlockBinding> 
     protected void bind(BindingViewHolder<ItemBlockBinding> holder, BlockVo item) {
         ViewBindUtils.setText(holder.binding.tvName, item.getNickname());
         GlideUtils.circleImage(holder.binding.photoIv, item.getAvatar(), R.drawable.ic_place, R.drawable.ic_place);
-        ViewBindUtils.setText(holder.binding.tvBlockTime,item.getCreatetime());
+        ViewBindUtils.setText(holder.binding.tvBlockTime, item.getCreatetime());
         ViewBindUtils.RxClicks(holder.binding.photoIv, o -> {
             PageJumpUtils.jumpToProfile(item.getUserid());
         });
+        ViewBindUtils.RxClicks(holder.binding.consGroup, o -> {
+            if (mListener != null) {
+                mListener.operate(holder.getLayoutPosition());
+            }
+        });
+
     }
 
 

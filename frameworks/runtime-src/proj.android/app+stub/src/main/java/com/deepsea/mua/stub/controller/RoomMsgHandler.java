@@ -109,11 +109,11 @@ public class RoomMsgHandler {
         }
         spannable.append(nick);
         int sexColor = 0xffef51b2;
-//        if (sex == 1) {
-//            sexColor = 0xFF6E6EFF;
-//        } else if (sex == 2) {
-//            sexColor = 0xFFFF2B7C;
-//        }
+        if (sex == 1) {
+            sexColor = 0xFF6E6EFF;
+        } else if (sex == 2) {
+            sexColor = 0xFFFF2B7C;
+        }
         ForegroundColorSpan msgSpan = new ForegroundColorSpan(sexColor);
         spannable.setSpan(msgSpan, spannable.length() - nick.length(), spannable.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
     }

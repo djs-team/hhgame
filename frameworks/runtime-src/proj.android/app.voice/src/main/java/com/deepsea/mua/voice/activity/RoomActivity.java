@@ -1026,7 +1026,6 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
             Log.d("initSecondRoom", JsonConverter.toJson(mRoomModel.getMicros().get(0)));
             mBinding.mainSecondOneView.setMicroData(mRoomModel.getHostMicro());
             mBinding.mainSecondTwoView.setMicroData(mRoomModel.getMicros().get(0));
-
             Log.d("initSecondRoom", String.valueOf(mRoomModel.getHostMicro().getUser() == null));
 
             if (mRoomModel.getHostMicro().getUser() == null) {
@@ -1046,9 +1045,11 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
             if (SongStateUtils.getSingleton2().getConsertUserId().equals(hostUser.getUserId())) {
                 singerInfo = mRoomModel.getHostMicro();
                 guestInfo = mRoomModel.getMicros().get(0);
+
             } else {
                 guestInfo = mRoomModel.getHostMicro();
                 singerInfo = mRoomModel.getMicros().get(0);
+
             }
 
             mBinding.mainSecondOneMusicView.setMicroData(guestInfo);
@@ -1209,6 +1210,9 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
                 boolean isRoomOwner = MatchMakerUtils.isRoomOwner();
                 if (isRoomOwner) {
                     showMicManageDialog(10 - inMicroManNum);
+                }else {
+                    showMicroManageDialog(1);
+
                 }
             }
         }
@@ -1251,8 +1255,8 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
         public void downMicro(String userId, int level, int number) {
             if (MatchMakerUtils.isRoomOwner() && !UserUtils.getUser().getUid().equals(userId)) {
                 //红娘强制别人下麦
-                ToastUtils.showToast("功能待定");
-//                mViewModel.downMicro(level, number);
+//                ToastUtils.showToast("功能待定");
+                mViewModel.downMicro(level, number);
             } else {
                 //主动下麦
                 showAudience();
@@ -1430,8 +1434,8 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
 
                     if (MatchMakerUtils.isRoomOwner() && !UserUtils.getUser().getUid().equals(userId)) {
                         //红娘强制别人下麦
-//                        mViewModel.downMicro(level, number);
-                        ToastUtils.showToast("功能待定");
+                        mViewModel.downMicro(level, number);
+//                        ToastUtils.showToast("功能待定");
                     } else {
                         showAudience();
                     }

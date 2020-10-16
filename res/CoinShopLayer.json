@@ -3850,11 +3850,6 @@
                       "Path": "Default/Button_Disable.png",
                       "Plist": ""
                     },
-                    "PressedFileData": {
-                      "Type": "Default",
-                      "Path": "Default/Button_Press.png",
-                      "Plist": ""
-                    },
                     "NormalFileData": {
                       "Type": "Normal",
                       "Path": "vip/vip_9.png",
@@ -3973,11 +3968,6 @@
                       "Path": "Default/Button_Disable.png",
                       "Plist": ""
                     },
-                    "PressedFileData": {
-                      "Type": "Default",
-                      "Path": "Default/Button_Press.png",
-                      "Plist": ""
-                    },
                     "NormalFileData": {
                       "Type": "Normal",
                       "Path": "vip/vip_6.png",
@@ -4087,7 +4077,6 @@
         "common/jinbi.png",
         "common/zuanshi.png",
         "Default/Button_Disable.png",
-        "Default/Button_Press.png",
         "font/hkhbtW12.ttc",
         "hall/dtjm_4.png",
         "png/scjn_bg.png",

@@ -1153,7 +1153,7 @@
                 <PreSize X="0.4664" Y="0.5028" />
                 <FileData Type="Normal" Path="common/bz_2.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="TileBg" ActionTag="-461085758" Tag="164" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="485.0640" RightMargin="468.9360" TopMargin="168.1186" BottomMargin="487.8814" Scale9Enable="True" LeftEage="44" RightEage="32" TopEage="46" BottomEage="10" Scale9OriginX="44" Scale9OriginY="46" Scale9Width="23" Scale9Height="11" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="TileBg" ActionTag="-461085758" Tag="164" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="485.0640" RightMargin="468.9360" TopMargin="172.1185" BottomMargin="483.8815" Scale9Enable="True" LeftEage="44" RightEage="32" TopEage="46" BottomEage="10" Scale9OriginX="44" Scale9OriginY="46" Scale9Width="23" Scale9Height="11" ctype="ImageViewObjectData">
                 <Size X="326.0000" Y="64.0000" />
                 <Children>
                   <AbstractNodeData Name="name" ActionTag="-2132860766" Tag="165" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="24.0000" RightMargin="24.0000" TopMargin="13.5000" BottomMargin="13.5000" IsCustomSize="True" FontSize="40" LabelText="支付方式" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -1170,10 +1170,10 @@
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="648.0640" Y="519.8814" />
+                <Position X="648.0640" Y="515.8815" />
                 <Scale ScaleX="0.6951" ScaleY="0.7950" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5063" Y="0.7221" />
+                <PrePosition X="0.5063" Y="0.7165" />
                 <PreSize X="0.2547" Y="0.0889" />
                 <FileData Type="Normal" Path="common/bz_1.png" Plist="" />
               </AbstractNodeData>
@@ -1190,7 +1190,6 @@
                     <PreSize X="0.1592" Y="0.4937" />
                     <TextColor A="255" R="65" G="65" B="70" />
                     <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                    <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
                     <NormalFileData Type="Normal" Path="vip/vip_9.png" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
@@ -1217,7 +1216,6 @@
                     <PreSize X="0.1592" Y="0.4937" />
                     <TextColor A="255" R="65" G="65" B="70" />
                     <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                    <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
                     <NormalFileData Type="Normal" Path="vip/vip_6.png" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />

@@ -353,13 +353,7 @@
         weakSelf.b_time = b_time;
         weakSelf.e_time = e_time;
         
-        if (self.incomeType == income) {
-            [self getIncomelistDate];
-        } else if (self.incomeType == tixian) {
-            [self getCashlistDate];
-        } else if (self.incomeType == exchange) {
-            [self getExchangeDate];
-        }
+        [weakSelf headerRefresh];
     };
     [self.navigationController pushViewController:vc animated:YES];
 }

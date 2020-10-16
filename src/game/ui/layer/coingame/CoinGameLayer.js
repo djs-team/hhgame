@@ -89,12 +89,11 @@ load('game/ui/layer/coingame/CoinGameLayer', function () {
             let tipMsg = ''
             let minCost = data._minCost
             let maxCost = data._maxCost
-            let coinsCnt = this.coinPnl.getChildByName('coinsCnt').getString()
 
-            if(coinsCnt < minCost){
+            if( this._coinCnt < minCost){
                 tipMsg = '您的金币不足，请充值'
                 flag = false
-            }else if(maxCost && coinsCnt > maxCost){
+            }else if(maxCost &&  this._coinCnt > maxCost){
                 tipMsg = '您的金币超出当前场次限制，请更换更高场次'
                 flag = false
             }
@@ -169,6 +168,7 @@ load('game/ui/layer/coingame/CoinGameLayer', function () {
             let diamondsCnt = this.diamondsPnl.getChildByName('diamondsCnt')
 
             if (data.hasOwnProperty('coin')) {
+                this._coinCnt = data.coin
                 coinsCnt.setString(GameUtil.getStringRule(data.coin))
             }
 

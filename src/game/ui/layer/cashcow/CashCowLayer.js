@@ -20,12 +20,15 @@ load('game/ui/layer/cashcow/CashCowLayer', function () {
                 'pnl/btnPnl/closeBtn': {onClicked: this.onCloseClick},
                 'pnl/btnPnl/shakeBtn': {onClicked: this.onShakeClick},
                 'pnl/btnPnl/recordBtn': {onClicked: this.onRecordClick},
+                'pnl/btnPnl/explainBtn': {onClicked: this.onExplainClick},
                 'pnl/btnPnl/cointreeNd': {},
                 'pnl/poupPnl/propPnl': {onClicked: this.onHideShowPropPnlClick},
                 'pnl/poupPnl/recordsPnl': {},
                 'pnl/poupPnl/recordsPnl/dataListPnl': {},
                 'pnl/poupPnl/recordsPnl/recordDataCell': {},
-                'pnl/poupPnl/recordsPnl/recordCloseBtn': {onClicked: this.onHideRecordPnlClick}
+                'pnl/poupPnl/recordsPnl/recordCloseBtn': {onClicked: this.onHideRecordPnlClick},
+                'pnl/poupPnl/rulePnl': {},
+                'pnl/poupPnl/rulePnl/ruleCloseBtn': {onClicked: this.onHideRulePnlClick},
             }
         },
 
@@ -41,6 +44,9 @@ load('game/ui/layer/cashcow/CashCowLayer', function () {
             this._super()
         },
 
+        onExplainClick: function () {
+            this.rulePnl.setVisible(true)
+        },
 
         initData: function (data) {
 
@@ -63,6 +69,7 @@ load('game/ui/layer/cashcow/CashCowLayer', function () {
             this.recordDataCell.setVisible(false)
             this.propPnl.setVisible(false)
             this.recordsPnl.setVisible(false)
+            this.rulePnl.setVisible(false)
 
             let cashCowNum = appInstance.dataManager().getUserData().cashCowNum
             let usedCashCowNum = appInstance.dataManager().getUserData().usedCashCowNum
@@ -177,6 +184,10 @@ load('game/ui/layer/cashcow/CashCowLayer', function () {
 
             this.recordsPnl.setVisible(false)
 
+        },
+
+        onHideRulePnlClick: function () {
+            this.rulePnl.setVisible(false)
         },
 
         onFormatDateTime: function (timestamp) {

@@ -1454,7 +1454,7 @@
                 },
                 "Position": {
                   "X": 1090.048,
-                  "Y": 674.784
+                  "Y": 676.8
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -1466,7 +1466,7 @@
                 "PositionPercentYEnabled": true,
                 "PrePosition": {
                   "X": 0.8516,
-                  "Y": 0.9372
+                  "Y": 0.94
                 },
                 "PreSize": {
                   "X": 0.0359,
@@ -1474,13 +1474,13 @@
                 },
                 "LeftMargin": 1067.048,
                 "RightMargin": 166.952,
-                "TopMargin": 26.216,
-                "BottomMargin": 655.784,
+                "TopMargin": 24.2,
+                "BottomMargin": 657.8,
                 "Tag": 30,
                 "Children": [
                   {
                     "IsCustomSize": true,
-                    "FontSize": 20,
+                    "FontSize": 19,
                     "LabelText": "邮件",
                     "HorizontalAlignmentType": "HT_Center",
                     "VerticalAlignmentType": "VT_Center",
@@ -1500,7 +1500,7 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 22.4427,
+                      "X": 22.44,
                       "Y": -1.641
                     },
                     "Scale": {
@@ -1510,22 +1510,22 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.4879,
+                      "X": 0.4878,
                       "Y": -0.0432
                     },
                     "PreSize": {
                       "X": 0.8696,
-                      "Y": 0.5263
+                      "Y": 0.5789
                     },
-                    "LeftMargin": 2.4427,
-                    "RightMargin": 3.5573,
-                    "TopMargin": 29.641,
-                    "BottomMargin": -11.641,
+                    "LeftMargin": 2.44,
+                    "RightMargin": 3.56,
+                    "TopMargin": 28.641,
+                    "BottomMargin": -12.641,
                     "Tag": 132,
                     "ActionTag": 1623445450,
                     "Size": {
                       "X": 40.0,
-                      "Y": 20.0
+                      "Y": 22.0
                     },
                     "Name": "fuKaCnt_0",
                     "ctype": "TextObjectData"
@@ -1546,7 +1546,7 @@
                     },
                     "Position": {
                       "X": 40.2761,
-                      "Y": 35.9009
+                      "Y": 35.9
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -1556,7 +1556,7 @@
                     "IconVisible": false,
                     "PrePosition": {
                       "X": 0.8756,
-                      "Y": 0.9448
+                      "Y": 0.9447
                     },
                     "PreSize": {
                       "X": 0.5,
@@ -1564,8 +1564,8 @@
                     },
                     "LeftMargin": 28.7761,
                     "RightMargin": -5.7761,
-                    "TopMargin": -8.9009,
-                    "BottomMargin": 24.9009,
+                    "TopMargin": -8.9,
+                    "BottomMargin": 24.9,
                     "Tag": 297,
                     "ActionTag": 517721033,
                     "Size": {
@@ -1597,7 +1597,6 @@
                   "Path": "hall/dtjm_7.png",
                   "Plist": ""
                 },
-                "Scale9Enable": true,
                 "Scale9OriginX": 15,
                 "Scale9OriginY": 11,
                 "Scale9Width": 19,
@@ -1619,8 +1618,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 1212.0,
-                  "Y": 681.0
+                  "X": 1212.032,
+                  "Y": 676.8
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -1628,18 +1627,20 @@
                 },
                 "CColor": {},
                 "IconVisible": false,
+                "PositionPercentXEnabled": true,
+                "PositionPercentYEnabled": true,
                 "PrePosition": {
                   "X": 0.9469,
-                  "Y": 0.9458
+                  "Y": 0.94
                 },
                 "PreSize": {
-                  "X": 0.0383,
-                  "Y": 0.0708
+                  "X": 0.0359,
+                  "Y": 0.0639
                 },
-                "LeftMargin": 1187.5,
-                "RightMargin": 43.5,
-                "TopMargin": 13.5,
-                "BottomMargin": 655.5,
+                "LeftMargin": 1189.032,
+                "RightMargin": 44.968,
+                "TopMargin": 20.2,
+                "BottomMargin": 653.8,
                 "Tag": 81,
                 "Children": [
                   {
@@ -1664,8 +1665,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 24.5706,
-                      "Y": 1.4859
+                      "X": 24.44,
+                      "Y": 2.36
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -1674,22 +1675,22 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.5014,
-                      "Y": 0.0291
+                      "X": 0.5313,
+                      "Y": 0.0513
                     },
                     "PreSize": {
-                      "X": 0.8163,
-                      "Y": 0.3529
+                      "X": 0.8696,
+                      "Y": 0.4783
                     },
-                    "LeftMargin": 4.5706,
-                    "RightMargin": 4.4294,
-                    "TopMargin": 40.5141,
-                    "BottomMargin": -7.5141,
+                    "LeftMargin": 4.44,
+                    "RightMargin": 1.56,
+                    "TopMargin": 32.64,
+                    "BottomMargin": -8.64,
                     "Tag": 135,
                     "ActionTag": 37719768,
                     "Size": {
                       "X": 40.0,
-                      "Y": 18.0
+                      "Y": 22.0
                     },
                     "Name": "fuKaCnt_0",
                     "ctype": "TextObjectData"
@@ -1697,8 +1698,8 @@
                 ],
                 "ActionTag": 371629241,
                 "Size": {
-                  "X": 49.0,
-                  "Y": 51.0
+                  "X": 46.0,
+                  "Y": 46.0
                 },
                 "Name": "moreBtn",
                 "ctype": "ButtonObjectData"
@@ -1763,7 +1764,7 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 1198.7853,
+                      "X": 1198.79,
                       "Y": 496.36
                     },
                     "Scale": {
@@ -1780,8 +1781,8 @@
                       "X": 0.1117,
                       "Y": 0.3903
                     },
-                    "LeftMargin": 1127.2853,
-                    "RightMargin": 9.7147,
+                    "LeftMargin": 1127.29,
+                    "RightMargin": 9.71,
                     "TopMargin": 83.14,
                     "BottomMargin": 355.86,
                     "Tag": 194,

@@ -409,6 +409,9 @@
             [self lew_presentPopupView:alertView animation:nil];
         }
     } else {
+        if (indexPath.section == 0) {
+            return;
+        }
         CXUserInfoMenusDataMenusModel *menu = _dataSources[indexPath.section];
         CXUserInfoMenusModel *model = menu.menus[indexPath.row];
         if ([model.column isEqualToString:@"nickname"]) {

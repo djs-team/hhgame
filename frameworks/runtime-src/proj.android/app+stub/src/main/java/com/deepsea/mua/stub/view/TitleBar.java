@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.deepsea.mua.stub.R;
+import com.deepsea.mua.stub.utils.StateUtils;
 import com.deepsea.mua.stub.utils.ViewBindUtils;
 
 /**
@@ -27,7 +28,7 @@ public class TitleBar extends ConstraintLayout {
     private ImageView mRightIv;
     private TextView mRightTv;
     private TextView mLeftTv;
-    private TextView tvSate;
+    private WithBackgroundTextView tvSate;
 
     public TitleBar(Context context) {
         this(context, null);
@@ -99,14 +100,12 @@ public class TitleBar extends ConstraintLayout {
         mTitleTv.setText(title);
     }
 
-    public void setOnlineState(String onlineState) {
-
-        Log.d("onlineState", onlineState);
-        boolean hasStateOnline = !TextUtils.isEmpty(onlineState);
+    public void setOnlineState(String str) {
+        Log.d("onlineState", str);
+        boolean hasStateOnline = !TextUtils.isEmpty(str);
         ViewBindUtils.setVisible(tvSate, hasStateOnline);
         if (hasStateOnline) {
-            tvSate.setText(onlineState.equals("0") ? "离线" : "在线");
-            tvSate.setBackgroundResource(onlineState.equals("0") ? R.drawable.bg_grayr_radius_21 : R.drawable.bg_green_radius_21);
+            StateUtils.setState(tvSate, str);
         }
     }
 

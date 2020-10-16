@@ -73,6 +73,7 @@ import com.deepsea.mua.stub.utils.eventbus.OpenRoom;
 import com.deepsea.mua.stub.utils.eventbus.ShowMineDialog;
 import com.deepsea.mua.stub.utils.eventbus.ShowRankStepOne;
 import com.deepsea.mua.stub.utils.eventbus.ShowRankStepTwo;
+import com.deepsea.mua.stub.utils.eventbus.UpdateUnreadMsgEvent;
 import com.deepsea.mua.voice.fragment.VoiceFragment;
 import com.deepsea.mua.voice.utils.AppConstant;
 import com.hh.game.R;
@@ -530,16 +531,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding>
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
-    public void onEvent(ClickEvent event) {
-        switch (event.getClick()) {
-            case ClickEventType.Click9:
-                setUnreadMsgCount();
-                break;
-        }
-    }
-
-    @Subscribe(threadMode = ThreadMode.MAIN)
-    public void onEvent(MessageTipsEvent event) {
+    public void onEvent(UpdateUnreadMsgEvent event) {
         getMessageNum();
     }
 

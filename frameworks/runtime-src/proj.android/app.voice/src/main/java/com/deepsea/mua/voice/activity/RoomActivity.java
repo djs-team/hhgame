@@ -301,6 +301,7 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
                     mViewModel.notifySongLyricToClientParam(m);
                     int pos = AgoraClient.create().rtcEngine().getAudioMixingCurrentPosition();
                     int max = AgoraClient.create().rtcEngine().getAudioMixingDuration();
+                    Log.d("msg_send_lyric", pos + ":" + max);
                     EventBus.getDefault().post(new SyncSongProgressEvent(pos, max));
                     if (lrcDialog != null) {
                         lrcDialog.setLrcProcess(pos, max);
@@ -658,6 +659,7 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
             //获取歌曲播放的位置
             int currentPosition = AgoraClient.create().rtcEngine().getAudioMixingCurrentPosition();
             int max = AgoraClient.create().rtcEngine().getAudioMixingDuration();
+            Log.d("msg_send_lyric", "LrcTask:" + currentPosition + "," + max);
             sendLyc(currentPosition);
             boolean tioajian1 = currentPosition >= max - 5000;
             boolean tioajian2 = currentPosition != 0 && max != 0;
@@ -1210,7 +1212,7 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
                 boolean isRoomOwner = MatchMakerUtils.isRoomOwner();
                 if (isRoomOwner) {
                     showMicManageDialog(10 - inMicroManNum);
-                }else {
+                } else {
                     showMicroManageDialog(1);
 
                 }
@@ -2651,6 +2653,7 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
                 }
                 mLrcView.seekLrcToTime(currentPosition);
                 LrcRow currentLrc = mLrcView.getCurrentLrc();
+                Log.d("msg_send_lyric", "sendLyc" + JsonConverter.toJson(currentLrc));
                 if (currentLrc != null) {
                     LrcRow copyCurrentLrc = new LrcRow();
                     LrcRow nextLrc = mLrcView.getNextLrc();
@@ -2666,7 +2669,7 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
                     copyCurrentLrc.setSongEndTime(currentLrc.getSongEndTime());
                     copyCurrentLrc.setStartTime(currentLrc.getStartTime());
                     copyCurrentLrc.setStartTimeString(currentLrc.getStartTimeString());
-                    sendLyRicFlag = 0;
+//                    sendLyRicFlag = 0;
                     int max = AgoraClient.create().rtcEngine().getAudioMixingDuration();
 
                     copyCurrentLrc.currentTime = currentPosition;
@@ -2685,21 +2688,21 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
                         mHandler.sendMessageDelayed(message, 1500);
                     }
                 } else {
-                    sendLyRicFlag++;
-                    if (sendLyRicFlag <= 30) {
-                        LrcRow lrcRow = new LrcRow();
-                        lrcRow.content = mySongName;
-                        Message message = Message.obtain();
-                        message.what = msg_send_lyric;
-                        message.obj = JsonConverter.toJson(lrcRow);
-                        if (mHandler != null) {
-                            mHandler.sendMessageDelayed(message, 1500);
-                        }
-                        List<LrcRow> rows = setSongLric(mySongName);
-                        if (rows != null && rows.size() > 0) {
-                            setLyricSetting(rows);
-                        }
+//                    sendLyRicFlag++;
+//                    if (sendLyRicFlag <= 30) {
+                    LrcRow lrcRow = new LrcRow();
+                    lrcRow.content = mySongName;
+                    Message message = Message.obtain();
+                    message.what = msg_send_lyric;
+                    message.obj = JsonConverter.toJson(lrcRow);
+                    if (mHandler != null) {
+                        mHandler.sendMessageDelayed(message, 1500);
                     }
+                    List<LrcRow> rows = setSongLric(mySongName);
+                    if (rows != null && rows.size() > 0) {
+                        setLyricSetting(rows);
+                    }
+//                    }
                 }
             }
         });

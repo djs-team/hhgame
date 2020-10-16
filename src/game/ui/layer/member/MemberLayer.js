@@ -21,7 +21,7 @@ load('game/ui/layer/member/MemberLayer', function () {
             return {
 
                 'pnl/closeBtn': {onClicked: this.onCloseClick},
-                'PayType': {},
+                'PayType': {onClicked: this.onHidePayTypeClicked},
                 'PayType/bgAli/ivAli': {onClicked: this.onAliPayClick},
                 'PayType/bgWx/ivWx': {onClicked: this.onWxClick},
 
@@ -82,6 +82,10 @@ load('game/ui/layer/member/MemberLayer', function () {
             } else {
                 appInstance.gameAgent().Tips('------------------------------------充值失败！！！')
             }
+        },
+
+        onHidePayTypeClicked: function () {
+            this.PayType.setVisible(false)
         },
         
         onApplePayCallBack: function (msg) {

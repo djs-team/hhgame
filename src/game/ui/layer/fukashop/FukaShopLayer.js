@@ -1060,11 +1060,11 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 contextType : 1,
                 midBtnFunction : function () {
                     this.onClosePopupPnlClick()
-                    if(this.this._currentLayer == 'goodsListPnl'){
+                    if(this._currentLayer == 'goodsListPnl'){
                        this.onShowGoodsListLayer()
-                    }else if(this.this._currentLayer == 'cardExchange'){
+                    }else if(this._currentLayer == 'cardExchange'){
                         this.onCardExchangeBtnClick()
-                    }else if(this.this._currentLayer == 'objectExchange'){
+                    }else if(this._currentLayer == 'objectExchange'){
                         this.onObjectExchangeBtnClick()
                     }
 

@@ -315,26 +315,26 @@
                       "Y": 0.4367
                     },
                     "PreSize": {
-                      "X": 0.765,
-                      "Y": 0.7556
+                      "X": 0.8,
+                      "Y": 0.8444
                     },
-                    "LeftMargin": 26.82,
-                    "RightMargin": 20.18,
-                    "TopMargin": 8.35,
-                    "BottomMargin": 2.65,
+                    "LeftMargin": 23.32,
+                    "RightMargin": 16.68,
+                    "TopMargin": 6.35,
+                    "BottomMargin": 0.65,
                     "Tag": 90,
                     "ActionTag": -2076217348,
                     "Size": {
-                      "X": 153.0,
-                      "Y": 34.0
+                      "X": 160.0,
+                      "Y": 38.0
                     },
                     "Name": "coinsNum",
                     "ctype": "ImageViewObjectData"
                   },
                   {
                     "IsCustomSize": true,
-                    "FontSize": 26,
-                    "LabelText": "10.万",
+                    "FontSize": 24,
+                    "LabelText": "100.00万",
                     "HorizontalAlignmentType": "HT_Center",
                     "VerticalAlignmentType": "VT_Center",
                     "OutlineColor": {
@@ -353,8 +353,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 102.0,
-                      "Y": 21.0
+                      "X": 97.0,
+                      "Y": 20.0
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -363,22 +363,22 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.51,
-                      "Y": 0.4667
+                      "X": 0.485,
+                      "Y": 0.4444
                     },
                     "PreSize": {
-                      "X": 0.43,
-                      "Y": 0.7556
+                      "X": 0.58,
+                      "Y": 0.8444
                     },
-                    "LeftMargin": 59.0,
-                    "RightMargin": 55.0,
-                    "TopMargin": 7.0,
-                    "BottomMargin": 4.0,
+                    "LeftMargin": 39.0,
+                    "RightMargin": 45.0,
+                    "TopMargin": 6.0,
+                    "BottomMargin": 1.0,
                     "Tag": 91,
                     "ActionTag": 1050031819,
                     "Size": {
-                      "X": 86.0,
-                      "Y": 34.0
+                      "X": 116.0,
+                      "Y": 38.0
                     },
                     "Name": "coinsCnt",
                     "ctype": "TextObjectData"
@@ -423,8 +423,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 168.0,
-                      "Y": 19.0
+                      "X": 167.0,
+                      "Y": 20.0
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -433,17 +433,17 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.84,
-                      "Y": 0.4222
+                      "X": 0.835,
+                      "Y": 0.4444
                     },
                     "PreSize": {
                       "X": 0.1897,
                       "Y": 0.9222
                     },
-                    "LeftMargin": 149.03,
-                    "RightMargin": 13.03,
-                    "TopMargin": 5.25,
-                    "BottomMargin": -1.75,
+                    "LeftMargin": 148.03,
+                    "RightMargin": 14.03,
+                    "TopMargin": 4.25,
+                    "BottomMargin": -0.75,
                     "Tag": 92,
                     "ActionTag": 483541076,
                     "Size": {
@@ -468,8 +468,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 37.39,
-                      "Y": 19.5
+                      "X": 25.39,
+                      "Y": 20.0
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -478,22 +478,22 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.1869,
-                      "Y": 0.4333
+                      "X": 0.1269,
+                      "Y": 0.4444
                     },
                     "PreSize": {
-                      "X": 0.2,
-                      "Y": 0.8889
+                      "X": 0.205,
+                      "Y": 0.9111
                     },
-                    "LeftMargin": 17.39,
-                    "RightMargin": 142.61,
-                    "TopMargin": 5.5,
+                    "LeftMargin": 4.89,
+                    "RightMargin": 154.11,
+                    "TopMargin": 4.5,
                     "BottomMargin": -0.5,
                     "Tag": 93,
                     "ActionTag": 1852520895,
                     "Size": {
-                      "X": 40.0,
-                      "Y": 40.0
+                      "X": 41.0,
+                      "Y": 41.0
                     },
                     "Name": "coins",
                     "ctype": "ImageViewObjectData"
@@ -532,7 +532,7 @@
                 },
                 "Position": {
                   "X": 1058.8101,
-                  "Y": 671.2438
+                  "Y": 672.24
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -542,7 +542,7 @@
                 "IconVisible": false,
                 "PrePosition": {
                   "X": 0.8272,
-                  "Y": 0.9323
+                  "Y": 0.9337
                 },
                 "PreSize": {
                   "X": 0.1563,
@@ -550,8 +550,8 @@
                 },
                 "LeftMargin": 958.8101,
                 "RightMargin": 121.1899,
-                "TopMargin": 26.2562,
-                "BottomMargin": 648.7438,
+                "TopMargin": 25.26,
+                "BottomMargin": 649.74,
                 "Tag": 84,
                 "Children": [
                   {
@@ -584,26 +584,26 @@
                       "Y": 0.4811
                     },
                     "PreSize": {
-                      "X": 0.765,
-                      "Y": 0.7556
+                      "X": 0.8,
+                      "Y": 0.8444
                     },
-                    "LeftMargin": 26.82,
-                    "RightMargin": 20.18,
-                    "TopMargin": 6.35,
-                    "BottomMargin": 4.65,
+                    "LeftMargin": 23.32,
+                    "RightMargin": 16.68,
+                    "TopMargin": 4.35,
+                    "BottomMargin": 2.65,
                     "Tag": 85,
                     "ActionTag": -670795589,
                     "Size": {
-                      "X": 153.0,
-                      "Y": 34.0
+                      "X": 160.0,
+                      "Y": 38.0
                     },
                     "Name": "diamondsNum",
                     "ctype": "ImageViewObjectData"
                   },
                   {
                     "IsCustomSize": true,
-                    "FontSize": 28,
-                    "LabelText": "50",
+                    "FontSize": 24,
+                    "LabelText": "5000.4亿",
                     "HorizontalAlignmentType": "HT_Center",
                     "VerticalAlignmentType": "VT_Center",
                     "OutlineColor": {
@@ -622,8 +622,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 103.0,
-                      "Y": 21.0
+                      "X": 100.0,
+                      "Y": 22.0
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -632,22 +632,22 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.515,
-                      "Y": 0.4667
+                      "X": 0.5,
+                      "Y": 0.4889
                     },
                     "PreSize": {
-                      "X": 0.43,
-                      "Y": 0.7556
+                      "X": 0.58,
+                      "Y": 0.8444
                     },
-                    "LeftMargin": 60.0,
-                    "RightMargin": 54.0,
-                    "TopMargin": 7.0,
-                    "BottomMargin": 4.0,
+                    "LeftMargin": 42.0,
+                    "RightMargin": 42.0,
+                    "TopMargin": 4.0,
+                    "BottomMargin": 3.0,
                     "Tag": 86,
                     "ActionTag": 1335732697,
                     "Size": {
-                      "X": 86.0,
-                      "Y": 34.0
+                      "X": 116.0,
+                      "Y": 38.0
                     },
                     "Name": "diamondsCnt",
                     "ctype": "TextObjectData"
@@ -692,8 +692,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 162.0,
-                      "Y": 20.0
+                      "X": 168.0,
+                      "Y": 22.0
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -702,17 +702,17 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.81,
-                      "Y": 0.4444
+                      "X": 0.84,
+                      "Y": 0.4889
                     },
                     "PreSize": {
                       "X": 0.1897,
                       "Y": 0.9222
                     },
-                    "LeftMargin": 143.03,
-                    "RightMargin": 19.03,
-                    "TopMargin": 4.25,
-                    "BottomMargin": -0.75,
+                    "LeftMargin": 149.03,
+                    "RightMargin": 13.03,
+                    "TopMargin": 2.25,
+                    "BottomMargin": 1.25,
                     "Tag": 87,
                     "ActionTag": -1945636020,
                     "Size": {
@@ -737,8 +737,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 30.39,
-                      "Y": 22.5
+                      "X": 28.39,
+                      "Y": 24.0
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -747,22 +747,22 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.152,
-                      "Y": 0.5
+                      "X": 0.1419,
+                      "Y": 0.5333
                     },
                     "PreSize": {
                       "X": 0.225,
-                      "Y": 0.9333
+                      "Y": 1.0
                     },
-                    "LeftMargin": 7.89,
-                    "RightMargin": 147.11,
-                    "TopMargin": 1.5,
+                    "LeftMargin": 5.89,
+                    "RightMargin": 149.11,
+                    "TopMargin": -1.5,
                     "BottomMargin": 1.5,
                     "Tag": 88,
                     "ActionTag": 938867775,
                     "Size": {
                       "X": 45.0,
-                      "Y": 42.0
+                      "Y": 45.0
                     },
                     "Name": "diamonds",
                     "ctype": "ImageViewObjectData"

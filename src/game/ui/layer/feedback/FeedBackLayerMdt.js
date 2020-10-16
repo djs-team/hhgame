@@ -97,7 +97,7 @@ load('game/ui/layer/feedback/FeedBackLayerMdt', function () {
 
             let data = {}
             this.onForMatPlayerFeedbackInfo(body,data)
-            this.view.pushFeedBackCell(data)
+            this.view.onDealSubMitResult(data)
 
         },
 

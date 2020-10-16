@@ -134,6 +134,14 @@ load('game/ui/layer/feedback/FeedBackLayer', function () {
 
         },
 
+        onDealSubMitResult: function (data) {
+
+            if(this._subMitFeedId == 0){
+
+            }
+
+        },
+
         pushFeedBackCell: function (cellInfo) {
             let childCount = this.FeedBackList.getChildrenCount()
 

@@ -23,8 +23,8 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
             return {
 
                 'topPnl/returnBtn': {onClicked: this.onCloseClick},
-                'topPnl/explainBtn': {},
-                'topPnl/recordBtn': {onClicked: this.onRecordClick},
+                'topPnl/explainPnl': {},
+                'topPnl/recordPnl': {onClicked: this.onRecordClick},
 
                 'bmPnl/awardsPnl/awardsUserDataNd': {},
                 'bmPnl/awardsPnl/awardsUserDataNd/awardsUserDataPnl': {},

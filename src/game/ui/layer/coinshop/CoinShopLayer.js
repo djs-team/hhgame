@@ -361,7 +361,11 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
 
             this.videoBtn.setBright(true)
             this.videoBtn.setTouchEnabled(true)
-            appInstance.nativeApi().showRewardVideo()
+            if(cc.sys.os === cc.sys.OS_WINDOWS)
+                appInstance.gameAgent().httpGame().VIDEOFORDIAMONDSReq()
+            else
+                appInstance.nativeApi().showRewardVideo()
+
 
         },
         onRewardVideoCallback: function (msg) {

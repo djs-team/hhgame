@@ -323,7 +323,7 @@
                   "Y": 0.9287
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.0625
                 },
                 "LeftMargin": 1058.8909,
@@ -522,7 +522,7 @@
                   "Y": 0.9279
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.0625
                 },
                 "LeftMargin": 866.12,
@@ -723,7 +723,7 @@
                   "Y": 0.9278
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.0625
                 },
                 "LeftMargin": 666.592,
@@ -1802,18 +1802,22 @@
                     },
                     "DisabledFileData": {
                       "Type": "Normal",
-                      "Path": "common/bt_4.png",
+                      "Path": "button/xin_anniu_10.png",
+                      "Plist": ""
+                    },
+                    "PressedFileData": {
+                      "Type": "Normal",
+                      "Path": "button/xin_anniu_1.png",
                       "Plist": ""
                     },
                     "NormalFileData": {
                       "Type": "Normal",
-                      "Path": "common/bt_1.png",
+                      "Path": "button/xin_anniu_1.png",
                       "Plist": ""
                     },
-                    "Scale9Enable": true,
-                    "Scale9OriginX": 68,
-                    "Scale9Width": 10,
-                    "Scale9Height": 88,
+                    "Scale9OriginX": 15,
+                    "Scale9Width": 274,
+                    "Scale9Height": 89,
                     "OutlineColor": {
                       "G": 0,
                       "B": 0
@@ -1845,11 +1849,11 @@
                       "Y": 0.3122
                     },
                     "PreSize": {
-                      "X": 0.1164,
+                      "X": 0.1297,
                       "Y": 0.0889
                     },
-                    "LeftMargin": 326.83,
-                    "RightMargin": 804.17,
+                    "LeftMargin": 318.33,
+                    "RightMargin": 795.67,
                     "TopMargin": 463.2,
                     "BottomMargin": 192.8,
                     "Tag": 298,
@@ -1869,7 +1873,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 71.0379,
+                          "X": 84.04,
                           "Y": 34.07
                         },
                         "Scale": {
@@ -1879,15 +1883,15 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 0.4768,
+                          "X": 0.5063,
                           "Y": 0.5323
                         },
                         "PreSize": {
-                          "X": 0.255,
+                          "X": 0.2289,
                           "Y": 0.4844
                         },
-                        "LeftMargin": 52.0379,
-                        "RightMargin": 58.9621,
+                        "LeftMargin": 65.04,
+                        "RightMargin": 62.96,
                         "TopMargin": 14.43,
                         "BottomMargin": 18.57,
                         "Tag": 299,
@@ -1914,7 +1918,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 71.04,
+                          "X": 84.04,
                           "Y": 34.07
                         },
                         "Scale": {
@@ -1924,15 +1928,15 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 0.4768,
+                          "X": 0.5063,
                           "Y": 0.5323
                         },
                         "PreSize": {
-                          "X": 0.255,
+                          "X": 0.2289,
                           "Y": 0.4844
                         },
-                        "LeftMargin": 52.04,
-                        "RightMargin": 58.96,
+                        "LeftMargin": 65.04,
+                        "RightMargin": 62.96,
                         "TopMargin": 14.43,
                         "BottomMargin": 18.57,
                         "Tag": 334,
@@ -1947,7 +1951,7 @@
                     ],
                     "ActionTag": -1181155733,
                     "Size": {
-                      "X": 149.0,
+                      "X": 166.0,
                       "Y": 64.0
                     },
                     "Name": "videoBtn",
@@ -2136,7 +2140,7 @@
                       "Y": 0.811
                     },
                     "PreSize": {
-                      "X": 0.1563,
+                      "X": 0.1562,
                       "Y": 0.1194
                     },
                     "LeftMargin": 810.7819,
@@ -2296,7 +2300,7 @@
                         },
                         "PreSize": {
                           "X": 0.9778,
-                          "Y": 1.0313
+                          "Y": 1.0312
                         },
                         "LeftMargin": 0.93,
                         "RightMargin": 2.07,
@@ -4052,6 +4056,8 @@
         "ctype": "LayerObjectData"
       },
       "UsedResources": [
+        "button/xin_anniu_1.png",
+        "button/xin_anniu_10.png",
         "coinshop/coin_1.png",
         "coinshop/scjb_10.png",
         "coinshop/scjb_11.png",
@@ -4066,7 +4072,6 @@
         "coinshop/scjb_8.png",
         "coinshop/scjb_9.png",
         "common/bt_1.png",
-        "common/bt_4.png",
         "common/bz_1.png",
         "common/bz_2.png",
         "common/bz_3.png",

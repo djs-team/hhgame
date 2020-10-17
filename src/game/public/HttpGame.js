@@ -220,7 +220,8 @@ load('game/public/HttpGame', function () {
                 'nameUpdate',
                 'isAuthentication',
                 'agentFlag',
-                'isHaveAdress'//0未填写，1填写
+                'isHaveAdress',//0未填写，1填写
+                'vipCode',//0 不是会员 1周会员 2 月 3 季 4年
             ]
             appInstance.dataManager().getUserData().saveMsg(msg, saveKey)
             appInstance.sendNotification(GameEvent.USERDATA, msg)

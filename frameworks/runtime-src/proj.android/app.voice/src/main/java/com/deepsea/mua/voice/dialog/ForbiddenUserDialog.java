@@ -23,6 +23,7 @@ import com.deepsea.mua.stub.utils.ViewBindUtils;
 import com.deepsea.mua.voice.R;
 import com.deepsea.mua.voice.adapter.ForbiddenTimeAdapter;
 import com.deepsea.mua.voice.databinding.DialogForbiddenUsersBinding;
+import com.deepsea.mua.voice.viewmodel.RoomViewModel;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.umeng.commonsdk.statistics.proto.Response;
@@ -45,15 +46,17 @@ public class ForbiddenUserDialog extends BaseDialog<DialogForbiddenUsersBinding>
         this.onClickListener = onClickListener;
     }
 
-    public ForbiddenUserDialog(@NonNull Context context) {
+    public ForbiddenUserDialog(@NonNull Context context, RoomViewModel roomViewModel) {
         super(context);
+        this.mViewModel = roomViewModel;
         addSocketListener();
     }
 
     ForbiddenTimeAdapter adapter;
+    private RoomViewModel mViewModel;
 
     public void setData(WsUser wsUser) {
-        WsUser user =wsUser;
+        WsUser user = wsUser;
         adapter = new ForbiddenTimeAdapter(mContext);
         mBinding.rvForbiddenTime.setLayoutManager(new GridLayoutManager(mContext, 2));
         mBinding.rvForbiddenTime.setAdapter(adapter);
@@ -63,6 +66,7 @@ public class ForbiddenUserDialog extends BaseDialog<DialogForbiddenUsersBinding>
         ViewBindUtils.setText(mBinding.tvAge, TextUtils.isEmpty(user.getAge()) ? "" : user.getAge());
         ViewBindUtils.setText(mBinding.tvLocation, user.getCity());
         ViewBindUtils.setVisible(mBinding.ivLocation, !TextUtils.isEmpty(user.getCity()));
+        mViewModel.getForbidTimeList();
     }
 
 
@@ -87,6 +91,7 @@ public class ForbiddenUserDialog extends BaseDialog<DialogForbiddenUsersBinding>
                 dismiss();
             }
         });
+        mBinding.consGroup.setOnClickListener(null);
 
     }
 
@@ -105,7 +110,7 @@ public class ForbiddenUserDialog extends BaseDialog<DialogForbiddenUsersBinding>
             int msgId = object.get("MsgId").getAsInt();
             switch (msgId) {
                 case 132:
-                    Log.d("AG_EX_AV", "126 返回:" + message);
+                    Log.d("AG_EX_AV", "132 返回:" + message);
                     DisableMsgParam getMicroRanksParam = JsonConverter.fromJson(message, DisableMsgParam.class);
                     List<DisableMsgData> disableMsgData = getMicroRanksParam.getDisableMsgs();
                     if (disableMsgData != null && disableMsgData.size() > 0) {

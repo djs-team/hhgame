@@ -9,6 +9,8 @@
 #import "SocketManager.h"
 #import <SocketRocket/SocketRocket.h>
 #import "CXSocketMessageSendReconnectRequest.h"
+#import "CXLiveRoomViewController.h"
+#import "CXBaseNavigationController.h"
 
 typedef enum : NSUInteger {
     JoinRoom,
@@ -194,10 +196,19 @@ typedef enum : NSUInteger {
             CXSocketMessageSendReconnectRequest *reconnect = [CXSocketMessageSendReconnectRequest new];
             wself.reconnectRequest = [wself sendRequest:reconnect withCallback:^(__kindof SocketMessageRequest * _Nonnull request) {
                 if (request.response.isSuccess) {
-                    // 重连成功
-                    if (wself.delegate && [wself.delegate respondsToSelector:@selector(socketManager:reconnectionSuccess:)]) {
-                        [wself.delegate socketManager:wself reconnectionSuccess:YES];
+                    
+                    if ([CXClientModel instance].isJoinedRoom == YES) {
+                        // 重连成功
+                        if (wself.delegate && [wself.delegate respondsToSelector:@selector(socketManager:reconnectionSuccess:)]) {
+                            [wself.delegate socketManager:wself reconnectionSuccess:YES];
+                        }
+                    } else {
+                        UIViewController *vc = [CXTools currentViewController];
+                        CXLiveRoomViewController *roomVC = [CXLiveRoomViewController new];
+                        CXBaseNavigationController *nav = [[CXBaseNavigationController alloc] initWithRootViewController:roomVC];
+                        [vc presentViewController:nav modalStyle:UIModalPresentationFullScreen animated:YES completion:nil];
                     }
+                    
                 } else {
                     if (wself.delegate && [wself.delegate respondsToSelector:@selector(socketManager:reconnectionSuccess:)]) {
                         [wself.delegate socketManager:wself reconnectionSuccess:NO];

@@ -45,8 +45,8 @@ typedef void(^CXClientModelLeaveRoomCallBack)(NSString *roomId, BOOL success);
 
 @property (nullable, nonatomic, readonly) NSHashTable<id<CXClientModelEventListener>> * listener;
 @property (nullable, nonatomic, readonly) AgoraRtcEngineManager * agoraEngineManager;
-
-@property (nullable, nonatomic) EasemobManager * easemob;
+@property (nullable, nonatomic, strong) SocketManager * socket;
+@property (nullable, nonatomic, readonly) EasemobManager * easemob;
 
 // 用户相关
 @property (nonatomic, strong) NSString *applePayType; // 苹果支付方式
@@ -81,6 +81,8 @@ typedef void(^CXClientModelLeaveRoomCallBack)(NSString *roomId, BOOL success);
 
 // 房间相关
 @property (nonatomic, strong) CXLiveRoomModel *room;
+// YES：房间内 NO：房间外
+@property (nonatomic, assign) BOOL isJoinedRoom;
 
 + (instancetype)instance;
 

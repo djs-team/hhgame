@@ -261,29 +261,23 @@ public class RoomViewModel extends ViewModel {
      * @param id           用户id
      * @param disableMsgId 消息表id
      */
-    public void forbidChat(boolean isDisableMsg, String id, int disableMsgId) {
+    public void forbidChat(boolean isDisableMsg, int id, int disableMsgId) {
         JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("MsgId", 46);
+        jsonObject.addProperty("MsgId", 28);
         jsonObject.addProperty("IsDisableMsg", isDisableMsg);
         jsonObject.addProperty("Id", id);
         if (disableMsgId != 0) {
-            jsonObject.addProperty("DisableMsgId ", disableMsgId);
+            jsonObject.addProperty("DisableMsgId", disableMsgId);
         }
         sendMessage(jsonObject.toString());
+        Log.d("AG_EX_AV", jsonObject.toString());
     }
 
-    /**
-     * 禁言/取消禁言
-     *
-     * @param uid
-     * @param isForbidden
-     */
-    public void forbiddenMsg(String uid, boolean isForbidden) {
+    public void getForbidTimeList() {
         JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("MsgId", 28);
-        jsonObject.addProperty("IsDisableMsg", isForbidden);
-        jsonObject.addProperty("Id", uid);
+        jsonObject.addProperty("MsgId", 132);
         sendMessage(jsonObject.toString());
+        Log.d("AG_EX_AV", jsonObject.toString());
     }
 
     /**
@@ -767,7 +761,7 @@ public class RoomViewModel extends ViewModel {
         jsonObject.addProperty("Page", Page);
         jsonObject.addProperty("UserId", UserId);
         RoomController.getInstance().sendRoomMsg(jsonObject.toString());
-        Log.d("getGuardItemList",UserId);
+        Log.d("getGuardItemList", UserId);
 
     }
 

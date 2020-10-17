@@ -7,10 +7,12 @@ import android.util.Log;
 import android.view.View;
 
 import com.deepsea.mua.core.utils.JsonConverter;
+import com.deepsea.mua.core.utils.ToastUtils;
 import com.deepsea.mua.mine.R;
 import com.deepsea.mua.mine.adapter.ProfileEditAdapter;
 import com.deepsea.mua.mine.databinding.ActivityProfileEditBinding;
 import com.deepsea.mua.mine.dialog.CharmDialog;
+import com.deepsea.mua.mine.dialog.CityWheelDialog;
 import com.deepsea.mua.mine.dialog.DoubleWheelDialog;
 import com.deepsea.mua.mine.dialog.InputDialog;
 import com.deepsea.mua.mine.dialog.WheelDialog;
@@ -129,7 +131,7 @@ public class ProfileEditActivity extends BaseActivity<ActivityProfileEditBinding
             finish();
         } else {
             String json = JsonConverter.toJson(mEditMap);
-//            Log.d("profile",json);
+            Log.d("profile", json);
             mViewModel.updateInfo(json).observe(this, new ProgressObserver<BaseApiResult>(mContext) {
                 @Override
                 public void onSuccess(BaseApiResult result) {
@@ -199,6 +201,15 @@ public class ProfileEditActivity extends BaseActivity<ActivityProfileEditBinding
                 break;
             case "6":  //城市
                 showWheelDialog(getProvinces(), position);
+//                CityWheelDialog cityWheelDialog = new CityWheelDialog(mContext);
+//                cityWheelDialog.setTitle("修改家乡");
+//                cityWheelDialog.setEnsureCallback(new CommonCallback<String>() {
+//                    @Override
+//                    public void onSuccess(String data) {
+//                        ToastUtils.showToast(data);
+//                    }
+//                });
+//                cityWheelDialog.show();
                 break;
             case "7":  //职业
                 if (mDoubleWheelDialog == null) {
@@ -221,6 +232,9 @@ public class ProfileEditActivity extends BaseActivity<ActivityProfileEditBinding
 
     private void showWheelDialog(List<String> list, int position) {
         ProfileModel.ProfileMenu item = mAdapter.getItem(position);
+        Log.d("profile", "city_list" + JsonConverter.toJson(item));
+
+
         String name = TextUtils.isEmpty(item.getName()) ? item.getDefault_name() : item.getName();
         if (mWheelDialog == null) {
             mWheelDialog = new WheelDialog(mContext);
@@ -229,10 +243,12 @@ public class ProfileEditActivity extends BaseActivity<ActivityProfileEditBinding
             item.setName(value);
             mAdapter.notifyItemChanged(position);
             mEditMap.put(item.getColumn(), value);
+            Log.d("profile", item.getColumn() + ":" + value);
+
         });
         mWheelDialog.setTitle("修改" + item.getType_name());
         mWheelDialog.setEntries(list, name);
-        if (item.getType_name().equals("身高")){
+        if (item.getType_name().equals("身高")) {
             mWheelDialog.setCurrentIndex(30);
         }
         mWheelDialog.show();

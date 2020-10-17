@@ -68,7 +68,8 @@
                     android:layout_height="39dp"
                     android:layout_centerHorizontal="true"
                     android:src="@drawable/icon_song_download"
-                    android:visibility="visible" />
+                    android:visibility="visible"
+                    android:scaleType="centerCrop"/>
 
                 <ImageView
                     android:id="@+id/iv_song_replay"

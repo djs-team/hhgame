@@ -29,13 +29,18 @@ public class ForbiddenTimeAdapter extends BaseBindingAdapter<DisableMsgData, Ite
 
     @Override
     protected void bind(BindingViewHolder<ItemForbiddenTimeBinding> holder, DisableMsgData item) {
-        holder.binding.ivTimeSwitch.setSelected(holder.getLayoutPosition() == defaultPos);
+        ViewBindUtils.setVisible(holder.binding.ivTimeSwitch, holder.getLayoutPosition() == defaultPos);
         ViewBindUtils.RxClicks(holder.binding.consGroup, o -> {
             defaultPos = holder.getLayoutPosition();
             notifyDataSetChanged();
         });
-        ViewBindUtils.setText(holder.binding.tvTime, item.getTime() + "分钟");
+        if (item.getTime()>60){
+            int hour=item.getTime()/60;
+            ViewBindUtils.setText(holder.binding.tvTime, hour + "小时");
 
+        }else {
+            ViewBindUtils.setText(holder.binding.tvTime, item.getTime() + "分钟");
+        }
     }
 
     public int getDisableMsgId() {

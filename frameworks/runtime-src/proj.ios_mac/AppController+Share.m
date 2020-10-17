@@ -59,23 +59,25 @@
     if (path.length <= 0) {
         return;
     }
-    NSLog(@"从cocos发过来的图片地址----> %@",path);
-    UIImage * img = [UIImage imageWithContentsOfFile:path];
-    if (!img) {
-        return;
-    }
-    // 根据原图压缩一半分辨率
-    float h = img.size.height;
-    float w = img.size.width;
-    NSData * newdata = [self imageWithImage:img scaledToSize:CGSizeMake(w/2, h/2)]; // 调整图片分辨率
-    UIImage * newimg =[self zipImgData:newdata]; // 压缩图片字节
+//    NSLog(@"从cocos发过来的图片地址----> %@",path);
+//    UIImage * img = [UIImage imageWithContentsOfFile:path];
+//    if (!img) {
+//        return;
+//    }
+//    // 根据原图压缩一半分辨率
+//    float h = img.size.height;
+//    float w = img.size.width;
+//    NSData * newdata = [self imageWithImage:img scaledToSize:CGSizeMake(w/2, h/2)]; // 调整图片分辨率
+//    UIImage * newimg =[self zipImgData:newdata]; // 压缩图片字节
     
+    NSData *imageData = [NSData dataWithContentsOfFile: path];
+//    NSData *imageData = UIImageJPEGRepresentation(img, 0.5);
     
     WXMediaMessage * msg = [WXMediaMessage message];
-    [msg setThumbImage:newimg];
+//    [msg setThumbImage:newimg];
     
     WXImageObject * imgObj = [WXImageObject object];
-    imgObj.imageData = newdata ;
+    imgObj.imageData = imageData ;
     msg.mediaObject = imgObj;
     
     SendMessageToWXReq * req= [[SendMessageToWXReq alloc]init];

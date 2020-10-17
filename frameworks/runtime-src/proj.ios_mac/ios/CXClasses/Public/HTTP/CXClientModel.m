@@ -12,6 +12,8 @@
 @property (nonatomic, copy) CXClientModelJoinRoomCallBack joinRoomCallBack;
 @property (nonatomic, copy) CXClientModelLeaveRoomCallBack leaveRoomCallBack;
 
+@property (nullable, nonatomic) SocketManager * socket;
+
 @property (nonatomic, strong) SocketMessageUserJoinRoom *currentJoinRoom_user;
 
 @end
@@ -32,9 +34,9 @@
         
         _agoraEngineManager = [AgoraRtcEngineManager instanceWithAppId:@"30870262f27a4642a99e67cc1851f90a"];
         _easemob = [EasemobManager instanceWithAppKey:@"1101191012041033#hehequanji"];
-
-        _agoraEngineManager.delegate = self;
-        _easemob.delegate = self;
+//
+//        _agoraEngineManager.delegate = self;
+//        _easemob.delegate = self;
         _listener = [NSHashTable weakObjectsHashTable];
         _room = [[CXLiveRoomModel alloc] init];
         _room.RoomData = [[CXLiveRoomDataModel alloc] init];
@@ -54,33 +56,12 @@
     _joinRoomCallBack = callback;
     kWeakSelf
     [CXHTTPRequest csharp_httpWithMethod:HJRequestMethodGET url:@"/Master/GetGate" parameters:@{} callback:^(id responseObject, BOOL isCache, NSError *error) {
-        if (!error) {
+        if (responseObject) {
             NSString *addr = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
             if ([weakSelf.socket joinRoom:roomId withToken:weakSelf.token atAddr:addr] == NO) {
                 callback ? callback(roomId, NO) : nil;
                 return;
             }
-        }
-    }];
-}
-
-- (void)reconnectRoom:(NSString *)roomId callback:(CXClientModelJoinRoomCallBack)callback {
-    if (!roomId) {
-        callback ? callback(roomId, NO) : nil;
-        return;
-    }
-    _joinRoomCallBack = callback;
-    kWeakSelf
-    [CXHTTPRequest csharp_httpWithMethod:HJRequestMethodGET url:@"/Master/GetGate" parameters:@{} callback:^(id responseObject, BOOL isCache, NSError *error) {
-        if (!error) {
-            NSString *addr = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
-            if ([weakSelf.socket joinRoom:roomId withToken:weakSelf.token atAddr:addr] == NO) {
-                callback ? callback(roomId, NO) : nil;
-                return;
-            }
-        } else {
-            NSError *error = [[NSError alloc] init];
-            [weakSelf socketManager:weakSelf.socket room:roomId error:error];
         }
     }];
 }
@@ -101,18 +82,9 @@
 #pragma mark - SocketManagerDelegate
 /// 加入成功
 - (void)socketManager:(SocketManager*)mgr joinRoomSuccess:(NSString*)roomId {
-    if (self.isJoinedRoom == YES) {
-        [[self.listener allObjects] enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            if ([obj respondsToSelector:@selector(modelClient:reconnectRoomSuccess:)]) {
-                [obj modelClient:self reconnectRoomSuccess:YES];
-            }
-        }];
-    } else {
-        if (self.joinRoomCallBack) {
-            self.joinRoomCallBack(roomId, YES);
-        }
+    if (self.joinRoomCallBack) {
+        self.joinRoomCallBack(roomId, YES);
     }
-    
 }
 /// 重连成功
 - (void)socketManager:(SocketManager*)mgr reconnectionSuccess:(BOOL)success {
@@ -121,7 +93,6 @@
             [obj modelClient:self reconnectRoomSuccess:success];
         }
     }];
-    
 }
 /// 房间内出错
 - (void)socketManager:(SocketManager*)mgr room:(NSString*)roomId error:(NSError*)error {
@@ -452,7 +423,7 @@
             break;
     }
     
-    if (self.isJoinedRoom == YES) {
+    if (_room.isJoinedRoom == YES) {
         
         [[self.listener allObjects] enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             if ([obj respondsToSelector:@selector(modelClient:didReceiveNotification:)]) {

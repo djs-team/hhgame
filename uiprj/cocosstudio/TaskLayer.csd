@@ -170,10 +170,10 @@
                   <AbstractNodeData Name="everyTasksPnl" ActionTag="1051908061" Tag="48" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="791.0000" Y="560.0000" />
                     <Children>
-                      <AbstractNodeData Name="topPnl" ActionTag="912188927" Tag="317" IconVisible="False" LeftMargin="29.2311" RightMargin="3.7689" TopMargin="17.0883" BottomMargin="409.9203" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" LeftEage="8" RightEage="8" TopEage="21" BottomEage="21" Scale9OriginX="-8" Scale9OriginY="-21" Scale9Width="16" Scale9Height="42" ctype="PanelObjectData">
+                      <AbstractNodeData Name="topPnl" ActionTag="912188927" Tag="317" IconVisible="False" LeftMargin="29.2311" RightMargin="3.7689" TopMargin="17.0884" BottomMargin="409.9203" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" LeftEage="8" RightEage="8" TopEage="21" BottomEage="21" Scale9OriginX="-8" Scale9OriginY="-21" Scale9Width="16" Scale9Height="42" ctype="PanelObjectData">
                         <Size X="758.0000" Y="132.9913" />
                         <Children>
-                          <AbstractNodeData Name="Image_4" ActionTag="-1184422138" Tag="323" IconVisible="False" LeftMargin="35.4034" RightMargin="17.5967" TopMargin="15.0324" BottomMargin="1.7114" Scale9Enable="True" LeftEage="43" RightEage="43" TopEage="20" BottomEage="20" Scale9OriginX="43" Scale9OriginY="20" Scale9Width="46" Scale9Height="23" ctype="ImageViewObjectData">
+                          <AbstractNodeData Name="Image_4" ActionTag="-1184422138" Tag="323" IconVisible="False" LeftMargin="35.4034" RightMargin="17.5966" TopMargin="15.0323" BottomMargin="1.7114" Scale9Enable="True" LeftEage="43" RightEage="43" TopEage="20" BottomEage="20" Scale9OriginX="43" Scale9OriginY="20" Scale9Width="46" Scale9Height="23" ctype="ImageViewObjectData">
                             <Size X="705.0000" Y="116.2476" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                             <Position X="387.9034" Y="59.8352" />
@@ -183,7 +183,7 @@
                             <PreSize X="0.9301" Y="0.8741" />
                             <FileData Type="Normal" Path="task/rwzx_10.png" Plist="" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="activityPg" ActionTag="1298821655" Tag="318" IconVisible="False" LeftMargin="60.9143" RightMargin="577.0857" TopMargin="18.2520" BottomMargin="12.7394" LeftEage="13" RightEage="13" TopEage="13" BottomEage="13" Scale9OriginX="13" Scale9OriginY="13" Scale9Width="94" Scale9Height="76" ctype="ImageViewObjectData">
+                          <AbstractNodeData Name="activityPg" ActionTag="1298821655" Tag="318" IconVisible="False" LeftMargin="60.9143" RightMargin="577.0857" TopMargin="18.2519" BottomMargin="12.7394" LeftEage="13" RightEage="13" TopEage="13" BottomEage="13" Scale9OriginX="13" Scale9OriginY="13" Scale9Width="94" Scale9Height="76" ctype="ImageViewObjectData">
                             <Size X="120.0000" Y="102.0000" />
                             <Children>
                               <AbstractNodeData Name="activityValue" ActionTag="1795308259" Tag="312" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="40.0000" RightMargin="40.0000" TopMargin="26.0968" BottomMargin="50.9032" IsCustomSize="True" FontSize="25" LabelText="55" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -232,7 +232,7 @@
                                 <PreSize X="0.9815" Y="0.5600" />
                                 <FileData Type="Normal" Path="task/rwzx_17.png" Plist="" />
                               </AbstractNodeData>
-                              <AbstractNodeData Name="activityLoadingBar" ActionTag="1603762636" Alpha="173" Tag="322" IconVisible="False" LeftMargin="5.6201" RightMargin="4.7613" TopMargin="4.4201" BottomMargin="14.5799" ProgressInfo="100" ctype="LoadingBarObjectData">
+                              <AbstractNodeData Name="activityLoadingBar" ActionTag="1603762636" Alpha="173" Tag="322" IconVisible="False" LeftMargin="5.6201" RightMargin="4.7612" TopMargin="4.4201" BottomMargin="14.5799" ProgressInfo="100" ctype="LoadingBarObjectData">
                                 <Size X="475.5978" Y="31.0000" />
                                 <Children>
                                   <AbstractNodeData Name="activityAwardsCell" ActionTag="1949743662" Tag="33" IconVisible="False" LeftMargin="28.2722" RightMargin="368.3256" TopMargin="-21.0600" BottomMargin="-27.9400" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
@@ -344,7 +344,7 @@
                             <EndColor A="255" R="255" G="255" B="255" />
                             <ColorVector ScaleY="1.0000" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="taskCell" ActionTag="1913473716" Tag="327" IconVisible="False" RightMargin="-6.0000" TopMargin="12.5258" BottomMargin="274.2992" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                          <AbstractNodeData Name="taskCell" ActionTag="1913473716" Tag="327" IconVisible="False" RightMargin="-6.0000" TopMargin="12.5259" BottomMargin="274.2992" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                             <Size X="764.0000" Y="125.1749" />
                             <Children>
                               <AbstractNodeData Name="Image_7" ActionTag="66776035" Tag="42" IconVisible="False" LeftMargin="35.2001" RightMargin="22.7999" TopMargin="-0.6523" BottomMargin="9.8272" Scale9Enable="True" LeftEage="28" RightEage="28" TopEage="24" BottomEage="24" Scale9OriginX="28" Scale9OriginY="24" Scale9Width="76" Scale9Height="15" ctype="ImageViewObjectData">
@@ -458,7 +458,7 @@
                                 <OutlineColor A="255" R="255" G="0" B="0" />
                                 <ShadowColor A="255" R="110" G="110" B="110" />
                               </AbstractNodeData>
-                              <AbstractNodeData Name="everyDayDealBtn" ActionTag="-653832742" Tag="41" IconVisible="False" LeftMargin="555.1153" RightMargin="77.6547" TopMargin="32.5304" BottomMargin="44.8616" TouchEnable="True" FontSize="24" Scale9Enable="True" LeftEage="38" RightEage="34" TopEage="17" BottomEage="17" Scale9OriginX="38" Scale9OriginY="17" Scale9Width="66" Scale9Height="20" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                              <AbstractNodeData Name="everyDayDealBtn" ActionTag="-653832742" Tag="41" IconVisible="False" LeftMargin="555.1153" RightMargin="77.6547" TopMargin="32.5303" BottomMargin="44.8616" TouchEnable="True" FontSize="24" Scale9Enable="True" LeftEage="38" RightEage="34" TopEage="17" BottomEage="17" Scale9OriginX="38" Scale9OriginY="17" Scale9Width="66" Scale9Height="20" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                                 <Size X="131.2300" Y="47.7829" />
                                 <Children>
                                   <AbstractNodeData Name="Text_4" ActionTag="-578012852" Tag="281" IconVisible="False" LeftMargin="28.7100" RightMargin="28.5200" TopMargin="8.6329" BottomMargin="15.1500" FontSize="24" LabelText="去完成" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -706,14 +706,14 @@
                                 <PreSize X="0.5529" Y="0.5682" />
                                 <FileData Type="Normal" Path="common/jinbi.png" Plist="" />
                               </AbstractNodeData>
-                              <AbstractNodeData Name="awardsVal" ActionTag="614639366" Tag="154" IconVisible="False" LeftMargin="5.7000" RightMargin="9.3000" TopMargin="88.0500" BottomMargin="-37.0500" IsCustomSize="True" FontSize="30" LabelText="x666" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                                <Size X="70.0000" Y="37.0000" />
+                              <AbstractNodeData Name="awardsVal" ActionTag="614639366" Tag="154" IconVisible="False" LeftMargin="0.2000" RightMargin="3.8000" TopMargin="88.0500" BottomMargin="-37.0500" IsCustomSize="True" FontSize="30" LabelText="x666" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                                <Size X="81.0000" Y="37.0000" />
                                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                                 <Position X="40.7000" Y="-18.5500" />
                                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                                 <CColor A="255" R="0" G="0" B="0" />
                                 <PrePosition X="0.4788" Y="-0.2108" />
-                                <PreSize X="0.8235" Y="0.4205" />
+                                <PreSize X="0.9529" Y="0.4205" />
                                 <OutlineColor A="255" R="255" G="0" B="0" />
                                 <ShadowColor A="255" R="110" G="110" B="110" />
                               </AbstractNodeData>
@@ -726,14 +726,14 @@
                             <PreSize X="0.4106" Y="0.2256" />
                             <FileData Type="Normal" Path="common/gx_2.png" Plist="" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="taskName" ActionTag="-923798737" Tag="155" IconVisible="False" LeftMargin="17.6332" RightMargin="16.3668" TopMargin="200.6658" BottomMargin="166.3342" FontSize="23" LabelText="进行5局任意牌局" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                            <Size X="173.0000" Y="23.0000" />
+                          <AbstractNodeData Name="taskName" ActionTag="-923798737" Tag="155" IconVisible="False" LeftMargin="0.1300" RightMargin="4.8700" TopMargin="199.1658" BottomMargin="164.8342" IsCustomSize="True" FontSize="20" LabelText="进行5局任意牌局" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                            <Size X="202.0000" Y="26.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="104.1332" Y="177.8342" />
+                            <Position X="101.1300" Y="177.8342" />
                             <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="183" G="100" B="30" />
-                            <PrePosition X="0.5031" Y="0.4560" />
-                            <PreSize X="0.8357" Y="0.0590" />
+                            <PrePosition X="0.4886" Y="0.4560" />
+                            <PreSize X="0.9758" Y="0.0667" />
                             <OutlineColor A="255" R="255" G="0" B="0" />
                             <ShadowColor A="255" R="110" G="110" B="110" />
                           </AbstractNodeData>
@@ -760,14 +760,14 @@
                                 <PreSize X="0.8901" Y="0.8571" />
                                 <ImageFileData Type="Normal" Path="task/rwzx_16.png" Plist="" />
                               </AbstractNodeData>
-                              <AbstractNodeData Name="progressValueText" ActionTag="-760519688" Tag="159" IconVisible="False" LeftMargin="66.6504" RightMargin="72.7227" TopMargin="2.8617" BottomMargin="2.1383" IsCustomSize="True" FontSize="23" LabelText="2/3" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                                <Size X="46.0000" Y="30.0000" />
+                              <AbstractNodeData Name="progressValueText" ActionTag="-760519688" Tag="159" IconVisible="False" LeftMargin="49.6504" RightMargin="55.7227" TopMargin="2.8617" BottomMargin="2.1383" IsCustomSize="True" FontSize="23" LabelText="2/3" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                                <Size X="80.0000" Y="30.0000" />
                                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                                 <Position X="89.6504" Y="17.1383" />
                                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                                 <CColor A="255" R="255" G="255" B="255" />
                                 <PrePosition X="0.4836" Y="0.4897" />
-                                <PreSize X="0.2481" Y="0.8571" />
+                                <PreSize X="0.4316" Y="0.8571" />
                                 <OutlineColor A="255" R="255" G="0" B="0" />
                                 <ShadowColor A="255" R="110" G="110" B="110" />
                               </AbstractNodeData>

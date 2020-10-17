@@ -898,7 +898,7 @@
                         },
                         "LeftMargin": 29.2311,
                         "RightMargin": 3.7689,
-                        "TopMargin": 17.0883,
+                        "TopMargin": 17.0884,
                         "BottomMargin": 409.9203,
                         "Tag": 317,
                         "Children": [
@@ -936,8 +936,8 @@
                               "Y": 0.8741
                             },
                             "LeftMargin": 35.4034,
-                            "RightMargin": 17.5967,
-                            "TopMargin": 15.0324,
+                            "RightMargin": 17.5966,
+                            "TopMargin": 15.0323,
                             "BottomMargin": 1.7114,
                             "Tag": 323,
                             "ActionTag": -1184422138,
@@ -982,7 +982,7 @@
                             },
                             "LeftMargin": 60.9143,
                             "RightMargin": 577.0857,
-                            "TopMargin": 18.252,
+                            "TopMargin": 18.2519,
                             "BottomMargin": 12.7394,
                             "Tag": 318,
                             "Children": [
@@ -1222,7 +1222,7 @@
                                   "Y": 0.62
                                 },
                                 "LeftMargin": 5.6201,
-                                "RightMargin": 4.7613,
+                                "RightMargin": 4.7612,
                                 "TopMargin": 4.4201,
                                 "BottomMargin": 14.5799,
                                 "Tag": 322,
@@ -1648,7 +1648,7 @@
                               "Y": 0.3038
                             },
                             "RightMargin": -6.0,
-                            "TopMargin": 12.5258,
+                            "TopMargin": 12.5259,
                             "BottomMargin": 274.2992,
                             "Tag": 327,
                             "Children": [
@@ -2206,7 +2206,7 @@
                                 },
                                 "LeftMargin": 555.1153,
                                 "RightMargin": 77.6547,
-                                "TopMargin": 32.5304,
+                                "TopMargin": 32.5303,
                                 "BottomMargin": 44.8616,
                                 "Tag": 41,
                                 "Children": [
@@ -3236,17 +3236,17 @@
                                   "Y": -0.2108
                                 },
                                 "PreSize": {
-                                  "X": 0.8235,
+                                  "X": 0.9529,
                                   "Y": 0.4205
                                 },
-                                "LeftMargin": 5.7,
-                                "RightMargin": 9.3,
+                                "LeftMargin": 0.2,
+                                "RightMargin": 3.8,
                                 "TopMargin": 88.05,
                                 "BottomMargin": -37.05,
                                 "Tag": 154,
                                 "ActionTag": 614639366,
                                 "Size": {
-                                  "X": 70.0,
+                                  "X": 81.0,
                                   "Y": 37.0
                                 },
                                 "Name": "awardsVal",
@@ -3262,7 +3262,8 @@
                             "ctype": "ImageViewObjectData"
                           },
                           {
-                            "FontSize": 23,
+                            "IsCustomSize": true,
+                            "FontSize": 20,
                             "LabelText": "进行5局任意牌局",
                             "HorizontalAlignmentType": "HT_Center",
                             "OutlineColor": {
@@ -3281,7 +3282,7 @@
                               "ScaleY": 0.5
                             },
                             "Position": {
-                              "X": 104.1332,
+                              "X": 101.13,
                               "Y": 177.8342
                             },
                             "Scale": {
@@ -3295,22 +3296,22 @@
                             },
                             "IconVisible": false,
                             "PrePosition": {
-                              "X": 0.5031,
+                              "X": 0.4886,
                               "Y": 0.456
                             },
                             "PreSize": {
-                              "X": 0.8357,
-                              "Y": 0.059
+                              "X": 0.9758,
+                              "Y": 0.0667
                             },
-                            "LeftMargin": 17.6332,
-                            "RightMargin": 16.3668,
-                            "TopMargin": 200.6658,
-                            "BottomMargin": 166.3342,
+                            "LeftMargin": 0.13,
+                            "RightMargin": 4.87,
+                            "TopMargin": 199.1658,
+                            "BottomMargin": 164.8342,
                             "Tag": 155,
                             "ActionTag": -923798737,
                             "Size": {
-                              "X": 173.0,
-                              "Y": 23.0
+                              "X": 202.0,
+                              "Y": 26.0
                             },
                             "Name": "taskName",
                             "ctype": "TextObjectData"
@@ -3481,17 +3482,17 @@
                                   "Y": 0.4897
                                 },
                                 "PreSize": {
-                                  "X": 0.2481,
+                                  "X": 0.4316,
                                   "Y": 0.8571
                                 },
-                                "LeftMargin": 66.6504,
-                                "RightMargin": 72.7227,
+                                "LeftMargin": 49.6504,
+                                "RightMargin": 55.7227,
                                 "TopMargin": 2.8617,
                                 "BottomMargin": 2.1383,
                                 "Tag": 159,
                                 "ActionTag": -760519688,
                                 "Size": {
-                                  "X": 46.0,
+                                  "X": 80.0,
                                   "Y": 30.0
                                 },
                                 "Name": "progressValueText",

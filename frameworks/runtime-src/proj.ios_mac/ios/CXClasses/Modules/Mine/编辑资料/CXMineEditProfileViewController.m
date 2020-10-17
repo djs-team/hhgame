@@ -136,7 +136,15 @@
     
     CXUserInfoMenusDataMenusModel *jbxx_menu = _menusData.jbxx;
     [jbxx_menu.menus enumerateObjectsUsingBlock:^(CXUserInfoMenusModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        [profileDict setValue:obj.name forKey:obj.column];
+        if ([obj.column isEqualToString:@"city"]) {
+            NSArray *cityArray = [obj.name componentsSeparatedByString:@","];
+            if (cityArray.count > 0) {
+                [profileDict setValue:cityArray.firstObject forKey:@"city"];
+            }
+            if (cityArray.count > 1) {
+                [profileDict setValue:cityArray.lastObject forKey:@"city_two"];
+            }
+        }
     }];
     CXUserInfoMenusDataMenusModel *grzl_menu = _menusData.grzl;
     [grzl_menu.menus enumerateObjectsUsingBlock:^(CXUserInfoMenusModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {

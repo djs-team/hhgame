@@ -994,7 +994,7 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
             }
         }
         ViewBindUtils.setText(mBinding.tvMicroManageNum, hasMicroNum ? String.valueOf(mSortHandler.getSorts().size()) : "");
-        ViewBindUtils.setVisible(mBinding.llMicmanageNum, hasMicroNum);
+        ViewBindUtils.setVisible(mBinding.llMicmanageNum, hasMicroNum && MatchMakerUtils.isRoomOwner());
     }
 
     private void initTitle() {
@@ -1258,7 +1258,22 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
             if (MatchMakerUtils.isRoomOwner() && !UserUtils.getUser().getUid().equals(userId)) {
                 //红娘强制别人下麦
 //                ToastUtils.showToast("功能待定");
-                mViewModel.downMicro(level, number);
+                AAlertDialog alertDialog = new AAlertDialog(mContext);
+                alertDialog.setMessage("是否将该用户下麦");
+                alertDialog.setLeftButton("取消", new AAlertDialog.OnClickListener() {
+                    @Override
+                    public void onClick(View v, Dialog dialog) {
+                        alertDialog.dismiss();
+                    }
+                });
+                alertDialog.setRightButton("确定", new AAlertDialog.OnClickListener() {
+                    @Override
+                    public void onClick(View v, Dialog dialog) {
+                        mViewModel.downMicro(level, number);
+                        alertDialog.dismiss();
+                    }
+                });
+                alertDialog.show();
             } else {
                 //主动下麦
                 showAudience();
@@ -1436,8 +1451,22 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
 
                     if (MatchMakerUtils.isRoomOwner() && !UserUtils.getUser().getUid().equals(userId)) {
                         //红娘强制别人下麦
-                        mViewModel.downMicro(level, number);
-//                        ToastUtils.showToast("功能待定");
+                        AAlertDialog alertDialog = new AAlertDialog(mContext);
+                        alertDialog.setMessage("是否将该用户下麦");
+                        alertDialog.setLeftButton("取消", new AAlertDialog.OnClickListener() {
+                            @Override
+                            public void onClick(View v, Dialog dialog) {
+                                alertDialog.dismiss();
+                            }
+                        });
+                        alertDialog.setRightButton("确定", new AAlertDialog.OnClickListener() {
+                            @Override
+                            public void onClick(View v, Dialog dialog) {
+                                mViewModel.downMicro(level, number);
+                                alertDialog.dismiss();
+                            }
+                        });
+                        alertDialog.show();
                     } else {
                         showAudience();
                     }
@@ -1694,18 +1723,18 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
             @Override
             public void onForbidden(WsUser wsUser, boolean isDisableMsg) {
                 if (isDisableMsg) {
-                    ForbiddenUserDialog forbiddenUserDialog = new ForbiddenUserDialog(mContext);
+                    ForbiddenUserDialog forbiddenUserDialog = new ForbiddenUserDialog(mContext, mViewModel);
                     forbiddenUserDialog.setData(wsUser);
                     forbiddenUserDialog.setOnClickListener(new ForbiddenUserDialog.OnClickListener() {
                         @Override
                         public void onClickOk(int disableMsgId) {
-                            mViewModel.forbidChat(true, wsUser.getUserId(), disableMsgId);
+                            mViewModel.forbidChat(true, Integer.valueOf(wsUser.getUserId()), disableMsgId);
 
                         }
                     });
                     forbiddenUserDialog.show();
                 } else {
-                    mViewModel.forbidChat(true, wsUser.getUserId(), 0);
+                    mViewModel.forbidChat(false, Integer.valueOf(wsUser.getUserId()), 0);
                 }
 
             }
@@ -1718,7 +1747,6 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
 
             @Override
             public void onSendGift(String uid) {
-//                showGiftDialog(true, "0", null);
                 judgeFirstRecharge(true, true, null, "0");
             }
 

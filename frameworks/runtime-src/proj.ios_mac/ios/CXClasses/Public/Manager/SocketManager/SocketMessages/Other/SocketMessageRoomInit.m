@@ -30,6 +30,10 @@
 
 @implementation SocketMessageRoomInitData
 
+- (NSString *)RoomId {
+    return self.Id.stringValue;
+}
+
 @end
 
 

@@ -17,7 +17,7 @@
 #import "DDAudioLRCParser.h"
 
 typedef NS_ENUM(NSUInteger, GameUserIdentity) {
-    GameUserIdentityNormal = 0,
+    GameUserIdentityNormal,
     GameUserIdentityManager,
     GameUserIdentityOwner,
     GameUserIdentityAdmin,
@@ -45,8 +45,8 @@ typedef void(^CXClientModelLeaveRoomCallBack)(NSString *roomId, BOOL success);
 
 @property (nullable, nonatomic, readonly) NSHashTable<id<CXClientModelEventListener>> * listener;
 @property (nullable, nonatomic, readonly) AgoraRtcEngineManager * agoraEngineManager;
-@property (nullable, nonatomic, strong) SocketManager * socket;
-@property (nullable, nonatomic, readonly) EasemobManager * easemob;
+
+@property (nullable, nonatomic) EasemobManager * easemob;
 
 // 用户相关
 @property (nonatomic, strong) NSString *applePayType; // 苹果支付方式
@@ -81,13 +81,10 @@ typedef void(^CXClientModelLeaveRoomCallBack)(NSString *roomId, BOOL success);
 
 // 房间相关
 @property (nonatomic, strong) CXLiveRoomModel *room;
-// YES：房间内 NO：房间外
-@property (nonatomic, assign) BOOL isJoinedRoom;
 
 + (instancetype)instance;
 
 - (void)joinRoom:(NSString *)roomId callback:(CXClientModelJoinRoomCallBack)callback;
-- (void)reconnectRoom:(NSString *)roomId callback:(CXClientModelJoinRoomCallBack)callback;
 - (void)leaveRoomCallBack:(CXClientModelLeaveRoomCallBack)callback;
 
 // 发送Socket请求

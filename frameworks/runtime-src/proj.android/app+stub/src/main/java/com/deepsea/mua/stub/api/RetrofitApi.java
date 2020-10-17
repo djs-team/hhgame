@@ -72,10 +72,12 @@ import com.deepsea.mua.stub.entity.VoiceRoomBean;
 import com.deepsea.mua.stub.entity.WalletBean;
 import com.deepsea.mua.stub.entity.WxOrder;
 import com.deepsea.mua.stub.mvp.ResponseModel;
+
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+
 import com.deepsea.mua.stub.entity.FaceRequestBean;
 
 import okhttp3.RequestBody;
@@ -580,7 +582,6 @@ public interface RetrofitApi {
             @Query("type") String type);
 
 
-
     /**
      * 礼物列表接口
      *
@@ -620,7 +621,6 @@ public interface RetrofitApi {
     LiveData<ApiResponse<BaseApiResult<EmojiBean>>> getEmojis(
             @Field("type") String type,
             @Field("signature") String signature);
-
 
 
     /**
@@ -700,7 +700,6 @@ public interface RetrofitApi {
             @Field("etime") String etime);
 
 
-
     /**
      * 我的钱包
      *
@@ -718,7 +717,6 @@ public interface RetrofitApi {
     LiveData<ApiResponse<BaseApiResult<InitCash>>> initCash();
 
 
-
     /**
      * 余额兑换玫瑰
      *
@@ -727,7 +725,6 @@ public interface RetrofitApi {
     @FormUrlEncoded
     @POST("index.php/Api/AliPay/exchangeRose")
     LiveData<ApiResponse<BaseApiResult>> exchangeRose(@Field("coin") int coin);
-
 
 
     /**
@@ -745,7 +742,6 @@ public interface RetrofitApi {
      */
     @POST("index.php/Api/AliPay/redpacket_cashinfo")
     LiveData<ApiResponse<BaseApiResult<CashInfo>>> redpacketCashinfo();
-
 
 
     /**
@@ -794,7 +790,6 @@ public interface RetrofitApi {
     LiveData<ApiResponse<BaseApiResult<WalletBean>>> redpacketInitExchange();
 
 
-
     /**
      * 兑换M豆
      *
@@ -826,7 +821,6 @@ public interface RetrofitApi {
     LiveData<ApiResponse<BaseApiResult>> logout();
 
 
-
     /**
      * 意见反馈
      *
@@ -849,7 +843,6 @@ public interface RetrofitApi {
     @GET("index.php/Api/Member/fansmenusatatus")
     LiveData<ApiResponse<BaseApiResult>> fansmenusatatus(
             @Query("type") String type);
-
 
 
     /**
@@ -1566,6 +1559,9 @@ public interface RetrofitApi {
     @GET("index.php/Api/Member/getArea")
     LiveData<ApiResponse<BaseApiResult<List<AreaVo>>>> getArea(@Query("level") int level, @Query("pcode") int pcode);
 
+    @GET("index.php/Api/Member/getArea")
+    Observable<ResponseModel<List<AreaVo>>> getAreaInProfile(@Query("level") int level, @Query("pcode") int pcode);
+
     /**
      * 房间内推荐列表
      *
@@ -1609,7 +1605,6 @@ public interface RetrofitApi {
     @FormUrlEncoded
     @POST("index.php/Api/Member/task_reward_receive")
     LiveData<ApiResponse<BaseApiResult>> taskReceive(@Field("type") String type, @Field("task_id") String task_id);
-
 
 
     /**
@@ -1672,6 +1667,7 @@ public interface RetrofitApi {
 
     /**
      * 美艳参数
+     *
      * @return
      */
     @GET("index.php/Api/Member/getMakeFace")

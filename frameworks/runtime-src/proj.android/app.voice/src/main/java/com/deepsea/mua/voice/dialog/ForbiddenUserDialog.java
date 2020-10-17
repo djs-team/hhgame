@@ -61,7 +61,7 @@ public class ForbiddenUserDialog extends BaseDialog<DialogForbiddenUsersBinding>
         ViewBindUtils.setText(mBinding.tvName, user.getName());
         SexResUtils.setSexImgInFindPage(mBinding.rlSex, mBinding.sexIv, String.valueOf(user.getSex()));
         ViewBindUtils.setText(mBinding.tvAge, TextUtils.isEmpty(user.getAge()) ? "" : user.getAge());
-        ViewBindUtils.setText(mBinding.ivLocation, user.getCity());
+        ViewBindUtils.setText(mBinding.tvLocation, user.getCity());
         ViewBindUtils.setVisible(mBinding.ivLocation, !TextUtils.isEmpty(user.getCity()));
     }
 

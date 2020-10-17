@@ -998,11 +998,12 @@
         if ([CXClientModel instance].room.isSonger) {
             [self music_playResume];
         }
-    } else {
-        if ([CXClientModel instance].room.isHost == YES) {
-            [self music_playResume];
-        }
     }
+//    else {
+//        if ([CXClientModel instance].room.isHost == YES) {
+//            [self music_playResume];
+//        }
+//    }
 }
 
 - (void)modelClient:(CXClientModel *)client room:(NSString *)roomId error:(NSError *)error {

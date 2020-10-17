@@ -14,8 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) UIImageView * bgView;
 @property (strong, nonatomic) UIImageView * room_Icon;
 @property (strong, nonatomic) UILabel * top_label;
-@property (strong, nonatomic) UILabel     * room_name;
-@property (strong, nonatomic) UIImageView * arrow;
+@property (strong, nonatomic) UILabel * room_name;
 @property (strong, nonatomic) UILabel * into_Room;
 
 @end

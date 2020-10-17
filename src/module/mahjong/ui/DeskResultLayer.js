@@ -98,22 +98,26 @@ load('module/mahjong/ui/DeskResultLayer', function () {
         },
 
         initView: function (pData) {
-            cc.log('==============GameResult============' + JSON.stringify(pData))
             this.initData(pData)
 
             this.PlayerCell.setVisible(false)
             this.InfoCell.setVisible(false)
 
+            let initInfo = {}
+            initInfo._index = 0
+
             for (let i = 0; i < this._playerNum; ++i) {
                 this.initPlayerCell(i, this._players[i])
+                if (this._players[i].pid === this._selfInfo.pid) {
+                    initInfo._index = i
+                }
             }
+            this.onInfoBtnClick(initInfo)
 
             let baoImg = appInstance.gameAgent().mjUtil().getCardValueImg(0, 'selfhand', this._pData.tableData.pBaoCard)
             this.BaoCard.getChildByName('CardValue').loadTexture(baoImg)
 
-            let initInfo = {}
-            initInfo._index = 0
-            this.onInfoBtnClick(initInfo)
+
 
             if (this._isMatch) {
                 this.BackHallBtn.setVisible(false)

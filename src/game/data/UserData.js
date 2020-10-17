@@ -17,6 +17,7 @@ load('game/data/UserData', function () {
         isbindphone: 0,
         phone:-1,// 手机号
         lastChannel: null,//玩家上次登录的城市
+        channel: null, //玩家登录的城市
         fistLogin: 0,//0是第一次1代表不是第一次
         ctor: function () {},
 
@@ -35,7 +36,14 @@ load('game/data/UserData', function () {
             }
         },
 
-        getMjChannel: function () {
+        getMjChannelID: function () {
+            if (!this.channel) {
+                cc.log('error when getMjChannel ')
+                return'error'
+            }
+            return this.channel
+        },
+        getMjChannelStr: function () {
             if (!this.channel) {
                 cc.log('error when getMjChannel ')
                 return'error'

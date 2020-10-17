@@ -181,7 +181,10 @@ load('game/ui/scene/HallScene', function () {
         },
 
         goChooseCity: function () {
-            appInstance.gameAgent().addPopUI(ResConfig.Ui.ChooseCityLayer)
+            let viewData = {
+                from: 'HallScene'
+            }
+            appInstance.gameAgent().addPopUI(ResConfig.Ui.ChooseCityLayer,viewData)
         },
 
         onMoreClick: function () {

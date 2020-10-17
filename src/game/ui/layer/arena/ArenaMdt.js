@@ -53,7 +53,7 @@ load('game/ui/layer/arena/ArenaMdt', function () {
 
         onInitMatchList: function (body) {
 
-            let channel = appInstance.dataManager().getUserData().getMjChannel()
+            let channel = appInstance.dataManager().getUserData().getMjChannelStr()
             let areaName = GameConfig.areaName[channel]
             let data = {}
             data.matchType = body.matchType

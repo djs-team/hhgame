@@ -22,16 +22,17 @@ load('game/ui/layer/choosecity/ChooseCityLayer', function () {
         _city: [
             { name: '黑龙江省', cell: [
                     { name: '肇源麻将', _sendMsg: {channel: 10047}},
-                    { name: '大庆麻将', _sendMsg: {channel: 10047}}
+                    { name: '大庆麻将', _sendMsg: {channel: 10001}}
                 ] }
         ],
-        ctor: function () {
+        ctor: function (data) {
             this._super(ResConfig.View.ChooseCityLayer)
-            this.initData()
+            this.initData(data)
             this.initView()
         },
 
-        initData: function () {
+        initData: function (data) {
+            this._viewData = data
             this._leftIndex = 0
             this._leftCell = []
         },
@@ -166,6 +167,11 @@ load('game/ui/layer/choosecity/ChooseCityLayer', function () {
          */
         onCityCellClick: function (sender) {
             appInstance.gameAgent().httpGame().chooseCity(sender._sendMsg)
+            if (this._viewData) {
+                if (this._viewData.from === 'HallScene') {
+                    appInstance.gameAgent().goLoginScene()
+                }
+            }
         },
 
         onsearchBtnClick: function () {

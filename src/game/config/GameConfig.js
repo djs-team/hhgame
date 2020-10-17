@@ -72,10 +72,13 @@ load('game/config/GameConfig', function () {
     GameConfig.channel = {
         '10047': 'zhaoyuan',
         'zhaoyuan': '10047',
+        '10001': 'daqing',
+        'daqing': '10001',
     }
 
     GameConfig.areaName = {
         'zhaoyuan': '肇源麻将',
+        'daqing': '大庆麻将'
     }
 
     GameConfig.jumping = {

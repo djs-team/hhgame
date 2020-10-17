@@ -36,8 +36,8 @@ load('game/public/TcpGame', function () {
         enterTable: function(msg) {
             msg = msg || {}
             msg.gid = 5
-            msg.mjChannel = appInstance.dataManager().getUserData().getMjChannel()
-            msg.ruleName = 'zhaoyuan'
+            msg.mjChannel = appInstance.dataManager().getUserData().getMjChannelStr()
+            msg.ruleName = appInstance.dataManager().getUserData().getMjChannelStr()
             let packetProto = new Packet(new EnterTableProto())
             packetProto.setValue(msg)
             appInstance.gameNet().send(packetProto)
@@ -96,7 +96,7 @@ load('game/public/TcpGame', function () {
 
         GetArenaMessageProto: function (msg) {
             msg = msg || {}
-            msg.channel = appInstance.dataManager().getUserData().getMjChannel()
+            msg.channel = appInstance.dataManager().getUserData().getMjChannelStr()
             let packetProto = new Packet(new GetArenaProto())
             packetProto.setValue(msg)
             appInstance.gameNet().send(packetProto)

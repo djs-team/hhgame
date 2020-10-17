@@ -609,8 +609,10 @@
                         "ctype": "TextObjectData"
                       },
                       {
-                        "FontSize": 20,
+                        "IsCustomSize": true,
+                        "FontSize": 18,
                         "LabelText": "积分    80000000",
+                        "HorizontalAlignmentType": "HT_Center",
                         "VerticalAlignmentType": "VT_Center",
                         "OutlineColor": {
                           "G": 0,
@@ -646,18 +648,18 @@
                           "Y": 0.1143
                         },
                         "PreSize": {
-                          "X": 0.6957,
-                          "Y": 0.0571
+                          "X": 0.7826,
+                          "Y": 0.1429
                         },
-                        "LeftMargin": 35.0,
-                        "RightMargin": 35.0,
-                        "TopMargin": 300.0,
-                        "BottomMargin": 30.0,
+                        "LeftMargin": 25.0,
+                        "RightMargin": 25.0,
+                        "TopMargin": 285.0,
+                        "BottomMargin": 15.0,
                         "Tag": 405,
                         "ActionTag": 804885693,
                         "Size": {
-                          "X": 160.0,
-                          "Y": 20.0
+                          "X": 180.0,
+                          "Y": 50.0
                         },
                         "Name": "winNum",
                         "ctype": "TextObjectData"

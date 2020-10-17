@@ -200,16 +200,21 @@ public class ProfileEditActivity extends BaseActivity<ActivityProfileEditBinding
                 }
                 break;
             case "6":  //城市
-                showWheelDialog(getProvinces(), position);
-//                CityWheelDialog cityWheelDialog = new CityWheelDialog(mContext);
-//                cityWheelDialog.setTitle("修改家乡");
-//                cityWheelDialog.setEnsureCallback(new CommonCallback<String>() {
-//                    @Override
-//                    public void onSuccess(String data) {
-//                        ToastUtils.showToast(data);
-//                    }
-//                });
-//                cityWheelDialog.show();
+//                showWheelDialog(getProvinces(), position);
+                CityWheelDialog cityWheelDialog = new CityWheelDialog(mContext);
+                cityWheelDialog.setTitle("修改家乡");
+                cityWheelDialog.setEnsureCallback(new CommonCallback<String>() {
+                    @Override
+                    public void onSuccess(String data) {
+                        ToastUtils.showToast(data);
+                        if (!TextUtils.isEmpty(data)) {
+                            String[] citys = data.split(",");
+                            mEditMap.put("city", citys[0]);
+                            mEditMap.put("city_two", citys[1]);
+                        }
+                    }
+                });
+                cityWheelDialog.show();
                 break;
             case "7":  //职业
                 if (mDoubleWheelDialog == null) {

@@ -64,8 +64,8 @@
 
                 <ImageView
                     android:id="@+id/iv_song_play"
-                    android:layout_width="39dp"
-                    android:layout_height="39dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_centerHorizontal="true"
                     android:src="@drawable/icon_song_download"
                     android:visibility="visible"

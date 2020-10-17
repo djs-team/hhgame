@@ -206,7 +206,8 @@ public class ProfileEditActivity extends BaseActivity<ActivityProfileEditBinding
                 cityWheelDialog.setEnsureCallback(new CommonCallback<String>() {
                     @Override
                     public void onSuccess(String data) {
-                        ToastUtils.showToast(data);
+                        item.setName(data);
+                        mAdapter.notifyItemChanged(position);
                         if (!TextUtils.isEmpty(data)) {
                             String[] citys = data.split(",");
                             mEditMap.put("city", citys[0]);

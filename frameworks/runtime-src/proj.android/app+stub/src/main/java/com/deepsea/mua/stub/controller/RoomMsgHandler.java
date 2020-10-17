@@ -108,7 +108,7 @@ public class RoomMsgHandler {
             nick = "null";
         }
         spannable.append(nick);
-        int sexColor = 0xffef51b2;
+        int sexColor = 0xFFFF2B7C;
         if (sex == 1) {
             sexColor = 0xFF6E6EFF;
         } else if (sex == 2) {

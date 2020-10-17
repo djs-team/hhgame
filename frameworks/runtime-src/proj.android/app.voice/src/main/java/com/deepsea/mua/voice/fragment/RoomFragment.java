@@ -108,18 +108,23 @@ public class RoomFragment extends BaseFragment<FragmentRoomBinding> {
         mAdapter.setOnItemClickListener(new BaseBindingAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        boolean hasFaceBeauty = SharedPrefrencesUtil.getData(mContext, "hasFaceBeauty", "hasFaceBeauty", Constant.isBeautyOpen);
-                        if (!hasFaceBeauty || AppConstant.getInstance().isRtcEngineDestroy()) {
-                            AgoraClient.create().release();
-                            AgoraClient.create().setUpAgora(getContext().getApplicationContext(), "30870262f27a4642a99e67cc1851f90a");
+                String sex = UserUtils.getUser().getSex();
+                if (sex.equals("0")) {
+                    SexEditDialog sexEditDialog = new SexEditDialog(mContext);
+                    sexEditDialog.show();
+                } else {
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            boolean hasFaceBeauty = SharedPrefrencesUtil.getData(mContext, "hasFaceBeauty", "hasFaceBeauty", Constant.isBeautyOpen);
+                            if (!hasFaceBeauty || AppConstant.getInstance().isRtcEngineDestroy()) {
+                                AgoraClient.create().release();
+                                AgoraClient.create().setUpAgora(getContext().getApplicationContext(), "30870262f27a4642a99e67cc1851f90a");
+                            }
                         }
-                    }
-                }).start();
-                mRoomJump.startJump(mAdapter.getItem(position).getRoom_id(), Integer.valueOf(roomType), mContext, null);
-
+                    }).start();
+                    mRoomJump.startJump(mAdapter.getItem(position).getRoom_id(), Integer.valueOf(roomType), mContext, null);
+                }
             }
         });
         mBinding.recyclerView.setLayoutManager(new WrapGridLayoutManager(mContext, 2));

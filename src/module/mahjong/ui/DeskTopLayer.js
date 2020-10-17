@@ -70,7 +70,7 @@ load('module/mahjong/ui/DeskTopLayer', function () {
             appInstance.gameAgent().tcpGame().TableHostingProto(msg)
         },
 
-        TableHostingProto: function (pHosting) {
+        UpdateTableHosting: function (pHosting) {
             if (pHosting === 2) {
                 this.HostingPnl.setVisible(false)
             } else if (pHosting === 1) {

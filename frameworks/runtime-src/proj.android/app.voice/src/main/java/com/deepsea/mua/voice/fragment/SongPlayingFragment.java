@@ -353,7 +353,8 @@ public class SongPlayingFragment extends BaseFragment<FragmentSongPlayingBinding
                 String uid = UserUtils.getUser().getUid();
                 String consertUserId = currentSongInfo.getConsertUserId();
                 boolean isCurrentUserSinger = uid.equals(consertUserId);
-                ViewBindUtils.setVisible(mBinding.rlSongVoiceReverberationOperate, isCurrentUserSinger);
+                boolean isOriOwner = currentSongInfo.getConsertUserId().equals("0") && MatchMakerUtils.isRoomOwner();
+                ViewBindUtils.setVisible(mBinding.rlSongVoiceReverberationOperate, isCurrentUserSinger || isOriOwner);
                 if (isCurrentUserSinger && MatchMakerUtils.isRoomOwner()) {
                     if (mPagerHeightListener != null) {
                         mPagerHeightListener.onHeightChanged(440);
@@ -546,7 +547,7 @@ public class SongPlayingFragment extends BaseFragment<FragmentSongPlayingBinding
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEvent(SyncSongProgressEvent event) {
-        if (mBinding.seekbarSongProgress.getMax() > 0) {
+        if (event.max > 0) {
             mBinding.seekbarSongProgress.setMax(event.max);
             String endTimeStr = TimeUtils.formatSongTime(event.max);
             ViewBindUtils.setText(mBinding.tvSongTimeEnd, endTimeStr);
@@ -554,7 +555,6 @@ public class SongPlayingFragment extends BaseFragment<FragmentSongPlayingBinding
             String startTimeStr = TimeUtils.formatSongTime(event.currentPos);
             ViewBindUtils.setText(mBinding.tvSongTimeStart, startTimeStr);
             Log.d("songStateParam", "SyncSongProgressEvent:" + "event.max" + event.max + "endTimeStr:" + endTimeStr + "startTimeStr:" + startTimeStr + "event.currentPos:" + event.currentPos);
-
         }
         if (songState == 0 && !isChangeSong) {
             songState = 2;

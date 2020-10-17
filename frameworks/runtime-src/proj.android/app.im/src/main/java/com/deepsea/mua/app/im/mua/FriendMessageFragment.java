@@ -33,6 +33,7 @@ import com.deepsea.mua.stub.utils.FriendsUtils;
 import com.deepsea.mua.stub.utils.StateUtils;
 import com.deepsea.mua.stub.utils.UserUtils;
 import com.deepsea.mua.stub.utils.ViewModelFactory;
+import com.deepsea.mua.stub.utils.eventbus.ClickEventType;
 import com.deepsea.mua.stub.utils.eventbus.HeartBeatEvent;
 import com.deepsea.mua.stub.utils.eventbus.UpdateUnreadMsgEvent;
 import com.hyphenate.EMConnectionListener;
@@ -99,7 +100,6 @@ public class FriendMessageFragment extends BaseFragment<FragmentFriendMessageBin
             @Override
             public void onClick(View v, Dialog d) {
                 dialog.dismiss();
-
                 EMClient.getInstance().chatManager().deleteConversation(userId, true);
                 mAdapter.remove(pos);
                 mAdapter.notifyItemRemoved(pos);
@@ -132,6 +132,7 @@ public class FriendMessageFragment extends BaseFragment<FragmentFriendMessageBin
                     }
                 }
                 EventBus.getDefault().post(new UpdateUnreadMsgEvent());
+
 
             }
         });
@@ -300,7 +301,7 @@ public class FriendMessageFragment extends BaseFragment<FragmentFriendMessageBin
             intent.putExtra(Constant.EXTRA_USER_ID, userId);
             intent.putExtra(Constant.EXTRA_USER_INFO, info.toString());
             intent.putExtra(Constant.EXTRA_USER_NICKNAME, bean.getNickname());
-            intent.putExtra(Constant.EXTRA_USER_ONLINE, bean.getOnline());
+            intent.putExtra(Constant.EXTRA_USER_ONLINE, bean.getOnline_str());
             ChatUserInfoController.getInstance().setTochatUserAvatar(bean.getAvatar());
             EaseUserUtils.setCurrentUserAvatar(UserUtils.getUser().getAvatar());
             startActivity(intent);

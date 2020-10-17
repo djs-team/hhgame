@@ -20,9 +20,9 @@
         android:layout_height="58dp">
 
         <LinearLayout
-            android:layout_centerVertical="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
@@ -136,7 +136,7 @@
                     android:layout_width="12dp"
                     android:layout_height="19dp"
                     android:layout_marginRight="5dp"
-                    android:src="@drawable/icon_micro_manage_upmicro"
+                    android:src="@drawable/icon_micro_manage_top"
                     android:visibility="@{isManager ? View.VISIBLE : View.GONE}" />
             </RelativeLayout>
 
@@ -152,7 +152,8 @@
                     android:layout_height="18dp"
                     android:layout_marginRight="6dp"
                     android:gravity="center"
-                    android:src="@drawable/icon_micro_manage_top"
+                    android:src="@drawable/icon_micro_manage_upmicro"
+
                     android:visibility="@{isManager ? View.VISIBLE : View.GONE}" />
             </RelativeLayout>
 
@@ -176,11 +177,11 @@
         </LinearLayout>
 
         <View
-            android:layout_marginRight="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_alignParentBottom="true"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
             android:background="#BBBBBB" />
     </RelativeLayout>
 </layout>

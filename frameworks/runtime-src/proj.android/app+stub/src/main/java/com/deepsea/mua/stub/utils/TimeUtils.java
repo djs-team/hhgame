@@ -226,9 +226,15 @@ public class TimeUtils {
         }
     }
 
-    public static String addTime(int hour) {
+    public static String addTime(int hour, long cTime) {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-        String maxDateStr = sdf.format(new Date());
+        Date date = null;
+        if (cTime == 0) {
+            date = new Date();
+        } else {
+            date = new Date(cTime*1000);
+        }
+        String maxDateStr = sdf.format(date);
         String minDateStr = "";
         Calendar calc = Calendar.getInstance();
         try {

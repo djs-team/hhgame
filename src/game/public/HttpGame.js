@@ -36,10 +36,10 @@ load('game/public/HttpGame', function () {
                 phoneModel: cc.sys.os,
                 imei: '',
                 unionId: '',
-                pid: ""
+                invitationPid: ""
             }
             let myParam = cc.sys.localStorage.getItem("installParam");
-            msg.pid = myParam;
+            msg.invitationPid = myParam;
             cc.log('=========httpLoginRequest===============' + JSON.stringify(msg))
             this.checkSendMsg(sendMsg, msg)
             sendMsg.msgID = HttpEvent.MJ_HALL_MESSAGE_LOGIN
@@ -1099,7 +1099,7 @@ load('game/public/HttpGame', function () {
             msg.msgID = HttpEvent.MJ_HALL_PLAYER_BUY_VIP_ORDER_APPLE_CHECK
             appInstance.httpAgent().sendPost(msg)
         },
-        
+
         VIPPaysOrderAppleCheckBack: function (msg) {
             if (msg.status !== 0) {
                 cc.log('------------->>>httpGame VIPPaysOrderAppleCheckBack error happen' + JSON.stringify(msg))

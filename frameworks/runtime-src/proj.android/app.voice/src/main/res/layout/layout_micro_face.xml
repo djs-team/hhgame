@@ -165,8 +165,7 @@
                 android:id="@+id/iv_rank_users"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="2dp"/>
+                android:layout_marginLeft="5dp"/>
 
             <RelativeLayout
                 android:id="@+id/rl_rose"

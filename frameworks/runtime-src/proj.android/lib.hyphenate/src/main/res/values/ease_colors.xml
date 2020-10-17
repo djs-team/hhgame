@@ -63,6 +63,12 @@
     <color name="lrc_normal">#ffffff</color>
     <color name="lrc_select">#FFE403</color>
 
+    <color name="state_color_grary">#b5b5b6</color>
+    <color name="state_color_green">#10E770</color>
+    <color name="state_color_pink">#EF51B2</color>
+    <color name="state_color_violet">#7F3EF0</color>
+    <color name="state_color_yellow">#FEBF00</color>
+
 
 
 

@@ -13,6 +13,7 @@ import com.deepsea.mua.stub.adapter.BaseBindingAdapter;
 import com.deepsea.mua.stub.adapter.BindingViewHolder;
 import com.deepsea.mua.stub.entity.FriendInfoBean;
 import com.deepsea.mua.stub.utils.SexResUtils;
+import com.deepsea.mua.stub.utils.StateUtils;
 import com.deepsea.mua.stub.utils.ViewBindUtils;
 import com.hyphenate.chat.EMConversation;
 import com.hyphenate.util.DateUtils;
@@ -62,6 +63,19 @@ public class FriendMsgAdapter extends BaseBindingAdapter<FriendInfoBean, ItemFri
             ViewBindUtils.setText(holder.binding.unreadMsgNumber, item.getUnReadCount() + "");
         } else {
             ViewBindUtils.setVisible(holder.binding.unreadMsgNumber, false);
+        }
+        if (item.getState().equals("0")) {
+            ViewBindUtils.setVisible(holder.binding.tvStateDesc, false);
+            ViewBindUtils.setVisible(holder.binding.tvStateBg, true);
+            holder.binding.tvStateBg.setWithBackgroundColor(R.color.state_color_grary);
+        } else if (item.getState().equals("1")) {
+            ViewBindUtils.setVisible(holder.binding.tvStateDesc, false);
+            ViewBindUtils.setVisible(holder.binding.tvStateBg, true);
+            holder.binding.tvStateBg.setWithBackgroundColor(R.color.state_color_green);
+        } else {
+            ViewBindUtils.setVisible(holder.binding.tvStateDesc, true);
+            ViewBindUtils.setVisible(holder.binding.tvStateBg, false);
+            StateUtils.setState(holder.binding.tvStateDesc, item.getOnline_str());
         }
 
 

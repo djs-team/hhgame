@@ -214,7 +214,7 @@ public class MicroFaceView extends FrameLayout {
             });
             ViewBindUtils.RxClicks(mBinding.rlDownMp, o -> {
                 if (onMicUserListener != null) {
-                    onMicUserListener.downMicro(user.getUserId(),user.getType(),user.getNumber());
+                    onMicUserListener.downMicro(user.getUserId(), bean.getType(), bean.getNumber());
                 }
             });
 

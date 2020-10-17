@@ -16,8 +16,17 @@ public class RenewInitVo {
     private String id;
     private int is_auto;
     private int is_shouhu;
+    private long etime;
 
     private List<DataBean> data;
+
+    public long getEtime() {
+        return etime;
+    }
+
+    public void setEtime(long etime) {
+        this.etime = etime;
+    }
 
     public int getIs_shouhu() {
         return is_shouhu;

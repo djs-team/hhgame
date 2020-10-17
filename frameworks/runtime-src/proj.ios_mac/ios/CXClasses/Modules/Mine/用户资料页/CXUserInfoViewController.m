@@ -125,7 +125,7 @@
     } else if (section == _giftSectionIndex) {
         return self.giftArrays.count;
     } else if (section == _currentRoomSectionIndex) {
-        return _currentUser.currentRoomInfo.room_id.length > 0 ? 1 : 0;
+        return _currentUser.room_info.room_id.length > 0 ? 1 : 0;
     } else {
         return 1;
     }
@@ -145,8 +145,8 @@
         return infoCell;
     } else if (indexPath.section == _currentRoomSectionIndex) {
         CXUserInfoCurrentRoomCell *infoCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CXUserInfoCurrentRoomCellID" forIndexPath:indexPath];
-        [infoCell.room_Icon sd_setImageWithURL:[NSURL URLWithString:_currentUser.currentRoomInfo.avatar]];
-        infoCell.room_name.text=_currentUser.currentRoomInfo.room_name;
+        [infoCell.room_Icon sd_setImageWithURL:[NSURL URLWithString:_currentUser.room_info.avatar]];
+        infoCell.room_name.text=_currentUser.room_info.room_name;
         return infoCell;
     } else if (indexPath.section == _giftSectionIndex) {
         CXUserInfoGiftCell *infoCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CXUserInfoGiftCellID" forIndexPath:indexPath];
@@ -210,7 +210,7 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == _currentRoomSectionIndex) {
-        [AppController joinRoom:_currentUser.currentRoomInfo.room_id];
+        [AppController joinRoom:_currentUser.room_info.room_id];
     }
 }
 #pragma mark  Header_CGSize
@@ -233,7 +233,7 @@
     } else if (indexPath.section == _introsectionIndex) {
         return CGSizeMake(SCREEN_WIDTH, [_currentUser.intro sizeForFont:[UIFont systemFontOfSize:15] size:CGSizeMake(kScreenWidth - 30, 100) mode:0].height+10);
     } else {
-        return CGSizeMake(SCREEN_WIDTH, 60);
+        return CGSizeMake(SCREEN_WIDTH, 90);
     }
 }
 

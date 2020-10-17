@@ -16,7 +16,6 @@ import com.deepsea.mua.stub.utils.ViewBindUtils;
  */
 public class GuardAdapter extends BaseBindingAdapter<LookGuardUserVo.GuardMemberlistBean, ItemGuardBinding> {
 
-    private OnMyClickListener mListener;
 
     public GuardAdapter(Context context) {
         super(context);
@@ -41,12 +40,4 @@ public class GuardAdapter extends BaseBindingAdapter<LookGuardUserVo.GuardMember
     }
 
 
-    public void setmListener(OnMyClickListener mListener) {
-        this.mListener = mListener;
-    }
-
-    public interface OnMyClickListener {
-
-        void confirm(int type);
-    }
 }

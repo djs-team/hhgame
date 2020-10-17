@@ -87,11 +87,11 @@ public class ChatSettingActivity extends BaseActivity<ActivityChatSettingBinding
         mAlertDialog.setTitle("拉黑好友");
         mAlertDialog.setMessage("拉黑好友之后将无法再接TA的任何消息。");
         mAlertDialog.getMessageTv().setGravity(Gravity.LEFT);
-        mAlertDialog.setLeftButton("确定", (v, dialog1) -> {
+        mAlertDialog.setRightButton("确定", (v, dialog1) -> {
             dialog1.dismiss();
             defriend();
         });
-        mAlertDialog.setRightButton("取消", null);
+        mAlertDialog.setLeftButton("取消", null);
         mAlertDialog.show();
     }
 

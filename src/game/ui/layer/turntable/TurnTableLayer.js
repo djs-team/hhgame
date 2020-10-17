@@ -465,7 +465,7 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
             let record = list[index]
             let awardsText = record.propName + record.propNum + record.propUnit
             recordCell.getChildByName('timeText').setString(this.onFormatDateTime(record.time))
-            recordCell.getChildByName('awardsText').setString('金币76666枚')
+            recordCell.getChildByName('awardsText').setString(awardsText)
         },
 
         onFormatDateTime: function (timestamp) {

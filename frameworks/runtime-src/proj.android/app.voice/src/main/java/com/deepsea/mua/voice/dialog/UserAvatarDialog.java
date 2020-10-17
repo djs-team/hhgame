@@ -251,7 +251,7 @@ public class UserAvatarDialog extends BaseDialog<DialogUserAvatarBinding> {
             ViewBindUtils.setVisible(mBinding.closeMpTv, true);
             ViewBindUtils.setVisible(mBinding.forbiddenTv, false);
 
-            ViewBindUtils.setVisible(mBinding.blockTv, false);
+            ViewBindUtils.setVisible(mBinding.blockTv, true);
             ViewBindUtils.setVisible(mBinding.removeRoom, false);
             ViewBindUtils.setVisible(mBinding.reportUserTv, true);
             ViewBindUtils.setVisible(mBinding.addfriendTv, true);

@@ -29,10 +29,10 @@
                 android:src="@drawable/ic_place_default" />
 
             <RelativeLayout
-                android:layout_marginLeft="9dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignBottom="@id/iv_photo">
+                android:layout_alignBottom="@id/iv_photo"
+                android:layout_marginLeft="9dp">
 
                 <com.deepsea.mua.stub.view.WithBackgroundTextView
                     android:id="@+id/tv_state_desc"
@@ -43,20 +43,21 @@
                     android:text="热聊中"
                     android:textColor="@color/white"
                     android:textSize="9sp"
+                    android:visibility="gone"
                     app:radius="8dp"
-                    app:withBackgroundColor="#EF51B2"
-                    android:visibility="gone"/>
-                <com.deepsea.mua.stub.view.WithBackgroundTextView
-                    android:id="@+id/tv_state_bg"
-                    android:layout_marginLeft="17dp"
-                    android:layout_width="7dp"
-                    android:layout_height="7dp"
-                    app:withBackgroundColor="#aaa"
-                    app:radius="90dp"
-
-                    />
+                    app:withBackgroundColor="#EF51B2" />
 
             </RelativeLayout>
+
+            <com.deepsea.mua.stub.view.WithBackgroundTextView
+                android:id="@+id/tv_state_bg"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:layout_below="@id/iv_photo"
+                android:layout_marginLeft="28dp"
+                android:layout_marginTop="-4dp"
+                app:radius="90dp"
+                app:withBackgroundColor="@color/state_color_grary" />
 
 
             <TextView
@@ -69,11 +70,11 @@
                 android:textSize="19sp" />
 
             <RelativeLayout
-                android:layout_marginTop="8dp"
                 android:id="@+id/rl_sex"
                 android:layout_width="15dp"
                 android:layout_height="15dp"
                 android:layout_marginLeft="7dp"
+                android:layout_marginTop="8dp"
                 android:layout_toRightOf="@id/tv_username"
                 android:background="@drawable/bg_sex_man">
 

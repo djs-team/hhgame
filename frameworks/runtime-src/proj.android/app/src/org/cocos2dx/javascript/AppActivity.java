@@ -372,11 +372,10 @@ public class AppActivity extends Cocos2dxActivity {
      * jpush 极光一键登录
      */
     public static void login(String type) {
-        String permissionStr = Manifest.permission.READ_PHONE_STATE;
+        String permissionPhone = Manifest.permission.READ_PHONE_STATE;
+        String permissionRW = Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
-        String[] permission = new String[]{permissionStr};
-        boolean hasPermission = PermissionUtil.hasSelfPermission(ccActivity, permissionStr);
-        Log.d("shouldShowRational", "hasPermission" + hasPermission);
+        String[] permission = new String[]{permissionPhone, permissionRW};
 
         com.deepsea.mua.stub.permission.PermissionUtil.request(ccActivity, permission, new PermissionCallback() {
             @Override
@@ -387,9 +386,9 @@ public class AppActivity extends Cocos2dxActivity {
             @Override
             public void shouldShowRational(String[] rationalPermissons, boolean before) {
                 if (type.equals("wx")) {
-                    ActivityCompat.requestPermissions(ccActivity, new String[]{permissionStr}, request_code_wx);
+                    ActivityCompat.requestPermissions(ccActivity, permission, request_code_wx);
                 } else {
-                    ActivityCompat.requestPermissions(ccActivity, new String[]{permissionStr}, request_code_jpush);
+                    ActivityCompat.requestPermissions(ccActivity, permission, request_code_jpush);
 
                 }
 
@@ -451,6 +450,8 @@ public class AppActivity extends Cocos2dxActivity {
             case request_code_wx:
                 if (ContextCompat.checkSelfPermission(ccActivity,
                         Manifest.permission.READ_PHONE_STATE)
+                        == PackageManager.PERMISSION_GRANTED && ContextCompat.checkSelfPermission(ccActivity,
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE)
                         == PackageManager.PERMISSION_GRANTED) {
                     operateLogin("wx");
                 }
@@ -458,6 +459,8 @@ public class AppActivity extends Cocos2dxActivity {
             case request_code_jpush:
                 if (ContextCompat.checkSelfPermission(ccActivity,
                         Manifest.permission.READ_PHONE_STATE)
+                        == PackageManager.PERMISSION_GRANTED && ContextCompat.checkSelfPermission(ccActivity,
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE)
                         == PackageManager.PERMISSION_GRANTED) {
                     operateLogin("jpush");
                 }
@@ -719,41 +722,53 @@ public class AppActivity extends Cocos2dxActivity {
     private static final int request_code_jpush = 1003;
     private static final int request_code_deviceInfo = 1004;
     private String invireUrl;
-    private String uid;
+    private String uid = "";
 
     public static void getInvitationCode(String url, String uid) {
+        Log.d("inviteCodeCallback", "url:" + url + ";uid" + uid);
         ccActivity.invireUrl = url;
-        ccActivity.uid = uid;
         String permissionStr = Manifest.permission.WRITE_EXTERNAL_STORAGE;
-        String[] permission = new String[]{permissionStr};
+        String[] permission = new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE};
+        operateGetInvitationCode(ccActivity.invireUrl, ccActivity.uid);
 
-        boolean hasPermission = PermissionUtil.hasSelfPermission(ccActivity, permissionStr);
+//
+//        boolean hasPermission = PermissionUtil.hasSelfPermission(ccActivity, permissionStr);
 
-        if (hasPermission) {
-            operateGetInvitationCode(url, uid);
-        } else {
-            com.deepsea.mua.stub.permission.PermissionUtil.request(ccActivity, permission, new PermissionCallback() {
-                @Override
-                public void onPermissionGranted() {
-                    operateGetInvitationCode(url, uid);
-                }
 
-                @Override
-                public void shouldShowRational(String[] rationalPermissons, boolean before) {
-                    ActivityCompat.requestPermissions(ccActivity, new String[]{permissionStr}, request_code_invite);
-                }
-
-                @Override
-                public void onPermissonReject(String[] rejectPermissons) {
-                    showPermissionSettingDialog(1);
-                }
-            });
-        }
+//        if (hasPermission) {
+//            operateGetInvitationCode(url, uid);
+//        } else {
+//        com.deepsea.mua.stub.permission.PermissionUtil.request(ccActivity, permission, new PermissionCallback() {
+//            @Override
+//            public void onPermissionGranted() {
+//                Log.d("inviteCodeCallback", "onPermissionGranted");
+//                ccActivity.runOnUiThread(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        operateGetInvitationCode(ccActivity.invireUrl, ccActivity.uid);
+//                    }
+//                });
+//
+//
+//            }
+//
+//            @Override
+//            public void shouldShowRational(String[] rationalPermissons, boolean before) {
+//                Log.d("inviteCodeCallback", "shouldShowRational");
+//                ActivityCompat.requestPermissions(ccActivity, new String[]{permissionStr}, request_code_invite);
+//            }
+//
+//            @Override
+//            public void onPermissonReject(String[] rejectPermissons) {
+//                showPermissionSettingDialog(1);
+//            }
+//        });
+//        }
     }
 
     private static void operateGetInvitationCode(String url, String uid) {
         Bitmap mBitmap = CodeUtils.createImage(url, 400, 400, null);
-        String picPath = BitmapUtils.saveBitmap(ccActivity, mBitmap, uid);
+        String picPath = BitmapUtils.saveBitmap(ccActivity, mBitmap, "inviteCode");
         ccActivity.RunJS("inviteCodeCallback", picPath);
     }
 

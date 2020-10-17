@@ -1724,7 +1724,22 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
 
             @Override
             public void onRemove(String uid) {
-                mViewModel.removeRoom(uid);
+                AAlertDialog removeDialog = new AAlertDialog(mContext);
+                removeDialog.setMessage("是否将该用户移除房间？");
+                removeDialog.setLeftButton("取消", new AAlertDialog.OnClickListener() {
+                    @Override
+                    public void onClick(View v, Dialog dialog) {
+                        removeDialog.dismiss();
+                    }
+                });
+                removeDialog.setRightButton("确定", new AAlertDialog.OnClickListener() {
+                    @Override
+                    public void onClick(View v, Dialog dialog) {
+                        mViewModel.removeRoom(uid);
+                        removeDialog.dismiss();
+                    }
+                });
+                removeDialog.show();
             }
 
             @Override
@@ -1810,14 +1825,20 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
             public void blockUser(String uid, boolean isBlock) {
                 AAlertDialog aAlertDialog = new AAlertDialog(mContext);
                 aAlertDialog.setTitle("拉黑对方");
-                aAlertDialog.setMessage("拉黑对方后，将无法再接收到Ta的任何消息。");
-                aAlertDialog.setLeftButton("确定", new AAlertDialog.OnClickListener() {
+                String msgDesc = "";
+                if (isBlock) {
+                    msgDesc = "拉黑对方后，将无法再接收到Ta的任何消息。";
+                } else {
+                    msgDesc = "是否取消拉黑该用户";
+                }
+                aAlertDialog.setMessage(msgDesc);
+                aAlertDialog.setLeftButton("取消", new AAlertDialog.OnClickListener() {
                     @Override
                     public void onClick(View v, Dialog dialog) {
                         aAlertDialog.dismiss();
                     }
                 });
-                aAlertDialog.setRightButton("取消", new AAlertDialog.OnClickListener() {
+                aAlertDialog.setRightButton("确定", new AAlertDialog.OnClickListener() {
                     @Override
                     public void onClick(View v, Dialog dialog) {
                         if (isBlock) {
@@ -1825,6 +1846,7 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
                         } else {
                             blackout(uid);
                         }
+                        aAlertDialog.dismiss();
                     }
                 });
                 aAlertDialog.show();
@@ -3685,21 +3707,59 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
                     continue;
                 }
                 String animation = present.getGiftData() != null ? present.getGiftData().getAnimation() : "";
-                if (mainMpInfo != null && micro.getLevel() == mainMpInfo.getType()) {
-                    initMainAnim(animation);
-                    continue;
-                }
-                int itemPos = -1;
-                for (int i = 0; i < mMpAdapter.getData().size(); i++) {
-                    if (micro.getLevel() == mMpAdapter.getData().get(i).getType()) {
-                        itemPos = i;
+                if (mJoinRoom.getRoomMode() != 9) {
+
+
+                    if (mainMpInfo != null && micro.getLevel() == mainMpInfo.getType()) {
+                        initMainAnim(animation);
+                        continue;
                     }
-                }
-                if (itemPos != -1) {
-                    mMpAdapter.onGiftAnima(itemPos, animation);
+                    int itemPos = -1;
+                    for (int i = 0; i < mMpAdapter.getData().size(); i++) {
+                        if (micro.getLevel() == mMpAdapter.getData().get(i).getType()) {
+                            itemPos = i;
+                        }
+                    }
+                    if (itemPos != -1) {
+                        mMpAdapter.onGiftAnima(itemPos, animation);
+                    }
+                } else {
+                    initSecondMainMp(micro.getLevel(), animation);
                 }
             }
         }
+    }
+
+    private void initSecondMainMp(int level, String gifUrl) {
+        if (!isChangeView) {
+            RoomData.MicroInfosBean hostMp = mRoomModel.getHostMicro();
+            RoomData.MicroInfosBean guestMp = mRoomModel.getMicros().get(0);
+            if (hostMp != null && level == hostMp.getType()) {
+                mBinding.animSecondOneIv.loadNormalAnim(gifUrl);
+            }
+            if (guestMp != null && level == guestMp.getType()) {
+                mBinding.animSecondTwoIv.loadNormalAnim(gifUrl);
+            }
+        } else {
+            RoomData.MicroInfosBean singerInfo = null;
+            RoomData.MicroInfosBean guestInfo = null;
+            WsUser hostUser = mRoomModel.getHostMicro().getUser();
+            Log.d("music", SongStateUtils.getSingleton2().getConsertUserId() + songInfo.getConsertUserId() + singerUserId + ";" + hostUser.getUserId());
+            if (SongStateUtils.getSingleton2().getConsertUserId().equals(hostUser.getUserId())) {
+                singerInfo = mRoomModel.getHostMicro();
+                guestInfo = mRoomModel.getMicros().get(0);
+            } else {
+                guestInfo = mRoomModel.getHostMicro();
+                singerInfo = mRoomModel.getMicros().get(0);
+            }
+            if (singerInfo != null && singerInfo.getType() == level) {
+                mBinding.animSecondTwoMusicIv.loadNormalAnim(gifUrl);
+            }
+            if (guestInfo != null && guestInfo.getType() == level) {
+                mBinding.animSecondOneMusicIv.loadNormalAnim(gifUrl);
+            }
+        }
+
     }
 
     /*-------------------------------------------------------------------------------------*/

@@ -23,7 +23,7 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
             return {
 
                 'topPnl/returnBtn': {onClicked: this.onCloseClick},
-                'topPnl/explainBtn': {},
+                'topPnl/explainBtn': {onClicked: this.onExplainClick},
                 'topPnl/recordBtn': {onClicked: this.onRecordClick},
 
                 'bmPnl/awardsPnl/awardsUserDataNd': {},
@@ -58,6 +58,10 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
                 'popUpPnl/acceptedPnl/awardsVal': {},
                 'popUpPnl/acceptedPnl/acceptedBg/acceptedTypePg': {},
 
+
+                'popUpPnl/rulePnl': {},
+                'popUpPnl/rulePnl/ruleCloseBtn': {onClicked: this.onHideRulePnlClick},
+
             }
         },
         onGoShopClick: function () {
@@ -76,6 +80,10 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
         initData: function () {
             this._lightBg = 0
             this._rewardUserData = []
+        },
+
+        onExplainClick: function () {
+            this.rulePnl.setVisible(true)
         },
 
         onUpdate: function (dt) {
@@ -119,7 +127,7 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
             this.acceptedPnl.setVisible(false)
             this.recordDataCell.setVisible(false)
             this.pointNd1.setVisible(false)
-
+            this.rulePnl.setVisible(false)
             // this.pointerBtn.setRotation(36 * 3)
 
         },
@@ -416,6 +424,10 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
 
         },
 
+        onHideRulePnlClick: function () {
+            this.rulePnl.setVisible(false)
+        },
+
         onRecordClick: function () {
 
             let msg = {}
@@ -453,7 +465,7 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
             let record = list[index]
             let awardsText = record.propName + record.propNum + record.propUnit
             recordCell.getChildByName('timeText').setString(this.onFormatDateTime(record.time))
-            recordCell.getChildByName('awardsText').setString(awardsText)
+            recordCell.getChildByName('awardsText').setString('金币76666枚')
         },
 
         onFormatDateTime: function (timestamp) {
@@ -464,7 +476,7 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
             let hour = d.getHours() < 10 ? (0 + "" + d.getHours()) : d.getHours();
             let minute = d.getMinutes() < 10 ? (0 + "" + d.getMinutes()) : d.getMinutes();
             let second = d.getSeconds() < 10 ? (0 + "" + d.getSeconds()) : d.getSeconds();
-            let dateString = d.getFullYear() + "-" + month + "-" + day + " " + hour + ": " + minute
+            let dateString = d.getFullYear() + "-" + month + "-" + day + " " + hour + ":" + minute
 
             return dateString;
 

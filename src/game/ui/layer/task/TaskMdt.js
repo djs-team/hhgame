@@ -307,7 +307,6 @@ load('game/ui/layer/task/TaskMdt', function () {
 
 
         onReceiveChallegeReward: function (msg) {
-            console.log('--------onReceiveChallegeReward'+JSON.stringify(msg));
             let data = {}
             data.rewards = {}
             data.stage = msg.stage

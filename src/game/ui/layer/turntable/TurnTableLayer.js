@@ -387,6 +387,8 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
             tabState = 1;
             if (cc.sys.OS_ANDROID === cc.sys.os) {
                 appInstance.nativeApi().showRewardVideo()
+            } else if (cc.sys.OS_IOS === cc.sys.os) {
+                appInstance.nativeApi().showRewardVideo()
             }
 
         },

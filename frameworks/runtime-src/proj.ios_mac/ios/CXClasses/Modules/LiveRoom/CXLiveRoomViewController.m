@@ -143,7 +143,7 @@
 
 - (void)deallocRoom {
     
-    [CXClientModel instance].room.isJoinedRoom = NO;
+    [CXClientModel instance].isJoinedRoom = NO;
     
     [[CXClientModel instance].listener removeObject:self];
     
@@ -295,7 +295,7 @@
         make.edges.equalTo(self.view);
     }];
     
-    [CXClientModel instance].room.isJoinedRoom = YES;
+    [CXClientModel instance].isJoinedRoom = YES;
 }
 
 - (void)undoSocketRoomMessage {
@@ -478,6 +478,15 @@
             {
                 SocketMessageRoomInit * roomInit = notification;
                                 
+                NSIndexPath *seatIndex = [[CXClientModel instance].room.userSeats objectForKey:[CXClientModel instance].userId];
+                if (!seatIndex) {
+                    [CXClientModel instance].agoraEngineManager.offMic = YES;
+                    [[CXClientModel instance].agoraEngineManager.engine setClientRole:AgoraClientRoleAudience];
+                } else {
+                    [CXClientModel instance].agoraEngineManager.offMic = NO;
+                    [[CXClientModel instance].agoraEngineManager.engine setClientRole:AgoraClientRoleBroadcaster];
+                }
+                
                 [[CXClientModel instance].agoraEngineManager joinRoom:roomInit.ShengwangRoomId withUID:[CXClientModel instance].userId.unsignedIntegerValue success:nil];
                 [[CXClientModel instance].easemob joinRoom:roomInit.HuanxinRoomId];
                 
@@ -506,7 +515,7 @@
             }
                 break;
             case SocketMessageIDUserJoinRoom: { // 加入房间
-                if ([CXClientModel instance].room.isJoinedRoom) {
+                if ([CXClientModel instance].isJoinedRoom) {
                     SocketMessageUserJoinRoomArgs *args = notification;
                     [args.Args enumerateObjectsUsingBlock:^(SocketMessageUserJoinRoom * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                         SocketMessageUserJoinRoom *data = obj;

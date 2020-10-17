@@ -12,8 +12,6 @@
 @property (nonatomic, copy) CXClientModelJoinRoomCallBack joinRoomCallBack;
 @property (nonatomic, copy) CXClientModelLeaveRoomCallBack leaveRoomCallBack;
 
-@property (nullable, nonatomic) SocketManager * socket;
-
 @property (nonatomic, strong) SocketMessageUserJoinRoom *currentJoinRoom_user;
 
 @end
@@ -103,9 +101,18 @@
 #pragma mark - SocketManagerDelegate
 /// 加入成功
 - (void)socketManager:(SocketManager*)mgr joinRoomSuccess:(NSString*)roomId {
-    if (self.joinRoomCallBack) {
-        self.joinRoomCallBack(roomId, YES);
+    if (self.isJoinedRoom == YES) {
+        [[self.listener allObjects] enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            if ([obj respondsToSelector:@selector(modelClient:reconnectRoomSuccess:)]) {
+                [obj modelClient:self reconnectRoomSuccess:YES];
+            }
+        }];
+    } else {
+        if (self.joinRoomCallBack) {
+            self.joinRoomCallBack(roomId, YES);
+        }
     }
+    
 }
 /// 重连成功
 - (void)socketManager:(SocketManager*)mgr reconnectionSuccess:(BOOL)success {
@@ -445,7 +452,7 @@
             break;
     }
     
-    if (_room.isJoinedRoom == YES) {
+    if (self.isJoinedRoom == YES) {
         
         [[self.listener allObjects] enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             if ([obj respondsToSelector:@selector(modelClient:didReceiveNotification:)]) {

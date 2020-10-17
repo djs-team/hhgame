@@ -247,7 +247,7 @@
         [weakSelf.inviteMikeArrays removeAllObjects];
         [weakSelf.mikeView removeFromSuperview];
         
-        if ([CXClientModel instance].room.isJoinedRoom == YES) {
+        if ([CXClientModel instance].isJoinedRoom == YES) {
             [[CXClientModel instance] leaveRoomCallBack:^(NSString * _Nonnull roomId, BOOL success) {
                 if (success) {
                     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{

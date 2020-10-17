@@ -134,14 +134,11 @@ load('game/public/GameAgent', function () {
                     this._sendHearBeat = 0
                     this._tcpGame.heartBeat()
                 }
-                //给服务器三秒的反应时间，三秒还不返回给我 ，那就是服务器挂了
-                if (this._heartBeatTimes > GameConfig.HeartBeatInterval + 3) {
+                //给服务器三次机会，如果三次都不返回，那就是服务器挂了
+                if (this._heartBeatTimes > GameConfig.HeartBeatInterval * 3) {
                     cc.log(' >>>>>>>>>>心跳异常')
                     this._heartBeatTimes = 0
-                    this._loginOk = false
-                    let LoginScene = include('game/ui/scene/LoginScene')
-                    appInstance.sceneManager().replaceScene(new LoginScene())
-                    TcpClient.disconnect()
+                    this.goLoginScene()
                 }
             }
         },

@@ -194,18 +194,23 @@ public class RoomFragment extends BaseFragment<FragmentRoomBinding> {
         ViewBindUtils.setText(mBinding.tvRoomName, "欢迎来到" + topRoom.getRoom_name() + "的直播间");
         ViewBindUtils.setVisible(mBinding.roomLockRl, TextUtils.equals("1", topRoom.getRoom_lock()));
         ViewBindUtils.RxClicks(mBinding.tlTimeRecommend, o -> {
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    boolean hasFaceBeauty = SharedPrefrencesUtil.getData(mContext, "hasFaceBeauty", "hasFaceBeauty", Constant.isBeautyOpen);
-                    if (!hasFaceBeauty || AppConstant.getInstance().isRtcEngineDestroy()) {
-                        AgoraClient.create().release();
-                        AgoraClient.create().setUpAgora(getContext().getApplicationContext(), "30870262f27a4642a99e67cc1851f90a");
+            String sex = UserUtils.getUser().getSex();
+            if (sex.equals("0")) {
+                SexEditDialog sexEditDialog = new SexEditDialog(mContext);
+                sexEditDialog.show();
+            } else {
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        boolean hasFaceBeauty = SharedPrefrencesUtil.getData(mContext, "hasFaceBeauty", "hasFaceBeauty", Constant.isBeautyOpen);
+                        if (!hasFaceBeauty || AppConstant.getInstance().isRtcEngineDestroy()) {
+                            AgoraClient.create().release();
+                            AgoraClient.create().setUpAgora(getContext().getApplicationContext(), "30870262f27a4642a99e67cc1851f90a");
+                        }
                     }
-                }
-            }).start();
-            mRoomJump.startJump(topRoom.getRoom_id(), Integer.valueOf(roomType), mContext, null);
-
+                }).start();
+                mRoomJump.startJump(topRoom.getRoom_id(), Integer.valueOf(roomType), mContext, null);
+            }
         });
     }
 

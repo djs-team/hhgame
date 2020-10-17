@@ -6,6 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.deepsea.mua.core.utils.ToastUtils;
 import com.deepsea.mua.mine.R;
 import com.deepsea.mua.mine.adapter.BlockAdapter;
 import com.deepsea.mua.mine.databinding.ActivityBlockListBinding;
@@ -49,10 +50,12 @@ public class BlockListActivity extends BaseActivity<ActivityBlockListBinding> {
 
     private void initRecyclerView() {
         mAdapter = new BlockAdapter(mContext);
-        mAdapter.setOnItemClickListener((view, position) -> {
-            BlockVo blockVo = mAdapter.getItem(position);
-
-            showOperateDialog(blockVo.getUserid(), position);
+        mAdapter.setmListener(new BlockAdapter.OnMyClickListener() {
+            @Override
+            public void operate(int position) {
+                BlockVo blockVo = mAdapter.getItem(position);
+                showOperateDialog(blockVo.getUserid(), position);
+            }
         });
         mBinding.recyclerView.setLayoutManager(new LinearLayoutManager(mContext));
         mBinding.recyclerView.setAdapter(mAdapter);
@@ -72,15 +75,15 @@ public class BlockListActivity extends BaseActivity<ActivityBlockListBinding> {
             @Override
             public void onBlockCancelClick() {
                 AAlertDialog confirmDialog = new AAlertDialog(mContext);
-                confirmDialog.setMessage("");
-                confirmDialog.setLeftButton("确定", new AAlertDialog.OnClickListener() {
+                confirmDialog.setMessage("是否取消拉黑该用户？");
+                confirmDialog.setRightButton("确定", new AAlertDialog.OnClickListener() {
                     @Override
                     public void onClick(View v, Dialog dialog) {
                         confirmDialog.dismiss();
                         fetchBlockCancel(uid, pos);
                     }
                 });
-                confirmDialog.setRightButton("取消", new AAlertDialog.OnClickListener() {
+                confirmDialog.setLeftButton("取消", new AAlertDialog.OnClickListener() {
                     @Override
                     public void onClick(View v, Dialog dialog) {
                         confirmDialog.dismiss();
@@ -94,6 +97,7 @@ public class BlockListActivity extends BaseActivity<ActivityBlockListBinding> {
                 PageJumpUtils.jumpToReport(uid);
             }
         });
+        operateDialog.show();
     }
 
     private void fetchBlockCancel(String uid, int pos) {

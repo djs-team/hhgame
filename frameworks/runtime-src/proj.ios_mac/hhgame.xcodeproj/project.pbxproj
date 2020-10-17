@@ -412,7 +412,6 @@
 		00614F96250B94CF00BB7620 /* CXMineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00614C0F250B94CA00BB7620 /* CXMineCell.xib */; };
 		00614F97250B94CF00BB7620 /* CXSelectedPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00614C10250B94CA00BB7620 /* CXSelectedPhotoView.m */; };
 		00614F98250B94CF00BB7620 /* CXMineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00614C11250B94CA00BB7620 /* CXMineCell.m */; };
-		00614F99250B94CF00BB7620 /* city.json in Resources */ = {isa = PBXBuildFile; fileRef = 00614C14250B94CA00BB7620 /* city.json */; };
 		00614F9A250B94CF00BB7620 /* CXMineEditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00614C15250B94CA00BB7620 /* CXMineEditProfileViewController.m */; };
 		00614F9B250B94CF00BB7620 /* userProfile.json in Resources */ = {isa = PBXBuildFile; fileRef = 00614C16250B94CA00BB7620 /* userProfile.json */; };
 		00614F9C250B94CF00BB7620 /* CXPickerViewAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00614C18250B94CA00BB7620 /* CXPickerViewAlertView.m */; };
@@ -718,6 +717,8 @@
 		00802AC4250CC55300F43A32 /* RPSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 00802ABE250CC55200F43A32 /* RPSDK.bundle */; };
 		00802AC5250CC55300F43A32 /* SGSecurityBody.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00802ABF250CC55300F43A32 /* SGSecurityBody.framework */; };
 		00802AC6250CC55300F43A32 /* SecurityGuardSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00802AC0250CC55300F43A32 /* SecurityGuardSDK.framework */; };
+		008588D12539860200649236 /* CXRefreshNormalTimeHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 008588D02539860200649236 /* CXRefreshNormalTimeHeader.m */; };
+		008588E82539C8E100649236 /* CXUserInfoCurrentRoomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 008588E72539C8E100649236 /* CXUserInfoCurrentRoomCell.m */; };
 		008F040F251C4E0E00F207D2 /* CXChangeAgeAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 008F040E251C4E0E00F207D2 /* CXChangeAgeAlertView.m */; };
 		008F0413251C4E1800F207D2 /* CXChangeAgeAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008F0412251C4E1800F207D2 /* CXChangeAgeAlertView.xib */; };
 		1A2EA1861FC3DA6C0062C870 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A2EA1851FC3DA6B0062C870 /* Images.xcassets */; };
@@ -1509,7 +1510,6 @@
 		00614C10250B94CA00BB7620 /* CXSelectedPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXSelectedPhotoView.m; sourceTree = "<group>"; };
 		00614C11250B94CA00BB7620 /* CXMineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMineCell.m; sourceTree = "<group>"; };
 		00614C12250B94CA00BB7620 /* CXDateSelectedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXDateSelectedView.h; sourceTree = "<group>"; };
-		00614C14250B94CA00BB7620 /* city.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = city.json; sourceTree = "<group>"; };
 		00614C15250B94CA00BB7620 /* CXMineEditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMineEditProfileViewController.m; sourceTree = "<group>"; };
 		00614C16250B94CA00BB7620 /* userProfile.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = userProfile.json; sourceTree = "<group>"; };
 		00614C18250B94CA00BB7620 /* CXPickerViewAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXPickerViewAlertView.m; sourceTree = "<group>"; };
@@ -1958,6 +1958,10 @@
 		00802ABE250CC55200F43A32 /* RPSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = RPSDK.bundle; sourceTree = "<group>"; };
 		00802ABF250CC55300F43A32 /* SGSecurityBody.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SGSecurityBody.framework; sourceTree = "<group>"; };
 		00802AC0250CC55300F43A32 /* SecurityGuardSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SecurityGuardSDK.framework; sourceTree = "<group>"; };
+		008588CF2539860200649236 /* CXRefreshNormalTimeHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXRefreshNormalTimeHeader.h; sourceTree = "<group>"; };
+		008588D02539860200649236 /* CXRefreshNormalTimeHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXRefreshNormalTimeHeader.m; sourceTree = "<group>"; };
+		008588E62539C8E100649236 /* CXUserInfoCurrentRoomCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXUserInfoCurrentRoomCell.h; sourceTree = "<group>"; };
+		008588E72539C8E100649236 /* CXUserInfoCurrentRoomCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXUserInfoCurrentRoomCell.m; sourceTree = "<group>"; };
 		008F040D251C4E0E00F207D2 /* CXChangeAgeAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXChangeAgeAlertView.h; sourceTree = "<group>"; };
 		008F040E251C4E0E00F207D2 /* CXChangeAgeAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXChangeAgeAlertView.m; sourceTree = "<group>"; };
 		008F0412251C4E1800F207D2 /* CXChangeAgeAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CXChangeAgeAlertView.xib; sourceTree = "<group>"; };
@@ -2679,10 +2683,12 @@
 		00614A3B250B94C700BB7620 /* 推荐 */ = {
 			isa = PBXGroup;
 			children = (
-				00614A3C250B94C700BB7620 /* CXLiveRoomRecommendView.xib */,
-				00614A3D250B94C700BB7620 /* CXLiveRoomRecommendView.m */,
-				00614A3E250B94C700BB7620 /* View */,
 				00614A42250B94C700BB7620 /* CXLiveRoomRecommendView.h */,
+				00614A3D250B94C700BB7620 /* CXLiveRoomRecommendView.m */,
+				00614A3C250B94C700BB7620 /* CXLiveRoomRecommendView.xib */,
+				00614A3E250B94C700BB7620 /* View */,
+				008588CF2539860200649236 /* CXRefreshNormalTimeHeader.h */,
+				008588D02539860200649236 /* CXRefreshNormalTimeHeader.m */,
 			);
 			path = "推荐";
 			sourceTree = "<group>";
@@ -3015,12 +3021,12 @@
 				00614B02250B94C800BB7620 /* MBProgressHUD+CXCategory.m */,
 				00614B03250B94C800BB7620 /* UIViewController+CXCategory.m */,
 				00614B04250B94C800BB7620 /* NSDate+CXCategory.h */,
+				00614B0A250B94C800BB7620 /* NSDate+CXCategory.m */,
 				00614B05250B94C800BB7620 /* UIView+CXCategory.h */,
 				00614B06250B94C800BB7620 /* UIButton+CXCategory.m */,
 				00614B07250B94C800BB7620 /* NSString+CXCategory.h */,
 				00614B08250B94C800BB7620 /* UIGestureRecognizer+CXCategory.h */,
 				00614B09250B94C800BB7620 /* UIImage+CXCategory.h */,
-				00614B0A250B94C800BB7620 /* NSDate+CXCategory.m */,
 				00614B0B250B94C800BB7620 /* UIViewController+CXCategory.h */,
 				00614B0C250B94C800BB7620 /* MBProgressHUD+CXCategory.h */,
 				00614B0D250B94C800BB7620 /* UIButton+CXCategory.h */,
@@ -3267,9 +3273,7 @@
 			isa = PBXGroup;
 			children = (
 				00614BAB250B94C900BB7620 /* CXHTTPRequest.m */,
-				00614BAC250B94C900BB7620 /* CXClientModel.h */,
 				00614BAD250B94C900BB7620 /* CXHTTPRequest.h */,
-				00614BAE250B94C900BB7620 /* CXClientModel.m */,
 			);
 			path = HTTP;
 			sourceTree = "<group>";
@@ -3277,6 +3281,8 @@
 		00614BAF250B94C900BB7620 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				00614BAC250B94C900BB7620 /* CXClientModel.h */,
+				00614BAE250B94C900BB7620 /* CXClientModel.m */,
 				00614BB0250B94C900BB7620 /* CXUserModel.h */,
 				00614BB1250B94C900BB7620 /* CXUserModel.m */,
 			);
@@ -3315,11 +3321,11 @@
 		00614BBA250B94C900BB7620 /* 我的守护 */ = {
 			isa = PBXGroup;
 			children = (
+				00614BBC250B94C900BB7620 /* CXMineGuardViewController.h */,
+				00614BCD250B94CA00BB7620 /* CXMineGuardViewController.m */,
 				00614BCC250B94CA00BB7620 /* CXMineGuardListViewController.h */,
 				00614BBB250B94C900BB7620 /* CXMineGuardListViewController.m */,
-				00614BBC250B94C900BB7620 /* CXMineGuardViewController.h */,
 				00614BCB250B94CA00BB7620 /* CXMineGuardListViewController.xib */,
-				00614BCD250B94CA00BB7620 /* CXMineGuardViewController.m */,
 				00614BBE250B94C900BB7620 /* View */,
 			);
 			path = "我的守护";
@@ -3328,14 +3334,14 @@
 		00614BBE250B94C900BB7620 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				00614BBF250B94C900BB7620 /* CXMineGuardAutomaticView.xib */,
+				00614BC6250B94CA00BB7620 /* CXMineGuardRenewView.h */,
 				00614BC0250B94CA00BB7620 /* CXMineGuardRenewView.m */,
 				00614BC1250B94CA00BB7620 /* CXMineGuardRenewView.xib */,
 				00614BC2250B94CA00BB7620 /* CXMineGuardAutomaticView.m */,
+				00614BBF250B94C900BB7620 /* CXMineGuardAutomaticView.xib */,
 				00614BC3250B94CA00BB7620 /* CXMineGuardListCell.h */,
 				00614BC4250B94CA00BB7620 /* CXMineGuardRenewItemCell.h */,
 				00614BC5250B94CA00BB7620 /* CXMineGuardAutomaticView.h */,
-				00614BC6250B94CA00BB7620 /* CXMineGuardRenewView.h */,
 				00614BC7250B94CA00BB7620 /* CXMineGuardRenewItemCell.xib */,
 				00614BC8250B94CA00BB7620 /* CXMineGuardListCell.xib */,
 				00614BC9250B94CA00BB7620 /* CXMineGuardRenewItemCell.m */,
@@ -3360,7 +3366,6 @@
 		00614BCF250B94CA00BB7620 /* 提现 */ = {
 			isa = PBXGroup;
 			children = (
-				00614BD0250B94CA00BB7620 /* CXWithdrawSelectedDateViewController.m */,
 				00614BD1250B94CA00BB7620 /* CXWithdrawIncomeListViewController.h */,
 				00614BD8250B94CA00BB7620 /* CXWithdrawIncomeListViewController.m */,
 				00614BD6250B94CA00BB7620 /* CXWithdrawIncomeListViewController.xib */,
@@ -3368,8 +3373,9 @@
 				00614BD3250B94CA00BB7620 /* CXWithdrawAccountViewController.m */,
 				00614BD4250B94CA00BB7620 /* CXWithdrawInfoViewController.m */,
 				00614BD5250B94CA00BB7620 /* CXWithdrawSelectedDateViewController.h */,
-				00614BD7250B94CA00BB7620 /* CXWithdrawAccountViewController.h */,
+				00614BD0250B94CA00BB7620 /* CXWithdrawSelectedDateViewController.m */,
 				00614BD9250B94CA00BB7620 /* CXWithdrawSelectedDateViewController.xib */,
+				00614BD7250B94CA00BB7620 /* CXWithdrawAccountViewController.h */,
 				00614BDA250B94CA00BB7620 /* CXWithdrawInfoViewController.h */,
 				00614BDB250B94CA00BB7620 /* Views */,
 				00614BDF250B94CA00BB7620 /* CXWithdrawAccountViewController.xib */,
@@ -3478,7 +3484,6 @@
 				00614C15250B94CA00BB7620 /* CXMineEditProfileViewController.m */,
 				00614C2E250B94CA00BB7620 /* CXMineEditProfileViewController.xib */,
 				007214222535CC31006A2FCE /* Address.plist */,
-				00614C14250B94CA00BB7620 /* city.json */,
 				00614C16250B94CA00BB7620 /* userProfile.json */,
 				00614C17250B94CA00BB7620 /* View */,
 			);
@@ -3534,10 +3539,10 @@
 		00614C32250B94CA00BB7620 /* 守护团 */ = {
 			isa = PBXGroup;
 			children = (
+				00614C36250B94CA00BB7620 /* CXLiveRoomGuardianListViewController.h */,
 				00614C33250B94CA00BB7620 /* CXLiveRoomGuardianListViewController.m */,
 				00614C34250B94CA00BB7620 /* CXLiveRoomGuardianListViewController.xib */,
 				00614C35250B94CA00BB7620 /* CXLiveRoomGuardianRuleViewController.m */,
-				00614C36250B94CA00BB7620 /* CXLiveRoomGuardianListViewController.h */,
 				00614C45250B94CA00BB7620 /* CXLiveRoomGuardianRuleViewController.h */,
 				00614C37250B94CA00BB7620 /* CXLiveRoomGuardianRuleViewController.xib */,
 				00614C38250B94CA00BB7620 /* view */,
@@ -3548,18 +3553,18 @@
 		00614C38250B94CA00BB7620 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				00614C39250B94CA00BB7620 /* CXLiveRoomGuardianPrivilegeView.m */,
+				00614C3F250B94CA00BB7620 /* CXLiveRoomGuardianListCell.h */,
 				00614C3A250B94CA00BB7620 /* CXLiveRoomGuardianListCell.m */,
+				00614C44250B94CA00BB7620 /* CXLiveRoomGuardianListCell.xib */,
+				00614C39250B94CA00BB7620 /* CXLiveRoomGuardianPrivilegeView.m */,
 				00614C3B250B94CA00BB7620 /* CXLiveRoomGuardianPrivilegeView.xib */,
 				00614C3C250B94CA00BB7620 /* CXLiveRoomGuardianAlertView.h */,
 				00614C3D250B94CA00BB7620 /* CXLiveRoomGuardianAnimationView.m */,
 				00614C3E250B94CA00BB7620 /* CXLiveRoomGuardianAnimationView.xib */,
-				00614C3F250B94CA00BB7620 /* CXLiveRoomGuardianListCell.h */,
 				00614C40250B94CA00BB7620 /* CXLiveRoomGuardianPrivilegeView.h */,
 				00614C41250B94CA00BB7620 /* CXLiveRoomGuardianAlertView.xib */,
 				00614C42250B94CA00BB7620 /* CXLiveRoomGuardianAlertView.m */,
 				00614C43250B94CA00BB7620 /* CXLiveRoomGuardianAnimationView.h */,
-				00614C44250B94CA00BB7620 /* CXLiveRoomGuardianListCell.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -3567,19 +3572,21 @@
 		00614C49250B94CA00BB7620 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				00614C4E250B94CA00BB7620 /* CXUserInfoGroupTitleReusableView.h */,
+				00614C56250B94CA00BB7620 /* CXUserInfoGroupTitleReusableView.m */,
+				00614C50250B94CA00BB7620 /* CXUserInfoHeaderReusableView.h */,
 				00614C4A250B94CA00BB7620 /* CXUserInfoHeaderReusableView.m */,
+				00614C54250B94CA00BB7620 /* CXUserInfoMainInfoCell.h */,
+				00614C4D250B94CA00BB7620 /* CXUserInfoMainInfoCell.m */,
+				00614C53250B94CA00BB7620 /* CXUserInfoMainInfoCell.xib */,
+				00614C4F250B94CA00BB7620 /* CXUserInfoGiftCell.h */,
+				00614C55250B94CA00BB7620 /* CXUserInfoGiftCell.m */,
 				00614C4B250B94CA00BB7620 /* CXUserInfoGiftCell.xib */,
 				00614C4C250B94CA00BB7620 /* CXUserInfoIntrosCell.h */,
-				00614C4D250B94CA00BB7620 /* CXUserInfoMainInfoCell.m */,
-				00614C4E250B94CA00BB7620 /* CXUserInfoGroupTitleReusableView.h */,
-				00614C4F250B94CA00BB7620 /* CXUserInfoGiftCell.h */,
-				00614C50250B94CA00BB7620 /* CXUserInfoHeaderReusableView.h */,
 				00614C51250B94CA00BB7620 /* CXUserInfoIntrosCell.m */,
 				00614C52250B94CA00BB7620 /* CXUserInfoIntrosCell.xib */,
-				00614C53250B94CA00BB7620 /* CXUserInfoMainInfoCell.xib */,
-				00614C54250B94CA00BB7620 /* CXUserInfoMainInfoCell.h */,
-				00614C55250B94CA00BB7620 /* CXUserInfoGiftCell.m */,
-				00614C56250B94CA00BB7620 /* CXUserInfoGroupTitleReusableView.m */,
+				008588E62539C8E100649236 /* CXUserInfoCurrentRoomCell.h */,
+				008588E72539C8E100649236 /* CXUserInfoCurrentRoomCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4889,7 +4896,6 @@
 				1AF87B9D1F6F7C80007BE51C /* LaunchScreen.storyboard in Resources */,
 				00615064250B94D000BB7620 /* uncheck@2x.png in Resources */,
 				00614ED2250B94CE00BB7620 /* CXLiveRoomUserProfileReportView.xib in Resources */,
-				00614F99250B94CF00BB7620 /* city.json in Resources */,
 				00614EA5250B94CE00BB7620 /* CXLiveRoomUIView.xib in Resources */,
 				0061505D250B94D000BB7620 /* close_gray@3x.png in Resources */,
 				00615031250B94D000BB7620 /* msg_bg_send@2x.png in Resources */,
@@ -5279,6 +5285,7 @@
 				00614F18250B94CF00BB7620 /* UIView+CXCategory.m in Sources */,
 				0061507C250B94D000BB7620 /* MWTapDetectingImageView.m in Sources */,
 				00614F52250B94CF00BB7620 /* SocketMessageSetName.m in Sources */,
+				008588E82539C8E100649236 /* CXUserInfoCurrentRoomCell.m in Sources */,
 				00614ED9250B94CE00BB7620 /* GameMessageListItemGiftEventView.m in Sources */,
 				00614E5C250B94CE00BB7620 /* SVGAManager.m in Sources */,
 				00614F40250B94CF00BB7620 /* SocketMessageUnlockSeat.m in Sources */,
@@ -5531,6 +5538,7 @@
 				00614F1A250B94CF00BB7620 /* CXSocketMessageMusic.m in Sources */,
 				00614E19250B94CE00BB7620 /* CXHomeRoomRecommendCell.m in Sources */,
 				00615024250B94D000BB7620 /* EMMsgAudioBubbleView.m in Sources */,
+				008588D12539860200649236 /* CXRefreshNormalTimeHeader.m in Sources */,
 				006150B2250B94D000BB7620 /* LewPopupViewAnimationDrop.m in Sources */,
 				005C3F8C2515E8E400DBCD02 /* AppController+Share.m in Sources */,
 				00614EF4250B94CE00BB7620 /* CXLiveRoomRechargeCell.m in Sources */,
@@ -5671,7 +5679,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMPRESS_PNG_FILES = NO;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = C966MAAFRF;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -5726,7 +5734,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMPRESS_PNG_FILES = NO;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = C966MAAFRF;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (

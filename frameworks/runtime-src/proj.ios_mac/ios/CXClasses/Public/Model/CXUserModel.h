@@ -9,6 +9,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@interface CXUserCurrentRoomModel : NSObject
+@property (nonatomic, strong) NSString *avatar;
+@property (nonatomic, strong) NSString *room_id;
+@property (nonatomic, strong) NSString *room_name;
+@end
+
 @interface CXUserModel : NSObject
 
 @property (nonatomic, strong) NSString *user_id;
@@ -30,6 +36,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString * is_friend; // 1是好友2不是
 
 @property (nonatomic, strong) NSString *online; // 用户状态 0离线 3相亲中 5热聊中 6开播中
+
+@property (nonatomic, strong) CXUserCurrentRoomModel *room_info; // 当前所在房间信息
 
 // 搜索
 @property (nonatomic, strong) NSString *room_id; // 房间id，如果为空就不在房间

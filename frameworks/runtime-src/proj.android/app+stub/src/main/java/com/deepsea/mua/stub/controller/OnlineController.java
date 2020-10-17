@@ -121,7 +121,6 @@ public class OnlineController {
                 .subscribe(new NewSubscriberCallBack<HeartBeatBean>() {
                     @Override
                     protected void onError(int errorCode, String errorMsg) {
-                        UserUtils.clearUser();
                     }
 
                     @Override

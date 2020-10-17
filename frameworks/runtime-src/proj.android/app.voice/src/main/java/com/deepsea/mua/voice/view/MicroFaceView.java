@@ -214,7 +214,7 @@ public class MicroFaceView extends FrameLayout {
             });
             ViewBindUtils.RxClicks(mBinding.rlDownMp, o -> {
                 if (onMicUserListener != null) {
-                    onMicUserListener.downMicro(user.getUserId(),user.getType(),user.getNumber());
+                    onMicUserListener.downMicro(user.getUserId(), bean.getType(), bean.getNumber());
                 }
             });
 
@@ -243,11 +243,8 @@ public class MicroFaceView extends FrameLayout {
                     }
                 });
             }
-            if (MatchMakerUtils.isRoomOwner() || user.getUserId().equals(UserUtils.getUser().getUid()) || bean.getType() == 0) {
-                ViewBindUtils.setVisible(mBinding.llMicroOperate, true);
-            } else {
-                ViewBindUtils.setVisible(mBinding.llMicroOperate, false);
-            }
+            ViewBindUtils.setVisible(mBinding.llMicroOperate, true);
+
             addSurfaceView(Integer.parseInt(user.getUserId()));
         } else {
             releaseLayout(bean.getType());

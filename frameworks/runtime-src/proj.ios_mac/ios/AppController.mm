@@ -777,6 +777,20 @@ UIInterfaceOrientationMask oMask = UIInterfaceOrientationMaskLandscape;
     }];
 }
 
++ (void)reconnectRoom:(NSString *_Nonnull)roomId {
+    [[CXClientModel instance] reconnectRoom:roomId callback:^(NSString * _Nonnull roomId, BOOL success) {
+        if (success) {
+//            [[[CXClientModel instance].listener allObjects] enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//                if ([obj respondsToSelector:@selector(modelClient:reconnectRoomSuccess:)]) {
+//                    [obj modelClient:self reconnectRoomSuccess:success];
+//                }
+//            }];
+        } else {
+            [[CXTools currentViewController] toast:@"重连房间失败，请重试"];
+        }
+    }];
+}
+
 + (void)showUserProfile:(NSString *)userId {
     CXUserInfoViewController *vc = [CXUserInfoViewController new];
     vc.user_Id = userId;

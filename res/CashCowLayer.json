@@ -198,15 +198,11 @@
               "X": 0.5,
               "Y": 0.5
             },
-            "PercentWidthEnable": true,
-            "PercentHeightEnable": true,
-            "PercentWidthEnabled": true,
-            "PercentHeightEnabled": true,
             "PreSize": {
               "X": 1.0,
               "Y": 1.0
             },
-            "UserData": "{\"layoutType\":\"maxArea\",\"screenAlign\":\"mid\"}",
+            "UserData": "{\"layoutType\":\"showAll\",\"screenAlign\":\"mid\"}",
             "Tag": 27,
             "Children": [
               {
@@ -247,7 +243,7 @@
                   "Y": 0.4392
                 },
                 "PreSize": {
-                  "X": 0.1562,
+                  "X": 0.1563,
                   "Y": 0.2778
                 },
                 "LeftMargin": 540.0,
@@ -637,7 +633,7 @@
                       "Y": 0.2107
                     },
                     "PreSize": {
-                      "X": 0.0312,
+                      "X": 0.0313,
                       "Y": 0.0597
                     },
                     "LeftMargin": 912.9454,
@@ -2471,8 +2467,8 @@
                               "ScaleY": 0.5
                             },
                             "Position": {
-                              "X": 648.1165,
-                              "Y": 378.5476
+                              "X": 648.064,
+                              "Y": 378.576
                             },
                             "Scale": {
                               "ScaleX": 1.0,
@@ -2490,10 +2486,10 @@
                               "X": 0.386,
                               "Y": 0.394
                             },
-                            "LeftMargin": 401.105,
-                            "RightMargin": 384.8721,
-                            "TopMargin": 199.6281,
-                            "BottomMargin": 236.7233,
+                            "LeftMargin": 401.0525,
+                            "RightMargin": 384.9246,
+                            "TopMargin": 199.5997,
+                            "BottomMargin": 236.7517,
                             "Tag": 250,
                             "Children": [
                               {

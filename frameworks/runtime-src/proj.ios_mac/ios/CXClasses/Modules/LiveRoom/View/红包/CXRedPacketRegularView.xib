@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -22,29 +23,51 @@
                 </label>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4T9-wf-cDQ">
                     <rect key="frame" x="20" y="76.5" width="374" height="795.5"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="textColor" systemColor="labelColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rGg-LS-93H">
+                    <rect key="frame" x="374" y="0.0" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="Hdi-V5-Nsn"/>
+                        <constraint firstAttribute="width" constant="40" id="JUj-nb-U7n"/>
+                    </constraints>
+                    <state key="normal" image="close_gray"/>
+                    <connections>
+                        <action selector="closeAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="oSK-kw-ANi"/>
+                    </connections>
+                </button>
             </subviews>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="4T9-wf-cDQ" secondAttribute="bottom" constant="24" id="8Lx-VX-cYQ"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="4T9-wf-cDQ" secondAttribute="trailing" constant="20" id="ORK-w1-YPc"/>
                 <constraint firstItem="0Z0-56-lA8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="27" id="U9K-Tu-BRJ"/>
                 <constraint firstItem="4T9-wf-cDQ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="YX3-0B-Bbb"/>
                 <constraint firstItem="4T9-wf-cDQ" firstAttribute="top" secondItem="0Z0-56-lA8" secondAttribute="bottom" constant="24" id="fsD-eF-cxX"/>
+                <constraint firstAttribute="trailing" secondItem="rGg-LS-93H" secondAttribute="trailing" id="pIk-cs-xCy"/>
                 <constraint firstItem="0Z0-56-lA8" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="q3c-PW-mBm"/>
+                <constraint firstItem="rGg-LS-93H" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ycT-ZS-2zD"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="regularTextView" destination="4T9-wf-cDQ" id="DFG-Ob-daH"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="116.51785714285714"/>
         </view>
     </objects>
+    <resources>
+        <image name="close_gray" width="24" height="24"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

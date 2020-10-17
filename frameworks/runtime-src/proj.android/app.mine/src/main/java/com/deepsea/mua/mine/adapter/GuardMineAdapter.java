@@ -89,11 +89,11 @@ public class GuardMineAdapter extends BaseBindingAdapter<GuardInfoBean.GuardMemb
 //        } else {
 //            ViewBindUtils.setText(holder.binding.tvAutoRenew, "开通自助续费");
 //        }
-        ViewBindUtils.RxClicks(holder.binding.tvAutoRenew, o -> {
-            if (mListener != null) {
-//                mListener.autoRenew(is_auto);
-            }
-        });
+//        ViewBindUtils.RxClicks(holder.binding.tvAutoRenew, o -> {
+//            if (mListener != null) {
+//              mListener.autoRenew(is_auto);
+//            }
+//        });
         ViewBindUtils.RxClicks(holder.binding.ivPhoto, o -> {
             PageJumpUtils.jumpToProfile(item.getUserId());
         });
@@ -103,7 +103,7 @@ public class GuardMineAdapter extends BaseBindingAdapter<GuardInfoBean.GuardMemb
             }
         });
         ViewBindUtils.setVisible(holder.binding.tvRenew, type.equals("1"));
-        ViewBindUtils.setVisible(holder.binding.tvAutoRenew, type.equals("1"));
+//        ViewBindUtils.setVisible(holder.binding.tvAutoRenew, type.equals("1"));
         GlideUtils.circleImage(holder.binding.ivPhoto, item.getAvatar(), R.drawable.ic_place, R.drawable.ic_place);
 
 

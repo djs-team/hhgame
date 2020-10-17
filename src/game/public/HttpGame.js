@@ -36,10 +36,10 @@ load('game/public/HttpGame', function () {
                 phoneModel: cc.sys.os,
                 imei: '',
                 unionId: '',
-                pid: ""
+                invitationPid: ""
             }
             let myParam = cc.sys.localStorage.getItem("installParam");
-            msg.pid = myParam;
+            msg.invitationPid = myParam;
             cc.log('=========httpLoginRequest===============' + JSON.stringify(msg))
             this.checkSendMsg(sendMsg, msg)
             sendMsg.msgID = HttpEvent.MJ_HALL_MESSAGE_LOGIN
@@ -220,7 +220,8 @@ load('game/public/HttpGame', function () {
                 'nameUpdate',
                 'isAuthentication',
                 'agentFlag',
-                'isHaveAdress'//0未填写，1填写
+                'isHaveAdress',//0未填写，1填写
+                'vipCode',//0 不是会员 1周会员 2 月 3 季 4年
             ]
             appInstance.dataManager().getUserData().saveMsg(msg, saveKey)
             appInstance.sendNotification(GameEvent.USERDATA, msg)
@@ -1099,7 +1100,7 @@ load('game/public/HttpGame', function () {
             msg.msgID = HttpEvent.MJ_HALL_PLAYER_BUY_VIP_ORDER_APPLE_CHECK
             appInstance.httpAgent().sendPost(msg)
         },
-        
+
         VIPPaysOrderAppleCheckBack: function (msg) {
             if (msg.status !== 0) {
                 cc.log('------------->>>httpGame VIPPaysOrderAppleCheckBack error happen' + JSON.stringify(msg))
@@ -1318,6 +1319,69 @@ load('game/public/HttpGame', function () {
         FUKAMATERIAEXCHANGEBack: function (msg) {
 
             appInstance.sendNotification(GameEvent.FUKA_MATERIA_EXCHANGE, msg)
+
+        },
+
+
+        FEEDBACKGETLISTReq: function (msg) {
+            msg = msg || {}
+            if (!this._requestBackCall[HttpEvent.MJ_HALL_PLAYER_FEEDBACK]) {
+                this._requestBackCall[HttpEvent.MJ_HALL_PLAYER_FEEDBACK] = this.FEEDBACKGETLISTBack
+            }
+            msg.msgID = HttpEvent.MJ_HALL_PLAYER_FEEDBACK
+            appInstance.httpAgent().sendPost(msg)
+
+        },
+
+
+        FEEDBACKGETLISTBack: function (msg) {
+            if (msg.status !== 0) {
+                appInstance.gameAgent().Tips('未知异常，请重试！')
+                return
+            }
+            appInstance.sendNotification(GameEvent.HALL_FEEDBACK_LIST, msg)
+
+        },
+
+
+        FEEDBACKSUBMITReq: function (msg) {
+            msg = msg || {}
+            if (!this._requestBackCall[HttpEvent.MJ_HALL_PLAYER_FEEDBACK_SUBMIT]) {
+                this._requestBackCall[HttpEvent.MJ_HALL_PLAYER_FEEDBACK_SUBMIT] = this.FEEDBACKSUBMITBack
+            }
+            msg.msgID = HttpEvent.MJ_HALL_PLAYER_FEEDBACK_SUBMIT
+            appInstance.httpAgent().sendPost(msg)
+
+        },
+
+
+        FEEDBACKSUBMITBack: function (msg) {
+            if (msg.status !== 0) {
+                appInstance.gameAgent().Tips('未知异常，请重试！')
+                return
+            }
+            appInstance.sendNotification(GameEvent.HALL_FEEDBACK_SUBMIT, msg)
+
+        },
+
+
+        FEEDBACKGETINFOReq: function (msg) {
+            msg = msg || {}
+            if (!this._requestBackCall[HttpEvent.MJ_HALL_PLAYER_FEEDBACK_INFO]) {
+                this._requestBackCall[HttpEvent.MJ_HALL_PLAYER_FEEDBACK_INFO] = this.FEEDBACKGETINFOBack
+            }
+            msg.msgID = HttpEvent.MJ_HALL_PLAYER_FEEDBACK_INFO
+            appInstance.httpAgent().sendPost(msg)
+
+        },
+
+
+        FEEDBACKGETINFOBack: function (msg) {
+            if (msg.status !== 0) {
+                appInstance.gameAgent().Tips('未知异常，请重试！')
+                return
+            }
+            appInstance.sendNotification(GameEvent.HALL_FEEDBACK_INFO, msg)
 
         },
     })

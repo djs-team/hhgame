@@ -179,34 +179,34 @@
               <AbstractNodeData Name="namePnl" ActionTag="194411968" Tag="325" IconVisible="False" LeftMargin="560.7576" RightMargin="619.2424" TopMargin="202.8087" BottomMargin="487.1913" ClipAble="False" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="100.0000" Y="30.0000" />
                 <Children>
-                  <AbstractNodeData Name="Image_24" ActionTag="1558482793" Tag="326" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" Scale9Enable="True" LeftEage="17" RightEage="21" TopEage="24" BottomEage="20" Scale9OriginX="17" Scale9OriginY="24" Scale9Width="3" Scale9Height="1" ctype="ImageViewObjectData">
-                    <Size X="100.0000" Y="30.0000" />
+                  <AbstractNodeData Name="Image_24" ActionTag="1558482793" Tag="326" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="-9.5000" RightMargin="-9.5000" Scale9Enable="True" LeftEage="17" RightEage="21" TopEage="24" BottomEage="20" Scale9OriginX="17" Scale9OriginY="24" Scale9Width="3" Scale9Height="1" ctype="ImageViewObjectData">
+                    <Size X="119.0000" Y="30.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="50.0000" Y="15.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.5000" Y="0.5000" />
-                    <PreSize X="1.0000" Y="1.0000" />
+                    <PreSize X="1.1900" Y="1.0000" />
                     <FileData Type="Normal" Path="personal/gexx_1.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="nameText" ActionTag="221853161" Tag="327" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="3.5000" RightMargin="7.5000" TopMargin="3.9000" BottomMargin="3.9000" IsCustomSize="True" FontSize="18" LabelText="玩家昵称" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="89.0000" Y="22.2000" />
+                  <AbstractNodeData Name="nameText" ActionTag="221853161" Tag="327" IconVisible="False" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="-4.0000" RightMargin="-4.0000" TopMargin="6.0000" BottomMargin="6.0000" FontSize="18" LabelText="这是玩家昵称" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="108.0000" Y="18.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="48.0000" Y="15.0000" />
+                    <Position X="50.0000" Y="15.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.4800" Y="0.5000" />
-                    <PreSize X="0.8900" Y="0.7400" />
+                    <PrePosition X="0.5000" Y="0.5000" />
+                    <PreSize X="1.0800" Y="0.6000" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="updateNameBtn" ActionTag="-1895661144" Tag="328" IconVisible="False" LeftMargin="98.2800" RightMargin="-31.2800" TopMargin="-3.1300" BottomMargin="-0.8700" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="4" BottomEage="4" Scale9OriginX="15" Scale9OriginY="4" Scale9Width="3" Scale9Height="26" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                  <AbstractNodeData Name="updateNameBtn" ActionTag="-1895661144" Tag="328" IconVisible="False" LeftMargin="108.2800" RightMargin="-41.2800" TopMargin="-3.1300" BottomMargin="-0.8700" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="4" BottomEage="4" Scale9OriginX="15" Scale9OriginY="4" Scale9Width="3" Scale9Height="26" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                     <Size X="33.0000" Y="34.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="114.7800" Y="16.1300" />
+                    <Position X="124.7800" Y="16.1300" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="1.1478" Y="0.5377" />
+                    <PrePosition X="1.2478" Y="0.5377" />
                     <PreSize X="0.3300" Y="1.1333" />
                     <TextColor A="255" R="65" G="65" B="70" />
                     <PressedFileData Type="Normal" Path="personal/gexx_8.png" Plist="" />
@@ -473,7 +473,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="updateNamePnl" ActionTag="2062223528" VisibleForFrame="False" UserData="{&quot;layoutType&quot;:&quot;maxArea&quot;,&quot;screenAlign&quot;:&quot;mid&quot;}" Tag="351" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+          <AbstractNodeData Name="updateNamePnl" Visible="False" ActionTag="2062223528" VisibleForFrame="False" UserData="{&quot;layoutType&quot;:&quot;maxArea&quot;,&quot;screenAlign&quot;:&quot;mid&quot;}" Tag="351" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <Children>
               <AbstractNodeData Name="Image_1" ActionTag="-1719826098" Tag="352" IconVisible="False" LeftMargin="380.3900" RightMargin="347.6100" TopMargin="218.7800" BottomMargin="197.2200" Scale9Enable="True" LeftEage="44" RightEage="44" TopEage="43" BottomEage="43" Scale9OriginX="44" Scale9OriginY="43" Scale9Width="48" Scale9Height="47" ctype="ImageViewObjectData">

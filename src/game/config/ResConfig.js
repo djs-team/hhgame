@@ -84,7 +84,7 @@ load('game/config/ResConfig', function () {
         'MemberLayer': 'game/ui/layer/member/MemberLayer',
         'RoleLayer': 'game/ui/layer/role/RoleLayer',
         'FukaShopLayer': 'game/ui/layer/fukashop/FukaShopLayer',
-        'FeedbackLayer': 'game/ui/layer/feedback/FeedbackLayer',
+        'FeedBackLayer': 'game/ui/layer/feedback/FeedBackLayer',
 
     }
 
@@ -116,7 +116,7 @@ load('game/config/ResConfig', function () {
         'CashCowLayer': 'res/CashCowLayer.json',
         'CoinGameLayer': 'res/CoinGameLayer.json',
         'ConfLayer': 'res/ConfLayer.json',
-        'FeedbackLayer': 'res/FeedbackLayer.json',
+        'FeedbackLayer': 'res/FeedBackLayer.json',
         'AuthenticationLayer': 'res/AuthenticationLayer.json',
         'CustomerServiceLayer': 'res/CustomerServiceLayer.json',
         'PersonalLayer': 'res/PersonalLayer.json',

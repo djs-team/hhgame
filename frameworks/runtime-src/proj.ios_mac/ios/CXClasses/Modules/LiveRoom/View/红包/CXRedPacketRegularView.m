@@ -30,6 +30,11 @@
     [self getRegular];
 }
 
+- (IBAction)closeAction:(id)sender {
+    
+    [self hide];
+}
+
 - (void)getRegular {
     CXSocketMessageGetRedPacketPlayDesc *request = [CXSocketMessageGetRedPacketPlayDesc new];
     kWeakSelf

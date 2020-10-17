@@ -51,7 +51,7 @@ typedef NS_ENUM(NSUInteger, EasemobManagerErrorCode) {
 + (instancetype)init NS_UNAVAILABLE;
 + (instancetype)instanceWithAppKey:(NSString*)key;
 
-@property (nonatomic, nullable) id<EasemobManagerDelegate> delegate;
+@property (nonatomic, nullable, weak) id<EasemobManagerDelegate> delegate;
 
 //@property (nonatomic, readonly, nullable) NSString * uid;
 //@property (nonatomic, readonly, nullable) NSString * loginUid;

@@ -26,6 +26,7 @@
     #import "CXHTTPRequest.h"
     #import "CXUserModel.h"
     #import "CXSytemModel.h"
+    #import "CXLiveRoomModel.h"
 
     #import "CXSystemAlertView.h"
 

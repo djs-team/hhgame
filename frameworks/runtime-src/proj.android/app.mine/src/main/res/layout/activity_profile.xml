@@ -383,24 +383,6 @@
                             android:text="住房情况"
                             android:textColor="@color/F66666"
                             android:textSize="14sp" />
-
-                        <TextView
-                            android:id="@+id/marriage_condition"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="19dp"
-                            android:text="征友条件"
-                            android:textColor="@color/black"
-                            android:textSize="19sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/marriage_condition_tv"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:textColor="@color/F66666"
-                            android:textSize="14sp" />
                     </LinearLayout>
 
                     <!--礼物墙-->

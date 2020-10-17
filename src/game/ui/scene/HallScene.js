@@ -112,7 +112,7 @@ load('game/ui/scene/HallScene', function () {
 
         onFeedbackBtnClick: function () {
             this.morePnl.setVisible(false)
-            appInstance.gameAgent().addPopUI(ResConfig.Ui.FeedbackLayer)
+            appInstance.gameAgent().addPopUI(ResConfig.Ui.FeedBackLayer)
         },
 
         onTaskClick: function () {
@@ -158,6 +158,11 @@ load('game/ui/scene/HallScene', function () {
 
         onLiveBroadcastClick: function () {
             //跳转直播界面
+            let vipCode = appInstance.dataManager().getUserData().vipCode
+            if(vipCode <= 0){
+                appInstance.gameAgent().Tips('该功能只对会员开放')
+                return
+            }
             appInstance.nativeApi().jumpToBlindDate()
 
         },

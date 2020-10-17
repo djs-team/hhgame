@@ -2,6 +2,7 @@ package com.deepsea.mua.voice.dialog;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+
 import com.deepsea.mua.core.dialog.BaseDialog;
 import com.deepsea.mua.stub.utils.ViewBindUtils;
 import com.deepsea.mua.voice.R;
@@ -15,7 +16,9 @@ public class RedpackageRuleDialog extends BaseDialog<DialogRedpakageRuleBinding>
 
     public RedpackageRuleDialog(@NonNull Context context) {
         super(context);
-
+        ViewBindUtils.RxClicks(mBinding.ivClose, o -> {
+            dismiss();
+        });
     }
 
 

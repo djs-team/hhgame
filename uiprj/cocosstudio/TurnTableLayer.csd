@@ -46,61 +46,91 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="explainBtn" ActionTag="1477769825" Tag="261" IconVisible="False" LeftMargin="1120.0500" RightMargin="119.9500" TopMargin="22.4500" BottomMargin="654.5500" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="10" Scale9Height="21" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                <Size X="40.0000" Y="43.0000" />
+              <AbstractNodeData Name="explainPnl" ActionTag="-1251982192" Tag="325" IconVisible="False" LeftMargin="1091.3500" RightMargin="99.6500" TopMargin="7.4012" BottomMargin="625.5988" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                <Size X="89.0000" Y="87.0000" />
                 <Children>
-                  <AbstractNodeData Name="Text_49" ActionTag="-236244572" Tag="262" IconVisible="False" LeftMargin="-15.9900" RightMargin="-24.0100" TopMargin="42.7900" BottomMargin="-19.7900" FontSize="20" LabelText="活动说明" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="80.0000" Y="20.0000" />
+                  <AbstractNodeData Name="explainBtn" ActionTag="1477769825" Tag="261" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="24.5000" RightMargin="24.5000" TopMargin="22.0000" BottomMargin="22.0000" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="10" Scale9Height="21" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                    <Size X="40.0000" Y="43.0000" />
+                    <Children>
+                      <AbstractNodeData Name="Text_49" ActionTag="-236244572" Tag="262" IconVisible="False" LeftMargin="-15.9900" RightMargin="-24.0100" TopMargin="42.7900" BottomMargin="-19.7900" FontSize="20" LabelText="活动说明" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="80.0000" Y="20.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="24.0100" Y="-9.7900" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="0.6003" Y="-0.2277" />
+                        <PreSize X="2.0000" Y="0.4651" />
+                        <OutlineColor A="255" R="255" G="0" B="0" />
+                        <ShadowColor A="255" R="110" G="110" B="110" />
+                      </AbstractNodeData>
+                    </Children>
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="24.0100" Y="-9.7900" />
+                    <Position X="44.5000" Y="43.5000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.6003" Y="-0.2277" />
-                    <PreSize X="2.0000" Y="0.4651" />
+                    <PrePosition X="0.5000" Y="0.5000" />
+                    <PreSize X="0.4494" Y="0.4943" />
+                    <TextColor A="255" R="65" G="65" B="70" />
+                    <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+                    <PressedFileData Type="Normal" Path="turntable/yjs_8.png" Plist="" />
+                    <NormalFileData Type="Normal" Path="turntable/yjs_8.png" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="1140.0500" Y="676.0500" />
+                <Position X="1135.8500" Y="669.0988" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.8907" Y="0.9390" />
-                <PreSize X="0.0313" Y="0.0597" />
-                <TextColor A="255" R="65" G="65" B="70" />
-                <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                <PressedFileData Type="Normal" Path="turntable/yjs_8.png" Plist="" />
-                <NormalFileData Type="Normal" Path="turntable/yjs_8.png" Plist="" />
-                <OutlineColor A="255" R="255" G="0" B="0" />
-                <ShadowColor A="255" R="110" G="110" B="110" />
+                <PrePosition X="0.8874" Y="0.9293" />
+                <PreSize X="0.0695" Y="0.1208" />
+                <SingleColor A="255" R="30" G="144" B="255" />
+                <FirstColor A="255" R="150" G="200" B="255" />
+                <EndColor A="255" R="255" G="255" B="255" />
+                <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="recordBtn" ActionTag="943879892" Tag="264" IconVisible="False" LeftMargin="1210.6899" RightMargin="39.3101" TopMargin="23.9500" BottomMargin="656.0500" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="1" Scale9Height="18" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                <Size X="30.0000" Y="40.0000" />
+              <AbstractNodeData Name="recordPnl" ActionTag="-2054814827" Tag="326" IconVisible="False" LeftMargin="1185.3500" RightMargin="11.6500" TopMargin="9.9000" BottomMargin="628.1000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                <Size X="83.0000" Y="82.0000" />
                 <Children>
-                  <AbstractNodeData Name="Text_49" ActionTag="-134009095" Tag="265" IconVisible="False" LeftMargin="-17.7400" RightMargin="-32.2600" TopMargin="39.7900" BottomMargin="-19.7900" FontSize="20" LabelText="奖励记录" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="80.0000" Y="20.0000" />
+                  <AbstractNodeData Name="recordBtn" ActionTag="943879892" Tag="264" IconVisible="False" PositionPercentYEnabled="True" LeftMargin="21.5000" RightMargin="31.5000" TopMargin="21.0000" BottomMargin="21.0000" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="1" Scale9Height="18" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                    <Size X="30.0000" Y="40.0000" />
+                    <Children>
+                      <AbstractNodeData Name="Text_49" ActionTag="-134009095" Tag="265" IconVisible="False" LeftMargin="-17.7400" RightMargin="-32.2600" TopMargin="39.7900" BottomMargin="-19.7900" FontSize="20" LabelText="奖励记录" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="80.0000" Y="20.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="22.2600" Y="-9.7900" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="0.7420" Y="-0.2447" />
+                        <PreSize X="2.6667" Y="0.5000" />
+                        <OutlineColor A="255" R="255" G="0" B="0" />
+                        <ShadowColor A="255" R="110" G="110" B="110" />
+                      </AbstractNodeData>
+                    </Children>
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="22.2600" Y="-9.7900" />
+                    <Position X="36.5000" Y="41.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.7420" Y="-0.2447" />
-                    <PreSize X="2.6667" Y="0.5000" />
+                    <PrePosition X="0.4398" Y="0.5000" />
+                    <PreSize X="0.3614" Y="0.4878" />
+                    <TextColor A="255" R="65" G="65" B="70" />
+                    <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+                    <PressedFileData Type="Normal" Path="turntable/yjs_9.png" Plist="" />
+                    <NormalFileData Type="Normal" Path="turntable/yjs_9.png" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="1225.6899" Y="676.0500" />
+                <Position X="1226.8500" Y="669.1000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.9576" Y="0.9390" />
-                <PreSize X="0.0234" Y="0.0556" />
-                <TextColor A="255" R="65" G="65" B="70" />
-                <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                <PressedFileData Type="Normal" Path="turntable/yjs_9.png" Plist="" />
-                <NormalFileData Type="Normal" Path="turntable/yjs_9.png" Plist="" />
-                <OutlineColor A="255" R="255" G="0" B="0" />
-                <ShadowColor A="255" R="110" G="110" B="110" />
+                <PrePosition X="0.9585" Y="0.9293" />
+                <PreSize X="0.0648" Y="0.1139" />
+                <SingleColor A="255" R="30" G="144" B="255" />
+                <FirstColor A="255" R="150" G="200" B="255" />
+                <EndColor A="255" R="255" G="255" B="255" />
+                <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="1.0000" />

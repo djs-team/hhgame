@@ -697,14 +697,14 @@
                 if (microInfo && microInfo.Type == LiveRoomMicroInfoTypeHost) {//红娘
                     SocketMessageMicroOrder * order = notification;
                     if (order.MicroOrderData.User) {
-                        LiveRoomUser * userInfo = [LiveRoomUser modelWithJSON:[order.MicroOrderData.User modelToJSONObject]];
-//                        NSString *title = [NSString stringWithFormat:@"%@已经申请上麦",userInfo.Name];
+                        LiveRoomUser * userInfo = order.MicroOrderData.User;
                         SocketMessageUserJoinRoom *user = [SocketMessageUserJoinRoom new];
                         user.Name = userInfo.Name;
                         user.Avatar = userInfo.HeadImageUrl;
                         user.UserLevel = userInfo.VipLevel;
                         user.Age = userInfo.Age.stringValue;
-                        user.City = userInfo.Age.stringValue;
+                        user.City = userInfo.City;
+                        user.Sex = @(userInfo.Sex);
                         [self listViewAddTextModel:@"申请上麦" user:user];
                         
                         [self.applySeatArrays addObject:order];
@@ -979,7 +979,12 @@
 }
 
 - (void)modelClient:(CXClientModel *)client reconnectRoomSuccess:(BOOL)success {
-    NSLog(@"重联成功");
+    if (success == NO) {
+        NSError *error = [[NSError alloc] init];
+        [self modelClient:[CXClientModel instance] room:[CXClientModel instance].room.RoomData.RoomId error:error];
+        return;
+    }
+    
     NSIndexPath *seatIndex = [[CXClientModel instance].room.userSeats objectForKey:[CXClientModel instance].userId];
     if (!seatIndex) {
         [[CXClientModel instance].agoraEngineManager.engine setClientRole:AgoraClientRoleAudience];
@@ -993,11 +998,12 @@
         if ([CXClientModel instance].room.isSonger) {
             [self music_playResume];
         }
-    } else {
-        if ([CXClientModel instance].room.isHost == YES) {
-            [self music_playResume];
-        }
     }
+//    else {
+//        if ([CXClientModel instance].room.isHost == YES) {
+//            [self music_playResume];
+//        }
+//    }
 }
 
 - (void)modelClient:(CXClientModel *)client room:(NSString *)roomId error:(NSError *)error {
@@ -1005,7 +1011,7 @@
     [[CXClientModel instance].easemob leaveRoom];
     kWeakSelf
     [self alertTitle:@"房间连接失败" message:@"是否重新连接" confirm:@"确定" cancel:@"取消" confirm:^{
-        [AppController joinRoom:roomId];
+        [AppController reconnectRoom:roomId];
     } cancel:^{
         [weakSelf leaveRoom];
     }];
@@ -1017,14 +1023,10 @@
     kWeakSelf
     [msgs enumerateObjectsUsingBlock:^(EasemobRoomMessage * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if ([obj.ext.XYType isEqualToString:EasemobRoomMessageExtTypeEmoji]) {
-            
+//            [weakSelf listViewAddFaceModel:obj.ext.XYEmoji.face_image user:obj.ext.XYUser];
+//            [weakSelf addEmoji:obj.ext.XYEmoji ToUser:obj.ext.XYUser.UserId];
         } else {
-            SocketMessageTextMessage *textModel = [SocketMessageTextMessage new];
-            
-            textModel.JoinRoomUser = obj.ext.XYUser;
-            textModel.text = obj.text;
-            
-            [weakSelf.roomUIView.messageListView addModel:textModel];
+            [weakSelf listViewAddTextModel:obj.text user:obj.ext.XYUser];
         }
     }];
 }
@@ -1044,7 +1046,7 @@
 // 显示用户信息
 - (void)showUserInfoViewWithUserInfo:(SocketMessageGetUserInfoResponse *)userInfo {
     CXLiveRoomUserProfileView *profileView = [[NSBundle mainBundle] loadNibNamed:@"CXLiveRoomUserProfileView" owner:self options:nil].firstObject;
-    LiveRoomUser *user = [LiveRoomUser modelWithJSON:[userInfo.User modelToJSONObject]];
+    LiveRoomUser *user = userInfo.User;
     profileView.userInfo = userInfo;
     kWeakSelf
     profileView.userProfileActionBlock = ^(NSInteger tag) {
@@ -1102,10 +1104,6 @@
                 break;
             case 32: // 送TA礼物
             {
-                LiveRoomUser * user = [LiveRoomUser new];
-                user.UserId = userInfo.User.UserId;
-                user.Name = userInfo.User.Name;
-                user.HeadImageUrl = userInfo.User.HeadImageUrl;
                 NSIndexPath *index = [[CXClientModel instance].room.userSeats objectForKey:user.UserId];
                 if (index) {
                     user.modelSeat = [[LiveRoomMicroInfo alloc] init];

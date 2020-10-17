@@ -56,6 +56,8 @@
 - (void)getRecordListData {
     kWeakSelf
     [CXHTTPRequest POSTWithURL:@"/index.php/Api/AliPay/blueExchangeInfo" parameters:@{@"page": [NSString stringWithFormat:@"%ld", (long)_page]} callback:^(id responseObject, BOOL isCache, NSError *error) {
+        [weakSelf.mainTableView.mj_header endRefreshing];
+        [weakSelf.mainTableView.mj_footer endRefreshing];
         if (!error) {
             NSArray *array = [NSArray modelArrayWithClass:[CXFriendGiftModel class] json:responseObject[@"data"][@"list"]];
             if (self->_page == 1) {
@@ -66,8 +68,6 @@
 
             [weakSelf.mainTableView reloadData];
 
-            [weakSelf.mainTableView.mj_header endRefreshing];
-            [weakSelf.mainTableView.mj_footer endRefreshing];
             if (array.count < [responseObject[@"data"][@"pageNum"] integerValue]) {
                 [weakSelf.mainTableView.mj_footer endRefreshingWithNoMoreData];
             }

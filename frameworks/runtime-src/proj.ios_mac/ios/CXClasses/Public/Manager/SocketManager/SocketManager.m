@@ -198,6 +198,10 @@ typedef enum : NSUInteger {
                     if (wself.delegate && [wself.delegate respondsToSelector:@selector(socketManager:reconnectionSuccess:)]) {
                         [wself.delegate socketManager:wself reconnectionSuccess:YES];
                     }
+                } else {
+                    if (wself.delegate && [wself.delegate respondsToSelector:@selector(socketManager:reconnectionSuccess:)]) {
+                        [wself.delegate socketManager:wself reconnectionSuccess:NO];
+                    }
                 }
             }];
             

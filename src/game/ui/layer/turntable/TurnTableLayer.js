@@ -3,7 +3,7 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
     let BaseLayer = include('public/ui/BaseLayer')
     let TurnTableMdt = include('game/ui/layer/turntable/TurnTableMdt')
     let GameEvent = include('game/config/GameEvent')
-    let tabState = 0;//0-转盘点击需要看视频 1可以领取三倍奖励
+    let tabState = -1;//0-转盘点击需要看视频 1三倍点击需要看视频
     let turnTableLayer = BaseLayer.extend({
         _className: 'turnTableLayer',
         _requestDeley: 5,
@@ -23,8 +23,9 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
             return {
 
                 'topPnl/returnBtn': {onClicked: this.onCloseClick},
-                'topPnl/explainBtn': {onClicked: this.onExplainClick},
-                'topPnl/recordBtn': {onClicked: this.onRecordClick},
+
+                'topPnl/explainPnl': {onClicked: this.onExplainClick},
+                'topPnl/recordPnl': {onClicked: this.onRecordClick},
 
                 'bmPnl/awardsPnl/awardsUserDataNd': {},
                 'bmPnl/awardsPnl/awardsUserDataNd/awardsUserDataPnl': {},
@@ -208,7 +209,7 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
         },
 
         onTurnPointClick: function () {
-            this.tabState = 0;
+            tabState = 0;
             this.pointPnl.setTouchEnabled(false)
             if (!this.onCanTurnPointFunction())
                 return
@@ -223,7 +224,7 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
                 flag = false
                 if (this._canTurnTableStatus === 1) {
                     //观看视频
-                    if(cc.sys.os !== cc.sys.OS_WINDOWS)
+                    if (cc.sys.os !== cc.sys.OS_WINDOWS)
                         appInstance.nativeApi().showRewardVideo()
                     else
                         flag = true
@@ -383,7 +384,7 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
         },
 
         onMultipleClaimClick: function () {
-
+            tabState = 1;
             if (cc.sys.OS_ANDROID === cc.sys.os) {
                 appInstance.nativeApi().showRewardVideo()
             }
@@ -391,17 +392,17 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
         },
         onRewardVideoCallback: function (msg) {
             if (msg == "0") {
-                if (this.tabState == 0) {
-                    this.tabState = 1;
+                if (tabState == 0) {
                     this.onTurnPointFunction()
                 } else {
-                    this.tabState = 0;
                     let msg = {}
                     msg.turntableId = appInstance.dataManager().getGameData().turntableId
                     msg.type = 1
                     appInstance.gameAgent().httpGame().ACCCPTAWARDSReq(msg)
                 }
             }
+            tabState = -1;
+
         },
 
 

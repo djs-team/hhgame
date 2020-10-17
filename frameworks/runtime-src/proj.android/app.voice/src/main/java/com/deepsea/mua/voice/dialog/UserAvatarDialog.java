@@ -236,8 +236,7 @@ public class UserAvatarDialog extends BaseDialog<DialogUserAvatarBinding> {
             ViewBindUtils.setVisible(mBinding.inviteNofreeTv, !microUser.isIsOnMicro());
             ViewBindUtils.setVisible(mBinding.closeMpTv, true);
             ViewBindUtils.setVisible(mBinding.forbiddenTv, true);
-            ViewBindUtils.setVisible(mBinding.inviteFreeTv, true);
-            ViewBindUtils.setVisible(mBinding.inviteNofreeTv, true);
+
             ViewBindUtils.setVisible(mBinding.blockTv, true);
             ViewBindUtils.setVisible(mBinding.removeRoom, true);
             ViewBindUtils.setVisible(mBinding.reportUserTv, true);
@@ -251,9 +250,8 @@ public class UserAvatarDialog extends BaseDialog<DialogUserAvatarBinding> {
             ViewBindUtils.setVisible(mBinding.inviteNofreeTv, !microUser.isIsOnMicro());
             ViewBindUtils.setVisible(mBinding.closeMpTv, true);
             ViewBindUtils.setVisible(mBinding.forbiddenTv, false);
-            ViewBindUtils.setVisible(mBinding.inviteFreeTv, false);
-            ViewBindUtils.setVisible(mBinding.inviteNofreeTv, false);
-            ViewBindUtils.setVisible(mBinding.blockTv, false);
+
+            ViewBindUtils.setVisible(mBinding.blockTv, true);
             ViewBindUtils.setVisible(mBinding.removeRoom, false);
             ViewBindUtils.setVisible(mBinding.reportUserTv, true);
             ViewBindUtils.setVisible(mBinding.addfriendTv, true);

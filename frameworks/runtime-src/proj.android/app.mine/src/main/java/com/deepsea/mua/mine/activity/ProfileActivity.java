@@ -375,22 +375,6 @@ public class ProfileActivity extends BaseActivity<ActivityProfileBinding> {
         shown |= setViewText(mBinding.houseTv, "住房情况  ", mProfile.getHousing_status());
         ViewBindUtils.setVisible(mBinding.infoTv, shown);
 
-        //征友条件
-        String friendAge = mProfile.getFriend_age();
-        if (TextUtils.isEmpty(friendAge)) {
-            mBinding.marriageConditionTv.setText("想要开启一段缘分。");
-        } else {
-            String ageRange = friendAge.replace(",", "-");
-            if (friendAge.contains(",") && friendAge.split(",").length == 2) {
-                String[] split = friendAge.split(",");
-                if (TextUtils.equals(split[0], split[1])) {
-                    ageRange = split[0];
-                }
-            }
-            mBinding.marriageConditionTv.setText(String.format(Locale.CHINA, "我想找%s岁的异性。", ageRange));
-        }
-
-
         //所在房间信息
         ProfileBean.RoomInfoBean roomInfo = result.getRoom_info();
         if (roomInfo != null && !TextUtils.isEmpty(roomInfo.getRoom_id())) {

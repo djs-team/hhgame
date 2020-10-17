@@ -236,178 +236,30 @@
                 "ctype": "ButtonObjectData"
               },
               {
-                "FontSize": 14,
-                "ButtonText": "",
-                "TextColor": {
-                  "R": 65,
-                  "G": 65,
-                  "B": 70
+                "ClipAble": false,
+                "BackColorAlpha": 102,
+                "SingleColor": {
+                  "R": 30,
+                  "G": 144
                 },
-                "DisabledFileData": {
-                  "Type": "Default",
-                  "Path": "Default/Button_Disable.png",
-                  "Plist": ""
+                "FirstColor": {
+                  "R": 150,
+                  "G": 200
                 },
-                "PressedFileData": {
-                  "Type": "Normal",
-                  "Path": "turntable/yjs_8.png",
-                  "Plist": ""
-                },
-                "NormalFileData": {
-                  "Type": "Normal",
-                  "Path": "turntable/yjs_8.png",
-                  "Plist": ""
-                },
-                "Scale9Enable": true,
-                "Scale9OriginX": 15,
-                "Scale9OriginY": 11,
-                "Scale9Width": 10,
-                "Scale9Height": 21,
-                "OutlineColor": {
-                  "G": 0,
-                  "B": 0
-                },
-                "ShadowColor": {
-                  "R": 110,
-                  "G": 110,
-                  "B": 110
-                },
-                "ShadowOffsetX": 2.0,
-                "ShadowOffsetY": -2.0,
-                "TouchEnable": true,
-                "AnchorPoint": {
-                  "ScaleX": 0.5,
-                  "ScaleY": 0.5
-                },
-                "Position": {
-                  "X": 1140.05,
-                  "Y": 676.05
-                },
-                "Scale": {
-                  "ScaleX": 1.0,
+                "EndColor": {},
+                "ColorVector": {
                   "ScaleY": 1.0
                 },
-                "CColor": {},
-                "IconVisible": false,
-                "PrePosition": {
-                  "X": 0.8907,
-                  "Y": 0.939
-                },
-                "PreSize": {
-                  "X": 0.0312,
-                  "Y": 0.0597
-                },
-                "LeftMargin": 1120.05,
-                "RightMargin": 119.95,
-                "TopMargin": 22.45,
-                "BottomMargin": 654.55,
-                "Tag": 261,
-                "Children": [
-                  {
-                    "FontSize": 20,
-                    "LabelText": "活动说明",
-                    "OutlineColor": {
-                      "G": 0,
-                      "B": 0
-                    },
-                    "ShadowColor": {
-                      "R": 110,
-                      "G": 110,
-                      "B": 110
-                    },
-                    "ShadowOffsetX": 2.0,
-                    "ShadowOffsetY": -2.0,
-                    "AnchorPoint": {
-                      "ScaleX": 0.5,
-                      "ScaleY": 0.5
-                    },
-                    "Position": {
-                      "X": 24.01,
-                      "Y": -9.79
-                    },
-                    "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
-                    },
-                    "CColor": {},
-                    "IconVisible": false,
-                    "PrePosition": {
-                      "X": 0.6003,
-                      "Y": -0.2277
-                    },
-                    "PreSize": {
-                      "X": 2.0,
-                      "Y": 0.4651
-                    },
-                    "LeftMargin": -15.99,
-                    "RightMargin": -24.01,
-                    "TopMargin": 42.79,
-                    "BottomMargin": -19.79,
-                    "Tag": 262,
-                    "ActionTag": -236244572,
-                    "Size": {
-                      "X": 80.0,
-                      "Y": 20.0
-                    },
-                    "Name": "Text_49",
-                    "ctype": "TextObjectData"
-                  }
-                ],
-                "ActionTag": 1477769825,
-                "Size": {
-                  "X": 40.0,
-                  "Y": 43.0
-                },
-                "Name": "explainBtn",
-                "ctype": "ButtonObjectData"
-              },
-              {
-                "FontSize": 14,
-                "ButtonText": "",
-                "TextColor": {
-                  "R": 65,
-                  "G": 65,
-                  "B": 70
-                },
-                "DisabledFileData": {
-                  "Type": "Default",
-                  "Path": "Default/Button_Disable.png",
-                  "Plist": ""
-                },
-                "PressedFileData": {
-                  "Type": "Normal",
-                  "Path": "turntable/yjs_9.png",
-                  "Plist": ""
-                },
-                "NormalFileData": {
-                  "Type": "Normal",
-                  "Path": "turntable/yjs_9.png",
-                  "Plist": ""
-                },
-                "Scale9Enable": true,
-                "Scale9OriginX": 15,
-                "Scale9OriginY": 11,
                 "Scale9Width": 1,
-                "Scale9Height": 18,
-                "OutlineColor": {
-                  "G": 0,
-                  "B": 0
-                },
-                "ShadowColor": {
-                  "R": 110,
-                  "G": 110,
-                  "B": 110
-                },
-                "ShadowOffsetX": 2.0,
-                "ShadowOffsetY": -2.0,
+                "Scale9Height": 1,
                 "TouchEnable": true,
                 "AnchorPoint": {
                   "ScaleX": 0.5,
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 1225.6899,
-                  "Y": 676.05
+                  "X": 1135.85,
+                  "Y": 669.0988
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -416,24 +268,47 @@
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.9576,
-                  "Y": 0.939
+                  "X": 0.8874,
+                  "Y": 0.9293
                 },
                 "PreSize": {
-                  "X": 0.0234,
-                  "Y": 0.0556
+                  "X": 0.0695,
+                  "Y": 0.1208
                 },
-                "LeftMargin": 1210.6899,
-                "RightMargin": 39.3101,
-                "TopMargin": 23.95,
-                "BottomMargin": 656.05,
-                "Tag": 264,
+                "LeftMargin": 1091.35,
+                "RightMargin": 99.65,
+                "TopMargin": 7.4012,
+                "BottomMargin": 625.5988,
+                "Tag": 325,
                 "Children": [
                   {
-                    "FontSize": 20,
-                    "LabelText": "奖励记录",
-                    "HorizontalAlignmentType": "HT_Center",
-                    "VerticalAlignmentType": "VT_Center",
+                    "FontSize": 14,
+                    "ButtonText": "",
+                    "TextColor": {
+                      "R": 65,
+                      "G": 65,
+                      "B": 70
+                    },
+                    "DisabledFileData": {
+                      "Type": "Default",
+                      "Path": "Default/Button_Disable.png",
+                      "Plist": ""
+                    },
+                    "PressedFileData": {
+                      "Type": "Normal",
+                      "Path": "turntable/yjs_8.png",
+                      "Plist": ""
+                    },
+                    "NormalFileData": {
+                      "Type": "Normal",
+                      "Path": "turntable/yjs_8.png",
+                      "Plist": ""
+                    },
+                    "Scale9Enable": true,
+                    "Scale9OriginX": 15,
+                    "Scale9OriginY": 11,
+                    "Scale9Width": 10,
+                    "Scale9Height": 21,
                     "OutlineColor": {
                       "G": 0,
                       "B": 0
@@ -450,8 +325,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 22.26,
-                      "Y": -9.79
+                      "X": 44.5,
+                      "Y": 43.5
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -459,35 +334,271 @@
                     },
                     "CColor": {},
                     "IconVisible": false,
+                    "PositionPercentXEnabled": true,
+                    "PositionPercentYEnabled": true,
                     "PrePosition": {
-                      "X": 0.742,
-                      "Y": -0.2447
-                    },
-                    "PreSize": {
-                      "X": 2.6667,
+                      "X": 0.5,
                       "Y": 0.5
                     },
-                    "LeftMargin": -17.74,
-                    "RightMargin": -32.26,
-                    "TopMargin": 39.79,
-                    "BottomMargin": -19.79,
-                    "Tag": 265,
-                    "ActionTag": -134009095,
-                    "Size": {
-                      "X": 80.0,
-                      "Y": 20.0
+                    "PreSize": {
+                      "X": 0.4494,
+                      "Y": 0.4943
                     },
-                    "Name": "Text_49",
-                    "ctype": "TextObjectData"
+                    "LeftMargin": 24.5,
+                    "RightMargin": 24.5,
+                    "TopMargin": 22.0,
+                    "BottomMargin": 22.0,
+                    "Tag": 261,
+                    "Children": [
+                      {
+                        "FontSize": 20,
+                        "LabelText": "活动说明",
+                        "OutlineColor": {
+                          "G": 0,
+                          "B": 0
+                        },
+                        "ShadowColor": {
+                          "R": 110,
+                          "G": 110,
+                          "B": 110
+                        },
+                        "ShadowOffsetX": 2.0,
+                        "ShadowOffsetY": -2.0,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 24.01,
+                          "Y": -9.79
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.6003,
+                          "Y": -0.2277
+                        },
+                        "PreSize": {
+                          "X": 2.0,
+                          "Y": 0.4651
+                        },
+                        "LeftMargin": -15.99,
+                        "RightMargin": -24.01,
+                        "TopMargin": 42.79,
+                        "BottomMargin": -19.79,
+                        "Tag": 262,
+                        "ActionTag": -236244572,
+                        "Size": {
+                          "X": 80.0,
+                          "Y": 20.0
+                        },
+                        "Name": "Text_49",
+                        "ctype": "TextObjectData"
+                      }
+                    ],
+                    "ActionTag": 1477769825,
+                    "Size": {
+                      "X": 40.0,
+                      "Y": 43.0
+                    },
+                    "Name": "explainBtn",
+                    "ctype": "ButtonObjectData"
                   }
                 ],
-                "ActionTag": 943879892,
+                "ActionTag": -1251982192,
                 "Size": {
-                  "X": 30.0,
-                  "Y": 40.0
+                  "X": 89.0,
+                  "Y": 87.0
                 },
-                "Name": "recordBtn",
-                "ctype": "ButtonObjectData"
+                "Name": "explainPnl",
+                "ctype": "PanelObjectData"
+              },
+              {
+                "ClipAble": false,
+                "BackColorAlpha": 102,
+                "SingleColor": {
+                  "R": 30,
+                  "G": 144
+                },
+                "FirstColor": {
+                  "R": 150,
+                  "G": 200
+                },
+                "EndColor": {},
+                "ColorVector": {
+                  "ScaleY": 1.0
+                },
+                "Scale9Width": 1,
+                "Scale9Height": 1,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 1226.85,
+                  "Y": 669.1
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.9585,
+                  "Y": 0.9293
+                },
+                "PreSize": {
+                  "X": 0.0648,
+                  "Y": 0.1139
+                },
+                "LeftMargin": 1185.35,
+                "RightMargin": 11.65,
+                "TopMargin": 9.9,
+                "BottomMargin": 628.1,
+                "Tag": 326,
+                "Children": [
+                  {
+                    "FontSize": 14,
+                    "ButtonText": "",
+                    "TextColor": {
+                      "R": 65,
+                      "G": 65,
+                      "B": 70
+                    },
+                    "DisabledFileData": {
+                      "Type": "Default",
+                      "Path": "Default/Button_Disable.png",
+                      "Plist": ""
+                    },
+                    "PressedFileData": {
+                      "Type": "Normal",
+                      "Path": "turntable/yjs_9.png",
+                      "Plist": ""
+                    },
+                    "NormalFileData": {
+                      "Type": "Normal",
+                      "Path": "turntable/yjs_9.png",
+                      "Plist": ""
+                    },
+                    "Scale9Enable": true,
+                    "Scale9OriginX": 15,
+                    "Scale9OriginY": 11,
+                    "Scale9Width": 1,
+                    "Scale9Height": 18,
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 36.5,
+                      "Y": 41.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PositionPercentYEnabled": true,
+                    "PrePosition": {
+                      "X": 0.4398,
+                      "Y": 0.5
+                    },
+                    "PreSize": {
+                      "X": 0.3614,
+                      "Y": 0.4878
+                    },
+                    "LeftMargin": 21.5,
+                    "RightMargin": 31.5,
+                    "TopMargin": 21.0,
+                    "BottomMargin": 21.0,
+                    "Tag": 264,
+                    "Children": [
+                      {
+                        "FontSize": 20,
+                        "LabelText": "奖励记录",
+                        "HorizontalAlignmentType": "HT_Center",
+                        "VerticalAlignmentType": "VT_Center",
+                        "OutlineColor": {
+                          "G": 0,
+                          "B": 0
+                        },
+                        "ShadowColor": {
+                          "R": 110,
+                          "G": 110,
+                          "B": 110
+                        },
+                        "ShadowOffsetX": 2.0,
+                        "ShadowOffsetY": -2.0,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 22.26,
+                          "Y": -9.79
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.742,
+                          "Y": -0.2447
+                        },
+                        "PreSize": {
+                          "X": 2.6667,
+                          "Y": 0.5
+                        },
+                        "LeftMargin": -17.74,
+                        "RightMargin": -32.26,
+                        "TopMargin": 39.79,
+                        "BottomMargin": -19.79,
+                        "Tag": 265,
+                        "ActionTag": -134009095,
+                        "Size": {
+                          "X": 80.0,
+                          "Y": 20.0
+                        },
+                        "Name": "Text_49",
+                        "ctype": "TextObjectData"
+                      }
+                    ],
+                    "ActionTag": 943879892,
+                    "Size": {
+                      "X": 30.0,
+                      "Y": 40.0
+                    },
+                    "Name": "recordBtn",
+                    "ctype": "ButtonObjectData"
+                  }
+                ],
+                "ActionTag": -2054814827,
+                "Size": {
+                  "X": 83.0,
+                  "Y": 82.0
+                },
+                "Name": "recordPnl",
+                "ctype": "PanelObjectData"
               }
             ],
             "ActionTag": -714863044,
@@ -531,7 +642,7 @@
               "Y": 0.1555
             },
             "PreSize": {
-              "X": 0.1562,
+              "X": 0.1563,
               "Y": 0.725
             },
             "LeftMargin": 1077.3888,
@@ -4083,7 +4194,7 @@
                       "Y": 0.4947
                     },
                     "PreSize": {
-                      "X": 0.1562,
+                      "X": 0.1563,
                       "Y": 0.2778
                     },
                     "LeftMargin": 258.912,

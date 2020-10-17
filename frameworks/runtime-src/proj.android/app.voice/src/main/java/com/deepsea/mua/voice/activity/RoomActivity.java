@@ -301,6 +301,7 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
                     mViewModel.notifySongLyricToClientParam(m);
                     int pos = AgoraClient.create().rtcEngine().getAudioMixingCurrentPosition();
                     int max = AgoraClient.create().rtcEngine().getAudioMixingDuration();
+                    Log.d("msg_send_lyric", pos + ":" + max);
                     EventBus.getDefault().post(new SyncSongProgressEvent(pos, max));
                     if (lrcDialog != null) {
                         lrcDialog.setLrcProcess(pos, max);
@@ -658,6 +659,7 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
             //获取歌曲播放的位置
             int currentPosition = AgoraClient.create().rtcEngine().getAudioMixingCurrentPosition();
             int max = AgoraClient.create().rtcEngine().getAudioMixingDuration();
+            Log.d("msg_send_lyric", "LrcTask:" + currentPosition + "," + max);
             sendLyc(currentPosition);
             boolean tioajian1 = currentPosition >= max - 5000;
             boolean tioajian2 = currentPosition != 0 && max != 0;
@@ -1026,7 +1028,6 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
             Log.d("initSecondRoom", JsonConverter.toJson(mRoomModel.getMicros().get(0)));
             mBinding.mainSecondOneView.setMicroData(mRoomModel.getHostMicro());
             mBinding.mainSecondTwoView.setMicroData(mRoomModel.getMicros().get(0));
-
             Log.d("initSecondRoom", String.valueOf(mRoomModel.getHostMicro().getUser() == null));
 
             if (mRoomModel.getHostMicro().getUser() == null) {
@@ -1046,9 +1047,11 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
             if (SongStateUtils.getSingleton2().getConsertUserId().equals(hostUser.getUserId())) {
                 singerInfo = mRoomModel.getHostMicro();
                 guestInfo = mRoomModel.getMicros().get(0);
+
             } else {
                 guestInfo = mRoomModel.getHostMicro();
                 singerInfo = mRoomModel.getMicros().get(0);
+
             }
 
             mBinding.mainSecondOneMusicView.setMicroData(guestInfo);
@@ -1209,6 +1212,9 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
                 boolean isRoomOwner = MatchMakerUtils.isRoomOwner();
                 if (isRoomOwner) {
                     showMicManageDialog(10 - inMicroManNum);
+                } else {
+                    showMicroManageDialog(1);
+
                 }
             }
         }
@@ -1251,8 +1257,8 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
         public void downMicro(String userId, int level, int number) {
             if (MatchMakerUtils.isRoomOwner() && !UserUtils.getUser().getUid().equals(userId)) {
                 //红娘强制别人下麦
-                ToastUtils.showToast("功能待定");
-//                mViewModel.downMicro(level, number);
+//                ToastUtils.showToast("功能待定");
+                mViewModel.downMicro(level, number);
             } else {
                 //主动下麦
                 showAudience();
@@ -1430,8 +1436,8 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
 
                     if (MatchMakerUtils.isRoomOwner() && !UserUtils.getUser().getUid().equals(userId)) {
                         //红娘强制别人下麦
-//                        mViewModel.downMicro(level, number);
-                        ToastUtils.showToast("功能待定");
+                        mViewModel.downMicro(level, number);
+//                        ToastUtils.showToast("功能待定");
                     } else {
                         showAudience();
                     }
@@ -1718,7 +1724,22 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
 
             @Override
             public void onRemove(String uid) {
-                mViewModel.removeRoom(uid);
+                AAlertDialog removeDialog = new AAlertDialog(mContext);
+                removeDialog.setMessage("是否将该用户移除房间？");
+                removeDialog.setLeftButton("取消", new AAlertDialog.OnClickListener() {
+                    @Override
+                    public void onClick(View v, Dialog dialog) {
+                        removeDialog.dismiss();
+                    }
+                });
+                removeDialog.setRightButton("确定", new AAlertDialog.OnClickListener() {
+                    @Override
+                    public void onClick(View v, Dialog dialog) {
+                        mViewModel.removeRoom(uid);
+                        removeDialog.dismiss();
+                    }
+                });
+                removeDialog.show();
             }
 
             @Override
@@ -1804,14 +1825,20 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
             public void blockUser(String uid, boolean isBlock) {
                 AAlertDialog aAlertDialog = new AAlertDialog(mContext);
                 aAlertDialog.setTitle("拉黑对方");
-                aAlertDialog.setMessage("拉黑对方后，将无法再接收到Ta的任何消息。");
-                aAlertDialog.setLeftButton("确定", new AAlertDialog.OnClickListener() {
+                String msgDesc = "";
+                if (isBlock) {
+                    msgDesc = "拉黑对方后，将无法再接收到Ta的任何消息。";
+                } else {
+                    msgDesc = "是否取消拉黑该用户";
+                }
+                aAlertDialog.setMessage(msgDesc);
+                aAlertDialog.setLeftButton("取消", new AAlertDialog.OnClickListener() {
                     @Override
                     public void onClick(View v, Dialog dialog) {
                         aAlertDialog.dismiss();
                     }
                 });
-                aAlertDialog.setRightButton("取消", new AAlertDialog.OnClickListener() {
+                aAlertDialog.setRightButton("确定", new AAlertDialog.OnClickListener() {
                     @Override
                     public void onClick(View v, Dialog dialog) {
                         if (isBlock) {
@@ -1819,6 +1846,7 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
                         } else {
                             blackout(uid);
                         }
+                        aAlertDialog.dismiss();
                     }
                 });
                 aAlertDialog.show();
@@ -2647,6 +2675,7 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
                 }
                 mLrcView.seekLrcToTime(currentPosition);
                 LrcRow currentLrc = mLrcView.getCurrentLrc();
+                Log.d("msg_send_lyric", "sendLyc" + JsonConverter.toJson(currentLrc));
                 if (currentLrc != null) {
                     LrcRow copyCurrentLrc = new LrcRow();
                     LrcRow nextLrc = mLrcView.getNextLrc();
@@ -2662,7 +2691,7 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
                     copyCurrentLrc.setSongEndTime(currentLrc.getSongEndTime());
                     copyCurrentLrc.setStartTime(currentLrc.getStartTime());
                     copyCurrentLrc.setStartTimeString(currentLrc.getStartTimeString());
-                    sendLyRicFlag = 0;
+//                    sendLyRicFlag = 0;
                     int max = AgoraClient.create().rtcEngine().getAudioMixingDuration();
 
                     copyCurrentLrc.currentTime = currentPosition;
@@ -2681,21 +2710,21 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
                         mHandler.sendMessageDelayed(message, 1500);
                     }
                 } else {
-                    sendLyRicFlag++;
-                    if (sendLyRicFlag <= 30) {
-                        LrcRow lrcRow = new LrcRow();
-                        lrcRow.content = mySongName;
-                        Message message = Message.obtain();
-                        message.what = msg_send_lyric;
-                        message.obj = JsonConverter.toJson(lrcRow);
-                        if (mHandler != null) {
-                            mHandler.sendMessageDelayed(message, 1500);
-                        }
-                        List<LrcRow> rows = setSongLric(mySongName);
-                        if (rows != null && rows.size() > 0) {
-                            setLyricSetting(rows);
-                        }
+//                    sendLyRicFlag++;
+//                    if (sendLyRicFlag <= 30) {
+                    LrcRow lrcRow = new LrcRow();
+                    lrcRow.content = mySongName;
+                    Message message = Message.obtain();
+                    message.what = msg_send_lyric;
+                    message.obj = JsonConverter.toJson(lrcRow);
+                    if (mHandler != null) {
+                        mHandler.sendMessageDelayed(message, 1500);
                     }
+                    List<LrcRow> rows = setSongLric(mySongName);
+                    if (rows != null && rows.size() > 0) {
+                        setLyricSetting(rows);
+                    }
+//                    }
                 }
             }
         });
@@ -3678,21 +3707,59 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
                     continue;
                 }
                 String animation = present.getGiftData() != null ? present.getGiftData().getAnimation() : "";
-                if (mainMpInfo != null && micro.getLevel() == mainMpInfo.getType()) {
-                    initMainAnim(animation);
-                    continue;
-                }
-                int itemPos = -1;
-                for (int i = 0; i < mMpAdapter.getData().size(); i++) {
-                    if (micro.getLevel() == mMpAdapter.getData().get(i).getType()) {
-                        itemPos = i;
+                if (mJoinRoom.getRoomMode() != 9) {
+
+
+                    if (mainMpInfo != null && micro.getLevel() == mainMpInfo.getType()) {
+                        initMainAnim(animation);
+                        continue;
                     }
-                }
-                if (itemPos != -1) {
-                    mMpAdapter.onGiftAnima(itemPos, animation);
+                    int itemPos = -1;
+                    for (int i = 0; i < mMpAdapter.getData().size(); i++) {
+                        if (micro.getLevel() == mMpAdapter.getData().get(i).getType()) {
+                            itemPos = i;
+                        }
+                    }
+                    if (itemPos != -1) {
+                        mMpAdapter.onGiftAnima(itemPos, animation);
+                    }
+                } else {
+                    initSecondMainMp(micro.getLevel(), animation);
                 }
             }
         }
+    }
+
+    private void initSecondMainMp(int level, String gifUrl) {
+        if (!isChangeView) {
+            RoomData.MicroInfosBean hostMp = mRoomModel.getHostMicro();
+            RoomData.MicroInfosBean guestMp = mRoomModel.getMicros().get(0);
+            if (hostMp != null && level == hostMp.getType()) {
+                mBinding.animSecondOneIv.loadNormalAnim(gifUrl);
+            }
+            if (guestMp != null && level == guestMp.getType()) {
+                mBinding.animSecondTwoIv.loadNormalAnim(gifUrl);
+            }
+        } else {
+            RoomData.MicroInfosBean singerInfo = null;
+            RoomData.MicroInfosBean guestInfo = null;
+            WsUser hostUser = mRoomModel.getHostMicro().getUser();
+            Log.d("music", SongStateUtils.getSingleton2().getConsertUserId() + songInfo.getConsertUserId() + singerUserId + ";" + hostUser.getUserId());
+            if (SongStateUtils.getSingleton2().getConsertUserId().equals(hostUser.getUserId())) {
+                singerInfo = mRoomModel.getHostMicro();
+                guestInfo = mRoomModel.getMicros().get(0);
+            } else {
+                guestInfo = mRoomModel.getHostMicro();
+                singerInfo = mRoomModel.getMicros().get(0);
+            }
+            if (singerInfo != null && singerInfo.getType() == level) {
+                mBinding.animSecondTwoMusicIv.loadNormalAnim(gifUrl);
+            }
+            if (guestInfo != null && guestInfo.getType() == level) {
+                mBinding.animSecondOneMusicIv.loadNormalAnim(gifUrl);
+            }
+        }
+
     }
 
     /*-------------------------------------------------------------------------------------*/

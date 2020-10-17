@@ -22,7 +22,7 @@ import java.util.List;
 public class GuardRenewDialog extends BaseDialog<DialogGuardRenewBinding> {
 
     public interface OnClickListener {
-        public void onClickOk(int payType, String coin, String chargeId,String guard_id,String long_day);
+        public void onClickOk(int payType, String coin, String chargeId, String guard_id, String long_day);
     }
 
     private OnClickListener onClickListener;
@@ -42,12 +42,12 @@ public class GuardRenewDialog extends BaseDialog<DialogGuardRenewBinding> {
     private String charge_id;
 
     public void setData(RenewInitVo vo) {
-        String endTime = TimeUtils.addTime(720);
+        String endTime = TimeUtils.addTime(720, vo.getEtime());
         payCoin = vo.getData().get(0).getCoin();
         guard_id = vo.getData().get(0).getId();
         charge_id = vo.getData().get(0).getCharge_id();
         long_day = String.valueOf(Integer.valueOf(vo.getData().get(0).getLong_time()) / 24);
-       List payTypes= StringUtils.extractMessageByRegular(vo.getData().get(0).getPaytype());
+        List payTypes = StringUtils.extractMessageByRegular(vo.getData().get(0).getPaytype());
         showPay(payTypes);
         ViewBindUtils.setText(mBinding.tvEndtime, "守护到期时间：" + endTime);
         ViewBindUtils.setText(mBinding.tvGuardName, vo.getNickname() + "(" + vo.getId() + ")");
@@ -56,14 +56,14 @@ public class GuardRenewDialog extends BaseDialog<DialogGuardRenewBinding> {
         mBinding.rvRenewDay.setAdapter(adapter);
         adapter.setOnMyListener(new GuardRenewSetmealAdapter.OnMyClickListener() {
             @Override
-            public void onChecked(int pos,int hour, String coin,String guardId,String chargeId,String paytypeStr) {
+            public void onChecked(int pos, int hour, String coin, String guardId, String chargeId, String paytypeStr) {
                 payCoin = coin;
                 guard_id = guardId;
-                charge_id =chargeId;
+                charge_id = chargeId;
                 long_day = String.valueOf(hour / 24);
-               List<String> payTypes= StringUtils.extractMessageByRegular(paytypeStr);
+                List<String> payTypes = StringUtils.extractMessageByRegular(paytypeStr);
                 showPay(payTypes);
-                String endTime = TimeUtils.addTime(hour);
+                String endTime = TimeUtils.addTime(hour, vo.getEtime());
                 ViewBindUtils.setText(mBinding.tvEndtime, "守护到期时间：" + endTime);
 
             }
@@ -75,7 +75,7 @@ public class GuardRenewDialog extends BaseDialog<DialogGuardRenewBinding> {
     /**
      * 支持方式  微信支付宝的显示隐藏
      */
-    private void showPay(List<String> payTypes){
+    private void showPay(List<String> payTypes) {
         if (payTypes != null) {
             if (payTypes.size() == 2) {
                 ViewBindUtils.setVisible(mBinding.llPayAlipay, true);
@@ -121,7 +121,7 @@ public class GuardRenewDialog extends BaseDialog<DialogGuardRenewBinding> {
                     } else {
                         payType = 1;
                     }
-                    onClickListener.onClickOk(payType, payCoin, charge_id,guard_id,long_day);
+                    onClickListener.onClickOk(payType, payCoin, charge_id, guard_id, long_day);
                 }
                 dismiss();
             }

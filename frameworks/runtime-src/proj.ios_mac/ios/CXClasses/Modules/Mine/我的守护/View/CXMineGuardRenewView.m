@@ -7,6 +7,7 @@
 
 #import "CXMineGuardRenewView.h"
 #import "CXMineGuardRenewItemCell.h"
+#import "NSDate+CXCategory.h"
 
 @interface CXMineGuardRenewView() <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
@@ -26,6 +27,8 @@
 @property (nonatomic, assign) BOOL is_shouhu; // 是否是该用户的守护1:是 2:不是
 
 @property (nonatomic, strong) NSString *action;
+
+@property (nonatomic, assign) NSInteger end_time; // 守护截止时间戳
 
 @end
 
@@ -75,8 +78,14 @@
                 weakSelf.automaticBtn.hidden = YES;
             }
             weakSelf.guardUserLabel.text = [NSString stringWithFormat:@"%@(ID:%@)",responseObject[@"data"][@"nickname"], weakSelf.userId];
-//             self.timeLabel.text = [NSString stringWithFormat:@"守护到期时间：%@", user.end_time];
-            weakSelf.timeLabel.text = @"";
+            weakSelf.end_time = [responseObject[@"data"][@"etime"] integerValue];
+            if (weakSelf.end_time > 0) {
+                weakSelf.end_time = weakSelf.end_time*1000;
+                self.timeLabel.text = [NSString stringWithFormat:@"守护到期时间：%@", [NSDate getDateStringWithTimestamp:weakSelf.end_time formatter:@"yyyy年MM月dd日 HH:mm"]];
+            } else {
+                weakSelf.timeLabel.text = @"";
+            }
+            
             [weakSelf.mainTableView reloadData];
         }
     }];
@@ -116,6 +125,16 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     _currentModel = self.itemArrays[indexPath.row];
     [self.mainTableView reloadData];
+    
+    NSInteger hour = [_currentModel.long_time integerValue];
+    NSInteger totalTime = hour * 3600 * 1000;
+    if (self.end_time > 0) {
+        totalTime = totalTime + self.end_time;
+    } else {
+        totalTime = totalTime + [NSDate currentTimeInterval];
+    }
+    
+    self.timeLabel.text = [NSString stringWithFormat:@"守护到期时间：%@", [NSDate getDateStringWithTimestamp:totalTime formatter:@"yyyy年MM月dd日 HH:mm"]];
 }
 
 - (IBAction)automaticAction:(UIButton *)sender {

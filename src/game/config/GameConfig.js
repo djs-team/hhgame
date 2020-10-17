@@ -325,7 +325,7 @@ load('game/config/GameConfig', function () {
                 ,
                 '6': {
                     'name': '花木兰',
-                    'currency': 'res/turntable/zphd_28.png',
+                    'currency': 'res/turntable/zphd_24.png',
                 }
 
                 ,

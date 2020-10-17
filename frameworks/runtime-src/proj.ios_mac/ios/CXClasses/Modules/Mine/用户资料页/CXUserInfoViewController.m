@@ -80,6 +80,9 @@
             CXUserModel *user = [CXUserModel modelWithJSON:responseObject[@"data"][@"user_info"]];
             weakSelf.currentUser = user;
             
+            CXUserCurrentRoomModel *room_info = [CXUserCurrentRoomModel modelWithJSON:responseObject[@"data"][@"room_info"]];
+            weakSelf.currentUser.room_info = room_info;
+            
             weakSelf.giftArrays = [NSArray modelArrayWithClass:[CXFriendGiftModel class] json:responseObject[@"data"][@"rank_gift"]];
             
             weakSelf.titleLabel.text = user.nickname;
@@ -146,7 +149,7 @@
     } else if (indexPath.section == _currentRoomSectionIndex) {
         CXUserInfoCurrentRoomCell *infoCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CXUserInfoCurrentRoomCellID" forIndexPath:indexPath];
         [infoCell.room_Icon sd_setImageWithURL:[NSURL URLWithString:_currentUser.room_info.avatar]];
-        infoCell.room_name.text=_currentUser.room_info.room_name;
+        infoCell.room_name.text = _currentUser.room_info.room_name;
         return infoCell;
     } else if (indexPath.section == _giftSectionIndex) {
         CXUserInfoGiftCell *infoCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CXUserInfoGiftCellID" forIndexPath:indexPath];

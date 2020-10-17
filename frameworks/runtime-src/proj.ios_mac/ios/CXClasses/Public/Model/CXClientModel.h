@@ -17,7 +17,7 @@
 #import "DDAudioLRCParser.h"
 
 typedef NS_ENUM(NSUInteger, GameUserIdentity) {
-    GameUserIdentityNormal,
+    GameUserIdentityNormal = 0,
     GameUserIdentityManager,
     GameUserIdentityOwner,
     GameUserIdentityAdmin,

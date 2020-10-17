@@ -170,6 +170,7 @@ load('game/public/HttpGame', function () {
         },
 
         requestBack: function (msg) {
+            cc.log('---http msg back------>>> ' + JSON.stringify(msg))
             if (msg.code !== 0) {
                 cc.log('----requestBack--------->>>httpGame error happen===' + JSON.stringify(msg))
                 return

@@ -141,6 +141,7 @@ load('game/public/GameAgent', function () {
                     this._loginOk = false
                     let LoginScene = include('game/ui/scene/LoginScene')
                     appInstance.sceneManager().replaceScene(new LoginScene())
+                    TcpClient.disconnect()
                 }
             }
         },

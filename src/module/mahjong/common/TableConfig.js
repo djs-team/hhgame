@@ -36,6 +36,10 @@ load('module/mahjong/common/TableConfig', function () {
         'zhaoyuan': {
             allCardNum: 112,
             deckCardLen: 14
+        },
+        'daqing': {
+            allCardNum: 112,
+            deckCardLen: 14
         }
     }
 

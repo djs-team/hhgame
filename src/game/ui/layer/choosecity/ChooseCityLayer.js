@@ -22,7 +22,7 @@ load('game/ui/layer/choosecity/ChooseCityLayer', function () {
         _city: [
             { name: '黑龙江省', cell: [
                     { name: '肇源麻将', _sendMsg: {channel: 10047}},
-                    { name: '大庆麻将', _sendMsg: {channel: 10047}}
+                    { name: '大庆麻将', _sendMsg: {channel: 10001}}
                 ] }
         ],
         ctor: function (data) {

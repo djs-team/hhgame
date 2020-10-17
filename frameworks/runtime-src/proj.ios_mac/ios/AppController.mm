@@ -470,9 +470,46 @@ static AppDelegate s_sharedApplication;
 #pragma mark - ================ QRCode ===================
 /// 生成二维码
 /// @param codeString 二维码字符串
-+ (void)createQRCodeImageWithString:(nonnull NSString *)codeString method:(NSString *_Nonnull)method {
-    UIImage *tempImage = [WSLNativeScanTool createQRCodeImageWithString:codeString andSize:CGSizeMake(200, 200) andBackColor:[UIColor whiteColor] andFrontColor:[UIColor blackColor] andCenterImage:nil];
++ (CIImage *)creatQRcodeWithUrlstring:(NSString *)urlString{
+    
+    // 1.实例化二维码滤镜
+    CIFilter *filter = [CIFilter filterWithName:@"CIQRCodeGenerator"];
+    // 2.恢复滤镜的默认属性 (因为滤镜有可能保存上一次的属性)
+    [filter setDefaults];
+    // 3.将字符串转换成NSdata
+    NSData *data  = [urlString dataUsingEncoding:NSUTF8StringEncoding];
+    // 4.通过KVO设置滤镜, 传入data, 将来滤镜就知道要通过传入的数据生成二维码
+    [filter setValue:data forKey:@"inputMessage"];
+    // 5.生成二维码
+    CIImage *outputImage = [filter outputImage];
+    return outputImage;
+}
++ (UIImage *)createNonInterpolatedUIImageFormCIImage:(CIImage *)image withSize:(CGFloat) size
+{
+    CGRect extent = CGRectIntegral(image.extent);
+    CGFloat scale = MIN(size/CGRectGetWidth(extent), size/CGRectGetHeight(extent));
+    
+    // 1.创建bitmap;
+    size_t width = CGRectGetWidth(extent) * scale;
+    size_t height = CGRectGetHeight(extent) * scale;
+    CGColorSpaceRef cs = CGColorSpaceCreateDeviceGray();
+    CGContextRef bitmapRef = CGBitmapContextCreate(nil, width, height, 8, 0, cs, (CGBitmapInfo)kCGImageAlphaNone);
+    CIContext *context = [CIContext contextWithOptions:nil];
+    CGImageRef bitmapImage = [context createCGImage:image fromRect:extent];
+    CGContextSetInterpolationQuality(bitmapRef, kCGInterpolationNone);
+    CGContextScaleCTM(bitmapRef, scale, scale);
+    CGContextDrawImage(bitmapRef, extent, bitmapImage);
+    
+    // 2.保存bitmap到图片
+    CGImageRef scaledImage = CGBitmapContextCreateImage(bitmapRef);
+    CGContextRelease(bitmapRef);
+    CGImageRelease(bitmapImage);
+    return [UIImage imageWithCGImage:scaledImage];
+}
 
++ (void)createQRCodeImageWithString:(nonnull NSString *)codeString method:(NSString *_Nonnull)method {
+//    UIImage *tempImage = [WSLNativeScanTool createQRCodeImageWithString:codeString andSize:CGSizeMake(200, 200) andBackColor:[UIColor whiteColor] andFrontColor:[UIColor blackColor] andCenterImage:nil];
+    UIImage *tempImage = [self createNonInterpolatedUIImageFormCIImage:[self creatQRcodeWithUrlstring:codeString] withSize:150];
     //图片保存路径
     //这里将图片放在沙盒的documents/image文件夹中
     NSString *documentsPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
@@ -481,7 +518,7 @@ static AppDelegate s_sharedApplication;
     //文件管理器
     NSFileManager *fileManager = [NSFileManager defaultManager];
     //生成唯一字符串
-    NSString *uuid = [[NSUUID UUID]UUIDString];
+    NSString *uuid = [[NSUUID UUID] UUIDString];
     //生成文件名
     NSString *fileName = [NSString stringWithFormat:@"%@.png",uuid];
 
@@ -491,7 +528,7 @@ static AppDelegate s_sharedApplication;
     /************************************************/
 
     [fileManager createDirectoryAtPath:imgPath withIntermediateDirectories:YES attributes:nil error:nil];
-    NSData *data = UIImageJPEGRepresentation(tempImage, 1);
+    NSData *data = UIImageJPEGRepresentation(tempImage, 0.5);
     [fileManager createFileAtPath:[imgPath stringByAppendingPathComponent:fileName] contents:data attributes:nil];
 
     //得到选择后沙盒中图片的完整路径
@@ -500,54 +537,6 @@ static AppDelegate s_sharedApplication;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [AppController dispatchCustomEventWithMethod:method param:filePath];
     });
-    
-//
-//    UIGraphicsBeginImageContext(tempImage.size);
-//    //  绘制二维码图片
-//    [tempImage drawInRect:CGRectMake(0, 0, tempImage.size.width, tempImage.size.height)];
-//    //  从图片上下文中取出图片
-//    tempImage  = UIGraphicsGetImageFromCurrentImageContext();
-//    //  关闭图片上下文
-//    UIGraphicsEndImageContext();
-//
-//    NSString *identifier = @"09998B56-1729-48B6-9239-BE76028A69F1/L0/001";
-//    NSMutableArray *imageIds = [NSMutableArray array];
-//    [imageIds addObject:identifier];
-//    [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
-//        //写入图片到相册
-//        PHAssetChangeRequest *req = [PHAssetChangeRequest creationRequestForAssetFromImage:tempImage];
-//        //记录本地标识，等待完成后取到相册中的图片对象
-//        [imageIds addObject:req.placeholderForCreatedAsset.localIdentifier];
-//    } completionHandler:^(BOOL success, NSError * _Nullable error) {
-//        NSLog(@"success = %d, error = %@", success, error);
-//        if (success) {
-            //成功后取相册中的图片对象
-//            __block PHAsset *imageAsset = nil;
-//            PHFetchResult *result = [PHAsset fetchAssetsWithLocalIdentifiers:imageIds options:nil];
-//            [result enumerateObjectsUsingBlock:^(PHAsset * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-//                imageAsset = obj;
-//                *stop = YES;
-//            }];
-//
-//            if (imageAsset) {
-//
-//                NSArray *resources = [PHAssetResource assetResourcesForAsset:imageAsset];
-//                PHAssetResource *first = resources.firstObject;
-//                if (first) {
-//
-//                }
-                
-
-//                //加载图片数据
-//                [[PHImageManager defaultManager] requestImageDataForAsset:imageAsset
-//                  options:nil
-//                  resultHandler:^(NSData * _Nullable imageData, NSString * _Nullable dataUTI, UIImageOrientation orientation, NSDictionary * _Nullable info) {
-//
-//                    NSLog(@"%@", info);
-//                  }];
-//            }
-//        }
-//    }];
 }
 
 #pragma mark - ================ 广告 ===================
@@ -765,8 +754,8 @@ UIInterfaceOrientationMask oMask = UIInterfaceOrientationMaskLandscape;
         return;
     }
     [[CXClientModel instance] joinRoom:roomId callback:^(NSString * _Nonnull roomId, BOOL success) {
+        [MBProgressHUD hideHUD];
         if (success) {
-            [MBProgressHUD hideHUD];
             UIViewController *vc = [CXTools currentViewController];
             CXLiveRoomViewController *roomVC = [CXLiveRoomViewController new];
             CXBaseNavigationController *nav = [[CXBaseNavigationController alloc] initWithRootViewController:roomVC];

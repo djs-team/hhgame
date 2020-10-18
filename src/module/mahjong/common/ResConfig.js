@@ -17,6 +17,7 @@ load('module/mahjong/common/ResConfig', function () {
       DeskBgLayer: PrefixPath.codePath + 'ui/DeskBgLayer',
       DeskCardLayer: PrefixPath.codePath + 'ui/DeskCardLayer',
       DeskHeadLayer: PrefixPath.codePath + 'ui/DeskHeadLayer',
+      EffectLayer: PrefixPath.codePath + 'ui/EffectLayer',
       MatchBigResultLayer: PrefixPath.codePath + 'ui/MatchBigResultLayer',
       MatchJinjiLayer: PrefixPath.codePath + 'ui/MatchJinjiLayer',
       MatchResultLayer: PrefixPath.codePath + 'ui/MatchResultLayer',
@@ -31,6 +32,7 @@ load('module/mahjong/common/ResConfig', function () {
       DeskCardLayer: PrefixPath.resPath + 'DeskCardLayer.json',
       DeskHeadLayer: PrefixPath.resPath + 'DeskHeadLayer.json',
       DeskTopLayer: PrefixPath.resPath + 'DeskTopLayer.json',
+      EffectLayer: PrefixPath.resPath + 'EffectLayer.json',
       DeskResultLayer: PrefixPath.resPath + 'DeskResultLayer.json',
       MatchBigResultLayer: PrefixPath.resPath + 'MatchBigResultLayer.json',
       MatchJinjiLayer: PrefixPath.resPath + 'MatchJinjiLayer.json',
@@ -57,14 +59,34 @@ load('module/mahjong/common/ResConfig', function () {
     /**
      * 一些声音配置
      */
-    sound: {
+    Sound: {
+      path: PrefixPath.resPath + 'sound/',
       play: {
-        fapai: PrefixPath.resPath + 'sound/process/fapai.mp3',
-        naozhong: PrefixPath.resPath + 'sound/process/naozhong.mp3',
-        shengyizhang: PrefixPath.resPath + 'sound/process/shengyizhang.mp3',
-        buyao1: PrefixPath.resPath + 'sound/process/buyao1.mp3',
-        buyao2: PrefixPath.resPath + 'sound/process/buyao2.mp3',
-        buyao3: PrefixPath.resPath + 'sound/process/buyao3.mp3'
+        hu: [
+          'hu_wohule',
+          'hu_biedong',
+        ],
+        hu_zimo: [
+          'hu_zimo'
+        ],
+        hu_mobao:[
+          'hu_mobao'
+        ],
+        hu_baozhongbao:[
+          'hu_baozhongbao'
+        ],
+        hu_loubao:[
+          'hu_loubao'
+        ],
+        ting:[
+          'ting_kou',
+          'ting_wotingle'
+        ],
+        lose: [
+          'lose_junzibaochou',
+          'lose_taibeile',
+          'lose_yibuxiaoxin'
+        ]
       },
       cardtype: {
         feiji: PrefixPath.resPath + 'sound/card/special/feiji.mp3',
@@ -73,11 +95,6 @@ load('module/mahjong/common/ResConfig', function () {
         sandaiyidui: PrefixPath.resPath + 'sound/card/special/sandaiyidui.mp3',
         shunzi: PrefixPath.resPath + 'sound/card/special/shunzi.mp3',
         zhadan: PrefixPath.resPath + 'sound/card/special/zhadan.mp3'
-      },
-      path: {
-        one: PrefixPath.resPath + 'sound/card/one/',
-        two: PrefixPath.resPath + 'sound/card/two/',
-        three: PrefixPath.resPath + 'sound/card/three/'
       }
     }
   }

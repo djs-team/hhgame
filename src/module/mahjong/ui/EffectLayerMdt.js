@@ -1,16 +1,18 @@
 
 /**
- *  DeskHeadLayerMdt Mediator
+ *  EffectLayerMdt Mediator
  *
  */
-load('module/mahjong/ui/DeskTopLayerMdt', function () {
+load('module/mahjong/ui/EffectLayerMdt', function () {
     let Mediator = include('public/components/Mediator')
     let GameEvent = include('game/config/GameEvent')
     let TableConfig = include('module/mahjong/common/TableConfig')
     let TableEvent = TableConfig.Event
+    let ResConfig = include('module/mahjong/common/ResConfig')
+    let Sound = ResConfig.sound
 
     let DeskMdt = Mediator.extend({
-        mediatorName: 'DeskTopLayerMdt',
+        mediatorName: 'EffectLayerMdt',
         ctor: function (view) {
             this._super(this.mediatorName,view)
         },
@@ -29,56 +31,45 @@ load('module/mahjong/ui/DeskTopLayerMdt', function () {
             let body = notification.getBody()
             switch (name) {
                 case TableEvent.UpdateView:
-                    this.UpdateView()
                     break
                 case TableEvent.PlayerSelectProto:
-                    this.updateAction()
                     break
                 case TableEvent.PutCardProto:
-                    this.updateAction()
                     break
                 case TableEvent.DrawCardProto:
-                    this.updateAction()
                     break
                 case TableEvent.TableHostingProto:
-                    this.TableHostingProto(body)
                     break
                 case TableEvent.GameResultProto:
-                    this.view.UpdateTableHosting(2)
+                    this.GameResultProto(body)
                     break
             }
         },
 
-        TableHostingProto: function (info) {
+        GameResultProto: function(msg) {
             let pData = appInstance.dataManager().getPlayData()
             let selfInfo = pData.getSelfInfo()
-            let pSeatID = info.pSeatID
-            if (pSeatID === selfInfo.pSeatID) {
-                this.view.UpdateTableHosting(info.pHosting)
+            let mySeatId = selfInfo.pSeatID
+            let winSeat = msg.pWinSeatID
+
+            if (mySeatId === winSeat) {
+                let huType = msg.pHuType
+                let huArray = Sound.play.hu
+                if (huType.indexof(4) !== -1) {
+                    huArray = Sound.play.hu_zimo
+                } else if (huType.indexof(35) !== -1) {
+                    huArray = Sound.play.hu_mobao
+                } else if (huType.indexof(83) !== -1) {
+                    huArray = Sound.play.hu_baozhongbao
+                }
+                // 漏宝胡 ID 配置服务器没给
+                appInstance.gameAgent().mjUtil().playGamingSound(huArray)
+            } else {
+                appInstance.gameAgent().mjUtil().playGamingSound(Sound.play.lose)
             }
-        },
-
-        UpdateView: function () {
-            this.updateAction()
-        },
-
-        updateAction: function () {
-            let pData = appInstance.dataManager().getPlayData()
-            let actionInfo = {}
-            actionInfo.pActions = pData.tableData.pActions
-            actionInfo.lastPutCard = pData.tableData.lastPutCard
-            this.view.updateAction(actionInfo)
-        },
-
-        initView: function () {
-            let pData = appInstance.dataManager().getPlayData()
-            this.view.initView(pData)
-            this.UpdateView()
         },
 
         onRegister: function () {
-            this.initView()
-
 
         },
 

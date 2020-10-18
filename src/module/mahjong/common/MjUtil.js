@@ -23,8 +23,7 @@ load('module/mahjong/common/MjUtil', function () {
         },
 
         putCardSound: function (card) {
-            let effectType = 'putong'
-            // let effectType = 'dongbei'
+            let effectType = appInstance.gameAgent().gameUtil().getLocalLanguage()
             let SEX = [
                 'man',
                 'woman'

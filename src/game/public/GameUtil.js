@@ -2,7 +2,7 @@
 load('game/public/GameUtil',function () {
     let GameUtil = {}
     let GameConfig = include('game/config/GameConfig')
-
+    let LocalSave = include('game/public/LocalSave')
 
     GameUtil.getAni = function (aniInfo) {
             let ani = sp.SkeletonAnimation.createWithJsonFile(aniInfo.json, aniInfo.atlas)
@@ -51,6 +51,10 @@ load('game/public/GameUtil',function () {
                 parent.addChild(sp);
             }
         });
+    }
+
+    GameUtil.getLocalLanguage = function () {
+        return global.localStorage.getStringForKey(LocalSave.LocalLanguage) || 'putong'
     }
 
 

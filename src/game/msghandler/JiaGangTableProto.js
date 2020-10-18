@@ -62,7 +62,9 @@ load('game/msghandler/JiaGangTableProto', function () {
                 if (selfInfo.pIsTing && !tData.pMustOutCard.length) {
                     tData.pMustOutCard.push(lastDrawCard)
                 }
-                if ((selfInfo.handCards.length % 3 ) === 2) {
+                if (msg.lastSelectActionID && msg.lastSelectSeatID === selfInfo.pSeatID) {
+
+                } else if ((selfInfo.handCards.length % 3 ) === 2) {
                     appInstance.gameAgent().mjUtil().removeCard(selfInfo.handCards, lastDrawCard)
                     selfInfo.handCards.unshift(lastDrawCard)
                 }

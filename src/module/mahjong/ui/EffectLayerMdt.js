@@ -9,7 +9,7 @@ load('module/mahjong/ui/EffectLayerMdt', function () {
     let TableConfig = include('module/mahjong/common/TableConfig')
     let TableEvent = TableConfig.Event
     let ResConfig = include('module/mahjong/common/ResConfig')
-    let Sound = ResConfig.sound
+    let Sound = ResConfig.Sound
 
     let DeskMdt = Mediator.extend({
         mediatorName: 'EffectLayerMdt',
@@ -22,7 +22,7 @@ load('module/mahjong/ui/EffectLayerMdt', function () {
                 TableEvent.UpdateView,
                 TableEvent.PutCardProto,
                 TableEvent.DrawCardProto,
-                TableEvent.TableHostingProto,
+                TableEvent.PlayerSelectProto,
                 TableEvent.GameResultProto,
             ]
         },
@@ -33,6 +33,7 @@ load('module/mahjong/ui/EffectLayerMdt', function () {
                 case TableEvent.UpdateView:
                     break
                 case TableEvent.PlayerSelectProto:
+                    this.PlayerSelectProto(body)
                     break
                 case TableEvent.PutCardProto:
                     break
@@ -66,6 +67,27 @@ load('module/mahjong/ui/EffectLayerMdt', function () {
                 appInstance.gameAgent().mjUtil().playGamingSound(huArray)
             } else {
                 appInstance.gameAgent().mjUtil().playGamingSound(Sound.play.lose)
+            }
+        },
+        PlayerSelectProto: function (msg) {
+            let actionId = msg._msg.pActionID
+            switch (actionId) {
+                case 110:
+                    appInstance.gameAgent().mjUtil().playGamingSound(Sound.play.peng)
+                    break
+                case 50:
+                case 40:
+                case 70:
+                    appInstance.gameAgent().mjUtil().playGamingSound(Sound.play.ting)
+                    break
+                case 120:
+                    appInstance.gameAgent().mjUtil().playGamingSound(Sound.play.chi)
+                    break
+                case 80:
+                case 90:
+                case 100:
+                    appInstance.gameAgent().mjUtil().playGamingSound(Sound.play.gang)
+                    break
             }
         },
 

@@ -62,6 +62,9 @@ load('module/mahjong/common/ResConfig', function () {
     Sound: {
       path: PrefixPath.resPath + 'sound/',
       play: {
+        begin: [
+          'begingaming',
+        ],
         hu: [
           'hu_wohule',
           'hu_biedong',
@@ -86,6 +89,18 @@ load('module/mahjong/common/ResConfig', function () {
           'lose_junzibaochou',
           'lose_taibeile',
           'lose_yibuxiaoxin'
+        ],
+        chi: [
+            'chi_1',
+            'chi_2'
+        ],
+        gang: [
+            'gang_1',
+            'gang_2'
+        ],
+        peng: [
+            'peng_1',
+            'peng_2'
         ]
       },
       cardtype: {

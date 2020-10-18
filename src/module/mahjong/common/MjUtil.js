@@ -48,8 +48,6 @@ load('module/mahjong/common/MjUtil', function () {
             soundPath += '_'
             soundPath += cardNumber
             soundPath += '.mp3'
-            cc.log('===============ResConfig.Sound.path=======' + JSON.stringify(ResConfig.Sound.path))
-            cc.log('===========putCardSound======' + soundPath)
             appInstance.audioManager().playEffect(soundPath)
         },
 
@@ -68,7 +66,6 @@ load('module/mahjong/common/MjUtil', function () {
             let index = Math.floor(Math.random() * (soundArray.length))
             soundPath += soundArray[index]
             soundPath += '.mp3'
-            cc.log('==============soundPath===========' + soundPath)
             appInstance.audioManager().playEffect(soundPath)
         },
 

@@ -101,7 +101,35 @@ load('module/mahjong/common/ResConfig', function () {
         peng: [
             'peng_1',
             'peng_2'
-        ]
+        ],
+        match_begin: [
+            'match_begin',
+        ],
+        match_jinji:[
+            'match_jinji_1',
+            'match_jinji_2'
+        ],
+        match_juesai: [
+            'match_juesai'
+        ],
+        match_taotai: [
+          'match_taotai'
+        ],
+        match_taotai_rank: [
+          'match_taotai_rank'
+        ],
+        match_win_1: [
+          'match_win_1'
+        ],
+        match_win_2: [
+          'match_win_2'
+        ],
+        match_win_3: [
+          'match_win_3'
+        ],
+        match_win_4: [
+          'match_win_4'
+        ],
       },
       cardtype: {
         feiji: PrefixPath.resPath + 'sound/card/special/feiji.mp3',

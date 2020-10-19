@@ -20,31 +20,30 @@ load('game/ui/layer/role/RoleLayer', function () {
         RES_BINDING: function () {
             return {
 
-                'pnl/btnPnl/closeBtn': {onClicked : this.onClseClick},
-                'pnl/btnPnl/allRolesBtn': {onClicked : this.onRolesChiceClick},
-                'pnl/btnPnl/myRolesBtn': {onClicked : this.onRolesChiceClick},
-                'pnl/btnPnl/useBtn': {},
-                'pnl/btnPnl/renewBtn': {},
-                'pnl/btnPnl/renewMidBtn': {},
-                'pnl/btnPnl/useMidBtn': {},
-                'pnl/btnPnl/toGetBtn': {},
-                'pnl/btnPnl/toBuyBtn': {},
+                'topPnl/closeBtn': {onClicked : this.onClseClick},
+                'topPnl/coinPnl': {},
+                'topPnl/coinPnl/coinAddBtn': {onClicked : this.onCoinShopClick},
+                'topPnl/diamondsPnl': {},
+                'topPnl/diamondsPnl/diamondsAddBtn': {onClicked : this.onCoinShopClick},
 
-                'pnl/dataPnl/diamondsPnl': {},
-                'pnl/dataPnl/diamondsPnl/diamondsAddBtn': {onClicked : this.onCoinShopClick},
+                'midPnl/btnPnl/allRolesBtn': {onClicked : this.onRolesChiceClick},
+                'midPnl/btnPnl/myRolesBtn': {onClicked : this.onRolesChiceClick},
+                'midPnl/btnPnl/useBtn': {},
+                'midPnl/btnPnl/renewBtn': {},
+                'midPnl/btnPnl/renewMidBtn': {},
+                'midPnl/btnPnl/useMidBtn': {},
+                'midPnl/btnPnl/toGetBtn': {},
+                'midPnl/btnPnl/toBuyBtn': {},
 
 
-                'pnl/dataPnl/coinPnl': {},
-                'pnl/dataPnl/coinPnl/coinAddBtn': {onClicked : this.onCoinShopClick},
+                'midPnl/dataPnl/roleNd': {},
+                'midPnl/dataPnl/roleName': {},
+                'midPnl/dataPnl/roleVipName': {},
+                'midPnl/dataPnl/timeText': {},
 
-                'pnl/dataPnl/roleNd': {},
-                'pnl/dataPnl/roleName': {},
-                'pnl/dataPnl/roleVipName': {},
-                'pnl/dataPnl/timeText': {},
-
-                'pnl/roleImageListView': {},
-                'pnl/roleImageCell': {},
-                'pnl/listPnl': {},
+                'midPnl/roleImageListView': {},
+                'midPnl/roleImageCell': {},
+                'midPnl/listPnl': {},
 
 
 

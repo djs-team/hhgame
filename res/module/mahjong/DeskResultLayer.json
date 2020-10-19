@@ -971,8 +971,10 @@
                 "Tag": 24,
                 "Children": [
                   {
-                    "FontSize": 30,
-                    "LabelText": "玩家应该叫什么呢",
+                    "IsCustomSize": true,
+                    "FontSize": 28,
+                    "LabelText": "玩家应该叫什么呢玩家应该叫什么呢",
+                    "HorizontalAlignmentType": "HT_Center",
                     "VerticalAlignmentType": "VT_Center",
                     "OutlineColor": {
                       "G": 0,
@@ -1008,17 +1010,17 @@
                     },
                     "PreSize": {
                       "X": 0.1875,
-                      "Y": 0.0417
+                      "Y": 0.1111
                     },
                     "LeftMargin": 52.3898,
                     "RightMargin": 987.6102,
-                    "TopMargin": 501.7537,
-                    "BottomMargin": 188.2463,
+                    "TopMargin": 476.7537,
+                    "BottomMargin": 163.2463,
                     "Tag": 32,
                     "ActionTag": 1873035343,
                     "Size": {
                       "X": 240.0,
-                      "Y": 30.0
+                      "Y": 80.0
                     },
                     "Name": "nameTxt",
                     "ctype": "TextObjectData"

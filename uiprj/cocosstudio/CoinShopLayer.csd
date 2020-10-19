@@ -352,7 +352,7 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="midPnl" Visible="False" ActionTag="856854498" Tag="333" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="midPnl" ActionTag="856854498" Tag="333" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="1280.0000" Y="720.0000" />
                 <Children>
                   <AbstractNodeData Name="Image_2" ActionTag="1582625759" Tag="127" IconVisible="False" LeftMargin="260.8120" RightMargin="743.1880" TopMargin="160.4400" BottomMargin="134.5600" Scale9Enable="True" LeftEage="76" RightEage="49" TopEage="51" BottomEage="53" Scale9OriginX="76" Scale9OriginY="51" Scale9Width="11" Scale9Height="29" ctype="ImageViewObjectData">
@@ -397,27 +397,27 @@
                     <PreSize X="0.1641" Y="0.3542" />
                     <FileData Type="Normal" Path="coinshop/scjb_7.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="videoBtn" ActionTag="-1181155733" Tag="298" IconVisible="False" LeftMargin="326.8300" RightMargin="804.1700" TopMargin="463.2000" BottomMargin="192.8000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="68" RightEage="52" Scale9OriginX="68" Scale9Width="10" Scale9Height="88" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                    <Size X="149.0000" Y="64.0000" />
+                  <AbstractNodeData Name="videoBtn" ActionTag="-1181155733" Tag="298" IconVisible="False" LeftMargin="318.3300" RightMargin="795.6700" TopMargin="463.2000" BottomMargin="192.8000" TouchEnable="True" FontSize="14" LeftEage="15" RightEage="15" Scale9OriginX="15" Scale9Width="274" Scale9Height="89" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                    <Size X="166.0000" Y="64.0000" />
                     <Children>
-                      <AbstractNodeData Name="canWatchPg" ActionTag="1485296340" Tag="299" IconVisible="False" LeftMargin="52.0379" RightMargin="58.9621" TopMargin="14.4300" BottomMargin="18.5700" LeftEage="12" RightEage="12" TopEage="10" BottomEage="10" Scale9OriginX="12" Scale9OriginY="10" Scale9Width="14" Scale9Height="11" ctype="ImageViewObjectData">
+                      <AbstractNodeData Name="canWatchPg" ActionTag="1485296340" Tag="299" IconVisible="False" LeftMargin="65.0400" RightMargin="62.9600" TopMargin="14.4300" BottomMargin="18.5700" LeftEage="12" RightEage="12" TopEage="10" BottomEage="10" Scale9OriginX="12" Scale9OriginY="10" Scale9Width="14" Scale9Height="11" ctype="ImageViewObjectData">
                         <Size X="38.0000" Y="31.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="71.0379" Y="34.0700" />
+                        <Position X="84.0400" Y="34.0700" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.4768" Y="0.5323" />
-                        <PreSize X="0.2550" Y="0.4844" />
+                        <PrePosition X="0.5063" Y="0.5323" />
+                        <PreSize X="0.2289" Y="0.4844" />
                         <FileData Type="Normal" Path="coinshop/scjb_3.png" Plist="" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="noCanWatchPg" ActionTag="-955456111" Tag="334" IconVisible="False" LeftMargin="52.0400" RightMargin="58.9600" TopMargin="14.4300" BottomMargin="18.5700" LeftEage="12" RightEage="12" TopEage="10" BottomEage="10" Scale9OriginX="12" Scale9OriginY="10" Scale9Width="14" Scale9Height="11" ctype="ImageViewObjectData">
+                      <AbstractNodeData Name="noCanWatchPg" ActionTag="-955456111" Tag="334" IconVisible="False" LeftMargin="65.0400" RightMargin="62.9600" TopMargin="14.4300" BottomMargin="18.5700" LeftEage="12" RightEage="12" TopEage="10" BottomEage="10" Scale9OriginX="12" Scale9OriginY="10" Scale9Width="14" Scale9Height="11" ctype="ImageViewObjectData">
                         <Size X="38.0000" Y="31.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="71.0400" Y="34.0700" />
+                        <Position X="84.0400" Y="34.0700" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.4768" Y="0.5323" />
-                        <PreSize X="0.2550" Y="0.4844" />
+                        <PrePosition X="0.5063" Y="0.5323" />
+                        <PreSize X="0.2289" Y="0.4844" />
                         <FileData Type="Normal" Path="coinshop/scjb_3.png" Plist="" />
                       </AbstractNodeData>
                     </Children>
@@ -426,10 +426,11 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.3135" Y="0.3122" />
-                    <PreSize X="0.1164" Y="0.0889" />
+                    <PreSize X="0.1297" Y="0.0889" />
                     <TextColor A="255" R="65" G="65" B="70" />
-                    <DisabledFileData Type="Normal" Path="common/bt_4.png" Plist="" />
-                    <NormalFileData Type="Normal" Path="common/bt_1.png" Plist="" />
+                    <DisabledFileData Type="Normal" Path="button/xin_anniu_10.png" Plist="" />
+                    <PressedFileData Type="Normal" Path="button/xin_anniu_1.png" Plist="" />
+                    <NormalFileData Type="Normal" Path="button/xin_anniu_1.png" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
@@ -550,14 +551,14 @@
                             <PreSize X="0.2424" Y="0.7586" />
                             <FileData Type="Normal" Path="common/zuanshi.png" Plist="" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="priceText" ActionTag="-1915352809" Tag="314" IconVisible="False" LeftMargin="35.4000" RightMargin="23.6000" TopMargin="6.0583" BottomMargin="6.9417" IsCustomSize="True" FontSize="16" LabelText="5555" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                            <Size X="40.0000" Y="16.0000" />
+                          <AbstractNodeData Name="priceText" ActionTag="-1915352809" Tag="314" IconVisible="False" LeftMargin="25.4000" RightMargin="13.6000" TopMargin="6.0583" BottomMargin="6.9417" IsCustomSize="True" FontSize="16" LabelText="5555" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                            <Size X="60.0000" Y="16.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                             <Position X="55.4000" Y="14.9417" />
                             <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="255" G="255" B="255" />
                             <PrePosition X="0.5596" Y="0.5152" />
-                            <PreSize X="0.4040" Y="0.5517" />
+                            <PreSize X="0.6061" Y="0.5517" />
                             <OutlineColor A="255" R="255" G="0" B="0" />
                             <ShadowColor A="255" R="110" G="110" B="110" />
                           </AbstractNodeData>

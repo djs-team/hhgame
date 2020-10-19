@@ -132,7 +132,6 @@
         self.bottomView.hidden = YES;
         GameUserIdentity selfIdentity = [CXClientModel instance].room.UserIdentity;
         if (seatIndex) { //在麦上
-            _bimaiBtn_topLayout.constant = 0;
             LiveRoomMicroInfo * seat = [[CXClientModel instance].room.seats objectForKey:seatIndex];
             if (seat.isMute == YES) {//静音了此人，打开
                 [self.bimaiBtn setTitle:@"取消静音" forState:UIControlStateNormal];
@@ -141,11 +140,21 @@
             }
             
             if (selfIdentity == GameUserIdentityOwner || selfIdentity == GameUserIdentityManager) {//是红娘
+                _jinyanBtn.hidden = NO;
+                _bimaiBtn.hidden = NO;
+                _laheiBtn.hidden = NO;
                 _yichuBtn.hidden = NO;
+                _jubaoBtn.hidden = NO;
+                _bimaiBtn_topLayout.constant = 27;
+                _laheiBtn_topLayout.constant = 27*2;
                 _jubaoBtn_topLayout.constant = 27;
             } else {//不是红娘
                 _jinyanBtn.hidden = YES;
+                _bimaiBtn.hidden = NO;
+                _laheiBtn.hidden = NO;
                 _yichuBtn.hidden = YES;
+                _jubaoBtn.hidden = NO;
+                _bimaiBtn_topLayout.constant = 0;
                 _laheiBtn_topLayout.constant = 27;
                 _jubaoBtn_topLayout.constant = 0;
             }
@@ -153,20 +162,24 @@
             self.free_inviteBtn.hidden = YES;
             self.buy_inviteBtn.hidden = YES;
         } else {
-            self.bimaiBtn.hidden = YES;
-            _laheiBtn_topLayout.constant = 27;
-            
             if (selfIdentity == GameUserIdentityOwner || selfIdentity == GameUserIdentityManager) {
+                _jinyanBtn.hidden = NO;
+                _bimaiBtn.hidden = YES;
+                _laheiBtn.hidden = NO;
+                _yichuBtn.hidden = NO;
+                _jubaoBtn.hidden = NO;
+                _bimaiBtn_topLayout.constant = 27;
                 _laheiBtn_topLayout.constant = 27;
-                self.free_inviteBtn.hidden = NO;
-                self.buy_inviteBtn.hidden = NO;
+                _jubaoBtn_topLayout.constant = 27;
             } else {
                 _jinyanBtn.hidden = YES;
+                _bimaiBtn.hidden = YES;
+                _laheiBtn.hidden = NO;
                 _yichuBtn.hidden = YES;
+                _jubaoBtn.hidden = NO;
+                _bimaiBtn_topLayout.constant = 0;
                 _laheiBtn_topLayout.constant = 0;
                 _jubaoBtn_topLayout.constant = 0;
-                self.free_inviteBtn.hidden = YES;
-                self.buy_inviteBtn.hidden = YES;
             }
         }
         

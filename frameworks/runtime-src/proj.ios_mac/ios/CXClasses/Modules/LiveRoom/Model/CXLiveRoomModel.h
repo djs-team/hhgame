@@ -189,8 +189,6 @@ NS_ASSUME_NONNULL_BEGIN
 //麦位ID到用户ID
 @property (nonatomic, strong) NSMutableDictionary<NSIndexPath*, NSString*> * seatUsers;
 
-// YES：房间内 NO：房间外
-@property (nonatomic, assign) BOOL isJoinedRoom;
 // 自己是不是这个房间的房主
 @property (nonatomic, assign) BOOL isHost;
 //房间还没初始化完成收到的消息

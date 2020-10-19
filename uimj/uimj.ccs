@@ -366,7 +366,7 @@
         <Project Name="DeskBgLayer.csd" Type="Layer" />
         <Project Name="DeskCardLayer.csd" Type="Layer" />
         <Project Name="DeskHeadLayer.csd" Type="Layer" />
-        <Project Name="DeskLayer.csd" Type="Layer" />
+        <Project Name="EffectLayer.csd" Type="Layer" />
         <Project Name="DeskResultLayer.csd" Type="Layer" />
         <Project Name="DeskTopLayer.csd" Type="Layer" />
         <Project Name="MatchBigResultLayer.csd" Type="Layer" />

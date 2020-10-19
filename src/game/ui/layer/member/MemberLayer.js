@@ -4,6 +4,7 @@ load('game/ui/layer/member/MemberLayer', function () {
     let GameConfig = include('game/config/GameConfig')
     let BaseLayer = include('public/ui/BaseLayer')
     let MemberMdt = include('game/ui/layer/member/MemberMdt')
+    let LocalSave = include('game/public/LocalSave')
     let GameEvent = include('game/config/GameEvent')
     let AniPlayer = ResConfig.AniPlayer
     let PlayerPlay = ResConfig.PlayerPlay
@@ -110,6 +111,12 @@ load('game/ui/layer/member/MemberLayer', function () {
 
         initView: function () {
 
+            let memberVipDate = global.localStorage.getStringForKey(LocalSave.MemberVipDate)
+            let dateStr = global.getCurDayStr()
+            if (!memberVipDate || memberVipDate !== dateStr) {
+                appInstance.gameAgent().gameUtil().autoPlaySound(ResConfig.Sound.vip)
+                global.localStorage.setStringForKey(LocalSave.MemberVipDate, dateStr)
+            }
 
         },
 

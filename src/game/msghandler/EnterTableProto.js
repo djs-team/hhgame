@@ -1,6 +1,6 @@
 
 /**
- * 出牌消息结构体
+ * 加入牌桌消息结构体
  */
 load('game/msghandler/EnterTableProto', function () {
     let baseProto = include('public/network/BaseProto')

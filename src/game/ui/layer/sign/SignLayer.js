@@ -3,6 +3,7 @@ load('game/ui/layer/sign/SignLayer', function () {
     let BaseLayer = include('public/ui/BaseLayer')
     let SignMdt = include('game/ui/layer/sign/SignMdt')
     let GameEvent = include('game/config/GameEvent')
+    let LocalSave = include('game/public/LocalSave')
     let SignLayer = BaseLayer.extend({
         _className: 'signLayer',
         ctor: function () {
@@ -75,6 +76,14 @@ load('game/ui/layer/sign/SignLayer', function () {
             this.rulePnl.setVisible(false)
 
             this.ordinaryAcceptPnl.getChildByName('singleAcceptText').setVisible(false)
+
+
+            let signDate = global.localStorage.getStringForKey(LocalSave.SignDate)
+            let dateStr = global.getCurDayStr()
+            if (!signDate || signDate !== dateStr) {
+                appInstance.gameAgent().gameUtil().autoPlaySound(ResConfig.Sound.qiandao)
+                global.localStorage.setStringForKey(LocalSave.SignDate, dateStr)
+            }
         },
 
         onExplainClick: function () {

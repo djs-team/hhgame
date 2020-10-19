@@ -64,107 +64,6 @@
             },
             "UserData": "{\"layoutType\":\"maxArea\",\"screenAlign\":\"mid\"}",
             "Tag": 4,
-            "ActionTag": -1377462067,
-            "Size": {
-              "X": 1280.0,
-              "Y": 720.0
-            },
-            "Name": "block",
-            "ctype": "PanelObjectData"
-          },
-          {
-            "FileData": {
-              "Type": "Normal",
-              "Path": "aaa/1.png",
-              "Plist": ""
-            },
-            "Scale9OriginX": 15,
-            "Scale9OriginY": 15,
-            "Scale9Width": 1250,
-            "Scale9Height": 690,
-            "AnchorPoint": {
-              "ScaleX": 0.5,
-              "ScaleY": 0.5
-            },
-            "Position": {
-              "X": 640.0,
-              "Y": 360.0
-            },
-            "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 1.0
-            },
-            "CColor": {},
-            "IconVisible": false,
-            "PositionPercentXEnabled": true,
-            "PositionPercentYEnabled": true,
-            "PrePosition": {
-              "X": 0.5,
-              "Y": 0.5
-            },
-            "PreSize": {
-              "X": 1.0,
-              "Y": 1.0
-            },
-            "Tag": 247,
-            "ActionTag": 820272631,
-            "Size": {
-              "X": 1280.0,
-              "Y": 720.0
-            },
-            "Name": "dele",
-            "ctype": "ImageViewObjectData"
-          },
-          {
-            "ClipAble": false,
-            "BackColorAlpha": 102,
-            "ComboBoxIndex": 1,
-            "SingleColor": {
-              "R": 0,
-              "G": 0,
-              "B": 0
-            },
-            "FirstColor": {
-              "R": 150,
-              "G": 200
-            },
-            "EndColor": {},
-            "ColorVector": {
-              "ScaleY": 1.0
-            },
-            "Scale9Width": 1,
-            "Scale9Height": 1,
-            "TouchEnable": true,
-            "AnchorPoint": {
-              "ScaleX": 0.5,
-              "ScaleY": 0.5
-            },
-            "Position": {
-              "X": 640.0,
-              "Y": 360.0
-            },
-            "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 1.0
-            },
-            "CColor": {},
-            "IconVisible": false,
-            "PositionPercentXEnabled": true,
-            "PositionPercentYEnabled": true,
-            "PrePosition": {
-              "X": 0.5,
-              "Y": 0.5
-            },
-            "PercentWidthEnable": true,
-            "PercentHeightEnable": true,
-            "PercentWidthEnabled": true,
-            "PercentHeightEnabled": true,
-            "PreSize": {
-              "X": 1.0,
-              "Y": 1.0
-            },
-            "UserData": "{\"layoutType\":\"maxArea\",\"screenAlign\":\"mid\"}",
-            "Tag": 5,
             "Children": [
               {
                 "FileData": {
@@ -208,7 +107,66 @@
                 },
                 "Name": "bg",
                 "ctype": "ImageViewObjectData"
-              },
+              }
+            ],
+            "ActionTag": -1377462067,
+            "Size": {
+              "X": 1280.0,
+              "Y": 720.0
+            },
+            "Name": "block",
+            "ctype": "PanelObjectData"
+          },
+          {
+            "ClipAble": false,
+            "BackColorAlpha": 102,
+            "SingleColor": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            },
+            "FirstColor": {
+              "R": 150,
+              "G": 200
+            },
+            "EndColor": {},
+            "ColorVector": {
+              "ScaleY": 1.0
+            },
+            "Scale9Width": 1,
+            "Scale9Height": 1,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 1.0
+            },
+            "Position": {
+              "X": 640.0,
+              "Y": 720.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PositionPercentXEnabled": true,
+            "PositionPercentYEnabled": true,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 1.0
+            },
+            "PercentWidthEnable": true,
+            "PercentHeightEnable": true,
+            "PercentWidthEnabled": true,
+            "PercentHeightEnabled": true,
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "UserData": "{\"layoutType\":\"maxArea\",\"screenAlign\":\"top\"}",
+            "Tag": 1549,
+            "Children": [
               {
                 "FileData": {
                   "Type": "Normal",
@@ -307,7 +265,66 @@
                 },
                 "Name": "Image_1",
                 "ctype": "ImageViewObjectData"
-              },
+              }
+            ],
+            "ActionTag": 2029728988,
+            "Size": {
+              "X": 1280.0,
+              "Y": 720.0
+            },
+            "Name": "topPnl",
+            "ctype": "PanelObjectData"
+          },
+          {
+            "ClipAble": false,
+            "BackColorAlpha": 102,
+            "SingleColor": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            },
+            "FirstColor": {
+              "R": 150,
+              "G": 200
+            },
+            "EndColor": {},
+            "ColorVector": {
+              "ScaleY": 1.0
+            },
+            "Scale9Width": 1,
+            "Scale9Height": 1,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 640.0,
+              "Y": 360.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PositionPercentXEnabled": true,
+            "PositionPercentYEnabled": true,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.5
+            },
+            "PercentWidthEnable": true,
+            "PercentHeightEnable": true,
+            "PercentWidthEnabled": true,
+            "PercentHeightEnabled": true,
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "UserData": "{\"layoutType\":\"showAll\",\"screenAlign\":\"mid\"}",
+            "Tag": 5,
+            "Children": [
               {
                 "FontSize": 35,
                 "ButtonText": "",
@@ -343,7 +360,7 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 456.4927,
+                  "X": 456.448,
                   "Y": 152.9242
                 },
                 "Scale": {
@@ -361,8 +378,8 @@
                   "X": 0.2374,
                   "Y": 0.1222
                 },
-                "LeftMargin": 304.5277,
-                "RightMargin": 671.5424,
+                "LeftMargin": 304.483,
+                "RightMargin": 671.587,
                 "TopMargin": 523.0758,
                 "BottomMargin": 108.9242,
                 "Tag": 22,
@@ -382,8 +399,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 57.5934,
-                      "Y": 49.8806
+                      "X": 57.5947,
+                      "Y": 49.8784
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -401,10 +418,10 @@
                       "X": 0.1217,
                       "Y": 0.5568
                     },
-                    "LeftMargin": 39.0934,
-                    "RightMargin": 227.8366,
-                    "TopMargin": 13.6194,
-                    "BottomMargin": 25.3806,
+                    "LeftMargin": 39.0947,
+                    "RightMargin": 227.8353,
+                    "TopMargin": 13.6216,
+                    "BottomMargin": 25.3784,
                     "Tag": 25,
                     "ActionTag": 274184066,
                     "Size": {
@@ -440,8 +457,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 170.3383,
-                      "Y": 48.4471
+                      "X": 170.3528,
+                      "Y": 48.444
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -463,10 +480,10 @@
                       "X": 0.5034,
                       "Y": 0.4318
                     },
-                    "LeftMargin": 93.8383,
-                    "RightMargin": 57.0916,
-                    "TopMargin": 20.5529,
-                    "BottomMargin": 29.4471,
+                    "LeftMargin": 93.8528,
+                    "RightMargin": 57.0772,
+                    "TopMargin": 20.556,
+                    "BottomMargin": 29.444,
                     "Tag": 23,
                     "ActionTag": 1793086660,
                     "Size": {
@@ -525,7 +542,7 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 841.443,
+                  "X": 841.472,
                   "Y": 157.3831
                 },
                 "Scale": {
@@ -543,8 +560,8 @@
                   "X": 0.2374,
                   "Y": 0.1222
                 },
-                "LeftMargin": 689.478,
-                "RightMargin": 286.592,
+                "LeftMargin": 689.5071,
+                "RightMargin": 286.563,
                 "TopMargin": 518.6169,
                 "BottomMargin": 113.3831,
                 "Tag": 13,
@@ -575,8 +592,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 178.0872,
-                      "Y": 47.0002
+                      "X": 178.0726,
+                      "Y": 47.0008
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -598,10 +615,10 @@
                       "X": 0.5034,
                       "Y": 0.4318
                     },
-                    "LeftMargin": 101.5872,
-                    "RightMargin": 49.3428,
-                    "TopMargin": 21.9998,
-                    "BottomMargin": 28.0002,
+                    "LeftMargin": 101.5726,
+                    "RightMargin": 49.3574,
+                    "TopMargin": 21.9992,
+                    "BottomMargin": 28.0008,
                     "Tag": 21,
                     "ActionTag": -1536177862,
                     "Size": {
@@ -626,8 +643,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 60.3225,
-                      "Y": 47.9626
+                      "X": 60.3301,
+                      "Y": 47.96
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -645,10 +662,10 @@
                       "X": 0.1546,
                       "Y": 0.4205
                     },
-                    "LeftMargin": 36.8225,
-                    "RightMargin": 220.1075,
-                    "TopMargin": 21.5374,
-                    "BottomMargin": 29.4626,
+                    "LeftMargin": 36.8301,
+                    "RightMargin": 220.0999,
+                    "TopMargin": 21.54,
+                    "BottomMargin": 29.46,
                     "Tag": 24,
                     "ActionTag": 802995541,
                     "Size": {
@@ -770,7 +787,7 @@
                 },
                 "LeftMargin": 562.4299,
                 "RightMargin": 517.5701,
-                "TopMargin": 673.2711,
+                "TopMargin": 673.271,
                 "BottomMargin": 26.729,
                 "Tag": 27,
                 "ActionTag": -1951828784,
@@ -799,7 +816,6 @@
         "ctype": "SingleNodeObjectData"
       },
       "UsedResources": [
-        "aaa/1.png",
         "common/bt_1.png",
         "common/bt_2.png",
         "Default/Button_Disable.png",

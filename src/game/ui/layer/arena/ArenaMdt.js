@@ -53,9 +53,11 @@ load('game/ui/layer/arena/ArenaMdt', function () {
 
         onInitMatchList: function (body) {
 
-            let channel = appInstance.dataManager().getUserData().getMjChannel()
+            let channel = appInstance.dataManager().getUserData().getMjChannelStr()
             let areaName = GameConfig.areaName[channel]
-            let data = []
+            let data = {}
+            data.matchType = body.matchType
+            data.matchList = []
             for(let i = 0; i < body.matchList.length; i++){
                 let match = body.matchList[i]
                 let matchData = {}
@@ -83,7 +85,7 @@ load('game/ui/layer/arena/ArenaMdt', function () {
 
                 this.onFormatRankingList(match,matchData)
                 this.onFormatTimes(match.starttime,matchData)
-                data.push(matchData)
+                data.matchList.push(matchData)
             }
 
             this.view.onInitMatchList(data)

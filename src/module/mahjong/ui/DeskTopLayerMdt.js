@@ -21,6 +21,7 @@ load('module/mahjong/ui/DeskTopLayerMdt', function () {
                 TableEvent.PutCardProto,
                 TableEvent.DrawCardProto,
                 TableEvent.TableHostingProto,
+                TableEvent.GameResultProto,
             ]
         },
         handleNotification: function (notification) {
@@ -42,6 +43,9 @@ load('module/mahjong/ui/DeskTopLayerMdt', function () {
                 case TableEvent.TableHostingProto:
                     this.TableHostingProto(body)
                     break
+                case TableEvent.GameResultProto:
+                    this.view.UpdateTableHosting(2)
+                    break
             }
         },
 
@@ -50,7 +54,7 @@ load('module/mahjong/ui/DeskTopLayerMdt', function () {
             let selfInfo = pData.getSelfInfo()
             let pSeatID = info.pSeatID
             if (pSeatID === selfInfo.pSeatID) {
-                this.view.TableHostingProto(info.pHosting)
+                this.view.UpdateTableHosting(info.pHosting)
             }
         },
 

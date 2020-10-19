@@ -158,6 +158,11 @@ load('game/ui/scene/HallScene', function () {
 
         onLiveBroadcastClick: function () {
             //跳转直播界面
+            let vipCode = appInstance.dataManager().getUserData().vipCode
+            if(vipCode <= 0){
+                appInstance.gameAgent().Tips('该功能只对会员开放')
+                return
+            }
             appInstance.nativeApi().jumpToBlindDate()
 
         },
@@ -176,7 +181,10 @@ load('game/ui/scene/HallScene', function () {
         },
 
         goChooseCity: function () {
-            appInstance.gameAgent().addPopUI(ResConfig.Ui.ChooseCityLayer)
+            let viewData = {
+                from: 'HallScene'
+            }
+            appInstance.gameAgent().addPopUI(ResConfig.Ui.ChooseCityLayer,viewData)
         },
 
         onMoreClick: function () {

@@ -62,6 +62,7 @@ load('game/msghandler/GetArenaProto', function () {
             this._reData = [
 
                 { key: 'matchList', type: this._byteType.Barray, proto: matchArray}, //比赛集合
+                { key: 'matchType', type: this._byteType.Int}, //1 金币赛 2大奖赛 3会员赛
             ]
 
         }

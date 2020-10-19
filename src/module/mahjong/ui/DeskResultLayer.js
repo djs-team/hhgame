@@ -98,22 +98,34 @@ load('module/mahjong/ui/DeskResultLayer', function () {
         },
 
         initView: function (pData) {
-            cc.log('==============GameResult============' + JSON.stringify(pData))
             this.initData(pData)
 
             this.PlayerCell.setVisible(false)
             this.InfoCell.setVisible(false)
 
-            for (let i = 0; i < this._playerNum; ++i) {
-                this.initPlayerCell(i, this._players[i])
-            }
-
-            let baoImg = appInstance.gameAgent().mjUtil().getCardValueImg(0, 'selfhand', this._pData.tableData.pBaoCard)
-            this.BaoCard.getChildByName('CardValue').loadTexture(baoImg)
-
             let initInfo = {}
             initInfo._index = 0
+
+            for (let i = 0; i < this._playerNum; ++i) {
+                this.initPlayerCell(i, this._players[i])
+                if (this._players[i].pid === this._selfInfo.pid) {
+                    initInfo._index = i
+                }
+            }
             this.onInfoBtnClick(initInfo)
+
+            let baoCardInfo = this._pData.tableData.pBaoCard
+            if (baoCardInfo.nCardNumber && baoCardInfo.nCardColor) {
+                let baoImg = appInstance.gameAgent().mjUtil().getCardValueImg(0, 'selfhand', baoCardInfo)
+                this.BaoCard.getChildByName('CardValue').loadTexture(baoImg)
+                this.BaoCard.setVisible(true)
+            } else {
+                this.BaoCard.setVisible(false)
+            }
+
+
+
+
 
             if (this._isMatch) {
                 this.BackHallBtn.setVisible(false)

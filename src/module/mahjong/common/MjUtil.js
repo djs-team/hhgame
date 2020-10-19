@@ -1,5 +1,6 @@
 
 load('module/mahjong/common/MjUtil', function () {
+    let ResConfig = include('module/mahjong/common/ResConfig')
     let MjUtil  = cc.Class.extend({
         ctor: function () {
         },
@@ -23,14 +24,13 @@ load('module/mahjong/common/MjUtil', function () {
         },
 
         putCardSound: function (card) {
-            let effectType = 'putong'
-            // let effectType = 'dongbei'
+            let effectType = appInstance.gameAgent().gameUtil().getLocalLanguage()
             let SEX = [
                 'man',
                 'woman'
             ]
             let sexStr = SEX[appInstance.dataManager().getPlayData().getSelfInfo().sex]
-            let soundPath = 'res/module/mahjong/sound/' + effectType + '/' + sexStr + '/card/'
+            let soundPath = ResConfig.Sound.path + effectType + '/' + sexStr + '/card/'
             let COLOR = [
                 'wan',
                 'tong',
@@ -47,6 +47,24 @@ load('module/mahjong/common/MjUtil', function () {
             soundPath += COLOR[cardColor]
             soundPath += '_'
             soundPath += cardNumber
+            soundPath += '.mp3'
+            appInstance.audioManager().playEffect(soundPath)
+        },
+
+        playGamingSound: function ( soundArray ) {
+            if (!soundArray || !soundArray.length) {
+                return
+            }
+            let effectType = appInstance.gameAgent().gameUtil().getLocalLanguage()
+            let SEX = [
+                'man',
+                'woman'
+            ]
+            let sexStr = SEX[appInstance.dataManager().getPlayData().getSelfInfo().sex]
+            let soundPath = ResConfig.Sound.path + effectType + '/' + sexStr + '/gaming/'
+
+            let index = Math.floor(Math.random() * (soundArray.length))
+            soundPath += soundArray[index]
             soundPath += '.mp3'
             appInstance.audioManager().playEffect(soundPath)
         },

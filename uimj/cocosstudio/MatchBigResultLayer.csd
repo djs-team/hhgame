@@ -123,14 +123,14 @@
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="winNum" ActionTag="804885693" Tag="405" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="35.0000" RightMargin="35.0000" TopMargin="300.0000" BottomMargin="30.0000" FontSize="20" LabelText="积分    80000000" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                        <Size X="160.0000" Y="20.0000" />
+                      <AbstractNodeData Name="winNum" ActionTag="804885693" Tag="405" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="25.0000" RightMargin="25.0000" TopMargin="285.0000" BottomMargin="15.0000" IsCustomSize="True" FontSize="18" LabelText="积分    80000000" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="180.0000" Y="50.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="115.0000" Y="40.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="165" B="0" />
                         <PrePosition X="0.5000" Y="0.1143" />
-                        <PreSize X="0.6957" Y="0.0571" />
+                        <PreSize X="0.7826" Y="0.1429" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>

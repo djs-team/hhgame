@@ -13,6 +13,7 @@ load('game/ui/layer/arena/ArenaLayer', function () {
             { name: '金币赛', type: 1 },
         ],
         _arenaBtnCellName: 'arenaBtn_',
+        _arenaType: 1,
 
         ctor: function () {
             this._super(ResConfig.View.ArenaLayer)
@@ -130,6 +131,7 @@ load('game/ui/layer/arena/ArenaLayer', function () {
 
             let data = sender._sendData
 
+
             //判断当前点中的是哪个按钮，切换状态
             this.onUpdateArenaBtnStatus(data.cellName)
 
@@ -168,10 +170,11 @@ load('game/ui/layer/arena/ArenaLayer', function () {
         onInitMatchList: function (data) {
 
             this.areanListView.removeAllChildren()
+            this._arenaType = data.matchType
 
-            for(let i = 0; i < data.length; i++){
+            for(let i = 0; i < data.matchList.length; i++){
 
-                let arenaData = data[i]
+                let arenaData = data.matchList[i]
                 let cell = this.areanCell.clone()
                 cell.setVisible(true)
                 this.areanListView.pushBackCustomItem(cell)
@@ -229,6 +232,23 @@ load('game/ui/layer/arena/ArenaLayer', function () {
         onSignMatchClick: function (sender) {
 
             let data = sender.getParent()._sendData
+
+            if(!this.onCanSignMatch(data))
+                return
+
+            this.onSignMatchFunction(data.roomMode,data.roomId,data.pExtend)
+        },
+
+        onCanSignMatch: function (data) {
+
+            if(this._arenaType == 3 ){
+                let vipCode = appInstance.dataManager().getUserData().vipCode
+                if(vipCode <= 0){
+                    appInstance.gameAgent().Tips('该功能只对会员开放')
+                    return false
+                }
+            }
+
             let consumptionType = data.consumptionType
             let matchfee = data.matchfee
             let myPropCnt
@@ -257,12 +277,13 @@ load('game/ui/layer/arena/ArenaLayer', function () {
                     SayText : '您的' + propName + '不足,是否购买'
                 }
                 appInstance.gameAgent().addDialogUI(dialogMsg)
-                return
+                return false
 
             }
 
-            this.onSignMatchFunction(data.roomMode,data.roomId,data.pExtend)
+            return true
         },
+
 
         onSignMatchFunction: function (roomMode,roomId,pExtend) {
 

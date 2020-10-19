@@ -24,6 +24,7 @@ load('module/mahjong/common/TableConfig', function () {
         'MatchResultBigProto': 'MatchResultBigProto',
         'clearTableGaming': 'clearTableGaming',
         'MatchReadyProto': 'MatchReadyProto',
+        'MatchEnterTableProto': 'MatchEnterTableProto'
     }
 
 
@@ -34,6 +35,10 @@ load('module/mahjong/common/TableConfig', function () {
 
     TableConfig.CardConfig = {
         'zhaoyuan': {
+            allCardNum: 112,
+            deckCardLen: 14
+        },
+        'daqing': {
             allCardNum: 112,
             deckCardLen: 14
         }
@@ -69,8 +74,10 @@ load('module/mahjong/common/TableConfig', function () {
         '8': '七小对',
         '13': '海底捞月',
         '35': '摸宝胡',//摸宝胡：自摸宝牌且胡牌张!=宝牌
+        '37': '点炮包三家',
         '43': '调胡',
         '44': '点炮胡',
+        '49': '未上听',
         '68': '刮大风',
         '81': '开牌炸',//开牌炸  刚起牌就有四张一样的
         '83': '宝中宝',

@@ -3,6 +3,7 @@ load('game/ui/layer/set/SetLayer', function () {
     let ResConfig = include('game/config/ResConfig')
     let BaseLayer = include('public/ui/BaseLayer')
     let GameEvent = include('game/config/GameEvent')
+    let LocalSave = include('game/public/LocalSave')
 
     let layer = BaseLayer.extend({
         _className: 'SetLayer',
@@ -48,6 +49,13 @@ load('game/ui/layer/set/SetLayer', function () {
                 if (this._data.isDesk) {
                     this.ExitBtn.setVisible(false)
                 }
+            }
+
+            let localLanguage = appInstance.gameAgent().gameUtil().getLocalLanguage()
+            if (localLanguage === 'putong') {
+                this.LaguageBtn.setSelected(false)
+            } else {
+                this.LaguageBtn.setSelected(true)
             }
         },
 
@@ -99,9 +107,9 @@ load('game/ui/layer/set/SetLayer', function () {
 
         onLaguageBtnClick: function (sender) {
             if (sender.isSelected()) {
-
+                global.localStorage.setStringForKey(LocalSave.LocalLanguage, 'putong')
             } else {
-
+                global.localStorage.setStringForKey(LocalSave.LocalLanguage, 'dongbei')
             }
         },
         onExitBtnClick: function () {

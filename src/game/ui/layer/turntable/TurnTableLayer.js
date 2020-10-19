@@ -23,8 +23,9 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
             return {
 
                 'topPnl/returnBtn': {onClicked: this.onCloseClick},
-                'topPnl/explainBtn': {},
-                'topPnl/recordBtn': {onClicked: this.onRecordClick},
+
+                'topPnl/explainPnl': {onClicked: this.onExplainClick},
+                'topPnl/recordPnl': {onClicked: this.onRecordClick},
 
                 'bmPnl/awardsPnl/awardsUserDataNd': {},
                 'bmPnl/awardsPnl/awardsUserDataNd/awardsUserDataPnl': {},
@@ -58,6 +59,10 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
                 'popUpPnl/acceptedPnl/awardsVal': {},
                 'popUpPnl/acceptedPnl/acceptedBg/acceptedTypePg': {},
 
+
+                'popUpPnl/rulePnl': {},
+                'popUpPnl/rulePnl/ruleCloseBtn': {onClicked: this.onHideRulePnlClick},
+
             }
         },
         onGoShopClick: function () {
@@ -76,6 +81,10 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
         initData: function () {
             this._lightBg = 0
             this._rewardUserData = []
+        },
+
+        onExplainClick: function () {
+            this.rulePnl.setVisible(true)
         },
 
         onUpdate: function (dt) {
@@ -119,7 +128,7 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
             this.acceptedPnl.setVisible(false)
             this.recordDataCell.setVisible(false)
             this.pointNd1.setVisible(false)
-
+            this.rulePnl.setVisible(false)
             // this.pointerBtn.setRotation(36 * 3)
 
         },
@@ -152,7 +161,7 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
 
             let nameNd = userCell.getChildByName('userName')
             let gooodsNd = userCell.getChildByName('goodsName')
-            nameNd.setString(userData.pName)
+            nameNd.setString(global.cropStr(userData.pName, 5, '...'))
             gooodsNd.setString(userData.luckPrizeStr)
         },
 
@@ -378,6 +387,8 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
             tabState = 1;
             if (cc.sys.OS_ANDROID === cc.sys.os) {
                 appInstance.nativeApi().showRewardVideo()
+            } else if (cc.sys.OS_IOS === cc.sys.os) {
+                appInstance.nativeApi().showRewardVideo()
             }
 
         },
@@ -414,6 +425,10 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
 
             this.acceptedPnl.setVisible(false)
 
+        },
+
+        onHideRulePnlClick: function () {
+            this.rulePnl.setVisible(false)
         },
 
         onRecordClick: function () {
@@ -464,7 +479,7 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
             let hour = d.getHours() < 10 ? (0 + "" + d.getHours()) : d.getHours();
             let minute = d.getMinutes() < 10 ? (0 + "" + d.getMinutes()) : d.getMinutes();
             let second = d.getSeconds() < 10 ? (0 + "" + d.getSeconds()) : d.getSeconds();
-            let dateString = d.getFullYear() + "-" + month + "-" + day + " " + hour + ": " + minute
+            let dateString = d.getFullYear() + "-" + month + "-" + day + " " + hour + ":" + minute
 
             return dateString;
 

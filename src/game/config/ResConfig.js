@@ -33,16 +33,16 @@ load('game/config/ResConfig', function () {
      *  角色骨骼动画资源
      */
     ResConfig.AniPlayer = {
-        "1": { json: 'res/animation/player/caishen/caishen.json', atlas: 'res/animation/player/caishen/caishen.atlas', png: 'res/animation/player/caishen/caishen.png' },
-        "4": { json: 'res/animation/player/fage/fage.json', atlas: 'res/animation/player/fage/fage.atlas', png: 'res/animation/player/fage/fage.png' },
-        "6": { json: 'res/animation/player/huamulan/huamulan.json', atlas: 'res/animation/player/huamulan/huamulan.atlas', png: 'res/animation/player/huamulan/huamulan.png' },
-        "5": { json: 'res/animation/player/huangdi/huangdi.json', atlas: 'res/animation/player/huangdi/huangdi.atlas', png: 'res/animation/player/huangdi/huangdi.png' },
-        "7": { json: 'res/animation/player/huxian/huxian.json', atlas: 'res/animation/player/huxian/huxian.atlas', png: 'res/animation/player/huxian/huxian.png' },
-        "2": { json: 'res/animation/player/nanchushi/nanchushi.json', atlas: 'res/animation/player/nanchushi/nanchushi.atlas', png: 'res/animation/player/nanchushi/nanchushi.png' },
-        "3": { json: 'res/animation/player/nvchushi/nvchushi.json', atlas: 'res/animation/player/nvchushi/nvchushi.atlas', png: 'res/animation/player/nvchushi/nvchushi.png' },
-        "8": { json: 'res/animation/player/zhangzuolin/zhangzuolin.json', atlas: 'res/animation/player/zhangzuolin/zhangzuolin.atlas', png: 'res/animation/player/zhangzuolin/zhangzuolin.png' },
-        "9": { json: 'res/animation/player/zhizunbao/zhizunbao.json', atlas: 'res/animation/player/zhizunbao/zhizunbao.atlas', png: 'res/animation/player/zhizunbao/zhizunbao.png' },
-        "10": { json: 'res/animation/player/zixia/zixia.json', atlas: 'res/animation/player/zixia/zixia.atlas', png: 'res/animation/player/zixia/zixia.png' },
+        "1": { json: 'res/animation/player/caishen/caishen.json', atlas: 'res/animation/player/caishen/caishen.atlas', png: 'res/animation/player/caishen/caishen.png', sound: 'res/sound/player/caishen.mp3' },
+        "4": { json: 'res/animation/player/fage/fage.json', atlas: 'res/animation/player/fage/fage.atlas', png: 'res/animation/player/fage/fage.png', sound: 'res/sound/player/fage.mp3' },
+        "6": { json: 'res/animation/player/huamulan/huamulan.json', atlas: 'res/animation/player/huamulan/huamulan.atlas', png: 'res/animation/player/huamulan/huamulan.png', sound: 'res/sound/player/huamulan.mp3' },
+        "5": { json: 'res/animation/player/huangdi/huangdi.json', atlas: 'res/animation/player/huangdi/huangdi.atlas', png: 'res/animation/player/huangdi/huangdi.png', sound: 'res/sound/player/huangdi.mp3' },
+        "7": { json: 'res/animation/player/huxian/huxian.json', atlas: 'res/animation/player/huxian/huxian.atlas', png: 'res/animation/player/huxian/huxian.png', sound: 'res/sound/player/huxian.mp3' },
+        "2": { json: 'res/animation/player/nanchushi/nanchushi.json', atlas: 'res/animation/player/nanchushi/nanchushi.atlas', png: 'res/animation/player/nanchushi/nanchushi.png', sound: 'res/sound/player/nanchushi.mp3', dongbei: 'res/sound/player/nanchushi_1.mp3' },
+        "3": { json: 'res/animation/player/nvchushi/nvchushi.json', atlas: 'res/animation/player/nvchushi/nvchushi.atlas', png: 'res/animation/player/nvchushi/nvchushi.png', sound: 'res/sound/player/nvchushi.mp3', dongbei: 'res/sound/player/nvchushi_1.mp3' },
+        "8": { json: 'res/animation/player/zhangzuolin/zhangzuolin.json', atlas: 'res/animation/player/zhangzuolin/zhangzuolin.atlas', png: 'res/animation/player/zhangzuolin/zhangzuolin.png', sound: 'res/sound/player/zhangzuolin.mp3' },
+        "9": { json: 'res/animation/player/zhizunbao/zhizunbao.json', atlas: 'res/animation/player/zhizunbao/zhizunbao.atlas', png: 'res/animation/player/zhizunbao/zhizunbao.png', sound: 'res/sound/player/zhizunbao.mp3' },
+        "10": { json: 'res/animation/player/zixia/zixia.json', atlas: 'res/animation/player/zixia/zixia.atlas', png: 'res/animation/player/zixia/zixia.png', sound: 'res/sound/player/zixia.mp3' },
     }
 
     /**
@@ -134,12 +134,15 @@ load('game/config/ResConfig', function () {
      *  声音配置
      */
     ResConfig.Sound = {
+        path: 'res/sound/',
         bg1: 'res/sound/bg/bg1.mp3',
         bg2: 'res/sound/bg/bg2.mp3',
         btnEffect: 'res/sound/btnClick.mp3',
         turnTableBegin: 'res/sound/turnTableBegin.mp3',
         turnTableEnd: 'res/sound/turnTableEnd.mp3',
         turnTableInd: 'res/sound/turnTableInd.mp3',
+        qiandao: 'qiandao.mp3',
+        vip: 'vip.mp3'
     }
 
     ResConfig.prefixPath = { }

@@ -24,6 +24,7 @@ load('module/mahjong/data/PlayData', function () {
       this.pMySeatID = parseInt(data.pMySeatID)
       this.pPlayerNum = parseInt(data.pPlayerNum)
       this.pDongSeatID = parseInt(data.pDongSeatID)
+      this.pMode = parseInt(data.pMode)
       this.uiSeatArray = TableConfig.UiSeatArray[this.pPlayerNum]
     },
 
@@ -60,6 +61,14 @@ load('module/mahjong/data/PlayData', function () {
         return this.players[seatId]
       }
       return this.players
+    },
+
+    isMatch: function () {
+      if (this.pMode === 1 || this.pMode === 2) {
+        return true
+      } else {
+        return false
+      }
     },
 
     seatId2UI: function (seatId) {

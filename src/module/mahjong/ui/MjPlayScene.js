@@ -10,6 +10,7 @@ load('module/mahjong/ui/MjPlayScene', function () {
     let DeskCardLayer = include('module/mahjong/ui/DeskCardLayer')
     let DeskHeadLayer = include('module/mahjong/ui/DeskHeadLayer')
     let DeskTopLayer = include('module/mahjong/ui/DeskTopLayer')
+    let EffectLayer = include('module/mahjong/ui/EffectLayer')
     let DeskResultLayer = include('module/mahjong/ui/DeskResultLayer')
     let MatchJinjiLayer = include('module/mahjong/ui/MatchJinjiLayer')
     let MatchResultLayer = include('module/mahjong/ui/MatchResultLayer')
@@ -34,6 +35,8 @@ load('module/mahjong/ui/MjPlayScene', function () {
             this.addChild(this.DeskCardLayer)
             this.DeskTopLayer = appInstance.uiManager().createUI(DeskTopLayer)
             this.addChild(this.DeskTopLayer)
+            this.EffectLayer = appInstance.uiManager().createUI(EffectLayer)
+            this.addChild(this.EffectLayer)
         },
 
         //为避免遮挡 晋级就不再这里面显示了 显示到大厅去

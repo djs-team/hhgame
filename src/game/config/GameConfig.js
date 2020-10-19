@@ -72,10 +72,13 @@ load('game/config/GameConfig', function () {
     GameConfig.channel = {
         '10047': 'zhaoyuan',
         'zhaoyuan': '10047',
+        '10001': 'daqing',
+        'daqing': '10001',
     }
 
     GameConfig.areaName = {
         'zhaoyuan': '肇源麻将',
+        'daqing': '大庆麻将'
     }
 
     GameConfig.jumping = {
@@ -325,7 +328,7 @@ load('game/config/GameConfig', function () {
                 ,
                 '6': {
                     'name': '花木兰',
-                    'currency': 'res/turntable/zphd_28.png',
+                    'currency': 'res/turntable/zphd_24.png',
                 }
 
                 ,

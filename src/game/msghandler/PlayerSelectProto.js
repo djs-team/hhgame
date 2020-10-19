@@ -183,6 +183,7 @@ load('game/msghandler/PlayerSelectProto', function () {
             let eventMsg = {}
             eventMsg.updatePutCard = updatePutCard
             eventMsg.updateHandCard = updateHandCard
+            eventMsg._msg = msg
             appInstance.sendNotification(Event.PlayerSelectProto, eventMsg)
         },
 

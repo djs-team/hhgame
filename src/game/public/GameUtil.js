@@ -2,8 +2,8 @@
 load('game/public/GameUtil',function () {
     let GameUtil = {}
     let GameConfig = include('game/config/GameConfig')
-
-
+    let LocalSave = include('game/public/LocalSave')
+    let ResConfig = include('game/config/ResConfig')
     GameUtil.getAni = function (aniInfo) {
             let ani = sp.SkeletonAnimation.createWithJsonFile(aniInfo.json, aniInfo.atlas)
             ani.update(0)
@@ -51,6 +51,33 @@ load('game/public/GameUtil',function () {
                 parent.addChild(sp);
             }
         });
+    }
+
+    GameUtil.getLocalLanguage = function () {
+        return global.localStorage.getStringForKey(LocalSave.LocalLanguage) || 'putong'
+    }
+
+    GameUtil.autoPlaySound = function (sound) {
+        if (!sound) {
+            return
+        }
+        let effectType = appInstance.gameAgent().gameUtil().getLocalLanguage()
+        let SEX = [
+            'man',
+            'woman'
+        ]
+        let sexStr = SEX[appInstance.dataManager().getUserData().sex]
+        let soundPath = ResConfig.Sound.path + effectType + '/' + sexStr + '/'
+
+        if (typeof sound === 'string') {
+            soundPath += sound
+        } else {
+            let index = Math.floor(Math.random() * (sound.length))
+            soundPath += sound[index]
+            soundPath += '.mp3'
+        }
+        cc.log('=========autoPlaySound=============' + soundPath)
+        appInstance.audioManager().playEffect(soundPath)
     }
 
 

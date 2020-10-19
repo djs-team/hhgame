@@ -194,32 +194,6 @@ load('game/ui/scene/LoginScene', function () {
 
         showView: function () {
 
-        },
-
-        onLoginClick2: function () {
-            cc.log('====================onLoginClick2============')
-
-            let proto = include('game/msghandler/PutCardProto')
-            let protoObj = new proto()
-            let reData = protoObj.getReData()
-            cc.log('=============' + JSON.stringify(reData))
-
-            // appInstance.gameNet().connect()
-
-            // appInstance.gameAgent().httpGame().httpLogin()
-        },
-
-        onLoginClick3: function () {
-            let Packet = include('public/network/Packet')
-            let LoginProto = include('game/msghandler/LoginProto')
-            let PacketProto = new Packet(new LoginProto())
-            let tb = {
-                'gid': 5,
-                'key': '这是个啥啊',
-                'channel': 10047
-            }
-            PacketProto.setValue(tb)
-            appInstance.gameNet().send(PacketProto)
         }
     })
 

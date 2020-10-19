@@ -198,15 +198,11 @@
               "X": 0.5,
               "Y": 0.5
             },
-            "PercentWidthEnable": true,
-            "PercentHeightEnable": true,
-            "PercentWidthEnabled": true,
-            "PercentHeightEnabled": true,
             "PreSize": {
               "X": 1.0,
               "Y": 1.0
             },
-            "UserData": "{\"layoutType\":\"maxArea\",\"screenAlign\":\"mid\"}",
+            "UserData": "{\"layoutType\":\"showAll\",\"screenAlign\":\"mid\"}",
             "Tag": 27,
             "Children": [
               {
@@ -247,7 +243,7 @@
                   "Y": 0.4392
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.2778
                 },
                 "LeftMargin": 540.0,
@@ -637,7 +633,7 @@
                       "Y": 0.2107
                     },
                     "PreSize": {
-                      "X": 0.0313,
+                      "X": 0.0312,
                       "Y": 0.0597
                     },
                     "LeftMargin": 912.9454,
@@ -1666,7 +1662,7 @@
                             "Children": [
                               {
                                 "FontSize": 26,
-                                "LabelText": "获得时间           获奖信息",
+                                "LabelText": "获得时间",
                                 "OutlineColor": {
                                   "G": 0,
                                   "B": 0
@@ -1683,8 +1679,8 @@
                                   "ScaleY": 0.5
                                 },
                                 "Position": {
-                                  "X": 241.5079,
-                                  "Y": 252.7492
+                                  "X": 131.4394,
+                                  "Y": 257.4189
                                 },
                                 "Scale": {
                                   "ScaleX": 1.0,
@@ -1697,24 +1693,77 @@
                                 },
                                 "IconVisible": false,
                                 "PrePosition": {
-                                  "X": 0.4909,
-                                  "Y": 0.9125
+                                  "X": 0.2672,
+                                  "Y": 0.9293
                                 },
                                 "PreSize": {
-                                  "X": 0.7134,
+                                  "X": 0.2114,
                                   "Y": 0.0939
                                 },
-                                "LeftMargin": 66.0079,
-                                "RightMargin": 74.9921,
-                                "TopMargin": 11.2508,
-                                "BottomMargin": 239.7492,
+                                "LeftMargin": 79.4394,
+                                "RightMargin": 308.5606,
+                                "TopMargin": 6.5811,
+                                "BottomMargin": 244.4189,
                                 "Tag": 339,
                                 "ActionTag": -178662663,
                                 "Size": {
-                                  "X": 351.0,
+                                  "X": 104.0,
                                   "Y": 26.0
                                 },
                                 "Name": "Text_32",
+                                "ctype": "TextObjectData"
+                              },
+                              {
+                                "FontSize": 26,
+                                "LabelText": "获奖信息",
+                                "OutlineColor": {
+                                  "G": 0,
+                                  "B": 0
+                                },
+                                "ShadowColor": {
+                                  "R": 110,
+                                  "G": 110,
+                                  "B": 110
+                                },
+                                "ShadowOffsetX": 2.0,
+                                "ShadowOffsetY": -2.0,
+                                "AnchorPoint": {
+                                  "ScaleX": 0.5,
+                                  "ScaleY": 0.5
+                                },
+                                "Position": {
+                                  "X": 363.5768,
+                                  "Y": 257.42
+                                },
+                                "Scale": {
+                                  "ScaleX": 1.0,
+                                  "ScaleY": 1.0
+                                },
+                                "CColor": {
+                                  "R": 95,
+                                  "G": 9,
+                                  "B": 4
+                                },
+                                "IconVisible": false,
+                                "PrePosition": {
+                                  "X": 0.739,
+                                  "Y": 0.9293
+                                },
+                                "PreSize": {
+                                  "X": 0.2114,
+                                  "Y": 0.0939
+                                },
+                                "LeftMargin": 311.5768,
+                                "RightMargin": 76.4232,
+                                "TopMargin": 6.58,
+                                "BottomMargin": 244.42,
+                                "Tag": 209,
+                                "ActionTag": 2012286717,
+                                "Size": {
+                                  "X": 104.0,
+                                  "Y": 26.0
+                                },
+                                "Name": "Text_32_0",
                                 "ctype": "TextObjectData"
                               }
                             ],
@@ -2039,8 +2088,10 @@
                             "ctype": "ImageViewObjectData"
                           },
                           {
+                            "IsCustomSize": true,
                             "FontSize": 20,
-                            "LabelText": "2020-06-28   14: 33",
+                            "LabelText": "2020-06-28   14:33",
+                            "HorizontalAlignmentType": "HT_Center",
                             "OutlineColor": {
                               "G": 0,
                               "B": 0
@@ -2058,7 +2109,7 @@
                             },
                             "Position": {
                               "X": 126.4184,
-                              "Y": 16.983
+                              "Y": 19.98
                             },
                             "Scale": {
                               "ScaleX": 1.0,
@@ -2072,21 +2123,21 @@
                             "IconVisible": false,
                             "PrePosition": {
                               "X": 0.2575,
-                              "Y": 0.4246
+                              "Y": 0.4995
                             },
                             "PreSize": {
-                              "X": 0.387,
-                              "Y": 0.5
+                              "X": 0.4073,
+                              "Y": 0.575
                             },
-                            "LeftMargin": 31.4184,
-                            "RightMargin": 269.5816,
-                            "TopMargin": 13.017,
-                            "BottomMargin": 6.983,
+                            "LeftMargin": 26.4184,
+                            "RightMargin": 264.5816,
+                            "TopMargin": 8.52,
+                            "BottomMargin": 8.48,
                             "Tag": 409,
                             "ActionTag": 513530038,
                             "Size": {
-                              "X": 190.0,
-                              "Y": 20.0
+                              "X": 200.0,
+                              "Y": 23.0
                             },
                             "Name": "timeText",
                             "ctype": "TextObjectData"
@@ -2106,8 +2157,8 @@
                               "ScaleY": 0.5
                             },
                             "Position": {
-                              "X": 347.68,
-                              "Y": 17.68
+                              "X": 326.6798,
+                              "Y": 19.98
                             },
                             "Scale": {
                               "ScaleX": 1.0,
@@ -2116,17 +2167,17 @@
                             "CColor": {},
                             "IconVisible": false,
                             "PrePosition": {
-                              "X": 0.7081,
-                              "Y": 0.442
+                              "X": 0.6653,
+                              "Y": 0.4995
                             },
                             "PreSize": {
                               "X": 0.057,
                               "Y": 0.7
                             },
-                            "LeftMargin": 333.68,
-                            "RightMargin": 129.32,
-                            "TopMargin": 8.32,
-                            "BottomMargin": 3.68,
+                            "LeftMargin": 312.6798,
+                            "RightMargin": 150.3202,
+                            "TopMargin": 6.02,
+                            "BottomMargin": 5.98,
                             "Tag": 410,
                             "ActionTag": 1220738276,
                             "Size": {
@@ -2137,6 +2188,7 @@
                             "ctype": "ImageViewObjectData"
                           },
                           {
+                            "IsCustomSize": true,
                             "FontSize": 20,
                             "LabelText": "xxxxxxxxxxx",
                             "OutlineColor": {
@@ -2155,8 +2207,8 @@
                               "ScaleY": 0.5
                             },
                             "Position": {
-                              "X": 424.73,
-                              "Y": 17.2798
+                              "X": 406.2111,
+                              "Y": 19.98
                             },
                             "Scale": {
                               "ScaleX": 1.0,
@@ -2169,22 +2221,22 @@
                             },
                             "IconVisible": false,
                             "PrePosition": {
-                              "X": 0.865,
-                              "Y": 0.432
+                              "X": 0.8273,
+                              "Y": 0.4995
                             },
                             "PreSize": {
-                              "X": 0.224,
-                              "Y": 0.5
+                              "X": 0.2511,
+                              "Y": 0.575
                             },
-                            "LeftMargin": 369.73,
-                            "RightMargin": 11.27,
-                            "TopMargin": 12.7202,
-                            "BottomMargin": 7.2798,
+                            "LeftMargin": 344.5588,
+                            "RightMargin": 23.1367,
+                            "TopMargin": 8.52,
+                            "BottomMargin": 8.48,
                             "Tag": 411,
                             "ActionTag": 75387068,
                             "Size": {
-                              "X": 110.0,
-                              "Y": 20.0
+                              "X": 123.3044,
+                              "Y": 23.0
                             },
                             "Name": "coinsText",
                             "ctype": "TextObjectData"
@@ -2471,8 +2523,8 @@
                               "ScaleY": 0.5
                             },
                             "Position": {
-                              "X": 648.1165,
-                              "Y": 378.5476
+                              "X": 648.064,
+                              "Y": 378.576
                             },
                             "Scale": {
                               "ScaleX": 1.0,
@@ -2490,10 +2542,10 @@
                               "X": 0.386,
                               "Y": 0.394
                             },
-                            "LeftMargin": 401.105,
-                            "RightMargin": 384.8721,
-                            "TopMargin": 199.6281,
-                            "BottomMargin": 236.7233,
+                            "LeftMargin": 401.0525,
+                            "RightMargin": 384.9246,
+                            "TopMargin": 199.5997,
+                            "BottomMargin": 236.7517,
                             "Tag": 250,
                             "Children": [
                               {

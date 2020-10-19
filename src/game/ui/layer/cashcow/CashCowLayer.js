@@ -198,7 +198,7 @@ load('game/ui/layer/cashcow/CashCowLayer', function () {
             let hour = d.getHours() < 10 ? (0 + "" + d.getHours()) : d.getHours();
             let minute = d.getMinutes() < 10 ? (0 + "" + d.getMinutes()) : d.getMinutes();
             let second = d.getSeconds() < 10 ? (0 + "" + d.getSeconds()) : d.getSeconds();
-            let dateString = d.getFullYear() + "-" + month + "-" + day + " " + hour + ": " + minute
+            let dateString = d.getFullYear() + "-" + month + "-" + day + " " + hour + ":" + minute
 
             return dateString;
 

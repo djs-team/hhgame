@@ -38,6 +38,7 @@ load('game/ui/layer/role/RoleLayer', function () {
                 'pnl/dataPnl/coinPnl/coinAddBtn': {onClicked : this.onCoinShopClick},
 
                 'pnl/dataPnl/roleNd': {},
+                'pnl/dataPnl/RoleTouch': { onClicked : this.onRoleTouchClick },
                 'pnl/dataPnl/roleName': {},
                 'pnl/dataPnl/roleVipName': {},
                 'pnl/dataPnl/timeText': {},
@@ -73,6 +74,7 @@ load('game/ui/layer/role/RoleLayer', function () {
 
         initData: function () {
             this._roleArrayName = this._rolesChoiceBtn_all
+            this._localLanguage = appInstance.gameAgent().gameUtil().getLocalLanguage()
         },
 
         initView: function () {
@@ -90,7 +92,16 @@ load('game/ui/layer/role/RoleLayer', function () {
             this.roleImageCell.setVisible(false)
 
 
+        },
 
+        onRoleTouchClick: function (sender) {
+            let roleCode = sender._roleCode
+            let roleInfo = AniPlayer[roleCode]
+            if (roleInfo.dongbei && this._localLanguage === 'dongbei') {
+                appInstance.audioManager().playEffect(roleInfo.dongbei)
+            } else {
+                appInstance.audioManager().playEffect(roleInfo.sound)
+            }
         },
 
         onCoinShopClick: function () {
@@ -270,6 +281,8 @@ load('game/ui/layer/role/RoleLayer', function () {
             ani.setPosition(cc.p(0,0))
             ani.setScale(0.35)
             ani.setAnimation(0, PlayerPlay.stand, true)
+
+            this.RoleTouch._roleCode = cellData.roleCode
 
             switch (getType) {
                 case 1:

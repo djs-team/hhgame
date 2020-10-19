@@ -424,14 +424,14 @@
                                     <PreSize X="0.9700" Y="0.8780" />
                                     <ImageFileData Type="Normal" Path="task/rwzx_16.png" Plist="" />
                                   </AbstractNodeData>
-                                  <AbstractNodeData Name="progressValueText" ActionTag="483660258" Tag="38" IconVisible="False" LeftMargin="150.1296" RightMargin="166.8704" TopMargin="2.6292" BottomMargin="12.3708" IsCustomSize="True" FontSize="20" LabelText="2/3" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                                    <Size X="50.0000" Y="26.0000" />
+                                  <AbstractNodeData Name="progressValueText" ActionTag="483660258" Tag="38" IconVisible="False" LeftMargin="125.1296" RightMargin="141.8704" TopMargin="2.6292" BottomMargin="12.3708" IsCustomSize="True" FontSize="20" LabelText="2/3" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                                    <Size X="100.0000" Y="26.0000" />
                                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                                     <Position X="175.1296" Y="25.3708" />
                                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                                     <CColor A="255" R="255" G="255" B="255" />
                                     <PrePosition X="0.4772" Y="0.6188" />
-                                    <PreSize X="0.1362" Y="0.6341" />
+                                    <PreSize X="0.2725" Y="0.6341" />
                                     <OutlineColor A="255" R="255" G="0" B="0" />
                                     <ShadowColor A="255" R="110" G="110" B="110" />
                                   </AbstractNodeData>

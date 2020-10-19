@@ -19,6 +19,8 @@ import com.deepsea.mua.stub.entity.MessageNumVo;
 import com.deepsea.mua.stub.utils.LogoutUtils;
 import com.deepsea.mua.stub.utils.ViewBindUtils;
 import com.deepsea.mua.stub.utils.ViewModelFactory;
+import com.deepsea.mua.stub.utils.eventbus.HeartBeatEvent;
+import com.deepsea.mua.stub.utils.eventbus.UpHxUnreadMsg;
 import com.deepsea.mua.stub.utils.eventbus.UpdateUnreadMsgEvent;
 import com.hyphenate.EMMessageListener;
 import com.hyphenate.chat.EMClient;
@@ -98,21 +100,16 @@ public class MessageMainFragment extends BaseFragment<FragmentMessageMainBinding
         });
     }
 
-    boolean isResume = false;
 
     @Override
     public void onResume() {
         super.onResume();
-        isResume = true;
         Log.d("onResume", "messageMan");
-        getMessageNum();
+        if (!hidden) {
+            getMessageNum();
+        }
     }
 
-    @Override
-    public void onPause() {
-        super.onPause();
-        isResume = false;
-    }
 
     //未读消息数量
     private void getMessageNum() {
@@ -134,21 +131,23 @@ public class MessageMainFragment extends BaseFragment<FragmentMessageMainBinding
     private EMMessageListener mEMListener = new IEMMessageListener() {
         @Override
         public void onMessageReceived(List<EMMessage> list) {
-            if (isResume) {
+            if (!hidden) {
                 getMessageNum();
             }
         }
 
         @Override
         public void onCmdMessageReceived(List<EMMessage> list) {
-            if (isResume) {
+            if (!hidden) {
                 getMessageNum();
             }
         }
 
         @Override
         public void onMessageRecalled(List<EMMessage> list) {
-            getMessageNum();
+            if (!hidden) {
+                getMessageNum();
+            }
         }
     };
 
@@ -159,7 +158,6 @@ public class MessageMainFragment extends BaseFragment<FragmentMessageMainBinding
         int chatCount = EMClient.getInstance().chatManager().getUnreadMessageCount();
         ViewBindUtils.setVisible(mBinding.tvMsgUnread, chatCount > 0);
         ViewBindUtils.setText(mBinding.tvMsgUnread, String.valueOf(chatCount));
-
         ViewBindUtils.setVisible(mBinding.tvSysUnread, sysUnreadNum > 0);
         ViewBindUtils.setText(mBinding.tvSysUnread, String.valueOf(sysUnreadNum));
         int friendCount = applyUnreadNum + myApplyUnreadNum;
@@ -172,6 +170,30 @@ public class MessageMainFragment extends BaseFragment<FragmentMessageMainBinding
     public void onEvent(UpdateUnreadMsgEvent msgTimeEvent) {
         getMessageNum();
     }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onEvent(HeartBeatEvent msgTimeEvent) {
+        if (msgTimeEvent.getIsRequest() == 1) {
+            getMessageNum();
+        }
+    }
+
+    @Subscribe
+    public void onEvent(UpHxUnreadMsg event) {
+        getMessageNum();
+    }
+
+    private boolean hidden;
+
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+        this.hidden = hidden;
+        if (!hidden) {
+            getMessageNum();
+        }
+    }
+
 
 }
 

@@ -206,12 +206,12 @@ public class MicroFaceView extends FrameLayout {
                     }
                 }
             });
-            ViewBindUtils.setVisible(mBinding.rlOperateApplause, !UserUtils.getUser().getUid().equals(user.getUserId()) && SongStateUtils.getSingleton2().getConsertUserId().equals(user.getUserId()));
-            ViewBindUtils.RxClicks(mBinding.rlOperateApplause, o -> {
-                if (onApplauseListener != null) {
-                    onApplauseListener.applauseSinger(user);
-                }
-            });
+//            ViewBindUtils.setVisible(mBinding.rlOperateApplause, !UserUtils.getUser().getUid().equals(user.getUserId()) && SongStateUtils.getSingleton2().getConsertUserId().equals(user.getUserId()));
+//            ViewBindUtils.RxClicks(mBinding.rlOperateApplause, o -> {
+//                if (onApplauseListener != null) {
+//                    onApplauseListener.applauseSinger(user);
+//                }
+//            });
             ViewBindUtils.RxClicks(mBinding.rlDownMp, o -> {
                 if (onMicUserListener != null) {
                     onMicUserListener.downMicro(user.getUserId(), bean.getType(), bean.getNumber());
@@ -289,7 +289,7 @@ public class MicroFaceView extends FrameLayout {
         mBinding.addfriendCommonuserTv.setVisibility(GONE);
         mBinding.addfriendTv.setOnClickListener(null);
         mBinding.addfriendTv.setVisibility(GONE);
-        mBinding.rlOperateApplause.setVisibility(GONE);
+//        mBinding.rlOperateApplause.setVisibility(GONE);
         removeSurfaceView();
     }
 
@@ -507,7 +507,7 @@ public class MicroFaceView extends FrameLayout {
     }
 
 
-    private void removeSurfaceView() {
+    public void removeSurfaceView() {
 //        release();
         try {
             mBinding.faceContainer.removeAllViews();

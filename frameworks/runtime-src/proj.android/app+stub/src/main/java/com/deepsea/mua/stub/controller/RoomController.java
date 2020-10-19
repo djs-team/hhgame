@@ -2004,8 +2004,13 @@ public class RoomController implements IRoomController, RoomMsgHandler.OnMsgEven
                     mView.showRedPackageRule(redPacketPlayDescParam.getPlayingDesc());
                 }
                 break;
-            case 300:
-                SongStateUtils.getSingleton2().setHeartCount(0);
+//            case 300:
+//                SongStateUtils.getSingleton2().setHeartCount(0);
+//                break;
+            case 301://KeepaLive
+                if (mView!=null){
+                    mView.keepLive();
+                }
                 break;
         }
     }

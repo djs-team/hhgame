@@ -1,5 +1,6 @@
 package com.deepsea.mua.stub.utils;
 
+import android.graphics.Color;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.TextView;
@@ -47,17 +48,17 @@ public class StateUtils {
     public static void setState(WithBackgroundTextView textView, String str) {
         if (!TextUtils.isEmpty(str)) {
             textView.setVisibility(View.VISIBLE);
-            if (str.contains("离线")) {
-                textView.setWithBackgroundColor(R.color.state_color_grary);
+            if (str.contains("离线") || str.contains("刚刚在线")) {
+                textView.setWithBackgroundColor(Color.parseColor("#b5b5b6"));
                 ViewBindUtils.setText(textView, str);
             } else if (str.contains("相亲")) {
-                textView.setWithBackgroundColor(R.color.state_color_violet);
+                textView.setWithBackgroundColor(Color.parseColor("#7F3EF0"));
             } else if (str.contains("热聊")) {
-                textView.setWithBackgroundColor(R.color.state_color_pink);
+                textView.setWithBackgroundColor(Color.parseColor("#EF51B2"));
             } else if (str.contains("开播")) {
-                textView.setWithBackgroundColor(R.color.state_color_yellow);
+                textView.setWithBackgroundColor(Color.parseColor("#FEBF00"));
             } else {
-                textView.setWithBackgroundColor(R.color.state_color_green);
+                textView.setWithBackgroundColor(Color.parseColor("#10E770"));
             }
             textView.setText(str);
 

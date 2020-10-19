@@ -336,7 +336,6 @@ public class AppActivity extends Cocos2dxActivity {
     private WxpayBroadcast.WxpayReceiver mWxpayReceiver = new WxpayBroadcast.WxpayReceiver() {
         @Override
         public void onSuccess() {
-            ToastUtils.showToast("成功");
             unregisterWxpayResult();
             onPayResult(0);
 
@@ -344,7 +343,6 @@ public class AppActivity extends Cocos2dxActivity {
 
         @Override
         public void onError() {
-            ToastUtils.showToast("error");
             unregisterWxpayResult();
             onPayResult(-1);
         }

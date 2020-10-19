@@ -516,5 +516,7 @@ public interface IRoomController {
 
         void  showCenterHtmlToast(String content);
 
+        void  keepLive();
+
     }
 }

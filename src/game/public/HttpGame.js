@@ -61,6 +61,7 @@ load('game/public/HttpGame', function () {
                 'account',
                 'key',   //登陆成功后，服务端存的session KEY
                 'pid',
+                'sex',
                 'timetamp',
                 'lastChannel',
                 'fistLogin'

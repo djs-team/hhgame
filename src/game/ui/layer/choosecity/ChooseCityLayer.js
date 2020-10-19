@@ -14,6 +14,7 @@ load('game/ui/layer/choosecity/ChooseCityLayer', function () {
                 'pnl/returnBtn': { onClicked: this.onReturnBtnClick },
                 'pnl/leftListView': { },
                 'pnl/cityListView': { },
+                'pnl/searchEdit': { },
                 'pnl/cityCell': { },
                 'pnl/cityListCell': { },
                 'pnl/leftCell': { }
@@ -24,6 +25,9 @@ load('game/ui/layer/choosecity/ChooseCityLayer', function () {
                     { name: '肇源麻将', _sendMsg: {channel: 10047}},
                     { name: '大庆麻将', _sendMsg: {channel: 10001}}
                 ] }
+        ],
+        _searchInfo: [
+            ['肇源麻将', '肇源麻', '肇源将', '肇源', '肇', '源', '大庆麻将', '大庆麻', '大庆将', '大庆', '大', '庆']
         ],
         ctor: function (data) {
             this._super(ResConfig.View.ChooseCityLayer)
@@ -152,7 +156,6 @@ load('game/ui/layer/choosecity/ChooseCityLayer', function () {
 
             let nameNd = cell.getChildByName('name')
             nameNd.setString(cellData.name)
-            console.log('======cellData==' + cellData.name)
 
             cell._sendMsg = cellData._sendMsg
 
@@ -175,7 +178,23 @@ load('game/ui/layer/choosecity/ChooseCityLayer', function () {
         },
 
         onsearchBtnClick: function () {
-
+            let txt = this.searchEdit.getString()
+            if (!txt) {
+                appInstance.gameAgent().Tips('请输入想要寻找的城市！')
+                return
+            }
+            for (let i = 0; i < this._searchInfo.length; ++i) {
+                if (this._searchInfo[i].indexOf(txt) !== -1) {
+                    this._leftIndex = i
+                    let sender = {}
+                    sender._leftIndex = i
+                    this.onLeftBtnClick(sender)
+                    this.searchEdit.setString('')
+                    return
+                }
+            }
+            this.searchEdit.setString('')
+            appInstance.gameAgent().Tips('请输入正确的城市名称！')
         },
 
         onkefuBtnClick: function () {

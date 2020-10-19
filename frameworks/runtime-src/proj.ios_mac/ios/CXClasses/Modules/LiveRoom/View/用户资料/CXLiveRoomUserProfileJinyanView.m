@@ -52,6 +52,8 @@
     _dateCollectionView.dataSource = self;
     _dateCollectionView.delegate = self;
     [_dateCollectionView registerNib:[UINib nibWithNibName:@"CXLiveRoomUserProfileJinyanDateCell" bundle:nil] forCellWithReuseIdentifier:@"CXLiveRoomUserProfileJinyanDateCellID"];
+    
+    [self getDisableMsgTemplates];
 }
 
 - (void)getDisableMsgTemplates {
@@ -104,7 +106,7 @@
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake(320/2, 30);
+    return CGSizeMake((320 - 32 - 10)/2, 30);
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {

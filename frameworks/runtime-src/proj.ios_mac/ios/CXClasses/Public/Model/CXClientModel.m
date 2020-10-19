@@ -80,7 +80,7 @@
             }
         } else {
             NSError *error = [[NSError alloc] init];
-            [weakSelf socketManager:weakSelf.socket room:roomId error:error];
+            [weakSelf socketManager:[SocketManager new] room:roomId error:error];
         }
     }];
 }

@@ -61,6 +61,8 @@
     NSString *const kNSNotificationCenter_CXMySettingWechatBindViewController_weixin = @"NSNotificationCenter_CXMySettingWechatBindViewController_weixin";
     NSString *const kNSNotificationCenter_CXRechargeViewController_alipay = @"NSNotificationCenter_CXRechargeViewController_alipay";
 
+    NSString *const kNSNotificationCenter_CXFriendViewController_unreadCount = @"NSNotificationCenter_CXFriendViewController_unreadCount";
+
     // ********** define **********
     // frame
     #define IS_IPHONE_X         [[UIScreen mainScreen] bounds].size.height >= 800.0f

@@ -130,7 +130,7 @@
         }
     } else {
         self.bottomView.hidden = YES;
-        GameUserIdentity selfIdentity = [CXClientModel instance].room.UserIdentity;
+        GameUserIdentity selfIdentity = [CXClientModel instance].room.UserIdentity.integerValue;
         if (seatIndex) { //在麦上
             LiveRoomMicroInfo * seat = [[CXClientModel instance].room.seats objectForKey:seatIndex];
             if (seat.isMute == YES) {//静音了此人，打开

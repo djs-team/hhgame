@@ -44,7 +44,7 @@ public class HeartControl {
                             Log.d("heart", "count:" + count);
                             if (count <= 12) {
                                 SongStateUtils.getSingleton2().setHeartCount(count + 1);
-                                mViewModel.toSocketHeartBeat();
+//                                mViewModel.toSocketHeartBeat();
                             } else {
                                 callback.onResult();
                             }

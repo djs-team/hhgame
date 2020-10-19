@@ -107,13 +107,15 @@ load('module/mahjong/common/ResConfig', function () {
         ],
         match_jinji:[
             'match_jinji_1',
-            'match_jinji_2'
+            'match_jinji_2',
+            'match_juesai'
         ],
         match_juesai: [
             'match_juesai'
         ],
         match_taotai: [
-          'match_taotai'
+          'match_taotai',
+          'match_taotai_rank'
         ],
         match_taotai_rank: [
           'match_taotai_rank'

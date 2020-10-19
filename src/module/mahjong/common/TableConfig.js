@@ -24,6 +24,7 @@ load('module/mahjong/common/TableConfig', function () {
         'MatchResultBigProto': 'MatchResultBigProto',
         'clearTableGaming': 'clearTableGaming',
         'MatchReadyProto': 'MatchReadyProto',
+        'MatchEnterTableProto': 'MatchEnterTableProto'
     }
 
 

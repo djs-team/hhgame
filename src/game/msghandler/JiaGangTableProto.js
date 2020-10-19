@@ -102,7 +102,7 @@ load('game/msghandler/JiaGangTableProto', function () {
             }
 
             cc.log('======================================playerdata==========' + JSON.stringify(pData))
-            appInstance.sendNotification(TableEvent.UpdateView)
+            appInstance.sendNotification(TableEvent.MatchEnterTableProto, msg)
         },
 
         initData: function () {

@@ -134,12 +134,15 @@ load('game/config/ResConfig', function () {
      *  声音配置
      */
     ResConfig.Sound = {
+        path: 'res/sound/',
         bg1: 'res/sound/bg/bg1.mp3',
         bg2: 'res/sound/bg/bg2.mp3',
         btnEffect: 'res/sound/btnClick.mp3',
         turnTableBegin: 'res/sound/turnTableBegin.mp3',
         turnTableEnd: 'res/sound/turnTableEnd.mp3',
         turnTableInd: 'res/sound/turnTableInd.mp3',
+        qiandao: 'qiandao.mp3',
+        vip: 'vip.mp3'
     }
 
     ResConfig.prefixPath = { }

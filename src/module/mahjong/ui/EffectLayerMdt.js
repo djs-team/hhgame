@@ -49,7 +49,15 @@ load('module/mahjong/ui/EffectLayerMdt', function () {
         },
 
         InitCardProto: function (msg) {
-            appInstance.gameAgent().mjUtil().playGamingSound(Sound.play.begin)
+            let pData = appInstance.dataManager().getPlayData()
+            if (pData.isMatch()) {
+                let tData = pData.tableData
+                if (tData.pCurRound === 1) {
+                    appInstance.gameAgent().mjUtil().playGamingSound(Sound.play.match_begin)
+                }
+            } else {
+                appInstance.gameAgent().mjUtil().playGamingSound(Sound.play.begin)
+            }
         },
 
         GameResultProto: function(msg) {

@@ -34,13 +34,13 @@
     friendVC.isConversation = YES;
     _conversationVC = friendVC;
     
-    CXSystemMessageViewController *systemVC = [CXSystemMessageViewController new];
+//    CXSystemMessageViewController *systemVC = [CXSystemMessageViewController new];
     
-    self.viewControllerClasses = [NSArray arrayWithObjects:friendVC, systemVC, nil];
+    self.viewControllerClasses = [NSArray arrayWithObjects:friendVC, nil];
     
     NSDictionary *friendItem = @{@"title":@"好友", @"count":@"0"};
-    NSDictionary *systemItem = @{@"title":@"系统", @"count":@"0"};
-    _titleArray = [NSMutableArray arrayWithObjects:friendItem, systemItem, nil];
+//    NSDictionary *systemItem = @{@"title":@"系统", @"count":@"0"};
+    _titleArray = [NSMutableArray arrayWithObjects:friendItem, nil];
     self.titles = [NSArray arrayWithArray:_titleArray];
     self.itemWidth = 60;
     
@@ -89,16 +89,16 @@
     kWeakSelf
     [CXHTTPRequest GETWithURL:@"/index.php/Api/Friend/messageNum" parameters:nil callback:^(id responseObject, BOOL isCache, NSError *error) {
         if (!error) {
-            NSString *system_num = responseObject[@"data"][@"system_num"];
-            NSDictionary *systemItem = @{@"title":@"系统", @"count":system_num.integerValue > 0 ? system_num : @"0"};
-            [weakSelf.titleArray replaceObjectAtIndex:1 withObject:systemItem];
-            weakSelf.titles = [NSArray arrayWithArray:weakSelf.titleArray];
-            [weakSelf reloadData];
+//            NSString *system_num = responseObject[@"data"][@"system_num"];
+//            NSDictionary *systemItem = @{@"title":@"系统", @"count":system_num.integerValue > 0 ? system_num : @"0"};
+//            [weakSelf.titleArray replaceObjectAtIndex:1 withObject:systemItem];
+//            weakSelf.titles = [NSArray arrayWithArray:weakSelf.titleArray];
+//            [weakSelf reloadData];
             
             NSString *my_apply = responseObject[@"data"][@"my_apply"];
             NSString *apply_my = responseObject[@"data"][@"apply_my"];
             
-            weakSelf.systemCount = [system_num integerValue] + [my_apply integerValue] + [apply_my integerValue];
+            weakSelf.systemCount = [my_apply integerValue] + [apply_my integerValue];
             
             [weakSelf reloadTabBarBadge];
             

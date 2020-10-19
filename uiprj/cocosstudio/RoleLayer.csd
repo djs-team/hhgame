@@ -402,7 +402,7 @@
                         <PreSize X="0.8000" Y="0.8444" />
                         <FileData Type="Normal" Path="hall/dtjm_4.png" Plist="" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="diamondsCnt" ActionTag="2124124775" Tag="296" IconVisible="False" LeftMargin="49.5272" RightMargin="47.5272" TopMargin="6.0000" BottomMargin="1.0000" IsCustomSize="True" FontSize="24" LabelText="5000.0有" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                      <AbstractNodeData Name="diamondsCnt" ActionTag="2124124775" Tag="296" IconVisible="False" LeftMargin="49.5271" RightMargin="47.5271" TopMargin="6.0000" BottomMargin="1.0000" IsCustomSize="True" FontSize="24" LabelText="5000.0有" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                         <Size X="102.9457" Y="38.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="101.0000" Y="20.0000" />
@@ -550,6 +550,19 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.6884" Y="0.3781" />
                     <PreSize X="0.0000" Y="0.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="RoleTouch" ActionTag="1187270046" Tag="55" IconVisible="False" LeftMargin="787.1505" RightMargin="292.8495" TopMargin="160.0000" BottomMargin="260.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+                    <Size X="200.0000" Y="300.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="887.1505" Y="410.0000" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.6931" Y="0.5694" />
+                    <PreSize X="0.1563" Y="0.4167" />
+                    <SingleColor A="255" R="150" G="200" B="255" />
+                    <FirstColor A="255" R="150" G="200" B="255" />
+                    <EndColor A="255" R="255" G="255" B="255" />
+                    <ColorVector ScaleY="1.0000" />
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />

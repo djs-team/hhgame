@@ -1868,7 +1868,7 @@
                       "Y": 0.9449
                     },
                     "PreSize": {
-                      "X": 0.1563,
+                      "X": 0.1562,
                       "Y": 0.0625
                     },
                     "LeftMargin": 1063.8035,
@@ -1962,8 +1962,8 @@
                           "X": 0.5147,
                           "Y": 0.8444
                         },
-                        "LeftMargin": 49.5272,
-                        "RightMargin": 47.5272,
+                        "LeftMargin": 49.5271,
+                        "RightMargin": 47.5271,
                         "TopMargin": 6.0,
                         "BottomMargin": 1.0,
                         "Tag": 296,
@@ -2139,7 +2139,7 @@
                       "Y": 0.9452
                     },
                     "PreSize": {
-                      "X": 0.1563,
+                      "X": 0.1562,
                       "Y": 0.0625
                     },
                     "LeftMargin": 836.448,
@@ -2567,6 +2567,57 @@
                     },
                     "Name": "roleNd",
                     "ctype": "SingleNodeObjectData"
+                  },
+                  {
+                    "ClipAble": false,
+                    "BackColorAlpha": 102,
+                    "SingleColor": {
+                      "R": 150,
+                      "G": 200
+                    },
+                    "FirstColor": {
+                      "R": 150,
+                      "G": 200
+                    },
+                    "EndColor": {},
+                    "ColorVector": {
+                      "ScaleY": 1.0
+                    },
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 887.1505,
+                      "Y": 410.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.6931,
+                      "Y": 0.5694
+                    },
+                    "PreSize": {
+                      "X": 0.1562,
+                      "Y": 0.4167
+                    },
+                    "LeftMargin": 787.1505,
+                    "RightMargin": 292.8495,
+                    "TopMargin": 160.0,
+                    "BottomMargin": 260.0,
+                    "Tag": 55,
+                    "ActionTag": 1187270046,
+                    "Size": {
+                      "X": 200.0,
+                      "Y": 300.0
+                    },
+                    "Name": "RoleTouch",
+                    "ctype": "PanelObjectData"
                   }
                 ],
                 "ActionTag": -1631630035,

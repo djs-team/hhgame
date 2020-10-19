@@ -108,7 +108,7 @@ NSString *const kCSharpApiPrefix = @"https://win02-win.hehe555.com:444";
             callback ? callback(data, NO, nil) : nil;
         } else {
             // 网络访问失败
-            NSLog(@"error=%@",error);
+            callback ? callback(data, NO, error) : nil;
         }
     }];
     

@@ -2791,8 +2791,9 @@
 		00614A7B250B94C800BB7620 /* 用户资料 */ = {
 			isa = PBXGroup;
 			children = (
-				00614A7C250B94C800BB7620 /* CXLiveRoomUserProfileView.xib */,
+				00614A88250B94C800BB7620 /* CXLiveRoomUserProfileView.h */,
 				00614A7D250B94C800BB7620 /* CXLiveRoomUserProfileView.m */,
+				00614A7C250B94C800BB7620 /* CXLiveRoomUserProfileView.xib */,
 				00614A7E250B94C800BB7620 /* CXLiveRoomUserProfileJinyanView.m */,
 				00614A7F250B94C800BB7620 /* CXLiveRoomUserProfileJinyanDateCell.h */,
 				00614A80250B94C800BB7620 /* CXLiveRoomUserProfileReportView.m */,
@@ -2803,7 +2804,6 @@
 				00614A85250B94C800BB7620 /* CXLiveRoomUserProfileJinyanDateCell.xib */,
 				00614A86250B94C800BB7620 /* CXLiveRoomUserProfileJinyanView.h */,
 				00614A87250B94C800BB7620 /* CXLiveRoomUserProfileJinyanDateCell.m */,
-				00614A88250B94C800BB7620 /* CXLiveRoomUserProfileView.h */,
 				00614A89250B94C800BB7620 /* CXLiveRoomUserProfileReportView.h */,
 				00614A8A250B94C800BB7620 /* CXLiveRoomUserProfileReportCell.h */,
 			);
@@ -3049,8 +3049,8 @@
 			children = (
 				00614B13250B94C800BB7620 /* SocketMessages */,
 				00614BA3250B94C900BB7620 /* SocketMessage.h */,
-				00614BA4250B94C900BB7620 /* SocketManager.h */,
 				00614BA5250B94C900BB7620 /* SocketMessage.m */,
+				00614BA4250B94C900BB7620 /* SocketManager.h */,
 				00614BA6250B94C900BB7620 /* SocketManager.m */,
 			);
 			path = SocketManager;

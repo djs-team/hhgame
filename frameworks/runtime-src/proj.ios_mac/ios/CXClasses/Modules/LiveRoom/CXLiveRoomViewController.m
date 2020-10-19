@@ -981,6 +981,13 @@
                 }
             }
                 break;
+                
+                //=========== 红包 =============
+            case SocketMessageIDKeepaLiveNotification: {
+                CXSocketMessageSystemKeepaLiveRequest *request = [CXSocketMessageSystemKeepaLiveRequest new];
+                [[CXClientModel instance] sendSocketRequest:request withCallback:nil];
+            }
+                break;
             default:
                 break;
         }
@@ -993,21 +1000,23 @@
         [self modelClient:[CXClientModel instance] room:[CXClientModel instance].room.RoomData.RoomId error:error];
         return;
     }
+//
+//    NSIndexPath *seatIndex = [[CXClientModel instance].room.userSeats objectForKey:[CXClientModel instance].userId];
+//    if (!seatIndex) {
+//        [[CXClientModel instance].agoraEngineManager.engine setClientRole:AgoraClientRoleAudience];
+//    } else {
+//        [[CXClientModel instance].agoraEngineManager.engine setClientRole:AgoraClientRoleBroadcaster];
+//        CXLiveRoomSeatView *seatView = [self.roomUIView.roomSeatsView.seats objectForKey:seatIndex];
+//        [seatView addAgoraRtc:[[CXClientModel instance].userId numberValue]];
+//    }
+//
+//    if ([CXClientModel instance].room.isConsertModel == YES) {
+//        if ([CXClientModel instance].room.isSonger) {
+//            [self music_playResume];
+//        }
+//    }
     
-    NSIndexPath *seatIndex = [[CXClientModel instance].room.userSeats objectForKey:[CXClientModel instance].userId];
-    if (!seatIndex) {
-        [[CXClientModel instance].agoraEngineManager.engine setClientRole:AgoraClientRoleAudience];
-    } else {
-        [[CXClientModel instance].agoraEngineManager.engine setClientRole:AgoraClientRoleBroadcaster];
-        CXLiveRoomSeatView *seatView = [self.roomUIView.roomSeatsView.seats objectForKey:seatIndex];
-        [seatView addAgoraRtc:[[CXClientModel instance].userId numberValue]];
-    }
     
-    if ([CXClientModel instance].room.isConsertModel == YES) {
-        if ([CXClientModel instance].room.isSonger) {
-            [self music_playResume];
-        }
-    }
 //    else {
 //        if ([CXClientModel instance].room.isHost == YES) {
 //            [self music_playResume];
@@ -1016,8 +1025,8 @@
 }
 
 - (void)modelClient:(CXClientModel *)client room:(NSString *)roomId error:(NSError *)error {
-    [[CXClientModel instance].agoraEngineManager.engine leaveChannel:nil];
-    [[CXClientModel instance].easemob leaveRoom];
+//    [[CXClientModel instance].agoraEngineManager.engine leaveChannel:nil];
+//    [[CXClientModel instance].easemob leaveRoom];
     kWeakSelf
     [self alertTitle:@"房间连接失败" message:@"是否重新连接" confirm:@"确定" cancel:@"取消" confirm:^{
         [AppController reconnectRoom:roomId];

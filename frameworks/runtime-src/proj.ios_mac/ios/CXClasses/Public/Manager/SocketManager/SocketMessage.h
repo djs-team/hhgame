@@ -95,11 +95,6 @@ typedef NS_ENUM(NSUInteger, SocketMessageID) {
     SocketMessageIDTaskGetAward = 85, // 领取任务奖励
     SocketMessageIDTaskGetOneAward = 86, // 领取某个任务奖励
     
-    // 系统
-    SocketMessageIDUpdate = 300, // 心跳
-    SocketMessageIDSystemToastMessage = 125, // 通知客户端提示语
-    SocketMessageIDMicroSeatNumber = 127, // 同步用户上麦卡数量
-    
     // 分享参数
     SocketMessageIDSystemShareParam = 87,
     
@@ -171,6 +166,13 @@ typedef NS_ENUM(NSUInteger, SocketMessageID) {
     SocketMessageIDSetUserIsDisableMsg = 28,            // 设置是否禁言
     SocketMessageIDUserDisableChatMessage = 47,         // 收到有没有被主持禁言
     SocketMessageIDGetGuardItemList = 139,              // 获取守护榜单（亲密值排序）
+    
+    //============ 系统 ==============/
+    SocketMessageIDUpdate = 300,                        // 心跳
+    SocketMessageIDSystemToastMessage = 125,            // 通知客户端提示语
+    SocketMessageIDMicroSeatNumber = 127,               // 同步用户上麦卡数量
+    SocketMessageIDKeepaLiveNotification = 301,         // 系统心跳通知
+    SocketMessageIDKeepaLiveRequest = 302,              // 系统心跳回应
 };
 
 

@@ -117,7 +117,8 @@
     [self insertSubview:self.roomSeatsView atIndex:1];
     self.roomSeatsView.backgroundColor = [UIColor clearColor];
     [self.roomSeatsView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.height.right.mas_equalTo(0);
+        make.left.right.mas_equalTo(0);
+        make.height.mas_equalTo([CXClientModel instance].room.RoomData.seatsSizeHeight);
         make.top.mas_equalTo(kNavHeight+[CXClientModel instance].room.horseLampHeight);
     }];
     

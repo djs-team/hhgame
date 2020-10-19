@@ -103,6 +103,7 @@ typedef enum : NSUInteger {
                                                     
                                                     ,@(SocketMessageIDUpdateGuardianMessage):SocketMessageUserJoinRoom.class
                                                     ,@(SocketMessageIDShowGuardianAnimationMessage):SocketMessageUserJoinRoom.class
+                                                    ,@(SocketMessageIDKeepaLiveNotification):CXSocketMessageSystemNotification.class
                                                     
                                                     // Task
                                                     ,@(SocketMessageIDLiveRoomUpdateFinishTaskMessage):CXSocketMessageTaskUpdateFinishTaskInfo.class

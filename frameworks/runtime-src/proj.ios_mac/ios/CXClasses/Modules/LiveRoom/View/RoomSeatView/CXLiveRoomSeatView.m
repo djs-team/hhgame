@@ -175,7 +175,7 @@
     }
     
     [self.session.hostingView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.bottom.width.centerX.equalTo(self.seat_bgImageView);
+        make.center.width.height.equalTo(self.seat_bgImageView);
     }];
 }
 

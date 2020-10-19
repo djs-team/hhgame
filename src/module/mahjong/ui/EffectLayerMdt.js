@@ -30,7 +30,8 @@ load('module/mahjong/ui/EffectLayerMdt', function () {
             let name = notification.getName()
             let body = notification.getBody()
             switch (name) {
-                case TableEvent.UpdateView:
+                case TableEvent.InitCardProto:
+                    this.InitCardProto(body)
                     break
                 case TableEvent.PlayerSelectProto:
                     this.PlayerSelectProto(body)
@@ -45,6 +46,10 @@ load('module/mahjong/ui/EffectLayerMdt', function () {
                     this.GameResultProto(body)
                     break
             }
+        },
+
+        InitCardProto: function (msg) {
+            appInstance.gameAgent().mjUtil().playGamingSound(Sound.play.begin)
         },
 
         GameResultProto: function(msg) {

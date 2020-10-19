@@ -551,14 +551,14 @@
                             <PreSize X="0.2424" Y="0.7586" />
                             <FileData Type="Normal" Path="common/zuanshi.png" Plist="" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="priceText" ActionTag="-1915352809" Tag="314" IconVisible="False" LeftMargin="35.4000" RightMargin="23.6000" TopMargin="6.0583" BottomMargin="6.9417" IsCustomSize="True" FontSize="16" LabelText="5555" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                            <Size X="40.0000" Y="16.0000" />
+                          <AbstractNodeData Name="priceText" ActionTag="-1915352809" Tag="314" IconVisible="False" LeftMargin="25.4000" RightMargin="13.6000" TopMargin="6.0583" BottomMargin="6.9417" IsCustomSize="True" FontSize="16" LabelText="5555" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                            <Size X="60.0000" Y="16.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                             <Position X="55.4000" Y="14.9417" />
                             <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="255" G="255" B="255" />
                             <PrePosition X="0.5596" Y="0.5152" />
-                            <PreSize X="0.4040" Y="0.5517" />
+                            <PreSize X="0.6061" Y="0.5517" />
                             <OutlineColor A="255" R="255" G="0" B="0" />
                             <ShadowColor A="255" R="110" G="110" B="110" />
                           </AbstractNodeData>

@@ -84,16 +84,16 @@
             _seat_addFriendBtn.hidden = YES;
             _seat_giftBtn.hidden = YES;
             _rose_Btn.hidden = YES;
-            if ([CXClientModel instance].agoraEngineManager.offMic == YES) {
-                [self.muteBtn setImage:[UIImage imageNamed:@"liveroom_seat_micro_off"] forState:UIControlStateNormal];
-            } else {
+            if ([CXClientModel instance].agoraEngineManager.offMic == YES) { // 闭麦了
                 [self.muteBtn setImage:[UIImage imageNamed:@"liveroom_seat_micro_on"] forState:UIControlStateNormal];
+            } else {
+                [self.muteBtn setImage:[UIImage imageNamed:@"liveroom_seat_micro_off"] forState:UIControlStateNormal];
             }
         } else {
-            if (model.isMute) {
-                [self.muteBtn setImage:[UIImage imageNamed:@"liveroom_seat_micro_off"] forState:UIControlStateNormal];
-            } else {
+            if (model.isMute == YES) {
                 [self.muteBtn setImage:[UIImage imageNamed:@"liveroom_seat_micro_on"] forState:UIControlStateNormal];
+            } else {
+                [self.muteBtn setImage:[UIImage imageNamed:@"liveroom_seat_micro_off"] forState:UIControlStateNormal];
             }
             
             if ([[CXClientModel instance].firendIdArrays containsObject:model.modelUser.UserId]) {

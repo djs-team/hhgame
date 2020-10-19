@@ -546,12 +546,6 @@
                 [args.Args enumerateObjectsUsingBlock:^(SocketMessageUserSitdown * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                     SocketMessageUserSitdown *userSitdown = obj;
                     NSIndexPath *indexPath = [userSitdown.MicroInfo indexPath];
-                    LiveRoomMicroInfo *seat = [[CXClientModel instance].room.seats objectForKey:indexPath];
-                    CXLiveRoomSeatView *seatView = [self.roomUIView.roomSeatsView.seats objectForKey:indexPath];
-                    seatView.model = seat;
-                    [seatView addAgoraRtc:[userSitdown.MicroInfo.User.UserId numberValue]];
-                    
-                    [self.roomUIView.messageListView addModel:userSitdown];
                     
                     NSIndexPath * selfSeatIndex = [[CXClientModel instance].room.userSeats objectForKey:[CXClientModel instance].userId];
                     if (selfSeatIndex && [selfSeatIndex isEqual:indexPath]) {
@@ -559,6 +553,13 @@
                         self.roomUIView.isChangeMir = YES;
                         [[CXClientModel instance].agoraEngineManager.engine setClientRole:AgoraClientRoleBroadcaster];
                     }
+                
+                    LiveRoomMicroInfo *seat = [[CXClientModel instance].room.seats objectForKey:indexPath];
+                    CXLiveRoomSeatView *seatView = [self.roomUIView.roomSeatsView.seats objectForKey:indexPath];
+                    seatView.model = seat;
+                    [seatView addAgoraRtc:[userSitdown.MicroInfo.User.UserId numberValue]];
+                    
+                    [self.roomUIView.messageListView addModel:userSitdown];
                 }];
             }
                 break;
@@ -573,12 +574,7 @@
                     LiveRoomMicroInfo *seat = [[CXClientModel instance].room.seats objectForKey:indexPath];
                     
                     CXLiveRoomSeatView *seatView = [self.roomUIView.roomSeatsView.seats objectForKey:indexPath];
-                    [seatView deleteAgoraRtc];
                     
-                    if (seatView.model.Type == LiveRoomMicroInfoTypeHost) {
-                        [self toast:@"主持已关闭此房间，去其他房间看看吧！"];
-                        [self leaveRoom];
-                    }
                     if (seatView.session.uid == [[CXClientModel instance].userId integerValue]) {
                         [CXClientModel instance].agoraEngineManager.offMic = YES;
                         self.roomUIView.isChangeMir = NO;
@@ -588,6 +584,13 @@
                     [self.muteArrays removeObject:[NSString stringWithFormat:@"%ld", seatView.session.uid]];
                     if ([[CXClientModel instance].agoraEngineManager.engine muteRemoteAudioStream:seatView.session.uid mute:NO] == 0) {
                         seat.isMute = NO;
+                    }
+                    
+                    [seatView deleteAgoraRtc];
+                    
+                    if (seatView.model.Type == LiveRoomMicroInfoTypeHost) {
+                        [self toast:@"主持已关闭此房间，去其他房间看看吧！"];
+                        [self leaveRoom];
                     }
                     
                     LiveRoomMicroInfo *microInfo = [LiveRoomMicroInfo new];
@@ -1204,14 +1207,14 @@
     NSIndexPath *seatIndex = [[CXClientModel instance].room.userSeats objectForKey:user.UserId];
     CXLiveRoomSeatView *seatView = [self.roomUIView.roomSeatsView.seats objectForKey:seatIndex];
     if ([user.UserId isEqualToString:[CXClientModel instance].userId]) {
-        if ([CXClientModel instance].agoraEngineManager.offMic == YES) {//闭麦了，打开
+        if ([CXClientModel instance].agoraEngineManager.offMic == YES) { // 闭麦了，打开
             self.isCloseMineMicro = NO;
             [CXClientModel instance].agoraEngineManager.offMic = NO;
-            [seatView.muteBtn setImage:[UIImage imageNamed:@"liveroom_seat_micro_on"] forState:UIControlStateNormal];
+            [seatView.muteBtn setImage:[UIImage imageNamed:@"liveroom_seat_micro_off"] forState:UIControlStateNormal];
         } else {
             self.isCloseMineMicro = YES;
             [CXClientModel instance].agoraEngineManager.offMic = YES;
-            [seatView.muteBtn setImage:[UIImage imageNamed:@"liveroom_seat_micro_off"] forState:UIControlStateNormal];
+            [seatView.muteBtn setImage:[UIImage imageNamed:@"liveroom_seat_micro_on"] forState:UIControlStateNormal];
         }
     } else {
         LiveRoomMicroInfo * seat = [[CXClientModel instance].room.seats objectForKey:seatIndex];
@@ -1219,13 +1222,13 @@
             if ([[CXClientModel instance].agoraEngineManager.engine muteRemoteAudioStream:[user.UserId integerValue] mute:NO] == 0) {
                 seat.isMute = NO;
                 [self.muteArrays removeObject:user.UserId];
-                [seatView.muteBtn setImage:[UIImage imageNamed:@"liveroom_seat_micro_on"] forState:UIControlStateNormal];
+                [seatView.muteBtn setImage:[UIImage imageNamed:@"liveroom_seat_micro_off"] forState:UIControlStateNormal];
             }
         } else {
             if ([[CXClientModel instance].agoraEngineManager.engine muteRemoteAudioStream:[user.UserId integerValue] mute:YES] == 0) {
                 seat.isMute = YES;
                 [self.muteArrays addObject:user.UserId];
-                [seatView.muteBtn setImage:[UIImage imageNamed:@"liveroom_seat_micro_off"] forState:UIControlStateNormal];
+                [seatView.muteBtn setImage:[UIImage imageNamed:@"liveroom_seat_micro_on"] forState:UIControlStateNormal];
             }
         }
     }

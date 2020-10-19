@@ -26,9 +26,17 @@
 
 @implementation CXFriendViewController
 
+- (void)dealloc
+{
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void)viewDidLoad {
     
     // Do any additional setup after loading the view.
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadFriendMessage:) name:kNSNotificationCenter_CXFriendViewController_unreadCount object:nil];
     
     CXFriendMessageViewController *friendVC = [CXFriendMessageViewController new];
     friendVC.isConversation = YES;
@@ -58,7 +66,7 @@
     
     [self getUnReadCountData];
     
-    [self _loadConversationTabBarItemBadge];
+//    [self _loadConversationTabBarItemBadge];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -67,41 +75,24 @@
     self.navigationController.navigationBarHidden = NO;
 }
 
-- (void)_loadConversationTabBarItemBadge
-{
-    NSArray *conversations = [[EMClient sharedClient].chatManager getAllConversations];
-    NSInteger unreadCount = 0;
-    for (EMConversation *conversation in conversations) {
-        unreadCount += conversation.unreadMessagesCount;
-    }
-    
-    NSDictionary *friendItem = @{@"title":@"好友", @"count":unreadCount > 0 ? @(unreadCount).stringValue : @"0"};
-    [self.titleArray replaceObjectAtIndex:0 withObject:friendItem];
+- (void)reloadFriendMessage:(NSNotification *)object {
+    NSString *unread = object.userInfo[@"unreadCount"];
+    NSDictionary *systemItem = @{@"title":@"系统", @"count":unread.integerValue > 0 ? unread : @""};
+    [self.titleArray replaceObjectAtIndex:1 withObject:systemItem];
     self.titles = [NSArray arrayWithArray:self.titleArray];
     [self reloadData];
-    
-    _messageCount = unreadCount;
-    
-    [self reloadTabBarBadge];
 }
 
 - (void)getUnReadCountData {
     kWeakSelf
     [CXHTTPRequest GETWithURL:@"/index.php/Api/Friend/messageNum" parameters:nil callback:^(id responseObject, BOOL isCache, NSError *error) {
         if (!error) {
-//            NSString *system_num = responseObject[@"data"][@"system_num"];
-//            NSDictionary *systemItem = @{@"title":@"系统", @"count":system_num.integerValue > 0 ? system_num : @"0"};
-//            [weakSelf.titleArray replaceObjectAtIndex:1 withObject:systemItem];
-//            weakSelf.titles = [NSArray arrayWithArray:weakSelf.titleArray];
-//            [weakSelf reloadData];
             
             NSString *my_apply = responseObject[@"data"][@"my_apply"];
             NSString *apply_my = responseObject[@"data"][@"apply_my"];
             
             weakSelf.systemCount = [my_apply integerValue] + [apply_my integerValue];
-            
-            [weakSelf reloadTabBarBadge];
-            
+                        
             NSInteger applyCount = [my_apply integerValue] + [apply_my integerValue];
             if (applyCount > 0) {
                 weakSelf.applyCountLabel.hidden = NO;
@@ -111,12 +102,6 @@
             }
         }
     }];
-}
-
-- (void)reloadTabBarBadge {
-    NSInteger unreadCount = _messageCount + _systemCount;
-    NSString *unreadCountStr = unreadCount > 0 ? @(MIN(unreadCount, 99)).stringValue : nil;
-    self.tabBarItem.badgeValue = unreadCountStr;
 }
 
 - (void)setupNavBack {

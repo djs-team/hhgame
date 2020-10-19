@@ -4312,11 +4312,11 @@
 		00614DF6250B94CD00BB7620 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				00614DFB250B94CD00BB7620 /* CXBaseTabBarViewController.h */,
 				00614DF7250B94CD00BB7620 /* CXBaseTabBarViewController.m */,
 				00614DF8250B94CD00BB7620 /* CXBaseWebViewController.h */,
 				00614DF9250B94CD00BB7620 /* CXBaseNavigationController.m */,
 				00614DFA250B94CD00BB7620 /* CXBaseViewController.m */,
-				00614DFB250B94CD00BB7620 /* CXBaseTabBarViewController.h */,
 				00614DFC250B94CD00BB7620 /* CXBaseViewController.h */,
 				00614DFD250B94CD00BB7620 /* CXBaseNavigationController.h */,
 				00614DFE250B94CD00BB7620 /* CXBaseWebViewController.m */,

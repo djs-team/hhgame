@@ -200,6 +200,11 @@ global.cropStr = function (str, num, endstr) {
     return str.substring(0,num) + endstr
 }
 
+global.getCurDayStr = function () {
+    let now = new Date()
+    return now.getFullYear().toString() + (now.getMonth() + 1).toString() + now.getDate().toString()
+}
+
 /**
  * Iterate over an Array or an Object invoking a function for each item.
  *

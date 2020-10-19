@@ -11,7 +11,7 @@
 #import "CXWithdrawIncomeListViewController.h"
 #import "CXMineWalletModel.h"
 
-@interface MuaExchangeVC () <UIScrollViewDelegate>
+@interface MuaExchangeVC ()
 
 @property (weak, nonatomic) IBOutlet UITextField *diamondNumber;
 @property (weak, nonatomic) IBOutlet UITextField *MCoinNumber;
@@ -19,7 +19,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *exchangeButton;
 
 @property (nonatomic, strong) CXMineWalletModel *walletModel;
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @property (weak, nonatomic) IBOutlet UILabel *tip;
 
@@ -44,9 +43,7 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:rightBtn];
     
     [self requestData];
-    
-    self.scrollView.delegate = self;
-    
+        
     self.exchangeButton.layer.cornerRadius = 19;
     self.exchangeButton.layer.masksToBounds = YES;
     [self.exchangeButton setBackgroundImage:[UIImage gradientImageWithSize:CGSizeMake(266, 38) Color1:UIColorHex(0xEC5BBA) color2:UIColorHex(0x7D3EF1)] forState:UIControlStateNormal];
@@ -71,10 +68,6 @@
             self.MCoinNumber.text = [NSString stringWithFormat:@"%lu", dianum * scale];
         }
     }
-}
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    [self.view endEditing:true];
 }
 
 - (void)rightClick {

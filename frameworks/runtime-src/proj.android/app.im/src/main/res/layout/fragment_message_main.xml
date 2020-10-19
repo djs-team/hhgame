@@ -66,6 +66,7 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:visibility="gone"
                 android:id="@+id/rl_tab_sys"
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"

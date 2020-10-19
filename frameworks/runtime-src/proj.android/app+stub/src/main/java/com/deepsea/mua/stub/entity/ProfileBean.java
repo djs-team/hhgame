@@ -97,6 +97,7 @@ public class ProfileBean {
         private String diamond;
         private String birthday;
         private String city;
+        private String city_two;
         private int age;
         private String attestation;
         private int lang_approve;
@@ -135,6 +136,14 @@ public class ProfileBean {
         private String coin_num;
         private int is_bind;
         private String shouhu_avatar;
+
+        public String getCity_two() {
+            return city_two;
+        }
+
+        public void setCity_two(String city_two) {
+            this.city_two = city_two;
+        }
 
         public String getShouhu_avatar() {
             return shouhu_avatar;

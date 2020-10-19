@@ -316,6 +316,7 @@ public class RechargeActivity extends BaseActivity<ActivityRechargeBinding> {
         alipay.setAlipayListener(new Alipay.AlipayListener() {
             @Override
             public void onSuccess(PayResult result) {
+                chargelist();
                 requestBalance();
                 MobEventUtils.onRechargeEvent(mContext, mRechargeAmount);
                 mRechargeAmount = "0";
@@ -332,6 +333,7 @@ public class RechargeActivity extends BaseActivity<ActivityRechargeBinding> {
         @Override
         public void onSuccess() {
             unregisterWxpayResult();
+            chargelist();
             requestBalance();
             MobEventUtils.onRechargeEvent(mContext, mRechargeAmount);
             mRechargeAmount = "0";

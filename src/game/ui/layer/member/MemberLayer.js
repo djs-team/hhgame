@@ -80,7 +80,7 @@ load('game/ui/layer/member/MemberLayer', function () {
             if (msg == 0) {
                 appInstance.gameAgent().Tips('------------------------------------充值成功！！！')
             } else {
-                appInstance.gameAgent().Tips('------------------------------------充值失败！！！')
+                appInstance.gameAgent().Tips('------------------------------------充值失败！！！'+JSON.stringify(msg))
             }
         },
 

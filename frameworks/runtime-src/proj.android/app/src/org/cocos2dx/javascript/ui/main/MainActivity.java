@@ -73,6 +73,7 @@ import com.deepsea.mua.stub.utils.eventbus.OpenRoom;
 import com.deepsea.mua.stub.utils.eventbus.ShowMineDialog;
 import com.deepsea.mua.stub.utils.eventbus.ShowRankStepOne;
 import com.deepsea.mua.stub.utils.eventbus.ShowRankStepTwo;
+import com.deepsea.mua.stub.utils.eventbus.UpHxUnreadMsg;
 import com.deepsea.mua.stub.utils.eventbus.UpdateUnreadMsgEvent;
 import com.deepsea.mua.voice.fragment.VoiceFragment;
 import com.deepsea.mua.voice.utils.AppConstant;
@@ -500,6 +501,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding>
             int count = chatCount + sysUnreadNum + applyUnreadNum + myApplyUnreadNum;
             ViewBindUtils.setVisible(mBinding.tvMsgUnread, count > 0);
             ViewBindUtils.setText(mBinding.tvMsgUnread, String.valueOf(count));
+            EventBus.getDefault().post(new UpHxUnreadMsg());
         });
     }
 

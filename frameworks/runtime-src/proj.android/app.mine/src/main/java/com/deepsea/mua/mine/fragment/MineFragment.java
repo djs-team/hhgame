@@ -215,11 +215,6 @@ public class MineFragment extends BaseFragment<FragmentMineBinding> {
     }
 
 
-
-
-
-
-
     private String belongId = "";
 
     private void loadNetData(ProfileBean result) {
@@ -243,7 +238,7 @@ public class MineFragment extends BaseFragment<FragmentMineBinding> {
         ViewBindUtils.setVisible(mBinding.ageTv, result.getUser_info().getAge() != 0);
         //city
         if (!TextUtils.isEmpty(result.getUser_info().getCity())) {
-            mBinding.cityTv.setText(result.getUser_info().getCity());
+            mBinding.cityTv.setText(result.getUser_info().getCity() + (TextUtils.isEmpty(result.getUser_info().getCity_two()) ? "" : result.getUser_info().getCity_two()));
         } else {
             mBinding.cityTv.setText("");
         }

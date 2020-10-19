@@ -4124,6 +4124,11 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
         }
     }
 
+    @Override
+    public void keepLive() {
+        mViewModel.fetchKeepAlive();
+    }
+
 
     private void showGuardBayWindowDiallog(JoinUser joinUser) {
         if (joinUser != null && joinUser.isRoomGuard()) {

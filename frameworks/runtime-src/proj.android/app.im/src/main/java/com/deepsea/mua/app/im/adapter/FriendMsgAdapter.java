@@ -1,6 +1,7 @@
 package com.deepsea.mua.app.im.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.text.TextUtils;
 import android.widget.TextView;
 
@@ -64,18 +65,21 @@ public class FriendMsgAdapter extends BaseBindingAdapter<FriendInfoBean, ItemFri
         } else {
             ViewBindUtils.setVisible(holder.binding.unreadMsgNumber, false);
         }
-        if (item.getState().equals("0")) {
+        if (item.getOnline().equals("0")) {
             ViewBindUtils.setVisible(holder.binding.tvStateDesc, false);
             ViewBindUtils.setVisible(holder.binding.tvStateBg, true);
-            holder.binding.tvStateBg.setWithBackgroundColor(R.color.state_color_grary);
-        } else if (item.getState().equals("1")) {
-            ViewBindUtils.setVisible(holder.binding.tvStateDesc, false);
-            ViewBindUtils.setVisible(holder.binding.tvStateBg, true);
-            holder.binding.tvStateBg.setWithBackgroundColor(R.color.state_color_green);
+            holder.binding.tvStateBg.setWithBackgroundColor(Color.parseColor("#b5b5b6"));
         } else {
-            ViewBindUtils.setVisible(holder.binding.tvStateDesc, true);
-            ViewBindUtils.setVisible(holder.binding.tvStateBg, false);
-            StateUtils.setState(holder.binding.tvStateDesc, item.getOnline_str());
+            String str = item.getOnline_str();
+            if (str.contains("在线")) {
+                ViewBindUtils.setVisible(holder.binding.tvStateDesc, false);
+                ViewBindUtils.setVisible(holder.binding.tvStateBg, true);
+                holder.binding.tvStateBg.setWithBackgroundColor(Color.parseColor("#10E770"));
+            } else {
+                ViewBindUtils.setVisible(holder.binding.tvStateDesc, true);
+                ViewBindUtils.setVisible(holder.binding.tvStateBg, false);
+                StateUtils.setState(holder.binding.tvStateDesc, item.getOnline_str());
+            }
         }
 
 

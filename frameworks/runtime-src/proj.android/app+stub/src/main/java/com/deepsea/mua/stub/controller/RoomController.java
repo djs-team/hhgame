@@ -2007,6 +2007,11 @@ public class RoomController implements IRoomController, RoomMsgHandler.OnMsgEven
             case 300:
                 SongStateUtils.getSingleton2().setHeartCount(0);
                 break;
+            case 301://KeepaLive
+                if (mView!=null){
+                    mView.keepLive();
+                }
+                break;
         }
     }
 

@@ -121,14 +121,10 @@ load('game/ui/scene/HallScene', function () {
         },
         onCashCowClick: function () {
 
-            let msg = {}
-            appInstance.gameAgent().httpGame().cashCowNumReq(msg)
-
-        },
-
-        onGoCashCowLayer: function () {
             appInstance.gameAgent().addPopUI(ResConfig.Ui.CashCowLayer)
+
         },
+
 
         onSignBtnClick: function () {
             appInstance.gameAgent().addPopUI(ResConfig.Ui.SignLayer)

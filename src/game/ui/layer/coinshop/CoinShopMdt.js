@@ -209,7 +209,7 @@ load('game/ui/layer/coinshop/CoinShopMdt', function () {
          * @param body
          */
         onFormatTimeMsg: function (data, body) {
-            data.timesText = '今日剩余' + body.usedWatchVideoNum + '/' + body.maxWatchVideoNum
+            data.timesText = '今日剩余' + (body.maxWatchVideoNum - body.usedWatchVideoNum) + '/' + body.maxWatchVideoNum
             if (body.usedWatchVideoNum < body.maxWatchVideoNum) {
                 data.canWatchVideo = true
             } else {

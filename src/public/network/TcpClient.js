@@ -6,11 +6,6 @@
 let TcpClient = cc.Class.extend({
     _headLen: 18,
     _socket: null,
-    _host: '10.66.66.111',
-    _port: '61231',
-    // _host: '47.105.94.107',
-    // _port: '21231',
-    // _port: '38080',
     ctor: function () {
 
     },
@@ -24,8 +19,6 @@ let TcpClient = cc.Class.extend({
     },
 
     formatUrl: function (host, port) {
-        this._host = host ? host : this._host
-        this._port = port ? port : this._port
         return 'ws://' + host + ':' + port
     },
 

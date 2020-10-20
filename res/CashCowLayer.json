@@ -202,7 +202,7 @@
               "X": 1.0,
               "Y": 1.0
             },
-            "UserData": "{\"layoutType\":\"showAll\",\"screenAlign\":\"mid\"}",
+            "UserData": "{\"layoutType\":\"maxArea\",\"screenAlign\":\"mid\"}",
             "Tag": 27,
             "Children": [
               {
@@ -243,7 +243,7 @@
                   "Y": 0.4392
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.2778
                 },
                 "LeftMargin": 540.0,
@@ -633,7 +633,7 @@
                       "Y": 0.2107
                     },
                     "PreSize": {
-                      "X": 0.0313,
+                      "X": 0.0312,
                       "Y": 0.0597
                     },
                     "LeftMargin": 912.9454,
@@ -1392,6 +1392,7 @@
                     },
                     "Scale9Width": 1,
                     "Scale9Height": 1,
+                    "TouchEnable": true,
                     "AnchorPoint": {
                       "ScaleX": 0.5,
                       "ScaleY": 0.5
@@ -2228,7 +2229,7 @@
                               "X": 0.2511,
                               "Y": 0.575
                             },
-                            "LeftMargin": 344.5588,
+                            "LeftMargin": 344.5589,
                             "RightMargin": 23.1367,
                             "TopMargin": 8.52,
                             "BottomMargin": 8.48,
@@ -2278,6 +2279,7 @@
                     },
                     "Scale9Width": 1,
                     "Scale9Height": 1,
+                    "TouchEnable": true,
                     "AnchorPoint": {
                       "ScaleX": 0.5,
                       "ScaleY": 0.5

@@ -354,9 +354,6 @@ load('game/ui/layer/member/MemberLayer', function () {
 
             let privilege = this._PrivilegeListData[memberLevel]
 
-            cc.log('------------------------------memberLevel : ' + memberLevel)
-            cc.log('------------------------------privilege : ' + JSON.stringify(privilege))
-
             this._PublicData.vipCode = privilege.vipCode
 
             this.vipLevelPg.loadTexture(privilege.memberLevelPg)

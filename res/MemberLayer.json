@@ -1152,7 +1152,7 @@
                           "Y": 0.3159
                         },
                         "PreSize": {
-                          "X": 0.1563,
+                          "X": 0.1562,
                           "Y": 0.0583
                         },
                         "LeftMargin": 616.1543,
@@ -2410,6 +2410,7 @@
                         "ctype": "PanelObjectData"
                       },
                       {
+                        "IsCustomSize": true,
                         "FontSize": 20,
                         "LabelText": "尊敬的xxVIP会员，您的VIP有效时限距离到期还有：xxxxx天xx时",
                         "OutlineColor": {
@@ -4292,7 +4293,7 @@
                       "Y": 0.124
                     },
                     "PreSize": {
-                      "X": 0.1563,
+                      "X": 0.1562,
                       "Y": 0.3958
                     },
                     "LeftMargin": 436.6302,

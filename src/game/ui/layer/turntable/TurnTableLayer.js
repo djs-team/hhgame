@@ -244,13 +244,13 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
 
             this.TurnPointImg.stopAllActions()
 
-            let time = 5
+          /*  let time = 5
             let rotateAngle = 360 * 5
             let action = cc.RotateBy(time, rotateAngle)
             let beginEaseAction = cc.EaseCubicActionIn(action)
 
             this.TurnPointImg.runAction(beginEaseAction)
-            appInstance.audioManager().playEffect(ResConfig.Sound.turnTableBegin)
+            appInstance.audioManager().playEffect(ResConfig.Sound.turnTableBegin)*/
         },
 
 
@@ -264,6 +264,7 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
             let endAction = cc.RotateBy(endtime, rotateAngle)
             let endEaseAction = cc.EaseCubicActionOut(endAction)
             this.TurnPointImg.runAction(endEaseAction)
+            appInstance.audioManager().playEffect(ResConfig.Sound.turnTableBegin)
 
             let endCallFunc = function () {
                 this._lightInterval = 0.5

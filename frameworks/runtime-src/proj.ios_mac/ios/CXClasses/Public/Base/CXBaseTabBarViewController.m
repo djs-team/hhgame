@@ -59,7 +59,7 @@
     
     [self checkUserDataUpdate];
     
-    [self getUnReadCountData];
+//    [self getUnReadCountData];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -78,20 +78,20 @@
     self.isViewAppear = NO;
 }
 
-- (void)getUnReadCountData {
-    kWeakSelf
-    [CXHTTPRequest GETWithURL:@"/index.php/Api/Friend/messageNum" parameters:nil callback:^(id responseObject, BOOL isCache, NSError *error) {
-        if (!error) {
-            NSString *system_num = responseObject[@"data"][@"system_num"];
-            NSString *my_apply = responseObject[@"data"][@"my_apply"];
-            NSString *apply_my = responseObject[@"data"][@"apply_my"];
-            
-            weakSelf.systemCount = [system_num integerValue] + [my_apply integerValue] + [apply_my integerValue];
-            
-            [weakSelf reloadTabBarBadge];
-        }
-    }];
-}
+//- (void)getUnReadCountData {
+//    kWeakSelf
+//    [CXHTTPRequest GETWithURL:@"/index.php/Api/Friend/messageNum" parameters:nil callback:^(id responseObject, BOOL isCache, NSError *error) {
+//        if (!error) {
+//            NSString *system_num = responseObject[@"data"][@"system_num"];
+//            NSString *my_apply = responseObject[@"data"][@"my_apply"];
+//            NSString *apply_my = responseObject[@"data"][@"apply_my"];
+//
+//            weakSelf.systemCount = [system_num integerValue] + [my_apply integerValue] + [apply_my integerValue];
+//
+//            [weakSelf reloadTabBarBadge];
+//        }
+//    }];
+//}
 
 - (void)back {
     [AppController setOrientation:@""];
@@ -159,6 +159,8 @@
     NSInteger unreadCount = _messageCount + _systemCount;
     NSString *unreadCountStr = unreadCount > 0 ? @(MIN(unreadCount, 99)).stringValue : nil;
     self.friendController.tabBarItem.badgeValue = unreadCountStr;
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNSNotificationCenter_CXFriendViewController_unreadCount object:nil userInfo:@{@"unreadCount" : unreadCountStr ?: @"0"}];
+    
 }
 
 - (void)_loadTabBarItemsBadge
@@ -170,7 +172,6 @@
 
 #pragma mark - ===================== 心跳处理 ========================
 - (void)checkUserDataUpdate {
-    return ;
     
     self.inviteMikeArrays = [NSMutableArray array];
     

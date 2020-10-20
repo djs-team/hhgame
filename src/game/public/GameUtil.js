@@ -296,5 +296,13 @@ load('game/public/GameUtil',function () {
         return num;
     }
 
+    GameUtil.delayBtn = function (btn,delayTime) {
+        btn.setTouchEnabled(false)
+        delayTime = delayTime || 2
+        btn.runAction(cc.Sequence(cc.DelayTime(delayTime),cc.CallFunc(function () {
+            btn.setTouchEnabled(true)
+        })))
+    }
+
     return GameUtil
 })

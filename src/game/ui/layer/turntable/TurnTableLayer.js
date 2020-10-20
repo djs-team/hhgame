@@ -162,7 +162,7 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
             let nameNd = userCell.getChildByName('userName')
             let gooodsNd = userCell.getChildByName('goodsName')
             nameNd.setString(global.cropStr(userData.pName, 5, '...'))
-            gooodsNd.setString(userData.luckPrizeStr)
+            gooodsNd.setString(userData.luckPrizeStr + '“')
         },
 
 

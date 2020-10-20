@@ -1172,7 +1172,7 @@
                     "Children": [
                       {
                         "FontSize": 13,
-                        "LabelText": "恭喜\" ",
+                        "LabelText": "恭喜“ ",
                         "HorizontalAlignmentType": "HT_Right",
                         "VerticalAlignmentType": "VT_Center",
                         "OutlineColor": {
@@ -1209,17 +1209,17 @@
                           "Y": 0.4979
                         },
                         "PreSize": {
-                          "X": 0.093,
+                          "X": 0.107,
                           "Y": 0.2167
                         },
-                        "LeftMargin": 5.1198,
-                        "RightMargin": 384.8802,
+                        "LeftMargin": 2.1198,
+                        "RightMargin": 381.8802,
                         "TopMargin": 23.626,
                         "BottomMargin": 23.374,
                         "Tag": 330,
                         "ActionTag": -523241275,
                         "Size": {
-                          "X": 40.0,
+                          "X": 46.0,
                           "Y": 13.0
                         },
                         "Name": "txt1",
@@ -1227,7 +1227,7 @@
                       },
                       {
                         "FontSize": 13,
-                        "LabelText": "”玩家获得了“",
+                        "LabelText": " ”玩家获得了“  ",
                         "HorizontalAlignmentType": "HT_Center",
                         "VerticalAlignmentType": "VT_Center",
                         "OutlineColor": {
@@ -1264,17 +1264,17 @@
                           "Y": 0.4979
                         },
                         "PreSize": {
-                          "X": 0.2116,
+                          "X": 0.2605,
                           "Y": 0.2167
                         },
-                        "LeftMargin": 127.2995,
-                        "RightMargin": 211.7005,
+                        "LeftMargin": 116.7995,
+                        "RightMargin": 201.2005,
                         "TopMargin": 23.626,
                         "BottomMargin": 23.374,
                         "Tag": 334,
                         "ActionTag": 914017760,
                         "Size": {
-                          "X": 91.0,
+                          "X": 112.0,
                           "Y": 13.0
                         },
                         "Name": "txt2",

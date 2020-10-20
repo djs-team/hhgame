@@ -259,25 +259,25 @@
                   <AbstractNodeData Name="userDataCell" ActionTag="-1699298790" Tag="332" IconVisible="False" LeftMargin="158.4277" RightMargin="147.5723" TopMargin="664.6243" BottomMargin="-137.6243" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="430.0000" Y="60.0000" />
                     <Children>
-                      <AbstractNodeData Name="txt1" ActionTag="-523241275" Tag="330" IconVisible="False" PositionPercentYEnabled="True" LeftMargin="5.1198" RightMargin="384.8802" TopMargin="23.6260" BottomMargin="23.3740" FontSize="13" LabelText="恭喜&quot; " HorizontalAlignmentType="HT_Right" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                        <Size X="40.0000" Y="13.0000" />
+                      <AbstractNodeData Name="txt1" ActionTag="-523241275" Tag="330" IconVisible="False" PositionPercentYEnabled="True" LeftMargin="2.1198" RightMargin="381.8802" TopMargin="23.6260" BottomMargin="23.3740" FontSize="13" LabelText="恭喜“ " HorizontalAlignmentType="HT_Right" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="46.0000" Y="13.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="25.1198" Y="29.8740" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="72" B="0" />
                         <PrePosition X="0.0584" Y="0.4979" />
-                        <PreSize X="0.0930" Y="0.2167" />
+                        <PreSize X="0.1070" Y="0.2167" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="txt2" ActionTag="914017760" Tag="334" IconVisible="False" PositionPercentYEnabled="True" LeftMargin="127.2995" RightMargin="211.7005" TopMargin="23.6260" BottomMargin="23.3740" FontSize="13" LabelText="”玩家获得了“" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                        <Size X="91.0000" Y="13.0000" />
+                      <AbstractNodeData Name="txt2" ActionTag="914017760" Tag="334" IconVisible="False" PositionPercentYEnabled="True" LeftMargin="116.7995" RightMargin="201.2005" TopMargin="23.6260" BottomMargin="23.3740" FontSize="13" LabelText=" ”玩家获得了“  " HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="112.0000" Y="13.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="172.7995" Y="29.8740" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="72" B="0" />
                         <PrePosition X="0.4019" Y="0.4979" />
-                        <PreSize X="0.2116" Y="0.2167" />
+                        <PreSize X="0.2605" Y="0.2167" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>

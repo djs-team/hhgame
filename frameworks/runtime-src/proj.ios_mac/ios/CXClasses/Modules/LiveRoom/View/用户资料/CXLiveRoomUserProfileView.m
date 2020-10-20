@@ -187,11 +187,10 @@
 }
 
 - (IBAction)userProfileBtnAction:(UIButton *)sender {
+    [self hide];
     if (self.userProfileActionBlock) {
         self.userProfileActionBlock(sender.tag);
     }
-    
-    [self hide];
 }
 
 

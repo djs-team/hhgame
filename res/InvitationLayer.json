@@ -2848,6 +2848,7 @@
                         "ctype": "TextObjectData"
                       },
                       {
+                        "IsCustomSize": true,
                         "FontSize": 26,
                         "LabelText": "玩家ID",
                         "FontResource": {
@@ -2890,18 +2891,18 @@
                           "Y": 0.4338
                         },
                         "PreSize": {
-                          "X": 0.1216,
-                          "Y": 0.3019
+                          "X": 0.1501,
+                          "Y": 0.3367
                         },
-                        "LeftMargin": 216.1762,
-                        "RightMargin": 368.9038,
-                        "TopMargin": 35.7706,
-                        "BottomMargin": 24.3594,
+                        "LeftMargin": 206.6762,
+                        "RightMargin": 359.4038,
+                        "TopMargin": 34.2706,
+                        "BottomMargin": 22.8594,
                         "Tag": 510,
                         "ActionTag": 1530413569,
                         "Size": {
-                          "X": 81.0,
-                          "Y": 26.0
+                          "X": 100.0,
+                          "Y": 29.0
                         },
                         "Name": "idText",
                         "ctype": "TextObjectData"

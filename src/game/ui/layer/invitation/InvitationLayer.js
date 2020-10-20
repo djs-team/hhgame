@@ -319,7 +319,7 @@ load('game/ui/layer/invitation/InvitationLayer', function () {
 
 
         updateMyInvitationsData: function (data) {
-
+            console.log('-------updateMyInvitationsData'+JSON.stringify(data));
             if (data.length < this._indexLength) {
                 this._isCanRefreshMyInvitationsData = false
                 if (this.shareTaskList.getChildrenCount() <= 0) {

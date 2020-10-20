@@ -68,13 +68,13 @@
     self.timeLabel.text = latestMessageTime;
     
     _onlineStateLabel.hidden = NO;
-    if (inviteModel.state.integerValue == 2 || inviteModel.state.integerValue == 3) {
-        _onlineStateLabel.text = @"相亲中";
-        _onlineStateLabel.backgroundColor = UIColorHex(0x7F3EF0);
-    } else if (inviteModel.state.integerValue == 4 || inviteModel.state.integerValue == 5) {
+    if ([inviteModel.online_str isEqualToString:@"热聊中"]) {
         _onlineStateLabel.text = @"热聊中";
         _onlineStateLabel.backgroundColor = UIColorHex(0xEF51B2);
-    } else if (inviteModel.state.integerValue == 6) {
+    } else if ([inviteModel.online_str isEqualToString:@"相亲中"]) {
+        _onlineStateLabel.text = @"相亲中";
+        _onlineStateLabel.backgroundColor = UIColorHex(0x7F3EF0);
+    } else if ([inviteModel.online_str isEqualToString:@"开播中"]) {
         _onlineStateLabel.text = @"开播中";
         _onlineStateLabel.backgroundColor = UIColorHex(0xFEBF00);
     } else {

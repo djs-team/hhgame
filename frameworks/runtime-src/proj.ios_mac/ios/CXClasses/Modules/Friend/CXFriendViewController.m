@@ -48,7 +48,7 @@
     
     self.viewControllerClasses = [NSArray arrayWithObjects:friendVC, nil];
     
-    NSDictionary *friendItem = @{@"title":@"好友", @"count":@"0"};
+    NSDictionary *friendItem = @{@"title":@"好友", @"count":[CXClientModel instance].unreadCountStr};
 //    NSDictionary *systemItem = @{@"title":@"系统", @"count":@"0"};
     _titleArray = [NSMutableArray arrayWithObjects:friendItem, nil];
     self.titles = [NSArray arrayWithArray:_titleArray];

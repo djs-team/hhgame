@@ -11,6 +11,8 @@
 @property (weak, nonatomic) IBOutlet UIPickerView *mainPickerView;
 @property (weak, nonatomic) IBOutlet UIButton *sureButton;
 
+@property (strong, nonatomic) NSDictionary *pickerDic;
+@property (strong, nonatomic) NSArray *selectedArray;
 @property (strong, nonatomic) NSArray *provinceArray;
 @property (strong, nonatomic) NSArray *cityArray;
 
@@ -42,8 +44,12 @@
 
 - (void)getAddressInformation {
     NSString *path = [[NSBundle mainBundle] pathForResource:@"Address" ofType:@"plist"];
-    self.provinceArray = [[NSArray alloc] initWithContentsOfFile:path];
-    self.cityArray = [[_provinceArray objectAtIndex:0] objectForKey:@"cities"];
+    self.pickerDic = [[NSDictionary alloc] initWithContentsOfFile:path];
+    self.provinceArray = [self.pickerDic allKeys];
+    self.selectedArray = [self.pickerDic objectForKey:[[self.pickerDic allKeys] objectAtIndex:0]];
+    if (self.selectedArray.count > 0) {
+        self.cityArray = [[self.selectedArray objectAtIndex:0] allKeys];
+    }
     
     [self.mainPickerView reloadAllComponents];
 }
@@ -64,9 +70,9 @@
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     if (component == 0) {
-        return [[_provinceArray objectAtIndex:row] objectForKey:@"state"];
+        return [self.provinceArray objectAtIndex:row];
     } else {
-        return [[_cityArray objectAtIndex:row] objectForKey:@"city"];
+        return [self.cityArray objectAtIndex:row];
     }
 }
 
@@ -86,7 +92,12 @@
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     if (component == 0) {
-        self.cityArray = [[self.provinceArray objectAtIndex:row] objectForKey:@"cities"];
+        self.selectedArray = [self.pickerDic objectForKey:[self.provinceArray objectAtIndex:row]];
+        if (self.selectedArray.count > 0) {
+            self.cityArray = [[self.selectedArray objectAtIndex:0] allKeys];
+        } else {
+            self.cityArray = @[];
+        }
         
         [pickerView reloadComponent:1];
         [pickerView selectedRowInComponent:1];
@@ -94,8 +105,8 @@
 }
 
 - (IBAction)sureAction:(id)sender {
-    NSString *province = [[self.provinceArray objectAtIndex:[self.mainPickerView selectedRowInComponent:0]] objectForKey:@"state"];
-    NSString *city  = [[self.cityArray objectAtIndex:[self.mainPickerView selectedRowInComponent:1]] objectForKey:@"city"];
+    NSString *province = [self.provinceArray objectAtIndex:[self.mainPickerView selectedRowInComponent:0]];
+    NSString *city = [self.cityArray objectAtIndex:[self.mainPickerView selectedRowInComponent:1]];
     
     NSString *cityStr = [NSString stringWithFormat:@"%@,%@", province, city];
     if (self.cityPickerSureBlock) {

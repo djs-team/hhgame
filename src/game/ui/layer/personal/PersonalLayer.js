@@ -136,13 +136,13 @@ load('game/ui/layer/personal/PersonalLayer', function () {
 
         },
 
-        onUpdateNameClick: function () {
-
+        onUpdateNameClick: function (sender) {
+            GameUtil.delayBtn(sender);
             this.updateNamePnl.setVisible(true)
         },
 
-        onCloseUpdateNameClick: function () {
-
+        onCloseUpdateNameClick: function (sender) {
+            GameUtil.delayBtn(sender);
             this.updateNamePnl.setVisible(false)
 
         },
@@ -167,8 +167,8 @@ load('game/ui/layer/personal/PersonalLayer', function () {
 
         },
 
-        onConfirmUpdateNameClick: function () {
-
+        onConfirmUpdateNameClick: function (sender) {
+            GameUtil.delayBtn(sender);
             let nameNd = this.updataPnl.getChildByName('updateText').getString()
             if (nameNd == null || nameNd.length == 0) {
                 cc.log("onConfirmUpdateNameClick nameNd is null!")
@@ -194,7 +194,8 @@ load('game/ui/layer/personal/PersonalLayer', function () {
 
         },
 
-        onExitBtnClick: function () {
+        onExitBtnClick: function (sender) {
+            GameUtil.delayBtn(sender);
             appInstance.gameAgent().goLoginScene()
         },
 

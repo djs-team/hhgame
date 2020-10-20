@@ -3,6 +3,7 @@ load('game/ui/layer/choosecity/ChooseCityLayer', function () {
     let ResConfig = include('game/config/ResConfig')
     let BaseLayer = include('public/ui/BaseLayer')
     let GameEvent = include('game/config/GameEvent')
+    let GameUtil = include('game/public/GameUtil')
     let Layer = BaseLayer.extend({
         _className: 'ChooseCityLayer',
         RES_BINDING: function () {
@@ -79,6 +80,7 @@ load('game/ui/layer/choosecity/ChooseCityLayer', function () {
             nameNd.setString(data.name)
 
             cell.addClickEventListener(function(sender, et) {
+                GameUtil.delayBtn(sender);
                 this.onLeftBtnClick(sender)
             }.bind(this))
         },
@@ -160,6 +162,7 @@ load('game/ui/layer/choosecity/ChooseCityLayer', function () {
             cell._sendMsg = cellData._sendMsg
 
             cell.addClickEventListener(function(sender, et) {
+                GameUtil.delayBtn(sender);
                 this.onCityCellClick(sender)
             }.bind(this))
         },
@@ -177,7 +180,8 @@ load('game/ui/layer/choosecity/ChooseCityLayer', function () {
             }
         },
 
-        onsearchBtnClick: function () {
+        onsearchBtnClick: function (sender) {
+            GameUtil.delayBtn(sender);
             let txt = this.searchEdit.getString()
             if (!txt) {
                 appInstance.gameAgent().Tips('请输入想要寻找的城市！')
@@ -197,12 +201,12 @@ load('game/ui/layer/choosecity/ChooseCityLayer', function () {
             appInstance.gameAgent().Tips('请输入正确的城市名称！')
         },
 
-        onkefuBtnClick: function () {
-
+        onkefuBtnClick: function (sender) {
+            GameUtil.delayBtn(sender);
         },
 
-        oncopyBtnClick: function () {
-
+        oncopyBtnClick: function (sender) {
+            GameUtil.delayBtn(sender);
         },
 
         onEnter: function () {
@@ -214,7 +218,8 @@ load('game/ui/layer/choosecity/ChooseCityLayer', function () {
         onCloseClick: function () {
             appInstance.uiManager().removeUI(this)
         },
-        onReturnBtnClick: function () {
+        onReturnBtnClick: function (sender) {
+            GameUtil.delayBtn(sender);
             appInstance.sendNotification(GameEvent.HALL_RED_GET)
             appInstance.uiManager().removeUI(this)
         }

@@ -4,6 +4,7 @@ load('game/ui/layer/arena/ArenaLayer', function () {
     let BaseLayer = include('public/ui/BaseLayer')
     let ArenaMdt = include('game/ui/layer/arena/ArenaMdt')
     let GameEvent = include('game/config/GameEvent')
+    let GameUtil = include('game/public/GameUtil')
     let matchLayer = BaseLayer.extend({
         _className: 'matchLayer',
         _arenaTypeBtnData: [
@@ -61,17 +62,19 @@ load('game/ui/layer/arena/ArenaLayer', function () {
             this.initArenaTypeBtn()
 
         },
-        onCloseBtnClick: function () {
+        onCloseBtnClick: function (sender) {
+            GameUtil.delayBtn(sender);
             appInstance.sendNotification(GameEvent.HALL_RED_GET)
             appInstance.uiManager().removeUI(this)
         },
 
-        onHideBtnClick: function () {
+        onHideBtnClick: function (sender) {
+            GameUtil.delayBtn(sender);
             this.pupupPnl.setVisible(false)
         },
 
         onMatchDetailBtnClick: function (sender) {
-
+            GameUtil.delayBtn(sender);
             if(sender == this.rewardsBtn)
                 this._currentPopupBtn = 'rewards'
             else
@@ -119,6 +122,7 @@ load('game/ui/layer/arena/ArenaLayer', function () {
                 }
 
                 cell.addClickEventListener(function (sender,et) {
+                    GameUtil.delayBtn(sender);
                     this.onAreanBtnClick(sender)
                 }.bind(this))
 
@@ -209,10 +213,12 @@ load('game/ui/layer/arena/ArenaLayer', function () {
                 }
 
                 cell.getChildByName('explainBtn').addClickEventListener(function (sender,dt) {
+                    GameUtil.delayBtn(sender);
                     this.onShowPopupClick(sender)
                 }.bind(this))
 
                 cell.getChildByName('signBtn').addClickEventListener(function (sender,dt) {
+                    GameUtil.delayBtn(sender);
                     this.onSignMatchClick(sender)
                 }.bind(this))
             }

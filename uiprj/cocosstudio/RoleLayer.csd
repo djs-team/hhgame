@@ -29,7 +29,7 @@
             <PreSize X="1.0000" Y="1.0000" />
             <FileData Type="Normal" Path="aaa/21 (8).png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="topPnl" ActionTag="540726166" UserData="{&quot;layoutType&quot;:&quot;showAll&quot;,&quot;screenAlign&quot;:&quot;top&quot;}" Tag="300" IconVisible="False" PositionPercentXEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TopMargin="3.0000" BottomMargin="-3.0000" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+          <AbstractNodeData Name="topPnl" ActionTag="540726166" UserData="{&quot;layoutType&quot;:&quot;showAll&quot;,&quot;screenAlign&quot;:&quot;top&quot;}" Tag="300" IconVisible="False" PositionPercentXEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TopMargin="3.0000" BottomMargin="-3.0000" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <Children>
               <AbstractNodeData Name="closeBtn" ActionTag="-1136905992" Tag="71" IconVisible="False" PositionPercentYEnabled="True" LeftMargin="19.0000" RightMargin="1173.0000" TopMargin="6.4000" BottomMargin="625.6000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="58" Scale9Height="66" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
@@ -178,7 +178,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="midPnl" ActionTag="-1363145497" Tag="448" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+          <AbstractNodeData Name="midPnl" ActionTag="-1363145497" Tag="448" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <Children>
               <AbstractNodeData Name="pgPnl" ActionTag="-1752215233" Tag="200" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="-1.2800" RightMargin="1.2800" TopMargin="-1.2960" BottomMargin="1.2960" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" LeftEage="18" RightEage="18" TopEage="21" BottomEage="21" Scale9OriginX="-18" Scale9OriginY="-21" Scale9Width="36" Scale9Height="42" ctype="PanelObjectData">
@@ -565,6 +565,19 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.6884" Y="0.3781" />
                     <PreSize X="0.0000" Y="0.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="RoleTouch" ActionTag="305156207" Tag="56" IconVisible="False" LeftMargin="787.0000" RightMargin="293.0000" TopMargin="160.0000" BottomMargin="260.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+                    <Size X="200.0000" Y="300.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="887.0000" Y="410.0000" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.6930" Y="0.5694" />
+                    <PreSize X="0.1563" Y="0.4167" />
+                    <SingleColor A="255" R="150" G="200" B="255" />
+                    <FirstColor A="255" R="150" G="200" B="255" />
+                    <EndColor A="255" R="255" G="255" B="255" />
+                    <ColorVector ScaleY="1.0000" />
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />

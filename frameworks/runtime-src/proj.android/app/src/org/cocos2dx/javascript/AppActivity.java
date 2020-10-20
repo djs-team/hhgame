@@ -320,15 +320,20 @@ public class AppActivity extends Cocos2dxActivity {
         alipay.setAlipayListener(new Alipay.AlipayListener() {
             @Override
             public void onSuccess(PayResult result) {
-                Log.d("==================", "thirdPay-ali-result" + result);
                 onPayResult(0);
-                ToastUtils.showToast(result.getResult());
+                ToastUtils.showToast("------------------------------------充值成功！！！");
             }
 
             @Override
             public void onError(String msg) {
-                onPayResult(-1);
-                ToastUtils.showToast(msg);
+                Log.d("====== pay result", msg);
+                ccActivity.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        onPayResult(-1);
+                        ToastUtils.showToast("------------------------------------充值失败！！！");
+                    }
+                });
             }
         });
     }
@@ -354,7 +359,6 @@ public class AppActivity extends Cocos2dxActivity {
      * @param success
      */
     private void onPayResult(int success) {
-        Log.d("====== wxpay result", success + "");
         ccActivity.RunJS("ThirdPayCallback", String.valueOf(success));
     }
 

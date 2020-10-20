@@ -70,7 +70,8 @@ load('game/ui/scene/HallScene', function () {
 
         onEmailBtnClick: function () {
             this.emailBtn.getChildByName('redImg').setVisible(false)
-            appInstance.gameAgent().Tips('敬请期待！！！')
+            appInstance.gameAgent().addPopUI(ResConfig.Ui.EmailLayer)
+            // appInstance.gameAgent().Tips('敬请期待！！！')
         },
 
         onFukaShopClick: function () {

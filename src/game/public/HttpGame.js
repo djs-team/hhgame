@@ -1385,6 +1385,96 @@ load('game/public/HttpGame', function () {
             appInstance.sendNotification(GameEvent.HALL_FEEDBACK_INFO, msg)
 
         },
+
+        /**
+         * 邮件信息请求
+         * @param msg
+         */
+        emailInfoReq: function (msg) {
+            console.log('---msg1111'+JSON.stringify(msg));
+            msg = msg || {}
+            if (!this._requestBackCall[HttpEvent.MJ_HALL_MAIL_LIST]) {
+                this._requestBackCall[HttpEvent.MJ_HALL_MAIL_LIST] = this.emailInfoBack
+            }
+
+            msg.msgID = HttpEvent.MJ_HALL_MAIL_LIST
+            appInstance.httpAgent().sendPost(msg)
+
+        },
+
+        /**
+         * 邮件信息返回
+         * @param msg
+         */
+        emailInfoBack: function (msg) {
+            if (msg.status !== 0) {
+                cc.log('------------->>>httpGame SIGNINDATASBack error happen')
+                return
+            }
+
+            appInstance.sendNotification(GameEvent.HALL_EMAIL_INFO, msg)
+
+        },
+
+        /**
+         * 删除邮件请求
+         * @param msg
+         */
+        emailDelReq: function (msg) {
+            msg = msg || {}
+            if (!this._requestBackCall[HttpEvent.MJ_HALL_MAIL_DEL]) {
+                this._requestBackCall[HttpEvent.MJ_HALL_MAIL_DEL] = this.emailDelBack
+            }
+
+            msg.msgID = HttpEvent.MJ_HALL_MAIL_DEL
+            appInstance.httpAgent().sendPost(msg)
+
+        },
+
+        /**
+         * 删除邮件返回
+         * @param msg
+         */
+        emailDelBack: function (msg) {
+
+            if (msg.status !== 0) {
+                cc.log('------------->>>httpGame SIGNINDATASBack error happen')
+                return
+            }
+
+            appInstance.sendNotification(GameEvent.HALL_EMAIL_DEL, msg)
+
+        },
+
+        /**
+         * 邮件领取奖励请求
+         * @param msg
+         */
+        emailReceiveReq: function (msg) {
+            msg = msg || {}
+            if (!this._requestBackCall[HttpEvent.MJ_HALL_MAIL_RECEIVE_DELETE]) {
+                this._requestBackCall[HttpEvent.MJ_HALL_MAIL_RECEIVE_DELETE] = this.emailReceiveBack
+            }
+
+            msg.msgID = HttpEvent.MJ_HALL_MAIL_RECEIVE_DELETE
+            appInstance.httpAgent().sendPost(msg)
+
+        },
+
+        /**
+         * 邮件领取奖励返回
+         * @param msg
+         */
+        emailReceiveBack: function (msg) {
+            console.log('--------emailReceiveBack'+JSON.stringify(msg));
+            if (msg.status !== 0) {
+                cc.log('------------->>>httpGame SIGNINDATASBack error happen')
+                return
+            }
+
+            appInstance.sendNotification(GameEvent.HALL_EMAIL_RECEIVE, msg)
+
+        },
     })
     return HttpGame
 })

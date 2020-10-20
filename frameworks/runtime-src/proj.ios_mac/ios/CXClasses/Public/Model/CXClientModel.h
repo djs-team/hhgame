@@ -58,6 +58,8 @@ typedef void(^CXClientModelLeaveRoomCallBack)(NSString *roomId, BOOL success);
 @property (nonatomic, strong) NSString *nickname;
 @property (strong, nonatomic) NSNumber *balance;
 
+@property (nonatomic, strong) NSString *unreadCountStr;// 当前用户未读消息数
+
 // 所有好友的userid数组
 @property (nonatomic, strong) NSArray *firendIdArrays;
 // 所有好友的数据

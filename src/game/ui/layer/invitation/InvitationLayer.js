@@ -20,7 +20,7 @@ load('game/ui/layer/invitation/InvitationLayer', function () {
         },
         RES_BINDING: function () {
             return {
-                'pnl/returnBtn': {onClicked: this.returnClike},
+                'returnBtn': {onClicked: this.returnClike},
                 'pnl/bgPnl': {},
 
                 'screenLayout': {},

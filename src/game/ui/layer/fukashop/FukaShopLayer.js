@@ -4,6 +4,7 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
     let BaseLayer = include('public/ui/BaseLayer')
     let FukaShopMdt = include('game/ui/layer/fukashop/FukaShopMdt')
     let GameEvent = include('game/config/GameEvent')
+    let GameUtil = include('game/public/GameUtil')
     let Layer = BaseLayer.extend({
         _className: 'FukaShopLayer',
         _menuItemName: 'menuItem_',//菜单cell名称前缀
@@ -129,6 +130,7 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 actionType : 'click'
             }
             this.giftLogBtnPnl.addClickEventListener(function (sender,dt) {
+                GameUtil.delayBtn(sender);
                 this.onGetGiftLogClick(sender)
             }.bind(this))
 
@@ -136,6 +138,7 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 actionType : 'click'
             }
             this.robLogBtnPnl.addClickEventListener(function (sender,dt) {
+                GameUtil.delayBtn(sender);
                 this.onGetRobLogClick(sender)
             }.bind(this))
 
@@ -143,6 +146,7 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 actionType : 'click'
             }
             this.cardExchangeBtn.addClickEventListener(function (sender,dt) {
+                GameUtil.delayBtn(sender);
                 this.onCardExchangeBtnClick(sender)
             }.bind(this))
 
@@ -150,6 +154,7 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 actionType : 'click'
             }
             this.seizeBtn.addClickEventListener(function (sender,dt) {
+                GameUtil.delayBtn(sender);
                 this.onSeizeBtnClick(sender)
             }.bind(this))
 
@@ -157,6 +162,7 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 actionType : 'click'
             }
             this.objectExchangeBtn.addClickEventListener(function (sender,dt) {
+                GameUtil.delayBtn(sender);
                 this.onObjectExchangeBtnClick(sender)
             }.bind(this))
 
@@ -290,8 +296,8 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
             appInstance.uiManager().removeUI(this)
         },
 
-        onsearchBtnClick: function () {
-
+        onsearchBtnClick: function (sender) {
+            GameUtil.delayBtn(sender);
             this._searchText = this.searchTextFiled.getString()
             this._menuStartIndex = 0
             let searchType = 0
@@ -525,6 +531,7 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
             cell.getChildByName('menuImg').loadTexture(item.res)
             cell.getChildByName('menuName').setString(item.name)
             cell.addClickEventListener(function (sender,dt) {
+                GameUtil.delayBtn(sender);
                 this.onMenuItemClick(sender)
             }.bind(this))
         },
@@ -692,6 +699,7 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
             this.onLoadUrlImg(goodsData.hallPictureUrl,size,cell.getChildByName(imgName))
             //this.onLoadUrlImg('http://p3.itc.cn/q_70/images03/20200911/b7c565cbc87848538cace549fb609e7b.jpeg',size,cell.getChildByName(imgName))
             cell.addClickEventListener(function (sender,dt) {
+                GameUtil.delayBtn(sender);
                 this.onShowGoodsDetailMsg(sender)
             }.bind(this))
 
@@ -752,6 +760,7 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
             }
 
             btn.addClickEventListener(function (sender,dt) {
+                GameUtil.delayBtn(sender);
                 this.onGoogsExchangeBtnClick(data.goodsId,data.fuKaNums)
             }.bind(this))
 
@@ -827,6 +836,7 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
             if(msg.leftBtnFunction){
                 this.btnsPnl.getChildByName('leftBtn').setVisible(true)
                 this.btnsPnl.getChildByName('leftBtn').addClickEventListener(function (sender,dt) {
+                    GameUtil.delayBtn(sender);
                     msg.leftBtnFunction()
                 }.bind(this))
             }else{
@@ -836,6 +846,7 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
             if(msg.midBtnFunction){
                 this.btnsPnl.getChildByName('midBtn').setVisible(true)
                 this.btnsPnl.getChildByName('midBtn').addClickEventListener(function (sender,dt) {
+                    GameUtil.delayBtn(sender);
                     msg.midBtnFunction()
                 }.bind(this))
             }else{
@@ -847,6 +858,7 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 this.btnsPnl.getChildByName('rightBtn').setEnabled(true)
                 this.btnsPnl.getChildByName('rightBtn').setBright(true)
                 this.btnsPnl.getChildByName('rightBtn').addClickEventListener(function (sender,dt) {
+                    GameUtil.delayBtn(sender);
                     let flag = msg.rightBtnFunction()
                     if(flag){
                         sender.setEnabled(false)
@@ -936,10 +948,12 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
             }
 
             cell.getChildByName('luckyPnl').addClickEventListener(function (sender,dt) {
+                GameUtil.delayBtn(sender);
                 this.onShowLuckBoyMsg(cell._sendMsg)
             }.bind(this))
 
             cell.getChildByName('robBtn').addClickEventListener(function (sender,dt) {
+                GameUtil.delayBtn(sender);
                 this.onRobGoodsFunction(cell._sendMsg)
             }.bind(this))
         },
@@ -1186,6 +1200,7 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                     cell.getChildByName('exchangeBtn').setVisible(true)
                     cell.getChildByName('copyBtn').setVisible(false)
                     cell.getChildByName('exchangeBtn').addClickEventListener(function (sender,dt) {
+                        GameUtil.delayBtn(sender);
                         this.onExchangeOnline(cell._sendMsg)
                     }.bind(this))
 
@@ -1211,6 +1226,7 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
             ]
             this.onSetShowElementFunction(elementNameArray)
             this.rechargePhoneBtn.addClickEventListener(function (sender,et) {
+                GameUtil.delayBtn(sender);
                 this.onRechargePhoneBtnClick(data.orderCode)
             }.bind(this))
         },
@@ -1278,8 +1294,8 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
 
         },
 
-        onReturnBtnClick: function () {
-
+        onReturnBtnClick: function (sender) {
+            GameUtil.delayBtn(sender);
             if(this.jumpArrayStep.length == 0){
                 appInstance.sendNotification(GameEvent.HALL_RED_GET)
                 appInstance.uiManager().removeUI(this)

@@ -66,7 +66,8 @@ load('game/ui/layer/role/RoleLayer', function () {
             this._super()
 
         },
-        onClseClick: function () {
+        onClseClick: function (sender) {
+            GameUtil.delayBtn(sender);
             appInstance.sendNotification(GameEvent.HALL_RED_GET)
             appInstance.uiManager().removeUI(this)
         },
@@ -103,7 +104,8 @@ load('game/ui/layer/role/RoleLayer', function () {
             }
         },
 
-        onCoinShopClick: function () {
+        onCoinShopClick: function (sender) {
+            GameUtil.delayBtn(sender);
             appInstance.gameAgent().addPopUI(ResConfig.Ui.CoinShopLayer)
             this.onClseClick()
         },
@@ -123,7 +125,7 @@ load('game/ui/layer/role/RoleLayer', function () {
         },
 
         onRolesChiceClick: function (sender) {
-
+            GameUtil.delayBtn(sender);
             let choiceBtnName
             if(sender == this.allRolesBtn)
                 choiceBtnName = this._rolesChoiceBtn_all
@@ -257,6 +259,7 @@ load('game/ui/layer/role/RoleLayer', function () {
             }
 
             cell.addClickEventListener(function(sender, et) {
+                GameUtil.delayBtn(sender);
                 this.onRoleClick(cellData)
             }.bind(this))
 
@@ -296,6 +299,7 @@ load('game/ui/layer/role/RoleLayer', function () {
                     if(status == 1){
                         this.useMidBtn.setVisible(true)
                         this.useMidBtn.addClickEventListener(function (sender,et) {
+                            GameUtil.delayBtn(sender);
                             this.onUsedClicked(cellData)
                         }.bind(this))
                     }else{
@@ -363,6 +367,7 @@ load('game/ui/layer/role/RoleLayer', function () {
 
 
             buyBtn.addClickEventListener(function (sender,et) {
+                GameUtil.delayBtn(sender);
                 this.onBuyRoleClicked(cellData)
             }.bind(this))
 
@@ -410,9 +415,11 @@ load('game/ui/layer/role/RoleLayer', function () {
             }
 
             useBtn.addClickEventListener(function (sender,et) {
+                GameUtil.delayBtn(sender);
                 this.onUsedClicked(cellData)
             }.bind(this))
             buyBtn.addClickEventListener(function (sender,et) {
+                GameUtil.delayBtn(sender);
                 this.onBuyRoleClicked(cellData)
             }.bind(this))
 

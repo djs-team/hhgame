@@ -2,6 +2,7 @@ load('game/ui/layer/invitation/InvitationLayer', function () {
     let ResConfig = include('game/config/ResConfig')
     let BaseLayer = include('public/ui/BaseLayer')
     let GameEvent = include('game/config/GameEvent')
+    let GameUtil = include('game/public/GameUtil')
     let inviteUrl = ""
     let InvitationMdt = include('game/ui/layer/invitation/InvitationMdt')
     let invitationLayer = BaseLayer.extend({
@@ -88,12 +89,14 @@ load('game/ui/layer/invitation/InvitationLayer', function () {
             inviteUrl = 'https://share.hehefun.cn/index.html?installPid=' + myPid;
         },
 
-        onWxShareClick: function () {
+        onWxShareClick: function (sender) {
+            GameUtil.delayBtn(sender);
             let fileName = "result_share.jpg";
             appInstance.nativeApi().shareArticle('WEIXIN', "老铁，三缺一，就差你了", "邀请你来打麻将，还有话费和实物等你来赢哦", inviteUrl, fileName)
         },
 
-        onWxCircleShareClick: function () {
+        onWxCircleShareClick: function (sender) {
+            GameUtil.delayBtn(sender);
             let fileName = "result_share.jpg";
             appInstance.nativeApi().shareImage('WEIXIN_CIRCLE', fileName)
         },
@@ -124,8 +127,8 @@ load('game/ui/layer/invitation/InvitationLayer', function () {
             });
         },
 
-        onInviteNowClick: function () {
-
+        onInviteNowClick: function (sender) {
+            GameUtil.delayBtn(sender);
             this._returnType = 2
             this.leftPnl.setVisible(false)
             this.myTaskList.setVisible(false)
@@ -166,8 +169,8 @@ load('game/ui/layer/invitation/InvitationLayer', function () {
             this.updateInviChoiceBtn()
         },
 
-        returnClike: function () {
-
+        returnClike: function (sender) {
+            GameUtil.delayBtn(sender);
             if (this._returnType == 1) {
                 appInstance.sendNotification(GameEvent.HALL_RED_GET)
                 appInstance.uiManager().removeUI(this)
@@ -194,7 +197,7 @@ load('game/ui/layer/invitation/InvitationLayer', function () {
 
 
         inviChoiceClick: function (sender) {
-
+            GameUtil.delayBtn(sender);
             if (sender === this.invitationBtn)
                 this._inviChoiceType = 1
             else if (sender === this.invitationTasksBtn)
@@ -392,6 +395,7 @@ load('game/ui/layer/invitation/InvitationLayer', function () {
                     cell.getChildByName('myInviteFinishedBtn').setVisible(false)
 
                     cell.getChildByName('myInviteUnfinishedBtn').addClickEventListener(function (sender, et) {
+                        GameUtil.delayBtn(sender);
                         this.onTaskCellClick(sender)
                     }.bind(this))
                     break
@@ -401,6 +405,7 @@ load('game/ui/layer/invitation/InvitationLayer', function () {
                     cell.getChildByName('myInviteFinishedBtn').setVisible(false)
 
                     cell.getChildByName('myInviteProcessingBtn').addClickEventListener(function (sender, et) {
+                        GameUtil.delayBtn(sender);
                         this.onTaskCellClick(sender)
                     }.bind(this))
                     break
@@ -415,6 +420,7 @@ load('game/ui/layer/invitation/InvitationLayer', function () {
                     cell.getChildByName('myInviteFinishedBtn').setVisible(false)
 
                     cell.getChildByName('myInviteUnfinishedBtn').addClickEventListener(function (sender, et) {
+                        GameUtil.delayBtn(sender);
                         this.onTaskCellClick(sender)
                     }.bind(this))
                     break

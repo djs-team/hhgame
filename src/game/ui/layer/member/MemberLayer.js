@@ -6,6 +6,7 @@ load('game/ui/layer/member/MemberLayer', function () {
     let MemberMdt = include('game/ui/layer/member/MemberMdt')
     let LocalSave = include('game/public/LocalSave')
     let GameEvent = include('game/config/GameEvent')
+    let GameUtil = include('game/public/GameUtil')
     let AniPlayer = ResConfig.AniPlayer
     let PlayerPlay = ResConfig.PlayerPlay
     let sender={};
@@ -85,7 +86,8 @@ load('game/ui/layer/member/MemberLayer', function () {
             }
         },
 
-        onHidePayTypeClicked: function () {
+        onHidePayTypeClicked: function (sender) {
+            GameUtil.delayBtn(sender);
             this.PayType.setVisible(false)
         },
         
@@ -125,20 +127,22 @@ load('game/ui/layer/member/MemberLayer', function () {
             //  this.onShowRecordPnlClick()
         },
 
-        onCloseClick: function () {
+        onCloseClick: function (sender) {
+            GameUtil.delayBtn(sender);
             appInstance.sendNotification(GameEvent.HALL_RED_GET)
             appInstance.uiManager().removeUI(this)
         },
 
-        onAcceptCliecked: function () {
-
+        onAcceptCliecked: function (sender) {
+            GameUtil.delayBtn(sender);
             let msg = {}
             msg.vipCode = this._PublicData.vipCode
             appInstance.gameAgent().httpGame().RECEIVEVIPDAILYReq(msg)
 
         },
 
-        onShowRechargeClicked: function () {
+        onShowRechargeClicked: function (sender) {
+            GameUtil.delayBtn(sender);
             this.privilegePnl.setVisible(false)
             this.rechargePnl.setVisible(true)
             this.turnNextBtn.setVisible(false)
@@ -170,7 +174,7 @@ load('game/ui/layer/member/MemberLayer', function () {
                 cell.setPositionY(0)
 
                 cell.addClickEventListener(function (sender, et) {
-
+                    GameUtil.delayBtn(sender);
                     this.onRechargeClicked(sender)
 
                 }.bind(this))
@@ -198,7 +202,8 @@ load('game/ui/layer/member/MemberLayer', function () {
             }
             
         },
-        onAliPayClick: function () {
+        onAliPayClick: function (sender) {
+            GameUtil.delayBtn(sender);
             cc.log("----------------------onAliPayClick")
             this.PayType.setVisible(false)
 
@@ -209,7 +214,8 @@ load('game/ui/layer/member/MemberLayer', function () {
             }
             appInstance.gameAgent().httpGame().VIPPaysOrderReq(msg)
 
-        }, onWxClick: function () {
+        }, onWxClick: function (sender) {
+            GameUtil.delayBtn(sender);
             cc.log("----------------------onWxClick")
 
             this.PayType.setVisible(false)
@@ -248,13 +254,14 @@ load('game/ui/layer/member/MemberLayer', function () {
 
         },
 
-        onTurnNextCliecked: function () {
-
+        onTurnNextCliecked: function (sender) {
+            GameUtil.delayBtn(sender);
             let nextCode = this._PublicData.turnCodeData.turnNextCode
             this.onChangePrivilegeData(nextCode)
         },
 
-        onTurnPreviousCliecked: function () {
+        onTurnPreviousCliecked: function (sender) {
+            GameUtil.delayBtn(sender);
             let previousCode = this._PublicData.turnCodeData.turnPreviousCode
             this.onChangePrivilegeData(previousCode)
 

@@ -63,7 +63,8 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
             appInstance.uiManager().removeUI(this)
         },
 
-        onJinBiClicked: function () {
+        onJinBiClicked: function (sender) {
+            GameUtil.delayBtn(sender);
             this.jinBtn.getChildByName('Image_33').setVisible(false)
             this.jinBtn.getChildByName('Image_34').setVisible(true)
             this.zuanBtn.getChildByName('Image_36').setVisible(true)
@@ -71,7 +72,8 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
             this.onInitGoodsView(this._dataJinMsg, 1)
         },
 
-        onZuanShiClicked: function () {
+        onZuanShiClicked: function (sender) {
+            GameUtil.delayBtn(sender);
             this.jinBtn.getChildByName('Image_33').setVisible(true)
             this.jinBtn.getChildByName('Image_34').setVisible(false)
             this.zuanBtn.getChildByName('Image_36').setVisible(false)
@@ -106,7 +108,8 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
         /**
          * 点击收货信息触发玩家地址信息
          */
-        onAddressClicked: function () {
+        onAddressClicked: function (sender) {
+            GameUtil.delayBtn(sender);
             this.addressPnl.setVisible(true)
             appInstance.gameAgent().httpGame().GETADDRESSReq()
         },
@@ -265,7 +268,8 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
         /**
          * 支付宝支付
          */
-        onAliPayClick: function () {
+        onAliPayClick: function (sender) {
+            GameUtil.delayBtn(sender);
             console.log("----------------------onAliPayClick")
             this.PayType.setVisible(false)
             //下单
@@ -280,7 +284,8 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
         /**
          * 微信支付
          */
-        onWxClick: function () {
+        onWxClick: function (sender) {
+            GameUtil.delayBtn(sender);
             console.log("----------------------onWxClick")
             this.PayType.setVisible(false)
             //下单
@@ -357,8 +362,8 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
         /**
          * 观看视频按钮
          */
-        onVideoClicked: function () {
-
+        onVideoClicked: function (sender) {
+            GameUtil.delayBtn(sender);
             this.videoBtn.setBright(true)
             this.videoBtn.setTouchEnabled(true)
             if(cc.sys.os === cc.sys.OS_WINDOWS)
@@ -396,8 +401,8 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
         /**
          * 地址确认
          */
-        onConfirmClicked: function () {
-
+        onConfirmClicked: function (sender) {
+            GameUtil.delayBtn(sender);
             let phone = this.addressPnl.getChildByName('phponeTextFiled').getString()
             let name = this.addressPnl.getChildByName('nameTextFiled').getString()
             let address = this.addressPnl.getChildByName('addressTextFiled').getString()
@@ -432,15 +437,15 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
         /**
          * 关闭地址弹框
          */
-        onCloseUpdateAddressClicked: function () {
-
+        onCloseUpdateAddressClicked: function (sender) {
+            GameUtil.delayBtn(sender);
             this.addressPnl.setVisible(false)
 
         },
 
 
-        onClosePayTypeClicked: function () {
-
+        onClosePayTypeClicked: function (sender) {
+            GameUtil.delayBtn(sender);
             this.PayType.setVisible(false)
         }
 

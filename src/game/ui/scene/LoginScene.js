@@ -6,6 +6,7 @@ load('game/ui/scene/LoginScene', function () {
     let ResConfig = include('game/config/ResConfig')
     let LoginMdt = include('game/ui/scene/LoginMdt')
     let LocalSave = include('game/public/LocalSave')
+    let GameUtil = include('game/public/GameUtil')
     let LoginScene = BaseScene.extend({
         _className: 'LoginScene',
         _canLogin: true,
@@ -48,7 +49,7 @@ load('game/ui/scene/LoginScene', function () {
          * 一键登录
          */
         onphoneLoginClick: function () {
-
+            GameUtil.delayBtn(this.phoneLogin);
             if(!this.onCheckeCanLogin())
                 return
 
@@ -82,7 +83,7 @@ load('game/ui/scene/LoginScene', function () {
         },
 
         onwxLoginClick: function () {
-
+            GameUtil.delayBtn(this.wxLogin);
             if(!this.onCheckeCanLogin())
                 return
             

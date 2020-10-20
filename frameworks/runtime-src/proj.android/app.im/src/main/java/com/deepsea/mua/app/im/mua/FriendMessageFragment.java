@@ -35,6 +35,7 @@ import com.deepsea.mua.stub.utils.UserUtils;
 import com.deepsea.mua.stub.utils.ViewModelFactory;
 import com.deepsea.mua.stub.utils.eventbus.ClickEventType;
 import com.deepsea.mua.stub.utils.eventbus.HeartBeatEvent;
+import com.deepsea.mua.stub.utils.eventbus.UpHxUnreadMsg;
 import com.deepsea.mua.stub.utils.eventbus.UpdateUnreadMsgEvent;
 import com.hyphenate.EMConnectionListener;
 import com.hyphenate.EMError;
@@ -78,7 +79,8 @@ public class FriendMessageFragment extends BaseFragment<FragmentFriendMessageBin
     }
 
     @Subscribe
-    public void onEvent(UpdateUnreadMsgEvent event) {
+    public void onEvent(UpHxUnreadMsg event) {
+        refresh();
     }
 
     @Override
@@ -234,6 +236,8 @@ public class FriendMessageFragment extends BaseFragment<FragmentFriendMessageBin
         @Override
         public void onMessageReceived(List<EMMessage> messages) {
             // notify new message
+            mHandler.sendEmptyMessage(msg_refesh);
+
             for (EMMessage message : messages) {
                 if (message.getChatType() == EMMessage.ChatType.ChatRoom)
                     continue;
@@ -241,7 +245,6 @@ public class FriendMessageFragment extends BaseFragment<FragmentFriendMessageBin
                 HxHelper.getInstance().getNotifier().vibrateAndPlayTone(message);
             }
 //            refreshUIWithMessage();
-            mHandler.sendEmptyMessage(msg_refesh);
         }
 
         @Override

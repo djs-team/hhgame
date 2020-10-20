@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <RelativeLayout
+        <android.support.constraint.ConstraintLayout
             android:id="@+id/rl_group"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -26,19 +26,26 @@
                 android:layout_width="57dp"
                 android:layout_height="57dp"
                 android:layout_marginRight="14dp"
-                android:src="@drawable/ic_place_default" />
+                android:src="@drawable/ic_place_default"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@id/iv_photo"
-                android:layout_marginLeft="9dp">
+
+                app:layout_constraintLeft_toLeftOf="@id/iv_photo"
+                app:layout_constraintRight_toRightOf="@id/iv_photo"
+                app:layout_constraintTop_toTopOf="@id/iv_photo">
 
                 <com.deepsea.mua.stub.view.WithBackgroundTextView
+                    android:layout_marginTop="48dp"
+
                     android:id="@+id/tv_state_desc"
                     android:layout_width="38dp"
                     android:layout_height="15dp"
-                    android:layout_alignParentBottom="true"
                     android:gravity="center"
                     android:text="热聊中"
                     android:textColor="@color/white"
@@ -50,33 +57,38 @@
             </RelativeLayout>
 
             <com.deepsea.mua.stub.view.WithBackgroundTextView
+                android:layout_marginTop="54dp"
                 android:id="@+id/tv_state_bg"
                 android:layout_width="7dp"
                 android:layout_height="7dp"
                 android:layout_below="@id/iv_photo"
-                android:layout_marginLeft="28dp"
-                android:layout_marginTop="-4dp"
+                app:layout_constraintLeft_toLeftOf="@id/iv_photo"
+                app:layout_constraintRight_toRightOf="@id/iv_photo"
+                app:layout_constraintTop_toTopOf="@id/iv_photo"
                 app:radius="90dp"
                 app:withBackgroundColor="@color/state_color_grary" />
 
 
             <TextView
+                android:layout_marginLeft="15dp"
                 android:id="@+id/tv_username"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/iv_photo"
                 android:text="用户名称"
                 android:textColor="#ff282828"
-                android:textSize="19sp" />
+                android:textSize="19sp"
+                app:layout_constraintLeft_toRightOf="@id/iv_photo"
+                app:layout_constraintTop_toTopOf="@id/iv_photo" />
 
             <RelativeLayout
                 android:id="@+id/rl_sex"
                 android:layout_width="15dp"
                 android:layout_height="15dp"
                 android:layout_marginLeft="7dp"
-                android:layout_marginTop="8dp"
-                android:layout_toRightOf="@id/tv_username"
-                android:background="@drawable/bg_sex_man">
+                android:background="@drawable/bg_sex_man"
+                app:layout_constraintLeft_toRightOf="@id/tv_username"
+                app:layout_constraintTop_toTopOf="@id/tv_username"
+                app:layout_constraintBottom_toBottomOf="@id/tv_username">
 
                 <ImageView
                     android:id="@+id/sex_iv"
@@ -91,52 +103,56 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_toRightOf="@id/rl_sex"
                 android:text="14"
                 android:textColor="#ff818181"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                app:layout_constraintLeft_toRightOf="@id/rl_sex"
+                app:layout_constraintTop_toTopOf="@id/tv_username"
+                app:layout_constraintBottom_toBottomOf="@id/tv_username" />
 
             <ImageView
                 android:id="@+id/iv_location"
                 android:layout_width="10dp"
                 android:layout_height="12dp"
                 android:layout_marginLeft="7dp"
-                android:layout_marginTop="9dp"
-                android:layout_toRightOf="@id/age_tv"
-                android:src="@drawable/ic_location" />
+                android:src="@drawable/ic_location"
+                app:layout_constraintLeft_toRightOf="@id/age_tv"
+                app:layout_constraintTop_toTopOf="@id/tv_username"
+                app:layout_constraintBottom_toBottomOf="@id/tv_username" />
 
             <TextView
                 android:id="@+id/tv_location"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="2dp"
-                android:layout_marginTop="7dp"
-                android:layout_toRightOf="@id/iv_location"
                 android:text="河北省"
                 android:textColor="#ff4a4a4a"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+                app:layout_constraintLeft_toRightOf="@id/iv_location"
+                app:layout_constraintTop_toTopOf="@id/tv_username"
+                app:layout_constraintBottom_toBottomOf="@id/tv_username" />
 
             <TextView
+                android:layout_marginLeft="15dp"
                 android:id="@+id/tv_last_message"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/tv_username"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="50dp"
-                android:layout_toRightOf="@id/iv_photo"
                 android:ellipsize="end"
                 android:singleLine="true"
                 android:text="我想寻觅一个有缘的异性"
                 android:textColor="#ff4a4a4a"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+                app:layout_constraintLeft_toRightOf="@id/iv_photo"
+                app:layout_constraintTop_toBottomOf="@id/tv_username" />
 
             <TextView
+                app:layout_constraintTop_toBottomOf="@id/tv_username"
                 android:id="@+id/tv_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_marginTop="6dp"
+                app:layout_constraintRight_toRightOf="parent"
                 android:text="10:00"
                 android:textColor="#ff656565"
                 android:textSize="14sp" />
@@ -145,9 +161,9 @@
                 android:id="@+id/unread_msg_number"
                 android:layout_width="12dp"
                 android:layout_height="12dp"
-                android:layout_below="@id/tv_time"
-                android:layout_alignParentRight="true"
-                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_time"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="5dp"
                 android:gravity="center"
                 android:text="1"
                 android:textColor="@android:color/white"
@@ -155,7 +171,7 @@
                 android:visibility="visible"
                 app:radius="90dp"
                 app:withBackgroundColor="#F70505" />
-        </RelativeLayout>
+        </android.support.constraint.ConstraintLayout>
 
         <View
             android:layout_width="match_parent"

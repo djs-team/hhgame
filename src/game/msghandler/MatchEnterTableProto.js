@@ -60,6 +60,9 @@ load('game/msghandler/MatchEnterTableProto', function () {
                     appInstance.gameAgent().Tips('比赛已被销毁！！！')
                     break
             }
+
+
+            appInstance.sendNotification(Event.UpdateView)
         },
 
         initData: function () {

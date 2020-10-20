@@ -23,6 +23,12 @@ SocketMessageInitMethod(SocketMessageIDUpdate)
 
 @end
 
+@implementation CXSocketMessageSystemKeepaLiveRequest
+
+SocketMessageInitMethod(SocketMessageIDKeepaLiveRequest)
+
+@end
+
 @implementation CXSocketMessageSystemShareParamResponse
 
 @end

@@ -20,31 +20,31 @@ load('game/ui/layer/role/RoleLayer', function () {
         RES_BINDING: function () {
             return {
 
-                'pnl/btnPnl/closeBtn': {onClicked : this.onClseClick},
-                'pnl/btnPnl/allRolesBtn': {onClicked : this.onRolesChiceClick},
-                'pnl/btnPnl/myRolesBtn': {onClicked : this.onRolesChiceClick},
-                'pnl/btnPnl/useBtn': {},
-                'pnl/btnPnl/renewBtn': {},
-                'pnl/btnPnl/renewMidBtn': {},
-                'pnl/btnPnl/useMidBtn': {},
-                'pnl/btnPnl/toGetBtn': {},
-                'pnl/btnPnl/toBuyBtn': {},
+                'topPnl/closeBtn': {onClicked : this.onClseClick},
+                'topPnl/coinPnl': {},
+                'topPnl/coinPnl/coinAddBtn': {onClicked : this.onCoinShopClick},
+                'topPnl/diamondsPnl': {},
+                'topPnl/diamondsPnl/diamondsAddBtn': {onClicked : this.onCoinShopClick},
 
-                'pnl/dataPnl/diamondsPnl': {},
-                'pnl/dataPnl/diamondsPnl/diamondsAddBtn': {onClicked : this.onCoinShopClick},
+                'midPnl/btnPnl/allRolesBtn': {onClicked : this.onRolesChiceClick},
+                'midPnl/btnPnl/myRolesBtn': {onClicked : this.onRolesChiceClick},
+                'midPnl/btnPnl/useBtn': {},
+                'midPnl/btnPnl/renewBtn': {},
+                'midPnl/btnPnl/renewMidBtn': {},
+                'midPnl/btnPnl/useMidBtn': {},
+                'midPnl/btnPnl/toGetBtn': {},
+                'midPnl/btnPnl/toBuyBtn': {},
 
 
-                'pnl/dataPnl/coinPnl': {},
-                'pnl/dataPnl/coinPnl/coinAddBtn': {onClicked : this.onCoinShopClick},
+                'midPnl/dataPnl/roleNd': {},
+                'midPnl/dataPnl/RoleTouch': {onClicked : this.onRoleTouchClick},
+                'midPnl/dataPnl/roleName': {},
+                'midPnl/dataPnl/roleVipName': {},
+                'midPnl/dataPnl/timeText': {},
 
-                'pnl/dataPnl/roleNd': {},
-                'pnl/dataPnl/roleName': {},
-                'pnl/dataPnl/roleVipName': {},
-                'pnl/dataPnl/timeText': {},
-
-                'pnl/roleImageListView': {},
-                'pnl/roleImageCell': {},
-                'pnl/listPnl': {},
+                'midPnl/roleImageListView': {},
+                'midPnl/roleImageCell': {},
+                'midPnl/listPnl': {},
 
 
 
@@ -73,6 +73,7 @@ load('game/ui/layer/role/RoleLayer', function () {
 
         initData: function () {
             this._roleArrayName = this._rolesChoiceBtn_all
+            this._localLanguage = appInstance.gameAgent().gameUtil().getLocalLanguage()
         },
 
         initView: function () {
@@ -90,7 +91,16 @@ load('game/ui/layer/role/RoleLayer', function () {
             this.roleImageCell.setVisible(false)
 
 
+        },
 
+        onRoleTouchClick: function (sender) {
+            let roleCode = sender._roleCode
+            let roleInfo = AniPlayer[roleCode]
+            if (roleInfo.dongbei && this._localLanguage === 'dongbei') {
+                appInstance.audioManager().playEffect(roleInfo.dongbei)
+            } else {
+                appInstance.audioManager().playEffect(roleInfo.sound)
+            }
         },
 
         onCoinShopClick: function () {
@@ -270,6 +280,8 @@ load('game/ui/layer/role/RoleLayer', function () {
             ani.setPosition(cc.p(0,0))
             ani.setScale(0.35)
             ani.setAnimation(0, PlayerPlay.stand, true)
+
+            this.RoleTouch._roleCode = cellData.roleCode
 
             switch (getType) {
                 case 1:

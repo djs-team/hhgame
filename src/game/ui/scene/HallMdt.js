@@ -38,9 +38,6 @@ load('game/ui/scene/HallMdt', function () {
                 case GameEvent.UPDATE_USERNAME:
                     this.view.onUpdateUserData(body)
                     break
-                case GameEvent.GET_CASHCOWNUM:
-                    this.view.onGoCashCowLayer()
-                    break
                 case GameEvent.UPDATE_PROPSYNC:
                     this.view.onUpdateUserData(body)
                     break

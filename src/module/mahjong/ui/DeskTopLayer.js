@@ -203,6 +203,7 @@ load('module/mahjong/ui/DeskTopLayer', function () {
 
         updateAction: function (actionInfo) {
             this.hideAction()
+            this.hideSelectChi()
             if (!actionInfo) {
                 return
             }

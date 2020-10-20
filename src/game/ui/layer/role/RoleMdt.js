@@ -87,7 +87,7 @@ load('game/ui/layer/role/RoleMdt', function () {
                 let roleData = {}
 
                 roleData.getId = roleGetInfo.getId
-                roleData.status = role.status
+                roleData.status = role.status//0:未拥有1.已拥有2.已出战
                 roleData.roleCode = role.roleCode
                 roleData.roleName = role.roleName
                 roleData.currency = role.currency
@@ -99,7 +99,7 @@ load('game/ui/layer/role/RoleMdt', function () {
                 }
 
 
-                if(i == 0 && !body.hasOwnProperty('showRoleCode'))
+                if(roleData.status == 2 && !body.hasOwnProperty('showRoleCode'))
                     data.showRoleCode =  roleData.roleCode
 
                 roleData.propType = GameConfig.propType_role

@@ -192,15 +192,15 @@ public class RoomViewModel extends ViewModel {
         sendMessage(jsonObject.toString());
     }
 
-    /**
-     * socket 60s心跳
-     */
-    public void toSocketHeartBeat() {
-        JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("MsgId", 300);
-        sendMessage(jsonObject.toString());
-        Log.d("heart", jsonObject.toString());
-    }
+//    /**
+//     * socket 60s心跳
+//     */
+//    public void toSocketHeartBeat() {
+//        JsonObject jsonObject = new JsonObject();
+//        jsonObject.addProperty("MsgId", 300);
+//        sendMessage(jsonObject.toString());
+//        Log.d("heart", jsonObject.toString());
+//    }
 
     /**
      * 下麦
@@ -842,7 +842,15 @@ public class RoomViewModel extends ViewModel {
         JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("MsgId", 133);
         RoomController.getInstance().sendRoomMsg(jsonObject.toString());
-        Log.d("AG_EX_AV", jsonObject.toString());
+
+    }
+    /**
+     * KeepaLive
+     */
+    public void fetchKeepAlive() {
+        JsonObject jsonObject = new JsonObject();
+        jsonObject.addProperty("MsgId", 302);
+        RoomController.getInstance().sendRoomMsg(jsonObject.toString());
 
     }
 }

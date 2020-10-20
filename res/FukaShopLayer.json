@@ -3563,7 +3563,6 @@
                 },
                 "Scale9Width": 1,
                 "Scale9Height": 1,
-                "TouchEnable": true,
                 "AnchorPoint": {
                   "ScaleX": 0.5,
                   "ScaleY": 0.5
@@ -6216,7 +6215,6 @@
                 },
                 "Scale9Width": 1,
                 "Scale9Height": 1,
-                "TouchEnable": true,
                 "AnchorPoint": {
                   "ScaleY": 0.5
                 },
@@ -6235,6 +6233,10 @@
                   "X": 0.0,
                   "Y": 0.5
                 },
+                "PercentWidthEnable": true,
+                "PercentHeightEnable": true,
+                "PercentWidthEnabled": true,
+                "PercentHeightEnabled": true,
                 "PreSize": {
                   "X": 1.0,
                   "Y": 1.0
@@ -6684,6 +6686,8 @@
                 "ColorVector": {
                   "ScaleY": 1.0
                 },
+                "Scale9Width": 1,
+                "Scale9Height": 1,
                 "TouchEnable": true,
                 "AnchorPoint": {},
                 "Position": {
@@ -6778,7 +6782,7 @@
                   "X": 80.0,
                   "Y": 150.0
                 },
-                "Name": "returnBtn",
+                "Name": "returnPnl",
                 "ctype": "PanelObjectData"
               }
             ],

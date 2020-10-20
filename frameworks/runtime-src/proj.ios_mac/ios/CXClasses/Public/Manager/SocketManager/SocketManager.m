@@ -103,6 +103,7 @@ typedef enum : NSUInteger {
                                                     
                                                     ,@(SocketMessageIDUpdateGuardianMessage):SocketMessageUserJoinRoom.class
                                                     ,@(SocketMessageIDShowGuardianAnimationMessage):SocketMessageUserJoinRoom.class
+                                                    ,@(SocketMessageIDKeepaLiveNotification):CXSocketMessageSystemNotification.class
                                                     
                                                     // Task
                                                     ,@(SocketMessageIDLiveRoomUpdateFinishTaskMessage):CXSocketMessageTaskUpdateFinishTaskInfo.class
@@ -210,8 +211,9 @@ typedef enum : NSUInteger {
                     }
                     
                 } else {
-                    if (wself.delegate && [wself.delegate respondsToSelector:@selector(socketManager:reconnectionSuccess:)]) {
-                        [wself.delegate socketManager:wself reconnectionSuccess:NO];
+                    if (self.delegate && [self.delegate respondsToSelector:@selector(socketManager:room:error:)]) {
+                        NSError *error = [[NSError alloc] init];
+                        [self.delegate socketManager:self room:self.roomId error:error];
                     }
                 }
             }];

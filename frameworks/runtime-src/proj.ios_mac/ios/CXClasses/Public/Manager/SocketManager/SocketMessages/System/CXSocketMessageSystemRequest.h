@@ -26,6 +26,10 @@ NS_ASSUME_NONNULL_BEGIN
 @interface CXSocketMessageSystemUpdateRequest : SocketMessageRequest
 
 @end
+// 心跳回应
+@interface CXSocketMessageSystemKeepaLiveRequest : SocketMessageRequest
+
+@end
 
 // 分享参数
 @interface CXSocketMessageSystemShareParamResponse : SocketMessageResponse

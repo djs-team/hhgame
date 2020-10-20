@@ -2,29 +2,17 @@ package com.deepsea.mua.stub.dialog;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
-
 import com.deepsea.mua.core.dialog.BaseDialog;
 import com.deepsea.mua.core.utils.ToastUtils;
 import com.deepsea.mua.stub.R;
 import com.deepsea.mua.stub.api.RetrofitApi;
-import com.deepsea.mua.stub.controller.RoomController;
 import com.deepsea.mua.stub.data.BaseApiResult;
 import com.deepsea.mua.stub.data.User;
 import com.deepsea.mua.stub.databinding.DialogEditSexBinding;
-import com.deepsea.mua.stub.databinding.DialogOpenVipBinding;
-import com.deepsea.mua.stub.entity.HeartBeatBean;
 import com.deepsea.mua.stub.mvp.NewSubscriberCallBack;
 import com.deepsea.mua.stub.network.HttpHelper;
-import com.deepsea.mua.stub.utils.AppUtils;
 import com.deepsea.mua.stub.utils.UserUtils;
 import com.deepsea.mua.stub.utils.ViewBindUtils;
-import com.deepsea.mua.stub.utils.eventbus.HeartBeatEvent;
-import com.deepsea.mua.stub.utils.eventbus.InviteDialogEvent;
-
-import org.greenrobot.eventbus.EventBus;
-
-import java.util.List;
-
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 

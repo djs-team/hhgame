@@ -62,11 +62,12 @@ load('game/msghandler/JiaGangTableProto', function () {
                 if (selfInfo.pIsTing && !tData.pMustOutCard.length) {
                     tData.pMustOutCard.push(lastDrawCard)
                 }
-                if (msg.lastSelectActionID && msg.lastSelectSeatID === selfInfo.pSeatID) {
 
-                } else if ((selfInfo.handCards.length % 3 ) === 2) {
-                    appInstance.gameAgent().mjUtil().removeCard(selfInfo.handCards, lastDrawCard)
-                    selfInfo.handCards.unshift(lastDrawCard)
+                if (appInstance.gameAgent().mjUtil().isCardInArray(selfInfo.handCards, lastDrawCard)) {
+                    if ((selfInfo.handCards.length % 3 ) === 2) {
+                        appInstance.gameAgent().mjUtil().removeCard(selfInfo.handCards, lastDrawCard)
+                        selfInfo.handCards.unshift(lastDrawCard)
+                    }
                 }
             }
 
@@ -101,7 +102,7 @@ load('game/msghandler/JiaGangTableProto', function () {
             }
 
             cc.log('======================================playerdata==========' + JSON.stringify(pData))
-            appInstance.sendNotification(TableEvent.UpdateView)
+            appInstance.sendNotification(TableEvent.MatchEnterTableProto, msg)
         },
 
         initData: function () {

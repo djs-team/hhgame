@@ -36,6 +36,7 @@ public class ExchangeMdDetailsAdapter extends BaseBindingAdapter<ExchangeMdDetai
     protected void bind(BindingViewHolder<ItemExchangeMdDetailsBinding> holder, ExchangeMdDetailItem item) {
         ViewBindUtils.setText(holder.binding.balanceTv,"-￥"+item.getDiamond());
         ViewBindUtils.setText(holder.binding.numTv,"+"+item.getCoin()+"玫瑰");
+        ViewBindUtils.setText(holder.binding.timeTv,item.getTime());
 
     }
 }

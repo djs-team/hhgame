@@ -64,23 +64,19 @@
     }];
 }
 
-- (void)reconnectRoom:(NSString *)roomId callback:(CXClientModelJoinRoomCallBack)callback {
-    if (!roomId) {
-        callback ? callback(roomId, NO) : nil;
-        return;
-    }
-    _joinRoomCallBack = callback;
+- (void)reconnectRoom:(NSString *)roomId {
     kWeakSelf
     [CXHTTPRequest csharp_httpWithMethod:HJRequestMethodGET url:@"/Master/GetGate" parameters:@{} callback:^(id responseObject, BOOL isCache, NSError *error) {
         if (!error) {
             NSString *addr = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
-            if ([weakSelf.socket joinRoom:roomId withToken:weakSelf.token atAddr:addr] == NO) {
-                callback ? callback(roomId, NO) : nil;
-                return;
-            }
+            [weakSelf.socket joinRoom:roomId withToken:weakSelf.token atAddr:addr];
         } else {
-            NSError *error = [[NSError alloc] init];
-            [weakSelf socketManager:weakSelf.socket room:roomId error:error];
+            [[weakSelf.listener allObjects] enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                if ([obj respondsToSelector:@selector(modelClient:room:error:)]) {
+                    NSError *error = [[NSError alloc] init];
+                    [obj modelClient:self room:roomId error:error];
+                }
+            }];
         }
     }];
 }

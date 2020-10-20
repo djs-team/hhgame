@@ -32,8 +32,7 @@ import com.deepsea.mua.stub.utils.StateUtils;
 import com.deepsea.mua.stub.utils.TimeUtils;
 import com.deepsea.mua.stub.utils.UserUtils;
 import com.deepsea.mua.stub.utils.ViewModelFactory;
-import com.deepsea.mua.stub.utils.eventbus.HeartBeatEvent;
-import com.deepsea.mua.stub.utils.eventbus.UpdateUnreadMsgEvent;
+import com.deepsea.mua.stub.utils.eventbus.UpHxUnreadMsg;
 import com.hyphenate.EMConnectionListener;
 import com.hyphenate.EMError;
 import com.hyphenate.EMMessageListener;
@@ -41,6 +40,9 @@ import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMConversation;
 import com.hyphenate.chat.EMMessage;
 import com.hyphenate.util.NetUtils;
+
+import org.greenrobot.eventbus.Subscribe;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -72,12 +74,17 @@ public class FriendMineFragment extends BaseFragment<FragmentFriendMessageBindin
 
     @Override
     protected void initView(View view) {
-
         mViewModel = ViewModelProviders.of(this, mModelFactory).get(FriendListViewModel.class);
         initRecyclerView();
         initRefreshLayout();
         initHX();
+        registerEventBus(this);
 
+    }
+
+    @Subscribe
+    public void onEvent(UpHxUnreadMsg event) {
+        refresh();
     }
 
     protected EMConnectionListener connectionListener = new EMConnectionListener() {
@@ -217,7 +224,7 @@ public class FriendMineFragment extends BaseFragment<FragmentFriendMessageBindin
                 info.append(" |");
                 info.append(" " + city);
             }
-            if (!TextUtils.isEmpty(state)&&!state.equals("0")) {
+            if (!TextUtils.isEmpty(state) && !state.equals("0")) {
                 info.append(" |");
                 info.append(" " + StateUtils.getState(state));
             }
@@ -227,7 +234,7 @@ public class FriendMineFragment extends BaseFragment<FragmentFriendMessageBindin
             intent.putExtra(Constant.EXTRA_USER_ID, userId);
             intent.putExtra(Constant.EXTRA_USER_INFO, info.toString());
             intent.putExtra(Constant.EXTRA_USER_NICKNAME, bean.getNickname());
-            intent.putExtra(Constant.EXTRA_USER_ONLINE, bean.getOnline());
+            intent.putExtra(Constant.EXTRA_USER_ONLINE, bean.getOnline_str());
             ChatUserInfoController.getInstance().setTochatUserAvatar(bean.getAvatar());
             EaseUserUtils.setCurrentUserAvatar(UserUtils.getUser().getAvatar());
             startActivity(intent);
@@ -238,14 +245,11 @@ public class FriendMineFragment extends BaseFragment<FragmentFriendMessageBindin
     }
 
 
-
     private void initRefreshLayout() {
         mBinding.refreshLayout.setOnRefreshListener(refreshLayout -> {
             refresh();
         });
     }
-
-
 
 
     private void refresh() {
@@ -310,6 +314,7 @@ public class FriendMineFragment extends BaseFragment<FragmentFriendMessageBindin
         EMClient.getInstance().removeConnectionListener(connectionListener);
         EMClient.getInstance().chatManager().removeMessageListener(messageListener);
         HxHelper.getInstance().getUserProfileManager().removeSyncContactInfoListener(mDataSyncListener);
+        unregisterEventBus(this);
     }
 
     private final int msg_refesh = 1001;

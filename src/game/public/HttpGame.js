@@ -61,6 +61,7 @@ load('game/public/HttpGame', function () {
                 'account',
                 'key',   //登陆成功后，服务端存的session KEY
                 'pid',
+                'sex',
                 'timetamp',
                 'lastChannel',
                 'fistLogin'
@@ -350,6 +351,7 @@ load('game/public/HttpGame', function () {
             }
 
             msg.msgID = HttpEvent.MJ_HALL_CASH_COW
+            console.log('----------------- cashCowReq data : ' + JSON.stringify(msg));
             appInstance.httpAgent().sendPost(msg)
 
         },
@@ -565,11 +567,16 @@ load('game/public/HttpGame', function () {
         RECEIVEDAILYREWARDSBack: function (msg) {
 
             if (msg.status !== 0) {
-                cc.log('------------->>>httpGame TASKDAILYBack error happen')
+                let errorStr = ''
+                if(msg.status === 76)
+                    errorStr = '任务未完成'
+                else if(msg.status === 77)
+                    errorStr = '任务已领取'
+                errorStr = errorStr + '，错误码：' + msg.status + '，请刷新后重试，或联系客服'
+                appInstance.gameAgent().Tips(errorStr)
                 return
             }
 
-            cc.log('------------------------------ RECEIVEDAILYREWARDSBack msg : ' + JSON.stringify(msg))
             appInstance.sendNotification(GameEvent.TASK_DAILY_RECEIVEREWARDS, msg)
 
         },

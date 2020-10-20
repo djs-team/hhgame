@@ -83,7 +83,6 @@ load('game/ui/layer/member/MemberMdt', function () {
 
         initViewData: function (body) {
 
-            cc.log('------------------------ body : ' + JSON.stringify(body))
             let data = {}
             data.privilegeList = []
             data.memberList = []
@@ -124,7 +123,7 @@ load('game/ui/layer/member/MemberMdt', function () {
                 GameUtil.getPropsData(_vip.dailyGift, privilegeData, 'dailyGift', GameUtil.DATATYPE_2, GameUtil.CURRENCYTYPE_1, GameUtil.UNITLOCATION_BEFORE, 'x')
 
 
-                let level = '周'
+                let level = ''
                 switch (_vip.vipCode) {
 
                     case GameConfig.VIP_LEVEL_1:
@@ -153,14 +152,13 @@ load('game/ui/layer/member/MemberMdt', function () {
                     default:
                         break
                 }
-
+                level = this.onGetMemberLevel(_vip.vipCode)
                 memberData.memberName = level + 'VIP专属角色'
                 rechargeData.time = '时限：' + _vip.time + '天'
                 rechargeData.money = _vip.money + 'RMB'
 
 
             }
-            cc.log('------------------------ data : ' + JSON.stringify(data))
             this.view.initViewData(data)
 
 
@@ -170,7 +168,7 @@ load('game/ui/layer/member/MemberMdt', function () {
 
             let days = parseInt(timeStamp / 1000 / 60 / 60 / 24)
             let hours = Math.round(timeStamp / 1000 / 60 / 60 % 24)
-            data.dueReminderText = '尊敬的xxVIP会员，您的VIP有效时限距离到期还有：' + days + '天' + hours + '时'
+            data.dueReminderText = '尊敬的' + this.onGetMemberLevel(data.playerVipCode) + 'VIP会员，您的VIP有效时限距离到期还有：' + days + '天' + hours + '时'
 
         },
 
@@ -182,6 +180,28 @@ load('game/ui/layer/member/MemberMdt', function () {
 
             this.view.onReceiveRewards()
         },
+
+        onGetMemberLevel: function (vipLevel) {
+            let vipName = ''
+            switch (vipLevel) {
+                case GameConfig.VIP_LEVEL_1:
+                    vipName = '周'
+                    break
+                case GameConfig.VIP_LEVEL_2:
+                    vipName = '月'
+                    break
+                case GameConfig.VIP_LEVEL_3:
+                    vipName = '季'
+                    break
+                case GameConfig.VIP_LEVEL_4:
+                    vipName = '年'
+                    break
+                default:
+                    break
+            }
+
+            return vipName
+        }
 
     })
     return mdt

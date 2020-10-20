@@ -148,9 +148,6 @@ load('module/mahjong/ui/DeskCardLayer', function () {
         },
 
         updateHandCard: function (uiSeat, player, isTurn) {
-            cc.log('=====uiSeat=========' + uiSeat)
-            cc.log('=====isTurn=========' + isTurn)
-            cc.log('=====player=========' + JSON.stringify(player))
             let handNd = this._handCardNd[uiSeat]
             handNd.setVisible(true)
             let handCards = player.handCards
@@ -159,9 +156,7 @@ load('module/mahjong/ui/DeskCardLayer', function () {
                 for (let i = 0; i < 14; ++i) {
                     let card = handNd.getChildByName('Card' + i)
                     if (isTurn) {
-                        cc.log('======isTurn=======' + handCards.length)
                         if ((handCards.length % 3 ) === 2) {
-                            cc.log('======isTurn====1111===' )
                             if (i < handCards.length) {
                                 card.setVisible(true)
                                 this.updateSelfHandCard(card, handCards[i])
@@ -169,7 +164,6 @@ load('module/mahjong/ui/DeskCardLayer', function () {
                                 card.setVisible(false)
                             }
                         } else {
-                            cc.log('======isTurn===2222====')
                             if (i === 0 || i > handCardCount) {
                                 card.setVisible(false)
                             } else {

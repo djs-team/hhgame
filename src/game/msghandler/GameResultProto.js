@@ -50,7 +50,7 @@ load('game/msghandler/GameResultProto', function () {
             }
 
             cc.log('====GameResultProto=====pData===========' + JSON.stringify(pData))
-            appInstance.sendNotification(TableEvent.GameResultProto)
+            appInstance.sendNotification(TableEvent.GameResultProto, msg)
         },
 
         initData: function () {

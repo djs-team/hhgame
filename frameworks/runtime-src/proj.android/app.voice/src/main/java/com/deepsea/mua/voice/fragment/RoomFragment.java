@@ -133,11 +133,9 @@ public class RoomFragment extends BaseFragment<FragmentRoomBinding> {
         mAdapterWithHF.setManagerType(RecyclerAdapterWithHF.TYPE_MANAGER_GRID);
         mAdapterWithHF.setRecycleView(mBinding.recyclerView);
         mBinding.recyclerView.setAdapter(mAdapterWithHF);
-
-
         mBinding.recyclerView.setNestedScrollingEnabled(false);
         mBinding.recyclerView.setHasFixedSize(true);
-//解决数据加载完成后, 没有停留在顶部的问题
+        //解决数据加载完成后, 没有停留在顶部的问题
         mBinding.recyclerView.setFocusable(false);
         addFooter();
     }

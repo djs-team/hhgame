@@ -19,8 +19,8 @@ load('module/mahjong/ui/EffectLayerMdt', function () {
         getNotificationList: function () {
             return [
                 TableEvent.InitCardProto,
-                TableEvent.UpdateView,
-                TableEvent.PutCardProto,
+                TableEvent.MatchResultProto,
+                TableEvent.MatchEnterTableProto,
                 TableEvent.DrawCardProto,
                 TableEvent.PlayerSelectProto,
                 TableEvent.GameResultProto,
@@ -30,20 +30,53 @@ load('module/mahjong/ui/EffectLayerMdt', function () {
             let name = notification.getName()
             let body = notification.getBody()
             switch (name) {
-                case TableEvent.UpdateView:
+                case TableEvent.InitCardProto:
+                    this.InitCardProto(body)
                     break
                 case TableEvent.PlayerSelectProto:
                     this.PlayerSelectProto(body)
                     break
-                case TableEvent.PutCardProto:
+                case TableEvent.MatchResultProto:
+                    this.MatchResultProto(body)
                     break
-                case TableEvent.DrawCardProto:
+                case TableEvent.MatchEnterTableProto:
+                    this.MatchEnterTableProto(body)
                     break
                 case TableEvent.TableHostingProto:
                     break
                 case TableEvent.GameResultProto:
                     this.GameResultProto(body)
                     break
+            }
+        },
+
+        MatchEnterTableProto: function (msg) {
+            if (msg.mcState === 1) {
+                appInstance.gameAgent().mjUtil().playGamingSound(Sound.play.match_jinji)
+            }
+        },
+
+        MatchResultProto: function (msg) {
+            if (msg.mcState === 0) {
+                let soundArray = Sound.play['match_win_' + msg.ranking]
+                if (soundArray) {
+                    appInstance.gameAgent().mjUtil().playGamingSound(soundArray)
+                }
+            } else if (msg.mcState === 1) {
+            //    淘汰
+                appInstance.gameAgent().mjUtil().playGamingSound(Sound.play.match_taotai)
+            }
+        },
+
+        InitCardProto: function (msg) {
+            let pData = appInstance.dataManager().getPlayData()
+            if (pData.isMatch()) {
+                let tData = pData.tableData
+                if (tData.pCurRound === 1) {
+                    appInstance.gameAgent().mjUtil().playGamingSound(Sound.play.match_begin)
+                }
+            } else {
+                appInstance.gameAgent().mjUtil().playGamingSound(Sound.play.begin)
             }
         },
 

@@ -13,6 +13,7 @@ load('game/ui/layer/cashcow/CashCowMdt', function () {
         },
         getNotificationList: function () {
             return [
+                GameEvent.GET_CASHCOWNUM,
                 GameEvent.UPDATE_CASHCOWNUM,
                 GameEvent.GET_CASHCOWRECORD
             ]
@@ -21,6 +22,7 @@ load('game/ui/layer/cashcow/CashCowMdt', function () {
             let name = notification.getName()
             let body = notification.getBody()
             switch (name) {
+                case GameEvent.GET_CASHCOWNUM:
                 case GameEvent.UPDATE_CASHCOWNUM:
                     this.view.onRefreshView(body)
                     break
@@ -32,7 +34,6 @@ load('game/ui/layer/cashcow/CashCowMdt', function () {
 
 
         onRegister: function () {
-
             this.initView()
         },
 
@@ -40,11 +41,11 @@ load('game/ui/layer/cashcow/CashCowMdt', function () {
         },
 
         initView: function () {
-
             let pRole = appInstance.dataManager().getUserData().pRole
             this.view.initView(pRole)
-
+            appInstance.gameAgent().httpGame().cashCowNumReq()
         }
+
 
     })
     return mdt

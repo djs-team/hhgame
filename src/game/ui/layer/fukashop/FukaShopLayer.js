@@ -88,7 +88,7 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 'commonPnl/fuKaPnl' : {},
                 'commonPnl/giftLogBtnPnl' : {},
                 'commonPnl/robLogBtnPnl' : { },
-                'commonPnl/returnBtn' : { onClicked: this.onReturnBtnClick},
+                'commonPnl/returnPnl' : { onClicked: this.onReturnBtnClick},
 
 
                // 'popupPnl' : { onClicked: this.onClosePopupPnlClick},

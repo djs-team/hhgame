@@ -514,12 +514,12 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
             initRecommend();
         }
         getFriendList(false);
-        HeartControl.getInstance(mContext).startHeartBeatObservable(mViewModel, new HeartControl.CallBack() {
-            @Override
-            public void onResult() {
-                onMicroDownExitRoom();
-            }
-        });
+//        HeartControl.getInstance(mContext).startHeartBeatObservable(mViewModel, new HeartControl.CallBack() {
+//            @Override
+//            public void onResult() {
+//                onMicroDownExitRoom();
+//            }
+//        });
         inviteUpMicro(inviteMicroId);
 
         iwxapi = WXAPIFactory.createWXAPI(this, WxCons.APP_ID_WX);
@@ -1043,7 +1043,6 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
             RoomData.MicroInfosBean singerInfo = null;
             RoomData.MicroInfosBean guestInfo = null;
             WsUser hostUser = mRoomModel.getHostMicro().getUser();
-            Log.d("music", SongStateUtils.getSingleton2().getConsertUserId() + songInfo.getConsertUserId() + singerUserId + ";" + hostUser.getUserId());
             if (SongStateUtils.getSingleton2().getConsertUserId().equals(hostUser.getUserId())) {
                 singerInfo = mRoomModel.getHostMicro();
                 guestInfo = mRoomModel.getMicros().get(0);
@@ -1053,7 +1052,6 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
                 singerInfo = mRoomModel.getMicros().get(0);
 
             }
-
             mBinding.mainSecondOneMusicView.setMicroData(guestInfo);
             mBinding.mainSecondTwoMusicView.setMicroData(singerInfo);
         }
@@ -2222,7 +2220,7 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
             }
             mBinding.roomMsgRv.release();
             RoomController.getInstance().release();
-            HeartControl.getInstance(mContext).stopHeartBeatObservable();
+//            HeartControl.getInstance(mContext).stopHeartBeatObservable();
             System.gc();
         } catch (Exception e) {
 
@@ -2274,6 +2272,9 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
             });
             groupDialog.setMsg(String.valueOf(hongId));
             groupDialog.showAtBottom();
+
+
+            initSecondRoom();
         });
 
 
@@ -3498,14 +3499,24 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
             if (songInfo != null && !TextUtils.isEmpty(songInfo.getConsertUserName())) {
                 mBinding.cnsSecondViews.setVisibility(View.GONE);
                 mBinding.cnsSecondMusicViews.setVisibility(View.VISIBLE);
-                mBinding.mainSecondOneMusicView.setSurfaceViewVisible();
-                mBinding.mainSecondTwoMusicView.setSurfaceViewVisible();
+                mBinding.mainSecondOneView.setVisibility(View.GONE);
+                mBinding.mainSecondOneView.setSurfaceViewVisible();
+                mBinding.mainSecondTwoView.setVisibility(View.GONE);
+                mBinding.mainSecondTwoView.setSurfaceViewVisible();
+
+                mBinding.mainSecondOneMusicView.setVisibility(View.VISIBLE);
+                mBinding.mainSecondTwoMusicView.setVisibility(View.VISIBLE);
                 ViewBindUtils.setVisible(mBinding.rlMusic, true);
             } else {
                 mBinding.cnsSecondViews.setVisibility(View.VISIBLE);
                 mBinding.cnsSecondMusicViews.setVisibility(View.GONE);
-                mBinding.mainSecondOneView.setSurfaceViewVisible();
-                mBinding.mainSecondTwoView.setSurfaceViewVisible();
+                mBinding.mainSecondOneView.setVisibility(View.VISIBLE);
+                mBinding.mainSecondTwoView.setVisibility(View.VISIBLE);
+                mBinding.mainSecondOneMusicView.setVisibility(View.GONE);
+                mBinding.mainSecondOneMusicView.setSurfaceViewVisible();
+                mBinding.mainSecondTwoMusicView.setVisibility(View.GONE);
+                mBinding.mainSecondTwoMusicView.setSurfaceViewVisible();
+
                 ViewBindUtils.setVisible(mBinding.rlMusic, false);
             }
 
@@ -4124,6 +4135,11 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
         }
     }
 
+    @Override
+    public void keepLive() {
+        mViewModel.fetchKeepAlive();
+    }
+
 
     private void showGuardBayWindowDiallog(JoinUser joinUser) {
         if (joinUser != null && joinUser.isRoomGuard()) {
@@ -4457,7 +4473,7 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
             return;
         }
         releaseMainface();
-        HeartControl.getInstance(mContext).stopHeartBeatObservable();
+//        HeartControl.getInstance(mContext).stopHeartBeatObservable();
         if (!TextUtils.isEmpty(msg)) {
             toastShort(msg);
         }
@@ -4519,7 +4535,7 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
             toastShort("该房间关闭，请去其他房间看看吧。");
         }
         releaseMainface();
-        HeartControl.getInstance(mContext).stopHeartBeatObservable();
+//        HeartControl.getInstance(mContext).stopHeartBeatObservable();
         showProgress();
         if (mHandler == null) {
             return;

@@ -94,11 +94,6 @@ NSString *const kCSharpApiPrefix = @"https://win02-win.hehe555.com:444";
 
 + (void)csharp_httpWithMethod:(HJRequestMethod)method url:(NSString *)url parameters:(NSDictionary *)parameters callback:(HJHttpRequest)callback {
     NSString *urlStr = [NSString stringWithFormat:@"%@%@", kCSharpApiPrefix, url];
-//    NSMutableDictionary * mutableBaseParameters = [NSMutableDictionary dictionaryWithDictionary:parameters];
-//    if ([CXClientModel instance].token.length > 0) {
-//        [mutableBaseParameters addEntriesFromDictionary:@{@"token":[CXClientModel instance].token}];
-//        parameters = [mutableBaseParameters copy];
-//    }
     NSString *tempURL = [NSString stringWithFormat:@"%@?token=%@",urlStr,[CXClientModel instance].token];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:tempURL] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:30];
     NSURLSession *sharedSession = [NSURLSession sharedSession];
@@ -108,16 +103,11 @@ NSString *const kCSharpApiPrefix = @"https://win02-win.hehe555.com:444";
             callback ? callback(data, NO, nil) : nil;
         } else {
             // 网络访问失败
-            NSLog(@"error=%@",error);
+            callback ? callback(data, NO, error) : nil;
         }
     }];
     
     [dataTask resume];
-    
-//    [self setResponseSerializer:HJResponseSerializerHTTP];
-//    [self HTTPWithMethod:method url:urlStr parameters:parameters headers:[self getHTTPHeaders] cachePolicy:HJCachePolicyIgnoreCache callback:^(id responseObject, BOOL isCache, NSError *error) {
-//        callback ? callback(responseObject, NO, nil) : nil;
-//    }];
 }
 
 @end

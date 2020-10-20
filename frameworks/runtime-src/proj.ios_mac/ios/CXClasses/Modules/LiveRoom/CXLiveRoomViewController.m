@@ -477,6 +477,12 @@
             case SocketMessageIDRoomInit:// 初始化
             {
                 SocketMessageRoomInit * roomInit = notification;
+                
+                if ([CXClientModel instance].room.isConsertModel == YES) {
+                    if ([CXClientModel instance].room.isSonger) {
+                        [self music_playResume];
+                    }
+                }
                                 
                 NSIndexPath *seatIndex = [[CXClientModel instance].room.userSeats objectForKey:[CXClientModel instance].userId];
                 if (!seatIndex) {
@@ -997,12 +1003,7 @@
     }
 }
 
-- (void)modelClient:(CXClientModel *)client reconnectRoomSuccess:(BOOL)success {
-    if (success == NO) {
-        NSError *error = [[NSError alloc] init];
-        [self modelClient:[CXClientModel instance] room:[CXClientModel instance].room.RoomData.RoomId error:error];
-        return;
-    }
+//- (void)modelClient:(CXClientModel *)client reconnectRoomSuccess:(BOOL)success {
 //
 //    NSIndexPath *seatIndex = [[CXClientModel instance].room.userSeats objectForKey:[CXClientModel instance].userId];
 //    if (!seatIndex) {
@@ -1025,19 +1026,34 @@
 //            [self music_playResume];
 //        }
 //    }
-}
+//}
 
 - (void)modelClient:(CXClientModel *)client room:(NSString *)roomId error:(NSError *)error {
-//    [[CXClientModel instance].agoraEngineManager.engine leaveChannel:nil];
-//    [[CXClientModel instance].easemob leaveRoom];
     kWeakSelf
+    if ([CXClientModel instance].room.RoomData.RoomId.length <= 0) {
+        [self leaveRoom];
+        return;
+    }
     [self alertTitle:@"房间连接失败" message:@"是否重新连接" confirm:@"确定" cancel:@"取消" confirm:^{
-        [AppController reconnectRoom:roomId];
+        [weakSelf reconectRoom];
     } cancel:^{
         [weakSelf leaveRoom];
     }];
     
     [self music_playPause];
+}
+
+- (void)reconectRoom {
+    kWeakSelf
+    if ([CXHTTPRequest isNetwork] == YES) {
+        [[CXClientModel instance] reconnectRoom:[CXClientModel instance].room.RoomData.RoomId];
+    } else {
+        [self alertTitle:@"无网络，房间重接失败" message:@"是否重新连接" confirm:@"确定" cancel:@"取消" confirm:^{
+            [weakSelf reconectRoom];
+        } cancel:^{
+            [weakSelf leaveRoom];
+        }];
+    }
 }
 
 - (void)modelClient:(CXClientModel*)client didReceiveRoomMessage:(NSArray<EasemobRoomMessage*>*)msgs {

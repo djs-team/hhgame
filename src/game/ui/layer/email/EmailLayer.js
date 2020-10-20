@@ -60,6 +60,8 @@ load('game/ui/layer/email/EmailLayer', function () {
             appInstance.uiManager().removeUI(this)
         },
         initView: function () {
+            this.leftList.setScrollBarEnabled(false)
+            this.rewardList.setScrollBarEnabled(false)
             this.rightBgPic.setVisible(false)
             this.emptyBgPic.setVisible(false)
             this.leftPnl.setVisible(false)

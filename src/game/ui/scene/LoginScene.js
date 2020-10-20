@@ -17,9 +17,11 @@ load('game/ui/scene/LoginScene', function () {
             }
         },
 
-        ctor: function () {
+        ctor: function (data) {
             this._super(ResConfig.View.LoginScene)
             this.registerMediator(new LoginMdt(this))
+
+            this._viewData = data
 
             this.registerEventListener('GET_PHOTO_FROM_ALBUM', this.onPhotoSuccess)
             this.registerEventListener('GET_PHOTO_UPLOADPIC', this.onUpLoadPhotoSuccess)
@@ -34,6 +36,11 @@ load('game/ui/scene/LoginScene', function () {
         },
 
         initView: function () {
+            if (this._viewData) {
+                if (this._viewData.sayTxt) {
+                    appInstance.gameAgent().Tips(this._viewData.sayTxt)
+                }
+            }
             // this.goTest()
         },
 

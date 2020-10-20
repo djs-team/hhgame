@@ -109,9 +109,9 @@ load('game/public/GameAgent', function () {
             TipsUi.runTips(text)
         },
 
-        goLoginScene: function () {
+        goLoginScene: function (data) {
             let LoginScene = include('game/ui/scene/LoginScene')
-            appInstance.sceneManager().replaceScene(new LoginScene())
+            appInstance.sceneManager().replaceScene(new LoginScene(data))
             appInstance.gameAgent().setLoginOk(false)
             TcpClient.disconnect()
         },
@@ -138,7 +138,9 @@ load('game/public/GameAgent', function () {
                 if (this._heartBeatTimes > GameConfig.HeartBeatInterval * 3) {
                     cc.log(' >>>>>>>>>>心跳异常')
                     this._heartBeatTimes = 0
-                    this.goLoginScene()
+                    let data = {}
+                    data.sayTxt = '网络异常'
+                    this.goLoginScene(data)
                 }
             }
         },

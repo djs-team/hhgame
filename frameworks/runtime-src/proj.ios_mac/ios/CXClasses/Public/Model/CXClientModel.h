@@ -87,7 +87,7 @@ typedef void(^CXClientModelLeaveRoomCallBack)(NSString *roomId, BOOL success);
 + (instancetype)instance;
 
 - (void)joinRoom:(NSString *)roomId callback:(CXClientModelJoinRoomCallBack)callback;
-- (void)reconnectRoom:(NSString *)roomId callback:(CXClientModelJoinRoomCallBack)callback;
+- (void)reconnectRoom:(NSString *)roomId;
 - (void)leaveRoomCallBack:(CXClientModelLeaveRoomCallBack)callback;
 
 // 发送Socket请求

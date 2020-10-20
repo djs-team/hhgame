@@ -2848,6 +2848,7 @@
                         "ctype": "TextObjectData"
                       },
                       {
+                        "IsCustomSize": true,
                         "FontSize": 26,
                         "LabelText": "玩家ID",
                         "FontResource": {
@@ -2890,18 +2891,18 @@
                           "Y": 0.4338
                         },
                         "PreSize": {
-                          "X": 0.1216,
-                          "Y": 0.3019
+                          "X": 0.1501,
+                          "Y": 0.3367
                         },
-                        "LeftMargin": 216.1762,
-                        "RightMargin": 368.9038,
-                        "TopMargin": 35.7706,
-                        "BottomMargin": 24.3594,
+                        "LeftMargin": 206.6762,
+                        "RightMargin": 359.4038,
+                        "TopMargin": 34.2706,
+                        "BottomMargin": 22.8594,
                         "Tag": 510,
                         "ActionTag": 1530413569,
                         "Size": {
-                          "X": 81.0,
-                          "Y": 26.0
+                          "X": 100.0,
+                          "Y": 29.0
                         },
                         "Name": "idText",
                         "ctype": "TextObjectData"
@@ -3976,76 +3977,6 @@
                 },
                 "Name": "leftPnl",
                 "ctype": "PanelObjectData"
-              },
-              {
-                "FontSize": 14,
-                "ButtonText": "",
-                "TextColor": {
-                  "R": 65,
-                  "G": 65,
-                  "B": 70
-                },
-                "DisabledFileData": {
-                  "Type": "Default",
-                  "Path": "Default/Button_Disable.png",
-                  "Plist": ""
-                },
-                "NormalFileData": {
-                  "Type": "Normal",
-                  "Path": "common/gy_fh.png",
-                  "Plist": ""
-                },
-                "Scale9Enable": true,
-                "Scale9OriginX": 15,
-                "Scale9OriginY": 11,
-                "Scale9Width": 58,
-                "Scale9Height": 66,
-                "OutlineColor": {
-                  "G": 0,
-                  "B": 0
-                },
-                "ShadowColor": {
-                  "R": 110,
-                  "G": 110,
-                  "B": 110
-                },
-                "ShadowOffsetX": 2.0,
-                "ShadowOffsetY": -2.0,
-                "TouchEnable": true,
-                "AnchorPoint": {
-                  "ScaleX": 0.5,
-                  "ScaleY": 0.5
-                },
-                "Position": {
-                  "X": 75.461,
-                  "Y": 649.7367
-                },
-                "Scale": {
-                  "ScaleX": 1.0,
-                  "ScaleY": 1.0
-                },
-                "CColor": {},
-                "IconVisible": false,
-                "PrePosition": {
-                  "X": 0.059,
-                  "Y": 0.9024
-                },
-                "PreSize": {
-                  "X": 0.0688,
-                  "Y": 0.1222
-                },
-                "LeftMargin": 31.461,
-                "RightMargin": 1160.5391,
-                "TopMargin": 26.2633,
-                "BottomMargin": 605.7367,
-                "Tag": 845,
-                "ActionTag": 1168954158,
-                "Size": {
-                  "X": 88.0,
-                  "Y": 88.0
-                },
-                "Name": "returnBtn",
-                "ctype": "ButtonObjectData"
               }
             ],
             "ActionTag": -424990080,
@@ -4055,6 +3986,76 @@
             },
             "Name": "pnl",
             "ctype": "PanelObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Default",
+              "Path": "Default/Button_Disable.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "common/gy_fh.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 58,
+            "Scale9Height": 66,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 1.0
+            },
+            "Position": {
+              "X": 75.461,
+              "Y": 693.7367
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.059,
+              "Y": 0.9635
+            },
+            "PreSize": {
+              "X": 0.0688,
+              "Y": 0.1222
+            },
+            "LeftMargin": 31.461,
+            "RightMargin": 1160.5391,
+            "TopMargin": 26.2633,
+            "BottomMargin": 605.7367,
+            "Tag": 845,
+            "ActionTag": 1168954158,
+            "Size": {
+              "X": 88.0,
+              "Y": 88.0
+            },
+            "Name": "returnBtn",
+            "ctype": "ButtonObjectData"
           },
           {
             "FileData": {

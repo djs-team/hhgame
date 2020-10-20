@@ -78,6 +78,7 @@
           <Image Name="23 (5).png" />
           <Image Name="23 (6).png" />
           <Image Name="23 (7).png" />
+          <Image Name="23 (8).png" />
           <Image Name="3.png" />
           <Image Name="4.png" />
           <Image Name="6 (1).png" />
@@ -630,6 +631,10 @@
           <Image Name="yj_2.png" />
           <Image Name="yj_3.png" />
           <Image Name="yj_4.png" />
+          <Image Name="yj_5.png" />
+          <Image Name="yj_6.png" />
+          <Image Name="yj_7.png" />
+          <Image Name="yj_8.png" />
         </Folder>
         <Folder Name="feedback">
           <Image Name="yjfk_1.png" />

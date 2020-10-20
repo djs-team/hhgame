@@ -132,11 +132,11 @@ load('game/ui/layer/cashcow/CashCowLayer', function () {
         },
         onShowPropPnl: function (data) {
 
+            if(!data.hasOwnProperty('coin'))
+                return
             let coinsVal = 'x' + data.coin
             this.propPnl.getChildByName('coinsVal').setString(coinsVal)
             this.propPnl.setVisible(true)
-
-
         },
 
         onHideShowPropPnlClick: function () {

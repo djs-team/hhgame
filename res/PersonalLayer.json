@@ -908,6 +908,7 @@
                     "ctype": "ImageViewObjectData"
                   },
                   {
+                    "IsCustomSize": true,
                     "FontSize": 18,
                     "LabelText": "这是玩家昵称",
                     "HorizontalAlignmentType": "HT_Center",

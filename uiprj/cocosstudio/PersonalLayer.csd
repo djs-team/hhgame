@@ -189,7 +189,7 @@
                     <PreSize X="1.1900" Y="1.0000" />
                     <FileData Type="Normal" Path="personal/gexx_1.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="nameText" ActionTag="221853161" Tag="327" IconVisible="False" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="-4.0000" RightMargin="-4.0000" TopMargin="6.0000" BottomMargin="6.0000" FontSize="18" LabelText="这是玩家昵称" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                  <AbstractNodeData Name="nameText" ActionTag="221853161" Tag="327" IconVisible="False" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="-4.0000" RightMargin="-4.0000" TopMargin="6.0000" BottomMargin="6.0000" IsCustomSize="True" FontSize="18" LabelText="这是玩家昵称" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="108.0000" Y="18.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="50.0000" Y="15.0000" />

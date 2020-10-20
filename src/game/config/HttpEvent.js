@@ -52,6 +52,9 @@ load('game/config/HttpEvent', function () {
         MJ_HALL_PLAYER_INVITE_LOG: HTTP_HALL_BASE + 93, //玩家邀请记录
         MJ_HALL_VIP_INFO: HTTP_HALL_BASE + 95,
         MJ_HALL_VIP_DAILY_GIFT_RECEIVE: HTTP_HALL_BASE + 96,
+        MJ_HALL_MAIL_LIST: HTTP_HALL_BASE + 98,  //邮件列表
+        MJ_HALL_MAIL_DEL: HTTP_HALL_BASE + 99,  //删除邮件
+        MJ_HALL_MAIL_RECEIVE_DELETE: HTTP_HALL_BASE + 100,  //邮件领取奖励
 
 
         MJ_HALL_PLAYER_BUY_VIP_ORDER: HTTP_HALL_BASE + 101,

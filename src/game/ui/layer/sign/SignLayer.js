@@ -66,6 +66,8 @@ load('game/ui/layer/sign/SignLayer', function () {
 
         initView: function () {
 
+            this.signDataList.setScrollBarEnabled(false)
+
             this.becomeBtn.setVisible(false)
             this.upgradeBtn.setVisible(false)
             this.renewBtn.setVisible(false)

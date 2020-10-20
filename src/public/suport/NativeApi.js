@@ -68,7 +68,7 @@ load('public/suport/NativeApi', function () {
                 if (cc.sys.OS_ANDROID === cc.sys.os) {
                     jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'login', '(Ljava/lang/String;)V', "jpush")
                 } else if (cc.sys.OS_IOS === cc.sys.os) {
-                    jsb.reflection.callStaticMethod('AppController', 'JPushLoginWithMethod:', "THIRD_LOGIN_RESULT")
+                    jsb.reflection.callStaticMethod('AppController', 'JPushLoginWithMethod:showPhoneAlert:', "THIRD_LOGIN_RESULT",AppConfig.loginShowPhoneAlert)
                 }
             } catch (e) {
                 this.HelloOC('oneCLickLogin throw: ' + JSON.stringify(e))

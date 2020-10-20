@@ -1403,6 +1403,13 @@ public class RoomController implements IRoomController, RoomMsgHandler.OnMsgEven
                 }
                 break;
             }
+            case 28:
+                if (msg.getSuccess() == 1) {
+                    ToastUtils.showToast("操作成功");
+                } else {
+                    ToastUtils.showToast("禁言失败");
+                }
+                break;
             //赠送礼物回调
             case 29: {
                 if (msg.getSuccess() == 1) {
@@ -2008,7 +2015,7 @@ public class RoomController implements IRoomController, RoomMsgHandler.OnMsgEven
 //                SongStateUtils.getSingleton2().setHeartCount(0);
 //                break;
             case 301://KeepaLive
-                if (mView!=null){
+                if (mView != null) {
                     mView.keepLive();
                 }
                 break;

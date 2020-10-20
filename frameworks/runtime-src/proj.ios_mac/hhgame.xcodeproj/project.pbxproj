@@ -2347,10 +2347,10 @@
 			children = (
 				00614938250B94C600BB7620 /* CXFriendInviteCell.xib */,
 				00614939250B94C600BB7620 /* CXFriendInviteCell.h */,
+				0061493D250B94C600BB7620 /* CXFriendInviteCell.m */,
 				0061493A250B94C600BB7620 /* CXAddFriendGiftListCell.xib */,
 				0061493B250B94C600BB7620 /* CXAddFriendGiftListCell.h */,
 				0061493C250B94C600BB7620 /* CXAddFriendGiftListCell.m */,
-				0061493D250B94C600BB7620 /* CXFriendInviteCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";

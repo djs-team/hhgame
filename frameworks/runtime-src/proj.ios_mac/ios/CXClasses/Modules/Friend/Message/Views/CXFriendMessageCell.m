@@ -69,28 +69,30 @@
 
     if (_isConversation == YES) {
         _onlineLabel.hidden = YES;
-        if (model.state.integerValue == 2 || model.state.integerValue == 3) {
-            _stateLabel_widthLayout.constant = 40;
-            _stateLabel.text = @"相亲中";
-            _stateLabel.backgroundColor = UIColorHex(0x7F3EF0);
-        } else if (model.state.integerValue == 4 || model.state.integerValue == 5) {
+        if ([model.online_str isEqualToString:@"在线"]) {
+            _stateLabel_widthLayout.constant = 16;
+            _stateLabel.text = @"";
+            _stateLabel.backgroundColor = UIColorHex(0x0FE770);
+        } else if ([model.online_str isEqualToString:@"刚刚在线"]) {
+            _stateLabel_widthLayout.constant = 16;
+            _stateLabel.text = @"";
+            _stateLabel.backgroundColor = UIColorHex(0xFBD711);
+        } else if ([model.online_str isEqualToString:@"热聊中"]) {
             _stateLabel_widthLayout.constant = 40;
             _stateLabel.text = @"热聊中";
             _stateLabel.backgroundColor = UIColorHex(0xEF51B2);
-        } else if (model.state.integerValue == 6) {
+        } else if ([model.online_str isEqualToString:@"相亲中"]) {
+            _stateLabel_widthLayout.constant = 40;
+            _stateLabel.text = @"相亲中";
+            _stateLabel.backgroundColor = UIColorHex(0x7F3EF0);
+        } else if ([model.online_str isEqualToString:@"开播中"]) {
             _stateLabel_widthLayout.constant = 40;
             _stateLabel.text = @"开播中";
             _stateLabel.backgroundColor = UIColorHex(0xFEBF00);
         } else {
             _stateLabel_widthLayout.constant = 16;
             _stateLabel.text = @"";
-            if ([model.online_str isEqualToString:@"在线"]) {
-                _stateLabel.backgroundColor = UIColorHex(0x0FE770);
-            } else if ([model.online_str isEqualToString:@"刚刚在线"]) {
-                _stateLabel.backgroundColor = UIColorHex(0xFBD711);
-            } else {
-                _stateLabel.backgroundColor = UIColorHex(0x818181);
-            }
+            _stateLabel.backgroundColor = UIColorHex(0x818181);
         }
         
         if (model.conversation.unreadMessagesCount > 99) {
@@ -101,31 +103,38 @@
             self.unReadCount.hidden = YES;
         }
     } else {
-        _stateLabel.hidden = NO;
-        _onlineLabel.hidden = NO;
         _timeLabel.hidden = YES;
         _unReadCount.hidden = YES;
-        if (model.state.integerValue == 2 || model.state.integerValue == 3) {
-            _stateLabel_widthLayout.constant = 40;
-            _stateLabel.text = @"相亲中";
-            _stateLabel.backgroundColor = UIColorHex(0x7F3EF0);
-        } else if (model.state.integerValue == 4 || model.state.integerValue == 5) {
-            _stateLabel_widthLayout.constant = 40;
-            _stateLabel.text = @"热聊中";
-            _stateLabel.backgroundColor = UIColorHex(0xEF51B2);
-        } else if (model.state.integerValue == 6) {
-            _stateLabel_widthLayout.constant = 40;
-            _stateLabel.text = @"开播中";
-            _stateLabel.backgroundColor = UIColorHex(0xFEBF00);
-        } else {
-            _stateLabel.hidden = YES;
-        }
         
         _onlineLabel.text = model.online_str;
+        _stateLabel.hidden = YES;
+        _stateLabel.text = @"";
+        _stateLabel_widthLayout.constant = 16;
         if ([model.online_str isEqualToString:@"在线"]) {
             _onlineLabel.textColor = UIColorHex(0x0FE770);
         } else if ([model.online_str isEqualToString:@"刚刚在线"]) {
             _onlineLabel.textColor = UIColorHex(0xFBD711);
+        } else if ([model.online_str isEqualToString:@"热聊中"]) {
+            _stateLabel.hidden = NO;
+            _stateLabel_widthLayout.constant = 40;
+            _stateLabel.text = @"热聊中";
+            _stateLabel.backgroundColor = UIColorHex(0xEF51B2);
+            
+            _onlineLabel.textColor = UIColorHex(0xEF51B2);
+        } else if ([model.online_str isEqualToString:@"相亲中"]) {
+            _stateLabel.hidden = NO;
+            _stateLabel_widthLayout.constant = 40;
+            _stateLabel.text = @"相亲中";
+            _stateLabel.backgroundColor = UIColorHex(0x7F3EF0);
+            
+            _onlineLabel.textColor = UIColorHex(0x7F3EF0);
+        } else if ([model.online_str isEqualToString:@"开播中"]) {
+            _stateLabel.hidden = NO;
+            _stateLabel_widthLayout.constant = 40;
+            _stateLabel.text = @"开播中";
+            _stateLabel.backgroundColor = UIColorHex(0xFEBF00);
+            
+            _onlineLabel.textColor = UIColorHex(0xFEBF00);
         } else {
             _onlineLabel.textColor = UIColorHex(0x818181);
         }

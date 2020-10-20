@@ -58,28 +58,32 @@
     }
     
     _onlineStateLabel.text = user.online_str;
+    _stateLabel.hidden = YES;
+    _stateLabel.text = @"";
     if ([user.online_str isEqualToString:@"在线"]) {
         _onlineStateLabel.textColor = UIColorHex(0x0FE770);
     } else if ([user.online_str isEqualToString:@"刚刚在线"]) {
         _onlineStateLabel.textColor = UIColorHex(0xFBD711);
-    } else {
-        _onlineStateLabel.textColor = UIColorHex(0x818181);
-    }
-    
-    if (user.state.integerValue == 2 || user.state.integerValue == 3) {
-        _stateLabel.hidden = NO;
-        _stateLabel.text = @"相亲中";
-        _stateLabel.backgroundColor = UIColorHex(0x7F3EF0);
-    } else if (user.state.integerValue == 4 || user.state.integerValue == 5) {
+    } else if ([user.online_str isEqualToString:@"热聊中"]) {
         _stateLabel.hidden = NO;
         _stateLabel.text = @"热聊中";
         _stateLabel.backgroundColor = UIColorHex(0xEF51B2);
-    } else if (user.state.integerValue == 6) {
+        
+        _onlineStateLabel.textColor = UIColorHex(0xEF51B2);
+    } else if ([user.online_str isEqualToString:@"相亲中"]) {
+        _stateLabel.hidden = NO;
+        _stateLabel.text = @"相亲中";
+        _stateLabel.backgroundColor = UIColorHex(0x7F3EF0);
+        
+        _onlineStateLabel.textColor = UIColorHex(0x7F3EF0);
+    } else if ([user.online_str isEqualToString:@"开播中"]) {
         _stateLabel.hidden = NO;
         _stateLabel.text = @"开播中";
         _stateLabel.backgroundColor = UIColorHex(0xFEBF00);
+        
+        _onlineStateLabel.textColor = UIColorHex(0xFEBF00);
     } else {
-        _stateLabel.hidden = YES;
+        _onlineStateLabel.textColor = UIColorHex(0x818181);
     }
     
     if (user.room_id.length > 0) {

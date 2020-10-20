@@ -319,12 +319,12 @@ public class ProfileActivity extends BaseActivity<ActivityProfileBinding> {
                 ViewBindUtils.setVisible(mBinding.tvState, true);
                 mBinding.tvState.setBackgroundResource(R.drawable.bg_grayr_radius_21);
                 ViewBindUtils.setText(mBinding.tvState, "离线");
-            } else if (state.equals("3")) {
+            } else if (state.equals("2") || state.equals("3")) {
                 //相亲中
                 ViewBindUtils.setVisible(mBinding.tvState, true);
                 mBinding.tvState.setBackgroundResource(R.drawable.bg_violet_radius_21);
                 ViewBindUtils.setText(mBinding.tvState, "相亲中");
-            } else if (state.equals("5")) {
+            } else if (state.equals("4") || state.equals("5")) {
                 ViewBindUtils.setVisible(mBinding.tvState, true);
                 mBinding.tvState.setBackgroundResource(R.drawable.bg_pink_radius_21);
                 ViewBindUtils.setText(mBinding.tvState, "热聊中");

@@ -62,7 +62,7 @@ public class MemberSearchAdapter extends BaseBindingAdapter<RoomSearchs.MemberLi
         ViewBindUtils.setVisible(holder.binding.ivLocation, !TextUtils.isEmpty(location.trim()));
         ViewBindUtils.setText(holder.binding.tvAge, item.getAge() == 0 ? "" : String.valueOf(item.getAge()));
         StateUtils.setRoomState(holder.binding.tvState, item.getState());
-        boolean chatState = !TextUtils.isEmpty(item.getState()) && item.getState().equals("6");
-        ViewBindUtils.setVisible(holder.binding.tvState, chatState);
+//        boolean chatState = !TextUtils.isEmpty(item.getState()) && item.getState().equals("6");
+//        ViewBindUtils.setVisible(holder.binding.tvState, chatState);
     }
 }

@@ -9,7 +9,7 @@ load('game/ui/layer/member/MemberLayer', function () {
     let GameUtil = include('game/public/GameUtil')
     let AniPlayer = ResConfig.AniPlayer
     let PlayerPlay = ResConfig.PlayerPlay
-    let sender={};
+    let memberSender={};
     let MemberLayer = BaseLayer.extend({
         _className: 'MemberLayer',
         ctor: function () {
@@ -184,10 +184,10 @@ load('game/ui/layer/member/MemberLayer', function () {
         },
 
         onRechargeClicked: function (s) {
-            sender = s;
+            memberSender = s;
             if (cc.sys.OS_IOS === cc.sys.os) {
                 if (AppConfig.applePayType == "Apple") {
-                    let _sendData = sender._sendData
+                    let _sendData = memberSender._sendData
                     let msg = {
                         vipCode: _sendData.vipCode,
                         payType: 3
@@ -207,7 +207,7 @@ load('game/ui/layer/member/MemberLayer', function () {
             cc.log("----------------------onAliPayClick")
             this.PayType.setVisible(false)
 
-            let _sendData = sender._sendData
+            let _sendData = memberSender._sendData
             let msg = {
                 vipCode: _sendData.vipCode,
                 payType: 1
@@ -219,7 +219,7 @@ load('game/ui/layer/member/MemberLayer', function () {
             cc.log("----------------------onWxClick")
 
             this.PayType.setVisible(false)
-            let _sendData = sender._sendData
+            let _sendData = memberSender._sendData
             let msg = {
                 vipCode: _sendData.vipCode,
                 payType: 2

@@ -5,7 +5,7 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
     let CoinShopMdt = include('game/ui/layer/coinshop/CoinShopMdt')
     let GameEvent = include('game/config/GameEvent')
     let GameUtil = include('game/public/GameUtil')
-    let sender = {};
+    let coinSender = {};
 
     let CoinShopLayer = BaseLayer.extend({
         _className: 'CoinShopLayer',
@@ -248,10 +248,10 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
          * @param s
          */
         onBuyZuanFunction: function (s) {
-            sender = s;
+            coinSender = s;
             if (cc.sys.OS_IOS === cc.sys.os) {
                 if (AppConfig.applePayType == "Apple") {
-                   let _sendData = sender._sendData
+                   let _sendData = coinSender._sendData
                    let msg = {
                        vipCode: _sendData.vipCode,
                        payType: 3
@@ -273,7 +273,7 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
             console.log("----------------------onAliPayClick")
             this.PayType.setVisible(false)
             //下单
-            let _sendData = sender._sendMsg
+            let _sendData = coinSender._sendMsg
             let msg = {
                 goodsid: _sendData.goodsid,
                 payType: 1
@@ -289,7 +289,7 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
             console.log("----------------------onWxClick")
             this.PayType.setVisible(false)
             //下单
-            let _sendData = sender._sendMsg
+            let _sendData = coinSender._sendMsg
             let msg = {
                 goodsid: _sendData.goodsid,
                 payType: 2
@@ -347,7 +347,7 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
                 dialogMsg.RightBtnName = btnNameArray.RightBtnName
                 dialogMsg.RightBtnClick = function () {
 
-                    let _sendMsg = sender._sendMsg
+                    let _sendMsg = coinSender._sendMsg
                     let msg = {}
                     msg.goodsid = _sendMsg.goodsid
                     appInstance.gameAgent().httpGame().COINSSHOPBUYReq(msg)

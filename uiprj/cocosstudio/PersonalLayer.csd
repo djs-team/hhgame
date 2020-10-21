@@ -229,25 +229,25 @@
               <AbstractNodeData Name="idPnl" ActionTag="-9183938" Tag="329" IconVisible="False" LeftMargin="565.2071" RightMargin="592.7929" TopMargin="233.2070" BottomMargin="464.7930" TouchEnable="True" ClipAble="False" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="122.0000" Y="22.0000" />
                 <Children>
-                  <AbstractNodeData Name="idText" ActionTag="-951567276" Tag="330" IconVisible="False" LeftMargin="3.6100" RightMargin="90.7900" TopMargin="0.9100" BottomMargin="2.0900" IsCustomSize="True" FontSize="20" LabelText="ID:" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="27.6000" Y="19.0000" />
+                  <AbstractNodeData Name="idText" ActionTag="-951567276" Tag="330" IconVisible="False" LeftMargin="3.6100" RightMargin="90.7900" TopMargin="-1.5900" BottomMargin="-0.4100" IsCustomSize="True" FontSize="20" LabelText="ID:" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="27.6000" Y="24.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="17.4100" Y="11.5900" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="183" G="100" B="30" />
                     <PrePosition X="0.1427" Y="0.5268" />
-                    <PreSize X="0.2262" Y="0.8636" />
+                    <PreSize X="0.2262" Y="1.0909" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="idVale" ActionTag="-399924848" Tag="331" IconVisible="False" LeftMargin="31.6100" RightMargin="4.3900" TopMargin="1.8300" BottomMargin="1.1700" IsCustomSize="True" FontSize="20" LabelText="1234567" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="86.0000" Y="19.0000" />
+                  <AbstractNodeData Name="idVale" ActionTag="-399924848" Tag="331" IconVisible="False" LeftMargin="31.6100" RightMargin="4.3900" TopMargin="-0.6700" BottomMargin="-1.3300" IsCustomSize="True" FontSize="20" LabelText="1234567" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="86.0000" Y="24.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="74.6100" Y="10.6700" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="183" G="100" B="30" />
                     <PrePosition X="0.6116" Y="0.4850" />
-                    <PreSize X="0.7049" Y="0.8636" />
+                    <PreSize X="0.7049" Y="1.0909" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>

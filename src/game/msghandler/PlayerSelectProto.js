@@ -56,7 +56,7 @@ load('game/msghandler/PlayerSelectProto', function () {
             let cardGroup = {}
             switch (pActionID) {
                 case 20:
-                    appInstance.gameAgent().Tips('======胡牌了======')
+                    // appInstance.gameAgent().Tips('======胡牌了======')
                     break
                 case 110://碰
                 case 40: //碰听

@@ -6,6 +6,7 @@ load('module/mahjong/ui/MatchResultLayer', function () {
     let ResConfig = include('module/mahjong/common/ResConfig')
     let BaseLayer = include('public/ui/BaseLayer')
     let GameUtil = include('game/public/GameUtil')
+    let GameConfig = include('game/config/GameConfig')
     let Layer = BaseLayer.extend({
         _className: 'MatchResultLayer',
         RES_BINDING: function () {
@@ -48,15 +49,28 @@ load('module/mahjong/ui/MatchResultLayer', function () {
         },
 
         updateView: function (msg) {
+
             if (msg.mcState === 0) {
                 this.WinPnl.setVisible(true)
                 this.LosePnl.setVisible(false)
                 this.WinRankTxt.setString('第' + msg.ranking + '名')
                 let rewardList = msg.mcRewardList
                 let rewardStr = '比赛奖励：'
+                let needKeysArrayName = [
+                    'name'
+                ]
                 for (let i = 0; i< rewardList.length; ++i) {
-                    rewardStr += cc.formatStr('道具编码(%s) 数量(%s) \n', rewardList[i].propCode.toString(), rewardList[i].propNum.toString())
+                    let rewardData = rewardList[i]
+                    let propData = {
+                        propType:rewardData.propType,
+                        propCode:rewardData.propCode,
+                        propNum:rewardData.propNum,
+                    }
+                    GameUtil.getRoleData(propData,needKeysArrayName,'propType','propCode')
+                   // rewardStr += cc.formatStr('(%s) x (%s) \n', propData.name, propData.propNum.toString())
+                    rewardStr += cc.formatStr('%s x %s \n', propData.name, propData.propNum.toString())
                 }
+                cc.log('--------------------rewardStr : ' + rewardStr)
                 this.WinReward.setString(rewardStr)
             } else if (msg.mcState === 1) {
                 this.WinPnl.setVisible(false)

@@ -782,6 +782,12 @@ UIInterfaceOrientationMask oMask = UIInterfaceOrientationMaskLandscape;
     
 }
 
++ (void)showUserProfile:(NSString *_Nonnull)userId target:(UIViewController *)target {
+    CXUserInfoViewController *vc = [CXUserInfoViewController new];
+    vc.user_Id = userId;
+    [target.navigationController pushViewController:vc animated:YES];
+}
+
 + (void)logout {
     NSLog(@"登录异常，请重新登录");
     [[NSNotificationCenter defaultCenter] postNotificationName:kNSNotificationCenter_CXBaseTabBarViewController_leaveOut object:nil];

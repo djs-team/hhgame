@@ -1086,6 +1086,9 @@
     LiveRoomUser *user = userInfo.User;
     profileView.userInfo = userInfo;
     kWeakSelf
+    profileView.userProfileAvatarActionBlock = ^{
+        [AppController showUserProfile:userInfo.User.UserId target:weakSelf];
+    };
     profileView.userProfileActionBlock = ^(NSInteger tag) {
         switch (tag) {
             case 10: // 禁言

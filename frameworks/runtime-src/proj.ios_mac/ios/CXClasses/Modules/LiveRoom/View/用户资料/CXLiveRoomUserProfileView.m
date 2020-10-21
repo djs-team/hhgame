@@ -70,6 +70,16 @@
     _chatBtn.layer.borderColor = UIColorHex(0x773BE7).CGColor;
     _chatBtn.layer.borderWidth = 0.5;
     
+    _avatar.userInteractionEnabled = YES;
+    UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(avtarAction)];
+    [_avatar addGestureRecognizer:gesture];
+}
+
+- (void)avtarAction {
+    [self hide];
+    if (self.userProfileAvatarActionBlock) {
+        self.userProfileAvatarActionBlock();
+    }
 }
 
 - (void)setUserInfo:(SocketMessageGetUserInfoResponse *)userInfo {

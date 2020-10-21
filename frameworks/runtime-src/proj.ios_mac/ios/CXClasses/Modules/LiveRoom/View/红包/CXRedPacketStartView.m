@@ -34,10 +34,14 @@
     [super show];
     
     [self.timer invalidate];
+    
     self.timer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(showRain) userInfo:nil repeats:YES];
     
     self.isClick = NO;
     
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self hide];
+    });
 }
 
 - (void)showRain {

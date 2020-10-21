@@ -957,9 +957,13 @@
                 CXSocketMessageNotifyStartRobRedPacket *msg = notification;
                 if (msg.Msg) {
                     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithData:[msg.Msg dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
-                               UIFont *boldFont = [UIFont boldSystemFontOfSize:16];
-                               [attributedString addAttribute:NSFontAttributeName value:boldFont range:NSMakeRange(0, attributedString.length)];
+                    UIFont *boldFont = [UIFont boldSystemFontOfSize:16];
+                    [attributedString addAttribute:NSFontAttributeName value:boldFont range:NSMakeRange(0, attributedString.length)];
                     self.redpacketStartView.msgLabel.attributedText =  attributedString;
+                    
+                    GameMessageTextWelcomeModel *textModel = [GameMessageTextWelcomeModel new];
+                    textModel.text = attributedString.string;
+                    [self.roomUIView.messageListView addModel:textModel];
                 } else {
                     self.redpacketStartView.msgLabel.text = @"";
                 }

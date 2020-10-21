@@ -1091,6 +1091,7 @@
                     "IsCustomSize": true,
                     "FontSize": 20,
                     "LabelText": "ID:",
+                    "VerticalAlignmentType": "VT_Center",
                     "OutlineColor": {
                       "G": 0,
                       "B": 0
@@ -1126,17 +1127,17 @@
                     },
                     "PreSize": {
                       "X": 0.2262,
-                      "Y": 0.8636
+                      "Y": 1.0909
                     },
                     "LeftMargin": 3.61,
                     "RightMargin": 90.79,
-                    "TopMargin": 0.91,
-                    "BottomMargin": 2.09,
+                    "TopMargin": -1.59,
+                    "BottomMargin": -0.41,
                     "Tag": 330,
                     "ActionTag": -951567276,
                     "Size": {
                       "X": 27.6,
-                      "Y": 19.0
+                      "Y": 24.0
                     },
                     "Name": "idText",
                     "ctype": "TextObjectData"
@@ -1145,6 +1146,7 @@
                     "IsCustomSize": true,
                     "FontSize": 20,
                     "LabelText": "1234567",
+                    "VerticalAlignmentType": "VT_Center",
                     "OutlineColor": {
                       "G": 0,
                       "B": 0
@@ -1180,17 +1182,17 @@
                     },
                     "PreSize": {
                       "X": 0.7049,
-                      "Y": 0.8636
+                      "Y": 1.0909
                     },
                     "LeftMargin": 31.61,
                     "RightMargin": 4.39,
-                    "TopMargin": 1.83,
-                    "BottomMargin": 1.17,
+                    "TopMargin": -0.67,
+                    "BottomMargin": -1.33,
                     "Tag": 331,
                     "ActionTag": -399924848,
                     "Size": {
                       "X": 86.0,
-                      "Y": 19.0
+                      "Y": 24.0
                     },
                     "Name": "idVale",
                     "ctype": "TextObjectData"

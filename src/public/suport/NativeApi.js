@@ -68,85 +68,10 @@ load('public/suport/NativeApi', function () {
                 if (cc.sys.OS_ANDROID === cc.sys.os) {
                     jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'login', '(Ljava/lang/String;)V', "jpush")
                 } else if (cc.sys.OS_IOS === cc.sys.os) {
-                    jsb.reflection.callStaticMethod('AppController', 'JPushLoginWithMethod:', "THIRD_LOGIN_RESULT")
+                    jsb.reflection.callStaticMethod('AppController', 'JPushLoginWithMethod:showPhoneAlert:', "THIRD_LOGIN_RESULT",AppConfig.loginShowPhoneAlert)
                 }
             } catch (e) {
                 this.HelloOC('oneCLickLogin throw: ' + JSON.stringify(e))
-            }
-        },
-        wxShareUrl: function (url, title, description, shareIds) {
-            try {
-                this.registerWeChatAppId(shareIds)
-                if (cc.sys.OS_ANDROID === cc.sys.os) {
-                    jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'StartShareWebViewWxSceneSession', '(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V', url, title, description)
-                } else if (cc.sys.OS_IOS === cc.sys.os) {
-                    jsb.reflection.callStaticMethod('AppController', 'WXShareIOSforUrl:Title:Desc:', url, title, description)
-                }
-            } catch (e) {
-                this.HelloOC('wxShareUrl throw: ' + JSON.stringify(e))
-            }
-        },
-        wxShareUrlTimeline: function (url, title, description, shareIds) { // 添加微信朋友圈分享
-            try {
-                this.registerWeChatAppId(shareIds)
-                if (cc.sys.OS_ANDROID === cc.sys.os) {
-                    title = title + description // Android分享朋友圈显示不了内容，暂时按至尊包处理方式修改
-                    jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'StartShareWebViewWxSceneSessionTimeline', '(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V',
-                        url, title, description)
-                } else if (cc.sys.OS_IOS === cc.sys.os) {
-                    jsb.reflection.callStaticMethod('AppController', 'WXShareIOSforUrl:Title:Desc:', url, title, description)
-                }
-            } catch (e) {
-                this.HelloOC('wxShareUrl throw: ' + JSON.stringify(e))
-            }
-        },
-        wxShareImage: function (imagePath, shareIds) {
-            try {
-                let writePath = jsb.fileUtils.getWritablePath()
-                let captureScreen = 'wxcapture_screen.png'
-                let sharePath = writePath + captureScreen
-                if (imagePath) {
-                    sharePath = imagePath
-                }
-                this.registerWeChatAppId(shareIds)
-                if (cc.sys.OS_ANDROID === cc.sys.os) {
-                    jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'StartShareTextureWxSceneSession', '(Ljava/lang/String;)V', sharePath)
-                } else if (cc.sys.OS_IOS === cc.sys.os) {
-                    jsb.reflection.callStaticMethod('AppController', 'WXShareIOSforImage:', sharePath)
-                }
-            } catch (e) {
-                this.HelloOC('wxShareImage throw: ' + JSON.stringify(e))
-            }
-        },
-        wxShareImageToWXTimeline: function (imagePath, shareIds) {
-            try {
-                let writePath = jsb.fileUtils.getWritablePath()
-                let captureScreen = 'wxcapture_screen.png'
-                let sharePath = writePath + captureScreen
-                if (imagePath) {
-                    sharePath = imagePath
-                }
-                this.registerWeChatAppId(shareIds)
-                // 根据版本判断是否存在分享大图到朋友圈的方法
-                if (cc.sys.OS_ANDROID === cc.sys.os) {
-                    jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'StartShareTextureWXSceneTimeline', '(Ljava/lang/String;)V', sharePath)
-                } else if (cc.sys.OS_IOS === cc.sys.os) {
-                    jsb.reflection.callStaticMethod('AppController', 'WXShareIOSforImage:', sharePath)
-                }
-            } catch (e) {
-                this.HelloOC('wxShareImage throw: ' + JSON.stringify(e))
-            }
-        },
-        wxShareText: function (text, isTimeLine, shareIds) {
-            try {
-                this.registerWeChatAppId(shareIds)
-                if (cc.sys.OS_ANDROID === cc.sys.os) {
-                    jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'StartShareTextWxSceneSession', '(Ljava/lang/String;)V', text)
-                } else if (cc.sys.OS_IOS === cc.sys.os) {
-                    jsb.reflection.callStaticMethod('AppController', 'WXShareIOSforDescription:isTimeLine:', text, isTimeLine)
-                }
-            } catch (e) {
-                this.HelloOC('wxShareText throw: ' + JSON.stringify(e))
             }
         },
         writeToClipboard: function (message) {
@@ -446,8 +371,10 @@ load('public/suport/NativeApi', function () {
                 } else if (cc.sys.OS_IOS === cc.sys.os) {
                     let writePath = jsb.fileUtils.getWritablePath()
                     let sharePath = writePath + fileName
-                    jsb.reflection.callStaticMethod('AppController', 'WXShareIOSforImage:', sharePath)
+                    jsb.reflection.callStaticMethod('AppController', 'WXShareIOSforImage:platform:', sharePath, platform)
                 }
+                
+                appInstance.gameAgent().httpGame().sharedCompleteTaskReq();
             } catch (e) {
                 NativeApi.HelloOC('shareImage throw: ' + JSON.stringify(e))
             }
@@ -460,8 +387,10 @@ load('public/suport/NativeApi', function () {
                 } else if (cc.sys.OS_IOS === cc.sys.os) {
                     let writePath = jsb.fileUtils.getWritablePath()
                     let sharePath = writePath + thumbUrl
-                    jsb.reflection.callStaticMethod('AppController', 'WXShareIOSforUrl:Title:Desc:image:', url, title, description, sharePath)
+                    jsb.reflection.callStaticMethod('AppController', 'WXShareIOSforUrl:Title:Desc:image:platform:', url, title, description, sharePath, platform)
                 }
+                
+                appInstance.gameAgent().httpGame().sharedCompleteTaskReq();
             } catch (e) {
                 NativeApi.HelloOC('shareArticle throw: ' + JSON.stringify(e))
             }

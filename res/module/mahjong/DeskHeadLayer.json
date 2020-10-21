@@ -119,22 +119,28 @@
                     "ctype": "SingleNodeObjectData"
                   },
                   {
-                    "FileData": {
-                      "Type": "Normal",
-                      "Path": "desk/pz_13.png",
-                      "Plist": ""
+                    "ClipAble": false,
+                    "BackColorAlpha": 102,
+                    "SingleColor": {
+                      "R": 150,
+                      "G": 200
                     },
-                    "Scale9OriginX": 55,
-                    "Scale9OriginY": 25,
-                    "Scale9Width": 59,
-                    "Scale9Height": 27,
+                    "FirstColor": {
+                      "R": 150,
+                      "G": 200
+                    },
+                    "EndColor": {},
+                    "ColorVector": {
+                      "ScaleY": 1.0
+                    },
+                    "TouchEnable": true,
                     "AnchorPoint": {
                       "ScaleX": 0.5,
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 150.0,
-                      "Y": 0.0
+                      "X": 150.29,
+                      "Y": -3.79
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -150,44 +156,35 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 65.5,
-                    "RightMargin": -234.5,
-                    "TopMargin": -38.5,
-                    "BottomMargin": -38.5,
-                    "Tag": 366,
+                    "LeftMargin": 50.29,
+                    "RightMargin": -250.29,
+                    "TopMargin": -46.21,
+                    "BottomMargin": -53.79,
+                    "Tag": 24,
                     "Children": [
                       {
-                        "FontSize": 30,
-                        "LabelText": "玩家的名字叫啥呢",
-                        "HorizontalAlignmentType": "HT_Center",
-                        "VerticalAlignmentType": "VT_Center",
-                        "OutlineColor": {
-                          "G": 0,
-                          "B": 0
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "desk/pz_13.png",
+                          "Plist": ""
                         },
-                        "ShadowColor": {
-                          "R": 110,
-                          "G": 110,
-                          "B": 110
-                        },
-                        "ShadowOffsetX": 2.0,
-                        "ShadowOffsetY": -2.0,
+                        "Scale9OriginX": 55,
+                        "Scale9OriginY": 25,
+                        "Scale9Width": 59,
+                        "Scale9Height": 27,
                         "AnchorPoint": {
                           "ScaleX": 0.5,
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 84.5,
-                          "Y": 38.5
+                          "X": 100.0,
+                          "Y": 50.0
                         },
                         "Scale": {
                           "ScaleX": 1.0,
                           "ScaleY": 1.0
                         },
-                        "CColor": {
-                          "G": 165,
-                          "B": 0
-                        },
+                        "CColor": {},
                         "IconVisible": false,
                         "PositionPercentXEnabled": true,
                         "PositionPercentYEnabled": true,
@@ -196,30 +193,88 @@
                           "Y": 0.5
                         },
                         "PreSize": {
-                          "X": 1.4201,
-                          "Y": 0.3896
+                          "X": 0.845,
+                          "Y": 0.77
                         },
-                        "LeftMargin": -35.5,
-                        "RightMargin": -35.5,
-                        "TopMargin": 23.5,
-                        "BottomMargin": 23.5,
-                        "Tag": 367,
-                        "ActionTag": -394388831,
+                        "LeftMargin": 15.5,
+                        "RightMargin": 15.5,
+                        "TopMargin": 11.5,
+                        "BottomMargin": 11.5,
+                        "Tag": 366,
+                        "Children": [
+                          {
+                            "FontSize": 30,
+                            "LabelText": "玩家的名字叫啥呢",
+                            "HorizontalAlignmentType": "HT_Center",
+                            "VerticalAlignmentType": "VT_Center",
+                            "OutlineColor": {
+                              "G": 0,
+                              "B": 0
+                            },
+                            "ShadowColor": {
+                              "R": 110,
+                              "G": 110,
+                              "B": 110
+                            },
+                            "ShadowOffsetX": 2.0,
+                            "ShadowOffsetY": -2.0,
+                            "AnchorPoint": {
+                              "ScaleX": 0.5,
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 84.5,
+                              "Y": 38.5
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {
+                              "G": 165,
+                              "B": 0
+                            },
+                            "IconVisible": false,
+                            "PositionPercentXEnabled": true,
+                            "PositionPercentYEnabled": true,
+                            "PrePosition": {
+                              "X": 0.5,
+                              "Y": 0.5
+                            },
+                            "PreSize": {
+                              "X": 1.4201,
+                              "Y": 0.3896
+                            },
+                            "LeftMargin": -35.5,
+                            "RightMargin": -35.5,
+                            "TopMargin": 23.5,
+                            "BottomMargin": 23.5,
+                            "Tag": 367,
+                            "ActionTag": -394388831,
+                            "Size": {
+                              "X": 240.0,
+                              "Y": 30.0
+                            },
+                            "Name": "nameTxt",
+                            "ctype": "TextObjectData"
+                          }
+                        ],
+                        "ActionTag": 1398343822,
                         "Size": {
-                          "X": 240.0,
-                          "Y": 30.0
+                          "X": 169.0,
+                          "Y": 77.0
                         },
-                        "Name": "nameTxt",
-                        "ctype": "TextObjectData"
+                        "Name": "nameBg",
+                        "ctype": "ImageViewObjectData"
                       }
                     ],
-                    "ActionTag": 1398343822,
+                    "ActionTag": 627609620,
                     "Size": {
-                      "X": 169.0,
-                      "Y": 77.0
+                      "X": 200.0,
+                      "Y": 100.0
                     },
-                    "Name": "nameBg",
-                    "ctype": "ImageViewObjectData"
+                    "Name": "namePnl",
+                    "ctype": "PanelObjectData"
                   }
                 ],
                 "ActionTag": 1447338167,
@@ -288,22 +343,30 @@
                     "ctype": "SingleNodeObjectData"
                   },
                   {
-                    "FileData": {
-                      "Type": "Normal",
-                      "Path": "desk/pz_13.png",
-                      "Plist": ""
+                    "ClipAble": false,
+                    "BackColorAlpha": 102,
+                    "SingleColor": {
+                      "R": 150,
+                      "G": 200
                     },
-                    "Scale9OriginX": 55,
-                    "Scale9OriginY": 25,
-                    "Scale9Width": 59,
-                    "Scale9Height": 27,
+                    "FirstColor": {
+                      "R": 150,
+                      "G": 200
+                    },
+                    "EndColor": {},
+                    "ColorVector": {
+                      "ScaleY": 1.0
+                    },
+                    "Scale9Width": 1,
+                    "Scale9Height": 1,
+                    "TouchEnable": true,
                     "AnchorPoint": {
                       "ScaleX": 0.5,
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 180.0,
-                      "Y": 0.0
+                      "X": 148.29,
+                      "Y": -9.79
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -319,44 +382,35 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 95.5,
-                    "RightMargin": -264.5,
-                    "TopMargin": -38.5,
-                    "BottomMargin": -38.5,
-                    "Tag": 369,
+                    "LeftMargin": 48.29,
+                    "RightMargin": -248.29,
+                    "TopMargin": -40.21,
+                    "BottomMargin": -59.79,
+                    "Tag": 25,
                     "Children": [
                       {
-                        "FontSize": 30,
-                        "LabelText": "玩家的名字叫啥呢",
-                        "HorizontalAlignmentType": "HT_Center",
-                        "VerticalAlignmentType": "VT_Center",
-                        "OutlineColor": {
-                          "G": 0,
-                          "B": 0
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "desk/pz_13.png",
+                          "Plist": ""
                         },
-                        "ShadowColor": {
-                          "R": 110,
-                          "G": 110,
-                          "B": 110
-                        },
-                        "ShadowOffsetX": 2.0,
-                        "ShadowOffsetY": -2.0,
+                        "Scale9OriginX": 55,
+                        "Scale9OriginY": 25,
+                        "Scale9Width": 59,
+                        "Scale9Height": 27,
                         "AnchorPoint": {
                           "ScaleX": 0.5,
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 84.5,
-                          "Y": 38.5
+                          "X": 100.0,
+                          "Y": 50.0
                         },
                         "Scale": {
                           "ScaleX": 1.0,
                           "ScaleY": 1.0
                         },
-                        "CColor": {
-                          "G": 165,
-                          "B": 0
-                        },
+                        "CColor": {},
                         "IconVisible": false,
                         "PositionPercentXEnabled": true,
                         "PositionPercentYEnabled": true,
@@ -365,30 +419,88 @@
                           "Y": 0.5
                         },
                         "PreSize": {
-                          "X": 1.4201,
-                          "Y": 0.3896
+                          "X": 0.845,
+                          "Y": 0.77
                         },
-                        "LeftMargin": -35.5,
-                        "RightMargin": -35.5,
-                        "TopMargin": 23.5,
-                        "BottomMargin": 23.5,
-                        "Tag": 370,
-                        "ActionTag": 232848149,
+                        "LeftMargin": 15.5,
+                        "RightMargin": 15.5,
+                        "TopMargin": 11.5,
+                        "BottomMargin": 11.5,
+                        "Tag": 26,
+                        "Children": [
+                          {
+                            "FontSize": 30,
+                            "LabelText": "玩家的名字叫啥呢",
+                            "HorizontalAlignmentType": "HT_Center",
+                            "VerticalAlignmentType": "VT_Center",
+                            "OutlineColor": {
+                              "G": 0,
+                              "B": 0
+                            },
+                            "ShadowColor": {
+                              "R": 110,
+                              "G": 110,
+                              "B": 110
+                            },
+                            "ShadowOffsetX": 2.0,
+                            "ShadowOffsetY": -2.0,
+                            "AnchorPoint": {
+                              "ScaleX": 0.5,
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 84.5,
+                              "Y": 38.5
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {
+                              "G": 165,
+                              "B": 0
+                            },
+                            "IconVisible": false,
+                            "PositionPercentXEnabled": true,
+                            "PositionPercentYEnabled": true,
+                            "PrePosition": {
+                              "X": 0.5,
+                              "Y": 0.5
+                            },
+                            "PreSize": {
+                              "X": 1.4201,
+                              "Y": 0.3896
+                            },
+                            "LeftMargin": -35.5,
+                            "RightMargin": -35.5,
+                            "TopMargin": 23.5,
+                            "BottomMargin": 23.5,
+                            "Tag": 27,
+                            "ActionTag": -821604090,
+                            "Size": {
+                              "X": 240.0,
+                              "Y": 30.0
+                            },
+                            "Name": "nameTxt",
+                            "ctype": "TextObjectData"
+                          }
+                        ],
+                        "ActionTag": -535792603,
                         "Size": {
-                          "X": 240.0,
-                          "Y": 30.0
+                          "X": 169.0,
+                          "Y": 77.0
                         },
-                        "Name": "nameTxt",
-                        "ctype": "TextObjectData"
+                        "Name": "nameBg",
+                        "ctype": "ImageViewObjectData"
                       }
                     ],
-                    "ActionTag": 1696454263,
+                    "ActionTag": -205205064,
                     "Size": {
-                      "X": 169.0,
-                      "Y": 77.0
+                      "X": 200.0,
+                      "Y": 100.0
                     },
-                    "Name": "nameBg",
-                    "ctype": "ImageViewObjectData"
+                    "Name": "namePnl",
+                    "ctype": "PanelObjectData"
                   }
                 ],
                 "ActionTag": -8661288,
@@ -457,22 +569,30 @@
                     "ctype": "SingleNodeObjectData"
                   },
                   {
-                    "FileData": {
-                      "Type": "Normal",
-                      "Path": "desk/pz_13.png",
-                      "Plist": ""
+                    "ClipAble": false,
+                    "BackColorAlpha": 102,
+                    "SingleColor": {
+                      "R": 150,
+                      "G": 200
                     },
-                    "Scale9OriginX": 55,
-                    "Scale9OriginY": 25,
-                    "Scale9Width": 59,
-                    "Scale9Height": 27,
+                    "FirstColor": {
+                      "R": 150,
+                      "G": 200
+                    },
+                    "EndColor": {},
+                    "ColorVector": {
+                      "ScaleY": 1.0
+                    },
+                    "Scale9Width": 1,
+                    "Scale9Height": 1,
+                    "TouchEnable": true,
                     "AnchorPoint": {
                       "ScaleX": 0.5,
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": -183.7385,
-                      "Y": 29.1092
+                      "X": -181.71,
+                      "Y": 28.21
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -488,44 +608,35 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": -268.2385,
-                    "RightMargin": 99.2385,
-                    "TopMargin": -67.6092,
-                    "BottomMargin": -9.3908,
-                    "Tag": 372,
+                    "LeftMargin": -281.71,
+                    "RightMargin": 81.71,
+                    "TopMargin": -78.21,
+                    "BottomMargin": -21.79,
+                    "Tag": 28,
                     "Children": [
                       {
-                        "FontSize": 30,
-                        "LabelText": "玩家的名字叫啥呢",
-                        "HorizontalAlignmentType": "HT_Center",
-                        "VerticalAlignmentType": "VT_Center",
-                        "OutlineColor": {
-                          "G": 0,
-                          "B": 0
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "desk/pz_13.png",
+                          "Plist": ""
                         },
-                        "ShadowColor": {
-                          "R": 110,
-                          "G": 110,
-                          "B": 110
-                        },
-                        "ShadowOffsetX": 2.0,
-                        "ShadowOffsetY": -2.0,
+                        "Scale9OriginX": 55,
+                        "Scale9OriginY": 25,
+                        "Scale9Width": 59,
+                        "Scale9Height": 27,
                         "AnchorPoint": {
                           "ScaleX": 0.5,
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 84.5,
-                          "Y": 38.5
+                          "X": 100.0,
+                          "Y": 50.0
                         },
                         "Scale": {
                           "ScaleX": 1.0,
                           "ScaleY": 1.0
                         },
-                        "CColor": {
-                          "G": 165,
-                          "B": 0
-                        },
+                        "CColor": {},
                         "IconVisible": false,
                         "PositionPercentXEnabled": true,
                         "PositionPercentYEnabled": true,
@@ -534,30 +645,88 @@
                           "Y": 0.5
                         },
                         "PreSize": {
-                          "X": 1.4201,
-                          "Y": 0.3896
+                          "X": 0.845,
+                          "Y": 0.77
                         },
-                        "LeftMargin": -35.5,
-                        "RightMargin": -35.5,
-                        "TopMargin": 23.5,
-                        "BottomMargin": 23.5,
-                        "Tag": 373,
-                        "ActionTag": -1191301848,
+                        "LeftMargin": 15.5,
+                        "RightMargin": 15.5,
+                        "TopMargin": 11.5,
+                        "BottomMargin": 11.5,
+                        "Tag": 29,
+                        "Children": [
+                          {
+                            "FontSize": 30,
+                            "LabelText": "玩家的名字叫啥呢",
+                            "HorizontalAlignmentType": "HT_Center",
+                            "VerticalAlignmentType": "VT_Center",
+                            "OutlineColor": {
+                              "G": 0,
+                              "B": 0
+                            },
+                            "ShadowColor": {
+                              "R": 110,
+                              "G": 110,
+                              "B": 110
+                            },
+                            "ShadowOffsetX": 2.0,
+                            "ShadowOffsetY": -2.0,
+                            "AnchorPoint": {
+                              "ScaleX": 0.5,
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 84.5,
+                              "Y": 38.5
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {
+                              "G": 165,
+                              "B": 0
+                            },
+                            "IconVisible": false,
+                            "PositionPercentXEnabled": true,
+                            "PositionPercentYEnabled": true,
+                            "PrePosition": {
+                              "X": 0.5,
+                              "Y": 0.5
+                            },
+                            "PreSize": {
+                              "X": 1.4201,
+                              "Y": 0.3896
+                            },
+                            "LeftMargin": -35.5,
+                            "RightMargin": -35.5,
+                            "TopMargin": 23.5,
+                            "BottomMargin": 23.5,
+                            "Tag": 30,
+                            "ActionTag": 856462346,
+                            "Size": {
+                              "X": 240.0,
+                              "Y": 30.0
+                            },
+                            "Name": "nameTxt",
+                            "ctype": "TextObjectData"
+                          }
+                        ],
+                        "ActionTag": 165073778,
                         "Size": {
-                          "X": 240.0,
-                          "Y": 30.0
+                          "X": 169.0,
+                          "Y": 77.0
                         },
-                        "Name": "nameTxt",
-                        "ctype": "TextObjectData"
+                        "Name": "nameBg",
+                        "ctype": "ImageViewObjectData"
                       }
                     ],
-                    "ActionTag": -350495150,
+                    "ActionTag": 481028134,
                     "Size": {
-                      "X": 169.0,
-                      "Y": 77.0
+                      "X": 200.0,
+                      "Y": 100.0
                     },
-                    "Name": "nameBg",
-                    "ctype": "ImageViewObjectData"
+                    "Name": "namePnl",
+                    "ctype": "PanelObjectData"
                   }
                 ],
                 "ActionTag": 1064805300,
@@ -628,22 +797,30 @@
                     "ctype": "SingleNodeObjectData"
                   },
                   {
-                    "FileData": {
-                      "Type": "Normal",
-                      "Path": "desk/pz_13.png",
-                      "Plist": ""
+                    "ClipAble": false,
+                    "BackColorAlpha": 102,
+                    "SingleColor": {
+                      "R": 150,
+                      "G": 200
                     },
-                    "Scale9OriginX": 55,
-                    "Scale9OriginY": 25,
-                    "Scale9Width": 59,
-                    "Scale9Height": 27,
+                    "FirstColor": {
+                      "R": 150,
+                      "G": 200
+                    },
+                    "EndColor": {},
+                    "ColorVector": {
+                      "ScaleY": 1.0
+                    },
+                    "Scale9Width": 1,
+                    "Scale9Height": 1,
+                    "TouchEnable": true,
                     "AnchorPoint": {
                       "ScaleX": 0.5,
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 0.0,
-                      "Y": 0.0
+                      "X": -171.71,
+                      "Y": 18.21
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -659,35 +836,29 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": -84.5,
-                    "RightMargin": -84.5,
-                    "TopMargin": -38.5,
-                    "BottomMargin": -38.5,
-                    "Tag": 363,
+                    "LeftMargin": -271.71,
+                    "RightMargin": 71.71,
+                    "TopMargin": -68.21,
+                    "BottomMargin": -31.79,
+                    "Tag": 31,
                     "Children": [
                       {
-                        "FontSize": 30,
-                        "LabelText": "玩家的名字叫啥呢",
-                        "HorizontalAlignmentType": "HT_Center",
-                        "VerticalAlignmentType": "VT_Center",
-                        "OutlineColor": {
-                          "G": 0,
-                          "B": 0
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "desk/pz_13.png",
+                          "Plist": ""
                         },
-                        "ShadowColor": {
-                          "R": 110,
-                          "G": 110,
-                          "B": 110
-                        },
-                        "ShadowOffsetX": 2.0,
-                        "ShadowOffsetY": -2.0,
+                        "Scale9OriginX": 55,
+                        "Scale9OriginY": 25,
+                        "Scale9Width": 59,
+                        "Scale9Height": 27,
                         "AnchorPoint": {
                           "ScaleX": 0.5,
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 84.5,
-                          "Y": 38.5
+                          "X": 100.0,
+                          "Y": 50.0
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -702,30 +873,88 @@
                           "Y": 0.5
                         },
                         "PreSize": {
-                          "X": 1.4201,
-                          "Y": 0.3896
+                          "X": 0.845,
+                          "Y": 0.77
                         },
-                        "LeftMargin": -35.5,
-                        "RightMargin": -35.5,
-                        "TopMargin": 23.5,
-                        "BottomMargin": 23.5,
-                        "Tag": 364,
-                        "ActionTag": 259747757,
+                        "LeftMargin": 15.5,
+                        "RightMargin": 15.5,
+                        "TopMargin": 11.5,
+                        "BottomMargin": 11.5,
+                        "Tag": 32,
+                        "Children": [
+                          {
+                            "FontSize": 30,
+                            "LabelText": "玩家的名字叫啥呢",
+                            "HorizontalAlignmentType": "HT_Center",
+                            "VerticalAlignmentType": "VT_Center",
+                            "OutlineColor": {
+                              "G": 0,
+                              "B": 0
+                            },
+                            "ShadowColor": {
+                              "R": 110,
+                              "G": 110,
+                              "B": 110
+                            },
+                            "ShadowOffsetX": 2.0,
+                            "ShadowOffsetY": -2.0,
+                            "AnchorPoint": {
+                              "ScaleX": 0.5,
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 84.5,
+                              "Y": 38.5
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {
+                              "G": 165,
+                              "B": 0
+                            },
+                            "IconVisible": false,
+                            "PositionPercentXEnabled": true,
+                            "PositionPercentYEnabled": true,
+                            "PrePosition": {
+                              "X": 0.5,
+                              "Y": 0.5
+                            },
+                            "PreSize": {
+                              "X": 1.4201,
+                              "Y": 0.3896
+                            },
+                            "LeftMargin": -35.5,
+                            "RightMargin": -35.5,
+                            "TopMargin": 23.5,
+                            "BottomMargin": 23.5,
+                            "Tag": 33,
+                            "ActionTag": -155853758,
+                            "Size": {
+                              "X": 240.0,
+                              "Y": 30.0
+                            },
+                            "Name": "nameTxt",
+                            "ctype": "TextObjectData"
+                          }
+                        ],
+                        "ActionTag": -828862116,
                         "Size": {
-                          "X": 240.0,
-                          "Y": 30.0
+                          "X": 169.0,
+                          "Y": 77.0
                         },
-                        "Name": "nameTxt",
-                        "ctype": "TextObjectData"
+                        "Name": "nameBg",
+                        "ctype": "ImageViewObjectData"
                       }
                     ],
-                    "ActionTag": 461097072,
+                    "ActionTag": 905003474,
                     "Size": {
-                      "X": 169.0,
-                      "Y": 77.0
+                      "X": 200.0,
+                      "Y": 100.0
                     },
-                    "Name": "nameBg",
-                    "ctype": "ImageViewObjectData"
+                    "Name": "namePnl",
+                    "ctype": "PanelObjectData"
                   }
                 ],
                 "ActionTag": -1476786496,

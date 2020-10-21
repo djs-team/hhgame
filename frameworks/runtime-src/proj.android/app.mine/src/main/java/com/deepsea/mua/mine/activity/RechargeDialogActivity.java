@@ -393,6 +393,7 @@ public class RechargeDialogActivity extends FragmentActivity
                 isFinishUi = true;
                 MobEventUtils.onRechargeEvent(mContext, mRechargeAmount);
                 mRechargeAmount = "0";
+                chargelist();
                 requestBalance();
 
             }
@@ -411,6 +412,7 @@ public class RechargeDialogActivity extends FragmentActivity
             MobEventUtils.onRechargeEvent(mContext, mRechargeAmount);
             mRechargeAmount = "0";
             isFinishUi = true;
+            chargelist();
             requestBalance();
         }
 

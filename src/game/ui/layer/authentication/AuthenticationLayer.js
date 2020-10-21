@@ -4,6 +4,7 @@ load('game/ui/layer/authentication/AuthenticationLayer', function () {
     let BaseLayer = include('public/ui/BaseLayer')
     let AuthenticationMdt = include('game/ui/layer/authentication/AuthenticationMdt')
     let GameEvent = include('game/config/GameEvent')
+    let GameUtil = include('game/public/GameUtil')
     let authenticationLayer = BaseLayer.extend({
         _className: 'authenticationLayer',
         ctor: function () {
@@ -29,12 +30,13 @@ load('game/ui/layer/authentication/AuthenticationLayer', function () {
         },
 
 
-        onCloseClick: function () {
+        onCloseClick: function (sender) {
+            GameUtil.delayBtn(sender);
             appInstance.sendNotification(GameEvent.HALL_RED_GET)
             appInstance.uiManager().removeUI(this)
         },
-        onDetermineClick: function () {
-
+        onDetermineClick: function (sender) {
+            GameUtil.delayBtn(sender);
             cc.log('======onDetermineClick====')
             let msg = {}
             msg.name = this.nameText.getString()

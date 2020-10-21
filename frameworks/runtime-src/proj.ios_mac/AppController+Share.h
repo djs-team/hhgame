@@ -18,16 +18,19 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param tit 标题
 /// @param desc 描述
 /// @param image 图片
-+ (void)WXShareIOSforUrl:(NSString *)url Title:(NSString *)tit Desc:(NSString *)desc image:(NSString *)image;
+/// @param platform 分享渠道：WEIXIN_CIRCLE/WEIXIN
++ (void)WXShareIOSforUrl:(NSString *)url Title:(NSString *)tit Desc:(NSString *)desc image:(NSString *)image platform:(NSString *)platform;
 
 /// 微信分享文本
 /// @param des 文本内容
 /// @param isTimeLine 是否是朋友圈
-+ (void)WXShareIOSforDescription:(NSString *)des isTimeLine:(BOOL)isTimeLine;
+/// @param platform 分享渠道：WEIXIN_CIRCLE/WEIXIN
++ (void)WXShareIOSforDescription:(NSString *)des platform:(NSString *)platform;
 
 /// 微信分享图片
 /// @param path 图片文件路径
-+ (void)WXShareIOSforImage:(NSString *)path;
+/// @param platform 分享渠道：WEIXIN_CIRCLE/WEIXIN
++ (void)WXShareIOSforImage:(NSString *)path platform:(NSString *)platform;
 
 @end
 

@@ -18,6 +18,7 @@ import com.deepsea.mua.stub.base.BaseObserver;
 import com.deepsea.mua.stub.client.app.AppClient;
 import com.deepsea.mua.stub.data.User;
 import com.deepsea.mua.stub.dialog.AAlertDialog;
+import com.deepsea.mua.stub.dialog.SexEditDialog;
 import com.deepsea.mua.stub.entity.ChessLoginParam;
 import com.deepsea.mua.stub.entity.LocationVo;
 import com.deepsea.mua.stub.utils.MobEventUtils;
@@ -160,7 +161,26 @@ public class SplashActivity extends BaseActivity<ActivitySplashBinding> {
             public void onSuccess(Object result) {
                 UserUtils.saveUser(user);
                 AppClient.getInstance().login(user.getUid());
-                startSplash();
+                String sex = user.getSex();
+                if (sex.equals("0")) {
+                    SexEditDialog sexEditDialog = new SexEditDialog(mContext);
+                    sexEditDialog.setCancelable(false);
+                    sexEditDialog.setListener(new SexEditDialog.onSexEditListener() {
+                        @Override
+                        public void onResult(int result) {
+                            if (result == -1) {
+                                finish();
+                            } else if (result == 0) {
+                                startSplash();
+                            } else {
+                                //修改性别失败--暂不处理
+                            }
+                        }
+                    });
+                    sexEditDialog.show();
+                } else {
+                    startSplash();
+                }
             }
 
             @Override

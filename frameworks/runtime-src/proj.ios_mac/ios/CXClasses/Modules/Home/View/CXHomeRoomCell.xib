@@ -50,15 +50,9 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LI1-lA-4bM">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LI1-lA-4bM">
                         <rect key="frame" x="19" y="141" width="157" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dwm-uN-fPs">
-                        <rect key="frame" x="19" y="123.5" width="28.5" height="13.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -94,7 +88,6 @@
             <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="LI1-lA-4bM" firstAttribute="top" secondItem="dwm-uN-fPs" secondAttribute="bottom" constant="4" id="2CY-rY-Lzk"/>
                 <constraint firstAttribute="trailing" secondItem="LI1-lA-4bM" secondAttribute="trailing" constant="8" id="5et-Iv-5ed"/>
                 <constraint firstItem="DS7-Or-xn7" firstAttribute="top" secondItem="26E-KW-jY9" secondAttribute="bottom" constant="8" id="6bf-4J-sCu"/>
                 <constraint firstItem="26E-KW-jY9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="8hw-aA-jMH"/>
@@ -106,7 +99,6 @@
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="9R1-uF-NUm" secondAttribute="trailing" constant="20" id="TKt-Ai-yPz"/>
                 <constraint firstItem="osE-ad-XZ6" firstAttribute="bottom" secondItem="26E-KW-jY9" secondAttribute="bottom" id="WE4-PJ-Z2R"/>
                 <constraint firstItem="TpT-r6-SQJ" firstAttribute="centerY" secondItem="9R1-uF-NUm" secondAttribute="centerY" id="aXe-MA-Xa5"/>
-                <constraint firstItem="dwm-uN-fPs" firstAttribute="leading" secondItem="LI1-lA-4bM" secondAttribute="leading" id="bWF-AF-tGA"/>
                 <constraint firstItem="9R1-uF-NUm" firstAttribute="centerY" secondItem="DS7-Or-xn7" secondAttribute="centerY" id="dbP-YB-8fh"/>
                 <constraint firstItem="TpT-r6-SQJ" firstAttribute="leading" secondItem="9R1-uF-NUm" secondAttribute="trailing" constant="2" id="emu-Tj-gcK"/>
                 <constraint firstItem="DS7-Or-xn7" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="4" id="fMQ-O0-OUf"/>
@@ -121,7 +113,6 @@
             <size key="customSize" width="184" height="217"/>
             <connections>
                 <outlet property="right_cornImage" destination="xOf-UY-ZGR" id="Yje-Wf-8gN"/>
-                <outlet property="room_descLabel" destination="dwm-uN-fPs" id="i5R-nJ-fJo"/>
                 <outlet property="room_image" destination="26E-KW-jY9" id="fvb-ZV-GEJ"/>
                 <outlet property="room_lockView" destination="osE-ad-XZ6" id="MVw-uA-zxP"/>
                 <outlet property="room_nameLabel" destination="LI1-lA-4bM" id="Lmp-Ra-7HR"/>

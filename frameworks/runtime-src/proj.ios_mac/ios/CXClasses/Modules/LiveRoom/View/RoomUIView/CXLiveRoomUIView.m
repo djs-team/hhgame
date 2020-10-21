@@ -15,8 +15,8 @@
 @interface CXLiveRoomUIView() <SDCycleScrollViewDelegate>
 
 // Top
-@property (weak, nonatomic) IBOutlet UIButton *top_roomNameBtn;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *top_roomNameWidthLayout;
+@property (weak, nonatomic) IBOutlet UIView *top_roomBgView;
+@property (weak, nonatomic) IBOutlet UIImageView *top_roomAvatar;
 @property (weak, nonatomic) IBOutlet UIButton *top_roomHotBtn;
 
 @property (weak, nonatomic) IBOutlet UIView *top_shouhuBgView;
@@ -47,8 +47,11 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     
-    _top_roomNameBtn.layer.masksToBounds = YES;
-    _top_roomNameBtn.layer.cornerRadius = 15;
+    _top_roomBgView.layer.masksToBounds = YES;
+    _top_roomBgView.layer.cornerRadius = 15;
+    _top_roomAvatar.layer.masksToBounds = YES;
+    _top_roomAvatar.layer.cornerRadius = 13;
+    
     _top_shouhuBgView.layer.masksToBounds = YES;
     _top_shouhuBgView.layer.cornerRadius = 15;
     _top_shouhuLabel.layer.masksToBounds = YES;
@@ -219,12 +222,9 @@
 - (void)setModel:(CXLiveRoomModel *)model {
     _model = model;
     
-    [_top_roomNameBtn setTitle:[CXClientModel instance].room.RoomData.RoomName forState:UIControlStateNormal];
-    _top_roomNameBtn.imageView.size = CGSizeMake(26, 26);
-    _top_roomNameBtn.imageView.layer.masksToBounds = YES;
-    _top_roomNameBtn.imageView.layer.cornerRadius = 13;
-    [_top_roomNameBtn sd_setImageWithURL:[NSURL URLWithString:[CXClientModel instance].room.RoomData.RoomImage] forState:UIControlStateNormal];
-    _top_roomNameWidthLayout.constant = [[CXClientModel instance].room.RoomData.RoomName sizeWithFont:[UIFont systemFontOfSize:16]].width + 48;
+    _top_roomNameLabel.text = model.RoomData.RoomName;
+    [_top_roomAvatar sd_setImageWithURL:[NSURL URLWithString:model.RoomOwnerHeadUrl]];
+    _top_roomNameWidthLayout.constant = [model.RoomData.RoomName sizeWithFont:[UIFont systemFontOfSize:16]].width + 44;
     
     NSString *regular = [NSString stringWithFormat:@"规则规则%@", [CXClientModel instance].room.Tips];
     self.regularView.regular = regular;

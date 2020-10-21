@@ -77,6 +77,8 @@
 //Gift
 @property (nonatomic, strong) CXChatRoomPlayGiftView *playGiftView;
 
+@property (nonatomic) BOOL isShowProfile;
+
 @end
 
 @implementation EMChatViewController
@@ -112,7 +114,6 @@
     [self _setupChatSubviews];
     
     [[EMClient sharedClient] addMultiDevicesDelegate:self delegateQueue:nil];
-    [[EMClient sharedClient].chatManager addDelegate:self delegateQueue:nil];
     [[EMClient sharedClient].groupManager addDelegate:self delegateQueue:nil];
     [[EMClient sharedClient].roomManager addDelegate:self delegateQueue:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleWillPushCallController:) name:CALL_PUSH_VIEWCONTROLLER object:nil];
@@ -142,11 +143,18 @@
 {
     [super viewWillAppear:animated];
     
+    self.isShowProfile = NO;
     self.isViewDidAppear = YES;
     [EMConversationHelper markAllAsRead:self.conversationModel];
     
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNSNotificationCenter_CXBaseTabBarViewController_reloadUnreadCount object:nil];
+
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    
+    
+    [[EMClient sharedClient].chatManager addDelegate:self delegateQueue:nil];
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -159,15 +167,20 @@
         [self _sendEndTyping];
     }
     
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNSNotificationCenter_CXBaseTabBarViewController_reloadUnreadCount object:nil];
+    
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+    
+    if (_isShowProfile == NO) {
+        [[EMClient sharedClient].chatManager removeDelegate:self];
+    }
 }
 
 - (void)dealloc
 {
     self.isViewDidAppear = NO;
     [[EMClient sharedClient] removeMultiDevicesDelegate:self];
-    [[EMClient sharedClient].chatManager removeDelegate:self];
     [[EMClient sharedClient].groupManager removeDelegate:self];
     [[EMClient sharedClient].roomManager removeDelegate:self];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -252,7 +265,7 @@
     NSString *signature = [CocoaSecurity md5:[CXClientModel instance].token].hexLower;
     NSDictionary *param = @{
         @"signature": signature,
-        @"user_id": _friendModel.user_id,
+        @"user_id": _friendModel.user_id ?: @"",
         @"device": @"iOS",
     };
     kWeakSelf
@@ -301,6 +314,7 @@
 }
 
 - (void)profileAction {
+    _isShowProfile = YES;
     [AppController showUserProfile:_friendModel.user_id];
 }
 
@@ -467,6 +481,7 @@
         }
         [self _sendVideoAction:mp4];
     } else {
+        kWeakSelf
         NSURL *url = info[UIImagePickerControllerReferenceURL];
         if (url == nil) {
             UIImage *orgImage = info[UIImagePickerControllerOriginalImage];
@@ -479,7 +494,7 @@
                     if (asset) {
                         [[PHImageManager defaultManager] requestImageDataForAsset:asset options:nil resultHandler:^(NSData *data, NSString *uti, UIImageOrientation orientation, NSDictionary *dic){
                             if (data != nil) {
-                                [self _sendImageDataAction:data];
+                                [weakSelf _sendImageDataAction:data];
                             } else {
                                 [EMAlertController showErrorAlert:@"图片太大，请选择其他图片"];
                             }
@@ -494,7 +509,7 @@
                         Byte *buffer = (Byte*)malloc((size_t)[assetRepresentation size]);
                         NSUInteger bufferSize = [assetRepresentation getBytes:buffer fromOffset:0.0 length:(NSUInteger)[assetRepresentation size] error:nil];
                         NSData *fileData = [NSData dataWithBytesNoCopy:buffer length:bufferSize freeWhenDone:YES];
-                        [self _sendImageDataAction:fileData];
+                        [weakSelf _sendImageDataAction:fileData];
                     }
                 } failureBlock:NULL];
             }
@@ -598,14 +613,15 @@
 {
     [self.view endEditing:YES];
     
+    kWeakSelf
     [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
         dispatch_async(dispatch_get_main_queue(), ^{
             switch (status) {
                 case PHAuthorizationStatusAuthorized: //已获取权限
                 {
-                    self.imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-                    self.imagePicker.mediaTypes = @[(NSString *)kUTTypeImage];
-                    [self presentViewController:self.imagePicker animated:YES completion:nil];
+                    weakSelf.imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+                    weakSelf.imagePicker.mediaTypes = @[(NSString *)kUTTypeImage];
+                    [weakSelf presentViewController:weakSelf.imagePicker animated:YES completion:nil];
                 }
                     break;
                 case PHAuthorizationStatusDenied: //用户已经明确否认了这一照片数据的应用程序访问
@@ -626,8 +642,9 @@
 - (void)chatBarDidLocationAction
 {
     EMLocationViewController *controller = [[EMLocationViewController alloc] init];
+    kWeakSelf
     [controller setSendCompletion:^(CLLocationCoordinate2D aCoordinate, NSString * _Nonnull aAddress) {
-        [self _sendLocationAction:aCoordinate address:aAddress];
+        [weakSelf _sendLocationAction:aCoordinate address:aAddress];
     }];
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
     navController.modalPresentationStyle = UIModalPresentationFullScreen;
@@ -677,12 +694,13 @@
     NSString *str = msg;
     NSLog(@"\n%@",str);
     if (self.conversationModel.emModel.type == EMConversationTypeGroupChat) {
+        kWeakSelf
         [[EMClient sharedClient].groupManager getGroupSpecificationFromServerWithId:self.conversationModel.emModel.conversationId completion:^(EMGroup *aGroup, EMError *aError) {
             NSLog(@"\n -------- sendError:   %@",aError);
             if (!aError) {
-                self.group = aGroup;
+                weakSelf.group = aGroup;
                 //是群主才可以发送阅读回执信息
-                [self _sendTextAction:str ext:@{MSG_EXT_READ_RECEIPT:@"receipt"}];
+                [weakSelf _sendTextAction:str ext:@{MSG_EXT_READ_RECEIPT:@"receipt"}];
             } else {
                 [EMAlertController showErrorAlert:@"获取群组失败"];
             }
@@ -1127,18 +1145,19 @@
 
 - (void)messagesDidRecall:(NSArray *)aMessages {
     __block NSMutableArray *sameObject = [NSMutableArray array];
+    kWeakSelf
     [aMessages enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         EMMessage *msg = (EMMessage *)obj;
-        [self.dataArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [weakSelf.dataArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             if ([obj isKindOfClass:[EMMessageModel class]]) {
                 EMMessageModel *model = (EMMessageModel *)obj;
                 if ([model.emModel.messageId isEqualToString:msg.messageId]) {
                     // 如果上一行是时间，且下一行也是时间
                     if (idx - 1 >= 0) {
                         id nextMessage = nil;
-                        id prevMessage = [self.dataArray objectAtIndex:(idx - 1)];
-                        if (idx + 1 < [self.dataArray count]) {
-                            nextMessage = [self.dataArray objectAtIndex:(idx + 1)];
+                        id prevMessage = [weakSelf.dataArray objectAtIndex:(idx - 1)];
+                        if (idx + 1 < [weakSelf.dataArray count]) {
+                            nextMessage = [weakSelf.dataArray objectAtIndex:(idx + 1)];
                         }
                         if ((!nextMessage
                              || [nextMessage isKindOfClass:[NSString class]])
@@ -1307,7 +1326,7 @@
                 str = @"正在输入...";
             }
             dispatch_async(dispatch_get_main_queue(), ^{
-                self.titleDetailLabel.text = str;
+                weakself.titleDetailLabel.text = str;
             });
         }
     });
@@ -1370,14 +1389,15 @@
     CGFloat animationTime  = [[userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue];
     
     // 定义好动作
+    kWeakSelf
     void (^animation)(void) = ^void(void) {
-        [self.chatBar mas_updateConstraints:^(MASConstraintMaker *make) {
+        [weakSelf.chatBar mas_updateConstraints:^(MASConstraintMaker *make) {
             make.bottom.equalTo(self.view).offset(-keyBoardHeight);
         }];
     };
     if (animationTime > 0) {
         [UIView animateWithDuration:animationTime animations:animation completion:^(BOOL finished) {
-            [self _scrollToBottomRow];
+            [weakSelf _scrollToBottomRow];
         }];
     } else {
         animation();
@@ -1392,14 +1412,15 @@
     CGFloat animationTime  = [[userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue];
     
     // 定义好动作
+    kWeakSelf
     void (^animation)(void) = ^void(void) {
-        [self.chatBar mas_updateConstraints:^(MASConstraintMaker *make) {
+        [weakSelf.chatBar mas_updateConstraints:^(MASConstraintMaker *make) {
             make.bottom.equalTo(self.view);
         }];
     };
     if (animationTime > 0) {
         [UIView animateWithDuration:animationTime animations:animation completion:^(BOOL finished) {
-            [self _scrollToBottomRow];
+            [weakSelf _scrollToBottomRow];
         }];
     } else {
         animation();
@@ -2087,8 +2108,9 @@
     [[UIApplication sharedApplication].keyWindow addSubview:self.playGiftView];
     NSURL *url = [NSURL URLWithString:animation];
     [self.playGiftView.animatedImageView sd_setImageWithURL:url];
+    kWeakSelf
     self.playGiftView.animatedImageView.loopCompletionBlock = ^(NSUInteger loopCountRemaining) {
-        [self.playGiftView removeFromSuperview];
+        [weakSelf.playGiftView removeFromSuperview];
     };
 }
 

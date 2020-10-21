@@ -15,7 +15,7 @@ load('game/ui/layer/email/EmailMdt', function () {
         getNotificationList: function () {
             return [
                 GameEvent.HALL_EMAIL_INFO,
-                // GameEvent.HALL_EMAIL_DEL,
+                GameEvent.HALL_EMAIL_DEL,
                 GameEvent.HALL_EMAIL_RECEIVE,
             ]
         },

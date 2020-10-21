@@ -17,7 +17,7 @@
 
 #import "AppController.h"
 
-@interface CXBaseTabBarViewController () <EMChatManagerDelegate, EMNotificationsDelegate>
+@interface CXBaseTabBarViewController () <EMChatManagerDelegate>
 
 @property (nonatomic) BOOL isViewAppear;
 
@@ -38,7 +38,6 @@
 - (void)dealloc
 {
     [[EMClient sharedClient].chatManager removeDelegate:self];
-    [[EMNotificationHelper shared] removeDelegate:self];
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
@@ -48,6 +47,7 @@
     // Do any additional setup after loading the view.
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(back) name:kNSNotificationCenter_CXBaseTabBarViewController_leaveOut object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadUnreadMessage) name:kNSNotificationCenter_CXBaseTabBarViewController_reloadUnreadCount object:nil];
     
     [self setupChildController];
     
@@ -93,6 +93,12 @@
 //    }];
 //}
 
+- (void)reloadUnreadMessage {
+    if (_messageCount != 0) {
+        [self _loadTabBarItemsBadge];
+    }
+}
+
 - (void)back {
     [AppController setOrientation:@""];
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -132,14 +138,6 @@
     [self _loadConversationTabBarItemBadge];
 }
 
-#pragma mark - EMNotificationsDelegate
-
-- (void)didNotificationsUnreadCountUpdate:(NSInteger)aUnreadCount {
-    self.messageCount = aUnreadCount;
-    
-    [self reloadTabBarBadge];
-}
-
 #pragma mark - Private
 
 - (void)_loadConversationTabBarItemBadge
@@ -159,6 +157,7 @@
     NSInteger unreadCount = _messageCount + _systemCount;
     NSString *unreadCountStr = unreadCount > 0 ? @(MIN(unreadCount, 99)).stringValue : nil;
     self.friendController.tabBarItem.badgeValue = unreadCountStr;
+    [CXClientModel instance].unreadCountStr = unreadCountStr ?: @"0";
     [[NSNotificationCenter defaultCenter] postNotificationName:kNSNotificationCenter_CXFriendViewController_unreadCount object:nil userInfo:@{@"unreadCount" : unreadCountStr ?: @"0"}];
     
 }
@@ -166,8 +165,6 @@
 - (void)_loadTabBarItemsBadge
 {
     [self _loadConversationTabBarItemBadge];
-    
-    [self didNotificationsUnreadCountUpdate:[EMNotificationHelper shared].unreadCount];
 }
 
 #pragma mark - ===================== 心跳处理 ========================

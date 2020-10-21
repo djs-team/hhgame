@@ -4,6 +4,7 @@ load('game/ui/layer/email/EmailLayer', function () {
     let BaseLayer = include('public/ui/BaseLayer')
     let GameEvent = include('game/config/GameEvent')
     let EmailMdt = include('game/ui/layer/email/EmailMdt')
+    let GameUtil = include('game/public/GameUtil')
     let EmailLayer = BaseLayer.extend({
         _className: 'EmailLayer',
         _startIndex: 0, //开始index
@@ -51,7 +52,8 @@ load('game/ui/layer/email/EmailLayer', function () {
         onExit: function () {
             this._super()
         },
-        onClose: function () {
+        onClose: function (sender) {
+            GameUtil.delayBtn(sender);
             let msg = {
                 'mailIdList' : this.removeRepeatArray(this._delMailId)
             }
@@ -60,6 +62,8 @@ load('game/ui/layer/email/EmailLayer', function () {
             appInstance.uiManager().removeUI(this)
         },
         initView: function () {
+            this.leftList.setScrollBarEnabled(false)
+            this.rewardList.setScrollBarEnabled(false)
             this.rightBgPic.setVisible(false)
             this.emptyBgPic.setVisible(false)
             this.leftPnl.setVisible(false)
@@ -178,6 +182,7 @@ load('game/ui/layer/email/EmailLayer', function () {
                 rewardsList.addChild(rewardsCell)
                 rewardsCell.setName('rewards'+data.mailId+j)
                 rewardsCell.getChildByName('rewardPic').loadTexture(information.res);
+                rewardsCell.getChildByName('numValue').setString(information.num);
                 if (data.status==2) {
                     rewardsCell.getChildByName('finishPic').setVisible(true);
                 } else {
@@ -200,13 +205,15 @@ load('game/ui/layer/email/EmailLayer', function () {
 
             appInstance.gameAgent().httpGame().emailInfoReq(msg)
         },
-        onSubmitReward: function () {
+        onSubmitReward: function (sender) {
+            GameUtil.delayBtn(sender);
             let msg = {
                 'mailId' : this._rewardMailId
             }
             appInstance.gameAgent().httpGame().emailReceiveReq(msg)
         },
         onEmailReceive: function () {
+            appInstance.gameAgent().Tips('------------------------------------领取成功！！！')
             for (let i=0; i<this._rewardCount; i++) {
                 this.rewardList.getChildByName('rewards'+this._rewardMailId+i).getChildByName('finishPic').setVisible(true)
             }

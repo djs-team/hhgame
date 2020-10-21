@@ -144,6 +144,8 @@
             if (cityArray.count > 1) {
                 [profileDict setValue:cityArray.lastObject forKey:@"city_two"];
             }
+        } else {
+            [profileDict setValue:obj.name forKey:obj.column];
         }
     }];
     CXUserInfoMenusDataMenusModel *grzl_menu = _menusData.grzl;

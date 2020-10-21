@@ -37,8 +37,6 @@
 #import "CXUserInfoViewController.h"
 #import "CXBaseNavigationController.h"
 
-#import "CXChangeAgeAlertView.h"
-
 // Pay
 #import <AlipaySDK/AlipaySDK.h>
 #import <WXApi.h>
@@ -198,7 +196,11 @@ static AppDelegate s_sharedApplication;
         [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
             [[NSNotificationCenter defaultCenter] postNotificationName:kNSNotificationCenter_CXRechargeViewController_alipay object:resultDic];
             if ([CXOCJSBrigeManager manager].paySuccessMethod.length > 0) {
-                [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].paySuccessMethod param:[resultDic jsonStringEncoded]];
+                if ([resultDic.allKeys containsObject:@"resultStatus"] && [[resultDic objectForKey:@"resultStatus"] integerValue] == 9000) {
+                    [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].paySuccessMethod param:@"0"];
+                } else {
+                    [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].paySuccessMethod param:@"-1"];
+                }
             }
             
         }];
@@ -207,7 +209,11 @@ static AppDelegate s_sharedApplication;
         [[AlipaySDK defaultService] processAuth_V2Result:url standbyCallback:^(NSDictionary *resultDic) {
             [[NSNotificationCenter defaultCenter] postNotificationName:kNSNotificationCenter_CXRechargeViewController_alipay object:resultDic];
             if ([CXOCJSBrigeManager manager].paySuccessMethod.length > 0) {
-                [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].paySuccessMethod param:[resultDic jsonStringEncoded]];
+                if ([resultDic.allKeys containsObject:@"resultStatus"] && [[resultDic objectForKey:@"resultStatus"] integerValue] == 9000) {
+                    [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].paySuccessMethod param:@"0"];
+                } else {
+                    [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].paySuccessMethod param:@"-1"];
+                }
             }
         }];
     } else {
@@ -410,7 +416,7 @@ static AppDelegate s_sharedApplication;
     if ([resp isKindOfClass:[PayResp class]]){
         [[NSNotificationCenter defaultCenter] postNotificationName:kNSNotificationCenter_CXRechargeViewController_weixin object:[resp modelToJSONObject]];
         if ([CXOCJSBrigeManager manager].paySuccessMethod.length > 0) {
-            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].paySuccessMethod param:[[resp modelToJSONObject] jsonStringEncoded]];
+            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].paySuccessMethod param:[NSString stringWithFormat:@"%d",resp.errCode]];
         }
     } else if ([resp isKindOfClass:[SendAuthResp class]]){
         SendAuthResp *resp2 = (SendAuthResp *)resp;
@@ -445,16 +451,12 @@ static AppDelegate s_sharedApplication;
             }
         }];
     } else if ([payType isEqualToString:@"alipay"]) {
-        [[CXThirdPayManager sharedApi] aliPayWithPayParam:payParam success:^(PayCode code) {
-            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].paySuccessMethod param:@"success"];
-        } failure:^(PayCode code) {
-            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].paySuccessMethod param:@"failure"];
+        [[CXThirdPayManager sharedApi] aliPayWithPayParam:payParam success:nil failure:^(PayCode code) {
+            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].paySuccessMethod param:@"-1"];
         }];
     } else if ([payType isEqualToString:@"wx"]) {
-        [[CXThirdPayManager sharedApi] wxPayWithPayParam:payParam success:^(PayCode code) {
-            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].paySuccessMethod param:@"success"];
-        } failure:^(PayCode code) {
-            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].paySuccessMethod param:@"failure"];
+        [[CXThirdPayManager sharedApi] wxPayWithPayParam:payParam success:nil failure:^(PayCode code) {
+            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].paySuccessMethod param:@"-1"];
         }];
     }
 }
@@ -732,12 +734,23 @@ UIInterfaceOrientationMask oMask = UIInterfaceOrientationMaskLandscape;
             [CXClientModel instance].avatar = user.avatar;
             [CXClientModel instance].sex = user.sex;
             
-            [[CXClientModel instance].easemob login:user.user_id];
+            [[EMClient sharedClient] loginWithUsername:user.user_id password:user.user_id completion:^(NSString *aUsername, EMError *aError) {
+                [AppController setOrientation:@"V"];
+                CXBaseTabBarViewController *tabbarVC = [CXBaseTabBarViewController new];
+                tabbarVC.modalPresentationStyle = UIModalPresentationFullScreen;
+                [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:tabbarVC animated:YES completion:nil];
+//                if (aError) {
+////                    if (wself.delegate && [wself.delegate respondsToSelector:@selector(easemob:user:loginError:)]) {
+////                        [wself.delegate easemob:wself user:aUsername loginError:EMErrorToNSErrro(aError)];
+////                    }
+//                } else {
+////                    if (wself.delegate && [wself.delegate respondsToSelector:@selector(easemob:didLoginWithUser:)]) {
+////                        [wself.delegate easemob:wself didLoginWithUser:aUsername];
+////                    }
+//                }
+            }];
             
-            [AppController setOrientation:@"V"];
-            CXBaseTabBarViewController *tabbarVC = [CXBaseTabBarViewController new];
-            tabbarVC.modalPresentationStyle = UIModalPresentationFullScreen;
-            [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:tabbarVC animated:YES completion:nil];
+//            [[CXClientModel instance].easemob login:user.user_id];
         } else {
             [CXTools showAlertWithMessage:responseObject[@"desc"]];
         }
@@ -745,11 +758,6 @@ UIInterfaceOrientationMask oMask = UIInterfaceOrientationMaskLandscape;
 }
 
 + (void)joinRoom:(NSString *)roomId {
-    if ([CXClientModel instance].sex.integerValue < 1) { // 未设置性别
-        CXChangeAgeAlertView *ageView = [[NSBundle mainBundle] loadNibNamed:@"CXChangeAgeAlertView" owner:nil options:nil].lastObject;
-        [ageView show];
-        return;
-    }
     if (roomId.length <= 0) {
         return;
     }
@@ -772,6 +780,12 @@ UIInterfaceOrientationMask oMask = UIInterfaceOrientationMaskLandscape;
     UIViewController *currentVC = [CXTools currentViewController];
     [currentVC.navigationController pushViewController:vc animated:YES];
     
+}
+
++ (void)showUserProfile:(NSString *_Nonnull)userId target:(UIViewController *)target {
+    CXUserInfoViewController *vc = [CXUserInfoViewController new];
+    vc.user_Id = userId;
+    [target.navigationController pushViewController:vc animated:YES];
 }
 
 + (void)logout {

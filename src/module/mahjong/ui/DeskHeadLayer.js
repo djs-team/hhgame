@@ -10,6 +10,7 @@ load('module/mahjong/ui/DeskHeadLayer', function () {
     let BaseLayer = include('public/ui/BaseLayer')
     let DeskHeadLayerMdt = include('module/mahjong/ui/DeskHeadLayerMdt')
     let TableConfig = include('module/mahjong/common/TableConfig')
+    let DeskPersonlLayer = include('module/mahjong/ui/DeskPersonlLayer')
     let Layer = BaseLayer.extend({
         _className: 'DeskHeadLayer',
         RES_BINDING: function () {
@@ -27,10 +28,12 @@ load('module/mahjong/ui/DeskHeadLayer', function () {
 
         initData: function (pData) {
             this._uiSeatArray = pData.uiSeatArray
+
             this._playerNum = pData.pPlayerNum
             this._uiSeatConfig = TableConfig.UiSeatArray['4']
             this._aniNd = {}
             this._ani = {}
+
         },
 
         initView: function (pData) {
@@ -65,7 +68,13 @@ load('module/mahjong/ui/DeskHeadLayer', function () {
                 return
             }
             playerNd.setVisible(true)
-            let nameBg = playerNd.getChildByName('nameBg')
+
+            playerNd._sendMsg = {
+                pid: player.pid,
+                pSeatID: player.pSeatID,
+            }
+
+            let nameBg = playerNd.getChildByName('namePnl').getChildByName('nameBg')
             let nameTxt = nameBg.getChildByName('nameTxt')
             nameTxt.setString(player.nickName)
 
@@ -74,6 +83,31 @@ load('module/mahjong/ui/DeskHeadLayer', function () {
             this._aniNd[uiSeat].addChild(ani)
             this._ani[uiSeat] = ani
             ani.setAnimation(0, PlayerPlay.stand, true)
+
+            playerNd.getChildByName('namePnl').addClickEventListener(function (sender,et) {
+                this.onShowPersonalData(sender)
+            }.bind(this))
+        },
+
+        onShowPersonalData: function (sender) {
+            let data = sender.getParent()._sendMsg
+            let mySeatId = appInstance.dataManager().getPlayData().pMySeatID
+            let pSeatId = data.pSeatID
+            if(mySeatId === pSeatId)
+                return
+
+            this.showDeskPersonlLayer(data)
+
+
+
+
+        },
+
+        showDeskPersonlLayer: function (msg) {
+
+                this.DeskPersonlLayer = appInstance.uiManager().createUI(DeskPersonlLayer,msg)
+                this.DeskPersonlLayer.setLocalZOrder(1000)
+                this.parent.addChild(this.DeskPersonlLayer)
         },
 
         clearView: function () {

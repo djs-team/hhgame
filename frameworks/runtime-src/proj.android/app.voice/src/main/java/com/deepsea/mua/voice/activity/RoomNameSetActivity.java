@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.deepsea.mua.stub.base.BaseActivity;
 import com.deepsea.mua.voice.R;
@@ -56,11 +57,13 @@ public class RoomNameSetActivity extends BaseActivity<ActivityRoomNameSetBinding
     }
 
     @Override
-    public void finish() {
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d("AG_EX_AV", "finish");
         String input = mBinding.roomNameEdit.getText().toString();
         if (!TextUtils.isEmpty(input) && !TextUtils.equals(name, input)) {
             mViewModel.setRoomName(input);
         }
-        super.finish();
     }
+
 }

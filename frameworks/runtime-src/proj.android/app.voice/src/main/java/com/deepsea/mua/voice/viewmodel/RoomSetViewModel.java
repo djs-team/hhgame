@@ -2,6 +2,7 @@ package com.deepsea.mua.voice.viewmodel;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.ViewModel;
+import android.util.Log;
 
 import com.deepsea.mua.core.network.resource.Resource;
 import com.deepsea.mua.stub.controller.RoomController;
@@ -38,6 +39,7 @@ public class RoomSetViewModel extends ViewModel {
         jsonObject.addProperty("MsgId", 49);
         jsonObject.addProperty("Name", name);
         RoomController.getInstance().sendRoomMsg(jsonObject.toString());
+        Log.d("AG_EX_AV","setRoomName"+name);
     }
 
     /**

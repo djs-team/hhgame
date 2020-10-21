@@ -37,10 +37,10 @@
         [self.sexBtn setImage:[UIImage imageNamed:@"nv2"] forState:UIControlStateNormal];
     }
     
-    if (model.online.integerValue == 3) {
+    if (model.online.integerValue == 3 || model.online.integerValue == 2) {
         _stateLabel.text = @"相亲中";
         _stateLabel.backgroundColor = UIColorHex(0x7F3EF0);
-    } else if (model.online.integerValue == 5) {
+    } else if (model.online.integerValue == 5 || model.online.integerValue == 4) {
         _stateLabel.text = @"热聊中";
         _stateLabel.backgroundColor = UIColorHex(0xEF51B2);
     } else if (model.online.integerValue == 6) {

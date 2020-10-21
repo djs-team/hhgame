@@ -76,6 +76,7 @@ public class ProfileActivity extends BaseActivity<ActivityProfileBinding> {
     String photo;
     String nickName;
     String onlineState;
+    String onlineStr;
     private String roomId;
     private ProfileBean.UserInfoBean mProfile;//用户基本信息
     ProfileBean mProfileUserInfo;//用户所有信息
@@ -316,30 +317,32 @@ public class ProfileActivity extends BaseActivity<ActivityProfileBinding> {
 
             if (state.equals("0")) {
                 //相亲中
+                onlineStr="离线";
                 ViewBindUtils.setVisible(mBinding.tvState, true);
                 mBinding.tvState.setBackgroundResource(R.drawable.bg_grayr_radius_21);
-                ViewBindUtils.setText(mBinding.tvState, "离线");
             } else if (state.equals("2") || state.equals("3")) {
                 //相亲中
+                onlineStr="相亲中";
                 ViewBindUtils.setVisible(mBinding.tvState, true);
                 mBinding.tvState.setBackgroundResource(R.drawable.bg_violet_radius_21);
-                ViewBindUtils.setText(mBinding.tvState, "相亲中");
             } else if (state.equals("4") || state.equals("5")) {
+                onlineStr="热聊中";
                 ViewBindUtils.setVisible(mBinding.tvState, true);
                 mBinding.tvState.setBackgroundResource(R.drawable.bg_pink_radius_21);
-                ViewBindUtils.setText(mBinding.tvState, "热聊中");
             } else if (state.equals("6")) {
+                onlineStr="开播中";
                 ViewBindUtils.setVisible(mBinding.tvState, true);
                 mBinding.tvState.setBackgroundResource(R.drawable.bg_yellow_radius_21);
-                ViewBindUtils.setText(mBinding.tvState, "开播中");
             } else {
+                onlineStr="在线";
                 ViewBindUtils.setVisible(mBinding.tvState, true);
                 mBinding.tvState.setBackgroundResource(R.drawable.bg_green_radius_21);
-                ViewBindUtils.setText(mBinding.tvState, "在线");
             }
         } else {
+            onlineStr="离线";
             ViewBindUtils.setVisible(mBinding.tvState, false);
         }
+        ViewBindUtils.setText(mBinding.tvState, onlineStr);
         mBinding.uidTv.setText("ID:" + userInfo.getPretty_id());
         setViewText(mBinding.singTv, "", userInfo.getIntro());
         SexResUtils.setSexImgInFindPage(mBinding.rlSex, mBinding.sexIv, userInfo.getSex());

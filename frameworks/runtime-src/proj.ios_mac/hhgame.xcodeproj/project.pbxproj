@@ -721,6 +721,8 @@
 		008588E82539C8E100649236 /* CXUserInfoCurrentRoomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 008588E72539C8E100649236 /* CXUserInfoCurrentRoomCell.m */; };
 		008F040F251C4E0E00F207D2 /* CXChangeAgeAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 008F040E251C4E0E00F207D2 /* CXChangeAgeAlertView.m */; };
 		008F0413251C4E1800F207D2 /* CXChangeAgeAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008F0412251C4E1800F207D2 /* CXChangeAgeAlertView.xib */; };
+		009A0CD325402902007C8B70 /* CXLiveRoomSetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 009A0CD125402902007C8B70 /* CXLiveRoomSetupViewController.m */; };
+		009A0CD425402902007C8B70 /* CXLiveRoomSetupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 009A0CD225402902007C8B70 /* CXLiveRoomSetupViewController.xib */; };
 		1A2EA1861FC3DA6C0062C870 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A2EA1851FC3DA6B0062C870 /* Images.xcassets */; };
 		1A67682A180E9C060076BC67 /* libcocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB48180E9ACB004C840B /* libcocos2d Mac.a */; };
 		1A676839180E9C1E0076BC67 /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB56180E9ACB004C840B /* libcocos2d iOS.a */; };
@@ -1965,6 +1967,9 @@
 		008F040D251C4E0E00F207D2 /* CXChangeAgeAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXChangeAgeAlertView.h; sourceTree = "<group>"; };
 		008F040E251C4E0E00F207D2 /* CXChangeAgeAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXChangeAgeAlertView.m; sourceTree = "<group>"; };
 		008F0412251C4E1800F207D2 /* CXChangeAgeAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CXChangeAgeAlertView.xib; sourceTree = "<group>"; };
+		009A0CD025402902007C8B70 /* CXLiveRoomSetupViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXLiveRoomSetupViewController.h; sourceTree = "<group>"; };
+		009A0CD125402902007C8B70 /* CXLiveRoomSetupViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXLiveRoomSetupViewController.m; sourceTree = "<group>"; };
+		009A0CD225402902007C8B70 /* CXLiveRoomSetupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CXLiveRoomSetupViewController.xib; sourceTree = "<group>"; };
 		1A1A081B18C9DF05005C6854 /* project.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = project.json; path = ../../../project.json; sourceTree = "<group>"; };
 		1A2EA1851FC3DA6B0062C870 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ios/Images.xcassets; sourceTree = "<group>"; };
 		1A6BF21418C9DB5900FB0E1C /* main.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = main.js; path = ../../../main.js; sourceTree = "<group>"; };
@@ -2253,12 +2258,15 @@
 		00614903250B94C500BB7620 /* RoomSetup */ = {
 			isa = PBXGroup;
 			children = (
-				00614904250B94C500BB7620 /* CXLiveRoomCreateRoomViewController.xib */,
+				00614909250B94C500BB7620 /* CXLiveRoomCreateRoomViewController.h */,
 				00614905250B94C500BB7620 /* CXLiveRoomCreateRoomViewController.m */,
+				00614904250B94C500BB7620 /* CXLiveRoomCreateRoomViewController.xib */,
 				00614906250B94C500BB7620 /* CXLiveRoomSetupTypeHelpViewController.m */,
 				00614907250B94C500BB7620 /* CXLiveRoomSetupTypeHelpViewController.xib */,
 				00614908250B94C500BB7620 /* CXLiveRoomSetupTypeHelpViewController.h */,
-				00614909250B94C500BB7620 /* CXLiveRoomCreateRoomViewController.h */,
+				009A0CD025402902007C8B70 /* CXLiveRoomSetupViewController.h */,
+				009A0CD125402902007C8B70 /* CXLiveRoomSetupViewController.m */,
+				009A0CD225402902007C8B70 /* CXLiveRoomSetupViewController.xib */,
 				0061490A250B94C500BB7620 /* Views */,
 			);
 			path = RoomSetup;
@@ -4974,6 +4982,7 @@
 				00614E2F250B94CE00BB7620 /* CXChatRoomGiftCell.xib in Resources */,
 				00615045250B94D000BB7620 /* msg_img_broken@3x.png in Resources */,
 				00614E70250B94CE00BB7620 /* CXGameMusicGuideView.xib in Resources */,
+				009A0CD425402902007C8B70 /* CXLiveRoomSetupViewController.xib in Resources */,
 				0061502C250B94D000BB7620 /* msg_location@2x.png in Resources */,
 				00615039250B94D000BB7620 /* msg_recv_audio01@3x.png in Resources */,
 				00614E4E250B94CE00BB7620 /* ai_gesture.bundle in Resources */,
@@ -5450,6 +5459,7 @@
 				00614F4A250B94CF00BB7620 /* SocketMessageSeatMicEnable.m in Sources */,
 				00614EF3250B94CE00BB7620 /* XYRoomAlreadApplyListView.m in Sources */,
 				006150A3250B94D000BB7620 /* EMTextViewController.m in Sources */,
+				009A0CD325402902007C8B70 /* CXLiveRoomSetupViewController.m in Sources */,
 				00614E44250B94CE00BB7620 /* FUCamera.m in Sources */,
 				00614F24250B94CF00BB7620 /* SocketMessageWelcomMsg.m in Sources */,
 				00614F68250B94CF00BB7620 /* CXMineGuardListViewController.m in Sources */,
@@ -5679,7 +5689,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMPRESS_PNG_FILES = NO;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = C966MAAFRF;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -5734,7 +5744,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMPRESS_PNG_FILES = NO;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = C966MAAFRF;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (

@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign) BOOL isHost; // 是否是红娘
 
+@property (nonatomic, strong) NSString *is_room; // 1:房间内送礼加好友 2:房间外送礼加好友
+
 @end
 
 NS_ASSUME_NONNULL_END

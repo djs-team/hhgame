@@ -47,6 +47,7 @@
     // Do any additional setup after loading the view.
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(back) name:kNSNotificationCenter_CXBaseTabBarViewController_leaveOut object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadUnreadMessage) name:kNSNotificationCenter_CXBaseTabBarViewController_reloadUnreadCount object:nil];
     
     [self setupChildController];
     
@@ -91,6 +92,12 @@
 //        }
 //    }];
 //}
+
+- (void)reloadUnreadMessage {
+    if (_messageCount != 0) {
+        [self _loadTabBarItemsBadge];
+    }
+}
 
 - (void)back {
     [AppController setOrientation:@""];

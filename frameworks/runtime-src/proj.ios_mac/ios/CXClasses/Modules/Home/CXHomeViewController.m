@@ -12,7 +12,7 @@
 #import "CXUserModel.h"
 #import "CXHomeFilterView.h"
 #import "CXHomeRoomModel.h"
-
+#import "CXChangeAgeAlertView.h"
 
 @interface CXHomeViewController ()
 
@@ -37,6 +37,15 @@
     self.progressColor = UIColorHex(0xFFFFFF);
     
     [self getRoomModeList];
+    
+    if ([CXClientModel instance].sex.integerValue < 1) { // 未设置性别
+        CXChangeAgeAlertView *ageView = [[NSBundle mainBundle] loadNibNamed:@"CXChangeAgeAlertView" owner:nil options:nil].lastObject;
+        kWeakSelf
+        ageView.backActionBlock = ^{
+            [weakSelf back];
+        };
+        [ageView show];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {

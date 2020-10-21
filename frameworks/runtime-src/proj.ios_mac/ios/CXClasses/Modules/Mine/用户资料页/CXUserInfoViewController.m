@@ -71,7 +71,7 @@
     NSString *signature = [CocoaSecurity md5:[CXClientModel instance].token].hexLower;
     NSDictionary *param = @{
         @"signature": signature,
-        @"user_id": _user_Id,
+        @"user_id": _user_Id ?: [CXClientModel instance].userId,
         @"device": @"iOS",
     };
     kWeakSelf
@@ -321,6 +321,7 @@
         vc.nickname = self.currentUser.nickname;
         vc.user_id = self.user_Id;
         vc.user_avatar = self.currentUser.avatar;
+        vc.is_room = @"2";
         [self.navigationController pushViewController:vc animated:YES];
     }
 }

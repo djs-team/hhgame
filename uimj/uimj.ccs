@@ -223,11 +223,24 @@
           <Image Name="bt_4.png" />
           <Image Name="bz_1.png" />
           <Image Name="bz_2.png" />
+          <Image Name="bz_3.png" />
+          <Image Name="db.png" />
+          <Image Name="dtjm_1.png" />
+          <Image Name="dtjm_1_1.png" />
           <Image Name="gb.png" />
+          <Image Name="gexx_1.png" />
           <Image Name="gy_fh.png" />
           <Image Name="jinbi.png" />
+          <Image Name="js_1.png" />
+          <Image Name="jsyy.png" />
+          <Image Name="rwzx_10.png" />
+          <Image Name="rwzx_11.png" />
+          <Image Name="ssc_1.png" />
+          <Image Name="ssc_5.png" />
         </Folder>
         <Folder Name="dele">
+          <Image Name="deskPersonal (1).png" />
+          <Image Name="deskPersonal (2).png" />
           <Image Name="liangAction.png" />
           <Image Name="liangpai.jpg" />
           <Image Name="lipai.jpg" />
@@ -366,13 +379,18 @@
         <Project Name="DeskBgLayer.csd" Type="Layer" />
         <Project Name="DeskCardLayer.csd" Type="Layer" />
         <Project Name="DeskHeadLayer.csd" Type="Layer" />
-        <Project Name="EffectLayer.csd" Type="Layer" />
         <Project Name="DeskResultLayer.csd" Type="Layer" />
         <Project Name="DeskTopLayer.csd" Type="Layer" />
+        <Project Name="EffectLayer.csd" Type="Layer" />
         <Project Name="MatchBigResultLayer.csd" Type="Layer" />
         <Project Name="MatchJinjiLayer.csd" Type="Layer" />
         <Project Name="MatchResultLayer.csd" Type="Layer" />
         <Project Name="MjPlayScene.csd" Type="Scene" />
+        <Project Name="DeskPersonlLayer.csd" Type="Layer" />
+        <Folder Name="personal">
+          <Image Name="gexx_3.png" />
+          <Image Name="gexx_5.png" />
+        </Folder>
       </RootFolder>
     </Group>
   </SolutionFolder>

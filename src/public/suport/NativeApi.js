@@ -82,6 +82,8 @@ load('public/suport/NativeApi', function () {
                 } else if (cc.sys.OS_IOS === cc.sys.os) {
                     jsb.reflection.callStaticMethod('AppController', 'WXShareIOSforUrl:Title:Desc:', url, title, description)
                 }
+                
+                appInstance.gameAgent().httpGame().sharedCompleteTaskReq();
             } catch (e) {
                 this.HelloOC('wxShareUrl throw: ' + JSON.stringify(e))
             }
@@ -96,6 +98,8 @@ load('public/suport/NativeApi', function () {
                 } else if (cc.sys.OS_IOS === cc.sys.os) {
                     jsb.reflection.callStaticMethod('AppController', 'WXShareIOSforUrl:Title:Desc:', url, title, description)
                 }
+                
+                appInstance.gameAgent().httpGame().sharedCompleteTaskReq();
             } catch (e) {
                 this.HelloOC('wxShareUrl throw: ' + JSON.stringify(e))
             }
@@ -114,6 +118,8 @@ load('public/suport/NativeApi', function () {
                 } else if (cc.sys.OS_IOS === cc.sys.os) {
                     jsb.reflection.callStaticMethod('AppController', 'WXShareIOSforImage:', sharePath)
                 }
+                
+                appInstance.gameAgent().httpGame().sharedCompleteTaskReq();
             } catch (e) {
                 this.HelloOC('wxShareImage throw: ' + JSON.stringify(e))
             }
@@ -133,6 +139,8 @@ load('public/suport/NativeApi', function () {
                 } else if (cc.sys.OS_IOS === cc.sys.os) {
                     jsb.reflection.callStaticMethod('AppController', 'WXShareIOSforImage:', sharePath)
                 }
+                
+                appInstance.gameAgent().httpGame().sharedCompleteTaskReq();
             } catch (e) {
                 this.HelloOC('wxShareImage throw: ' + JSON.stringify(e))
             }
@@ -145,6 +153,8 @@ load('public/suport/NativeApi', function () {
                 } else if (cc.sys.OS_IOS === cc.sys.os) {
                     jsb.reflection.callStaticMethod('AppController', 'WXShareIOSforDescription:isTimeLine:', text, isTimeLine)
                 }
+                
+                appInstance.gameAgent().httpGame().sharedCompleteTaskReq();
             } catch (e) {
                 this.HelloOC('wxShareText throw: ' + JSON.stringify(e))
             }
@@ -448,6 +458,8 @@ load('public/suport/NativeApi', function () {
                     let sharePath = writePath + fileName
                     jsb.reflection.callStaticMethod('AppController', 'WXShareIOSforImage:', sharePath)
                 }
+                
+                appInstance.gameAgent().httpGame().sharedCompleteTaskReq();
             } catch (e) {
                 NativeApi.HelloOC('shareImage throw: ' + JSON.stringify(e))
             }
@@ -462,6 +474,8 @@ load('public/suport/NativeApi', function () {
                     let sharePath = writePath + thumbUrl
                     jsb.reflection.callStaticMethod('AppController', 'WXShareIOSforUrl:Title:Desc:image:', url, title, description, sharePath)
                 }
+                
+                appInstance.gameAgent().httpGame().sharedCompleteTaskReq();
             } catch (e) {
                 NativeApi.HelloOC('shareArticle throw: ' + JSON.stringify(e))
             }

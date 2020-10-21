@@ -2253,12 +2253,12 @@
 		00614903250B94C500BB7620 /* RoomSetup */ = {
 			isa = PBXGroup;
 			children = (
-				00614904250B94C500BB7620 /* CXLiveRoomCreateRoomViewController.xib */,
+				00614909250B94C500BB7620 /* CXLiveRoomCreateRoomViewController.h */,
 				00614905250B94C500BB7620 /* CXLiveRoomCreateRoomViewController.m */,
+				00614904250B94C500BB7620 /* CXLiveRoomCreateRoomViewController.xib */,
 				00614906250B94C500BB7620 /* CXLiveRoomSetupTypeHelpViewController.m */,
 				00614907250B94C500BB7620 /* CXLiveRoomSetupTypeHelpViewController.xib */,
 				00614908250B94C500BB7620 /* CXLiveRoomSetupTypeHelpViewController.h */,
-				00614909250B94C500BB7620 /* CXLiveRoomCreateRoomViewController.h */,
 				0061490A250B94C500BB7620 /* Views */,
 			);
 			path = RoomSetup;

@@ -64,6 +64,12 @@
     _free_inviteBtn.layer.cornerRadius = 18;
     _free_inviteBtn.titleLabel.numberOfLines = 0;
     [_free_inviteBtn setTitle:@"收费邀请\n上麦" forState:UIControlStateNormal];
+    
+    _chatBtn.layer.masksToBounds = YES;
+    _chatBtn.layer.cornerRadius = 18;
+    _chatBtn.layer.borderColor = UIColorHex(0x773BE7).CGColor;
+    _chatBtn.layer.borderWidth = 0.5;
+    
 }
 
 - (void)setUserInfo:(SocketMessageGetUserInfoResponse *)userInfo {

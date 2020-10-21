@@ -1127,6 +1127,7 @@
                     vc.nickname = user.Name;
                     vc.user_id = user.UserId;
                     vc.user_avatar = user.HeadImageUrl;
+                    vc.is_room = @"1";
                     [self.navigationController pushViewController:vc animated:YES];
                 }
             }
@@ -2623,6 +2624,7 @@
             vc.nickname = microInfo.modelUser.Name;
             vc.user_id = microInfo.modelUser.UserId;
             vc.user_avatar = microInfo.modelUser.HeadImageUrl;
+            vc.is_room = @"1";
             [self.navigationController pushViewController:vc animated:YES];
         }
             break;

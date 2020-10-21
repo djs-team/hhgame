@@ -37,8 +37,6 @@
 #import "CXUserInfoViewController.h"
 #import "CXBaseNavigationController.h"
 
-#import "CXChangeAgeAlertView.h"
-
 // Pay
 #import <AlipaySDK/AlipaySDK.h>
 #import <WXApi.h>
@@ -753,8 +751,6 @@ UIInterfaceOrientationMask oMask = UIInterfaceOrientationMaskLandscape;
             }];
             
 //            [[CXClientModel instance].easemob login:user.user_id];
-            
-            
         } else {
             [CXTools showAlertWithMessage:responseObject[@"desc"]];
         }
@@ -762,11 +758,6 @@ UIInterfaceOrientationMask oMask = UIInterfaceOrientationMaskLandscape;
 }
 
 + (void)joinRoom:(NSString *)roomId {
-    if ([CXClientModel instance].sex.integerValue < 1) { // 未设置性别
-        CXChangeAgeAlertView *ageView = [[NSBundle mainBundle] loadNibNamed:@"CXChangeAgeAlertView" owner:nil options:nil].lastObject;
-        [ageView show];
-        return;
-    }
     if (roomId.length <= 0) {
         return;
     }

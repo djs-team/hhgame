@@ -1227,11 +1227,11 @@
         if ([CXClientModel instance].agoraEngineManager.offMic == YES) { // 闭麦了，打开
             self.isCloseMineMicro = NO;
             [CXClientModel instance].agoraEngineManager.offMic = NO;
-            [seatView.muteBtn setImage:[UIImage imageNamed:@"liveroom_seat_micro_off"] forState:UIControlStateNormal];
+            [seatView.muteBtn setImage:[UIImage imageNamed:@"liveroom_seat_micro_on"] forState:UIControlStateNormal];
         } else {
             self.isCloseMineMicro = YES;
             [CXClientModel instance].agoraEngineManager.offMic = YES;
-            [seatView.muteBtn setImage:[UIImage imageNamed:@"liveroom_seat_micro_on"] forState:UIControlStateNormal];
+            [seatView.muteBtn setImage:[UIImage imageNamed:@"liveroom_seat_micro_off"] forState:UIControlStateNormal];
         }
     } else {
         LiveRoomMicroInfo * seat = [[CXClientModel instance].room.seats objectForKey:seatIndex];
@@ -1239,13 +1239,13 @@
             if ([[CXClientModel instance].agoraEngineManager.engine muteRemoteAudioStream:[user.UserId integerValue] mute:NO] == 0) {
                 seat.isMute = NO;
                 [self.muteArrays removeObject:user.UserId];
-                [seatView.muteBtn setImage:[UIImage imageNamed:@"liveroom_seat_micro_off"] forState:UIControlStateNormal];
+                [seatView.muteBtn setImage:[UIImage imageNamed:@"liveroom_seat_micro_on"] forState:UIControlStateNormal];
             }
         } else {
             if ([[CXClientModel instance].agoraEngineManager.engine muteRemoteAudioStream:[user.UserId integerValue] mute:YES] == 0) {
                 seat.isMute = YES;
                 [self.muteArrays addObject:user.UserId];
-                [seatView.muteBtn setImage:[UIImage imageNamed:@"liveroom_seat_micro_on"] forState:UIControlStateNormal];
+                [seatView.muteBtn setImage:[UIImage imageNamed:@"liveroom_seat_micro_off"] forState:UIControlStateNormal];
             }
         }
     }

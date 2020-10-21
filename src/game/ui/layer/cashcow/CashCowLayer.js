@@ -67,7 +67,7 @@ load('game/ui/layer/cashcow/CashCowLayer', function () {
         initView: function (data) {
 
             this.initData(data)
-
+            this.dataListPnl.setScrollBarEnabled(false)
             this.recordDataCell.setVisible(false)
             this.propPnl.setVisible(false)
             this.recordsPnl.setVisible(false)

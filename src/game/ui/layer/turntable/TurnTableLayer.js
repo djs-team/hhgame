@@ -121,7 +121,7 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
         },
 
         initView: function () {
-
+            this.recordLogListView.setScrollBarEnabled(false)
             this.timesEndPnl.setVisible(false)
             this.explainPnl.setVisible(false)
             this.recordsPnl.setVisible(false)

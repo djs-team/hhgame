@@ -370,7 +370,11 @@ load('game/ui/scene/HallScene', function () {
                 this.loadUrlImage(data.sdkphotourl, photo)
             }
 
-            this.updatePlayerAni(data.pRole)
+            if (data.hasOwnProperty('pRole')) {
+                this.updatePlayerAni(data.pRole)
+            }
+
+
 
         },
 

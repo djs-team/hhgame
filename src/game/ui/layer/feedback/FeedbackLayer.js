@@ -49,7 +49,7 @@ load('game/ui/layer/feedback/FeedBackLayer', function () {
         },
 
         initView: function () {
-
+            this.MyMsgListView.setScrollBarEnabled(false)
             this.MyMsgPnl.setVisible(false)
             this.MyMsgCell.setVisible(false)
             this.initData()

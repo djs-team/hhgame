@@ -56,7 +56,7 @@ load('game/ui/layer/task/TaskLayer', function () {
             appInstance.uiManager().removeUI(this)
         },
         initView: function () {
-
+            this.taskList.setScrollBarEnabled(false)
             this.activityAwardsCell.setVisible(false)
             this.taskCell.setVisible(false)
             this.challengeTasksPnl.setVisible(false)

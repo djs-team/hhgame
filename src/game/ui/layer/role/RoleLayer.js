@@ -79,6 +79,7 @@ load('game/ui/layer/role/RoleLayer', function () {
 
         initView: function () {
 
+            this.roleImageListView.setScrollBarEnabled(false)
             this.useBtn.setVisible(false)
             this.renewBtn.setVisible(false)
             this.renewMidBtn.setVisible(false)

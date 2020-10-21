@@ -23,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 * 一键登录
 * 返回授权后的token，如果没有信息，则登录失败
 */
-+ (void)JPushLoginWithMethod:(NSString *)method;
++ (void)JPushLoginWithMethod:(NSString *)method showPhoneAlert:(NSString *)showAlert;
 
 @end
 

@@ -60,7 +60,7 @@
     }];
 }
 
-+ (void)JPushLoginWithMethod:(NSString *)method {
++ (void)JPushLoginWithMethod:(NSString *)method showPhoneAlert:(NSString *)showAlert{
     [[EMClient sharedClient] logout:YES];
     
     [MBProgressHUD showHUD];
@@ -79,7 +79,18 @@
             NSString *respStr = [param jsonStringEncoded];
             [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].jpushLoginMethod param:respStr];
         } else {
-            [self JPushLoginWithPhoneLogin];
+            if ([showAlert isEqualToString:@"Show"]) {
+                [self JPushLoginWithPhoneLogin];
+            } else {
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"一键登录失败，请重试" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+
+                [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
+                
+                [alert addAction:[UIAlertAction actionWithTitle:@"一键登录" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                    [self JPushLoginWithMethod:method showPhoneAlert:showAlert];
+                }]];
+                [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert animated:YES completion:nil];
+            }
         }
         
         [JVERIFICATIONService dismissLoginControllerAnimated:YES completion:nil];
@@ -89,9 +100,7 @@
 + (void)JPushLoginWithPhoneLogin {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"手机号登录" message:@"" preferredStyle:UIAlertControllerStyleAlert];
 
-    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-//        [AppController JPushLoginWithMethod:[CXOCJSBrigeManager manager].jpushLoginMethod];
-    }]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
     
     [alert addAction:[UIAlertAction actionWithTitle:@"登录" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         //获取第1个输入框；
@@ -105,8 +114,6 @@
         if ([userNameTextField.text isEqualToString:@"88888888"]) {
             NSString *respStr = [param jsonStringEncoded];
             [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].jpushLoginMethod param:respStr];
-        } else {
-//            [AppController JPushLoginWithMethod:[CXOCJSBrigeManager manager].jpushLoginMethod];
         }
     }]];
     

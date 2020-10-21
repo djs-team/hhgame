@@ -5,6 +5,7 @@ load('game/ui/layer/task/TaskLayer', function () {
     let TaskMdt = include('game/ui/layer/task/TaskMdt')
     let GameConfig = include('game/config/GameConfig')
     let GameEvent = include('game/config/GameEvent')
+    let GameUtil = include('game/public/GameUtil')
     let taskLayer = BaseLayer.extend({
         _className: 'taskLayer',
         ctor: function () {
@@ -55,7 +56,7 @@ load('game/ui/layer/task/TaskLayer', function () {
             appInstance.uiManager().removeUI(this)
         },
         initView: function () {
-
+            this.taskList.setScrollBarEnabled(false)
             this.activityAwardsCell.setVisible(false)
             this.taskCell.setVisible(false)
             this.challengeTasksPnl.setVisible(false)
@@ -204,6 +205,7 @@ load('game/ui/layer/task/TaskLayer', function () {
                     cell.getChildByName('everyAcceptedPg').setVisible(false)
 
                     cell.getChildByName('everyDayDealBtn').addClickEventListener(function(sender, et) {
+                        GameUtil.delayBtn(sender);
                         this.onDailyTaskCellClick(sender)
                     }.bind(this))
                     break
@@ -213,6 +215,7 @@ load('game/ui/layer/task/TaskLayer', function () {
                     cell.getChildByName('everyAcceptedPg').setVisible(false)
 
                     cell.getChildByName('everyAcceptBtn').addClickEventListener(function(sender, et) {
+                        GameUtil.delayBtn(sender);
                         this.onDailyTaskCellClick(sender)
                     }.bind(this))
                     break
@@ -227,6 +230,7 @@ load('game/ui/layer/task/TaskLayer', function () {
                     cell.getChildByName('everyAcceptedPg').setVisible(false)
 
                     cell.getChildByName('everyDayDealBtn').addClickEventListener(function(sender, et) {
+                        GameUtil.delayBtn(sender);
                         this.onDailyTaskCellClick(sender)
                     }.bind(this))
                     break
@@ -265,7 +269,8 @@ load('game/ui/layer/task/TaskLayer', function () {
 
         },
 
-        onCancleBtnClick: function () {
+        onCancleBtnClick: function (sender) {
+            GameUtil.delayBtn(sender);
             appInstance.sendNotification(GameEvent.HALL_RED_GET)
             appInstance.uiManager().removeUI(this)
 
@@ -298,7 +303,7 @@ load('game/ui/layer/task/TaskLayer', function () {
         },
 
         onTaskBtnClick: function(sender) {
-
+            GameUtil.delayBtn(sender);
             if(sender ===  this.challengeTaskBtn){
 
                 this.onChallengeTaskBtnClick()
@@ -390,21 +395,21 @@ load('game/ui/layer/task/TaskLayer', function () {
 
             _pnl.setVisible(true)
         },
-        onHideRewardOnePnl: function () {
-
+        onHideRewardOnePnl: function (sender) {
+            GameUtil.delayBtn(sender);
             this.rewardOnePnl.setVisible(false)
 
         },
 
-        onHideRewardTwoPnl: function () {
-
+        onHideRewardTwoPnl: function (sender) {
+            GameUtil.delayBtn(sender);
             this.rewardTwoPnl.setVisible(false)
 
         },
 
 
-        onHideRewardThreePnl: function () {
-
+        onHideRewardThreePnl: function (sender) {
+            GameUtil.delayBtn(sender);
             this.rewardThreePnl.setVisible(false)
 
         },
@@ -459,7 +464,7 @@ load('game/ui/layer/task/TaskLayer', function () {
                 cell.getChildByName('challegeBtnPg').loadTexture(data.statusRes)
                 cell.getChildByName('challegeBtnPg').getChildByName('challegeBtnText').setString(data.statusText)
                 cell.getChildByName('challegeBtnPg').addClickEventListener(function (sender,et) {
-
+                    GameUtil.delayBtn(sender);
                     this.onClickChallegeTaskBtn(sender)
                 }.bind(this))
 
@@ -525,8 +530,8 @@ load('game/ui/layer/task/TaskLayer', function () {
 
         },
 
-        onChangeTaskBtnClick: function () {
-
+        onChangeTaskBtnClick: function (sender) {
+            GameUtil.delayBtn(sender);
             let msg = {}
             appInstance.gameAgent().httpGame().REFRESHCHALLENGETASKSReq(msg)
 

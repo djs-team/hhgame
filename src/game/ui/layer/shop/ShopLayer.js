@@ -2,6 +2,7 @@
 load('game/ui/layer/shop/ShopLayer', function () {
     let ResConfig = include('game/config/ResConfig')
     let BaseLayer = include('public/ui/BaseLayer')
+    let GameUtil = include('game/public/GameUtil')
     let shopLayer = BaseLayer.extend({
         _className: 'shopLayer',
         ctor: function () {
@@ -21,7 +22,8 @@ load('game/ui/layer/shop/ShopLayer', function () {
         onExit: function () {
             this._super()
         },
-        onClose: function () {
+        onClose: function (sender) {
+            GameUtil.delayBtn(sender);
             appInstance.uiManager().removeUI(this)
         }
     })

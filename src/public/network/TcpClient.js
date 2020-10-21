@@ -14,25 +14,24 @@ let TcpClient = cc.Class.extend({
         this._gameNet = gameNet
     },
 
-    initData: function () {
-
-    },
-
     formatUrl: function (host, port) {
         return 'ws://' + host + ':' + port
     },
 
-    initTcp: function (params) {
-        if (!params || !params.host || !params.port) {
-            console.log('error >>> initTcp need host and port')
+    connectTcp: function (host, port) {
+        if (host && port) {
+            this._host = host
+            this._port = port
+        }
+
+        if (!this._host || !this._port) {
             return
         }
-        if (this._socket) {
 
-        }
-        this.initData()
-        let url = this.formatUrl(params.host, params.port)
-        cc.log('========url=====' + url)
+        this.disconnect()
+
+        let url = this.formatUrl(this._host, this._port)
+
         this._socket = new WebSocket(url)
         this._socket.binaryType = 'arraybuffer'
         this._socket.onopen = this.onSocketConnect.bind(this);

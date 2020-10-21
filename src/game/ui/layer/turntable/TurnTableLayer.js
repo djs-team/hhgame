@@ -3,6 +3,7 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
     let BaseLayer = include('public/ui/BaseLayer')
     let TurnTableMdt = include('game/ui/layer/turntable/TurnTableMdt')
     let GameEvent = include('game/config/GameEvent')
+    let GameUtil = include('game/public/GameUtil')
     let tabState = -1;//0-转盘点击需要看视频 1三倍点击需要看视频
     let turnTableLayer = BaseLayer.extend({
         _className: 'turnTableLayer',
@@ -65,8 +66,8 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
 
             }
         },
-        onGoShopClick: function () {
-
+        onGoShopClick: function (sender) {
+            GameUtil.delayBtn(sender);
         },
         onEnter: function () {
             this._super()
@@ -83,7 +84,8 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
             this._rewardUserData = []
         },
 
-        onExplainClick: function () {
+        onExplainClick: function (sender) {
+            GameUtil.delayBtn(sender);
             this.rulePnl.setVisible(true)
         },
 
@@ -119,7 +121,7 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
         },
 
         initView: function () {
-
+            this.recordLogListView.setScrollBarEnabled(false)
             this.timesEndPnl.setVisible(false)
             this.explainPnl.setVisible(false)
             this.recordsPnl.setVisible(false)
@@ -162,11 +164,12 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
             let nameNd = userCell.getChildByName('userName')
             let gooodsNd = userCell.getChildByName('goodsName')
             nameNd.setString(global.cropStr(userData.pName, 5, '...'))
-            gooodsNd.setString(userData.luckPrizeStr)
+            gooodsNd.setString(userData.luckPrizeStr + '“')
         },
 
 
-        onCloseClick: function () {
+        onCloseClick: function (sender) {
+            GameUtil.delayBtn(sender);
             // appInstance.gameAgent().tcpGame().enterTable()
             appInstance.sendNotification(GameEvent.HALL_RED_GET)
             appInstance.uiManager().removeUI(this)
@@ -208,7 +211,8 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
 
         },
 
-        onTurnPointClick: function () {
+        onTurnPointClick: function (sender) {
+            GameUtil.delayBtn(sender);
             tabState = 0;
             this.pointPnl.setTouchEnabled(false)
             if (!this.onCanTurnPointFunction())
@@ -375,8 +379,8 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
 
         },
 
-        onSingleClaimClick: function () {
-
+        onSingleClaimClick: function (sender) {
+            GameUtil.delayBtn(sender);
             let msg = {}
             msg.turntableId = appInstance.dataManager().getGameData().turntableId
             msg.type = 0
@@ -384,7 +388,8 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
 
         },
 
-        onMultipleClaimClick: function () {
+        onMultipleClaimClick: function (sender) {
+            GameUtil.delayBtn(sender);
             tabState = 1;
             if (cc.sys.OS_ANDROID === cc.sys.os) {
                 appInstance.nativeApi().showRewardVideo()
@@ -422,24 +427,26 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
 
         },
 
-        onHideAcceptPnlClick: function () {
-
+        onHideAcceptPnlClick: function (sender) {
+            GameUtil.delayBtn(sender);
             this.acceptedPnl.setVisible(false)
 
         },
 
-        onHideRulePnlClick: function () {
+        onHideRulePnlClick: function (sender) {
+            GameUtil.delayBtn(sender);
             this.rulePnl.setVisible(false)
         },
 
-        onRecordClick: function () {
-
+        onRecordClick: function (sender) {
+            GameUtil.delayBtn(sender);
             let msg = {}
             appInstance.gameAgent().httpGame().TURNTABLELOGReq(msg)
 
         },
 
-        onHideRecordPnlClick: function () {
+        onHideRecordPnlClick: function (sender) {
+            GameUtil.delayBtn(sender);
             this.recordsPnl.setVisible(false)
         },
 

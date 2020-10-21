@@ -3,6 +3,7 @@ load('game/ui/layer/config/ConfLayer', function () {
     let ResConfig = include('game/config/ResConfig')
     let BaseLayer = include('public/ui/BaseLayer')
     let GameEvent = include('game/config/GameEvent')
+    let GameUtil = include('game/public/GameUtil')
     let confLayer = BaseLayer.extend({
         _className: 'confLayer',
         ctor: function () {
@@ -22,7 +23,8 @@ load('game/ui/layer/config/ConfLayer', function () {
         onExit: function () {
             this._super()
         },
-        onClose: function () {
+        onClose: function (sender) {
+            GameUtil.delayBtn(sender);
             appInstance.sendNotification(GameEvent.HALL_RED_GET)
             appInstance.uiManager().removeUI(this)
         }

@@ -4,6 +4,7 @@ load('game/ui/layer/feedback/FeedBackLayer', function () {
     let BaseLayer = include('public/ui/BaseLayer')
     let GameEvent = include('game/config/GameEvent')
     let FeedBackLayerMdt = include('game/ui/layer/feedback/FeedBackLayerMdt')
+    let GameUtil = include('game/public/GameUtil')
     let feedbackLayer = BaseLayer.extend({
         _className: 'FeedBackLayer',
         _subMitType : 0,
@@ -48,7 +49,7 @@ load('game/ui/layer/feedback/FeedBackLayer', function () {
         },
 
         initView: function () {
-
+            this.MyMsgListView.setScrollBarEnabled(false)
             this.MyMsgPnl.setVisible(false)
             this.MyMsgCell.setVisible(false)
             this.initData()
@@ -102,6 +103,7 @@ load('game/ui/layer/feedback/FeedBackLayer', function () {
             }
 
             cell.addClickEventListener(function (sender,dt) {
+                GameUtil.delayBtn(sender);
                 this.onClickMyMsgCell(sender)
             }.bind(this))
 
@@ -208,12 +210,14 @@ load('game/ui/layer/feedback/FeedBackLayer', function () {
 
 
 
-        onFeedBackBtnClick: function () {
+        onFeedBackBtnClick: function (sender) {
+            GameUtil.delayBtn(sender);
             this._leftIndex = 0
             this.updateFeedBack(true)
         },
 
-        onMyMsgBtnClick: function () {
+        onMyMsgBtnClick: function (sender) {
+            GameUtil.delayBtn(sender);
             this._leftIndex = 1
             this.updateMyMsg(true)
         },
@@ -249,7 +253,8 @@ load('game/ui/layer/feedback/FeedBackLayer', function () {
 
         },
 
-        oncloseBtnClick: function () {
+        oncloseBtnClick: function (sender) {
+            GameUtil.delayBtn(sender);
             appInstance.sendNotification(GameEvent.HALL_RED_GET)
             appInstance.uiManager().removeUI(this)
         },

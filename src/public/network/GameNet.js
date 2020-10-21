@@ -121,10 +121,7 @@ load('public/network/GameNet', function () {
          * @param port
          */
         connect: function (host, port) {
-            let params = {}
-            params.host = host
-            params.port = port
-            TcpClient.initTcp(params)
+            TcpClient.connectTcp(host, port)
         },
 
         /**

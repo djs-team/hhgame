@@ -116,11 +116,13 @@ load('game/ui/layer/coingame/CoinGameLayer', function () {
             }
 
             btnCell.addClickEventListener(function(sender, et) {
+                GameUtil.delayBtn(sender);
                 this.goRoomClick(sender)
             }.bind(this))
         },
 
         onPeopleClick: function (sender) {
+            GameUtil.delayBtn(sender);
             if (sender === this.PeopleBtn2) {
                 this._peopleNum = 2
             } else if ( sender === this.PeopleBtn4) {
@@ -146,7 +148,8 @@ load('game/ui/layer/coingame/CoinGameLayer', function () {
             }
         },
 
-        onStartQuickBtnClick: function () {
+        onStartQuickBtnClick: function (sender) {
+            GameUtil.delayBtn(sender);
             let goMsg = {}
             if (this._peopleNum === 2) {
                 goMsg.roomMode = 2
@@ -187,7 +190,8 @@ load('game/ui/layer/coingame/CoinGameLayer', function () {
         onExit: function () {
             this._super()
         },
-        onCloseClick: function () {
+        onCloseClick: function (sender) {
+            GameUtil.delayBtn(sender);
             appInstance.sendNotification(GameEvent.HALL_RED_GET)
             appInstance.uiManager().removeUI(this)
         }

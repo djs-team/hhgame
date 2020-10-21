@@ -198,7 +198,11 @@ static AppDelegate s_sharedApplication;
         [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
             [[NSNotificationCenter defaultCenter] postNotificationName:kNSNotificationCenter_CXRechargeViewController_alipay object:resultDic];
             if ([CXOCJSBrigeManager manager].paySuccessMethod.length > 0) {
-                [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].paySuccessMethod param:[resultDic jsonStringEncoded]];
+                if ([resultDic.allKeys containsObject:@"resultStatus"] && [[resultDic objectForKey:@"resultStatus"] integerValue] == 9000) {
+                    [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].paySuccessMethod param:@"0"];
+                } else {
+                    [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].paySuccessMethod param:@"-1"];
+                }
             }
             
         }];
@@ -207,7 +211,11 @@ static AppDelegate s_sharedApplication;
         [[AlipaySDK defaultService] processAuth_V2Result:url standbyCallback:^(NSDictionary *resultDic) {
             [[NSNotificationCenter defaultCenter] postNotificationName:kNSNotificationCenter_CXRechargeViewController_alipay object:resultDic];
             if ([CXOCJSBrigeManager manager].paySuccessMethod.length > 0) {
-                [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].paySuccessMethod param:[resultDic jsonStringEncoded]];
+                if ([resultDic.allKeys containsObject:@"resultStatus"] && [[resultDic objectForKey:@"resultStatus"] integerValue] == 9000) {
+                    [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].paySuccessMethod param:@"0"];
+                } else {
+                    [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].paySuccessMethod param:@"-1"];
+                }
             }
         }];
     } else {
@@ -410,7 +418,7 @@ static AppDelegate s_sharedApplication;
     if ([resp isKindOfClass:[PayResp class]]){
         [[NSNotificationCenter defaultCenter] postNotificationName:kNSNotificationCenter_CXRechargeViewController_weixin object:[resp modelToJSONObject]];
         if ([CXOCJSBrigeManager manager].paySuccessMethod.length > 0) {
-            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].paySuccessMethod param:[[resp modelToJSONObject] jsonStringEncoded]];
+            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].paySuccessMethod param:[NSString stringWithFormat:@"%d",resp.errCode]];
         }
     } else if ([resp isKindOfClass:[SendAuthResp class]]){
         SendAuthResp *resp2 = (SendAuthResp *)resp;
@@ -445,16 +453,12 @@ static AppDelegate s_sharedApplication;
             }
         }];
     } else if ([payType isEqualToString:@"alipay"]) {
-        [[CXThirdPayManager sharedApi] aliPayWithPayParam:payParam success:^(PayCode code) {
-            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].paySuccessMethod param:@"success"];
-        } failure:^(PayCode code) {
-            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].paySuccessMethod param:@"failure"];
+        [[CXThirdPayManager sharedApi] aliPayWithPayParam:payParam success:nil failure:^(PayCode code) {
+            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].paySuccessMethod param:@"-1"];
         }];
     } else if ([payType isEqualToString:@"wx"]) {
-        [[CXThirdPayManager sharedApi] wxPayWithPayParam:payParam success:^(PayCode code) {
-            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].paySuccessMethod param:@"success"];
-        } failure:^(PayCode code) {
-            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].paySuccessMethod param:@"failure"];
+        [[CXThirdPayManager sharedApi] wxPayWithPayParam:payParam success:nil failure:^(PayCode code) {
+            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].paySuccessMethod param:@"-1"];
         }];
     }
 }

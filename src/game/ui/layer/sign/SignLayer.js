@@ -4,6 +4,7 @@ load('game/ui/layer/sign/SignLayer', function () {
     let SignMdt = include('game/ui/layer/sign/SignMdt')
     let GameEvent = include('game/config/GameEvent')
     let LocalSave = include('game/public/LocalSave')
+    let GameUtil = include('game/public/GameUtil')
     let SignLayer = BaseLayer.extend({
         _className: 'signLayer',
         ctor: function () {
@@ -66,6 +67,8 @@ load('game/ui/layer/sign/SignLayer', function () {
 
         initView: function () {
 
+            this.signDataList.setScrollBarEnabled(false)
+
             this.becomeBtn.setVisible(false)
             this.upgradeBtn.setVisible(false)
             this.renewBtn.setVisible(false)
@@ -86,12 +89,14 @@ load('game/ui/layer/sign/SignLayer', function () {
             }
         },
 
-        onExplainClick: function () {
+        onExplainClick: function (sender) {
+            GameUtil.delayBtn(sender);
             this.poupPnl.setVisible(true)
             this.rulePnl.setVisible(true)
         },
 
-        onHideRulePnlClick: function () {
+        onHideRulePnlClick: function (sender) {
+            GameUtil.delayBtn(sender);
             this.poupPnl.setVisible(false)
             this.rulePnl.setVisible(false)
         },
@@ -100,7 +105,8 @@ load('game/ui/layer/sign/SignLayer', function () {
 
         },
 
-        onCloseClick: function () {
+        onCloseClick: function (sender) {
+            GameUtil.delayBtn(sender);
             appInstance.sendNotification(GameEvent.HALL_RED_GET)
             appInstance.uiManager().removeUI(this)
         },
@@ -144,8 +150,8 @@ load('game/ui/layer/sign/SignLayer', function () {
 
         },
 
-        onVideoAcceptClicked: function () {
-
+        onVideoAcceptClicked: function (sender) {
+            GameUtil.delayBtn(sender);
             if (this.isCanReceiveRewards()) {
                 appInstance.gameAgent().Tips('已领取，请勿重复领取！')
                 return
@@ -162,8 +168,8 @@ load('game/ui/layer/sign/SignLayer', function () {
             }
         },
 
-        onOrdinaryAcceptClicked: function () {
-
+        onOrdinaryAcceptClicked: function (sender) {
+            GameUtil.delayBtn(sender);
             this.onAcceptSignAwards(1)
 
         },
@@ -373,8 +379,8 @@ load('game/ui/layer/sign/SignLayer', function () {
             this._flag = flag
         },
 
-        onGoVIPBtnClicked: function () {
-
+        onGoVIPBtnClicked: function (sender) {
+            GameUtil.delayBtn(sender);
             appInstance.gameAgent().addPopUI(ResConfig.Ui.MemberLayer)
             this.onCloseClick()
 

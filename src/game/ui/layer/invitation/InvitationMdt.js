@@ -153,7 +153,7 @@ load('game/ui/layer/invitation/InvitationMdt', function () {
 
             let date = new Date(timestamp)
             data.timeDays = (date.getFullYear()) + "-" + (this.padLeftZero(date.getMonth() + 1)) + "-" + (this.padLeftZero(date.getDate()))
-            data.timeHours = (this.padLeftZero(date.getHours())) + "-" + (this.padLeftZero(date.getMinutes()))
+            data.timeHours = (this.padLeftZero(date.getHours())) + ":" + (this.padLeftZero(date.getMinutes()))
 
         },
 

@@ -72,6 +72,9 @@ load('game/config/GameEvent', function () {
         'HALL_FEEDBACK_LIST': 'HALL_FEEDBACK_LIST',
         'HALL_FEEDBACK_SUBMIT': 'HALL_FEEDBACK_SUBMIT',
         'HALL_FEEDBACK_INFO': 'HALL_FEEDBACK_INFO',
+        'HALL_EMAIL_INFO': 'HALL_EMAIL_INFO',
+        'HALL_EMAIL_DEL': 'HALL_EMAIL_DEL',
+        'HALL_EMAIL_RECEIVE': 'HALL_EMAIL_RECEIVE',
     }
 
     return GameEvent

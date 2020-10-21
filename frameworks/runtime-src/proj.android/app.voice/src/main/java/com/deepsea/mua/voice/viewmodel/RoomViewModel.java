@@ -280,19 +280,6 @@ public class RoomViewModel extends ViewModel {
         Log.d("AG_EX_AV", jsonObject.toString());
     }
 
-    /**
-     * 禁麦
-     *
-     * @param level
-     * @param number
-     */
-    public void forbidMicro(int level, int number) {
-        JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("MsgId", 10);
-        jsonObject.addProperty("Level", level);
-        jsonObject.addProperty("Number", number);
-        sendMessage(jsonObject.toString());
-    }
 
     /**
      * 取消禁麦

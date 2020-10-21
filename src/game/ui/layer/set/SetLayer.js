@@ -4,7 +4,7 @@ load('game/ui/layer/set/SetLayer', function () {
     let BaseLayer = include('public/ui/BaseLayer')
     let GameEvent = include('game/config/GameEvent')
     let LocalSave = include('game/public/LocalSave')
-
+    let GameUtil = include('game/public/GameUtil')
     let layer = BaseLayer.extend({
         _className: 'SetLayer',
         ctor: function (data) {
@@ -77,6 +77,7 @@ load('game/ui/layer/set/SetLayer', function () {
         },
 
         onEffectBtnClick: function (sender) {
+            GameUtil.delayBtn(sender);
             if (sender.isSelected()) {
                 this.EffectSlider.setPercent(100)
                 this.EffectBtn.setSelected(true)
@@ -87,6 +88,7 @@ load('game/ui/layer/set/SetLayer', function () {
         },
 
         onMusicBtnClick: function (sender) {
+            GameUtil.delayBtn(sender);
             if (sender.isSelected()) {
                 this.MusicSlider.setPercent(100)
                 this.MusicBtn.setSelected(true)
@@ -98,6 +100,7 @@ load('game/ui/layer/set/SetLayer', function () {
         },
 
         onEmojBtnClick: function (sender) {
+            GameUtil.delayBtn(sender);
             if (sender.isSelected()) {
 
             } else {
@@ -106,13 +109,15 @@ load('game/ui/layer/set/SetLayer', function () {
         },
 
         onLaguageBtnClick: function (sender) {
+            GameUtil.delayBtn(sender);
             if (sender.isSelected()) {
                 global.localStorage.setStringForKey(LocalSave.LocalLanguage, 'putong')
             } else {
                 global.localStorage.setStringForKey(LocalSave.LocalLanguage, 'dongbei')
             }
         },
-        onExitBtnClick: function () {
+        onExitBtnClick: function (sender) {
+            GameUtil.delayBtn(sender);
             appInstance.gameAgent().goLoginScene()
         },
         onEnter: function () {
@@ -122,7 +127,8 @@ load('game/ui/layer/set/SetLayer', function () {
         onExit: function () {
             this._super()
         },
-        onCloseClick: function () {
+        onCloseClick: function (sender) {
+            GameUtil.delayBtn(sender);
             appInstance.audioManager().flush()
             appInstance.sendNotification(GameEvent.HALL_RED_GET)
             appInstance.uiManager().removeUI(this)

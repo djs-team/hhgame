@@ -699,9 +699,9 @@
 		006150B8250B94D000BB7620 /* CXBaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00614DFE250B94CD00BB7620 /* CXBaseWebViewController.m */; };
 		006150BB250B960C00BB7620 /* CXConfigObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 006150BA250B960C00BB7620 /* CXConfigObject.m */; };
 		0072141A25359A7F006A2FCE /* live_room_online.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0072141925359A7F006A2FCE /* live_room_online.gif */; };
-		007214232535CC31006A2FCE /* Address.plist in Resources */ = {isa = PBXBuildFile; fileRef = 007214222535CC31006A2FCE /* Address.plist */; };
 		0072144D2535CEDC006A2FCE /* CXCityPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0072144C2535CEDC006A2FCE /* CXCityPickerView.m */; };
 		007214512535CEEA006A2FCE /* CXCityPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 007214502535CEEA006A2FCE /* CXCityPickerView.xib */; };
+		007B1FE0253EBC5F00652BB5 /* Address.plist in Resources */ = {isa = PBXBuildFile; fileRef = 007B1FDF253EBC5E00652BB5 /* Address.plist */; };
 		00802A9B250C651700F43A32 /* WSLScanView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00802A96250C651700F43A32 /* WSLScanView.m */; };
 		00802A9C250C651700F43A32 /* WSLNativeScanTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 00802A98250C651700F43A32 /* WSLNativeScanTool.m */; };
 		00802A9E250C6DA100F43A32 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00802A9D250C6DA000F43A32 /* CoreMedia.framework */; };
@@ -1936,10 +1936,10 @@
 		006150B9250B960C00BB7620 /* CXConfigObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXConfigObject.h; sourceTree = "<group>"; };
 		006150BA250B960C00BB7620 /* CXConfigObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXConfigObject.m; sourceTree = "<group>"; };
 		0072141925359A7F006A2FCE /* live_room_online.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = live_room_online.gif; sourceTree = "<group>"; };
-		007214222535CC31006A2FCE /* Address.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Address.plist; sourceTree = "<group>"; };
 		0072144B2535CEDC006A2FCE /* CXCityPickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXCityPickerView.h; sourceTree = "<group>"; };
 		0072144C2535CEDC006A2FCE /* CXCityPickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXCityPickerView.m; sourceTree = "<group>"; };
 		007214502535CEEA006A2FCE /* CXCityPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CXCityPickerView.xib; sourceTree = "<group>"; };
+		007B1FDF253EBC5E00652BB5 /* Address.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Address.plist; sourceTree = "<group>"; };
 		00802A95250C651700F43A32 /* WSLNativeScanTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSLNativeScanTool.h; sourceTree = "<group>"; };
 		00802A96250C651700F43A32 /* WSLScanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSLScanView.m; sourceTree = "<group>"; };
 		00802A97250C651700F43A32 /* WSLScanView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSLScanView.h; sourceTree = "<group>"; };
@@ -2347,10 +2347,10 @@
 			children = (
 				00614938250B94C600BB7620 /* CXFriendInviteCell.xib */,
 				00614939250B94C600BB7620 /* CXFriendInviteCell.h */,
+				0061493D250B94C600BB7620 /* CXFriendInviteCell.m */,
 				0061493A250B94C600BB7620 /* CXAddFriendGiftListCell.xib */,
 				0061493B250B94C600BB7620 /* CXAddFriendGiftListCell.h */,
 				0061493C250B94C600BB7620 /* CXAddFriendGiftListCell.m */,
-				0061493D250B94C600BB7620 /* CXFriendInviteCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -3483,8 +3483,8 @@
 				00614C2F250B94CA00BB7620 /* CXMineEditProfileViewController.h */,
 				00614C15250B94CA00BB7620 /* CXMineEditProfileViewController.m */,
 				00614C2E250B94CA00BB7620 /* CXMineEditProfileViewController.xib */,
-				007214222535CC31006A2FCE /* Address.plist */,
 				00614C16250B94CA00BB7620 /* userProfile.json */,
+				007B1FDF253EBC5E00652BB5 /* Address.plist */,
 				00614C17250B94CA00BB7620 /* View */,
 			);
 			path = "编辑资料";
@@ -4784,7 +4784,7 @@
 				00614F0A250B94CF00BB7620 /* CXSystemAlertView.xib in Resources */,
 				00615046250B94D000BB7620 /* msg_file@2x.png in Resources */,
 				00614EED250B94CE00BB7620 /* CXLiveRoomBottomApplySeatAlertView.xib in Resources */,
-				007214232535CC31006A2FCE /* Address.plist in Resources */,
+				007B1FE0253EBC5F00652BB5 /* Address.plist in Resources */,
 				00614E6F250B94CE00BB7620 /* CXGameMusicSongerTipView.xib in Resources */,
 				00614FF1250B94CF00BB7620 /* icon_019.gif in Resources */,
 				00615047250B94D000BB7620 /* msg_file_white@3x.png in Resources */,

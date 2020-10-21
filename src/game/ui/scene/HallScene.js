@@ -68,20 +68,25 @@ load('game/ui/scene/HallScene', function () {
             }
         },
 
-        onEmailBtnClick: function () {
+        onEmailBtnClick: function (sender) {
+            GameUtil.delayBtn(sender);
             this.emailBtn.getChildByName('redImg').setVisible(false)
-            appInstance.gameAgent().Tips('敬请期待！！！')
+            appInstance.gameAgent().addPopUI(ResConfig.Ui.EmailLayer)
+            // appInstance.gameAgent().Tips('敬请期待！！！')
         },
 
-        onFukaShopClick: function () {
+        onFukaShopClick: function (sender) {
+            GameUtil.delayBtn(sender);
             appInstance.gameAgent().addPopUI(ResConfig.Ui.FukaShopLayer)
         },
 
-        onGoAreanClick: function () {
+        onGoAreanClick: function (sender) {
+            GameUtil.delayBtn(sender);
             appInstance.gameAgent().addPopUI(ResConfig.Ui.ArenaLayer)
         },
 
-        onPhotoClick: function () {
+        onPhotoClick: function (sender) {
+            GameUtil.delayBtn(sender);
             //  this.personalDataPnl.setVisible(true)
             appInstance.gameAgent().addPopUI(ResConfig.Ui.PersonalLayer)
         },
@@ -97,62 +102,73 @@ load('game/ui/scene/HallScene', function () {
         onEmailClick: function () {
             appInstance.gameAgent().addPopUI(ResConfig.Ui.EmailLayer)
         },
-        onInvitationClick: function () {
-
+        onInvitationClick: function (sender) {
+            GameUtil.delayBtn(sender);
             this.invitationPnl.getChildByName('redImg').setVisible(false)
             appInstance.gameAgent().addUI(ResConfig.Ui.InvitationLayer)
         },
 
-        onHideMorePnlClick: function () {
+        onHideMorePnlClick: function (sender) {
+            GameUtil.delayBtn(sender);
             this.morePnl.setVisible(false)
         },
-        onTurnTableClick: function () {
+        onTurnTableClick: function (sender) {
+            GameUtil.delayBtn(sender);
             appInstance.gameAgent().addUI(ResConfig.Ui.TurnTableLayer)
         },
 
-        onFeedbackBtnClick: function () {
+        onFeedbackBtnClick: function (sender) {
+            GameUtil.delayBtn(sender);
             this.morePnl.setVisible(false)
             appInstance.gameAgent().addPopUI(ResConfig.Ui.FeedBackLayer)
         },
 
-        onTaskClick: function () {
+        onTaskClick: function (sender) {
+            GameUtil.delayBtn(sender);
             this.taskPnl.getChildByName('redImg').setVisible(false)
             appInstance.gameAgent().addPopUI(ResConfig.Ui.TaskLayer)
         },
-        onCashCowClick: function () {
-
+        onCashCowClick: function (sender) {
+            GameUtil.delayBtn(sender);
             appInstance.gameAgent().addPopUI(ResConfig.Ui.CashCowLayer)
 
         },
 
 
-        onSignBtnClick: function () {
+        onSignBtnClick: function (sender) {
+            GameUtil.delayBtn(sender);
             appInstance.gameAgent().addPopUI(ResConfig.Ui.SignLayer)
         },
 
-        onMemberClick: function () {
+        onMemberClick: function (sender) {
+            GameUtil.delayBtn(sender);
             this.guiZuBtn.getChildByName('redImg').setVisible(false)
             appInstance.gameAgent().addPopUI(ResConfig.Ui.MemberLayer)
         },
 
-        onCoinShopClick: function () {
+        onCoinShopClick: function (sender) {
+            GameUtil.delayBtn(sender);
             appInstance.gameAgent().addPopUI(ResConfig.Ui.CoinShopLayer)
         },
 
-        onGoShopClick: function () {
+        onGoShopClick: function (sender) {
+            GameUtil.delayBtn(sender);
             let shopClass = include('game/ui/layer/shop/ShopLayer')
             let shopUI = appInstance.uiManager().createPopUI(shopClass)
             appInstance.sceneManager().getCurScene().addChild(shopUI)
         },
-        onCoinGameClick: function () {
+        onCoinGameClick: function (sender) {
+            GameUtil.delayBtn(sender);
             appInstance.gameAgent().addPopUI(ResConfig.Ui.CoinGameLayer)
         },
 
-        onRoleClick: function () {
+        onRoleClick: function (sender) {
+            GameUtil.delayBtn(sender);
             appInstance.gameAgent().addPopUI(ResConfig.Ui.RoleLayer)
         },
 
-        onLiveBroadcastClick: function () {
+        onLiveBroadcastClick: function (sender) {
+            GameUtil.delayBtn(sender);
             //跳转直播界面
             let vipCode = appInstance.dataManager().getUserData().vipCode
             if(vipCode <= 0){
@@ -171,12 +187,14 @@ load('game/ui/scene/HallScene', function () {
 
         },
 
-        onSetBtnClick: function () {
+        onSetBtnClick: function (sender) {
+            GameUtil.delayBtn(sender);
             this.onHideMorePnlClick()
             appInstance.gameAgent().addPopUI(ResConfig.Ui.SetLayer)
         },
 
-        goChooseCity: function () {
+        goChooseCity: function (sender) {
+            GameUtil.delayBtn(sender);
             let viewData = {
                 from: 'HallScene'
             }
@@ -206,8 +224,8 @@ load('game/ui/scene/HallScene', function () {
             this.onHideMorePnlClick()
         },
 
-        onAuthenticationClick: function () {
-
+        onAuthenticationClick: function (sender) {
+            GameUtil.delayBtn(sender);
             this.onHideMorePnlClick()
             appInstance.gameAgent().addPopUI(ResConfig.Ui.Authentication)
 
@@ -356,7 +374,8 @@ load('game/ui/scene/HallScene', function () {
 
         },
 
-        onStartQuickBtnClick: function () {
+        onStartQuickBtnClick: function (sender) {
+            GameUtil.delayBtn(sender);
             let goMsg = {}
             if (this._peopleNum === 2) {
                 goMsg.roomMode = 2

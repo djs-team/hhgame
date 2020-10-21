@@ -65,21 +65,20 @@ public class FriendMsgAdapter extends BaseBindingAdapter<FriendInfoBean, ItemFri
         } else {
             ViewBindUtils.setVisible(holder.binding.unreadMsgNumber, false);
         }
-        if (item.getOnline().equals("0")) {
+
+        String str = item.getOnline_str();
+        if (str.contains("离线") || str.contains("刚刚在线")) {
             ViewBindUtils.setVisible(holder.binding.tvStateDesc, false);
             ViewBindUtils.setVisible(holder.binding.tvStateBg, true);
             holder.binding.tvStateBg.setWithBackgroundColor(Color.parseColor("#b5b5b6"));
+        } else if (str.contains("在线")) {
+            ViewBindUtils.setVisible(holder.binding.tvStateDesc, false);
+            ViewBindUtils.setVisible(holder.binding.tvStateBg, true);
+            holder.binding.tvStateBg.setWithBackgroundColor(Color.parseColor("#10E770"));
         } else {
-            String str = item.getOnline_str();
-            if (str.contains("在线")) {
-                ViewBindUtils.setVisible(holder.binding.tvStateDesc, false);
-                ViewBindUtils.setVisible(holder.binding.tvStateBg, true);
-                holder.binding.tvStateBg.setWithBackgroundColor(Color.parseColor("#10E770"));
-            } else {
-                ViewBindUtils.setVisible(holder.binding.tvStateDesc, true);
-                ViewBindUtils.setVisible(holder.binding.tvStateBg, false);
-                StateUtils.setState(holder.binding.tvStateDesc, item.getOnline_str());
-            }
+            ViewBindUtils.setVisible(holder.binding.tvStateDesc, true);
+            ViewBindUtils.setVisible(holder.binding.tvStateBg, false);
+            StateUtils.setState(holder.binding.tvStateDesc, item.getOnline_str());
         }
 
 

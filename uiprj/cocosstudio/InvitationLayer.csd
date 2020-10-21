@@ -536,7 +536,7 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="myInvitationsPnl" Visible="False" ActionTag="-266815369" Tag="524" IconVisible="False" LeftMargin="403.9542" RightMargin="182.0458" TopMargin="114.2739" BottomMargin="133.7261" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="myInvitationsPnl" ActionTag="-266815369" Tag="524" IconVisible="False" LeftMargin="403.9542" RightMargin="182.0458" TopMargin="114.2739" BottomMargin="133.7261" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="694.0000" Y="472.0000" />
                 <Children>
                   <AbstractNodeData Name="dataText" ActionTag="-1442440843" Tag="428" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="184.5000" RightMargin="184.5000" TopMargin="218.0000" BottomMargin="218.0000" FontSize="36" LabelText="请移至代理后台查询" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -630,14 +630,14 @@
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="idText" ActionTag="1530413569" Tag="510" IconVisible="False" LeftMargin="216.1762" RightMargin="368.9038" TopMargin="35.7706" BottomMargin="24.3594" FontSize="26" LabelText="玩家ID" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                        <Size X="81.0000" Y="26.0000" />
+                      <AbstractNodeData Name="idText" ActionTag="1530413569" Tag="510" IconVisible="False" LeftMargin="206.6762" RightMargin="359.4038" TopMargin="34.2706" BottomMargin="22.8594" IsCustomSize="True" FontSize="26" LabelText="玩家ID" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="100.0000" Y="29.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="256.6762" Y="37.3594" />
                         <Scale ScaleX="1.1215" ScaleY="1.0000" />
                         <CColor A="255" R="138" G="74" B="0" />
                         <PrePosition X="0.3854" Y="0.4338" />
-                        <PreSize X="0.1216" Y="0.3019" />
+                        <PreSize X="0.1501" Y="0.3367" />
                         <FontResource Type="Normal" Path="font/hkhbtW12.ttc" Plist="" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />

@@ -22,8 +22,6 @@
 @property (nonatomic, assign) NSInteger messageCount;
 @property (nonatomic, assign) NSInteger systemCount;
 
-@property (nonatomic) BOOL isViewAppear;
-
 @end
 
 @implementation CXFriendViewController
@@ -67,26 +65,20 @@
     self.navigationController.navigationBarHidden = YES;
     
     [self getUnReadCountData];
-    
-    _isViewAppear = YES;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     
     self.navigationController.navigationBarHidden = NO;
-    
-    _isViewAppear = NO;
 }
 
 - (void)reloadFriendMessage:(NSNotification *)object {
-    if (_isViewAppear == YES) {
-        NSString *unread = object.userInfo[@"unreadCount"];
-        NSDictionary *systemItem = @{@"title":@"好友", @"count":unread.integerValue > 0 ? unread : @""};
-        [self.titleArray replaceObjectAtIndex:0 withObject:systemItem];
-        self.titles = [NSArray arrayWithArray:self.titleArray];
-        [self reloadData];
-    }
+    NSString *unread = object.userInfo[@"unreadCount"];
+    NSDictionary *systemItem = @{@"title":@"好友", @"count":unread.integerValue > 0 ? unread : @""};
+    [self.titleArray replaceObjectAtIndex:0 withObject:systemItem];
+    self.titles = [NSArray arrayWithArray:self.titleArray];
+    [self reloadData];
 }
 
 - (void)getUnReadCountData {

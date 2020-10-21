@@ -120,7 +120,6 @@
         }];
        
         [weakself.dataArrays removeAllObjects];
-        NSMutableArray *tempArray = [NSMutableArray array];
         NSArray *models = [EMConversationHelper modelsFromEMConversations:sorted];
         [weakself.dataArrays addObjectsFromArray:models];
        
@@ -140,7 +139,8 @@
             return(NSComparisonResult)NSOrderedAscending;
         } else {
             return(NSComparisonResult)NSOrderedDescending;
-        }}];
+        }
+    }];
 
     NSMutableArray *conversationModels = [NSMutableArray array];
     for (EMConversationModel *model in sorted) {
@@ -233,7 +233,8 @@
 
 - (void)messagesDidReceive:(NSArray *)aMessages
 {
-    [self performSelector:@selector(_reSortedConversationModelsAndReloadView) withObject:nil afterDelay:0.8];
+//    [self performSelector:@selector(_reSortedConversationModelsAndReloadView) withObject:nil afterDelay:0.8];
+    [self getConversationsData];
 }
 #pragma mark - Private
 - (NSString *)_latestMessageTitleForConversationModel:(EMConversation *)conversationModel {

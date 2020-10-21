@@ -71,7 +71,7 @@
     NSString *signature = [CocoaSecurity md5:[CXClientModel instance].token].hexLower;
     NSDictionary *param = @{
         @"signature": signature,
-        @"user_id": _user_Id,
+        @"user_id": _user_Id ?: [CXClientModel instance].userId,
         @"device": @"iOS",
     };
     kWeakSelf

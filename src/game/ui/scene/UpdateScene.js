@@ -12,11 +12,8 @@ load('game/ui/scene/UpdateScene', function () {
         _className: 'UpdateScene',
         RES_BINDING: function () {
             return {
-                // 'info_pnl/slider_bg': { },
-                // 'info_pnl/sliderPnl': { },
-                // 'info_pnl/slider_bar': { },
-                // 'info_pnl/slider_txt': { },
-                // 'info_pnl/version_txt': { }
+                'pnl/LoadingBar': { },
+                'pnl/StateTxt': { }
             }
         },
         ctor: function () {
@@ -24,8 +21,8 @@ load('game/ui/scene/UpdateScene', function () {
             this.registerMediator(new UpdateMdt(this))
         },
 
-        onCreate: function () {
-            this._super()
+        showView: function () {
+            // this.goLoginScene()
         },
 
         onEnter: function () {
@@ -33,8 +30,6 @@ load('game/ui/scene/UpdateScene', function () {
             this.initData()
             this.initView()
             this.showView()
-
-            this.goLoginScene()
         },
 
         onExit: function () {
@@ -42,16 +37,18 @@ load('game/ui/scene/UpdateScene', function () {
         },
 
         initData: function () {
+            this._percent = 0
+            this._totalSize = 0
+            this._downloadSize = 0
 
         },
 
         initView: function () {
-
+            this.StateTxt.setString('正在检查热更...')
+            this.LoadingBar.setPercent(0)
         },
 
-        showView: function () {
 
-        },
 
         goLoginScene: function () {
             let LoginScene = include('game/ui/scene/LoginScene')
@@ -111,56 +108,6 @@ load('game/ui/scene/UpdateScene', function () {
                 })
             })
             updater.update()
-        },
-
-        remoteConfigFinish_local: function () {
-            if (cc.sys.isMobile) {
-                this.startUpdate()
-            } else {
-                this.goLoginScene()
-            }
-        },
-
-        afterForceUpdate: function () {
-            appInstance.connectorApi().getRemoteConfig()
-        },
-        /**
-         * 强制更新回调
-         * @param result
-         */
-        forceUpdateCallBack: function (result) {
-            if (result.code === HttpType.ResultCode.OK) {
-                let data = result.data
-                let localversion = appInstance.nativeApi().getNativeVersion()
-                if (cc.sys.OS_ANDROID === cc.sys.os) {
-                    data = data.android
-                } else if (cc.sys.OS_IOS === cc.sys.os) {
-                    data = data.ios
-                }
-                if (!data.isneed) {
-                    this._forUpdateStatus = this._forceStatus.needntForce
-                    this.afterForceUpdate()
-                    return
-                }
-                if (utils.compareVersion(localversion, data.miniversion) < 0) {
-                    utils.alertMsg(data.notice, function () {
-                        this._forUpdateStatus = this._forceStatus.needForce
-                        cc.Application.getInstance().openURL(data.forceurl)
-                    })
-                } else {
-                    this._forUpdateStatus = this._forceStatus.dontForce
-                    this.afterForceUpdate()
-                }
-            } else {
-                this._forUpdateStatus = this._forceStatus.forceError
-                this.afterForceUpdate()
-            }
-        },
-        /**
-         * 检查强更的逻辑
-         */
-        checkForceUpdate: function () {
-
         }
     })
 

@@ -1,0 +1,18 @@
+{
+"manifestUrl":"http://127.0.0.1/hhmj/",
+"main":{
+	"src":[
+		"../src"
+	],
+	"res":"../res"
+},
+"modules":{
+	"nmmj":{
+		"src":"../../../modules/nmmj/src",
+		"res":"../../../modules/nmmj/res",
+		"gameID":"zznmmj"
+	}
+},
+"outDir":"../web",
+"rollBack":"../web"
+}

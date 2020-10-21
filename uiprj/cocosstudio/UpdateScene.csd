@@ -32,6 +32,37 @@
                 <PreSize X="1.0000" Y="1.0000" />
                 <FileData Type="Normal" Path="png/denglu_bg.png" Plist="" />
               </AbstractNodeData>
+              <AbstractNodeData Name="Image_1" ActionTag="-499676422" Tag="162" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="297.5000" RightMargin="297.5000" TopMargin="492.0000" BottomMargin="172.0000" LeftEage="226" RightEage="226" TopEage="18" BottomEage="18" Scale9OriginX="226" Scale9OriginY="18" Scale9Width="233" Scale9Height="20" ctype="ImageViewObjectData">
+                <Size X="685.0000" Y="56.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="640.0000" Y="200.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5000" Y="0.2778" />
+                <PreSize X="0.5352" Y="0.0778" />
+                <FileData Type="Normal" Path="login/update_slider_bg.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="LoadingBar" ActionTag="231737399" Tag="161" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="297.5000" RightMargin="297.5000" TopMargin="492.0000" BottomMargin="172.0000" ctype="LoadingBarObjectData">
+                <Size X="685.0000" Y="56.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="640.0000" Y="200.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5000" Y="0.2778" />
+                <PreSize X="0.5352" Y="0.0778" />
+                <ImageFileData Type="Normal" Path="login/update_slider_bar.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="StateTxt" ActionTag="-502728903" Tag="163" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="445.0000" RightMargin="445.0000" TopMargin="425.0000" BottomMargin="265.0000" FontSize="30" LabelText="游戏正在干什么呢我也不知道" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="390.0000" Y="30.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="640.0000" Y="280.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="0" B="0" />
+                <PrePosition X="0.5000" Y="0.3889" />
+                <PreSize X="0.3047" Y="0.0417" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="640.0000" Y="360.0000" />

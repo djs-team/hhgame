@@ -1141,12 +1141,12 @@
                     },
                     "NodeNormalFileData": {
                       "Type": "Normal",
-                      "Path": "set/sz_2.png",
+                      "Path": "set/sz_5.png",
                       "Plist": ""
                     },
                     "NodeDisableFileData": {
                       "Type": "Normal",
-                      "Path": "set/sz_2.png",
+                      "Path": "set/sz_5.png",
                       "Plist": ""
                     },
                     "TouchEnable": true,
@@ -1172,15 +1172,15 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": -155.9774,
-                    "RightMargin": 69.9774,
-                    "TopMargin": -12.389,
-                    "BottomMargin": -21.611,
+                    "LeftMargin": -175.4774,
+                    "RightMargin": 50.4774,
+                    "TopMargin": -21.889,
+                    "BottomMargin": -31.111,
                     "Tag": 275,
                     "ActionTag": 1047162224,
                     "Size": {
-                      "X": 86.0,
-                      "Y": 34.0
+                      "X": 125.0,
+                      "Y": 53.0
                     },
                     "Name": "EmojBtn",
                     "ctype": "CheckBoxObjectData"
@@ -1258,12 +1258,12 @@
                     },
                     "NodeNormalFileData": {
                       "Type": "Normal",
-                      "Path": "set/sz_2.png",
+                      "Path": "set/sz_5.png",
                       "Plist": ""
                     },
                     "NodeDisableFileData": {
                       "Type": "Normal",
-                      "Path": "set/sz_2.png",
+                      "Path": "set/sz_5.png",
                       "Plist": ""
                     },
                     "TouchEnable": true,
@@ -1289,15 +1289,15 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 170.6758,
-                    "RightMargin": -256.6758,
-                    "TopMargin": -13.6307,
-                    "BottomMargin": -20.3693,
+                    "LeftMargin": 151.1758,
+                    "RightMargin": -276.1758,
+                    "TopMargin": -23.1307,
+                    "BottomMargin": -29.8693,
                     "Tag": 276,
                     "ActionTag": 1960847788,
                     "Size": {
-                      "X": 86.0,
-                      "Y": 34.0
+                      "X": 125.0,
+                      "Y": 53.0
                     },
                     "Name": "LaguageBtn",
                     "ctype": "CheckBoxObjectData"
@@ -1341,6 +1341,7 @@
         "set/sz_2.png",
         "set/sz_3.png",
         "set/sz_4.png",
+        "set/sz_5.png",
         "set/sz_6.png",
         "set/sz_7.png",
         "set/sz_8.png",

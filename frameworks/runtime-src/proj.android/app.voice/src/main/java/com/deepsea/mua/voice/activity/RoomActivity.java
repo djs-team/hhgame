@@ -2220,6 +2220,8 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
     @Override
     public void finish() {
         Log.d("exit", "finish");
+        super.finish();
+
         try {
             if (aAlertDialog != null && aAlertDialog.isShowing()) {
                 aAlertDialog.dismiss();
@@ -2246,7 +2248,6 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
         } catch (Exception e) {
 
         }
-        super.finish();
 
     }
 
@@ -4624,7 +4625,7 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
 
     @Override
     public void onDestroy() {
-        Log.d("exit", "onDestroy");
+        super.onDestroy();
         try {
             unregisterWxpayResult();
             mRoomJump.destroy();
@@ -4696,7 +4697,6 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
         } catch (Exception e) {
 
         }
-        super.onDestroy();
     }
 
     @Network(netType = NetType.AUTO)

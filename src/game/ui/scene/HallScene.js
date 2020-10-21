@@ -81,6 +81,7 @@ load('game/ui/scene/HallScene', function () {
         },
 
         onGoAreanClick: function (sender) {
+            cc.log('===========onGoAreanClick========')
             GameUtil.delayBtn(sender);
             appInstance.gameAgent().addPopUI(ResConfig.Ui.ArenaLayer)
         },
@@ -281,6 +282,8 @@ load('game/ui/scene/HallScene', function () {
 
             let saishichangAni = appInstance.gameAgent().gameUtil().getAni(ResConfig.AniHall.DatingSaiShiChang)
             saishichangAni.setAnimation(0, 'animation', true)
+            saishichangAni.setLocalZOrder(0)
+            this.matchBtn.setLocalZOrder(100)
             this.matchNd.addChild(saishichangAni)
 
             let gengduowanfaAni = appInstance.gameAgent().gameUtil().getAni(ResConfig.AniHall.DatingGengDuoWanFa)

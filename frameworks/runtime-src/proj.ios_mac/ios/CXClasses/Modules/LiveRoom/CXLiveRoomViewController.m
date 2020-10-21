@@ -8,6 +8,7 @@
 #import "CXLiveRoomViewController.h"
 #import "CXBaseWebViewController.h"
 #import "CXFriendViewController.h"
+#import "CXLiveRoomSetupViewController.h"
 
 #import <AZCategory/UIView+AZGradient.h>
 
@@ -654,6 +655,11 @@
                         }
                     }];
                 }
+            }
+                break;
+            case SocketMessageIDRoomNameUpdate: {
+                self.roomUIView.top_roomNameWidthLayout.constant = [[CXClientModel instance].room.RoomData.RoomName sizeWithFont:[UIFont systemFontOfSize:16]].width + 44;
+                self.roomUIView.top_roomNameLabel.text = [CXClientModel instance].room.RoomData.RoomName;
             }
                 break;
             case SocketMessageIDMicroSeatNumber: { // 同步用户上麦卡数量
@@ -2500,11 +2506,11 @@
             break;
         case 21: // 房间设置
         {
-//            if ([CXClientModel instance].room.UserIdentity != GameUserIdentityNormal) {
-//                [self showRoomInfoViewWithRoomInfo];
-//            } else {
-            [self getUserInfoWith:[CXClientModel instance].room.RoomData.OwnerUserId];
-//            }
+            if ([CXClientModel instance].room.UserIdentity != GameUserIdentityNormal) {
+                [self showRoomInfoViewWithRoomInfo];
+            } else {
+                [self getUserInfoWith:[CXClientModel instance].room.RoomData.OwnerUserId];
+            }
             
         }
             break;
@@ -2635,6 +2641,31 @@
             break;
     }
 }
+
+// 管理员 房间信息弹框
+- (void)showRoomInfoViewWithRoomInfo {
+    __weak typeof(self) wself = self;
+    UIAlertController *sheet = [UIAlertController alertControllerWithTitle:@"房间信息" message:@"" preferredStyle:UIAlertControllerStyleActionSheet];
+//    NSString *lockRoom = [[CXClientModel instance].room.RoomData.RoomLock boolValue] == YES ? @"解锁房间" : @"锁定房间";
+//    [sheet addAction:[UIAlertAction actionWithTitle:lockRoom style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//        SocketMessageSetRoomLock * lock = [SocketMessageSetRoomLock new];
+//        lock.IsLock = @(![[CXClientModel instance].room.RoomData.RoomLock boolValue]);
+//        [[CXClientModel instance] sendSocketRequest:lock withCallback:^(__kindof SocketMessageRequest * _Nonnull request) {
+//            if (request.response.isSuccess) {
+//                [wself toast:@"设置成功"];
+//            } else {
+//                [wself toast:@"设置失败"];
+//            }
+//        }];
+//    }]];
+    [sheet addAction:[UIAlertAction actionWithTitle:@"房间设置" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        CXLiveRoomSetupViewController *vc = [[CXLiveRoomSetupViewController alloc] init];
+        [wself.navigationController pushViewController:vc animated:YES];
+    }]];
+    [sheet addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
+    [self presentViewController:sheet animated:YES completion:nil];
+}
+
 
 #pragma mark - Setter/Getter
 

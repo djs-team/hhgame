@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CXLiveRoomUIView : UIView
 
+@property (weak, nonatomic) IBOutlet UILabel *top_roomNameLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *top_roomNameWidthLayout;
 @property (weak, nonatomic) IBOutlet UIButton *bottom_shareBtn;
 @property (weak, nonatomic) IBOutlet UIButton *roomRedpackBtn;
 

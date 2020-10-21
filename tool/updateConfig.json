@@ -7,10 +7,7 @@
 	"res":"../res"
 },
 "modules":{
-	"nmmj":{
-		"src":"../../../modules/nmmj/src",
-		"res":"../../../modules/nmmj/res",
-		"gameID":"zznmmj"
+	"hhmj":{
 	}
 },
 "outDir":"../web",

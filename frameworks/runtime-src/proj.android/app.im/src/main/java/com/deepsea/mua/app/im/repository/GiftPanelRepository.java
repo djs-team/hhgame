@@ -25,11 +25,11 @@ public class GiftPanelRepository extends BaseRepository {
         super(retrofitApi);
     }
 
-    public LiveData<Resource<GiftListBean>> refresh(String signature) {
+    public LiveData<Resource<GiftListBean>> refresh(String signature,String is_room) {
         return HttpUtils.requestNoCache(new HttpCallback.NoCacheCallback<GiftListBean, BaseApiResult<GiftListBean>>() {
             @Override
             public LiveData<ApiResponse<BaseApiResult<GiftListBean>>> createCall() {
-                return mRetrofitApi.getFriendGiftList(signature);
+                return mRetrofitApi.getFriendGiftList(signature,is_room);
             }
 
             @Override

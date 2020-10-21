@@ -59,12 +59,15 @@ public class FriendAddActivity extends BaseActivity<ActivityFriendAddBinding> {
     String nickName;
     @Autowired
     boolean isAddNoGift;
+    @Autowired
+    String is_room;
 
     @Override
     protected void handleSavedInstanceState(Bundle savedInstanceState) {
         touid = savedInstanceState.getString("touid");
         photo = savedInstanceState.getString("photo");
         nickName = savedInstanceState.getString("nickName");
+        is_room = savedInstanceState.getString("is_room");
         isAddNoGift = savedInstanceState.getBoolean("isAddNoGift");
     }
 
@@ -74,6 +77,7 @@ public class FriendAddActivity extends BaseActivity<ActivityFriendAddBinding> {
         outState.putString("touid", touid);
         outState.putString("photo", photo);
         outState.putString("nickName", nickName);
+        outState.putString("is_room", is_room);
         outState.putBoolean("isAddNoGift", isAddNoGift);
     }
 
@@ -87,6 +91,9 @@ public class FriendAddActivity extends BaseActivity<ActivityFriendAddBinding> {
         }
         if (intent.hasExtra("nickName")) {
             nickName = intent.getStringExtra("nickName");
+        }
+        if (intent.hasExtra("is_room")){
+            is_room=intent.getStringExtra("is_room");
         }
         isAddNoGift = intent.getBooleanExtra("isAddNoGift", false);
     }
@@ -140,7 +147,7 @@ public class FriendAddActivity extends BaseActivity<ActivityFriendAddBinding> {
 
     private void initViewPager() {
         mAdapter = new FriendAddAdapter
-                (getSupportFragmentManager(), touid, nickName, new FriendAddAdapter.OnFriendAddListener() {
+                (getSupportFragmentManager(), touid, nickName,is_room, new FriendAddAdapter.OnFriendAddListener() {
                     @Override
                     public void onSendRequest() {
                         isSendAddMessage = true;

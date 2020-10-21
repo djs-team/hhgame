@@ -37,6 +37,7 @@ public class GuardHeaderAdapter extends BaseBindingAdapter<String, ItemGuardHead
     public GuardHeaderAdapter(Context context) {
         super(context);
 
+
     }
 
     @Override

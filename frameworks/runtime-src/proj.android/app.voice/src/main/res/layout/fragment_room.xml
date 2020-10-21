@@ -35,7 +35,7 @@
                     android:layout_marginLeft="15dp"
                     android:layout_marginTop="13dp"
                     android:layout_marginRight="16dp"
-                    android:visibility="gone"
+                    android:visibility="visible"
                     app:layout_constraintTop_toBottomOf="@id/banner">
 
                     <ImageView
@@ -46,11 +46,11 @@
                         android:src="@drawable/ic_place_room_bg" />
 
                     <TextView
+                        android:layout_marginLeft="14dp"
                         android:id="@+id/tv_room_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentBottom="true"
-                        android:layout_marginLeft="14dp"
                         android:layout_marginBottom="10dp"
                         android:shadowColor="#ff000000"
                         android:shadowDx="0"
@@ -96,6 +96,15 @@
                             android:src="@drawable/ic_room_lock" />
 
                     </RelativeLayout>
+                    <ImageView
+                        android:id="@+id/iv_red_package"
+                        android:layout_width="17dp"
+                        android:layout_height="24dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="11dp"
+                        android:src="@drawable/ic_red_package"
+                        android:visibility="visible"
+                        android:layout_alignParentRight="true" />
                 </RelativeLayout>
 
                 <android.support.v7.widget.RecyclerView

@@ -2,6 +2,7 @@ package com.deepsea.mua.stub.dialog;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+
 import com.deepsea.mua.core.dialog.BaseDialog;
 import com.deepsea.mua.core.utils.ToastUtils;
 import com.deepsea.mua.stub.R;
@@ -13,6 +14,7 @@ import com.deepsea.mua.stub.mvp.NewSubscriberCallBack;
 import com.deepsea.mua.stub.network.HttpHelper;
 import com.deepsea.mua.stub.utils.UserUtils;
 import com.deepsea.mua.stub.utils.ViewBindUtils;
+
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
@@ -32,6 +34,20 @@ public class SexEditDialog extends BaseDialog<DialogEditSexBinding> {
     public void dismiss() {
         super.dismiss();
 
+    }
+
+    public interface onSexEditListener {
+        void onResult(int result);//-1 取消  0 修改成功 1 修改失败
+    }
+
+    private onSexEditListener listener;
+
+    public void setListener(onSexEditListener listener) {
+        this.listener = listener;
+    }
+
+    public void isCancel(boolean mCancelable) {
+        setCancelable(mCancelable);
     }
 
     @Override
@@ -87,6 +103,9 @@ public class SexEditDialog extends BaseDialog<DialogEditSexBinding> {
                     @Override
                     protected void onError(int errorCode, String errorMsg) {
                         ToastUtils.showToast(errorMsg);
+                        if (listener != null) {
+                            listener.onResult(1);
+                        }
                         dismiss();
                     }
 
@@ -94,6 +113,9 @@ public class SexEditDialog extends BaseDialog<DialogEditSexBinding> {
                     protected void onSuccess(BaseApiResult result) {
                         User user = UserUtils.getUser();
                         user.setSex(defaultSextFlag);
+                        if (listener != null) {
+                            listener.onResult(0);
+                        }
                         dismiss();
                     }
                 });

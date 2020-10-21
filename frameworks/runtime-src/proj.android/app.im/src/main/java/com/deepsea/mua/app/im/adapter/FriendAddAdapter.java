@@ -19,10 +19,10 @@ public class FriendAddAdapter extends FragmentPagerAdapter {
         void  onSendRequest();
     }
 
-    public FriendAddAdapter(FragmentManager fm, String touid, String toUserName,OnFriendAddListener mListener) {
+    public FriendAddAdapter(FragmentManager fm, String touid, String toUserName,String is_room,OnFriendAddListener mListener) {
         super(fm);
         RANK_TITLES = new String[]{"购买", "背包"};
-        fragments = new BaseFragment[]{GiftPanelFragment.newInstance(touid,toUserName,mListener),GiftKnapsackFragment.newInstance(touid,toUserName,mListener)};
+        fragments = new BaseFragment[]{GiftPanelFragment.newInstance(touid,toUserName,is_room,mListener),GiftKnapsackFragment.newInstance(touid,toUserName,mListener)};
     }
 
     @Override

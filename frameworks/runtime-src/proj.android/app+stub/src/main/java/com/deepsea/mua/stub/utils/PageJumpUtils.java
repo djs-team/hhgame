@@ -277,12 +277,13 @@ public class PageJumpUtils {
      * 添加好友页
      */
 
-    public static void jumpToFriendAddForResult(Activity mContext, String touid, String photo, String nickName, boolean isAddNoGift) {
+    public static void jumpToFriendAddForResult(Activity mContext, String touid, String photo, String nickName, boolean isAddNoGift,String is_room) {
         ArouterUtils.build(ArouterConst.PAGE_MSG_ADDFRIEND)
                 .withString("touid", touid)
                 .withString("photo", photo)
                 .withString("nickName", nickName)
                 .withBoolean("isAddNoGift", isAddNoGift)
+                .withString("is_room", is_room)
                 .navigation(mContext, Constant.RequestCode.RQ_addFriend);
     }
 

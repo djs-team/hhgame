@@ -1489,7 +1489,7 @@ public interface RetrofitApi {
      */
     @GET("index.php/Api/Friend/friendGiftList")
     LiveData<ApiResponse<BaseApiResult<GiftListBean>>> getFriendGiftList(
-            @Query("signature") String signature);
+            @Query("signature") String signature, @Query("is_room") String is_room);
 
     /**
      * 发送礼物

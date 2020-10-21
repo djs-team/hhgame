@@ -167,6 +167,8 @@ public class RoomFragment extends BaseFragment<FragmentRoomBinding> {
                         RoomsBean.PageInfoBean pageInfo = result.getPageInfo();
                         if (result.getRoom_list().size() > 1) {
                             mAdapter.setNewData(result.getRoom_list().subList(1, result.getRoom_list().size()));
+                        } else {
+                            mAdapter.setNewData(null);
                         }
                         boolean enableLoadMore = pageInfo.getPage() < pageInfo.getTotalPage();
                         mBinding.refreshLayout.setEnableLoadMore(enableLoadMore);

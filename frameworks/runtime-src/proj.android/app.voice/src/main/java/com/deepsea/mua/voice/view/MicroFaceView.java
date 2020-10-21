@@ -300,10 +300,10 @@ public class MicroFaceView extends FrameLayout {
     GuardHeaderAdapter guardHeaderAdapter = null;
 
     private void setRankHeards(List<String> heads, String userId) {
-        boolean musicMode = SongStateUtils.getSingleton2().isChangeView();
-        String singerId = SongStateUtils.getSingleton2().getConsertUserId();
-        boolean isHideHeads = musicMode && !userId.equals(singerId);
-        ViewBindUtils.setVisible(mBinding.ivRankUsers, !isHideHeads);
+//        boolean musicMode = SongStateUtils.getSingleton2().isChangeView();
+//        String singerId = SongStateUtils.getSingleton2().getConsertUserId();
+//        boolean isHideHeads = musicMode && !userId.equals(singerId);
+//        ViewBindUtils.setVisible(mBinding.ivRankUsers, !isHideHeads);
         guardHeaderAdapter = new GuardHeaderAdapter(mContext);
         mBinding.ivRankUsers.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.HORIZONTAL, false));
         mBinding.ivRankUsers.setAdapter(guardHeaderAdapter);

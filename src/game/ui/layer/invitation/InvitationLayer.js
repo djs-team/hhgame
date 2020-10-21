@@ -166,6 +166,8 @@ load('game/ui/layer/invitation/InvitationLayer', function () {
          * 初始化样式
          */
         initView: function () {
+            this.myTaskList.setScrollBarEnabled(false)
+            this.shareTaskList.setScrollBarEnabled(false)
             this.updateInviChoiceBtn()
         },
 

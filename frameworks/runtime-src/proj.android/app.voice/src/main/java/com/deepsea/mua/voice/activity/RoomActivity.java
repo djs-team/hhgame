@@ -1191,7 +1191,7 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
         } else {
             if (!isChangeView) {
                 mBinding.mainSecondOneView.setOnMicUserListener(onMicUserListener);
-            }else {
+            } else {
                 mBinding.mainSecondTwoMusicView.setMicroData(bean);
             }
             mBinding.mainSecondOneView.setOnMicUserListener(onMicUserListener);
@@ -2402,7 +2402,7 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
             });
             aAlertDialog.show();
         });
-        subscribeClick(mBinding.ivApplause, o -> {
+        subscribeClick(mBinding.llApplause, o -> {
             sendOneRose(singerUserId);
         });
         subscribeClick(mBinding.ivDiscGif, o -> {
@@ -3224,7 +3224,7 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
                     } else {
                         mBinding.mainSecondOneView.setMicroData(mainMpInfo);
                     }
-                }else {
+                } else {
                     if (!TextUtils.isEmpty(SongStateUtils.getSingleton2().getConsertUserId())) {
                         mainFaceMusicView.setMicroData(mainMpInfo);
                     } else {
@@ -3299,13 +3299,13 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
         }
 
         if (SongStateUtils.getSingleton2().isChangeView() != isChangeView || isChangeForban) {
-                List<RoomData.MicroInfosBean> data = mMpAdapter.getData();
-                if (mMpAdapter != null && data != null && data.size() > 0) {
-                    for (int i = 0; i < data.size(); i++) {
-                        data.get(i).setRelease(true);
-                    }
-                    mMpAdapter.notifyDataSetChanged();
+            List<RoomData.MicroInfosBean> data = mMpAdapter.getData();
+            if (mMpAdapter != null && data != null && data.size() > 0) {
+                for (int i = 0; i < data.size(); i++) {
+                    data.get(i).setRelease(true);
                 }
+                mMpAdapter.notifyDataSetChanged();
+            }
 
             mHandler.postDelayed(new Runnable() {
                 @Override
@@ -3403,12 +3403,18 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
         int userNumber = syncMicroRose.getNumber();
 
         int pos = mMpAdapter.getItemPosForMany(userLevel, userNumber);
+        Log.d("AG_EX_AV", pos+":pos");
+
         if (pos != -1) {
             mMpAdapter.getData().get(pos).setRolse(syncMicroRose.getRose());
             mMpAdapter.getData().get(pos).setRoseRanks(syncMicroRose.getRoseRanks());
             mMpAdapter.notifyItemChanged(pos, IMicroEvent.UpdateRanks);
         }
-        Log.d("AG_EX_AV", String.valueOf(mainMpInfo != null));
+        boolean flag=mainMpInfo != null && mainMpInfo.getType() == userLevel && mainMpInfo.getNumber() == userNumber;
+        Log.d("AG_EX_AV", flag+"");
+        Log.d("AG_EX_AV", "userLevel"+userLevel+"userNumber:"+userNumber);
+        Log.d("AG_EX_AV", "userLevel-mp"+mainMpInfo.getType()+"userNumber-mp:"+mainMpInfo.getNumber());
+
         if (mainMpInfo != null && mainMpInfo.getType() == userLevel && mainMpInfo.getNumber() == userNumber) {
             mainMpInfo.setRolse(syncMicroRose.getRose());
             mainMpInfo.setRoseRanks(syncMicroRose.getRoseRanks());
@@ -3928,29 +3934,29 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
     public void onUpMicro(UpMicroMsg bean) {
         RoomData.MicroInfosBean updateBean = bean.getMicroInfo();
         InMicroMemberUtils.getInstance().saveMicroMembers(String.valueOf(updateBean.getType()), updateBean.getUser().getUserId());
-            if (updateBean.getType() == 0) {
-                initMainMp(updateBean);
-            } else {
-                mMpAdapter.onUpdateMicro(updateBean);
-                int pos = mMpAdapter.getItemPos(updateBean.getType(), updateBean.getNumber());
+        if (updateBean.getType() == 0) {
+            initMainMp(updateBean);
+        } else {
+            mMpAdapter.onUpdateMicro(updateBean);
+            int pos = mMpAdapter.getItemPos(updateBean.getType(), updateBean.getNumber());
 
-                if (mMpAdapter.getData().get(pos).getUser() == null) {
-                    RoomData.MicroInfosBean infosBean = mMpAdapter.getData().get(pos);
-                    infosBean.setUser(updateBean.getUser());
-                    infosBean.setNumber(updateBean.getNumber());
-                    infosBean.setType(updateBean.getType());
-                    infosBean.setXinDongZhi(updateBean.getXinDongZhi());
-                    infosBean.setResultUrl(updateBean.getResultUrl());
-                    infosBean.setIsLocked(updateBean.isIsLocked());
-                    infosBean.setResultUrl(updateBean.getResultUrl());
-                    infosBean.setDaojishiShijiandian(updateBean.getDaojishiShijiandian());
-                    infosBean.setDaojishiShichang(updateBean.getDaojishiShichang());
-                }
+            if (mMpAdapter.getData().get(pos).getUser() == null) {
+                RoomData.MicroInfosBean infosBean = mMpAdapter.getData().get(pos);
+                infosBean.setUser(updateBean.getUser());
+                infosBean.setNumber(updateBean.getNumber());
+                infosBean.setType(updateBean.getType());
+                infosBean.setXinDongZhi(updateBean.getXinDongZhi());
+                infosBean.setResultUrl(updateBean.getResultUrl());
+                infosBean.setIsLocked(updateBean.isIsLocked());
+                infosBean.setResultUrl(updateBean.getResultUrl());
+                infosBean.setDaojishiShijiandian(updateBean.getDaojishiShijiandian());
+                infosBean.setDaojishiShichang(updateBean.getDaojishiShichang());
             }
-            if (isChangeView) {
+        }
+        if (isChangeView) {
 //                SongStateUtils.getSingleton2().setChangeView(!isChangeView);
-                mViewModel.getPlaySongParam();
-            }
+            mViewModel.getPlaySongParam();
+        }
 
         EventBus.getDefault().post(new UpdateInRoomMemberEvent());
 
@@ -4592,10 +4598,12 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
         mHandler.post(new Runnable() {
             @Override
             public void run() {
-                aAlertDialog = new AAlertDialog(context);
-                aAlertDialog.setMessage(msg, com.deepsea.mua.stub.R.color.black, 15);
-                aAlertDialog.setButton("确定", com.deepsea.mua.stub.R.color.gray, null);
-                aAlertDialog.show();
+                if (aAlertDialog!=null) {
+                    aAlertDialog = new AAlertDialog(context);
+                    aAlertDialog.setMessage(msg, com.deepsea.mua.stub.R.color.black, 15);
+                    aAlertDialog.setButton("确定", com.deepsea.mua.stub.R.color.gray, null);
+                    aAlertDialog.show();
+                }
             }
         });
 

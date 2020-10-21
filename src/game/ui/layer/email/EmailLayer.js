@@ -182,6 +182,7 @@ load('game/ui/layer/email/EmailLayer', function () {
                 rewardsList.addChild(rewardsCell)
                 rewardsCell.setName('rewards'+data.mailId+j)
                 rewardsCell.getChildByName('rewardPic').loadTexture(information.res);
+                rewardsCell.getChildByName('numValue').setString(information.num);
                 if (data.status==2) {
                     rewardsCell.getChildByName('finishPic').setVisible(true);
                 } else {
@@ -212,6 +213,7 @@ load('game/ui/layer/email/EmailLayer', function () {
             appInstance.gameAgent().httpGame().emailReceiveReq(msg)
         },
         onEmailReceive: function () {
+            appInstance.gameAgent().Tips('------------------------------------领取成功！！！')
             for (let i=0; i<this._rewardCount; i++) {
                 this.rewardList.getChildByName('rewards'+this._rewardMailId+i).getChildByName('finishPic').setVisible(true)
             }

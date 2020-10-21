@@ -1361,8 +1361,10 @@
                     "Tag": 175,
                     "Children": [
                       {
+                        "IsCustomSize": true,
                         "FontSize": 20,
                         "LabelText": "季VIP会员",
+                        "HorizontalAlignmentType": "HT_Center",
                         "OutlineColor": {
                           "G": 0,
                           "B": 0
@@ -1396,25 +1398,27 @@
                           "Y": 0.7874
                         },
                         "PreSize": {
-                          "X": 0.7895,
-                          "Y": 0.4
+                          "X": 0.8772,
+                          "Y": 0.46
                         },
-                        "LeftMargin": 12.44,
-                        "RightMargin": 11.56,
-                        "TopMargin": 0.6306,
-                        "BottomMargin": 29.3694,
+                        "LeftMargin": 7.44,
+                        "RightMargin": 6.56,
+                        "TopMargin": -0.8694,
+                        "BottomMargin": 27.8694,
                         "Tag": 176,
                         "ActionTag": -1441908375,
                         "Size": {
-                          "X": 90.0,
-                          "Y": 20.0
+                          "X": 100.0,
+                          "Y": 23.0
                         },
                         "Name": "vipLevelText",
                         "ctype": "TextObjectData"
                       },
                       {
+                        "IsCustomSize": true,
                         "FontSize": 20,
                         "LabelText": "2倍签到",
+                        "HorizontalAlignmentType": "HT_Center",
                         "OutlineColor": {
                           "G": 0,
                           "B": 0
@@ -1448,25 +1452,27 @@
                           "Y": 0.3411
                         },
                         "PreSize": {
-                          "X": 0.614,
-                          "Y": 0.4
+                          "X": 0.8772,
+                          "Y": 0.46
                         },
-                        "LeftMargin": 25.8292,
-                        "RightMargin": 18.1708,
-                        "TopMargin": 22.9448,
-                        "BottomMargin": 7.0552,
+                        "LeftMargin": 10.8292,
+                        "RightMargin": 3.1708,
+                        "TopMargin": 21.4448,
+                        "BottomMargin": 5.5552,
                         "Tag": 177,
                         "ActionTag": -669332219,
                         "Size": {
-                          "X": 70.0,
-                          "Y": 20.0
+                          "X": 100.0,
+                          "Y": 23.0
                         },
                         "Name": "mulitAcceptText",
                         "ctype": "TextObjectData"
                       },
                       {
+                        "IsCustomSize": true,
                         "FontSize": 20,
                         "LabelText": "普通领取",
+                        "HorizontalAlignmentType": "HT_Center",
                         "OutlineColor": {
                           "G": 0,
                           "B": 0
@@ -1500,18 +1506,18 @@
                           "Y": 0.5852
                         },
                         "PreSize": {
-                          "X": 0.7018,
-                          "Y": 0.4
+                          "X": 0.8772,
+                          "Y": 0.46
                         },
-                        "LeftMargin": 22.3402,
-                        "RightMargin": 11.6598,
-                        "TopMargin": 10.742,
-                        "BottomMargin": 19.258,
+                        "LeftMargin": 12.3402,
+                        "RightMargin": 1.6598,
+                        "TopMargin": 9.242,
+                        "BottomMargin": 17.758,
                         "Tag": 178,
                         "ActionTag": -1859876395,
                         "Size": {
-                          "X": 80.0,
-                          "Y": 20.0
+                          "X": 100.0,
+                          "Y": 23.0
                         },
                         "Name": "singleAcceptText",
                         "ctype": "TextObjectData"
@@ -2820,7 +2826,7 @@
                               "ScaleY": 0.5
                             },
                             "Position": {
-                              "X": 648.1165,
+                              "X": 648.064,
                               "Y": 378.576
                             },
                             "Scale": {
@@ -2839,8 +2845,8 @@
                               "X": 0.386,
                               "Y": 0.4444
                             },
-                            "LeftMargin": 401.105,
-                            "RightMargin": 384.8721,
+                            "LeftMargin": 401.0525,
+                            "RightMargin": 384.9246,
                             "TopMargin": 181.424,
                             "BottomMargin": 218.576,
                             "Tag": 359,
@@ -2941,7 +2947,7 @@
                                   "Y": 0.2379
                                 },
                                 "LeftMargin": 37.9955,
-                                "RightMargin": 36.2975,
+                                "RightMargin": 36.2974,
                                 "TopMargin": 99.912,
                                 "BottomMargin": 143.9742,
                                 "Tag": 364,

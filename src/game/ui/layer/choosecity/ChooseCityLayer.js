@@ -43,7 +43,8 @@ load('game/ui/layer/choosecity/ChooseCityLayer', function () {
         },
 
         initView: function () {
-
+            this.leftListView.setScrollBarEnabled(false)
+            this.cityListView.setScrollBarEnabled(false)
             this.leftListView.setItemModel(this.leftCell)
             this.cityListView.setItemModel(this.cityListCell)
 

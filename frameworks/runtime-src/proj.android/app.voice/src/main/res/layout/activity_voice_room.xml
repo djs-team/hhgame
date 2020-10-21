@@ -685,6 +685,7 @@
                 </RelativeLayout>
 
                 <LinearLayout
+                    android:id="@+id/ll_applause"
                     android:layout_width="50dp"
                     android:layout_height="30dp"
                     android:layout_below="@id/tv_music_song_name"

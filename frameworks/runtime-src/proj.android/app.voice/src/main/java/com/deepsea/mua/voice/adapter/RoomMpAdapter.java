@@ -4,10 +4,12 @@ import android.content.Context;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
+import com.deepsea.mua.core.utils.JsonConverter;
 import com.deepsea.mua.stub.adapter.BaseBindingAdapter;
 import com.deepsea.mua.stub.adapter.BindingViewHolder;
 import com.deepsea.mua.stub.entity.socket.RoomData;
@@ -53,7 +55,7 @@ public class RoomMpAdapter extends BaseBindingAdapter<RoomData.MicroInfosBean, I
 
         void sendOneRose(String userId);
 
-        void downMicro(String userId,int level, int number);//下麦
+        void downMicro(String userId, int level, int number);//下麦
 
         void microOperate(int pos, String userId, boolean isOpen);//闭麦/禁言
     }
@@ -134,6 +136,7 @@ public class RoomMpAdapter extends BaseBindingAdapter<RoomData.MicroInfosBean, I
                 holder.binding.faceView.updateFriendState(item);
                 break;
             case IMicroEvent.UpdateRanks:
+                Log.d("AG_EX_AV", "UpdateRanks" + JsonConverter.toJson(item.getRoseRanks()));
                 holder.binding.faceView.updateRankHeads(item.getRoseRanks());
                 break;
             case IMicroEvent.ReleaseLayout:
@@ -268,9 +271,9 @@ public class RoomMpAdapter extends BaseBindingAdapter<RoomData.MicroInfosBean, I
             }
 
             @Override
-            public void downMicro(String userId,int level, int number) {
+            public void downMicro(String userId, int level, int number) {
                 if (onMicUserListener != null) {
-                    onMicUserListener.downMicro(userId,level,number);
+                    onMicUserListener.downMicro(userId, level, number);
                 }
             }
 

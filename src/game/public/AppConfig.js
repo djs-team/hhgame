@@ -13,6 +13,12 @@ load('game/public/AppConfig', function () {
     /******* 苹果通用配置 *********/
     Appconfig.applePayType = 'Other' // 苹果支付方式控制: Apple:苹果内购 Other: 支付宝微信
     Appconfig.loginShowPhoneAlert = 'Other' // 一键登录是否需要展示输入手机号弹框: Show:展示 Other:不展示
-    
+
+
+    Appconfig.event = {
+        'TCP_CLOSE' : 'TCP_CLOSE',
+        'RECONNECT_OVER_TIMES': 'RECONNECT_OVER_TIMES',
+    }
+
     return Appconfig
 })

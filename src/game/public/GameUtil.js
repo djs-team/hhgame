@@ -302,7 +302,7 @@ load('game/public/GameUtil',function () {
         }
         btn.retain()
         btn.setTouchEnabled(false)
-        delayTime = delayTime || 2
+        delayTime = delayTime || 1
         btn.runAction(cc.Sequence(cc.DelayTime(delayTime),cc.CallFunc(function () {
             btn.setTouchEnabled(true)
             btn.release()

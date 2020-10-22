@@ -92,7 +92,6 @@
                     </state>
                     <connections>
                         <action selector="backAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="CTh-Z9-XZ9"/>
-                        <action selector="sureAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="xEu-6c-K79"/>
                     </connections>
                 </button>
             </subviews>

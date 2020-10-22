@@ -180,6 +180,13 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
 
         initView: function () {
 
+            this.goodsListView.setScrollBarEnabled(false)
+            this.menuListView.setScrollBarEnabled(false)
+            this.exangeListView.setScrollBarEnabled(false)
+            this.robListView.setScrollBarEnabled(false)
+            this.robLogListView.setScrollBarEnabled(false)
+            this.rewardsLogListView.setScrollBarEnabled(false)
+
             this.goodsPnl.setVisible(false)
             this.goodsCell.setVisible(false)
             this.goodsListPnl.setVisible(true)
@@ -779,8 +786,8 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 cell.setVisible(true)
                 this.goodDetailPageView.pushBackCustomItem(cell)
                 let size = {
-                    height : 556,
-                    width : 416
+                    height : 416,
+                    width : 556
                 }
 
                 this.onLoadUrlImg(data.upPictureUrls[i],size,cell)
@@ -1242,7 +1249,6 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 this.rewardsLogListView.pushBackCustomItem(cell)
 
                 cell.setName(data.orderCode)
-                cell.getChildByName('rewardsImg').loadTexture(data.goodsUrl)
                 cell.getChildByName('goodsNameText').setString(data.goodsName)
                 cell.getChildByName('orderNumberValueText').setString(data.expressCode)
                 cell.getChildByName('timeDaysText').setString(data.timeDays)
@@ -1253,6 +1259,13 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                     num : data.num,
                     propValue : data.propValue,
                 }
+
+                let size = {
+                    height : 100.00,
+                    width : 100.00
+                }
+
+                this.onLoadUrlImg(data.goodsUrl,size,cell.getChildByName('rewardsImg'))
 
 
                 if(data.status == 0){

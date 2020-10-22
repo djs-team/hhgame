@@ -644,8 +644,10 @@
                         "ctype": "ImageViewObjectData"
                       },
                       {
-                        "FontSize": 25,
-                        "LabelText": "+888888",
+                        "IsCustomSize": true,
+                        "FontSize": 22,
+                        "LabelText": "+888888888",
+                        "HorizontalAlignmentType": "HT_Center",
                         "VerticalAlignmentType": "VT_Center",
                         "OutlineColor": {
                           "G": 0,
@@ -663,7 +665,7 @@
                         },
                         "Position": {
                           "X": 71.203,
-                          "Y": 50.6023
+                          "Y": 47.6
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -676,21 +678,21 @@
                         "IconVisible": false,
                         "PrePosition": {
                           "X": 0.3096,
-                          "Y": 0.1446
+                          "Y": 0.136
                         },
                         "PreSize": {
-                          "X": 0.3957,
-                          "Y": 0.0714
+                          "X": 0.4783,
+                          "Y": 0.0629
                         },
                         "LeftMargin": 71.203,
-                        "RightMargin": 67.797,
-                        "TopMargin": 286.8977,
-                        "BottomMargin": 38.1023,
+                        "RightMargin": 48.797,
+                        "TopMargin": 291.4,
+                        "BottomMargin": 36.6,
                         "Tag": 405,
                         "ActionTag": 804885693,
                         "Size": {
-                          "X": 91.0,
-                          "Y": 25.0
+                          "X": 110.0,
+                          "Y": 22.0
                         },
                         "Name": "winNum",
                         "ctype": "TextObjectData"
@@ -718,8 +720,8 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 186.7694,
-                          "Y": 48.8924
+                          "X": 199.77,
+                          "Y": 45.89
                         },
                         "Scale": {
                           "ScaleX": 0.6,
@@ -728,17 +730,17 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 0.812,
-                          "Y": 0.1397
+                          "X": 0.8686,
+                          "Y": 0.1311
                         },
                         "PreSize": {
                           "X": 0.3478,
                           "Y": 0.1429
                         },
-                        "LeftMargin": 146.7694,
-                        "RightMargin": 3.2306,
-                        "TopMargin": 276.1076,
-                        "BottomMargin": 23.8924,
+                        "LeftMargin": 159.77,
+                        "RightMargin": -9.77,
+                        "TopMargin": 279.11,
+                        "BottomMargin": 20.89,
                         "Tag": 450,
                         "Children": [
                           {
@@ -1331,7 +1333,7 @@
                   "Y": 0.0925
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.1236
                 },
                 "LeftMargin": 365.2795,
@@ -1465,7 +1467,7 @@
                   "Y": 0.0932
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.1222
                 },
                 "LeftMargin": 598.6682,
@@ -1599,7 +1601,7 @@
                   "Y": 0.0932
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.1222
                 },
                 "LeftMargin": 832.0568,

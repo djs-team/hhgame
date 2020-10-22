@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -39,16 +39,30 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZM1-dp-i8q">
+                    <rect key="frame" x="274" y="8" width="22" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="22" id="ccq-wJ-cTX"/>
+                        <constraint firstAttribute="width" constant="22" id="xaR-p5-6Kt"/>
+                    </constraints>
+                    <state key="normal" image="close.png"/>
+                    <connections>
+                        <action selector="closeAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="v8F-bI-zmR"/>
+                    </connections>
+                </button>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="D0v-dk-5m5" secondAttribute="trailing" constant="50" id="2rG-5D-eFm"/>
                 <constraint firstItem="VqO-cj-RJU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="2vE-1b-X7x"/>
+                <constraint firstItem="ZM1-dp-i8q" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="AW1-hU-bOc"/>
                 <constraint firstItem="5Pb-K8-ZI0" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="Dam-pb-8Ma"/>
                 <constraint firstItem="SvO-SR-7fG" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="50" id="F6s-tp-DgI"/>
                 <constraint firstItem="D0v-dk-5m5" firstAttribute="centerY" secondItem="SvO-SR-7fG" secondAttribute="centerY" id="HoC-jE-USU"/>
                 <constraint firstItem="5Pb-K8-ZI0" firstAttribute="top" secondItem="D0v-dk-5m5" secondAttribute="bottom" constant="8" id="HyL-ce-X3L"/>
                 <constraint firstItem="VqO-cj-RJU" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="UwX-7O-IVc"/>
+                <constraint firstAttribute="trailing" secondItem="ZM1-dp-i8q" secondAttribute="trailing" constant="16" id="V23-zR-MYT"/>
                 <constraint firstItem="VqO-cj-RJU" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="Vyw-Xa-FxG"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="lGt-p7-9cv" secondAttribute="trailing" constant="16" id="caH-xT-Cb2"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="5Pb-K8-ZI0" secondAttribute="bottom" constant="33" id="fLj-as-shw"/>
@@ -61,7 +75,6 @@
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="mainTableView" destination="5Pb-K8-ZI0" id="dkZ-sV-o0J"/>
                 <outlet property="titleLabel" destination="lGt-p7-9cv" id="7IF-NF-csb"/>
@@ -70,6 +83,7 @@
         </view>
     </objects>
     <resources>
+        <image name="close.png" width="22" height="22"/>
         <image name="liveroom_redpacket_record_bg" width="312" height="451.5"/>
     </resources>
 </document>

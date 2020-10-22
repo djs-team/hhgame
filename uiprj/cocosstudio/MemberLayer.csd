@@ -120,80 +120,80 @@
                       <AbstractNodeData Name="interestsBg" ActionTag="1130137466" Tag="10" IconVisible="False" LeftMargin="590.2886" RightMargin="178.7114" TopMargin="168.2260" BottomMargin="188.7740" Scale9Enable="True" LeftEage="13" RightEage="13" TopEage="14" BottomEage="14" Scale9OriginX="13" Scale9OriginY="14" Scale9Width="35" Scale9Height="42" ctype="ImageViewObjectData">
                         <Size X="511.0000" Y="363.0000" />
                         <Children>
-                          <AbstractNodeData Name="Text_2" ActionTag="491126949" Tag="11" IconVisible="False" LeftMargin="224.9028" RightMargin="36.0972" TopMargin="72.1942" BottomMargin="270.8058" FontSize="20" LabelText="1、专属会员大奖赛参赛资格" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                            <Size X="250.0000" Y="20.0000" />
+                          <AbstractNodeData Name="Text_2" ActionTag="491126949" Tag="11" IconVisible="False" LeftMargin="224.9028" RightMargin="26.0972" TopMargin="69.6900" BottomMargin="270.3100" IsCustomSize="True" FontSize="20" LabelText="1、专属会员大奖赛参赛资格" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                            <Size X="260.0000" Y="23.0000" />
                             <AnchorPoint ScaleY="0.5000" />
-                            <Position X="224.9028" Y="280.8058" />
+                            <Position X="224.9028" Y="281.8100" />
                             <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="183" G="100" B="30" />
-                            <PrePosition X="0.4401" Y="0.7736" />
-                            <PreSize X="0.4892" Y="0.0551" />
+                            <PrePosition X="0.4401" Y="0.7763" />
+                            <PreSize X="0.5088" Y="0.0634" />
                             <OutlineColor A="255" R="255" G="0" B="0" />
                             <ShadowColor A="255" R="110" G="110" B="110" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="Text_2_0" ActionTag="1464036931" Tag="13" IconVisible="False" LeftMargin="223.9013" RightMargin="97.0987" TopMargin="105.3918" BottomMargin="237.6082" FontSize="20" LabelText="2、麻将情缘畅游权限" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                            <Size X="190.0000" Y="20.0000" />
+                          <AbstractNodeData Name="Text_2_0" ActionTag="1464036931" Tag="13" IconVisible="False" LeftMargin="223.9013" RightMargin="27.0987" TopMargin="100.3900" BottomMargin="238.6100" IsCustomSize="True" FontSize="20" LabelText="2、麻将情缘畅游权限" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                            <Size X="260.0000" Y="24.0000" />
                             <AnchorPoint ScaleY="0.5000" />
-                            <Position X="223.9013" Y="247.6082" />
+                            <Position X="223.9013" Y="250.6100" />
                             <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="183" G="100" B="30" />
-                            <PrePosition X="0.4382" Y="0.6821" />
-                            <PreSize X="0.3718" Y="0.0551" />
+                            <PrePosition X="0.4382" Y="0.6904" />
+                            <PreSize X="0.5088" Y="0.0661" />
                             <OutlineColor A="255" R="255" G="0" B="0" />
                             <ShadowColor A="255" R="110" G="110" B="110" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="Text_2_0_0" ActionTag="-507827684" Tag="14" IconVisible="False" LeftMargin="223.2024" RightMargin="47.7976" TopMargin="137.0784" BottomMargin="205.9216" FontSize="20" LabelText="3、vip会员福利礼包一直领" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                            <Size X="240.0000" Y="20.0000" />
+                          <AbstractNodeData Name="Text_2_0_0" ActionTag="-507827684" Tag="14" IconVisible="False" LeftMargin="223.2024" RightMargin="27.7976" TopMargin="135.5784" BottomMargin="204.4216" IsCustomSize="True" FontSize="20" LabelText="3、vip会员福利礼包一直领" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                            <Size X="260.0000" Y="23.0000" />
                             <AnchorPoint ScaleY="0.5000" />
                             <Position X="223.2024" Y="215.9216" />
                             <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="183" G="100" B="30" />
                             <PrePosition X="0.4368" Y="0.5948" />
-                            <PreSize X="0.4697" Y="0.0551" />
+                            <PreSize X="0.5088" Y="0.0634" />
                             <OutlineColor A="255" R="255" G="0" B="0" />
                             <ShadowColor A="255" R="110" G="110" B="110" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="Text_2_0_0_0" ActionTag="-1996716702" Tag="15" IconVisible="False" LeftMargin="224.5930" RightMargin="46.4070" TopMargin="169.1645" BottomMargin="173.8355" FontSize="20" LabelText="4、vip会员专属角色免费玩" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                            <Size X="240.0000" Y="20.0000" />
+                          <AbstractNodeData Name="Text_2_0_0_0" ActionTag="-1996716702" Tag="15" IconVisible="False" LeftMargin="224.5930" RightMargin="26.4070" TopMargin="167.6645" BottomMargin="172.3355" IsCustomSize="True" FontSize="20" LabelText="4、vip会员专属角色免费玩" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                            <Size X="260.0000" Y="23.0000" />
                             <AnchorPoint ScaleY="0.5000" />
                             <Position X="224.5930" Y="183.8355" />
                             <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="183" G="100" B="30" />
                             <PrePosition X="0.4395" Y="0.5064" />
-                            <PreSize X="0.4697" Y="0.0551" />
+                            <PreSize X="0.5088" Y="0.0634" />
                             <OutlineColor A="255" R="255" G="0" B="0" />
                             <ShadowColor A="255" R="110" G="110" B="110" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="vipSignText" ActionTag="-1896000779" Tag="16" IconVisible="False" LeftMargin="224.2217" RightMargin="66.7783" TopMargin="204.7460" BottomMargin="138.2540" FontSize="20" LabelText="5、最多领取x倍签到奖励" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                            <Size X="220.0000" Y="20.0000" />
+                          <AbstractNodeData Name="vipSignText" ActionTag="-1896000779" Tag="16" IconVisible="False" LeftMargin="224.2217" RightMargin="26.7783" TopMargin="203.2460" BottomMargin="136.7540" IsCustomSize="True" FontSize="20" LabelText="5、最多领取x倍签到奖励" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                            <Size X="260.0000" Y="23.0000" />
                             <AnchorPoint ScaleY="0.5000" />
                             <Position X="224.2217" Y="148.2540" />
                             <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="183" G="100" B="30" />
                             <PrePosition X="0.4388" Y="0.4084" />
-                            <PreSize X="0.4305" Y="0.0551" />
+                            <PreSize X="0.5088" Y="0.0634" />
                             <OutlineColor A="255" R="255" G="0" B="0" />
                             <ShadowColor A="255" R="110" G="110" B="110" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="Text_2_0_0_0_0" ActionTag="-462030938" Tag="17" IconVisible="False" LeftMargin="224.2322" RightMargin="16.7678" TopMargin="237.0656" BottomMargin="105.9344" FontSize="20" LabelText="6、与众不同，专属的会员标识" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                            <Size X="270.0000" Y="20.0000" />
+                          <AbstractNodeData Name="Text_2_0_0_0_0" ActionTag="-462030938" Tag="17" IconVisible="False" LeftMargin="224.2322" RightMargin="-13.2322" TopMargin="235.5656" BottomMargin="104.4344" IsCustomSize="True" FontSize="20" LabelText="6、与众不同，专属的会员标识" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                            <Size X="300.0000" Y="23.0000" />
                             <AnchorPoint ScaleY="0.5000" />
                             <Position X="224.2322" Y="115.9344" />
                             <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="183" G="100" B="30" />
                             <PrePosition X="0.4388" Y="0.3194" />
-                            <PreSize X="0.5284" Y="0.0551" />
+                            <PreSize X="0.5871" Y="0.0634" />
                             <OutlineColor A="255" R="255" G="0" B="0" />
                             <ShadowColor A="255" R="110" G="110" B="110" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="Text_2_0_0_0_0_0" ActionTag="1783026643" Tag="18" IconVisible="False" LeftMargin="225.1380" RightMargin="15.8620" TopMargin="271.6800" BottomMargin="71.3200" FontSize="20" LabelText="7、更多特权，敬请期待......" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                            <Size X="270.0000" Y="20.0000" />
+                          <AbstractNodeData Name="Text_2_0_0_0_0_0" ActionTag="1783026643" Tag="18" IconVisible="False" LeftMargin="225.1380" RightMargin="-14.1380" TopMargin="270.1800" BottomMargin="69.8200" IsCustomSize="True" FontSize="20" LabelText="7、更多特权，敬请期待......" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                            <Size X="300.0000" Y="23.0000" />
                             <AnchorPoint ScaleY="0.5000" />
                             <Position X="225.1380" Y="81.3200" />
                             <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="183" G="100" B="30" />
                             <PrePosition X="0.4406" Y="0.2240" />
-                            <PreSize X="0.5284" Y="0.0551" />
+                            <PreSize X="0.5871" Y="0.0634" />
                             <OutlineColor A="255" R="255" G="0" B="0" />
                             <ShadowColor A="255" R="110" G="110" B="110" />
                           </AbstractNodeData>

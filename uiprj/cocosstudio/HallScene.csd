@@ -690,7 +690,7 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="coinAddBtn" ActionTag="833893237" Tag="21" IconVisible="False" LeftMargin="153.5300" RightMargin="7.5300" TopMargin="3.3500" BottomMargin="1.6500" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="13" BottomEage="11" Scale9OriginX="15" Scale9OriginY="13" Scale9Width="8" Scale9Height="16" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                  <AbstractNodeData Name="coinAddBtn" ActionTag="833893237" Tag="21" IconVisible="False" LeftMargin="153.5300" RightMargin="7.5300" TopMargin="3.3500" BottomMargin="1.6500" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="13" BottomEage="11" Scale9OriginX="15" Scale9OriginY="13" Scale9Width="8" Scale9Height="16" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                     <Size X="38.9400" Y="40.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="173.0000" Y="21.6500" />
@@ -750,7 +750,7 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="diamondsAddBtn" ActionTag="1240390100" Tag="122" IconVisible="False" LeftMargin="148.5300" RightMargin="12.5300" TopMargin="3.0000" BottomMargin="2.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="8" Scale9Height="18" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                  <AbstractNodeData Name="diamondsAddBtn" ActionTag="1240390100" Tag="122" IconVisible="False" LeftMargin="148.5300" RightMargin="12.5300" TopMargin="3.0000" BottomMargin="2.0000" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="8" Scale9Height="18" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                     <Size X="38.9400" Y="40.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="168.0000" Y="22.0000" />
@@ -810,7 +810,7 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="fuKaAddBtn" ActionTag="-36571241" Tag="129" IconVisible="False" LeftMargin="149.0300" RightMargin="13.0300" TopMargin="2.2500" BottomMargin="1.2500" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="8" Scale9Height="18" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                  <AbstractNodeData Name="fuKaAddBtn" ActionTag="-36571241" Tag="129" IconVisible="False" LeftMargin="149.0300" RightMargin="13.0300" TopMargin="2.2500" BottomMargin="1.2500" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="8" Scale9Height="18" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                     <Size X="37.9400" Y="41.5000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="168.0000" Y="22.0000" />
@@ -846,68 +846,98 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="emailBtn" ActionTag="1821571772" Tag="30" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="1067.0480" RightMargin="166.9520" TopMargin="24.2000" BottomMargin="657.8000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="22" Scale9Height="19" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                <Size X="46.0000" Y="38.0000" />
+              <AbstractNodeData Name="emailPnl" ActionTag="1084546277" Tag="254" IconVisible="False" LeftMargin="1045.8807" RightMargin="134.1193" TopMargin="0.4536" BottomMargin="643.5464" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+                <Size X="100.0000" Y="76.0000" />
                 <Children>
-                  <AbstractNodeData Name="fuKaCnt_0" ActionTag="1623445450" Tag="132" IconVisible="False" LeftMargin="2.4400" RightMargin="3.5600" TopMargin="28.6410" BottomMargin="-12.6410" IsCustomSize="True" FontSize="19" LabelText="邮件" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="40.0000" Y="22.0000" />
+                  <AbstractNodeData Name="emailBtn" ActionTag="1505327290" Tag="255" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="21.6141" RightMargin="32.3859" TopMargin="23.5092" BottomMargin="14.4908" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="22" Scale9Height="19" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                    <Size X="46.0000" Y="38.0000" />
+                    <Children>
+                      <AbstractNodeData Name="fuKaCnt_0" ActionTag="1872351801" Tag="256" IconVisible="False" LeftMargin="2.4400" RightMargin="3.5600" TopMargin="28.6410" BottomMargin="-12.6410" IsCustomSize="True" FontSize="19" LabelText="邮件" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="40.0000" Y="22.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="22.4400" Y="-1.6410" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="0.4878" Y="-0.0432" />
+                        <PreSize X="0.8696" Y="0.5789" />
+                        <OutlineColor A="255" R="255" G="0" B="0" />
+                        <ShadowColor A="255" R="110" G="110" B="110" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="redImg" ActionTag="-912198956" Tag="257" IconVisible="False" LeftMargin="28.7761" RightMargin="-5.7761" TopMargin="-8.9000" BottomMargin="24.9000" LeftEage="7" RightEage="7" TopEage="7" BottomEage="7" Scale9OriginX="7" Scale9OriginY="7" Scale9Width="9" Scale9Height="8" ctype="ImageViewObjectData">
+                        <Size X="23.0000" Y="22.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="40.2761" Y="35.9000" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="0.8756" Y="0.9447" />
+                        <PreSize X="0.5000" Y="0.5789" />
+                        <FileData Type="Normal" Path="hall/pz_31.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="22.4400" Y="-1.6410" />
+                    <Position X="44.6141" Y="33.4908" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.4878" Y="-0.0432" />
-                    <PreSize X="0.8696" Y="0.5789" />
+                    <PrePosition X="0.4461" Y="0.4407" />
+                    <PreSize X="0.4600" Y="0.5000" />
+                    <TextColor A="255" R="65" G="65" B="70" />
+                    <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+                    <NormalFileData Type="Normal" Path="hall/dtjm_6.png" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="redImg" ActionTag="517721033" Tag="297" IconVisible="False" LeftMargin="28.7761" RightMargin="-5.7761" TopMargin="-8.9000" BottomMargin="24.9000" LeftEage="7" RightEage="7" TopEage="7" BottomEage="7" Scale9OriginX="7" Scale9OriginY="7" Scale9Width="9" Scale9Height="8" ctype="ImageViewObjectData">
-                    <Size X="23.0000" Y="22.0000" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="40.2761" Y="35.9000" />
-                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.8756" Y="0.9447" />
-                    <PreSize X="0.5000" Y="0.5789" />
-                    <FileData Type="Normal" Path="hall/pz_31.png" Plist="" />
-                  </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="1090.0480" Y="676.8000" />
+                <Position X="1095.8807" Y="681.5464" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.8516" Y="0.9400" />
-                <PreSize X="0.0359" Y="0.0528" />
-                <TextColor A="255" R="65" G="65" B="70" />
-                <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                <NormalFileData Type="Normal" Path="hall/dtjm_6.png" Plist="" />
-                <OutlineColor A="255" R="255" G="0" B="0" />
-                <ShadowColor A="255" R="110" G="110" B="110" />
+                <PrePosition X="0.8562" Y="0.9466" />
+                <PreSize X="0.0781" Y="0.1056" />
+                <SingleColor A="255" R="150" G="200" B="255" />
+                <FirstColor A="255" R="150" G="200" B="255" />
+                <EndColor A="255" R="255" G="255" B="255" />
+                <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="moreBtn" ActionTag="371629241" Tag="81" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="1189.0320" RightMargin="44.9680" TopMargin="20.2000" BottomMargin="653.8000" TouchEnable="True" FontSize="14" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="19" Scale9Height="29" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                <Size X="46.0000" Y="46.0000" />
+              <AbstractNodeData Name="moreBtnPnl" ActionTag="1967005916" Tag="251" IconVisible="False" LeftMargin="1161.4663" RightMargin="18.5337" TopMargin="3.5679" BottomMargin="640.4321" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+                <Size X="100.0000" Y="76.0000" />
                 <Children>
-                  <AbstractNodeData Name="fuKaCnt_0" ActionTag="37719768" Tag="135" IconVisible="False" LeftMargin="4.4400" RightMargin="1.5600" TopMargin="32.6400" BottomMargin="-8.6400" IsCustomSize="True" FontSize="19" LabelText="更多" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="40.0000" Y="22.0000" />
+                  <AbstractNodeData Name="moreBtn" ActionTag="300933172" Tag="252" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="27.5054" RightMargin="26.4946" TopMargin="16.7295" BottomMargin="13.2705" FontSize="14" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="19" Scale9Height="29" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                    <Size X="46.0000" Y="46.0000" />
+                    <Children>
+                      <AbstractNodeData Name="fuKaCnt_0" ActionTag="-1568396673" Tag="253" IconVisible="False" LeftMargin="4.4400" RightMargin="1.5600" TopMargin="32.6400" BottomMargin="-8.6400" IsCustomSize="True" FontSize="19" LabelText="更多" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="40.0000" Y="22.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="24.4400" Y="2.3600" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="0.5313" Y="0.0513" />
+                        <PreSize X="0.8696" Y="0.4783" />
+                        <OutlineColor A="255" R="255" G="0" B="0" />
+                        <ShadowColor A="255" R="110" G="110" B="110" />
+                      </AbstractNodeData>
+                    </Children>
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="24.4400" Y="2.3600" />
+                    <Position X="50.5054" Y="36.2705" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.5313" Y="0.0513" />
-                    <PreSize X="0.8696" Y="0.4783" />
+                    <PrePosition X="0.5051" Y="0.4772" />
+                    <PreSize X="0.4600" Y="0.6053" />
+                    <TextColor A="255" R="65" G="65" B="70" />
+                    <NormalFileData Type="Normal" Path="hall/dtjm_7.png" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="1212.0320" Y="676.8000" />
+                <Position X="1211.4663" Y="678.4321" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.9469" Y="0.9400" />
-                <PreSize X="0.0359" Y="0.0639" />
-                <TextColor A="255" R="65" G="65" B="70" />
-                <NormalFileData Type="Normal" Path="hall/dtjm_7.png" Plist="" />
-                <OutlineColor A="255" R="255" G="0" B="0" />
-                <ShadowColor A="255" R="110" G="110" B="110" />
+                <PrePosition X="0.9465" Y="0.9423" />
+                <PreSize X="0.0781" Y="0.1056" />
+                <SingleColor A="255" R="150" G="200" B="255" />
+                <FirstColor A="255" R="150" G="200" B="255" />
+                <EndColor A="255" R="255" G="255" B="255" />
+                <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
               <AbstractNodeData Name="morePnl" ActionTag="2067292009" UserData="{&quot;layoutType&quot;:&quot;maxArea&quot;,&quot;screenAlign&quot;:&quot;mid&quot;}" Tag="98" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="-360.0000" RightMargin="-360.0000" TopMargin="-640.0000" BottomMargin="-640.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="182" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="2000.0000" Y="2000.0000" />

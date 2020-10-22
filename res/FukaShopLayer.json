@@ -74,7 +74,7 @@
           {
             "FileData": {
               "Type": "Normal",
-              "Path": "aaa/fuKa (14).png",
+              "Path": "aaa/fuKa (7).png",
               "Plist": ""
             },
             "Scale9OriginX": 15,
@@ -117,54 +117,6 @@
             },
             "VisibleForFrame": false,
             "Name": "dele",
-            "ctype": "ImageViewObjectData"
-          },
-          {
-            "FileData": {
-              "Type": "Normal",
-              "Path": "aaa/fuka (18).png",
-              "Plist": ""
-            },
-            "Scale9OriginX": 15,
-            "Scale9OriginY": 15,
-            "Scale9Width": 1265,
-            "Scale9Height": 700,
-            "AnchorPoint": {
-              "ScaleX": 0.5,
-              "ScaleY": 0.5
-            },
-            "Position": {
-              "X": 640.0,
-              "Y": 360.0
-            },
-            "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 1.0
-            },
-            "CColor": {},
-            "IconVisible": false,
-            "PositionPercentXEnabled": true,
-            "PositionPercentYEnabled": true,
-            "PrePosition": {
-              "X": 0.5,
-              "Y": 0.5
-            },
-            "PreSize": {
-              "X": 1.0117,
-              "Y": 1.0139
-            },
-            "LeftMargin": -7.5,
-            "RightMargin": -7.5,
-            "TopMargin": -5.0,
-            "BottomMargin": -5.0,
-            "Tag": 2231,
-            "ActionTag": 1636549443,
-            "Size": {
-              "X": 1295.0,
-              "Y": 730.0
-            },
-            "VisibleForFrame": false,
-            "Name": "dele_0",
             "ctype": "ImageViewObjectData"
           },
           {
@@ -544,7 +496,6 @@
                     },
                     "Scale9Width": 1,
                     "Scale9Height": 1,
-                    "TouchEnable": true,
                     "AnchorPoint": {},
                     "Position": {
                       "X": 0.0,
@@ -3130,6 +3081,8 @@
                   "ScaleX": 1.0,
                   "ScaleY": 1.0
                 },
+                "RotationSkewX": -90.0,
+                "RotationSkewY": -90.0,
                 "CColor": {},
                 "IconVisible": false,
                 "PositionPercentXEnabled": true,
@@ -3138,19 +3091,19 @@
                   "X": 0.5,
                   "Y": 0.5
                 },
-                "PercentWidthEnable": true,
-                "PercentHeightEnable": true,
-                "PercentWidthEnabled": true,
-                "PercentHeightEnabled": true,
                 "PreSize": {
-                  "X": 1.0,
-                  "Y": 1.0
+                  "X": 0.5625,
+                  "Y": 1.7778
                 },
+                "LeftMargin": 280.0,
+                "RightMargin": 280.0,
+                "TopMargin": -280.0,
+                "BottomMargin": -280.0,
                 "Tag": 284,
                 "Children": [
                   {
                     "ScrollDirectionType": 0,
-                    "ClipAble": false,
+                    "ClipAble": true,
                     "BackColorAlpha": 102,
                     "SingleColor": {
                       "R": 150,
@@ -3171,8 +3124,8 @@
                     "TouchEnable": true,
                     "AnchorPoint": {},
                     "Position": {
-                      "X": 86.159,
-                      "Y": 86.1589
+                      "X": 83.9602,
+                      "Y": 780.4832
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -3181,22 +3134,22 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.0673,
-                      "Y": 0.1197
+                      "X": 0.1166,
+                      "Y": 0.6098
                     },
                     "PreSize": {
-                      "X": 0.325,
-                      "Y": 0.7722
+                      "X": 0.7722,
+                      "Y": 0.325
                     },
-                    "LeftMargin": 86.159,
-                    "RightMargin": 777.841,
-                    "TopMargin": 77.8411,
-                    "BottomMargin": 86.1589,
+                    "LeftMargin": 83.9602,
+                    "RightMargin": 80.0398,
+                    "TopMargin": 83.5168,
+                    "BottomMargin": 780.4832,
                     "Tag": 283,
                     "ActionTag": 1817087938,
                     "Size": {
-                      "X": 416.0,
-                      "Y": 556.0
+                      "X": 556.0,
+                      "Y": 416.0
                     },
                     "Name": "goodDetailPageView",
                     "ctype": "PageViewObjectData"
@@ -3218,11 +3171,10 @@
                     },
                     "Scale9Width": 1,
                     "Scale9Height": 1,
-                    "TouchEnable": true,
                     "AnchorPoint": {},
                     "Position": {
-                      "X": 86.16,
-                      "Y": 86.16
+                      "X": 83.96,
+                      "Y": 780.48
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -3231,22 +3183,22 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.0673,
-                      "Y": 0.1197
+                      "X": 0.1166,
+                      "Y": 0.6097
                     },
                     "PreSize": {
-                      "X": 0.325,
-                      "Y": 0.7722
+                      "X": 0.7722,
+                      "Y": 0.325
                     },
-                    "LeftMargin": 86.16,
-                    "RightMargin": 777.84,
-                    "TopMargin": 77.84,
-                    "BottomMargin": 86.16,
+                    "LeftMargin": 83.96,
+                    "RightMargin": 80.04,
+                    "TopMargin": 83.52,
+                    "BottomMargin": 780.48,
                     "Tag": 285,
                     "ActionTag": -5966583,
                     "Size": {
-                      "X": 416.0,
-                      "Y": 556.0
+                      "X": 556.0,
+                      "Y": 416.0
                     },
                     "Name": "goodsDetailCell",
                     "ctype": "PanelObjectData"
@@ -3254,8 +3206,8 @@
                 ],
                 "ActionTag": -858943565,
                 "Size": {
-                  "X": 1280.0,
-                  "Y": 720.0
+                  "X": 720.0,
+                  "Y": 1280.0
                 },
                 "Name": "detailTopPnl",
                 "ctype": "PanelObjectData"
@@ -3275,7 +3227,6 @@
                 },
                 "Scale9Width": 1,
                 "Scale9Height": 1,
-                "TouchEnable": true,
                 "AnchorPoint": {
                   "ScaleX": 0.5,
                   "ScaleY": 0.5
@@ -4890,20 +4841,27 @@
                         "ctype": "ImageViewObjectData"
                       },
                       {
-                        "FileData": {
-                          "Type": "Default",
-                          "Path": "Default/ImageFile.png",
-                          "Plist": ""
+                        "ClipAble": false,
+                        "BackColorAlpha": 102,
+                        "SingleColor": {
+                          "R": 150,
+                          "G": 200
                         },
-                        "Scale9Width": 46,
-                        "Scale9Height": 46,
+                        "FirstColor": {
+                          "R": 150,
+                          "G": 200
+                        },
+                        "EndColor": {},
+                        "ColorVector": {
+                          "ScaleY": 1.0
+                        },
                         "AnchorPoint": {
                           "ScaleX": 0.5,
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 95.3815,
-                          "Y": 170.531
+                          "X": 93.0,
+                          "Y": 172.0
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -4912,25 +4870,25 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 0.1454,
-                          "Y": 0.5742
+                          "X": 0.1418,
+                          "Y": 0.5791
                         },
                         "PreSize": {
-                          "X": 0.0701,
-                          "Y": 0.1549
+                          "X": 0.1524,
+                          "Y": 0.3367
                         },
-                        "LeftMargin": 72.3815,
-                        "RightMargin": 537.6185,
-                        "TopMargin": 103.469,
-                        "BottomMargin": 147.531,
-                        "Tag": 326,
-                        "ActionTag": -297765033,
+                        "LeftMargin": 43.0,
+                        "RightMargin": 513.0,
+                        "TopMargin": 75.0,
+                        "BottomMargin": 122.0,
+                        "Tag": 168,
+                        "ActionTag": 1047522869,
                         "Size": {
-                          "X": 46.0,
-                          "Y": 46.0
+                          "X": 100.0,
+                          "Y": 100.0
                         },
                         "Name": "rewardsImg",
-                        "ctype": "ImageViewObjectData"
+                        "ctype": "PanelObjectData"
                       },
                       {
                         "FontSize": 24,
@@ -6248,7 +6206,8 @@
             "Children": [
               {
                 "ClipAble": false,
-                "BackColorAlpha": 0,
+                "BackColorAlpha": 137,
+                "ComboBoxIndex": 1,
                 "SingleColor": {
                   "R": 150,
                   "G": 200
@@ -6264,11 +6223,12 @@
                 "Scale9Width": 1,
                 "Scale9Height": 1,
                 "AnchorPoint": {
+                  "ScaleX": 0.5,
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 0.0,
-                  "Y": 360.0
+                  "X": 47.0,
+                  "Y": 243.0
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -6276,20 +6236,19 @@
                 },
                 "CColor": {},
                 "IconVisible": false,
-                "PositionPercentYEnabled": true,
                 "PrePosition": {
-                  "X": 0.0,
-                  "Y": 0.5
+                  "X": 0.0367,
+                  "Y": 0.3375
                 },
-                "PercentWidthEnable": true,
-                "PercentHeightEnable": true,
-                "PercentWidthEnabled": true,
-                "PercentHeightEnabled": true,
                 "PreSize": {
-                  "X": 1.0,
-                  "Y": 1.0
+                  "X": 0.0531,
+                  "Y": 0.2444
                 },
-                "Tag": 249,
+                "LeftMargin": 13.0,
+                "RightMargin": 1199.0,
+                "TopMargin": 389.0,
+                "BottomMargin": 155.0,
+                "Tag": 167,
                 "Children": [
                   {
                     "FileData": {
@@ -6307,8 +6266,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 47.7554,
-                      "Y": 252.086
+                      "X": 35.5572,
+                      "Y": 95.2566
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -6317,19 +6276,19 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.0373,
-                      "Y": 0.3501
+                      "X": 0.5229,
+                      "Y": 0.5412
                     },
                     "PreSize": {
-                      "X": 0.0258,
-                      "Y": 0.1819
+                      "X": 0.4853,
+                      "Y": 0.7443
                     },
-                    "LeftMargin": 31.2554,
-                    "RightMargin": 1215.7446,
-                    "TopMargin": 402.414,
-                    "BottomMargin": 186.586,
-                    "Tag": 250,
-                    "ActionTag": 1674370176,
+                    "LeftMargin": 19.0572,
+                    "RightMargin": 15.9428,
+                    "TopMargin": 15.2434,
+                    "BottomMargin": 29.7566,
+                    "Tag": 168,
+                    "ActionTag": 843914195,
                     "Size": {
                       "X": 33.0,
                       "Y": 131.0
@@ -6352,8 +6311,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 45.9094,
-                      "Y": 186.7816
+                      "X": 33.7103,
+                      "Y": 29.9482
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -6362,19 +6321,19 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.0359,
-                      "Y": 0.2594
+                      "X": 0.4957,
+                      "Y": 0.1702
                     },
                     "PreSize": {
-                      "X": 0.0414,
-                      "Y": 0.0722
+                      "X": 0.7794,
+                      "Y": 0.2955
                     },
-                    "LeftMargin": 19.4094,
-                    "RightMargin": 1207.5906,
-                    "TopMargin": 507.2184,
-                    "BottomMargin": 160.7816,
-                    "Tag": 254,
-                    "ActionTag": 1275053263,
+                    "LeftMargin": 7.2103,
+                    "RightMargin": 7.7897,
+                    "TopMargin": 120.0518,
+                    "BottomMargin": 3.9482,
+                    "Tag": 169,
+                    "ActionTag": -1947578055,
                     "Size": {
                       "X": 53.0,
                       "Y": 52.0
@@ -6403,8 +6362,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 48.3171,
-                      "Y": 262.186
+                      "X": 36.1187,
+                      "Y": 105.353
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -6419,19 +6378,19 @@
                     },
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.0377,
-                      "Y": 0.3641
+                      "X": 0.5312,
+                      "Y": 0.5986
                     },
                     "PreSize": {
-                      "X": 0.0703,
-                      "Y": 0.0278
+                      "X": 1.3235,
+                      "Y": 0.1136
                     },
-                    "LeftMargin": 3.3171,
-                    "RightMargin": 1186.6829,
-                    "TopMargin": 447.814,
-                    "BottomMargin": 252.186,
-                    "Tag": 251,
-                    "ActionTag": 58829377,
+                    "LeftMargin": -8.8813,
+                    "RightMargin": -13.1187,
+                    "TopMargin": 60.647,
+                    "BottomMargin": 95.353,
+                    "Tag": 170,
+                    "ActionTag": -483040907,
                     "Size": {
                       "X": 90.0,
                       "Y": 20.0
@@ -6454,8 +6413,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 46.0955,
-                      "Y": 187.3375
+                      "X": 33.8971,
+                      "Y": 30.5045
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -6466,19 +6425,19 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.036,
-                      "Y": 0.2602
+                      "X": 0.4985,
+                      "Y": 0.1733
                     },
                     "PreSize": {
-                      "X": 0.0281,
-                      "Y": 0.0611
+                      "X": 0.5294,
+                      "Y": 0.25
                     },
-                    "LeftMargin": 28.0955,
-                    "RightMargin": 1215.9045,
-                    "TopMargin": 510.6625,
-                    "BottomMargin": 165.3375,
-                    "Tag": 253,
-                    "ActionTag": 247413236,
+                    "LeftMargin": 15.8971,
+                    "RightMargin": 16.1029,
+                    "TopMargin": 123.4955,
+                    "BottomMargin": 8.5045,
+                    "Tag": 171,
+                    "ActionTag": -978294692,
                     "Size": {
                       "X": 36.0,
                       "Y": 44.0
@@ -6487,10 +6446,10 @@
                     "ctype": "ImageViewObjectData"
                   }
                 ],
-                "ActionTag": 805138259,
+                "ActionTag": 1888451579,
                 "Size": {
-                  "X": 1280.0,
-                  "Y": 720.0
+                  "X": 68.0,
+                  "Y": 176.0
                 },
                 "Name": "fuKaPnl",
                 "ctype": "PanelObjectData"
@@ -6722,9 +6681,11 @@
               {
                 "ClipAble": false,
                 "BackColorAlpha": 102,
+                "ComboBoxIndex": 1,
                 "SingleColor": {
-                  "R": 150,
-                  "G": 200
+                  "R": 0,
+                  "G": 0,
+                  "B": 0
                 },
                 "FirstColor": {
                   "R": 150,
@@ -8828,8 +8789,7 @@
         "ctype": "LayerObjectData"
       },
       "UsedResources": [
-        "aaa/fuKa (14).png",
-        "aaa/fuka (18).png",
+        "aaa/fuKa (7).png",
         "common/hb.png",
         "Default/Button_Disable.png",
         "Default/Button_Press.png",

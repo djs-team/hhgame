@@ -641,6 +641,7 @@
                         "Tag": 10,
                         "Children": [
                           {
+                            "IsCustomSize": true,
                             "FontSize": 20,
                             "LabelText": "1、专属会员大奖赛参赛资格",
                             "VerticalAlignmentType": "VT_Center",
@@ -660,7 +661,7 @@
                             },
                             "Position": {
                               "X": 224.9028,
-                              "Y": 280.8058
+                              "Y": 281.81
                             },
                             "Scale": {
                               "ScaleX": 1.0,
@@ -674,26 +675,27 @@
                             "IconVisible": false,
                             "PrePosition": {
                               "X": 0.4401,
-                              "Y": 0.7736
+                              "Y": 0.7763
                             },
                             "PreSize": {
-                              "X": 0.4892,
-                              "Y": 0.0551
+                              "X": 0.5088,
+                              "Y": 0.0634
                             },
                             "LeftMargin": 224.9028,
-                            "RightMargin": 36.0972,
-                            "TopMargin": 72.1942,
-                            "BottomMargin": 270.8058,
+                            "RightMargin": 26.0972,
+                            "TopMargin": 69.69,
+                            "BottomMargin": 270.31,
                             "Tag": 11,
                             "ActionTag": 491126949,
                             "Size": {
-                              "X": 250.0,
-                              "Y": 20.0
+                              "X": 260.0,
+                              "Y": 23.0
                             },
                             "Name": "Text_2",
                             "ctype": "TextObjectData"
                           },
                           {
+                            "IsCustomSize": true,
                             "FontSize": 20,
                             "LabelText": "2、麻将情缘畅游权限",
                             "VerticalAlignmentType": "VT_Center",
@@ -713,7 +715,7 @@
                             },
                             "Position": {
                               "X": 223.9013,
-                              "Y": 247.6082
+                              "Y": 250.61
                             },
                             "Scale": {
                               "ScaleX": 1.0,
@@ -727,26 +729,27 @@
                             "IconVisible": false,
                             "PrePosition": {
                               "X": 0.4382,
-                              "Y": 0.6821
+                              "Y": 0.6904
                             },
                             "PreSize": {
-                              "X": 0.3718,
-                              "Y": 0.0551
+                              "X": 0.5088,
+                              "Y": 0.0661
                             },
                             "LeftMargin": 223.9013,
-                            "RightMargin": 97.0987,
-                            "TopMargin": 105.3918,
-                            "BottomMargin": 237.6082,
+                            "RightMargin": 27.0987,
+                            "TopMargin": 100.39,
+                            "BottomMargin": 238.61,
                             "Tag": 13,
                             "ActionTag": 1464036931,
                             "Size": {
-                              "X": 190.0,
-                              "Y": 20.0
+                              "X": 260.0,
+                              "Y": 24.0
                             },
                             "Name": "Text_2_0",
                             "ctype": "TextObjectData"
                           },
                           {
+                            "IsCustomSize": true,
                             "FontSize": 20,
                             "LabelText": "3、vip会员福利礼包一直领",
                             "VerticalAlignmentType": "VT_Center",
@@ -783,23 +786,24 @@
                               "Y": 0.5948
                             },
                             "PreSize": {
-                              "X": 0.4697,
-                              "Y": 0.0551
+                              "X": 0.5088,
+                              "Y": 0.0634
                             },
                             "LeftMargin": 223.2024,
-                            "RightMargin": 47.7976,
-                            "TopMargin": 137.0784,
-                            "BottomMargin": 205.9216,
+                            "RightMargin": 27.7976,
+                            "TopMargin": 135.5784,
+                            "BottomMargin": 204.4216,
                             "Tag": 14,
                             "ActionTag": -507827684,
                             "Size": {
-                              "X": 240.0,
-                              "Y": 20.0
+                              "X": 260.0,
+                              "Y": 23.0
                             },
                             "Name": "Text_2_0_0",
                             "ctype": "TextObjectData"
                           },
                           {
+                            "IsCustomSize": true,
                             "FontSize": 20,
                             "LabelText": "4、vip会员专属角色免费玩",
                             "VerticalAlignmentType": "VT_Center",
@@ -836,23 +840,24 @@
                               "Y": 0.5064
                             },
                             "PreSize": {
-                              "X": 0.4697,
-                              "Y": 0.0551
+                              "X": 0.5088,
+                              "Y": 0.0634
                             },
                             "LeftMargin": 224.593,
-                            "RightMargin": 46.407,
-                            "TopMargin": 169.1645,
-                            "BottomMargin": 173.8355,
+                            "RightMargin": 26.407,
+                            "TopMargin": 167.6645,
+                            "BottomMargin": 172.3355,
                             "Tag": 15,
                             "ActionTag": -1996716702,
                             "Size": {
-                              "X": 240.0,
-                              "Y": 20.0
+                              "X": 260.0,
+                              "Y": 23.0
                             },
                             "Name": "Text_2_0_0_0",
                             "ctype": "TextObjectData"
                           },
                           {
+                            "IsCustomSize": true,
                             "FontSize": 20,
                             "LabelText": "5、最多领取x倍签到奖励",
                             "VerticalAlignmentType": "VT_Center",
@@ -889,23 +894,24 @@
                               "Y": 0.4084
                             },
                             "PreSize": {
-                              "X": 0.4305,
-                              "Y": 0.0551
+                              "X": 0.5088,
+                              "Y": 0.0634
                             },
                             "LeftMargin": 224.2217,
-                            "RightMargin": 66.7783,
-                            "TopMargin": 204.746,
-                            "BottomMargin": 138.254,
+                            "RightMargin": 26.7783,
+                            "TopMargin": 203.246,
+                            "BottomMargin": 136.754,
                             "Tag": 16,
                             "ActionTag": -1896000779,
                             "Size": {
-                              "X": 220.0,
-                              "Y": 20.0
+                              "X": 260.0,
+                              "Y": 23.0
                             },
                             "Name": "vipSignText",
                             "ctype": "TextObjectData"
                           },
                           {
+                            "IsCustomSize": true,
                             "FontSize": 20,
                             "LabelText": "6、与众不同，专属的会员标识",
                             "VerticalAlignmentType": "VT_Center",
@@ -942,23 +948,24 @@
                               "Y": 0.3194
                             },
                             "PreSize": {
-                              "X": 0.5284,
-                              "Y": 0.0551
+                              "X": 0.5871,
+                              "Y": 0.0634
                             },
                             "LeftMargin": 224.2322,
-                            "RightMargin": 16.7678,
-                            "TopMargin": 237.0656,
-                            "BottomMargin": 105.9344,
+                            "RightMargin": -13.2322,
+                            "TopMargin": 235.5656,
+                            "BottomMargin": 104.4344,
                             "Tag": 17,
                             "ActionTag": -462030938,
                             "Size": {
-                              "X": 270.0,
-                              "Y": 20.0
+                              "X": 300.0,
+                              "Y": 23.0
                             },
                             "Name": "Text_2_0_0_0_0",
                             "ctype": "TextObjectData"
                           },
                           {
+                            "IsCustomSize": true,
                             "FontSize": 20,
                             "LabelText": "7、更多特权，敬请期待......",
                             "VerticalAlignmentType": "VT_Center",
@@ -995,18 +1002,18 @@
                               "Y": 0.224
                             },
                             "PreSize": {
-                              "X": 0.5284,
-                              "Y": 0.0551
+                              "X": 0.5871,
+                              "Y": 0.0634
                             },
                             "LeftMargin": 225.138,
-                            "RightMargin": 15.862,
-                            "TopMargin": 271.68,
-                            "BottomMargin": 71.32,
+                            "RightMargin": -14.138,
+                            "TopMargin": 270.18,
+                            "BottomMargin": 69.82,
                             "Tag": 18,
                             "ActionTag": 1783026643,
                             "Size": {
-                              "X": 270.0,
-                              "Y": 20.0
+                              "X": 300.0,
+                              "Y": 23.0
                             },
                             "Name": "Text_2_0_0_0_0_0",
                             "ctype": "TextObjectData"

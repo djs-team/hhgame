@@ -67,7 +67,8 @@ load('module/mahjong/ui/DeskResultLayer', function () {
         },
 
         onInviteFriendBtnClick: function () {
-
+            let InvitationLayer = include('game/ui/layer/invitation/InvitationLayer')
+            this.addChild(appInstance.uiManager().createUI(InvitationLayer))
         },
 
         onNextGameBtnClick: function () {

@@ -431,11 +431,8 @@ load('game/ui/layer/member/MemberLayer', function () {
                         this.acceptBtn.setBright(true)
                     }
                 } else {
-                    isHaveAcceptRewards = true
                     this.levelLowerBtn.setVisible(false)
                     this.acceptBtn.setVisible(true)
-                    this.acceptBtn.setTouchEnabled(false)
-                    this.acceptBtn.setBright(false)
                     this.acceptBtn.setTouchEnabled(false)
                     this.acceptBtn.setBright(false)
                 }

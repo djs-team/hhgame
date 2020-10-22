@@ -95,8 +95,8 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="RankTxt" ActionTag="2057838618" Tag="70" IconVisible="False" LeftMargin="-49.7700" RightMargin="-90.2300" TopMargin="69.8100" BottomMargin="-104.8100" FontSize="35" LabelText="第几名呢" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="140.0000" Y="35.0000" />
+                  <AbstractNodeData Name="RankTxt" ActionTag="2057838618" Tag="70" IconVisible="False" LeftMargin="-68.2700" RightMargin="-108.7300" TopMargin="69.8100" BottomMargin="-104.8100" IsCustomSize="True" FontSize="35" LabelText="第1024名呢" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="177.0000" Y="35.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="20.2300" Y="-87.3100" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />

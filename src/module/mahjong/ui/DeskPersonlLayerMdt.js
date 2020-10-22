@@ -18,28 +18,27 @@ load('module/mahjong/ui/DeskPersonlLayerMdt', function () {
         },
         getNotificationList: function () {
             return [
-
+                TableEvent.GameResultProto,
+                TableEvent.MatchResultProto,
             ]
         },
         handleNotification: function (notification) {
             let name = notification.getName()
             let body = notification.getBody()
             switch (name) {
-                case TableEvent.UpdateView:
-                    this.UpdateView()
+                case TableEvent.GameResultProto:
+                case TableEvent.MatchResultProto:
+                    this.view.onCloseBtnClick()
                     break
                 default:
                     break
             }
         },
 
-        UpdateView: function () {
 
-        },
 
         initView: function () {
             let tData = appInstance.dataManager().getPlayData().getPlayer(this.pSeatID)
-            cc.log('--------DeskPersonlLayerMdt--------tData : ' + JSON.stringify(tData))
             let data = {
                 pid: tData.pid,
                 nickName: tData.nickName,
@@ -51,7 +50,6 @@ load('module/mahjong/ui/DeskPersonlLayerMdt', function () {
                 isCanSend: true
             }
 
-            cc.log('--------DeskPersonlLayerMdt--------data : ' + JSON.stringify(data))
             this.view.initView(data)
 
         },

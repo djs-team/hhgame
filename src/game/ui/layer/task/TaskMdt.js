@@ -112,10 +112,12 @@ load('game/ui/layer/task/TaskMdt', function () {
                     case 1:
                         boxCell.res = 'res/code/task/rwzx_7.png'
                         boxCell.activityText = '未领取'
+                        boxCell.status = 1
                         break
                     case 2:
                         boxCell.res = 'res/code/task/rwzx_15.png'
                         boxCell.activityText = '已领取'
+                        boxCell.status = 2
                         break
                     default:
                         break

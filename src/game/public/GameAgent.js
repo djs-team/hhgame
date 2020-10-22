@@ -159,7 +159,6 @@ load('game/public/GameAgent', function () {
                 this._heartBeatTimes += dt
                 this._sendHearBeat += dt
                 if (this._sendHearBeat > GameConfig.HeartBeatInterval) {
-                    cc.log('====》》》》》》==发送心跳')
                     this._sendHearBeat = 0
                     this._tcpGame.heartBeat()
                 }

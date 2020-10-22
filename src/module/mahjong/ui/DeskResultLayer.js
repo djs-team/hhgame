@@ -166,7 +166,7 @@ load('module/mahjong/ui/DeskResultLayer', function () {
             let ruleTxt = infoCell.getChildByName('ruleTxt')
             let CardNd = infoCell.getChildByName('CardNd')
 
-            let handCards = pinfo.handCards
+            let handCards = appInstance.gameAgent().mjUtil().sortCard(pinfo.handCards)
             let pChiList = pinfo.pChiList
             let pPengList = pinfo.pPengList
             let pGangList = pinfo.pGangList
@@ -220,13 +220,17 @@ load('module/mahjong/ui/DeskResultLayer', function () {
                 posX += offLen
             }
             for (let index = 0; index < pGangList.length; ++index) {
+                let cardInfo = {
+                    nCardColor: pGangList[index].pGangCardColor,
+                    nCardNumber: pGangList[index].pGangCardNumber,
+                }
                 for (let i = 0; i < 4; ++i) {
                     let card = this.CardCell.clone()
                     CardNd.addChild(card)
-                    let cardImg = appInstance.gameAgent().mjUtil().getCardValueImg(0, 'selfhand', pGangList[index])
+                    let cardImg = appInstance.gameAgent().mjUtil().getCardValueImg(0, 'selfhand', cardInfo)
                     card.getChildByName('CardValue').loadTexture(cardImg)
-                    if (i) {
-                        card.setPosition(cc.p(posX + cardLen, 0))
+                    if (!i) {
+                        card.setPosition(cc.p(posX + cardLen, -10))
                     } else {
                         card.setPosition(cc.p(posX, 0))
                         posX += cardLen

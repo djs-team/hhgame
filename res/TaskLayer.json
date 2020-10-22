@@ -1319,6 +1319,7 @@
                                         "ctype": "ImageViewObjectData"
                                       },
                                       {
+                                        "IsCustomSize": true,
                                         "FontSize": 20,
                                         "LabelText": "已领取",
                                         "FontResource": {

@@ -131,7 +131,7 @@ load('game/ui/layer/task/TaskLayer', function () {
 
 
         onActivityCellTouch: function (sender, et) {
-
+        
             switch (et) {
                 case 0:
                     break
@@ -139,6 +139,7 @@ load('game/ui/layer/task/TaskLayer', function () {
                     sender.getChildByName('activityDescPg').setVisible(true)
                     break
                 case 2:
+                    GameUtil.delayBtn(sender)
                     switch (sender.status) {
                         case 0:
                             appInstance.gameAgent().Tips('尚未满足要求，请继续完成任务')
@@ -363,8 +364,7 @@ load('game/ui/layer/task/TaskLayer', function () {
             let cell = this.activityLoadingBar.getChildByName('activityTask'+activityConfig.activityId)
             cell.getChildByName('activityPg').loadTexture(activityConfig.res)
             cell.getChildByName('activityText').setString(activityConfig.activityText)
-            cell.status = 1
-
+            cell.status = activityConfig.status
         },
 
         receiveRewards: function (data) {

@@ -248,7 +248,7 @@
                                         <PreSize X="0.7089" Y="0.5250" />
                                         <FileData Type="Normal" Path="task/rwzx_9.png" Plist="" />
                                       </AbstractNodeData>
-                                      <AbstractNodeData Name="activityText" ActionTag="-1597070288" Tag="35" IconVisible="False" LeftMargin="5.3358" RightMargin="9.6642" TopMargin="54.6400" BottomMargin="3.3600" FontSize="20" LabelText="已领取" HorizontalAlignmentType="HT_Center" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                                      <AbstractNodeData Name="activityText" ActionTag="-1597070288" Tag="35" IconVisible="False" LeftMargin="5.3358" RightMargin="9.6642" TopMargin="54.6400" BottomMargin="3.3600" IsCustomSize="True" FontSize="20" LabelText="已领取" HorizontalAlignmentType="HT_Center" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                                         <Size X="64.0000" Y="22.0000" />
                                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                                         <Position X="37.3358" Y="14.3600" />

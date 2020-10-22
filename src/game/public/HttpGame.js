@@ -1482,6 +1482,16 @@ load('game/public/HttpGame', function () {
             appInstance.sendNotification(GameEvent.HALL_EMAIL_RECEIVE, msg)
 
         },
+
+        /**
+         * 分享完成任务
+         * @param msg 
+         */
+        sharedCompleteTaskReq: function (msg) {
+            msg = msg || {}
+            msg.msgID = HttpEvent.MJ_HALL_SHARE_COMPLETE_TASK
+            appInstance.httpAgent().sendPost(msg)
+        }
     })
     return HttpGame
 })

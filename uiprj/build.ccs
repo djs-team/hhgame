@@ -1056,7 +1056,6 @@
         <Project Name="TipsDialog.csd" Type="Layer" />
         <Project Name="TipsFloat.csd" Type="Layer" />
         <Project Name="TurnTableLayer.csd" Type="Layer" />
-        <Project Name="UpdateScene.csd" Type="Scene" />
       </RootFolder>
     </Group>
   </SolutionFolder>

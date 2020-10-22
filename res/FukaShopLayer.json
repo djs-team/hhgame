@@ -6219,11 +6219,10 @@
             "Scale9Width": 1,
             "Scale9Height": 1,
             "AnchorPoint": {
-              "ScaleX": 0.5,
               "ScaleY": 0.5
             },
             "Position": {
-              "X": 640.0,
+              "X": 0.0,
               "Y": 360.648
             },
             "Scale": {
@@ -6235,7 +6234,7 @@
             "PositionPercentXEnabled": true,
             "PositionPercentYEnabled": true,
             "PrePosition": {
-              "X": 0.5,
+              "X": 0.0,
               "Y": 0.5009
             },
             "PreSize": {

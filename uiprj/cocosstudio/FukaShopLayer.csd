@@ -1578,11 +1578,11 @@
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
             </Children>
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="640.0000" Y="360.6480" />
+            <AnchorPoint ScaleY="0.5000" />
+            <Position Y="360.6480" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5000" Y="0.5009" />
+            <PrePosition Y="0.5009" />
             <PreSize X="1.0000" Y="1.0000" />
             <SingleColor A="255" R="150" G="200" B="255" />
             <FirstColor A="255" R="150" G="200" B="255" />

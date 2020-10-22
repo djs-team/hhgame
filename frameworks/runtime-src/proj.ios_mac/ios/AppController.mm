@@ -37,8 +37,6 @@
 #import "CXUserInfoViewController.h"
 #import "CXBaseNavigationController.h"
 
-#import "CXChangeAgeAlertView.h"
-
 // Pay
 #import <AlipaySDK/AlipaySDK.h>
 #import <WXApi.h>
@@ -736,12 +734,23 @@ UIInterfaceOrientationMask oMask = UIInterfaceOrientationMaskLandscape;
             [CXClientModel instance].avatar = user.avatar;
             [CXClientModel instance].sex = user.sex;
             
-            [[CXClientModel instance].easemob login:user.user_id];
+            [[EMClient sharedClient] loginWithUsername:user.user_id password:user.user_id completion:^(NSString *aUsername, EMError *aError) {
+                [AppController setOrientation:@"V"];
+                CXBaseTabBarViewController *tabbarVC = [CXBaseTabBarViewController new];
+                tabbarVC.modalPresentationStyle = UIModalPresentationFullScreen;
+                [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:tabbarVC animated:YES completion:nil];
+//                if (aError) {
+////                    if (wself.delegate && [wself.delegate respondsToSelector:@selector(easemob:user:loginError:)]) {
+////                        [wself.delegate easemob:wself user:aUsername loginError:EMErrorToNSErrro(aError)];
+////                    }
+//                } else {
+////                    if (wself.delegate && [wself.delegate respondsToSelector:@selector(easemob:didLoginWithUser:)]) {
+////                        [wself.delegate easemob:wself didLoginWithUser:aUsername];
+////                    }
+//                }
+            }];
             
-            [AppController setOrientation:@"V"];
-            CXBaseTabBarViewController *tabbarVC = [CXBaseTabBarViewController new];
-            tabbarVC.modalPresentationStyle = UIModalPresentationFullScreen;
-            [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:tabbarVC animated:YES completion:nil];
+//            [[CXClientModel instance].easemob login:user.user_id];
         } else {
             [CXTools showAlertWithMessage:responseObject[@"desc"]];
         }
@@ -749,11 +758,6 @@ UIInterfaceOrientationMask oMask = UIInterfaceOrientationMaskLandscape;
 }
 
 + (void)joinRoom:(NSString *)roomId {
-    if ([CXClientModel instance].sex.integerValue < 1) { // 未设置性别
-        CXChangeAgeAlertView *ageView = [[NSBundle mainBundle] loadNibNamed:@"CXChangeAgeAlertView" owner:nil options:nil].lastObject;
-        [ageView show];
-        return;
-    }
     if (roomId.length <= 0) {
         return;
     }
@@ -776,6 +780,12 @@ UIInterfaceOrientationMask oMask = UIInterfaceOrientationMaskLandscape;
     UIViewController *currentVC = [CXTools currentViewController];
     [currentVC.navigationController pushViewController:vc animated:YES];
     
+}
+
++ (void)showUserProfile:(NSString *_Nonnull)userId target:(UIViewController *)target {
+    CXUserInfoViewController *vc = [CXUserInfoViewController new];
+    vc.user_Id = userId;
+    [target.navigationController pushViewController:vc animated:YES];
 }
 
 + (void)logout {

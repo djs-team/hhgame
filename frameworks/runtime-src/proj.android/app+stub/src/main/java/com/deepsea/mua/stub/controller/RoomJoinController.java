@@ -1,6 +1,7 @@
 package com.deepsea.mua.stub.controller;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
 import android.util.Log;
@@ -191,7 +192,15 @@ public class RoomJoinController implements IRoomController.JoinRoomListener {
         hideLoading();
         RoomMiniController.getInstance().removeFloatWindow();
         String path = ArouterConst.PAGE_ROOM;
-        ArouterUtils.build(path).withBoolean("isInvite", isInvite).withInt("inviteMicroId", inviteMicroId).withInt("free", free).withInt("cost", cost).navigation();
+//        ArouterUtils.build(path).withBoolean("isInvite", isInvite).withInt("inviteMicroId", inviteMicroId).withInt("free", free).withInt("cost", cost).navigation();
+        Intent intent = new Intent();
+        intent.setClassName("com.hehegame.chess", "com.deepsea.mua.voice.activity.RoomActivity");
+        intent.putExtra("isInvite", isInvite);
+        intent.putExtra("inviteMicroId", inviteMicroId);
+        intent.putExtra("free", free);
+        intent.putExtra("cost", cost);
+        mContext.startActivity(intent);
+
         MobEventUtils.onJoinRoom(mContext);
         if (mCallBack != null) {
             mCallBack.onResult();

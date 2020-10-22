@@ -10,7 +10,7 @@
 @implementation AppController (Share)
 
 // 微信分享(网页分享)
-+ (void)WXShareIOSforUrl:(NSString *)url Title:(NSString *)tit Desc:(NSString *)desc image:(NSString *)image
++ (void)WXShareIOSforUrl:(NSString *)url Title:(NSString *)tit Desc:(NSString *)desc image:(NSString *)image platform:(NSString *)platform
 {
     if ([WXApi isWXAppInstalled]) {
         WXMediaMessage * webmsg = [WXMediaMessage message];
@@ -30,7 +30,11 @@
         SendMessageToWXReq * req  = [[SendMessageToWXReq alloc]init];
         req.bText = NO;
         req.message = webmsg;
-        req.scene = WXSceneSession; // 默认发送到聊天界面
+        if ([platform isEqualToString:@"WEIXIN_CIRCLE"]) {
+            req.scene = WXSceneTimeline; // 朋友圈
+        } else {
+            req.scene = WXSceneSession;
+        }
         
         [WXApi sendReq:req completion:nil];
         
@@ -39,12 +43,12 @@
 }
 
 // (文本)
-+ (void)WXShareIOSforDescription:(NSString *)des isTimeLine:(BOOL)isTimeLine
++ (void)WXShareIOSforDescription:(NSString *)des platform:(NSString *)platform
 {
     SendMessageToWXReq * req= [[SendMessageToWXReq alloc]init];
     req.text = des;
     req.bText = YES;
-    if (isTimeLine == YES) {
+    if ([platform isEqualToString:@"WEIXIN_CIRCLE"]) {
         req.scene = WXSceneTimeline; // 朋友圈
     } else {
         req.scene = WXSceneSession; 
@@ -54,27 +58,15 @@
 }
 
 // (截图)
-+ (void)WXShareIOSforImage:(NSString *)path
++ (void)WXShareIOSforImage:(NSString *)path platform:(NSString *)platform
 {
     if (path.length <= 0) {
         return;
     }
-//    NSLog(@"从cocos发过来的图片地址----> %@",path);
-//    UIImage * img = [UIImage imageWithContentsOfFile:path];
-//    if (!img) {
-//        return;
-//    }
-//    // 根据原图压缩一半分辨率
-//    float h = img.size.height;
-//    float w = img.size.width;
-//    NSData * newdata = [self imageWithImage:img scaledToSize:CGSizeMake(w/2, h/2)]; // 调整图片分辨率
-//    UIImage * newimg =[self zipImgData:newdata]; // 压缩图片字节
     
     NSData *imageData = [NSData dataWithContentsOfFile: path];
-//    NSData *imageData = UIImageJPEGRepresentation(img, 0.5);
     
     WXMediaMessage * msg = [WXMediaMessage message];
-//    [msg setThumbImage:newimg];
     
     WXImageObject * imgObj = [WXImageObject object];
     imgObj.imageData = imageData ;
@@ -83,7 +75,7 @@
     SendMessageToWXReq * req= [[SendMessageToWXReq alloc]init];
     req.bText = NO;
     req.message = msg;
-    req.scene = WXSceneTimeline;
+    req.scene = [platform isEqualToString:@"WEIXIN"] ? WXSceneSession : WXSceneTimeline;
     
     [WXApi sendReq:req completion:nil];
 }

@@ -45,6 +45,7 @@
 /// 进入用户详情资料页
 /// @param userId 用户ID
 + (void)showUserProfile:(NSString *_Nonnull)userId;
++ (void)showUserProfile:(NSString *_Nonnull)userId target:(UIViewController *)target;
 
 /// 退出登录
 + (void)logout;

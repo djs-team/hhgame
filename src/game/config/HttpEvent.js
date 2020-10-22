@@ -55,7 +55,7 @@ load('game/config/HttpEvent', function () {
         MJ_HALL_MAIL_LIST: HTTP_HALL_BASE + 98,  //邮件列表
         MJ_HALL_MAIL_DEL: HTTP_HALL_BASE + 99,  //删除邮件
         MJ_HALL_MAIL_RECEIVE_DELETE: HTTP_HALL_BASE + 100,  //邮件领取奖励
-
+        MJ_HALL_SHARE_COMPLETE_TASK: HTTP_HALL_BASE + 106,  //分享完成任务
 
         MJ_HALL_PLAYER_BUY_VIP_ORDER: HTTP_HALL_BASE + 101,
         MJ_HALL_CHECK_IN_INFO: HTTP_HALL_BASE + 104,

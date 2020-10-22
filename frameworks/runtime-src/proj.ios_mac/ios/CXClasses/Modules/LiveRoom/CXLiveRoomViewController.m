@@ -8,6 +8,7 @@
 #import "CXLiveRoomViewController.h"
 #import "CXBaseWebViewController.h"
 #import "CXFriendViewController.h"
+#import "CXLiveRoomSetupViewController.h"
 
 #import <AZCategory/UIView+AZGradient.h>
 
@@ -656,6 +657,11 @@
                 }
             }
                 break;
+            case SocketMessageIDRoomNameUpdate: {
+                self.roomUIView.top_roomNameWidthLayout.constant = [[CXClientModel instance].room.RoomData.RoomName sizeWithFont:[UIFont systemFontOfSize:16]].width + 44;
+                self.roomUIView.top_roomNameLabel.text = [CXClientModel instance].room.RoomData.RoomName;
+            }
+                break;
             case SocketMessageIDMicroSeatNumber: { // 同步用户上麦卡数量
                 CXSocketMessageSystemNotification *message =  notification;
                 [CXClientModel instance].room.WheatCardCount = message.Numbers;
@@ -951,9 +957,13 @@
                 CXSocketMessageNotifyStartRobRedPacket *msg = notification;
                 if (msg.Msg) {
                     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithData:[msg.Msg dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
-                               UIFont *boldFont = [UIFont boldSystemFontOfSize:16];
-                               [attributedString addAttribute:NSFontAttributeName value:boldFont range:NSMakeRange(0, attributedString.length)];
+                    UIFont *boldFont = [UIFont boldSystemFontOfSize:16];
+                    [attributedString addAttribute:NSFontAttributeName value:boldFont range:NSMakeRange(0, attributedString.length)];
                     self.redpacketStartView.msgLabel.attributedText =  attributedString;
+                    
+                    GameMessageTextWelcomeModel *textModel = [GameMessageTextWelcomeModel new];
+                    textModel.text = attributedString.string;
+                    [self.roomUIView.messageListView addModel:textModel];
                 } else {
                     self.redpacketStartView.msgLabel.text = @"";
                 }
@@ -1086,6 +1096,9 @@
     LiveRoomUser *user = userInfo.User;
     profileView.userInfo = userInfo;
     kWeakSelf
+    profileView.userProfileAvatarActionBlock = ^{
+        [AppController showUserProfile:userInfo.User.UserId target:weakSelf];
+    };
     profileView.userProfileActionBlock = ^(NSInteger tag) {
         switch (tag) {
             case 10: // 禁言
@@ -1127,6 +1140,7 @@
                     vc.nickname = user.Name;
                     vc.user_id = user.UserId;
                     vc.user_avatar = user.HeadImageUrl;
+                    vc.is_room = @"1";
                     [self.navigationController pushViewController:vc animated:YES];
                 }
             }
@@ -1226,11 +1240,11 @@
         if ([CXClientModel instance].agoraEngineManager.offMic == YES) { // 闭麦了，打开
             self.isCloseMineMicro = NO;
             [CXClientModel instance].agoraEngineManager.offMic = NO;
-            [seatView.muteBtn setImage:[UIImage imageNamed:@"liveroom_seat_micro_off"] forState:UIControlStateNormal];
+            [seatView.muteBtn setImage:[UIImage imageNamed:@"liveroom_seat_micro_on"] forState:UIControlStateNormal];
         } else {
             self.isCloseMineMicro = YES;
             [CXClientModel instance].agoraEngineManager.offMic = YES;
-            [seatView.muteBtn setImage:[UIImage imageNamed:@"liveroom_seat_micro_on"] forState:UIControlStateNormal];
+            [seatView.muteBtn setImage:[UIImage imageNamed:@"liveroom_seat_micro_off"] forState:UIControlStateNormal];
         }
     } else {
         LiveRoomMicroInfo * seat = [[CXClientModel instance].room.seats objectForKey:seatIndex];
@@ -1238,13 +1252,13 @@
             if ([[CXClientModel instance].agoraEngineManager.engine muteRemoteAudioStream:[user.UserId integerValue] mute:NO] == 0) {
                 seat.isMute = NO;
                 [self.muteArrays removeObject:user.UserId];
-                [seatView.muteBtn setImage:[UIImage imageNamed:@"liveroom_seat_micro_off"] forState:UIControlStateNormal];
+                [seatView.muteBtn setImage:[UIImage imageNamed:@"liveroom_seat_micro_on"] forState:UIControlStateNormal];
             }
         } else {
             if ([[CXClientModel instance].agoraEngineManager.engine muteRemoteAudioStream:[user.UserId integerValue] mute:YES] == 0) {
                 seat.isMute = YES;
                 [self.muteArrays addObject:user.UserId];
-                [seatView.muteBtn setImage:[UIImage imageNamed:@"liveroom_seat_micro_on"] forState:UIControlStateNormal];
+                [seatView.muteBtn setImage:[UIImage imageNamed:@"liveroom_seat_micro_off"] forState:UIControlStateNormal];
             }
         }
     }
@@ -2496,11 +2510,11 @@
             break;
         case 21: // 房间设置
         {
-//            if ([CXClientModel instance].room.UserIdentity != GameUserIdentityNormal) {
-//                [self showRoomInfoViewWithRoomInfo];
-//            } else {
-            [self getUserInfoWith:[CXClientModel instance].room.RoomData.OwnerUserId];
-//            }
+            if ([CXClientModel instance].room.UserIdentity != GameUserIdentityNormal) {
+                [self showRoomInfoViewWithRoomInfo];
+            } else {
+                [self getUserInfoWith:[CXClientModel instance].room.RoomData.OwnerUserId];
+            }
             
         }
             break;
@@ -2623,6 +2637,7 @@
             vc.nickname = microInfo.modelUser.Name;
             vc.user_id = microInfo.modelUser.UserId;
             vc.user_avatar = microInfo.modelUser.HeadImageUrl;
+            vc.is_room = @"1";
             [self.navigationController pushViewController:vc animated:YES];
         }
             break;
@@ -2630,6 +2645,31 @@
             break;
     }
 }
+
+// 管理员 房间信息弹框
+- (void)showRoomInfoViewWithRoomInfo {
+    __weak typeof(self) wself = self;
+    UIAlertController *sheet = [UIAlertController alertControllerWithTitle:@"房间信息" message:@"" preferredStyle:UIAlertControllerStyleActionSheet];
+//    NSString *lockRoom = [[CXClientModel instance].room.RoomData.RoomLock boolValue] == YES ? @"解锁房间" : @"锁定房间";
+//    [sheet addAction:[UIAlertAction actionWithTitle:lockRoom style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//        SocketMessageSetRoomLock * lock = [SocketMessageSetRoomLock new];
+//        lock.IsLock = @(![[CXClientModel instance].room.RoomData.RoomLock boolValue]);
+//        [[CXClientModel instance] sendSocketRequest:lock withCallback:^(__kindof SocketMessageRequest * _Nonnull request) {
+//            if (request.response.isSuccess) {
+//                [wself toast:@"设置成功"];
+//            } else {
+//                [wself toast:@"设置失败"];
+//            }
+//        }];
+//    }]];
+    [sheet addAction:[UIAlertAction actionWithTitle:@"房间设置" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        CXLiveRoomSetupViewController *vc = [[CXLiveRoomSetupViewController alloc] init];
+        [wself.navigationController pushViewController:vc animated:YES];
+    }]];
+    [sheet addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
+    [self presentViewController:sheet animated:YES completion:nil];
+}
+
 
 #pragma mark - Setter/Getter
 

@@ -253,7 +253,6 @@ public class MicroFaceView extends FrameLayout {
 
     public void releaseLayout(int myType) {
         ViewBindUtils.setVisible(mBinding.llMicroOperate, false);
-        mBinding.ivRankUsers.setVisibility(GONE);
         mBinding.ivGiveRose.setVisibility(GONE);
         mBinding.ivGiveRose.setOnClickListener(null);
         mBinding.tvUserInfo.setText("");

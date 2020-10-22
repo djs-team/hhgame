@@ -28,6 +28,7 @@ load('module/mahjong/ui/MatchResultLayer', function () {
         },
 
         onShareWxBtnClick: function () {
+            appInstance.gameAgent().saveCanvas()
 
         },
 

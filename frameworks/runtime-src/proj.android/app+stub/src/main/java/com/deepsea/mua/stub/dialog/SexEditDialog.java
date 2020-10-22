@@ -76,6 +76,12 @@ public class SexEditDialog extends BaseDialog<DialogEditSexBinding> {
         ViewBindUtils.RxClicks(mBinding.tvConfirm, o -> {
             fetchSexEdit();
         });
+        ViewBindUtils.RxClicks(mBinding.tvCancel, o -> {
+            if (listener != null) {
+                listener.onResult(-1);
+            }
+            dismiss();
+        });
         selectSex(true);
     }
 

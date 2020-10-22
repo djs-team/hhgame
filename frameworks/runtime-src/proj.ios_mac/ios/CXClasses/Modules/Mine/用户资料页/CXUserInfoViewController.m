@@ -214,6 +214,9 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == _currentRoomSectionIndex) {
         [AppController joinRoom:_currentUser.room_info.room_id];
+        if ([CXClientModel instance].isJoinedRoom == YES) {
+            [self.navigationController popViewControllerAnimated:YES];
+        }
     }
 }
 #pragma mark  Header_CGSize

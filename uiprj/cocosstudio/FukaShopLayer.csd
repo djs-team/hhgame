@@ -93,7 +93,7 @@
                     <PrePosition X="0.0837" Y="0.5482" />
                     <PreSize X="0.4313" Y="0.0375" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="imgPageCell" ActionTag="1975261828" Tag="158" IconVisible="False" RightMargin="651.0000" TopMargin="493.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                  <AbstractNodeData Name="imgPageCell" ActionTag="1975261828" Tag="158" IconVisible="False" RightMargin="651.0000" TopMargin="493.0000" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="629.0000" Y="227.0000" />
                     <AnchorPoint />
                     <Position />

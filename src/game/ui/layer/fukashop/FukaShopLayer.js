@@ -410,14 +410,30 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
             if(isHaveAdress != 1){
                 msg.wordsText = '您还未完整填写收货地址，为保证\n' +
                     '货物顺利到达，请完善收货地址'
-                msg.midBtnFunction = function () {
+                msg.leftBtnFunction = function () {
                     this.onClosePopupPnlClick()
+                }.bind(this)
+
+                msg.rightBtnFunction = function () {
+                    let msgInfo = {
+                        titleName : '地址',
+                        contextType : 4
+                    }
+
+                    msgInfo.leftBtnFunction = function () {
+                        this.onClosePopupPnlClick()
+                    }.bind(this)
+
+                    msgInfo.rightBtnFunction = function () {
+                        this.onConfirmClicked();
+                    }.bind(this)
+                    this.onShowPopubUI(msgInfo)
+                    return false
                 }.bind(this)
 
                 this.onShowPopubUI(msg)
                 return
             }
-
             let fuka =  this.fuKaPnl.getChildByName('fuKaCnt').getString()
             if(fuka >= price){
 
@@ -426,7 +442,8 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                     this.onClosePopupPnlClick()
                 }.bind(this)
 
-                msg.rightBtnFunction = function () {
+                msg.rightBtnFunction = function (sender) {
+                    GameUtil.delayBtn(sender);
                     let sendMsg = {
                         goodsid : goodsId
                     }
@@ -446,6 +463,42 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
 
             this.onShowPopubUI(msg)
 
+        },
+
+        onConfirmClicked: function () {
+            let phone = this.contextPnl.getChildByName('addressPnl').getChildByName('phoneTextFiled').getString()
+            let name = this.contextPnl.getChildByName('addressPnl').getChildByName('nameTextFiled').getString()
+            let address = this.contextPnl.getChildByName('addressPnl').getChildByName('addressTextFiled').getString()
+
+            if (!(/^1[3|4|5|7|8][0-9]\d{8,11}$/.test(phone))) {
+                appInstance.gameAgent().Tips('手机号格式异常，请检查后重新输入')
+                return
+            }
+
+            if (name.length >= 50) {
+
+                appInstance.gameAgent().Tips('名字超长，请检查后重新输入')
+                return
+
+            }
+
+            if (name.length >= 50) {
+
+                appInstance.gameAgent().Tips('地址超长，请检查后重新输入')
+                return
+
+            }
+
+            let msg = {}
+            msg.phone = phone
+            msg.name = name
+            msg.address = address
+            appInstance.gameAgent().httpGame().UPDATEADDRESSReq(msg)
+
+        },
+
+        onCloseUpdateAddressClicked: function () {
+            this.popupPnl.setVisible(false)
         },
 
         onRechargePhoneBtnClick: function (orderCode) {
@@ -808,6 +861,7 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                     this.contextPnl.getChildByName('wordsPnl').setVisible(true)
                     this.contextPnl.getChildByName('imgPnl').setVisible(false)
                     this.contextPnl.getChildByName('robPnl').setVisible(false)
+                    this.contextPnl.getChildByName('addressPnl').setVisible(false)
                     this.contextPnl.getChildByName('wordsPnl').getChildByName('wordsText').setString(msg.wordsText)
 
                     break
@@ -815,6 +869,7 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                     this.contextPnl.getChildByName('wordsPnl').setVisible(false)
                     this.contextPnl.getChildByName('imgPnl').setVisible(true)
                     this.contextPnl.getChildByName('robPnl').setVisible(false)
+                    this.contextPnl.getChildByName('addressPnl').setVisible(false)
                     this.contextPnl.getChildByName('imgPnl').getChildByName('imgNameText').setString(msg.imgNameText)
                     this.contextPnl.getChildByName('imgPnl').getChildByName('photoImg').loadTexture(msg.photoImg)
                     break
@@ -822,12 +877,17 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                     this.contextPnl.getChildByName('wordsPnl').setVisible(false)
                     this.contextPnl.getChildByName('imgPnl').setVisible(false)
                     this.contextPnl.getChildByName('robPnl').setVisible(true)
-
+                    this.contextPnl.getChildByName('addressPnl').setVisible(false)
                     this.contextPnl.getChildByName('robPnl').getChildByName('fuKaFiled').setString('')
                     this.contextPnl.getChildByName('robPnl').getChildByName('fuaVauleText').setString(msg.fuaVauleText)
-
                     this.contextPnl.getChildByName('robPnl').getChildByName('prizePercentText').setString(msg.currentNum + '/' + msg.allNum)
                     this.contextPnl.getChildByName('robPnl').getChildByName('prizeLoadingBar').setPercent(msg.currentNum / msg.allNum * 100)
+                    break
+                case 4:
+                    this.contextPnl.getChildByName('wordsPnl').setVisible(false)
+                    this.contextPnl.getChildByName('imgPnl').setVisible(false)
+                    this.contextPnl.getChildByName('robPnl').setVisible(false)
+                    this.contextPnl.getChildByName('addressPnl').setVisible(true)
                     break
                 default:
                     break
@@ -852,7 +912,6 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
             }else{
                 this.btnsPnl.getChildByName('midBtn').setVisible(false)
             }
-
             if(msg.rightBtnFunction){
                 this.btnsPnl.getChildByName('rightBtn').setVisible(true)
                 this.btnsPnl.getChildByName('rightBtn').setEnabled(true)

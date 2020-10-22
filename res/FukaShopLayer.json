@@ -120,6 +120,54 @@
             "ctype": "ImageViewObjectData"
           },
           {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "aaa/fuka (18).png",
+              "Plist": ""
+            },
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 15,
+            "Scale9Width": 1265,
+            "Scale9Height": 700,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 640.0,
+              "Y": 360.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PositionPercentXEnabled": true,
+            "PositionPercentYEnabled": true,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.5
+            },
+            "PreSize": {
+              "X": 1.0117,
+              "Y": 1.0139
+            },
+            "LeftMargin": -7.5,
+            "RightMargin": -7.5,
+            "TopMargin": -5.0,
+            "BottomMargin": -5.0,
+            "Tag": 2231,
+            "ActionTag": 1636549443,
+            "Size": {
+              "X": 1295.0,
+              "Y": 730.0
+            },
+            "VisibleForFrame": false,
+            "Name": "dele_0",
+            "ctype": "ImageViewObjectData"
+          },
+          {
             "ClipAble": false,
             "BackColorAlpha": 237,
             "SingleColor": {},
@@ -7229,8 +7277,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 649.984,
-                      "Y": 349.992
+                      "X": 640.0,
+                      "Y": 360.0
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -7241,8 +7289,8 @@
                     "PositionPercentXEnabled": true,
                     "PositionPercentYEnabled": true,
                     "PrePosition": {
-                      "X": 0.5078,
-                      "Y": 0.4861
+                      "X": 0.5,
+                      "Y": 0.5
                     },
                     "PercentWidthEnable": true,
                     "PercentHeightEnable": true,
@@ -7252,10 +7300,6 @@
                       "X": 1.0,
                       "Y": 1.0
                     },
-                    "LeftMargin": 9.984,
-                    "RightMargin": -9.984,
-                    "TopMargin": 10.008,
-                    "BottomMargin": -10.008,
                     "Tag": 362,
                     "Children": [
                       {
@@ -7389,8 +7433,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 659.968,
-                      "Y": 339.984
+                      "X": 640.0,
+                      "Y": 360.0
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -7401,8 +7445,8 @@
                     "PositionPercentXEnabled": true,
                     "PositionPercentYEnabled": true,
                     "PrePosition": {
-                      "X": 0.5156,
-                      "Y": 0.4722
+                      "X": 0.5,
+                      "Y": 0.5
                     },
                     "PercentWidthEnable": true,
                     "PercentHeightEnable": true,
@@ -7412,10 +7456,6 @@
                       "X": 1.0,
                       "Y": 1.0
                     },
-                    "LeftMargin": 19.968,
-                    "RightMargin": -19.968,
-                    "TopMargin": 20.016,
-                    "BottomMargin": -20.016,
                     "Tag": 364,
                     "Children": [
                       {
@@ -7834,6 +7874,512 @@
                       "Y": 720.0
                     },
                     "Name": "robPnl",
+                    "ctype": "PanelObjectData"
+                  },
+                  {
+                    "ClipAble": false,
+                    "BackColorAlpha": 102,
+                    "SingleColor": {
+                      "R": 150,
+                      "G": 200
+                    },
+                    "FirstColor": {
+                      "R": 150,
+                      "G": 200
+                    },
+                    "EndColor": {},
+                    "ColorVector": {
+                      "ScaleY": 1.0
+                    },
+                    "Scale9Width": 1,
+                    "Scale9Height": 1,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 640.0,
+                      "Y": 360.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PositionPercentXEnabled": true,
+                    "PositionPercentYEnabled": true,
+                    "PrePosition": {
+                      "X": 0.5,
+                      "Y": 0.5
+                    },
+                    "PercentWidthEnable": true,
+                    "PercentHeightEnable": true,
+                    "PercentWidthEnabled": true,
+                    "PercentHeightEnabled": true,
+                    "PreSize": {
+                      "X": 1.0,
+                      "Y": 1.0
+                    },
+                    "Tag": 2230,
+                    "Children": [
+                      {
+                        "IsCustomSize": true,
+                        "FontSize": 28,
+                        "LabelText": "手机号：",
+                        "OutlineColor": {
+                          "G": 0,
+                          "B": 0
+                        },
+                        "ShadowColor": {
+                          "R": 110,
+                          "G": 110,
+                          "B": 110
+                        },
+                        "ShadowOffsetX": 2.0,
+                        "ShadowOffsetY": -2.0,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 534.845,
+                          "Y": 228.3611
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "RotationSkewX": -90.0,
+                        "RotationSkewY": -90.0,
+                        "CColor": {
+                          "R": 237,
+                          "G": 115,
+                          "B": 42
+                        },
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.4178,
+                          "Y": 0.3172
+                        },
+                        "PreSize": {
+                          "X": 0.0875,
+                          "Y": 0.0431
+                        },
+                        "LeftMargin": 478.845,
+                        "RightMargin": 689.155,
+                        "TopMargin": 476.1389,
+                        "BottomMargin": 212.8611,
+                        "Tag": 2319,
+                        "ActionTag": 1057259367,
+                        "Size": {
+                          "X": 112.0,
+                          "Y": 31.0
+                        },
+                        "Name": "Text_42",
+                        "ctype": "TextObjectData"
+                      },
+                      {
+                        "IsCustomSize": true,
+                        "FontSize": 28,
+                        "LabelText": "收货人：",
+                        "OutlineColor": {
+                          "G": 0,
+                          "B": 0
+                        },
+                        "ShadowColor": {
+                          "R": 110,
+                          "G": 110,
+                          "B": 110
+                        },
+                        "ShadowOffsetX": 2.0,
+                        "ShadowOffsetY": -2.0,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 621.247,
+                          "Y": 228.3611
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "RotationSkewX": -90.0,
+                        "RotationSkewY": -90.0,
+                        "CColor": {
+                          "R": 237,
+                          "G": 115,
+                          "B": 42
+                        },
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.4853,
+                          "Y": 0.3172
+                        },
+                        "PreSize": {
+                          "X": 0.0875,
+                          "Y": 0.0431
+                        },
+                        "LeftMargin": 565.247,
+                        "RightMargin": 602.753,
+                        "TopMargin": 476.1389,
+                        "BottomMargin": 212.8611,
+                        "Tag": 2318,
+                        "ActionTag": -1140521003,
+                        "Size": {
+                          "X": 112.0,
+                          "Y": 31.0
+                        },
+                        "Name": "Text_42_0",
+                        "ctype": "TextObjectData"
+                      },
+                      {
+                        "IsCustomSize": true,
+                        "FontSize": 28,
+                        "LabelText": "地 址：",
+                        "OutlineColor": {
+                          "G": 0,
+                          "B": 0
+                        },
+                        "ShadowColor": {
+                          "R": 110,
+                          "G": 110,
+                          "B": 110
+                        },
+                        "ShadowOffsetX": 2.0,
+                        "ShadowOffsetY": -2.0,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 704.0528,
+                          "Y": 228.3609
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "RotationSkewX": -90.0,
+                        "RotationSkewY": -90.0,
+                        "CColor": {
+                          "R": 237,
+                          "G": 115,
+                          "B": 42
+                        },
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.55,
+                          "Y": 0.3172
+                        },
+                        "PreSize": {
+                          "X": 0.0766,
+                          "Y": 0.0431
+                        },
+                        "LeftMargin": 655.0528,
+                        "RightMargin": 526.9472,
+                        "TopMargin": 476.1391,
+                        "BottomMargin": 212.8609,
+                        "Tag": 2317,
+                        "ActionTag": -420334317,
+                        "Size": {
+                          "X": 98.0,
+                          "Y": 31.0
+                        },
+                        "Name": "Text_42_1",
+                        "ctype": "TextObjectData"
+                      },
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "fukashop/input.png",
+                          "Plist": ""
+                        },
+                        "Scale9Enable": true,
+                        "Scale9OriginX": 6,
+                        "Scale9OriginY": 8,
+                        "Scale9Width": 248,
+                        "Scale9Height": 20,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 534.5745,
+                          "Y": 423.4386
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "RotationSkewX": -90.0,
+                        "RotationSkewY": -90.0,
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.4176,
+                          "Y": 0.5881
+                        },
+                        "PreSize": {
+                          "X": 0.2031,
+                          "Y": 0.05
+                        },
+                        "LeftMargin": 404.5745,
+                        "RightMargin": 615.4255,
+                        "TopMargin": 278.5614,
+                        "BottomMargin": 405.4386,
+                        "Tag": 2316,
+                        "ActionTag": -340943487,
+                        "Size": {
+                          "X": 260.0,
+                          "Y": 36.0
+                        },
+                        "Name": "Image_84",
+                        "ctype": "ImageViewObjectData"
+                      },
+                      {
+                        "FontResource": {
+                          "Type": "Default",
+                          "Path": "",
+                          "Plist": ""
+                        },
+                        "FontSize": 24,
+                        "IsCustomSize": true,
+                        "LabelText": "",
+                        "PlaceHolderText": "请输入您的手机号",
+                        "MaxLengthText": 10,
+                        "TouchEnable": true,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 534.1656,
+                          "Y": 423.1236
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "RotationSkewX": -90.0,
+                        "RotationSkewY": -90.0,
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.4173,
+                          "Y": 0.5877
+                        },
+                        "PreSize": {
+                          "X": 0.2031,
+                          "Y": 0.0375
+                        },
+                        "LeftMargin": 404.1656,
+                        "RightMargin": 615.8344,
+                        "TopMargin": 283.3764,
+                        "BottomMargin": 409.6236,
+                        "Tag": 2315,
+                        "ActionTag": 468412629,
+                        "Size": {
+                          "X": 260.0,
+                          "Y": 27.0
+                        },
+                        "Name": "phoneTextFiled",
+                        "ctype": "TextFieldObjectData"
+                      },
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "fukashop/input.png",
+                          "Plist": ""
+                        },
+                        "Scale9Enable": true,
+                        "Scale9OriginX": 6,
+                        "Scale9OriginY": 8,
+                        "Scale9Width": 248,
+                        "Scale9Height": 20,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 619.5741,
+                          "Y": 423.4386
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "RotationSkewX": -90.0,
+                        "RotationSkewY": -90.0,
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.484,
+                          "Y": 0.5881
+                        },
+                        "PreSize": {
+                          "X": 0.2031,
+                          "Y": 0.05
+                        },
+                        "LeftMargin": 489.5741,
+                        "RightMargin": 530.4259,
+                        "TopMargin": 278.5614,
+                        "BottomMargin": 405.4386,
+                        "Tag": 2314,
+                        "ActionTag": 970918851,
+                        "Size": {
+                          "X": 260.0,
+                          "Y": 36.0
+                        },
+                        "Name": "Image_84_0",
+                        "ctype": "ImageViewObjectData"
+                      },
+                      {
+                        "FontSize": 24,
+                        "IsCustomSize": true,
+                        "LabelText": "",
+                        "PlaceHolderText": "请输入您的收货人姓名",
+                        "MaxLengthText": 10,
+                        "TouchEnable": true,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 618.9429,
+                          "Y": 423.119
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "RotationSkewX": -90.0,
+                        "RotationSkewY": -90.0,
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.4835,
+                          "Y": 0.5877
+                        },
+                        "PreSize": {
+                          "X": 0.2031,
+                          "Y": 0.0375
+                        },
+                        "LeftMargin": 488.9429,
+                        "RightMargin": 531.0571,
+                        "TopMargin": 283.381,
+                        "BottomMargin": 409.619,
+                        "Tag": 2313,
+                        "ActionTag": 1811874801,
+                        "Size": {
+                          "X": 260.0,
+                          "Y": 27.0
+                        },
+                        "Name": "nameTextFiled",
+                        "ctype": "TextFieldObjectData"
+                      },
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "fukashop/input.png",
+                          "Plist": ""
+                        },
+                        "Scale9Enable": true,
+                        "Scale9OriginX": 6,
+                        "Scale9OriginY": 8,
+                        "Scale9Width": 248,
+                        "Scale9Height": 20,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 704.7838,
+                          "Y": 423.4386
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "RotationSkewX": -90.0,
+                        "RotationSkewY": -90.0,
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.5506,
+                          "Y": 0.5881
+                        },
+                        "PreSize": {
+                          "X": 0.2031,
+                          "Y": 0.05
+                        },
+                        "LeftMargin": 574.7838,
+                        "RightMargin": 445.2162,
+                        "TopMargin": 278.5614,
+                        "BottomMargin": 405.4386,
+                        "Tag": 2312,
+                        "ActionTag": -258821640,
+                        "Size": {
+                          "X": 260.0,
+                          "Y": 36.0
+                        },
+                        "Name": "Image_84_1",
+                        "ctype": "ImageViewObjectData"
+                      },
+                      {
+                        "FontSize": 24,
+                        "IsCustomSize": true,
+                        "LabelText": "",
+                        "PlaceHolderText": "请输入您的收货地址",
+                        "MaxLengthText": 10,
+                        "TouchEnable": true,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 704.7821,
+                          "Y": 423.119
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "RotationSkewX": -90.0,
+                        "RotationSkewY": -90.0,
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.5506,
+                          "Y": 0.5877
+                        },
+                        "PreSize": {
+                          "X": 0.2031,
+                          "Y": 0.0375
+                        },
+                        "LeftMargin": 574.7821,
+                        "RightMargin": 445.2179,
+                        "TopMargin": 283.381,
+                        "BottomMargin": 409.619,
+                        "Tag": 2311,
+                        "ActionTag": 33332556,
+                        "Size": {
+                          "X": 260.0,
+                          "Y": 27.0
+                        },
+                        "Name": "addressTextFiled",
+                        "ctype": "TextFieldObjectData"
+                      }
+                    ],
+                    "ActionTag": 2113903237,
+                    "Size": {
+                      "X": 1280.0,
+                      "Y": 720.0
+                    },
+                    "Name": "addressPnl",
                     "ctype": "PanelObjectData"
                   }
                 ],
@@ -8284,6 +8830,7 @@
       },
       "UsedResources": [
         "aaa/fuKa (14).png",
+        "aaa/fuka (18).png",
         "common/hb.png",
         "Default/Button_Disable.png",
         "Default/Button_Press.png",
@@ -8317,7 +8864,8 @@
         "fukashop/fk_4.png",
         "fukashop/fk_40.png",
         "fukashop/fk_5.png",
-        "fukashop/fk_8.png"
+        "fukashop/fk_8.png",
+        "fukashop/input.png"
       ],
       "ctype": "GameFileData"
     }

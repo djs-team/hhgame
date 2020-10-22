@@ -254,14 +254,12 @@ load('game/ui/layer/member/MemberLayer', function () {
 
         },
 
-        onTurnNextCliecked: function (sender) {
-            GameUtil.delayBtn(sender);
+        onTurnNextCliecked: function () {
             let nextCode = this._PublicData.turnCodeData.turnNextCode
             this.onChangePrivilegeData(nextCode)
         },
 
-        onTurnPreviousCliecked: function (sender) {
-            GameUtil.delayBtn(sender);
+        onTurnPreviousCliecked: function () {
             let previousCode = this._PublicData.turnCodeData.turnPreviousCode
             this.onChangePrivilegeData(previousCode)
 
@@ -552,8 +550,12 @@ load('game/ui/layer/member/MemberLayer', function () {
 
         onReceiveRewards: function () {
 
+            cc.log('----------onReceiveRewards--------------')
             this.everyDayPnl.getChildByName('everyDayBlockPnl').setVisible(true)
             this.everyDayPnl.getChildByName('acceptedPg').setVisible(true)
+            this.acceptBtn.setTouchEnabled(false)
+            this.acceptBtn.setBright(false)
+            this._PublicData.canVipDaily = 1
 
         },
 

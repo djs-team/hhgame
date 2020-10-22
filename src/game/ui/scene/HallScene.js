@@ -109,8 +109,7 @@ load('game/ui/scene/HallScene', function () {
             appInstance.gameAgent().addUI(ResConfig.Ui.InvitationLayer)
         },
 
-        onHideMorePnlClick: function (sender) {
-            GameUtil.delayBtn(sender);
+        onHideMorePnlClick: function () {
             this.morePnl.setVisible(false)
         },
         onTurnTableClick: function (sender) {

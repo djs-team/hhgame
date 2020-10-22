@@ -67,12 +67,8 @@ load('module/mahjong/ui/DeskResultLayer', function () {
         },
 
         onInviteFriendBtnClick: function () {
-            cc.log('=======邀请好友==========')
-            appInstance.gameAgent().addPopUI(ResConfig.Ui.InvitationLayer)
-            
-//            let DeskResultLayer = include('game/ui/layer/invitation/InvitationLayer')
-//            this.DeskResultLayer = appInstance.uiManager().createUI(ResConfig.Ui.InvitationLayer)
-//            this.addChild(this.DeskResultLayer)
+            let InvitationLayer = include('game/ui/layer/invitation/InvitationLayer')
+            this.addChild(appInstance.uiManager().createUI(InvitationLayer))
         },
 
         onNextGameBtnClick: function () {

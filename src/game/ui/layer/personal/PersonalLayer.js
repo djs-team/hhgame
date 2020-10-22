@@ -61,7 +61,7 @@ load('game/ui/layer/personal/PersonalLayer', function () {
         },
 
         initView: function () {
-
+            this.changePicBtn.setVisible(false)
         },
 
         showView: function () {

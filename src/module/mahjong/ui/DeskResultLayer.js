@@ -115,7 +115,7 @@ load('module/mahjong/ui/DeskResultLayer', function () {
             this.onInfoBtnClick(initInfo)
 
             let baoCardInfo = this._pData.tableData.pBaoCard
-            if (baoCardInfo.nCardNumber && baoCardInfo.nCardColor) {
+            if (baoCardInfo.nCardNumber || baoCardInfo.nCardColor) {
                 let baoImg = appInstance.gameAgent().mjUtil().getCardValueImg(0, 'selfhand', baoCardInfo)
                 this.BaoCard.getChildByName('CardValue').loadTexture(baoImg)
                 this.BaoCard.setVisible(true)

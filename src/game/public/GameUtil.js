@@ -297,6 +297,9 @@ load('game/public/GameUtil',function () {
     }
 
     GameUtil.delayBtn = function (btn,delayTime) {
+        if (!btn) {
+            return
+        }
         btn.retain()
         btn.setTouchEnabled(false)
         delayTime = delayTime || 2

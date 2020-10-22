@@ -247,8 +247,8 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="EmojBtn" ActionTag="1047162224" Tag="275" IconVisible="False" LeftMargin="-155.9774" RightMargin="69.9774" TopMargin="-12.3890" BottomMargin="-21.6110" TouchEnable="True" CheckedState="True" ctype="CheckBoxObjectData">
-                    <Size X="86.0000" Y="34.0000" />
+                  <AbstractNodeData Name="EmojBtn" ActionTag="1047162224" Tag="275" IconVisible="False" LeftMargin="-175.4774" RightMargin="50.4774" TopMargin="-21.8890" BottomMargin="-31.1110" TouchEnable="True" CheckedState="True" ctype="CheckBoxObjectData">
+                    <Size X="125.0000" Y="53.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="-112.9774" Y="-4.6110" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -258,8 +258,8 @@
                     <NormalBackFileData Type="Normal" Path="set/sz_4.png" Plist="" />
                     <PressedBackFileData Type="Normal" Path="set/sz_4.png" Plist="" />
                     <DisableBackFileData Type="Default" Path="Default/CheckBox_Disable.png" Plist="" />
-                    <NodeNormalFileData Type="Normal" Path="set/sz_2.png" Plist="" />
-                    <NodeDisableFileData Type="Normal" Path="set/sz_2.png" Plist="" />
+                    <NodeNormalFileData Type="Normal" Path="set/sz_5.png" Plist="" />
+                    <NodeDisableFileData Type="Normal" Path="set/sz_5.png" Plist="" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="Name_0" ActionTag="583244140" Tag="274" IconVisible="False" LeftMargin="45.3264" RightMargin="-135.3264" TopMargin="-13.3154" BottomMargin="-16.6846" FontSize="30" LabelText="方言：" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="90.0000" Y="30.0000" />
@@ -272,8 +272,8 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="LaguageBtn" ActionTag="1960847788" Tag="276" IconVisible="False" LeftMargin="170.6758" RightMargin="-256.6758" TopMargin="-13.6307" BottomMargin="-20.3693" TouchEnable="True" CheckedState="True" ctype="CheckBoxObjectData">
-                    <Size X="86.0000" Y="34.0000" />
+                  <AbstractNodeData Name="LaguageBtn" ActionTag="1960847788" Tag="276" IconVisible="False" LeftMargin="151.1758" RightMargin="-276.1758" TopMargin="-23.1307" BottomMargin="-29.8693" TouchEnable="True" CheckedState="True" ctype="CheckBoxObjectData">
+                    <Size X="125.0000" Y="53.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="213.6758" Y="-3.3693" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -283,8 +283,8 @@
                     <NormalBackFileData Type="Normal" Path="set/sz_4.png" Plist="" />
                     <PressedBackFileData Type="Normal" Path="set/sz_4.png" Plist="" />
                     <DisableBackFileData Type="Default" Path="Default/CheckBox_Disable.png" Plist="" />
-                    <NodeNormalFileData Type="Normal" Path="set/sz_2.png" Plist="" />
-                    <NodeDisableFileData Type="Normal" Path="set/sz_2.png" Plist="" />
+                    <NodeNormalFileData Type="Normal" Path="set/sz_5.png" Plist="" />
+                    <NodeDisableFileData Type="Normal" Path="set/sz_5.png" Plist="" />
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint />

@@ -61,7 +61,7 @@ load('module/mahjong/ui/MatchResultLayer', function () {
                         propCode:rewardData.propCode,
                         propNum:rewardData.propNum,
                     }
-                    GameUtil.getRoleData(propData,needKeysArrayName,'propType','propCode')
+                    GameUtil.getRoleData(propData,['name'],'propType','propCode')
                     // rewardStr += cc.formatStr('(%s) x (%s) \n', propData.name, propData.propNum.toString())
                     if(i > 0)
                         rewardStr += '，'

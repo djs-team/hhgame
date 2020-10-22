@@ -192,2326 +192,6 @@
             "ColorVector": {
               "ScaleY": 1.0
             },
-            "Scale9OriginX": -422,
-            "Scale9OriginY": -237,
-            "Scale9Width": 844,
-            "Scale9Height": 474,
-            "AnchorPoint": {
-              "ScaleX": 0.5,
-              "ScaleY": 1.0
-            },
-            "Position": {
-              "X": 640.0,
-              "Y": 719.496
-            },
-            "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 1.0
-            },
-            "CColor": {},
-            "IconVisible": false,
-            "PositionPercentXEnabled": true,
-            "PositionPercentYEnabled": true,
-            "PrePosition": {
-              "X": 0.5,
-              "Y": 0.9993
-            },
-            "PreSize": {
-              "X": 1.0,
-              "Y": 1.0
-            },
-            "TopMargin": 0.504,
-            "BottomMargin": -0.504,
-            "UserData": "{\"layoutType\":\"showAll\",\"screenAlign\":\"top\"}",
-            "Tag": 25,
-            "Children": [
-              {
-                "FontSize": 14,
-                "ButtonText": "",
-                "TextColor": {
-                  "R": 65,
-                  "G": 65,
-                  "B": 70
-                },
-                "DisabledFileData": {
-                  "Type": "Default",
-                  "Path": "Default/Button_Disable.png",
-                  "Plist": ""
-                },
-                "NormalFileData": {
-                  "Type": "Normal",
-                  "Path": "hall/dtjm_1_1.png",
-                  "Plist": ""
-                },
-                "Scale9Enable": true,
-                "Scale9OriginX": 15,
-                "Scale9OriginY": 11,
-                "Scale9Width": 67,
-                "Scale9Height": 76,
-                "OutlineColor": {
-                  "G": 0,
-                  "B": 0
-                },
-                "ShadowColor": {
-                  "R": 110,
-                  "G": 110,
-                  "B": 110
-                },
-                "ShadowOffsetX": 2.0,
-                "ShadowOffsetY": -2.0,
-                "TouchEnable": true,
-                "AnchorPoint": {
-                  "ScaleX": 0.5,
-                  "ScaleY": 0.5
-                },
-                "Position": {
-                  "X": 59.7991,
-                  "Y": 659.6916
-                },
-                "Scale": {
-                  "ScaleX": 1.0,
-                  "ScaleY": 1.0
-                },
-                "CColor": {},
-                "IconVisible": false,
-                "PrePosition": {
-                  "X": 0.0467,
-                  "Y": 0.9162
-                },
-                "PreSize": {
-                  "X": 0.0758,
-                  "Y": 0.1348
-                },
-                "LeftMargin": 11.2991,
-                "RightMargin": 1171.7009,
-                "TopMargin": 11.7684,
-                "BottomMargin": 611.1516,
-                "Tag": 29,
-                "ActionTag": 1698666448,
-                "Size": {
-                  "X": 97.0,
-                  "Y": 97.08
-                },
-                "Name": "photoBtn",
-                "ctype": "ButtonObjectData"
-              },
-              {
-                "FontSize": 18,
-                "ButtonText": "贵族",
-                "TextColor": {
-                  "R": 138,
-                  "G": 74,
-                  "B": 0
-                },
-                "DisabledFileData": {
-                  "Type": "Default",
-                  "Path": "Default/Button_Disable.png",
-                  "Plist": ""
-                },
-                "NormalFileData": {
-                  "Type": "Normal",
-                  "Path": "hall/dtjm_2.png",
-                  "Plist": ""
-                },
-                "Scale9Enable": true,
-                "Scale9OriginX": 15,
-                "Scale9OriginY": 11,
-                "Scale9Width": 21,
-                "Scale9Height": 15,
-                "OutlineColor": {
-                  "G": 0,
-                  "B": 0
-                },
-                "ShadowColor": {
-                  "R": 110,
-                  "G": 110,
-                  "B": 110
-                },
-                "ShadowOffsetX": 2.0,
-                "ShadowOffsetY": -2.0,
-                "TouchEnable": true,
-                "AnchorPoint": {
-                  "ScaleX": 0.5,
-                  "ScaleY": 0.5
-                },
-                "Position": {
-                  "X": 144.6594,
-                  "Y": 665.92
-                },
-                "Scale": {
-                  "ScaleX": 1.0,
-                  "ScaleY": 1.0
-                },
-                "CColor": {},
-                "IconVisible": false,
-                "PrePosition": {
-                  "X": 0.113,
-                  "Y": 0.9249
-                },
-                "PreSize": {
-                  "X": 0.0406,
-                  "Y": 0.0462
-                },
-                "LeftMargin": 118.6594,
-                "RightMargin": 1109.3406,
-                "TopMargin": 37.45,
-                "BottomMargin": 649.29,
-                "Tag": 136,
-                "Children": [
-                  {
-                    "FileData": {
-                      "Type": "Normal",
-                      "Path": "hall/pz_31.png",
-                      "Plist": ""
-                    },
-                    "Scale9OriginX": 7,
-                    "Scale9OriginY": 7,
-                    "Scale9Width": 9,
-                    "Scale9Height": 8,
-                    "AnchorPoint": {
-                      "ScaleX": 0.5,
-                      "ScaleY": 0.5
-                    },
-                    "Position": {
-                      "X": 50.2758,
-                      "Y": 25.9009
-                    },
-                    "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
-                    },
-                    "CColor": {},
-                    "IconVisible": false,
-                    "PrePosition": {
-                      "X": 0.9668,
-                      "Y": 0.7787
-                    },
-                    "PreSize": {
-                      "X": 0.4423,
-                      "Y": 0.6615
-                    },
-                    "LeftMargin": 38.7758,
-                    "RightMargin": -9.7758,
-                    "TopMargin": -3.6409,
-                    "BottomMargin": 14.9009,
-                    "Tag": 298,
-                    "ActionTag": 1798066918,
-                    "Size": {
-                      "X": 23.0,
-                      "Y": 22.0
-                    },
-                    "Name": "redImg",
-                    "ctype": "ImageViewObjectData"
-                  }
-                ],
-                "ActionTag": 1379166341,
-                "Size": {
-                  "X": 52.0,
-                  "Y": 33.26
-                },
-                "Name": "guiZuBtn",
-                "ctype": "ButtonObjectData"
-              },
-              {
-                "ClipAble": false,
-                "BackColorAlpha": 0,
-                "SingleColor": {
-                  "R": 150,
-                  "G": 200
-                },
-                "FirstColor": {
-                  "R": 150,
-                  "G": 200
-                },
-                "EndColor": {},
-                "ColorVector": {
-                  "ScaleY": 1.0
-                },
-                "Scale9Width": 1,
-                "Scale9Height": 1,
-                "TouchEnable": true,
-                "AnchorPoint": {},
-                "Position": {
-                  "X": 117.04,
-                  "Y": 610.5823
-                },
-                "Scale": {
-                  "ScaleX": 1.0,
-                  "ScaleY": 1.0
-                },
-                "CColor": {},
-                "IconVisible": false,
-                "PrePosition": {
-                  "X": 0.0914,
-                  "Y": 0.848
-                },
-                "PreSize": {
-                  "X": 0.0844,
-                  "Y": 0.0472
-                },
-                "LeftMargin": 117.04,
-                "RightMargin": 1054.96,
-                "TopMargin": 75.4177,
-                "BottomMargin": 610.5823,
-                "Tag": 138,
-                "Children": [
-                  {
-                    "FileData": {
-                      "Type": "Normal",
-                      "Path": "hall/dtjm_3.png",
-                      "Plist": ""
-                    },
-                    "Scale9OriginX": 34,
-                    "Scale9OriginY": 11,
-                    "Scale9Width": 36,
-                    "Scale9Height": 12,
-                    "AnchorPoint": {
-                      "ScaleX": 0.5,
-                      "ScaleY": 0.5
-                    },
-                    "Position": {
-                      "X": 52.44,
-                      "Y": 16.39
-                    },
-                    "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
-                    },
-                    "CColor": {},
-                    "IconVisible": false,
-                    "PrePosition": {
-                      "X": 0.4856,
-                      "Y": 0.4821
-                    },
-                    "PreSize": {
-                      "X": 1.1204,
-                      "Y": 1.0
-                    },
-                    "LeftMargin": -8.06,
-                    "RightMargin": -4.94,
-                    "TopMargin": 0.61,
-                    "BottomMargin": -0.61,
-                    "Tag": 139,
-                    "ActionTag": 139071523,
-                    "Size": {
-                      "X": 121.0,
-                      "Y": 34.0
-                    },
-                    "Name": "nameBg",
-                    "ctype": "ImageViewObjectData"
-                  },
-                  {
-                    "FontSize": 19,
-                    "LabelText": "000000000000",
-                    "HorizontalAlignmentType": "HT_Center",
-                    "VerticalAlignmentType": "VT_Bottom",
-                    "OutlineColor": {
-                      "G": 0,
-                      "B": 0
-                    },
-                    "ShadowColor": {
-                      "R": 110,
-                      "G": 110,
-                      "B": 110
-                    },
-                    "ShadowOffsetX": 2.0,
-                    "ShadowOffsetY": -2.0,
-                    "AnchorPoint": {
-                      "ScaleX": 0.5,
-                      "ScaleY": 0.5
-                    },
-                    "Position": {
-                      "X": 51.0,
-                      "Y": 19.0
-                    },
-                    "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
-                    },
-                    "CColor": {},
-                    "IconVisible": false,
-                    "PrePosition": {
-                      "X": 0.4722,
-                      "Y": 0.5588
-                    },
-                    "PreSize": {
-                      "X": 1.1111,
-                      "Y": 0.5588
-                    },
-                    "LeftMargin": -9.0,
-                    "RightMargin": -3.0,
-                    "TopMargin": 5.5,
-                    "BottomMargin": 9.5,
-                    "Tag": 137,
-                    "ActionTag": -1983909678,
-                    "Size": {
-                      "X": 120.0,
-                      "Y": 19.0
-                    },
-                    "Name": "name",
-                    "ctype": "TextObjectData"
-                  }
-                ],
-                "ActionTag": 656690230,
-                "Size": {
-                  "X": 108.0,
-                  "Y": 34.0
-                },
-                "Name": "namePnl",
-                "ctype": "PanelObjectData"
-              },
-              {
-                "ClipAble": false,
-                "BackColorAlpha": 0,
-                "ComboBoxIndex": 1,
-                "SingleColor": {
-                  "R": 150,
-                  "G": 200
-                },
-                "FirstColor": {
-                  "R": 150,
-                  "G": 200
-                },
-                "EndColor": {},
-                "ColorVector": {
-                  "ScaleY": 1.0
-                },
-                "Scale9Width": 1,
-                "Scale9Height": 1,
-                "TouchEnable": true,
-                "AnchorPoint": {
-                  "ScaleX": 0.5,
-                  "ScaleY": 0.5
-                },
-                "Position": {
-                  "X": 423.296,
-                  "Y": 680.904
-                },
-                "Scale": {
-                  "ScaleX": 1.0,
-                  "ScaleY": 1.0
-                },
-                "CColor": {},
-                "IconVisible": false,
-                "PositionPercentXEnabled": true,
-                "PositionPercentYEnabled": true,
-                "PrePosition": {
-                  "X": 0.3307,
-                  "Y": 0.9457
-                },
-                "PreSize": {
-                  "X": 0.1563,
-                  "Y": 0.0625
-                },
-                "LeftMargin": 323.296,
-                "RightMargin": 756.704,
-                "TopMargin": 16.596,
-                "BottomMargin": 658.404,
-                "Tag": 113,
-                "Children": [
-                  {
-                    "FileData": {
-                      "Type": "Normal",
-                      "Path": "hall/dtjm_4.png",
-                      "Plist": ""
-                    },
-                    "Scale9Enable": true,
-                    "Scale9OriginX": 7,
-                    "Scale9OriginY": 11,
-                    "Scale9Width": 11,
-                    "Scale9Height": 13,
-                    "AnchorPoint": {
-                      "ScaleX": 0.5,
-                      "ScaleY": 0.5
-                    },
-                    "Position": {
-                      "X": 109.32,
-                      "Y": 21.65
-                    },
-                    "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
-                    },
-                    "CColor": {},
-                    "IconVisible": false,
-                    "PrePosition": {
-                      "X": 0.5466,
-                      "Y": 0.4811
-                    },
-                    "PreSize": {
-                      "X": 0.8119,
-                      "Y": 0.8444
-                    },
-                    "LeftMargin": 28.13,
-                    "RightMargin": 9.49,
-                    "TopMargin": 4.35,
-                    "BottomMargin": 2.65,
-                    "Tag": 115,
-                    "ActionTag": -840924393,
-                    "Size": {
-                      "X": 162.38,
-                      "Y": 38.0
-                    },
-                    "Name": "coinsNum",
-                    "ctype": "ImageViewObjectData"
-                  },
-                  {
-                    "IsCustomSize": true,
-                    "FontSize": 24,
-                    "LabelText": "10.万",
-                    "HorizontalAlignmentType": "HT_Center",
-                    "VerticalAlignmentType": "VT_Center",
-                    "OutlineColor": {
-                      "G": 0,
-                      "B": 0
-                    },
-                    "ShadowColor": {
-                      "R": 110,
-                      "G": 110,
-                      "B": 110
-                    },
-                    "ShadowOffsetX": 2.0,
-                    "ShadowOffsetY": -2.0,
-                    "AnchorPoint": {
-                      "ScaleX": 0.5,
-                      "ScaleY": 0.5
-                    },
-                    "Position": {
-                      "X": 102.0,
-                      "Y": 21.0
-                    },
-                    "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
-                    },
-                    "CColor": {},
-                    "IconVisible": false,
-                    "PrePosition": {
-                      "X": 0.51,
-                      "Y": 0.4667
-                    },
-                    "PreSize": {
-                      "X": 0.558,
-                      "Y": 0.8444
-                    },
-                    "LeftMargin": 46.2,
-                    "RightMargin": 42.2,
-                    "TopMargin": 5.0,
-                    "BottomMargin": 2.0,
-                    "Tag": 124,
-                    "ActionTag": -13001346,
-                    "Size": {
-                      "X": 111.6,
-                      "Y": 38.0
-                    },
-                    "Name": "coinsCnt",
-                    "ctype": "TextObjectData"
-                  },
-                  {
-                    "FontSize": 14,
-                    "ButtonText": "",
-                    "TextColor": {
-                      "R": 65,
-                      "G": 65,
-                      "B": 70
-                    },
-                    "DisabledFileData": {
-                      "Type": "Default",
-                      "Path": "Default/Button_Disable.png",
-                      "Plist": ""
-                    },
-                    "NormalFileData": {
-                      "Type": "Normal",
-                      "Path": "hall/dtjm_5.png",
-                      "Plist": ""
-                    },
-                    "Scale9Enable": true,
-                    "Scale9OriginX": 15,
-                    "Scale9OriginY": 13,
-                    "Scale9Width": 8,
-                    "Scale9Height": 16,
-                    "OutlineColor": {
-                      "G": 0,
-                      "B": 0
-                    },
-                    "ShadowColor": {
-                      "R": 110,
-                      "G": 110,
-                      "B": 110
-                    },
-                    "ShadowOffsetX": 2.0,
-                    "ShadowOffsetY": -2.0,
-                    "TouchEnable": true,
-                    "AnchorPoint": {
-                      "ScaleX": 0.5,
-                      "ScaleY": 0.5
-                    },
-                    "Position": {
-                      "X": 173.0,
-                      "Y": 21.65
-                    },
-                    "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
-                    },
-                    "CColor": {},
-                    "IconVisible": false,
-                    "PrePosition": {
-                      "X": 0.865,
-                      "Y": 0.4811
-                    },
-                    "PreSize": {
-                      "X": 0.1947,
-                      "Y": 0.8889
-                    },
-                    "LeftMargin": 153.53,
-                    "RightMargin": 7.53,
-                    "TopMargin": 3.35,
-                    "BottomMargin": 1.65,
-                    "Tag": 21,
-                    "ActionTag": 833893237,
-                    "Size": {
-                      "X": 38.94,
-                      "Y": 40.0
-                    },
-                    "Name": "coinAddBtn",
-                    "ctype": "ButtonObjectData"
-                  },
-                  {
-                    "FileData": {
-                      "Type": "Normal",
-                      "Path": "common/jinbi.png",
-                      "Plist": ""
-                    },
-                    "Scale9OriginX": 13,
-                    "Scale9OriginY": 13,
-                    "Scale9Width": 14,
-                    "Scale9Height": 14,
-                    "AnchorPoint": {
-                      "ScaleX": 0.5,
-                      "ScaleY": 0.5
-                    },
-                    "Position": {
-                      "X": 30.39,
-                      "Y": 21.5
-                    },
-                    "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
-                    },
-                    "CColor": {},
-                    "IconVisible": false,
-                    "PrePosition": {
-                      "X": 0.152,
-                      "Y": 0.4778
-                    },
-                    "PreSize": {
-                      "X": 0.2,
-                      "Y": 0.8889
-                    },
-                    "LeftMargin": 10.39,
-                    "RightMargin": 149.61,
-                    "TopMargin": 3.5,
-                    "BottomMargin": 1.5,
-                    "Tag": 114,
-                    "ActionTag": -1139096234,
-                    "Size": {
-                      "X": 40.0,
-                      "Y": 40.0
-                    },
-                    "Name": "coins",
-                    "ctype": "ImageViewObjectData"
-                  }
-                ],
-                "ActionTag": 2112484207,
-                "Size": {
-                  "X": 200.0,
-                  "Y": 45.0
-                },
-                "Name": "coinPnl",
-                "ctype": "PanelObjectData"
-              },
-              {
-                "ClipAble": false,
-                "BackColorAlpha": 0,
-                "ComboBoxIndex": 1,
-                "SingleColor": {
-                  "R": 150,
-                  "G": 200
-                },
-                "FirstColor": {
-                  "R": 150,
-                  "G": 200
-                },
-                "EndColor": {},
-                "ColorVector": {
-                  "ScaleY": 1.0
-                },
-                "Scale9Width": 1,
-                "Scale9Height": 1,
-                "TouchEnable": true,
-                "AnchorPoint": {
-                  "ScaleX": 0.5,
-                  "ScaleY": 0.5
-                },
-                "Position": {
-                  "X": 658.08,
-                  "Y": 680.95
-                },
-                "Scale": {
-                  "ScaleX": 1.0,
-                  "ScaleY": 1.0
-                },
-                "CColor": {},
-                "IconVisible": false,
-                "PrePosition": {
-                  "X": 0.5141,
-                  "Y": 0.9458
-                },
-                "PreSize": {
-                  "X": 0.1563,
-                  "Y": 0.0625
-                },
-                "LeftMargin": 558.08,
-                "RightMargin": 521.92,
-                "TopMargin": 16.55,
-                "BottomMargin": 658.45,
-                "Tag": 120,
-                "Children": [
-                  {
-                    "FileData": {
-                      "Type": "Normal",
-                      "Path": "hall/dtjm_4.png",
-                      "Plist": ""
-                    },
-                    "Scale9Enable": true,
-                    "Scale9OriginX": 8,
-                    "Scale9OriginY": 11,
-                    "Scale9Width": 10,
-                    "Scale9Height": 13,
-                    "AnchorPoint": {
-                      "ScaleX": 0.5,
-                      "ScaleY": 0.5
-                    },
-                    "Position": {
-                      "X": 103.32,
-                      "Y": 21.65
-                    },
-                    "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
-                    },
-                    "CColor": {},
-                    "IconVisible": false,
-                    "PrePosition": {
-                      "X": 0.5166,
-                      "Y": 0.4811
-                    },
-                    "PreSize": {
-                      "X": 0.8119,
-                      "Y": 0.8444
-                    },
-                    "LeftMargin": 22.13,
-                    "RightMargin": 15.49,
-                    "TopMargin": 4.35,
-                    "BottomMargin": 2.65,
-                    "Tag": 121,
-                    "ActionTag": 770476341,
-                    "Size": {
-                      "X": 162.38,
-                      "Y": 38.0
-                    },
-                    "Name": "diamondsNum",
-                    "ctype": "ImageViewObjectData"
-                  },
-                  {
-                    "IsCustomSize": true,
-                    "FontSize": 24,
-                    "LabelText": "50",
-                    "HorizontalAlignmentType": "HT_Center",
-                    "VerticalAlignmentType": "VT_Center",
-                    "OutlineColor": {
-                      "G": 0,
-                      "B": 0
-                    },
-                    "ShadowColor": {
-                      "R": 110,
-                      "G": 110,
-                      "B": 110
-                    },
-                    "ShadowOffsetX": 2.0,
-                    "ShadowOffsetY": -2.0,
-                    "AnchorPoint": {
-                      "ScaleX": 0.5,
-                      "ScaleY": 0.5
-                    },
-                    "Position": {
-                      "X": 100.0,
-                      "Y": 21.0
-                    },
-                    "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
-                    },
-                    "CColor": {},
-                    "IconVisible": false,
-                    "PrePosition": {
-                      "X": 0.5,
-                      "Y": 0.4667
-                    },
-                    "PreSize": {
-                      "X": 0.558,
-                      "Y": 0.8444
-                    },
-                    "LeftMargin": 44.2,
-                    "RightMargin": 44.2,
-                    "TopMargin": 5.0,
-                    "BottomMargin": 2.0,
-                    "Tag": 125,
-                    "ActionTag": -1297075180,
-                    "Size": {
-                      "X": 111.6,
-                      "Y": 38.0
-                    },
-                    "Name": "diamondsCnt",
-                    "ctype": "TextObjectData"
-                  },
-                  {
-                    "FontSize": 14,
-                    "ButtonText": "",
-                    "TextColor": {
-                      "R": 65,
-                      "G": 65,
-                      "B": 70
-                    },
-                    "DisabledFileData": {
-                      "Type": "Default",
-                      "Path": "Default/Button_Disable.png",
-                      "Plist": ""
-                    },
-                    "NormalFileData": {
-                      "Type": "Normal",
-                      "Path": "hall/dtjm_5.png",
-                      "Plist": ""
-                    },
-                    "Scale9Enable": true,
-                    "Scale9OriginX": 15,
-                    "Scale9OriginY": 11,
-                    "Scale9Width": 8,
-                    "Scale9Height": 18,
-                    "OutlineColor": {
-                      "G": 0,
-                      "B": 0
-                    },
-                    "ShadowColor": {
-                      "R": 110,
-                      "G": 110,
-                      "B": 110
-                    },
-                    "ShadowOffsetX": 2.0,
-                    "ShadowOffsetY": -2.0,
-                    "TouchEnable": true,
-                    "AnchorPoint": {
-                      "ScaleX": 0.5,
-                      "ScaleY": 0.5
-                    },
-                    "Position": {
-                      "X": 168.0,
-                      "Y": 22.0
-                    },
-                    "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
-                    },
-                    "CColor": {},
-                    "IconVisible": false,
-                    "PrePosition": {
-                      "X": 0.84,
-                      "Y": 0.4889
-                    },
-                    "PreSize": {
-                      "X": 0.1947,
-                      "Y": 0.8889
-                    },
-                    "LeftMargin": 148.53,
-                    "RightMargin": 12.53,
-                    "TopMargin": 3.0,
-                    "BottomMargin": 2.0,
-                    "Tag": 122,
-                    "ActionTag": 1240390100,
-                    "Size": {
-                      "X": 38.94,
-                      "Y": 40.0
-                    },
-                    "Name": "diamondsAddBtn",
-                    "ctype": "ButtonObjectData"
-                  },
-                  {
-                    "FileData": {
-                      "Type": "Normal",
-                      "Path": "common/zuanshi.png",
-                      "Plist": ""
-                    },
-                    "Scale9OriginX": 13,
-                    "Scale9OriginY": 13,
-                    "Scale9Width": 19,
-                    "Scale9Height": 16,
-                    "AnchorPoint": {
-                      "ScaleX": 0.5,
-                      "ScaleY": 0.5
-                    },
-                    "Position": {
-                      "X": 25.39,
-                      "Y": 24.5
-                    },
-                    "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
-                    },
-                    "CColor": {},
-                    "IconVisible": false,
-                    "PrePosition": {
-                      "X": 0.1269,
-                      "Y": 0.5444
-                    },
-                    "PreSize": {
-                      "X": 0.22,
-                      "Y": 0.9556
-                    },
-                    "LeftMargin": 3.39,
-                    "RightMargin": 152.61,
-                    "TopMargin": -1.0,
-                    "BottomMargin": 3.0,
-                    "Tag": 123,
-                    "ActionTag": 1218645053,
-                    "Size": {
-                      "X": 44.0,
-                      "Y": 43.0
-                    },
-                    "Name": "diamonds",
-                    "ctype": "ImageViewObjectData"
-                  }
-                ],
-                "ActionTag": 1105314020,
-                "Size": {
-                  "X": 200.0,
-                  "Y": 45.0
-                },
-                "Name": "diamondsPnl",
-                "ctype": "PanelObjectData"
-              },
-              {
-                "ClipAble": false,
-                "BackColorAlpha": 0,
-                "ComboBoxIndex": 1,
-                "SingleColor": {
-                  "R": 150,
-                  "G": 200
-                },
-                "FirstColor": {
-                  "R": 150,
-                  "G": 200
-                },
-                "EndColor": {},
-                "ColorVector": {
-                  "ScaleY": 1.0
-                },
-                "Scale9Width": 1,
-                "Scale9Height": 1,
-                "TouchEnable": true,
-                "AnchorPoint": {
-                  "ScaleX": 0.5,
-                  "ScaleY": 0.5
-                },
-                "Position": {
-                  "X": 880.08,
-                  "Y": 679.95
-                },
-                "Scale": {
-                  "ScaleX": 1.0,
-                  "ScaleY": 1.0
-                },
-                "CColor": {},
-                "IconVisible": false,
-                "PrePosition": {
-                  "X": 0.6876,
-                  "Y": 0.9444
-                },
-                "PreSize": {
-                  "X": 0.1563,
-                  "Y": 0.0625
-                },
-                "LeftMargin": 780.08,
-                "RightMargin": 299.92,
-                "TopMargin": 17.55,
-                "BottomMargin": 657.45,
-                "Tag": 126,
-                "Children": [
-                  {
-                    "FileData": {
-                      "Type": "Normal",
-                      "Path": "hall/dtjm_4.png",
-                      "Plist": ""
-                    },
-                    "Scale9Enable": true,
-                    "Scale9OriginX": 8,
-                    "Scale9OriginY": 11,
-                    "Scale9Width": 10,
-                    "Scale9Height": 13,
-                    "AnchorPoint": {
-                      "ScaleX": 0.5,
-                      "ScaleY": 0.5
-                    },
-                    "Position": {
-                      "X": 103.32,
-                      "Y": 21.65
-                    },
-                    "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
-                    },
-                    "CColor": {},
-                    "IconVisible": false,
-                    "PrePosition": {
-                      "X": 0.5166,
-                      "Y": 0.4811
-                    },
-                    "PreSize": {
-                      "X": 0.8119,
-                      "Y": 0.8444
-                    },
-                    "LeftMargin": 22.13,
-                    "RightMargin": 15.49,
-                    "TopMargin": 4.35,
-                    "BottomMargin": 2.65,
-                    "Tag": 127,
-                    "ActionTag": -205830087,
-                    "Size": {
-                      "X": 162.38,
-                      "Y": 38.0
-                    },
-                    "Name": "fuKaNum",
-                    "ctype": "ImageViewObjectData"
-                  },
-                  {
-                    "IsCustomSize": true,
-                    "FontSize": 24,
-                    "LabelText": "300",
-                    "HorizontalAlignmentType": "HT_Center",
-                    "VerticalAlignmentType": "VT_Center",
-                    "OutlineColor": {
-                      "G": 0,
-                      "B": 0
-                    },
-                    "ShadowColor": {
-                      "R": 110,
-                      "G": 110,
-                      "B": 110
-                    },
-                    "ShadowOffsetX": 2.0,
-                    "ShadowOffsetY": -2.0,
-                    "AnchorPoint": {
-                      "ScaleX": 0.5,
-                      "ScaleY": 0.5
-                    },
-                    "Position": {
-                      "X": 101.0,
-                      "Y": 21.0
-                    },
-                    "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
-                    },
-                    "CColor": {},
-                    "IconVisible": false,
-                    "PrePosition": {
-                      "X": 0.505,
-                      "Y": 0.4667
-                    },
-                    "PreSize": {
-                      "X": 0.558,
-                      "Y": 0.8444
-                    },
-                    "LeftMargin": 45.2,
-                    "RightMargin": 43.2,
-                    "TopMargin": 5.0,
-                    "BottomMargin": 2.0,
-                    "Tag": 128,
-                    "ActionTag": -498549214,
-                    "Size": {
-                      "X": 111.6,
-                      "Y": 38.0
-                    },
-                    "Name": "fuKaCnt",
-                    "ctype": "TextObjectData"
-                  },
-                  {
-                    "FontSize": 14,
-                    "ButtonText": "",
-                    "TextColor": {
-                      "R": 65,
-                      "G": 65,
-                      "B": 70
-                    },
-                    "DisabledFileData": {
-                      "Type": "Default",
-                      "Path": "Default/Button_Disable.png",
-                      "Plist": ""
-                    },
-                    "NormalFileData": {
-                      "Type": "Normal",
-                      "Path": "hall/dtjm_5.png",
-                      "Plist": ""
-                    },
-                    "Scale9Enable": true,
-                    "Scale9OriginX": 15,
-                    "Scale9OriginY": 11,
-                    "Scale9Width": 8,
-                    "Scale9Height": 18,
-                    "OutlineColor": {
-                      "G": 0,
-                      "B": 0
-                    },
-                    "ShadowColor": {
-                      "R": 110,
-                      "G": 110,
-                      "B": 110
-                    },
-                    "ShadowOffsetX": 2.0,
-                    "ShadowOffsetY": -2.0,
-                    "TouchEnable": true,
-                    "AnchorPoint": {
-                      "ScaleX": 0.5,
-                      "ScaleY": 0.5
-                    },
-                    "Position": {
-                      "X": 168.0,
-                      "Y": 22.0
-                    },
-                    "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
-                    },
-                    "CColor": {},
-                    "IconVisible": false,
-                    "PrePosition": {
-                      "X": 0.84,
-                      "Y": 0.4889
-                    },
-                    "PreSize": {
-                      "X": 0.1897,
-                      "Y": 0.9222
-                    },
-                    "LeftMargin": 149.03,
-                    "RightMargin": 13.03,
-                    "TopMargin": 2.25,
-                    "BottomMargin": 1.25,
-                    "Tag": 129,
-                    "ActionTag": -36571241,
-                    "Size": {
-                      "X": 37.94,
-                      "Y": 41.5
-                    },
-                    "Name": "fuKaAddBtn",
-                    "ctype": "ButtonObjectData"
-                  },
-                  {
-                    "FileData": {
-                      "Type": "Normal",
-                      "Path": "common/hb.png",
-                      "Plist": ""
-                    },
-                    "Scale9OriginX": 13,
-                    "Scale9OriginY": 13,
-                    "Scale9Width": 10,
-                    "Scale9Height": 18,
-                    "AnchorPoint": {
-                      "ScaleX": 0.5,
-                      "ScaleY": 0.5
-                    },
-                    "Position": {
-                      "X": 29.39,
-                      "Y": 21.5
-                    },
-                    "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
-                    },
-                    "CColor": {},
-                    "IconVisible": false,
-                    "PrePosition": {
-                      "X": 0.1469,
-                      "Y": 0.4778
-                    },
-                    "PreSize": {
-                      "X": 0.18,
-                      "Y": 0.9778
-                    },
-                    "LeftMargin": 11.39,
-                    "RightMargin": 152.61,
-                    "TopMargin": 1.5,
-                    "BottomMargin": -0.5,
-                    "Tag": 130,
-                    "ActionTag": 486999955,
-                    "Size": {
-                      "X": 36.0,
-                      "Y": 44.0
-                    },
-                    "Name": "fuKa",
-                    "ctype": "ImageViewObjectData"
-                  }
-                ],
-                "ActionTag": -1038062764,
-                "Size": {
-                  "X": 200.0,
-                  "Y": 45.0
-                },
-                "Name": "fuKaPnl",
-                "ctype": "PanelObjectData"
-              },
-              {
-                "FontSize": 14,
-                "ButtonText": "",
-                "TextColor": {
-                  "R": 65,
-                  "G": 65,
-                  "B": 70
-                },
-                "DisabledFileData": {
-                  "Type": "Default",
-                  "Path": "Default/Button_Disable.png",
-                  "Plist": ""
-                },
-                "NormalFileData": {
-                  "Type": "Normal",
-                  "Path": "hall/dtjm_6.png",
-                  "Plist": ""
-                },
-                "Scale9Enable": true,
-                "Scale9OriginX": 15,
-                "Scale9OriginY": 11,
-                "Scale9Width": 22,
-                "Scale9Height": 19,
-                "OutlineColor": {
-                  "G": 0,
-                  "B": 0
-                },
-                "ShadowColor": {
-                  "R": 110,
-                  "G": 110,
-                  "B": 110
-                },
-                "ShadowOffsetX": 2.0,
-                "ShadowOffsetY": -2.0,
-                "TouchEnable": true,
-                "AnchorPoint": {
-                  "ScaleX": 0.5,
-                  "ScaleY": 0.5
-                },
-                "Position": {
-                  "X": 1090.048,
-                  "Y": 676.8
-                },
-                "Scale": {
-                  "ScaleX": 1.0,
-                  "ScaleY": 1.0
-                },
-                "CColor": {},
-                "IconVisible": false,
-                "PositionPercentXEnabled": true,
-                "PositionPercentYEnabled": true,
-                "PrePosition": {
-                  "X": 0.8516,
-                  "Y": 0.94
-                },
-                "PreSize": {
-                  "X": 0.0359,
-                  "Y": 0.0528
-                },
-                "LeftMargin": 1067.048,
-                "RightMargin": 166.952,
-                "TopMargin": 24.2,
-                "BottomMargin": 657.8,
-                "Tag": 30,
-                "Children": [
-                  {
-                    "IsCustomSize": true,
-                    "FontSize": 19,
-                    "LabelText": "邮件",
-                    "HorizontalAlignmentType": "HT_Center",
-                    "VerticalAlignmentType": "VT_Center",
-                    "OutlineColor": {
-                      "G": 0,
-                      "B": 0
-                    },
-                    "ShadowColor": {
-                      "R": 110,
-                      "G": 110,
-                      "B": 110
-                    },
-                    "ShadowOffsetX": 2.0,
-                    "ShadowOffsetY": -2.0,
-                    "AnchorPoint": {
-                      "ScaleX": 0.5,
-                      "ScaleY": 0.5
-                    },
-                    "Position": {
-                      "X": 22.44,
-                      "Y": -1.641
-                    },
-                    "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
-                    },
-                    "CColor": {},
-                    "IconVisible": false,
-                    "PrePosition": {
-                      "X": 0.4878,
-                      "Y": -0.0432
-                    },
-                    "PreSize": {
-                      "X": 0.8696,
-                      "Y": 0.5789
-                    },
-                    "LeftMargin": 2.44,
-                    "RightMargin": 3.56,
-                    "TopMargin": 28.641,
-                    "BottomMargin": -12.641,
-                    "Tag": 132,
-                    "ActionTag": 1623445450,
-                    "Size": {
-                      "X": 40.0,
-                      "Y": 22.0
-                    },
-                    "Name": "fuKaCnt_0",
-                    "ctype": "TextObjectData"
-                  },
-                  {
-                    "FileData": {
-                      "Type": "Normal",
-                      "Path": "hall/pz_31.png",
-                      "Plist": ""
-                    },
-                    "Scale9OriginX": 7,
-                    "Scale9OriginY": 7,
-                    "Scale9Width": 9,
-                    "Scale9Height": 8,
-                    "AnchorPoint": {
-                      "ScaleX": 0.5,
-                      "ScaleY": 0.5
-                    },
-                    "Position": {
-                      "X": 40.2761,
-                      "Y": 35.9
-                    },
-                    "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
-                    },
-                    "CColor": {},
-                    "IconVisible": false,
-                    "PrePosition": {
-                      "X": 0.8756,
-                      "Y": 0.9447
-                    },
-                    "PreSize": {
-                      "X": 0.5,
-                      "Y": 0.5789
-                    },
-                    "LeftMargin": 28.7761,
-                    "RightMargin": -5.7761,
-                    "TopMargin": -8.9,
-                    "BottomMargin": 24.9,
-                    "Tag": 297,
-                    "ActionTag": 517721033,
-                    "Size": {
-                      "X": 23.0,
-                      "Y": 22.0
-                    },
-                    "Name": "redImg",
-                    "ctype": "ImageViewObjectData"
-                  }
-                ],
-                "ActionTag": 1821571772,
-                "Size": {
-                  "X": 46.0,
-                  "Y": 38.0
-                },
-                "Name": "emailBtn",
-                "ctype": "ButtonObjectData"
-              },
-              {
-                "FontSize": 14,
-                "ButtonText": "",
-                "TextColor": {
-                  "R": 65,
-                  "G": 65,
-                  "B": 70
-                },
-                "NormalFileData": {
-                  "Type": "Normal",
-                  "Path": "hall/dtjm_7.png",
-                  "Plist": ""
-                },
-                "Scale9OriginX": 15,
-                "Scale9OriginY": 11,
-                "Scale9Width": 19,
-                "Scale9Height": 29,
-                "OutlineColor": {
-                  "G": 0,
-                  "B": 0
-                },
-                "ShadowColor": {
-                  "R": 110,
-                  "G": 110,
-                  "B": 110
-                },
-                "ShadowOffsetX": 2.0,
-                "ShadowOffsetY": -2.0,
-                "TouchEnable": true,
-                "AnchorPoint": {
-                  "ScaleX": 0.5,
-                  "ScaleY": 0.5
-                },
-                "Position": {
-                  "X": 1212.032,
-                  "Y": 676.8
-                },
-                "Scale": {
-                  "ScaleX": 1.0,
-                  "ScaleY": 1.0
-                },
-                "CColor": {},
-                "IconVisible": false,
-                "PositionPercentXEnabled": true,
-                "PositionPercentYEnabled": true,
-                "PrePosition": {
-                  "X": 0.9469,
-                  "Y": 0.94
-                },
-                "PreSize": {
-                  "X": 0.0359,
-                  "Y": 0.0639
-                },
-                "LeftMargin": 1189.032,
-                "RightMargin": 44.968,
-                "TopMargin": 20.2,
-                "BottomMargin": 653.8,
-                "Tag": 81,
-                "Children": [
-                  {
-                    "IsCustomSize": true,
-                    "FontSize": 19,
-                    "LabelText": "更多",
-                    "HorizontalAlignmentType": "HT_Center",
-                    "VerticalAlignmentType": "VT_Center",
-                    "OutlineColor": {
-                      "G": 0,
-                      "B": 0
-                    },
-                    "ShadowColor": {
-                      "R": 110,
-                      "G": 110,
-                      "B": 110
-                    },
-                    "ShadowOffsetX": 2.0,
-                    "ShadowOffsetY": -2.0,
-                    "AnchorPoint": {
-                      "ScaleX": 0.5,
-                      "ScaleY": 0.5
-                    },
-                    "Position": {
-                      "X": 24.44,
-                      "Y": 2.36
-                    },
-                    "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
-                    },
-                    "CColor": {},
-                    "IconVisible": false,
-                    "PrePosition": {
-                      "X": 0.5313,
-                      "Y": 0.0513
-                    },
-                    "PreSize": {
-                      "X": 0.8696,
-                      "Y": 0.4783
-                    },
-                    "LeftMargin": 4.44,
-                    "RightMargin": 1.56,
-                    "TopMargin": 32.64,
-                    "BottomMargin": -8.64,
-                    "Tag": 135,
-                    "ActionTag": 37719768,
-                    "Size": {
-                      "X": 40.0,
-                      "Y": 22.0
-                    },
-                    "Name": "fuKaCnt_0",
-                    "ctype": "TextObjectData"
-                  }
-                ],
-                "ActionTag": 371629241,
-                "Size": {
-                  "X": 46.0,
-                  "Y": 46.0
-                },
-                "Name": "moreBtn",
-                "ctype": "ButtonObjectData"
-              },
-              {
-                "ClipAble": false,
-                "BackColorAlpha": 0,
-                "SingleColor": {
-                  "R": 150,
-                  "G": 200
-                },
-                "FirstColor": {
-                  "R": 150,
-                  "G": 200
-                },
-                "EndColor": {},
-                "ColorVector": {
-                  "ScaleY": 1.0
-                },
-                "Scale9Width": 1,
-                "Scale9Height": 1,
-                "TouchEnable": true,
-                "AnchorPoint": {
-                  "ScaleX": 0.5,
-                  "ScaleY": 0.5
-                },
-                "Position": {
-                  "X": 640.0,
-                  "Y": 360.0
-                },
-                "Scale": {
-                  "ScaleX": 1.0,
-                  "ScaleY": 1.0
-                },
-                "CColor": {},
-                "IconVisible": false,
-                "PositionPercentXEnabled": true,
-                "PositionPercentYEnabled": true,
-                "PrePosition": {
-                  "X": 0.5,
-                  "Y": 0.5
-                },
-                "PreSize": {
-                  "X": 1.0,
-                  "Y": 1.0
-                },
-                "Tag": 98,
-                "Children": [
-                  {
-                    "FileData": {
-                      "Type": "Normal",
-                      "Path": "hall/dtjm_30.png",
-                      "Plist": ""
-                    },
-                    "Scale9Enable": true,
-                    "Scale9OriginX": 47,
-                    "Scale9OriginY": 16,
-                    "Scale9Width": 49,
-                    "Scale9Height": 17,
-                    "AnchorPoint": {
-                      "ScaleX": 0.5,
-                      "ScaleY": 0.5
-                    },
-                    "Position": {
-                      "X": 1198.79,
-                      "Y": 496.36
-                    },
-                    "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
-                    },
-                    "CColor": {},
-                    "IconVisible": false,
-                    "PrePosition": {
-                      "X": 0.9366,
-                      "Y": 0.6894
-                    },
-                    "PreSize": {
-                      "X": 0.1117,
-                      "Y": 0.3903
-                    },
-                    "LeftMargin": 1127.29,
-                    "RightMargin": 9.71,
-                    "TopMargin": 83.14,
-                    "BottomMargin": 355.86,
-                    "Tag": 194,
-                    "ActionTag": -830468427,
-                    "Size": {
-                      "X": 143.0,
-                      "Y": 281.0
-                    },
-                    "Name": "Image_2",
-                    "ctype": "ImageViewObjectData"
-                  },
-                  {
-                    "ClipAble": false,
-                    "BackColorAlpha": 102,
-                    "SingleColor": {
-                      "R": 150,
-                      "G": 200
-                    },
-                    "FirstColor": {
-                      "R": 150,
-                      "G": 200
-                    },
-                    "EndColor": {},
-                    "ColorVector": {
-                      "ScaleY": 1.0
-                    },
-                    "Scale9Width": 1,
-                    "Scale9Height": 1,
-                    "TouchEnable": true,
-                    "AnchorPoint": {},
-                    "Position": {
-                      "X": 1120.9471,
-                      "Y": 567.4707
-                    },
-                    "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
-                    },
-                    "CColor": {},
-                    "IconVisible": false,
-                    "PrePosition": {
-                      "X": 0.8757,
-                      "Y": 0.7882
-                    },
-                    "PreSize": {
-                      "X": 0.1172,
-                      "Y": 0.0903
-                    },
-                    "LeftMargin": 1120.9471,
-                    "RightMargin": 9.0529,
-                    "TopMargin": 87.5293,
-                    "BottomMargin": 567.4707,
-                    "Tag": 343,
-                    "Children": [
-                      {
-                        "FileData": {
-                          "Type": "Normal",
-                          "Path": "hall/pmd_2.png",
-                          "Plist": ""
-                        },
-                        "Scale9OriginX": 11,
-                        "Scale9OriginY": 2,
-                        "Scale9Width": 474,
-                        "Scale9Height": 5,
-                        "AnchorPoint": {
-                          "ScaleX": 0.5,
-                          "ScaleY": 0.5
-                        },
-                        "Position": {
-                          "X": 76.185,
-                          "Y": 5.0494
-                        },
-                        "Scale": {
-                          "ScaleX": 1.0,
-                          "ScaleY": 1.0
-                        },
-                        "CColor": {},
-                        "IconVisible": false,
-                        "PositionPercentXEnabled": true,
-                        "PrePosition": {
-                          "X": 0.5079,
-                          "Y": 0.0777
-                        },
-                        "PreSize": {
-                          "X": 0.9667,
-                          "Y": 0.1385
-                        },
-                        "LeftMargin": 3.685,
-                        "RightMargin": 1.315,
-                        "TopMargin": 55.4506,
-                        "BottomMargin": 0.5494,
-                        "Tag": 185,
-                        "ActionTag": -363719697,
-                        "Size": {
-                          "X": 145.0,
-                          "Y": 9.0
-                        },
-                        "Name": "Image_5_0",
-                        "ctype": "ImageViewObjectData"
-                      },
-                      {
-                        "FileData": {
-                          "Type": "Normal",
-                          "Path": "hall/dtjm_21.png",
-                          "Plist": ""
-                        },
-                        "Scale9OriginX": 11,
-                        "Scale9OriginY": 11,
-                        "Scale9Width": 12,
-                        "Scale9Height": 14,
-                        "AnchorPoint": {
-                          "ScaleX": 0.5,
-                          "ScaleY": 0.5
-                        },
-                        "Position": {
-                          "X": 36.619,
-                          "Y": 36.3279
-                        },
-                        "Scale": {
-                          "ScaleX": 1.0,
-                          "ScaleY": 1.0
-                        },
-                        "CColor": {},
-                        "IconVisible": false,
-                        "PrePosition": {
-                          "X": 0.2441,
-                          "Y": 0.5589
-                        },
-                        "PreSize": {
-                          "X": 0.2267,
-                          "Y": 0.5538
-                        },
-                        "LeftMargin": 19.619,
-                        "RightMargin": 96.381,
-                        "TopMargin": 10.6721,
-                        "BottomMargin": 18.3279,
-                        "Tag": 250,
-                        "ActionTag": -1004023784,
-                        "Size": {
-                          "X": 34.0,
-                          "Y": 36.0
-                        },
-                        "Name": "Image_18",
-                        "ctype": "ImageViewObjectData"
-                      },
-                      {
-                        "FontSize": 20,
-                        "LabelText": "设置",
-                        "OutlineColor": {
-                          "G": 0,
-                          "B": 0
-                        },
-                        "ShadowColor": {
-                          "R": 110,
-                          "G": 110,
-                          "B": 110
-                        },
-                        "ShadowOffsetX": 2.0,
-                        "ShadowOffsetY": -2.0,
-                        "AnchorPoint": {
-                          "ScaleX": 0.5,
-                          "ScaleY": 0.5
-                        },
-                        "Position": {
-                          "X": 86.8748,
-                          "Y": 30.9297
-                        },
-                        "Scale": {
-                          "ScaleX": 1.0,
-                          "ScaleY": 1.0
-                        },
-                        "CColor": {},
-                        "IconVisible": false,
-                        "PrePosition": {
-                          "X": 0.5792,
-                          "Y": 0.4758
-                        },
-                        "PreSize": {
-                          "X": 0.2667,
-                          "Y": 0.3077
-                        },
-                        "LeftMargin": 66.8748,
-                        "RightMargin": 43.1252,
-                        "TopMargin": 24.0703,
-                        "BottomMargin": 20.9297,
-                        "Tag": 251,
-                        "ActionTag": 1690083844,
-                        "Size": {
-                          "X": 40.0,
-                          "Y": 20.0
-                        },
-                        "Name": "Text_11",
-                        "ctype": "TextObjectData"
-                      }
-                    ],
-                    "ActionTag": -74830355,
-                    "Size": {
-                      "X": 150.0,
-                      "Y": 65.0
-                    },
-                    "Name": "setBtn",
-                    "ctype": "PanelObjectData"
-                  },
-                  {
-                    "ClipAble": false,
-                    "BackColorAlpha": 102,
-                    "SingleColor": {
-                      "R": 150,
-                      "G": 200
-                    },
-                    "FirstColor": {
-                      "R": 150,
-                      "G": 200
-                    },
-                    "EndColor": {},
-                    "ColorVector": {
-                      "ScaleY": 1.0
-                    },
-                    "Scale9Width": 1,
-                    "Scale9Height": 1,
-                    "TouchEnable": true,
-                    "AnchorPoint": {
-                      "ScaleX": 0.5,
-                      "ScaleY": 0.5
-                    },
-                    "Position": {
-                      "X": 1199.1025,
-                      "Y": 532.6254
-                    },
-                    "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
-                    },
-                    "CColor": {},
-                    "IconVisible": false,
-                    "PrePosition": {
-                      "X": 0.9368,
-                      "Y": 0.7398
-                    },
-                    "PreSize": {
-                      "X": 0.1117,
-                      "Y": 0.1097
-                    },
-                    "LeftMargin": 1127.6025,
-                    "RightMargin": 9.3975,
-                    "TopMargin": 147.8746,
-                    "BottomMargin": 493.1254,
-                    "Tag": 194,
-                    "Children": [
-                      {
-                        "FileData": {
-                          "Type": "Normal",
-                          "Path": "hall/pmd_2.png",
-                          "Plist": ""
-                        },
-                        "Scale9OriginX": 11,
-                        "Scale9OriginY": 2,
-                        "Scale9Width": 474,
-                        "Scale9Height": 5,
-                        "AnchorPoint": {
-                          "ScaleX": 0.5,
-                          "ScaleY": 0.5
-                        },
-                        "Position": {
-                          "X": 70.14,
-                          "Y": 0.9028
-                        },
-                        "Scale": {
-                          "ScaleX": 1.0,
-                          "ScaleY": 1.0
-                        },
-                        "CColor": {},
-                        "IconVisible": false,
-                        "PrePosition": {
-                          "X": 0.4905,
-                          "Y": 0.0114
-                        },
-                        "PreSize": {
-                          "X": 1.014,
-                          "Y": 0.1139
-                        },
-                        "LeftMargin": -2.36,
-                        "RightMargin": 0.36,
-                        "TopMargin": 73.5972,
-                        "BottomMargin": -3.5972,
-                        "Tag": 195,
-                        "ActionTag": 1624062083,
-                        "Size": {
-                          "X": 145.0,
-                          "Y": 9.0
-                        },
-                        "Name": "Image_5_0_0",
-                        "ctype": "ImageViewObjectData"
-                      },
-                      {
-                        "FileData": {
-                          "Type": "Normal",
-                          "Path": "hall/dtjm_19.png",
-                          "Plist": ""
-                        },
-                        "Scale9OriginX": 11,
-                        "Scale9OriginY": 11,
-                        "Scale9Width": 14,
-                        "Scale9Height": 18,
-                        "AnchorPoint": {
-                          "ScaleX": 0.5,
-                          "ScaleY": 0.5
-                        },
-                        "Position": {
-                          "X": 32.0585,
-                          "Y": 33.8558
-                        },
-                        "Scale": {
-                          "ScaleX": 1.0,
-                          "ScaleY": 1.0
-                        },
-                        "CColor": {},
-                        "IconVisible": false,
-                        "PrePosition": {
-                          "X": 0.2242,
-                          "Y": 0.4286
-                        },
-                        "PreSize": {
-                          "X": 0.2517,
-                          "Y": 0.5063
-                        },
-                        "LeftMargin": 14.0585,
-                        "RightMargin": 92.9415,
-                        "TopMargin": 25.1442,
-                        "BottomMargin": 13.8558,
-                        "Tag": 196,
-                        "ActionTag": -1823612305,
-                        "Size": {
-                          "X": 36.0,
-                          "Y": 40.0
-                        },
-                        "Name": "Image_18_0",
-                        "ctype": "ImageViewObjectData"
-                      },
-                      {
-                        "FontSize": 20,
-                        "LabelText": "反馈",
-                        "OutlineColor": {
-                          "G": 0,
-                          "B": 0
-                        },
-                        "ShadowColor": {
-                          "R": 110,
-                          "G": 110,
-                          "B": 110
-                        },
-                        "ShadowOffsetX": 2.0,
-                        "ShadowOffsetY": -2.0,
-                        "AnchorPoint": {
-                          "ScaleX": 0.5,
-                          "ScaleY": 0.5
-                        },
-                        "Position": {
-                          "X": 82.8395,
-                          "Y": 33.2751
-                        },
-                        "Scale": {
-                          "ScaleX": 1.0,
-                          "ScaleY": 1.0
-                        },
-                        "CColor": {},
-                        "IconVisible": false,
-                        "PrePosition": {
-                          "X": 0.5793,
-                          "Y": 0.4212
-                        },
-                        "PreSize": {
-                          "X": 0.2797,
-                          "Y": 0.2532
-                        },
-                        "LeftMargin": 62.8395,
-                        "RightMargin": 40.1605,
-                        "TopMargin": 35.7249,
-                        "BottomMargin": 23.2751,
-                        "Tag": 197,
-                        "ActionTag": -1784744525,
-                        "Size": {
-                          "X": 40.0,
-                          "Y": 20.0
-                        },
-                        "Name": "Text_11_0",
-                        "ctype": "TextObjectData"
-                      }
-                    ],
-                    "ActionTag": -348871052,
-                    "Size": {
-                      "X": 143.0,
-                      "Y": 79.0
-                    },
-                    "Name": "feedbackBtn",
-                    "ctype": "PanelObjectData"
-                  },
-                  {
-                    "ClipAble": false,
-                    "BackColorAlpha": 102,
-                    "SingleColor": {
-                      "R": 150,
-                      "G": 200
-                    },
-                    "FirstColor": {
-                      "R": 150,
-                      "G": 200
-                    },
-                    "EndColor": {},
-                    "ColorVector": {
-                      "ScaleY": 1.0
-                    },
-                    "Scale9Width": 1,
-                    "Scale9Height": 1,
-                    "TouchEnable": true,
-                    "AnchorPoint": {
-                      "ScaleX": 0.5,
-                      "ScaleY": 0.5
-                    },
-                    "Position": {
-                      "X": 1198.3137,
-                      "Y": 454.2963
-                    },
-                    "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
-                    },
-                    "CColor": {},
-                    "IconVisible": false,
-                    "PrePosition": {
-                      "X": 0.9362,
-                      "Y": 0.631
-                    },
-                    "PreSize": {
-                      "X": 0.1117,
-                      "Y": 0.1097
-                    },
-                    "LeftMargin": 1126.8137,
-                    "RightMargin": 10.1863,
-                    "TopMargin": 226.2037,
-                    "BottomMargin": 414.7963,
-                    "Tag": 198,
-                    "Children": [
-                      {
-                        "FileData": {
-                          "Type": "Normal",
-                          "Path": "hall/pmd_2.png",
-                          "Plist": ""
-                        },
-                        "Scale9OriginX": 11,
-                        "Scale9OriginY": 2,
-                        "Scale9Width": 474,
-                        "Scale9Height": 5,
-                        "AnchorPoint": {
-                          "ScaleX": 0.5,
-                          "ScaleY": 0.5
-                        },
-                        "Position": {
-                          "X": 72.6474,
-                          "Y": 5.3239
-                        },
-                        "Scale": {
-                          "ScaleX": 1.0,
-                          "ScaleY": 1.0
-                        },
-                        "CColor": {},
-                        "IconVisible": false,
-                        "PrePosition": {
-                          "X": 0.508,
-                          "Y": 0.0674
-                        },
-                        "PreSize": {
-                          "X": 1.014,
-                          "Y": 0.1139
-                        },
-                        "LeftMargin": 0.1474,
-                        "RightMargin": -2.1474,
-                        "TopMargin": 69.1761,
-                        "BottomMargin": 0.8239,
-                        "Tag": 199,
-                        "ActionTag": -1752068592,
-                        "Size": {
-                          "X": 145.0,
-                          "Y": 9.0
-                        },
-                        "Name": "Image_5_0_0",
-                        "ctype": "ImageViewObjectData"
-                      },
-                      {
-                        "FileData": {
-                          "Type": "Normal",
-                          "Path": "hall/dtjm_18.png",
-                          "Plist": ""
-                        },
-                        "Scale9OriginX": 11,
-                        "Scale9OriginY": 11,
-                        "Scale9Width": 14,
-                        "Scale9Height": 16,
-                        "AnchorPoint": {
-                          "ScaleX": 0.5,
-                          "ScaleY": 0.5
-                        },
-                        "Position": {
-                          "X": 34.4091,
-                          "Y": 44.4059
-                        },
-                        "Scale": {
-                          "ScaleX": 1.0,
-                          "ScaleY": 1.0
-                        },
-                        "CColor": {},
-                        "IconVisible": false,
-                        "PrePosition": {
-                          "X": 0.2406,
-                          "Y": 0.5621
-                        },
-                        "PreSize": {
-                          "X": 0.2517,
-                          "Y": 0.481
-                        },
-                        "LeftMargin": 16.4091,
-                        "RightMargin": 90.5909,
-                        "TopMargin": 15.5941,
-                        "BottomMargin": 25.4059,
-                        "Tag": 202,
-                        "ActionTag": 62233463,
-                        "Size": {
-                          "X": 36.0,
-                          "Y": 38.0
-                        },
-                        "Name": "Image_18_0",
-                        "ctype": "ImageViewObjectData"
-                      },
-                      {
-                        "FontSize": 20,
-                        "LabelText": "客服",
-                        "OutlineColor": {
-                          "G": 0,
-                          "B": 0
-                        },
-                        "ShadowColor": {
-                          "R": 110,
-                          "G": 110,
-                          "B": 110
-                        },
-                        "ShadowOffsetX": 2.0,
-                        "ShadowOffsetY": -2.0,
-                        "AnchorPoint": {
-                          "ScaleX": 0.5,
-                          "ScaleY": 0.5
-                        },
-                        "Position": {
-                          "X": 82.5164,
-                          "Y": 42.7533
-                        },
-                        "Scale": {
-                          "ScaleX": 1.0,
-                          "ScaleY": 1.0
-                        },
-                        "CColor": {},
-                        "IconVisible": false,
-                        "PrePosition": {
-                          "X": 0.577,
-                          "Y": 0.5412
-                        },
-                        "PreSize": {
-                          "X": 0.2797,
-                          "Y": 0.2532
-                        },
-                        "LeftMargin": 62.5164,
-                        "RightMargin": 40.4836,
-                        "TopMargin": 26.2467,
-                        "BottomMargin": 32.7533,
-                        "Tag": 203,
-                        "ActionTag": 63696509,
-                        "Size": {
-                          "X": 40.0,
-                          "Y": 20.0
-                        },
-                        "Name": "Text_11_0",
-                        "ctype": "TextObjectData"
-                      }
-                    ],
-                    "ActionTag": 699490340,
-                    "Size": {
-                      "X": 143.0,
-                      "Y": 79.0
-                    },
-                    "Name": "customerServiceBtn",
-                    "ctype": "PanelObjectData"
-                  },
-                  {
-                    "ClipAble": false,
-                    "BackColorAlpha": 102,
-                    "SingleColor": {
-                      "R": 150,
-                      "G": 200
-                    },
-                    "FirstColor": {
-                      "R": 150,
-                      "G": 200
-                    },
-                    "EndColor": {},
-                    "ColorVector": {
-                      "ScaleY": 1.0
-                    },
-                    "Scale9Width": 1,
-                    "Scale9Height": 1,
-                    "TouchEnable": true,
-                    "AnchorPoint": {
-                      "ScaleX": 0.5,
-                      "ScaleY": 0.5
-                    },
-                    "Position": {
-                      "X": 1197.5938,
-                      "Y": 388.5597
-                    },
-                    "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
-                    },
-                    "CColor": {},
-                    "IconVisible": false,
-                    "PrePosition": {
-                      "X": 0.9356,
-                      "Y": 0.5397
-                    },
-                    "PreSize": {
-                      "X": 0.1117,
-                      "Y": 0.0847
-                    },
-                    "LeftMargin": 1126.0938,
-                    "RightMargin": 10.9063,
-                    "TopMargin": 300.9403,
-                    "BottomMargin": 358.0597,
-                    "Tag": 204,
-                    "Children": [
-                      {
-                        "FileData": {
-                          "Type": "Normal",
-                          "Path": "hall/dtjm_20.png",
-                          "Plist": ""
-                        },
-                        "Scale9OriginX": 11,
-                        "Scale9OriginY": 11,
-                        "Scale9Width": 11,
-                        "Scale9Height": 18,
-                        "AnchorPoint": {
-                          "ScaleX": 0.5,
-                          "ScaleY": 0.5
-                        },
-                        "Position": {
-                          "X": 30.3071,
-                          "Y": 30.8506
-                        },
-                        "Scale": {
-                          "ScaleX": 1.0,
-                          "ScaleY": 1.0
-                        },
-                        "CColor": {},
-                        "IconVisible": false,
-                        "PrePosition": {
-                          "X": 0.2119,
-                          "Y": 0.5057
-                        },
-                        "PreSize": {
-                          "X": 0.2308,
-                          "Y": 0.6557
-                        },
-                        "LeftMargin": 13.8071,
-                        "RightMargin": 96.1929,
-                        "TopMargin": 10.1494,
-                        "BottomMargin": 10.8506,
-                        "Tag": 208,
-                        "ActionTag": -1057108144,
-                        "Size": {
-                          "X": 33.0,
-                          "Y": 40.0
-                        },
-                        "Name": "Image_18_0",
-                        "ctype": "ImageViewObjectData"
-                      },
-                      {
-                        "FontSize": 20,
-                        "LabelText": "实名认证",
-                        "OutlineColor": {
-                          "G": 0,
-                          "B": 0
-                        },
-                        "ShadowColor": {
-                          "R": 110,
-                          "G": 110,
-                          "B": 110
-                        },
-                        "ShadowOffsetX": 2.0,
-                        "ShadowOffsetY": -2.0,
-                        "AnchorPoint": {
-                          "ScaleX": 0.5,
-                          "ScaleY": 0.5
-                        },
-                        "Position": {
-                          "X": 98.4011,
-                          "Y": 29.0275
-                        },
-                        "Scale": {
-                          "ScaleX": 1.0,
-                          "ScaleY": 1.0
-                        },
-                        "CColor": {},
-                        "IconVisible": false,
-                        "PrePosition": {
-                          "X": 0.6881,
-                          "Y": 0.4759
-                        },
-                        "PreSize": {
-                          "X": 0.5594,
-                          "Y": 0.3279
-                        },
-                        "LeftMargin": 58.4011,
-                        "RightMargin": 4.5989,
-                        "TopMargin": 21.9725,
-                        "BottomMargin": 19.0275,
-                        "Tag": 209,
-                        "ActionTag": 1647083329,
-                        "Size": {
-                          "X": 80.0,
-                          "Y": 20.0
-                        },
-                        "Name": "Text_11_0",
-                        "ctype": "TextObjectData"
-                      }
-                    ],
-                    "ActionTag": 116463168,
-                    "Size": {
-                      "X": 143.0,
-                      "Y": 61.0
-                    },
-                    "Name": "authenticationBtn",
-                    "ctype": "PanelObjectData"
-                  }
-                ],
-                "ActionTag": 2067292009,
-                "Size": {
-                  "X": 1280.0,
-                  "Y": 720.0
-                },
-                "Name": "morePnl",
-                "ctype": "PanelObjectData"
-              }
-            ],
-            "ActionTag": 1795294294,
-            "Size": {
-              "X": 1280.0,
-              "Y": 720.0
-            },
-            "Name": "topPnl",
-            "ctype": "PanelObjectData"
-          },
-          {
-            "ClipAble": false,
-            "BackColorAlpha": 102,
-            "SingleColor": {
-              "R": 150,
-              "G": 200
-            },
-            "FirstColor": {
-              "R": 150,
-              "G": 200
-            },
-            "EndColor": {},
-            "ColorVector": {
-              "ScaleY": 1.0
-            },
             "Scale9Width": 1,
             "Scale9Height": 1,
             "AnchorPoint": {
@@ -4722,6 +2402,2331 @@
               "Y": 720.0
             },
             "Name": "rightPnl",
+            "ctype": "PanelObjectData"
+          },
+          {
+            "ClipAble": false,
+            "BackColorAlpha": 102,
+            "SingleColor": {
+              "R": 150,
+              "G": 200
+            },
+            "FirstColor": {
+              "R": 150,
+              "G": 200
+            },
+            "EndColor": {},
+            "ColorVector": {
+              "ScaleY": 1.0
+            },
+            "Scale9OriginX": -422,
+            "Scale9OriginY": -237,
+            "Scale9Width": 844,
+            "Scale9Height": 474,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 1.0
+            },
+            "Position": {
+              "X": 640.0,
+              "Y": 719.496
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PositionPercentXEnabled": true,
+            "PositionPercentYEnabled": true,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.9993
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "TopMargin": 0.504,
+            "BottomMargin": -0.504,
+            "UserData": "{\"layoutType\":\"showAll\",\"screenAlign\":\"top\"}",
+            "Tag": 25,
+            "Children": [
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Default",
+                  "Path": "Default/Button_Disable.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "hall/dtjm_1_1.png",
+                  "Plist": ""
+                },
+                "Scale9Enable": true,
+                "Scale9OriginX": 15,
+                "Scale9OriginY": 11,
+                "Scale9Width": 67,
+                "Scale9Height": 76,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 59.7991,
+                  "Y": 659.6916
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0467,
+                  "Y": 0.9162
+                },
+                "PreSize": {
+                  "X": 0.0758,
+                  "Y": 0.1348
+                },
+                "LeftMargin": 11.2991,
+                "RightMargin": 1171.7009,
+                "TopMargin": 11.7684,
+                "BottomMargin": 611.1516,
+                "Tag": 29,
+                "ActionTag": 1698666448,
+                "Size": {
+                  "X": 97.0,
+                  "Y": 97.08
+                },
+                "Name": "photoBtn",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FontSize": 18,
+                "ButtonText": "贵族",
+                "TextColor": {
+                  "R": 138,
+                  "G": 74,
+                  "B": 0
+                },
+                "DisabledFileData": {
+                  "Type": "Default",
+                  "Path": "Default/Button_Disable.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "hall/dtjm_2.png",
+                  "Plist": ""
+                },
+                "Scale9Enable": true,
+                "Scale9OriginX": 15,
+                "Scale9OriginY": 11,
+                "Scale9Width": 21,
+                "Scale9Height": 15,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 144.6594,
+                  "Y": 665.92
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.113,
+                  "Y": 0.9249
+                },
+                "PreSize": {
+                  "X": 0.0406,
+                  "Y": 0.0462
+                },
+                "LeftMargin": 118.6594,
+                "RightMargin": 1109.3406,
+                "TopMargin": 37.45,
+                "BottomMargin": 649.29,
+                "Tag": 136,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "hall/pz_31.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 7,
+                    "Scale9OriginY": 7,
+                    "Scale9Width": 9,
+                    "Scale9Height": 8,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 50.2758,
+                      "Y": 25.9009
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.9668,
+                      "Y": 0.7787
+                    },
+                    "PreSize": {
+                      "X": 0.4423,
+                      "Y": 0.6615
+                    },
+                    "LeftMargin": 38.7758,
+                    "RightMargin": -9.7758,
+                    "TopMargin": -3.6409,
+                    "BottomMargin": 14.9009,
+                    "Tag": 298,
+                    "ActionTag": 1798066918,
+                    "Size": {
+                      "X": 23.0,
+                      "Y": 22.0
+                    },
+                    "Name": "redImg",
+                    "ctype": "ImageViewObjectData"
+                  }
+                ],
+                "ActionTag": 1379166341,
+                "Size": {
+                  "X": 52.0,
+                  "Y": 33.26
+                },
+                "Name": "guiZuBtn",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "ClipAble": false,
+                "BackColorAlpha": 0,
+                "SingleColor": {
+                  "R": 150,
+                  "G": 200
+                },
+                "FirstColor": {
+                  "R": 150,
+                  "G": 200
+                },
+                "EndColor": {},
+                "ColorVector": {
+                  "ScaleY": 1.0
+                },
+                "Scale9Width": 1,
+                "Scale9Height": 1,
+                "TouchEnable": true,
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 117.04,
+                  "Y": 610.5823
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0914,
+                  "Y": 0.848
+                },
+                "PreSize": {
+                  "X": 0.0844,
+                  "Y": 0.0472
+                },
+                "LeftMargin": 117.04,
+                "RightMargin": 1054.96,
+                "TopMargin": 75.4177,
+                "BottomMargin": 610.5823,
+                "Tag": 138,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "hall/dtjm_3.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 34,
+                    "Scale9OriginY": 11,
+                    "Scale9Width": 36,
+                    "Scale9Height": 12,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 52.44,
+                      "Y": 16.39
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.4856,
+                      "Y": 0.4821
+                    },
+                    "PreSize": {
+                      "X": 1.1204,
+                      "Y": 1.0
+                    },
+                    "LeftMargin": -8.06,
+                    "RightMargin": -4.94,
+                    "TopMargin": 0.61,
+                    "BottomMargin": -0.61,
+                    "Tag": 139,
+                    "ActionTag": 139071523,
+                    "Size": {
+                      "X": 121.0,
+                      "Y": 34.0
+                    },
+                    "Name": "nameBg",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FontSize": 19,
+                    "LabelText": "000000000000",
+                    "HorizontalAlignmentType": "HT_Center",
+                    "VerticalAlignmentType": "VT_Bottom",
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 51.0,
+                      "Y": 19.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.4722,
+                      "Y": 0.5588
+                    },
+                    "PreSize": {
+                      "X": 1.1111,
+                      "Y": 0.5588
+                    },
+                    "LeftMargin": -9.0,
+                    "RightMargin": -3.0,
+                    "TopMargin": 5.5,
+                    "BottomMargin": 9.5,
+                    "Tag": 137,
+                    "ActionTag": -1983909678,
+                    "Size": {
+                      "X": 120.0,
+                      "Y": 19.0
+                    },
+                    "Name": "name",
+                    "ctype": "TextObjectData"
+                  }
+                ],
+                "ActionTag": 656690230,
+                "Size": {
+                  "X": 108.0,
+                  "Y": 34.0
+                },
+                "Name": "namePnl",
+                "ctype": "PanelObjectData"
+              },
+              {
+                "ClipAble": false,
+                "BackColorAlpha": 0,
+                "ComboBoxIndex": 1,
+                "SingleColor": {
+                  "R": 150,
+                  "G": 200
+                },
+                "FirstColor": {
+                  "R": 150,
+                  "G": 200
+                },
+                "EndColor": {},
+                "ColorVector": {
+                  "ScaleY": 1.0
+                },
+                "Scale9Width": 1,
+                "Scale9Height": 1,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 423.296,
+                  "Y": 680.904
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PositionPercentXEnabled": true,
+                "PositionPercentYEnabled": true,
+                "PrePosition": {
+                  "X": 0.3307,
+                  "Y": 0.9457
+                },
+                "PreSize": {
+                  "X": 0.1562,
+                  "Y": 0.0625
+                },
+                "LeftMargin": 323.296,
+                "RightMargin": 756.704,
+                "TopMargin": 16.596,
+                "BottomMargin": 658.404,
+                "Tag": 113,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "hall/dtjm_4.png",
+                      "Plist": ""
+                    },
+                    "Scale9Enable": true,
+                    "Scale9OriginX": 7,
+                    "Scale9OriginY": 11,
+                    "Scale9Width": 11,
+                    "Scale9Height": 13,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 109.32,
+                      "Y": 21.65
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.5466,
+                      "Y": 0.4811
+                    },
+                    "PreSize": {
+                      "X": 0.8119,
+                      "Y": 0.8444
+                    },
+                    "LeftMargin": 28.13,
+                    "RightMargin": 9.49,
+                    "TopMargin": 4.35,
+                    "BottomMargin": 2.65,
+                    "Tag": 115,
+                    "ActionTag": -840924393,
+                    "Size": {
+                      "X": 162.38,
+                      "Y": 38.0
+                    },
+                    "Name": "coinsNum",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "IsCustomSize": true,
+                    "FontSize": 24,
+                    "LabelText": "10.万",
+                    "HorizontalAlignmentType": "HT_Center",
+                    "VerticalAlignmentType": "VT_Center",
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 102.0,
+                      "Y": 21.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.51,
+                      "Y": 0.4667
+                    },
+                    "PreSize": {
+                      "X": 0.558,
+                      "Y": 0.8444
+                    },
+                    "LeftMargin": 46.2,
+                    "RightMargin": 42.2,
+                    "TopMargin": 5.0,
+                    "BottomMargin": 2.0,
+                    "Tag": 124,
+                    "ActionTag": -13001346,
+                    "Size": {
+                      "X": 111.6,
+                      "Y": 38.0
+                    },
+                    "Name": "coinsCnt",
+                    "ctype": "TextObjectData"
+                  },
+                  {
+                    "FontSize": 14,
+                    "ButtonText": "",
+                    "TextColor": {
+                      "R": 65,
+                      "G": 65,
+                      "B": 70
+                    },
+                    "DisabledFileData": {
+                      "Type": "Default",
+                      "Path": "Default/Button_Disable.png",
+                      "Plist": ""
+                    },
+                    "NormalFileData": {
+                      "Type": "Normal",
+                      "Path": "hall/dtjm_5.png",
+                      "Plist": ""
+                    },
+                    "Scale9Enable": true,
+                    "Scale9OriginX": 15,
+                    "Scale9OriginY": 13,
+                    "Scale9Width": 8,
+                    "Scale9Height": 16,
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 173.0,
+                      "Y": 21.65
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.865,
+                      "Y": 0.4811
+                    },
+                    "PreSize": {
+                      "X": 0.1947,
+                      "Y": 0.8889
+                    },
+                    "LeftMargin": 153.53,
+                    "RightMargin": 7.53,
+                    "TopMargin": 3.35,
+                    "BottomMargin": 1.65,
+                    "Tag": 21,
+                    "ActionTag": 833893237,
+                    "Size": {
+                      "X": 38.94,
+                      "Y": 40.0
+                    },
+                    "Name": "coinAddBtn",
+                    "ctype": "ButtonObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "common/jinbi.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 13,
+                    "Scale9OriginY": 13,
+                    "Scale9Width": 14,
+                    "Scale9Height": 14,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 30.39,
+                      "Y": 21.5
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.152,
+                      "Y": 0.4778
+                    },
+                    "PreSize": {
+                      "X": 0.2,
+                      "Y": 0.8889
+                    },
+                    "LeftMargin": 10.39,
+                    "RightMargin": 149.61,
+                    "TopMargin": 3.5,
+                    "BottomMargin": 1.5,
+                    "Tag": 114,
+                    "ActionTag": -1139096234,
+                    "Size": {
+                      "X": 40.0,
+                      "Y": 40.0
+                    },
+                    "Name": "coins",
+                    "ctype": "ImageViewObjectData"
+                  }
+                ],
+                "ActionTag": 2112484207,
+                "Size": {
+                  "X": 200.0,
+                  "Y": 45.0
+                },
+                "Name": "coinPnl",
+                "ctype": "PanelObjectData"
+              },
+              {
+                "ClipAble": false,
+                "BackColorAlpha": 0,
+                "ComboBoxIndex": 1,
+                "SingleColor": {
+                  "R": 150,
+                  "G": 200
+                },
+                "FirstColor": {
+                  "R": 150,
+                  "G": 200
+                },
+                "EndColor": {},
+                "ColorVector": {
+                  "ScaleY": 1.0
+                },
+                "Scale9Width": 1,
+                "Scale9Height": 1,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 658.08,
+                  "Y": 680.95
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.5141,
+                  "Y": 0.9458
+                },
+                "PreSize": {
+                  "X": 0.1562,
+                  "Y": 0.0625
+                },
+                "LeftMargin": 558.08,
+                "RightMargin": 521.92,
+                "TopMargin": 16.55,
+                "BottomMargin": 658.45,
+                "Tag": 120,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "hall/dtjm_4.png",
+                      "Plist": ""
+                    },
+                    "Scale9Enable": true,
+                    "Scale9OriginX": 8,
+                    "Scale9OriginY": 11,
+                    "Scale9Width": 10,
+                    "Scale9Height": 13,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 103.32,
+                      "Y": 21.65
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.5166,
+                      "Y": 0.4811
+                    },
+                    "PreSize": {
+                      "X": 0.8119,
+                      "Y": 0.8444
+                    },
+                    "LeftMargin": 22.13,
+                    "RightMargin": 15.49,
+                    "TopMargin": 4.35,
+                    "BottomMargin": 2.65,
+                    "Tag": 121,
+                    "ActionTag": 770476341,
+                    "Size": {
+                      "X": 162.38,
+                      "Y": 38.0
+                    },
+                    "Name": "diamondsNum",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "IsCustomSize": true,
+                    "FontSize": 24,
+                    "LabelText": "50",
+                    "HorizontalAlignmentType": "HT_Center",
+                    "VerticalAlignmentType": "VT_Center",
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 100.0,
+                      "Y": 21.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.5,
+                      "Y": 0.4667
+                    },
+                    "PreSize": {
+                      "X": 0.558,
+                      "Y": 0.8444
+                    },
+                    "LeftMargin": 44.2,
+                    "RightMargin": 44.2,
+                    "TopMargin": 5.0,
+                    "BottomMargin": 2.0,
+                    "Tag": 125,
+                    "ActionTag": -1297075180,
+                    "Size": {
+                      "X": 111.6,
+                      "Y": 38.0
+                    },
+                    "Name": "diamondsCnt",
+                    "ctype": "TextObjectData"
+                  },
+                  {
+                    "FontSize": 14,
+                    "ButtonText": "",
+                    "TextColor": {
+                      "R": 65,
+                      "G": 65,
+                      "B": 70
+                    },
+                    "DisabledFileData": {
+                      "Type": "Default",
+                      "Path": "Default/Button_Disable.png",
+                      "Plist": ""
+                    },
+                    "NormalFileData": {
+                      "Type": "Normal",
+                      "Path": "hall/dtjm_5.png",
+                      "Plist": ""
+                    },
+                    "Scale9Enable": true,
+                    "Scale9OriginX": 15,
+                    "Scale9OriginY": 11,
+                    "Scale9Width": 8,
+                    "Scale9Height": 18,
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 168.0,
+                      "Y": 22.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.84,
+                      "Y": 0.4889
+                    },
+                    "PreSize": {
+                      "X": 0.1947,
+                      "Y": 0.8889
+                    },
+                    "LeftMargin": 148.53,
+                    "RightMargin": 12.53,
+                    "TopMargin": 3.0,
+                    "BottomMargin": 2.0,
+                    "Tag": 122,
+                    "ActionTag": 1240390100,
+                    "Size": {
+                      "X": 38.94,
+                      "Y": 40.0
+                    },
+                    "Name": "diamondsAddBtn",
+                    "ctype": "ButtonObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "common/zuanshi.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 13,
+                    "Scale9OriginY": 13,
+                    "Scale9Width": 19,
+                    "Scale9Height": 16,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 25.39,
+                      "Y": 24.5
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.1269,
+                      "Y": 0.5444
+                    },
+                    "PreSize": {
+                      "X": 0.22,
+                      "Y": 0.9556
+                    },
+                    "LeftMargin": 3.39,
+                    "RightMargin": 152.61,
+                    "TopMargin": -1.0,
+                    "BottomMargin": 3.0,
+                    "Tag": 123,
+                    "ActionTag": 1218645053,
+                    "Size": {
+                      "X": 44.0,
+                      "Y": 43.0
+                    },
+                    "Name": "diamonds",
+                    "ctype": "ImageViewObjectData"
+                  }
+                ],
+                "ActionTag": 1105314020,
+                "Size": {
+                  "X": 200.0,
+                  "Y": 45.0
+                },
+                "Name": "diamondsPnl",
+                "ctype": "PanelObjectData"
+              },
+              {
+                "ClipAble": false,
+                "BackColorAlpha": 0,
+                "ComboBoxIndex": 1,
+                "SingleColor": {
+                  "R": 150,
+                  "G": 200
+                },
+                "FirstColor": {
+                  "R": 150,
+                  "G": 200
+                },
+                "EndColor": {},
+                "ColorVector": {
+                  "ScaleY": 1.0
+                },
+                "Scale9Width": 1,
+                "Scale9Height": 1,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 880.08,
+                  "Y": 679.95
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.6876,
+                  "Y": 0.9444
+                },
+                "PreSize": {
+                  "X": 0.1562,
+                  "Y": 0.0625
+                },
+                "LeftMargin": 780.08,
+                "RightMargin": 299.92,
+                "TopMargin": 17.55,
+                "BottomMargin": 657.45,
+                "Tag": 126,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "hall/dtjm_4.png",
+                      "Plist": ""
+                    },
+                    "Scale9Enable": true,
+                    "Scale9OriginX": 8,
+                    "Scale9OriginY": 11,
+                    "Scale9Width": 10,
+                    "Scale9Height": 13,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 103.32,
+                      "Y": 21.65
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.5166,
+                      "Y": 0.4811
+                    },
+                    "PreSize": {
+                      "X": 0.8119,
+                      "Y": 0.8444
+                    },
+                    "LeftMargin": 22.13,
+                    "RightMargin": 15.49,
+                    "TopMargin": 4.35,
+                    "BottomMargin": 2.65,
+                    "Tag": 127,
+                    "ActionTag": -205830087,
+                    "Size": {
+                      "X": 162.38,
+                      "Y": 38.0
+                    },
+                    "Name": "fuKaNum",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "IsCustomSize": true,
+                    "FontSize": 24,
+                    "LabelText": "300",
+                    "HorizontalAlignmentType": "HT_Center",
+                    "VerticalAlignmentType": "VT_Center",
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 101.0,
+                      "Y": 21.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.505,
+                      "Y": 0.4667
+                    },
+                    "PreSize": {
+                      "X": 0.558,
+                      "Y": 0.8444
+                    },
+                    "LeftMargin": 45.2,
+                    "RightMargin": 43.2,
+                    "TopMargin": 5.0,
+                    "BottomMargin": 2.0,
+                    "Tag": 128,
+                    "ActionTag": -498549214,
+                    "Size": {
+                      "X": 111.6,
+                      "Y": 38.0
+                    },
+                    "Name": "fuKaCnt",
+                    "ctype": "TextObjectData"
+                  },
+                  {
+                    "FontSize": 14,
+                    "ButtonText": "",
+                    "TextColor": {
+                      "R": 65,
+                      "G": 65,
+                      "B": 70
+                    },
+                    "DisabledFileData": {
+                      "Type": "Default",
+                      "Path": "Default/Button_Disable.png",
+                      "Plist": ""
+                    },
+                    "NormalFileData": {
+                      "Type": "Normal",
+                      "Path": "hall/dtjm_5.png",
+                      "Plist": ""
+                    },
+                    "Scale9Enable": true,
+                    "Scale9OriginX": 15,
+                    "Scale9OriginY": 11,
+                    "Scale9Width": 8,
+                    "Scale9Height": 18,
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 168.0,
+                      "Y": 22.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.84,
+                      "Y": 0.4889
+                    },
+                    "PreSize": {
+                      "X": 0.1897,
+                      "Y": 0.9222
+                    },
+                    "LeftMargin": 149.03,
+                    "RightMargin": 13.03,
+                    "TopMargin": 2.25,
+                    "BottomMargin": 1.25,
+                    "Tag": 129,
+                    "ActionTag": -36571241,
+                    "Size": {
+                      "X": 37.94,
+                      "Y": 41.5
+                    },
+                    "Name": "fuKaAddBtn",
+                    "ctype": "ButtonObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "common/hb.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 13,
+                    "Scale9OriginY": 13,
+                    "Scale9Width": 10,
+                    "Scale9Height": 18,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 29.39,
+                      "Y": 21.5
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.1469,
+                      "Y": 0.4778
+                    },
+                    "PreSize": {
+                      "X": 0.18,
+                      "Y": 0.9778
+                    },
+                    "LeftMargin": 11.39,
+                    "RightMargin": 152.61,
+                    "TopMargin": 1.5,
+                    "BottomMargin": -0.5,
+                    "Tag": 130,
+                    "ActionTag": 486999955,
+                    "Size": {
+                      "X": 36.0,
+                      "Y": 44.0
+                    },
+                    "Name": "fuKa",
+                    "ctype": "ImageViewObjectData"
+                  }
+                ],
+                "ActionTag": -1038062764,
+                "Size": {
+                  "X": 200.0,
+                  "Y": 45.0
+                },
+                "Name": "fuKaPnl",
+                "ctype": "PanelObjectData"
+              },
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Default",
+                  "Path": "Default/Button_Disable.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "hall/dtjm_6.png",
+                  "Plist": ""
+                },
+                "Scale9Enable": true,
+                "Scale9OriginX": 15,
+                "Scale9OriginY": 11,
+                "Scale9Width": 22,
+                "Scale9Height": 19,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 1090.048,
+                  "Y": 676.8
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PositionPercentXEnabled": true,
+                "PositionPercentYEnabled": true,
+                "PrePosition": {
+                  "X": 0.8516,
+                  "Y": 0.94
+                },
+                "PreSize": {
+                  "X": 0.0359,
+                  "Y": 0.0528
+                },
+                "LeftMargin": 1067.048,
+                "RightMargin": 166.952,
+                "TopMargin": 24.2,
+                "BottomMargin": 657.8,
+                "Tag": 30,
+                "Children": [
+                  {
+                    "IsCustomSize": true,
+                    "FontSize": 19,
+                    "LabelText": "邮件",
+                    "HorizontalAlignmentType": "HT_Center",
+                    "VerticalAlignmentType": "VT_Center",
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 22.44,
+                      "Y": -1.641
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.4878,
+                      "Y": -0.0432
+                    },
+                    "PreSize": {
+                      "X": 0.8696,
+                      "Y": 0.5789
+                    },
+                    "LeftMargin": 2.44,
+                    "RightMargin": 3.56,
+                    "TopMargin": 28.641,
+                    "BottomMargin": -12.641,
+                    "Tag": 132,
+                    "ActionTag": 1623445450,
+                    "Size": {
+                      "X": 40.0,
+                      "Y": 22.0
+                    },
+                    "Name": "fuKaCnt_0",
+                    "ctype": "TextObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "hall/pz_31.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 7,
+                    "Scale9OriginY": 7,
+                    "Scale9Width": 9,
+                    "Scale9Height": 8,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 40.2761,
+                      "Y": 35.9
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.8756,
+                      "Y": 0.9447
+                    },
+                    "PreSize": {
+                      "X": 0.5,
+                      "Y": 0.5789
+                    },
+                    "LeftMargin": 28.7761,
+                    "RightMargin": -5.7761,
+                    "TopMargin": -8.9,
+                    "BottomMargin": 24.9,
+                    "Tag": 297,
+                    "ActionTag": 517721033,
+                    "Size": {
+                      "X": 23.0,
+                      "Y": 22.0
+                    },
+                    "Name": "redImg",
+                    "ctype": "ImageViewObjectData"
+                  }
+                ],
+                "ActionTag": 1821571772,
+                "Size": {
+                  "X": 46.0,
+                  "Y": 38.0
+                },
+                "Name": "emailBtn",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "hall/dtjm_7.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 15,
+                "Scale9OriginY": 11,
+                "Scale9Width": 19,
+                "Scale9Height": 29,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 1212.032,
+                  "Y": 676.8
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PositionPercentXEnabled": true,
+                "PositionPercentYEnabled": true,
+                "PrePosition": {
+                  "X": 0.9469,
+                  "Y": 0.94
+                },
+                "PreSize": {
+                  "X": 0.0359,
+                  "Y": 0.0639
+                },
+                "LeftMargin": 1189.032,
+                "RightMargin": 44.968,
+                "TopMargin": 20.2,
+                "BottomMargin": 653.8,
+                "Tag": 81,
+                "Children": [
+                  {
+                    "IsCustomSize": true,
+                    "FontSize": 19,
+                    "LabelText": "更多",
+                    "HorizontalAlignmentType": "HT_Center",
+                    "VerticalAlignmentType": "VT_Center",
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 24.44,
+                      "Y": 2.36
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.5313,
+                      "Y": 0.0513
+                    },
+                    "PreSize": {
+                      "X": 0.8696,
+                      "Y": 0.4783
+                    },
+                    "LeftMargin": 4.44,
+                    "RightMargin": 1.56,
+                    "TopMargin": 32.64,
+                    "BottomMargin": -8.64,
+                    "Tag": 135,
+                    "ActionTag": 37719768,
+                    "Size": {
+                      "X": 40.0,
+                      "Y": 22.0
+                    },
+                    "Name": "fuKaCnt_0",
+                    "ctype": "TextObjectData"
+                  }
+                ],
+                "ActionTag": 371629241,
+                "Size": {
+                  "X": 46.0,
+                  "Y": 46.0
+                },
+                "Name": "moreBtn",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "ClipAble": false,
+                "BackColorAlpha": 182,
+                "SingleColor": {
+                  "R": 150,
+                  "G": 200
+                },
+                "FirstColor": {
+                  "R": 150,
+                  "G": 200
+                },
+                "EndColor": {},
+                "ColorVector": {
+                  "ScaleY": 1.0
+                },
+                "Scale9Width": 1,
+                "Scale9Height": 1,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 640.0,
+                  "Y": 360.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PositionPercentXEnabled": true,
+                "PositionPercentYEnabled": true,
+                "PrePosition": {
+                  "X": 0.5,
+                  "Y": 0.5
+                },
+                "PreSize": {
+                  "X": 1.5625,
+                  "Y": 2.7778
+                },
+                "LeftMargin": -360.0,
+                "RightMargin": -360.0,
+                "TopMargin": -640.0,
+                "BottomMargin": -640.0,
+                "UserData": "{\"layoutType\":\"maxArea\",\"screenAlign\":\"mid\"}",
+                "Tag": 98,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "hall/dtjm_30.png",
+                      "Plist": ""
+                    },
+                    "Scale9Enable": true,
+                    "Scale9OriginX": 47,
+                    "Scale9OriginY": 16,
+                    "Scale9Width": 49,
+                    "Scale9Height": 17,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 1564.6538,
+                      "Y": 1133.2104
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.7823,
+                      "Y": 0.5666
+                    },
+                    "PreSize": {
+                      "X": 0.0715,
+                      "Y": 0.1405
+                    },
+                    "LeftMargin": 1493.1538,
+                    "RightMargin": 363.8462,
+                    "TopMargin": 726.2896,
+                    "BottomMargin": 992.7104,
+                    "Tag": 194,
+                    "ActionTag": -830468427,
+                    "Size": {
+                      "X": 143.0,
+                      "Y": 281.0
+                    },
+                    "Name": "Image_2",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "ClipAble": false,
+                    "BackColorAlpha": 102,
+                    "SingleColor": {
+                      "R": 150,
+                      "G": 200
+                    },
+                    "FirstColor": {
+                      "R": 150,
+                      "G": 200
+                    },
+                    "EndColor": {},
+                    "ColorVector": {
+                      "ScaleY": 1.0
+                    },
+                    "Scale9Width": 1,
+                    "Scale9Height": 1,
+                    "TouchEnable": true,
+                    "AnchorPoint": {},
+                    "Position": {
+                      "X": 1486.8213,
+                      "Y": 1204.3203
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.7434,
+                      "Y": 0.6022
+                    },
+                    "PreSize": {
+                      "X": 0.075,
+                      "Y": 0.0325
+                    },
+                    "LeftMargin": 1486.8213,
+                    "RightMargin": 363.1787,
+                    "TopMargin": 730.6797,
+                    "BottomMargin": 1204.3203,
+                    "Tag": 343,
+                    "Children": [
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "hall/pmd_2.png",
+                          "Plist": ""
+                        },
+                        "Scale9OriginX": 11,
+                        "Scale9OriginY": 2,
+                        "Scale9Width": 474,
+                        "Scale9Height": 5,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 76.185,
+                          "Y": 5.0494
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PositionPercentXEnabled": true,
+                        "PrePosition": {
+                          "X": 0.5079,
+                          "Y": 0.0777
+                        },
+                        "PreSize": {
+                          "X": 0.9667,
+                          "Y": 0.1385
+                        },
+                        "LeftMargin": 3.685,
+                        "RightMargin": 1.315,
+                        "TopMargin": 55.4506,
+                        "BottomMargin": 0.5494,
+                        "Tag": 185,
+                        "ActionTag": -363719697,
+                        "Size": {
+                          "X": 145.0,
+                          "Y": 9.0
+                        },
+                        "Name": "Image_5_0",
+                        "ctype": "ImageViewObjectData"
+                      },
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "hall/dtjm_21.png",
+                          "Plist": ""
+                        },
+                        "Scale9OriginX": 11,
+                        "Scale9OriginY": 11,
+                        "Scale9Width": 12,
+                        "Scale9Height": 14,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 36.619,
+                          "Y": 36.3279
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.2441,
+                          "Y": 0.5589
+                        },
+                        "PreSize": {
+                          "X": 0.2267,
+                          "Y": 0.5538
+                        },
+                        "LeftMargin": 19.619,
+                        "RightMargin": 96.381,
+                        "TopMargin": 10.6721,
+                        "BottomMargin": 18.3279,
+                        "Tag": 250,
+                        "ActionTag": -1004023784,
+                        "Size": {
+                          "X": 34.0,
+                          "Y": 36.0
+                        },
+                        "Name": "Image_18",
+                        "ctype": "ImageViewObjectData"
+                      },
+                      {
+                        "FontSize": 20,
+                        "LabelText": "设置",
+                        "OutlineColor": {
+                          "G": 0,
+                          "B": 0
+                        },
+                        "ShadowColor": {
+                          "R": 110,
+                          "G": 110,
+                          "B": 110
+                        },
+                        "ShadowOffsetX": 2.0,
+                        "ShadowOffsetY": -2.0,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 86.8748,
+                          "Y": 30.9297
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.5792,
+                          "Y": 0.4758
+                        },
+                        "PreSize": {
+                          "X": 0.2667,
+                          "Y": 0.3077
+                        },
+                        "LeftMargin": 66.8748,
+                        "RightMargin": 43.1252,
+                        "TopMargin": 24.0703,
+                        "BottomMargin": 20.9297,
+                        "Tag": 251,
+                        "ActionTag": 1690083844,
+                        "Size": {
+                          "X": 40.0,
+                          "Y": 20.0
+                        },
+                        "Name": "Text_11",
+                        "ctype": "TextObjectData"
+                      }
+                    ],
+                    "ActionTag": -74830355,
+                    "Size": {
+                      "X": 150.0,
+                      "Y": 65.0
+                    },
+                    "Name": "setBtn",
+                    "ctype": "PanelObjectData"
+                  },
+                  {
+                    "ClipAble": false,
+                    "BackColorAlpha": 102,
+                    "SingleColor": {
+                      "R": 150,
+                      "G": 200
+                    },
+                    "FirstColor": {
+                      "R": 150,
+                      "G": 200
+                    },
+                    "EndColor": {},
+                    "ColorVector": {
+                      "ScaleY": 1.0
+                    },
+                    "Scale9Width": 1,
+                    "Scale9Height": 1,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 1564.9705,
+                      "Y": 1169.4736
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.7825,
+                      "Y": 0.5847
+                    },
+                    "PreSize": {
+                      "X": 0.0715,
+                      "Y": 0.0395
+                    },
+                    "LeftMargin": 1493.4705,
+                    "RightMargin": 363.5295,
+                    "TopMargin": 791.0264,
+                    "BottomMargin": 1129.9736,
+                    "Tag": 194,
+                    "Children": [
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "hall/pmd_2.png",
+                          "Plist": ""
+                        },
+                        "Scale9OriginX": 11,
+                        "Scale9OriginY": 2,
+                        "Scale9Width": 474,
+                        "Scale9Height": 5,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 70.14,
+                          "Y": 0.9028
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.4905,
+                          "Y": 0.0114
+                        },
+                        "PreSize": {
+                          "X": 1.014,
+                          "Y": 0.1139
+                        },
+                        "LeftMargin": -2.36,
+                        "RightMargin": 0.36,
+                        "TopMargin": 73.5972,
+                        "BottomMargin": -3.5972,
+                        "Tag": 195,
+                        "ActionTag": 1624062083,
+                        "Size": {
+                          "X": 145.0,
+                          "Y": 9.0
+                        },
+                        "Name": "Image_5_0_0",
+                        "ctype": "ImageViewObjectData"
+                      },
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "hall/dtjm_19.png",
+                          "Plist": ""
+                        },
+                        "Scale9OriginX": 11,
+                        "Scale9OriginY": 11,
+                        "Scale9Width": 14,
+                        "Scale9Height": 18,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 32.0585,
+                          "Y": 33.8558
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.2242,
+                          "Y": 0.4286
+                        },
+                        "PreSize": {
+                          "X": 0.2517,
+                          "Y": 0.5063
+                        },
+                        "LeftMargin": 14.0585,
+                        "RightMargin": 92.9415,
+                        "TopMargin": 25.1442,
+                        "BottomMargin": 13.8558,
+                        "Tag": 196,
+                        "ActionTag": -1823612305,
+                        "Size": {
+                          "X": 36.0,
+                          "Y": 40.0
+                        },
+                        "Name": "Image_18_0",
+                        "ctype": "ImageViewObjectData"
+                      },
+                      {
+                        "FontSize": 20,
+                        "LabelText": "反馈",
+                        "OutlineColor": {
+                          "G": 0,
+                          "B": 0
+                        },
+                        "ShadowColor": {
+                          "R": 110,
+                          "G": 110,
+                          "B": 110
+                        },
+                        "ShadowOffsetX": 2.0,
+                        "ShadowOffsetY": -2.0,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 82.8395,
+                          "Y": 33.2751
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.5793,
+                          "Y": 0.4212
+                        },
+                        "PreSize": {
+                          "X": 0.2797,
+                          "Y": 0.2532
+                        },
+                        "LeftMargin": 62.8395,
+                        "RightMargin": 40.1605,
+                        "TopMargin": 35.7249,
+                        "BottomMargin": 23.2751,
+                        "Tag": 197,
+                        "ActionTag": -1784744525,
+                        "Size": {
+                          "X": 40.0,
+                          "Y": 20.0
+                        },
+                        "Name": "Text_11_0",
+                        "ctype": "TextObjectData"
+                      }
+                    ],
+                    "ActionTag": -348871052,
+                    "Size": {
+                      "X": 143.0,
+                      "Y": 79.0
+                    },
+                    "Name": "feedbackBtn",
+                    "ctype": "PanelObjectData"
+                  },
+                  {
+                    "ClipAble": false,
+                    "BackColorAlpha": 102,
+                    "SingleColor": {
+                      "R": 150,
+                      "G": 200
+                    },
+                    "FirstColor": {
+                      "R": 150,
+                      "G": 200
+                    },
+                    "EndColor": {},
+                    "ColorVector": {
+                      "ScaleY": 1.0
+                    },
+                    "Scale9Width": 1,
+                    "Scale9Height": 1,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 1564.1792,
+                      "Y": 1091.1456
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.7821,
+                      "Y": 0.5456
+                    },
+                    "PreSize": {
+                      "X": 0.0715,
+                      "Y": 0.0395
+                    },
+                    "LeftMargin": 1492.6792,
+                    "RightMargin": 364.3208,
+                    "TopMargin": 869.3544,
+                    "BottomMargin": 1051.6456,
+                    "Tag": 198,
+                    "Children": [
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "hall/pmd_2.png",
+                          "Plist": ""
+                        },
+                        "Scale9OriginX": 11,
+                        "Scale9OriginY": 2,
+                        "Scale9Width": 474,
+                        "Scale9Height": 5,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 72.6474,
+                          "Y": 5.3239
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.508,
+                          "Y": 0.0674
+                        },
+                        "PreSize": {
+                          "X": 1.014,
+                          "Y": 0.1139
+                        },
+                        "LeftMargin": 0.1474,
+                        "RightMargin": -2.1474,
+                        "TopMargin": 69.1761,
+                        "BottomMargin": 0.8239,
+                        "Tag": 199,
+                        "ActionTag": -1752068592,
+                        "Size": {
+                          "X": 145.0,
+                          "Y": 9.0
+                        },
+                        "Name": "Image_5_0_0",
+                        "ctype": "ImageViewObjectData"
+                      },
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "hall/dtjm_18.png",
+                          "Plist": ""
+                        },
+                        "Scale9OriginX": 11,
+                        "Scale9OriginY": 11,
+                        "Scale9Width": 14,
+                        "Scale9Height": 16,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 34.4091,
+                          "Y": 44.4059
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.2406,
+                          "Y": 0.5621
+                        },
+                        "PreSize": {
+                          "X": 0.2517,
+                          "Y": 0.481
+                        },
+                        "LeftMargin": 16.4091,
+                        "RightMargin": 90.5909,
+                        "TopMargin": 15.5941,
+                        "BottomMargin": 25.4059,
+                        "Tag": 202,
+                        "ActionTag": 62233463,
+                        "Size": {
+                          "X": 36.0,
+                          "Y": 38.0
+                        },
+                        "Name": "Image_18_0",
+                        "ctype": "ImageViewObjectData"
+                      },
+                      {
+                        "FontSize": 20,
+                        "LabelText": "客服",
+                        "OutlineColor": {
+                          "G": 0,
+                          "B": 0
+                        },
+                        "ShadowColor": {
+                          "R": 110,
+                          "G": 110,
+                          "B": 110
+                        },
+                        "ShadowOffsetX": 2.0,
+                        "ShadowOffsetY": -2.0,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 82.5164,
+                          "Y": 42.7533
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.577,
+                          "Y": 0.5412
+                        },
+                        "PreSize": {
+                          "X": 0.2797,
+                          "Y": 0.2532
+                        },
+                        "LeftMargin": 62.5164,
+                        "RightMargin": 40.4836,
+                        "TopMargin": 26.2467,
+                        "BottomMargin": 32.7533,
+                        "Tag": 203,
+                        "ActionTag": 63696509,
+                        "Size": {
+                          "X": 40.0,
+                          "Y": 20.0
+                        },
+                        "Name": "Text_11_0",
+                        "ctype": "TextObjectData"
+                      }
+                    ],
+                    "ActionTag": 699490340,
+                    "Size": {
+                      "X": 143.0,
+                      "Y": 79.0
+                    },
+                    "Name": "customerServiceBtn",
+                    "ctype": "PanelObjectData"
+                  },
+                  {
+                    "ClipAble": false,
+                    "BackColorAlpha": 102,
+                    "SingleColor": {
+                      "R": 150,
+                      "G": 200
+                    },
+                    "FirstColor": {
+                      "R": 150,
+                      "G": 200
+                    },
+                    "EndColor": {},
+                    "ColorVector": {
+                      "ScaleY": 1.0
+                    },
+                    "Scale9Width": 1,
+                    "Scale9Height": 1,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 1563.4609,
+                      "Y": 1025.4098
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.7817,
+                      "Y": 0.5127
+                    },
+                    "PreSize": {
+                      "X": 0.0715,
+                      "Y": 0.0305
+                    },
+                    "LeftMargin": 1491.9609,
+                    "RightMargin": 365.0391,
+                    "TopMargin": 944.0902,
+                    "BottomMargin": 994.9098,
+                    "Tag": 204,
+                    "Children": [
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "hall/dtjm_20.png",
+                          "Plist": ""
+                        },
+                        "Scale9OriginX": 11,
+                        "Scale9OriginY": 11,
+                        "Scale9Width": 11,
+                        "Scale9Height": 18,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 30.3071,
+                          "Y": 30.8506
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.2119,
+                          "Y": 0.5057
+                        },
+                        "PreSize": {
+                          "X": 0.2308,
+                          "Y": 0.6557
+                        },
+                        "LeftMargin": 13.8071,
+                        "RightMargin": 96.1929,
+                        "TopMargin": 10.1494,
+                        "BottomMargin": 10.8506,
+                        "Tag": 208,
+                        "ActionTag": -1057108144,
+                        "Size": {
+                          "X": 33.0,
+                          "Y": 40.0
+                        },
+                        "Name": "Image_18_0",
+                        "ctype": "ImageViewObjectData"
+                      },
+                      {
+                        "FontSize": 20,
+                        "LabelText": "实名认证",
+                        "OutlineColor": {
+                          "G": 0,
+                          "B": 0
+                        },
+                        "ShadowColor": {
+                          "R": 110,
+                          "G": 110,
+                          "B": 110
+                        },
+                        "ShadowOffsetX": 2.0,
+                        "ShadowOffsetY": -2.0,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 98.4011,
+                          "Y": 29.0275
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.6881,
+                          "Y": 0.4759
+                        },
+                        "PreSize": {
+                          "X": 0.5594,
+                          "Y": 0.3279
+                        },
+                        "LeftMargin": 58.4011,
+                        "RightMargin": 4.5989,
+                        "TopMargin": 21.9725,
+                        "BottomMargin": 19.0275,
+                        "Tag": 209,
+                        "ActionTag": 1647083329,
+                        "Size": {
+                          "X": 80.0,
+                          "Y": 20.0
+                        },
+                        "Name": "Text_11_0",
+                        "ctype": "TextObjectData"
+                      }
+                    ],
+                    "ActionTag": 116463168,
+                    "Size": {
+                      "X": 143.0,
+                      "Y": 61.0
+                    },
+                    "Name": "authenticationBtn",
+                    "ctype": "PanelObjectData"
+                  }
+                ],
+                "ActionTag": 2067292009,
+                "Size": {
+                  "X": 2000.0,
+                  "Y": 2000.0
+                },
+                "Name": "morePnl",
+                "ctype": "PanelObjectData"
+              }
+            ],
+            "ActionTag": 1795294294,
+            "Size": {
+              "X": 1280.0,
+              "Y": 720.0
+            },
+            "Name": "topPnl",
             "ctype": "PanelObjectData"
           },
           {

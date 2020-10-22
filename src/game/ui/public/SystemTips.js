@@ -18,6 +18,7 @@ load('game/ui/public/SystemTips', function () {
         },
 
         runTips: function (tips) {
+            cc.log('--->>>' + tips)
             this.TipsText.setString(tips)
 
             this.TipsBg.setPosition(cc.p(global.View.size.halfWidth, 0))

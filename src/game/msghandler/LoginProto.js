@@ -4,6 +4,7 @@
  */
 load('game/msghandler/LoginProto', function () {
     let baseProto = include('public/network/BaseProto')
+    let GameEvent = include('game/config/GameEvent')
     let proto = baseProto.extend({
         _name: 'LoginProto',
         _offMsgId: 1,
@@ -13,11 +14,19 @@ load('game/msghandler/LoginProto', function () {
 
         handleMsg: function (msg) {
             this._super(msg)
-            if (msg.status === 0) {
-                let HallScene = include('game/ui/scene/HallScene')
-                appInstance.sceneManager().replaceScene(new HallScene())
-            }
+            appInstance.sendNotification(GameEvent.DIALOG_HIDE_ALL)
             appInstance.gameAgent().setLoginOk(true)
+            appInstance.gameNet().setReconnect(false)
+            if (msg.status === 0) {
+                let curSceneName = appInstance.sceneManager().getCurSceneName()
+                if (curSceneName === 'HallScene') {
+                    cc.log('====当前已经在大厅， 重新刷新数据就可以')
+                } else {
+                    let HallScene = include('game/ui/scene/HallScene')
+                    appInstance.sceneManager().replaceScene(new HallScene())
+                }
+            }
+
         },
 
         initData: function () {

@@ -1054,7 +1054,7 @@
               <AbstractNodeData Name="matchNd" ActionTag="-1811619474" Tag="477" IconVisible="True" LeftMargin="822.1400" RightMargin="457.8600" TopMargin="462.9600" BottomMargin="257.0400" ctype="SingleNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <Children>
-                  <AbstractNodeData Name="matchBtn" ActionTag="-1841446159" Tag="478" IconVisible="False" LeftMargin="-100.0000" RightMargin="-100.0000" TopMargin="-100.0000" BottomMargin="-100.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                  <AbstractNodeData Name="matchBtn" ActionTag="-1841446159" Tag="478" IconVisible="False" LeftMargin="-100.0000" RightMargin="-100.0000" TopMargin="-100.0000" BottomMargin="-100.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="200.0000" Y="200.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position />

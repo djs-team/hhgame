@@ -123,6 +123,7 @@
           <Image Name="fuKa (15).png" />
           <Image Name="fuKa (16).png" />
           <Image Name="fuKa (17).png" />
+          <Image Name="fuka (18).png" />
           <Image Name="fuKa (2).png" />
           <Image Name="fuKa (3).png" />
           <Image Name="fuKa (4).png" />
@@ -131,6 +132,7 @@
           <Image Name="fuKa (7).png" />
           <Image Name="fuKa (8).png" />
           <Image Name="fuKa (9).png" />
+          <Image Name="fuka(12).png" />
           <Image Name="invitation (1).png" />
           <Image Name="invitation (2).png" />
           <Image Name="invitation (3).png" />
@@ -696,6 +698,7 @@
           <Image Name="fk_7.png" />
           <Image Name="fk_8.png" />
           <Image Name="fk_9.png" />
+          <Image Name="input.png" />
         </Folder>
         <Folder Name="hall">
           <Image Name="bs_Main_add.png" />

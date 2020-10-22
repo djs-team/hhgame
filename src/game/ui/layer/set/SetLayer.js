@@ -77,7 +77,7 @@ load('game/ui/layer/set/SetLayer', function () {
         },
 
         onEffectBtnClick: function (sender) {
-            GameUtil.delayBtn(sender);
+            // GameUtil.delayBtn(sender);
             if (sender.isSelected()) {
                 this.EffectSlider.setPercent(100)
                 this.EffectBtn.setSelected(true)
@@ -88,7 +88,7 @@ load('game/ui/layer/set/SetLayer', function () {
         },
 
         onMusicBtnClick: function (sender) {
-            GameUtil.delayBtn(sender);
+            // GameUtil.delayBtn(sender);
             if (sender.isSelected()) {
                 this.MusicSlider.setPercent(100)
                 this.MusicBtn.setSelected(true)
@@ -100,7 +100,7 @@ load('game/ui/layer/set/SetLayer', function () {
         },
 
         onEmojBtnClick: function (sender) {
-            GameUtil.delayBtn(sender);
+            // GameUtil.delayBtn(sender);
             if (sender.isSelected()) {
 
             } else {
@@ -109,7 +109,7 @@ load('game/ui/layer/set/SetLayer', function () {
         },
 
         onLaguageBtnClick: function (sender) {
-            GameUtil.delayBtn(sender);
+            // GameUtil.delayBtn(sender);
             if (sender.isSelected()) {
                 global.localStorage.setStringForKey(LocalSave.LocalLanguage, 'putong')
             } else {

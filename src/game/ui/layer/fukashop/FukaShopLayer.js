@@ -180,6 +180,13 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
 
         initView: function () {
 
+            this.goodsListView.setScrollBarEnabled(false)
+            this.menuListView.setScrollBarEnabled(false)
+            this.exangeListView.setScrollBarEnabled(false)
+            this.robListView.setScrollBarEnabled(false)
+            this.robLogListView.setScrollBarEnabled(false)
+            this.rewardsLogListView.setScrollBarEnabled(false)
+
             this.goodsPnl.setVisible(false)
             this.goodsCell.setVisible(false)
             this.goodsListPnl.setVisible(true)

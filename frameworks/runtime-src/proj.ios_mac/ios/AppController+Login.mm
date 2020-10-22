@@ -36,6 +36,9 @@
             NSString *openid = resp[@"openid"];
             NSString *accessToken = resp[@"access_token"];
             NSString *unionid = resp[@"unionid"];
+            if (openid.length <= 0) {
+                return;
+            }
             [self getWeChatUserInfo:openid accessToken:accessToken unionid:unionid];
         }
     }];

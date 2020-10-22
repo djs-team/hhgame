@@ -1,8 +1,10 @@
 {
-"manifestUrl":"http://127.0.0.1/hhmj/",
+"manifestUrl":"http://127.0.0.1:8000/mail/",
 "main":{
 	"src":[
-		"../src"
+		"../src/game",
+		"../src/module",
+		"../src/public"
 	],
 	"res":"../res"
 },

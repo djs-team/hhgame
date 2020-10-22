@@ -61,6 +61,8 @@ load('public/suport/HotUpdate', function () {
          * otherwise we may can't get the correct local manifest if you set a custom search path same with that path.
          */
         ctor: function (manifestUrl, storagePath, manifestDownloadUrl) {
+            cc.log('========manifestUrl==============' + manifestUrl)
+            cc.log('========storagePath==============' + storagePath)
             this._manifestUrl = manifestUrl
             this._storagePath = ((jsb.fileUtils ? jsb.fileUtils.getWritablePath() : '/') + storagePath)
             this._manifestDownloadUrl = manifestDownloadUrl
@@ -283,6 +285,7 @@ load('public/suport/HotUpdate', function () {
          * @param {string} newUrl - 新的热更地址
          */
         setReplaceUrl: function (newUrl) {
+            cc.log('========setReplaceUrl=========' + newUrl)
             this.log('setReplaceUrl:' + newUrl)
             if (this._am) {
                 if (typeof (newUrl) !== 'undefined' && newUrl != null) {
@@ -298,12 +301,14 @@ load('public/suport/HotUpdate', function () {
          */
         loadDefaultDownloadUrls: function () {
             if (!gDownloadUrls) {
-                let urls = appInstance.connectorApi().remoteConfig().cdnUrls
+                let urls = ['http://10.1.1.151:8000/main']
                 if (urls && urls.length > 0) {
+                    cc.log('==========loadDefaultDownloadUrls=======11111========')
                     gDownloadUrls = urls
                     // Switch to new download url when cdn urls loaded.
                     this.switchDownloadUrl()
                 } else {
+                    cc.log('==========loadDefaultDownloadUrls=======11111========')
                     this.setReplaceUrl('')
                 }
             }
@@ -314,6 +319,7 @@ load('public/suport/HotUpdate', function () {
          * @param {string[]} urls - url array
          */
         setGlobalDownloadUrls: function (urls) {
+            cc.log('======setGlobalDownloadUrls========' + JSON.stringify(urls))
             gDownloadUrls = urls
         },
 
@@ -325,6 +331,7 @@ load('public/suport/HotUpdate', function () {
                 curDownloadUrlIdx = (curDownloadUrlIdx + 1) % gDownloadUrls.length
                 let url = gDownloadUrls[curDownloadUrlIdx]
                 if (url && url.length > 0) {
+                    cc.log('===========switchDownloadUrl=================' + JSON.stringify(gDownloadUrls))
                     this.setReplaceUrl(url)
                 }
             }

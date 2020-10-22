@@ -8,6 +8,7 @@ load('game/ui/scene/UpdateScene', function () {
     let HotUpdate = include('public/suport/HotUpdate')
     let HttpType = include('public/http/HttpType')
     let UpdateMdt =  include('game/ui/scene/UpdateMdt')
+    let isNeedUpdate = true
     let UpdateScene = BaseScene.extend({
         _className: 'UpdateScene',
         RES_BINDING: function () {
@@ -22,7 +23,11 @@ load('game/ui/scene/UpdateScene', function () {
         },
 
         showView: function () {
-            // this.goLoginScene()
+            if (isNeedUpdate) {
+                this.startUpdate()
+            } else {
+                this.goLoginScene()
+            }
         },
 
         onEnter: function () {
@@ -56,8 +61,10 @@ load('game/ui/scene/UpdateScene', function () {
         },
 
         updateSuccess: function (isUpdated, curVersion) {
+            appInstance.gameAgent().Tips('热更成功')
             appInstance.moduleManager().setMainLocalVer(curVersion)
             if (isUpdated) {
+                appInstance.gameAgent().Tips('需要重启游戏')
                 appInstance.restartGame()
             } else {
                 this.goLoginScene()
@@ -68,9 +75,9 @@ load('game/ui/scene/UpdateScene', function () {
         },
         onUpdate: function () {
             if (this._percent > 0) {
-                // this.slider_bar.setPercent(this._percent)
-                this.slider_bar.setPositionX(-this.slider_bar.width + this._percent*0.01 * this.slider_bar.width)
-                this.slider_txt.setString('总大小:' + this._totalSize + 'MB 已下载:' + this._downloadedSize + 'MB')
+                cc.log('=========this.percent===' + this._percent)
+                this.LoadingBar.setPercent(this._percent)
+                this.StateTxt.setString('总大小:' + this._totalSize + 'MB 已下载:' + this._downloadSize + 'MB')
             }
         },
         setVersionTxt: function (resVer, natieVer) {
@@ -79,33 +86,30 @@ load('game/ui/scene/UpdateScene', function () {
         },
 
         startUpdate: function () {
-            // this.slider_bar
-            this.slider_bar.setPositionX(-this.slider_bar.width)
-            this.slider_txt.setString('')
+            this.LoadingBar.setPercent(0)
+            this.StateTxt.setString('开始热更')
 
             let self = this
             let istr = 'res/project.manifest'
-            if (typeof ppgamecenter !== 'undefined') {
-                istr = jsb.fileUtils.getWritablePath() + 'update/' + 'project.manifest'
-            }
 
             let updater = new HotUpdate(istr, 'update')
             let version = updater.getLocalVersion()
-            this.setVersionTxt(version, appInstance.nativeApi().getNativeVersion())
+            // this.setVersionTxt(version, appInstance.nativeApi().getNativeVersion())
             updater.setProgressCallback(function (percent, totalSize, downloadedSize) {
+                cc.log('==========热更回调=====')
                 self._percent = percent
                 self._totalSize = totalSize
-                self._downloadedSize = downloadedSize
+                self._downloadSize = downloadedSize
             })
             updater.setSuccessCallback(function (isUpdated, curVersion) {
+                cc.log('==========热更成功')
                 self.updateSuccess(isUpdated, curVersion)
             })
             updater.setFailureCallback(function (curVersion) {
+                cc.log('==========热更失败')
                 let ver = curVersion || '0'
                 appInstance.moduleManager().setMainLocalVer(ver)
-                utils.alertMsg('更新失败，请重试。', function () {
-                    self.startUpdate()
-                })
+                appInstance.gameAgent().Tips('===========热更失败======')
             })
             updater.update()
         }

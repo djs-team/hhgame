@@ -4841,20 +4841,27 @@
                         "ctype": "ImageViewObjectData"
                       },
                       {
-                        "FileData": {
-                          "Type": "Default",
-                          "Path": "Default/ImageFile.png",
-                          "Plist": ""
+                        "ClipAble": false,
+                        "BackColorAlpha": 102,
+                        "SingleColor": {
+                          "R": 150,
+                          "G": 200
                         },
-                        "Scale9Width": 46,
-                        "Scale9Height": 46,
+                        "FirstColor": {
+                          "R": 150,
+                          "G": 200
+                        },
+                        "EndColor": {},
+                        "ColorVector": {
+                          "ScaleY": 1.0
+                        },
                         "AnchorPoint": {
                           "ScaleX": 0.5,
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 95.3815,
-                          "Y": 170.531
+                          "X": 93.0,
+                          "Y": 172.0
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -4863,25 +4870,25 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 0.1454,
-                          "Y": 0.5742
+                          "X": 0.1418,
+                          "Y": 0.5791
                         },
                         "PreSize": {
-                          "X": 0.0701,
-                          "Y": 0.1549
+                          "X": 0.1524,
+                          "Y": 0.3367
                         },
-                        "LeftMargin": 72.3815,
-                        "RightMargin": 537.6185,
-                        "TopMargin": 103.469,
-                        "BottomMargin": 147.531,
-                        "Tag": 326,
-                        "ActionTag": -297765033,
+                        "LeftMargin": 43.0,
+                        "RightMargin": 513.0,
+                        "TopMargin": 75.0,
+                        "BottomMargin": 122.0,
+                        "Tag": 168,
+                        "ActionTag": 1047522869,
                         "Size": {
-                          "X": 46.0,
-                          "Y": 46.0
+                          "X": 100.0,
+                          "Y": 100.0
                         },
                         "Name": "rewardsImg",
-                        "ctype": "ImageViewObjectData"
+                        "ctype": "PanelObjectData"
                       },
                       {
                         "FontSize": 24,

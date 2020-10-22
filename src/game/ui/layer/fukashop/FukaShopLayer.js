@@ -1242,7 +1242,6 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 this.rewardsLogListView.pushBackCustomItem(cell)
 
                 cell.setName(data.orderCode)
-                cell.getChildByName('rewardsImg').loadTexture(data.goodsUrl)
                 cell.getChildByName('goodsNameText').setString(data.goodsName)
                 cell.getChildByName('orderNumberValueText').setString(data.expressCode)
                 cell.getChildByName('timeDaysText').setString(data.timeDays)
@@ -1253,6 +1252,13 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                     num : data.num,
                     propValue : data.propValue,
                 }
+
+                let size = {
+                    height : 100.00,
+                    width : 100.00
+                }
+
+                this.onLoadUrlImg(data.goodsUrl,size,cell.getChildByName('rewardsImg'))
 
 
                 if(data.status == 0){

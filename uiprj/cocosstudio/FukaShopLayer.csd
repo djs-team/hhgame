@@ -1106,15 +1106,18 @@
                         <PreSize X="0.2043" Y="0.4512" />
                         <FileData Type="Normal" Path="fukashop/fk_40.png" Plist="" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="rewardsImg" ActionTag="-297765033" Tag="326" IconVisible="False" LeftMargin="72.3815" RightMargin="537.6185" TopMargin="103.4690" BottomMargin="147.5310" Scale9Width="46" Scale9Height="46" ctype="ImageViewObjectData">
-                        <Size X="46.0000" Y="46.0000" />
+                      <AbstractNodeData Name="rewardsImg" ActionTag="1047522869" Tag="168" IconVisible="False" LeftMargin="43.0000" RightMargin="513.0000" TopMargin="75.0000" BottomMargin="122.0000" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+                        <Size X="100.0000" Y="100.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="95.3815" Y="170.5310" />
+                        <Position X="93.0000" Y="172.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.1454" Y="0.5742" />
-                        <PreSize X="0.0701" Y="0.1549" />
-                        <FileData Type="Default" Path="Default/ImageFile.png" Plist="" />
+                        <PrePosition X="0.1418" Y="0.5791" />
+                        <PreSize X="0.1524" Y="0.3367" />
+                        <SingleColor A="255" R="150" G="200" B="255" />
+                        <FirstColor A="255" R="150" G="200" B="255" />
+                        <EndColor A="255" R="255" G="255" B="255" />
+                        <ColorVector ScaleY="1.0000" />
                       </AbstractNodeData>
                       <AbstractNodeData Name="orderNumberKeyText" ActionTag="-2141814607" Tag="328" IconVisible="False" LeftMargin="46.8698" RightMargin="513.1302" TopMargin="250.1979" BottomMargin="22.8021" FontSize="24" LabelText="运单号：" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                         <Size X="96.0000" Y="24.0000" />

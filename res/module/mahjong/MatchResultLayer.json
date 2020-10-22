@@ -459,8 +459,9 @@
                     "ctype": "TextObjectData"
                   },
                   {
+                    "IsCustomSize": true,
                     "FontSize": 35,
-                    "LabelText": "第几名呢",
+                    "LabelText": "第1024名呢",
                     "HorizontalAlignmentType": "HT_Center",
                     "VerticalAlignmentType": "VT_Center",
                     "OutlineColor": {
@@ -500,14 +501,14 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": -49.77,
-                    "RightMargin": -90.23,
+                    "LeftMargin": -68.27,
+                    "RightMargin": -108.73,
                     "TopMargin": 69.81,
                     "BottomMargin": -104.81,
                     "Tag": 70,
                     "ActionTag": 2057838618,
                     "Size": {
-                      "X": 140.0,
+                      "X": 177.0,
                       "Y": 35.0
                     },
                     "Name": "RankTxt",

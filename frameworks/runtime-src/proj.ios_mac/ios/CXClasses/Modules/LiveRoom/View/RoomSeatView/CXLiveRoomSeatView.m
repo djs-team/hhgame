@@ -198,10 +198,6 @@
 
 
 - (void)setupSubViews {
-    
-    self.seat_giftBtn.layer.masksToBounds = true;
-    self.seat_giftBtn.layer.cornerRadius = 14;
-    
     self.seat_bottomView.layer.masksToBounds = true;
     self.seat_bottomView.layer.cornerRadius = 14;
     
@@ -213,7 +209,6 @@
     
     self.sitdownBtn.layer.masksToBounds = true;
     self.sitdownBtn.layer.cornerRadius = 10;
-    
 }
 
 - (IBAction)seatViewAction:(UIButton *)sender {

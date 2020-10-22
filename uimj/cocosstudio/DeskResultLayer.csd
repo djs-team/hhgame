@@ -133,18 +133,18 @@
                         <PreSize X="0.1739" Y="0.1143" />
                         <FileData Type="Normal" Path="common/jinbi.png" Plist="" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="winNum" ActionTag="804885693" Tag="405" IconVisible="False" LeftMargin="71.2030" RightMargin="67.7970" TopMargin="286.8977" BottomMargin="38.1023" FontSize="25" LabelText="+888888" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                        <Size X="91.0000" Y="25.0000" />
+                      <AbstractNodeData Name="winNum" ActionTag="804885693" Tag="405" IconVisible="False" LeftMargin="71.2030" RightMargin="48.7970" TopMargin="291.4000" BottomMargin="36.6000" IsCustomSize="True" FontSize="22" LabelText="+888888888" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="110.0000" Y="22.0000" />
                         <AnchorPoint ScaleY="0.5000" />
-                        <Position X="71.2030" Y="50.6023" />
+                        <Position X="71.2030" Y="47.6000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="165" B="0" />
-                        <PrePosition X="0.3096" Y="0.1446" />
-                        <PreSize X="0.3957" Y="0.0714" />
+                        <PrePosition X="0.3096" Y="0.1360" />
+                        <PreSize X="0.4783" Y="0.0629" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="InfoBtn" ActionTag="195539330" Tag="450" IconVisible="False" LeftMargin="146.7694" RightMargin="3.2306" TopMargin="276.1076" BottomMargin="23.8924" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                      <AbstractNodeData Name="InfoBtn" ActionTag="195539330" Tag="450" IconVisible="False" LeftMargin="159.7700" RightMargin="-9.7700" TopMargin="279.1100" BottomMargin="20.8900" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                         <Size X="80.0000" Y="50.0000" />
                         <Children>
                           <AbstractNodeData Name="Text_2" ActionTag="1020726819" Tag="451" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="10.0000" RightMargin="10.0000" TopMargin="10.0000" BottomMargin="10.0000" FontSize="30" LabelText="详情" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -160,10 +160,10 @@
                           </AbstractNodeData>
                         </Children>
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="186.7694" Y="48.8924" />
+                        <Position X="199.7700" Y="45.8900" />
                         <Scale ScaleX="0.6000" ScaleY="0.6000" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.8120" Y="0.1397" />
+                        <PrePosition X="0.8686" Y="0.1311" />
                         <PreSize X="0.3478" Y="0.1429" />
                         <SingleColor A="255" R="150" G="200" B="255" />
                         <FirstColor A="255" R="150" G="200" B="255" />

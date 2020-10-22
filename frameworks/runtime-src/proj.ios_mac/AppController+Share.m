@@ -60,12 +60,11 @@
 // (截图)
 + (void)WXShareIOSforImage:(NSString *)path platform:(NSString *)platform
 {
-    if (path.length <= 0) {
-        return;
-    }
-    
     NSData *imageData = [NSData dataWithContentsOfFile: path];
     
+    if (imageData.length <= 0) {
+        return;
+    }
     WXMediaMessage * msg = [WXMediaMessage message];
     
     WXImageObject * imgObj = [WXImageObject object];

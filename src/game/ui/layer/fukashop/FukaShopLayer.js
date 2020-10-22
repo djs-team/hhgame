@@ -779,8 +779,8 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 cell.setVisible(true)
                 this.goodDetailPageView.pushBackCustomItem(cell)
                 let size = {
-                    height : 556,
-                    width : 416
+                    height : 416,
+                    width : 556
                 }
 
                 this.onLoadUrlImg(data.upPictureUrls[i],size,cell)

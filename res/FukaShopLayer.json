@@ -74,7 +74,7 @@
           {
             "FileData": {
               "Type": "Normal",
-              "Path": "aaa/fuKa (14).png",
+              "Path": "aaa/fuKa (7).png",
               "Plist": ""
             },
             "Scale9OriginX": 15,
@@ -117,54 +117,6 @@
             },
             "VisibleForFrame": false,
             "Name": "dele",
-            "ctype": "ImageViewObjectData"
-          },
-          {
-            "FileData": {
-              "Type": "Normal",
-              "Path": "aaa/fuka (18).png",
-              "Plist": ""
-            },
-            "Scale9OriginX": 15,
-            "Scale9OriginY": 15,
-            "Scale9Width": 1265,
-            "Scale9Height": 700,
-            "AnchorPoint": {
-              "ScaleX": 0.5,
-              "ScaleY": 0.5
-            },
-            "Position": {
-              "X": 640.0,
-              "Y": 360.0
-            },
-            "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 1.0
-            },
-            "CColor": {},
-            "IconVisible": false,
-            "PositionPercentXEnabled": true,
-            "PositionPercentYEnabled": true,
-            "PrePosition": {
-              "X": 0.5,
-              "Y": 0.5
-            },
-            "PreSize": {
-              "X": 1.0117,
-              "Y": 1.0139
-            },
-            "LeftMargin": -7.5,
-            "RightMargin": -7.5,
-            "TopMargin": -5.0,
-            "BottomMargin": -5.0,
-            "Tag": 2231,
-            "ActionTag": 1636549443,
-            "Size": {
-              "X": 1295.0,
-              "Y": 730.0
-            },
-            "VisibleForFrame": false,
-            "Name": "dele_0",
             "ctype": "ImageViewObjectData"
           },
           {
@@ -3130,6 +3082,8 @@
                   "ScaleX": 1.0,
                   "ScaleY": 1.0
                 },
+                "RotationSkewX": -90.0,
+                "RotationSkewY": -90.0,
                 "CColor": {},
                 "IconVisible": false,
                 "PositionPercentXEnabled": true,
@@ -3138,19 +3092,19 @@
                   "X": 0.5,
                   "Y": 0.5
                 },
-                "PercentWidthEnable": true,
-                "PercentHeightEnable": true,
-                "PercentWidthEnabled": true,
-                "PercentHeightEnabled": true,
                 "PreSize": {
-                  "X": 1.0,
-                  "Y": 1.0
+                  "X": 0.5625,
+                  "Y": 1.7778
                 },
+                "LeftMargin": 280.0,
+                "RightMargin": 280.0,
+                "TopMargin": -280.0,
+                "BottomMargin": -280.0,
                 "Tag": 284,
                 "Children": [
                   {
                     "ScrollDirectionType": 0,
-                    "ClipAble": false,
+                    "ClipAble": true,
                     "BackColorAlpha": 102,
                     "SingleColor": {
                       "R": 150,
@@ -3171,8 +3125,8 @@
                     "TouchEnable": true,
                     "AnchorPoint": {},
                     "Position": {
-                      "X": 86.159,
-                      "Y": 86.1589
+                      "X": 83.9602,
+                      "Y": 780.4832
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -3181,22 +3135,22 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.0673,
-                      "Y": 0.1197
+                      "X": 0.1166,
+                      "Y": 0.6098
                     },
                     "PreSize": {
-                      "X": 0.325,
-                      "Y": 0.7722
+                      "X": 0.7722,
+                      "Y": 0.325
                     },
-                    "LeftMargin": 86.159,
-                    "RightMargin": 777.841,
-                    "TopMargin": 77.8411,
-                    "BottomMargin": 86.1589,
+                    "LeftMargin": 83.9602,
+                    "RightMargin": 80.0398,
+                    "TopMargin": 83.5168,
+                    "BottomMargin": 780.4832,
                     "Tag": 283,
                     "ActionTag": 1817087938,
                     "Size": {
-                      "X": 416.0,
-                      "Y": 556.0
+                      "X": 556.0,
+                      "Y": 416.0
                     },
                     "Name": "goodDetailPageView",
                     "ctype": "PageViewObjectData"
@@ -3218,11 +3172,10 @@
                     },
                     "Scale9Width": 1,
                     "Scale9Height": 1,
-                    "TouchEnable": true,
                     "AnchorPoint": {},
                     "Position": {
-                      "X": 86.16,
-                      "Y": 86.16
+                      "X": 83.96,
+                      "Y": 780.48
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -3231,22 +3184,22 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.0673,
-                      "Y": 0.1197
+                      "X": 0.1166,
+                      "Y": 0.6097
                     },
                     "PreSize": {
-                      "X": 0.325,
-                      "Y": 0.7722
+                      "X": 0.7722,
+                      "Y": 0.325
                     },
-                    "LeftMargin": 86.16,
-                    "RightMargin": 777.84,
-                    "TopMargin": 77.84,
-                    "BottomMargin": 86.16,
+                    "LeftMargin": 83.96,
+                    "RightMargin": 80.04,
+                    "TopMargin": 83.52,
+                    "BottomMargin": 780.48,
                     "Tag": 285,
                     "ActionTag": -5966583,
                     "Size": {
-                      "X": 416.0,
-                      "Y": 556.0
+                      "X": 556.0,
+                      "Y": 416.0
                     },
                     "Name": "goodsDetailCell",
                     "ctype": "PanelObjectData"
@@ -3254,8 +3207,8 @@
                 ],
                 "ActionTag": -858943565,
                 "Size": {
-                  "X": 1280.0,
-                  "Y": 720.0
+                  "X": 720.0,
+                  "Y": 1280.0
                 },
                 "Name": "detailTopPnl",
                 "ctype": "PanelObjectData"
@@ -3275,7 +3228,6 @@
                 },
                 "Scale9Width": 1,
                 "Scale9Height": 1,
-                "TouchEnable": true,
                 "AnchorPoint": {
                   "ScaleX": 0.5,
                   "ScaleY": 0.5
@@ -8828,8 +8780,7 @@
         "ctype": "LayerObjectData"
       },
       "UsedResources": [
-        "aaa/fuKa (14).png",
-        "aaa/fuka (18).png",
+        "aaa/fuKa (7).png",
         "common/hb.png",
         "Default/Button_Disable.png",
         "Default/Button_Press.png",

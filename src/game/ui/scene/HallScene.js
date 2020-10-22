@@ -263,6 +263,10 @@ load('game/ui/scene/HallScene', function () {
 
             this.onInitUserData();
 
+            this.registerEventListener('TCP_CLOSE', appInstance.gameAgent().onTcpClose)
+            this.registerEventListener('RECONNECT_OVER_TIMES', appInstance.gameAgent().onReconnectError)
+
+
         },
 
 

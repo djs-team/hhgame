@@ -20,6 +20,7 @@ appInstance.gameAgent().addDialogUI(dialogData)
  */
 load('game/public/GameAgent', function () {
     let GameConfig = include('game/config/GameConfig')
+    let GameEvent = include('game/config/GameEvent')
     let HttpGame = include('game/public/HttpGame')
     let TcpGame = include('game/public/TcpGame')
     let GameUtil = include('game/public/GameUtil')
@@ -33,12 +34,38 @@ load('game/public/GameAgent', function () {
         _heartBeatTimes: 0,
         _sendHearBeat: 0,
         _loginOk: false,
+        _reConectTimes: 0,
         ctor: function () {
             this._httpGame = new HttpGame()
             this._tcpGame = new TcpGame()
             this._gameUtil = GameUtil
             this._mjUtil = new MjUtil()
             this.initGame()
+        },
+
+        initGame: function () {
+
+        },
+
+        onTcpClose: function () {
+            appInstance.gameAgent().setLoginOk(false)
+
+            let curSceneName = appInstance.sceneManager().getCurSceneName()
+            if (curSceneName === 'HallScene' || curSceneName === 'MjPlayScene') {
+                appInstance.gameAgent().Tips('网络连接中断')
+                appInstance.sendNotification(GameEvent.DIALOG_HIDE_ALL)
+                let dialogMsg = {
+                    ViewType: 1,
+                    SayText: '网络异常正在重新连接，请稍等 '
+                }
+                appInstance.gameAgent().addDialogUI(dialogMsg)
+
+                appInstance.gameNet().setReconnect(true)
+            }
+        },
+
+        onReconnectError: function () {
+            appInstance.gameAgent().goLoginScene()
         },
 
         httpGame: function () {
@@ -122,6 +149,7 @@ load('game/public/GameAgent', function () {
 
         setLoginOk: function (tag) {
             this._loginOk = tag
+
         },
 
         onUpdate: function (dt) {
@@ -131,22 +159,24 @@ load('game/public/GameAgent', function () {
                 this._heartBeatTimes += dt
                 this._sendHearBeat += dt
                 if (this._sendHearBeat > GameConfig.HeartBeatInterval) {
+                    cc.log('====》》》》》》==发送心跳')
                     this._sendHearBeat = 0
                     this._tcpGame.heartBeat()
                 }
-                //给服务器三次机会，如果三次都不返回，那就是服务器挂了
-                if (this._heartBeatTimes > GameConfig.HeartBeatInterval * 3) {
-                    cc.log(' >>>>>>>>>>心跳异常')
-                    this._heartBeatTimes = 0
-                    let data = {}
-                    data.sayTxt = '网络异常'
-                    this.goLoginScene(data)
+                //给5秒延迟，五秒后进行tcp重新链接
+                if (this._heartBeatTimes > GameConfig.HeartBeatInterval + 5) {
+                    // appInstance.gameAgent().Tips('网络连接中断，尝试重新链接')
+                    // this._heartBeatTimes = 0
+                    // this._loginOk = false
+                    //
+                    // let dialogMsg = {
+                    //     ViewType: 1,
+                    //     SayText: '网络异常,正在重新连接，请稍等 '
+                    // }
+                    // appInstance.gameAgent().addDialogUI(dialogMsg)
+                    // appInstance.gameNet().setReconnect(true)
                 }
             }
-        },
-
-        initGame: function () {
-
         }
     })
     return GameAgent

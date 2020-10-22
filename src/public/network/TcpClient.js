@@ -44,7 +44,9 @@ let TcpClient = cc.Class.extend({
     },
 
     send: function (arrayBuffer) {
-        this._socket.send(arrayBuffer)
+        if (this.getSocketState() !== WebSocket.CLOSED) {
+            this._socket.send(arrayBuffer)
+        }
     },
 
     disconnect: function () {
@@ -52,7 +54,7 @@ let TcpClient = cc.Class.extend({
             if (this._socket.disconnect) {
                 this._socket.disconnect()
             }
-            if (this._socket.close) {
+            if (cc.sys.isObjectValid(this._socket) && this._socket.close) {
                 this._socket.close()
             }
             this._socket = null
@@ -76,8 +78,9 @@ let TcpClient = cc.Class.extend({
 
     onSocketClose: function (event) {
         cc.log('================onSocketClose================' + JSON.stringify(event))
+        appInstance.eventManager().dispatchEvent('TCP_CLOSE')
     },
-    getReadyState: function () {
+    getSocketState: function () {
         if (this._socket && cc.sys.isObjectValid(this._socket)) {
             return this._socket.readyState
         }

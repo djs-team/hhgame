@@ -972,7 +972,6 @@
             }
                 break;
             case SocketMessageIDNotifyRedPacketResultToClientMessage: { // 广播红包列表
-                [self.redpacketStartView hide];
                 CXSocketMessageNotifyRedPacketResultToClient *list = notification;
                 [self showRedPacketResult:list.UserRedPackets];
             }
@@ -1001,10 +1000,12 @@
             }
                 break;
                 
-                //=========== 红包 =============
+                //=========== 心跳 =============
             case SocketMessageIDKeepaLiveNotification: {
                 CXSocketMessageSystemKeepaLiveRequest *request = [CXSocketMessageSystemKeepaLiveRequest new];
-                [[CXClientModel instance] sendSocketRequest:request withCallback:nil];
+                [[CXClientModel instance] sendSocketRequest:request withCallback:^(__kindof SocketMessageRequest * _Nonnull request) {
+
+                }];
             }
                 break;
             default:

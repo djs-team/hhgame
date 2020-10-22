@@ -24,12 +24,15 @@
         make.size.mas_equalTo(CGSizeMake(312, 451));
     }];
          
-    [MMPopupWindow sharedWindow].touchWildToHide = YES;
-    self.type = MMPopupTypeAlert;
+    [MMPopupWindow sharedWindow].touchWildToHide = NO;
+    self.type = MMPopupTypeCustom;
     
     [self.mainTableView registerNib:[UINib nibWithNibName:@"CXRedPacketAwardRecordCell" bundle:nil] forCellReuseIdentifier:@"CXRedPacketAwardRecordCellID"];
     self.mainTableView.dataSource = self;
-    
+}
+- (IBAction)closeAction:(id)sender {
+    [self hide];
+    [MMPopupView hideAll];
 }
 
 - (void)setRecordArrays:(NSArray<CXLiveRoomRedPacketModel *> *)recordArrays {

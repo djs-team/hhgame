@@ -77,6 +77,8 @@
     for (CALayer *item in self.layer.sublayers) {
         [item removeAllAnimations];
     }
+    
+    [MMPopupView hideAll];
 }
 
 - (IBAction)withdrawAction:(id)sender {

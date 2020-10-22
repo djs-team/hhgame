@@ -43,7 +43,7 @@
     }];
      
 //    [MMPopupWindow sharedWindow].touchWildToHide = YES;
-    self.type = MMPopupTypeAlert;
+    self.type = MMPopupTypeCustom;
 }
 
 + (CXSystemAlertView *)loadNib {
@@ -65,6 +65,7 @@
         _cancelBlock();
     }
     [self hide];
+    [MMPopupView hideAll];
 }
 
 - (IBAction)sureAction:(id)sender {
@@ -72,6 +73,7 @@
         _sureBlock();
     }
     [self hide];
+    [MMPopupView hideAll];
 }
 
 @end

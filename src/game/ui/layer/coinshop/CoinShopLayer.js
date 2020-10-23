@@ -345,7 +345,7 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
                 dialogMsg.RightBtnName = btnNameArray.RightBtnName
                 dialogMsg.RightBtnClick = function () {
 
-                    let _sendMsg = coinSender._sendMsg
+                    let _sendMsg = sender._sendMsg
                     let msg = {}
                     msg.goodsid = _sendMsg.goodsid
                     appInstance.gameAgent().httpGame().COINSSHOPBUYReq(msg)

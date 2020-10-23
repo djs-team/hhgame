@@ -76,6 +76,9 @@
 #import "CXBaseTabBarViewController.h"
 #import "CXUserModel.h"
 
+// Bugly
+#import <Bugly/Bugly.h>
+
 //#import <StoreKit/StoreKit.h>
 
 @interface AppController() <JPUSHRegisterDelegate, WXApiDelegate, BUSplashAdDelegate, OpenInstallDelegate>
@@ -141,7 +144,8 @@ static AppDelegate s_sharedApplication;
     // 微信注册
     [WXApi registerApp:WX_AppKey universalLink:WX_UniversalLinks];
     
-    
+    // Bugly
+    [Bugly startWithAppId:@"b59315e4a7"];
     
     // OpenInstall
     [OpenInstallSDK initWithDelegate:self];

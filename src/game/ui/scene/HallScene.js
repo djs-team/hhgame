@@ -7,6 +7,7 @@ load('game/ui/scene/HallScene', function () {
     let HallMdt = include('game/ui/scene/HallMdt')
     let LocalSave = include('game/public/LocalSave')
     let GameUtil = include('game/public/GameUtil')
+    let GameConfig = include('game/config/GameConfig')
     let AniPlayer = ResConfig.AniPlayer
     let PlayerPlay = ResConfig.PlayerPlay
     let HallScene = BaseScene.extend({
@@ -30,8 +31,10 @@ load('game/ui/scene/HallScene', function () {
                 'topPnl/morePnl/authenticationBtn': {onClicked: this.onAuthenticationClick},
 
 
-                'bmPnl/fuKaShopBtn': {onClicked: this.onFukaShopClick},
-                'bmPnl/coinShopBtn': {onClicked: this.onCoinShopClick},
+                'bmPnl/fuKaShopNd': {},
+                'bmPnl/fuKaShopNd/fuKaShopBtn': {onClicked: this.onFukaShopClick},
+                'bmPnl/coinShopNd': {},
+                'bmPnl/coinShopNd/coinShopBtn': {onClicked: this.onCoinShopClick},
                 'bmPnl/bmListPnl/signPnl': {onClicked: this.onSignBtnClick},
                 'bmPnl/bmListPnl/taskPnl': {onClicked: this.onTaskClick},
                 'bmPnl/bmListPnl/rolesPnl': {onClicked: this.onRoleClick},
@@ -274,8 +277,10 @@ load('game/ui/scene/HallScene', function () {
         initView: function (selfInfo) {
             this.initData(selfInfo)
 
+
+            let channel = appInstance.dataManager().getUserData().channel;
             let jinbichangAni = appInstance.gameAgent().gameUtil().getAni(ResConfig.AniHall.DatingJinbichang)
-            jinbichangAni.setAnimation(0, 'animation', true)
+            jinbichangAni.setAnimation(0, GameConfig.channel_animation[channel], true)
             this.coinGameNd.addChild(jinbichangAni)
 
             let xiangqinAni = appInstance.gameAgent().gameUtil().getAni(ResConfig.AniHall.DatingXiangQin)
@@ -299,6 +304,14 @@ load('game/ui/scene/HallScene', function () {
             let zhuanpanAni = appInstance.gameAgent().gameUtil().getAni(ResConfig.AniHall.DatingZhuanPan)
             zhuanpanAni.setAnimation(0, 'animation', true)
             this.turnTableNd.addChild(zhuanpanAni)
+
+            let fukashangcheng = appInstance.gameAgent().gameUtil().getAni(ResConfig.AniHall.DatingFuKaShangCheng)
+            fukashangcheng.setAnimation(0, 'animation', true)
+            this.fuKaShopNd.addChild(fukashangcheng)
+
+            let jinbishangcheng = appInstance.gameAgent().gameUtil().getAni(ResConfig.AniHall.DatingJinBiShangCheng)
+            jinbishangcheng.setAnimation(0, 'animation', true)
+            this.coinShopNd.addChild(jinbishangcheng)
 
             this.updatePlayerAni()
             this.morePnl.setVisible(false)

@@ -57,6 +57,8 @@ load('game/config/ResConfig', function () {
         "DatingYaoJinShu": { json: 'res/animation/hall/yaojinshu/dating_yaojinshu.json', atlas: 'res/animation/hall/yaojinshu/dating_yaojinshu.atlas', png: 'res/animation/hall/yaojinshu/dating_yaojinshu.png' },
         "YaoJinShu": { json: 'res/animation/hall/yaojinshu/yaojinshu.json', atlas: 'res/animation/hall/yaojinshu/yaojinshu.atlas', png: 'res/animation/hall/yaojinshu/yaojinshu.png' },
         "DatingZhuanPan": { json: 'res/animation/hall/zhuanpan/dating_zhuanpan.json', atlas: 'res/animation/hall/zhuanpan/dating_zhuanpan.atlas', png: 'res/animation/hall/zhuanpan/dating_zhuanpan.png' },
+        "DatingFuKaShangCheng": { json: 'res/animation/hall/dating_fukashangcheng/shangcheng.json', atlas: 'res/animation/hall/dating_fukashangcheng/shangcheng.atlas', png: 'res/animation/hall/dating_fukashangcheng/shangcheng.png' },
+        "DatingJinBiShangCheng": { json: 'res/animation/hall/dating_jinbishangcheng/majiangche.json', atlas: 'res/animation/hall/dating_jinbishangcheng/majiangche.atlas', png: 'res/animation/hall/dating_jinbishangcheng/majiangche.png' },
 
     }
 
@@ -85,7 +87,7 @@ load('game/config/ResConfig', function () {
         'RoleLayer': 'game/ui/layer/role/RoleLayer',
         'FukaShopLayer': 'game/ui/layer/fukashop/FukaShopLayer',
         'FeedBackLayer': 'game/ui/layer/feedback/FeedBackLayer',
-
+        'MatchResultLayer' : 'module/mahjong/ui/MatchResultLayer',
     }
 
     /**

@@ -50,7 +50,8 @@ load('game/ui/layer/arena/ArenaLayer', function () {
             this._super()
         },
         initView: function () {
-
+            this.areanListView.setScrollBarEnabled(false)
+            this.rewardsListView.setScrollBarEnabled(false)
             this.pupupPnl.setVisible(false)
             this.areanCell.setVisible(false)
             this.rewardsCell.setVisible(false)
@@ -62,19 +63,16 @@ load('game/ui/layer/arena/ArenaLayer', function () {
             this.initArenaTypeBtn()
 
         },
-        onCloseBtnClick: function (sender) {
-            GameUtil.delayBtn(sender);
+        onCloseBtnClick: function () {
             appInstance.sendNotification(GameEvent.HALL_RED_GET)
             appInstance.uiManager().removeUI(this)
         },
 
-        onHideBtnClick: function (sender) {
-            GameUtil.delayBtn(sender);
+        onHideBtnClick: function () {
             this.pupupPnl.setVisible(false)
         },
 
-        onMatchDetailBtnClick: function (sender) {
-            GameUtil.delayBtn(sender);
+        onMatchDetailBtnClick: function () {
             if(sender == this.rewardsBtn)
                 this._currentPopupBtn = 'rewards'
             else
@@ -336,6 +334,8 @@ load('game/ui/layer/arena/ArenaLayer', function () {
         },
 
         onFormatSaiZhiData: function (startTime,format) {
+            let forMatLength = 17
+            format = GameUtil.onForMatTxt(format,forMatLength)
             this.formatPnl.getChildByName('startTime').setString(startTime)
             this.formatPnl.getChildByName('formatText').setString(format)
         },

@@ -73,54 +73,6 @@
             "ctype": "PanelObjectData"
           },
           {
-            "FileData": {
-              "Type": "Default",
-              "Path": "Default/ImageFile.png",
-              "Plist": ""
-            },
-            "Scale9OriginX": 15,
-            "Scale9OriginY": 15,
-            "Scale9Width": 16,
-            "Scale9Height": 16,
-            "AnchorPoint": {
-              "ScaleX": 0.5,
-              "ScaleY": 0.5
-            },
-            "Position": {
-              "X": 640.0,
-              "Y": 360.0
-            },
-            "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 1.0
-            },
-            "CColor": {},
-            "IconVisible": false,
-            "PositionPercentXEnabled": true,
-            "PositionPercentYEnabled": true,
-            "PrePosition": {
-              "X": 0.5,
-              "Y": 0.5
-            },
-            "PreSize": {
-              "X": 0.0359,
-              "Y": 0.0639
-            },
-            "LeftMargin": 617.0,
-            "RightMargin": 617.0,
-            "TopMargin": 337.0,
-            "BottomMargin": 337.0,
-            "Tag": 54,
-            "ActionTag": 1147213387,
-            "Size": {
-              "X": 46.0,
-              "Y": 46.0
-            },
-            "VisibleForFrame": false,
-            "Name": "dele",
-            "ctype": "ImageViewObjectData"
-          },
-          {
             "ClipAble": false,
             "BackColorAlpha": 102,
             "SingleColor": {
@@ -2955,7 +2907,7 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 615.816,
+                      "X": 698.8799,
                       "Y": 450.0
                     },
                     "Scale": {
@@ -2970,21 +2922,21 @@
                     "IconVisible": false,
                     "PositionPercentXEnabled": true,
                     "PrePosition": {
-                      "X": 0.4811,
+                      "X": 0.546,
                       "Y": 0.625
                     },
                     "PreSize": {
-                      "X": 0.1172,
+                      "X": 0.2715,
                       "Y": 0.0319
                     },
-                    "LeftMargin": 540.816,
-                    "RightMargin": 589.184,
+                    "LeftMargin": 525.14,
+                    "RightMargin": 407.3801,
                     "TopMargin": 258.5,
                     "BottomMargin": 438.5,
                     "Tag": 88,
                     "ActionTag": 302755205,
                     "Size": {
-                      "X": 150.0,
+                      "X": 347.48,
                       "Y": 23.0
                     },
                     "Name": "startTime",
@@ -3011,7 +2963,7 @@
                     },
                     "Position": {
                       "X": 476.0,
-                      "Y": 359.3104
+                      "Y": 392.3901
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -3025,7 +2977,7 @@
                     "IconVisible": false,
                     "PrePosition": {
                       "X": 0.3719,
-                      "Y": 0.499
+                      "Y": 0.545
                     },
                     "PreSize": {
                       "X": 0.0781,
@@ -3033,8 +2985,8 @@
                     },
                     "LeftMargin": 426.0,
                     "RightMargin": 754.0,
-                    "TopMargin": 349.1896,
-                    "BottomMargin": 347.8104,
+                    "TopMargin": 316.1099,
+                    "BottomMargin": 380.8901,
                     "Tag": 89,
                     "ActionTag": 1130723528,
                     "Size": {
@@ -3047,7 +2999,7 @@
                   {
                     "IsCustomSize": true,
                     "FontSize": 20,
-                    "LabelText": "111111111111111111111111111111111111\n111111111111111111111111111111111111\n111111111111111111111111111111111111\n111111111111111111111111111111111111\n111111111111111111111111111111111111\n111111111111111111111111111111111111\n111111111111111111111111111111111111",
+                    "LabelText": "ccccccccccccccccccccccccccccccccccccc\nccccccccccccccccccccccccccccccccccccc\nccccccccccccccccccccccccccccccccccccc\nccccccccccccccccccccccccccccccccccccc\nccccccccccccccccccccccccccccccccccccc\nccccccccccccccccccccccccccccccccccccc\nccccccccccccccccccccccccccccccccccccc\nccccccccccccccccccccccccccccccccccccc\nccccccccccccccccccccccccccccccccccccc",
                     "OutlineColor": {
                       "G": 0,
                       "B": 0
@@ -3064,8 +3016,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 713.048,
-                      "Y": 324.31
+                      "X": 698.8799,
+                      "Y": 324.3096
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -3079,22 +3031,22 @@
                     "IconVisible": false,
                     "PositionPercentXEnabled": true,
                     "PrePosition": {
-                      "X": 0.5571,
+                      "X": 0.546,
                       "Y": 0.4504
                     },
                     "PreSize": {
-                      "X": 0.2859,
-                      "Y": 0.2222
+                      "X": 0.2891,
+                      "Y": 0.25
                     },
-                    "LeftMargin": 530.048,
-                    "RightMargin": 383.952,
-                    "TopMargin": 315.69,
-                    "BottomMargin": 244.31,
+                    "LeftMargin": 513.8799,
+                    "RightMargin": 396.1201,
+                    "TopMargin": 305.6904,
+                    "BottomMargin": 234.3096,
                     "Tag": 90,
                     "ActionTag": 2054399125,
                     "Size": {
-                      "X": 366.0,
-                      "Y": 160.0
+                      "X": 370.0,
+                      "Y": 180.0
                     },
                     "Name": "formatText",
                     "ctype": "TextObjectData"
@@ -3150,8 +3102,7 @@
         "common/rwzx_2.png",
         "common/rwzx_3.png",
         "common/rwzx_4.png",
-        "Default/Button_Disable.png",
-        "Default/ImageFile.png"
+        "Default/Button_Disable.png"
       ],
       "ctype": "GameFileData"
     }

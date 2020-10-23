@@ -18,42 +18,59 @@
 
 @implementation CXBUAdRewardViewController
 
-static id _manager;
+//static id _manager;
+static CXBUAdRewardViewController *instance;
 + (CXBUAdRewardViewController *)manager {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        _manager = [[CXBUAdRewardViewController alloc] init];
-    });
+//    static dispatch_once_t onceToken;
+//    dispatch_once(&onceToken, ^{
+//        _manager = [[CXBUAdRewardViewController alloc] init];
+//    });
+//
+//    return _manager;
     
-    return _manager;
+    return instance;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    instance = self;
+    
+    self.view.backgroundColor = [UIColor blackColor];
+    
+    BURewardedVideoModel *model = [[BURewardedVideoModel alloc] init];
+    model.userId = @"11111";
+    self.rewardedAd = [[BUNativeExpressRewardedVideoAd alloc] initWithSlotID:BUDAd_SlotID rewardedVideoModel:model];
+    self.rewardedAd.delegate = self;
+    [self.rewardedAd loadAdData];
+    
+    self.view.hidden = YES;
 }
 
 //打开激励视频的方法
 - (void)openAdWithUserId:(NSString *)userId; {
-    BURewardedVideoModel *model = [[BURewardedVideoModel alloc] init];
-    model.userId = userId;
-    self.rewardedAd = [[BUNativeExpressRewardedVideoAd alloc] initWithSlotID:BUDAd_SlotID rewardedVideoModel:model];
-    self.rewardedAd.delegate = self;
-    [self.rewardedAd loadAdData];
+//    if(self.rewardedAd.isAdValid){
+        self.view.hidden = NO;
+       [self.rewardedAd showAdFromRootViewController:self];
+//    }
+//    [self.rewardedAd showAdFromRootViewController:self];
 }
 
 #pragma mark - BUNativeExpressRewardedVideoAdDelegate
 
 // 视频下载完成
 - (void)nativeExpressRewardedVideoAdDidDownLoadVideo:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd {
-    [self pbud_logWithSEL:_cmd msg:@""];
-    [self.rewardedAd showAdFromRootViewController:[CXTools currentViewController]];
+//    [self pbud_logWithSEL:_cmd msg:@""];
+//    [self.rewardedAd showAdFromRootViewController:self];
 }
 
 // 视频结束的回调
 - (void)nativeExpressRewardedVideoAdDidClose:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd {
+    self.view.hidden = YES;
     [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].BUAdRewardMethod param:@"0"];
-    [self pbud_logWithSEL:_cmd msg:@""];
+//    [self pbud_logWithSEL:_cmd msg:@""];
+    [self.rewardedAd loadAdData];
 }
 
 //- (void)nativeExpressRewardedVideoAdDidPlayFinish:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd didFailWithError:(NSError *_Nullable)error {
@@ -61,13 +78,16 @@ static id _manager;
 //}
 
 - (void)nativeExpressRewardedVideoAd:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd didFailWithError:(NSError *_Nullable)error; {
+    self.view.hidden = YES;
     [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].BUAdRewardMethod param:@"-1"];
 }
 
 - (void)nativeExpressRewardedVideoAdServerRewardDidFail:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd {
+    self.view.hidden = YES;
     [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].BUAdRewardMethod param:@"-1"];
 }
 - (void)nativeExpressRewardedVideoAdViewRenderFail:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd error:(NSError *_Nullable)error {
+    self.view.hidden = YES;
     [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].BUAdRewardMethod param:@"-1"];
 }
 

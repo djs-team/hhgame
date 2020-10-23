@@ -63,8 +63,7 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
             appInstance.uiManager().removeUI(this)
         },
 
-        onJinBiClicked: function (sender) {
-            GameUtil.delayBtn(sender);
+        onJinBiClicked: function () {
             this.jinBtn.getChildByName('Image_33').setVisible(false)
             this.jinBtn.getChildByName('Image_34').setVisible(true)
             this.zuanBtn.getChildByName('Image_36').setVisible(true)
@@ -72,8 +71,7 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
             this.onInitGoodsView(this._dataJinMsg, 1)
         },
 
-        onZuanShiClicked: function (sender) {
-            GameUtil.delayBtn(sender);
+        onZuanShiClicked: function () {
             this.jinBtn.getChildByName('Image_33').setVisible(true)
             this.jinBtn.getChildByName('Image_34').setVisible(false)
             this.zuanBtn.getChildByName('Image_36').setVisible(false)
@@ -347,7 +345,7 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
                 dialogMsg.RightBtnName = btnNameArray.RightBtnName
                 dialogMsg.RightBtnClick = function () {
 
-                    let _sendMsg = coinSender._sendMsg
+                    let _sendMsg = sender._sendMsg
                     let msg = {}
                     msg.goodsid = _sendMsg.goodsid
                     appInstance.gameAgent().httpGame().COINSSHOPBUYReq(msg)
@@ -437,15 +435,13 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
         /**
          * 关闭地址弹框
          */
-        onCloseUpdateAddressClicked: function (sender) {
-            GameUtil.delayBtn(sender);
+        onCloseUpdateAddressClicked: function () {
             this.addressPnl.setVisible(false)
 
         },
 
 
-        onClosePayTypeClicked: function (sender) {
-            GameUtil.delayBtn(sender);
+        onClosePayTypeClicked: function () {
             this.PayType.setVisible(false)
         }
 

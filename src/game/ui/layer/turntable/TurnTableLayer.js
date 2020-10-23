@@ -66,8 +66,7 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
 
             }
         },
-        onGoShopClick: function (sender) {
-            GameUtil.delayBtn(sender);
+        onGoShopClick: function () {
         },
         onEnter: function () {
             this._super()
@@ -168,8 +167,7 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
         },
 
 
-        onCloseClick: function (sender) {
-            GameUtil.delayBtn(sender);
+        onCloseClick: function () {
             // appInstance.gameAgent().tcpGame().enterTable()
             appInstance.sendNotification(GameEvent.HALL_RED_GET)
             appInstance.uiManager().removeUI(this)
@@ -427,14 +425,12 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
 
         },
 
-        onHideAcceptPnlClick: function (sender) {
-            GameUtil.delayBtn(sender);
+        onHideAcceptPnlClick: function () {
             this.acceptedPnl.setVisible(false)
 
         },
 
-        onHideRulePnlClick: function (sender) {
-            GameUtil.delayBtn(sender);
+        onHideRulePnlClick: function () {
             this.rulePnl.setVisible(false)
         },
 
@@ -445,8 +441,7 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
 
         },
 
-        onHideRecordPnlClick: function (sender) {
-            GameUtil.delayBtn(sender);
+        onHideRecordPnlClick: function () {
             this.recordsPnl.setVisible(false)
         },
 

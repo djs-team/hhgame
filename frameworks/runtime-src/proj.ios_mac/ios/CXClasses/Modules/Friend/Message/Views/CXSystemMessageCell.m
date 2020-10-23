@@ -14,7 +14,8 @@
     [super awakeFromNib];
     // Initialization code
     
-    self.contentBGView.layer.cornerRadius = 6;
+    self.contentBGView.layer.maskedCorners = YES;
+    self.contentBGView.layer.cornerRadius = 5;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

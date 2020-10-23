@@ -210,14 +210,12 @@ load('game/ui/layer/feedback/FeedBackLayer', function () {
 
 
 
-        onFeedBackBtnClick: function (sender) {
-            GameUtil.delayBtn(sender);
+        onFeedBackBtnClick: function () {
             this._leftIndex = 0
             this.updateFeedBack(true)
         },
 
-        onMyMsgBtnClick: function (sender) {
-            GameUtil.delayBtn(sender);
+        onMyMsgBtnClick: function () {
             this._leftIndex = 1
             this.updateMyMsg(true)
         },
@@ -253,8 +251,7 @@ load('game/ui/layer/feedback/FeedBackLayer', function () {
 
         },
 
-        oncloseBtnClick: function (sender) {
-            GameUtil.delayBtn(sender);
+        oncloseBtnClick: function () {
             appInstance.sendNotification(GameEvent.HALL_RED_GET)
             appInstance.uiManager().removeUI(this)
         },

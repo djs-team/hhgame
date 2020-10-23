@@ -1,0 +1,59 @@
+{
+"skeleton": { "hash": "eFq2J+QLxp7gnnt+oJI57CmUqvg", "spine": "3.7.94", "width": 169, "height": 115, "images": "", "audio": "" },
+"bones": [
+	{ "name": "root" },
+	{ "name": "dtjm_11_00000", "parent": "root", "length": 51.22, "rotation": 88.68, "x": 6.85, "y": -27.05 }
+],
+"slots": [
+	{ "name": "dtjm_11_00000", "bone": "dtjm_11_00000", "attachment": "dtjm_11_00021" }
+],
+"skins": {
+	"default": {
+		"dtjm_11_00000": {
+			"dtjm_11_00000": { "x": 27.4, "y": 6.99, "rotation": -88.68, "width": 169, "height": 115 },
+			"dtjm_11_00007": { "x": 27.4, "y": 6.99, "rotation": -88.68, "width": 169, "height": 115 },
+			"dtjm_11_00009": { "x": 27.4, "y": 6.99, "rotation": -88.68, "width": 169, "height": 115 },
+			"dtjm_11_00011": { "x": 27.4, "y": 6.99, "rotation": -88.68, "width": 169, "height": 115 },
+			"dtjm_11_00013": { "x": 27.4, "y": 6.99, "rotation": -88.68, "width": 169, "height": 115 },
+			"dtjm_11_00015": { "x": 27.4, "y": 6.99, "rotation": -88.68, "width": 169, "height": 115 },
+			"dtjm_11_00017": { "x": 27.4, "y": 6.99, "rotation": -88.68, "width": 169, "height": 115 },
+			"dtjm_11_00019": { "x": 27.4, "y": 6.99, "rotation": -88.68, "width": 169, "height": 115 },
+			"dtjm_11_00021": { "x": 27.4, "y": 6.99, "rotation": -88.68, "width": 169, "height": 115 }
+		}
+	}
+},
+"animations": {
+	"animation": {
+		"slots": {
+			"dtjm_11_00000": {
+				"attachment": [
+					{ "time": 0, "name": "dtjm_11_00000" },
+					{ "time": 0.1, "name": "dtjm_11_00007" },
+					{ "time": 0.2, "name": "dtjm_11_00009" },
+					{ "time": 0.3, "name": "dtjm_11_00011" },
+					{ "time": 0.4, "name": "dtjm_11_00013" },
+					{ "time": 0.5, "name": "dtjm_11_00015" },
+					{ "time": 0.6, "name": "dtjm_11_00017" },
+					{ "time": 0.7, "name": "dtjm_11_00019" },
+					{ "time": 0.8, "name": "dtjm_11_00021" },
+					{ "time": 0.9, "name": "dtjm_11_00000" },
+					{ "time": 1.6667, "name": "dtjm_11_00000" }
+				]
+			}
+		},
+		"bones": {
+			"dtjm_11_00000": {
+				"rotate": [
+					{ "time": 0, "angle": 0 }
+				],
+				"translate": [
+					{ "time": 0, "x": 0, "y": 0 }
+				],
+				"scale": [
+					{ "time": 0, "x": 1, "y": 1 }
+				]
+			}
+		}
+	}
+}
+}

@@ -86,8 +86,7 @@ load('game/ui/layer/member/MemberLayer', function () {
             }
         },
 
-        onHidePayTypeClicked: function (sender) {
-            GameUtil.delayBtn(sender);
+        onHidePayTypeClicked: function () {
             this.PayType.setVisible(false)
         },
         
@@ -127,8 +126,7 @@ load('game/ui/layer/member/MemberLayer', function () {
             //  this.onShowRecordPnlClick()
         },
 
-        onCloseClick: function (sender) {
-            GameUtil.delayBtn(sender);
+        onCloseClick: function () {
             appInstance.sendNotification(GameEvent.HALL_RED_GET)
             appInstance.uiManager().removeUI(this)
         },

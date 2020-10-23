@@ -634,29 +634,29 @@
         }];
     } else {
         NSMutableDictionary *param = [NSMutableDictionary dictionary];
-        [param setValue:@"inviterId" forKey:[CXClientModel instance].userId];
-        [param setValue:@"inviteeId" forKey:[_selectedArray componentsJoinedByString:@","]];
-        [param setValue:@"roomId" forKey:[CXClientModel instance].room.RoomData.RoomId];
-        [param setValue:@"free" forKey:isFree == YES ? @"1" : @"2"];
+        [param setValue:[CXClientModel instance].userId forKey:@"inviterId"];
+        [param setValue:[_selectedArray componentsJoinedByString:@","] forKey:@"inviteeId"];
+        [param setValue:[CXClientModel instance].room.RoomData.RoomId forKey:@"roomId"];
+        [param setValue:isFree == YES ? @"1" : @"2" forKey:@"free"];
         if ([CXClientModel instance].room.RoomData.RoomType.integerValue == 5) {
             if (_isMan) {
-                [param setValue:@"micro_level" forKey:@"1"];
+                [param setValue:@"1" forKey:@"micro_level"];
             } else {
-                [param setValue:@"micro_level" forKey:@"2"];
+                [param setValue:@"2" forKey:@"micro_level"];
             }
         } else if ([CXClientModel instance].room.RoomData.RoomType.integerValue == 8) {
             if (_type_level == 4) { // 沙发
-                [param setValue:@"micro_level" forKey:@"4"];;
+                [param setValue:@"4" forKey:@"micro_level"];;
             } else {
-                [param setValue:@"micro_level" forKey:@"3"];
+                [param setValue:@"3" forKey:@"micro_level"];
             }
         } else {
-            [param setValue:@"micro_level" forKey:@"3"];
+            [param setValue:@"3" forKey:@"micro_level"];
         }
         if (isFree == YES) {
-            [param setValue:@"micro_cost" forKey:@"0"];
+            [param setValue:@"0" forKey:@"micro_cost"];
         } else {
-            [param setValue:@"micro_cost" forKey:[CXClientModel instance].room.OnMicroCost.stringValue];
+            [param setValue:[CXClientModel instance].room.OnMicroCost.stringValue forKey:@"micro_cost"];
         }
         kWeakSelf
         [CXHTTPRequest POSTWithURL:@"/index.php/Api/Keng/inviteUp" parameters:param callback:^(id responseObject, BOOL isCache, NSError *error) {

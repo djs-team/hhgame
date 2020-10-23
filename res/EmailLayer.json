@@ -73,94 +73,6 @@
             "ctype": "PanelObjectData"
           },
           {
-            "FileData": {
-              "Type": "Normal",
-              "Path": "aaa/23 (8).png",
-              "Plist": ""
-            },
-            "Scale9OriginX": 422,
-            "Scale9OriginY": 237,
-            "Scale9Width": 436,
-            "Scale9Height": 246,
-            "AnchorPoint": {
-              "ScaleX": 0.5,
-              "ScaleY": 0.5
-            },
-            "Position": {
-              "X": 640.0,
-              "Y": 360.0
-            },
-            "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 1.0
-            },
-            "CColor": {},
-            "IconVisible": false,
-            "PositionPercentXEnabled": true,
-            "PositionPercentYEnabled": true,
-            "PrePosition": {
-              "X": 0.5,
-              "Y": 0.5
-            },
-            "PreSize": {
-              "X": 1.0,
-              "Y": 1.0
-            },
-            "Tag": 75,
-            "ActionTag": -406265071,
-            "Size": {
-              "X": 1280.0,
-              "Y": 720.0
-            },
-            "VisibleForFrame": false,
-            "Name": "dele",
-            "ctype": "ImageViewObjectData"
-          },
-          {
-            "FileData": {
-              "Type": "Normal",
-              "Path": "aaa/23 (4).png",
-              "Plist": ""
-            },
-            "Scale9OriginX": 422,
-            "Scale9OriginY": 237,
-            "Scale9Width": 436,
-            "Scale9Height": 246,
-            "AnchorPoint": {
-              "ScaleX": 0.5,
-              "ScaleY": 0.5
-            },
-            "Position": {
-              "X": 640.0,
-              "Y": 360.0
-            },
-            "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 1.0
-            },
-            "CColor": {},
-            "IconVisible": false,
-            "PositionPercentXEnabled": true,
-            "PositionPercentYEnabled": true,
-            "PrePosition": {
-              "X": 0.5,
-              "Y": 0.5
-            },
-            "PreSize": {
-              "X": 1.0,
-              "Y": 1.0
-            },
-            "Tag": 322,
-            "ActionTag": -1069971512,
-            "Size": {
-              "X": 1280.0,
-              "Y": 720.0
-            },
-            "VisibleForFrame": false,
-            "Name": "dele_0",
-            "ctype": "ImageViewObjectData"
-          },
-          {
             "ClipAble": false,
             "BackColorAlpha": 102,
             "SingleColor": {
@@ -1133,7 +1045,7 @@
                     },
                     "Position": {
                       "X": 302.024,
-                      "Y": 363.6259
+                      "Y": 363.6438
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -1153,8 +1065,8 @@
                     },
                     "LeftMargin": -0.528,
                     "RightMargin": -4.7269,
-                    "TopMargin": 30.3917,
-                    "BottomMargin": 289.2115,
+                    "TopMargin": 30.3738,
+                    "BottomMargin": 289.2294,
                     "Tag": 546,
                     "Children": [
                       {
@@ -1399,7 +1311,7 @@
                     },
                     "Position": {
                       "X": 303.1037,
-                      "Y": 157.4323
+                      "Y": 157.44
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -1421,8 +1333,8 @@
                     },
                     "LeftMargin": -5.3495,
                     "RightMargin": -11.7079,
-                    "TopMargin": 186.5903,
-                    "BottomMargin": 33.0228,
+                    "TopMargin": 186.5765,
+                    "BottomMargin": 33.0245,
                     "Tag": 554,
                     "Children": [
                       {
@@ -1452,15 +1364,15 @@
                         "IconVisible": false,
                         "PrePosition": {
                           "X": 0.5037,
-                          "Y": 0.5216
+                          "Y": 0.5215
                         },
                         "PreSize": {
                           "X": 0.9358,
-                          "Y": 0.9254
+                          "Y": 0.9253
                         },
                         "LeftMargin": 22.095,
                         "RightMargin": 17.4915,
-                        "TopMargin": 3.9203,
+                        "TopMargin": 3.9326,
                         "BottomMargin": 14.6485,
                         "Tag": 555,
                         "ActionTag": 1410561166,
@@ -1506,7 +1418,7 @@
                         },
                         "LeftMargin": 24.6669,
                         "RightMargin": 18.6296,
-                        "TopMargin": 6.2174,
+                        "TopMargin": 6.2296,
                         "BottomMargin": 112.3634,
                         "Tag": 556,
                         "ActionTag": 1774267804,
@@ -1554,11 +1466,11 @@
                         },
                         "PreSize": {
                           "X": 0.9096,
-                          "Y": 0.4571
+                          "Y": 0.457
                         },
                         "LeftMargin": 33.0488,
                         "RightMargin": 22.6906,
-                        "TopMargin": 13.4969,
+                        "TopMargin": 13.5092,
                         "BottomMargin": 121.596,
                         "Tag": 557,
                         "ActionTag": 1950008295,
@@ -1593,7 +1505,7 @@
                         },
                         "Position": {
                           "X": 96.114,
-                          "Y": 180.0066
+                          "Y": 179.9955
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -1613,8 +1525,8 @@
                         },
                         "LeftMargin": 42.6957,
                         "RightMargin": 467.3741,
-                        "TopMargin": 14.1841,
-                        "BottomMargin": 125.3785,
+                        "TopMargin": 14.2074,
+                        "BottomMargin": 125.3674,
                         "Tag": 559,
                         "Children": [
                           {
@@ -1741,7 +1653,7 @@
                             },
                             "LeftMargin": 10.4373,
                             "RightMargin": 12.3993,
-                            "TopMargin": 4.6529,
+                            "TopMargin": 4.653,
                             "BottomMargin": 19.6033,
                             "Tag": 1144,
                             "ActionTag": -1551544636,
@@ -1875,7 +1787,7 @@
                         },
                         "LeftMargin": 238.0217,
                         "RightMargin": 223.8848,
-                        "TopMargin": 155.1559,
+                        "TopMargin": 155.1682,
                         "BottomMargin": 37.6629,
                         "Tag": 562,
                         "Children": [
@@ -1946,7 +1858,7 @@
                     "ActionTag": -1153024067,
                     "Size": {
                       "X": 616.9065,
-                      "Y": 248.8188
+                      "Y": 248.8311
                     },
                     "Name": "bottomPnl",
                     "ctype": "PanelObjectData"
@@ -2101,8 +2013,6 @@
         "ctype": "LayerObjectData"
       },
       "UsedResources": [
-        "aaa/23 (4).png",
-        "aaa/23 (8).png",
         "button/xin_anniu_11.png",
         "button/xin_anniu_12.png",
         "button/xin_anniu_19.png",

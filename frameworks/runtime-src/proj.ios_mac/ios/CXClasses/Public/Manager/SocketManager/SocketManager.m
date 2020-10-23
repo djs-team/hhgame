@@ -264,7 +264,7 @@ typedef enum : NSUInteger {
             [[CXTools currentViewController] toast:@"玫瑰余额不足，你不能进入专属视频房"];
             [wself.socket close];
         } else if([joinRoom.response.Success isEqual:@10]) {
-            [[CXTools currentViewController] toast:@"被超管踢出房间，暂时不能进入"];
+            [[CXTools currentViewController] toast:joinRoom.response.Code];
             [wself.socket close];
         } else if([joinRoom.response.Success isEqual:@11]) {
             // 处于封禁状态，暂时不能开播
@@ -275,14 +275,14 @@ typedef enum : NSUInteger {
                 timeStr = [wself getMMSSFromSS:joinRoom.response.BanTime];
             }
             
-            NSString *banStr = [NSString stringWithFormat:@"您由于%@被禁播，还有%@禁播结束",joinRoom.response.BanDesc, timeStr];
+            NSString *banStr = [NSString stringWithFormat:@"您由于%@被禁播，还有%@禁播结束",joinRoom.response.Code, timeStr];
             [[CXTools currentViewController] toast:banStr];
             [wself.socket close];
         } else if([joinRoom.response.Success isEqual:@20]) {
             [[CXTools currentViewController] toast:@"服务器在维护"];
             [wself.socket close];
         } else {
-            [[CXTools currentViewController] toast:@"加入房间失败，请稍后重试"];
+            [[CXTools currentViewController] toast:joinRoom.response.Code];
             [wself.socket close];
         }
         

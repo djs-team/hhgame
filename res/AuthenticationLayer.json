@@ -73,50 +73,6 @@
             "ctype": "PanelObjectData"
           },
           {
-            "FileData": {
-              "Type": "Normal",
-              "Path": "aaa/16.png",
-              "Plist": ""
-            },
-            "Scale9OriginX": 422,
-            "Scale9OriginY": 237,
-            "Scale9Width": 436,
-            "Scale9Height": 246,
-            "AnchorPoint": {
-              "ScaleX": 0.5,
-              "ScaleY": 0.5
-            },
-            "Position": {
-              "X": 640.0,
-              "Y": 360.0
-            },
-            "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 1.0
-            },
-            "CColor": {},
-            "IconVisible": false,
-            "PositionPercentXEnabled": true,
-            "PositionPercentYEnabled": true,
-            "PrePosition": {
-              "X": 0.5,
-              "Y": 0.5
-            },
-            "PreSize": {
-              "X": 1.0,
-              "Y": 1.0
-            },
-            "Tag": 198,
-            "ActionTag": -858118257,
-            "Size": {
-              "X": 1280.0,
-              "Y": 720.0
-            },
-            "VisibleForFrame": false,
-            "Name": "dele",
-            "ctype": "ImageViewObjectData"
-          },
-          {
             "ClipAble": false,
             "BackColorAlpha": 102,
             "ComboBoxIndex": 1,
@@ -182,6 +138,8 @@
                 "ColorVector": {
                   "ScaleY": 1.0
                 },
+                "Scale9Width": 1,
+                "Scale9Height": 1,
                 "TouchEnable": true,
                 "AnchorPoint": {
                   "ScaleX": 0.5,
@@ -390,7 +348,7 @@
                       "Y": 0.0639
                     },
                     "LeftMargin": 329.0755,
-                    "RightMargin": 902.9244,
+                    "RightMargin": 902.9245,
                     "TopMargin": 495.2765,
                     "BottomMargin": 178.7235,
                     "Tag": 207,
@@ -621,8 +579,8 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 400.0231,
-                          "Y": 460.5764
+                          "X": 400.0,
+                          "Y": 460.584
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -644,10 +602,10 @@
                           "X": 0.0953,
                           "Y": 0.0417
                         },
-                        "LeftMargin": 339.0231,
-                        "RightMargin": 818.9769,
-                        "TopMargin": 244.4236,
-                        "BottomMargin": 445.5764,
+                        "LeftMargin": 339.0,
+                        "RightMargin": 819.0,
+                        "TopMargin": 244.416,
+                        "BottomMargin": 445.584,
                         "Tag": 226,
                         "ActionTag": -1102433395,
                         "Size": {
@@ -828,8 +786,8 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 398.7722,
-                          "Y": 366.7657
+                          "X": 398.72,
+                          "Y": 366.768
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -851,10 +809,10 @@
                           "X": 0.0945,
                           "Y": 0.0417
                         },
-                        "LeftMargin": 338.2722,
-                        "RightMargin": 820.7278,
-                        "TopMargin": 338.2343,
-                        "BottomMargin": 351.7657,
+                        "LeftMargin": 338.22,
+                        "RightMargin": 820.78,
+                        "TopMargin": 338.232,
+                        "BottomMargin": 351.768,
                         "Tag": 233,
                         "ActionTag": 619684009,
                         "Size": {
@@ -1134,7 +1092,6 @@
         "ctype": "LayerObjectData"
       },
       "UsedResources": [
-        "aaa/16.png",
         "common/bt_5.png",
         "common/bz_1.png",
         "common/bz_2.png",

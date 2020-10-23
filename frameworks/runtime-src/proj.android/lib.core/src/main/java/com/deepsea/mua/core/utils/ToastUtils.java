@@ -64,7 +64,8 @@ public class ToastUtils {
         if (mToast != null) {
             mToast.cancel();
         }
-        mToast = Toast.makeText(context, text, duration);
+        String strHtml = "<font color='#ffffff'>" + text + "'</font>'";
+        mToast = Toast.makeText(context, Html.fromHtml(strHtml), duration);
         mToast.getView().setBackgroundColor(Color.parseColor("#00FFFFFF"));
         mToast.setGravity(Gravity.CENTER, 0, 0);
         Spanned sp = Html.fromHtml(text);

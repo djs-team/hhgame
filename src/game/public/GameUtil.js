@@ -309,5 +309,18 @@ load('game/public/GameUtil',function () {
         })))
     }
 
+    GameUtil.onForMatTxt = function (txt,forMatLength) {
+
+        let forMatTxt = ''
+        let cnt = 0
+        for(let i = 0; i < txt.length; i++){
+            if(i !== 0 && i%forMatLength === 0){
+                forMatTxt = forMatTxt + '\n'
+            }
+            forMatTxt = forMatTxt + txt[i]
+        }
+        return forMatTxt
+    }
+
     return GameUtil
 })

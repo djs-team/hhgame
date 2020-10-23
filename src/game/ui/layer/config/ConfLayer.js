@@ -23,8 +23,7 @@ load('game/ui/layer/config/ConfLayer', function () {
         onExit: function () {
             this._super()
         },
-        onClose: function (sender) {
-            GameUtil.delayBtn(sender);
+        onClose: function () {
             appInstance.sendNotification(GameEvent.HALL_RED_GET)
             appInstance.uiManager().removeUI(this)
         }

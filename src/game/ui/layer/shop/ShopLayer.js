@@ -22,8 +22,7 @@ load('game/ui/layer/shop/ShopLayer', function () {
         onExit: function () {
             this._super()
         },
-        onClose: function (sender) {
-            GameUtil.delayBtn(sender);
+        onClose: function () {
             appInstance.uiManager().removeUI(this)
         }
     })

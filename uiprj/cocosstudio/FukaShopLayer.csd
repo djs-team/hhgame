@@ -1636,10 +1636,10 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="giftLogBtnPnl" ActionTag="-1033933732" Tag="256" IconVisible="False" LeftMargin="24.8700" RightMargin="1217.1300" TopMargin="144.2900" BottomMargin="425.7100" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="giftLogBtnPnl" ActionTag="-1033933732" Tag="256" IconVisible="False" LeftMargin="24.8700" RightMargin="1217.1300" TopMargin="158.2900" BottomMargin="411.7100" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="38.0000" Y="150.0000" />
                 <Children>
-                  <AbstractNodeData Name="giftLogPnlNameText" ActionTag="240209627" Tag="257" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" LeftMargin="-48.7662" RightMargin="-45.2338" TopMargin="58.1800" BottomMargin="69.8200" FontSize="22" LabelText="获得礼品记录" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                  <AbstractNodeData Name="giftLogPnlNameText" ActionTag="240209627" Tag="257" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" LeftMargin="-48.7662" RightMargin="-45.2338" TopMargin="58.1800" BottomMargin="69.8200" IsCustomSize="True" FontSize="22" LabelText="获得礼品记录" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="132.0000" Y="22.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="17.2338" Y="80.8200" />
@@ -1650,61 +1650,61 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="giftLogLinePnl" ActionTag="1965540069" Tag="180" IconVisible="False" LeftMargin="29.0000" RightMargin="8.0000" TopMargin="4.0000" BottomMargin="11.0000" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
-                    <Size X="1.0000" Y="135.0000" />
+                  <AbstractNodeData Name="giftLogLinePnl" ActionTag="1965540069" Tag="180" IconVisible="False" LeftMargin="29.0000" RightMargin="7.0000" TopMargin="4.0000" BottomMargin="11.0000" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                    <Size X="2.0000" Y="135.0000" />
                     <AnchorPoint />
                     <Position X="29.0000" Y="11.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.7632" Y="0.0733" />
-                    <PreSize X="0.0263" Y="0.9000" />
-                    <SingleColor A="255" R="217" G="63" B="74" />
+                    <PreSize X="0.0526" Y="0.9000" />
+                    <SingleColor A="255" R="255" G="255" B="255" />
                     <FirstColor A="255" R="150" G="200" B="255" />
                     <EndColor A="255" R="255" G="255" B="255" />
                     <ColorVector ScaleY="1.0000" />
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="43.8700" Y="500.7100" />
+                <Position X="43.8700" Y="486.7100" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.0343" Y="0.6954" />
+                <PrePosition X="0.0343" Y="0.6760" />
                 <PreSize X="0.0297" Y="0.2083" />
                 <SingleColor A="255" R="150" G="200" B="255" />
                 <FirstColor A="255" R="150" G="200" B="255" />
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="robLogBtnPnl" ActionTag="-670047817" Tag="259" IconVisible="False" LeftMargin="25.1316" RightMargin="1216.8684" TopMargin="2.7894" BottomMargin="567.2106" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="robLogBtnPnl" ActionTag="-670047817" Tag="259" IconVisible="False" LeftMargin="25.1300" RightMargin="1216.8700" TopMargin="2.7894" BottomMargin="567.2106" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="38.0000" Y="150.0000" />
                 <Children>
-                  <AbstractNodeData Name="robLogPnlNameText" ActionTag="-2074806696" Tag="260" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" LeftMargin="-32.2700" RightMargin="-28.7300" TopMargin="58.1796" BottomMargin="69.8204" FontSize="22" LabelText="夺宝记录 " HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                  <AbstractNodeData Name="robLogPnlNameText" ActionTag="-2074806696" Tag="260" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" LeftMargin="-32.2700" RightMargin="-28.7300" TopMargin="58.1796" BottomMargin="69.8204" IsCustomSize="True" FontSize="22" LabelText="夺宝记录 " HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="99.0000" Y="22.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="17.2300" Y="80.8204" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="217" G="63" B="74" />
+                    <CColor A="255" R="224" G="82" B="65" />
                     <PrePosition X="0.4534" Y="0.5388" />
                     <PreSize X="2.6053" Y="0.1467" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="robLogLinePnl" ActionTag="-1747430026" Tag="179" IconVisible="False" LeftMargin="29.0000" RightMargin="8.0000" TopMargin="27.0000" BottomMargin="28.0000" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
-                    <Size X="1.0000" Y="95.0000" />
+                  <AbstractNodeData Name="robLogLinePnl" ActionTag="-1747430026" Tag="179" IconVisible="False" LeftMargin="29.0000" RightMargin="6.0000" TopMargin="27.0000" BottomMargin="28.0000" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                    <Size X="3.0000" Y="95.0000" />
                     <AnchorPoint />
                     <Position X="29.0000" Y="28.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.7632" Y="0.1867" />
-                    <PreSize X="0.0263" Y="0.6333" />
-                    <SingleColor A="255" R="217" G="63" B="74" />
+                    <PreSize X="0.0789" Y="0.6333" />
+                    <SingleColor A="255" R="255" G="255" B="255" />
                     <FirstColor A="255" R="150" G="200" B="255" />
                     <EndColor A="255" R="255" G="255" B="255" />
                     <ColorVector ScaleY="1.0000" />
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="44.1316" Y="642.2106" />
+                <Position X="44.1300" Y="642.2106" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.0345" Y="0.8920" />

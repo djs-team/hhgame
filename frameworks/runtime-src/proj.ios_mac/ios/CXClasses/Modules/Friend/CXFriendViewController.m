@@ -131,7 +131,7 @@
 }
 
 - (void)clearAction {
-    [self alertTitle:@"是否要删除所有消息" message:@"删除后不可恢复" confirm:@"确定" cancel:@"取消" confirm:^{
+    [self alertTitle:@"是否要将所有消息设为已读？" message:@"" confirm:@"确定" cancel:@"取消" confirm:^{
         [_conversationVC clearConversationList];
     } cancel:nil];
 }

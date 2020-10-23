@@ -63,12 +63,11 @@
     
     [self.dataArrays enumerateObjectsUsingBlock:^(EMConversationModel *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         EMConversation *conversation = obj.emModel;
-        [[EMClient sharedClient].chatManager deleteConversation:conversation.conversationId
-        isDeleteMessages:YES
-              completion:nil];
+        [conversation markAllMessagesAsRead:nil];
     }];
     
     [self getConversationsData];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNSNotificationCenter_CXBaseTabBarViewController_reloadUnreadCount object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

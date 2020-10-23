@@ -95,8 +95,7 @@ load('game/ui/layer/sign/SignLayer', function () {
             this.rulePnl.setVisible(true)
         },
 
-        onHideRulePnlClick: function (sender) {
-            GameUtil.delayBtn(sender);
+        onHideRulePnlClick: function () {
             this.poupPnl.setVisible(false)
             this.rulePnl.setVisible(false)
         },
@@ -105,8 +104,7 @@ load('game/ui/layer/sign/SignLayer', function () {
 
         },
 
-        onCloseClick: function (sender) {
-            GameUtil.delayBtn(sender);
+        onCloseClick: function () {
             appInstance.sendNotification(GameEvent.HALL_RED_GET)
             appInstance.uiManager().removeUI(this)
         },
@@ -379,8 +377,7 @@ load('game/ui/layer/sign/SignLayer', function () {
             this._flag = flag
         },
 
-        onGoVIPBtnClicked: function (sender) {
-            GameUtil.delayBtn(sender);
+        onGoVIPBtnClicked: function () {
             appInstance.gameAgent().addPopUI(ResConfig.Ui.MemberLayer)
             this.onCloseClick()
 

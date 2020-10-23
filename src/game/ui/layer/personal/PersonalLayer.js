@@ -136,13 +136,11 @@ load('game/ui/layer/personal/PersonalLayer', function () {
 
         },
 
-        onUpdateNameClick: function (sender) {
-            GameUtil.delayBtn(sender);
+        onUpdateNameClick: function () {
             this.updateNamePnl.setVisible(true)
         },
 
-        onCloseUpdateNameClick: function (sender) {
-            GameUtil.delayBtn(sender);
+        onCloseUpdateNameClick: function () {
             this.updateNamePnl.setVisible(false)
 
         },

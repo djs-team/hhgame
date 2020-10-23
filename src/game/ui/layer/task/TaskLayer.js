@@ -270,8 +270,7 @@ load('game/ui/layer/task/TaskLayer', function () {
 
         },
 
-        onCancleBtnClick: function (sender) {
-            GameUtil.delayBtn(sender);
+        onCancleBtnClick: function () {
             appInstance.sendNotification(GameEvent.HALL_RED_GET)
             appInstance.uiManager().removeUI(this)
 
@@ -395,21 +394,18 @@ load('game/ui/layer/task/TaskLayer', function () {
 
             _pnl.setVisible(true)
         },
-        onHideRewardOnePnl: function (sender) {
-            GameUtil.delayBtn(sender);
+        onHideRewardOnePnl: function () {
             this.rewardOnePnl.setVisible(false)
 
         },
 
-        onHideRewardTwoPnl: function (sender) {
-            GameUtil.delayBtn(sender);
+        onHideRewardTwoPnl: function () {
             this.rewardTwoPnl.setVisible(false)
 
         },
 
 
-        onHideRewardThreePnl: function (sender) {
-            GameUtil.delayBtn(sender);
+        onHideRewardThreePnl: function () {
             this.rewardThreePnl.setVisible(false)
 
         },

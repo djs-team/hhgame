@@ -202,12 +202,10 @@ load('game/ui/layer/choosecity/ChooseCityLayer', function () {
             appInstance.gameAgent().Tips('请输入正确的城市名称！')
         },
 
-        onkefuBtnClick: function (sender) {
-            GameUtil.delayBtn(sender);
+        onkefuBtnClick: function () {
         },
 
-        oncopyBtnClick: function (sender) {
-            GameUtil.delayBtn(sender);
+        oncopyBtnClick: function () {
         },
 
         onEnter: function () {
@@ -219,8 +217,7 @@ load('game/ui/layer/choosecity/ChooseCityLayer', function () {
         onCloseClick: function () {
             appInstance.uiManager().removeUI(this)
         },
-        onReturnBtnClick: function (sender) {
-            GameUtil.delayBtn(sender);
+        onReturnBtnClick: function () {
             appInstance.sendNotification(GameEvent.HALL_RED_GET)
             appInstance.uiManager().removeUI(this)
         }

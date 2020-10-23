@@ -164,6 +164,7 @@ static AppDelegate s_sharedApplication;
 //
 //    }
 //}
+
 #pragma mark - ======================== JPush =============================
 - (void)configureJPushOptions:(NSDictionary *)launchOptions {
     JPUSHRegisterEntity * entity = [[JPUSHRegisterEntity alloc] init];
@@ -268,6 +269,8 @@ static AppDelegate s_sharedApplication;
      */
     // We don't need to call this method any more. It will interrupt user defined game pause&resume logic
     /* cocos2d::Director::getInstance()->resume(); */
+    
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {

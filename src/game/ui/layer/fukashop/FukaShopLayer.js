@@ -998,7 +998,7 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
             cell.setPositionY((index % rowLength) * 300)
 
             cell.getChildByName('robGoodsNameText').setString(goodsData.goodsName)
-            cell.getChildByName('goodImg').loadTexture(goodsData.hallPictureUrl)
+            //cell.getChildByName('goodImg').loadTexture(goodsData.hallPictureUrl)
             cell.getChildByName('robLoadingBar').setPercent(goodsData.currentNum / goodsData.allNum * 100)
             cell.getChildByName('robPercent').setString(goodsData.currentNum + '/' + goodsData.allNum)
             cell.getChildByName('numText').setString(goodsData.playerConsumeFuka)
@@ -1012,6 +1012,13 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 roundNum : goodsData.duoBaoNum,
                 duoBaoId : goodsData.duoBaoId,
             }
+
+            let size = {
+                height : 200.00,
+                width : 168.00
+            }
+
+            this.onLoadUrlImg(goodsData.hallPictureUrl,size,cell.getChildByName('goodsImgPnl'))
 
             cell.getChildByName('luckyPnl').addClickEventListener(function (sender,dt) {
                 GameUtil.delayBtn(sender);

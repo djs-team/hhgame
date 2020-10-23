@@ -2628,6 +2628,7 @@
                   {
                     "ClipAble": false,
                     "BackColorAlpha": 102,
+                    "ComboBoxIndex": 1,
                     "SingleColor": {
                       "R": 150,
                       "G": 200
@@ -2644,8 +2645,8 @@
                     "Scale9Height": 1,
                     "AnchorPoint": {},
                     "Position": {
-                      "X": -2.2725,
-                      "Y": 38.0231
+                      "X": 41.4798,
+                      "Y": 173.2569
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -2654,17 +2655,17 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": -0.0086,
-                      "Y": 0.0814
+                      "X": 0.1565,
+                      "Y": 0.371
                     },
                     "PreSize": {
                       "X": 0.634,
                       "Y": 0.4283
                     },
-                    "LeftMargin": -2.2725,
-                    "RightMargin": 99.2725,
-                    "TopMargin": 228.9769,
-                    "BottomMargin": 38.0231,
+                    "LeftMargin": 41.4798,
+                    "RightMargin": 55.5202,
+                    "TopMargin": 93.7431,
+                    "BottomMargin": 173.2569,
                     "Tag": 304,
                     "ActionTag": 195510323,
                     "Size": {
@@ -4855,6 +4856,8 @@
                         "ColorVector": {
                           "ScaleY": 1.0
                         },
+                        "Scale9Width": 1,
+                        "Scale9Height": 1,
                         "AnchorPoint": {
                           "ScaleX": 0.5,
                           "ScaleY": 0.5
@@ -6207,7 +6210,6 @@
               {
                 "ClipAble": false,
                 "BackColorAlpha": 137,
-                "ComboBoxIndex": 1,
                 "SingleColor": {
                   "R": 150,
                   "G": 200
@@ -6681,7 +6683,6 @@
               {
                 "ClipAble": false,
                 "BackColorAlpha": 102,
-                "ComboBoxIndex": 1,
                 "SingleColor": {
                   "R": 0,
                   "G": 0,

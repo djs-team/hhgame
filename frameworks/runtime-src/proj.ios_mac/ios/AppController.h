@@ -82,6 +82,12 @@
 #pragma mark - 获取手机基本信息
 /// 获取Imei
 + (NSString *_Nullable)getImei;
+/// 获取当前连接网络
++ (NSString *_Nullable)getNetWorkStates;
+/// 获取网络信号
++ (NSString *_Nullable)getSignalStrength;
+/// 获取电量
++ (NSString *_Nullable)getBatteryLevel;
 
 /// 获取Device
 + (NSString *_Nullable)getDevice;

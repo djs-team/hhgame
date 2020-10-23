@@ -28,6 +28,7 @@ target 'hhgame-mobile' do
   pod 'JVerification'
   pod 'libOpenInstallSDK'
   pod 'Bytedance-UnionAD'
+  pod 'Bugly'
   
   pod 'YYKit'
   pod 'AFNetworking'

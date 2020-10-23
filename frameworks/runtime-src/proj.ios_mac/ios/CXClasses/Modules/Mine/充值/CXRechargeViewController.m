@@ -249,11 +249,11 @@
     self.wechatPayBtn.layer.masksToBounds = YES;
     self.wechatPayBtn.layer.cornerRadius = 5;
     self.wechatPayBtn.layer.borderColor = UIColorHex(0xBBBBBB).CGColor;
-    self.wechatPayBtn.layer.borderWidth = 0.5;
+    self.wechatPayBtn.layer.borderWidth = 1;
     self.zfbPayBtn.layer.masksToBounds = YES;
     self.zfbPayBtn.layer.cornerRadius = 5;
     self.zfbPayBtn.layer.borderColor = UIColorHex(0xBBBBBB).CGColor;
-    self.zfbPayBtn.layer.borderWidth = 0.5;
+    self.zfbPayBtn.layer.borderWidth = 1;
     
     self.rechargeBtn.layer.masksToBounds = YES;
     self.rechargeBtn.layer.cornerRadius = 19;

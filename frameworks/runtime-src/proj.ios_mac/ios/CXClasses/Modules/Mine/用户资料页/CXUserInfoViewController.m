@@ -346,6 +346,8 @@
     _mainCollectionView.dataSource = self;
     _mainCollectionView.showsVerticalScrollIndicator = NO;
     _mainCollectionView.showsHorizontalScrollIndicator = NO;
+    
+    self.mainCollectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
 }
 
 - (NSMutableArray *)profileArrays {

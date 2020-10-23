@@ -624,8 +624,12 @@
                 SocketMessageDeported * dep = notification;
                 [self.roomUIView.messageListView addModel:dep];
                 if ([dep.UserId isEqualToNumber:[[CXClientModel instance].userId numberValue]]) {
-                    [self toast:dep.Code];
-                    [self leaveRoom];
+                    if (dep.Code.length > 0) {
+                        [self toast:dep.Code];
+                    }
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                        [self leaveRoom];
+                    });
                 }
             }
                 break;

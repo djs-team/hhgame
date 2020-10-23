@@ -122,6 +122,9 @@ static AppDelegate s_sharedApplication;
     }
 
     [window makeKeyAndVisible];
+    
+    // 穿山甲
+    [self setupBUAdSDK];
 
 //    [[UIApplication sharedApplication] setStatusBarHidden:true];
     
@@ -138,8 +141,7 @@ static AppDelegate s_sharedApplication;
     // 微信注册
     [WXApi registerApp:WX_AppKey universalLink:WX_UniversalLinks];
     
-    // 穿山甲
-    [self setupBUAdSDK];
+    
     
     // OpenInstall
     [OpenInstallSDK initWithDelegate:self];
@@ -561,6 +563,11 @@ static AppDelegate s_sharedApplication;
 
     [BUAdSDKManager setIsPaidApp:NO];
     
+    // 初始化激励视屏
+    UIViewController *_csjAdReward = [[CXBUAdRewardViewController alloc] init];
+    [_viewController.view addSubview:_csjAdReward.view];
+
+    
     // splash AD demo
 //    [self addSplashAD];
     
@@ -670,6 +677,12 @@ static AppDelegate s_sharedApplication;
 /// @param method 方法名
 /// @param param 参数
 + (void)dispatchCustomEventWithMethod:(NSString *)method param:(NSString *)param {
+    if (!method || method.length <= 0) {
+        return;
+    }
+    
+    [AppController setOrientation:@""];
+    
     std::string strParam = [param UTF8String];
     std::string strMethod = [method UTF8String];
     std::string jsCallStr = cocos2d::StringUtils::format("cc.eventManager.dispatchCustomEvent(\"%s\",'%s');", strMethod.c_str(),strParam.c_str());

@@ -23,6 +23,7 @@ import com.deepsea.mua.stub.event.EventController;
 import com.deepsea.mua.stub.utils.ArouterUtils;
 import com.deepsea.mua.stub.utils.UncaughtException;
 import com.deepsea.mua.stub.utils.UserUtils;
+import com.tencent.bugly.crashreport.CrashReport;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.commonsdk.UMConfigure;
 import com.umeng.socialize.PlatformConfig;
@@ -93,6 +94,8 @@ public class MuaEngine {
         JPushInterface.init(mContext);
         JVerificationInterface.init(mContext);
         NetworkManager.getDefault().init(app);
+        CrashReport.initCrashReport(mContext, "ba56317fbb", true);
+
 
     }
 

@@ -278,7 +278,6 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 offIndex = 3
                 _functionName = function () {
                     if(!this._canRefreshRobList  ){
-                        appInstance.gameAgent().Tips('---------------到底了----------------', true)
                         return
                     }
                     this.onGetRobListData(this._robListStartIndex)

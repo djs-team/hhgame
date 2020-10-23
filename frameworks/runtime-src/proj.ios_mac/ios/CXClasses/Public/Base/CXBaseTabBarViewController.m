@@ -220,13 +220,11 @@
             @"roomId":model.roomId,
         };
         [CXHTTPRequest POSTWithURL:@"/index.php/Api/Keng/inviteHandle" parameters:param callback:^(id responseObject, BOOL isCache, NSError *error) {
-            if (!error) {
-                [weakSelf.inviteMikeArrays removeObject:model];
-                if (weakSelf.inviteMikeArrays.count > 0) {
-                    weakSelf.mikeView.mikeModel = weakSelf.inviteMikeArrays[0];
-                } else {
-                    [weakSelf.mikeView removeFromSuperview];
-                }
+            [weakSelf.inviteMikeArrays removeObject:model];
+            if (weakSelf.inviteMikeArrays.count > 0) {
+                weakSelf.mikeView.mikeModel = weakSelf.inviteMikeArrays[0];
+            } else {
+                [weakSelf.mikeView removeFromSuperview];
             }
         }];
     };

@@ -16,7 +16,7 @@
     self.layer.masksToBounds = YES;
     self.layer.cornerRadius = 5;
     self.layer.borderColor = UIColorHex(0xBBBBBB).CGColor;
-    self.layer.borderWidth = 0.5;
+    self.layer.borderWidth = 1;
     
     self.awardCountLabel.layer.masksToBounds = YES;
     self.awardCountLabel.layer.cornerRadius = 2;

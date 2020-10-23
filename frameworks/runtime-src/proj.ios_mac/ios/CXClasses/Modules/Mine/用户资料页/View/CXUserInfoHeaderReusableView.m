@@ -27,8 +27,8 @@
     [self addSubview:_avatar];
     
     [_avatar mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.left.right.equalTo(self);
-        make.top.mas_offset(-kStatusHeight);
+        make.top.bottom.left.right.equalTo(self);
+//        make.top.mas_offset(-kStatusHeight);
     }];
 }
 

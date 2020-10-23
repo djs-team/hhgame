@@ -76,6 +76,9 @@
 #import "CXBaseTabBarViewController.h"
 #import "CXUserModel.h"
 
+// Bugly
+#import <Bugly/Bugly.h>
+
 //#import <StoreKit/StoreKit.h>
 
 @interface AppController() <JPUSHRegisterDelegate, WXApiDelegate, BUSplashAdDelegate, OpenInstallDelegate>
@@ -122,6 +125,9 @@ static AppDelegate s_sharedApplication;
     }
 
     [window makeKeyAndVisible];
+    
+    // 穿山甲
+    [self setupBUAdSDK];
 
 //    [[UIApplication sharedApplication] setStatusBarHidden:true];
     
@@ -138,8 +144,8 @@ static AppDelegate s_sharedApplication;
     // 微信注册
     [WXApi registerApp:WX_AppKey universalLink:WX_UniversalLinks];
     
-    // 穿山甲
-    [self setupBUAdSDK];
+    // Bugly
+    [Bugly startWithAppId:@"b59315e4a7"];
     
     // OpenInstall
     [OpenInstallSDK initWithDelegate:self];
@@ -158,6 +164,7 @@ static AppDelegate s_sharedApplication;
 //
 //    }
 //}
+
 #pragma mark - ======================== JPush =============================
 - (void)configureJPushOptions:(NSDictionary *)launchOptions {
     JPUSHRegisterEntity * entity = [[JPUSHRegisterEntity alloc] init];
@@ -168,10 +175,27 @@ static AppDelegate s_sharedApplication;
     }
     [JPUSHService registerForRemoteNotificationConfig:entity delegate:self];
     
+    __block NSString *advertisingId;
+    if (@available(iOS 14, *)) {
+        // iOS14及以上版本需要先请求权限
+        [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status) {
+            // 获取到权限后，依然使用老方法获取idfa
+            if (status == ATTrackingManagerAuthorizationStatusAuthorized) {
+                advertisingId = [[ASIdentifierManager sharedManager].advertisingIdentifier UUIDString];
+            }
+        }];
+    } else {
+        // iOS14以下版本依然使用老方法
+        // 判断在设置-隐私里用户是否打开了广告跟踪
+        if ([[ASIdentifierManager sharedManager] isAdvertisingTrackingEnabled]) {
+            advertisingId = [[ASIdentifierManager sharedManager].advertisingIdentifier UUIDString];
+        }
+    }
+    
     [JPUSHService setupWithOption:launchOptions appKey:jPush_appKey
-                          channel:@"Publish channel"
-                 apsForProduction:FALSE
-            advertisingIdentifier:nil];
+                          channel:@"App Store"
+                 apsForProduction:NO
+            advertisingIdentifier:advertisingId];
     [JPUSHService registrationIDCompletionHandler:^(int resCode, NSString *registrationID) {
         if(resCode == 0){
             NSLog(@"registrationID获取成功：%@",registrationID);
@@ -188,6 +212,11 @@ static AppDelegate s_sharedApplication;
     config.timeout = 5000;
     [JVERIFICATIONService setupWithConfig:config];
     [JVERIFICATIONService setDebug:YES];
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    /// Required - 注册 DeviceToken
+    [JPUSHService registerDeviceToken:deviceToken];
 }
 
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
@@ -240,6 +269,8 @@ static AppDelegate s_sharedApplication;
      */
     // We don't need to call this method any more. It will interrupt user defined game pause&resume logic
     /* cocos2d::Director::getInstance()->resume(); */
+    
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
@@ -561,30 +592,13 @@ static AppDelegate s_sharedApplication;
 
     [BUAdSDKManager setIsPaidApp:NO];
     
+    // 初始化激励视屏
+    UIViewController *_csjAdReward = [[CXBUAdRewardViewController alloc] init];
+    [_viewController.view addSubview:_csjAdReward.view];
+
+    
     // splash AD demo
 //    [self addSplashAD];
-    
-    if (@available(iOS 14, *)) {
-        // iOS14及以上版本需要先请求权限
-        [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status) {
-            // 获取到权限后，依然使用老方法获取idfa
-            if (status == ATTrackingManagerAuthorizationStatusAuthorized) {
-                NSString *idfa = [[ASIdentifierManager sharedManager].advertisingIdentifier UUIDString];
-                NSLog(@"%@",idfa);
-            } else {
-//                [CXTools showAlertWithMessage:@"请在设置-隐私-Tracking 允许App请求跟踪"];
-            }
-        }];
-    } else {
-        // iOS14以下版本依然使用老方法
-        // 判断在设置-隐私里用户是否打开了广告跟踪
-        if ([[ASIdentifierManager sharedManager] isAdvertisingTrackingEnabled]) {
-            NSString *idfa = [[ASIdentifierManager sharedManager].advertisingIdentifier UUIDString];
-            NSLog(@"%@",idfa);
-        } else {
-//            [CXTools showAlertWithMessage:@"请在设置-隐私-广告 打开广告跟踪功能"];
-        }
-    }
 }
 
 - (void)addSplashAD {
@@ -650,6 +664,21 @@ static AppDelegate s_sharedApplication;
     NSString *imei = [NSString stringWithFormat:@"%@%@", [CXPhoneBasicTools getUUID], [CXPhoneBasicTools getIdentifierForAdvertising]];
     return imei;
 }
+/// 获取当前连接网络
++ (NSString *_Nullable)getNetWorkStates {
+    NSString *netWorkStates = [CXPhoneBasicTools getNetWorkStates];
+    return netWorkStates;
+}
+/// 获取网络信号
++ (NSString *_Nullable)getSignalStrength {
+    NSString *signalStrength = [NSString stringWithFormat:@"%ld",[CXPhoneBasicTools getSignalStrength]];
+    return signalStrength;
+}
+/// 获取电量
++ (NSString *_Nullable)getBatteryLevel {
+    NSString *batteryLevel = [NSString stringWithFormat:@"%0.2f",[CXPhoneBasicTools getBatteryLevel]];
+    return batteryLevel;
+}
 
 + (NSString *_Nullable)getDevice {
     return [CXPhoneBasicTools deviceName];
@@ -670,6 +699,12 @@ static AppDelegate s_sharedApplication;
 /// @param method 方法名
 /// @param param 参数
 + (void)dispatchCustomEventWithMethod:(NSString *)method param:(NSString *)param {
+    if (!method || method.length <= 0) {
+        return;
+    }
+    
+    [AppController setOrientation:@""];
+    
     std::string strParam = [param UTF8String];
     std::string strMethod = [method UTF8String];
     std::string jsCallStr = cocos2d::StringUtils::format("cc.eventManager.dispatchCustomEvent(\"%s\",'%s');", strMethod.c_str(),strParam.c_str());
@@ -733,6 +768,8 @@ UIInterfaceOrientationMask oMask = UIInterfaceOrientationMaskLandscape;
             [CXClientModel instance].nickname = user.nickname;
             [CXClientModel instance].avatar = user.avatar;
             [CXClientModel instance].sex = user.sex;
+            [CXClientModel instance].card_num = user.card_num;
+            [CXClientModel instance].is_receive = user.is_receive;
             
             [[EMClient sharedClient] loginWithUsername:user.user_id password:user.user_id completion:^(NSString *aUsername, EMError *aError) {
                 [AppController setOrientation:@"V"];

@@ -39,6 +39,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) CXUserCurrentRoomModel *room_info; // 当前所在房间信息
 
+// 上麦卡
+@property (nonatomic, assign) NSNumber * is_receive; // 是否可获赠上麦卡，1:可以 2:不可以
+@property (nonatomic, assign) NSNumber * card_num; // 可领取上麦卡数量
+
 // 搜索
 @property (nonatomic, strong) NSString *room_id; // 房间id，如果为空就不在房间
 @property (nonatomic, strong) NSString *online_str; // 在线文字描述：在线、离线、刚刚在线

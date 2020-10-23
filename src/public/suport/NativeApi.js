@@ -17,6 +17,42 @@ load('public/suport/NativeApi', function () {
                 console.log('getImei error: ')
             }
         },
+        // 获取当前连接网络
+        getNetWorkStates: function () {
+            try {
+                if (cc.sys.OS_ANDROID === cc.sys.os) {
+                    return 'TODO'
+                } else if (cc.sys.OS_IOS === cc.sys.os) {
+                    return jsb.reflection.callStaticMethod('AppController', 'getNetWorkStates')
+                }
+            } catch (e) {
+                console.log('getNetWorkStates error: ')
+            }
+        },
+        // 获取网络信号
+        getBatteryLevel: function () {
+            try {
+                if (cc.sys.OS_ANDROID === cc.sys.os) {
+                    return 'TODO'
+                } else if (cc.sys.OS_IOS === cc.sys.os) {
+                    return jsb.reflection.callStaticMethod('AppController', 'getSignalStrength')
+                }
+            } catch (e) {
+                console.log('getSignalStrength error: ')
+            }
+        },
+        // 获取电量
+        getBatteryLevel: function () {
+            try {
+                if (cc.sys.OS_ANDROID === cc.sys.os) {
+                    return 'TODO'
+                } else if (cc.sys.OS_IOS === cc.sys.os) {
+                    return jsb.reflection.callStaticMethod('AppController', 'getBatteryLevel')
+                }
+            } catch (e) {
+                console.log('getBatteryLevel error: ')
+            }
+        },
         HelloOC: function (message) {
             try {
                 if (cc.sys.OS_ANDROID === cc.sys.os) {

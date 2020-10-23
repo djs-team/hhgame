@@ -6,9 +6,17 @@ package com.deepsea.mua.stub.entity.socket.receive;
 public class JoinRoomMsg extends BaseReMsg {
     private String HuanxinRoomId;
     private String ShengwangRoomId;
-    private String BanDesc;
     private int BanTime;
     private int RoomId;
+    private String Code;
+
+    public String getCode() {
+        return Code;
+    }
+
+    public void setCode(String code) {
+        Code = code;
+    }
 
     public int getRoomId() {
         return RoomId;
@@ -19,13 +27,7 @@ public class JoinRoomMsg extends BaseReMsg {
     }
 
 
-    public String getBanDesc() {
-        return BanDesc;
-    }
 
-    public void setBanDesc(String banDesc) {
-        BanDesc = banDesc;
-    }
 
     public int getBanTime() {
         return BanTime;

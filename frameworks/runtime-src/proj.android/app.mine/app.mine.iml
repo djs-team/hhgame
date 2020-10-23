@@ -172,6 +172,8 @@
     <orderEntry type="library" name="Gradle: cn.jiguang.sdk:jcore:2.2.6@aar" level="project" />
     <orderEntry type="library" name="Gradle: cn.jiguang.sdk:jverification:2.6.4@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.cxz:networklib:1.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.tencent.bugly:crashreport:3.2.3@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.tencent.bugly:nativecrashreport:3.7.5@aar" level="project" />
     <orderEntry type="library" name="Gradle: android.arch.lifecycle:livedata:1.1.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: android.arch.lifecycle:livedata-core:1.1.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: android.arch.core:runtime:1.1.1@aar" level="project" />

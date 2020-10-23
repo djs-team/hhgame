@@ -932,12 +932,13 @@ public class RoomController implements IRoomController, RoomMsgHandler.OnMsgEven
                         showToast("玫瑰余额不足，你不能进入专属视频房。");
                         break;
                     case 10:
-                        onJoinError("被超管踢出房间，暂时不能进入");
+                        JoinRoomMsg joinBean = JsonConverter.fromJson(message, JoinRoomMsg.class);
+                        onJoinError(joinBean.getCode());
                         break;
                     case 11:
-                        JoinRoomMsg joinBean = JsonConverter.fromJson(message, JoinRoomMsg.class);
+                        joinBean = JsonConverter.fromJson(message, JoinRoomMsg.class);
                         String time = joinBean.getBanTime() != -1 ? TimeUtils.secondToTime(joinBean.getBanTime()) : "永久禁播";
-                        showEnsureAlert("主播处于封禁状态，暂时不能开播\n禁播原因：" + joinBean.getBanDesc() + "\n" + "禁播结束倒计时：" + time);
+                        showEnsureAlert("主播处于封禁状态，暂时不能开播\n禁播原因：" + joinBean.getCode() + "\n" + "禁播结束倒计时：" + time);
                         break;
                     case SocketCons.Error.Maintenance:
                         onJoinError("服务器维护中。。。");

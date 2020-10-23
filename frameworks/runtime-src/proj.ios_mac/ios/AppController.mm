@@ -664,6 +664,21 @@ static AppDelegate s_sharedApplication;
     NSString *imei = [NSString stringWithFormat:@"%@%@", [CXPhoneBasicTools getUUID], [CXPhoneBasicTools getIdentifierForAdvertising]];
     return imei;
 }
+/// 获取当前连接网络
++ (NSString *_Nullable)getNetWorkStates {
+    NSString *netWorkStates = [CXPhoneBasicTools getNetWorkStates];
+    return netWorkStates;
+}
+/// 获取网络信号
++ (NSString *_Nullable)getSignalStrength {
+    NSString *signalStrength = [NSString stringWithFormat:@"%ld",[CXPhoneBasicTools getSignalStrength]];
+    return signalStrength;
+}
+/// 获取电量
++ (NSString *_Nullable)getBatteryLevel {
+    NSString *batteryLevel = [NSString stringWithFormat:@"%0.2f",[CXPhoneBasicTools getBatteryLevel]];
+    return batteryLevel;
+}
 
 + (NSString *_Nullable)getDevice {
     return [CXPhoneBasicTools deviceName];

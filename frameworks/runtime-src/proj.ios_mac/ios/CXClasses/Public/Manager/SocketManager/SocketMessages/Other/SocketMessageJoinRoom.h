@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) NSString * HuanxinRoomId;
 @property (nonatomic, strong) NSString * ShengwangRoomId;
-@property (nonatomic, strong) NSString * BanDesc; // 封禁说明
+@property (nonatomic, strong) NSString * Code; // 说明
 @property NSInteger BanTime; // 封禁时长
 
 

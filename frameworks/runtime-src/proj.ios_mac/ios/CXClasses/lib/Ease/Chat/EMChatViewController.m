@@ -2072,7 +2072,7 @@
     [[EMClient sharedClient].chatManager sendMessage:message progress:nil completion:^(EMMessage *message, EMError *error) {
         NSLog(@"errorCode    %u   errorDesc    %@",error.code,error.errorDescription);
         if (error)
-            [EMAlertController showErrorAlert:error.errorDescription];
+//            [EMAlertController showErrorAlert:error.errorDescription];
         [weakself messageStatusDidChange:message error:error];
     }];
     

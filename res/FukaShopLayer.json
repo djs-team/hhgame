@@ -7335,6 +7335,8 @@
                     "ColorVector": {
                       "ScaleY": 1.0
                     },
+                    "Scale9Width": 1,
+                    "Scale9Height": 1,
                     "AnchorPoint": {},
                     "Position": {
                       "X": 29.0,
@@ -8029,27 +8031,29 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 586.6335,
-                          "Y": 361.0063
+                          "X": 592.6311,
+                          "Y": 322.0042
                         },
                         "Scale": {
                           "ScaleX": 1.0,
                           "ScaleY": 1.0
                         },
+                        "RotationSkewX": -90.0,
+                        "RotationSkewY": -90.0,
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 0.4583,
-                          "Y": 0.5014
+                          "X": 0.463,
+                          "Y": 0.4472
                         },
                         "PreSize": {
                           "X": 0.0359,
                           "Y": 0.0639
                         },
-                        "LeftMargin": 563.6335,
-                        "RightMargin": 670.3665,
-                        "TopMargin": 335.9937,
-                        "BottomMargin": 338.0063,
+                        "LeftMargin": 569.6311,
+                        "RightMargin": 664.3689,
+                        "TopMargin": 374.9958,
+                        "BottomMargin": 299.0042,
                         "Tag": 366,
                         "ActionTag": -83306949,
                         "Size": {

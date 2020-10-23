@@ -920,7 +920,12 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                     this.contextPnl.getChildByName('robPnl').setVisible(false)
                     this.contextPnl.getChildByName('addressPnl').setVisible(false)
                     this.contextPnl.getChildByName('imgPnl').getChildByName('imgNameText').setString(msg.imgNameText)
-                    this.contextPnl.getChildByName('imgPnl').getChildByName('photoImg').loadTexture(msg.photoImg)
+                    let size = {
+                        height : 100.00,
+                        width : 100.00
+                    }
+                    this.onLoadUrlImg(msg.photoImg,size,this.contextPnl.getChildByName('imgPnl').getChildByName('photoImg'))
+                    // this.contextPnl.getChildByName('imgPnl').getChildByName('photoImg').loadTexture(msg.photoImg)
                     break
                 case 3:
                     this.contextPnl.getChildByName('wordsPnl').setVisible(false)

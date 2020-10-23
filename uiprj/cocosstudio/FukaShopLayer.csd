@@ -1689,7 +1689,7 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="robLogLinePnl" ActionTag="-1747430026" Tag="179" IconVisible="False" LeftMargin="29.0000" RightMargin="8.0000" TopMargin="27.0000" BottomMargin="28.0000" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+                  <AbstractNodeData Name="robLogLinePnl" ActionTag="-1747430026" Tag="179" IconVisible="False" LeftMargin="29.0000" RightMargin="8.0000" TopMargin="27.0000" BottomMargin="28.0000" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="1.0000" Y="95.0000" />
                     <AnchorPoint />
                     <Position X="29.0000" Y="28.0000" />
@@ -1754,7 +1754,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="popupPnl" Visible="False" ActionTag="-1453665968" Tag="354" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+          <AbstractNodeData Name="popupPnl" ActionTag="-1453665968" Tag="354" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <Children>
               <AbstractNodeData Name="titlePnl" ActionTag="1415602104" Tag="355" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
@@ -1832,7 +1832,7 @@
                     <EndColor A="255" R="255" G="255" B="255" />
                     <ColorVector ScaleY="1.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="imgPnl" Visible="False" ActionTag="863025009" Tag="362" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                  <AbstractNodeData Name="imgPnl" ActionTag="863025009" Tag="362" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="1280.0000" Y="720.0000" />
                     <Children>
                       <AbstractNodeData Name="imgNameText" ActionTag="1467397361" Tag="363" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" LeftMargin="551.5023" RightMargin="440.4977" TopMargin="352.0862" BottomMargin="334.9138" FontSize="32" LabelText="这是一个厉害的大哥" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -1846,13 +1846,13 @@
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="photoImg" ActionTag="-83306949" Tag="366" IconVisible="False" LeftMargin="563.6335" RightMargin="670.3665" TopMargin="335.9937" BottomMargin="338.0063" Scale9Width="46" Scale9Height="46" ctype="ImageViewObjectData">
+                      <AbstractNodeData Name="photoImg" ActionTag="-83306949" Tag="366" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" LeftMargin="569.6311" RightMargin="664.3689" TopMargin="374.9958" BottomMargin="299.0042" Scale9Width="46" Scale9Height="46" ctype="ImageViewObjectData">
                         <Size X="46.0000" Y="46.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="586.6335" Y="361.0063" />
+                        <Position X="592.6311" Y="322.0042" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.4583" Y="0.5014" />
+                        <PrePosition X="0.4630" Y="0.4472" />
                         <PreSize X="0.0359" Y="0.0639" />
                         <FileData Type="Default" Path="Default/ImageFile.png" Plist="" />
                       </AbstractNodeData>
@@ -1966,7 +1966,7 @@
                     <EndColor A="255" R="255" G="255" B="255" />
                     <ColorVector ScaleY="1.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="addressPnl" ActionTag="2113903237" Tag="2230" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                  <AbstractNodeData Name="addressPnl" Visible="False" ActionTag="2113903237" Tag="2230" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="1280.0000" Y="720.0000" />
                     <Children>
                       <AbstractNodeData Name="Text_42" ActionTag="1057259367" Tag="2319" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" LeftMargin="478.8450" RightMargin="689.1550" TopMargin="476.1389" BottomMargin="212.8611" IsCustomSize="True" FontSize="28" LabelText="手机号：" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">

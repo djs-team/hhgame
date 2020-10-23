@@ -7076,7 +7076,7 @@
                 },
                 "Position": {
                   "X": 43.87,
-                  "Y": 500.71
+                  "Y": 486.71
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -7086,7 +7086,7 @@
                 "IconVisible": false,
                 "PrePosition": {
                   "X": 0.0343,
-                  "Y": 0.6954
+                  "Y": 0.676
                 },
                 "PreSize": {
                   "X": 0.0297,
@@ -7094,11 +7094,12 @@
                 },
                 "LeftMargin": 24.87,
                 "RightMargin": 1217.13,
-                "TopMargin": 144.29,
-                "BottomMargin": 425.71,
+                "TopMargin": 158.29,
+                "BottomMargin": 411.71,
                 "Tag": 256,
                 "Children": [
                   {
+                    "IsCustomSize": true,
                     "FontSize": 22,
                     "LabelText": "获得礼品记录",
                     "HorizontalAlignmentType": "HT_Center",
@@ -7159,11 +7160,7 @@
                     "ClipAble": false,
                     "BackColorAlpha": 102,
                     "ComboBoxIndex": 1,
-                    "SingleColor": {
-                      "R": 217,
-                      "G": 63,
-                      "B": 74
-                    },
+                    "SingleColor": {},
                     "FirstColor": {
                       "R": 150,
                       "G": 200
@@ -7190,17 +7187,17 @@
                       "Y": 0.0733
                     },
                     "PreSize": {
-                      "X": 0.0263,
+                      "X": 0.0526,
                       "Y": 0.9
                     },
                     "LeftMargin": 29.0,
-                    "RightMargin": 8.0,
+                    "RightMargin": 7.0,
                     "TopMargin": 4.0,
                     "BottomMargin": 11.0,
                     "Tag": 180,
                     "ActionTag": 1965540069,
                     "Size": {
-                      "X": 1.0,
+                      "X": 2.0,
                       "Y": 135.0
                     },
                     "Name": "giftLogLinePnl",
@@ -7238,7 +7235,7 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 44.1316,
+                  "X": 44.13,
                   "Y": 642.2106
                 },
                 "Scale": {
@@ -7255,13 +7252,14 @@
                   "X": 0.0297,
                   "Y": 0.2083
                 },
-                "LeftMargin": 25.1316,
-                "RightMargin": 1216.8684,
+                "LeftMargin": 25.13,
+                "RightMargin": 1216.87,
                 "TopMargin": 2.7894,
                 "BottomMargin": 567.2106,
                 "Tag": 259,
                 "Children": [
                   {
+                    "IsCustomSize": true,
                     "FontSize": 22,
                     "LabelText": "夺宝记录 ",
                     "HorizontalAlignmentType": "HT_Center",
@@ -7292,9 +7290,9 @@
                     "RotationSkewX": -90.0,
                     "RotationSkewY": -90.0,
                     "CColor": {
-                      "R": 217,
-                      "G": 63,
-                      "B": 74
+                      "R": 224,
+                      "G": 82,
+                      "B": 65
                     },
                     "IconVisible": false,
                     "PrePosition": {
@@ -7322,11 +7320,7 @@
                     "ClipAble": false,
                     "BackColorAlpha": 102,
                     "ComboBoxIndex": 1,
-                    "SingleColor": {
-                      "R": 217,
-                      "G": 63,
-                      "B": 74
-                    },
+                    "SingleColor": {},
                     "FirstColor": {
                       "R": 150,
                       "G": 200
@@ -7353,17 +7347,17 @@
                       "Y": 0.1867
                     },
                     "PreSize": {
-                      "X": 0.0263,
+                      "X": 0.0789,
                       "Y": 0.6333
                     },
                     "LeftMargin": 29.0,
-                    "RightMargin": 8.0,
+                    "RightMargin": 6.0,
                     "TopMargin": 27.0,
                     "BottomMargin": 28.0,
                     "Tag": 179,
                     "ActionTag": -1747430026,
                     "Size": {
-                      "X": 1.0,
+                      "X": 3.0,
                       "Y": 95.0
                     },
                     "Name": "robLogLinePnl",

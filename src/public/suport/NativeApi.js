@@ -30,7 +30,7 @@ load('public/suport/NativeApi', function () {
             }
         },
         // 获取网络信号
-        getBatteryLevel: function () {
+        getSignalStrength: function () {
             try {
                 if (cc.sys.OS_ANDROID === cc.sys.os) {
                     return 'TODO'

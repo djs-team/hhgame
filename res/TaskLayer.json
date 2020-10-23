@@ -72,98 +72,6 @@
             "ctype": "PanelObjectData"
           },
           {
-            "FileData": {
-              "Type": "Normal",
-              "Path": "aaa/18(7).png",
-              "Plist": ""
-            },
-            "Scale9OriginX": 422,
-            "Scale9OriginY": 237,
-            "Scale9Width": 436,
-            "Scale9Height": 246,
-            "AnchorPoint": {
-              "ScaleX": 0.5,
-              "ScaleY": 0.5
-            },
-            "Position": {
-              "X": 640.0,
-              "Y": 360.0
-            },
-            "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 1.0
-            },
-            "CColor": {},
-            "IconVisible": false,
-            "PositionPercentXEnabled": true,
-            "PositionPercentYEnabled": true,
-            "PrePosition": {
-              "X": 0.5,
-              "Y": 0.5
-            },
-            "PreSize": {
-              "X": 1.0,
-              "Y": 1.0
-            },
-            "Tag": 6,
-            "ActionTag": -2045502862,
-            "Size": {
-              "X": 1280.0,
-              "Y": 720.0
-            },
-            "VisibleForFrame": false,
-            "Name": "dele",
-            "ctype": "ImageViewObjectData"
-          },
-          {
-            "FileData": {
-              "Type": "Normal",
-              "Path": "aaa/12_1 (1).png",
-              "Plist": ""
-            },
-            "Scale9OriginX": 422,
-            "Scale9OriginY": 237,
-            "Scale9Width": 436,
-            "Scale9Height": 246,
-            "AnchorPoint": {
-              "ScaleX": 0.5,
-              "ScaleY": 0.5
-            },
-            "Position": {
-              "X": 649.984,
-              "Y": 349.992
-            },
-            "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 1.0
-            },
-            "CColor": {},
-            "IconVisible": false,
-            "PositionPercentXEnabled": true,
-            "PositionPercentYEnabled": true,
-            "PrePosition": {
-              "X": 0.5078,
-              "Y": 0.4861
-            },
-            "PreSize": {
-              "X": 1.0,
-              "Y": 1.0
-            },
-            "LeftMargin": 9.984,
-            "RightMargin": -9.984,
-            "TopMargin": 10.008,
-            "BottomMargin": -10.008,
-            "Tag": 359,
-            "ActionTag": -688726604,
-            "Size": {
-              "X": 1280.0,
-              "Y": 720.0
-            },
-            "VisibleForFrame": false,
-            "Name": "dele_0",
-            "ctype": "ImageViewObjectData"
-          },
-          {
             "ClipAble": false,
             "BackColorAlpha": 102,
             "SingleColor": {
@@ -1319,6 +1227,7 @@
                                         "ctype": "ImageViewObjectData"
                                       },
                                       {
+                                        "IsCustomSize": true,
                                         "FontSize": 20,
                                         "LabelText": "已领取",
                                         "FontResource": {
@@ -5415,8 +5324,6 @@
         "ctype": "LayerObjectData"
       },
       "UsedResources": [
-        "aaa/12_1 (1).png",
-        "aaa/18(7).png",
         "button/xin_anniu_18.png",
         "button/xin_anniu_19.png",
         "choosecity/xin_anniu_19.png",

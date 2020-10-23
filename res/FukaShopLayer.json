@@ -72,54 +72,6 @@
             "ctype": "PanelObjectData"
           },
           {
-            "FileData": {
-              "Type": "Normal",
-              "Path": "aaa/fuKa (7).png",
-              "Plist": ""
-            },
-            "Scale9OriginX": 15,
-            "Scale9OriginY": 15,
-            "Scale9Width": 690,
-            "Scale9Height": 1250,
-            "AnchorPoint": {
-              "ScaleX": 0.5,
-              "ScaleY": 0.5
-            },
-            "Position": {
-              "X": 640.0,
-              "Y": 360.0
-            },
-            "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 1.0
-            },
-            "CColor": {},
-            "IconVisible": false,
-            "PositionPercentXEnabled": true,
-            "PositionPercentYEnabled": true,
-            "PrePosition": {
-              "X": 0.5,
-              "Y": 0.5
-            },
-            "PreSize": {
-              "X": 0.5625,
-              "Y": 1.7778
-            },
-            "LeftMargin": 280.0,
-            "RightMargin": 280.0,
-            "TopMargin": -280.0,
-            "BottomMargin": -280.0,
-            "Tag": 149,
-            "ActionTag": 528381295,
-            "Size": {
-              "X": 720.0,
-              "Y": 1280.0
-            },
-            "VisibleForFrame": false,
-            "Name": "dele",
-            "ctype": "ImageViewObjectData"
-          },
-          {
             "ClipAble": false,
             "BackColorAlpha": 237,
             "SingleColor": {},
@@ -9534,7 +9486,6 @@
         "ctype": "LayerObjectData"
       },
       "UsedResources": [
-        "aaa/fuKa (7).png",
         "common/hb.png",
         "Default/Button_Disable.png",
         "Default/Button_Press.png",

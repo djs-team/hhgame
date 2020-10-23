@@ -30,8 +30,7 @@ load('game/ui/layer/authentication/AuthenticationLayer', function () {
         },
 
 
-        onCloseClick: function (sender) {
-            GameUtil.delayBtn(sender);
+        onCloseClick: function () {
             appInstance.sendNotification(GameEvent.HALL_RED_GET)
             appInstance.uiManager().removeUI(this)
         },

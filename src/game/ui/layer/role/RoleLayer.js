@@ -66,8 +66,7 @@ load('game/ui/layer/role/RoleLayer', function () {
             this._super()
 
         },
-        onClseClick: function (sender) {
-            GameUtil.delayBtn(sender);
+        onClseClick: function () {
             appInstance.sendNotification(GameEvent.HALL_RED_GET)
             appInstance.uiManager().removeUI(this)
         },
@@ -105,8 +104,7 @@ load('game/ui/layer/role/RoleLayer', function () {
             }
         },
 
-        onCoinShopClick: function (sender) {
-            GameUtil.delayBtn(sender);
+        onCoinShopClick: function () {
             appInstance.gameAgent().addPopUI(ResConfig.Ui.CoinShopLayer)
             this.onClseClick()
         },

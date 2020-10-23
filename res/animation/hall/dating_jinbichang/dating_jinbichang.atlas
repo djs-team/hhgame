@@ -1,187 +1,222 @@
 
 dating_jinbichang.png
-size: 1024,256
+size: 2048,256
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 11/JB1_00006
   rotate: false
-  xy: 561, 71
+  xy: 561, 65
   size: 60, 60
   orig: 60, 60
   offset: 0, 0
   index: -1
 11/JB1_00007
   rotate: false
-  xy: 676, 127
+  xy: 1462, 182
   size: 60, 60
   orig: 60, 60
   offset: 0, 0
   index: -1
 11/JB1_00008
   rotate: false
-  xy: 738, 127
+  xy: 1524, 182
   size: 60, 60
   orig: 60, 60
   offset: 0, 0
   index: -1
 11/JB1_00009
   rotate: false
-  xy: 430, 8
+  xy: 1586, 182
   size: 60, 60
   orig: 60, 60
   offset: 0, 0
   index: -1
 11/JB1_00010
   rotate: false
-  xy: 492, 8
+  xy: 1648, 182
   size: 60, 60
   orig: 60, 60
   offset: 0, 0
   index: -1
 11/JB1_00011
   rotate: false
-  xy: 807, 160
+  xy: 1710, 182
   size: 60, 60
   orig: 60, 60
   offset: 0, 0
   index: -1
 11/JB1_00012
   rotate: false
-  xy: 869, 160
+  xy: 1772, 182
   size: 60, 60
   orig: 60, 60
   offset: 0, 0
   index: -1
 11/JB1_00013
   rotate: false
-  xy: 942, 188
+  xy: 1834, 182
   size: 60, 60
   orig: 60, 60
   offset: 0, 0
   index: -1
 11/JB1_00014
   rotate: false
-  xy: 800, 98
+  xy: 1896, 182
   size: 60, 60
   orig: 60, 60
   offset: 0, 0
   index: -1
 11/JB1_00015
   rotate: false
-  xy: 862, 98
+  xy: 1958, 182
   size: 60, 60
   orig: 60, 60
   offset: 0, 0
   index: -1
 11/JB1_00016
   rotate: false
-  xy: 931, 126
+  xy: 623, 65
   size: 60, 60
   orig: 60, 60
   offset: 0, 0
   index: -1
 11/JB1_00017
   rotate: false
-  xy: 924, 64
+  xy: 430, 2
   size: 60, 60
   orig: 60, 60
   offset: 0, 0
   index: -1
 11/JB1_00018
   rotate: false
-  xy: 554, 8
+  xy: 492, 2
   size: 60, 60
   orig: 60, 60
   offset: 0, 0
   index: -1
 11/JB1_00019
   rotate: false
-  xy: 616, 9
+  xy: 685, 91
   size: 60, 60
   orig: 60, 60
   offset: 0, 0
   index: -1
 11/JB1_00020
   rotate: false
-  xy: 678, 65
+  xy: 747, 91
   size: 60, 60
   orig: 60, 60
   offset: 0, 0
   index: -1
 11/JB1_00021
   rotate: false
-  xy: 678, 3
+  xy: 811, 119
   size: 60, 60
   orig: 60, 60
   offset: 0, 0
   index: -1
 11/JB1_00022
   rotate: false
-  xy: 740, 36
+  xy: 873, 119
   size: 60, 60
   orig: 60, 60
   offset: 0, 0
   index: -1
 11/JB1_00023
   rotate: false
-  xy: 802, 36
+  xy: 935, 119
   size: 60, 60
   orig: 60, 60
   offset: 0, 0
   index: -1
 11/JB1_00024
   rotate: false
-  xy: 864, 2
+  xy: 997, 119
   size: 60, 60
   orig: 60, 60
   offset: 0, 0
   index: -1
 dd3
   rotate: false
-  xy: 262, 28
+  xy: 262, 22
   size: 166, 220
   orig: 166, 220
   offset: 0, 0
   index: -1
 dtjm_f1_1
   rotate: false
-  xy: 2, 8
+  xy: 2, 2
   size: 258, 240
   orig: 258, 240
   offset: 0, 0
   index: -1
 dtjm_f1_2
   rotate: true
-  xy: 676, 189
+  xy: 1331, 183
   size: 59, 129
   orig: 59, 129
   offset: 0, 0
   index: -1
 dtjm_f1_3
   rotate: true
-  xy: 807, 222
+  xy: 676, 153
   size: 26, 133
   orig: 26, 133
   offset: 0, 0
   index: -1
 dtjm_f1_4
   rotate: true
-  xy: 430, 70
+  xy: 430, 64
+  size: 61, 129
+  orig: 61, 129
+  offset: 0, 0
+  index: -1
+dtjm_f1_4_1
+  rotate: true
+  xy: 676, 181
+  size: 61, 129
+  orig: 61, 129
+  offset: 0, 0
+  index: -1
+dtjm_f1_4_2
+  rotate: true
+  xy: 807, 181
+  size: 61, 129
+  orig: 61, 129
+  offset: 0, 0
+  index: -1
+dtjm_f1_4_3
+  rotate: true
+  xy: 938, 181
+  size: 61, 129
+  orig: 61, 129
+  offset: 0, 0
+  index: -1
+dtjm_f1_4_4
+  rotate: true
+  xy: 1069, 181
+  size: 61, 129
+  orig: 61, 129
+  offset: 0, 0
+  index: -1
+dtjm_f1_4_5
+  rotate: true
+  xy: 1200, 181
   size: 61, 129
   orig: 61, 129
   offset: 0, 0
   index: -1
 saishi0001
   rotate: false
-  xy: 430, 133
+  xy: 430, 127
   size: 121, 115
   orig: 121, 115
   offset: 0, 0
   index: -1
 saishi0002
   rotate: false
-  xy: 553, 133
+  xy: 553, 127
   size: 121, 115
   orig: 121, 115
   offset: 0, 0

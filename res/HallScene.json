@@ -241,7 +241,7 @@
                   "Y": 0.0
                 },
                 "LeftMargin": 83.8786,
-                "RightMargin": 1196.1215,
+                "RightMargin": 1196.1213,
                 "TopMargin": 654.9872,
                 "BottomMargin": 65.0128,
                 "Tag": 4313,
@@ -286,7 +286,7 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": -71.5967,
+                    "LeftMargin": -71.5966,
                     "RightMargin": -72.6042,
                     "TopMargin": -58.6784,
                     "BottomMargin": -57.4716,
@@ -1535,17 +1535,17 @@
                     },
                     "PreSize": {
                       "X": 0.9882,
-                      "Y": 0.2353
+                      "Y": 0.2706
                     },
                     "LeftMargin": 0.75,
                     "RightMargin": 0.25,
-                    "TopMargin": 59.43,
-                    "BottomMargin": 5.57,
+                    "TopMargin": 57.93,
+                    "BottomMargin": 4.07,
                     "Tag": 141,
                     "ActionTag": -1089159191,
                     "Size": {
                       "X": 84.0,
-                      "Y": 20.0
+                      "Y": 23.0
                     },
                     "Name": "invitationText",
                     "ctype": "TextObjectData"
@@ -2863,7 +2863,7 @@
                   "Y": 0.9457
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.0625
                 },
                 "LeftMargin": 323.296,
@@ -3131,7 +3131,7 @@
                   "Y": 0.9458
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.0625
                 },
                 "LeftMargin": 558.08,
@@ -3399,7 +3399,7 @@
                   "Y": 0.9444
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.0625
                 },
                 "LeftMargin": 780.08,

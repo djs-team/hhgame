@@ -112,14 +112,14 @@
                         <PreSize X="0.5870" Y="0.2629" />
                         <FileData Type="Normal" Path="result/ssc_24.png" Plist="" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="name" ActionTag="-101393906" Tag="402" IconVisible="False" LeftMargin="108.9214" RightMargin="21.0786" TopMargin="34.3351" BottomMargin="275.6649" IsCustomSize="True" FontSize="20" LabelText="玩家叫什么&#xA;名字呢" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                        <Size X="100.0000" Y="40.0000" />
+                      <AbstractNodeData Name="name" ActionTag="-101393906" Tag="402" IconVisible="False" LeftMargin="108.9214" RightMargin="21.0786" TopMargin="31.3351" BottomMargin="272.6649" IsCustomSize="True" FontSize="20" LabelText="玩家叫什么&#xA;名字呢" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="100.0000" Y="46.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="158.9214" Y="295.6649" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="165" B="0" />
                         <PrePosition X="0.6910" Y="0.8448" />
-                        <PreSize X="0.4348" Y="0.1143" />
+                        <PreSize X="0.4348" Y="0.1314" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>

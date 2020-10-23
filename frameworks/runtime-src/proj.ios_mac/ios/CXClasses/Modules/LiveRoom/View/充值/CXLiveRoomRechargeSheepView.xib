@@ -24,7 +24,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ygz-el-3jG">
-                    <rect key="frame" x="137.5" y="81" width="139.5" height="32"/>
+                    <rect key="frame" x="137.5" y="91" width="139.5" height="32"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="32" id="Uso-Bx-AVN"/>
                         <constraint firstAttribute="width" constant="139.5" id="sF0-C1-rtc"/>
@@ -52,7 +52,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pfa-cW-Prf">
-                    <rect key="frame" x="380" y="71" width="22" height="22"/>
+                    <rect key="frame" x="380" y="81" width="22" height="22"/>
                     <state key="normal" image="close.png"/>
                     <connections>
                         <action selector="closeAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="SQY-AI-IbG"/>
@@ -83,7 +83,7 @@
                     </state>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="首充福利" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YTe-YB-mNt">
-                    <rect key="frame" x="124.5" y="72.5" width="165" height="49"/>
+                    <rect key="frame" x="124.5" y="82.5" width="165" height="49"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="41"/>
                     <color key="textColor" red="0.93695515389999995" green="0.94526118039999996" blue="0.94099456069999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
@@ -166,7 +166,7 @@
                 <constraint firstItem="nxi-my-JKy" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-20" id="AZf-RS-5D1"/>
                 <constraint firstItem="paf-9W-xL9" firstAttribute="centerY" secondItem="nxi-my-JKy" secondAttribute="centerY" id="Di3-W5-Kmw"/>
                 <constraint firstItem="tOM-Ge-VJL" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="FC9-yW-Mub"/>
-                <constraint firstItem="nxi-my-JKy" firstAttribute="top" secondItem="ygz-el-3jG" secondAttribute="bottom" constant="50" id="G12-cg-6CC"/>
+                <constraint firstItem="nxi-my-JKy" firstAttribute="top" secondItem="ygz-el-3jG" secondAttribute="bottom" constant="40" id="G12-cg-6CC"/>
                 <constraint firstItem="dpp-1Q-h94" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Idf-kP-bzo"/>
                 <constraint firstItem="Zo5-SP-ETJ" firstAttribute="top" secondItem="tOM-Ge-VJL" secondAttribute="bottom" constant="4" id="Scv-QI-YE3"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Zo5-SP-ETJ" secondAttribute="bottom" constant="80" id="Wnx-rd-EcE"/>

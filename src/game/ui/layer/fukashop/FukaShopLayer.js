@@ -250,7 +250,7 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 offIndex = 3
                 _functionName = function () {
                     if(!this._canRefreshMenuList){
-                        appInstance.gameAgent().Tips('---------------到底了----------------')
+                        appInstance.gameAgent().Tips('---------------到底了----------------', true)
                         return
                     }
                     this.onGetGoodsList(this._currentMenuItemCode,1)
@@ -260,7 +260,7 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 if(this._currentLayer == 'cardExchange'){
                     _functionName = function () {
                         if(!this._canRefreshCardExchangeList ){
-                            appInstance.gameAgent().Tips('---------------到底了----------------')
+                            appInstance.gameAgent().Tips('---------------到底了----------------', true)
                             return
                         }
                         this.onGetCardListData(this._cardListStartIndex)
@@ -268,7 +268,7 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 }else{
                     _functionName = function () {
                         if(!this._canRefreshObjectExchangeList ){
-                            appInstance.gameAgent().Tips('---------------到底了----------------')
+                            appInstance.gameAgent().Tips('---------------到底了----------------', true)
                             return
                         }
                         this.onGetMateriaListData(this._materiaListStartIndex)
@@ -278,7 +278,7 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 offIndex = 3
                 _functionName = function () {
                     if(!this._canRefreshRobList  ){
-                        appInstance.gameAgent().Tips('---------------到底了----------------')
+                        appInstance.gameAgent().Tips('---------------到底了----------------', true)
                         return
                     }
                     this.onGetRobListData(this._robListStartIndex)

@@ -30,8 +30,10 @@ load('game/ui/scene/HallScene', function () {
                 'topPnl/morePnl/authenticationBtn': {onClicked: this.onAuthenticationClick},
 
 
-                'bmPnl/fuKaShopBtn': {onClicked: this.onFukaShopClick},
-                'bmPnl/coinShopBtn': {onClicked: this.onCoinShopClick},
+                'bmPnl/fuKaShopNd': {},
+                'bmPnl/fuKaShopNd/fuKaShopBtn': {onClicked: this.onFukaShopClick},
+                'bmPnl/coinShopNd': {},
+                'bmPnl/coinShopNd/coinShopBtn': {onClicked: this.onCoinShopClick},
                 'bmPnl/bmListPnl/signPnl': {onClicked: this.onSignBtnClick},
                 'bmPnl/bmListPnl/taskPnl': {onClicked: this.onTaskClick},
                 'bmPnl/bmListPnl/rolesPnl': {onClicked: this.onRoleClick},
@@ -299,6 +301,14 @@ load('game/ui/scene/HallScene', function () {
             let zhuanpanAni = appInstance.gameAgent().gameUtil().getAni(ResConfig.AniHall.DatingZhuanPan)
             zhuanpanAni.setAnimation(0, 'animation', true)
             this.turnTableNd.addChild(zhuanpanAni)
+
+            let fukashangcheng = appInstance.gameAgent().gameUtil().getAni(ResConfig.AniHall.DatingFuKaShangCheng)
+            fukashangcheng.setAnimation(0, 'animation', true)
+            this.fuKaShopNd.addChild(fukashangcheng)
+
+            let jinbishangcheng = appInstance.gameAgent().gameUtil().getAni(ResConfig.AniHall.DatingJinBiShangCheng)
+            jinbishangcheng.setAnimation(0, 'animation', true)
+            this.coinShopNd.addChild(jinbishangcheng)
 
             this.updatePlayerAni()
             this.morePnl.setVisible(false)

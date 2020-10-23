@@ -47,33 +47,53 @@
           <AbstractNodeData Name="bmPnl" ActionTag="857310553" UserData="{&quot;layoutType&quot;:&quot;showAll&quot;,&quot;screenAlign&quot;:&quot;bottom&quot;}" Tag="26" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <Children>
-              <AbstractNodeData Name="fuKaShopBtn" ActionTag="-1255417810" Tag="47" IconVisible="False" LeftMargin="21.2800" RightMargin="1088.7200" TopMargin="591.6650" BottomMargin="12.1850" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="139" Scale9Height="93" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                <Size X="170.0000" Y="116.1500" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="106.2800" Y="70.2600" />
+              <AbstractNodeData Name="fuKaShopNd" ActionTag="-2147132463" Tag="4313" IconVisible="True" LeftMargin="83.8786" RightMargin="1196.1215" TopMargin="654.9872" BottomMargin="65.0128" ctype="SingleNodeObjectData">
+                <Size X="0.0000" Y="0.0000" />
+                <Children>
+                  <AbstractNodeData Name="fuKaShopBtn" ActionTag="1937928329" Tag="4314" IconVisible="False" LeftMargin="-71.5967" RightMargin="-72.6042" TopMargin="-58.6784" BottomMargin="-57.4716" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                    <Size X="144.2009" Y="116.1500" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="0.5038" Y="0.6034" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <SingleColor A="255" R="150" G="200" B="255" />
+                    <FirstColor A="255" R="150" G="200" B="255" />
+                    <EndColor A="255" R="255" G="255" B="255" />
+                    <ColorVector ScaleY="1.0000" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint />
+                <Position X="83.8786" Y="65.0128" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.0830" Y="0.0976" />
-                <PreSize X="0.1328" Y="0.1613" />
-                <TextColor A="255" R="65" G="65" B="70" />
-                <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                <NormalFileData Type="Normal" Path="hall/dtjm_11.png" Plist="" />
-                <OutlineColor A="255" R="255" G="0" B="0" />
-                <ShadowColor A="255" R="110" G="110" B="110" />
+                <PrePosition X="0.0655" Y="0.0903" />
+                <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="coinShopBtn" ActionTag="-1851542946" Tag="46" IconVisible="False" LeftMargin="206.4502" RightMargin="900.5498" TopMargin="591.2400" BottomMargin="13.7600" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="143" Scale9Height="93" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                <Size X="173.0000" Y="115.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="292.9502" Y="71.2600" />
+              <AbstractNodeData Name="coinShopNd" ActionTag="1875822411" Tag="4315" IconVisible="True" LeftMargin="259.8540" RightMargin="1020.1460" TopMargin="691.8300" BottomMargin="28.1700" ctype="SingleNodeObjectData">
+                <Size X="0.0000" Y="0.0000" />
+                <Children>
+                  <AbstractNodeData Name="coinShopBtn" ActionTag="1160015444" Tag="4317" IconVisible="False" LeftMargin="-71.8800" RightMargin="-72.3200" TopMargin="-86.8020" BottomMargin="-29.3480" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                    <Size X="144.2000" Y="116.1500" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="0.2200" Y="28.7270" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <SingleColor A="255" R="150" G="200" B="255" />
+                    <FirstColor A="255" R="150" G="200" B="255" />
+                    <EndColor A="255" R="255" G="255" B="255" />
+                    <ColorVector ScaleY="1.0000" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint />
+                <Position X="259.8540" Y="28.1700" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.2289" Y="0.0990" />
-                <PreSize X="0.1352" Y="0.1597" />
-                <TextColor A="255" R="65" G="65" B="70" />
-                <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                <NormalFileData Type="Normal" Path="hall/dtjm_11_1.png" Plist="" />
-                <OutlineColor A="255" R="255" G="0" B="0" />
-                <ShadowColor A="255" R="110" G="110" B="110" />
+                <PrePosition X="0.2030" Y="0.0391" />
+                <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
               <AbstractNodeData Name="bmListPnl" ActionTag="1206933663" Tag="148" IconVisible="False" LeftMargin="377.9806" RightMargin="402.0194" TopMargin="634.5968" BottomMargin="25.4032" ClipAble="False" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="500.0000" Y="60.0000" />

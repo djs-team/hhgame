@@ -336,6 +336,8 @@ load('game/ui/layer/arena/ArenaLayer', function () {
         },
 
         onFormatSaiZhiData: function (startTime,format) {
+            let forMatLength = 17
+            format = GameUtil.onForMatTxt(format,forMatLength)
             this.formatPnl.getChildByName('startTime').setString(startTime)
             this.formatPnl.getChildByName('formatText').setString(format)
         },

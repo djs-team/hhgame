@@ -179,10 +179,12 @@
 
             <com.deepsea.mua.stub.view.WithBackgroundTextView
                 android:id="@+id/tv_overdue"
-                android:layout_width="108dp"
+                android:layout_width="wrap_content"
                 android:layout_height="22dp"
                 android:gravity="center"
-                android:text="已过期"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="对方已经拒绝|礼物已退回"
                 android:textColor="#ff282828"
                 android:textSize="12sp"
                 android:visibility="gone"

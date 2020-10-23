@@ -174,10 +174,27 @@ static AppDelegate s_sharedApplication;
     }
     [JPUSHService registerForRemoteNotificationConfig:entity delegate:self];
     
+    __block NSString *advertisingId;
+    if (@available(iOS 14, *)) {
+        // iOS14及以上版本需要先请求权限
+        [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status) {
+            // 获取到权限后，依然使用老方法获取idfa
+            if (status == ATTrackingManagerAuthorizationStatusAuthorized) {
+                advertisingId = [[ASIdentifierManager sharedManager].advertisingIdentifier UUIDString];
+            }
+        }];
+    } else {
+        // iOS14以下版本依然使用老方法
+        // 判断在设置-隐私里用户是否打开了广告跟踪
+        if ([[ASIdentifierManager sharedManager] isAdvertisingTrackingEnabled]) {
+            advertisingId = [[ASIdentifierManager sharedManager].advertisingIdentifier UUIDString];
+        }
+    }
+    
     [JPUSHService setupWithOption:launchOptions appKey:jPush_appKey
-                          channel:@"Publish channel"
-                 apsForProduction:FALSE
-            advertisingIdentifier:nil];
+                          channel:@"App Store"
+                 apsForProduction:NO
+            advertisingIdentifier:advertisingId];
     [JPUSHService registrationIDCompletionHandler:^(int resCode, NSString *registrationID) {
         if(resCode == 0){
             NSLog(@"registrationID获取成功：%@",registrationID);
@@ -194,6 +211,11 @@ static AppDelegate s_sharedApplication;
     config.timeout = 5000;
     [JVERIFICATIONService setupWithConfig:config];
     [JVERIFICATIONService setDebug:YES];
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    /// Required - 注册 DeviceToken
+    [JPUSHService registerDeviceToken:deviceToken];
 }
 
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
@@ -574,28 +596,6 @@ static AppDelegate s_sharedApplication;
     
     // splash AD demo
 //    [self addSplashAD];
-    
-    if (@available(iOS 14, *)) {
-        // iOS14及以上版本需要先请求权限
-        [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status) {
-            // 获取到权限后，依然使用老方法获取idfa
-            if (status == ATTrackingManagerAuthorizationStatusAuthorized) {
-                NSString *idfa = [[ASIdentifierManager sharedManager].advertisingIdentifier UUIDString];
-                NSLog(@"%@",idfa);
-            } else {
-//                [CXTools showAlertWithMessage:@"请在设置-隐私-Tracking 允许App请求跟踪"];
-            }
-        }];
-    } else {
-        // iOS14以下版本依然使用老方法
-        // 判断在设置-隐私里用户是否打开了广告跟踪
-        if ([[ASIdentifierManager sharedManager] isAdvertisingTrackingEnabled]) {
-            NSString *idfa = [[ASIdentifierManager sharedManager].advertisingIdentifier UUIDString];
-            NSLog(@"%@",idfa);
-        } else {
-//            [CXTools showAlertWithMessage:@"请在设置-隐私-广告 打开广告跟踪功能"];
-        }
-    }
 }
 
 - (void)addSplashAD {

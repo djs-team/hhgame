@@ -221,144 +221,178 @@
             "Tag": 26,
             "Children": [
               {
-                "FontSize": 14,
-                "ButtonText": "",
-                "TextColor": {
-                  "R": 65,
-                  "G": 65,
-                  "B": 70
-                },
-                "DisabledFileData": {
-                  "Type": "Default",
-                  "Path": "Default/Button_Disable.png",
-                  "Plist": ""
-                },
-                "NormalFileData": {
-                  "Type": "Normal",
-                  "Path": "hall/dtjm_11.png",
-                  "Plist": ""
-                },
-                "Scale9Enable": true,
-                "Scale9OriginX": 15,
-                "Scale9OriginY": 11,
-                "Scale9Width": 139,
-                "Scale9Height": 93,
-                "OutlineColor": {
-                  "G": 0,
-                  "B": 0
-                },
-                "ShadowColor": {
-                  "R": 110,
-                  "G": 110,
-                  "B": 110
-                },
-                "ShadowOffsetX": 2.0,
-                "ShadowOffsetY": -2.0,
-                "TouchEnable": true,
-                "AnchorPoint": {
-                  "ScaleX": 0.5,
-                  "ScaleY": 0.5
-                },
+                "AnchorPoint": {},
                 "Position": {
-                  "X": 106.28,
-                  "Y": 70.26
+                  "X": 83.8786,
+                  "Y": 65.0128
                 },
                 "Scale": {
                   "ScaleX": 1.0,
                   "ScaleY": 1.0
                 },
                 "CColor": {},
-                "IconVisible": false,
+                "IconVisible": true,
                 "PrePosition": {
-                  "X": 0.083,
-                  "Y": 0.0976
+                  "X": 0.0655,
+                  "Y": 0.0903
                 },
                 "PreSize": {
-                  "X": 0.1328,
-                  "Y": 0.1613
+                  "X": 0.0,
+                  "Y": 0.0
                 },
-                "LeftMargin": 21.28,
-                "RightMargin": 1088.72,
-                "TopMargin": 591.665,
-                "BottomMargin": 12.185,
-                "Tag": 47,
-                "ActionTag": -1255417810,
+                "LeftMargin": 83.8786,
+                "RightMargin": 1196.1215,
+                "TopMargin": 654.9872,
+                "BottomMargin": 65.0128,
+                "Tag": 4313,
+                "Children": [
+                  {
+                    "ClipAble": false,
+                    "BackColorAlpha": 102,
+                    "SingleColor": {
+                      "R": 150,
+                      "G": 200
+                    },
+                    "FirstColor": {
+                      "R": 150,
+                      "G": 200
+                    },
+                    "EndColor": {},
+                    "ColorVector": {
+                      "ScaleY": 1.0
+                    },
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 0.5038,
+                      "Y": 0.6034
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -71.5967,
+                    "RightMargin": -72.6042,
+                    "TopMargin": -58.6784,
+                    "BottomMargin": -57.4716,
+                    "Tag": 4314,
+                    "ActionTag": 1937928329,
+                    "Size": {
+                      "X": 144.2009,
+                      "Y": 116.15
+                    },
+                    "Name": "fuKaShopBtn",
+                    "ctype": "PanelObjectData"
+                  }
+                ],
+                "ActionTag": -2147132463,
                 "Size": {
-                  "X": 170.0,
-                  "Y": 116.15
+                  "X": 0.0,
+                  "Y": 0.0
                 },
-                "Name": "fuKaShopBtn",
-                "ctype": "ButtonObjectData"
+                "Name": "fuKaShopNd",
+                "ctype": "SingleNodeObjectData"
               },
               {
-                "FontSize": 14,
-                "ButtonText": "",
-                "TextColor": {
-                  "R": 65,
-                  "G": 65,
-                  "B": 70
-                },
-                "DisabledFileData": {
-                  "Type": "Default",
-                  "Path": "Default/Button_Disable.png",
-                  "Plist": ""
-                },
-                "NormalFileData": {
-                  "Type": "Normal",
-                  "Path": "hall/dtjm_11_1.png",
-                  "Plist": ""
-                },
-                "Scale9Enable": true,
-                "Scale9OriginX": 15,
-                "Scale9OriginY": 11,
-                "Scale9Width": 143,
-                "Scale9Height": 93,
-                "OutlineColor": {
-                  "G": 0,
-                  "B": 0
-                },
-                "ShadowColor": {
-                  "R": 110,
-                  "G": 110,
-                  "B": 110
-                },
-                "ShadowOffsetX": 2.0,
-                "ShadowOffsetY": -2.0,
-                "TouchEnable": true,
-                "AnchorPoint": {
-                  "ScaleX": 0.5,
-                  "ScaleY": 0.5
-                },
+                "AnchorPoint": {},
                 "Position": {
-                  "X": 292.9502,
-                  "Y": 71.26
+                  "X": 259.854,
+                  "Y": 60.1695
                 },
                 "Scale": {
                   "ScaleX": 1.0,
                   "ScaleY": 1.0
                 },
                 "CColor": {},
-                "IconVisible": false,
+                "IconVisible": true,
                 "PrePosition": {
-                  "X": 0.2289,
-                  "Y": 0.099
+                  "X": 0.203,
+                  "Y": 0.0836
                 },
                 "PreSize": {
-                  "X": 0.1352,
-                  "Y": 0.1597
+                  "X": 0.0,
+                  "Y": 0.0
                 },
-                "LeftMargin": 206.4502,
-                "RightMargin": 900.5498,
-                "TopMargin": 591.24,
-                "BottomMargin": 13.76,
-                "Tag": 46,
-                "ActionTag": -1851542946,
+                "LeftMargin": 259.854,
+                "RightMargin": 1020.146,
+                "TopMargin": 659.8305,
+                "BottomMargin": 60.1695,
+                "Tag": 4315,
+                "Children": [
+                  {
+                    "ClipAble": false,
+                    "BackColorAlpha": 102,
+                    "SingleColor": {
+                      "R": 150,
+                      "G": 200
+                    },
+                    "FirstColor": {
+                      "R": 150,
+                      "G": 200
+                    },
+                    "EndColor": {},
+                    "ColorVector": {
+                      "ScaleY": 1.0
+                    },
+                    "Scale9Width": 1,
+                    "Scale9Height": 1,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 0.22,
+                      "Y": 0.94
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -71.88,
+                    "RightMargin": -72.32,
+                    "TopMargin": -59.015,
+                    "BottomMargin": -57.135,
+                    "Tag": 4317,
+                    "ActionTag": 1160015444,
+                    "Size": {
+                      "X": 144.2,
+                      "Y": 116.15
+                    },
+                    "Name": "coinShopBtn",
+                    "ctype": "PanelObjectData"
+                  }
+                ],
+                "ActionTag": 1875822411,
                 "Size": {
-                  "X": 173.0,
-                  "Y": 115.0
+                  "X": 0.0,
+                  "Y": 0.0
                 },
-                "Name": "coinShopBtn",
-                "ctype": "ButtonObjectData"
+                "Name": "coinShopNd",
+                "ctype": "SingleNodeObjectData"
               },
               {
                 "ClipAble": false,
@@ -3608,6 +3642,8 @@
                 "ColorVector": {
                   "ScaleY": 1.0
                 },
+                "Scale9Width": 1,
+                "Scale9Height": 1,
                 "TouchEnable": true,
                 "AnchorPoint": {
                   "ScaleX": 0.5,
@@ -3676,8 +3712,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 44.6141,
-                      "Y": 33.4908
+                      "X": 44.61,
+                      "Y": 33.4932
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -3695,10 +3731,10 @@
                       "X": 0.46,
                       "Y": 0.5
                     },
-                    "LeftMargin": 21.6141,
-                    "RightMargin": 32.3859,
-                    "TopMargin": 23.5092,
-                    "BottomMargin": 14.4908,
+                    "LeftMargin": 21.61,
+                    "RightMargin": 32.39,
+                    "TopMargin": 23.5068,
+                    "BottomMargin": 14.4932,
                     "Tag": 255,
                     "Children": [
                       {
@@ -3831,6 +3867,8 @@
                 "ColorVector": {
                   "ScaleY": 1.0
                 },
+                "Scale9Width": 1,
+                "Scale9Height": 1,
                 "TouchEnable": true,
                 "AnchorPoint": {
                   "ScaleX": 0.5,
@@ -3893,8 +3931,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 50.5054,
-                      "Y": 36.2705
+                      "X": 50.51,
+                      "Y": 36.2672
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -3912,10 +3950,10 @@
                       "X": 0.46,
                       "Y": 0.6053
                     },
-                    "LeftMargin": 27.5054,
-                    "RightMargin": 26.4946,
-                    "TopMargin": 16.7295,
-                    "BottomMargin": 13.2705,
+                    "LeftMargin": 27.51,
+                    "RightMargin": 26.49,
+                    "TopMargin": 16.7328,
+                    "BottomMargin": 13.2672,
                     "Tag": 252,
                     "Children": [
                       {
@@ -7721,8 +7759,6 @@
         "Default/Button_Disable.png",
         "Default/Button_Press.png",
         "hall/dtjm_1_1.png",
-        "hall/dtjm_11.png",
-        "hall/dtjm_11_1.png",
         "hall/dtjm_12.png",
         "hall/dtjm_13.png",
         "hall/dtjm_14.png",

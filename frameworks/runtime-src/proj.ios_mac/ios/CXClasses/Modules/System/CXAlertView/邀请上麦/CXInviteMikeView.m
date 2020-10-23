@@ -86,7 +86,7 @@
 }
 
 - (IBAction)closeAction:(id)sender {
-    [self removeFromSuperview];
+//    [self removeFromSuperview];
 }
 
 - (IBAction)cancelAction:(id)sender {

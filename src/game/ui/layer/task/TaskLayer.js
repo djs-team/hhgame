@@ -502,7 +502,6 @@ load('game/ui/layer/task/TaskLayer', function () {
 
             appInstance.gameAgent().addPopUI(ResConfig.Ui[GameConfig.jumping[taskType]])
             this.onCancleBtnClick()
-
         },
 
         onReceiveChallengTaskRewards: function (code,stage) {

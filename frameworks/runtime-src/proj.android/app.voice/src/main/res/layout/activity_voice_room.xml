@@ -269,7 +269,7 @@
                         android:layout_height="343dp"
                         android:overScrollMode="never"
                         app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toTopOf="parent">>
+                        app:layout_constraintTop_toTopOf="parent">
 
                         <android.support.v7.widget.RecyclerView
                             android:id="@+id/rv_second_view"
@@ -279,6 +279,7 @@
                             android:clipToPadding="false" />
 
                     </RelativeLayout>
+
                     <LinearLayout
                         android:id="@+id/ll_recommend"
                         android:layout_width="wrap_content"
@@ -363,7 +364,7 @@
                         <com.deepsea.mua.voice.view.MicroFaceView
                             android:id="@+id/main_second_two_music_view"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
+                            android:layout_height="match_parent" />D
                     </RelativeLayout>
 
                     <com.deepsea.mua.voice.view.MicroAnimView

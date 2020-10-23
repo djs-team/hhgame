@@ -13,6 +13,7 @@ import android.view.View;
 import com.deepsea.mua.app.im.Constant;
 import com.deepsea.mua.app.im.HxHelper;
 import com.deepsea.mua.app.im.R;
+import com.deepsea.mua.app.im.adapter.FriendListAdapter;
 import com.deepsea.mua.app.im.adapter.FriendMsgAdapter;
 import com.deepsea.mua.app.im.databinding.FragmentFriendMessageBinding;
 import com.deepsea.mua.app.im.ui.ChatActivity;
@@ -58,7 +59,7 @@ public class FriendMineFragment extends BaseFragment<FragmentFriendMessageBindin
     @Inject
     ViewModelFactory mModelFactory;
     private FriendListViewModel mViewModel;
-    private FriendMsgAdapter mAdapter;
+    private FriendListAdapter mAdapter;
     protected boolean isConflict;
 
     @Override
@@ -210,7 +211,7 @@ public class FriendMineFragment extends BaseFragment<FragmentFriendMessageBindin
     }
 
     private void initRecyclerView() {
-        mAdapter = new FriendMsgAdapter(mContext);
+        mAdapter = new FriendListAdapter(mContext);
 
         mAdapter.setOnItemClickListener((view, position) -> {
             FriendInfoBean bean = mAdapter.getItem(position);

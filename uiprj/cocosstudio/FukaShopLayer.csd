@@ -19,16 +19,6 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="dele" ActionTag="528381295" VisibleForFrame="False" Tag="149" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="280.0000" RightMargin="280.0000" TopMargin="-280.0000" BottomMargin="-280.0000" LeftEage="15" RightEage="15" TopEage="15" BottomEage="15" Scale9OriginX="15" Scale9OriginY="15" Scale9Width="690" Scale9Height="1250" ctype="ImageViewObjectData">
-            <Size X="720.0000" Y="1280.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="640.0000" Y="360.0000" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5000" Y="0.5000" />
-            <PreSize X="0.5625" Y="1.7778" />
-            <FileData Type="Normal" Path="aaa/fuKa (7).png" Plist="" />
-          </AbstractNodeData>
           <AbstractNodeData Name="goodsListPnl" Visible="False" ActionTag="1396762689" UserData="{&quot;layoutType&quot;:&quot;showAll&quot;,&quot;screenAlign&quot;:&quot;left&quot;}" Tag="419" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="237" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <Children>

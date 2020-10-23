@@ -71,50 +71,6 @@
             "ctype": "PanelObjectData"
           },
           {
-            "FileData": {
-              "Type": "Normal",
-              "Path": "aaa/20 (16).png",
-              "Plist": ""
-            },
-            "Scale9OriginX": 422,
-            "Scale9OriginY": 237,
-            "Scale9Width": 436,
-            "Scale9Height": 246,
-            "AnchorPoint": {
-              "ScaleX": 0.5,
-              "ScaleY": 0.5
-            },
-            "Position": {
-              "X": 640.0,
-              "Y": 360.0
-            },
-            "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 1.0
-            },
-            "CColor": {},
-            "IconVisible": false,
-            "PositionPercentXEnabled": true,
-            "PositionPercentYEnabled": true,
-            "PrePosition": {
-              "X": 0.5,
-              "Y": 0.5
-            },
-            "PreSize": {
-              "X": 1.0,
-              "Y": 1.0
-            },
-            "Tag": 2,
-            "ActionTag": 1103080138,
-            "Size": {
-              "X": 1280.0,
-              "Y": 720.0
-            },
-            "VisibleForFrame": false,
-            "Name": "dele",
-            "ctype": "ImageViewObjectData"
-          },
-          {
             "ClipAble": false,
             "BackColorAlpha": 102,
             "SingleColor": {
@@ -1159,7 +1115,7 @@
                           "Y": 0.3159
                         },
                         "PreSize": {
-                          "X": 0.1563,
+                          "X": 0.1562,
                           "Y": 0.0583
                         },
                         "LeftMargin": 616.1543,
@@ -4300,7 +4256,7 @@
                       "Y": 0.124
                     },
                     "PreSize": {
-                      "X": 0.1563,
+                      "X": 0.1562,
                       "Y": 0.3958
                     },
                     "LeftMargin": 436.6302,
@@ -5503,7 +5459,6 @@
         "ctype": "LayerObjectData"
       },
       "UsedResources": [
-        "aaa/20 (16).png",
         "common/bt_3.png",
         "common/bt_5.png",
         "common/bt_5_1.png",

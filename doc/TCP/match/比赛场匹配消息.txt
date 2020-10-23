@@ -19,6 +19,8 @@ int	MJ_ROOM_MATCHMATCHING = MJ_ROOM_MATCHGAME_ID + 24;
 		
 		private String extend;//冗余字段  consolebut是否显示取消按钮 0显示 1不显示  CountDown还差多少时间可以显示取消按钮
 		private List<PlayerInfo> playerInfo;//人员信息
+		private int round;//当前轮数
+
 		PlayerInfo的消息体
 		private String userName;//当前玩家姓名
 			private int sex;//0 男 1女

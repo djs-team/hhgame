@@ -58,6 +58,11 @@ typedef void(^CXClientModelLeaveRoomCallBack)(NSString *roomId, BOOL success);
 @property (nonatomic, strong) NSString *nickname;
 @property (strong, nonatomic) NSNumber *balance;
 
+// 是否可获赠上麦卡，1:可以 2:不可以
+@property (nullable, assign) NSNumber * is_receive;
+// 可领取上麦卡数量
+@property (nullable, assign) NSNumber * card_num;
+
 @property (nonatomic, strong) NSString *unreadCountStr;// 当前用户未读消息数
 
 // 所有好友的userid数组

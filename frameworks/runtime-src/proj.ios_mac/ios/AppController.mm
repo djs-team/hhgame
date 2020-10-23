@@ -746,6 +746,8 @@ UIInterfaceOrientationMask oMask = UIInterfaceOrientationMaskLandscape;
             [CXClientModel instance].nickname = user.nickname;
             [CXClientModel instance].avatar = user.avatar;
             [CXClientModel instance].sex = user.sex;
+            [CXClientModel instance].card_num = user.card_num;
+            [CXClientModel instance].is_receive = user.is_receive;
             
             [[EMClient sharedClient] loginWithUsername:user.user_id password:user.user_id completion:^(NSString *aUsername, EMError *aError) {
                 [AppController setOrientation:@"V"];

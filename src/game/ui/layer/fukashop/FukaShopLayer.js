@@ -177,8 +177,14 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
 
             this.fuKaPnl.getChildByName('fuKaCnt').setString(appInstance.dataManager().getUserData().fuKa)
             this.fuKaPnl.getChildByName('fuKaCnt').setTextColor(cc.color(255,255,255))
+
+            cc.log('-----------------------已设置')
             this.giftLogBtnPnl.getChildByName('giftLogPnlNameText').setTextColor(cc.color(255,255,255))
+            this.giftLogBtnPnl.getChildByName('giftLogLinePnl').setColor(cc.color(255,255,255))
             this.robLogBtnPnl.getChildByName('robLogPnlNameText').setTextColor(cc.color(255,255,255))
+            this.robLogBtnPnl.getChildByName('robLogLinePnl').setColor(cc.color(255,255,255))
+            cc.log('-----------------------已设置完毕')
+
         },
 
         initView: function () {
@@ -867,11 +873,15 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
             if(this._currentLayer == 'goodsListPnl'){
                 this.fuKaPnl.getChildByName('fuKaCnt').setTextColor(cc.color(255,255,255))
                 this.giftLogBtnPnl.getChildByName('giftLogPnlNameText').setTextColor(cc.color(255,255,255))
+                this.giftLogBtnPnl.getChildByName('giftLogLinePnl').setColor(cc.color(255,255,255))
                 this.robLogBtnPnl.getChildByName('robLogPnlNameText').setTextColor(cc.color(255,255,255))
+                this.robLogBtnPnl.getChildByName('robLogLinePnl').setColor(cc.color(255,255,255))
             }else{
                 this.fuKaPnl.getChildByName('fuKaCnt').setTextColor(cc.color(197,195,194))
                 this.giftLogBtnPnl.getChildByName('giftLogPnlNameText').setTextColor(cc.color(224,82,65))
                 this.robLogBtnPnl.getChildByName('robLogPnlNameText').setTextColor(cc.color(224,82,65))
+                this.giftLogBtnPnl.getChildByName('giftLogLinePnl').setColor(cc.color(224,82,65))
+                this.robLogBtnPnl.getChildByName('robLogLinePnl').setColor(cc.color(224,82,65))
             }
 
             for(let i = 0; i < this._allElementArray.length; i++){

@@ -1796,6 +1796,8 @@
                     "ColorVector": {
                       "ScaleY": 1.0
                     },
+                    "Scale9Width": 1,
+                    "Scale9Height": 1,
                     "AnchorPoint": {},
                     "Position": {
                       "X": 982.6,
@@ -1838,6 +1840,8 @@
                         "ColorVector": {
                           "ScaleY": 1.0
                         },
+                        "Scale9Width": 1,
+                        "Scale9Height": 1,
                         "AnchorPoint": {
                           "ScaleX": 0.5,
                           "ScaleY": 0.5
@@ -7164,7 +7168,7 @@
                     },
                     "Position": {
                       "X": 17.2338,
-                      "Y": 76.1111
+                      "Y": 80.82
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -7180,7 +7184,7 @@
                     "IconVisible": false,
                     "PrePosition": {
                       "X": 0.4535,
-                      "Y": 0.5074
+                      "Y": 0.5388
                     },
                     "PreSize": {
                       "X": 3.4737,
@@ -7188,8 +7192,8 @@
                     },
                     "LeftMargin": -48.7662,
                     "RightMargin": -45.2338,
-                    "TopMargin": 62.8889,
-                    "BottomMargin": 65.1111,
+                    "TopMargin": 58.18,
+                    "BottomMargin": 69.82,
                     "Tag": 257,
                     "ActionTag": 240209627,
                     "Size": {
@@ -7198,6 +7202,57 @@
                     },
                     "Name": "giftLogPnlNameText",
                     "ctype": "TextObjectData"
+                  },
+                  {
+                    "ClipAble": false,
+                    "BackColorAlpha": 102,
+                    "ComboBoxIndex": 1,
+                    "SingleColor": {
+                      "R": 217,
+                      "G": 63,
+                      "B": 74
+                    },
+                    "FirstColor": {
+                      "R": 150,
+                      "G": 200
+                    },
+                    "EndColor": {},
+                    "ColorVector": {
+                      "ScaleY": 1.0
+                    },
+                    "Scale9Width": 1,
+                    "Scale9Height": 1,
+                    "AnchorPoint": {},
+                    "Position": {
+                      "X": 29.0,
+                      "Y": 11.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.7632,
+                      "Y": 0.0733
+                    },
+                    "PreSize": {
+                      "X": 0.0263,
+                      "Y": 0.9
+                    },
+                    "LeftMargin": 29.0,
+                    "RightMargin": 8.0,
+                    "TopMargin": 4.0,
+                    "BottomMargin": 11.0,
+                    "Tag": 180,
+                    "ActionTag": 1965540069,
+                    "Size": {
+                      "X": 1.0,
+                      "Y": 135.0
+                    },
+                    "Name": "giftLogLinePnl",
+                    "ctype": "PanelObjectData"
                   }
                 ],
                 "ActionTag": -1033933732,
@@ -7275,7 +7330,7 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 15.664,
+                      "X": 17.23,
                       "Y": 80.8204
                     },
                     "Scale": {
@@ -7291,15 +7346,15 @@
                     },
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.4122,
+                      "X": 0.4534,
                       "Y": 0.5388
                     },
                     "PreSize": {
                       "X": 2.6053,
                       "Y": 0.1467
                     },
-                    "LeftMargin": -33.836,
-                    "RightMargin": -27.164,
+                    "LeftMargin": -32.27,
+                    "RightMargin": -28.73,
                     "TopMargin": 58.1796,
                     "BottomMargin": 69.8204,
                     "Tag": 260,
@@ -7310,6 +7365,55 @@
                     },
                     "Name": "robLogPnlNameText",
                     "ctype": "TextObjectData"
+                  },
+                  {
+                    "ClipAble": false,
+                    "BackColorAlpha": 102,
+                    "ComboBoxIndex": 1,
+                    "SingleColor": {
+                      "R": 217,
+                      "G": 63,
+                      "B": 74
+                    },
+                    "FirstColor": {
+                      "R": 150,
+                      "G": 200
+                    },
+                    "EndColor": {},
+                    "ColorVector": {
+                      "ScaleY": 1.0
+                    },
+                    "AnchorPoint": {},
+                    "Position": {
+                      "X": 29.0,
+                      "Y": 28.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.7632,
+                      "Y": 0.1867
+                    },
+                    "PreSize": {
+                      "X": 0.0263,
+                      "Y": 0.6333
+                    },
+                    "LeftMargin": 29.0,
+                    "RightMargin": 8.0,
+                    "TopMargin": 27.0,
+                    "BottomMargin": 28.0,
+                    "Tag": 179,
+                    "ActionTag": -1747430026,
+                    "Size": {
+                      "X": 1.0,
+                      "Y": 95.0
+                    },
+                    "Name": "robLogLinePnl",
+                    "ctype": "PanelObjectData"
                   }
                 ],
                 "ActionTag": -670047817,

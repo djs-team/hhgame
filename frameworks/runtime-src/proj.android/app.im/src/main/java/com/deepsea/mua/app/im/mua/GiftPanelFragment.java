@@ -8,6 +8,7 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -74,7 +75,7 @@ public class GiftPanelFragment extends BaseFragment<FragmentGiftPanelBinding> {
         touid = mBundle.getString("touid");
         toUserName = mBundle.getString("toUserName");
         is_room = mBundle.getString("is_room");
-        if (!is_room.equals("1")) {
+        if (TextUtils.isEmpty(is_room) || !is_room.equals("1")) {
             is_room = "2";
         }
 

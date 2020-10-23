@@ -28,14 +28,14 @@ load('module/mahjong/ui/MatchResultLayer', function () {
         },
 
         onShareWxBtnClick: function () {
-            
+
             let size = cc.director.getWinSize();
             let fileName = "result_share.jpg";
             let fullPath = jsb.fileUtils.getWritablePath() + fileName; //拿到可写路径，将图片保存在本地，可以在ios端或者java端读取该文件
             if (jsb.fileUtils.isFileExist(fullPath)) {
                 jsb.fileUtils.removeFile(fullPath);
             }
-            
+
             let texture = new cc.RenderTexture(size.width, size.height);
 //            var origin = cc.p(0, 0);
 //            var fullRect = cc.rect(0, 0, size.width, size.height);
@@ -48,7 +48,7 @@ load('module/mahjong/ui/MatchResultLayer', function () {
 //            this.richText.node._sgNode.visit();
             texture.end();
             texture.saveToFile(fileName, cc.IMAGE_FORMAT_JPG);
-            
+
 //            appInstance.gameAgent().saveCanvas()
 //            this.schedule(() => {
 //                let fileName = "result_share.jpg";

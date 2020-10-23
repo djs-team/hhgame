@@ -57,7 +57,9 @@ load('public/http/HttpFactory', function () {
                             data = this._xhr.response
                             break
                         default: // to be parse TextFormat.
-                            data = JSON.parse(this._xhr.responseText)
+                            if (this._xhr.responseText) {
+                                data = JSON.parse(this._xhr.responseText)
+                            }
                             break
                     }
                     this.execute({ code: HttpType.ResultCode.OK, data: data })

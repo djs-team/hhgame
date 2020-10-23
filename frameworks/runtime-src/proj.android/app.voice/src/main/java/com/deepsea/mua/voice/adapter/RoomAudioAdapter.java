@@ -136,9 +136,9 @@ public class RoomAudioAdapter extends RoomMpAdapter implements IMicroEvent {
     }
 
     @Override
-    public void upDateMpMicro(int level,int num, boolean isOpenMp) {
+    public void upDateMpMicro(int level, int num, boolean isOpenMp) {
         int pos = getItemPos(level, num);
-
+        getItem(pos).setOpenMp(isOpenMp);
         notifyItemChanged(pos, UpMpMicro);
 
     }

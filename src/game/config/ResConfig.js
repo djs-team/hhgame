@@ -87,7 +87,7 @@ load('game/config/ResConfig', function () {
         'RoleLayer': 'game/ui/layer/role/RoleLayer',
         'FukaShopLayer': 'game/ui/layer/fukashop/FukaShopLayer',
         'FeedBackLayer': 'game/ui/layer/feedback/FeedBackLayer',
-
+        'MatchResultLayer' : 'module/mahjong/ui/MatchResultLayer',
     }
 
     /**

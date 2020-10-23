@@ -250,7 +250,7 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 offIndex = 3
                 _functionName = function () {
                     if(!this._canRefreshMenuList){
-                        appInstance.gameAgent().Tips('---------------到底了----------------')
+                        appInstance.gameAgent().Tips('---------------到底了----------------', true)
                         return
                     }
                     this.onGetGoodsList(this._currentMenuItemCode,1)
@@ -260,7 +260,7 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 if(this._currentLayer == 'cardExchange'){
                     _functionName = function () {
                         if(!this._canRefreshCardExchangeList ){
-                            appInstance.gameAgent().Tips('---------------到底了----------------')
+                            appInstance.gameAgent().Tips('---------------到底了----------------', true)
                             return
                         }
                         this.onGetCardListData(this._cardListStartIndex)
@@ -268,7 +268,7 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 }else{
                     _functionName = function () {
                         if(!this._canRefreshObjectExchangeList ){
-                            appInstance.gameAgent().Tips('---------------到底了----------------')
+                            appInstance.gameAgent().Tips('---------------到底了----------------', true)
                             return
                         }
                         this.onGetMateriaListData(this._materiaListStartIndex)
@@ -278,7 +278,6 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 offIndex = 3
                 _functionName = function () {
                     if(!this._canRefreshRobList  ){
-                        appInstance.gameAgent().Tips('---------------到底了----------------')
                         return
                     }
                     this.onGetRobListData(this._robListStartIndex)
@@ -998,7 +997,7 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
             cell.setPositionY((index % rowLength) * 300)
 
             cell.getChildByName('robGoodsNameText').setString(goodsData.goodsName)
-            cell.getChildByName('goodImg').loadTexture(goodsData.hallPictureUrl)
+            //cell.getChildByName('goodImg').loadTexture(goodsData.hallPictureUrl)
             cell.getChildByName('robLoadingBar').setPercent(goodsData.currentNum / goodsData.allNum * 100)
             cell.getChildByName('robPercent').setString(goodsData.currentNum + '/' + goodsData.allNum)
             cell.getChildByName('numText').setString(goodsData.playerConsumeFuka)
@@ -1012,6 +1011,13 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 roundNum : goodsData.duoBaoNum,
                 duoBaoId : goodsData.duoBaoId,
             }
+
+            let size = {
+                height : 200.00,
+                width : 168.00
+            }
+
+            this.onLoadUrlImg(goodsData.hallPictureUrl,size,cell.getChildByName('goodsImgPnl'))
 
             cell.getChildByName('luckyPnl').addClickEventListener(function (sender,dt) {
                 GameUtil.delayBtn(sender);

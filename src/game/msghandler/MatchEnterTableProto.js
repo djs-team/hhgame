@@ -91,6 +91,7 @@ load('game/msghandler/MatchEnterTableProto', function () {
                 { key: 'mcRoomMode', type: this._byteType.Int},
                 { key: 'mcExtend', type: this._byteType.UTF8},//冗余字段  consolebut是否显示取消按钮 0显示 1不显示  CountDown还差多少时间可以显示取消按钮
                 { key: 'mcPlayers', type: this._byteType.Barray, proto: playerProto},//人员信息
+                { key: 'mcCurRound', type: this._byteType.Int}, //当前轮数
             ]
         }
     })

@@ -50,7 +50,7 @@
               <AbstractNodeData Name="fuKaShopNd" ActionTag="-2147132463" Tag="4313" IconVisible="True" LeftMargin="83.8786" RightMargin="1196.1215" TopMargin="654.9872" BottomMargin="65.0128" ctype="SingleNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <Children>
-                  <AbstractNodeData Name="fuKaShopBtn" ActionTag="1937928329" Tag="4314" IconVisible="False" LeftMargin="-71.5967" RightMargin="-72.6042" TopMargin="-58.6784" BottomMargin="-57.4716" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+                  <AbstractNodeData Name="fuKaShopBtn" ActionTag="1937928329" Tag="4314" IconVisible="False" LeftMargin="-71.5967" RightMargin="-72.6042" TopMargin="-58.6784" BottomMargin="-57.4716" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="144.2009" Y="116.1500" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="0.5038" Y="0.6034" />
@@ -71,13 +71,13 @@
                 <PrePosition X="0.0655" Y="0.0903" />
                 <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="coinShopNd" ActionTag="1875822411" Tag="4315" IconVisible="True" LeftMargin="259.8540" RightMargin="1020.1460" TopMargin="659.8305" BottomMargin="60.1695" ctype="SingleNodeObjectData">
+              <AbstractNodeData Name="coinShopNd" ActionTag="1875822411" Tag="4315" IconVisible="True" LeftMargin="259.8540" RightMargin="1020.1460" TopMargin="691.8300" BottomMargin="28.1700" ctype="SingleNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <Children>
-                  <AbstractNodeData Name="coinShopBtn" ActionTag="1160015444" Tag="4317" IconVisible="False" LeftMargin="-71.8800" RightMargin="-72.3200" TopMargin="-59.0150" BottomMargin="-57.1350" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                  <AbstractNodeData Name="coinShopBtn" ActionTag="1160015444" Tag="4317" IconVisible="False" LeftMargin="-71.8800" RightMargin="-72.3200" TopMargin="-86.8020" BottomMargin="-29.3480" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="144.2000" Y="116.1500" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="0.2200" Y="0.9400" />
+                    <Position X="0.2200" Y="28.7270" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
@@ -89,10 +89,10 @@
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint />
-                <Position X="259.8540" Y="60.1695" />
+                <Position X="259.8540" Y="28.1700" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.2030" Y="0.0836" />
+                <PrePosition X="0.2030" Y="0.0391" />
                 <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
               <AbstractNodeData Name="bmListPnl" ActionTag="1206933663" Tag="148" IconVisible="False" LeftMargin="377.9806" RightMargin="402.0194" TopMargin="634.5968" BottomMargin="25.4032" ClipAble="False" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">

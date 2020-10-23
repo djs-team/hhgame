@@ -46,7 +46,7 @@ load('module/mahjong/ui/DeskPersonlLayer', function () {
             //this.idTxt.setString(pData.pid)
             this.allCntTxt.setString(pData.allCnt)
             this.winCnt.setString(pData.winCnt)
-            this.nameTxt.setString(pData.nickName)
+            this.nameTxt.setString(global.cropStr(pData.nickName, 5, '...'))
             this.coinsValTxt.setString(pData.pCoins)
             if(pData.isCanSend)
                 this.magicBlockPnl.setVisible(false)

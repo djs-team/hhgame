@@ -75,6 +75,8 @@
             "ColorVector": {
               "ScaleY": 1.0
             },
+            "Scale9Width": 1,
+            "Scale9Height": 1,
             "TouchEnable": true,
             "AnchorPoint": {
               "ScaleX": 0.5,
@@ -129,6 +131,8 @@
             "ColorVector": {
               "ScaleY": 1.0
             },
+            "Scale9Width": 1,
+            "Scale9Height": 1,
             "AnchorPoint": {
               "ScaleX": 0.5,
               "ScaleY": 0.5
@@ -497,7 +501,7 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 677.1625,
+                  "X": 677.12,
                   "Y": 453.9599
                 },
                 "Scale": {
@@ -519,8 +523,8 @@
                   "X": 0.0234,
                   "Y": 0.0278
                 },
-                "LeftMargin": 662.1625,
-                "RightMargin": 587.8375,
+                "LeftMargin": 662.12,
+                "RightMargin": 587.88,
                 "TopMargin": 256.0401,
                 "BottomMargin": 443.9599,
                 "Tag": 43,
@@ -815,6 +819,8 @@
             "ColorVector": {
               "ScaleY": 1.0
             },
+            "Scale9Width": 1,
+            "Scale9Height": 1,
             "AnchorPoint": {
               "ScaleX": 0.5,
               "ScaleY": 0.5
@@ -860,6 +866,8 @@
                 "ColorVector": {
                   "ScaleY": 1.0
                 },
+                "Scale9Width": 1,
+                "Scale9Height": 1,
                 "AnchorPoint": {
                   "ScaleX": 0.5,
                   "ScaleY": 0.5
@@ -988,7 +996,7 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 728.3497,
+                      "X": 728.32,
                       "Y": 453.96
                     },
                     "Scale": {
@@ -1010,8 +1018,8 @@
                       "X": 0.0547,
                       "Y": 0.0278
                     },
-                    "LeftMargin": 693.3497,
-                    "RightMargin": 516.6503,
+                    "LeftMargin": 693.32,
+                    "RightMargin": 516.68,
                     "TopMargin": 256.04,
                     "BottomMargin": 443.96,
                     "Tag": 42,
@@ -1141,13 +1149,15 @@
                     "ColorVector": {
                       "ScaleY": 1.0
                     },
+                    "Scale9Width": 1,
+                    "Scale9Height": 1,
                     "AnchorPoint": {
                       "ScaleX": 0.5,
                       "ScaleY": 0.5
                     },
                     "Position": {
                       "X": 727.42,
-                      "Y": 491.8244
+                      "Y": 491.832
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -1166,8 +1176,8 @@
                     },
                     "LeftMargin": 668.42,
                     "RightMargin": 493.58,
-                    "TopMargin": 213.1756,
-                    "BottomMargin": 476.8244,
+                    "TopMargin": 213.168,
+                    "BottomMargin": 476.832,
                     "Tag": 44,
                     "Children": [
                       {
@@ -1218,7 +1228,7 @@
                       },
                       {
                         "IsCustomSize": true,
-                        "FontSize": 20,
+                        "FontSize": 18,
                         "LabelText": "这里显示玩家",
                         "HorizontalAlignmentType": "HT_Center",
                         "VerticalAlignmentType": "VT_Center",
@@ -1254,18 +1264,18 @@
                           "Y": 0.5
                         },
                         "PreSize": {
-                          "X": 1.0169,
-                          "Y": 0.6667
+                          "X": 0.9153,
+                          "Y": 0.6
                         },
-                        "LeftMargin": -1.0,
-                        "RightMargin": -1.0,
-                        "TopMargin": 5.0,
-                        "BottomMargin": 5.0,
+                        "LeftMargin": 5.0,
+                        "RightMargin": 5.0,
+                        "TopMargin": 6.0,
+                        "BottomMargin": 6.0,
                         "Tag": 46,
                         "ActionTag": 322454748,
                         "Size": {
-                          "X": 120.0,
-                          "Y": 20.0
+                          "X": 108.0,
+                          "Y": 18.0
                         },
                         "Name": "nameTxt",
                         "ctype": "TextObjectData"
@@ -1294,6 +1304,8 @@
                     "ColorVector": {
                       "ScaleY": 1.0
                     },
+                    "Scale9Width": 1,
+                    "Scale9Height": 1,
                     "AnchorPoint": {
                       "ScaleX": 0.5,
                       "ScaleY": 0.5
@@ -1502,6 +1514,8 @@
                 "ColorVector": {
                   "ScaleY": 1.0
                 },
+                "Scale9Width": 1,
+                "Scale9Height": 1,
                 "TouchEnable": true,
                 "AnchorPoint": {
                   "ScaleX": 0.5,

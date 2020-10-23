@@ -129,11 +129,11 @@ load('game/public/GameAgent', function () {
             appInstance.sceneManager().getCurScene().addChild(UI)
         },
 
-        Tips: function (text) {
+        Tips: function (text, isTurn) {
             let SystemTips = include(ResConfig.Ui.SystemTips)
             let TipsUi = appInstance.uiManager().createUI(SystemTips)
             appInstance.sceneManager().getCurScene().addChild(TipsUi)
-            TipsUi.runTips(text)
+            TipsUi.runTips(text, isTurn)
         },
 
         goLoginScene: function (data) {
@@ -159,7 +159,6 @@ load('game/public/GameAgent', function () {
                 this._heartBeatTimes += dt
                 this._sendHearBeat += dt
                 if (this._sendHearBeat > GameConfig.HeartBeatInterval) {
-                    cc.log('====》》》》》》==发送心跳')
                     this._sendHearBeat = 0
                     this._tcpGame.heartBeat()
                 }

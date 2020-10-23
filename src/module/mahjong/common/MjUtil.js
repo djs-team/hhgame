@@ -13,6 +13,7 @@ load('module/mahjong/common/MjUtil', function () {
                     return a.nCardColor < b.nCardColor
                 }
             })
+            return cardArray
         },
         removeCard: function (cardArray, card) {
             for (let i = 0; i < cardArray.length; ++i) {

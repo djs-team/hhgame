@@ -57,6 +57,10 @@ load('game/config/GameConfig', function () {
     GameConfig.VIP_LEVEL_3 = 3//季vip
     GameConfig.VIP_LEVEL_4 = 4//年vip
 
+    GameConfig.CHANNEL = 10001 //大庆
+    GameConfig.CHANNEL = 10037 //嫩江
+    GameConfig.CHANNEL = 10047 //肇源
+
 
 
 
@@ -96,6 +100,13 @@ load('game/config/GameConfig', function () {
         '13': 'CoinShopLayer',
         '14': 'CoinShopLayer',
         '15': 'FukaShopLayer',
+
+    }
+
+    GameConfig.channel_animation = {
+        '10001': 'animation5',
+        '10037': 'animation',
+        '10047': 'animation6',
 
     }
 

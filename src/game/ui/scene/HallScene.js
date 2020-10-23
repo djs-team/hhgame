@@ -7,6 +7,7 @@ load('game/ui/scene/HallScene', function () {
     let HallMdt = include('game/ui/scene/HallMdt')
     let LocalSave = include('game/public/LocalSave')
     let GameUtil = include('game/public/GameUtil')
+    let GameConfig = include('game/config/GameConfig')
     let AniPlayer = ResConfig.AniPlayer
     let PlayerPlay = ResConfig.PlayerPlay
     let HallScene = BaseScene.extend({
@@ -276,8 +277,10 @@ load('game/ui/scene/HallScene', function () {
         initView: function (selfInfo) {
             this.initData(selfInfo)
 
+
+            let channel = appInstance.dataManager().getUserData().channel;
             let jinbichangAni = appInstance.gameAgent().gameUtil().getAni(ResConfig.AniHall.DatingJinbichang)
-            jinbichangAni.setAnimation(0, 'animation', true)
+            jinbichangAni.setAnimation(0, GameConfig.channel_animation[channel], true)
             this.coinGameNd.addChild(jinbichangAni)
 
             let xiangqinAni = appInstance.gameAgent().gameUtil().getAni(ResConfig.AniHall.DatingXiangQin)

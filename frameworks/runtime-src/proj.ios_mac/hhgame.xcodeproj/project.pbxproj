@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0018054625187E5700A47927 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0018054325187E5700A47927 /* AdSupport.framework */; };
 		0018058825188F0500A47927 /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0018058725188F0500A47927 /* AppTrackingTransparency.framework */; };
+		001E6B802542E46200FC902A /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 001E6B7F2542E46200FC902A /* Reachability.m */; };
 		0020BB34250B9A5A00E2979B /* AppController+Login.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0020BB32250B9A5A00E2979B /* AppController+Login.mm */; };
 		0020BB39250BA0A000E2979B /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0020BB38250BA09F00E2979B /* libc++.tbd */; };
 		0020BB3B250BA0A800E2979B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0020BB3A250BA0A700E2979B /* libz.tbd */; };
@@ -858,6 +859,8 @@
 /* Begin PBXFileReference section */
 		0018054325187E5700A47927 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/AdSupport.framework; sourceTree = DEVELOPER_DIR; };
 		0018058725188F0500A47927 /* AppTrackingTransparency.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppTrackingTransparency.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/AppTrackingTransparency.framework; sourceTree = DEVELOPER_DIR; };
+		001E6B7C2542E46200FC902A /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		001E6B7F2542E46200FC902A /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		0020BB32250B9A5A00E2979B /* AppController+Login.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "AppController+Login.mm"; path = "ios/AppController+Login.mm"; sourceTree = "<group>"; };
 		0020BB33250B9A5A00E2979B /* AppController+Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AppController+Login.h"; path = "ios/AppController+Login.h"; sourceTree = "<group>"; };
 		0020BB37250B9C4800E2979B /* CXSystemMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXSystemMessageViewController.h; sourceTree = "<group>"; };
@@ -2187,6 +2190,8 @@
 				006148E7250B693800BB7620 /* CXTools.m */,
 				006148E9250B71F800BB7620 /* CXPhoneBasicTools.h */,
 				006148EA250B71F800BB7620 /* CXPhoneBasicTools.m */,
+				001E6B7C2542E46200FC902A /* Reachability.h */,
+				001E6B7F2542E46200FC902A /* Reachability.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -5464,6 +5469,7 @@
 				00614F24250B94CF00BB7620 /* SocketMessageWelcomMsg.m in Sources */,
 				00614F68250B94CF00BB7620 /* CXMineGuardListViewController.m in Sources */,
 				00614E6A250B94CE00BB7620 /* CXGameMusicGuideView.m in Sources */,
+				001E6B802542E46200FC902A /* Reachability.m in Sources */,
 				00614FC0250B94CF00BB7620 /* CXUserInfoGroupTitleReusableView.m in Sources */,
 				00614F72250B94CF00BB7620 /* CXMineGuardViewController.m in Sources */,
 				00614E42250B94CE00BB7620 /* FUOpenGLView.m in Sources */,

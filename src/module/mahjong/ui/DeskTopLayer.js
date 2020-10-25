@@ -75,6 +75,9 @@ load('module/mahjong/ui/DeskTopLayer', function () {
                 this.HostingPnl.setVisible(false)
             } else if (pHosting === 1) {
                 this.HostingPnl.setVisible(true)
+            } else {
+                // 不应该，也不会走进这里面来
+                this.HostingPnl.setVisible(false)
             }
         },
 

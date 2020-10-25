@@ -88,7 +88,7 @@ load('module/mahjong/ui/DeskResultLayer', function () {
 
         initData: function (pData) {
             this._pData = pData
-            this._isMatch = pData.isMatch
+            this._isMatch = pData.isMatch()
             this._playerNum = pData.pPlayerNum || 2
             this._players = pData.players
             this._pos = this._posConst[this._playerNum]

@@ -11,6 +11,7 @@ load('module/mahjong/data/PlayerInfo', function () {
       this.showCards = []
       this.handCardCount = 13
       this.pHosting = false
+      this.pIsTing = false
     }
   })
 

@@ -148,9 +148,11 @@ load('module/mahjong/ui/DeskCardLayerMdt', function () {
 
             this.view.onePutCard(uiSeat, card)
 
-            if (pPutSeatID !== pData.pMySeatID) {
+            // if (pPutSeatID !== pData.pMySeatID) {
                 this.view.updateHandCard(uiSeat, players[pPutSeatID], pCurSeatID === pData.pMySeatID)
-            }
+            // } else {
+            //
+            // }
 
             appInstance.gameAgent().mjUtil().putCardSound(card)
         },

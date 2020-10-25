@@ -153,6 +153,10 @@ load('module/mahjong/ui/DeskCardLayer', function () {
             let handCards = player.handCards
             let handCardCount = player.handCardCount
             if (uiSeat === 0) {
+                if ((handCards.length % 3 ) !== 2) {
+                    handCards = appInstance.gameAgent().mjUtil().sortCard(handCards)
+                }
+
                 for (let i = 0; i < 14; ++i) {
                     let card = handNd.getChildByName('Card' + i)
                     if (isTurn) {

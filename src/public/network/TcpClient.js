@@ -74,6 +74,7 @@ let TcpClient = cc.Class.extend({
 
     onSocketError: function (event) {
         cc.log('================onSocketError================' + JSON.stringify(event))
+        appInstance.eventManager().dispatchEvent('TCP_CLOSE')
     },
 
     onSocketClose: function (event) {

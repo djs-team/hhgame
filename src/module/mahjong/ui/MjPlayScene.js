@@ -27,6 +27,9 @@ load('module/mahjong/ui/MjPlayScene', function () {
         },
 
         initView: function () {
+            this.registerEventListener('TCP_CLOSE', appInstance.gameAgent().onTcpClose)
+            this.registerEventListener('RECONNECT_OVER_TIMES', appInstance.gameAgent().onReconnectError)
+
             this.DeskBgLayer = appInstance.uiManager().createUI(DeskBgLayer)
             this.addChild(this.DeskBgLayer)
             this.DeskHeadLayer = appInstance.uiManager().createUI(DeskHeadLayer)

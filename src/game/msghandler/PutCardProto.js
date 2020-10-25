@@ -41,16 +41,18 @@ load('game/msghandler/PutCardProto', function () {
                 appInstance.sendNotification(Event.PutCardProto, tmpMsg)
             } else {
                 appInstance.gameAgent().Tips('出牌异常！ code is ' + msg.pResult)
-                let card = {
-                    nCardColor: msg.nCardColor,
-                    nCardNumber: msg.nCardNumber
-                }
-                let selfInfo = pData.getSelfInfo()
-                if (selfInfo.pSeatID === msg.pPutSeatID) {
-                    selfInfo.handCards.push(card)
-                    appInstance.gameAgent().mjUtil().sortCard(selfInfo.handCards)
-                    appInstance.sendNotification(Event.updateSelfHandCard)
-                }
+
+                appInstance.gameNet().connect()
+                // let card = {
+                //     nCardColor: msg.nCardColor,
+                //     nCardNumber: msg.nCardNumber
+                // }
+                // let selfInfo = pData.getSelfInfo()
+                // if (selfInfo.pSeatID === msg.pPutSeatID && selfInfo.pSeatID === msg.pCurSeatID) {
+                //     selfInfo.handCards.push(card)
+                //     appInstance.gameAgent().mjUtil().sortCard(selfInfo.handCards)
+                //     appInstance.sendNotification(Event.updateSelfHandCard)
+                // }
             }
         },
 

@@ -178,11 +178,12 @@ load('module/mahjong/ui/DeskCardLayerMdt', function () {
         InitCardProto: function () {
             let pData = appInstance.dataManager().getPlayData()
             let players = pData.players
+
             for (let k in players) {
                 let uiSeat = pData.seatId2UI(k)
-                players[k].showCards = []
                 this.view.updateHandCard(uiSeat,players[k])
             }
+            this.view.reBeginGame()
             let nDeckCardNum = pData.tableData.nDeckCardNum
             this.updateDeckCard(nDeckCardNum)
         },

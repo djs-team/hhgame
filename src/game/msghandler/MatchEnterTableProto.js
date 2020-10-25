@@ -27,7 +27,6 @@ load('game/msghandler/MatchEnterTableProto', function () {
                     }
                     appInstance.sendNotification(GameEvent.DIALOG_HIDE_ALL)
                     appInstance.gameAgent().addDialogUI(dialogMsg)
-
                     break
                 case 1:
                     //为避免遮挡 晋级就不再这里面显示了 显示到大厅去
@@ -60,9 +59,6 @@ load('game/msghandler/MatchEnterTableProto', function () {
                     appInstance.gameAgent().Tips('比赛已被销毁！！！')
                     break
             }
-
-
-            appInstance.sendNotification(Event.UpdateView)
         },
 
         initData: function () {

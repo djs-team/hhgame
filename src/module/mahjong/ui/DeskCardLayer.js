@@ -134,6 +134,18 @@ load('module/mahjong/ui/DeskCardLayer', function () {
             }
         },
 
+        reBeginGame: function () {
+            let pConfig = [
+                2,3,0,1
+            ]
+            for ( let i = this._deckCardTag; i <= this._allCardNum; ++i) {
+                let pIndex = Math.floor((i - 1) / this._deckCardLen / 2)
+                let pNd = this._deckCardNd[pConfig[pIndex]]
+                pNd.setVisible(true)
+                pNd.getChildByTag(i).setVisible(true)
+            }
+        },
+
         updateDeckCard: function (nDeckCardNum) {
             let endTag = this._allCardNum - nDeckCardNum
             let pConfig = [
@@ -187,22 +199,14 @@ load('module/mahjong/ui/DeskCardLayer', function () {
             } else {
                 for (let i = 0; i < 14; ++i) {
                     let card = handNd.getChildByName('Card' + i)
-                    if (isTurn) {
-                        if ((handCardCount % 3 ) === 2) {
-                            if (i < handCardCount) {
-                                card.setVisible(true)
-                            } else {
-                                card.setVisible(false)
-                            }
+                    if ((handCardCount % 3 ) === 2) {
+                        if (i < handCardCount) {
+                            card.setVisible(true)
                         } else {
-                            if (i === 0 || i > handCardCount) {
-                                card.setVisible(false)
-                            } else {
-                                card.setVisible(true)
-                            }
+                            card.setVisible(false)
                         }
                     } else {
-                        if ( i === 0 || i > handCardCount) {
+                        if (i === 0 || i > handCardCount) {
                             card.setVisible(false)
                         } else {
                             card.setVisible(true)

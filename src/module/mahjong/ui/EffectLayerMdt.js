@@ -89,12 +89,14 @@ load('module/mahjong/ui/EffectLayerMdt', function () {
             if (mySeatId === winSeat) {
                 let huType = msg.pHuType
                 let huArray = Sound.play.hu
-                if (huType.indexof(4) !== -1) {
-                    huArray = Sound.play.hu_zimo
-                } else if (huType.indexof(35) !== -1) {
-                    huArray = Sound.play.hu_mobao
-                } else if (huType.indexof(83) !== -1) {
-                    huArray = Sound.play.hu_baozhongbao
+                for (let i = 0; i < huType.length; ++i) {
+                    if (huType[i].pHu === 4) {
+                        huArray = Sound.play.hu_zimo
+                    } else if (huType[i].pHu === 35) {
+                        huArray = Sound.play.hu_mobao
+                    } else if (huType[i].pHu === 83) {
+                        huArray = Sound.play.hu_baozhongbao
+                    }
                 }
                 // 漏宝胡 ID 配置服务器没给
                 appInstance.gameAgent().mjUtil().playGamingSound(huArray)

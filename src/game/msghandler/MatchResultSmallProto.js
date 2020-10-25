@@ -39,7 +39,6 @@ load('game/msghandler/MatchResultSmallProto', function () {
                 'pGameResultExtend'
             ]
             pData.saveTableData(msg,saveKey)
-            pData.isMatch = true
 
 
             let pPlayer = msg.pPlayer

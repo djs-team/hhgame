@@ -18,7 +18,6 @@ load('game/msghandler/GameResultProto', function () {
         handleMsg: function (msg) {
             this._super(msg)
             let pData = appInstance.dataManager().getPlayData()
-            pData.isMatch = false
 
             msg.pBaoCard = {
                 nCardColor: msg.pBaoCardColor,

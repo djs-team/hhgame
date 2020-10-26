@@ -114,8 +114,6 @@ load('module/mahjong/ui/DeskResultLayer', function () {
             }
             this.onInfoBtnClick(initInfo)
 
-            cc.log('---------------------------------this._pData.tableData----------------------------- : ' + JSON.stringify(this._pData.tableData))
-
 
             let baoCardInfo = this._pData.tableData.pBaoCard
             if (baoCardInfo.nCardNumber || baoCardInfo.nCardColor) {

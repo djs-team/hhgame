@@ -817,6 +817,7 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
 
             this.onSetShowElementFunction(elementNameArray,flag)
 
+            this.goodDetailPageView.removeAllChildren()
             let data = sender._sendMsg
             for(let i = 0; i < data.upPictureUrls.length; i++){
 

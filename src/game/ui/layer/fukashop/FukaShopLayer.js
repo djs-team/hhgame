@@ -1055,6 +1055,8 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
         onInitRobGoodsCell: function (data,goodsPnl,index,rowLength) {
 
             let goodsData = data[index]
+            if(!goodsData)
+                return
             let cell = this.robGoodsCell.clone()
             goodsPnl.addChild(cell)
 

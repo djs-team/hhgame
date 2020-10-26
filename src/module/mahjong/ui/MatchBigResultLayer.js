@@ -54,7 +54,7 @@ load('module/mahjong/ui/MatchBigResultLayer', function () {
             this.midNd.addChild(pCell)
             pCell.setPosition(this._playerPos[index])
 
-            pCell.getChildByName('name').setString(pinfo.pid)
+            pCell.getChildByName('name').setString(pinfo.nickName)
             
             pCell.getChildByName('Win').setVisible(index === 0)
 

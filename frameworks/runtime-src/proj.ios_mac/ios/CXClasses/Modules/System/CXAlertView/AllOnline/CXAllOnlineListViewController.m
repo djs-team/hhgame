@@ -663,7 +663,7 @@
             if (!error) {
                 [weakSelf hide];
             } else {
-                [weakSelf toast:@"邀请失败，请重试"];
+                [weakSelf toast:responseObject[@"desc"]];
             }
         }];
     }

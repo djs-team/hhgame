@@ -178,6 +178,7 @@ load('module/mahjong/ui/DeskResultLayer', function () {
             let CardNd = infoCell.getChildByName('CardNd')
 
             let handCards = appInstance.gameAgent().mjUtil().sortCard(pinfo.handCards)
+            handCards.reverse()
             let pChiList = pinfo.pChiList
             let pPengList = pinfo.pPengList
             let pGangList = pinfo.pGangList

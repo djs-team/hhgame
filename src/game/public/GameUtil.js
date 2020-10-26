@@ -310,15 +310,23 @@ load('game/public/GameUtil',function () {
     }
 
     GameUtil.onForMatTxt = function (txt,forMatLength) {
-
         let forMatTxt = ''
-        let cnt = 0
-        for(let i = 0; i < txt.length; i++){
-            if(i !== 0 && i%forMatLength === 0){
-                forMatTxt = forMatTxt + '\n'
+        let txt_array = txt.split('\n');
+        for (let i=0; i<txt_array.length; i++) {
+            let hangText = ''
+            for (let j=0; j<txt_array[i].length; j++) {
+                let setString = hangText+txt_array[i][j]
+                if ((setString.replace(/[^\x00-\xff]/g, '**')).length>forMatLength) {
+                    forMatTxt = forMatTxt+hangText+'\n'
+                    hangText = ''
+                    hangText = txt_array[i][j]
+                } else {
+                    hangText = setString
+                }
             }
-            forMatTxt = forMatTxt + txt[i]
+            forMatTxt = forMatTxt+hangText+'\n'
         }
+
         return forMatTxt
     }
 

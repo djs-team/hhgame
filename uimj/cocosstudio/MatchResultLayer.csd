@@ -106,10 +106,10 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="rewardTxt" ActionTag="1383321362" Tag="81" IconVisible="False" LeftMargin="-240.0000" RightMargin="-240.0000" TopMargin="126.0000" BottomMargin="-150.0000" IsCustomSize="True" FontSize="24" LabelText="恭喜获得：金币 x 3,钻石 x 3, 话费卡 x 1 " HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="480.0000" Y="24.0000" />
+                  <AbstractNodeData Name="rewardTxt" ActionTag="1383321362" Tag="81" IconVisible="False" LeftMargin="-393.2490" RightMargin="-406.7510" TopMargin="104.2005" BottomMargin="-204.2005" IsCustomSize="True" FontSize="22" LabelText="恭喜获得：金币 x 3,钻石 x 3, 话费卡 x 1 " HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="800.0000" Y="100.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position Y="-138.0000" />
+                    <Position X="6.7510" Y="-154.2005" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="183" G="100" B="30" />
                     <PrePosition />

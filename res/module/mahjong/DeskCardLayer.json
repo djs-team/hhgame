@@ -15,187 +15,6 @@
         "Tag": 5,
         "Children": [
           {
-            "FileData": {
-              "Type": "Normal",
-              "Path": "dele/paidui.jpg",
-              "Plist": ""
-            },
-            "Scale9OriginX": 421,
-            "Scale9OriginY": 237,
-            "Scale9Width": 436,
-            "Scale9Height": 246,
-            "AnchorPoint": {
-              "ScaleX": 0.5,
-              "ScaleY": 0.5
-            },
-            "Position": {
-              "X": 640.0,
-              "Y": 360.0
-            },
-            "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 1.0
-            },
-            "CColor": {},
-            "IconVisible": false,
-            "PositionPercentXEnabled": true,
-            "PositionPercentYEnabled": true,
-            "PrePosition": {
-              "X": 0.5,
-              "Y": 0.5
-            },
-            "PreSize": {
-              "X": 0.9984,
-              "Y": 1.0
-            },
-            "LeftMargin": 1.0,
-            "RightMargin": 1.0,
-            "Tag": 13,
-            "ActionTag": -1818951270,
-            "Size": {
-              "X": 1278.0,
-              "Y": 720.0
-            },
-            "VisibleForFrame": false,
-            "Name": "Image_1",
-            "ctype": "ImageViewObjectData"
-          },
-          {
-            "FileData": {
-              "Type": "Normal",
-              "Path": "dele/lipai.jpg",
-              "Plist": ""
-            },
-            "BlendFunc": {
-              "Src": 770,
-              "Dst": 771
-            },
-            "AnchorPoint": {
-              "ScaleX": 0.5,
-              "ScaleY": 0.5
-            },
-            "Position": {
-              "X": 640.0,
-              "Y": 360.0
-            },
-            "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 1.0
-            },
-            "CColor": {},
-            "IconVisible": false,
-            "PositionPercentXEnabled": true,
-            "PositionPercentYEnabled": true,
-            "PrePosition": {
-              "X": 0.5,
-              "Y": 0.5
-            },
-            "PreSize": {
-              "X": 1.0016,
-              "Y": 1.0042
-            },
-            "LeftMargin": -1.0,
-            "RightMargin": -1.0,
-            "TopMargin": -1.5,
-            "BottomMargin": -1.5,
-            "Tag": 20,
-            "ActionTag": 1861841287,
-            "Size": {
-              "X": 1282.0,
-              "Y": 723.0
-            },
-            "VisibleForFrame": false,
-            "Name": "lipai_1",
-            "ctype": "SpriteObjectData"
-          },
-          {
-            "FileData": {
-              "Type": "Normal",
-              "Path": "dele/liangpai.jpg",
-              "Plist": ""
-            },
-            "Scale9OriginX": 422,
-            "Scale9OriginY": 242,
-            "Scale9Width": 436,
-            "Scale9Height": 250,
-            "AnchorPoint": {
-              "ScaleX": 0.5
-            },
-            "Position": {
-              "X": 640.0,
-              "Y": 0.0
-            },
-            "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 1.0
-            },
-            "CColor": {},
-            "IconVisible": false,
-            "PositionPercentXEnabled": true,
-            "PrePosition": {
-              "X": 0.5,
-              "Y": 0.0
-            },
-            "PreSize": {
-              "X": 1.0,
-              "Y": 1.0194
-            },
-            "TopMargin": -14.0,
-            "Tag": 148,
-            "ActionTag": -1970230866,
-            "Size": {
-              "X": 1280.0,
-              "Y": 734.0
-            },
-            "VisibleForFrame": false,
-            "Name": "Image_3",
-            "ctype": "ImageViewObjectData"
-          },
-          {
-            "FileData": {
-              "Type": "Normal",
-              "Path": "dele/liangAction.png",
-              "Plist": ""
-            },
-            "Scale9OriginX": 422,
-            "Scale9OriginY": 237,
-            "Scale9Width": 436,
-            "Scale9Height": 246,
-            "AnchorPoint": {
-              "ScaleX": 0.5,
-              "ScaleY": 0.5
-            },
-            "Position": {
-              "X": 640.0,
-              "Y": 360.0
-            },
-            "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 1.0
-            },
-            "CColor": {},
-            "IconVisible": false,
-            "PositionPercentXEnabled": true,
-            "PositionPercentYEnabled": true,
-            "PrePosition": {
-              "X": 0.5,
-              "Y": 0.5
-            },
-            "PreSize": {
-              "X": 1.0,
-              "Y": 1.0
-            },
-            "Tag": 212,
-            "ActionTag": -1424555119,
-            "Size": {
-              "X": 1280.0,
-              "Y": 720.0
-            },
-            "VisibleForFrame": false,
-            "Name": "liangAction",
-            "ctype": "ImageViewObjectData"
-          },
-          {
             "ClipAble": false,
             "BackColorAlpha": 102,
             "SingleColor": {
@@ -627,7 +446,7 @@
                 "CColor": {},
                 "IconVisible": true,
                 "PrePosition": {
-                  "X": 0.6563,
+                  "X": 0.6562,
                   "Y": 0.2222
                 },
                 "PreSize": {
@@ -14753,10 +14572,6 @@
         "card/value/leftshow/wan_left_1.png",
         "card/value/selfhand/tiao_hand_8.png",
         "card/value/selfshow/wan_show_1.png",
-        "dele/liangAction.png",
-        "dele/liangpai.jpg",
-        "dele/lipai.jpg",
-        "dele/paidui.jpg",
         "desk/pz_33.png",
         "desk/pz_34.png",
         "desk/pz_35.png",

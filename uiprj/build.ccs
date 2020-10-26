@@ -633,6 +633,8 @@
           <Image Name="denglu_7.png" />
           <Image Name="update_slider_bar.png" />
           <Image Name="update_slider_bg.png" />
+          <Image Name="useragree_1.png" />
+          <Image Name="useragree_3.png" />
         </Folder>
         <Folder Name="matching">
           <Image Name="ppc_1.png" />
@@ -919,8 +921,6 @@
         <Project Name="TipsDialog.csd" Type="Layer" />
         <Project Name="TipsFloat.csd" Type="Layer" />
         <Project Name="TurnTableLayer.csd" Type="Layer" />
-        <Image Name="useragree_1.png" />
-        <Image Name="useragree_3.png" />
       </RootFolder>
     </Group>
   </SolutionFolder>

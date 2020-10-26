@@ -288,6 +288,20 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
+              <AbstractNodeData Name="returnBtn" ActionTag="2042177341" Tag="364" IconVisible="False" LeftMargin="87.8169" RightMargin="1104.1831" TopMargin="10.1621" BottomMargin="621.8379" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="58" Scale9Height="66" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                <Size X="88.0000" Y="88.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="1.0000" />
+                <Position X="131.8169" Y="709.8379" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.1030" Y="0.9859" />
+                <PreSize X="0.0688" Y="0.1222" />
+                <TextColor A="255" R="65" G="65" B="70" />
+                <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+                <NormalFileData Type="Normal" Path="common/gy_fh.png" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="640.0000" Y="360.0000" />

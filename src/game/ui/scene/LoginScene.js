@@ -11,7 +11,6 @@ load('game/ui/scene/LoginScene', function () {
         _className: 'LoginScene',
         _canLogin: true,
         _isLookAgree: false,
-        _contentHeight: 0,
         _userAgreeContent: [
             {'title':'1.重要须知','content':'1.1 根据《网络游戏管理暂行规定》（文化部令第49号），文化部制定《网络游戏服务格式化协议必备条款》规定特制定本协议。本协议中甲方为《和和福利全集》，乙方为网络游戏用户。请用户仔细认真阅读、充分理解本《协议》中的各个条款。特别涉及免除或者限制《和和福利全集》责任的免责条款，对用户的权利限制的条款，法律适用、争议解决方式的条款。\n' +
                     '1.2请您审慎阅读并选择同意或不同意本《协议》，除非您接受本《协议》所有条款，否则您无权下载、安装、升级、登陆、显示、运行、截屏等方式使用本软件及其相关服务。您的下载、安装、显示、帐号获取和登录、截屏等行为表明您自愿接受本协议的全部内容并受其约束，不得以任何理由包括但不限于未能认真阅读本协议等作为纠纷抗辩理由。\n' +
@@ -114,6 +113,7 @@ load('game/ui/scene/LoginScene', function () {
                 'userAgreePnl':{},
                 'userAgreePnl/userAgreeList':{},
                 'userAgreePnl/contentCell':{},
+                'userAgreePnl/returnBtn':{onClicked: this.onCloseUserAgreeClick},
             }
         },
 
@@ -146,6 +146,13 @@ load('game/ui/scene/LoginScene', function () {
                 }
             }
             // this.goTest()
+        },
+
+        onCloseUserAgreeClick: function () {
+            this.block.setVisible(true)
+            this.topPnl.setVisible(true)
+            this.pnl.setVisible(true)
+            this.userAgreePnl.setVisible(false)
         },
 
         onUserAgreeClick: function (sender) {

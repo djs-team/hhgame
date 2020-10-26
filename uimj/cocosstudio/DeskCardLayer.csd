@@ -6,47 +6,6 @@
       <ObjectData Name="Layer" Tag="5" ctype="GameLayerObjectData">
         <Size X="1280.0000" Y="720.0000" />
         <Children>
-          <AbstractNodeData Name="Image_1" ActionTag="-1818951270" VisibleForFrame="False" Tag="13" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="1.0000" RightMargin="1.0000" LeftEage="421" RightEage="421" TopEage="237" BottomEage="237" Scale9OriginX="421" Scale9OriginY="237" Scale9Width="436" Scale9Height="246" ctype="ImageViewObjectData">
-            <Size X="1278.0000" Y="720.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="640.0000" Y="360.0000" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5000" Y="0.5000" />
-            <PreSize X="0.9984" Y="1.0000" />
-            <FileData Type="Normal" Path="dele/paidui.jpg" Plist="" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="lipai_1" ActionTag="1861841287" VisibleForFrame="False" Tag="20" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="-1.0000" RightMargin="-1.0000" TopMargin="-1.5000" BottomMargin="-1.5000" ctype="SpriteObjectData">
-            <Size X="1282.0000" Y="723.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="640.0000" Y="360.0000" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5000" Y="0.5000" />
-            <PreSize X="1.0016" Y="1.0042" />
-            <FileData Type="Normal" Path="dele/lipai.jpg" Plist="" />
-            <BlendFunc Src="770" Dst="771" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="Image_3" ActionTag="-1970230866" VisibleForFrame="False" Tag="148" IconVisible="False" PositionPercentXEnabled="True" TopMargin="-14.0000" LeftEage="422" RightEage="422" TopEage="242" BottomEage="242" Scale9OriginX="422" Scale9OriginY="242" Scale9Width="436" Scale9Height="250" ctype="ImageViewObjectData">
-            <Size X="1280.0000" Y="734.0000" />
-            <AnchorPoint ScaleX="0.5000" />
-            <Position X="640.0000" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5000" />
-            <PreSize X="1.0000" Y="1.0194" />
-            <FileData Type="Normal" Path="dele/liangpai.jpg" Plist="" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="liangAction" ActionTag="-1424555119" VisibleForFrame="False" Tag="212" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftEage="422" RightEage="422" TopEage="237" BottomEage="237" Scale9OriginX="422" Scale9OriginY="237" Scale9Width="436" Scale9Height="246" ctype="ImageViewObjectData">
-            <Size X="1280.0000" Y="720.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="640.0000" Y="360.0000" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5000" Y="0.5000" />
-            <PreSize X="1.0000" Y="1.0000" />
-            <FileData Type="Normal" Path="dele/liangAction.png" Plist="" />
-          </AbstractNodeData>
           <AbstractNodeData Name="bgPnl" ActionTag="1342302347" UserData="{&quot;layoutType&quot;:&quot;showAll&quot;,&quot;screenAlign&quot;:&quot;bottom&quot;}" Tag="12" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <Children>

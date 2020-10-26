@@ -145,11 +145,12 @@
             network = @"WWAN";
             break;
         default:
+            network = @"NONE";
             break;
     }
-    if ([network isEqualToString:@""]) {
-        network = @"NO DISPLAY";
-    }
+//    if ([network isEqualToString:@""]) {
+//        network = @"NO DISPLAY";
+//    }
     return network;
 }
 
@@ -197,7 +198,7 @@
                 if ([subview isKindOfClass:NSClassFromString(@"_UIStatusBarWifiSignalView")]) {
                     signalStrength = [[subview valueForKey:@"numberOfActiveBars"] intValue];
                     break;
-                }else if ([subview isKindOfClass:NSClassFromString(@"_UIStatusBarPersistentAnimationView")]) { // _UIStatusBarStringView
+                } else if ([subview isKindOfClass:NSClassFromString(@"_UIStatusBarPersistentAnimationView")]) { // _UIStatusBarStringView
                     signalStrength = [[subview valueForKey:@"numberOfActiveBars"] intValue];
                     break;
                 }
@@ -215,8 +216,7 @@
                     dataNetworkItemView = subview;
                     signalStrength = [[dataNetworkItemView valueForKey:@"_wifiStrengthBars"] intValue];
                     break;
-                }
-                if ([subview isKindOfClass:[NSClassFromString(@"UIStatusBarSignalStrengthItemView") class]] && ![[self getNetWorkStates] isEqualToString:@"WIFI"] && ![[self getNetWorkStates] isEqualToString:@"NONE"]) {
+                } else if ([subview isKindOfClass:[NSClassFromString(@"UIStatusBarSignalStrengthItemView") class]] && ![[self getNetWorkStates] isEqualToString:@"WIFI"] && ![[self getNetWorkStates] isEqualToString:@"NONE"]) {
                     dataNetworkItemView = subview;
                     signalStrength = [[dataNetworkItemView valueForKey:@"_signalStrengthRaw"] intValue];
                     break;

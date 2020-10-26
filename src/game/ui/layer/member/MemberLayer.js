@@ -81,6 +81,7 @@ load('game/ui/layer/member/MemberLayer', function () {
         onThirdPayCallBack: function (msg) {
             if (msg == 0) {
                 appInstance.gameAgent().Tips('------------------------------------充值成功！！！')
+                appInstance.gameAgent().httpGame().userDataReq()
             } else {
                 appInstance.gameAgent().Tips('------------------------------------充值失败！！！'+JSON.stringify(msg))
             }

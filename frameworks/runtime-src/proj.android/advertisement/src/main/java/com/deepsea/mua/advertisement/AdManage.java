@@ -19,7 +19,7 @@ public class AdManage {
     private TTRewardVideoAd mttRewardVideoAd;
     private boolean mIsLoaded = false; //视频是否加载完成
     private Activity mContext;
-//    private static AdManage singleton = null;
+    private static AdManage singleton = null;
 
     public interface OnLoadAdListener {
         void onRewardVideoCached();
@@ -30,16 +30,18 @@ public class AdManage {
     private OnLoadAdListener onLoadAdListener;
 
 
-//    private AdManage() {
-//
-//    }
+    private AdManage() {
 
-//    public static AdManage getInstance() {
-//        if (singleton == null) {
-//            singleton = new AdManage();
-//        }
-//        return singleton;
-//    }
+    }
+
+    public static AdManage getInstance() {
+        if (singleton == null) {
+            singleton = new AdManage();
+        }
+        return singleton;
+    }
+
+    AdSlot adSlot;
 
     public void init(Activity mContext) {
         this.mContext = mContext;
@@ -48,7 +50,24 @@ public class AdManage {
         //step2:(可选，强烈建议在合适的时机调用):申请部分权限，如read_phone_state,防止获取不了imei时候，下载类广告没有填充的问题。
         TTAdManagerHolder.get().requestPermissionIfNecessary(mContext);
         //step3:创建TTAdNative对象,用于调用广告请求接口
-        mTTAdNative = ttAdManager.createAdNative(mContext.getApplicationContext());
+        if (mTTAdNative == null) {
+            mTTAdNative = ttAdManager.createAdNative(mContext.getApplicationContext());
+        }
+
+    }
+
+    private void initSlot(String codeId, String userId) {
+        adSlot = new AdSlot.Builder()
+                .setCodeId(codeId)
+                .setSupportDeepLink(true)
+                .setRewardName("玫瑰") //奖励的名称
+                .setRewardAmount(2)  //奖励的数量
+                //模板广告需要设置期望个性化模板广告的大小,单位dp,激励视频场景，只要设置的值大于0即可
+                .setExpressViewAcceptedSize(500, 500)
+                .setUserID(userId)//用户id,必传参数
+                .setMediaExtra("media_extra") //附加参数，可选
+                .setOrientation(TTAdConstant.HORIZONTAL) //必填参数，期望视频的播放方向：TTAdConstant.HORIZONTAL 或 TTAdConstant.VERTICAL
+                .build();
     }
 
     private boolean mHasShowDownloadActive = false;
@@ -56,23 +75,12 @@ public class AdManage {
     public void loadAd(final String codeId, String userId, OnLoadAdListener listener) {
         this.onLoadAdListener = listener;
         //step4:创建广告请求参数AdSlot,具体参数含义参考文档
-        AdSlot adSlot;
 
-            //个性化模板广告需要传入期望广告view的宽、高，单位dp，
-            adSlot = new AdSlot.Builder()
-                    .setCodeId(codeId)
-                    .setSupportDeepLink(true)
-                    .setRewardName("玫瑰") //奖励的名称
-                    .setRewardAmount(2)  //奖励的数量
-                    //模板广告需要设置期望个性化模板广告的大小,单位dp,激励视频场景，只要设置的值大于0即可
-                    .setExpressViewAcceptedSize(500, 500)
-                    .setUserID(userId)//用户id,必传参数
-                    .setMediaExtra("media_extra") //附加参数，可选
-                    .setOrientation(TTAdConstant.HORIZONTAL) //必填参数，期望视频的播放方向：TTAdConstant.HORIZONTAL 或 TTAdConstant.VERTICAL
-                    .build();
+        //个性化模板广告需要传入期望广告view的宽、高，单位dp，
 
-        if (mTTAdNative == null) {
 
+        if (adSlot == null) {
+            initSlot(codeId, userId);
         }
         //step5:请求广告
         mTTAdNative.loadRewardVideoAd(adSlot, new TTAdNative.RewardVideoAdListener() {
@@ -138,41 +146,6 @@ public class AdManage {
                         if (onLoadAdListener != null) {
                             onLoadAdListener.onVidioPlayComplete("-1");
                         }
-                    }
-                });
-                mttRewardVideoAd.setDownloadListener(new TTAppDownloadListener() {
-                    @Override
-                    public void onIdle() {
-                        mHasShowDownloadActive = false;
-                    }
-
-                    @Override
-                    public void onDownloadActive(long totalBytes, long currBytes, String fileName, String appName) {
-                        Log.d("DML", "onDownloadActive==totalBytes=" + totalBytes + ",currBytes=" + currBytes + ",fileName=" + fileName + ",appName=" + appName);
-
-                        if (!mHasShowDownloadActive) {
-                            mHasShowDownloadActive = true;
-                        }
-                    }
-
-                    @Override
-                    public void onDownloadPaused(long totalBytes, long currBytes, String fileName, String appName) {
-                        Log.d("DML", "onDownloadPaused===totalBytes=" + totalBytes + ",currBytes=" + currBytes + ",fileName=" + fileName + ",appName=" + appName);
-                    }
-
-                    @Override
-                    public void onDownloadFailed(long totalBytes, long currBytes, String fileName, String appName) {
-                        Log.d("DML", "onDownloadFailed==totalBytes=" + totalBytes + ",currBytes=" + currBytes + ",fileName=" + fileName + ",appName=" + appName);
-                    }
-
-                    @Override
-                    public void onDownloadFinished(long totalBytes, String fileName, String appName) {
-                        Log.d("DML", "onDownloadFinished==totalBytes=" + totalBytes + ",fileName=" + fileName + ",appName=" + appName);
-                    }
-
-                    @Override
-                    public void onInstalled(String fileName, String appName) {
-                        Log.d("DML", "onInstalled==" + ",fileName=" + fileName + ",appName=" + appName);
                     }
                 });
             }

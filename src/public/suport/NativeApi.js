@@ -33,7 +33,7 @@ load('public/suport/NativeApi', function () {
         getSignalStrength: function () {
             try {
                 if (cc.sys.OS_ANDROID === cc.sys.os) {
-                    return 'TODO'
+                    jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'getPhoneInfo', '(Ljava/lang/String;)V', "netInfo")
                 } else if (cc.sys.OS_IOS === cc.sys.os) {
                     return jsb.reflection.callStaticMethod('AppController', 'getSignalStrength')
                 }
@@ -45,7 +45,7 @@ load('public/suport/NativeApi', function () {
         getBatteryLevel: function () {
             try {
                 if (cc.sys.OS_ANDROID === cc.sys.os) {
-                    return 'TODO'
+                    jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'getPhoneInfo', '(Ljava/lang/String;)V', "batter")
                 } else if (cc.sys.OS_IOS === cc.sys.os) {
                     return jsb.reflection.callStaticMethod('AppController', 'getBatteryLevel')
                 }
@@ -104,7 +104,7 @@ load('public/suport/NativeApi', function () {
                 if (cc.sys.OS_ANDROID === cc.sys.os) {
                     jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'login', '(Ljava/lang/String;)V', "jpush")
                 } else if (cc.sys.OS_IOS === cc.sys.os) {
-                    jsb.reflection.callStaticMethod('AppController', 'JPushLoginWithMethod:showPhoneAlert:', "THIRD_LOGIN_RESULT",AppConfig.loginShowPhoneAlert)
+                    jsb.reflection.callStaticMethod('AppController', 'JPushLoginWithMethod:showPhoneAlert:', "THIRD_LOGIN_RESULT", AppConfig.loginShowPhoneAlert)
                 }
             } catch (e) {
                 this.HelloOC('oneCLickLogin throw: ' + JSON.stringify(e))
@@ -286,9 +286,11 @@ load('public/suport/NativeApi', function () {
 
                         xhr.open('GET', httpUrl)
                         xhr.onreadystatechange = function () {
-                            if (xhr.readyState === 4 && xhr.status === 200) {}
+                            if (xhr.readyState === 4 && xhr.status === 200) {
+                            }
                         }
-                        xhr.onerror = function () {}
+                        xhr.onerror = function () {
+                        }
                         xhr.send()
                     }
                 }
@@ -409,7 +411,7 @@ load('public/suport/NativeApi', function () {
                     let sharePath = writePath + fileName
                     jsb.reflection.callStaticMethod('AppController', 'WXShareIOSforImage:platform:', sharePath, platform)
                 }
-                
+
                 appInstance.gameAgent().httpGame().sharedCompleteTaskReq();
             } catch (e) {
                 NativeApi.HelloOC('shareImage throw: ' + JSON.stringify(e))
@@ -425,7 +427,7 @@ load('public/suport/NativeApi', function () {
                     let sharePath = writePath + thumbUrl
                     jsb.reflection.callStaticMethod('AppController', 'WXShareIOSforUrl:Title:Desc:image:platform:', url, title, description, sharePath, platform)
                 }
-                
+
                 appInstance.gameAgent().httpGame().sharedCompleteTaskReq();
             } catch (e) {
                 NativeApi.HelloOC('shareArticle throw: ' + JSON.stringify(e))

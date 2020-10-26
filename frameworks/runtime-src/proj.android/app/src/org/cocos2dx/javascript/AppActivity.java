@@ -3,15 +3,20 @@ package org.cocos2dx.javascript;
 import android.Manifest;
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.BroadcastReceiver;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.ConnectivityManager;
 import android.net.Uri;
+import android.net.wifi.WifiManager;
+import android.os.BatteryManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
@@ -19,11 +24,15 @@ import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.telephony.PhoneStateListener;
+import android.telephony.SignalStrength;
+import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 
+import org.cocos2dx.javascript.ui.main.MainActivity;
 import org.cocos2dx.javascript.ui.splash.activity.SplashActivity;
 import org.cocos2dx.lib.Cocos2dxActivity;
 import org.cocos2dx.lib.Cocos2dxHelper;
@@ -42,6 +51,7 @@ import com.deepsea.mua.core.utils.ToastUtils;
 import com.deepsea.mua.core.view.floatwindow.permission.PermissionUtil;
 import com.deepsea.mua.core.wxpay.WxPay;
 import com.deepsea.mua.core.wxpay.WxpayBroadcast;
+import com.deepsea.mua.stub.controller.OnlineController;
 import com.deepsea.mua.stub.dialog.AAlertDialog;
 import com.deepsea.mua.stub.entity.ChessLoginParam;
 import com.deepsea.mua.stub.entity.InstallParamVo;
@@ -65,14 +75,25 @@ import com.umeng.socialize.media.UMWeb;
 import com.uuzuche.lib_zxing.activity.CodeUtils;
 
 import java.io.File;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import cn.jiguang.verifysdk.api.AuthPageEventListener;
 import cn.jiguang.verifysdk.api.JVerificationInterface;
 import cn.jiguang.verifysdk.api.PreLoginListener;
 import cn.jiguang.verifysdk.api.RequestCallback;
 import cn.jiguang.verifysdk.api.VerifyListener;
+import rx.Observable;
+import rx.Subscription;
+import rx.schedulers.Schedulers;
+
+import static com.deepsea.mua.core.utils.NetWorkUtils.NetWorkType.NET_2_G;
+import static com.deepsea.mua.core.utils.NetWorkUtils.NetWorkType.NET_3_G;
+import static com.deepsea.mua.core.utils.NetWorkUtils.NetWorkType.NET_4_G;
+import static com.deepsea.mua.core.utils.NetWorkUtils.NetWorkType.UN_KNOWN;
+import static com.deepsea.mua.core.utils.NetWorkUtils.NetWorkType.WIFI;
 
 public class AppActivity extends Cocos2dxActivity {
 
@@ -80,22 +101,17 @@ public class AppActivity extends Cocos2dxActivity {
 
     private static WxPay mWxPay;
     private final String TAG = "AppActivity";
+    AdManage adManage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.setEnableVirtualButton(false);
         super.onCreate(savedInstanceState);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-
-        // Workaround in https://stackoverflow.com/questions/16283079/re-launch-of-activity-on-home-button-but-only-the-first-time/16447508
         if (!isTaskRoot()) {
-            // Android launched another instance of the root activity into an existing task
-            //  so just quietly finish and go away, dropping the user back into the activity
-            //  at the top of the stack (ie: the last state of this task)
-            // Don't need to finish it again since it's finished in super.onCreate .
             return;
         }
-        JVerificationInterface.preLogin(this, 1000, new PreLoginListener() {
+        JVerificationInterface.preLogin(this, 3000, new PreLoginListener() {
             @Override
             public void onResult(final int code, final String content) {
                 Log.d(TAG, "[" + code + "]message=" + content);
@@ -105,7 +121,11 @@ public class AppActivity extends Cocos2dxActivity {
         ccActivity = this;
         OpenInstall.getWakeUp(getIntent(), wakeUpAdapter);
 
+        initRewardConfig();
+
+
     }
+
 
     @Override
     protected void onNewIntent(Intent intent) {
@@ -336,6 +356,56 @@ public class AppActivity extends Cocos2dxActivity {
                 });
             }
         });
+    }
+
+    MyphoneStatListener MyListener = new MyphoneStatListener();
+    TelephonyManager tel;
+
+    public void getNetworkState() {
+        tel = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+        tel.listen(MyListener, PhoneStateListener.LISTEN_SIGNAL_STRENGTHS);
+    }
+
+
+    private class MyphoneStatListener extends PhoneStateListener {
+
+        //获取信号强度
+        @Override
+        public void onSignalStrengthsChanged(SignalStrength signalStrength) {
+            super.onSignalStrengthsChanged(signalStrength);
+            int netState = 0;//0没网 1wifi 2 phoneCard
+            int level = 0;//0-4  代表格子数
+            //获取网络类型
+            NetWorkUtils.NetWorkType netWorkType = NetWorkUtils.getNetWorkType(ccActivity.getBaseContext());
+            ToastUtils.showToast(netWorkType + "变化了");
+            switch (netWorkType) {
+                case WIFI:
+                    netState = 1;
+                    level = NetWorkUtils.dbmToLevel(NetWorkUtils.getWifiRssi(ccActivity), true);
+                    break;
+                case NET_2_G:
+                case NET_3_G:
+                case NET_4_G:
+                    netState = 2;
+                    String signalInfo = signalStrength.toString();
+                    String[] params = signalInfo.split(" ");
+                    int itemDbm = Integer.parseInt(params[9]);
+                    level = NetWorkUtils.dbmToLevel(itemDbm, false);
+                    break;
+                case UN_KNOWN:
+                    netState = 0;
+                    level = 0;
+                    break;
+            }
+            JSONObject result = new JSONObject();
+            try {
+                result.put("netState", netState);
+                result.put("level", level);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            RunJS_obj("deviceInfo", result.toString());
+        }
     }
 
     private WxpayBroadcast.WxpayReceiver mWxpayReceiver = new WxpayBroadcast.WxpayReceiver() {
@@ -606,24 +676,58 @@ public class AppActivity extends Cocos2dxActivity {
 //        }
     }
 
+    /**
+     * @param type netInfo --netInfo
+     */
     private static void operateGetphoneInfo(String type) {
         String info = "";
         switch (type) {
             case "imei":
                 info = NetWorkUtils.getImei(ccActivity);
+                ccActivity.RunJS("deviceInfo", info);
                 break;
             case "model":
                 info = android.os.Build.MODEL;
+                ccActivity.RunJS("deviceInfo", info);
                 break;
-            case "rssi":
-                info = NetWorkUtils.getWifiRssi(ccActivity);
-
+            case "netInfo":
+                ccActivity.getNetworkState();
+                break;
+            case "batter":
+                ccActivity.getBatteryCount();
                 break;
         }
 
-        ccActivity.RunJS("deviceInfo", info);
     }
 
+    private BatteryReceiver receiver = null;
+
+    public void getBatteryCount() {
+        receiver = new BatteryReceiver();
+        IntentFilter filter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
+        registerReceiver(receiver, filter);
+    }
+
+    public class BatteryReceiver extends BroadcastReceiver {
+
+        @Override
+        public void onReceive(Context arg0, Intent arg1) {
+            // TODO Auto-generated method stub
+            int current = arg1.getExtras().getInt("level");//
+            int total = arg1.getExtras().getInt("scale");//
+            int percent = current * 100 / total;
+            Log.i("battery", "battery " + percent);
+            JSONObject result = new JSONObject();
+            try {
+                result.put("battery", percent);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            RunJS_obj("deviceInfo", result.toString());
+
+        }
+
+    }
 
     /**
      * 分享-图片
@@ -694,12 +798,13 @@ public class AppActivity extends Cocos2dxActivity {
         ccActivity.runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                AdManage adManage = new AdManage();
-                adManage.init(ccActivity);
-                adManage.loadAd("945477184", userId, new AdManage.OnLoadAdListener() {
+                if (ccActivity.adManage == null) {
+                    ccActivity.initRewardConfig();
+                }
+                ccActivity.adManage.loadAd("945477184", userId, new AdManage.OnLoadAdListener() {
                     @Override
                     public void onRewardVideoCached() {
-                        adManage.playAd();
+                        ccActivity.adManage.playAd();
                     }
 
                     @Override
@@ -711,6 +816,11 @@ public class AppActivity extends Cocos2dxActivity {
         });
 
 
+    }
+
+    private void initRewardConfig() {
+        adManage = AdManage.getInstance();
+        adManage.init(ccActivity);
     }
 
 
@@ -729,43 +839,7 @@ public class AppActivity extends Cocos2dxActivity {
     public static void getInvitationCode(String url, String uid) {
         Log.d("inviteCodeCallback", "url:" + url + ";uid" + uid);
         ccActivity.invireUrl = url;
-        String permissionStr = Manifest.permission.WRITE_EXTERNAL_STORAGE;
-        String[] permission = new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE};
         operateGetInvitationCode(ccActivity.invireUrl, ccActivity.uid);
-
-//
-//        boolean hasPermission = PermissionUtil.hasSelfPermission(ccActivity, permissionStr);
-
-
-//        if (hasPermission) {
-//            operateGetInvitationCode(url, uid);
-//        } else {
-//        com.deepsea.mua.stub.permission.PermissionUtil.request(ccActivity, permission, new PermissionCallback() {
-//            @Override
-//            public void onPermissionGranted() {
-//                Log.d("inviteCodeCallback", "onPermissionGranted");
-//                ccActivity.runOnUiThread(new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        operateGetInvitationCode(ccActivity.invireUrl, ccActivity.uid);
-//                    }
-//                });
-//
-//
-//            }
-//
-//            @Override
-//            public void shouldShowRational(String[] rationalPermissons, boolean before) {
-//                Log.d("inviteCodeCallback", "shouldShowRational");
-//                ActivityCompat.requestPermissions(ccActivity, new String[]{permissionStr}, request_code_invite);
-//            }
-//
-//            @Override
-//            public void onPermissonReject(String[] rejectPermissons) {
-//                showPermissionSettingDialog(1);
-//            }
-//        });
-//        }
     }
 
     private static void operateGetInvitationCode(String url, String uid) {
@@ -844,6 +918,7 @@ public class AppActivity extends Cocos2dxActivity {
         JVerificationInterface.clearPreLoginCache();
         unregisterWxpayResult();
         wakeUpAdapter = null;
+        tel.listen(MyListener, PhoneStateListener.LISTEN_NONE);
     }
 
 

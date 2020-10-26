@@ -4093,17 +4093,17 @@
                             },
                             "PreSize": {
                               "X": 0.8,
-                              "Y": 0.2193
+                              "Y": 0.2456
                             },
                             "LeftMargin": 11.944,
                             "RightMargin": 10.056,
-                            "TopMargin": 136.2935,
-                            "BottomMargin": -47.2935,
+                            "TopMargin": 134.7935,
+                            "BottomMargin": -48.7935,
                             "Tag": 458,
                             "ActionTag": -653928573,
                             "Size": {
                               "X": 88.0,
-                              "Y": 25.0
+                              "Y": 28.0
                             },
                             "Name": "awardsVal",
                             "ctype": "TextObjectData"
@@ -4455,17 +4455,17 @@
                             },
                             "PreSize": {
                               "X": 0.8,
-                              "Y": 0.2193
+                              "Y": 0.2456
                             },
                             "LeftMargin": 9.0707,
                             "RightMargin": 12.9293,
-                            "TopMargin": 130.5495,
-                            "BottomMargin": -41.5495,
+                            "TopMargin": 129.0495,
+                            "BottomMargin": -43.0495,
                             "Tag": 522,
                             "ActionTag": 730597150,
                             "Size": {
                               "X": 88.0,
-                              "Y": 25.0
+                              "Y": 28.0
                             },
                             "Name": "awardsVal",
                             "ctype": "TextObjectData"
@@ -4604,17 +4604,17 @@
                             },
                             "PreSize": {
                               "X": 0.8,
-                              "Y": 0.2193
+                              "Y": 0.2456
                             },
                             "LeftMargin": 9.0707,
                             "RightMargin": 12.9293,
-                            "TopMargin": 130.5495,
-                            "BottomMargin": -41.5495,
+                            "TopMargin": 129.0495,
+                            "BottomMargin": -43.0495,
                             "Tag": 74,
                             "ActionTag": 968731017,
                             "Size": {
                               "X": 88.0,
-                              "Y": 25.0
+                              "Y": 28.0
                             },
                             "Name": "awardsVal",
                             "ctype": "TextObjectData"
@@ -4966,17 +4966,17 @@
                             },
                             "PreSize": {
                               "X": 0.8,
-                              "Y": 0.2193
+                              "Y": 0.2456
                             },
                             "LeftMargin": 9.0707,
                             "RightMargin": 12.9293,
-                            "TopMargin": 130.5495,
-                            "BottomMargin": -41.5495,
+                            "TopMargin": 129.0495,
+                            "BottomMargin": -43.0495,
                             "Tag": 81,
                             "ActionTag": -1800393366,
                             "Size": {
                               "X": 88.0,
-                              "Y": 25.0
+                              "Y": 28.0
                             },
                             "Name": "awardsVal",
                             "ctype": "TextObjectData"
@@ -5115,17 +5115,17 @@
                             },
                             "PreSize": {
                               "X": 0.8,
-                              "Y": 0.2193
+                              "Y": 0.2456
                             },
                             "LeftMargin": 9.0707,
                             "RightMargin": 12.9293,
-                            "TopMargin": 130.5495,
-                            "BottomMargin": -41.5495,
+                            "TopMargin": 129.0495,
+                            "BottomMargin": -43.0495,
                             "Tag": 84,
                             "ActionTag": 1296065028,
                             "Size": {
                               "X": 88.0,
-                              "Y": 25.0
+                              "Y": 28.0
                             },
                             "Name": "awardsVal",
                             "ctype": "TextObjectData"
@@ -5264,17 +5264,17 @@
                             },
                             "PreSize": {
                               "X": 0.8,
-                              "Y": 0.2193
+                              "Y": 0.2456
                             },
                             "LeftMargin": 9.0707,
                             "RightMargin": 12.9293,
-                            "TopMargin": 130.5495,
-                            "BottomMargin": -41.5495,
+                            "TopMargin": 129.0495,
+                            "BottomMargin": -43.0495,
                             "Tag": 87,
                             "ActionTag": 903498122,
                             "Size": {
                               "X": 88.0,
-                              "Y": 25.0
+                              "Y": 28.0
                             },
                             "Name": "awardsVal",
                             "ctype": "TextObjectData"

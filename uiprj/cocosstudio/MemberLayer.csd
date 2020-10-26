@@ -511,14 +511,14 @@
                         <EndColor A="255" R="255" G="255" B="255" />
                         <ColorVector ScaleY="1.0000" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="dueReminderText" ActionTag="-2086777974" Tag="283" IconVisible="False" LeftMargin="549.5465" RightMargin="160.4535" TopMargin="621.9617" BottomMargin="78.0383" IsCustomSize="True" FontSize="20" LabelText="尊敬的xxVIP会员，您的VIP有效时限距离到期还有：xxxxx天xx时" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                        <Size X="570.0000" Y="20.0000" />
+                      <AbstractNodeData Name="dueReminderText" ActionTag="-2086777974" Tag="283" IconVisible="False" LeftMargin="549.5465" RightMargin="160.4535" TopMargin="620.4617" BottomMargin="76.5383" IsCustomSize="True" FontSize="20" LabelText="尊敬的xxVIP会员，您的VIP有效时限距离到期还有：xxxxx天xx时" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="570.0000" Y="23.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="834.5465" Y="88.0383" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="183" G="100" B="30" />
                         <PrePosition X="0.6520" Y="0.1223" />
-                        <PreSize X="0.4453" Y="0.0278" />
+                        <PreSize X="0.4453" Y="0.0319" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>

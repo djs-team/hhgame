@@ -21,8 +21,10 @@ load('game/ui/layer/coingame/CoinGameLayer', function () {
         RES_BINDING: function () {
             return {
                 'topPnl/closeBtn': { onClicked: this.onCloseClick },
-                'topPnl/coinPnl': { },
-                'topPnl/diamondsPnl': { },
+                'topPnl/coinPnl': { onClicked: this.onCoinShopClick},
+                'topPnl/coinPnl/coinAddBtn': {onClicked: this.onCoinShopClick},
+                'topPnl/diamondsPnl': { onClicked: this.onCoinShopClick},
+                'topPnl/diamondsPnl/diamondsAddBtn': {onClicked: this.onCoinShopClick},
                 'bmPnl/startQuickBtn': { onClicked: this.onStartQuickBtnClick },
                 'bmPnl/startQuickBtn/StartQuickName': {  },
                 'leftPnl/PeopleBtn2': { onClicked: this.onPeopleClick },
@@ -33,6 +35,11 @@ load('game/ui/layer/coingame/CoinGameLayer', function () {
         ctor: function () {
             this._super(ResConfig.View.CoinGameLayer)
             this.registerMediator(new CoinGameMdt(this))
+        },
+
+        onCoinShopClick: function (sender) {
+            GameUtil.delayBtn(sender);
+            appInstance.gameAgent().addPopUI(ResConfig.Ui.CoinShopLayer)
         },
 
         onEnter: function () {

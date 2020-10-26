@@ -239,7 +239,7 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="contentCell" ActionTag="1681996422" Tag="26" IconVisible="False" TopMargin="259.2500" TouchEnable="True" ClipAble="False" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="contentCell" ActionTag="1681996422" Tag="26" IconVisible="False" TopMargin="259.2500" TouchEnable="True" ClipAble="False" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="1280.0000" Y="460.7500" />
                 <Children>
                   <AbstractNodeData Name="titleImg" ActionTag="-2127985908" Tag="27" IconVisible="False" LeftMargin="436.0000" RightMargin="436.0000" TopMargin="25.2100" BottomMargin="340.5400" Scale9Enable="True" LeftEage="99" RightEage="99" TopEage="31" BottomEage="31" Scale9OriginX="99" Scale9OriginY="31" Scale9Width="102" Scale9Height="33" ctype="ImageViewObjectData">

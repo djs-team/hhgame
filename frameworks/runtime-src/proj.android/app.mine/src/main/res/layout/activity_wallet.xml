@@ -22,14 +22,15 @@
                 android:background="@drawable/bg_index_top">
 
             </RelativeLayout>
+
             <com.deepsea.mua.stub.view.TitleBar
                 android:id="@+id/title_bar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:title="我的钱包"
                 app:backgroundRes="@color/transparent"
                 app:leftImgRes="@drawable/ic_back"
-                app:titleColor="@color/white"/>
+                app:title="我的钱包"
+                app:titleColor="@color/white" />
 
             <android.support.constraint.ConstraintLayout
                 android:id="@+id/md_layout"
@@ -284,13 +285,14 @@
 
                 </android.support.constraint.ConstraintLayout>
             </android.support.v7.widget.CardView>
+
             <android.support.v7.widget.CardView
-                android:layout_marginTop="12dp"
                 android:id="@+id/redpakage_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/diamond_layout"
                 android:layout_marginLeft="15dp"
+                android:layout_marginTop="12dp"
                 android:layout_marginRight="15dp"
                 app:cardCornerRadius="15dp"
                 app:cardElevation="21dp">

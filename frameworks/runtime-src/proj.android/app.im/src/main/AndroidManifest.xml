@@ -4,7 +4,6 @@
     <application>
         <activity
             android:name="com.deepsea.mua.app.im.ui.ChatActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.deepsea.mua.im.ui.EaseShowBigImageActivity"
@@ -25,13 +24,12 @@
         <activity android:name="com.deepsea.mua.app.im.mua.ChatSettingActivity" />
 
         <activity
-            android:name=".mua.FriendAddActivity"
-            android:launchMode="singleTask">
+            android:name=".mua.FriendAddActivity">
 
         </activity>
         <activity
             android:name=".mua.FriendRequestActivity"
-            android:launchMode="singleTask" />
+           />
         <!-- 开机自启动服务 -->
         <receiver android:name="com.deepsea.mua.app.im.receiver.StartServiceReceiver">
             <intent-filter android:priority="1000">

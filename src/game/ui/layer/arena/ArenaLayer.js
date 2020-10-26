@@ -22,11 +22,14 @@ load('game/ui/layer/arena/ArenaLayer', function () {
         },
         RES_BINDING: function () {
             return {
+                'commonPgPnl': { },
+                'pnl': { },
                 'pnl/closeBtn': { onClicked: this.onCloseBtnClick },
                 'pnl/leftPnl': { },
                 'pnl/leftCell': { },
                 'pnl/areanListView': { },
                 'pnl/areanCell': { },
+                'pnl/recordPnl': { onClicked: this.onAwardBtnClick },
                 'pupupPnl': { },
                 'pupupPnl/popupCloseBtn': { onClicked: this.onHideBtnClick },
                 'pupupPnl/leftBtnPnl/rewardsBtn': { onClicked: this.onMatchDetailBtnClick },
@@ -35,7 +38,10 @@ load('game/ui/layer/arena/ArenaLayer', function () {
                 'pupupPnl/rewardsPnl/rewardsListView': { },
                 'pupupPnl/rewardsPnl/rewardsCell': { },
                 'pupupPnl/formatPnl': { },
-
+                'myAwardPnl': { },
+                'myAwardPnl/awardCell': { },
+                'myAwardPnl/awardList': { },
+                'myAwardPnl/awardCloseBtn': { onClicked: this.onAwardCloseBtnClick},
             }
         },
         onCreate: function () {
@@ -49,14 +55,107 @@ load('game/ui/layer/arena/ArenaLayer', function () {
         onExit: function () {
             this._super()
         },
+        onAwardBtnClick: function (sender) {
+            GameUtil.delayBtn(sender);
+            this.commonPgPnl.setVisible(false)
+            this.pnl.setVisible(false)
+            this.pupupPnl.setVisible(false)
+            this.myAwardPnl.setVisible(true)
+            this.awardCell.setVisible(false)
+            let msg = {'type':6}
+            appInstance.gameAgent().httpGame().FUKAMATERIALOGReq(msg)
+        },
+        onAwardCloseBtnClick: function () {
+            this.commonPgPnl.setVisible(true)
+            this.pnl.setVisible(true)
+            this.pupupPnl.setVisible(false)
+            this.myAwardPnl.setVisible(false)
+        },
         initView: function () {
+            this.awardList.setScrollBarEnabled(false)
+            this.commonPgPnl.setVisible(true)
+            this.pnl.setVisible(true)
             this.areanListView.setScrollBarEnabled(false)
             this.rewardsListView.setScrollBarEnabled(false)
             this.pupupPnl.setVisible(false)
+            this.myAwardPnl.setVisible(false)
             this.areanCell.setVisible(false)
             this.rewardsCell.setVisible(false)
             this.leftCell.setVisible(false)
 
+        },
+        onUpdateAwardList: function (msg) {
+            this.awardList.removeAllChildren()
+            let goodInfo = msg.playerGoodsLogList
+            let length = goodInfo.length
+            for (let i=0; i<length; i++) {
+                this.onUpdateAwardCellView(goodInfo[i], i);
+            }
+
+        },
+        onUpdateAwardCellView: function (data, i) {
+            let cell = this.awardCell.clone();
+            cell.setVisible(true)
+            this.awardList.addChild(cell)
+            if (i%2==0) {
+                cell.getChildByName('bgPic_1').setVisible(true)
+                cell.getChildByName('bgPic_2').setVisible(false)
+            } else {
+                cell.getChildByName('bgPic_1').setVisible(false)
+                cell.getChildByName('bgPic_2').setVisible(true)
+            }
+            let size = {
+                height : 56.00,
+                width : 56.00
+            }
+            this.onLoadUrlImg(data.goodsUrl,size,cell.getChildByName('awardContentPnl').getChildByName('awardImg'))
+            cell.getChildByName('awardContentPnl').getChildByName('awardImg').getChildByName('awardText').setString(data.goodsName);
+            cell.getChildByName('timeText').setString(this.onFormatDateTime(data.createTime));
+            switch (data.status) {
+                case 0:
+                    cell.getChildByName('statusPnl').getChildByName('Text_56').setVisible(false)
+                    cell.getChildByName('statusPnl').getChildByName('Button_13').setVisible(true)
+                    cell.getChildByName('statusPnl').getChildByName('yunDanPnl').setVisible(false)
+                    cell.getChildByName('statusPnl').getChildByName('Button_13').addClickEventListener(function (sender,dt) {
+                        GameUtil.delayBtn(sender);
+
+                    }.bind(this))
+                    break
+                case 1:
+                    cell.getChildByName('statusPnl').getChildByName('Text_56').setVisible(true)
+                    cell.getChildByName('statusPnl').getChildByName('Text_56').setString('受理中')
+                    cell.getChildByName('statusPnl').getChildByName('Button_13').setVisible(false)
+                    cell.getChildByName('statusPnl').getChildByName('yunDanPnl').setVisible(false)
+                    break
+                case 2:
+                    cell.getChildByName('statusPnl').getChildByName('Text_56').setVisible(true)
+                    cell.getChildByName('statusPnl').getChildByName('Text_56').setString('已完成')
+                    cell.getChildByName('statusPnl').getChildByName('Button_13').setVisible(false)
+                    cell.getChildByName('statusPnl').getChildByName('yunDanPnl').setVisible(true)
+                    let expressCode = '';
+                    for (let j=0; j<8; j++) {
+                        expressCode = expressCode+data.expressCode[j]
+                    }
+                    expressCode = expressCode+'...';
+                    cell.getChildByName('statusPnl').getChildByName('yunDanPnl').getChildByName('Text_58_0').setString(expressCode)
+                    cell.getChildByName('statusPnl').getChildByName('yunDanPnl').getChildByName('Button_13_0').addClickEventListener(function (sender,dt) {
+                        appInstance.nativeApi().copy(data.expressCode)
+                    }.bind(this))
+                    break
+                default:
+                    break
+            }
+        },
+        onLoadUrlImg: function (url,size,cell) {
+            cc.loader.loadImg(url, { isCrossOrigin: false },function(err,texture){
+                if (!err && texture) {
+                    let sp = new cc.Sprite(texture)
+                    sp.setContentSize(size)
+                    sp.setPosition(cc.p(size.width/2,size.height/2))
+                    //sp.setRotationX(-90)
+                    cell.addChild(sp)
+                }
+            })
         },
         initData: function () {
 
@@ -334,11 +433,25 @@ load('game/ui/layer/arena/ArenaLayer', function () {
         },
 
         onFormatSaiZhiData: function (startTime,format) {
-            let forMatLength = 17
+            let forMatLength = 34
             format = GameUtil.onForMatTxt(format,forMatLength)
             this.formatPnl.getChildByName('startTime').setString(startTime)
             this.formatPnl.getChildByName('formatText').setString(format)
         },
+
+        onFormatDateTime: function (timestamp) {
+
+            let d = new Date(parseInt(timestamp));
+            let month = (d.getMonth() + 1) < 10 ? (0 + "" + (d.getMonth() + 1)) : (d.getMonth() + 1);
+            let day = d.getDate() < 10 ? (0 + "" + d.getDate()) : d.getDate();
+            let hour = d.getHours() < 10 ? (0 + "" + d.getHours()) : d.getHours();
+            let minute = d.getMinutes() < 10 ? (0 + "" + d.getMinutes()) : d.getMinutes();
+            let second = d.getSeconds() < 10 ? (0 + "" + d.getSeconds()) : d.getSeconds();
+            let dateString = d.getFullYear() + "-" + month + "-" + day + "\n" + hour + ":" + minute
+
+            return dateString;
+
+        }
 
     })
     return matchLayer

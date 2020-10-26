@@ -40,6 +40,8 @@ load('module/mahjong/ui/DeskCardLayer', function () {
             this._deckCardLen = CardConfig[tData.pPlayMode].deckCardLen
             this._allCardNum = CardConfig[tData.pPlayMode].allCardNum
 
+            this._movingCard = false
+
             this._pMySeatID = pData.pMySeatID
 
             this._deckCardTag  = 1
@@ -80,13 +82,93 @@ load('module/mahjong/ui/DeskCardLayer', function () {
                     }
                     if (i === 0) {
                         this._selfHandCard.push(card)
-                        let cardBg = card.getChildByName('CardBg')
-                        cardBg.addClickEventListener(function(sender, et) {
-                            this.onSelfCardClick(sender)
-                        }.bind(this))
+                        card._beginPos = card.getPosition()
+                        // let cardBg = card.getChildByName('CardBg')
+                        // cardBg.addClickEventListener(function(sender, et) {
+                        //     this.onSelfCardClick(sender)
+                        // }.bind(this))
                     }
                 }
             }
+
+            this._handCardSize = this._selfHandCard[0].getContentSize()
+
+            this._handCardNd[0].addTouchEventListener(function(sender,et) {
+                this.onSelfCardTouch(sender,et)
+            }.bind(this), this)
+        },
+
+        onSelfCardTouch: function (sender, et) {
+            switch (et) {
+                case ccui.Widget.TOUCH_BEGAN:
+                    let beginPos = sender.getTouchBeganPosition()
+                    this._movingCard = this.getTouchCard(sender.convertToNodeSpace(beginPos))
+                    if (this._movingCard && this._movingCard._isCanPut) {
+                        return true
+                    } else {
+                        return false
+                    }
+                case ccui.Widget.TOUCH_MOVED:
+                    if (this._movingCard && this._movingCard._isCanPut) {
+                        this._movingCard.setPosition(sender.convertToNodeSpace(sender.getTouchMovePosition()))
+                    }
+                    break;
+                case ccui.Widget.TOUCH_ENDED:
+                case ccui.Widget.TOUCH_CANCELED:
+                    if (this._movingCard && this._movingCard._isCanPut) {
+                        let isTouchOut = false
+                        let endPos = sender.convertToNodeSpace(sender.getTouchEndPosition())
+                        if (endPos.y - 20 > this._movingCard._beginPos.y) {
+                            isTouchOut = true
+                        }
+
+
+                        for (let i = 0; i < 14; ++i) {
+                            if (this._selfHandCard[i] !== this._movingCard) {
+                                this._selfHandCard[i].setPosition(this._selfHandCard[i]._beginPos)
+                                this._selfHandCard[i]._doubleClick = false
+                            }
+                        }
+                        if (this._movingCard._doubleClick || isTouchOut) {
+                            this._movingCard._doubleClick = false
+                            this._movingCard.setPosition(this._movingCard._beginPos)
+                            let pData = appInstance.dataManager().getPlayData()
+                            let tData = pData.tableData
+                            let pCurSeatID = tData.pCurSeatID
+                            if (pCurSeatID === this._pMySeatID && tData.pTStatus === TStatus.putCard ) {
+                                let msg = {}
+                                msg.nSeatID = this._pMySeatID
+                                msg.nCardColor = this._movingCard._cardInfo.nCardColor
+                                msg.nCardNumber = this._movingCard._cardInfo.nCardNumber
+
+                                appInstance.sendNotification(Event.prePutCard, this._movingCard._cardInfo)
+                                appInstance.gameAgent().tcpGame().putCardProto(msg)
+                                this._movingCard.setPosition(this._movingCard._beginPos)
+                            }
+                        } else {
+                            this._movingCard._doubleClick = true
+                            this._movingCard.setPosition(cc.p(this._movingCard._beginPos.x, this._movingCard._beginPos.y + 20))
+                        }
+                    } else {
+                        for (let i = 0; i < 14; ++i) {
+                            this._selfHandCard[i].setPosition(this._selfHandCard[i]._beginPos)
+                            this._selfHandCard[i]._doubleClick = false
+                        }
+                    }
+                    break;
+            }
+        },
+
+        getTouchCard: function (pos) {
+            for (let i = 0; i < 14; ++i) {
+                if (this._selfHandCard[i].isVisible()) {
+                    let tmpPos = this._selfHandCard[i].getPosition()
+                    if (Math.abs(pos.x - tmpPos.x) * 2 < this._handCardSize.width && Math.abs(pos.y - tmpPos.y) * 2 < this._handCardSize.height) {
+                        return this._selfHandCard[i]
+                    }
+                }
+            }
+            return false
         },
 
         runDirection: function (seatUI) {

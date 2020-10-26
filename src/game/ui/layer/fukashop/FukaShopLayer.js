@@ -817,6 +817,7 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
 
             this.onSetShowElementFunction(elementNameArray,flag)
 
+            this.goodDetailPageView.removeAllChildren()
             let data = sender._sendMsg
             for(let i = 0; i < data.upPictureUrls.length; i++){
 
@@ -1054,6 +1055,8 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
         onInitRobGoodsCell: function (data,goodsPnl,index,rowLength) {
 
             let goodsData = data[index]
+            if(!goodsData)
+                return
             let cell = this.robGoodsCell.clone()
             goodsPnl.addChild(cell)
 

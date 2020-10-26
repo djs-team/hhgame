@@ -65,9 +65,9 @@ load('module/mahjong/data/PlayData', function () {
 
     isMatch: function () {
       if (this.pMode === 1 || this.pMode === 2) {
-        return true
-      } else {
         return false
+      } else {
+        return true
       }
     },
 

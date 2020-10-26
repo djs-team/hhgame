@@ -72,7 +72,7 @@ load('game/ui/layer/arena/ArenaLayer', function () {
             this.pupupPnl.setVisible(false)
         },
 
-        onMatchDetailBtnClick: function () {
+        onMatchDetailBtnClick: function (sender) {
             if(sender == this.rewardsBtn)
                 this._currentPopupBtn = 'rewards'
             else

@@ -5,7 +5,7 @@
 load('game/config/GameConfig', function () {
     let GameConfig = {}
 
-    GameConfig.HeartBeatInterval = 10
+    GameConfig.HeartBeatInterval = 15
 
     GameConfig.propType_currency = 1//货币
     GameConfig.propType_role = 2//角色

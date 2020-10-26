@@ -148,9 +148,11 @@ load('module/mahjong/ui/DeskCardLayerMdt', function () {
 
             this.view.onePutCard(uiSeat, card)
 
-            if (pPutSeatID !== pData.pMySeatID) {
+            // if (pPutSeatID !== pData.pMySeatID) {
                 this.view.updateHandCard(uiSeat, players[pPutSeatID], pCurSeatID === pData.pMySeatID)
-            }
+            // } else {
+            //
+            // }
 
             appInstance.gameAgent().mjUtil().putCardSound(card)
         },
@@ -176,11 +178,12 @@ load('module/mahjong/ui/DeskCardLayerMdt', function () {
         InitCardProto: function () {
             let pData = appInstance.dataManager().getPlayData()
             let players = pData.players
+
             for (let k in players) {
                 let uiSeat = pData.seatId2UI(k)
-                players[k].showCards = []
                 this.view.updateHandCard(uiSeat,players[k])
             }
+            this.view.reBeginGame()
             let nDeckCardNum = pData.tableData.nDeckCardNum
             this.updateDeckCard(nDeckCardNum)
         },

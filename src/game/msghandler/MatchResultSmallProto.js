@@ -39,13 +39,14 @@ load('game/msghandler/MatchResultSmallProto', function () {
                 'pGameResultExtend'
             ]
             pData.saveTableData(msg,saveKey)
-            pData.isMatch = true
 
 
             let pPlayer = msg.pPlayer
             for (let i = 0; i < pPlayer.length; ++i) {
                 let player = pData.getPlayer(pPlayer[i].pSeatID)
                 global.mergeData(player, pPlayer[i])
+                player.pIsTing = false
+                player.pHosting = false
                 cc.log('=========player===========' + JSON.stringify(player))
             }
 

@@ -18,7 +18,6 @@ load('game/msghandler/GameResultProto', function () {
         handleMsg: function (msg) {
             this._super(msg)
             let pData = appInstance.dataManager().getPlayData()
-            pData.isMatch = false
 
             msg.pBaoCard = {
                 nCardColor: msg.pBaoCardColor,
@@ -46,6 +45,8 @@ load('game/msghandler/GameResultProto', function () {
             for (let i = 0; i < pPlayer.length; ++i) {
                 let player = pData.getPlayer(pPlayer[i].pSeatID)
                 global.mergeData(player, pPlayer[i])
+                player.pIsTing = false
+                player.pHosting = false
                 cc.log('=========player===========' + JSON.stringify(player))
             }
 

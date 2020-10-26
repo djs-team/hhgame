@@ -22,6 +22,7 @@ load('module/mahjong/ui/DeskTopLayerMdt', function () {
                 TableEvent.DrawCardProto,
                 TableEvent.TableHostingProto,
                 TableEvent.GameResultProto,
+                TableEvent.PlayerSelectProto,
             ]
         },
         handleNotification: function (notification) {

@@ -265,7 +265,7 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="BaoCard" ActionTag="-961882062" Tag="462" IconVisible="False" LeftMargin="1138.9976" RightMargin="67.0024" TopMargin="533.0397" BottomMargin="79.9603" TouchEnable="True" LeftEage="24" RightEage="24" TopEage="35" BottomEage="35" Scale9OriginX="24" Scale9OriginY="35" Scale9Width="26" Scale9Height="37" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="BaoCard" ActionTag="-961882062" Tag="462" IconVisible="False" LeftMargin="1060.0000" RightMargin="146.0000" TopMargin="533.0397" BottomMargin="79.9603" TouchEnable="True" LeftEage="24" RightEage="24" TopEage="35" BottomEage="35" Scale9OriginX="24" Scale9OriginY="35" Scale9Width="26" Scale9Height="37" ctype="ImageViewObjectData">
                 <Size X="74.0000" Y="107.0000" />
                 <Children>
                   <AbstractNodeData Name="CardValue" ActionTag="-1407692072" Tag="463" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="-1.0000" RightMargin="-1.0000" TopMargin="8.8500" BottomMargin="-1.8500" LeftEage="24" RightEage="24" TopEage="35" BottomEage="35" Scale9OriginX="24" Scale9OriginY="35" Scale9Width="28" Scale9Height="30" ctype="ImageViewObjectData">
@@ -290,10 +290,32 @@
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="1175.9976" Y="133.4603" />
+                <Position X="1097.0000" Y="133.4603" />
                 <Scale ScaleX="1.2000" ScaleY="1.2000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.9187" Y="0.1854" />
+                <PrePosition X="0.8570" Y="0.1854" />
+                <PreSize X="0.0578" Y="0.1486" />
+                <FileData Type="Normal" Path="card/ground/hand/self_hand_0.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="HuCard" ActionTag="360989162" Tag="202" IconVisible="False" LeftMargin="1175.0000" RightMargin="31.0000" TopMargin="533.0400" BottomMargin="79.9600" TouchEnable="True" LeftEage="24" RightEage="24" TopEage="35" BottomEage="35" Scale9OriginX="24" Scale9OriginY="35" Scale9Width="26" Scale9Height="37" ctype="ImageViewObjectData">
+                <Size X="74.0000" Y="107.0000" />
+                <Children>
+                  <AbstractNodeData Name="CardValue" ActionTag="-1875488399" Tag="203" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="-1.0000" RightMargin="-1.0000" TopMargin="8.8500" BottomMargin="-1.8500" LeftEage="24" RightEage="24" TopEage="35" BottomEage="35" Scale9OriginX="24" Scale9OriginY="35" Scale9Width="28" Scale9Height="30" ctype="ImageViewObjectData">
+                    <Size X="76.0000" Y="100.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="37.0000" Y="48.1500" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5000" Y="0.4500" />
+                    <PreSize X="1.0270" Y="0.9346" />
+                    <FileData Type="Normal" Path="card/value/selfhand/feng_hand_1.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="1212.0000" Y="133.4600" />
+                <Scale ScaleX="1.2000" ScaleY="1.2000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.9469" Y="0.1854" />
                 <PreSize X="0.0578" Y="0.1486" />
                 <FileData Type="Normal" Path="card/ground/hand/self_hand_0.png" Plist="" />
               </AbstractNodeData>

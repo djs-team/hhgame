@@ -21,7 +21,7 @@
                     <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="namePnl" ActionTag="627609620" Tag="24" IconVisible="False" LeftMargin="50.2900" RightMargin="-250.2900" TopMargin="-46.2100" BottomMargin="-53.7900" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+                  <AbstractNodeData Name="namePnl" ActionTag="627609620" Tag="24" IconVisible="False" LeftMargin="50.2900" RightMargin="-250.2900" TopMargin="-46.2100" BottomMargin="-53.7900" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="200.0000" Y="100.0000" />
                     <Children>
                       <AbstractNodeData Name="nameBg" ActionTag="1398343822" Tag="366" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="15.5000" RightMargin="15.5000" TopMargin="11.5000" BottomMargin="11.5000" LeftEage="55" RightEage="55" TopEage="25" BottomEage="25" Scale9OriginX="55" Scale9OriginY="25" Scale9Width="59" Scale9Height="27" ctype="ImageViewObjectData">
@@ -128,10 +128,10 @@
               <AbstractNodeData Name="headNd1" ActionTag="1064805300" Tag="371" IconVisible="True" LeftMargin="1196.9490" RightMargin="83.0510" TopMargin="220.0000" BottomMargin="500.0000" ctype="SingleNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <Children>
-                  <AbstractNodeData Name="AniNd" ActionTag="760250958" Tag="18" IconVisible="True" TopMargin="360.0000" BottomMargin="-360.0000" ctype="SingleNodeObjectData">
+                  <AbstractNodeData Name="AniNd" ActionTag="760250958" Tag="18" IconVisible="True" TopMargin="300.0000" BottomMargin="-300.0000" ctype="SingleNodeObjectData">
                     <Size X="0.0000" Y="0.0000" />
                     <AnchorPoint />
-                    <Position Y="-360.0000" />
+                    <Position Y="-300.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />

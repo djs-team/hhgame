@@ -76,7 +76,7 @@ load('module/mahjong/ui/DeskHeadLayer', function () {
 
             let nameBg = playerNd.getChildByName('namePnl').getChildByName('nameBg')
             let nameTxt = nameBg.getChildByName('nameTxt')
-            nameTxt.setString(player.nickName)
+            nameTxt.setString(global.cropStr(player.nickName, 5, '...'))
 
             let ani = appInstance.gameAgent().gameUtil().getAni(AniPlayer[player.pRole])
             ani.setScale(0.6)

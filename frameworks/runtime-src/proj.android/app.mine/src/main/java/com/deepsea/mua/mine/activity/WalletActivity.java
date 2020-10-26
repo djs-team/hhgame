@@ -130,7 +130,7 @@ public class WalletActivity extends BaseActivity<ActivityWalletBinding> {
             initCash(true);
         });
         //红包收款账号
-        subscribeClick(mBinding.tvReceivingAccount, o -> {
+        subscribeClick(mBinding.tvRedpakageReceivingAccount, o -> {
             needRefresh = true;
             Intent intent = new Intent(mContext, CollectionAccountSettingActivity.class);
             startActivityForResult(intent, requestCode_receive_account);

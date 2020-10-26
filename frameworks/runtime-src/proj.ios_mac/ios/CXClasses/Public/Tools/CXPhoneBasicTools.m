@@ -145,11 +145,12 @@
             network = @"WWAN";
             break;
         default:
+            network = @"NONE";
             break;
     }
-    if ([network isEqualToString:@""]) {
-        network = @"NO DISPLAY";
-    }
+//    if ([network isEqualToString:@""]) {
+//        network = @"NO DISPLAY";
+//    }
     return network;
 }
 

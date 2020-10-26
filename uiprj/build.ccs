@@ -919,6 +919,8 @@
         <Project Name="TipsDialog.csd" Type="Layer" />
         <Project Name="TipsFloat.csd" Type="Layer" />
         <Project Name="TurnTableLayer.csd" Type="Layer" />
+        <Image Name="useragree_1.png" />
+        <Image Name="useragree_3.png" />
       </RootFolder>
     </Group>
   </SolutionFolder>

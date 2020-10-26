@@ -516,7 +516,7 @@
                   },
                   {
                     "IsCustomSize": true,
-                    "FontSize": 24,
+                    "FontSize": 22,
                     "LabelText": "恭喜获得：金币 x 3,钻石 x 3, 话费卡 x 1 ",
                     "HorizontalAlignmentType": "HT_Center",
                     "VerticalAlignmentType": "VT_Center",
@@ -536,8 +536,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 0.0,
-                      "Y": -138.0
+                      "X": 6.751,
+                      "Y": -154.2005
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -557,15 +557,15 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": -240.0,
-                    "RightMargin": -240.0,
-                    "TopMargin": 126.0,
-                    "BottomMargin": -150.0,
+                    "LeftMargin": -393.249,
+                    "RightMargin": -406.751,
+                    "TopMargin": 104.2005,
+                    "BottomMargin": -204.2005,
                     "Tag": 81,
                     "ActionTag": 1383321362,
                     "Size": {
-                      "X": 480.0,
-                      "Y": 24.0
+                      "X": 800.0,
+                      "Y": 100.0
                     },
                     "Name": "rewardTxt",
                     "ctype": "TextObjectData"

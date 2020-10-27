@@ -37,6 +37,7 @@ load('module/mahjong/ui/DeskResultLayer', function () {
                 'bmPnl/InviteFriendBtn': { onClicked: this.onInviteFriendBtnClick },
                 'bmPnl/NextGameBtn': { onClicked: this.onNextGameBtnClick },
                 'bmPnl/BaoCard': {  },
+                'bmPnl/HuCard': {  },
                 'bmPnl/CardCell': {  },
                 'bmPnl/InfoCell': {  },
             }
@@ -46,13 +47,11 @@ load('module/mahjong/ui/DeskResultLayer', function () {
             this._super(ResConfig.View.DeskResultLayer)
             this._msg = msg
             this.registerMediator(new DeskResultLayerMdt(this))
-            cc.log('=======DeskResultLayer==========' + JSON.stringify(msg))
         },
 
         onCloseBtnClick: function () {
             if (this._isMatch) {
                 if (this._msg && this._msg.pIsOver === 0) {
-                    cc.log('=============发送准备消息')
                     appInstance.gameAgent().tcpGame().matchReady()
                 }
                 appInstance.uiManager().removeUI(this)
@@ -115,6 +114,7 @@ load('module/mahjong/ui/DeskResultLayer', function () {
             }
             this.onInfoBtnClick(initInfo)
 
+
             let baoCardInfo = this._pData.tableData.pBaoCard
             if (baoCardInfo.nCardNumber || baoCardInfo.nCardColor) {
                 let baoImg = appInstance.gameAgent().mjUtil().getCardValueImg(0, 'selfhand', baoCardInfo)
@@ -125,6 +125,16 @@ load('module/mahjong/ui/DeskResultLayer', function () {
             }
 
 
+            let huCardInfo = this._pData.tableData.pHuCard
+            if (huCardInfo.nCardNumber || huCardInfo.nCardColor) {
+                let HuImg = appInstance.gameAgent().mjUtil().getCardValueImg(0, 'selfhand', huCardInfo)
+                this.HuCard.getChildByName('CardValue').loadTexture(HuImg)
+                this.HuCard.setVisible(true)
+            } else {
+                this.HuCard.setVisible(false)
+            }
+
+
 
 
 
@@ -132,13 +142,10 @@ load('module/mahjong/ui/DeskResultLayer', function () {
                 this.BackHallBtn.setVisible(false)
                 this.InviteFriendBtn.setVisible(false)
                 this.NextGameBtn.setVisible(false)
-                cc.log('===========msg============' + JSON.stringify(this._msg))
                 if (this._msg) {
-                    cc.log('=============this._msg.pIsOver==========' + this._msg.pIsOver)
                     if (this._msg.pIsOver === 1) {
                         appInstance.sendNotification(TableEvent.clearTableView)
                     } else {
-                        cc.log('===========================清理其他数据===============')
                         appInstance.sendNotification(TableEvent.clearTableGaming)
                     }
                 }
@@ -158,6 +165,8 @@ load('module/mahjong/ui/DeskResultLayer', function () {
         },
 
         initPlayerInfo: function (index, pinfo) {
+
+
             let infoCell = this.InfoCell.clone()
             this._playerInfoCell[index] = infoCell
             this.bmPnl.addChild(infoCell)

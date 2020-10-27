@@ -2826,33 +2826,33 @@
 		00614A8B250B94C800BB7620 /* GameMessageListItemView */ = {
 			isa = PBXGroup;
 			children = (
+				00614A91250B94C800BB7620 /* GameMessageListView.h */,
+				00614AA0250B94C800BB7620 /* GameMessageListView.m */,
+				00614A9D250B94C800BB7620 /* GameMessageListItemUserJoinRoomView.h */,
+				00614A8F250B94C800BB7620 /* GameMessageListItemUserJoinRoomView.m */,
+				00614A9A250B94C800BB7620 /* GameMessageListItemTextMessageView.h */,
+				00614A8E250B94C800BB7620 /* GameMessageListItemTextMessageView.m */,
+				00614A94250B94C800BB7620 /* GameMessageListItemUserSitdownView.h */,
+				00614AA6250B94C800BB7620 /* GameMessageListItemUserSitdownView.m */,
 				00614A8C250B94C800BB7620 /* SocketMessageLuckyDrawResultView.m */,
 				00614A8D250B94C800BB7620 /* GameMessageLevelAndTagView.xib */,
-				00614A8E250B94C800BB7620 /* GameMessageListItemTextMessageView.m */,
-				00614A8F250B94C800BB7620 /* GameMessageListItemUserJoinRoomView.m */,
 				00614A90250B94C800BB7620 /* GameMessageListItemGiftEventView.m */,
-				00614A91250B94C800BB7620 /* GameMessageListView.h */,
 				00614A92250B94C800BB7620 /* GameMessageListItemView+AttributeResult.h */,
 				00614A93250B94C800BB7620 /* CXGameMessageShareHelpTextMessageView.m */,
-				00614A94250B94C800BB7620 /* GameMessageListItemUserSitdownView.h */,
 				00614A95250B94C800BB7620 /* GameMessageListItemDeported.m */,
 				00614A96250B94C800BB7620 /* GameMessageListItemView.m */,
 				00614A97250B94C800BB7620 /* GameMessageLevelAndTagView.h */,
 				00614A98250B94C800BB7620 /* GameMessageListItemUndefineView.m */,
 				00614A99250B94C800BB7620 /* GameMessageListItemTextWelcomeView.m */,
-				00614A9A250B94C800BB7620 /* GameMessageListItemTextMessageView.h */,
 				00614A9B250B94C800BB7620 /* SocketMessageLuckyDrawResultView.h */,
 				00614A9C250B94C800BB7620 /* GameMessageListItemGiftEventView.h */,
-				00614A9D250B94C800BB7620 /* GameMessageListItemUserJoinRoomView.h */,
 				00614A9E250B94C800BB7620 /* CXGameMessageShareHelpTextMessageView.h */,
 				00614A9F250B94C800BB7620 /* GameMessageListItemView+AttributeResult.m */,
-				00614AA0250B94C800BB7620 /* GameMessageListView.m */,
 				00614AA1250B94C800BB7620 /* GameMessageListItemTextWelcomeView.h */,
 				00614AA2250B94C800BB7620 /* GameMessageListItemUndefineView.h */,
 				00614AA3250B94C800BB7620 /* GameMessageLevelAndTagView.m */,
 				00614AA4250B94C800BB7620 /* GameMessageListItemDeported.h */,
 				00614AA5250B94C800BB7620 /* GameMessageListItemView.h */,
-				00614AA6250B94C800BB7620 /* GameMessageListItemUserSitdownView.m */,
 			);
 			path = GameMessageListItemView;
 			sourceTree = "<group>";
@@ -2860,23 +2860,23 @@
 		00614AA8250B94C800BB7620 /* RoomSeatView */ = {
 			isa = PBXGroup;
 			children = (
+				00614AB0250B94C800BB7620 /* VideoSession.h */,
+				00614AB8250B94C800BB7620 /* VideoSession.m */,
+				00614AB7250B94C800BB7620 /* CXLiveRoomSeatsView.h */,
+				00614AAC250B94C800BB7620 /* CXLiveRoomSeatsView.m */,
+				00614AAB250B94C800BB7620 /* CXLiveRoomSeatsView.xib */,
 				00614AB3250B94C800BB7620 /* CXLiveRoomSeatView.h */,
 				00614AAF250B94C800BB7620 /* CXLiveRoomSeatView.m */,
 				00614AA9250B94C800BB7620 /* CXLiveRoomSeatView.xib */,
-				00614AAA250B94C800BB7620 /* CXLiveRoomSeatFansCell.m */,
-				00614AAB250B94C800BB7620 /* CXLiveRoomSeatsView.xib */,
-				00614AAC250B94C800BB7620 /* CXLiveRoomSeatsView.m */,
+				00614AB6250B94C800BB7620 /* CXLiveRoomSeatFansView.h */,
 				00614AAD250B94C800BB7620 /* CXLiveRoomSeatFansView.m */,
-				00614AAE250B94C800BB7620 /* CXLiveRoomBottomApplySeatAlertView.h */,
-				00614AB0250B94C800BB7620 /* VideoSession.h */,
 				00614AB1250B94C800BB7620 /* CXLiveRoomSeatFansView.xib */,
+				00614AAE250B94C800BB7620 /* CXLiveRoomBottomApplySeatAlertView.h */,
+				00614AB5250B94C800BB7620 /* CXLiveRoomBottomApplySeatAlertView.m */,
+				00614AB9250B94C800BB7620 /* CXLiveRoomBottomApplySeatAlertView.xib */,
+				00614AAA250B94C800BB7620 /* CXLiveRoomSeatFansCell.m */,
 				00614AB2250B94C800BB7620 /* CXLiveRoomSeatFansCell.h */,
 				00614AB4250B94C800BB7620 /* CXLiveRoomSeatFansCell.xib */,
-				00614AB5250B94C800BB7620 /* CXLiveRoomBottomApplySeatAlertView.m */,
-				00614AB6250B94C800BB7620 /* CXLiveRoomSeatFansView.h */,
-				00614AB7250B94C800BB7620 /* CXLiveRoomSeatsView.h */,
-				00614AB8250B94C800BB7620 /* VideoSession.m */,
-				00614AB9250B94C800BB7620 /* CXLiveRoomBottomApplySeatAlertView.xib */,
 			);
 			path = RoomSeatView;
 			sourceTree = "<group>";
@@ -5695,7 +5695,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMPRESS_PNG_FILES = NO;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = C966MAAFRF;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -5750,7 +5750,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMPRESS_PNG_FILES = NO;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = C966MAAFRF;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (

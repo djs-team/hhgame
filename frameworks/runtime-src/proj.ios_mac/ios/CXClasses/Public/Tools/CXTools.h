@@ -16,6 +16,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSMutableArray*)splitArray:(NSArray*)array withSubSize:(int)subSize;
 
+
+#pragma mark - ======================= Privacy ========================
+// 获取麦克风权限
++ (BOOL)getAudioAuthStatus;
+// 获取相机权限
++ (BOOL)getVideoAuthStatus;
+// 授权提示
++ (void)showSettingAlertViewTitle:(NSString *)title content:(NSString *)content;
 @end
 
 NS_ASSUME_NONNULL_END

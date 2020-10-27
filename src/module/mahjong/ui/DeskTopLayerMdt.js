@@ -23,6 +23,7 @@ load('module/mahjong/ui/DeskTopLayerMdt', function () {
                 TableEvent.TableHostingProto,
                 TableEvent.GameResultProto,
                 TableEvent.PlayerSelectProto,
+                TableEvent.JiaGangTableProto,
             ]
         },
         handleNotification: function (notification) {
@@ -33,12 +34,9 @@ load('module/mahjong/ui/DeskTopLayerMdt', function () {
                     this.UpdateView()
                     break
                 case TableEvent.PlayerSelectProto:
-                    this.updateAction()
-                    break
                 case TableEvent.PutCardProto:
-                    this.updateAction()
-                    break
                 case TableEvent.DrawCardProto:
+                case TableEvent.JiaGangTableProto:
                     this.updateAction()
                     break
                 case TableEvent.TableHostingProto:

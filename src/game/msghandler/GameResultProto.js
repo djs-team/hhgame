@@ -32,6 +32,7 @@ load('game/msghandler/GameResultProto', function () {
                 'nZhuangSeatID',
                 'pWinSeatID',
                 'pHuType',
+                'pHuCard',
                 'pBaoCard',
                 'pBaseScore',
                 'pIsLiuJu',
@@ -87,7 +88,7 @@ load('game/msghandler/GameResultProto', function () {
                 { key: 'pBaoCardNumber', type: this._byteType.Int},
                 { key: 'pBaseScore', type: this._byteType.Int},//底分
                 { key: 'pPlayer', type: this._byteType.Barray, proto: playerProto},
-                { key: 'pIsLiuJu', type: this._byteType.Int},
+                { key: 'pIsLiuJu', type: this._byteType.Int},//0不流局  1流局
                 { key: 'pHuCardColor', type: this._byteType.Int},
                 { key: 'pHuCardNumber', type: this._byteType.Int},
                 { key: 'pBigWinSeatID', type: this._byteType.Int}, // 大赢家座位ID

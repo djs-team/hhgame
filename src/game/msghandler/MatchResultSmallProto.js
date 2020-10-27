@@ -32,6 +32,7 @@ load('game/msghandler/MatchResultSmallProto', function () {
                 'nZhuangSeatID',
                 'pWinSeatID',
                 'pHuType',
+                'pHuCard',
                 'pBaoCard',
                 'pBaseScore',
                 'pIsLiuJu',

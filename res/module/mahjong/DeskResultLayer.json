@@ -1155,7 +1155,7 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 1175.9976,
+                  "X": 1097.0,
                   "Y": 133.4603
                 },
                 "Scale": {
@@ -1165,15 +1165,15 @@
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.9187,
+                  "X": 0.857,
                   "Y": 0.1854
                 },
                 "PreSize": {
                   "X": 0.0578,
                   "Y": 0.1486
                 },
-                "LeftMargin": 1138.9976,
-                "RightMargin": 67.0024,
+                "LeftMargin": 1060.0,
+                "RightMargin": 146.0,
                 "TopMargin": 533.0397,
                 "BottomMargin": 79.9603,
                 "Tag": 462,
@@ -1277,6 +1277,101 @@
                   "Y": 107.0
                 },
                 "Name": "BaoCard",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "card/ground/hand/self_hand_0.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 24,
+                "Scale9OriginY": 35,
+                "Scale9Width": 26,
+                "Scale9Height": 37,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 1212.0,
+                  "Y": 133.46
+                },
+                "Scale": {
+                  "ScaleX": 1.2,
+                  "ScaleY": 1.2
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.9469,
+                  "Y": 0.1854
+                },
+                "PreSize": {
+                  "X": 0.0578,
+                  "Y": 0.1486
+                },
+                "LeftMargin": 1175.0,
+                "RightMargin": 31.0,
+                "TopMargin": 533.04,
+                "BottomMargin": 79.96,
+                "Tag": 202,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "card/value/selfhand/feng_hand_1.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 24,
+                    "Scale9OriginY": 35,
+                    "Scale9Width": 28,
+                    "Scale9Height": 30,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 37.0,
+                      "Y": 48.15
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PositionPercentXEnabled": true,
+                    "PositionPercentYEnabled": true,
+                    "PrePosition": {
+                      "X": 0.5,
+                      "Y": 0.45
+                    },
+                    "PreSize": {
+                      "X": 1.027,
+                      "Y": 0.9346
+                    },
+                    "LeftMargin": -1.0,
+                    "RightMargin": -1.0,
+                    "TopMargin": 8.85,
+                    "BottomMargin": -1.85,
+                    "Tag": 203,
+                    "ActionTag": -1875488399,
+                    "Size": {
+                      "X": 76.0,
+                      "Y": 100.0
+                    },
+                    "Name": "CardValue",
+                    "ctype": "ImageViewObjectData"
+                  }
+                ],
+                "ActionTag": 360989162,
+                "Size": {
+                  "X": 74.0,
+                  "Y": 107.0
+                },
+                "Name": "HuCard",
                 "ctype": "ImageViewObjectData"
               },
               {

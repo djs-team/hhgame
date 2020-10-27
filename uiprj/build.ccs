@@ -791,6 +791,10 @@
           <Image Name="pz_pz.png" />
         </Folder>
         <Folder Name="task">
+          <Image Name="award_btn.png" />
+          <Image Name="bg_1.png" />
+          <Image Name="bg_2.png" />
+          <Image Name="dianfanbao.png" />
           <Image Name="rwzx_10.png" />
           <Image Name="rwzx_11.png" />
           <Image Name="rwzx_12.png" />

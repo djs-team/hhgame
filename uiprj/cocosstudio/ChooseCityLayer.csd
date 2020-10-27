@@ -339,14 +339,14 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="searchEdit" ActionTag="-1982245364" Tag="59" IconVisible="False" LeftMargin="108.2406" RightMargin="1010.7594" TopMargin="25.6066" BottomMargin="671.3934" TouchEnable="True" FontSize="23" IsCustomSize="True" LabelText="" PlaceHolderText="请输入城市名字" MaxLengthText="10" ctype="TextFieldObjectData">
-                <Size X="161.0000" Y="23.0000" />
+              <AbstractNodeData Name="searchEdit" ActionTag="-1982245364" Tag="59" IconVisible="False" LeftMargin="108.2406" RightMargin="1010.7594" TopMargin="24.1066" BottomMargin="669.8934" TouchEnable="True" FontSize="23" IsCustomSize="True" LabelText="" PlaceHolderText="请输入城市名字" MaxLengthText="10" ctype="TextFieldObjectData">
+                <Size X="161.0000" Y="26.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="188.7406" Y="682.8934" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.1475" Y="0.9485" />
-                <PreSize X="0.1258" Y="0.0319" />
+                <PreSize X="0.1258" Y="0.0361" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />

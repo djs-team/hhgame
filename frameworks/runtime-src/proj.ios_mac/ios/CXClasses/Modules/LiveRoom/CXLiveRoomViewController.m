@@ -215,9 +215,6 @@
         [[CXClientModel instance].agoraEngineManager.engine setBeautyEffectOptions:YES options:options];
     }
     
-    [self getAudioAuthStatus];
-    [self getVideoAuthStatus];
-    
     // socket 心跳
     [self socketSystemUpdate];
     
@@ -2402,105 +2399,6 @@
     
     [self.roomUIView.messageListView addModel:textModel];
 }
-
-#pragma mark - ========================= 系统权限 ============================
-// 相册权限
-- (BOOL)getVideoAuthStatus {
-    __block BOOL enable;
-    AVAuthorizationStatus videoAuthStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
-    if (videoAuthStatus == AVAuthorizationStatusNotDetermined) {// 未询问用户是否授权
-        //第一次询问用户是否进行授权
-        [[AVAudioSession sharedInstance] requestRecordPermission:^(BOOL granted) {
-            // CALL YOUR METHOD HERE - as this assumes being called only once from user interacting with permission alert!
-            if (granted) {
-                // Microphone enabled code
-                enable = YES;
-            }
-            else {
-                // Microphone disabled code
-                enable = NO;
-            }
-        }];
-    }
-    else if(videoAuthStatus == AVAuthorizationStatusRestricted || videoAuthStatus == AVAuthorizationStatusDenied) {// 未授权
-        enable = NO;
-        [self showSetAlertView:@"相机权限未开启" content:@"相机权限未开启，请进入系统【设置】>【隐私】>【相机】中打开开关,开启相机功能"];
-    }
-    else{// 已授权
-        NSLog(@"已经授权");
-        enable = YES;
-    }
-    
-    return enable;
-}
-// 麦克风权限
-- (BOOL)getAudioAuthStatus {
-    __block BOOL enable;
-    AVAuthorizationStatus videoAuthStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeAudio];
-    if (videoAuthStatus == AVAuthorizationStatusNotDetermined) {// 未询问用户是否授权
-        //第一次询问用户是否进行授权
-        [[AVAudioSession sharedInstance] requestRecordPermission:^(BOOL granted) {
-            // CALL YOUR METHOD HERE - as this assumes being called only once from user interacting with permission alert!
-            if (granted) {
-                // Microphone enabled code
-                enable = YES;
-            }
-            else {
-                // Microphone disabled code
-                enable = NO;
-            }
-        }];
-    }
-    else if(videoAuthStatus == AVAuthorizationStatusRestricted || videoAuthStatus == AVAuthorizationStatusDenied) {// 未授权
-        enable = NO;
-        [self showSetAlertView:@"麦克风权限未开启" content:@"麦克风权限未开启，请进入系统【设置】>【隐私】>【麦克风】中打开开关,开启麦克风功能"];
-    }
-    else{// 已授权
-        NSLog(@"已经授权");
-        enable = YES;
-    }
-    
-    return enable;
-}
-
-//提示用户进行麦克风使用授权
-- (void)showSetAlertView:(NSString *)title content:(NSString *)content {
-    kWeakSelf
-    [LEEAlert alert].config
-    .LeeTitle(title)
-    .LeeContent(content)
-    .LeeCancelAction(@"取消", ^{
-        NSString * loginUserId = [CXClientModel instance].userId;
-        
-        LiveRoomMicroInfo * microInfo = [[CXClientModel instance].room microInfoForUser:loginUserId];
-        
-        if (microInfo && microInfo.Type == LiveRoomMicroInfoTypeHost) {//红娘
-            [weakSelf leaveRoom];
-        } else {
-            NSIndexPath * seatIndex = [[CXClientModel instance].room.userSeats objectForKey:[CXClientModel instance].userId];
-            if (seatIndex) {//下麦
-                NSString * uid = [CXClientModel instance].userId;
-                NSIndexPath * index = [[CXClientModel instance].room.userSeats objectForKey:uid];
-                LiveRoomMicroInfo * seat = [[CXClientModel instance].room.seats objectForKey:index];
-                SocketMessageLeaveSeat * leave = [SocketMessageLeaveSeat new];
-                leave.Level = @(seat.Type);
-                leave.Number = @(seat.Number);
-                [[CXClientModel instance] sendSocketRequest:leave withCallback:^(__kindof SocketMessageRequest * _Nonnull request) {
-                    if (request.response.Success.integerValue == 6) {
-                        [weakSelf music_next];
-                    }
-                    
-                }];
-            }
-        }
-    })
-    .LeeAction(@"设置", ^{
-        //跳入当前App设置界面
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString] options:@{} completionHandler:nil];
-    })
-    .LeeShow();
-}
-
 
 #pragma mark - ===================== UI Action =====================
 - (void)roomUIView_topAndbottomBtnAction:(NSInteger)tag {

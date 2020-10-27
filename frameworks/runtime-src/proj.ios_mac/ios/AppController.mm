@@ -155,6 +155,10 @@ static AppDelegate s_sharedApplication;
 
     [[UIApplication sharedApplication] setIdleTimerDisabled: YES];
     
+    // 权限获取
+    [CXTools getVideoAuthStatus];
+    [CXTools getAudioAuthStatus];
+    
     return YES;
 }
 //#pragma mark - SKPaymentTransactionObserver
@@ -805,6 +809,16 @@ UIInterfaceOrientationMask oMask = UIInterfaceOrientationMaskLandscape;
     if (roomId.length <= 0) {
         return;
     }
+    if ([CXTools getAudioAuthStatus] == NO) {
+        [CXTools showSettingAlertViewTitle:@"麦克风权限未开启" content:@"麦克风权限未开启，请进入系统【设置】>【隐私】>【麦克风】中打开开关,开启麦克风功能"];
+        return;
+    }
+    if ([CXTools getVideoAuthStatus] == NO) {
+        [CXTools showSettingAlertViewTitle:@"相机权限未开启" content:@"相机权限未开启，请进入系统【设置】>【隐私】>【相机】中打开开关,开启相机功能"];
+        return;
+    }
+    
+    [MBProgressHUD showHUD];
     [[CXClientModel instance] joinRoom:roomId callback:^(NSString * _Nonnull roomId, BOOL success) {
         [MBProgressHUD hideHUD];
         if (success) {

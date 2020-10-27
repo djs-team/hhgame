@@ -58,6 +58,10 @@ static CXSelectedPhotoView *_selectPhoto = nil;
 }
 
 - (void)takephotoClick{
+    if ([CXTools getVideoAuthStatus] == NO) {
+        [CXTools showSettingAlertViewTitle:@"相机权限未开启" content:@"相机权限未开启，请进入系统【设置】>【隐私】>【相机】中打开开关,开启相机功能"];
+        return;
+    }
     [self removeFromSuperview];
     UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
     imagePickerController.delegate = self;
@@ -68,6 +72,10 @@ static CXSelectedPhotoView *_selectPhoto = nil;
 }
 
 - (void)photoClick{
+    if ([CXTools getVideoAuthStatus] == NO) {
+        [CXTools showSettingAlertViewTitle:@"相机权限未开启" content:@"相机权限未开启，请进入系统【设置】>【隐私】>【相机】中打开开关,开启相机功能"];
+        return;
+    }
     [self removeFromSuperview];
     UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
     imagePickerController.delegate = self;

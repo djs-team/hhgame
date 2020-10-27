@@ -119,7 +119,6 @@
 //    if ([self.selectedFunctionArrays containsObject:@"视频框"]) {
 //        [ModelClient instance].IsOpenVideoFrame = YES;
 //    }
-    [MBProgressHUD showHUD];
     [AppController joinRoom:_roomInfo.room_id];
 }
 

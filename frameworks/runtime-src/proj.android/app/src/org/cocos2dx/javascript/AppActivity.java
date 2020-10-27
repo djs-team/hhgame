@@ -393,7 +393,6 @@ public class AppActivity extends Cocos2dxActivity {
                     level = NetWorkUtils.dbmToLevel(itemDbm, false);
                     break;
                 case UN_KNOWN:
-                    netState = 0;
                     level = 0;
                     break;
             }
@@ -648,55 +647,69 @@ public class AppActivity extends Cocos2dxActivity {
      */
     private String phoneInfoType;
 
-    public static void getPhoneInfo(String type) {
-        ccActivity.phoneInfoType = type;
-        String permissionStr = Manifest.permission.READ_PHONE_STATE;
-        String[] permission = new String[]{permissionStr};
-        boolean hasPermission = PermissionUtil.hasSelfPermission(ccActivity, permissionStr);
-        Log.d("getPhoneInfo", hasPermission + "");
-        com.deepsea.mua.stub.permission.PermissionUtil.request(ccActivity, permission, new PermissionCallback() {
-            @Override
-            public void onPermissionGranted() {
-                operateGetphoneInfo(type);
-            }
-
-            @Override
-            public void shouldShowRational(String[] rationalPermissons, boolean before) {
-
-                ActivityCompat.requestPermissions(ccActivity, new String[]{permissionStr}, request_code_deviceInfo);
-
-
-            }
-
-            @Override
-            public void onPermissonReject(String[] rejectPermissons) {
-                showPermissionSettingDialog(0);
-            }
-        });
+    public static String getPhoneInfo(String type) {
+        String info = "";
+        switch (type) {
+            case "netState":
+                NetWorkUtils.NetWorkType netWorkType = NetWorkUtils.getNetWorkType(ccActivity.getBaseContext());
+                if (netWorkType == WIFI) {
+                    info = "1";
+                } else if (netWorkType == UN_KNOWN) {
+                    info = "0";
+                } else {
+                    info = "2";
+                }
+                break;
+            case "netInfo":
+                info = NetWorkUtils.getNetLevel(ccActivity);
+                break;
+            case "batter":
+                Intent intent = ccActivity.registerReceiver(null, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
+                if (intent == null) {
+                    info = "";
+                }
+                int level = intent.getIntExtra("level", 0);
+                int scale = intent.getIntExtra("scale", 100);
+                float f = (float) level*100 / scale;
+                info = String.valueOf(f);
+                break;
+        }
+        return info;
 //        }
     }
 
     /**
      * @param type netInfo --netInfo
+     *             netState
      */
-    private static void operateGetphoneInfo(String type) {
+    private static String operateGetphoneInfo(String type) {
         String info = "";
         switch (type) {
-            case "imei":
-                info = NetWorkUtils.getImei(ccActivity);
-                ccActivity.RunJS("deviceInfo", info);
-                break;
-            case "model":
-                info = android.os.Build.MODEL;
-                ccActivity.RunJS("deviceInfo", info);
+            case "netState":
+                NetWorkUtils.NetWorkType netWorkType = NetWorkUtils.getNetWorkType(ccActivity.getBaseContext());
+                if (netWorkType == WIFI) {
+                    info = "1";
+                } else if (netWorkType == UN_KNOWN) {
+                    info = "0";
+                } else {
+                    info = "2";
+                }
                 break;
             case "netInfo":
-                ccActivity.getNetworkState();
+                info = NetWorkUtils.getNetLevel(ccActivity);
                 break;
             case "batter":
-                ccActivity.getBatteryCount();
+                Intent intent = ccActivity.registerReceiver(null, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
+                if (intent == null) {
+                    info = "";
+                }
+                int level = intent.getIntExtra("level", 0);
+                int scale = intent.getIntExtra("scale", 100);
+                float f = (float) level*100 / scale;
+                info = String.valueOf(f);
                 break;
         }
+        return info;
 
     }
 
@@ -892,11 +905,18 @@ public class AppActivity extends Cocos2dxActivity {
      *
      * @param content
      */
-    public static void copy(String content) {
-        ClipboardManager cm = (ClipboardManager) ccActivity.getSystemService(Context.CLIPBOARD_SERVICE);
-        ClipData mClipData = ClipData.newPlainText("Label", content);
-        cm.setPrimaryClip(mClipData);
-        ToastUtils.showToast("复制成功");
+    public static void copyStr(String content) {
+        ccActivity.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                ClipboardManager cm = (ClipboardManager) ccActivity.getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData mClipData = ClipData.newPlainText("Label", content);
+                cm.setPrimaryClip(mClipData);
+                ToastUtils.showToast("复制成功");
+
+            }
+        });
+
     }
 
     /**

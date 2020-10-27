@@ -3428,7 +3428,7 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
                 }
             } else {
                 if (!isChangeView) {
-                    Log.d("AG_EX_AV","设置heads");
+                    Log.d("AG_EX_AV", "设置heads");
                     mBinding.mainSecondOneView.updateRankHeads(syncMicroRose.getRoseRanks());
                 } else {
                     mBinding.mainSecondTwoMusicView.updateRankHeads(syncMicroRose.getRoseRanks());

@@ -3,36 +3,28 @@ package org.cocos2dx.javascript;
 import android.Manifest;
 import android.app.Activity;
 import android.app.Dialog;
-import android.content.BroadcastReceiver;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.net.ConnectivityManager;
 import android.net.Uri;
-import android.net.wifi.WifiManager;
-import android.os.BatteryManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import android.telephony.PhoneStateListener;
-import android.telephony.SignalStrength;
-import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Toast;
 
-import org.cocos2dx.javascript.ui.main.MainActivity;
 import org.cocos2dx.javascript.ui.splash.activity.SplashActivity;
 import org.cocos2dx.lib.Cocos2dxActivity;
 import org.cocos2dx.lib.Cocos2dxHelper;
@@ -48,10 +40,8 @@ import com.deepsea.mua.core.login.OnLoginListener;
 import com.deepsea.mua.core.utils.JsonConverter;
 import com.deepsea.mua.core.utils.NetWorkUtils;
 import com.deepsea.mua.core.utils.ToastUtils;
-import com.deepsea.mua.core.view.floatwindow.permission.PermissionUtil;
 import com.deepsea.mua.core.wxpay.WxPay;
 import com.deepsea.mua.core.wxpay.WxpayBroadcast;
-import com.deepsea.mua.stub.controller.OnlineController;
 import com.deepsea.mua.stub.dialog.AAlertDialog;
 import com.deepsea.mua.stub.entity.ChessLoginParam;
 import com.deepsea.mua.stub.entity.InstallParamVo;
@@ -59,7 +49,6 @@ import com.deepsea.mua.stub.entity.QPWxOrder;
 import com.deepsea.mua.stub.jpush.JpushUtils;
 import com.deepsea.mua.stub.permission.PermissionCallback;
 import com.deepsea.mua.stub.utils.BitmapUtils;
-import com.deepsea.mua.stub.utils.Constant;
 import com.deepsea.mua.stub.utils.SharedPrefrencesUtil;
 import com.fm.openinstall.OpenInstall;
 import com.fm.openinstall.listener.AppInstallAdapter;
@@ -75,23 +64,12 @@ import com.umeng.socialize.media.UMWeb;
 import com.uuzuche.lib_zxing.activity.CodeUtils;
 
 import java.io.File;
-import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import cn.jiguang.verifysdk.api.AuthPageEventListener;
 import cn.jiguang.verifysdk.api.JVerificationInterface;
-import cn.jiguang.verifysdk.api.PreLoginListener;
 import cn.jiguang.verifysdk.api.RequestCallback;
 import cn.jiguang.verifysdk.api.VerifyListener;
-import rx.Observable;
-import rx.Subscription;
-import rx.schedulers.Schedulers;
 
-import static com.deepsea.mua.core.utils.NetWorkUtils.NetWorkType.NET_2_G;
-import static com.deepsea.mua.core.utils.NetWorkUtils.NetWorkType.NET_3_G;
-import static com.deepsea.mua.core.utils.NetWorkUtils.NetWorkType.NET_4_G;
 import static com.deepsea.mua.core.utils.NetWorkUtils.NetWorkType.UN_KNOWN;
 import static com.deepsea.mua.core.utils.NetWorkUtils.NetWorkType.WIFI;
 
@@ -108,21 +86,26 @@ public class AppActivity extends Cocos2dxActivity {
         super.setEnableVirtualButton(false);
         super.onCreate(savedInstanceState);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+
         if (!isTaskRoot()) {
+            finish();
             return;
         }
-        JVerificationInterface.preLogin(this, 3000, new PreLoginListener() {
-            @Override
-            public void onResult(final int code, final String content) {
-                Log.d(TAG, "[" + code + "]message=" + content);
-            }
-        });
+//        JVerificationInterface.preLogin(this, 1000, new PreLoginListener() {
+//            @Override
+//            public void onResult(final int code, final String content) {
+//                Log.d(TAG, "[" + code + "]message=" + content);
+//            }
+//        });
 
         ccActivity = this;
-        OpenInstall.getWakeUp(getIntent(), wakeUpAdapter);
+        try {
+//            initRewardConfig();
+            OpenInstall.getWakeUp(getIntent(), wakeUpAdapter);
 
-        initRewardConfig();
+        } catch (Exception e) {
 
+        }
 
     }
 
@@ -131,7 +114,12 @@ public class AppActivity extends Cocos2dxActivity {
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         // 此处要调用，否则App在后台运行时，会无法截获
-        OpenInstall.getWakeUp(intent, wakeUpAdapter);
+        try {
+            OpenInstall.getWakeUp(intent, wakeUpAdapter);
+
+        } catch (Exception e) {
+
+        }
 
     }
 
@@ -358,54 +346,6 @@ public class AppActivity extends Cocos2dxActivity {
         });
     }
 
-    MyphoneStatListener MyListener = new MyphoneStatListener();
-    TelephonyManager tel;
-
-    public void getNetworkState() {
-        tel = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-        tel.listen(MyListener, PhoneStateListener.LISTEN_SIGNAL_STRENGTHS);
-    }
-
-
-    private class MyphoneStatListener extends PhoneStateListener {
-
-        //获取信号强度
-        @Override
-        public void onSignalStrengthsChanged(SignalStrength signalStrength) {
-            super.onSignalStrengthsChanged(signalStrength);
-            int netState = 0;//0没网 1wifi 2 phoneCard
-            int level = 0;//0-4  代表格子数
-            //获取网络类型
-            NetWorkUtils.NetWorkType netWorkType = NetWorkUtils.getNetWorkType(ccActivity.getBaseContext());
-            ToastUtils.showToast(netWorkType + "变化了");
-            switch (netWorkType) {
-                case WIFI:
-                    netState = 1;
-                    level = NetWorkUtils.dbmToLevel(NetWorkUtils.getWifiRssi(ccActivity), true);
-                    break;
-                case NET_2_G:
-                case NET_3_G:
-                case NET_4_G:
-                    netState = 2;
-                    String signalInfo = signalStrength.toString();
-                    String[] params = signalInfo.split(" ");
-                    int itemDbm = Integer.parseInt(params[9]);
-                    level = NetWorkUtils.dbmToLevel(itemDbm, false);
-                    break;
-                case UN_KNOWN:
-                    level = 0;
-                    break;
-            }
-            JSONObject result = new JSONObject();
-            try {
-                result.put("netState", netState);
-                result.put("level", level);
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            RunJS_obj("deviceInfo", result.toString());
-        }
-    }
 
     private WxpayBroadcast.WxpayReceiver mWxpayReceiver = new WxpayBroadcast.WxpayReceiver() {
         @Override
@@ -445,8 +385,10 @@ public class AppActivity extends Cocos2dxActivity {
     public static void login(String type) {
         String permissionPhone = Manifest.permission.READ_PHONE_STATE;
         String permissionRW = Manifest.permission.WRITE_EXTERNAL_STORAGE;
+        String permissionCamera = Manifest.permission.CAMERA;
+        String permissionAudio = Manifest.permission.RECORD_AUDIO;
 
-        String[] permission = new String[]{permissionPhone, permissionRW};
+        String[] permission = new String[]{permissionPhone, permissionRW, permissionCamera, permissionAudio};
 
         com.deepsea.mua.stub.permission.PermissionUtil.request(ccActivity, permission, new PermissionCallback() {
             @Override
@@ -670,7 +612,7 @@ public class AppActivity extends Cocos2dxActivity {
                 }
                 int level = intent.getIntExtra("level", 0);
                 int scale = intent.getIntExtra("scale", 100);
-                float f = (float) level*100 / scale;
+                float f = (float) level * 100 / scale;
                 info = String.valueOf(f);
                 break;
         }
@@ -705,40 +647,11 @@ public class AppActivity extends Cocos2dxActivity {
                 }
                 int level = intent.getIntExtra("level", 0);
                 int scale = intent.getIntExtra("scale", 100);
-                float f = (float) level*100 / scale;
+                float f = (float) level * 100 / scale;
                 info = String.valueOf(f);
                 break;
         }
         return info;
-
-    }
-
-    private BatteryReceiver receiver = null;
-
-    public void getBatteryCount() {
-        receiver = new BatteryReceiver();
-        IntentFilter filter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
-        registerReceiver(receiver, filter);
-    }
-
-    public class BatteryReceiver extends BroadcastReceiver {
-
-        @Override
-        public void onReceive(Context arg0, Intent arg1) {
-            // TODO Auto-generated method stub
-            int current = arg1.getExtras().getInt("level");//
-            int total = arg1.getExtras().getInt("scale");//
-            int percent = current * 100 / total;
-            Log.i("battery", "battery " + percent);
-            JSONObject result = new JSONObject();
-            try {
-                result.put("battery", percent);
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            RunJS_obj("deviceInfo", result.toString());
-
-        }
 
     }
 
@@ -935,11 +848,25 @@ public class AppActivity extends Cocos2dxActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        JVerificationInterface.clearPreLoginCache();
         unregisterWxpayResult();
         wakeUpAdapter = null;
-        tel.listen(MyListener, PhoneStateListener.LISTEN_NONE);
     }
 
+    private long mkeyTime = 0;
+
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        //二次返回退出
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            if ((System.currentTimeMillis() - mkeyTime) > 2000) {
+                mkeyTime = System.currentTimeMillis();
+                Toast.makeText(this, "请再按一次退出游戏", Toast.LENGTH_LONG).show();
+            } else {
+                finish();
+                System.exit(0);
+            }
+            return false;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
 
 }

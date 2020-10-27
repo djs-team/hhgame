@@ -58,7 +58,7 @@
     
     // 操作
     NSMutableAttributedString *option = [[NSMutableAttributedString alloc] initWithString:@"上麦了"];
-    [option setColor:color];
+    [option setColor:[UIColor whiteColor]];
     option.font = font;
     [result appendAttributedString:option];
     

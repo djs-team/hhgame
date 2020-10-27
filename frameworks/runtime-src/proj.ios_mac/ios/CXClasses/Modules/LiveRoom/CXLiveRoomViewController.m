@@ -194,26 +194,26 @@
         [self applyJoinChannel:false level:[CXClientModel instance].currentAgreeInviteMikeModel.micro_level.integerValue];
     }
     
-    if ([[[NSUserDefaults standardUserDefaults] valueForKey:@"UesrDefault_faceUnityOpen"] boolValue] == NO) {
+//    if ([[[NSUserDefaults standardUserDefaults] valueForKey:@"UesrDefault_faceUnityOpen"] boolValue] == NO) {
         [[FUManager shareManager] loadFilterLandmarksType:FUAITYPE_FACELANDMARKS75];
         [self initCapturer];
         [[CXClientModel instance].agoraEngineManager.engine setVideoSource:self];
-    } else {
-        [[CXClientModel instance].agoraEngineManager.engine setVideoSource:nil];
-        //美颜
-        AgoraBeautyOptions *options = nil;
-        options = [[AgoraBeautyOptions alloc] init];
-        // 亮度明暗对比度
-        options.lighteningContrastLevel = [FUManager shareManager].blurShape;
-        // 美白
-        options.lighteningLevel = [FUManager shareManager].whiteLevel;
-        // 平滑度:磨皮
-        options.smoothnessLevel = [FUManager shareManager].blurLevel;
-        // 红润
-        options.rednessLevel = [FUManager shareManager].redLevel;
-
-        [[CXClientModel instance].agoraEngineManager.engine setBeautyEffectOptions:YES options:options];
-    }
+//    } else {
+//        [[CXClientModel instance].agoraEngineManager.engine setVideoSource:nil];
+//        //美颜
+//        AgoraBeautyOptions *options = nil;
+//        options = [[AgoraBeautyOptions alloc] init];
+//        // 亮度明暗对比度
+//        options.lighteningContrastLevel = [FUManager shareManager].blurShape;
+//        // 美白
+//        options.lighteningLevel = [FUManager shareManager].whiteLevel;
+//        // 平滑度:磨皮
+//        options.smoothnessLevel = [FUManager shareManager].blurLevel;
+//        // 红润
+//        options.rednessLevel = [FUManager shareManager].redLevel;
+//
+//        [[CXClientModel instance].agoraEngineManager.engine setBeautyEffectOptions:YES options:options];
+//    }
     
     // socket 心跳
     [self socketSystemUpdate];
@@ -277,8 +277,6 @@
 }
 
 - (void)setupSubViews {
-    
-//    [self.view az_setGradientBackgroundWithColors:@[UIColorHex(0xCF429F),UIColorHex(0x381C5D),UIColorHex(0x141261)] locations:@[@0,@0.5,@1] startPoint:CGPointMake(0, 0) endPoint:CGPointMake(0, 1)];
     
     [self.view addSubview:self.roomUIView];
     [_roomUIView mas_remakeConstraints:^(MASConstraintMaker *make) {

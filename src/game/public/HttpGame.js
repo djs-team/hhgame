@@ -302,7 +302,7 @@ load('game/public/HttpGame', function () {
         authenticationBack: function (msg) {
 
             if (msg.status !== 0) {
-                cc.log('------authenticationBack------->>>httpGame authenticationBack error happen')
+                appInstance.gameAgent().Tips('身份证号与姓名不符，请您确定后重新输入！')
                 return
             }
 

@@ -70,7 +70,7 @@ load('game/msghandler/MatchEnterTableProto', function () {
             let playerProto = [
                 { key: 'name', type: this._byteType.UTF8},
                 { key: 'sex', type: this._byteType.Int},//0 男 1女
-                { key: 'coins', type: this._byteType.Int},//本轮得分
+                { key: 'coins', type: this._byteType.UTF8},//本轮得分
                 { key: 'curRanking', type: this._byteType.Int},//本轮排名
                 { key: 'totalRanking', type: this._byteType.Int},//总排名
                 { key: 'extend', type: this._byteType.UTF8},//冗余字段

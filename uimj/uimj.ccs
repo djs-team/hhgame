@@ -22,6 +22,7 @@
             <Folder Name="hand">
               <Image Name="left_hand.png" />
               <Image Name="left_hand_0.png" />
+              <Image Name="left_hand_1.png" />
               <Image Name="self_hand_0.png" />
               <Image Name="self_hand_1.png" />
               <Image Name="self_hand_2.png" />
@@ -29,6 +30,8 @@
               <Image Name="self_hand_4.png" />
               <Image Name="self_hand_5.png" />
               <Image Name="self_hand_6.png" />
+              <Image Name="self_hand_7.png" />
+              <Image Name="self_hand_8.png" />
               <Image Name="top_hand.png" />
             </Folder>
             <Folder Name="out">

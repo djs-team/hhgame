@@ -484,7 +484,7 @@ public class NetWorkUtils {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return asu ;
+        return asu;
     }
 
 
@@ -592,6 +592,8 @@ public class NetWorkUtils {
                         return NetWorkType.NET_3_G;
                     case TelephonyManager.NETWORK_TYPE_LTE:
                         return NetWorkType.NET_4_G;
+                    case 20:
+                        return NetWorkType.NET_5_G;
                     default:
                         return NetWorkType.UN_KNOWN;
                 }
@@ -606,7 +608,8 @@ public class NetWorkUtils {
         WIFI(1),
         NET_2_G(2),
         NET_3_G(3),
-        NET_4_G(4);
+        NET_4_G(4),
+        NET_5_G(5);
 
         public int value;
 
@@ -624,18 +627,18 @@ public class NetWorkUtils {
                 for (CellInfo cellInfo : cellInfoList) {
                     if (cellInfo instanceof CellInfoGsm) {
                         CellSignalStrengthGsm cellSignalStrengthGsm = ((CellInfoGsm) cellInfo).getCellSignalStrength();
-                        dbm = cellSignalStrengthGsm.getLevel();
+                        dbm = cellSignalStrengthGsm.getDbm();
                     } else if (cellInfo instanceof CellInfoCdma) {
                         CellSignalStrengthCdma cellSignalStrengthCdma = ((CellInfoCdma) cellInfo).getCellSignalStrength();
-                        dbm = cellSignalStrengthCdma.getLevel();
+                        dbm = cellSignalStrengthCdma.getDbm();
                     } else if (cellInfo instanceof CellInfoWcdma) {
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
                             CellSignalStrengthWcdma cellSignalStrengthWcdma = ((CellInfoWcdma) cellInfo).getCellSignalStrength();
-                            dbm = cellSignalStrengthWcdma.getLevel();
+                            dbm = cellSignalStrengthWcdma.getDbm();
                         }
                     } else if (cellInfo instanceof CellInfoLte) {
                         CellSignalStrengthLte cellSignalStrengthLte = ((CellInfoLte) cellInfo).getCellSignalStrength();
-                        dbm = cellSignalStrengthLte.getLevel();
+                        dbm = cellSignalStrengthLte.getDbm();
 
                     }
                 }
@@ -675,5 +678,28 @@ public class NetWorkUtils {
         }
         return level;
 
+    }
+    public static String getNetLevel(Context context){
+        int level=0;
+        NetWorkUtils.NetWorkType netWorkType = NetWorkUtils.getNetWorkType(context);
+        ToastUtils.showToast(netWorkType + "变化了");
+        switch (netWorkType) {
+            case WIFI:
+                level = NetWorkUtils.dbmToLevel(NetWorkUtils.getWifiRssi(context), true);
+                break;
+            case NET_2_G:
+            case NET_3_G:
+            case NET_4_G:
+//                String signalInfo = signalStrength.toString();
+//                String[] params = signalInfo.split(" ");
+//                int itemDbm = Integer.parseInt(params[9]);
+                int dbm = NetWorkUtils.getMobileDbm(context);
+                level=dbmToLevel(dbm,false);
+                break;
+            case UN_KNOWN:
+                level = 0;
+                break;
+        }
+        return String.valueOf(level);
     }
 }

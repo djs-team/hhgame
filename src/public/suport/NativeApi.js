@@ -21,7 +21,8 @@ load('public/suport/NativeApi', function () {
         getNetWorkStates: function () {
             try {
                 if (cc.sys.OS_ANDROID === cc.sys.os) {
-                    return 'TODO'
+                  return   jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'getPhoneInfo', '(Ljava/lang/String;)Ljava/lang/String;', "netState")
+
                 } else if (cc.sys.OS_IOS === cc.sys.os) {
                     return jsb.reflection.callStaticMethod('AppController', 'getNetWorkStates')
                 }
@@ -33,7 +34,7 @@ load('public/suport/NativeApi', function () {
         getSignalStrength: function () {
             try {
                 if (cc.sys.OS_ANDROID === cc.sys.os) {
-                    jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'getPhoneInfo', '(Ljava/lang/String;)V', "netInfo")
+                   return  jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'getPhoneInfo', '(Ljava/lang/String;)Ljava/lang/String;', "netInfo")
                 } else if (cc.sys.OS_IOS === cc.sys.os) {
                     return jsb.reflection.callStaticMethod('AppController', 'getSignalStrength')
                 }
@@ -45,7 +46,7 @@ load('public/suport/NativeApi', function () {
         getBatteryLevel: function () {
             try {
                 if (cc.sys.OS_ANDROID === cc.sys.os) {
-                    jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'getPhoneInfo', '(Ljava/lang/String;)V', "batter")
+                   return  jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'getPhoneInfo', '(Ljava/lang/String;)Ljava/lang/String;', "batter")
                 } else if (cc.sys.OS_IOS === cc.sys.os) {
                     return jsb.reflection.callStaticMethod('AppController', 'getBatteryLevel')
                 }
@@ -451,7 +452,7 @@ load('public/suport/NativeApi', function () {
         copy: function (msg) {
             try {
                 if (cc.sys.OS_ANDROID === cc.sys.os) {
-                    jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'copy', '(Ljava/lang/String;)V', msg)
+                    jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'copyStr', '(Ljava/lang/String;)Ljava/lang/String;', msg)
                 } else if (cc.sys.OS_IOS === cc.sys.os) {
                     jsb.reflection.callStaticMethod('AppController', 'copyToPasteboard:', msg)
                 }

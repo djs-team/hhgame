@@ -262,7 +262,7 @@ load('module/mahjong/ui/DeskCardLayer', function () {
                                 card.setVisible(false)
                             }
                         } else {
-                            if (i === 0 || i > handCardCount) {
+                            if (i === 0 || i > handCards.length) {
                                 card.setVisible(false)
                             } else {
                                 card.setVisible(true)
@@ -298,23 +298,35 @@ load('module/mahjong/ui/DeskCardLayer', function () {
             }
 
             let showCards = player.showCards
+            let isKaimen = false
+            for (let i = 0; i < showCards.length; ++i) {
+                if (showCards[i].pShowType === 3) {
+                    if (showCards[i].pGangType !== 1) {
+                        isKaimen = true
+                    }
+                } else {
+                    isKaimen = true
+                    break
+                }
+            }
+
             for (let i = 0; i < 4; ++i) {
                 let groupNd = handNd.getChildByName('Group' + i)
                 if (showCards[i]) {
                     groupNd.setVisible(true)
-                    this.updateHandGroupCard(uiSeat, groupNd, showCards[i])
+                    this.updateHandGroupCard(uiSeat, groupNd, showCards[i], isKaimen)
                 } else {
                     groupNd.setVisible(false)
                 }
             }
         },
-        updateHandGroupCard: function (uiSeat, groupNd, groupInfo) {
+        updateHandGroupCard: function (uiSeat, groupNd, groupInfo, isKaimen) {
             let showType = groupInfo.pShowType
             switch (showType) {
-                case 1:
-                    for (let i = 0; i < 4; ++i) {
+                case 1:// 吃
+                    for (let i = 0; i < 8; ++i) {
                         let card = groupNd.getChildByName('Card' + i)
-                        if ( i === 3) {
+                        if ( i >= 3) {
                             card.setVisible(false)
                         } else {
                             let valueImg = this.getHandGroupCardImg(uiSeat, groupInfo.pChiCardColor, groupInfo.pBeginIndex + i)
@@ -323,10 +335,10 @@ load('module/mahjong/ui/DeskCardLayer', function () {
                         }
                     }
                     break
-                case 2:
-                    for (let i = 0; i < 4; ++i) {
+                case 2:// 碰
+                    for (let i = 0; i < 8; ++i) {
                         let card = groupNd.getChildByName('Card' + i)
-                        if ( i === 3) {
+                        if ( i >= 3) {
                             card.setVisible(false)
                         } else {
                             let valueImg = this.getHandGroupCardImg(uiSeat, groupInfo.pPengCardColor, groupInfo.pPengCardNumber )
@@ -335,14 +347,46 @@ load('module/mahjong/ui/DeskCardLayer', function () {
                         }
                     }
                     break
-                case 3:
+                case 3:// 杠
                     let gangType = groupInfo.pGangType
-                    for (let i = 0; i < 4; ++i) {
-                        let card = groupNd.getChildByName('Card' + i)
-                        let valueImg = this.getHandGroupCardImg(uiSeat, groupInfo.pGangCardColor, groupInfo.pGangCardNumber )
-                        card.getChildByName('CardValue').loadTexture(valueImg)
-                        card.setVisible(true)
+                    if (gangType === 1) {
+                        for (let i = 0; i < 8; ++i) {
+                            let card = groupNd.getChildByName('Card' + i)
+                            if ( i < 3 ) {
+                                card.setVisible(false)
+                            } else {
+                                if (i === 3) {
+                                    if (isKaimen || uiSeat === 0) {
+                                        let valueImg = this.getHandGroupCardImg(uiSeat, groupInfo.pGangCardColor, groupInfo.pGangCardNumber )
+                                        card.getChildByName('CardValue').loadTexture(valueImg)
+                                        card.setVisible(true)
+                                    } else {
+                                        card.setVisible(false)
+                                    }
+                                } else if ( i === 4) {
+                                    if (isKaimen || uiSeat === 0) {
+                                        card.setVisible(false)
+                                    } else {
+                                        card.setVisible(true)
+                                    }
+                                } else {
+                                    card.setVisible(true)
+                                }
+                            }
+                        }
+                    } else {
+                        for (let i = 0; i < 8; ++i) {
+                            let card = groupNd.getChildByName('Card' + i)
+                            if ( i > 3 ) {
+                                card.setVisible(false)
+                            } else {
+                                let valueImg = this.getHandGroupCardImg(uiSeat, groupInfo.pGangCardColor, groupInfo.pGangCardNumber )
+                                card.getChildByName('CardValue').loadTexture(valueImg)
+                                card.setVisible(true)
+                            }
+                        }
                     }
+                    break
             }
         },
 

@@ -2588,19 +2588,19 @@
 		006149AC250B94C600BB7620 /* Music */ = {
 			isa = PBXGroup;
 			children = (
-				006149AD250B94C600BB7620 /* CXGameMusicLRCFullView.m */,
-				006149AE250B94C600BB7620 /* Adjust */,
-				006149BD250B94C600BB7620 /* CXGameMusicLRCFullView.xib */,
-				006149BE250B94C600BB7620 /* CXRommMusicLRCShowView.m */,
-				006149BF250B94C600BB7620 /* OtherView */,
-				006149CE250B94C700BB7620 /* CXGameMusicView.m */,
-				006149CF250B94C700BB7620 /* cell */,
-				006149E2250B94C700BB7620 /* CXGameMusicLRCFullView.h */,
-				006149E3250B94C700BB7620 /* CXRommMusicLRCShowView.xib */,
-				006149E4250B94C700BB7620 /* resource */,
 				006149E9250B94C700BB7620 /* CXGameMusicView.h */,
+				006149CE250B94C700BB7620 /* CXGameMusicView.m */,
 				006149EA250B94C700BB7620 /* CXGameMusicView.xib */,
 				006149EB250B94C700BB7620 /* CXRommMusicLRCShowView.h */,
+				006149BE250B94C600BB7620 /* CXRommMusicLRCShowView.m */,
+				006149E3250B94C700BB7620 /* CXRommMusicLRCShowView.xib */,
+				006149E2250B94C700BB7620 /* CXGameMusicLRCFullView.h */,
+				006149AD250B94C600BB7620 /* CXGameMusicLRCFullView.m */,
+				006149BD250B94C600BB7620 /* CXGameMusicLRCFullView.xib */,
+				006149AE250B94C600BB7620 /* Adjust */,
+				006149BF250B94C600BB7620 /* OtherView */,
+				006149CF250B94C700BB7620 /* cell */,
+				006149E4250B94C700BB7620 /* resource */,
 			);
 			path = Music;
 			sourceTree = "<group>";
@@ -2645,15 +2645,16 @@
 		006149CF250B94C700BB7620 /* cell */ = {
 			isa = PBXGroup;
 			children = (
+				006149D8250B94C700BB7620 /* CXGameMusicPlayingCollectionCell.h */,
+				006149E1250B94C700BB7620 /* CXGameMusicPlayingCollectionCell.m */,
+				006149D3250B94C700BB7620 /* CXGameMusicPlayingCollectionCell.xib */,
 				006149D0250B94C700BB7620 /* CXGameMusicReserveMusicCell.xib */,
 				006149D1250B94C700BB7620 /* CXGameMusicOrginMusicCell.m */,
 				006149D2250B94C700BB7620 /* CXGameMusicRankListCell.m */,
-				006149D3250B94C700BB7620 /* CXGameMusicPlayingCollectionCell.xib */,
 				006149D4250B94C700BB7620 /* CXGameMusicRankListCollectionCell.m */,
 				006149D5250B94C700BB7620 /* CXGameMusicRankListCell.xib */,
 				006149D6250B94C700BB7620 /* CXGameMusicReserveListCollectionCell.m */,
 				006149D7250B94C700BB7620 /* CXGameMusicReserveMusicCell.m */,
-				006149D8250B94C700BB7620 /* CXGameMusicPlayingCollectionCell.h */,
 				006149D9250B94C700BB7620 /* CXGameMusicOrginMusicCell.xib */,
 				006149DA250B94C700BB7620 /* CXGameMusicRankListCollectionCell.h */,
 				006149DB250B94C700BB7620 /* CXGameMusicRankListCell.h */,
@@ -2662,7 +2663,6 @@
 				006149DE250B94C700BB7620 /* CXGameMusicReserveMusicCell.h */,
 				006149DF250B94C700BB7620 /* CXGameMusicReserveListCollectionCell.h */,
 				006149E0250B94C700BB7620 /* CXGameMusicRankListCollectionCell.xib */,
-				006149E1250B94C700BB7620 /* CXGameMusicPlayingCollectionCell.m */,
 			);
 			path = cell;
 			sourceTree = "<group>";

@@ -4318,7 +4318,6 @@
                   {
                     "ClipAble": false,
                     "BackColorAlpha": 188,
-                    "ComboBoxIndex": 1,
                     "SingleColor": {
                       "R": 150,
                       "G": 200
@@ -4513,7 +4512,6 @@
                   {
                     "ClipAble": false,
                     "BackColorAlpha": 153,
-                    "ComboBoxIndex": 1,
                     "SingleColor": {
                       "R": 0,
                       "G": 0,

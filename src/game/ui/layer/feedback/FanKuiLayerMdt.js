@@ -3,13 +3,13 @@
  *  TaskMdt Mediator
  *
  */
-load('game/ui/layer/feedback/FeedBackLayerMdt', function () {
+load('game/ui/layer/feedback/FanKuiLayerMdt', function () {
     let Mediator = include('public/components/Mediator')
     let GameEvent = include('game/config/GameEvent')
     let GameUtil = include('game/public/GameUtil')
     let GameConfig = include('game/config/GameConfig')
     let mdt = Mediator.extend({
-        mediatorName: 'FeedBackLayerMdt',
+        mediatorName: 'FanKuiLayerMdt',
         ctor: function (view) {
             this._super(this.mediatorName,view)
         },

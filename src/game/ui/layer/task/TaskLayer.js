@@ -329,7 +329,7 @@ load('game/ui/layer/task/TaskLayer', function () {
             if(data.taskId > 0){
                 this.updateDailyTaskByTaskId(data.taskId)
             }
-            this.receiveRewards(data.rewards)
+           // this.receiveRewards(data.rewards)
         },
 
         updateDailyTaskByTaskId: function (taskId) {
@@ -520,7 +520,7 @@ load('game/ui/layer/task/TaskLayer', function () {
             cell.getChildByName('challegeTaskProgressBarPnl').getChildByName('challegeTaskProgressBar').setPercent(100)
             cell.getChildByName('challegeTaskProgressBarPnl').getChildByName('progressValueText').setString(cell._data.taskNum + '/' + cell._data.taskNum)
 
-            this.receiveRewards(data.rewards)
+         //   this.receiveRewards(data.rewards)
 
 
         },

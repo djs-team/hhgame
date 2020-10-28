@@ -33,7 +33,7 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="21dp"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/notch_view">
+                app:layout_constraintTop_toTopOf="@id/notch_view">
 
                 <RelativeLayout
                     android:id="@+id/rl_room_close"
@@ -97,7 +97,8 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="@id/owner_rl">
+                app:layout_constraintTop_toTopOf="@id/owner_rl"
+                app:layout_constraintBottom_toBottomOf="@id/owner_rl">
 
                 <TextView
                     android:layout_width="48dp"

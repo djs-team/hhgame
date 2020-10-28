@@ -57,5 +57,57 @@
     return arr;
 }
 
+#pragma mark - ======================= Privacy ========================
+// 获取麦克风权限
++ (BOOL)getAudioAuthStatus {
+    __block BOOL enable;
+    AVAuthorizationStatus videoAuthStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeAudio];
+    if (videoAuthStatus == AVAuthorizationStatusNotDetermined) {
+        [AVCaptureDevice requestAccessForMediaType:AVMediaTypeAudio completionHandler:^(BOOL granted) {
+            if (granted) {
+                // Microphone enabled code
+                enable = YES;
+            } else {
+                // Microphone disabled code
+                enable = NO;
+            }
+        }];
+    } else if(videoAuthStatus == AVAuthorizationStatusRestricted || videoAuthStatus == AVAuthorizationStatusDenied) {// 未授权
+        enable = NO;
+    } else {// 已授权
+        enable = YES;
+    }
+    
+    return enable;
+}
+// 获取相机权限
++ (BOOL)getVideoAuthStatus {
+    __block BOOL enable;
+    AVAuthorizationStatus videoAuthStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
+    if (videoAuthStatus == AVAuthorizationStatusNotDetermined) {
+        [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
+            if (granted) {
+                // Microphone enabled code
+                enable = YES;
+            } else {
+                // Microphone disabled code
+                enable = NO;
+            }
+        }];
+    } else if(videoAuthStatus == AVAuthorizationStatusRestricted || videoAuthStatus == AVAuthorizationStatusDenied) {// 未授权
+        enable = NO;
+    } else{// 已授权
+        enable = YES;
+    }
+    
+    return enable;
+}
+
++ (void)showSettingAlertViewTitle:(NSString *)title content:(NSString *)content {
+    [[CXTools currentViewController] alertTitle:title message:content confirm:@"设置" cancel:@"取消" confirm:^{
+        //跳入当前App设置界面
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString] options:@{} completionHandler:nil];
+    } cancel:nil];
+}
 
 @end

@@ -32,7 +32,7 @@ load('game/ui/scene/LoginScene', function () {
                     '3.3.4 对游戏进行截屏、录像或利用游戏中数据、图片、截屏进行发表的行为;换行' +
                     '3.3.5 制作游戏线下衍生品的行为;换行' +
                     '3.3.6 其他严重侵犯《和和福利全集》知识产权的行为。', 'num': 14},
-            {'title':'4. 用户基本权利和贵任','content':'4.1用户享有由《和和福利全集》根据实际情况提供的各种服务，包括但不限于线上游戏、网上论坛、举办活动等。在某些情况下，《和和福利全集》许可用户以其账号登录或使用《和和福利全集》合作方运营的产品或服务。换行' +
+            {'title':'4. 用户基本权利和责任','content':'4.1用户享有由《和和福利全集》根据实际情况提供的各种服务，包括但不限于线上游戏、网上论坛、举办活动等。在某些情况下，《和和福利全集》许可用户以其账号登录或使用《和和福利全集》合作方运营的产品或服务。换行' +
                     '4.2 用户可以通过购买游戏道具的方式获得《和和福利全集》的服务。用户购买道具至固定账号后，未经《和和福利全集》书面同意不得将道具再转至其他账号。换行' +
                     '4.3 用户认为自己在游戏中的权益受到侵害，有权根据《和和福利全集》相关规定进行投诉申诉。换行' +
                     '4.4 用户有权对《和和福利全集》的管理和服务提出批评、意见、建议，有权就客户服务相关工作向客服提出咨询。换行' +
@@ -110,10 +110,13 @@ load('game/ui/scene/LoginScene', function () {
                 'pnl/wxLogin': {onClicked: this.onwxLoginClick},
                 'pnl/agreeBtn': {onClicked: this.onagreeBtnClick},
                 'pnl/userAgreeBtn': {onClicked: this.onUserAgreeClick},
-                'userAgreePnl':{},
-                'userAgreePnl/userAgreeList':{},
-                'userAgreePnl/contentCell':{},
-                'userAgreePnl/returnBtn':{onClicked: this.onCloseUserAgreeClick},
+                'userAgreeTopPnl':{},
+                'userAgreeBmPnl':{},
+                'userAgreeBmPnl/userAgreeList':{},
+                'userAgreeBmPnl/cellPnl':{},
+                'userAgreeBmPnl/cellPnl/titleCell':{},
+                'userAgreeBmPnl/cellPnl/contentCell':{},
+                'userAgreeTopPnl/returnBtn':{onClicked: this.onCloseUserAgreeClick},
             }
         },
 
@@ -139,7 +142,12 @@ load('game/ui/scene/LoginScene', function () {
             this.block.setVisible(true)
             this.topPnl.setVisible(true)
             this.pnl.setVisible(true)
-            this.userAgreePnl.setVisible(false)
+
+            this.userAgreeTopPnl.setVisible(false)
+            this.userAgreeBmPnl.setVisible(false)
+
+            this.cellPnl.setVisible(false)
+
             this.contentCell.setVisible(false)
             if (this._viewData) {
                 if (this._viewData.sayTxt) {
@@ -155,12 +163,15 @@ load('game/ui/scene/LoginScene', function () {
             this.block.setVisible(true)
             this.topPnl.setVisible(true)
             this.pnl.setVisible(true)
-            this.userAgreePnl.setVisible(false)
+            this.userAgreeTopPnl.setVisible(false)
+            this.userAgreeBmPnl.setVisible(false)
         },
 
         onUserAgreeClick: function (sender) {
             GameUtil.delayBtn(sender)
-            this.userAgreePnl.setVisible(true)
+            this.topPnl.setVisible(false)
+            this.userAgreeTopPnl.setVisible(true)
+            this.userAgreeBmPnl.setVisible(true)
             if(this.userAgreeList.getChildrenCount() == 0)
                 this.onInitUserAgreePnl()
 
@@ -177,30 +188,32 @@ load('game/ui/scene/LoginScene', function () {
             let content = this._userAgreeContent[i]
             if(!content)
                 return
-            let cell = this.contentCell.clone();
-            cell.setVisible(true)
+            let titleCell = this.titleCell.clone()
+            titleCell.setVisible(true)
+            titleCell.getChildByName('titleImg').getChildByName('titleText').setString(content.title)
+            this.userAgreeList.pushBackCustomItem(titleCell)
+
+
             let forMatLength = 42
+            let txtSize = 26
             let contentText = content.content
 
             let returnMsg = this.onForMatTxt(contentText,forMatLength)
             let forMatTxt = returnMsg.forMatTxt
             let line = returnMsg.lineNum
 
+            let contentCell = this.contentCell.clone()
+            contentCell.setVisible(true)
+            let size = contentCell.getContentSize()
+            size.height = txtSize * line
+            contentCell.setContentSize(size)
 
-            cell.getChildByName('titleImg').getChildByName('titleText').setString(content.title)
-
-            let size = cell.getContentSize()
-            size.height = (20+1) * line + 150
-            cell.setContentSize(size)
-            let contentTxtSize = cell.getChildByName('content').getContentSize()
-            contentTxtSize.height = (20+1) * line
-            cell.getChildByName('content').setContentSize(contentTxtSize)
-            cell.getChildByName('content').setString(forMatTxt)
-            cell.getChildByName('content').setPositionY(contentTxtSize.height/2)
-            cell.getChildByName('titleImg').setPositionY(size.height - 80)
-
-
-            this.userAgreeList.pushBackCustomItem(cell)
+            let contentTxtSize = contentCell.getChildByName('content').getContentSize()
+            contentTxtSize.height = txtSize * line
+            contentCell.getChildByName('content').setContentSize(contentTxtSize)
+            contentCell.getChildByName('content').setString(forMatTxt)
+            contentCell.getChildByName('content').setPositionY(contentTxtSize.height/2)
+            this.userAgreeList.pushBackCustomItem(contentCell)
 
         },
 
@@ -224,6 +237,8 @@ load('game/ui/scene/LoginScene', function () {
                     }else{
                         addTxt = txt[i]
                         cnt++
+                        if(i == txt.length - 1)
+                            lineNum += 1
                     }
 
                 }

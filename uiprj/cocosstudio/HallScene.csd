@@ -972,7 +972,7 @@
                     <PreSize X="0.0715" Y="0.1405" />
                     <FileData Type="Normal" Path="hall/dtjm_30.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="setBtn" ActionTag="-74830355" Tag="343" IconVisible="False" LeftMargin="1451.1556" RightMargin="398.8444" TopMargin="727.4374" BottomMargin="1207.5626" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                  <AbstractNodeData Name="setBtn" ActionTag="-74830355" Tag="343" IconVisible="False" LeftMargin="1451.1556" RightMargin="398.8444" TopMargin="727.4399" BottomMargin="1207.5601" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="150.0000" Y="65.0000" />
                     <Children>
                       <AbstractNodeData Name="Image_5_0" ActionTag="-363719697" Tag="185" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="3.6850" RightMargin="1.3150" TopMargin="55.4506" BottomMargin="0.5494" LeftEage="11" RightEage="11" TopEage="2" BottomEage="2" Scale9OriginX="11" Scale9OriginY="2" Scale9Width="474" Scale9Height="5" ctype="ImageViewObjectData">
@@ -1008,7 +1008,7 @@
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint />
-                    <Position X="1451.1556" Y="1207.5626" />
+                    <Position X="1451.1556" Y="1207.5601" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.7256" Y="0.6038" />
@@ -1018,7 +1018,7 @@
                     <EndColor A="255" R="255" G="255" B="255" />
                     <ColorVector ScaleY="1.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="feedbackBtn" ActionTag="-348871052" Tag="194" IconVisible="False" LeftMargin="1457.8036" RightMargin="399.1964" TopMargin="787.7841" BottomMargin="1133.2159" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                  <AbstractNodeData Name="feedbackBtn" ActionTag="-348871052" Tag="194" IconVisible="False" LeftMargin="1457.8036" RightMargin="399.1964" TopMargin="787.7841" BottomMargin="1133.2159" TouchEnable="True" ClipAble="False" BackColorAlpha="188" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="143.0000" Y="79.0000" />
                     <Children>
                       <AbstractNodeData Name="Image_5_0_0" ActionTag="1624062083" Tag="195" IconVisible="False" LeftMargin="-2.3600" RightMargin="0.3600" TopMargin="73.5972" BottomMargin="-3.5972" LeftEage="11" RightEage="11" TopEage="2" BottomEage="2" Scale9OriginX="11" Scale9OriginY="2" Scale9Width="474" Scale9Height="5" ctype="ImageViewObjectData">
@@ -1064,7 +1064,7 @@
                     <EndColor A="255" R="255" G="255" B="255" />
                     <ColorVector ScaleY="1.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="customerServiceBtn" ActionTag="699490340" Tag="198" IconVisible="False" LeftMargin="1457.0122" RightMargin="399.9878" TopMargin="866.1123" BottomMargin="1054.8877" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                  <AbstractNodeData Name="customerServiceBtn" ActionTag="699490340" Tag="198" IconVisible="False" LeftMargin="1457.0122" RightMargin="399.9878" TopMargin="866.1123" BottomMargin="1054.8877" TouchEnable="True" ClipAble="False" BackColorAlpha="153" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="143.0000" Y="79.0000" />
                     <Children>
                       <AbstractNodeData Name="Image_5_0_0" ActionTag="-1752068592" Tag="199" IconVisible="False" LeftMargin="0.1474" RightMargin="-2.1474" TopMargin="69.1761" BottomMargin="0.8239" LeftEage="11" RightEage="11" TopEage="2" BottomEage="2" Scale9OriginX="11" Scale9OriginY="2" Scale9Width="474" Scale9Height="5" ctype="ImageViewObjectData">
@@ -1105,7 +1105,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.7643" Y="0.5472" />
                     <PreSize X="0.0715" Y="0.0395" />
-                    <SingleColor A="255" R="150" G="200" B="255" />
+                    <SingleColor A="255" R="0" G="0" B="0" />
                     <FirstColor A="255" R="150" G="200" B="255" />
                     <EndColor A="255" R="255" G="255" B="255" />
                     <ColorVector ScaleY="1.0000" />

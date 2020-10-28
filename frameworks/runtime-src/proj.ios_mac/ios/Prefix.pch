@@ -78,8 +78,7 @@
     // public
     #define kWeakSelf __weak typeof(self) weakSelf = self;
 
-
-    // close
+    // color
     #define rgba(R255, G255, B255, A1)  [UIColor colorWithRed:(R255)/255.f green:(G255)/255.f blue:(B255)/255.f alpha:A1]
 
 #endif

@@ -1,16 +1,16 @@
 
-load('game/ui/layer/feedback/FeedBackLayer', function () {
+load('game/ui/layer/feedback/FanKuiLayer', function () {
     let ResConfig = include('game/config/ResConfig')
     let BaseLayer = include('public/ui/BaseLayer')
     let GameEvent = include('game/config/GameEvent')
-    let FeedBackLayerMdt = include('game/ui/layer/feedback/FeedBackLayerMdt')
+    let FanKuiLayerMdt = include('game/ui/layer/feedback/FanKuiLayerMdt')
     let GameUtil = include('game/public/GameUtil')
-    let feedbackLayer = BaseLayer.extend({
-        _className: 'FeedBackLayer',
+    let layer = BaseLayer.extend({
+        _className: 'FanKuiLayer',
         _subMitType : 0,
         ctor: function () {
-            this._super(ResConfig.View.FeedbackLayer)
-            this.registerMediator(new FeedBackLayerMdt(this))
+            this._super(ResConfig.View.FanKuiLayer)
+            this.registerMediator(new FanKuiLayerMdt(this))
         },
         RES_BINDING: function () {
             return {
@@ -259,5 +259,5 @@ load('game/ui/layer/feedback/FeedBackLayer', function () {
             this._super()
         }
     })
-    return feedbackLayer
+    return layer
 })

@@ -18,7 +18,7 @@ target 'hhgame-mobile' do
 
   # Pods for hhgame-mobile
   
-  pod 'AgoraRtcEngine_iOS'
+  pod 'AgoraRtcEngine_iOS', '~> 3.0.1.1'
   pod 'SocketRocket'
   pod 'HyphenateLite'
   pod 'WechatOpenSDK'

@@ -2863,7 +2863,7 @@
                   "Y": 0.9457
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.0625
                 },
                 "LeftMargin": 323.296,
@@ -3131,7 +3131,7 @@
                   "Y": 0.9458
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.0625
                 },
                 "LeftMargin": 558.08,
@@ -3399,7 +3399,7 @@
                   "Y": 0.9444
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.0625
                 },
                 "LeftMargin": 780.08,
@@ -4144,7 +4144,7 @@
                     "AnchorPoint": {},
                     "Position": {
                       "X": 1451.1556,
-                      "Y": 1207.5626
+                      "Y": 1207.5601
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -4162,8 +4162,8 @@
                     },
                     "LeftMargin": 1451.1556,
                     "RightMargin": 398.8444,
-                    "TopMargin": 727.4374,
-                    "BottomMargin": 1207.5626,
+                    "TopMargin": 727.4399,
+                    "BottomMargin": 1207.5601,
                     "Tag": 343,
                     "Children": [
                       {
@@ -4317,7 +4317,7 @@
                   },
                   {
                     "ClipAble": false,
-                    "BackColorAlpha": 102,
+                    "BackColorAlpha": 188,
                     "SingleColor": {
                       "R": 150,
                       "G": 200
@@ -4511,10 +4511,11 @@
                   },
                   {
                     "ClipAble": false,
-                    "BackColorAlpha": 102,
+                    "BackColorAlpha": 153,
                     "SingleColor": {
-                      "R": 150,
-                      "G": 200
+                      "R": 0,
+                      "G": 0,
+                      "B": 0
                     },
                     "FirstColor": {
                       "R": 150,

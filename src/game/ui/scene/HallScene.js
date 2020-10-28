@@ -122,7 +122,7 @@ load('game/ui/scene/HallScene', function () {
         onFeedbackBtnClick: function (sender) {
             GameUtil.delayBtn(sender);
             this.morePnl.setVisible(false)
-            appInstance.gameAgent().addPopUI(ResConfig.Ui.FeedBackLayer)
+            appInstance.gameAgent().addPopUI(ResConfig.Ui.FanKuiLayer)
         },
 
         onTaskClick: function (sender) {
@@ -217,12 +217,6 @@ load('game/ui/scene/HallScene', function () {
             let confClass = include('game/ui/layer/config/ConfLayer')
             let confUI = appInstance.uiManager().createPopUI(confClass)
             appInstance.sceneManager().getCurScene().addChild(confUI)
-            this.onHideMorePnlClick()
-        },
-        onFeedbackClick: function () {
-            let feedbackClass = include('game/ui/layer/feedback/FeedbackLayer')
-            let feedbackUI = appInstance.uiManager().createPopUI(feedbackClass)
-            appInstance.sceneManager().getCurScene().addChild(feedbackUI)
             this.onHideMorePnlClick()
         },
 

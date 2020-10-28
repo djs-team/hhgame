@@ -98,8 +98,8 @@
 /// 加入成功
 - (void)socketManager:(SocketManager*)mgr joinRoomSuccess:(NSString*)roomId {
     if (self.isJoinedRoom == YES) {
-        [[self.listener allObjects] enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            if ([obj respondsToSelector:@selector(modelClient:reconnectRoomSuccess:)]) {
+        [CXClientModel instance].isSocketManagerReconnect = YES;
+        [[self.listener allObjects] enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {            if ([obj respondsToSelector:@selector(modelClient:reconnectRoomSuccess:)]) {
                 [obj modelClient:self reconnectRoomSuccess:YES];
             }
         }];
@@ -427,6 +427,8 @@
             
         case SocketMessageIDMusicPlayingDetail: {
             SocketMessageMusicReceivePlayingDetail *detail = message;
+            NSLog(@"current.LyricPath ========1 %@", detail.SongInfo.LyricPath);
+            NSLog(@"current.SongPath ========1 %@", detail.SongInfo.SongPath);
             self.room.playing_SongInfo = detail.SongInfo;
             self.room.playing_NextSongInfo = detail.NextSongInfo;
             self.room.music_songerId = [NSString stringWithFormat:@"%ld",(long)detail.SongInfo.ConsertUserId];

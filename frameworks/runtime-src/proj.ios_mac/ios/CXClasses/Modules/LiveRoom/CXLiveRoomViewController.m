@@ -1013,8 +1013,8 @@
     }
 }
 
-//- (void)modelClient:(CXClientModel *)client reconnectRoomSuccess:(BOOL)success {
-//
+- (void)modelClient:(CXClientModel *)client reconnectRoomSuccess:(BOOL)success {
+
 //    NSIndexPath *seatIndex = [[CXClientModel instance].room.userSeats objectForKey:[CXClientModel instance].userId];
 //    if (!seatIndex) {
 //        [[CXClientModel instance].agoraEngineManager.engine setClientRole:AgoraClientRoleAudience];
@@ -1024,19 +1024,16 @@
 //        [seatView addAgoraRtc:[[CXClientModel instance].userId numberValue]];
 //    }
 //
-//    if ([CXClientModel instance].room.isConsertModel == YES) {
-//        if ([CXClientModel instance].room.isSonger) {
-//            [self music_playResume];
-//        }
-//    }
-    
-    
-//    else {
-//        if ([CXClientModel instance].room.isHost == YES) {
-//            [self music_playResume];
-//        }
-//    }
-//}
+    if ([CXClientModel instance].room.isConsertModel == YES) {
+        if ([CXClientModel instance].room.isSonger) {
+            [self music_playResume];
+        }
+    } else {
+        if ([CXClientModel instance].room.isHost == YES) {
+            [self music_playResume];
+        }
+    }
+}
 
 - (void)modelClient:(CXClientModel *)client room:(NSString *)roomId error:(NSError *)error {
     kWeakSelf
@@ -2187,9 +2184,11 @@
 //            .LeeShow();
             weakSelf.musicView.musicPlayStatus = music_downing;
             CXSocketMessageMusicModel *music = [CXClientModel instance].room.playing_SongInfo;
+            NSLog(@"music.LyricPath ========1 %@", music.LyricPath);
             [CXMusicDownloader downloadURL:music.LyricPath progress:^(NSProgress * _Nonnull downloadProgress) {
 //                NSString *progress = [NSString stringWithFormat:@"下载:%f%%",100.0 * downloadProgress.completedUnitCount/downloadProgress.totalUnitCount];
             } success:^(NSURL * _Nonnull targetPath) {
+                NSLog(@"targetPath.LyricPath ========1 %@", targetPath.lastPathComponent);
                 NSString *cur_lrcPath = [CXClientModel instance].room.playing_SongInfo.LyricPath;
                 if (![[cur_lrcPath lastPathComponent] isEqualToString: targetPath.lastPathComponent]) {
                     weakSelf.musicView.musicPlayStatus = music_unplay;
@@ -2199,18 +2198,20 @@
                 NSString *lrcText = [[NSString alloc] initWithData:data encoding:CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000)];
                 DDAudioLRC *lrc = [DDAudioLRCParser parserLRCText:lrcText];
                 [CXClientModel instance].currentMusicPlayingLRCModel = lrc;
+                NSLog(@"music.SongPath ========1 %@", music.SongPath);
                 [CXMusicDownloader downloadURL:music.SongPath progress:^(NSProgress * _Nonnull downloadProgress) {
 //                    NSString *progress = [NSString stringWithFormat:@"下载:%f%%",100.0 * downloadProgress.completedUnitCount/downloadProgress.totalUnitCount];
                 } success:^(NSURL * _Nonnull targetPath) {
+                    NSLog(@"targetPath.SongPath ========1 %@", targetPath.lastPathComponent);
+                    // 当前播放的歌曲
+                    NSString *cur_songPath = [CXClientModel instance].room.playing_SongInfo.SongPath;
+                    if (![[cur_songPath lastPathComponent] isEqualToString: targetPath.lastPathComponent]) {
+                        weakSelf.musicView.musicPlayStatus = music_unplay;
+                        return ;
+                    }
                     CXSocketMessageMusicDownloadSongSuccess *request = [CXSocketMessageMusicDownloadSongSuccess new];
                     [[CXClientModel instance] sendSocketRequest:request withCallback:^(CXSocketMessageMusicGetPlayingDetail * _Nonnull request) {
                         if (request.response.isSuccess) {
-                            // 当前播放的歌曲
-                            NSString *cur_songPath = [CXClientModel instance].room.playing_SongInfo.SongPath;
-                            if (![[cur_songPath lastPathComponent] isEqualToString: targetPath.lastPathComponent]) {
-                                weakSelf.musicView.musicPlayStatus = music_unplay;
-                                return ;
-                            }
 //                                [LEEAlert closeWithCompletionBlock:nil];
                             [CXClientModel instance].currentMusicPlayingSongPath = targetPath;
                             [[CXClientModel instance].agoraEngineManager.engine stopAudioMixing];
@@ -2237,7 +2238,7 @@
                                 weakSelf.musicView.pro_volum = MIN([CXClientModel instance].room.music_Volume, 30);
                                 
                                 [weakSelf musicLRCUpdate];
-                                
+                                NSLog(@"play.SongPath ========1 %@", targetPath.absoluteString);
                                 weakSelf.musicView.musicPlayStatus = music_playing;
                             }
                             
@@ -2357,16 +2358,15 @@
             CXSocketMessageMusicPlay *request = [CXSocketMessageMusicPlay new];
             [[CXClientModel instance] sendSocketRequest:request withCallback:^(CXSocketMessageMusicPlay * _Nonnull request) {
                 [weakSelf.musicView reloadMusicView];
-                if (request.response.isSuccess) {
-                    if ([CXClientModel instance].room.playing_SongInfo.SongMode == 1) { // 原唱
-                        [weakSelf music_playStart];
-                    }
-                } else {
-                    if ([request.response.Success integerValue] == 3) {
-                        [weakSelf.musicView removeFromSuperview];
-                    }
-                }
-
+//                if (request.response.isSuccess) {
+//                    if ([CXClientModel instance].room.playing_SongInfo.SongMode == 1) { // 原唱
+//                        [weakSelf music_playStart];
+//                    }
+//                } else {
+//                    if ([request.response.Success integerValue] == 3) {
+//                        [weakSelf.musicView removeFromSuperview];
+//                    }
+//                }
             }];
 
         } else {

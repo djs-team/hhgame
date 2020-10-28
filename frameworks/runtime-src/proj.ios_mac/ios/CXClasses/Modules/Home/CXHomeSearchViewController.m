@@ -49,8 +49,13 @@
     CXHomeSearchCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CXHomeSearchCellID"];
     CXUserModel *user = _peopleDataSources[indexPath.row];
     cell.user = user;
+    kWeakSelf
     cell.avatarTapGestureBlock = ^{
-        [AppController joinRoom:user.room_id];
+        if (user.room_id.length > 0) {
+            [AppController joinRoom:user.room_id];
+        } else {
+            [AppController showUserProfile:user.user_id target:weakSelf];
+        }
     };
     return cell;
 }

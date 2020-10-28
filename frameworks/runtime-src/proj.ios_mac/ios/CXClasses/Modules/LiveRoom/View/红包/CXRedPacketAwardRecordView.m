@@ -10,6 +10,7 @@
 
 @interface CXRedPacketAwardRecordView () <UITableViewDataSource>
 
+@property (weak, nonatomic) IBOutlet UILabel *closeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UITableView *mainTableView;
 
@@ -29,10 +30,27 @@
     
     [self.mainTableView registerNib:[UINib nibWithNibName:@"CXRedPacketAwardRecordCell" bundle:nil] forCellReuseIdentifier:@"CXRedPacketAwardRecordCellID"];
     self.mainTableView.dataSource = self;
+    
+    __block NSInteger second = 8;
+    dispatch_queue_t quene = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, quene);
+    dispatch_source_set_timer(timer, DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC, 0 * NSEC_PER_SEC);
+    dispatch_source_set_event_handler(timer, ^{
+       dispatch_async(dispatch_get_main_queue(), ^{
+           self.closeLabel.text = [NSString stringWithFormat:@"%ldS", second];
+           if (second == 0) {
+               dispatch_cancel(timer);
+               [self hide];
+               [MMPopupView hideAll];
+           } else {
+               second--;
+           }
+       });
+    });
+    dispatch_resume(timer);
 }
 - (IBAction)closeAction:(id)sender {
-    [self hide];
-    [MMPopupView hideAll];
+    
 }
 
 - (void)setRecordArrays:(NSArray<CXLiveRoomRedPacketModel *> *)recordArrays {

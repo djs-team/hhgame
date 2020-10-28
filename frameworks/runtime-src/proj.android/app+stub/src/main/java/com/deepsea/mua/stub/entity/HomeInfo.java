@@ -64,6 +64,15 @@ public class HomeInfo {
         private String maker_avatar;
         private String maker_nickname;
         private int xq_type;
+        private int right_corn;//右上角图标：0:不显示   1:红包
+
+        public int getRight_corn() {
+            return right_corn;
+        }
+
+        public void setRight_corn(int right_corn) {
+            this.right_corn = right_corn;
+        }
 
         public int getXq_type() {
             return xq_type;

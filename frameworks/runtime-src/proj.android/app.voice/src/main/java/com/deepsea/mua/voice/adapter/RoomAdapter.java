@@ -86,7 +86,6 @@ public class RoomAdapter extends BaseBindingAdapter<HomeInfo.RoomBean, ItemRoomB
         ViewBindUtils.setText(holder.binding.tvWelcome, "欢迎来到" + item.getRoom_name() + "的直播间");
 
         SexResUtils.setSexImg(holder.binding.ivSex, item.getFm_sex(), R.drawable.ic_man, R.drawable.ic_woman);
-//        Shader shader = new LinearGradient(0, 0, 0, 20, Color.parseColor("#FD1E1D"), Color.parseColor("#FE711C"), Shader.TileMode.CLAMP);
-//        holder.binding.tvHuigou.getPaint().setShader(shader);
+        ViewBindUtils.setVisible(holder.binding.ivRedPackage, item.getRight_corn() == 1);
     }
 }

@@ -43,7 +43,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/ic_place_room_bg" />
+                        />
 
                     <TextView
                         android:layout_marginLeft="14dp"
@@ -56,11 +56,11 @@
                         android:shadowDx="0"
                         android:shadowDy="1"
                         android:shadowRadius="3.0"
-                        android:text="欢迎来到小可爱的直播间"
                         android:textColor="#ffffffff"
                         android:textSize="16sp" />
 
                     <TextView
+                        android:id="@+id/tv_room_flag"
                         android:layout_width="79dp"
                         android:layout_height="27dp"
                         android:layout_marginLeft="12dp"
@@ -103,7 +103,7 @@
                         android:layout_marginTop="8dp"
                         android:layout_marginRight="11dp"
                         android:src="@drawable/ic_red_package"
-                        android:visibility="visible"
+                        android:visibility="gone"
                         android:layout_alignParentRight="true" />
                 </RelativeLayout>
 

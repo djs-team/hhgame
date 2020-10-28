@@ -192,7 +192,9 @@ public class RoomFragment extends BaseFragment<FragmentRoomBinding> {
         ViewBindUtils.setVisible(mBinding.tlTimeRecommend, true);
         GlideUtils.roundImage(mBinding.ivRecommondUserbg, topRoom.getFm_room_image(), R.drawable.ic_place_room_bg, R.drawable.ic_place_room_bg, 10);
         ViewBindUtils.setText(mBinding.tvRoomName, "欢迎来到" + topRoom.getRoom_name() + "的直播间");
+        ViewBindUtils.setVisible(mBinding.tvRoomFlag, true);
         ViewBindUtils.setVisible(mBinding.roomLockRl, TextUtils.equals("1", topRoom.getRoom_lock()));
+        ViewBindUtils.setVisible(mBinding.ivRedPackage, topRoom.getRight_corn() == 1);
         ViewBindUtils.RxClicks(mBinding.tlTimeRecommend, o -> {
             String sex = UserUtils.getUser().getSex();
             if (sex.equals("0")) {

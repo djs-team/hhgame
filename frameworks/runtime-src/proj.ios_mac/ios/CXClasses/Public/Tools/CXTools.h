@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSMutableArray*)splitArray:(NSArray*)array withSubSize:(int)subSize;
 
++ (long long)fileSizeAtPath:(NSString*)filePath;
 
 #pragma mark - ======================= Privacy ========================
 // 获取麦克风权限

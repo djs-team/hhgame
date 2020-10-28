@@ -262,17 +262,17 @@
                   <AbstractNodeData Name="titleCell" ActionTag="-378494361" Tag="119" IconVisible="False" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TopMargin="22.1704" BottomMargin="338.5968" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="1280.0000" Y="99.9827" />
                     <Children>
-                      <AbstractNodeData Name="titleImg" ActionTag="-675366386" Tag="166" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="418.5000" RightMargin="418.5000" TopMargin="2.4914" BottomMargin="2.4913" Scale9Enable="True" LeftEage="99" RightEage="99" TopEage="31" BottomEage="31" Scale9OriginX="99" Scale9OriginY="31" Scale9Width="102" Scale9Height="33" ctype="ImageViewObjectData">
-                        <Size X="443.0000" Y="95.0000" />
+                      <AbstractNodeData Name="titleImg" ActionTag="-675366386" Tag="166" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="390.0000" RightMargin="390.0000" TopMargin="2.4914" BottomMargin="2.4913" Scale9Enable="True" LeftEage="99" RightEage="99" TopEage="31" BottomEage="31" Scale9OriginX="99" Scale9OriginY="31" Scale9Width="102" Scale9Height="33" ctype="ImageViewObjectData">
+                        <Size X="500.0000" Y="95.0000" />
                         <Children>
-                          <AbstractNodeData Name="titleText" ActionTag="860838305" Tag="167" IconVisible="False" LeftMargin="27.2800" RightMargin="31.7200" TopMargin="21.6119" BottomMargin="40.3881" IsCustomSize="True" FontSize="32" LabelText=" 1. 法律适用和争议解释解" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                            <Size X="384.0000" Y="33.0000" />
+                          <AbstractNodeData Name="titleText" ActionTag="860838305" Tag="167" IconVisible="False" LeftMargin="28.2800" RightMargin="21.7200" TopMargin="21.6119" BottomMargin="40.3881" IsCustomSize="True" FontSize="32" LabelText=" 1. 法律适用和争议解释解" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                            <Size X="450.0000" Y="33.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="219.2800" Y="56.8881" />
+                            <Position X="253.2800" Y="56.8881" />
                             <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.4950" Y="0.5988" />
-                            <PreSize X="0.8668" Y="0.3474" />
+                            <PrePosition X="0.5066" Y="0.5988" />
+                            <PreSize X="0.9000" Y="0.3474" />
                             <OutlineColor A="255" R="255" G="0" B="0" />
                             <ShadowColor A="255" R="110" G="110" B="110" />
                           </AbstractNodeData>
@@ -282,7 +282,7 @@
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
                         <PrePosition X="0.5000" Y="0.5000" />
-                        <PreSize X="0.3461" Y="0.9502" />
+                        <PreSize X="0.3906" Y="0.9502" />
                         <FileData Type="Normal" Path="login/useragree_3.png" Plist="" />
                       </AbstractNodeData>
                     </Children>

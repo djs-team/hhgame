@@ -2719,19 +2719,19 @@
 		00614A4C250B94C700BB7620 /* 红包 */ = {
 			isa = PBXGroup;
 			children = (
-				00614A4D250B94C700BB7620 /* CXRedPacketProgressView.m */,
+				00614A58250B94C700BB7620 /* CXRedPacketStartView.h */,
+				00614A52250B94C700BB7620 /* CXRedPacketStartView.m */,
+				00614A57250B94C700BB7620 /* CXRedPacketStartView.xib */,
+				00614A54250B94C700BB7620 /* CXRedPacketAwardRecordView.h */,
 				00614A4E250B94C700BB7620 /* CXRedPacketAwardRecordView.m */,
+				00614A59250B94C700BB7620 /* CXRedPacketAwardRecordView.xib */,
+				00614A4D250B94C700BB7620 /* CXRedPacketProgressView.m */,
 				00614A4F250B94C700BB7620 /* CXRedPacketRegularView.xib */,
 				00614A50250B94C700BB7620 /* CXRedPacketProgressView.xib */,
 				00614A51250B94C700BB7620 /* CXRedPacketAwardRecordCell.m */,
-				00614A52250B94C700BB7620 /* CXRedPacketStartView.m */,
 				00614A53250B94C700BB7620 /* CXRedPacketRegularView.m */,
-				00614A54250B94C700BB7620 /* CXRedPacketAwardRecordView.h */,
 				00614A55250B94C700BB7620 /* CXRedPacketProgressView.h */,
 				00614A56250B94C700BB7620 /* CXRedPacketAwardRecordCell.xib */,
-				00614A57250B94C700BB7620 /* CXRedPacketStartView.xib */,
-				00614A58250B94C700BB7620 /* CXRedPacketStartView.h */,
-				00614A59250B94C700BB7620 /* CXRedPacketAwardRecordView.xib */,
 				00614A5A250B94C700BB7620 /* CXRedPacketAwardRecordCell.h */,
 				00614A5B250B94C700BB7620 /* CXRedPacketRegularView.h */,
 			);

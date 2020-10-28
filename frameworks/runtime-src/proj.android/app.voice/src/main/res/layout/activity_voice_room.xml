@@ -1026,6 +1026,7 @@
                     android:src="@drawable/ic_back" />
 
                 <TextView
+                    android:layout_gravity="center_vertical"
                     android:layout_width="12dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5.5dp"

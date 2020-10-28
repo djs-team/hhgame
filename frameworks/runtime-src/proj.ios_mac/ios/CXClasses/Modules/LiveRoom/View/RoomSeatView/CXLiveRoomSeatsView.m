@@ -338,13 +338,18 @@ static const int leading = 12;
 - (void)reloadFirends {
     if (_seats) {
         [_seats enumerateKeysAndObjectsUsingBlock:^(NSIndexPath * _Nonnull key, CXLiveRoomSeatView * _Nonnull obj, BOOL * _Nonnull stop) {
-            if ([obj.model.modelUser.UserId isEqualToString:[CXClientModel instance].userId]) {
-                obj.seat_addFriendBtn.hidden = YES;
-            } else if ([[CXClientModel instance].firendIdArrays containsObject:obj.model.modelUser.UserId]) {
-                obj.seat_addFriendBtn.hidden = YES;
+            if (obj.model.modelUser.UserId.length > 0) {
+                if ([obj.model.modelUser.UserId isEqualToString:[CXClientModel instance].userId]) {
+                    obj.seat_addFriendBtn.hidden = YES;
+                } else if ([[CXClientModel instance].firendIdArrays containsObject:obj.model.modelUser.UserId]) {
+                    obj.seat_addFriendBtn.hidden = YES;
+                } else {
+                    obj.seat_addFriendBtn.hidden = NO;
+                }
             } else {
-                obj.seat_addFriendBtn.hidden = NO;
+                obj.seat_addFriendBtn.hidden = YES;
             }
+            
         }];
     }
 }

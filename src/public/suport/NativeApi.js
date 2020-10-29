@@ -21,7 +21,7 @@ load('public/suport/NativeApi', function () {
         getNetWorkStates: function () {
             try {
                 if (cc.sys.OS_ANDROID === cc.sys.os) {
-                  return   jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'getPhoneInfo', '(Ljava/lang/String;)Ljava/lang/String;', "netState")
+                    return jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'getPhoneInfo', '(Ljava/lang/String;)Ljava/lang/String;', "netState")
 
                 } else if (cc.sys.OS_IOS === cc.sys.os) {
                     return jsb.reflection.callStaticMethod('AppController', 'getNetWorkStates')
@@ -34,7 +34,7 @@ load('public/suport/NativeApi', function () {
         getSignalStrength: function () {
             try {
                 if (cc.sys.OS_ANDROID === cc.sys.os) {
-                   return  jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'getPhoneInfo', '(Ljava/lang/String;)Ljava/lang/String;', "netInfo")
+                    return jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'getPhoneInfo', '(Ljava/lang/String;)Ljava/lang/String;', "netInfo")
                 } else if (cc.sys.OS_IOS === cc.sys.os) {
                     return jsb.reflection.callStaticMethod('AppController', 'getSignalStrength')
                 }
@@ -46,7 +46,7 @@ load('public/suport/NativeApi', function () {
         getBatteryLevel: function () {
             try {
                 if (cc.sys.OS_ANDROID === cc.sys.os) {
-                   return  jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'getPhoneInfo', '(Ljava/lang/String;)Ljava/lang/String;', "batter")
+                    return jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'getPhoneInfo', '(Ljava/lang/String;)Ljava/lang/String;', "batter")
                 } else if (cc.sys.OS_IOS === cc.sys.os) {
                     return jsb.reflection.callStaticMethod('AppController', 'getBatteryLevel')
                 }
@@ -488,10 +488,12 @@ load('public/suport/NativeApi', function () {
         //上传图片
         uploadPictureParam: function (msg) {
             try {
+                let param = JSON.stringify(msg)
+
                 if (cc.sys.OS_ANDROID === cc.sys.os) {
-                    
+                    jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'getPictureFromPhoneAlbum', '(Ljava/lang/String;)V', param)
+
                 } else if (cc.sys.OS_IOS === cc.sys.os) {
-                    let param = JSON.stringify(msg)
                     jsb.reflection.callStaticMethod('AppController', 'selectedOnePhotoWithPutParam:method:', param, "PERSONALLAYER_CHANGE_PICTURE")
                 }
             } catch (e) {

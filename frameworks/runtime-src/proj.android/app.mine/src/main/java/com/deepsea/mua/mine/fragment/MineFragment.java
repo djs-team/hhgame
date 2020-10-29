@@ -368,7 +368,7 @@ public class MineFragment extends BaseFragment<FragmentMineBinding> {
     private void upLoadHeadIv(OSSConfigBean config, String aHeadIv) {
         mExecutors.diskIO().execute(() -> {
             OSS oSs = OssUpUtil.getInstance().getOssConfig(mContext, config.AccessKeyId, config.AccessKeySecret, config.SecurityToken, config.Expiration);
-            ossAsyncTask = OssUpUtil.getInstance().upToOss(3, aHeadIv, oSs, config.BucketName, new OssUpUtil.OssUpCallback() {
+            ossAsyncTask = OssUpUtil.getInstance().upToOss(3, aHeadIv, oSs, config.BucketName,"", new OssUpUtil.OssUpCallback() {
                 @Override
                 public void upSuccessFile(String objectKey) {
                     mHandler.post(() -> uploadAvatar(objectKey));

@@ -151,7 +151,16 @@ public class ReceivePresent extends BaseMsg {
     public static class GiveGiftDatasBean {
         private MicroBean Micro;
         private String TargetName;
+        private int TargetId;
         private int  Sex;
+
+        public int getTargetId() {
+            return TargetId;
+        }
+
+        public void setTargetId(int targetId) {
+            TargetId = targetId;
+        }
 
         public int getSex() {
             return Sex;

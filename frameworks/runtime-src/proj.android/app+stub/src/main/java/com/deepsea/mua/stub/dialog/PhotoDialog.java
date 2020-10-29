@@ -119,9 +119,10 @@ public class PhotoDialog extends BaseDialogFragment<DialogPhotoBinding> {
 
     @Override
     public void dismiss() {
-        super.dismiss();
         if (dismissListener != null) {
             dismissListener.onMyDismiss();
         }
+        super.dismiss();
+
     }
 }

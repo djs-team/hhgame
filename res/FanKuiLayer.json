@@ -20,10 +20,10 @@
               "Path": "Default/ImageFile.png",
               "Plist": ""
             },
-            "Scale9OriginX": 422,
-            "Scale9OriginY": 237,
-            "Scale9Width": 436,
-            "Scale9Height": 246,
+            "Scale9OriginX": -376,
+            "Scale9OriginY": -191,
+            "Scale9Width": 798,
+            "Scale9Height": 428,
             "AnchorPoint": {
               "ScaleX": 0.5,
               "ScaleY": 0.5
@@ -2238,7 +2238,7 @@
                               "ScaleY": 0.5
                             },
                             "Position": {
-                              "X": 87.9859,
+                              "X": 110.0,
                               "Y": 79.6167
                             },
                             "Scale": {
@@ -2248,15 +2248,15 @@
                             "CColor": {},
                             "IconVisible": false,
                             "PrePosition": {
-                              "X": 0.1333,
+                              "X": 0.1667,
                               "Y": 0.6124
                             },
                             "PreSize": {
                               "X": 0.1167,
                               "Y": 0.5615
                             },
-                            "LeftMargin": 49.4859,
-                            "RightMargin": 533.5141,
+                            "LeftMargin": 71.5,
+                            "RightMargin": 511.5,
                             "TopMargin": 13.8833,
                             "BottomMargin": 43.1167,
                             "Tag": 44,
@@ -2272,6 +2272,8 @@
                             "IsCustomSize": true,
                             "FontSize": 20,
                             "LabelText": "2020-07-22 12:00",
+                            "HorizontalAlignmentType": "HT_Center",
+                            "VerticalAlignmentType": "VT_Center",
                             "OutlineColor": {
                               "G": 0,
                               "B": 0
@@ -2306,18 +2308,18 @@
                               "Y": 0.1719
                             },
                             "PreSize": {
-                              "X": 0.2424,
-                              "Y": 0.1538
+                              "X": 0.2727,
+                              "Y": 0.1769
                             },
-                            "LeftMargin": 27.5549,
-                            "RightMargin": 472.4451,
-                            "TopMargin": 97.6508,
-                            "BottomMargin": 12.3492,
+                            "LeftMargin": 17.5549,
+                            "RightMargin": 462.4451,
+                            "TopMargin": 96.1508,
+                            "BottomMargin": 10.8492,
                             "Tag": 45,
                             "ActionTag": 1220578765,
                             "Size": {
-                              "X": 160.0,
-                              "Y": 20.0
+                              "X": 180.0,
+                              "Y": 23.0
                             },
                             "Name": "createTime",
                             "ctype": "TextObjectData"
@@ -2360,18 +2362,18 @@
                               "Y": 0.462
                             },
                             "PreSize": {
-                              "X": 0.1636,
-                              "Y": 0.1846
+                              "X": 0.1818,
+                              "Y": 0.2077
                             },
-                            "LeftMargin": 534.062,
-                            "RightMargin": 17.938,
-                            "TopMargin": 57.9365,
-                            "BottomMargin": 48.0635,
+                            "LeftMargin": 528.062,
+                            "RightMargin": 11.938,
+                            "TopMargin": 56.4365,
+                            "BottomMargin": 46.5635,
                             "Tag": 46,
                             "ActionTag": -2050975772,
                             "Size": {
-                              "X": 108.0,
-                              "Y": 24.0
+                              "X": 120.0,
+                              "Y": 27.0
                             },
                             "Name": "status",
                             "ctype": "TextObjectData"

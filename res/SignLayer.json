@@ -1379,6 +1379,8 @@
                             "ColorVector": {
                               "ScaleY": 1.0
                             },
+                            "Scale9Width": 1,
+                            "Scale9Height": 1,
                             "TouchEnable": true,
                             "AnchorPoint": {},
                             "Position": {
@@ -1483,6 +1485,8 @@
                             "ColorVector": {
                               "ScaleY": 1.0
                             },
+                            "Scale9Width": 1,
+                            "Scale9Height": 1,
                             "TouchEnable": true,
                             "AnchorPoint": {},
                             "Position": {
@@ -1587,6 +1591,8 @@
                             "ColorVector": {
                               "ScaleY": 1.0
                             },
+                            "Scale9Width": 1,
+                            "Scale9Height": 1,
                             "TouchEnable": true,
                             "AnchorPoint": {},
                             "Position": {
@@ -2960,7 +2966,7 @@
                               {
                                 "IsCustomSize": true,
                                 "FontSize": 18,
-                                "LabelText": "每日签到，可以领取对应的奖励\n\n每日签到10/20/30次，可以领取丰富的额外奖励",
+                                "LabelText": "1:每日签到可领取丰富奖励\n\n2:连续签到满10/20/30次即可额外领取珍贵的宝箱奖励\n\n3:周会员最高可领取5倍奖励，月会员最高可领取7倍奖励，季会员最高可领取13倍奖励，年会员最高可领取23倍奖励",
                                 "OutlineColor": {
                                   "G": 0,
                                   "B": 0
@@ -2977,8 +2983,8 @@
                                   "ScaleY": 0.5
                                 },
                                 "Position": {
-                                  "X": 247.8572,
-                                  "Y": 264.9235
+                                  "X": 252.4726,
+                                  "Y": 207.2084
                                 },
                                 "Scale": {
                                   "ScaleX": 1.0,
@@ -2991,132 +2997,24 @@
                                 },
                                 "IconVisible": false,
                                 "PrePosition": {
-                                  "X": 0.5017,
-                                  "Y": 0.8279
+                                  "X": 0.5111,
+                                  "Y": 0.6475
                                 },
                                 "PreSize": {
-                                  "X": 0.8496,
-                                  "Y": 0.23
+                                  "X": 0.9477,
+                                  "Y": 0.5185
                                 },
-                                "LeftMargin": 37.9926,
-                                "RightMargin": 36.3011,
-                                "TopMargin": 18.2838,
-                                "BottomMargin": 228.1308,
+                                "LeftMargin": 18.3679,
+                                "RightMargin": 7.4457,
+                                "TopMargin": 29.8272,
+                                "BottomMargin": 124.2439,
                                 "Tag": 360,
                                 "ActionTag": -1380415311,
                                 "Size": {
-                                  "X": 419.7292,
-                                  "Y": 73.5854
+                                  "X": 468.2093,
+                                  "Y": 165.9288
                                 },
                                 "Name": "Text_8",
-                                "ctype": "TextObjectData"
-                              },
-                              {
-                                "IsCustomSize": true,
-                                "FontSize": 18,
-                                "LabelText": "周VIP会员2倍领取   月VIP会员4倍领取\n\n季VIP会员10倍领取  年VIP会员20倍领取",
-                                "OutlineColor": {
-                                  "G": 0,
-                                  "B": 0
-                                },
-                                "ShadowColor": {
-                                  "R": 110,
-                                  "G": 110,
-                                  "B": 110
-                                },
-                                "ShadowOffsetX": 2.0,
-                                "ShadowOffsetY": -2.0,
-                                "AnchorPoint": {
-                                  "ScaleX": 0.5,
-                                  "ScaleY": 0.5
-                                },
-                                "Position": {
-                                  "X": 247.8605,
-                                  "Y": 182.0311
-                                },
-                                "Scale": {
-                                  "ScaleX": 1.0,
-                                  "ScaleY": 1.0
-                                },
-                                "CColor": {
-                                  "R": 213,
-                                  "G": 77,
-                                  "B": 33
-                                },
-                                "IconVisible": false,
-                                "PrePosition": {
-                                  "X": 0.5017,
-                                  "Y": 0.5688
-                                },
-                                "PreSize": {
-                                  "X": 0.8496,
-                                  "Y": 0.2379
-                                },
-                                "LeftMargin": 37.9955,
-                                "RightMargin": 36.2974,
-                                "TopMargin": 99.912,
-                                "BottomMargin": 143.9742,
-                                "Tag": 364,
-                                "ActionTag": 629026824,
-                                "Size": {
-                                  "X": 419.73,
-                                  "Y": 76.1138
-                                },
-                                "Name": "Text_8_0",
-                                "ctype": "TextObjectData"
-                              },
-                              {
-                                "IsCustomSize": true,
-                                "FontSize": 18,
-                                "LabelText": "注 1.VIP加倍领取与看视频三倍领取叠加\n\n     2.每日签到领取刷新时间：24:00\n\n        当天未领取的奖励可以隔天领取",
-                                "OutlineColor": {
-                                  "G": 0,
-                                  "B": 0
-                                },
-                                "ShadowColor": {
-                                  "R": 110,
-                                  "G": 110,
-                                  "B": 110
-                                },
-                                "ShadowOffsetX": 2.0,
-                                "ShadowOffsetY": -2.0,
-                                "AnchorPoint": {
-                                  "ScaleX": 0.5,
-                                  "ScaleY": 0.5
-                                },
-                                "Position": {
-                                  "X": 247.86,
-                                  "Y": 74.04
-                                },
-                                "Scale": {
-                                  "ScaleX": 1.0,
-                                  "ScaleY": 1.0
-                                },
-                                "CColor": {
-                                  "R": 183,
-                                  "G": 100,
-                                  "B": 30
-                                },
-                                "IconVisible": false,
-                                "PrePosition": {
-                                  "X": 0.5017,
-                                  "Y": 0.2314
-                                },
-                                "PreSize": {
-                                  "X": 0.8496,
-                                  "Y": 0.3989
-                                },
-                                "LeftMargin": 37.995,
-                                "RightMargin": 36.2979,
-                                "TopMargin": 182.14,
-                                "BottomMargin": 10.22,
-                                "Tag": 365,
-                                "ActionTag": 831065242,
-                                "Size": {
-                                  "X": 419.73,
-                                  "Y": 127.64
-                                },
-                                "Name": "Text_8_1",
                                 "ctype": "TextObjectData"
                               }
                             ],

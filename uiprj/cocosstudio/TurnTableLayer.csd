@@ -1769,7 +1769,7 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="rulePnl" Visible="False" ActionTag="-559925063" Tag="790" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="rulePnl" ActionTag="-559925063" Tag="790" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="1280.0000" Y="720.0000" />
                 <Children>
                   <AbstractNodeData Name="pgPnl" ActionTag="1306618330" Tag="791" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
@@ -1812,14 +1812,14 @@
                       <AbstractNodeData Name="Image_11" ActionTag="1655437699" Tag="795" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="401.0525" RightMargin="384.9246" TopMargin="199.5997" BottomMargin="236.7517" Scale9Enable="True" LeftEage="28" RightEage="28" TopEage="24" BottomEage="24" Scale9OriginX="28" Scale9OriginY="24" Scale9Width="30" Scale9Height="27" ctype="ImageViewObjectData">
                         <Size X="494.0229" Y="283.6486" />
                         <Children>
-                          <AbstractNodeData Name="Text_8" ActionTag="1760586349" Tag="796" IconVisible="False" LeftMargin="17.7528" RightMargin="19.4757" TopMargin="25.4086" BottomMargin="98.2400" IsCustomSize="True" FontSize="20" LabelText="1.活动时间：2020年xx月xx日-2020年xx月xx日&#xA;&#xA;2.活动期间，每日23点后重置抽奖次数&#xA;&#xA;3.获得大奖后，请及时联系客服登记收获地址&#xA;如活动期间没有及时联系客服，奖励作废。" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                            <Size X="456.7944" Y="160.0000" />
+                          <AbstractNodeData Name="Text_8" ActionTag="1760586349" Tag="796" IconVisible="False" LeftMargin="15.2899" RightMargin="15.0128" TopMargin="25.4086" BottomMargin="98.2400" IsCustomSize="True" FontSize="20" LabelText="1:每日共可参与转盘活动15次&#xA;&#xA;2:每日24:00重置抽奖次数，请于当天24:00前消耗完次数&#xA;&#xA;3:抽中实物大奖后，请至福卡商城的获得礼品记录中进行领奖&#xA;&#xA;3.获得大奖后，请及时联系客服登记收获地址&#xA;如活动期间没有及时联系客服，奖励作废。" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                            <Size X="463.7202" Y="160.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="246.1500" Y="178.2400" />
+                            <Position X="247.1500" Y="178.2400" />
                             <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="183" G="100" B="30" />
-                            <PrePosition X="0.4983" Y="0.6284" />
-                            <PreSize X="0.9246" Y="0.5641" />
+                            <PrePosition X="0.5003" Y="0.6284" />
+                            <PreSize X="0.9387" Y="0.5641" />
                             <OutlineColor A="255" R="255" G="0" B="0" />
                             <ShadowColor A="255" R="110" G="110" B="110" />
                           </AbstractNodeData>

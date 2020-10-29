@@ -1,12 +1,12 @@
 <GameFile>
-  <PropertyGroup Name="FeedBackLayer" Type="Layer" ID="0a4a8281-15cf-4643-8e8a-d7f61121e532" Version="3.10.0.0" />
+  <PropertyGroup Name="FanKuiLayer" Type="Layer" ID="0a4a8281-15cf-4643-8e8a-d7f61121e532" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
       <ObjectData Name="Layer" Tag="196" ctype="GameLayerObjectData">
         <Size X="1280.0000" Y="720.0000" />
         <Children>
-          <AbstractNodeData Name="Image_1" ActionTag="1412601644" VisibleForFrame="False" Tag="197" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftEage="422" RightEage="422" TopEage="237" BottomEage="237" Scale9OriginX="422" Scale9OriginY="237" Scale9Width="436" Scale9Height="246" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="Image_1" ActionTag="1412601644" VisibleForFrame="False" Tag="197" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftEage="422" RightEage="422" TopEage="237" BottomEage="237" Scale9OriginX="-376" Scale9OriginY="-191" Scale9Width="798" Scale9Height="428" ctype="ImageViewObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="640.0000" Y="360.0000" />
@@ -475,35 +475,35 @@
                             <PreSize X="0.9939" Y="0.9462" />
                             <FileData Type="Normal" Path="feedback/yjfk_1.png" Plist="" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="Image_4" ActionTag="1455599473" Tag="44" IconVisible="False" LeftMargin="49.4859" RightMargin="533.5141" TopMargin="13.8833" BottomMargin="43.1167" LeftEage="25" RightEage="25" TopEage="24" BottomEage="24" Scale9OriginX="25" Scale9OriginY="24" Scale9Width="27" Scale9Height="25" ctype="ImageViewObjectData">
+                          <AbstractNodeData Name="Image_4" ActionTag="1455599473" Tag="44" IconVisible="False" LeftMargin="71.5000" RightMargin="511.5000" TopMargin="13.8833" BottomMargin="43.1167" LeftEage="25" RightEage="25" TopEage="24" BottomEage="24" Scale9OriginX="25" Scale9OriginY="24" Scale9Width="27" Scale9Height="25" ctype="ImageViewObjectData">
                             <Size X="77.0000" Y="73.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="87.9859" Y="79.6167" />
+                            <Position X="110.0000" Y="79.6167" />
                             <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.1333" Y="0.6124" />
+                            <PrePosition X="0.1667" Y="0.6124" />
                             <PreSize X="0.1167" Y="0.5615" />
                             <FileData Type="Normal" Path="feedback/yjfk_3.png" Plist="" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="createTime" ActionTag="1220578765" Tag="45" IconVisible="False" LeftMargin="27.5549" RightMargin="472.4451" TopMargin="97.6508" BottomMargin="12.3492" IsCustomSize="True" FontSize="20" LabelText="2020-07-22 12:00" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                            <Size X="160.0000" Y="20.0000" />
+                          <AbstractNodeData Name="createTime" ActionTag="1220578765" Tag="45" IconVisible="False" LeftMargin="17.5549" RightMargin="462.4451" TopMargin="96.1508" BottomMargin="10.8492" IsCustomSize="True" FontSize="20" LabelText="2020-07-22 12:00" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                            <Size X="180.0000" Y="23.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                             <Position X="107.5549" Y="22.3492" />
                             <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="175" G="89" B="12" />
                             <PrePosition X="0.1630" Y="0.1719" />
-                            <PreSize X="0.2424" Y="0.1538" />
+                            <PreSize X="0.2727" Y="0.1769" />
                             <OutlineColor A="255" R="255" G="0" B="0" />
                             <ShadowColor A="255" R="110" G="110" B="110" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="status" ActionTag="-2050975772" Tag="46" IconVisible="False" LeftMargin="534.0620" RightMargin="17.9380" TopMargin="57.9365" BottomMargin="48.0635" IsCustomSize="True" FontSize="24" LabelText="处理中..." ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                            <Size X="108.0000" Y="24.0000" />
+                          <AbstractNodeData Name="status" ActionTag="-2050975772" Tag="46" IconVisible="False" LeftMargin="528.0620" RightMargin="11.9380" TopMargin="56.4365" BottomMargin="46.5635" IsCustomSize="True" FontSize="24" LabelText="处理中..." ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                            <Size X="120.0000" Y="27.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                             <Position X="588.0620" Y="60.0635" />
                             <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="11" G="213" B="102" />
                             <PrePosition X="0.8910" Y="0.4620" />
-                            <PreSize X="0.1636" Y="0.1846" />
+                            <PreSize X="0.1818" Y="0.2077" />
                             <OutlineColor A="255" R="255" G="0" B="0" />
                             <ShadowColor A="255" R="110" G="110" B="110" />
                           </AbstractNodeData>

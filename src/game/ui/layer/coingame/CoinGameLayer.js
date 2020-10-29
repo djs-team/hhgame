@@ -104,13 +104,13 @@ load('game/ui/layer/coingame/CoinGameLayer', function () {
                     ViewType: 1,
                     TileName : '提 示',
                     LeftBtnName: '取 消',
-                    RightBtnName : '确认',
+                    RightBtnName : '去兑换',
                     RightBtnClick : function () {
                         appInstance.gameAgent().addPopUI(ResConfig.Ui.CoinShopLayer)
                         appInstance.uiManager().removeUI(this)
                     }.bind(this),
 
-                    SayText : '您的金币不足，请充值'
+                    SayText : '您的金币不足，是否去商城兑换'
                 }
                 appInstance.gameAgent().addDialogUI(dialogMsg)
                 return

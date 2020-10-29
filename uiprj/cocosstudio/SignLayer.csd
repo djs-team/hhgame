@@ -272,7 +272,7 @@
                       <AbstractNodeData Name="vipLevelText" Visible="False" ActionTag="-1441908375" Tag="176" IconVisible="False" LeftMargin="7.4400" RightMargin="6.5600" TopMargin="-0.8694" BottomMargin="27.8694" IsCustomSize="True" FontSize="20" LabelText="季VIP会员" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                         <Size X="100.0000" Y="23.0000" />
                         <Children>
-                          <AbstractNodeData Name="Panel_2" ActionTag="-1310174524" Tag="241" IconVisible="False" LeftMargin="1.0000" RightMargin="-1.0000" TopMargin="21.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="204" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+                          <AbstractNodeData Name="Panel_2" ActionTag="-1310174524" Tag="241" IconVisible="False" LeftMargin="1.0000" RightMargin="-1.0000" TopMargin="21.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="204" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                             <Size X="100.0000" Y="2.0000" />
                             <AnchorPoint />
                             <Position X="1.0000" />
@@ -298,7 +298,7 @@
                       <AbstractNodeData Name="mulitAcceptText" Visible="False" ActionTag="-669332219" Tag="177" IconVisible="False" LeftMargin="10.8292" RightMargin="3.1708" TopMargin="21.4448" BottomMargin="5.5552" IsCustomSize="True" FontSize="20" LabelText="2倍签到" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                         <Size X="100.0000" Y="23.0000" />
                         <Children>
-                          <AbstractNodeData Name="Panel_1" ActionTag="2067770831" Tag="240" IconVisible="False" LeftMargin="12.0000" RightMargin="11.0000" TopMargin="21.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="204" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+                          <AbstractNodeData Name="Panel_1" ActionTag="2067770831" Tag="240" IconVisible="False" LeftMargin="12.0000" RightMargin="11.0000" TopMargin="21.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="204" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                             <Size X="77.0000" Y="2.0000" />
                             <AnchorPoint />
                             <Position X="12.0000" />
@@ -324,7 +324,7 @@
                       <AbstractNodeData Name="singleAcceptText" ActionTag="-1859876395" Tag="178" IconVisible="False" LeftMargin="12.3402" RightMargin="1.6598" TopMargin="9.2420" BottomMargin="17.7580" IsCustomSize="True" FontSize="20" LabelText="普通领取" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                         <Size X="100.0000" Y="23.0000" />
                         <Children>
-                          <AbstractNodeData Name="Panel_3" ActionTag="-2053575649" Tag="242" IconVisible="False" LeftMargin="8.0000" RightMargin="3.0000" TopMargin="21.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="204" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+                          <AbstractNodeData Name="Panel_3" ActionTag="-2053575649" Tag="242" IconVisible="False" LeftMargin="8.0000" RightMargin="3.0000" TopMargin="21.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="204" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                             <Size X="89.0000" Y="2.0000" />
                             <AnchorPoint />
                             <Position X="8.0000" />
@@ -599,7 +599,7 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="poupPnl" Visible="False" ActionTag="1889792995" Tag="353" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="poupPnl" ActionTag="1889792995" Tag="353" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="1280.0000" Y="720.0000" />
                 <Children>
                   <AbstractNodeData Name="rulePnl" ActionTag="1643422279" Tag="354" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
@@ -645,36 +645,14 @@
                           <AbstractNodeData Name="Image_11" ActionTag="-1680476807" Tag="359" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="401.0525" RightMargin="384.9246" TopMargin="181.4240" BottomMargin="218.5760" Scale9Enable="True" LeftEage="28" RightEage="28" TopEage="24" BottomEage="24" Scale9OriginX="28" Scale9OriginY="24" Scale9Width="30" Scale9Height="27" ctype="ImageViewObjectData">
                             <Size X="494.0229" Y="320.0000" />
                             <Children>
-                              <AbstractNodeData Name="Text_8" ActionTag="-1380415311" Tag="360" IconVisible="False" LeftMargin="37.9926" RightMargin="36.3011" TopMargin="18.2838" BottomMargin="228.1308" IsCustomSize="True" FontSize="18" LabelText="每日签到，可以领取对应的奖励&#xA;&#xA;每日签到10/20/30次，可以领取丰富的额外奖励" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                                <Size X="419.7292" Y="73.5854" />
+                              <AbstractNodeData Name="Text_8" ActionTag="-1380415311" Tag="360" IconVisible="False" LeftMargin="18.3679" RightMargin="7.4457" TopMargin="29.8272" BottomMargin="124.2439" IsCustomSize="True" FontSize="18" LabelText="1:每日签到可领取丰富奖励&#xA;&#xA;2:连续签到满10/20/30次即可额外领取珍贵的宝箱奖励&#xA;&#xA;3:周会员最高可领取5倍奖励，月会员最高可领取7倍奖励，季会员最高可领取13倍奖励，年会员最高可领取23倍奖励" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                                <Size X="468.2093" Y="165.9288" />
                                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                                <Position X="247.8572" Y="264.9235" />
+                                <Position X="252.4726" Y="207.2084" />
                                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                                 <CColor A="255" R="183" G="100" B="30" />
-                                <PrePosition X="0.5017" Y="0.8279" />
-                                <PreSize X="0.8496" Y="0.2300" />
-                                <OutlineColor A="255" R="255" G="0" B="0" />
-                                <ShadowColor A="255" R="110" G="110" B="110" />
-                              </AbstractNodeData>
-                              <AbstractNodeData Name="Text_8_0" ActionTag="629026824" Tag="364" IconVisible="False" LeftMargin="37.9955" RightMargin="36.2974" TopMargin="99.9120" BottomMargin="143.9742" IsCustomSize="True" FontSize="18" LabelText="周VIP会员2倍领取   月VIP会员4倍领取&#xA;&#xA;季VIP会员10倍领取  年VIP会员20倍领取" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                                <Size X="419.7300" Y="76.1138" />
-                                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                                <Position X="247.8605" Y="182.0311" />
-                                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                                <CColor A="255" R="213" G="77" B="33" />
-                                <PrePosition X="0.5017" Y="0.5688" />
-                                <PreSize X="0.8496" Y="0.2379" />
-                                <OutlineColor A="255" R="255" G="0" B="0" />
-                                <ShadowColor A="255" R="110" G="110" B="110" />
-                              </AbstractNodeData>
-                              <AbstractNodeData Name="Text_8_1" ActionTag="831065242" Tag="365" IconVisible="False" LeftMargin="37.9950" RightMargin="36.2979" TopMargin="182.1400" BottomMargin="10.2200" IsCustomSize="True" FontSize="18" LabelText="注 1.VIP加倍领取与看视频三倍领取叠加&#xA;&#xA;     2.每日签到领取刷新时间：24:00&#xA;&#xA;        当天未领取的奖励可以隔天领取" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                                <Size X="419.7300" Y="127.6400" />
-                                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                                <Position X="247.8600" Y="74.0400" />
-                                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                                <CColor A="255" R="183" G="100" B="30" />
-                                <PrePosition X="0.5017" Y="0.2314" />
-                                <PreSize X="0.8496" Y="0.3989" />
+                                <PrePosition X="0.5111" Y="0.6475" />
+                                <PreSize X="0.9477" Y="0.5185" />
                                 <OutlineColor A="255" R="255" G="0" B="0" />
                                 <ShadowColor A="255" R="110" G="110" B="110" />
                               </AbstractNodeData>

@@ -43,7 +43,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) CXLiveRoomModel *model;
 
 @property (nonatomic, assign) NSInteger HeatValue; // 热度值
-@property (nonatomic, strong) NSArray *ranks; // 排行榜
+@property (nonatomic, strong) NSArray <NSString *> *ranks; // 排行榜
 
 // 是上麦还是下麦
 //@property (nonatomic, assign) BOOL isUpOrDownMicro;

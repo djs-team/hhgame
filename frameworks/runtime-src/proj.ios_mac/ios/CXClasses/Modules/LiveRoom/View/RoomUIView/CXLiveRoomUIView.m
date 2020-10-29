@@ -229,7 +229,7 @@
     NSString *regular = [NSString stringWithFormat:@"规则规则%@", [CXClientModel instance].room.Tips];
     self.regularView.regular = regular;
     
-    self.ranks = model.Ranks;
+//    self.ranks = model.Ranks;
     
     NSInteger heatValue = [model.RoomData.VisitorNum integerValue] + [model.RoomData.ExternVisitorNumbers integerValue];
     if (heatValue < 100000) {
@@ -288,13 +288,25 @@
 
 - (void)setRanks:(NSArray *)ranks {
     if (ranks.count == 0) {
+        self.top_oneImage.hidden = YES;
+        self.top_twoImage.hidden = YES;
+        self.top_threeImage.hidden = YES;
         return;
     } else if (ranks.count == 1) {
+        self.top_oneImage.hidden = NO;
+        self.top_twoImage.hidden = YES;
+        self.top_threeImage.hidden = YES;
         [self.top_oneImage sd_setImageWithURL:[NSURL URLWithString:ranks[0]]];
     } else if (ranks.count == 2) {
+        self.top_oneImage.hidden = NO;
+        self.top_twoImage.hidden = NO;
+        self.top_threeImage.hidden = YES;
         [self.top_oneImage sd_setImageWithURL:[NSURL URLWithString:ranks[0]]];
         [self.top_twoImage sd_setImageWithURL:[NSURL URLWithString:ranks[1]]];
     } else if (ranks.count == 3) {
+        self.top_oneImage.hidden = NO;
+        self.top_twoImage.hidden = NO;
+        self.top_threeImage.hidden = NO;
         [self.top_oneImage sd_setImageWithURL:[NSURL URLWithString:ranks[0]]];
         [self.top_twoImage sd_setImageWithURL:[NSURL URLWithString:ranks[1]]];
         [self.top_threeImage sd_setImageWithURL:[NSURL URLWithString:ranks[2]]];

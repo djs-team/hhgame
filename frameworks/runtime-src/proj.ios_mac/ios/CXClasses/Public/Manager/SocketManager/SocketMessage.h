@@ -63,6 +63,7 @@ typedef NS_ENUM(NSUInteger, SocketMessageID) {
     SocketMessageIDReceiveInviteCost = 74,      //查询成本多少
     SocketMessageIDOnlineMember_apply = 75,       //申请上麦人数
     SocketMessageIDOnlineMember_online = 76,     //在线人数
+    SocketMessageIDOnlineHeadImageNotification = 140,   // 广播在线列表(前三头像)
     SocketMessageIDSendGiftAddFriendSuccess = 77,//送礼加好友成功
     SocketMessageIDSendReconnectRequest = 78,//发送断线重连请求
     SocketMessageIDCloseRoomRequest = 79,//自己不在房间
@@ -173,6 +174,7 @@ typedef NS_ENUM(NSUInteger, SocketMessageID) {
     SocketMessageIDMicroSeatNumber = 127,               // 同步用户上麦卡数量
     SocketMessageIDKeepaLiveNotification = 301,         // 系统心跳通知
     SocketMessageIDKeepaLiveRequest = 302,              // 系统心跳回应
+    
 };
 
 

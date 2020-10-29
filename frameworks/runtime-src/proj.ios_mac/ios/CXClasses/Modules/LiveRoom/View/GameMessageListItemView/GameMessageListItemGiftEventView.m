@@ -79,7 +79,8 @@
         __weak typeof(self) weakSelf = self;
         [user setTextHighlightRange:NSMakeRange(0, obj.TargetName.length) color:color1 backgroundColor:[UIColor clearColor] tapAction:^(UIView * _Nonnull containerView, NSAttributedString * _Nonnull text, NSRange range, CGRect rect) {
             if (weakSelf.clickUserInfo) {
-                NSString *userID = [[CXClientModel instance].room.seatUsers objectForKey:obj.Micro.indexPath];
+//                NSString *userID = [[CXClientModel instance].room.seatUsers objectForKey:obj.Micro.indexPath];
+                NSString *userID = obj.TargetId;
                 weakSelf.clickUserInfo(userID);
             }
         }];

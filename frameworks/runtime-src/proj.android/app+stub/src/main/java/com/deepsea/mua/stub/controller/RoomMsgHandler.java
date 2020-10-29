@@ -262,7 +262,7 @@ public class RoomMsgHandler {
                 setNickClick(builder, desc, model.getGiftGiver().getUserId(), start);
 //                start = builder.length();
                 appendNick(builder, bean.getTargetName() + " ", bean.getSex());
-                setNickClick(builder, bean.getTargetName(), "12148", desc.length()+2);
+                setNickClick(builder, bean.getTargetName(), String.valueOf(bean.getTargetId()), desc.length() + 2);
                 result.setUrl(url);
                 result.setCount(model.getCount());
                 result.setStart(builder.length());

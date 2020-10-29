@@ -17,14 +17,12 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import org.cocos2dx.javascript.ui.splash.activity.SplashActivity;
@@ -33,33 +31,27 @@ import org.cocos2dx.lib.Cocos2dxHelper;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.alibaba.sdk.android.oss.OSS;
-import com.alibaba.sdk.android.oss.internal.OSSAsyncTask;
 import com.deepsea.mua.advertisement.AdManage;
 import com.deepsea.mua.core.alipay.Alipay;
 import com.deepsea.mua.core.alipay.PayResult;
 import com.deepsea.mua.core.login.ApiUser;
 import com.deepsea.mua.core.login.LoginApi;
 import com.deepsea.mua.core.login.OnLoginListener;
-import com.deepsea.mua.core.utils.GlideUtils;
 import com.deepsea.mua.core.utils.JsonConverter;
 import com.deepsea.mua.core.utils.NetWorkUtils;
 import com.deepsea.mua.core.utils.ToastUtils;
 import com.deepsea.mua.core.wxpay.WxPay;
 import com.deepsea.mua.core.wxpay.WxpayBroadcast;
 import com.deepsea.mua.mine.activity.UploadPhotoDialogActivity;
-import com.deepsea.mua.stub.base.BaseObserver;
 import com.deepsea.mua.stub.dialog.AAlertDialog;
-import com.deepsea.mua.stub.dialog.PhotoDialog;
 import com.deepsea.mua.stub.entity.ChessLoginParam;
 import com.deepsea.mua.stub.entity.InstallParamVo;
-import com.deepsea.mua.stub.entity.OSSConfigBean;
+import com.deepsea.mua.stub.entity.OssGameConfigVo;
 import com.deepsea.mua.stub.entity.QPWxOrder;
 import com.deepsea.mua.stub.jpush.JpushUtils;
 import com.deepsea.mua.stub.permission.PermissionCallback;
 import com.deepsea.mua.stub.utils.BitmapUtils;
 import com.deepsea.mua.stub.utils.Constant;
-import com.deepsea.mua.stub.utils.OssUpUtil;
 import com.deepsea.mua.stub.utils.SharedPrefrencesUtil;
 import com.deepsea.mua.voice.MyNotifyService;
 import com.fm.openinstall.OpenInstall;
@@ -68,7 +60,6 @@ import com.fm.openinstall.listener.AppWakeUpAdapter;
 import com.fm.openinstall.model.AppData;
 import com.fm.openinstall.model.Error;
 import com.hh.game.R;
-import com.hhgame.httpClient.httpClient;
 import com.umeng.socialize.ShareAction;
 import com.umeng.socialize.bean.SHARE_MEDIA;
 import com.umeng.socialize.media.UMImage;
@@ -76,12 +67,12 @@ import com.umeng.socialize.media.UMWeb;
 import com.uuzuche.lib_zxing.activity.CodeUtils;
 
 import java.io.File;
+import java.io.Serializable;
 
 import cn.jiguang.verifysdk.api.AuthPageEventListener;
 import cn.jiguang.verifysdk.api.JVerificationInterface;
 import cn.jiguang.verifysdk.api.RequestCallback;
 import cn.jiguang.verifysdk.api.VerifyListener;
-import me.jessyan.autosize.internal.CustomAdapt;
 
 import static com.deepsea.mua.core.utils.NetWorkUtils.NetWorkType.UN_KNOWN;
 import static com.deepsea.mua.core.utils.NetWorkUtils.NetWorkType.WIFI;
@@ -214,7 +205,10 @@ public class AppActivity extends Cocos2dxActivity {
         }
         if (requestCode == 2) {
             String result = data.getStringExtra(Constant.HHGAME_PHOTO);
+            ccActivity.RunJS("SelectHeadCallback", result);
+
             ToastUtils.showToast("onActivityResult:" + result);
+
         }
 
 
@@ -825,14 +819,12 @@ public class AppActivity extends Cocos2dxActivity {
     }
 
 
-    public static void getPictureFromPhoneAlbum() {
-        ccActivity.runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                Intent intent = new Intent(ccActivity, UploadPhotoDialogActivity.class);
-                ccActivity.startActivityForResult(intent, 2);
-            }
-        });
+    public static void getPictureFromPhoneAlbum(String data) {
+        Log.d("getPictureFrom", data);
+        OssGameConfigVo result = JsonConverter.fromJson(data, OssGameConfigVo.class);
+        Intent intent = new Intent(ccActivity, UploadPhotoDialogActivity.class);
+        intent.putExtra("ossConfig", result);
+        ccActivity.startActivityForResult(intent, 2);
     }
 
 }

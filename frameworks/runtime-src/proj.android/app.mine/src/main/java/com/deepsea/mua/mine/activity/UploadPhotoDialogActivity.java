@@ -19,6 +19,7 @@ import com.alibaba.android.arouter.launcher.ARouter;
 import com.alibaba.sdk.android.oss.OSS;
 import com.alibaba.sdk.android.oss.internal.OSSAsyncTask;
 import com.deepsea.mua.core.network.AppExecutors;
+import com.deepsea.mua.core.utils.JsonConverter;
 import com.deepsea.mua.core.utils.ToastUtils;
 import com.deepsea.mua.mine.activity.InviteDialogActivity;
 import com.deepsea.mua.mine.viewmodel.CollectionAccountModel;
@@ -31,6 +32,7 @@ import com.deepsea.mua.stub.dialog.InviteOutRoomDialog;
 import com.deepsea.mua.stub.dialog.PhotoDialog;
 import com.deepsea.mua.stub.entity.HeartBeatBean;
 import com.deepsea.mua.stub.entity.OSSConfigBean;
+import com.deepsea.mua.stub.entity.OssGameConfigVo;
 import com.deepsea.mua.stub.entity.ReportPicVo;
 import com.deepsea.mua.stub.utils.AppManager;
 import com.deepsea.mua.stub.utils.Constant;
@@ -64,6 +66,7 @@ public class UploadPhotoDialogActivity extends FragmentActivity implements HasSu
     ViewModelFactory mModelFactory;
     private CollectionAccountModel mViewModel;
     private Context mContext;
+    OssGameConfigVo gameConfigVo;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -71,6 +74,8 @@ public class UploadPhotoDialogActivity extends FragmentActivity implements HasSu
         super.onCreate(savedInstanceState);
         mContext = this;
         mViewModel = ViewModelProviders.of(this, mModelFactory).get(CollectionAccountModel.class);
+        gameConfigVo = (OssGameConfigVo) getIntent().getSerializableExtra("ossConfig");
+        Log.d("getPictureFrom", JsonConverter.toJson(gameConfigVo));
         showPhotoDialog();
     }
 
@@ -95,26 +100,8 @@ public class UploadPhotoDialogActivity extends FragmentActivity implements HasSu
             });
             mPhotoDialog.setOnPhotoSelectedListener(path -> {
                 Log.d("showPhotoDialog", path);
-                mViewModel.getOssConfig().observe(this, new BaseObserver<OSSConfigBean>() {
-                    @Override
-                    public void onSuccess(OSSConfigBean result) {
-                        Log.d("showPhotoDialog", result.toString());
+                upLoadHeadIv(path);
 
-                        if (result != null) {
-                            upLoadHeadIv(result, path);
-                        } else {
-                            mPhotoDialog.dismiss();
-                            ToastUtils.showToast("上传失败");
-                        }
-
-                    }
-
-                    @Override
-                    public void onError(String msg, int code) {
-                        super.onError(msg, code);
-                        mPhotoDialog.dismiss();
-                    }
-                });
             });
         }
         mPhotoDialog.showAtBottom(getSupportFragmentManager());
@@ -122,10 +109,10 @@ public class UploadPhotoDialogActivity extends FragmentActivity implements HasSu
 
     private OSSAsyncTask ossAsyncTask;
 
-    private void upLoadHeadIv(OSSConfigBean config, String aHeadIv) {
+    private void upLoadHeadIv(String aHeadIv) {
         mExecutors.diskIO().execute(() -> {
-            OSS oSs = OssUpUtil.getInstance().getOssConfig(mContext, config.AccessKeyId, config.AccessKeySecret, config.SecurityToken, config.Expiration);
-            ossAsyncTask = OssUpUtil.getInstance().upToOss(6, aHeadIv, oSs, config.BucketName, new OssUpUtil.OssUpCallback() {
+            OSS oSs = OssUpUtil.getInstance().getOssConfig(mContext, gameConfigVo.getAccessKeyIdOss(), gameConfigVo.getAccessKeySecretOss(), gameConfigVo.getToken(), gameConfigVo.getEndpoint());
+            ossAsyncTask = OssUpUtil.getInstance().upToOss(6, aHeadIv, oSs, gameConfigVo.getBucketName(), gameConfigVo.getEndpoint(), new OssUpUtil.OssUpCallback() {
                 @Override
                 public void upSuccessFile(String objectKey) {
                     Log.d("report", "upSuccessFile:" + objectKey);

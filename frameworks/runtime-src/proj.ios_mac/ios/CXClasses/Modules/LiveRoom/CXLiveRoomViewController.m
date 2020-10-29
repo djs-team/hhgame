@@ -783,6 +783,11 @@
                 
             }
                 break;
+            case SocketMessageIDOnlineHeadImageNotification: {
+                CXSocketMessageOnlineMemberNumber *number = notification;
+                self.roomUIView.ranks = number.OnlineHeadImages;
+                break;
+            }
             case SocketMessageIDMusicReserveList: { // 预约列表
 //               CXSocketMessageMusicReceiveReverseList *list = notification;
 //            self.roomUIView.bottom_music_reverse_numberLable.text = [NSString stringWithFormat:@"预约:%ld", list.SongCount];
@@ -790,7 +795,7 @@
             }
                 break;
             case SocketMessageIDMusicStartPlaySongSyncGist: {// 收到播放歌曲消息
-                SocketMessageMusicReceivePlayingDetail *detail = notification;
+//                SocketMessageMusicReceivePlayingDetail *detail = notification;
                 self.musicView.musicPlayStatus = music_loading;
                 [self music_playStart];
             }

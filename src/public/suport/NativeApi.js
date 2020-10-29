@@ -484,7 +484,20 @@ load('public/suport/NativeApi', function () {
             } catch (e) {
                 NativeApi.HelloOC('getInvitationCode throw: ' + JSON.stringify(e))
             }
-        }
+        },
+        //上传图片
+        uploadPictureParam: function (msg) {
+            try {
+                if (cc.sys.OS_ANDROID === cc.sys.os) {
+                    
+                } else if (cc.sys.OS_IOS === cc.sys.os) {
+                    let param = JSON.stringify(msg)
+                    jsb.reflection.callStaticMethod('AppController', 'selectedOnePhotoWithPutParam:method:', param, "PERSONALLAYER_CHANGE_PICTURE")
+                }
+            } catch (e) {
+                NativeApi.HelloOC('uploadPictureParam throw: ' + JSON.stringify(e))
+            }
+        },
     })
     return NativeApi
 })

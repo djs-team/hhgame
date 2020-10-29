@@ -66,7 +66,11 @@
 + (void)appPurchaseWithPayType:(NSString *_Nonnull)payType payParam:(NSString *_Nonnull)payParam userID:(NSString *_Nonnull)userID orderNo:(NSString *_Nonnull)orderNo paySuccessMethod:(NSString *_Nonnull)paySuccessMethod;
 
 #pragma mark - Photo
-+ (void)selectedOnePhotoWithMethod:(NSString *_Nonnull)method;
+
+/// 上传图片
+/// @param putParam 上传图片阿里云参数
+/// @param method 返回方法
++ (void)selectedOnePhotoWithPutParam:(NSString *)putParam method:(NSString *_Nonnull)method;
 
 #pragma mark - QRCode
 /// 生成二维码

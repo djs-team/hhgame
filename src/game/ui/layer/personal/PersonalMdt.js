@@ -12,7 +12,8 @@ load('game/ui/layer/personal/PersonalMdt', function () {
         },
         getNotificationList: function () {
             return [
-                GameEvent.UPDATE_USERNAME
+                GameEvent.UPDATE_USERNAME,
+                GameEvent.UPDATE_USERPHOTO,
             ]
         },
         handleNotification: function (notification) {
@@ -22,6 +23,9 @@ load('game/ui/layer/personal/PersonalMdt', function () {
                 case GameEvent.UPDATE_USERNAME:
                     this.updateUserName(body)
                     break
+                case GameEvent.UPDATE_USERPHOTO:
+                    this.updatePicture(body)
+                    this
             }
         },
 
@@ -31,6 +35,13 @@ load('game/ui/layer/personal/PersonalMdt', function () {
             data.pname = appInstance.dataManager().getUserData().pname
             data._nameUpdate = appInstance.dataManager().getUserData().nameUpdate
             this.view.updateUserName(data)
+        },
+        
+        updatePicture: function (body) {
+            cc.log("=======updatePicture=====" + appInstance.dataManager().getUserData().sdkphotourl)
+            let data = {}
+            data.photo = appInstance.dataManager().getUserData().sdkphotourl
+            this.view.updateUserPicture(data)
         },
 
         onRegister: function () {

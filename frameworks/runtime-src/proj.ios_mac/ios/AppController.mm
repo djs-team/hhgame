@@ -504,11 +504,18 @@ static AppDelegate s_sharedApplication;
 }
 
 #pragma mark -  ================ Photo ===================
-+ (void)selectedOnePhotoWithMethod:(NSString *_Nonnull)method {
-    [[CXPhotoManager manager] showPickerWith:[CXTools currentViewController] allowEdit:YES completeBlock:^(NSString * _Nonnull imageUrl) {
-        NSLog(@"imageUrl=%@", imageUrl);
-        [AppController dispatchCustomEventWithMethod:method param:imageUrl];
-    }];
++ (void)selectedOnePhotoWithPutParam:(NSString *)putParam method:(NSString *_Nonnull)method {
+    if (putParam.length <= 0) {
+        return;
+    }
+    NSDictionary *dict = [putParam jsonValueDecoded];
+    if ([dict.allKeys containsObject:@"info"]) {
+        NSDictionary *info = dict[@"info"];
+        [[CXPhotoManager manager] showPickerWith:[CXTools currentViewController] putParam:[info jsonStringEncoded] allowEdit:YES completeBlock:^(NSString * _Nonnull imageUrl) {
+            NSLog(@"imageUrl=%@", imageUrl);
+            [AppController dispatchCustomEventWithMethod:method param:imageUrl];
+        }];
+    }
 }
 
 #pragma mark - ================ QRCode ===================

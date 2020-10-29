@@ -19,7 +19,7 @@
 
 @interface CXBaseTabBarViewController () <EMChatManagerDelegate>
 
-@property (nonatomic) BOOL isViewAppear;
+//@property (nonatomic) BOOL isViewAppear;
 
 @property (nonatomic, strong) CXHomeViewController *homeController;
 @property (nonatomic, strong) CXFriendViewController *friendController;
@@ -67,7 +67,7 @@
     [super viewWillAppear:animated];
     
     self.navigationController.navigationBarHidden = YES;
-    self.isViewAppear = YES;
+//    self.isViewAppear = YES;
     [self _loadTabBarItemsBadge];
 }
 
@@ -75,7 +75,7 @@
 {
     [super viewWillDisappear:animated];
     
-    self.isViewAppear = NO;
+//    self.isViewAppear = NO;
 }
 
 //- (void)getUnReadCountData {
@@ -128,9 +128,7 @@
 
 - (void)messagesDidReceive:(NSArray *)aMessages
 {
-    if (self.isViewAppear) {
-        [self _loadConversationTabBarItemBadge];
-    }
+    [self _loadConversationTabBarItemBadge];
 }
 
 - (void)conversationListDidUpdate:(NSArray *)aConversationList

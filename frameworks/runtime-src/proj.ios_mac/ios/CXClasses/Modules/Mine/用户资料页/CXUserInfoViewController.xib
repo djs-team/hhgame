@@ -11,7 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CXUserInfoViewController">
             <connections>
+                <outlet property="avatar" destination="D79-Xz-bhC" id="QMq-Pd-60n"/>
                 <outlet property="bottomBtn" destination="dO5-tv-pmJ" id="DSR-XR-pZc"/>
+                <outlet property="collectionViewTopLayout" destination="tRZ-vE-zGj" id="XvM-dw-bps"/>
                 <outlet property="hiddenLabel" destination="gOn-v9-Oru" id="cbX-Yx-XOb"/>
                 <outlet property="hiddenLabel_topLayout" destination="tRZ-vE-zGj" id="Xvr-u4-Jxz"/>
                 <outlet property="mainCollectionView" destination="Tly-zH-MbJ" id="YZN-9l-e9b"/>
@@ -26,8 +28,12 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D79-Xz-bhC">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.050000000000000003" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                </imageView>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Tly-zH-MbJ">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="782"/>
+                    <rect key="frame" x="0.0" y="300" width="414" height="482"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VQZ-4t-Fs1">
                         <size key="itemSize" width="128" height="128"/>
@@ -106,14 +112,18 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="Tly-zH-MbJ" secondAttribute="bottom" constant="80" id="4Qa-IU-8Fj"/>
+                <constraint firstItem="Tly-zH-MbJ" firstAttribute="top" secondItem="D79-Xz-bhC" secondAttribute="bottom" id="9CD-Nr-XQ1"/>
                 <constraint firstItem="gOn-v9-Oru" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="D72-0X-9Nf"/>
                 <constraint firstItem="Tly-zH-MbJ" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="JZU-oD-7BO"/>
                 <constraint firstItem="gOn-v9-Oru" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="OAS-uf-bRh"/>
-                <constraint firstItem="Tly-zH-MbJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Pti-cs-Yee"/>
                 <constraint firstItem="dO5-tv-pmJ" firstAttribute="top" secondItem="Tly-zH-MbJ" secondAttribute="bottom" constant="22" id="QAq-Pd-KWt"/>
                 <constraint firstItem="gOn-v9-Oru" firstAttribute="bottom" secondItem="Q5M-cg-NOt" secondAttribute="bottom" id="TRR-3D-cal"/>
+                <constraint firstItem="D79-Xz-bhC" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="WDu-LW-Fyu"/>
+                <constraint firstItem="D79-Xz-bhC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="eDH-Wn-fSa"/>
+                <constraint firstItem="D79-Xz-bhC" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="i12-db-RQU"/>
                 <constraint firstItem="ma1-gQ-7Ry" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="jBf-zo-1mj"/>
                 <constraint firstItem="dO5-tv-pmJ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="oJc-QQ-8sG"/>
+                <constraint firstItem="Tly-zH-MbJ" firstAttribute="top" secondItem="ma1-gQ-7Ry" secondAttribute="bottom" constant="212" id="oLX-n2-bIn"/>
                 <constraint firstItem="Tly-zH-MbJ" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="snl-ar-haz"/>
                 <constraint firstItem="gOn-v9-Oru" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="300" id="tRZ-vE-zGj"/>
                 <constraint firstItem="ma1-gQ-7Ry" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="uAG-SX-Fsc"/>

@@ -33,7 +33,7 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="21dp"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/notch_view">
+                app:layout_constraintTop_toTopOf="@id/notch_view">
 
                 <RelativeLayout
                     android:id="@+id/rl_room_close"
@@ -97,7 +97,8 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="@id/owner_rl">
+                app:layout_constraintTop_toTopOf="@id/owner_rl"
+                app:layout_constraintBottom_toBottomOf="@id/owner_rl">
 
                 <TextView
                     android:layout_width="48dp"
@@ -280,34 +281,7 @@
 
                     </RelativeLayout>
 
-                    <LinearLayout
-                        android:id="@+id/ll_recommend"
-                        android:layout_width="wrap_content"
-                        android:layout_height="73dp"
-                        android:layout_marginTop="22dp"
-                        android:background="@drawable/bg_recommend_logo"
-                        android:gravity="center_horizontal"
-                        android:orientation="horizontal"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toTopOf="parent">
 
-                        <ImageView
-                            android:layout_width="6dp"
-                            android:layout_height="10dp"
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginLeft="2dp"
-                            android:src="@drawable/ic_back" />
-
-                        <TextView
-                            android:layout_width="12dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="5.5dp"
-                            android:layout_marginRight="5.5dp"
-                            android:text="为你推荐"
-                            android:textColor="#ffffffff"
-                            android:textSize="12sp" />
-
-                    </LinearLayout>
                 </android.support.constraint.ConstraintLayout>
 
                 <android.support.constraint.ConstraintLayout
@@ -1034,6 +1008,35 @@
                 android:visibility="gone"
                 app:count="10"
                 app:speed="100" />
+            <LinearLayout
+                android:id="@+id/ll_recommend"
+                android:layout_width="wrap_content"
+                android:layout_height="73dp"
+                android:layout_marginTop="110dp"
+                android:background="@drawable/bg_recommend_logo"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="6dp"
+                    android:layout_height="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="2dp"
+                    android:src="@drawable/ic_back" />
+
+                <TextView
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="12dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5.5dp"
+                    android:layout_marginRight="5.5dp"
+                    android:text="为你推荐"
+                    android:textColor="#ffffffff"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
 
         </android.support.constraint.ConstraintLayout>
 

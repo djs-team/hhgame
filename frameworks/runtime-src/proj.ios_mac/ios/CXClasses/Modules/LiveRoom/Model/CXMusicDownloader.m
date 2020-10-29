@@ -21,10 +21,10 @@
 + (void)downloadURL:(NSString *)downloadURL progress:(void (^)(NSProgress *downloadProgress))progress success:(void (^)(NSURL *targetPath))success failure:(void(^)(NSError *error))faliure {
     
 //    YYCache *cache = [YYCache cacheWithName:@"LiveRoomMusicDownCache"];
-//    if ([cache containsObjectForKey:downloadURL]) {
-//        id filePath = [cache objectForKey:downloadURL];
+//    if ([cache containsObjectForKey:[NSURL URLWithString: downloadURL].lastPathComponent]) {
+//        id filePath = [cache objectForKey:[NSURL URLWithString: downloadURL].lastPathComponent];
 //        NSURL *filePathURL = filePath;
-//        if ([MTool fileSizeAtPath:filePathURL.absoluteString] > 0) {
+//        if ([CXTools fileSizeAtPath:filePathURL.absoluteString] > 0) {
 //            success(filePath);
 //            return;
 //        }
@@ -70,7 +70,7 @@
             faliure(error);
         }
         if(filePath){
-//            [cache setObject:filePath forKey:downloadURL];
+//            [cache setObject:filePath forKey:[NSURL URLWithString: downloadURL].lastPathComponent];
             success(filePath);
         }
     }];

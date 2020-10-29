@@ -50,6 +50,7 @@ import com.deepsea.mua.stub.jpush.JpushUtils;
 import com.deepsea.mua.stub.permission.PermissionCallback;
 import com.deepsea.mua.stub.utils.BitmapUtils;
 import com.deepsea.mua.stub.utils.SharedPrefrencesUtil;
+import com.deepsea.mua.voice.MyNotifyService;
 import com.fm.openinstall.OpenInstall;
 import com.fm.openinstall.listener.AppInstallAdapter;
 import com.fm.openinstall.listener.AppWakeUpAdapter;
@@ -105,6 +106,12 @@ public class AppActivity extends Cocos2dxActivity {
 
         } catch (Exception e) {
 
+        }
+        Intent intent = new Intent(ccActivity, MyNotifyService.class);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            startForegroundService(intent);
+        } else {
+            startService(intent);
         }
 
     }

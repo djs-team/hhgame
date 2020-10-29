@@ -1276,11 +1276,11 @@
                           "Y": 0.5
                         },
                         "PreSize": {
-                          "X": 0.3461,
+                          "X": 0.3906,
                           "Y": 0.9502
                         },
-                        "LeftMargin": 418.5,
-                        "RightMargin": 418.5,
+                        "LeftMargin": 390.0,
+                        "RightMargin": 390.0,
                         "TopMargin": 2.4914,
                         "BottomMargin": 2.4913,
                         "Tag": 166,
@@ -1307,7 +1307,7 @@
                               "ScaleY": 0.5
                             },
                             "Position": {
-                              "X": 219.28,
+                              "X": 253.28,
                               "Y": 56.8881
                             },
                             "Scale": {
@@ -1317,21 +1317,21 @@
                             "CColor": {},
                             "IconVisible": false,
                             "PrePosition": {
-                              "X": 0.495,
+                              "X": 0.5066,
                               "Y": 0.5988
                             },
                             "PreSize": {
-                              "X": 0.8668,
+                              "X": 0.9,
                               "Y": 0.3474
                             },
-                            "LeftMargin": 27.28,
-                            "RightMargin": 31.72,
+                            "LeftMargin": 28.28,
+                            "RightMargin": 21.72,
                             "TopMargin": 21.6119,
                             "BottomMargin": 40.3881,
                             "Tag": 167,
                             "ActionTag": 860838305,
                             "Size": {
-                              "X": 384.0,
+                              "X": 450.0,
                               "Y": 33.0
                             },
                             "Name": "titleText",
@@ -1340,7 +1340,7 @@
                         ],
                         "ActionTag": -675366386,
                         "Size": {
-                          "X": 443.0,
+                          "X": 500.0,
                           "Y": 95.0
                         },
                         "Name": "titleImg",

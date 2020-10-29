@@ -28,6 +28,7 @@
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(avatarTapAction:)];
     //为图片添加手势
     [_avatar addGestureRecognizer:singleTap];
+    _avatar.userInteractionEnabled = YES;
 }
 
 - (void)avatarTapAction:(UITapGestureRecognizer *)gesture {
@@ -52,11 +53,6 @@
     }
     
     [self.avatar sd_setImageWithURL:[NSURL URLWithString:_model.avatar]];
-    if (model.room_id.length > 0) {
-        _avatar.userInteractionEnabled = YES;
-    } else {
-        _avatar.userInteractionEnabled = NO;
-    }
     
     [self.userSexBtn setTitle:model.age forState:UIControlStateNormal];
     if ([model.sex isEqualToString:@"1"]) {

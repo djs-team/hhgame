@@ -173,9 +173,13 @@
         
         CXFriendInviteModel *model = [_userDataDict objectForKey:conversation.emModel.conversationId];
         cell.model = model;
-        
+        kWeakSelf
         cell.avatarTapGestureBlock = ^{
-            [AppController joinRoom:model.room_id];
+            if (model.room_id.length > 0) {
+                [AppController joinRoom:model.room_id];
+            } else {
+                [AppController showUserProfile:model.user_id target:weakSelf];
+            }
         };
         cell.userMessageLabel.hidden = NO;
         cell.userMessageLabel.text = [self _latestMessageTitleForConversationModel:conversation.emModel];
@@ -191,8 +195,13 @@
         cell.model = model;
         cell.isConversation = NO;
         cell.userMessageLabel.hidden = YES;
+        kWeakSelf
         cell.avatarTapGestureBlock = ^{
-            [AppController joinRoom:model.room_id];
+            if (model.room_id.length > 0) {
+                [AppController joinRoom:model.room_id];
+            } else {
+                [AppController showUserProfile:model.user_id target:weakSelf];
+            }
         };
     }
     return cell;

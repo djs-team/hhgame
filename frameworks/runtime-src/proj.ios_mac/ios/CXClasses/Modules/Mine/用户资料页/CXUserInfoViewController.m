@@ -27,6 +27,8 @@
     NSInteger _giftSectionIndex;
 }
 
+@property (weak, nonatomic) IBOutlet UIImageView *avatar;
+
 @property (weak, nonatomic) IBOutlet UIButton *moreButton;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UICollectionView *mainCollectionView;
@@ -41,6 +43,8 @@
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *hiddenLabel_topLayout;
 @property (weak, nonatomic) IBOutlet UILabel *hiddenLabel;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *collectionViewTopLayout;
 
 @end
 
@@ -85,6 +89,7 @@
             
             weakSelf.giftArrays = [NSArray modelArrayWithClass:[CXFriendGiftModel class] json:responseObject[@"data"][@"rank_gift"]];
             
+            [weakSelf.avatar sd_setImageWithURL:[NSURL URLWithString:user.avatar]];
             weakSelf.titleLabel.text = user.nickname;
             if ([weakSelf.user_Id isEqualToString:[CXClientModel instance].userId]) {
                 weakSelf.bottomBtn.hidden = YES;
@@ -175,7 +180,7 @@
     if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
         if (indexPath.section == _mainInfoSectionIndex) {
             CXUserInfoHeaderReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"CXUserInfoHeaderReusableView" forIndexPath:indexPath];
-            [headerView.avatar sd_setImageWithURL:[NSURL URLWithString:_currentUser.avatar]];
+//            [headerView.avatar sd_setImageWithURL:[NSURL URLWithString:_currentUser.avatar]];
             reusableview = headerView;
         } else if (indexPath.section==_profileSectionIndex){
             CXUserInfoGroupTitleReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"CXUserInfoGroupTitleReusableView" forIndexPath:indexPath];
@@ -222,7 +227,8 @@
 #pragma mark  Header_CGSize
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
     if (section == _mainInfoSectionIndex) {
-       return CGSizeMake(SCREEN_WIDTH,300*SCALE_W);
+//       return CGSizeMake(SCREEN_WIDTH,300*SCALE_W);
+        return CGSizeMake(SCREEN_WIDTH,0.01f);
     } else if (section == _currentRoomSectionIndex) {
         return CGSizeZero;
     }
@@ -348,6 +354,8 @@
     _mainCollectionView.showsHorizontalScrollIndicator = NO;
     
     self.mainCollectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    
+    self.collectionViewTopLayout.constant = 300 * SCALE_W;
 }
 
 - (NSMutableArray *)profileArrays {

@@ -139,6 +139,8 @@ load('game/ui/scene/LoginScene', function () {
         },
 
         initView: function () {
+            this.userAgreeList.setScrollBarEnabled(false)
+
             this.block.setVisible(true)
             this.topPnl.setVisible(true)
             this.pnl.setVisible(true)

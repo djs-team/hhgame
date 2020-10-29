@@ -24,6 +24,8 @@
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(avatarTapAction:)];
     //为图片添加手势
     [_avatar addGestureRecognizer:singleTap];
+    
+    _avatar.userInteractionEnabled = YES;
 }
 
 - (void)avatarTapAction:(UITapGestureRecognizer *)gesture {

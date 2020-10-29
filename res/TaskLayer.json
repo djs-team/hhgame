@@ -3111,6 +3111,7 @@
                                 "FontSize": 30,
                                 "LabelText": "x666",
                                 "HorizontalAlignmentType": "HT_Center",
+                                "VerticalAlignmentType": "VT_Center",
                                 "OutlineColor": {
                                   "G": 0,
                                   "B": 0
@@ -3145,17 +3146,17 @@
                                   "Y": -0.2108
                                 },
                                 "PreSize": {
-                                  "X": 0.9529,
+                                  "X": 1.7647,
                                   "Y": 0.4205
                                 },
-                                "LeftMargin": 0.2,
-                                "RightMargin": 3.8,
+                                "LeftMargin": -34.3,
+                                "RightMargin": -30.7,
                                 "TopMargin": 88.05,
                                 "BottomMargin": -37.05,
                                 "Tag": 154,
                                 "ActionTag": 614639366,
                                 "Size": {
-                                  "X": 81.0,
+                                  "X": 150.0,
                                   "Y": 37.0
                                 },
                                 "Name": "awardsVal",

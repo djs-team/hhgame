@@ -12,6 +12,8 @@ load('game/ui/layer/personal/PersonalLayer', function () {
             this._super(ResConfig.View.PersonalLayer)
 
             this.registerMediator(new PersonalMdt(this))
+            
+            this.registerEventListener('PERSONALLAYER_CHANGE_PICTURE', this.onChangePicSuccess)
         },
         RES_BINDING: function () {
             return {
@@ -19,7 +21,7 @@ load('game/ui/layer/personal/PersonalLayer', function () {
                 'personalDataPnl/dataBtn': {},
                 'personalDataPnl/photoPic': {},
                 'personalDataPnl/personalDataCloseBtn': {onClicked: this.onPersonalDataCloseClick},
-                'personalDataPnl/changePicBtn': {},
+                'personalDataPnl/changePicBtn': {onClicked: this.onChangePicBtnClick},
                 'personalDataPnl/cancellationBtn': {onClicked: this.onExitBtnClick},
                 'personalDataPnl/namePnl': {},
                 'personalDataPnl/namePnl/updateNameBtn': {onClicked: this.onUpdateNameClick},
@@ -61,7 +63,7 @@ load('game/ui/layer/personal/PersonalLayer', function () {
         },
 
         initView: function () {
-            this.changePicBtn.setVisible(false)
+
         },
 
         showView: function () {
@@ -136,6 +138,19 @@ load('game/ui/layer/personal/PersonalLayer', function () {
 
         },
 
+        onChangePicBtnClick: function () {
+            cc.log("=======获取上传图片token=========");
+            let msg = {}
+            appInstance.gameAgent().httpGame().getUpDatePictureTokenReq(msg)
+        },
+        
+        onChangePicSuccess: function (msg) {
+            //更新头像
+            let msgPhoto = {}
+            msgPhoto.photoUrl = msg;
+            appInstance.gameAgent().httpGame().updateUserPhotoReq(msgPhoto)
+        },
+        
         onUpdateNameClick: function () {
             this.updateNamePnl.setVisible(true)
         },
@@ -189,6 +204,12 @@ load('game/ui/layer/personal/PersonalLayer', function () {
 
             this.onInitUserData(data)
             this.onCloseUpdateNameClick()
+
+        },
+        
+        updateUserPicture: function (data) {
+
+            this.onInitUserData(data)
 
         },
 

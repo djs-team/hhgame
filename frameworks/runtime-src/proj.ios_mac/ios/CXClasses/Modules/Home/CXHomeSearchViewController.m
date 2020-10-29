@@ -51,7 +51,7 @@
     cell.user = user;
     kWeakSelf
     cell.avatarTapGestureBlock = ^{
-        if (user.room_id.length > 0) {
+        if ([user.room_id integerValue] > 0) {
             [AppController joinRoom:user.room_id];
         } else {
             [AppController showUserProfile:user.user_id target:weakSelf];

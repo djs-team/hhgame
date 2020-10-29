@@ -175,7 +175,7 @@
         cell.model = model;
         kWeakSelf
         cell.avatarTapGestureBlock = ^{
-            if (model.room_id.length > 0) {
+            if ([model.room_id integerValue] > 0) {
                 [AppController joinRoom:model.room_id];
             } else {
                 [AppController showUserProfile:model.user_id target:weakSelf];
@@ -197,7 +197,7 @@
         cell.userMessageLabel.hidden = YES;
         kWeakSelf
         cell.avatarTapGestureBlock = ^{
-            if (model.room_id.length > 0) {
+            if ([model.room_id integerValue] > 0) {
                 [AppController joinRoom:model.room_id];
             } else {
                 [AppController showUserProfile:model.user_id target:weakSelf];

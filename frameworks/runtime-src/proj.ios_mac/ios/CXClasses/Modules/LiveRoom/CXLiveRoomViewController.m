@@ -229,6 +229,7 @@
     
     [self getGiftListData];
     [self getGuardGiftListData];
+    [self getFirendGiftListData];
     [self getFriendListData];
 }
 

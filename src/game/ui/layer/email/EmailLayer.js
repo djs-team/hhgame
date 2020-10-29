@@ -213,7 +213,7 @@ load('game/ui/layer/email/EmailLayer', function () {
             appInstance.gameAgent().httpGame().emailReceiveReq(msg)
         },
         onEmailReceive: function () {
-            appInstance.gameAgent().Tips('------------------------------------领取成功！！！')
+            appInstance.gameAgent().Tips('---------------------领取成功！！！---------------------')
             for (let i=0; i<this._rewardCount; i++) {
                 this.rewardList.getChildByName('rewards'+this._rewardMailId+i).getChildByName('finishPic').setVisible(true)
             }

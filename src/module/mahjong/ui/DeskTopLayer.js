@@ -145,6 +145,7 @@ load('module/mahjong/ui/DeskTopLayer', function () {
         },
 
         initView: function (pData) {
+            this.contentList.setScrollBarEnabled(false)
             this.initData(pData)
             this.ActionCell.setVisible(false)
             this.ChiCell.setVisible(false)

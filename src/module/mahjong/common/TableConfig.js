@@ -221,7 +221,7 @@ load('module/mahjong/common/TableConfig', function () {
                 },
                 '5':{
                     'id':6,
-                    'text':'等待资源'
+                    'text':'大家好，很高兴见到各位'
                 },
                 '6':{
                     'id':7,
@@ -259,7 +259,7 @@ load('module/mahjong/common/TableConfig', function () {
                 },
                 '5':{
                     'id':6,
-                    'text':'等待资源'
+                    'text':'大家好，很高兴见到各位'
                 },
                 '6':{
                     'id':7,
@@ -273,6 +273,40 @@ load('module/mahjong/common/TableConfig', function () {
                     'id':9,
                     'text':'你的牌打得也忒好了'
                 },
+            }
+        },
+        'magic':{
+            '0':{
+                'id':1,
+                'res':'res/module/mahjong/desk/z_1.png',
+            },
+            '1':{
+                'id':2,
+                'res':'res/module/mahjong/desk/z_1.png',
+            },
+            '2':{
+                'id':3,
+                'res':'res/module/mahjong/desk/z_1.png',
+            },
+            '3':{
+                'id':4,
+                'res':'res/module/mahjong/desk/z_1.png',
+            },
+            '4':{
+                'id':5,
+                'res':'res/module/mahjong/desk/z_1.png',
+            },
+            '5':{
+                'id':6,
+                'res':'res/module/mahjong/desk/z_1.png',
+            },
+            '6':{
+                'id':7,
+                'res':'res/module/mahjong/desk/z_1.png',
+            },
+            '7':{
+                'id':8,
+                'res':'res/module/mahjong/desk/z_1.png',
             }
         },
     }

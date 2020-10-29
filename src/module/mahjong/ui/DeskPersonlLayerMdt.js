@@ -38,7 +38,13 @@ load('module/mahjong/ui/DeskPersonlLayerMdt', function () {
 
 
         initView: function () {
+            let pMinValue = appInstance.dataManager().getPlayData().tableData.pMinValue
             let tData = appInstance.dataManager().getPlayData().getPlayer(this.pSeatID)
+            let isCanSend = false
+            let userDataCoin = appInstance.dataManager().getUserData().coin
+            if (userDataCoin>(pMinValue+100)) {
+                isCanSend = true
+            }
             let data = {
                 pid: tData.pid,
                 nickName: tData.nickName,
@@ -47,7 +53,7 @@ load('module/mahjong/ui/DeskPersonlLayerMdt', function () {
                 pPhoto: tData.pPhoto,
                 winCnt: tData.win,
                 allCnt: tData.win + tData.lose,
-                isCanSend: true
+                isCanSend: isCanSend
             }
 
             this.view.initView(data)

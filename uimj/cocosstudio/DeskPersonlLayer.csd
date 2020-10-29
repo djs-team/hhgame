@@ -138,25 +138,25 @@
               <AbstractNodeData Name="Image_16" ActionTag="1054303994" Tag="56" IconVisible="False" LeftMargin="527.6500" RightMargin="324.3500" TopMargin="398.0900" BottomMargin="179.9100" Scale9Enable="True" LeftEage="43" RightEage="43" TopEage="20" BottomEage="20" Scale9OriginX="43" Scale9OriginY="20" Scale9Width="46" Scale9Height="23" ctype="ImageViewObjectData">
                 <Size X="428.0000" Y="142.0000" />
                 <Children>
-                  <AbstractNodeData Name="Text_9" ActionTag="-1224095243" Tag="57" IconVisible="False" LeftMargin="162.0516" RightMargin="185.9484" TopMargin="11.2776" BottomMargin="110.7224" IsCustomSize="True" FontSize="20" LabelText="魔法表情" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="80.0000" Y="20.0000" />
+                  <AbstractNodeData Name="Text_9" ActionTag="-1224095243" Tag="57" IconVisible="False" LeftMargin="157.0516" RightMargin="180.9484" TopMargin="9.7776" BottomMargin="109.2224" IsCustomSize="True" FontSize="20" LabelText="魔法表情" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="90.0000" Y="23.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="202.0516" Y="120.7224" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="83" G="44" B="0" />
                     <PrePosition X="0.4721" Y="0.8502" />
-                    <PreSize X="0.1869" Y="0.1408" />
+                    <PreSize X="0.2103" Y="0.1620" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Text_10" ActionTag="1049081807" Tag="58" IconVisible="False" LeftMargin="26.2865" RightMargin="185.7135" TopMargin="121.2923" BottomMargin="4.7077" IsCustomSize="True" FontSize="16" LabelText="使用魔法表情会消耗您100金币" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="216.0000" Y="16.0000" />
+                  <AbstractNodeData Name="Text_10" ActionTag="1049081807" Tag="58" IconVisible="False" LeftMargin="19.2865" RightMargin="178.7135" TopMargin="119.2923" BottomMargin="2.7077" IsCustomSize="True" FontSize="16" LabelText="使用魔法表情会消耗您100金币" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="230.0000" Y="20.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="134.2865" Y="12.7077" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="164" G="133" B="86" />
                     <PrePosition X="0.3138" Y="0.0895" />
-                    <PreSize X="0.5047" Y="0.1127" />
+                    <PreSize X="0.5374" Y="0.1408" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
@@ -333,8 +333,75 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="magicBlockPnl" ActionTag="-809429222" Tag="59" IconVisible="False" LeftMargin="526.5100" RightMargin="325.4900" TopMargin="395.2600" BottomMargin="178.7400" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="magicBlockPnl" ActionTag="-809429222" Tag="59" IconVisible="False" LeftMargin="526.5100" RightMargin="325.4900" TopMargin="395.2600" BottomMargin="178.7400" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="428.0000" Y="146.0000" />
+                <Children>
+                  <AbstractNodeData Name="magicList" ActionTag="-1151126057" Tag="67" IconVisible="False" LeftMargin="5.0000" RightMargin="4.0000" TopMargin="40.0000" BottomMargin="33.0000" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" IsBounceEnabled="True" ScrollDirectionType="0" ctype="ListViewObjectData">
+                    <Size X="419.0000" Y="73.0000" />
+                    <AnchorPoint />
+                    <Position X="5.0000" Y="33.0000" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.0117" Y="0.2260" />
+                    <PreSize X="0.9790" Y="0.5000" />
+                    <SingleColor A="255" R="150" G="150" B="255" />
+                    <FirstColor A="255" R="150" G="150" B="255" />
+                    <EndColor A="255" R="255" G="255" B="255" />
+                    <ColorVector ScaleY="1.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="magicCell" ActionTag="-261987360" Tag="68" IconVisible="False" LeftMargin="11.0000" RightMargin="352.0000" TopMargin="45.0000" BottomMargin="38.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+                    <Size X="65.0000" Y="63.0000" />
+                    <Children>
+                      <AbstractNodeData Name="magicImg" ActionTag="2038217665" Tag="69" IconVisible="False" LeftMargin="9.0000" RightMargin="12.0000" TopMargin="4.5000" BottomMargin="1.5000" LeftEage="14" RightEage="14" TopEage="18" BottomEage="18" Scale9OriginX="14" Scale9OriginY="18" Scale9Width="16" Scale9Height="21" ctype="ImageViewObjectData">
+                        <Size X="44.0000" Y="57.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="31.0000" Y="30.0000" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="0.4769" Y="0.4762" />
+                        <PreSize X="0.6769" Y="0.9048" />
+                        <FileData Type="Normal" Path="desk/j_1.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint />
+                    <Position X="11.0000" Y="38.0000" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.0257" Y="0.2603" />
+                    <PreSize X="0.1519" Y="0.4315" />
+                    <SingleColor A="255" R="150" G="200" B="255" />
+                    <FirstColor A="255" R="150" G="200" B="255" />
+                    <EndColor A="255" R="255" G="255" B="255" />
+                    <ColorVector ScaleY="1.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="jinBiFreePnl" ActionTag="511932885" Tag="71" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" TopMargin="-1.0000" BottomMargin="1.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+                    <Size X="428.0000" Y="146.0000" />
+                    <Children>
+                      <AbstractNodeData Name="jinBiFreeText" ActionTag="1263044669" Tag="72" IconVisible="False" LeftMargin="133.0000" RightMargin="145.0000" TopMargin="63.0000" BottomMargin="57.0000" IsCustomSize="True" FontSize="22" LabelText="您的金币不足" HorizontalAlignmentType="HT_Center" OutlineSize="2" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="150.0000" Y="26.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="208.0000" Y="70.0000" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="0.4860" Y="0.4795" />
+                        <PreSize X="0.3505" Y="0.1781" />
+                        <FontResource Type="Normal" Path="fnt/hkhbtW12.ttc" Plist="" />
+                        <OutlineColor A="255" R="172" G="101" B="23" />
+                        <ShadowColor A="255" R="110" G="110" B="110" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="214.0000" Y="74.0000" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5000" Y="0.5068" />
+                    <PreSize X="1.0000" Y="1.0000" />
+                    <SingleColor A="255" R="127" G="127" B="127" />
+                    <FirstColor A="255" R="150" G="200" B="255" />
+                    <EndColor A="255" R="255" G="255" B="255" />
+                    <ColorVector ScaleY="1.0000" />
+                  </AbstractNodeData>
+                </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="740.5100" Y="251.7400" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />

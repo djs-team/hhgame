@@ -10,6 +10,7 @@ load('module/mahjong/ui/DeskPersonlLayer', function () {
     let BaseLayer = include('public/ui/BaseLayer')
     let DeskPersonlLayerMdt = include('module/mahjong/ui/DeskPersonlLayerMdt')
     let TableConfig = include('module/mahjong/common/TableConfig')
+    let GameUtil = include('game/public/GameUtil')
     let Layer = BaseLayer.extend({
         _className: 'DeskPersonlLayer',
         RES_BINDING: function () {
@@ -23,6 +24,9 @@ load('module/mahjong/ui/DeskPersonlLayer', function () {
                 'pnl/dataPnl/coinsPnl/coinsValTxt': {  },
 
                 'pnl/magicBlockPnl': {  },
+                'pnl/magicBlockPnl/magicList': {  },
+                'pnl/magicBlockPnl/magicCell': {  },
+                'pnl/magicBlockPnl/jinBiFreePnl': {  },
                 'pnl/closeBtn': { onClicked: this.onCloseBtnClick },
 
             }
@@ -38,9 +42,8 @@ load('module/mahjong/ui/DeskPersonlLayer', function () {
         },
 
         initView: function (pData) {
-            if(!pData)
-                return
-
+            this.magicList.setScrollBarEnabled(false)
+            if(!pData) return
             this.onShowRole(pData.pRole)
             this.loadUrlImage(pData.pPhoto,this.photoImg)
             //this.idTxt.setString(pData.pid)
@@ -48,8 +51,46 @@ load('module/mahjong/ui/DeskPersonlLayer', function () {
             this.winCnt.setString(pData.winCnt)
             this.nameTxt.setString(global.cropStr(pData.nickName, 5, '...'))
             this.coinsValTxt.setString(pData.pCoins)
-            if(pData.isCanSend)
-                this.magicBlockPnl.setVisible(false)
+            this.magicCell.setVisible(false)
+            if(pData.isCanSend) {
+                this.jinBiFreePnl.setVisible(false)
+            } else {
+                this.jinBiFreePnl.setVisible(true)
+            }
+            let magic = TableConfig.experssion['magic']
+            let magicLength = Object.keys(magic).length;
+            for (let i=0; i<magicLength; i++) {
+                this.onMagicView(magic[i], pData.pid)
+            }
+        },
+
+        onMagicView: function (data, pid) {
+            let cell = this.magicCell.clone()
+            cell.setVisible(true)
+            this.magicList.pushBackCustomItem(cell)
+            cell._sendMsg = {
+                num: data.id,
+                type: 3,
+                toPid: pid,
+            }
+            cell.setName('magicNum'+data.id)
+            cell.getChildByName('magicImg').loadTexture(data.res)
+            cell.addClickEventListener(function (sender,dt) {
+                GameUtil.delayBtn(sender)
+                this.gameSendNews(sender)
+            }.bind(this))
+        },
+
+        gameSendNews: function (sender) {
+            let data = sender._sendMsg
+            let pData = appInstance.dataManager().getPlayData().tableData.pTableID
+            let msg = {
+                'type': data.type,
+                'num': data.num,
+                'toPid': data.toPid,
+                'tableId':pData
+            }
+            appInstance.gameAgent().tcpGame().ToSendNewsProto(msg)
         },
 
         updateView: function (tData) {

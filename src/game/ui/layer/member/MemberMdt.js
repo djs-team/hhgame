@@ -31,15 +31,11 @@ load('game/ui/layer/member/MemberMdt', function () {
                     this.onReceiveRewards(body)
                     break
                 case GameEvent.PLAYER_BUY_VIP_ORDER:
-                    appInstance.gameAgent().Tips('------------------------------------订单调用成功！！！')
-                    cc.log('=============' + JSON.stringify(body))
                     let payType = body.payType;
                     if (payType == 1) {
-                        cc.log('=============' + "调用支付宝")
                         appInstance.nativeApi().thirdPay("alipay", body.zhifubaoSign)
                     } else if (payType == 2) {
                         let wxSign=JSON.stringify(body.wxinfo)
-                        cc.log('=============' + "调用微信"+wxSign)
                         appInstance.nativeApi().thirdPay("wx", wxSign)
                     } else if (payType == 3) {
                         // 苹果支付

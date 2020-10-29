@@ -686,14 +686,14 @@
                                 <PreSize X="0.5529" Y="0.5682" />
                                 <FileData Type="Normal" Path="common/jinbi.png" Plist="" />
                               </AbstractNodeData>
-                              <AbstractNodeData Name="awardsVal" ActionTag="614639366" Tag="154" IconVisible="False" LeftMargin="0.2000" RightMargin="3.8000" TopMargin="88.0500" BottomMargin="-37.0500" IsCustomSize="True" FontSize="30" LabelText="x666" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                                <Size X="81.0000" Y="37.0000" />
+                              <AbstractNodeData Name="awardsVal" ActionTag="614639366" Tag="154" IconVisible="False" LeftMargin="-34.3000" RightMargin="-30.7000" TopMargin="88.0500" BottomMargin="-37.0500" IsCustomSize="True" FontSize="30" LabelText="x666" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                                <Size X="150.0000" Y="37.0000" />
                                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                                 <Position X="40.7000" Y="-18.5500" />
                                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                                 <CColor A="255" R="0" G="0" B="0" />
                                 <PrePosition X="0.4788" Y="-0.2108" />
-                                <PreSize X="0.9529" Y="0.4205" />
+                                <PreSize X="1.7647" Y="0.4205" />
                                 <OutlineColor A="255" R="255" G="0" B="0" />
                                 <ShadowColor A="255" R="110" G="110" B="110" />
                               </AbstractNodeData>
@@ -860,7 +860,7 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="popUpPnl" ActionTag="-1622764222" Tag="100" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="popUpPnl" Visible="False" ActionTag="-1622764222" Tag="100" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="1280.0000" Y="720.0000" />
                 <Children>
                   <AbstractNodeData Name="rewardOnePnl" ActionTag="-864683893" Tag="452" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TopMargin="-1.4399" BottomMargin="1.4400" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">

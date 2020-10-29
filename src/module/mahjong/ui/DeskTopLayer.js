@@ -4,13 +4,16 @@
  */
 load('module/mahjong/ui/DeskTopLayer', function () {
     let HallResConfig = include('game/config/ResConfig')
+    let GameUtil = include('game/public/GameUtil')
     let ResConfig = include('module/mahjong/common/ResConfig')
     let BaseLayer = include('public/ui/BaseLayer')
     let DeskTopLayerMdt = include('module/mahjong/ui/DeskTopLayerMdt')
     let TableConfig = include('module/mahjong/common/TableConfig')
+    let LocalSave = include('game/public/LocalSave')
     let SELECT = TableConfig.Select
     let Layer = BaseLayer.extend({
         _className: 'DeskTopLayer',
+        _lineExpressionNum: 5,
         _maxChi: 6,
         _chiPos:[
             [0],
@@ -43,10 +46,21 @@ load('module/mahjong/ui/DeskTopLayer', function () {
                 'pnl/ActionNd/ActionCell': { onClicked: this.onActionCellClick },
                 'pnl/ChiNd': {  },
                 'pnl/ChiNd/ChiCell': { onClicked: this.onChiCellClick  },
+
                 'HostingPnl': { onClicked: this.onHostingClick },
+
                 'BmPnl/HeadNd': {},
                 'BmPnl/HeadNd/NameBg': {},
                 'BmPnl/HeadNd/NameBg/NameTxt': {},
+                'BmPnl/sayBtn': { onClicked: this.onSayViewClick },
+                'BmPnl/sayContentPnl': { onClicked: this.onCloseSayContentClicked },
+                'BmPnl/sayContentPnl/expressionBtn': { onClicked: this.onSayViewClick },
+                'BmPnl/sayContentPnl/languageBtn': { onClicked: this.onSayViewClick },
+                'BmPnl/sayContentPnl/contentList': {},
+                'BmPnl/sayContentPnl/expressionTransCell': {},
+                'BmPnl/sayContentPnl/expressionCell': {},
+                'BmPnl/sayContentPnl/sayCell': {},
+
                 'TopPnl/SetBtn': { onClicked: this.onSetBtnClick },
                 'TopPnl/BaoNd': {},
                 'TopPnl/BaoNd/BaoCard': {},
@@ -139,6 +153,8 @@ load('module/mahjong/ui/DeskTopLayer', function () {
 
             this.BaoNd.setVisible(false)
 
+            this.sayBtn.setVisible(true)
+            this.sayContentPnl.setVisible(false)
 
             this.NameTxt.setString(this._selfInfo.nickName)
             this.TableLevelTxt.setString(this._tableLevel[this._tData.pGameType])
@@ -159,6 +175,110 @@ load('module/mahjong/ui/DeskTopLayer', function () {
                     this.ActionNd.addChild(btn)
                 }
             }
+        },
+
+        onCloseSayContentClicked: function () {
+            this.sayContentPnl.setVisible(false)
+        },
+
+        onSayViewClick: function (sender) {
+            this.sayContentPnl.setVisible(true)
+            this.contentList.setVisible(true)
+            this.sayCell.setVisible(false)
+            this.expressionCell.setVisible(false)
+            this.expressionTransCell.setVisible(false)
+            this.contentList.removeAllChildren()
+            if (sender == this.languageBtn) {
+                this.languageBtn.setTouchEnabled(false)
+                this.languageBtn.setBright(false)
+                this.expressionBtn.setTouchEnabled(true)
+                this.expressionBtn.setBright(true)
+                let fangyan = global.localStorage.getStringForKey(LocalSave.LocalLanguage)
+                let fangyanSay = '';
+                if (fangyan == 'dongbei') {
+                    fangyanSay = TableConfig.experssion['say']['dongSay']
+                } else {
+                    fangyanSay = TableConfig.experssion['say']['puSay']
+                }
+                let fangyanSayLength = Object.keys(fangyanSay).length;
+                for (let i=0; i<fangyanSayLength; i++) {
+                    this.onFangYanSayView(fangyanSay[i])
+                }
+            } else {
+                this.languageBtn.setTouchEnabled(true)
+                this.languageBtn.setBright(true)
+                this.expressionBtn.setTouchEnabled(false)
+                this.expressionBtn.setBright(false)
+                let expression = TableConfig.experssion['express']
+                this.onExpressionSayView(expression);
+            }
+        },
+
+        onExpressionSayView: function (data) {
+            let dataLength = Object.keys(data).length;
+            let ceil = Math.ceil(dataLength/this._lineExpressionNum)
+            let quYu = dataLength%this._lineExpressionNum
+            for (let i = 0; i < ceil; i++) {
+                let listPnl = this.expressionTransCell.clone()
+                listPnl.setVisible(true)
+                this.contentList.pushBackCustomItem(listPnl)
+                let lineExpressionLength = 0;
+                if (i == ceil-1) {
+                    lineExpressionLength = quYu
+                } else {
+                    lineExpressionLength = this._lineExpressionNum
+                }
+                for (let j = 0; j < lineExpressionLength; j++) {
+                    this.onExpressionDetailView(data, this._lineExpressionNum*i+j, listPnl, j);
+                }
+            }
+        },
+
+        onExpressionDetailView: function (data, index, listPnl, i) {
+            let cellData = data[index]
+            let cell = this.expressionCell.clone()
+            listPnl.addChild(cell)
+            cell.setPositionY(0)
+            cell.setPositionX(18 + 48*i)
+            cell.setVisible(true)
+            cell._sendMsg = {
+                num: cellData.id,
+                type: 2,
+            }
+            cell.setName('num'+cellData.id)
+            cell.getChildByName('expressionImg').loadTexture(cellData.res)
+            cell.addClickEventListener(function (sender,dt) {
+                GameUtil.delayBtn(sender)
+                this.gameSendNews(sender)
+            }.bind(this))
+        },
+
+        onFangYanSayView: function (data) {
+            let cell = this.sayCell.clone()
+            cell.setVisible(true)
+            this.contentList.pushBackCustomItem(cell)
+            cell._sendMsg = {
+                num: data.id,
+                type: 1,
+            }
+            cell.setName('num'+data.id)
+            cell.getChildByName('sayText').setString(data.text)
+            cell.addClickEventListener(function (sender,dt) {
+                GameUtil.delayBtn(sender)
+                this.gameSendNews(sender)
+            }.bind(this))
+        },
+
+        gameSendNews: function (sender) {
+            let data = sender._sendMsg
+            let pData = appInstance.dataManager().getPlayData().tableData.pTableID
+            let msg = {
+                'type': data.type,
+                'num': data.num,
+                'toPid': 0,
+                'tableId':pData
+            }
+            appInstance.gameAgent().tcpGame().ToSendNewsProto(msg)
         },
 
         hideSelectChi: function () {

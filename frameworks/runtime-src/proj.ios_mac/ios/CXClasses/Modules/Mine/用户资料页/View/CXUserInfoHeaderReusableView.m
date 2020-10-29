@@ -12,7 +12,8 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor =[UIColor colorWithHexString:@"F8F8F8"];
+        
+//        self.backgroundColor =[UIColor colorWithHexString:@"F8F8F8"];
         
         self.clipsToBounds = YES;
       

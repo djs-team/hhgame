@@ -98,8 +98,22 @@ load('game/ui/layer/coingame/CoinGameLayer', function () {
             let maxCost = data._maxCost
 
             if( this._coinCnt < minCost){
-                tipMsg = '您的金币不足，请充值'
-                flag = false
+                // tipMsg = '您的金币不足，请充值'
+                // flag = false
+                let dialogMsg = {
+                    ViewType: 1,
+                    TileName : '提 示',
+                    LeftBtnName: '取 消',
+                    RightBtnName : '确认',
+                    RightBtnClick : function () {
+                        appInstance.gameAgent().addPopUI(ResConfig.Ui.CoinShopLayer)
+                        appInstance.uiManager().removeUI(this)
+                    }.bind(this),
+
+                    SayText : '您的金币不足，请充值'
+                }
+                appInstance.gameAgent().addDialogUI(dialogMsg)
+                return
             }else if(maxCost &&  this._coinCnt > maxCost){
                 tipMsg = '您的金币超出当前场次限制，请更换更高场次'
                 flag = false

@@ -57,6 +57,14 @@
     return arr;
 }
 
++ (long long)fileSizeAtPath:(NSString*)filePath {
+    NSFileManager *manager = [NSFileManager defaultManager];
+    if ([manager fileExistsAtPath:filePath]){
+        return [[manager attributesOfItemAtPath:filePath error:nil] fileSize];
+    }
+    return 0;
+}
+
 #pragma mark - ======================= Privacy ========================
 // 获取麦克风权限
 + (BOOL)getAudioAuthStatus {

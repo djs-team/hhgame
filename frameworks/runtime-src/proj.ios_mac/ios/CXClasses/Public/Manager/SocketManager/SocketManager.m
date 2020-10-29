@@ -190,6 +190,7 @@ typedef enum : NSUInteger {
     SocketMessageLogin * login = [SocketMessageLogin new];
     login.UserToken = self.token;
     __weak typeof (self) wself = self;
+    [CXClientModel instance].isSocketManagerReconnect = NO;
     self.loginRequest = [self sendRequest:login withCallback:^(SocketMessageLogin * _Nonnull login) {
         wself.loginRequest = nil;
         if ([login.response.Success isEqual: @-2]) {
@@ -202,6 +203,8 @@ typedef enum : NSUInteger {
                         // 重连成功
                         if (wself.delegate && [wself.delegate respondsToSelector:@selector(socketManager:reconnectionSuccess:)]) {
                             [wself.delegate socketManager:wself reconnectionSuccess:YES];
+                            
+                            [CXClientModel instance].isSocketManagerReconnect = YES;
                         }
                     } else {
                         UIViewController *vc = [CXTools currentViewController];

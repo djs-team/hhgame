@@ -14,7 +14,7 @@
             android:id="@+id/rl_song_empty"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="visible">
+            android:visibility="gone">
 
             <ImageView
                 android:id="@+id/iv_no_song"
@@ -33,7 +33,7 @@
             android:layout_height="match_parent"
             android:background="@color/black"
             android:orientation="vertical"
-            android:visibility="gone">
+            android:visibility="visible">
 
 
             <TextView
@@ -47,6 +47,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tv_song_singer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"

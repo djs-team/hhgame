@@ -17,12 +17,14 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import org.cocos2dx.javascript.ui.splash.activity.SplashActivity;
@@ -31,24 +33,33 @@ import org.cocos2dx.lib.Cocos2dxHelper;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.alibaba.sdk.android.oss.OSS;
+import com.alibaba.sdk.android.oss.internal.OSSAsyncTask;
 import com.deepsea.mua.advertisement.AdManage;
 import com.deepsea.mua.core.alipay.Alipay;
 import com.deepsea.mua.core.alipay.PayResult;
 import com.deepsea.mua.core.login.ApiUser;
 import com.deepsea.mua.core.login.LoginApi;
 import com.deepsea.mua.core.login.OnLoginListener;
+import com.deepsea.mua.core.utils.GlideUtils;
 import com.deepsea.mua.core.utils.JsonConverter;
 import com.deepsea.mua.core.utils.NetWorkUtils;
 import com.deepsea.mua.core.utils.ToastUtils;
 import com.deepsea.mua.core.wxpay.WxPay;
 import com.deepsea.mua.core.wxpay.WxpayBroadcast;
+import com.deepsea.mua.mine.activity.UploadPhotoDialogActivity;
+import com.deepsea.mua.stub.base.BaseObserver;
 import com.deepsea.mua.stub.dialog.AAlertDialog;
+import com.deepsea.mua.stub.dialog.PhotoDialog;
 import com.deepsea.mua.stub.entity.ChessLoginParam;
 import com.deepsea.mua.stub.entity.InstallParamVo;
+import com.deepsea.mua.stub.entity.OSSConfigBean;
 import com.deepsea.mua.stub.entity.QPWxOrder;
 import com.deepsea.mua.stub.jpush.JpushUtils;
 import com.deepsea.mua.stub.permission.PermissionCallback;
 import com.deepsea.mua.stub.utils.BitmapUtils;
+import com.deepsea.mua.stub.utils.Constant;
+import com.deepsea.mua.stub.utils.OssUpUtil;
 import com.deepsea.mua.stub.utils.SharedPrefrencesUtil;
 import com.deepsea.mua.voice.MyNotifyService;
 import com.fm.openinstall.OpenInstall;
@@ -70,6 +81,7 @@ import cn.jiguang.verifysdk.api.AuthPageEventListener;
 import cn.jiguang.verifysdk.api.JVerificationInterface;
 import cn.jiguang.verifysdk.api.RequestCallback;
 import cn.jiguang.verifysdk.api.VerifyListener;
+import me.jessyan.autosize.internal.CustomAdapt;
 
 import static com.deepsea.mua.core.utils.NetWorkUtils.NetWorkType.UN_KNOWN;
 import static com.deepsea.mua.core.utils.NetWorkUtils.NetWorkType.WIFI;
@@ -200,78 +212,14 @@ public class AppActivity extends Cocos2dxActivity {
             //失败处理
             return;
         }
-        if (requestCode == 2 && resultCode == RESULT_OK) {
-            // 获取照片返回结果
-            Log.e("HelloOC:", "getPictureFromPhone -- 获取照片返回结果 data.getData() = " + data.getData());
-            String photoPath = getPhotoFromPhotoAlbum.getRealPathFromUri(this, data.getData());
-            Log.e("HelloOC:", "getPictureFromPhone -- photoPath::: " + photoPath);
-            JSONObject result = new JSONObject();
-            try {
-                result.put("photoPath", photoPath);
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            RunJS_obj("GET_PHOTO_FROM_ALBUM", result.toString());
+        if (requestCode == 2) {
+            String result = data.getStringExtra(Constant.HHGAME_PHOTO);
+            ToastUtils.showToast("onActivityResult:" + result);
         }
 
+
     }
 
-    /**
-     * @param fileName  {String}
-     * @param url       {String}
-     * @param eventName {String}
-     */
-    public static void uploadFile(final String fileName, final String url, final String eventName) {
-        new Thread() {
-            public void run() {
-                httpClient http = new httpClient(fileName, url);
-                http.uploadFile();
-                Log.i("send:", "send successful");
-                if (http.ok == 1) {
-                    ccActivity.RunJS(eventName, http.filePath);
-                }
-            }
-        }.start();
-    }
-
-    public static void uploadPic(final String filePath, final String actionUrlPar, final String eventName, final String token) {
-        new Thread() {
-            public void run() {
-                httpClient http = new httpClient(filePath, actionUrlPar, eventName, token);
-                http.uploadFilePic();
-                Log.i("send:", "send successful");
-                Log.i("send:", "send successful http.ok = " + http.ok);
-                if (http.ok == 1) {
-                    ccActivity.RunJS(eventName, http.uploadPicReturnData);
-                    Log.i("result 333", "getPictureFromPhone -- result hhhhh = " + http.uploadPicReturnData);
-                } else if (http.ok == 0) {
-                    Log.i("result 444", "getPictureFromPhone -- result faild ");
-                    JSONObject result = new JSONObject();
-                    try {
-                        result.put("errno", 1);
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                    ccActivity.RunJS(eventName, result.toString());
-                }
-            }
-        }.start();
-    }
-
-    // 调用相册获取对应的图片
-    public static void getPictureFromPhoneAlbum() {
-        Log.i("HelloOC", "getPictureFromPhoneAlbum");
-        if (ccActivity != null) {
-            ccActivity.goPhotoAlbum();
-        }
-    }
-
-    public void goPhotoAlbum() {
-        Intent intent = new Intent();
-        intent.setAction(Intent.ACTION_PICK);
-        intent.setType("image/*");
-        startActivityForResult(intent, 2);
-    }
 
     /**
      * 第三方支付
@@ -444,7 +392,7 @@ public class AppActivity extends Cocos2dxActivity {
                         dialog.dismiss();
                         Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION);
                         intent.setData(Uri.parse("package:" + ccActivity.getPackageName()));
-                        ccActivity.startActivityForResult(intent, 0);
+                        ccActivity.startActivityForResult(intent, 2);
                     }
                 });
                 aAlertDialog.show();
@@ -874,6 +822,17 @@ public class AppActivity extends Cocos2dxActivity {
             return false;
         }
         return super.onKeyDown(keyCode, event);
+    }
+
+
+    public static void getPictureFromPhoneAlbum() {
+        ccActivity.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Intent intent = new Intent(ccActivity, UploadPhotoDialogActivity.class);
+                ccActivity.startActivityForResult(intent, 2);
+            }
+        });
     }
 
 }

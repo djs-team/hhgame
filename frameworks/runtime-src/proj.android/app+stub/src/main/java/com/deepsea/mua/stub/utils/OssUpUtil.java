@@ -74,6 +74,9 @@ public class OssUpUtil {
         } else if (aType == 5) {//举报
             String path = UserUtils.getUser() == null ? "register" : UserUtils.getUser().getUid();
             objectKey = "MyReport/" + path + "/" + System.currentTimeMillis() + ".jpg";
+        } else if (aType == 6) {//棋牌头像
+            String path = UserUtils.getUser() == null ? "register" : UserUtils.getUser().getUid();
+            objectKey = "GameAvatar/" + path + "/" + System.currentTimeMillis() + ".jpg";
         } else {
             objectKey = UserUtils.getUser().getUid() + "/" + System.currentTimeMillis() + (aType == 0 ? ".jpg" : ".amr");
         }

@@ -30,6 +30,16 @@ public class PhotoDialog extends BaseDialogFragment<DialogPhotoBinding> {
         void onSelected(String path);
     }
 
+    private OnPhotoDismissListener dismissListener;
+
+    public interface OnPhotoDismissListener {
+        void onMyDismiss();
+    }
+
+    public void setDismissListener(OnPhotoDismissListener dismissListener) {
+        this.dismissListener = dismissListener;
+    }
+
     @Override
     protected int getLayoutId() {
         return R.layout.dialog_photo;
@@ -43,11 +53,9 @@ public class PhotoDialog extends BaseDialogFragment<DialogPhotoBinding> {
     protected void initListener() {
         mBinding.cameraTv.setOnClickListener(v -> {
             startCamera();
-            dismiss();
         });
         mBinding.photoTv.setOnClickListener(v -> {
             startPhoto();
-            dismiss();
         });
     }
 
@@ -90,6 +98,7 @@ public class PhotoDialog extends BaseDialogFragment<DialogPhotoBinding> {
                                 .previewImage(true)// 是否可预览图片
                                 .minimumCompressSize(500)// 小于500kb的图片不压缩
                                 .forResult(PictureConfig.CHOOSE_REQUEST);
+
                     }
                 });
     }
@@ -105,6 +114,14 @@ public class PhotoDialog extends BaseDialogFragment<DialogPhotoBinding> {
                     mListener.onSelected(list.get(0).getPath());
                 }
             }
+        }
+    }
+
+    @Override
+    public void dismiss() {
+        super.dismiss();
+        if (dismissListener != null) {
+            dismissListener.onMyDismiss();
         }
     }
 }

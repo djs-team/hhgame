@@ -7,8 +7,10 @@ import android.support.constraint.ConstraintLayout;
 import android.text.Html;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
+import android.text.TextPaint;
 import android.text.TextUtils;
 import android.text.method.LinkMovementMethod;
+import android.text.style.ClickableSpan;
 import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.view.ViewGroup;
@@ -230,6 +232,28 @@ public class RoomMsgAdapter extends BaseChatAdapter<RoomMsgBean> {
             });
 
             SpannableStringBuilder builder = item.getMsg();
+//            if (builder.toString().contains("打赏")) {
+//
+//            } else {
+//                builder.setSpan(new ClickableSpan() {
+//
+//                    @Override
+//                    public void updateDrawState(@NonNull TextPaint ds) {
+//                        ds.setColor(ds.getColor());
+//                    }
+//
+//                    @Override
+//                    public void onClick(@NonNull View widget) {
+//                        ToastUtils.showToast("setNickClick");
+//                        if (mListener != null) {
+//                            mListener.onMsgClick(item.getUid());
+//                        }
+//                    }
+//
+//                }, 0, item.getuName().length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+//
+//            }
+
 
             List<SmashBean> list = item.getList();
             if (list != null && builder.length() == item.getStart()) {
@@ -267,18 +291,19 @@ public class RoomMsgAdapter extends BaseChatAdapter<RoomMsgBean> {
             if (!TextUtils.isEmpty(item.getLocalMsg())) {
                 msgTv.setText(Html.fromHtml(item.getLocalMsg()));
             } else {
-                msgTv.setText(item.getMsg());
+                msgTv.setMovementMethod(LinkMovementMethod.getInstance());
+                msgTv.setText(builder);
             }
-            msgTv.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    if (!TextUtils.isEmpty(item.getUid())) {
-                        if (mListener != null) {
-                            mListener.onMsgClick(item.getUid());
-                        }
-                    }
-                }
-            });
+//            msgTv.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    if (!TextUtils.isEmpty(item.getUid())) {
+//                        if (mListener != null) {
+//                            mListener.onMsgClick(item.getUid());
+//                        }
+//                    }
+//                }
+//            });
             msgTv.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View view) {

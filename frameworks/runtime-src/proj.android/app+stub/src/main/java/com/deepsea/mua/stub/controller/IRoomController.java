@@ -367,12 +367,6 @@ public interface IRoomController {
          */
         void onlineUser(OnlineUser onlineUser);
 
-        /**
-         * 排行榜
-         *
-         * @param list
-         */
-        void onRankList(List<String> list);
 
         /**
          * 发送动画表情回调
@@ -516,7 +510,9 @@ public interface IRoomController {
 
         void  showCenterHtmlToast(String content);
 
-        void  keepLive();
+        void  keepLive();//在线
+
+        void  updateOnlineHeads(List<String> heads);
 
     }
 }

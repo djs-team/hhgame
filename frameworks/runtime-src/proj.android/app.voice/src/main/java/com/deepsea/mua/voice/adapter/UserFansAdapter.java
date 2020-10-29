@@ -61,6 +61,7 @@ public class UserFansAdapter extends BaseBindingAdapter<MicroRankData, ItemUserF
             info.append(" |");
             info.append(" " + item.getCity());
         }
+        ViewBindUtils.setText(holder.binding.userinfoTv,info.toString());
         ViewBindUtils.setText(holder.binding.numberTv, String.valueOf(item.getScore()));
 
     }

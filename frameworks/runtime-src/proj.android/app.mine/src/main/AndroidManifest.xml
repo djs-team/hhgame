@@ -3,12 +3,11 @@
 
     <application>
 
-        <activity
-            android:name="com.deepsea.mua.mine.activity.ProfileActivity" />
+        <activity android:name="com.deepsea.mua.mine.activity.ProfileActivity" />
         <activity android:name="com.deepsea.mua.mine.activity.RechargeActivity" />
         <activity
             android:name="com.deepsea.mua.mine.activity.ProfileEditActivity"
-            android:windowSoftInputMode="stateHidden"/>
+            android:windowSoftInputMode="stateHidden" />
         <activity android:name="com.deepsea.mua.mine.activity.PresentWallActivity" />
         <activity android:name="com.deepsea.mua.mine.activity.WalletActivity" />
         <activity android:name="com.deepsea.mua.mine.activity.WalletRecordActivity" />
@@ -26,6 +25,10 @@
         <activity
             android:name=".activity.InviteDialogActivity"
             android:theme="@style/TranslucentWindow" />
+        <activity
+            android:name=".activity.UploadPhotoDialogActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@style/HalfTranslucentWindow" />
         <activity
             android:name=".activity.RechargeDialogActivity"
             android:theme="@style/TranslucentWindow" />

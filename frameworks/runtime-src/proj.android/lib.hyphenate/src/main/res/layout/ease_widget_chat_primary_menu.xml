@@ -32,12 +32,10 @@
                 android:gravity="center_vertical"
                 android:paddingLeft="13dp"
                 android:paddingRight="13dp">
-
-                <Button
-                    android:id="@+id/btn_set_mode_voice"
-                    android:layout_width="16dp"
-                    android:layout_height="24dp"
-                    android:background="@drawable/icon_chat_voice"
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/icon_chat_voice"
                     android:visibility="visible" />
             </RelativeLayout>
 

@@ -8004,7 +8004,7 @@
                           {
                             "IsCustomSize": true,
                             "FontSize": 20,
-                            "LabelText": "1:每日共可参与转盘活动15次\n\n2:每日24:00重置抽奖次数，请于当天24:00前消耗完次数\n\n3:抽中实物大奖后，请至福卡商城的获得礼品记录中进行领奖\n\n3.获得大奖后，请及时联系客服登记收获地址\n如活动期间没有及时联系客服，奖励作废。",
+                            "LabelText": "1:每日共可参与转盘活动15次\n\n2:每日24:00重置抽奖次数，请于当天24:00前消耗完次数\n\n3:抽中实物大奖后，请至福卡商城的获得礼品记录中进行领奖",
                             "OutlineColor": {
                               "G": 0,
                               "B": 0
@@ -8022,7 +8022,7 @@
                             },
                             "Position": {
                               "X": 247.15,
-                              "Y": 178.24
+                              "Y": 160.24
                             },
                             "Scale": {
                               "ScaleX": 1.0,
@@ -8036,21 +8036,21 @@
                             "IconVisible": false,
                             "PrePosition": {
                               "X": 0.5003,
-                              "Y": 0.6284
+                              "Y": 0.5649
                             },
                             "PreSize": {
                               "X": 0.9387,
-                              "Y": 0.5641
+                              "Y": 0.7051
                             },
-                            "LeftMargin": 15.2899,
-                            "RightMargin": 15.0128,
-                            "TopMargin": 25.4086,
-                            "BottomMargin": 98.24,
+                            "LeftMargin": 15.29,
+                            "RightMargin": 15.0129,
+                            "TopMargin": 23.4086,
+                            "BottomMargin": 60.24,
                             "Tag": 796,
                             "ActionTag": 1760586349,
                             "Size": {
-                              "X": 463.7202,
-                              "Y": 160.0
+                              "X": 463.72,
+                              "Y": 200.0
                             },
                             "Name": "Text_8",
                             "ctype": "TextObjectData"

@@ -2463,6 +2463,7 @@
                             "Tag": 250,
                             "Children": [
                               {
+                                "IsCustomSize": true,
                                 "FontSize": 20,
                                 "LabelText": "1.每日共可参与摇金树活动15次\n\n2.每日24:00重置抽奖次数，请于当天24:00前消耗完\n次数\n\n3.每次可随机获得1000-9999枚金币",
                                 "OutlineColor": {
@@ -2482,7 +2483,7 @@
                                 },
                                 "Position": {
                                   "X": 246.6151,
-                                  "Y": 197.9319
+                                  "Y": 158.93
                                 },
                                 "Scale": {
                                   "ScaleX": 1.0,
@@ -2496,21 +2497,21 @@
                                 "IconVisible": false,
                                 "PrePosition": {
                                   "X": 0.4992,
-                                  "Y": 0.6978
+                                  "Y": 0.5603
                                 },
                                 "PreSize": {
                                   "X": 0.9311,
-                                  "Y": 0.4231
+                                  "Y": 0.7051
                                 },
                                 "LeftMargin": 16.6151,
                                 "RightMargin": 17.4078,
-                                "TopMargin": 25.7167,
-                                "BottomMargin": 137.9319,
+                                "TopMargin": 24.7186,
+                                "BottomMargin": 58.93,
                                 "Tag": 251,
                                 "ActionTag": -1930419234,
                                 "Size": {
                                   "X": 460.0,
-                                  "Y": 120.0
+                                  "Y": 200.0
                                 },
                                 "Name": "Text_8",
                                 "ctype": "TextObjectData"

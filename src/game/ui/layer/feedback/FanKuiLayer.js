@@ -95,7 +95,8 @@ load('game/ui/layer/feedback/FanKuiLayer', function () {
             cell._sendMsg = {
                 feedbackId: data.feedbackId
             }
-            cell.getChildByName('createTime').setString(data.createTime)
+            let createTime = this.onFormatDateTime(data.createTime)
+            cell.getChildByName('createTime').setString(createTime)
 
             if(data.status == 1){
                 cell.getChildByName('status').setString('已处理')
@@ -107,6 +108,17 @@ load('game/ui/layer/feedback/FanKuiLayer', function () {
                 this.onClickMyMsgCell(sender)
             }.bind(this))
 
+        },
+
+        onFormatDateTime: function (timestamp) {
+            let time = timestamp.split(' ');
+            let data = time[0]
+            time = time[1]
+            time = time.split('.');
+            time = time[0]
+            time = time.split(':');
+            time = data+' '+time[0]+':'+time[1]
+            return time;
         },
 
         onClickMyMsgCell: function (sender) {
@@ -169,7 +181,7 @@ load('game/ui/layer/feedback/FanKuiLayer', function () {
             this.FeedBackList.insertCustomItem(TileCell, childCount - 1)
 
             TileCell.getChildByName('tile').setString(cellInfo.tile)
-            TileCell.getChildByName('time').setString(cellInfo.time)
+            TileCell.getChildByName('time').setString(this.onFormatDateTime(cellInfo.time))
 
             let TxtCell = this.TxtCell.clone()
             let txt = cellInfo.txt

@@ -485,14 +485,14 @@
                             <PreSize X="0.1167" Y="0.5615" />
                             <FileData Type="Normal" Path="feedback/yjfk_3.png" Plist="" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="createTime" ActionTag="1220578765" Tag="45" IconVisible="False" LeftMargin="17.5549" RightMargin="462.4451" TopMargin="96.1508" BottomMargin="10.8492" IsCustomSize="True" FontSize="20" LabelText="2020-07-22 12:00" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                            <Size X="180.0000" Y="23.0000" />
+                          <AbstractNodeData Name="createTime" ActionTag="1220578765" Tag="45" IconVisible="False" LeftMargin="7.5549" RightMargin="452.4451" TopMargin="96.1508" BottomMargin="10.8492" IsCustomSize="True" FontSize="20" LabelText="2020-07-22 12:00" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                            <Size X="200.0000" Y="23.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                             <Position X="107.5549" Y="22.3492" />
                             <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="175" G="89" B="12" />
                             <PrePosition X="0.1630" Y="0.1719" />
-                            <PreSize X="0.2727" Y="0.1769" />
+                            <PreSize X="0.3030" Y="0.1769" />
                             <OutlineColor A="255" R="255" G="0" B="0" />
                             <ShadowColor A="255" R="110" G="110" B="110" />
                           </AbstractNodeData>

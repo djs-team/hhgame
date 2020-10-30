@@ -524,14 +524,14 @@
                           <AbstractNodeData Name="Image_11" ActionTag="355677526" Tag="250" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="401.0525" RightMargin="384.9246" TopMargin="199.5997" BottomMargin="236.7517" Scale9Enable="True" LeftEage="28" RightEage="28" TopEage="24" BottomEage="24" Scale9OriginX="28" Scale9OriginY="24" Scale9Width="30" Scale9Height="27" ctype="ImageViewObjectData">
                             <Size X="494.0229" Y="283.6486" />
                             <Children>
-                              <AbstractNodeData Name="Text_8" ActionTag="-1930419234" Tag="251" IconVisible="False" LeftMargin="16.6151" RightMargin="17.4078" TopMargin="25.7167" BottomMargin="137.9319" FontSize="20" LabelText="1.每日共可参与摇金树活动15次&#xA;&#xA;2.每日24:00重置抽奖次数，请于当天24:00前消耗完&#xA;次数&#xA;&#xA;3.每次可随机获得1000-9999枚金币" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                                <Size X="460.0000" Y="120.0000" />
+                              <AbstractNodeData Name="Text_8" ActionTag="-1930419234" Tag="251" IconVisible="False" LeftMargin="16.6151" RightMargin="17.4078" TopMargin="24.7186" BottomMargin="58.9300" IsCustomSize="True" FontSize="20" LabelText="1.每日共可参与摇金树活动15次&#xA;&#xA;2.每日24:00重置抽奖次数，请于当天24:00前消耗完&#xA;次数&#xA;&#xA;3.每次可随机获得1000-9999枚金币" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                                <Size X="460.0000" Y="200.0000" />
                                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                                <Position X="246.6151" Y="197.9319" />
+                                <Position X="246.6151" Y="158.9300" />
                                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                                 <CColor A="255" R="183" G="100" B="30" />
-                                <PrePosition X="0.4992" Y="0.6978" />
-                                <PreSize X="0.9311" Y="0.4231" />
+                                <PrePosition X="0.4992" Y="0.5603" />
+                                <PreSize X="0.9311" Y="0.7051" />
                                 <OutlineColor A="255" R="255" G="0" B="0" />
                                 <ShadowColor A="255" R="110" G="110" B="110" />
                               </AbstractNodeData>

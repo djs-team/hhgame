@@ -210,7 +210,6 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
         },
 
         onTurnPointClick: function (sender) {
-            GameUtil.delayBtn(sender);
             tabState = 0;
             this.pointPnl.setTouchEnabled(false)
             if (!this.onCanTurnPointFunction())
@@ -422,6 +421,7 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
 
             this.awardsPnl.setVisible(false)
            // this.acceptedPnl.setVisible(true)
+            this.pointPnl.setTouchEnabled(true)
 
         },
 

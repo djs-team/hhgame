@@ -421,7 +421,7 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
             this.onUpdateTurnPointImg()
 
             this.awardsPnl.setVisible(false)
-            this.acceptedPnl.setVisible(true)
+           // this.acceptedPnl.setVisible(true)
 
         },
 

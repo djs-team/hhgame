@@ -62,7 +62,9 @@
     NSString *const kNSNotificationCenter_CXRechargeViewController_alipay = @"NSNotificationCenter_CXRechargeViewController_alipay";
 
     NSString *const kNSNotificationCenter_CXFriendViewController_unreadCount = @"NSNotificationCenter_CXFriendViewController_unreadCount";
+    NSString *const kNSNotificationCenter_CXFriendViewController_reloadUnReadCount = @"NSNotificationCenter_CXFriendViewController_reloadUnReadCount";
     NSString *const kNSNotificationCenter_CXBaseTabBarViewController_reloadUnreadCount = @"NSNotificationCenter_CXBaseTabBarViewController_reloadUnreadCount";
+    NSString *const kNSNotificationCenter_CXBaseTabBarViewController_reloadSystemUnreadCount = @"NSNotificationCenter_CXBaseTabBarViewController_reloadSystemUnreadCount";
 
     // ********** define **********
     // frame

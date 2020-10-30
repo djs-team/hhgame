@@ -30,6 +30,7 @@
     [self setupSubViews];
     
     _dataSources = [NSMutableArray array];
+    
     _page = 1;
     
     [self getInviteListData];
@@ -54,6 +55,9 @@
        if (!error) {
            NSArray *array = [NSArray modelArrayWithClass:[CXFriendInviteModel class] json:responseObject[@"data"][@"list"]];
            if (self->_page == 1) {
+               
+               [[NSNotificationCenter defaultCenter] postNotificationName:kNSNotificationCenter_CXBaseTabBarViewController_reloadSystemUnreadCount object:nil];
+               
                weakSelf.dataSources = [NSMutableArray arrayWithArray:array];
            } else {
                [weakSelf.dataSources addObjectsFromArray:array];

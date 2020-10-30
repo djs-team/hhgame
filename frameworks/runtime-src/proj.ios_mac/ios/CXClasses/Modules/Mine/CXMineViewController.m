@@ -57,6 +57,9 @@
     [self getUserData];
     [self loadBalances];
 //    [self getWechatBindStatus];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNSNotificationCenter_CXFriendViewController_reloadUnReadCount object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNSNotificationCenter_CXBaseTabBarViewController_reloadSystemUnreadCount object:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

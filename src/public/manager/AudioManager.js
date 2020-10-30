@@ -86,13 +86,15 @@ load('public/manager/AudioManager', function () {
         /**
          *  播放音效
          */
-        playEffect: function (path) {
+        playEffect: function (path,delEffectId) {
             if (this._isMute) {
                 return
             }
             if (!this._effectVolume) {
                 return
             }
+
+            this.stopEffect(delEffectId)
             if (this._effectArray.length >= this._MAXEFFECTNUMS) {
                 let effectId = this._effectArray.shift()
                 jsb.AudioEngine.stop(effectId)

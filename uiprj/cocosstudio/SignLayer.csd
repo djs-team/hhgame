@@ -439,14 +439,27 @@
                             <PreSize X="1.0741" Y="0.9130" />
                             <FileData Type="Normal" Path="sign/qd_2.png" Plist="" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="loadingBarAwardsText" ActionTag="-421274630" Tag="185" IconVisible="False" LeftMargin="-2.1950" RightMargin="5.1950" TopMargin="48.4379" BottomMargin="-18.4379" FontSize="16" LabelText="已领取" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                            <Size X="51.0000" Y="16.0000" />
+                          <AbstractNodeData Name="boxAniNd" ActionTag="-278711549" Tag="63" IconVisible="False" LeftMargin="25.0000" RightMargin="-33.0000" TopMargin="-40.0000" BottomMargin="36.0000" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+                            <Size X="62.0000" Y="50.0000" />
+                            <AnchorPoint />
+                            <Position X="25.0000" Y="36.0000" />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition X="0.4630" Y="0.7826" />
+                            <PreSize X="1.1481" Y="1.0870" />
+                            <SingleColor A="255" R="150" G="200" B="255" />
+                            <FirstColor A="255" R="150" G="200" B="255" />
+                            <EndColor A="255" R="255" G="255" B="255" />
+                            <ColorVector ScaleY="1.0000" />
+                          </AbstractNodeData>
+                          <AbstractNodeData Name="loadingBarAwardsText" ActionTag="-421274630" Tag="185" IconVisible="False" LeftMargin="-6.1950" RightMargin="1.1950" TopMargin="48.4379" BottomMargin="-18.4379" FontSize="16" LabelText=" 已领取 " HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                            <Size X="59.0000" Y="16.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                             <Position X="23.3050" Y="-10.4379" />
                             <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="255" G="255" B="255" />
                             <PrePosition X="0.4316" Y="-0.2269" />
-                            <PreSize X="0.9444" Y="0.3478" />
+                            <PreSize X="1.0926" Y="0.3478" />
                             <FontResource Type="Normal" Path="font/hkhbtW12.ttc" Plist="" />
                             <OutlineColor A="255" R="255" G="0" B="0" />
                             <ShadowColor A="255" R="110" G="110" B="110" />
@@ -454,14 +467,14 @@
                           <AbstractNodeData Name="treasureChestExplainPg" ActionTag="-1458913867" Tag="187" IconVisible="False" LeftMargin="-1.5364" RightMargin="-66.4636" TopMargin="-73.1123" BottomMargin="48.1123" LeftEage="40" RightEage="40" TopEage="23" BottomEage="23" Scale9OriginX="40" Scale9OriginY="23" Scale9Width="42" Scale9Height="25" ctype="ImageViewObjectData">
                             <Size X="122.0000" Y="71.0000" />
                             <Children>
-                              <AbstractNodeData Name="treasureChestExplainText" ActionTag="-1394027609" Tag="188" IconVisible="False" LeftMargin="18.0346" RightMargin="15.9654" TopMargin="9.1319" BottomMargin="29.8681" FontSize="16" LabelText="获得金币xxx&#xA;钻石xxx" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                                <Size X="88.0000" Y="32.0000" />
+                              <AbstractNodeData Name="treasureChestExplainText" ActionTag="-1394027609" Tag="188" IconVisible="False" LeftMargin="6.0346" RightMargin="3.9654" TopMargin="9.1319" BottomMargin="29.8681" FontSize="16" LabelText="获得金币xxxxxx&#xA;钻石xxxxxx" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                                <Size X="112.0000" Y="32.0000" />
                                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                                 <Position X="62.0346" Y="45.8681" />
                                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                                 <CColor A="255" R="152" G="73" B="0" />
                                 <PrePosition X="0.5085" Y="0.6460" />
-                                <PreSize X="0.7213" Y="0.4507" />
+                                <PreSize X="0.9180" Y="0.4507" />
                                 <OutlineColor A="255" R="255" G="0" B="0" />
                                 <ShadowColor A="255" R="110" G="110" B="110" />
                               </AbstractNodeData>
@@ -599,7 +612,7 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="poupPnl" ActionTag="1889792995" Tag="353" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="poupPnl" Visible="False" ActionTag="1889792995" Tag="353" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="1280.0000" Y="720.0000" />
                 <Children>
                   <AbstractNodeData Name="rulePnl" ActionTag="1643422279" Tag="354" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
@@ -645,7 +658,7 @@
                           <AbstractNodeData Name="Image_11" ActionTag="-1680476807" Tag="359" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="401.0525" RightMargin="384.9246" TopMargin="181.4240" BottomMargin="218.5760" Scale9Enable="True" LeftEage="28" RightEage="28" TopEage="24" BottomEage="24" Scale9OriginX="28" Scale9OriginY="24" Scale9Width="30" Scale9Height="27" ctype="ImageViewObjectData">
                             <Size X="494.0229" Y="320.0000" />
                             <Children>
-                              <AbstractNodeData Name="Text_8" ActionTag="-1380415311" Tag="360" IconVisible="False" LeftMargin="18.3679" RightMargin="7.4457" TopMargin="29.8272" BottomMargin="124.2439" IsCustomSize="True" FontSize="18" LabelText="1:每日签到可领取丰富奖励&#xA;&#xA;2:连续签到满10/20/30次即可额外领取珍贵的宝箱奖励&#xA;&#xA;3:周会员最高可领取5倍奖励，月会员最高可领取7倍奖励，季会员最高可领取13倍奖励，年会员最高可领取23倍奖励" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                              <AbstractNodeData Name="Text_8" ActionTag="-1380415311" Tag="360" IconVisible="False" LeftMargin="18.3680" RightMargin="7.4456" TopMargin="29.8272" BottomMargin="124.2440" IsCustomSize="True" FontSize="18" LabelText="1:每日签到可领取丰富奖励&#xA;&#xA;2:连续签到满10/20/30次即可额外领取珍贵的宝箱奖励&#xA;&#xA;3:周会员最高可领取5倍奖励，月会员最高可领取7倍奖励，季会员最高可领取13倍奖励，年会员最高可领取23倍奖励" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                                 <Size X="468.2093" Y="165.9288" />
                                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                                 <Position X="252.4726" Y="207.2084" />

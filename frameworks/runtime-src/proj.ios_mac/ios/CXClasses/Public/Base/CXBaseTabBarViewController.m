@@ -48,6 +48,7 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(back) name:kNSNotificationCenter_CXBaseTabBarViewController_leaveOut object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadUnreadMessage) name:kNSNotificationCenter_CXBaseTabBarViewController_reloadUnreadCount object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadUnreadSystemMessage) name:kNSNotificationCenter_CXBaseTabBarViewController_reloadSystemUnreadCount object:nil];
     
     [self setupChildController];
     
@@ -59,7 +60,7 @@
     
     [self checkUserDataUpdate];
     
-//    [self getUnReadCountData];
+    [self getUnReadCountData];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -78,25 +79,29 @@
 //    self.isViewAppear = NO;
 }
 
-//- (void)getUnReadCountData {
-//    kWeakSelf
-//    [CXHTTPRequest GETWithURL:@"/index.php/Api/Friend/messageNum" parameters:nil callback:^(id responseObject, BOOL isCache, NSError *error) {
-//        if (!error) {
-//            NSString *system_num = responseObject[@"data"][@"system_num"];
-//            NSString *my_apply = responseObject[@"data"][@"my_apply"];
-//            NSString *apply_my = responseObject[@"data"][@"apply_my"];
-//
-//            weakSelf.systemCount = [system_num integerValue] + [my_apply integerValue] + [apply_my integerValue];
-//
-//            [weakSelf reloadTabBarBadge];
-//        }
-//    }];
-//}
+- (void)getUnReadCountData {
+    kWeakSelf
+    [CXHTTPRequest GETWithURL:@"/index.php/Api/Friend/messageNum" parameters:nil callback:^(id responseObject, BOOL isCache, NSError *error) {
+        if (!error) {
+            NSString *system_num = responseObject[@"data"][@"system_num"];
+            NSString *my_apply = responseObject[@"data"][@"my_apply"];
+            NSString *apply_my = responseObject[@"data"][@"apply_my"];
+
+            weakSelf.systemCount = [system_num integerValue] + [my_apply integerValue] + [apply_my integerValue];
+
+            [weakSelf reloadTabBarBadge];
+        }
+    }];
+}
 
 - (void)reloadUnreadMessage {
     if (_messageCount != 0) {
         [self _loadTabBarItemsBadge];
     }
+}
+
+- (void)reloadUnreadSystemMessage {
+    [self getUnReadCountData];
 }
 
 - (void)back {
@@ -155,9 +160,8 @@
     NSInteger unreadCount = _messageCount + _systemCount;
     NSString *unreadCountStr = unreadCount > 0 ? @(MIN(unreadCount, 99)).stringValue : nil;
     self.friendController.tabBarItem.badgeValue = unreadCountStr;
-    [CXClientModel instance].unreadCountStr = unreadCountStr ?: @"0";
-    [[NSNotificationCenter defaultCenter] postNotificationName:kNSNotificationCenter_CXFriendViewController_unreadCount object:nil userInfo:@{@"unreadCount" : unreadCountStr ?: @"0"}];
-    
+    [CXClientModel instance].unreadCountStr = _messageCount > 0 ? [NSString stringWithFormat:@"%ld", _messageCount]: @"0";
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNSNotificationCenter_CXFriendViewController_unreadCount object:nil userInfo:@{@"unreadCount" : _messageCount > 0 ? [NSString stringWithFormat:@"%ld", _messageCount]: @"0"}];
 }
 
 - (void)_loadTabBarItemsBadge
@@ -241,17 +245,18 @@
         [weakSelf.inviteMikeArrays removeAllObjects];
         [weakSelf.mikeView removeFromSuperview];
         
-        if ([CXClientModel instance].isJoinedRoom == YES) {
-            [[CXClientModel instance] leaveRoomCallBack:^(NSString * _Nonnull roomId, BOOL success) {
-                if (success) {
-                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                        [CXClientModel instance].isAgreeInviteJoinRoom = YES;
-                        [AppController joinRoom:model.roomId];
-                    });
-                }
-            }];
+        [CXClientModel instance].isAgreeInviteJoinRoom = YES;
+        
+        if ([CXClientModel instance].isJoinedRoom) {
+            [[CXClientModel instance].easemob leaveRoom];
+            [[CXClientModel instance].agoraEngineManager.engine leaveChannel:nil];
+            [[CXClientModel instance].agoraEngineManager.engine setClientRole:AgoraClientRoleAudience];
+            [[CXClientModel instance].agoraEngineManager.engine setVideoSource:nil];
+            
+            SocketMessageJoinRoom * joinRoom = [SocketMessageJoinRoom new];
+            joinRoom.RoomId = model.roomId;
+            [[CXClientModel instance] sendSocketRequest:joinRoom withCallback:nil];
         } else {
-            [CXClientModel instance].isAgreeInviteJoinRoom = YES;
             [AppController joinRoom:model.roomId];
         }
     };

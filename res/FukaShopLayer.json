@@ -5491,7 +5491,7 @@
                       },
                       {
                         "FontSize": 24,
-                        "LabelText": "运单号：",
+                        "LabelText": "备注：",
                         "OutlineColor": {
                           "G": 0,
                           "B": 0
@@ -5508,7 +5508,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 94.8698,
+                          "X": 88.87,
                           "Y": 34.8021
                         },
                         "Scale": {
@@ -5522,21 +5522,21 @@
                         },
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 0.1446,
+                          "X": 0.1355,
                           "Y": 0.1172
                         },
                         "PreSize": {
-                          "X": 0.1463,
+                          "X": 0.1098,
                           "Y": 0.0808
                         },
-                        "LeftMargin": 46.8698,
-                        "RightMargin": 513.1302,
+                        "LeftMargin": 52.87,
+                        "RightMargin": 531.13,
                         "TopMargin": 250.1979,
                         "BottomMargin": 22.8021,
                         "Tag": 328,
                         "ActionTag": -2141814607,
                         "Size": {
-                          "X": 96.0,
+                          "X": 72.0,
                           "Y": 24.0
                         },
                         "Name": "orderNumberKeyText",
@@ -5596,8 +5596,10 @@
                         "ctype": "TextObjectData"
                       },
                       {
-                        "FontSize": 24,
-                        "LabelText": "这是一个好商品非常好的商",
+                        "IsCustomSize": true,
+                        "FontSize": 22,
+                        "LabelText": "顺丰：12345678901234567890123456",
+                        "VerticalAlignmentType": "VT_Center",
                         "OutlineColor": {
                           "G": 0,
                           "B": 0
@@ -5614,7 +5616,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 301.1147,
+                          "X": 303.11,
                           "Y": 34.8064
                         },
                         "Scale": {
@@ -5628,22 +5630,22 @@
                         },
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 0.459,
+                          "X": 0.4621,
                           "Y": 0.1172
                         },
                         "PreSize": {
-                          "X": 0.439,
-                          "Y": 0.0808
+                          "X": 0.5366,
+                          "Y": 0.1044
                         },
-                        "LeftMargin": 157.1147,
-                        "RightMargin": 210.8853,
-                        "TopMargin": 250.1936,
-                        "BottomMargin": 22.8064,
+                        "LeftMargin": 127.11,
+                        "RightMargin": 176.89,
+                        "TopMargin": 246.6936,
+                        "BottomMargin": 19.3064,
                         "Tag": 330,
                         "ActionTag": 434421140,
                         "Size": {
-                          "X": 288.0,
-                          "Y": 24.0
+                          "X": 352.0,
+                          "Y": 31.0
                         },
                         "Name": "orderNumberValueText",
                         "ctype": "TextObjectData"

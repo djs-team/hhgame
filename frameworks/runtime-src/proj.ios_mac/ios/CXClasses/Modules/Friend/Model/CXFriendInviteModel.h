@@ -61,11 +61,9 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface CXSystemMessageModel : NSObject
-
-@property (nonatomic, strong) NSString * system_id;
-@property (nonatomic, strong) NSString * fromsend;
-@property (nonatomic, strong) NSString * pushmsg;
-@property (nonatomic, strong) NSString * pushtime;
+@property (nonatomic, strong) NSString * messageId;
+@property (nonatomic, strong) NSString * content;
+@property (nonatomic, strong) NSString * time;
 
 @end
 

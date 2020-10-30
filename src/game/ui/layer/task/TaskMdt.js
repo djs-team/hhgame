@@ -84,11 +84,13 @@ load('game/ui/layer/task/TaskMdt', function () {
                         boxCell.res = 'res/code/task/rwzx_7.png'
                         boxCell.activityText = '未领取'
                         boxCell.status = 1
+                        boxCell.showAniNd = true
                         break
                     case 2:
                         boxCell.res = 'res/code/task/rwzx_15.png'
                         boxCell.activityText = '已领取'
                         boxCell.status = 2
+                        boxCell.showAniNd = false
                         break
                     default:
                         break
@@ -117,6 +119,7 @@ load('game/ui/layer/task/TaskMdt', function () {
                 activityConfig.activity =msgActivityConfig.activity
                 activityConfig.status =msgActivityConfig.status
                 activityConfig.desc =msgActivityConfig.desc
+                activityConfig.showAniNd = false
 
 
                 switch (activityConfig.status) {
@@ -127,6 +130,7 @@ load('game/ui/layer/task/TaskMdt', function () {
                     case 1:
                         activityConfig.res = 'res/code/task/rwzx_7.png'
                         activityConfig.activityText = '未领取'
+                        activityConfig.showAniNd = true
                         break
                     case 2:
                         activityConfig.res = 'res/code/task/rwzx_15.png'

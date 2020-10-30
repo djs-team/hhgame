@@ -134,10 +134,18 @@ public class JpushUtils {
         layoutTitle.addView(img, imgParam);
         uiConfigBuilder.addCustomView(layoutTitle, false, null);
 
+        // 关闭按钮
+        ImageView closeButton = new ImageView(mContext);
 
+        RelativeLayout.LayoutParams mLayoutParams1 = new RelativeLayout.LayoutParams(DisplayUtil.dip2px(mContext, 10), DisplayUtil.dip2px(mContext, 10));
+        mLayoutParams1.setMargins(0, DisplayUtil.dip2px(mContext, 8.0f), DisplayUtil.dip2px(mContext, 8), 0);
+        mLayoutParams1.addRule(RelativeLayout.ALIGN_PARENT_RIGHT, RelativeLayout.TRUE);
+        mLayoutParams1.addRule(RelativeLayout.ALIGN_PARENT_TOP, RelativeLayout.TRUE);
+        closeButton.setLayoutParams(mLayoutParams1);
+        closeButton.setImageResource(R.drawable.ic_black_close);
+        uiConfigBuilder.addCustomView(closeButton, true, null);
         return uiConfigBuilder.build();
     }
-
 
 
 }

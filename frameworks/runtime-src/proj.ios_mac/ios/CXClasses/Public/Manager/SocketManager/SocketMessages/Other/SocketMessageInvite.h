@@ -36,7 +36,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) NSNumber * Agree;// 1同意  0不同意
 @property BOOL Force; // 是否跳过
-
+@property (nonatomic, strong) NSNumber * InviteMicroId;// 上麦邀请表Id（0说明是房间内的邀请上麦
 @end
 
 

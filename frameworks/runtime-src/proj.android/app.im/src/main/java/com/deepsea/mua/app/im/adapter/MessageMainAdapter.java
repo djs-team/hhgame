@@ -18,24 +18,23 @@ public class MessageMainAdapter extends FragmentPagerAdapter {
     private final String[] RANK_TITLES;
     private final String[] RANK_STATUS;
     FriendMessageFragment friendMessageFragment = null;
-//    SystemMsgFragment systemMsgFragment = null;
+    SystemMsgFragment systemMsgFragment = null;
 
     public MessageMainAdapter(FragmentManager fm) {
         super(fm);
-        RANK_TITLES = new String[]{"好友"};
-        RANK_STATUS = new String[]{"1"};
+        RANK_TITLES = new String[]{"好友", "系统"};
+        RANK_STATUS = new String[]{"1", "2"};
         friendMessageFragment = FriendMessageFragment.newInstance();
-//        systemMsgFragment = SystemMsgFragment.newInstance();
-        fragments = new BaseFragment[]{friendMessageFragment};
+        systemMsgFragment = SystemMsgFragment.newInstance();
+        fragments = new BaseFragment[]{friendMessageFragment, systemMsgFragment};
     }
 
     public void brushType(int type) {
         if (type == 1) {
             friendMessageFragment.showBrushMsgDialog();
+        } else {
+            systemMsgFragment.showBrushMsgDialog();
         }
-//        else {
-//            systemMsgFragment.showBrushMsgDialog();
-//        }
     }
 
     @Override

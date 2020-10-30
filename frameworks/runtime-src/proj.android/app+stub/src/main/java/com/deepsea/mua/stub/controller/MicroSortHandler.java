@@ -76,7 +76,7 @@ public class MicroSortHandler {
      * @param uid
      */
     public synchronized void topMicroSort(String uid) {
-        if (mOrders != null) {
+        if (mOrders != null&&mOrders.size()>1) {
             MicroOrder top = null;
             for (MicroOrder sort : mOrders) {
                 if (uid.equals(sort.getUser().getUserId())) {

@@ -826,8 +826,14 @@ UIInterfaceOrientationMask oMask = UIInterfaceOrientationMaskLandscape;
     }
     
     [MBProgressHUD showHUD];
+    
+    [[CXClientModel instance].easemob leaveRoom];
+    [[CXClientModel instance].agoraEngineManager.engine leaveChannel:nil];
+    [[CXClientModel instance].agoraEngineManager.engine setClientRole:AgoraClientRoleAudience];
+    [[CXClientModel instance].agoraEngineManager.engine setVideoSource:nil];
+    
     [[CXClientModel instance] joinRoom:roomId callback:^(NSString * _Nonnull roomId, BOOL success) {
-        [MBProgressHUD hideHUD];
+        
         if (success) {
             UIViewController *vc = [CXTools currentViewController];
             CXLiveRoomViewController *roomVC = [CXLiveRoomViewController new];

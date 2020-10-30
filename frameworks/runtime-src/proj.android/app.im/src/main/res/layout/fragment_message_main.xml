@@ -70,7 +70,7 @@
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/rl_tab_msg"
                 android:orientation="vertical"
-                android:visibility="gone">
+                android:visibility="visible">
 
                 <com.deepsea.mua.stub.view.WithBackgroundTextView
                     android:id="@+id/tv_sys_unread"

@@ -95,13 +95,14 @@ public class UploadPhotoDialogActivity extends FragmentActivity implements HasSu
             mPhotoDialog.setDismissListener(new PhotoDialog.OnPhotoDismissListener() {
                 @Override
                 public void onMyDismiss() {
-                    finish();
+                    Log.d("dismiss", "dismiss-e");
+
+                    UploadPhotoDialogActivity.this.finish();
                 }
             });
             mPhotoDialog.setOnPhotoSelectedListener(path -> {
                 Log.d("showPhotoDialog", path);
                 upLoadHeadIv(path);
-
             });
         }
         mPhotoDialog.showAtBottom(getSupportFragmentManager());
@@ -119,7 +120,8 @@ public class UploadPhotoDialogActivity extends FragmentActivity implements HasSu
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            loadPhoto = objectKey;
+                            String path = "https://" + gameConfigVo.getBucketName() + "." + gameConfigVo.getEndpoint() + "/";
+                            loadPhoto = path + objectKey;
                             mPhotoDialog.dismiss();
                         }
                     });

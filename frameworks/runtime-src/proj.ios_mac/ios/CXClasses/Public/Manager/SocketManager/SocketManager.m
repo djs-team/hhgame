@@ -193,6 +193,7 @@ typedef enum : NSUInteger {
     __weak typeof (self) wself = self;
     [CXClientModel instance].isSocketManagerReconnect = NO;
     self.loginRequest = [self sendRequest:login withCallback:^(SocketMessageLogin * _Nonnull login) {
+        [MBProgressHUD hideHUD];
         wself.loginRequest = nil;
         if ([login.response.Success isEqual: @-2]) {
             // 重连登录

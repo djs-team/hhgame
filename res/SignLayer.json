@@ -2054,13 +2054,62 @@
                             "ctype": "ImageViewObjectData"
                           },
                           {
+                            "ClipAble": false,
+                            "BackColorAlpha": 102,
+                            "SingleColor": {
+                              "R": 150,
+                              "G": 200
+                            },
+                            "FirstColor": {
+                              "R": 150,
+                              "G": 200
+                            },
+                            "EndColor": {},
+                            "ColorVector": {
+                              "ScaleY": 1.0
+                            },
+                            "AnchorPoint": {},
+                            "Position": {
+                              "X": 25.0,
+                              "Y": 36.0
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {},
+                            "IconVisible": false,
+                            "PrePosition": {
+                              "X": 0.463,
+                              "Y": 0.7826
+                            },
+                            "PreSize": {
+                              "X": 1.1481,
+                              "Y": 1.087
+                            },
+                            "LeftMargin": 25.0,
+                            "RightMargin": -33.0,
+                            "TopMargin": -40.0,
+                            "BottomMargin": 36.0,
+                            "Tag": 63,
+                            "ActionTag": -278711549,
+                            "Size": {
+                              "X": 62.0,
+                              "Y": 50.0
+                            },
+                            "Name": "boxAniNd",
+                            "ctype": "PanelObjectData"
+                          },
+                          {
                             "FontSize": 16,
-                            "LabelText": "已领取",
+                            "LabelText": " 已领取 ",
                             "FontResource": {
                               "Type": "Normal",
                               "Path": "font/hkhbtW12.ttc",
                               "Plist": ""
                             },
+                            "HorizontalAlignmentType": "HT_Center",
+                            "VerticalAlignmentType": "VT_Center",
                             "OutlineColor": {
                               "G": 0,
                               "B": 0
@@ -2091,17 +2140,17 @@
                               "Y": -0.2269
                             },
                             "PreSize": {
-                              "X": 0.9444,
+                              "X": 1.0926,
                               "Y": 0.3478
                             },
-                            "LeftMargin": -2.195,
-                            "RightMargin": 5.195,
+                            "LeftMargin": -6.195,
+                            "RightMargin": 1.195,
                             "TopMargin": 48.4379,
                             "BottomMargin": -18.4379,
                             "Tag": 185,
                             "ActionTag": -421274630,
                             "Size": {
-                              "X": 51.0,
+                              "X": 59.0,
                               "Y": 16.0
                             },
                             "Name": "loadingBarAwardsText",
@@ -2147,7 +2196,7 @@
                             "Children": [
                               {
                                 "FontSize": 16,
-                                "LabelText": "获得金币xxx\n钻石xxx",
+                                "LabelText": "获得金币xxxxxx\n钻石xxxxxx",
                                 "OutlineColor": {
                                   "G": 0,
                                   "B": 0
@@ -2182,17 +2231,17 @@
                                   "Y": 0.646
                                 },
                                 "PreSize": {
-                                  "X": 0.7213,
+                                  "X": 0.918,
                                   "Y": 0.4507
                                 },
-                                "LeftMargin": 18.0346,
-                                "RightMargin": 15.9654,
+                                "LeftMargin": 6.0346,
+                                "RightMargin": 3.9654,
                                 "TopMargin": 9.1319,
                                 "BottomMargin": 29.8681,
                                 "Tag": 188,
                                 "ActionTag": -1394027609,
                                 "Size": {
-                                  "X": 88.0,
+                                  "X": 112.0,
                                   "Y": 32.0
                                 },
                                 "Name": "treasureChestExplainText",
@@ -3004,10 +3053,10 @@
                                   "X": 0.9477,
                                   "Y": 0.5185
                                 },
-                                "LeftMargin": 18.3679,
-                                "RightMargin": 7.4457,
+                                "LeftMargin": 18.368,
+                                "RightMargin": 7.4456,
                                 "TopMargin": 29.8272,
-                                "BottomMargin": 124.2439,
+                                "BottomMargin": 124.244,
                                 "Tag": 360,
                                 "ActionTag": -1380415311,
                                 "Size": {

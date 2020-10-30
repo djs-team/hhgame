@@ -56,7 +56,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) AgoraRtcEngineKit * engine;
 
-- (BOOL)joinRoom:(NSString*)roomId withUID:(NSUInteger)uid success:(nullable void(^)(AgoraRtcEngineManager*sender))success;
+- (BOOL)joinRoom:(NSString*)roomId withUID:(NSUInteger)uid success:(nullable void(^)(NSString * _Nonnull channel, NSUInteger uid, NSInteger elapsed))success;
 - (BOOL)leaveRoom:(nullable void(^)(AgoraRtcEngineManager*sender))success;
 
 @property (nonatomic, assign, getter = isOffMic) BOOL offMic;  //关闭麦克风采集

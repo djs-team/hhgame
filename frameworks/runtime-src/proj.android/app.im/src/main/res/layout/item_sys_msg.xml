@@ -28,7 +28,7 @@
             android:layout_height="50dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="19dp"
-            android:src="@drawable/ic_place_default"
+            android:src="@drawable/icon_sys_msg_logo"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_time" />
 

@@ -70,7 +70,6 @@ import com.deepsea.mua.stub.utils.eventbus.InviteDialogCloseEvent;
 import com.deepsea.mua.stub.utils.eventbus.InviteDialogEvent;
 import com.deepsea.mua.stub.utils.eventbus.InviteOtherEvent;
 import com.deepsea.mua.stub.utils.eventbus.MessageTipsEvent;
-import com.deepsea.mua.stub.utils.eventbus.MessgeRefresh;
 import com.deepsea.mua.stub.utils.eventbus.OpenRoom;
 import com.deepsea.mua.stub.utils.eventbus.ShowMineDialog;
 import com.deepsea.mua.stub.utils.eventbus.ShowRankStepOne;
@@ -400,14 +399,6 @@ public class MainActivity extends BaseActivity<ActivityMainBinding>
             transaction.show(to).commitAllowingStateLoss();
         }
         mPrePos = pos;
-        if (pos==1){
-            mHandler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    EventBus.getDefault().post(new MessgeRefresh());
-                }
-            },500);
-        }
     }
     private Handler mHandler=new Handler();
 

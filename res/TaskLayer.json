@@ -897,13 +897,14 @@
                               {
                                 "IsCustomSize": true,
                                 "FontSize": 25,
-                                "LabelText": "55",
+                                "LabelText": " 1000  ",
                                 "FontResource": {
                                   "Type": "Normal",
                                   "Path": "font/hkhbtW12.ttc",
                                   "Plist": ""
                                 },
                                 "HorizontalAlignmentType": "HT_Center",
+                                "VerticalAlignmentType": "VT_Center",
                                 "OutlineColor": {
                                   "G": 0,
                                   "B": 0
@@ -920,7 +921,7 @@
                                   "ScaleY": 0.5
                                 },
                                 "Position": {
-                                  "X": 60.0,
+                                  "X": 53.0,
                                   "Y": 63.4032
                                 },
                                 "Scale": {
@@ -929,24 +930,23 @@
                                 },
                                 "CColor": {},
                                 "IconVisible": false,
-                                "PositionPercentXEnabled": true,
                                 "PositionPercentYEnabled": true,
                                 "PrePosition": {
-                                  "X": 0.5,
+                                  "X": 0.4417,
                                   "Y": 0.6216
                                 },
                                 "PreSize": {
-                                  "X": 0.3333,
+                                  "X": 0.65,
                                   "Y": 0.2451
                                 },
-                                "LeftMargin": 40.0,
-                                "RightMargin": 40.0,
+                                "LeftMargin": 14.0,
+                                "RightMargin": 28.0,
                                 "TopMargin": 26.0968,
                                 "BottomMargin": 50.9032,
                                 "Tag": 312,
                                 "ActionTag": 1795308259,
                                 "Size": {
-                                  "X": 40.0,
+                                  "X": 78.0,
                                   "Y": 25.0
                                 },
                                 "Name": "activityValue",
@@ -1225,6 +1225,53 @@
                                         },
                                         "Name": "activityPg",
                                         "ctype": "ImageViewObjectData"
+                                      },
+                                      {
+                                        "ClipAble": false,
+                                        "BackColorAlpha": 102,
+                                        "SingleColor": {
+                                          "R": 150,
+                                          "G": 200
+                                        },
+                                        "FirstColor": {
+                                          "R": 150,
+                                          "G": 200
+                                        },
+                                        "EndColor": {},
+                                        "ColorVector": {
+                                          "ScaleY": 1.0
+                                        },
+                                        "AnchorPoint": {},
+                                        "Position": {
+                                          "X": 39.0,
+                                          "Y": 60.0
+                                        },
+                                        "Scale": {
+                                          "ScaleX": 1.0,
+                                          "ScaleY": 1.0
+                                        },
+                                        "CColor": {},
+                                        "IconVisible": false,
+                                        "PrePosition": {
+                                          "X": 0.4937,
+                                          "Y": 0.75
+                                        },
+                                        "PreSize": {
+                                          "X": 0.7595,
+                                          "Y": 0.525
+                                        },
+                                        "LeftMargin": 39.0,
+                                        "RightMargin": -20.0,
+                                        "TopMargin": -22.0,
+                                        "BottomMargin": 60.0,
+                                        "Tag": 165,
+                                        "ActionTag": 1740797158,
+                                        "Size": {
+                                          "X": 60.0,
+                                          "Y": 42.0
+                                        },
+                                        "Name": "boxAniNd",
+                                        "ctype": "PanelObjectData"
                                       },
                                       {
                                         "IsCustomSize": true,

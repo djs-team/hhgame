@@ -503,6 +503,29 @@ load('game/public/HttpGame', function () {
 
         },
 
+        AcceptAwardReq: function (msg) {
+            msg = msg || {}
+            if (!this._requestBackCall[HttpEvent.MJ_HALL_PLAYER_WATCH_VIDEO_GET_COINS]) {
+                this._requestBackCall[HttpEvent.MJ_HALL_PLAYER_WATCH_VIDEO_GET_COINS] = this.AcceptAwardBack
+            }
+
+            msg.msgID = HttpEvent.MJ_HALL_PLAYER_WATCH_VIDEO_GET_COINS
+            appInstance.httpAgent().sendPost(msg)
+
+        },
+
+        AcceptAwardBack: function (msg) {
+
+            if (msg.status !== 0) {
+                cc.log('------------->>>httpGame AcceptAwardBack error happen')
+                return
+            }
+
+            console.log('-------------------AcceptAwardBack data : ' + JSON.stringify(msg))
+            appInstance.sendNotification(GameEvent.TABLE_RESULT_RECEIVE, msg)
+
+        },
+
         REFRESHAWARDSDATAReq: function (msg) {
             msg = msg || {}
             if (!this._requestBackCall[HttpEvent.MJ_HALL_LUCKY_PRIZE]) {

@@ -51,6 +51,7 @@ load('game/config/HttpEvent', function () {
         MJ_HALL_PLAYER_TASK_INVITE: HTTP_HALL_BASE + 91, //玩家邀请任务信息
         MJ_HALL_PLAYER_TASK_INVITE_RECEIVE: HTTP_HALL_BASE + 92, //玩家邀请任务奖励领取
         MJ_HALL_PLAYER_INVITE_LOG: HTTP_HALL_BASE + 93, //玩家邀请记录
+        MJ_HALL_PLAYER_WATCH_VIDEO_GET_COINS: HTTP_HALL_BASE + 94, //玩家看视频获得金币
         MJ_HALL_VIP_INFO: HTTP_HALL_BASE + 95,
         MJ_HALL_VIP_DAILY_GIFT_RECEIVE: HTTP_HALL_BASE + 96,
         MJ_HALL_MAIL_LIST: HTTP_HALL_BASE + 98,  //邮件列表

@@ -215,7 +215,7 @@
                 <PreSize X="1.0000" Y="0.3472" />
                 <FileData Type="Normal" Path="result/ssc_11.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="InfoCell" ActionTag="1031068280" UserData="{&quot;layoutType&quot;:&quot;showAll&quot;,&quot;screenAlign&quot;:&quot;bottom&quot;}" Tag="24" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="InfoCell" ActionTag="1031068280" UserData="{&quot;layoutType&quot;:&quot;showAll&quot;,&quot;screenAlign&quot;:&quot;bottom&quot;}" Tag="24" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="1.0768" RightMargin="-1.0768" TopMargin="-1.0773" BottomMargin="1.0772" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="1280.0000" Y="720.0000" />
                 <Children>
                   <AbstractNodeData Name="nameTxt" ActionTag="1873035343" Tag="32" IconVisible="False" LeftMargin="52.3898" RightMargin="987.6102" TopMargin="476.7537" BottomMargin="163.2463" IsCustomSize="True" FontSize="28" LabelText="玩家应该叫什么呢玩家应该叫什么呢" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -255,10 +255,10 @@
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" />
-                <Position X="640.0000" />
+                <Position X="641.0768" Y="1.0772" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5000" />
+                <PrePosition X="0.5008" Y="0.0015" />
                 <PreSize X="1.0000" Y="1.0000" />
                 <SingleColor A="255" R="150" G="200" B="255" />
                 <FirstColor A="255" R="150" G="200" B="255" />
@@ -350,7 +350,7 @@
               <AbstractNodeData Name="InviteFriendBtn" ActionTag="895274979" Tag="28" IconVisible="False" LeftMargin="598.6682" RightMargin="481.3318" TopMargin="608.9203" BottomMargin="23.0797" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="59" RightEage="66" TopEage="11" BottomEage="11" Scale9OriginX="59" Scale9OriginY="11" Scale9Width="5" Scale9Height="66" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="200.0000" Y="88.0000" />
                 <Children>
-                  <AbstractNodeData Name="Text_1" ActionTag="-1424081620" Tag="29" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="39.0000" RightMargin="39.0000" TopMargin="24.6000" BottomMargin="33.4000" FontSize="30" LabelText="邀请好友" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                  <AbstractNodeData Name="Text_1" ActionTag="-1424081620" Tag="29" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="39.0000" RightMargin="39.0000" TopMargin="24.6000" BottomMargin="33.4000" FontSize="30" LabelText="分享好友" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="122.0000" Y="30.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="100.0000" Y="48.4000" />
@@ -378,15 +378,36 @@
               <AbstractNodeData Name="NextGameBtn" ActionTag="625748480" Tag="30" IconVisible="False" LeftMargin="832.0568" RightMargin="247.9431" TopMargin="608.9203" BottomMargin="23.0797" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="59" RightEage="66" TopEage="11" BottomEage="11" Scale9OriginX="59" Scale9OriginY="11" Scale9Width="5" Scale9Height="66" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="200.0000" Y="88.0000" />
                 <Children>
-                  <AbstractNodeData Name="Text_1" ActionTag="460409080" Tag="31" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="54.0000" RightMargin="54.0000" TopMargin="24.6000" BottomMargin="33.4000" FontSize="30" LabelText="下一局" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                  <AbstractNodeData Name="Image_3" ActionTag="627699933" Tag="1312" IconVisible="False" LeftMargin="34.7059" RightMargin="140.2209" TopMargin="22.9474" BottomMargin="42.6705" LeftEage="12" RightEage="12" TopEage="10" BottomEage="10" Scale9OriginX="12" Scale9OriginY="10" Scale9Width="14" Scale9Height="11" ctype="ImageViewObjectData">
+                    <Size X="25.0732" Y="22.3822" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="47.2425" Y="53.8615" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.2362" Y="0.6121" />
+                    <PreSize X="0.1254" Y="0.2543" />
+                    <FileData Type="Normal" Path="result/scjb_3.png" Plist="" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Text_1" ActionTag="460409080" Tag="31" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="64.4624" RightMargin="43.5376" TopMargin="18.1367" BottomMargin="39.8632" FontSize="30" LabelText="下一局" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="92.0000" Y="30.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="100.0000" Y="48.4000" />
+                    <Position X="110.4624" Y="54.8632" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="139" G="105" B="20" />
-                    <PrePosition X="0.5000" Y="0.5500" />
+                    <PrePosition X="0.5523" Y="0.6234" />
                     <PreSize X="0.4600" Y="0.3409" />
                     <FontResource Type="Normal" Path="fnt/hkhbtW12.ttc" Plist="" />
+                    <OutlineColor A="255" R="255" G="0" B="0" />
+                    <ShadowColor A="255" R="110" G="110" B="110" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Text_3" ActionTag="-509673871" Tag="1350" IconVisible="False" LeftMargin="47.4144" RightMargin="62.5856" TopMargin="47.9149" BottomMargin="20.0851" FontSize="20" LabelText="剩余：0/5" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="90.0000" Y="20.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="92.4144" Y="30.0851" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="123" G="92" B="14" />
+                    <PrePosition X="0.4621" Y="0.3419" />
+                    <PreSize X="0.4500" Y="0.2273" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
@@ -398,7 +419,7 @@
                 <PrePosition X="0.7282" Y="0.0932" />
                 <PreSize X="0.1563" Y="0.1222" />
                 <TextColor A="255" R="65" G="65" B="70" />
-                <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+                <DisabledFileData Type="Normal" Path="common/xin_anniu_10.png" Plist="" />
                 <NormalFileData Type="Normal" Path="common/bt_1.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />

@@ -946,8 +946,8 @@
                   "ScaleX": 0.5
                 },
                 "Position": {
-                  "X": 640.0,
-                  "Y": 0.0
+                  "X": 641.0768,
+                  "Y": 1.0772
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -958,8 +958,8 @@
                 "PositionPercentXEnabled": true,
                 "PositionPercentYEnabled": true,
                 "PrePosition": {
-                  "X": 0.5,
-                  "Y": 0.0
+                  "X": 0.5008,
+                  "Y": 0.0015
                 },
                 "PercentWidthEnable": true,
                 "PercentHeightEnable": true,
@@ -969,6 +969,10 @@
                   "X": 1.0,
                   "Y": 1.0
                 },
+                "LeftMargin": 1.0768,
+                "RightMargin": -1.0768,
+                "TopMargin": -1.0773,
+                "BottomMargin": 1.0772,
                 "UserData": "{\"layoutType\":\"showAll\",\"screenAlign\":\"bottom\"}",
                 "Tag": 24,
                 "Children": [
@@ -1428,7 +1432,7 @@
                   "Y": 0.0925
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.1236
                 },
                 "LeftMargin": 365.2795,
@@ -1562,7 +1566,7 @@
                   "Y": 0.0932
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.1222
                 },
                 "LeftMargin": 598.6682,
@@ -1573,7 +1577,7 @@
                 "Children": [
                   {
                     "FontSize": 30,
-                    "LabelText": "邀请好友",
+                    "LabelText": "分享好友",
                     "FontResource": {
                       "Type": "Normal",
                       "Path": "fnt/hkhbtW12.ttc",
@@ -1651,8 +1655,8 @@
                   "B": 70
                 },
                 "DisabledFileData": {
-                  "Type": "Default",
-                  "Path": "Default/Button_Disable.png",
+                  "Type": "Normal",
+                  "Path": "common/xin_anniu_10.png",
                   "Plist": ""
                 },
                 "NormalFileData": {
@@ -1696,7 +1700,7 @@
                   "Y": 0.0932
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.1222
                 },
                 "LeftMargin": 832.0568,
@@ -1705,6 +1709,51 @@
                 "BottomMargin": 23.0797,
                 "Tag": 30,
                 "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "result/scjb_3.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 12,
+                    "Scale9OriginY": 10,
+                    "Scale9Width": 14,
+                    "Scale9Height": 11,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 47.2425,
+                      "Y": 53.8615
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.2362,
+                      "Y": 0.6121
+                    },
+                    "PreSize": {
+                      "X": 0.1254,
+                      "Y": 0.2543
+                    },
+                    "LeftMargin": 34.7059,
+                    "RightMargin": 140.2209,
+                    "TopMargin": 22.9474,
+                    "BottomMargin": 42.6705,
+                    "Tag": 1312,
+                    "ActionTag": 627699933,
+                    "Size": {
+                      "X": 25.0732,
+                      "Y": 22.3822
+                    },
+                    "Name": "Image_3",
+                    "ctype": "ImageViewObjectData"
+                  },
                   {
                     "FontSize": 30,
                     "LabelText": "下一局",
@@ -1731,8 +1780,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 100.0,
-                      "Y": 48.4
+                      "X": 110.4624,
+                      "Y": 54.8632
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -1747,17 +1796,17 @@
                     "PositionPercentXEnabled": true,
                     "PositionPercentYEnabled": true,
                     "PrePosition": {
-                      "X": 0.5,
-                      "Y": 0.55
+                      "X": 0.5523,
+                      "Y": 0.6234
                     },
                     "PreSize": {
                       "X": 0.46,
                       "Y": 0.3409
                     },
-                    "LeftMargin": 54.0,
-                    "RightMargin": 54.0,
-                    "TopMargin": 24.6,
-                    "BottomMargin": 33.4,
+                    "LeftMargin": 64.4624,
+                    "RightMargin": 43.5376,
+                    "TopMargin": 18.1367,
+                    "BottomMargin": 39.8632,
                     "Tag": 31,
                     "ActionTag": 460409080,
                     "Size": {
@@ -1765,6 +1814,59 @@
                       "Y": 30.0
                     },
                     "Name": "Text_1",
+                    "ctype": "TextObjectData"
+                  },
+                  {
+                    "FontSize": 20,
+                    "LabelText": "剩余：0/5",
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 92.4144,
+                      "Y": 30.0851
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {
+                      "R": 123,
+                      "G": 92,
+                      "B": 14
+                    },
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.4621,
+                      "Y": 0.3419
+                    },
+                    "PreSize": {
+                      "X": 0.45,
+                      "Y": 0.2273
+                    },
+                    "LeftMargin": 47.4144,
+                    "RightMargin": 62.5856,
+                    "TopMargin": 47.9149,
+                    "BottomMargin": 20.0851,
+                    "Tag": 1350,
+                    "ActionTag": -509673871,
+                    "Size": {
+                      "X": 90.0,
+                      "Y": 20.0
+                    },
+                    "Name": "Text_3",
                     "ctype": "TextObjectData"
                   }
                 ],
@@ -1895,10 +1997,12 @@
         "common/bt_2.png",
         "common/gy_fh.png",
         "common/jinbi.png",
+        "common/xin_anniu_10.png",
         "Default/Button_Disable.png",
         "Default/ImageFile.png",
         "fnt/hkhbtW12.ttc",
         "png/ssc_bg3.png",
+        "result/scjb_3.png",
         "result/ssc_10.png",
         "result/ssc_11.png",
         "result/ssc_22.png",

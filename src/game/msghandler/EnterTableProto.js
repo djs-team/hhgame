@@ -22,7 +22,8 @@ load('game/msghandler/EnterTableProto', function () {
                     appInstance.sceneManager().replaceScene(new HallScene())
                 }
                 if (msg.pExtend === 'gameResult') {
-                    //bug416:在这儿前往看视频领取金币
+                    appInstance.gameAgent().Tips(GameConfig.mjError[msg.code])
+
                 }
                 // appInstance.gameAgent().Tips(GameConfig.mjError[msg.code])
                 return

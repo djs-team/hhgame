@@ -116,8 +116,9 @@ load('game/config/GameConfig', function () {
         '12' : '玩家正在游戏队列中',
         '13' : '玩家不在游戏队列中',
         '14' : '没有玩家信息',
-        '15' : '房卡或者金币不足',
+        '15' : '金币不足',
         '16' : '房间不存在',
+        '17' : '服务器维护中',
     }
 
 
@@ -581,6 +582,13 @@ load('game/config/GameConfig', function () {
         },
 
     }
+
+    GameConfig.goBtnData = [
+        { name: '新手场', score: 500, cost: '2000-6万', minCost: 2000, maxCost: 60000, gameType: 'M1'},
+        { name: '初级场', score: 2000, cost: '6万-24万', minCost: 60000, maxCost: 240000, gameType: 'M2'},
+        { name: '高级场', score: 5000, cost: '24万-60万', minCost: 240000, maxCost: 600000, gameType: 'M3'},
+        { name: '大师场', score: 20000, cost: '60万以上', minCost: 600000, gameType: 'M4'},
+    ]
 
     return GameConfig
 })

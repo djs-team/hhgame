@@ -240,6 +240,7 @@
           <Image Name="rwzx_11.png" />
           <Image Name="ssc_1.png" />
           <Image Name="ssc_5.png" />
+          <Image Name="xin_anniu_10.png" />
         </Folder>
         <Folder Name="dele">
           <Image Name="deskPersonal (1).png" />
@@ -358,6 +359,7 @@
           <Image Name="ssc_bg3.png" />
         </Folder>
         <Folder Name="result">
+          <Image Name="scjb_3.png" />
           <Image Name="ssc_1.png" />
           <Image Name="ssc_10.png" />
           <Image Name="ssc_11.png" />

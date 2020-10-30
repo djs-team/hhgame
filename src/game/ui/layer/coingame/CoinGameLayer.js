@@ -6,14 +6,9 @@ load('game/ui/layer/coingame/CoinGameLayer', function () {
     let CoinGameMdt = include('game/ui/layer/coingame/CoinGameMdt')
     let GameUtil = include('game/public/GameUtil')
     let GameEvent = include('game/config/GameEvent')
+    let GameConfig = include('game/config/GameConfig')
     let coinGameLayer = BaseLayer.extend({
         _className: 'coinGameLayer',
-        _goBtnData: [
-            { name: '新手场', score: 500, cost: '2000-6万', minCost: 2000, maxCost: 60000, gameType: 'M1'},
-            { name: '初级场', score: 2000, cost: '6万-24万', minCost: 60000, maxCost: 240000, gameType: 'M2'},
-            { name: '高级场', score: 5000, cost: '24万-60万', minCost: 240000, maxCost: 600000, gameType: 'M3'},
-            { name: '大师场', score: 20000, cost: '60万以上', minCost: 600000, gameType: 'M4'},
-        ],
         _roomId: {
             '4': 'R1',
             '2': 'R2'
@@ -59,7 +54,7 @@ load('game/ui/layer/coingame/CoinGameLayer', function () {
         initView: function (data) {
             this.initData(data)
             for (let i = 1; i < 5; ++i) {
-                this.initGoBtn(this.MidPnl.getChildByName('goBtn' + i), this._goBtnData[i - 1])
+                this.initGoBtn(this.MidPnl.getChildByName('goBtn' + i), GameConfig.goBtnData[i - 1])
             }
             this.updatePeopleBtn()
             if (this._peopleNum === 2) {

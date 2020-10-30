@@ -527,6 +527,23 @@ load('game/ui/layer/task/TaskLayer', function () {
 
         onChangeTaskBtnClick: function (sender) {
             GameUtil.delayBtn(sender);
+            let myCoin = appInstance.dataManager().getUserData().coin
+            if (myCoin<300) {
+                let dialogMsg = {
+                    ViewType: 1,
+                    TileName : '提 示',
+                    LeftBtnName: '取 消',
+                    RightBtnName : '去兑换',
+                    RightBtnClick : function () {
+                        appInstance.gameAgent().addPopUI(ResConfig.Ui.CoinShopLayer)
+                        appInstance.uiManager().removeUI(this)
+                    }.bind(this),
+
+                    SayText : '您的金币不足，是否去商城兑换'
+                }
+                appInstance.gameAgent().addDialogUI(dialogMsg)
+                return
+            }
             let msg = {}
             appInstance.gameAgent().httpGame().REFRESHCHALLENGETASKSReq(msg)
 

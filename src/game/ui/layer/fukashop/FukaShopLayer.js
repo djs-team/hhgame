@@ -1352,15 +1352,26 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
 
                 }else{
                     cell.getChildByName('exchangeBtn').setVisible(false)
-                    if(data.status == 2 && data.propValue && data.propValue.substr(0,2) != '3,3')
+                    if(data.status == 2 && data.propValue && data.propValue.substr(0,2) != '3,3'){
                         cell.getChildByName('copyBtn').setVisible(true)
-                    else
+                        cell.getChildByName('copyBtn').addClickEventListener(function (sender,et) {
+                            this.onCopyOrderMessage(sender)
+                        }.bind(this))
+                    } else {
                         cell.getChildByName('copyBtn').setVisible(false)
+                    }
+
 
                 }
 
             }
 
+        },
+
+        onCopyOrderMessage: function (sender) {
+            let cell = sender.getParent()
+            let msg = cell.getChildByName('orderNumberValueText').getString()
+            appInstance.nativeApi().copy(msg)
         },
 
         onExchangeOnline: function (data) {

@@ -21,7 +21,10 @@ load('game/msghandler/EnterTableProto', function () {
                     let HallScene = include('game/ui/scene/HallScene')
                     appInstance.sceneManager().replaceScene(new HallScene())
                 }
-                appInstance.gameAgent().Tips(GameConfig.mjError[msg.code])
+                if (msg.pExtend === 'gameResult') {
+                    //bug416:在这儿前往看视频领取金币
+                }
+                // appInstance.gameAgent().Tips(GameConfig.mjError[msg.code])
                 return
             }
             let dialogMsg = {

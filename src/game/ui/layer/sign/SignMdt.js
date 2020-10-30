@@ -128,10 +128,15 @@ load('game/ui/layer/sign/SignMdt', function () {
                 item.status =bonusConfig.status
                 item.bounsDesc =bonusConfig.bounsDesc
                 item.signDaysText = '签到' + item.id + '天'
+                item.showAniNd = false
+
+                /*if(i == 0){
+                    item.status = 1
+                }*/
 
                 this._treasureChestIndex[item.id] = i
 
-                switch (bonusConfig.status) {
+                switch (item.status) {
                     case 0:
                         if(i == 0)
                             item.res = 'res/code/sign/qd_9.png'
@@ -149,6 +154,7 @@ load('game/ui/layer/sign/SignMdt', function () {
                             item.res = 'res/code/sign/qd_5.png'
                         else
                             item.res = 'res/code/sign/qd_2.png'
+                        item.showAniNd = true
                         item.loadingBarAwardsText = '未领取'
                         break
                     case 2:
@@ -188,10 +194,11 @@ load('game/ui/layer/sign/SignMdt', function () {
             data.type = body.type
             data.treasureChestData = {}
 
-
             if(data.type == 1){
+                data.canUpdateBox = true
 
                 data.treasureChestData.loadingBarAwardsText = '已领取'
+                data.treasureChestData.showAniNd = false
                 let index = this._treasureChestIndex[data.checkinId]
                 if(index == 0)
                     data.treasureChestData.res = 'res/code/sign/qd_7.png'
@@ -199,6 +206,23 @@ load('game/ui/layer/sign/SignMdt', function () {
                     data.treasureChestData.res = 'res/code/sign/qd_4.png'
                 else
                     data.treasureChestData.res = 'res/code/sign/qd_1.png'
+            }else{
+                this._treasureChestIndex.hasOwnProperty(data.checkinId)
+                if(this._treasureChestIndex.hasOwnProperty(data.checkinId)){
+
+                    data.canUpdateBox = true
+                    data.treasureChestData.loadingBarAwardsText = '未领取'
+                    data.treasureChestData.showAniNd = true
+
+                    let index = this._treasureChestIndex[data.checkinId]
+                    if(index == 0)
+                        data.treasureChestData.res = 'res/code/sign/qd_8.png'
+                    else if(index == 1)
+                        data.treasureChestData.res = 'res/code/sign/qd_5.png'
+                    else
+                        data.treasureChestData.res = 'res/code/sign/qd_2.png'
+                }
+
             }
 
             let propList = []

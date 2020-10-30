@@ -59,6 +59,7 @@ load('game/config/ResConfig', function () {
         "DatingZhuanPan": { json: 'res/animation/hall/zhuanpan/dating_zhuanpan.json', atlas: 'res/animation/hall/zhuanpan/dating_zhuanpan.atlas', png: 'res/animation/hall/zhuanpan/dating_zhuanpan.png' },
         "DatingFuKaShangCheng": { json: 'res/animation/hall/dating_fukashangcheng/shangcheng.json', atlas: 'res/animation/hall/dating_fukashangcheng/shangcheng.atlas', png: 'res/animation/hall/dating_fukashangcheng/shangcheng.png' },
         "DatingJinBiShangCheng": { json: 'res/animation/hall/dating_jinbishangcheng/majiangche.json', atlas: 'res/animation/hall/dating_jinbishangcheng/majiangche.atlas', png: 'res/animation/hall/dating_jinbishangcheng/majiangche.png' },
+        "DatingGongXiHuoDe": { json: 'res/animation/hall/gongxihuode/gongxihuode.json', atlas: 'res/animation/hall/gongxihuode/gongxihuode.atlas', png: 'res/animation/hall/gongxihuode/gongxihuode.png' },
 
     }
 

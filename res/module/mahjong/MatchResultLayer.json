@@ -152,7 +152,7 @@
                   "Y": 0.5
                 },
                 "PreSize": {
-                  "X": 0.5313,
+                  "X": 0.5312,
                   "Y": 0.625
                 },
                 "LeftMargin": 300.0,
@@ -353,7 +353,7 @@
                   {
                     "IsCustomSize": true,
                     "FontSize": 25,
-                    "LabelText": "玩家昵称几个",
+                    "LabelText": "玩家昵称几个玩家昵称几个",
                     "VerticalAlignmentType": "VT_Center",
                     "OutlineColor": {
                       "G": 0,
@@ -371,7 +371,7 @@
                     },
                     "Position": {
                       "X": 50.0,
-                      "Y": 11.483
+                      "Y": 20.0
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -392,14 +392,14 @@
                       "Y": 0.0
                     },
                     "LeftMargin": 50.0,
-                    "RightMargin": -200.0,
-                    "TopMargin": -23.983,
-                    "BottomMargin": -1.017,
+                    "RightMargin": -300.0,
+                    "TopMargin": -50.0,
+                    "BottomMargin": -10.0,
                     "Tag": 68,
                     "ActionTag": -1430928408,
                     "Size": {
-                      "X": 150.0,
-                      "Y": 25.0
+                      "X": 250.0,
+                      "Y": 60.0
                     },
                     "Name": "NameTxt",
                     "ctype": "TextObjectData"
@@ -424,8 +424,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 53.4373,
-                      "Y": -23.1254
+                      "X": 50.0,
+                      "Y": -40.0
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -445,15 +445,15 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 53.4373,
-                    "RightMargin": -303.4373,
-                    "TopMargin": 10.6254,
-                    "BottomMargin": -35.6254,
+                    "LeftMargin": 50.0,
+                    "RightMargin": -300.0,
+                    "TopMargin": 10.0,
+                    "BottomMargin": -70.0,
                     "Tag": 69,
                     "ActionTag": -299143099,
                     "Size": {
                       "X": 250.0,
-                      "Y": 25.0
+                      "Y": 60.0
                     },
                     "Name": "MatchNameTxt",
                     "ctype": "TextObjectData"

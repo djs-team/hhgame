@@ -22,7 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SocketMessageGiftEventGiveGiftData : NSObject
 @property (nonatomic, strong) NSNumber * Sex; // 1:男 2:女
-@property (nonatomic, strong) NSString * TargetName;
+@property (nonatomic, strong) NSString * TargetName; // 被送礼物的昵称
+@property (nonatomic, strong) NSString * TargetId; // 被送礼物的用户Id
 @property (nonatomic, strong) SocketMessageGiftEventGiveGiftDataMicro * Micro;
 
 @end

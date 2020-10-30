@@ -7,17 +7,18 @@ load('game/ui/public/ReceivePropsLayer', function () {
     let BaseLayer = include('public/ui/BaseLayer')
     let ReceivePropsLayer = BaseLayer.extend({
         _className: 'ReceivePropsLayer',
+
         RES_BINDING: function () {
             return {
                 'pnl': { onClicked : this.onClseClick },
                 'pnl/rewardOnePnl': {  },
                 'pnl/rewardTwoPnl': {  },
                 'pnl/rewardThreePnl': {  },
-
+                'pnl/bgAniNd': {  },
+                'pnl/boomAniNd': {  },
             }
         },
         ctor: function (data) {
-            cc.log('=========ReceivePropsLayer====data=======' + JSON.stringify(data))
             this._super(ResConfig.View.ReceivePropsLayer)
 
             this.initView()
@@ -26,17 +27,22 @@ load('game/ui/public/ReceivePropsLayer', function () {
 
         initData: function (data) {
 
-            let lengtn = data.length
-            let _pnl
+            let dataArray = []
+            if(global.isArray(data))
+                dataArray = data
+            else
+                dataArray.push(data)
+
+            let lengtn = dataArray.length
             switch (lengtn) {
                 case 1:
-                    _pnl = this.rewardOnePnl
+                    this._pnl = this.rewardOnePnl
                     break
                 case 2:
-                    _pnl = this.rewardTwoPnl
+                    this._pnl = this.rewardTwoPnl
                     break
                 case 3:
-                    _pnl = this.rewardThreePnl
+                    this._pnl = this.rewardThreePnl
                     break
                 default:
                     break
@@ -45,12 +51,35 @@ load('game/ui/public/ReceivePropsLayer', function () {
 
             for(let i = 1; i <= lengtn; i++){
 
-                let cell = data[i-1]
-                _pnl.getChildByName('acceptedBg' + i).getChildByName('acceptedTypePg').loadTexture(cell.res)
-                _pnl.getChildByName('acceptedBg' + i).getChildByName('awardsVal').setString('x' + cell.propNum)
+                let cell = dataArray[i-1]
+                this._pnl.getChildByName('acceptedBg' + i).getChildByName('acceptedTypePg').loadTexture(cell.res)
+                this._pnl.getChildByName('acceptedBg' + i).getChildByName('awardsVal').setString('x' + cell.propNum)
             }
 
-            _pnl.setVisible(true)
+            let scaleValue = lengtn
+            if(scaleValue == 1)
+                scaleValue = 1.5
+
+
+            this._backAni = appInstance.gameAgent().gameUtil().getAni(ResConfig.AniHall.DatingGongXiHuoDe)
+            this.bgAniNd.addChild(this._backAni)
+            this._backAni.setScale(scaleValue)
+            this._backAni.setAnimation(0, 'animation2', true)
+
+
+
+            this._boomAni = appInstance.gameAgent().gameUtil().getAni(ResConfig.AniHall.DatingGongXiHuoDe)
+            this.boomAniNd.addChild(this._boomAni)
+            this._boomAni.setScale(scaleValue)
+            this._boomAni.setAnimation(0, 'animation', false)
+
+            let deleAction = cc.DelayTime(0.4)
+            let callBack = function () {
+                this._pnl.setVisible(true)
+            }.bind(this)
+            //this.cointreeNd.runAction(cc.sequence(deleAction,cc.CallFunc(callBack)))
+            this.boomAniNd.runAction(cc.sequence(deleAction,cc.CallFunc(callBack)))
+
 
         },
 

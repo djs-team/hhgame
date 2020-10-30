@@ -280,6 +280,14 @@ load('game/ui/layer/sign/SignLayer', function () {
             cell.getChildByName('loadingBarAwardsPg').loadTexture(data.res)
             cell.getChildByName('loadingBarAwardsText').setString(data.loadingBarAwardsText)
             cell.getChildByName('treasureChestExplainPg').getChildByName('treasureChestExplainText').setString(data.bounsDesc)
+            if(data.showAniNd){
+                let boLiAni = appInstance.gameAgent().gameUtil().getAni(ResConfig.AniHall.DatingQianDao)
+                boLiAni.setAnimation(0, 'animation1', true)
+                cell.getChildByName('boxAniNd').addChild(boLiAni)
+                cell.getChildByName('boxAniNd').setVisible(true)
+            }else{
+                cell.getChildByName('boxAniNd').setVisible(false)
+            }
 
 
             // let barPositionX = this.loadingBar.getPositionX() + (data.id / this._maxSignNum * 465.00)
@@ -339,12 +347,13 @@ load('game/ui/layer/sign/SignLayer', function () {
 
             this.currentSign += 1
             this.onUpdateProCessBar(this.currentSign, this._maxSignNum)
-
-            if (data.type == 1) {
-                this.onUpdateTreasureChestData(data)
-            } else {
+            if(data.type == 0)
                 this.onUpdateSignData(data)
-            }
+
+
+            if(data.hasOwnProperty('canUpdateBox') && data.canUpdateBox)
+                this.onUpdateTreasureChestData(data)
+
 
         },
 
@@ -354,6 +363,16 @@ load('game/ui/layer/sign/SignLayer', function () {
             cell.getChildByName('loadingBarAwardsPg').loadTexture(data.treasureChestData.res)
             cell.getChildByName('loadingBarAwardsText').setString(data.treasureChestData.loadingBarAwardsText)
 
+            if(data.treasureChestData.showAniNd){
+                cell._data.status = 1
+                let boLiAni = appInstance.gameAgent().gameUtil().getAni(ResConfig.AniHall.DatingQianDao)
+                boLiAni.setAnimation(0, 'animation1', true)
+                cell.getChildByName('boxAniNd').addChild(boLiAni)
+                cell.getChildByName('boxAniNd').setVisible(true)
+            }else{
+                cell.getChildByName('boxAniNd').setVisible(false)
+            }
+
         },
 
         onUpdateSignData: function (data) {
@@ -361,6 +380,7 @@ load('game/ui/layer/sign/SignLayer', function () {
             let cell = this.signDataList.getChildByName(this._listPnlName + (parseInt(data.checkinId / 6))).getChildByName(this._checkInName + data.checkinId)
             cell.getChildByName('acceptedPg').setVisible(true)
             cell.getChildByName('blockPg').setVisible(true)
+
         },
 
 

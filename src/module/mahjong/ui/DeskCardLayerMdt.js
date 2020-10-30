@@ -57,6 +57,7 @@ load('module/mahjong/ui/DeskCardLayerMdt', function () {
                 case TableEvent.PlayerSelectProto:
                     this.PlayerSelectProto(body)
                     this.runDirection()
+                    this.view.downSelfHandCard()
                     break
                 case TableEvent.AutoPlayProto:
                     this.AutoPlayProto(body)

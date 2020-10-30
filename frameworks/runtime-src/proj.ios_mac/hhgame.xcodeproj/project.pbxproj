@@ -2683,10 +2683,10 @@
 			children = (
 				00614A33250B94C700BB7620 /* CXLiveRoomUIView.xib */,
 				00614A34250B94C700BB7620 /* CXLiveRoomUIView.h */,
+				00614A38250B94C700BB7620 /* CXLiveRoomUIView.m */,
 				00614A35250B94C700BB7620 /* CXLiveRoomRegularView.m */,
 				00614A36250B94C700BB7620 /* GameInputBar.m */,
 				00614A37250B94C700BB7620 /* CXLiveRoomRegularView.xib */,
-				00614A38250B94C700BB7620 /* CXLiveRoomUIView.m */,
 				00614A39250B94C700BB7620 /* CXLiveRoomRegularView.h */,
 				00614A3A250B94C700BB7620 /* GameInputBar.h */,
 			);

@@ -98,9 +98,9 @@ load('game/ui/layer/role/RoleLayer', function () {
             let roleCode = sender._roleCode
             let roleInfo = AniPlayer[roleCode]
             if (roleInfo.dongbei && this._localLanguage === 'dongbei') {
-                appInstance.audioManager().playEffect(roleInfo.dongbei)
+                this._roleEffectId = appInstance.audioManager().playEffect(roleInfo.dongbei,this._roleEffectId)
             } else {
-                appInstance.audioManager().playEffect(roleInfo.sound)
+                this._roleEffectId = appInstance.audioManager().playEffect(roleInfo.sound,this._roleEffectId)
             }
         },
 

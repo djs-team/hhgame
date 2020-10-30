@@ -116,7 +116,14 @@ load('game/ui/layer/task/TaskLayer', function () {
             cell.getChildByName('activityPg').loadTexture(activityReward.res)
             cell.getChildByName('activityText').setString(activityReward.activityText)
             cell.getChildByName('activityDescPg').getChildByName('activityDescribeText').setString(activityReward.desc)
-
+            if(activityReward.showAniNd){
+                let boLiAni = appInstance.gameAgent().gameUtil().getAni(ResConfig.AniHall.DatingQianDao)
+                boLiAni.setAnimation(0, 'animation1', true)
+                cell.getChildByName('boxAniNd').addChild(boLiAni)
+                cell.getChildByName('boxAniNd').setVisible(true)
+            }else{
+                cell.getChildByName('boxAniNd').setVisible(false)
+            }
 
 
             cell.addTouchEventListener(function(sender, et) {
@@ -364,6 +371,15 @@ load('game/ui/layer/task/TaskLayer', function () {
             cell.getChildByName('activityPg').loadTexture(activityConfig.res)
             cell.getChildByName('activityText').setString(activityConfig.activityText)
             cell.status = activityConfig.status
+
+            if(activityConfig.showAniNd){
+                let boLiAni = appInstance.gameAgent().gameUtil().getAni(ResConfig.AniHall.DatingQianDao)
+                boLiAni.setAnimation(0, 'animation1', true)
+                cell.getChildByName('boxAniNd').addChild(boLiAni)
+                cell.getChildByName('boxAniNd').setVisible(true)
+            }else{
+                cell.getChildByName('boxAniNd').setVisible(false)
+            }
         },
 
         receiveRewards: function (data) {

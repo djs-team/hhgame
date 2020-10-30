@@ -24,6 +24,10 @@
     
     self.mainTableView.estimatedRowHeight = 100;
     self.mainTableView.rowHeight = UITableViewAutomaticDimension;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     
     [self getMessageList];
 }
@@ -49,8 +53,8 @@
     CXSystemMessageCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CXSystemMessageCellID"];
     
     CXSystemMessageModel *model = _dataSource[indexPath.row];
-    cell.timeLabel.text = model.pushtime;
-    cell.contentLabel.text = model.pushmsg;
+    cell.timeLabel.text = model.time;
+    cell.contentLabel.text = model.content;
     
     return cell;
 }

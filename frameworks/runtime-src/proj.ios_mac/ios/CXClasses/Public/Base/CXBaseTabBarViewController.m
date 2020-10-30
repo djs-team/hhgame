@@ -241,17 +241,18 @@
         [weakSelf.inviteMikeArrays removeAllObjects];
         [weakSelf.mikeView removeFromSuperview];
         
-        if ([CXClientModel instance].isJoinedRoom == YES) {
-            [[CXClientModel instance] leaveRoomCallBack:^(NSString * _Nonnull roomId, BOOL success) {
-                if (success) {
-                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                        [CXClientModel instance].isAgreeInviteJoinRoom = YES;
-                        [AppController joinRoom:model.roomId];
-                    });
-                }
-            }];
+        [CXClientModel instance].isAgreeInviteJoinRoom = YES;
+        
+        if ([CXClientModel instance].isJoinedRoom) {
+            [[CXClientModel instance].easemob leaveRoom];
+            [[CXClientModel instance].agoraEngineManager.engine leaveChannel:nil];
+            [[CXClientModel instance].agoraEngineManager.engine setClientRole:AgoraClientRoleAudience];
+            [[CXClientModel instance].agoraEngineManager.engine setVideoSource:nil];
+            
+            SocketMessageJoinRoom * joinRoom = [SocketMessageJoinRoom new];
+            joinRoom.RoomId = model.roomId;
+            [[CXClientModel instance] sendSocketRequest:joinRoom withCallback:nil];
         } else {
-            [CXClientModel instance].isAgreeInviteJoinRoom = YES;
             [AppController joinRoom:model.roomId];
         }
     };

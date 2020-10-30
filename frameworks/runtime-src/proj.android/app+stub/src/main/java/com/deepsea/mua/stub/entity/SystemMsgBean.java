@@ -9,40 +9,22 @@ public class SystemMsgBean {
      * pushtime : 2019-10-25 13:54:20
      */
 
-    private String system_id;
-    private String fromsend;
-    private String pushmsg;
-    private String pushtime;
+    private String time;
+    private String content;
 
-    public String getSystem_id() {
-        return system_id;
+    public String getTime() {
+        return time;
     }
 
-    public void setSystem_id(String system_id) {
-        this.system_id = system_id;
+    public void setTime(String time) {
+        this.time = time;
     }
 
-    public String getFromsend() {
-        return fromsend;
+    public String getContent() {
+        return content;
     }
 
-    public void setFromsend(String fromsend) {
-        this.fromsend = fromsend;
-    }
-
-    public String getPushmsg() {
-        return pushmsg;
-    }
-
-    public void setPushmsg(String pushmsg) {
-        this.pushmsg = pushmsg;
-    }
-
-    public String getPushtime() {
-        return pushtime;
-    }
-
-    public void setPushtime(String pushtime) {
-        this.pushtime = pushtime;
+    public void setContent(String content) {
+        this.content = content;
     }
 }

@@ -937,32 +937,32 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
             public void run() {
                 if (isInvite) {
 
-                    AAlertDialog dialog = new AAlertDialog(mContext);
-                    dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
-                        @Override
-                        public void onDismiss(DialogInterface dialog) {
-                            isInvite = false;
-                        }
-                    });
-                    dialog.setTitle("主持邀请您上麦，是否同意上麦？", R.color.black, 15);
-                    String suffix = "";
-                    if (free != 1) { //付费
-                        suffix = "（" + cost + "朵玫瑰）";
-                        dialog.setMessage(suffix);
-                    }
-                    dialog.setRightButton("同意", R.color.primary_pink, (v, dialog1) -> {
-                        dialog.setOnDismissListener(null);
-                        dialog1.dismiss();
-                        microType = 2;
-                        mViewModel.agreeInviteMpOutRoom(true, inviteMicroId, false);
-
-                    });
-                    dialog.setLeftButton("拒绝", R.color.gray, (v, dialog1) -> {
-                        dialog1.dismiss();
-
-                    });
-                    dialog.show();
-                    mHandler.postDelayed(dialog::dismiss, 5000);
+//                    AAlertDialog dialog = new AAlertDialog(mContext);
+//                    dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+//                        @Override
+//                        public void onDismiss(DialogInterface dialog) {
+//                            isInvite = false;
+//                        }
+//                    });
+//                    dialog.setTitle("主持邀请您上麦，是否同意上麦？", R.color.black, 15);
+//                    String suffix = "";
+//                    if (free != 1) { //付费
+//                        suffix = "（" + cost + "朵玫瑰）";
+//                        dialog.setMessage(suffix);
+//                    }
+//                    dialog.setRightButton("同意", R.color.primary_pink, (v, dialog1) -> {
+//                        dialog.setOnDismissListener(null);
+//                        dialog1.dismiss();
+                    microType = 2;
+                    mViewModel.agreeInviteMpOutRoom(true, inviteMicroId, false);
+                    isInvite = false;
+//                    });
+//                    dialog.setLeftButton("拒绝", R.color.gray, (v, dialog1) -> {
+//                        dialog1.dismiss();
+//
+//                    });
+//                    dialog.show();
+//                    mHandler.postDelayed(dialog::dismiss, 5000);
                 } else if (isInRoomInvite) {
                     MpInvited bean = new MpInvited();
                     bean.setFree(free);
@@ -4338,7 +4338,6 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
     }
 
 
-
     @Override
     public void onSendEmoJi() { //todo 发送表情失败
         isEmotionSending = true;
@@ -4503,8 +4502,6 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
     public void onRequestMicroGuestChanged(int inMicroManNum, int inMicroWomanNum) {
         this.inMicroManNum = inMicroManNum;
         this.inMicroWomanNum = inMicroWomanNum;
-//        mBinding.tvInmicroManNum.setText(String.valueOf(inMicroManNum));
-//        mBinding.tvInmicroWomanNum.setText(String.valueOf(inMicroWomanNum));
     }
 
     @Override

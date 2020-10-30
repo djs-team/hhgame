@@ -63,31 +63,6 @@ static NSString * cellID = @"XYRoomAlreadListCell";
     }];
     
     [MMPopupWindow sharedWindow].touchWildToHide = YES;
-    
-//    [self.tableView registerNib:[UINib nibWithNibName:cellID bundle:[NSBundle mainBundle]] forCellReuseIdentifier:cellID];
-//
-//    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect: CGRectMake(0, 0, kScreenWidth - _butWidth.constant, 49) byRoundingCorners:UIRectCornerTopLeft | UIRectCornerTopRight cornerRadii:CGSizeMake(10,10)];
-//    //创建 layer
-//    CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
-//    maskLayer.frame = CGRectMake(0, 0, kScreenWidth - _butWidth.constant, 49);
-//    //赋值
-//    maskLayer.path = maskPath.CGPath;
-//    self.manBut.layer.mask = maskLayer;
-//
-//    self.manBut.layer.backgroundColor = [UIColor whiteColor].CGColor;
-//
-//
-//    UIBezierPath *maskPath2 = [UIBezierPath bezierPathWithRoundedRect: CGRectMake(0, 0, kScreenWidth - _butWidth.constant, 49) byRoundingCorners:UIRectCornerTopLeft | UIRectCornerTopRight cornerRadii:CGSizeMake(10,10)];
-//    //创建 layer
-//    CAShapeLayer *maskLayer2 = [[CAShapeLayer alloc] init];
-//    maskLayer2.frame = CGRectMake(0, 0, kScreenWidth - _butWidth.constant, 49);
-//    //赋值
-//    maskLayer2.path = maskPath2.CGPath;
-//    self.womanBut.layer.mask = maskLayer2;
-//
-//    self.womanBut.layer.backgroundColor = [UIColor whiteColor].CGColor;
-
-    
 }
 
 - (void)setListType:(NSInteger)listType {
@@ -129,25 +104,8 @@ static NSString * cellID = @"XYRoomAlreadListCell";
     
     [self.tableView reloadData];
     
-    self.manBut.backgroundColor = [UIColor whiteColor];
-    self.womanBut.backgroundColor = UIColorHex(0xe1e1e1);
-    
-//    for (int i = 0; i< self.womanBut.layer.sublayers.count; i++ ) {
-//        CALayer * layer = self.womanBut.layer.sublayers[i];
-//        if ([layer isKindOfClass:[CAGradientLayer class]]) {
-//            [layer removeFromSuperlayer];
-//        }
-//
-//    }
-//
-//    CAGradientLayer * gradientLayer = [[CAGradientLayer alloc] init];
-//    gradientLayer.colors = @[(__bridge id)[UIColor colorWithHexString:@"#fcfcfc"].CGColor , (__bridge id)[UIColor colorWithHexString:@"#e1e1e1"].CGColor];
-//    gradientLayer.locations = @[@0.0,@1.0];
-//    gradientLayer.startPoint = CGPointMake(0, 0);
-//    gradientLayer.endPoint = CGPointMake(0, 1.0);
-//    gradientLayer.frame = CGRectMake(0, 0, sender.width, 49);
-//    [self.manBut.layer insertSublayer:gradientLayer atIndex:0];
-
+    self.womanBut.backgroundColor = [UIColor whiteColor];
+    self.manBut.backgroundColor = UIColorHex(0xe1e1e1);
 }
 
 - (IBAction)manClick:(UIButton *)sender {
@@ -180,24 +138,8 @@ static NSString * cellID = @"XYRoomAlreadListCell";
     
     [self.tableView reloadData];
     
-    self.womanBut.backgroundColor = [UIColor whiteColor];
-    self.manBut.backgroundColor = UIColorHex(0xe1e1e1);
-    
-//    for (int i = 0; i< self.manBut.layer.sublayers.count; i++ ) {
-//        CALayer * layer = self.manBut.layer.sublayers[i];
-//        if ([layer isKindOfClass:[CAGradientLayer class]]) {
-//            [layer removeFromSuperlayer];
-//        }
-//    }
-//
-//    CAGradientLayer * gradientLayer = [[CAGradientLayer alloc] init];
-//    gradientLayer.colors = @[(__bridge id)[UIColor colorWithHexString:@"#fcfcfc"].CGColor , (__bridge id)[UIColor colorWithHexString:@"#e1e1e1"].CGColor];
-//    gradientLayer.locations = @[@0.0,@1.0];
-//    gradientLayer.startPoint = CGPointMake(0, 0);
-//    gradientLayer.endPoint = CGPointMake(0, 1.0);
-//    gradientLayer.frame = CGRectMake(0, 0, sender.width, 49);
-//    [self.womanBut.layer insertSublayer:gradientLayer atIndex:0];
-    
+    self.manBut.backgroundColor = [UIColor whiteColor];
+    self.womanBut.backgroundColor = UIColorHex(0xe1e1e1);
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

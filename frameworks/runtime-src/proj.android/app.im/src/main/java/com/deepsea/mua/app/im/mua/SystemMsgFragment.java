@@ -13,6 +13,7 @@ import com.deepsea.mua.app.im.viewmodel.SysMsgViewModel;
 import com.deepsea.mua.stub.adapter.BaseBindingAdapter;
 import com.deepsea.mua.stub.base.BaseFragment;
 import com.deepsea.mua.stub.base.BaseObserver;
+import com.deepsea.mua.stub.data.BaseApiResult;
 import com.deepsea.mua.stub.dialog.AAlertDialog;
 import com.deepsea.mua.stub.entity.FriendInfoBean;
 import com.deepsea.mua.stub.entity.SystemMsgBean;
@@ -58,7 +59,25 @@ public class SystemMsgFragment extends BaseFragment<FragmentSysMsgBinding> {
 //        }
         return instance;
     }
+    private boolean isResumed, isHidden;
 
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+        isHidden = hidden;
+        if (isResumed && !isHidden) {
+            mBinding.refreshLayout.autoRefresh();
+        }
+    }
+    @Override
+    public void onResume() {
+        super.onResume();
+        isResumed = true;
+        if (!isHidden) {
+            mBinding.refreshLayout.autoRefresh();
+
+        }
+    }
     @Override
     protected int getLayoutId() {
         return R.layout.fragment_sys_msg;
@@ -104,6 +123,8 @@ public class SystemMsgFragment extends BaseFragment<FragmentSysMsgBinding> {
                         if (data != null && data.size() > 0) {
                             mAdapter.setNewData(data);
                         }
+                        SystemMsgListBean.PageInfoBean pageInfo = result.getPageInfo();
+                        mBinding.refreshLayout.setEnableLoadMore(pageInfo.getPage() < pageInfo.getTotalPage());
                     }
                 }
 
@@ -114,11 +135,32 @@ public class SystemMsgFragment extends BaseFragment<FragmentSysMsgBinding> {
                 }
             });
         });
-        mBinding.refreshLayout.autoRefresh();
+        mBinding.refreshLayout.setOnLoadMoreListener(refreshLayout -> {
+            mViewModel.refresh().observe(this, new BaseObserver<SystemMsgListBean>() {
+                @Override
+                public void onSuccess(SystemMsgListBean result) {
+                    mBinding.refreshLayout.finishLoadMore();
+                    if (result != null) {
+                        List<SystemMsgBean> data = result.getList();
+                        mAdapter.addData(data);
+                        SystemMsgListBean.PageInfoBean pageInfo = result.getPageInfo();
+                        mBinding.refreshLayout.setEnableLoadMore(pageInfo.getPage() < pageInfo.getTotalPage());
+                    }
+                }
+
+                @Override
+                public void onError(String msg, int code) {
+                    toastShort(msg);
+                    mViewModel.pageNumber--;
+                    mBinding.refreshLayout.finishLoadMore();
+                }
+            });
+        });
+
     }
 
-
     private void showDelMsgDialog(int pos) {
+        String id = mAdapter.getData().get(pos).getId();
         AAlertDialog dialog = new AAlertDialog(mContext);
         dialog.setTitle("是否要删除该消息");
         dialog.setMessage("删除后不可恢复");
@@ -133,17 +175,30 @@ public class SystemMsgFragment extends BaseFragment<FragmentSysMsgBinding> {
             public void onClick(View v, Dialog dialog1) {
                 dialog1.dismiss();
                 Log.d("system", "删除" + pos);
-                EventBus.getDefault().post(new UpdateUnreadMsgEvent());
+                fetchDelMsg(pos, id);
             }
         });
         dialog.show();
 
     }
 
+    private void fetchDelMsg(int pos, String id) {
+        mViewModel.systemDel(id).observe(this, new BaseObserver<BaseApiResult>() {
+            @Override
+            public void onSuccess(BaseApiResult result) {
+                if (result.getCode() == 200) {
+                    mAdapter.getData().remove(pos);
+                    mAdapter.notifyItemRemoved(pos);
+                }
+            }
+        });
+
+    }
+
     public void showBrushMsgDialog() {
         AAlertDialog dialog = new AAlertDialog(mContext);
-        dialog.setTitle("是否删除所有系统消息");
-//        dialog.setMessage("删除后不可恢复");
+        dialog.setTitle("清除未读系统消息");
+        dialog.setMessage("消息气泡会消失，消息不会清除");
         dialog.setLeftButton("取消", new AAlertDialog.OnClickListener() {
             @Override
             public void onClick(View v, Dialog dialog) {

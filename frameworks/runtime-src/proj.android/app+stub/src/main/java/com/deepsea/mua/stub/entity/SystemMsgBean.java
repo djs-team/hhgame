@@ -9,8 +9,17 @@ public class SystemMsgBean {
      * pushtime : 2019-10-25 13:54:20
      */
 
+    private String id;
     private String time;
     private String content;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getTime() {
         return time;

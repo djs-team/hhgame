@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -69,6 +70,7 @@ import com.deepsea.mua.stub.utils.eventbus.InviteDialogCloseEvent;
 import com.deepsea.mua.stub.utils.eventbus.InviteDialogEvent;
 import com.deepsea.mua.stub.utils.eventbus.InviteOtherEvent;
 import com.deepsea.mua.stub.utils.eventbus.MessageTipsEvent;
+import com.deepsea.mua.stub.utils.eventbus.MessgeRefresh;
 import com.deepsea.mua.stub.utils.eventbus.OpenRoom;
 import com.deepsea.mua.stub.utils.eventbus.ShowMineDialog;
 import com.deepsea.mua.stub.utils.eventbus.ShowRankStepOne;
@@ -220,7 +222,6 @@ public class MainActivity extends BaseActivity<ActivityMainBinding>
         resetLocalCame();
         reset();
         hideProgress();
-        getMessageNum();
     }
 
     private void showCardDialog() {
@@ -399,7 +400,16 @@ public class MainActivity extends BaseActivity<ActivityMainBinding>
             transaction.show(to).commitAllowingStateLoss();
         }
         mPrePos = pos;
+        if (pos==1){
+            mHandler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    EventBus.getDefault().post(new MessgeRefresh());
+                }
+            },500);
+        }
     }
+    private Handler mHandler=new Handler();
 
     private void getMakeFace() {
         mViewModel.getMakeFace().observe(this, new BaseObserver<FaceRequestBean>() {
@@ -450,7 +460,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding>
     @Override
     protected void onResume() {
         super.onResume();
-        setUnreadMsgCount();
+        getMessageNum();
 
     }
 

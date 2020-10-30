@@ -20,7 +20,6 @@ import com.deepsea.mua.stub.utils.LogoutUtils;
 import com.deepsea.mua.stub.utils.ViewBindUtils;
 import com.deepsea.mua.stub.utils.ViewModelFactory;
 import com.deepsea.mua.stub.utils.eventbus.HeartBeatEvent;
-import com.deepsea.mua.stub.utils.eventbus.MessgeRefresh;
 import com.deepsea.mua.stub.utils.eventbus.UpHxUnreadMsg;
 import com.deepsea.mua.stub.utils.eventbus.UpdateUnreadMsgEvent;
 import com.hyphenate.EMMessageListener;

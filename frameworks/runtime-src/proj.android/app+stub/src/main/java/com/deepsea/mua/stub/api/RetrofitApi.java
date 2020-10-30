@@ -1427,7 +1427,19 @@ public interface RetrofitApi {
      */
     @GET("index.php/Api/Pushmessage/systemList")
     LiveData<ApiResponse<BaseApiResult<SystemMsgListBean>>> getSystemMsgList(
-            @Query("signature") String signature);
+            @Query("signature") String signature,
+            @Query("page") int page
+    );
+
+    /**
+     * 系统消息删除
+     *
+     * @param id
+     * @return
+     */
+    @FormUrlEncoded
+    @POST("index.php/Api/Pushmessage/systemDel")
+    LiveData<ApiResponse<BaseApiResult>> systemDel(@Field("id") String id);
 
     /**
      * 消息未读数量

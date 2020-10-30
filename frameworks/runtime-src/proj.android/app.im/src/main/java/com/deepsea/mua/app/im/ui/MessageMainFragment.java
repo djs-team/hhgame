@@ -20,6 +20,7 @@ import com.deepsea.mua.stub.utils.LogoutUtils;
 import com.deepsea.mua.stub.utils.ViewBindUtils;
 import com.deepsea.mua.stub.utils.ViewModelFactory;
 import com.deepsea.mua.stub.utils.eventbus.HeartBeatEvent;
+import com.deepsea.mua.stub.utils.eventbus.MessgeRefresh;
 import com.deepsea.mua.stub.utils.eventbus.UpHxUnreadMsg;
 import com.deepsea.mua.stub.utils.eventbus.UpdateUnreadMsgEvent;
 import com.hyphenate.EMMessageListener;
@@ -79,6 +80,8 @@ public class MessageMainFragment extends BaseFragment<FragmentMessageMainBinding
             mBinding.sysTab.setSelected(true);
             mBinding.viewMsg.setVisibility(View.GONE);
             mBinding.viewSys.setVisibility(View.VISIBLE);
+            ViewBindUtils.setVisible(mBinding.tvSysUnread, false);
+
         });
         mBinding.msgTab.setSelected(true);
         mBinding.ivFriend.setOnClickListener(new View.OnClickListener() {
@@ -108,6 +111,13 @@ public class MessageMainFragment extends BaseFragment<FragmentMessageMainBinding
         isResume = true;
         Log.d("onResume", "messageMan");
         getMessageNum();
+    }
+
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+        Log.d("onResume", "onHiddenChanged" + hidden);
+
     }
 
     @Override
@@ -174,6 +184,7 @@ public class MessageMainFragment extends BaseFragment<FragmentMessageMainBinding
     public void onEvent(UpdateUnreadMsgEvent msgTimeEvent) {
         getMessageNum();
     }
+
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEvent(HeartBeatEvent msgTimeEvent) {
         if (msgTimeEvent.getIsRequest() == 1) {

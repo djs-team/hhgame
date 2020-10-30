@@ -24,11 +24,11 @@ public class SysMsgRepository extends BaseRepository {
         super(retrofitApi);
     }
 
-    public LiveData<Resource<SystemMsgListBean>> getSystemMsgList() {
+    public LiveData<Resource<SystemMsgListBean>> getSystemMsgList(int pageNum) {
         return HttpUtils.requestNoCache(new HttpCallback.NoCacheCallback<SystemMsgListBean, BaseApiResult<SystemMsgListBean>>() {
             @Override
             public LiveData<ApiResponse<BaseApiResult<SystemMsgListBean>>> createCall() {
-                return mRetrofitApi.getSystemMsgList(SignatureUtils.signByToken());
+                return mRetrofitApi.getSystemMsgList(SignatureUtils.signByToken(),pageNum);
             }
 
             @Override
@@ -40,6 +40,22 @@ public class SysMsgRepository extends BaseRepository {
             }
         });
     }
+    /**
+     * 开播发送推送消息
+     *
+     * @return
+     */
+    public LiveData<Resource<BaseApiResult>> systemDel(String id) {
+        return HttpUtils.requestNoCache(new HttpCallback.NoCacheCallback<BaseApiResult, BaseApiResult>() {
+            @Override
+            public LiveData<ApiResponse<BaseApiResult>> createCall() {
+                return mRetrofitApi.systemDel(id);
+            }
 
-
+            @Override
+            public BaseApiResult processResponse(BaseApiResult source) {
+                return source;
+            }
+        });
+    }
 }

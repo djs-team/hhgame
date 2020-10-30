@@ -488,12 +488,15 @@ load('public/suport/NativeApi', function () {
         //上传图片
         uploadPictureParam: function (msg) {
             try {
-                let param = JSON.stringify(msg)
 
                 if (cc.sys.OS_ANDROID === cc.sys.os) {
+                    let param = JSON.stringify(msg.info)
+
                     jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'getPictureFromPhoneAlbum', '(Ljava/lang/String;)V', param)
 
                 } else if (cc.sys.OS_IOS === cc.sys.os) {
+                    let param = JSON.stringify(msg)
+
                     jsb.reflection.callStaticMethod('AppController', 'selectedOnePhotoWithPutParam:method:', param, "PERSONALLAYER_CHANGE_PICTURE")
                 }
             } catch (e) {

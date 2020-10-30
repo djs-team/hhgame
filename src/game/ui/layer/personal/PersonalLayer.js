@@ -12,7 +12,7 @@ load('game/ui/layer/personal/PersonalLayer', function () {
             this._super(ResConfig.View.PersonalLayer)
 
             this.registerMediator(new PersonalMdt(this))
-            
+
             this.registerEventListener('PERSONALLAYER_CHANGE_PICTURE', this.onChangePicSuccess)
         },
         RES_BINDING: function () {
@@ -58,8 +58,6 @@ load('game/ui/layer/personal/PersonalLayer', function () {
         initData: function () {
 
 
-
-
         },
 
         initView: function () {
@@ -87,7 +85,7 @@ load('game/ui/layer/personal/PersonalLayer', function () {
 
             if (data.hasOwnProperty('_nameUpdate')) {
 
-                if(data._nameUpdate != 0)
+                if (data._nameUpdate != 0)
                     this.updateNameBtn.setVisible(false)
                 else
                     this.updateNameBtn.setVisible(true)
@@ -131,7 +129,7 @@ load('game/ui/layer/personal/PersonalLayer', function () {
                 this.aniNd.removeAllChildren()
                 let ani = appInstance.gameAgent().gameUtil().getAni(AniPlayer[pRole])
                 this.aniNd.addChild(ani)
-                ani.setPosition(cc.p(0,0))
+                ani.setPosition(cc.p(0, 0))
                 ani.setScale(0.4)
                 ani.setAnimation(0, PlayerPlay.stand, true)
             }
@@ -143,14 +141,18 @@ load('game/ui/layer/personal/PersonalLayer', function () {
             let msg = {}
             appInstance.gameAgent().httpGame().getUpDatePictureTokenReq(msg)
         },
-        
+        selectHeadCallback: function (url) {
+
+        },
+
         onChangePicSuccess: function (msg) {
+            cc.log("--------------onChangePicSuccess" + msg)
             //更新头像
             let msgPhoto = {}
             msgPhoto.photoUrl = msg;
             appInstance.gameAgent().httpGame().updateUserPhotoReq(msgPhoto)
         },
-        
+
         onUpdateNameClick: function () {
             this.updateNamePnl.setVisible(true)
         },
@@ -206,7 +208,7 @@ load('game/ui/layer/personal/PersonalLayer', function () {
             this.onCloseUpdateNameClick()
 
         },
-        
+
         updateUserPicture: function (data) {
 
             this.onInitUserData(data)

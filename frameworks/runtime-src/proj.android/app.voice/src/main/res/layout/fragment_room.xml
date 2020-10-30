@@ -69,7 +69,8 @@
                         android:gravity="center"
                         android:text="时段推荐 1"
                         android:textColor="#ffffffff"
-                        android:textSize="13sp" />
+                        android:textSize="13sp"
+                        android:visibility="gone"/>
 
 <!--                    <ImageView-->
 <!--                        android:id="@+id/tv_red_package"-->

@@ -24,6 +24,7 @@ import static android.app.Activity.RESULT_OK;
  */
 public class PhotoDialog extends BaseDialogFragment<DialogPhotoBinding> {
 
+
     private OnPhotoSelectedListener mListener;
 
     public interface OnPhotoSelectedListener {
@@ -117,12 +118,14 @@ public class PhotoDialog extends BaseDialogFragment<DialogPhotoBinding> {
         }
     }
 
+
     @Override
-    public void dismiss() {
+    public void onDestroy() {
         if (dismissListener != null) {
             dismissListener.onMyDismiss();
         }
-        super.dismiss();
-
+        super.onDestroy();
     }
+
+
 }

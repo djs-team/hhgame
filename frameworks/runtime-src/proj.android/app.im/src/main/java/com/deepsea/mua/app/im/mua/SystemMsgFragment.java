@@ -98,12 +98,11 @@ public class SystemMsgFragment extends BaseFragment<FragmentSysMsgBinding> {
             mViewModel.refresh().observe(this, new BaseObserver<SystemMsgListBean>() {
                 @Override
                 public void onSuccess(SystemMsgListBean result) {
+                    mBinding.refreshLayout.finishRefresh();
                     if (result != null) {
                         List<SystemMsgBean> data = result.getList();
                         if (data != null && data.size() > 0) {
                             mAdapter.setNewData(data);
-                            mBinding.refreshLayout.finishRefresh();
-                            SharedPrefrencesUtil.saveData(getActivity(), "sysTime", "sysTime", TimeUtils.date2Time(data.get(0).getPushtime()));
                         }
                     }
                 }

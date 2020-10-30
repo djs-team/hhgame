@@ -95,27 +95,14 @@ public class AppActivity extends Cocos2dxActivity {
             finish();
             return;
         }
-//        JVerificationInterface.preLogin(this, 1000, new PreLoginListener() {
-//            @Override
-//            public void onResult(final int code, final String content) {
-//                Log.d(TAG, "[" + code + "]message=" + content);
-//            }
-//        });
-
         ccActivity = this;
         try {
-//            initRewardConfig();
             OpenInstall.getWakeUp(getIntent(), wakeUpAdapter);
 
         } catch (Exception e) {
 
         }
-        Intent intent = new Intent(ccActivity, MyNotifyService.class);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            startForegroundService(intent);
-        } else {
-            startService(intent);
-        }
+        Log.d(TAG, "onCreate");
 
     }
 
@@ -205,10 +192,7 @@ public class AppActivity extends Cocos2dxActivity {
         }
         if (requestCode == 2) {
             String result = data.getStringExtra(Constant.HHGAME_PHOTO);
-            ccActivity.RunJS("SelectHeadCallback", result);
-
-            ToastUtils.showToast("onActivityResult:" + result);
-
+            ccActivity.RunJS("PERSONALLAYER_CHANGE_PICTURE", result);
         }
 
 
@@ -236,12 +220,7 @@ public class AppActivity extends Cocos2dxActivity {
      * 微信支付
      */
     private void wxpay(String wxInfo) {
-        Log.d("===========wxpay", wxInfo);
-        String json = JsonConverter.toJson(wxInfo);
-        Log.d("===========json", json);
         QPWxOrder result = JsonConverter.fromJson(wxInfo, QPWxOrder.class);
-        Log.d("===========QPWxOrder", result.getAppId());
-
         if (result != null) {
             WxPay.WXPayBuilder builder = new WxPay.WXPayBuilder();
             builder.setAppId(result.getAppId());
@@ -254,9 +233,6 @@ public class AppActivity extends Cocos2dxActivity {
             mWxPay = builder.build();
             mWxPay.startPay(ccActivity);
             mWxPay.registerWxpayResult(mWxpayReceiver);
-        } else {
-            Log.d("===========", "wxpay null");
-
         }
 
 
@@ -283,7 +259,6 @@ public class AppActivity extends Cocos2dxActivity {
 
             @Override
             public void onError(String msg) {
-                Log.d("====== pay result", msg);
                 ccActivity.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -336,9 +311,8 @@ public class AppActivity extends Cocos2dxActivity {
         String permissionRW = Manifest.permission.WRITE_EXTERNAL_STORAGE;
         String permissionCamera = Manifest.permission.CAMERA;
         String permissionAudio = Manifest.permission.RECORD_AUDIO;
-
-        String[] permission = new String[]{permissionPhone, permissionRW, permissionCamera, permissionAudio};
-
+        String permissionLocation = Manifest.permission.ACCESS_FINE_LOCATION;
+        String[] permission = new String[]{permissionPhone, permissionRW, permissionCamera, permissionAudio, permissionLocation};
         com.deepsea.mua.stub.permission.PermissionUtil.request(ccActivity, permission, new PermissionCallback() {
             @Override
             public void onPermissionGranted() {
@@ -358,7 +332,6 @@ public class AppActivity extends Cocos2dxActivity {
 
             @Override
             public void onPermissonReject(String[] rejectPermissons) {
-                Log.d("shouldShowRational", "onPermissonReject");
                 showPermissionSettingDialog(0);
             }
         });
@@ -457,7 +430,6 @@ public class AppActivity extends Cocos2dxActivity {
             public void onResult(int code, String content, String operator) {
                 if (code == 6000) {
                     String myContent = content.replace("+", "%2B");
-                    Log.d("=========content", content);
                     JSONObject result = new JSONObject();
                     try {
                         result.put("platform", 2);
@@ -611,12 +583,15 @@ public class AppActivity extends Cocos2dxActivity {
      * @param fileName 图片名字
      */
     public static void shareImage(String platform, String fileName) {
-
+        Log.d("shareImage", fileName);
         File file = ccActivity.getFilesDir();
         File imgFile = new File(file, fileName);
         Bitmap bitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath(), getBitmapOption(2));
 //        UMImage th = new UMImage(ccActivity, url);//网络图片
         UMImage image = new UMImage(ccActivity, bitmap);//data/data图片
+        image.compressStyle = UMImage.CompressStyle.SCALE;
+        UMImage thumb = new UMImage(ccActivity, bitmap);
+        image.setThumb(thumb);
         SHARE_MEDIA share_media;
         if (platform.equals("WEIXIN")) {
             share_media = SHARE_MEDIA.WEIXIN;
@@ -712,7 +687,6 @@ public class AppActivity extends Cocos2dxActivity {
     private String uid = "";
 
     public static void getInvitationCode(String url, String uid) {
-        Log.d("inviteCodeCallback", "url:" + url + ";uid" + uid);
         ccActivity.invireUrl = url;
         operateGetInvitationCode(ccActivity.invireUrl, ccActivity.uid);
     }
@@ -729,7 +703,6 @@ public class AppActivity extends Cocos2dxActivity {
      */
 
     public static void getInstallParam() {
-        Log.d("OpenInstall", "OpenInstall");
 
         //获取OpenInstall安装数
         OpenInstall.getInstall(new AppInstallAdapter() {
@@ -739,7 +712,6 @@ public class AppActivity extends Cocos2dxActivity {
                 String channelCode = appData.getChannel();
                 //获取自定义数据
                 String bindData = appData.getData();
-                Log.d("OpenInstall", "getInstall : inviteCode = " + bindData);
                 ccActivity.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -785,7 +757,6 @@ public class AppActivity extends Cocos2dxActivity {
      * 跳转到相亲
      */
     public static void jumpToBlindDate(String userInfo) {
-        Log.d("=====jumpToBlindDate", userInfo);
         ChessLoginParam param = JsonConverter.fromJson(userInfo, ChessLoginParam.class);
         Intent intent = new Intent(ccActivity, SplashActivity.class);
         intent.putExtra("chessLoginParam", param);
@@ -820,7 +791,6 @@ public class AppActivity extends Cocos2dxActivity {
 
 
     public static void getPictureFromPhoneAlbum(String data) {
-        Log.d("getPictureFrom", data);
         OssGameConfigVo result = JsonConverter.fromJson(data, OssGameConfigVo.class);
         Intent intent = new Intent(ccActivity, UploadPhotoDialogActivity.class);
         intent.putExtra("ossConfig", result);

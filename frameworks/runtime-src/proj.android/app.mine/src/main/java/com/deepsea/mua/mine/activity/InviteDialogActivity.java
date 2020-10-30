@@ -159,7 +159,6 @@ public class InviteDialogActivity extends FragmentActivity implements HasSupport
         inviteOutRoomDialog.setListener(new InviteOutRoomDialog.OnClickListener() {
             @Override
             public void onDisagreeClick(View v, Dialog dialog) {
-//                fetchInviteHandle(bean, mCallback, 2, inviteOutRoomDialog);
                 InviteDialogActivity.this.finish();
             }
 
@@ -196,23 +195,8 @@ public class InviteDialogActivity extends FragmentActivity implements HasSupport
         mViewModel.inviteHandle(Integer.valueOf(bean.getHongId()), inviteeId, Integer.valueOf(bean.getRoomId()), status, Integer.valueOf(bean.getId())).observe(this, new BaseObserver<BaseApiResult>() {
             @Override
             public void onSuccess(BaseApiResult result) {
-//                int code = result.getCode();
-//                if (code == 200) {
-//                    //同意请求检查接口
-//                    if (status == 1) {
-//                        mCallback.invitedResult(0, String.valueOf(bean.getRoomId()), Integer.valueOf(bean.getId()));
-//                    } else {
-//                        mCallback.invitedResult(1, "", -1);
-//                    }
                 inviteOutRoomDialog.dismiss();
                 InviteDialogActivity.this.finish();
-
-//                } else if (code == 204) {
-//                    mCallback.invitedResult(2, "", -1);
-//                } else {
-//                    inviteOutRoomDialog.dismiss();
-//                    ToastUtils.showToast(result.getDesc());
-//                }
             }
 
             @Override

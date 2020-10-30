@@ -144,7 +144,7 @@ static AgoraRtcEngineManager * _sharedInstance;
 //}
 
 
-- (BOOL)joinRoom:(NSString*)roomId withUID:(NSUInteger)uid success:(nullable void(^)(AgoraRtcEngineManager*sender))success {
+- (BOOL)joinRoom:(NSString*)roomId withUID:(NSUInteger)uid success:(nullable void(^)(NSString * _Nonnull channel, NSUInteger uid, NSInteger elapsed))success {
 //    DDLogInfo(@"%s %@ %@", __FUNCTION__, @(uid), roomId);
     
     if (!_engine) return NO;
@@ -155,7 +155,7 @@ static AgoraRtcEngineManager * _sharedInstance;
 //    if (self.roomId) return NO;
 //    if (self.leaveRoomId) return NO;
 //
-    void(^joinSuccessBlock)(NSString * _Nonnull channel, NSUInteger uid, NSInteger elapsed) = nil;
+//    void(^joinSuccessBlock)(NSString * _Nonnull channel, NSUInteger uid, NSInteger elapsed) = nil;
 //    if (success) {
 //        __weak typeof (self) wself = self;
 //        joinSuccessBlock = ^(NSString * _Nonnull channel, NSUInteger uid, NSInteger elapsed) {
@@ -180,8 +180,7 @@ static AgoraRtcEngineManager * _sharedInstance;
 //    _packetProcessing = [[AgoraPacketProcessing alloc] init];
 //    _packetProcessing.delegate = self;
 //    [_packetProcessing registerPacketProcessing:_engine];
-    
-    if ([_engine joinChannelByToken:nil channelId:roomId info:nil uid:uid joinSuccess:joinSuccessBlock] == 0) {
+    if ([_engine joinChannelByToken:nil channelId:roomId info:nil uid:uid joinSuccess:success] == 0) {
 //        self.joinRoomId = roomId;
 //        self.joinRoomUid = uid;
         return YES;
@@ -299,6 +298,9 @@ static AgoraRtcEngineManager * _sharedInstance;
 
 - (void)rtcEngine:(AgoraRtcEngineKit * _Nonnull)engine didOccurError:(AgoraErrorCode)errorCode {
 //    DDLogError(@"%s %@", __FUNCTION__, @(errorCode));
+    if ([CXClientModel instance].isJoinedRoom == YES) {
+        [_engine joinChannelByToken:nil channelId:[CXClientModel instance].room.ShengwangRoomId info:nil uid:[CXClientModel instance].userId joinSuccess:nil];
+    }
     
     //    [self reset];
 //
@@ -345,13 +347,10 @@ static AgoraRtcEngineManager * _sharedInstance;
 
 - (void)rtcEngine:(AgoraRtcEngineKit * _Nonnull)engine didRejoinChannel:(NSString * _Nonnull)channel withUid:(NSUInteger)uid elapsed:(NSInteger) elapsed {
 //    DDLogInfo(@"%s %@ %@ %@", __FUNCTION__, channel, @(uid), @(elapsed));
-//    if ([self.roomId isEqualToString:channel]) {
-//        self.roomId = channel;
-//        self.uid = uid;
-//    }
-//    else if (_leaveRoomId) {
-//        [_engine leaveChannel:nil];
-//    }
+    if (![[CXClientModel instance].room.ShengwangRoomId isEqualToString:channel]) {
+        [_engine leaveChannel:nil];
+        [_engine joinChannelByToken:nil channelId:[CXClientModel instance].room.ShengwangRoomId info:nil uid:[CXClientModel instance].userId joinSuccess:nil];
+    }
 }
 
 - (void)rtcEngine:(AgoraRtcEngineKit * _Nonnull)engine didLeaveChannelWithStats:(AgoraChannelStats * _Nonnull)stats {

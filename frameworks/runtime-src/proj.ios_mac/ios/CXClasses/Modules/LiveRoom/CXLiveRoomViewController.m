@@ -159,6 +159,7 @@
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     
+    [[CXClientModel instance].agoraEngineManager.engine leaveChannel:nil];
     [[CXClientModel instance].agoraEngineManager.engine setClientRole:AgoraClientRoleAudience];
     [[CXClientModel instance].agoraEngineManager.engine setVideoSource:nil];
     
@@ -187,17 +188,9 @@
     
     [self undoSocketRoomMessage];
     
-    // 点击同意进入页面的
-    if ([CXClientModel instance].isAgreeInviteJoinRoom == YES) {
-        [CXClientModel instance].isAgreeInviteJoinRoom = NO;
-        
-        [self applyJoinChannel:false level:[CXClientModel instance].currentAgreeInviteMikeModel.micro_level.integerValue];
-    }
-    
 //    if ([[[NSUserDefaults standardUserDefaults] valueForKey:@"UesrDefault_faceUnityOpen"] boolValue] == NO) {
         [[FUManager shareManager] loadFilterLandmarksType:FUAITYPE_FACELANDMARKS75];
         [self initCapturer];
-        [[CXClientModel instance].agoraEngineManager.engine setVideoSource:self];
 //    } else {
 //        [[CXClientModel instance].agoraEngineManager.engine setVideoSource:nil];
 //        //美颜
@@ -337,10 +330,13 @@
 
 - (void)shouldStart {
     [self.cameraCapturer start];
+    
+    NSLog(@"=================[self.cameraCapturer start]");
 }
 
 - (void)shouldStop {
     [self.cameraCapturer stop];
+    NSLog(@"=================[self.cameraCapturer stop]");
 }
 
 - (void)shouldDispose {
@@ -480,22 +476,31 @@
                         [self music_playResume];
                     }
                 }
+                
+                [self.roomUIView.messageListView clearModel];
+                
+                [[CXClientModel instance].agoraEngineManager.engine setVideoSource:self];
                                 
+                NSLog(@"========进房间了");
+                [[CXClientModel instance].agoraEngineManager joinRoom:roomInit.ShengwangRoomId withUID:[CXClientModel instance].userId.unsignedIntegerValue success:^(NSString * _Nonnull channel, NSUInteger uid, NSInteger elapsed) {
+                    NSLog(@"========channel==%@ ==uid== %ld", channel, uid);
+                }];
+                [[CXClientModel instance].easemob joinRoom:roomInit.HuanxinRoomId];
+                
+                self.roomUIView.roomSeatsView.isMuteArrays = [NSMutableArray arrayWithArray:self.muteArrays];
+                self.roomUIView.model = [CXClientModel instance].room;
+                self.roomUIView.isChangeMir = YES;
+                
                 NSIndexPath *seatIndex = [[CXClientModel instance].room.userSeats objectForKey:[CXClientModel instance].userId];
                 if (!seatIndex) {
                     [CXClientModel instance].agoraEngineManager.offMic = YES;
                     [[CXClientModel instance].agoraEngineManager.engine setClientRole:AgoraClientRoleAudience];
                 } else {
                     [CXClientModel instance].agoraEngineManager.offMic = NO;
-                    [[CXClientModel instance].agoraEngineManager.engine setClientRole:AgoraClientRoleBroadcaster];
+                    
+                    CXLiveRoomSeatView *seatView = [self.roomUIView.roomSeatsView.seats objectForKey:seatIndex];
+                    [seatView addAgoraRtc:[[CXClientModel instance].userId numberValue]];
                 }
-                
-                [[CXClientModel instance].agoraEngineManager joinRoom:roomInit.ShengwangRoomId withUID:[CXClientModel instance].userId.unsignedIntegerValue success:nil];
-                [[CXClientModel instance].easemob joinRoom:roomInit.HuanxinRoomId];
-                
-                self.roomUIView.roomSeatsView.isMuteArrays = [NSMutableArray arrayWithArray:self.muteArrays];
-                self.roomUIView.model = [CXClientModel instance].room;
-                self.roomUIView.isChangeMir = YES;
                 
                 // 获取当前播放歌曲信息
                 CXSocketMessageMusicGetPlayingDetail *request = [CXSocketMessageMusicGetPlayingDetail new];
@@ -514,6 +519,13 @@
                 }
                 // 获取轮播数据
                 [self getCycleScrollDataListIsFirstCharge:roomInit.IsFirstCharge];
+                
+                // 点击同意进入页面的
+                if ([CXClientModel instance].isAgreeInviteJoinRoom == YES) {
+                    [CXClientModel instance].isAgreeInviteJoinRoom = NO;
+                    [self replyInvite:YES isAgree:@(1) inviteMicroId:[CXClientModel instance].currentAgreeInviteMikeModel.invite_id];
+                }
+                
                 
             }
                 break;
@@ -549,18 +561,17 @@
                 [args.Args enumerateObjectsUsingBlock:^(SocketMessageUserSitdown * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                     SocketMessageUserSitdown *userSitdown = obj;
                     NSIndexPath *indexPath = [userSitdown.MicroInfo indexPath];
+
+                    LiveRoomMicroInfo *seat = [[CXClientModel instance].room.seats objectForKey:indexPath];
+                    CXLiveRoomSeatView *seatView = [self.roomUIView.roomSeatsView.seats objectForKey:indexPath];
+                    seatView.model = seat;
+                    [seatView addAgoraRtc:[userSitdown.MicroInfo.User.UserId numberValue]];
                     
                     NSIndexPath * selfSeatIndex = [[CXClientModel instance].room.userSeats objectForKey:[CXClientModel instance].userId];
                     if (selfSeatIndex && [selfSeatIndex isEqual:indexPath]) {
                         [CXClientModel instance].agoraEngineManager.offMic = NO;
                         self.roomUIView.isChangeMir = YES;
-                        [[CXClientModel instance].agoraEngineManager.engine setClientRole:AgoraClientRoleBroadcaster];
                     }
-                
-                    LiveRoomMicroInfo *seat = [[CXClientModel instance].room.seats objectForKey:indexPath];
-                    CXLiveRoomSeatView *seatView = [self.roomUIView.roomSeatsView.seats objectForKey:indexPath];
-                    seatView.model = seat;
-                    [seatView addAgoraRtc:[userSitdown.MicroInfo.User.UserId numberValue]];
                     
                     [self.roomUIView.messageListView addModel:userSitdown];
                 }];
@@ -748,9 +759,9 @@
                 CXSystemAlertView *alertView = [CXSystemAlertView loadNib];
                 kWeakSelf
                 [alertView showAlertTitle:title message:nil cancel:^{
-                    [weakSelf replyInvite:false isAgree:@(0)];
+                    [weakSelf replyInvite:false isAgree:@(0) inviteMicroId:@"0"];
                 } sure:^{
-                    [weakSelf replyInvite:false isAgree:@(1)];
+                    [weakSelf replyInvite:false isAgree:@(1) inviteMicroId:@"0"];
                 }];
                 [alertView show];
             }
@@ -1008,9 +1019,7 @@
                 //=========== 心跳 =============
             case SocketMessageIDKeepaLiveNotification: {
                 CXSocketMessageSystemKeepaLiveRequest *request = [CXSocketMessageSystemKeepaLiveRequest new];
-                [[CXClientModel instance] sendSocketRequest:request withCallback:^(__kindof SocketMessageRequest * _Nonnull request) {
-
-                }];
+                [[CXClientModel instance] sendSocketRequest:request withCallback:nil];
             }
                 break;
             default:
@@ -1020,16 +1029,7 @@
 }
 
 - (void)modelClient:(CXClientModel *)client reconnectRoomSuccess:(BOOL)success {
-
-//    NSIndexPath *seatIndex = [[CXClientModel instance].room.userSeats objectForKey:[CXClientModel instance].userId];
-//    if (!seatIndex) {
-//        [[CXClientModel instance].agoraEngineManager.engine setClientRole:AgoraClientRoleAudience];
-//    } else {
-//        [[CXClientModel instance].agoraEngineManager.engine setClientRole:AgoraClientRoleBroadcaster];
-//        CXLiveRoomSeatView *seatView = [self.roomUIView.roomSeatsView.seats objectForKey:seatIndex];
-//        [seatView addAgoraRtc:[[CXClientModel instance].userId numberValue]];
-//    }
-//
+    
     if ([CXClientModel instance].room.isConsertModel == YES) {
         if ([CXClientModel instance].room.isSonger) {
             [self music_playResume];
@@ -1303,11 +1303,12 @@
     invite.Free = isFree == YES ? @(1) : @(2);
     [[CXClientModel instance] sendSocketRequest:invite withCallback:nil];
 }
-// 房间内用户回复主持的邀请：isForce 是否跳过 agree: 1同意  0不同意
-- (void)replyInvite:(BOOL)isForce isAgree:(NSNumber*)agree {
+// 房间内用户回复主持的邀请：isForce 是否跳过 agree: 1同意  0不同意 inviteMicroId:申请上麦ID
+- (void)replyInvite:(BOOL)isForce isAgree:(NSNumber*)agree inviteMicroId:(NSString *)inviteMicroId {
     SocketMessageReplyInvite * reply = [SocketMessageReplyInvite new];
     reply.Agree = agree;
     reply.Force = isForce;
+    reply.InviteMicroId = [NSNumber numberWithString:inviteMicroId];
     kWeakSelf
     [[CXClientModel instance] sendSocketRequest:reply withCallback:^(SocketMessageReplyInvite * _Nonnull request) {
         NSLog(@"SocketMessageReplyInvite  %@" , request);
@@ -1316,7 +1317,7 @@
             [weakSelf showRechargeErrorView];
         } else if (request.response.Success.integerValue == 8) {
             // 未实名认证
-            [weakSelf showVerifiedMessage:true level:0];
+            [weakSelf showVerifiedMessage:true level:0 inviteMicroId:inviteMicroId];
         }
     }];
 }
@@ -1413,7 +1414,7 @@
         [self showRechargeErrorView];
     } else if (request.response.Success.integerValue == 8) {
         // 实名认证
-        [self showVerifiedMessage: false level:level];
+        [self showVerifiedMessage: false level:level inviteMicroId:@"0"];
     }
 }
 
@@ -1432,7 +1433,7 @@
 }
 
 // 实名认证: isInvite: 是否是邀请上麦，默认申请上麦
-- (void)showVerifiedMessage:(BOOL)isInvite level:(NSInteger)level {
+- (void)showVerifiedMessage:(BOOL)isInvite level:(NSInteger)level inviteMicroId:(NSString *)inviteMicroId {
     NSString *msg = @"实名认证信息受到用户隐私条款保护，不会向第三方透露。";
     if ([CXClientModel instance].sex.integerValue == 2) {//需要判断自己是男是女
         msg = @"实名认证信息受到用户隐私条款保护，不会向第三方透露。";
@@ -1443,7 +1444,7 @@
     .LeeContent(msg)
     .LeeCancelAction(@"跳过", ^ {
         if (isInvite == true) {
-            [weakSelf replyInvite:true isAgree:@(1)];
+            [weakSelf replyInvite:true isAgree:@(1) inviteMicroId: inviteMicroId];
         } else {
             [weakSelf applyJoinChannel:true level:level];
         }
@@ -2820,9 +2821,11 @@
 //            [weakSelf.app leaveRoom];
 //            [weakSelf.app joinRoom:roomId];
             
+            [[CXClientModel instance].agoraEngineManager.engine leaveChannel:nil];
             [[CXClientModel instance].agoraEngineManager.engine setClientRole:AgoraClientRoleAudience];
-//            [[CXClientModel instance].agoraEngineManager.engine setVideoSource:nil];
+            [[CXClientModel instance].agoraEngineManager.engine setVideoSource:nil];
             [[CXClientModel instance].easemob leaveRoom];
+            
             [weakSelf music_playStop];
             
 //            self.app.isJoinedRoom = NO;

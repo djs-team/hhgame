@@ -38,6 +38,8 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadFriendMessage:) name:kNSNotificationCenter_CXFriendViewController_unreadCount object:nil];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadUnReadCount:) name:kNSNotificationCenter_CXFriendViewController_reloadUnReadCount object:nil];
+    
     CXFriendMessageViewController *friendVC = [CXFriendMessageViewController new];
     friendVC.isConversation = YES;
     _conversationVC = friendVC;
@@ -64,6 +66,8 @@
     
     self.navigationController.navigationBarHidden = YES;
     
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNSNotificationCenter_CXBaseTabBarViewController_reloadSystemUnreadCount object:nil];
+
     [self getUnReadCountData];
 }
 
@@ -79,6 +83,10 @@
     [self.titleArray replaceObjectAtIndex:0 withObject:friendItem];
     self.titles = [NSArray arrayWithArray:self.titleArray];
     [self reloadData];
+}
+
+- (void)reloadUnReadCount:(NSNotification *)object {
+    [self getUnReadCountData];
 }
 
 - (void)getUnReadCountData {

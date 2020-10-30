@@ -73,10 +73,10 @@
                     <EndColor A="255" R="255" G="255" B="255" />
                     <ColorVector ScaleY="1.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="NameTxt" ActionTag="-1430928408" Tag="68" IconVisible="False" LeftMargin="50.0000" RightMargin="-200.0000" TopMargin="-23.9830" BottomMargin="-1.0170" IsCustomSize="True" FontSize="25" LabelText="玩家昵称几个" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="150.0000" Y="25.0000" />
+                  <AbstractNodeData Name="NameTxt" ActionTag="-1430928408" Tag="68" IconVisible="False" LeftMargin="50.0000" RightMargin="-300.0000" TopMargin="-50.0000" BottomMargin="-10.0000" IsCustomSize="True" FontSize="25" LabelText="玩家昵称几个玩家昵称几个" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="250.0000" Y="60.0000" />
                     <AnchorPoint ScaleY="0.5000" />
-                    <Position X="50.0000" Y="11.4830" />
+                    <Position X="50.0000" Y="20.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="183" G="100" B="30" />
                     <PrePosition />
@@ -84,10 +84,10 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="MatchNameTxt" ActionTag="-299143099" Tag="69" IconVisible="False" LeftMargin="53.4373" RightMargin="-303.4373" TopMargin="10.6254" BottomMargin="-35.6254" IsCustomSize="True" FontSize="25" LabelText="玩家昵称几个字啊啊啊" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="250.0000" Y="25.0000" />
+                  <AbstractNodeData Name="MatchNameTxt" ActionTag="-299143099" Tag="69" IconVisible="False" LeftMargin="50.0000" RightMargin="-300.0000" TopMargin="10.0000" BottomMargin="-70.0000" IsCustomSize="True" FontSize="25" LabelText="玩家昵称几个字啊啊啊" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="250.0000" Y="60.0000" />
                     <AnchorPoint ScaleY="0.5000" />
-                    <Position X="53.4373" Y="-23.1254" />
+                    <Position X="50.0000" Y="-40.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="183" G="100" B="30" />
                     <PrePosition />

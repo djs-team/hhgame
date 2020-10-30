@@ -241,6 +241,14 @@ load('module/mahjong/ui/DeskCardLayer', function () {
             }
         },
 
+        downSelfHandCard: function () {
+            let handNd = this._handCardNd[0]
+            for (let i = 0; i < 14; ++i) {
+                let card = handNd.getChildByName('Card' + i)
+                card.setPosition(card._beginPos)
+            }
+        },
+
         updateHandCard: function (uiSeat, player, isTurn) {
             let handNd = this._handCardNd[uiSeat]
             handNd.setVisible(true)

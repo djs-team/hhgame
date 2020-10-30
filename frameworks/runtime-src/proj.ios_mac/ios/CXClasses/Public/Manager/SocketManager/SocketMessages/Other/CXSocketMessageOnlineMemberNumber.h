@@ -10,10 +10,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CXSocketMessageOnlineMemberNumber : SocketMessage
+@interface CXSocketMessageOnlineMemberNumber : SocketMessageNotification
 
 @property  (nonatomic, strong) NSString * LeftNumber;
 @property  (nonatomic, strong) NSString * RightNumber;
+
+@property  (nonatomic, strong) NSArray <NSString *> * OnlineHeadImages;
 
 @end
 

@@ -230,6 +230,25 @@ load('game/public/HttpGame', function () {
 
         },
 
+        // 获取上传图片token
+        getUpDatePictureTokenReq: function (msg) {
+            msg = msg || {}
+            if (!this._requestBackCall[HttpEvent.MJ_HALL_MESSAGE_GETUPDATEPICTURETOKEN]) {
+                this._requestBackCall[HttpEvent.MJ_HALL_MESSAGE_GETUPDATEPICTURETOKEN] = this.getUpDatePictureTokenBack
+            }
+
+            msg.msgID = HttpEvent.MJ_HALL_MESSAGE_GETUPDATEPICTURETOKEN
+            appInstance.httpAgent().sendPost(msg)
+        },
+        // 获取上传图片token回调
+        getUpDatePictureTokenBack: function (msg) {
+            if (msg.status !== 0) {
+                cc.log('-----getUpDatePictureTokenBack-------->>>httpGame getUpDatePictureTokenBack error happen')
+                return
+            }
+            appInstance.nativeApi().uploadPictureParam(msg)
+        },
+        
         updateUserNameReq: function (msg) {
             cc.log("========开始请求updateUserName")
             msg = msg || {}
@@ -259,7 +278,6 @@ load('game/public/HttpGame', function () {
 
         },
         updateUserPhotoReq: function (msg) {
-            cc.log("========开始请求updateUserPhotoReq")
             msg = msg || {}
             if (!this._requestBackCall[HttpEvent.MJ_HALL_PLAYER_PHOTO_CHANGE]) {
                 this._requestBackCall[HttpEvent.MJ_HALL_PLAYER_PHOTO_CHANGE] = this.updateUserPhotoBack
@@ -276,13 +294,13 @@ load('game/public/HttpGame', function () {
                 cc.log('------------->>>httpGame updateUserPhotoBack error happen')
                 return
             }
-            cc.log('------------->>>httpGame updateUserPhotoBack ' + JSON.stringify(msg))
-
-            // let saveKey = [
-            //     'pphoto',
-            //     'photoUpdate'
-            // ]
-            // appInstance.dataManager().getUserData().saveMsg(msg, saveKey)
+            
+            let sdkphotourl = msg.photoUrl
+            let saveKey = [
+             'sdkphotourl',
+            ]
+            let data = {'sdkphotourl': sdkphotourl}
+            appInstance.dataManager().getUserData().saveMsg(data, saveKey)
             appInstance.sendNotification(GameEvent.UPDATE_USERPHOTO, msg)
 
         },

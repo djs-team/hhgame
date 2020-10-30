@@ -9,19 +9,27 @@
           <AbstractNodeData Name="pnl" ActionTag="214336839" UserData="{&quot;layoutType&quot;:&quot;maxArea&quot;,&quot;screenAlign&quot;:&quot;mid&quot;}" Tag="634" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <Children>
-              <AbstractNodeData Name="rewardOnePnl" Visible="False" ActionTag="1960098436" Tag="635" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TopMargin="-1.4399" BottomMargin="1.4400" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="bgAniNd" ActionTag="-732381923" Tag="33" IconVisible="True" LeftMargin="609.9036" RightMargin="670.0964" TopMargin="367.9979" BottomMargin="352.0021" ctype="SingleNodeObjectData">
+                <Size X="0.0000" Y="0.0000" />
+                <AnchorPoint />
+                <Position X="609.9036" Y="352.0021" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.4765" Y="0.4889" />
+                <PreSize X="0.0000" Y="0.0000" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="boomAniNd" ActionTag="256943169" Tag="34" IconVisible="True" LeftMargin="609.9000" RightMargin="670.1000" TopMargin="368.0000" BottomMargin="352.0000" ctype="SingleNodeObjectData">
+                <Size X="0.0000" Y="0.0000" />
+                <AnchorPoint />
+                <Position X="609.9000" Y="352.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.4765" Y="0.4889" />
+                <PreSize X="0.0000" Y="0.0000" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="rewardOnePnl" ActionTag="1960098436" Tag="635" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TopMargin="-1.4399" BottomMargin="1.4400" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="1280.0000" Y="720.0000" />
                 <Children>
-                  <AbstractNodeData Name="Image_59" ActionTag="-1838879283" Tag="636" IconVisible="False" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="135.9774" RightMargin="248.0226" TopMargin="3.9204" BottomMargin="-3.9204" LeftEage="207" RightEage="207" TopEage="172" BottomEage="172" Scale9OriginX="207" Scale9OriginY="172" Scale9Width="215" Scale9Height="179" ctype="ImageViewObjectData">
-                    <Size X="896.0000" Y="720.0000" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="583.9774" Y="356.0796" />
-                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.4562" Y="0.4946" />
-                    <PreSize X="0.7000" Y="1.0000" />
-                    <FileData Type="Normal" Path="common/texiangguang.png" Plist="" />
-                  </AbstractNodeData>
                   <AbstractNodeData Name="Image_41" ActionTag="1207786009" Tag="637" IconVisible="False" LeftMargin="482.3047" RightMargin="552.6953" TopMargin="206.8200" BottomMargin="183.1800" Scale9Enable="True" LeftEage="16" RightEage="16" TopEage="12" BottomEage="100" Scale9OriginX="16" Scale9OriginY="12" Scale9Width="19" Scale9Height="58" ctype="ImageViewObjectData">
                     <Size X="245.0000" Y="330.0000" />
                     <Children>
@@ -90,19 +98,9 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="rewardTwoPnl" ActionTag="1928486874" Tag="642" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="9.9840" RightMargin="-9.9840" TopMargin="8.5680" BottomMargin="-8.5680" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="rewardTwoPnl" Visible="False" ActionTag="1928486874" Tag="642" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="9.9840" RightMargin="-9.9840" TopMargin="8.5680" BottomMargin="-8.5680" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="1280.0000" Y="720.0000" />
                 <Children>
-                  <AbstractNodeData Name="Image_59" ActionTag="965197344" Tag="643" IconVisible="False" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="71.9774" RightMargin="184.0226" TopMargin="3.9204" BottomMargin="-3.9204" LeftEage="207" RightEage="207" TopEage="172" BottomEage="172" Scale9OriginX="207" Scale9OriginY="172" Scale9Width="215" Scale9Height="179" ctype="ImageViewObjectData">
-                    <Size X="1024.0000" Y="720.0000" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="583.9774" Y="356.0796" />
-                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.4562" Y="0.4946" />
-                    <PreSize X="0.8000" Y="1.0000" />
-                    <FileData Type="Normal" Path="common/texiangguang.png" Plist="" />
-                  </AbstractNodeData>
                   <AbstractNodeData Name="Image_41" ActionTag="-1932194308" Tag="644" IconVisible="False" LeftMargin="448.8047" RightMargin="519.1953" TopMargin="206.8200" BottomMargin="183.1800" Scale9Enable="True" LeftEage="16" RightEage="16" TopEage="12" BottomEage="100" Scale9OriginX="16" Scale9OriginY="12" Scale9Width="19" Scale9Height="58" ctype="ImageViewObjectData">
                     <Size X="312.0000" Y="330.0000" />
                     <Children>
@@ -207,16 +205,6 @@
               <AbstractNodeData Name="rewardThreePnl" Visible="False" ActionTag="-1332641508" Tag="652" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="19.9680" RightMargin="-19.9680" TopMargin="18.5760" BottomMargin="-18.5760" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="1280.0000" Y="720.0000" />
                 <Children>
-                  <AbstractNodeData Name="Image_59" ActionTag="2105961863" Tag="653" IconVisible="False" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="65.5774" RightMargin="177.6226" TopMargin="3.9204" BottomMargin="-3.9204" LeftEage="207" RightEage="207" TopEage="172" BottomEage="172" Scale9OriginX="207" Scale9OriginY="172" Scale9Width="215" Scale9Height="179" ctype="ImageViewObjectData">
-                    <Size X="1036.8000" Y="720.0000" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="583.9774" Y="356.0796" />
-                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.4562" Y="0.4946" />
-                    <PreSize X="0.8100" Y="1.0000" />
-                    <FileData Type="Normal" Path="common/texiangguang.png" Plist="" />
-                  </AbstractNodeData>
                   <AbstractNodeData Name="Image_41" ActionTag="1799140965" Tag="654" IconVisible="False" LeftMargin="405.8685" RightMargin="479.1315" TopMargin="205.3840" BottomMargin="184.6160" Scale9Enable="True" LeftEage="16" RightEage="16" TopEage="12" BottomEage="100" Scale9OriginX="16" Scale9OriginY="12" Scale9Width="19" Scale9Height="58" ctype="ImageViewObjectData">
                     <Size X="395.0000" Y="330.0000" />
                     <Children>

@@ -101,8 +101,8 @@ load('module/mahjong/ui/MatchResultLayer', function () {
 
             GameUtil.loadUrlImg(msg.pPhoto, this.HeadPhoto)
             this.RankTxt.setString('第' + msg.ranking + '名')
-            this.NameTxt.setString(msg.playerName)
-            this.MatchNameTxt.setString(msg.matchName)
+            this.NameTxt.setString(global.cropStr(msg.playerName, 6, '...'))
+            this.MatchNameTxt.setString(global.cropStr(msg.matchName, 6, '...'))
             let rewardList = msg.mcRewardList
             if(rewardList && rewardList.length > 0){
                 this.rewardTxt.setVisible(true)

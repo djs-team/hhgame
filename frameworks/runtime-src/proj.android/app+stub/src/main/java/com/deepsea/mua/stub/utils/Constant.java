@@ -32,8 +32,10 @@ public interface Constant {
     String CHARGE_ALI = "alipay";
     String CHARGE_HAIBEI = "haipay";
     String BALANCE = "BALANCE";
+    String HHGAME_PHOTO = "HHGAME_PHOTO";
     String RECHARGE_WELFARE = "RECHARGE_WELFARE";
     String RECHARGE_SUCCESS = "RECHARGE_SUCCESS";
+
 
 
     int BALANCE_CODE = 1000;

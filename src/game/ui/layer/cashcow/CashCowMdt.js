@@ -6,6 +6,8 @@
 load('game/ui/layer/cashcow/CashCowMdt', function () {
     let Mediator = include('public/components/Mediator')
     let GameEvent = include('game/config/GameEvent')
+    let GameUtil = include('game/public/GameUtil')
+
     let mdt = Mediator.extend({
         mediatorName: 'CashCowMdt',
         ctor: function (view) {
@@ -23,8 +25,10 @@ load('game/ui/layer/cashcow/CashCowMdt', function () {
             let body = notification.getBody()
             switch (name) {
                 case GameEvent.GET_CASHCOWNUM:
+                    this.view.onRefreshView()
+                    break
                 case GameEvent.UPDATE_CASHCOWNUM:
-                    this.view.onRefreshView(body)
+                    this.onRefreshView(body)
                     break
                 case GameEvent.GET_CASHCOWRECORD:
                     this.view.onShowRecordPnlClick(body)
@@ -44,6 +48,17 @@ load('game/ui/layer/cashcow/CashCowMdt', function () {
             let pRole = appInstance.dataManager().getUserData().pRole
             this.view.initView(pRole)
             appInstance.gameAgent().httpGame().cashCowNumReq()
+        },
+
+        onRefreshView: function (body) {
+
+            let data = {}
+            body.propType = 1
+            body.propNum = body.coin
+
+            GameUtil.getPropData(body,data,GameUtil.CURRENCYTYPE_1,GameUtil.UNITLOCATION_BEFORE,'x')
+            appInstance.gameAgent().addReceivePropsUI(data)
+            this.view.onRefreshView()
         }
 
 

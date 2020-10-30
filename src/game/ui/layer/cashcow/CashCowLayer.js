@@ -84,7 +84,7 @@ load('game/ui/layer/cashcow/CashCowLayer', function () {
 
         },
 
-        onRefreshView: function (data) {
+        onRefreshView: function () {
 
             let cashCowNum = appInstance.dataManager().getUserData().cashCowNum
             let usedCashCowNum = appInstance.dataManager().getUserData().usedCashCowNum
@@ -96,7 +96,6 @@ load('game/ui/layer/cashcow/CashCowLayer', function () {
             this.shakeBtn.setBright(flag)
             this.shakeBtn.setTouchEnabled(flag)
 
-            this.onShowPropPnl(data)
 
         },
 

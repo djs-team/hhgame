@@ -42,6 +42,7 @@ import com.deepsea.mua.stub.entity.socket.OnlineUser;
 import com.deepsea.mua.stub.entity.socket.ReceiveMessage;
 import com.deepsea.mua.stub.entity.socket.receive.MicroTopArg;
 import com.deepsea.mua.stub.entity.socket.receive.MicroTopArgList;
+import com.deepsea.mua.stub.entity.socket.receive.NotifyOnlineHeadImageParam;
 import com.deepsea.mua.stub.entity.socket.receive.ReceivePresent;
 import com.deepsea.mua.stub.entity.socket.RoomData;
 import com.deepsea.mua.stub.entity.socket.RoomManager;
@@ -1588,29 +1589,7 @@ public class RoomController implements IRoomController, RoomMsgHandler.OnMsgEven
                 }
                 break;
             }
-            //排行榜发生变化
-            case 60: {
-                RoomRanks roomRanks = JsonConverter.fromJson(message, RoomRanks.class);
-                List<String> ranks = roomRanks.getRanks();
-                if (ranks == null) {
-                    ranks = new ArrayList<>();
-                }
-                int size = ranks.size();
-                if (ranks.size() < 3) {
-                    for (int i = 0; i < 3 - size; i++) {
-                        ranks.add("");
-                    }
-                }
 
-                if (mRoomModel.getRoomData() != null) {
-                    mRoomModel.getRoomData().setRanks(ranks);
-                }
-
-                if (mView != null) {
-                    mView.onRankList(ranks);
-                }
-                break;
-            }
             //发送表情回调
             case 61: {
                 if (mView != null) {
@@ -2012,9 +1991,22 @@ public class RoomController implements IRoomController, RoomMsgHandler.OnMsgEven
                     mView.showRedPackageRule(redPacketPlayDescParam.getPlayingDesc());
                 }
                 break;
-//            case 300:
-//                SongStateUtils.getSingleton2().setHeartCount(0);
-//                break;
+            case 140:
+                NotifyOnlineHeadImageParam onlineHeadImageParam = JsonConverter.fromJson(message, NotifyOnlineHeadImageParam.class);
+                if (mView != null) {
+                    List<String> ranks = onlineHeadImageParam.getOnlineHeadImages();
+                    if (ranks == null) {
+                        ranks = new ArrayList<>();
+                    }
+                    int size = ranks.size();
+                    if (ranks.size() < 3) {
+                        for (int i = 0; i < 3 - size; i++) {
+                            ranks.add("");
+                        }
+                    }
+                    mView.updateOnlineHeads(ranks);
+                }
+                break;
             case 301://KeepaLive
                 if (mView != null) {
                     mView.keepLive();

@@ -147,7 +147,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSNumber * OnlineLeftNumber;
 @property (nonatomic, strong) NSNumber * OnlineRightNumber;
 @property (nonatomic, strong) NSString * ModeName;
-@property (nonatomic, strong) NSArray<NSString*> * Ranks;
+//@property (nonatomic, strong) NSArray<NSString*> * Ranks;
 @property (nonatomic, strong) CXLiveRoomDataModel * RoomData;
 @property (nonatomic, strong) NSString * TagName;
 @property (nonatomic, strong) NSString * Tips;

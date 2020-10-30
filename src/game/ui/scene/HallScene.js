@@ -378,6 +378,11 @@ load('game/ui/scene/HallScene', function () {
             if (data.hasOwnProperty('fuKa')) {
                 fuKaCnt.setString(GameUtil.getStringRule(data.fuKa))
             }
+            
+            if (data.hasOwnProperty('photoUrl')) {
+                this.loadUrlImage(data.photoUrl, photo)
+            }
+            
             if (data.hasOwnProperty('sdkphotourl')) {
                 this.loadUrlImage(data.sdkphotourl, photo)
             }

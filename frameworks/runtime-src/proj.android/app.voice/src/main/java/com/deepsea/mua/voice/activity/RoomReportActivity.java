@@ -228,7 +228,7 @@ public class RoomReportActivity extends FragmentActivity
     private void upLoadHeadIv(OSSConfigBean config, String aHeadIv) {
         mExecutors.diskIO().execute(() -> {
             OSS oSs = OssUpUtil.getInstance().getOssConfig(mContext, config.AccessKeyId, config.AccessKeySecret, config.SecurityToken, config.Expiration);
-            ossAsyncTask = OssUpUtil.getInstance().upToOss(5, aHeadIv, oSs, config.BucketName, new OssUpUtil.OssUpCallback() {
+            ossAsyncTask = OssUpUtil.getInstance().upToOss(5, aHeadIv, oSs, config.BucketName, "",new OssUpUtil.OssUpCallback() {
                 @Override
                 public void upSuccessFile(String objectKey) {
                     Log.d("report", "upSuccessFile:" + objectKey);

@@ -1355,7 +1355,6 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
         mBinding.rankingRv.setNestedScrollingEnabled(false);
         mRankingAdapter = new RoomRankingAdapter(mContext);
         mBinding.rankingRv.setAdapter(mRankingAdapter);
-        mRankingAdapter.setNewData(mRoomData.getRanks());
 
     }
 
@@ -4136,6 +4135,11 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
         mViewModel.fetchKeepAlive();
     }
 
+    @Override
+    public void updateOnlineHeads(List<String> heads) {
+        mRankingAdapter.setNewData(heads);
+    }
+
 
     private void showGuardBayWindowDiallog(JoinUser joinUser) {
         if (joinUser != null && joinUser.isRoomGuard()) {
@@ -4333,10 +4337,7 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
         }
     }
 
-    @Override
-    public void onRankList(List<String> list) {
-        mRankingAdapter.setNewData(list);
-    }
+
 
     @Override
     public void onSendEmoJi() { //todo 发送表情失败

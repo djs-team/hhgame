@@ -291,15 +291,18 @@ load('game/ui/scene/LoginScene', function () {
         },
 
         onwxLoginClick: function () {
-            GameUtil.delayBtn(this.wxLogin);
-            if(!this.onCheckeCanLogin())
-                return
-            
-            if (cc.sys.OS_WINDOWS === cc.sys.os) {
-                this.debugLogin()
-            } else {
-                appInstance.nativeApi().wxLogin()
-            }
+            appInstance.gameAgent().showLoading()
+            appInstance.gameAgent().hideLoading()
+
+            // GameUtil.delayBtn(this.wxLogin);
+            // if(!this.onCheckeCanLogin())
+            //     return
+            //
+            // if (cc.sys.OS_WINDOWS === cc.sys.os) {
+            //     this.debugLogin()
+            // } else {
+            //     appInstance.nativeApi().wxLogin()
+            // }
 
         },
 

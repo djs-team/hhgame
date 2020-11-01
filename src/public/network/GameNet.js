@@ -10,7 +10,7 @@ load('public/network/GameNet', function () {
     let GameNet = cc.Class.extend({
         isReconnect: false,
         reConnectTimes: 0,
-        reConnectInterval: 5,
+        reConnectInterval: 10,
         reConnectNum: 0,
         msgQueue: null,
         reqPingPong: [],

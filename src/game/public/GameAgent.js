@@ -44,7 +44,37 @@ load('game/public/GameAgent', function () {
         },
 
         initGame: function () {
+            let LoadingLayer = include('game/ui/public/LoadingLayer')
+            this._loadingLayer = appInstance.uiManager().createUI(LoadingLayer)
+            this._loadingLayer.retain()
 
+        },
+
+        showLoading: function (info) {
+            let loadingLayer = appInstance.gameAgent().getLoading()
+            let parent = loadingLayer.getParent()
+            let curScene = appInstance.sceneManager().getCurScene()
+
+            if (!parent) {
+                curScene.addChild(loadingLayer)
+            } else if (parent !== curScene) {
+                loadingLayer.removeFromParent()
+                curScene.addChild(loadingLayer)
+            } else {
+                loadingLayer.setVisible(true)
+            }
+            loadingLayer.setVisible(true)
+            loadingLayer.updateView(info)
+        },
+
+        hideLoading: function () {
+            if (this._loadingLayer && cc.sys.isObjectValid(this._loadingLayer)) {
+                this._loadingLayer.setVisible(false)
+            }
+        },
+
+        getLoading: function () {
+            return this._loadingLayer
         },
 
         onTcpClose: function () {
@@ -52,13 +82,14 @@ load('game/public/GameAgent', function () {
 
             let curSceneName = appInstance.sceneManager().getCurSceneName()
             if (curSceneName === 'HallScene' || curSceneName === 'MjPlayScene') {
-                appInstance.gameAgent().Tips('网络连接中断')
-                appInstance.sendNotification(GameEvent.DIALOG_HIDE_ALL)
-                let dialogMsg = {
-                    ViewType: 1,
-                    SayText: '网络异常正在重新连接，请稍等 '
-                }
-                appInstance.gameAgent().addDialogUI(dialogMsg)
+                // appInstance.gameAgent().Tips('网络连接中断')
+                // appInstance.sendNotification(GameEvent.DIALOG_HIDE_ALL)
+                // let dialogMsg = {
+                //     ViewType: 1,
+                //     SayText: '网络异常正在重新连接，请稍等 '
+                // }
+                // appInstance.gameAgent().addDialogUI(dialogMsg)
+                appInstance.gameAgent().showLoading()
 
                 appInstance.gameNet().setReconnect(true)
             }

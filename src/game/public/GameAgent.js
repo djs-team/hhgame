@@ -63,6 +63,7 @@ load('game/public/GameAgent', function () {
             } else {
                 loadingLayer.setVisible(true)
             }
+            loadingLayer.setLocalZOrder(10000)
             loadingLayer.setVisible(true)
             loadingLayer.updateView(info)
         },

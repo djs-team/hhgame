@@ -101,6 +101,9 @@ load('module/mahjong/ui/DeskCardLayer', function () {
         onSelfCardTouch: function (sender, et) {
             switch (et) {
                 case ccui.Widget.TOUCH_BEGAN:
+                    if (this._movingCard) {
+                        return false
+                    }
                     let beginPos = sender.getTouchBeganPosition()
                     this._movingCard = this.getTouchCard(sender.convertToNodeSpace(beginPos))
                     if (this._movingCard && this._movingCard._isCanPut) {
@@ -155,6 +158,7 @@ load('module/mahjong/ui/DeskCardLayer', function () {
                             this._selfHandCard[i]._doubleClick = false
                         }
                     }
+                    this._movingCard = false
                     break;
             }
         },

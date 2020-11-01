@@ -96,6 +96,10 @@ load('game/public/GameAgent', function () {
             }
         },
 
+        delayCall: function (delayTime, callFun, info, obj) {
+            appInstance.sceneManager().getCurScene().runAction(cc.sequence((cc.DelayTime(delayTime), cc.callFunc(callFun.apply(obj, [info])))))
+        },
+
         onReconnectError: function () {
             appInstance.gameAgent().goLoginScene()
         },

@@ -452,7 +452,7 @@ load('public/suport/NativeApi', function () {
         copy: function (msg) {
             try {
                 if (cc.sys.OS_ANDROID === cc.sys.os) {
-                    jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'copyStr', '(Ljava/lang/String;)Ljava/lang/String;', msg)
+                    jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'copyStr', '(Ljava/lang/String;)V', msg)
                 } else if (cc.sys.OS_IOS === cc.sys.os) {
                     jsb.reflection.callStaticMethod('AppController', 'copyToPasteboard:', msg)
                 }

@@ -166,13 +166,13 @@
                           <AbstractNodeData Name="activityPg" ActionTag="1298821655" Tag="318" IconVisible="False" LeftMargin="60.9143" RightMargin="577.0857" TopMargin="18.2519" BottomMargin="12.7394" LeftEage="13" RightEage="13" TopEage="13" BottomEage="13" Scale9OriginX="13" Scale9OriginY="13" Scale9Width="94" Scale9Height="76" ctype="ImageViewObjectData">
                             <Size X="120.0000" Y="102.0000" />
                             <Children>
-                              <AbstractNodeData Name="activityValue" ActionTag="1795308259" Tag="312" IconVisible="False" PositionPercentYEnabled="True" LeftMargin="14.0000" RightMargin="28.0000" TopMargin="26.0968" BottomMargin="50.9032" IsCustomSize="True" FontSize="25" LabelText=" 1000  " HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                              <AbstractNodeData Name="activityValue" ActionTag="1795308259" Tag="312" IconVisible="False" PositionPercentYEnabled="True" LeftMargin="19.0000" RightMargin="23.0000" TopMargin="26.0968" BottomMargin="50.9032" IsCustomSize="True" FontSize="25" LabelText=" 1000  " HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                                 <Size X="78.0000" Y="25.0000" />
                                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                                <Position X="53.0000" Y="63.4032" />
+                                <Position X="58.0000" Y="63.4032" />
                                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                                 <CColor A="255" R="255" G="255" B="255" />
-                                <PrePosition X="0.4417" Y="0.6216" />
+                                <PrePosition X="0.4833" Y="0.6216" />
                                 <PreSize X="0.6500" Y="0.2451" />
                                 <FontResource Type="Normal" Path="font/hkhbtW12.ttc" Plist="" />
                                 <OutlineColor A="255" R="255" G="0" B="0" />
@@ -228,7 +228,7 @@
                                         <PreSize X="0.7089" Y="0.5250" />
                                         <FileData Type="Normal" Path="task/rwzx_9.png" Plist="" />
                                       </AbstractNodeData>
-                                      <AbstractNodeData Name="boxAniNd" ActionTag="1740797158" Tag="165" IconVisible="False" LeftMargin="39.0000" RightMargin="-20.0000" TopMargin="-22.0000" BottomMargin="60.0000" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+                                      <AbstractNodeData Name="boxAniNd" ActionTag="1740797158" Tag="165" IconVisible="False" LeftMargin="39.0000" RightMargin="-20.0000" TopMargin="-22.0000" BottomMargin="60.0000" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                                         <Size X="60.0000" Y="42.0000" />
                                         <AnchorPoint />
                                         <Position X="39.0000" Y="60.0000" />

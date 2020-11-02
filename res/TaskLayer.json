@@ -921,7 +921,7 @@
                                   "ScaleY": 0.5
                                 },
                                 "Position": {
-                                  "X": 53.0,
+                                  "X": 58.0,
                                   "Y": 63.4032
                                 },
                                 "Scale": {
@@ -932,15 +932,15 @@
                                 "IconVisible": false,
                                 "PositionPercentYEnabled": true,
                                 "PrePosition": {
-                                  "X": 0.4417,
+                                  "X": 0.4833,
                                   "Y": 0.6216
                                 },
                                 "PreSize": {
                                   "X": 0.65,
                                   "Y": 0.2451
                                 },
-                                "LeftMargin": 14.0,
-                                "RightMargin": 28.0,
+                                "LeftMargin": 19.0,
+                                "RightMargin": 23.0,
                                 "TopMargin": 26.0968,
                                 "BottomMargin": 50.9032,
                                 "Tag": 312,
@@ -1241,6 +1241,8 @@
                                         "ColorVector": {
                                           "ScaleY": 1.0
                                         },
+                                        "Scale9Width": 1,
+                                        "Scale9Height": 1,
                                         "AnchorPoint": {},
                                         "Position": {
                                           "X": 39.0,

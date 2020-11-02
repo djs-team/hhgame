@@ -96,7 +96,7 @@ load('game/ui/layer/arena/ArenaLayer', function () {
         onUpdateAwardCellView: function (data, i) {
             let cell = this.awardCell.clone();
             cell.setVisible(true)
-            this.awardList.addChild(cell)
+            this.awardList.pushBackCustomItem(cell)
             if (i%2==0) {
                 cell.getChildByName('bgPic_1').setVisible(true)
                 cell.getChildByName('bgPic_2').setVisible(false)

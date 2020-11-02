@@ -54,6 +54,7 @@
     _joinRoomCallBack = callback;
     kWeakSelf
     [CXHTTPRequest csharp_httpWithMethod:HJRequestMethodGET url:@"/Master/GetGate" parameters:@{} callback:^(id responseObject, BOOL isCache, NSError *error) {
+        [MBProgressHUD hideHUD];
         if (!error) {
             NSString *addr = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
             if ([weakSelf.socket joinRoom:roomId withToken:weakSelf.token atAddr:addr] == NO) {

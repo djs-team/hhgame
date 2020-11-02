@@ -98,7 +98,9 @@ NSString *const kCSharpApiPrefix = @"https://win02-win.hehe555.com:444";
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:tempURL] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:30];
     NSURLSession *sharedSession = [NSURLSession sharedSession];
     NSURLSessionDataTask *dataTask = [sharedSession dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        if (data && (error == nil)) {
+        NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
+        NSInteger responseStatusCode = [httpResponse statusCode];
+        if (responseStatusCode == 200 && data && (error == nil)) {
             // 网络访问成功
             callback ? callback(data, NO, nil) : nil;
         } else {

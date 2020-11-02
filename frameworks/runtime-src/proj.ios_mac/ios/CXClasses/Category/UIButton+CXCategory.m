@@ -53,16 +53,16 @@
     CGFloat tit_H = self.titleLabel.frame.size.height;
     
     self.titleEdgeInsets = (UIEdgeInsets){
-        .top    =   (tit_H / 2 + Spacing / 2),
+        .top    =   Spacing / 2 + img_H / 2,
         .left   = - (img_W / 2),
-        .bottom = - (tit_H / 2 + Spacing / 2),
+        .bottom = - (Spacing / 2 + img_H / 2),
         .right  =   (img_W / 2),
     };
     
     self.imageEdgeInsets = (UIEdgeInsets){
-        .top    = - (img_H / 2 + Spacing / 2),
+        .top    = - (Spacing / 2 + tit_H / 2),
         .left   =   (tit_W / 2),
-        .bottom =   (img_H / 2 + Spacing / 2),
+        .bottom =   Spacing / 2 + tit_H / 2,
         .right  = - (tit_W / 2),
     };
 }

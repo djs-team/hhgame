@@ -70,7 +70,7 @@
     self.cur_originNameLabel.text = _playing_SongInfo.SingerName;
     self.cur_dianNameLabel.text = [NSString stringWithFormat:@"点播：%@", _playing_SongInfo.DemandUserName];
     if (_playing_SongInfo.ConsertUserId > 0) {
-        self.cur_changNameLabel.text = [NSString stringWithFormat:@"演唱上麦嘉宾：%@", _playing_SongInfo.ConsertUserName];
+        self.cur_changNameLabel.text = [NSString stringWithFormat:@"演唱嘉宾：%@", _playing_SongInfo.ConsertUserName];
     } else {
         self.cur_changNameLabel.text = @"";
     }

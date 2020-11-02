@@ -67,18 +67,13 @@ public class FriendListAdapter extends BaseBindingAdapter<FriendInfoBean, ItemFr
         }
 
         String str = item.getOnline_str();
-        if (str.contains("离线") || str.contains("刚刚在线")) {
+        if (str.contains("离线") || str.contains("刚刚在线") || str.contains("在线")) {
             ViewBindUtils.setVisible(holder.binding.tvStateDesc, false);
-            holder.binding.tvOnline.setTextColor(Color.parseColor("#b5b5b6"));
-            ViewBindUtils.setText(holder.binding.tvOnline, str);
-        } else if (str.contains("在线")) {
-            ViewBindUtils.setVisible(holder.binding.tvStateDesc, false);
-            holder.binding.tvOnline.setTextColor(Color.parseColor("#10E770"));
-            ViewBindUtils.setText(holder.binding.tvOnline, str);
         } else {
             ViewBindUtils.setVisible(holder.binding.tvStateDesc, true);
-            StateUtils.setState(holder.binding.tvStateDesc, item.getOnline_str());
+            StateUtils.setState(holder.binding.tvStateDesc, str);
         }
+        StateUtils.setOnlineState(holder.binding.tvOnline, str);
 
     }
 }

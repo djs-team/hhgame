@@ -59,6 +59,7 @@ public class SystemMsgFragment extends BaseFragment<FragmentSysMsgBinding> {
 //        }
         return instance;
     }
+
     private boolean isResumed, isHidden;
 
     @Override
@@ -69,6 +70,7 @@ public class SystemMsgFragment extends BaseFragment<FragmentSysMsgBinding> {
             mBinding.refreshLayout.autoRefresh();
         }
     }
+
     @Override
     public void onResume() {
         super.onResume();
@@ -77,6 +79,7 @@ public class SystemMsgFragment extends BaseFragment<FragmentSysMsgBinding> {
             mBinding.refreshLayout.autoRefresh();
         }
     }
+
     @Override
     protected int getLayoutId() {
         return R.layout.fragment_sys_msg;
@@ -135,7 +138,7 @@ public class SystemMsgFragment extends BaseFragment<FragmentSysMsgBinding> {
             });
         });
         mBinding.refreshLayout.setOnLoadMoreListener(refreshLayout -> {
-            mViewModel.refresh().observe(this, new BaseObserver<SystemMsgListBean>() {
+            mViewModel.loadMore().observe(this, new BaseObserver<SystemMsgListBean>() {
                 @Override
                 public void onSuccess(SystemMsgListBean result) {
                     mBinding.refreshLayout.finishLoadMore();

@@ -66,5 +66,26 @@ public class StateUtils {
             textView.setVisibility(View.GONE);
         }
     }
+    public static void setOnlineState(TextView textView, String str) {
+        if (!TextUtils.isEmpty(str)) {
+            textView.setVisibility(View.VISIBLE);
+            if (str.contains("离线") || str.contains("刚刚在线")) {
+                textView.setTextColor(Color.parseColor("#b5b5b6"));
+                ViewBindUtils.setText(textView, str);
+            } else if (str.contains("相亲")) {
+                textView.setTextColor(Color.parseColor("#7F3EF0"));
+            } else if (str.contains("热聊")) {
+                textView.setTextColor(Color.parseColor("#EF51B2"));
+            } else if (str.contains("开播")) {
+                textView.setTextColor(Color.parseColor("#FEBF00"));
+            } else {
+                textView.setTextColor(Color.parseColor("#10E770"));
+            }
+            textView.setText(str);
+
+        } else {
+            textView.setVisibility(View.GONE);
+        }
+    }
 
 }

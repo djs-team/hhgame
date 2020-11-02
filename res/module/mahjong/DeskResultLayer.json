@@ -946,8 +946,8 @@
                   "ScaleX": 0.5
                 },
                 "Position": {
-                  "X": 641.0768,
-                  "Y": 1.0772
+                  "X": 641.024,
+                  "Y": 1.08
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -969,10 +969,10 @@
                   "X": 1.0,
                   "Y": 1.0
                 },
-                "LeftMargin": 1.0768,
-                "RightMargin": -1.0768,
-                "TopMargin": -1.0773,
-                "BottomMargin": 1.0772,
+                "LeftMargin": 1.024,
+                "RightMargin": -1.024,
+                "TopMargin": -1.08,
+                "BottomMargin": 1.08,
                 "UserData": "{\"layoutType\":\"showAll\",\"screenAlign\":\"bottom\"}",
                 "Tag": 24,
                 "Children": [
@@ -1654,11 +1654,6 @@
                   "G": 65,
                   "B": 70
                 },
-                "DisabledFileData": {
-                  "Type": "Normal",
-                  "Path": "common/xin_anniu_10.png",
-                  "Plist": ""
-                },
                 "NormalFileData": {
                   "Type": "Normal",
                   "Path": "common/bt_1.png",
@@ -1744,7 +1739,7 @@
                     "LeftMargin": 34.7059,
                     "RightMargin": 140.2209,
                     "TopMargin": 22.9474,
-                    "BottomMargin": 42.6705,
+                    "BottomMargin": 42.6704,
                     "Tag": 1312,
                     "ActionTag": 627699933,
                     "Size": {
@@ -1780,8 +1775,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 110.4624,
-                      "Y": 54.8632
+                      "X": 110.46,
+                      "Y": 54.8592
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -1803,10 +1798,10 @@
                       "X": 0.46,
                       "Y": 0.3409
                     },
-                    "LeftMargin": 64.4624,
-                    "RightMargin": 43.5376,
-                    "TopMargin": 18.1367,
-                    "BottomMargin": 39.8632,
+                    "LeftMargin": 64.46,
+                    "RightMargin": 43.54,
+                    "TopMargin": 18.1408,
+                    "BottomMargin": 39.8592,
                     "Tag": 31,
                     "ActionTag": 460409080,
                     "Size": {
@@ -1997,7 +1992,6 @@
         "common/bt_2.png",
         "common/gy_fh.png",
         "common/jinbi.png",
-        "common/xin_anniu_10.png",
         "Default/Button_Disable.png",
         "Default/ImageFile.png",
         "fnt/hkhbtW12.ttc",

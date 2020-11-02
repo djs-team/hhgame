@@ -187,8 +187,13 @@ load('game/ui/layer/email/EmailLayer', function () {
                 rewardsCell.setVisible(true)
                 rewardsList.addChild(rewardsCell)
                 rewardsCell.setName('rewards'+data.mailId+j)
-                rewardsCell.getChildByName('rewardPic').loadTexture(information.res);
-                rewardsCell.getChildByName('numValue').setString(information.num);
+                rewardsCell.getChildByName('rewardPic').loadTexture(information.res)
+                let string = information.num
+                string = string.replace('x', '')
+                string = parseInt(string)
+                string = GameUtil.getStringRule(string)
+                string = 'x'+string
+                rewardsCell.getChildByName('numValue').setString(string)
                 if (status == 2) {
                     rewardsCell.getChildByName('finishPic').setVisible(true);
                 } else {

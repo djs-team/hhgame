@@ -442,6 +442,8 @@ public class AppActivity extends Cocos2dxActivity {
                         e.printStackTrace();
                     }
                     ccActivity.RunJS_obj("THIRD_LOGIN_RESULT", result.toString());
+                } else if (code == 6002) {
+                    ToastUtils.showToast("用户取消登录");
                 } else {
                     ToastUtils.showToast("一键登录失败，请尝试其他登录方式" + code);
                 }

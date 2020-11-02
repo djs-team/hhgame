@@ -34,6 +34,7 @@ load('module/mahjong/ui/DeskResultLayer', function () {
         _usedWatchNum: 0,  //当前观看次数
         _isWatch: false,   //是否处于看视频自动开启下一场阶段
         _isStart: false,   //是否处理过自动开始下一场阶段的逻辑
+        _isEnoughStart: false,   //是否处理过自动开始下一场阶段的逻辑(金币不足)
         RES_BINDING: function () {
             return {
                 'topPnl/CloseBtn': { onClicked: this.onCloseBtnClick },
@@ -88,7 +89,6 @@ load('module/mahjong/ui/DeskResultLayer', function () {
                     appInstance.gameAgent().httpGame().AcceptAwardReq()
                 else
                     appInstance.nativeApi().showRewardVideo()
-                return
             } else if (this._myCoin<this._minCoin) {
                 let dialogMsg = {
                     ViewType: 1,
@@ -102,9 +102,9 @@ load('module/mahjong/ui/DeskResultLayer', function () {
                     SayText : '您的金币不足，是否去商城兑换'
                 }
                 appInstance.gameAgent().addDialogUI(dialogMsg)
-                return
+            } else {
+                this.toGamePlay()
             }
-            this.toGamePlay()
         },
 
         /**
@@ -137,6 +137,12 @@ load('module/mahjong/ui/DeskResultLayer', function () {
                     this._isStart = true
                     this._isWatch = false
                 }
+            } else {
+                if (!this._isEnoughStart && this._isWatch) {
+                    appInstance.gameAgent().Tips('-----------------------金币不足')
+                    this._isEnoughStart = true
+                    this._isWatch = false
+                }
             }
         },
 
@@ -161,6 +167,11 @@ load('module/mahjong/ui/DeskResultLayer', function () {
                 if (!this._isStart) {
                     this.toGamePlay()
                     this._isStart = true
+                }
+            } else {
+                if (!this._isEnoughStart) {
+                    appInstance.gameAgent().Tips('-----------------------金币不足')
+                    this._isEnoughStart = true
                 }
             }
         },
@@ -249,7 +260,7 @@ load('module/mahjong/ui/DeskResultLayer', function () {
             if (this._myCoin<this._minCoin) {
                 this.NextGameBtn.getChildByName('Image_3').setVisible(true)
                 this.NextGameBtn.getChildByName('Text_3').setVisible(true)
-                this.NextGameBtn.getChildByName('Text_3').setString('剩余:'+this._usedWatchNum+'/'+this._watchMaxNum)
+                this.NextGameBtn.getChildByName('Text_3').setString('剩余:'+(parseInt(this._watchMaxNum)-parseInt(this._usedWatchNum))+'/'+this._watchMaxNum)
                 this.NextGameBtn.getChildByName('Text_1').setPosition(110.46, 54.86)
             } else {
                 this.NextGameBtn.getChildByName('Image_3').setVisible(false)

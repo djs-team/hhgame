@@ -74,12 +74,14 @@ let TcpClient = cc.Class.extend({
 
     onSocketError: function (event) {
         cc.log('================onSocketError================' + JSON.stringify(event))
-        appInstance.eventManager().dispatchEvent('TCP_CLOSE')
+        // appInstance.eventManager().dispatchEvent('TCP_CLOSE')
     },
 
     onSocketClose: function (event) {
         cc.log('================onSocketClose================' + JSON.stringify(event))
-        appInstance.eventManager().dispatchEvent('TCP_CLOSE')
+        if (event.type === 'close') {
+            appInstance.eventManager().dispatchEvent('TCP_CLOSE')
+        }
     },
     getSocketState: function () {
         if (this._socket && cc.sys.isObjectValid(this._socket)) {

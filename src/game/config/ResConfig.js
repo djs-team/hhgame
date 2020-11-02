@@ -49,6 +49,7 @@ load('game/config/ResConfig', function () {
      *  骨骼动画资源
      */
     ResConfig.AniHall = {
+        "jiazaidonghua": { json: 'res/animation/hall/jiazaidonghua/jiazaidonghua.json', atlas: 'res/animation/hall/jiazaidonghua/jiazaidonghua.atlas', png: 'res/animation/hall/jiazaidonghua/jiazaidonghua.png' },
         "DatingJinbichang": { json: 'res/animation/hall/dating_jinbichang/dating_jinbichang.json', atlas: 'res/animation/hall/dating_jinbichang/dating_jinbichang.atlas', png: 'res/animation/hall/dating_jinbichang/dating_jinbichang.png' },
         "DatingGengDuoWanFa": { json: 'res/animation/hall/dating_gengduowanfa/dating_gengduowanfa.json', atlas: 'res/animation/hall/dating_gengduowanfa/dating_gengduowanfa.atlas', png: 'res/animation/hall/dating_gengduowanfa/dating_gengduowanfa.png' },
         "DatingXiangQin": { json: 'res/animation/hall/dating_xiangqin/dating_majiang.json', atlas: 'res/animation/hall/dating_xiangqin/dating_majiang.atlas', png: 'res/animation/hall/dating_xiangqin/dating_majiang.png' },
@@ -68,6 +69,7 @@ load('game/config/ResConfig', function () {
      */
     ResConfig.Ui = {
         'SystemTips': 'game/ui/public/SystemTips',
+        'LoadingLayer':'game/ui/public/LoadingLayer',
         'DialogLayer': 'game/ui/public/DialogLayer',
         'ReceivePropsLayer': 'game/ui/public/ReceivePropsLayer',
         'ChooseCityLayer': 'game/ui/layer/choosecity/ChooseCityLayer',
@@ -100,6 +102,7 @@ load('game/config/ResConfig', function () {
         'LoginScene': 'res/LoginScene.json',
         'HallScene': 'res/HallScene.json',
         'SystemTipsLayer': 'res/SystemTipsLayer.json',
+        'LoadingLayer': 'res/LoadingLayer.json',
         'DialogLayer': 'res/DialogLayer.json',
         'ReceivePropsLayer': 'res/ReceivePropsLayer.json',
         'ChooseCityLayer': 'res/ChooseCityLayer.json',

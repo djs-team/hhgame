@@ -37,7 +37,8 @@ load('module/mahjong/ui/EffectLayerMdt', function () {
                     this.PlayerSelectProto(body)
                     break
                 case TableEvent.MatchResultProto:
-                    this.MatchResultProto(body)
+                    appInstance.gameAgent().delayCall(2, this.MatchResultProto, body, this)
+                    // this.MatchResultProto(body)
                     break
                 case TableEvent.MatchEnterTableProto:
                     this.MatchEnterTableProto(body)
@@ -45,7 +46,8 @@ load('module/mahjong/ui/EffectLayerMdt', function () {
                 case TableEvent.TableHostingProto:
                     break
                 case TableEvent.GameResultProto:
-                    this.GameResultProto(body)
+                    appInstance.gameAgent().delayCall(2, this.GameResultProto, body, this)
+                    // this.GameResultProto(body)
                     break
             }
         },

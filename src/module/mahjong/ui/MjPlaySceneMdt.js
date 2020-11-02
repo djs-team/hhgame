@@ -46,10 +46,12 @@ load('module/mahjong/ui/MjPlaySceneMdt', function () {
                     // this.view.showMatchJinjiLayer(body)
                     break
                 case TableEvent.MatchResultProto:
-                    this.view.showMatchResultLayer(body)
+                    appInstance.gameAgent().delayCall(2, this.view.showMatchResultLayer, body, this.view )
+                    // this.view.showMatchResultLayer(body)
                     break
                 case TableEvent.MatchResultBigProto:
-                    this.view.showMatchBigResultLayer(body)
+                    appInstance.gameAgent().delayCall(2, this.view.showMatchBigResultLayer, body, this.view)
+                    // this.view.showMatchBigResultLayer(body)
                     break
             }
         },
@@ -60,7 +62,8 @@ load('module/mahjong/ui/MjPlaySceneMdt', function () {
 
 
         GameResultProto: function (msg) {
-            this.view.showGameResultLayer(msg)
+            appInstance.gameAgent().delayCall(2, this.view.showGameResultLayer, msg, this.view)
+            // this.view.showGameResultLayer(msg)
         },
 
         initView: function () {

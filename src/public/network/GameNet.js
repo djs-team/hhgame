@@ -10,7 +10,7 @@ load('public/network/GameNet', function () {
     let GameNet = cc.Class.extend({
         isReconnect: false,
         reConnectTimes: 0,
-        reConnectInterval: 5,
+        reConnectInterval: 3,
         reConnectNum: 0,
         msgQueue: null,
         reqPingPong: [],
@@ -109,8 +109,12 @@ load('public/network/GameNet', function () {
                 if (this.reConnectTimes > this.reConnectInterval) {
                     this.reConnectTimes = 0
                     this.reConnectNum += 1
-                    if (this.reConnectNum < 5) {
-                        this.connect()
+                    if (this.reConnectNum < 15) {
+                        if (TcpClient.getSocketState() === WebSocket.CLOSED) {
+                            this.connect()
+                        } else {
+                            this.isReconnect = false
+                        }
                     } else {
                         appInstance.eventManager().dispatchEvent('RECONNECT_OVER_TIMES')
                     }

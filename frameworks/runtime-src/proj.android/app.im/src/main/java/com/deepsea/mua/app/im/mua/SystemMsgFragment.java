@@ -75,7 +75,6 @@ public class SystemMsgFragment extends BaseFragment<FragmentSysMsgBinding> {
         isResumed = true;
         if (!isHidden) {
             mBinding.refreshLayout.autoRefresh();
-
         }
     }
     @Override
@@ -216,4 +215,5 @@ public class SystemMsgFragment extends BaseFragment<FragmentSysMsgBinding> {
         });
         dialog.show();
     }
+
 }

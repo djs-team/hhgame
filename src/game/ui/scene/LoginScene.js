@@ -294,7 +294,7 @@ load('game/ui/scene/LoginScene', function () {
             GameUtil.delayBtn(this.wxLogin);
             if(!this.onCheckeCanLogin())
                 return
-            
+
             if (cc.sys.OS_WINDOWS === cc.sys.os) {
                 this.debugLogin()
             } else {

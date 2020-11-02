@@ -80,6 +80,7 @@ public class MessageMainFragment extends BaseFragment<FragmentMessageMainBinding
             mBinding.viewMsg.setVisibility(View.GONE);
             mBinding.viewSys.setVisibility(View.VISIBLE);
             ViewBindUtils.setVisible(mBinding.tvSysUnread, false);
+            EventBus.getDefault().post(new UpdateUnreadMsgEvent());
 
         });
         mBinding.msgTab.setSelected(true);

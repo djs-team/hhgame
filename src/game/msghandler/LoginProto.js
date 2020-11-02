@@ -15,6 +15,7 @@ load('game/msghandler/LoginProto', function () {
         handleMsg: function (msg) {
             this._super(msg)
             appInstance.sendNotification(GameEvent.DIALOG_HIDE_ALL)
+            appInstance.gameAgent().hideLoading()
             appInstance.gameAgent().setLoginOk(true)
             appInstance.gameNet().setReconnect(false)
             if (msg.status === 0) {

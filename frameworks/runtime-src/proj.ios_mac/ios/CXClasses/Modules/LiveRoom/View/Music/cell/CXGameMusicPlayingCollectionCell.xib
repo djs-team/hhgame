@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -67,25 +67,25 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PrH-2c-ZdJ">
-                        <rect key="frame" x="50" y="307.5" width="34" height="14"/>
+                        <rect key="frame" x="50" y="308.5" width="34" height="14"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WqT-2g-32z">
-                        <rect key="frame" x="326" y="307.5" width="34" height="14"/>
+                        <rect key="frame" x="326" y="308.5" width="34" height="14"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="演唱者：小可爱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3uQ-89-ySR">
-                        <rect key="frame" x="195.5" y="153" width="114.5" height="19.5"/>
+                        <rect key="frame" x="198" y="153" width="169" height="19.5"/>
                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="点播:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FfO-HD-MXL">
-                        <rect key="frame" x="133.5" y="153" width="38" height="20"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="点播:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FfO-HD-MXL">
+                        <rect key="frame" x="8" y="153" width="169" height="20"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -99,7 +99,7 @@
                         <rect key="frame" x="14" y="240" width="17" height="15.5"/>
                     </imageView>
                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tdj-Wv-IZf">
-                        <rect key="frame" x="50" y="289.5" width="310" height="2"/>
+                        <rect key="frame" x="50" y="288.5" width="310" height="4"/>
                         <color key="progressTintColor" red="0.99903267620000002" green="0.19832858440000001" blue="0.39804124829999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="trackTintColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                     </progressView>
@@ -114,25 +114,28 @@
                     </label>
                 </subviews>
             </view>
+            <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="HY2-fe-bUl" firstAttribute="trailing" secondItem="tdj-Wv-IZf" secondAttribute="trailing" id="0Hc-Zp-H1s"/>
                 <constraint firstItem="hpR-hp-yWY" firstAttribute="top" secondItem="vH4-gW-hN4" secondAttribute="bottom" constant="8.5" id="4nn-vq-oNh"/>
                 <constraint firstItem="PrH-2c-ZdJ" firstAttribute="leading" secondItem="tdj-Wv-IZf" secondAttribute="leading" id="7n1-mG-7YO"/>
+                <constraint firstItem="FfO-HD-MXL" firstAttribute="trailing" secondItem="EOJ-bm-Lqp" secondAttribute="trailing" constant="-30" id="8HY-ef-lvP"/>
                 <constraint firstItem="tdj-Wv-IZf" firstAttribute="centerY" secondItem="c6u-V7-iSr" secondAttribute="centerY" id="DQc-8y-vuv"/>
-                <constraint firstItem="3uQ-89-ySR" firstAttribute="leading" secondItem="FfO-HD-MXL" secondAttribute="trailing" constant="24" id="Hhy-VY-Scd"/>
                 <constraint firstItem="FfO-HD-MXL" firstAttribute="centerY" secondItem="3uQ-89-ySR" secondAttribute="centerY" id="Jfi-w8-vCy"/>
-                <constraint firstItem="3uQ-89-ySR" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" constant="65" id="NNK-iD-6RO"/>
                 <constraint firstItem="HY2-fe-bUl" firstAttribute="leading" secondItem="tdj-Wv-IZf" secondAttribute="leading" id="Nla-EX-EsV"/>
                 <constraint firstItem="hUc-lt-UW4" firstAttribute="top" secondItem="hpR-hp-yWY" secondAttribute="bottom" constant="20" id="Qy2-Ha-Zdx"/>
+                <constraint firstItem="FfO-HD-MXL" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="T8D-rd-oY0"/>
                 <constraint firstAttribute="bottom" secondItem="c6u-V7-iSr" secondAttribute="bottom" constant="60" id="VIg-DI-J6f"/>
                 <constraint firstItem="vFG-yu-GEd" firstAttribute="top" secondItem="HY2-fe-bUl" secondAttribute="bottom" id="WDT-3M-r3S"/>
                 <constraint firstItem="vH4-gW-hN4" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="17" id="X0q-N7-7RV"/>
                 <constraint firstAttribute="trailing" secondItem="tdj-Wv-IZf" secondAttribute="trailing" constant="15" id="aCV-34-Hbw"/>
                 <constraint firstItem="HY2-fe-bUl" firstAttribute="centerY" secondItem="vUE-Y4-evR" secondAttribute="centerY" id="apk-i8-DlZ"/>
                 <constraint firstItem="tdj-Wv-IZf" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="50" id="b6M-6M-TOv"/>
+                <constraint firstAttribute="trailing" secondItem="3uQ-89-ySR" secondAttribute="trailing" constant="8" id="e0Y-l1-JQO"/>
                 <constraint firstItem="c6u-V7-iSr" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="hvx-PS-AMA"/>
                 <constraint firstItem="hpR-hp-yWY" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="i9y-3y-byf"/>
+                <constraint firstItem="3uQ-89-ySR" firstAttribute="leading" secondItem="EOJ-bm-Lqp" secondAttribute="leading" constant="30" id="jZc-bV-xyG"/>
                 <constraint firstItem="3uQ-89-ySR" firstAttribute="top" secondItem="hUc-lt-UW4" secondAttribute="bottom" constant="21" id="mM0-lQ-Upu"/>
                 <constraint firstItem="WqT-2g-32z" firstAttribute="centerY" secondItem="PrH-2c-ZdJ" secondAttribute="centerY" id="mgU-Wv-LRH"/>
                 <constraint firstItem="PrH-2c-ZdJ" firstAttribute="top" secondItem="tdj-Wv-IZf" secondAttribute="bottom" constant="16" id="mij-dA-JwL"/>
@@ -143,7 +146,6 @@
                 <constraint firstItem="vH4-gW-hN4" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="yzI-rb-ezl"/>
                 <constraint firstItem="vFG-yu-GEd" firstAttribute="trailing" secondItem="HY2-fe-bUl" secondAttribute="trailing" id="znU-Ld-AiN"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
             <size key="customSize" width="316" height="248"/>
             <connections>
                 <outlet property="action_bgView" destination="hUc-lt-UW4" id="Oo9-et-YSk"/>

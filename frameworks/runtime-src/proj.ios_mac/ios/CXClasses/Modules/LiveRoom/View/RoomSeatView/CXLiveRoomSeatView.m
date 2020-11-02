@@ -169,7 +169,6 @@
 
     if ([uid isEqualToNumber:[[CXClientModel instance].userId numberValue]] ) {
         int success = [[CXClientModel instance].agoraEngineManager.engine setClientRole:AgoraClientRoleBroadcaster];
-        NSLog(@"===============上麦 =======%d", success);
         [[CXClientModel instance].agoraEngineManager.engine setupLocalVideo:self.session.canvas];
         [[CXClientModel instance].agoraEngineManager.engine startPreview];
     } else {

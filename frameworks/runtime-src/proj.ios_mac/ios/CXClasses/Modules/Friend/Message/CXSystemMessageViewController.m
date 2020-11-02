@@ -60,7 +60,11 @@
 - (void)getMessageList {
     NSString *signature = [CocoaSecurity md5:[CXClientModel instance].token].hexLower;
     kWeakSelf
-    [CXHTTPRequest GETWithURL:@"/index.php/Api/Pushmessage/systemList" parameters:@{@"signature": signature} callback:^(id responseObject, BOOL isCache, NSError *error) {
+    NSDictionary *param = @{
+        @"page" : [NSString stringWithFormat:@"%ld",_page],
+        @"signature": signature
+    };
+    [CXHTTPRequest GETWithURL:@"/index.php/Api/Pushmessage/systemList" parameters:param callback:^(id responseObject, BOOL isCache, NSError *error) {
         [weakSelf.mainTableView.mj_header endRefreshing];
         [weakSelf.mainTableView.mj_footer endRefreshing];
        if (!error) {

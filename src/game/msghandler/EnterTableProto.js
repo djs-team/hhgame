@@ -23,7 +23,8 @@ load('game/msghandler/EnterTableProto', function () {
                 }
                 if (msg.pExtend === 'gameResult') {
                     appInstance.gameAgent().Tips(GameConfig.mjError[msg.code])
-
+                }else if(msg.pExtend === 'gameHall'){
+                    appInstance.gameAgent().Tips(GameConfig.mjError[msg.code])
                 }
                 // appInstance.gameAgent().Tips(GameConfig.mjError[msg.code])
                 return

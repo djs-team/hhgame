@@ -672,6 +672,7 @@
                 },
                 "ShadowOffsetX": 2.0,
                 "ShadowOffsetY": -2.0,
+                "TouchEnable": true,
                 "AnchorPoint": {
                   "ScaleX": 0.5,
                   "ScaleY": 0.5
@@ -1888,7 +1889,7 @@
                   "Y": 0.305
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.4153
                 },
                 "LeftMargin": 780.9401,
@@ -2270,7 +2271,7 @@
                   "Y": 0.5003
                 },
                 "PreSize": {
-                  "X": 0.2813,
+                  "X": 0.2812,
                   "Y": 0.0792
                 },
                 "LeftMargin": 477.3901,

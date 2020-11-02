@@ -138,7 +138,7 @@
                 <PreSize X="0.0617" Y="0.1111" />
                 <FileData Type="Normal" Path="hall/dtjm_1_1.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="changePicBtn" ActionTag="-1083219950" Tag="324" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="459.7320" RightMargin="717.2680" TopMargin="286.5440" BottomMargin="401.4560" FontSize="14" ButtonText="更换图片" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="73" Scale9Height="10" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="changePicBtn" ActionTag="-1083219950" Tag="324" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="459.7320" RightMargin="717.2680" TopMargin="286.5440" BottomMargin="401.4560" TouchEnable="True" FontSize="14" ButtonText="更换图片" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="73" Scale9Height="10" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="103.0000" Y="32.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="511.2320" Y="417.4560" />

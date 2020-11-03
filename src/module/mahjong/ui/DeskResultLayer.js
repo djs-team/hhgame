@@ -152,7 +152,7 @@ load('module/mahjong/ui/DeskResultLayer', function () {
          */
         onRewardVideoCallback: function (msg) {
             if (msg == "0") {
-                appInstance.gameAgent().httpGame().AcceptAwardReq(msg)
+                appInstance.gameAgent().httpGame().AcceptAwardReq()
             }
         },
 

@@ -347,7 +347,19 @@ load('game/ui/layer/arena/ArenaLayer', function () {
             if(this._arenaType == 3 ){
                 let vipCode = appInstance.dataManager().getUserData().vipCode
                 if(vipCode <= 0){
-                    appInstance.gameAgent().Tips('该功能只对会员开放')
+                    let dialogMsg = {
+                        ViewType: 1,
+                        TileName : '提 示',
+                        LeftBtnName: '我知道了',
+                        RightBtnName : '成为会员',
+                        RightBtnClick : function () {
+                            appInstance.gameAgent().addPopUI(ResConfig.Ui.MemberLayer)
+                            appInstance.uiManager().removeUI(this)
+                        }.bind(this),
+
+                        SayText : '本场比赛只针对VIP玩家开放'
+                    }
+                    appInstance.gameAgent().addDialogUI(dialogMsg)
                     return false
                 }
             }

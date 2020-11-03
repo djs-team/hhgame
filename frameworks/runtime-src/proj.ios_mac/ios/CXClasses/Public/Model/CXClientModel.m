@@ -57,6 +57,7 @@
         [MBProgressHUD hideHUD];
         if (!error) {
             NSString *addr = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+            [MBProgressHUD showHUD];
             if ([weakSelf.socket joinRoom:roomId withToken:weakSelf.token atAddr:addr] == NO) {
                 callback ? callback(roomId, NO) : nil;
                 return;

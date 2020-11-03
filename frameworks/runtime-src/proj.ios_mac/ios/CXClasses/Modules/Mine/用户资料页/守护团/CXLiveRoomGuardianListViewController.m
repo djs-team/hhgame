@@ -17,14 +17,17 @@
 
 @property (nonatomic, assign) NSInteger page;
 
+@property (weak, nonatomic) IBOutlet UIView *first_bgView;
 @property (weak, nonatomic) IBOutlet UIImageView *first_avatar;
 @property (weak, nonatomic) IBOutlet UILabel *first_name;
 @property (weak, nonatomic) IBOutlet UILabel *first_number;
 
+@property (weak, nonatomic) IBOutlet UIView *second_bgView;
 @property (weak, nonatomic) IBOutlet UIImageView *second_avatar;
 @property (weak, nonatomic) IBOutlet UILabel *second_name;
 @property (weak, nonatomic) IBOutlet UILabel *second_number;
 
+@property (weak, nonatomic) IBOutlet UIView *third_bgView;
 @property (weak, nonatomic) IBOutlet UIImageView *third_avatar;
 @property (weak, nonatomic) IBOutlet UILabel *third_name;
 @property (weak, nonatomic) IBOutlet UILabel *third_number;
@@ -168,6 +171,7 @@
             } else {
                 [weakSelf.bottomBtn setTitle:@"开通守护" forState:UIControlStateNormal];
             }
+            
         }
     }];
 }
@@ -178,6 +182,7 @@
     self.thirdModel = [CXUserModel new];
     self.dataSources = [NSMutableArray arrayWithArray:array];
     if (array.count > 0) {
+        self.first_bgView.hidden = NO;
         CXUserModel *firstModel = array.firstObject;
         if (firstModel.type.intValue == 2) {
             [self.mainTableView reloadData];
@@ -186,16 +191,15 @@
             [self.dataSources removeObject:firstModel];
             [self.first_avatar sd_setImageWithURL:[NSURL URLWithString:firstModel.avatar]];
             self.first_name.text = [firstModel.nickname substringToIndex:MIN(5, firstModel.nickname.length)];
-            self.first_number.text = firstModel.num;
+            self.first_number.text = [NSString stringWithFormat:@"亲密度：%@", firstModel.intimacy];
             self.firstModel = firstModel;
         }
     } else {
-        self.first_avatar.image = [UIImage new];
-        self.first_name.text = @"";
-        self.first_number.text = @"";
+        self.first_bgView.hidden = YES;
     }
     
     if (array.count > 1) {
+        self.second_bgView.hidden = NO;
         CXUserModel *firstModel = array[1];
         if (firstModel.type.intValue == 2) {
             [self.mainTableView reloadData];
@@ -204,17 +208,16 @@
             [self.dataSources removeObject:firstModel];
             [self.second_avatar sd_setImageWithURL:[NSURL URLWithString:firstModel.avatar]];
             self.second_name.text = [firstModel.nickname substringToIndex:MIN(5, firstModel.nickname.length)];
-            self.second_number.text = firstModel.num;
+            self.second_number.text = [NSString stringWithFormat:@"亲密度：%@", firstModel.intimacy];
             self.secondModel = firstModel;
         }
         
     } else {
-        self.second_avatar.image = [UIImage new];
-        self.second_name.text = @"";
-        self.second_number.text = @"";
+        self.second_bgView.hidden = YES;
     }
     
     if (array.count > 2) {
+        self.third_bgView.hidden = NO;
         CXUserModel *firstModel = array[2];
         if (firstModel.type.integerValue == 2) {
             [self.mainTableView reloadData];
@@ -223,17 +226,21 @@
             [self.dataSources removeObject:firstModel];
             [self.third_avatar sd_setImageWithURL:[NSURL URLWithString:firstModel.avatar]];
             self.third_name.text = [firstModel.nickname substringToIndex:MIN(5, firstModel.nickname.length)];
-            self.third_number.text = firstModel.num;
+            self.third_number.text = [NSString stringWithFormat:@"亲密度：%@", firstModel.intimacy];
             self.thirdModel = firstModel;
         }
     } else {
-        self.third_avatar.image = [UIImage new];
-        self.third_name.text = @"";
-        self.third_number.text = @"";
+        self.third_bgView.hidden = YES;
     }
     
-    [self.mainTableView reloadData];
-    
+    if (self.dataSources.count > 0) {
+        self.mainTableView.hidden = NO;
+        self.top_radiusView.hidden = NO;
+        [self.mainTableView reloadData];
+    } else {
+        self.mainTableView.hidden = YES;
+        self.top_radiusView.hidden = YES;
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

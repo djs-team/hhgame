@@ -1,4 +1,3 @@
-
 /**
  * DeskHeadLayer
  */
@@ -14,6 +13,8 @@ load('module/mahjong/ui/DeskResultLayer', function () {
     let GameConfig = include('game/config/GameConfig')
     let TableEvent = TableConfig.Event
     let HuType = TableConfig.HuType
+    let inviteUrl = ""
+
     let Layer = BaseLayer.extend({
         _className: 'DeskResultLayer',
         _myCoin: 0,   //我的金币
@@ -37,17 +38,23 @@ load('module/mahjong/ui/DeskResultLayer', function () {
         _isCompleteTcp: false,   //tcp处理状况
         RES_BINDING: function () {
             return {
-                'topPnl/CloseBtn': { onClicked: this.onCloseBtnClick },
-                'midPnl/midNd': {  },
-                'midPnl/midNd/PlayerCell': {  },
-                'bmPnl': {  },
-                'bmPnl/BackHallBtn': { onClicked: this.onBackHallBtnClick },
-                'bmPnl/InviteFriendBtn': { onClicked: this.onInviteFriendBtnClick },
-                'bmPnl/NextGameBtn': { onClicked: this.onNextGameBtnClick },
-                'bmPnl/BaoCard': {  },
-                'bmPnl/HuCard': {  },
-                'bmPnl/CardCell': {  },
-                'bmPnl/InfoCell': {  },
+                'topPnl/CloseBtn': {onClicked: this.onCloseBtnClick},
+                'midPnl/midNd': {},
+                'midPnl/midNd/PlayerCell': {},
+                'bmPnl': {},
+                'bmPnl/BackHallBtn': {onClicked: this.onBackHallBtnClick},
+                'bmPnl/InviteFriendBtn': {onClicked: this.onInviteFriendBtnClick},
+                'bmPnl/NextGameBtn': {onClicked: this.onNextGameBtnClick},
+                'bmPnl/BaoCard': {},
+                'bmPnl/HuCard': {},
+                'bmPnl/CardCell': {},
+                'bmPnl/InfoCell': {},
+                'bg_share': {},
+                'bg_share/share_img_qr': {},
+                'bg_share/share_img_sex': {},
+                'bg_share/share_tv_name': {},
+                'bg_share/share_img_photo': {},
+
             }
         },
 
@@ -56,6 +63,8 @@ load('module/mahjong/ui/DeskResultLayer', function () {
             this._msg = msg
             this.registerMediator(new DeskResultLayerMdt(this))
             this.registerEventListener('rewardVideoCallback', this.onRewardVideoCallback)
+            this.registerEventListener('inviteCodeCallback', this.onInviteCodeCallback)
+
         },
 
         onCloseBtnClick: function () {
@@ -75,39 +84,72 @@ load('module/mahjong/ui/DeskResultLayer', function () {
         },
 
         onInviteFriendBtnClick: function () {
-            let InvitationLayer = include('game/ui/layer/invitation/InvitationLayer')
-            this.addChild(appInstance.uiManager().createUI(InvitationLayer))
+            // let InvitationLayer = include('game/ui/layer/invitation/InvitationLayer')
+            // this.addChild(appInstance.uiManager().createUI(InvitationLayer))
+            this.beforShareImg()
+            // 调用前  将自己想要分享的图片 弄全屏 在截取完后 再重置回原来的状态
+            appInstance.gameAgent().saveCanvas()
+            this.shareImg()
+            this.afterShareImg()
+
+
         },
+        onInviteCodeCallback: function (msg) {
+            this.loadCodePg(this.share_img_qr, msg)
+        },
+        loadCodePg: function (parent, img) {
+            let size = parent.getContentSize()
+            let sp = new cc.Sprite(img);
+            sp.setContentSize(size)
+            sp.setPosition(cc.p(size.width / 2, size.height / 2))
+            parent.addChild(sp);
+        },
+        // 分享接口
+        shareImg: function () {
+
+        },
+        //分享前处理界面
+        beforShareImg: function () {
+            this.bg_share.setVisible(true)
+
+        },
+        //屏幕截取后  重置界面
+        afterShareImg: function () {
+            this.bg_share.setVisible(false)
+        },
+
 
         /**
          * 点击下一局按钮
          */
         onNextGameBtnClick: function (sender) {
-            GameUtil.delayBtn(sender);
-            //判断是否观看视频
-            if (this._myCoin<this._minCoin && this._usedWatchNum<this._watchMaxNum) {
-                if(cc.sys.os === cc.sys.OS_WINDOWS){
-                    this._isWatch = true
-                    appInstance.gameAgent().httpGame().AcceptAwardReq()
-                } else {
-                    appInstance.nativeApi().showRewardVideo()
-                }
-            } else if (this._myCoin<this._minCoin) {
-                let dialogMsg = {
-                    ViewType: 1,
-                    TileName : '提 示',
-                    LeftBtnName: '取 消',
-                    RightBtnName : '去兑换',
-                    RightBtnClick : function () {
-                        appInstance.gameAgent().addPopUI(GameResConfig.Ui.CoinShopLayer)
-                    }.bind(this),
-
-                    SayText : '您的金币不足，是否去商城兑换'
-                }
-                appInstance.gameAgent().addDialogUI(dialogMsg)
-            } else {
-                this.toGamePlay()
-            }
+            let fileName = "result_share.jpg";
+            appInstance.nativeApi().shareImage('WEIXIN_CIRCLE', fileName)
+            // GameUtil.delayBtn(sender);
+            // //判断是否观看视频
+            // if (this._myCoin < this._minCoin && this._usedWatchNum < this._watchMaxNum) {
+            //     if (cc.sys.os === cc.sys.OS_WINDOWS) {
+            //         this._isWatch = true
+            //         appInstance.gameAgent().httpGame().AcceptAwardReq()
+            //     } else {
+            //         appInstance.nativeApi().showRewardVideo()
+            //     }
+            // } else if (this._myCoin < this._minCoin) {
+            //     let dialogMsg = {
+            //         ViewType: 1,
+            //         TileName: '提 示',
+            //         LeftBtnName: '取 消',
+            //         RightBtnName: '去兑换',
+            //         RightBtnClick: function () {
+            //             appInstance.gameAgent().addPopUI(GameResConfig.Ui.CoinShopLayer)
+            //         }.bind(this),
+            //
+            //         SayText: '您的金币不足，是否去商城兑换'
+            //     }
+            //     appInstance.gameAgent().addDialogUI(dialogMsg)
+            // } else {
+            //     this.toGamePlay()
+            // }
         },
 
         /**
@@ -158,7 +200,7 @@ load('module/mahjong/ui/DeskResultLayer', function () {
          */
         updateNextGame: function () {
             this._isCompleteHttp = true
-            this._usedWatchNum = this._usedWatchNum+1
+            this._usedWatchNum = this._usedWatchNum + 1
             this.updateNextBtnView()
             if (this._isCompleteTcp) {
                 this.updateGo();
@@ -166,7 +208,7 @@ load('module/mahjong/ui/DeskResultLayer', function () {
         },
 
         updateGo: function () {
-            if (this._myCoin>=this._minCoin) {
+            if (this._myCoin >= this._minCoin) {
                 this.toGamePlay()
                 this._isCompleteTcp = false
                 this._isCompleteHttp = false
@@ -192,12 +234,27 @@ load('module/mahjong/ui/DeskResultLayer', function () {
 
             //更新我的金币
             this._myCoin = appInstance.dataManager().getUserData().coin
+            let myPid = appInstance.dataManager().getUserData().pid;
+            inviteUrl = 'https://share.hehefun.cn/index.html?installPid=' + myPid;
+
+
         },
 
         initView: function (pData) {
             this.initData(pData)
             this.PlayerCell.setVisible(false)
             this.InfoCell.setVisible(false)
+            this.bg_share.setVisible(false)
+            let sex = appInstance.dataManager().getUserData().sex;
+            let pname = appInstance.dataManager().getUserData().pname;
+            let sdkphotourl = appInstance.dataManager().getUserData().sdkphotourl;
+            this.share_tv_name.setString(pname)
+            // GameUtil.loadUrlImg(this.share_img_photo, sdkphotourl)
+            // if (sex == "0") {
+            //     this.share_img_sex.loadTexture('res/common/sex_man.png')
+            // } else {
+            //     this.share_img_sex.loadTexture('res/common/sex_woman.png')
+            // }
 
             let initInfo = {}
             initInfo._index = 0
@@ -234,9 +291,6 @@ load('module/mahjong/ui/DeskResultLayer', function () {
             }
 
 
-
-
-
             if (this._isMatch) {
                 this.BackHallBtn.setVisible(false)
                 this.InviteFriendBtn.setVisible(false)
@@ -260,10 +314,10 @@ load('module/mahjong/ui/DeskResultLayer', function () {
          * 更新下一局按钮样式
          */
         updateNextBtnView: function () {
-            if (this._myCoin<this._minCoin) {
+            if (this._myCoin < this._minCoin) {
                 this.NextGameBtn.getChildByName('Image_3').setVisible(true)
                 this.NextGameBtn.getChildByName('Text_3').setVisible(true)
-                this.NextGameBtn.getChildByName('Text_3').setString('剩余:'+(parseInt(this._watchMaxNum)-parseInt(this._usedWatchNum))+'/'+this._watchMaxNum)
+                this.NextGameBtn.getChildByName('Text_3').setString('剩余:' + (parseInt(this._watchMaxNum) - parseInt(this._usedWatchNum)) + '/' + this._watchMaxNum)
                 this.NextGameBtn.getChildByName('Text_1').setPosition(110.46, 54.86)
             } else {
                 this.NextGameBtn.getChildByName('Image_3').setVisible(false)
@@ -312,7 +366,7 @@ load('module/mahjong/ui/DeskResultLayer', function () {
                 posX += cardLen
             }
 
-            if ( pChiList.length) {
+            if (pChiList.length) {
                 posX += offLen
             }
             for (let i = 0; i < pChiList.length; ++i) {
@@ -378,6 +432,7 @@ load('module/mahjong/ui/DeskResultLayer', function () {
 
         initPlayerCell: function (index, pinfo) {
             this.initPlayerInfo(index, pinfo)
+            cc.log("-----------pinfo" + JSON.stringify(pinfo))
 
             let cell = this.PlayerCell.clone()
             this._playerCell[index] = cell
@@ -391,7 +446,7 @@ load('module/mahjong/ui/DeskResultLayer', function () {
             let aniNd = cell.getChildByName('aniNd')
             let winNum = cell.getChildByName('winNum')
 
-            GameUtil.loadUrlImg(pinfo.pPhoto,head)
+            GameUtil.loadUrlImg(pinfo.pPhoto, head)
 
             name.setString(pinfo.nickName)
             winNum.setString(pinfo.pOffsetCoins)
@@ -408,13 +463,14 @@ load('module/mahjong/ui/DeskResultLayer', function () {
 
             let InfoBtn = cell.getChildByName('InfoBtn')
             InfoBtn._index = index
-            InfoBtn.addClickEventListener(function(sender, et) {
+            InfoBtn.addClickEventListener(function (sender, et) {
                 this.onInfoBtnClick(sender)
             }.bind(this))
         },
 
         onEnter: function () {
             this._super()
+            appInstance.nativeApi().getInvitationCode(inviteUrl)
         },
         onExit: function () {
             this._super()

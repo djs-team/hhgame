@@ -14,6 +14,7 @@ import com.deepsea.mua.im.utils.EaseSmileUtils;
 import com.deepsea.mua.stub.adapter.BaseBindingAdapter;
 import com.deepsea.mua.stub.adapter.BindingViewHolder;
 import com.deepsea.mua.stub.entity.FriendInfoBean;
+import com.deepsea.mua.stub.utils.PageJumpUtils;
 import com.deepsea.mua.stub.utils.SexResUtils;
 import com.deepsea.mua.stub.utils.StateUtils;
 import com.deepsea.mua.stub.utils.ViewBindUtils;
@@ -55,10 +56,7 @@ public class FriendListAdapter extends BaseBindingAdapter<FriendInfoBean, ItemFr
         if (item.getTime() != 0) {
             holder.binding.tvTime.setText(DateUtils.getTimestampString(new Date(item.getTime())));
         }
-        if (item.getLastMsg() != null) {
-            holder.binding.tvLastMessage.setText(EaseSmileUtils.getSmiledText(mContext, EaseCommonUtils.getMessageDigest(item.getLastMsg(), mContext)),
-                    TextView.BufferType.SPANNABLE);
-        }
+       ViewBindUtils.setText(holder.binding.tvLastMessage,item.getIntro());
         if (item.getUnReadCount() > 0) {
             ViewBindUtils.setVisible(holder.binding.unreadMsgNumber, true);
             ViewBindUtils.setText(holder.binding.unreadMsgNumber, item.getUnReadCount() + "");
@@ -74,6 +72,8 @@ public class FriendListAdapter extends BaseBindingAdapter<FriendInfoBean, ItemFr
             StateUtils.setState(holder.binding.tvStateDesc, str);
         }
         StateUtils.setOnlineState(holder.binding.tvOnline, str);
-
+        ViewBindUtils.RxClicks(holder.binding.ivPhoto, o -> {
+            PageJumpUtils.jumpToProfile(item.getUser_id());
+        });
     }
 }

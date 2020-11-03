@@ -140,6 +140,7 @@ load('game/ui/layer/arena/ArenaLayer', function () {
                     cell.getChildByName('statusPnl').getChildByName('yunDanPnl').getChildByName('Text_58_0').setString(expressCode)
                     cell.getChildByName('statusPnl').getChildByName('yunDanPnl').getChildByName('Button_13_0').addClickEventListener(function (sender,dt) {
                         appInstance.nativeApi().copy(data.expressCode)
+                        appInstance.gameAgent().Tips('复制成功')
                     }.bind(this))
                     break
                 default:

@@ -795,7 +795,7 @@
                 "Scale9Height": 1,
                 "AnchorPoint": {},
                 "Position": {
-                  "X": 560.7576,
+                  "X": 569.76,
                   "Y": 487.1913
                 },
                 "Scale": {
@@ -805,16 +805,16 @@
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.4381,
+                  "X": 0.4451,
                   "Y": 0.6767
                 },
                 "PreSize": {
-                  "X": 0.0781,
-                  "Y": 0.0417
+                  "X": 0.1234,
+                  "Y": 0.0486
                 },
-                "LeftMargin": 560.7576,
-                "RightMargin": 619.2424,
-                "TopMargin": 202.8087,
+                "LeftMargin": 569.76,
+                "RightMargin": 552.24,
+                "TopMargin": 197.8087,
                 "BottomMargin": 487.1913,
                 "Tag": 325,
                 "Children": [
@@ -834,8 +834,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 50.0,
-                      "Y": 15.0
+                      "X": 74.0,
+                      "Y": 17.5
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -843,22 +843,23 @@
                     },
                     "CColor": {},
                     "IconVisible": false,
-                    "PositionPercentXEnabled": true,
                     "PositionPercentYEnabled": true,
                     "PrePosition": {
-                      "X": 0.5,
+                      "X": 0.4684,
                       "Y": 0.5
                     },
                     "PreSize": {
-                      "X": 1.19,
-                      "Y": 1.0
+                      "X": 0.9241,
+                      "Y": 0.8571
                     },
-                    "LeftMargin": -9.5,
-                    "RightMargin": -9.5,
+                    "LeftMargin": 1.0,
+                    "RightMargin": 11.0,
+                    "TopMargin": 2.5,
+                    "BottomMargin": 2.5,
                     "Tag": 326,
                     "ActionTag": 1558482793,
                     "Size": {
-                      "X": 119.0,
+                      "X": 146.0,
                       "Y": 30.0
                     },
                     "Name": "Image_24",
@@ -867,7 +868,7 @@
                   {
                     "IsCustomSize": true,
                     "FontSize": 18,
-                    "LabelText": "这是玩家昵称",
+                    "LabelText": "这是玩家昵称...",
                     "HorizontalAlignmentType": "HT_Center",
                     "VerticalAlignmentType": "VT_Center",
                     "OutlineColor": {
@@ -886,8 +887,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 50.0,
-                      "Y": 15.0
+                      "X": 76.0,
+                      "Y": 17.5
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -897,26 +898,22 @@
                     "IconVisible": false,
                     "PositionPercentYEnabled": true,
                     "PrePosition": {
-                      "X": 0.5,
+                      "X": 0.481,
                       "Y": 0.5
                     },
-                    "PercentWidthEnable": true,
-                    "PercentHeightEnable": true,
-                    "PercentWidthEnabled": true,
-                    "PercentHeightEnabled": true,
                     "PreSize": {
-                      "X": 1.08,
-                      "Y": 0.6
+                      "X": 0.8861,
+                      "Y": 0.6571
                     },
-                    "LeftMargin": -4.0,
-                    "RightMargin": -4.0,
+                    "LeftMargin": 6.0,
+                    "RightMargin": 12.0,
                     "TopMargin": 6.0,
                     "BottomMargin": 6.0,
                     "Tag": 327,
                     "ActionTag": 221853161,
                     "Size": {
-                      "X": 108.0,
-                      "Y": 18.0
+                      "X": 140.0,
+                      "Y": 23.0
                     },
                     "Name": "nameText",
                     "ctype": "TextObjectData"
@@ -961,8 +958,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 124.78,
-                      "Y": 16.13
+                      "X": 161.78,
+                      "Y": 19.13
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -971,17 +968,17 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 1.2478,
-                      "Y": 0.5377
+                      "X": 1.0239,
+                      "Y": 0.5466
                     },
                     "PreSize": {
-                      "X": 0.33,
-                      "Y": 1.1333
+                      "X": 0.2089,
+                      "Y": 0.9714
                     },
-                    "LeftMargin": 108.28,
-                    "RightMargin": -41.28,
-                    "TopMargin": -3.13,
-                    "BottomMargin": -0.87,
+                    "LeftMargin": 145.28,
+                    "RightMargin": -20.28,
+                    "TopMargin": -1.13,
+                    "BottomMargin": 2.13,
                     "Tag": 328,
                     "ActionTag": -1895661144,
                     "Size": {
@@ -994,8 +991,8 @@
                 ],
                 "ActionTag": 194411968,
                 "Size": {
-                  "X": 100.0,
-                  "Y": 30.0
+                  "X": 158.0,
+                  "Y": 35.0
                 },
                 "Name": "namePnl",
                 "ctype": "PanelObjectData"

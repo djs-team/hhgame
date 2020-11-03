@@ -4,6 +4,7 @@ load('game/public/HttpGame', function () {
     let ResConfig = include('game/config/ResConfig')
     let GameEvent = include('game/config/GameEvent')
     let LocalSave = include('game/public/LocalSave')
+    let GameUtil = include('game/public/GameUtil')
 
     let Ui = ResConfig.Ui
     let nickName = "";
@@ -215,6 +216,7 @@ load('game/public/HttpGame', function () {
                 return
             }
             msg.pRole = msg.roleCode
+            msg.pname = GameUtil.onForMatTxtLength(msg.pname,12,'...')
             let saveKey = [
                 'pid',
                 'pname',

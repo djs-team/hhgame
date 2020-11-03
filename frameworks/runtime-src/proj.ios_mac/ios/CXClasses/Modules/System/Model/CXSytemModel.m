@@ -28,7 +28,7 @@
              @"AccessKeySecret" : @[@"AccessKeySecret", @"accessKeySecretOss"],
              @"Expiration" : @[@"Expiration", @"expiration"],
              @"SecurityToken" : @[@"SecurityToken", @"token"],
-             @"Endpoint" : @[@"Endpoint", @"endpoint"],
+             @"Endpoint" : @[@"Expiration", @"endpoint"],
              @"BucketName" : @[@"BucketName", @"bucketName"],
              };
 }

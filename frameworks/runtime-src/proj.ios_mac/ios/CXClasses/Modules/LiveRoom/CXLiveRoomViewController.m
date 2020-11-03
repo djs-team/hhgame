@@ -497,7 +497,7 @@
                     [[CXClientModel instance].agoraEngineManager.engine setClientRole:AgoraClientRoleAudience];
                 } else {
                     [CXClientModel instance].agoraEngineManager.offMic = NO;
-                    
+                    [[CXClientModel instance].agoraEngineManager.engine setClientRole:AgoraClientRoleBroadcaster];
                     CXLiveRoomSeatView *seatView = [self.roomUIView.roomSeatsView.seats objectForKey:seatIndex];
                     [seatView addAgoraRtc:[[CXClientModel instance].userId numberValue]];
                 }
@@ -525,8 +525,6 @@
                     [CXClientModel instance].isAgreeInviteJoinRoom = NO;
                     [self replyInvite:YES isAgree:@(1) inviteMicroId:[CXClientModel instance].currentAgreeInviteMikeModel.invite_id];
                 }
-                
-                
             }
                 break;
             case SocketMessageIDUserJoinRoom: { // 加入房间
@@ -571,6 +569,7 @@
                     if (selfSeatIndex && [selfSeatIndex isEqual:indexPath]) {
                         [CXClientModel instance].agoraEngineManager.offMic = NO;
                         self.roomUIView.isChangeMir = YES;
+                        [[CXClientModel instance].agoraEngineManager.engine setClientRole:AgoraClientRoleBroadcaster];
                     }
                     
                     [self.roomUIView.messageListView addModel:userSitdown];

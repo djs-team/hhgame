@@ -585,7 +585,7 @@ static AppDelegate s_sharedApplication;
     //得到选择后沙盒中图片的完整路径
     NSString *filePath = [[NSString alloc]initWithFormat:@"%@",[imgPath stringByAppendingPathComponent:fileName]];
 
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [AppController dispatchCustomEventWithMethod:method param:filePath];
     });
 }

@@ -178,6 +178,12 @@
           </Folder>
         </Folder>
         <Folder Name="area">
+          <Image Name="1.png" />
+          <Image Name="2.png" />
+          <Image Name="3.png" />
+          <Image Name="4.png" />
+          <Image Name="5.png" />
+          <Image Name="6.png" />
           <Image Name="dqxz_1.png" />
           <Image Name="dqxz_10.png" />
           <Image Name="dqxz_11.png" />

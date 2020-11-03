@@ -41,7 +41,13 @@ load('game/ui/layer/arena/ArenaLayer', function () {
                 'myAwardPnl': { },
                 'myAwardPnl/awardCell': { },
                 'myAwardPnl/awardList': { },
-                'myAwardPnl/awardCloseBtn': { onClicked: this.onAwardCloseBtnClick},
+                'myAwardPnl/awardCloseBtn': { onClicked: this.onAwardCloseBtnClick },
+                'exchangePnl': {},
+                'exchangePnl/goodsUrl': {},
+                'exchangePnl/phonePnl': {},
+                'exchangePnl/phonePnl/phoneTextField': {},
+                'exchangePnl/rechargePhoneBtn': {},
+                'exchangePnl/phoneCloseBtn': { onClicked: this.onPhoneCloseBtnClick },
             }
         },
         onCreate: function () {
@@ -71,6 +77,9 @@ load('game/ui/layer/arena/ArenaLayer', function () {
             this.pupupPnl.setVisible(false)
             this.myAwardPnl.setVisible(false)
         },
+        onPhoneCloseBtnClick: function () {
+            this.exchangePnl.setVisible(false)
+        },
         initView: function () {
             this.awardList.setScrollBarEnabled(false)
             this.commonPgPnl.setVisible(true)
@@ -82,6 +91,7 @@ load('game/ui/layer/arena/ArenaLayer', function () {
             this.areanCell.setVisible(false)
             this.rewardsCell.setVisible(false)
             this.leftCell.setVisible(false)
+            this.exchangePnl.setVisible(false)
 
         },
         onUpdateAwardList: function (msg) {
@@ -104,11 +114,17 @@ load('game/ui/layer/arena/ArenaLayer', function () {
                 cell.getChildByName('bgPic_1').setVisible(false)
                 cell.getChildByName('bgPic_2').setVisible(true)
             }
+            cell._sendMsg = {
+                orderCode : data.orderCode,
+                propValue : data.propValue,
+                goodsUrl : data. goodsUrl,
+            }
             let size = {
                 height : 56.00,
                 width : 56.00
             }
             this.onLoadUrlImg(data.goodsUrl,size,cell.getChildByName('awardContentPnl').getChildByName('awardImg'))
+            cell.setName(data.orderCode)
             cell.getChildByName('awardContentPnl').getChildByName('awardImg').getChildByName('awardText').setString(data.goodsName);
             cell.getChildByName('timeText').setString(this.onFormatDateTime(data.createTime));
             switch (data.status) {
@@ -117,8 +133,8 @@ load('game/ui/layer/arena/ArenaLayer', function () {
                     cell.getChildByName('statusPnl').getChildByName('Button_13').setVisible(true)
                     cell.getChildByName('statusPnl').getChildByName('yunDanPnl').setVisible(false)
                     cell.getChildByName('statusPnl').getChildByName('Button_13').addClickEventListener(function (sender,dt) {
-                        GameUtil.delayBtn(sender);
-
+                        GameUtil.delayBtn(sender)
+                        this.phoneExchange(cell._sendMsg)
                     }.bind(this))
                     break
                 case 1:
@@ -132,20 +148,98 @@ load('game/ui/layer/arena/ArenaLayer', function () {
                     cell.getChildByName('statusPnl').getChildByName('Text_56').setString('已完成')
                     cell.getChildByName('statusPnl').getChildByName('Button_13').setVisible(false)
                     cell.getChildByName('statusPnl').getChildByName('yunDanPnl').setVisible(true)
-                    let expressCode = '';
-                    for (let j=0; j<8; j++) {
-                        expressCode = expressCode+data.expressCode[j]
+                    if (data.expressCode != '') {
+                        let expressCode = '';
+                        for (let j=0; j<8; j++) {
+                            expressCode = expressCode+data.expressCode[j]
+                        }
+                        expressCode = expressCode+'...';
+                        cell.getChildByName('statusPnl').getChildByName('yunDanPnl').getChildByName('Text_58_0').setString(expressCode)
+                        cell.getChildByName('statusPnl').getChildByName('yunDanPnl').getChildByName('Button_13_0').addClickEventListener(function (sender,dt) {
+                            appInstance.nativeApi().copy(data.expressCode)
+                        }.bind(this))
                     }
-                    expressCode = expressCode+'...';
-                    cell.getChildByName('statusPnl').getChildByName('yunDanPnl').getChildByName('Text_58_0').setString(expressCode)
-                    cell.getChildByName('statusPnl').getChildByName('yunDanPnl').getChildByName('Button_13_0').addClickEventListener(function (sender,dt) {
-                        appInstance.nativeApi().copy(data.expressCode)
-                    }.bind(this))
                     break
                 default:
                     break
             }
         },
+
+        phoneExchange: function (data) {
+            this.exchangePnl.setVisible(true)
+            let size = {
+                height : 223.00,
+                width : 130.00
+            }
+            this.onLoadUrlImg(data.goodsUrl,size,this.exchangePnl.getChildByName('goodsUrl'))
+            this.rechargePhoneBtn.addClickEventListener(function (sender,et) {
+                GameUtil.delayBtn(sender);
+                this.onRechargePhoneBtnClick(data.orderCode)
+            }.bind(this))
+        },
+
+        onRechargePhoneBtnClick: function (orderCode) {
+
+            let pnoneNum = this.phoneTextField.getString()
+            if(!(/^1[3|4|5|7|8][0-9]\d{8,11}$/.test(pnoneNum))){
+                appInstance.gameAgent().Tips('手机号格式异常，请检查后重新输入')
+                return
+            }
+
+            let msg = {
+                orderCode : orderCode,
+                mobile : pnoneNum
+            }
+            appInstance.gameAgent().httpGame().FUKAMATERIAEXCHANGEReq(msg)
+        },
+
+        onExchangeOnlineResult: function (data) {
+            let status = data.status
+            let orderCode = data.orderCode
+            let isRefresh = true
+            switch (status) {
+                case 0:
+                    isRefresh = false
+                    appInstance.gameAgent().Tips('兑换成功')
+                    this.onChangeRewardsCellData(orderCode)
+                    break
+                case 106:
+                    appInstance.gameAgent().Tips('订单不存在')
+                    break
+                case 108:
+                    appInstance.gameAgent().Tips('订单已处理')
+                    break
+                case 67:
+                    isRefresh = false
+                    appInstance.gameAgent().Tips('手机号格式异常，请检查后重新输入')
+                    break
+                case 107:
+                    isRefresh = false
+                    appInstance.gameAgent().Tips('该商品不可兑换，请联系客服')
+                    break
+                default:
+                    isRefresh = false
+                    appInstance.gameAgent().Tips('充值失败，请重试')
+                    break
+            }
+
+            if(isRefresh){
+                this.onPhoneCloseBtnClick()
+                this.phoneTextField.setString('请输入充值手机号')
+            }
+        },
+
+        onChangeRewardsCellData: function (orderCode) {
+            let cell = this.awardList.getChildByName(orderCode)
+            if (cell) {
+                cell.getChildByName('statusPnl').getChildByName('Text_56').setVisible(true)
+                cell.getChildByName('statusPnl').getChildByName('Button_13').setVisible(false)
+                cell.getChildByName('statusPnl').getChildByName('yunDanPnl').setVisible(false)
+                this.phoneTextField.setString('请输入充值手机号')
+            }
+            this.onPhoneCloseBtnClick()
+        },
+
         onLoadUrlImg: function (url,size,cell) {
             cc.loader.loadImg(url, { isCrossOrigin: false },function(err,texture){
                 if (!err && texture) {

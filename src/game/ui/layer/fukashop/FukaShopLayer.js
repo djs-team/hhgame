@@ -1357,7 +1357,8 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
 
                 }else{
                     cell.getChildByName('exchangeBtn').setVisible(false)
-                    if(data.status == 2 && data.propValue && data.propValue.substr(0,2) != '3,3'){
+                    // if(data.status == 2 && data.propValue && data.propValue.substr(0,2) != '3,3'){
+                    if(data.status == 2 && data.expressCode != ''){
                         cell.getChildByName('copyBtn').setVisible(true)
                         cell.getChildByName('copyBtn').addClickEventListener(function (sender,et) {
                             this.onCopyOrderMessage(sender)

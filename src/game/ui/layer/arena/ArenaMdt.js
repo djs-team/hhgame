@@ -23,6 +23,7 @@ load('game/ui/layer/arena/ArenaMdt', function () {
             return [
                 GameEvent.GET_ARENAMESSAGE,
                 GameEvent.FUKA_MATERIA_LOG,
+                GameEvent.FUKA_MATERIA_EXCHANGE,
             ]
         },
         handleNotification: function (notification) {
@@ -34,6 +35,9 @@ load('game/ui/layer/arena/ArenaMdt', function () {
                     break
                 case GameEvent.FUKA_MATERIA_LOG:
                     this.view.onUpdateAwardList(body)
+                    break
+                case GameEvent.FUKA_MATERIA_EXCHANGE:
+                    this.view.onExchangeOnlineResult(body)
                     break
                 default:
                     break

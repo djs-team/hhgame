@@ -238,11 +238,13 @@
           <Image Name="jsyy.png" />
           <Image Name="rwzx_10.png" />
           <Image Name="rwzx_11.png" />
+          <Image Name="sex_man.png" />
           <Image Name="ssc_1.png" />
           <Image Name="ssc_5.png" />
           <Image Name="xin_anniu_10.png" />
         </Folder>
         <Folder Name="dele">
+          <Image Name="desk_share.png" />
           <Image Name="deskPersonal (1).png" />
           <Image Name="deskPersonal (2).png" />
           <Image Name="liangAction.png" />
@@ -357,6 +359,7 @@
           <Image Name="ssc_bg1.png" />
           <Image Name="ssc_bg2.png" />
           <Image Name="ssc_bg3.png" />
+          <Image Name="ssc_bg4.png" />
         </Folder>
         <Folder Name="result">
           <Image Name="scjb_3.png" />

@@ -62,7 +62,7 @@
               "X": 1.0,
               "Y": 1.0
             },
-            "UserData": "{\"layoutType\":\"showAll\",\"screenAlign\":\"mid\"}",
+            "UserData": "{\"layoutType\":\"maxArea\",\"screenAlign\":\"mid\"}",
             "Tag": 153,
             "ActionTag": -113838399,
             "Size": {
@@ -2068,6 +2068,8 @@
                             "ColorVector": {
                               "ScaleY": 1.0
                             },
+                            "Scale9Width": 1,
+                            "Scale9Height": 1,
                             "AnchorPoint": {},
                             "Position": {
                               "X": 25.0,

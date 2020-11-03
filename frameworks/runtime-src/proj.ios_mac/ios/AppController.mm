@@ -709,7 +709,7 @@ static AppDelegate s_sharedApplication;
 + (void)copyToPasteboard:(NSString *)copyStr {
     UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
     pasteboard.string = copyStr;
-    [[CXTools currentViewController] toast:@"复制成功"];
+//    [[CXTools currentViewController] toast:@"复制成功"];
 }
 
 #pragma mark - ================ OC调用JS ===================

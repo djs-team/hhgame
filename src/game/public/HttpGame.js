@@ -157,6 +157,12 @@ load('game/public/HttpGame', function () {
 
 
         checkHallRedBack: function (msg) {
+            msg.pRole = msg.roleCode
+            let saveKey = [
+                'pRole',
+                'vipCode',//0 不是会员 1周会员 2 月 3 季 4年
+            ]
+            appInstance.dataManager().getUserData().saveMsg(msg, saveKey)
             appInstance.sendNotification(GameEvent.HALL_RED_BACK, msg)
         },
 

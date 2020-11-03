@@ -91,6 +91,7 @@ load('game/ui/scene/HallMdt', function () {
             }
 
             this.view.onUpdateHallRedStatus(data)
+            this.onChangeUsedRole()
         }
 
     })

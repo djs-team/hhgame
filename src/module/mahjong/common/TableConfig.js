@@ -67,7 +67,7 @@ load('module/mahjong/common/TableConfig', function () {
     ]
     // 不想展示 就配置为空字符串
     TableConfig.HuType = {
-        '0': '上庄',
+        '0': '庄家',
         '1': '门清',
         '3': '夹胡',
         '4': '自摸胡',

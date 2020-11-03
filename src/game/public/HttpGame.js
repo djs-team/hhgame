@@ -4,6 +4,7 @@ load('game/public/HttpGame', function () {
     let ResConfig = include('game/config/ResConfig')
     let GameEvent = include('game/config/GameEvent')
     let LocalSave = include('game/public/LocalSave')
+    let GameUtil = include('game/public/GameUtil')
 
     let Ui = ResConfig.Ui
     let nickName = "";
@@ -157,6 +158,12 @@ load('game/public/HttpGame', function () {
 
 
         checkHallRedBack: function (msg) {
+            msg.pRole = msg.roleCode
+            let saveKey = [
+                'pRole',
+                'vipCode',//0 不是会员 1周会员 2 月 3 季 4年
+            ]
+            appInstance.dataManager().getUserData().saveMsg(msg, saveKey)
             appInstance.sendNotification(GameEvent.HALL_RED_BACK, msg)
         },
 
@@ -209,6 +216,7 @@ load('game/public/HttpGame', function () {
                 return
             }
             msg.pRole = msg.roleCode
+            msg.pname = GameUtil.onForMatTxtLength(msg.pname,12,'...')
             let saveKey = [
                 'pid',
                 'pname',

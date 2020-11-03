@@ -128,7 +128,7 @@ load('game/ui/scene/HallScene', function () {
         onTaskClick: function (sender) {
             GameUtil.delayBtn(sender);
             this.taskPnl.getChildByName('redImg').setVisible(false)
-            appInstance.gameAgent().addPopUI(ResConfig.Ui.TaskLayer)
+            appInstance.gameAgent().addUI(ResConfig.Ui.TaskLayer)
         },
         onCashCowClick: function (sender) {
             GameUtil.delayBtn(sender);
@@ -139,7 +139,7 @@ load('game/ui/scene/HallScene', function () {
 
         onSignBtnClick: function (sender) {
             GameUtil.delayBtn(sender);
-            appInstance.gameAgent().addPopUI(ResConfig.Ui.SignLayer)
+            appInstance.gameAgent().addUI(ResConfig.Ui.SignLayer)
         },
 
         onMemberClick: function (sender) {

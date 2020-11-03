@@ -137,7 +137,6 @@ load('game/ui/layer/personal/PersonalLayer', function () {
         },
 
         onChangePicBtnClick: function () {
-            cc.log("=======获取上传图片token=========");
             let msg = {}
             appInstance.gameAgent().httpGame().getUpDatePictureTokenReq(msg)
         },
@@ -146,7 +145,6 @@ load('game/ui/layer/personal/PersonalLayer', function () {
         },
 
         onChangePicSuccess: function (msg) {
-            cc.log("--------------onChangePicSuccess" + msg)
             //更新头像
             let msgPhoto = {}
             msgPhoto.photoUrl = msg;
@@ -189,7 +187,7 @@ load('game/ui/layer/personal/PersonalLayer', function () {
                 cc.log("onConfirmUpdateNameClick nameNd is null!")
                 return;
             }
-            let nameLength = this.onCheckedNameLength(nameNd);
+            let nameLength = this.onCheckedNameLength(nameNd)
             if (nameLength > 12) {
                 cc.log("onConfirmUpdateNameClick nameNd is too long!")
                 return;

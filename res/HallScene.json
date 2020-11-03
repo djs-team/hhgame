@@ -2489,47 +2489,28 @@
             "Tag": 25,
             "Children": [
               {
-                "FontSize": 14,
-                "ButtonText": "",
-                "TextColor": {
-                  "R": 65,
-                  "G": 65,
-                  "B": 70
+                "ClipAble": false,
+                "BackColorAlpha": 102,
+                "SingleColor": {
+                  "R": 150,
+                  "G": 200
                 },
-                "DisabledFileData": {
-                  "Type": "Default",
-                  "Path": "Default/Button_Disable.png",
-                  "Plist": ""
+                "FirstColor": {
+                  "R": 150,
+                  "G": 200
                 },
-                "NormalFileData": {
-                  "Type": "Normal",
-                  "Path": "hall/dtjm_1_1.png",
-                  "Plist": ""
+                "EndColor": {},
+                "ColorVector": {
+                  "ScaleY": 1.0
                 },
-                "Scale9Enable": true,
-                "Scale9OriginX": 15,
-                "Scale9OriginY": 11,
-                "Scale9Width": 67,
-                "Scale9Height": 76,
-                "OutlineColor": {
-                  "G": 0,
-                  "B": 0
-                },
-                "ShadowColor": {
-                  "R": 110,
-                  "G": 110,
-                  "B": 110
-                },
-                "ShadowOffsetX": 2.0,
-                "ShadowOffsetY": -2.0,
                 "TouchEnable": true,
                 "AnchorPoint": {
                   "ScaleX": 0.5,
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 59.7991,
-                  "Y": 659.6916
+                  "X": 59.8,
+                  "Y": 659.69
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -2545,18 +2526,18 @@
                   "X": 0.0758,
                   "Y": 0.1348
                 },
-                "LeftMargin": 11.2991,
-                "RightMargin": 1171.7009,
-                "TopMargin": 11.7684,
-                "BottomMargin": 611.1516,
-                "Tag": 29,
-                "ActionTag": 1698666448,
+                "LeftMargin": 11.3,
+                "RightMargin": 1171.7,
+                "TopMargin": 11.77,
+                "BottomMargin": 611.15,
+                "Tag": 363,
+                "ActionTag": -2057188791,
                 "Size": {
                   "X": 97.0,
                   "Y": 97.08
                 },
                 "Name": "photoBtn",
-                "ctype": "ButtonObjectData"
+                "ctype": "PanelObjectData"
               },
               {
                 "FontSize": 18,
@@ -2598,7 +2579,7 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 144.6594,
+                  "X": 144.66,
                   "Y": 665.92
                 },
                 "Scale": {
@@ -2615,8 +2596,8 @@
                   "X": 0.0406,
                   "Y": 0.0462
                 },
-                "LeftMargin": 118.6594,
-                "RightMargin": 1109.3406,
+                "LeftMargin": 118.66,
+                "RightMargin": 1109.34,
                 "TopMargin": 37.45,
                 "BottomMargin": 649.29,
                 "Tag": 136,
@@ -2677,7 +2658,7 @@
               },
               {
                 "ClipAble": false,
-                "BackColorAlpha": 0,
+                "BackColorAlpha": 184,
                 "SingleColor": {
                   "R": 150,
                   "G": 200
@@ -2709,11 +2690,11 @@
                   "Y": 0.848
                 },
                 "PreSize": {
-                  "X": 0.0844,
+                  "X": 0.1242,
                   "Y": 0.0472
                 },
                 "LeftMargin": 117.04,
-                "RightMargin": 1054.96,
+                "RightMargin": 1003.96,
                 "TopMargin": 75.4177,
                 "BottomMargin": 610.5823,
                 "Tag": 138,
@@ -2724,6 +2705,7 @@
                       "Path": "hall/dtjm_3.png",
                       "Plist": ""
                     },
+                    "Scale9Enable": true,
                     "Scale9OriginX": 34,
                     "Scale9OriginY": 11,
                     "Scale9Width": 36,
@@ -2733,7 +2715,7 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 52.44,
+                      "X": 79.44,
                       "Y": 16.39
                     },
                     "Scale": {
@@ -2743,31 +2725,32 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.4856,
+                      "X": 0.4996,
                       "Y": 0.4821
                     },
                     "PreSize": {
-                      "X": 1.1204,
+                      "X": 0.9937,
                       "Y": 1.0
                     },
-                    "LeftMargin": -8.06,
-                    "RightMargin": -4.94,
+                    "LeftMargin": 0.44,
+                    "RightMargin": 0.56,
                     "TopMargin": 0.61,
                     "BottomMargin": -0.61,
                     "Tag": 139,
                     "ActionTag": 139071523,
                     "Size": {
-                      "X": 121.0,
+                      "X": 158.0,
                       "Y": 34.0
                     },
                     "Name": "nameBg",
                     "ctype": "ImageViewObjectData"
                   },
                   {
+                    "IsCustomSize": true,
                     "FontSize": 19,
-                    "LabelText": "000000000000",
+                    "LabelText": "000000000000000",
                     "HorizontalAlignmentType": "HT_Center",
-                    "VerticalAlignmentType": "VT_Bottom",
+                    "VerticalAlignmentType": "VT_Center",
                     "OutlineColor": {
                       "G": 0,
                       "B": 0
@@ -2784,7 +2767,7 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 51.0,
+                      "X": 80.0,
                       "Y": 19.0
                     },
                     "Scale": {
@@ -2794,22 +2777,22 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.4722,
+                      "X": 0.5031,
                       "Y": 0.5588
                     },
                     "PreSize": {
-                      "X": 1.1111,
-                      "Y": 0.5588
+                      "X": 0.9748,
+                      "Y": 0.6471
                     },
-                    "LeftMargin": -9.0,
-                    "RightMargin": -3.0,
-                    "TopMargin": 5.5,
-                    "BottomMargin": 9.5,
+                    "LeftMargin": 2.5,
+                    "RightMargin": 1.5,
+                    "TopMargin": 4.0,
+                    "BottomMargin": 8.0,
                     "Tag": 137,
                     "ActionTag": -1983909678,
                     "Size": {
-                      "X": 120.0,
-                      "Y": 19.0
+                      "X": 155.0,
+                      "Y": 22.0
                     },
                     "Name": "name",
                     "ctype": "TextObjectData"
@@ -2817,7 +2800,7 @@
                 ],
                 "ActionTag": 656690230,
                 "Size": {
-                  "X": 108.0,
+                  "X": 159.0,
                   "Y": 34.0
                 },
                 "Name": "namePnl",
@@ -2863,7 +2846,7 @@
                   "Y": 0.9457
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.0625
                 },
                 "LeftMargin": 323.296,
@@ -3131,7 +3114,7 @@
                   "Y": 0.9458
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.0625
                 },
                 "LeftMargin": 558.08,
@@ -3399,7 +3382,7 @@
                   "Y": 0.9444
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.0625
                 },
                 "LeftMargin": 780.08,
@@ -7761,7 +7744,6 @@
         "common/zuanshi.png",
         "Default/Button_Disable.png",
         "Default/Button_Press.png",
-        "hall/dtjm_1_1.png",
         "hall/dtjm_12.png",
         "hall/dtjm_13.png",
         "hall/dtjm_14.png",

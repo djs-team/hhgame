@@ -330,5 +330,26 @@ load('game/public/GameUtil',function () {
         return forMatTxt
     }
 
+    GameUtil.onForMatTxtLength = function (txt,forMatLength,_default) {
+
+        let strLength = 0
+        let resultTxt = ''
+        for (let i = 0; i < txt.length; i++) {
+            if (txt.charCodeAt(i) > 255) //如果是汉字，则字符串长度加2
+                strLength += 2
+            else
+                strLength++
+
+            if(strLength > forMatLength)
+                break
+            resultTxt += txt[i]
+        }
+
+        if(resultTxt != txt && _default)
+            resultTxt += _default
+
+        return resultTxt
+    }
+
     return GameUtil
 })

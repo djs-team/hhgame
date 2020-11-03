@@ -49,11 +49,6 @@ load('module/mahjong/ui/DeskResultLayer', function () {
                 'bmPnl/HuCard': {},
                 'bmPnl/CardCell': {},
                 'bmPnl/InfoCell': {},
-                'bg_share': {},
-                'bg_share/share_img_qr': {},
-                'bg_share/share_img_sex': {},
-                'bg_share/share_tv_name': {},
-                'bg_share/share_img_photo': {},
 
             }
         },
@@ -63,7 +58,6 @@ load('module/mahjong/ui/DeskResultLayer', function () {
             this._msg = msg
             this.registerMediator(new DeskResultLayerMdt(this))
             this.registerEventListener('rewardVideoCallback', this.onRewardVideoCallback)
-            this.registerEventListener('inviteCodeCallback', this.onInviteCodeCallback)
 
         },
 
@@ -84,19 +78,9 @@ load('module/mahjong/ui/DeskResultLayer', function () {
         },
 
         onInviteFriendBtnClick: function () {
-            // let InvitationLayer = include('game/ui/layer/invitation/InvitationLayer')
-            // this.addChild(appInstance.uiManager().createUI(InvitationLayer))
-            this.beforShareImg()
-            // 调用前  将自己想要分享的图片 弄全屏 在截取完后 再重置回原来的状态
-            appInstance.gameAgent().saveCanvas()
-            this.shareImg()
-            this.afterShareImg()
-
-
+            appInstance.gameAgent().addUI(ResConfig.Ui.ShareLayer)
         },
-        onInviteCodeCallback: function (msg) {
-            this.loadCodePg(this.share_img_qr, msg)
-        },
+
         loadCodePg: function (parent, img) {
             let size = parent.getContentSize()
             let sp = new cc.Sprite(img);
@@ -104,52 +88,37 @@ load('module/mahjong/ui/DeskResultLayer', function () {
             sp.setPosition(cc.p(size.width / 2, size.height / 2))
             parent.addChild(sp);
         },
-        // 分享接口
-        shareImg: function () {
-
-        },
-        //分享前处理界面
-        beforShareImg: function () {
-            this.bg_share.setVisible(true)
-
-        },
-        //屏幕截取后  重置界面
-        afterShareImg: function () {
-            this.bg_share.setVisible(false)
-        },
-
 
         /**
          * 点击下一局按钮
          */
         onNextGameBtnClick: function (sender) {
-            let fileName = "result_share.jpg";
-            appInstance.nativeApi().shareImage('WEIXIN_CIRCLE', fileName)
-            // GameUtil.delayBtn(sender);
-            // //判断是否观看视频
-            // if (this._myCoin < this._minCoin && this._usedWatchNum < this._watchMaxNum) {
-            //     if (cc.sys.os === cc.sys.OS_WINDOWS) {
-            //         this._isWatch = true
-            //         appInstance.gameAgent().httpGame().AcceptAwardReq()
-            //     } else {
-            //         appInstance.nativeApi().showRewardVideo()
-            //     }
-            // } else if (this._myCoin < this._minCoin) {
-            //     let dialogMsg = {
-            //         ViewType: 1,
-            //         TileName: '提 示',
-            //         LeftBtnName: '取 消',
-            //         RightBtnName: '去兑换',
-            //         RightBtnClick: function () {
-            //             appInstance.gameAgent().addPopUI(GameResConfig.Ui.CoinShopLayer)
-            //         }.bind(this),
-            //
-            //         SayText: '您的金币不足，是否去商城兑换'
-            //     }
-            //     appInstance.gameAgent().addDialogUI(dialogMsg)
-            // } else {
-            //     this.toGamePlay()
-            // }
+
+            GameUtil.delayBtn(sender);
+            //判断是否观看视频
+            if (this._myCoin < this._minCoin && this._usedWatchNum < this._watchMaxNum) {
+                if (cc.sys.os === cc.sys.OS_WINDOWS) {
+                    this._isWatch = true
+                    appInstance.gameAgent().httpGame().AcceptAwardReq()
+                } else {
+                    appInstance.nativeApi().showRewardVideo()
+                }
+            } else if (this._myCoin < this._minCoin) {
+                let dialogMsg = {
+                    ViewType: 1,
+                    TileName: '提 示',
+                    LeftBtnName: '取 消',
+                    RightBtnName: '去兑换',
+                    RightBtnClick: function () {
+                        appInstance.gameAgent().addPopUI(GameResConfig.Ui.CoinShopLayer)
+                    }.bind(this),
+
+                    SayText: '您的金币不足，是否去商城兑换'
+                }
+                appInstance.gameAgent().addDialogUI(dialogMsg)
+            } else {
+                this.toGamePlay()
+            }
         },
 
         /**
@@ -234,8 +203,7 @@ load('module/mahjong/ui/DeskResultLayer', function () {
 
             //更新我的金币
             this._myCoin = appInstance.dataManager().getUserData().coin
-            let myPid = appInstance.dataManager().getUserData().pid;
-            inviteUrl = 'https://share.hehefun.cn/index.html?installPid=' + myPid;
+
 
 
         },
@@ -244,17 +212,7 @@ load('module/mahjong/ui/DeskResultLayer', function () {
             this.initData(pData)
             this.PlayerCell.setVisible(false)
             this.InfoCell.setVisible(false)
-            this.bg_share.setVisible(false)
-            let sex = appInstance.dataManager().getUserData().sex;
-            let pname = appInstance.dataManager().getUserData().pname;
-            let sdkphotourl = appInstance.dataManager().getUserData().sdkphotourl;
-            this.share_tv_name.setString(pname)
-            // GameUtil.loadUrlImg(this.share_img_photo, sdkphotourl)
-            // if (sex == "0") {
-            //     this.share_img_sex.loadTexture('res/common/sex_man.png')
-            // } else {
-            //     this.share_img_sex.loadTexture('res/common/sex_woman.png')
-            // }
+
 
             let initInfo = {}
             initInfo._index = 0

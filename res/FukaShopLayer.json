@@ -5848,8 +5848,8 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 567.1213,
-                          "Y": 115.7678
+                          "X": 570.0856,
+                          "Y": 126.1506
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -5858,17 +5858,17 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 0.8645,
-                          "Y": 0.3898
+                          "X": 0.869,
+                          "Y": 0.4247
                         },
                         "PreSize": {
-                          "X": 0.2393,
-                          "Y": 0.1684
+                          "X": 0.1677,
+                          "Y": 0.1178
                         },
-                        "LeftMargin": 488.6213,
-                        "RightMargin": 10.3787,
-                        "TopMargin": 156.2322,
-                        "BottomMargin": 90.7678,
+                        "LeftMargin": 515.0856,
+                        "RightMargin": 30.9144,
+                        "TopMargin": 153.3494,
+                        "BottomMargin": 108.6506,
                         "Tag": 335,
                         "Children": [
                           {
@@ -5890,8 +5890,8 @@
                               "ScaleY": 0.5
                             },
                             "Position": {
-                              "X": 75.1902,
-                              "Y": 24.4566
+                              "X": 55.0,
+                              "Y": 17.5
                             },
                             "Scale": {
                               "ScaleX": 1.0,
@@ -5899,18 +5899,20 @@
                             },
                             "CColor": {},
                             "IconVisible": false,
+                            "PositionPercentXEnabled": true,
+                            "PositionPercentYEnabled": true,
                             "PrePosition": {
-                              "X": 0.4789,
-                              "Y": 0.4891
+                              "X": 0.5,
+                              "Y": 0.5
                             },
                             "PreSize": {
-                              "X": 0.3822,
-                              "Y": 0.6
+                              "X": 0.5455,
+                              "Y": 0.8571
                             },
-                            "LeftMargin": 45.1902,
-                            "RightMargin": 51.8098,
-                            "TopMargin": 10.5434,
-                            "BottomMargin": 9.4566,
+                            "LeftMargin": 25.0,
+                            "RightMargin": 25.0,
+                            "TopMargin": 2.5,
+                            "BottomMargin": 2.5,
                             "Tag": 336,
                             "ActionTag": 574403175,
                             "Size": {
@@ -5923,8 +5925,8 @@
                         ],
                         "ActionTag": 66104390,
                         "Size": {
-                          "X": 157.0,
-                          "Y": 50.0
+                          "X": 110.0,
+                          "Y": 35.0
                         },
                         "Name": "exchangeBtn",
                         "ctype": "ButtonObjectData"
@@ -6324,27 +6326,29 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 235.6631,
-                          "Y": 129.4846
+                          "X": 265.08,
+                          "Y": 100.0
                         },
                         "Scale": {
                           "ScaleX": 1.0,
                           "ScaleY": 1.0
                         },
+                        "RotationSkewX": -90.0,
+                        "RotationSkewY": -90.0,
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 0.1841,
-                          "Y": 0.1798
+                          "X": 0.2071,
+                          "Y": 0.1389
                         },
                         "PreSize": {
                           "X": 0.0359,
                           "Y": 0.0639
                         },
-                        "LeftMargin": 212.6631,
-                        "RightMargin": 1021.3369,
-                        "TopMargin": 567.5154,
-                        "BottomMargin": 106.4846,
+                        "LeftMargin": 242.08,
+                        "RightMargin": 991.92,
+                        "TopMargin": 597.0,
+                        "BottomMargin": 77.0,
                         "Tag": 345,
                         "ActionTag": -1556744583,
                         "Size": {
@@ -6353,6 +6357,62 @@
                         },
                         "Name": "phoneImg",
                         "ctype": "ImageViewObjectData"
+                      },
+                      {
+                        "IsCustomSize": true,
+                        "FontSize": 25,
+                        "LabelText": "商品名称",
+                        "OutlineColor": {
+                          "G": 0,
+                          "B": 0
+                        },
+                        "ShadowColor": {
+                          "R": 110,
+                          "G": 110,
+                          "B": 110
+                        },
+                        "ShadowOffsetX": 2.0,
+                        "ShadowOffsetY": -2.0,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 244.554,
+                          "Y": 384.5412
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "RotationSkewX": -90.0,
+                        "RotationSkewY": -90.0,
+                        "CColor": {
+                          "R": 100,
+                          "G": 100,
+                          "B": 100
+                        },
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.1911,
+                          "Y": 0.5341
+                        },
+                        "PreSize": {
+                          "X": 0.2734,
+                          "Y": 0.0389
+                        },
+                        "LeftMargin": 69.554,
+                        "RightMargin": 860.4459,
+                        "TopMargin": 321.4588,
+                        "BottomMargin": 370.5412,
+                        "Tag": 180,
+                        "ActionTag": -892555938,
+                        "Size": {
+                          "X": 350.0,
+                          "Y": 28.0
+                        },
+                        "Name": "phoneGoodsName",
+                        "ctype": "TextObjectData"
                       },
                       {
                         "FontSize": 25,
@@ -6575,8 +6635,8 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 616.73,
-                          "Y": 360.7692
+                          "X": 625.6277,
+                          "Y": 359.2862
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -6585,25 +6645,81 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 0.4818,
-                          "Y": 0.5011
+                          "X": 0.4888,
+                          "Y": 0.499
                         },
                         "PreSize": {
-                          "X": 0.2422,
+                          "X": 0.2816,
                           "Y": 0.9125
                         },
-                        "LeftMargin": 461.73,
-                        "RightMargin": 508.27,
-                        "TopMargin": 30.7308,
-                        "BottomMargin": 32.2692,
+                        "LeftMargin": 445.4177,
+                        "RightMargin": 474.1624,
+                        "TopMargin": 32.2138,
+                        "BottomMargin": 30.7862,
                         "Tag": 351,
                         "ActionTag": -396052134,
                         "Size": {
-                          "X": 310.0,
+                          "X": 360.4199,
                           "Y": 657.0
                         },
                         "Name": "Image_78_0",
                         "ctype": "ImageViewObjectData"
+                      },
+                      {
+                        "IsCustomSize": true,
+                        "FontSize": 25,
+                        "LabelText": "1、广东、重庆、四川、山西联通不支持小面额充值\n2、请务必核对您填写手机号，因输入错误导致的损失，和和麻将概不负责\n3、因运营商会不定期进行充值维护，话费兑换可能有0-72小时\n4、受运营商政策限制，携号转网的号码话费兑奖时能出现充值失败或其他异常情况。为了不影响您的体验，建议使用非携号转网的手机号码进行话费兑奖",
+                        "OutlineColor": {
+                          "G": 0,
+                          "B": 0
+                        },
+                        "ShadowColor": {
+                          "R": 110,
+                          "G": 110,
+                          "B": 110
+                        },
+                        "ShadowOffsetX": 2.0,
+                        "ShadowOffsetY": -2.0,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 623.3224,
+                          "Y": 359.8704
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "RotationSkewX": -90.0,
+                        "RotationSkewY": -90.0,
+                        "CColor": {
+                          "R": 100,
+                          "G": 100,
+                          "B": 100
+                        },
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.487,
+                          "Y": 0.4998
+                        },
+                        "PreSize": {
+                          "X": 0.4671,
+                          "Y": 0.3755
+                        },
+                        "LeftMargin": 324.3851,
+                        "RightMargin": 357.7404,
+                        "TopMargin": 224.9591,
+                        "BottomMargin": 224.6998,
+                        "Tag": 181,
+                        "ActionTag": -1171917928,
+                        "Size": {
+                          "X": 597.8745,
+                          "Y": 270.3411
+                        },
+                        "Name": "Text_4",
+                        "ctype": "TextObjectData"
                       },
                       {
                         "FontSize": 14,

@@ -41,6 +41,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString * sex; // 1男 2 女
 @property (nonatomic, strong) NSString * city; // 省
 @property (nonatomic, strong) NSString * city_two; // 市
+@property (nonatomic, strong) NSString * intro;
 @property (nonatomic, strong) NSString * online;
 @property (nonatomic, strong) NSString * mstatus; //1.同意 2.拒绝 3.申请中
 @property (nonatomic, strong) NSString * gift_id;

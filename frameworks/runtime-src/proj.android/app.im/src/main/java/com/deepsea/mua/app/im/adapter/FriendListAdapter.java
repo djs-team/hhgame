@@ -56,7 +56,7 @@ public class FriendListAdapter extends BaseBindingAdapter<FriendInfoBean, ItemFr
         if (item.getTime() != 0) {
             holder.binding.tvTime.setText(DateUtils.getTimestampString(new Date(item.getTime())));
         }
-       ViewBindUtils.setText(holder.binding.tvLastMessage,item.getIntro());
+        ViewBindUtils.setText(holder.binding.tvLastMessage, item.getIntro());
         if (item.getUnReadCount() > 0) {
             ViewBindUtils.setVisible(holder.binding.unreadMsgNumber, true);
             ViewBindUtils.setText(holder.binding.unreadMsgNumber, item.getUnReadCount() + "");

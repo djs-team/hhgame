@@ -86,6 +86,7 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 'rewardsLogPnl/phoneExchangePnl' : {},
                 'rewardsLogPnl/phoneExchangePnl/phoneTopPnl/phoneImg' : {},
                 'rewardsLogPnl/phoneExchangePnl/phoneTopPnl/phoneNumTextField' : {},
+                'rewardsLogPnl/phoneExchangePnl/phoneTopPnl/phoneGoodsName' : {},
                 'rewardsLogPnl/phoneExchangePnl/phoneMidPnl/rechargePhoneBtn' : { },
 
                 'commonPnl' : {},
@@ -1332,6 +1333,8 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                     orderCode : data.orderCode,
                     num : data.num,
                     propValue : data.propValue,
+                    goodsName : data. goodsName,
+                    goodsUrl : data. goodsUrl,
                 }
 
                 let size = {
@@ -1345,6 +1348,8 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 if(data.status == 0){
                     cell.getChildByName('exchangeBtn').setVisible(true)
                     cell.getChildByName('copyBtn').setVisible(false)
+                    cell.getChildByName('statusText').setVisible(false)
+                    cell.getChildByName('exchangeBtn').setPosition(500, 115)
                     cell.getChildByName('exchangeBtn').addClickEventListener(function (sender,dt) {
                         GameUtil.delayBtn(sender);
                         this.onExchangeOnline(cell._sendMsg)
@@ -1381,6 +1386,13 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 'rewardsLogPnl'
 
             ]
+            this.phoneGoodsName.setString(data.goodsName)
+            let size = {
+                height : 100.00,
+                width : 100.00
+            }
+            this.onLoadUrlImg(data.goodsUrl,size,this.phoneImg)
+
             this.onSetShowElementFunction(elementNameArray)
             this.rechargePhoneBtn.addClickEventListener(function (sender,et) {
                 GameUtil.delayBtn(sender);

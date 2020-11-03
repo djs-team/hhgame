@@ -748,8 +748,6 @@ public class AppActivity extends Cocos2dxActivity {
                 ClipboardManager cm = (ClipboardManager) ccActivity.getSystemService(Context.CLIPBOARD_SERVICE);
                 ClipData mClipData = ClipData.newPlainText("Label", content);
                 cm.setPrimaryClip(mClipData);
-                ToastUtils.showToast("复制成功");
-
             }
         });
 

@@ -1331,27 +1331,27 @@
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="exchangeBtn" ActionTag="66104390" Tag="335" IconVisible="False" LeftMargin="488.6213" RightMargin="10.3787" TopMargin="156.2322" BottomMargin="90.7678" TouchEnable="True" FontSize="14" LeftEage="74" RightEage="74" TopEage="27" BottomEage="27" Scale9OriginX="74" Scale9OriginY="27" Scale9Width="79" Scale9Height="28" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                        <Size X="157.0000" Y="50.0000" />
+                      <AbstractNodeData Name="exchangeBtn" ActionTag="66104390" Tag="335" IconVisible="False" LeftMargin="515.0856" RightMargin="30.9144" TopMargin="153.3494" BottomMargin="108.6506" TouchEnable="True" FontSize="14" LeftEage="74" RightEage="74" TopEage="27" BottomEage="27" Scale9OriginX="74" Scale9OriginY="27" Scale9Width="79" Scale9Height="28" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                        <Size X="110.0000" Y="35.0000" />
                         <Children>
-                          <AbstractNodeData Name="Text_68" ActionTag="574403175" Tag="336" IconVisible="False" LeftMargin="45.1902" RightMargin="51.8098" TopMargin="10.5434" BottomMargin="9.4566" FontSize="30" LabelText="兑换" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                          <AbstractNodeData Name="Text_68" ActionTag="574403175" Tag="336" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="25.0000" RightMargin="25.0000" TopMargin="2.5000" BottomMargin="2.5000" FontSize="30" LabelText="兑换" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                             <Size X="60.0000" Y="30.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="75.1902" Y="24.4566" />
+                            <Position X="55.0000" Y="17.5000" />
                             <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.4789" Y="0.4891" />
-                            <PreSize X="0.3822" Y="0.6000" />
+                            <PrePosition X="0.5000" Y="0.5000" />
+                            <PreSize X="0.5455" Y="0.8571" />
                             <OutlineColor A="255" R="255" G="0" B="0" />
                             <ShadowColor A="255" R="110" G="110" B="110" />
                           </AbstractNodeData>
                         </Children>
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="567.1213" Y="115.7678" />
+                        <Position X="570.0856" Y="126.1506" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.8645" Y="0.3898" />
-                        <PreSize X="0.2393" Y="0.1684" />
+                        <PrePosition X="0.8690" Y="0.4247" />
+                        <PreSize X="0.1677" Y="0.1178" />
                         <TextColor A="255" R="65" G="65" B="70" />
                         <PressedFileData Type="Normal" Path="fukashop/fk_23_z.png" Plist="" />
                         <NormalFileData Type="Normal" Path="fukashop/fk_23_z.png" Plist="" />
@@ -1422,7 +1422,7 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="phoneExchangePnl" Visible="False" ActionTag="946860167" Tag="341" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="phoneExchangePnl" ActionTag="946860167" Tag="341" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="1280.0000" Y="720.0000" />
                 <Children>
                   <AbstractNodeData Name="phoneTopPnl" ActionTag="1720151664" Tag="348" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
@@ -1448,15 +1448,26 @@
                         <PreSize X="0.1047" Y="0.1861" />
                         <FileData Type="Normal" Path="fukashop/fk_40.png" Plist="" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="phoneImg" ActionTag="-1556744583" Tag="345" IconVisible="False" LeftMargin="212.6631" RightMargin="1021.3369" TopMargin="567.5154" BottomMargin="106.4846" Scale9Width="46" Scale9Height="46" ctype="ImageViewObjectData">
+                      <AbstractNodeData Name="phoneImg" ActionTag="-1556744583" Tag="345" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" LeftMargin="242.0800" RightMargin="991.9200" TopMargin="597.0000" BottomMargin="77.0000" Scale9Width="46" Scale9Height="46" ctype="ImageViewObjectData">
                         <Size X="46.0000" Y="46.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="235.6631" Y="129.4846" />
+                        <Position X="265.0800" Y="100.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.1841" Y="0.1798" />
+                        <PrePosition X="0.2071" Y="0.1389" />
                         <PreSize X="0.0359" Y="0.0639" />
                         <FileData Type="Default" Path="Default/ImageFile.png" Plist="" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="phoneGoodsName" ActionTag="-892555938" Tag="180" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" LeftMargin="69.5540" RightMargin="860.4459" TopMargin="321.4588" BottomMargin="370.5412" IsCustomSize="True" FontSize="25" LabelText="商品名称" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="350.0000" Y="28.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="244.5540" Y="384.5412" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="100" G="100" B="100" />
+                        <PrePosition X="0.1911" Y="0.5341" />
+                        <PreSize X="0.2734" Y="0.0389" />
+                        <OutlineColor A="255" R="255" G="0" B="0" />
+                        <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
                       <AbstractNodeData Name="Text_70" ActionTag="938002416" Tag="346" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" LeftMargin="316.4409" RightMargin="863.5591" TopMargin="571.5420" BottomMargin="123.4580" FontSize="25" LabelText="充值号码" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                         <Size X="100.0000" Y="25.0000" />
@@ -1503,15 +1514,26 @@
                   <AbstractNodeData Name="phoneMidPnl" ActionTag="-1569946896" Tag="350" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="1280.0000" Y="720.0000" />
                     <Children>
-                      <AbstractNodeData Name="Image_78_0" ActionTag="-396052134" Tag="351" IconVisible="False" LeftMargin="461.7300" RightMargin="508.2700" TopMargin="30.7308" BottomMargin="32.2692" Scale9Enable="True" LeftEage="35" RightEage="35" TopEage="27" BottomEage="27" Scale9OriginX="35" Scale9OriginY="27" Scale9Width="38" Scale9Height="30" ctype="ImageViewObjectData">
-                        <Size X="310.0000" Y="657.0000" />
+                      <AbstractNodeData Name="Image_78_0" ActionTag="-396052134" Tag="351" IconVisible="False" LeftMargin="445.4177" RightMargin="474.1624" TopMargin="32.2138" BottomMargin="30.7862" Scale9Enable="True" LeftEage="35" RightEage="35" TopEage="27" BottomEage="27" Scale9OriginX="35" Scale9OriginY="27" Scale9Width="38" Scale9Height="30" ctype="ImageViewObjectData">
+                        <Size X="360.4199" Y="657.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="616.7300" Y="360.7692" />
+                        <Position X="625.6277" Y="359.2862" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.4818" Y="0.5011" />
-                        <PreSize X="0.2422" Y="0.9125" />
+                        <PrePosition X="0.4888" Y="0.4990" />
+                        <PreSize X="0.2816" Y="0.9125" />
                         <FileData Type="Normal" Path="fukashop/fk_39.png" Plist="" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="Text_4" ActionTag="-1171917928" Tag="181" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" LeftMargin="324.3851" RightMargin="357.7404" TopMargin="224.9591" BottomMargin="224.6998" IsCustomSize="True" FontSize="25" LabelText="1、广东、重庆、四川、山西联通不支持小面额充值&#xA;2、请务必核对您填写手机号，因输入错误导致的损失，和和麻将概不负责&#xA;3、因运营商会不定期进行充值维护，话费兑换可能有0-72小时&#xA;4、受运营商政策限制，携号转网的号码话费兑奖时能出现充值失败或其他异常情况。为了不影响您的体验，建议使用非携号转网的手机号码进行话费兑奖" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="597.8745" Y="270.3411" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="623.3224" Y="359.8704" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="100" G="100" B="100" />
+                        <PrePosition X="0.4870" Y="0.4998" />
+                        <PreSize X="0.4671" Y="0.3755" />
+                        <OutlineColor A="255" R="255" G="0" B="0" />
+                        <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
                       <AbstractNodeData Name="rechargePhoneBtn" ActionTag="-1786645597" Tag="352" IconVisible="False" LeftMargin="830.4300" RightMargin="365.5700" TopMargin="233.8000" BottomMargin="226.2000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="52" Scale9Height="205" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                         <Size X="84.0000" Y="260.0000" />

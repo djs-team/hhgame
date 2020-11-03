@@ -457,59 +457,6 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="bg_share" ActionTag="-1999189109" UserData="{&quot;layoutType&quot;:&quot;maxArea&quot;,&quot;screenAlign&quot;:&quot;mid&quot;}" Tag="39" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftEage="422" RightEage="422" TopEage="237" BottomEage="237" Scale9OriginX="422" Scale9OriginY="237" Scale9Width="436" Scale9Height="246" ctype="ImageViewObjectData">
-            <Size X="1280.0000" Y="720.0000" />
-            <Children>
-              <AbstractNodeData Name="share_img_qr" ActionTag="-935470316" Tag="84" IconVisible="False" LeftMargin="1378.0078" RightMargin="-144.0078" TopMargin="637.2010" BottomMargin="36.7990" Scale9Width="46" Scale9Height="46" ctype="ImageViewObjectData">
-                <Size X="46.0000" Y="46.0000" />
-                <AnchorPoint ScaleX="3.0434" ScaleY="0.0829" />
-                <Position X="1518.0042" Y="40.6124" />
-                <Scale ScaleX="2.9904" ScaleY="3.0358" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="1.1859" Y="0.0564" />
-                <PreSize X="0.0359" Y="0.0639" />
-                <FileData Type="Default" Path="Default/ImageFile.png" Plist="" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="share_img_sex" ActionTag="-432675626" Tag="86" IconVisible="False" LeftMargin="135.8926" RightMargin="1119.1074" TopMargin="58.2367" BottomMargin="636.7633" Scale9Enable="True" LeftEage="9" RightEage="9" TopEage="9" BottomEage="9" Scale9OriginX="9" Scale9OriginY="9" Scale9Width="11" Scale9Height="12" ctype="ImageViewObjectData">
-                <Size X="25.0000" Y="25.0000" />
-                <AnchorPoint ScaleX="1.2794" ScaleY="-0.3993" />
-                <Position X="167.8776" Y="626.7808" />
-                <Scale ScaleX="1.4082" ScaleY="1.4440" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.1312" Y="0.8705" />
-                <PreSize X="0.0195" Y="0.0347" />
-                <FileData Type="Normal" Path="common/sex_man.png" Plist="" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="share_tv_name" ActionTag="1275902548" Tag="87" IconVisible="False" LeftMargin="178.5915" RightMargin="917.4085" TopMargin="47.6613" BottomMargin="649.3387" IsCustomSize="True" FontSize="20" LabelText="" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="184.0000" Y="23.0000" />
-                <AnchorPoint ScaleX="0.2835" ScaleY="0.8869" />
-                <Position X="230.7555" Y="669.7374" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.1803" Y="0.9302" />
-                <PreSize X="0.1437" Y="0.0319" />
-                <OutlineColor A="255" R="255" G="0" B="0" />
-                <ShadowColor A="255" R="110" G="110" B="110" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="share_img_photo" ActionTag="-1396023127" Tag="89" IconVisible="False" LeftMargin="0.5711" RightMargin="1151.4290" TopMargin="-11.9464" BottomMargin="603.9464" Scale9Width="46" Scale9Height="46" ctype="ImageViewObjectData">
-                <Size X="128.0000" Y="128.0000" />
-                <AnchorPoint ScaleX="0.4058" ScaleY="0.2658" />
-                <Position X="52.5135" Y="637.9688" />
-                <Scale ScaleX="0.7239" ScaleY="0.6894" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.0410" Y="0.8861" />
-                <PreSize X="0.1000" Y="0.1778" />
-                <FileData Type="Default" Path="Default/ImageFile.png" Plist="" />
-              </AbstractNodeData>
-            </Children>
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="640.0000" Y="360.0000" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5000" Y="0.5000" />
-            <PreSize X="1.0000" Y="1.0000" />
-            <FileData Type="Normal" Path="png/ssc_bg4.png" Plist="" />
-          </AbstractNodeData>
         </Children>
       </ObjectData>
     </Content>

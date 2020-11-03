@@ -244,6 +244,7 @@
           <Image Name="xin_anniu_10.png" />
         </Folder>
         <Folder Name="dele">
+          <Image Name="6.png" />
           <Image Name="desk_share.png" />
           <Image Name="deskPersonal (1).png" />
           <Image Name="deskPersonal (2).png" />
@@ -356,12 +357,21 @@
           <Image Name="gexx_5.png" />
         </Folder>
         <Folder Name="png">
+          <Image Name="9.png" />
           <Image Name="ssc_bg1.png" />
           <Image Name="ssc_bg2.png" />
           <Image Name="ssc_bg3.png" />
           <Image Name="ssc_bg4.png" />
         </Folder>
         <Folder Name="result">
+          <Image Name="1.png" />
+          <Image Name="10.png" />
+          <Image Name="11.png" />
+          <Image Name="3.png" />
+          <Image Name="4.png" />
+          <Image Name="5.png" />
+          <Image Name="7.png" />
+          <Image Name="8.png" />
           <Image Name="scjb_3.png" />
           <Image Name="ssc_1.png" />
           <Image Name="ssc_10.png" />
@@ -399,6 +409,7 @@
         <Project Name="MatchJinjiLayer.csd" Type="Layer" />
         <Project Name="MatchResultLayer.csd" Type="Layer" />
         <Project Name="MjPlayScene.csd" Type="Scene" />
+        <Project Name="ShareLayer.csd" Type="Scene" />
       </RootFolder>
     </Group>
   </SolutionFolder>

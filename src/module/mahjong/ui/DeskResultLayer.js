@@ -33,8 +33,8 @@ load('module/mahjong/ui/DeskResultLayer', function () {
         _watchMaxNum: 0,  //最大观看次数
         _usedWatchNum: 0,  //当前观看次数
         _isWatch: false,   //是否处于看视频自动开启下一场阶段
-        _isStart: false,   //是否处理过自动开始下一场阶段的逻辑
-        _isEnoughStart: false,   //是否处理过自动开始下一场阶段的逻辑(金币不足)
+        _isCompleteHttp: false,   //http处理状况
+        _isCompleteTcp: false,   //tcp处理状况
         RES_BINDING: function () {
             return {
                 'topPnl/CloseBtn': { onClicked: this.onCloseBtnClick },
@@ -82,13 +82,16 @@ load('module/mahjong/ui/DeskResultLayer', function () {
         /**
          * 点击下一局按钮
          */
-        onNextGameBtnClick: function () {
+        onNextGameBtnClick: function (sender) {
+            GameUtil.delayBtn(sender);
             //判断是否观看视频
             if (this._myCoin<this._minCoin && this._usedWatchNum<this._watchMaxNum) {
-                if(cc.sys.os === cc.sys.OS_WINDOWS)
+                if(cc.sys.os === cc.sys.OS_WINDOWS){
+                    this._isWatch = true
                     appInstance.gameAgent().httpGame().AcceptAwardReq()
-                else
+                } else {
                     appInstance.nativeApi().showRewardVideo()
+                }
             } else if (this._myCoin<this._minCoin) {
                 let dialogMsg = {
                     ViewType: 1,
@@ -131,17 +134,10 @@ load('module/mahjong/ui/DeskResultLayer', function () {
         changeCoin: function () {
             this._myCoin = appInstance.dataManager().getUserData().coin
             this.updateNextBtnView()
-            if (this._myCoin>=this._minCoin) {
-                if (!this._isStart && this._isWatch) {
-                    this.toGamePlay()
-                    this._isStart = true
-                    this._isWatch = false
-                }
-            } else {
-                if (!this._isEnoughStart && this._isWatch) {
-                    appInstance.gameAgent().Tips('-----------------------金币不足')
-                    this._isEnoughStart = true
-                    this._isWatch = false
+            if (this._isWatch) {
+                this._isCompleteTcp = true
+                if (this._isCompleteHttp) {
+                    this.updateGo();
                 }
             }
         },
@@ -152,6 +148,7 @@ load('module/mahjong/ui/DeskResultLayer', function () {
          */
         onRewardVideoCallback: function (msg) {
             if (msg == "0") {
+                this._isWatch = true
                 appInstance.gameAgent().httpGame().AcceptAwardReq()
             }
         },
@@ -160,19 +157,25 @@ load('module/mahjong/ui/DeskResultLayer', function () {
          * 看完视频发起下一场请求
          */
         updateNextGame: function () {
-            this._isWatch = true
+            this._isCompleteHttp = true
             this._usedWatchNum = this._usedWatchNum+1
             this.updateNextBtnView()
+            if (this._isCompleteTcp) {
+                this.updateGo();
+            }
+        },
+
+        updateGo: function () {
             if (this._myCoin>=this._minCoin) {
-                if (!this._isStart) {
-                    this.toGamePlay()
-                    this._isStart = true
-                }
+                this.toGamePlay()
+                this._isCompleteTcp = false
+                this._isCompleteHttp = false
+                this._isWatch = false
             } else {
-                if (!this._isEnoughStart) {
-                    appInstance.gameAgent().Tips('-----------------------金币不足')
-                    this._isEnoughStart = true
-                }
+                appInstance.gameAgent().Tips('-----------------------金币不足')
+                this._isCompleteTcp = false
+                this._isCompleteHttp = false
+                this._isWatch = false
             }
         },
 

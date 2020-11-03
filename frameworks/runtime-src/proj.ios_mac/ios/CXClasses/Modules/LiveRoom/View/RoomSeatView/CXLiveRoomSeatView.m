@@ -168,11 +168,9 @@
     [self insertSubview:self.session.hostingView aboveSubview:self.seat_bgImageView];
 
     if ([uid isEqualToNumber:[[CXClientModel instance].userId numberValue]] ) {
-        int success = [[CXClientModel instance].agoraEngineManager.engine setClientRole:AgoraClientRoleBroadcaster];
         [[CXClientModel instance].agoraEngineManager.engine setupLocalVideo:self.session.canvas];
         [[CXClientModel instance].agoraEngineManager.engine startPreview];
     } else {
-        [[CXClientModel instance].agoraEngineManager.engine setClientRole:AgoraClientRoleAudience];
         [[CXClientModel instance].agoraEngineManager.engine setupRemoteVideo:self.session.canvas];
     }
     

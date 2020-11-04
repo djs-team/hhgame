@@ -5,9 +5,11 @@ load('game/ui/layer/feedback/FanKuiLayer', function () {
     let GameEvent = include('game/config/GameEvent')
     let FanKuiLayerMdt = include('game/ui/layer/feedback/FanKuiLayerMdt')
     let GameUtil = include('game/public/GameUtil')
+    let GameConfig = include('game/config/GameConfig')
     let layer = BaseLayer.extend({
         _className: 'FanKuiLayer',
         _subMitType : 0,
+        _answerName: 'answer',
         ctor: function () {
             this._super(ResConfig.View.FanKuiLayer)
             this.registerMediator(new FanKuiLayerMdt(this))
@@ -15,6 +17,7 @@ load('game/ui/layer/feedback/FanKuiLayer', function () {
         RES_BINDING: function () {
             return {
                 'pnl/closeBtn': { onClicked: this.oncloseBtnClick },
+                'pnl/commonProblemBtn': { onClicked: this.onCommonProblemBtnClick },
                 'pnl/FeedBackBtn': { onClicked: this.onFeedBackBtnClick },
                 'pnl/MyMsgBtn': { onClicked: this.onMyMsgBtnClick },
 
@@ -36,8 +39,13 @@ load('game/ui/layer/feedback/FanKuiLayer', function () {
                 'pnl/MyMsgPnl/MyMsgListPnl/MyMsgListView': { },
                 'pnl/MyMsgPnl/MyMsgListPnl/MyMsgCell': { },
 
+                'pnl/commonProblemPnl': { },
+                'pnl/commonProblemPnl/problemList': { },
+                'pnl/commonProblemPnl/problemCell': { },
+
             }
         },
+        _isShow: [],
         onEnter: function () {
             this._super()
             this.initView()
@@ -45,10 +53,11 @@ load('game/ui/layer/feedback/FanKuiLayer', function () {
 
         initData: function () {
 
-            this._leftIndex = 0
+            this._leftIndex = 2
         },
 
         initView: function () {
+            this.problemList.setScrollBarEnabled(false)
             this.MyMsgListView.setScrollBarEnabled(false)
             this.MyMsgPnl.setVisible(false)
             this.MyMsgCell.setVisible(false)
@@ -61,7 +70,101 @@ load('game/ui/layer/feedback/FanKuiLayer', function () {
                 this.updateFeedBack()
             } else if (this._leftIndex === 1) {
                 this.updateMyMsg()
+            } else if (this._leftIndex === 2) {
+                this.updateCommonProblem()
             }
+        },
+
+        updateCommonProblem: function () {
+            this.commonProblemBtn.setTouchEnabled(false)
+            this.commonProblemBtn.setBright(false)
+            this.FeedBackBtn.setTouchEnabled(true)
+            this.FeedBackBtn.setBright(true)
+            this.MyMsgBtn.setTouchEnabled(true)
+            this.MyMsgBtn.setBright(true)
+
+            this.commonProblemPnl.setVisible(true)
+            this.problemCell.setVisible(false)
+            this.FeedBackPnl.setVisible(false)
+            this.MyMsgPnl.setVisible(false)
+            this.onCommonProblemView()
+        },
+
+        onCommonProblemView: function (id,isShow) {
+            let problemInfo = GameConfig.feedbackRes
+            let problemInfoLength = Object.keys(problemInfo).length;
+            this.problemList.removeAllChildren()
+            for (let i=0; i<problemInfoLength; i++) {
+                this.onCommonProblemCellView(problemInfo[i],problemInfo[i].id == id,isShow)
+            }
+
+            if(id){
+                cc.log('------------------------------id : ' + id)
+                cc.log('------------------------------this._selectedPosition : ' + JSON.stringify(this._selectedPosition))
+                this.problemList.jumpToItem(id-1,this._selectedPosition,cc.p(0,0));
+            }
+        },
+
+        onCommonProblemCellView: function (data,isSelect,isShow) {
+            let cell = this.problemCell.clone()
+            cell.setVisible(true)
+            this.problemList.pushBackCustomItem(cell)
+            cell.setName(this._answerName + data.id)
+            let showType = false
+            if(isSelect)
+                showType = !isShow
+
+            cell._sendMsg = {
+                id:data.id,
+                num:data.num,
+                question:data.question,
+                answer:data.answer,
+                isShow: showType,
+            }
+
+            if(isSelect)
+                this._selectedPosition = cell.getPosition()
+
+
+            if (showType) {
+                cell.getChildByName('answerBg').setVisible(true)
+                let height = data.num*22
+                cell.getChildByName('answerBg').setContentSize(600, height+25)
+                cell.getChildByName('answerBg').getChildByName('answerText').setContentSize(550, height)
+                cell.setContentSize(713.00, height+110)
+                cell.getChildByName('answerBg').getChildByName('answerText').setPosition(300, (height+25)*0.5)
+                cell.getChildByName('questionBtn').setPosition(356.5, (height+110)*0.85)
+                cell.getChildByName('answerBg').setPosition(356.5, (height+110)*0.38)
+            } else {
+                cell.getChildByName('answerBg').setVisible(false)
+                cell.setContentSize(713.00, 60)
+                cell.getChildByName('questionBtn').setPosition(356.5, 30)
+            }
+            cell.getChildByName('questionBtn').getChildByName('questionText').setString(data.question)
+            cell.getChildByName('answerBg').getChildByName('answerText').setString(data.answer)
+            cell.getChildByName('questionBtn').addClickEventListener(function (sender,dt) {
+                this.onAnswerView(cell._sendMsg)
+            }.bind(this))
+
+        },
+
+        onAnswerView: function (data) {
+            let id = data.id
+            let isShow = this.problemList.getChildByName(this._answerName + id)._sendMsg.isShow
+            this.onCommonProblemView(id,isShow)
+
+            /*for (let j=0; j<this._isShow.length; j++) {
+                let info = this._isShow[j]
+                if (info['id'] == id) {
+                    if (info['isShow']) {
+                        this.onCommonProblemCellView(GameConfig.feedbackRes[info['id']-1], false, true);
+                        this._isShow[j].isShow = false
+                    } else {
+                        this.onCommonProblemCellView(GameConfig.feedbackRes[info['id']-1],true, true);
+                        this._isShow[j].isShow = true
+                    }
+                }
+            }*/
         },
 
         updateMyMsg: function () {
@@ -69,8 +172,10 @@ load('game/ui/layer/feedback/FanKuiLayer', function () {
             this.FeedBackBtn.setBright(true)
             this.MyMsgBtn.setTouchEnabled(false)
             this.MyMsgBtn.setBright(false)
+            this.commonProblemBtn.setTouchEnabled(true)
+            this.commonProblemBtn.setBright(true)
 
-
+            this.commonProblemPnl.setVisible(false)
             this.FeedBackPnl.setVisible(false)
             this.MyMsgPnl.setVisible(true)
             this.MyMsgListPnl.setVisible(true)
@@ -134,7 +239,10 @@ load('game/ui/layer/feedback/FanKuiLayer', function () {
             this.FeedBackBtn.setBright(false)
             this.MyMsgBtn.setTouchEnabled(true)
             this.MyMsgBtn.setBright(true)
+            this.commonProblemBtn.setTouchEnabled(true)
+            this.commonProblemBtn.setBright(true)
 
+            this.commonProblemPnl.setVisible(false)
             this.MyMsgPnl.setVisible(false)
             this.FeedBackPnl.setVisible(true)
             this.EditMidTxt.setString('')
@@ -220,7 +328,10 @@ load('game/ui/layer/feedback/FanKuiLayer', function () {
             return forMatTxt
         },
 
-
+        onCommonProblemBtnClick: function () {
+            this._leftIndex = 2
+            this.updateCommonProblem(true)
+        },
 
         onFeedBackBtnClick: function () {
             this._leftIndex = 0

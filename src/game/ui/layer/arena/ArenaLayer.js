@@ -17,6 +17,7 @@ load('game/ui/layer/arena/ArenaLayer', function () {
         _arenaType: 1,
 
         ctor: function () {
+            appInstance.gameAgent().hideLoading()
             this._super(ResConfig.View.ArenaLayer)
             this.registerMediator(new ArenaMdt(this))
         },
@@ -150,10 +151,15 @@ load('game/ui/layer/arena/ArenaLayer', function () {
                     cell.getChildByName('statusPnl').getChildByName('yunDanPnl').setVisible(true)
                     if (data.expressCode != '') {
                         let expressCode = '';
-                        for (let j=0; j<8; j++) {
-                            expressCode = expressCode+data.expressCode[j]
+                        if (data.expressCode.length>8) {
+                            for (let j=0; j<8; j++) {
+                                expressCode = expressCode+data.expressCode[j]
+                            }
+                            expressCode = expressCode+'...'
+                        } else {
+                            expressCode = data.expressCode
                         }
-                        expressCode = expressCode+'...';
+
                         cell.getChildByName('statusPnl').getChildByName('yunDanPnl').getChildByName('Text_58_0').setString(expressCode)
                         cell.getChildByName('statusPnl').getChildByName('yunDanPnl').getChildByName('Button_13_0').addClickEventListener(function (sender,dt) {
                             appInstance.nativeApi().copy(data.expressCode)
@@ -448,7 +454,8 @@ load('game/ui/layer/arena/ArenaLayer', function () {
                         LeftBtnName: '我知道了',
                         RightBtnName : '成为会员',
                         RightBtnClick : function () {
-                            appInstance.gameAgent().addPopUI(ResConfig.Ui.MemberLayer)
+                            appInstance.gameAgent().showLoading()
+                            appInstance.gameAgent().addUI(ResConfig.Ui.MemberLayer)
                             appInstance.uiManager().removeUI(this)
                         }.bind(this),
 
@@ -480,7 +487,8 @@ load('game/ui/layer/arena/ArenaLayer', function () {
                     LeftBtnName: '取 消',
                     RightBtnName : '确认',
                     RightBtnClick : function () {
-                        appInstance.gameAgent().addPopUI(ResConfig.Ui.CoinShopLayer)
+                        appInstance.gameAgent().showLoading()
+                        appInstance.gameAgent().addUI(ResConfig.Ui.CoinShopLayer)
                         appInstance.uiManager().removeUI(this)
                     }.bind(this),
 

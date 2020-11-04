@@ -8,6 +8,7 @@ load('game/ui/layer/sign/SignLayer', function () {
     let SignLayer = BaseLayer.extend({
         _className: 'signLayer',
         ctor: function () {
+            appInstance.gameAgent().hideLoading()
             this._super(ResConfig.View.SignLayer)
             this.registerMediator(new SignMdt(this))
             this.registerEventListener('rewardVideoCallback', this.onRewardVideoCallback)

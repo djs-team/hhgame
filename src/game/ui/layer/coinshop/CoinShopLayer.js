@@ -14,6 +14,7 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
         _dataZuanMsg: {},
 
         ctor: function () {
+            appInstance.gameAgent().hideLoading()
             this._super(ResConfig.View.CoinShopLayer)
             this.registerMediator(new CoinShopMdt(this))
             this.registerEventListener('rewardVideoCallback', this.onRewardVideoCallback)

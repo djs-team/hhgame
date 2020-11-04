@@ -511,6 +511,9 @@
           <Image Name="yjfk_1.png" />
           <Image Name="yjfk_2.png" />
           <Image Name="yjfk_3.png" />
+          <Image Name="yjfk_4.png" />
+          <Image Name="yjfk_6.png" />
+          <Image Name="yjfk_7.png" />
         </Folder>
         <Folder Name="font">
           <TTF Name="hkhbtW12.ttc" />

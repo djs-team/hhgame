@@ -9,6 +9,7 @@ load('game/ui/layer/feedback/FanKuiLayer', function () {
     let layer = BaseLayer.extend({
         _className: 'FanKuiLayer',
         _subMitType : 0,
+        _answerName: 'answer',
         ctor: function () {
             this._super(ResConfig.View.FanKuiLayer)
             this.registerMediator(new FanKuiLayerMdt(this))
@@ -89,31 +90,43 @@ load('game/ui/layer/feedback/FanKuiLayer', function () {
             this.onCommonProblemView()
         },
 
-        onCommonProblemView: function () {
+        onCommonProblemView: function (id,isShow) {
             let problemInfo = GameConfig.feedbackRes
             let problemInfoLength = Object.keys(problemInfo).length;
+            this.problemList.removeAllChildren()
             for (let i=0; i<problemInfoLength; i++) {
-                let show = {
-                    id:problemInfo[i].id,
-                    isShow:false
-                }
-                this._isShow.push(show)
-                this.onCommonProblemCellView(problemInfo[i])
+                this.onCommonProblemCellView(problemInfo[i],problemInfo[i].id == id,isShow)
+            }
+
+            if(id){
+                cc.log('------------------------------id : ' + id)
+                cc.log('------------------------------this._selectedPosition : ' + JSON.stringify(this._selectedPosition))
+                this.problemList.jumpToItem(id-1,this._selectedPosition,cc.p(0,0));
             }
         },
 
-        onCommonProblemCellView: function (data, isShow=false, isSelect=false) {
+        onCommonProblemCellView: function (data,isSelect,isShow) {
             let cell = this.problemCell.clone()
             cell.setVisible(true)
             this.problemList.pushBackCustomItem(cell)
-            cell.setName(data.id)
+            cell.setName(this._answerName + data.id)
+            let showType = false
+            if(isSelect)
+                showType = !isShow
+
             cell._sendMsg = {
                 id:data.id,
                 num:data.num,
                 question:data.question,
                 answer:data.answer,
+                isShow: showType,
             }
-            if (isShow) {
+
+            if(isSelect)
+                this._selectedPosition = cell.getPosition()
+
+
+            if (showType) {
                 cell.getChildByName('answerBg').setVisible(true)
                 let height = data.num*22
                 cell.getChildByName('answerBg').setContentSize(600, height+25)
@@ -127,22 +140,20 @@ load('game/ui/layer/feedback/FanKuiLayer', function () {
                 cell.setContentSize(713.00, 60)
                 cell.getChildByName('questionBtn').setPosition(356.5, 30)
             }
-            cell.setTouchEnabled(true)
             cell.getChildByName('questionBtn').getChildByName('questionText').setString(data.question)
             cell.getChildByName('answerBg').getChildByName('answerText').setString(data.answer)
             cell.getChildByName('questionBtn').addClickEventListener(function (sender,dt) {
                 this.onAnswerView(cell._sendMsg)
             }.bind(this))
-            if (isSelect) {
-                /*跳转指定cell*/
-                //this.problemList.jumpToItem()
-            }
+
         },
 
         onAnswerView: function (data) {
-            this.problemList.removeAllChildren()
             let id = data.id
-            for (let j=0; j<this._isShow.length; j++) {
+            let isShow = this.problemList.getChildByName(this._answerName + id)._sendMsg.isShow
+            this.onCommonProblemView(id,isShow)
+
+            /*for (let j=0; j<this._isShow.length; j++) {
                 let info = this._isShow[j]
                 if (info['id'] == id) {
                     if (info['isShow']) {
@@ -152,11 +163,8 @@ load('game/ui/layer/feedback/FanKuiLayer', function () {
                         this.onCommonProblemCellView(GameConfig.feedbackRes[info['id']-1],true, true);
                         this._isShow[j].isShow = true
                     }
-                } else {
-                    this.onCommonProblemCellView(GameConfig.feedbackRes[info['id']-1]);
-                    this._isShow[j].isShow = false
                 }
-            }
+            }*/
         },
 
         updateMyMsg: function () {

@@ -133,14 +133,14 @@
                         <PreSize X="0.1739" Y="0.1143" />
                         <FileData Type="Normal" Path="common/jinbi.png" Plist="" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="winNum" ActionTag="804885693" Tag="405" IconVisible="False" LeftMargin="71.2030" RightMargin="48.7970" TopMargin="291.4000" BottomMargin="36.6000" IsCustomSize="True" FontSize="22" LabelText="+888888888" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                        <Size X="110.0000" Y="22.0000" />
+                      <AbstractNodeData Name="winNum" ActionTag="804885693" Tag="405" IconVisible="False" LeftMargin="71.2030" RightMargin="48.7970" TopMargin="272.4000" BottomMargin="17.6000" IsCustomSize="True" FontSize="20" LabelText="+888888888" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="110.0000" Y="60.0000" />
                         <AnchorPoint ScaleY="0.5000" />
                         <Position X="71.2030" Y="47.6000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="165" B="0" />
                         <PrePosition X="0.3096" Y="0.1360" />
-                        <PreSize X="0.4783" Y="0.0629" />
+                        <PreSize X="0.4783" Y="0.1714" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>

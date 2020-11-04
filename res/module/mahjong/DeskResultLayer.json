@@ -645,9 +645,8 @@
                       },
                       {
                         "IsCustomSize": true,
-                        "FontSize": 22,
+                        "FontSize": 20,
                         "LabelText": "+888888888",
-                        "HorizontalAlignmentType": "HT_Center",
                         "VerticalAlignmentType": "VT_Center",
                         "OutlineColor": {
                           "G": 0,
@@ -682,17 +681,17 @@
                         },
                         "PreSize": {
                           "X": 0.4783,
-                          "Y": 0.0629
+                          "Y": 0.1714
                         },
                         "LeftMargin": 71.203,
                         "RightMargin": 48.797,
-                        "TopMargin": 291.4,
-                        "BottomMargin": 36.6,
+                        "TopMargin": 272.4,
+                        "BottomMargin": 17.6,
                         "Tag": 405,
                         "ActionTag": 804885693,
                         "Size": {
                           "X": 110.0,
-                          "Y": 22.0
+                          "Y": 60.0
                         },
                         "Name": "winNum",
                         "ctype": "TextObjectData"

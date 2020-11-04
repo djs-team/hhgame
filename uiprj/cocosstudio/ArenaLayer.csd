@@ -928,7 +928,7 @@
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Button_13" Visible="False" ActionTag="1210763983" Tag="3063" IconVisible="False" LeftMargin="79.4037" RightMargin="69.7751" TopMargin="37.3784" BottomMargin="46.1416" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="77" Scale9Height="7" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                      <AbstractNodeData Name="Button_13" ActionTag="1210763983" Tag="3063" IconVisible="False" LeftMargin="79.4037" RightMargin="69.7751" TopMargin="37.3784" BottomMargin="46.1416" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="77" Scale9Height="7" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                         <Size X="107.0000" Y="29.0000" />
                         <Children>
                           <AbstractNodeData Name="Text_56_0" ActionTag="-1209120567" Tag="3064" IconVisible="False" LeftMargin="4.1629" RightMargin="2.8371" TopMargin="2.3993" BottomMargin="3.6007" IsCustomSize="True" FontSize="20" LabelText="兑换" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -1043,13 +1043,210 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="awardCloseBtn" Visible="False" ActionTag="1354778373" Tag="3192" IconVisible="False" LeftMargin="1082.1227" RightMargin="119.8773" TopMargin="72.2373" BottomMargin="569.7627" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="48" Scale9Height="56" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="awardCloseBtn" ActionTag="1354778373" Tag="3192" IconVisible="False" LeftMargin="1082.1227" RightMargin="119.8773" TopMargin="72.2373" BottomMargin="569.7627" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="48" Scale9Height="56" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="78.0000" Y="78.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="1121.1227" Y="608.7627" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.8759" Y="0.8455" />
+                <PreSize X="0.0609" Y="0.1083" />
+                <TextColor A="255" R="65" G="65" B="70" />
+                <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+                <NormalFileData Type="Normal" Path="common/gb.png" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+            </Children>
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="640.0000" Y="360.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.5000" Y="0.5000" />
+            <PreSize X="1.0000" Y="1.0000" />
+            <SingleColor A="255" R="150" G="200" B="255" />
+            <FirstColor A="255" R="150" G="200" B="255" />
+            <EndColor A="255" R="255" G="255" B="255" />
+            <ColorVector ScaleY="1.0000" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="exchangePnl" ActionTag="-954788" Tag="320" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+            <Size X="1280.0000" Y="720.0000" />
+            <Children>
+              <AbstractNodeData Name="Image_13_0_0" ActionTag="-2126560559" Tag="346" IconVisible="False" LeftMargin="148.5075" RightMargin="128.4924" TopMargin="99.6722" BottomMargin="13.3278" Scale9Enable="True" LeftEage="44" RightEage="44" TopEage="43" BottomEage="43" Scale9OriginX="44" Scale9OriginY="43" Scale9Width="48" Scale9Height="47" ctype="ImageViewObjectData">
+                <Size X="1003.0000" Y="607.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="650.0075" Y="316.8278" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5078" Y="0.4400" />
+                <PreSize X="0.7836" Y="0.8431" />
+                <FileData Type="Normal" Path="arena/bz_2.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_12_0_0" ActionTag="912148718" Tag="347" IconVisible="False" LeftMargin="515.3359" RightMargin="449.6641" TopMargin="29.0980" BottomMargin="610.9020" Scale9Enable="True" LeftEage="32" RightEage="32" TopEage="44" BottomEage="3" Scale9OriginX="32" Scale9OriginY="44" Scale9Width="35" Scale9Height="20" ctype="ImageViewObjectData">
+                <Size X="315.0000" Y="80.0000" />
+                <Children>
+                  <AbstractNodeData Name="Text_7" ActionTag="-564208132" Tag="348" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="72.5000" RightMargin="72.5000" TopMargin="14.2000" BottomMargin="23.8000" FontSize="42" LabelText="奖券兑换" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="170.0000" Y="42.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="157.5000" Y="44.8000" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5000" Y="0.5600" />
+                    <PreSize X="0.5397" Y="0.5250" />
+                    <FontResource Type="Normal" Path="font/hkhbtW12.ttc" Plist="" />
+                    <OutlineColor A="255" R="255" G="0" B="0" />
+                    <ShadowColor A="255" R="110" G="110" B="110" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="672.8359" Y="650.9020" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5257" Y="0.9040" />
+                <PreSize X="0.2461" Y="0.1111" />
+                <FileData Type="Normal" Path="arena/bz_1.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_10" ActionTag="-1786900549" Tag="349" IconVisible="False" LeftMargin="245.6756" RightMargin="757.3244" TopMargin="134.8956" BottomMargin="357.1043" LeftEage="91" RightEage="91" TopEage="75" BottomEage="75" Scale9OriginX="91" Scale9OriginY="75" Scale9Width="95" Scale9Height="78" ctype="ImageViewObjectData">
+                <Size X="277.0000" Y="228.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="384.1756" Y="471.1043" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.3001" Y="0.6543" />
+                <PreSize X="0.2164" Y="0.3167" />
+                <FileData Type="Normal" Path="area/3.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_11" ActionTag="-350783158" Tag="350" IconVisible="False" LeftMargin="724.7479" RightMargin="142.7522" TopMargin="159.0790" BottomMargin="64.4210" LeftEage="90" RightEage="90" TopEage="109" BottomEage="109" Scale9OriginX="90" Scale9OriginY="109" Scale9Width="95" Scale9Height="113" ctype="ImageViewObjectData">
+                <Size X="412.5000" Y="496.5000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="930.9979" Y="312.6710" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.7273" Y="0.4343" />
+                <PreSize X="0.3223" Y="0.6896" />
+                <FileData Type="Normal" Path="area/4.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_14" ActionTag="-761067917" Tag="351" IconVisible="False" LeftMargin="507.6962" RightMargin="590.3038" TopMargin="386.9380" BottomMargin="152.0620" LeftEage="60" RightEage="60" TopEage="59" BottomEage="59" Scale9OriginX="60" Scale9OriginY="59" Scale9Width="62" Scale9Height="63" ctype="ImageViewObjectData">
+                <Size X="182.0000" Y="181.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="598.6962" Y="242.5620" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.4677" Y="0.3369" />
+                <PreSize X="0.1422" Y="0.2514" />
+                <FileData Type="Normal" Path="area/1.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_15" ActionTag="35162791" Tag="352" IconVisible="False" LeftMargin="210.6230" RightMargin="792.3770" TopMargin="446.1617" BottomMargin="45.8383" LeftEage="91" RightEage="91" TopEage="75" BottomEage="75" Scale9OriginX="91" Scale9OriginY="75" Scale9Width="95" Scale9Height="78" ctype="ImageViewObjectData">
+                <Size X="277.0000" Y="228.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="349.1230" Y="159.8383" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.2728" Y="0.2220" />
+                <PreSize X="0.2164" Y="0.3167" />
+                <FileData Type="Normal" Path="area/3.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="goodsUrl" ActionTag="1386281098" Tag="353" IconVisible="False" LeftMargin="543.2813" RightMargin="513.7188" TopMargin="164.2657" BottomMargin="425.7343" LeftEage="73" RightEage="73" TopEage="42" BottomEage="42" Scale9OriginX="73" Scale9OriginY="42" Scale9Width="77" Scale9Height="46" ctype="ImageViewObjectData">
+                <Size X="223.0000" Y="130.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="654.7813" Y="490.7343" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5115" Y="0.6816" />
+                <PreSize X="0.1742" Y="0.1806" />
+                <FileData Type="Normal" Path="area/5.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="phonePnl" ActionTag="-949299667" Tag="355" IconVisible="False" LeftMargin="204.7075" RightMargin="756.1150" TopMargin="371.3782" BottomMargin="148.6218" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                <Size X="319.1776" Y="200.0000" />
+                <Children>
+                  <AbstractNodeData Name="Text_18" ActionTag="-1254950496" Tag="356" IconVisible="False" LeftMargin="73.6240" RightMargin="95.5536" TopMargin="32.2688" BottomMargin="140.7312" IsCustomSize="True" FontSize="24" LabelText="充值号码" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="150.0000" Y="27.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="148.6240" Y="154.2312" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="51" G="51" B="51" />
+                    <PrePosition X="0.4656" Y="0.7712" />
+                    <PreSize X="0.4700" Y="0.1350" />
+                    <OutlineColor A="255" R="255" G="0" B="0" />
+                    <ShadowColor A="255" R="110" G="110" B="110" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Image_64" ActionTag="-312246809" Tag="540" IconVisible="False" LeftMargin="18.2426" RightMargin="14.9349" TopMargin="69.8309" BottomMargin="94.1691" Scale9Enable="True" LeftEage="94" RightEage="94" TopEage="11" BottomEage="11" Scale9OriginX="94" Scale9OriginY="11" Scale9Width="98" Scale9Height="14" ctype="ImageViewObjectData">
+                    <Size X="286.0000" Y="36.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="161.2426" Y="112.1691" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5052" Y="0.5608" />
+                    <PreSize X="0.8961" Y="0.1800" />
+                    <FileData Type="Normal" Path="area/6.png" Plist="" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="phoneTextField" ActionTag="1281702989" Tag="541" IconVisible="False" LeftMargin="18.2400" RightMargin="14.9376" TopMargin="77.4300" BottomMargin="102.5700" TouchEnable="True" FontSize="20" IsCustomSize="True" LabelText="" PlaceHolderText="请输入充值手机号" MaxLengthText="10" ctype="TextFieldObjectData">
+                    <Size X="286.0000" Y="20.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="161.2400" Y="112.5700" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5052" Y="0.5628" />
+                    <PreSize X="0.8961" Y="0.1000" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint />
+                <Position X="204.7075" Y="148.6218" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.1599" Y="0.2064" />
+                <PreSize X="0.2494" Y="0.2778" />
+                <SingleColor A="255" R="150" G="200" B="255" />
+                <FirstColor A="255" R="150" G="200" B="255" />
+                <EndColor A="255" R="255" G="255" B="255" />
+                <ColorVector ScaleY="1.0000" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Text_4" ActionTag="-700325745" Tag="725" IconVisible="False" LeftMargin="694.5772" RightMargin="181.0371" TopMargin="345.5335" BottomMargin="148.9922" IsCustomSize="True" FontSize="20" LabelText="1、广东、重庆、四川、山西联通不支持小面额充值&#xA;2、请务必核对您填写手机号，因输入错误导致的损失，和和麻将概不负责&#xA;3、因运营商会不定期进行充值维护，话费兑换可能有0-72小时&#xA;4、受运营商政策限制，携号转网的号码话费兑奖时能出现充值失败或其他异常情况。为了不影响您的体验，建议使用非携号转网的手机号码进行话费兑奖" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="404.3857" Y="225.4743" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="896.7701" Y="261.7293" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="51" G="51" B="51" />
+                <PrePosition X="0.7006" Y="0.3635" />
+                <PreSize X="0.3159" Y="0.3132" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="rechargePhoneBtn" ActionTag="1153742239" Tag="726" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="580.7486" RightMargin="516.2514" TopMargin="580.3708" BottomMargin="73.6292" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="153" Scale9Height="44" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                <Size X="183.0000" Y="66.0000" />
+                <Children>
+                  <AbstractNodeData Name="Text_71" ActionTag="-375864967" Tag="727" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="52.5000" RightMargin="52.5000" TopMargin="8.5400" BottomMargin="16.4600" IsCustomSize="True" FontSize="38" LabelText="兑换" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="78.0000" Y="41.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="91.5000" Y="36.9600" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5000" Y="0.5600" />
+                    <PreSize X="0.4262" Y="0.6212" />
+                    <FontResource Type="Normal" Path="font/hkhbtW12.ttc" Plist="" />
+                    <OutlineColor A="255" R="255" G="0" B="0" />
+                    <ShadowColor A="255" R="110" G="110" B="110" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="672.2486" Y="106.6292" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5252" Y="0.1481" />
+                <PreSize X="0.1430" Y="0.0917" />
+                <TextColor A="255" R="65" G="65" B="70" />
+                <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+                <NormalFileData Type="Normal" Path="area/2.png" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="phoneCloseBtn" ActionTag="-45285021" Tag="728" IconVisible="False" LeftMargin="1082.3103" RightMargin="119.6897" TopMargin="71.0193" BottomMargin="570.9807" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="48" Scale9Height="56" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                <Size X="78.0000" Y="78.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="1121.3103" Y="609.9807" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.8760" Y="0.8472" />
                 <PreSize X="0.0609" Y="0.1083" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />

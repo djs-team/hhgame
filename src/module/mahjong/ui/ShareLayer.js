@@ -30,6 +30,7 @@ load('module/mahjong/ui/ShareLayer', function () {
             this._msg = msg
 
             this.registerEventListener('inviteCodeCallback', this.onInviteCodeCallback)
+            this.initView()
         },
 
 

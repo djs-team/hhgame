@@ -40,7 +40,7 @@ load('game/msghandler/PutCardProto', function () {
                 tmpMsg.card = card
                 appInstance.sendNotification(Event.PutCardProto, tmpMsg)
             } else {
-                appInstance.gameAgent().Tips('出牌异常！ code is ' + msg.pResult)
+                // appInstance.gameAgent().Tips('出牌异常！ code is ' + msg.pResult)
 
                 appInstance.gameNet().connect()
                 // let card = {

@@ -10,10 +10,15 @@
 #import "HJNetwork.h"
 #import "cocos2d.h"
 #include "scripting/js-bindings/manual/ScriptingCore.h"
+#import "CXPhoneBasicTools.h"
 
 @implementation AppController (Login)
++ (BOOL)isSupportWechat {
+    return [WXApi isWXAppInstalled];
+}
 
 + (void)weChatLoginWithMethod:(NSString *)method {
+    if ([WXApi isWXAppInstalled] == NO) return;
     
     [[EMClient sharedClient] logout:YES];
     
@@ -64,6 +69,22 @@
 }
 
 + (void)JPushLoginWithMethod:(NSString *)method showPhoneAlert:(NSString *)showAlert{
+    if ([CXPhoneBasicTools isSIMInstalled] == NO) {
+        if ([showAlert isEqualToString:@"Show"]) {
+            [self JPushLoginWithPhoneLogin];
+        } else {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"一键登录失败，请重试" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+
+            [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
+            
+            [alert addAction:[UIAlertAction actionWithTitle:@"一键登录" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                [self JPushLoginWithMethod:method showPhoneAlert:showAlert];
+            }]];
+            [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert animated:YES completion:nil];
+        }
+        return;
+    }
+    
     [[EMClient sharedClient] logout:YES];
     
     [MBProgressHUD showHUD];

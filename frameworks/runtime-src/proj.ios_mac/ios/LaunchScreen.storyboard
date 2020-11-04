@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina5_9" orientation="landscape">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina5_9" orientation="landscape" appearance="light"/>
     <dependencies>
         <deployment version="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,16 +19,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" image="LaunchScreenBackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="YCC-wj-Gww" userLabel="Background">
-                                <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" image="LaunchScreen_logo" translatesAutoresizingMaskIntoConstraints="NO" id="YCC-wj-Gww" userLabel="Background">
+                                <rect key="frame" x="256" y="116" width="300" height="143"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="YCC-wj-Gww" secondAttribute="height" multiplier="503:240" id="421-se-yj6"/>
+                                    <constraint firstAttribute="width" constant="300" id="UqR-te-yj3"/>
+                                </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0078412042930000002" green="0.0078442497180000008" blue="0.0078410133719999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="YCC-wj-Gww" secondAttribute="bottom" id="Naz-ae-jWI"/>
-                            <constraint firstAttribute="trailing" secondItem="YCC-wj-Gww" secondAttribute="trailing" id="myj-85-hk9"/>
-                            <constraint firstItem="YCC-wj-Gww" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="qOq-Cg-doS"/>
-                            <constraint firstItem="YCC-wj-Gww" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="xL7-Fo-4bl"/>
+                            <constraint firstItem="YCC-wj-Gww" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="SRl-Hw-LWf"/>
+                            <constraint firstItem="YCC-wj-Gww" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="wMh-sz-ehu"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -40,6 +40,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="LaunchScreenBackground.png" width="2208" height="1242"/>
+        <image name="LaunchScreen_logo" width="1006" height="480"/>
     </resources>
 </document>

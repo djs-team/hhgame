@@ -234,5 +234,16 @@
     return deviceLevel;
 }
 
+// 是否有SIM卡
++ (BOOL)isSIMInstalled {
+        CTTelephonyNetworkInfo *networkInfo = [[CTTelephonyNetworkInfo alloc] init];
 
+        CTCarrier *carrier = [networkInfo subscriberCellularProvider];
+
+        if (!carrier.isoCountryCode) {
+             return NO;
+        } else {
+            return YES;
+        }
+}
 @end

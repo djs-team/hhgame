@@ -585,7 +585,9 @@ static YYCache *_dataCache;
             callback ? callback(nil, error) : nil;
             return;
         }
-        callback ? callback(filePath.absoluteString, nil) : nil;
+        NSString *filePathStr = filePath.absoluteString;
+        NSString *path = [filePathStr stringByReplacingOccurrencesOfString:@"file://" withString:@""];
+        callback ? callback(path, nil) : nil;
     }];
     
     //启动下载任务

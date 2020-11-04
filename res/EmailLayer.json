@@ -1505,7 +1505,7 @@
                         },
                         "Position": {
                           "X": 96.114,
-                          "Y": 179.9955
+                          "Y": 180.0044
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -1525,8 +1525,8 @@
                         },
                         "LeftMargin": 42.6957,
                         "RightMargin": 467.3741,
-                        "TopMargin": 14.2074,
-                        "BottomMargin": 125.3674,
+                        "TopMargin": 14.1985,
+                        "BottomMargin": 125.3763,
                         "Tag": 559,
                         "Children": [
                           {
@@ -1667,7 +1667,7 @@
                           {
                             "IsCustomSize": true,
                             "FontSize": 20,
-                            "LabelText": "66666",
+                            "LabelText": "*6666.6万",
                             "HorizontalAlignmentType": "HT_Center",
                             "OutlineColor": {
                               "G": 0,
@@ -1703,17 +1703,17 @@
                               "Y": 0.0735
                             },
                             "PreSize": {
-                              "X": 0.936,
+                              "X": 1.1232,
                               "Y": 0.2105
                             },
-                            "LeftMargin": 4.39,
-                            "RightMargin": 2.4466,
+                            "LeftMargin": -5.61,
+                            "RightMargin": -7.5534,
                             "TopMargin": 89.7263,
                             "BottomMargin": -3.47,
                             "Tag": 1916,
                             "ActionTag": -1037206134,
                             "Size": {
-                              "X": 100.0,
+                              "X": 120.0,
                               "Y": 23.0
                             },
                             "Name": "numValue",

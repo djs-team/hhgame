@@ -28,6 +28,7 @@ load('game/ui/layer/coingame/CoinGameLayer', function () {
             }
         },
         ctor: function () {
+            appInstance.gameAgent().hideLoading()
             this._super(ResConfig.View.CoinGameLayer)
             this.registerMediator(new CoinGameMdt(this))
         },

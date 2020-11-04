@@ -14,8 +14,8 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
         _lightInterval: 0.5,
         _canTurnTableStatus: 0,//0代表可以免费1代表不可以免费可看视频2不可以转盘
         ctor: function () {
+            appInstance.gameAgent().hideLoading()
             this._super(ResConfig.View.TurnTableLayer)
-
             this.registerMediator(new TurnTableMdt(this))
             this.registerEventListener('rewardVideoCallback', this.onRewardVideoCallback)
 

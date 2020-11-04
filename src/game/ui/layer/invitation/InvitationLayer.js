@@ -15,6 +15,7 @@ load('game/ui/layer/invitation/InvitationLayer', function () {
         _isCanRefreshMyInvitationsData: true,
 
         ctor: function () {
+            appInstance.gameAgent().hideLoading()
             this._super(ResConfig.View.InvitationLayer)
             this.registerMediator(new InvitationMdt(this))
             this.registerEventListener('inviteCodeCallback', this.onInviteCodeCallback)

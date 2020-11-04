@@ -73,6 +73,8 @@ load('game/ui/layer/member/MemberLayer', function () {
             this.initData()
             this.initView()
             this.showView()
+            appInstance.gameAgent().hideLoading()
+
         },
 
         onExit: function () {

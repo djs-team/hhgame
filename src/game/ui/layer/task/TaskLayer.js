@@ -512,7 +512,9 @@ load('game/ui/layer/task/TaskLayer', function () {
 
         onJumpOtherLayer: function (taskType) {
 
-            appInstance.gameAgent().addPopUI(ResConfig.Ui[GameConfig.jumping[taskType]])
+            appInstance.gameAgent().showLoading()
+            appInstance.gameAgent().addUI(ResConfig.Ui[GameConfig.jumping[taskType]])
+
             this.onCancleBtnClick()
         },
 

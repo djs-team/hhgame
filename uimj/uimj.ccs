@@ -367,12 +367,17 @@
           <Image Name="1.png" />
           <Image Name="10.png" />
           <Image Name="11.png" />
+          <Image Name="111.png" />
+          <Image Name="12.png" />
           <Image Name="3.png" />
           <Image Name="4.png" />
           <Image Name="5.png" />
           <Image Name="7.png" />
           <Image Name="8.png" />
           <Image Name="scjb_3.png" />
+          <Image Name="share_bg.png" />
+          <Image Name="share_channel_friend.png" />
+          <Image Name="share_channel_wx.png" />
           <Image Name="ssc_1.png" />
           <Image Name="ssc_10.png" />
           <Image Name="ssc_11.png" />

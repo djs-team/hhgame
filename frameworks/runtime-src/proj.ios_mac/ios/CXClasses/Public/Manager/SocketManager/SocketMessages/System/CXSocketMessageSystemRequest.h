@@ -18,7 +18,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) NSNumber *Numbers; // 同步用户上麦卡数量
 
-@property (nonatomic, strong) NSNumber *UserId; // 同步用户上麦卡数量
+@property (nonatomic, strong) NSNumber *UserId; // 同步用户ID
+
+@property (nonatomic, strong) NSNumber *Balance; // 用户的玫瑰余额
 
 @end
 

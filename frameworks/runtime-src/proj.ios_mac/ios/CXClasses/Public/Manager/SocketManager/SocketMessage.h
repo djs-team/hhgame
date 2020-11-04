@@ -174,7 +174,8 @@ typedef NS_ENUM(NSUInteger, SocketMessageID) {
     SocketMessageIDMicroSeatNumber = 127,               // 同步用户上麦卡数量
     SocketMessageIDKeepaLiveNotification = 301,         // 系统心跳通知
     SocketMessageIDKeepaLiveRequest = 302,              // 系统心跳回应
-    
+    SocketMessageIDBalanceNotification = 141,            // 同步用户的玫瑰余额
+
 };
 
 

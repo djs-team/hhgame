@@ -11,6 +11,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AppController (Login)
+
++ (BOOL)isSupportWechat;
+
 /*
  * 微信登录
  * 返回微信授权的信息，如果没有信息，则登录失败

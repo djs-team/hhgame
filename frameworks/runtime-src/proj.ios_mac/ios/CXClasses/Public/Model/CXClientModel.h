@@ -80,7 +80,7 @@ typedef void(^CXClientModelLeaveRoomCallBack)(NSString *roomId, BOOL success);
 // music
 @property (nonatomic, assign) NSInteger currentMusicPlayingProgress;
 @property (nonatomic, strong) DDAudioLRC *currentMusicPlayingLRCModel;
-@property (nonatomic, strong) NSURL *currentMusicPlayingSongPath;
+@property (nonatomic, strong) NSString *currentMusicPlayingSongPath;
 
 @property (nonatomic, copy) NSString *registration_id;
 

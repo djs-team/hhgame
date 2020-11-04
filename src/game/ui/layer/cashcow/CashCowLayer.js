@@ -9,6 +9,7 @@ load('game/ui/layer/cashcow/CashCowLayer', function () {
     let cashCowLayer = BaseLayer.extend({
         _className: 'cashCowLayer',
         ctor: function () {
+            appInstance.gameAgent().hideLoading()
             this._super(ResConfig.View.CashCowLayer)
             this.registerMediator(new CashCowMdt(this))
             this.registerEventListener('rewardVideoCallback', this.onRewardVideoCallback)

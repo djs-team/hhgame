@@ -17,6 +17,7 @@ load('game/ui/layer/arena/ArenaLayer', function () {
         _arenaType: 1,
 
         ctor: function () {
+            appInstance.gameAgent().hideLoading()
             this._super(ResConfig.View.ArenaLayer)
             this.registerMediator(new ArenaMdt(this))
         },
@@ -448,7 +449,8 @@ load('game/ui/layer/arena/ArenaLayer', function () {
                         LeftBtnName: '我知道了',
                         RightBtnName : '成为会员',
                         RightBtnClick : function () {
-                            appInstance.gameAgent().addPopUI(ResConfig.Ui.MemberLayer)
+                            appInstance.gameAgent().showLoading()
+                            appInstance.gameAgent().addUI(ResConfig.Ui.MemberLayer)
                             appInstance.uiManager().removeUI(this)
                         }.bind(this),
 
@@ -480,7 +482,8 @@ load('game/ui/layer/arena/ArenaLayer', function () {
                     LeftBtnName: '取 消',
                     RightBtnName : '确认',
                     RightBtnClick : function () {
-                        appInstance.gameAgent().addPopUI(ResConfig.Ui.CoinShopLayer)
+                        appInstance.gameAgent().showLoading()
+                        appInstance.gameAgent().addUI(ResConfig.Ui.CoinShopLayer)
                         appInstance.uiManager().removeUI(this)
                     }.bind(this),
 

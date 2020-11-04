@@ -73,25 +73,25 @@ load('game/ui/scene/HallScene', function () {
         onEmailBtnClick: function (sender) {
             GameUtil.delayBtn(sender);
             this.emailBtn.getChildByName('redImg').setVisible(false)
-            appInstance.gameAgent().addPopUI(ResConfig.Ui.EmailLayer)
+            appInstance.gameAgent().addUI(ResConfig.Ui.EmailLayer)
             // appInstance.gameAgent().Tips('敬请期待！！！')
         },
 
         onFukaShopClick: function (sender) {
             GameUtil.delayBtn(sender);
-            appInstance.gameAgent().addPopUI(ResConfig.Ui.FukaShopLayer)
+            appInstance.gameAgent().addUI(ResConfig.Ui.FukaShopLayer)
         },
 
         onGoAreanClick: function (sender) {
             cc.log('===========onGoAreanClick========')
             GameUtil.delayBtn(sender);
-            appInstance.gameAgent().addPopUI(ResConfig.Ui.ArenaLayer)
+            appInstance.gameAgent().addUI(ResConfig.Ui.ArenaLayer)
         },
 
         onPhotoClick: function (sender) {
             GameUtil.delayBtn(sender);
             //  this.personalDataPnl.setVisible(true)
-            appInstance.gameAgent().addPopUI(ResConfig.Ui.PersonalLayer)
+            appInstance.gameAgent().addUI(ResConfig.Ui.PersonalLayer)
         },
 
         onUpdateNameClick: function () {
@@ -103,7 +103,7 @@ load('game/ui/scene/HallScene', function () {
         },
 
         onEmailClick: function () {
-            appInstance.gameAgent().addPopUI(ResConfig.Ui.EmailLayer)
+            appInstance.gameAgent().addUI(ResConfig.Ui.EmailLayer)
         },
         onInvitationClick: function (sender) {
             GameUtil.delayBtn(sender);
@@ -122,7 +122,7 @@ load('game/ui/scene/HallScene', function () {
         onFeedbackBtnClick: function (sender) {
             GameUtil.delayBtn(sender);
             this.morePnl.setVisible(false)
-            appInstance.gameAgent().addPopUI(ResConfig.Ui.FanKuiLayer)
+            appInstance.gameAgent().addUI(ResConfig.Ui.FanKuiLayer)
         },
 
         onTaskClick: function (sender) {
@@ -132,7 +132,7 @@ load('game/ui/scene/HallScene', function () {
         },
         onCashCowClick: function (sender) {
             GameUtil.delayBtn(sender);
-            appInstance.gameAgent().addPopUI(ResConfig.Ui.CashCowLayer)
+            appInstance.gameAgent().addUI(ResConfig.Ui.CashCowLayer)
 
         },
 
@@ -145,12 +145,12 @@ load('game/ui/scene/HallScene', function () {
         onMemberClick: function (sender) {
             GameUtil.delayBtn(sender);
             this.guiZuBtn.getChildByName('redImg').setVisible(false)
-            appInstance.gameAgent().addPopUI(ResConfig.Ui.MemberLayer)
+            appInstance.gameAgent().addUI(ResConfig.Ui.MemberLayer)
         },
 
         onCoinShopClick: function (sender) {
             GameUtil.delayBtn(sender);
-            appInstance.gameAgent().addPopUI(ResConfig.Ui.CoinShopLayer)
+            appInstance.gameAgent().addUI(ResConfig.Ui.CoinShopLayer)
         },
 
         onGoShopClick: function (sender) {
@@ -161,12 +161,12 @@ load('game/ui/scene/HallScene', function () {
         },
         onCoinGameClick: function (sender) {
             GameUtil.delayBtn(sender);
-            appInstance.gameAgent().addPopUI(ResConfig.Ui.CoinGameLayer)
+            appInstance.gameAgent().addUI(ResConfig.Ui.CoinGameLayer)
         },
 
         onRoleClick: function (sender) {
             GameUtil.delayBtn(sender);
-            appInstance.gameAgent().addPopUI(ResConfig.Ui.RoleLayer)
+            appInstance.gameAgent().addUI(ResConfig.Ui.RoleLayer)
         },
 
         onLiveBroadcastClick: function (sender) {
@@ -192,7 +192,7 @@ load('game/ui/scene/HallScene', function () {
         onSetBtnClick: function (sender) {
             GameUtil.delayBtn(sender);
             this.onHideMorePnlClick()
-            appInstance.gameAgent().addPopUI(ResConfig.Ui.SetLayer)
+            appInstance.gameAgent().addUI(ResConfig.Ui.SetLayer)
         },
 
         goChooseCity: function (sender) {
@@ -200,7 +200,7 @@ load('game/ui/scene/HallScene', function () {
             let viewData = {
                 from: 'HallScene'
             }
-            appInstance.gameAgent().addPopUI(ResConfig.Ui.ChooseCityLayer,viewData)
+            appInstance.gameAgent().addUI(ResConfig.Ui.ChooseCityLayer,viewData)
         },
 
         onMoreClick: function () {
@@ -223,7 +223,7 @@ load('game/ui/scene/HallScene', function () {
         onAuthenticationClick: function (sender) {
             GameUtil.delayBtn(sender);
             this.onHideMorePnlClick()
-            appInstance.gameAgent().addPopUI(ResConfig.Ui.Authentication)
+            appInstance.gameAgent().addUI(ResConfig.Ui.Authentication)
 
         },
 
@@ -327,7 +327,7 @@ load('game/ui/scene/HallScene', function () {
             ani.setScale(0.6)
             ani.setAnimation(0, PlayerPlay.stand, true)
         },
-        
+
 
         onInitUserData: function () {
             let msg = {}
@@ -378,11 +378,11 @@ load('game/ui/scene/HallScene', function () {
             if (data.hasOwnProperty('fuKa')) {
                 fuKaCnt.setString(GameUtil.getStringRule(data.fuKa))
             }
-            
+
             if (data.hasOwnProperty('photoUrl')) {
                 this.loadUrlImage(data.photoUrl, photo)
             }
-            
+
             if (data.hasOwnProperty('sdkphotourl')) {
                 this.loadUrlImage(data.sdkphotourl, photo)
             }

@@ -114,7 +114,7 @@
               "X": 1.0,
               "Y": 1.0
             },
-            "UserData": "{\"layoutType\":\"maxArea\",\"screenAlign\":\"mid\"}",
+            "UserData": "{\"layoutType\":\"showAll\",\"screenAlign\":\"mid\"}",
             "Tag": 27,
             "Children": [
               {
@@ -155,7 +155,7 @@
                   "Y": 0.4392
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.2778
                 },
                 "LeftMargin": 540.0,
@@ -462,7 +462,7 @@
                     "AnchorPoint": {},
                     "Position": {
                       "X": 760.0,
-                      "Y": 222.4725
+                      "Y": 222.47
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -480,8 +480,8 @@
                     },
                     "LeftMargin": 760.0,
                     "RightMargin": 520.0,
-                    "TopMargin": 497.5275,
-                    "BottomMargin": 222.4725,
+                    "TopMargin": 497.53,
+                    "BottomMargin": 222.47,
                     "Tag": 196,
                     "ActionTag": 89374257,
                     "Size": {
@@ -545,7 +545,7 @@
                       "Y": 0.2107
                     },
                     "PreSize": {
-                      "X": 0.0313,
+                      "X": 0.0312,
                       "Y": 0.0597
                     },
                     "LeftMargin": 912.9454,

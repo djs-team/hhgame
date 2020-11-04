@@ -146,38 +146,38 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="shareRightPnl" ActionTag="1489333452" UserData="{&quot;layoutType&quot;:&quot;showAll&quot;,&quot;screenAlign&quot;:&quot;right&quot;}" Tag="782" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+          <AbstractNodeData Name="shareRightPnl" ActionTag="1489333452" Tag="782" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <Children>
-              <AbstractNodeData Name="Text_15" ActionTag="2003868516" Tag="783" IconVisible="False" LeftMargin="1041.1868" RightMargin="110.8132" TopMargin="132.9357" BottomMargin="554.0643" FontSize="32" LabelText="激烈赛场" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="Text_15" ActionTag="2003868516" Tag="783" IconVisible="False" LeftMargin="1051.1865" RightMargin="100.8135" TopMargin="132.9365" BottomMargin="554.0635" FontSize="32" LabelText="激烈赛场" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="128.0000" Y="33.0000" />
                 <AnchorPoint ScaleX="1.3566" ScaleY="0.8909" />
-                <Position X="1214.8370" Y="583.4642" />
+                <Position X="1224.8368" Y="583.4635" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.9491" Y="0.8104" />
+                <PrePosition X="0.9569" Y="0.8104" />
                 <PreSize X="0.1000" Y="0.0458" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Text_16" ActionTag="-296900887" Tag="784" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="942.9159" RightMargin="25.0841" TopMargin="184.3553" BottomMargin="511.6447" FontSize="24" LabelText="特色竞技赛场，海量超值奖品" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="Text_16" ActionTag="-296900887" Tag="784" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="952.9147" RightMargin="15.0853" TopMargin="184.3553" BottomMargin="511.6447" FontSize="24" LabelText="特色竞技赛场，海量超值奖品" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="312.0000" Y="24.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="1098.9159" Y="523.6447" />
+                <Position X="1108.9147" Y="523.6447" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.8585" Y="0.7273" />
+                <PrePosition X="0.8663" Y="0.7273" />
                 <PreSize X="0.2438" Y="0.0333" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Text_17" ActionTag="-1202878204" Tag="785" IconVisible="False" LeftMargin="1040.4945" RightMargin="111.5055" TopMargin="251.3054" BottomMargin="435.6946" FontSize="32" LabelText="永久红利" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="Text_17" ActionTag="-1202878204" Tag="785" IconVisible="False" LeftMargin="1051.4948" RightMargin="100.5052" TopMargin="251.3054" BottomMargin="435.6946" FontSize="32" LabelText="永久红利" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="128.0000" Y="33.0000" />
                 <AnchorPoint ScaleX="1.3566" ScaleY="0.8909" />
-                <Position X="1214.1448" Y="465.0946" />
+                <Position X="1225.1450" Y="465.0946" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.9486" Y="0.6460" />
+                <PrePosition X="0.9571" Y="0.6460" />
                 <PreSize X="0.1000" Y="0.0458" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
@@ -193,24 +193,24 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Text_17_0" ActionTag="-510513351" Tag="787" IconVisible="False" LeftMargin="1039.8025" RightMargin="112.1975" TopMargin="362.1214" BottomMargin="324.8786" FontSize="32" LabelText="线上相亲" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="Text_17_0" ActionTag="-510513351" Tag="787" IconVisible="False" LeftMargin="1049.8024" RightMargin="102.1976" TopMargin="362.1216" BottomMargin="324.8784" FontSize="32" LabelText="线上相亲" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="128.0000" Y="33.0000" />
                 <AnchorPoint ScaleX="1.3566" ScaleY="0.8909" />
-                <Position X="1213.4528" Y="354.2786" />
+                <Position X="1223.4526" Y="354.2783" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.9480" Y="0.4921" />
+                <PrePosition X="0.9558" Y="0.4921" />
                 <PreSize X="0.1000" Y="0.0458" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Text_16_0_0" ActionTag="1830990367" Tag="788" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="946.3591" RightMargin="21.6409" TopMargin="409.1272" BottomMargin="286.8728" FontSize="24" LabelText="视频在线交友，真爱一线情牵" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="Text_16_0_0" ActionTag="1830990367" Tag="788" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="957.3580" RightMargin="10.6420" TopMargin="409.1272" BottomMargin="286.8728" FontSize="24" LabelText="视频在线交友，真爱一线情牵" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="312.0000" Y="24.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="1102.3591" Y="298.8728" />
+                <Position X="1113.3580" Y="298.8728" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.8612" Y="0.4151" />
+                <PrePosition X="0.8698" Y="0.4151" />
                 <PreSize X="0.2438" Y="0.0333" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />

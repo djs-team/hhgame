@@ -1833,6 +1833,8 @@
                         "IsCustomSize": true,
                         "FontSize": 25,
                         "LabelText": " 亲，没有了！ ",
+                        "HorizontalAlignmentType": "HT_Center",
+                        "VerticalAlignmentType": "VT_Center",
                         "OutlineColor": {
                           "G": 0,
                           "B": 0
@@ -1870,17 +1872,17 @@
                         },
                         "PreSize": {
                           "X": 0.6286,
-                          "Y": 0.0407
+                          "Y": 0.0569
                         },
                         "LeftMargin": 16.37,
                         "RightMargin": 87.63,
-                        "TopMargin": 279.75,
-                        "BottomMargin": 310.25,
+                        "TopMargin": 274.75,
+                        "BottomMargin": 305.25,
                         "Tag": 320,
                         "ActionTag": -306042962,
                         "Size": {
                           "X": 176.0,
-                          "Y": 25.0
+                          "Y": 35.0
                         },
                         "Name": "Text_2",
                         "ctype": "TextObjectData"
@@ -2479,6 +2481,8 @@
                     "IsCustomSize": true,
                     "FontSize": 25,
                     "LabelText": " 亲，没有了！ ",
+                    "HorizontalAlignmentType": "HT_Center",
+                    "VerticalAlignmentType": "VT_Center",
                     "OutlineColor": {
                       "G": 0,
                       "B": 0
@@ -2516,17 +2520,17 @@
                     },
                     "PreSize": {
                       "X": 0.6132,
-                      "Y": 0.0369
+                      "Y": 0.0501
                     },
                     "LeftMargin": 16.37,
                     "RightMargin": 94.63,
-                    "TopMargin": 316.75,
-                    "BottomMargin": 336.25,
+                    "TopMargin": 312.25,
+                    "BottomMargin": 331.75,
                     "Tag": 385,
                     "ActionTag": -1772727874,
                     "Size": {
                       "X": 176.0,
-                      "Y": 25.0
+                      "Y": 34.0
                     },
                     "Name": "Text_2",
                     "ctype": "TextObjectData"
@@ -2851,6 +2855,8 @@
                     "IsCustomSize": true,
                     "FontSize": 25,
                     "LabelText": " 亲，没有了！ ",
+                    "HorizontalAlignmentType": "HT_Center",
+                    "VerticalAlignmentType": "VT_Center",
                     "OutlineColor": {
                       "G": 0,
                       "B": 0
@@ -2888,17 +2894,17 @@
                     },
                     "PreSize": {
                       "X": 0.3801,
-                      "Y": 0.0432
+                      "Y": 0.0656
                     },
                     "LeftMargin": 16.37,
                     "RightMargin": 270.63,
-                    "TopMargin": 279.75,
-                    "BottomMargin": 274.25,
+                    "TopMargin": 273.25,
+                    "BottomMargin": 267.75,
                     "Tag": 389,
                     "ActionTag": 1873360920,
                     "Size": {
                       "X": 176.0,
-                      "Y": 25.0
+                      "Y": 38.0
                     },
                     "Name": "Text_2",
                     "ctype": "TextObjectData"
@@ -6402,7 +6408,7 @@
                           "Y": 0.0389
                         },
                         "LeftMargin": 69.554,
-                        "RightMargin": 860.4459,
+                        "RightMargin": 860.446,
                         "TopMargin": 321.4588,
                         "BottomMargin": 370.5412,
                         "Tag": 180,
@@ -6710,7 +6716,7 @@
                         },
                         "LeftMargin": 324.3851,
                         "RightMargin": 357.7404,
-                        "TopMargin": 224.9591,
+                        "TopMargin": 224.959,
                         "BottomMargin": 224.6998,
                         "Tag": 181,
                         "ActionTag": -1171917928,

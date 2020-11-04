@@ -153,13 +153,8 @@ load('game/ui/layer/feedback/FanKuiLayer', function () {
                         this._isShow[j].isShow = true
                     }
                 } else {
-                    if (info['isShow']) {
-                        this.onCommonProblemCellView(GameConfig.feedbackRes[info['id']-1],true);
-                        this._isShow[j].isShow = true
-                    } else {
-                        this.onCommonProblemCellView(GameConfig.feedbackRes[info['id']-1]);
-                        this._isShow[j].isShow = false
-                    }
+                    this.onCommonProblemCellView(GameConfig.feedbackRes[info['id']-1]);
+                    this._isShow[j].isShow = false
                 }
             }
         },

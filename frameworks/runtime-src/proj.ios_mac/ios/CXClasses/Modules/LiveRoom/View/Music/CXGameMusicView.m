@@ -190,25 +190,24 @@
             [cell.playBtn setImage:[UIImage imageNamed:@"home_game_music_pause"] forState:UIControlStateNormal];
             break;
         case music_loading: {
-            NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"home_game_music_loading" ofType:@"gif"];
-            NSData *imageData = [NSData dataWithContentsOfFile:imagePath];
-            UIImage *image = [UIImage sd_imageWithGIFData:imageData];
-            [cell.playBtn setImage:image forState:UIControlStateNormal];
+//            NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"home_game_music_loading" ofType:@"gif"];
+//            NSData *imageData = [NSData dataWithContentsOfFile:imagePath];
+//            UIImage *image = [UIImage sd_imageWithGIFData:imageData];
+//            [cell.playBtn setImage:image forState:UIControlStateNormal];
         }
             break;
         case music_downing: {
-           NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"home_game_music_download" ofType:@"gif"];
-           NSData *imageData = [NSData dataWithContentsOfFile:imagePath];
-           UIImage *image = [UIImage sd_imageWithGIFData:imageData];
-           [cell.playBtn setImage:image forState:UIControlStateNormal];
+//           NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"home_game_music_download" ofType:@"gif"];
+//           NSData *imageData = [NSData dataWithContentsOfFile:imagePath];
+//           UIImage *image = [UIImage sd_imageWithGIFData:imageData];
+//           [cell.playBtn setImage:image forState:UIControlStateNormal];
        }
            break;
         case music_downfail: {
-            
-           NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"home_game_music_downfail" ofType:@"gif"];
-           NSData *imageData = [NSData dataWithContentsOfFile:imagePath];
-           UIImage *image = [UIImage sd_imageWithGIFData:imageData];
-           [cell.playBtn setImage:image forState:UIControlStateNormal];
+//           NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"home_game_music_downfail" ofType:@"gif"];
+//           NSData *imageData = [NSData dataWithContentsOfFile:imagePath];
+//           UIImage *image = [UIImage sd_imageWithGIFData:imageData];
+//           [cell.playBtn setImage:image forState:UIControlStateNormal];
        }
            break;
         default:

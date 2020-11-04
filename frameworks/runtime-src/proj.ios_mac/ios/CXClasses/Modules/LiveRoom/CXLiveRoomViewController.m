@@ -886,7 +886,7 @@
                 } else {
                     self.roomUIView.musicLRCShowView.hidden = YES;
                 }
-                if ([CXClientModel instance].isSocketManagerReconnect == YES && [CXClientModel instance].currentMusicPlayingSongPath) {
+                if ([CXClientModel instance].isSocketManagerReconnect == YES && [CXClientModel instance].currentMusicPlayingSongPath.length > 0) {
                     [self music_playReconnectPlay];
                 }
                 
@@ -1021,6 +1021,13 @@
                 [[CXClientModel instance] sendSocketRequest:request withCallback:nil];
             }
                 break;
+                
+            case SocketMessageIDBalanceNotification: { // 同步用户的玫瑰余额
+                CXSocketMessageSystemNotification *msg = notification;
+                [CXClientModel instance].balance = msg.Balance;
+            }
+                break;
+                
             default:
                 break;
         }
@@ -2192,59 +2199,24 @@
             CXSocketMessageMusicModel *music = [CXClientModel instance].room.playing_SongInfo;
             [HJNetwork downloadWithURL:music.LyricPath fileDir:nil progress:nil callback:^(NSString *path, NSError *error) {
                 if (path.length > 0) {
-                    NSString *cur_lrcPath = [CXClientModel instance].room.playing_SongInfo.LyricPath;
-                    NSURL *targetPath = [NSURL URLWithString:path];
-                    if (![[cur_lrcPath lastPathComponent] isEqualToString: targetPath.lastPathComponent]) {
+                    NSData *data = [NSData dataWithContentsOfFile:path];
+                    if (!data || data.length <= 0) {
                         weakSelf.musicView.musicPlayStatus = music_unplay;
-                        return ;
+                        return;
                     }
-                    NSData *data = [NSData dataWithContentsOfFile:targetPath.absoluteString];
                     NSString *lrcText = [[NSString alloc] initWithData:data encoding:CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000)];
                     DDAudioLRC *lrc = [DDAudioLRCParser parserLRCText:lrcText];
                     [CXClientModel instance].currentMusicPlayingLRCModel = lrc;
                     
                     [HJNetwork downloadWithURL:music.SongPath fileDir:nil progress:nil callback:^(NSString *path, NSError *error) {
                         if (path.length > 0) {
-                            NSURL *targetPath = [NSURL fileURLWithPath:path];
                             // 当前播放的歌曲
-                            NSString *cur_songPath = [CXClientModel instance].room.playing_SongInfo.SongPath;
-                            if (![[cur_songPath lastPathComponent] isEqualToString: targetPath.lastPathComponent]) {
-                                weakSelf.musicView.musicPlayStatus = music_unplay;
-                                return ;
-                            }
                             CXSocketMessageMusicDownloadSongSuccess *request = [CXSocketMessageMusicDownloadSongSuccess new];
                             [[CXClientModel instance] sendSocketRequest:request withCallback:^(CXSocketMessageMusicGetPlayingDetail * _Nonnull request) {
                                 if (request.response.isSuccess) {
-        //                                [LEEAlert closeWithCompletionBlock:nil];
-                                    [CXClientModel instance].currentMusicPlayingSongPath = targetPath;
-                                    [[CXClientModel instance].agoraEngineManager.engine stopAudioMixing];
-                                    if ([[CXClientModel instance].agoraEngineManager.engine startAudioMixing:targetPath.absoluteString loopback:NO replace:NO cycle:1] == 0) {
-                                        if ([CXClientModel instance].isSocketManagerReconnect == YES) {
-                                            [CXClientModel instance].isSocketManagerReconnect = NO;
-                                            
-                                            [[CXClientModel instance].agoraEngineManager.engine setAudioMixingPosition:[CXClientModel instance].currentMusicPlayingProgress];
-                                        }
-                                        
-                                        [[CXClientModel instance].agoraEngineManager.engine adjustAudioMixingVolume:MAX([CXClientModel instance].room.music_Volume, 30)];
-                                        
-                                        if ([CXClientModel instance].room.isConsertModel == YES) {
-                                            // 耳返
-                                            [[CXClientModel instance].agoraEngineManager.engine enableInEarMonitoring:YES];
-                                            [[CXClientModel instance].agoraEngineManager.engine setInEarMonitoringVolume:100];
-                                        } else {
-                                            [[CXClientModel instance].agoraEngineManager.engine enableInEarMonitoring:NO];
-                                        }
-                                        
-                                        AVURLAsset *audioAsset = [AVURLAsset URLAssetWithURL:targetPath options:nil];
-                                        weakSelf.musicView.pro_endTime = CMTimeGetSeconds(audioAsset.duration);
-                                        weakSelf.totalLRCProgress = CMTimeGetSeconds(audioAsset.duration);
-                                        weakSelf.musicView.pro_volum = MIN([CXClientModel instance].room.music_Volume, 30);
-                                        
-                                        [weakSelf musicLRCUpdate];
-//                                        NSLog(@"play.SongPath ========1 %@", targetPath.absoluteString);
-                                        weakSelf.musicView.musicPlayStatus = music_playing;
-                                    }
-                                    
+//                                    [LEEAlert closeWithCompletionBlock:nil];
+                                    [CXClientModel instance].currentMusicPlayingSongPath = path;
+                                    [weakSelf agoraEngineManagerPlaying];
                                 } else {
                                     if ([request.response.Success integerValue] == 2) {
                                         [weakSelf musicShowErrorMessage:@"找不到演唱歌曲"];
@@ -2260,74 +2232,48 @@
                     }];
                 }
             }];
-//            [CXMusicDownloader downloadURL:music.LyricPath progress:^(NSProgress * _Nonnull downloadProgress) {
-////                NSString *progress = [NSString stringWithFormat:@"下载:%f%%",100.0 * downloadProgress.completedUnitCount/downloadProgress.totalUnitCount];
-//            } success:^(NSURL * _Nonnull targetPath) {
-//                NSLog(@"targetPath.LyricPath ========1 %@", targetPath.lastPathComponent);
-//
-//                NSLog(@"music.SongPath ========1 %@", music.SongPath);
-//                [CXMusicDownloader downloadURL:music.SongPath progress:^(NSProgress * _Nonnull downloadProgress) {
-////                    NSString *progress = [NSString stringWithFormat:@"下载:%f%%",100.0 * downloadProgress.completedUnitCount/downloadProgress.totalUnitCount];
-//                } success:^(NSURL * _Nonnull targetPath) {
-//                    NSLog(@"targetPath.SongPath ========1 %@", targetPath.lastPathComponent);
-//                    // 当前播放的歌曲
-//                    NSString *cur_songPath = [CXClientModel instance].room.playing_SongInfo.SongPath;
-//                    if (![[cur_songPath lastPathComponent] isEqualToString: targetPath.lastPathComponent]) {
-//                        weakSelf.musicView.musicPlayStatus = music_unplay;
-//                        return ;
-//                    }
-//                    CXSocketMessageMusicDownloadSongSuccess *request = [CXSocketMessageMusicDownloadSongSuccess new];
-//                    [[CXClientModel instance] sendSocketRequest:request withCallback:^(CXSocketMessageMusicGetPlayingDetail * _Nonnull request) {
-//                        if (request.response.isSuccess) {
-////                                [LEEAlert closeWithCompletionBlock:nil];
-//                            [CXClientModel instance].currentMusicPlayingSongPath = targetPath;
-//                            [[CXClientModel instance].agoraEngineManager.engine stopAudioMixing];
-//                            if ([[CXClientModel instance].agoraEngineManager.engine startAudioMixing:targetPath.absoluteString loopback:NO replace:NO cycle:1] == 0) {
-//                                if ([CXClientModel instance].isSocketManagerReconnect == YES) {
-//                                    [CXClientModel instance].isSocketManagerReconnect = NO;
-//
-//                                    [[CXClientModel instance].agoraEngineManager.engine setAudioMixingPosition:[CXClientModel instance].currentMusicPlayingProgress];
-//                                }
-//
-//                                [[CXClientModel instance].agoraEngineManager.engine adjustAudioMixingVolume:MAX([CXClientModel instance].room.music_Volume, 30)];
-//
-//                                if ([CXClientModel instance].room.isConsertModel == YES) {
-//                                    // 耳返
-//                                    [[CXClientModel instance].agoraEngineManager.engine enableInEarMonitoring:YES];
-//                                    [[CXClientModel instance].agoraEngineManager.engine setInEarMonitoringVolume:100];
-//                                } else {
-//                                    [[CXClientModel instance].agoraEngineManager.engine enableInEarMonitoring:NO];
-//                                }
-//
-//                                AVURLAsset *audioAsset = [AVURLAsset URLAssetWithURL:targetPath options:nil];
-//                                weakSelf.musicView.pro_endTime = CMTimeGetSeconds(audioAsset.duration);
-//                                weakSelf.totalLRCProgress = CMTimeGetSeconds(audioAsset.duration);
-//                                weakSelf.musicView.pro_volum = MIN([CXClientModel instance].room.music_Volume, 30);
-//
-//                                [weakSelf musicLRCUpdate];
-//                                NSLog(@"play.SongPath ========1 %@", targetPath.absoluteString);
-//                                weakSelf.musicView.musicPlayStatus = music_playing;
-//                            }
-//
-//                        } else {
-//                            if ([request.response.Success integerValue] == 2) {
-//                                [weakSelf musicShowErrorMessage:@"找不到演唱歌曲"];
-//                            } else if ([request.response.Success integerValue] == 3) {
-//                                [weakSelf musicShowErrorMessage:@"点歌人玫瑰不足，歌曲被取消"];
-//                            } else if ([request.response.Success integerValue] == 4) {
-//                                [weakSelf musicShowErrorMessage:@"已经切歌"];
-//                            }
-//                        }
-//                    }];
-//                }  failure:^(NSError * _Nonnull error) {
-//                    [weakSelf musicShowErrorMessage:@"下载失败"];
-//                }];
-//
-//            } failure:^(NSError * _Nonnull error) {
-//                [weakSelf musicShowErrorMessage:@"下载失败"];
-//            }];
         }
     }];
+}
+
+- (void)agoraEngineManagerPlaying {
+    if ([CXClientModel instance].room.playing_SongInfo.LyricPath.length <= 0) {
+        [self musicShowErrorMessage:@"找不到演唱歌曲"];
+        return;
+    }
+    if ([CXClientModel instance].currentMusicPlayingLRCModel.originLRCText.length <= 0) {
+        [self musicShowErrorMessage:@"找不到演唱歌曲"];
+        self.musicView.musicPlayStatus = music_unplay;
+        [self music_playStart];
+        return;
+    }
+    [[CXClientModel instance].agoraEngineManager.engine stopAudioMixing];
+    if ([[CXClientModel instance].agoraEngineManager.engine startAudioMixing:[CXClientModel instance].currentMusicPlayingSongPath loopback:NO replace:NO cycle:1] == 0) {
+        if ([CXClientModel instance].isSocketManagerReconnect == YES) {
+            [CXClientModel instance].isSocketManagerReconnect = NO;
+            
+            [[CXClientModel instance].agoraEngineManager.engine setAudioMixingPosition:[CXClientModel instance].currentMusicPlayingProgress];
+        }
+        
+        [[CXClientModel instance].agoraEngineManager.engine adjustAudioMixingVolume:MAX([CXClientModel instance].room.music_Volume, 30)];
+        
+        if ([CXClientModel instance].room.isConsertModel == YES) {
+            // 耳返
+            [[CXClientModel instance].agoraEngineManager.engine enableInEarMonitoring:YES];
+            [[CXClientModel instance].agoraEngineManager.engine setInEarMonitoringVolume:100];
+        } else {
+            [[CXClientModel instance].agoraEngineManager.engine enableInEarMonitoring:NO];
+        }
+        
+        NSURL *targetPath = [NSURL fileURLWithPath:[CXClientModel instance].currentMusicPlayingSongPath];
+        AVURLAsset *audioAsset = [AVURLAsset URLAssetWithURL:targetPath options:nil];
+        self.musicView.pro_endTime = CMTimeGetSeconds(audioAsset.duration);
+        self.totalLRCProgress = CMTimeGetSeconds(audioAsset.duration);
+        self.musicView.pro_volum = MIN([CXClientModel instance].room.music_Volume, 30);
+        
+        [self musicLRCUpdate];
+        self.musicView.musicPlayStatus = music_playing;
+    }
 }
 
 - (void)music_playPause {
@@ -2338,7 +2284,7 @@
 }
 
 - (void)music_playResume {
-    if ([CXClientModel instance].currentMusicPlayingSongPath && [[CXClientModel instance].agoraEngineManager.engine resumeAudioMixing] == 0) {
+    if ([CXClientModel instance].currentMusicPlayingSongPath.length > 0 && [[CXClientModel instance].agoraEngineManager.engine resumeAudioMixing] == 0) {
         [[CXClientModel instance].agoraEngineManager.engine adjustAudioMixingVolume:MAX([CXClientModel instance].room.music_Volume, 30)];
         if ([CXClientModel instance].room.isConsertModel == YES) {
             // 耳返
@@ -2352,58 +2298,22 @@
 }
 
 - (void)music_playReplay {
-    if ([CXClientModel instance].room.playing_SongInfo &&  [CXClientModel instance].currentMusicPlayingSongPath) {
-        if ([CXClientModel instance].currentMusicPlayingSongPath) {
-            self.musicView.musicPlayStatus = music_playing;
-            [[CXClientModel instance].agoraEngineManager.engine stopAudioMixing];
-            [[CXClientModel instance].agoraEngineManager.engine startAudioMixing:[CXClientModel instance].currentMusicPlayingSongPath.absoluteString loopback:NO replace:NO cycle:1];
-            [[CXClientModel instance].agoraEngineManager.engine adjustAudioMixingVolume:MAX([CXClientModel instance].room.music_Volume, 30)];
-            
-            if ([CXClientModel instance].currentMusicPlayingLRCModel) {
-                if ([CXClientModel instance].room.isConsertModel == YES) {
-                    // 耳返
-                    [[CXClientModel instance].agoraEngineManager.engine enableInEarMonitoring:YES];
-                    [[CXClientModel instance].agoraEngineManager.engine setInEarMonitoringVolume:100];
-                }
-                
-                [self musicLRCUpdate];
-            }
-            
-            AVURLAsset *audioAsset = [AVURLAsset URLAssetWithURL: [CXClientModel instance].currentMusicPlayingSongPath options:nil];
-            self.musicView.pro_endTime = CMTimeGetSeconds(audioAsset.duration);
-            self.totalLRCProgress = CMTimeGetSeconds(audioAsset.duration);
-            self.musicView.pro_volum = MIN([CXClientModel instance].room.music_Volume, 30);
-            
-            return;
-        }
+    if ([CXClientModel instance].room.playing_SongInfo &&  [CXClientModel instance].currentMusicPlayingSongPath.length > 0) {
+        [self agoraEngineManagerPlaying];
+        return;
     }
     
     [self music_playStart];
 }
 
 - (void)music_playReconnectPlay {
-    if ([CXClientModel instance].room.playing_SongInfo && [CXClientModel instance].currentMusicPlayingSongPath) {
-        if ([CXClientModel instance].currentMusicPlayingSongPath) {
-            [[CXClientModel instance].agoraEngineManager.engine stopAudioMixing];
-            [[CXClientModel instance].agoraEngineManager.engine startAudioMixing:[CXClientModel instance].currentMusicPlayingSongPath.absoluteString loopback:NO replace:NO cycle:1];
-            [[CXClientModel instance].agoraEngineManager.engine adjustAudioMixingVolume:MAX([CXClientModel instance].room.music_Volume, 30)];
-            
-            if ([CXClientModel instance].currentMusicPlayingLRCModel) {
-                
-                
-                [self musicLRCUpdate];
-            }
-            
-            AVURLAsset *audioAsset = [AVURLAsset URLAssetWithURL:[CXClientModel instance].currentMusicPlayingSongPath options:nil];
-            self.musicView.pro_endTime = CMTimeGetSeconds(audioAsset.duration);
-            self.totalLRCProgress = CMTimeGetSeconds(audioAsset.duration);
-            self.musicView.pro_volum = MIN([CXClientModel instance].room.music_Volume, 30);
-        }
+    if ([CXClientModel instance].room.playing_SongInfo && [CXClientModel instance].currentMusicPlayingSongPath.length > 0) {
+        [self agoraEngineManagerPlaying];
     }
 }
 
 - (void)music_playStop {
-    [CXClientModel instance].currentMusicPlayingSongPath = nil ;
+    [CXClientModel instance].currentMusicPlayingSongPath = @"" ;
     [CXClientModel instance].currentMusicPlayingProgress = 0;
     self.musicView.musicPlayStatus = music_unplay;
     if (_music_timer) {

@@ -207,6 +207,8 @@
 - (void)back {
 
     [[NSNotificationCenter defaultCenter] postNotificationName:kNSNotificationCenter_CXBaseTabBarViewController_leaveOut object:nil];
+    
+    [[CXClientModel instance].easemob logout];
 }
 
 - (void)search {

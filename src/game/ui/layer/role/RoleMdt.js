@@ -83,7 +83,11 @@ load('game/ui/layer/role/RoleMdt', function () {
 
 
                 let role = body.allRole[i]
+                if(!role)
+                    continue
                 let roleGetInfo = role.rgInfoList[0]
+                if(!roleGetInfo)
+                    continue
                 let roleData = {}
 
                 roleData.getId = roleGetInfo.getId

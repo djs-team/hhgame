@@ -34,18 +34,6 @@
 //    [self addSubview:_bottomView];
     
     _viewHeight = 274;
-    
-    [self loadMoney];
-}
-
-- (void)loadMoney {
-    kWeakSelf
-    [CXHTTPRequest POSTWithURL:@"/index.php/Api/AliPay/initmymoney" parameters:@{} callback:^(id responseObject, BOOL isCache, NSError *error) {
-       if (!error) {
-           weakSelf.giftValueLabel.text = [NSString stringWithFormat:@"%@",responseObject[@"data"][@"coin"]];
-           [CXClientModel instance].balance = responseObject[@"data"][@"coin"];
-       }
-    }];
 }
 
 - (void)reloadGiftData:(NSArray *)dataSource {

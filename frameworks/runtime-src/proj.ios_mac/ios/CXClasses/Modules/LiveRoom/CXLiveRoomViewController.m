@@ -1598,7 +1598,7 @@
             [weakSelf toast:@"购买成功"];
             [weakSelf getFirstRechargeData];
         } else {
-            [weakSelf toast:errorMsg];
+            [weakSelf toast:@"购买失败"];
         }
     }];
 }

@@ -13,6 +13,7 @@ load('game/ui/layer/coingame/CoinGameLayer', function () {
             '4': 'R1',
             '2': 'R2'
         },
+        _goBtnArray : [],
         RES_BINDING: function () {
             return {
                 'topPnl/closeBtn': { onClicked: this.onCloseClick },
@@ -40,8 +41,6 @@ load('game/ui/layer/coingame/CoinGameLayer', function () {
 
         onEnter: function () {
             this._super()
-            this.initData()
-            this.initView()
         },
 
         initData: function (data) {
@@ -122,6 +121,10 @@ load('game/ui/layer/coingame/CoinGameLayer', function () {
         },
 
         initGoBtn: function (btnCell, btnData) {
+            if(this._goBtnArray.indexOf(this.startQuickBtn) === -1){
+                this._goBtnArray.push(this.startQuickBtn)
+            }
+            this._goBtnArray.push(btnCell)
             btnCell.getChildByName('Score').setString(btnData.score)
             btnCell.getChildByName('Cost').setString(btnData.cost)
 
@@ -133,7 +136,7 @@ load('game/ui/layer/coingame/CoinGameLayer', function () {
             }
 
             btnCell.addClickEventListener(function(sender, et) {
-                GameUtil.delayBtn(sender);
+                GameUtil.delayBtns(this._goBtnArray)
                 this.goRoomClick(sender)
             }.bind(this))
         },
@@ -165,8 +168,8 @@ load('game/ui/layer/coingame/CoinGameLayer', function () {
             }
         },
 
-        onStartQuickBtnClick: function (sender) {
-            GameUtil.delayBtn(sender);
+        onStartQuickBtnClick: function () {
+            GameUtil.delayBtns(this._goBtnArray)
             let goMsg = {}
             if (this._peopleNum === 2) {
                 goMsg.roomMode = 2

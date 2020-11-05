@@ -68,11 +68,14 @@ import com.uuzuche.lib_zxing.activity.CodeUtils;
 
 import java.io.File;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 import cn.jiguang.verifysdk.api.AuthPageEventListener;
 import cn.jiguang.verifysdk.api.JVerificationInterface;
 import cn.jiguang.verifysdk.api.RequestCallback;
 import cn.jiguang.verifysdk.api.VerifyListener;
+import cn.jpush.android.api.JPushInterface;
 
 import static com.deepsea.mua.core.utils.NetWorkUtils.NetWorkType.UN_KNOWN;
 import static com.deepsea.mua.core.utils.NetWorkUtils.NetWorkType.WIFI;
@@ -754,6 +757,24 @@ public class AppActivity extends Cocos2dxActivity {
     }
 
     /**
+     * 极光设置tag
+     *+
+     * @param chanelId
+     */
+    public static void registerJPUSHTagsId(String chanelId) {
+        ccActivity.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Set<String> tags = new HashSet<>();
+                tags.add(chanelId);
+                JPushInterface.setTags(ccActivity.getApplicationContext(), 0, tags);
+
+            }
+        });
+
+    }
+
+    /**
      * 跳转到相亲
      */
     public static void jumpToBlindDate(String userInfo) {
@@ -796,5 +817,6 @@ public class AppActivity extends Cocos2dxActivity {
         intent.putExtra("ossConfig", result);
         ccActivity.startActivityForResult(intent, 2);
     }
+
 
 }

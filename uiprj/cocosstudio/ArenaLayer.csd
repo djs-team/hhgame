@@ -1106,7 +1106,7 @@
                 <PreSize X="0.2461" Y="0.1111" />
                 <FileData Type="Normal" Path="arena/bz_1.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Image_10" ActionTag="-1786900549" Tag="349" IconVisible="False" LeftMargin="245.6756" RightMargin="757.3244" TopMargin="134.8956" BottomMargin="357.1043" LeftEage="91" RightEage="91" TopEage="75" BottomEage="75" Scale9OriginX="91" Scale9OriginY="75" Scale9Width="95" Scale9Height="78" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="Image_10" ActionTag="-1786900549" Tag="349" IconVisible="False" LeftMargin="245.6756" RightMargin="757.3244" TopMargin="134.8957" BottomMargin="357.1043" LeftEage="91" RightEage="91" TopEage="75" BottomEage="75" Scale9OriginX="91" Scale9OriginY="75" Scale9Width="95" Scale9Height="78" ctype="ImageViewObjectData">
                 <Size X="277.0000" Y="228.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="384.1756" Y="471.1043" />
@@ -1116,7 +1116,7 @@
                 <PreSize X="0.2164" Y="0.3167" />
                 <FileData Type="Normal" Path="area/3.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Image_11" ActionTag="-350783158" Tag="350" IconVisible="False" LeftMargin="724.7479" RightMargin="142.7522" TopMargin="159.0790" BottomMargin="64.4210" LeftEage="90" RightEage="90" TopEage="109" BottomEage="109" Scale9OriginX="90" Scale9OriginY="109" Scale9Width="95" Scale9Height="113" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="Image_11" ActionTag="-350783158" Tag="350" IconVisible="False" LeftMargin="724.7479" RightMargin="142.7521" TopMargin="159.0790" BottomMargin="64.4210" LeftEage="90" RightEage="90" TopEage="109" BottomEage="109" Scale9OriginX="90" Scale9OriginY="109" Scale9Width="95" Scale9Height="113" ctype="ImageViewObjectData">
                 <Size X="412.5000" Y="496.5000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="930.9979" Y="312.6710" />
@@ -1146,7 +1146,7 @@
                 <PreSize X="0.2164" Y="0.3167" />
                 <FileData Type="Normal" Path="area/3.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="goodsUrl" ActionTag="1386281098" Tag="353" IconVisible="False" LeftMargin="543.2813" RightMargin="513.7188" TopMargin="164.2657" BottomMargin="425.7343" LeftEage="73" RightEage="73" TopEage="42" BottomEage="42" Scale9OriginX="73" Scale9OriginY="42" Scale9Width="77" Scale9Height="46" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="goodsUrl" ActionTag="1386281098" Tag="353" IconVisible="False" LeftMargin="543.2813" RightMargin="513.7187" TopMargin="164.2657" BottomMargin="425.7343" LeftEage="73" RightEage="73" TopEage="42" BottomEage="42" Scale9OriginX="73" Scale9OriginY="42" Scale9Width="77" Scale9Height="46" ctype="ImageViewObjectData">
                 <Size X="223.0000" Y="130.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="654.7813" Y="490.7343" />
@@ -1156,7 +1156,7 @@
                 <PreSize X="0.1742" Y="0.1806" />
                 <FileData Type="Normal" Path="area/5.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="phonePnl" ActionTag="-949299667" Tag="355" IconVisible="False" LeftMargin="204.7075" RightMargin="756.1150" TopMargin="371.3782" BottomMargin="148.6218" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="phonePnl" ActionTag="-949299667" Tag="355" IconVisible="False" LeftMargin="204.7075" RightMargin="756.1149" TopMargin="371.3782" BottomMargin="148.6218" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="319.1776" Y="200.0000" />
                 <Children>
                   <AbstractNodeData Name="Text_18" ActionTag="-1254950496" Tag="356" IconVisible="False" LeftMargin="73.6240" RightMargin="95.5536" TopMargin="32.2688" BottomMargin="140.7312" IsCustomSize="True" FontSize="24" LabelText="充值号码" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -1170,7 +1170,7 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Image_64" ActionTag="-312246809" Tag="540" IconVisible="False" LeftMargin="18.2426" RightMargin="14.9349" TopMargin="69.8309" BottomMargin="94.1691" Scale9Enable="True" LeftEage="94" RightEage="94" TopEage="11" BottomEage="11" Scale9OriginX="94" Scale9OriginY="11" Scale9Width="98" Scale9Height="14" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="Image_64" ActionTag="-312246809" Tag="540" IconVisible="False" LeftMargin="18.2426" RightMargin="14.9350" TopMargin="69.8309" BottomMargin="94.1691" Scale9Enable="True" LeftEage="94" RightEage="94" TopEage="11" BottomEage="11" Scale9OriginX="94" Scale9OriginY="11" Scale9Width="98" Scale9Height="14" ctype="ImageViewObjectData">
                     <Size X="286.0000" Y="36.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="161.2426" Y="112.1691" />
@@ -1201,18 +1201,18 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Text_4" ActionTag="-700325745" Tag="725" IconVisible="False" LeftMargin="694.5772" RightMargin="181.0371" TopMargin="345.5335" BottomMargin="148.9922" IsCustomSize="True" FontSize="20" LabelText="1、广东、重庆、四川、山西联通不支持小面额充值&#xA;2、请务必核对您填写手机号，因输入错误导致的损失，和和麻将概不负责&#xA;3、因运营商会不定期进行充值维护，话费兑换可能有0-72小时&#xA;4、受运营商政策限制，携号转网的号码话费兑奖时能出现充值失败或其他异常情况。为了不影响您的体验，建议使用非携号转网的手机号码进行话费兑奖" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="404.3857" Y="225.4743" />
+              <AbstractNodeData Name="Text_4" ActionTag="-700325745" Tag="725" IconVisible="False" LeftMargin="695.9842" RightMargin="179.6301" TopMargin="317.4908" BottomMargin="154.6014" IsCustomSize="True" FontSize="20" LabelText="1、广东、重庆、四川、山西联通不支持小面额充值&#xA;2、请务必核对您填写手机号，因输入错误导致的损失，和和麻将概不负责&#xA;3、因运营商会不定期进行充值维护，话费兑换可能有0-72小时&#xA;4、受运营商政策限制，携号转网的号码话费兑奖时能出现充值失败或其他异常情况。为了不影响您的体验，建议使用非携号转网的手机号码进行话费兑奖" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="404.3857" Y="247.9078" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="896.7701" Y="261.7293" />
+                <Position X="898.1771" Y="278.5553" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="51" G="51" B="51" />
-                <PrePosition X="0.7006" Y="0.3635" />
-                <PreSize X="0.3159" Y="0.3132" />
+                <PrePosition X="0.7017" Y="0.3869" />
+                <PreSize X="0.3159" Y="0.3443" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="rechargePhoneBtn" ActionTag="1153742239" Tag="726" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="580.7486" RightMargin="516.2514" TopMargin="580.3708" BottomMargin="73.6292" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="153" Scale9Height="44" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="rechargePhoneBtn" ActionTag="1153742239" Tag="726" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="580.7560" RightMargin="516.2440" TopMargin="580.3708" BottomMargin="73.6292" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="153" Scale9Height="44" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="183.0000" Y="66.0000" />
                 <Children>
                   <AbstractNodeData Name="Text_71" ActionTag="-375864967" Tag="727" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="52.5000" RightMargin="52.5000" TopMargin="8.5400" BottomMargin="16.4600" IsCustomSize="True" FontSize="38" LabelText="兑换" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -1229,7 +1229,7 @@
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="672.2486" Y="106.6292" />
+                <Position X="672.2560" Y="106.6292" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5252" Y="0.1481" />

@@ -843,7 +843,7 @@
                       {
                         "FileData": {
                           "Type": "Normal",
-                          "Path": "png/dt_yqyl1.png",
+                          "Path": "png/7e1ffabfca4572f9aedd2eeb8c16362.png",
                           "Plist": ""
                         },
                         "Scale9OriginX": 284,
@@ -871,18 +871,18 @@
                           "Y": 0.5504
                         },
                         "PreSize": {
-                          "X": 1.2459,
-                          "Y": 0.8658
+                          "X": 1.2435,
+                          "Y": 0.8644
                         },
-                        "LeftMargin": -185.9028,
-                        "RightMargin": 15.2184,
-                        "TopMargin": 7.8812,
-                        "BottomMargin": 55.4588,
+                        "LeftMargin": -185.0606,
+                        "RightMargin": 16.0606,
+                        "TopMargin": 8.2112,
+                        "BottomMargin": 55.7888,
                         "Tag": 879,
                         "ActionTag": -1761569088,
                         "Size": {
-                          "X": 864.6844,
-                          "Y": 408.66
+                          "X": 863.0,
+                          "Y": 408.0
                         },
                         "Name": "sftSharePic",
                         "ctype": "ImageViewObjectData"
@@ -4050,7 +4050,6 @@
         "invitation/yqyl_8.png",
         "png/7e1ffabfca4572f9aedd2eeb8c16362.png",
         "png/d64b65b92c528939297fd6f835e4cd7.png",
-        "png/dt_yqyl1.png",
         "task/rwzx_10.png",
         "task/ssc_5.png"
       ],

@@ -104,7 +104,7 @@
               <AbstractNodeData Name="invitationPnl" ActionTag="1132894349" Tag="522" IconVisible="False" LeftMargin="392.2676" RightMargin="193.7324" TopMargin="122.8461" BottomMargin="125.1539" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="694.0000" Y="472.0000" />
                 <Children>
-                  <AbstractNodeData Name="invitNowPnl" ActionTag="579026604" Tag="686" IconVisible="False" LeftMargin="-1.6381" RightMargin="-7.3619" TopMargin="-15.2499" BottomMargin="-51.7501" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                  <AbstractNodeData Name="invitNowPnl" Visible="False" ActionTag="579026604" Tag="686" IconVisible="False" LeftMargin="-1.6381" RightMargin="-7.3619" TopMargin="-15.2499" BottomMargin="-51.7501" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="703.0000" Y="539.0000" />
                     <Children>
                       <AbstractNodeData Name="inviteFriendsPic" ActionTag="88895582" Tag="525" IconVisible="False" LeftMargin="17.7709" RightMargin="15.2291" TopMargin="65.9858" BottomMargin="89.0142" LeftEage="221" RightEage="221" TopEage="126" BottomEage="126" Scale9OriginX="221" Scale9OriginY="126" Scale9Width="228" Scale9Height="132" ctype="ImageViewObjectData">
@@ -173,15 +173,15 @@
                   <AbstractNodeData Name="sfpPnl" ActionTag="-2013452821" Tag="864" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="694.0000" Y="472.0000" />
                     <Children>
-                      <AbstractNodeData Name="sftSharePic" Visible="False" ActionTag="-1761569088" Tag="879" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="-185.9028" RightMargin="15.2184" TopMargin="7.8812" BottomMargin="55.4588" LeftEage="284" RightEage="284" TopEage="134" BottomEage="134" Scale9OriginX="284" Scale9OriginY="134" Scale9Width="295" Scale9Height="140" ctype="ImageViewObjectData">
-                        <Size X="864.6844" Y="408.6600" />
+                      <AbstractNodeData Name="sftSharePic" ActionTag="-1761569088" Tag="879" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="-185.0606" RightMargin="16.0606" TopMargin="8.2112" BottomMargin="55.7888" LeftEage="284" RightEage="284" TopEage="134" BottomEage="134" Scale9OriginX="284" Scale9OriginY="134" Scale9Width="295" Scale9Height="140" ctype="ImageViewObjectData">
+                        <Size X="863.0000" Y="408.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="246.4394" Y="259.7888" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
                         <PrePosition X="0.3551" Y="0.5504" />
-                        <PreSize X="1.2459" Y="0.8658" />
-                        <FileData Type="Normal" Path="png/dt_yqyl1.png" Plist="" />
+                        <PreSize X="1.2435" Y="0.8644" />
+                        <FileData Type="Normal" Path="png/7e1ffabfca4572f9aedd2eeb8c16362.png" Plist="" />
                       </AbstractNodeData>
                       <AbstractNodeData Name="qrCodePg2" ActionTag="407204860" Tag="74" IconVisible="False" LeftMargin="-125.4465" RightMargin="709.4465" TopMargin="260.3409" BottomMargin="101.6591" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                         <Size X="110.0000" Y="110.0000" />
@@ -892,7 +892,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="screenLayout" ActionTag="-1202849292" UserData="{&quot;layoutType&quot;:&quot;maxArea&quot;,&quot;screenAlign&quot;:&quot;mid&quot;}" Tag="684" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftEage="422" RightEage="422" TopEage="134" BottomEage="134" Scale9OriginX="422" Scale9OriginY="134" Scale9Width="19" Scale9Height="140" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="screenLayout" Visible="False" ActionTag="-1202849292" UserData="{&quot;layoutType&quot;:&quot;maxArea&quot;,&quot;screenAlign&quot;:&quot;mid&quot;}" Tag="684" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftEage="422" RightEage="422" TopEage="134" BottomEage="134" Scale9OriginX="422" Scale9OriginY="134" Scale9Width="19" Scale9Height="140" ctype="ImageViewObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <Children>
               <AbstractNodeData Name="qrCodePg3" ActionTag="-1091143986" Tag="122" IconVisible="False" LeftMargin="158.6186" RightMargin="1063.3813" TopMargin="573.7065" BottomMargin="88.2935" Scale9Width="46" Scale9Height="46" ctype="ImageViewObjectData">

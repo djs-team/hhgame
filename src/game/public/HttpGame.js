@@ -691,6 +691,9 @@ load('game/public/HttpGame', function () {
         REFRESHCHALLENGETASKBack: function (msg) {
 
             if (msg.status !== 0) {
+                if (msg.status == 111) {
+                    appInstance.gameAgent().Tips('今日挑战任务已完成！')
+                }
                 cc.log('------------->>>httpGame REFRESHCHALLENGETASKBack error happen')
                 return
             }

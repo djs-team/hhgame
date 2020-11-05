@@ -449,7 +449,7 @@ load('module/mahjong/ui/DeskCardLayer', function () {
             let valueNd = card.getChildByName('CardValue')
             let valueImg = 'res/module/mahjong/card/value/selfhand/'
             card._cardInfo = cardInfo
-            card.setPosition(card._beginPos)
+            card.setPositionY(card._beginPos.y)
             let cardStr = [
                 'wan',
                 'tong',

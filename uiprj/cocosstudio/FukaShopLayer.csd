@@ -1537,7 +1537,7 @@
                         <PreSize X="0.2816" Y="0.9125" />
                         <FileData Type="Normal" Path="fukashop/fk_39.png" Plist="" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Text_4" ActionTag="-1171917928" Tag="181" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" LeftMargin="324.3851" RightMargin="357.7404" TopMargin="224.9590" BottomMargin="224.6998" IsCustomSize="True" FontSize="25" LabelText="1、广东、重庆、四川、山西联通不支持小面额充值&#xA;2、请务必核对您填写手机号，因输入错误导致的损失，和和麻将概不负责&#xA;3、因运营商会不定期进行充值维护，话费兑换可能有0-72小时&#xA;4、受运营商政策限制，携号转网的号码话费兑奖时能出现充值失败或其他异常情况。为了不影响您的体验，建议使用非携号转网的手机号码进行话费兑奖" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                      <AbstractNodeData Name="Text_4" ActionTag="-1171917928" Tag="181" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" LeftMargin="324.3851" RightMargin="357.7404" TopMargin="224.9590" BottomMargin="224.6998" IsCustomSize="True" FontSize="25" LabelText="1、广东、重庆、四川、山西联通不支持小面额充值&#xA;2、请务必核对您填写手机号，因输入错误导致的损失，麻将情缘概不负责&#xA;3、因运营商会不定期进行充值维护，话费兑换可能有0-72小时&#xA;4、受运营商政策限制，携号转网的号码话费兑奖时能出现充值失败或其他异常情况。为了不影响您的体验，建议使用非携号转网的手机号码进行话费兑奖" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                         <Size X="597.8745" Y="270.3411" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="623.3224" Y="359.8704" />

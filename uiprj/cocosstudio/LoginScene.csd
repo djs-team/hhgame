@@ -202,7 +202,7 @@
           <AbstractNodeData Name="userAgreeTopPnl" ActionTag="-2080662204" UserData="{&quot;layoutType&quot;:&quot;showAll&quot;,&quot;screenAlign&quot;:&quot;top&quot;}" Tag="355" IconVisible="False" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TopMargin="-0.9853" BottomMargin="0.9853" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <Children>
-              <AbstractNodeData Name="Text_5" ActionTag="134862025" Tag="358" IconVisible="False" LeftMargin="284.8234" RightMargin="274.1766" TopMargin="84.6400" BottomMargin="561.3600" FontSize="72" LabelText="和和麻将用户服务协议" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="Text_5" ActionTag="134862025" Tag="358" IconVisible="False" LeftMargin="284.8234" RightMargin="274.1766" TopMargin="84.6400" BottomMargin="561.3600" FontSize="72" LabelText="麻将情缘用户服务协议" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="721.0000" Y="74.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="645.3234" Y="598.3600" />

@@ -2846,7 +2846,7 @@
                   "Y": 0.9457
                 },
                 "PreSize": {
-                  "X": 0.1562,
+                  "X": 0.1563,
                   "Y": 0.0625
                 },
                 "LeftMargin": 323.296,
@@ -3114,7 +3114,7 @@
                   "Y": 0.9458
                 },
                 "PreSize": {
-                  "X": 0.1562,
+                  "X": 0.1563,
                   "Y": 0.0625
                 },
                 "LeftMargin": 558.08,
@@ -3382,7 +3382,7 @@
                   "Y": 0.9444
                 },
                 "PreSize": {
-                  "X": 0.1562,
+                  "X": 0.1563,
                   "Y": 0.0625
                 },
                 "LeftMargin": 780.08,
@@ -5338,7 +5338,7 @@
                   {
                     "IsCustomSize": true,
                     "FontSize": 26,
-                    "LabelText": "欢迎您来到和和麻将",
+                    "LabelText": "欢迎您来到麻将情缘",
                     "HorizontalAlignmentType": "HT_Center",
                     "VerticalAlignmentType": "VT_Center",
                     "OutlineColor": {

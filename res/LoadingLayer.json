@@ -66,7 +66,7 @@
               {
                 "AnchorPoint": {},
                 "Position": {
-                  "X": 640.0,
+                  "X": 733.0,
                   "Y": 360.0
                 },
                 "Scale": {
@@ -75,18 +75,17 @@
                 },
                 "CColor": {},
                 "IconVisible": true,
-                "PositionPercentXEnabled": true,
                 "PositionPercentYEnabled": true,
                 "PrePosition": {
-                  "X": 0.5,
+                  "X": 0.5727,
                   "Y": 0.5
                 },
                 "PreSize": {
                   "X": 0.0,
                   "Y": 0.0
                 },
-                "LeftMargin": 640.0,
-                "RightMargin": 640.0,
+                "LeftMargin": 733.0,
+                "RightMargin": 547.0,
                 "TopMargin": 360.0,
                 "BottomMargin": 360.0,
                 "Tag": 3,

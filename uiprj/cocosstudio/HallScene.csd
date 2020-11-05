@@ -1259,7 +1259,7 @@
                     <PreSize X="0.2547" Y="0.0889" />
                     <FileData Type="Normal" Path="common/bz_1.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Text_3" ActionTag="1526509427" Tag="133" IconVisible="False" LeftMargin="504.2687" RightMargin="497.7313" TopMargin="118.3294" BottomMargin="564.6706" IsCustomSize="True" FontSize="26" LabelText="欢迎您来到和和麻将" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                  <AbstractNodeData Name="Text_3" ActionTag="1526509427" Tag="133" IconVisible="False" LeftMargin="504.2687" RightMargin="497.7313" TopMargin="118.3294" BottomMargin="564.6706" IsCustomSize="True" FontSize="26" LabelText="欢迎您来到麻将情缘" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="278.0000" Y="37.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="643.2687" Y="583.1706" />

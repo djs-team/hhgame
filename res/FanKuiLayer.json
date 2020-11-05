@@ -1051,10 +1051,9 @@
                     },
                     "Scale9Width": 1,
                     "Scale9Height": 1,
-                    "TouchEnable": true,
                     "AnchorPoint": {},
                     "Position": {
-                      "X": 27.8238,
+                      "X": 27.8064,
                       "Y": 380.3444
                     },
                     "Scale": {
@@ -1072,54 +1071,32 @@
                       "X": 0.9334,
                       "Y": 0.2589
                     },
-                    "LeftMargin": 27.8238,
-                    "RightMargin": 23.0876,
+                    "LeftMargin": 27.8064,
+                    "RightMargin": 23.105,
                     "TopMargin": 20.3455,
                     "BottomMargin": 380.3444,
                     "Tag": 51,
                     "Children": [
                       {
-                        "FontSize": 14,
-                        "ButtonText": "",
-                        "TextColor": {
-                          "R": 65,
-                          "G": 65,
-                          "B": 70
+                        "ClipAble": false,
+                        "BackColorAlpha": 102,
+                        "SingleColor": {
+                          "R": 150,
+                          "G": 200
                         },
-                        "DisabledFileData": {
-                          "Type": "Default",
-                          "Path": "Default/Button_Disable.png",
-                          "Plist": ""
+                        "FirstColor": {
+                          "R": 150,
+                          "G": 200
                         },
-                        "NormalFileData": {
-                          "Type": "Normal",
-                          "Path": "feedback/yjfk_7.png",
-                          "Plist": ""
+                        "EndColor": {},
+                        "ColorVector": {
+                          "ScaleY": 1.0
                         },
-                        "Scale9Enable": true,
-                        "Scale9OriginX": 15,
-                        "Scale9OriginY": 11,
-                        "Scale9Width": 523,
-                        "Scale9Height": 23,
-                        "OutlineColor": {
-                          "G": 0,
-                          "B": 0
-                        },
-                        "ShadowColor": {
-                          "R": 110,
-                          "G": 110,
-                          "B": 110
-                        },
-                        "ShadowOffsetX": 2.0,
-                        "ShadowOffsetY": -2.0,
                         "TouchEnable": true,
-                        "AnchorPoint": {
-                          "ScaleX": 0.5,
-                          "ScaleY": 0.5
-                        },
+                        "AnchorPoint": {},
                         "Position": {
-                          "X": 356.5,
-                          "Y": 102.7312
+                          "X": 50.0,
+                          "Y": 73.0
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -1127,25 +1104,43 @@
                         },
                         "CColor": {},
                         "IconVisible": false,
-                        "PositionPercentXEnabled": true,
                         "PrePosition": {
-                          "X": 0.5,
-                          "Y": 0.7338
+                          "X": 0.0701,
+                          "Y": 0.5214
                         },
                         "PreSize": {
-                          "X": 0.8415,
-                          "Y": 0.3214
+                          "X": 0.8555,
+                          "Y": 0.3714
                         },
-                        "LeftMargin": 56.5,
-                        "RightMargin": 56.5,
-                        "TopMargin": 14.7688,
-                        "BottomMargin": 80.2312,
-                        "Tag": 276,
+                        "LeftMargin": 50.0,
+                        "RightMargin": 53.0,
+                        "TopMargin": 15.0,
+                        "BottomMargin": 73.0,
+                        "Tag": 56,
                         "Children": [
                           {
-                            "IsCustomSize": true,
-                            "FontSize": 26,
-                            "LabelText": "3.如何成为代理，成为代理后是怎么收益的？",
+                            "FontSize": 14,
+                            "ButtonText": "",
+                            "TextColor": {
+                              "R": 65,
+                              "G": 65,
+                              "B": 70
+                            },
+                            "DisabledFileData": {
+                              "Type": "Default",
+                              "Path": "Default/Button_Disable.png",
+                              "Plist": ""
+                            },
+                            "NormalFileData": {
+                              "Type": "Normal",
+                              "Path": "feedback/yjfk_7.png",
+                              "Plist": ""
+                            },
+                            "Scale9Enable": true,
+                            "Scale9OriginX": 15,
+                            "Scale9OriginY": 11,
+                            "Scale9Width": 523,
+                            "Scale9Height": 23,
                             "OutlineColor": {
                               "G": 0,
                               "B": 0
@@ -1157,74 +1152,128 @@
                             },
                             "ShadowOffsetX": 2.0,
                             "ShadowOffsetY": -2.0,
+                            "TouchEnable": true,
                             "AnchorPoint": {
                               "ScaleX": 0.5,
                               "ScaleY": 0.5
                             },
                             "Position": {
-                              "X": 300.0,
-                              "Y": 22.5
+                              "X": 304.42,
+                              "Y": 25.73
                             },
                             "Scale": {
                               "ScaleX": 1.0,
                               "ScaleY": 1.0
                             },
-                            "CColor": {
-                              "R": 212,
-                              "G": 85,
-                              "B": 0
-                            },
+                            "CColor": {},
                             "IconVisible": false,
-                            "PositionPercentXEnabled": true,
-                            "PositionPercentYEnabled": true,
                             "PrePosition": {
-                              "X": 0.5,
-                              "Y": 0.5
+                              "X": 0.499,
+                              "Y": 0.4948
                             },
                             "PreSize": {
-                              "X": 0.9167,
-                              "Y": 0.6667
+                              "X": 0.9836,
+                              "Y": 0.8654
                             },
-                            "LeftMargin": 25.0,
-                            "RightMargin": 25.0,
-                            "TopMargin": 7.5,
-                            "BottomMargin": 7.5,
-                            "Tag": 53,
-                            "ActionTag": -1795795244,
+                            "LeftMargin": 4.42,
+                            "RightMargin": 5.58,
+                            "TopMargin": 3.77,
+                            "BottomMargin": 3.23,
+                            "Tag": 57,
+                            "Children": [
+                              {
+                                "IsCustomSize": true,
+                                "FontSize": 26,
+                                "LabelText": "3.如何成为代理，成为代理后是怎么收益的？",
+                                "OutlineColor": {
+                                  "G": 0,
+                                  "B": 0
+                                },
+                                "ShadowColor": {
+                                  "R": 110,
+                                  "G": 110,
+                                  "B": 110
+                                },
+                                "ShadowOffsetX": 2.0,
+                                "ShadowOffsetY": -2.0,
+                                "AnchorPoint": {
+                                  "ScaleX": 0.5,
+                                  "ScaleY": 0.5
+                                },
+                                "Position": {
+                                  "X": 300.0,
+                                  "Y": 22.5
+                                },
+                                "Scale": {
+                                  "ScaleX": 1.0,
+                                  "ScaleY": 1.0
+                                },
+                                "CColor": {
+                                  "R": 212,
+                                  "G": 85,
+                                  "B": 0
+                                },
+                                "IconVisible": false,
+                                "PositionPercentXEnabled": true,
+                                "PositionPercentYEnabled": true,
+                                "PrePosition": {
+                                  "X": 0.5,
+                                  "Y": 0.5
+                                },
+                                "PreSize": {
+                                  "X": 0.9167,
+                                  "Y": 0.6667
+                                },
+                                "LeftMargin": 25.0,
+                                "RightMargin": 25.0,
+                                "TopMargin": 7.5,
+                                "BottomMargin": 7.5,
+                                "Tag": 58,
+                                "ActionTag": -1754272319,
+                                "Size": {
+                                  "X": 550.0,
+                                  "Y": 30.0
+                                },
+                                "Name": "questionText",
+                                "ctype": "TextObjectData"
+                              }
+                            ],
+                            "ActionTag": -1575105400,
                             "Size": {
-                              "X": 550.0,
-                              "Y": 30.0
+                              "X": 600.0,
+                              "Y": 45.0
                             },
-                            "Name": "questionText",
-                            "ctype": "TextObjectData"
+                            "Name": "questionBtn",
+                            "ctype": "ButtonObjectData"
                           }
                         ],
-                        "ActionTag": -1400632588,
+                        "ActionTag": -1030715132,
                         "Size": {
-                          "X": 600.0,
-                          "Y": 45.0
+                          "X": 610.0,
+                          "Y": 52.0
                         },
-                        "Name": "questionBtn",
-                        "ctype": "ButtonObjectData"
+                        "Name": "questionCell",
+                        "ctype": "PanelObjectData"
                       },
                       {
-                        "FileData": {
-                          "Type": "Normal",
-                          "Path": "feedback/yjfk_6.png",
-                          "Plist": ""
+                        "ClipAble": false,
+                        "BackColorAlpha": 102,
+                        "SingleColor": {
+                          "R": 150,
+                          "G": 200
                         },
-                        "Scale9Enable": true,
-                        "Scale9OriginX": 182,
-                        "Scale9OriginY": 21,
-                        "Scale9Width": 189,
-                        "Scale9Height": 22,
-                        "AnchorPoint": {
-                          "ScaleX": 0.5,
-                          "ScaleY": 0.5
+                        "FirstColor": {
+                          "R": 150,
+                          "G": 200
                         },
+                        "EndColor": {},
+                        "ColorVector": {
+                          "ScaleY": 1.0
+                        },
+                        "AnchorPoint": {},
                         "Position": {
-                          "X": 356.5,
-                          "Y": 42.0
+                          "X": 51.181,
+                          "Y": 9.3101
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -1232,26 +1281,71 @@
                         },
                         "CColor": {},
                         "IconVisible": false,
-                        "PositionPercentXEnabled": true,
-                        "PositionPercentYEnabled": true,
                         "PrePosition": {
-                          "X": 0.5,
-                          "Y": 0.3
+                          "X": 0.0718,
+                          "Y": 0.0665
                         },
                         "PreSize": {
-                          "X": 0.8415,
-                          "Y": 0.4571
+                          "X": 0.8499,
+                          "Y": 0.4929
                         },
-                        "LeftMargin": 56.5,
-                        "RightMargin": 56.5,
-                        "TopMargin": 66.0,
-                        "BottomMargin": 10.0,
-                        "Tag": 54,
+                        "LeftMargin": 51.181,
+                        "RightMargin": 55.819,
+                        "TopMargin": 61.6899,
+                        "BottomMargin": 9.3101,
+                        "Tag": 59,
                         "Children": [
+                          {
+                            "FileData": {
+                              "Type": "Normal",
+                              "Path": "feedback/yjfk_6.png",
+                              "Plist": ""
+                            },
+                            "Scale9Enable": true,
+                            "Scale9OriginX": 182,
+                            "Scale9OriginY": 21,
+                            "Scale9Width": 189,
+                            "Scale9Height": 22,
+                            "AnchorPoint": {
+                              "ScaleX": 0.5,
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 304.5,
+                              "Y": 34.77
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {},
+                            "IconVisible": false,
+                            "PrePosition": {
+                              "X": 0.5025,
+                              "Y": 0.5039
+                            },
+                            "PreSize": {
+                              "X": 0.9901,
+                              "Y": 0.9275
+                            },
+                            "LeftMargin": 4.5,
+                            "RightMargin": 1.5,
+                            "TopMargin": 2.23,
+                            "BottomMargin": 2.77,
+                            "Tag": 60,
+                            "ActionTag": 1590930076,
+                            "Size": {
+                              "X": 600.0,
+                              "Y": 64.0
+                            },
+                            "Name": "answerBg",
+                            "ctype": "ImageViewObjectData"
+                          },
                           {
                             "IsCustomSize": true,
                             "FontSize": 20,
                             "LabelText": "你好",
+                            "VerticalAlignmentType": "VT_Center",
                             "OutlineColor": {
                               "G": 0,
                               "B": 0
@@ -1268,8 +1362,8 @@
                               "ScaleY": 0.5
                             },
                             "Position": {
-                              "X": 300.0,
-                              "Y": 32.0
+                              "X": 303.0,
+                              "Y": 34.5
                             },
                             "Scale": {
                               "ScaleX": 1.0,
@@ -1284,30 +1378,30 @@
                               "Y": 0.5
                             },
                             "PreSize": {
-                              "X": 0.9167,
-                              "Y": 0.3594
+                              "X": 0.9901,
+                              "Y": 0.9275
                             },
-                            "LeftMargin": 25.0,
-                            "RightMargin": 25.0,
-                            "TopMargin": 20.5,
-                            "BottomMargin": 20.5,
-                            "Tag": 55,
-                            "ActionTag": 756807004,
+                            "LeftMargin": 3.0,
+                            "RightMargin": 3.0,
+                            "TopMargin": 2.5,
+                            "BottomMargin": 2.5,
+                            "Tag": 61,
+                            "ActionTag": -980536120,
                             "Size": {
-                              "X": 550.0,
-                              "Y": 23.0
+                              "X": 600.0,
+                              "Y": 64.0
                             },
                             "Name": "answerText",
                             "ctype": "TextObjectData"
                           }
                         ],
-                        "ActionTag": 176485257,
+                        "ActionTag": -909849264,
                         "Size": {
-                          "X": 600.0,
-                          "Y": 64.0
+                          "X": 606.0,
+                          "Y": 69.0
                         },
-                        "Name": "answerBg",
-                        "ctype": "ImageViewObjectData"
+                        "Name": "answerCell",
+                        "ctype": "PanelObjectData"
                       }
                     ],
                     "ActionTag": 1451133102,
@@ -2211,8 +2305,8 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 640.0,
-                          "Y": -672.048
+                          "X": 770.0,
+                          "Y": 1007.949
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -2223,8 +2317,8 @@
                         "PositionPercentXEnabled": true,
                         "PositionPercentYEnabled": true,
                         "PrePosition": {
-                          "X": 0.5,
-                          "Y": -0.9334
+                          "X": 0.6016,
+                          "Y": 1.3999
                         },
                         "PercentWidthEnable": true,
                         "PercentHeightEnable": true,
@@ -2234,8 +2328,10 @@
                           "X": 1.0,
                           "Y": 1.0
                         },
-                        "TopMargin": 1032.048,
-                        "BottomMargin": -1032.048,
+                        "LeftMargin": 130.0,
+                        "RightMargin": -130.0,
+                        "TopMargin": -647.949,
+                        "BottomMargin": 647.949,
                         "Tag": 116,
                         "Children": [
                           {

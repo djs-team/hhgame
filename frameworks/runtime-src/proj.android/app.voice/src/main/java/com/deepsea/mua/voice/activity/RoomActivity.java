@@ -116,7 +116,6 @@ import com.deepsea.mua.stub.entity.socket.receive.ShowGuardAnimationToClientPara
 import com.deepsea.mua.stub.entity.socket.receive.SongInfo;
 import com.deepsea.mua.stub.entity.socket.receive.SyncMicroRose;
 import com.deepsea.mua.stub.entity.socket.receive.UpMicroMsg;
-import com.deepsea.mua.stub.entity.socket.receive.UpdateFinishTaskToClientParam;
 import com.deepsea.mua.stub.entity.socket.receive.UpdateGuardSignToClientParam;
 import com.deepsea.mua.stub.entity.socket.send.JoinRoom;
 import com.deepsea.mua.stub.model.RoomModel;
@@ -146,7 +145,6 @@ import com.deepsea.mua.stub.utils.eventbus.UpdateApplyMicEvent;
 import com.deepsea.mua.stub.utils.eventbus.UpdateInRoomMemberEvent;
 import com.deepsea.mua.stub.utils.notch.HwNotchUtils;
 import com.deepsea.mua.stub.view.RedPacketView;
-import com.deepsea.mua.voice.MyNotifyService;
 import com.deepsea.mua.voice.R;
 import com.deepsea.mua.voice.adapter.IMicroEvent;
 import com.deepsea.mua.voice.adapter.MicroRecommendAdapter;
@@ -183,6 +181,7 @@ import com.deepsea.mua.voice.dialog.SongManagerDialog;
 import com.deepsea.mua.voice.dialog.SongSingingAlertDialog;
 import com.deepsea.mua.voice.dialog.SortCheckDialog;
 import com.deepsea.mua.voice.dialog.SortManageDialog;
+import com.deepsea.mua.voice.dialog.SortManageForTwoDialog;
 import com.deepsea.mua.voice.dialog.UserAvatarDialog;
 import com.deepsea.mua.voice.dialog.UserFansDialog;
 import com.deepsea.mua.stub.utils.ForbiddenStateUtils;
@@ -258,6 +257,7 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
     private RoomGiftDialog mGiftDialog;
     private EmojiDialog mEmojiDialog;
     private SortManageDialog mSortManageDialog;
+    private SortManageForTwoDialog mSortManageForTwoDialog;
     private SortCheckDialog mCheckDialog;
     private MicManagerDialog micManagerDialog;
     private MicManagerForServenDialog micManagerForServenDialog;
@@ -405,13 +405,6 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
         NetworkManager.getDefault().registerObserver(this);
         EventBus.getDefault().register(this);
         SongStateUtils.getSingleton2().initReverbPresetList();
-        SongStateUtils.getSingleton2().initReverbPresetList();
-        Intent intent = new Intent(mContext, MyNotifyService.class);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            startForegroundService(intent);
-        } else {
-            startService(intent);
-        }
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
@@ -448,7 +441,6 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
         super.onCreate(savedInstanceState, persistentState);
-        SharedPrefrencesUtil.saveData(mContext, "inroom", "inroom", true);
     }
 
     @Override
@@ -916,6 +908,9 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
         setMpIntroText();
         if (mSortManageDialog != null && mSortManageDialog.isShowing()) {
             mSortManageDialog.setNewData(mSortHandler.getOrders());
+        }
+        if (mSortManageForTwoDialog != null && mSortManageForTwoDialog.isShowing()) {
+            mSortManageForTwoDialog.setNewData(mSortHandler.getSorts());
         }
         if (mCheckDialog != null && mCheckDialog.isShowing()) {
             mCheckDialog.setData(mSortHandler.getSortsBySex());
@@ -1932,28 +1927,51 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
     private String toOnWheatUid = "";
 
     private void showMicroSortDialog(int tab) {
-        mSortManageDialog = new SortManageDialog(mContext, tab);
-        mSortManageDialog.setOnMicroListener(new MicroSortAdapter.OnMicroListener() {
-            @Override
-            public void onTopMicro(String uid) {
-                mViewModel.topMicro(uid);
-            }
+        if (mJoinRoom.getRoomMode() == 9) {
+            mSortManageForTwoDialog = new SortManageForTwoDialog(mContext);
+            mSortManageForTwoDialog.setOnMicroListener(new MicroSortAdapter.OnMicroListener() {
+                @Override
+                public void onTopMicro(String uid) {
+                    mViewModel.topMicro(uid);
+                }
 
-            @Override
-            public void onOnWheat(String uid) {
-                microType = 4;
-                toOnWheatUid = uid;
-                mViewModel.toOnWheat(uid, false);
-            }
+                @Override
+                public void onOnWheat(String uid) {
+                    microType = 4;
+                    toOnWheatUid = uid;
+                    mViewModel.toOnWheat(uid, false);
+                }
 
-            @Override
-            public void onRemove(String uid) {
-                mViewModel.refuseUpMicro(uid);
-            }
-        });
-        mSortManageDialog.setNewData(mSortHandler.getOrders());
-        mSortHandler.getSorts();
-        mSortManageDialog.showAtBottom();
+                @Override
+                public void onRemove(String uid) {
+                    mViewModel.refuseUpMicro(uid);
+                }
+            });
+            mSortManageForTwoDialog.setNewData(mSortHandler.getSorts());
+            mSortManageForTwoDialog.showAtBottom();
+        } else {
+            mSortManageDialog = new SortManageDialog(mContext, tab);
+            mSortManageDialog.setOnMicroListener(new MicroSortAdapter.OnMicroListener() {
+                @Override
+                public void onTopMicro(String uid) {
+                    mViewModel.topMicro(uid);
+                }
+
+                @Override
+                public void onOnWheat(String uid) {
+                    microType = 4;
+                    toOnWheatUid = uid;
+                    mViewModel.toOnWheat(uid, false);
+                }
+
+                @Override
+                public void onRemove(String uid) {
+                    mViewModel.refuseUpMicro(uid);
+                }
+            });
+            mSortManageDialog.setNewData(mSortHandler.getOrders());
+            mSortManageDialog.showAtBottom();
+        }
     }
 
     /**
@@ -2216,7 +2234,6 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
         });
         dialog.show();
     }
-
     @Override
     public void finish() {
         Log.d("exit", "finish");
@@ -4243,17 +4260,11 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
     @Override
     public void onMultiSend(int code) {
         dealSendGift(code, false);
-        if (mGiftDialog != null) {
-            mGiftDialog.setBalance(mRoomData.getBalance());
-        }
     }
 
     @Override
     public void onSingleSend(int code) {
         dealSendGift(code, true);
-        if (mGiftDialog != null) {
-            mGiftDialog.setBalance(mRoomData.getBalance());
-        }
 
     }
 
@@ -4647,7 +4658,6 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
             unregisterWxpayResult();
             mRoomJump.destroy();
             SharedPrefrencesUtil.saveData(mContext, "inroom", "inroom", false);
-            stopService(new Intent(mContext, MyNotifyService.class));
             SongStateUtils.getSingleton2().resetReverbPresetList();
             SongStateUtils.getSingleton2().setChangeView(false);
             SongStateUtils.getSingleton2().setConsertUserId("");

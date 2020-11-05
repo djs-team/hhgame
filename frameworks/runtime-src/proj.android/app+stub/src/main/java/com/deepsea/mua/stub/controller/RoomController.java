@@ -1418,9 +1418,6 @@ public class RoomController implements IRoomController, RoomMsgHandler.OnMsgEven
             case 29: {
                 if (msg.getSuccess() == 1) {
                     MobEventUtils.onSendGift(AppUtils.getApp());
-                    if (mRoomModel.getRoomData() != null) {
-                        mRoomModel.getRoomData().setBalance(object.get("Balance").getAsString());
-                    }
                 }
                 if (mView != null) {
                     mView.onMultiSend(msg.getSuccess());
@@ -1431,9 +1428,6 @@ public class RoomController implements IRoomController, RoomMsgHandler.OnMsgEven
             case 58: {
                 if (msg.getSuccess() == 1) {
                     MobEventUtils.onSendGift(AppUtils.getApp());
-                    if (mRoomModel.getRoomData() != null) {
-                        mRoomModel.getRoomData().setBalance(object.get("Balance").getAsString());
-                    }
                 }
                 if (mView != null) {
                     mView.onSingleSend(msg.getSuccess());

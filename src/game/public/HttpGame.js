@@ -143,6 +143,8 @@ load('game/public/HttpGame', function () {
 
             appInstance.gameNet().connect(msg.hostip, msg.hostport)
 
+            // 注册极光推送TagID
+            appInstance.nativeApi().registerJPUSHTagsID(msg.channel)
         },
 
 

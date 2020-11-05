@@ -170,6 +170,18 @@ static AppDelegate s_sharedApplication;
 //}
 
 #pragma mark - ======================== JPush =============================
+#pragma mark - 注册极光tagID
+/// 注册极光tagID
+/// @param tagID
++ (void)registerJPUSHTagsId:(NSString*_Nonnull)tagID {
+    NSSet *tags = [NSSet setWithObject:tagID];
+    [JPUSHService setTags:tags completion:^(NSInteger iResCode, NSSet *iTags, NSInteger seq) {
+        if (iResCode == 0) {
+            NSLog(@"tags设置成功=======%@",tagID);
+        }
+    } seq:100];
+}
+
 - (void)configureJPushOptions:(NSDictionary *)launchOptions {
     JPUSHRegisterEntity * entity = [[JPUSHRegisterEntity alloc] init];
     if (@available(iOS 12.0, *)) {
@@ -216,13 +228,6 @@ static AppDelegate s_sharedApplication;
     config.timeout = 5000;
     [JVERIFICATIONService setupWithConfig:config];
     [JVERIFICATIONService setDebug:YES];
-    
-    NSSet *tags = [NSSet setWithObject:@"10001"];
-    [JPUSHService setTags:tags completion:^(NSInteger iResCode, NSSet *iTags, NSInteger seq) {
-        if (iResCode == 0) {
-            NSLog(@"tags设置成功");
-        }
-    } seq:100];
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {

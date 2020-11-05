@@ -27,7 +27,6 @@
 @property (nonatomic, strong) UICollectionView *giftCollectionView;
 @property (nonatomic, strong) UIPageControl *currentPageControl;
 
-@property (nonatomic,strong)UILabel *moneyLabel;
 @property (nonatomic,strong)UIButton *addMoneyBtn;
 
 @property (nonatomic,strong)NSMutableArray *usersView;

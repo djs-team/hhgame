@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong)UIImageView *gifIconView;
 /**心动值label*/
 @property (nonatomic,strong)UIButton *giftXLabel;
+/**守护礼物标签*/
+@property (nonatomic,strong)UILabel *giftTagLabel;
 
 -(void)setGiftIconBtnModel:(voiceGiftModel*)model;
 @end

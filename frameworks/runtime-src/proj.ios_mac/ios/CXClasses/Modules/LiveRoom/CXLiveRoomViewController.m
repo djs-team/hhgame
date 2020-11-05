@@ -115,6 +115,7 @@
 @property (nonatomic, assign) BOOL isCloseMineMicro; // 是否关闭了自己的麦克风
 
 // 送礼
+@property (nonatomic, strong) MuaGiftListView *currentGiftListView; // 当前送礼页面
 @property (nonatomic, strong) NSArray <CXLiveRoomGiftModel *> *giftArrays; // 送礼礼物列表
 @property (nonatomic, strong) NSArray <CXLiveRoomGiftModel *> *guardGiftArrays; // 送礼守护礼物列表
 @property (nonatomic, strong) NSArray <CXLiveRoomGiftModel *> *firendGiftArrays; // 送礼加好友礼物列表
@@ -1025,6 +1026,9 @@
             case SocketMessageIDBalanceNotification: { // 同步用户的玫瑰余额
                 CXSocketMessageSystemNotification *msg = notification;
                 [CXClientModel instance].balance = msg.Balance;
+                if (_currentGiftListView) {
+                    _currentGiftListView.moneyLabel.text = msg.Balance.stringValue;
+                }
             }
                 break;
                 
@@ -1768,7 +1772,7 @@
             request.IsUseBag = IsUseBug;
             [[CXClientModel instance] sendSocketRequest:request withCallback:^(__kindof SocketMessageGroupGift * _Nonnull request) {
                 if (request.noError && request.response.isSuccess) {
-                    [CXClientModel instance].balance = request.response.Balance;
+//                    [CXClientModel instance].balance = request.response.Balance;
                 } else if (request.response.Success.integerValue == 4) {
                     [LEEAlert alert].config
                     .LeeTitle(@"")
@@ -1800,7 +1804,7 @@
             request.IsUseBag = IsUseBug;
             [[CXClientModel instance] sendSocketRequest:request withCallback:^(__kindof SocketMessageGroupGift * _Nonnull request) {
                 if (request.noError && request.response.isSuccess) {
-                    [CXClientModel instance].balance = request.response.Balance;
+//                    [CXClientModel instance].balance = request.response.Balance;
                 } else if (request.response.Success.integerValue == 6) {
                     [LEEAlert alert].config
                     .LeeTitle(@"")
@@ -1815,6 +1819,8 @@
             }];
         }
     }];
+    
+    _currentGiftListView = giftListView;
 }
 
 // 赠送单枝玫瑰
@@ -1827,7 +1833,7 @@
     kWeakSelf
     [[CXClientModel instance] sendSocketRequest:request withCallback:^(__kindof SocketMessageGroupGift * _Nonnull request) {
         if (request.noError && request.response.isSuccess) {
-            [CXClientModel instance].balance = request.response.Balance;
+//            [CXClientModel instance].balance = request.response.Balance;
         } else if (request.response.Success.integerValue == 4) {
             [LEEAlert alert].config
             .LeeTitle(@"")

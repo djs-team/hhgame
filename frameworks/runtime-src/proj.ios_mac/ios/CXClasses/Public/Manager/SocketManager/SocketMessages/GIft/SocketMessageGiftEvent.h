@@ -35,6 +35,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString * HeadImageUrl;
 @property (nonatomic, strong) NSNumber * UserId;
 @property (nonatomic, strong) NSNumber * Sex; // 1:男 2:女
+@property (nonatomic, strong) NSString * City;
+@property (nonatomic, strong) NSString * Age;
 
 @end
 

@@ -193,7 +193,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="9dp"
-                android:text="充值即代表同意《合合有约充值协议》"
+                android:text="充值即代表同意《麻将情缘充值协议》"
                 android:textColor="#ff666666"
                 android:textSize="13sp"
                 android:textStyle="bold" />

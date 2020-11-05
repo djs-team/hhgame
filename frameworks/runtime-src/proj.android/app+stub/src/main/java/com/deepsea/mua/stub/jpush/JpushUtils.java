@@ -111,7 +111,7 @@ public class JpushUtils {
         uiConfigBuilder.setLogBtnHeight(22);
         uiConfigBuilder.setLogBtnWidth(130);
         uiConfigBuilder.setAppPrivacyColor(0xFFBBBCC5, 0xFF8998FF);
-        uiConfigBuilder.setPrivacyText("登录即同意《", "", "", "》并授合合互娱获取本机号码");
+        uiConfigBuilder.setPrivacyText("登录即同意《", "", "", "》并授麻将情缘获取本机号码");
         uiConfigBuilder.setPrivacyCheckboxHidden(true);
         uiConfigBuilder.setPrivacyTextCenterGravity(true);
 //        uiConfigBuilder.setPrivacyOffsetX(52-15);

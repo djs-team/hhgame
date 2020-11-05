@@ -24,7 +24,7 @@
             android:layout_marginLeft="17dp"
             android:layout_marginTop="23dp"
             android:layout_marginRight="17dp"
-            android:text="主持必须在合合交友中完成实名认证。\n然后使用实名认证相同的姓名的支付宝账号完成收款。\n请上传和支付宝账号实名认证相同的身份证正反面照片。"
+            android:text="主持必须在麻将情缘中完成实名认证。\n然后使用实名认证相同的姓名的支付宝账号完成收款。\n请上传和支付宝账号实名认证相同的身份证正反面照片。"
             android:textColor="#ff333333"
             android:textSize="14sp" />
 

@@ -200,7 +200,7 @@
 - (IBAction)payProtocolAction:(id)sender {
     NSURL *url = [NSURL URLWithString:@"https://lin01.hehe555.com:85/Public/Download/charge.html"];
     CXBaseWebViewController *webVC = [[CXBaseWebViewController alloc] initWithURL:url];
-    webVC.title = @"合合有约充值协议";
+    webVC.title = @"麻将情缘充值协议";
     [self.navigationController pushViewController:webVC animated:YES];
 }
 

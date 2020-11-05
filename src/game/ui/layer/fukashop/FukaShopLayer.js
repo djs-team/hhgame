@@ -1378,6 +1378,9 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
             let cell = sender.getParent()
             let msg = cell.getChildByName('orderNumberValueText').getString()
             appInstance.nativeApi().copy(msg)
+            appInstance.gameAgent().Tips('复制成功',true)
+
+
         },
 
         onExchangeOnline: function (data) {

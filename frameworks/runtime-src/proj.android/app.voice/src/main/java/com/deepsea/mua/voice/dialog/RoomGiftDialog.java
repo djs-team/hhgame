@@ -124,11 +124,22 @@ public class RoomGiftDialog extends BaseDialog<DialogVoiceGiftBinding> {
                     user.setType(bean.getType());
                     user.setNumber(bean.getNumber());
                     user.setUser(bean.getUser());
-                    datas.add(user);
+                    if (!hasMicroData(datas,bean.getUser().getUserId())) {
+                        datas.add(user);
+                    }
                 }
             }
         }
         mBinding.presentView.setReceiverData(datas);
+    }
+    private boolean hasMicroData(List<MicroUser> datas,String uid){
+        boolean hasRepet=false;
+        for (MicroUser microUser:datas){
+            if (microUser.getUser().getUserId().equals(uid)){
+                hasRepet=true;
+            }
+        }
+        return hasRepet;
     }
 
     public void setOnPresentListener(OnPresentListener listener) {

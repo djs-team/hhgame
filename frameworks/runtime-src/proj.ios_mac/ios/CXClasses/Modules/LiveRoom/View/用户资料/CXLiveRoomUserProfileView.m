@@ -99,6 +99,7 @@
     LiveRoomUser *user = userInfo.User;
     
     [_avatar sd_setImageWithURL:[NSURL URLWithString:user.HeadImageUrl]];
+    _heightLabel.text = [NSString stringWithFormat:@"%@cm",user.Stature.stringValue];
     _nameLabel.text = user.Name;
     [_sexBtn setTitle:user.Age.stringValue forState:UIControlStateNormal];
     if (user.Sex == 1) {

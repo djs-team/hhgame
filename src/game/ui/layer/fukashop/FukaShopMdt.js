@@ -192,6 +192,7 @@ load('game/ui/layer/fukashop/FukaShopMdt', function () {
                 infoData.goodsId = info.id
                 infoData.goodsName = info.goodsName
                 infoData.goodsDesc = info.goodsDesc
+                infoData.goodsDetails = info.goodsDetails
                 infoData.hallPictureUrl = info.hallPictureUrl
                 infoData.fuKaNums = info.fuKaNums
                 infoData.detailsPictureUrl = info.detailsPictureUrl

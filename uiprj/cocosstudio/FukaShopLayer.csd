@@ -855,7 +855,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="goodsDetailsPnl" Visible="False" ActionTag="1740981911" Tag="282" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+          <AbstractNodeData Name="goodsDetailsPnl" ActionTag="1740981911" Tag="282" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <Children>
               <AbstractNodeData Name="detailTopPnl" ActionTag="-858943565" Tag="284" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="280.0000" RightMargin="280.0000" TopMargin="-280.0000" BottomMargin="-280.0000" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
@@ -899,7 +899,7 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="detailMidPnl" Visible="False" ActionTag="-2011462940" Tag="288" IconVisible="False" LeftMargin="527.4800" RightMargin="581.5200" TopMargin="-0.8400" BottomMargin="0.8400" ClipAble="False" BackColorAlpha="237" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="detailMidPnl" ActionTag="-2011462940" Tag="288" IconVisible="False" LeftMargin="527.4800" RightMargin="581.5200" TopMargin="-0.8400" BottomMargin="0.8400" ClipAble="False" BackColorAlpha="237" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="171.0000" Y="720.0000" />
                 <Children>
                   <AbstractNodeData Name="goodsNameText" ActionTag="-1856897359" Tag="289" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" LeftMargin="-124.2023" RightMargin="-16.7977" TopMargin="529.9352" BottomMargin="164.0648" FontSize="26" LabelText="商品名称商品名称商品名称" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -986,7 +986,7 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="detailBottomPnl" Visible="False" ActionTag="1962556440" Tag="292" IconVisible="False" LeftMargin="703.6307" RightMargin="-0.6306" TopMargin="-0.4400" BottomMargin="0.4400" ClipAble="False" BackColorAlpha="237" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="detailBottomPnl" ActionTag="1962556440" Tag="292" IconVisible="False" LeftMargin="703.6307" RightMargin="-0.6306" TopMargin="-0.4400" BottomMargin="0.4400" ClipAble="False" BackColorAlpha="237" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="577.0000" Y="720.0000" />
                 <Children>
                   <AbstractNodeData Name="Image_68" ActionTag="-840667286" Tag="293" IconVisible="False" LeftMargin="18.5773" RightMargin="533.4227" TopMargin="677.7184" BottomMargin="17.2816" LeftEage="8" RightEage="8" TopEage="8" BottomEage="8" Scale9OriginX="8" Scale9OriginY="8" Scale9Width="9" Scale9Height="9" ctype="ImageViewObjectData">
@@ -1010,13 +1010,26 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="detailImgPnl" ActionTag="786027686" Tag="309" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" LeftMargin="476.2507" RightMargin="-608.2507" TopMargin="324.0414" BottomMargin="0.9586" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                  <AbstractNodeData Name="detailPnl" ActionTag="786027686" Tag="309" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" LeftMargin="476.2507" RightMargin="-608.2507" TopMargin="319.0400" BottomMargin="5.9600" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="709.0000" Y="395.0000" />
+                    <Children>
+                      <AbstractNodeData Name="goodsDetailText" ActionTag="-1444423596" Tag="516" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="14.5000" RightMargin="14.5000" TopMargin="20.4885" BottomMargin="20.8144" IsCustomSize="True" FontSize="20" LabelText="这里是商品介绍" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="680.0000" Y="353.6971" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="354.5000" Y="197.6630" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="100" G="100" B="100" />
+                        <PrePosition X="0.5000" Y="0.5004" />
+                        <PreSize X="0.9591" Y="0.8954" />
+                        <OutlineColor A="255" R="255" G="0" B="0" />
+                        <ShadowColor A="255" R="110" G="110" B="110" />
+                      </AbstractNodeData>
+                    </Children>
                     <AnchorPoint />
-                    <Position X="476.2507" Y="0.9586" />
+                    <Position X="476.2507" Y="5.9600" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.8254" Y="0.0013" />
+                    <PrePosition X="0.8254" Y="0.0083" />
                     <PreSize X="1.2288" Y="0.5486" />
                     <SingleColor A="255" R="150" G="200" B="255" />
                     <FirstColor A="255" R="150" G="200" B="255" />
@@ -1073,7 +1086,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="robLogPnl" ActionTag="650260169" Tag="305" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" LeftMargin="280.0000" RightMargin="280.0000" TopMargin="-280.0000" BottomMargin="-280.0000" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+          <AbstractNodeData Name="robLogPnl" Visible="False" ActionTag="650260169" Tag="305" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" LeftMargin="280.0000" RightMargin="280.0000" TopMargin="-280.0000" BottomMargin="-280.0000" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="720.0000" Y="1280.0000" />
             <Children>
               <AbstractNodeData Name="Image_71" ActionTag="1711261518" Tag="307" IconVisible="False" PositionPercentXEnabled="True" TopMargin="101.5000" BottomMargin="3.5000" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="23" BottomEage="23" Scale9OriginX="15" Scale9OriginY="23" Scale9Width="23" Scale9Height="6" ctype="ImageViewObjectData">

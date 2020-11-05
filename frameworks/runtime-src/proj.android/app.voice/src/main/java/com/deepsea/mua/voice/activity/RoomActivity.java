@@ -2140,6 +2140,7 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
 //        if (isAddFriend) {
 //            status = "1";
 //        }
+
         mViewModel.getGifts(status).observe(this, new ProgressObserver<List<GiftBean>>(mContext) {
             @Override
             public void onSuccess(List<GiftBean> result) {
@@ -3505,6 +3506,7 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
             }
         } else {
             if (songInfo != null && !TextUtils.isEmpty(songInfo.getConsertUserName())) {
+                singerUserId = songInfo.getConsertUserId();
                 mBinding.cnsSecondViews.setVisibility(View.GONE);
                 mBinding.cnsSecondMusicViews.setVisibility(View.VISIBLE);
                 mBinding.mainSecondOneView.setVisibility(View.GONE);
@@ -3513,6 +3515,7 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
                 mBinding.mainSecondTwoMusicView.setVisibility(View.VISIBLE);
                 ViewBindUtils.setVisible(mBinding.rlMusic, true);
             } else {
+                singerUserId = "";
                 mBinding.cnsSecondViews.setVisibility(View.VISIBLE);
                 mBinding.cnsSecondMusicViews.setVisibility(View.GONE);
                 mBinding.mainSecondOneView.setVisibility(View.VISIBLE);
@@ -4140,6 +4143,14 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
         mRankingAdapter.setNewData(heads);
     }
 
+    @Override
+    public void upDateBalance(double balance) {
+        mRoomModel.getRoomData().setBalance(String.valueOf(balance));
+        if (mGiftDialog != null) {
+            mGiftDialog.setBalance(mRoomData.getBalance());
+        }
+    }
+
 
     private void showGuardBayWindowDiallog(JoinUser joinUser) {
         if (joinUser != null && joinUser.isRoomGuard()) {
@@ -4232,11 +4243,18 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
     @Override
     public void onMultiSend(int code) {
         dealSendGift(code, false);
+        if (mGiftDialog != null) {
+            mGiftDialog.setBalance(mRoomData.getBalance());
+        }
     }
 
     @Override
     public void onSingleSend(int code) {
         dealSendGift(code, true);
+        if (mGiftDialog != null) {
+            mGiftDialog.setBalance(mRoomData.getBalance());
+        }
+
     }
 
     @Override

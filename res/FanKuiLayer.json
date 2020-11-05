@@ -383,8 +383,8 @@
               "ScaleY": 0.5
             },
             "Position": {
-              "X": 639.9998,
-              "Y": 363.2659
+              "X": 640.0,
+              "Y": 363.24
             },
             "Scale": {
               "ScaleX": 1.0,
@@ -406,10 +406,8 @@
               "X": 1.0,
               "Y": 1.0
             },
-            "LeftMargin": -0.0002,
-            "RightMargin": 0.0002,
-            "TopMargin": -3.2659,
-            "BottomMargin": 3.2659,
+            "TopMargin": -3.24,
+            "BottomMargin": 3.24,
             "Tag": 199,
             "Children": [
               {
@@ -1054,13 +1052,10 @@
                     "Scale9Width": 1,
                     "Scale9Height": 1,
                     "TouchEnable": true,
-                    "AnchorPoint": {
-                      "ScaleX": 0.5,
-                      "ScaleY": 0.5
-                    },
+                    "AnchorPoint": {},
                     "Position": {
-                      "X": 384.3238,
-                      "Y": 450.3444
+                      "X": 27.8238,
+                      "Y": 380.3444
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -1070,8 +1065,8 @@
                     "IconVisible": false,
                     "PositionPercentXEnabled": true,
                     "PrePosition": {
-                      "X": 0.5031,
-                      "Y": 0.8329
+                      "X": 0.0364,
+                      "Y": 0.7034
                     },
                     "PreSize": {
                       "X": 0.9334,

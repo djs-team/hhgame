@@ -83,6 +83,7 @@ import com.deepsea.mua.stub.entity.socket.receive.UpdateFinishTaskToClientParam;
 import com.deepsea.mua.stub.entity.socket.receive.UpdateGuardSignToClientParam;
 import com.deepsea.mua.stub.entity.socket.receive.UpdateHintParam;
 import com.deepsea.mua.stub.entity.socket.receive.UpdateSongLyricParam;
+import com.deepsea.mua.stub.entity.socket.receive.UpdateUserBalanceParam;
 import com.deepsea.mua.stub.entity.socket.receive.UpdateWheatCards;
 import com.deepsea.mua.stub.entity.socket.send.JoinRoom;
 import com.deepsea.mua.stub.entity.socket.send.SendTokenMsg;
@@ -1411,6 +1412,7 @@ public class RoomController implements IRoomController, RoomMsgHandler.OnMsgEven
                 } else {
                     ToastUtils.showToast("禁言失败");
                 }
+
                 break;
             //赠送礼物回调
             case 29: {
@@ -2005,6 +2007,12 @@ public class RoomController implements IRoomController, RoomMsgHandler.OnMsgEven
                         }
                     }
                     mView.updateOnlineHeads(ranks);
+                }
+                break;
+            case 141:
+                UpdateUserBalanceParam userBalanceParam=JsonConverter.fromJson(message,UpdateUserBalanceParam.class);
+                if (mView!=null){
+                    mView.upDateBalance(userBalanceParam.getBalance());
                 }
                 break;
             case 301://KeepaLive

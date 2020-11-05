@@ -107,7 +107,6 @@ load('game/ui/layer/arena/ArenaLayer', function () {
 
         },
         onUpdateAwardCellView: function (data, i) {
-            console.log('===============datadsadsa'+JSON.stringify(data));
             let cell = this.awardCell.clone();
             cell.setVisible(true)
             this.awardList.pushBackCustomItem(cell)

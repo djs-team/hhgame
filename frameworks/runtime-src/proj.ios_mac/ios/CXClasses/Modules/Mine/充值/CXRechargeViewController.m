@@ -153,7 +153,7 @@
                 [weakSelf loadBalances];
                 [weakSelf loadRechargeItems];
             } else {
-                [weakSelf toast:errorMsg];
+                [weakSelf toast:@"购买失败"];
             }
         }];
         

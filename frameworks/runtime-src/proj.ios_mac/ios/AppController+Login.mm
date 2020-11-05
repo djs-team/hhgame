@@ -68,7 +68,8 @@
     }];
 }
 
-+ (void)JPushLoginWithMethod:(NSString *)method showPhoneAlert:(NSString *)showAlert{
++ (void)JPushLoginWithMethod:(NSString *)method showPhoneAlert:(NSString *)showAlert {
+    [CXOCJSBrigeManager manager].jpushLoginMethod = method;
     if ([CXPhoneBasicTools isSIMInstalled] == NO) {
         if ([showAlert isEqualToString:@"Show"]) {
             [self JPushLoginWithPhoneLogin];
@@ -88,7 +89,6 @@
     [[EMClient sharedClient] logout:YES];
     
     [MBProgressHUD showHUD];
-    [CXOCJSBrigeManager manager].jpushLoginMethod = method;
     [self customUI];
     [MBProgressHUD hideHUD];
     [JVERIFICATIONService getAuthorizationWithController:[CXTools currentViewController] completion:^(NSDictionary *result) {
@@ -144,6 +144,10 @@
     //定义第一个输入框；
     [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
         textField.placeholder = @"请输入手机号";
+    }];
+    //定义第二个输入框；
+    [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.placeholder = @"请输入密码";
     }];
     [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert animated:YES completion:nil];
 }

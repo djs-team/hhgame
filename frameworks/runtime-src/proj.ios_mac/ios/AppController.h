@@ -50,6 +50,11 @@
 /// 退出登录
 + (void)logout;
 
+#pragma mark - 注册极光tagID
+/// 注册极光tagID
+/// @param tagID
++ (void)registerJPUSHTagsId:(NSString*_Nonnull)tagID;
+
 #pragma mark - 屏幕横竖屏
 /// 改变屏幕旋转
 /// @param dir横竖屏标志  V：竖屏  其他：横屏
@@ -70,7 +75,7 @@
 /// 上传图片
 /// @param putParam 上传图片阿里云参数
 /// @param method 返回方法
-+ (void)selectedOnePhotoWithPutParam:(NSString *)putParam method:(NSString *_Nonnull)method;
++ (void)selectedOnePhotoWithPutParam:(NSString *_Nonnull)putParam method:(NSString *_Nonnull)method;
 
 #pragma mark - QRCode
 /// 生成二维码

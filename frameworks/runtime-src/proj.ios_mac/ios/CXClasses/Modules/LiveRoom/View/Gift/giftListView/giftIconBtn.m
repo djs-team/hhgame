@@ -29,6 +29,7 @@
     [self addSubview:self.giftCountLabel];
     [self addSubview:self.gifIconView];
     [self addSubview:self.borderView];
+    [self addSubview:self.giftTagLabel];
     [self.giftXLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(16.0f);
         make.top.equalTo(self.mas_top).offset(5);
@@ -51,6 +52,11 @@
         make.size.mas_equalTo(CGSizeMake(55, 55));
         make.top.equalTo(self.mas_top).offset(10);
         make.centerX.equalTo(self);
+    }];
+    [self.giftTagLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(14, 14));
+        make.top.mas_equalTo(0);
+        make.right.mas_equalTo(0);
     }];
 }
 
@@ -85,6 +91,12 @@
             self.borderView.layer.borderColor = [UIColor colorWithHexString:@"#00D386"].CGColor;
             
         }
+    }
+    
+    if (model.IsUseBeg == YES) {
+        self.giftTagLabel.hidden = NO;
+    } else {
+        self.giftTagLabel.hidden = YES;
     }
     
     if (model.isSelect) {
@@ -132,6 +144,21 @@
         _borderView.layer.borderWidth = 1;
     }
     return _borderView;
+}
+
+- (UILabel *)giftTagLabel {
+    if (!_giftTagLabel) {
+        _giftTagLabel = [[UILabel alloc] init];
+        _giftTagLabel.layer.masksToBounds = YES;
+        _giftTagLabel.layer.cornerRadius = 2;
+        _giftTagLabel.backgroundColor = UIColorHex(0xFBD711);
+        _giftTagLabel.font = [UIFont systemFontOfSize:10];
+        _giftTagLabel.text = @"守";
+        _giftTagLabel.textColor = [UIColor whiteColor];
+        _giftTagLabel.textAlignment = NSTextAlignmentCenter;
+    }
+    
+    return _giftTagLabel;
 }
 
 /*

@@ -309,6 +309,15 @@ load('game/public/GameUtil',function () {
         })))
     }
 
+    GameUtil.delayBtns = function (btns,delayTime) {
+        if(!btns)
+            return
+        for(let i = 0; i < btns.length; i++){
+            GameUtil.delayBtn(btns[i],delayTime)
+        }
+
+    },
+
     GameUtil.onForMatTxt = function (txt,forMatLength) {
         let forMatTxt = ''
         let txt_array = txt.split('\n');

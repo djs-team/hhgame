@@ -503,6 +503,20 @@ load('public/suport/NativeApi', function () {
                 NativeApi.HelloOC('uploadPictureParam throw: ' + JSON.stringify(e))
             }
         },
+        //注册极光推送TagsID
+        registerJPUSHTagsID: function (msg) {
+            try {
+
+                if (cc.sys.OS_ANDROID === cc.sys.os) {
+
+                } else if (cc.sys.OS_IOS === cc.sys.os) {
+                    let param = JSON.stringify(msg)
+                    jsb.reflection.callStaticMethod('AppController', 'registerJPUSHTagsId:', param)
+                }
+            } catch (e) {
+                NativeApi.HelloOC('uploadPictureParam throw: ' + JSON.stringify(e))
+            }
+        },
     })
     return NativeApi
 })

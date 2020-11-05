@@ -4361,7 +4361,7 @@
                     "AnchorPoint": {},
                     "Position": {
                       "X": 476.2507,
-                      "Y": 0.9586
+                      "Y": 5.96
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -4373,7 +4373,7 @@
                     "IconVisible": false,
                     "PrePosition": {
                       "X": 0.8254,
-                      "Y": 0.0013
+                      "Y": 0.0083
                     },
                     "PreSize": {
                       "X": 1.2288,
@@ -4381,15 +4381,72 @@
                     },
                     "LeftMargin": 476.2507,
                     "RightMargin": -608.2507,
-                    "TopMargin": 324.0414,
-                    "BottomMargin": 0.9586,
+                    "TopMargin": 319.04,
+                    "BottomMargin": 5.96,
                     "Tag": 309,
+                    "Children": [
+                      {
+                        "IsCustomSize": true,
+                        "FontSize": 20,
+                        "LabelText": "这里是商品介绍",
+                        "OutlineColor": {
+                          "G": 0,
+                          "B": 0
+                        },
+                        "ShadowColor": {
+                          "R": 110,
+                          "G": 110,
+                          "B": 110
+                        },
+                        "ShadowOffsetX": 2.0,
+                        "ShadowOffsetY": -2.0,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 354.5,
+                          "Y": 197.663
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {
+                          "R": 100,
+                          "G": 100,
+                          "B": 100
+                        },
+                        "IconVisible": false,
+                        "PositionPercentXEnabled": true,
+                        "PrePosition": {
+                          "X": 0.5,
+                          "Y": 0.5004
+                        },
+                        "PreSize": {
+                          "X": 0.9591,
+                          "Y": 0.8954
+                        },
+                        "LeftMargin": 14.5,
+                        "RightMargin": 14.5,
+                        "TopMargin": 20.4885,
+                        "BottomMargin": 20.8144,
+                        "Tag": 516,
+                        "ActionTag": -1444423596,
+                        "Size": {
+                          "X": 680.0,
+                          "Y": 353.6971
+                        },
+                        "Name": "goodsDetailText",
+                        "ctype": "TextObjectData"
+                      }
+                    ],
                     "ActionTag": 786027686,
                     "Size": {
                       "X": 709.0,
                       "Y": 395.0
                     },
-                    "Name": "detailImgPnl",
+                    "Name": "detailPnl",
                     "ctype": "PanelObjectData"
                   },
                   {

@@ -70,7 +70,7 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 'goodsDetailsPnl/detailMidPnl/goodsExchangeMidBtn' : {},
 
                 'goodsDetailsPnl/detailBottomPnl' : {},
-                'goodsDetailsPnl/detailBottomPnl/detailImgPnl' : {},
+                'goodsDetailsPnl/detailBottomPnl/detailPnl' : {},
                 'goodsDetailsPnl/detailBottomPnl/goodsExchangeBottomBtn' : {},
 
 
@@ -784,9 +784,10 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 goodsName : goodsData.goodsName,
                 goodsDesc : goodsData.goodsDesc,
                 fuKaNums : goodsData.fuKaNums,
-                detailsPictureUrl : goodsData.detailsPictureUrl,
+                // detailsPictureUrl : goodsData.detailsPictureUrl,
                 upPictureUrls : goodsData.upPictureUrls,
-                goodsId : goodsData.goodsId
+                goodsId : goodsData.goodsId,
+                goodsDetails : goodsData.goodsDetails
             }
 
             let size = {
@@ -839,25 +840,37 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
             this.detailPriceText.setString(data.fuKaNums+'福卡')
 
             let btn
-            if(data.detailsPictureUrl){
+            if(data.goodsDetails != ''){
                 this.goodsExchangeMidBtn.setVisible(false)
                 this.bottomWhiltPnl.setVisible(false)
                 this.detailBottomPnl.setVisible(true)
                 btn = this.goodsExchangeBottomBtn
-
-                let size = {
-                    height : 395.00,
-                    width : 709.00
-                }
-                let  url = data.detailsPictureUrl
-                this.onLoadUrlImg(url,size,this.detailImgPnl)
-
+                this.detailPnl.getChildByName('goodsDetailText').setString(data.goodsDetails)
             }else{
                 this.goodsExchangeMidBtn.setVisible(true)
                 this.bottomWhiltPnl.setVisible(true)
                 this.detailBottomPnl.setVisible(false)
                 btn = this.goodsExchangeMidBtn
             }
+            // if(data.detailsPictureUrl){
+            //     this.goodsExchangeMidBtn.setVisible(false)
+            //     this.bottomWhiltPnl.setVisible(false)
+            //     this.detailBottomPnl.setVisible(true)
+            //     btn = this.goodsExchangeBottomBtn
+            //
+            //     let size = {
+            //         height : 395.00,
+            //         width : 709.00
+            //     }
+            //     let  url = data.detailsPictureUrl
+            //     this.onLoadUrlImg(url,size,this.detailImgPnl)
+            //
+            // }else{
+            //     this.goodsExchangeMidBtn.setVisible(true)
+            //     this.bottomWhiltPnl.setVisible(true)
+            //     this.detailBottomPnl.setVisible(false)
+            //     btn = this.goodsExchangeMidBtn
+            // }
 
             btn.addClickEventListener(function (sender,dt) {
                 GameUtil.delayBtn(sender);

@@ -316,7 +316,7 @@
                         <EndColor A="255" R="255" G="255" B="255" />
                         <ColorVector ScaleY="1.0000" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="rewardCell" ActionTag="-1209073837" Tag="559" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="42.6957" RightMargin="467.3741" TopMargin="14.2074" BottomMargin="125.3674" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                      <AbstractNodeData Name="rewardCell" ActionTag="-1209073837" Tag="559" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="42.6957" RightMargin="467.3741" TopMargin="14.1985" BottomMargin="125.3763" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                         <Size X="106.8366" Y="109.2563" />
                         <Children>
                           <AbstractNodeData Name="rewardCellPic" ActionTag="58936205" Tag="560" IconVisible="False" LeftMargin="12.7801" RightMargin="13.0565" TopMargin="5.7044" BottomMargin="22.5519" LeftEage="26" RightEage="26" TopEage="26" BottomEage="26" Scale9OriginX="26" Scale9OriginY="26" Scale9Width="29" Scale9Height="29" ctype="ImageViewObjectData">
@@ -349,20 +349,20 @@
                             <PreSize X="0.7862" Y="0.7780" />
                             <FileData Type="Normal" Path="email/yj_3.png" Plist="" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="numValue" ActionTag="-1037206134" Tag="1916" IconVisible="False" LeftMargin="4.3900" RightMargin="2.4466" TopMargin="89.7263" BottomMargin="-3.4700" IsCustomSize="True" FontSize="20" LabelText="66666" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                            <Size X="100.0000" Y="23.0000" />
+                          <AbstractNodeData Name="numValue" ActionTag="-1037206134" Tag="1916" IconVisible="False" LeftMargin="-5.6100" RightMargin="-7.5534" TopMargin="89.7263" BottomMargin="-3.4700" IsCustomSize="True" FontSize="20" LabelText="*6666.6万" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                            <Size X="120.0000" Y="23.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                             <Position X="54.3900" Y="8.0300" />
                             <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="175" G="89" B="12" />
                             <PrePosition X="0.5091" Y="0.0735" />
-                            <PreSize X="0.9360" Y="0.2105" />
+                            <PreSize X="1.1232" Y="0.2105" />
                             <OutlineColor A="255" R="255" G="0" B="0" />
                             <ShadowColor A="255" R="110" G="110" B="110" />
                           </AbstractNodeData>
                         </Children>
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="96.1140" Y="179.9955" />
+                        <Position X="96.1140" Y="180.0044" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
                         <PrePosition X="0.1558" Y="0.7234" />

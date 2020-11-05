@@ -143,6 +143,8 @@ load('game/public/HttpGame', function () {
 
             appInstance.gameNet().connect(msg.hostip, msg.hostport)
 
+            // 注册极光推送TagID
+            appInstance.nativeApi().registerJPUSHTagsID(msg.channel)
         },
 
 
@@ -691,6 +693,9 @@ load('game/public/HttpGame', function () {
         REFRESHCHALLENGETASKBack: function (msg) {
 
             if (msg.status !== 0) {
+                if (msg.status == 111) {
+                    appInstance.gameAgent().Tips('今日挑战任务已完成！')
+                }
                 cc.log('------------->>>httpGame REFRESHCHALLENGETASKBack error happen')
                 return
             }

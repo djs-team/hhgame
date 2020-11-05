@@ -258,7 +258,7 @@ load('module/mahjong/ui/DeskCardLayer', function () {
             handNd.setVisible(true)
             let handCards = player.handCards
             let handCardCount = player.handCardCount
-            if (uiSeat === 0) {
+            if (uiSeat === 0) {//修改自己的手牌
                 if ((handCards.length % 3 ) !== 2) {
                     handCards = appInstance.gameAgent().mjUtil().sortCard(handCards)
                 }
@@ -449,6 +449,7 @@ load('module/mahjong/ui/DeskCardLayer', function () {
             let valueNd = card.getChildByName('CardValue')
             let valueImg = 'res/module/mahjong/card/value/selfhand/'
             card._cardInfo = cardInfo
+            card.setPositionY(card._beginPos.y)
             let cardStr = [
                 'wan',
                 'tong',

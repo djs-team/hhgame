@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,7 +14,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" alpha="0.29999999999999999" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3xD-j9-Xgb">
+                <button opaque="NO" alpha="0.29999999999999999" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3xD-j9-Xgb">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
@@ -54,18 +54,31 @@
                         <constraint firstAttribute="width" constant="124" id="rc4-AT-Pro"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5lk-AP-Fbg">
+                    <rect key="frame" x="264" y="277" width="30" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="4Cm-e2-k65"/>
+                        <constraint firstAttribute="height" constant="35" id="GA9-sP-XVg"/>
+                    </constraints>
+                    <state key="normal" image="liveroom_recommend_close"/>
+                    <connections>
+                        <action selector="hideAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="Wj5-GZ-gFd"/>
+                    </connections>
+                </button>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="3xD-j9-Xgb" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="4zl-Gd-bWP"/>
                 <constraint firstItem="3xD-j9-Xgb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="6R3-ls-74q"/>
                 <constraint firstItem="L85-m6-qij" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="44" id="74f-b3-mp6"/>
+                <constraint firstItem="5lk-AP-Fbg" firstAttribute="top" secondItem="L85-m6-qij" secondAttribute="top" constant="189" id="99e-b5-WI1"/>
+                <constraint firstItem="L85-m6-qij" firstAttribute="leading" secondItem="5lk-AP-Fbg" secondAttribute="trailing" id="GXD-O6-rI2"/>
                 <constraint firstAttribute="bottom" secondItem="L85-m6-qij" secondAttribute="bottom" id="caO-bB-65N"/>
                 <constraint firstItem="3xD-j9-Xgb" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="iaa-gs-jcj"/>
                 <constraint firstItem="L85-m6-qij" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" constant="4" id="k3h-3h-1FO"/>
                 <constraint firstAttribute="bottom" secondItem="3xD-j9-Xgb" secondAttribute="bottom" id="w2v-vV-OF7"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="listBGView" destination="L85-m6-qij" id="tif-Ip-dDo"/>
                 <outlet property="mainCollectionView" destination="0Y0-r5-re0" id="eTZ-dr-OUh"/>
@@ -74,4 +87,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="116.51785714285714"/>
         </view>
     </objects>
+    <resources>
+        <image name="liveroom_recommend_close" width="30" height="35"/>
+    </resources>
 </document>

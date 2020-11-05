@@ -108,11 +108,11 @@ load('module/mahjong/ui/DeskCardLayerMdt', function () {
             }
 
             if (msg.updateHandCard && msg.updateHandCard.isNeed) {
-                let seatID = msg.updateHandCard.seatID
-                let pCurSeatID = pData.tableData.pCurSeatID
-                let isTurn = (pCurSeatID === parseInt(seatID))
-                let player = players[seatID]
-                let uiSeat = pData.seatId2UI(seatID)
+                let seatID = msg.updateHandCard.seatID//上一次选择的玩家座位号
+                let pCurSeatID = pData.tableData.pCurSeatID//当前玩家座位号
+                let isTurn = (pCurSeatID === parseInt(seatID))//当前操作玩家和上一个玩家是否是同一个人
+                let player = players[seatID]//上一个操作玩家
+                let uiSeat = pData.seatId2UI(seatID)//上一个操作玩家的UI座位号
                 this.view.updateHandCard(uiSeat, player, isTurn)
             }
         },

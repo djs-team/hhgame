@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MuaGiftListView : UIView
 
+@property (nonatomic,strong) UILabel *moneyLabel;
+
 @property (nonatomic, strong) NSArray<CXLiveRoomGiftModel *> *gift_info;
 @property (nonatomic, strong) NSArray<CXLiveRoomGiftModel *> *knapsack_gift;
 @property (nonatomic, strong) NSArray *users; // 打赏目标用户

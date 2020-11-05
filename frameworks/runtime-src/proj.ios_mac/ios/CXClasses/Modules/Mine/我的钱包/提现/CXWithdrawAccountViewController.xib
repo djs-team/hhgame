@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,7 +25,7 @@
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mHy-Fv-tUN">
                     <rect key="frame" x="18" y="64" width="378" height="50.5"/>
-                    <string key="text">红娘/月老必须在合合有约中完成实名认证。
+                    <string key="text">红娘/月老必须在麻将情缘中完成实名认证。
 然后使用实名认证相同的姓名的支付宝账号完成收款。
 请上传和支付宝账号实名认证相同的身份证正反面照片。</string>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -50,7 +50,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T35-Jw-Ke6">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T35-Jw-Ke6">
                             <rect key="frame" x="91" y="157" width="202" height="50"/>
                             <color key="backgroundColor" red="1" green="0.50196078431372548" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
@@ -78,7 +78,7 @@
                         <constraint firstAttribute="height" constant="243" id="uPe-eD-k4J"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uVv-uV-pH4">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uVv-uV-pH4">
                     <rect key="frame" x="15" y="415" width="100" height="100"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="100" id="Flb-Ut-fAF"/>
@@ -89,7 +89,7 @@
                         <action selector="zhegnBtnAction:" destination="-1" eventType="touchUpInside" id="STS-Xu-9Mh"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WKE-lA-866">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WKE-lA-866">
                     <rect key="frame" x="135" y="415" width="100" height="100"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="100" id="5Qx-nW-GZT"/>
@@ -101,6 +101,7 @@
                     </connections>
                 </button>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="mHy-Fv-tUN" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="18" id="2nk-0u-WP7"/>
@@ -116,7 +117,6 @@
                 <constraint firstItem="WKE-lA-866" firstAttribute="top" secondItem="uVv-uV-pH4" secondAttribute="top" id="kIM-5C-vi8"/>
                 <constraint firstItem="WKE-lA-866" firstAttribute="width" secondItem="uVv-uV-pH4" secondAttribute="width" id="wvc-yT-0Zs"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <point key="canvasLocation" x="47.826086956521742" y="35.491071428571423"/>
         </view>
     </objects>

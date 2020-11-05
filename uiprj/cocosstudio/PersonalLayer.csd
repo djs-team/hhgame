@@ -190,13 +190,13 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="updateNameBtn" ActionTag="-1895661144" Tag="328" IconVisible="False" LeftMargin="147.2800" RightMargin="-22.2800" TopMargin="-1.1300" BottomMargin="2.1300" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="4" BottomEage="4" Scale9OriginX="15" Scale9OriginY="4" Scale9Width="3" Scale9Height="26" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                  <AbstractNodeData Name="updateNameBtn" ActionTag="-1895661144" Tag="328" IconVisible="False" LeftMargin="145.2800" RightMargin="-20.2800" TopMargin="-1.1300" BottomMargin="2.1300" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="4" BottomEage="4" Scale9OriginX="15" Scale9OriginY="4" Scale9Width="3" Scale9Height="26" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                     <Size X="33.0000" Y="34.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="163.7800" Y="19.1300" />
+                    <Position X="161.7800" Y="19.1300" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="1.0366" Y="0.5466" />
+                    <PrePosition X="1.0239" Y="0.5466" />
                     <PreSize X="0.2089" Y="0.9714" />
                     <TextColor A="255" R="65" G="65" B="70" />
                     <PressedFileData Type="Normal" Path="personal/gexx_8.png" Plist="" />

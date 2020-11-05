@@ -22,8 +22,8 @@ public class SongStateUtils {
     private boolean isChangeView;
     private String consertUserId = "";
     private int heartCount;
-    private int volume=30;
-    private boolean hintPlay=false;//播放提示
+    private int volume = 30;
+    private boolean hintPlay = false;//播放提示
 
     public boolean isHintPlay() {
         return hintPlay;
@@ -109,9 +109,10 @@ public class SongStateUtils {
         }
         return singleton2;
     }
-    public void  reset(){
-        consertUserId="";
-        singleton2=null;
+
+    public void reset() {
+        consertUserId = "";
+        singleton2 = null;
     }
 
     private List<LocalVoiceReverbPresetVo> reverbPresetVoList = new ArrayList<>();

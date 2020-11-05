@@ -4929,7 +4929,7 @@
                 },
                 "LeftMargin": 245.6756,
                 "RightMargin": 757.3244,
-                "TopMargin": 134.8956,
+                "TopMargin": 134.8957,
                 "BottomMargin": 357.1043,
                 "Tag": 349,
                 "ActionTag": -1786900549,
@@ -4973,7 +4973,7 @@
                   "Y": 0.6896
                 },
                 "LeftMargin": 724.7479,
-                "RightMargin": 142.7522,
+                "RightMargin": 142.7521,
                 "TopMargin": 159.079,
                 "BottomMargin": 64.421,
                 "Tag": 350,
@@ -5108,7 +5108,7 @@
                   "Y": 0.1806
                 },
                 "LeftMargin": 543.2813,
-                "RightMargin": 513.7188,
+                "RightMargin": 513.7187,
                 "TopMargin": 164.2657,
                 "BottomMargin": 425.7343,
                 "Tag": 353,
@@ -5158,7 +5158,7 @@
                   "Y": 0.2778
                 },
                 "LeftMargin": 204.7075,
-                "RightMargin": 756.115,
+                "RightMargin": 756.1149,
                 "TopMargin": 371.3782,
                 "BottomMargin": 148.6218,
                 "Tag": 355,
@@ -5253,7 +5253,7 @@
                       "Y": 0.18
                     },
                     "LeftMargin": 18.2426,
-                    "RightMargin": 14.9349,
+                    "RightMargin": 14.935,
                     "TopMargin": 69.8309,
                     "BottomMargin": 94.1691,
                     "Tag": 540,
@@ -5319,7 +5319,7 @@
               {
                 "IsCustomSize": true,
                 "FontSize": 20,
-                "LabelText": "1、广东、重庆、四川、山西联通不支持小面额充值\n2、请务必核对您填写手机号，因输入错误导致的损失，麻将情缘概不负责\n3、因运营商会不定期进行充值维护，话费兑换可能有0-72小时\n4、受运营商政策限制，携号转网的号码话费兑奖时能出现充值失败或其他异常情况。为了不影响您的体验，建议使用非携号转网的手机号码进行话费兑奖",
+                "LabelText": "1、广东、重庆、四川、山西联通不支持小面额充值\n2、请务必核对您填写手机号，因输入错误导致的损失，和和麻将概不负责\n3、因运营商会不定期进行充值维护，话费兑换可能有0-72小时\n4、受运营商政策限制，携号转网的号码话费兑奖时能出现充值失败或其他异常情况。为了不影响您的体验，建议使用非携号转网的手机号码进行话费兑奖",
                 "OutlineColor": {
                   "G": 0,
                   "B": 0
@@ -5336,8 +5336,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 896.7701,
-                  "Y": 261.7293
+                  "X": 898.1771,
+                  "Y": 278.5553
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -5350,22 +5350,22 @@
                 },
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.7006,
-                  "Y": 0.3635
+                  "X": 0.7017,
+                  "Y": 0.3869
                 },
                 "PreSize": {
                   "X": 0.3159,
-                  "Y": 0.3132
+                  "Y": 0.3443
                 },
-                "LeftMargin": 694.5772,
-                "RightMargin": 181.0371,
-                "TopMargin": 345.5335,
-                "BottomMargin": 148.9922,
+                "LeftMargin": 695.9842,
+                "RightMargin": 179.6301,
+                "TopMargin": 317.4908,
+                "BottomMargin": 154.6014,
                 "Tag": 725,
                 "ActionTag": -700325745,
                 "Size": {
                   "X": 404.3857,
-                  "Y": 225.4743
+                  "Y": 247.9078
                 },
                 "Name": "Text_4",
                 "ctype": "TextObjectData"
@@ -5410,7 +5410,7 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 672.2486,
+                  "X": 672.256,
                   "Y": 106.6292
                 },
                 "Scale": {
@@ -5428,8 +5428,8 @@
                   "X": 0.143,
                   "Y": 0.0917
                 },
-                "LeftMargin": 580.7486,
-                "RightMargin": 516.2514,
+                "LeftMargin": 580.756,
+                "RightMargin": 516.244,
                 "TopMargin": 580.3708,
                 "BottomMargin": 73.6292,
                 "Tag": 726,

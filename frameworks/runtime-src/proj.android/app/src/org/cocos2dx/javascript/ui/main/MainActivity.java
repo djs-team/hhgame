@@ -156,7 +156,6 @@ public class MainActivity extends BaseActivity<ActivityMainBinding>
         });
         AppConstant.getInstance().setFirstRun(true);
         hasFaceBeauty = SharedPrefrencesUtil.getData(mContext, "hasFaceBeauty", "hasFaceBeauty", Constant.isBeautyOpen);
-        boolean inroom = SharedPrefrencesUtil.getData(mContext, "inroom", "inroom", false);
 
         if (hasFaceBeauty) {
             int height = 1024;

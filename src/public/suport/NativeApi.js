@@ -506,15 +506,14 @@ load('public/suport/NativeApi', function () {
         //注册极光推送TagsID
         registerJPUSHTagsID: function (msg) {
             try {
-
+                let param = JSON.stringify(msg)
                 if (cc.sys.OS_ANDROID === cc.sys.os) {
-
+                    jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'registerJPUSHTagsId', '(Ljava/lang/String;)V',param)
                 } else if (cc.sys.OS_IOS === cc.sys.os) {
-                    let param = JSON.stringify(msg)
                     jsb.reflection.callStaticMethod('AppController', 'registerJPUSHTagsId:', param)
                 }
             } catch (e) {
-                NativeApi.HelloOC('uploadPictureParam throw: ' + JSON.stringify(e))
+                NativeApi.HelloOC('registerJPUSHTagsId throw: ' + JSON.stringify(e))
             }
         },
     })

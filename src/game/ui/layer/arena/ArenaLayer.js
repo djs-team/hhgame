@@ -5,6 +5,7 @@ load('game/ui/layer/arena/ArenaLayer', function () {
     let ArenaMdt = include('game/ui/layer/arena/ArenaMdt')
     let GameEvent = include('game/config/GameEvent')
     let GameUtil = include('game/public/GameUtil')
+    let GameConfig = include('game/config/GameConfig')
     let matchLayer = BaseLayer.extend({
         _className: 'matchLayer',
         _arenaTypeBtnData: [
@@ -15,6 +16,7 @@ load('game/ui/layer/arena/ArenaLayer', function () {
         ],
         _arenaBtnCellName: 'arenaBtn_',
         _arenaType: 1,
+        _propRes: GameConfig.propsRes,
 
         ctor: function () {
             appInstance.gameAgent().hideLoading()
@@ -105,6 +107,7 @@ load('game/ui/layer/arena/ArenaLayer', function () {
 
         },
         onUpdateAwardCellView: function (data, i) {
+            console.log('===============datadsadsa'+JSON.stringify(data));
             let cell = this.awardCell.clone();
             cell.setVisible(true)
             this.awardList.pushBackCustomItem(cell)
@@ -115,16 +118,19 @@ load('game/ui/layer/arena/ArenaLayer', function () {
                 cell.getChildByName('bgPic_1').setVisible(false)
                 cell.getChildByName('bgPic_2').setVisible(true)
             }
+            let propValue = data.propValue
+            let propInfo = propValue.split(',')
+            let propType = propInfo[0]
+            let propCode = propInfo[1]
+            let goodUrl = this._propRes[propType]['propCode'][propCode]['currency'];
+
             cell._sendMsg = {
                 orderCode : data.orderCode,
                 propValue : data.propValue,
-                goodsUrl : data. goodsUrl,
+                goodsUrl : goodUrl,
             }
-            let size = {
-                height : 56.00,
-                width : 56.00
-            }
-            this.onLoadUrlImg(data.goodsUrl,size,cell.getChildByName('awardContentPnl').getChildByName('awardImg'))
+
+            cell.getChildByName('awardContentPnl').getChildByName('awardImg').loadTexture(goodUrl)
             cell.setName(data.orderCode)
             cell.getChildByName('awardContentPnl').getChildByName('awardImg').getChildByName('awardText').setString(data.goodsName);
             cell.getChildByName('timeText').setString(this.onFormatDateTime(data.createTime));
@@ -165,6 +171,8 @@ load('game/ui/layer/arena/ArenaLayer', function () {
                             appInstance.nativeApi().copy(data.expressCode)
                             appInstance.gameAgent().Tips('复制成功')
                         }.bind(this))
+                    } else {
+                        cell.getChildByName('statusPnl').getChildByName('yunDanPnl').setVisible(false)
                     }
                     break
                 default:
@@ -174,11 +182,7 @@ load('game/ui/layer/arena/ArenaLayer', function () {
 
         phoneExchange: function (data) {
             this.exchangePnl.setVisible(true)
-            let size = {
-                height : 223.00,
-                width : 130.00
-            }
-            this.onLoadUrlImg(data.goodsUrl,size,this.exchangePnl.getChildByName('goodsUrl'))
+            this.exchangePnl.getChildByName('goodsUrl').loadTexture(data.goodsUrl)
             this.rechargePhoneBtn.addClickEventListener(function (sender,et) {
                 GameUtil.delayBtn(sender);
                 this.onRechargePhoneBtnClick(data.orderCode)

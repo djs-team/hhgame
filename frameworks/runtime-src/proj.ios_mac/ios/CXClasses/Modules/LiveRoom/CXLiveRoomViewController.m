@@ -561,11 +561,6 @@
                     SocketMessageUserSitdown *userSitdown = obj;
                     NSIndexPath *indexPath = [userSitdown.MicroInfo indexPath];
 
-                    LiveRoomMicroInfo *seat = [[CXClientModel instance].room.seats objectForKey:indexPath];
-                    CXLiveRoomSeatView *seatView = [self.roomUIView.roomSeatsView.seats objectForKey:indexPath];
-                    seatView.model = seat;
-                    [seatView addAgoraRtc:[userSitdown.MicroInfo.User.UserId numberValue]];
-                    
                     NSIndexPath * selfSeatIndex = [[CXClientModel instance].room.userSeats objectForKey:[CXClientModel instance].userId];
                     if (selfSeatIndex && [selfSeatIndex isEqual:indexPath]) {
                         [CXClientModel instance].agoraEngineManager.offMic = NO;
@@ -573,6 +568,11 @@
                         [[CXClientModel instance].agoraEngineManager.engine setClientRole:AgoraClientRoleBroadcaster];
                     }
                     
+                    LiveRoomMicroInfo *seat = [[CXClientModel instance].room.seats objectForKey:indexPath];
+                    CXLiveRoomSeatView *seatView = [self.roomUIView.roomSeatsView.seats objectForKey:indexPath];
+                    seatView.model = seat;
+                    [seatView addAgoraRtc:[userSitdown.MicroInfo.User.UserId numberValue]];
+
                     [self.roomUIView.messageListView addModel:userSitdown];
                 }];
             }

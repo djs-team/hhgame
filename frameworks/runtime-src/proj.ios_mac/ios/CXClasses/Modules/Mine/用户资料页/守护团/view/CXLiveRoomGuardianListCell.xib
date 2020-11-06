@@ -71,6 +71,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="gEu-cs-BCb" firstAttribute="top" secondItem="0GT-lX-rXa" secondAttribute="top" constant="-4" id="3C8-Cf-8d5"/>
+                    <constraint firstItem="4kQ-Ul-xnQ" firstAttribute="top" secondItem="BVM-Ik-ees" secondAttribute="bottom" constant="6" id="6dO-AJ-9tf"/>
                     <constraint firstItem="xC9-yl-PrA" firstAttribute="leading" secondItem="gEu-cs-BCb" secondAttribute="trailing" constant="8" id="83A-9m-EMA"/>
                     <constraint firstItem="0GT-lX-rXa" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="DuW-2m-Qdw"/>
                     <constraint firstItem="eiK-0g-sHl" firstAttribute="top" secondItem="WYY-1G-8x8" secondAttribute="bottom" constant="4" id="Fzy-ok-48D"/>
@@ -82,7 +83,6 @@
                     <constraint firstItem="0GT-lX-rXa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="fkY-8Y-bno"/>
                     <constraint firstItem="gEu-cs-BCb" firstAttribute="leading" secondItem="0GT-lX-rXa" secondAttribute="trailing" constant="10" id="gGD-fA-xaj"/>
                     <constraint firstItem="4kQ-Ul-xnQ" firstAttribute="bottom" secondItem="0GT-lX-rXa" secondAttribute="bottom" constant="4" id="mU3-Nh-fN3"/>
-                    <constraint firstItem="BVM-Ik-ees" firstAttribute="centerY" secondItem="0GT-lX-rXa" secondAttribute="centerY" constant="5" id="ock-pY-rrG"/>
                     <constraint firstItem="eiK-0g-sHl" firstAttribute="trailing" secondItem="WYY-1G-8x8" secondAttribute="trailing" id="tqR-qt-gr4"/>
                 </constraints>
             </tableViewCellContentView>

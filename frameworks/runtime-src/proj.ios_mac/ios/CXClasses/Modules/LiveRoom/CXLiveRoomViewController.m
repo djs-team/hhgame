@@ -221,6 +221,9 @@
     // 监听微信支付回调
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(weChatCallBack:) name:kNSNotificationCenter_CXRechargeViewController_weixin object:nil];
     
+    // 监听进入新房间
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(joinNewRoom:) name:kNSNotificationCenter_CXLiveRoomViewController_joinNewRoom object:nil];
+    
     [self getGiftListData];
     [self getGuardGiftListData];
     [self getFirendGiftListData];
@@ -296,6 +299,34 @@
     }];
     
     [[CXClientModel instance].room.roomMessages removeAllObjects];
+}
+
+#pragma mark - ==================== 进入新房间 ========================
+- (void)joinNewRoom:(NSNotification *)object {
+    NSString *roomId = object.userInfo[@"roomId"];
+    if (roomId.length > 0) {
+        [self joinNewRoomWithRoomId:roomId];
+    }
+}
+- (void)joinNewRoomWithRoomId:(NSString *)roomId {
+    [self.roomUIView.messageListView clearModel];
+    
+    [[CXClientModel instance].agoraEngineManager.engine leaveChannel:nil];
+    [[CXClientModel instance].agoraEngineManager.engine setClientRole:AgoraClientRoleAudience];
+    [[CXClientModel instance].agoraEngineManager.engine setVideoSource:nil];
+    [[CXClientModel instance].easemob leaveRoom];
+    
+    [self music_playStop];
+    
+    if (self.music_timer) {
+        dispatch_source_cancel(self.music_timer);
+    }
+
+    [self.musicView removeFromSuperview];
+    
+    SocketMessageJoinRoom * joinRoom = [SocketMessageJoinRoom new];
+    joinRoom.RoomId = roomId;
+    [[CXClientModel instance] sendSocketRequest:joinRoom withCallback:nil];
 }
 
 #pragma mark - ==================== 美颜 ========================
@@ -561,11 +592,6 @@
                     SocketMessageUserSitdown *userSitdown = obj;
                     NSIndexPath *indexPath = [userSitdown.MicroInfo indexPath];
 
-                    LiveRoomMicroInfo *seat = [[CXClientModel instance].room.seats objectForKey:indexPath];
-                    CXLiveRoomSeatView *seatView = [self.roomUIView.roomSeatsView.seats objectForKey:indexPath];
-                    seatView.model = seat;
-                    [seatView addAgoraRtc:[userSitdown.MicroInfo.User.UserId numberValue]];
-                    
                     NSIndexPath * selfSeatIndex = [[CXClientModel instance].room.userSeats objectForKey:[CXClientModel instance].userId];
                     if (selfSeatIndex && [selfSeatIndex isEqual:indexPath]) {
                         [CXClientModel instance].agoraEngineManager.offMic = NO;
@@ -573,6 +599,11 @@
                         [[CXClientModel instance].agoraEngineManager.engine setClientRole:AgoraClientRoleBroadcaster];
                     }
                     
+                    LiveRoomMicroInfo *seat = [[CXClientModel instance].room.seats objectForKey:indexPath];
+                    CXLiveRoomSeatView *seatView = [self.roomUIView.roomSeatsView.seats objectForKey:indexPath];
+                    seatView.model = seat;
+                    [seatView addAgoraRtc:[userSitdown.MicroInfo.User.UserId numberValue]];
+
                     [self.roomUIView.messageListView addModel:userSitdown];
                 }];
             }
@@ -2275,7 +2306,7 @@
         AVURLAsset *audioAsset = [AVURLAsset URLAssetWithURL:targetPath options:nil];
         self.musicView.pro_endTime = CMTimeGetSeconds(audioAsset.duration);
         self.totalLRCProgress = CMTimeGetSeconds(audioAsset.duration);
-        self.musicView.pro_volum = MIN([CXClientModel instance].room.music_Volume, 30);
+        self.musicView.pro_volum = MAX([CXClientModel instance].room.music_Volume, 30);
         
         [self musicLRCUpdate];
         self.musicView.musicPlayStatus = music_playing;
@@ -2732,43 +2763,7 @@
         _recommendView.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight);
         kWeakSelf
         _recommendView.joinRecommendRoom = ^(NSString * _Nonnull roomId) {
-            [weakSelf.roomUIView.messageListView clearModel];
-//            [weakSelf.app leaveRoom];
-//            [weakSelf.app joinRoom:roomId];
-            
-            [[CXClientModel instance].agoraEngineManager.engine leaveChannel:nil];
-            [[CXClientModel instance].agoraEngineManager.engine setClientRole:AgoraClientRoleAudience];
-            [[CXClientModel instance].agoraEngineManager.engine setVideoSource:nil];
-            [[CXClientModel instance].easemob leaveRoom];
-            
-            [weakSelf music_playStop];
-            
-//            self.app.isJoinedRoom = NO;
-            
-//            if (_timer) {
-//                dispatch_source_cancel(_timer);
-//            }
-            if (weakSelf.music_timer) {
-                dispatch_source_cancel(weakSelf.music_timer);
-            }
-
-            [weakSelf.musicView removeFromSuperview];
-
-//            [self.app.client.listener removeAllObjects];
-
-//            [[NSNotificationCenter defaultCenter] removeObserver:self];
-            
-            // 关闭跑马灯
-//            [_horizontalMarquee marqueeOfSettingWithState:MarqueeShutDown_H];
-            
-        //    [self.app.gameVCStack dismissViewControllerAnimated:YES completion:nil];
-//            [self dismissViewControllerAnimated:YES completion:nil];
-               
-//            [[UIApplication sharedApplication] endReceivingRemoteControlEvents];
-            
-            SocketMessageJoinRoom * joinRoom = [SocketMessageJoinRoom new];
-            joinRoom.RoomId = roomId;
-            [[CXClientModel instance] sendSocketRequest:joinRoom withCallback:nil];
+            [weakSelf joinNewRoomWithRoomId:roomId];
         };
     }
     

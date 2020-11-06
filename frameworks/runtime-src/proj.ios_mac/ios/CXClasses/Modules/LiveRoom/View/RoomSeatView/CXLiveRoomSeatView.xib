@@ -18,21 +18,21 @@
                     <rect key="frame" x="0.0" y="0.0" width="185" height="200"/>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Mi-RM-Jui">
-                    <rect key="frame" x="4" y="10" width="24" height="24"/>
+                    <rect key="frame" x="10" y="8" width="24" height="24"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="24" id="SEg-Mz-fdC"/>
                         <constraint firstAttribute="width" constant="24" id="zqw-iJ-wGB"/>
                     </constraints>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Z2-CL-J5b">
-                    <rect key="frame" x="23" y="10" width="24" height="24"/>
+                    <rect key="frame" x="29" y="8" width="24" height="24"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="24" id="W7r-q1-F3g"/>
                         <constraint firstAttribute="width" constant="24" id="mMD-yi-WKl"/>
                     </constraints>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g0K-mb-RAs">
-                    <rect key="frame" x="42" y="10" width="24" height="24"/>
+                    <rect key="frame" x="48" y="8" width="24" height="24"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="24" id="igM-c0-jDx"/>
                         <constraint firstAttribute="height" constant="24" id="qMG-sL-rAv"/>
@@ -125,7 +125,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oDO-wl-IYz">
-                    <rect key="frame" x="4" y="4" width="62" height="30"/>
+                    <rect key="frame" x="10" y="2" width="62" height="30"/>
                     <connections>
                         <action selector="seatViewAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="0fh-xu-a9B"/>
                     </connections>
@@ -170,8 +170,8 @@
                 <constraint firstItem="6Xm-8Z-NFZ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="2" id="D2t-6X-MNB"/>
                 <constraint firstItem="fbJ-Yd-fRE" firstAttribute="trailing" secondItem="U4j-tR-AKZ" secondAttribute="trailing" id="H0b-cJ-jyK"/>
                 <constraint firstItem="yGx-3x-rj2" firstAttribute="leading" secondItem="MCF-bw-3PX" secondAttribute="leading" id="O8W-ye-VIV"/>
-                <constraint firstItem="7Mi-RM-Jui" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="4" id="OFg-N9-u3l"/>
-                <constraint firstItem="7Mi-RM-Jui" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="OTt-V2-YV3"/>
+                <constraint firstItem="7Mi-RM-Jui" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="OFg-N9-u3l"/>
+                <constraint firstItem="7Mi-RM-Jui" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="OTt-V2-YV3"/>
                 <constraint firstAttribute="trailing" secondItem="HeL-OL-Cay" secondAttribute="trailing" constant="7" id="OpU-q3-zyV"/>
                 <constraint firstAttribute="bottom" secondItem="MCF-bw-3PX" secondAttribute="bottom" id="Oqw-W9-Q8p"/>
                 <constraint firstItem="MCF-bw-3PX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Pdn-90-zuj"/>
@@ -205,9 +205,9 @@
                 <outlet property="seat_bottomName" destination="IEg-eu-oVJ" id="R7W-0h-7C0"/>
                 <outlet property="seat_bottomView" destination="6Xm-8Z-NFZ" id="LUx-ln-w07"/>
                 <outlet property="seat_giftBtn" destination="HeL-OL-Cay" id="Uio-lf-Sx2"/>
-                <outlet property="seat_rank_firstImage" destination="1Z2-CL-J5b" id="F5F-Wk-jlc"/>
-                <outlet property="seat_rank_secondImage" destination="7Mi-RM-Jui" id="UQQ-e9-Gpd"/>
-                <outlet property="seat_rank_thirdImage" destination="g0K-mb-RAs" id="zR6-qQ-n0e"/>
+                <outlet property="seat_rank_firstImage" destination="7Mi-RM-Jui" id="ZSS-Vf-VIM"/>
+                <outlet property="seat_rank_secondImage" destination="1Z2-CL-J5b" id="eWI-dK-tMK"/>
+                <outlet property="seat_rank_thirdImage" destination="g0K-mb-RAs" id="gyA-00-THG"/>
                 <outlet property="sitdownBtn" destination="fbJ-Yd-fRE" id="aVf-lI-xq7"/>
             </connections>
             <point key="canvasLocation" x="47.10144927536232" y="34.821428571428569"/>

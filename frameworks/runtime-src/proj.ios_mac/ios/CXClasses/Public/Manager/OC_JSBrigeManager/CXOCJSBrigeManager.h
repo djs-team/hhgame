@@ -7,8 +7,6 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface CXOCJSBrigeManager : NSObject
 
 + (CXOCJSBrigeManager *)manager;
@@ -23,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) NSString *BUAdRewardMethod; // 广告看完回调
 
+- (void)clear;
 
 @end
 
-NS_ASSUME_NONNULL_END

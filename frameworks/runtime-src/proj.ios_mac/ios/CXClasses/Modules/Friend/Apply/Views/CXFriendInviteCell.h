@@ -17,6 +17,7 @@ typedef void(^CXFriendInviteCellRejestActionBlock)(void);
 @property (nonatomic, copy) CXFriendInviteCellAgreeActionBlock agreeActionBlock;
 @property (nonatomic, copy) CXFriendInviteCellRejestActionBlock rejestActionBlock;
 
+@property (nonatomic, copy) void(^avatarTapGestureBlock)(void);
 
 @property (weak, nonatomic) IBOutlet UIImageView *avatar;
 @property (weak, nonatomic) IBOutlet UILabel *user_nameLabel;

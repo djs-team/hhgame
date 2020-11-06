@@ -46,7 +46,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(back) name:kNSNotificationCenter_CXBaseTabBarViewController_leaveOut object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(backRoom) name:kNSNotificationCenter_CXBaseTabBarViewController_leaveOut object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadUnreadMessage) name:kNSNotificationCenter_CXBaseTabBarViewController_reloadUnreadCount object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadUnreadSystemMessage) name:kNSNotificationCenter_CXBaseTabBarViewController_reloadSystemUnreadCount object:nil];
     
@@ -104,7 +104,7 @@
     [self getUnReadCountData];
 }
 
-- (void)back {
+- (void)backRoom {
     [AppController setOrientation:@""];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -148,7 +148,9 @@
     NSArray *conversations = [[EMClient sharedClient].chatManager getAllConversations];
     NSInteger unreadCount = 0;
     for (EMConversation *conversation in conversations) {
-        unreadCount += conversation.unreadMessagesCount;
+        if (conversation.type == EMConversationTypeChat) {
+            unreadCount += conversation.unreadMessagesCount;
+        }
     }
     
     self.messageCount = unreadCount;
@@ -248,14 +250,7 @@
         [CXClientModel instance].isAgreeInviteJoinRoom = YES;
         
         if ([CXClientModel instance].isJoinedRoom) {
-            [[CXClientModel instance].easemob leaveRoom];
-            [[CXClientModel instance].agoraEngineManager.engine leaveChannel:nil];
-            [[CXClientModel instance].agoraEngineManager.engine setClientRole:AgoraClientRoleAudience];
-            [[CXClientModel instance].agoraEngineManager.engine setVideoSource:nil];
-            
-            SocketMessageJoinRoom * joinRoom = [SocketMessageJoinRoom new];
-            joinRoom.RoomId = model.roomId;
-            [[CXClientModel instance] sendSocketRequest:joinRoom withCallback:nil];
+            [[NSNotificationCenter defaultCenter] postNotificationName:kNSNotificationCenter_CXLiveRoomViewController_joinNewRoom object:nil userInfo:@{@"roomId" : model.roomId}];
         } else {
             [AppController joinRoom:model.roomId];
         }

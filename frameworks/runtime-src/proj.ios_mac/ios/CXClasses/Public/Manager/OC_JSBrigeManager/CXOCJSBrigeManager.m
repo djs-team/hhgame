@@ -18,4 +18,12 @@ static id _manager;
     return _manager;
 }
 
+- (void)clear {
+    self.wxLoginMethod = nil;
+    self.jpushLoginMethod = nil;
+    self.openInstallParamMethod = nil;
+    self.paySuccessMethod = nil;
+    self.BUAdRewardMethod = nil;
+}
+
 @end

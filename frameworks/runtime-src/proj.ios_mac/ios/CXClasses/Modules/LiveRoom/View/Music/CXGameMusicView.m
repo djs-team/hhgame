@@ -176,6 +176,7 @@
     _musicPlayStatus = musicPlayStatus;
     
     CXGameMusicPlayingCollectionCell *cell = (CXGameMusicPlayingCollectionCell *)[_mainCollectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]];
+    
     switch (musicPlayStatus) {
         case music_unplay:
             [cell.playBtn setImage:[UIImage imageNamed:@"home_game_music_play"] forState:UIControlStateNormal];
@@ -401,23 +402,9 @@
         };
         
         cell.playingChangeVolumBlock = ^(float volum) {
-            [[CXClientModel instance].agoraEngineManager.engine adjustAudioMixingVolume:volum];
-            [CXClientModel instance].room.music_Volume = volum;
-            weakSelf.pro_volum = volum;
-            
-//            CXSocketMessageMusicChangeVolum *request = [CXSocketMessageMusicChangeVolum new];
-//            request.Volume = volum;
-//            [AppDelegate.shared.client sendSocketRequest:request withCallback:^(CXSocketMessageMusicGetPlayingDetail * _Nonnull request) {
-//                if (request.response.isSuccess) {
-////                    [[ModelClient instance].agoraEngineManager.engine adjustAudioMixingVolume:volum];
-////                    [ModelClient instance].room.music_Volume = volum;
-////                    weakSelf.pro_volum = volum;
-//                } else {
-//                    [weakSelf playError:[request.response.Success integerValue]];
-//                }
-//
-//               [weakSelf.mainCollectionView reloadItemsAtIndexPaths:@[indexPath]];
-//            }];
+            CXSocketMessageMusicChangeVolum *request = [CXSocketMessageMusicChangeVolum new];
+            request.Volume = volum;
+            [[CXClientModel instance] sendSocketRequest:request withCallback:nil];
         };
         
         cell.adjustBlock = ^{

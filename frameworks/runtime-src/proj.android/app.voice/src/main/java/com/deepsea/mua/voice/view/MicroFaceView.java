@@ -274,8 +274,15 @@ public class MicroFaceView extends FrameLayout {
             mBinding.rlDefaultEmpty.setVisibility(GONE);
             mBinding.rlEmptyMan.setVisibility(GONE);
             mBinding.rlEmptyWoman.setVisibility(VISIBLE);
-            ViewBindUtils.setText(mBinding.tvWomanMicroDesc, isRoomOwner ? "邀请女嘉宾" : "女嘉宾专属位");
+            ViewBindUtils.setText(mBinding.tvWomanMicroDesc, isRoomOwner ? "邀请上麦" : "女嘉宾专属位");
             ViewBindUtils.setVisible(mBinding.ivWomenMicroBg, true);
+            if (MatchMakerUtils.isRoomOwner()) {
+                ViewBindUtils.setVisible(mBinding.ivWomenMicroBg, true);
+                ViewBindUtils.setVisible(mBinding.ivWomenMicroBg2, false);
+            } else {
+                ViewBindUtils.setVisible(mBinding.ivWomenMicroBg, false);
+                ViewBindUtils.setVisible(mBinding.ivWomenMicroBg2, true);
+            }
         } else {
             mBinding.tvDefaultDesc.setText(isRoomOwner ? "邀请上麦" : "申请上麦");
             mBinding.rlDefaultEmpty.setVisibility(VISIBLE);

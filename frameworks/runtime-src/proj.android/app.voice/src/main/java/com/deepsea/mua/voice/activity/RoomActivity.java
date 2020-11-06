@@ -1350,6 +1350,11 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
         mBinding.rankingRv.setNestedScrollingEnabled(false);
         mRankingAdapter = new RoomRankingAdapter(mContext);
         mBinding.rankingRv.setAdapter(mRankingAdapter);
+        List<String> ranks = new ArrayList<>();
+        ranks.add("");
+        ranks.add("");
+        ranks.add("");
+        mRankingAdapter.setNewData(ranks);
 
     }
 
@@ -2234,6 +2239,7 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
         });
         dialog.show();
     }
+
     @Override
     public void finish() {
         Log.d("exit", "finish");
@@ -2286,6 +2292,8 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
         }
     }
 
+    GuardGroupDialog groupDialog = null;
+
     @Override
     protected void initListener() {
         //玩法
@@ -2299,10 +2307,9 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
         subscribeClick(mBinding.rlMicroManage, o -> {
             showMicroManageDialog(1);
         });
-
         //跳转守护团
         subscribeClick(mBinding.llGuardGroup, o -> {
-            GuardGroupDialog groupDialog = new GuardGroupDialog(mContext, mViewModel);
+            groupDialog = new GuardGroupDialog(mContext, mViewModel);
             groupDialog.setOnClickListener(new GuardGroupDialog.OnClickListener() {
                 @Override
                 public void onClick(String userId) {
@@ -2510,7 +2517,9 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
         alipay.setAlipayListener(new Alipay.AlipayListener() {
             @Override
             public void onSuccess(PayResult result) {
-                mBinding.refreshLayout.autoRefresh();
+                if (groupDialog != null) {
+                    groupDialog.refresh();
+                }
             }
 
             @Override
@@ -2527,7 +2536,10 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
 //            requestBalance();
 //            MobEventUtils.onRechargeEvent(mContext, mRechargeAmount);
 //            mRechargeAmount = "0";
-            mBinding.refreshLayout.autoRefresh();
+            if (groupDialog != null) {
+                groupDialog.refresh();
+            }
+
         }
 
         @Override
@@ -2758,8 +2770,9 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
                     copyCurrentLrc.setStartTimeString(currentLrc.getStartTimeString());
 //                    sendLyRicFlag = 0;
                     int max = AgoraClient.create().rtcEngine().getAudioMixingDuration();
+                    int current = AgoraClient.create().rtcEngine().getAudioMixingCurrentPosition();
 
-                    copyCurrentLrc.currentTime = currentPosition;
+                    copyCurrentLrc.currentTime = current;
                     copyCurrentLrc.songEndTime = max;
                     if (TextUtils.isEmpty(copyCurrentLrc.getContent())) {
                         copyCurrentLrc.content = mySongName;
@@ -2779,6 +2792,11 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
 //                    if (sendLyRicFlag <= 30) {
                     LrcRow lrcRow = new LrcRow();
                     lrcRow.content = mySongName;
+                    int max = AgoraClient.create().rtcEngine().getAudioMixingDuration();
+                    int current = AgoraClient.create().rtcEngine().getAudioMixingCurrentPosition();
+
+                    lrcRow.currentTime = current;
+                    lrcRow.songEndTime = max;
                     Message message = Message.obtain();
                     message.what = msg_send_lyric;
                     message.obj = JsonConverter.toJson(lrcRow);

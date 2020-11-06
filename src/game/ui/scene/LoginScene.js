@@ -154,7 +154,7 @@ load('game/ui/scene/LoginScene', function () {
                 'pnl/wxLogin': {onClicked: this.onwxLoginClick},
                 'pnl/agreeBtn': {onClicked: this.onagreeBtnClick},
                 'pnl/userAgreeBtn': {onClicked: this.onUserAgreeClick},
-                'pnl/vision': { },
+                'pnl/vision': {},
                 'userAgreeTopPnl': {},
                 'userAgreeBmPnl': {},
                 'userAgreeBmPnl/userAgreeList': {},
@@ -465,7 +465,10 @@ load('game/ui/scene/LoginScene', function () {
 
         initData: function () {
             this._delayBtns = []
-            this.vision.setString(AppConfig.vision)
+            let visionName = appInstance.nativeApi().getAppVersion()
+            if (!!visionName) {
+                this.vision.setString(visionName)
+            }
             appInstance.nativeApi().getInstallParam()
             appInstance.audioManager().playMusic(ResConfig.Sound.bg1, true)
             this._delayBtns.push(this.phoneLogin)

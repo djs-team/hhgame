@@ -99,7 +99,7 @@ public class GuardGroupDialog extends BaseDialog<DialogGuardGroupMineBinding> {
             @Override
             public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
                 page++;
-                Log.d("AG_EX_AV-guardId",guardUserId);
+                Log.d("AG_EX_AV-guardId", guardUserId);
                 roomViewModel.getGuardItemList(page, guardUserId);
             }
         });
@@ -107,7 +107,7 @@ public class GuardGroupDialog extends BaseDialog<DialogGuardGroupMineBinding> {
             @Override
             public void onRefresh(@NonNull RefreshLayout refreshLayout) {
                 page = 0;
-                Log.d("AG_EX_AV-guardId",guardUserId);
+                Log.d("AG_EX_AV-guardId", guardUserId);
                 roomViewModel.getGuardItemList(page, guardUserId);
 
             }
@@ -118,6 +118,10 @@ public class GuardGroupDialog extends BaseDialog<DialogGuardGroupMineBinding> {
                 onClickListener.onClick(userId);
             }
         });
+    }
+
+    public void refresh() {
+        mBinding.refreshLayout.autoRefresh();
     }
 
     private void setViewData(boolean isGuard, String nickName, String guardHeard, int userCount) {

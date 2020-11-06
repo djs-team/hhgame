@@ -274,10 +274,11 @@
     [CXHTTPRequest POSTWithURL:@"/index.php/Api/Member/user_info" parameters:param callback:^(id responseObject, BOOL isCache, NSError *error) {
         if (!error) {
             CXUserModel *model = [CXUserModel modelWithJSON:responseObject[@"data"][@"user_info"]];
-            if (model.online.integerValue == 3) {
+            
+            if (model.online.integerValue == 3 || model.online.integerValue == 2) {
                 weakSelf.titleDetailLabel.text = @"相亲中";
                 weakSelf.titleDetailLabel.backgroundColor = UIColorHex(0x7F3EF0);
-            } else if (model.online.integerValue == 5) {
+            } else if (model.online.integerValue == 5 || model.online.integerValue == 4) {
                 weakSelf.titleDetailLabel.text = @"热聊中";
                 weakSelf.titleDetailLabel.backgroundColor = UIColorHex(0xEF51B2);
             } else if (model.online.integerValue == 6) {

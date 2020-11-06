@@ -152,6 +152,25 @@
         [weakSelf rejestInviteWithInviteModel:model];
     };
     
+    cell.avatarTapGestureBlock = ^{
+        if ([model.room_id integerValue] > 0) {
+            if ([CXClientModel instance].isJoinedRoom) {
+                for (UIViewController *controller in self.navigationController.viewControllers) {
+                    if ([controller isKindOfClass:[CXLiveRoomViewController class]]) {
+                        [[NSNotificationCenter defaultCenter] postNotificationName:kNSNotificationCenter_CXLiveRoomViewController_joinNewRoom object:nil userInfo:@{@"roomId" : model.room_id}];
+                        
+                        CXLiveRoomViewController *vc = (CXLiveRoomViewController *)controller;
+                        [self.navigationController popToViewController:vc animated:YES];
+                    }
+                }
+            } else {
+                [AppController joinRoom:model.room_id];
+            }
+        } else {
+            [AppController showUserProfile:model.user_id target:weakSelf];
+        }
+    };
+    
     if (self.friendApply == YES) {
         [cell.fromTipLabel setTitle:@"请求和你成为好友" forState:UIControlStateNormal];
         //1:同意 2:拒绝 3:申请中 4:已过期

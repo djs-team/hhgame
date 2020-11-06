@@ -13,6 +13,7 @@ import com.deepsea.mua.im.utils.EaseSmileUtils;
 import com.deepsea.mua.stub.adapter.BaseBindingAdapter;
 import com.deepsea.mua.stub.adapter.BindingViewHolder;
 import com.deepsea.mua.stub.entity.FriendInfoBean;
+import com.deepsea.mua.stub.utils.PageJumpUtils;
 import com.deepsea.mua.stub.utils.SexResUtils;
 import com.deepsea.mua.stub.utils.StateUtils;
 import com.deepsea.mua.stub.utils.ViewBindUtils;
@@ -80,7 +81,9 @@ public class FriendMsgAdapter extends BaseBindingAdapter<FriendInfoBean, ItemFri
             ViewBindUtils.setVisible(holder.binding.tvStateBg, false);
             StateUtils.setState(holder.binding.tvStateDesc, item.getOnline_str());
         }
-
+        ViewBindUtils.RxClicks(holder.binding.ivPhoto, o -> {
+            PageJumpUtils.jumpToProfile(item.getUser_id());
+        });
 
     }
 }

@@ -727,8 +727,6 @@ static AppDelegate s_sharedApplication;
         return;
     }
     
-    [AppController setOrientation:@""];
-    
     std::string strParam = [param UTF8String];
     std::string strMethod = [method UTF8String];
     std::string jsCallStr = cocos2d::StringUtils::format("cc.eventManager.dispatchCustomEvent(\"%s\",'%s');", strMethod.c_str(),strParam.c_str());
@@ -764,6 +762,7 @@ UIInterfaceOrientationMask oMask = UIInterfaceOrientationMaskLandscape;
 #pragma mark - ================ 直播相关 ===================
 /// 从麻将进入视频
 + (void)enterLiveBroadcastWithToken:(NSString *)param {
+    [[CXOCJSBrigeManager manager] clear];
     if (param.length <= 0 ) {
         return;
     }

@@ -12,10 +12,12 @@ import com.deepsea.mua.stub.entity.socket.WsUser;
 import com.deepsea.mua.stub.entity.socket.receive.GuardItem;
 import com.deepsea.mua.stub.utils.PageJumpUtils;
 import com.deepsea.mua.stub.utils.SexResUtils;
+import com.deepsea.mua.stub.utils.UserUtils;
 import com.deepsea.mua.stub.utils.ViewBindUtils;
 import com.deepsea.mua.voice.R;
 import com.deepsea.mua.voice.databinding.ItemGuardGroupBinding;
 import com.deepsea.mua.voice.databinding.ItemUserFansBinding;
+import com.deepsea.mua.voice.utils.MatchMakerUtils;
 
 /**
  * Created by JUN on 2019/10/14
@@ -51,8 +53,11 @@ public class GuardGroupAdapter extends BaseBindingAdapter<GuardItem, ItemGuardGr
         }
         ViewBindUtils.setVisible(holder.binding.ivLocation, !TextUtils.isEmpty(user.getCity()));
         ViewBindUtils.setText(holder.binding.tvIntimacy, "亲密值" + item.getIntimacy());
-        ViewBindUtils.setText(holder.binding.tvDueDate, "还有" + item.getDays() + "天到期");
-        ViewBindUtils.setText(holder.binding.tvDateLine, "守护到期时间：" + item.getDeadlineTime());
+        if (MatchMakerUtils.isRoomOwner()|| UserUtils.getUser().getUid().equals(user.getUserId())) {
+            ViewBindUtils.setText(holder.binding.tvDateLine, "守护到期时间：" + item.getDeadlineTime());
+            ViewBindUtils.setText(holder.binding.tvDueDate, "还有" + item.getDays() + "天到期");
+
+        }
 
     }
 }

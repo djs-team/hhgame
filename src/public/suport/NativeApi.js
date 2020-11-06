@@ -508,7 +508,7 @@ load('public/suport/NativeApi', function () {
             try {
                 let param = JSON.stringify(msg)
                 if (cc.sys.OS_ANDROID === cc.sys.os) {
-                    jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'registerJPUSHTagsId', '(Ljava/lang/String;)V',param)
+                    jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'registerJPUSHTagsId', '(Ljava/lang/String;)V', param)
                 } else if (cc.sys.OS_IOS === cc.sys.os) {
                     jsb.reflection.callStaticMethod('AppController', 'registerJPUSHTagsId:', param)
                 }
@@ -516,6 +516,19 @@ load('public/suport/NativeApi', function () {
                 NativeApi.HelloOC('registerJPUSHTagsId throw: ' + JSON.stringify(e))
             }
         },
+        //获取app版本号
+        getAppVersion: function () {
+            try {
+
+                if (cc.sys.OS_ANDROID === cc.sys.os) {
+                    return jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'getAppVersion', '(Ljava/lang/String;)Ljava/lang/String;', "name")
+                } else if (cc.sys.OS_IOS === cc.sys.os) {
+
+                }
+            } catch (e) {
+                NativeApi.HelloOC('uploadPictureParam throw: ' + JSON.stringify(e))
+            }
+        }
     })
     return NativeApi
 })

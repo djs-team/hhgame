@@ -61,8 +61,10 @@ load('game/ui/layer/feedback/FanKuiLayer', function () {
         initView: function () {
             this.problemList.setScrollBarEnabled(false)
             this.MyMsgListView.setScrollBarEnabled(false)
+            this.FeedBackList.setScrollBarEnabled(false)
             this.MyMsgPnl.setVisible(false)
             this.MyMsgCell.setVisible(false)
+            this.CellPnl.setVisible(false)
             this.problemCell.setVisible(false)
             this.questionCell.setVisible(false)
             this.answerCell.setVisible(false)

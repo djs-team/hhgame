@@ -373,8 +373,13 @@ load('game/ui/scene/LoginScene', function () {
             }
             if (cc.sys.OS_IOS === cc.sys.os) {
                 msg = JSON.parse(msg)
-                msg.imei = appInstance.nativeApi().getImei()
-                appInstance.gameAgent().httpGame().httpLogin(msg)
+                if (msg.code === 1) {
+                    cc.log('======授权成功=======' + msg.code)
+                    msg.imei = appInstance.nativeApi().getImei()
+                    appInstance.gameAgent().httpGame().httpLogin(msg)
+                } else {
+                    cc.log('======授权失败=======' + msg.code)
+                }
             }
         },
         onInstallParam: function (msg) {

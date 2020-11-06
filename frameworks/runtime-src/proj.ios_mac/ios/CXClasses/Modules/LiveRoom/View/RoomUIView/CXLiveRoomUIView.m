@@ -170,7 +170,7 @@
         
     } else {
         [self.regularView mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo([CXClientModel instance].room.RoomData.regular_top+52);
+            make.top.mas_equalTo([CXClientModel instance].room.RoomData.regular_top+54);
             make.left.mas_equalTo(0);
             make.right.mas_equalTo(-90);
             make.height.mas_equalTo(MAX(self.regularView.regular_height, 24));
@@ -198,7 +198,7 @@
         
         [self.musicLRCShowView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.left.right.mas_equalTo(0);
-            make.height.mas_equalTo(42);
+            make.height.mas_equalTo(54);
             make.bottom.equalTo(self.regularView.mas_top).offset(-5);
         }];
     }

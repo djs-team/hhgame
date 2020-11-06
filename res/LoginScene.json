@@ -865,6 +865,58 @@
                 },
                 "Name": "userAgreeBtn",
                 "ctype": "ButtonObjectData"
+              },
+              {
+                "IsCustomSize": true,
+                "FontSize": 20,
+                "LabelText": "1.0.0.0",
+                "HorizontalAlignmentType": "HT_Center",
+                "VerticalAlignmentType": "VT_Center",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 1097.78,
+                  "Y": 41.6
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.8576,
+                  "Y": 0.0578
+                },
+                "PreSize": {
+                  "X": 0.0938,
+                  "Y": 0.0458
+                },
+                "LeftMargin": 1037.78,
+                "RightMargin": 122.22,
+                "TopMargin": 661.9,
+                "BottomMargin": 25.1,
+                "Tag": 29,
+                "ActionTag": -31953187,
+                "Size": {
+                  "X": 120.0,
+                  "Y": 33.0
+                },
+                "Name": "vision",
+                "ctype": "TextObjectData"
               }
             ],
             "ActionTag": -238992900,

@@ -7,6 +7,8 @@ load('game/ui/scene/LoginScene', function () {
     let LoginMdt = include('game/ui/scene/LoginMdt')
     let LocalSave = include('game/public/LocalSave')
     let GameUtil = include('game/public/GameUtil')
+    let AppConfig = include('game/public/AppConfig')
+
     let LoginScene = BaseScene.extend({
         _className: 'LoginScene',
         _canLogin: true,
@@ -152,6 +154,7 @@ load('game/ui/scene/LoginScene', function () {
                 'pnl/wxLogin': {onClicked: this.onwxLoginClick},
                 'pnl/agreeBtn': {onClicked: this.onagreeBtnClick},
                 'pnl/userAgreeBtn': {onClicked: this.onUserAgreeClick},
+                'pnl/vision': { },
                 'userAgreeTopPnl': {},
                 'userAgreeBmPnl': {},
                 'userAgreeBmPnl/userAgreeList': {},
@@ -462,6 +465,7 @@ load('game/ui/scene/LoginScene', function () {
 
         initData: function () {
             this._delayBtns = []
+            this.vision.setString(AppConfig.vision)
             appInstance.nativeApi().getInstallParam()
             appInstance.audioManager().playMusic(ResConfig.Sound.bg1, true)
             this._delayBtns.push(this.phoneLogin)

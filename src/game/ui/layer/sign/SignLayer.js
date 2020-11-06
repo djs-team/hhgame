@@ -32,9 +32,10 @@ load('game/ui/layer/sign/SignLayer', function () {
                 'pnl/signDataListCell': {},
                 'pnl/signDataCell': {},
 
-                'pnl/poupPnl': {},
-                'pnl/poupPnl/rulePnl': {},
-                'pnl/poupPnl/rulePnl/ruleCloseBtn': {onClicked: this.onHideRulePnlClick},
+                'roleBlock': {},
+                'poupPnl': {},
+                'poupPnl/rulePnl': {},
+                'poupPnl/rulePnl/ruleCloseBtn': {onClicked: this.onHideRulePnlClick},
 
 
             }
@@ -77,6 +78,7 @@ load('game/ui/layer/sign/SignLayer', function () {
             this.signDataCell.setVisible(false)
             this.signDataListCell.setVisible(false)
             this.poupPnl.setVisible(false)
+            this.roleBlock.setVisible(false)
             this.rulePnl.setVisible(false)
 
             this.ordinaryAcceptPnl.getChildByName('singleAcceptText').setVisible(false)
@@ -93,11 +95,13 @@ load('game/ui/layer/sign/SignLayer', function () {
         onExplainClick: function (sender) {
             GameUtil.delayBtn(sender);
             this.poupPnl.setVisible(true)
+            this.roleBlock.setVisible(true)
             this.rulePnl.setVisible(true)
         },
 
         onHideRulePnlClick: function () {
             this.poupPnl.setVisible(false)
+            this.roleBlock.setVisible(false)
             this.rulePnl.setVisible(false)
         },
 

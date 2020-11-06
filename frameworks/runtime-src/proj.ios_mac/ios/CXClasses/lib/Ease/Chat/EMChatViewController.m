@@ -1767,15 +1767,15 @@
     NSMutableArray *items = [[NSMutableArray alloc] init];
     if (aModel.type == EMMessageTypeText) {
         [items addObject:self.copyMenuItem];
-        [items addObject:self.transpondMenuItem];
+//        [items addObject:self.transpondMenuItem];
     } else if (aModel.type == EMMessageTypeLocation || aModel.type == EMMessageTypeImage || aModel.type == EMMessageTypeVideo) {
-        [items addObject:self.transpondMenuItem];
+//        [items addObject:self.transpondMenuItem];
     }
     [items addObject:self.deleteMenuItem];
     
-    if (aModel.emModel.direction == EMMessageDirectionSend) {
-        [items addObject:self.recallMenuItem];
-    }
+//    if (aModel.emModel.direction == EMMessageDirectionSend) {
+//        [items addObject:self.recallMenuItem];
+//    }
     
     [self.menuController setMenuItems:items];
     [self.menuController setTargetRect:aCell.bubbleView.frame inView:aCell];

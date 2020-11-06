@@ -148,7 +148,9 @@
     NSArray *conversations = [[EMClient sharedClient].chatManager getAllConversations];
     NSInteger unreadCount = 0;
     for (EMConversation *conversation in conversations) {
-        unreadCount += conversation.unreadMessagesCount;
+        if (conversation.type == EMConversationTypeChat) {
+            unreadCount += conversation.unreadMessagesCount;
+        }
     }
     
     self.messageCount = unreadCount;

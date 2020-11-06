@@ -61,6 +61,7 @@
                 @"accounttype": @0,
                 @"unionId" : resp[@"unionid"],
                 @"account":resp[@"unionid"],
+                @"code":@1,
             };
             NSString *respStr = [param jsonStringEncoded];
             [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].wxLoginMethod param:respStr];
@@ -74,14 +75,16 @@
         if ([showAlert isEqualToString:@"Show"]) {
             [self JPushLoginWithPhoneLogin];
         } else {
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"一键登录失败，请重试" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"请安装SIM卡" message:@"" preferredStyle:UIAlertControllerStyleAlert];
 
-            [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
-            
-            [alert addAction:[UIAlertAction actionWithTitle:@"一键登录" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                [self JPushLoginWithMethod:method showPhoneAlert:showAlert];
-            }]];
+            [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil]];
             [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert animated:YES completion:nil];
+            
+            NSDictionary *param = @{
+                @"code":@0,
+            };
+            NSString *respStr = [param jsonStringEncoded];
+            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].jpushLoginMethod param:respStr];
         }
         return;
     }
@@ -99,22 +102,22 @@
                 @"platform": @2,
                 @"accounttype": @1,
                 @"account":tokenStr,
+                @"code":@1,
             };
             NSString *respStr = [param jsonStringEncoded];
             [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].jpushLoginMethod param:respStr];
         } else {
-            if ([showAlert isEqualToString:@"Show"]) {
-                [self JPushLoginWithPhoneLogin];
-            } else {
-                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"一键登录失败，请重试" message:@"" preferredStyle:UIAlertControllerStyleAlert];
-
-                [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"一键登录失败，请重试" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+            
+            [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                NSDictionary *param = @{
+                    @"code":@0,
+                };
+                NSString *respStr = [param jsonStringEncoded];
+                [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].jpushLoginMethod param:respStr];
                 
-                [alert addAction:[UIAlertAction actionWithTitle:@"一键登录" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                    [self JPushLoginWithMethod:method showPhoneAlert:showAlert];
-                }]];
-                [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert animated:YES completion:nil];
-            }
+            }]];
+            [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert animated:YES completion:nil];
         }
         
         [JVERIFICATIONService dismissLoginControllerAnimated:YES completion:nil];
@@ -129,13 +132,13 @@
     [alert addAction:[UIAlertAction actionWithTitle:@"登录" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         //获取第1个输入框；
         UITextField *userNameTextField = alert.textFields.firstObject;
-        NSDictionary *param = @{
-            @"platform": @2,
-            @"accounttype": @1,
-            @"account":userNameTextField.text,
-        };
-        
         if ([userNameTextField.text isEqualToString:@"88888888"]) {
+            NSDictionary *param = @{
+                @"platform": @2,
+                @"accounttype": @1,
+                @"account":userNameTextField.text,
+                @"code":@1,
+            };
             NSString *respStr = [param jsonStringEncoded];
             [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].jpushLoginMethod param:respStr];
         }

@@ -1779,17 +1779,17 @@
                               "Y": 0.5763
                             },
                             "PreSize": {
-                              "X": 0.1263,
+                              "X": 0.5052,
                               "Y": 0.5719
                             },
-                            "LeftMargin": 160.3469,
-                            "RightMargin": 185.555,
+                            "LeftMargin": 85.3469,
+                            "RightMargin": 110.555,
                             "TopMargin": 5.7813,
                             "BottomMargin": 12.1861,
                             "Tag": 323,
                             "ActionTag": 1708095057,
                             "Size": {
-                              "X": 50.0,
+                              "X": 200.0,
                               "Y": 24.0
                             },
                             "Name": "progressBarText",

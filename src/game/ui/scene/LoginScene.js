@@ -258,7 +258,7 @@ load('game/ui/scene/LoginScene', function () {
          * 一键登录
          */
         onphoneLoginClick: function () {
-            GameUtil.delayBtn(this.phoneLogin);
+            GameUtil.delayBtns(this._delayBtns,5)
             if(!this.onCheckeCanLogin()) return
 
             //判断当前系统
@@ -291,7 +291,7 @@ load('game/ui/scene/LoginScene', function () {
         },
 
         onwxLoginClick: function () {
-            GameUtil.delayBtn(this.wxLogin);
+            GameUtil.delayBtns(this._delayBtns,5)
             if(!this.onCheckeCanLogin())
                 return
 
@@ -363,6 +363,10 @@ load('game/ui/scene/LoginScene', function () {
         },
         onThirdLogin: function (msg) {
             cc.log('======onThirdLogin=======' + JSON.stringify(msg))
+            //收到登录返回事件，接触锁定
+            for(let i = 0; i < this._delayBtns.length; i++){
+                this._delayBtns[i].setTouchEnabled(true)
+            }
             if (cc.sys.OS_ANDROID === cc.sys.os) {
                 msg.imei = appInstance.nativeApi().getImei()
                 appInstance.gameAgent().httpGame().httpLogin(msg)
@@ -403,8 +407,11 @@ load('game/ui/scene/LoginScene', function () {
         },
 
         initData: function () {
+            this._delayBtns = []
             appInstance.nativeApi().getInstallParam()
             appInstance.audioManager().playMusic(ResConfig.Sound.bg1, true)
+            this._delayBtns.push(this.phoneLogin)
+            this._delayBtns.push(this.wxLogin)
 
         },
 

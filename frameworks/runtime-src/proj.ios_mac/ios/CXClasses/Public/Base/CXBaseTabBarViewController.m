@@ -250,14 +250,7 @@
         [CXClientModel instance].isAgreeInviteJoinRoom = YES;
         
         if ([CXClientModel instance].isJoinedRoom) {
-            [[CXClientModel instance].easemob leaveRoom];
-            [[CXClientModel instance].agoraEngineManager.engine leaveChannel:nil];
-            [[CXClientModel instance].agoraEngineManager.engine setClientRole:AgoraClientRoleAudience];
-            [[CXClientModel instance].agoraEngineManager.engine setVideoSource:nil];
-            
-            SocketMessageJoinRoom * joinRoom = [SocketMessageJoinRoom new];
-            joinRoom.RoomId = model.roomId;
-            [[CXClientModel instance] sendSocketRequest:joinRoom withCallback:nil];
+            [[NSNotificationCenter defaultCenter] postNotificationName:kNSNotificationCenter_CXLiveRoomViewController_joinNewRoom object:nil userInfo:@{@"roomId" : model.roomId}];
         } else {
             [AppController joinRoom:model.roomId];
         }

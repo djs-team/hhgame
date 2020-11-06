@@ -176,7 +176,18 @@
         kWeakSelf
         cell.avatarTapGestureBlock = ^{
             if ([model.room_id integerValue] > 0) {
-                [AppController joinRoom:model.room_id];
+                if ([CXClientModel instance].isJoinedRoom) {
+                    for (UIViewController *controller in self.navigationController.viewControllers) {
+                        if ([controller isKindOfClass:[CXLiveRoomViewController class]]) {
+                            [[NSNotificationCenter defaultCenter] postNotificationName:kNSNotificationCenter_CXLiveRoomViewController_joinNewRoom object:nil userInfo:@{@"roomId" : model.room_id}];
+                            
+                            CXLiveRoomViewController *vc = (CXLiveRoomViewController *)controller;
+                            [self.navigationController popToViewController:vc animated:YES];
+                        }
+                    }
+                } else {
+                    [AppController joinRoom:model.room_id];
+                }
             } else {
                 [AppController showUserProfile:model.user_id target:weakSelf];
             }
@@ -197,7 +208,18 @@
         kWeakSelf
         cell.avatarTapGestureBlock = ^{
             if ([model.room_id integerValue] > 0) {
-                [AppController joinRoom:model.room_id];
+                if ([CXClientModel instance].isJoinedRoom) {
+                    for (UIViewController *controller in self.navigationController.viewControllers) {
+                        if ([controller isKindOfClass:[CXLiveRoomViewController class]]) {
+                            [[NSNotificationCenter defaultCenter] postNotificationName:kNSNotificationCenter_CXLiveRoomViewController_joinNewRoom object:nil userInfo:@{@"roomId" : model.room_id}];
+                            
+                            CXLiveRoomViewController *vc = (CXLiveRoomViewController *)controller;
+                            [self.navigationController popToViewController:vc animated:YES];
+                        }
+                    }
+                } else {
+                    [AppController joinRoom:model.room_id];
+                }
             } else {
                 [AppController showUserProfile:model.user_id target:weakSelf];
             }

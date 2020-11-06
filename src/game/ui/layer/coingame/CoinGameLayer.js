@@ -13,7 +13,6 @@ load('game/ui/layer/coingame/CoinGameLayer', function () {
             '4': 'R1',
             '2': 'R2'
         },
-        _goBtnArray : [],
         RES_BINDING: function () {
             return {
                 'topPnl/closeBtn': { onClicked: this.onCloseClick },
@@ -44,6 +43,7 @@ load('game/ui/layer/coingame/CoinGameLayer', function () {
         },
 
         initData: function (data) {
+            this._goBtnArray = []
             this._peopleNum = global.localStorage.getIntKey(LocalSave.CoinGamePeopleNum)
             if (!this._peopleNum) {
                 this._peopleNum = 2

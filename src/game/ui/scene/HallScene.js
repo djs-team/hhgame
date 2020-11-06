@@ -252,6 +252,7 @@ load('game/ui/scene/HallScene', function () {
         initData: function (selfInfo) {
             this._selfInfo = selfInfo
             this._pRole = selfInfo.pRole
+            this._selectRole = -1
 
             this._peopleNum = global.localStorage.getIntKey(LocalSave.CoinGamePeopleNum)
             if (!this._peopleNum) {
@@ -316,7 +317,7 @@ load('game/ui/scene/HallScene', function () {
 
             pRole = pRole || this._pRole
 
-            if (pRole !=0 && !pRole) {
+            if (this._selectRole == pRole || (pRole !=0 && !pRole)) {
                 return
             }
 
@@ -326,6 +327,7 @@ load('game/ui/scene/HallScene', function () {
             ani.setPosition(cc.p(0,0))
             ani.setScale(0.6)
             ani.setAnimation(0, PlayerPlay.stand, true)
+            this._selectRole = pRole
         },
 
 

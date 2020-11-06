@@ -424,16 +424,17 @@ public class AppActivity extends Cocos2dxActivity {
     }
 
     /**
-     * 一键登录
+     * 一键登录 code 成功 0 失败
      */
     private static void loginOne() {
         JVerificationInterface.setCustomUIWithConfig(JpushUtils.getDialogLandscapeConfig(ccActivity), JpushUtils.getDialogLandscapeConfig(ccActivity));
         JVerificationInterface.loginAuth(ccActivity, false, new VerifyListener() {
             @Override
             public void onResult(int code, String content, String operator) {
+                JSONObject result = new JSONObject();
+
                 if (code == 6000) {
                     String myContent = content.replace("+", "%2B");
-                    JSONObject result = new JSONObject();
                     try {
                         result.put("platform", 2);
                         result.put("accounttype", 1);
@@ -441,15 +442,27 @@ public class AppActivity extends Cocos2dxActivity {
                         result.put("phoneModel", "android");
                         result.put("account", myContent);
                         result.put("imei", NetWorkUtils.getImei(ccActivity));
+                        result.put("code", "1");
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
-                    ccActivity.RunJS_obj("THIRD_LOGIN_RESULT", result.toString());
                 } else if (code == 6002) {
+                    try {
+                        result.put("code", "0");
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                     ToastUtils.showToast("用户取消登录");
                 } else {
+                    try {
+                        result.put("code", "0");
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                     ToastUtils.showToast("一键登录失败，请尝试其他登录方式" + code);
                 }
+                ccActivity.RunJS_obj("THIRD_LOGIN_RESULT", result.toString());
+
                 JVerificationInterface.dismissLoginAuthActivity(false, new RequestCallback<String>() {
                     @Override
                     public void onResult(int code, String desc) {
@@ -484,7 +497,7 @@ public class AppActivity extends Cocos2dxActivity {
                     result.put("imei", NetWorkUtils.getImei(ccActivity));
                     result.put("nickName", apiUser.getUserName());
                     result.put("photo", apiUser.getUserIcon());
-
+                    result.put("code", "1");
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -495,11 +508,26 @@ public class AppActivity extends Cocos2dxActivity {
 
             @Override
             public void onCancel() {
+                JSONObject result = new JSONObject();
+                try {
+                    result.put("code", "0");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                ccActivity.RunJS_obj("THIRD_LOGIN_RESULT", result.toString());
+
                 ToastUtils.showToast("取消登录");
             }
 
             @Override
             public void onError(String msg) {
+                JSONObject result = new JSONObject();
+                try {
+                    result.put("code", "0");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                ccActivity.RunJS_obj("THIRD_LOGIN_RESULT", result.toString());
                 ToastUtils.showToast(msg);
             }
         });
@@ -758,7 +786,8 @@ public class AppActivity extends Cocos2dxActivity {
 
     /**
      * 极光设置tag
-     *+
+     * +
+     *
      * @param chanelId
      */
     public static void registerJPUSHTagsId(String chanelId) {

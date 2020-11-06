@@ -4387,7 +4387,7 @@
                     "Children": [
                       {
                         "IsCustomSize": true,
-                        "FontSize": 20,
+                        "FontSize": 30,
                         "LabelText": "这里是商品介绍",
                         "OutlineColor": {
                           "G": 0,

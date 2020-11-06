@@ -1013,7 +1013,7 @@
                   <AbstractNodeData Name="detailPnl" ActionTag="786027686" Tag="309" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" LeftMargin="476.2507" RightMargin="-608.2507" TopMargin="319.0400" BottomMargin="5.9600" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="709.0000" Y="395.0000" />
                     <Children>
-                      <AbstractNodeData Name="goodsDetailText" ActionTag="-1444423596" Tag="516" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="14.5000" RightMargin="14.5000" TopMargin="20.4885" BottomMargin="20.8144" IsCustomSize="True" FontSize="20" LabelText="这里是商品介绍" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                      <AbstractNodeData Name="goodsDetailText" ActionTag="-1444423596" Tag="516" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="14.5000" RightMargin="14.5000" TopMargin="20.4885" BottomMargin="20.8144" IsCustomSize="True" FontSize="30" LabelText="这里是商品介绍" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                         <Size X="680.0000" Y="353.6971" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="354.5000" Y="197.6630" />

@@ -27,7 +27,7 @@ load('game/ui/scene/HallScene', function () {
                 'topPnl/morePnl': {onClicked: this.onHideMorePnlClick},
                 'topPnl/morePnl/setBtn': {onClicked: this.onSetBtnClick},
                 'topPnl/morePnl/feedbackBtn': {onClicked: this.onFeedbackBtnClick},
-                'topPnl/morePnl/customerServiceBtn': {onClicked: this.onHideMorePnlClick},
+                'topPnl/morePnl/customerServiceBtn': {onClicked: this.onCustomerBtnClick},
                 'topPnl/morePnl/authenticationBtn': {onClicked: this.onAuthenticationClick},
 
 
@@ -123,6 +123,12 @@ load('game/ui/scene/HallScene', function () {
             GameUtil.delayBtn(sender);
             this.morePnl.setVisible(false)
             appInstance.gameAgent().addUI(ResConfig.Ui.FanKuiLayer)
+        },
+
+        onCustomerBtnClick: function (sender) {
+            GameUtil.delayBtn(sender);
+            this.morePnl.setVisible(false)
+            appInstance.gameAgent().addUI(ResConfig.Ui.CustomerLayer)
         },
 
         onTaskClick: function (sender) {

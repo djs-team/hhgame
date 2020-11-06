@@ -90,6 +90,7 @@ load('game/config/ResConfig', function () {
         'RoleLayer': 'game/ui/layer/role/RoleLayer',
         'FukaShopLayer': 'game/ui/layer/fukashop/FukaShopLayer',
         'FanKuiLayer': 'game/ui/layer/feedback/FanKuiLayer',
+        'CustomerLayer': 'game/ui/layer/customer/CustomerLayer',
         'MatchResultLayer' : 'module/mahjong/ui/MatchResultLayer',
     }
 
@@ -123,6 +124,7 @@ load('game/config/ResConfig', function () {
         'CoinGameLayer': 'res/CoinGameLayer.json',
         'ConfLayer': 'res/ConfLayer.json',
         'FanKuiLayer': 'res/FanKuiLayer.json',
+        'CustomerLayer': 'res/CustomerLayer.json',
         'AuthenticationLayer': 'res/AuthenticationLayer.json',
         'CustomerServiceLayer': 'res/CustomerServiceLayer.json',
         'PersonalLayer': 'res/PersonalLayer.json',

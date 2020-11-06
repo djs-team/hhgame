@@ -936,6 +936,7 @@
         <Project Name="TipsDialog.csd" Type="Layer" />
         <Project Name="TipsFloat.csd" Type="Layer" />
         <Project Name="TurnTableLayer.csd" Type="Layer" />
+        <Project Name="CustomerLayer.csd" Type="Layer" />
       </RootFolder>
     </Group>
   </SolutionFolder>

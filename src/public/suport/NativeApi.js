@@ -523,7 +523,7 @@ load('public/suport/NativeApi', function () {
                 if (cc.sys.OS_ANDROID === cc.sys.os) {
                     return jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'getAppVersion', '(Ljava/lang/String;)Ljava/lang/String;', "name")
                 } else if (cc.sys.OS_IOS === cc.sys.os) {
-
+                    return jsb.reflection.callStaticMethod('AppController', 'getVersion')
                 }
             } catch (e) {
                 NativeApi.HelloOC('uploadPictureParam throw: ' + JSON.stringify(e))

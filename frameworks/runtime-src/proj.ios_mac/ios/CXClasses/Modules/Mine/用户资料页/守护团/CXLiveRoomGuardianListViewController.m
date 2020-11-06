@@ -250,8 +250,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CXLiveRoomGuardianListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CXLiveRoomGuardianListCellID"];
     CXUserModel *model = self.dataSources[indexPath.row];
+    cell.guardianUserId = self.userId;
     cell.userModel = model;
-    
     return cell;
 }
 

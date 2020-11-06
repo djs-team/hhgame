@@ -707,6 +707,11 @@ static AppDelegate s_sharedApplication;
     return [CXPhoneBasicTools deviceName];
 }
 
+/// 获取版本号
++ (NSString *_Nullable)getVersion {
+    return [CXPhoneBasicTools getVersion];
+}
+
 #pragma mark - ================ 复制到剪贴板 ===================
 
 /// 复制到剪贴板

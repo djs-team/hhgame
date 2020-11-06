@@ -20,7 +20,7 @@
     [super awakeFromNib];
     
     _bgView.layer.masksToBounds = true;
-    _bgView.layer.cornerRadius = 21;
+    _bgView.layer.cornerRadius = 27;
     
     _lrc_music_roseNumBtn.layer.masksToBounds = true;
     _lrc_music_roseNumBtn.layer.cornerRadius = 17;

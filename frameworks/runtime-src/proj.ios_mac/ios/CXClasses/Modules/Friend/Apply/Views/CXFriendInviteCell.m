@@ -33,6 +33,16 @@
     self.onlineStateLabel.layer.masksToBounds = YES;
     self.onlineStateLabel.layer.cornerRadius = 8;
     
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(avatarTapAction:)];
+    //为图片添加手势
+    [_avatar addGestureRecognizer:singleTap];
+    _avatar.userInteractionEnabled = YES;
+}
+
+- (void)avatarTapAction:(UITapGestureRecognizer *)gesture {
+    if (self.avatarTapGestureBlock) {
+        self.avatarTapGestureBlock();
+    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

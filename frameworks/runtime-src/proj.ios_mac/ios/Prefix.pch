@@ -41,6 +41,8 @@
     #import "CXThirdPayManager.h"
     #import "CXOCJSBrigeManager.h"
 
+    #import "CXLiveRoomViewController.h"
+
     //微信
     #define WX_AppKey @"wx0b0dfb4c61044a8b"
     #define WX_AppSecret @"88c540f1f030c762be4ee5ecb1f41071"
@@ -65,6 +67,8 @@
     NSString *const kNSNotificationCenter_CXFriendViewController_reloadUnReadCount = @"NSNotificationCenter_CXFriendViewController_reloadUnReadCount";
     NSString *const kNSNotificationCenter_CXBaseTabBarViewController_reloadUnreadCount = @"NSNotificationCenter_CXBaseTabBarViewController_reloadUnreadCount";
     NSString *const kNSNotificationCenter_CXBaseTabBarViewController_reloadSystemUnreadCount = @"NSNotificationCenter_CXBaseTabBarViewController_reloadSystemUnreadCount";
+
+    NSString *const kNSNotificationCenter_CXLiveRoomViewController_joinNewRoom = @"NSNotificationCenter_CXLiveRoomViewController_joinNewRoom";
 
     // ********** define **********
     // frame

@@ -28,7 +28,7 @@
                   <AbstractNodeData Name="Image_7" ActionTag="1023506488" Tag="202" IconVisible="False" LeftMargin="467.8900" RightMargin="486.1100" TopMargin="108.9747" BottomMargin="547.0253" Scale9Enable="True" LeftEage="44" RightEage="32" TopEage="46" BottomEage="10" Scale9OriginX="44" Scale9OriginY="46" Scale9Width="23" Scale9Height="11" ctype="ImageViewObjectData">
                     <Size X="326.0000" Y="64.0000" />
                     <Children>
-                      <AbstractNodeData Name="Text_3" ActionTag="-1180455505" Tag="203" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="24.0000" RightMargin="24.0000" TopMargin="13.5000" BottomMargin="13.5000" IsCustomSize="True" FontSize="26" LabelText="欢迎您来到和和麻将" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                      <AbstractNodeData Name="Text_3" ActionTag="-1180455505" Tag="203" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="24.0000" RightMargin="24.0000" TopMargin="13.5000" BottomMargin="13.5000" IsCustomSize="True" FontSize="26" LabelText="欢迎您来到麻将情缘" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                         <Size X="278.0000" Y="37.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="163.0000" Y="32.0000" />

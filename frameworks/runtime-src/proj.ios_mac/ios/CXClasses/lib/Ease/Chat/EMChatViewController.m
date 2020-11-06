@@ -137,6 +137,8 @@
     [self.tableView addGestureRecognizer:tap];
     
     [self getUserInfoData];
+    
+    [self loadMoney];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -292,6 +294,19 @@
     }];
 }
 
+- (void)loadMoney {
+    kWeakSelf
+    [CXHTTPRequest POSTWithURL:@"/index.php/Api/AliPay/initmymoney" parameters:@{} callback:^(id responseObject, BOOL isCache, NSError *error) {
+       if (!error) {
+           
+           [CXClientModel instance].balance = responseObject[@"data"][@"coin"];
+           if (weakSelf.chatBar.giftView) {
+               weakSelf.chatBar.giftView.giftValueLabel.text = [NSString stringWithFormat:@"%@",[CXClientModel instance].balance.stringValue];
+           }
+       }
+    }];
+}
+
 - (void)_setupNavigationBarRightItem
 {
     UIImage *image = [[UIImage imageNamed:@"more_dian_dark"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
@@ -347,6 +362,8 @@
         [weakSelf sendGiftWithGiftModel:model];
     };
     self.chatBar.giftView = giftView;
+    
+    self.chatBar.giftView.giftValueLabel.text = [NSString stringWithFormat:@"%@",[CXClientModel instance].balance.stringValue];
 }
 
 - (void)getGiftListData {
@@ -1750,15 +1767,15 @@
     NSMutableArray *items = [[NSMutableArray alloc] init];
     if (aModel.type == EMMessageTypeText) {
         [items addObject:self.copyMenuItem];
-        [items addObject:self.transpondMenuItem];
+//        [items addObject:self.transpondMenuItem];
     } else if (aModel.type == EMMessageTypeLocation || aModel.type == EMMessageTypeImage || aModel.type == EMMessageTypeVideo) {
-        [items addObject:self.transpondMenuItem];
+//        [items addObject:self.transpondMenuItem];
     }
     [items addObject:self.deleteMenuItem];
     
-    if (aModel.emModel.direction == EMMessageDirectionSend) {
-        [items addObject:self.recallMenuItem];
-    }
+//    if (aModel.emModel.direction == EMMessageDirectionSend) {
+//        [items addObject:self.recallMenuItem];
+//    }
     
     [self.menuController setMenuItems:items];
     [self.menuController setTargetRect:aCell.bubbleView.frame inView:aCell];
@@ -2097,6 +2114,8 @@
             NSString *mesage = [NSString stringWithFormat:@"%@送给%@\"%@\"", [CXClientModel instance].nickname,weakSelf.friendModel.nickname, giftModel.gift_name];
             EMTextMessageBody *body = [[EMTextMessageBody alloc] initWithText:mesage];
             [weakSelf _sendMessageWithBody:body ext:ext isUpload:NO];
+            
+            [weakSelf loadMoney];
         }
     }];
 }

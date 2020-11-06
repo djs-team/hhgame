@@ -1450,7 +1450,7 @@
     }
     kWeakSelf
     [LEEAlert alert].config
-    .LeeTitle(@"为保障合合社区的真实和严肃性，所有上麦用户需要实名认证")
+    .LeeTitle(@"为保障麻将情缘社区的真实和严肃性，所有上麦用户需要实名认证")
     .LeeContent(msg)
     .LeeCancelAction(@"跳过", ^ {
         if (isInvite == true) {
@@ -1598,7 +1598,7 @@
             [weakSelf toast:@"购买成功"];
             [weakSelf getFirstRechargeData];
         } else {
-            [weakSelf toast:errorMsg];
+            [weakSelf toast:@"购买失败"];
         }
     }];
 }
@@ -1609,7 +1609,7 @@
     rechargeView.gotoRechargeProtocol = ^(NSString * _Nonnull linkURL) {
         NSURL *url = [NSURL URLWithString:linkURL];
         CXBaseWebViewController *webVC = [[CXBaseWebViewController alloc] initWithURL:url];
-        webVC.title = @"合合有约充值协议";
+        webVC.title = @"麻将情缘充值协议";
         [weakSelf.navigationController pushViewController:webVC animated:YES];
     };
     rechargeView.rechargeBlock = ^(CXRechargeModel * _Nonnull model, NSInteger payAction) {

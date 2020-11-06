@@ -1510,8 +1510,8 @@
                     "TouchEnable": true,
                     "AnchorPoint": {},
                     "Position": {
-                      "X": 673.54,
-                      "Y": 168.61
+                      "X": 556.54,
+                      "Y": 181.61
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -1520,17 +1520,17 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.5262,
-                      "Y": 0.2342
+                      "X": 0.4348,
+                      "Y": 0.2522
                     },
                     "PreSize": {
                       "X": 0.0914,
                       "Y": 0.1611
                     },
-                    "LeftMargin": 673.54,
-                    "RightMargin": 489.46,
-                    "TopMargin": 435.39,
-                    "BottomMargin": 168.61,
+                    "LeftMargin": 556.54,
+                    "RightMargin": 606.46,
+                    "TopMargin": 422.39,
+                    "BottomMargin": 181.61,
                     "Tag": 302,
                     "Children": [
                       {
@@ -1541,8 +1541,8 @@
                         },
                         "Scale9OriginX": 10,
                         "Scale9OriginY": 11,
-                        "Scale9Width": 11,
-                        "Scale9Height": 31,
+                        "Scale9Width": 25,
+                        "Scale9Height": 27,
                         "AnchorPoint": {
                           "ScaleX": 0.5,
                           "ScaleY": 0.5
@@ -1562,18 +1562,18 @@
                           "Y": 0.6386
                         },
                         "PreSize": {
-                          "X": 0.265,
-                          "Y": 0.4569
+                          "X": 0.3846,
+                          "Y": 0.4224
                         },
-                        "LeftMargin": 45.4019,
-                        "RightMargin": 40.5981,
-                        "TopMargin": 15.4201,
-                        "BottomMargin": 47.5799,
+                        "LeftMargin": 38.4019,
+                        "RightMargin": 33.5981,
+                        "TopMargin": 17.4201,
+                        "BottomMargin": 49.5799,
                         "Tag": 303,
                         "ActionTag": 560573145,
                         "Size": {
-                          "X": 31.0,
-                          "Y": 53.0
+                          "X": 45.0,
+                          "Y": 49.0
                         },
                         "Name": "menuImg",
                         "ctype": "ImageViewObjectData"
@@ -1972,8 +1972,8 @@
                     "TouchEnable": true,
                     "AnchorPoint": {},
                     "Position": {
-                      "X": 675.96,
-                      "Y": -0.57
+                      "X": 673.96,
+                      "Y": 57.43
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -1984,22 +1984,22 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.5281,
-                      "Y": -0.0008
+                      "X": 0.5265,
+                      "Y": 0.0798
                     },
                     "PreSize": {
-                      "X": 0.5625,
-                      "Y": 0.1639
+                      "X": 0.482,
+                      "Y": 0.1597
                     },
-                    "LeftMargin": 675.96,
-                    "RightMargin": -115.96,
-                    "TopMargin": 602.57,
-                    "BottomMargin": -0.57,
+                    "LeftMargin": 673.96,
+                    "RightMargin": -10.96,
+                    "TopMargin": 547.57,
+                    "BottomMargin": 57.43,
                     "Tag": 301,
                     "ActionTag": -2102691439,
                     "Size": {
-                      "X": 720.0,
-                      "Y": 118.0
+                      "X": 617.0,
+                      "Y": 115.0
                     },
                     "Name": "menuListView",
                     "ctype": "ListViewObjectData"

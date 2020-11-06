@@ -258,17 +258,17 @@ load('game/config/GameConfig', function () {
                 ,
                 '2': {
                     'name': '京东卡',
-                    'currency': 'res/code/props/zphd_12.png',
+                    'currency': 'res/code/props/jd_1.png',
                 }
                 ,
                 '3': {
                     'name': '话费卡',
-                    'currency': 'res/code/props/zphd_12.png',
+                    'currency': 'res/code/props/hfk_1.png',
                 }
                 ,
                 '4': {
                     'name': '现金红包',
-                    'currency': 'res/code/props/zphd_12.png',
+                    'currency': 'res/code/props/xjhb_1.png',
                 }
                 ,
             }
@@ -474,8 +474,11 @@ load('game/config/GameConfig', function () {
                     'name': '话费卡',
                     'currency': 'res/turntable/zphf_1.png',
                 }
-
                 ,
+                '4': {
+                    'name': '现金红包',
+                    'currency': 'res/turntable/xjhb_1.png',
+                }
             }
         },
 
@@ -594,8 +597,11 @@ load('game/config/GameConfig', function () {
                     'name': '话费卡',
                     'currency': 'res/sign/zphf_1.png',
                 }
-
                 ,
+                '4': {
+                    'name': '现金红包',
+                    'currency': 'res/sign/xjhb_1.png',
+                }
             }
         },
 

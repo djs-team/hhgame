@@ -20,5 +20,8 @@ load('game/public/AppConfig', function () {
         'RECONNECT_OVER_TIMES': 'RECONNECT_OVER_TIMES',
     }
 
+    //系统版本号
+    Appconfig.vision = '1.0.0.1'
+
     return Appconfig
 })

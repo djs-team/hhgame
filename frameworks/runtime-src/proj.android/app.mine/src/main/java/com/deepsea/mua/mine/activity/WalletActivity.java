@@ -253,10 +253,16 @@ public class WalletActivity extends BaseActivity<ActivityWalletBinding> {
                         ViewBindUtils.setVisible(mBinding.tvCrashWithdrawalDetails, true);
                         ViewBindUtils.setVisible(mBinding.tvCrashWithdrawal, true);
                         ViewBindUtils.setVisible(mBinding.tvReceivingAccount, true);
+                        ViewBindUtils.setVisible(mBinding.tvRedpakageCrashWithdrawalDetails, true);
+                        ViewBindUtils.setVisible(mBinding.tvRedpakageCrashWithdrawal, true);
+                        ViewBindUtils.setVisible(mBinding.tvRedpakageReceivingAccount, true);
                     } else {
                         ViewBindUtils.setVisible(mBinding.tvCrashWithdrawalDetails, false);
                         ViewBindUtils.setVisible(mBinding.tvCrashWithdrawal, false);
                         ViewBindUtils.setVisible(mBinding.tvReceivingAccount, false);
+                        ViewBindUtils.setVisible(mBinding.tvRedpakageCrashWithdrawalDetails, false);
+                        ViewBindUtils.setVisible(mBinding.tvRedpakageCrashWithdrawal, false);
+                        ViewBindUtils.setVisible(mBinding.tvRedpakageReceivingAccount, false);
 
                     }
 //                    double check = result.getCheck();

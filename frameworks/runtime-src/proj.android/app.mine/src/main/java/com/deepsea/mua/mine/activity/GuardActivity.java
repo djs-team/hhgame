@@ -109,7 +109,7 @@ public class GuardActivity extends BaseActivity<ActivityGuardListBinding> {
     RecyclerAdapterWithHF mAdapterWithHF;
 
     private void initRecyclerView() {
-        mAdapter = new GuardAdapter(mContext);
+        mAdapter = new GuardAdapter(mContext,userid);
         mBinding.rvGuard.setLayoutManager(new LinearLayoutManager(mContext));
         mAdapterWithHF = new RecyclerAdapterWithHF(mAdapter);
         mAdapterWithHF.setManagerType(RecyclerAdapterWithHF.TYPE_MANAGER_LINEAR);

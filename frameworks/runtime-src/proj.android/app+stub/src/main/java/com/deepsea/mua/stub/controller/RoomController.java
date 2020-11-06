@@ -1989,23 +1989,11 @@ public class RoomController implements IRoomController, RoomMsgHandler.OnMsgEven
                 break;
             case 140:
                 NotifyOnlineHeadImageParam onlineHeadImageParam = JsonConverter.fromJson(message, NotifyOnlineHeadImageParam.class);
-                if (mView != null) {
-                    List<String> ranks = onlineHeadImageParam.getOnlineHeadImages();
-                    if (ranks == null) {
-                        ranks = new ArrayList<>();
-                    }
-                    int size = ranks.size();
-                    if (ranks.size() < 3) {
-                        for (int i = 0; i < 3 - size; i++) {
-                            ranks.add("");
-                        }
-                    }
-                    mView.updateOnlineHeads(ranks);
-                }
+                syncHeadImage(onlineHeadImageParam);
                 break;
             case 141:
-                UpdateUserBalanceParam userBalanceParam=JsonConverter.fromJson(message,UpdateUserBalanceParam.class);
-                if (mView!=null){
+                UpdateUserBalanceParam userBalanceParam = JsonConverter.fromJson(message, UpdateUserBalanceParam.class);
+                if (mView != null) {
                     mView.upDateBalance(userBalanceParam.getBalance());
                 }
                 break;
@@ -2014,6 +2002,29 @@ public class RoomController implements IRoomController, RoomMsgHandler.OnMsgEven
                     mView.keepLive();
                 }
                 break;
+        }
+    }
+
+    private void syncHeadImage(NotifyOnlineHeadImageParam onlineHeadImageParam) {
+        if (mView != null) {
+            List<String> ranks = onlineHeadImageParam.getOnlineHeadImages();
+            if (ranks == null) {
+                ranks = new ArrayList<>();
+            }
+            int size = ranks.size();
+            if (ranks.size() < 3) {
+                for (int i = 0; i < 3 - size; i++) {
+                    ranks.add("");
+                }
+            }
+            mView.updateOnlineHeads(ranks);
+        } else {
+            mHandler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    syncHeadImage(onlineHeadImageParam);
+                }
+            }, 500);
         }
     }
 

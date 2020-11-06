@@ -50,6 +50,7 @@ import com.deepsea.mua.stub.entity.OssGameConfigVo;
 import com.deepsea.mua.stub.entity.QPWxOrder;
 import com.deepsea.mua.stub.jpush.JpushUtils;
 import com.deepsea.mua.stub.permission.PermissionCallback;
+import com.deepsea.mua.stub.utils.ApkUtils;
 import com.deepsea.mua.stub.utils.BitmapUtils;
 import com.deepsea.mua.stub.utils.Constant;
 import com.deepsea.mua.stub.utils.SharedPrefrencesUtil;
@@ -839,12 +840,28 @@ public class AppActivity extends Cocos2dxActivity {
         return super.onKeyDown(keyCode, event);
     }
 
-
+    /**
+     * 相册
+     *
+     * @param data
+     */
     public static void getPictureFromPhoneAlbum(String data) {
         OssGameConfigVo result = JsonConverter.fromJson(data, OssGameConfigVo.class);
         Intent intent = new Intent(ccActivity, UploadPhotoDialogActivity.class);
         intent.putExtra("ossConfig", result);
         ccActivity.startActivityForResult(intent, 2);
+    }
+
+    /**
+     * @param type
+     * @return
+     */
+    public static String getAppVersion(String type) {
+        String result = "";
+        if (type.equals("name")) {
+            result = ApkUtils.getApkVersionName(ccActivity);
+        }
+        return result;
     }
 
 

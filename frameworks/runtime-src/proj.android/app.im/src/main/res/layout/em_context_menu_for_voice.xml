@@ -45,6 +45,7 @@
         android:onClick="recall"
         android:padding="10dp"
         android:text="@string/recall"
+        android:visibility="gone"
         android:textColor="@android:color/black"
         android:textSize="20sp" />
 

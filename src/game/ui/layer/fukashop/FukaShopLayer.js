@@ -34,6 +34,9 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 'goodsListPnl/leftPnl/searchTextFiled' : {},
                 'goodsListPnl/leftPnl/imgPageView' : { },
                 'goodsListPnl/leftPnl/imgPageCell' : { },
+                'goodsListPnl/leftPnl/PageIndex0' : { },
+                'goodsListPnl/leftPnl/PageIndex1' : { },
+                'goodsListPnl/leftPnl/PageIndex2' : { },
 
                 'goodsListPnl/midPnl/cardExchangeBtn' : { },
                 'goodsListPnl/midPnl/seizeBtn' : {},
@@ -239,6 +242,22 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
             this.exangeListView.addEventListener(this.selectedItemEvent,this)
             this.robListView.addEventListener(this.selectedItemEvent,this)
 
+
+            this.imgPageView.addEventListener(this.imgPageViewEvent, this)
+
+        },
+
+        imgPageViewEvent: function (sender, dt) {
+            if (dt === 0) {
+                let index = this.imgPageView.getCurrentPageIndex()
+                for (let i = 0; i < 3; ++i) {
+                    let imgPath = 'res/common/bt_1.png'
+                    if (i === index) {
+                        imgPath = 'res/common/bt_2.png'
+                    }
+                    this['PageIndex' + i].loadTexture(imgPath)
+                }
+            }
         },
 
         onTextFieldListener: function(sender,dt){
@@ -553,10 +572,10 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                     width : 629.00
                 }
                 //let url = 'http://p3.itc.cn/q_70/images03/20200911/b7c565cbc87848538cace549fb609e7b.jpeg'
-               let  url = data[i].outerPictureUrl
+                let  url = data[i].outerPictureUrl
                 this.onLoadUrlImg(url,size,cell)
             }
-
+            this.imgPageViewEvent(null, 0)
         },
 
         onLoadUrlImg: function (url,size,cell) {

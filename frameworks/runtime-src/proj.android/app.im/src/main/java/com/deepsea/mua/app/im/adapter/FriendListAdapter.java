@@ -27,7 +27,15 @@ import java.util.Date;
  */
 public class FriendListAdapter extends BaseBindingAdapter<FriendInfoBean, ItemFriendMineBinding> {
 
+    public interface OnMyClickListener {
+        void onPhototClick(String roomId);
+    }
 
+    private FriendMsgAdapter.OnMyClickListener onMyClickListener;
+
+    public void setOnMyClickListener(FriendMsgAdapter.OnMyClickListener onMyClickListener) {
+        this.onMyClickListener = onMyClickListener;
+    }
     public FriendListAdapter(Context context) {
         super(context);
     }
@@ -73,7 +81,14 @@ public class FriendListAdapter extends BaseBindingAdapter<FriendInfoBean, ItemFr
         }
         StateUtils.setOnlineState(holder.binding.tvOnline, str);
         ViewBindUtils.RxClicks(holder.binding.ivPhoto, o -> {
-            PageJumpUtils.jumpToProfile(item.getUser_id());
+            String online_str = item.getOnline_str();
+            if (online_str.contains("相亲")||online_str.contains("热聊")||online_str.contains("开播")) {
+                if (onMyClickListener != null) {
+                    onMyClickListener.onPhototClick(item.getRoom_id());
+                }
+            } else {
+                PageJumpUtils.jumpToProfile(item.getUser_id());
+            }
         });
     }
 }

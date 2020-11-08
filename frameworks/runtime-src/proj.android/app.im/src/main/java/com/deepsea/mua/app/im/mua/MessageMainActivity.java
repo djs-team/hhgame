@@ -6,6 +6,11 @@ import com.deepsea.mua.app.im.databinding.ActivityMessageBinding;
 import com.deepsea.mua.app.im.databinding.ActivityMessageMainBinding;
 import com.deepsea.mua.stub.base.BaseActivity;
 import com.deepsea.mua.stub.utils.ArouterConst;
+import com.deepsea.mua.stub.utils.eventbus.ChangeRoomEvent;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 /**
  * Created by JUN on 2019/7/11
@@ -20,6 +25,7 @@ public class MessageMainActivity extends BaseActivity<ActivityMessageMainBinding
 
     @Override
     protected void initView() {
+        EventBus.getDefault().register(this);
     }
 
     @Override
@@ -28,5 +34,16 @@ public class MessageMainActivity extends BaseActivity<ActivityMessageMainBinding
         subscribeClick(mBinding.rlFinish, o -> {
             finish();
         });
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void changeRoom(ChangeRoomEvent event) {
+        finish();
     }
 }

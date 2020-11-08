@@ -29,6 +29,15 @@ public class FriendInfoBean {
     private int unReadCount;
     private String online_str;
     private String intro;
+    private String room_id;
+
+    public String getRoom_id() {
+        return room_id;
+    }
+
+    public void setRoom_id(String room_id) {
+        this.room_id = room_id;
+    }
 
     public String getIntro() {
         return intro;

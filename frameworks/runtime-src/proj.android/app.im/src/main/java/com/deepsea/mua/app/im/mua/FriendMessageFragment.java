@@ -25,14 +25,17 @@ import com.deepsea.mua.stub.base.BaseFragment;
 import com.deepsea.mua.stub.base.BaseObserver;
 import com.deepsea.mua.stub.client.hyphenate.IEMMessageListener;
 import com.deepsea.mua.stub.controller.OnlineController;
+import com.deepsea.mua.stub.controller.RoomJoinController;
 import com.deepsea.mua.stub.dialog.AAlertDialog;
 import com.deepsea.mua.stub.entity.FriendHXInfo;
 import com.deepsea.mua.stub.entity.FriendInfoBean;
 import com.deepsea.mua.stub.entity.FriendInfoListBean;
 import com.deepsea.mua.stub.utils.FriendsUtils;
+import com.deepsea.mua.stub.utils.SharedPrefrencesUtil;
 import com.deepsea.mua.stub.utils.StateUtils;
 import com.deepsea.mua.stub.utils.UserUtils;
 import com.deepsea.mua.stub.utils.ViewModelFactory;
+import com.deepsea.mua.stub.utils.eventbus.ChangeRoomEvent;
 import com.deepsea.mua.stub.utils.eventbus.ClickEventType;
 import com.deepsea.mua.stub.utils.eventbus.HeartBeatEvent;
 import com.deepsea.mua.stub.utils.eventbus.UpHxUnreadMsg;
@@ -66,6 +69,8 @@ public class FriendMessageFragment extends BaseFragment<FragmentFriendMessageBin
     private FriendListViewModel mViewModel;
     private FriendMsgAdapter mAdapter;
     protected boolean isConflict;
+    @Inject
+    RoomJoinController mRoomJump;
 
     public static FriendMessageFragment newInstance() {
         FriendMessageFragment instance = new FriendMessageFragment();
@@ -275,6 +280,20 @@ public class FriendMessageFragment extends BaseFragment<FragmentFriendMessageBin
 
     private void initRecyclerView() {
         mAdapter = new FriendMsgAdapter(mContext);
+        mAdapter.setOnMyClickListener(new FriendMsgAdapter.OnMyClickListener() {
+            @Override
+            public void onPhototClick(String roomId) {
+                String openRoomId = SharedPrefrencesUtil.getData(mContext, "mRoomId", "mRoomId", "");
+                if (!TextUtils.isEmpty(openRoomId) && !roomId.equals(openRoomId)) {
+                    ChangeRoomEvent changeRoomEvent = new ChangeRoomEvent();
+                    changeRoomEvent.roomId = roomId;
+                    EventBus.getDefault().post(changeRoomEvent);
+                } else {
+                    mRoomJump.startJump(roomId, mContext);
+                }
+
+            }
+        });
         mAdapter.setOnItemLongClickListener(new BaseBindingAdapter.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(View view, int position) {

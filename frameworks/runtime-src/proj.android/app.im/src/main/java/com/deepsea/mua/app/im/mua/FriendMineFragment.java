@@ -7,6 +7,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v7.widget.LinearLayoutManager;
 import android.text.TextUtils;
+import android.util.Log;
 import android.util.Pair;
 import android.view.View;
 
@@ -24,6 +25,7 @@ import com.deepsea.mua.stub.base.BaseFragment;
 import com.deepsea.mua.stub.base.BaseObserver;
 import com.deepsea.mua.stub.client.hyphenate.IEMMessageListener;
 import com.deepsea.mua.stub.controller.OnlineController;
+import com.deepsea.mua.stub.controller.RoomJoinController;
 import com.deepsea.mua.stub.entity.FriendHXInfo;
 import com.deepsea.mua.stub.entity.FriendInfoBean;
 import com.deepsea.mua.stub.entity.FriendInfoListBean;
@@ -33,6 +35,7 @@ import com.deepsea.mua.stub.utils.StateUtils;
 import com.deepsea.mua.stub.utils.TimeUtils;
 import com.deepsea.mua.stub.utils.UserUtils;
 import com.deepsea.mua.stub.utils.ViewModelFactory;
+import com.deepsea.mua.stub.utils.eventbus.ChangeRoomEvent;
 import com.deepsea.mua.stub.utils.eventbus.UpHxUnreadMsg;
 import com.hyphenate.EMConnectionListener;
 import com.hyphenate.EMError;
@@ -42,6 +45,7 @@ import com.hyphenate.chat.EMConversation;
 import com.hyphenate.chat.EMMessage;
 import com.hyphenate.util.NetUtils;
 
+import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 
 import java.util.ArrayList;
@@ -61,6 +65,8 @@ public class FriendMineFragment extends BaseFragment<FragmentFriendMessageBindin
     private FriendListViewModel mViewModel;
     private FriendListAdapter mAdapter;
     protected boolean isConflict;
+    @Inject
+    RoomJoinController mRoomJump;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -212,7 +218,19 @@ public class FriendMineFragment extends BaseFragment<FragmentFriendMessageBindin
 
     private void initRecyclerView() {
         mAdapter = new FriendListAdapter(mContext);
-
+        mAdapter.setOnMyClickListener(new FriendMsgAdapter.OnMyClickListener() {
+            @Override
+            public void onPhototClick(String roomId) {
+                String openRoomId = SharedPrefrencesUtil.getData(mContext, "mRoomId", "mRoomId", "");
+                if (!TextUtils.isEmpty(openRoomId) && !roomId.equals(openRoomId)) {
+                    ChangeRoomEvent changeRoomEvent = new ChangeRoomEvent();
+                    changeRoomEvent.roomId = roomId;
+                    EventBus.getDefault().post(changeRoomEvent);
+                } else {
+                    mRoomJump.startJump(roomId, mContext);
+                }
+            }
+        });
         mAdapter.setOnItemClickListener((view, position) -> {
             FriendInfoBean bean = mAdapter.getItem(position);
             String userId = bean.getUser_id();

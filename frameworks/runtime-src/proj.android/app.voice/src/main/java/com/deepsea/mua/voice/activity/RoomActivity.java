@@ -136,6 +136,7 @@ import com.deepsea.mua.stub.utils.PageJumpUtils;
 import com.deepsea.mua.stub.utils.SharedPrefrencesUtil;
 import com.deepsea.mua.stub.utils.UserUtils;
 import com.deepsea.mua.stub.utils.ViewBindUtils;
+import com.deepsea.mua.stub.utils.eventbus.ChangeRoomEvent;
 import com.deepsea.mua.stub.utils.eventbus.DownloadEvent;
 import com.deepsea.mua.stub.utils.eventbus.ExitRoomEvent;
 import com.deepsea.mua.stub.utils.eventbus.InviteInRoomEvent;
@@ -550,26 +551,7 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
         recommendAdapter.setOnItemClickListener(new BaseBindingAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                if (!isChangeView) {
-                    RoomData.MicroInfosBean mainM = mRoomModel.getHostMicro();
-                    mainM.setUser(null);
-                    mBinding.mainFaceView.setMicroData(mainM);
-                } else {
-                    mainMpInfo.setUser(null);
-                    mainFaceMusicView.setMicroData(mainMpInfo);
-                }
-                for (int i = 0; i < mMpAdapter.getData().size(); i++) {
-                    mMpAdapter.getData().get(i).setUser(null);
-                }
-                mMpAdapter.notifyDataSetChanged();
-
-                RoomController.getInstance().releaseHyphenateAndAgora();
-
-                RecommendRoomResult.ListBean bean = recommendAdapter.getData().get(position);
-                JoinRoom joinRoom = new JoinRoom();
-                joinRoom.setMsgId(SocketCons.JOIN_ROOM);
-                joinRoom.setRoomId(bean.getId());
-                RoomController.getInstance().sendRoomMsg(JsonConverter.toJson(joinRoom));
+                changeRoom(recommendAdapter.getItem(position).getId());
             }
         });
         mBinding.rvRecommend.setAdapter(recommendAdapter);
@@ -614,6 +596,28 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
                 }
             });
         });
+    }
+
+    private void changeRoom(String roomId) {
+        if (!isChangeView) {
+            RoomData.MicroInfosBean mainM = mRoomModel.getHostMicro();
+            mainM.setUser(null);
+            mBinding.mainFaceView.setMicroData(mainM);
+        } else {
+            mainMpInfo.setUser(null);
+            mainFaceMusicView.setMicroData(mainMpInfo);
+        }
+        for (int i = 0; i < mMpAdapter.getData().size(); i++) {
+            mMpAdapter.getData().get(i).setUser(null);
+        }
+        mMpAdapter.notifyDataSetChanged();
+
+        RoomController.getInstance().releaseHyphenateAndAgora();
+
+        JoinRoom joinRoom = new JoinRoom();
+        joinRoom.setMsgId(SocketCons.JOIN_ROOM);
+        joinRoom.setRoomId(roomId);
+        RoomController.getInstance().sendRoomMsg(JsonConverter.toJson(joinRoom));
     }
 
     /**
@@ -4762,4 +4766,11 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
                 break;
         }
     }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void changeRoom(ChangeRoomEvent event) {
+        changeRoom(event.roomId);
+
+    }
+
 }

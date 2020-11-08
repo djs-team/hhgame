@@ -27,6 +27,15 @@ import java.util.Date;
  */
 public class FriendMsgAdapter extends BaseBindingAdapter<FriendInfoBean, ItemFriendListBinding> {
 
+    public interface OnMyClickListener {
+        void onPhototClick(String roomId);
+    }
+
+    private OnMyClickListener onMyClickListener;
+
+    public void setOnMyClickListener(OnMyClickListener onMyClickListener) {
+        this.onMyClickListener = onMyClickListener;
+    }
 
     public FriendMsgAdapter(Context context) {
         super(context);
@@ -82,7 +91,14 @@ public class FriendMsgAdapter extends BaseBindingAdapter<FriendInfoBean, ItemFri
             StateUtils.setState(holder.binding.tvStateDesc, item.getOnline_str());
         }
         ViewBindUtils.RxClicks(holder.binding.ivPhoto, o -> {
-            PageJumpUtils.jumpToProfile(item.getUser_id());
+            String online_str = item.getOnline_str();
+            if (online_str.contains("相亲")||online_str.contains("热聊")||online_str.contains("开播")) {
+                if (onMyClickListener != null) {
+                    onMyClickListener.onPhototClick(item.getRoom_id());
+                }
+            } else {
+                PageJumpUtils.jumpToProfile(item.getUser_id());
+            }
         });
 
     }

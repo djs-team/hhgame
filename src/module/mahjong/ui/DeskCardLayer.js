@@ -101,6 +101,11 @@ load('module/mahjong/ui/DeskCardLayer', function () {
         onSelfCardTouch: function (sender, et) {
             switch (et) {
                 case ccui.Widget.TOUCH_BEGAN:
+
+                    if (!appInstance.dataManager().getPlayData().isMyPutCard()) {
+                        return false
+                    }
+
                     if (this._movingCard) {
                         return false
                     }

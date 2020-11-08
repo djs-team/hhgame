@@ -176,7 +176,113 @@ load('module/mahjong/ui/DeskTopLayer', function () {
                     this.ActionNd.addChild(btn)
                 }
             }
+
+            // this.onDealPower()
         },
+
+        // onDealPower: function () {
+        //     //获取当前连接网络  android=>0--没网 1--wifi 2--4G  ios=>WIFI   WWAN   NONE
+        //     let state = appInstance.nativeApi().getNetWorkStates()
+        //     //获取网络信号  0-4
+        //     let dbm = appInstance.nativeApi().getSignalStrength()
+        //     if (cc.sys.OS_ANDROID === cc.sys.os) {
+        //         switch (state) {
+        //             case 0:
+        //                 console.log('====================android没网')
+        //                 break
+        //             case 1:
+        //                 console.log('====================androidWIFI')
+        //                 switch (dbm) {
+        //                     case 0:
+        //                         console.log('===================android0格')
+        //                         break
+        //                     case 1:
+        //                         console.log('===================android1格')
+        //                         break
+        //                     case 2:
+        //                         console.log('===================android2格')
+        //                         break
+        //                     case 3:
+        //                         console.log('===================android3格')
+        //                         break
+        //                     case 4:
+        //                         console.log('===================android4格')
+        //                         break
+        //                 }
+        //                 break
+        //             case 2:
+        //                 console.log('====================android4G')
+        //                 switch (dbm) {
+        //                     case 0:
+        //                         console.log('===================android0格')
+        //                         break
+        //                     case 1:
+        //                         console.log('===================android1格')
+        //                         break
+        //                     case 2:
+        //                         console.log('===================android2格')
+        //                         break
+        //                     case 3:
+        //                         console.log('===================android3格')
+        //                         break
+        //                     case 4:
+        //                         console.log('===================android4格')
+        //                         break
+        //                 }
+        //                 break
+        //         }
+        //     } else if (cc.sys.OS_IOS === cc.sys.os) {
+        //         switch (state) {
+        //             case 'NONE':
+        //                 console.log('====================ios没网')
+        //                 break
+        //             case 'WIFI':
+        //                 console.log('====================iosWIFI')
+        //                 switch (dbm) {
+        //                     case 0:
+        //                         console.log('===================ios0格')
+        //                         break
+        //                     case 1:
+        //                         console.log('===================ios1格')
+        //                         break
+        //                     case 2:
+        //                         console.log('===================ios2格')
+        //                         break
+        //                     case 3:
+        //                         console.log('===================ios3格')
+        //                         break
+        //                     case 4:
+        //                         console.log('===================ios4格')
+        //                         break
+        //                 }
+        //                 break
+        //             case 'WWAN':
+        //                 console.log('====================ios4G')
+        //                 switch (dbm) {
+        //                     case 0:
+        //                         console.log('===================ios0格')
+        //                         break
+        //                     case 1:
+        //                         console.log('===================ios1格')
+        //                         break
+        //                     case 2:
+        //                         console.log('===================ios2格')
+        //                         break
+        //                     case 3:
+        //                         console.log('===================ios3格')
+        //                         break
+        //                     case 4:
+        //                         console.log('===================ios4格')
+        //                         break
+        //                 }
+        //                 break
+        //         }
+        //     }
+        //
+        //     //获取电量 0-100
+        //     let batteryLevel = appInstance.nativeApi().getBatteryLevel()
+        //     console.log('======================电量'+batteryLevel);
+        // },
 
         onCloseSayContentClicked: function () {
             this.sayContentPnl.setVisible(false)

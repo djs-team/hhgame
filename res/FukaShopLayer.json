@@ -482,6 +482,7 @@
                     "ScrollDirectionType": 0,
                     "ClipAble": true,
                     "BackColorAlpha": 102,
+                    "ComboBoxIndex": 1,
                     "SingleColor": {
                       "R": 150,
                       "G": 150,
@@ -532,6 +533,141 @@
                     },
                     "Name": "imgPageView",
                     "ctype": "PageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "common/bt_1.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 42,
+                    "Scale9OriginY": 29,
+                    "Scale9Width": 46,
+                    "Scale9Height": 30,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 361.0135,
+                      "Y": 292.1662
+                    },
+                    "Scale": {
+                      "ScaleX": 0.3,
+                      "ScaleY": 0.3
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.282,
+                      "Y": 0.4058
+                    },
+                    "PreSize": {
+                      "X": 0.1016,
+                      "Y": 0.1222
+                    },
+                    "LeftMargin": 296.0135,
+                    "RightMargin": 853.9865,
+                    "TopMargin": 383.8338,
+                    "BottomMargin": 248.1662,
+                    "Tag": 240,
+                    "ActionTag": -320119644,
+                    "Size": {
+                      "X": 130.0,
+                      "Y": 88.0
+                    },
+                    "Name": "PageIndex0",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "common/bt_1.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 42,
+                    "Scale9OriginY": 29,
+                    "Scale9Width": 46,
+                    "Scale9Height": 30,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 360.8159,
+                      "Y": 350.1227
+                    },
+                    "Scale": {
+                      "ScaleX": 0.3,
+                      "ScaleY": 0.3
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.2819,
+                      "Y": 0.4863
+                    },
+                    "PreSize": {
+                      "X": 0.1016,
+                      "Y": 0.1222
+                    },
+                    "LeftMargin": 295.8159,
+                    "RightMargin": 854.1841,
+                    "TopMargin": 325.8773,
+                    "BottomMargin": 306.1227,
+                    "Tag": 241,
+                    "ActionTag": -961587332,
+                    "Size": {
+                      "X": 130.0,
+                      "Y": 88.0
+                    },
+                    "Name": "PageIndex1",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "common/bt_1.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 42,
+                    "Scale9OriginY": 29,
+                    "Scale9Width": 46,
+                    "Scale9Height": 30,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 361.0135,
+                      "Y": 410.1663
+                    },
+                    "Scale": {
+                      "ScaleX": 0.3,
+                      "ScaleY": 0.3
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.282,
+                      "Y": 0.5697
+                    },
+                    "PreSize": {
+                      "X": 0.1016,
+                      "Y": 0.1222
+                    },
+                    "LeftMargin": 296.0135,
+                    "RightMargin": 853.9865,
+                    "TopMargin": 265.8337,
+                    "BottomMargin": 366.1663,
+                    "Tag": 242,
+                    "ActionTag": -1056252237,
+                    "Size": {
+                      "X": 130.0,
+                      "Y": 88.0
+                    },
+                    "Name": "PageIndex2",
+                    "ctype": "ImageViewObjectData"
                   }
                 ],
                 "ActionTag": 292336037,
@@ -9665,6 +9801,7 @@
         "ctype": "LayerObjectData"
       },
       "UsedResources": [
+        "common/bt_1.png",
         "common/hb.png",
         "Default/Button_Disable.png",
         "Default/Button_Press.png",

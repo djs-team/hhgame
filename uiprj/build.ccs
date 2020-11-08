@@ -916,6 +916,7 @@
         <Project Name="CoinGameLayer.csd" Type="Layer" />
         <Project Name="CoinShopLayer.csd" Type="Layer" />
         <Project Name="ConfLayer.csd" Type="Layer" />
+        <Project Name="CustomerLayer.csd" Type="Layer" />
         <Project Name="DialogLayer.csd" Type="Layer" />
         <Project Name="EmailLayer.csd" Type="Layer" />
         <Project Name="FanKuiLayer.csd" Type="Layer" />
@@ -936,7 +937,6 @@
         <Project Name="TipsDialog.csd" Type="Layer" />
         <Project Name="TipsFloat.csd" Type="Layer" />
         <Project Name="TurnTableLayer.csd" Type="Layer" />
-        <Project Name="CustomerLayer.csd" Type="Layer" />
       </RootFolder>
     </Group>
   </SolutionFolder>

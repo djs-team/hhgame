@@ -1,0 +1,31 @@
+	/**
+	 * 走马灯广播消息tcp消息
+	 */
+	int BROADCAST_FOR_MJ_COPY = MANAGER_ID + 8;
+	
+返回消息体:
+	private int delayTime;//间隔时间
+	private int showCount;//显示次数
+	private String messageText;//跑马灯信息
+	private long beginTime;//开始时间
+	private long endTime;//结束时间
+	private int grade;//权重 1 最低 越大 越高    10000 清除 之前
+	private int status;	//处理状态
+	
+	
+	===============下面是http消息，客户端登录的时候主动请求消息============
+	/** 客户端 请求 跑马灯信息
+	 * 发送  跑马灯信息 
+	 */
+	int	MJ_HALL_PLAYER_BROADCAST_RUN = MJ_HALL_SERVER_ID + 9;
+请求消息:
+		private int channel;// 渠道
+返回消息:
+		private List<BroadCast> broadList;
+			BroadCast：
+				private int delayTime;//间隔时间
+				private int showCount;//显示次数
+				private String messageText;//跑马灯信息
+				private long beginTime;//开始时间
+				private long endTime;//结束时间
+				private int grade;//权重 1 最低 越大 越高

@@ -2503,6 +2503,8 @@
                 "ColorVector": {
                   "ScaleY": 1.0
                 },
+                "Scale9Width": 1,
+                "Scale9Height": 1,
                 "TouchEnable": true,
                 "AnchorPoint": {
                   "ScaleX": 0.5,
@@ -2846,7 +2848,7 @@
                   "Y": 0.9457
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.0625
                 },
                 "LeftMargin": 323.296,
@@ -3114,7 +3116,7 @@
                   "Y": 0.9458
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.0625
                 },
                 "LeftMargin": 558.08,
@@ -3382,7 +3384,7 @@
                   "Y": 0.9444
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.0625
                 },
                 "LeftMargin": 780.08,
@@ -3992,6 +3994,51 @@
                         },
                         "Name": "fuKaCnt_0",
                         "ctype": "TextObjectData"
+                      },
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "hall/pz_31.png",
+                          "Plist": ""
+                        },
+                        "Scale9OriginX": 7,
+                        "Scale9OriginY": 7,
+                        "Scale9Width": 9,
+                        "Scale9Height": 8,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 41.28,
+                          "Y": 40.9
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.8974,
+                          "Y": 0.8891
+                        },
+                        "PreSize": {
+                          "X": 0.5,
+                          "Y": 0.4783
+                        },
+                        "LeftMargin": 29.78,
+                        "RightMargin": -6.78,
+                        "TopMargin": -5.9,
+                        "BottomMargin": 29.9,
+                        "Tag": 734,
+                        "ActionTag": -757935143,
+                        "Size": {
+                          "X": 23.0,
+                          "Y": 22.0
+                        },
+                        "Name": "redImg",
+                        "ctype": "ImageViewObjectData"
                       }
                     ],
                     "ActionTag": 300933172,
@@ -4482,6 +4529,51 @@
                         },
                         "Name": "Text_11_0",
                         "ctype": "TextObjectData"
+                      },
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "hall/pz_31.png",
+                          "Plist": ""
+                        },
+                        "Scale9OriginX": 7,
+                        "Scale9OriginY": 7,
+                        "Scale9Width": 9,
+                        "Scale9Height": 8,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 38.28,
+                          "Y": 44.9
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.2677,
+                          "Y": 0.5684
+                        },
+                        "PreSize": {
+                          "X": 0.1049,
+                          "Y": 0.1899
+                        },
+                        "LeftMargin": 30.78,
+                        "RightMargin": 97.22,
+                        "TopMargin": 26.6,
+                        "BottomMargin": 37.4,
+                        "Tag": 733,
+                        "ActionTag": -1635327296,
+                        "Size": {
+                          "X": 15.0,
+                          "Y": 15.0
+                        },
+                        "Name": "redImg",
+                        "ctype": "ImageViewObjectData"
                       }
                     ],
                     "ActionTag": -348871052,

@@ -14,6 +14,7 @@ load('game/ui/scene/UpdateScene', function () {
         _allReadyOk: false,
         RES_BINDING: function () {
             return {
+                'bg': { },
                 'pnl': { },
                 'pnl/LoadingBar': { },
                 'pnl/StateTxt': { },
@@ -28,11 +29,12 @@ load('game/ui/scene/UpdateScene', function () {
         },
 
         showView: function () {
-
+            this.bg.setVisible(false)
             this.pnl.setVisible(false)
             this.AniPnl.setVisible(true)
 
             this.runAction(cc.sequence(cc.DelayTime(3), cc.CallFunc(function() {
+                this.bg.setVisible(true)
                 this.AniPnl.setVisible(false)
                 this.pnl.setVisible(true)
                 if (isNeedUpdate) {

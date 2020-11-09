@@ -137,6 +137,7 @@ load('module/mahjong/ui/MjPlayScene', function () {
         },
         onEnter: function () {
             this._super()
+            appInstance.audioManager().playMusic(ResConfig.Sound.bg1, true)
             this.initView()
         },
         onExit: function () {

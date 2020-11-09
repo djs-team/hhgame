@@ -245,6 +245,7 @@ load('game/ui/scene/HallScene', function () {
 
         onEnter: function () {
             this._super()
+            appInstance.audioManager().playMusic(ResConfig.Sound.bgHall, true)
             if (appInstance.dataManager().getUserData().MatchJinjiGaming) {
                 this.showMatchJinjiLayer(appInstance.dataManager().getUserData().MatchJinjiGaming)
                 appInstance.dataManager().getUserData().MatchJinjiGaming = null

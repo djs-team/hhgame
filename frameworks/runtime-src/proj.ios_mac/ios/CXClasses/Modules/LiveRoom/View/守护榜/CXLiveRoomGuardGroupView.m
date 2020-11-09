@@ -103,14 +103,20 @@
                 [weakSelf.mainTableView.mj_footer endRefreshingWithNoMoreData];
             }
             
-            NSString *str1 = [NSString stringWithFormat:@"%@的守护团 ",request.response.GuardName];
-            NSString *str2 = [NSString stringWithFormat:@"%@(%@人)", str1,request.response.UserCount.stringValue];
-            NSMutableAttributedString *attri = [[NSMutableAttributedString alloc] initWithString:str2];
-            [attri addAttribute:NSForegroundColorAttributeName value:UIColorHex(0x763CE5) range:NSMakeRange(0, str2.length)];
-            [attri addAttribute:NSForegroundColorAttributeName value:UIColorHex(0x343434) range:NSMakeRange(0, str1.length)];
-            weakSelf.numberLabel.attributedText = attri;
             [weakSelf.avatar setImageURL:[NSURL URLWithString:request.response.GuardHead]];
             weakSelf.is_guard = request.response.IsGuard;
+            
+            if (weakSelf.is_guard == YES) {
+                NSString *str1 = [NSString stringWithFormat:@"%@的守护团 ",request.response.GuardName];
+                NSString *str2 = [NSString stringWithFormat:@"%@(%@人)", str1,request.response.UserCount.stringValue];
+                NSMutableAttributedString *attri = [[NSMutableAttributedString alloc] initWithString:str2];
+                [attri addAttribute:NSForegroundColorAttributeName value:UIColorHex(0x763CE5) range:NSMakeRange(0, str2.length)];
+                [attri addAttribute:NSForegroundColorAttributeName value:UIColorHex(0x343434) range:NSMakeRange(0, str1.length)];
+                weakSelf.numberLabel.attributedText = attri;
+            } else {
+                NSString *str1 = [NSString stringWithFormat:@"%@的守护团 ",request.response.GuardName];
+                weakSelf.numberLabel.text = str1;
+            }
             
         }
     }];

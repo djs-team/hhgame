@@ -19,11 +19,6 @@ load('public/suport/HotUpdate', function () {
         _updateListener: null,
 
         _eventPercent: 0,
-        _realPercent: 0,
-
-        _preDownloaded: 0,
-        _totalSize: 0,
-        _totalDownloaded: 0,
 
         _retryCount: 3,
 
@@ -125,17 +120,8 @@ load('public/suport/HotUpdate', function () {
                         let eventPercent = parseInt(event.getPercent())
                         if (this._eventPercent !== eventPercent) {
                             this._eventPercent = eventPercent
-                            if (!this._totalSize && this._totalSize < 0.0001) {
-                                this._totalSize = this._am.getTotalBytes() / 1048576
-                            }
-                            this._totalDownloaded = this._am.getDownloadedBytes() / 1048576 + this._preDownloaded
 
-                            let downloadedPercent = Math.min(parseInt(this._totalDownloaded / this._totalSize * 100 + 0.5), 100)
-                            if (this._realPercent !== downloadedPercent) {
-                                this._realPercent = downloadedPercent
-                                this.log('Updated Progress: ' + this._realPercent + ' totalSize: ' + this._totalSize + ' totalDownloaded: ' + this._totalDownloaded)
-                                this._progressCallback && this._progressCallback(this._realPercent, this._totalSize.toFixed(2), this._totalDownloaded.toFixed(2))
-                            }
+                            this._progressCallback && this._progressCallback(this._eventPercent)
                         }
                     }
                     break
@@ -192,8 +178,6 @@ load('public/suport/HotUpdate', function () {
                 if (this._retryCount > 0) {
                     this._retryCount--
                     this.log('retrying left count:' + this._retryCount)
-
-                    this._preDownloaded = this._totalDownloaded
 
                     let self = this
                     setTimeout(function () {

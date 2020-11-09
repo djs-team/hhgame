@@ -1,5 +1,5 @@
 {
-"manifestUrl":"http://hot.harmonygames.cn:39971/chot/",
+"manifestUrl":"http://10.1.1.151:8000/",
 "main":{
 	"src":[
 		"../src/game",

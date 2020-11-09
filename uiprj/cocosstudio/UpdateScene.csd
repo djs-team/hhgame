@@ -63,6 +63,17 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
+              <AbstractNodeData Name="VersionTxt" ActionTag="1908607718" Tag="33" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="87.4232" RightMargin="1027.5768" TopMargin="131.9036" BottomMargin="558.0964" FontSize="30" LabelText="888.888.888" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="165.0000" Y="30.0000" />
+                <AnchorPoint ScaleY="0.5000" />
+                <Position X="87.4232" Y="573.0964" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="0" />
+                <PrePosition X="0.0683" Y="0.7960" />
+                <PreSize X="0.1289" Y="0.0417" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="640.0000" Y="360.0000" />

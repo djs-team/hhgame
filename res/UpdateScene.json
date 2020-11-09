@@ -305,6 +305,58 @@
                 },
                 "Name": "StateTxt",
                 "ctype": "TextObjectData"
+              },
+              {
+                "FontSize": 30,
+                "LabelText": "888.888.888",
+                "VerticalAlignmentType": "VT_Center",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 87.4232,
+                  "Y": 573.0964
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "B": 0
+                },
+                "IconVisible": false,
+                "PositionPercentXEnabled": true,
+                "PrePosition": {
+                  "X": 0.0683,
+                  "Y": 0.796
+                },
+                "PreSize": {
+                  "X": 0.1289,
+                  "Y": 0.0417
+                },
+                "LeftMargin": 87.4232,
+                "RightMargin": 1027.5768,
+                "TopMargin": 131.9036,
+                "BottomMargin": 558.0964,
+                "Tag": 33,
+                "ActionTag": 1908607718,
+                "Size": {
+                  "X": 165.0,
+                  "Y": 30.0
+                },
+                "Name": "VersionTxt",
+                "ctype": "TextObjectData"
               }
             ],
             "ActionTag": -900714723,

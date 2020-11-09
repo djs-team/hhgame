@@ -11,10 +11,12 @@ load('game/ui/scene/UpdateScene', function () {
     let isNeedUpdate = true
     let UpdateScene = BaseScene.extend({
         _className: 'UpdateScene',
+        _allReadyOk: false,
         RES_BINDING: function () {
             return {
                 'pnl/LoadingBar': { },
-                'pnl/StateTxt': { }
+                'pnl/StateTxt': { },
+                'pnl/VersionTxt': { }
             }
         },
         ctor: function () {
@@ -51,9 +53,8 @@ load('game/ui/scene/UpdateScene', function () {
         initView: function () {
             this.StateTxt.setString('正在检查热更...')
             this.LoadingBar.setPercent(0)
+            this.VersionTxt.setVisible(false)
         },
-
-
 
         goLoginScene: function () {
             let LoginScene = include('game/ui/scene/LoginScene')
@@ -74,10 +75,13 @@ load('game/ui/scene/UpdateScene', function () {
             this._super(keyCode, event)
         },
         onUpdate: function () {
-            if (this._percent > 0) {
+            if (this._percent > 0 && !this._allReadyOk) {
                 cc.log('=========this.percent===' + this._percent)
                 this.LoadingBar.setPercent(this._percent)
-                this.StateTxt.setString('总大小:' + this._totalSize + 'MB 已下载:' + this._downloadSize + 'MB')
+                this.StateTxt.setString('已下载%' + this._percent)
+                if (this._percent >= 100) {
+                    this._allReadyOk = false
+                }
             }
         },
         setVersionTxt: function (resVer, natieVer) {
@@ -94,12 +98,11 @@ load('game/ui/scene/UpdateScene', function () {
 
             let updater = new HotUpdate(istr, 'update')
             let version = updater.getLocalVersion()
-            // this.setVersionTxt(version, appInstance.nativeApi().getNativeVersion())
-            updater.setProgressCallback(function (percent, totalSize, downloadedSize) {
-                cc.log('==========热更回调=====')
+            this.VersionTxt.setVisible(true)
+            this.VersionTxt.setString(version)
+            updater.setProgressCallback(function (percent) {
+                cc.log('==========热更过程中=====' + percent)
                 self._percent = percent
-                self._totalSize = totalSize
-                self._downloadSize = downloadedSize
             })
             updater.setSuccessCallback(function (isUpdated, curVersion) {
                 cc.log('==========热更成功')

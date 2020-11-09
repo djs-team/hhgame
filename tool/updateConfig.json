@@ -1,0 +1,12 @@
+{
+"manifestUrl":"http://10.1.1.151:8000/",
+"main":{
+	"src":[
+		"../src/game",
+		"../src/module",
+		"../src/public"
+	],
+	"res":"../res"
+},
+"outDir":"../web"
+}

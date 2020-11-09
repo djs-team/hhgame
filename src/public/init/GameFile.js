@@ -32,12 +32,9 @@ global.gameFile.readFile = function (filePath) {
  * 删除热更目录
  * @param isM: true 删除子模块热更文件
  */
-global.gameFile.delUpdateModule = function (isM) {
+global.gameFile.delUpdateModule = function () {
     let path = jsb.fileUtils.getWritablePath()
     global.gameFile.removeDir(path + 'update/')
-    if (isM) {
-        global.gameFile.removeDir(path + 'modules/')
-    }
 }
 /**
  * 下载网络文件

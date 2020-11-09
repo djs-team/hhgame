@@ -633,6 +633,11 @@
           <Image Name="yqyl_9.png" />
         </Folder>
         <Folder Name="login">
+          <Folder Name="ani">
+            <Folder Name="ani_hehe_9">
+              <ExportJsonFile Name="ani_hehe_9.ExportJson" />
+            </Folder>
+          </Folder>
           <Image Name="denglu_1.png" />
           <Image Name="denglu_2.png" />
           <Image Name="denglu_3.png" />
@@ -937,6 +942,7 @@
         <Project Name="TipsDialog.csd" Type="Layer" />
         <Project Name="TipsFloat.csd" Type="Layer" />
         <Project Name="TurnTableLayer.csd" Type="Layer" />
+        <Project Name="UpdateScene.csd" Type="Scene" />
       </RootFolder>
     </Group>
   </SolutionFolder>

@@ -145,7 +145,7 @@ load('game/config/ResConfig', function () {
         path: 'res/sound/',
         bg1: 'res/sound/bg/bg1.mp3',
         bg2: 'res/sound/bg/bg2.mp3',
-        bgHall: 'res/sound/bg/bgHall.mp3',
+        bgHall: 'res/sound/bg/bg2.mp3',
         btnEffect: 'res/sound/btnClick.mp3',
         turnTableBegin: 'res/sound/turnTableBegin.mp3',
         turnTableEnd: 'res/sound/turnTableEnd.mp3',

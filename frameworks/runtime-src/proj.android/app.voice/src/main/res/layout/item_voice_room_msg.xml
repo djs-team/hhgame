@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:heartview="http://schemas.android.com/tools"
     xmlns:radiostyle="http://schemas.android.com/tools"
     android:id="@+id/cl_group"
     android:layout_width="wrap_content"
@@ -28,25 +29,76 @@
         <RelativeLayout
             android:id="@+id/avatar_rl"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="3dp">
+            android:layout_height="wrap_content">
 
-            <ImageView
-                android:id="@+id/avatar_iv"
+            <RelativeLayout
+                android:id="@+id/rl_common"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="3dp"
+                android:visibility="visible">
 
-                android:layout_width="24.5dp"
-                android:layout_height="24.5dp"
-                android:layout_marginLeft="1dp"
-                android:layout_marginTop="1dp"
-                android:src="@drawable/ic_place" />
+                <ImageView
+                    android:id="@+id/avatar_iv"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginTop="1dp"
+                    android:src="@drawable/ic_place" />
 
-            <ImageView
-                android:id="@+id/avatar_guard_bg"
+                <ImageView
+                    android:id="@+id/avatar_guard_bg"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginBottom="2dp"
+                    android:src="@drawable/icon_guard_common_bg" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_guard_first"
                 android:layout_width="26dp"
-                android:layout_height="29dp"
-                android:src="@drawable/bg_profile_guard" />
+                android:layout_height="32dp"
+                android:layout_marginLeft="3dp"
+                android:visibility="gone">
 
+                <ImageView
+                    android:id="@+id/avatar_guard_bg2"
+                    android:layout_width="26dp"
+                    android:layout_height="29dp"
+                    android:src="@drawable/icon_guard_first_bg" />
+
+                <ImageView
+                    android:id="@+id/avatar_iv2"
+
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="2.7dp"
+                    android:layout_marginTop="7dp"
+                    android:src="@drawable/ic_place" />
+
+                <ImageView
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:src="@drawable/icon_guard_first_bg_small" />
+
+                <com.deepsea.mua.stub.view.HeartImageView
+
+                    android:id="@+id/iv_heart_user"
+                    android:layout_width="11dp"
+                    android:layout_height="11dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginRight="1dp"
+                    android:layout_marginBottom="1dp"
+                    android:rotation="10"
+                    android:src="@drawable/ic_place"
+                    heartview:shape_type="heart" />
+            </RelativeLayout>
         </RelativeLayout>
 
         <TextView

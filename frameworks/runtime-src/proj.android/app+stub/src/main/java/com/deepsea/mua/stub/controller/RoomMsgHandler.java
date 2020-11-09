@@ -9,12 +9,15 @@ import android.text.TextPaint;
 import android.text.TextUtils;
 import android.text.style.ClickableSpan;
 import android.text.style.ForegroundColorSpan;
+import android.util.Log;
 import android.view.View;
 
+import com.deepsea.mua.core.utils.JsonConverter;
 import com.deepsea.mua.core.utils.ResUtils;
 import com.deepsea.mua.core.utils.ToastUtils;
 import com.deepsea.mua.stub.R;
 import com.deepsea.mua.stub.entity.model.RoomMsgBean;
+import com.deepsea.mua.stub.entity.socket.MicroSort;
 import com.deepsea.mua.stub.entity.socket.receive.JoinUser;
 import com.deepsea.mua.stub.entity.socket.ReceiveMessage;
 import com.deepsea.mua.stub.entity.socket.receive.ReceivePresent;
@@ -205,6 +208,37 @@ public class RoomMsgHandler {
             appendNick(builder, desc, user.getSex());
             appendSysMsg(builder, " 进入房间", user.getUserLevel());
             setNickClick(builder, desc, user.getUserId(), start);
+            result.setGuardState(user.getGuardState());
+            result.setGuardHeadImage(user.getGuardHeadImage());
+            result.setMsg(builder);
+            Log.d("getJoinRoomMsg", JsonConverter.toJson(result));
+        }
+        return result;
+    }
+
+    /**
+     * 进入房间
+     *
+     * @return
+     */
+    public RoomMsgBean getApplyMicroMsg(MicroSort microSort) {
+        RoomMsgBean result = null;
+        WsUser user = microSort.getMicroOrderData().getUser();
+        if (user != null) {
+            result = new RoomMsgBean();
+            result.setNormal(false);
+            result.setUid(user.getUserId());
+            result.setuName(user.getName());
+
+            SpannableStringBuilder builder = new SpannableStringBuilder();
+            int start = builder.length();
+            result.setAvatar(user.getHeadImageUrl());
+            String desc = getUserInfo(user.getCity(), user.getAge(), user.getName());
+            appendNick(builder, desc, user.getSex());
+            appendSysMsg(builder, " 申请上麦", user.getType());
+            setNickClick(builder, desc, user.getUserId(), start);
+            result.setGuardState(microSort.getGuardState());
+            result.setGuardHeadImage(microSort.getGuardHeadImage());
             result.setMsg(builder);
         }
         return result;
@@ -230,6 +264,7 @@ public class RoomMsgHandler {
             appendSysMsg(builder, " 成为管理员", manager.getUserLevel());
             setNickClick(builder, manager.getName(), manager.getUserId(), start);
             result.setMsg(builder);
+
         }
         return result;
     }
@@ -267,6 +302,8 @@ public class RoomMsgHandler {
                 result.setCount(model.getCount());
                 result.setStart(builder.length());
                 result.setMsg(builder);
+                result.setGuardState(model.getGuardState());
+                result.setGuardHeadImage(model.getGuardHeadImage());
                 list.add(result);
             }
         }
@@ -320,6 +357,8 @@ public class RoomMsgHandler {
             appendNick(builder, desc, wsUser.getSex());
             appendSysMsg(builder, " 上麦了", micro.getUserLevel());
             setNickClick(builder, desc, wsUser.getUserId(), start);
+            result.setGuardState(micro.getGuardState());
+            result.setGuardHeadImage(micro.getGuardHeadImage());
             result.setMsg(builder);
         }
         return result;
@@ -357,6 +396,8 @@ public class RoomMsgHandler {
             }
             result.setMsg(builder);
             result.setLevel(user.getUserLevel());
+            result.setGuardState(user.getGuardState());
+            result.setGuardHeadImage(user.getGuardHeadImage());
 
         }
         return result;
@@ -397,6 +438,8 @@ public class RoomMsgHandler {
             setNickClick(builder, nick, bean.getUserId(), start);
             result.setStart(builder.length());
             result.setMsg(builder);
+            result.setGuardState(bean.getGuardState());
+            result.setGuardHeadImage(bean.getGuardHeadImage());
         }
         return result;
     }

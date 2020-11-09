@@ -19,6 +19,15 @@ public class MicroUser {
     private int number;
 
     private boolean IsBlock;
+    private boolean IsFriend;
+
+    public boolean isFriend() {
+        return IsFriend;
+    }
+
+    public void setFriend(boolean friend) {
+        IsFriend = friend;
+    }
 
     public boolean isBlock() {
         return IsBlock;

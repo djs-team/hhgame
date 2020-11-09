@@ -27,6 +27,24 @@ public class ReceivePresent extends BaseMsg {
     private com.deepsea.mua.stub.entity.socket.GiftData GiftData;
     private String GiftId;
     private String GuardSign;
+    private int GuardState;// 0不是主持守护，1是普通守护，2是榜一守护
+    private String GuardHeadImage;
+
+    public int getGuardState() {
+        return GuardState;
+    }
+
+    public void setGuardState(int guardState) {
+        GuardState = guardState;
+    }
+
+    public String getGuardHeadImage() {
+        return GuardHeadImage;
+    }
+
+    public void setGuardHeadImage(String guardHeadImage) {
+        GuardHeadImage = guardHeadImage;
+    }
 
     public String getGuardSign() {
         return GuardSign;

@@ -131,7 +131,6 @@
                 android:layout_marginLeft="19dp"
                 android:layout_marginTop="30dp"
                 android:paddingBottom="14dp"
-                android:text="守护到期时间：2020年7月20日 10：00"
                 android:textColor="#ff818181"
                 android:textSize="11sp"
                 app:layout_constraintLeft_toLeftOf="parent"

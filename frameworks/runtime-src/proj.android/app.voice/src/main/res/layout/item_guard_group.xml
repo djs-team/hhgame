@@ -10,7 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="5dp"
-        app:bl_corners_radius="12dp">
+        app:bl_corners_radius="12dp"
+        android:paddingBottom="5dp">
 
 
         <ImageView
@@ -96,7 +97,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="13dp"
-            android:text="守护到期时间：2020年7月20日 10：00"
             android:textColor="#ff828282"
             android:textSize="11sp"
             app:layout_constraintLeft_toRightOf="@id/rank_iv"

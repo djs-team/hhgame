@@ -508,13 +508,14 @@ public interface IRoomController {
 
         void showRobRedpacketResultList(List<UserRedPacket> redPackets);//抢红包结果
 
-        void showCenterHtmlToast(String content);
+        void showCenterHtmlToast(String content);//toast
 
         void keepLive();//在线
 
-        void updateOnlineHeads(List<String> heads);
+        void updateOnlineHeads(List<String> heads);//在线用户头像
 
-        void upDateBalance(double balance);
+        void upDateBalance(double balance);//更新余额
 
+        void updateUserGuard(int guardState, String guardHeadImage);/// 同步用户守护勋章
     }
 }

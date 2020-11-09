@@ -84,6 +84,7 @@ import com.deepsea.mua.stub.entity.socket.receive.UpdateGuardSignToClientParam;
 import com.deepsea.mua.stub.entity.socket.receive.UpdateHintParam;
 import com.deepsea.mua.stub.entity.socket.receive.UpdateSongLyricParam;
 import com.deepsea.mua.stub.entity.socket.receive.UpdateUserBalanceParam;
+import com.deepsea.mua.stub.entity.socket.receive.UpdateUserGuardParam;
 import com.deepsea.mua.stub.entity.socket.receive.UpdateWheatCards;
 import com.deepsea.mua.stub.entity.socket.send.JoinRoom;
 import com.deepsea.mua.stub.entity.socket.send.SendTokenMsg;
@@ -945,6 +946,12 @@ public class RoomController implements IRoomController, RoomMsgHandler.OnMsgEven
                     case SocketCons.Error.Maintenance:
                         onJoinError("服务器维护中。。。");
                         break;
+                    case 13:
+                        showEnsureAlert("房间名不能为空");
+                        break;
+                    case 14:
+                        showEnsureAlert("房间名中包含敏感词");
+                        break;
                     case -127:
                         //进入房间未知错误
                         //发送进入房间消息
@@ -1149,7 +1156,6 @@ public class RoomController implements IRoomController, RoomMsgHandler.OnMsgEven
                 //排序
                 else if (success == 20 || success == 12) {
                     showEnsureAlert("您已进入申请队列，请等待主持\n邀请上麦");
-                    RoomController.getInstance().sendMsg("申请上麦");
                 }
                 //实名认证
                 else if (success == 8) {
@@ -1347,6 +1353,8 @@ public class RoomController implements IRoomController, RoomMsgHandler.OnMsgEven
                 mSortHandler.addMicroOrder(sort.getMicroOrderData());
                 if (mView != null) {
                     mView.receiveMicroRequest(sort);
+                    RoomMsgBean msgBean = mMsgHandler.getApplyMicroMsg(sort);
+                    addRoomMsg(Collections.singletonList(msgBean));
                 }
                 if (sort.getMicroOrderData() != null && sort.getMicroOrderData().getUser() != null) {
                     String uid = sort.getMicroOrderData().getUser().getUserId();
@@ -1724,7 +1732,6 @@ public class RoomController implements IRoomController, RoomMsgHandler.OnMsgEven
                     if (mView != null) {
                         mView.resetInRoomInviteParam();
                     }
-                    RoomController.getInstance().sendMsg("申请上麦");
                     showEnsureAlert("您已进入申请队列，请等待主持\n邀请上麦");
                 }
                 break;
@@ -2000,6 +2007,12 @@ public class RoomController implements IRoomController, RoomMsgHandler.OnMsgEven
             case 301://KeepaLive
                 if (mView != null) {
                     mView.keepLive();
+                }
+                break;
+            case 142:
+                UpdateUserGuardParam userGuardParam = new UpdateUserGuardParam();
+                if (mView != null) {
+                    mView.updateUserGuard(userGuardParam.getGuardState(), userGuardParam.getGuardHeadImage());
                 }
                 break;
         }

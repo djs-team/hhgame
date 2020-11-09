@@ -8,6 +8,24 @@ public class MicroSort {
 
     private int MsgId;
     private MicroOrder MicroOrderData;
+    private  int GuardState;
+    private String GuardHeadImage;
+
+    public int getGuardState() {
+        return GuardState;
+    }
+
+    public void setGuardState(int guardState) {
+        GuardState = guardState;
+    }
+
+    public String getGuardHeadImage() {
+        return GuardHeadImage;
+    }
+
+    public void setGuardHeadImage(String guardHeadImage) {
+        GuardHeadImage = guardHeadImage;
+    }
 
     public int getMsgId() {
         return MsgId;

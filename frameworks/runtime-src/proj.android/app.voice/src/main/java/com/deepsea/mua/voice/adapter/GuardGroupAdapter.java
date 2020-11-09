@@ -2,6 +2,7 @@ package com.deepsea.mua.voice.adapter;
 
 import android.content.Context;
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.deepsea.mua.core.utils.GlideUtils;
 import com.deepsea.mua.stub.adapter.BaseBindingAdapter;
@@ -53,10 +54,12 @@ public class GuardGroupAdapter extends BaseBindingAdapter<GuardItem, ItemGuardGr
         }
         ViewBindUtils.setVisible(holder.binding.ivLocation, !TextUtils.isEmpty(user.getCity()));
         ViewBindUtils.setText(holder.binding.tvIntimacy, "亲密值" + item.getIntimacy());
-        if (MatchMakerUtils.isRoomOwner()|| UserUtils.getUser().getUid().equals(user.getUserId())) {
+        if (MatchMakerUtils.isRoomOwner() || UserUtils.getUser().getUid().equals(user.getUserId())) {
             ViewBindUtils.setText(holder.binding.tvDateLine, "守护到期时间：" + item.getDeadlineTime());
             ViewBindUtils.setText(holder.binding.tvDueDate, "还有" + item.getDays() + "天到期");
-
+        } else {
+            ViewBindUtils.setText(holder.binding.tvDateLine, "");
+            ViewBindUtils.setText(holder.binding.tvDueDate, "");
         }
 
     }

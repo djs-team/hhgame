@@ -201,10 +201,10 @@ public class RoomJoinController implements IRoomController.JoinRoomListener {
 
     @Override
     public void onError(int code, String msg) {
+        hideLoading();
         if (!TextUtils.isEmpty(msg)) {
             ToastUtils.showToast(msg);
         }
-        hideLoading();
 //        if (code == IRoomController.JoinError.PARENT_LOCK) {
 //            ToastUtils.showToast(msg);
 //        }

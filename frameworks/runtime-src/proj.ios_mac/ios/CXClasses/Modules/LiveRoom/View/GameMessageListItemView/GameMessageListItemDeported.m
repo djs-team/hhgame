@@ -34,7 +34,7 @@
     [super setModel:model];
     
     self.avatar.hidden = YES;
-    self.textLabel.text = [NSString stringWithFormat:@"系统消息：用户“%@”已踢出房间。" , model.NickName];
+    self.textLabel.text = [NSString stringWithFormat:@"系统消息：用户“%@”已退出房间。" , model.NickName];
 }
 
 - (CGSize)sizeThatFits:(CGSize)size {

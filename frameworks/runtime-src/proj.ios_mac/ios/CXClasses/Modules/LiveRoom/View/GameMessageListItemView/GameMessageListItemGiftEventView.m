@@ -41,6 +41,7 @@
     }
     
     [self.avatar sd_setImageWithURL:[NSURL URLWithString:model.GiftGiver.HeadImageUrl]];
+    self.guardValue = model.GuardState;
     
     NSMutableAttributedString *result = [self resultWithRoomGuardLevel:model.GuardSign DukeLevel:model.DukeLevel UserLevel:model.UserLevel UserIdentity:model.UserIdentity Font:font UserID:[NSString stringWithFormat:@"%@", model.GiftGiver.UserId]];
     

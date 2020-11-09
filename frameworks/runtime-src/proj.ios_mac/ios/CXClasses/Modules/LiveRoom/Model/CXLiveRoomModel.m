@@ -301,6 +301,8 @@ static const int leading = 12;
         self.onlineNumber_woman = [message.OnlineRightNumber stringValue];
         
         self.HeatValue = @(self.RoomData.VisitorNumbers.integerValue + self.RoomData.ExternVisitorNumbers.integerValue);
+        
+        
     }
     return self;
 }

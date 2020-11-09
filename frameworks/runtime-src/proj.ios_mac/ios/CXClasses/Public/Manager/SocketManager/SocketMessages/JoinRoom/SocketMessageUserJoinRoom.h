@@ -34,6 +34,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString * TargetName; // 被守护人的昵称
 @property (nonatomic, strong) NSString * GuardSign; // 守护榜标签
 @property BOOL IsRoomGuard; // 是否是该主播守护
+@property (nonatomic, strong) NSNumber *GuardState; // 0不是主持守护，1是普通守护，2是榜一守护
+@property (nonatomic, strong) NSString * GuardHeadImage; // 被守护头像（榜一用到的）
 
 @end
 

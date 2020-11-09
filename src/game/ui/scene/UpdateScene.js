@@ -8,15 +8,18 @@ load('game/ui/scene/UpdateScene', function () {
     let HotUpdate = include('public/suport/HotUpdate')
     let HttpType = include('public/http/HttpType')
     let UpdateMdt =  include('game/ui/scene/UpdateMdt')
-    let isNeedUpdate = true
+    let isNeedUpdate = false
     let UpdateScene = BaseScene.extend({
         _className: 'UpdateScene',
         _allReadyOk: false,
         RES_BINDING: function () {
             return {
+                'pnl': { },
                 'pnl/LoadingBar': { },
                 'pnl/StateTxt': { },
-                'pnl/VersionTxt': { }
+                'pnl/VersionTxt': { },
+                'AniPnl': { },
+                'AniPnl/ArmatureNode': { },
             }
         },
         ctor: function () {
@@ -25,11 +28,19 @@ load('game/ui/scene/UpdateScene', function () {
         },
 
         showView: function () {
-            if (isNeedUpdate) {
-                this.startUpdate()
-            } else {
-                this.goLoginScene()
-            }
+
+            this.pnl.setVisible(false)
+            this.AniPnl.setVisible(true)
+
+            this.runAction(cc.sequence(cc.DelayTime(3), cc.CallFunc(function() {
+                this.AniPnl.setVisible(false)
+                this.pnl.setVisible(true)
+                if (isNeedUpdate) {
+                    this.startUpdate()
+                } else {
+                    this.goLoginScene()
+                }
+            }.bind(this))))
         },
 
         onEnter: function () {
@@ -80,7 +91,7 @@ load('game/ui/scene/UpdateScene', function () {
                 this.LoadingBar.setPercent(this._percent)
                 this.StateTxt.setString('已下载%' + this._percent)
                 if (this._percent >= 100) {
-                    this._allReadyOk = false
+                    this._allReadyOk = true
                 }
             }
         },

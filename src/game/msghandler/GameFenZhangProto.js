@@ -17,19 +17,19 @@ load('game/msghandler/GameFenZhangProto', function () {
 
         handleMsg: function (msg) {
 
+            cc.log('----------GameFenZhangProto------------------msg : ' + JSON.stringify(msg))
             appInstance.sendNotification(TableEvent.GameFenZhangProto, msg)
         },
 
         initData: function () {
             this._seMsgId = appInstance.msgTool().msgId_GAME_MATCHGAME(this._offMsgId)
-            this._reMsgId = appInstance.msgTool().msgId_GAME_MATCHGAME(this._offMsgId)
+            this._reMsgId = appInstance.msgTool().msgId_GAME_MATCHGAME_Re(this._offMsgId)
             this._seData = []
 
 
             this._reData = [
-                /*{ key: 'seatID', type: this._byteType.Int},//座位号
-                { key: 'nCardColor', type: this._byteType.Int},
-                { key: 'nCardNumber', type: this._byteType.Int},*/
+                { key: 'seatID', type: this._byteType.Int},//座位号
+                { key: 'pCards', type: this._byteType.Barray, proto: appInstance.protoArrays().getTbCardsInfo()}, //
             ]
         }
     })

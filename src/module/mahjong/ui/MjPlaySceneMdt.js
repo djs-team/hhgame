@@ -63,7 +63,7 @@ load('module/mahjong/ui/MjPlaySceneMdt', function () {
 
         GameResultProto: function (msg) {
 
-            appInstance.gameAgent().delayCall(2, this.view.showGameResultLayer, msg, this.view)
+            appInstance.gameAgent().delayCall(5, this.view.showGameResultLayer, msg, this.view)
             // this.view.showGameResultLayer(msg)
         },
 

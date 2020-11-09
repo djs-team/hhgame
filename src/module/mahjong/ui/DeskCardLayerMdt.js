@@ -27,6 +27,7 @@ load('module/mahjong/ui/DeskCardLayerMdt', function () {
                 TableEvent.updateSelfHandCard,
                 TableEvent.clearTableGaming,
                 TableEvent.JiaGangTableProto,
+                TableEvent.GameResultProto,
                 TableEvent.GameFenZhangProto,
             ]
         },
@@ -74,7 +75,7 @@ load('module/mahjong/ui/DeskCardLayerMdt', function () {
                     this.showLiuJu(body)
                     break
                 case TableEvent.GameFenZhangProto:
-                    this.view.showLiuJu()
+                    this.view.showFenZhang()
                     break
             }
         },

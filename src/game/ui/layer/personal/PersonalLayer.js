@@ -184,12 +184,12 @@ load('game/ui/layer/personal/PersonalLayer', function () {
             GameUtil.delayBtn(sender);
             let nameNd = this.updataPnl.getChildByName('updateText').getString()
             if (nameNd == null || nameNd.length == 0) {
-                cc.log("onConfirmUpdateNameClick nameNd is null!")
+                appInstance.gameAgent().Tips('名称不可为空！')
                 return;
             }
             let nameLength = this.onCheckedNameLength(nameNd)
             if (nameLength > 12) {
-                cc.log("onConfirmUpdateNameClick nameNd is too long!")
+                appInstance.gameAgent().Tips('您的名称太长，最长不可超过6位汉字！')
                 return;
             }
 

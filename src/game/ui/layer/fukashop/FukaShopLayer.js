@@ -609,7 +609,10 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
             this.menuListView.pushBackCustomItem(cell)
 
             let status = 0
-            if(index == 0){
+
+            if(this._currentMenuItemCode && this._currentMenuItemCode == item.goodsCode){
+                status = 1
+            }else if (!this._currentMenuItemCode && index == 0) {
                 this._currentMenuItemCode = item.goodsCode
                 status = 1
             }
@@ -1550,8 +1553,8 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
 
             this.onRefreshGoodsListParams()
             this.onSetShowElementFunction(elementNameArray)
-            appInstance.gameAgent().httpGame().ROLLIMGLISTReq()
-            appInstance.gameAgent().httpGame().MENULISTReq()
+            /*appInstance.gameAgent().httpGame().ROLLIMGLISTReq()
+            appInstance.gameAgent().httpGame().MENULISTReq()*/
 
         },
 

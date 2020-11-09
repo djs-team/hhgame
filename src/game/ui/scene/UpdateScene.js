@@ -16,6 +16,7 @@ load('game/ui/scene/UpdateScene', function () {
             return {
                 'bg': { },
                 'pnl': { },
+                'Txtpnl': { },
                 'pnl/LoadingBar': { },
                 'pnl/StateTxt': { },
                 'pnl/VersionTxt': { },
@@ -32,10 +33,15 @@ load('game/ui/scene/UpdateScene', function () {
             this.bg.setVisible(false)
             this.pnl.setVisible(false)
             this.AniPnl.setVisible(true)
+            this.Txtpnl.setVisible(false)
 
             this.runAction(cc.sequence(cc.DelayTime(3), cc.CallFunc(function() {
+                this.AniPnl.setVisible(false)
+                this.Txtpnl.setVisible(true)
+            }.bind(this)), cc.DelayTime(0.3), cc.CallFunc(function() {
                 this.bg.setVisible(true)
                 this.AniPnl.setVisible(false)
+                this.Txtpnl.setVisible(false)
                 this.pnl.setVisible(true)
                 if (isNeedUpdate) {
                     this.startUpdate()
@@ -43,6 +49,8 @@ load('game/ui/scene/UpdateScene', function () {
                     this.goLoginScene()
                 }
             }.bind(this))))
+
+
         },
 
         onEnter: function () {

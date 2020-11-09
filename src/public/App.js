@@ -42,6 +42,8 @@ load('public/App', function () {
         _msgTool: null,
         _protoArrays: null, // 通用proto arrays
 
+        _timerIdArray: {},
+
         _observerController: null,
         _notifier: null,
         _mediatorCtrl: null,
@@ -84,7 +86,30 @@ load('public/App', function () {
         },
 
         restartGame: function (delUpdate, isAutoUp) {
+            appInstance.gameNet().disConnect()
+            cc.director.getScheduler().unscheduleAllWithMinPriority(cc.Scheduler.PRIORITY_NON_SYSTEM)
+            this.httpFactory().abortAll()
+            if (GameIndex && GameIndex.restart) {
+                GameIndex.restart()
+            }
+            this.unAllRegisterEventListener()
+            this.resManager().reset()
             this.audioManager().clearAudioEnv()
+            this.moduleManager().clearModuleEnv()
+            if (delUpdate) {
+                global.gameFile.delUpdateModule(true)
+            }
+            this.clearTimer()
+
+            this.eventManager().dispatchEvent('restartGame')
+        },
+
+        clearTimer: function () {
+            if (this._timerIdArray) {
+                for (let key in this._timerIdArray) {
+                    clearTimeout(this._timerIdArray[key])
+                }
+            }
         },
 
         /**

@@ -19,11 +19,32 @@ static id _manager;
 }
 
 - (void)clear {
-    self.wxLoginMethod = nil;
-    self.jpushLoginMethod = nil;
-    self.openInstallParamMethod = nil;
-    self.paySuccessMethod = nil;
-    self.BUAdRewardMethod = nil;
+    _wxLoginMethod = nil;
+    _jpushLoginMethod = nil;
+    _openInstallParamMethod = nil;
+    _paySuccessMethod = nil;
+    _BUAdRewardMethod = nil;
+}
+
+- (void)setWxLoginMethod:(NSString *)wxLoginMethod {
+    [self clear];
+    _wxLoginMethod = wxLoginMethod;
+}
+- (void)setJpushLoginMethod:(NSString *)jpushLoginMethod {
+    [self clear];
+    _jpushLoginMethod = jpushLoginMethod;
+}
+- (void)setOpenInstallParamMethod:(NSString *)openInstallParamMethod {
+    [self clear];
+    _openInstallParamMethod = openInstallParamMethod;
+}
+- (void)setPaySuccessMethod:(NSString *)paySuccessMethod {
+    [self clear];
+    _paySuccessMethod = paySuccessMethod;
+}
+- (void)setBUAdRewardMethod:(NSString *)BUAdRewardMethod {
+    [self clear];
+    _BUAdRewardMethod = BUAdRewardMethod;
 }
 
 @end

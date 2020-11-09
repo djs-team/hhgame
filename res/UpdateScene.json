@@ -162,6 +162,201 @@
                 },
                 "Name": "bg",
                 "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "login/update_slider_bg.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 226,
+                "Scale9OriginY": 18,
+                "Scale9Width": 233,
+                "Scale9Height": 20,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 640.0,
+                  "Y": 200.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PositionPercentXEnabled": true,
+                "PrePosition": {
+                  "X": 0.5,
+                  "Y": 0.2778
+                },
+                "PreSize": {
+                  "X": 0.5352,
+                  "Y": 0.0778
+                },
+                "LeftMargin": 297.5,
+                "RightMargin": 297.5,
+                "TopMargin": 492.0,
+                "BottomMargin": 172.0,
+                "Tag": 162,
+                "ActionTag": -499676422,
+                "Size": {
+                  "X": 685.0,
+                  "Y": 56.0
+                },
+                "Name": "Image_1",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "ImageFileData": {
+                  "Type": "Normal",
+                  "Path": "login/update_slider_bar.png",
+                  "Plist": ""
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 640.0,
+                  "Y": 200.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PositionPercentXEnabled": true,
+                "PrePosition": {
+                  "X": 0.5,
+                  "Y": 0.2778
+                },
+                "PreSize": {
+                  "X": 0.5352,
+                  "Y": 0.0778
+                },
+                "LeftMargin": 297.5,
+                "RightMargin": 297.5,
+                "TopMargin": 492.0,
+                "BottomMargin": 172.0,
+                "Tag": 161,
+                "ActionTag": 231737399,
+                "Size": {
+                  "X": 685.0,
+                  "Y": 56.0
+                },
+                "Name": "LoadingBar",
+                "ctype": "LoadingBarObjectData"
+              },
+              {
+                "FontSize": 30,
+                "LabelText": "游戏正在干什么呢我也不知道",
+                "HorizontalAlignmentType": "HT_Center",
+                "VerticalAlignmentType": "VT_Center",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 640.0,
+                  "Y": 280.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "IconVisible": false,
+                "PositionPercentXEnabled": true,
+                "PrePosition": {
+                  "X": 0.5,
+                  "Y": 0.3889
+                },
+                "PreSize": {
+                  "X": 0.3047,
+                  "Y": 0.0417
+                },
+                "LeftMargin": 445.0,
+                "RightMargin": 445.0,
+                "TopMargin": 425.0,
+                "BottomMargin": 265.0,
+                "Tag": 163,
+                "ActionTag": -502728903,
+                "Size": {
+                  "X": 390.0,
+                  "Y": 30.0
+                },
+                "Name": "StateTxt",
+                "ctype": "TextObjectData"
+              },
+              {
+                "FontSize": 30,
+                "LabelText": "888.888.888",
+                "VerticalAlignmentType": "VT_Center",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 87.4232,
+                  "Y": 573.0964
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "B": 0
+                },
+                "IconVisible": false,
+                "PositionPercentXEnabled": true,
+                "PrePosition": {
+                  "X": 0.0683,
+                  "Y": 0.796
+                },
+                "PreSize": {
+                  "X": 0.1289,
+                  "Y": 0.0417
+                },
+                "LeftMargin": 87.4232,
+                "RightMargin": 1027.5768,
+                "TopMargin": 131.9036,
+                "BottomMargin": 558.0964,
+                "Tag": 33,
+                "ActionTag": 1908607718,
+                "Size": {
+                  "X": 165.0,
+                  "Y": 30.0
+                },
+                "Name": "VersionTxt",
+                "ctype": "TextObjectData"
               }
             ],
             "ActionTag": -900714723,
@@ -181,6 +376,8 @@
         "ctype": "SingleNodeObjectData"
       },
       "UsedResources": [
+        "login/update_slider_bar.png",
+        "login/update_slider_bg.png",
         "png/denglu_bg.png"
       ],
       "ctype": "GameFileData"

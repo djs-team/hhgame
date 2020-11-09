@@ -1,5 +1,5 @@
 {
-"manifestUrl":"http://127.0.0.1:8000/mail/",
+"manifestUrl":"http://hot.harmonygames.cn:39971/chot/",
 "main":{
 	"src":[
 		"../src/game",

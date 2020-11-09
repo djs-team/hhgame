@@ -107,7 +107,7 @@ load('module/mahjong/ui/EffectLayerMdt', function () {
                     appInstance.gameAgent().mjUtil().playGamingSound(Sound.play.lose)
                 }
             }else{
-                appInstance.gameAgent().mjUtil().playGamingSound(Sound.play.match_win_2)
+               // appInstance.gameAgent().mjUtil().playGamingSound(Sound.play.match_win_2)
             }
 
         },

@@ -6,6 +6,7 @@ load('module/mahjong/ui/MjPlayScene', function () {
     let BaseScene = include('public/ui/BaseScene')
     let MjPlaySceneMdt = include('module/mahjong/ui/MjPlaySceneMdt')
     let ResConfig = include('module/mahjong/common/ResConfig')
+    let GameResConfig = include('game/config/ResConfig')
     let DeskBgLayer = include('module/mahjong/ui/DeskBgLayer')
     let DeskCardLayer = include('module/mahjong/ui/DeskCardLayer')
     let DeskHeadLayer = include('module/mahjong/ui/DeskHeadLayer')
@@ -137,7 +138,7 @@ load('module/mahjong/ui/MjPlayScene', function () {
         },
         onEnter: function () {
             this._super()
-            appInstance.audioManager().playMusic(ResConfig.Sound.bg1, true)
+            appInstance.audioManager().playMusic(GameResConfig.Sound.bg1, true)
             this.initView()
         },
         onExit: function () {

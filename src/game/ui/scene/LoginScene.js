@@ -470,7 +470,7 @@ load('game/ui/scene/LoginScene', function () {
                 this.vision.setString(visionName)
             }
             appInstance.nativeApi().getInstallParam()
-            appInstance.audioManager().playMusic(ResConfig.Sound.bg1, true)
+            appInstance.audioManager().playMusic(ResConfig.Sound.bgHall, true)
             this._delayBtns.push(this.phoneLogin)
             this._delayBtns.push(this.wxLogin)
 

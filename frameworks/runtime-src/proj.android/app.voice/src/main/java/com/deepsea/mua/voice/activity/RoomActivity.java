@@ -4190,6 +4190,13 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
         }
     }
 
+    @Override
+    public void updateUserGuard(int guardState, String guardHeadImage) {
+        JoinUser joinUser = mRoomModel.getUser();
+        joinUser.setGuardState(guardState);
+        joinUser.setGuardHeadImage(guardHeadImage);
+    }
+
 
     private void showGuardBayWindowDiallog(JoinUser joinUser) {
         if (joinUser != null && joinUser.isRoomGuard()) {

@@ -177,7 +177,7 @@ public class UserAvatarDialog extends BaseDialog<DialogUserAvatarBinding> {
         this.mMicroUserId = user.getUserId();
         this.isDisableMsg = microUser.isIsDisableMsg();
         this.isDisabledMicro = ForbiddenStateUtils.getForbiddenMicState(user.getUserId()) || ForbiddenStateUtils.getForbiddenLBstate(user.getUserId());
-        boolean isShowAddFriend = !self.getUid().equals(user.getUserId()) && !FriendsUtils.getInstance().isMyFriend(user.getUserId());
+        boolean isShowAddFriend = !microUser.isFriend();
         if (isShowAddFriend) {
             ViewBindUtils.setText(mBinding.addfriendTv, "送礼物加好友");
         } else {

@@ -71,7 +71,7 @@
                     android:src="@drawable/icon_guard_first_bg" />
 
                 <ImageView
-                    android:id="@+id/avatar_iv2"
+                    android:id="@+id/avatar_iv_first"
 
                     android:layout_width="20dp"
                     android:layout_height="20dp"

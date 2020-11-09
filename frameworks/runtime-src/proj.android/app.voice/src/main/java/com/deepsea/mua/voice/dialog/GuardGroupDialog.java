@@ -135,6 +135,9 @@ public class GuardGroupDialog extends BaseDialog<DialogGuardGroupMineBinding> {
             mBinding.refreshLayout.setVisibility(View.VISIBLE);
             mBinding.consGroup.setVisibility(View.GONE);
         }
+        ViewBindUtils.RxClicks(mBinding.ivHead,o->{
+            PageJumpUtils.jumpToProfile(guardUserId);
+        });
     }
 
     private void addSocketListener() {

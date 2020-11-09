@@ -109,35 +109,35 @@
                     <EndColor A="255" R="255" G="255" B="255" />
                     <ColorVector ScaleY="1.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="PageIndex0" ActionTag="-320119644" Tag="240" IconVisible="False" LeftMargin="296.0135" RightMargin="853.9865" TopMargin="383.8338" BottomMargin="248.1662" LeftEage="42" RightEage="42" TopEage="29" BottomEage="29" Scale9OriginX="42" Scale9OriginY="29" Scale9Width="46" Scale9Height="30" ctype="ImageViewObjectData">
-                    <Size X="130.0000" Y="88.0000" />
+                  <AbstractNodeData Name="PageIndex0" ActionTag="-320119644" Tag="240" IconVisible="False" PositionPercentYEnabled="True" LeftMargin="354.0135" RightMargin="911.9865" TopMargin="389.0000" BottomMargin="317.0000" LeftEage="4" RightEage="4" TopEage="4" BottomEage="4" Scale9OriginX="4" Scale9OriginY="4" Scale9Width="6" Scale9Height="6" ctype="ImageViewObjectData">
+                    <Size X="14.0000" Y="14.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="361.0135" Y="292.1662" />
-                    <Scale ScaleX="0.3000" ScaleY="0.3000" />
+                    <Position X="361.0135" Y="324.0000" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.2820" Y="0.4058" />
-                    <PreSize X="0.1016" Y="0.1222" />
-                    <FileData Type="Normal" Path="common/bt_1.png" Plist="" />
+                    <PrePosition X="0.2820" Y="0.4500" />
+                    <PreSize X="0.0109" Y="0.0194" />
+                    <FileData Type="Normal" Path="fukashop/fk_8.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="PageIndex1" ActionTag="-961587332" Tag="241" IconVisible="False" LeftMargin="295.8159" RightMargin="854.1841" TopMargin="325.8773" BottomMargin="306.1227" LeftEage="42" RightEage="42" TopEage="29" BottomEage="29" Scale9OriginX="42" Scale9OriginY="29" Scale9Width="46" Scale9Height="30" ctype="ImageViewObjectData">
-                    <Size X="130.0000" Y="88.0000" />
+                  <AbstractNodeData Name="PageIndex1" ActionTag="-961587332" Tag="241" IconVisible="False" PositionPercentYEnabled="True" LeftMargin="353.8159" RightMargin="912.1841" TopMargin="353.0000" BottomMargin="353.0000" LeftEage="4" RightEage="4" TopEage="4" BottomEage="4" Scale9OriginX="4" Scale9OriginY="4" Scale9Width="6" Scale9Height="6" ctype="ImageViewObjectData">
+                    <Size X="14.0000" Y="14.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="360.8159" Y="350.1227" />
-                    <Scale ScaleX="0.3000" ScaleY="0.3000" />
+                    <Position X="360.8159" Y="360.0000" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.2819" Y="0.4863" />
-                    <PreSize X="0.1016" Y="0.1222" />
-                    <FileData Type="Normal" Path="common/bt_1.png" Plist="" />
+                    <PrePosition X="0.2819" Y="0.5000" />
+                    <PreSize X="0.0109" Y="0.0194" />
+                    <FileData Type="Normal" Path="fukashop/fk_8.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="PageIndex2" ActionTag="-1056252237" Tag="242" IconVisible="False" LeftMargin="296.0135" RightMargin="853.9865" TopMargin="265.8337" BottomMargin="366.1663" LeftEage="42" RightEage="42" TopEage="29" BottomEage="29" Scale9OriginX="42" Scale9OriginY="29" Scale9Width="46" Scale9Height="30" ctype="ImageViewObjectData">
-                    <Size X="130.0000" Y="88.0000" />
+                  <AbstractNodeData Name="PageIndex2" ActionTag="-1056252237" Tag="242" IconVisible="False" PositionPercentYEnabled="True" LeftMargin="354.0135" RightMargin="911.9865" TopMargin="317.0000" BottomMargin="389.0000" LeftEage="4" RightEage="4" TopEage="4" BottomEage="4" Scale9OriginX="4" Scale9OriginY="4" Scale9Width="6" Scale9Height="6" ctype="ImageViewObjectData">
+                    <Size X="14.0000" Y="14.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="361.0135" Y="410.1663" />
-                    <Scale ScaleX="0.3000" ScaleY="0.3000" />
+                    <Position X="361.0135" Y="396.0000" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.2820" Y="0.5697" />
-                    <PreSize X="0.1016" Y="0.1222" />
-                    <FileData Type="Normal" Path="common/bt_1.png" Plist="" />
+                    <PrePosition X="0.2820" Y="0.5500" />
+                    <PreSize X="0.0109" Y="0.0194" />
+                    <FileData Type="Normal" Path="fukashop/fk_8.png" Plist="" />
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleY="0.5000" />

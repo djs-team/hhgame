@@ -251,9 +251,9 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
             if (dt === 0) {
                 let index = this.imgPageView.getCurrentPageIndex()
                 for (let i = 0; i < 3; ++i) {
-                    let imgPath = 'res/common/bt_1.png'
+                    let imgPath = 'res/fukashop/fk_9.png'
                     if (i === index) {
-                        imgPath = 'res/common/bt_2.png'
+                        imgPath = 'res/fukashop/fk_8.png'
                     }
                     this['PageIndex' + i].loadTexture(imgPath)
                 }

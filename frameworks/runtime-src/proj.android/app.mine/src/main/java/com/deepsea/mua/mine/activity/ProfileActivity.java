@@ -42,10 +42,12 @@ import com.deepsea.mua.stub.utils.UserUtils;
 import com.deepsea.mua.stub.utils.ViewBindUtils;
 import com.deepsea.mua.stub.utils.ViewModelFactory;
 import com.deepsea.mua.stub.utils.ViewUtils;
+import com.deepsea.mua.stub.utils.eventbus.ChangeRoomEvent;
 import com.deepsea.mua.stub.utils.eventbus.ClickEvent;
 import com.deepsea.mua.stub.utils.eventbus.ClickEventType;
 import com.hyphenate.chat.EMClient;
 
+import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
@@ -180,7 +182,15 @@ public class ProfileActivity extends BaseActivity<ActivityProfileBinding> {
 
         });
         subscribeClick(mBinding.voiceRoomCl, o -> {
-            mRoomJumper.startJump(roomId, mContext);
+            String openRoomId = SharedPrefrencesUtil.getData(mContext, "mRoomId", "mRoomId", "");
+            if (!TextUtils.isEmpty(openRoomId) && !roomId.equals(openRoomId)) {
+                ChangeRoomEvent changeRoomEvent = new ChangeRoomEvent();
+                changeRoomEvent.roomId = roomId;
+                EventBus.getDefault().post(changeRoomEvent);
+                finish();
+            } else {
+                mRoomJumper.startJump(roomId, mContext);
+            }
         });
         subscribeClick(mBinding.giftMore, o -> {
             startActivity(PresentWallActivity.newIntent(mContext, uid));

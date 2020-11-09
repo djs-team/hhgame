@@ -29,7 +29,11 @@ import com.deepsea.mua.stub.utils.PageJumpUtils;
 import com.deepsea.mua.stub.utils.UserUtils;
 import com.deepsea.mua.stub.utils.ViewBindUtils;
 import com.deepsea.mua.stub.utils.ViewModelFactory;
+import com.deepsea.mua.stub.utils.eventbus.ChangeRoomEvent;
 import com.hyphenate.chat.EMClient;
+
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -132,7 +136,10 @@ public class MyFriendActivity extends BaseActivity<ActivityMyFriendsBinding> {
         ViewBindUtils.setText(mBinding.tvFriendapplyUnread, String.valueOf(applyUnreadNum));
         ViewBindUtils.setVisible(mBinding.tvMyapplyUnread, myApplyUnreadNum > 0);
         ViewBindUtils.setText(mBinding.tvMyapplyUnread, String.valueOf(myApplyUnreadNum));
-
     }
 
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void changeRoom(ChangeRoomEvent event) {
+        finish();
+    }
 }

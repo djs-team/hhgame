@@ -110,7 +110,7 @@
     
     [_locationBtn setTitle:user.City forState:UIControlStateNormal];
     
-    if ([[CXClientModel instance].firendIdArrays containsObject:user.UserId]) { //已经是好友了
+    if (userInfo.IsFriend == YES) { //已经是好友了
         [_chatBtn setTitle:@"私聊好友" forState:UIControlStateNormal];
     } else {
         [_chatBtn setTitle:@"添加好友" forState:UIControlStateNormal];

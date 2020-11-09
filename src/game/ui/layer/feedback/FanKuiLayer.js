@@ -212,9 +212,13 @@ load('game/ui/layer/feedback/FanKuiLayer', function () {
             let createTime = this.onFormatDateTime(data.createTime)
             cell.getChildByName('createTime').setString(createTime)
 
-            if(data.status == 1){
+            cell.getChildByName('redImg').setVisible(false)
+            if(data.status != 0){
                 cell.getChildByName('status').setString('已处理')
                 cell.getChildByName('status').setTextColor(cc.color(175,89,12))
+                if(data.status == 1){
+                    cell.getChildByName('redImg').setVisible(true)
+                }
             }
 
             cell.addClickEventListener(function (sender,dt) {

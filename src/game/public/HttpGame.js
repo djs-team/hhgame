@@ -260,13 +260,13 @@ load('game/public/HttpGame', function () {
         },
         
         updateUserNameReq: function (msg) {
-            cc.log("========开始请求updateUserName")
             msg = msg || {}
             if (!this._requestBackCall[HttpEvent.MJ_HALL_MESSAGE_UPDATEUSERNAME]) {
                 this._requestBackCall[HttpEvent.MJ_HALL_MESSAGE_UPDATEUSERNAME] = this.updateUserNameBack
             }
 
             msg.msgID = HttpEvent.MJ_HALL_MESSAGE_UPDATEUSERNAME
+            msg.nickname = GameUtil.onForMatStringToASC(msg.nickname)
             appInstance.httpAgent().sendPost(msg)
 
         },

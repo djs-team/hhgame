@@ -92,7 +92,7 @@ public class FriendMsgAdapter extends BaseBindingAdapter<FriendInfoBean, ItemFri
         }
         ViewBindUtils.RxClicks(holder.binding.ivPhoto, o -> {
             String online_str = item.getOnline_str();
-            if (online_str.contains("相亲")||online_str.contains("热聊")||online_str.contains("开播")) {
+            if (online_str.contains("相亲") || online_str.contains("热聊") || online_str.contains("开播")) {
                 if (onMyClickListener != null) {
                     onMyClickListener.onPhototClick(item.getRoom_id());
                 }

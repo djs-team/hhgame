@@ -165,7 +165,7 @@ static CXSelectedPhotoView *_selectPhoto = nil;
 -(UIButton*)photoBtn{
     if (!_photoBtn) {
         _photoBtn = [[UIButton alloc]init];
-        [_photoBtn setTitle:@"上传照片" forState:UIControlStateNormal];
+        [_photoBtn setTitle:@"相册" forState:UIControlStateNormal];
         [_photoBtn setTitleColor:UIColorHex(333333) forState:UIControlStateNormal];
         _photoBtn.titleLabel.font = [UIFont systemFontOfSize:16.0f];
         [_photoBtn addTarget:self action:@selector(photoClick) forControlEvents:UIControlEventTouchUpInside];

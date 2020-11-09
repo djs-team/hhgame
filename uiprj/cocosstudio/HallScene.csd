@@ -610,7 +610,7 @@
           <AbstractNodeData Name="topPnl" ActionTag="1795294294" UserData="{&quot;layoutType&quot;:&quot;showAll&quot;,&quot;screenAlign&quot;:&quot;top&quot;}" Tag="25" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" TopMargin="0.5040" BottomMargin="-0.5040" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" LeftEage="422" RightEage="422" TopEage="237" BottomEage="237" Scale9OriginX="-422" Scale9OriginY="-237" Scale9Width="844" Scale9Height="474" ctype="PanelObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <Children>
-              <AbstractNodeData Name="photoBtn" ActionTag="-2057188791" Tag="363" IconVisible="False" LeftMargin="11.3000" RightMargin="1171.7000" TopMargin="11.7700" BottomMargin="611.1500" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+              <AbstractNodeData Name="photoBtn" ActionTag="-2057188791" Tag="363" IconVisible="False" LeftMargin="11.3000" RightMargin="1171.7000" TopMargin="11.7700" BottomMargin="611.1500" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="97.0000" Y="97.0800" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="59.8000" Y="659.6900" />
@@ -934,6 +934,16 @@
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
+                      <AbstractNodeData Name="redImg" ActionTag="-757935143" Tag="734" IconVisible="False" LeftMargin="29.7800" RightMargin="-6.7800" TopMargin="-5.9000" BottomMargin="29.9000" LeftEage="7" RightEage="7" TopEage="7" BottomEage="7" Scale9OriginX="7" Scale9OriginY="7" Scale9Width="9" Scale9Height="8" ctype="ImageViewObjectData">
+                        <Size X="23.0000" Y="22.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="41.2800" Y="40.9000" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="0.8974" Y="0.8891" />
+                        <PreSize X="0.5000" Y="0.4783" />
+                        <FileData Type="Normal" Path="hall/pz_31.png" Plist="" />
+                      </AbstractNodeData>
                     </Children>
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="50.5100" Y="36.2672" />
@@ -1050,6 +1060,16 @@
                         <PreSize X="0.2797" Y="0.2532" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="redImg" ActionTag="-1635327296" Tag="733" IconVisible="False" LeftMargin="30.7800" RightMargin="97.2200" TopMargin="26.6000" BottomMargin="37.4000" LeftEage="7" RightEage="7" TopEage="7" BottomEage="7" Scale9OriginX="7" Scale9OriginY="7" Scale9Width="9" Scale9Height="8" ctype="ImageViewObjectData">
+                        <Size X="15.0000" Y="15.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="38.2800" Y="44.9000" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="0.2677" Y="0.5684" />
+                        <PreSize X="0.1049" Y="0.1899" />
+                        <FileData Type="Normal" Path="hall/pz_31.png" Plist="" />
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />

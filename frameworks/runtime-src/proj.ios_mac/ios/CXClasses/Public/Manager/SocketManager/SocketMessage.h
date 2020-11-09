@@ -167,6 +167,7 @@ typedef NS_ENUM(NSUInteger, SocketMessageID) {
     SocketMessageIDSetUserIsDisableMsg = 28,            // 设置是否禁言
     SocketMessageIDUserDisableChatMessage = 47,         // 收到有没有被主持禁言
     SocketMessageIDGetGuardItemList = 139,              // 获取守护榜单（亲密值排序）
+    SocketMessageIDUpdateUserGuardNotification = 142,   // 同步用户守护勋章
     
     //============ 系统 ==============/
     SocketMessageIDUpdate = 300,                        // 心跳

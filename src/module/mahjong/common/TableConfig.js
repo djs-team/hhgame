@@ -25,7 +25,8 @@ load('module/mahjong/common/TableConfig', function () {
         'clearTableGaming': 'clearTableGaming',
         'JiaGangTableProto': 'JiaGangTableProto',
         'MatchReadyProto': 'MatchReadyProto',
-        'MatchEnterTableProto': 'MatchEnterTableProto'
+        'MatchEnterTableProto': 'MatchEnterTableProto',
+        'GameFenZhangProto': 'GameFenZhangProto',
     }
 
 
@@ -78,7 +79,7 @@ load('module/mahjong/common/TableConfig', function () {
         '14': '点炮',
         '35': '摸宝胡',//摸宝胡：自摸宝牌且胡牌张!=宝牌
         '37': '黑炮',
-        '43': '调胡',
+        '43': '单调',
         '44': '点炮胡',
         '48': '上听',
         '49': '未上听',

@@ -27,6 +27,8 @@ load('module/mahjong/ui/DeskCardLayerMdt', function () {
                 TableEvent.updateSelfHandCard,
                 TableEvent.clearTableGaming,
                 TableEvent.JiaGangTableProto,
+                TableEvent.GameResultProto,
+                TableEvent.GameFenZhangProto,
             ]
         },
         handleNotification: function (notification) {
@@ -68,6 +70,12 @@ load('module/mahjong/ui/DeskCardLayerMdt', function () {
                     break
                 case TableEvent.clearTableGaming:
                     this.view.clearTableGaming(body)
+                    break
+                case TableEvent.GameResultProto:
+                    this.showLiuJu(body)
+                    break
+                case TableEvent.GameFenZhangProto:
+                    this.view.showFenZhang()
                     break
             }
         },
@@ -207,6 +215,14 @@ load('module/mahjong/ui/DeskCardLayerMdt', function () {
         },
 
         onRemove: function () {
+        },
+
+        showLiuJu: function (body) {
+            cc.log('--------------------------------------------showLiuJu--------------------------------------body: ' + JSON.stringify(body))
+            let isLiuJu = body.pIsLiuJu == 1 ? true : false
+            if(isLiuJu)
+                this.view.showLiuJu()
+
         }
 
     })

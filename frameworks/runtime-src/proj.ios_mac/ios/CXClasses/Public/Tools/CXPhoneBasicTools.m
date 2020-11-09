@@ -34,9 +34,12 @@
 
 // 获取版本号
 + (NSString *)getVersion {
-    NSString *string = [[NSBundle mainBundle] pathForResource:@"Info" ofType:@"plist"];
-    NSDictionary *dic = [[NSDictionary alloc] initWithContentsOfFile:string];
-    NSString *version = [dic objectForKey:@"CFBundleVersion"];
+    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+    // app版本
+    NSString *app_Version = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
+    // app build版本
+    NSString *app_build = [infoDictionary objectForKey:@"CFBundleVersion"];
+    NSString *version = [NSString stringWithFormat:@"v%@ (%@)",app_Version,app_build];
     return version;
 }
 

@@ -5104,6 +5104,26 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
+          <AbstractNodeData Name="liuJuBg" ActionTag="413131089" Tag="536" IconVisible="False" LeftMargin="541.2478" RightMargin="541.7522" TopMargin="246.4124" BottomMargin="241.5876" LeftEage="65" RightEage="65" TopEage="76" BottomEage="76" Scale9OriginX="65" Scale9OriginY="76" Scale9Width="67" Scale9Height="80" ctype="ImageViewObjectData">
+            <Size X="197.0000" Y="232.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="639.7478" Y="357.5876" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.4998" Y="0.4966" />
+            <PreSize X="0.1539" Y="0.3222" />
+            <FileData Type="Normal" Path="desk/liuju.png" Plist="" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="fenZhangBg" ActionTag="1121731723" Tag="576" IconVisible="False" LeftMargin="541.2500" RightMargin="541.7500" TopMargin="246.4100" BottomMargin="241.5900" LeftEage="65" RightEage="65" TopEage="76" BottomEage="76" Scale9OriginX="65" Scale9OriginY="76" Scale9Width="67" Scale9Height="80" ctype="ImageViewObjectData">
+            <Size X="197.0000" Y="232.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="639.7500" Y="357.5900" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.4998" Y="0.4967" />
+            <PreSize X="0.1539" Y="0.3222" />
+            <FileData Type="Normal" Path="desk/fenzhang.png" Plist="" />
+          </AbstractNodeData>
         </Children>
       </ObjectData>
     </Content>

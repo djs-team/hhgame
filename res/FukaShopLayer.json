@@ -482,6 +482,7 @@
                     "ScrollDirectionType": 0,
                     "ClipAble": true,
                     "BackColorAlpha": 102,
+                    "ComboBoxIndex": 1,
                     "SingleColor": {
                       "R": 150,
                       "G": 150,
@@ -532,6 +533,144 @@
                     },
                     "Name": "imgPageView",
                     "ctype": "PageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "fukashop/fk_8.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 4,
+                    "Scale9OriginY": 4,
+                    "Scale9Width": 6,
+                    "Scale9Height": 6,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 361.0135,
+                      "Y": 324.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PositionPercentYEnabled": true,
+                    "PrePosition": {
+                      "X": 0.282,
+                      "Y": 0.45
+                    },
+                    "PreSize": {
+                      "X": 0.0109,
+                      "Y": 0.0194
+                    },
+                    "LeftMargin": 354.0135,
+                    "RightMargin": 911.9865,
+                    "TopMargin": 389.0,
+                    "BottomMargin": 317.0,
+                    "Tag": 240,
+                    "ActionTag": -320119644,
+                    "Size": {
+                      "X": 14.0,
+                      "Y": 14.0
+                    },
+                    "Name": "PageIndex0",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "fukashop/fk_8.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 4,
+                    "Scale9OriginY": 4,
+                    "Scale9Width": 6,
+                    "Scale9Height": 6,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 360.8159,
+                      "Y": 360.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PositionPercentYEnabled": true,
+                    "PrePosition": {
+                      "X": 0.2819,
+                      "Y": 0.5
+                    },
+                    "PreSize": {
+                      "X": 0.0109,
+                      "Y": 0.0194
+                    },
+                    "LeftMargin": 353.8159,
+                    "RightMargin": 912.1841,
+                    "TopMargin": 353.0,
+                    "BottomMargin": 353.0,
+                    "Tag": 241,
+                    "ActionTag": -961587332,
+                    "Size": {
+                      "X": 14.0,
+                      "Y": 14.0
+                    },
+                    "Name": "PageIndex1",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "fukashop/fk_8.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 4,
+                    "Scale9OriginY": 4,
+                    "Scale9Width": 6,
+                    "Scale9Height": 6,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 361.0135,
+                      "Y": 396.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PositionPercentYEnabled": true,
+                    "PrePosition": {
+                      "X": 0.282,
+                      "Y": 0.55
+                    },
+                    "PreSize": {
+                      "X": 0.0109,
+                      "Y": 0.0194
+                    },
+                    "LeftMargin": 354.0135,
+                    "RightMargin": 911.9865,
+                    "TopMargin": 317.0,
+                    "BottomMargin": 389.0,
+                    "Tag": 242,
+                    "ActionTag": -1056252237,
+                    "Size": {
+                      "X": 14.0,
+                      "Y": 14.0
+                    },
+                    "Name": "PageIndex2",
+                    "ctype": "ImageViewObjectData"
                   }
                 ],
                 "ActionTag": 292336037,

@@ -54,7 +54,7 @@ load('public/ui/HeadFileCache', function () {
             if (!this._needRedownload(uid, url)) {
                 cc.loader.loadImg(this._headDict[uid].path, cb)
             } else {
-                global.gameFileUtil.downloadFile(url, function (data) {
+                global.gameFile.downloadFile(url, function (data) {
                     try {
                         this._asynSave(uid, url, data, cb)
                     } catch (e) {
@@ -79,7 +79,7 @@ load('public/ui/HeadFileCache', function () {
                 cc.textureCache.removeTextureForKey(savePath)
             }
 
-            if (global.gameFileUtil.saveFile(data, savePath)) {
+            if (global.gameFile.saveFile(data, savePath)) {
                 if (!this._headDict[uid]) {
                     this._headDict[uid] = {}
                 }
@@ -96,7 +96,7 @@ load('public/ui/HeadFileCache', function () {
          */
         _getFileSavePath: function (uid) {
             let writePath = jsb.fileUtils.getWritablePath() + 'headCache/'
-            global.gameFileUtil.createDir(writePath)
+            global.gameFile.createDir(writePath)
             return writePath + 'Head_' + uid
         },
         /**
@@ -105,7 +105,7 @@ load('public/ui/HeadFileCache', function () {
         clearAll: function () {
             this._storeHeadDict({})
             let dir = jsb.fileUtils.getWritablePath() + 'headCache/'
-            global.gameFileUtil.removeDir(dir)
+            global.gameFile.removeDir(dir)
         }
 
     })

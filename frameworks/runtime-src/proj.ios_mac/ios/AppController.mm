@@ -494,16 +494,22 @@ static AppDelegate s_sharedApplication;
         [[CXIPAPurchaseManager manager] inAppPurchaseWithProductID:payParam iapResult:^(BOOL isSuccess, NSDictionary *param, NSString *errorMsg) {
             if (isSuccess == YES) {
                 NSString *paramStr = [param jsonStringEncoded];
-                [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].paySuccessMethod param:paramStr];
+                if ([CXOCJSBrigeManager manager].paySuccessMethod.length > 0) {
+                    [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].paySuccessMethod param:paramStr];
+                }
             }
         }];
     } else if ([payType isEqualToString:@"alipay"]) {
         [[CXThirdPayManager sharedApi] aliPayWithPayParam:payParam success:nil failure:^(PayCode code) {
-            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].paySuccessMethod param:@"-1"];
+            if ([CXOCJSBrigeManager manager].paySuccessMethod.length > 0) {
+                [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].paySuccessMethod param:@"-1"];
+            }
         }];
     } else if ([payType isEqualToString:@"wx"]) {
         [[CXThirdPayManager sharedApi] wxPayWithPayParam:payParam success:nil failure:^(PayCode code) {
-            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].paySuccessMethod param:@"-1"];
+            if ([CXOCJSBrigeManager manager].paySuccessMethod.length > 0) {
+                [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].paySuccessMethod param:@"-1"];
+            }
         }];
     }
 }
@@ -518,7 +524,9 @@ static AppDelegate s_sharedApplication;
         NSDictionary *info = dict[@"info"];
         [[CXPhotoManager manager] showPickerWith:[CXTools currentViewController] putParam:[info jsonStringEncoded] allowEdit:YES completeBlock:^(NSString * _Nonnull imageUrl) {
             NSLog(@"imageUrl=%@", imageUrl);
-            [AppController dispatchCustomEventWithMethod:method param:imageUrl];
+            if (method.length > 0) {
+                [AppController dispatchCustomEventWithMethod:method param:imageUrl];
+            }
         }];
     }
 }
@@ -707,6 +715,11 @@ static AppDelegate s_sharedApplication;
     return [CXPhoneBasicTools deviceName];
 }
 
+/// 获取版本号
++ (NSString *_Nullable)getVersion {
+    return [CXPhoneBasicTools getVersion];
+}
+
 #pragma mark - ================ 复制到剪贴板 ===================
 
 /// 复制到剪贴板
@@ -726,6 +739,8 @@ static AppDelegate s_sharedApplication;
     if (!method || method.length <= 0) {
         return;
     }
+    
+    [AppController setOrientation:@""];
     
     std::string strParam = [param UTF8String];
     std::string strMethod = [method UTF8String];

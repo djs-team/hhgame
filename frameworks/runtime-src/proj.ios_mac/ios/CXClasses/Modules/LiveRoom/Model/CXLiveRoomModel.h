@@ -40,6 +40,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, strong) NSNumber * IsLive;
 @property(nonatomic, strong) NSNumber * IsOpenHeartValue;
 @property(nonatomic, strong) NSString * MapId;
+@property(nonatomic, strong) NSString * OwnerUserAvatar;
 @property(nonatomic, strong) NSNumber * OwnerUserId;
 @property(nonatomic, strong) NSString * RoomDesc;
 @property(nonatomic, strong) NSString * RoomId;
@@ -173,6 +174,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) NSString * GuardSign; // 守护榜标签
 @property BOOL IsRoomGuard; // 进房间是否播放进场特效的字段
+@property (nonatomic, strong) NSNumber *GuardState; // 0不是主持守护，1是普通守护，2是榜一守护
+@property (nonatomic, strong) NSString * GuardHeadImage; // 被守护头像（榜一用到的）
+
 
 /// 自定义属性
 //HeatValue 初始化房间时候这个值由RoomData.ExternVisitorNumbers + RoomData.VisitorNumbers得到。之后由MsgId(54)直接更新

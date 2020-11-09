@@ -360,5 +360,22 @@ load('game/public/GameUtil',function () {
         return resultTxt
     }
 
+    GameUtil.onForMatStringToASC = function (str,Separator) {
+
+        Separator = Separator || ','
+        let resultStr = ''
+        for (let i = 0; i < str.length; i++) {
+            let strByte = str.charAt(i)
+            let code = strByte.charCodeAt()
+            resultStr += code
+            if(i != str.length - 1)
+                resultStr += Separator
+        }
+
+        return resultStr
+    }
+
+
+
     return GameUtil
 })

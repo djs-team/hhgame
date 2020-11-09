@@ -463,8 +463,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 649.984,
-                  "Y": 351.432
+                  "X": 640.0,
+                  "Y": 360.0
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -475,8 +475,8 @@
                 "PositionPercentXEnabled": true,
                 "PositionPercentYEnabled": true,
                 "PrePosition": {
-                  "X": 0.5078,
-                  "Y": 0.4881
+                  "X": 0.5,
+                  "Y": 0.5
                 },
                 "PercentWidthEnable": true,
                 "PercentHeightEnable": true,
@@ -486,10 +486,6 @@
                   "X": 1.0,
                   "Y": 1.0
                 },
-                "LeftMargin": 9.984,
-                "RightMargin": -9.984,
-                "TopMargin": 8.568,
-                "BottomMargin": -8.568,
                 "Tag": 642,
                 "Children": [
                   {
@@ -679,8 +675,9 @@
                         "ctype": "ImageViewObjectData"
                       },
                       {
+                        "IsCustomSize": true,
                         "FontSize": 25,
-                        "LabelText": "x20000",
+                        "LabelText": "x20000000",
                         "HorizontalAlignmentType": "HT_Center",
                         "VerticalAlignmentType": "VT_Center",
                         "OutlineColor": {
@@ -717,18 +714,18 @@
                           "Y": -0.2548
                         },
                         "PreSize": {
-                          "X": 0.7091,
-                          "Y": 0.2193
+                          "X": 1.2273,
+                          "Y": 0.2982
                         },
-                        "LeftMargin": 14.0707,
-                        "RightMargin": 17.9293,
-                        "TopMargin": 130.5495,
-                        "BottomMargin": -41.5495,
+                        "LeftMargin": -14.4293,
+                        "RightMargin": -10.5707,
+                        "TopMargin": 126.0495,
+                        "BottomMargin": -46.0495,
                         "Tag": 648,
                         "ActionTag": -2127776457,
                         "Size": {
-                          "X": 78.0,
-                          "Y": 25.0
+                          "X": 135.0,
+                          "Y": 34.0
                         },
                         "Name": "awardsVal",
                         "ctype": "TextObjectData"
@@ -828,8 +825,9 @@
                         "ctype": "ImageViewObjectData"
                       },
                       {
+                        "IsCustomSize": true,
                         "FontSize": 25,
-                        "LabelText": "x20000",
+                        "LabelText": "x20000000",
                         "HorizontalAlignmentType": "HT_Center",
                         "VerticalAlignmentType": "VT_Center",
                         "OutlineColor": {
@@ -848,7 +846,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 53.0707,
+                          "X": 62.07,
                           "Y": -29.0495
                         },
                         "Scale": {
@@ -862,22 +860,22 @@
                         },
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": 0.4825,
+                          "X": 0.5643,
                           "Y": -0.2548
                         },
                         "PreSize": {
-                          "X": 0.7091,
-                          "Y": 0.2193
+                          "X": 1.2182,
+                          "Y": 0.2982
                         },
-                        "LeftMargin": 14.0707,
-                        "RightMargin": 17.9293,
-                        "TopMargin": 130.5495,
-                        "BottomMargin": -41.5495,
+                        "LeftMargin": -4.93,
+                        "RightMargin": -19.07,
+                        "TopMargin": 126.0495,
+                        "BottomMargin": -46.0495,
                         "Tag": 651,
                         "ActionTag": -449834805,
                         "Size": {
-                          "X": 78.0,
-                          "Y": 25.0
+                          "X": 134.0,
+                          "Y": 34.0
                         },
                         "Name": "awardsVal",
                         "ctype": "TextObjectData"
@@ -1068,7 +1066,7 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 482.1392,
+                      "X": 478.14,
                       "Y": 337.3503
                     },
                     "Scale": {
@@ -1078,15 +1076,15 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.3767,
+                      "X": 0.3735,
                       "Y": 0.4685
                     },
                     "PreSize": {
                       "X": 0.0859,
                       "Y": 0.1583
                     },
-                    "LeftMargin": 427.1392,
-                    "RightMargin": 742.8608,
+                    "LeftMargin": 423.14,
+                    "RightMargin": 746.86,
                     "TopMargin": 325.6497,
                     "BottomMargin": 280.3503,
                     "Tag": 656,
@@ -1139,8 +1137,9 @@
                         "ctype": "ImageViewObjectData"
                       },
                       {
+                        "IsCustomSize": true,
                         "FontSize": 25,
-                        "LabelText": "x20000",
+                        "LabelText": "x20000000",
                         "HorizontalAlignmentType": "HT_Center",
                         "VerticalAlignmentType": "VT_Center",
                         "OutlineColor": {
@@ -1177,18 +1176,18 @@
                           "Y": -0.2548
                         },
                         "PreSize": {
-                          "X": 0.7091,
-                          "Y": 0.2193
+                          "X": 1.2273,
+                          "Y": 0.2982
                         },
-                        "LeftMargin": 14.0707,
-                        "RightMargin": 17.9293,
-                        "TopMargin": 130.5495,
-                        "BottomMargin": -41.5495,
+                        "LeftMargin": -14.4293,
+                        "RightMargin": -10.5707,
+                        "TopMargin": 126.0495,
+                        "BottomMargin": -46.0495,
                         "Tag": 658,
                         "ActionTag": -685672027,
                         "Size": {
-                          "X": 78.0,
-                          "Y": 25.0
+                          "X": 135.0,
+                          "Y": 34.0
                         },
                         "Name": "awardsVal",
                         "ctype": "TextObjectData"
@@ -1217,7 +1216,7 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 726.2031,
+                      "X": 735.2,
                       "Y": 337.35
                     },
                     "Scale": {
@@ -1227,15 +1226,15 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.5673,
+                      "X": 0.5744,
                       "Y": 0.4685
                     },
                     "PreSize": {
                       "X": 0.0859,
                       "Y": 0.1583
                     },
-                    "LeftMargin": 671.2031,
-                    "RightMargin": 498.7969,
+                    "LeftMargin": 680.2,
+                    "RightMargin": 489.8,
                     "TopMargin": 325.65,
                     "BottomMargin": 280.35,
                     "Tag": 659,
@@ -1288,8 +1287,9 @@
                         "ctype": "ImageViewObjectData"
                       },
                       {
+                        "IsCustomSize": true,
                         "FontSize": 25,
-                        "LabelText": "x20000",
+                        "LabelText": "x20000000",
                         "HorizontalAlignmentType": "HT_Center",
                         "VerticalAlignmentType": "VT_Center",
                         "OutlineColor": {
@@ -1326,18 +1326,18 @@
                           "Y": -0.2548
                         },
                         "PreSize": {
-                          "X": 0.7091,
-                          "Y": 0.2193
+                          "X": 1.2273,
+                          "Y": 0.2982
                         },
-                        "LeftMargin": 14.0707,
-                        "RightMargin": 17.9293,
-                        "TopMargin": 130.5495,
-                        "BottomMargin": -41.5495,
+                        "LeftMargin": -14.4293,
+                        "RightMargin": -10.5707,
+                        "TopMargin": 126.0495,
+                        "BottomMargin": -46.0495,
                         "Tag": 661,
                         "ActionTag": -570300232,
                         "Size": {
-                          "X": 78.0,
-                          "Y": 25.0
+                          "X": 135.0,
+                          "Y": 34.0
                         },
                         "Name": "awardsVal",
                         "ctype": "TextObjectData"
@@ -1366,7 +1366,7 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 606.9658,
+                      "X": 608.97,
                       "Y": 337.35
                     },
                     "Scale": {
@@ -1376,15 +1376,15 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.4742,
+                      "X": 0.4758,
                       "Y": 0.4685
                     },
                     "PreSize": {
                       "X": 0.0859,
                       "Y": 0.1583
                     },
-                    "LeftMargin": 551.9658,
-                    "RightMargin": 618.0342,
+                    "LeftMargin": 553.97,
+                    "RightMargin": 616.03,
                     "TopMargin": 325.65,
                     "BottomMargin": 280.35,
                     "Tag": 662,
@@ -1437,8 +1437,9 @@
                         "ctype": "ImageViewObjectData"
                       },
                       {
+                        "IsCustomSize": true,
                         "FontSize": 25,
-                        "LabelText": "x20000",
+                        "LabelText": "x20000000",
                         "HorizontalAlignmentType": "HT_Center",
                         "VerticalAlignmentType": "VT_Center",
                         "OutlineColor": {
@@ -1475,18 +1476,18 @@
                           "Y": -0.2548
                         },
                         "PreSize": {
-                          "X": 0.7091,
-                          "Y": 0.2193
+                          "X": 1.2273,
+                          "Y": 0.2982
                         },
-                        "LeftMargin": 14.0707,
-                        "RightMargin": 17.9293,
-                        "TopMargin": 130.5495,
-                        "BottomMargin": -41.5495,
+                        "LeftMargin": -14.4293,
+                        "RightMargin": -10.5707,
+                        "TopMargin": 126.0495,
+                        "BottomMargin": -46.0495,
                         "Tag": 664,
                         "ActionTag": -1495072446,
                         "Size": {
-                          "X": 78.0,
-                          "Y": 25.0
+                          "X": 135.0,
+                          "Y": 34.0
                         },
                         "Name": "awardsVal",
                         "ctype": "TextObjectData"

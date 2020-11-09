@@ -40,7 +40,9 @@
     }
     
     SocketMessageUserJoinRoom *joinroom = model.JoinRoomUser;
+    
     [self.avatar sd_setImageWithURL:[NSURL URLWithString:model.JoinRoomUser.Avatar]];
+    self.guardValue = joinroom.GuardState;
 
     // 等级
     NSMutableAttributedString *result = [self resultWithRoomGuardLevel:joinroom.GuardSign DukeLevel:joinroom.DukeLevel UserLevel:joinroom.UserLevel UserIdentity:joinroom.UserIdentity Font:font UserID:model.JoinRoomUser.UserId];

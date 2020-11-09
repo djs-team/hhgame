@@ -69,6 +69,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSNumber * Count;
 @property (nonatomic, strong) NSNumber * VisitorNum;
 @property (nonatomic, strong) NSString * GuardSign;
+@property (nonatomic, strong) NSNumber *GuardState; // 0不是主持守护，1是普通守护，2是榜一守护
+@property (nonatomic, strong) NSString * GuardHeadImage; // 被守护头像（榜一用到的）
 
 @end
 

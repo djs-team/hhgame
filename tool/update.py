@@ -38,37 +38,6 @@ def onerror(func, path, _):
     os.chmod(path, stat.S_IWRITE)
     func(path)
 
-# # 由于在win32 下renametree 的不稳定性，根据几种常出现的问题进行重试
-# def renametree_temp(src):
-#     """
-#     Rename tree to temporary name, and return that name, or
-#     None if the source directory does not exist.
-#     """
-#     count = 0
-#     while count < 10:      # prevents indefinite loop
-#         count += 1
-#         tmp = os.path.join(os.path.dirname(src),"_removetree_tmp_%d"%(count))
-#         try:
-#             os.rename(src, tmp)
-#             return tmp      # Success!
-#         except OSError as e:
-#             time.sleep(1)
-#             if e.errno == errno.EACCES:
-#                 logging.warning("util.renametree_temp: %s EACCES, retrying"%tmp)
-#                 continue    # Try another temp name
-#             if e.errno == errno.ENOTEMPTY:
-#                 logging.warning("util.renametree_temp: %s ENOTEMPTY, retrying"%tmp)
-#                 continue    # Try another temp name
-#             if e.errno == errno.EEXIST:
-#                 logging.warning("util.renametree_temp: %s EEXIST, retrying"%tmp)
-#                 shutil.rmtree(tmp, onerror=onerror)  # Try to clean up old files
-#                 continue    # Try another temp name
-#             if e.errno == errno.ENOENT:
-#                 logging.warning("util.renametree_temp: %s ENOENT, skipping"%tmp)
-#                 break       # 'src' does not exist(?)
-#             raise           # Other error: propagaee
-#     return None
-
 def removetree(tgt):
     """
     Work-around for python problem with shutils tree remove functions on Windows.
@@ -112,31 +81,6 @@ def getDefaultManifest():
     defaultManifest['version'] = '1.0.0'
     return defaultManifest
 
-#初始化子模块更新需要的配置文件
-def initSubModulesCfg(gamID,moduleName,remoteUrl,version,depMainVer):
-    cfgFilePath = '../../../web/subModulesCfg.json'
-    subModuleCfg =  collections.OrderedDict()
-    if os.path.exists(cfgFilePath):
-        fileJson = json.load(open(cfgFilePath),object_pairs_hook=OrderedDict)
-        if (fileJson):
-            subModuleCfg = fileJson
-    if depMainVer != None:
-        subModuleCfg[gamID] = {
-            'storagePath': 'update/modules/' + moduleName,
-            'localManifest': 'modules/' + moduleName + '/res/project.manifest',
-            'remoteManifest': remoteUrl + 'sub/' + moduleName + '/' + version + '/project.manifest',
-            "version": version,
-            "depMainVersion": depMainVer
-        }
-    else:
-        subModuleCfg[gamID] = {
-            'storagePath': 'update/modules/' + moduleName,
-            'localManifest': 'modules/' + moduleName + '/res/project.manifest',
-            'remoteManifest': remoteUrl + 'sub/' + moduleName + '/' + version + '/project.manifest',
-            "version": version
-        }
-    json.dump(subModuleCfg, open(cfgFilePath, "w+"),indent = 4)
-
 
 def readyUpadteFiles():
     f = file(updateDirConfig,'rb')
@@ -146,9 +90,6 @@ def readyUpadteFiles():
         if (updateConfig != None):
             if (updateConfig['main']):
                 keys.append('main')
-            if (updateConfig['modules']):
-                for key in updateConfig['modules']:
-                    keys.append(key)
         return updateConfig, keys
     except ValueError as e:
         print(u'updateConfig.json 解析失败')
@@ -208,53 +149,6 @@ def initMainModule(config, version,oldOutAsserts):
                 removetree('./main/')
     else:
         print u"未找到main 模块,请检查 updateConfig.json"
-        return False
-
-# 初始化子模块
-def initSubModule(config,name,version,oldOutAsserts,depMainVer):
-    module = config['modules'][name]
-    moduleDir = 'sub/'+name+'/'+version+'/'
-    if (os.path.exists('./modules')):
-        removetree('./modules')
-        #shutil.rmtree('./modules',onerror=onerror)
-    if (module):
-        for key in module:
-            filePath = module[key]
-            paths = os.path.split(filePath)
-            print key
-            if (key == 'src'):
-                print u'生成代码....'
-                tmpPath = paths[len(paths) - 1]
-                cmd = 'cocos jscompile -s ' + filePath + ' -d ./' + moduleDir + tmpPath
-                print cmd
-                os.system(cmd)
-            elif (key == 'res'):
-                print u'生成资源....'
-                tmpPath = './' + moduleDir + paths[len(paths) - 1]
-                projectManifestOutDir = tmpPath
-                rmAndCopy(filePath, tmpPath)
-        #初始化manifest
-        pmPath,changeLog = initManifest(config['manifestUrl'],'sub/'+name+'/',version,oldOutAsserts)
-
-        # 写入changeLog
-        changeLogFileName = './'+name+'ChangeLog.json'
-        json.dump(changeLog, open(changeLogFileName, "w+"), indent=4)
-
-        # 拷贝project.manifest 到 运行目录
-        shutil.copy(pmPath, module['res']+'/project.manifest')
-
-        if(config['outDir']):
-            outDir = config['outDir']+'/sub/'+name+'/'
-            rmAndCopy('sub/'+name+'/',outDir)
-            if os.path.exists('./sub/'):
-                #shutil.rmtree('./sub/',onerror=onerror)
-                removetree('./sub/')
-
-        # 初始化子模块更新的配置文件
-        initSubModulesCfg(module['gameID'],name,config['manifestUrl'],version,depMainVer)
-
-    else:
-        print (encodeforPlatform("未找到[%s]模块,updateConfig.json") %name)
         return False
 
 def wirteManifest(filePath,manifest):
@@ -410,20 +304,6 @@ def versionGenerator(path,prefix,manifest,oldOutAsserts,changeLog):
                 if(extension.lower() == "zip"):
                     manifest['asserts'][relative]['compressed'] = True
 
-# 生成回滚文件版本号
-def generatorRollBackVersion(versionFile,curVersion):
-    verList = curVersion.split('.')
-    backVersion = getAddVersionList(verList)
-    versionJson = json.load(open(versionFile,'rb'),object_pairs_hook=OrderedDict)
-    oldVer = versionJson['version']
-    print oldVer  + ' '+ backVersion
-    versionJson['packageUrl']  = versionJson['packageUrl'].replace(oldVer, backVersion)
-    versionJson['remoteManifestUrl'] = versionJson['remoteManifestUrl'].replace(oldVer, backVersion)
-    versionJson['version'] = backVersion
-    json.dump(versionJson, open(versionFile, "w+"), indent=4)
-    return oldVer,backVersion
-
-
 def filterPath(filePath):
     for i in range(len(filterArray)):
         str = filterArray[i]
@@ -440,40 +320,6 @@ def generatorChangLog(changeLog,oldOutAsserts,file,md5):
             changeLog.append(file)
         elif md5Data['md5'] != md5:
             changeLog.append(file)
-
-
-# 生成回滚
-def generatorRollBACK(type,srcDir,curVersion):
-    autoGen = raw_input(encodeforPlatform('请选择是否生成回滚包:(y/n), 请输入 : ')).lower()
-    if autoGen == 'y':
-        print u'生成回滚包.....'
-        destDir = './RollBack'
-        if (type == 'main'):
-            srcDir = srcDir + '/' + type
-            destDir = destDir + '/' + type
-        else:
-            srcDir = srcDir + '/sub/' + type
-            destDir = destDir + '/sub/' + type
-
-        if (os.path.exists(destDir)):
-            removetree(destDir)
-            #shutil.rmtree(destDir,onerror=onerror)
-        if (os.path.exists(srcDir)):
-            print 'copy %s to %s' % (srcDir, destDir)
-            shutil.copytree(srcDir, destDir)
-            verFilePath = destDir + '/version.manifest'
-            oldVer, backVer = generatorRollBackVersion(verFilePath, curVersion)
-            print u'回滚版本为:' + backVer
-            if (os.path.exists(destDir + '/' + oldVer)):
-                os.rename(destDir + '/' + oldVer, destDir + '/' + backVer)
-                projectFilePath = destDir + '/' + backVer + '/project.manifest'
-                generatorRollBackVersion(projectFilePath, curVersion)
-            else:
-                print u'生成回滚包失败...'
-        else:
-            print u'找不到上一个版本无法生成回滚包...'
-
-
                     
 if __name__ == "__main__":
     print (u"解析配置文件....")
@@ -492,26 +338,9 @@ if __name__ == "__main__":
                 resPath = updateConfig[key]['res']
                 versionFile = resPath + '/project.manifest'
                 version,oldOutAsserts = genVersion(versionFile)
-                rollbackSrc = updateConfig['outDir']
-                if updateConfig.has_key('rollBack'):
-                    rollbackSrc = updateConfig['rollBack']
-                generatorRollBACK(key,rollbackSrc,version)
                 initMainModule(updateConfig,version,oldOutAsserts)
             else:
-                depMainVer = None
-                isdep  = raw_input(encodeforPlatform('是否依赖主模块版本?(y/n) : '))
-                if isdep=='y' or isdep=='Y':
-                    depMainVer = raw_input(encodeforPlatform('请输入依赖主模块版本号 : '))
-
-                resPath = updateConfig['modules'][key]['res']
-                versionFile = resPath + '/project.manifest'
-                version, oldOutAsserts = genVersion(versionFile)
-                rollbackSrc = updateConfig['outDir']
-                if updateConfig.has_key('rollBack'):
-                    rollbackSrc = updateConfig['rollBack']
-                generatorRollBACK(key, rollbackSrc, version)
-                initSubModule(updateConfig, key, version, oldOutAsserts, depMainVer)
-                print version
+                print (u"子模块相关")
         elif selectIndex == len(keys) :
             break
         else:

@@ -8,10 +8,5 @@
 	],
 	"res":"../res"
 },
-"modules":{
-	"hhmj":{
-	}
-},
-"outDir":"../web",
-"rollBack":"../web"
+"outDir":"../web"
 }

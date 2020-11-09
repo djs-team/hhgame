@@ -44,8 +44,8 @@
 - (void)setModel:(CXHomeRoomModel *)model {
     _model = model;
     [_room_image sd_setImageWithURL:[NSURL URLWithString:model.fm_room_image]];
-    _room_descLabel.text = [NSString stringWithFormat:@"%@岁 · %@",model.fm_age, model.fm_city];
-    _room_nameLabel.text = model.room_name;
+//    _room_descLabel.text = [NSString stringWithFormat:@"%@岁 · %@",model.fm_age, model.fm_city];
+    _room_nameLabel.text = [NSString stringWithFormat:@"欢迎来到%@的直播间",model.room_name];;
     
     [_user_avatarImage sd_setImageWithURL:[NSURL URLWithString:model.maker_avatar]];
     _room_lockView.hidden = [model.room_lock integerValue] != 1;

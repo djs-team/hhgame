@@ -253,7 +253,6 @@ public class MicroFaceView extends FrameLayout {
 
     public void releaseLayout(int myType) {
         ViewBindUtils.setVisible(mBinding.llMicroOperate, false);
-        mBinding.ivRankUsers.setVisibility(GONE);
         mBinding.ivGiveRose.setVisibility(GONE);
         mBinding.ivGiveRose.setOnClickListener(null);
         mBinding.tvUserInfo.setText("");
@@ -275,8 +274,15 @@ public class MicroFaceView extends FrameLayout {
             mBinding.rlDefaultEmpty.setVisibility(GONE);
             mBinding.rlEmptyMan.setVisibility(GONE);
             mBinding.rlEmptyWoman.setVisibility(VISIBLE);
-            ViewBindUtils.setText(mBinding.tvWomanMicroDesc, isRoomOwner ? "邀请女嘉宾" : "女嘉宾专属位");
+            ViewBindUtils.setText(mBinding.tvWomanMicroDesc, isRoomOwner ? "邀请上麦" : "女嘉宾专属位");
             ViewBindUtils.setVisible(mBinding.ivWomenMicroBg, true);
+            if (MatchMakerUtils.isRoomOwner()) {
+                ViewBindUtils.setVisible(mBinding.ivWomenMicroBg, true);
+                ViewBindUtils.setVisible(mBinding.ivWomenMicroBg2, false);
+            } else {
+                ViewBindUtils.setVisible(mBinding.ivWomenMicroBg, false);
+                ViewBindUtils.setVisible(mBinding.ivWomenMicroBg2, true);
+            }
         } else {
             mBinding.tvDefaultDesc.setText(isRoomOwner ? "邀请上麦" : "申请上麦");
             mBinding.rlDefaultEmpty.setVisibility(VISIBLE);
@@ -300,10 +306,10 @@ public class MicroFaceView extends FrameLayout {
     GuardHeaderAdapter guardHeaderAdapter = null;
 
     private void setRankHeards(List<String> heads, String userId) {
-        boolean musicMode = SongStateUtils.getSingleton2().isChangeView();
-        String singerId = SongStateUtils.getSingleton2().getConsertUserId();
-        boolean isHideHeads = musicMode && !userId.equals(singerId);
-        ViewBindUtils.setVisible(mBinding.ivRankUsers, !isHideHeads);
+//        boolean musicMode = SongStateUtils.getSingleton2().isChangeView();
+//        String singerId = SongStateUtils.getSingleton2().getConsertUserId();
+//        boolean isHideHeads = musicMode && !userId.equals(singerId);
+//        ViewBindUtils.setVisible(mBinding.ivRankUsers, !isHideHeads);
         guardHeaderAdapter = new GuardHeaderAdapter(mContext);
         mBinding.ivRankUsers.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.HORIZONTAL, false));
         mBinding.ivRankUsers.setAdapter(guardHeaderAdapter);

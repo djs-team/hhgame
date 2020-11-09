@@ -64,7 +64,7 @@ public class OssUpUtil {
         return oss;
     }
 
-    public OSSAsyncTask upToOss(int aType, String imgPath, OSS mOss, String bucketname, final OssUpUtil.OssUpCallback ossUpCallback) {
+    public OSSAsyncTask upToOss(int aType, String imgPath, OSS mOss, String bucketname, String endpoint, final OssUpUtil.OssUpCallback ossUpCallback) {
         String objectKey;
         if (aType == 4) {//身份证
             objectKey = "memberpid/" + UserUtils.getUser().getUid() + "/" + System.currentTimeMillis() + ".jpg";
@@ -74,6 +74,10 @@ public class OssUpUtil {
         } else if (aType == 5) {//举报
             String path = UserUtils.getUser() == null ? "register" : UserUtils.getUser().getUid();
             objectKey = "MyReport/" + path + "/" + System.currentTimeMillis() + ".jpg";
+        } else if (aType == 6) {//棋牌头像
+//            https://hhmjstorage.oss-cn-qingdao.aliyuncs.com/head/20201029185910.jpg
+            String path = "https://" + bucketname + "." + endpoint+"/";
+            objectKey ="head/" + System.currentTimeMillis() + ".jpg";
         } else {
             objectKey = UserUtils.getUser().getUid() + "/" + System.currentTimeMillis() + (aType == 0 ? ".jpg" : ".amr");
         }

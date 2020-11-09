@@ -297,13 +297,67 @@ load('game/public/GameUtil',function () {
     }
 
     GameUtil.delayBtn = function (btn,delayTime) {
+        if (!btn) {
+            return
+        }
         btn.retain()
         btn.setTouchEnabled(false)
-        delayTime = delayTime || 2
+        delayTime = delayTime || 1
         btn.runAction(cc.Sequence(cc.DelayTime(delayTime),cc.CallFunc(function () {
             btn.setTouchEnabled(true)
             btn.release()
         })))
+    }
+
+    GameUtil.delayBtns = function (btns,delayTime) {
+        if(!btns)
+            return
+        for(let i = 0; i < btns.length; i++){
+            GameUtil.delayBtn(btns[i],delayTime)
+        }
+
+    },
+
+    GameUtil.onForMatTxt = function (txt,forMatLength) {
+        let forMatTxt = ''
+        let txt_array = txt.split('\n');
+        for (let i=0; i<txt_array.length; i++) {
+            let hangText = ''
+            for (let j=0; j<txt_array[i].length; j++) {
+                let setString = hangText+txt_array[i][j]
+                if ((setString.replace(/[^\x00-\xff]/g, '**')).length>forMatLength) {
+                    forMatTxt = forMatTxt+hangText+'\n'
+                    hangText = ''
+                    hangText = txt_array[i][j]
+                } else {
+                    hangText = setString
+                }
+            }
+            forMatTxt = forMatTxt+hangText+'\n'
+        }
+
+        return forMatTxt
+    }
+
+    GameUtil.onForMatTxtLength = function (txt,forMatLength,_default) {
+
+        let strLength = 0
+        let resultTxt = ''
+        for (let i = 0; i < txt.length; i++) {
+            if (txt.charCodeAt(i) > 255) //如果是汉字，则字符串长度加2
+                strLength += 2
+            else
+                strLength++
+
+            if(strLength > forMatLength)
+                break
+            resultTxt += txt[i]
+        }
+
+        if(resultTxt != txt && _default)
+            resultTxt += _default
+
+        return resultTxt
     }
 
     return GameUtil

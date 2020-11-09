@@ -1571,17 +1571,17 @@
                 },
                 "PreSize": {
                   "X": 0.1258,
-                  "Y": 0.0319
+                  "Y": 0.0361
                 },
                 "LeftMargin": 108.2406,
                 "RightMargin": 1010.7594,
-                "TopMargin": 25.6066,
-                "BottomMargin": 671.3934,
+                "TopMargin": 24.1066,
+                "BottomMargin": 669.8934,
                 "Tag": 59,
                 "ActionTag": -1982245364,
                 "Size": {
                   "X": 161.0,
-                  "Y": 23.0
+                  "Y": 26.0
                 },
                 "Name": "searchEdit",
                 "ctype": "TextFieldObjectData"

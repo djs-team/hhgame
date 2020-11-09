@@ -5,6 +5,7 @@ import android.arch.lifecycle.ViewModel;
 
 import com.deepsea.mua.app.im.repository.SysMsgRepository;
 import com.deepsea.mua.core.network.resource.Resource;
+import com.deepsea.mua.stub.data.BaseApiResult;
 import com.deepsea.mua.stub.entity.SystemMsgListBean;
 
 import javax.inject.Inject;
@@ -24,7 +25,16 @@ public class SysMsgViewModel extends ViewModel {
 
     public LiveData<Resource<SystemMsgListBean>> refresh() {
         pageNumber = 1;
-        return mRepository.getSystemMsgList();
+        return mRepository.getSystemMsgList(pageNumber);
+    }
+
+    public LiveData<Resource<SystemMsgListBean>> loadMore() {
+        pageNumber++;
+        return mRepository.getSystemMsgList(pageNumber);
+    }
+
+    public LiveData<Resource<BaseApiResult>> systemDel(String id) {
+        return mRepository.systemDel(id);
     }
 
 }

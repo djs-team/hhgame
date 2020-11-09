@@ -26,6 +26,7 @@ load('module/mahjong/ui/DeskCardLayerMdt', function () {
                 TableEvent.AutoPlayProto,
                 TableEvent.updateSelfHandCard,
                 TableEvent.clearTableGaming,
+                TableEvent.JiaGangTableProto,
             ]
         },
         handleNotification: function (notification) {
@@ -36,6 +37,7 @@ load('module/mahjong/ui/DeskCardLayerMdt', function () {
                     this.initView()
                     break
                 case TableEvent.UpdateView:
+                case TableEvent.JiaGangTableProto:
                     this.updateView()
                     break
                 case TableEvent.InitCardProto:
@@ -55,6 +57,7 @@ load('module/mahjong/ui/DeskCardLayerMdt', function () {
                 case TableEvent.PlayerSelectProto:
                     this.PlayerSelectProto(body)
                     this.runDirection()
+                    // this.view.downSelfHandCard()
                     break
                 case TableEvent.AutoPlayProto:
                     this.AutoPlayProto(body)
@@ -105,11 +108,11 @@ load('module/mahjong/ui/DeskCardLayerMdt', function () {
             }
 
             if (msg.updateHandCard && msg.updateHandCard.isNeed) {
-                let seatID = msg.updateHandCard.seatID
-                let pCurSeatID = pData.tableData.pCurSeatID
-                let isTurn = (pCurSeatID === parseInt(seatID))
-                let player = players[seatID]
-                let uiSeat = pData.seatId2UI(seatID)
+                let seatID = msg.updateHandCard.seatID//上一次选择的玩家座位号
+                let pCurSeatID = pData.tableData.pCurSeatID//当前玩家座位号
+                let isTurn = (pCurSeatID === parseInt(seatID))//当前操作玩家和上一个玩家是否是同一个人
+                let player = players[seatID]//上一个操作玩家
+                let uiSeat = pData.seatId2UI(seatID)//上一个操作玩家的UI座位号
                 this.view.updateHandCard(uiSeat, player, isTurn)
             }
         },
@@ -146,9 +149,11 @@ load('module/mahjong/ui/DeskCardLayerMdt', function () {
 
             this.view.onePutCard(uiSeat, card)
 
-            if (pPutSeatID !== pData.pMySeatID) {
+            // if (pPutSeatID !== pData.pMySeatID) {
                 this.view.updateHandCard(uiSeat, players[pPutSeatID], pCurSeatID === pData.pMySeatID)
-            }
+            // } else {
+            //
+            // }
 
             appInstance.gameAgent().mjUtil().putCardSound(card)
         },
@@ -174,11 +179,12 @@ load('module/mahjong/ui/DeskCardLayerMdt', function () {
         InitCardProto: function () {
             let pData = appInstance.dataManager().getPlayData()
             let players = pData.players
+
             for (let k in players) {
                 let uiSeat = pData.seatId2UI(k)
-                players[k].showCards = []
                 this.view.updateHandCard(uiSeat,players[k])
             }
+            this.view.reBeginGame()
             let nDeckCardNum = pData.tableData.nDeckCardNum
             this.updateDeckCard(nDeckCardNum)
         },

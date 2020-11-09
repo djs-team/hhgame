@@ -22,6 +22,8 @@ load('game/ui/layer/arena/ArenaMdt', function () {
         getNotificationList: function () {
             return [
                 GameEvent.GET_ARENAMESSAGE,
+                GameEvent.FUKA_MATERIA_LOG,
+                GameEvent.FUKA_MATERIA_EXCHANGE,
             ]
         },
         handleNotification: function (notification) {
@@ -30,6 +32,12 @@ load('game/ui/layer/arena/ArenaMdt', function () {
             switch (name) {
                 case GameEvent.GET_ARENAMESSAGE:
                     this.onInitMatchList(body)
+                    break
+                case GameEvent.FUKA_MATERIA_LOG:
+                    this.view.onUpdateAwardList(body)
+                    break
+                case GameEvent.FUKA_MATERIA_EXCHANGE:
+                    this.view.onExchangeOnlineResult(body)
                     break
                 default:
                     break

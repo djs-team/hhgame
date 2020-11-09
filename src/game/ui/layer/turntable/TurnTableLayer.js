@@ -14,8 +14,8 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
         _lightInterval: 0.5,
         _canTurnTableStatus: 0,//0代表可以免费1代表不可以免费可看视频2不可以转盘
         ctor: function () {
+            appInstance.gameAgent().hideLoading()
             this._super(ResConfig.View.TurnTableLayer)
-
             this.registerMediator(new TurnTableMdt(this))
             this.registerEventListener('rewardVideoCallback', this.onRewardVideoCallback)
 
@@ -66,8 +66,7 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
 
             }
         },
-        onGoShopClick: function (sender) {
-            GameUtil.delayBtn(sender);
+        onGoShopClick: function () {
         },
         onEnter: function () {
             this._super()
@@ -121,7 +120,7 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
         },
 
         initView: function () {
-
+            this.recordLogListView.setScrollBarEnabled(false)
             this.timesEndPnl.setVisible(false)
             this.explainPnl.setVisible(false)
             this.recordsPnl.setVisible(false)
@@ -168,8 +167,7 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
         },
 
 
-        onCloseClick: function (sender) {
-            GameUtil.delayBtn(sender);
+        onCloseClick: function () {
             // appInstance.gameAgent().tcpGame().enterTable()
             appInstance.sendNotification(GameEvent.HALL_RED_GET)
             appInstance.uiManager().removeUI(this)
@@ -212,7 +210,6 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
         },
 
         onTurnPointClick: function (sender) {
-            GameUtil.delayBtn(sender);
             tabState = 0;
             this.pointPnl.setTouchEnabled(false)
             if (!this.onCanTurnPointFunction())
@@ -423,18 +420,17 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
             this.onUpdateTurnPointImg()
 
             this.awardsPnl.setVisible(false)
-            this.acceptedPnl.setVisible(true)
+           // this.acceptedPnl.setVisible(true)
+            this.pointPnl.setTouchEnabled(true)
 
         },
 
-        onHideAcceptPnlClick: function (sender) {
-            GameUtil.delayBtn(sender);
+        onHideAcceptPnlClick: function () {
             this.acceptedPnl.setVisible(false)
 
         },
 
-        onHideRulePnlClick: function (sender) {
-            GameUtil.delayBtn(sender);
+        onHideRulePnlClick: function () {
             this.rulePnl.setVisible(false)
         },
 
@@ -445,8 +441,7 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
 
         },
 
-        onHideRecordPnlClick: function (sender) {
-            GameUtil.delayBtn(sender);
+        onHideRecordPnlClick: function () {
             this.recordsPnl.setVisible(false)
         },
 

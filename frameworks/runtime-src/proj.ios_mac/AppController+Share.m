@@ -10,41 +10,47 @@
 @implementation AppController (Share)
 
 // 微信分享(网页分享)
-+ (void)WXShareIOSforUrl:(NSString *)url Title:(NSString *)tit Desc:(NSString *)desc image:(NSString *)image
++ (void)WXShareIOSforUrl:(NSString *)url Title:(NSString *)tit Desc:(NSString *)desc image:(NSString *)image platform:(NSString *)platform
 {
-    if ([WXApi isWXAppInstalled]) {
-        WXMediaMessage * webmsg = [WXMediaMessage message];
-        webmsg.title = tit;
-        webmsg.description = desc;
-        // 缩略图
-        UIImage * img = [UIImage imageWithContentsOfFile:image];
-        if (img) {
-            NSData *imageData = [self compressWithOriginalImage:img maxLength:30*1024];
-            UIImage *shareImage = [UIImage imageWithData:imageData];
-            [webmsg setThumbImage:shareImage];
-        }
-        WXWebpageObject * webobj = [WXWebpageObject object];
-        webobj.webpageUrl = url;
-        webmsg.mediaObject = webobj;
-        
-        SendMessageToWXReq * req  = [[SendMessageToWXReq alloc]init];
-        req.bText = NO;
-        req.message = webmsg;
-        req.scene = WXSceneSession; // 默认发送到聊天界面
-        
-        [WXApi sendReq:req completion:nil];
-        
-        NSLog(@"已经发送req");
+    if ([WXApi isWXAppInstalled] == NO) return;
+    
+    WXMediaMessage * webmsg = [WXMediaMessage message];
+    webmsg.title = tit;
+    webmsg.description = desc;
+    // 缩略图
+    UIImage * img = [UIImage imageWithContentsOfFile:image];
+    if (img) {
+        NSData *imageData = [self compressWithOriginalImage:img maxLength:30*1024];
+        UIImage *shareImage = [UIImage imageWithData:imageData];
+        [webmsg setThumbImage:shareImage];
     }
+    WXWebpageObject * webobj = [WXWebpageObject object];
+    webobj.webpageUrl = url;
+    webmsg.mediaObject = webobj;
+    
+    SendMessageToWXReq * req  = [[SendMessageToWXReq alloc]init];
+    req.bText = NO;
+    req.message = webmsg;
+    if ([platform isEqualToString:@"WEIXIN_CIRCLE"]) {
+        req.scene = WXSceneTimeline; // 朋友圈
+    } else {
+        req.scene = WXSceneSession;
+    }
+    
+    [WXApi sendReq:req completion:nil];
+    
+    NSLog(@"已经发送req");
 }
 
 // (文本)
-+ (void)WXShareIOSforDescription:(NSString *)des isTimeLine:(BOOL)isTimeLine
++ (void)WXShareIOSforDescription:(NSString *)des platform:(NSString *)platform
 {
+    if ([WXApi isWXAppInstalled] == NO) return;
+    
     SendMessageToWXReq * req= [[SendMessageToWXReq alloc]init];
     req.text = des;
     req.bText = YES;
-    if (isTimeLine == YES) {
+    if ([platform isEqualToString:@"WEIXIN_CIRCLE"]) {
         req.scene = WXSceneTimeline; // 朋友圈
     } else {
         req.scene = WXSceneSession; 
@@ -54,27 +60,16 @@
 }
 
 // (截图)
-+ (void)WXShareIOSforImage:(NSString *)path
++ (void)WXShareIOSforImage:(NSString *)path platform:(NSString *)platform
 {
-    if (path.length <= 0) {
-        return;
-    }
-//    NSLog(@"从cocos发过来的图片地址----> %@",path);
-//    UIImage * img = [UIImage imageWithContentsOfFile:path];
-//    if (!img) {
-//        return;
-//    }
-//    // 根据原图压缩一半分辨率
-//    float h = img.size.height;
-//    float w = img.size.width;
-//    NSData * newdata = [self imageWithImage:img scaledToSize:CGSizeMake(w/2, h/2)]; // 调整图片分辨率
-//    UIImage * newimg =[self zipImgData:newdata]; // 压缩图片字节
+    if ([WXApi isWXAppInstalled] == NO) return;
     
     NSData *imageData = [NSData dataWithContentsOfFile: path];
-//    NSData *imageData = UIImageJPEGRepresentation(img, 0.5);
     
+    if (imageData.length <= 0) {
+        return;
+    }
     WXMediaMessage * msg = [WXMediaMessage message];
-//    [msg setThumbImage:newimg];
     
     WXImageObject * imgObj = [WXImageObject object];
     imgObj.imageData = imageData ;
@@ -83,7 +78,7 @@
     SendMessageToWXReq * req= [[SendMessageToWXReq alloc]init];
     req.bText = NO;
     req.message = msg;
-    req.scene = WXSceneTimeline;
+    req.scene = [platform isEqualToString:@"WEIXIN"] ? WXSceneSession : WXSceneTimeline;
     
     [WXApi sendReq:req completion:nil];
 }

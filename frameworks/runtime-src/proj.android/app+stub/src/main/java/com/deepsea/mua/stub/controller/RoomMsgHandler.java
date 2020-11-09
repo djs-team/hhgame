@@ -12,6 +12,7 @@ import android.text.style.ForegroundColorSpan;
 import android.view.View;
 
 import com.deepsea.mua.core.utils.ResUtils;
+import com.deepsea.mua.core.utils.ToastUtils;
 import com.deepsea.mua.stub.R;
 import com.deepsea.mua.stub.entity.model.RoomMsgBean;
 import com.deepsea.mua.stub.entity.socket.receive.JoinUser;
@@ -203,7 +204,7 @@ public class RoomMsgHandler {
             String desc = getUserInfo(user.getCity(), user.getAge(), user.getName());
             appendNick(builder, desc, user.getSex());
             appendSysMsg(builder, " 进入房间", user.getUserLevel());
-            setNickClick(builder, user.getName(), user.getUserId(), start);
+            setNickClick(builder, desc, user.getUserId(), start);
             result.setMsg(builder);
         }
         return result;
@@ -258,10 +259,10 @@ public class RoomMsgHandler {
                 String desc = getUserInfo(model.getGiftGiver().getCity(), model.getGiftGiver().getAge(), model.getGiftGiver().getName());
                 appendNick(builder, desc, model.getGiftGiver().getSex());
                 appendSysMsg(builder, "打赏", model.getUserLevel());
-                setNickClick(builder, model.getGiftGiver().getName(), model.getGiftGiver().getUserId(), start);
+                setNickClick(builder, desc, model.getGiftGiver().getUserId(), start);
 //                start = builder.length();
                 appendNick(builder, bean.getTargetName() + " ", bean.getSex());
-//                setNickClick(builder, bean.getTargetName(), bean.getTargetName(), start);
+                setNickClick(builder, bean.getTargetName(), String.valueOf(bean.getTargetId()), desc.length() + 2);
                 result.setUrl(url);
                 result.setCount(model.getCount());
                 result.setStart(builder.length());
@@ -318,7 +319,7 @@ public class RoomMsgHandler {
 
             appendNick(builder, desc, wsUser.getSex());
             appendSysMsg(builder, " 上麦了", micro.getUserLevel());
-            setNickClick(builder, wsUser.getName(), wsUser.getUserId(), start);
+            setNickClick(builder, desc, wsUser.getUserId(), start);
             result.setMsg(builder);
         }
         return result;
@@ -346,7 +347,7 @@ public class RoomMsgHandler {
             appendGuard(builder, result.getGuardSign());
             String desc = getUserInfo(user.getCity(), user.getAge(), user.getName());
             appendNick(builder, desc + "：", user.getSex());
-            setNickClick(builder, user.getName(), user.getUserId(), start);
+            setNickClick(builder, desc, user.getUserId(), start);
             if (!TextUtils.isEmpty(msgBean.getMsg())) {
                 appendMsg(builder, msgBean.getMsg(), user.getUserLevel());
             }

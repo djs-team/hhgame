@@ -15,8 +15,8 @@
 @interface CXLiveRoomUIView() <SDCycleScrollViewDelegate>
 
 // Top
-@property (weak, nonatomic) IBOutlet UIButton *top_roomNameBtn;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *top_roomNameWidthLayout;
+@property (weak, nonatomic) IBOutlet UIView *top_roomBgView;
+@property (weak, nonatomic) IBOutlet UIImageView *top_roomAvatar;
 @property (weak, nonatomic) IBOutlet UIButton *top_roomHotBtn;
 
 @property (weak, nonatomic) IBOutlet UIView *top_shouhuBgView;
@@ -47,8 +47,11 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     
-    _top_roomNameBtn.layer.masksToBounds = YES;
-    _top_roomNameBtn.layer.cornerRadius = 15;
+    _top_roomBgView.layer.masksToBounds = YES;
+    _top_roomBgView.layer.cornerRadius = 15;
+    _top_roomAvatar.layer.masksToBounds = YES;
+    _top_roomAvatar.layer.cornerRadius = 13;
+    
     _top_shouhuBgView.layer.masksToBounds = YES;
     _top_shouhuBgView.layer.cornerRadius = 15;
     _top_shouhuLabel.layer.masksToBounds = YES;
@@ -167,7 +170,7 @@
         
     } else {
         [self.regularView mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo([CXClientModel instance].room.RoomData.regular_top+52);
+            make.top.mas_equalTo([CXClientModel instance].room.RoomData.regular_top+54);
             make.left.mas_equalTo(0);
             make.right.mas_equalTo(-90);
             make.height.mas_equalTo(MAX(self.regularView.regular_height, 24));
@@ -195,7 +198,7 @@
         
         [self.musicLRCShowView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.left.right.mas_equalTo(0);
-            make.height.mas_equalTo(42);
+            make.height.mas_equalTo(54);
             make.bottom.equalTo(self.regularView.mas_top).offset(-5);
         }];
     }
@@ -219,17 +222,14 @@
 - (void)setModel:(CXLiveRoomModel *)model {
     _model = model;
     
-    [_top_roomNameBtn setTitle:[CXClientModel instance].room.RoomData.RoomName forState:UIControlStateNormal];
-    _top_roomNameBtn.imageView.size = CGSizeMake(26, 26);
-    _top_roomNameBtn.imageView.layer.masksToBounds = YES;
-    _top_roomNameBtn.imageView.layer.cornerRadius = 13;
-    [_top_roomNameBtn sd_setImageWithURL:[NSURL URLWithString:[CXClientModel instance].room.RoomData.RoomImage] forState:UIControlStateNormal];
-    _top_roomNameWidthLayout.constant = [[CXClientModel instance].room.RoomData.RoomName sizeWithFont:[UIFont systemFontOfSize:16]].width + 48;
+    _top_roomNameLabel.text = model.RoomData.RoomName;
+    [_top_roomAvatar sd_setImageWithURL:[NSURL URLWithString:model.RoomOwnerHeadUrl]];
+    _top_roomNameWidthLayout.constant = [model.RoomData.RoomName sizeWithFont:[UIFont systemFontOfSize:16]].width + 44;
     
     NSString *regular = [NSString stringWithFormat:@"规则规则%@", [CXClientModel instance].room.Tips];
     self.regularView.regular = regular;
     
-    self.ranks = model.Ranks;
+//    self.ranks = model.Ranks;
     
     NSInteger heatValue = [model.RoomData.VisitorNum integerValue] + [model.RoomData.ExternVisitorNumbers integerValue];
     if (heatValue < 100000) {
@@ -288,13 +288,25 @@
 
 - (void)setRanks:(NSArray *)ranks {
     if (ranks.count == 0) {
+        self.top_oneImage.hidden = YES;
+        self.top_twoImage.hidden = YES;
+        self.top_threeImage.hidden = YES;
         return;
     } else if (ranks.count == 1) {
+        self.top_oneImage.hidden = NO;
+        self.top_twoImage.hidden = YES;
+        self.top_threeImage.hidden = YES;
         [self.top_oneImage sd_setImageWithURL:[NSURL URLWithString:ranks[0]]];
     } else if (ranks.count == 2) {
+        self.top_oneImage.hidden = NO;
+        self.top_twoImage.hidden = NO;
+        self.top_threeImage.hidden = YES;
         [self.top_oneImage sd_setImageWithURL:[NSURL URLWithString:ranks[0]]];
         [self.top_twoImage sd_setImageWithURL:[NSURL URLWithString:ranks[1]]];
     } else if (ranks.count == 3) {
+        self.top_oneImage.hidden = NO;
+        self.top_twoImage.hidden = NO;
+        self.top_threeImage.hidden = NO;
         [self.top_oneImage sd_setImageWithURL:[NSURL URLWithString:ranks[0]]];
         [self.top_twoImage sd_setImageWithURL:[NSURL URLWithString:ranks[1]]];
         [self.top_threeImage sd_setImageWithURL:[NSURL URLWithString:ranks[2]]];

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
+import com.deepsea.mua.core.utils.ToastUtils;
 import com.deepsea.mua.core.websocket.WsocketListener;
 import com.deepsea.mua.core.websocket.WsocketManager;
 import com.deepsea.mua.stub.base.BaseActivity;
@@ -127,6 +128,20 @@ public class RoomSetActivity extends BaseActivity<ActivityRoomSetBinding> {
             int maxLength = 5;
             switch (msgId) {
                 //修改房间名称
+                case 49:
+                    String result = object.get("Success").getAsString();
+                    if (result.equals("1")) {
+                        ToastUtils.showToast("修改成功");
+                    } else if (result.equals("2")) {
+                        ToastUtils.showToast("没有权限修改");
+                    } else if (result.equals("3")) {
+                        ToastUtils.showToast("房间名不能为空");
+                    } else if (result.equals("4") || result.equals("5")) {
+                        ToastUtils.showToast("房间名中包含了敏感词");
+                    } else if (result.equals("6")) {
+                        ToastUtils.showToast("房间名不能超过最大字数");
+                    }
+                    break;
                 case 50:
                     String name = object.get("Name").getAsString();
                     mBinding.roomNameTv.setText(name);

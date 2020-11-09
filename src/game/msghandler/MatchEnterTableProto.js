@@ -27,7 +27,6 @@ load('game/msghandler/MatchEnterTableProto', function () {
                     }
                     appInstance.sendNotification(GameEvent.DIALOG_HIDE_ALL)
                     appInstance.gameAgent().addDialogUI(dialogMsg)
-
                     break
                 case 1:
                     //为避免遮挡 晋级就不再这里面显示了 显示到大厅去
@@ -60,9 +59,6 @@ load('game/msghandler/MatchEnterTableProto', function () {
                     appInstance.gameAgent().Tips('比赛已被销毁！！！')
                     break
             }
-
-
-            appInstance.sendNotification(Event.UpdateView)
         },
 
         initData: function () {
@@ -74,7 +70,7 @@ load('game/msghandler/MatchEnterTableProto', function () {
             let playerProto = [
                 { key: 'name', type: this._byteType.UTF8},
                 { key: 'sex', type: this._byteType.Int},//0 男 1女
-                { key: 'coins', type: this._byteType.Int},//本轮得分
+                { key: 'coins', type: this._byteType.UTF8},//本轮得分
                 { key: 'curRanking', type: this._byteType.Int},//本轮排名
                 { key: 'totalRanking', type: this._byteType.Int},//总排名
                 { key: 'extend', type: this._byteType.UTF8},//冗余字段
@@ -91,6 +87,7 @@ load('game/msghandler/MatchEnterTableProto', function () {
                 { key: 'mcRoomMode', type: this._byteType.Int},
                 { key: 'mcExtend', type: this._byteType.UTF8},//冗余字段  consolebut是否显示取消按钮 0显示 1不显示  CountDown还差多少时间可以显示取消按钮
                 { key: 'mcPlayers', type: this._byteType.Barray, proto: playerProto},//人员信息
+                { key: 'mcCurRound', type: this._byteType.Int}, //当前轮数
             ]
         }
     })

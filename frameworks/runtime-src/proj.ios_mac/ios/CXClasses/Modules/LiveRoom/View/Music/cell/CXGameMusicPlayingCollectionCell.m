@@ -67,36 +67,41 @@
     _playing_SongInfo = playing_SongInfo;
     
     self.cur_nameLabel.text = _playing_SongInfo.SongName;
-    self.cur_originNameLabel.text = _playing_SongInfo.OriginalSingerName;
+    self.cur_originNameLabel.text = _playing_SongInfo.SingerName;
     self.cur_dianNameLabel.text = [NSString stringWithFormat:@"点播：%@", _playing_SongInfo.DemandUserName];
     if (_playing_SongInfo.ConsertUserId > 0) {
-        self.cur_changNameLabel.text = [NSString stringWithFormat:@"演唱上麦嘉宾：%@", _playing_SongInfo.ConsertUserName];
+        self.cur_changNameLabel.text = [NSString stringWithFormat:@"演唱嘉宾：%@", _playing_SongInfo.ConsertUserName];
     } else {
         self.cur_changNameLabel.text = @"";
     }
     
-    if ([CXClientModel instance].room.isConsertModel == YES) { // 伴唱模式
-        if ([CXClientModel instance].room.isHost == YES) {
-            if ([CXClientModel instance].room.isSonger == YES) {
-                self.action_bgView.hidden = NO;
-            } else {
-                self.action_bgView.hidden = NO;
-            }
-            
-        } else {
-            if ([CXClientModel instance].room.isSonger == YES) {
-                self.action_bgView.hidden = YES;
-            } else {
-                self.action_bgView.hidden = YES;
-            }
-        }
-    } else {
+    NSInteger pro_volumValue = MAX([CXClientModel instance].room.music_Volume, 30);
+    self.pro_volume.value = pro_volumValue;
+    self.pro_volumLabel.text = [NSString stringWithFormat:@"%ld", (long)pro_volumValue];
+//
+//    if ([CXClientModel instance].room.isConsertModel == YES) { // 伴唱模式
+//        if ([CXClientModel instance].room.isHost == YES) {
+//            if ([CXClientModel instance].room.isSonger == YES) {
+//                self.action_bgView.hidden = NO;
+//            } else {
+//                self.action_bgView.hidden = NO;
+//            }
+//        } else {
+//            if ([CXClientModel instance].room.isSonger == YES) {
+//                self.action_bgView.hidden = YES;
+//            } else {
+//                self.action_bgView.hidden = YES;
+//            }
+//        }
+//    } else {
         if ([CXClientModel instance].room.isHost == YES) {
             self.action_bgView.hidden = NO;
+            self.pro_volume.enabled = YES;
         } else {
             self.action_bgView.hidden = YES;
+            self.pro_volume.enabled = NO;
         }
-    }
+//    }
 }
 
 - (void)setPlaying_NextSongInfo:(CXSocketMessageMusicModel *)playing_NextSongInfo {

@@ -1,53 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
     </data>
 
-    <LinearLayout
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:id="@+id/rl_group"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:orientation="vertical"
-            android:paddingLeft="16dp"
-            android:paddingTop="15dp"
-            android:paddingRight="16dp"
-            android:paddingBottom="15dp">
+            android:layout_marginTop="10dp"
+            android:text="2020.10-23  15:00"
+            android:textColor="#ff818181"
+            android:textSize="12sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/tv_sys_time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="13dp"
-                android:text="2020-7-20  18：00"
-                android:textColor="#ff818181"
-                android:textSize="12sp" />
-
-            <TextView
-                android:id="@+id/tv_sys_content"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="9dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginBottom="15dp"
-                android:textColor="#ff999999"
-                android:textSize="12sp" />
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
+        <ImageView
+            android:id="@+id/iv_photo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:background="#BBBBBB" />
-    </LinearLayout>
+            android:layout_marginTop="19dp"
+            android:src="@drawable/icon_sys_msg_logo"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_time" />
+
+        <TextView
+            android:paddingBottom="7dp"
+            android:paddingTop="7dp"
+            android:paddingRight="16dp"
+            android:paddingLeft="16dp"
+            android:layout_marginLeft="10dp"
+            android:minHeight="50dp"
+            android:background="@drawable/white_radius_5dp"
+            android:id="@+id/tv_content"
+            android:text="111111111111111111111111111111111111"
+            android:layout_width="205dp"
+            android:layout_height="wrap_content"
+            android:textColor="#818181"
+            app:layout_constraintLeft_toRightOf="@id/iv_photo"
+            app:layout_constraintTop_toTopOf="@id/iv_photo" />
+
+    </android.support.constraint.ConstraintLayout>
 </layout>

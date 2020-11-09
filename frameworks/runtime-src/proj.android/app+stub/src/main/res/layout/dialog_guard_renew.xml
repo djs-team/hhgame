@@ -95,7 +95,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="22dp"
             android:layout_marginRight="27dp"
-            android:text="合合小可爱（ID:1111222553）"
             android:textColor="#8140EF"
             android:textSize="13sp"
             android:textStyle="bold"

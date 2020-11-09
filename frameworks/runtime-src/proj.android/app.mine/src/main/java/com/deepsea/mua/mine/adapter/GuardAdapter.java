@@ -1,6 +1,7 @@
 package com.deepsea.mua.mine.adapter;
 
 import android.content.Context;
+
 import com.deepsea.mua.core.utils.GlideUtils;
 import com.deepsea.mua.mine.R;
 import com.deepsea.mua.mine.databinding.ItemGuardBinding;
@@ -9,16 +10,18 @@ import com.deepsea.mua.stub.adapter.BindingViewHolder;
 import com.deepsea.mua.stub.entity.LookGuardUserVo;
 import com.deepsea.mua.stub.utils.PageJumpUtils;
 import com.deepsea.mua.stub.utils.SexResUtils;
+import com.deepsea.mua.stub.utils.UserUtils;
 import com.deepsea.mua.stub.utils.ViewBindUtils;
 
 /**
  * 守护榜adapter
  */
 public class GuardAdapter extends BaseBindingAdapter<LookGuardUserVo.GuardMemberlistBean, ItemGuardBinding> {
+    private String guardMainId;
 
-
-    public GuardAdapter(Context context) {
+    public GuardAdapter(Context context, String guardMainId) {
         super(context);
+        this.guardMainId = guardMainId;
     }
 
     @Override
@@ -36,6 +39,9 @@ public class GuardAdapter extends BaseBindingAdapter<LookGuardUserVo.GuardMember
             PageJumpUtils.jumpToProfile(item.getUserId());
         });
         ViewBindUtils.setText(holder.binding.tvIntimacy, "亲密值" + item.getIntimacy());
+        if (UserUtils.getUser().getUid().equals(guardMainId) || UserUtils.getUser().getUid().equals(item.getUserId())) {
+            ViewBindUtils.setText(holder.binding.tvDueDate, "还有" + item.getCountdown_day() + "天到期");
+        }
 
     }
 

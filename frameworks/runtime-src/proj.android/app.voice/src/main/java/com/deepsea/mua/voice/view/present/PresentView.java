@@ -215,15 +215,15 @@ public class PresentView extends FrameLayout {
     private void initListener() {
         ViewBindUtils.RxClicks(mBinding.presentTv, o -> {
             mBinding.viewPager.setCurrentItem(0);
-            mBinding.packTv.setTextColor(0xFFFFFFFF);
-            mBinding.presentTv.setTextColor(0xFF818181);
+            mBinding.presentTv.setTextColor(0xFFFFFFFF);
+            mBinding.packTv.setTextColor(0xFF818181);
             mBinding.viewCommonGiftLine.setVisibility(VISIBLE);
             mBinding.viewGuardGiftLine.setVisibility(INVISIBLE);
         });
         ViewBindUtils.RxClicks(mBinding.packTv, o -> {
             mBinding.viewPager.setCurrentItem(1);
-            mBinding.packTv.setTextColor(0xFF818181);
-            mBinding.presentTv.setTextColor(0xFFFFFFFF);
+            mBinding.presentTv.setTextColor(0xFF818181);
+            mBinding.packTv.setTextColor(0xFFFFFFFF);
             mBinding.viewCommonGiftLine.setVisibility(INVISIBLE);
             mBinding.viewGuardGiftLine.setVisibility(VISIBLE);
         });

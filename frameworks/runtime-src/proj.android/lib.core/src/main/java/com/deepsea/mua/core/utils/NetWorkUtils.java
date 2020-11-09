@@ -1,16 +1,28 @@
 package com.deepsea.mua.core.utils;
 
+import android.app.Application;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
+import android.os.Build;
+import android.telephony.CellInfo;
+import android.telephony.CellInfoCdma;
+import android.telephony.CellInfoGsm;
+import android.telephony.CellInfoLte;
+import android.telephony.CellInfoWcdma;
+import android.telephony.CellSignalStrengthCdma;
+import android.telephony.CellSignalStrengthGsm;
+import android.telephony.CellSignalStrengthLte;
+import android.telephony.CellSignalStrengthWcdma;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.text.DecimalFormat;
+import java.util.List;
 
 public class NetWorkUtils {
 
@@ -450,7 +462,7 @@ public class NetWorkUtils {
 
     }
 
-    public static String getWifiRssi(Context context) {
+    public static int getWifiRssi(Context context) {
         int asu = 85;
         try {
             final NetworkInfo network = ((ConnectivityManager) context
@@ -472,14 +484,14 @@ public class NetWorkUtils {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return asu + "dBm";
+        return asu;
     }
 
 
     /**
      * 检查sim卡状态
      *
-     * @param ctx
+     * @param
      * @return
      */
     public static boolean checkSimState(Context context) {
@@ -509,22 +521,185 @@ public class NetWorkUtils {
     }
 
 
-
     public static String checkWifiState(Context mContext) {
         ConnectivityManager connManager = (ConnectivityManager) mContext.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
-        boolean isWifiConnect=networkInfo.isConnected();
-        String wifi="";
+        boolean isWifiConnect = networkInfo.isConnected();
+        String wifi = "";
         if (isWifiConnect) {
             WifiManager mWifiManager = (WifiManager) mContext.getSystemService(Context.WIFI_SERVICE);
             WifiInfo mWifiInfo = mWifiManager.getConnectionInfo();
-             wifi =String.valueOf(mWifiInfo.getRssi());//获取wifi信号强度
+            wifi = String.valueOf(mWifiInfo.getRssi());//获取wifi信号强度
 
         } else {
             //无连接
-            wifi="-100";
+            wifi = "-100";
         }
         return wifi;
     }
 
+    private static int getConnectedTypeINT(Context context) {
+        NetworkInfo net = getConnectivityManager(context).getActiveNetworkInfo();
+        if (net != null) {
+            Log.i("network", "NetworkInfo: " + net.toString());
+            return net.getType();
+        }
+        return -1;
+    }
+
+    /**
+     * 获取ConnectivityManager
+     */
+    public static ConnectivityManager getConnectivityManager(Context context) {
+        return (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+    }
+
+
+    /**
+     * 获取ConnectivityManager
+     */
+    public static TelephonyManager getTelephonyManager(Context context) {
+        return (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
+    }
+
+    public static NetWorkType getNetWorkType(Context context) {
+        int type = getConnectedTypeINT(context);
+        switch (type) {
+            case ConnectivityManager.TYPE_WIFI:
+                return NetWorkType.WIFI;
+            case ConnectivityManager.TYPE_MOBILE:
+            case ConnectivityManager.TYPE_MOBILE_DUN:
+            case ConnectivityManager.TYPE_MOBILE_HIPRI:
+            case ConnectivityManager.TYPE_MOBILE_MMS:
+            case ConnectivityManager.TYPE_MOBILE_SUPL:
+                int teleType = getTelephonyManager(context).getNetworkType();
+                switch (teleType) {
+                    case TelephonyManager.NETWORK_TYPE_GPRS:
+                    case TelephonyManager.NETWORK_TYPE_EDGE:
+                    case TelephonyManager.NETWORK_TYPE_CDMA:
+                    case TelephonyManager.NETWORK_TYPE_1xRTT:
+                    case TelephonyManager.NETWORK_TYPE_IDEN:
+                        return NetWorkType.NET_2_G;
+                    case TelephonyManager.NETWORK_TYPE_UMTS:
+                    case TelephonyManager.NETWORK_TYPE_EVDO_0:
+                    case TelephonyManager.NETWORK_TYPE_EVDO_A:
+                    case TelephonyManager.NETWORK_TYPE_HSDPA:
+                    case TelephonyManager.NETWORK_TYPE_HSUPA:
+                    case TelephonyManager.NETWORK_TYPE_HSPA:
+                    case TelephonyManager.NETWORK_TYPE_EVDO_B:
+                    case TelephonyManager.NETWORK_TYPE_EHRPD:
+                    case TelephonyManager.NETWORK_TYPE_HSPAP:
+                        return NetWorkType.NET_3_G;
+                    case TelephonyManager.NETWORK_TYPE_LTE:
+                        return NetWorkType.NET_4_G;
+                    case 20:
+                        return NetWorkType.NET_5_G;
+                    default:
+                        return NetWorkType.UN_KNOWN;
+                }
+            default:
+                return NetWorkType.UN_KNOWN;
+        }
+    }
+
+
+    public enum NetWorkType {
+        UN_KNOWN(-1),
+        WIFI(1),
+        NET_2_G(2),
+        NET_3_G(3),
+        NET_4_G(4),
+        NET_5_G(5);
+
+        public int value;
+
+        NetWorkType(int value) {
+            this.value = value;
+        }
+    }
+
+    public static int getMobileDbm(Context mContext) {
+        int dbm = -1;
+        TelephonyManager tm = (TelephonyManager) mContext.getSystemService(Context.TELEPHONY_SERVICE);
+        List<CellInfo> cellInfoList = tm.getAllCellInfo();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            if (null != cellInfoList) {
+                for (CellInfo cellInfo : cellInfoList) {
+                    if (cellInfo instanceof CellInfoGsm) {
+                        CellSignalStrengthGsm cellSignalStrengthGsm = ((CellInfoGsm) cellInfo).getCellSignalStrength();
+                        dbm = cellSignalStrengthGsm.getDbm();
+                    } else if (cellInfo instanceof CellInfoCdma) {
+                        CellSignalStrengthCdma cellSignalStrengthCdma = ((CellInfoCdma) cellInfo).getCellSignalStrength();
+                        dbm = cellSignalStrengthCdma.getDbm();
+                    } else if (cellInfo instanceof CellInfoWcdma) {
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
+                            CellSignalStrengthWcdma cellSignalStrengthWcdma = ((CellInfoWcdma) cellInfo).getCellSignalStrength();
+                            dbm = cellSignalStrengthWcdma.getDbm();
+                        }
+                    } else if (cellInfo instanceof CellInfoLte) {
+                        CellSignalStrengthLte cellSignalStrengthLte = ((CellInfoLte) cellInfo).getCellSignalStrength();
+                        dbm = cellSignalStrengthLte.getDbm();
+
+                    }
+                }
+            }
+        }
+        return dbm;
+    }
+
+    public static int dbmToLevel(int dbm, boolean isWifi) {
+        int level = 0;
+        if (!isWifi) {
+            if (dbm >= -97) {
+                level = 4;
+            } else if (dbm >= -105 && dbm < -97) {
+                level = 3;
+            } else if (dbm >= -110 && dbm < -105) {
+                level = 2;
+            } else if (dbm >= -120 && dbm < -110) {
+                level = 1;
+            } else if (dbm < -120) {
+                level = 0;
+                ;
+            }
+        } else {
+            if (dbm >= -55 && dbm <= 0) {
+                level = 4;
+            } else if (dbm >= -70 && dbm < -55) {
+                level = 3;
+            } else if (dbm >= -85 && dbm < -70) {
+                level = 2;
+            } else if (dbm >= -100 && dbm < -85) {
+                level = 1;
+            } else {
+                level = 0;
+            }
+
+        }
+        return level;
+
+    }
+    public static String getNetLevel(Context context){
+        int level=0;
+        NetWorkUtils.NetWorkType netWorkType = NetWorkUtils.getNetWorkType(context);
+        ToastUtils.showToast(netWorkType + "变化了");
+        switch (netWorkType) {
+            case WIFI:
+                level = NetWorkUtils.dbmToLevel(NetWorkUtils.getWifiRssi(context), true);
+                break;
+            case NET_2_G:
+            case NET_3_G:
+            case NET_4_G:
+//                String signalInfo = signalStrength.toString();
+//                String[] params = signalInfo.split(" ");
+//                int itemDbm = Integer.parseInt(params[9]);
+                int dbm = NetWorkUtils.getMobileDbm(context);
+                level=dbmToLevel(dbm,false);
+                break;
+            case UN_KNOWN:
+                level = 0;
+                break;
+        }
+        return String.valueOf(level);
+    }
 }

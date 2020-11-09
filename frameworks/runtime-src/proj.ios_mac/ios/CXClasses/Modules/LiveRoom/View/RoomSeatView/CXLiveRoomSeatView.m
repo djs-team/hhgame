@@ -85,15 +85,15 @@
             _seat_giftBtn.hidden = YES;
             _rose_Btn.hidden = YES;
             if ([CXClientModel instance].agoraEngineManager.offMic == YES) { // 闭麦了
-                [self.muteBtn setImage:[UIImage imageNamed:@"liveroom_seat_micro_on"] forState:UIControlStateNormal];
-            } else {
                 [self.muteBtn setImage:[UIImage imageNamed:@"liveroom_seat_micro_off"] forState:UIControlStateNormal];
+            } else {
+                [self.muteBtn setImage:[UIImage imageNamed:@"liveroom_seat_micro_on"] forState:UIControlStateNormal];
             }
         } else {
             if (model.isMute == YES) {
-                [self.muteBtn setImage:[UIImage imageNamed:@"liveroom_seat_micro_on"] forState:UIControlStateNormal];
-            } else {
                 [self.muteBtn setImage:[UIImage imageNamed:@"liveroom_seat_micro_off"] forState:UIControlStateNormal];
+            } else {
+                [self.muteBtn setImage:[UIImage imageNamed:@"liveroom_seat_micro_on"] forState:UIControlStateNormal];
             }
             
             if ([[CXClientModel instance].firendIdArrays containsObject:model.modelUser.UserId]) {
@@ -198,10 +198,6 @@
 
 
 - (void)setupSubViews {
-    
-    self.seat_giftBtn.layer.masksToBounds = true;
-    self.seat_giftBtn.layer.cornerRadius = 14;
-    
     self.seat_bottomView.layer.masksToBounds = true;
     self.seat_bottomView.layer.cornerRadius = 14;
     
@@ -213,7 +209,6 @@
     
     self.sitdownBtn.layer.masksToBounds = true;
     self.sitdownBtn.layer.cornerRadius = 10;
-    
 }
 
 - (IBAction)seatViewAction:(UIButton *)sender {

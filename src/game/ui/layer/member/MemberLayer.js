@@ -9,7 +9,7 @@ load('game/ui/layer/member/MemberLayer', function () {
     let GameUtil = include('game/public/GameUtil')
     let AniPlayer = ResConfig.AniPlayer
     let PlayerPlay = ResConfig.PlayerPlay
-    let sender={};
+    let memberSender={};
     let MemberLayer = BaseLayer.extend({
         _className: 'MemberLayer',
         ctor: function () {
@@ -73,6 +73,8 @@ load('game/ui/layer/member/MemberLayer', function () {
             this.initData()
             this.initView()
             this.showView()
+            appInstance.gameAgent().hideLoading()
+
         },
 
         onExit: function () {
@@ -81,13 +83,13 @@ load('game/ui/layer/member/MemberLayer', function () {
         onThirdPayCallBack: function (msg) {
             if (msg == 0) {
                 appInstance.gameAgent().Tips('------------------------------------充值成功！！！')
+                appInstance.gameAgent().httpGame().userDataReq()
             } else {
                 appInstance.gameAgent().Tips('------------------------------------充值失败！！！'+JSON.stringify(msg))
             }
         },
 
-        onHidePayTypeClicked: function (sender) {
-            GameUtil.delayBtn(sender);
+        onHidePayTypeClicked: function () {
             this.PayType.setVisible(false)
         },
         
@@ -127,8 +129,7 @@ load('game/ui/layer/member/MemberLayer', function () {
             //  this.onShowRecordPnlClick()
         },
 
-        onCloseClick: function (sender) {
-            GameUtil.delayBtn(sender);
+        onCloseClick: function () {
             appInstance.sendNotification(GameEvent.HALL_RED_GET)
             appInstance.uiManager().removeUI(this)
         },
@@ -184,10 +185,10 @@ load('game/ui/layer/member/MemberLayer', function () {
         },
 
         onRechargeClicked: function (s) {
-            sender = s;
+            memberSender = s;
             if (cc.sys.OS_IOS === cc.sys.os) {
                 if (AppConfig.applePayType == "Apple") {
-                    let _sendData = sender._sendData
+                    let _sendData = memberSender._sendData
                     let msg = {
                         vipCode: _sendData.vipCode,
                         payType: 3
@@ -207,7 +208,7 @@ load('game/ui/layer/member/MemberLayer', function () {
             cc.log("----------------------onAliPayClick")
             this.PayType.setVisible(false)
 
-            let _sendData = sender._sendData
+            let _sendData = memberSender._sendData
             let msg = {
                 vipCode: _sendData.vipCode,
                 payType: 1
@@ -219,7 +220,7 @@ load('game/ui/layer/member/MemberLayer', function () {
             cc.log("----------------------onWxClick")
 
             this.PayType.setVisible(false)
-            let _sendData = sender._sendData
+            let _sendData = memberSender._sendData
             let msg = {
                 vipCode: _sendData.vipCode,
                 payType: 2
@@ -254,14 +255,12 @@ load('game/ui/layer/member/MemberLayer', function () {
 
         },
 
-        onTurnNextCliecked: function (sender) {
-            GameUtil.delayBtn(sender);
+        onTurnNextCliecked: function () {
             let nextCode = this._PublicData.turnCodeData.turnNextCode
             this.onChangePrivilegeData(nextCode)
         },
 
-        onTurnPreviousCliecked: function (sender) {
-            GameUtil.delayBtn(sender);
+        onTurnPreviousCliecked: function () {
             let previousCode = this._PublicData.turnCodeData.turnPreviousCode
             this.onChangePrivilegeData(previousCode)
 
@@ -433,11 +432,8 @@ load('game/ui/layer/member/MemberLayer', function () {
                         this.acceptBtn.setBright(true)
                     }
                 } else {
-                    isHaveAcceptRewards = true
                     this.levelLowerBtn.setVisible(false)
                     this.acceptBtn.setVisible(true)
-                    this.acceptBtn.setTouchEnabled(false)
-                    this.acceptBtn.setBright(false)
                     this.acceptBtn.setTouchEnabled(false)
                     this.acceptBtn.setBright(false)
                 }
@@ -552,8 +548,12 @@ load('game/ui/layer/member/MemberLayer', function () {
 
         onReceiveRewards: function () {
 
+            cc.log('----------onReceiveRewards--------------')
             this.everyDayPnl.getChildByName('everyDayBlockPnl').setVisible(true)
             this.everyDayPnl.getChildByName('acceptedPg').setVisible(true)
+            this.acceptBtn.setTouchEnabled(false)
+            this.acceptBtn.setBright(false)
+            this._PublicData.canVipDaily = 1
 
         },
 

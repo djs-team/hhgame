@@ -73,94 +73,6 @@
             "ctype": "PanelObjectData"
           },
           {
-            "FileData": {
-              "Type": "Normal",
-              "Path": "aaa/17_3.png",
-              "Plist": ""
-            },
-            "Scale9OriginX": 422,
-            "Scale9OriginY": 237,
-            "Scale9Width": 436,
-            "Scale9Height": 246,
-            "AnchorPoint": {
-              "ScaleX": 0.5,
-              "ScaleY": 0.5
-            },
-            "Position": {
-              "X": 640.0,
-              "Y": 360.0
-            },
-            "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 1.0
-            },
-            "CColor": {},
-            "IconVisible": false,
-            "PositionPercentXEnabled": true,
-            "PositionPercentYEnabled": true,
-            "PrePosition": {
-              "X": 0.5,
-              "Y": 0.5
-            },
-            "PreSize": {
-              "X": 1.0,
-              "Y": 1.0
-            },
-            "Tag": 6,
-            "ActionTag": -2045502862,
-            "Size": {
-              "X": 1280.0,
-              "Y": 720.0
-            },
-            "VisibleForFrame": false,
-            "Name": "dele",
-            "ctype": "ImageViewObjectData"
-          },
-          {
-            "FileData": {
-              "Type": "Normal",
-              "Path": "aaa/17_5.png",
-              "Plist": ""
-            },
-            "Scale9OriginX": 422,
-            "Scale9OriginY": 237,
-            "Scale9Width": 436,
-            "Scale9Height": 246,
-            "AnchorPoint": {
-              "ScaleX": 0.5,
-              "ScaleY": 0.5
-            },
-            "Position": {
-              "X": 640.0,
-              "Y": 360.0
-            },
-            "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 1.0
-            },
-            "CColor": {},
-            "IconVisible": false,
-            "PositionPercentXEnabled": true,
-            "PositionPercentYEnabled": true,
-            "PrePosition": {
-              "X": 0.5,
-              "Y": 0.5
-            },
-            "PreSize": {
-              "X": 1.0,
-              "Y": 1.0
-            },
-            "Tag": 233,
-            "ActionTag": -879119865,
-            "Size": {
-              "X": 1280.0,
-              "Y": 720.0
-            },
-            "VisibleForFrame": false,
-            "Name": "dele_0",
-            "ctype": "ImageViewObjectData"
-          },
-          {
             "ClipAble": false,
             "BackColorAlpha": 102,
             "SingleColor": {
@@ -202,7 +114,7 @@
               "X": 1.0,
               "Y": 1.0
             },
-            "UserData": "{\"layoutType\":\"maxArea\",\"screenAlign\":\"mid\"}",
+            "UserData": "{\"layoutType\":\"showAll\",\"screenAlign\":\"mid\"}",
             "Tag": 27,
             "Children": [
               {
@@ -550,7 +462,7 @@
                     "AnchorPoint": {},
                     "Position": {
                       "X": 760.0,
-                      "Y": 222.4725
+                      "Y": 222.47
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -568,8 +480,8 @@
                     },
                     "LeftMargin": 760.0,
                     "RightMargin": 520.0,
-                    "TopMargin": 497.5275,
-                    "BottomMargin": 222.4725,
+                    "TopMargin": 497.53,
+                    "BottomMargin": 222.47,
                     "Tag": 196,
                     "ActionTag": 89374257,
                     "Size": {
@@ -2551,8 +2463,9 @@
                             "Tag": 250,
                             "Children": [
                               {
+                                "IsCustomSize": true,
                                 "FontSize": 20,
-                                "LabelText": "1.每次摇金树可随机获得1000-9999枚金币\n\n2.完整的观看视频可以获得摇金树次数\n\n3.每日摇金树次数上限为15次",
+                                "LabelText": "1.每日共可参与摇金树活动15次\n\n2.每日24:00重置抽奖次数，请于当天24:00前消耗完\n次数\n\n3.每次可随机获得1000-9999枚金币",
                                 "OutlineColor": {
                                   "G": 0,
                                   "B": 0
@@ -2569,8 +2482,8 @@
                                   "ScaleY": 0.5
                                 },
                                 "Position": {
-                                  "X": 228.1474,
-                                  "Y": 200.2408
+                                  "X": 246.6151,
+                                  "Y": 158.93
                                 },
                                 "Scale": {
                                   "ScaleX": 1.0,
@@ -2583,22 +2496,22 @@
                                 },
                                 "IconVisible": false,
                                 "PrePosition": {
-                                  "X": 0.4618,
-                                  "Y": 0.7059
+                                  "X": 0.4992,
+                                  "Y": 0.5603
                                 },
                                 "PreSize": {
-                                  "X": 0.749,
-                                  "Y": 0.3525
+                                  "X": 0.9311,
+                                  "Y": 0.7051
                                 },
-                                "LeftMargin": 43.1474,
-                                "RightMargin": 80.8755,
-                                "TopMargin": 33.4078,
-                                "BottomMargin": 150.2408,
+                                "LeftMargin": 16.6151,
+                                "RightMargin": 17.4078,
+                                "TopMargin": 24.7186,
+                                "BottomMargin": 58.93,
                                 "Tag": 251,
                                 "ActionTag": -1930419234,
                                 "Size": {
-                                  "X": 370.0,
-                                  "Y": 100.0
+                                  "X": 460.0,
+                                  "Y": 200.0
                                 },
                                 "Name": "Text_8",
                                 "ctype": "TextObjectData"
@@ -2818,8 +2731,6 @@
         "ctype": "LayerObjectData"
       },
       "UsedResources": [
-        "aaa/17_3.png",
-        "aaa/17_5.png",
         "button/xin_anniu_10.png",
         "button/xin_anniu_19.png",
         "cashcow/yjs_1.png",

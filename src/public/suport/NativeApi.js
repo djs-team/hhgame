@@ -17,6 +17,43 @@ load('public/suport/NativeApi', function () {
                 console.log('getImei error: ')
             }
         },
+        // 获取当前连接网络
+        getNetWorkStates: function () {
+            try {
+                if (cc.sys.OS_ANDROID === cc.sys.os) {
+                    return jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'getPhoneInfo', '(Ljava/lang/String;)Ljava/lang/String;', "netState")
+
+                } else if (cc.sys.OS_IOS === cc.sys.os) {
+                    return jsb.reflection.callStaticMethod('AppController', 'getNetWorkStates')
+                }
+            } catch (e) {
+                console.log('getNetWorkStates error: ')
+            }
+        },
+        // 获取网络信号
+        getSignalStrength: function () {
+            try {
+                if (cc.sys.OS_ANDROID === cc.sys.os) {
+                    return jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'getPhoneInfo', '(Ljava/lang/String;)Ljava/lang/String;', "netInfo")
+                } else if (cc.sys.OS_IOS === cc.sys.os) {
+                    return jsb.reflection.callStaticMethod('AppController', 'getSignalStrength')
+                }
+            } catch (e) {
+                console.log('getSignalStrength error: ')
+            }
+        },
+        // 获取电量
+        getBatteryLevel: function () {
+            try {
+                if (cc.sys.OS_ANDROID === cc.sys.os) {
+                    return jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'getPhoneInfo', '(Ljava/lang/String;)Ljava/lang/String;', "batter")
+                } else if (cc.sys.OS_IOS === cc.sys.os) {
+                    return jsb.reflection.callStaticMethod('AppController', 'getBatteryLevel')
+                }
+            } catch (e) {
+                console.log('getBatteryLevel error: ')
+            }
+        },
         HelloOC: function (message) {
             try {
                 if (cc.sys.OS_ANDROID === cc.sys.os) {
@@ -68,85 +105,10 @@ load('public/suport/NativeApi', function () {
                 if (cc.sys.OS_ANDROID === cc.sys.os) {
                     jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'login', '(Ljava/lang/String;)V', "jpush")
                 } else if (cc.sys.OS_IOS === cc.sys.os) {
-                    jsb.reflection.callStaticMethod('AppController', 'JPushLoginWithMethod:showPhoneAlert:', "THIRD_LOGIN_RESULT",AppConfig.loginShowPhoneAlert)
+                    jsb.reflection.callStaticMethod('AppController', 'JPushLoginWithMethod:showPhoneAlert:', "THIRD_LOGIN_RESULT", AppConfig.loginShowPhoneAlert)
                 }
             } catch (e) {
                 this.HelloOC('oneCLickLogin throw: ' + JSON.stringify(e))
-            }
-        },
-        wxShareUrl: function (url, title, description, shareIds) {
-            try {
-                this.registerWeChatAppId(shareIds)
-                if (cc.sys.OS_ANDROID === cc.sys.os) {
-                    jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'StartShareWebViewWxSceneSession', '(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V', url, title, description)
-                } else if (cc.sys.OS_IOS === cc.sys.os) {
-                    jsb.reflection.callStaticMethod('AppController', 'WXShareIOSforUrl:Title:Desc:', url, title, description)
-                }
-            } catch (e) {
-                this.HelloOC('wxShareUrl throw: ' + JSON.stringify(e))
-            }
-        },
-        wxShareUrlTimeline: function (url, title, description, shareIds) { // 添加微信朋友圈分享
-            try {
-                this.registerWeChatAppId(shareIds)
-                if (cc.sys.OS_ANDROID === cc.sys.os) {
-                    title = title + description // Android分享朋友圈显示不了内容，暂时按至尊包处理方式修改
-                    jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'StartShareWebViewWxSceneSessionTimeline', '(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V',
-                        url, title, description)
-                } else if (cc.sys.OS_IOS === cc.sys.os) {
-                    jsb.reflection.callStaticMethod('AppController', 'WXShareIOSforUrl:Title:Desc:', url, title, description)
-                }
-            } catch (e) {
-                this.HelloOC('wxShareUrl throw: ' + JSON.stringify(e))
-            }
-        },
-        wxShareImage: function (imagePath, shareIds) {
-            try {
-                let writePath = jsb.fileUtils.getWritablePath()
-                let captureScreen = 'wxcapture_screen.png'
-                let sharePath = writePath + captureScreen
-                if (imagePath) {
-                    sharePath = imagePath
-                }
-                this.registerWeChatAppId(shareIds)
-                if (cc.sys.OS_ANDROID === cc.sys.os) {
-                    jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'StartShareTextureWxSceneSession', '(Ljava/lang/String;)V', sharePath)
-                } else if (cc.sys.OS_IOS === cc.sys.os) {
-                    jsb.reflection.callStaticMethod('AppController', 'WXShareIOSforImage:', sharePath)
-                }
-            } catch (e) {
-                this.HelloOC('wxShareImage throw: ' + JSON.stringify(e))
-            }
-        },
-        wxShareImageToWXTimeline: function (imagePath, shareIds) {
-            try {
-                let writePath = jsb.fileUtils.getWritablePath()
-                let captureScreen = 'wxcapture_screen.png'
-                let sharePath = writePath + captureScreen
-                if (imagePath) {
-                    sharePath = imagePath
-                }
-                this.registerWeChatAppId(shareIds)
-                // 根据版本判断是否存在分享大图到朋友圈的方法
-                if (cc.sys.OS_ANDROID === cc.sys.os) {
-                    jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'StartShareTextureWXSceneTimeline', '(Ljava/lang/String;)V', sharePath)
-                } else if (cc.sys.OS_IOS === cc.sys.os) {
-                    jsb.reflection.callStaticMethod('AppController', 'WXShareIOSforImage:', sharePath)
-                }
-            } catch (e) {
-                this.HelloOC('wxShareImage throw: ' + JSON.stringify(e))
-            }
-        },
-        wxShareText: function (text, isTimeLine, shareIds) {
-            try {
-                this.registerWeChatAppId(shareIds)
-                if (cc.sys.OS_ANDROID === cc.sys.os) {
-                    jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'StartShareTextWxSceneSession', '(Ljava/lang/String;)V', text)
-                } else if (cc.sys.OS_IOS === cc.sys.os) {
-                    jsb.reflection.callStaticMethod('AppController', 'WXShareIOSforDescription:isTimeLine:', text, isTimeLine)
-                }
-            } catch (e) {
-                this.HelloOC('wxShareText throw: ' + JSON.stringify(e))
             }
         },
         writeToClipboard: function (message) {
@@ -325,9 +287,11 @@ load('public/suport/NativeApi', function () {
 
                         xhr.open('GET', httpUrl)
                         xhr.onreadystatechange = function () {
-                            if (xhr.readyState === 4 && xhr.status === 200) {}
+                            if (xhr.readyState === 4 && xhr.status === 200) {
+                            }
                         }
-                        xhr.onerror = function () {}
+                        xhr.onerror = function () {
+                        }
                         xhr.send()
                     }
                 }
@@ -446,8 +410,10 @@ load('public/suport/NativeApi', function () {
                 } else if (cc.sys.OS_IOS === cc.sys.os) {
                     let writePath = jsb.fileUtils.getWritablePath()
                     let sharePath = writePath + fileName
-                    jsb.reflection.callStaticMethod('AppController', 'WXShareIOSforImage:', sharePath)
+                    jsb.reflection.callStaticMethod('AppController', 'WXShareIOSforImage:platform:', sharePath, platform)
                 }
+
+                appInstance.gameAgent().httpGame().sharedCompleteTaskReq();
             } catch (e) {
                 NativeApi.HelloOC('shareImage throw: ' + JSON.stringify(e))
             }
@@ -460,8 +426,10 @@ load('public/suport/NativeApi', function () {
                 } else if (cc.sys.OS_IOS === cc.sys.os) {
                     let writePath = jsb.fileUtils.getWritablePath()
                     let sharePath = writePath + thumbUrl
-                    jsb.reflection.callStaticMethod('AppController', 'WXShareIOSforUrl:Title:Desc:image:', url, title, description, sharePath)
+                    jsb.reflection.callStaticMethod('AppController', 'WXShareIOSforUrl:Title:Desc:image:platform:', url, title, description, sharePath, platform)
                 }
+
+                appInstance.gameAgent().httpGame().sharedCompleteTaskReq();
             } catch (e) {
                 NativeApi.HelloOC('shareArticle throw: ' + JSON.stringify(e))
             }
@@ -484,7 +452,7 @@ load('public/suport/NativeApi', function () {
         copy: function (msg) {
             try {
                 if (cc.sys.OS_ANDROID === cc.sys.os) {
-                    jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'copy', '(Ljava/lang/String;)V', msg)
+                    jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'copyStr', '(Ljava/lang/String;)V', msg)
                 } else if (cc.sys.OS_IOS === cc.sys.os) {
                     jsb.reflection.callStaticMethod('AppController', 'copyToPasteboard:', msg)
                 }
@@ -515,6 +483,50 @@ load('public/suport/NativeApi', function () {
                 }
             } catch (e) {
                 NativeApi.HelloOC('getInvitationCode throw: ' + JSON.stringify(e))
+            }
+        },
+        //上传图片
+        uploadPictureParam: function (msg) {
+            try {
+
+                if (cc.sys.OS_ANDROID === cc.sys.os) {
+                    let param = JSON.stringify(msg.info)
+
+                    jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'getPictureFromPhoneAlbum', '(Ljava/lang/String;)V', param)
+
+                } else if (cc.sys.OS_IOS === cc.sys.os) {
+                    let param = JSON.stringify(msg)
+
+                    jsb.reflection.callStaticMethod('AppController', 'selectedOnePhotoWithPutParam:method:', param, "PERSONALLAYER_CHANGE_PICTURE")
+                }
+            } catch (e) {
+                NativeApi.HelloOC('uploadPictureParam throw: ' + JSON.stringify(e))
+            }
+        },
+        //注册极光推送TagsID
+        registerJPUSHTagsID: function (msg) {
+            try {
+                let param = JSON.stringify(msg)
+                if (cc.sys.OS_ANDROID === cc.sys.os) {
+                    jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'registerJPUSHTagsId', '(Ljava/lang/String;)V', param)
+                } else if (cc.sys.OS_IOS === cc.sys.os) {
+                    jsb.reflection.callStaticMethod('AppController', 'registerJPUSHTagsId:', param)
+                }
+            } catch (e) {
+                NativeApi.HelloOC('registerJPUSHTagsId throw: ' + JSON.stringify(e))
+            }
+        },
+        //获取app版本号
+        getAppVersion: function () {
+            try {
+
+                if (cc.sys.OS_ANDROID === cc.sys.os) {
+                    return jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'getAppVersion', '(Ljava/lang/String;)Ljava/lang/String;', "name")
+                } else if (cc.sys.OS_IOS === cc.sys.os) {
+                    return jsb.reflection.callStaticMethod('AppController', 'getVersion')
+                }
+            } catch (e) {
+                NativeApi.HelloOC('uploadPictureParam throw: ' + JSON.stringify(e))
             }
         }
     })

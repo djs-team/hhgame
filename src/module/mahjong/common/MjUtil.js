@@ -13,9 +13,11 @@ load('module/mahjong/common/MjUtil', function () {
                     return a.nCardColor < b.nCardColor
                 }
             })
+            return cardArray
         },
         removeCard: function (cardArray, card) {
-            for (let i = 0; i < cardArray.length; ++i) {
+            // for (let i = 0; i < cardArray.length; ++i) {
+            for (let i = cardArray.length - 1; i > -1 ; --i) {
                 if (cardArray[i].nCardNumber === card.nCardNumber && cardArray[i].nCardColor === card.nCardColor) {
                     cardArray.splice(i, 1)
                     return

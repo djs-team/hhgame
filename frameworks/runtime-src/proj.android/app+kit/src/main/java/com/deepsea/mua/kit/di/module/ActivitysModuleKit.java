@@ -35,6 +35,7 @@ import com.deepsea.mua.mine.activity.QueryDateDetailsActivity;
 import com.deepsea.mua.mine.activity.RechargeActivity;
 import com.deepsea.mua.mine.activity.RechargeDialogActivity;
 import com.deepsea.mua.mine.activity.ScreenDialogActivity;
+import com.deepsea.mua.mine.activity.UploadPhotoDialogActivity;
 import com.deepsea.mua.mine.activity.WalletActivity;
 import com.deepsea.mua.mine.activity.WalletRecordActivity;
 import com.deepsea.mua.mine.activity.WebActivity;
@@ -165,10 +166,6 @@ public abstract class ActivitysModuleKit {
     abstract ProfileActivity contributesProfileActivity();
 
 
-
-
-
-
     @ActivityScope
     @ContributesAndroidInjector
     abstract PresentWallActivity contributesPresentWallActivity();
@@ -225,18 +222,14 @@ public abstract class ActivitysModuleKit {
     abstract MessageMainActivity contributesMessageMainActivity();
 
 
-
-
     @ActivityScope
     @ContributesAndroidInjector
     abstract BindWechatActivity contributesBindWechatActivity();
 
 
-
     @ActivityScope
     @ContributesAndroidInjector
     abstract RoomModelHelpActivity contributeRoomModelHelpActivity();
-
 
 
     @ActivityScope
@@ -275,9 +268,14 @@ public abstract class ActivitysModuleKit {
     @ActivityScope
     @ContributesAndroidInjector
     abstract BindPhoneActivity contributeBindPhoneActivity();
+
     @ActivityScope
     @ContributesAndroidInjector
     abstract IncomeRedpackageDetailsActivity contributeIncomeRedpackageDetailsActivity();
+
+    @ActivityScope
+    @ContributesAndroidInjector
+    abstract UploadPhotoDialogActivity contributeUploadPhotoDialogActivity();
 
 
 }

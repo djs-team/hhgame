@@ -10,12 +10,15 @@
 #import "HJNetwork.h"
 #import "cocos2d.h"
 #include "scripting/js-bindings/manual/ScriptingCore.h"
+#import "CXPhoneBasicTools.h"
 
 @implementation AppController (Login)
++ (BOOL)isSupportWechat {
+    return [WXApi isWXAppInstalled];
+}
 
 + (void)weChatLoginWithMethod:(NSString *)method {
-    
-    [[EMClient sharedClient] logout:YES];
+    if ([WXApi isWXAppInstalled] == NO) return;
     
     [CXOCJSBrigeManager manager].wxLoginMethod = method;
 
@@ -31,28 +34,15 @@
     
     NSString *url = [NSString stringWithFormat:@"https://api.weixin.qq.com/sns/oauth2/access_token?appid=%@&secret=%@&code=%@&grant_type=%@",WX_AppKey,WX_AppSecret,resp.code,@"authorization_code"];
     [HJNetwork GETWithURL:url parameters:nil cachePolicy:HJCachePolicyIgnoreCache callback:^(id responseObject, BOOL isCache, NSError *error) {
-        if (!error) {
-            NSDictionary *resp = (NSDictionary*)responseObject;
+        NSDictionary *resp = (NSDictionary*)responseObject;
+        if ([resp.allKeys containsObject:@"openid"]) {
             NSString *openid = resp[@"openid"];
             NSString *accessToken = resp[@"access_token"];
             NSString *unionid = resp[@"unionid"];
             [self getWeChatUserInfo:openid accessToken:accessToken unionid:unionid];
-        }
-    }];
-}
-
-- (void)getWeChatUserInfo:(NSString *)openId accessToken:(NSString *)accessToken unionid:(NSString *)unionid {
-    NSString *url = [NSString stringWithFormat:@"https://api.weixin.qq.com/sns/userinfo?access_token=%@&openid=%@", accessToken, openId];
-    [HJNetwork GETWithURL:url parameters:nil cachePolicy:HJCachePolicyIgnoreCache callback:^(id responseObject, BOOL isCache, NSError *error) {
-        if (!error) {
-            NSDictionary *resp = (NSDictionary*)responseObject;
+        } else {
             NSDictionary *param = @{
-                @"platform": @3,
-                @"nickName" : resp[@"nickname"] ?: @"",
-                @"photo" : resp[@"headimgurl"] ?: @"",
-                @"accounttype": @0,
-                @"unionId" : resp[@"unionid"],
-                @"account":resp[@"unionid"],
+                @"code":@0,
             };
             NSString *respStr = [param jsonStringEncoded];
             [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].wxLoginMethod param:respStr];
@@ -60,41 +50,85 @@
     }];
 }
 
-+ (void)JPushLoginWithMethod:(NSString *)method showPhoneAlert:(NSString *)showAlert{
-    [[EMClient sharedClient] logout:YES];
-    
-    [MBProgressHUD showHUD];
-    [CXOCJSBrigeManager manager].jpushLoginMethod = method;
-    [self customUI];
-    [MBProgressHUD hideHUD];
-    [JVERIFICATIONService getAuthorizationWithController:[CXTools currentViewController] completion:^(NSDictionary *result) {
-        if ([result.allKeys containsObject:@"loginToken"]) {
-            NSString *token = result[@"loginToken"];
-            NSString *tokenStr = [token stringByAddingPercentEncodingWithAllowedCharacters:[[NSCharacterSet characterSetWithCharactersInString:@"+"] invertedSet]];
+- (void)getWeChatUserInfo:(NSString *)openId accessToken:(NSString *)accessToken unionid:(NSString *)unionid {
+    NSString *url = [NSString stringWithFormat:@"https://api.weixin.qq.com/sns/userinfo?access_token=%@&openid=%@", accessToken, openId];
+    [HJNetwork GETWithURL:url parameters:nil cachePolicy:HJCachePolicyIgnoreCache callback:^(id responseObject, BOOL isCache, NSError *error) {
+        NSDictionary *resp = (NSDictionary*)responseObject;
+        if ([resp.allKeys containsObject:@"unionid"]) {
             NSDictionary *param = @{
-                @"platform": @2,
-                @"accounttype": @1,
-                @"account":tokenStr,
+                @"platform": @3,
+                @"nickName" : resp[@"nickname"] ?: @"",
+                @"photo" : resp[@"headimgurl"] ?: @"",
+                @"accounttype": @0,
+                @"unionId" : resp[@"unionid"],
+                @"account":resp[@"unionid"],
+                @"code":@1,
+            };
+            NSString *respStr = [param jsonStringEncoded];
+            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].wxLoginMethod param:respStr];
+        } else {
+            NSDictionary *param = @{
+                @"code":@0,
+            };
+            NSString *respStr = [param jsonStringEncoded];
+            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].wxLoginMethod param:respStr];
+        }
+    }];
+}
+
++ (void)JPushLoginWithMethod:(NSString *)method showPhoneAlert:(NSString *)showAlert {
+    [CXOCJSBrigeManager manager].jpushLoginMethod = method;
+    if ([CXPhoneBasicTools isSIMInstalled] == NO) {
+        if ([showAlert isEqualToString:@"Show"]) {
+            [self JPushLoginWithPhoneLogin];
+        } else {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"请安装SIM卡" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+
+            [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil]];
+            [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert animated:YES completion:nil];
+            
+            NSDictionary *param = @{
+                @"code":@0,
             };
             NSString *respStr = [param jsonStringEncoded];
             [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].jpushLoginMethod param:respStr];
-        } else {
-            if ([showAlert isEqualToString:@"Show"]) {
-                [self JPushLoginWithPhoneLogin];
-            } else {
-                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"一键登录失败，请重试" message:@"" preferredStyle:UIAlertControllerStyleAlert];
-
-                [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
-                
-                [alert addAction:[UIAlertAction actionWithTitle:@"一键登录" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                    [self JPushLoginWithMethod:method showPhoneAlert:showAlert];
-                }]];
-                [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert animated:YES completion:nil];
-            }
         }
-        
-        [JVERIFICATIONService dismissLoginControllerAnimated:YES completion:nil];
-    }];
+        return;
+    }
+    
+    [JVERIFICATIONService clearPreLoginCache];
+    
+    [MBProgressHUD showHUD];
+    [self customUI];
+    [MBProgressHUD hideHUD];
+    [JVERIFICATIONService setDebug:NO];
+    [JVERIFICATIONService getAuthorizationWithController:[CXTools currentViewController] hide:NO animated:YES timeout:5*1000 completion:^(NSDictionary *result) {
+            if ([result.allKeys containsObject:@"loginToken"]) {
+                NSString *token = result[@"loginToken"];
+                NSString *tokenStr = [token stringByAddingPercentEncodingWithAllowedCharacters:[[NSCharacterSet characterSetWithCharactersInString:@"+"] invertedSet]];
+                NSDictionary *param = @{
+                    @"platform": @2,
+                    @"accounttype": @1,
+                    @"account":tokenStr,
+                    @"code":@1,
+                };
+                NSString *respStr = [param jsonStringEncoded];
+                [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].jpushLoginMethod param:respStr];
+            } else {
+                NSDictionary *param = @{
+                    @"code":@0,
+                };
+                NSString *respStr = [param jsonStringEncoded];
+                [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].jpushLoginMethod param:respStr];
+            }
+            
+            [JVERIFICATIONService dismissLoginControllerAnimated:YES completion:nil];
+        } actionBlock:^(NSInteger type, NSString *content) {
+            NSLog(@"一键登录 actionBlock :%ld %@", (long)type , content);
+        }];
+//    [JVERIFICATIONService getAuthorizationWithController:[CXTools currentViewController] completion:^(NSDictionary *result) {
+//
+//    }];
 }
 
 + (void)JPushLoginWithPhoneLogin {
@@ -105,13 +139,13 @@
     [alert addAction:[UIAlertAction actionWithTitle:@"登录" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         //获取第1个输入框；
         UITextField *userNameTextField = alert.textFields.firstObject;
-        NSDictionary *param = @{
-            @"platform": @2,
-            @"accounttype": @1,
-            @"account":userNameTextField.text,
-        };
-        
         if ([userNameTextField.text isEqualToString:@"88888888"]) {
+            NSDictionary *param = @{
+                @"platform": @2,
+                @"accounttype": @1,
+                @"account":userNameTextField.text,
+                @"code":@1,
+            };
             NSString *respStr = [param jsonStringEncoded];
             [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].jpushLoginMethod param:respStr];
         }
@@ -120,6 +154,10 @@
     //定义第一个输入框；
     [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
         textField.placeholder = @"请输入手机号";
+    }];
+    //定义第二个输入框；
+    [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.placeholder = @"请输入密码";
     }];
     [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert animated:YES completion:nil];
 }
@@ -160,8 +198,8 @@
     if (window_close_nor_image && window_close_hig_image) {
        config.windowCloseBtnImgs = @[window_close_nor_image, window_close_hig_image];
     }
-    CGFloat windowCloseBtnWidth = 16;
-    CGFloat windowCloseBtnHeight = 16;
+    CGFloat windowCloseBtnWidth = 30;
+    CGFloat windowCloseBtnHeight = 30;
     JVLayoutConstraint *windowCloseBtnConstraintX = [JVLayoutConstraint constraintWithAttribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:JVLayoutItemSuper attribute:NSLayoutAttributeRight multiplier:1 constant:-5];
     JVLayoutConstraint *windowCloseBtnConstraintY = [JVLayoutConstraint constraintWithAttribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:JVLayoutItemSuper attribute:NSLayoutAttributeTop multiplier:1 constant:5];
     JVLayoutConstraint *windowCloseBtnConstraintW = [JVLayoutConstraint constraintWithAttribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:JVLayoutItemNone attribute:NSLayoutAttributeWidth multiplier:1 constant:windowCloseBtnWidth];

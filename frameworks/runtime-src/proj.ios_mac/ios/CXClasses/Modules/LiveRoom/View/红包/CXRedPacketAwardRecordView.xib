@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,6 +17,12 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="liveroom_redpacket_record_bg" translatesAutoresizingMaskIntoConstraints="NO" id="VqO-cj-RJU">
                     <rect key="frame" x="0.0" y="0.0" width="312" height="451"/>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8s" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9nB-hm-To4">
+                    <rect key="frame" x="282" y="10" width="20" height="19.5"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="中奖纪录" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SvO-SR-7fG">
                     <rect key="frame" x="50" y="136.5" width="65.5" height="19.5"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
@@ -24,7 +30,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="红包中奖纪录" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lGt-p7-9cv">
-                    <rect key="frame" x="16" y="20" width="280" height="26.5"/>
+                    <rect key="frame" x="30" y="20" width="252" height="26.5"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -40,20 +46,23 @@
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="D0v-dk-5m5" secondAttribute="trailing" constant="50" id="2rG-5D-eFm"/>
                 <constraint firstItem="VqO-cj-RJU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="2vE-1b-X7x"/>
+                <constraint firstAttribute="trailing" secondItem="9nB-hm-To4" secondAttribute="trailing" constant="10" id="AFU-ZL-Awp"/>
+                <constraint firstItem="9nB-hm-To4" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="Ch9-QE-Rpl"/>
                 <constraint firstItem="5Pb-K8-ZI0" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="Dam-pb-8Ma"/>
                 <constraint firstItem="SvO-SR-7fG" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="50" id="F6s-tp-DgI"/>
                 <constraint firstItem="D0v-dk-5m5" firstAttribute="centerY" secondItem="SvO-SR-7fG" secondAttribute="centerY" id="HoC-jE-USU"/>
                 <constraint firstItem="5Pb-K8-ZI0" firstAttribute="top" secondItem="D0v-dk-5m5" secondAttribute="bottom" constant="8" id="HyL-ce-X3L"/>
                 <constraint firstItem="VqO-cj-RJU" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="UwX-7O-IVc"/>
                 <constraint firstItem="VqO-cj-RJU" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="Vyw-Xa-FxG"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="lGt-p7-9cv" secondAttribute="trailing" constant="16" id="caH-xT-Cb2"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="lGt-p7-9cv" secondAttribute="trailing" constant="30" id="caH-xT-Cb2"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="5Pb-K8-ZI0" secondAttribute="bottom" constant="33" id="fLj-as-shw"/>
                 <constraint firstItem="lGt-p7-9cv" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="kB1-SH-Pkl"/>
-                <constraint firstItem="lGt-p7-9cv" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="pnh-bR-PVn"/>
+                <constraint firstItem="lGt-p7-9cv" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="pnh-bR-PVn"/>
                 <constraint firstItem="5Pb-K8-ZI0" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ugT-QS-nhY"/>
                 <constraint firstItem="SvO-SR-7fG" firstAttribute="top" secondItem="lGt-p7-9cv" secondAttribute="bottom" constant="90" id="wj8-g0-cYZ"/>
                 <constraint firstItem="VqO-cj-RJU" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="wre-dL-xuC"/>
@@ -61,8 +70,8 @@
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="closeLabel" destination="9nB-hm-To4" id="bhR-1q-aDu"/>
                 <outlet property="mainTableView" destination="5Pb-K8-ZI0" id="dkZ-sV-o0J"/>
                 <outlet property="titleLabel" destination="lGt-p7-9cv" id="7IF-NF-csb"/>
             </connections>

@@ -27,6 +27,7 @@ load('game/ui/layer/fukashop/FukaShopMdt', function () {
                 GameEvent.FUKA_MATERIA_LOG,
                 GameEvent.FUKA_MATERIA_EXCHANGE,
                 GameEvent.UPDATE_PROPSYNC,
+                GameEvent.ADRESS_UPDATE,
 
             ]
         },
@@ -69,6 +70,9 @@ load('game/ui/layer/fukashop/FukaShopMdt', function () {
                     break
                 case GameEvent.UPDATE_PROPSYNC:
                     this.view.onUpdateUserData(body)
+                    break
+                case GameEvent.ADRESS_UPDATE:
+                    this.onUpdateAddressResult()
                     break
                 default:
                     break
@@ -188,6 +192,7 @@ load('game/ui/layer/fukashop/FukaShopMdt', function () {
                 infoData.goodsId = info.id
                 infoData.goodsName = info.goodsName
                 infoData.goodsDesc = info.goodsDesc
+                infoData.goodsDetails = info.goodsDetails
                 infoData.hallPictureUrl = info.hallPictureUrl
                 infoData.fuKaNums = info.fuKaNums
                 infoData.detailsPictureUrl = info.detailsPictureUrl
@@ -301,6 +306,14 @@ load('game/ui/layer/fukashop/FukaShopMdt', function () {
         padLeftZero: function (str) {
 
             return ('00' + str).substr(str.toString().length);
+        },
+
+
+        onUpdateAddressResult: function () {
+
+            appInstance.gameAgent().Tips('提交成功！')
+            this.view.onCloseUpdateAddressClicked()
+
         }
     })
     return mdt

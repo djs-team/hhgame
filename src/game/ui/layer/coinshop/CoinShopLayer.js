@@ -5,7 +5,7 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
     let CoinShopMdt = include('game/ui/layer/coinshop/CoinShopMdt')
     let GameEvent = include('game/config/GameEvent')
     let GameUtil = include('game/public/GameUtil')
-    let sender = {};
+    let coinSender = {};
 
     let CoinShopLayer = BaseLayer.extend({
         _className: 'CoinShopLayer',
@@ -14,6 +14,7 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
         _dataZuanMsg: {},
 
         ctor: function () {
+            appInstance.gameAgent().hideLoading()
             this._super(ResConfig.View.CoinShopLayer)
             this.registerMediator(new CoinShopMdt(this))
             this.registerEventListener('rewardVideoCallback', this.onRewardVideoCallback)
@@ -63,8 +64,7 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
             appInstance.uiManager().removeUI(this)
         },
 
-        onJinBiClicked: function (sender) {
-            GameUtil.delayBtn(sender);
+        onJinBiClicked: function () {
             this.jinBtn.getChildByName('Image_33').setVisible(false)
             this.jinBtn.getChildByName('Image_34').setVisible(true)
             this.zuanBtn.getChildByName('Image_36').setVisible(true)
@@ -72,8 +72,7 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
             this.onInitGoodsView(this._dataJinMsg, 1)
         },
 
-        onZuanShiClicked: function (sender) {
-            GameUtil.delayBtn(sender);
+        onZuanShiClicked: function () {
             this.jinBtn.getChildByName('Image_33').setVisible(true)
             this.jinBtn.getChildByName('Image_34').setVisible(false)
             this.zuanBtn.getChildByName('Image_36').setVisible(false)
@@ -248,10 +247,10 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
          * @param s
          */
         onBuyZuanFunction: function (s) {
-            sender = s;
+            coinSender = s;
             if (cc.sys.OS_IOS === cc.sys.os) {
                 if (AppConfig.applePayType == "Apple") {
-                   let _sendData = sender._sendData
+                   let _sendData = coinSender._sendData
                    let msg = {
                        vipCode: _sendData.vipCode,
                        payType: 3
@@ -273,7 +272,7 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
             console.log("----------------------onAliPayClick")
             this.PayType.setVisible(false)
             //下单
-            let _sendData = sender._sendMsg
+            let _sendData = coinSender._sendMsg
             let msg = {
                 goodsid: _sendData.goodsid,
                 payType: 1
@@ -289,7 +288,7 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
             console.log("----------------------onWxClick")
             this.PayType.setVisible(false)
             //下单
-            let _sendData = sender._sendMsg
+            let _sendData = coinSender._sendMsg
             let msg = {
                 goodsid: _sendData.goodsid,
                 payType: 2
@@ -437,15 +436,13 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
         /**
          * 关闭地址弹框
          */
-        onCloseUpdateAddressClicked: function (sender) {
-            GameUtil.delayBtn(sender);
+        onCloseUpdateAddressClicked: function () {
             this.addressPnl.setVisible(false)
 
         },
 
 
-        onClosePayTypeClicked: function (sender) {
-            GameUtil.delayBtn(sender);
+        onClosePayTypeClicked: function () {
             this.PayType.setVisible(false)
         }
 

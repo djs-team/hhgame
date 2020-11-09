@@ -21,7 +21,12 @@ load('game/msghandler/EnterTableProto', function () {
                     let HallScene = include('game/ui/scene/HallScene')
                     appInstance.sceneManager().replaceScene(new HallScene())
                 }
-                appInstance.gameAgent().Tips(GameConfig.mjError[msg.code])
+                if (msg.pExtend === 'gameResult') {
+                    appInstance.gameAgent().Tips(GameConfig.mjError[msg.code])
+                }else if(msg.pExtend === 'gameHall'){
+                    appInstance.gameAgent().Tips(GameConfig.mjError[msg.code])
+                }
+                // appInstance.gameAgent().Tips(GameConfig.mjError[msg.code])
                 return
             }
             let dialogMsg = {

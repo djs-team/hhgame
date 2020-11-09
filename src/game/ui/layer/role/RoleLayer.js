@@ -66,8 +66,7 @@ load('game/ui/layer/role/RoleLayer', function () {
             this._super()
 
         },
-        onClseClick: function (sender) {
-            GameUtil.delayBtn(sender);
+        onClseClick: function () {
             appInstance.sendNotification(GameEvent.HALL_RED_GET)
             appInstance.uiManager().removeUI(this)
         },
@@ -79,6 +78,7 @@ load('game/ui/layer/role/RoleLayer', function () {
 
         initView: function () {
 
+            this.roleImageListView.setScrollBarEnabled(false)
             this.useBtn.setVisible(false)
             this.renewBtn.setVisible(false)
             this.renewMidBtn.setVisible(false)
@@ -98,14 +98,13 @@ load('game/ui/layer/role/RoleLayer', function () {
             let roleCode = sender._roleCode
             let roleInfo = AniPlayer[roleCode]
             if (roleInfo.dongbei && this._localLanguage === 'dongbei') {
-                appInstance.audioManager().playEffect(roleInfo.dongbei)
+                this._roleEffectId = appInstance.audioManager().playEffect(roleInfo.dongbei,this._roleEffectId)
             } else {
-                appInstance.audioManager().playEffect(roleInfo.sound)
+                this._roleEffectId = appInstance.audioManager().playEffect(roleInfo.sound,this._roleEffectId)
             }
         },
 
-        onCoinShopClick: function (sender) {
-            GameUtil.delayBtn(sender);
+        onCoinShopClick: function () {
             appInstance.gameAgent().addPopUI(ResConfig.Ui.CoinShopLayer)
             this.onClseClick()
         },

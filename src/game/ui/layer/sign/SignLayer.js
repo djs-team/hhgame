@@ -8,6 +8,7 @@ load('game/ui/layer/sign/SignLayer', function () {
     let SignLayer = BaseLayer.extend({
         _className: 'signLayer',
         ctor: function () {
+            appInstance.gameAgent().hideLoading()
             this._super(ResConfig.View.SignLayer)
             this.registerMediator(new SignMdt(this))
             this.registerEventListener('rewardVideoCallback', this.onRewardVideoCallback)
@@ -31,9 +32,10 @@ load('game/ui/layer/sign/SignLayer', function () {
                 'pnl/signDataListCell': {},
                 'pnl/signDataCell': {},
 
-                'pnl/poupPnl': {},
-                'pnl/poupPnl/rulePnl': {},
-                'pnl/poupPnl/rulePnl/ruleCloseBtn': {onClicked: this.onHideRulePnlClick},
+                'roleBlock': {},
+                'poupPnl': {},
+                'poupPnl/rulePnl': {},
+                'poupPnl/rulePnl/ruleCloseBtn': {onClicked: this.onHideRulePnlClick},
 
 
             }
@@ -76,6 +78,7 @@ load('game/ui/layer/sign/SignLayer', function () {
             this.signDataCell.setVisible(false)
             this.signDataListCell.setVisible(false)
             this.poupPnl.setVisible(false)
+            this.roleBlock.setVisible(false)
             this.rulePnl.setVisible(false)
 
             this.ordinaryAcceptPnl.getChildByName('singleAcceptText').setVisible(false)
@@ -92,12 +95,13 @@ load('game/ui/layer/sign/SignLayer', function () {
         onExplainClick: function (sender) {
             GameUtil.delayBtn(sender);
             this.poupPnl.setVisible(true)
+            this.roleBlock.setVisible(true)
             this.rulePnl.setVisible(true)
         },
 
-        onHideRulePnlClick: function (sender) {
-            GameUtil.delayBtn(sender);
+        onHideRulePnlClick: function () {
             this.poupPnl.setVisible(false)
+            this.roleBlock.setVisible(false)
             this.rulePnl.setVisible(false)
         },
 
@@ -105,8 +109,7 @@ load('game/ui/layer/sign/SignLayer', function () {
 
         },
 
-        onCloseClick: function (sender) {
-            GameUtil.delayBtn(sender);
+        onCloseClick: function () {
             appInstance.sendNotification(GameEvent.HALL_RED_GET)
             appInstance.uiManager().removeUI(this)
         },
@@ -282,6 +285,14 @@ load('game/ui/layer/sign/SignLayer', function () {
             cell.getChildByName('loadingBarAwardsPg').loadTexture(data.res)
             cell.getChildByName('loadingBarAwardsText').setString(data.loadingBarAwardsText)
             cell.getChildByName('treasureChestExplainPg').getChildByName('treasureChestExplainText').setString(data.bounsDesc)
+            if(data.showAniNd){
+                let boLiAni = appInstance.gameAgent().gameUtil().getAni(ResConfig.AniHall.DatingQianDao)
+                boLiAni.setAnimation(0, 'animation1', true)
+                cell.getChildByName('boxAniNd').addChild(boLiAni)
+                cell.getChildByName('boxAniNd').setVisible(true)
+            }else{
+                cell.getChildByName('boxAniNd').setVisible(false)
+            }
 
 
             // let barPositionX = this.loadingBar.getPositionX() + (data.id / this._maxSignNum * 465.00)
@@ -341,12 +352,13 @@ load('game/ui/layer/sign/SignLayer', function () {
 
             this.currentSign += 1
             this.onUpdateProCessBar(this.currentSign, this._maxSignNum)
-
-            if (data.type == 1) {
-                this.onUpdateTreasureChestData(data)
-            } else {
+            if(data.type == 0)
                 this.onUpdateSignData(data)
-            }
+
+
+            if(data.hasOwnProperty('canUpdateBox') && data.canUpdateBox)
+                this.onUpdateTreasureChestData(data)
+
 
         },
 
@@ -356,6 +368,16 @@ load('game/ui/layer/sign/SignLayer', function () {
             cell.getChildByName('loadingBarAwardsPg').loadTexture(data.treasureChestData.res)
             cell.getChildByName('loadingBarAwardsText').setString(data.treasureChestData.loadingBarAwardsText)
 
+            if(data.treasureChestData.showAniNd){
+                cell._data.status = 1
+                let boLiAni = appInstance.gameAgent().gameUtil().getAni(ResConfig.AniHall.DatingQianDao)
+                boLiAni.setAnimation(0, 'animation1', true)
+                cell.getChildByName('boxAniNd').addChild(boLiAni)
+                cell.getChildByName('boxAniNd').setVisible(true)
+            }else{
+                cell.getChildByName('boxAniNd').setVisible(false)
+            }
+
         },
 
         onUpdateSignData: function (data) {
@@ -363,6 +385,7 @@ load('game/ui/layer/sign/SignLayer', function () {
             let cell = this.signDataList.getChildByName(this._listPnlName + (parseInt(data.checkinId / 6))).getChildByName(this._checkInName + data.checkinId)
             cell.getChildByName('acceptedPg').setVisible(true)
             cell.getChildByName('blockPg').setVisible(true)
+
         },
 
 
@@ -379,8 +402,7 @@ load('game/ui/layer/sign/SignLayer', function () {
             this._flag = flag
         },
 
-        onGoVIPBtnClicked: function (sender) {
-            GameUtil.delayBtn(sender);
+        onGoVIPBtnClicked: function () {
             appInstance.gameAgent().addPopUI(ResConfig.Ui.MemberLayer)
             this.onCloseClick()
 

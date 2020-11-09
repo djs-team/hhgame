@@ -42,7 +42,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="我守护得人"
+                    android:text="我守护的人"
                     android:textColor="@color/select_message_tab"
                     android:textSize="16sp"
                     android:textStyle="bold"

@@ -8,9 +8,10 @@ load('public/network/GameNet', function () {
     let ParserSe = include('public/network/ParserSe')
 
     let GameNet = cc.Class.extend({
-        reConnectTime: 1000,
-        connectId: null,
-        reConnectFlag: false,
+        isReconnect: false,
+        reConnectTimes: 0,
+        reConnectInterval: 3,
+        reConnectNum: 0,
         msgQueue: null,
         reqPingPong: [],
         reqStart: null,
@@ -34,8 +35,8 @@ load('public/network/GameNet', function () {
          * 获得socket 的状态
          * @returns {*}
          */
-        getSocketReadyState: function () {
-            // return pomelo.getReadyState()
+        getSocketState: function () {
+            return TcpClient.getSocketState()
         },
         /**
          * 获取注册的handler
@@ -94,9 +95,30 @@ load('public/network/GameNet', function () {
             return this._protoReObj[msgId]
         },
 
+        setReconnect: function (tag) {
+            this.isReconnect = tag || false
+        },
+
         onUpdate: function (dt) {
             if (this._msgQueue) {
                 this._msgQueue.onUpdate(dt)
+            }
+
+            if (this.isReconnect) {
+                this.reConnectTimes += dt
+                if (this.reConnectTimes > this.reConnectInterval) {
+                    this.reConnectTimes = 0
+                    this.reConnectNum += 1
+                    if (this.reConnectNum < 15) {
+                        if (TcpClient.getSocketState() === WebSocket.CLOSED) {
+                            this.connect()
+                        } else {
+                            this.isReconnect = false
+                        }
+                    } else {
+                        appInstance.eventManager().dispatchEvent('RECONNECT_OVER_TIMES')
+                    }
+                }
             }
         },
         /**
@@ -121,6 +143,12 @@ load('public/network/GameNet', function () {
          * @param port
          */
         connect: function (host, port) {
+            this.host = host ? host : this.host
+            this.port = port ? port : this.port
+            if (!this.host || !this.port) {
+                cc.log('>>> --- gameNet connect not enough in fo:-- host:' + this.host + '   port:' + this.port)
+                return
+            }
             TcpClient.connectTcp(host, port)
         },
 

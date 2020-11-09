@@ -129,7 +129,7 @@
     };
     tip.button2Click = ^{
         [LEEAlert closeWithCompletionBlock:nil];
-        [self.navigationController popToRootViewControllerAnimated:YES];
+        [self.navigationController popViewControllerAnimated:YES];
 //        [[NSNotificationCenter defaultCenter] postNotificationName:@"MuaChangeSuccessBackHomeVC" object:nil];
     };
     

@@ -6,6 +6,7 @@
 load('game/ui/layer/task/TaskMdt', function () {
     let Mediator = include('public/components/Mediator')
     let GameEvent = include('game/config/GameEvent')
+    let GameUtil = include('game/public/GameUtil')
     let mdt = Mediator.extend({
         mediatorName: 'TaskMdt',
         ctor: function (view) {
@@ -70,37 +71,7 @@ load('game/ui/layer/task/TaskMdt', function () {
             data.totalActivity = msg.totalActivity
             data.maxActivity = msg.maxActivity
             data.taskId = msg.taskId
-            data.rewards = {}
             data.boxList = {}
-
-            let reward = msg.rpList
-            for (let i = 0; i < reward.length; i++) {
-                //      this._goodsArray['goods_' + i] = this.goodsNd.getChildByName('goods' + i)
-                let config = {}
-                let rewardData = reward[i]
-                let propType = rewardData.propType
-                let propCode = rewardData.propCode
-                config.propNum = rewardData.propNum
-
-                switch (propType) {
-                    case 1://货币
-                        if(propCode == 1){
-                            config.res = 'res/code/task/jinbi.png'
-
-                        }else if(propCode == 2){
-                            config.res = 'res/code/task/zuanshi.png'
-
-                        }else{
-                            config.res = 'res/code/task/gy_fk.png'
-                        }
-                        break
-                    default:
-                        break
-
-                }
-                data.rewards[i] = config
-            }
-
 
             for(let i = 0; i < msg.boxList.length; i++){
 
@@ -112,10 +83,14 @@ load('game/ui/layer/task/TaskMdt', function () {
                     case 1:
                         boxCell.res = 'res/code/task/rwzx_7.png'
                         boxCell.activityText = '未领取'
+                        boxCell.status = 1
+                        boxCell.showAniNd = true
                         break
                     case 2:
                         boxCell.res = 'res/code/task/rwzx_15.png'
                         boxCell.activityText = '已领取'
+                        boxCell.status = 2
+                        boxCell.showAniNd = false
                         break
                     default:
                         break
@@ -125,6 +100,7 @@ load('game/ui/layer/task/TaskMdt', function () {
             }
 
             this.view.receiveDailyRewards(data)
+            this.onShowPropsUI(msg.rpList)
         },
 
 
@@ -143,6 +119,7 @@ load('game/ui/layer/task/TaskMdt', function () {
                 activityConfig.activity =msgActivityConfig.activity
                 activityConfig.status =msgActivityConfig.status
                 activityConfig.desc =msgActivityConfig.desc
+                activityConfig.showAniNd = false
 
 
                 switch (activityConfig.status) {
@@ -153,6 +130,7 @@ load('game/ui/layer/task/TaskMdt', function () {
                     case 1:
                         activityConfig.res = 'res/code/task/rwzx_7.png'
                         activityConfig.activityText = '未领取'
+                        activityConfig.showAniNd = true
                         break
                     case 2:
                         activityConfig.res = 'res/code/task/rwzx_15.png'
@@ -308,35 +286,23 @@ load('game/ui/layer/task/TaskMdt', function () {
 
         onReceiveChallegeReward: function (msg) {
             let data = {}
-            data.rewards = {}
             data.stage = msg.stage
 
             data.status = 2
             data.statusRes = 'res/code/task/yj_3.png'
 
-            let propConfig = {}
-            propConfig.propNum = msg.rewardProp.propNum
-            switch (msg.rewardProp.propCode) {
-                case 1://货币
-                    propConfig.propRes = 'res/code/task/jinbi.png'
-                    break
-                case 2:
-                    propConfig.propRes = 'res/code/task/zuanshi.png'
-                    break
-                case 3:
-                    propConfig.propRes = 'res/code/task/gy_fk.png'
-                    break
-                default:
-                    propConfig.propRes = 'res/code/task/jinbi.png'
-                    break
-
-            }
-
-            data.rewards[0] = propConfig
-
             this.view.onReceiveChallegeReward(data)
-
+            this.onShowPropsUI([msg.rewardProp])
         },
+
+        onShowPropsUI: function (dataList) {
+
+            let propList = []
+            GameUtil.getPropsData(dataList,propList,'',GameUtil.DATATYPE_1,GameUtil.CURRENCYTYPE_1,GameUtil.UNITLOCATION_BEFORE,'x')
+
+            appInstance.gameAgent().addReceivePropsUI(propList)
+        },
+
 
         refreshChallegeTasks: function (body) {
             let data = this.initChallengeTasksData(body)

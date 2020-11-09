@@ -33,11 +33,11 @@ public class UserFansAdapter extends BaseBindingAdapter<MicroRankData, ItemUserF
     protected void bind(BindingViewHolder<ItemUserFansBinding> holder, MicroRankData item) {
         int pos = holder.getLayoutPosition();
         if (pos == 0) {
-            ViewBindUtils.setBackgroundRes(holder.binding.rankIndexIv, R.drawable.ic_fans_gold);
+            holder.binding.rankIndexIv.setImageResource(R.drawable.ic_fans_gold);
         } else if (pos == 1) {
-            ViewBindUtils.setBackgroundRes(holder.binding.rankIndexIv, R.drawable.ic_fans_silver);
+            holder.binding.rankIndexIv.setImageResource(R.drawable.ic_fans_silver);
         } else if (pos == 2) {
-            ViewBindUtils.setBackgroundRes(holder.binding.rankIndexIv, R.drawable.ic_fans_copper);
+            holder.binding.rankIndexIv.setImageResource(R.drawable.ic_fans_copper);
         }
         ViewBindUtils.setVisible(holder.binding.rankIndexTv, pos > 2);
         ViewBindUtils.setVisible(holder.binding.rankIndexIv, pos <= 2);
@@ -61,6 +61,7 @@ public class UserFansAdapter extends BaseBindingAdapter<MicroRankData, ItemUserF
             info.append(" |");
             info.append(" " + item.getCity());
         }
+        ViewBindUtils.setText(holder.binding.userinfoTv,info.toString());
         ViewBindUtils.setText(holder.binding.numberTv, String.valueOf(item.getScore()));
 
     }

@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CXLiveRoomUIView : UIView
 
+@property (weak, nonatomic) IBOutlet UILabel *top_roomNameLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *top_roomNameWidthLayout;
 @property (weak, nonatomic) IBOutlet UIButton *bottom_shareBtn;
 @property (weak, nonatomic) IBOutlet UIButton *roomRedpackBtn;
 
@@ -41,7 +43,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) CXLiveRoomModel *model;
 
 @property (nonatomic, assign) NSInteger HeatValue; // 热度值
-@property (nonatomic, strong) NSArray *ranks; // 排行榜
+@property (nonatomic, strong) NSArray <NSString *> *ranks; // 排行榜
 
 // 是上麦还是下麦
 //@property (nonatomic, assign) BOOL isUpOrDownMicro;

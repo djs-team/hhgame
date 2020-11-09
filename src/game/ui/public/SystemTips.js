@@ -17,7 +17,8 @@ load('game/ui/public/SystemTips', function () {
             this._super(ResConfig.View.SystemTipsLayer)
         },
 
-        runTips: function (tips) {
+        runTips: function (tips, isTurn) {
+            cc.log('--->>>' + tips)
             this.TipsText.setString(tips)
 
             this.TipsBg.setPosition(cc.p(global.View.size.halfWidth, 0))
@@ -25,6 +26,10 @@ load('game/ui/public/SystemTips', function () {
             let callBack = cc.callFunc(function () {
                 appInstance.uiManager().removeUI(this)
             }.bind(this))
+
+            if (isTurn) {
+                this.setRotation(270)
+            }
 
             let delayAction = cc.delayTime(0.3)
             let fadeinAction = cc.fadeIn(0.3)

@@ -5,7 +5,7 @@
 load('game/config/GameConfig', function () {
     let GameConfig = {}
 
-    GameConfig.HeartBeatInterval = 10
+    GameConfig.HeartBeatInterval = 15
 
     GameConfig.propType_currency = 1//货币
     GameConfig.propType_role = 2//角色
@@ -57,6 +57,10 @@ load('game/config/GameConfig', function () {
     GameConfig.VIP_LEVEL_3 = 3//季vip
     GameConfig.VIP_LEVEL_4 = 4//年vip
 
+    GameConfig.CHANNEL = 10001 //大庆
+    GameConfig.CHANNEL = 10037 //嫩江
+    GameConfig.CHANNEL = 10047 //肇源
+
 
 
 
@@ -99,14 +103,22 @@ load('game/config/GameConfig', function () {
 
     }
 
+    GameConfig.channel_animation = {
+        '10001': 'animation5',
+        '10037': 'animation',
+        '10047': 'animation6',
+
+    }
+
     GameConfig.mjError = {
         '10' : '游戏已经开始',
         '11' : '牌桌人数已经够了',
         '12' : '玩家正在游戏队列中',
         '13' : '玩家不在游戏队列中',
         '14' : '没有玩家信息',
-        '15' : '房卡或者金币不足',
+        '15' : '金币不足',
         '16' : '房间不存在',
+        '17' : '服务器维护中',
     }
 
 
@@ -246,17 +258,17 @@ load('game/config/GameConfig', function () {
                 ,
                 '2': {
                     'name': '京东卡',
-                    'currency': 'res/code/props/zphd_12.png',
+                    'currency': 'res/code/props/jd_1.png',
                 }
                 ,
                 '3': {
                     'name': '话费卡',
-                    'currency': 'res/code/props/zphd_12.png',
+                    'currency': 'res/code/props/hfk_1.png',
                 }
                 ,
                 '4': {
                     'name': '现金红包',
-                    'currency': 'res/code/props/zphd_12.png',
+                    'currency': 'res/code/props/xjhb_1.png',
                 }
                 ,
             }
@@ -265,6 +277,91 @@ load('game/config/GameConfig', function () {
 
     }
 
+    GameConfig.feedbackRes = {
+        '0' : {
+            'id': 1,
+            'question': '1.VIP特权',
+            'answer': '可获得专属会员大奖赛参赛资格\n' +
+                '每日可领取专属福利礼包\n' +
+                '免费获取专属尊贵角色\n' +
+                '领取更多倍数签到奖励\n' +
+                '与众不同的专属尊贵会员标示\n' +
+                '同城相亲玩法畅游',
+            'num': 7
+        },
+        '1' : {
+            'id': 2,
+            'question': '2.获取权限',
+            'answer': '首次登陆游戏会提示是否允许使用相关权限，请勾选同意，否则可能会造成无法获取位置，没有音效等问题哦',
+            'num': 3
+        },
+        '2' : {
+            'id': 3,
+            'question': '3.如何成为代理，成为代理后是怎么收益的？',
+            'answer': '您可以联系客服开通代理权限，成为代理后通过您的专属二维码邀请玩家，玩家在游戏内充值会员，观看广告视频，直播间打赏礼物都会有您的分成，另外您邀请的玩家再次邀请玩家，您同样可以获得分成',
+            'num': 5
+        },
+        '3' : {
+            'id': 4,
+            'question': '4.快速盈利',
+            'answer': '邀请更多玩家，通过线上及线下广告方式发布出您的专属二维码，下载人数越多，盈利越快哦，且后续无需任何管理',
+            'num': 3
+        },
+        '4' : {
+            'id': 5,
+            'question': '5.比赛场',
+            'answer': '普通比赛场可点击大厅内的赛事场进行报名参加，VIP专属会员大奖赛，需要您成为会员后才可进行报名参加哦，成为当月会员，当月内所有当前城市会员大奖赛都可参加！',
+            'num': 4
+        },
+        '5' : {
+            'id': 6,
+            'question': '6.实物奖品的兑换',
+            'answer': '您可以点击大厅内的福卡商城，选择您想要兑换的商品，使用福卡进行兑换，记得填写正确的收货信息哦',
+            'num': 3
+        },
+        '6' : {
+            'id': 7,
+            'question': '7.角色获得',
+            'answer': '角色可以通过累计签到，转盘抽奖，货币购买获得，另外成为vip还可免费获得vip专属角色哦！',
+            'num': 3
+        },
+        '7' : {
+            'id': 8,
+            'question': '8.货币获取',
+            'answer': '您可以通过签到，每日任务，各类活动以及观看广告视频获得金币钻石，可以通过比赛场获得大量福卡。另外成为vip还可每日免费领取大量奖励哦！',
+            'num': 4
+        },
+        '8' : {
+            'id': 9,
+            'question': '9.同城相亲及盈利',
+            'answer': '可联系客服申请成为主播，可获取收到礼物的分成，另外成为代理邀请的玩家充值购买礼物，代理也可获得分成哦',
+            'num': 3
+        },
+        '9': {
+            'id': 10,
+            'question': '10.游戏闪退',
+            'answer': '网络信号不佳可能会导致游戏闪退，建议在网络通畅时进行游戏，另外应用程序打开过多，缓存过多也可能会导致游戏闪退，可关闭其他后台程序，清理设备缓存后重新登陆游戏尝试。',
+            'num': 5
+        },
+        '10': {
+            'id': 11,
+            'question': '11.切换城市',
+            'answer': '您可以点击大厅内的更多玩法选择其他城市进行切换',
+            'num': 2
+        },
+        '11': {
+            'id': 12,
+            'question': '12.无法登陆',
+            'answer': '请确认是否为麻将情缘应用打开了网络，另外网络不稳定可能会导致登陆失败，请尝试更换网络链接方式后登陆（切换WIFI/4G网络）。若以上方法仍无法解决，您可以通过问题反馈或联系人工客服详细描述您遇到的问题，我们将会及时处理',
+            'num': 5
+        },
+        '12': {
+            'id': 13,
+            'question': '13.游戏没有声音',
+            'answer': '请先确认是否开启了设备音量，如确认开启仍没有声音，可重新登陆游戏进行尝试',
+            'num': 3
+        },
+    }
 
     GameConfig.turnTableRewardsRes = {
 
@@ -377,8 +474,11 @@ load('game/config/GameConfig', function () {
                     'name': '话费卡',
                     'currency': 'res/turntable/zphf_1.png',
                 }
-
                 ,
+                '4': {
+                    'name': '现金红包',
+                    'currency': 'res/turntable/xjhb_1.png',
+                }
             }
         },
 
@@ -497,8 +597,11 @@ load('game/config/GameConfig', function () {
                     'name': '话费卡',
                     'currency': 'res/sign/zphf_1.png',
                 }
-
                 ,
+                '4': {
+                    'name': '现金红包',
+                    'currency': 'res/sign/xjhb_1.png',
+                }
             }
         },
 
@@ -570,6 +673,13 @@ load('game/config/GameConfig', function () {
         },
 
     }
+
+    GameConfig.goBtnData = [
+        { name: '新手场', score: 500, cost: '2000-6万', minCost: 2000, maxCost: 60000, gameType: 'M1'},
+        { name: '初级场', score: 2000, cost: '6万-24万', minCost: 60000, maxCost: 240000, gameType: 'M2'},
+        { name: '高级场', score: 5000, cost: '24万-60万', minCost: 240000, maxCost: 600000, gameType: 'M3'},
+        { name: '大师场', score: 20000, cost: '60万以上', minCost: 600000, gameType: 'M4'},
+    ]
 
     return GameConfig
 })

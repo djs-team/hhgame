@@ -12,6 +12,9 @@
 {
     void (^ImageBlock)(NSString *imageUrl);
 }
+
+@property (nonatomic, strong) CXUploadImageTokenModel *uploadImageTokenModel;
+
 @end
 
 @implementation CXPhotoManager
@@ -27,8 +30,14 @@ static id _manager;
 }
 
 - (void)showPickerWith:(UIViewController *)viewController
+              putParam:(NSString *)putParam
              allowEdit:(BOOL)allowEdit
          completeBlock:(void (^)(NSString *imageUrl))complete {
+    if (putParam.length > 0) {
+        NSDictionary *dict = [putParam jsonValueDecoded];
+        [CXPhotoManager manager].uploadImageTokenModel = [CXUploadImageTokenModel modelWithDictionary:dict];
+    }
+    
     ImageBlock = complete;
     
     UIAlertController *sheet = [UIAlertController alertControllerWithTitle:@"选择照片" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
@@ -58,7 +67,11 @@ static id _manager;
     [picker dismissViewControllerAnimated:YES completion:nil];
     UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
 
-    [self getUploadTokenWithImage:image];
+    if (![CXPhotoManager manager].uploadImageTokenModel) {
+        [self getUploadTokenWithImage:image];
+    } else {
+        [self uploadImageRequestWithImage:image uploadImageModel:[CXPhotoManager manager].uploadImageTokenModel];
+    }
 }
 
 - (void)getUploadTokenWithImage:(UIImage *)image {
@@ -73,12 +86,12 @@ static id _manager;
 
 - (void)uploadImageRequestWithImage:(UIImage *)image uploadImageModel:(CXUploadImageTokenModel *)uploadImageModel {
     id<OSSCredentialProvider> credential = [[OSSStsTokenCredentialProvider alloc] initWithAccessKeyId:uploadImageModel.AccessKeyId secretKeyId:uploadImageModel.AccessKeySecret securityToken:uploadImageModel.SecurityToken];
-    OSSClient *client = [[OSSClient alloc] initWithEndpoint:uploadImageModel.Expiration credentialProvider:credential];
+    OSSClient *client = [[OSSClient alloc] initWithEndpoint:uploadImageModel.Endpoint credentialProvider:credential];
     OSSPutObjectRequest *put = [[OSSPutObjectRequest alloc] init];
     put.contentType = @"image/jpg";
     put.bucketName = uploadImageModel.BucketName;
     //memberpid/用户id/身份证图片
-    put.objectKey = [NSString stringWithFormat:@"Avatar/%@/%@.jpg", [CXClientModel instance].userId, [NSDate currentTime]];
+    put.objectKey = [NSString stringWithFormat:@"head/%@.jpg", [NSDate currentTime]];
     NSData *imageData = UIImageJPEGRepresentation(image, 0.5);
     put.uploadingData = imageData;
     
@@ -86,7 +99,8 @@ static id _manager;
     [putTask continueWithBlock:^id _Nullable(OSSTask * _Nonnull task) {
         if (!task.error) {
             if (ImageBlock) {
-                ImageBlock(put.objectKey);
+                NSString *path = [NSString stringWithFormat:@"https://%@.%@/%@", uploadImageModel.BucketName,uploadImageModel.Endpoint,put.objectKey];
+                ImageBlock(path);
             }
         }
         return nil;

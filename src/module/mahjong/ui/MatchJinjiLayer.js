@@ -20,7 +20,7 @@ load('module/mahjong/ui/MatchJinjiLayer', function () {
 
         updateView: function (msg) {
             // 服务器这块信息需要核对一下 对应的proto是 MatchEnterTableProto
-            let topStr = cc.formatStr('第%s轮(%s进%s)', msg.mcRoomMode.toString(), msg.mcAllNums.toString(),msg.mcAllNum.toString())
+            let topStr = cc.formatStr('第%s轮(%s进%s)', msg.mcCurRound.toString(), msg.mcAllNums.toString(),msg.mcAllNum.toString())
             this.TopTxt.setString(topStr)
 
             let bmStr = cc.formatStr('等待%s桌对局结束，确定晋级名单', msg.mcEtcTable.toString())

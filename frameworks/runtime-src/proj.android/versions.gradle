@@ -25,6 +25,8 @@ versions.ijkplayer = "0.8.8"
 versions.background = "1.4.1"
 versions.refresh = "1.1.0-alpha-21"
 versions.banner = "2.1.4"
+versions.crashreport = "3.2.3"
+versions.nativecrashreport = "3.7.5"
 def deps = [:]
 
 def support = [:]
@@ -96,6 +98,10 @@ deps.background = "com.noober.background:core:$versions.background"
 deps.refresh = "com.scwang.smartrefresh:SmartRefreshLayout:$versions.refresh"
 deps.header = "com.scwang.smartrefresh:SmartRefreshHeader:$versions.refresh"
 deps.banner = "com.bigkoo:ConvenientBanner:$versions.banner"
+deps.crashreport = "com.tencent.bugly:crashreport:$versions.crashreport"
+deps.nativecrashreport = "com.tencent.bugly:nativecrashreport:$versions.nativecrashreport"
+
+
 ext.deps = deps
 
 def build_versions = [:]

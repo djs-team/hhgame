@@ -1,6 +1,7 @@
 package com.deepsea.mua.stub.controller;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
 import android.util.Log;
@@ -200,10 +201,12 @@ public class RoomJoinController implements IRoomController.JoinRoomListener {
 
     @Override
     public void onError(int code, String msg) {
-        ToastUtils.showToast(msg);
-        hideLoading();
-        if (code == IRoomController.JoinError.PARENT_LOCK) {
+        if (!TextUtils.isEmpty(msg)) {
             ToastUtils.showToast(msg);
         }
+        hideLoading();
+//        if (code == IRoomController.JoinError.PARENT_LOCK) {
+//            ToastUtils.showToast(msg);
+//        }
     }
 }

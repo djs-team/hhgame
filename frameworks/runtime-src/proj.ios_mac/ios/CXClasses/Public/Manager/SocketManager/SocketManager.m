@@ -104,6 +104,8 @@ typedef enum : NSUInteger {
                                                     ,@(SocketMessageIDUpdateGuardianMessage):SocketMessageUserJoinRoom.class
                                                     ,@(SocketMessageIDShowGuardianAnimationMessage):SocketMessageUserJoinRoom.class
                                                     ,@(SocketMessageIDKeepaLiveNotification):CXSocketMessageSystemNotification.class
+                                                    ,@(SocketMessageIDOnlineHeadImageNotification):CXSocketMessageOnlineMemberNumber.class
+                                                    ,@(SocketMessageIDBalanceNotification):CXSocketMessageSystemNotification.class
                                                     
                                                     // Task
                                                     ,@(SocketMessageIDLiveRoomUpdateFinishTaskMessage):CXSocketMessageTaskUpdateFinishTaskInfo.class
@@ -190,7 +192,9 @@ typedef enum : NSUInteger {
     SocketMessageLogin * login = [SocketMessageLogin new];
     login.UserToken = self.token;
     __weak typeof (self) wself = self;
+    [CXClientModel instance].isSocketManagerReconnect = NO;
     self.loginRequest = [self sendRequest:login withCallback:^(SocketMessageLogin * _Nonnull login) {
+        [MBProgressHUD hideHUD];
         wself.loginRequest = nil;
         if ([login.response.Success isEqual: @-2]) {
             // 重连登录
@@ -202,6 +206,8 @@ typedef enum : NSUInteger {
                         // 重连成功
                         if (wself.delegate && [wself.delegate respondsToSelector:@selector(socketManager:reconnectionSuccess:)]) {
                             [wself.delegate socketManager:wself reconnectionSuccess:YES];
+                            
+                            [CXClientModel instance].isSocketManagerReconnect = YES;
                         }
                     } else {
                         UIViewController *vc = [CXTools currentViewController];
@@ -264,7 +270,7 @@ typedef enum : NSUInteger {
             [[CXTools currentViewController] toast:@"玫瑰余额不足，你不能进入专属视频房"];
             [wself.socket close];
         } else if([joinRoom.response.Success isEqual:@10]) {
-            [[CXTools currentViewController] toast:@"被超管踢出房间，暂时不能进入"];
+            [[CXTools currentViewController] toast:joinRoom.response.Code];
             [wself.socket close];
         } else if([joinRoom.response.Success isEqual:@11]) {
             // 处于封禁状态，暂时不能开播
@@ -275,14 +281,14 @@ typedef enum : NSUInteger {
                 timeStr = [wself getMMSSFromSS:joinRoom.response.BanTime];
             }
             
-            NSString *banStr = [NSString stringWithFormat:@"您由于%@被禁播，还有%@禁播结束",joinRoom.response.BanDesc, timeStr];
+            NSString *banStr = [NSString stringWithFormat:@"您由于%@被禁播，还有%@禁播结束",joinRoom.response.Code, timeStr];
             [[CXTools currentViewController] toast:banStr];
             [wself.socket close];
         } else if([joinRoom.response.Success isEqual:@20]) {
             [[CXTools currentViewController] toast:@"服务器在维护"];
             [wself.socket close];
         } else {
-            [[CXTools currentViewController] toast:@"加入房间失败，请稍后重试"];
+            [[CXTools currentViewController] toast:joinRoom.response.Code];
             [wself.socket close];
         }
         

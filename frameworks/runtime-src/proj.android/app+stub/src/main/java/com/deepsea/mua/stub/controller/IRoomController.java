@@ -367,12 +367,6 @@ public interface IRoomController {
          */
         void onlineUser(OnlineUser onlineUser);
 
-        /**
-         * 排行榜
-         *
-         * @param list
-         */
-        void onRankList(List<String> list);
 
         /**
          * 发送动画表情回调
@@ -512,11 +506,15 @@ public interface IRoomController {
 
         void startRobRedPacket(String alert);//开始抢红包
 
-        void  showRobRedpacketResultList(List<UserRedPacket> redPackets);//抢红包结果
+        void showRobRedpacketResultList(List<UserRedPacket> redPackets);//抢红包结果
 
-        void  showCenterHtmlToast(String content);
+        void showCenterHtmlToast(String content);
 
-        void  keepLive();
+        void keepLive();//在线
+
+        void updateOnlineHeads(List<String> heads);
+
+        void upDateBalance(double balance);
 
     }
 }

@@ -328,7 +328,7 @@ public class SongPlayingFragment extends BaseFragment<FragmentSongPlayingBinding
     private void resetSongInfo() {
         AgoraClient.create().rtcEngine().stopAudioMixing();
         ViewBindUtils.setText(mBinding.tvCurrentSongName, "--");
-//        ViewBindUtils.setText(mBinding.tvCurrentSongSinger, "--");
+        ViewBindUtils.setText(mBinding.tvSongSinger, "--");
         ViewBindUtils.setText(mBinding.tvDemandUser, "点播：" + "--");
         ViewBindUtils.setText(mBinding.tvConserUser, "演唱者：" + "--");
         ViewBindUtils.setImageRes(mBinding.ivSongPlay, R.drawable.icon_song_download);
@@ -343,7 +343,7 @@ public class SongPlayingFragment extends BaseFragment<FragmentSongPlayingBinding
                 ViewBindUtils.setVisible(mBinding.rlSongEmpty, false);
                 ViewBindUtils.setVisible(mBinding.llSongExist, true);
                 ViewBindUtils.setText(mBinding.tvCurrentSongName, currentSongInfo.getSongName());
-//                ViewBindUtils.setText(mBinding.tvCurrentSongSinger, currentSongInfo.getSingerName());
+                ViewBindUtils.setText(mBinding.tvSongSinger, currentSongInfo.getSingerName());
                 ViewBindUtils.setText(mBinding.tvDemandUser, "点播：" + currentSongInfo.getDemandUserName());
                 if (!TextUtils.isEmpty(currentSongInfo.getConsertUserName())) {
                     ViewBindUtils.setText(mBinding.tvConserUser, "演唱者：" + currentSongInfo.getConsertUserName());
@@ -390,28 +390,8 @@ public class SongPlayingFragment extends BaseFragment<FragmentSongPlayingBinding
             } else {
                 resetSongInfo();
             }
-            SongInfo nextSongInfo = playSongParam.getNextSongInfo();
-            if (nextSongInfo != null) {
-//                ViewBindUtils.setVisible(mBinding.llSongNext, true);
-                ViewBindUtils.setText(mBinding.tvSongNextName, nextSongInfo.getSongName());
-                ViewBindUtils.setText(mBinding.tvSongNextSinger, nextSongInfo.getSingerName());
-                ViewBindUtils.setText(mBinding.tvSongNextDemandUser, "点播：" + nextSongInfo.getDemandUserName());
-                if (!TextUtils.isEmpty(nextSongInfo.getConsertUserName())) {
-                    ViewBindUtils.setText(mBinding.tvSongNextConserUser, "演唱上麦嘉宾：" + nextSongInfo.getConsertUserName());
-                } else {
-                    ViewBindUtils.setText(mBinding.tvSongNextConserUser, "");
 
-                }
-            } else {
-//                ViewBindUtils.setVisible(mBinding.llSongNext, false);
-                ViewBindUtils.setText(mBinding.tvSongNextName, "--");
-                ViewBindUtils.setText(mBinding.tvSongNextSinger, "--");
-                ViewBindUtils.setText(mBinding.tvSongNextDemandUser, "点播：" + "--");
-                ViewBindUtils.setText(mBinding.tvSongNextConserUser, "演唱上麦嘉宾：" + "--");
-            }
 
-        } else {
-//            ViewBindUtils.setVisible(mBinding.llSongNext, false);
         }
 
 

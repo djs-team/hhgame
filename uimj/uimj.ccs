@@ -22,6 +22,7 @@
             <Folder Name="hand">
               <Image Name="left_hand.png" />
               <Image Name="left_hand_0.png" />
+              <Image Name="left_hand_1.png" />
               <Image Name="self_hand_0.png" />
               <Image Name="self_hand_1.png" />
               <Image Name="self_hand_2.png" />
@@ -29,6 +30,8 @@
               <Image Name="self_hand_4.png" />
               <Image Name="self_hand_5.png" />
               <Image Name="self_hand_6.png" />
+              <Image Name="self_hand_7.png" />
+              <Image Name="self_hand_8.png" />
               <Image Name="top_hand.png" />
             </Folder>
             <Folder Name="out">
@@ -223,11 +226,28 @@
           <Image Name="bt_4.png" />
           <Image Name="bz_1.png" />
           <Image Name="bz_2.png" />
+          <Image Name="bz_3.png" />
+          <Image Name="db.png" />
+          <Image Name="dtjm_1.png" />
+          <Image Name="dtjm_1_1.png" />
           <Image Name="gb.png" />
+          <Image Name="gexx_1.png" />
           <Image Name="gy_fh.png" />
           <Image Name="jinbi.png" />
+          <Image Name="js_1.png" />
+          <Image Name="jsyy.png" />
+          <Image Name="rwzx_10.png" />
+          <Image Name="rwzx_11.png" />
+          <Image Name="sex_man.png" />
+          <Image Name="ssc_1.png" />
+          <Image Name="ssc_5.png" />
+          <Image Name="xin_anniu_10.png" />
         </Folder>
         <Folder Name="dele">
+          <Image Name="6.png" />
+          <Image Name="desk_share.png" />
+          <Image Name="deskPersonal (1).png" />
+          <Image Name="deskPersonal (2).png" />
           <Image Name="liangAction.png" />
           <Image Name="liangpai.jpg" />
           <Image Name="lipai.jpg" />
@@ -332,12 +352,33 @@
           <Image Name="ssc_9.png" />
           <Image Name="ssc_9_1.png" />
         </Folder>
+        <Folder Name="personal">
+          <Image Name="gexx_3.png" />
+          <Image Name="gexx_5.png" />
+        </Folder>
         <Folder Name="png">
+          <Image Name="9.png" />
           <Image Name="ssc_bg1.png" />
           <Image Name="ssc_bg2.png" />
           <Image Name="ssc_bg3.png" />
+          <Image Name="ssc_bg4.png" />
         </Folder>
         <Folder Name="result">
+          <Image Name="1.png" />
+          <Image Name="10.png" />
+          <Image Name="11.png" />
+          <Image Name="111.png" />
+          <Image Name="12.png" />
+          <Image Name="13.png" />
+          <Image Name="3.png" />
+          <Image Name="4.png" />
+          <Image Name="5.png" />
+          <Image Name="7.png" />
+          <Image Name="8.png" />
+          <Image Name="scjb_3.png" />
+          <Image Name="share_bg.png" />
+          <Image Name="share_channel_friend.png" />
+          <Image Name="share_channel_wx.png" />
           <Image Name="ssc_1.png" />
           <Image Name="ssc_10.png" />
           <Image Name="ssc_11.png" />
@@ -366,13 +407,15 @@
         <Project Name="DeskBgLayer.csd" Type="Layer" />
         <Project Name="DeskCardLayer.csd" Type="Layer" />
         <Project Name="DeskHeadLayer.csd" Type="Layer" />
-        <Project Name="EffectLayer.csd" Type="Layer" />
+        <Project Name="DeskPersonlLayer.csd" Type="Layer" />
         <Project Name="DeskResultLayer.csd" Type="Layer" />
         <Project Name="DeskTopLayer.csd" Type="Layer" />
+        <Project Name="EffectLayer.csd" Type="Layer" />
         <Project Name="MatchBigResultLayer.csd" Type="Layer" />
         <Project Name="MatchJinjiLayer.csd" Type="Layer" />
         <Project Name="MatchResultLayer.csd" Type="Layer" />
         <Project Name="MjPlayScene.csd" Type="Scene" />
+        <Project Name="ShareLayer.csd" Type="Scene" />
       </RootFolder>
     </Group>
   </SolutionFolder>

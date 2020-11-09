@@ -6,14 +6,9 @@ load('game/ui/layer/coingame/CoinGameLayer', function () {
     let CoinGameMdt = include('game/ui/layer/coingame/CoinGameMdt')
     let GameUtil = include('game/public/GameUtil')
     let GameEvent = include('game/config/GameEvent')
+    let GameConfig = include('game/config/GameConfig')
     let coinGameLayer = BaseLayer.extend({
         _className: 'coinGameLayer',
-        _goBtnData: [
-            { name: '新手场', score: 500, cost: '2000-6万', minCost: 2000, maxCost: 60000, gameType: 'M1'},
-            { name: '初级场', score: 2000, cost: '6万-24万', minCost: 60000, maxCost: 240000, gameType: 'M2'},
-            { name: '高级场', score: 5000, cost: '24万-60万', minCost: 240000, maxCost: 600000, gameType: 'M3'},
-            { name: '大师场', score: 20000, cost: '60万以上', minCost: 600000, gameType: 'M4'},
-        ],
         _roomId: {
             '4': 'R1',
             '2': 'R2'
@@ -21,8 +16,10 @@ load('game/ui/layer/coingame/CoinGameLayer', function () {
         RES_BINDING: function () {
             return {
                 'topPnl/closeBtn': { onClicked: this.onCloseClick },
-                'topPnl/coinPnl': { },
-                'topPnl/diamondsPnl': { },
+                'topPnl/coinPnl': { onClicked: this.onCoinShopClick},
+                'topPnl/coinPnl/coinAddBtn': {onClicked: this.onCoinShopClick},
+                'topPnl/diamondsPnl': { onClicked: this.onCoinShopClick},
+                'topPnl/diamondsPnl/diamondsAddBtn': {onClicked: this.onCoinShopClick},
                 'bmPnl/startQuickBtn': { onClicked: this.onStartQuickBtnClick },
                 'bmPnl/startQuickBtn/StartQuickName': {  },
                 'leftPnl/PeopleBtn2': { onClicked: this.onPeopleClick },
@@ -31,17 +28,22 @@ load('game/ui/layer/coingame/CoinGameLayer', function () {
             }
         },
         ctor: function () {
+            appInstance.gameAgent().hideLoading()
             this._super(ResConfig.View.CoinGameLayer)
             this.registerMediator(new CoinGameMdt(this))
         },
 
+        onCoinShopClick: function (sender) {
+            GameUtil.delayBtn(sender);
+            appInstance.gameAgent().addPopUI(ResConfig.Ui.CoinShopLayer)
+        },
+
         onEnter: function () {
             this._super()
-            this.initData()
-            this.initView()
         },
 
         initData: function (data) {
+            this._goBtnArray = []
             this._peopleNum = global.localStorage.getIntKey(LocalSave.CoinGamePeopleNum)
             if (!this._peopleNum) {
                 this._peopleNum = 2
@@ -52,7 +54,7 @@ load('game/ui/layer/coingame/CoinGameLayer', function () {
         initView: function (data) {
             this.initData(data)
             for (let i = 1; i < 5; ++i) {
-                this.initGoBtn(this.MidPnl.getChildByName('goBtn' + i), this._goBtnData[i - 1])
+                this.initGoBtn(this.MidPnl.getChildByName('goBtn' + i), GameConfig.goBtnData[i - 1])
             }
             this.updatePeopleBtn()
             if (this._peopleNum === 2) {
@@ -91,8 +93,22 @@ load('game/ui/layer/coingame/CoinGameLayer', function () {
             let maxCost = data._maxCost
 
             if( this._coinCnt < minCost){
-                tipMsg = '您的金币不足，请充值'
-                flag = false
+                // tipMsg = '您的金币不足，请充值'
+                // flag = false
+                let dialogMsg = {
+                    ViewType: 1,
+                    TileName : '提 示',
+                    LeftBtnName: '取 消',
+                    RightBtnName : '去兑换',
+                    RightBtnClick : function () {
+                        appInstance.gameAgent().addPopUI(ResConfig.Ui.CoinShopLayer)
+                        appInstance.uiManager().removeUI(this)
+                    }.bind(this),
+
+                    SayText : '您的金币不足，是否去商城兑换'
+                }
+                appInstance.gameAgent().addDialogUI(dialogMsg)
+                return
             }else if(maxCost &&  this._coinCnt > maxCost){
                 tipMsg = '您的金币超出当前场次限制，请更换更高场次'
                 flag = false
@@ -105,6 +121,10 @@ load('game/ui/layer/coingame/CoinGameLayer', function () {
         },
 
         initGoBtn: function (btnCell, btnData) {
+            if(this._goBtnArray.indexOf(this.startQuickBtn) === -1){
+                this._goBtnArray.push(this.startQuickBtn)
+            }
+            this._goBtnArray.push(btnCell)
             btnCell.getChildByName('Score').setString(btnData.score)
             btnCell.getChildByName('Cost').setString(btnData.cost)
 
@@ -116,7 +136,7 @@ load('game/ui/layer/coingame/CoinGameLayer', function () {
             }
 
             btnCell.addClickEventListener(function(sender, et) {
-                GameUtil.delayBtn(sender);
+                GameUtil.delayBtns(this._goBtnArray)
                 this.goRoomClick(sender)
             }.bind(this))
         },
@@ -148,8 +168,8 @@ load('game/ui/layer/coingame/CoinGameLayer', function () {
             }
         },
 
-        onStartQuickBtnClick: function (sender) {
-            GameUtil.delayBtn(sender);
+        onStartQuickBtnClick: function () {
+            GameUtil.delayBtns(this._goBtnArray)
             let goMsg = {}
             if (this._peopleNum === 2) {
                 goMsg.roomMode = 2
@@ -190,8 +210,7 @@ load('game/ui/layer/coingame/CoinGameLayer', function () {
         onExit: function () {
             this._super()
         },
-        onCloseClick: function (sender) {
-            GameUtil.delayBtn(sender);
+        onCloseClick: function () {
             appInstance.sendNotification(GameEvent.HALL_RED_GET)
             appInstance.uiManager().removeUI(this)
         }

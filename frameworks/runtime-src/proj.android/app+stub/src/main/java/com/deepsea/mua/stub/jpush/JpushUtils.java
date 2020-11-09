@@ -111,7 +111,7 @@ public class JpushUtils {
         uiConfigBuilder.setLogBtnHeight(22);
         uiConfigBuilder.setLogBtnWidth(130);
         uiConfigBuilder.setAppPrivacyColor(0xFFBBBCC5, 0xFF8998FF);
-        uiConfigBuilder.setPrivacyText("登录即同意《", "", "", "》并授合合互娱获取本机号码");
+        uiConfigBuilder.setPrivacyText("登录即同意《", "", "", "》并授麻将情缘获取本机号码");
         uiConfigBuilder.setPrivacyCheckboxHidden(true);
         uiConfigBuilder.setPrivacyTextCenterGravity(true);
 //        uiConfigBuilder.setPrivacyOffsetX(52-15);
@@ -134,10 +134,18 @@ public class JpushUtils {
         layoutTitle.addView(img, imgParam);
         uiConfigBuilder.addCustomView(layoutTitle, false, null);
 
+        // 关闭按钮
+        ImageView closeButton = new ImageView(mContext);
 
+        RelativeLayout.LayoutParams mLayoutParams1 = new RelativeLayout.LayoutParams(DisplayUtil.dip2px(mContext, 10), DisplayUtil.dip2px(mContext, 10));
+        mLayoutParams1.setMargins(0, DisplayUtil.dip2px(mContext, 8.0f), DisplayUtil.dip2px(mContext, 8), 0);
+        mLayoutParams1.addRule(RelativeLayout.ALIGN_PARENT_RIGHT, RelativeLayout.TRUE);
+        mLayoutParams1.addRule(RelativeLayout.ALIGN_PARENT_TOP, RelativeLayout.TRUE);
+        closeButton.setLayoutParams(mLayoutParams1);
+        closeButton.setImageResource(R.drawable.ic_black_close);
+        uiConfigBuilder.addCustomView(closeButton, true, null);
         return uiConfigBuilder.build();
     }
-
 
 
 }

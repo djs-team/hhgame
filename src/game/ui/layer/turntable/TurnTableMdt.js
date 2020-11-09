@@ -87,7 +87,7 @@ load('game/ui/layer/turntable/TurnTableMdt', function () {
 
             _resultData.code = body.code
             GameUtil.getPropData(body,_resultData,GameUtil.CURRENCYTYPE_1,GameUtil.UNITLOCATION_BEFORE,'x')
-
+            appInstance.gameAgent().addReceivePropsUI(_resultData)
             this.view.onReceiveAwardsResult(_resultData)
         },
 

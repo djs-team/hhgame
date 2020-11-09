@@ -41,6 +41,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString * sex; // 1男 2 女
 @property (nonatomic, strong) NSString * city; // 省
 @property (nonatomic, strong) NSString * city_two; // 市
+@property (nonatomic, strong) NSString * intro;
 @property (nonatomic, strong) NSString * online;
 @property (nonatomic, strong) NSString * mstatus; //1.同意 2.拒绝 3.申请中
 @property (nonatomic, strong) NSString * gift_id;
@@ -61,11 +62,9 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface CXSystemMessageModel : NSObject
-
-@property (nonatomic, strong) NSString * system_id;
-@property (nonatomic, strong) NSString * fromsend;
-@property (nonatomic, strong) NSString * pushmsg;
-@property (nonatomic, strong) NSString * pushtime;
+@property (nonatomic, strong) NSString * messageId;
+@property (nonatomic, strong) NSString * content;
+@property (nonatomic, strong) NSString * time;
 
 @end
 

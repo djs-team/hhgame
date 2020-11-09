@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:background="@color/white"
             android:gravity="top"
-            android:hint="尊敬的合合交友用户：\n您在合合交友遇到产品使用的问题，请在这里进行反馈。 "
+            android:hint="尊敬的麻将情缘用户：\n您在麻将情缘遇到产品使用的问题，请在这里进行反馈。 "
             android:minHeight="220dp"
             android:padding="15dp"
             android:textColor="@color/black"

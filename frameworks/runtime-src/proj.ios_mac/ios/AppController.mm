@@ -37,8 +37,6 @@
 #import "CXUserInfoViewController.h"
 #import "CXBaseNavigationController.h"
 
-#import "CXChangeAgeAlertView.h"
-
 // Pay
 #import <AlipaySDK/AlipaySDK.h>
 #import <WXApi.h>
@@ -77,6 +75,9 @@
 // 直播
 #import "CXBaseTabBarViewController.h"
 #import "CXUserModel.h"
+
+// Bugly
+#import <Bugly/Bugly.h>
 
 //#import <StoreKit/StoreKit.h>
 
@@ -124,6 +125,9 @@ static AppDelegate s_sharedApplication;
     }
 
     [window makeKeyAndVisible];
+    
+    // 穿山甲
+    [self setupBUAdSDK];
 
 //    [[UIApplication sharedApplication] setStatusBarHidden:true];
     
@@ -140,8 +144,8 @@ static AppDelegate s_sharedApplication;
     // 微信注册
     [WXApi registerApp:WX_AppKey universalLink:WX_UniversalLinks];
     
-    // 穿山甲
-    [self setupBUAdSDK];
+    // Bugly
+    [Bugly startWithAppId:@"b59315e4a7"];
     
     // OpenInstall
     [OpenInstallSDK initWithDelegate:self];
@@ -150,6 +154,10 @@ static AppDelegate s_sharedApplication;
 //    [[CXIPAPurchaseManager manager] startManager];
 
     [[UIApplication sharedApplication] setIdleTimerDisabled: YES];
+    
+    // 权限获取
+    [CXTools getVideoAuthStatus];
+    [CXTools getAudioAuthStatus];
     
     return YES;
 }
@@ -160,7 +168,20 @@ static AppDelegate s_sharedApplication;
 //
 //    }
 //}
+
 #pragma mark - ======================== JPush =============================
+#pragma mark - 注册极光tagID
+/// 注册极光tagID
+/// @param tagID
++ (void)registerJPUSHTagsId:(NSString*_Nonnull)tagID {
+    NSSet *tags = [NSSet setWithObject:tagID];
+    [JPUSHService setTags:tags completion:^(NSInteger iResCode, NSSet *iTags, NSInteger seq) {
+        if (iResCode == 0) {
+            NSLog(@"tags设置成功=======%@",tagID);
+        }
+    } seq:100];
+}
+
 - (void)configureJPushOptions:(NSDictionary *)launchOptions {
     JPUSHRegisterEntity * entity = [[JPUSHRegisterEntity alloc] init];
     if (@available(iOS 12.0, *)) {
@@ -170,10 +191,27 @@ static AppDelegate s_sharedApplication;
     }
     [JPUSHService registerForRemoteNotificationConfig:entity delegate:self];
     
+    __block NSString *advertisingId;
+    if (@available(iOS 14, *)) {
+        // iOS14及以上版本需要先请求权限
+        [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status) {
+            // 获取到权限后，依然使用老方法获取idfa
+            if (status == ATTrackingManagerAuthorizationStatusAuthorized) {
+                advertisingId = [[ASIdentifierManager sharedManager].advertisingIdentifier UUIDString];
+            }
+        }];
+    } else {
+        // iOS14以下版本依然使用老方法
+        // 判断在设置-隐私里用户是否打开了广告跟踪
+        if ([[ASIdentifierManager sharedManager] isAdvertisingTrackingEnabled]) {
+            advertisingId = [[ASIdentifierManager sharedManager].advertisingIdentifier UUIDString];
+        }
+    }
+    
     [JPUSHService setupWithOption:launchOptions appKey:jPush_appKey
-                          channel:@"Publish channel"
-                 apsForProduction:FALSE
-            advertisingIdentifier:nil];
+                          channel:@"App Store"
+                 apsForProduction:NO
+            advertisingIdentifier:advertisingId];
     [JPUSHService registrationIDCompletionHandler:^(int resCode, NSString *registrationID) {
         if(resCode == 0){
             NSLog(@"registrationID获取成功：%@",registrationID);
@@ -190,6 +228,11 @@ static AppDelegate s_sharedApplication;
     config.timeout = 5000;
     [JVERIFICATIONService setupWithConfig:config];
     [JVERIFICATIONService setDebug:YES];
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    /// Required - 注册 DeviceToken
+    [JPUSHService registerDeviceToken:deviceToken];
 }
 
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
@@ -242,6 +285,8 @@ static AppDelegate s_sharedApplication;
      */
     // We don't need to call this method any more. It will interrupt user defined game pause&resume logic
     /* cocos2d::Director::getInstance()->resume(); */
+    
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
@@ -464,11 +509,18 @@ static AppDelegate s_sharedApplication;
 }
 
 #pragma mark -  ================ Photo ===================
-+ (void)selectedOnePhotoWithMethod:(NSString *_Nonnull)method {
-    [[CXPhotoManager manager] showPickerWith:[CXTools currentViewController] allowEdit:YES completeBlock:^(NSString * _Nonnull imageUrl) {
-        NSLog(@"imageUrl=%@", imageUrl);
-        [AppController dispatchCustomEventWithMethod:method param:imageUrl];
-    }];
++ (void)selectedOnePhotoWithPutParam:(NSString *)putParam method:(NSString *_Nonnull)method {
+    if (putParam.length <= 0) {
+        return;
+    }
+    NSDictionary *dict = [putParam jsonValueDecoded];
+    if ([dict.allKeys containsObject:@"info"]) {
+        NSDictionary *info = dict[@"info"];
+        [[CXPhotoManager manager] showPickerWith:[CXTools currentViewController] putParam:[info jsonStringEncoded] allowEdit:YES completeBlock:^(NSString * _Nonnull imageUrl) {
+            NSLog(@"imageUrl=%@", imageUrl);
+            [AppController dispatchCustomEventWithMethod:method param:imageUrl];
+        }];
+    }
 }
 
 #pragma mark - ================ QRCode ===================
@@ -538,7 +590,7 @@ static AppDelegate s_sharedApplication;
     //得到选择后沙盒中图片的完整路径
     NSString *filePath = [[NSString alloc]initWithFormat:@"%@",[imgPath stringByAppendingPathComponent:fileName]];
 
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [AppController dispatchCustomEventWithMethod:method param:filePath];
     });
 }
@@ -563,30 +615,13 @@ static AppDelegate s_sharedApplication;
 
     [BUAdSDKManager setIsPaidApp:NO];
     
+    // 初始化激励视屏
+    UIViewController *_csjAdReward = [[CXBUAdRewardViewController alloc] init];
+    [_viewController.view addSubview:_csjAdReward.view];
+
+    
     // splash AD demo
 //    [self addSplashAD];
-    
-    if (@available(iOS 14, *)) {
-        // iOS14及以上版本需要先请求权限
-        [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status) {
-            // 获取到权限后，依然使用老方法获取idfa
-            if (status == ATTrackingManagerAuthorizationStatusAuthorized) {
-                NSString *idfa = [[ASIdentifierManager sharedManager].advertisingIdentifier UUIDString];
-                NSLog(@"%@",idfa);
-            } else {
-//                [CXTools showAlertWithMessage:@"请在设置-隐私-Tracking 允许App请求跟踪"];
-            }
-        }];
-    } else {
-        // iOS14以下版本依然使用老方法
-        // 判断在设置-隐私里用户是否打开了广告跟踪
-        if ([[ASIdentifierManager sharedManager] isAdvertisingTrackingEnabled]) {
-            NSString *idfa = [[ASIdentifierManager sharedManager].advertisingIdentifier UUIDString];
-            NSLog(@"%@",idfa);
-        } else {
-//            [CXTools showAlertWithMessage:@"请在设置-隐私-广告 打开广告跟踪功能"];
-        }
-    }
 }
 
 - (void)addSplashAD {
@@ -652,9 +687,29 @@ static AppDelegate s_sharedApplication;
     NSString *imei = [NSString stringWithFormat:@"%@%@", [CXPhoneBasicTools getUUID], [CXPhoneBasicTools getIdentifierForAdvertising]];
     return imei;
 }
+/// 获取当前连接网络
++ (NSString *_Nullable)getNetWorkStates {
+    NSString *netWorkStates = [CXPhoneBasicTools getNetWorkStates];
+    return netWorkStates;
+}
+/// 获取网络信号
++ (NSString *_Nullable)getSignalStrength {
+    NSString *signalStrength = [NSString stringWithFormat:@"%ld",[CXPhoneBasicTools getSignalStrength]];
+    return signalStrength;
+}
+/// 获取电量
++ (NSString *_Nullable)getBatteryLevel {
+    NSString *batteryLevel = [NSString stringWithFormat:@"%0.2f",[CXPhoneBasicTools getBatteryLevel]];
+    return batteryLevel;
+}
 
 + (NSString *_Nullable)getDevice {
     return [CXPhoneBasicTools deviceName];
+}
+
+/// 获取版本号
++ (NSString *_Nullable)getVersion {
+    return [CXPhoneBasicTools getVersion];
 }
 
 #pragma mark - ================ 复制到剪贴板 ===================
@@ -664,6 +719,7 @@ static AppDelegate s_sharedApplication;
 + (void)copyToPasteboard:(NSString *)copyStr {
     UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
     pasteboard.string = copyStr;
+//    [[CXTools currentViewController] toast:@"复制成功"];
 }
 
 #pragma mark - ================ OC调用JS ===================
@@ -672,6 +728,10 @@ static AppDelegate s_sharedApplication;
 /// @param method 方法名
 /// @param param 参数
 + (void)dispatchCustomEventWithMethod:(NSString *)method param:(NSString *)param {
+    if (!method || method.length <= 0) {
+        return;
+    }
+    
     std::string strParam = [param UTF8String];
     std::string strMethod = [method UTF8String];
     std::string jsCallStr = cocos2d::StringUtils::format("cc.eventManager.dispatchCustomEvent(\"%s\",'%s');", strMethod.c_str(),strParam.c_str());
@@ -707,6 +767,7 @@ UIInterfaceOrientationMask oMask = UIInterfaceOrientationMaskLandscape;
 #pragma mark - ================ 直播相关 ===================
 /// 从麻将进入视频
 + (void)enterLiveBroadcastWithToken:(NSString *)param {
+    [[CXOCJSBrigeManager manager] clear];
     if (param.length <= 0 ) {
         return;
     }
@@ -735,13 +796,26 @@ UIInterfaceOrientationMask oMask = UIInterfaceOrientationMaskLandscape;
             [CXClientModel instance].nickname = user.nickname;
             [CXClientModel instance].avatar = user.avatar;
             [CXClientModel instance].sex = user.sex;
+            [CXClientModel instance].card_num = user.card_num;
+            [CXClientModel instance].is_receive = user.is_receive;
             
-            [[CXClientModel instance].easemob login:user.user_id];
+            [[EMClient sharedClient] loginWithUsername:user.user_id password:user.user_id completion:^(NSString *aUsername, EMError *aError) {
+                [AppController setOrientation:@"V"];
+                CXBaseTabBarViewController *tabbarVC = [CXBaseTabBarViewController new];
+                tabbarVC.modalPresentationStyle = UIModalPresentationFullScreen;
+                [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:tabbarVC animated:YES completion:nil];
+//                if (aError) {
+////                    if (wself.delegate && [wself.delegate respondsToSelector:@selector(easemob:user:loginError:)]) {
+////                        [wself.delegate easemob:wself user:aUsername loginError:EMErrorToNSErrro(aError)];
+////                    }
+//                } else {
+////                    if (wself.delegate && [wself.delegate respondsToSelector:@selector(easemob:didLoginWithUser:)]) {
+////                        [wself.delegate easemob:wself didLoginWithUser:aUsername];
+////                    }
+//                }
+            }];
             
-            [AppController setOrientation:@"V"];
-            CXBaseTabBarViewController *tabbarVC = [CXBaseTabBarViewController new];
-            tabbarVC.modalPresentationStyle = UIModalPresentationFullScreen;
-            [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:tabbarVC animated:YES completion:nil];
+//            [[CXClientModel instance].easemob login:user.user_id];
         } else {
             [CXTools showAlertWithMessage:responseObject[@"desc"]];
         }
@@ -749,14 +823,25 @@ UIInterfaceOrientationMask oMask = UIInterfaceOrientationMaskLandscape;
 }
 
 + (void)joinRoom:(NSString *)roomId {
-    if ([CXClientModel instance].sex.integerValue < 1) { // 未设置性别
-        CXChangeAgeAlertView *ageView = [[NSBundle mainBundle] loadNibNamed:@"CXChangeAgeAlertView" owner:nil options:nil].lastObject;
-        [ageView show];
-        return;
-    }
     if (roomId.length <= 0) {
         return;
     }
+    if ([CXTools getAudioAuthStatus] == NO) {
+        [CXTools showSettingAlertViewTitle:@"麦克风权限未开启" content:@"麦克风权限未开启，请进入系统【设置】>【隐私】>【麦克风】中打开开关,开启麦克风功能"];
+        return;
+    }
+    if ([CXTools getVideoAuthStatus] == NO) {
+        [CXTools showSettingAlertViewTitle:@"相机权限未开启" content:@"相机权限未开启，请进入系统【设置】>【隐私】>【相机】中打开开关,开启相机功能"];
+        return;
+    }
+    
+    [MBProgressHUD showHUD];
+    
+    [[CXClientModel instance].easemob leaveRoom];
+    [[CXClientModel instance].agoraEngineManager.engine leaveChannel:nil];
+    [[CXClientModel instance].agoraEngineManager.engine setClientRole:AgoraClientRoleAudience];
+    [[CXClientModel instance].agoraEngineManager.engine setVideoSource:nil];
+    
     [[CXClientModel instance] joinRoom:roomId callback:^(NSString * _Nonnull roomId, BOOL success) {
         [MBProgressHUD hideHUD];
         if (success) {
@@ -776,6 +861,12 @@ UIInterfaceOrientationMask oMask = UIInterfaceOrientationMaskLandscape;
     UIViewController *currentVC = [CXTools currentViewController];
     [currentVC.navigationController pushViewController:vc animated:YES];
     
+}
+
++ (void)showUserProfile:(NSString *_Nonnull)userId target:(UIViewController *)target {
+    CXUserInfoViewController *vc = [CXUserInfoViewController new];
+    vc.user_Id = userId;
+    [target.navigationController pushViewController:vc animated:YES];
 }
 
 + (void)logout {

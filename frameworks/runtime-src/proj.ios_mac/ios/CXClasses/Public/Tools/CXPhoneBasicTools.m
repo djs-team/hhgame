@@ -9,6 +9,10 @@
 #import <sys/utsname.h>
 #import <AdSupport/AdSupport.h>
 
+#import "Reachability.h"
+#import <CoreTelephony/CTCarrier.h>
+#import <CoreTelephony/CTTelephonyNetworkInfo.h>
+
 @implementation CXPhoneBasicTools
 
 // 获取设备uuid
@@ -129,55 +133,97 @@
 
 // 获取当前连接网络
 + (NSString *)getNetWorkStates {
-    UIApplication *app = [UIApplication sharedApplication];
-    NSArray *children = [[[app valueForKeyPath:@"statusBar"]valueForKeyPath:@"foregroundView"]subviews];
-    NSString *state = [[NSString alloc]init];
-    int netType = 0;
-    //获取到网络返回码
-    for (id child in children) {
-        if ([child isKindOfClass:NSClassFromString(@"UIStatusBarDataNetworkItemView")]) {
-            //获取到状态栏
-            netType = [[child valueForKeyPath:@"dataNetworkType"]intValue];
-            NSLog(@"netType:%d",netType);
-            switch (netType) {
-                case 0:
-                    state = @"无网络";
+    NSString *network = @"";
+    switch ([[Reachability reachabilityForInternetConnection] currentReachabilityStatus]) {
+        case NotReachable:
+            network = @"NONE";
+            break;
+        case ReachableViaWiFi:
+            network = @"WIFI";
+            break;
+        case ReachableViaWWAN:
+            network = @"WWAN";
+            break;
+        default:
+            network = @"NONE";
+            break;
+    }
+//    if ([network isEqualToString:@""]) {
+//        network = @"NO DISPLAY";
+//    }
+    return network;
+}
+
++ (NSInteger)getSignalStrength{
+    
+    int signalStrength = 0;
+    if (@available(iOS 13.0, *)) {
+        UIStatusBarManager *statusBarManager = [UIApplication sharedApplication].keyWindow.windowScene.statusBarManager;
+         
+        id statusBar = nil;
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
+        if ([statusBarManager respondsToSelector:@selector(createLocalStatusBar)]) {
+            UIView *localStatusBar = [statusBarManager performSelector:@selector(createLocalStatusBar)];
+            if ([localStatusBar respondsToSelector:@selector(statusBar)]) {
+                statusBar = [localStatusBar performSelector:@selector(statusBar)];
+            }
+        }
+#pragma clang diagnostic pop
+        if (statusBar) {
+            if ([[self getNetWorkStates]isEqualToString:@"WIFI"]) {
+                id currentData = [[statusBar valueForKeyPath:@"_statusBar"] valueForKeyPath:@"currentData"];
+                id wifiEntry = [currentData valueForKeyPath:@"wifiEntry"];
+                if ([wifiEntry isKindOfClass:NSClassFromString(@"_UIStatusBarDataIntegerEntry")]) {
+                    signalStrength = [[wifiEntry valueForKey:@"displayValue"] intValue];
+                }
+            } else {
+                id currentData = [[statusBar valueForKeyPath:@"_statusBar"] valueForKeyPath:@"currentData"];
+                id cellularEntry = [currentData valueForKeyPath:@"cellularEntry"];
+                if ([cellularEntry isKindOfClass:NSClassFromString(@"_UIStatusBarDataCellularEntry")]) {
+                    signalStrength = [[cellularEntry valueForKey:@"displayValue"] intValue];
+                }
+            }
+        }
+    } else {
+        if (IS_IPHONE_X) {
+            id statusBar = [[UIApplication sharedApplication] valueForKeyPath:@"statusBar"];
+            id statusBarView = [statusBar valueForKeyPath:@"statusBar"];
+            UIView *foregroundView = [statusBarView valueForKeyPath:@"foregroundView"];
+            int signalStrength = 0;
+            
+            NSArray *subviews = [[foregroundView subviews][2] subviews];
+            
+            for (id subview in subviews) {
+                if ([subview isKindOfClass:NSClassFromString(@"_UIStatusBarWifiSignalView")]) {
+                    signalStrength = [[subview valueForKey:@"numberOfActiveBars"] intValue];
                     break;
-                case 1:
-                    state = @"2G";
+                } else if ([subview isKindOfClass:NSClassFromString(@"_UIStatusBarPersistentAnimationView")]) { // _UIStatusBarStringView
+                    signalStrength = [[subview valueForKey:@"numberOfActiveBars"] intValue];
                     break;
-                case 2:
-                    state = @"3G";
+                }
+            }
+        } else {
+            
+            UIApplication *app = [UIApplication sharedApplication];
+            NSArray *subviews = [[[app valueForKey:@"statusBar"] valueForKey:@"foregroundView"] subviews];
+            NSString *dataNetworkItemView = nil;
+            int signalStrength = 0;
+            
+            for (id subview in subviews) {
+                
+                if([subview isKindOfClass:[NSClassFromString(@"UIStatusBarDataNetworkItemView") class]] && [[self getNetWorkStates] isEqualToString:@"WIFI"] && ![[self getNetWorkStates] isEqualToString:@"NONE"]) {
+                    dataNetworkItemView = subview;
+                    signalStrength = [[dataNetworkItemView valueForKey:@"_wifiStrengthBars"] intValue];
                     break;
-                case 3:
-                    state = @"4G";
+                } else if ([subview isKindOfClass:[NSClassFromString(@"UIStatusBarSignalStrengthItemView") class]] && ![[self getNetWorkStates] isEqualToString:@"WIFI"] && ![[self getNetWorkStates] isEqualToString:@"NONE"]) {
+                    dataNetworkItemView = subview;
+                    signalStrength = [[dataNetworkItemView valueForKey:@"_signalStrengthRaw"] intValue];
                     break;
-                case 4:
-                    state = @"5G";
-                    break;
-                case 5:
-                    state = @"WIFI";
-                    break;
-                default:
-                    break;
+                }
             }
         }
     }
-    return state;
-}
-
-// 获取网络信号
-+ (NSInteger)getSignalStrength {
-    UIApplication *app = [UIApplication sharedApplication];
-    NSArray *subviews = [[[app valueForKey:@"statusBar"] valueForKey:@"foregroundView"] subviews];
-    NSString *dataNetworkItemView = nil;
-    for (id subview in subviews) {
-        if ([subview isKindOfClass:[NSClassFromString(@"UIStatusBarDataNetworkItemView") class]]) {
-            dataNetworkItemView = subview;
-            break;
-        }
-    }
-    NSInteger signalStrength = [[dataNetworkItemView valueForKey:@"_wifiStrengthBars"] integerValue];
     return signalStrength;
 }
 
@@ -188,5 +234,16 @@
     return deviceLevel;
 }
 
+// 是否有SIM卡
++ (BOOL)isSIMInstalled {
+        CTTelephonyNetworkInfo *networkInfo = [[CTTelephonyNetworkInfo alloc] init];
 
+        CTCarrier *carrier = [networkInfo subscriberCellularProvider];
+
+        if (!carrier.isoCountryCode) {
+             return NO;
+        } else {
+            return YES;
+        }
+}
 @end

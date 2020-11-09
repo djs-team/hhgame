@@ -74,7 +74,7 @@ public class RoomViewModel extends ViewModel {
     }
 
     public LiveData<Resource<List<GiftBean>>> getGuardGifts(String type) {
-        String status = "1";
+        String status = "0";
         return mRepository.getGifts(type, status, SignatureUtils.signWith(type));
     }
 

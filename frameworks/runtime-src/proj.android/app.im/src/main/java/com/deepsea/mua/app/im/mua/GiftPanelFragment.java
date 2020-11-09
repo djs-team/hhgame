@@ -8,6 +8,7 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -44,8 +45,9 @@ public class GiftPanelFragment extends BaseFragment<FragmentGiftPanelBinding> {
     private String touid;
     private String toUserName;
     private static FriendAddAdapter.OnFriendAddListener mListener;
+    String is_room;
 
-    public static BaseFragment newInstance(String touid, String toUserName, FriendAddAdapter.OnFriendAddListener onFriendAddListener) {
+    public static BaseFragment newInstance(String touid, String toUserName, String is_room, FriendAddAdapter.OnFriendAddListener onFriendAddListener) {
         GiftPanelFragment instance = new GiftPanelFragment();
         mListener = onFriendAddListener;
         Bundle bundle = instance.getArguments();
@@ -53,10 +55,12 @@ public class GiftPanelFragment extends BaseFragment<FragmentGiftPanelBinding> {
             bundle = new Bundle();
             bundle.putString("touid", touid);
             bundle.putString("toUserName", toUserName);
+            bundle.putString("is_room", is_room);
             instance.setArguments(bundle);
         } else {
             bundle.putString("touid", touid);
             bundle.putString("toUserName", toUserName);
+            bundle.putString("is_room", is_room);
         }
         return instance;
     }
@@ -70,8 +74,13 @@ public class GiftPanelFragment extends BaseFragment<FragmentGiftPanelBinding> {
     protected void initView(View view) {
         touid = mBundle.getString("touid");
         toUserName = mBundle.getString("toUserName");
+        is_room = mBundle.getString("is_room");
+        if (TextUtils.isEmpty(is_room) || !is_room.equals("1")) {
+            is_room = "2";
+        }
+
         mViewModel = ViewModelProviders.of(this, mModelFactory).get(GiftPanelViewModel.class);
-        mViewModel.refresh().observe(this, new BaseObserver<GiftListBean>() {
+        mViewModel.refresh(is_room).observe(this, new BaseObserver<GiftListBean>() {
             @Override
             public void onError(String msg, int code) {
                 super.onError(msg, code);

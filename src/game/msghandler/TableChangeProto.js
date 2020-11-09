@@ -80,6 +80,7 @@ load('game/msghandler/TableChangeProto', function () {
                 { key: 'pGameType', type: this._byteType.UTF8},//麻将 场次M1新手场M2代表初级场M3高级场M4大师场
                 { key: 'pBaseCoin', type: this._byteType.Int},//底分
                 { key: 'pTaskFlag', type: this._byteType.Int},//0：代表没有课领取任务1：代表有可领取任务
+                { key: 'pMinValue', type: this._byteType.Int},//最低入场费
             ]
         }
     })

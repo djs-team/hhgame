@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (CXPhotoManager *)manager;
 
 - (void)showPickerWith:(UIViewController *)viewController
+              putParam:(NSString *)putParam
              allowEdit:(BOOL)allowEdit
          completeBlock:(void (^)(NSString *imageUrl))complete;
 

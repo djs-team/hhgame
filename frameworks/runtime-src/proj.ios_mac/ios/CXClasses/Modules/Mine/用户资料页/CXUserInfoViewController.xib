@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CXUserInfoViewController">
             <connections>
+                <outlet property="avatar" destination="D79-Xz-bhC" id="QMq-Pd-60n"/>
                 <outlet property="bottomBtn" destination="dO5-tv-pmJ" id="DSR-XR-pZc"/>
+                <outlet property="collectionViewTopLayout" destination="tRZ-vE-zGj" id="XvM-dw-bps"/>
                 <outlet property="hiddenLabel" destination="gOn-v9-Oru" id="cbX-Yx-XOb"/>
                 <outlet property="hiddenLabel_topLayout" destination="tRZ-vE-zGj" id="Xvr-u4-Jxz"/>
                 <outlet property="mainCollectionView" destination="Tly-zH-MbJ" id="YZN-9l-e9b"/>
@@ -25,9 +28,13 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D79-Xz-bhC">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.050000000000000003" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                </imageView>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Tly-zH-MbJ">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="782"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <rect key="frame" x="0.0" y="300" width="414" height="482"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VQZ-4t-Fs1">
                         <size key="itemSize" width="128" height="128"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -78,7 +85,7 @@
                         <constraint firstItem="xwL-OX-cxw" firstAttribute="top" secondItem="ma1-gQ-7Ry" secondAttribute="top" id="vb1-kl-8Rn"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dO5-tv-pmJ">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dO5-tv-pmJ">
                     <rect key="frame" x="74" y="804" width="266" height="38"/>
                     <color key="backgroundColor" red="0.50196078430000002" green="0.2470588235" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -101,28 +108,35 @@
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="Tly-zH-MbJ" secondAttribute="bottom" constant="80" id="4Qa-IU-8Fj"/>
+                <constraint firstItem="Tly-zH-MbJ" firstAttribute="top" secondItem="D79-Xz-bhC" secondAttribute="bottom" id="9CD-Nr-XQ1"/>
                 <constraint firstItem="gOn-v9-Oru" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="D72-0X-9Nf"/>
                 <constraint firstItem="Tly-zH-MbJ" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="JZU-oD-7BO"/>
                 <constraint firstItem="gOn-v9-Oru" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="OAS-uf-bRh"/>
-                <constraint firstItem="Tly-zH-MbJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Pti-cs-Yee"/>
                 <constraint firstItem="dO5-tv-pmJ" firstAttribute="top" secondItem="Tly-zH-MbJ" secondAttribute="bottom" constant="22" id="QAq-Pd-KWt"/>
                 <constraint firstItem="gOn-v9-Oru" firstAttribute="bottom" secondItem="Q5M-cg-NOt" secondAttribute="bottom" id="TRR-3D-cal"/>
+                <constraint firstItem="D79-Xz-bhC" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="WDu-LW-Fyu"/>
+                <constraint firstItem="D79-Xz-bhC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="eDH-Wn-fSa"/>
+                <constraint firstItem="D79-Xz-bhC" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="i12-db-RQU"/>
                 <constraint firstItem="ma1-gQ-7Ry" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="jBf-zo-1mj"/>
                 <constraint firstItem="dO5-tv-pmJ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="oJc-QQ-8sG"/>
+                <constraint firstItem="Tly-zH-MbJ" firstAttribute="top" secondItem="ma1-gQ-7Ry" secondAttribute="bottom" constant="212" id="oLX-n2-bIn"/>
                 <constraint firstItem="Tly-zH-MbJ" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="snl-ar-haz"/>
                 <constraint firstItem="gOn-v9-Oru" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="300" id="tRZ-vE-zGj"/>
                 <constraint firstItem="ma1-gQ-7Ry" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="uAG-SX-Fsc"/>
                 <constraint firstItem="ma1-gQ-7Ry" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="wOA-vo-eB3"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <point key="canvasLocation" x="118.84057971014494" y="119.86607142857142"/>
         </view>
     </objects>
     <resources>
         <image name="back_white" width="12" height="21"/>
         <image name="more_dian" width="16.5" height="3.5"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

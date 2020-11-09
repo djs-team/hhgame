@@ -58,6 +58,11 @@ typedef void(^CXClientModelLeaveRoomCallBack)(NSString *roomId, BOOL success);
 @property (nonatomic, strong) NSString *nickname;
 @property (strong, nonatomic) NSNumber *balance;
 
+// 是否可获赠上麦卡，1:可以 2:不可以
+@property (nullable, assign) NSNumber * is_receive;
+// 可领取上麦卡数量
+@property (nullable, assign) NSNumber * card_num;
+
 @property (nonatomic, strong) NSString *unreadCountStr;// 当前用户未读消息数
 
 // 所有好友的userid数组
@@ -66,8 +71,6 @@ typedef void(^CXClientModelLeaveRoomCallBack)(NSString *roomId, BOOL success);
 @property (nonatomic, strong) NSArray <CXFriendInviteModel *> *firendArrays;
 
 @property (nonatomic, assign) BOOL user_isAnchor; // 自己是不是主播身份
-@property (nullable, assign) NSNumber * is_receive; // 是否可获赠上麦卡，1:可以 2:不可以
-@property (nullable, assign) NSNumber * card_num; // 可领取上麦卡数量
 
 @property (nonatomic, assign) BOOL isAgreeInviteJoinRoom; // 是否同意邀请加入房间
 @property (nonatomic, strong) CXInviteMikeModel *currentAgreeInviteMikeModel; // 当前同意的邀请
@@ -77,7 +80,7 @@ typedef void(^CXClientModelLeaveRoomCallBack)(NSString *roomId, BOOL success);
 // music
 @property (nonatomic, assign) NSInteger currentMusicPlayingProgress;
 @property (nonatomic, strong) DDAudioLRC *currentMusicPlayingLRCModel;
-@property (nonatomic, strong) NSURL *currentMusicPlayingSongPath;
+@property (nonatomic, strong) NSString *currentMusicPlayingSongPath;
 
 @property (nonatomic, copy) NSString *registration_id;
 

@@ -22,6 +22,13 @@
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowIsTranslucent">true</item>
     </style>
+    <style name="HalfTranslucentWindowFor" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@color/translucent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowDisablePreview">true</item>
+    </style>
 
     <!--QQ数字风格样式，注意每一项都不能少-->
     <style name="picture.QQ.style" parent="Theme.AppCompat.Light.DarkActionBar">

@@ -28,6 +28,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSInteger)getSignalStrength;
 // 获取电量
 + (double)getBatteryLevel;
+// 是否有SIM卡
++ (BOOL)isSIMInstalled;
 
 @end
 

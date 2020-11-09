@@ -14,4 +14,11 @@
 @end
 
 @implementation CXSystemMessageModel
+
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{
+             @"messageId" : @"id",
+             };
+}
+
 @end

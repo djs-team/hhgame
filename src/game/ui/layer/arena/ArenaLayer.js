@@ -5,6 +5,7 @@ load('game/ui/layer/arena/ArenaLayer', function () {
     let ArenaMdt = include('game/ui/layer/arena/ArenaMdt')
     let GameEvent = include('game/config/GameEvent')
     let GameUtil = include('game/public/GameUtil')
+    let GameConfig = include('game/config/GameConfig')
     let matchLayer = BaseLayer.extend({
         _className: 'matchLayer',
         _arenaTypeBtnData: [
@@ -15,18 +16,23 @@ load('game/ui/layer/arena/ArenaLayer', function () {
         ],
         _arenaBtnCellName: 'arenaBtn_',
         _arenaType: 1,
+        _propRes: GameConfig.propsRes,
 
         ctor: function () {
+            appInstance.gameAgent().hideLoading()
             this._super(ResConfig.View.ArenaLayer)
             this.registerMediator(new ArenaMdt(this))
         },
         RES_BINDING: function () {
             return {
+                'commonPgPnl': { },
+                'pnl': { },
                 'pnl/closeBtn': { onClicked: this.onCloseBtnClick },
                 'pnl/leftPnl': { },
                 'pnl/leftCell': { },
                 'pnl/areanListView': { },
                 'pnl/areanCell': { },
+                'pnl/recordPnl': { onClicked: this.onAwardBtnClick },
                 'pupupPnl': { },
                 'pupupPnl/popupCloseBtn': { onClicked: this.onHideBtnClick },
                 'pupupPnl/leftBtnPnl/rewardsBtn': { onClicked: this.onMatchDetailBtnClick },
@@ -35,7 +41,16 @@ load('game/ui/layer/arena/ArenaLayer', function () {
                 'pupupPnl/rewardsPnl/rewardsListView': { },
                 'pupupPnl/rewardsPnl/rewardsCell': { },
                 'pupupPnl/formatPnl': { },
-
+                'myAwardPnl': { },
+                'myAwardPnl/awardCell': { },
+                'myAwardPnl/awardList': { },
+                'myAwardPnl/awardCloseBtn': { onClicked: this.onAwardCloseBtnClick },
+                'exchangePnl': {},
+                'exchangePnl/goodsUrl': {},
+                'exchangePnl/phonePnl': {},
+                'exchangePnl/phonePnl/phoneTextField': {},
+                'exchangePnl/rechargePhoneBtn': {},
+                'exchangePnl/phoneCloseBtn': { onClicked: this.onPhoneCloseBtnClick },
             }
         },
         onCreate: function () {
@@ -49,32 +64,218 @@ load('game/ui/layer/arena/ArenaLayer', function () {
         onExit: function () {
             this._super()
         },
-        initView: function () {
-
+        onAwardBtnClick: function (sender) {
+            GameUtil.delayBtn(sender);
+            this.commonPgPnl.setVisible(false)
+            this.pnl.setVisible(false)
             this.pupupPnl.setVisible(false)
+            this.myAwardPnl.setVisible(true)
+            this.awardCell.setVisible(false)
+            let msg = {'type':6}
+            appInstance.gameAgent().httpGame().FUKAMATERIALOGReq(msg)
+        },
+        onAwardCloseBtnClick: function () {
+            this.commonPgPnl.setVisible(true)
+            this.pnl.setVisible(true)
+            this.pupupPnl.setVisible(false)
+            this.myAwardPnl.setVisible(false)
+        },
+        onPhoneCloseBtnClick: function () {
+            this.exchangePnl.setVisible(false)
+        },
+        initView: function () {
+            this.awardList.setScrollBarEnabled(false)
+            this.commonPgPnl.setVisible(true)
+            this.pnl.setVisible(true)
+            this.areanListView.setScrollBarEnabled(false)
+            this.rewardsListView.setScrollBarEnabled(false)
+            this.pupupPnl.setVisible(false)
+            this.myAwardPnl.setVisible(false)
             this.areanCell.setVisible(false)
             this.rewardsCell.setVisible(false)
             this.leftCell.setVisible(false)
+            this.exchangePnl.setVisible(false)
 
+        },
+        onUpdateAwardList: function (msg) {
+            this.awardList.removeAllChildren()
+            let goodInfo = msg.playerGoodsLogList
+            let length = goodInfo.length
+            for (let i=0; i<length; i++) {
+                this.onUpdateAwardCellView(goodInfo[i], i);
+            }
+
+        },
+        onUpdateAwardCellView: function (data, i) {
+            let cell = this.awardCell.clone();
+            cell.setVisible(true)
+            this.awardList.pushBackCustomItem(cell)
+            if (i%2==0) {
+                cell.getChildByName('bgPic_1').setVisible(true)
+                cell.getChildByName('bgPic_2').setVisible(false)
+            } else {
+                cell.getChildByName('bgPic_1').setVisible(false)
+                cell.getChildByName('bgPic_2').setVisible(true)
+            }
+            let propValue = data.propValue
+            let propInfo = propValue.split(',')
+            let propType = propInfo[0]
+            let propCode = propInfo[1]
+            let goodUrl = this._propRes[propType]['propCode'][propCode]['currency'];
+
+            cell._sendMsg = {
+                orderCode : data.orderCode,
+                propValue : data.propValue,
+                goodsUrl : goodUrl,
+            }
+
+            cell.getChildByName('awardContentPnl').getChildByName('awardImg').loadTexture(goodUrl)
+            cell.setName(data.orderCode)
+            cell.getChildByName('awardContentPnl').getChildByName('awardImg').getChildByName('awardText').setString(data.goodsName);
+            cell.getChildByName('timeText').setString(this.onFormatDateTime(data.createTime));
+            switch (data.status) {
+                case 0:
+                    cell.getChildByName('statusPnl').getChildByName('Text_56').setVisible(false)
+                    cell.getChildByName('statusPnl').getChildByName('Button_13').setVisible(true)
+                    cell.getChildByName('statusPnl').getChildByName('yunDanPnl').setVisible(false)
+                    cell.getChildByName('statusPnl').getChildByName('Button_13').addClickEventListener(function (sender,dt) {
+                        GameUtil.delayBtn(sender)
+                        this.phoneExchange(cell._sendMsg)
+                    }.bind(this))
+                    break
+                case 1:
+                    cell.getChildByName('statusPnl').getChildByName('Text_56').setVisible(true)
+                    cell.getChildByName('statusPnl').getChildByName('Text_56').setString('受理中')
+                    cell.getChildByName('statusPnl').getChildByName('Button_13').setVisible(false)
+                    cell.getChildByName('statusPnl').getChildByName('yunDanPnl').setVisible(false)
+                    break
+                case 2:
+                    cell.getChildByName('statusPnl').getChildByName('Text_56').setVisible(true)
+                    cell.getChildByName('statusPnl').getChildByName('Text_56').setString('已完成')
+                    cell.getChildByName('statusPnl').getChildByName('Button_13').setVisible(false)
+                    cell.getChildByName('statusPnl').getChildByName('yunDanPnl').setVisible(true)
+                    if (data.expressCode != '') {
+                        let expressCode = '';
+                        if (data.expressCode.length>8) {
+                            for (let j=0; j<8; j++) {
+                                expressCode = expressCode+data.expressCode[j]
+                            }
+                            expressCode = expressCode+'...'
+                        } else {
+                            expressCode = data.expressCode
+                        }
+
+                        cell.getChildByName('statusPnl').getChildByName('yunDanPnl').getChildByName('Text_58_0').setString(expressCode)
+                        cell.getChildByName('statusPnl').getChildByName('yunDanPnl').getChildByName('Button_13_0').addClickEventListener(function (sender,dt) {
+                            appInstance.nativeApi().copy(data.expressCode)
+                            appInstance.gameAgent().Tips('复制成功')
+                        }.bind(this))
+                    } else {
+                        cell.getChildByName('statusPnl').getChildByName('yunDanPnl').setVisible(false)
+                    }
+                    break
+                default:
+                    break
+            }
+        },
+
+        phoneExchange: function (data) {
+            this.exchangePnl.setVisible(true)
+            this.exchangePnl.getChildByName('goodsUrl').loadTexture(data.goodsUrl)
+            this.rechargePhoneBtn.addClickEventListener(function (sender,et) {
+                GameUtil.delayBtn(sender);
+                this.onRechargePhoneBtnClick(data.orderCode)
+            }.bind(this))
+        },
+
+        onRechargePhoneBtnClick: function (orderCode) {
+
+            let pnoneNum = this.phoneTextField.getString()
+            if(!(/^1[3|4|5|7|8][0-9]\d{8,11}$/.test(pnoneNum))){
+                appInstance.gameAgent().Tips('手机号格式异常，请检查后重新输入')
+                return
+            }
+
+            let msg = {
+                orderCode : orderCode,
+                mobile : pnoneNum
+            }
+            appInstance.gameAgent().httpGame().FUKAMATERIAEXCHANGEReq(msg)
+        },
+
+        onExchangeOnlineResult: function (data) {
+            let status = data.status
+            let orderCode = data.orderCode
+            let isRefresh = true
+            switch (status) {
+                case 0:
+                    isRefresh = false
+                    appInstance.gameAgent().Tips('兑换成功')
+                    this.onChangeRewardsCellData(orderCode)
+                    break
+                case 106:
+                    appInstance.gameAgent().Tips('订单不存在')
+                    break
+                case 108:
+                    appInstance.gameAgent().Tips('订单已处理')
+                    break
+                case 67:
+                    isRefresh = false
+                    appInstance.gameAgent().Tips('手机号格式异常，请检查后重新输入')
+                    break
+                case 107:
+                    isRefresh = false
+                    appInstance.gameAgent().Tips('该商品不可兑换，请联系客服')
+                    break
+                default:
+                    isRefresh = false
+                    appInstance.gameAgent().Tips('充值失败，请重试')
+                    break
+            }
+
+            if(isRefresh){
+                this.onPhoneCloseBtnClick()
+                this.phoneTextField.setString('请输入充值手机号')
+            }
+        },
+
+        onChangeRewardsCellData: function (orderCode) {
+            let cell = this.awardList.getChildByName(orderCode)
+            if (cell) {
+                cell.getChildByName('statusPnl').getChildByName('Text_56').setVisible(true)
+                cell.getChildByName('statusPnl').getChildByName('Button_13').setVisible(false)
+                cell.getChildByName('statusPnl').getChildByName('yunDanPnl').setVisible(false)
+                this.phoneTextField.setString('请输入充值手机号')
+            }
+            this.onPhoneCloseBtnClick()
+        },
+
+        onLoadUrlImg: function (url,size,cell) {
+            cc.loader.loadImg(url, { isCrossOrigin: false },function(err,texture){
+                if (!err && texture) {
+                    let sp = new cc.Sprite(texture)
+                    sp.setContentSize(size)
+                    sp.setPosition(cc.p(size.width/2,size.height/2))
+                    //sp.setRotationX(-90)
+                    cell.addChild(sp)
+                }
+            })
         },
         initData: function () {
 
             this.initArenaTypeBtn()
 
         },
-        onCloseBtnClick: function (sender) {
-            GameUtil.delayBtn(sender);
+        onCloseBtnClick: function () {
             appInstance.sendNotification(GameEvent.HALL_RED_GET)
             appInstance.uiManager().removeUI(this)
         },
 
-        onHideBtnClick: function (sender) {
-            GameUtil.delayBtn(sender);
+        onHideBtnClick: function () {
             this.pupupPnl.setVisible(false)
         },
 
         onMatchDetailBtnClick: function (sender) {
-            GameUtil.delayBtn(sender);
             if(sender == this.rewardsBtn)
                 this._currentPopupBtn = 'rewards'
             else
@@ -250,7 +451,20 @@ load('game/ui/layer/arena/ArenaLayer', function () {
             if(this._arenaType == 3 ){
                 let vipCode = appInstance.dataManager().getUserData().vipCode
                 if(vipCode <= 0){
-                    appInstance.gameAgent().Tips('该功能只对会员开放')
+                    let dialogMsg = {
+                        ViewType: 1,
+                        TileName : '提 示',
+                        LeftBtnName: '我知道了',
+                        RightBtnName : '成为会员',
+                        RightBtnClick : function () {
+                            appInstance.gameAgent().showLoading()
+                            appInstance.gameAgent().addUI(ResConfig.Ui.MemberLayer)
+                            appInstance.uiManager().removeUI(this)
+                        }.bind(this),
+
+                        SayText : '本场比赛只针对VIP玩家开放'
+                    }
+                    appInstance.gameAgent().addDialogUI(dialogMsg)
                     return false
                 }
             }
@@ -276,7 +490,8 @@ load('game/ui/layer/arena/ArenaLayer', function () {
                     LeftBtnName: '取 消',
                     RightBtnName : '确认',
                     RightBtnClick : function () {
-                        appInstance.gameAgent().addPopUI(ResConfig.Ui.CoinShopLayer)
+                        appInstance.gameAgent().showLoading()
+                        appInstance.gameAgent().addUI(ResConfig.Ui.CoinShopLayer)
                         appInstance.uiManager().removeUI(this)
                     }.bind(this),
 
@@ -336,9 +551,25 @@ load('game/ui/layer/arena/ArenaLayer', function () {
         },
 
         onFormatSaiZhiData: function (startTime,format) {
+            let forMatLength = 34
+            format = GameUtil.onForMatTxt(format,forMatLength)
             this.formatPnl.getChildByName('startTime').setString(startTime)
             this.formatPnl.getChildByName('formatText').setString(format)
         },
+
+        onFormatDateTime: function (timestamp) {
+
+            let d = new Date(parseInt(timestamp));
+            let month = (d.getMonth() + 1) < 10 ? (0 + "" + (d.getMonth() + 1)) : (d.getMonth() + 1);
+            let day = d.getDate() < 10 ? (0 + "" + d.getDate()) : d.getDate();
+            let hour = d.getHours() < 10 ? (0 + "" + d.getHours()) : d.getHours();
+            let minute = d.getMinutes() < 10 ? (0 + "" + d.getMinutes()) : d.getMinutes();
+            let second = d.getSeconds() < 10 ? (0 + "" + d.getSeconds()) : d.getSeconds();
+            let dateString = d.getFullYear() + "-" + month + "-" + day + "\n" + hour + ":" + minute
+
+            return dateString;
+
+        }
 
     })
     return matchLayer

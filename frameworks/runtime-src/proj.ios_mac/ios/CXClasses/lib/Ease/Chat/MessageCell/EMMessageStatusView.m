@@ -73,18 +73,18 @@
         [_label removeFromSuperview];
         [_failButton removeFromSuperview];
         
-        [self addSubview:self.activityView];
-        [self.activityView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.equalTo(self);
-            make.width.equalTo(@20);
-        }];
-        [self.activityView startAnimating];
+//        [self addSubview:self.activityView];
+//        [self.activityView mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.edges.equalTo(self);
+//            make.width.equalTo(@20);
+//        }];
+//        [self.activityView startAnimating];
     } else if (aStatus == EMMessageStatusFailed) {
         self.hidden = NO;
         [_label removeFromSuperview];
         
-        [_activityView stopAnimating];
-        [_activityView removeFromSuperview];
+//        [_activityView stopAnimating];
+//        [_activityView removeFromSuperview];
         
         [self addSubview:self.failButton];
         [self.failButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -95,8 +95,8 @@
         self.hidden = NO;
         [_failButton removeFromSuperview];
         
-        [_activityView stopAnimating];
-        [_activityView removeFromSuperview];
+//        [_activityView stopAnimating];
+//        [_activityView removeFromSuperview];
         
         self.label.text = aIsReadAcked ? @"已读" : nil;
         [self addSubview:self.label];
@@ -108,8 +108,8 @@
         [_label removeFromSuperview];
         [_failButton removeFromSuperview];
         
-        [_activityView stopAnimating];
-        [_activityView removeFromSuperview];
+//        [_activityView stopAnimating];
+//        [_activityView removeFromSuperview];
     }
 }
 

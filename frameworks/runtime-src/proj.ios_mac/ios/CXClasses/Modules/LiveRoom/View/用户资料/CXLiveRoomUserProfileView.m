@@ -64,6 +64,22 @@
     _free_inviteBtn.layer.cornerRadius = 18;
     _free_inviteBtn.titleLabel.numberOfLines = 0;
     [_free_inviteBtn setTitle:@"收费邀请\n上麦" forState:UIControlStateNormal];
+    
+    _chatBtn.layer.masksToBounds = YES;
+    _chatBtn.layer.cornerRadius = 18;
+    _chatBtn.layer.borderColor = UIColorHex(0x773BE7).CGColor;
+    _chatBtn.layer.borderWidth = 0.5;
+    
+    _avatar.userInteractionEnabled = YES;
+    UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(avtarAction)];
+    [_avatar addGestureRecognizer:gesture];
+}
+
+- (void)avtarAction {
+    [self hide];
+    if (self.userProfileAvatarActionBlock) {
+        self.userProfileAvatarActionBlock();
+    }
 }
 
 - (void)setUserInfo:(SocketMessageGetUserInfoResponse *)userInfo {
@@ -83,6 +99,7 @@
     LiveRoomUser *user = userInfo.User;
     
     [_avatar sd_setImageWithURL:[NSURL URLWithString:user.HeadImageUrl]];
+    _heightLabel.text = [NSString stringWithFormat:@"%@cm",user.Stature.stringValue];
     _nameLabel.text = user.Name;
     [_sexBtn setTitle:user.Age.stringValue forState:UIControlStateNormal];
     if (user.Sex == 1) {

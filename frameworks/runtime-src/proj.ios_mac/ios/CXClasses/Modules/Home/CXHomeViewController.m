@@ -12,7 +12,8 @@
 #import "CXUserModel.h"
 #import "CXHomeFilterView.h"
 #import "CXHomeRoomModel.h"
-
+#import "CXChangeAgeAlertView.h"
+#import "CXNewUserMicroSeatCardView.h"
 
 @interface CXHomeViewController ()
 
@@ -37,12 +38,50 @@
     self.progressColor = UIColorHex(0xFFFFFF);
     
     [self getRoomModeList];
+    
+    if ([CXClientModel instance].sex.integerValue < 1) { // 未设置性别
+        CXChangeAgeAlertView *ageView = [[NSBundle mainBundle] loadNibNamed:@"CXChangeAgeAlertView" owner:nil options:nil].lastObject;
+        kWeakSelf
+        ageView.backActionBlock = ^{
+            [weakSelf back];
+        };
+        [ageView show];
+    }
+    
+    if ([CXClientModel instance].is_receive.integerValue == 1 && [CXClientModel instance].card_num.integerValue > 0) {
+        // 上麦卡
+        kWeakSelf
+        CXNewUserMicroSeatCardView *view = [[NSBundle mainBundle] loadNibNamed:@"CXNewUserMicroSeatCardView" owner:self options:nil].firstObject;
+        view.userMicroSeatCardJoinBlock = ^{
+            // 上麦
+            [weakSelf getJumpRoom];
+        };
+        [view show];
+    }
+}
+
+// 上麦卡获取体验房间
+- (void)getJumpRoom {
+    kWeakSelf
+    [CXHTTPRequest POSTWithURL:@"/index.php/Api/Languageroom/jump_room" parameters:nil callback:^(id responseObject, BOOL isCache, NSError *error) {
+        if (!error) {
+            NSString *roomId = responseObject[@"data"][@"id"];
+            if ([roomId integerValue] > 0) {
+                [AppController joinRoom:roomId];
+            } else {
+                [weakSelf toast:@"暂时没有可体验房间，请稍后重试"];
+            }
+        }
+    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
     self.navigationController.navigationBarHidden = YES;
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNSNotificationCenter_CXFriendViewController_reloadUnReadCount object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNSNotificationCenter_CXBaseTabBarViewController_reloadSystemUnreadCount object:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -168,6 +207,8 @@
 - (void)back {
 
     [[NSNotificationCenter defaultCenter] postNotificationName:kNSNotificationCenter_CXBaseTabBarViewController_leaveOut object:nil];
+    
+    [[CXClientModel instance].easemob logout];
 }
 
 - (void)search {

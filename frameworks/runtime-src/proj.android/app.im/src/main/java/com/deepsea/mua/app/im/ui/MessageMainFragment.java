@@ -79,6 +79,9 @@ public class MessageMainFragment extends BaseFragment<FragmentMessageMainBinding
             mBinding.sysTab.setSelected(true);
             mBinding.viewMsg.setVisibility(View.GONE);
             mBinding.viewSys.setVisibility(View.VISIBLE);
+            ViewBindUtils.setVisible(mBinding.tvSysUnread, false);
+            EventBus.getDefault().post(new UpdateUnreadMsgEvent());
+
         });
         mBinding.msgTab.setSelected(true);
         mBinding.ivFriend.setOnClickListener(new View.OnClickListener() {
@@ -100,16 +103,28 @@ public class MessageMainFragment extends BaseFragment<FragmentMessageMainBinding
         });
     }
 
+    boolean isResume = false;
 
     @Override
     public void onResume() {
         super.onResume();
+        isResume = true;
         Log.d("onResume", "messageMan");
-        if (!hidden) {
-            getMessageNum();
-        }
+        getMessageNum();
     }
 
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+        Log.d("onResume", "onHiddenChanged" + hidden);
+
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        isResume = false;
+    }
 
     //未读消息数量
     private void getMessageNum() {
@@ -131,23 +146,21 @@ public class MessageMainFragment extends BaseFragment<FragmentMessageMainBinding
     private EMMessageListener mEMListener = new IEMMessageListener() {
         @Override
         public void onMessageReceived(List<EMMessage> list) {
-            if (!hidden) {
+            if (isResume) {
                 getMessageNum();
             }
         }
 
         @Override
         public void onCmdMessageReceived(List<EMMessage> list) {
-            if (!hidden) {
+            if (isResume) {
                 getMessageNum();
             }
         }
 
         @Override
         public void onMessageRecalled(List<EMMessage> list) {
-            if (!hidden) {
-                getMessageNum();
-            }
+            getMessageNum();
         }
     };
 
@@ -158,6 +171,7 @@ public class MessageMainFragment extends BaseFragment<FragmentMessageMainBinding
         int chatCount = EMClient.getInstance().chatManager().getUnreadMessageCount();
         ViewBindUtils.setVisible(mBinding.tvMsgUnread, chatCount > 0);
         ViewBindUtils.setText(mBinding.tvMsgUnread, String.valueOf(chatCount));
+
         ViewBindUtils.setVisible(mBinding.tvSysUnread, sysUnreadNum > 0);
         ViewBindUtils.setText(mBinding.tvSysUnread, String.valueOf(sysUnreadNum));
         int friendCount = applyUnreadNum + myApplyUnreadNum;
@@ -182,18 +196,6 @@ public class MessageMainFragment extends BaseFragment<FragmentMessageMainBinding
     public void onEvent(UpHxUnreadMsg event) {
         getMessageNum();
     }
-
-    private boolean hidden;
-
-    @Override
-    public void onHiddenChanged(boolean hidden) {
-        super.onHiddenChanged(hidden);
-        this.hidden = hidden;
-        if (!hidden) {
-            getMessageNum();
-        }
-    }
-
 
 }
 

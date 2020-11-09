@@ -40,6 +40,13 @@ load('module/mahjong/data/PlayData', function () {
       return TStatus.select === this.tableData.pTStatus
     },
 
+    isMyTurn: function () {
+      return (this.tableData.pCurSeatID === this.pMySeatID)
+    },
+    isMyPutCard: function () {
+      return (this.tableData.pCurSeatID === this.pMySeatID && this.tableData.pTStatus === TStatus.putCard)
+    },
+
     getPlayerByUiseat: function (uiSeat) {
       if (typeof uiSeat === 'number') {
         let seatId = this.UI2SeatId(uiSeat)
@@ -65,9 +72,9 @@ load('module/mahjong/data/PlayData', function () {
 
     isMatch: function () {
       if (this.pMode === 1 || this.pMode === 2) {
-        return true
-      } else {
         return false
+      } else {
+        return true
       }
     },
 

@@ -52,7 +52,8 @@
         android:padding="10dp"
         android:text="@string/forward"
         android:textColor="@android:color/black"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+       android:visibility="gone"/>
     <View
         android:layout_width="match_parent"
         android:layout_height="1px"
@@ -69,6 +70,7 @@
         android:padding="10dp"
         android:text="@string/recall"
         android:textColor="@android:color/black"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:visibility="gone"/>
 
 </LinearLayout>

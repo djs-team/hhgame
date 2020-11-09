@@ -30,6 +30,7 @@
     [self setupSubViews];
     
     _dataSources = [NSMutableArray array];
+    
     _page = 1;
     
     [self getInviteListData];
@@ -54,6 +55,9 @@
        if (!error) {
            NSArray *array = [NSArray modelArrayWithClass:[CXFriendInviteModel class] json:responseObject[@"data"][@"list"]];
            if (self->_page == 1) {
+               
+               [[NSNotificationCenter defaultCenter] postNotificationName:kNSNotificationCenter_CXBaseTabBarViewController_reloadSystemUnreadCount object:nil];
+               
                weakSelf.dataSources = [NSMutableArray arrayWithArray:array];
            } else {
                [weakSelf.dataSources addObjectsFromArray:array];
@@ -146,6 +150,25 @@
     };
     cell.rejestActionBlock = ^{
         [weakSelf rejestInviteWithInviteModel:model];
+    };
+    
+    cell.avatarTapGestureBlock = ^{
+        if ([model.room_id integerValue] > 0) {
+            if ([CXClientModel instance].isJoinedRoom) {
+                for (UIViewController *controller in self.navigationController.viewControllers) {
+                    if ([controller isKindOfClass:[CXLiveRoomViewController class]]) {
+                        [[NSNotificationCenter defaultCenter] postNotificationName:kNSNotificationCenter_CXLiveRoomViewController_joinNewRoom object:nil userInfo:@{@"roomId" : model.room_id}];
+                        
+                        CXLiveRoomViewController *vc = (CXLiveRoomViewController *)controller;
+                        [self.navigationController popToViewController:vc animated:YES];
+                    }
+                }
+            } else {
+                [AppController joinRoom:model.room_id];
+            }
+        } else {
+            [AppController showUserProfile:model.user_id target:weakSelf];
+        }
     };
     
     if (self.friendApply == YES) {

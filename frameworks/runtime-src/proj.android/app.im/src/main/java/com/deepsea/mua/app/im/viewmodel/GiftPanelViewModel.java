@@ -26,8 +26,8 @@ public class GiftPanelViewModel extends ViewModel {
         mRepository = repository;
     }
 
-    public LiveData<Resource<GiftListBean>> refresh() {
-        return mRepository.refresh(SignatureUtils.signByToken());
+    public LiveData<Resource<GiftListBean>> refresh(String is_room) {
+        return mRepository.refresh(SignatureUtils.signByToken(),is_room);
     }
 
     /**

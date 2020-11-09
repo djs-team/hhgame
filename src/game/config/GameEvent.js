@@ -75,6 +75,7 @@ load('game/config/GameEvent', function () {
         'HALL_EMAIL_INFO': 'HALL_EMAIL_INFO',
         'HALL_EMAIL_DEL': 'HALL_EMAIL_DEL',
         'HALL_EMAIL_RECEIVE': 'HALL_EMAIL_RECEIVE',
+        'TABLE_RESULT_RECEIVE': 'TABLE_RESULT_RECEIVE',
     }
 
     return GameEvent

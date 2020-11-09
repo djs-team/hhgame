@@ -18,6 +18,7 @@
 
 @property (nonatomic, strong) NSArray <CXHomeRoomModeModel*> *tagsArrays;
 
+@property (strong, nonatomic) UITextField *nameTextField;
 @property (nonatomic, copy) NSString *room_name;
 @property (nonatomic, strong) NSMutableArray *selectedTypeArrays;
 @property (nonatomic, strong) NSMutableArray *selectedFunctionArrays;
@@ -89,6 +90,11 @@
 }
 
 - (IBAction)openRoomAction:(id)sender {
+    self.room_name = self.nameTextField.text;
+    if (self.room_name.length <= 0) {
+        [self toast:@"房间名不能为空"];
+        return;
+    }
     CXLiveRoomDataModel *roomData = [CXLiveRoomDataModel new];
     roomData.RoomName = self.room_name;
     roomData.RoomType = [NSNumber numberWithString:self.selectedTypeArrays[0]];
@@ -113,7 +119,6 @@
 //    if ([self.selectedFunctionArrays containsObject:@"视频框"]) {
 //        [ModelClient instance].IsOpenVideoFrame = YES;
 //    }
-    [MBProgressHUD showHUD];
     [AppController joinRoom:_roomInfo.room_id];
 }
 
@@ -131,7 +136,8 @@
     if (indexPath.section == 0) {
         CXLiveRoomSetupRoomNameCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CXLiveRoomSetupRoomNameCellID"];
         cell.nameTextField.text = _room_name;
-        _room_name = cell.nameTextField.text;
+        
+        self.nameTextField = cell.nameTextField;
         return cell;
     } else if (indexPath.section == 1) {
         CXLIveRoomSetupRoomTypeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CXLIveRoomSetupRoomTypeCellID"];

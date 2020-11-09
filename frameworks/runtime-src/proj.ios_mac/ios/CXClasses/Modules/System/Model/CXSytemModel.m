@@ -22,6 +22,21 @@
 
 @implementation CXUploadImageTokenModel
 
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{
+             @"AccessKeyId" : @[@"AccessKeyId", @"accessKeyIdOss"],
+             @"AccessKeySecret" : @[@"AccessKeySecret", @"accessKeySecretOss"],
+             @"Expiration" : @[@"Expiration", @"expiration"],
+             @"SecurityToken" : @[@"SecurityToken", @"token"],
+             @"Endpoint" : @[@"Expiration", @"endpoint"],
+             @"BucketName" : @[@"BucketName", @"bucketName"],
+             };
+}
+
+- (NSString *)Expiration {
+    return self.Endpoint;
+}
+
 @end
 
 

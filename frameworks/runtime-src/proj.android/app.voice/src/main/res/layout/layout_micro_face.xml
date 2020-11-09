@@ -78,7 +78,7 @@
             android:layout_height="match_parent"
             android:gravity="center_horizontal"
             android:orientation="vertical"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <ImageView
                 android:id="@+id/iv_women_micro_bg"
@@ -90,12 +90,24 @@
                 android:src="@drawable/icon_micro_bg"
                 android:visibility="visible" />
 
+            <ImageView
+                android:id="@+id/iv_women_micro_bg2"
+                android:layout_width="58dp"
+                android:layout_height="46dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="37dp"
+                android:layout_marginBottom="18dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/icon_sofa_bg"
+                android:visibility="gone" />
+
 
             <RelativeLayout
                 android:id="@+id/rl_empty_woman_desc"
                 android:layout_width="100dp"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/bg_micro_item">
 
                 <TextView
@@ -115,7 +127,8 @@
             android:id="@+id/rl_default_empty"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center">
+            android:gravity="center"
+            android:visibility="visible">
 
             <ImageView
                 android:id="@+id/iv_default_empty"
@@ -165,7 +178,8 @@
                 android:id="@+id/iv_rank_users"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"/>
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="4dp" />
 
             <RelativeLayout
                 android:id="@+id/rl_rose"

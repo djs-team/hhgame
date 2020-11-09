@@ -73,94 +73,6 @@
             "ctype": "PanelObjectData"
           },
           {
-            "FileData": {
-              "Type": "Normal",
-              "Path": "aaa/23 (8).png",
-              "Plist": ""
-            },
-            "Scale9OriginX": 422,
-            "Scale9OriginY": 237,
-            "Scale9Width": 436,
-            "Scale9Height": 246,
-            "AnchorPoint": {
-              "ScaleX": 0.5,
-              "ScaleY": 0.5
-            },
-            "Position": {
-              "X": 640.0,
-              "Y": 360.0
-            },
-            "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 1.0
-            },
-            "CColor": {},
-            "IconVisible": false,
-            "PositionPercentXEnabled": true,
-            "PositionPercentYEnabled": true,
-            "PrePosition": {
-              "X": 0.5,
-              "Y": 0.5
-            },
-            "PreSize": {
-              "X": 1.0,
-              "Y": 1.0
-            },
-            "Tag": 75,
-            "ActionTag": -406265071,
-            "Size": {
-              "X": 1280.0,
-              "Y": 720.0
-            },
-            "VisibleForFrame": false,
-            "Name": "dele",
-            "ctype": "ImageViewObjectData"
-          },
-          {
-            "FileData": {
-              "Type": "Normal",
-              "Path": "aaa/23 (4).png",
-              "Plist": ""
-            },
-            "Scale9OriginX": 422,
-            "Scale9OriginY": 237,
-            "Scale9Width": 436,
-            "Scale9Height": 246,
-            "AnchorPoint": {
-              "ScaleX": 0.5,
-              "ScaleY": 0.5
-            },
-            "Position": {
-              "X": 640.0,
-              "Y": 360.0
-            },
-            "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 1.0
-            },
-            "CColor": {},
-            "IconVisible": false,
-            "PositionPercentXEnabled": true,
-            "PositionPercentYEnabled": true,
-            "PrePosition": {
-              "X": 0.5,
-              "Y": 0.5
-            },
-            "PreSize": {
-              "X": 1.0,
-              "Y": 1.0
-            },
-            "Tag": 322,
-            "ActionTag": -1069971512,
-            "Size": {
-              "X": 1280.0,
-              "Y": 720.0
-            },
-            "VisibleForFrame": false,
-            "Name": "dele_0",
-            "ctype": "ImageViewObjectData"
-          },
-          {
             "ClipAble": false,
             "BackColorAlpha": 102,
             "SingleColor": {
@@ -485,7 +397,7 @@
                       "X": 0.5512,
                       "Y": 0.5103
                     },
-                    "LeftMargin": 294.2711,
+                    "LeftMargin": 294.271,
                     "RightMargin": 280.1873,
                     "TopMargin": 208.3976,
                     "BottomMargin": 144.1576,
@@ -768,8 +680,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 334.0391,
-                  "Y": 334.4142
+                  "X": 334.08,
+                  "Y": 334.44
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -789,10 +701,10 @@
                   "X": 0.1438,
                   "Y": 0.6683
                 },
-                "LeftMargin": 241.9972,
-                "RightMargin": 853.9191,
-                "TopMargin": 144.9846,
-                "BottomMargin": 93.813,
+                "LeftMargin": 242.0382,
+                "RightMargin": 853.8782,
+                "TopMargin": 144.972,
+                "BottomMargin": 93.852,
                 "Tag": 323,
                 "Children": [
                   {
@@ -833,8 +745,8 @@
                       "Y": 0.1498
                     },
                     "LeftMargin": 1.9285,
-                    "RightMargin": 14.1373,
-                    "TopMargin": 22.5524,
+                    "RightMargin": 14.1372,
+                    "TopMargin": 22.526,
                     "BottomMargin": 386.58,
                     "Tag": 461,
                     "Children": [
@@ -1035,11 +947,11 @@
                     },
                     "PreSize": {
                       "X": 0.9057,
-                      "Y": 0.9098
+                      "Y": 0.9099
                     },
                     "LeftMargin": 4.5401,
                     "RightMargin": 12.8212,
-                    "TopMargin": 15.686,
+                    "TopMargin": 15.6596,
                     "BottomMargin": 27.7062,
                     "Tag": 1145,
                     "ActionTag": -600126473,
@@ -1054,7 +966,7 @@
                 "ActionTag": -790427627,
                 "Size": {
                   "X": 184.0837,
-                  "Y": 481.2023
+                  "Y": 481.176
                 },
                 "Name": "leftPnl",
                 "ctype": "PanelObjectData"
@@ -1082,8 +994,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 735.9417,
-                  "Y": 331.2162
+                  "X": 736.0,
+                  "Y": 331.2
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -1103,10 +1015,10 @@
                   "X": 0.4686,
                   "Y": 0.6506
                 },
-                "LeftMargin": 436.0172,
-                "RightMargin": 244.1338,
-                "TopMargin": 154.5793,
-                "BottomMargin": 97.0117,
+                "LeftMargin": 436.0755,
+                "RightMargin": 244.0754,
+                "TopMargin": 154.584,
+                "BottomMargin": 96.984,
                 "Tag": 543,
                 "Children": [
                   {
@@ -1132,8 +1044,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 302.0444,
-                      "Y": 363.6356
+                      "X": 302.024,
+                      "Y": 363.6438
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -1151,10 +1063,10 @@
                       "X": 1.0088,
                       "Y": 0.3177
                     },
-                    "LeftMargin": -0.5076,
-                    "RightMargin": -4.7474,
-                    "TopMargin": 30.359,
-                    "BottomMargin": 289.2212,
+                    "LeftMargin": -0.528,
+                    "RightMargin": -4.7269,
+                    "TopMargin": 30.3738,
+                    "BottomMargin": 289.2294,
                     "Tag": 546,
                     "Children": [
                       {
@@ -1353,10 +1265,10 @@
                           "X": 0.8955,
                           "Y": 0.419
                         },
-                        "LeftMargin": 29.7449,
+                        "LeftMargin": 29.7448,
                         "RightMargin": 33.4724,
-                        "TopMargin": 73.2796,
-                        "BottomMargin": 13.1929,
+                        "TopMargin": 73.2795,
+                        "BottomMargin": 13.193,
                         "Tag": 553,
                         "ActionTag": -989684447,
                         "Size": {
@@ -1398,8 +1310,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 303.1201,
-                      "Y": 157.4475
+                      "X": 303.1037,
+                      "Y": 157.44
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -1419,10 +1331,10 @@
                       "X": 1.0284,
                       "Y": 0.5312
                     },
-                    "LeftMargin": -5.3332,
-                    "RightMargin": -11.7243,
-                    "TopMargin": 186.5616,
-                    "BottomMargin": 33.0476,
+                    "LeftMargin": -5.3495,
+                    "RightMargin": -11.7079,
+                    "TopMargin": 186.5765,
+                    "BottomMargin": 33.0245,
                     "Tag": 554,
                     "Children": [
                       {
@@ -1452,15 +1364,15 @@
                         "IconVisible": false,
                         "PrePosition": {
                           "X": 0.5037,
-                          "Y": 0.5216
+                          "Y": 0.5215
                         },
                         "PreSize": {
                           "X": 0.9358,
-                          "Y": 0.9254
+                          "Y": 0.9253
                         },
                         "LeftMargin": 22.095,
                         "RightMargin": 17.4915,
-                        "TopMargin": 3.9012,
+                        "TopMargin": 3.9326,
                         "BottomMargin": 14.6485,
                         "Tag": 555,
                         "ActionTag": 1410561166,
@@ -1498,15 +1410,15 @@
                         "IconVisible": false,
                         "PrePosition": {
                           "X": 0.5049,
-                          "Y": 0.7134
+                          "Y": 0.7133
                         },
                         "PreSize": {
                           "X": 0.9298,
-                          "Y": 0.5235
+                          "Y": 0.5234
                         },
                         "LeftMargin": 24.6669,
                         "RightMargin": 18.6296,
-                        "TopMargin": 6.1982,
+                        "TopMargin": 6.2296,
                         "BottomMargin": 112.3634,
                         "Tag": 556,
                         "ActionTag": 1774267804,
@@ -1554,11 +1466,11 @@
                         },
                         "PreSize": {
                           "X": 0.9096,
-                          "Y": 0.4571
+                          "Y": 0.457
                         },
                         "LeftMargin": 33.0488,
-                        "RightMargin": 22.6907,
-                        "TopMargin": 13.4778,
+                        "RightMargin": 22.6906,
+                        "TopMargin": 13.5092,
                         "BottomMargin": 121.596,
                         "Tag": 557,
                         "ActionTag": 1950008295,
@@ -1592,8 +1504,8 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 96.1098,
-                          "Y": 180.0007
+                          "X": 96.114,
+                          "Y": 180.0044
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -1605,16 +1517,16 @@
                         "PositionPercentYEnabled": true,
                         "PrePosition": {
                           "X": 0.1558,
-                          "Y": 0.7235
+                          "Y": 0.7234
                         },
                         "PreSize": {
                           "X": 0.1732,
-                          "Y": 0.4034
+                          "Y": 0.4391
                         },
-                        "LeftMargin": 42.6915,
-                        "RightMargin": 467.3784,
-                        "TopMargin": 18.6197,
-                        "BottomMargin": 129.8214,
+                        "LeftMargin": 42.6957,
+                        "RightMargin": 467.3741,
+                        "TopMargin": 14.1985,
+                        "BottomMargin": 125.3763,
                         "Tag": 559,
                         "Children": [
                           {
@@ -1632,8 +1544,8 @@
                               "ScaleY": 0.5
                             },
                             "Position": {
-                              "X": 53.28,
-                              "Y": 52.12
+                              "X": 53.2801,
+                              "Y": 63.0519
                             },
                             "Scale": {
                               "ScaleX": 1.0,
@@ -1643,16 +1555,16 @@
                             "IconVisible": false,
                             "PrePosition": {
                               "X": 0.4987,
-                              "Y": 0.5193
+                              "Y": 0.5771
                             },
                             "PreSize": {
                               "X": 0.7582,
-                              "Y": 0.8071
+                              "Y": 0.7414
                             },
-                            "LeftMargin": 12.78,
-                            "RightMargin": 13.0566,
-                            "TopMargin": 7.7386,
-                            "BottomMargin": 11.62,
+                            "LeftMargin": 12.7801,
+                            "RightMargin": 13.0565,
+                            "TopMargin": 5.7044,
+                            "BottomMargin": 22.5519,
                             "Tag": 560,
                             "ActionTag": 58936205,
                             "Size": {
@@ -1678,7 +1590,7 @@
                             },
                             "Position": {
                               "X": 52.98,
-                              "Y": 50.47
+                              "Y": 61.4018
                             },
                             "Scale": {
                               "ScaleX": 1.0,
@@ -1688,16 +1600,16 @@
                             "IconVisible": false,
                             "PrePosition": {
                               "X": 0.4959,
-                              "Y": 0.5029
+                              "Y": 0.562
                             },
                             "PreSize": {
                               "X": 0.3744,
-                              "Y": 0.3986
+                              "Y": 0.3661
                             },
                             "LeftMargin": 32.98,
                             "RightMargin": 33.8566,
-                            "TopMargin": 29.8886,
-                            "BottomMargin": 30.47,
+                            "TopMargin": 27.8545,
+                            "BottomMargin": 41.4018,
                             "Tag": 561,
                             "ActionTag": 279923669,
                             "Size": {
@@ -1722,8 +1634,8 @@
                               "ScaleY": 0.5
                             },
                             "Position": {
-                              "X": 52.4372,
-                              "Y": 51.1716
+                              "X": 52.4373,
+                              "Y": 62.1033
                             },
                             "Scale": {
                               "ScaleX": 1.0,
@@ -1733,16 +1645,16 @@
                             "IconVisible": false,
                             "PrePosition": {
                               "X": 0.4908,
-                              "Y": 0.5099
+                              "Y": 0.5684
                             },
                             "PreSize": {
                               "X": 0.7862,
-                              "Y": 0.847
+                              "Y": 0.778
                             },
-                            "LeftMargin": 10.4372,
-                            "RightMargin": 12.3994,
-                            "TopMargin": 6.687,
-                            "BottomMargin": 8.6716,
+                            "LeftMargin": 10.4373,
+                            "RightMargin": 12.3993,
+                            "TopMargin": 4.653,
+                            "BottomMargin": 19.6033,
                             "Tag": 1144,
                             "ActionTag": -1551544636,
                             "Size": {
@@ -1751,12 +1663,67 @@
                             },
                             "Name": "finishPic",
                             "ctype": "ImageViewObjectData"
+                          },
+                          {
+                            "IsCustomSize": true,
+                            "FontSize": 20,
+                            "LabelText": "*6666.6万",
+                            "HorizontalAlignmentType": "HT_Center",
+                            "OutlineColor": {
+                              "G": 0,
+                              "B": 0
+                            },
+                            "ShadowColor": {
+                              "R": 110,
+                              "G": 110,
+                              "B": 110
+                            },
+                            "ShadowOffsetX": 2.0,
+                            "ShadowOffsetY": -2.0,
+                            "AnchorPoint": {
+                              "ScaleX": 0.5,
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 54.39,
+                              "Y": 8.03
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {
+                              "R": 175,
+                              "G": 89,
+                              "B": 12
+                            },
+                            "IconVisible": false,
+                            "PrePosition": {
+                              "X": 0.5091,
+                              "Y": 0.0735
+                            },
+                            "PreSize": {
+                              "X": 1.1232,
+                              "Y": 0.2105
+                            },
+                            "LeftMargin": -5.61,
+                            "RightMargin": -7.5534,
+                            "TopMargin": 89.7263,
+                            "BottomMargin": -3.47,
+                            "Tag": 1916,
+                            "ActionTag": -1037206134,
+                            "Size": {
+                              "X": 120.0,
+                              "Y": 23.0
+                            },
+                            "Name": "numValue",
+                            "ctype": "TextObjectData"
                           }
                         ],
                         "ActionTag": -1209073837,
                         "Size": {
                           "X": 106.8366,
-                          "Y": 100.3586
+                          "Y": 109.2563
                         },
                         "Name": "rewardCell",
                         "ctype": "PanelObjectData"
@@ -1820,13 +1787,13 @@
                         },
                         "LeftMargin": 238.0217,
                         "RightMargin": 223.8848,
-                        "TopMargin": 155.1369,
+                        "TopMargin": 155.1682,
                         "BottomMargin": 37.6629,
                         "Tag": 562,
                         "Children": [
                           {
                             "FontSize": 30,
-                            "LabelText": "提 交",
+                            "LabelText": "领 取",
                             "FontResource": {
                               "Type": "Normal",
                               "Path": "font/hkhbtW12.ttc",
@@ -1862,17 +1829,17 @@
                               "Y": 0.5437
                             },
                             "PreSize": {
-                              "X": 0.4903,
+                              "X": 0.4968,
                               "Y": 0.5357
                             },
-                            "LeftMargin": 35.67,
-                            "RightMargin": 43.33,
+                            "LeftMargin": 35.17,
+                            "RightMargin": 42.83,
                             "TopMargin": 10.5503,
                             "BottomMargin": 15.4497,
                             "Tag": 563,
                             "ActionTag": 1183398267,
                             "Size": {
-                              "X": 76.0,
+                              "X": 77.0,
                               "Y": 30.0
                             },
                             "Name": "rewardText",
@@ -1891,16 +1858,69 @@
                     "ActionTag": -1153024067,
                     "Size": {
                       "X": 616.9065,
-                      "Y": 248.7997
+                      "Y": 248.8311
                     },
                     "Name": "bottomPnl",
                     "ctype": "PanelObjectData"
+                  },
+                  {
+                    "IsCustomSize": true,
+                    "FontSize": 20,
+                    "LabelText": "邮件保留7天，请及时领取",
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 453.7794,
+                      "Y": 18.8
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {
+                      "G": 64,
+                      "B": 13
+                    },
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.7565,
+                      "Y": 0.0401
+                    },
+                    "PreSize": {
+                      "X": 0.4309,
+                      "Y": 0.0491
+                    },
+                    "LeftMargin": 324.541,
+                    "RightMargin": 16.8312,
+                    "TopMargin": 438.132,
+                    "BottomMargin": 7.3,
+                    "Tag": 2073,
+                    "ActionTag": -882763555,
+                    "Size": {
+                      "X": 258.4768,
+                      "Y": 23.0
+                    },
+                    "Name": "Text_53",
+                    "ctype": "TextObjectData"
                   }
                 ],
                 "ActionTag": -400734381,
                 "Size": {
                   "X": 599.849,
-                  "Y": 468.409
+                  "Y": 468.432
                 },
                 "Name": "rightPnl",
                 "ctype": "PanelObjectData"
@@ -1993,8 +2013,6 @@
         "ctype": "LayerObjectData"
       },
       "UsedResources": [
-        "aaa/23 (4).png",
-        "aaa/23 (8).png",
         "button/xin_anniu_11.png",
         "button/xin_anniu_12.png",
         "button/xin_anniu_19.png",

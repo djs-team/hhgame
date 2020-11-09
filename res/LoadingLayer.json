@@ -16,7 +16,7 @@
         "Children": [
           {
             "ClipAble": false,
-            "BackColorAlpha": 102,
+            "BackColorAlpha": 66,
             "ComboBoxIndex": 1,
             "SingleColor": {
               "R": 26,
@@ -31,6 +31,8 @@
             "ColorVector": {
               "ScaleY": 1.0
             },
+            "Scale9Width": 1,
+            "Scale9Height": 1,
             "TouchEnable": true,
             "AnchorPoint": {
               "ScaleX": 0.5,
@@ -58,21 +60,14 @@
               "X": 1.0,
               "Y": 1.0
             },
+            "UserData": "{\"layoutType\":\"maxArea\",\"screenAlign\":\"mid\"}",
             "Tag": 110,
             "Children": [
               {
-                "FileData": {
-                  "Type": "Normal",
-                  "Path": "animation/demo/DemoPlayer.ExportJson",
-                  "Plist": ""
-                },
-                "IsLoop": true,
-                "IsAutoPlay": true,
-                "CurrentAnimationName": "walk",
                 "AnchorPoint": {},
                 "Position": {
-                  "X": 556.7901,
-                  "Y": 160.7408
+                  "X": 733.0,
+                  "Y": 360.0
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -80,65 +75,27 @@
                 },
                 "CColor": {},
                 "IconVisible": true,
+                "PositionPercentYEnabled": true,
                 "PrePosition": {
-                  "X": 0.435,
-                  "Y": 0.2233
+                  "X": 0.5727,
+                  "Y": 0.5
                 },
                 "PreSize": {
                   "X": 0.0,
                   "Y": 0.0
                 },
-                "LeftMargin": 556.7901,
-                "RightMargin": 723.2099,
-                "TopMargin": 559.2592,
-                "BottomMargin": 160.7408,
-                "Tag": 113,
-                "ActionTag": -530277112,
+                "LeftMargin": 733.0,
+                "RightMargin": 547.0,
+                "TopMargin": 360.0,
+                "BottomMargin": 360.0,
+                "Tag": 3,
+                "ActionTag": 1306384785,
                 "Size": {
                   "X": 0.0,
                   "Y": 0.0
                 },
-                "Name": "ArmatureNode_2",
-                "ctype": "ArmatureNodeObjectData"
-              },
-              {
-                "FileData": {
-                  "Type": "Default",
-                  "Path": "Default/DemoPlayer.ExportJson",
-                  "Plist": ""
-                },
-                "IsLoop": true,
-                "IsAutoPlay": true,
-                "CurrentAnimationName": "walk",
-                "AnchorPoint": {},
-                "Position": {
-                  "X": 0.0,
-                  "Y": 0.0
-                },
-                "Scale": {
-                  "ScaleX": 1.0,
-                  "ScaleY": 1.0
-                },
-                "CColor": {},
-                "IconVisible": true,
-                "PrePosition": {
-                  "X": 0.0,
-                  "Y": 0.0
-                },
-                "PreSize": {
-                  "X": 0.0,
-                  "Y": 0.0
-                },
-                "RightMargin": 1280.0,
-                "TopMargin": 720.0,
-                "Tag": 114,
-                "ActionTag": 1490866040,
-                "Size": {
-                  "X": 0.0,
-                  "Y": 0.0
-                },
-                "Name": "ArmatureNode_3",
-                "ctype": "ArmatureNodeObjectData"
+                "Name": "MidNd",
+                "ctype": "SingleNodeObjectData"
               }
             ],
             "ActionTag": 1131805094,
@@ -157,14 +114,7 @@
         "Name": "Layer",
         "ctype": "LayerObjectData"
       },
-      "UsedResources": [
-        "animation/demo/DemoPlayer.ExportJson",
-        "animation/demo/DemoPlayer0.plist",
-        "animation/demo/DemoPlayer0.png",
-        "Default/DemoPlayer.ExportJson",
-        "Default/DemoPlayer0.plist",
-        "Default/DemoPlayer0.png"
-      ],
+      "UsedResources": [],
       "ctype": "GameFileData"
     }
   },

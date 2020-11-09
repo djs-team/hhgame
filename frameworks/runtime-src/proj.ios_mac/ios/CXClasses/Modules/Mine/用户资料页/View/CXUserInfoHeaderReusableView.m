@@ -12,7 +12,8 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor =[UIColor colorWithHexString:@"F8F8F8"];
+        
+//        self.backgroundColor =[UIColor colorWithHexString:@"F8F8F8"];
         
         self.clipsToBounds = YES;
       
@@ -27,8 +28,8 @@
     [self addSubview:_avatar];
     
     [_avatar mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.left.right.equalTo(self);
-        make.top.mas_offset(-kStatusHeight);
+        make.top.bottom.left.right.equalTo(self);
+//        make.top.mas_offset(-kStatusHeight);
     }];
 }
 

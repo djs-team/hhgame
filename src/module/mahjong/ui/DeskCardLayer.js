@@ -40,6 +40,8 @@ load('module/mahjong/ui/DeskCardLayer', function () {
             this._deckCardLen = CardConfig[tData.pPlayMode].deckCardLen
             this._allCardNum = CardConfig[tData.pPlayMode].allCardNum
 
+            this._movingCard = false
+
             this._pMySeatID = pData.pMySeatID
 
             this._deckCardTag  = 1
@@ -80,13 +82,102 @@ load('module/mahjong/ui/DeskCardLayer', function () {
                     }
                     if (i === 0) {
                         this._selfHandCard.push(card)
-                        let cardBg = card.getChildByName('CardBg')
-                        cardBg.addClickEventListener(function(sender, et) {
-                            this.onSelfCardClick(sender)
-                        }.bind(this))
+                        card._beginPos = card.getPosition()
+                        // let cardBg = card.getChildByName('CardBg')
+                        // cardBg.addClickEventListener(function(sender, et) {
+                        //     this.onSelfCardClick(sender)
+                        // }.bind(this))
                     }
                 }
             }
+
+            this._handCardSize = this._selfHandCard[0].getContentSize()
+
+            this._handCardNd[0].addTouchEventListener(function(sender,et) {
+                this.onSelfCardTouch(sender,et)
+            }.bind(this), this)
+        },
+
+        onSelfCardTouch: function (sender, et) {
+            switch (et) {
+                case ccui.Widget.TOUCH_BEGAN:
+
+                    if (!appInstance.dataManager().getPlayData().isMyPutCard()) {
+                        return false
+                    }
+
+                    if (this._movingCard) {
+                        return false
+                    }
+                    let beginPos = sender.getTouchBeganPosition()
+                    this._movingCard = this.getTouchCard(sender.convertToNodeSpace(beginPos))
+                    if (this._movingCard && this._movingCard._isCanPut) {
+                        return true
+                    } else {
+                        return false
+                    }
+                case ccui.Widget.TOUCH_MOVED:
+                    if (this._movingCard && this._movingCard._isCanPut) {
+                        this._movingCard.setPosition(sender.convertToNodeSpace(sender.getTouchMovePosition()))
+                    }
+                    break;
+                case ccui.Widget.TOUCH_ENDED:
+                case ccui.Widget.TOUCH_CANCELED:
+                    if (this._movingCard && this._movingCard._isCanPut) {
+                        let isTouchOut = false
+                        let endPos = sender.convertToNodeSpace(sender.getTouchEndPosition())
+                        if (endPos.y - 20 > this._movingCard._beginPos.y) {
+                            isTouchOut = true
+                        }
+
+
+                        for (let i = 0; i < 14; ++i) {
+                            if (this._selfHandCard[i] !== this._movingCard) {
+                                this._selfHandCard[i].setPosition(this._selfHandCard[i]._beginPos)
+                                this._selfHandCard[i]._doubleClick = false
+                            }
+                        }
+                        if (this._movingCard._doubleClick || isTouchOut) {
+                            this._movingCard._doubleClick = false
+                            this._movingCard.setPosition(this._movingCard._beginPos)
+                            let pData = appInstance.dataManager().getPlayData()
+                            let tData = pData.tableData
+                            let pCurSeatID = tData.pCurSeatID
+                            if (pCurSeatID === this._pMySeatID && tData.pTStatus === TStatus.putCard ) {
+                                let msg = {}
+                                msg.nSeatID = this._pMySeatID
+                                msg.nCardColor = this._movingCard._cardInfo.nCardColor
+                                msg.nCardNumber = this._movingCard._cardInfo.nCardNumber
+
+                                appInstance.sendNotification(Event.prePutCard, this._movingCard._cardInfo)
+                                appInstance.gameAgent().tcpGame().putCardProto(msg)
+                                this._movingCard.setPosition(this._movingCard._beginPos)
+                            }
+                        } else {
+                            this._movingCard._doubleClick = true
+                            this._movingCard.setPosition(cc.p(this._movingCard._beginPos.x, this._movingCard._beginPos.y + 20))
+                        }
+                    } else {
+                        for (let i = 0; i < 14; ++i) {
+                            this._selfHandCard[i].setPosition(this._selfHandCard[i]._beginPos)
+                            this._selfHandCard[i]._doubleClick = false
+                        }
+                    }
+                    this._movingCard = false
+                    break;
+            }
+        },
+
+        getTouchCard: function (pos) {
+            for (let i = 0; i < 14; ++i) {
+                if (this._selfHandCard[i].isVisible()) {
+                    let tmpPos = this._selfHandCard[i].getPosition()
+                    if (Math.abs(pos.x - tmpPos.x) * 2 < this._handCardSize.width && Math.abs(pos.y - tmpPos.y) * 2 < this._handCardSize.height) {
+                        return this._selfHandCard[i]
+                    }
+                }
+            }
+            return false
         },
 
         runDirection: function (seatUI) {
@@ -134,6 +225,18 @@ load('module/mahjong/ui/DeskCardLayer', function () {
             }
         },
 
+        reBeginGame: function () {
+            let pConfig = [
+                2,3,0,1
+            ]
+            for ( let i = this._deckCardTag; i <= this._allCardNum; ++i) {
+                let pIndex = Math.floor((i - 1) / this._deckCardLen / 2)
+                let pNd = this._deckCardNd[pConfig[pIndex]]
+                pNd.setVisible(true)
+                pNd.getChildByTag(i).setVisible(true)
+            }
+        },
+
         updateDeckCard: function (nDeckCardNum) {
             let endTag = this._allCardNum - nDeckCardNum
             let pConfig = [
@@ -147,12 +250,24 @@ load('module/mahjong/ui/DeskCardLayer', function () {
             }
         },
 
+        downSelfHandCard: function () {
+            let handNd = this._handCardNd[0]
+            for (let i = 0; i < 14; ++i) {
+                let card = handNd.getChildByName('Card' + i)
+                card.setPosition(card._beginPos)
+            }
+        },
+
         updateHandCard: function (uiSeat, player, isTurn) {
             let handNd = this._handCardNd[uiSeat]
             handNd.setVisible(true)
             let handCards = player.handCards
             let handCardCount = player.handCardCount
-            if (uiSeat === 0) {
+            if (uiSeat === 0) {//修改自己的手牌
+                if ((handCards.length % 3 ) !== 2) {
+                    handCards = appInstance.gameAgent().mjUtil().sortCard(handCards)
+                }
+
                 for (let i = 0; i < 14; ++i) {
                     let card = handNd.getChildByName('Card' + i)
                     if (isTurn) {
@@ -164,7 +279,7 @@ load('module/mahjong/ui/DeskCardLayer', function () {
                                 card.setVisible(false)
                             }
                         } else {
-                            if (i === 0 || i > handCardCount) {
+                            if (i === 0 || i > handCards.length) {
                                 card.setVisible(false)
                             } else {
                                 card.setVisible(true)
@@ -183,22 +298,14 @@ load('module/mahjong/ui/DeskCardLayer', function () {
             } else {
                 for (let i = 0; i < 14; ++i) {
                     let card = handNd.getChildByName('Card' + i)
-                    if (isTurn) {
-                        if ((handCardCount % 3 ) === 2) {
-                            if (i < handCardCount) {
-                                card.setVisible(true)
-                            } else {
-                                card.setVisible(false)
-                            }
+                    if ((handCardCount % 3 ) === 2) {
+                        if (i < handCardCount) {
+                            card.setVisible(true)
                         } else {
-                            if (i === 0 || i > handCardCount) {
-                                card.setVisible(false)
-                            } else {
-                                card.setVisible(true)
-                            }
+                            card.setVisible(false)
                         }
                     } else {
-                        if ( i === 0 || i > handCardCount) {
+                        if (i === 0 || i > handCardCount) {
                             card.setVisible(false)
                         } else {
                             card.setVisible(true)
@@ -208,23 +315,35 @@ load('module/mahjong/ui/DeskCardLayer', function () {
             }
 
             let showCards = player.showCards
+            let isKaimen = false
+            for (let i = 0; i < showCards.length; ++i) {
+                if (showCards[i].pShowType === 3) {
+                    if (showCards[i].pGangType !== 1) {
+                        isKaimen = true
+                    }
+                } else {
+                    isKaimen = true
+                    break
+                }
+            }
+
             for (let i = 0; i < 4; ++i) {
                 let groupNd = handNd.getChildByName('Group' + i)
                 if (showCards[i]) {
                     groupNd.setVisible(true)
-                    this.updateHandGroupCard(uiSeat, groupNd, showCards[i])
+                    this.updateHandGroupCard(uiSeat, groupNd, showCards[i], isKaimen)
                 } else {
                     groupNd.setVisible(false)
                 }
             }
         },
-        updateHandGroupCard: function (uiSeat, groupNd, groupInfo) {
+        updateHandGroupCard: function (uiSeat, groupNd, groupInfo, isKaimen) {
             let showType = groupInfo.pShowType
             switch (showType) {
-                case 1:
-                    for (let i = 0; i < 4; ++i) {
+                case 1:// 吃
+                    for (let i = 0; i < 8; ++i) {
                         let card = groupNd.getChildByName('Card' + i)
-                        if ( i === 3) {
+                        if ( i >= 3) {
                             card.setVisible(false)
                         } else {
                             let valueImg = this.getHandGroupCardImg(uiSeat, groupInfo.pChiCardColor, groupInfo.pBeginIndex + i)
@@ -233,10 +352,10 @@ load('module/mahjong/ui/DeskCardLayer', function () {
                         }
                     }
                     break
-                case 2:
-                    for (let i = 0; i < 4; ++i) {
+                case 2:// 碰
+                    for (let i = 0; i < 8; ++i) {
                         let card = groupNd.getChildByName('Card' + i)
-                        if ( i === 3) {
+                        if ( i >= 3) {
                             card.setVisible(false)
                         } else {
                             let valueImg = this.getHandGroupCardImg(uiSeat, groupInfo.pPengCardColor, groupInfo.pPengCardNumber )
@@ -245,14 +364,46 @@ load('module/mahjong/ui/DeskCardLayer', function () {
                         }
                     }
                     break
-                case 3:
+                case 3:// 杠
                     let gangType = groupInfo.pGangType
-                    for (let i = 0; i < 4; ++i) {
-                        let card = groupNd.getChildByName('Card' + i)
-                        let valueImg = this.getHandGroupCardImg(uiSeat, groupInfo.pGangCardColor, groupInfo.pGangCardNumber )
-                        card.getChildByName('CardValue').loadTexture(valueImg)
-                        card.setVisible(true)
+                    if (gangType === 1) {
+                        for (let i = 0; i < 8; ++i) {
+                            let card = groupNd.getChildByName('Card' + i)
+                            if ( i < 3 ) {
+                                card.setVisible(false)
+                            } else {
+                                if (i === 3) {
+                                    if (isKaimen || uiSeat === 0) {
+                                        let valueImg = this.getHandGroupCardImg(uiSeat, groupInfo.pGangCardColor, groupInfo.pGangCardNumber )
+                                        card.getChildByName('CardValue').loadTexture(valueImg)
+                                        card.setVisible(true)
+                                    } else {
+                                        card.setVisible(false)
+                                    }
+                                } else if ( i === 4) {
+                                    if (isKaimen || uiSeat === 0) {
+                                        card.setVisible(false)
+                                    } else {
+                                        card.setVisible(true)
+                                    }
+                                } else {
+                                    card.setVisible(true)
+                                }
+                            }
+                        }
+                    } else {
+                        for (let i = 0; i < 8; ++i) {
+                            let card = groupNd.getChildByName('Card' + i)
+                            if ( i > 3 ) {
+                                card.setVisible(false)
+                            } else {
+                                let valueImg = this.getHandGroupCardImg(uiSeat, groupInfo.pGangCardColor, groupInfo.pGangCardNumber )
+                                card.getChildByName('CardValue').loadTexture(valueImg)
+                                card.setVisible(true)
+                            }
+                        }
                     }
+                    break
             }
         },
 
@@ -303,6 +454,7 @@ load('module/mahjong/ui/DeskCardLayer', function () {
             let valueNd = card.getChildByName('CardValue')
             let valueImg = 'res/module/mahjong/card/value/selfhand/'
             card._cardInfo = cardInfo
+            card.setPositionY(card._beginPos.y)
             let cardStr = [
                 'wan',
                 'tong',

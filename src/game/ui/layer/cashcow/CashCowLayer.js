@@ -9,6 +9,7 @@ load('game/ui/layer/cashcow/CashCowLayer', function () {
     let cashCowLayer = BaseLayer.extend({
         _className: 'cashCowLayer',
         ctor: function () {
+            appInstance.gameAgent().hideLoading()
             this._super(ResConfig.View.CashCowLayer)
             this.registerMediator(new CashCowMdt(this))
             this.registerEventListener('rewardVideoCallback', this.onRewardVideoCallback)
@@ -45,8 +46,7 @@ load('game/ui/layer/cashcow/CashCowLayer', function () {
             this._super()
         },
 
-        onExplainClick: function (sender) {
-            GameUtil.delayBtn(sender);
+        onExplainClick: function () {
             this.rulePnl.setVisible(true)
         },
 
@@ -67,7 +67,7 @@ load('game/ui/layer/cashcow/CashCowLayer', function () {
         initView: function (data) {
 
             this.initData(data)
-
+            this.dataListPnl.setScrollBarEnabled(false)
             this.recordDataCell.setVisible(false)
             this.propPnl.setVisible(false)
             this.recordsPnl.setVisible(false)
@@ -85,7 +85,7 @@ load('game/ui/layer/cashcow/CashCowLayer', function () {
 
         },
 
-        onRefreshView: function (data) {
+        onRefreshView: function () {
 
             let cashCowNum = appInstance.dataManager().getUserData().cashCowNum
             let usedCashCowNum = appInstance.dataManager().getUserData().usedCashCowNum
@@ -97,13 +97,11 @@ load('game/ui/layer/cashcow/CashCowLayer', function () {
             this.shakeBtn.setBright(flag)
             this.shakeBtn.setTouchEnabled(flag)
 
-            this.onShowPropPnl(data)
 
         },
 
 
-        onCloseClick: function (sender) {
-            GameUtil.delayBtn(sender);
+        onCloseClick: function () {
             appInstance.sendNotification(GameEvent.HALL_RED_GET)
             appInstance.uiManager().removeUI(this)
         },
@@ -142,15 +140,12 @@ load('game/ui/layer/cashcow/CashCowLayer', function () {
             this.propPnl.setVisible(true)
         },
 
-        onHideShowPropPnlClick: function (sender) {
-            GameUtil.delayBtn(sender);
+        onHideShowPropPnlClick: function () {
             this.propPnl.setVisible(false)
-
         },
 
         onRecordClick: function (sender) {
             GameUtil.delayBtn(sender);
-            let msg = {}
             appInstance.gameAgent().httpGame().cashCowRecordReq()
 
         },
@@ -183,14 +178,12 @@ load('game/ui/layer/cashcow/CashCowLayer', function () {
             recordCell.getChildByName('coinsText').setString(record.propNum)
         },
 
-        onHideRecordPnlClick: function (sender) {
-            GameUtil.delayBtn(sender);
+        onHideRecordPnlClick: function () {
             this.recordsPnl.setVisible(false)
 
         },
 
-        onHideRulePnlClick: function (sender) {
-            GameUtil.delayBtn(sender);
+        onHideRulePnlClick: function () {
             this.rulePnl.setVisible(false)
         },
 

@@ -8,6 +8,7 @@
 #import "CXLiveRoomViewController.h"
 #import "CXBaseWebViewController.h"
 #import "CXFriendViewController.h"
+#import "CXLiveRoomSetupViewController.h"
 
 #import <AZCategory/UIView+AZGradient.h>
 
@@ -114,6 +115,7 @@
 @property (nonatomic, assign) BOOL isCloseMineMicro; // 是否关闭了自己的麦克风
 
 // 送礼
+@property (nonatomic, strong) MuaGiftListView *currentGiftListView; // 当前送礼页面
 @property (nonatomic, strong) NSArray <CXLiveRoomGiftModel *> *giftArrays; // 送礼礼物列表
 @property (nonatomic, strong) NSArray <CXLiveRoomGiftModel *> *guardGiftArrays; // 送礼守护礼物列表
 @property (nonatomic, strong) NSArray <CXLiveRoomGiftModel *> *firendGiftArrays; // 送礼加好友礼物列表
@@ -158,6 +160,7 @@
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     
+    [[CXClientModel instance].agoraEngineManager.engine leaveChannel:nil];
     [[CXClientModel instance].agoraEngineManager.engine setClientRole:AgoraClientRoleAudience];
     [[CXClientModel instance].agoraEngineManager.engine setVideoSource:nil];
     
@@ -186,36 +189,25 @@
     
     [self undoSocketRoomMessage];
     
-    // 点击同意进入页面的
-    if ([CXClientModel instance].isAgreeInviteJoinRoom == YES) {
-        [CXClientModel instance].isAgreeInviteJoinRoom = NO;
-        
-        [self applyJoinChannel:false level:[CXClientModel instance].currentAgreeInviteMikeModel.micro_level.integerValue];
-    }
-    
-    if ([[[NSUserDefaults standardUserDefaults] valueForKey:@"UesrDefault_faceUnityOpen"] boolValue] == NO) {
+//    if ([[[NSUserDefaults standardUserDefaults] valueForKey:@"UesrDefault_faceUnityOpen"] boolValue] == NO) {
         [[FUManager shareManager] loadFilterLandmarksType:FUAITYPE_FACELANDMARKS75];
         [self initCapturer];
-        [[CXClientModel instance].agoraEngineManager.engine setVideoSource:self];
-    } else {
-        [[CXClientModel instance].agoraEngineManager.engine setVideoSource:nil];
-        //美颜
-        AgoraBeautyOptions *options = nil;
-        options = [[AgoraBeautyOptions alloc] init];
-        // 亮度明暗对比度
-        options.lighteningContrastLevel = [FUManager shareManager].blurShape;
-        // 美白
-        options.lighteningLevel = [FUManager shareManager].whiteLevel;
-        // 平滑度:磨皮
-        options.smoothnessLevel = [FUManager shareManager].blurLevel;
-        // 红润
-        options.rednessLevel = [FUManager shareManager].redLevel;
-
-        [[CXClientModel instance].agoraEngineManager.engine setBeautyEffectOptions:YES options:options];
-    }
-    
-    [self getAudioAuthStatus];
-    [self getVideoAuthStatus];
+//    } else {
+//        [[CXClientModel instance].agoraEngineManager.engine setVideoSource:nil];
+//        //美颜
+//        AgoraBeautyOptions *options = nil;
+//        options = [[AgoraBeautyOptions alloc] init];
+//        // 亮度明暗对比度
+//        options.lighteningContrastLevel = [FUManager shareManager].blurShape;
+//        // 美白
+//        options.lighteningLevel = [FUManager shareManager].whiteLevel;
+//        // 平滑度:磨皮
+//        options.smoothnessLevel = [FUManager shareManager].blurLevel;
+//        // 红润
+//        options.rednessLevel = [FUManager shareManager].redLevel;
+//
+//        [[CXClientModel instance].agoraEngineManager.engine setBeautyEffectOptions:YES options:options];
+//    }
     
     // socket 心跳
     [self socketSystemUpdate];
@@ -229,8 +221,12 @@
     // 监听微信支付回调
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(weChatCallBack:) name:kNSNotificationCenter_CXRechargeViewController_weixin object:nil];
     
+    // 监听进入新房间
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(joinNewRoom:) name:kNSNotificationCenter_CXLiveRoomViewController_joinNewRoom object:nil];
+    
     [self getGiftListData];
     [self getGuardGiftListData];
+    [self getFirendGiftListData];
     [self getFriendListData];
 }
 
@@ -280,8 +276,6 @@
 
 - (void)setupSubViews {
     
-//    [self.view az_setGradientBackgroundWithColors:@[UIColorHex(0xCF429F),UIColorHex(0x381C5D),UIColorHex(0x141261)] locations:@[@0,@0.5,@1] startPoint:CGPointMake(0, 0) endPoint:CGPointMake(0, 1)];
-    
     [self.view addSubview:self.roomUIView];
     [_roomUIView mas_remakeConstraints:^(MASConstraintMaker *make) {
            make.edges.mas_offset(0);
@@ -305,6 +299,34 @@
     }];
     
     [[CXClientModel instance].room.roomMessages removeAllObjects];
+}
+
+#pragma mark - ==================== 进入新房间 ========================
+- (void)joinNewRoom:(NSNotification *)object {
+    NSString *roomId = object.userInfo[@"roomId"];
+    if (roomId.length > 0) {
+        [self joinNewRoomWithRoomId:roomId];
+    }
+}
+- (void)joinNewRoomWithRoomId:(NSString *)roomId {
+    [self.roomUIView.messageListView clearModel];
+    
+    [[CXClientModel instance].agoraEngineManager.engine leaveChannel:nil];
+    [[CXClientModel instance].agoraEngineManager.engine setClientRole:AgoraClientRoleAudience];
+    [[CXClientModel instance].agoraEngineManager.engine setVideoSource:nil];
+    [[CXClientModel instance].easemob leaveRoom];
+    
+    [self music_playStop];
+    
+    if (self.music_timer) {
+        dispatch_source_cancel(self.music_timer);
+    }
+
+    [self.musicView removeFromSuperview];
+    
+    SocketMessageJoinRoom * joinRoom = [SocketMessageJoinRoom new];
+    joinRoom.RoomId = roomId;
+    [[CXClientModel instance] sendSocketRequest:joinRoom withCallback:nil];
 }
 
 #pragma mark - ==================== 美颜 ========================
@@ -340,10 +362,13 @@
 
 - (void)shouldStart {
     [self.cameraCapturer start];
+    
+    NSLog(@"=================[self.cameraCapturer start]");
 }
 
 - (void)shouldStop {
     [self.cameraCapturer stop];
+    NSLog(@"=================[self.cameraCapturer stop]");
 }
 
 - (void)shouldDispose {
@@ -483,7 +508,21 @@
                         [self music_playResume];
                     }
                 }
+                
+                [self.roomUIView.messageListView clearModel];
+                
+                [[CXClientModel instance].agoraEngineManager.engine setVideoSource:self];
                                 
+                NSLog(@"========进房间了");
+                [[CXClientModel instance].agoraEngineManager joinRoom:roomInit.ShengwangRoomId withUID:[CXClientModel instance].userId.unsignedIntegerValue success:^(NSString * _Nonnull channel, NSUInteger uid, NSInteger elapsed) {
+                    NSLog(@"========channel==%@ ==uid== %ld", channel, uid);
+                }];
+                [[CXClientModel instance].easemob joinRoom:roomInit.HuanxinRoomId];
+                
+                self.roomUIView.roomSeatsView.isMuteArrays = [NSMutableArray arrayWithArray:self.muteArrays];
+                self.roomUIView.model = [CXClientModel instance].room;
+                self.roomUIView.isChangeMir = YES;
+                
                 NSIndexPath *seatIndex = [[CXClientModel instance].room.userSeats objectForKey:[CXClientModel instance].userId];
                 if (!seatIndex) {
                     [CXClientModel instance].agoraEngineManager.offMic = YES;
@@ -491,14 +530,9 @@
                 } else {
                     [CXClientModel instance].agoraEngineManager.offMic = NO;
                     [[CXClientModel instance].agoraEngineManager.engine setClientRole:AgoraClientRoleBroadcaster];
+                    CXLiveRoomSeatView *seatView = [self.roomUIView.roomSeatsView.seats objectForKey:seatIndex];
+                    [seatView addAgoraRtc:[[CXClientModel instance].userId numberValue]];
                 }
-                
-                [[CXClientModel instance].agoraEngineManager joinRoom:roomInit.ShengwangRoomId withUID:[CXClientModel instance].userId.unsignedIntegerValue success:nil];
-                [[CXClientModel instance].easemob joinRoom:roomInit.HuanxinRoomId];
-                
-                self.roomUIView.roomSeatsView.isMuteArrays = [NSMutableArray arrayWithArray:self.muteArrays];
-                self.roomUIView.model = [CXClientModel instance].room;
-                self.roomUIView.isChangeMir = YES;
                 
                 // 获取当前播放歌曲信息
                 CXSocketMessageMusicGetPlayingDetail *request = [CXSocketMessageMusicGetPlayingDetail new];
@@ -518,6 +552,11 @@
                 // 获取轮播数据
                 [self getCycleScrollDataListIsFirstCharge:roomInit.IsFirstCharge];
                 
+                // 点击同意进入页面的
+                if ([CXClientModel instance].isAgreeInviteJoinRoom == YES) {
+                    [CXClientModel instance].isAgreeInviteJoinRoom = NO;
+                    [self replyInvite:YES isAgree:@(1) inviteMicroId:[CXClientModel instance].currentAgreeInviteMikeModel.invite_id];
+                }
             }
                 break;
             case SocketMessageIDUserJoinRoom: { // 加入房间
@@ -552,19 +591,19 @@
                 [args.Args enumerateObjectsUsingBlock:^(SocketMessageUserSitdown * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                     SocketMessageUserSitdown *userSitdown = obj;
                     NSIndexPath *indexPath = [userSitdown.MicroInfo indexPath];
-                    
+
                     NSIndexPath * selfSeatIndex = [[CXClientModel instance].room.userSeats objectForKey:[CXClientModel instance].userId];
                     if (selfSeatIndex && [selfSeatIndex isEqual:indexPath]) {
                         [CXClientModel instance].agoraEngineManager.offMic = NO;
                         self.roomUIView.isChangeMir = YES;
                         [[CXClientModel instance].agoraEngineManager.engine setClientRole:AgoraClientRoleBroadcaster];
                     }
-                
+                    
                     LiveRoomMicroInfo *seat = [[CXClientModel instance].room.seats objectForKey:indexPath];
                     CXLiveRoomSeatView *seatView = [self.roomUIView.roomSeatsView.seats objectForKey:indexPath];
                     seatView.model = seat;
                     [seatView addAgoraRtc:[userSitdown.MicroInfo.User.UserId numberValue]];
-                    
+
                     [self.roomUIView.messageListView addModel:userSitdown];
                 }];
             }
@@ -623,8 +662,12 @@
                 SocketMessageDeported * dep = notification;
                 [self.roomUIView.messageListView addModel:dep];
                 if ([dep.UserId isEqualToNumber:[[CXClientModel instance].userId numberValue]]) {
-                    [self toast:dep.Code];
-                    [self leaveRoom];
+                    if (dep.Code.length > 0) {
+                        [self toast:dep.Code];
+                    }
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                        [self leaveRoom];
+                    });
                 }
             }
                 break;
@@ -654,6 +697,11 @@
                         }
                     }];
                 }
+            }
+                break;
+            case SocketMessageIDRoomNameUpdate: {
+                self.roomUIView.top_roomNameWidthLayout.constant = [[CXClientModel instance].room.RoomData.RoomName sizeWithFont:[UIFont systemFontOfSize:16]].width + 44;
+                self.roomUIView.top_roomNameLabel.text = [CXClientModel instance].room.RoomData.RoomName;
             }
                 break;
             case SocketMessageIDMicroSeatNumber: { // 同步用户上麦卡数量
@@ -742,9 +790,9 @@
                 CXSystemAlertView *alertView = [CXSystemAlertView loadNib];
                 kWeakSelf
                 [alertView showAlertTitle:title message:nil cancel:^{
-                    [weakSelf replyInvite:false isAgree:@(0)];
+                    [weakSelf replyInvite:false isAgree:@(0) inviteMicroId:@"0"];
                 } sure:^{
-                    [weakSelf replyInvite:false isAgree:@(1)];
+                    [weakSelf replyInvite:false isAgree:@(1) inviteMicroId:@"0"];
                 }];
                 [alertView show];
             }
@@ -777,6 +825,11 @@
                 
             }
                 break;
+            case SocketMessageIDOnlineHeadImageNotification: {
+                CXSocketMessageOnlineMemberNumber *number = notification;
+                self.roomUIView.ranks = number.OnlineHeadImages;
+                break;
+            }
             case SocketMessageIDMusicReserveList: { // 预约列表
 //               CXSocketMessageMusicReceiveReverseList *list = notification;
 //            self.roomUIView.bottom_music_reverse_numberLable.text = [NSString stringWithFormat:@"预约:%ld", list.SongCount];
@@ -784,7 +837,7 @@
             }
                 break;
             case SocketMessageIDMusicStartPlaySongSyncGist: {// 收到播放歌曲消息
-                SocketMessageMusicReceivePlayingDetail *detail = notification;
+//                SocketMessageMusicReceivePlayingDetail *detail = notification;
                 self.musicView.musicPlayStatus = music_loading;
                 [self music_playStart];
             }
@@ -865,7 +918,7 @@
                 } else {
                     self.roomUIView.musicLRCShowView.hidden = YES;
                 }
-                if ([CXClientModel instance].isSocketManagerReconnect == YES && [CXClientModel instance].currentMusicPlayingSongPath) {
+                if ([CXClientModel instance].isSocketManagerReconnect == YES && [CXClientModel instance].currentMusicPlayingSongPath.length > 0) {
                     [self music_playReconnectPlay];
                 }
                 
@@ -951,9 +1004,13 @@
                 CXSocketMessageNotifyStartRobRedPacket *msg = notification;
                 if (msg.Msg) {
                     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithData:[msg.Msg dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
-                               UIFont *boldFont = [UIFont boldSystemFontOfSize:16];
-                               [attributedString addAttribute:NSFontAttributeName value:boldFont range:NSMakeRange(0, attributedString.length)];
+                    UIFont *boldFont = [UIFont boldSystemFontOfSize:16];
+                    [attributedString addAttribute:NSFontAttributeName value:boldFont range:NSMakeRange(0, attributedString.length)];
                     self.redpacketStartView.msgLabel.attributedText =  attributedString;
+                    
+                    GameMessageTextWelcomeModel *textModel = [GameMessageTextWelcomeModel new];
+                    textModel.text = attributedString.string;
+                    [self.roomUIView.messageListView addModel:textModel];
                 } else {
                     self.redpacketStartView.msgLabel.text = @"";
                 }
@@ -962,7 +1019,6 @@
             }
                 break;
             case SocketMessageIDNotifyRedPacketResultToClientMessage: { // 广播红包列表
-                [self.redpacketStartView hide];
                 CXSocketMessageNotifyRedPacketResultToClient *list = notification;
                 [self showRedPacketResult:list.UserRedPackets];
             }
@@ -991,42 +1047,40 @@
             }
                 break;
                 
-                //=========== 红包 =============
+                //=========== 心跳 =============
             case SocketMessageIDKeepaLiveNotification: {
                 CXSocketMessageSystemKeepaLiveRequest *request = [CXSocketMessageSystemKeepaLiveRequest new];
                 [[CXClientModel instance] sendSocketRequest:request withCallback:nil];
             }
                 break;
+                
+            case SocketMessageIDBalanceNotification: { // 同步用户的玫瑰余额
+                CXSocketMessageSystemNotification *msg = notification;
+                [CXClientModel instance].balance = msg.Balance;
+                if (_currentGiftListView) {
+                    _currentGiftListView.moneyLabel.text = msg.Balance.stringValue;
+                }
+            }
+                break;
+                
             default:
                 break;
         }
     }
 }
 
-//- (void)modelClient:(CXClientModel *)client reconnectRoomSuccess:(BOOL)success {
-//
-//    NSIndexPath *seatIndex = [[CXClientModel instance].room.userSeats objectForKey:[CXClientModel instance].userId];
-//    if (!seatIndex) {
-//        [[CXClientModel instance].agoraEngineManager.engine setClientRole:AgoraClientRoleAudience];
-//    } else {
-//        [[CXClientModel instance].agoraEngineManager.engine setClientRole:AgoraClientRoleBroadcaster];
-//        CXLiveRoomSeatView *seatView = [self.roomUIView.roomSeatsView.seats objectForKey:seatIndex];
-//        [seatView addAgoraRtc:[[CXClientModel instance].userId numberValue]];
-//    }
-//
-//    if ([CXClientModel instance].room.isConsertModel == YES) {
-//        if ([CXClientModel instance].room.isSonger) {
-//            [self music_playResume];
-//        }
-//    }
+- (void)modelClient:(CXClientModel *)client reconnectRoomSuccess:(BOOL)success {
     
-    
-//    else {
-//        if ([CXClientModel instance].room.isHost == YES) {
-//            [self music_playResume];
-//        }
-//    }
-//}
+    if ([CXClientModel instance].room.isConsertModel == YES) {
+        if ([CXClientModel instance].room.isSonger) {
+            [self music_playResume];
+        }
+    } else {
+        if ([CXClientModel instance].room.isHost == YES) {
+            [self music_playResume];
+        }
+    }
+}
 
 - (void)modelClient:(CXClientModel *)client room:(NSString *)roomId error:(NSError *)error {
     kWeakSelf
@@ -1086,6 +1140,9 @@
     LiveRoomUser *user = userInfo.User;
     profileView.userInfo = userInfo;
     kWeakSelf
+    profileView.userProfileAvatarActionBlock = ^{
+        [AppController showUserProfile:userInfo.User.UserId target:weakSelf];
+    };
     profileView.userProfileActionBlock = ^(NSInteger tag) {
         switch (tag) {
             case 10: // 禁言
@@ -1127,6 +1184,7 @@
                     vc.nickname = user.Name;
                     vc.user_id = user.UserId;
                     vc.user_avatar = user.HeadImageUrl;
+                    vc.is_room = @"1";
                     [self.navigationController pushViewController:vc animated:YES];
                 }
             }
@@ -1226,11 +1284,11 @@
         if ([CXClientModel instance].agoraEngineManager.offMic == YES) { // 闭麦了，打开
             self.isCloseMineMicro = NO;
             [CXClientModel instance].agoraEngineManager.offMic = NO;
-            [seatView.muteBtn setImage:[UIImage imageNamed:@"liveroom_seat_micro_off"] forState:UIControlStateNormal];
+            [seatView.muteBtn setImage:[UIImage imageNamed:@"liveroom_seat_micro_on"] forState:UIControlStateNormal];
         } else {
             self.isCloseMineMicro = YES;
             [CXClientModel instance].agoraEngineManager.offMic = YES;
-            [seatView.muteBtn setImage:[UIImage imageNamed:@"liveroom_seat_micro_on"] forState:UIControlStateNormal];
+            [seatView.muteBtn setImage:[UIImage imageNamed:@"liveroom_seat_micro_off"] forState:UIControlStateNormal];
         }
     } else {
         LiveRoomMicroInfo * seat = [[CXClientModel instance].room.seats objectForKey:seatIndex];
@@ -1238,13 +1296,13 @@
             if ([[CXClientModel instance].agoraEngineManager.engine muteRemoteAudioStream:[user.UserId integerValue] mute:NO] == 0) {
                 seat.isMute = NO;
                 [self.muteArrays removeObject:user.UserId];
-                [seatView.muteBtn setImage:[UIImage imageNamed:@"liveroom_seat_micro_off"] forState:UIControlStateNormal];
+                [seatView.muteBtn setImage:[UIImage imageNamed:@"liveroom_seat_micro_on"] forState:UIControlStateNormal];
             }
         } else {
             if ([[CXClientModel instance].agoraEngineManager.engine muteRemoteAudioStream:[user.UserId integerValue] mute:YES] == 0) {
                 seat.isMute = YES;
                 [self.muteArrays addObject:user.UserId];
-                [seatView.muteBtn setImage:[UIImage imageNamed:@"liveroom_seat_micro_on"] forState:UIControlStateNormal];
+                [seatView.muteBtn setImage:[UIImage imageNamed:@"liveroom_seat_micro_off"] forState:UIControlStateNormal];
             }
         }
     }
@@ -1286,11 +1344,12 @@
     invite.Free = isFree == YES ? @(1) : @(2);
     [[CXClientModel instance] sendSocketRequest:invite withCallback:nil];
 }
-// 房间内用户回复主持的邀请：isForce 是否跳过 agree: 1同意  0不同意
-- (void)replyInvite:(BOOL)isForce isAgree:(NSNumber*)agree {
+// 房间内用户回复主持的邀请：isForce 是否跳过 agree: 1同意  0不同意 inviteMicroId:申请上麦ID
+- (void)replyInvite:(BOOL)isForce isAgree:(NSNumber*)agree inviteMicroId:(NSString *)inviteMicroId {
     SocketMessageReplyInvite * reply = [SocketMessageReplyInvite new];
     reply.Agree = agree;
     reply.Force = isForce;
+    reply.InviteMicroId = [NSNumber numberWithString:inviteMicroId];
     kWeakSelf
     [[CXClientModel instance] sendSocketRequest:reply withCallback:^(SocketMessageReplyInvite * _Nonnull request) {
         NSLog(@"SocketMessageReplyInvite  %@" , request);
@@ -1299,7 +1358,7 @@
             [weakSelf showRechargeErrorView];
         } else if (request.response.Success.integerValue == 8) {
             // 未实名认证
-            [weakSelf showVerifiedMessage:true level:0];
+            [weakSelf showVerifiedMessage:true level:0 inviteMicroId:inviteMicroId];
         }
     }];
 }
@@ -1396,7 +1455,7 @@
         [self showRechargeErrorView];
     } else if (request.response.Success.integerValue == 8) {
         // 实名认证
-        [self showVerifiedMessage: false level:level];
+        [self showVerifiedMessage: false level:level inviteMicroId:@"0"];
     }
 }
 
@@ -1415,18 +1474,18 @@
 }
 
 // 实名认证: isInvite: 是否是邀请上麦，默认申请上麦
-- (void)showVerifiedMessage:(BOOL)isInvite level:(NSInteger)level {
+- (void)showVerifiedMessage:(BOOL)isInvite level:(NSInteger)level inviteMicroId:(NSString *)inviteMicroId {
     NSString *msg = @"实名认证信息受到用户隐私条款保护，不会向第三方透露。";
     if ([CXClientModel instance].sex.integerValue == 2) {//需要判断自己是男是女
         msg = @"实名认证信息受到用户隐私条款保护，不会向第三方透露。";
     }
     kWeakSelf
     [LEEAlert alert].config
-    .LeeTitle(@"为保障合合社区的真实和严肃性，所有上麦用户需要实名认证")
+    .LeeTitle(@"为保障麻将情缘社区的真实和严肃性，所有上麦用户需要实名认证")
     .LeeContent(msg)
     .LeeCancelAction(@"跳过", ^ {
         if (isInvite == true) {
-            [weakSelf replyInvite:true isAgree:@(1)];
+            [weakSelf replyInvite:true isAgree:@(1) inviteMicroId: inviteMicroId];
         } else {
             [weakSelf applyJoinChannel:true level:level];
         }
@@ -1570,7 +1629,7 @@
             [weakSelf toast:@"购买成功"];
             [weakSelf getFirstRechargeData];
         } else {
-            [weakSelf toast:errorMsg];
+            [weakSelf toast:@"购买失败"];
         }
     }];
 }
@@ -1581,7 +1640,7 @@
     rechargeView.gotoRechargeProtocol = ^(NSString * _Nonnull linkURL) {
         NSURL *url = [NSURL URLWithString:linkURL];
         CXBaseWebViewController *webVC = [[CXBaseWebViewController alloc] initWithURL:url];
-        webVC.title = @"合合有约充值协议";
+        webVC.title = @"麻将情缘充值协议";
         [weakSelf.navigationController pushViewController:webVC animated:YES];
     };
     rechargeView.rechargeBlock = ^(CXRechargeModel * _Nonnull model, NSInteger payAction) {
@@ -1744,7 +1803,7 @@
             request.IsUseBag = IsUseBug;
             [[CXClientModel instance] sendSocketRequest:request withCallback:^(__kindof SocketMessageGroupGift * _Nonnull request) {
                 if (request.noError && request.response.isSuccess) {
-                    [CXClientModel instance].balance = request.response.Balance;
+//                    [CXClientModel instance].balance = request.response.Balance;
                 } else if (request.response.Success.integerValue == 4) {
                     [LEEAlert alert].config
                     .LeeTitle(@"")
@@ -1776,7 +1835,7 @@
             request.IsUseBag = IsUseBug;
             [[CXClientModel instance] sendSocketRequest:request withCallback:^(__kindof SocketMessageGroupGift * _Nonnull request) {
                 if (request.noError && request.response.isSuccess) {
-                    [CXClientModel instance].balance = request.response.Balance;
+//                    [CXClientModel instance].balance = request.response.Balance;
                 } else if (request.response.Success.integerValue == 6) {
                     [LEEAlert alert].config
                     .LeeTitle(@"")
@@ -1791,6 +1850,8 @@
             }];
         }
     }];
+    
+    _currentGiftListView = giftListView;
 }
 
 // 赠送单枝玫瑰
@@ -1803,7 +1864,7 @@
     kWeakSelf
     [[CXClientModel instance] sendSocketRequest:request withCallback:^(__kindof SocketMessageGroupGift * _Nonnull request) {
         if (request.noError && request.response.isSuccess) {
-            [CXClientModel instance].balance = request.response.Balance;
+//            [CXClientModel instance].balance = request.response.Balance;
         } else if (request.response.Success.integerValue == 4) {
             [LEEAlert alert].config
             .LeeTitle(@"")
@@ -2173,79 +2234,83 @@
 //            .LeeShow();
             weakSelf.musicView.musicPlayStatus = music_downing;
             CXSocketMessageMusicModel *music = [CXClientModel instance].room.playing_SongInfo;
-            [CXMusicDownloader downloadURL:music.LyricPath progress:^(NSProgress * _Nonnull downloadProgress) {
-//                NSString *progress = [NSString stringWithFormat:@"下载:%f%%",100.0 * downloadProgress.completedUnitCount/downloadProgress.totalUnitCount];
-            } success:^(NSURL * _Nonnull targetPath) {
-                NSString *cur_lrcPath = [CXClientModel instance].room.playing_SongInfo.LyricPath;
-                if (![[cur_lrcPath lastPathComponent] isEqualToString: targetPath.lastPathComponent]) {
-                    weakSelf.musicView.musicPlayStatus = music_unplay;
-                    return ;
-                }
-                NSData *data = [NSData dataWithContentsOfURL:targetPath];
-                NSString *lrcText = [[NSString alloc] initWithData:data encoding:CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000)];
-                DDAudioLRC *lrc = [DDAudioLRCParser parserLRCText:lrcText];
-                [CXClientModel instance].currentMusicPlayingLRCModel = lrc;
-                [CXMusicDownloader downloadURL:music.SongPath progress:^(NSProgress * _Nonnull downloadProgress) {
-//                    NSString *progress = [NSString stringWithFormat:@"下载:%f%%",100.0 * downloadProgress.completedUnitCount/downloadProgress.totalUnitCount];
-                } success:^(NSURL * _Nonnull targetPath) {
-                    CXSocketMessageMusicDownloadSongSuccess *request = [CXSocketMessageMusicDownloadSongSuccess new];
-                    [[CXClientModel instance] sendSocketRequest:request withCallback:^(CXSocketMessageMusicGetPlayingDetail * _Nonnull request) {
-                        if (request.response.isSuccess) {
+            [HJNetwork downloadWithURL:music.LyricPath fileDir:nil progress:nil callback:^(NSString *path, NSError *error) {
+                if (path.length > 0) {
+                    NSData *data = [NSData dataWithContentsOfFile:path];
+                    if (!data || data.length <= 0) {
+                        weakSelf.musicView.musicPlayStatus = music_unplay;
+                        return;
+                    }
+                    NSString *lrcText = [[NSString alloc] initWithData:data encoding:CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000)];
+                    DDAudioLRC *lrc = [DDAudioLRCParser parserLRCText:lrcText];
+                    [CXClientModel instance].currentMusicPlayingLRCModel = lrc;
+                    
+                    [HJNetwork downloadWithURL:music.SongPath fileDir:nil progress:nil callback:^(NSString *path, NSError *error) {
+                        if (path.length > 0) {
                             // 当前播放的歌曲
-                            NSString *cur_songPath = [CXClientModel instance].room.playing_SongInfo.SongPath;
-                            if (![[cur_songPath lastPathComponent] isEqualToString: targetPath.lastPathComponent]) {
-                                weakSelf.musicView.musicPlayStatus = music_unplay;
-                                return ;
-                            }
-//                                [LEEAlert closeWithCompletionBlock:nil];
-                            [CXClientModel instance].currentMusicPlayingSongPath = targetPath;
-                            [[CXClientModel instance].agoraEngineManager.engine stopAudioMixing];
-                            if ([[CXClientModel instance].agoraEngineManager.engine startAudioMixing:targetPath.absoluteString loopback:NO replace:NO cycle:1] == 0) {
-                                if ([CXClientModel instance].isSocketManagerReconnect == YES) {
-                                    [CXClientModel instance].isSocketManagerReconnect = NO;
-                                    
-                                    [[CXClientModel instance].agoraEngineManager.engine setAudioMixingPosition:[CXClientModel instance].currentMusicPlayingProgress];
-                                }
-                                
-                                [[CXClientModel instance].agoraEngineManager.engine adjustAudioMixingVolume:MAX([CXClientModel instance].room.music_Volume, 30)];
-                                
-                                if ([CXClientModel instance].room.isConsertModel == YES) {
-                                    // 耳返
-                                    [[CXClientModel instance].agoraEngineManager.engine enableInEarMonitoring:YES];
-                                    [[CXClientModel instance].agoraEngineManager.engine setInEarMonitoringVolume:100];
+                            CXSocketMessageMusicDownloadSongSuccess *request = [CXSocketMessageMusicDownloadSongSuccess new];
+                            [[CXClientModel instance] sendSocketRequest:request withCallback:^(CXSocketMessageMusicGetPlayingDetail * _Nonnull request) {
+                                if (request.response.isSuccess) {
+//                                    [LEEAlert closeWithCompletionBlock:nil];
+                                    [CXClientModel instance].currentMusicPlayingSongPath = path;
+                                    [weakSelf agoraEngineManagerPlaying];
                                 } else {
-                                    [[CXClientModel instance].agoraEngineManager.engine enableInEarMonitoring:NO];
+                                    if ([request.response.Success integerValue] == 2) {
+                                        [weakSelf musicShowErrorMessage:@"找不到演唱歌曲"];
+                                    } else if ([request.response.Success integerValue] == 3) {
+                                        [weakSelf musicShowErrorMessage:@"点歌人玫瑰不足，歌曲被取消"];
+                                    } else if ([request.response.Success integerValue] == 4) {
+                                        [weakSelf musicShowErrorMessage:@"已经切歌"];
+                                    }
                                 }
-                                
-                                AVURLAsset *audioAsset = [AVURLAsset URLAssetWithURL:targetPath options:nil];
-                                weakSelf.musicView.pro_endTime = CMTimeGetSeconds(audioAsset.duration);
-                                weakSelf.totalLRCProgress = CMTimeGetSeconds(audioAsset.duration);
-                                weakSelf.musicView.pro_volum = MIN([CXClientModel instance].room.music_Volume, 30);
-                                
-                                [weakSelf musicLRCUpdate];
-                                
-                                weakSelf.musicView.musicPlayStatus = music_playing;
-                            }
-                            
-                        } else {
-                            if ([request.response.Success integerValue] == 2) {
-                                [weakSelf musicShowErrorMessage:@"找不到演唱歌曲"];
-                            } else if ([request.response.Success integerValue] == 3) {
-                                [weakSelf musicShowErrorMessage:@"点歌人玫瑰不足，歌曲被取消"];
-                            } else if ([request.response.Success integerValue] == 4) {
-                                [weakSelf musicShowErrorMessage:@"已经切歌"];
-                            }
+                            }];
                         }
+                        
                     }];
-                }  failure:^(NSError * _Nonnull error) {
-                    [weakSelf musicShowErrorMessage:@"下载失败"];
-                }];
-                
-            } failure:^(NSError * _Nonnull error) {
-                [weakSelf musicShowErrorMessage:@"下载失败"];
+                }
             }];
         }
     }];
+}
+
+- (void)agoraEngineManagerPlaying {
+    if ([CXClientModel instance].room.playing_SongInfo.LyricPath.length <= 0) {
+        [self musicShowErrorMessage:@"找不到演唱歌曲"];
+        return;
+    }
+    if ([CXClientModel instance].currentMusicPlayingLRCModel.originLRCText.length <= 0) {
+        [self musicShowErrorMessage:@"找不到演唱歌曲"];
+        self.musicView.musicPlayStatus = music_unplay;
+        [self music_playStart];
+        return;
+    }
+    [[CXClientModel instance].agoraEngineManager.engine stopAudioMixing];
+    if ([[CXClientModel instance].agoraEngineManager.engine startAudioMixing:[CXClientModel instance].currentMusicPlayingSongPath loopback:NO replace:NO cycle:1] == 0) {
+        if ([CXClientModel instance].isSocketManagerReconnect == YES) {
+            [CXClientModel instance].isSocketManagerReconnect = NO;
+            
+            [[CXClientModel instance].agoraEngineManager.engine setAudioMixingPosition:[CXClientModel instance].currentMusicPlayingProgress];
+        }
+        
+        [[CXClientModel instance].agoraEngineManager.engine adjustAudioMixingVolume:MAX([CXClientModel instance].room.music_Volume, 30)];
+        
+        if ([CXClientModel instance].room.isConsertModel == YES) {
+            // 耳返
+            [[CXClientModel instance].agoraEngineManager.engine enableInEarMonitoring:YES];
+            [[CXClientModel instance].agoraEngineManager.engine setInEarMonitoringVolume:100];
+        } else {
+            [[CXClientModel instance].agoraEngineManager.engine enableInEarMonitoring:NO];
+        }
+        
+        NSURL *targetPath = [NSURL fileURLWithPath:[CXClientModel instance].currentMusicPlayingSongPath];
+        AVURLAsset *audioAsset = [AVURLAsset URLAssetWithURL:targetPath options:nil];
+        self.musicView.pro_endTime = CMTimeGetSeconds(audioAsset.duration);
+        self.totalLRCProgress = CMTimeGetSeconds(audioAsset.duration);
+        self.musicView.pro_volum = MAX([CXClientModel instance].room.music_Volume, 30);
+        
+        [self musicLRCUpdate];
+        self.musicView.musicPlayStatus = music_playing;
+    }
 }
 
 - (void)music_playPause {
@@ -2256,7 +2321,7 @@
 }
 
 - (void)music_playResume {
-    if ([CXClientModel instance].currentMusicPlayingSongPath && [[CXClientModel instance].agoraEngineManager.engine resumeAudioMixing] == 0) {
+    if ([CXClientModel instance].currentMusicPlayingSongPath.length > 0 && [[CXClientModel instance].agoraEngineManager.engine resumeAudioMixing] == 0) {
         [[CXClientModel instance].agoraEngineManager.engine adjustAudioMixingVolume:MAX([CXClientModel instance].room.music_Volume, 30)];
         if ([CXClientModel instance].room.isConsertModel == YES) {
             // 耳返
@@ -2270,58 +2335,22 @@
 }
 
 - (void)music_playReplay {
-    if ([CXClientModel instance].room.playing_SongInfo &&  [CXClientModel instance].currentMusicPlayingSongPath) {
-        if ([CXClientModel instance].currentMusicPlayingSongPath) {
-            self.musicView.musicPlayStatus = music_playing;
-            [[CXClientModel instance].agoraEngineManager.engine stopAudioMixing];
-            [[CXClientModel instance].agoraEngineManager.engine startAudioMixing:[CXClientModel instance].currentMusicPlayingSongPath.absoluteString loopback:NO replace:NO cycle:1];
-            [[CXClientModel instance].agoraEngineManager.engine adjustAudioMixingVolume:MAX([CXClientModel instance].room.music_Volume, 30)];
-            
-            if ([CXClientModel instance].currentMusicPlayingLRCModel) {
-                if ([CXClientModel instance].room.isConsertModel == YES) {
-                    // 耳返
-                    [[CXClientModel instance].agoraEngineManager.engine enableInEarMonitoring:YES];
-                    [[CXClientModel instance].agoraEngineManager.engine setInEarMonitoringVolume:100];
-                }
-                
-                [self musicLRCUpdate];
-            }
-            
-            AVURLAsset *audioAsset = [AVURLAsset URLAssetWithURL: [CXClientModel instance].currentMusicPlayingSongPath options:nil];
-            self.musicView.pro_endTime = CMTimeGetSeconds(audioAsset.duration);
-            self.totalLRCProgress = CMTimeGetSeconds(audioAsset.duration);
-            self.musicView.pro_volum = MIN([CXClientModel instance].room.music_Volume, 30);
-            
-            return;
-        }
+    if ([CXClientModel instance].room.playing_SongInfo &&  [CXClientModel instance].currentMusicPlayingSongPath.length > 0) {
+        [self agoraEngineManagerPlaying];
+        return;
     }
     
     [self music_playStart];
 }
 
 - (void)music_playReconnectPlay {
-    if ([CXClientModel instance].room.playing_SongInfo && [CXClientModel instance].currentMusicPlayingSongPath) {
-        if ([CXClientModel instance].currentMusicPlayingSongPath) {
-            [[CXClientModel instance].agoraEngineManager.engine stopAudioMixing];
-            [[CXClientModel instance].agoraEngineManager.engine startAudioMixing:[CXClientModel instance].currentMusicPlayingSongPath.absoluteString loopback:NO replace:NO cycle:1];
-            [[CXClientModel instance].agoraEngineManager.engine adjustAudioMixingVolume:MAX([CXClientModel instance].room.music_Volume, 30)];
-            
-            if ([CXClientModel instance].currentMusicPlayingLRCModel) {
-                
-                
-                [self musicLRCUpdate];
-            }
-            
-            AVURLAsset *audioAsset = [AVURLAsset URLAssetWithURL:[CXClientModel instance].currentMusicPlayingSongPath options:nil];
-            self.musicView.pro_endTime = CMTimeGetSeconds(audioAsset.duration);
-            self.totalLRCProgress = CMTimeGetSeconds(audioAsset.duration);
-            self.musicView.pro_volum = MIN([CXClientModel instance].room.music_Volume, 30);
-        }
+    if ([CXClientModel instance].room.playing_SongInfo && [CXClientModel instance].currentMusicPlayingSongPath.length > 0) {
+        [self agoraEngineManagerPlaying];
     }
 }
 
 - (void)music_playStop {
-    [CXClientModel instance].currentMusicPlayingSongPath = nil ;
+    [CXClientModel instance].currentMusicPlayingSongPath = @"" ;
     [CXClientModel instance].currentMusicPlayingProgress = 0;
     self.musicView.musicPlayStatus = music_unplay;
     if (_music_timer) {
@@ -2343,16 +2372,15 @@
             CXSocketMessageMusicPlay *request = [CXSocketMessageMusicPlay new];
             [[CXClientModel instance] sendSocketRequest:request withCallback:^(CXSocketMessageMusicPlay * _Nonnull request) {
                 [weakSelf.musicView reloadMusicView];
-                if (request.response.isSuccess) {
-                    if ([CXClientModel instance].room.playing_SongInfo.SongMode == 1) { // 原唱
-                        [weakSelf music_playStart];
-                    }
-                } else {
-                    if ([request.response.Success integerValue] == 3) {
-                        [weakSelf.musicView removeFromSuperview];
-                    }
-                }
-
+//                if (request.response.isSuccess) {
+//                    if ([CXClientModel instance].room.playing_SongInfo.SongMode == 1) { // 原唱
+//                        [weakSelf music_playStart];
+//                    }
+//                } else {
+//                    if ([request.response.Success integerValue] == 3) {
+//                        [weakSelf.musicView removeFromSuperview];
+//                    }
+//                }
             }];
 
         } else {
@@ -2384,105 +2412,6 @@
     [self.roomUIView.messageListView addModel:textModel];
 }
 
-#pragma mark - ========================= 系统权限 ============================
-// 相册权限
-- (BOOL)getVideoAuthStatus {
-    __block BOOL enable;
-    AVAuthorizationStatus videoAuthStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
-    if (videoAuthStatus == AVAuthorizationStatusNotDetermined) {// 未询问用户是否授权
-        //第一次询问用户是否进行授权
-        [[AVAudioSession sharedInstance] requestRecordPermission:^(BOOL granted) {
-            // CALL YOUR METHOD HERE - as this assumes being called only once from user interacting with permission alert!
-            if (granted) {
-                // Microphone enabled code
-                enable = YES;
-            }
-            else {
-                // Microphone disabled code
-                enable = NO;
-            }
-        }];
-    }
-    else if(videoAuthStatus == AVAuthorizationStatusRestricted || videoAuthStatus == AVAuthorizationStatusDenied) {// 未授权
-        enable = NO;
-        [self showSetAlertView:@"相机权限未开启" content:@"相机权限未开启，请进入系统【设置】>【隐私】>【相机】中打开开关,开启相机功能"];
-    }
-    else{// 已授权
-        NSLog(@"已经授权");
-        enable = YES;
-    }
-    
-    return enable;
-}
-// 麦克风权限
-- (BOOL)getAudioAuthStatus {
-    __block BOOL enable;
-    AVAuthorizationStatus videoAuthStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeAudio];
-    if (videoAuthStatus == AVAuthorizationStatusNotDetermined) {// 未询问用户是否授权
-        //第一次询问用户是否进行授权
-        [[AVAudioSession sharedInstance] requestRecordPermission:^(BOOL granted) {
-            // CALL YOUR METHOD HERE - as this assumes being called only once from user interacting with permission alert!
-            if (granted) {
-                // Microphone enabled code
-                enable = YES;
-            }
-            else {
-                // Microphone disabled code
-                enable = NO;
-            }
-        }];
-    }
-    else if(videoAuthStatus == AVAuthorizationStatusRestricted || videoAuthStatus == AVAuthorizationStatusDenied) {// 未授权
-        enable = NO;
-        [self showSetAlertView:@"麦克风权限未开启" content:@"麦克风权限未开启，请进入系统【设置】>【隐私】>【麦克风】中打开开关,开启麦克风功能"];
-    }
-    else{// 已授权
-        NSLog(@"已经授权");
-        enable = YES;
-    }
-    
-    return enable;
-}
-
-//提示用户进行麦克风使用授权
-- (void)showSetAlertView:(NSString *)title content:(NSString *)content {
-    kWeakSelf
-    [LEEAlert alert].config
-    .LeeTitle(title)
-    .LeeContent(content)
-    .LeeCancelAction(@"取消", ^{
-        NSString * loginUserId = [CXClientModel instance].userId;
-        
-        LiveRoomMicroInfo * microInfo = [[CXClientModel instance].room microInfoForUser:loginUserId];
-        
-        if (microInfo && microInfo.Type == LiveRoomMicroInfoTypeHost) {//红娘
-            [weakSelf leaveRoom];
-        } else {
-            NSIndexPath * seatIndex = [[CXClientModel instance].room.userSeats objectForKey:[CXClientModel instance].userId];
-            if (seatIndex) {//下麦
-                NSString * uid = [CXClientModel instance].userId;
-                NSIndexPath * index = [[CXClientModel instance].room.userSeats objectForKey:uid];
-                LiveRoomMicroInfo * seat = [[CXClientModel instance].room.seats objectForKey:index];
-                SocketMessageLeaveSeat * leave = [SocketMessageLeaveSeat new];
-                leave.Level = @(seat.Type);
-                leave.Number = @(seat.Number);
-                [[CXClientModel instance] sendSocketRequest:leave withCallback:^(__kindof SocketMessageRequest * _Nonnull request) {
-                    if (request.response.Success.integerValue == 6) {
-                        [weakSelf music_next];
-                    }
-                    
-                }];
-            }
-        }
-    })
-    .LeeAction(@"设置", ^{
-        //跳入当前App设置界面
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString] options:@{} completionHandler:nil];
-    })
-    .LeeShow();
-}
-
-
 #pragma mark - ===================== UI Action =====================
 - (void)roomUIView_topAndbottomBtnAction:(NSInteger)tag {
     kWeakSelf
@@ -2496,11 +2425,11 @@
             break;
         case 21: // 房间设置
         {
-//            if ([CXClientModel instance].room.UserIdentity != GameUserIdentityNormal) {
-//                [self showRoomInfoViewWithRoomInfo];
-//            } else {
-            [self getUserInfoWith:[CXClientModel instance].room.RoomData.OwnerUserId];
-//            }
+            if ([CXClientModel instance].room.UserIdentity != GameUserIdentityNormal) {
+                [self showRoomInfoViewWithRoomInfo];
+            } else {
+                [self getUserInfoWith:[CXClientModel instance].room.RoomData.OwnerUserId];
+            }
             
         }
             break;
@@ -2623,6 +2552,7 @@
             vc.nickname = microInfo.modelUser.Name;
             vc.user_id = microInfo.modelUser.UserId;
             vc.user_avatar = microInfo.modelUser.HeadImageUrl;
+            vc.is_room = @"1";
             [self.navigationController pushViewController:vc animated:YES];
         }
             break;
@@ -2630,6 +2560,31 @@
             break;
     }
 }
+
+// 管理员 房间信息弹框
+- (void)showRoomInfoViewWithRoomInfo {
+    __weak typeof(self) wself = self;
+    UIAlertController *sheet = [UIAlertController alertControllerWithTitle:@"房间信息" message:@"" preferredStyle:UIAlertControllerStyleActionSheet];
+//    NSString *lockRoom = [[CXClientModel instance].room.RoomData.RoomLock boolValue] == YES ? @"解锁房间" : @"锁定房间";
+//    [sheet addAction:[UIAlertAction actionWithTitle:lockRoom style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//        SocketMessageSetRoomLock * lock = [SocketMessageSetRoomLock new];
+//        lock.IsLock = @(![[CXClientModel instance].room.RoomData.RoomLock boolValue]);
+//        [[CXClientModel instance] sendSocketRequest:lock withCallback:^(__kindof SocketMessageRequest * _Nonnull request) {
+//            if (request.response.isSuccess) {
+//                [wself toast:@"设置成功"];
+//            } else {
+//                [wself toast:@"设置失败"];
+//            }
+//        }];
+//    }]];
+    [sheet addAction:[UIAlertAction actionWithTitle:@"房间设置" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        CXLiveRoomSetupViewController *vc = [[CXLiveRoomSetupViewController alloc] init];
+        [wself.navigationController pushViewController:vc animated:YES];
+    }]];
+    [sheet addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
+    [self presentViewController:sheet animated:YES completion:nil];
+}
+
 
 #pragma mark - Setter/Getter
 
@@ -2808,41 +2763,7 @@
         _recommendView.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight);
         kWeakSelf
         _recommendView.joinRecommendRoom = ^(NSString * _Nonnull roomId) {
-            [weakSelf.roomUIView.messageListView clearModel];
-//            [weakSelf.app leaveRoom];
-//            [weakSelf.app joinRoom:roomId];
-            
-            [[CXClientModel instance].agoraEngineManager.engine setClientRole:AgoraClientRoleAudience];
-//            [[CXClientModel instance].agoraEngineManager.engine setVideoSource:nil];
-            [[CXClientModel instance].easemob leaveRoom];
-            [weakSelf music_playStop];
-            
-//            self.app.isJoinedRoom = NO;
-            
-//            if (_timer) {
-//                dispatch_source_cancel(_timer);
-//            }
-            if (weakSelf.music_timer) {
-                dispatch_source_cancel(weakSelf.music_timer);
-            }
-
-            [weakSelf.musicView removeFromSuperview];
-
-//            [self.app.client.listener removeAllObjects];
-
-//            [[NSNotificationCenter defaultCenter] removeObserver:self];
-            
-            // 关闭跑马灯
-//            [_horizontalMarquee marqueeOfSettingWithState:MarqueeShutDown_H];
-            
-        //    [self.app.gameVCStack dismissViewControllerAnimated:YES completion:nil];
-//            [self dismissViewControllerAnimated:YES completion:nil];
-               
-//            [[UIApplication sharedApplication] endReceivingRemoteControlEvents];
-            
-            SocketMessageJoinRoom * joinRoom = [SocketMessageJoinRoom new];
-            joinRoom.RoomId = roomId;
-            [[CXClientModel instance] sendSocketRequest:joinRoom withCallback:nil];
+            [weakSelf joinNewRoomWithRoomId:roomId];
         };
     }
     

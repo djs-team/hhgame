@@ -124,24 +124,8 @@
                     android:visibility="gone" />
                 <!--                android:visibility="@{isSelf ? View.VISIBLE : View.GONE}" />-->
             </LinearLayout>
-
             <RelativeLayout
                 android:id="@+id/on_wheat_micro_rl"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="7dp"
-                android:paddingRight="7dp">
-
-                <ImageView
-                    android:layout_width="12dp"
-                    android:layout_height="19dp"
-                    android:layout_marginRight="5dp"
-                    android:src="@drawable/icon_micro_manage_top"
-                    android:visibility="@{isManager ? View.VISIBLE : View.GONE}" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/top_micro_rl"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="7dp"
@@ -156,6 +140,22 @@
 
                     android:visibility="@{isManager ? View.VISIBLE : View.GONE}" />
             </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/top_micro_rl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="7dp"
+                android:paddingRight="7dp">
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="19dp"
+                    android:layout_marginRight="5dp"
+                    android:src="@drawable/icon_micro_manage_top"
+                    android:visibility="@{isManager ? View.VISIBLE : View.GONE}" />
+            </RelativeLayout>
+
+
 
             <RelativeLayout
                 android:id="@+id/remove_micro_rl"

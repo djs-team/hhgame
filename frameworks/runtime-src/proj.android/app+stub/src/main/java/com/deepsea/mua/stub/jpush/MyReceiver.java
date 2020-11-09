@@ -88,7 +88,7 @@ public class MyReceiver extends BroadcastReceiver {
                 //打开自定义的Activity
                 Intent i = new Intent();
 //				i.setClassName("com.deepsea.mua","com.deepsea.mua.ui.splash.activity.SplashActivity");
-                i.setAction("com.hehe.action.SplashActivity");
+                i.setAction("com.hehe.action.AppActivity");
                 i.addCategory("android.intent.category.DEFAULT");
                 i.putExtras(bundle);
                 //i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

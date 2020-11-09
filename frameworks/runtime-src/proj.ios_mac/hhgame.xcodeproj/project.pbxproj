@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0018054625187E5700A47927 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0018054325187E5700A47927 /* AdSupport.framework */; };
 		0018058825188F0500A47927 /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0018058725188F0500A47927 /* AppTrackingTransparency.framework */; };
+		001E6B802542E46200FC902A /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 001E6B7F2542E46200FC902A /* Reachability.m */; };
 		0020BB34250B9A5A00E2979B /* AppController+Login.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0020BB32250B9A5A00E2979B /* AppController+Login.mm */; };
 		0020BB39250BA0A000E2979B /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0020BB38250BA09F00E2979B /* libc++.tbd */; };
 		0020BB3B250BA0A800E2979B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0020BB3A250BA0A700E2979B /* libz.tbd */; };
@@ -721,6 +722,8 @@
 		008588E82539C8E100649236 /* CXUserInfoCurrentRoomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 008588E72539C8E100649236 /* CXUserInfoCurrentRoomCell.m */; };
 		008F040F251C4E0E00F207D2 /* CXChangeAgeAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 008F040E251C4E0E00F207D2 /* CXChangeAgeAlertView.m */; };
 		008F0413251C4E1800F207D2 /* CXChangeAgeAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008F0412251C4E1800F207D2 /* CXChangeAgeAlertView.xib */; };
+		009A0CD325402902007C8B70 /* CXLiveRoomSetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 009A0CD125402902007C8B70 /* CXLiveRoomSetupViewController.m */; };
+		009A0CD425402902007C8B70 /* CXLiveRoomSetupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 009A0CD225402902007C8B70 /* CXLiveRoomSetupViewController.xib */; };
 		1A2EA1861FC3DA6C0062C870 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A2EA1851FC3DA6B0062C870 /* Images.xcassets */; };
 		1A67682A180E9C060076BC67 /* libcocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB48180E9ACB004C840B /* libcocos2d Mac.a */; };
 		1A676839180E9C1E0076BC67 /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB56180E9ACB004C840B /* libcocos2d iOS.a */; };
@@ -856,6 +859,8 @@
 /* Begin PBXFileReference section */
 		0018054325187E5700A47927 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/AdSupport.framework; sourceTree = DEVELOPER_DIR; };
 		0018058725188F0500A47927 /* AppTrackingTransparency.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppTrackingTransparency.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/AppTrackingTransparency.framework; sourceTree = DEVELOPER_DIR; };
+		001E6B7C2542E46200FC902A /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		001E6B7F2542E46200FC902A /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		0020BB32250B9A5A00E2979B /* AppController+Login.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "AppController+Login.mm"; path = "ios/AppController+Login.mm"; sourceTree = "<group>"; };
 		0020BB33250B9A5A00E2979B /* AppController+Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AppController+Login.h"; path = "ios/AppController+Login.h"; sourceTree = "<group>"; };
 		0020BB37250B9C4800E2979B /* CXSystemMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXSystemMessageViewController.h; sourceTree = "<group>"; };
@@ -1965,6 +1970,9 @@
 		008F040D251C4E0E00F207D2 /* CXChangeAgeAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXChangeAgeAlertView.h; sourceTree = "<group>"; };
 		008F040E251C4E0E00F207D2 /* CXChangeAgeAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXChangeAgeAlertView.m; sourceTree = "<group>"; };
 		008F0412251C4E1800F207D2 /* CXChangeAgeAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CXChangeAgeAlertView.xib; sourceTree = "<group>"; };
+		009A0CD025402902007C8B70 /* CXLiveRoomSetupViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXLiveRoomSetupViewController.h; sourceTree = "<group>"; };
+		009A0CD125402902007C8B70 /* CXLiveRoomSetupViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXLiveRoomSetupViewController.m; sourceTree = "<group>"; };
+		009A0CD225402902007C8B70 /* CXLiveRoomSetupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CXLiveRoomSetupViewController.xib; sourceTree = "<group>"; };
 		1A1A081B18C9DF05005C6854 /* project.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = project.json; path = ../../../project.json; sourceTree = "<group>"; };
 		1A2EA1851FC3DA6B0062C870 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ios/Images.xcassets; sourceTree = "<group>"; };
 		1A6BF21418C9DB5900FB0E1C /* main.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = main.js; path = ../../../main.js; sourceTree = "<group>"; };
@@ -2182,6 +2190,8 @@
 				006148E7250B693800BB7620 /* CXTools.m */,
 				006148E9250B71F800BB7620 /* CXPhoneBasicTools.h */,
 				006148EA250B71F800BB7620 /* CXPhoneBasicTools.m */,
+				001E6B7C2542E46200FC902A /* Reachability.h */,
+				001E6B7F2542E46200FC902A /* Reachability.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -2253,12 +2263,15 @@
 		00614903250B94C500BB7620 /* RoomSetup */ = {
 			isa = PBXGroup;
 			children = (
-				00614904250B94C500BB7620 /* CXLiveRoomCreateRoomViewController.xib */,
+				00614909250B94C500BB7620 /* CXLiveRoomCreateRoomViewController.h */,
 				00614905250B94C500BB7620 /* CXLiveRoomCreateRoomViewController.m */,
+				00614904250B94C500BB7620 /* CXLiveRoomCreateRoomViewController.xib */,
 				00614906250B94C500BB7620 /* CXLiveRoomSetupTypeHelpViewController.m */,
 				00614907250B94C500BB7620 /* CXLiveRoomSetupTypeHelpViewController.xib */,
 				00614908250B94C500BB7620 /* CXLiveRoomSetupTypeHelpViewController.h */,
-				00614909250B94C500BB7620 /* CXLiveRoomCreateRoomViewController.h */,
+				009A0CD025402902007C8B70 /* CXLiveRoomSetupViewController.h */,
+				009A0CD125402902007C8B70 /* CXLiveRoomSetupViewController.m */,
+				009A0CD225402902007C8B70 /* CXLiveRoomSetupViewController.xib */,
 				0061490A250B94C500BB7620 /* Views */,
 			);
 			path = RoomSetup;
@@ -2333,10 +2346,10 @@
 				00614936250B94C600BB7620 /* CXFriendApplyViewController.m */,
 				00614931250B94C600BB7620 /* CXFriendInviteListViewController.h */,
 				00614935250B94C600BB7620 /* CXFriendInviteListViewController.m */,
+				0061493E250B94C600BB7620 /* CXFriendInviteListViewController.xib */,
 				00614934250B94C600BB7620 /* CXAddFriendViewController.h */,
 				0061493F250B94C600BB7620 /* CXAddFriendViewController.m */,
 				00614933250B94C600BB7620 /* CXAddFriendViewController.xib */,
-				0061493E250B94C600BB7620 /* CXFriendInviteListViewController.xib */,
 				00614937250B94C600BB7620 /* Views */,
 			);
 			path = Apply;
@@ -2575,19 +2588,19 @@
 		006149AC250B94C600BB7620 /* Music */ = {
 			isa = PBXGroup;
 			children = (
-				006149AD250B94C600BB7620 /* CXGameMusicLRCFullView.m */,
-				006149AE250B94C600BB7620 /* Adjust */,
-				006149BD250B94C600BB7620 /* CXGameMusicLRCFullView.xib */,
-				006149BE250B94C600BB7620 /* CXRommMusicLRCShowView.m */,
-				006149BF250B94C600BB7620 /* OtherView */,
-				006149CE250B94C700BB7620 /* CXGameMusicView.m */,
-				006149CF250B94C700BB7620 /* cell */,
-				006149E2250B94C700BB7620 /* CXGameMusicLRCFullView.h */,
-				006149E3250B94C700BB7620 /* CXRommMusicLRCShowView.xib */,
-				006149E4250B94C700BB7620 /* resource */,
 				006149E9250B94C700BB7620 /* CXGameMusicView.h */,
+				006149CE250B94C700BB7620 /* CXGameMusicView.m */,
 				006149EA250B94C700BB7620 /* CXGameMusicView.xib */,
 				006149EB250B94C700BB7620 /* CXRommMusicLRCShowView.h */,
+				006149BE250B94C600BB7620 /* CXRommMusicLRCShowView.m */,
+				006149E3250B94C700BB7620 /* CXRommMusicLRCShowView.xib */,
+				006149E2250B94C700BB7620 /* CXGameMusicLRCFullView.h */,
+				006149AD250B94C600BB7620 /* CXGameMusicLRCFullView.m */,
+				006149BD250B94C600BB7620 /* CXGameMusicLRCFullView.xib */,
+				006149AE250B94C600BB7620 /* Adjust */,
+				006149BF250B94C600BB7620 /* OtherView */,
+				006149CF250B94C700BB7620 /* cell */,
+				006149E4250B94C700BB7620 /* resource */,
 			);
 			path = Music;
 			sourceTree = "<group>";
@@ -2632,15 +2645,16 @@
 		006149CF250B94C700BB7620 /* cell */ = {
 			isa = PBXGroup;
 			children = (
+				006149D8250B94C700BB7620 /* CXGameMusicPlayingCollectionCell.h */,
+				006149E1250B94C700BB7620 /* CXGameMusicPlayingCollectionCell.m */,
+				006149D3250B94C700BB7620 /* CXGameMusicPlayingCollectionCell.xib */,
 				006149D0250B94C700BB7620 /* CXGameMusicReserveMusicCell.xib */,
 				006149D1250B94C700BB7620 /* CXGameMusicOrginMusicCell.m */,
 				006149D2250B94C700BB7620 /* CXGameMusicRankListCell.m */,
-				006149D3250B94C700BB7620 /* CXGameMusicPlayingCollectionCell.xib */,
 				006149D4250B94C700BB7620 /* CXGameMusicRankListCollectionCell.m */,
 				006149D5250B94C700BB7620 /* CXGameMusicRankListCell.xib */,
 				006149D6250B94C700BB7620 /* CXGameMusicReserveListCollectionCell.m */,
 				006149D7250B94C700BB7620 /* CXGameMusicReserveMusicCell.m */,
-				006149D8250B94C700BB7620 /* CXGameMusicPlayingCollectionCell.h */,
 				006149D9250B94C700BB7620 /* CXGameMusicOrginMusicCell.xib */,
 				006149DA250B94C700BB7620 /* CXGameMusicRankListCollectionCell.h */,
 				006149DB250B94C700BB7620 /* CXGameMusicRankListCell.h */,
@@ -2649,7 +2663,6 @@
 				006149DE250B94C700BB7620 /* CXGameMusicReserveMusicCell.h */,
 				006149DF250B94C700BB7620 /* CXGameMusicReserveListCollectionCell.h */,
 				006149E0250B94C700BB7620 /* CXGameMusicRankListCollectionCell.xib */,
-				006149E1250B94C700BB7620 /* CXGameMusicPlayingCollectionCell.m */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -2670,10 +2683,10 @@
 			children = (
 				00614A33250B94C700BB7620 /* CXLiveRoomUIView.xib */,
 				00614A34250B94C700BB7620 /* CXLiveRoomUIView.h */,
+				00614A38250B94C700BB7620 /* CXLiveRoomUIView.m */,
 				00614A35250B94C700BB7620 /* CXLiveRoomRegularView.m */,
 				00614A36250B94C700BB7620 /* GameInputBar.m */,
 				00614A37250B94C700BB7620 /* CXLiveRoomRegularView.xib */,
-				00614A38250B94C700BB7620 /* CXLiveRoomUIView.m */,
 				00614A39250B94C700BB7620 /* CXLiveRoomRegularView.h */,
 				00614A3A250B94C700BB7620 /* GameInputBar.h */,
 			);
@@ -2706,19 +2719,19 @@
 		00614A4C250B94C700BB7620 /* 红包 */ = {
 			isa = PBXGroup;
 			children = (
-				00614A4D250B94C700BB7620 /* CXRedPacketProgressView.m */,
+				00614A58250B94C700BB7620 /* CXRedPacketStartView.h */,
+				00614A52250B94C700BB7620 /* CXRedPacketStartView.m */,
+				00614A57250B94C700BB7620 /* CXRedPacketStartView.xib */,
+				00614A54250B94C700BB7620 /* CXRedPacketAwardRecordView.h */,
 				00614A4E250B94C700BB7620 /* CXRedPacketAwardRecordView.m */,
+				00614A59250B94C700BB7620 /* CXRedPacketAwardRecordView.xib */,
+				00614A4D250B94C700BB7620 /* CXRedPacketProgressView.m */,
 				00614A4F250B94C700BB7620 /* CXRedPacketRegularView.xib */,
 				00614A50250B94C700BB7620 /* CXRedPacketProgressView.xib */,
 				00614A51250B94C700BB7620 /* CXRedPacketAwardRecordCell.m */,
-				00614A52250B94C700BB7620 /* CXRedPacketStartView.m */,
 				00614A53250B94C700BB7620 /* CXRedPacketRegularView.m */,
-				00614A54250B94C700BB7620 /* CXRedPacketAwardRecordView.h */,
 				00614A55250B94C700BB7620 /* CXRedPacketProgressView.h */,
 				00614A56250B94C700BB7620 /* CXRedPacketAwardRecordCell.xib */,
-				00614A57250B94C700BB7620 /* CXRedPacketStartView.xib */,
-				00614A58250B94C700BB7620 /* CXRedPacketStartView.h */,
-				00614A59250B94C700BB7620 /* CXRedPacketAwardRecordView.xib */,
 				00614A5A250B94C700BB7620 /* CXRedPacketAwardRecordCell.h */,
 				00614A5B250B94C700BB7620 /* CXRedPacketRegularView.h */,
 			);
@@ -2813,33 +2826,33 @@
 		00614A8B250B94C800BB7620 /* GameMessageListItemView */ = {
 			isa = PBXGroup;
 			children = (
+				00614A91250B94C800BB7620 /* GameMessageListView.h */,
+				00614AA0250B94C800BB7620 /* GameMessageListView.m */,
+				00614A9D250B94C800BB7620 /* GameMessageListItemUserJoinRoomView.h */,
+				00614A8F250B94C800BB7620 /* GameMessageListItemUserJoinRoomView.m */,
+				00614A9A250B94C800BB7620 /* GameMessageListItemTextMessageView.h */,
+				00614A8E250B94C800BB7620 /* GameMessageListItemTextMessageView.m */,
+				00614A94250B94C800BB7620 /* GameMessageListItemUserSitdownView.h */,
+				00614AA6250B94C800BB7620 /* GameMessageListItemUserSitdownView.m */,
 				00614A8C250B94C800BB7620 /* SocketMessageLuckyDrawResultView.m */,
 				00614A8D250B94C800BB7620 /* GameMessageLevelAndTagView.xib */,
-				00614A8E250B94C800BB7620 /* GameMessageListItemTextMessageView.m */,
-				00614A8F250B94C800BB7620 /* GameMessageListItemUserJoinRoomView.m */,
 				00614A90250B94C800BB7620 /* GameMessageListItemGiftEventView.m */,
-				00614A91250B94C800BB7620 /* GameMessageListView.h */,
 				00614A92250B94C800BB7620 /* GameMessageListItemView+AttributeResult.h */,
 				00614A93250B94C800BB7620 /* CXGameMessageShareHelpTextMessageView.m */,
-				00614A94250B94C800BB7620 /* GameMessageListItemUserSitdownView.h */,
 				00614A95250B94C800BB7620 /* GameMessageListItemDeported.m */,
 				00614A96250B94C800BB7620 /* GameMessageListItemView.m */,
 				00614A97250B94C800BB7620 /* GameMessageLevelAndTagView.h */,
 				00614A98250B94C800BB7620 /* GameMessageListItemUndefineView.m */,
 				00614A99250B94C800BB7620 /* GameMessageListItemTextWelcomeView.m */,
-				00614A9A250B94C800BB7620 /* GameMessageListItemTextMessageView.h */,
 				00614A9B250B94C800BB7620 /* SocketMessageLuckyDrawResultView.h */,
 				00614A9C250B94C800BB7620 /* GameMessageListItemGiftEventView.h */,
-				00614A9D250B94C800BB7620 /* GameMessageListItemUserJoinRoomView.h */,
 				00614A9E250B94C800BB7620 /* CXGameMessageShareHelpTextMessageView.h */,
 				00614A9F250B94C800BB7620 /* GameMessageListItemView+AttributeResult.m */,
-				00614AA0250B94C800BB7620 /* GameMessageListView.m */,
 				00614AA1250B94C800BB7620 /* GameMessageListItemTextWelcomeView.h */,
 				00614AA2250B94C800BB7620 /* GameMessageListItemUndefineView.h */,
 				00614AA3250B94C800BB7620 /* GameMessageLevelAndTagView.m */,
 				00614AA4250B94C800BB7620 /* GameMessageListItemDeported.h */,
 				00614AA5250B94C800BB7620 /* GameMessageListItemView.h */,
-				00614AA6250B94C800BB7620 /* GameMessageListItemUserSitdownView.m */,
 			);
 			path = GameMessageListItemView;
 			sourceTree = "<group>";
@@ -2847,23 +2860,23 @@
 		00614AA8250B94C800BB7620 /* RoomSeatView */ = {
 			isa = PBXGroup;
 			children = (
+				00614AB0250B94C800BB7620 /* VideoSession.h */,
+				00614AB8250B94C800BB7620 /* VideoSession.m */,
+				00614AB7250B94C800BB7620 /* CXLiveRoomSeatsView.h */,
+				00614AAC250B94C800BB7620 /* CXLiveRoomSeatsView.m */,
+				00614AAB250B94C800BB7620 /* CXLiveRoomSeatsView.xib */,
 				00614AB3250B94C800BB7620 /* CXLiveRoomSeatView.h */,
 				00614AAF250B94C800BB7620 /* CXLiveRoomSeatView.m */,
 				00614AA9250B94C800BB7620 /* CXLiveRoomSeatView.xib */,
-				00614AAA250B94C800BB7620 /* CXLiveRoomSeatFansCell.m */,
-				00614AAB250B94C800BB7620 /* CXLiveRoomSeatsView.xib */,
-				00614AAC250B94C800BB7620 /* CXLiveRoomSeatsView.m */,
+				00614AB6250B94C800BB7620 /* CXLiveRoomSeatFansView.h */,
 				00614AAD250B94C800BB7620 /* CXLiveRoomSeatFansView.m */,
-				00614AAE250B94C800BB7620 /* CXLiveRoomBottomApplySeatAlertView.h */,
-				00614AB0250B94C800BB7620 /* VideoSession.h */,
 				00614AB1250B94C800BB7620 /* CXLiveRoomSeatFansView.xib */,
+				00614AAE250B94C800BB7620 /* CXLiveRoomBottomApplySeatAlertView.h */,
+				00614AB5250B94C800BB7620 /* CXLiveRoomBottomApplySeatAlertView.m */,
+				00614AB9250B94C800BB7620 /* CXLiveRoomBottomApplySeatAlertView.xib */,
+				00614AAA250B94C800BB7620 /* CXLiveRoomSeatFansCell.m */,
 				00614AB2250B94C800BB7620 /* CXLiveRoomSeatFansCell.h */,
 				00614AB4250B94C800BB7620 /* CXLiveRoomSeatFansCell.xib */,
-				00614AB5250B94C800BB7620 /* CXLiveRoomBottomApplySeatAlertView.m */,
-				00614AB6250B94C800BB7620 /* CXLiveRoomSeatFansView.h */,
-				00614AB7250B94C800BB7620 /* CXLiveRoomSeatsView.h */,
-				00614AB8250B94C800BB7620 /* VideoSession.m */,
-				00614AB9250B94C800BB7620 /* CXLiveRoomBottomApplySeatAlertView.xib */,
 			);
 			path = RoomSeatView;
 			sourceTree = "<group>";
@@ -4974,6 +4987,7 @@
 				00614E2F250B94CE00BB7620 /* CXChatRoomGiftCell.xib in Resources */,
 				00615045250B94D000BB7620 /* msg_img_broken@3x.png in Resources */,
 				00614E70250B94CE00BB7620 /* CXGameMusicGuideView.xib in Resources */,
+				009A0CD425402902007C8B70 /* CXLiveRoomSetupViewController.xib in Resources */,
 				0061502C250B94D000BB7620 /* msg_location@2x.png in Resources */,
 				00615039250B94D000BB7620 /* msg_recv_audio01@3x.png in Resources */,
 				00614E4E250B94CE00BB7620 /* ai_gesture.bundle in Resources */,
@@ -5450,10 +5464,12 @@
 				00614F4A250B94CF00BB7620 /* SocketMessageSeatMicEnable.m in Sources */,
 				00614EF3250B94CE00BB7620 /* XYRoomAlreadApplyListView.m in Sources */,
 				006150A3250B94D000BB7620 /* EMTextViewController.m in Sources */,
+				009A0CD325402902007C8B70 /* CXLiveRoomSetupViewController.m in Sources */,
 				00614E44250B94CE00BB7620 /* FUCamera.m in Sources */,
 				00614F24250B94CF00BB7620 /* SocketMessageWelcomMsg.m in Sources */,
 				00614F68250B94CF00BB7620 /* CXMineGuardListViewController.m in Sources */,
 				00614E6A250B94CE00BB7620 /* CXGameMusicGuideView.m in Sources */,
+				001E6B802542E46200FC902A /* Reachability.m in Sources */,
 				00614FC0250B94CF00BB7620 /* CXUserInfoGroupTitleReusableView.m in Sources */,
 				00614F72250B94CF00BB7620 /* CXMineGuardViewController.m in Sources */,
 				00614E42250B94CE00BB7620 /* FUOpenGLView.m in Sources */,
@@ -5679,7 +5695,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMPRESS_PNG_FILES = NO;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 22;
 				DEVELOPMENT_TEAM = C966MAAFRF;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -5734,7 +5750,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMPRESS_PNG_FILES = NO;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 22;
 				DEVELOPMENT_TEAM = C966MAAFRF;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (

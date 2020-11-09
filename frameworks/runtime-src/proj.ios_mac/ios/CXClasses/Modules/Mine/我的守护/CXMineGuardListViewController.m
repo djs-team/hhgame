@@ -118,7 +118,11 @@
     
     kWeakSelf
     cell.avatarTapGestureBlock = ^{
-        [AppController joinRoom:user.room_id];
+        if ([user.room_id integerValue] > 0) {
+            [AppController joinRoom:user.room_id];
+        } else {
+            [AppController showUserProfile:user.user_id target:weakSelf];
+        }
     };
     cell.automaticActionBlock = ^{
         [weakSelf automaticAction:user];

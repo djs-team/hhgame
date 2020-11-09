@@ -27,6 +27,8 @@
     NSInteger _giftSectionIndex;
 }
 
+@property (weak, nonatomic) IBOutlet UIImageView *avatar;
+
 @property (weak, nonatomic) IBOutlet UIButton *moreButton;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UICollectionView *mainCollectionView;
@@ -41,6 +43,8 @@
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *hiddenLabel_topLayout;
 @property (weak, nonatomic) IBOutlet UILabel *hiddenLabel;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *collectionViewTopLayout;
 
 @end
 
@@ -71,7 +75,7 @@
     NSString *signature = [CocoaSecurity md5:[CXClientModel instance].token].hexLower;
     NSDictionary *param = @{
         @"signature": signature,
-        @"user_id": _user_Id,
+        @"user_id": _user_Id ?: [CXClientModel instance].userId,
         @"device": @"iOS",
     };
     kWeakSelf
@@ -85,6 +89,7 @@
             
             weakSelf.giftArrays = [NSArray modelArrayWithClass:[CXFriendGiftModel class] json:responseObject[@"data"][@"rank_gift"]];
             
+            [weakSelf.avatar sd_setImageWithURL:[NSURL URLWithString:user.avatar]];
             weakSelf.titleLabel.text = user.nickname;
             if ([weakSelf.user_Id isEqualToString:[CXClientModel instance].userId]) {
                 weakSelf.bottomBtn.hidden = YES;
@@ -175,7 +180,7 @@
     if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
         if (indexPath.section == _mainInfoSectionIndex) {
             CXUserInfoHeaderReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"CXUserInfoHeaderReusableView" forIndexPath:indexPath];
-            [headerView.avatar sd_setImageWithURL:[NSURL URLWithString:_currentUser.avatar]];
+//            [headerView.avatar sd_setImageWithURL:[NSURL URLWithString:_currentUser.avatar]];
             reusableview = headerView;
         } else if (indexPath.section==_profileSectionIndex){
             CXUserInfoGroupTitleReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"CXUserInfoGroupTitleReusableView" forIndexPath:indexPath];
@@ -214,12 +219,16 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == _currentRoomSectionIndex) {
         [AppController joinRoom:_currentUser.room_info.room_id];
+        if ([CXClientModel instance].isJoinedRoom == YES) {
+            [self.navigationController popViewControllerAnimated:YES];
+        }
     }
 }
 #pragma mark  Header_CGSize
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
     if (section == _mainInfoSectionIndex) {
-       return CGSizeMake(SCREEN_WIDTH,300*SCALE_W);
+//       return CGSizeMake(SCREEN_WIDTH,300*SCALE_W);
+        return CGSizeMake(SCREEN_WIDTH,0.01f);
     } else if (section == _currentRoomSectionIndex) {
         return CGSizeZero;
     }
@@ -321,6 +330,7 @@
         vc.nickname = self.currentUser.nickname;
         vc.user_id = self.user_Id;
         vc.user_avatar = self.currentUser.avatar;
+        vc.is_room = @"2";
         [self.navigationController pushViewController:vc animated:YES];
     }
 }
@@ -342,6 +352,10 @@
     _mainCollectionView.dataSource = self;
     _mainCollectionView.showsVerticalScrollIndicator = NO;
     _mainCollectionView.showsHorizontalScrollIndicator = NO;
+    
+    self.mainCollectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    
+    self.collectionViewTopLayout.constant = 300 * SCALE_W;
 }
 
 - (NSMutableArray *)profileArrays {

@@ -15,14 +15,13 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="19dp" />
+            android:layout_height="40dp" />
 
         <RelativeLayout
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp">
 
             <RelativeLayout
@@ -42,8 +41,8 @@
                     android:text="0"
                     android:textColor="@color/white"
                     android:textSize="9sp"
-                    app:radius="90dp"
                     android:visibility="gone"
+                    app:radius="90dp"
                     app:withBackgroundColor="#F70505" />
 
                 <TextView
@@ -66,12 +65,12 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:visibility="gone"
                 android:id="@+id/rl_tab_sys"
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/rl_tab_msg"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:visibility="visible">
 
                 <com.deepsea.mua.stub.view.WithBackgroundTextView
                     android:id="@+id/tv_sys_unread"
@@ -82,8 +81,8 @@
                     android:text="1"
                     android:textColor="@color/white"
                     android:textSize="9sp"
-                    app:radius="90dp"
                     android:visibility="gone"
+                    app:radius="90dp"
 
                     app:withBackgroundColor="#F70505" />
 
@@ -132,8 +131,8 @@
                     android:text="1"
                     android:textColor="@color/white"
                     android:textSize="9sp"
-                    app:radius="90dp"
                     android:visibility="gone"
+                    app:radius="90dp"
 
                     app:withBackgroundColor="#F70505" />
 

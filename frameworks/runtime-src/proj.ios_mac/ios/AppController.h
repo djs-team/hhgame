@@ -45,9 +45,15 @@
 /// 进入用户详情资料页
 /// @param userId 用户ID
 + (void)showUserProfile:(NSString *_Nonnull)userId;
++ (void)showUserProfile:(NSString *_Nonnull)userId target:(UIViewController *)target;
 
 /// 退出登录
 + (void)logout;
+
+#pragma mark - 注册极光tagID
+/// 注册极光tagID
+/// @param tagID
++ (void)registerJPUSHTagsId:(NSString*_Nonnull)tagID;
 
 #pragma mark - 屏幕横竖屏
 /// 改变屏幕旋转
@@ -65,7 +71,11 @@
 + (void)appPurchaseWithPayType:(NSString *_Nonnull)payType payParam:(NSString *_Nonnull)payParam userID:(NSString *_Nonnull)userID orderNo:(NSString *_Nonnull)orderNo paySuccessMethod:(NSString *_Nonnull)paySuccessMethod;
 
 #pragma mark - Photo
-+ (void)selectedOnePhotoWithMethod:(NSString *_Nonnull)method;
+
+/// 上传图片
+/// @param putParam 上传图片阿里云参数
+/// @param method 返回方法
++ (void)selectedOnePhotoWithPutParam:(NSString *_Nonnull)putParam method:(NSString *_Nonnull)method;
 
 #pragma mark - QRCode
 /// 生成二维码
@@ -81,9 +91,18 @@
 #pragma mark - 获取手机基本信息
 /// 获取Imei
 + (NSString *_Nullable)getImei;
+/// 获取当前连接网络
++ (NSString *_Nullable)getNetWorkStates;
+/// 获取网络信号
++ (NSString *_Nullable)getSignalStrength;
+/// 获取电量
++ (NSString *_Nullable)getBatteryLevel;
 
 /// 获取Device
 + (NSString *_Nullable)getDevice;
+
+/// 获取版本号
++ (NSString *_Nullable)getVersion;
 
 #pragma mark - 复制到剪贴板
 

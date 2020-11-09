@@ -27,6 +27,8 @@
     self.avatar.layer.cornerRadius = 28;
     self.avatar.layer.borderColor = UIColorHex(0x9645E0).CGColor;
     self.avatar.layer.borderWidth = 0.5;
+    
+    _avatar.userInteractionEnabled = YES;
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(avatarTapAction:)];
     //为图片添加手势
     [_avatar addGestureRecognizer:singleTap];

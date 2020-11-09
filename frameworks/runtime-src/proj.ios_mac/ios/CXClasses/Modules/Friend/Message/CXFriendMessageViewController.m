@@ -63,12 +63,11 @@
     
     [self.dataArrays enumerateObjectsUsingBlock:^(EMConversationModel *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         EMConversation *conversation = obj.emModel;
-        [[EMClient sharedClient].chatManager deleteConversation:conversation.conversationId
-        isDeleteMessages:YES
-              completion:nil];
+        [conversation markAllMessagesAsRead:nil];
     }];
     
     [self getConversationsData];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNSNotificationCenter_CXBaseTabBarViewController_reloadUnreadCount object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -120,7 +119,6 @@
         }];
        
         [weakself.dataArrays removeAllObjects];
-        NSMutableArray *tempArray = [NSMutableArray array];
         NSArray *models = [EMConversationHelper modelsFromEMConversations:sorted];
         [weakself.dataArrays addObjectsFromArray:models];
        
@@ -140,7 +138,8 @@
             return(NSComparisonResult)NSOrderedAscending;
         } else {
             return(NSComparisonResult)NSOrderedDescending;
-        }}];
+        }
+    }];
 
     NSMutableArray *conversationModels = [NSMutableArray array];
     for (EMConversationModel *model in sorted) {
@@ -174,11 +173,25 @@
         
         CXFriendInviteModel *model = [_userDataDict objectForKey:conversation.emModel.conversationId];
         cell.model = model;
-        
+        kWeakSelf
         cell.avatarTapGestureBlock = ^{
-            [AppController joinRoom:model.room_id];
+            if ([model.room_id integerValue] > 0) {
+                if ([CXClientModel instance].isJoinedRoom) {
+                    for (UIViewController *controller in self.navigationController.viewControllers) {
+                        if ([controller isKindOfClass:[CXLiveRoomViewController class]]) {
+                            [[NSNotificationCenter defaultCenter] postNotificationName:kNSNotificationCenter_CXLiveRoomViewController_joinNewRoom object:nil userInfo:@{@"roomId" : model.room_id}];
+                            
+                            CXLiveRoomViewController *vc = (CXLiveRoomViewController *)controller;
+                            [self.navigationController popToViewController:vc animated:YES];
+                        }
+                    }
+                } else {
+                    [AppController joinRoom:model.room_id];
+                }
+            } else {
+                [AppController showUserProfile:model.user_id target:weakSelf];
+            }
         };
-        cell.userMessageLabel.hidden = NO;
         cell.userMessageLabel.text = [self _latestMessageTitleForConversationModel:conversation.emModel];
         cell.timeLabel.text = [self _latestMessageTimeForConversationModel:conversation.emModel];
         if (conversation.emModel.unreadMessagesCount == 0) {
@@ -191,9 +204,25 @@
         CXFriendInviteModel *model = self.dataArrays[indexPath.row];
         cell.model = model;
         cell.isConversation = NO;
-        cell.userMessageLabel.hidden = YES;
+        cell.userMessageLabel.text = model.intro;
+        kWeakSelf
         cell.avatarTapGestureBlock = ^{
-            [AppController joinRoom:model.room_id];
+            if ([model.room_id integerValue] > 0) {
+                if ([CXClientModel instance].isJoinedRoom) {
+                    for (UIViewController *controller in self.navigationController.viewControllers) {
+                        if ([controller isKindOfClass:[CXLiveRoomViewController class]]) {
+                            [[NSNotificationCenter defaultCenter] postNotificationName:kNSNotificationCenter_CXLiveRoomViewController_joinNewRoom object:nil userInfo:@{@"roomId" : model.room_id}];
+                            
+                            CXLiveRoomViewController *vc = (CXLiveRoomViewController *)controller;
+                            [self.navigationController popToViewController:vc animated:YES];
+                        }
+                    }
+                } else {
+                    [AppController joinRoom:model.room_id];
+                }
+            } else {
+                [AppController showUserProfile:model.user_id target:weakSelf];
+            }
         };
     }
     return cell;
@@ -233,7 +262,8 @@
 
 - (void)messagesDidReceive:(NSArray *)aMessages
 {
-    [self performSelector:@selector(_reSortedConversationModelsAndReloadView) withObject:nil afterDelay:0.8];
+//    [self performSelector:@selector(_reSortedConversationModelsAndReloadView) withObject:nil afterDelay:0.8];
+    [self getConversationsData];
 }
 #pragma mark - Private
 - (NSString *)_latestMessageTitleForConversationModel:(EMConversation *)conversationModel {

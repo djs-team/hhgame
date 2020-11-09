@@ -17,6 +17,8 @@ load('module/mahjong/ui/DeskResultLayerMdt', function () {
         getNotificationList: function () {
             return [
                 TableEvent.InitCardProto,
+                GameEvent.TABLE_RESULT_RECEIVE,
+                GameEvent.UPDATE_PROPSYNC,
             ]
         },
         handleNotification: function (notification) {
@@ -24,6 +26,12 @@ load('module/mahjong/ui/DeskResultLayerMdt', function () {
             let body = notification.getBody()
             switch (name) {
                 case TableEvent.InitCardProto:
+                    break
+                case GameEvent.TABLE_RESULT_RECEIVE:
+                    this.view.updateNextGame(body)
+                    break
+                case GameEvent.UPDATE_PROPSYNC:
+                    this.view.changeCoin();
                     break
             }
         },

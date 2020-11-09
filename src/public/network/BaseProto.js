@@ -19,7 +19,7 @@ load('public/network/BaseProto', function () {
         },
         handleMsg: function (msg) {
             if (this._name !== 'HeartBeatProto' ) {
-                cc.log('----------->>>>>>>>>>>>>>>>>>>>>>>>>>>>>---netName = ' + this._name + 'msg ==== <<<     ' + JSON.stringify(msg) + '     >>>')
+                cc.log('----------->>>>>>>>>>>>>>>>>>>>>>>>>>>>>---netName = ' + this._name + ' ==== <<<     ' + JSON.stringify(msg) + '     >>>')
             }
         },
 

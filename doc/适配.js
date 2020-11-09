@@ -1,5 +1,5 @@
 {
-    let test =  {"layoutType":"showAll","screenAlign":"bottom"}
+    let test =  {"layoutType":"maxArea","screenAlign":"mid"}
     let LayoutType = {
         // 不产生适配行为，但可识别位移操作
         None: 'none',

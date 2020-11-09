@@ -66,6 +66,72 @@
             "Tag": 634,
             "Children": [
               {
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 609.9036,
+                  "Y": 352.0021
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": true,
+                "PrePosition": {
+                  "X": 0.4765,
+                  "Y": 0.4889
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 609.9036,
+                "RightMargin": 670.0964,
+                "TopMargin": 367.9979,
+                "BottomMargin": 352.0021,
+                "Tag": 33,
+                "ActionTag": -732381923,
+                "Size": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Name": "bgAniNd",
+                "ctype": "SingleNodeObjectData"
+              },
+              {
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 609.9,
+                  "Y": 352.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": true,
+                "PrePosition": {
+                  "X": 0.4765,
+                  "Y": 0.4889
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 609.9,
+                "RightMargin": 670.1,
+                "TopMargin": 368.0,
+                "BottomMargin": 352.0,
+                "Tag": 34,
+                "ActionTag": 256943169,
+                "Size": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Name": "boomAniNd",
+                "ctype": "SingleNodeObjectData"
+              },
+              {
                 "ClipAble": false,
                 "BackColorAlpha": 102,
                 "SingleColor": {
@@ -115,55 +181,6 @@
                 "BottomMargin": 1.44,
                 "Tag": 635,
                 "Children": [
-                  {
-                    "FileData": {
-                      "Type": "Normal",
-                      "Path": "common/texiangguang.png",
-                      "Plist": ""
-                    },
-                    "Scale9OriginX": 207,
-                    "Scale9OriginY": 172,
-                    "Scale9Width": 215,
-                    "Scale9Height": 179,
-                    "AnchorPoint": {
-                      "ScaleX": 0.5,
-                      "ScaleY": 0.5
-                    },
-                    "Position": {
-                      "X": 583.9774,
-                      "Y": 356.0796
-                    },
-                    "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
-                    },
-                    "CColor": {},
-                    "IconVisible": false,
-                    "PrePosition": {
-                      "X": 0.4562,
-                      "Y": 0.4946
-                    },
-                    "PercentWidthEnable": true,
-                    "PercentHeightEnable": true,
-                    "PercentWidthEnabled": true,
-                    "PercentHeightEnabled": true,
-                    "PreSize": {
-                      "X": 0.7,
-                      "Y": 1.0
-                    },
-                    "LeftMargin": 135.9774,
-                    "RightMargin": 248.0226,
-                    "TopMargin": 3.9204,
-                    "BottomMargin": -3.9204,
-                    "Tag": 636,
-                    "ActionTag": -1838879283,
-                    "Size": {
-                      "X": 896.0,
-                      "Y": 720.0
-                    },
-                    "Name": "Image_59",
-                    "ctype": "ImageViewObjectData"
-                  },
                   {
                     "FileData": {
                       "Type": "Normal",
@@ -475,55 +492,6 @@
                 "BottomMargin": -8.568,
                 "Tag": 642,
                 "Children": [
-                  {
-                    "FileData": {
-                      "Type": "Normal",
-                      "Path": "common/texiangguang.png",
-                      "Plist": ""
-                    },
-                    "Scale9OriginX": 207,
-                    "Scale9OriginY": 172,
-                    "Scale9Width": 215,
-                    "Scale9Height": 179,
-                    "AnchorPoint": {
-                      "ScaleX": 0.5,
-                      "ScaleY": 0.5
-                    },
-                    "Position": {
-                      "X": 583.9774,
-                      "Y": 356.0796
-                    },
-                    "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
-                    },
-                    "CColor": {},
-                    "IconVisible": false,
-                    "PrePosition": {
-                      "X": 0.4562,
-                      "Y": 0.4946
-                    },
-                    "PercentWidthEnable": true,
-                    "PercentHeightEnable": true,
-                    "PercentWidthEnabled": true,
-                    "PercentHeightEnabled": true,
-                    "PreSize": {
-                      "X": 0.8,
-                      "Y": 1.0
-                    },
-                    "LeftMargin": 71.9774,
-                    "RightMargin": 184.0226,
-                    "TopMargin": 3.9204,
-                    "BottomMargin": -3.9204,
-                    "Tag": 643,
-                    "ActionTag": 965197344,
-                    "Size": {
-                      "X": 1024.0,
-                      "Y": 720.0
-                    },
-                    "Name": "Image_59",
-                    "ctype": "ImageViewObjectData"
-                  },
                   {
                     "FileData": {
                       "Type": "Normal",
@@ -984,55 +952,6 @@
                 "BottomMargin": -18.576,
                 "Tag": 652,
                 "Children": [
-                  {
-                    "FileData": {
-                      "Type": "Normal",
-                      "Path": "common/texiangguang.png",
-                      "Plist": ""
-                    },
-                    "Scale9OriginX": 207,
-                    "Scale9OriginY": 172,
-                    "Scale9Width": 215,
-                    "Scale9Height": 179,
-                    "AnchorPoint": {
-                      "ScaleX": 0.5,
-                      "ScaleY": 0.5
-                    },
-                    "Position": {
-                      "X": 583.9774,
-                      "Y": 356.0796
-                    },
-                    "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
-                    },
-                    "CColor": {},
-                    "IconVisible": false,
-                    "PrePosition": {
-                      "X": 0.4562,
-                      "Y": 0.4946
-                    },
-                    "PercentWidthEnable": true,
-                    "PercentHeightEnable": true,
-                    "PercentWidthEnabled": true,
-                    "PercentHeightEnabled": true,
-                    "PreSize": {
-                      "X": 0.81,
-                      "Y": 1.0
-                    },
-                    "LeftMargin": 65.5774,
-                    "RightMargin": 177.6226,
-                    "TopMargin": 3.9204,
-                    "BottomMargin": -3.9204,
-                    "Tag": 653,
-                    "ActionTag": 2105961863,
-                    "Size": {
-                      "X": 1036.8,
-                      "Y": 720.0
-                    },
-                    "Name": "Image_59",
-                    "ctype": "ImageViewObjectData"
-                  },
                   {
                     "FileData": {
                       "Type": "Normal",
@@ -1610,8 +1529,7 @@
       "UsedResources": [
         "common/gx_1.png",
         "common/gx_2.png",
-        "common/jinbi.png",
-        "common/texiangguang.png"
+        "common/jinbi.png"
       ],
       "ctype": "GameFileData"
     }

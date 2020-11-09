@@ -45,7 +45,8 @@
     NSMutableAttributedString *result = [self resultWithRoomGuardLevel:model.GuardSign DukeLevel:model.DukeLevel UserLevel:model.UserLevel UserIdentity:model.UserIdentity Font:font UserID:[NSString stringWithFormat:@"%@", model.GiftGiver.UserId]];
     
     // 昵称
-    NSMutableAttributedString *user = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@ ", model.GiftGiver.Name]];
+    NSString *nameStr = [NSString stringWithFormat:@"%@（%@|%@岁）", model.GiftGiver.Name, model.GiftGiver.City.length > 0 ? model.GiftGiver.City : @"城市", model.GiftGiver.Age.length > 0 ? model.GiftGiver.Age : @"18"];
+    NSMutableAttributedString *user = [[NSMutableAttributedString alloc] initWithString:nameStr];
     [user setColor:color];
     user.font = font;
     __weak typeof(self) weakSelf = self;
@@ -79,7 +80,8 @@
         __weak typeof(self) weakSelf = self;
         [user setTextHighlightRange:NSMakeRange(0, obj.TargetName.length) color:color1 backgroundColor:[UIColor clearColor] tapAction:^(UIView * _Nonnull containerView, NSAttributedString * _Nonnull text, NSRange range, CGRect rect) {
             if (weakSelf.clickUserInfo) {
-                NSString *userID = [[CXClientModel instance].room.seatUsers objectForKey:obj.Micro.indexPath];
+//                NSString *userID = [[CXClientModel instance].room.seatUsers objectForKey:obj.Micro.indexPath];
+                NSString *userID = obj.TargetId;
                 weakSelf.clickUserInfo(userID);
             }
         }];
@@ -110,9 +112,9 @@
 }
 
 - (CGSize)sizeThatFits:(CGSize)size {
-    CGSize tempSize = CGSizeMake(size.width - 40, size.height);
+    CGSize tempSize = CGSizeMake(size.width - 50, size.height);
     CGSize textSize = [self.textLabel sizeThatFits:tempSize];
-    return CGSizeMake(size.width, textSize.height + 8);
+    return CGSizeMake(size.width, textSize.height + 18);
 }
 
 @end

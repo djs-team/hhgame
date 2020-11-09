@@ -7,6 +7,7 @@ load('game/ui/scene/HallScene', function () {
     let HallMdt = include('game/ui/scene/HallMdt')
     let LocalSave = include('game/public/LocalSave')
     let GameUtil = include('game/public/GameUtil')
+    let GameConfig = include('game/config/GameConfig')
     let AniPlayer = ResConfig.AniPlayer
     let PlayerPlay = ResConfig.PlayerPlay
     let HallScene = BaseScene.extend({
@@ -16,23 +17,24 @@ load('game/ui/scene/HallScene', function () {
                 'topPnl/photoBtn': {onClicked: this.onPhotoClick},
                 'topPnl/guiZuBtn': {onClicked: this.onMemberClick},
                 'topPnl/namePnl': {onClicked: this.onGonggaoClick},
-                'topPnl/coinPnl': {},
-                'topPnl/coinPnl/coinAddBtn': {onClicked: this.onCoinShopClick},
-                'topPnl/diamondsPnl': {},
-                'topPnl/diamondsPnl/diamondsAddBtn': {onClicked: this.onCoinShopClick},
-                'topPnl/fuKaPnl': {},
-                'topPnl/fuKaPnl/fuKaAddBtn': {onClicked: this.onCoinShopClick},
-                'topPnl/emailBtn': {onClicked: this.onEmailBtnClick},
-                'topPnl/moreBtn': {onClicked: this.onMoreClick},
+                'topPnl/coinPnl': {onClicked: this.onCoinShopClick},
+                'topPnl/diamondsPnl': {onClicked: this.onCoinShopClick},
+                'topPnl/fuKaPnl': {onClicked: this.onCoinShopClick},
+                'topPnl/emailPnl': {onClicked: this.onEmailBtnClick},
+                'topPnl/emailPnl/emailBtn': {},
+                'topPnl/moreBtnPnl': {onClicked: this.onMoreClick},
+                'topPnl/moreBtnPnl/moreBtn': {},
                 'topPnl/morePnl': {onClicked: this.onHideMorePnlClick},
                 'topPnl/morePnl/setBtn': {onClicked: this.onSetBtnClick},
                 'topPnl/morePnl/feedbackBtn': {onClicked: this.onFeedbackBtnClick},
-                'topPnl/morePnl/customerServiceBtn': {onClicked: this.onHideMorePnlClick},
+                'topPnl/morePnl/customerServiceBtn': {onClicked: this.onCustomerBtnClick},
                 'topPnl/morePnl/authenticationBtn': {onClicked: this.onAuthenticationClick},
 
 
-                'bmPnl/fuKaShopBtn': {onClicked: this.onFukaShopClick},
-                'bmPnl/coinShopBtn': {onClicked: this.onCoinShopClick},
+                'bmPnl/fuKaShopNd': {},
+                'bmPnl/fuKaShopNd/fuKaShopBtn': {onClicked: this.onFukaShopClick},
+                'bmPnl/coinShopNd': {},
+                'bmPnl/coinShopNd/coinShopBtn': {onClicked: this.onCoinShopClick},
                 'bmPnl/bmListPnl/signPnl': {onClicked: this.onSignBtnClick},
                 'bmPnl/bmListPnl/taskPnl': {onClicked: this.onTaskClick},
                 'bmPnl/bmListPnl/rolesPnl': {onClicked: this.onRoleClick},
@@ -71,24 +73,25 @@ load('game/ui/scene/HallScene', function () {
         onEmailBtnClick: function (sender) {
             GameUtil.delayBtn(sender);
             this.emailBtn.getChildByName('redImg').setVisible(false)
-            appInstance.gameAgent().addPopUI(ResConfig.Ui.EmailLayer)
+            appInstance.gameAgent().addUI(ResConfig.Ui.EmailLayer)
             // appInstance.gameAgent().Tips('敬请期待！！！')
         },
 
         onFukaShopClick: function (sender) {
             GameUtil.delayBtn(sender);
-            appInstance.gameAgent().addPopUI(ResConfig.Ui.FukaShopLayer)
+            appInstance.gameAgent().addUI(ResConfig.Ui.FukaShopLayer)
         },
 
         onGoAreanClick: function (sender) {
+            cc.log('===========onGoAreanClick========')
             GameUtil.delayBtn(sender);
-            appInstance.gameAgent().addPopUI(ResConfig.Ui.ArenaLayer)
+            appInstance.gameAgent().addUI(ResConfig.Ui.ArenaLayer)
         },
 
         onPhotoClick: function (sender) {
             GameUtil.delayBtn(sender);
             //  this.personalDataPnl.setVisible(true)
-            appInstance.gameAgent().addPopUI(ResConfig.Ui.PersonalLayer)
+            appInstance.gameAgent().addUI(ResConfig.Ui.PersonalLayer)
         },
 
         onUpdateNameClick: function () {
@@ -100,7 +103,7 @@ load('game/ui/scene/HallScene', function () {
         },
 
         onEmailClick: function () {
-            appInstance.gameAgent().addPopUI(ResConfig.Ui.EmailLayer)
+            appInstance.gameAgent().addUI(ResConfig.Ui.EmailLayer)
         },
         onInvitationClick: function (sender) {
             GameUtil.delayBtn(sender);
@@ -108,8 +111,7 @@ load('game/ui/scene/HallScene', function () {
             appInstance.gameAgent().addUI(ResConfig.Ui.InvitationLayer)
         },
 
-        onHideMorePnlClick: function (sender) {
-            GameUtil.delayBtn(sender);
+        onHideMorePnlClick: function () {
             this.morePnl.setVisible(false)
         },
         onTurnTableClick: function (sender) {
@@ -120,35 +122,41 @@ load('game/ui/scene/HallScene', function () {
         onFeedbackBtnClick: function (sender) {
             GameUtil.delayBtn(sender);
             this.morePnl.setVisible(false)
-            appInstance.gameAgent().addPopUI(ResConfig.Ui.FeedBackLayer)
+            appInstance.gameAgent().addUI(ResConfig.Ui.FanKuiLayer)
+        },
+
+        onCustomerBtnClick: function (sender) {
+            GameUtil.delayBtn(sender);
+            this.morePnl.setVisible(false)
+            appInstance.gameAgent().addUI(ResConfig.Ui.CustomerLayer)
         },
 
         onTaskClick: function (sender) {
             GameUtil.delayBtn(sender);
             this.taskPnl.getChildByName('redImg').setVisible(false)
-            appInstance.gameAgent().addPopUI(ResConfig.Ui.TaskLayer)
+            appInstance.gameAgent().addUI(ResConfig.Ui.TaskLayer)
         },
         onCashCowClick: function (sender) {
             GameUtil.delayBtn(sender);
-            appInstance.gameAgent().addPopUI(ResConfig.Ui.CashCowLayer)
+            appInstance.gameAgent().addUI(ResConfig.Ui.CashCowLayer)
 
         },
 
 
         onSignBtnClick: function (sender) {
             GameUtil.delayBtn(sender);
-            appInstance.gameAgent().addPopUI(ResConfig.Ui.SignLayer)
+            appInstance.gameAgent().addUI(ResConfig.Ui.SignLayer)
         },
 
         onMemberClick: function (sender) {
             GameUtil.delayBtn(sender);
             this.guiZuBtn.getChildByName('redImg').setVisible(false)
-            appInstance.gameAgent().addPopUI(ResConfig.Ui.MemberLayer)
+            appInstance.gameAgent().addUI(ResConfig.Ui.MemberLayer)
         },
 
         onCoinShopClick: function (sender) {
             GameUtil.delayBtn(sender);
-            appInstance.gameAgent().addPopUI(ResConfig.Ui.CoinShopLayer)
+            appInstance.gameAgent().addUI(ResConfig.Ui.CoinShopLayer)
         },
 
         onGoShopClick: function (sender) {
@@ -159,12 +167,12 @@ load('game/ui/scene/HallScene', function () {
         },
         onCoinGameClick: function (sender) {
             GameUtil.delayBtn(sender);
-            appInstance.gameAgent().addPopUI(ResConfig.Ui.CoinGameLayer)
+            appInstance.gameAgent().addUI(ResConfig.Ui.CoinGameLayer)
         },
 
         onRoleClick: function (sender) {
             GameUtil.delayBtn(sender);
-            appInstance.gameAgent().addPopUI(ResConfig.Ui.RoleLayer)
+            appInstance.gameAgent().addUI(ResConfig.Ui.RoleLayer)
         },
 
         onLiveBroadcastClick: function (sender) {
@@ -190,7 +198,7 @@ load('game/ui/scene/HallScene', function () {
         onSetBtnClick: function (sender) {
             GameUtil.delayBtn(sender);
             this.onHideMorePnlClick()
-            appInstance.gameAgent().addPopUI(ResConfig.Ui.SetLayer)
+            appInstance.gameAgent().addUI(ResConfig.Ui.SetLayer)
         },
 
         goChooseCity: function (sender) {
@@ -198,7 +206,7 @@ load('game/ui/scene/HallScene', function () {
             let viewData = {
                 from: 'HallScene'
             }
-            appInstance.gameAgent().addPopUI(ResConfig.Ui.ChooseCityLayer,viewData)
+            appInstance.gameAgent().addUI(ResConfig.Ui.ChooseCityLayer,viewData)
         },
 
         onMoreClick: function () {
@@ -217,17 +225,11 @@ load('game/ui/scene/HallScene', function () {
             appInstance.sceneManager().getCurScene().addChild(confUI)
             this.onHideMorePnlClick()
         },
-        onFeedbackClick: function () {
-            let feedbackClass = include('game/ui/layer/feedback/FeedbackLayer')
-            let feedbackUI = appInstance.uiManager().createPopUI(feedbackClass)
-            appInstance.sceneManager().getCurScene().addChild(feedbackUI)
-            this.onHideMorePnlClick()
-        },
 
         onAuthenticationClick: function (sender) {
             GameUtil.delayBtn(sender);
             this.onHideMorePnlClick()
-            appInstance.gameAgent().addPopUI(ResConfig.Ui.Authentication)
+            appInstance.gameAgent().addUI(ResConfig.Ui.Authentication)
 
         },
 
@@ -256,6 +258,7 @@ load('game/ui/scene/HallScene', function () {
         initData: function (selfInfo) {
             this._selfInfo = selfInfo
             this._pRole = selfInfo.pRole
+            this._selectRole = -1
 
             this._peopleNum = global.localStorage.getIntKey(LocalSave.CoinGamePeopleNum)
             if (!this._peopleNum) {
@@ -264,6 +267,10 @@ load('game/ui/scene/HallScene', function () {
 
             this.onInitUserData();
 
+            this.registerEventListener('TCP_CLOSE', appInstance.gameAgent().onTcpClose)
+            this.registerEventListener('RECONNECT_OVER_TIMES', appInstance.gameAgent().onReconnectError)
+
+
         },
 
 
@@ -271,8 +278,10 @@ load('game/ui/scene/HallScene', function () {
         initView: function (selfInfo) {
             this.initData(selfInfo)
 
+
+            let channel = appInstance.dataManager().getUserData().channel;
             let jinbichangAni = appInstance.gameAgent().gameUtil().getAni(ResConfig.AniHall.DatingJinbichang)
-            jinbichangAni.setAnimation(0, 'animation', true)
+            jinbichangAni.setAnimation(0, GameConfig.channel_animation[channel], true)
             this.coinGameNd.addChild(jinbichangAni)
 
             let xiangqinAni = appInstance.gameAgent().gameUtil().getAni(ResConfig.AniHall.DatingXiangQin)
@@ -281,6 +290,8 @@ load('game/ui/scene/HallScene', function () {
 
             let saishichangAni = appInstance.gameAgent().gameUtil().getAni(ResConfig.AniHall.DatingSaiShiChang)
             saishichangAni.setAnimation(0, 'animation', true)
+            saishichangAni.setLocalZOrder(0)
+            this.matchBtn.setLocalZOrder(100)
             this.matchNd.addChild(saishichangAni)
 
             let gengduowanfaAni = appInstance.gameAgent().gameUtil().getAni(ResConfig.AniHall.DatingGengDuoWanFa)
@@ -295,6 +306,14 @@ load('game/ui/scene/HallScene', function () {
             zhuanpanAni.setAnimation(0, 'animation', true)
             this.turnTableNd.addChild(zhuanpanAni)
 
+            let fukashangcheng = appInstance.gameAgent().gameUtil().getAni(ResConfig.AniHall.DatingFuKaShangCheng)
+            fukashangcheng.setAnimation(0, 'animation', true)
+            this.fuKaShopNd.addChild(fukashangcheng)
+
+            let jinbishangcheng = appInstance.gameAgent().gameUtil().getAni(ResConfig.AniHall.DatingJinBiShangCheng)
+            jinbishangcheng.setAnimation(0, 'animation', true)
+            this.coinShopNd.addChild(jinbishangcheng)
+
             this.updatePlayerAni()
             this.morePnl.setVisible(false)
 
@@ -304,7 +323,7 @@ load('game/ui/scene/HallScene', function () {
 
             pRole = pRole || this._pRole
 
-            if (pRole !=0 && !pRole) {
+            if (this._selectRole == pRole || (pRole !=0 && !pRole)) {
                 return
             }
 
@@ -314,8 +333,9 @@ load('game/ui/scene/HallScene', function () {
             ani.setPosition(cc.p(0,0))
             ani.setScale(0.6)
             ani.setAnimation(0, PlayerPlay.stand, true)
+            this._selectRole = pRole
         },
-        
+
 
         onInitUserData: function () {
             let msg = {}
@@ -366,11 +386,20 @@ load('game/ui/scene/HallScene', function () {
             if (data.hasOwnProperty('fuKa')) {
                 fuKaCnt.setString(GameUtil.getStringRule(data.fuKa))
             }
+
+            if (data.hasOwnProperty('photoUrl')) {
+                this.loadUrlImage(data.photoUrl, photo)
+            }
+
             if (data.hasOwnProperty('sdkphotourl')) {
                 this.loadUrlImage(data.sdkphotourl, photo)
             }
 
-            this.updatePlayerAni(data.pRole)
+            if (data.hasOwnProperty('pRole')) {
+                this.updatePlayerAni(data.pRole)
+            }
+
+
 
         },
 

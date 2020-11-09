@@ -22,8 +22,6 @@
 @property (nonatomic, assign) NSInteger messageCount;
 @property (nonatomic, assign) NSInteger systemCount;
 
-@property (nonatomic) BOOL isViewAppear;
-
 @end
 
 @implementation CXFriendViewController
@@ -40,17 +38,19 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadFriendMessage:) name:kNSNotificationCenter_CXFriendViewController_unreadCount object:nil];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadUnReadCount:) name:kNSNotificationCenter_CXFriendViewController_reloadUnReadCount object:nil];
+    
     CXFriendMessageViewController *friendVC = [CXFriendMessageViewController new];
     friendVC.isConversation = YES;
     _conversationVC = friendVC;
     
-//    CXSystemMessageViewController *systemVC = [CXSystemMessageViewController new];
+    CXSystemMessageViewController *systemVC = [CXSystemMessageViewController new];
     
-    self.viewControllerClasses = [NSArray arrayWithObjects:friendVC, nil];
+    self.viewControllerClasses = [NSArray arrayWithObjects:friendVC, systemVC, nil];
     
     NSDictionary *friendItem = @{@"title":@"好友", @"count":[CXClientModel instance].unreadCountStr};
-//    NSDictionary *systemItem = @{@"title":@"系统", @"count":@"0"};
-    _titleArray = [NSMutableArray arrayWithObjects:friendItem, nil];
+    NSDictionary *systemItem = @{@"title":@"系统", @"count":@"0"};
+    _titleArray = [NSMutableArray arrayWithObjects:friendItem, systemItem, nil];
     self.titles = [NSArray arrayWithArray:_titleArray];
     self.itemWidth = 60;
     
@@ -66,27 +66,27 @@
     
     self.navigationController.navigationBarHidden = YES;
     
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNSNotificationCenter_CXBaseTabBarViewController_reloadSystemUnreadCount object:nil];
+
     [self getUnReadCountData];
-    
-    _isViewAppear = YES;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     
     self.navigationController.navigationBarHidden = NO;
-    
-    _isViewAppear = NO;
 }
 
 - (void)reloadFriendMessage:(NSNotification *)object {
-    if (_isViewAppear == YES) {
-        NSString *unread = object.userInfo[@"unreadCount"];
-        NSDictionary *systemItem = @{@"title":@"好友", @"count":unread.integerValue > 0 ? unread : @""};
-        [self.titleArray replaceObjectAtIndex:0 withObject:systemItem];
-        self.titles = [NSArray arrayWithArray:self.titleArray];
-        [self reloadData];
-    }
+    NSString *unread = object.userInfo[@"unreadCount"];
+    NSDictionary *friendItem = @{@"title":@"好友", @"count":unread.integerValue > 0 ? unread : @""};
+    [self.titleArray replaceObjectAtIndex:0 withObject:friendItem];
+    self.titles = [NSArray arrayWithArray:self.titleArray];
+    [self reloadData];
+}
+
+- (void)reloadUnReadCount:(NSNotification *)object {
+    [self getUnReadCountData];
 }
 
 - (void)getUnReadCountData {
@@ -106,6 +106,12 @@
             } else {
                 weakSelf.applyCountLabel.hidden = YES;
             }
+            
+            NSString *unread = responseObject[@"data"][@"system_num"];
+            NSDictionary *systemItem = @{@"title":@"系统", @"count":unread.integerValue > 0 ? unread : @""};
+            [self.titleArray replaceObjectAtIndex:1 withObject:systemItem];
+            self.titles = [NSArray arrayWithArray:self.titleArray];
+            [self reloadData];
         }
     }];
 }
@@ -139,7 +145,7 @@
 }
 
 - (void)clearAction {
-    [self alertTitle:@"是否要删除所有消息" message:@"删除后不可恢复" confirm:@"确定" cancel:@"取消" confirm:^{
+    [self alertTitle:@"是否要将所有消息设为已读？" message:@"" confirm:@"确定" cancel:@"取消" confirm:^{
         [_conversationVC clearConversationList];
     } cancel:nil];
 }

@@ -131,7 +131,7 @@ public class RechargeDialogActivity extends FragmentActivity
 
 
     private void initRechargeProtocol() {
-        String protocol = "充值即代表同意 《合合有约充值协议》";
+        String protocol = "充值即代表同意 《麻将情缘充值协议》";
         SpannableString spannableString = new SpannableString(protocol);
         spannableString.setSpan(new ClickableSpan() {
             @Override
@@ -393,6 +393,7 @@ public class RechargeDialogActivity extends FragmentActivity
                 isFinishUi = true;
                 MobEventUtils.onRechargeEvent(mContext, mRechargeAmount);
                 mRechargeAmount = "0";
+                chargelist();
                 requestBalance();
 
             }
@@ -411,6 +412,7 @@ public class RechargeDialogActivity extends FragmentActivity
             MobEventUtils.onRechargeEvent(mContext, mRechargeAmount);
             mRechargeAmount = "0";
             isFinishUi = true;
+            chargelist();
             requestBalance();
         }
 

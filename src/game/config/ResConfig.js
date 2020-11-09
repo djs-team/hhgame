@@ -49,6 +49,7 @@ load('game/config/ResConfig', function () {
      *  骨骼动画资源
      */
     ResConfig.AniHall = {
+        "jiazaidonghua": { json: 'res/animation/hall/jiazaidonghua/jiazaidonghua.json', atlas: 'res/animation/hall/jiazaidonghua/jiazaidonghua.atlas', png: 'res/animation/hall/jiazaidonghua/jiazaidonghua.png' },
         "DatingJinbichang": { json: 'res/animation/hall/dating_jinbichang/dating_jinbichang.json', atlas: 'res/animation/hall/dating_jinbichang/dating_jinbichang.atlas', png: 'res/animation/hall/dating_jinbichang/dating_jinbichang.png' },
         "DatingGengDuoWanFa": { json: 'res/animation/hall/dating_gengduowanfa/dating_gengduowanfa.json', atlas: 'res/animation/hall/dating_gengduowanfa/dating_gengduowanfa.atlas', png: 'res/animation/hall/dating_gengduowanfa/dating_gengduowanfa.png' },
         "DatingXiangQin": { json: 'res/animation/hall/dating_xiangqin/dating_majiang.json', atlas: 'res/animation/hall/dating_xiangqin/dating_majiang.atlas', png: 'res/animation/hall/dating_xiangqin/dating_majiang.png' },
@@ -57,6 +58,9 @@ load('game/config/ResConfig', function () {
         "DatingYaoJinShu": { json: 'res/animation/hall/yaojinshu/dating_yaojinshu.json', atlas: 'res/animation/hall/yaojinshu/dating_yaojinshu.atlas', png: 'res/animation/hall/yaojinshu/dating_yaojinshu.png' },
         "YaoJinShu": { json: 'res/animation/hall/yaojinshu/yaojinshu.json', atlas: 'res/animation/hall/yaojinshu/yaojinshu.atlas', png: 'res/animation/hall/yaojinshu/yaojinshu.png' },
         "DatingZhuanPan": { json: 'res/animation/hall/zhuanpan/dating_zhuanpan.json', atlas: 'res/animation/hall/zhuanpan/dating_zhuanpan.atlas', png: 'res/animation/hall/zhuanpan/dating_zhuanpan.png' },
+        "DatingFuKaShangCheng": { json: 'res/animation/hall/dating_fukashangcheng/shangcheng.json', atlas: 'res/animation/hall/dating_fukashangcheng/shangcheng.atlas', png: 'res/animation/hall/dating_fukashangcheng/shangcheng.png' },
+        "DatingJinBiShangCheng": { json: 'res/animation/hall/dating_jinbishangcheng/majiangche.json', atlas: 'res/animation/hall/dating_jinbishangcheng/majiangche.atlas', png: 'res/animation/hall/dating_jinbishangcheng/majiangche.png' },
+        "DatingGongXiHuoDe": { json: 'res/animation/hall/gongxihuode/gongxihuode.json', atlas: 'res/animation/hall/gongxihuode/gongxihuode.atlas', png: 'res/animation/hall/gongxihuode/gongxihuode.png' },
 
     }
 
@@ -65,6 +69,7 @@ load('game/config/ResConfig', function () {
      */
     ResConfig.Ui = {
         'SystemTips': 'game/ui/public/SystemTips',
+        'LoadingLayer':'game/ui/public/LoadingLayer',
         'DialogLayer': 'game/ui/public/DialogLayer',
         'ReceivePropsLayer': 'game/ui/public/ReceivePropsLayer',
         'ChooseCityLayer': 'game/ui/layer/choosecity/ChooseCityLayer',
@@ -84,8 +89,9 @@ load('game/config/ResConfig', function () {
         'MemberLayer': 'game/ui/layer/member/MemberLayer',
         'RoleLayer': 'game/ui/layer/role/RoleLayer',
         'FukaShopLayer': 'game/ui/layer/fukashop/FukaShopLayer',
-        'FeedBackLayer': 'game/ui/layer/feedback/FeedBackLayer',
-
+        'FanKuiLayer': 'game/ui/layer/feedback/FanKuiLayer',
+        'CustomerLayer': 'game/ui/layer/customer/CustomerLayer',
+        'MatchResultLayer' : 'module/mahjong/ui/MatchResultLayer',
     }
 
     /**
@@ -97,6 +103,7 @@ load('game/config/ResConfig', function () {
         'LoginScene': 'res/LoginScene.json',
         'HallScene': 'res/HallScene.json',
         'SystemTipsLayer': 'res/SystemTipsLayer.json',
+        'LoadingLayer': 'res/LoadingLayer.json',
         'DialogLayer': 'res/DialogLayer.json',
         'ReceivePropsLayer': 'res/ReceivePropsLayer.json',
         'ChooseCityLayer': 'res/ChooseCityLayer.json',
@@ -116,7 +123,8 @@ load('game/config/ResConfig', function () {
         'CashCowLayer': 'res/CashCowLayer.json',
         'CoinGameLayer': 'res/CoinGameLayer.json',
         'ConfLayer': 'res/ConfLayer.json',
-        'FeedbackLayer': 'res/FeedBackLayer.json',
+        'FanKuiLayer': 'res/FanKuiLayer.json',
+        'CustomerLayer': 'res/CustomerLayer.json',
         'AuthenticationLayer': 'res/AuthenticationLayer.json',
         'CustomerServiceLayer': 'res/CustomerServiceLayer.json',
         'PersonalLayer': 'res/PersonalLayer.json',

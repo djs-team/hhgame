@@ -120,7 +120,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_marginRight="15dp"
-            android:text="还有7天到期"
             android:textColor="#ffff010d"
             android:textSize="11sp"
             app:layout_constraintRight_toRightOf="parent"

@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -155,7 +156,6 @@ public class MainActivity extends BaseActivity<ActivityMainBinding>
         });
         AppConstant.getInstance().setFirstRun(true);
         hasFaceBeauty = SharedPrefrencesUtil.getData(mContext, "hasFaceBeauty", "hasFaceBeauty", Constant.isBeautyOpen);
-        boolean inroom = SharedPrefrencesUtil.getData(mContext, "inroom", "inroom", false);
 
         if (hasFaceBeauty) {
             int height = 1024;
@@ -220,7 +220,6 @@ public class MainActivity extends BaseActivity<ActivityMainBinding>
         resetLocalCame();
         reset();
         hideProgress();
-        getMessageNum();
     }
 
     private void showCardDialog() {
@@ -400,6 +399,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding>
         }
         mPrePos = pos;
     }
+    private Handler mHandler=new Handler();
 
     private void getMakeFace() {
         mViewModel.getMakeFace().observe(this, new BaseObserver<FaceRequestBean>() {
@@ -450,7 +450,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding>
     @Override
     protected void onResume() {
         super.onResume();
-        setUnreadMsgCount();
+        getMessageNum();
 
     }
 

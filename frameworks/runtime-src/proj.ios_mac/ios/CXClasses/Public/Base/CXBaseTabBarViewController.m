@@ -19,7 +19,7 @@
 
 @interface CXBaseTabBarViewController () <EMChatManagerDelegate>
 
-@property (nonatomic) BOOL isViewAppear;
+//@property (nonatomic) BOOL isViewAppear;
 
 @property (nonatomic, strong) CXHomeViewController *homeController;
 @property (nonatomic, strong) CXFriendViewController *friendController;
@@ -46,7 +46,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(back) name:kNSNotificationCenter_CXBaseTabBarViewController_leaveOut object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(backRoom) name:kNSNotificationCenter_CXBaseTabBarViewController_leaveOut object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadUnreadMessage) name:kNSNotificationCenter_CXBaseTabBarViewController_reloadUnreadCount object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadUnreadSystemMessage) name:kNSNotificationCenter_CXBaseTabBarViewController_reloadSystemUnreadCount object:nil];
     
     [self setupChildController];
     
@@ -58,7 +60,7 @@
     
     [self checkUserDataUpdate];
     
-//    [self getUnReadCountData];
+    [self getUnReadCountData];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -66,7 +68,7 @@
     [super viewWillAppear:animated];
     
     self.navigationController.navigationBarHidden = YES;
-    self.isViewAppear = YES;
+//    self.isViewAppear = YES;
     [self _loadTabBarItemsBadge];
 }
 
@@ -74,25 +76,35 @@
 {
     [super viewWillDisappear:animated];
     
-    self.isViewAppear = NO;
+//    self.isViewAppear = NO;
 }
 
-//- (void)getUnReadCountData {
-//    kWeakSelf
-//    [CXHTTPRequest GETWithURL:@"/index.php/Api/Friend/messageNum" parameters:nil callback:^(id responseObject, BOOL isCache, NSError *error) {
-//        if (!error) {
-//            NSString *system_num = responseObject[@"data"][@"system_num"];
-//            NSString *my_apply = responseObject[@"data"][@"my_apply"];
-//            NSString *apply_my = responseObject[@"data"][@"apply_my"];
-//
-//            weakSelf.systemCount = [system_num integerValue] + [my_apply integerValue] + [apply_my integerValue];
-//
-//            [weakSelf reloadTabBarBadge];
-//        }
-//    }];
-//}
+- (void)getUnReadCountData {
+    kWeakSelf
+    [CXHTTPRequest GETWithURL:@"/index.php/Api/Friend/messageNum" parameters:nil callback:^(id responseObject, BOOL isCache, NSError *error) {
+        if (!error) {
+            NSString *system_num = responseObject[@"data"][@"system_num"];
+            NSString *my_apply = responseObject[@"data"][@"my_apply"];
+            NSString *apply_my = responseObject[@"data"][@"apply_my"];
 
-- (void)back {
+            weakSelf.systemCount = [system_num integerValue] + [my_apply integerValue] + [apply_my integerValue];
+
+            [weakSelf reloadTabBarBadge];
+        }
+    }];
+}
+
+- (void)reloadUnreadMessage {
+    if (_messageCount != 0) {
+        [self _loadTabBarItemsBadge];
+    }
+}
+
+- (void)reloadUnreadSystemMessage {
+    [self getUnReadCountData];
+}
+
+- (void)backRoom {
     [AppController setOrientation:@""];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -121,9 +133,7 @@
 
 - (void)messagesDidReceive:(NSArray *)aMessages
 {
-    if (self.isViewAppear) {
-        [self _loadConversationTabBarItemBadge];
-    }
+    [self _loadConversationTabBarItemBadge];
 }
 
 - (void)conversationListDidUpdate:(NSArray *)aConversationList
@@ -138,7 +148,9 @@
     NSArray *conversations = [[EMClient sharedClient].chatManager getAllConversations];
     NSInteger unreadCount = 0;
     for (EMConversation *conversation in conversations) {
-        unreadCount += conversation.unreadMessagesCount;
+        if (conversation.type == EMConversationTypeChat) {
+            unreadCount += conversation.unreadMessagesCount;
+        }
     }
     
     self.messageCount = unreadCount;
@@ -150,9 +162,8 @@
     NSInteger unreadCount = _messageCount + _systemCount;
     NSString *unreadCountStr = unreadCount > 0 ? @(MIN(unreadCount, 99)).stringValue : nil;
     self.friendController.tabBarItem.badgeValue = unreadCountStr;
-    [CXClientModel instance].unreadCountStr = unreadCountStr ?: @"0";
-    [[NSNotificationCenter defaultCenter] postNotificationName:kNSNotificationCenter_CXFriendViewController_unreadCount object:nil userInfo:@{@"unreadCount" : unreadCountStr ?: @"0"}];
-    
+    [CXClientModel instance].unreadCountStr = _messageCount > 0 ? [NSString stringWithFormat:@"%ld", _messageCount]: @"0";
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNSNotificationCenter_CXFriendViewController_unreadCount object:nil userInfo:@{@"unreadCount" : _messageCount > 0 ? [NSString stringWithFormat:@"%ld", _messageCount]: @"0"}];
 }
 
 - (void)_loadTabBarItemsBadge
@@ -213,13 +224,11 @@
             @"roomId":model.roomId,
         };
         [CXHTTPRequest POSTWithURL:@"/index.php/Api/Keng/inviteHandle" parameters:param callback:^(id responseObject, BOOL isCache, NSError *error) {
-            if (!error) {
-                [weakSelf.inviteMikeArrays removeObject:model];
-                if (weakSelf.inviteMikeArrays.count > 0) {
-                    weakSelf.mikeView.mikeModel = weakSelf.inviteMikeArrays[0];
-                } else {
-                    [weakSelf.mikeView removeFromSuperview];
-                }
+            [weakSelf.inviteMikeArrays removeObject:model];
+            if (weakSelf.inviteMikeArrays.count > 0) {
+                weakSelf.mikeView.mikeModel = weakSelf.inviteMikeArrays[0];
+            } else {
+                [weakSelf.mikeView removeFromSuperview];
             }
         }];
     };
@@ -238,17 +247,11 @@
         [weakSelf.inviteMikeArrays removeAllObjects];
         [weakSelf.mikeView removeFromSuperview];
         
-        if ([CXClientModel instance].isJoinedRoom == YES) {
-            [[CXClientModel instance] leaveRoomCallBack:^(NSString * _Nonnull roomId, BOOL success) {
-                if (success) {
-                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                        [CXClientModel instance].isAgreeInviteJoinRoom = YES;
-                        [AppController joinRoom:model.roomId];
-                    });
-                }
-            }];
+        [CXClientModel instance].isAgreeInviteJoinRoom = YES;
+        
+        if ([CXClientModel instance].isJoinedRoom) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:kNSNotificationCenter_CXLiveRoomViewController_joinNewRoom object:nil userInfo:@{@"roomId" : model.roomId}];
         } else {
-            [CXClientModel instance].isAgreeInviteJoinRoom = YES;
             [AppController joinRoom:model.roomId];
         }
     };

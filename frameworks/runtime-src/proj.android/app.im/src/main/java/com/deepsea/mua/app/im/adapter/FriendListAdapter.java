@@ -14,7 +14,9 @@ import com.deepsea.mua.im.utils.EaseSmileUtils;
 import com.deepsea.mua.stub.adapter.BaseBindingAdapter;
 import com.deepsea.mua.stub.adapter.BindingViewHolder;
 import com.deepsea.mua.stub.entity.FriendInfoBean;
+import com.deepsea.mua.stub.utils.PageJumpUtils;
 import com.deepsea.mua.stub.utils.SexResUtils;
+import com.deepsea.mua.stub.utils.StateUtils;
 import com.deepsea.mua.stub.utils.ViewBindUtils;
 import com.hyphenate.util.DateUtils;
 
@@ -51,26 +53,27 @@ public class FriendListAdapter extends BaseBindingAdapter<FriendInfoBean, ItemFr
         String city = item.getCity();
         ViewBindUtils.setText(holder.binding.tvLocation, !TextUtils.isEmpty(city) ? city : "");
         ViewBindUtils.setVisible(holder.binding.ivLocation, !TextUtils.isEmpty(city));
-        holder.binding.tvLastMessage.setText(item.getIntro());
+        if (item.getTime() != 0) {
+            holder.binding.tvTime.setText(DateUtils.getTimestampString(new Date(item.getTime())));
+        }
+        ViewBindUtils.setText(holder.binding.tvLastMessage, item.getIntro());
         if (item.getUnReadCount() > 0) {
             ViewBindUtils.setVisible(holder.binding.unreadMsgNumber, true);
             ViewBindUtils.setText(holder.binding.unreadMsgNumber, item.getUnReadCount() + "");
         } else {
             ViewBindUtils.setVisible(holder.binding.unreadMsgNumber, false);
         }
-        ViewBindUtils.setText(holder.binding.tvOnline, item.getOnline_str());
-        if (!TextUtils.isEmpty(item.getOnline_str())){
-            if (item.getOnline_str().equals("在线")){
-                ViewBindUtils.setTextColor(holder.binding.tvOnline, com.deepsea.mua.stub.R.color.color_FE770);
-            }else if (item.getOnline_str().equals("刚刚在线")){
-                ViewBindUtils.setTextColor(holder.binding.tvOnline, com.deepsea.mua.stub.R.color.color_FBD711);
-            }else if (item.getOnline_str().equals("离线")){
-                ViewBindUtils.setTextColor(holder.binding.tvOnline, com.deepsea.mua.stub.R.color.color_818181);
 
-            }
-
+        String str = item.getOnline_str();
+        if (str.contains("离线") || str.contains("刚刚在线") || str.contains("在线")) {
+            ViewBindUtils.setVisible(holder.binding.tvStateDesc, false);
+        } else {
+            ViewBindUtils.setVisible(holder.binding.tvStateDesc, true);
+            StateUtils.setState(holder.binding.tvStateDesc, str);
         }
-
-
+        StateUtils.setOnlineState(holder.binding.tvOnline, str);
+        ViewBindUtils.RxClicks(holder.binding.ivPhoto, o -> {
+            PageJumpUtils.jumpToProfile(item.getUser_id());
+        });
     }
 }

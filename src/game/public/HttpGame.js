@@ -4,6 +4,7 @@ load('game/public/HttpGame', function () {
     let ResConfig = include('game/config/ResConfig')
     let GameEvent = include('game/config/GameEvent')
     let LocalSave = include('game/public/LocalSave')
+    let GameUtil = include('game/public/GameUtil')
 
     let Ui = ResConfig.Ui
     let nickName = "";
@@ -142,6 +143,8 @@ load('game/public/HttpGame', function () {
 
             appInstance.gameNet().connect(msg.hostip, msg.hostport)
 
+            // 注册极光推送TagID
+            appInstance.nativeApi().registerJPUSHTagsID(msg.channel)
         },
 
 
@@ -157,6 +160,12 @@ load('game/public/HttpGame', function () {
 
 
         checkHallRedBack: function (msg) {
+            msg.pRole = msg.roleCode
+            let saveKey = [
+                'pRole',
+                'vipCode',//0 不是会员 1周会员 2 月 3 季 4年
+            ]
+            appInstance.dataManager().getUserData().saveMsg(msg, saveKey)
             appInstance.sendNotification(GameEvent.HALL_RED_BACK, msg)
         },
 
@@ -209,6 +218,7 @@ load('game/public/HttpGame', function () {
                 return
             }
             msg.pRole = msg.roleCode
+            msg.pname = GameUtil.onForMatTxtLength(msg.pname,12,'...')
             let saveKey = [
                 'pid',
                 'pname',
@@ -230,6 +240,25 @@ load('game/public/HttpGame', function () {
 
         },
 
+        // 获取上传图片token
+        getUpDatePictureTokenReq: function (msg) {
+            msg = msg || {}
+            if (!this._requestBackCall[HttpEvent.MJ_HALL_MESSAGE_GETUPDATEPICTURETOKEN]) {
+                this._requestBackCall[HttpEvent.MJ_HALL_MESSAGE_GETUPDATEPICTURETOKEN] = this.getUpDatePictureTokenBack
+            }
+
+            msg.msgID = HttpEvent.MJ_HALL_MESSAGE_GETUPDATEPICTURETOKEN
+            appInstance.httpAgent().sendPost(msg)
+        },
+        // 获取上传图片token回调
+        getUpDatePictureTokenBack: function (msg) {
+            if (msg.status !== 0) {
+                cc.log('-----getUpDatePictureTokenBack-------->>>httpGame getUpDatePictureTokenBack error happen')
+                return
+            }
+            appInstance.nativeApi().uploadPictureParam(msg)
+        },
+        
         updateUserNameReq: function (msg) {
             cc.log("========开始请求updateUserName")
             msg = msg || {}
@@ -259,7 +288,6 @@ load('game/public/HttpGame', function () {
 
         },
         updateUserPhotoReq: function (msg) {
-            cc.log("========开始请求updateUserPhotoReq")
             msg = msg || {}
             if (!this._requestBackCall[HttpEvent.MJ_HALL_PLAYER_PHOTO_CHANGE]) {
                 this._requestBackCall[HttpEvent.MJ_HALL_PLAYER_PHOTO_CHANGE] = this.updateUserPhotoBack
@@ -276,13 +304,13 @@ load('game/public/HttpGame', function () {
                 cc.log('------------->>>httpGame updateUserPhotoBack error happen')
                 return
             }
-            cc.log('------------->>>httpGame updateUserPhotoBack ' + JSON.stringify(msg))
-
-            // let saveKey = [
-            //     'pphoto',
-            //     'photoUpdate'
-            // ]
-            // appInstance.dataManager().getUserData().saveMsg(msg, saveKey)
+            
+            let sdkphotourl = msg.photoUrl
+            let saveKey = [
+             'sdkphotourl',
+            ]
+            let data = {'sdkphotourl': sdkphotourl}
+            appInstance.dataManager().getUserData().saveMsg(data, saveKey)
             appInstance.sendNotification(GameEvent.UPDATE_USERPHOTO, msg)
 
         },
@@ -302,7 +330,7 @@ load('game/public/HttpGame', function () {
         authenticationBack: function (msg) {
 
             if (msg.status !== 0) {
-                cc.log('------authenticationBack------->>>httpGame authenticationBack error happen')
+                appInstance.gameAgent().Tips('身份证号与姓名不符，请您确定后重新输入！')
                 return
             }
 
@@ -485,6 +513,29 @@ load('game/public/HttpGame', function () {
 
         },
 
+        AcceptAwardReq: function (msg) {
+            msg = msg || {}
+            if (!this._requestBackCall[HttpEvent.MJ_HALL_PLAYER_WATCH_VIDEO_GET_COINS]) {
+                this._requestBackCall[HttpEvent.MJ_HALL_PLAYER_WATCH_VIDEO_GET_COINS] = this.AcceptAwardBack
+            }
+
+            msg.msgID = HttpEvent.MJ_HALL_PLAYER_WATCH_VIDEO_GET_COINS
+            appInstance.httpAgent().sendPost(msg)
+
+        },
+
+        AcceptAwardBack: function (msg) {
+
+            if (msg.status !== 0) {
+                cc.log('------------->>>httpGame AcceptAwardBack error happen')
+                return
+            }
+
+            console.log('-------------------AcceptAwardBack data : ' + JSON.stringify(msg))
+            appInstance.sendNotification(GameEvent.TABLE_RESULT_RECEIVE, msg)
+
+        },
+
         REFRESHAWARDSDATAReq: function (msg) {
             msg = msg || {}
             if (!this._requestBackCall[HttpEvent.MJ_HALL_LUCKY_PRIZE]) {
@@ -642,6 +693,9 @@ load('game/public/HttpGame', function () {
         REFRESHCHALLENGETASKBack: function (msg) {
 
             if (msg.status !== 0) {
+                if (msg.status == 111) {
+                    appInstance.gameAgent().Tips('今日挑战任务已完成！')
+                }
                 cc.log('------------->>>httpGame REFRESHCHALLENGETASKBack error happen')
                 return
             }
@@ -1482,6 +1536,16 @@ load('game/public/HttpGame', function () {
             appInstance.sendNotification(GameEvent.HALL_EMAIL_RECEIVE, msg)
 
         },
+
+        /**
+         * 分享完成任务
+         * @param msg 
+         */
+        sharedCompleteTaskReq: function (msg) {
+            msg = msg || {}
+            msg.msgID = HttpEvent.MJ_HALL_SHARE_COMPLETE_TASK
+            appInstance.httpAgent().sendPost(msg)
+        }
     })
     return HttpGame
 })

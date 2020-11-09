@@ -34,6 +34,9 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 'goodsListPnl/leftPnl/searchTextFiled' : {},
                 'goodsListPnl/leftPnl/imgPageView' : { },
                 'goodsListPnl/leftPnl/imgPageCell' : { },
+                'goodsListPnl/leftPnl/PageIndex0' : { },
+                'goodsListPnl/leftPnl/PageIndex1' : { },
+                'goodsListPnl/leftPnl/PageIndex2' : { },
 
                 'goodsListPnl/midPnl/cardExchangeBtn' : { },
                 'goodsListPnl/midPnl/seizeBtn' : {},
@@ -45,15 +48,18 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 'goodsListPnl/bmPnl/goodsListView' : {  },
                 'goodsListPnl/bmPnl/goodsPnl' : {  },
                 'goodsListPnl/bmPnl/goodsCell' : {  },
+                'goodsListPnl/bmPnl/noDataPnl' : {  },
 
                 'exchangePnl' : {},
                 'exchangePnl/exangeListView' : {},
                 'exchangePnl/exchangeListPnl' : {},
+                'exchangePnl/exchangeNoDataPnl' : {},
                 'exchangePnl/exangeGoodsCell' : {},
 
                 'robPnl' : {},
                 'robPnl/robListView' : {},
                 'robPnl/robListPnl' : {},
+                'robPnl/robNoDataPnl' : {},
                 'robPnl/robGoodsCell' : {},
 
                 'goodsDetailsPnl' : {},
@@ -67,7 +73,7 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 'goodsDetailsPnl/detailMidPnl/goodsExchangeMidBtn' : {},
 
                 'goodsDetailsPnl/detailBottomPnl' : {},
-                'goodsDetailsPnl/detailBottomPnl/detailImgPnl' : {},
+                'goodsDetailsPnl/detailBottomPnl/detailPnl' : {},
                 'goodsDetailsPnl/detailBottomPnl/goodsExchangeBottomBtn' : {},
 
 
@@ -83,6 +89,7 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 'rewardsLogPnl/phoneExchangePnl' : {},
                 'rewardsLogPnl/phoneExchangePnl/phoneTopPnl/phoneImg' : {},
                 'rewardsLogPnl/phoneExchangePnl/phoneTopPnl/phoneNumTextField' : {},
+                'rewardsLogPnl/phoneExchangePnl/phoneTopPnl/phoneGoodsName' : {},
                 'rewardsLogPnl/phoneExchangePnl/phoneMidPnl/rechargePhoneBtn' : { },
 
                 'commonPnl' : {},
@@ -174,15 +181,30 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
 
             this.fuKaPnl.getChildByName('fuKaCnt').setString(appInstance.dataManager().getUserData().fuKa)
             this.fuKaPnl.getChildByName('fuKaCnt').setTextColor(cc.color(255,255,255))
+
+            cc.log('-----------------------已设置')
             this.giftLogBtnPnl.getChildByName('giftLogPnlNameText').setTextColor(cc.color(255,255,255))
+            this.giftLogBtnPnl.getChildByName('giftLogLinePnl').setColor(cc.color(255,255,255))
             this.robLogBtnPnl.getChildByName('robLogPnlNameText').setTextColor(cc.color(255,255,255))
+            this.robLogBtnPnl.getChildByName('robLogLinePnl').setColor(cc.color(255,255,255))
+            cc.log('-----------------------已设置完毕')
+
         },
 
         initView: function () {
 
+            this.goodsListView.setScrollBarEnabled(false)
+            this.menuListView.setScrollBarEnabled(false)
+            this.exangeListView.setScrollBarEnabled(false)
+            this.robListView.setScrollBarEnabled(false)
+            this.robLogListView.setScrollBarEnabled(false)
+            this.rewardsLogListView.setScrollBarEnabled(false)
+
+
             this.goodsPnl.setVisible(false)
             this.goodsCell.setVisible(false)
             this.goodsListPnl.setVisible(true)
+            this.noDataPnl.setVisible(false)
 
             this.goodsDetailsPnl.setVisible(false)
             this.detailBottomPnl.setVisible(false)
@@ -190,10 +212,13 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
 
             this.exchangePnl.setVisible(false)
             this.exangeGoodsCell.setVisible(false)
+            this.exchangeListPnl.setVisible(false)
+            this.exchangeNoDataPnl.setVisible(false)
 
 
             this.robPnl.setVisible(false)
             this.robListPnl.setVisible(false)
+            this.robNoDataPnl.setVisible(false)
             this.robGoodsCell.setVisible(false)
 
 
@@ -217,6 +242,22 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
             this.exangeListView.addEventListener(this.selectedItemEvent,this)
             this.robListView.addEventListener(this.selectedItemEvent,this)
 
+
+            this.imgPageView.addEventListener(this.imgPageViewEvent, this)
+
+        },
+
+        imgPageViewEvent: function (sender, dt) {
+            if (dt === 0) {
+                let index = this.imgPageView.getCurrentPageIndex()
+                for (let i = 0; i < 3; ++i) {
+                    let imgPath = 'res/common/bt_1.png'
+                    if (i === index) {
+                        imgPath = 'res/common/bt_2.png'
+                    }
+                    this['PageIndex' + i].loadTexture(imgPath)
+                }
+            }
         },
 
         onTextFieldListener: function(sender,dt){
@@ -243,7 +284,6 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 offIndex = 3
                 _functionName = function () {
                     if(!this._canRefreshMenuList){
-                        appInstance.gameAgent().Tips('---------------到底了----------------')
                         return
                     }
                     this.onGetGoodsList(this._currentMenuItemCode,1)
@@ -253,7 +293,6 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 if(this._currentLayer == 'cardExchange'){
                     _functionName = function () {
                         if(!this._canRefreshCardExchangeList ){
-                            appInstance.gameAgent().Tips('---------------到底了----------------')
                             return
                         }
                         this.onGetCardListData(this._cardListStartIndex)
@@ -261,7 +300,6 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 }else{
                     _functionName = function () {
                         if(!this._canRefreshObjectExchangeList ){
-                            appInstance.gameAgent().Tips('---------------到底了----------------')
                             return
                         }
                         this.onGetMateriaListData(this._materiaListStartIndex)
@@ -271,7 +309,6 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 offIndex = 3
                 _functionName = function () {
                     if(!this._canRefreshRobList  ){
-                        appInstance.gameAgent().Tips('---------------到底了----------------')
                         return
                     }
                     this.onGetRobListData(this._robListStartIndex)
@@ -284,6 +321,13 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
 
                 _functionName()
             }
+        },
+
+        onShowNoDataPnl: function (listViewName,noDataPnlName) {
+            cc.log('------------onShowNoDataPnl----------listViewName : ' + listViewName + ' noDataPnlName : ' + noDataPnlName )
+            cc.log('------------onShowNoDataPnl----------this[listViewName].getChildrenCount() - 1] : ' + this[listViewName].getChildrenCount() - 1)
+            this[listViewName][this[listViewName].getChildrenCount() - 1][noDataPnlName].setVisible(true)
+
         },
 
         onEnter: function () {
@@ -410,14 +454,30 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
             if(isHaveAdress != 1){
                 msg.wordsText = '您还未完整填写收货地址，为保证\n' +
                     '货物顺利到达，请完善收货地址'
-                msg.midBtnFunction = function () {
+                msg.leftBtnFunction = function () {
                     this.onClosePopupPnlClick()
+                }.bind(this)
+
+                msg.rightBtnFunction = function () {
+                    let msgInfo = {
+                        titleName : '地址',
+                        contextType : 4
+                    }
+
+                    msgInfo.leftBtnFunction = function () {
+                        this.onClosePopupPnlClick()
+                    }.bind(this)
+
+                    msgInfo.rightBtnFunction = function () {
+                        this.onConfirmClicked();
+                    }.bind(this)
+                    this.onShowPopubUI(msgInfo)
+                    return false
                 }.bind(this)
 
                 this.onShowPopubUI(msg)
                 return
             }
-
             let fuka =  this.fuKaPnl.getChildByName('fuKaCnt').getString()
             if(fuka >= price){
 
@@ -426,7 +486,8 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                     this.onClosePopupPnlClick()
                 }.bind(this)
 
-                msg.rightBtnFunction = function () {
+                msg.rightBtnFunction = function (sender) {
+                    GameUtil.delayBtn(sender);
                     let sendMsg = {
                         goodsid : goodsId
                     }
@@ -446,6 +507,42 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
 
             this.onShowPopubUI(msg)
 
+        },
+
+        onConfirmClicked: function () {
+            let phone = this.contextPnl.getChildByName('addressPnl').getChildByName('phoneTextFiled').getString()
+            let name = this.contextPnl.getChildByName('addressPnl').getChildByName('nameTextFiled').getString()
+            let address = this.contextPnl.getChildByName('addressPnl').getChildByName('addressTextFiled').getString()
+
+            if (!(/^1[3|4|5|7|8][0-9]\d{8,11}$/.test(phone))) {
+                appInstance.gameAgent().Tips('手机号格式异常，请检查后重新输入')
+                return
+            }
+
+            if (name.length >= 50) {
+
+                appInstance.gameAgent().Tips('名字超长，请检查后重新输入')
+                return
+
+            }
+
+            if (name.length >= 50) {
+
+                appInstance.gameAgent().Tips('地址超长，请检查后重新输入')
+                return
+
+            }
+
+            let msg = {}
+            msg.phone = phone
+            msg.name = name
+            msg.address = address
+            appInstance.gameAgent().httpGame().UPDATEADDRESSReq(msg)
+
+        },
+
+        onCloseUpdateAddressClicked: function () {
+            this.popupPnl.setVisible(false)
         },
 
         onRechargePhoneBtnClick: function (orderCode) {
@@ -475,10 +572,10 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                     width : 629.00
                 }
                 //let url = 'http://p3.itc.cn/q_70/images03/20200911/b7c565cbc87848538cace549fb609e7b.jpeg'
-               let  url = data[i].outerPictureUrl
+                let  url = data[i].outerPictureUrl
                 this.onLoadUrlImg(url,size,cell)
             }
-
+            this.imgPageViewEvent(null, 0)
         },
 
         onLoadUrlImg: function (url,size,cell) {
@@ -636,11 +733,11 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
 
         onUpdateMenuGoodsList: function (data) {
 
-            this.onForMatGoodsList(data,'_menuStartIndex','goodsListView','goodsPnl','_menuIndexLength','_canRefreshMenuList',3,20,'goodsCell',220,'goodsPriceText','goodsImgPnl',200,168)
+            this.onForMatGoodsList(data,'_menuStartIndex','goodsListView','goodsPnl','_menuIndexLength','_canRefreshMenuList',3,20,'goodsCell',220,'goodsPriceText','goodsImgPnl',200,168,'noDataPnl')
 
         },
 
-        onForMatGoodsList: function (data,startIndex,listViewName,listPnlName,_dataLength,canRefreshName,rowLength,rowInterval,cellName,cellInterval,fuKaNumName,imgName,sizeHight,sizeWidth) {
+        onForMatGoodsList: function (data,startIndex,listViewName,listPnlName,_dataLength,canRefreshName,rowLength,rowInterval,cellName,cellInterval,fuKaNumName,imgName,sizeHight,sizeWidth,noDataPnl) {
             if(this[startIndex] == 0)
                 this[listViewName].removeAllChildren()
 
@@ -652,7 +749,16 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 this[canRefreshName] = true
 
             let rowNum = Math.ceil(data.length / rowLength)
-            for(let i = 0; i < rowNum; i++){
+            for(let i = 0; i <= rowNum; i++){
+
+                let isNoData = false
+                if(i == rowNum){
+                    if(this[canRefreshName] || !noDataPnl)
+                        break
+                    else
+                        isNoData = true
+                }
+
 
                 let goodsPnl = this[listPnlName].clone()
                 this[listViewName].pushBackCustomItem(goodsPnl)
@@ -661,12 +767,24 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 goodsPnl.setPositionX((this[listViewName].getChildrenCount() + i) * 20)
 
 
-                for(let j = 0; j < rowLength; j++){
-                    this.onInitMenuCellData(data,goodsPnl,rowLength * i+j,rowLength,cellName,cellInterval,fuKaNumName,imgName,sizeHight,sizeWidth)
+                if(!isNoData){
+                    for(let j = 0; j < rowLength; j++){
+                        this.onInitMenuCellData(data,goodsPnl,rowLength * i+j,rowLength,cellName,cellInterval,fuKaNumName,imgName,sizeHight,sizeWidth)
+                    }
+                }else{
+                    let noData = this[noDataPnl].clone()
+                    goodsPnl.addChild(noData)
+                    noData.setPositionX(0)
+                    noData.setPositionY(0)
+                    noData.setVisible(true)
                 }
 
 
             }
+
+
+
+
         },
 
         onInitMenuCellData: function (data,goodsPnl,index,rowLength,cellName,cellInterval,fuKaNumName,imgName,sizeHight,sizeWidth) {
@@ -685,9 +803,10 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 goodsName : goodsData.goodsName,
                 goodsDesc : goodsData.goodsDesc,
                 fuKaNums : goodsData.fuKaNums,
-                detailsPictureUrl : goodsData.detailsPictureUrl,
+                // detailsPictureUrl : goodsData.detailsPictureUrl,
                 upPictureUrls : goodsData.upPictureUrls,
-                goodsId : goodsData.goodsId
+                goodsId : goodsData.goodsId,
+                goodsDetails : goodsData.goodsDetails
             }
 
             let size = {
@@ -719,6 +838,7 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
 
             this.onSetShowElementFunction(elementNameArray,flag)
 
+            this.goodDetailPageView.removeAllChildren()
             let data = sender._sendMsg
             for(let i = 0; i < data.upPictureUrls.length; i++){
 
@@ -726,8 +846,8 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 cell.setVisible(true)
                 this.goodDetailPageView.pushBackCustomItem(cell)
                 let size = {
-                    height : 556,
-                    width : 416
+                    height : 416,
+                    width : 556
                 }
 
                 this.onLoadUrlImg(data.upPictureUrls[i],size,cell)
@@ -739,25 +859,37 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
             this.detailPriceText.setString(data.fuKaNums+'福卡')
 
             let btn
-            if(data.detailsPictureUrl){
+            if(data.goodsDetails != ''){
                 this.goodsExchangeMidBtn.setVisible(false)
                 this.bottomWhiltPnl.setVisible(false)
                 this.detailBottomPnl.setVisible(true)
                 btn = this.goodsExchangeBottomBtn
-
-                let size = {
-                    height : 395.00,
-                    width : 709.00
-                }
-                let  url = data.detailsPictureUrl
-                this.onLoadUrlImg(url,size,this.detailImgPnl)
-
+                this.detailPnl.getChildByName('goodsDetailText').setString(data.goodsDetails)
             }else{
                 this.goodsExchangeMidBtn.setVisible(true)
                 this.bottomWhiltPnl.setVisible(true)
                 this.detailBottomPnl.setVisible(false)
                 btn = this.goodsExchangeMidBtn
             }
+            // if(data.detailsPictureUrl){
+            //     this.goodsExchangeMidBtn.setVisible(false)
+            //     this.bottomWhiltPnl.setVisible(false)
+            //     this.detailBottomPnl.setVisible(true)
+            //     btn = this.goodsExchangeBottomBtn
+            //
+            //     let size = {
+            //         height : 395.00,
+            //         width : 709.00
+            //     }
+            //     let  url = data.detailsPictureUrl
+            //     this.onLoadUrlImg(url,size,this.detailImgPnl)
+            //
+            // }else{
+            //     this.goodsExchangeMidBtn.setVisible(true)
+            //     this.bottomWhiltPnl.setVisible(true)
+            //     this.detailBottomPnl.setVisible(false)
+            //     btn = this.goodsExchangeMidBtn
+            // }
 
             btn.addClickEventListener(function (sender,dt) {
                 GameUtil.delayBtn(sender);
@@ -775,11 +907,15 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
             if(this._currentLayer == 'goodsListPnl'){
                 this.fuKaPnl.getChildByName('fuKaCnt').setTextColor(cc.color(255,255,255))
                 this.giftLogBtnPnl.getChildByName('giftLogPnlNameText').setTextColor(cc.color(255,255,255))
+                this.giftLogBtnPnl.getChildByName('giftLogLinePnl').setColor(cc.color(255,255,255))
                 this.robLogBtnPnl.getChildByName('robLogPnlNameText').setTextColor(cc.color(255,255,255))
+                this.robLogBtnPnl.getChildByName('robLogLinePnl').setColor(cc.color(255,255,255))
             }else{
                 this.fuKaPnl.getChildByName('fuKaCnt').setTextColor(cc.color(197,195,194))
                 this.giftLogBtnPnl.getChildByName('giftLogPnlNameText').setTextColor(cc.color(224,82,65))
                 this.robLogBtnPnl.getChildByName('robLogPnlNameText').setTextColor(cc.color(224,82,65))
+                this.giftLogBtnPnl.getChildByName('giftLogLinePnl').setColor(cc.color(224,82,65))
+                this.robLogBtnPnl.getChildByName('robLogLinePnl').setColor(cc.color(224,82,65))
             }
 
             for(let i = 0; i < this._allElementArray.length; i++){
@@ -808,6 +944,7 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                     this.contextPnl.getChildByName('wordsPnl').setVisible(true)
                     this.contextPnl.getChildByName('imgPnl').setVisible(false)
                     this.contextPnl.getChildByName('robPnl').setVisible(false)
+                    this.contextPnl.getChildByName('addressPnl').setVisible(false)
                     this.contextPnl.getChildByName('wordsPnl').getChildByName('wordsText').setString(msg.wordsText)
 
                     break
@@ -815,19 +952,30 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                     this.contextPnl.getChildByName('wordsPnl').setVisible(false)
                     this.contextPnl.getChildByName('imgPnl').setVisible(true)
                     this.contextPnl.getChildByName('robPnl').setVisible(false)
+                    this.contextPnl.getChildByName('addressPnl').setVisible(false)
                     this.contextPnl.getChildByName('imgPnl').getChildByName('imgNameText').setString(msg.imgNameText)
-                    this.contextPnl.getChildByName('imgPnl').getChildByName('photoImg').loadTexture(msg.photoImg)
+                    let size = {
+                        height : 100.00,
+                        width : 100.00
+                    }
+                    this.onLoadUrlImg(msg.photoImg,size,this.contextPnl.getChildByName('imgPnl').getChildByName('photoImg'))
+                    // this.contextPnl.getChildByName('imgPnl').getChildByName('photoImg').loadTexture(msg.photoImg)
                     break
                 case 3:
                     this.contextPnl.getChildByName('wordsPnl').setVisible(false)
                     this.contextPnl.getChildByName('imgPnl').setVisible(false)
                     this.contextPnl.getChildByName('robPnl').setVisible(true)
-
+                    this.contextPnl.getChildByName('addressPnl').setVisible(false)
                     this.contextPnl.getChildByName('robPnl').getChildByName('fuKaFiled').setString('')
                     this.contextPnl.getChildByName('robPnl').getChildByName('fuaVauleText').setString(msg.fuaVauleText)
-
                     this.contextPnl.getChildByName('robPnl').getChildByName('prizePercentText').setString(msg.currentNum + '/' + msg.allNum)
                     this.contextPnl.getChildByName('robPnl').getChildByName('prizeLoadingBar').setPercent(msg.currentNum / msg.allNum * 100)
+                    break
+                case 4:
+                    this.contextPnl.getChildByName('wordsPnl').setVisible(false)
+                    this.contextPnl.getChildByName('imgPnl').setVisible(false)
+                    this.contextPnl.getChildByName('robPnl').setVisible(false)
+                    this.contextPnl.getChildByName('addressPnl').setVisible(true)
                     break
                 default:
                     break
@@ -852,7 +1000,6 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
             }else{
                 this.btnsPnl.getChildByName('midBtn').setVisible(false)
             }
-
             if(msg.rightBtnFunction){
                 this.btnsPnl.getChildByName('rightBtn').setVisible(true)
                 this.btnsPnl.getChildByName('rightBtn').setEnabled(true)
@@ -882,13 +1029,13 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
 
         onUpdatecardListFunction: function (data) {
 
-            this.onForMatGoodsList(data,'_cardListStartIndex','exangeListView','exchangeListPnl','_cardListIndexLength','_canRefreshCardExchangeList',3,20,'exangeGoodsCell',220,'goodsPriceText','goodsImgPnl',200,168)
+            this.onForMatGoodsList(data,'_cardListStartIndex','exangeListView','exchangeListPnl','_cardListIndexLength','_canRefreshCardExchangeList',3,20,'exangeGoodsCell',220,'goodsPriceText','goodsImgPnl',200,168,'exchangeNoDataPnl')
 
         },
 
         onUpdateMaterialListFunction: function (data) {
 
-            this.onForMatGoodsList(data,'_materiaListStartIndex','exangeListView','exchangeListPnl','_materiaListIndexLength','_canRefreshObjectExchangeList',3,20,'exangeGoodsCell',220,'goodsPriceText','goodsImgPnl',200,168)
+            this.onForMatGoodsList(data,'_materiaListStartIndex','exangeListView','exchangeListPnl','_materiaListIndexLength','_canRefreshObjectExchangeList',3,20,'exangeGoodsCell',220,'goodsPriceText','goodsImgPnl',200,168,'exchangeNoDataPnl')
 
         },
 
@@ -904,7 +1051,15 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
 
             let rowLength = 2
             let rowNum = Math.ceil(data.length / rowLength)
-            for(let i = 0; i < rowNum; i++){
+            for(let i = 0; i <= rowNum; i++){
+
+                let isNoData = false
+                if(i == rowNum){
+                    if(this._canRefreshRobList)
+                        break
+                    else
+                        isNoData = true
+                }
 
                 let goodsPnl = this.robListPnl.clone()
                 goodsPnl.setVisible(true)
@@ -912,10 +1067,19 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 goodsPnl.setPositionY(0)
                 goodsPnl.setPositionX((this.robListView.getChildrenCount() + i) * 20)
 
-
-                for(let j = 0; j < rowLength; j++){
-                    this.onInitRobGoodsCell(data,goodsPnl,rowLength * i+j,rowLength)
+                if(!isNoData){
+                    for(let j = 0; j < rowLength; j++){
+                        this.onInitRobGoodsCell(data,goodsPnl,rowLength * i+j,rowLength)
+                    }
+                }else{
+                    let noData = this.robNoDataPnl.clone()
+                    goodsPnl.addChild(noData)
+                    noData.setPositionX(0)
+                    noData.setPositionY(0)
+                    noData.setVisible(true)
                 }
+
+
 
 
             }
@@ -924,6 +1088,8 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
         onInitRobGoodsCell: function (data,goodsPnl,index,rowLength) {
 
             let goodsData = data[index]
+            if(!goodsData)
+                return
             let cell = this.robGoodsCell.clone()
             goodsPnl.addChild(cell)
 
@@ -932,7 +1098,7 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
             cell.setPositionY((index % rowLength) * 300)
 
             cell.getChildByName('robGoodsNameText').setString(goodsData.goodsName)
-            cell.getChildByName('goodImg').loadTexture(goodsData.hallPictureUrl)
+            //cell.getChildByName('goodImg').loadTexture(goodsData.hallPictureUrl)
             cell.getChildByName('robLoadingBar').setPercent(goodsData.currentNum / goodsData.allNum * 100)
             cell.getChildByName('robPercent').setString(goodsData.currentNum + '/' + goodsData.allNum)
             cell.getChildByName('numText').setString(goodsData.playerConsumeFuka)
@@ -946,6 +1112,13 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 roundNum : goodsData.duoBaoNum,
                 duoBaoId : goodsData.duoBaoId,
             }
+
+            let size = {
+                height : 200.00,
+                width : 168.00
+            }
+
+            this.onLoadUrlImg(goodsData.hallPictureUrl,size,cell.getChildByName('goodsImgPnl'))
 
             cell.getChildByName('luckyPnl').addClickEventListener(function (sender,dt) {
                 GameUtil.delayBtn(sender);
@@ -1183,7 +1356,6 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 this.rewardsLogListView.pushBackCustomItem(cell)
 
                 cell.setName(data.orderCode)
-                cell.getChildByName('rewardsImg').loadTexture(data.goodsUrl)
                 cell.getChildByName('goodsNameText').setString(data.goodsName)
                 cell.getChildByName('orderNumberValueText').setString(data.expressCode)
                 cell.getChildByName('timeDaysText').setString(data.timeDays)
@@ -1193,12 +1365,23 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                     orderCode : data.orderCode,
                     num : data.num,
                     propValue : data.propValue,
+                    goodsName : data. goodsName,
+                    goodsUrl : data. goodsUrl,
                 }
+
+                let size = {
+                    height : 100.00,
+                    width : 100.00
+                }
+
+                this.onLoadUrlImg(data.goodsUrl,size,cell.getChildByName('rewardsImg'))
 
 
                 if(data.status == 0){
                     cell.getChildByName('exchangeBtn').setVisible(true)
                     cell.getChildByName('copyBtn').setVisible(false)
+                    cell.getChildByName('statusText').setVisible(false)
+                    cell.getChildByName('exchangeBtn').setPosition(500, 115)
                     cell.getChildByName('exchangeBtn').addClickEventListener(function (sender,dt) {
                         GameUtil.delayBtn(sender);
                         this.onExchangeOnline(cell._sendMsg)
@@ -1206,14 +1389,29 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
 
                 }else{
                     cell.getChildByName('exchangeBtn').setVisible(false)
-                    if(data.status == 2 && data.propValue && data.propValue.substr(0,2) != '3,3')
+                    // if(data.status == 2 && data.propValue && data.propValue.substr(0,2) != '3,3'){
+                    if(data.status == 2 && data.expressCode != ''){
                         cell.getChildByName('copyBtn').setVisible(true)
-                    else
+                        cell.getChildByName('copyBtn').addClickEventListener(function (sender,et) {
+                            this.onCopyOrderMessage(sender)
+                        }.bind(this))
+                    } else {
                         cell.getChildByName('copyBtn').setVisible(false)
+                    }
+
 
                 }
 
             }
+
+        },
+
+        onCopyOrderMessage: function (sender) {
+            let cell = sender.getParent()
+            let msg = cell.getChildByName('orderNumberValueText').getString()
+            appInstance.nativeApi().copy(msg)
+            appInstance.gameAgent().Tips('复制成功',true)
+
 
         },
 
@@ -1224,6 +1422,13 @@ load('game/ui/layer/fukashop/FukaShopLayer', function () {
                 'rewardsLogPnl'
 
             ]
+            this.phoneGoodsName.setString(data.goodsName)
+            let size = {
+                height : 100.00,
+                width : 100.00
+            }
+            this.onLoadUrlImg(data.goodsUrl,size,this.phoneImg)
+
             this.onSetShowElementFunction(elementNameArray)
             this.rechargePhoneBtn.addClickEventListener(function (sender,et) {
                 GameUtil.delayBtn(sender);

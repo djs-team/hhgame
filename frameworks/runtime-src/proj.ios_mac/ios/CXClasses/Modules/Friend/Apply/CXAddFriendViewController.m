@@ -74,6 +74,7 @@
     NSString *signature = [CocoaSecurity md5:[CXClientModel instance].token].hexLower;
     NSDictionary *param = @{
         @"signature" : signature,
+        @"is_room" : _is_room ?: @"2"
     };
     kWeakSelf
     [CXHTTPRequest GETWithURL:@"/index.php/Api/Friend/friendGiftList" parameters:param callback:^(id responseObject, BOOL isCache, NSError *error) {

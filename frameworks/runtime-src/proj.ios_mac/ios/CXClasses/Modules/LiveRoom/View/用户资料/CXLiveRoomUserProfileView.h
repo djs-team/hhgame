@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy) void (^userProfileActionBlock)(NSInteger tag);
 
+@property (nonatomic, copy) void (^userProfileAvatarActionBlock)(void);
+
 @end
 
 NS_ASSUME_NONNULL_END

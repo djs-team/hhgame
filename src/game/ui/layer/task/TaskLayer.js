@@ -56,7 +56,7 @@ load('game/ui/layer/task/TaskLayer', function () {
             appInstance.uiManager().removeUI(this)
         },
         initView: function () {
-
+            this.taskList.setScrollBarEnabled(false)
             this.activityAwardsCell.setVisible(false)
             this.taskCell.setVisible(false)
             this.challengeTasksPnl.setVisible(false)
@@ -116,7 +116,14 @@ load('game/ui/layer/task/TaskLayer', function () {
             cell.getChildByName('activityPg').loadTexture(activityReward.res)
             cell.getChildByName('activityText').setString(activityReward.activityText)
             cell.getChildByName('activityDescPg').getChildByName('activityDescribeText').setString(activityReward.desc)
-
+            if(activityReward.showAniNd){
+                let boLiAni = appInstance.gameAgent().gameUtil().getAni(ResConfig.AniHall.DatingQianDao)
+                boLiAni.setAnimation(0, 'animation1', true)
+                cell.getChildByName('boxAniNd').addChild(boLiAni)
+                cell.getChildByName('boxAniNd').setVisible(true)
+            }else{
+                cell.getChildByName('boxAniNd').setVisible(false)
+            }
 
 
             cell.addTouchEventListener(function(sender, et) {
@@ -131,7 +138,7 @@ load('game/ui/layer/task/TaskLayer', function () {
 
 
         onActivityCellTouch: function (sender, et) {
-
+        
             switch (et) {
                 case 0:
                     break
@@ -139,6 +146,7 @@ load('game/ui/layer/task/TaskLayer', function () {
                     sender.getChildByName('activityDescPg').setVisible(true)
                     break
                 case 2:
+                    GameUtil.delayBtn(sender)
                     switch (sender.status) {
                         case 0:
                             appInstance.gameAgent().Tips('尚未满足要求，请继续完成任务')
@@ -269,8 +277,7 @@ load('game/ui/layer/task/TaskLayer', function () {
 
         },
 
-        onCancleBtnClick: function (sender) {
-            GameUtil.delayBtn(sender);
+        onCancleBtnClick: function () {
             appInstance.sendNotification(GameEvent.HALL_RED_GET)
             appInstance.uiManager().removeUI(this)
 
@@ -329,7 +336,7 @@ load('game/ui/layer/task/TaskLayer', function () {
             if(data.taskId > 0){
                 this.updateDailyTaskByTaskId(data.taskId)
             }
-            this.receiveRewards(data.rewards)
+           // this.receiveRewards(data.rewards)
         },
 
         updateDailyTaskByTaskId: function (taskId) {
@@ -363,8 +370,16 @@ load('game/ui/layer/task/TaskLayer', function () {
             let cell = this.activityLoadingBar.getChildByName('activityTask'+activityConfig.activityId)
             cell.getChildByName('activityPg').loadTexture(activityConfig.res)
             cell.getChildByName('activityText').setString(activityConfig.activityText)
-            cell.status = 1
+            cell.status = activityConfig.status
 
+            if(activityConfig.showAniNd){
+                let boLiAni = appInstance.gameAgent().gameUtil().getAni(ResConfig.AniHall.DatingQianDao)
+                boLiAni.setAnimation(0, 'animation1', true)
+                cell.getChildByName('boxAniNd').addChild(boLiAni)
+                cell.getChildByName('boxAniNd').setVisible(true)
+            }else{
+                cell.getChildByName('boxAniNd').setVisible(false)
+            }
         },
 
         receiveRewards: function (data) {
@@ -395,21 +410,18 @@ load('game/ui/layer/task/TaskLayer', function () {
 
             _pnl.setVisible(true)
         },
-        onHideRewardOnePnl: function (sender) {
-            GameUtil.delayBtn(sender);
+        onHideRewardOnePnl: function () {
             this.rewardOnePnl.setVisible(false)
 
         },
 
-        onHideRewardTwoPnl: function (sender) {
-            GameUtil.delayBtn(sender);
+        onHideRewardTwoPnl: function () {
             this.rewardTwoPnl.setVisible(false)
 
         },
 
 
-        onHideRewardThreePnl: function (sender) {
-            GameUtil.delayBtn(sender);
+        onHideRewardThreePnl: function () {
             this.rewardThreePnl.setVisible(false)
 
         },
@@ -500,9 +512,10 @@ load('game/ui/layer/task/TaskLayer', function () {
 
         onJumpOtherLayer: function (taskType) {
 
-            appInstance.gameAgent().addPopUI(ResConfig.Ui[GameConfig.jumping[taskType]])
-            this.onCancleBtnClick()
+            appInstance.gameAgent().showLoading()
+            appInstance.gameAgent().addUI(ResConfig.Ui[GameConfig.jumping[taskType]])
 
+            this.onCancleBtnClick()
         },
 
         onReceiveChallengTaskRewards: function (code,stage) {
@@ -525,13 +538,30 @@ load('game/ui/layer/task/TaskLayer', function () {
             cell.getChildByName('challegeTaskProgressBarPnl').getChildByName('challegeTaskProgressBar').setPercent(100)
             cell.getChildByName('challegeTaskProgressBarPnl').getChildByName('progressValueText').setString(cell._data.taskNum + '/' + cell._data.taskNum)
 
-            this.receiveRewards(data.rewards)
+         //   this.receiveRewards(data.rewards)
 
 
         },
 
         onChangeTaskBtnClick: function (sender) {
             GameUtil.delayBtn(sender);
+            let myCoin = appInstance.dataManager().getUserData().coin
+            if (myCoin<300) {
+                let dialogMsg = {
+                    ViewType: 1,
+                    TileName : '提 示',
+                    LeftBtnName: '取 消',
+                    RightBtnName : '去兑换',
+                    RightBtnClick : function () {
+                        appInstance.gameAgent().addPopUI(ResConfig.Ui.CoinShopLayer)
+                        appInstance.uiManager().removeUI(this)
+                    }.bind(this),
+
+                    SayText : '您的金币不足，是否去商城兑换'
+                }
+                appInstance.gameAgent().addDialogUI(dialogMsg)
+                return
+            }
             let msg = {}
             appInstance.gameAgent().httpGame().REFRESHCHALLENGETASKSReq(msg)
 

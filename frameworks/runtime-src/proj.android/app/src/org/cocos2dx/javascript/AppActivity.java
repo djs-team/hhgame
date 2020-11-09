@@ -6,23 +6,24 @@ import android.app.Dialog;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Toast;
 
 import org.cocos2dx.javascript.ui.splash.activity.SplashActivity;
 import org.cocos2dx.lib.Cocos2dxActivity;
@@ -39,25 +40,27 @@ import com.deepsea.mua.core.login.OnLoginListener;
 import com.deepsea.mua.core.utils.JsonConverter;
 import com.deepsea.mua.core.utils.NetWorkUtils;
 import com.deepsea.mua.core.utils.ToastUtils;
-import com.deepsea.mua.core.view.floatwindow.permission.PermissionUtil;
 import com.deepsea.mua.core.wxpay.WxPay;
 import com.deepsea.mua.core.wxpay.WxpayBroadcast;
+import com.deepsea.mua.mine.activity.UploadPhotoDialogActivity;
 import com.deepsea.mua.stub.dialog.AAlertDialog;
 import com.deepsea.mua.stub.entity.ChessLoginParam;
 import com.deepsea.mua.stub.entity.InstallParamVo;
+import com.deepsea.mua.stub.entity.OssGameConfigVo;
 import com.deepsea.mua.stub.entity.QPWxOrder;
 import com.deepsea.mua.stub.jpush.JpushUtils;
 import com.deepsea.mua.stub.permission.PermissionCallback;
+import com.deepsea.mua.stub.utils.ApkUtils;
 import com.deepsea.mua.stub.utils.BitmapUtils;
 import com.deepsea.mua.stub.utils.Constant;
 import com.deepsea.mua.stub.utils.SharedPrefrencesUtil;
+import com.deepsea.mua.voice.MyNotifyService;
 import com.fm.openinstall.OpenInstall;
 import com.fm.openinstall.listener.AppInstallAdapter;
 import com.fm.openinstall.listener.AppWakeUpAdapter;
 import com.fm.openinstall.model.AppData;
 import com.fm.openinstall.model.Error;
 import com.hh.game.R;
-import com.hhgame.httpClient.httpClient;
 import com.umeng.socialize.ShareAction;
 import com.umeng.socialize.bean.SHARE_MEDIA;
 import com.umeng.socialize.media.UMImage;
@@ -65,14 +68,18 @@ import com.umeng.socialize.media.UMWeb;
 import com.uuzuche.lib_zxing.activity.CodeUtils;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
+import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 import cn.jiguang.verifysdk.api.AuthPageEventListener;
 import cn.jiguang.verifysdk.api.JVerificationInterface;
-import cn.jiguang.verifysdk.api.PreLoginListener;
 import cn.jiguang.verifysdk.api.RequestCallback;
 import cn.jiguang.verifysdk.api.VerifyListener;
+import cn.jpush.android.api.JPushInterface;
+
+import static com.deepsea.mua.core.utils.NetWorkUtils.NetWorkType.UN_KNOWN;
+import static com.deepsea.mua.core.utils.NetWorkUtils.NetWorkType.WIFI;
 
 public class AppActivity extends Cocos2dxActivity {
 
@@ -80,6 +87,7 @@ public class AppActivity extends Cocos2dxActivity {
 
     private static WxPay mWxPay;
     private final String TAG = "AppActivity";
+    AdManage adManage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,31 +95,32 @@ public class AppActivity extends Cocos2dxActivity {
         super.onCreate(savedInstanceState);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
-        // Workaround in https://stackoverflow.com/questions/16283079/re-launch-of-activity-on-home-button-but-only-the-first-time/16447508
         if (!isTaskRoot()) {
-            // Android launched another instance of the root activity into an existing task
-            //  so just quietly finish and go away, dropping the user back into the activity
-            //  at the top of the stack (ie: the last state of this task)
-            // Don't need to finish it again since it's finished in super.onCreate .
+            finish();
             return;
         }
-        JVerificationInterface.preLogin(this, 1000, new PreLoginListener() {
-            @Override
-            public void onResult(final int code, final String content) {
-                Log.d(TAG, "[" + code + "]message=" + content);
-            }
-        });
-
         ccActivity = this;
-        OpenInstall.getWakeUp(getIntent(), wakeUpAdapter);
+        try {
+            OpenInstall.getWakeUp(getIntent(), wakeUpAdapter);
+
+        } catch (Exception e) {
+
+        }
+        Log.d(TAG, "onCreate");
 
     }
+
 
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         // 此处要调用，否则App在后台运行时，会无法截获
-        OpenInstall.getWakeUp(intent, wakeUpAdapter);
+        try {
+            OpenInstall.getWakeUp(intent, wakeUpAdapter);
+
+        } catch (Exception e) {
+
+        }
 
     }
 
@@ -185,78 +194,14 @@ public class AppActivity extends Cocos2dxActivity {
             //失败处理
             return;
         }
-        if (requestCode == 2 && resultCode == RESULT_OK) {
-            // 获取照片返回结果
-            Log.e("HelloOC:", "getPictureFromPhone -- 获取照片返回结果 data.getData() = " + data.getData());
-            String photoPath = getPhotoFromPhotoAlbum.getRealPathFromUri(this, data.getData());
-            Log.e("HelloOC:", "getPictureFromPhone -- photoPath::: " + photoPath);
-            JSONObject result = new JSONObject();
-            try {
-                result.put("photoPath", photoPath);
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            RunJS_obj("GET_PHOTO_FROM_ALBUM", result.toString());
+        if (requestCode == 2) {
+            String result = data.getStringExtra(Constant.HHGAME_PHOTO);
+            ccActivity.RunJS("PERSONALLAYER_CHANGE_PICTURE", result);
         }
 
+
     }
 
-    /**
-     * @param fileName  {String}
-     * @param url       {String}
-     * @param eventName {String}
-     */
-    public static void uploadFile(final String fileName, final String url, final String eventName) {
-        new Thread() {
-            public void run() {
-                httpClient http = new httpClient(fileName, url);
-                http.uploadFile();
-                Log.i("send:", "send successful");
-                if (http.ok == 1) {
-                    ccActivity.RunJS(eventName, http.filePath);
-                }
-            }
-        }.start();
-    }
-
-    public static void uploadPic(final String filePath, final String actionUrlPar, final String eventName, final String token) {
-        new Thread() {
-            public void run() {
-                httpClient http = new httpClient(filePath, actionUrlPar, eventName, token);
-                http.uploadFilePic();
-                Log.i("send:", "send successful");
-                Log.i("send:", "send successful http.ok = " + http.ok);
-                if (http.ok == 1) {
-                    ccActivity.RunJS(eventName, http.uploadPicReturnData);
-                    Log.i("result 333", "getPictureFromPhone -- result hhhhh = " + http.uploadPicReturnData);
-                } else if (http.ok == 0) {
-                    Log.i("result 444", "getPictureFromPhone -- result faild ");
-                    JSONObject result = new JSONObject();
-                    try {
-                        result.put("errno", 1);
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                    ccActivity.RunJS(eventName, result.toString());
-                }
-            }
-        }.start();
-    }
-
-    // 调用相册获取对应的图片
-    public static void getPictureFromPhoneAlbum() {
-        Log.i("HelloOC", "getPictureFromPhoneAlbum");
-        if (ccActivity != null) {
-            ccActivity.goPhotoAlbum();
-        }
-    }
-
-    public void goPhotoAlbum() {
-        Intent intent = new Intent();
-        intent.setAction(Intent.ACTION_PICK);
-        intent.setType("image/*");
-        startActivityForResult(intent, 2);
-    }
 
     /**
      * 第三方支付
@@ -279,12 +224,7 @@ public class AppActivity extends Cocos2dxActivity {
      * 微信支付
      */
     private void wxpay(String wxInfo) {
-        Log.d("===========wxpay", wxInfo);
-        String json = JsonConverter.toJson(wxInfo);
-        Log.d("===========json", json);
         QPWxOrder result = JsonConverter.fromJson(wxInfo, QPWxOrder.class);
-        Log.d("===========QPWxOrder", result.getAppId());
-
         if (result != null) {
             WxPay.WXPayBuilder builder = new WxPay.WXPayBuilder();
             builder.setAppId(result.getAppId());
@@ -297,9 +237,6 @@ public class AppActivity extends Cocos2dxActivity {
             mWxPay = builder.build();
             mWxPay.startPay(ccActivity);
             mWxPay.registerWxpayResult(mWxpayReceiver);
-        } else {
-            Log.d("===========", "wxpay null");
-
         }
 
 
@@ -326,7 +263,6 @@ public class AppActivity extends Cocos2dxActivity {
 
             @Override
             public void onError(String msg) {
-                Log.d("====== pay result", msg);
                 ccActivity.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -337,6 +273,7 @@ public class AppActivity extends Cocos2dxActivity {
             }
         });
     }
+
 
     private WxpayBroadcast.WxpayReceiver mWxpayReceiver = new WxpayBroadcast.WxpayReceiver() {
         @Override
@@ -376,9 +313,10 @@ public class AppActivity extends Cocos2dxActivity {
     public static void login(String type) {
         String permissionPhone = Manifest.permission.READ_PHONE_STATE;
         String permissionRW = Manifest.permission.WRITE_EXTERNAL_STORAGE;
-
-        String[] permission = new String[]{permissionPhone, permissionRW};
-
+        String permissionCamera = Manifest.permission.CAMERA;
+        String permissionAudio = Manifest.permission.RECORD_AUDIO;
+        String permissionLocation = Manifest.permission.ACCESS_FINE_LOCATION;
+        String[] permission = new String[]{permissionPhone, permissionRW, permissionCamera, permissionAudio, permissionLocation};
         com.deepsea.mua.stub.permission.PermissionUtil.request(ccActivity, permission, new PermissionCallback() {
             @Override
             public void onPermissionGranted() {
@@ -398,7 +336,6 @@ public class AppActivity extends Cocos2dxActivity {
 
             @Override
             public void onPermissonReject(String[] rejectPermissons) {
-                Log.d("shouldShowRational", "onPermissonReject");
                 showPermissionSettingDialog(0);
             }
         });
@@ -426,7 +363,7 @@ public class AppActivity extends Cocos2dxActivity {
                         dialog.dismiss();
                         Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION);
                         intent.setData(Uri.parse("package:" + ccActivity.getPackageName()));
-                        ccActivity.startActivityForResult(intent, 0);
+                        ccActivity.startActivityForResult(intent, 2);
                     }
                 });
                 aAlertDialog.show();
@@ -488,17 +425,17 @@ public class AppActivity extends Cocos2dxActivity {
     }
 
     /**
-     * 一键登录
+     * 一键登录 code 成功 0 失败
      */
     private static void loginOne() {
         JVerificationInterface.setCustomUIWithConfig(JpushUtils.getDialogLandscapeConfig(ccActivity), JpushUtils.getDialogLandscapeConfig(ccActivity));
         JVerificationInterface.loginAuth(ccActivity, false, new VerifyListener() {
             @Override
             public void onResult(int code, String content, String operator) {
+                JSONObject result = new JSONObject();
+
                 if (code == 6000) {
                     String myContent = content.replace("+", "%2B");
-                    Log.d("=========content", content);
-                    JSONObject result = new JSONObject();
                     try {
                         result.put("platform", 2);
                         result.put("accounttype", 1);
@@ -506,13 +443,27 @@ public class AppActivity extends Cocos2dxActivity {
                         result.put("phoneModel", "android");
                         result.put("account", myContent);
                         result.put("imei", NetWorkUtils.getImei(ccActivity));
+                        result.put("code", "1");
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
-                    ccActivity.RunJS_obj("THIRD_LOGIN_RESULT", result.toString());
+                } else if (code == 6002) {
+                    try {
+                        result.put("code", "0");
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                    ToastUtils.showToast("用户取消登录");
                 } else {
+                    try {
+                        result.put("code", "0");
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                     ToastUtils.showToast("一键登录失败，请尝试其他登录方式" + code);
                 }
+                ccActivity.RunJS_obj("THIRD_LOGIN_RESULT", result.toString());
+
                 JVerificationInterface.dismissLoginAuthActivity(false, new RequestCallback<String>() {
                     @Override
                     public void onResult(int code, String desc) {
@@ -547,7 +498,7 @@ public class AppActivity extends Cocos2dxActivity {
                     result.put("imei", NetWorkUtils.getImei(ccActivity));
                     result.put("nickName", apiUser.getUserName());
                     result.put("photo", apiUser.getUserIcon());
-
+                    result.put("code", "1");
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -558,11 +509,26 @@ public class AppActivity extends Cocos2dxActivity {
 
             @Override
             public void onCancel() {
+                JSONObject result = new JSONObject();
+                try {
+                    result.put("code", "0");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                ccActivity.RunJS_obj("THIRD_LOGIN_RESULT", result.toString());
+
                 ToastUtils.showToast("取消登录");
             }
 
             @Override
             public void onError(String msg) {
+                JSONObject result = new JSONObject();
+                try {
+                    result.put("code", "0");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                ccActivity.RunJS_obj("THIRD_LOGIN_RESULT", result.toString());
                 ToastUtils.showToast(msg);
             }
         });
@@ -578,52 +544,71 @@ public class AppActivity extends Cocos2dxActivity {
      */
     private String phoneInfoType;
 
-    public static void getPhoneInfo(String type) {
-        ccActivity.phoneInfoType = type;
-        String permissionStr = Manifest.permission.READ_PHONE_STATE;
-        String[] permission = new String[]{permissionStr};
-        boolean hasPermission = PermissionUtil.hasSelfPermission(ccActivity, permissionStr);
-        Log.d("getPhoneInfo", hasPermission + "");
-        com.deepsea.mua.stub.permission.PermissionUtil.request(ccActivity, permission, new PermissionCallback() {
-            @Override
-            public void onPermissionGranted() {
-                operateGetphoneInfo(type);
-            }
-
-            @Override
-            public void shouldShowRational(String[] rationalPermissons, boolean before) {
-
-                ActivityCompat.requestPermissions(ccActivity, new String[]{permissionStr}, request_code_deviceInfo);
-
-
-            }
-
-            @Override
-            public void onPermissonReject(String[] rejectPermissons) {
-                showPermissionSettingDialog(0);
-            }
-        });
+    public static String getPhoneInfo(String type) {
+        String info = "";
+        switch (type) {
+            case "netState":
+                NetWorkUtils.NetWorkType netWorkType = NetWorkUtils.getNetWorkType(ccActivity.getBaseContext());
+                if (netWorkType == WIFI) {
+                    info = "1";
+                } else if (netWorkType == UN_KNOWN) {
+                    info = "0";
+                } else {
+                    info = "2";
+                }
+                break;
+            case "netInfo":
+                info = NetWorkUtils.getNetLevel(ccActivity);
+                break;
+            case "batter":
+                Intent intent = ccActivity.registerReceiver(null, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
+                if (intent == null) {
+                    info = "";
+                }
+                int level = intent.getIntExtra("level", 0);
+                int scale = intent.getIntExtra("scale", 100);
+                float f = (float) level * 100 / scale;
+                info = String.valueOf(f);
+                break;
+        }
+        return info;
 //        }
     }
 
-    private static void operateGetphoneInfo(String type) {
+    /**
+     * @param type netInfo --netInfo
+     *             netState
+     */
+    private static String operateGetphoneInfo(String type) {
         String info = "";
         switch (type) {
-            case "imei":
-                info = NetWorkUtils.getImei(ccActivity);
+            case "netState":
+                NetWorkUtils.NetWorkType netWorkType = NetWorkUtils.getNetWorkType(ccActivity.getBaseContext());
+                if (netWorkType == WIFI) {
+                    info = "1";
+                } else if (netWorkType == UN_KNOWN) {
+                    info = "0";
+                } else {
+                    info = "2";
+                }
                 break;
-            case "model":
-                info = android.os.Build.MODEL;
+            case "netInfo":
+                info = NetWorkUtils.getNetLevel(ccActivity);
                 break;
-            case "rssi":
-                info = NetWorkUtils.getWifiRssi(ccActivity);
-
+            case "batter":
+                Intent intent = ccActivity.registerReceiver(null, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
+                if (intent == null) {
+                    info = "";
+                }
+                int level = intent.getIntExtra("level", 0);
+                int scale = intent.getIntExtra("scale", 100);
+                float f = (float) level * 100 / scale;
+                info = String.valueOf(f);
                 break;
         }
+        return info;
 
-        ccActivity.RunJS("deviceInfo", info);
     }
-
 
     /**
      * 分享-图片
@@ -632,12 +617,15 @@ public class AppActivity extends Cocos2dxActivity {
      * @param fileName 图片名字
      */
     public static void shareImage(String platform, String fileName) {
-
+        Log.d("shareImage", fileName);
         File file = ccActivity.getFilesDir();
         File imgFile = new File(file, fileName);
         Bitmap bitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath(), getBitmapOption(2));
 //        UMImage th = new UMImage(ccActivity, url);//网络图片
         UMImage image = new UMImage(ccActivity, bitmap);//data/data图片
+        image.compressStyle = UMImage.CompressStyle.SCALE;
+        UMImage thumb = new UMImage(ccActivity, bitmap);
+        image.setThumb(thumb);
         SHARE_MEDIA share_media;
         if (platform.equals("WEIXIN")) {
             share_media = SHARE_MEDIA.WEIXIN;
@@ -694,12 +682,13 @@ public class AppActivity extends Cocos2dxActivity {
         ccActivity.runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                AdManage adManage = new AdManage();
-                adManage.init(ccActivity);
-                adManage.loadAd("945477184", userId, new AdManage.OnLoadAdListener() {
+                if (ccActivity.adManage == null) {
+                    ccActivity.initRewardConfig();
+                }
+                ccActivity.adManage.loadAd("945477184", userId, new AdManage.OnLoadAdListener() {
                     @Override
                     public void onRewardVideoCached() {
-                        adManage.playAd();
+                        ccActivity.adManage.playAd();
                     }
 
                     @Override
@@ -711,6 +700,11 @@ public class AppActivity extends Cocos2dxActivity {
         });
 
 
+    }
+
+    private void initRewardConfig() {
+        adManage = AdManage.getInstance();
+        adManage.init(ccActivity);
     }
 
 
@@ -727,45 +721,8 @@ public class AppActivity extends Cocos2dxActivity {
     private String uid = "";
 
     public static void getInvitationCode(String url, String uid) {
-        Log.d("inviteCodeCallback", "url:" + url + ";uid" + uid);
         ccActivity.invireUrl = url;
-        String permissionStr = Manifest.permission.WRITE_EXTERNAL_STORAGE;
-        String[] permission = new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE};
         operateGetInvitationCode(ccActivity.invireUrl, ccActivity.uid);
-
-//
-//        boolean hasPermission = PermissionUtil.hasSelfPermission(ccActivity, permissionStr);
-
-
-//        if (hasPermission) {
-//            operateGetInvitationCode(url, uid);
-//        } else {
-//        com.deepsea.mua.stub.permission.PermissionUtil.request(ccActivity, permission, new PermissionCallback() {
-//            @Override
-//            public void onPermissionGranted() {
-//                Log.d("inviteCodeCallback", "onPermissionGranted");
-//                ccActivity.runOnUiThread(new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        operateGetInvitationCode(ccActivity.invireUrl, ccActivity.uid);
-//                    }
-//                });
-//
-//
-//            }
-//
-//            @Override
-//            public void shouldShowRational(String[] rationalPermissons, boolean before) {
-//                Log.d("inviteCodeCallback", "shouldShowRational");
-//                ActivityCompat.requestPermissions(ccActivity, new String[]{permissionStr}, request_code_invite);
-//            }
-//
-//            @Override
-//            public void onPermissonReject(String[] rejectPermissons) {
-//                showPermissionSettingDialog(1);
-//            }
-//        });
-//        }
     }
 
     private static void operateGetInvitationCode(String url, String uid) {
@@ -780,7 +737,6 @@ public class AppActivity extends Cocos2dxActivity {
      */
 
     public static void getInstallParam() {
-        Log.d("OpenInstall", "OpenInstall");
 
         //获取OpenInstall安装数
         OpenInstall.getInstall(new AppInstallAdapter() {
@@ -790,7 +746,6 @@ public class AppActivity extends Cocos2dxActivity {
                 String channelCode = appData.getChannel();
                 //获取自定义数据
                 String bindData = appData.getData();
-                Log.d("OpenInstall", "getInstall : inviteCode = " + bindData);
                 ccActivity.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -818,18 +773,41 @@ public class AppActivity extends Cocos2dxActivity {
      *
      * @param content
      */
-    public static void copy(String content) {
-        ClipboardManager cm = (ClipboardManager) ccActivity.getSystemService(Context.CLIPBOARD_SERVICE);
-        ClipData mClipData = ClipData.newPlainText("Label", content);
-        cm.setPrimaryClip(mClipData);
-        ToastUtils.showToast("复制成功");
+    public static void copyStr(String content) {
+        ccActivity.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                ClipboardManager cm = (ClipboardManager) ccActivity.getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData mClipData = ClipData.newPlainText("Label", content);
+                cm.setPrimaryClip(mClipData);
+            }
+        });
+
+    }
+
+    /**
+     * 极光设置tag
+     * +
+     *
+     * @param chanelId
+     */
+    public static void registerJPUSHTagsId(String chanelId) {
+        ccActivity.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Set<String> tags = new HashSet<>();
+                tags.add(chanelId);
+                JPushInterface.setTags(ccActivity.getApplicationContext(), 0, tags);
+
+            }
+        });
+
     }
 
     /**
      * 跳转到相亲
      */
     public static void jumpToBlindDate(String userInfo) {
-        Log.d("=====jumpToBlindDate", userInfo);
         ChessLoginParam param = JsonConverter.fromJson(userInfo, ChessLoginParam.class);
         Intent intent = new Intent(ccActivity, SplashActivity.class);
         intent.putExtra("chessLoginParam", param);
@@ -841,9 +819,49 @@ public class AppActivity extends Cocos2dxActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        JVerificationInterface.clearPreLoginCache();
         unregisterWxpayResult();
         wakeUpAdapter = null;
+    }
+
+    private long mkeyTime = 0;
+
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        //二次返回退出
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            if ((System.currentTimeMillis() - mkeyTime) > 2000) {
+                mkeyTime = System.currentTimeMillis();
+                Toast.makeText(this, "请再按一次退出游戏", Toast.LENGTH_LONG).show();
+            } else {
+                finish();
+                System.exit(0);
+            }
+            return false;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    /**
+     * 相册
+     *
+     * @param data
+     */
+    public static void getPictureFromPhoneAlbum(String data) {
+        OssGameConfigVo result = JsonConverter.fromJson(data, OssGameConfigVo.class);
+        Intent intent = new Intent(ccActivity, UploadPhotoDialogActivity.class);
+        intent.putExtra("ossConfig", result);
+        ccActivity.startActivityForResult(intent, 2);
+    }
+
+    /**
+     * @param type
+     * @return
+     */
+    public static String getAppVersion(String type) {
+        String result = "";
+        if (type.equals("name")) {
+            result = ApkUtils.getApkVersionName(ccActivity);
+        }
+        return result;
     }
 
 

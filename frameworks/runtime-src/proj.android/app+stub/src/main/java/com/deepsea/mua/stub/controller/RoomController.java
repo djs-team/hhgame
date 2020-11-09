@@ -42,6 +42,7 @@ import com.deepsea.mua.stub.entity.socket.OnlineUser;
 import com.deepsea.mua.stub.entity.socket.ReceiveMessage;
 import com.deepsea.mua.stub.entity.socket.receive.MicroTopArg;
 import com.deepsea.mua.stub.entity.socket.receive.MicroTopArgList;
+import com.deepsea.mua.stub.entity.socket.receive.NotifyOnlineHeadImageParam;
 import com.deepsea.mua.stub.entity.socket.receive.ReceivePresent;
 import com.deepsea.mua.stub.entity.socket.RoomData;
 import com.deepsea.mua.stub.entity.socket.RoomManager;
@@ -82,6 +83,7 @@ import com.deepsea.mua.stub.entity.socket.receive.UpdateFinishTaskToClientParam;
 import com.deepsea.mua.stub.entity.socket.receive.UpdateGuardSignToClientParam;
 import com.deepsea.mua.stub.entity.socket.receive.UpdateHintParam;
 import com.deepsea.mua.stub.entity.socket.receive.UpdateSongLyricParam;
+import com.deepsea.mua.stub.entity.socket.receive.UpdateUserBalanceParam;
 import com.deepsea.mua.stub.entity.socket.receive.UpdateWheatCards;
 import com.deepsea.mua.stub.entity.socket.send.JoinRoom;
 import com.deepsea.mua.stub.entity.socket.send.SendTokenMsg;
@@ -932,12 +934,13 @@ public class RoomController implements IRoomController, RoomMsgHandler.OnMsgEven
                         showToast("玫瑰余额不足，你不能进入专属视频房。");
                         break;
                     case 10:
-                        onJoinError("被超管踢出房间，暂时不能进入");
+                        JoinRoomMsg joinBean = JsonConverter.fromJson(message, JoinRoomMsg.class);
+                        onJoinError(joinBean.getCode());
                         break;
                     case 11:
-                        JoinRoomMsg joinBean = JsonConverter.fromJson(message, JoinRoomMsg.class);
+                        joinBean = JsonConverter.fromJson(message, JoinRoomMsg.class);
                         String time = joinBean.getBanTime() != -1 ? TimeUtils.secondToTime(joinBean.getBanTime()) : "永久禁播";
-                        showEnsureAlert("主播处于封禁状态，暂时不能开播\n禁播原因：" + joinBean.getBanDesc() + "\n" + "禁播结束倒计时：" + time);
+                        showEnsureAlert("主播处于封禁状态，暂时不能开播\n禁播原因：" + joinBean.getCode() + "\n" + "禁播结束倒计时：" + time);
                         break;
                     case SocketCons.Error.Maintenance:
                         onJoinError("服务器维护中。。。");
@@ -1409,14 +1412,12 @@ public class RoomController implements IRoomController, RoomMsgHandler.OnMsgEven
                 } else {
                     ToastUtils.showToast("禁言失败");
                 }
+
                 break;
             //赠送礼物回调
             case 29: {
                 if (msg.getSuccess() == 1) {
                     MobEventUtils.onSendGift(AppUtils.getApp());
-                    if (mRoomModel.getRoomData() != null) {
-                        mRoomModel.getRoomData().setBalance(object.get("Balance").getAsString());
-                    }
                 }
                 if (mView != null) {
                     mView.onMultiSend(msg.getSuccess());
@@ -1427,9 +1428,6 @@ public class RoomController implements IRoomController, RoomMsgHandler.OnMsgEven
             case 58: {
                 if (msg.getSuccess() == 1) {
                     MobEventUtils.onSendGift(AppUtils.getApp());
-                    if (mRoomModel.getRoomData() != null) {
-                        mRoomModel.getRoomData().setBalance(object.get("Balance").getAsString());
-                    }
                 }
                 if (mView != null) {
                     mView.onSingleSend(msg.getSuccess());
@@ -1587,29 +1585,7 @@ public class RoomController implements IRoomController, RoomMsgHandler.OnMsgEven
                 }
                 break;
             }
-            //排行榜发生变化
-            case 60: {
-                RoomRanks roomRanks = JsonConverter.fromJson(message, RoomRanks.class);
-                List<String> ranks = roomRanks.getRanks();
-                if (ranks == null) {
-                    ranks = new ArrayList<>();
-                }
-                int size = ranks.size();
-                if (ranks.size() < 3) {
-                    for (int i = 0; i < 3 - size; i++) {
-                        ranks.add("");
-                    }
-                }
 
-                if (mRoomModel.getRoomData() != null) {
-                    mRoomModel.getRoomData().setRanks(ranks);
-                }
-
-                if (mView != null) {
-                    mView.onRankList(ranks);
-                }
-                break;
-            }
             //发送表情回调
             case 61: {
                 if (mView != null) {
@@ -2011,14 +1987,44 @@ public class RoomController implements IRoomController, RoomMsgHandler.OnMsgEven
                     mView.showRedPackageRule(redPacketPlayDescParam.getPlayingDesc());
                 }
                 break;
-//            case 300:
-//                SongStateUtils.getSingleton2().setHeartCount(0);
-//                break;
+            case 140:
+                NotifyOnlineHeadImageParam onlineHeadImageParam = JsonConverter.fromJson(message, NotifyOnlineHeadImageParam.class);
+                syncHeadImage(onlineHeadImageParam);
+                break;
+            case 141:
+                UpdateUserBalanceParam userBalanceParam = JsonConverter.fromJson(message, UpdateUserBalanceParam.class);
+                if (mView != null) {
+                    mView.upDateBalance(userBalanceParam.getBalance());
+                }
+                break;
             case 301://KeepaLive
                 if (mView != null) {
                     mView.keepLive();
                 }
                 break;
+        }
+    }
+
+    private void syncHeadImage(NotifyOnlineHeadImageParam onlineHeadImageParam) {
+        if (mView != null) {
+            List<String> ranks = onlineHeadImageParam.getOnlineHeadImages();
+            if (ranks == null) {
+                ranks = new ArrayList<>();
+            }
+            int size = ranks.size();
+            if (ranks.size() < 3) {
+                for (int i = 0; i < 3 - size; i++) {
+                    ranks.add("");
+                }
+            }
+            mView.updateOnlineHeads(ranks);
+        } else {
+            mHandler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    syncHeadImage(onlineHeadImageParam);
+                }
+            }, 500);
         }
     }
 

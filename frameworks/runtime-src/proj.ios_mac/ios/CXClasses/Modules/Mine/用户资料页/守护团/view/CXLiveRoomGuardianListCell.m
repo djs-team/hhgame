@@ -41,9 +41,21 @@
     }
     
     _numberLabel.text = [NSString stringWithFormat:@"亲密度：%@", model.Intimacy.stringValue];
-    _expireLabel.text = [NSString stringWithFormat:@"还有%@天到期", model.Days.stringValue];
     
-    _endTimeLabel.text = [NSString stringWithFormat:@"守护到期时间：%@", model.DeadlineTime];
+    if ([self.guardianUserId isEqualToString:[CXClientModel instance].userId]) {
+        _expireLabel.hidden = NO;
+        _expireLabel.text = [NSString stringWithFormat:@"还有%@天到期", model.Days.stringValue];
+        _endTimeLabel.text = [NSString stringWithFormat:@"守护到期时间：%@", model.DeadlineTime];
+    } else {
+        if ([_model.UserInfo.PrettyId isEqualToString:[CXClientModel instance].userId]) {
+            _expireLabel.hidden = NO;
+            _expireLabel.text = [NSString stringWithFormat:@"还有%@天到期", model.Days.stringValue];
+            _endTimeLabel.text = [NSString stringWithFormat:@"守护到期时间：%@", model.DeadlineTime];
+        } else {
+            _expireLabel.hidden = YES;
+            _endTimeLabel.text = @"";
+        }
+    }
 }
 
 - (void)setUserModel:(CXUserModel *)userModel {
@@ -55,16 +67,26 @@
     [_locationBtn setTitle:[NSString stringWithFormat:@"%@,%@",userModel.city, userModel.city_two] forState:UIControlStateNormal];
     if (userModel.sex.intValue == 1) { // 男
         [_ageBtn setImage:[UIImage imageNamed:@"nan2"] forState:UIControlStateNormal];
-        _ageBtn.backgroundColor = UIColorHex(0x3F99FF);
     } else {
         [_ageBtn setImage:[UIImage imageNamed:@"nv2"] forState:UIControlStateNormal];
-        _ageBtn.backgroundColor = UIColorHex(0xEB76E4);
     }
     
     _numberLabel.text = [NSString stringWithFormat:@"亲密度：%@", userModel.intimacy];
-    _expireLabel.text = [NSString stringWithFormat:@"还有%@天到期", userModel.countdown_day.stringValue];
     
-    _endTimeLabel.text = [NSString stringWithFormat:@"守护到期时间：%@", userModel.end_time];
+//    _endTimeLabel.text = [NSString stringWithFormat:@"守护到期时间：%@", userModel.end_time];
+    _endTimeLabel.text = @"";
+    
+    if ([self.guardianUserId isEqualToString:[CXClientModel instance].userId]) {
+        _expireLabel.hidden = NO;
+        _expireLabel.text = [NSString stringWithFormat:@"还有%@天到期", userModel.countdown_day.stringValue];
+    } else {
+        if ([userModel.user_id isEqualToString:[CXClientModel instance].userId]) {
+            _expireLabel.hidden = NO;
+            _expireLabel.text = [NSString stringWithFormat:@"还有%@天到期", userModel.countdown_day.stringValue];
+        } else {
+            _expireLabel.hidden = YES;
+        }
+    }
 }
 
 @end

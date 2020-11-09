@@ -20,13 +20,43 @@
         _avatar.contentMode = UIViewContentModeScaleAspectFill;
         [self.contentView addSubview:_avatar];
         [_avatar mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake(22, 22));
-            make.left.mas_offset(4);
-            make.top.mas_offset(4);
+            make.size.mas_equalTo(CGSizeMake(24, 24));
+            make.left.mas_offset(3);
+            make.top.mas_offset(5);
         }];
-        _avatar.layer.cornerRadius = 11;
+        _avatar.layer.cornerRadius = 12;
         _avatar.layer.masksToBounds = true;
         
+        _avatar_bgImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+        _avatar_bgImageView.contentMode = UIViewContentModeScaleAspectFit;
+        [self.contentView addSubview:_avatar_bgImageView];
+        [_avatar_bgImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeMake(24, 29));
+            make.left.mas_offset(3);
+            make.top.mas_offset(0);
+        }];
+        
+        _guard_avatar = [[UIImageView alloc] initWithFrame:CGRectZero];
+        _guard_avatar.contentMode = UIViewContentModeScaleAspectFit;
+        [self.contentView addSubview:_guard_avatar];
+        [_guard_avatar mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeMake(10, 10));
+            make.right.equalTo(_avatar_bgImageView.mas_right).offset(-1);
+            make.bottom.equalTo(_avatar_bgImageView.mas_bottom).offset(2);
+        }];
+        _guard_avatar.layer.cornerRadius = 5;
+        _guard_avatar.layer.masksToBounds = true;
+        
+        _guard_bgImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+        _guard_bgImageView.contentMode = UIViewContentModeScaleAspectFit;
+        _guard_bgImageView.image = [UIImage imageNamed:@"home_game_guard_avatar_bg"];
+        [self.contentView addSubview:_guard_bgImageView];
+        [_guard_bgImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeMake(12, 12));
+            make.right.equalTo(_avatar_bgImageView.mas_right).offset(0);
+            make.bottom.equalTo(_avatar_bgImageView.mas_bottom).offset(4);
+        }];
+
         _textLabel = [YYLabel new];
         _textLabel.numberOfLines = 0;
         _textLabel.textColor = UIColorHex(0xE5DDE8);
@@ -40,6 +70,30 @@
         self.layer.masksToBounds = true;
     }
     return self;
+}
+
+- (void)setGuardValue:(NSNumber *)guardValue {
+    _guardValue = guardValue;
+    
+    if (guardValue.integerValue == 2) {
+        _avatar_bgImageView.hidden = NO;
+        _avatar_bgImageView.image = [UIImage imageNamed:@"home_game_guard_bg_2"];
+        
+        [_guard_avatar setImageURL:[NSURL URLWithString:[CXClientModel instance].room.GuardHeadImage]];
+        _guard_avatar.hidden = NO;
+        _guard_bgImageView.hidden = NO;
+    } else if (guardValue.integerValue == 1) {
+        _avatar_bgImageView.hidden = NO;
+        _avatar_bgImageView.image = [UIImage imageNamed:@"home_game_guard_bg_1"];
+        
+        _guard_avatar.hidden = YES;
+        _guard_bgImageView.hidden = YES;
+    } else {
+        _avatar_bgImageView.hidden = YES;
+        _guard_avatar.hidden = YES;
+        _guard_bgImageView.hidden = YES;
+    }
+    
 }
 
 @end

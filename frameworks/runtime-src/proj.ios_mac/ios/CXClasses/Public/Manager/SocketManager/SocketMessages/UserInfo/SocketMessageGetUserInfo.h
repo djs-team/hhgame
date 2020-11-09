@@ -28,6 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL IsDisableMsg; // 是否被禁言
 @property (nonatomic, strong) NSNumber * IsDisabledMicro;
 @property (nonatomic, strong) NSNumber * IsAttention;
+@property (nonatomic, assign) BOOL IsFriend; // 是否为好友
 
 @end
 

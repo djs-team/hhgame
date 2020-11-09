@@ -40,26 +40,27 @@ static id _manager;
     
     ImageBlock = complete;
     
-    UIAlertController *sheet = [UIAlertController alertControllerWithTitle:@"选择照片" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-    [sheet addAction:[UIAlertAction actionWithTitle:@"相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    
+    kWeakSelf
+    [LEEAlert actionsheet].config
+    .LeeContent(@"选择照片")
+    .LeeAction(@"相册", ^{
         UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
-        imagePickerController.delegate = self;
+        imagePickerController.delegate = weakSelf;
         imagePickerController.allowsEditing = allowEdit;
         imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-        
+
         [viewController presentViewController:imagePickerController animated:YES completion:nil];
-    }]];
-    [sheet addAction:[UIAlertAction actionWithTitle:@"拍摄" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    })
+    .LeeAction(@"拍摄", ^{
         UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
-        imagePickerController.delegate = self;
+        imagePickerController.delegate = weakSelf;
         imagePickerController.allowsEditing = allowEdit;
         imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
-        
+
         [viewController presentViewController:imagePickerController animated:YES completion:nil];
-    }]];
-    [sheet addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
-    
-    [viewController presentViewController:sheet animated:YES completion:nil];
+    })
+    .LeeShow();
 }
 
 #pragma mark - UIImagePickerControllerDelegate

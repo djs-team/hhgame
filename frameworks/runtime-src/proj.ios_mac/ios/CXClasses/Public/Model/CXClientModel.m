@@ -151,6 +151,9 @@
                 if (!self.room.mineInfoInRoom && _currentJoinRoom_user) {
                     self.room.mineInfoInRoom = _currentJoinRoom_user;
                 }
+                
+                [CXClientModel instance].room.GuardState = roomInit.GuardState;
+                [CXClientModel instance].room.GuardHeadImage = roomInit.GuardHeadImage;
             }
             break;
         case SocketMessageIDUserJoinRoom: {
@@ -159,6 +162,8 @@
             [args.Args enumerateObjectsUsingBlock:^(SocketMessageUserJoinRoom * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                 SocketMessageUserJoinRoom * user = obj;
                 self.room.HeatValue = user.VisitorNum;
+                [CXClientModel instance].room.GuardState = user.GuardState;
+                [CXClientModel instance].room.GuardHeadImage = user.GuardHeadImage;
                 if ([user.UserId isEqualToString:self.userId]) {
                     self.room.mineInfoInRoom = user;
                     self.currentJoinRoom_user = user;
@@ -188,6 +193,9 @@
                 //表引用关联
                 [self.room.seatUsers setObject:user.UserId forKey:indexPath];
                 [self.room.userSeats setObject:indexPath forKey:user.UserId];
+                
+                [CXClientModel instance].room.GuardState = userSitdown.GuardState;
+                [CXClientModel instance].room.GuardHeadImage = userSitdown.GuardHeadImage;
             }];
             
         }
@@ -319,6 +327,9 @@
                 SocketMessageGiftEvent * giftEvent = obj;
                 //什么都不做
                 self.room.HeatValue = giftEvent.VisitorNum;
+                
+                [CXClientModel instance].room.GuardState = giftEvent.GuardState;
+                [CXClientModel instance].room.GuardHeadImage = giftEvent.GuardHeadImage;
             }];
             
         }

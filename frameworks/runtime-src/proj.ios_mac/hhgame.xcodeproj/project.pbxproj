@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0018054625187E5700A47927 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0018054325187E5700A47927 /* AdSupport.framework */; };
 		0018058825188F0500A47927 /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0018058725188F0500A47927 /* AppTrackingTransparency.framework */; };
+		001ADD10255964D1006985D8 /* CXPhotoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 001ADD0F255964D1006985D8 /* CXPhotoManager.m */; };
 		001E6B802542E46200FC902A /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 001E6B7F2542E46200FC902A /* Reachability.m */; };
 		0020BB34250B9A5A00E2979B /* AppController+Login.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0020BB32250B9A5A00E2979B /* AppController+Login.mm */; };
 		0020BB39250BA0A000E2979B /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0020BB38250BA09F00E2979B /* libc++.tbd */; };
@@ -48,7 +49,6 @@
 		006148E8250B693800BB7620 /* CXTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 006148E7250B693800BB7620 /* CXTools.m */; };
 		006148EB250B71F800BB7620 /* CXPhoneBasicTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 006148EA250B71F800BB7620 /* CXPhoneBasicTools.m */; };
 		006148EE250B791A00BB7620 /* FuncUtiles.m in Sources */ = {isa = PBXBuildFile; fileRef = 006148ED250B791A00BB7620 /* FuncUtiles.m */; };
-		006148F6250B90C900BB7620 /* CXPhotoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 006148F5250B90C900BB7620 /* CXPhotoManager.m */; };
 		00614DFF250B94CE00BB7620 /* CXHomeChildViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006148FC250B94C500BB7620 /* CXHomeChildViewController.xib */; };
 		00614E00250B94CE00BB7620 /* CXHomeFilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006148FF250B94C500BB7620 /* CXHomeFilterView.xib */; };
 		00614E01250B94CE00BB7620 /* CXHomeFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00614900250B94C500BB7620 /* CXHomeFilterView.m */; };
@@ -859,6 +859,7 @@
 /* Begin PBXFileReference section */
 		0018054325187E5700A47927 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/AdSupport.framework; sourceTree = DEVELOPER_DIR; };
 		0018058725188F0500A47927 /* AppTrackingTransparency.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppTrackingTransparency.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/AppTrackingTransparency.framework; sourceTree = DEVELOPER_DIR; };
+		001ADD0F255964D1006985D8 /* CXPhotoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXPhotoManager.m; sourceTree = "<group>"; };
 		001E6B7C2542E46200FC902A /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		001E6B7F2542E46200FC902A /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		0020BB32250B9A5A00E2979B /* AppController+Login.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "AppController+Login.mm"; path = "ios/AppController+Login.mm"; sourceTree = "<group>"; };
@@ -911,7 +912,6 @@
 		006148EC250B791A00BB7620 /* FuncUtiles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FuncUtiles.h; sourceTree = "<group>"; };
 		006148ED250B791A00BB7620 /* FuncUtiles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FuncUtiles.m; sourceTree = "<group>"; };
 		006148F4250B90C900BB7620 /* CXPhotoManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXPhotoManager.h; sourceTree = "<group>"; };
-		006148F5250B90C900BB7620 /* CXPhotoManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXPhotoManager.m; sourceTree = "<group>"; };
 		006148FC250B94C500BB7620 /* CXHomeChildViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CXHomeChildViewController.xib; sourceTree = "<group>"; };
 		006148FE250B94C500BB7620 /* CXHomeFilterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXHomeFilterView.h; sourceTree = "<group>"; };
 		006148FF250B94C500BB7620 /* CXHomeFilterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CXHomeFilterView.xib; sourceTree = "<group>"; };
@@ -2214,7 +2214,7 @@
 			isa = PBXGroup;
 			children = (
 				006148F4250B90C900BB7620 /* CXPhotoManager.h */,
-				006148F5250B90C900BB7620 /* CXPhotoManager.m */,
+				001ADD0F255964D1006985D8 /* CXPhotoManager.m */,
 			);
 			path = PhotoManager;
 			sourceTree = "<group>";
@@ -2828,31 +2828,31 @@
 			children = (
 				00614A91250B94C800BB7620 /* GameMessageListView.h */,
 				00614AA0250B94C800BB7620 /* GameMessageListView.m */,
+				00614AA5250B94C800BB7620 /* GameMessageListItemView.h */,
+				00614A96250B94C800BB7620 /* GameMessageListItemView.m */,
 				00614A9D250B94C800BB7620 /* GameMessageListItemUserJoinRoomView.h */,
 				00614A8F250B94C800BB7620 /* GameMessageListItemUserJoinRoomView.m */,
 				00614A9A250B94C800BB7620 /* GameMessageListItemTextMessageView.h */,
 				00614A8E250B94C800BB7620 /* GameMessageListItemTextMessageView.m */,
 				00614A94250B94C800BB7620 /* GameMessageListItemUserSitdownView.h */,
 				00614AA6250B94C800BB7620 /* GameMessageListItemUserSitdownView.m */,
-				00614A8C250B94C800BB7620 /* SocketMessageLuckyDrawResultView.m */,
-				00614A8D250B94C800BB7620 /* GameMessageLevelAndTagView.xib */,
-				00614A90250B94C800BB7620 /* GameMessageListItemGiftEventView.m */,
-				00614A92250B94C800BB7620 /* GameMessageListItemView+AttributeResult.h */,
-				00614A93250B94C800BB7620 /* CXGameMessageShareHelpTextMessageView.m */,
-				00614A95250B94C800BB7620 /* GameMessageListItemDeported.m */,
-				00614A96250B94C800BB7620 /* GameMessageListItemView.m */,
-				00614A97250B94C800BB7620 /* GameMessageLevelAndTagView.h */,
-				00614A98250B94C800BB7620 /* GameMessageListItemUndefineView.m */,
-				00614A99250B94C800BB7620 /* GameMessageListItemTextWelcomeView.m */,
-				00614A9B250B94C800BB7620 /* SocketMessageLuckyDrawResultView.h */,
 				00614A9C250B94C800BB7620 /* GameMessageListItemGiftEventView.h */,
-				00614A9E250B94C800BB7620 /* CXGameMessageShareHelpTextMessageView.h */,
-				00614A9F250B94C800BB7620 /* GameMessageListItemView+AttributeResult.m */,
-				00614AA1250B94C800BB7620 /* GameMessageListItemTextWelcomeView.h */,
-				00614AA2250B94C800BB7620 /* GameMessageListItemUndefineView.h */,
-				00614AA3250B94C800BB7620 /* GameMessageLevelAndTagView.m */,
+				00614A90250B94C800BB7620 /* GameMessageListItemGiftEventView.m */,
+				00614A9B250B94C800BB7620 /* SocketMessageLuckyDrawResultView.h */,
+				00614A8C250B94C800BB7620 /* SocketMessageLuckyDrawResultView.m */,
 				00614AA4250B94C800BB7620 /* GameMessageListItemDeported.h */,
-				00614AA5250B94C800BB7620 /* GameMessageListItemView.h */,
+				00614A95250B94C800BB7620 /* GameMessageListItemDeported.m */,
+				00614AA1250B94C800BB7620 /* GameMessageListItemTextWelcomeView.h */,
+				00614A99250B94C800BB7620 /* GameMessageListItemTextWelcomeView.m */,
+				00614A97250B94C800BB7620 /* GameMessageLevelAndTagView.h */,
+				00614AA3250B94C800BB7620 /* GameMessageLevelAndTagView.m */,
+				00614A8D250B94C800BB7620 /* GameMessageLevelAndTagView.xib */,
+				00614A9E250B94C800BB7620 /* CXGameMessageShareHelpTextMessageView.h */,
+				00614A93250B94C800BB7620 /* CXGameMessageShareHelpTextMessageView.m */,
+				00614A92250B94C800BB7620 /* GameMessageListItemView+AttributeResult.h */,
+				00614A9F250B94C800BB7620 /* GameMessageListItemView+AttributeResult.m */,
+				00614AA2250B94C800BB7620 /* GameMessageListItemUndefineView.h */,
+				00614A98250B94C800BB7620 /* GameMessageListItemUndefineView.m */,
 			);
 			path = GameMessageListItemView;
 			sourceTree = "<group>";
@@ -5253,7 +5253,6 @@
 				00614F2F250B94CF00BB7620 /* SocketMessageLeaveSeat.m in Sources */,
 				00614F14250B94CF00BB7620 /* MBProgressHUD+CXCategory.m in Sources */,
 				00615086250B94D000BB7620 /* PSTCollectionViewData.m in Sources */,
-				006148F6250B90C900BB7620 /* CXPhotoManager.m in Sources */,
 				00614EC2250B94CE00BB7620 /* MuaGiftListView.m in Sources */,
 				00614F23250B94CF00BB7620 /* SocketMessageRoomWelcomeUpdate.m in Sources */,
 				00615083250B94D000BB7620 /* PSTCollectionViewFlowLayout.m in Sources */,
@@ -5275,6 +5274,7 @@
 				00614E59250B94CE00BB7620 /* CXMineTaskModel.m in Sources */,
 				00615057250B94D000BB7620 /* EMConversationHelper.m in Sources */,
 				00615084250B94D000BB7620 /* PSTCollectionViewCell.m in Sources */,
+				001ADD10255964D1006985D8 /* CXPhotoManager.m in Sources */,
 				006148E8250B693800BB7620 /* CXTools.m in Sources */,
 				0061509A250B94D000BB7620 /* EMAlertController.m in Sources */,
 				00614F55250B94CF00BB7620 /* SocketMessageUserJoinRoom.m in Sources */,
@@ -5695,7 +5695,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMPRESS_PNG_FILES = NO;
-				CURRENT_PROJECT_VERSION = 24;
+				CURRENT_PROJECT_VERSION = 25;
 				DEVELOPMENT_TEAM = C966MAAFRF;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -5750,7 +5750,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMPRESS_PNG_FILES = NO;
-				CURRENT_PROJECT_VERSION = 24;
+				CURRENT_PROJECT_VERSION = 25;
 				DEVELOPMENT_TEAM = C966MAAFRF;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (

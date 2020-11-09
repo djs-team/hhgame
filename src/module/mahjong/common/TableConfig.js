@@ -25,7 +25,8 @@ load('module/mahjong/common/TableConfig', function () {
         'clearTableGaming': 'clearTableGaming',
         'JiaGangTableProto': 'JiaGangTableProto',
         'MatchReadyProto': 'MatchReadyProto',
-        'MatchEnterTableProto': 'MatchEnterTableProto'
+        'MatchEnterTableProto': 'MatchEnterTableProto',
+        'GameFenZhangProto': 'GameFenZhangProto',
     }
 
 

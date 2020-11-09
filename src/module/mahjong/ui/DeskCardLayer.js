@@ -21,6 +21,8 @@ load('module/mahjong/ui/DeskCardLayer', function () {
                 'bgPnl/DirectionBg/Direction2': {  },
                 'bgPnl/DirectionBg/Direction3': {  },
                 'CardPnl': {  },
+                'liuJuBg': {  },
+                'fenZhangBg': {  },
             }
         },
         ctor: function () {
@@ -30,6 +32,8 @@ load('module/mahjong/ui/DeskCardLayer', function () {
 
         onEnter: function () {
             this._super()
+            this.liuJuBg.setVisible(false)
+            this.fenZhangBg.setVisible(false)
         },
 
         initData: function (pData) {
@@ -51,6 +55,9 @@ load('module/mahjong/ui/DeskCardLayer', function () {
             this._handCardNd = []
             this._selfHandCard = []
             this._directionNd = []
+
+            this.liuJuBg.setVisible(false)
+            this.fenZhangBg.setVisible(false)
 
 
 
@@ -882,7 +889,20 @@ load('module/mahjong/ui/DeskCardLayer', function () {
 
         onExit: function () {
             this._super()
-        }
+        },
+
+        showLiuJu: function () {
+            cc.log('-----------deskCardLayer------------------showLiuJu----------------------------------------')
+            this.fenZhangBg.setVisible(false)
+            this.liuJuBg.setVisible(true)
+        },
+
+        showFenZhang: function () {
+            cc.log('-----------deskCardLayer------------------showFenZhang----------------------------------------')
+            this.liuJuBg.setVisible(false)
+            this.fenZhangBg.setVisible(true)
+        },
+
     })
     return Layer
 })

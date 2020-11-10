@@ -16,6 +16,7 @@ load('module/mahjong/common/TableConfig', function () {
         'PutCardProto': 'PutCardProto',
         'TableChangeProto': 'TableChangeProto',
         'PlayerSelectProto': 'PlayerSelectProto',
+        'GamingProto': 'GamingProto',
         'GameResultProto': 'GameResultProto',
         'AutoPlayProto': 'AutoPlayProto',
         'TableHostingProto': 'TableHostingProto',

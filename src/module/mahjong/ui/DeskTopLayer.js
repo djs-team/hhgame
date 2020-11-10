@@ -60,6 +60,8 @@ load('module/mahjong/ui/DeskTopLayer', function () {
                 'BmPnl/sayContentPnl/expressionTransCell': {},
                 'BmPnl/sayContentPnl/expressionCell': {},
                 'BmPnl/sayContentPnl/sayCell': {},
+                'BmPnl/sayPnl': {},
+                'BmPnl/expressionPnl': {},
 
                 'TopPnl/SetBtn': { onClicked: this.onSetBtnClick },
                 'TopPnl/BaoNd': {},
@@ -156,6 +158,8 @@ load('module/mahjong/ui/DeskTopLayer', function () {
 
             this.sayBtn.setVisible(true)
             this.sayContentPnl.setVisible(false)
+            this.sayPnl.setVisible(false)
+            this.expressionPnl.setVisible(false)
 
             this.HeadNd.setVisible(false)
 
@@ -387,7 +391,15 @@ load('module/mahjong/ui/DeskTopLayer', function () {
                 'toPid': 0,
                 'tableId':pData
             }
+            console.log('==============gameSendNews==='+JSON.stringify(msg));
             appInstance.gameAgent().tcpGame().ToSendNewsProto(msg)
+        },
+
+        toExpressionView: function (data) {
+            let type = data.type
+            let num = data.num
+            let from = data.fromPid
+            console.log('==================toExpressionView==='+JSON.stringify(appInstance.dataManager().getPlayerByUid(from)));
         },
 
         hideSelectChi: function () {

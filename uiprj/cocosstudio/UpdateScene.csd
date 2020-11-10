@@ -128,15 +128,39 @@
           </AbstractNodeData>
           <AbstractNodeData Name="Txtpnl" ActionTag="1196703957" UserData="{&quot;layoutType&quot;:&quot;maxArea&quot;,&quot;screenAlign&quot;:&quot;mid&quot;}" Tag="12" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1280.0000" Y="720.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="640.0000" Y="360.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.5000" Y="0.5000" />
+            <PreSize X="1.0000" Y="1.0000" />
+            <SingleColor A="255" R="255" G="255" B="255" />
+            <FirstColor A="255" R="150" G="200" B="255" />
+            <EndColor A="255" R="255" G="255" B="255" />
+            <ColorVector ScaleY="1.0000" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="middlePnl" ActionTag="1498592878" UserData="{&quot;layoutType&quot;:&quot;maxArea&quot;,&quot;screenAlign&quot;:&quot;mid&quot;}" Tag="14" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+            <Size X="1280.0000" Y="720.0000" />
             <Children>
-              <AbstractNodeData Name="Text_1" ActionTag="-2033881458" Tag="14" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="590.0000" RightMargin="590.0000" TopMargin="350.0000" BottomMargin="350.0000" FontSize="20" LabelText="Text Label" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="100.0000" Y="20.0000" />
+              <AbstractNodeData Name="title" ActionTag="1985996852" Tag="15" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="440.0000" RightMargin="440.0000" TopMargin="184.5000" BottomMargin="472.5000" IsCustomSize="True" FontSize="60" LabelText="健康游戏忠告" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="400.0000" Y="63.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="640.0000" Y="504.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="51" G="51" B="51" />
+                <PrePosition X="0.5000" Y="0.7000" />
+                <PreSize X="0.3125" Y="0.0875" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="content" ActionTag="-1736462361" Tag="16" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="350.0000" RightMargin="350.0000" TopMargin="255.0000" BottomMargin="255.0000" IsCustomSize="True" FontSize="40" LabelText="抵制不良游戏，拒绝盗版游戏。&#xA;注意自我保护，谨防受骗上当。&#xA;适度游戏益脑，沉迷游戏伤身。&#xA;合理安排时间，享受健康生活。" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="580.0000" Y="210.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="640.0000" Y="360.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="0" G="0" B="0" />
+                <CColor A="255" R="51" G="51" B="51" />
                 <PrePosition X="0.5000" Y="0.5000" />
-                <PreSize X="0.0781" Y="0.0278" />
+                <PreSize X="0.4531" Y="0.2917" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
@@ -147,7 +171,33 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5000" Y="0.5000" />
             <PreSize X="1.0000" Y="1.0000" />
-            <SingleColor A="255" R="255" G="255" B="255" />
+            <SingleColor A="255" R="150" G="200" B="255" />
+            <FirstColor A="255" R="150" G="200" B="255" />
+            <EndColor A="255" R="255" G="255" B="255" />
+            <ColorVector ScaleY="1.0000" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="bottomPnl" ActionTag="1385219775" UserData="{&quot;layoutType&quot;:&quot;maxArea&quot;,&quot;screenAlign&quot;:&quot;bottom&quot;}" Tag="17" IconVisible="False" PositionPercentXEnabled="True" TopMargin="0.5193" BottomMargin="-0.5193" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+            <Size X="1280.0000" Y="720.0000" />
+            <Children>
+              <AbstractNodeData Name="contents" ActionTag="1590018465" Tag="18" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="230.0000" RightMargin="230.0000" TopMargin="670.2800" BottomMargin="4.7200" IsCustomSize="True" FontSize="20" LabelText="ICP：黑B2-20170074   软著：2017SR106208   著作权人：和和互娱科技（北京）有限公司&#xA;出版单位：哈尔滨市和和互娱科技有限公司   黑网文（2017）3742-032号" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Bottom" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="820.0000" Y="45.0000" />
+                <AnchorPoint ScaleX="0.5000" />
+                <Position X="640.0000" Y="4.7200" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="153" G="153" B="153" />
+                <PrePosition X="0.5000" Y="0.0066" />
+                <PreSize X="0.6406" Y="0.0625" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+            </Children>
+            <AnchorPoint ScaleX="0.5000" />
+            <Position X="640.0000" Y="-0.5193" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.5000" Y="-0.0007" />
+            <PreSize X="1.0000" Y="1.0000" />
+            <SingleColor A="255" R="150" G="200" B="255" />
             <FirstColor A="255" R="150" G="200" B="255" />
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />

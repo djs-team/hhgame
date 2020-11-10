@@ -231,6 +231,51 @@
                 },
                 "Name": "CloseBtn",
                 "ctype": "ButtonObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "result/liuju.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 79,
+                "Scale9OriginY": 38,
+                "Scale9Width": 83,
+                "Scale9Height": 42,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 642.89,
+                  "Y": 646.3
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.5023,
+                  "Y": 0.8976
+                },
+                "PreSize": {
+                  "X": 0.1672,
+                  "Y": 0.1319
+                },
+                "LeftMargin": 535.89,
+                "RightMargin": 530.11,
+                "TopMargin": 26.2,
+                "BottomMargin": 598.8,
+                "Tag": 575,
+                "ActionTag": -2144348973,
+                "Size": {
+                  "X": 214.0,
+                  "Y": 95.0
+                },
+                "Name": "liuJuBg",
+                "ctype": "ImageViewObjectData"
               }
             ],
             "ActionTag": -1516226795,
@@ -1431,7 +1476,7 @@
                   "Y": 0.0925
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.1236
                 },
                 "LeftMargin": 365.2795,
@@ -1565,7 +1610,7 @@
                   "Y": 0.0932
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.1222
                 },
                 "LeftMargin": 598.6682,
@@ -1694,7 +1739,7 @@
                   "Y": 0.0932
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.1222
                 },
                 "LeftMargin": 832.0568,
@@ -1995,6 +2040,7 @@
         "Default/ImageFile.png",
         "fnt/hkhbtW12.ttc",
         "png/ssc_bg3.png",
+        "result/liuju.png",
         "result/scjb_3.png",
         "result/ssc_10.png",
         "result/ssc_11.png",

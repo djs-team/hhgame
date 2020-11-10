@@ -195,18 +195,26 @@ public class RoomMsgAdapter extends BaseChatAdapter<RoomMsgBean> {
             ImageView avatarIv = (ImageView) getView(R.id.avatar_iv);
             ImageView avatarGuardBg = (ImageView) getView(R.id.avatar_guard_bg);
             RelativeLayout avatarRl = (RelativeLayout) getView(R.id.avatar_rl);
-//            levelTv.setVisibility(item.getLevel() > 0 ? View.VISIBLE : View.GONE);
-//            levelTv.setWithBackgroundColor(LevelResUtils.getSystemMsgColor(item.getLevel()));
-//            levelTv.setText("LV" + item.getLevel());
             ConstraintLayout msg_layout = (ConstraintLayout) getView(R.id.cl_group);
-            avatarGuardBg.setVisibility(TextUtils.isEmpty(item.getGuardSign()) ? View.GONE : View.VISIBLE);
+            RelativeLayout rl_common = (RelativeLayout) getView(R.id.rl_common);
+            RelativeLayout rl_guard_first = (RelativeLayout) getView(R.id.rl_guard_first);
+            ImageView avatar_iv_first = (ImageView) getView(R.id.avatar_iv_first);
+            ImageView iv_heart_user = (ImageView) getView(R.id.iv_heart_user);
+            int guardState = item.getGuardState();
+            ViewBindUtils.setVisible(rl_common, guardState == 0 || guardState == 1);
+            ViewBindUtils.setVisible(rl_guard_first, !(guardState == 0 || guardState == 1));
+            if (guardState == 0) {
+                avatarGuardBg.setVisibility(View.GONE);
+            } else if (guardState == 1) {
+                avatarGuardBg.setVisibility(View.VISIBLE);
+            } else {
+                GlideUtils.circleImage(avatar_iv_first, item.getAvatar(), R.drawable.ic_place_avatar, R.drawable.ic_place_avatar);
+                GlideUtils.circleImage(iv_heart_user, item.getGuardHeadImage(), R.drawable.ic_place_avatar, R.drawable.ic_place_avatar);
+            }
 
 
             if (item == null)
                 return;
-//            msgTv.setHighlightColor(Color.TRANSPARENT);
-//            msgTv.setMovementMethod(LinkMovementMethod.getInstance());
-//            msgTv.setTextSize(TypedValue.COMPLEX_UNIT_SP, item.isNormal() ? 12 : 14);
 
             ViewBindUtils.setVisible(avatarRl, !TextUtils.isEmpty(item.getAvatar()));
             if (!TextUtils.isEmpty(item.getAvatar())) {
@@ -232,28 +240,6 @@ public class RoomMsgAdapter extends BaseChatAdapter<RoomMsgBean> {
             });
 
             SpannableStringBuilder builder = item.getMsg();
-//            if (builder.toString().contains("打赏")) {
-//
-//            } else {
-//                builder.setSpan(new ClickableSpan() {
-//
-//                    @Override
-//                    public void updateDrawState(@NonNull TextPaint ds) {
-//                        ds.setColor(ds.getColor());
-//                    }
-//
-//                    @Override
-//                    public void onClick(@NonNull View widget) {
-//                        ToastUtils.showToast("setNickClick");
-//                        if (mListener != null) {
-//                            mListener.onMsgClick(item.getUid());
-//                        }
-//                    }
-//
-//                }, 0, item.getuName().length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
-//
-//            }
-
 
             List<SmashBean> list = item.getList();
             if (list != null && builder.length() == item.getStart()) {
@@ -294,16 +280,6 @@ public class RoomMsgAdapter extends BaseChatAdapter<RoomMsgBean> {
                 msgTv.setMovementMethod(LinkMovementMethod.getInstance());
                 msgTv.setText(builder);
             }
-//            msgTv.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                    if (!TextUtils.isEmpty(item.getUid())) {
-//                        if (mListener != null) {
-//                            mListener.onMsgClick(item.getUid());
-//                        }
-//                    }
-//                }
-//            });
             msgTv.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View view) {

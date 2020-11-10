@@ -35,6 +35,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSNumber * Sex;
 @property (nonatomic, strong) NSNumber * EggType; // 0为金蛋，1为银蛋
 @property (nonatomic, strong) NSString * GuardSign;
+@property (nonatomic, strong) NSNumber *GuardState; // 0不是主持守护，1是普通守护，2是榜一守护
+@property (nonatomic, strong) NSString * GuardHeadImage; // 被守护头像（榜一用到的）
 
 @property (nonatomic, copy) NSString *UserNickName;
 @property (nonatomic, copy) NSString *GiftId;

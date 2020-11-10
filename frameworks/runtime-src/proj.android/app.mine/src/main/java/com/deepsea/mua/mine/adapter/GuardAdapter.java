@@ -41,6 +41,9 @@ public class GuardAdapter extends BaseBindingAdapter<LookGuardUserVo.GuardMember
         ViewBindUtils.setText(holder.binding.tvIntimacy, "亲密值" + item.getIntimacy());
         if (UserUtils.getUser().getUid().equals(guardMainId) || UserUtils.getUser().getUid().equals(item.getUserId())) {
             ViewBindUtils.setText(holder.binding.tvDueDate, "还有" + item.getCountdown_day() + "天到期");
+        }else {
+            ViewBindUtils.setText(holder.binding.tvDueDate, "");
+
         }
 
     }

@@ -30,6 +30,7 @@ load('game/msghandler/index', function () {
     let MatchResultBigProto = include('game/msghandler/MatchResultBigProto')
     let MatchResultSmallProto = include('game/msghandler/MatchResultSmallProto')
     let MatchReadyProto = include('game/msghandler/MatchReadyProto')
+    let GameFenZhangProto = include('game/msghandler/GameFenZhangProto')
     let objArray = [
         new DrawCardProto(),
         new EnterTableCancelProto(),
@@ -58,6 +59,7 @@ load('game/msghandler/index', function () {
         new MatchResultBigProto(),
         new MatchResultSmallProto(),
         new MatchReadyProto(),
+        new GameFenZhangProto(),
     ]
 
     let index = {}

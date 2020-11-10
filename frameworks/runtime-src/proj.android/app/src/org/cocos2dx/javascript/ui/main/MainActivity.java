@@ -66,6 +66,7 @@ import com.deepsea.mua.stub.utils.ViewModelFactory;
 import com.deepsea.mua.stub.utils.eventbus.ClickEvent;
 import com.deepsea.mua.stub.utils.eventbus.ClickEventType;
 import com.deepsea.mua.stub.utils.eventbus.GotoShowEvent;
+import com.deepsea.mua.stub.utils.eventbus.HeartBeatEvent;
 import com.deepsea.mua.stub.utils.eventbus.InviteDialogCloseEvent;
 import com.deepsea.mua.stub.utils.eventbus.InviteDialogEvent;
 import com.deepsea.mua.stub.utils.eventbus.InviteOtherEvent;
@@ -378,6 +379,8 @@ public class MainActivity extends BaseActivity<ActivityMainBinding>
                 setFragmentPosition(2);
                 return true;
         }
+        EventBus.getDefault().post(new HeartBeatEvent(1));
+
         return false;
     };
 
@@ -399,7 +402,8 @@ public class MainActivity extends BaseActivity<ActivityMainBinding>
         }
         mPrePos = pos;
     }
-    private Handler mHandler=new Handler();
+
+    private Handler mHandler = new Handler();
 
     private void getMakeFace() {
         mViewModel.getMakeFace().observe(this, new BaseObserver<FaceRequestBean>() {

@@ -762,6 +762,8 @@
                 LiveRoomMicroInfo * microInfo = [[CXClientModel instance].room microInfoForUser:loginUserId];
                 if (microInfo && microInfo.Type == LiveRoomMicroInfoTypeHost) {//红娘
                     SocketMessageMicroOrder * order = notification;
+                    [CXClientModel instance].room.GuardState = order.GuardState;
+                    [CXClientModel instance].room.GuardHeadImage = order.GuardHeadImage;
                     if (order.MicroOrderData.User) {
                         LiveRoomUser * userInfo = order.MicroOrderData.User;
                         SocketMessageUserJoinRoom *user = [SocketMessageUserJoinRoom new];
@@ -771,6 +773,8 @@
                         user.Age = userInfo.Age.stringValue;
                         user.City = userInfo.City;
                         user.Sex = @(userInfo.Sex);
+                        user.GuardState = [CXClientModel instance].room.GuardState;
+                        user.GuardHeadImage = [CXClientModel instance].room.GuardHeadImage;
                         [self listViewAddTextModel:@"申请上麦" user:user];
                         
                         [self.applySeatArrays addObject:order];
@@ -999,6 +1003,13 @@
             }
                 break;
                 
+            case SocketMessageIDUpdateUserGuardNotification: { // // 同步用户守护勋章
+                SocketMessageUserJoinRoom *message = notification;
+                [CXClientModel instance].room.GuardState = message.GuardState;
+                [CXClientModel instance].room.GuardHeadImage = message.GuardHeadImage;
+            }
+                break;
+                
                 //=========== 红包 =============
             case SocketMessageIDNotifyStartRobRedPacketMessage: { // 开始抢红包
                 CXSocketMessageNotifyStartRobRedPacket *msg = notification;
@@ -1171,7 +1182,7 @@
                 break;
             case 30: // 私聊好友
             {
-                if ([[CXClientModel instance].firendIdArrays containsObject:user.UserId]) { //已经是好友了
+                if (userInfo.IsFriend == YES) { //已经是好友了
                     EMConversationModel *model = [EMConversationHelper modelFromContact:user.UserId];
                     if (model) {
                         EMChatViewController *controller = [[EMChatViewController alloc] initWithCoversationModel:model];

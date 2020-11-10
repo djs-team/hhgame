@@ -1,0 +1,9 @@
+	/**
+	 * 通知客户端非红中胡牌(摸余)
+	 */
+	int MJ_GAME_HANDAN_PLAY_MOYU = MJ_GAME_MATCHGAME_ID + 14;
+	返回消息:
+		private int seatID;
+	private List<Card> cards;
+	private int cardColor;
+		private int cardFaceValue;

@@ -8,15 +8,20 @@ load('game/ui/scene/UpdateScene', function () {
     let HotUpdate = include('public/suport/HotUpdate')
     let HttpType = include('public/http/HttpType')
     let UpdateMdt =  include('game/ui/scene/UpdateMdt')
+    let isNeedUpdate = false
     let UpdateScene = BaseScene.extend({
         _className: 'UpdateScene',
+        _allReadyOk: false,
         RES_BINDING: function () {
             return {
-                // 'info_pnl/slider_bg': { },
-                // 'info_pnl/sliderPnl': { },
-                // 'info_pnl/slider_bar': { },
-                // 'info_pnl/slider_txt': { },
-                // 'info_pnl/version_txt': { }
+                'bg': { },
+                'pnl': { },
+                'Txtpnl': { },
+                'pnl/LoadingBar': { },
+                'pnl/StateTxt': { },
+                'pnl/VersionTxt': { },
+                'AniPnl': { },
+                'AniPnl/ArmatureNode': { },
             }
         },
         ctor: function () {
@@ -24,8 +29,28 @@ load('game/ui/scene/UpdateScene', function () {
             this.registerMediator(new UpdateMdt(this))
         },
 
-        onCreate: function () {
-            this._super()
+        showView: function () {
+            this.bg.setVisible(false)
+            this.pnl.setVisible(false)
+            this.AniPnl.setVisible(true)
+            this.Txtpnl.setVisible(false)
+
+            this.runAction(cc.sequence(cc.DelayTime(3), cc.CallFunc(function() {
+                this.AniPnl.setVisible(false)
+                this.Txtpnl.setVisible(true)
+            }.bind(this)), cc.DelayTime(0.3), cc.CallFunc(function() {
+                this.bg.setVisible(true)
+                this.AniPnl.setVisible(false)
+                this.Txtpnl.setVisible(false)
+                this.pnl.setVisible(true)
+                if (isNeedUpdate) {
+                    this.startUpdate()
+                } else {
+                    this.goLoginScene()
+                }
+            }.bind(this))))
+
+
         },
 
         onEnter: function () {
@@ -33,8 +58,6 @@ load('game/ui/scene/UpdateScene', function () {
             this.initData()
             this.initView()
             this.showView()
-
-            this.goLoginScene()
         },
 
         onExit: function () {
@@ -42,15 +65,16 @@ load('game/ui/scene/UpdateScene', function () {
         },
 
         initData: function () {
+            this._percent = 0
+            this._totalSize = 0
+            this._downloadSize = 0
 
         },
 
         initView: function () {
-
-        },
-
-        showView: function () {
-
+            this.StateTxt.setString('正在检查热更...')
+            this.LoadingBar.setPercent(0)
+            this.VersionTxt.setVisible(false)
         },
 
         goLoginScene: function () {
@@ -59,8 +83,10 @@ load('game/ui/scene/UpdateScene', function () {
         },
 
         updateSuccess: function (isUpdated, curVersion) {
+            appInstance.gameAgent().Tips('热更成功')
             appInstance.moduleManager().setMainLocalVer(curVersion)
             if (isUpdated) {
+                appInstance.gameAgent().Tips('需要重启游戏')
                 appInstance.restartGame()
             } else {
                 this.goLoginScene()
@@ -70,10 +96,13 @@ load('game/ui/scene/UpdateScene', function () {
             this._super(keyCode, event)
         },
         onUpdate: function () {
-            if (this._percent > 0) {
-                // this.slider_bar.setPercent(this._percent)
-                this.slider_bar.setPositionX(-this.slider_bar.width + this._percent*0.01 * this.slider_bar.width)
-                this.slider_txt.setString('总大小:' + this._totalSize + 'MB 已下载:' + this._downloadedSize + 'MB')
+            if (this._percent > 0 && !this._allReadyOk) {
+                cc.log('=========this.percent===' + this._percent)
+                this.LoadingBar.setPercent(this._percent)
+                this.StateTxt.setString('已下载%' + this._percent)
+                if (this._percent >= 100) {
+                    this._allReadyOk = true
+                }
             }
         },
         setVersionTxt: function (resVer, natieVer) {
@@ -82,85 +111,31 @@ load('game/ui/scene/UpdateScene', function () {
         },
 
         startUpdate: function () {
-            // this.slider_bar
-            this.slider_bar.setPositionX(-this.slider_bar.width)
-            this.slider_txt.setString('')
+            this.LoadingBar.setPercent(0)
+            this.StateTxt.setString('开始热更')
 
             let self = this
             let istr = 'res/project.manifest'
-            if (typeof ppgamecenter !== 'undefined') {
-                istr = jsb.fileUtils.getWritablePath() + 'update/' + 'project.manifest'
-            }
 
             let updater = new HotUpdate(istr, 'update')
             let version = updater.getLocalVersion()
-            this.setVersionTxt(version, appInstance.nativeApi().getNativeVersion())
-            updater.setProgressCallback(function (percent, totalSize, downloadedSize) {
+            this.VersionTxt.setVisible(true)
+            this.VersionTxt.setString(version)
+            updater.setProgressCallback(function (percent) {
+                cc.log('==========热更过程中=====' + percent)
                 self._percent = percent
-                self._totalSize = totalSize
-                self._downloadedSize = downloadedSize
             })
             updater.setSuccessCallback(function (isUpdated, curVersion) {
+                cc.log('==========热更成功')
                 self.updateSuccess(isUpdated, curVersion)
             })
             updater.setFailureCallback(function (curVersion) {
+                cc.log('==========热更失败')
                 let ver = curVersion || '0'
                 appInstance.moduleManager().setMainLocalVer(ver)
-                utils.alertMsg('更新失败，请重试。', function () {
-                    self.startUpdate()
-                })
+                appInstance.gameAgent().Tips('===========热更失败======')
             })
             updater.update()
-        },
-
-        remoteConfigFinish_local: function () {
-            if (cc.sys.isMobile) {
-                this.startUpdate()
-            } else {
-                this.goLoginScene()
-            }
-        },
-
-        afterForceUpdate: function () {
-            appInstance.connectorApi().getRemoteConfig()
-        },
-        /**
-         * 强制更新回调
-         * @param result
-         */
-        forceUpdateCallBack: function (result) {
-            if (result.code === HttpType.ResultCode.OK) {
-                let data = result.data
-                let localversion = appInstance.nativeApi().getNativeVersion()
-                if (cc.sys.OS_ANDROID === cc.sys.os) {
-                    data = data.android
-                } else if (cc.sys.OS_IOS === cc.sys.os) {
-                    data = data.ios
-                }
-                if (!data.isneed) {
-                    this._forUpdateStatus = this._forceStatus.needntForce
-                    this.afterForceUpdate()
-                    return
-                }
-                if (utils.compareVersion(localversion, data.miniversion) < 0) {
-                    utils.alertMsg(data.notice, function () {
-                        this._forUpdateStatus = this._forceStatus.needForce
-                        cc.Application.getInstance().openURL(data.forceurl)
-                    })
-                } else {
-                    this._forUpdateStatus = this._forceStatus.dontForce
-                    this.afterForceUpdate()
-                }
-            } else {
-                this._forUpdateStatus = this._forceStatus.forceError
-                this.afterForceUpdate()
-            }
-        },
-        /**
-         * 检查强更的逻辑
-         */
-        checkForceUpdate: function () {
-
         }
     })
 

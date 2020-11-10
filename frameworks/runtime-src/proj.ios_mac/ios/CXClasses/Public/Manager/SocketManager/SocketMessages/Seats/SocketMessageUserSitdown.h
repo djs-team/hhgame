@@ -60,6 +60,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSNumber * UserLevel;
 @property (nonatomic, strong) NSNumber * VipLevel;
 @property (nonatomic, strong) NSString * GuardSign; // 守护榜标签
+@property (nonatomic, strong) NSNumber *GuardState; // 0不是主持守护，1是普通守护，2是榜一守护
+@property (nonatomic, strong) NSString * GuardHeadImage; // 被守护头像（榜一用到的）
 
 @end
 

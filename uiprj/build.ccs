@@ -497,6 +497,14 @@
           <Image Name="sz_8.png" />
           <Image Name="sz_9.png" />
         </Folder>
+        <Folder Name="ddz">
+          <Image Name="ddz_exclusive.png" />
+          <Image Name="ddz_matching_type_five.png" />
+          <Image Name="ddz_matching_type_four.png" />
+          <Image Name="ddz_matching_type_one.png" />
+          <Image Name="ddz_matching_type_three.png" />
+          <Image Name="ddz_matching_type_two.png" />
+        </Folder>
         <Folder Name="email">
           <Image Name="yj_1.png" />
           <Image Name="yj_2.png" />
@@ -917,6 +925,7 @@
         <Project Name="CoinShopLayer.csd" Type="Layer" />
         <Project Name="ConfLayer.csd" Type="Layer" />
         <Project Name="CustomerLayer.csd" Type="Layer" />
+        <Project Name="DdzExclusiveGameLayer.csd" Type="Layer" />
         <Project Name="DialogLayer.csd" Type="Layer" />
         <Project Name="EmailLayer.csd" Type="Layer" />
         <Project Name="FanKuiLayer.csd" Type="Layer" />
@@ -937,7 +946,6 @@
         <Project Name="TipsDialog.csd" Type="Layer" />
         <Project Name="TipsFloat.csd" Type="Layer" />
         <Project Name="TurnTableLayer.csd" Type="Layer" />
-        <Project Name="DdzExclusiveGameLayer.csd" Type="Layer" />
       </RootFolder>
     </Group>
   </SolutionFolder>

@@ -101,6 +101,9 @@
 /// 获取Device
 + (NSString *_Nullable)getDevice;
 
+/// 获取版本号
++ (NSString *_Nullable)getVersion;
+
 #pragma mark - 复制到剪贴板
 
 /// 复制到剪贴板

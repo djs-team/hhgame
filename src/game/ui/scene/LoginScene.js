@@ -336,15 +336,16 @@ load('game/ui/scene/LoginScene', function () {
         },
 
         onwxLoginClick: function () {
-            GameUtil.delayBtns(this._delayBtns, 5)
-            if (!this.onCheckeCanLogin())
-                return
-
-            if (cc.sys.OS_WINDOWS === cc.sys.os) {
-                this.debugLogin()
-            } else {
-                appInstance.nativeApi().wxLogin()
-            }
+            appInstance.gameAgent().Tips('===============测试热更==========')
+            // GameUtil.delayBtns(this._delayBtns, 5)
+            // if (!this.onCheckeCanLogin())
+            //     return
+            //
+            // if (cc.sys.OS_WINDOWS === cc.sys.os) {
+            //     this.debugLogin()
+            // } else {
+            //     appInstance.nativeApi().wxLogin()
+            // }
 
         },
 
@@ -470,7 +471,7 @@ load('game/ui/scene/LoginScene', function () {
                 this.vision.setString(visionName)
             }
             appInstance.nativeApi().getInstallParam()
-            appInstance.audioManager().playMusic(ResConfig.Sound.bg1, true)
+            appInstance.audioManager().playMusic(ResConfig.Sound.bgHall, true)
             this._delayBtns.push(this.phoneLogin)
             this._delayBtns.push(this.wxLogin)
 

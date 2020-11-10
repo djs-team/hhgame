@@ -48,6 +48,16 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
+              <AbstractNodeData Name="liuJuBg" ActionTag="-2144348973" Tag="575" IconVisible="False" LeftMargin="535.8900" RightMargin="530.1100" TopMargin="26.2000" BottomMargin="598.8000" LeftEage="79" RightEage="79" TopEage="38" BottomEage="38" Scale9OriginX="79" Scale9OriginY="38" Scale9Width="83" Scale9Height="42" ctype="ImageViewObjectData">
+                <Size X="214.0000" Y="95.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="642.8900" Y="646.3000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5023" Y="0.8976" />
+                <PreSize X="0.1672" Y="0.1319" />
+                <FileData Type="Normal" Path="result/liuju.png" Plist="" />
+              </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="640.0000" Y="360.0000" />

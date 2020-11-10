@@ -88,23 +88,28 @@ load('module/mahjong/ui/EffectLayerMdt', function () {
             let mySeatId = selfInfo.pSeatID
             let winSeat = msg.pWinSeatID
 
-            if (mySeatId === winSeat) {
-                let huType = msg.pHuType
-                let huArray = Sound.play.hu
-                for (let i = 0; i < huType.length; ++i) {
-                    if (huType[i].pHu === 4) {
-                        huArray = Sound.play.hu_zimo
-                    } else if (huType[i].pHu === 35) {
-                        huArray = Sound.play.hu_mobao
-                    } else if (huType[i].pHu === 83) {
-                        huArray = Sound.play.hu_baozhongbao
+            if(msg.pIsLiuJu == 0){
+                if (mySeatId === winSeat) {
+                    let huType = msg.pHuType
+                    let huArray = Sound.play.hu
+                    for (let i = 0; i < huType.length; ++i) {
+                        if (huType[i].pHu === 4) {
+                            huArray = Sound.play.hu_zimo
+                        } else if (huType[i].pHu === 35) {
+                            huArray = Sound.play.hu_mobao
+                        } else if (huType[i].pHu === 83) {
+                            huArray = Sound.play.hu_baozhongbao
+                        }
                     }
+                    // 漏宝胡 ID 配置服务器没给
+                    appInstance.gameAgent().mjUtil().playGamingSound(huArray)
+                } else {
+                    appInstance.gameAgent().mjUtil().playGamingSound(Sound.play.lose)
                 }
-                // 漏宝胡 ID 配置服务器没给
-                appInstance.gameAgent().mjUtil().playGamingSound(huArray)
-            } else {
-                appInstance.gameAgent().mjUtil().playGamingSound(Sound.play.lose)
+            }else{
+               // appInstance.gameAgent().mjUtil().playGamingSound(Sound.play.match_win_2)
             }
+
         },
         PlayerSelectProto: function (msg) {
             let actionId = msg._msg.pActionID

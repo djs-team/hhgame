@@ -1,25 +1,20 @@
-
 load('game/config/ResConfig', function () {
     let ResConfig = {}
     /**
      *  调用的图片配置
      */
-    ResConfig.Png = {
-
-    }
+    ResConfig.Png = {}
 
     /**
      * 子模块依赖的界面配置
      */
-    ResConfig.Module = {
-
-    }
+    ResConfig.Module = {}
 
     /**
      *  图集资源配置
      */
     ResConfig.Atlas = {
-        "Common": [{ plist: 'res/bsCommon/bsCommon.plist', png: 'res/bsCommon/bsCommon.png', retain: true }]
+        "Common": [{plist: 'res/bsCommon/bsCommon.plist', png: 'res/bsCommon/bsCommon.png', retain: true}]
     }
 
     ResConfig.PlayerPlay = {
@@ -33,34 +28,134 @@ load('game/config/ResConfig', function () {
      *  角色骨骼动画资源
      */
     ResConfig.AniPlayer = {
-        "1": { json: 'res/animation/player/caishen/caishen.json', atlas: 'res/animation/player/caishen/caishen.atlas', png: 'res/animation/player/caishen/caishen.png', sound: 'res/sound/player/caishen.mp3' },
-        "4": { json: 'res/animation/player/fage/fage.json', atlas: 'res/animation/player/fage/fage.atlas', png: 'res/animation/player/fage/fage.png', sound: 'res/sound/player/fage.mp3' },
-        "6": { json: 'res/animation/player/huamulan/huamulan.json', atlas: 'res/animation/player/huamulan/huamulan.atlas', png: 'res/animation/player/huamulan/huamulan.png', sound: 'res/sound/player/huamulan.mp3' },
-        "5": { json: 'res/animation/player/huangdi/huangdi.json', atlas: 'res/animation/player/huangdi/huangdi.atlas', png: 'res/animation/player/huangdi/huangdi.png', sound: 'res/sound/player/huangdi.mp3' },
-        "7": { json: 'res/animation/player/huxian/huxian.json', atlas: 'res/animation/player/huxian/huxian.atlas', png: 'res/animation/player/huxian/huxian.png', sound: 'res/sound/player/huxian.mp3' },
-        "2": { json: 'res/animation/player/nanchushi/nanchushi.json', atlas: 'res/animation/player/nanchushi/nanchushi.atlas', png: 'res/animation/player/nanchushi/nanchushi.png', sound: 'res/sound/player/nanchushi.mp3', dongbei: 'res/sound/player/nanchushi_1.mp3' },
-        "3": { json: 'res/animation/player/nvchushi/nvchushi.json', atlas: 'res/animation/player/nvchushi/nvchushi.atlas', png: 'res/animation/player/nvchushi/nvchushi.png', sound: 'res/sound/player/nvchushi.mp3', dongbei: 'res/sound/player/nvchushi_1.mp3' },
-        "8": { json: 'res/animation/player/zhangzuolin/zhangzuolin.json', atlas: 'res/animation/player/zhangzuolin/zhangzuolin.atlas', png: 'res/animation/player/zhangzuolin/zhangzuolin.png', sound: 'res/sound/player/zhangzuolin.mp3' },
-        "9": { json: 'res/animation/player/zhizunbao/zhizunbao.json', atlas: 'res/animation/player/zhizunbao/zhizunbao.atlas', png: 'res/animation/player/zhizunbao/zhizunbao.png', sound: 'res/sound/player/zhizunbao.mp3' },
-        "10": { json: 'res/animation/player/zixia/zixia.json', atlas: 'res/animation/player/zixia/zixia.atlas', png: 'res/animation/player/zixia/zixia.png', sound: 'res/sound/player/zixia.mp3' },
+        "1": {
+            json: 'res/animation/player/caishen/caishen.json',
+            atlas: 'res/animation/player/caishen/caishen.atlas',
+            png: 'res/animation/player/caishen/caishen.png',
+            sound: 'res/sound/player/caishen.mp3'
+        },
+        "4": {
+            json: 'res/animation/player/fage/fage.json',
+            atlas: 'res/animation/player/fage/fage.atlas',
+            png: 'res/animation/player/fage/fage.png',
+            sound: 'res/sound/player/fage.mp3'
+        },
+        "6": {
+            json: 'res/animation/player/huamulan/huamulan.json',
+            atlas: 'res/animation/player/huamulan/huamulan.atlas',
+            png: 'res/animation/player/huamulan/huamulan.png',
+            sound: 'res/sound/player/huamulan.mp3'
+        },
+        "5": {
+            json: 'res/animation/player/huangdi/huangdi.json',
+            atlas: 'res/animation/player/huangdi/huangdi.atlas',
+            png: 'res/animation/player/huangdi/huangdi.png',
+            sound: 'res/sound/player/huangdi.mp3'
+        },
+        "7": {
+            json: 'res/animation/player/huxian/huxian.json',
+            atlas: 'res/animation/player/huxian/huxian.atlas',
+            png: 'res/animation/player/huxian/huxian.png',
+            sound: 'res/sound/player/huxian.mp3'
+        },
+        "2": {
+            json: 'res/animation/player/nanchushi/nanchushi.json',
+            atlas: 'res/animation/player/nanchushi/nanchushi.atlas',
+            png: 'res/animation/player/nanchushi/nanchushi.png',
+            sound: 'res/sound/player/nanchushi.mp3',
+            dongbei: 'res/sound/player/nanchushi_1.mp3'
+        },
+        "3": {
+            json: 'res/animation/player/nvchushi/nvchushi.json',
+            atlas: 'res/animation/player/nvchushi/nvchushi.atlas',
+            png: 'res/animation/player/nvchushi/nvchushi.png',
+            sound: 'res/sound/player/nvchushi.mp3',
+            dongbei: 'res/sound/player/nvchushi_1.mp3'
+        },
+        "8": {
+            json: 'res/animation/player/zhangzuolin/zhangzuolin.json',
+            atlas: 'res/animation/player/zhangzuolin/zhangzuolin.atlas',
+            png: 'res/animation/player/zhangzuolin/zhangzuolin.png',
+            sound: 'res/sound/player/zhangzuolin.mp3'
+        },
+        "9": {
+            json: 'res/animation/player/zhizunbao/zhizunbao.json',
+            atlas: 'res/animation/player/zhizunbao/zhizunbao.atlas',
+            png: 'res/animation/player/zhizunbao/zhizunbao.png',
+            sound: 'res/sound/player/zhizunbao.mp3'
+        },
+        "10": {
+            json: 'res/animation/player/zixia/zixia.json',
+            atlas: 'res/animation/player/zixia/zixia.atlas',
+            png: 'res/animation/player/zixia/zixia.png',
+            sound: 'res/sound/player/zixia.mp3'
+        },
     }
 
     /**
      *  骨骼动画资源
      */
     ResConfig.AniHall = {
-        "jiazaidonghua": { json: 'res/animation/hall/jiazaidonghua/jiazaidonghua.json', atlas: 'res/animation/hall/jiazaidonghua/jiazaidonghua.atlas', png: 'res/animation/hall/jiazaidonghua/jiazaidonghua.png' },
-        "DatingJinbichang": { json: 'res/animation/hall/dating_jinbichang/dating_jinbichang.json', atlas: 'res/animation/hall/dating_jinbichang/dating_jinbichang.atlas', png: 'res/animation/hall/dating_jinbichang/dating_jinbichang.png' },
-        "DatingGengDuoWanFa": { json: 'res/animation/hall/dating_gengduowanfa/dating_gengduowanfa.json', atlas: 'res/animation/hall/dating_gengduowanfa/dating_gengduowanfa.atlas', png: 'res/animation/hall/dating_gengduowanfa/dating_gengduowanfa.png' },
-        "DatingXiangQin": { json: 'res/animation/hall/dating_xiangqin/dating_majiang.json', atlas: 'res/animation/hall/dating_xiangqin/dating_majiang.atlas', png: 'res/animation/hall/dating_xiangqin/dating_majiang.png' },
-        "DatingSaiShiChang": { json: 'res/animation/hall/dating_saishichang/dating_saishichang.json', atlas: 'res/animation/hall/dating_saishichang/dating_saishichang.atlas', png: 'res/animation/hall/dating_saishichang/dating_saishichang.png' },
-        "DatingQianDao": { json: 'res/animation/hall/qiandao/qiandao.json', atlas: 'res/animation/hall/qiandao/qiandao.atlas', png: 'res/animation/hall/qiandao/qiandao.png' },
-        "DatingYaoJinShu": { json: 'res/animation/hall/yaojinshu/dating_yaojinshu.json', atlas: 'res/animation/hall/yaojinshu/dating_yaojinshu.atlas', png: 'res/animation/hall/yaojinshu/dating_yaojinshu.png' },
-        "YaoJinShu": { json: 'res/animation/hall/yaojinshu/yaojinshu.json', atlas: 'res/animation/hall/yaojinshu/yaojinshu.atlas', png: 'res/animation/hall/yaojinshu/yaojinshu.png' },
-        "DatingZhuanPan": { json: 'res/animation/hall/zhuanpan/dating_zhuanpan.json', atlas: 'res/animation/hall/zhuanpan/dating_zhuanpan.atlas', png: 'res/animation/hall/zhuanpan/dating_zhuanpan.png' },
-        "DatingFuKaShangCheng": { json: 'res/animation/hall/dating_fukashangcheng/shangcheng.json', atlas: 'res/animation/hall/dating_fukashangcheng/shangcheng.atlas', png: 'res/animation/hall/dating_fukashangcheng/shangcheng.png' },
-        "DatingJinBiShangCheng": { json: 'res/animation/hall/dating_jinbishangcheng/majiangche.json', atlas: 'res/animation/hall/dating_jinbishangcheng/majiangche.atlas', png: 'res/animation/hall/dating_jinbishangcheng/majiangche.png' },
-        "DatingGongXiHuoDe": { json: 'res/animation/hall/gongxihuode/gongxihuode.json', atlas: 'res/animation/hall/gongxihuode/gongxihuode.atlas', png: 'res/animation/hall/gongxihuode/gongxihuode.png' },
+        "jiazaidonghua": {
+            json: 'res/animation/hall/jiazaidonghua/jiazaidonghua.json',
+            atlas: 'res/animation/hall/jiazaidonghua/jiazaidonghua.atlas',
+            png: 'res/animation/hall/jiazaidonghua/jiazaidonghua.png'
+        },
+        "DatingJinbichang": {
+            json: 'res/animation/hall/dating_jinbichang/dating_jinbichang.json',
+            atlas: 'res/animation/hall/dating_jinbichang/dating_jinbichang.atlas',
+            png: 'res/animation/hall/dating_jinbichang/dating_jinbichang.png'
+        },
+        "DatingGengDuoWanFa": {
+            json: 'res/animation/hall/dating_gengduowanfa/dating_gengduowanfa.json',
+            atlas: 'res/animation/hall/dating_gengduowanfa/dating_gengduowanfa.atlas',
+            png: 'res/animation/hall/dating_gengduowanfa/dating_gengduowanfa.png'
+        },
+        "DatingXiangQin": {
+            json: 'res/animation/hall/dating_xiangqin/dating_majiang.json',
+            atlas: 'res/animation/hall/dating_xiangqin/dating_majiang.atlas',
+            png: 'res/animation/hall/dating_xiangqin/dating_majiang.png'
+        },
+        "DatingSaiShiChang": {
+            json: 'res/animation/hall/dating_saishichang/dating_saishichang.json',
+            atlas: 'res/animation/hall/dating_saishichang/dating_saishichang.atlas',
+            png: 'res/animation/hall/dating_saishichang/dating_saishichang.png'
+        },
+        "DatingQianDao": {
+            json: 'res/animation/hall/qiandao/qiandao.json',
+            atlas: 'res/animation/hall/qiandao/qiandao.atlas',
+            png: 'res/animation/hall/qiandao/qiandao.png'
+        },
+        "DatingYaoJinShu": {
+            json: 'res/animation/hall/yaojinshu/dating_yaojinshu.json',
+            atlas: 'res/animation/hall/yaojinshu/dating_yaojinshu.atlas',
+            png: 'res/animation/hall/yaojinshu/dating_yaojinshu.png'
+        },
+        "YaoJinShu": {
+            json: 'res/animation/hall/yaojinshu/yaojinshu.json',
+            atlas: 'res/animation/hall/yaojinshu/yaojinshu.atlas',
+            png: 'res/animation/hall/yaojinshu/yaojinshu.png'
+        },
+        "DatingZhuanPan": {
+            json: 'res/animation/hall/zhuanpan/dating_zhuanpan.json',
+            atlas: 'res/animation/hall/zhuanpan/dating_zhuanpan.atlas',
+            png: 'res/animation/hall/zhuanpan/dating_zhuanpan.png'
+        },
+        "DatingFuKaShangCheng": {
+            json: 'res/animation/hall/dating_fukashangcheng/shangcheng.json',
+            atlas: 'res/animation/hall/dating_fukashangcheng/shangcheng.atlas',
+            png: 'res/animation/hall/dating_fukashangcheng/shangcheng.png'
+        },
+        "DatingJinBiShangCheng": {
+            json: 'res/animation/hall/dating_jinbishangcheng/majiangche.json',
+            atlas: 'res/animation/hall/dating_jinbishangcheng/majiangche.atlas',
+            png: 'res/animation/hall/dating_jinbishangcheng/majiangche.png'
+        },
+        "DatingGongXiHuoDe": {
+            json: 'res/animation/hall/gongxihuode/gongxihuode.json',
+            atlas: 'res/animation/hall/gongxihuode/gongxihuode.atlas',
+            png: 'res/animation/hall/gongxihuode/gongxihuode.png'
+        },
 
     }
 
@@ -69,7 +164,7 @@ load('game/config/ResConfig', function () {
      */
     ResConfig.Ui = {
         'SystemTips': 'game/ui/public/SystemTips',
-        'LoadingLayer':'game/ui/public/LoadingLayer',
+        'LoadingLayer': 'game/ui/public/LoadingLayer',
         'DialogLayer': 'game/ui/public/DialogLayer',
         'ReceivePropsLayer': 'game/ui/public/ReceivePropsLayer',
         'ChooseCityLayer': 'game/ui/layer/choosecity/ChooseCityLayer',
@@ -91,7 +186,8 @@ load('game/config/ResConfig', function () {
         'FukaShopLayer': 'game/ui/layer/fukashop/FukaShopLayer',
         'FanKuiLayer': 'game/ui/layer/feedback/FanKuiLayer',
         'CustomerLayer': 'game/ui/layer/customer/CustomerLayer',
-        'MatchResultLayer' : 'module/mahjong/ui/MatchResultLayer',
+        'MatchResultLayer': 'module/mahjong/ui/MatchResultLayer',
+        'DdzExclusiveGameLayer': 'module/ddz/ui/ddzExclusive/DdzExclusiveGameLayer',
     }
 
     /**
@@ -134,6 +230,7 @@ load('game/config/ResConfig', function () {
         'MemberLayer': 'res/MemberLayer.json',
         'RoleLayer': 'res/RoleLayer.json',
         'FukaShopLayer': 'res/FukaShopLayer.json',
+        'DdzExclusiveGameLayer': 'res/DdzExclusiveGameLayer.json',
 
     }
 
@@ -145,6 +242,7 @@ load('game/config/ResConfig', function () {
         path: 'res/sound/',
         bg1: 'res/sound/bg/bg1.mp3',
         bg2: 'res/sound/bg/bg2.mp3',
+        bgHall: 'res/sound/bg/bgHall.mp3',
         btnEffect: 'res/sound/btnClick.mp3',
         turnTableBegin: 'res/sound/turnTableBegin.mp3',
         turnTableEnd: 'res/sound/turnTableEnd.mp3',
@@ -153,7 +251,7 @@ load('game/config/ResConfig', function () {
         vip: 'vip.mp3'
     }
 
-    ResConfig.prefixPath = { }
+    ResConfig.prefixPath = {}
     ResConfig.prefixPath.CommonUI = ''
     ResConfig.prefixPath.DeleteRoom = ''
     ResConfig.prefixPath.personInfo = ''

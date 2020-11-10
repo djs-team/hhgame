@@ -116,6 +116,9 @@ typedef enum : NSUInteger {
                                                     ,@(SocketMessageIDNotifyRedPacketProgressMessage):CXSocketMessageNotifyRedPacketProgress.class
                                                     ,@(SocketMessageIDNotifyLetterEffectMessage):CXSocketMessageNotifyStartRobRedPacket.class
                                                     
+                                                    // 用户信息
+                                                    ,@(SocketMessageIDUpdateUserGuardNotification):SocketMessageUserJoinRoom.class
+                                                    
                                                     }];
     }
     return self;
@@ -283,6 +286,12 @@ typedef enum : NSUInteger {
             
             NSString *banStr = [NSString stringWithFormat:@"您由于%@被禁播，还有%@禁播结束",joinRoom.response.Code, timeStr];
             [[CXTools currentViewController] toast:banStr];
+            [wself.socket close];
+        } else if([joinRoom.response.Success isEqual:@13]) {
+            [[CXTools currentViewController] toast:@"房间名不能为空"];
+            [wself.socket close];
+        } else if([joinRoom.response.Success isEqual:@14]) {
+            [[CXTools currentViewController] toast:@"房间名中包含敏感词"];
             [wself.socket close];
         } else if([joinRoom.response.Success isEqual:@20]) {
             [[CXTools currentViewController] toast:@"服务器在维护"];

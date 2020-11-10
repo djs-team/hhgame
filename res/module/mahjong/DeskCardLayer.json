@@ -446,7 +446,7 @@
                 "CColor": {},
                 "IconVisible": true,
                 "PrePosition": {
-                  "X": 0.6563,
+                  "X": 0.6562,
                   "Y": 0.2222
                 },
                 "PreSize": {
@@ -19998,6 +19998,96 @@
             },
             "Name": "CardPnl",
             "ctype": "PanelObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "desk/liuju.png",
+              "Plist": ""
+            },
+            "Scale9OriginX": 65,
+            "Scale9OriginY": 76,
+            "Scale9Width": 67,
+            "Scale9Height": 80,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 639.7478,
+              "Y": 357.5876
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4998,
+              "Y": 0.4966
+            },
+            "PreSize": {
+              "X": 0.1539,
+              "Y": 0.3222
+            },
+            "LeftMargin": 541.2478,
+            "RightMargin": 541.7522,
+            "TopMargin": 246.4124,
+            "BottomMargin": 241.5876,
+            "Tag": 536,
+            "ActionTag": 413131089,
+            "Size": {
+              "X": 197.0,
+              "Y": 232.0
+            },
+            "Name": "liuJuBg",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "desk/fenzhang.png",
+              "Plist": ""
+            },
+            "Scale9OriginX": 65,
+            "Scale9OriginY": 76,
+            "Scale9Width": 67,
+            "Scale9Height": 80,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 639.75,
+              "Y": 357.59
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4998,
+              "Y": 0.4967
+            },
+            "PreSize": {
+              "X": 0.1539,
+              "Y": 0.3222
+            },
+            "LeftMargin": 541.25,
+            "RightMargin": 541.75,
+            "TopMargin": 246.41,
+            "BottomMargin": 241.59,
+            "Tag": 576,
+            "ActionTag": 1121731723,
+            "Size": {
+              "X": 197.0,
+              "Y": 232.0
+            },
+            "Name": "fenZhangBg",
+            "ctype": "ImageViewObjectData"
           }
         ],
         "Size": {
@@ -20024,6 +20114,8 @@
         "card/value/leftshow/wan_left_1.png",
         "card/value/selfhand/tiao_hand_8.png",
         "card/value/selfshow/wan_show_1.png",
+        "desk/fenzhang.png",
+        "desk/liuju.png",
         "desk/pz_33.png",
         "desk/pz_34.png",
         "desk/pz_35.png",

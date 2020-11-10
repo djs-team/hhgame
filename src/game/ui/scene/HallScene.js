@@ -121,6 +121,7 @@ load('game/ui/scene/HallScene', function () {
 
         onFeedbackBtnClick: function (sender) {
             GameUtil.delayBtn(sender);
+            this.feedbackBtn.getChildByName('redImg').setVisible(false)
             this.morePnl.setVisible(false)
             appInstance.gameAgent().addUI(ResConfig.Ui.FanKuiLayer)
         },
@@ -206,10 +207,12 @@ load('game/ui/scene/HallScene', function () {
             let viewData = {
                 from: 'HallScene'
             }
-            appInstance.gameAgent().addUI(ResConfig.Ui.ChooseCityLayer,viewData)
+            // appInstance.gameAgent().addUI(ResConfig.Ui.ChooseCityLayer,viewData)
+            appInstance.gameAgent().addUI(ResConfig.Ui.DdzExclusiveGameLayer)
         },
 
         onMoreClick: function () {
+            this.moreBtn.getChildByName('redImg').setVisible(false)
             let isAuthentication = appInstance.dataManager().getUserData().isAuthentication
             if (isAuthentication != 0) {
                 this.authenticationBtn.setVisible(true)
@@ -245,6 +248,7 @@ load('game/ui/scene/HallScene', function () {
 
         onEnter: function () {
             this._super()
+            appInstance.audioManager().playMusic(ResConfig.Sound.bgHall, true)
             if (appInstance.dataManager().getUserData().MatchJinjiGaming) {
                 this.showMatchJinjiLayer(appInstance.dataManager().getUserData().MatchJinjiGaming)
                 appInstance.dataManager().getUserData().MatchJinjiGaming = null
@@ -441,6 +445,13 @@ load('game/ui/scene/HallScene', function () {
             else
                 this.taskPnl.getChildByName('redImg').setVisible(false)
 
+            if(data.hasOwnProperty('feedbackFlag')){
+                this.moreBtn.getChildByName('redImg').setVisible(true)
+                this.feedbackBtn.getChildByName('redImg').setVisible(true)
+            }else{
+                this.moreBtn.getChildByName('redImg').setVisible(false)
+                this.feedbackBtn.getChildByName('redImg').setVisible(false)
+            }
 
         },
 

@@ -38,6 +38,8 @@
     
     NSMutableAttributedString *result = [self resultWithRoomGuardLevel:nil DukeLevel:model.DukeLevel UserLevel:model.UserLevel UserIdentity:model.UserIdentity Font:font UserID:model.UserId];
     
+    self.guardValue = model.GuardState;
+    
     // 恭喜
     NSString *tip = [model.EggType intValue] ==  0 ? @"砸金蛋得到 " : @"砸银蛋得到 ";
     NSMutableAttributedString *user = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"恭喜%@ %@", model.UserNickName, tip]];

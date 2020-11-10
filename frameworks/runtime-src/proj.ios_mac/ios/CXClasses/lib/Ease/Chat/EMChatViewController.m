@@ -136,8 +136,6 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapTableViewAction:)];
     [self.tableView addGestureRecognizer:tap];
     
-    [self getUserInfoData];
-    
     [self loadMoney];
 }
 
@@ -157,6 +155,7 @@
     
     [[EMClient sharedClient].chatManager addDelegate:self delegateQueue:nil];
 
+    [self getUserInfoData];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -293,7 +292,7 @@
             }
             
             if ([model.isBlocks intValue] == 2) { // 已拉黑
-                [weakSelf.conversationModel.emModel deleteAllMessages:nil];
+                [weakSelf deleteAllMessageAction];
             }
         }
     }];

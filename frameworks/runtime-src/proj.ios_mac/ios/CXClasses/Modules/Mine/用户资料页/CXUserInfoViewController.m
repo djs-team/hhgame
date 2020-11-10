@@ -41,7 +41,6 @@
 @property (nonatomic, strong) CXUserModel *currentUser;
 @property (nonatomic, strong) NSString *gift_num;
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *hiddenLabel_topLayout;
 @property (weak, nonatomic) IBOutlet UILabel *hiddenLabel;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *collectionViewTopLayout;
@@ -107,7 +106,6 @@
             
             if ([user.isBlocks intValue] == 2) { // 已拉黑
                 weakSelf.hiddenLabel.hidden = NO;
-                weakSelf.hiddenLabel_topLayout.constant = 300*SCALE_W;
                 weakSelf.mainCollectionView.scrollEnabled = NO;
             } else {
                 weakSelf.hiddenLabel.hidden = YES;

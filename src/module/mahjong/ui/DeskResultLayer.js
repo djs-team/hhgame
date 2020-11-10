@@ -432,6 +432,11 @@ load('module/mahjong/ui/DeskResultLayer', function () {
         },
 
         onEnter: function () {
+            let players = appInstance.dataManager().getPlayData().players
+            for (let i in players) {
+                players[i].initData()
+            }
+
             this._super()
             appInstance.nativeApi().getInvitationCode(inviteUrl)
         },

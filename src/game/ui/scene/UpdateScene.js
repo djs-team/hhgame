@@ -39,7 +39,8 @@ load('game/ui/scene/UpdateScene', function () {
             this.middlePnl.setVisible(false)
             this.bottomPnl.setVisible(false)
 
-            this.runAction(cc.sequence(cc.DelayTime(3), cc.CallFunc(function() {
+            appInstance.audioManager().playEffect('res/sound/tg_logo.mp3')
+            this.runAction(cc.sequence(cc.DelayTime(2.7), cc.CallFunc(function() {
                 this.AniPnl.setVisible(false)
                 this.Txtpnl.setVisible(true)
                 this.middlePnl.setVisible(true)

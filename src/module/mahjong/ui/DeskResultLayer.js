@@ -39,6 +39,7 @@ load('module/mahjong/ui/DeskResultLayer', function () {
         RES_BINDING: function () {
             return {
                 'topPnl/CloseBtn': {onClicked: this.onCloseBtnClick},
+                'topPnl/liuJuBg': {},
                 'midPnl/midNd': {},
                 'midPnl/midNd/PlayerCell': {},
                 'bmPnl': {},
@@ -209,6 +210,7 @@ load('module/mahjong/ui/DeskResultLayer', function () {
         },
 
         initView: function (pData) {
+
             this.initData(pData)
             this.PlayerCell.setVisible(false)
             this.InfoCell.setVisible(false)
@@ -216,6 +218,9 @@ load('module/mahjong/ui/DeskResultLayer', function () {
 
             let initInfo = {}
             initInfo._index = 0
+
+            let isLiuJu = this._pData.tableData.pIsLiuJu == 1 ? true : false
+            this.liuJuBg.setVisible(isLiuJu)
 
             for (let i = 0; i < this._playerNum; ++i) {
                 this.initPlayerCell(i, this._players[i])

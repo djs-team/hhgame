@@ -291,6 +291,10 @@
                 weakSelf.titleDetailLabel.text = @"在线";
                 weakSelf.titleDetailLabel.backgroundColor = UIColorHex(0x10E770);
             }
+            
+            if ([model.isBlocks intValue] == 2) { // 已拉黑
+                [weakSelf.conversationModel.emModel deleteAllMessages:nil];
+            }
         }
     }];
 }

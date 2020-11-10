@@ -261,7 +261,12 @@ public class MicroFaceView extends FrameLayout {
         JoinRoom joinRoom = com.deepsea.mua.stub.utils.AppConstant.getInstance().getJoinRoom();
         int type = myType;
         boolean isRoomOwner = MatchMakerUtils.isRoomOwner();
+        String mRoomId = SharedPrefrencesUtil.getData(mContext, "mRoomId", "mRoomId", "");
+
         if (joinRoom != null && (type == 1) && !SongStateUtils.getSingleton2().isChangeView()) {
+            if (TextUtils.isEmpty(mRoomId)) {
+                return;
+            }
             mBinding.rlDefaultEmpty.setVisibility(GONE);
             mBinding.rlEmptyMan.setVisibility(VISIBLE);
             mBinding.rlEmptyWoman.setVisibility(GONE);
@@ -271,9 +276,13 @@ public class MicroFaceView extends FrameLayout {
             int microCost = AppConstant.getInstance().getMicroCost();
             ViewBindUtils.setText(mBinding.tvManMicroCost, String.format("%d朵玫瑰", microCost));
         } else if (joinRoom != null && type == 2 && !SongStateUtils.getSingleton2().isChangeView()) {
+            if (TextUtils.isEmpty(mRoomId)) {
+                return;
+            }
             mBinding.rlDefaultEmpty.setVisibility(GONE);
             mBinding.rlEmptyMan.setVisibility(GONE);
             mBinding.rlEmptyWoman.setVisibility(VISIBLE);
+
             ViewBindUtils.setText(mBinding.tvWomanMicroDesc, isRoomOwner ? "邀请上麦" : "女嘉宾专属位");
             ViewBindUtils.setVisible(mBinding.ivWomenMicroBg, true);
             if (MatchMakerUtils.isRoomOwner()) {

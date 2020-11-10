@@ -2254,6 +2254,7 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
                 aAlertDialog.dismiss();
                 aAlertDialog = null;
             }
+            SharedPrefrencesUtil.deleteData(mContext, "mRoomId", "mRoomId");
             for (int i = 0; i < mRoomModel.getMicros().size(); i++) {
                 mRoomModel.getMicros().get(i).setUser(null);
             }
@@ -4700,7 +4701,6 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
 //            }
             ForbiddenStateUtils.clearForbiddenData();
             InMicroMemberUtils.getInstance().clear();
-            SharedPrefrencesUtil.deleteData(mContext, "mRoomId", "mRoomId");
             RoomController.getInstance().release();
             if (mInputDialog != null && mInputDialog.isShowing()) {
                 mInputDialog.dismiss();

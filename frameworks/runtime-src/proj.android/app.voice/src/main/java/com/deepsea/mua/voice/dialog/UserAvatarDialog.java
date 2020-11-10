@@ -246,8 +246,8 @@ public class UserAvatarDialog extends BaseDialog<DialogUserAvatarBinding> {
         }
         //看别人
         else {
-            ViewBindUtils.setVisible(mBinding.inviteFreeTv, !microUser.isIsOnMicro());
-            ViewBindUtils.setVisible(mBinding.inviteNofreeTv, !microUser.isIsOnMicro());
+            ViewBindUtils.setVisible(mBinding.inviteFreeTv, false);
+            ViewBindUtils.setVisible(mBinding.inviteNofreeTv, false);
             ViewBindUtils.setVisible(mBinding.closeMpTv, true);
             ViewBindUtils.setVisible(mBinding.forbiddenTv, false);
 

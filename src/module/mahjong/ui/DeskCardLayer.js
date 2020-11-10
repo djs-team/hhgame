@@ -32,8 +32,8 @@ load('module/mahjong/ui/DeskCardLayer', function () {
 
         onEnter: function () {
             this._super()
-            this.liuJuBg.setVisible(false)
-            this.fenZhangBg.setVisible(false)
+            this.onHideLiuJu()
+
         },
 
         initData: function (pData) {
@@ -66,6 +66,12 @@ load('module/mahjong/ui/DeskCardLayer', function () {
                 this._outCardNd.push(this.CardPnl.getChildByName('OutNd' + i))
                 this._handCardNd.push(this.CardPnl.getChildByName('HandCardNd' + i))
             }
+        },
+
+        onHideLiuJu: function () {
+
+            this.liuJuBg.setVisible(false)
+            this.fenZhangBg.setVisible(false)
         },
 
         initView: function (pData) {
@@ -864,6 +870,7 @@ load('module/mahjong/ui/DeskCardLayer', function () {
         },
 
         clearView: function () {
+            this.onHideLiuJu()
             for (let i = 0; i < 4; ++i) {
                 this._deckCardNd[i].removeAllChildren()
                 this._outCardNd[i].removeAllChildren()
@@ -876,6 +883,7 @@ load('module/mahjong/ui/DeskCardLayer', function () {
 
         clearTableGaming: function () {
             cc.log('=============clearTableGaming===============')
+            this.onHideLiuJu()
             for (let i = 0; i < 4; ++i) {
                 this._outCardNd[i].removeAllChildren()
                 this._handCardNd[i].setVisible(false)

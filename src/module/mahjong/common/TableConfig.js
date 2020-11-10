@@ -164,6 +164,8 @@ load('module/mahjong/common/TableConfig', function () {
         }
     }
 
+    TableConfig.resultDelayTime = 2
+
     TableConfig.experssion = {
         'express':{
             '0':{

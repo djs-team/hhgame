@@ -13,6 +13,7 @@ load('module/mahjong/ui/EffectLayerMdt', function () {
 
     let DeskMdt = Mediator.extend({
         mediatorName: 'EffectLayerMdt',
+        _resultDelayTime : TableConfig.resultDelayTime,
         ctor: function (view) {
             this._super(this.mediatorName,view)
         },
@@ -37,7 +38,7 @@ load('module/mahjong/ui/EffectLayerMdt', function () {
                     this.PlayerSelectProto(body)
                     break
                 case TableEvent.MatchResultProto:
-                    appInstance.gameAgent().delayCall(2, this.MatchResultProto, body, this)
+                    appInstance.gameAgent().delayCall(this._resultDelayTime, this.MatchResultProto, body, this)
                     // this.MatchResultProto(body)
                     break
                 case TableEvent.MatchEnterTableProto:
@@ -46,7 +47,7 @@ load('module/mahjong/ui/EffectLayerMdt', function () {
                 case TableEvent.TableHostingProto:
                     break
                 case TableEvent.GameResultProto:
-                    appInstance.gameAgent().delayCall(2, this.GameResultProto, body, this)
+                    appInstance.gameAgent().delayCall(this._resultDelayTime, this.GameResultProto, body, this)
                     // this.GameResultProto(body)
                     break
             }

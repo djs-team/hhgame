@@ -75,7 +75,7 @@ public class SongApointmentFragment extends BaseFragment<FragmentSongAppointment
 
     private void initRefreshLayout() {
         mBinding.refreshLayout.setOnRefreshListener(refreshLayout -> {
-            defaultPage=0;
+            defaultPage = 0;
             mViewModel.getAppointmentSongListParam(0);
         });
         mBinding.refreshLayout.setOnLoadMoreListener(refreshLayout -> {
@@ -139,6 +139,8 @@ public class SongApointmentFragment extends BaseFragment<FragmentSongAppointment
                         } else {
                             mAdapter.addData(songInfos);
                         }
+                    } else {
+                        mAdapter.setNewData(null);
                     }
                     if (defaultPage == 0) {
                         mBinding.refreshLayout.finishRefresh();

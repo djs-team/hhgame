@@ -2258,10 +2258,6 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
                 mRoomModel.getMicros().get(i).setUser(null);
             }
             mMpAdapter.setNewData(mRoomModel.getMicros());
-            if (mViewModel == null) {
-                mViewModel = ViewModelProviders.of(this, mFactory).get(RoomViewModel.class);
-            }
-            mViewModel.exitRoom();
             if (mWsLoading != null) {
                 mWsLoading.dismiss();
             }
@@ -2270,7 +2266,6 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
             }
             mBinding.roomMsgRv.release();
             RoomController.getInstance().release();
-//            HeartControl.getInstance(mContext).stopHeartBeatObservable();
             System.gc();
         } catch (Exception e) {
 
@@ -4686,31 +4681,23 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
         try {
             unregisterWxpayResult();
             mRoomJump.destroy();
-            SharedPrefrencesUtil.saveData(mContext, "inroom", "inroom", false);
-            SongStateUtils.getSingleton2().resetReverbPresetList();
-            SongStateUtils.getSingleton2().setChangeView(false);
-            SongStateUtils.getSingleton2().setConsertUserId("");
-            SongStateUtils.getSingleton2().setCurrentPos(0);
-            SongStateUtils.getSingleton2().setHeartCount(0);
             SongStateUtils.getSingleton2().reset();
             AgoraClient.create().rtcEngine().enableLocalVideo(true);
-
             NetworkManager.getDefault().unRegisterObserver(this);
 
             EventBus.getDefault().unregister(this);
-            SharedPrefrencesUtil.saveData(mContext, "isFirstForApp", "isFirstForApp", false);
-            if (mRoomData.getMicroInfos() != null) {
-                List<RoomData.MicroInfosBean> beans = mRoomData.getMicroInfos();
-                if (beans != null) {
-                    for (int i = 0; i < beans.size(); i++) {
-                        WsUser user = beans.get(i).getUser();
-                        if (user != null) {
-                            AgoraClient.create().muteRemoteAudioStream(Integer.valueOf(user.getUserId()), false);
-                            AgoraClient.create().muteLocalAudioStream(false);
-                        }
-                    }
-                }
-            }
+//            if (mRoomData.getMicroInfos() != null) {
+//                List<RoomData.MicroInfosBean> beans = mRoomData.getMicroInfos();
+//                if (beans != null) {
+//                    for (int i = 0; i < beans.size(); i++) {
+//                        WsUser user = beans.get(i).getUser();
+//                        if (user != null) {
+//                            AgoraClient.create().muteRemoteAudioStream(Integer.valueOf(user.getUserId()), false);
+//                            AgoraClient.create().muteLocalAudioStream(false);
+//                        }
+//                    }
+//                }
+//            }
             ForbiddenStateUtils.clearForbiddenData();
             InMicroMemberUtils.getInstance().clear();
             SharedPrefrencesUtil.deleteData(mContext, "mRoomId", "mRoomId");
@@ -4728,15 +4715,6 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
                 mGiftDialog = null;
             }
             if (mHandler != null) {
-                mHandler.removeMessages(msg_send_lyric);
-                mHandler.removeMessages(msg_download_lrc);
-                mHandler.removeMessages(msg_start_play_song);
-                mHandler.removeMessages(msg_start_play_song_with_lrc);
-                mHandler.removeMessages(msg_lyric_reset);
-                mHandler.removeMessages(msg_lyric_show);
-                mHandler.removeMessages(msg_lyric_receive);
-                mHandler.removeMessages(msg_start_download_song);
-                mHandler.removeMessages(msg_download_song_success);
                 mHandler.removeCallbacksAndMessages(null);
             }
             if (mTimer != null) {

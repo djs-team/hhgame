@@ -795,7 +795,7 @@
                 "FontSize": 20,
                 "LabelText": "ICP：黑B2-20170074   软著：2017SR106208   著作权人：和和互娱科技（北京）有限公司\n出版单位：哈尔滨市和和互娱科技有限公司   黑网文（2017）3742-032号",
                 "HorizontalAlignmentType": "HT_Center",
-                "VerticalAlignmentType": "VT_Bottom",
+                "VerticalAlignmentType": "VT_Center",
                 "OutlineColor": {
                   "G": 0,
                   "B": 0
@@ -831,17 +831,17 @@
                 },
                 "PreSize": {
                   "X": 0.6406,
-                  "Y": 0.0625
+                  "Y": 0.0833
                 },
                 "LeftMargin": 230.0,
                 "RightMargin": 230.0,
-                "TopMargin": 650.28,
+                "TopMargin": 635.28,
                 "BottomMargin": 24.72,
                 "Tag": 18,
                 "ActionTag": 1590018465,
                 "Size": {
                   "X": 820.0,
-                  "Y": 45.0
+                  "Y": 60.0
                 },
                 "Name": "contents",
                 "ctype": "TextObjectData"

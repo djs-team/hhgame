@@ -118,14 +118,15 @@
     
     NSIndexPath * seatIndex = [[CXClientModel instance].room.userSeats objectForKey:user.UserId];
     
+    self.free_inviteBtn.hidden = YES;
+    self.buy_inviteBtn.hidden = YES;
+    
     //查看是自己
     if ([user.UserId isEqualToString:[CXClientModel instance].userId]) {
         self.jinyanBtn.hidden = YES;
         self.laheiBtn.hidden = YES;
         self.yichuBtn.hidden = YES;
         self.jubaoBtn.hidden = YES;
-        self.free_inviteBtn.hidden = YES;
-        self.buy_inviteBtn.hidden = YES;
         self.chatBtn.hidden = YES;
         self.bottomView.hidden = NO;
         
@@ -165,6 +166,10 @@
                 _bimaiBtn_topLayout.constant = 27;
                 _laheiBtn_topLayout.constant = 27*2;
                 _jubaoBtn_topLayout.constant = 27;
+                
+                self.free_inviteBtn.hidden = NO;
+                self.buy_inviteBtn.hidden = NO;
+                
             } else {//不是红娘
                 _jinyanBtn.hidden = YES;
                 _bimaiBtn.hidden = NO;
@@ -175,9 +180,6 @@
                 _laheiBtn_topLayout.constant = 27;
                 _jubaoBtn_topLayout.constant = 0;
             }
-            
-            self.free_inviteBtn.hidden = YES;
-            self.buy_inviteBtn.hidden = YES;
         } else {
             if (selfIdentity == GameUserIdentityOwner || selfIdentity == GameUserIdentityManager) {
                 _jinyanBtn.hidden = NO;

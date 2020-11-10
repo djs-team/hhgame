@@ -179,13 +179,13 @@
           <AbstractNodeData Name="bottomPnl" ActionTag="1385219775" UserData="{&quot;layoutType&quot;:&quot;maxArea&quot;,&quot;screenAlign&quot;:&quot;bottom&quot;}" Tag="17" IconVisible="False" PositionPercentXEnabled="True" TopMargin="0.5193" BottomMargin="-0.5193" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <Children>
-              <AbstractNodeData Name="contents" ActionTag="1590018465" Tag="18" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="230.0000" RightMargin="230.0000" TopMargin="670.2800" BottomMargin="4.7200" IsCustomSize="True" FontSize="20" LabelText="ICP：黑B2-20170074   软著：2017SR106208   著作权人：和和互娱科技（北京）有限公司&#xA;出版单位：哈尔滨市和和互娱科技有限公司   黑网文（2017）3742-032号" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Bottom" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="contents" ActionTag="1590018465" Tag="18" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="230.0000" RightMargin="230.0000" TopMargin="650.2800" BottomMargin="24.7200" IsCustomSize="True" FontSize="20" LabelText="ICP：黑B2-20170074   软著：2017SR106208   著作权人：和和互娱科技（北京）有限公司&#xA;出版单位：哈尔滨市和和互娱科技有限公司   黑网文（2017）3742-032号" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Bottom" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="820.0000" Y="45.0000" />
                 <AnchorPoint ScaleX="0.5000" />
-                <Position X="640.0000" Y="4.7200" />
+                <Position X="640.0000" Y="24.7200" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="153" G="153" B="153" />
-                <PrePosition X="0.5000" Y="0.0066" />
+                <PrePosition X="0.5000" Y="0.0343" />
                 <PreSize X="0.6406" Y="0.0625" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />

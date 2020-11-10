@@ -812,7 +812,7 @@
                 },
                 "Position": {
                   "X": 640.0,
-                  "Y": 4.72
+                  "Y": 24.72
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -827,7 +827,7 @@
                 "PositionPercentXEnabled": true,
                 "PrePosition": {
                   "X": 0.5,
-                  "Y": 0.0066
+                  "Y": 0.0343
                 },
                 "PreSize": {
                   "X": 0.6406,
@@ -835,8 +835,8 @@
                 },
                 "LeftMargin": 230.0,
                 "RightMargin": 230.0,
-                "TopMargin": 670.28,
-                "BottomMargin": 4.72,
+                "TopMargin": 650.28,
+                "BottomMargin": 24.72,
                 "Tag": 18,
                 "ActionTag": 1590018465,
                 "Size": {

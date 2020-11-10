@@ -44,7 +44,7 @@ load('game/ui/scene/UpdateScene', function () {
                 this.Txtpnl.setVisible(true)
                 this.middlePnl.setVisible(true)
                 this.bottomPnl.setVisible(true)
-            }.bind(this)), cc.DelayTime(10), cc.CallFunc(function() {
+            }.bind(this)), cc.DelayTime(0.3), cc.CallFunc(function() {
                 this.bg.setVisible(true)
                 this.AniPnl.setVisible(false)
                 this.Txtpnl.setVisible(false)

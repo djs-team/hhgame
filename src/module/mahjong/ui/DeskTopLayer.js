@@ -157,6 +157,8 @@ load('module/mahjong/ui/DeskTopLayer', function () {
             this.sayBtn.setVisible(true)
             this.sayContentPnl.setVisible(false)
 
+            this.HeadNd.setVisible(false)
+
             this.NameTxt.setString(this._selfInfo.nickName)
             this.TableLevelTxt.setString(this._tableLevel[this._tData.pGameType])
 

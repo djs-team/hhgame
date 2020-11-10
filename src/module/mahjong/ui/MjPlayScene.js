@@ -121,9 +121,15 @@ load('module/mahjong/ui/MjPlayScene', function () {
         },
 
         showGameResultLayer: function (msg) {
-            let DeskResultLayer = include('module/mahjong/ui/DeskResultLayer')
-            this.DeskResultLayer = appInstance.uiManager().createUI(DeskResultLayer, msg)
-            this.addChild(this.DeskResultLayer)
+
+
+            let showCall = function () {
+                let DeskResultLayer = include('module/mahjong/ui/DeskResultLayer')
+                this.DeskResultLayer = appInstance.uiManager().createUI(DeskResultLayer, msg)
+                this.addChild(this.DeskResultLayer)
+            }.bind(this)
+
+           this.runAction(cc.Sequence(cc.DelayTime(msg.delayTime),cc.callFunc(showCall)))
 
             // let showCall = function () {
             //     let DeskResultLayer = include('module/mahjong/ui/DeskResultLayer')

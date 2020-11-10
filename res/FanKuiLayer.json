@@ -15,50 +15,6 @@
         "Tag": 196,
         "Children": [
           {
-            "FileData": {
-              "Type": "Default",
-              "Path": "Default/ImageFile.png",
-              "Plist": ""
-            },
-            "Scale9OriginX": -376,
-            "Scale9OriginY": -191,
-            "Scale9Width": 798,
-            "Scale9Height": 428,
-            "AnchorPoint": {
-              "ScaleX": 0.5,
-              "ScaleY": 0.5
-            },
-            "Position": {
-              "X": 640.0,
-              "Y": 360.0
-            },
-            "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 1.0
-            },
-            "CColor": {},
-            "IconVisible": false,
-            "PositionPercentXEnabled": true,
-            "PositionPercentYEnabled": true,
-            "PrePosition": {
-              "X": 0.5,
-              "Y": 0.5
-            },
-            "PreSize": {
-              "X": 1.0,
-              "Y": 1.0
-            },
-            "Tag": 197,
-            "ActionTag": 1412601644,
-            "Size": {
-              "X": 1280.0,
-              "Y": 720.0
-            },
-            "VisibleForFrame": false,
-            "Name": "Image_1",
-            "ctype": "ImageViewObjectData"
-          },
-          {
             "ClipAble": false,
             "BackColorAlpha": 102,
             "ComboBoxIndex": 1,
@@ -1092,6 +1048,8 @@
                         "ColorVector": {
                           "ScaleY": 1.0
                         },
+                        "Scale9Width": 1,
+                        "Scale9Height": 1,
                         "TouchEnable": true,
                         "AnchorPoint": {},
                         "Position": {
@@ -1270,6 +1228,8 @@
                         "ColorVector": {
                           "ScaleY": 1.0
                         },
+                        "Scale9Width": 1,
+                        "Scale9Height": 1,
                         "AnchorPoint": {},
                         "Position": {
                           "X": 51.181,
@@ -2305,8 +2265,8 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 770.0,
-                          "Y": 1007.949
+                          "X": 770.048,
+                          "Y": 1007.928
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -2328,10 +2288,10 @@
                           "X": 1.0,
                           "Y": 1.0
                         },
-                        "LeftMargin": 130.0,
-                        "RightMargin": -130.0,
-                        "TopMargin": -647.949,
-                        "BottomMargin": 647.949,
+                        "LeftMargin": 130.048,
+                        "RightMargin": -130.048,
+                        "TopMargin": -647.928,
+                        "BottomMargin": 647.928,
                         "Tag": 116,
                         "Children": [
                           {
@@ -2971,7 +2931,7 @@
                             },
                             "Position": {
                               "X": 588.062,
-                              "Y": 60.0635
+                              "Y": 60.06
                             },
                             "Scale": {
                               "ScaleX": 1.0,
@@ -2993,8 +2953,8 @@
                             },
                             "LeftMargin": 528.062,
                             "RightMargin": 11.938,
-                            "TopMargin": 56.4365,
-                            "BottomMargin": 46.5635,
+                            "TopMargin": 56.44,
+                            "BottomMargin": 46.56,
                             "Tag": 46,
                             "ActionTag": -2050975772,
                             "Size": {
@@ -3003,6 +2963,51 @@
                             },
                             "Name": "status",
                             "ctype": "TextObjectData"
+                          },
+                          {
+                            "FileData": {
+                              "Type": "Normal",
+                              "Path": "hall/pz_31.png",
+                              "Plist": ""
+                            },
+                            "Scale9OriginX": 7,
+                            "Scale9OriginY": 7,
+                            "Scale9Width": 9,
+                            "Scale9Height": 8,
+                            "AnchorPoint": {
+                              "ScaleX": 0.5,
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 145.28,
+                              "Y": 91.9
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {},
+                            "IconVisible": false,
+                            "PrePosition": {
+                              "X": 0.2201,
+                              "Y": 0.7069
+                            },
+                            "PreSize": {
+                              "X": 0.0227,
+                              "Y": 0.1154
+                            },
+                            "LeftMargin": 137.78,
+                            "RightMargin": 507.22,
+                            "TopMargin": 30.6,
+                            "BottomMargin": 84.4,
+                            "Tag": 792,
+                            "ActionTag": 895012172,
+                            "Size": {
+                              "X": 15.0,
+                              "Y": 15.0
+                            },
+                            "Name": "redImg",
+                            "ctype": "ImageViewObjectData"
                           }
                         ],
                         "ActionTag": -74542707,
@@ -3112,12 +3117,12 @@
         "common/gy_yqy2.png",
         "common/gy_yqy3.png",
         "Default/Button_Disable.png",
-        "Default/ImageFile.png",
         "feedback/yjfk_1.png",
         "feedback/yjfk_3.png",
         "feedback/yjfk_6.png",
         "feedback/yjfk_7.png",
         "font/hkhbtW12.ttc",
+        "hall/pz_31.png",
         "personal/gexx_6.png",
         "role/js_1.png"
       ],

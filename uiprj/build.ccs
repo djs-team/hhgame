@@ -498,6 +498,7 @@
           <Image Name="sz_9.png" />
         </Folder>
         <Folder Name="ddz">
+          <Image Name="bg.png" />
           <Image Name="ddz_exclusive.png" />
           <Image Name="ddz_matching_type_five.png" />
           <Image Name="ddz_matching_type_four.png" />
@@ -946,6 +947,7 @@
         <Project Name="TipsDialog.csd" Type="Layer" />
         <Project Name="TipsFloat.csd" Type="Layer" />
         <Project Name="TurnTableLayer.csd" Type="Layer" />
+        <Project Name="DdzRequiteGameLayer.csd" Type="Layer" />
       </RootFolder>
     </Group>
   </SolutionFolder>

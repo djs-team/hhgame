@@ -152,6 +152,8 @@ load('game/config/ResConfig', function () {
         turnTableBegin: 'res/sound/turnTableBegin.mp3',
         turnTableEnd: 'res/sound/turnTableEnd.mp3',
         turnTableInd: 'res/sound/turnTableInd.mp3',
+        win: 'res/sound/win.mp3',
+        lose: 'res/sound/lose.mp3',
         qiandao: 'qiandao.mp3',
         vip: 'vip.mp3'
     }

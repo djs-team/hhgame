@@ -73,6 +73,9 @@ load('module/mahjong/common/ResConfig', function () {
           'hu_wohule',
           'hu_biedong',
         ],
+        huanbao: [
+          'huanbao'
+        ],
         hu_zimo: [
           'hu_zimo'
         ],

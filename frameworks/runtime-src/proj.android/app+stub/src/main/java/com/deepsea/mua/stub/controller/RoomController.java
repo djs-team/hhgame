@@ -857,12 +857,12 @@ public class RoomController implements IRoomController, RoomMsgHandler.OnMsgEven
         BaseReMsg msg = JsonConverter.fromJson(message, BaseReMsg.class);
         JsonParser parser = new JsonParser();
         JsonObject object = parser.parse(message).getAsJsonObject();
-//        if (msg.getSuccess() != 1) {
-//            String code = msg.getCode();
-//            if (!TextUtils.isEmpty(code)) {
-//                onJoinError(code);
-//            }
-//        }
+        if (msg.getSuccess() != 1) {
+            String code = msg.getCode();
+            if (!TextUtils.isEmpty(code)) {
+                onJoinError(code);
+            }
+        }
         switch (msg.getMsgId()) {
             //发送token回调
             case SocketCons.SEND_TOKEN: {
@@ -874,8 +874,6 @@ public class RoomController implements IRoomController, RoomMsgHandler.OnMsgEven
                         if (joinRoom == null) {
                             joinRoom = new JoinRoom();
                         }
-                        Log.d("AG_EX_AV", "发送进入房间消息" + JsonConverter.toJson(joinRoom));
-
                         joinRoom.setMsgId(SocketCons.JOIN_ROOM);
                         joinRoom.setRoomId(mRoomId);
                         sendNormalMsg(JsonConverter.toJson(joinRoom));
@@ -894,9 +892,6 @@ public class RoomController implements IRoomController, RoomMsgHandler.OnMsgEven
                             jsonObject.addProperty("MsgId", 78);
                             sendRoomMsg(jsonObject.toString());
                         }
-                        break;
-                    default:
-                        onJoinError();
                         break;
                 }
                 break;
@@ -917,53 +912,17 @@ public class RoomController implements IRoomController, RoomMsgHandler.OnMsgEven
                         this.mAgoraChannelId = agoraRoomId;
                         initAgoraEngineAndJoinChannel();
                         break;
-                    //房间被锁
-                    case SocketCons.Error.ROOM_LOCK:
-                        onJoinError("房间被锁");
-                        break;
-                    //被踢出房间
-                    case SocketCons.Error.ROOM_KICK:
-                        onJoinError("您在两分钟后再进入房间");
-                        break;
-                    //家长模式、青少年模式
-                    case SocketCons.Error.PARENT_LOCK:
-                        onJoinError(JoinError.PARENT_LOCK, "");
-                        break;
-                    //排队
-                    case SocketCons.Error.SERVER_BUSY:
-                        onJoinError(JoinError.SERVER_BUSY, "服务器繁忙");
-                        break;
                     //红娘不在麦上
                     case 7:
-                        onJoinError("房间已关闭");
                         if (mView != null) {
                             mView.onMatcherExited(0, "房间已关闭");
                         }
                         break;
-                    case 8:
-                        showToast("嘉宾位已经有嘉宾了");
-                        break;
-                    case 9:
-                        showToast("玫瑰余额不足，你不能进入专属视频房。");
-                        break;
-                    case 10:
-                        JoinRoomMsg joinBean = JsonConverter.fromJson(message, JoinRoomMsg.class);
-                        onJoinError(joinBean.getCode());
-                        break;
+
                     case 11:
-                        joinBean = JsonConverter.fromJson(message, JoinRoomMsg.class);
-                        String time = joinBean.getBanTime() != -1 ? TimeUtils.secondToTime(joinBean.getBanTime()) : "永久禁播";
-                        showEnsureAlert("主播处于封禁状态，暂时不能开播\n禁播原因：" + joinBean.getCode() + "\n" + "禁播结束倒计时：" + time);
+                        showEnsureAlert(msg.getCode());
                         break;
-                    case SocketCons.Error.Maintenance:
-                        onJoinError("服务器维护中。。。");
-                        break;
-                    case 13:
-                        showEnsureAlert("房间名不能为空");
-                        break;
-                    case 14:
-                        showEnsureAlert("房间名中包含敏感词");
-                        break;
+
                     case -127:
                         //进入房间未知错误
                         //发送进入房间消息
@@ -971,9 +930,6 @@ public class RoomController implements IRoomController, RoomMsgHandler.OnMsgEven
                         joinRoom.setMsgId(SocketCons.JOIN_ROOM);
                         joinRoom.setRoomId(mRoomId);
                         sendNormalMsg(JsonConverter.toJson(joinRoom));
-                        break;
-                    default:
-                        onJoinError();
                         break;
                 }
                 break;
@@ -1157,21 +1113,12 @@ public class RoomController implements IRoomController, RoomMsgHandler.OnMsgEven
                         mView.onInmicroSuccessCallback();
                     }
                 }
-                //踢下麦
-                else if (success == SocketCons.Error.KICK_MICRO) {
-                    showToast("请3分钟后再上麦");
-                }
-                //无空麦位
-                else if (success == 7) {
-                    showToast("麦上无空位，请稍后再试");
-                }
                 //排序
                 else if (success == 20 || success == 12) {
                     showEnsureAlert("您已进入申请队列，请等待主持\n邀请上麦");
                 }
                 //实名认证
                 else if (success == 8) {
-//                    showEnsureAlert("请先去《我的》->《实名认证》进行实名");
                     if (mView != null) {
                         mView.gotoCertification();
                     }
@@ -1181,11 +1128,6 @@ public class RoomController implements IRoomController, RoomMsgHandler.OnMsgEven
                     if (mView != null) {
                         mView.onBalanceNoEnough();
                     }
-                }
-                //未身份验证
-                else if (success == 10) {
-
-                    showToast("上麦失败");
                 }
                 break;
             }
@@ -1234,9 +1176,6 @@ public class RoomController implements IRoomController, RoomMsgHandler.OnMsgEven
                     if (mView != null) {
                         mView.onDownMicroSelf();
                     }
-                } else {
-                    showToast("下麦失败");
-
                 }
                 break;
             }
@@ -1329,14 +1268,7 @@ public class RoomController implements IRoomController, RoomMsgHandler.OnMsgEven
                 }
                 break;
             }
-            //锁麦返回值
-            case 14: {
-                //麦位有人，不能锁麦
-                if (msg.getSuccess() == 90) {
-                    showToast("麦位有人，不能锁麦");
-                }
-                break;
-            }
+
             //锁麦群发
             case 16: {
                 BaseMicroMsgList microMsgList = JsonConverter.fromJson(message, BaseMicroMsgList.class);

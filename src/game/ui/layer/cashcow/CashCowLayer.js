@@ -28,12 +28,12 @@ load('game/ui/layer/cashcow/CashCowLayer', function () {
                 'pnl/btnPnl/explainBtn': {onClicked: this.onExplainClick},
                 'pnl/btnPnl/cointreeNd': {},
 
-                'pnl/recordsPnl': {},
-                'pnl/recordsPnl/dataListPnl': {},
-                'pnl/recordsPnl/recordDataCell': {},
-                'pnl/recordsPnl/recordCloseBtn': {onClicked: this.onHideRecordPnlClick},
-                'pnl/rulePnl': {},
-                'pnl/rulePnl/ruleCloseBtn': {onClicked: this.onHideRulePnlClick},
+                'recordsPnl': {},
+                'recordsPnl/dataListPnl': {},
+                'recordsPnl/recordDataCell': {},
+                'recordsPnl/recordCloseBtn': {onClicked: this.onHideRecordPnlClick},
+                'rulePnl': {},
+                'rulePnl/ruleCloseBtn': {onClicked: this.onHideRulePnlClick},
             }
         },
 

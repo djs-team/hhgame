@@ -37,7 +37,7 @@ load('game/msghandler/EnterTableProto', function () {
             dialogMsg.MidBtnClick = function () {
                 appInstance.gameAgent().tcpGame().cancelEnterTable()
             }
-            appInstance.gameAgent().addDialogUI(dialogMsg)
+            appInstance.gameAgent().addDialogUINoPop(dialogMsg)
         },
 
         initData: function () {

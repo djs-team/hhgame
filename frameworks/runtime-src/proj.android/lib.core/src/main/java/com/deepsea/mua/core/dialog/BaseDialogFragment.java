@@ -1,5 +1,6 @@
 package com.deepsea.mua.core.dialog;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.databinding.DataBindingUtil;
@@ -25,14 +26,14 @@ public abstract class BaseDialogFragment<T extends ViewDataBinding> extends Dial
 
     protected final String TAG = getClass().getSimpleName();
 
-    protected Context mContext;
+    protected Activity mContext;
     protected View view;
     protected T mBinding;
 
     protected int mGravity = Gravity.CENTER;
 
     @Override
-    public void onAttach(Context context) {
+    public void onAttach(Activity context) {
         Log.e(TAG, "onAttach: ");
         super.onAttach(context);
         this.mContext = context;

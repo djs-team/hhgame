@@ -5,10 +5,12 @@ import android.text.TextUtils;
 
 import com.deepsea.mua.stub.adapter.BaseBindingAdapter;
 import com.deepsea.mua.stub.adapter.BindingViewHolder;
+import com.deepsea.mua.stub.controller.RoomController;
 import com.deepsea.mua.stub.entity.socket.receive.SongInfo;
 import com.deepsea.mua.stub.utils.ViewBindUtils;
 import com.deepsea.mua.voice.R;
 import com.deepsea.mua.voice.databinding.ItemSongAppointmentBinding;
+import com.deepsea.mua.voice.utils.MatchMakerUtils;
 
 import java.util.List;
 
@@ -77,6 +79,9 @@ public class SongApointmentAdapter extends BaseBindingAdapter<SongInfo, ItemSong
 
         ViewBindUtils.setText(holder.binding.tvGuestsPerson, TextUtils.isEmpty(item.getConsertUserName()) ? "演唱嘉宾：" : "演唱嘉宾：" + item.getConsertUserName());
         holder.binding.tvSongName.setText(item.getSongName());
+        boolean isOwner = MatchMakerUtils.isRoomOwner();
+        ViewBindUtils.setVisible(holder.binding.ivSongDel, isOwner);
+        ViewBindUtils.setVisible(holder.binding.ivSongSticky, isOwner);
 
     }
 

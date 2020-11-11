@@ -17,6 +17,8 @@ load('game/ui/scene/UpdateScene', function () {
                 'bg': { },
                 'pnl': { },
                 'Txtpnl': { },
+                'middlePnl': { },
+                'bottomPnl': { },
                 'pnl/LoadingBar': { },
                 'pnl/StateTxt': { },
                 'pnl/VersionTxt': { },
@@ -34,14 +36,21 @@ load('game/ui/scene/UpdateScene', function () {
             this.pnl.setVisible(false)
             this.AniPnl.setVisible(true)
             this.Txtpnl.setVisible(false)
+            this.middlePnl.setVisible(false)
+            this.bottomPnl.setVisible(false)
 
-            this.runAction(cc.sequence(cc.DelayTime(3), cc.CallFunc(function() {
+            appInstance.audioManager().playEffect('res/sound/tg_logo.mp3')
+            this.runAction(cc.sequence(cc.DelayTime(2.7), cc.CallFunc(function() {
                 this.AniPnl.setVisible(false)
                 this.Txtpnl.setVisible(true)
+                this.middlePnl.setVisible(true)
+                this.bottomPnl.setVisible(true)
             }.bind(this)), cc.DelayTime(0.3), cc.CallFunc(function() {
                 this.bg.setVisible(true)
                 this.AniPnl.setVisible(false)
                 this.Txtpnl.setVisible(false)
+                this.middlePnl.setVisible(false)
+                this.bottomPnl.setVisible(false)
                 this.pnl.setVisible(true)
                 if (isNeedUpdate) {
                     this.startUpdate()

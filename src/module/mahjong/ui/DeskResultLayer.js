@@ -39,6 +39,7 @@ load('module/mahjong/ui/DeskResultLayer', function () {
         RES_BINDING: function () {
             return {
                 'topPnl/CloseBtn': {onClicked: this.onCloseBtnClick},
+                'topPnl/liuJuBg': {},
                 'midPnl/midNd': {},
                 'midPnl/midNd/PlayerCell': {},
                 'bmPnl': {},
@@ -209,6 +210,7 @@ load('module/mahjong/ui/DeskResultLayer', function () {
         },
 
         initView: function (pData) {
+
             this.initData(pData)
             this.PlayerCell.setVisible(false)
             this.InfoCell.setVisible(false)
@@ -217,6 +219,9 @@ load('module/mahjong/ui/DeskResultLayer', function () {
             let initInfo = {}
             initInfo._index = 0
 
+            let isLiuJu = this._pData.tableData.pIsLiuJu == 1 ? true : false
+            this.liuJuBg.setVisible(isLiuJu)
+
             for (let i = 0; i < this._playerNum; ++i) {
                 this.initPlayerCell(i, this._players[i])
                 if (this._players[i].pid === this._selfInfo.pid) {
@@ -224,6 +229,12 @@ load('module/mahjong/ui/DeskResultLayer', function () {
                     //初始化最大观看次数和已经观看次数
                     this._watchMaxNum = this._players[i].pMaxWatchNum
                     this._usedWatchNum = this._players[i].pAlreadyWatchNum
+                    //赢牌输牌音效
+                    if (this._players[i].pOffsetCoins>0) {
+                        appInstance.audioManager().playEffect(GameResConfig.Sound.win)
+                    } else {
+                        appInstance.audioManager().playEffect(GameResConfig.Sound.lose)
+                    }
                 }
             }
             this.onInfoBtnClick(initInfo)
@@ -427,6 +438,11 @@ load('module/mahjong/ui/DeskResultLayer', function () {
         },
 
         onEnter: function () {
+            let players = appInstance.dataManager().getPlayData().players
+            for (let i in players) {
+                players[i].initData()
+            }
+
             this._super()
             appInstance.nativeApi().getInvitationCode(inviteUrl)
         },

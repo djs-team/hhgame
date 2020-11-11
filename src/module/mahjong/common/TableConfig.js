@@ -27,6 +27,7 @@ load('module/mahjong/common/TableConfig', function () {
         'MatchReadyProto': 'MatchReadyProto',
         'MatchEnterTableProto': 'MatchEnterTableProto',
         'GameFenZhangProto': 'GameFenZhangProto',
+        'GameBaoProto': 'GameBaoProto',
     }
 
 
@@ -163,6 +164,8 @@ load('module/mahjong/common/TableConfig', function () {
             'desc': '过'
         }
     }
+
+    TableConfig.resultDelayTime = 2
 
     TableConfig.experssion = {
         'express':{

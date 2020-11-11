@@ -594,7 +594,7 @@
               "Y": 0.1555
             },
             "PreSize": {
-              "X": 0.1563,
+              "X": 0.1562,
               "Y": 0.725
             },
             "LeftMargin": 1077.3888,
@@ -4093,7 +4093,7 @@
                       "Y": 0.4947
                     },
                     "PreSize": {
-                      "X": 0.1563,
+                      "X": 0.1562,
                       "Y": 0.2778
                     },
                     "LeftMargin": 258.912,
@@ -5567,6 +5567,7 @@
                 },
                 "Scale9Width": 1,
                 "Scale9Height": 1,
+                "TouchEnable": true,
                 "AnchorPoint": {
                   "ScaleX": 0.5,
                   "ScaleY": 0.5
@@ -7731,6 +7732,7 @@
                 },
                 "Scale9Width": 1,
                 "Scale9Height": 1,
+                "TouchEnable": true,
                 "AnchorPoint": {
                   "ScaleX": 0.5,
                   "ScaleY": 0.5

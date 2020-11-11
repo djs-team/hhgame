@@ -51,7 +51,7 @@ load('module/mahjong/ui/DeskCardLayerMdt', function () {
                     break
                 case TableEvent.PutCardProto:
                     this.PutCardProto(body)
-                    this.runDirection()
+                    //this.runDirection()
                     break
                 case TableEvent.prePutCard:
                     this.prePutCard(body)

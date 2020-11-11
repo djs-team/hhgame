@@ -9,10 +9,12 @@ load('module/mahjong/ui/EffectLayerMdt', function () {
     let TableConfig = include('module/mahjong/common/TableConfig')
     let TableEvent = TableConfig.Event
     let ResConfig = include('module/mahjong/common/ResConfig')
+    let GameResConfig = include('game/config/ResConfig')
     let Sound = ResConfig.Sound
 
     let DeskMdt = Mediator.extend({
         mediatorName: 'EffectLayerMdt',
+        _resultDelayTime : TableConfig.resultDelayTime,
         ctor: function (view) {
             this._super(this.mediatorName,view)
         },
@@ -24,6 +26,7 @@ load('module/mahjong/ui/EffectLayerMdt', function () {
                 TableEvent.DrawCardProto,
                 TableEvent.PlayerSelectProto,
                 TableEvent.GameResultProto,
+                TableEvent.GameBaoProto,
             ]
         },
         handleNotification: function (notification) {
@@ -37,7 +40,7 @@ load('module/mahjong/ui/EffectLayerMdt', function () {
                     this.PlayerSelectProto(body)
                     break
                 case TableEvent.MatchResultProto:
-                    appInstance.gameAgent().delayCall(2, this.MatchResultProto, body, this)
+                    appInstance.gameAgent().delayCall(this._resultDelayTime, this.MatchResultProto, body, this)
                     // this.MatchResultProto(body)
                     break
                 case TableEvent.MatchEnterTableProto:
@@ -46,10 +49,17 @@ load('module/mahjong/ui/EffectLayerMdt', function () {
                 case TableEvent.TableHostingProto:
                     break
                 case TableEvent.GameResultProto:
-                    appInstance.gameAgent().delayCall(2, this.GameResultProto, body, this)
+                    appInstance.gameAgent().delayCall(this._resultDelayTime, this.GameResultProto, body, this)
                     // this.GameResultProto(body)
                     break
+                case TableEvent.GameBaoProto:
+                    this.HuanBaoProto()
+                    break
             }
+        },
+
+        HuanBaoProto: function () {
+            appInstance.gameAgent().mjUtil().playGamingSound(Sound.play.huanbao)
         },
 
         MatchEnterTableProto: function (msg) {
@@ -75,7 +85,10 @@ load('module/mahjong/ui/EffectLayerMdt', function () {
             if (pData.isMatch()) {
                 let tData = pData.tableData
                 if (tData.pCurRound === 1) {
-                    appInstance.gameAgent().mjUtil().playGamingSound(Sound.play.match_begin)
+                    appInstance.audioManager().playEffect(GameResConfig.Sound.begin)
+                    setTimeout(function(){
+                        appInstance.gameAgent().mjUtil().playGamingSound(Sound.play.match_begin)
+                    }, 1000)
                 }
             } else {
                 appInstance.gameAgent().mjUtil().playGamingSound(Sound.play.begin)
@@ -92,14 +105,16 @@ load('module/mahjong/ui/EffectLayerMdt', function () {
                 if (mySeatId === winSeat) {
                     let huType = msg.pHuType
                     let huArray = Sound.play.hu
+                    let huTypeArray = [];
                     for (let i = 0; i < huType.length; ++i) {
-                        if (huType[i].pHu === 4) {
-                            huArray = Sound.play.hu_zimo
-                        } else if (huType[i].pHu === 35) {
-                            huArray = Sound.play.hu_mobao
-                        } else if (huType[i].pHu === 83) {
-                            huArray = Sound.play.hu_baozhongbao
-                        }
+                        huTypeArray.push(huType[i].pHu)
+                    }
+                    if (huTypeArray.indexOf(83) != -1) {
+                        huArray = Sound.play.hu_baozhongbao
+                    } else if (huTypeArray.indexOf(35) != -1) {
+                        huArray = Sound.play.hu_loubao
+                    } else if (huTypeArray.indexOf(4) != -1) {
+                        huArray = Sound.play.hu_zimo
                     }
                     // 漏宝胡 ID 配置服务器没给
                     appInstance.gameAgent().mjUtil().playGamingSound(huArray)

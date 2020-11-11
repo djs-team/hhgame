@@ -1,7 +1,7 @@
 
 load('public/manager/AudioManager', function () {
     let audioManager = cc.Class.extend({
-        _defaultVolume: 0,
+        _defaultVolume: 50,
         _bgMusic: null, // 背景音乐
         _bgMusicID: null, // 背景音乐的ID
         _musicVolume: null, // 背景音乐的音量

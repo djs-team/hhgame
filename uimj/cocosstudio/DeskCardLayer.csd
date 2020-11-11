@@ -133,42 +133,6 @@
                 <PrePosition X="0.3914" Y="0.2708" />
                 <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="DeckNd0" Visible="False" ActionTag="657387221" Tag="17" IconVisible="True" LeftMargin="655.5400" RightMargin="624.4600" TopMargin="615.0000" BottomMargin="105.0000" ctype="SingleNodeObjectData">
-                <Size X="0.0000" Y="0.0000" />
-                <AnchorPoint />
-                <Position X="655.5400" Y="105.0000" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5121" Y="0.1458" />
-                <PreSize X="0.0000" Y="0.0000" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="DeckNd1" Visible="False" ActionTag="1724808114" Tag="19" IconVisible="True" LeftMargin="977.3639" RightMargin="302.6361" TopMargin="445.0000" BottomMargin="275.0000" ctype="SingleNodeObjectData">
-                <Size X="0.0000" Y="0.0000" />
-                <AnchorPoint />
-                <Position X="977.3639" Y="275.0000" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.7636" Y="0.3819" />
-                <PreSize X="0.0000" Y="0.0000" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="DeckNd2" Visible="False" ActionTag="1718938858" Tag="20" IconVisible="True" LeftMargin="640.0000" RightMargin="640.0000" TopMargin="372.0000" BottomMargin="348.0000" ctype="SingleNodeObjectData">
-                <Size X="0.0000" Y="0.0000" />
-                <AnchorPoint />
-                <Position X="640.0000" Y="348.0000" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5000" Y="0.4833" />
-                <PreSize X="0.0000" Y="0.0000" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="DeckNd3" Visible="False" ActionTag="686482765" Tag="18" IconVisible="True" LeftMargin="290.0000" RightMargin="990.0000" TopMargin="455.0000" BottomMargin="265.0000" ctype="SingleNodeObjectData">
-                <Size X="0.0000" Y="0.0000" />
-                <AnchorPoint />
-                <Position X="290.0000" Y="265.0000" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.2266" Y="0.3681" />
-                <PreSize X="0.0000" Y="0.0000" />
-              </AbstractNodeData>
               <AbstractNodeData Name="OutNd2" Visible="False" ActionTag="-1122272349" Tag="16" IconVisible="True" LeftMargin="716.0000" RightMargin="564.0000" TopMargin="414.0000" BottomMargin="306.0000" ctype="SingleNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <AnchorPoint />
@@ -439,7 +403,7 @@
                       <AbstractNodeData Name="CardBg" ActionTag="-1613138318" Tag="91" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
                         <Size X="54.0000" Y="83.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position Y="0.0000" />
+                        <Position />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
                         <PrePosition />
@@ -1359,7 +1323,7 @@
                 <PrePosition X="0.8506" Y="0.3349" />
                 <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="HandCardNd2" ActionTag="207903160" Tag="18" IconVisible="True" LeftMargin="664.2587" RightMargin="615.7413" TopMargin="321.4811" BottomMargin="398.5189" ctype="SingleNodeObjectData">
+              <AbstractNodeData Name="HandCardNd2" Visible="False" ActionTag="207903160" Tag="18" IconVisible="True" LeftMargin="664.2587" RightMargin="615.7413" TopMargin="321.4811" BottomMargin="398.5189" ctype="SingleNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <Children>
                   <AbstractNodeData Name="Card0" ActionTag="-177804751" Tag="94" IconVisible="True" LeftMargin="168.5600" RightMargin="-168.5600" TopMargin="1.5000" BottomMargin="-1.5000" ctype="SingleNodeObjectData">
@@ -2538,1187 +2502,6 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5190" Y="0.5535" />
-                <PreSize X="0.0000" Y="0.0000" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="HandCardNd3" Visible="False" ActionTag="-1133327528" Tag="19" IconVisible="True" LeftMargin="244.3682" RightMargin="1035.6318" TopMargin="484.3781" BottomMargin="235.6219" ctype="SingleNodeObjectData">
-                <Size X="0.0000" Y="0.0000" />
-                <Children>
-                  <AbstractNodeData Name="Card0" ActionTag="2002640287" Tag="148" IconVisible="True" LeftMargin="47.3590" RightMargin="-47.3590" TopMargin="-123.9969" BottomMargin="123.9969" ctype="SingleNodeObjectData">
-                    <Size X="0.0000" Y="0.0000" />
-                    <Children>
-                      <AbstractNodeData Name="CardBg" ActionTag="-156472133" Tag="149" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
-                        <Size X="54.0000" Y="83.0000" />
-                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                        <FileData Type="Normal" Path="card/ground/hand/left_hand_0.png" Plist="" />
-                      </AbstractNodeData>
-                    </Children>
-                    <AnchorPoint />
-                    <Position X="47.3590" Y="123.9969" />
-                    <Scale ScaleX="0.8500" ScaleY="0.8500" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition />
-                    <PreSize X="0.0000" Y="0.0000" />
-                  </AbstractNodeData>
-                  <AbstractNodeData Name="Card1" ActionTag="161559655" Tag="150" IconVisible="True" LeftMargin="30.0000" RightMargin="-30.0000" TopMargin="-98.0000" BottomMargin="98.0000" ctype="SingleNodeObjectData">
-                    <Size X="0.0000" Y="0.0000" />
-                    <Children>
-                      <AbstractNodeData Name="CardBg" ActionTag="1586150260" Tag="151" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
-                        <Size X="54.0000" Y="83.0000" />
-                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                        <FileData Type="Normal" Path="card/ground/hand/left_hand_0.png" Plist="" />
-                      </AbstractNodeData>
-                    </Children>
-                    <AnchorPoint />
-                    <Position X="30.0000" Y="98.0000" />
-                    <Scale ScaleX="0.8500" ScaleY="0.8500" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition />
-                    <PreSize X="0.0000" Y="0.0000" />
-                  </AbstractNodeData>
-                  <AbstractNodeData Name="Card2" Visible="False" ActionTag="-443870976" Tag="152" IconVisible="True" LeftMargin="12.5000" RightMargin="-12.5000" TopMargin="-76.5000" BottomMargin="76.5000" ctype="SingleNodeObjectData">
-                    <Size X="0.0000" Y="0.0000" />
-                    <Children>
-                      <AbstractNodeData Name="CardBg" ActionTag="-877475308" Tag="153" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
-                        <Size X="54.0000" Y="83.0000" />
-                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                        <FileData Type="Normal" Path="card/ground/hand/left_hand_0.png" Plist="" />
-                      </AbstractNodeData>
-                    </Children>
-                    <AnchorPoint />
-                    <Position X="12.5000" Y="76.5000" />
-                    <Scale ScaleX="0.9000" ScaleY="0.9000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition />
-                    <PreSize X="0.0000" Y="0.0000" />
-                  </AbstractNodeData>
-                  <AbstractNodeData Name="Card3" Visible="False" ActionTag="1624935311" Tag="154" IconVisible="True" LeftMargin="-5.0000" RightMargin="5.0000" TopMargin="-55.0000" BottomMargin="55.0000" ctype="SingleNodeObjectData">
-                    <Size X="0.0000" Y="0.0000" />
-                    <Children>
-                      <AbstractNodeData Name="CardBg" ActionTag="574270613" Tag="155" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
-                        <Size X="54.0000" Y="83.0000" />
-                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                        <FileData Type="Normal" Path="card/ground/hand/left_hand_0.png" Plist="" />
-                      </AbstractNodeData>
-                    </Children>
-                    <AnchorPoint />
-                    <Position X="-5.0000" Y="55.0000" />
-                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition />
-                    <PreSize X="0.0000" Y="0.0000" />
-                  </AbstractNodeData>
-                  <AbstractNodeData Name="Card4" Visible="False" ActionTag="1613000307" Tag="156" IconVisible="True" LeftMargin="-22.5000" RightMargin="22.5000" TopMargin="-33.5000" BottomMargin="33.5000" ctype="SingleNodeObjectData">
-                    <Size X="0.0000" Y="0.0000" />
-                    <Children>
-                      <AbstractNodeData Name="CardBg" ActionTag="1550392742" Tag="157" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
-                        <Size X="54.0000" Y="83.0000" />
-                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                        <FileData Type="Normal" Path="card/ground/hand/left_hand_0.png" Plist="" />
-                      </AbstractNodeData>
-                    </Children>
-                    <AnchorPoint />
-                    <Position X="-22.5000" Y="33.5000" />
-                    <Scale ScaleX="1.0500" ScaleY="1.0500" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition />
-                    <PreSize X="0.0000" Y="0.0000" />
-                  </AbstractNodeData>
-                  <AbstractNodeData Name="Card5" Visible="False" ActionTag="-173122910" Tag="158" IconVisible="True" LeftMargin="-40.0000" RightMargin="40.0000" TopMargin="-12.0000" BottomMargin="12.0000" ctype="SingleNodeObjectData">
-                    <Size X="0.0000" Y="0.0000" />
-                    <Children>
-                      <AbstractNodeData Name="CardBg" ActionTag="942277431" Tag="159" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
-                        <Size X="54.0000" Y="83.0000" />
-                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                        <FileData Type="Normal" Path="card/ground/hand/left_hand_0.png" Plist="" />
-                      </AbstractNodeData>
-                    </Children>
-                    <AnchorPoint />
-                    <Position X="-40.0000" Y="12.0000" />
-                    <Scale ScaleX="1.1000" ScaleY="1.1000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition />
-                    <PreSize X="0.0000" Y="0.0000" />
-                  </AbstractNodeData>
-                  <AbstractNodeData Name="Card6" Visible="False" ActionTag="-360160379" Tag="160" IconVisible="True" LeftMargin="-57.5000" RightMargin="57.5000" TopMargin="9.5000" BottomMargin="-9.5000" ctype="SingleNodeObjectData">
-                    <Size X="0.0000" Y="0.0000" />
-                    <Children>
-                      <AbstractNodeData Name="CardBg" ActionTag="1059772986" Tag="161" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
-                        <Size X="54.0000" Y="83.0000" />
-                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                        <FileData Type="Normal" Path="card/ground/hand/left_hand_0.png" Plist="" />
-                      </AbstractNodeData>
-                    </Children>
-                    <AnchorPoint />
-                    <Position X="-57.5000" Y="-9.5000" />
-                    <Scale ScaleX="1.1500" ScaleY="1.1500" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition />
-                    <PreSize X="0.0000" Y="0.0000" />
-                  </AbstractNodeData>
-                  <AbstractNodeData Name="Card7" Visible="False" ActionTag="-1574519001" Tag="162" IconVisible="True" LeftMargin="-75.0000" RightMargin="75.0000" TopMargin="31.0000" BottomMargin="-31.0000" ctype="SingleNodeObjectData">
-                    <Size X="0.0000" Y="0.0000" />
-                    <Children>
-                      <AbstractNodeData Name="CardBg" ActionTag="811740039" Tag="163" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
-                        <Size X="54.0000" Y="83.0000" />
-                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                        <FileData Type="Normal" Path="card/ground/hand/left_hand_0.png" Plist="" />
-                      </AbstractNodeData>
-                    </Children>
-                    <AnchorPoint />
-                    <Position X="-75.0000" Y="-31.0000" />
-                    <Scale ScaleX="1.2000" ScaleY="1.2000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition />
-                    <PreSize X="0.0000" Y="0.0000" />
-                  </AbstractNodeData>
-                  <AbstractNodeData Name="Card8" Visible="False" ActionTag="-415100866" Tag="164" IconVisible="True" LeftMargin="-92.5000" RightMargin="92.5000" TopMargin="52.5000" BottomMargin="-52.5000" ctype="SingleNodeObjectData">
-                    <Size X="0.0000" Y="0.0000" />
-                    <Children>
-                      <AbstractNodeData Name="CardBg" ActionTag="-1080862713" Tag="165" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
-                        <Size X="54.0000" Y="83.0000" />
-                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                        <FileData Type="Normal" Path="card/ground/hand/left_hand_0.png" Plist="" />
-                      </AbstractNodeData>
-                    </Children>
-                    <AnchorPoint />
-                    <Position X="-92.5000" Y="-52.5000" />
-                    <Scale ScaleX="1.2500" ScaleY="1.2500" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition />
-                    <PreSize X="0.0000" Y="0.0000" />
-                  </AbstractNodeData>
-                  <AbstractNodeData Name="Card9" Visible="False" ActionTag="-1577685188" Tag="166" IconVisible="True" LeftMargin="-110.0000" RightMargin="110.0000" TopMargin="74.0000" BottomMargin="-74.0000" ctype="SingleNodeObjectData">
-                    <Size X="0.0000" Y="0.0000" />
-                    <Children>
-                      <AbstractNodeData Name="CardBg" ActionTag="-999687167" Tag="167" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
-                        <Size X="54.0000" Y="83.0000" />
-                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                        <FileData Type="Normal" Path="card/ground/hand/left_hand_0.png" Plist="" />
-                      </AbstractNodeData>
-                    </Children>
-                    <AnchorPoint />
-                    <Position X="-110.0000" Y="-74.0000" />
-                    <Scale ScaleX="1.3000" ScaleY="1.3000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition />
-                    <PreSize X="0.0000" Y="0.0000" />
-                  </AbstractNodeData>
-                  <AbstractNodeData Name="Card10" Visible="False" ActionTag="-982939139" Tag="168" IconVisible="True" LeftMargin="-127.5000" RightMargin="127.5000" TopMargin="95.5000" BottomMargin="-95.5000" ctype="SingleNodeObjectData">
-                    <Size X="0.0000" Y="0.0000" />
-                    <Children>
-                      <AbstractNodeData Name="CardBg" ActionTag="1844024390" Tag="169" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
-                        <Size X="54.0000" Y="83.0000" />
-                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                        <FileData Type="Normal" Path="card/ground/hand/left_hand_0.png" Plist="" />
-                      </AbstractNodeData>
-                    </Children>
-                    <AnchorPoint />
-                    <Position X="-127.5000" Y="-95.5000" />
-                    <Scale ScaleX="1.3500" ScaleY="1.3500" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition />
-                    <PreSize X="0.0000" Y="0.0000" />
-                  </AbstractNodeData>
-                  <AbstractNodeData Name="Card11" Visible="False" ActionTag="-1608964722" Tag="170" IconVisible="True" LeftMargin="-145.0000" RightMargin="145.0000" TopMargin="117.0000" BottomMargin="-117.0000" ctype="SingleNodeObjectData">
-                    <Size X="0.0000" Y="0.0000" />
-                    <Children>
-                      <AbstractNodeData Name="CardBg" ActionTag="-1126334117" Tag="171" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
-                        <Size X="54.0000" Y="83.0000" />
-                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                        <FileData Type="Normal" Path="card/ground/hand/left_hand_0.png" Plist="" />
-                      </AbstractNodeData>
-                    </Children>
-                    <AnchorPoint />
-                    <Position X="-145.0000" Y="-117.0000" />
-                    <Scale ScaleX="1.4000" ScaleY="1.4000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition />
-                    <PreSize X="0.0000" Y="0.0000" />
-                  </AbstractNodeData>
-                  <AbstractNodeData Name="Card12" Visible="False" ActionTag="124186166" Tag="172" IconVisible="True" LeftMargin="-162.5000" RightMargin="162.5000" TopMargin="138.5000" BottomMargin="-138.5000" ctype="SingleNodeObjectData">
-                    <Size X="0.0000" Y="0.0000" />
-                    <Children>
-                      <AbstractNodeData Name="CardBg" ActionTag="-547995393" Tag="173" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
-                        <Size X="54.0000" Y="83.0000" />
-                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                        <FileData Type="Normal" Path="card/ground/hand/left_hand_0.png" Plist="" />
-                      </AbstractNodeData>
-                    </Children>
-                    <AnchorPoint />
-                    <Position X="-162.5000" Y="-138.5000" />
-                    <Scale ScaleX="1.4500" ScaleY="1.4500" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition />
-                    <PreSize X="0.0000" Y="0.0000" />
-                  </AbstractNodeData>
-                  <AbstractNodeData Name="Card13" Visible="False" ActionTag="-505443469" Tag="174" IconVisible="True" LeftMargin="-180.0000" RightMargin="180.0000" TopMargin="160.0000" BottomMargin="-160.0000" ctype="SingleNodeObjectData">
-                    <Size X="0.0000" Y="0.0000" />
-                    <Children>
-                      <AbstractNodeData Name="CardBg" ActionTag="89264891" Tag="175" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
-                        <Size X="54.0000" Y="83.0000" />
-                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                        <FileData Type="Normal" Path="card/ground/hand/left_hand_0.png" Plist="" />
-                      </AbstractNodeData>
-                    </Children>
-                    <AnchorPoint />
-                    <Position X="-180.0000" Y="-160.0000" />
-                    <Scale ScaleX="1.5000" ScaleY="1.5000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition />
-                    <PreSize X="0.0000" Y="0.0000" />
-                  </AbstractNodeData>
-                  <AbstractNodeData Name="Group3" ActionTag="764770115" Tag="296" IconVisible="True" LeftMargin="-25.5804" RightMargin="25.5804" TopMargin="-45.8341" BottomMargin="45.8341" ctype="SingleNodeObjectData">
-                    <Size X="0.0000" Y="0.0000" />
-                    <Children>
-                      <AbstractNodeData Name="Card0" ActionTag="-998375607" Tag="297" IconVisible="True" LeftMargin="17.2724" RightMargin="-17.2724" TopMargin="-21.6786" BottomMargin="21.6786" ctype="SingleNodeObjectData">
-                        <Size X="0.0000" Y="0.0000" />
-                        <Children>
-                          <AbstractNodeData Name="CardBg" ActionTag="1095339396" Tag="298" IconVisible="False" LeftMargin="-31.5000" RightMargin="-31.5000" TopMargin="-20.0000" BottomMargin="-20.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="9" Scale9Height="16" ctype="ImageViewObjectData">
-                            <Size X="63.0000" Y="40.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="Normal" Path="card/ground/hand/left_hand.png" Plist="" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="CardValue" ActionTag="-1804375979" Tag="299" RotationSkewX="30.0000" IconVisible="False" LeftMargin="-29.4688" RightMargin="-28.5312" TopMargin="-31.3262" BottomMargin="-12.6738" LeftEage="16" RightEage="16" TopEage="17" BottomEage="17" Scale9OriginX="16" Scale9OriginY="17" Scale9Width="26" Scale9Height="10" ctype="ImageViewObjectData">
-                            <Size X="58.0000" Y="44.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="-0.4688" Y="9.3262" />
-                            <Scale ScaleX="0.7000" ScaleY="0.7000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="Normal" Path="card/value/leftshow/wan_left_1.png" Plist="" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position X="17.2724" Y="21.6786" />
-                        <Scale ScaleX="0.9700" ScaleY="0.9700" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Card1" ActionTag="-1141495932" Tag="300" IconVisible="True" ctype="SingleNodeObjectData">
-                        <Size X="0.0000" Y="0.0000" />
-                        <Children>
-                          <AbstractNodeData Name="CardBg" ActionTag="-699614882" Tag="301" IconVisible="False" LeftMargin="-31.5000" RightMargin="-31.5000" TopMargin="-20.0000" BottomMargin="-20.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="9" Scale9Height="16" ctype="ImageViewObjectData">
-                            <Size X="63.0000" Y="40.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="Normal" Path="card/ground/hand/left_hand.png" Plist="" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="CardValue" ActionTag="-368878801" Tag="302" RotationSkewX="30.0000" IconVisible="False" LeftMargin="-29.4688" RightMargin="-28.5312" TopMargin="-31.3262" BottomMargin="-12.6738" LeftEage="16" RightEage="16" TopEage="17" BottomEage="17" Scale9OriginX="16" Scale9OriginY="17" Scale9Width="26" Scale9Height="10" ctype="ImageViewObjectData">
-                            <Size X="58.0000" Y="44.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="-0.4688" Y="9.3262" />
-                            <Scale ScaleX="0.7000" ScaleY="0.7000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="Normal" Path="card/value/leftshow/wan_left_1.png" Plist="" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Card2" ActionTag="-1814090149" Tag="303" IconVisible="True" LeftMargin="-16.7677" RightMargin="16.7677" TopMargin="20.2330" BottomMargin="-20.2330" ctype="SingleNodeObjectData">
-                        <Size X="0.0000" Y="0.0000" />
-                        <Children>
-                          <AbstractNodeData Name="CardBg" ActionTag="-1158903917" Tag="304" IconVisible="False" LeftMargin="-31.5000" RightMargin="-31.5000" TopMargin="-20.0000" BottomMargin="-20.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="9" Scale9Height="16" ctype="ImageViewObjectData">
-                            <Size X="63.0000" Y="40.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="Normal" Path="card/ground/hand/left_hand.png" Plist="" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="CardValue" ActionTag="-1451365839" Tag="305" RotationSkewX="30.0000" IconVisible="False" LeftMargin="-29.4688" RightMargin="-28.5312" TopMargin="-31.3262" BottomMargin="-12.6738" LeftEage="16" RightEage="16" TopEage="17" BottomEage="17" Scale9OriginX="16" Scale9OriginY="17" Scale9Width="26" Scale9Height="10" ctype="ImageViewObjectData">
-                            <Size X="58.0000" Y="44.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="-0.4688" Y="9.3262" />
-                            <Scale ScaleX="0.7000" ScaleY="0.7000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="Normal" Path="card/value/leftshow/wan_left_1.png" Plist="" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position X="-16.7677" Y="-20.2330" />
-                        <Scale ScaleX="1.0300" ScaleY="1.0300" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Card5" ActionTag="-1468283205" Tag="585" IconVisible="True" LeftMargin="15.9782" RightMargin="-15.9782" TopMargin="-23.6273" BottomMargin="23.6273" ctype="SingleNodeObjectData">
-                        <Size X="0.0000" Y="0.0000" />
-                        <Children>
-                          <AbstractNodeData Name="CardBg" ActionTag="-2004259149" Tag="586" IconVisible="False" LeftMargin="-32.5000" RightMargin="-32.5000" TopMargin="-19.0000" BottomMargin="-19.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="11" Scale9Height="14" ctype="ImageViewObjectData">
-                            <Size X="65.0000" Y="38.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="Normal" Path="card/ground/hand/left_hand_1.png" Plist="" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position X="15.9782" Y="23.6273" />
-                        <Scale ScaleX="0.9700" ScaleY="0.9700" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Card6" ActionTag="428506416" Tag="588" IconVisible="True" LeftMargin="-0.1754" RightMargin="0.1754" TopMargin="-0.1773" BottomMargin="0.1773" ctype="SingleNodeObjectData">
-                        <Size X="0.0000" Y="0.0000" />
-                        <Children>
-                          <AbstractNodeData Name="CardBg" ActionTag="-315526554" Tag="589" IconVisible="False" LeftMargin="-32.5000" RightMargin="-32.5000" TopMargin="-19.0000" BottomMargin="-19.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="11" Scale9Height="14" ctype="ImageViewObjectData">
-                            <Size X="65.0000" Y="38.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="Normal" Path="card/ground/hand/left_hand_1.png" Plist="" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position X="-0.1754" Y="0.1773" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Card7" ActionTag="1599278016" Tag="590" IconVisible="True" LeftMargin="-16.3295" RightMargin="16.3295" TopMargin="18.7899" BottomMargin="-18.7899" ctype="SingleNodeObjectData">
-                        <Size X="0.0000" Y="0.0000" />
-                        <Children>
-                          <AbstractNodeData Name="CardBg" ActionTag="1086936187" Tag="591" IconVisible="False" LeftMargin="-32.5000" RightMargin="-32.5000" TopMargin="-19.0000" BottomMargin="-19.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="11" Scale9Height="14" ctype="ImageViewObjectData">
-                            <Size X="65.0000" Y="38.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="Normal" Path="card/ground/hand/left_hand_1.png" Plist="" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position X="-16.3295" Y="-18.7899" />
-                        <Scale ScaleX="1.0300" ScaleY="1.0300" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Card4" ActionTag="985551017" Tag="592" IconVisible="True" LeftMargin="-0.3516" RightMargin="0.3516" TopMargin="-16.7921" BottomMargin="16.7921" ctype="SingleNodeObjectData">
-                        <Size X="0.0000" Y="0.0000" />
-                        <Children>
-                          <AbstractNodeData Name="CardBg" ActionTag="-936536945" Tag="593" IconVisible="False" LeftMargin="-32.5000" RightMargin="-32.5000" TopMargin="-19.0000" BottomMargin="-19.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="11" Scale9Height="14" ctype="ImageViewObjectData">
-                            <Size X="65.0000" Y="38.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="Normal" Path="card/ground/hand/left_hand_1.png" Plist="" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position X="-0.3516" Y="16.7921" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Card3" ActionTag="-159093948" Tag="306" IconVisible="True" LeftMargin="-1.2966" RightMargin="1.2966" TopMargin="-15.2025" BottomMargin="15.2025" ctype="SingleNodeObjectData">
-                        <Size X="0.0000" Y="0.0000" />
-                        <Children>
-                          <AbstractNodeData Name="CardBg" ActionTag="1582432908" Tag="307" IconVisible="False" LeftMargin="-31.5000" RightMargin="-31.5000" TopMargin="-20.0000" BottomMargin="-20.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="9" Scale9Height="16" ctype="ImageViewObjectData">
-                            <Size X="63.0000" Y="40.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="Normal" Path="card/ground/hand/left_hand.png" Plist="" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="CardValue" ActionTag="2002343180" Tag="308" RotationSkewX="30.0000" IconVisible="False" LeftMargin="-29.4688" RightMargin="-28.5312" TopMargin="-31.3262" BottomMargin="-12.6738" LeftEage="16" RightEage="16" TopEage="17" BottomEage="17" Scale9OriginX="16" Scale9OriginY="17" Scale9Width="26" Scale9Height="10" ctype="ImageViewObjectData">
-                            <Size X="58.0000" Y="44.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="-0.4688" Y="9.3262" />
-                            <Scale ScaleX="0.7000" ScaleY="0.7000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="Normal" Path="card/value/leftshow/wan_left_1.png" Plist="" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position X="-1.2966" Y="15.2025" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                      </AbstractNodeData>
-                    </Children>
-                    <AnchorPoint />
-                    <Position X="-25.5804" Y="45.8341" />
-                    <Scale ScaleX="0.8700" ScaleY="0.8700" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition />
-                    <PreSize X="0.0000" Y="0.0000" />
-                  </AbstractNodeData>
-                  <AbstractNodeData Name="Group2" ActionTag="-1109265836" Tag="594" IconVisible="True" LeftMargin="-75.8100" RightMargin="75.8100" TopMargin="21.5800" BottomMargin="-21.5800" ctype="SingleNodeObjectData">
-                    <Size X="0.0000" Y="0.0000" />
-                    <Children>
-                      <AbstractNodeData Name="Card0" ActionTag="452206462" Tag="595" IconVisible="True" LeftMargin="17.2724" RightMargin="-17.2724" TopMargin="-21.6786" BottomMargin="21.6786" ctype="SingleNodeObjectData">
-                        <Size X="0.0000" Y="0.0000" />
-                        <Children>
-                          <AbstractNodeData Name="CardBg" ActionTag="-1476563315" Tag="596" IconVisible="False" LeftMargin="-31.5000" RightMargin="-31.5000" TopMargin="-20.0000" BottomMargin="-20.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="9" Scale9Height="16" ctype="ImageViewObjectData">
-                            <Size X="63.0000" Y="40.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="Normal" Path="card/ground/hand/left_hand.png" Plist="" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="CardValue" ActionTag="395638260" Tag="597" RotationSkewX="30.0000" IconVisible="False" LeftMargin="-29.4688" RightMargin="-28.5312" TopMargin="-31.3262" BottomMargin="-12.6738" LeftEage="16" RightEage="16" TopEage="17" BottomEage="17" Scale9OriginX="16" Scale9OriginY="17" Scale9Width="26" Scale9Height="10" ctype="ImageViewObjectData">
-                            <Size X="58.0000" Y="44.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="-0.4688" Y="9.3262" />
-                            <Scale ScaleX="0.7000" ScaleY="0.7000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="Normal" Path="card/value/leftshow/wan_left_1.png" Plist="" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position X="17.2724" Y="21.6786" />
-                        <Scale ScaleX="0.9700" ScaleY="0.9700" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Card1" ActionTag="-2067349905" Tag="598" IconVisible="True" ctype="SingleNodeObjectData">
-                        <Size X="0.0000" Y="0.0000" />
-                        <Children>
-                          <AbstractNodeData Name="CardBg" ActionTag="-1481252700" Tag="599" IconVisible="False" LeftMargin="-31.5000" RightMargin="-31.5000" TopMargin="-20.0000" BottomMargin="-20.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="9" Scale9Height="16" ctype="ImageViewObjectData">
-                            <Size X="63.0000" Y="40.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="Normal" Path="card/ground/hand/left_hand.png" Plist="" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="CardValue" ActionTag="-496214412" Tag="600" RotationSkewX="30.0000" IconVisible="False" LeftMargin="-29.4688" RightMargin="-28.5312" TopMargin="-31.3262" BottomMargin="-12.6738" LeftEage="16" RightEage="16" TopEage="17" BottomEage="17" Scale9OriginX="16" Scale9OriginY="17" Scale9Width="26" Scale9Height="10" ctype="ImageViewObjectData">
-                            <Size X="58.0000" Y="44.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="-0.4688" Y="9.3262" />
-                            <Scale ScaleX="0.7000" ScaleY="0.7000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="Normal" Path="card/value/leftshow/wan_left_1.png" Plist="" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Card2" ActionTag="-139372294" Tag="601" IconVisible="True" LeftMargin="-16.7677" RightMargin="16.7677" TopMargin="20.2330" BottomMargin="-20.2330" ctype="SingleNodeObjectData">
-                        <Size X="0.0000" Y="0.0000" />
-                        <Children>
-                          <AbstractNodeData Name="CardBg" ActionTag="1690336892" Tag="602" IconVisible="False" LeftMargin="-31.5000" RightMargin="-31.5000" TopMargin="-20.0000" BottomMargin="-20.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="9" Scale9Height="16" ctype="ImageViewObjectData">
-                            <Size X="63.0000" Y="40.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="Normal" Path="card/ground/hand/left_hand.png" Plist="" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="CardValue" ActionTag="-1760376155" Tag="603" RotationSkewX="30.0000" IconVisible="False" LeftMargin="-29.4688" RightMargin="-28.5312" TopMargin="-31.3262" BottomMargin="-12.6738" LeftEage="16" RightEage="16" TopEage="17" BottomEage="17" Scale9OriginX="16" Scale9OriginY="17" Scale9Width="26" Scale9Height="10" ctype="ImageViewObjectData">
-                            <Size X="58.0000" Y="44.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="-0.4688" Y="9.3262" />
-                            <Scale ScaleX="0.7000" ScaleY="0.7000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="Normal" Path="card/value/leftshow/wan_left_1.png" Plist="" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position X="-16.7677" Y="-20.2330" />
-                        <Scale ScaleX="1.0300" ScaleY="1.0300" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Card5" ActionTag="37221870" Tag="607" IconVisible="True" LeftMargin="15.9782" RightMargin="-15.9782" TopMargin="-23.6273" BottomMargin="23.6273" ctype="SingleNodeObjectData">
-                        <Size X="0.0000" Y="0.0000" />
-                        <Children>
-                          <AbstractNodeData Name="CardBg" ActionTag="-1892813405" Tag="608" IconVisible="False" LeftMargin="-32.5000" RightMargin="-32.5000" TopMargin="-19.0000" BottomMargin="-19.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="11" Scale9Height="14" ctype="ImageViewObjectData">
-                            <Size X="65.0000" Y="38.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="Normal" Path="card/ground/hand/left_hand_1.png" Plist="" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position X="15.9782" Y="23.6273" />
-                        <Scale ScaleX="0.9700" ScaleY="0.9700" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Card6" ActionTag="-668580586" Tag="609" IconVisible="True" LeftMargin="-0.1754" RightMargin="0.1754" TopMargin="-0.1773" BottomMargin="0.1773" ctype="SingleNodeObjectData">
-                        <Size X="0.0000" Y="0.0000" />
-                        <Children>
-                          <AbstractNodeData Name="CardBg" ActionTag="-137271893" Tag="610" IconVisible="False" LeftMargin="-32.5000" RightMargin="-32.5000" TopMargin="-19.0000" BottomMargin="-19.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="11" Scale9Height="14" ctype="ImageViewObjectData">
-                            <Size X="65.0000" Y="38.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="Normal" Path="card/ground/hand/left_hand_1.png" Plist="" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position X="-0.1754" Y="0.1773" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Card7" ActionTag="1664105370" Tag="611" IconVisible="True" LeftMargin="-16.3295" RightMargin="16.3295" TopMargin="18.7899" BottomMargin="-18.7899" ctype="SingleNodeObjectData">
-                        <Size X="0.0000" Y="0.0000" />
-                        <Children>
-                          <AbstractNodeData Name="CardBg" ActionTag="194330020" Tag="612" IconVisible="False" LeftMargin="-32.5000" RightMargin="-32.5000" TopMargin="-19.0000" BottomMargin="-19.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="11" Scale9Height="14" ctype="ImageViewObjectData">
-                            <Size X="65.0000" Y="38.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="Normal" Path="card/ground/hand/left_hand_1.png" Plist="" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position X="-16.3295" Y="-18.7899" />
-                        <Scale ScaleX="1.0300" ScaleY="1.0300" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Card4" ActionTag="-1249578258" Tag="613" IconVisible="True" LeftMargin="-0.3516" RightMargin="0.3516" TopMargin="-16.7921" BottomMargin="16.7921" ctype="SingleNodeObjectData">
-                        <Size X="0.0000" Y="0.0000" />
-                        <Children>
-                          <AbstractNodeData Name="CardBg" ActionTag="670325242" Tag="614" IconVisible="False" LeftMargin="-32.5000" RightMargin="-32.5000" TopMargin="-19.0000" BottomMargin="-19.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="11" Scale9Height="14" ctype="ImageViewObjectData">
-                            <Size X="65.0000" Y="38.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="Normal" Path="card/ground/hand/left_hand_1.png" Plist="" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position X="-0.3516" Y="16.7921" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Card3" ActionTag="1677493420" Tag="604" IconVisible="True" LeftMargin="-1.2966" RightMargin="1.2966" TopMargin="-15.2025" BottomMargin="15.2025" ctype="SingleNodeObjectData">
-                        <Size X="0.0000" Y="0.0000" />
-                        <Children>
-                          <AbstractNodeData Name="CardBg" ActionTag="564565468" Tag="605" IconVisible="False" LeftMargin="-31.5000" RightMargin="-31.5000" TopMargin="-20.0000" BottomMargin="-20.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="9" Scale9Height="16" ctype="ImageViewObjectData">
-                            <Size X="63.0000" Y="40.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="Normal" Path="card/ground/hand/left_hand.png" Plist="" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="CardValue" ActionTag="1362959892" Tag="606" RotationSkewX="30.0000" IconVisible="False" LeftMargin="-29.4688" RightMargin="-28.5312" TopMargin="-31.3262" BottomMargin="-12.6738" LeftEage="16" RightEage="16" TopEage="17" BottomEage="17" Scale9OriginX="16" Scale9OriginY="17" Scale9Width="26" Scale9Height="10" ctype="ImageViewObjectData">
-                            <Size X="58.0000" Y="44.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="-0.4688" Y="9.3262" />
-                            <Scale ScaleX="0.7000" ScaleY="0.7000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="Normal" Path="card/value/leftshow/wan_left_1.png" Plist="" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position X="-1.2966" Y="15.2025" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                      </AbstractNodeData>
-                    </Children>
-                    <AnchorPoint />
-                    <Position X="-75.8100" Y="-21.5800" />
-                    <Scale ScaleX="0.9400" ScaleY="0.9400" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition />
-                    <PreSize X="0.0000" Y="0.0000" />
-                  </AbstractNodeData>
-                  <AbstractNodeData Name="Group1" ActionTag="-1184862257" Tag="615" IconVisible="True" LeftMargin="-129.1300" RightMargin="129.1300" TopMargin="87.7900" BottomMargin="-87.7900" ctype="SingleNodeObjectData">
-                    <Size X="0.0000" Y="0.0000" />
-                    <Children>
-                      <AbstractNodeData Name="Card0" ActionTag="1786704690" Tag="616" IconVisible="True" LeftMargin="17.2724" RightMargin="-17.2724" TopMargin="-21.6786" BottomMargin="21.6786" ctype="SingleNodeObjectData">
-                        <Size X="0.0000" Y="0.0000" />
-                        <Children>
-                          <AbstractNodeData Name="CardBg" ActionTag="-480426923" Tag="617" IconVisible="False" LeftMargin="-31.5000" RightMargin="-31.5000" TopMargin="-20.0000" BottomMargin="-20.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="9" Scale9Height="16" ctype="ImageViewObjectData">
-                            <Size X="63.0000" Y="40.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="Normal" Path="card/ground/hand/left_hand.png" Plist="" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="CardValue" ActionTag="1099140671" Tag="618" RotationSkewX="30.0000" IconVisible="False" LeftMargin="-29.4688" RightMargin="-28.5312" TopMargin="-31.3262" BottomMargin="-12.6738" LeftEage="16" RightEage="16" TopEage="17" BottomEage="17" Scale9OriginX="16" Scale9OriginY="17" Scale9Width="26" Scale9Height="10" ctype="ImageViewObjectData">
-                            <Size X="58.0000" Y="44.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="-0.4688" Y="9.3262" />
-                            <Scale ScaleX="0.7000" ScaleY="0.7000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="Normal" Path="card/value/leftshow/wan_left_1.png" Plist="" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position X="17.2724" Y="21.6786" />
-                        <Scale ScaleX="0.9700" ScaleY="0.9700" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Card1" ActionTag="-977943565" Tag="619" IconVisible="True" ctype="SingleNodeObjectData">
-                        <Size X="0.0000" Y="0.0000" />
-                        <Children>
-                          <AbstractNodeData Name="CardBg" ActionTag="139931683" Tag="620" IconVisible="False" LeftMargin="-31.5000" RightMargin="-31.5000" TopMargin="-20.0000" BottomMargin="-20.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="9" Scale9Height="16" ctype="ImageViewObjectData">
-                            <Size X="63.0000" Y="40.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="Normal" Path="card/ground/hand/left_hand.png" Plist="" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="CardValue" ActionTag="1336305152" Tag="621" RotationSkewX="30.0000" IconVisible="False" LeftMargin="-29.4688" RightMargin="-28.5312" TopMargin="-31.3262" BottomMargin="-12.6738" LeftEage="16" RightEage="16" TopEage="17" BottomEage="17" Scale9OriginX="16" Scale9OriginY="17" Scale9Width="26" Scale9Height="10" ctype="ImageViewObjectData">
-                            <Size X="58.0000" Y="44.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="-0.4688" Y="9.3262" />
-                            <Scale ScaleX="0.7000" ScaleY="0.7000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="Normal" Path="card/value/leftshow/wan_left_1.png" Plist="" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Card2" ActionTag="-2017822931" Tag="622" IconVisible="True" LeftMargin="-16.7677" RightMargin="16.7677" TopMargin="20.2330" BottomMargin="-20.2330" ctype="SingleNodeObjectData">
-                        <Size X="0.0000" Y="0.0000" />
-                        <Children>
-                          <AbstractNodeData Name="CardBg" ActionTag="-1240588133" Tag="623" IconVisible="False" LeftMargin="-31.5000" RightMargin="-31.5000" TopMargin="-20.0000" BottomMargin="-20.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="9" Scale9Height="16" ctype="ImageViewObjectData">
-                            <Size X="63.0000" Y="40.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="Normal" Path="card/ground/hand/left_hand.png" Plist="" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="CardValue" ActionTag="-273483857" Tag="624" RotationSkewX="30.0000" IconVisible="False" LeftMargin="-29.4688" RightMargin="-28.5312" TopMargin="-31.3262" BottomMargin="-12.6738" LeftEage="16" RightEage="16" TopEage="17" BottomEage="17" Scale9OriginX="16" Scale9OriginY="17" Scale9Width="26" Scale9Height="10" ctype="ImageViewObjectData">
-                            <Size X="58.0000" Y="44.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="-0.4688" Y="9.3262" />
-                            <Scale ScaleX="0.7000" ScaleY="0.7000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="Normal" Path="card/value/leftshow/wan_left_1.png" Plist="" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position X="-16.7677" Y="-20.2330" />
-                        <Scale ScaleX="1.0300" ScaleY="1.0300" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Card5" ActionTag="1041984970" Tag="628" IconVisible="True" LeftMargin="15.9782" RightMargin="-15.9782" TopMargin="-23.6273" BottomMargin="23.6273" ctype="SingleNodeObjectData">
-                        <Size X="0.0000" Y="0.0000" />
-                        <Children>
-                          <AbstractNodeData Name="CardBg" ActionTag="1067972086" Tag="629" IconVisible="False" LeftMargin="-32.5000" RightMargin="-32.5000" TopMargin="-19.0000" BottomMargin="-19.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="11" Scale9Height="14" ctype="ImageViewObjectData">
-                            <Size X="65.0000" Y="38.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="Normal" Path="card/ground/hand/left_hand_1.png" Plist="" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position X="15.9782" Y="23.6273" />
-                        <Scale ScaleX="0.9700" ScaleY="0.9700" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Card6" ActionTag="1197752534" Tag="630" IconVisible="True" LeftMargin="-0.1754" RightMargin="0.1754" TopMargin="-0.1773" BottomMargin="0.1773" ctype="SingleNodeObjectData">
-                        <Size X="0.0000" Y="0.0000" />
-                        <Children>
-                          <AbstractNodeData Name="CardBg" ActionTag="-1258712773" Tag="631" IconVisible="False" LeftMargin="-32.5000" RightMargin="-32.5000" TopMargin="-19.0000" BottomMargin="-19.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="11" Scale9Height="14" ctype="ImageViewObjectData">
-                            <Size X="65.0000" Y="38.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="Normal" Path="card/ground/hand/left_hand_1.png" Plist="" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position X="-0.1754" Y="0.1773" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Card7" ActionTag="1588957537" Tag="632" IconVisible="True" LeftMargin="-16.3295" RightMargin="16.3295" TopMargin="18.7899" BottomMargin="-18.7899" ctype="SingleNodeObjectData">
-                        <Size X="0.0000" Y="0.0000" />
-                        <Children>
-                          <AbstractNodeData Name="CardBg" ActionTag="-157820115" Tag="633" IconVisible="False" LeftMargin="-32.5000" RightMargin="-32.5000" TopMargin="-19.0000" BottomMargin="-19.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="11" Scale9Height="14" ctype="ImageViewObjectData">
-                            <Size X="65.0000" Y="38.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="Normal" Path="card/ground/hand/left_hand_1.png" Plist="" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position X="-16.3295" Y="-18.7899" />
-                        <Scale ScaleX="1.0300" ScaleY="1.0300" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Card4" ActionTag="1992332770" Tag="634" IconVisible="True" LeftMargin="-0.3516" RightMargin="0.3516" TopMargin="-16.7921" BottomMargin="16.7921" ctype="SingleNodeObjectData">
-                        <Size X="0.0000" Y="0.0000" />
-                        <Children>
-                          <AbstractNodeData Name="CardBg" ActionTag="-1156532633" Tag="635" IconVisible="False" LeftMargin="-32.5000" RightMargin="-32.5000" TopMargin="-19.0000" BottomMargin="-19.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="11" Scale9Height="14" ctype="ImageViewObjectData">
-                            <Size X="65.0000" Y="38.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="Normal" Path="card/ground/hand/left_hand_1.png" Plist="" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position X="-0.3516" Y="16.7921" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Card3" ActionTag="-1194280235" Tag="625" IconVisible="True" LeftMargin="-1.2966" RightMargin="1.2966" TopMargin="-15.2025" BottomMargin="15.2025" ctype="SingleNodeObjectData">
-                        <Size X="0.0000" Y="0.0000" />
-                        <Children>
-                          <AbstractNodeData Name="CardBg" ActionTag="-1340780973" Tag="626" IconVisible="False" LeftMargin="-31.5000" RightMargin="-31.5000" TopMargin="-20.0000" BottomMargin="-20.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="9" Scale9Height="16" ctype="ImageViewObjectData">
-                            <Size X="63.0000" Y="40.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="Normal" Path="card/ground/hand/left_hand.png" Plist="" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="CardValue" ActionTag="-411824864" Tag="627" RotationSkewX="30.0000" IconVisible="False" LeftMargin="-29.4688" RightMargin="-28.5312" TopMargin="-31.3262" BottomMargin="-12.6738" LeftEage="16" RightEage="16" TopEage="17" BottomEage="17" Scale9OriginX="16" Scale9OriginY="17" Scale9Width="26" Scale9Height="10" ctype="ImageViewObjectData">
-                            <Size X="58.0000" Y="44.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="-0.4688" Y="9.3262" />
-                            <Scale ScaleX="0.7000" ScaleY="0.7000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="Normal" Path="card/value/leftshow/wan_left_1.png" Plist="" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position X="-1.2966" Y="15.2025" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                      </AbstractNodeData>
-                    </Children>
-                    <AnchorPoint />
-                    <Position X="-129.1300" Y="-87.7900" />
-                    <Scale ScaleX="0.8700" ScaleY="0.8700" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition />
-                    <PreSize X="0.0000" Y="0.0000" />
-                  </AbstractNodeData>
-                  <AbstractNodeData Name="Group0" ActionTag="1032708863" Tag="636" IconVisible="True" LeftMargin="-180.4000" RightMargin="180.4000" TopMargin="158.3000" BottomMargin="-158.3000" ctype="SingleNodeObjectData">
-                    <Size X="0.0000" Y="0.0000" />
-                    <Children>
-                      <AbstractNodeData Name="Card0" ActionTag="1457446188" Tag="637" IconVisible="True" LeftMargin="17.2724" RightMargin="-17.2724" TopMargin="-21.6786" BottomMargin="21.6786" ctype="SingleNodeObjectData">
-                        <Size X="0.0000" Y="0.0000" />
-                        <Children>
-                          <AbstractNodeData Name="CardBg" ActionTag="362107835" Tag="638" IconVisible="False" LeftMargin="-31.5000" RightMargin="-31.5000" TopMargin="-20.0000" BottomMargin="-20.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="9" Scale9Height="16" ctype="ImageViewObjectData">
-                            <Size X="63.0000" Y="40.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="Normal" Path="card/ground/hand/left_hand.png" Plist="" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="CardValue" ActionTag="-556214138" Tag="639" RotationSkewX="30.0000" IconVisible="False" LeftMargin="-29.4688" RightMargin="-28.5312" TopMargin="-31.3262" BottomMargin="-12.6738" LeftEage="16" RightEage="16" TopEage="17" BottomEage="17" Scale9OriginX="16" Scale9OriginY="17" Scale9Width="26" Scale9Height="10" ctype="ImageViewObjectData">
-                            <Size X="58.0000" Y="44.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="-0.4688" Y="9.3262" />
-                            <Scale ScaleX="0.7000" ScaleY="0.7000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="Normal" Path="card/value/leftshow/wan_left_1.png" Plist="" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position X="17.2724" Y="21.6786" />
-                        <Scale ScaleX="0.9700" ScaleY="0.9700" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Card1" ActionTag="722720653" Tag="640" IconVisible="True" ctype="SingleNodeObjectData">
-                        <Size X="0.0000" Y="0.0000" />
-                        <Children>
-                          <AbstractNodeData Name="CardBg" ActionTag="1570503558" Tag="641" IconVisible="False" LeftMargin="-31.5000" RightMargin="-31.5000" TopMargin="-20.0000" BottomMargin="-20.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="9" Scale9Height="16" ctype="ImageViewObjectData">
-                            <Size X="63.0000" Y="40.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="Normal" Path="card/ground/hand/left_hand.png" Plist="" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="CardValue" ActionTag="-62952131" Tag="642" RotationSkewX="30.0000" IconVisible="False" LeftMargin="-29.4688" RightMargin="-28.5312" TopMargin="-31.3262" BottomMargin="-12.6738" LeftEage="16" RightEage="16" TopEage="17" BottomEage="17" Scale9OriginX="16" Scale9OriginY="17" Scale9Width="26" Scale9Height="10" ctype="ImageViewObjectData">
-                            <Size X="58.0000" Y="44.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="-0.4688" Y="9.3262" />
-                            <Scale ScaleX="0.7000" ScaleY="0.7000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="Normal" Path="card/value/leftshow/wan_left_1.png" Plist="" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Card2" ActionTag="396809657" Tag="643" IconVisible="True" LeftMargin="-16.7677" RightMargin="16.7677" TopMargin="20.2330" BottomMargin="-20.2330" ctype="SingleNodeObjectData">
-                        <Size X="0.0000" Y="0.0000" />
-                        <Children>
-                          <AbstractNodeData Name="CardBg" ActionTag="1531856469" Tag="644" IconVisible="False" LeftMargin="-31.5000" RightMargin="-31.5000" TopMargin="-20.0000" BottomMargin="-20.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="9" Scale9Height="16" ctype="ImageViewObjectData">
-                            <Size X="63.0000" Y="40.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="Normal" Path="card/ground/hand/left_hand.png" Plist="" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="CardValue" ActionTag="1726880492" Tag="645" RotationSkewX="30.0000" IconVisible="False" LeftMargin="-29.4688" RightMargin="-28.5312" TopMargin="-31.3262" BottomMargin="-12.6738" LeftEage="16" RightEage="16" TopEage="17" BottomEage="17" Scale9OriginX="16" Scale9OriginY="17" Scale9Width="26" Scale9Height="10" ctype="ImageViewObjectData">
-                            <Size X="58.0000" Y="44.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="-0.4688" Y="9.3262" />
-                            <Scale ScaleX="0.7000" ScaleY="0.7000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="Normal" Path="card/value/leftshow/wan_left_1.png" Plist="" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position X="-16.7677" Y="-20.2330" />
-                        <Scale ScaleX="1.0300" ScaleY="1.0300" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Card5" ActionTag="1383559494" Tag="649" IconVisible="True" LeftMargin="15.9782" RightMargin="-15.9782" TopMargin="-23.6273" BottomMargin="23.6273" ctype="SingleNodeObjectData">
-                        <Size X="0.0000" Y="0.0000" />
-                        <Children>
-                          <AbstractNodeData Name="CardBg" ActionTag="1850267294" Tag="650" IconVisible="False" LeftMargin="-32.5000" RightMargin="-32.5000" TopMargin="-19.0000" BottomMargin="-19.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="11" Scale9Height="14" ctype="ImageViewObjectData">
-                            <Size X="65.0000" Y="38.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="Normal" Path="card/ground/hand/left_hand_1.png" Plist="" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position X="15.9782" Y="23.6273" />
-                        <Scale ScaleX="0.9700" ScaleY="0.9700" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Card6" ActionTag="-23785593" Tag="651" IconVisible="True" LeftMargin="-0.1754" RightMargin="0.1754" TopMargin="-0.1773" BottomMargin="0.1773" ctype="SingleNodeObjectData">
-                        <Size X="0.0000" Y="0.0000" />
-                        <Children>
-                          <AbstractNodeData Name="CardBg" ActionTag="1910476488" Tag="652" IconVisible="False" LeftMargin="-32.5000" RightMargin="-32.5000" TopMargin="-19.0000" BottomMargin="-19.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="11" Scale9Height="14" ctype="ImageViewObjectData">
-                            <Size X="65.0000" Y="38.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="Normal" Path="card/ground/hand/left_hand_1.png" Plist="" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position X="-0.1754" Y="0.1773" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Card7" ActionTag="716918045" Tag="653" IconVisible="True" LeftMargin="-16.3295" RightMargin="16.3295" TopMargin="18.7899" BottomMargin="-18.7899" ctype="SingleNodeObjectData">
-                        <Size X="0.0000" Y="0.0000" />
-                        <Children>
-                          <AbstractNodeData Name="CardBg" ActionTag="913842167" Tag="654" IconVisible="False" LeftMargin="-32.5000" RightMargin="-32.5000" TopMargin="-19.0000" BottomMargin="-19.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="11" Scale9Height="14" ctype="ImageViewObjectData">
-                            <Size X="65.0000" Y="38.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="Normal" Path="card/ground/hand/left_hand_1.png" Plist="" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position X="-16.3295" Y="-18.7899" />
-                        <Scale ScaleX="1.0300" ScaleY="1.0300" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Card4" ActionTag="1952690947" Tag="655" IconVisible="True" LeftMargin="-0.3516" RightMargin="0.3516" TopMargin="-16.7921" BottomMargin="16.7921" ctype="SingleNodeObjectData">
-                        <Size X="0.0000" Y="0.0000" />
-                        <Children>
-                          <AbstractNodeData Name="CardBg" ActionTag="68860325" Tag="656" IconVisible="False" LeftMargin="-32.5000" RightMargin="-32.5000" TopMargin="-19.0000" BottomMargin="-19.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="11" Scale9Height="14" ctype="ImageViewObjectData">
-                            <Size X="65.0000" Y="38.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="Normal" Path="card/ground/hand/left_hand_1.png" Plist="" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position X="-0.3516" Y="16.7921" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Card3" ActionTag="-1161215722" Tag="646" IconVisible="True" LeftMargin="-1.2966" RightMargin="1.2966" TopMargin="-15.2025" BottomMargin="15.2025" ctype="SingleNodeObjectData">
-                        <Size X="0.0000" Y="0.0000" />
-                        <Children>
-                          <AbstractNodeData Name="CardBg" ActionTag="-711168751" Tag="647" IconVisible="False" LeftMargin="-31.5000" RightMargin="-31.5000" TopMargin="-20.0000" BottomMargin="-20.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="9" Scale9Height="16" ctype="ImageViewObjectData">
-                            <Size X="63.0000" Y="40.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="Normal" Path="card/ground/hand/left_hand.png" Plist="" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="CardValue" ActionTag="2044923863" Tag="648" RotationSkewX="30.0000" IconVisible="False" LeftMargin="-29.4688" RightMargin="-28.5312" TopMargin="-31.3262" BottomMargin="-12.6738" LeftEage="16" RightEage="16" TopEage="17" BottomEage="17" Scale9OriginX="16" Scale9OriginY="17" Scale9Width="26" Scale9Height="10" ctype="ImageViewObjectData">
-                            <Size X="58.0000" Y="44.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="-0.4688" Y="9.3262" />
-                            <Scale ScaleX="0.7000" ScaleY="0.7000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="Normal" Path="card/value/leftshow/wan_left_1.png" Plist="" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position X="-1.2966" Y="15.2025" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition />
-                        <PreSize X="0.0000" Y="0.0000" />
-                      </AbstractNodeData>
-                    </Children>
-                    <AnchorPoint />
-                    <Position X="-180.4000" Y="-158.3000" />
-                    <Scale ScaleX="0.9000" ScaleY="0.9000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition />
-                    <PreSize X="0.0000" Y="0.0000" />
-                  </AbstractNodeData>
-                </Children>
-                <AnchorPoint />
-                <Position X="244.3682" Y="235.6219" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.1909" Y="0.3273" />
                 <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
               <AbstractNodeData Name="HandCardNd0" ActionTag="242979809" Tag="357" IconVisible="False" LeftMargin="143.9314" RightMargin="86.0686" TopMargin="570.3022" BottomMargin="-0.3022" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
@@ -5102,6 +3885,1187 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
+              <AbstractNodeData Name="HandCardNd3" ActionTag="-1914231853" Tag="601" RotationSkewY="180.0000" IconVisible="True" LeftMargin="191.5164" RightMargin="1088.4835" TopMargin="482.4369" BottomMargin="237.5631" ctype="SingleNodeObjectData">
+                <Size X="0.0000" Y="0.0000" />
+                <Children>
+                  <AbstractNodeData Name="Card0" ActionTag="1069429644" Tag="602" IconVisible="True" LeftMargin="-99.7200" RightMargin="99.7200" TopMargin="-138.6800" BottomMargin="138.6800" ctype="SingleNodeObjectData">
+                    <Size X="0.0000" Y="0.0000" />
+                    <Children>
+                      <AbstractNodeData Name="CardBg" ActionTag="1659728292" Tag="603" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
+                        <Size X="54.0000" Y="83.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/ground/hand/left_hand_0.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint />
+                    <Position X="-99.7200" Y="138.6800" />
+                    <Scale ScaleX="0.9000" ScaleY="0.9000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Card1" ActionTag="-1287193190" Tag="604" IconVisible="True" LeftMargin="-64.4000" RightMargin="64.4000" TopMargin="-93.0000" BottomMargin="93.0000" ctype="SingleNodeObjectData">
+                    <Size X="0.0000" Y="0.0000" />
+                    <Children>
+                      <AbstractNodeData Name="CardBg" ActionTag="366353122" Tag="605" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
+                        <Size X="54.0000" Y="83.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/ground/hand/left_hand_0.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint />
+                    <Position X="-64.4000" Y="93.0000" />
+                    <Scale ScaleX="0.9500" ScaleY="0.9500" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Card2" ActionTag="1676601985" Tag="606" IconVisible="True" LeftMargin="-46.7400" RightMargin="46.7400" TopMargin="-70.1600" BottomMargin="70.1600" ctype="SingleNodeObjectData">
+                    <Size X="0.0000" Y="0.0000" />
+                    <Children>
+                      <AbstractNodeData Name="CardBg" ActionTag="859577497" Tag="607" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
+                        <Size X="54.0000" Y="83.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/ground/hand/left_hand_0.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint />
+                    <Position X="-46.7400" Y="70.1600" />
+                    <Scale ScaleX="0.9500" ScaleY="0.9500" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Card3" ActionTag="366248085" Tag="608" IconVisible="True" LeftMargin="-29.0800" RightMargin="29.0800" TopMargin="-47.3200" BottomMargin="47.3200" ctype="SingleNodeObjectData">
+                    <Size X="0.0000" Y="0.0000" />
+                    <Children>
+                      <AbstractNodeData Name="CardBg" ActionTag="159619272" Tag="609" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
+                        <Size X="54.0000" Y="83.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/ground/hand/left_hand_0.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint />
+                    <Position X="-29.0800" Y="47.3200" />
+                    <Scale ScaleX="0.9500" ScaleY="0.9500" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Card4" ActionTag="-1319365060" Tag="610" IconVisible="True" LeftMargin="-11.4200" RightMargin="11.4200" TopMargin="-24.4800" BottomMargin="24.4800" ctype="SingleNodeObjectData">
+                    <Size X="0.0000" Y="0.0000" />
+                    <Children>
+                      <AbstractNodeData Name="CardBg" ActionTag="-137666977" Tag="611" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
+                        <Size X="54.0000" Y="83.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/ground/hand/left_hand_0.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint />
+                    <Position X="-11.4200" Y="24.4800" />
+                    <Scale ScaleX="0.9500" ScaleY="0.9500" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Card5" ActionTag="696124037" Tag="612" IconVisible="True" LeftMargin="6.2400" RightMargin="-6.2400" TopMargin="-1.6400" BottomMargin="1.6400" ctype="SingleNodeObjectData">
+                    <Size X="0.0000" Y="0.0000" />
+                    <Children>
+                      <AbstractNodeData Name="CardBg" ActionTag="-653976678" Tag="613" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
+                        <Size X="54.0000" Y="83.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/ground/hand/left_hand_0.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint />
+                    <Position X="6.2400" Y="1.6400" />
+                    <Scale ScaleX="0.9500" ScaleY="0.9500" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Card6" ActionTag="1607708507" Tag="614" IconVisible="True" LeftMargin="23.6000" RightMargin="-23.6000" TopMargin="21.2000" BottomMargin="-21.2000" ctype="SingleNodeObjectData">
+                    <Size X="0.0000" Y="0.0000" />
+                    <Children>
+                      <AbstractNodeData Name="CardBg" ActionTag="1302336812" Tag="615" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
+                        <Size X="54.0000" Y="83.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/ground/hand/left_hand_0.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint />
+                    <Position X="23.6000" Y="-21.2000" />
+                    <Scale ScaleX="0.9500" ScaleY="0.9500" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Card7" ActionTag="-866664565" Tag="616" IconVisible="True" LeftMargin="41.2600" RightMargin="-41.2600" TopMargin="44.0400" BottomMargin="-44.0400" ctype="SingleNodeObjectData">
+                    <Size X="0.0000" Y="0.0000" />
+                    <Children>
+                      <AbstractNodeData Name="CardBg" ActionTag="-1096808236" Tag="617" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
+                        <Size X="54.0000" Y="83.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/ground/hand/left_hand_0.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint />
+                    <Position X="41.2600" Y="-44.0400" />
+                    <Scale ScaleX="0.9500" ScaleY="0.9500" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Card8" ActionTag="-950741729" Tag="618" IconVisible="True" LeftMargin="58.9200" RightMargin="-58.9200" TopMargin="66.8800" BottomMargin="-66.8800" ctype="SingleNodeObjectData">
+                    <Size X="0.0000" Y="0.0000" />
+                    <Children>
+                      <AbstractNodeData Name="CardBg" ActionTag="1279920058" Tag="619" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
+                        <Size X="54.0000" Y="83.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/ground/hand/left_hand_0.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint />
+                    <Position X="58.9200" Y="-66.8800" />
+                    <Scale ScaleX="0.9500" ScaleY="0.9500" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Card9" ActionTag="742801" Tag="620" IconVisible="True" LeftMargin="76.5800" RightMargin="-76.5800" TopMargin="89.7200" BottomMargin="-89.7200" ctype="SingleNodeObjectData">
+                    <Size X="0.0000" Y="0.0000" />
+                    <Children>
+                      <AbstractNodeData Name="CardBg" ActionTag="741918692" Tag="621" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
+                        <Size X="54.0000" Y="83.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/ground/hand/left_hand_0.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint />
+                    <Position X="76.5800" Y="-89.7200" />
+                    <Scale ScaleX="0.9500" ScaleY="0.9500" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Card10" ActionTag="864073196" Tag="622" IconVisible="True" LeftMargin="94.2400" RightMargin="-94.2400" TopMargin="112.5600" BottomMargin="-112.5600" ctype="SingleNodeObjectData">
+                    <Size X="0.0000" Y="0.0000" />
+                    <Children>
+                      <AbstractNodeData Name="CardBg" ActionTag="1568238796" Tag="623" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
+                        <Size X="54.0000" Y="83.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/ground/hand/left_hand_0.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint />
+                    <Position X="94.2400" Y="-112.5600" />
+                    <Scale ScaleX="0.9500" ScaleY="0.9500" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Card11" ActionTag="1053328756" Tag="624" IconVisible="True" LeftMargin="111.9000" RightMargin="-111.9000" TopMargin="135.4000" BottomMargin="-135.4000" ctype="SingleNodeObjectData">
+                    <Size X="0.0000" Y="0.0000" />
+                    <Children>
+                      <AbstractNodeData Name="CardBg" ActionTag="-440640449" Tag="625" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
+                        <Size X="54.0000" Y="83.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/ground/hand/left_hand_0.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint />
+                    <Position X="111.9000" Y="-135.4000" />
+                    <Scale ScaleX="0.9500" ScaleY="0.9500" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Card12" ActionTag="-1834419716" Tag="626" IconVisible="True" LeftMargin="129.5600" RightMargin="-129.5600" TopMargin="158.2400" BottomMargin="-158.2400" ctype="SingleNodeObjectData">
+                    <Size X="0.0000" Y="0.0000" />
+                    <Children>
+                      <AbstractNodeData Name="CardBg" ActionTag="-1056685779" Tag="627" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
+                        <Size X="54.0000" Y="83.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/ground/hand/left_hand_0.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint />
+                    <Position X="129.5600" Y="-158.2400" />
+                    <Scale ScaleX="0.9500" ScaleY="0.9500" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Card13" ActionTag="593979641" Tag="628" IconVisible="True" LeftMargin="147.2200" RightMargin="-147.2200" TopMargin="181.0800" BottomMargin="-181.0800" ctype="SingleNodeObjectData">
+                    <Size X="0.0000" Y="0.0000" />
+                    <Children>
+                      <AbstractNodeData Name="CardBg" ActionTag="-625140016" Tag="629" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
+                        <Size X="54.0000" Y="83.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/ground/hand/left_hand_0.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint />
+                    <Position X="147.2200" Y="-181.0800" />
+                    <Scale ScaleX="0.9500" ScaleY="0.9500" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Group3" Visible="False" ActionTag="-1357008135" Tag="630" IconVisible="True" LeftMargin="-18.4800" RightMargin="18.4800" TopMargin="-43.1029" BottomMargin="43.1029" ctype="SingleNodeObjectData">
+                    <Size X="0.0000" Y="0.0000" />
+                    <Children>
+                      <AbstractNodeData Name="Card0" ActionTag="-1120740112" Tag="631" IconVisible="True" LeftMargin="-17.0889" RightMargin="17.0889" TopMargin="-20.4870" BottomMargin="20.4870" ctype="SingleNodeObjectData">
+                        <Size X="0.0000" Y="0.0000" />
+                        <Children>
+                          <AbstractNodeData Name="CardBg" ActionTag="-1375174458" Tag="632" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-31.5000" RightMargin="-31.5000" TopMargin="-20.0000" BottomMargin="-20.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="9" Scale9Height="16" ctype="ImageViewObjectData">
+                            <Size X="63.0000" Y="40.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="Normal" Path="card/ground/hand/left_hand.png" Plist="" />
+                          </AbstractNodeData>
+                          <AbstractNodeData Name="CardValue" ActionTag="486974101" Tag="633" RotationSkewX="-38.0000" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-29.4688" RightMargin="-28.5312" TopMargin="-31.3262" BottomMargin="-12.6738" LeftEage="16" RightEage="16" TopEage="17" BottomEage="17" Scale9OriginX="16" Scale9OriginY="17" Scale9Width="26" Scale9Height="10" ctype="ImageViewObjectData">
+                            <Size X="58.0000" Y="44.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position X="-0.4688" Y="9.3262" />
+                            <Scale ScaleX="0.7000" ScaleY="0.7000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="Normal" Path="card/value/leftshow/wan_left_1.png" Plist="" />
+                          </AbstractNodeData>
+                        </Children>
+                        <AnchorPoint />
+                        <Position X="-17.0889" Y="20.4870" />
+                        <Scale ScaleX="0.9700" ScaleY="0.9700" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="Card1" ActionTag="1249400163" Tag="634" IconVisible="True" ctype="SingleNodeObjectData">
+                        <Size X="0.0000" Y="0.0000" />
+                        <Children>
+                          <AbstractNodeData Name="CardBg" ActionTag="2055856892" Tag="635" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-31.5000" RightMargin="-31.5000" TopMargin="-20.0000" BottomMargin="-20.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="9" Scale9Height="16" ctype="ImageViewObjectData">
+                            <Size X="63.0000" Y="40.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="Normal" Path="card/ground/hand/left_hand.png" Plist="" />
+                          </AbstractNodeData>
+                          <AbstractNodeData Name="CardValue" ActionTag="366988389" Tag="636" RotationSkewX="-38.0000" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-29.4688" RightMargin="-28.5312" TopMargin="-31.3262" BottomMargin="-12.6738" LeftEage="16" RightEage="16" TopEage="17" BottomEage="17" Scale9OriginX="16" Scale9OriginY="17" Scale9Width="26" Scale9Height="10" ctype="ImageViewObjectData">
+                            <Size X="58.0000" Y="44.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position X="-0.4688" Y="9.3262" />
+                            <Scale ScaleX="0.7000" ScaleY="0.7000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="Normal" Path="card/value/leftshow/wan_left_1.png" Plist="" />
+                          </AbstractNodeData>
+                        </Children>
+                        <AnchorPoint />
+                        <Position />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="Card2" ActionTag="-1269339319" Tag="637" IconVisible="True" LeftMargin="17.7842" RightMargin="-17.7842" TopMargin="21.8159" BottomMargin="-21.8159" ctype="SingleNodeObjectData">
+                        <Size X="0.0000" Y="0.0000" />
+                        <Children>
+                          <AbstractNodeData Name="CardBg" ActionTag="-407042952" Tag="638" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-31.5000" RightMargin="-31.5000" TopMargin="-20.0000" BottomMargin="-20.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="9" Scale9Height="16" ctype="ImageViewObjectData">
+                            <Size X="63.0000" Y="40.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="Normal" Path="card/ground/hand/left_hand.png" Plist="" />
+                          </AbstractNodeData>
+                          <AbstractNodeData Name="CardValue" ActionTag="1915763673" Tag="639" RotationSkewX="-38.0000" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-29.4688" RightMargin="-28.5312" TopMargin="-31.3262" BottomMargin="-12.6738" LeftEage="16" RightEage="16" TopEage="17" BottomEage="17" Scale9OriginX="16" Scale9OriginY="17" Scale9Width="26" Scale9Height="10" ctype="ImageViewObjectData">
+                            <Size X="58.0000" Y="44.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position X="-0.4688" Y="9.3262" />
+                            <Scale ScaleX="0.7000" ScaleY="0.7000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="Normal" Path="card/value/leftshow/wan_left_1.png" Plist="" />
+                          </AbstractNodeData>
+                        </Children>
+                        <AnchorPoint />
+                        <Position X="17.7842" Y="-21.8159" />
+                        <Scale ScaleX="1.0300" ScaleY="1.0300" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="Card5" ActionTag="-1076692317" Tag="640" IconVisible="True" LeftMargin="-16.2387" RightMargin="16.2387" TopMargin="-22.1452" BottomMargin="22.1452" ctype="SingleNodeObjectData">
+                        <Size X="0.0000" Y="0.0000" />
+                        <Children>
+                          <AbstractNodeData Name="CardBg" ActionTag="726269724" Tag="641" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-32.5000" RightMargin="-32.5000" TopMargin="-19.0000" BottomMargin="-19.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="11" Scale9Height="14" ctype="ImageViewObjectData">
+                            <Size X="65.0000" Y="38.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="Normal" Path="card/ground/hand/left_hand_1.png" Plist="" />
+                          </AbstractNodeData>
+                        </Children>
+                        <AnchorPoint />
+                        <Position X="-16.2387" Y="22.1452" />
+                        <Scale ScaleX="0.9700" ScaleY="0.9700" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="Card6" ActionTag="1985942693" Tag="642" IconVisible="True" LeftMargin="0.9482" RightMargin="-0.9482" TopMargin="0.2604" BottomMargin="-0.2604" ctype="SingleNodeObjectData">
+                        <Size X="0.0000" Y="0.0000" />
+                        <Children>
+                          <AbstractNodeData Name="CardBg" ActionTag="789755135" Tag="643" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-32.5000" RightMargin="-32.5000" TopMargin="-19.0000" BottomMargin="-19.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="11" Scale9Height="14" ctype="ImageViewObjectData">
+                            <Size X="65.0000" Y="38.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="Normal" Path="card/ground/hand/left_hand_1.png" Plist="" />
+                          </AbstractNodeData>
+                        </Children>
+                        <AnchorPoint />
+                        <Position X="0.9482" Y="-0.2604" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="Card7" ActionTag="-902122403" Tag="644" IconVisible="True" LeftMargin="18.9241" RightMargin="-18.9241" TopMargin="21.7408" BottomMargin="-21.7408" ctype="SingleNodeObjectData">
+                        <Size X="0.0000" Y="0.0000" />
+                        <Children>
+                          <AbstractNodeData Name="CardBg" ActionTag="-1997174866" Tag="645" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-32.5000" RightMargin="-32.5000" TopMargin="-19.0000" BottomMargin="-19.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="11" Scale9Height="14" ctype="ImageViewObjectData">
+                            <Size X="65.0000" Y="38.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="Normal" Path="card/ground/hand/left_hand_1.png" Plist="" />
+                          </AbstractNodeData>
+                        </Children>
+                        <AnchorPoint />
+                        <Position X="18.9241" Y="-21.7408" />
+                        <Scale ScaleX="1.0300" ScaleY="1.0300" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="Card4" ActionTag="-251972573" Tag="646" IconVisible="True" LeftMargin="-1.0771" RightMargin="1.0771" TopMargin="-14.7451" BottomMargin="14.7451" ctype="SingleNodeObjectData">
+                        <Size X="0.0000" Y="0.0000" />
+                        <Children>
+                          <AbstractNodeData Name="CardBg" ActionTag="1761561564" Tag="647" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-32.5000" RightMargin="-32.5000" TopMargin="-19.0000" BottomMargin="-19.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="11" Scale9Height="14" ctype="ImageViewObjectData">
+                            <Size X="65.0000" Y="38.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="Normal" Path="card/ground/hand/left_hand_1.png" Plist="" />
+                          </AbstractNodeData>
+                        </Children>
+                        <AnchorPoint />
+                        <Position X="-1.0771" Y="14.7451" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="Card3" ActionTag="2033327421" Tag="648" IconVisible="True" LeftMargin="3.7853" RightMargin="-3.7853" TopMargin="-12.7036" BottomMargin="12.7036" ctype="SingleNodeObjectData">
+                        <Size X="0.0000" Y="0.0000" />
+                        <Children>
+                          <AbstractNodeData Name="CardBg" ActionTag="2084426845" Tag="649" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-31.5000" RightMargin="-31.5000" TopMargin="-20.0000" BottomMargin="-20.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="9" Scale9Height="16" ctype="ImageViewObjectData">
+                            <Size X="63.0000" Y="40.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="Normal" Path="card/ground/hand/left_hand.png" Plist="" />
+                          </AbstractNodeData>
+                          <AbstractNodeData Name="CardValue" ActionTag="-2078532455" Tag="650" RotationSkewX="-38.0000" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-29.4688" RightMargin="-28.5312" TopMargin="-31.3262" BottomMargin="-12.6738" LeftEage="16" RightEage="16" TopEage="17" BottomEage="17" Scale9OriginX="16" Scale9OriginY="17" Scale9Width="26" Scale9Height="10" ctype="ImageViewObjectData">
+                            <Size X="58.0000" Y="44.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position X="-0.4688" Y="9.3262" />
+                            <Scale ScaleX="0.7000" ScaleY="0.7000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="Normal" Path="card/value/leftshow/wan_left_1.png" Plist="" />
+                          </AbstractNodeData>
+                        </Children>
+                        <AnchorPoint />
+                        <Position X="3.7853" Y="12.7036" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint />
+                    <Position X="-18.4800" Y="43.1029" />
+                    <Scale ScaleX="0.8000" ScaleY="0.8000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Group2" Visible="False" ActionTag="1968564192" Tag="651" IconVisible="True" LeftMargin="29.1400" RightMargin="-29.1400" TopMargin="22.4100" BottomMargin="-22.4100" ctype="SingleNodeObjectData">
+                    <Size X="0.0000" Y="0.0000" />
+                    <Children>
+                      <AbstractNodeData Name="Card0" ActionTag="1256370424" Tag="652" IconVisible="True" LeftMargin="-17.0889" RightMargin="17.0889" TopMargin="-20.4870" BottomMargin="20.4870" ctype="SingleNodeObjectData">
+                        <Size X="0.0000" Y="0.0000" />
+                        <Children>
+                          <AbstractNodeData Name="CardBg" ActionTag="-243061401" Tag="653" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-31.5000" RightMargin="-31.5000" TopMargin="-20.0000" BottomMargin="-20.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="9" Scale9Height="16" ctype="ImageViewObjectData">
+                            <Size X="63.0000" Y="40.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="Normal" Path="card/ground/hand/left_hand.png" Plist="" />
+                          </AbstractNodeData>
+                          <AbstractNodeData Name="CardValue" ActionTag="-674363429" Tag="654" RotationSkewX="-38.0000" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-29.4688" RightMargin="-28.5312" TopMargin="-31.3262" BottomMargin="-12.6738" LeftEage="16" RightEage="16" TopEage="17" BottomEage="17" Scale9OriginX="16" Scale9OriginY="17" Scale9Width="26" Scale9Height="10" ctype="ImageViewObjectData">
+                            <Size X="58.0000" Y="44.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position X="-0.4688" Y="9.3262" />
+                            <Scale ScaleX="0.7000" ScaleY="0.7000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="Normal" Path="card/value/leftshow/wan_left_1.png" Plist="" />
+                          </AbstractNodeData>
+                        </Children>
+                        <AnchorPoint />
+                        <Position X="-17.0889" Y="20.4870" />
+                        <Scale ScaleX="0.9700" ScaleY="0.9700" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="Card1" ActionTag="1588410378" Tag="655" IconVisible="True" ctype="SingleNodeObjectData">
+                        <Size X="0.0000" Y="0.0000" />
+                        <Children>
+                          <AbstractNodeData Name="CardBg" ActionTag="-307995517" Tag="656" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-31.5000" RightMargin="-31.5000" TopMargin="-20.0000" BottomMargin="-20.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="9" Scale9Height="16" ctype="ImageViewObjectData">
+                            <Size X="63.0000" Y="40.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="Normal" Path="card/ground/hand/left_hand.png" Plist="" />
+                          </AbstractNodeData>
+                          <AbstractNodeData Name="CardValue" ActionTag="-1867926101" Tag="657" RotationSkewX="-38.0000" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-29.4688" RightMargin="-28.5312" TopMargin="-31.3262" BottomMargin="-12.6738" LeftEage="16" RightEage="16" TopEage="17" BottomEage="17" Scale9OriginX="16" Scale9OriginY="17" Scale9Width="26" Scale9Height="10" ctype="ImageViewObjectData">
+                            <Size X="58.0000" Y="44.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position X="-0.4688" Y="9.3262" />
+                            <Scale ScaleX="0.7000" ScaleY="0.7000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="Normal" Path="card/value/leftshow/wan_left_1.png" Plist="" />
+                          </AbstractNodeData>
+                        </Children>
+                        <AnchorPoint />
+                        <Position />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="Card2" ActionTag="1076089174" Tag="658" IconVisible="True" LeftMargin="17.7842" RightMargin="-17.7842" TopMargin="21.8159" BottomMargin="-21.8159" ctype="SingleNodeObjectData">
+                        <Size X="0.0000" Y="0.0000" />
+                        <Children>
+                          <AbstractNodeData Name="CardBg" ActionTag="-186975943" Tag="659" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-31.5000" RightMargin="-31.5000" TopMargin="-20.0000" BottomMargin="-20.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="9" Scale9Height="16" ctype="ImageViewObjectData">
+                            <Size X="63.0000" Y="40.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="Normal" Path="card/ground/hand/left_hand.png" Plist="" />
+                          </AbstractNodeData>
+                          <AbstractNodeData Name="CardValue" ActionTag="-2071717956" Tag="660" RotationSkewX="-38.0000" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-29.4688" RightMargin="-28.5312" TopMargin="-31.3262" BottomMargin="-12.6738" LeftEage="16" RightEage="16" TopEage="17" BottomEage="17" Scale9OriginX="16" Scale9OriginY="17" Scale9Width="26" Scale9Height="10" ctype="ImageViewObjectData">
+                            <Size X="58.0000" Y="44.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position X="-0.4688" Y="9.3262" />
+                            <Scale ScaleX="0.7000" ScaleY="0.7000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="Normal" Path="card/value/leftshow/wan_left_1.png" Plist="" />
+                          </AbstractNodeData>
+                        </Children>
+                        <AnchorPoint />
+                        <Position X="17.7842" Y="-21.8159" />
+                        <Scale ScaleX="1.0300" ScaleY="1.0300" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="Card5" ActionTag="930434863" Tag="661" IconVisible="True" LeftMargin="-16.2387" RightMargin="16.2387" TopMargin="-22.1452" BottomMargin="22.1452" ctype="SingleNodeObjectData">
+                        <Size X="0.0000" Y="0.0000" />
+                        <Children>
+                          <AbstractNodeData Name="CardBg" ActionTag="-51591161" Tag="662" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-32.5000" RightMargin="-32.5000" TopMargin="-19.0000" BottomMargin="-19.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="11" Scale9Height="14" ctype="ImageViewObjectData">
+                            <Size X="65.0000" Y="38.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="Normal" Path="card/ground/hand/left_hand_1.png" Plist="" />
+                          </AbstractNodeData>
+                        </Children>
+                        <AnchorPoint />
+                        <Position X="-16.2387" Y="22.1452" />
+                        <Scale ScaleX="0.9700" ScaleY="0.9700" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="Card6" ActionTag="-2040081467" Tag="663" IconVisible="True" LeftMargin="0.9482" RightMargin="-0.9482" TopMargin="0.2604" BottomMargin="-0.2604" ctype="SingleNodeObjectData">
+                        <Size X="0.0000" Y="0.0000" />
+                        <Children>
+                          <AbstractNodeData Name="CardBg" ActionTag="-403962429" Tag="664" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-32.5000" RightMargin="-32.5000" TopMargin="-19.0000" BottomMargin="-19.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="11" Scale9Height="14" ctype="ImageViewObjectData">
+                            <Size X="65.0000" Y="38.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="Normal" Path="card/ground/hand/left_hand_1.png" Plist="" />
+                          </AbstractNodeData>
+                        </Children>
+                        <AnchorPoint />
+                        <Position X="0.9482" Y="-0.2604" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="Card7" ActionTag="80524891" Tag="665" IconVisible="True" LeftMargin="18.9241" RightMargin="-18.9241" TopMargin="21.7408" BottomMargin="-21.7408" ctype="SingleNodeObjectData">
+                        <Size X="0.0000" Y="0.0000" />
+                        <Children>
+                          <AbstractNodeData Name="CardBg" ActionTag="1426997973" Tag="666" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-32.5000" RightMargin="-32.5000" TopMargin="-19.0000" BottomMargin="-19.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="11" Scale9Height="14" ctype="ImageViewObjectData">
+                            <Size X="65.0000" Y="38.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="Normal" Path="card/ground/hand/left_hand_1.png" Plist="" />
+                          </AbstractNodeData>
+                        </Children>
+                        <AnchorPoint />
+                        <Position X="18.9241" Y="-21.7408" />
+                        <Scale ScaleX="1.0300" ScaleY="1.0300" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="Card4" ActionTag="1886451695" Tag="667" IconVisible="True" LeftMargin="-1.0771" RightMargin="1.0771" TopMargin="-14.7451" BottomMargin="14.7451" ctype="SingleNodeObjectData">
+                        <Size X="0.0000" Y="0.0000" />
+                        <Children>
+                          <AbstractNodeData Name="CardBg" ActionTag="-2036191216" Tag="668" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-32.5000" RightMargin="-32.5000" TopMargin="-19.0000" BottomMargin="-19.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="11" Scale9Height="14" ctype="ImageViewObjectData">
+                            <Size X="65.0000" Y="38.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="Normal" Path="card/ground/hand/left_hand_1.png" Plist="" />
+                          </AbstractNodeData>
+                        </Children>
+                        <AnchorPoint />
+                        <Position X="-1.0771" Y="14.7451" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="Card3" ActionTag="-573411718" Tag="669" IconVisible="True" LeftMargin="3.7853" RightMargin="-3.7853" TopMargin="-12.7036" BottomMargin="12.7036" ctype="SingleNodeObjectData">
+                        <Size X="0.0000" Y="0.0000" />
+                        <Children>
+                          <AbstractNodeData Name="CardBg" ActionTag="-1652873627" Tag="670" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-31.5000" RightMargin="-31.5000" TopMargin="-20.0000" BottomMargin="-20.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="9" Scale9Height="16" ctype="ImageViewObjectData">
+                            <Size X="63.0000" Y="40.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="Normal" Path="card/ground/hand/left_hand.png" Plist="" />
+                          </AbstractNodeData>
+                          <AbstractNodeData Name="CardValue" ActionTag="1420855367" Tag="671" RotationSkewX="-38.0000" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-29.4688" RightMargin="-28.5312" TopMargin="-31.3262" BottomMargin="-12.6738" LeftEage="16" RightEage="16" TopEage="17" BottomEage="17" Scale9OriginX="16" Scale9OriginY="17" Scale9Width="26" Scale9Height="10" ctype="ImageViewObjectData">
+                            <Size X="58.0000" Y="44.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position X="-0.4688" Y="9.3262" />
+                            <Scale ScaleX="0.7000" ScaleY="0.7000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="Normal" Path="card/value/leftshow/wan_left_1.png" Plist="" />
+                          </AbstractNodeData>
+                        </Children>
+                        <AnchorPoint />
+                        <Position X="3.7853" Y="12.7036" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint />
+                    <Position X="29.1400" Y="-22.4100" />
+                    <Scale ScaleX="0.8400" ScaleY="0.8400" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Group1" Visible="False" ActionTag="1536888990" Tag="672" IconVisible="True" LeftMargin="78.1500" RightMargin="-78.1500" TopMargin="90.1700" BottomMargin="-90.1700" ctype="SingleNodeObjectData">
+                    <Size X="0.0000" Y="0.0000" />
+                    <Children>
+                      <AbstractNodeData Name="Card0" ActionTag="-1117628050" Tag="673" IconVisible="True" LeftMargin="-17.0889" RightMargin="17.0889" TopMargin="-20.4870" BottomMargin="20.4870" ctype="SingleNodeObjectData">
+                        <Size X="0.0000" Y="0.0000" />
+                        <Children>
+                          <AbstractNodeData Name="CardBg" ActionTag="2074900592" Tag="674" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-31.5000" RightMargin="-31.5000" TopMargin="-20.0000" BottomMargin="-20.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="9" Scale9Height="16" ctype="ImageViewObjectData">
+                            <Size X="63.0000" Y="40.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="Normal" Path="card/ground/hand/left_hand.png" Plist="" />
+                          </AbstractNodeData>
+                          <AbstractNodeData Name="CardValue" ActionTag="536285580" Tag="675" RotationSkewX="-38.0000" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-29.4688" RightMargin="-28.5312" TopMargin="-31.3262" BottomMargin="-12.6738" LeftEage="16" RightEage="16" TopEage="17" BottomEage="17" Scale9OriginX="16" Scale9OriginY="17" Scale9Width="26" Scale9Height="10" ctype="ImageViewObjectData">
+                            <Size X="58.0000" Y="44.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position X="-0.4688" Y="9.3262" />
+                            <Scale ScaleX="0.7000" ScaleY="0.7000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="Normal" Path="card/value/leftshow/wan_left_1.png" Plist="" />
+                          </AbstractNodeData>
+                        </Children>
+                        <AnchorPoint />
+                        <Position X="-17.0889" Y="20.4870" />
+                        <Scale ScaleX="0.9700" ScaleY="0.9700" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="Card1" ActionTag="1570903834" Tag="676" IconVisible="True" ctype="SingleNodeObjectData">
+                        <Size X="0.0000" Y="0.0000" />
+                        <Children>
+                          <AbstractNodeData Name="CardBg" ActionTag="-1653683149" Tag="677" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-31.5000" RightMargin="-31.5000" TopMargin="-20.0000" BottomMargin="-20.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="9" Scale9Height="16" ctype="ImageViewObjectData">
+                            <Size X="63.0000" Y="40.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="Normal" Path="card/ground/hand/left_hand.png" Plist="" />
+                          </AbstractNodeData>
+                          <AbstractNodeData Name="CardValue" ActionTag="-861955220" Tag="678" RotationSkewX="-38.0000" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-29.4688" RightMargin="-28.5312" TopMargin="-31.3262" BottomMargin="-12.6738" LeftEage="16" RightEage="16" TopEage="17" BottomEage="17" Scale9OriginX="16" Scale9OriginY="17" Scale9Width="26" Scale9Height="10" ctype="ImageViewObjectData">
+                            <Size X="58.0000" Y="44.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position X="-0.4688" Y="9.3262" />
+                            <Scale ScaleX="0.7000" ScaleY="0.7000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="Normal" Path="card/value/leftshow/wan_left_1.png" Plist="" />
+                          </AbstractNodeData>
+                        </Children>
+                        <AnchorPoint />
+                        <Position />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="Card2" ActionTag="-418709775" Tag="679" IconVisible="True" LeftMargin="17.7842" RightMargin="-17.7842" TopMargin="21.8159" BottomMargin="-21.8159" ctype="SingleNodeObjectData">
+                        <Size X="0.0000" Y="0.0000" />
+                        <Children>
+                          <AbstractNodeData Name="CardBg" ActionTag="-2019900431" Tag="680" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-31.5000" RightMargin="-31.5000" TopMargin="-20.0000" BottomMargin="-20.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="9" Scale9Height="16" ctype="ImageViewObjectData">
+                            <Size X="63.0000" Y="40.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="Normal" Path="card/ground/hand/left_hand.png" Plist="" />
+                          </AbstractNodeData>
+                          <AbstractNodeData Name="CardValue" ActionTag="-829237738" Tag="681" RotationSkewX="-38.0000" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-29.4688" RightMargin="-28.5312" TopMargin="-31.3262" BottomMargin="-12.6738" LeftEage="16" RightEage="16" TopEage="17" BottomEage="17" Scale9OriginX="16" Scale9OriginY="17" Scale9Width="26" Scale9Height="10" ctype="ImageViewObjectData">
+                            <Size X="58.0000" Y="44.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position X="-0.4688" Y="9.3262" />
+                            <Scale ScaleX="0.7000" ScaleY="0.7000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="Normal" Path="card/value/leftshow/wan_left_1.png" Plist="" />
+                          </AbstractNodeData>
+                        </Children>
+                        <AnchorPoint />
+                        <Position X="17.7842" Y="-21.8159" />
+                        <Scale ScaleX="1.0300" ScaleY="1.0300" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="Card5" ActionTag="1566439065" Tag="682" IconVisible="True" LeftMargin="-16.2387" RightMargin="16.2387" TopMargin="-22.1452" BottomMargin="22.1452" ctype="SingleNodeObjectData">
+                        <Size X="0.0000" Y="0.0000" />
+                        <Children>
+                          <AbstractNodeData Name="CardBg" ActionTag="1731516807" Tag="683" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-32.5000" RightMargin="-32.5000" TopMargin="-19.0000" BottomMargin="-19.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="11" Scale9Height="14" ctype="ImageViewObjectData">
+                            <Size X="65.0000" Y="38.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="Normal" Path="card/ground/hand/left_hand_1.png" Plist="" />
+                          </AbstractNodeData>
+                        </Children>
+                        <AnchorPoint />
+                        <Position X="-16.2387" Y="22.1452" />
+                        <Scale ScaleX="0.9700" ScaleY="0.9700" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="Card6" ActionTag="-1919730297" Tag="684" IconVisible="True" LeftMargin="0.9482" RightMargin="-0.9482" TopMargin="0.2604" BottomMargin="-0.2604" ctype="SingleNodeObjectData">
+                        <Size X="0.0000" Y="0.0000" />
+                        <Children>
+                          <AbstractNodeData Name="CardBg" ActionTag="-1891030836" Tag="685" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-32.5000" RightMargin="-32.5000" TopMargin="-19.0000" BottomMargin="-19.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="11" Scale9Height="14" ctype="ImageViewObjectData">
+                            <Size X="65.0000" Y="38.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="Normal" Path="card/ground/hand/left_hand_1.png" Plist="" />
+                          </AbstractNodeData>
+                        </Children>
+                        <AnchorPoint />
+                        <Position X="0.9482" Y="-0.2604" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="Card7" ActionTag="-522711153" Tag="686" IconVisible="True" LeftMargin="18.9241" RightMargin="-18.9241" TopMargin="21.7408" BottomMargin="-21.7408" ctype="SingleNodeObjectData">
+                        <Size X="0.0000" Y="0.0000" />
+                        <Children>
+                          <AbstractNodeData Name="CardBg" ActionTag="743730117" Tag="687" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-32.5000" RightMargin="-32.5000" TopMargin="-19.0000" BottomMargin="-19.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="11" Scale9Height="14" ctype="ImageViewObjectData">
+                            <Size X="65.0000" Y="38.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="Normal" Path="card/ground/hand/left_hand_1.png" Plist="" />
+                          </AbstractNodeData>
+                        </Children>
+                        <AnchorPoint />
+                        <Position X="18.9241" Y="-21.7408" />
+                        <Scale ScaleX="1.0300" ScaleY="1.0300" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="Card4" ActionTag="1439497560" Tag="688" IconVisible="True" LeftMargin="-1.0771" RightMargin="1.0771" TopMargin="-14.7451" BottomMargin="14.7451" ctype="SingleNodeObjectData">
+                        <Size X="0.0000" Y="0.0000" />
+                        <Children>
+                          <AbstractNodeData Name="CardBg" ActionTag="706833533" Tag="689" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-32.5000" RightMargin="-32.5000" TopMargin="-19.0000" BottomMargin="-19.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="11" Scale9Height="14" ctype="ImageViewObjectData">
+                            <Size X="65.0000" Y="38.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="Normal" Path="card/ground/hand/left_hand_1.png" Plist="" />
+                          </AbstractNodeData>
+                        </Children>
+                        <AnchorPoint />
+                        <Position X="-1.0771" Y="14.7451" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="Card3" ActionTag="1667561634" Tag="690" IconVisible="True" LeftMargin="3.7853" RightMargin="-3.7853" TopMargin="-12.7036" BottomMargin="12.7036" ctype="SingleNodeObjectData">
+                        <Size X="0.0000" Y="0.0000" />
+                        <Children>
+                          <AbstractNodeData Name="CardBg" ActionTag="1500544900" Tag="691" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-31.5000" RightMargin="-31.5000" TopMargin="-20.0000" BottomMargin="-20.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="9" Scale9Height="16" ctype="ImageViewObjectData">
+                            <Size X="63.0000" Y="40.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="Normal" Path="card/ground/hand/left_hand.png" Plist="" />
+                          </AbstractNodeData>
+                          <AbstractNodeData Name="CardValue" ActionTag="-853942243" Tag="692" RotationSkewX="-38.0000" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-29.4688" RightMargin="-28.5312" TopMargin="-31.3262" BottomMargin="-12.6738" LeftEage="16" RightEage="16" TopEage="17" BottomEage="17" Scale9OriginX="16" Scale9OriginY="17" Scale9Width="26" Scale9Height="10" ctype="ImageViewObjectData">
+                            <Size X="58.0000" Y="44.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position X="-0.4688" Y="9.3262" />
+                            <Scale ScaleX="0.7000" ScaleY="0.7000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="Normal" Path="card/value/leftshow/wan_left_1.png" Plist="" />
+                          </AbstractNodeData>
+                        </Children>
+                        <AnchorPoint />
+                        <Position X="3.7853" Y="12.7036" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint />
+                    <Position X="78.1500" Y="-90.1700" />
+                    <Scale ScaleX="0.8700" ScaleY="0.8700" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Group0" Visible="False" ActionTag="-82942470" Tag="693" IconVisible="True" LeftMargin="130.1200" RightMargin="-130.1200" TopMargin="160.4400" BottomMargin="-160.4400" ctype="SingleNodeObjectData">
+                    <Size X="0.0000" Y="0.0000" />
+                    <Children>
+                      <AbstractNodeData Name="Card0" ActionTag="-1890840431" Tag="694" IconVisible="True" LeftMargin="-17.0889" RightMargin="17.0889" TopMargin="-20.4870" BottomMargin="20.4870" ctype="SingleNodeObjectData">
+                        <Size X="0.0000" Y="0.0000" />
+                        <Children>
+                          <AbstractNodeData Name="CardBg" ActionTag="-1800007170" Tag="695" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-31.5000" RightMargin="-31.5000" TopMargin="-20.0000" BottomMargin="-20.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="9" Scale9Height="16" ctype="ImageViewObjectData">
+                            <Size X="63.0000" Y="40.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="Normal" Path="card/ground/hand/left_hand.png" Plist="" />
+                          </AbstractNodeData>
+                          <AbstractNodeData Name="CardValue" ActionTag="-197503314" Tag="696" RotationSkewX="-38.0000" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-29.4688" RightMargin="-28.5312" TopMargin="-31.3262" BottomMargin="-12.6738" LeftEage="16" RightEage="16" TopEage="17" BottomEage="17" Scale9OriginX="16" Scale9OriginY="17" Scale9Width="26" Scale9Height="10" ctype="ImageViewObjectData">
+                            <Size X="58.0000" Y="44.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position X="-0.4688" Y="9.3262" />
+                            <Scale ScaleX="0.7000" ScaleY="0.7000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="Normal" Path="card/value/leftshow/wan_left_1.png" Plist="" />
+                          </AbstractNodeData>
+                        </Children>
+                        <AnchorPoint />
+                        <Position X="-17.0889" Y="20.4870" />
+                        <Scale ScaleX="0.9700" ScaleY="0.9700" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="Card1" ActionTag="952771124" Tag="697" IconVisible="True" ctype="SingleNodeObjectData">
+                        <Size X="0.0000" Y="0.0000" />
+                        <Children>
+                          <AbstractNodeData Name="CardBg" ActionTag="476404544" Tag="698" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-31.5000" RightMargin="-31.5000" TopMargin="-20.0000" BottomMargin="-20.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="9" Scale9Height="16" ctype="ImageViewObjectData">
+                            <Size X="63.0000" Y="40.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="Normal" Path="card/ground/hand/left_hand.png" Plist="" />
+                          </AbstractNodeData>
+                          <AbstractNodeData Name="CardValue" ActionTag="-1422131947" Tag="699" RotationSkewX="-38.0000" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-29.4688" RightMargin="-28.5312" TopMargin="-31.3262" BottomMargin="-12.6738" LeftEage="16" RightEage="16" TopEage="17" BottomEage="17" Scale9OriginX="16" Scale9OriginY="17" Scale9Width="26" Scale9Height="10" ctype="ImageViewObjectData">
+                            <Size X="58.0000" Y="44.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position X="-0.4688" Y="9.3262" />
+                            <Scale ScaleX="0.7000" ScaleY="0.7000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="Normal" Path="card/value/leftshow/wan_left_1.png" Plist="" />
+                          </AbstractNodeData>
+                        </Children>
+                        <AnchorPoint />
+                        <Position />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="Card2" ActionTag="-1905196153" Tag="700" IconVisible="True" LeftMargin="17.7842" RightMargin="-17.7842" TopMargin="21.8159" BottomMargin="-21.8159" ctype="SingleNodeObjectData">
+                        <Size X="0.0000" Y="0.0000" />
+                        <Children>
+                          <AbstractNodeData Name="CardBg" ActionTag="-3692442" Tag="701" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-31.5000" RightMargin="-31.5000" TopMargin="-20.0000" BottomMargin="-20.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="9" Scale9Height="16" ctype="ImageViewObjectData">
+                            <Size X="63.0000" Y="40.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="Normal" Path="card/ground/hand/left_hand.png" Plist="" />
+                          </AbstractNodeData>
+                          <AbstractNodeData Name="CardValue" ActionTag="1052196567" Tag="702" RotationSkewX="-38.0000" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-29.4688" RightMargin="-28.5312" TopMargin="-31.3262" BottomMargin="-12.6738" LeftEage="16" RightEage="16" TopEage="17" BottomEage="17" Scale9OriginX="16" Scale9OriginY="17" Scale9Width="26" Scale9Height="10" ctype="ImageViewObjectData">
+                            <Size X="58.0000" Y="44.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position X="-0.4688" Y="9.3262" />
+                            <Scale ScaleX="0.7000" ScaleY="0.7000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="Normal" Path="card/value/leftshow/wan_left_1.png" Plist="" />
+                          </AbstractNodeData>
+                        </Children>
+                        <AnchorPoint />
+                        <Position X="17.7842" Y="-21.8159" />
+                        <Scale ScaleX="1.0300" ScaleY="1.0300" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="Card5" ActionTag="-765465045" Tag="703" IconVisible="True" LeftMargin="-16.2387" RightMargin="16.2387" TopMargin="-22.1452" BottomMargin="22.1452" ctype="SingleNodeObjectData">
+                        <Size X="0.0000" Y="0.0000" />
+                        <Children>
+                          <AbstractNodeData Name="CardBg" ActionTag="920355042" Tag="704" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-32.5000" RightMargin="-32.5000" TopMargin="-19.0000" BottomMargin="-19.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="11" Scale9Height="14" ctype="ImageViewObjectData">
+                            <Size X="65.0000" Y="38.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="Normal" Path="card/ground/hand/left_hand_1.png" Plist="" />
+                          </AbstractNodeData>
+                        </Children>
+                        <AnchorPoint />
+                        <Position X="-16.2387" Y="22.1452" />
+                        <Scale ScaleX="0.9700" ScaleY="0.9700" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="Card6" ActionTag="-121937135" Tag="705" IconVisible="True" LeftMargin="0.9482" RightMargin="-0.9482" TopMargin="0.2604" BottomMargin="-0.2604" ctype="SingleNodeObjectData">
+                        <Size X="0.0000" Y="0.0000" />
+                        <Children>
+                          <AbstractNodeData Name="CardBg" ActionTag="1319656298" Tag="706" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-32.5000" RightMargin="-32.5000" TopMargin="-19.0000" BottomMargin="-19.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="11" Scale9Height="14" ctype="ImageViewObjectData">
+                            <Size X="65.0000" Y="38.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="Normal" Path="card/ground/hand/left_hand_1.png" Plist="" />
+                          </AbstractNodeData>
+                        </Children>
+                        <AnchorPoint />
+                        <Position X="0.9482" Y="-0.2604" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="Card7" ActionTag="-1194078378" Tag="707" IconVisible="True" LeftMargin="18.9241" RightMargin="-18.9241" TopMargin="21.7408" BottomMargin="-21.7408" ctype="SingleNodeObjectData">
+                        <Size X="0.0000" Y="0.0000" />
+                        <Children>
+                          <AbstractNodeData Name="CardBg" ActionTag="-482535114" Tag="708" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-32.5000" RightMargin="-32.5000" TopMargin="-19.0000" BottomMargin="-19.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="11" Scale9Height="14" ctype="ImageViewObjectData">
+                            <Size X="65.0000" Y="38.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="Normal" Path="card/ground/hand/left_hand_1.png" Plist="" />
+                          </AbstractNodeData>
+                        </Children>
+                        <AnchorPoint />
+                        <Position X="18.9241" Y="-21.7408" />
+                        <Scale ScaleX="1.0300" ScaleY="1.0300" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="Card4" ActionTag="771718544" Tag="709" IconVisible="True" LeftMargin="-1.0771" RightMargin="1.0771" TopMargin="-14.7451" BottomMargin="14.7451" ctype="SingleNodeObjectData">
+                        <Size X="0.0000" Y="0.0000" />
+                        <Children>
+                          <AbstractNodeData Name="CardBg" ActionTag="1172325176" Tag="710" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-32.5000" RightMargin="-32.5000" TopMargin="-19.0000" BottomMargin="-19.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="11" Scale9Height="14" ctype="ImageViewObjectData">
+                            <Size X="65.0000" Y="38.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="Normal" Path="card/ground/hand/left_hand_1.png" Plist="" />
+                          </AbstractNodeData>
+                        </Children>
+                        <AnchorPoint />
+                        <Position X="-1.0771" Y="14.7451" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="Card3" ActionTag="-1954150219" Tag="711" IconVisible="True" LeftMargin="3.7853" RightMargin="-3.7853" TopMargin="-12.7036" BottomMargin="12.7036" ctype="SingleNodeObjectData">
+                        <Size X="0.0000" Y="0.0000" />
+                        <Children>
+                          <AbstractNodeData Name="CardBg" ActionTag="799851741" Tag="712" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-31.5000" RightMargin="-31.5000" TopMargin="-20.0000" BottomMargin="-20.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="9" Scale9Height="16" ctype="ImageViewObjectData">
+                            <Size X="63.0000" Y="40.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="Normal" Path="card/ground/hand/left_hand.png" Plist="" />
+                          </AbstractNodeData>
+                          <AbstractNodeData Name="CardValue" ActionTag="603312134" Tag="713" RotationSkewX="-38.0000" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-29.4688" RightMargin="-28.5312" TopMargin="-31.3262" BottomMargin="-12.6738" LeftEage="16" RightEage="16" TopEage="17" BottomEage="17" Scale9OriginX="16" Scale9OriginY="17" Scale9Width="26" Scale9Height="10" ctype="ImageViewObjectData">
+                            <Size X="58.0000" Y="44.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position X="-0.4688" Y="9.3262" />
+                            <Scale ScaleX="0.7000" ScaleY="0.7000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="Normal" Path="card/value/leftshow/wan_left_1.png" Plist="" />
+                          </AbstractNodeData>
+                        </Children>
+                        <AnchorPoint />
+                        <Position X="3.7853" Y="12.7036" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint />
+                    <Position X="130.1200" Y="-160.4400" />
+                    <Scale ScaleX="0.9000" ScaleY="0.9000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint />
+                <Position X="191.5164" Y="237.5631" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.1496" Y="0.3299" />
+                <PreSize X="0.0000" Y="0.0000" />
+              </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" />
             <Position X="640.0000" />
@@ -5133,6 +5097,1187 @@
             <PrePosition X="0.4998" Y="0.4967" />
             <PreSize X="0.1539" Y="0.3222" />
             <FileData Type="Normal" Path="desk/fenzhang.png" Plist="" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="HandCardNd3_" Visible="False" ActionTag="-1133327528" VisibleForFrame="False" Tag="19" IconVisible="True" LeftMargin="244.3682" RightMargin="1035.6318" TopMargin="484.3781" BottomMargin="235.6219" ctype="SingleNodeObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <Children>
+              <AbstractNodeData Name="Card0" ActionTag="2002640287" Tag="148" IconVisible="True" LeftMargin="47.3590" RightMargin="-47.3590" TopMargin="-123.9969" BottomMargin="123.9969" ctype="SingleNodeObjectData">
+                <Size X="0.0000" Y="0.0000" />
+                <Children>
+                  <AbstractNodeData Name="CardBg" ActionTag="-156472133" Tag="149" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
+                    <Size X="54.0000" Y="83.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="card/ground/hand/left_hand_0.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint />
+                <Position X="47.3590" Y="123.9969" />
+                <Scale ScaleX="0.8500" ScaleY="0.8500" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition />
+                <PreSize X="0.0000" Y="0.0000" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Card1" ActionTag="161559655" Tag="150" IconVisible="True" LeftMargin="30.0000" RightMargin="-30.0000" TopMargin="-98.0000" BottomMargin="98.0000" ctype="SingleNodeObjectData">
+                <Size X="0.0000" Y="0.0000" />
+                <Children>
+                  <AbstractNodeData Name="CardBg" ActionTag="1586150260" Tag="151" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
+                    <Size X="54.0000" Y="83.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="card/ground/hand/left_hand_0.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint />
+                <Position X="30.0000" Y="98.0000" />
+                <Scale ScaleX="0.8500" ScaleY="0.8500" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition />
+                <PreSize X="0.0000" Y="0.0000" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Card2" ActionTag="-443870976" Tag="152" IconVisible="True" LeftMargin="12.5000" RightMargin="-12.5000" TopMargin="-76.5000" BottomMargin="76.5000" ctype="SingleNodeObjectData">
+                <Size X="0.0000" Y="0.0000" />
+                <Children>
+                  <AbstractNodeData Name="CardBg" ActionTag="-877475308" Tag="153" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
+                    <Size X="54.0000" Y="83.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="card/ground/hand/left_hand_0.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint />
+                <Position X="12.5000" Y="76.5000" />
+                <Scale ScaleX="0.9000" ScaleY="0.9000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition />
+                <PreSize X="0.0000" Y="0.0000" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Card3" ActionTag="1624935311" Tag="154" IconVisible="True" LeftMargin="-5.0000" RightMargin="5.0000" TopMargin="-55.0000" BottomMargin="55.0000" ctype="SingleNodeObjectData">
+                <Size X="0.0000" Y="0.0000" />
+                <Children>
+                  <AbstractNodeData Name="CardBg" ActionTag="574270613" Tag="155" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
+                    <Size X="54.0000" Y="83.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="card/ground/hand/left_hand_0.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint />
+                <Position X="-5.0000" Y="55.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition />
+                <PreSize X="0.0000" Y="0.0000" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Card4" ActionTag="1613000307" Tag="156" IconVisible="True" LeftMargin="-22.5000" RightMargin="22.5000" TopMargin="-33.5000" BottomMargin="33.5000" ctype="SingleNodeObjectData">
+                <Size X="0.0000" Y="0.0000" />
+                <Children>
+                  <AbstractNodeData Name="CardBg" ActionTag="1550392742" Tag="157" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
+                    <Size X="54.0000" Y="83.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="card/ground/hand/left_hand_0.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint />
+                <Position X="-22.5000" Y="33.5000" />
+                <Scale ScaleX="1.0500" ScaleY="1.0500" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition />
+                <PreSize X="0.0000" Y="0.0000" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Card5" ActionTag="-173122910" Tag="158" IconVisible="True" LeftMargin="-40.0000" RightMargin="40.0000" TopMargin="-12.0000" BottomMargin="12.0000" ctype="SingleNodeObjectData">
+                <Size X="0.0000" Y="0.0000" />
+                <Children>
+                  <AbstractNodeData Name="CardBg" ActionTag="942277431" Tag="159" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
+                    <Size X="54.0000" Y="83.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="card/ground/hand/left_hand_0.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint />
+                <Position X="-40.0000" Y="12.0000" />
+                <Scale ScaleX="1.1000" ScaleY="1.1000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition />
+                <PreSize X="0.0000" Y="0.0000" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Card6" ActionTag="-360160379" Tag="160" IconVisible="True" LeftMargin="-57.5000" RightMargin="57.5000" TopMargin="9.5000" BottomMargin="-9.5000" ctype="SingleNodeObjectData">
+                <Size X="0.0000" Y="0.0000" />
+                <Children>
+                  <AbstractNodeData Name="CardBg" ActionTag="1059772986" Tag="161" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
+                    <Size X="54.0000" Y="83.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="card/ground/hand/left_hand_0.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint />
+                <Position X="-57.5000" Y="-9.5000" />
+                <Scale ScaleX="1.1500" ScaleY="1.1500" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition />
+                <PreSize X="0.0000" Y="0.0000" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Card7" ActionTag="-1574519001" Tag="162" IconVisible="True" LeftMargin="-75.0000" RightMargin="75.0000" TopMargin="31.0000" BottomMargin="-31.0000" ctype="SingleNodeObjectData">
+                <Size X="0.0000" Y="0.0000" />
+                <Children>
+                  <AbstractNodeData Name="CardBg" ActionTag="811740039" Tag="163" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
+                    <Size X="54.0000" Y="83.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="card/ground/hand/left_hand_0.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint />
+                <Position X="-75.0000" Y="-31.0000" />
+                <Scale ScaleX="1.2000" ScaleY="1.2000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition />
+                <PreSize X="0.0000" Y="0.0000" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Card8" ActionTag="-415100866" Tag="164" IconVisible="True" LeftMargin="-92.5000" RightMargin="92.5000" TopMargin="52.5000" BottomMargin="-52.5000" ctype="SingleNodeObjectData">
+                <Size X="0.0000" Y="0.0000" />
+                <Children>
+                  <AbstractNodeData Name="CardBg" ActionTag="-1080862713" Tag="165" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
+                    <Size X="54.0000" Y="83.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="card/ground/hand/left_hand_0.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint />
+                <Position X="-92.5000" Y="-52.5000" />
+                <Scale ScaleX="1.2500" ScaleY="1.2500" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition />
+                <PreSize X="0.0000" Y="0.0000" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Card9" ActionTag="-1577685188" Tag="166" IconVisible="True" LeftMargin="-110.0000" RightMargin="110.0000" TopMargin="74.0000" BottomMargin="-74.0000" ctype="SingleNodeObjectData">
+                <Size X="0.0000" Y="0.0000" />
+                <Children>
+                  <AbstractNodeData Name="CardBg" ActionTag="-999687167" Tag="167" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
+                    <Size X="54.0000" Y="83.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="card/ground/hand/left_hand_0.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint />
+                <Position X="-110.0000" Y="-74.0000" />
+                <Scale ScaleX="1.3000" ScaleY="1.3000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition />
+                <PreSize X="0.0000" Y="0.0000" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Card10" ActionTag="-982939139" Tag="168" IconVisible="True" LeftMargin="-127.5000" RightMargin="127.5000" TopMargin="95.5000" BottomMargin="-95.5000" ctype="SingleNodeObjectData">
+                <Size X="0.0000" Y="0.0000" />
+                <Children>
+                  <AbstractNodeData Name="CardBg" ActionTag="1844024390" Tag="169" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
+                    <Size X="54.0000" Y="83.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="card/ground/hand/left_hand_0.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint />
+                <Position X="-127.5000" Y="-95.5000" />
+                <Scale ScaleX="1.3500" ScaleY="1.3500" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition />
+                <PreSize X="0.0000" Y="0.0000" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Card11" ActionTag="-1608964722" Tag="170" IconVisible="True" LeftMargin="-145.0000" RightMargin="145.0000" TopMargin="117.0000" BottomMargin="-117.0000" ctype="SingleNodeObjectData">
+                <Size X="0.0000" Y="0.0000" />
+                <Children>
+                  <AbstractNodeData Name="CardBg" ActionTag="-1126334117" Tag="171" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
+                    <Size X="54.0000" Y="83.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="card/ground/hand/left_hand_0.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint />
+                <Position X="-145.0000" Y="-117.0000" />
+                <Scale ScaleX="1.4000" ScaleY="1.4000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition />
+                <PreSize X="0.0000" Y="0.0000" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Card12" ActionTag="124186166" Tag="172" IconVisible="True" LeftMargin="-162.5000" RightMargin="162.5000" TopMargin="138.5000" BottomMargin="-138.5000" ctype="SingleNodeObjectData">
+                <Size X="0.0000" Y="0.0000" />
+                <Children>
+                  <AbstractNodeData Name="CardBg" ActionTag="-547995393" Tag="173" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
+                    <Size X="54.0000" Y="83.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="card/ground/hand/left_hand_0.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint />
+                <Position X="-162.5000" Y="-138.5000" />
+                <Scale ScaleX="1.4500" ScaleY="1.4500" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition />
+                <PreSize X="0.0000" Y="0.0000" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Card13" ActionTag="-505443469" Tag="174" IconVisible="True" LeftMargin="-180.0000" RightMargin="180.0000" TopMargin="160.0000" BottomMargin="-160.0000" ctype="SingleNodeObjectData">
+                <Size X="0.0000" Y="0.0000" />
+                <Children>
+                  <AbstractNodeData Name="CardBg" ActionTag="89264891" Tag="175" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
+                    <Size X="54.0000" Y="83.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="card/ground/hand/left_hand_0.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint />
+                <Position X="-180.0000" Y="-160.0000" />
+                <Scale ScaleX="1.5000" ScaleY="1.5000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition />
+                <PreSize X="0.0000" Y="0.0000" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Group3" Visible="False" ActionTag="764770115" Tag="296" IconVisible="True" LeftMargin="-25.5804" RightMargin="25.5804" TopMargin="-45.8341" BottomMargin="45.8341" ctype="SingleNodeObjectData">
+                <Size X="0.0000" Y="0.0000" />
+                <Children>
+                  <AbstractNodeData Name="Card0" ActionTag="-998375607" Tag="297" IconVisible="True" LeftMargin="17.2724" RightMargin="-17.2724" TopMargin="-21.6786" BottomMargin="21.6786" ctype="SingleNodeObjectData">
+                    <Size X="0.0000" Y="0.0000" />
+                    <Children>
+                      <AbstractNodeData Name="CardBg" ActionTag="1095339396" Tag="298" IconVisible="False" LeftMargin="-31.5000" RightMargin="-31.5000" TopMargin="-20.0000" BottomMargin="-20.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="9" Scale9Height="16" ctype="ImageViewObjectData">
+                        <Size X="63.0000" Y="40.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/ground/hand/left_hand.png" Plist="" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="CardValue" ActionTag="-1804375979" Tag="299" RotationSkewX="30.0000" IconVisible="False" LeftMargin="-29.4688" RightMargin="-28.5312" TopMargin="-31.3262" BottomMargin="-12.6738" LeftEage="16" RightEage="16" TopEage="17" BottomEage="17" Scale9OriginX="16" Scale9OriginY="17" Scale9Width="26" Scale9Height="10" ctype="ImageViewObjectData">
+                        <Size X="58.0000" Y="44.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="-0.4688" Y="9.3262" />
+                        <Scale ScaleX="0.7000" ScaleY="0.7000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/value/leftshow/wan_left_1.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint />
+                    <Position X="17.2724" Y="21.6786" />
+                    <Scale ScaleX="0.9700" ScaleY="0.9700" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Card1" ActionTag="-1141495932" Tag="300" IconVisible="True" ctype="SingleNodeObjectData">
+                    <Size X="0.0000" Y="0.0000" />
+                    <Children>
+                      <AbstractNodeData Name="CardBg" ActionTag="-699614882" Tag="301" IconVisible="False" LeftMargin="-31.5000" RightMargin="-31.5000" TopMargin="-20.0000" BottomMargin="-20.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="9" Scale9Height="16" ctype="ImageViewObjectData">
+                        <Size X="63.0000" Y="40.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/ground/hand/left_hand.png" Plist="" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="CardValue" ActionTag="-368878801" Tag="302" RotationSkewX="30.0000" IconVisible="False" LeftMargin="-29.4688" RightMargin="-28.5312" TopMargin="-31.3262" BottomMargin="-12.6738" LeftEage="16" RightEage="16" TopEage="17" BottomEage="17" Scale9OriginX="16" Scale9OriginY="17" Scale9Width="26" Scale9Height="10" ctype="ImageViewObjectData">
+                        <Size X="58.0000" Y="44.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="-0.4688" Y="9.3262" />
+                        <Scale ScaleX="0.7000" ScaleY="0.7000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/value/leftshow/wan_left_1.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint />
+                    <Position />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Card2" ActionTag="-1814090149" Tag="303" IconVisible="True" LeftMargin="-16.7677" RightMargin="16.7677" TopMargin="20.2330" BottomMargin="-20.2330" ctype="SingleNodeObjectData">
+                    <Size X="0.0000" Y="0.0000" />
+                    <Children>
+                      <AbstractNodeData Name="CardBg" ActionTag="-1158903917" Tag="304" IconVisible="False" LeftMargin="-31.5000" RightMargin="-31.5000" TopMargin="-20.0000" BottomMargin="-20.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="9" Scale9Height="16" ctype="ImageViewObjectData">
+                        <Size X="63.0000" Y="40.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/ground/hand/left_hand.png" Plist="" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="CardValue" ActionTag="-1451365839" Tag="305" RotationSkewX="30.0000" IconVisible="False" LeftMargin="-29.4688" RightMargin="-28.5312" TopMargin="-31.3262" BottomMargin="-12.6738" LeftEage="16" RightEage="16" TopEage="17" BottomEage="17" Scale9OriginX="16" Scale9OriginY="17" Scale9Width="26" Scale9Height="10" ctype="ImageViewObjectData">
+                        <Size X="58.0000" Y="44.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="-0.4688" Y="9.3262" />
+                        <Scale ScaleX="0.7000" ScaleY="0.7000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/value/leftshow/wan_left_1.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint />
+                    <Position X="-16.7677" Y="-20.2330" />
+                    <Scale ScaleX="1.0300" ScaleY="1.0300" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Card5" ActionTag="-1468283205" Tag="585" IconVisible="True" LeftMargin="15.9782" RightMargin="-15.9782" TopMargin="-23.6273" BottomMargin="23.6273" ctype="SingleNodeObjectData">
+                    <Size X="0.0000" Y="0.0000" />
+                    <Children>
+                      <AbstractNodeData Name="CardBg" ActionTag="-2004259149" Tag="586" IconVisible="False" LeftMargin="-32.5000" RightMargin="-32.5000" TopMargin="-19.0000" BottomMargin="-19.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="11" Scale9Height="14" ctype="ImageViewObjectData">
+                        <Size X="65.0000" Y="38.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/ground/hand/left_hand_1.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint />
+                    <Position X="15.9782" Y="23.6273" />
+                    <Scale ScaleX="0.9700" ScaleY="0.9700" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Card6" ActionTag="428506416" Tag="588" IconVisible="True" LeftMargin="-0.1754" RightMargin="0.1754" TopMargin="-0.1773" BottomMargin="0.1773" ctype="SingleNodeObjectData">
+                    <Size X="0.0000" Y="0.0000" />
+                    <Children>
+                      <AbstractNodeData Name="CardBg" ActionTag="-315526554" Tag="589" IconVisible="False" LeftMargin="-32.5000" RightMargin="-32.5000" TopMargin="-19.0000" BottomMargin="-19.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="11" Scale9Height="14" ctype="ImageViewObjectData">
+                        <Size X="65.0000" Y="38.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/ground/hand/left_hand_1.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint />
+                    <Position X="-0.1754" Y="0.1773" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Card7" ActionTag="1599278016" Tag="590" IconVisible="True" LeftMargin="-16.3295" RightMargin="16.3295" TopMargin="18.7899" BottomMargin="-18.7899" ctype="SingleNodeObjectData">
+                    <Size X="0.0000" Y="0.0000" />
+                    <Children>
+                      <AbstractNodeData Name="CardBg" ActionTag="1086936187" Tag="591" IconVisible="False" LeftMargin="-32.5000" RightMargin="-32.5000" TopMargin="-19.0000" BottomMargin="-19.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="11" Scale9Height="14" ctype="ImageViewObjectData">
+                        <Size X="65.0000" Y="38.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/ground/hand/left_hand_1.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint />
+                    <Position X="-16.3295" Y="-18.7899" />
+                    <Scale ScaleX="1.0300" ScaleY="1.0300" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Card4" ActionTag="985551017" Tag="592" IconVisible="True" LeftMargin="-0.3516" RightMargin="0.3516" TopMargin="-16.7921" BottomMargin="16.7921" ctype="SingleNodeObjectData">
+                    <Size X="0.0000" Y="0.0000" />
+                    <Children>
+                      <AbstractNodeData Name="CardBg" ActionTag="-936536945" Tag="593" IconVisible="False" LeftMargin="-32.5000" RightMargin="-32.5000" TopMargin="-19.0000" BottomMargin="-19.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="11" Scale9Height="14" ctype="ImageViewObjectData">
+                        <Size X="65.0000" Y="38.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/ground/hand/left_hand_1.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint />
+                    <Position X="-0.3516" Y="16.7921" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Card3" ActionTag="-159093948" Tag="306" IconVisible="True" LeftMargin="-1.2966" RightMargin="1.2966" TopMargin="-15.2025" BottomMargin="15.2025" ctype="SingleNodeObjectData">
+                    <Size X="0.0000" Y="0.0000" />
+                    <Children>
+                      <AbstractNodeData Name="CardBg" ActionTag="1582432908" Tag="307" IconVisible="False" LeftMargin="-31.5000" RightMargin="-31.5000" TopMargin="-20.0000" BottomMargin="-20.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="9" Scale9Height="16" ctype="ImageViewObjectData">
+                        <Size X="63.0000" Y="40.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/ground/hand/left_hand.png" Plist="" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="CardValue" ActionTag="2002343180" Tag="308" RotationSkewX="30.0000" IconVisible="False" LeftMargin="-29.4688" RightMargin="-28.5312" TopMargin="-31.3262" BottomMargin="-12.6738" LeftEage="16" RightEage="16" TopEage="17" BottomEage="17" Scale9OriginX="16" Scale9OriginY="17" Scale9Width="26" Scale9Height="10" ctype="ImageViewObjectData">
+                        <Size X="58.0000" Y="44.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="-0.4688" Y="9.3262" />
+                        <Scale ScaleX="0.7000" ScaleY="0.7000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/value/leftshow/wan_left_1.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint />
+                    <Position X="-1.2966" Y="15.2025" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint />
+                <Position X="-25.5804" Y="45.8341" />
+                <Scale ScaleX="0.8700" ScaleY="0.8700" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition />
+                <PreSize X="0.0000" Y="0.0000" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Group2" Visible="False" ActionTag="-1109265836" Tag="594" IconVisible="True" LeftMargin="-75.8100" RightMargin="75.8100" TopMargin="21.5800" BottomMargin="-21.5800" ctype="SingleNodeObjectData">
+                <Size X="0.0000" Y="0.0000" />
+                <Children>
+                  <AbstractNodeData Name="Card0" ActionTag="452206462" Tag="595" IconVisible="True" LeftMargin="17.2724" RightMargin="-17.2724" TopMargin="-21.6786" BottomMargin="21.6786" ctype="SingleNodeObjectData">
+                    <Size X="0.0000" Y="0.0000" />
+                    <Children>
+                      <AbstractNodeData Name="CardBg" ActionTag="-1476563315" Tag="596" IconVisible="False" LeftMargin="-31.5000" RightMargin="-31.5000" TopMargin="-20.0000" BottomMargin="-20.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="9" Scale9Height="16" ctype="ImageViewObjectData">
+                        <Size X="63.0000" Y="40.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/ground/hand/left_hand.png" Plist="" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="CardValue" ActionTag="395638260" Tag="597" RotationSkewX="30.0000" IconVisible="False" LeftMargin="-29.4688" RightMargin="-28.5312" TopMargin="-31.3262" BottomMargin="-12.6738" LeftEage="16" RightEage="16" TopEage="17" BottomEage="17" Scale9OriginX="16" Scale9OriginY="17" Scale9Width="26" Scale9Height="10" ctype="ImageViewObjectData">
+                        <Size X="58.0000" Y="44.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="-0.4688" Y="9.3262" />
+                        <Scale ScaleX="0.7000" ScaleY="0.7000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/value/leftshow/wan_left_1.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint />
+                    <Position X="17.2724" Y="21.6786" />
+                    <Scale ScaleX="0.9700" ScaleY="0.9700" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Card1" ActionTag="-2067349905" Tag="598" IconVisible="True" ctype="SingleNodeObjectData">
+                    <Size X="0.0000" Y="0.0000" />
+                    <Children>
+                      <AbstractNodeData Name="CardBg" ActionTag="-1481252700" Tag="599" IconVisible="False" LeftMargin="-31.5000" RightMargin="-31.5000" TopMargin="-20.0000" BottomMargin="-20.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="9" Scale9Height="16" ctype="ImageViewObjectData">
+                        <Size X="63.0000" Y="40.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/ground/hand/left_hand.png" Plist="" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="CardValue" ActionTag="-496214412" Tag="600" RotationSkewX="30.0000" IconVisible="False" LeftMargin="-29.4688" RightMargin="-28.5312" TopMargin="-31.3262" BottomMargin="-12.6738" LeftEage="16" RightEage="16" TopEage="17" BottomEage="17" Scale9OriginX="16" Scale9OriginY="17" Scale9Width="26" Scale9Height="10" ctype="ImageViewObjectData">
+                        <Size X="58.0000" Y="44.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="-0.4688" Y="9.3262" />
+                        <Scale ScaleX="0.7000" ScaleY="0.7000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/value/leftshow/wan_left_1.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint />
+                    <Position />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Card2" ActionTag="-139372294" Tag="601" IconVisible="True" LeftMargin="-16.7677" RightMargin="16.7677" TopMargin="20.2330" BottomMargin="-20.2330" ctype="SingleNodeObjectData">
+                    <Size X="0.0000" Y="0.0000" />
+                    <Children>
+                      <AbstractNodeData Name="CardBg" ActionTag="1690336892" Tag="602" IconVisible="False" LeftMargin="-31.5000" RightMargin="-31.5000" TopMargin="-20.0000" BottomMargin="-20.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="9" Scale9Height="16" ctype="ImageViewObjectData">
+                        <Size X="63.0000" Y="40.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/ground/hand/left_hand.png" Plist="" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="CardValue" ActionTag="-1760376155" Tag="603" RotationSkewX="30.0000" IconVisible="False" LeftMargin="-29.4688" RightMargin="-28.5312" TopMargin="-31.3262" BottomMargin="-12.6738" LeftEage="16" RightEage="16" TopEage="17" BottomEage="17" Scale9OriginX="16" Scale9OriginY="17" Scale9Width="26" Scale9Height="10" ctype="ImageViewObjectData">
+                        <Size X="58.0000" Y="44.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="-0.4688" Y="9.3262" />
+                        <Scale ScaleX="0.7000" ScaleY="0.7000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/value/leftshow/wan_left_1.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint />
+                    <Position X="-16.7677" Y="-20.2330" />
+                    <Scale ScaleX="1.0300" ScaleY="1.0300" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Card5" ActionTag="37221870" Tag="607" IconVisible="True" LeftMargin="15.9782" RightMargin="-15.9782" TopMargin="-23.6273" BottomMargin="23.6273" ctype="SingleNodeObjectData">
+                    <Size X="0.0000" Y="0.0000" />
+                    <Children>
+                      <AbstractNodeData Name="CardBg" ActionTag="-1892813405" Tag="608" IconVisible="False" LeftMargin="-32.5000" RightMargin="-32.5000" TopMargin="-19.0000" BottomMargin="-19.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="11" Scale9Height="14" ctype="ImageViewObjectData">
+                        <Size X="65.0000" Y="38.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/ground/hand/left_hand_1.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint />
+                    <Position X="15.9782" Y="23.6273" />
+                    <Scale ScaleX="0.9700" ScaleY="0.9700" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Card6" ActionTag="-668580586" Tag="609" IconVisible="True" LeftMargin="-0.1754" RightMargin="0.1754" TopMargin="-0.1773" BottomMargin="0.1773" ctype="SingleNodeObjectData">
+                    <Size X="0.0000" Y="0.0000" />
+                    <Children>
+                      <AbstractNodeData Name="CardBg" ActionTag="-137271893" Tag="610" IconVisible="False" LeftMargin="-32.5000" RightMargin="-32.5000" TopMargin="-19.0000" BottomMargin="-19.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="11" Scale9Height="14" ctype="ImageViewObjectData">
+                        <Size X="65.0000" Y="38.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/ground/hand/left_hand_1.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint />
+                    <Position X="-0.1754" Y="0.1773" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Card7" ActionTag="1664105370" Tag="611" IconVisible="True" LeftMargin="-16.3295" RightMargin="16.3295" TopMargin="18.7899" BottomMargin="-18.7899" ctype="SingleNodeObjectData">
+                    <Size X="0.0000" Y="0.0000" />
+                    <Children>
+                      <AbstractNodeData Name="CardBg" ActionTag="194330020" Tag="612" IconVisible="False" LeftMargin="-32.5000" RightMargin="-32.5000" TopMargin="-19.0000" BottomMargin="-19.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="11" Scale9Height="14" ctype="ImageViewObjectData">
+                        <Size X="65.0000" Y="38.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/ground/hand/left_hand_1.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint />
+                    <Position X="-16.3295" Y="-18.7899" />
+                    <Scale ScaleX="1.0300" ScaleY="1.0300" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Card4" ActionTag="-1249578258" Tag="613" IconVisible="True" LeftMargin="-0.3516" RightMargin="0.3516" TopMargin="-16.7921" BottomMargin="16.7921" ctype="SingleNodeObjectData">
+                    <Size X="0.0000" Y="0.0000" />
+                    <Children>
+                      <AbstractNodeData Name="CardBg" ActionTag="670325242" Tag="614" IconVisible="False" LeftMargin="-32.5000" RightMargin="-32.5000" TopMargin="-19.0000" BottomMargin="-19.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="11" Scale9Height="14" ctype="ImageViewObjectData">
+                        <Size X="65.0000" Y="38.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/ground/hand/left_hand_1.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint />
+                    <Position X="-0.3516" Y="16.7921" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Card3" ActionTag="1677493420" Tag="604" IconVisible="True" LeftMargin="-1.2966" RightMargin="1.2966" TopMargin="-15.2025" BottomMargin="15.2025" ctype="SingleNodeObjectData">
+                    <Size X="0.0000" Y="0.0000" />
+                    <Children>
+                      <AbstractNodeData Name="CardBg" ActionTag="564565468" Tag="605" IconVisible="False" LeftMargin="-31.5000" RightMargin="-31.5000" TopMargin="-20.0000" BottomMargin="-20.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="9" Scale9Height="16" ctype="ImageViewObjectData">
+                        <Size X="63.0000" Y="40.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/ground/hand/left_hand.png" Plist="" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="CardValue" ActionTag="1362959892" Tag="606" RotationSkewX="30.0000" IconVisible="False" LeftMargin="-29.4688" RightMargin="-28.5312" TopMargin="-31.3262" BottomMargin="-12.6738" LeftEage="16" RightEage="16" TopEage="17" BottomEage="17" Scale9OriginX="16" Scale9OriginY="17" Scale9Width="26" Scale9Height="10" ctype="ImageViewObjectData">
+                        <Size X="58.0000" Y="44.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="-0.4688" Y="9.3262" />
+                        <Scale ScaleX="0.7000" ScaleY="0.7000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/value/leftshow/wan_left_1.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint />
+                    <Position X="-1.2966" Y="15.2025" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint />
+                <Position X="-75.8100" Y="-21.5800" />
+                <Scale ScaleX="0.9400" ScaleY="0.9400" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition />
+                <PreSize X="0.0000" Y="0.0000" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Group1" Visible="False" ActionTag="-1184862257" Tag="615" IconVisible="True" LeftMargin="-129.1300" RightMargin="129.1300" TopMargin="87.7900" BottomMargin="-87.7900" ctype="SingleNodeObjectData">
+                <Size X="0.0000" Y="0.0000" />
+                <Children>
+                  <AbstractNodeData Name="Card0" ActionTag="1786704690" Tag="616" IconVisible="True" LeftMargin="17.2724" RightMargin="-17.2724" TopMargin="-21.6786" BottomMargin="21.6786" ctype="SingleNodeObjectData">
+                    <Size X="0.0000" Y="0.0000" />
+                    <Children>
+                      <AbstractNodeData Name="CardBg" ActionTag="-480426923" Tag="617" IconVisible="False" LeftMargin="-31.5000" RightMargin="-31.5000" TopMargin="-20.0000" BottomMargin="-20.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="9" Scale9Height="16" ctype="ImageViewObjectData">
+                        <Size X="63.0000" Y="40.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/ground/hand/left_hand.png" Plist="" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="CardValue" ActionTag="1099140671" Tag="618" RotationSkewX="30.0000" IconVisible="False" LeftMargin="-29.4688" RightMargin="-28.5312" TopMargin="-31.3262" BottomMargin="-12.6738" LeftEage="16" RightEage="16" TopEage="17" BottomEage="17" Scale9OriginX="16" Scale9OriginY="17" Scale9Width="26" Scale9Height="10" ctype="ImageViewObjectData">
+                        <Size X="58.0000" Y="44.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="-0.4688" Y="9.3262" />
+                        <Scale ScaleX="0.7000" ScaleY="0.7000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/value/leftshow/wan_left_1.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint />
+                    <Position X="17.2724" Y="21.6786" />
+                    <Scale ScaleX="0.9700" ScaleY="0.9700" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Card1" ActionTag="-977943565" Tag="619" IconVisible="True" ctype="SingleNodeObjectData">
+                    <Size X="0.0000" Y="0.0000" />
+                    <Children>
+                      <AbstractNodeData Name="CardBg" ActionTag="139931683" Tag="620" IconVisible="False" LeftMargin="-31.5000" RightMargin="-31.5000" TopMargin="-20.0000" BottomMargin="-20.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="9" Scale9Height="16" ctype="ImageViewObjectData">
+                        <Size X="63.0000" Y="40.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/ground/hand/left_hand.png" Plist="" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="CardValue" ActionTag="1336305152" Tag="621" RotationSkewX="30.0000" IconVisible="False" LeftMargin="-29.4688" RightMargin="-28.5312" TopMargin="-31.3262" BottomMargin="-12.6738" LeftEage="16" RightEage="16" TopEage="17" BottomEage="17" Scale9OriginX="16" Scale9OriginY="17" Scale9Width="26" Scale9Height="10" ctype="ImageViewObjectData">
+                        <Size X="58.0000" Y="44.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="-0.4688" Y="9.3262" />
+                        <Scale ScaleX="0.7000" ScaleY="0.7000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/value/leftshow/wan_left_1.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint />
+                    <Position />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Card2" ActionTag="-2017822931" Tag="622" IconVisible="True" LeftMargin="-16.7677" RightMargin="16.7677" TopMargin="20.2330" BottomMargin="-20.2330" ctype="SingleNodeObjectData">
+                    <Size X="0.0000" Y="0.0000" />
+                    <Children>
+                      <AbstractNodeData Name="CardBg" ActionTag="-1240588133" Tag="623" IconVisible="False" LeftMargin="-31.5000" RightMargin="-31.5000" TopMargin="-20.0000" BottomMargin="-20.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="9" Scale9Height="16" ctype="ImageViewObjectData">
+                        <Size X="63.0000" Y="40.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/ground/hand/left_hand.png" Plist="" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="CardValue" ActionTag="-273483857" Tag="624" RotationSkewX="30.0000" IconVisible="False" LeftMargin="-29.4688" RightMargin="-28.5312" TopMargin="-31.3262" BottomMargin="-12.6738" LeftEage="16" RightEage="16" TopEage="17" BottomEage="17" Scale9OriginX="16" Scale9OriginY="17" Scale9Width="26" Scale9Height="10" ctype="ImageViewObjectData">
+                        <Size X="58.0000" Y="44.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="-0.4688" Y="9.3262" />
+                        <Scale ScaleX="0.7000" ScaleY="0.7000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/value/leftshow/wan_left_1.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint />
+                    <Position X="-16.7677" Y="-20.2330" />
+                    <Scale ScaleX="1.0300" ScaleY="1.0300" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Card5" ActionTag="1041984970" Tag="628" IconVisible="True" LeftMargin="15.9782" RightMargin="-15.9782" TopMargin="-23.6273" BottomMargin="23.6273" ctype="SingleNodeObjectData">
+                    <Size X="0.0000" Y="0.0000" />
+                    <Children>
+                      <AbstractNodeData Name="CardBg" ActionTag="1067972086" Tag="629" IconVisible="False" LeftMargin="-32.5000" RightMargin="-32.5000" TopMargin="-19.0000" BottomMargin="-19.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="11" Scale9Height="14" ctype="ImageViewObjectData">
+                        <Size X="65.0000" Y="38.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/ground/hand/left_hand_1.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint />
+                    <Position X="15.9782" Y="23.6273" />
+                    <Scale ScaleX="0.9700" ScaleY="0.9700" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Card6" ActionTag="1197752534" Tag="630" IconVisible="True" LeftMargin="-0.1754" RightMargin="0.1754" TopMargin="-0.1773" BottomMargin="0.1773" ctype="SingleNodeObjectData">
+                    <Size X="0.0000" Y="0.0000" />
+                    <Children>
+                      <AbstractNodeData Name="CardBg" ActionTag="-1258712773" Tag="631" IconVisible="False" LeftMargin="-32.5000" RightMargin="-32.5000" TopMargin="-19.0000" BottomMargin="-19.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="11" Scale9Height="14" ctype="ImageViewObjectData">
+                        <Size X="65.0000" Y="38.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/ground/hand/left_hand_1.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint />
+                    <Position X="-0.1754" Y="0.1773" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Card7" ActionTag="1588957537" Tag="632" IconVisible="True" LeftMargin="-16.3295" RightMargin="16.3295" TopMargin="18.7899" BottomMargin="-18.7899" ctype="SingleNodeObjectData">
+                    <Size X="0.0000" Y="0.0000" />
+                    <Children>
+                      <AbstractNodeData Name="CardBg" ActionTag="-157820115" Tag="633" IconVisible="False" LeftMargin="-32.5000" RightMargin="-32.5000" TopMargin="-19.0000" BottomMargin="-19.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="11" Scale9Height="14" ctype="ImageViewObjectData">
+                        <Size X="65.0000" Y="38.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/ground/hand/left_hand_1.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint />
+                    <Position X="-16.3295" Y="-18.7899" />
+                    <Scale ScaleX="1.0300" ScaleY="1.0300" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Card4" ActionTag="1992332770" Tag="634" IconVisible="True" LeftMargin="-0.3516" RightMargin="0.3516" TopMargin="-16.7921" BottomMargin="16.7921" ctype="SingleNodeObjectData">
+                    <Size X="0.0000" Y="0.0000" />
+                    <Children>
+                      <AbstractNodeData Name="CardBg" ActionTag="-1156532633" Tag="635" IconVisible="False" LeftMargin="-32.5000" RightMargin="-32.5000" TopMargin="-19.0000" BottomMargin="-19.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="11" Scale9Height="14" ctype="ImageViewObjectData">
+                        <Size X="65.0000" Y="38.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/ground/hand/left_hand_1.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint />
+                    <Position X="-0.3516" Y="16.7921" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Card3" ActionTag="-1194280235" Tag="625" IconVisible="True" LeftMargin="-1.2966" RightMargin="1.2966" TopMargin="-15.2025" BottomMargin="15.2025" ctype="SingleNodeObjectData">
+                    <Size X="0.0000" Y="0.0000" />
+                    <Children>
+                      <AbstractNodeData Name="CardBg" ActionTag="-1340780973" Tag="626" IconVisible="False" LeftMargin="-31.5000" RightMargin="-31.5000" TopMargin="-20.0000" BottomMargin="-20.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="9" Scale9Height="16" ctype="ImageViewObjectData">
+                        <Size X="63.0000" Y="40.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/ground/hand/left_hand.png" Plist="" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="CardValue" ActionTag="-411824864" Tag="627" RotationSkewX="30.0000" IconVisible="False" LeftMargin="-29.4688" RightMargin="-28.5312" TopMargin="-31.3262" BottomMargin="-12.6738" LeftEage="16" RightEage="16" TopEage="17" BottomEage="17" Scale9OriginX="16" Scale9OriginY="17" Scale9Width="26" Scale9Height="10" ctype="ImageViewObjectData">
+                        <Size X="58.0000" Y="44.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="-0.4688" Y="9.3262" />
+                        <Scale ScaleX="0.7000" ScaleY="0.7000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/value/leftshow/wan_left_1.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint />
+                    <Position X="-1.2966" Y="15.2025" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint />
+                <Position X="-129.1300" Y="-87.7900" />
+                <Scale ScaleX="0.8700" ScaleY="0.8700" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition />
+                <PreSize X="0.0000" Y="0.0000" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Group0" Visible="False" ActionTag="1032708863" Tag="636" IconVisible="True" LeftMargin="-180.4000" RightMargin="180.4000" TopMargin="158.3000" BottomMargin="-158.3000" ctype="SingleNodeObjectData">
+                <Size X="0.0000" Y="0.0000" />
+                <Children>
+                  <AbstractNodeData Name="Card0" ActionTag="1457446188" Tag="637" IconVisible="True" LeftMargin="17.2724" RightMargin="-17.2724" TopMargin="-21.6786" BottomMargin="21.6786" ctype="SingleNodeObjectData">
+                    <Size X="0.0000" Y="0.0000" />
+                    <Children>
+                      <AbstractNodeData Name="CardBg" ActionTag="362107835" Tag="638" IconVisible="False" LeftMargin="-31.5000" RightMargin="-31.5000" TopMargin="-20.0000" BottomMargin="-20.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="9" Scale9Height="16" ctype="ImageViewObjectData">
+                        <Size X="63.0000" Y="40.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/ground/hand/left_hand.png" Plist="" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="CardValue" ActionTag="-556214138" Tag="639" RotationSkewX="30.0000" IconVisible="False" LeftMargin="-29.4688" RightMargin="-28.5312" TopMargin="-31.3262" BottomMargin="-12.6738" LeftEage="16" RightEage="16" TopEage="17" BottomEage="17" Scale9OriginX="16" Scale9OriginY="17" Scale9Width="26" Scale9Height="10" ctype="ImageViewObjectData">
+                        <Size X="58.0000" Y="44.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="-0.4688" Y="9.3262" />
+                        <Scale ScaleX="0.7000" ScaleY="0.7000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/value/leftshow/wan_left_1.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint />
+                    <Position X="17.2724" Y="21.6786" />
+                    <Scale ScaleX="0.9700" ScaleY="0.9700" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Card1" ActionTag="722720653" Tag="640" IconVisible="True" ctype="SingleNodeObjectData">
+                    <Size X="0.0000" Y="0.0000" />
+                    <Children>
+                      <AbstractNodeData Name="CardBg" ActionTag="1570503558" Tag="641" IconVisible="False" LeftMargin="-31.5000" RightMargin="-31.5000" TopMargin="-20.0000" BottomMargin="-20.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="9" Scale9Height="16" ctype="ImageViewObjectData">
+                        <Size X="63.0000" Y="40.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/ground/hand/left_hand.png" Plist="" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="CardValue" ActionTag="-62952131" Tag="642" RotationSkewX="30.0000" IconVisible="False" LeftMargin="-29.4688" RightMargin="-28.5312" TopMargin="-31.3262" BottomMargin="-12.6738" LeftEage="16" RightEage="16" TopEage="17" BottomEage="17" Scale9OriginX="16" Scale9OriginY="17" Scale9Width="26" Scale9Height="10" ctype="ImageViewObjectData">
+                        <Size X="58.0000" Y="44.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="-0.4688" Y="9.3262" />
+                        <Scale ScaleX="0.7000" ScaleY="0.7000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/value/leftshow/wan_left_1.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint />
+                    <Position />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Card2" ActionTag="396809657" Tag="643" IconVisible="True" LeftMargin="-16.7677" RightMargin="16.7677" TopMargin="20.2330" BottomMargin="-20.2330" ctype="SingleNodeObjectData">
+                    <Size X="0.0000" Y="0.0000" />
+                    <Children>
+                      <AbstractNodeData Name="CardBg" ActionTag="1531856469" Tag="644" IconVisible="False" LeftMargin="-31.5000" RightMargin="-31.5000" TopMargin="-20.0000" BottomMargin="-20.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="9" Scale9Height="16" ctype="ImageViewObjectData">
+                        <Size X="63.0000" Y="40.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/ground/hand/left_hand.png" Plist="" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="CardValue" ActionTag="1726880492" Tag="645" RotationSkewX="30.0000" IconVisible="False" LeftMargin="-29.4688" RightMargin="-28.5312" TopMargin="-31.3262" BottomMargin="-12.6738" LeftEage="16" RightEage="16" TopEage="17" BottomEage="17" Scale9OriginX="16" Scale9OriginY="17" Scale9Width="26" Scale9Height="10" ctype="ImageViewObjectData">
+                        <Size X="58.0000" Y="44.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="-0.4688" Y="9.3262" />
+                        <Scale ScaleX="0.7000" ScaleY="0.7000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/value/leftshow/wan_left_1.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint />
+                    <Position X="-16.7677" Y="-20.2330" />
+                    <Scale ScaleX="1.0300" ScaleY="1.0300" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Card5" ActionTag="1383559494" Tag="649" IconVisible="True" LeftMargin="15.9782" RightMargin="-15.9782" TopMargin="-23.6273" BottomMargin="23.6273" ctype="SingleNodeObjectData">
+                    <Size X="0.0000" Y="0.0000" />
+                    <Children>
+                      <AbstractNodeData Name="CardBg" ActionTag="1850267294" Tag="650" IconVisible="False" LeftMargin="-32.5000" RightMargin="-32.5000" TopMargin="-19.0000" BottomMargin="-19.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="11" Scale9Height="14" ctype="ImageViewObjectData">
+                        <Size X="65.0000" Y="38.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/ground/hand/left_hand_1.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint />
+                    <Position X="15.9782" Y="23.6273" />
+                    <Scale ScaleX="0.9700" ScaleY="0.9700" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Card6" ActionTag="-23785593" Tag="651" IconVisible="True" LeftMargin="-0.1754" RightMargin="0.1754" TopMargin="-0.1773" BottomMargin="0.1773" ctype="SingleNodeObjectData">
+                    <Size X="0.0000" Y="0.0000" />
+                    <Children>
+                      <AbstractNodeData Name="CardBg" ActionTag="1910476488" Tag="652" IconVisible="False" LeftMargin="-32.5000" RightMargin="-32.5000" TopMargin="-19.0000" BottomMargin="-19.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="11" Scale9Height="14" ctype="ImageViewObjectData">
+                        <Size X="65.0000" Y="38.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/ground/hand/left_hand_1.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint />
+                    <Position X="-0.1754" Y="0.1773" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Card7" ActionTag="716918045" Tag="653" IconVisible="True" LeftMargin="-16.3295" RightMargin="16.3295" TopMargin="18.7899" BottomMargin="-18.7899" ctype="SingleNodeObjectData">
+                    <Size X="0.0000" Y="0.0000" />
+                    <Children>
+                      <AbstractNodeData Name="CardBg" ActionTag="913842167" Tag="654" IconVisible="False" LeftMargin="-32.5000" RightMargin="-32.5000" TopMargin="-19.0000" BottomMargin="-19.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="11" Scale9Height="14" ctype="ImageViewObjectData">
+                        <Size X="65.0000" Y="38.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/ground/hand/left_hand_1.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint />
+                    <Position X="-16.3295" Y="-18.7899" />
+                    <Scale ScaleX="1.0300" ScaleY="1.0300" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Card4" ActionTag="1952690947" Tag="655" IconVisible="True" LeftMargin="-0.3516" RightMargin="0.3516" TopMargin="-16.7921" BottomMargin="16.7921" ctype="SingleNodeObjectData">
+                    <Size X="0.0000" Y="0.0000" />
+                    <Children>
+                      <AbstractNodeData Name="CardBg" ActionTag="68860325" Tag="656" IconVisible="False" LeftMargin="-32.5000" RightMargin="-32.5000" TopMargin="-19.0000" BottomMargin="-19.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="11" Scale9Height="14" ctype="ImageViewObjectData">
+                        <Size X="65.0000" Y="38.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/ground/hand/left_hand_1.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint />
+                    <Position X="-0.3516" Y="16.7921" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Card3" ActionTag="-1161215722" Tag="646" IconVisible="True" LeftMargin="-1.2966" RightMargin="1.2966" TopMargin="-15.2025" BottomMargin="15.2025" ctype="SingleNodeObjectData">
+                    <Size X="0.0000" Y="0.0000" />
+                    <Children>
+                      <AbstractNodeData Name="CardBg" ActionTag="-711168751" Tag="647" IconVisible="False" LeftMargin="-31.5000" RightMargin="-31.5000" TopMargin="-20.0000" BottomMargin="-20.0000" LeftEage="27" RightEage="27" TopEage="12" BottomEage="12" Scale9OriginX="27" Scale9OriginY="12" Scale9Width="9" Scale9Height="16" ctype="ImageViewObjectData">
+                        <Size X="63.0000" Y="40.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/ground/hand/left_hand.png" Plist="" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="CardValue" ActionTag="2044923863" Tag="648" RotationSkewX="30.0000" IconVisible="False" LeftMargin="-29.4688" RightMargin="-28.5312" TopMargin="-31.3262" BottomMargin="-12.6738" LeftEage="16" RightEage="16" TopEage="17" BottomEage="17" Scale9OriginX="16" Scale9OriginY="17" Scale9Width="26" Scale9Height="10" ctype="ImageViewObjectData">
+                        <Size X="58.0000" Y="44.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="-0.4688" Y="9.3262" />
+                        <Scale ScaleX="0.7000" ScaleY="0.7000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition />
+                        <PreSize X="0.0000" Y="0.0000" />
+                        <FileData Type="Normal" Path="card/value/leftshow/wan_left_1.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint />
+                    <Position X="-1.2966" Y="15.2025" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint />
+                <Position X="-180.4000" Y="-158.3000" />
+                <Scale ScaleX="0.9000" ScaleY="0.9000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition />
+                <PreSize X="0.0000" Y="0.0000" />
+              </AbstractNodeData>
+            </Children>
+            <AnchorPoint />
+            <Position X="244.3682" Y="235.6219" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.1909" Y="0.3273" />
+            <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
         </Children>
       </ObjectData>

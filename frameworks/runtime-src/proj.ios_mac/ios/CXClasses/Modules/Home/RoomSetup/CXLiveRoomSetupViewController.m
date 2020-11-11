@@ -87,7 +87,7 @@
         } else if (request.response.Success.integerValue == 6) {
             [weakSelf toast:@"房间名不能超过最大字数"];
         } else {
-            [weakSelf toast:request.response.desc];
+            [weakSelf toast:request.response.Code];
         }
     }];
 }

@@ -78,16 +78,8 @@
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [weakSelf.navigationController popViewControllerAnimated:YES];
             });
-        } else if (request.response.Success.integerValue == 2) {
-            [weakSelf toast:@"没有权限修改"];
-        } else if (request.response.Success.integerValue == 3) {
-            [weakSelf toast:@"房间名不能为空"];
-        } else if (request.response.Success.integerValue == 4 || request.response.Success.integerValue == 5) {
-            [weakSelf toast:@"房间名中包含了敏感词"];
-        } else if (request.response.Success.integerValue == 6) {
-            [weakSelf toast:@"房间名不能超过最大字数"];
         } else {
-            [weakSelf toast:request.response.desc];
+            [weakSelf toast:request.response.Code];
         }
     }];
 }

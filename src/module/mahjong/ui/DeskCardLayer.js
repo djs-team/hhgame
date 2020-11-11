@@ -171,6 +171,14 @@ load('module/mahjong/ui/DeskCardLayer', function () {
             }
         },
 
+        resetTouchCard: function () {
+            this._movingCard = false
+            for (let i = 0; i < 14; ++i) {
+                this._selfHandCard[i].setPosition(this._selfHandCard[i]._beginPos)
+                this._selfHandCard[i]._doubleClick = false
+            }
+        },
+
         getTouchCard: function (pos) {
             for (let i = 0; i < 14; ++i) {
                 if (this._selfHandCard[i].isVisible()) {

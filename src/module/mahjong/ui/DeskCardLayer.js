@@ -41,16 +41,12 @@ load('module/mahjong/ui/DeskCardLayer', function () {
             this._playerNum = pData.pPlayerNum
             this._uiSeatConfig = TableConfig.UiSeatArray['4']
             let tData = pData.tableData
-            this._deckCardLen = CardConfig[tData.pPlayMode].deckCardLen
             this._allCardNum = CardConfig[tData.pPlayMode].allCardNum
 
             this._movingCard = false
 
             this._pMySeatID = pData.pMySeatID
 
-            this._deckCardTag  = 1
-
-            this._deckCardNd = []
             this._outCardNd = []
             this._handCardNd = []
             this._selfHandCard = []
@@ -62,7 +58,6 @@ load('module/mahjong/ui/DeskCardLayer', function () {
 
 
             for (let i = 0; i < 4; ++i) {
-                this._deckCardNd.push(this.CardPnl.getChildByName('DeckNd' + i))
                 this._outCardNd.push(this.CardPnl.getChildByName('OutNd' + i))
                 this._handCardNd.push(this.CardPnl.getChildByName('HandCardNd' + i))
             }
@@ -74,13 +69,8 @@ load('module/mahjong/ui/DeskCardLayer', function () {
             for (let i = 0; i < 4; ++i) {
                 this._directionNd[i] = this['Direction' + i]
                 this._directionNd[i].setVisible(false)
-                this._deckCardNd[i].removeAllChildren()
                 this._outCardNd[i].removeAllChildren()
                 this._handCardNd[i].setVisible(true)
-                for (let j = 0; j < this._deckCardLen; ++j) {
-                    this.initDeckCard(this._uiSeatConfig[i], j, this._deckCardLen, this._deckCardNd[i], false)
-                    this.initDeckCard(this._uiSeatConfig[i], j, this._deckCardLen, this._deckCardNd[i], true)
-                }
                 for (let j = 0; j < 14; ++j) {
                     let card = this._handCardNd[i].getChildByName('Card' + j)
                     card.setVisible(false)
@@ -229,31 +219,6 @@ load('module/mahjong/ui/DeskCardLayer', function () {
                     appInstance.gameAgent().tcpGame().putCardProto(msg)
                     card.setPositionY(0)
                 }
-            }
-        },
-
-        reBeginGame: function () {
-            let pConfig = [
-                2,3,0,1
-            ]
-            for ( let i = this._deckCardTag; i <= this._allCardNum; ++i) {
-                let pIndex = Math.floor((i - 1) / this._deckCardLen / 2)
-                let pNd = this._deckCardNd[pConfig[pIndex]]
-                pNd.setVisible(true)
-                pNd.getChildByTag(i).setVisible(true)
-            }
-        },
-
-        updateDeckCard: function (nDeckCardNum) {
-            let endTag = this._allCardNum - nDeckCardNum
-            let pConfig = [
-                2,3,0,1
-            ]
-            for ( let i = this._deckCardTag; i <= endTag; ++i) {
-                let pIndex = Math.floor((i - 1) / this._deckCardLen / 2)
-                let pNd = this._deckCardNd[pConfig[pIndex]]
-                pNd.setVisible(true)
-                pNd.getChildByTag(i).setVisible(false)
             }
         },
 
@@ -760,112 +725,8 @@ load('module/mahjong/ui/DeskCardLayer', function () {
             return imgPath
         },
 
-        initDeckCard: function (seatIndex, cardIndex, cardLen, parent, isTop) {
-            let cardPath = 'res/module/mahjong/card/'
-            let imgPath = ''
-            let scale = 1
-            let pos = cc.p(0,0)
-            let isFlippedX = false
-            let zorder = 1000 - cardIndex
-            let cardLenMid = cardLen / 2
-            if (seatIndex === 0 || seatIndex === 2) {
-                let selfDeckCfg = [
-                    'self_deck_2.png',
-                    'self_deck_3.png',
-                    'self_deck_4.png',
-                    'self_deck_5.png',
-                    'self_deck_6.png',
-                    'self_deck_7.png',
-                    'self_deck_8.png',
-                    'self_deck_9.png',
-                    'self_deck_10.png'
-                ]
-                let deckPath = selfDeckCfg[cardIndex]
-                if (cardIndex >= cardLenMid) {
-                    deckPath = selfDeckCfg[cardLen - 1 - cardIndex]
-                } else {
-                    isFlippedX = true
-                    zorder = cardIndex
-                }
-                imgPath = cardPath + 'ground/deck/' + deckPath
-                if (seatIndex === 2) {
-                    scale = 0.6
-                }
-                pos.x = ( cardIndex - cardLenMid ) * 46 * scale
-                if (isTop) {
-                    pos.y = 20 * scale
-                }
-            } else if (seatIndex === 1 || seatIndex === 3) {
-                imgPath = cardPath + 'ground/deck/'
-                if (isTop) {
-                    imgPath += 'left_deck_top.png'
-                } else {
-                    imgPath += 'left_deck_bm.png'
-                }
-                let scaleMid = cardLenMid
-                if (cardLen % 2 === 0) {
-                    scaleMid += 0.5
-                }
-                if (seatIndex === 1) {
-                    isFlippedX = true
-                    scale = 0.7 - (cardIndex - scaleMid) * 0.02
-                    pos.y = ( cardIndex - cardLenMid ) * 16 * scale
-                    pos.x = - 1 * ( cardIndex - cardLenMid ) * 12 * scale
-                } else {
-                    scale = 0.9 - (cardIndex - scaleMid) * 0.02
-                    pos.y = ( cardIndex - cardLenMid ) * 16 * scale
-                    pos.x = ( cardIndex - cardLenMid ) * 12.5 * scale
-                }
-
-                if (isTop) {
-                    pos.y += (20 * scale)
-                }
-            }
-
-            if (isTop) {
-                zorder += 1000
-            }
-
-            let card =  new cc.Sprite(imgPath)
-            if (parent) {
-                parent.addChild(card)
-            }
-            if (isFlippedX) {
-                card.setFlippedX(true)
-            }
-            card.setScale(scale)
-            card.setPosition(pos)
-            card.setLocalZOrder(zorder)
-
-            let cardTag = 0
-            if (seatIndex === 0) {
-                cardTag = this._deckCardLen * 2 * 2
-                // cardTag += (this._deckCardLen - cardIndex - 1) * 2
-                cardTag += (cardIndex) * 2
-            } else if (seatIndex === 3) {
-                cardTag = this._deckCardLen * 2
-                cardTag += (this._deckCardLen - cardIndex - 1) * 2
-            } else if (seatIndex === 2) {
-                cardTag += cardIndex * 2
-            } else if (seatIndex === 1) {
-                cardTag = this._deckCardLen * 3 * 2
-                cardTag += cardIndex * 2
-            }
-            if (isTop) {
-                cardTag += 1
-            } else {
-                cardTag += 2
-            }
-
-            card.setTag(cardTag)
-            let cardName = 'card_' + seatIndex + '_' + cardTag
-            card.setName(cardName)
-            return card
-        },
-
         clearView: function () {
             for (let i = 0; i < 4; ++i) {
-                this._deckCardNd[i].removeAllChildren()
                 this._outCardNd[i].removeAllChildren()
                 this._handCardNd[i].setVisible(false)
                 for (let j = 0; j < 4; ++j) {
@@ -879,7 +740,6 @@ load('module/mahjong/ui/DeskCardLayer', function () {
             for (let i = 0; i < 4; ++i) {
                 this._outCardNd[i].removeAllChildren()
                 this._handCardNd[i].setVisible(false)
-                this._deckCardNd[i].setVisible(false)
 
                 for (let j = 0; j < 4; ++j) {
                     this._handCardNd[i].getChildByName('Group' + j).setVisible(false)

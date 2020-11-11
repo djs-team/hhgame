@@ -112,6 +112,7 @@ load('game/ui/layer/cashcow/CashCowLayer', function () {
         },
 
         onShakeClick: function () {
+            appInstance.audioManager().playEffect(ResConfig.Sound.cashCow)
             this.shakeBtn.setTouchEnabled(false)
             if(cc.sys.os !== cc.sys.OS_WINDOWS)
                 appInstance.nativeApi().showRewardVideo()

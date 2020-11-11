@@ -155,7 +155,7 @@
                   "Y": 0.4392
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.2778
                 },
                 "LeftMargin": 540.0,
@@ -545,7 +545,7 @@
                       "Y": 0.2107
                     },
                     "PreSize": {
-                      "X": 0.0313,
+                      "X": 0.0312,
                       "Y": 0.0597
                     },
                     "LeftMargin": 912.9454,
@@ -1789,59 +1789,6 @@
                         "ctype": "PanelObjectData"
                       },
                       {
-                        "DirectionType": "Vertical",
-                        "IsBounceEnabled": true,
-                        "ScrollDirectionType": 0,
-                        "ClipAble": true,
-                        "BackColorAlpha": 102,
-                        "SingleColor": {
-                          "R": 150,
-                          "G": 150
-                        },
-                        "FirstColor": {
-                          "R": 150,
-                          "G": 150
-                        },
-                        "EndColor": {},
-                        "ColorVector": {
-                          "ScaleY": 1.0
-                        },
-                        "Scale9Width": 1,
-                        "Scale9Height": 1,
-                        "TouchEnable": true,
-                        "AnchorPoint": {},
-                        "Position": {
-                          "X": 400.91,
-                          "Y": 251.54
-                        },
-                        "Scale": {
-                          "ScaleX": 1.0,
-                          "ScaleY": 1.0
-                        },
-                        "CColor": {},
-                        "IconVisible": false,
-                        "PrePosition": {
-                          "X": 0.3132,
-                          "Y": 0.3494
-                        },
-                        "PreSize": {
-                          "X": 0.3836,
-                          "Y": 0.3208
-                        },
-                        "LeftMargin": 400.91,
-                        "RightMargin": 388.09,
-                        "TopMargin": 237.46,
-                        "BottomMargin": 251.54,
-                        "Tag": 407,
-                        "ActionTag": 267070552,
-                        "Size": {
-                          "X": 491.0,
-                          "Y": 231.0
-                        },
-                        "Name": "dataListPnl",
-                        "ctype": "ListViewObjectData"
-                      },
-                      {
                         "FontSize": 14,
                         "ButtonText": "",
                         "TextColor": {
@@ -2162,6 +2109,57 @@
                         },
                         "Name": "recordDataCell",
                         "ctype": "PanelObjectData"
+                      },
+                      {
+                        "DirectionType": "Vertical",
+                        "IsBounceEnabled": true,
+                        "ScrollDirectionType": 0,
+                        "ClipAble": true,
+                        "BackColorAlpha": 102,
+                        "SingleColor": {
+                          "R": 150,
+                          "G": 150
+                        },
+                        "FirstColor": {
+                          "R": 150,
+                          "G": 150
+                        },
+                        "EndColor": {},
+                        "ColorVector": {
+                          "ScaleY": 1.0
+                        },
+                        "TouchEnable": true,
+                        "AnchorPoint": {},
+                        "Position": {
+                          "X": 401.54,
+                          "Y": 254.4175
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.3137,
+                          "Y": 0.3534
+                        },
+                        "PreSize": {
+                          "X": 0.3836,
+                          "Y": 0.3208
+                        },
+                        "LeftMargin": 401.54,
+                        "RightMargin": 387.46,
+                        "TopMargin": 234.5825,
+                        "BottomMargin": 254.4175,
+                        "Tag": 539,
+                        "ActionTag": 2068187472,
+                        "Size": {
+                          "X": 491.0,
+                          "Y": 231.0
+                        },
+                        "Name": "dataListPnl",
+                        "ctype": "ListViewObjectData"
                       }
                     ],
                     "ActionTag": -1401599007,

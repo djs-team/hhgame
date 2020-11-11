@@ -252,6 +252,7 @@
           <Image Name="liangAction.png" />
           <Image Name="liangpai.jpg" />
           <Image Name="lipai.jpg" />
+          <Image Name="newLiang.jpg" />
           <Image Name="paidui.jpg" />
           <Image Name="paihai.jpg" />
         </Folder>

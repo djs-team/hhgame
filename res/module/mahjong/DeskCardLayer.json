@@ -54,6 +54,7 @@
               "X": 1280.0,
               "Y": 720.0
             },
+            "VisibleForFrame": false,
             "Name": "delete",
             "ctype": "ImageViewObjectData"
           },
@@ -637,12 +638,12 @@
                   {
                     "AnchorPoint": {},
                     "Position": {
-                      "X": -99.72,
-                      "Y": 138.68
+                      "X": -91.9517,
+                      "Y": 125.4732
                     },
                     "Scale": {
-                      "ScaleX": 0.9,
-                      "ScaleY": 0.9
+                      "ScaleX": 0.72,
+                      "ScaleY": 0.72
                     },
                     "CColor": {},
                     "IconVisible": true,
@@ -654,10 +655,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": -99.72,
-                    "RightMargin": 99.72,
-                    "TopMargin": -138.68,
-                    "BottomMargin": 138.68,
+                    "LeftMargin": -91.9517,
+                    "RightMargin": 91.9517,
+                    "TopMargin": -125.4732,
+                    "BottomMargin": 125.4732,
                     "Tag": 704,
                     "Children": [
                       {
@@ -722,8 +723,8 @@
                       "Y": 93.0
                     },
                     "Scale": {
-                      "ScaleX": 0.95,
-                      "ScaleY": 0.95
+                      "ScaleX": 0.74,
+                      "ScaleY": 0.74
                     },
                     "CColor": {},
                     "IconVisible": true,
@@ -799,12 +800,12 @@
                   {
                     "AnchorPoint": {},
                     "Position": {
-                      "X": -46.74,
-                      "Y": 70.16
+                      "X": -47.5786,
+                      "Y": 72.1969
                     },
                     "Scale": {
-                      "ScaleX": 0.95,
-                      "ScaleY": 0.95
+                      "ScaleX": 0.76,
+                      "ScaleY": 0.76
                     },
                     "CColor": {},
                     "IconVisible": true,
@@ -816,10 +817,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": -46.74,
-                    "RightMargin": 46.74,
-                    "TopMargin": -70.16,
-                    "BottomMargin": 70.16,
+                    "LeftMargin": -47.5786,
+                    "RightMargin": 47.5786,
+                    "TopMargin": -72.1969,
+                    "BottomMargin": 72.1969,
                     "Tag": 70,
                     "Children": [
                       {
@@ -880,12 +881,12 @@
                   {
                     "AnchorPoint": {},
                     "Position": {
-                      "X": -29.08,
-                      "Y": 47.32
+                      "X": -29.9193,
+                      "Y": 50.196
                     },
                     "Scale": {
-                      "ScaleX": 0.95,
-                      "ScaleY": 0.95
+                      "ScaleX": 0.78,
+                      "ScaleY": 0.78
                     },
                     "CColor": {},
                     "IconVisible": true,
@@ -897,10 +898,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": -29.08,
-                    "RightMargin": 29.08,
-                    "TopMargin": -47.32,
-                    "BottomMargin": 47.32,
+                    "LeftMargin": -29.9193,
+                    "RightMargin": 29.9193,
+                    "TopMargin": -50.196,
+                    "BottomMargin": 50.196,
                     "Tag": 72,
                     "Children": [
                       {
@@ -961,12 +962,12 @@
                   {
                     "AnchorPoint": {},
                     "Position": {
-                      "X": -11.42,
-                      "Y": 24.48
+                      "X": -13.6305,
+                      "Y": 25.4137
                     },
                     "Scale": {
-                      "ScaleX": 0.95,
-                      "ScaleY": 0.95
+                      "ScaleX": 0.8,
+                      "ScaleY": 0.8
                     },
                     "CColor": {},
                     "IconVisible": true,
@@ -978,10 +979,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": -11.42,
-                    "RightMargin": 11.42,
-                    "TopMargin": -24.48,
-                    "BottomMargin": 24.48,
+                    "LeftMargin": -13.6305,
+                    "RightMargin": 13.6305,
+                    "TopMargin": -25.4137,
+                    "BottomMargin": 25.4137,
                     "Tag": 74,
                     "Children": [
                       {
@@ -1042,12 +1043,12 @@
                   {
                     "AnchorPoint": {},
                     "Position": {
-                      "X": 6.24,
-                      "Y": 1.64
+                      "X": 4.2886,
+                      "Y": 2.3164
                     },
                     "Scale": {
-                      "ScaleX": 0.95,
-                      "ScaleY": 0.95
+                      "ScaleX": 0.82,
+                      "ScaleY": 0.82
                     },
                     "CColor": {},
                     "IconVisible": true,
@@ -1059,10 +1060,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 6.24,
-                    "RightMargin": -6.24,
-                    "TopMargin": -1.64,
-                    "BottomMargin": 1.64,
+                    "LeftMargin": 4.2886,
+                    "RightMargin": -4.2886,
+                    "TopMargin": -2.3164,
+                    "BottomMargin": 2.3164,
                     "Tag": 76,
                     "Children": [
                       {
@@ -1123,12 +1124,12 @@
                   {
                     "AnchorPoint": {},
                     "Position": {
-                      "X": 23.6,
+                      "X": 23.6002,
                       "Y": -21.2
                     },
                     "Scale": {
-                      "ScaleX": 0.95,
-                      "ScaleY": 0.95
+                      "ScaleX": 0.84,
+                      "ScaleY": 0.84
                     },
                     "CColor": {},
                     "IconVisible": true,
@@ -1140,8 +1141,8 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 23.6,
-                    "RightMargin": -23.6,
+                    "LeftMargin": 23.6002,
+                    "RightMargin": -23.6002,
                     "TopMargin": 21.2,
                     "BottomMargin": -21.2,
                     "Tag": 78,
@@ -1208,8 +1209,8 @@
                       "Y": -44.04
                     },
                     "Scale": {
-                      "ScaleX": 0.95,
-                      "ScaleY": 0.95
+                      "ScaleX": 0.86,
+                      "ScaleY": 0.86
                     },
                     "CColor": {},
                     "IconVisible": true,
@@ -1289,8 +1290,8 @@
                       "Y": -66.88
                     },
                     "Scale": {
-                      "ScaleX": 0.95,
-                      "ScaleY": 0.95
+                      "ScaleX": 0.88,
+                      "ScaleY": 0.88
                     },
                     "CColor": {},
                     "IconVisible": true,
@@ -1370,8 +1371,8 @@
                       "Y": -89.72
                     },
                     "Scale": {
-                      "ScaleX": 0.95,
-                      "ScaleY": 0.95
+                      "ScaleX": 0.9,
+                      "ScaleY": 0.9
                     },
                     "CColor": {},
                     "IconVisible": true,
@@ -1451,8 +1452,8 @@
                       "Y": -112.56
                     },
                     "Scale": {
-                      "ScaleX": 0.95,
-                      "ScaleY": 0.95
+                      "ScaleX": 0.92,
+                      "ScaleY": 0.92
                     },
                     "CColor": {},
                     "IconVisible": true,
@@ -1532,8 +1533,8 @@
                       "Y": -135.4
                     },
                     "Scale": {
-                      "ScaleX": 0.95,
-                      "ScaleY": 0.95
+                      "ScaleX": 0.94,
+                      "ScaleY": 0.94
                     },
                     "CColor": {},
                     "IconVisible": true,
@@ -1613,8 +1614,8 @@
                       "Y": -158.24
                     },
                     "Scale": {
-                      "ScaleX": 0.95,
-                      "ScaleY": 0.95
+                      "ScaleX": 0.96,
+                      "ScaleY": 0.96
                     },
                     "CColor": {},
                     "IconVisible": true,
@@ -1694,8 +1695,8 @@
                       "Y": -181.08
                     },
                     "Scale": {
-                      "ScaleX": 0.95,
-                      "ScaleY": 0.95
+                      "ScaleX": 0.98,
+                      "ScaleY": 0.98
                     },
                     "CColor": {},
                     "IconVisible": true,
@@ -15355,12 +15356,12 @@
                   {
                     "AnchorPoint": {},
                     "Position": {
-                      "X": 47.359,
-                      "Y": 123.9969
+                      "X": 39.8233,
+                      "Y": 131.6092
                     },
                     "Scale": {
-                      "ScaleX": 0.85,
-                      "ScaleY": 0.85
+                      "ScaleX": 0.72,
+                      "ScaleY": 0.72
                     },
                     "CColor": {},
                     "IconVisible": true,
@@ -15372,10 +15373,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 47.359,
-                    "RightMargin": -47.359,
-                    "TopMargin": -123.9969,
-                    "BottomMargin": 123.9969,
+                    "LeftMargin": 39.8233,
+                    "RightMargin": -39.8233,
+                    "TopMargin": -131.6092,
+                    "BottomMargin": 131.6092,
                     "Tag": 148,
                     "Children": [
                       {
@@ -15435,12 +15436,12 @@
                   {
                     "AnchorPoint": {},
                     "Position": {
-                      "X": 30.0,
+                      "X": 12.3684,
                       "Y": 98.0
                     },
                     "Scale": {
-                      "ScaleX": 0.85,
-                      "ScaleY": 0.85
+                      "ScaleX": 0.74,
+                      "ScaleY": 0.74
                     },
                     "CColor": {},
                     "IconVisible": true,
@@ -15452,8 +15453,8 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 30.0,
-                    "RightMargin": -30.0,
+                    "LeftMargin": 12.3684,
+                    "RightMargin": -12.3684,
                     "TopMargin": -98.0,
                     "BottomMargin": 98.0,
                     "Tag": 150,
@@ -15515,12 +15516,12 @@
                   {
                     "AnchorPoint": {},
                     "Position": {
-                      "X": 12.5,
-                      "Y": 76.5
+                      "X": -1.6052,
+                      "Y": 77.9105
                     },
                     "Scale": {
-                      "ScaleX": 0.9,
-                      "ScaleY": 0.9
+                      "ScaleX": 0.76,
+                      "ScaleY": 0.76
                     },
                     "CColor": {},
                     "IconVisible": true,
@@ -15532,10 +15533,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 12.5,
-                    "RightMargin": -12.5,
-                    "TopMargin": -76.5,
-                    "BottomMargin": 76.5,
+                    "LeftMargin": -1.6052,
+                    "RightMargin": 1.6052,
+                    "TopMargin": -77.9105,
+                    "BottomMargin": 77.9105,
                     "Tag": 152,
                     "Children": [
                       {
@@ -15595,12 +15596,12 @@
                   {
                     "AnchorPoint": {},
                     "Position": {
-                      "X": -5.0,
-                      "Y": 55.0
+                      "X": -17.6948,
+                      "Y": 57.1158
                     },
                     "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
+                      "ScaleX": 0.78,
+                      "ScaleY": 0.78
                     },
                     "CColor": {},
                     "IconVisible": true,
@@ -15612,10 +15613,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": -5.0,
-                    "RightMargin": 5.0,
-                    "TopMargin": -55.0,
-                    "BottomMargin": 55.0,
+                    "LeftMargin": -17.6948,
+                    "RightMargin": 17.6948,
+                    "TopMargin": -57.1158,
+                    "BottomMargin": 57.1158,
                     "Tag": 154,
                     "Children": [
                       {
@@ -15675,12 +15676,12 @@
                   {
                     "AnchorPoint": {},
                     "Position": {
-                      "X": -22.5,
-                      "Y": 33.5
+                      "X": -33.7842,
+                      "Y": 35.6159
                     },
                     "Scale": {
-                      "ScaleX": 1.05,
-                      "ScaleY": 1.05
+                      "ScaleX": 0.8,
+                      "ScaleY": 0.8
                     },
                     "CColor": {},
                     "IconVisible": true,
@@ -15692,10 +15693,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": -22.5,
-                    "RightMargin": 22.5,
-                    "TopMargin": -33.5,
-                    "BottomMargin": 33.5,
+                    "LeftMargin": -33.7842,
+                    "RightMargin": 33.7842,
+                    "TopMargin": -35.6159,
+                    "BottomMargin": 35.6159,
                     "Tag": 156,
                     "Children": [
                       {
@@ -15755,12 +15756,12 @@
                   {
                     "AnchorPoint": {},
                     "Position": {
-                      "X": -40.0,
-                      "Y": 12.0
+                      "X": -50.5789,
+                      "Y": 14.8211
                     },
                     "Scale": {
-                      "ScaleX": 1.1,
-                      "ScaleY": 1.1
+                      "ScaleX": 0.82,
+                      "ScaleY": 0.82
                     },
                     "CColor": {},
                     "IconVisible": true,
@@ -15772,10 +15773,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": -40.0,
-                    "RightMargin": 40.0,
-                    "TopMargin": -12.0,
-                    "BottomMargin": 12.0,
+                    "LeftMargin": -50.5789,
+                    "RightMargin": 50.5789,
+                    "TopMargin": -14.8211,
+                    "BottomMargin": 14.8211,
                     "Tag": 158,
                     "Children": [
                       {
@@ -15835,12 +15836,12 @@
                   {
                     "AnchorPoint": {},
                     "Position": {
-                      "X": -57.5,
-                      "Y": -9.5
+                      "X": -67.9024,
+                      "Y": -7.8997
                     },
                     "Scale": {
-                      "ScaleX": 1.15,
-                      "ScaleY": 1.15
+                      "ScaleX": 0.84,
+                      "ScaleY": 0.84
                     },
                     "CColor": {},
                     "IconVisible": true,
@@ -15852,10 +15853,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": -57.5,
-                    "RightMargin": 57.5,
-                    "TopMargin": 9.5,
-                    "BottomMargin": -9.5,
+                    "LeftMargin": -67.9024,
+                    "RightMargin": 67.9024,
+                    "TopMargin": 7.8997,
+                    "BottomMargin": -7.8997,
                     "Tag": 160,
                     "Children": [
                       {
@@ -15915,12 +15916,12 @@
                   {
                     "AnchorPoint": {},
                     "Position": {
-                      "X": -75.0,
-                      "Y": -31.0
+                      "X": -85.4086,
+                      "Y": -31.0024
                     },
                     "Scale": {
-                      "ScaleX": 1.2,
-                      "ScaleY": 1.2
+                      "ScaleX": 0.86,
+                      "ScaleY": 0.86
                     },
                     "CColor": {},
                     "IconVisible": true,
@@ -15932,10 +15933,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": -75.0,
-                    "RightMargin": 75.0,
-                    "TopMargin": 31.0,
-                    "BottomMargin": -31.0,
+                    "LeftMargin": -85.4086,
+                    "RightMargin": 85.4086,
+                    "TopMargin": 31.0024,
+                    "BottomMargin": -31.0024,
                     "Tag": 162,
                     "Children": [
                       {
@@ -15995,12 +15996,12 @@
                   {
                     "AnchorPoint": {},
                     "Position": {
-                      "X": -92.5,
-                      "Y": -52.5
+                      "X": -99.7195,
+                      "Y": -50.2925
                     },
                     "Scale": {
-                      "ScaleX": 1.25,
-                      "ScaleY": 1.25
+                      "ScaleX": 0.88,
+                      "ScaleY": 0.88
                     },
                     "CColor": {},
                     "IconVisible": true,
@@ -16012,10 +16013,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": -92.5,
-                    "RightMargin": 92.5,
-                    "TopMargin": 52.5,
-                    "BottomMargin": -52.5,
+                    "LeftMargin": -99.7195,
+                    "RightMargin": 99.7195,
+                    "TopMargin": 50.2925,
+                    "BottomMargin": -50.2925,
                     "Tag": 164,
                     "Children": [
                       {
@@ -16075,12 +16076,12 @@
                   {
                     "AnchorPoint": {},
                     "Position": {
-                      "X": -110.0,
-                      "Y": -74.0
+                      "X": -117.0169,
+                      "Y": -73.9996
                     },
                     "Scale": {
-                      "ScaleX": 1.3,
-                      "ScaleY": 1.3
+                      "ScaleX": 0.9,
+                      "ScaleY": 0.9
                     },
                     "CColor": {},
                     "IconVisible": true,
@@ -16092,10 +16093,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": -110.0,
-                    "RightMargin": 110.0,
-                    "TopMargin": 74.0,
-                    "BottomMargin": -74.0,
+                    "LeftMargin": -117.0169,
+                    "RightMargin": 117.0169,
+                    "TopMargin": 73.9996,
+                    "BottomMargin": -73.9996,
                     "Tag": 166,
                     "Children": [
                       {
@@ -16155,12 +16156,12 @@
                   {
                     "AnchorPoint": {},
                     "Position": {
-                      "X": -127.5,
-                      "Y": -95.5
+                      "X": -136.5213,
+                      "Y": -97.5032
                     },
                     "Scale": {
-                      "ScaleX": 1.35,
-                      "ScaleY": 1.35
+                      "ScaleX": 0.92,
+                      "ScaleY": 0.92
                     },
                     "CColor": {},
                     "IconVisible": true,
@@ -16172,10 +16173,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": -127.5,
-                    "RightMargin": 127.5,
-                    "TopMargin": 95.5,
-                    "BottomMargin": -95.5,
+                    "LeftMargin": -136.5213,
+                    "RightMargin": 136.5213,
+                    "TopMargin": 97.5032,
+                    "BottomMargin": -97.5032,
                     "Tag": 168,
                     "Children": [
                       {
@@ -16235,12 +16236,12 @@
                   {
                     "AnchorPoint": {},
                     "Position": {
-                      "X": -145.0,
-                      "Y": -117.0
+                      "X": -157.0285,
+                      "Y": -122.0114
                     },
                     "Scale": {
-                      "ScaleX": 1.4,
-                      "ScaleY": 1.4
+                      "ScaleX": 0.94,
+                      "ScaleY": 0.94
                     },
                     "CColor": {},
                     "IconVisible": true,
@@ -16252,10 +16253,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": -145.0,
-                    "RightMargin": 145.0,
-                    "TopMargin": 117.0,
-                    "BottomMargin": -117.0,
+                    "LeftMargin": -157.0285,
+                    "RightMargin": 157.0285,
+                    "TopMargin": 122.0114,
+                    "BottomMargin": -122.0114,
                     "Tag": 170,
                     "Children": [
                       {
@@ -16315,12 +16316,12 @@
                   {
                     "AnchorPoint": {},
                     "Position": {
-                      "X": -162.5,
-                      "Y": -138.5
+                      "X": -175.5315,
+                      "Y": -146.5188
                     },
                     "Scale": {
-                      "ScaleX": 1.45,
-                      "ScaleY": 1.45
+                      "ScaleX": 0.96,
+                      "ScaleY": 0.96
                     },
                     "CColor": {},
                     "IconVisible": true,
@@ -16332,10 +16333,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": -162.5,
-                    "RightMargin": 162.5,
-                    "TopMargin": 138.5,
-                    "BottomMargin": -138.5,
+                    "LeftMargin": -175.5315,
+                    "RightMargin": 175.5315,
+                    "TopMargin": 146.5188,
+                    "BottomMargin": -146.5188,
                     "Tag": 172,
                     "Children": [
                       {
@@ -16395,12 +16396,12 @@
                   {
                     "AnchorPoint": {},
                     "Position": {
-                      "X": -180.0,
-                      "Y": -160.0
+                      "X": -195.036,
+                      "Y": -173.0297
                     },
                     "Scale": {
-                      "ScaleX": 1.5,
-                      "ScaleY": 1.5
+                      "ScaleX": 0.98,
+                      "ScaleY": 0.98
                     },
                     "CColor": {},
                     "IconVisible": true,
@@ -16412,10 +16413,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": -180.0,
-                    "RightMargin": 180.0,
-                    "TopMargin": 160.0,
-                    "BottomMargin": -160.0,
+                    "LeftMargin": -195.036,
+                    "RightMargin": 195.036,
+                    "TopMargin": 173.0297,
+                    "BottomMargin": -173.0297,
                     "Tag": 174,
                     "Children": [
                       {

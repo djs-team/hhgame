@@ -727,7 +727,6 @@ public class RoomController implements IRoomController, RoomMsgHandler.OnMsgEven
         return flag;
     }
 
-    private long lastClickTime = 0;
     private WsocketListener mWsocketListener = new WsocketListener() {
 
         @Override
@@ -803,7 +802,12 @@ public class RoomController implements IRoomController, RoomMsgHandler.OnMsgEven
     }
 
     public void onJoinError(int code, String msg) {
+        Log.d("onJoinError", code + "msg");
+        if (mJoinListener == null) {
+            Log.d("onJoinError", "mJoinListener==null");
+        }
         if (mJoinListener != null) {
+
             mJoinListener.onError(code, msg);
             mRoomId = null;
             WsocketManager.create().removeWsocketListener(mWsocketListener);
@@ -812,6 +816,8 @@ public class RoomController implements IRoomController, RoomMsgHandler.OnMsgEven
                 releaseHyphenateAndAgora();
             }
         } else {
+            Log.d("onJoinError", code + "msg");
+
             try {
                 mSocketReconnect.reconnect(mRoomId);
 
@@ -851,6 +857,12 @@ public class RoomController implements IRoomController, RoomMsgHandler.OnMsgEven
         BaseReMsg msg = JsonConverter.fromJson(message, BaseReMsg.class);
         JsonParser parser = new JsonParser();
         JsonObject object = parser.parse(message).getAsJsonObject();
+//        if (msg.getSuccess() != 1) {
+//            String code = msg.getCode();
+//            if (!TextUtils.isEmpty(code)) {
+//                onJoinError(code);
+//            }
+//        }
         switch (msg.getMsgId()) {
             //发送token回调
             case SocketCons.SEND_TOKEN: {

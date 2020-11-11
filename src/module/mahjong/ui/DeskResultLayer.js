@@ -229,6 +229,12 @@ load('module/mahjong/ui/DeskResultLayer', function () {
                     //初始化最大观看次数和已经观看次数
                     this._watchMaxNum = this._players[i].pMaxWatchNum
                     this._usedWatchNum = this._players[i].pAlreadyWatchNum
+                    //赢牌输牌音效
+                    if (this._players[i].pOffsetCoins>0) {
+                        appInstance.audioManager().playEffect(GameResConfig.Sound.win)
+                    } else {
+                        appInstance.audioManager().playEffect(GameResConfig.Sound.lose)
+                    }
                 }
             }
             this.onInfoBtnClick(initInfo)
@@ -432,6 +438,11 @@ load('module/mahjong/ui/DeskResultLayer', function () {
         },
 
         onEnter: function () {
+            let players = appInstance.dataManager().getPlayData().players
+            for (let i in players) {
+                players[i].initData()
+            }
+
             this._super()
             appInstance.nativeApi().getInvitationCode(inviteUrl)
         },

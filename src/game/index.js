@@ -49,12 +49,7 @@ load('game/index', function () {
     }
 
     index.restart = function () {
-        // appInstance.connectorApi()._lastIpAndPort = false
-        // global.localStorage.removeItem('lastIpAndPort')
-
-        msgHandlerIndex.unRegister()
-        dataIndex.restart()
-        publicIndex.restart()
+        cc.log('==========gameIndex restart=====')
 
     }
     return index

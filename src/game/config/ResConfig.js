@@ -147,9 +147,14 @@ load('game/config/ResConfig', function () {
         bg2: 'res/sound/bg/bg2.mp3',
         bgHall: 'res/sound/bg/bgHall.mp3',
         btnEffect: 'res/sound/btnClick.mp3',
+        receive: 'res/sound/receive.mp3',
+        cashCow: 'res/sound/cashCow.mp3',
+        begin: 'res/sound/begin.mp3',
         turnTableBegin: 'res/sound/turnTableBegin.mp3',
         turnTableEnd: 'res/sound/turnTableEnd.mp3',
         turnTableInd: 'res/sound/turnTableInd.mp3',
+        win: 'res/sound/win.mp3',
+        lose: 'res/sound/lose.mp3',
         qiandao: 'qiandao.mp3',
         vip: 'vip.mp3'
     }

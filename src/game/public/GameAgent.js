@@ -156,6 +156,16 @@ load('game/public/GameAgent', function () {
             appInstance.sceneManager().getCurScene().addChild(UI)
         },
 
+        addDialogUINoPop: function (data) {
+            if (!data) {
+                cc.log('error happen when addDialogUI, there need some data for view')
+            }
+            let layer = include(ResConfig.Ui.DialogLayer)
+            let UI = appInstance.uiManager().createUI(layer, data)
+            appInstance.sceneManager().getCurScene().addChild(UI)
+        },
+
+
         addReceivePropsUI: function (data) {
             if (!data) {
                 cc.log('error happen when addReceivePropsUI, there need some data for view')

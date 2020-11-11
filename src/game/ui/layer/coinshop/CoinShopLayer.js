@@ -361,10 +361,8 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
         /**
          * 观看视频按钮
          */
-        onVideoClicked: function (sender) {
-            GameUtil.delayBtn(sender);
-            this.videoBtn.setBright(true)
-            this.videoBtn.setTouchEnabled(true)
+        onVideoClicked: function () {
+            this.videoBtn.setTouchEnabled(false)
             if(cc.sys.os === cc.sys.OS_WINDOWS)
                 appInstance.gameAgent().httpGame().VIDEOFORDIAMONDSReq()
             else

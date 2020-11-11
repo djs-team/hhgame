@@ -28,6 +28,7 @@ load('module/mahjong/common/TableConfig', function () {
         'MatchReadyProto': 'MatchReadyProto',
         'MatchEnterTableProto': 'MatchEnterTableProto',
         'GameFenZhangProto': 'GameFenZhangProto',
+        'GameBaoProto': 'GameBaoProto',
     }
 
 

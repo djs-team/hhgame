@@ -7,6 +7,15 @@ import com.deepsea.mua.stub.entity.socket.BaseMsg;
  */
 public class BaseReMsg extends BaseMsg {
     private int Success;
+    private String code;
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
 
     public int getSuccess() {
         return Success;

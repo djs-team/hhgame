@@ -26,7 +26,7 @@ load('game/ui/public/ReceivePropsLayer', function () {
         },
 
         initData: function (data) {
-
+            appInstance.audioManager().playEffect(ResConfig.Sound.receive)
             let dataArray = []
             if(global.isArray(data))
                 dataArray = data

@@ -386,24 +386,31 @@ load('game/public/HttpGame', function () {
 
         cashCowBack: function (msg) {
 
-            if (msg.status !== 0) {
-                cc.log('------cashCowBack------->>>httpGame cashCowBack error happen')
-                return
+            let usedNum = appInstance.dataManager().getUserData().usedCashCowNum
+            let tipsTxt = ''
+            if (msg.status == 0) {
+                usedNum += 1
+            }else if(msg.status == 91){
+                usedNum = appInstance.dataManager().getUserData().cashCowNum
+                tipsTxt = '您的视频次数已用尽，比赛场也很好玩哦~'
+            }else{
+                tipsTxt = '程序异常，请您稍后重试或联系客服'
             }
 
-            console.log('----------------- cashCowBack data : ' + JSON.stringify(msg));
             let saveKey = [
 
                 'usedCashCowNum'
             ]
 
-            let _usedCashCowNum = appInstance.dataManager().getUserData().usedCashCowNum + 1
+            let _usedCashCowNum = usedNum
             let saveData = {
 
                 'usedCashCowNum': _usedCashCowNum
 
             }
 
+            if(tipsTxt)
+                appInstance.gameAgent().Tips(tipsTxt)
             appInstance.dataManager().getUserData().saveMsg(saveData, saveKey)
             appInstance.sendNotification(GameEvent.UPDATE_CASHCOWNUM, msg)
 

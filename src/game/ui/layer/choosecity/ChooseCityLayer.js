@@ -4,6 +4,7 @@ load('game/ui/layer/choosecity/ChooseCityLayer', function () {
     let BaseLayer = include('public/ui/BaseLayer')
     let GameEvent = include('game/config/GameEvent')
     let GameUtil = include('game/public/GameUtil')
+    let ChooseCityMdt = include('game/ui/layer/choosecity/ChooseCityMdt')
     let Layer = BaseLayer.extend({
         _className: 'ChooseCityLayer',
         RES_BINDING: function () {
@@ -32,6 +33,7 @@ load('game/ui/layer/choosecity/ChooseCityLayer', function () {
         ],
         ctor: function (data) {
             this._super(ResConfig.View.ChooseCityLayer)
+            this.registerMediator(new ChooseCityMdt(this))
             this.initData(data)
             this.initView()
         },

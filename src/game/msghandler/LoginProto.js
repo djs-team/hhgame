@@ -22,12 +22,13 @@ load('game/msghandler/LoginProto', function () {
                 let curSceneName = appInstance.sceneManager().getCurSceneName()
                 if (curSceneName === 'HallScene') {
                     cc.log('====当前已经在大厅， 重新刷新数据就可以')
+
                 } else {
                     let HallScene = include('game/ui/scene/HallScene')
                     appInstance.sceneManager().replaceScene(new HallScene())
                 }
             }
-
+            appInstance.sendNotification(GameEvent.LoginProto)
         },
 
         initData: function () {

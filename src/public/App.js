@@ -85,10 +85,15 @@ load('public/App', function () {
             cc.log('=====================public app run==============')
         },
 
-        restartGame: function (delUpdate, isAutoUp) {
+        unAllRegisterEventListener: function () {
+            // this.eventManager().unRegisterEventListener(EventType.USER_EVENT.USER_EVENT_ONGLONOTIFY, this)
+        },
+
+        restartGame: function (delUpdate) {
             appInstance.gameNet().disConnect()
             cc.director.getScheduler().unscheduleAllWithMinPriority(cc.Scheduler.PRIORITY_NON_SYSTEM)
             this.httpFactory().abortAll()
+            let GameIndex = include('game/index')
             if (GameIndex && GameIndex.restart) {
                 GameIndex.restart()
             }

@@ -222,13 +222,29 @@ load('game/ui/layer/coinshop/CoinShopMdt', function () {
          * @param body
          */
         watchVideoResult: function (body) {
-            let propData = {
-                propType: GameConfig.propType_currency,
-                propCode: GameConfig.propType_currency_diamonds,
-                propNum: body.diamonds
+
+            let status = body.status
+            let tipsTxt = ''
+            switch (status) {
+                case 0:
+                    let propData = {
+                        propType: GameConfig.propType_currency,
+                        propCode: GameConfig.propType_currency_diamonds,
+                        propNum: body.diamonds
+                    }
+
+                    this.onFormatPropMsg(propData)
+                    break
+                case 95:
+                    tipsTxt = '视频次数已用完，比赛场也很好玩哦'
+                    break
+                default:
+                    tipsTxt = '程序异常，请您稍后重试或联系客服'
+                    break
             }
 
-            this.onFormatPropMsg(propData)
+            if(tipsTxt)
+                appInstance.gameAgent().Tips(tipsTxt)
 
             let timeData = {}
             this.onFormatTimeMsg(timeData, body)

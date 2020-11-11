@@ -3,7 +3,6 @@ package com.deepsea.mua.stub.dialog;
 import android.Manifest;
 import android.content.Intent;
 import android.util.Log;
-
 import com.deepsea.mua.core.dialog.BaseDialogFragment;
 import com.deepsea.mua.stub.R;
 import com.deepsea.mua.stub.databinding.DialogPhotoBinding;
@@ -80,6 +79,7 @@ public class PhotoDialog extends BaseDialogFragment<DialogPhotoBinding> {
     }
 
     private void startPhoto() {
+
         RxPermissions permissions = new RxPermissions(this);
         permissions.request(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA, Manifest.permission.READ_EXTERNAL_STORAGE)
                 .as(DisposeUtils.autoDisposable(this))
@@ -93,7 +93,7 @@ public class PhotoDialog extends BaseDialogFragment<DialogPhotoBinding> {
                                 .maxSelectNum(1)
                                 .minSelectNum(1)
                                 .isGif(true)
-                                .imageSpanCount(3)// 每行显示个数 int
+                                .imageSpanCount(5)// 每行显示个数 int
                                 .selectionMode(PictureConfig.SINGLE)
                                 .circleDimmedLayer(false)//是否圆形裁剪
                                 .previewImage(true)// 是否可预览图片

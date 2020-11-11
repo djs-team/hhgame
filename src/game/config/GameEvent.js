@@ -47,6 +47,7 @@ load('game/config/GameEvent', function () {
         'COINSHOP_GET': 'COINSHOP_GET',
         'COINSHOP_BUY': 'COINSHOP_BUY',
         'DIAMONDS_BUY': 'DIAMONDS_BUY',
+        'LoginProto': 'LoginProto',
         'ADRESS_GET': 'ADRESS_GET',
         'ADRESS_UPDATE': 'ADRESS_UPDATE',
         'VIDEO_WATCH_DIAMONDS': 'VIDEO_WATCH_DIAMONDS',

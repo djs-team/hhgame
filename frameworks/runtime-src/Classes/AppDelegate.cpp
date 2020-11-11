@@ -67,6 +67,13 @@
 #include "cocos/scripting/js-bindings/manual/platform/ios/JavaScriptObjCBridge.h"
 #endif
 
+
+
+#include "json/rapidjson.h"
+#include "json/document.h"
+#include "json/writer.h"
+#include "json/stringbuffer.h"
+
 // #define USE_AUDIO_ENGINE 1
 // #define USE_SIMPLE_AUDIO_ENGINE 1
 
@@ -83,6 +90,30 @@ using namespace CocosDenshion;
 #endif
 
 USING_NS_CC;
+
+static bool versionGreater(const std::string& version1, const std::string& version2)
+{
+	auto cmpVersion = [](const std::string& v1, const std::string& v2) {
+		int i;
+		int oct_v1[4] = { 0 }, oct_v2[4] = { 0 };
+		int filled1 = std::sscanf(v1.c_str(), "%d.%d.%d.%d", &oct_v1[0], &oct_v1[1], &oct_v1[2], &oct_v1[3]);
+		int filled2 = std::sscanf(v2.c_str(), "%d.%d.%d.%d", &oct_v2[0], &oct_v2[1], &oct_v2[2], &oct_v2[3]);
+
+		if (filled1 == 0 || filled2 == 0)
+		{
+			return strcmp(v1.c_str(), v2.c_str());
+		}
+		for (i = 0; i < 4; i++)
+		{
+			if (oct_v1[i] > oct_v2[i])
+				return 1;
+			else if (oct_v1[i] < oct_v2[i])
+				return -1;
+		}
+		return 0;
+	};
+	return cmpVersion(version1, version2) >= 0;
+}
 
 AppDelegate::AppDelegate()
 {
@@ -120,6 +151,50 @@ bool AppDelegate::applicationDidFinishLaunching()
 
     // set FPS. the default value is 1.0/60 if you don't call this
     director->setAnimationInterval(1.0f / 60);
+
+    std::string updatePath=FileUtils::getInstance()->getWritablePath()+"update/";
+    std::vector<std::string> sPath=FileUtils::getInstance()->getSearchPaths();
+    if( sPath.size() > 0 && sPath[0].compare(updatePath) == 0 ){
+        sPath.erase(sPath.begin());
+        FileUtils::getInstance()->setSearchPaths(sPath);
+    }
+
+    if( FileUtils::getInstance()->isFileExist(updatePath+"/project.manifest")){
+        rapidjson::Document d;
+        rapidjson::Document r;
+        auto  str1 = FileUtils::getInstance()->getStringFromFile(updatePath+"/project.manifest");
+        auto  str2 =FileUtils::getInstance()->getStringFromFile("res/project.manifest");
+        auto  cstr1 = str1.c_str();
+        auto  cstr2 = str2.c_str();
+        d.Parse<rapidjson::kParseDefaultFlags>(cstr1);
+        std::string   up_version =    d["version"].GetString();
+        r.Parse<rapidjson::kParseDefaultFlags>(cstr2);
+        std::string res_version = r["version"].GetString();
+        auto isBundleNew = versionGreater(res_version, up_version);
+        if(isBundleNew){
+            FileUtils::getInstance()->removeDirectory(updatePath);
+        }
+    }
+    FileUtils::getInstance()->createDirectory(updatePath);
+    FileUtils::getInstance()->addSearchPath(updatePath,true);
+
+	Director::getInstance()->getEventDispatcher()->addEventListenerWithFixedPriority(EventListenerCustom::create("reStartGame",[=](EventCustom*event){
+		if(Director::getInstance()->getRunningScene()!=NULL) Director::getInstance()->popToRootScene();
+		Scene* sce=Scene::create();
+        Sprite * bgSp = Sprite::create("res/png/denglu_bg.png");
+        Size winSize = Director::getInstance()->getWinSize();
+        float scaleX = winSize.width / bgSp->getContentSize().width;
+        float scaleY = winSize.height / bgSp->getContentSize().height;
+        scaleX > scaleY ? bgSp->setScale(scaleX) : bgSp->setScale(scaleY);
+        bgSp->setPosition(winSize / 2);
+        sce->addChild(bgSp);
+		Director::getInstance()->replaceScene(sce);
+		sce->scheduleOnce([=](float dt){
+			Director::getInstance()->purgeCachedData();
+	        ScriptingCore::getInstance()->restartVM();
+		},0.02,"restartGame");
+
+	}),1);
 
     ScriptingCore* sc = ScriptingCore::getInstance();
     sc->addRegisterCallback(register_all_cocos2dx);

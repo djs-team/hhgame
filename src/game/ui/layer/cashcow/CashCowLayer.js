@@ -106,8 +106,7 @@ load('game/ui/layer/cashcow/CashCowLayer', function () {
             appInstance.uiManager().removeUI(this)
         },
 
-        onShakeClick: function (sender) {
-            GameUtil.delayBtn(sender);
+        onShakeClick: function () {
             this.shakeBtn.setTouchEnabled(false)
             if(cc.sys.os !== cc.sys.OS_WINDOWS)
                 appInstance.nativeApi().showRewardVideo()

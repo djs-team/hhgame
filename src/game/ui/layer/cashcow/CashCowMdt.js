@@ -52,12 +52,15 @@ load('game/ui/layer/cashcow/CashCowMdt', function () {
 
         onRefreshView: function (body) {
 
-            let data = {}
-            body.propType = 1
-            body.propNum = body.coin
+            if(body.status == 0){
+                let data = {}
+                body.propType = 1
+                body.propNum = body.coin
 
-            GameUtil.getPropData(body,data,GameUtil.CURRENCYTYPE_1,GameUtil.UNITLOCATION_BEFORE,'x')
-            appInstance.gameAgent().addReceivePropsUI(data)
+                GameUtil.getPropData(body,data,GameUtil.CURRENCYTYPE_1,GameUtil.UNITLOCATION_BEFORE,'x')
+                appInstance.gameAgent().addReceivePropsUI(data)
+            }
+
             this.view.onRefreshView()
         }
 

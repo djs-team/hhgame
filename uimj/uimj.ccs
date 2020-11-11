@@ -246,6 +246,7 @@
         <Folder Name="dele">
           <Image Name="6.png" />
           <Image Name="desk_share.png" />
+          <Image Name="deskCard.jpg" />
           <Image Name="deskPersonal (1).png" />
           <Image Name="deskPersonal (2).png" />
           <Image Name="liangAction.png" />

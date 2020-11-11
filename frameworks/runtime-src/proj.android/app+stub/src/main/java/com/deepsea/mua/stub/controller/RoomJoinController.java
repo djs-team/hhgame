@@ -21,11 +21,15 @@ import com.deepsea.mua.stub.utils.AudioPlaybackManager;
 import com.deepsea.mua.stub.utils.MobEventUtils;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import javax.inject.Inject;
 
 import retrofit2.Call;
 import retrofit2.Callback;
+import rx.Observable;
+import rx.Subscription;
+import rx.schedulers.Schedulers;
 
 /**
  * Created by JUN on 2019/4/13
@@ -170,6 +174,22 @@ public class RoomJoinController implements IRoomController.JoinRoomListener {
             mLoadingDialog.setTimeOut(CONNECT_TIME_OUT);
         }
         mLoadingDialog.show();
+        startObservable();
+
+    }
+
+    private Subscription mMarqueeSubscription;
+
+    public void startObservable() {
+        mMarqueeSubscription = Observable.interval(5 * 1000, 5 * 1000, TimeUnit.MILLISECONDS)
+                .subscribeOn(Schedulers.computation())
+                .subscribe(aLong -> hideLoading());
+    }
+
+    public void stopObservable() {
+        if (mMarqueeSubscription != null && (!mMarqueeSubscription.isUnsubscribed())) {
+            mMarqueeSubscription.unsubscribe();
+        }
     }
 
     private void hideLoading() {
@@ -177,6 +197,7 @@ public class RoomJoinController implements IRoomController.JoinRoomListener {
             mLoadingDialog.dismiss();
             mLoadingDialog = null;
         }
+        stopObservable();
     }
 
     public void destroy() {
@@ -201,6 +222,7 @@ public class RoomJoinController implements IRoomController.JoinRoomListener {
 
     @Override
     public void onError(int code, String msg) {
+        Log.d("onJoinError", "onError:" + code + "msg");
         hideLoading();
         if (!TextUtils.isEmpty(msg)) {
             ToastUtils.showToast(msg);

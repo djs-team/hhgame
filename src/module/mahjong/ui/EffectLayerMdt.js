@@ -9,6 +9,7 @@ load('module/mahjong/ui/EffectLayerMdt', function () {
     let TableConfig = include('module/mahjong/common/TableConfig')
     let TableEvent = TableConfig.Event
     let ResConfig = include('module/mahjong/common/ResConfig')
+    let GameResConfig = include('game/config/ResConfig')
     let Sound = ResConfig.Sound
 
     let DeskMdt = Mediator.extend({
@@ -84,7 +85,10 @@ load('module/mahjong/ui/EffectLayerMdt', function () {
             if (pData.isMatch()) {
                 let tData = pData.tableData
                 if (tData.pCurRound === 1) {
-                    appInstance.gameAgent().mjUtil().playGamingSound(Sound.play.match_begin)
+                    appInstance.audioManager().playEffect(GameResConfig.Sound.begin)
+                    setTimeout(function(){
+                        appInstance.gameAgent().mjUtil().playGamingSound(Sound.play.match_begin)
+                    }, 1000)
                 }
             } else {
                 appInstance.gameAgent().mjUtil().playGamingSound(Sound.play.begin)

@@ -1131,12 +1131,7 @@ load('game/public/HttpGame', function () {
          * @constructor
          */
         VIDEOFORDIAMONDSBack: function (msg) {
-            if (msg.status !== 0) {
-                cc.log('------------->>>httpGame VIDEOFORDIAMONDSBack error happen')
-                return
-            }
             appInstance.sendNotification(GameEvent.VIDEO_WATCH_DIAMONDS, msg)
-
         },
 
         VIPPaysOrderReq: function (msg) {

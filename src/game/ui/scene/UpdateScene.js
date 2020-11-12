@@ -8,7 +8,7 @@ load('game/ui/scene/UpdateScene', function () {
     let HotUpdate = include('public/suport/HotUpdate')
     let HttpType = include('public/http/HttpType')
     let UpdateMdt =  include('game/ui/scene/UpdateMdt')
-    let isNeedUpdate = false
+    let isNeedUpdate = true
     let UpdateScene = BaseScene.extend({
         _className: 'UpdateScene',
         _allReadyOk: false,
@@ -58,8 +58,6 @@ load('game/ui/scene/UpdateScene', function () {
                     this.goLoginScene()
                 }
             }.bind(this))))
-
-
         },
 
         onEnter: function () {

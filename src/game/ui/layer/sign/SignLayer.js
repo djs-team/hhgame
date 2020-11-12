@@ -87,6 +87,10 @@ load('game/ui/layer/sign/SignLayer', function () {
             let signDate = global.localStorage.getStringForKey(LocalSave.SignDate)
             let dateStr = global.getCurDayStr()
             if (!signDate || signDate !== dateStr) {
+                appInstance.audioManager().pauseMusic()
+                this.runAction(cc.sequence(cc.DelayTime(4), cc.CallFunc(function() {
+                    appInstance.audioManager().resumeMusic()
+                }.bind(this))))
                 appInstance.gameAgent().gameUtil().autoPlaySound(ResConfig.Sound.qiandao)
                 global.localStorage.setStringForKey(LocalSave.SignDate, dateStr)
             }

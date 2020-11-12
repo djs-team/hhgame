@@ -216,6 +216,7 @@ load('game/ui/layer/personal/PersonalLayer', function () {
         onExitBtnClick: function (sender) {
             GameUtil.delayBtn(sender);
             appInstance.gameAgent().goLoginScene()
+            appInstance.audioManager().stopAllEffect()
         },
 
 

@@ -1901,9 +1901,7 @@ public class RoomController implements IRoomController, RoomMsgHandler.OnMsgEven
                 break;
             case 129:
                 ShowGuardAnimationToClientParam showGuardAnimationToClientParam = JsonConverter.fromJson(message, ShowGuardAnimationToClientParam.class);
-                if (mView != null) {
-                    mView.showGuardGif(showGuardAnimationToClientParam);
-                }
+                syncShowGif(showGuardAnimationToClientParam);
                 break;
             case 134://红包列表
                 NotifyRedPacketResultToClientParam redList = JsonConverter.fromJson(message, NotifyRedPacketResultToClientParam.class);
@@ -1959,6 +1957,24 @@ public class RoomController implements IRoomController, RoomMsgHandler.OnMsgEven
                     mView.updateUserGuard(userGuardParam.getGuardState(), userGuardParam.getGuardHeadImage());
                 }
                 break;
+        }
+    }
+
+    private void syncShowGif(ShowGuardAnimationToClientParam showGuardAnimationToClientParam) {
+        if (mView != null) {
+            mHandler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    mView.showGuardGif(showGuardAnimationToClientParam);
+                }
+            }, 2000);
+        } else {
+            mHandler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    mView.showGuardGif(showGuardAnimationToClientParam);
+                }
+            }, 1000);
         }
     }
 

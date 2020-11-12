@@ -703,6 +703,19 @@
 		0072144D2535CEDC006A2FCE /* CXCityPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0072144C2535CEDC006A2FCE /* CXCityPickerView.m */; };
 		007214512535CEEA006A2FCE /* CXCityPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 007214502535CEEA006A2FCE /* CXCityPickerView.xib */; };
 		00768039255CD883000C5DB5 /* live_room_guardian_animation.gif in Resources */ = {isa = PBXBuildFile; fileRef = 00768038255CD883000C5DB5 /* live_room_guardian_animation.gif */; };
+		007680B8255D1BA4000C5DB5 /* CXNearbyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 007680A1255D1BA4000C5DB5 /* CXNearbyViewController.m */; };
+		007680B9255D1BA4000C5DB5 /* CXNearbyRankViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 007680A2255D1BA4000C5DB5 /* CXNearbyRankViewController.m */; };
+		007680BA255D1BA4000C5DB5 /* CXNearbyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 007680A3255D1BA4000C5DB5 /* CXNearbyViewController.xib */; };
+		007680BB255D1BA4000C5DB5 /* CXNearbyRankViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 007680A5255D1BA4000C5DB5 /* CXNearbyRankViewController.xib */; };
+		007680BC255D1BA4000C5DB5 /* CXNearbyRankHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 007680AB255D1BA4000C5DB5 /* CXNearbyRankHeaderView.xib */; };
+		007680BD255D1BA4000C5DB5 /* CXNearbyListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 007680AC255D1BA4000C5DB5 /* CXNearbyListCell.m */; };
+		007680BE255D1BA4000C5DB5 /* CXNearbyRankSongCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 007680AD255D1BA4000C5DB5 /* CXNearbyRankSongCell.m */; };
+		007680BF255D1BA4000C5DB5 /* CXNearbyRankCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 007680AE255D1BA4000C5DB5 /* CXNearbyRankCell.m */; };
+		007680C0255D1BA4000C5DB5 /* CXNearbyRankCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 007680AF255D1BA4000C5DB5 /* CXNearbyRankCell.xib */; };
+		007680C1255D1BA4000C5DB5 /* CXNearbyRankSongCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 007680B0255D1BA4000C5DB5 /* CXNearbyRankSongCell.xib */; };
+		007680C2255D1BA4000C5DB5 /* CXNearbyRankHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 007680B2255D1BA4000C5DB5 /* CXNearbyRankHeaderView.m */; };
+		007680C3255D1BA4000C5DB5 /* CXNearbyListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 007680B4255D1BA4000C5DB5 /* CXNearbyListCell.xib */; };
+		007680C4255D1BA4000C5DB5 /* CXFindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 007680B5255D1BA4000C5DB5 /* CXFindViewController.m */; };
 		007B1FE0253EBC5F00652BB5 /* Address.plist in Resources */ = {isa = PBXBuildFile; fileRef = 007B1FDF253EBC5E00652BB5 /* Address.plist */; };
 		00802A9B250C651700F43A32 /* WSLScanView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00802A96250C651700F43A32 /* WSLScanView.m */; };
 		00802A9C250C651700F43A32 /* WSLNativeScanTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 00802A98250C651700F43A32 /* WSLNativeScanTool.m */; };
@@ -1946,6 +1959,26 @@
 		0072144C2535CEDC006A2FCE /* CXCityPickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXCityPickerView.m; sourceTree = "<group>"; };
 		007214502535CEEA006A2FCE /* CXCityPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CXCityPickerView.xib; sourceTree = "<group>"; };
 		00768038255CD883000C5DB5 /* live_room_guardian_animation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = live_room_guardian_animation.gif; sourceTree = "<group>"; };
+		007680A1255D1BA4000C5DB5 /* CXNearbyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXNearbyViewController.m; sourceTree = "<group>"; };
+		007680A2255D1BA4000C5DB5 /* CXNearbyRankViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXNearbyRankViewController.m; sourceTree = "<group>"; };
+		007680A3255D1BA4000C5DB5 /* CXNearbyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CXNearbyViewController.xib; sourceTree = "<group>"; };
+		007680A4255D1BA4000C5DB5 /* CXFindViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXFindViewController.h; sourceTree = "<group>"; };
+		007680A5255D1BA4000C5DB5 /* CXNearbyRankViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CXNearbyRankViewController.xib; sourceTree = "<group>"; };
+		007680A6255D1BA4000C5DB5 /* CXNearbyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXNearbyViewController.h; sourceTree = "<group>"; };
+		007680A7255D1BA4000C5DB5 /* CXNearbyRankViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXNearbyRankViewController.h; sourceTree = "<group>"; };
+		007680A9255D1BA4000C5DB5 /* CXNearbyRankCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXNearbyRankCell.h; sourceTree = "<group>"; };
+		007680AA255D1BA4000C5DB5 /* CXNearbyRankHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXNearbyRankHeaderView.h; sourceTree = "<group>"; };
+		007680AB255D1BA4000C5DB5 /* CXNearbyRankHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CXNearbyRankHeaderView.xib; sourceTree = "<group>"; };
+		007680AC255D1BA4000C5DB5 /* CXNearbyListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXNearbyListCell.m; sourceTree = "<group>"; };
+		007680AD255D1BA4000C5DB5 /* CXNearbyRankSongCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXNearbyRankSongCell.m; sourceTree = "<group>"; };
+		007680AE255D1BA4000C5DB5 /* CXNearbyRankCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXNearbyRankCell.m; sourceTree = "<group>"; };
+		007680AF255D1BA4000C5DB5 /* CXNearbyRankCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CXNearbyRankCell.xib; sourceTree = "<group>"; };
+		007680B0255D1BA4000C5DB5 /* CXNearbyRankSongCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CXNearbyRankSongCell.xib; sourceTree = "<group>"; };
+		007680B1255D1BA4000C5DB5 /* CXNearbyListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXNearbyListCell.h; sourceTree = "<group>"; };
+		007680B2255D1BA4000C5DB5 /* CXNearbyRankHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXNearbyRankHeaderView.m; sourceTree = "<group>"; };
+		007680B3255D1BA4000C5DB5 /* CXNearbyRankSongCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXNearbyRankSongCell.h; sourceTree = "<group>"; };
+		007680B4255D1BA4000C5DB5 /* CXNearbyListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CXNearbyListCell.xib; sourceTree = "<group>"; };
+		007680B5255D1BA4000C5DB5 /* CXFindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXFindViewController.m; sourceTree = "<group>"; };
 		007B1FDF253EBC5E00652BB5 /* Address.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Address.plist; sourceTree = "<group>"; };
 		00802A95250C651700F43A32 /* WSLNativeScanTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSLNativeScanTool.h; sourceTree = "<group>"; };
 		00802A96250C651700F43A32 /* WSLScanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSLScanView.m; sourceTree = "<group>"; };
@@ -2226,6 +2259,7 @@
 			children = (
 				00614AD9250B94C800BB7620 /* System */,
 				006148FB250B94C500BB7620 /* Home */,
+				007680A0255D1BA4000C5DB5 /* Find */,
 				0061492F250B94C600BB7620 /* Friend */,
 				0061496E250B94C600BB7620 /* LiveRoom */,
 				00614BB4250B94C900BB7620 /* Mine */,
@@ -4349,6 +4383,42 @@
 			path = ios/Gif_Resources;
 			sourceTree = "<group>";
 		};
+		007680A0255D1BA4000C5DB5 /* Find */ = {
+			isa = PBXGroup;
+			children = (
+				007680A4255D1BA4000C5DB5 /* CXFindViewController.h */,
+				007680B5255D1BA4000C5DB5 /* CXFindViewController.m */,
+				007680A1255D1BA4000C5DB5 /* CXNearbyViewController.m */,
+				007680A2255D1BA4000C5DB5 /* CXNearbyRankViewController.m */,
+				007680A3255D1BA4000C5DB5 /* CXNearbyViewController.xib */,
+				007680A5255D1BA4000C5DB5 /* CXNearbyRankViewController.xib */,
+				007680A6255D1BA4000C5DB5 /* CXNearbyViewController.h */,
+				007680A7255D1BA4000C5DB5 /* CXNearbyRankViewController.h */,
+				007680A8255D1BA4000C5DB5 /* View */,
+			);
+			name = Find;
+			path = ios/CXClasses/Modules/Find;
+			sourceTree = SOURCE_ROOT;
+		};
+		007680A8255D1BA4000C5DB5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				007680A9255D1BA4000C5DB5 /* CXNearbyRankCell.h */,
+				007680AA255D1BA4000C5DB5 /* CXNearbyRankHeaderView.h */,
+				007680AB255D1BA4000C5DB5 /* CXNearbyRankHeaderView.xib */,
+				007680AC255D1BA4000C5DB5 /* CXNearbyListCell.m */,
+				007680AD255D1BA4000C5DB5 /* CXNearbyRankSongCell.m */,
+				007680AE255D1BA4000C5DB5 /* CXNearbyRankCell.m */,
+				007680AF255D1BA4000C5DB5 /* CXNearbyRankCell.xib */,
+				007680B0255D1BA4000C5DB5 /* CXNearbyRankSongCell.xib */,
+				007680B1255D1BA4000C5DB5 /* CXNearbyListCell.h */,
+				007680B2255D1BA4000C5DB5 /* CXNearbyRankHeaderView.m */,
+				007680B3255D1BA4000C5DB5 /* CXNearbyRankSongCell.h */,
+				007680B4255D1BA4000C5DB5 /* CXNearbyListCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		00802A94250C651700F43A32 /* WSLNativeScanTool */ = {
 			isa = PBXGroup;
 			children = (
@@ -4801,6 +4871,7 @@
 				00614F0A250B94CF00BB7620 /* CXSystemAlertView.xib in Resources */,
 				00615046250B94D000BB7620 /* msg_file@2x.png in Resources */,
 				00614EED250B94CE00BB7620 /* CXLiveRoomBottomApplySeatAlertView.xib in Resources */,
+				007680C0255D1BA4000C5DB5 /* CXNearbyRankCell.xib in Resources */,
 				007B1FE0253EBC5F00652BB5 /* Address.plist in Resources */,
 				00614E6F250B94CE00BB7620 /* CXGameMusicSongerTipView.xib in Resources */,
 				00614FF1250B94CF00BB7620 /* icon_019.gif in Resources */,
@@ -4831,7 +4902,9 @@
 				0061506F250B94D000BB7620 /* user_avatar_me@3x.png in Resources */,
 				1A2EA1861FC3DA6C0062C870 /* Images.xcassets in Resources */,
 				00614F87250B94CF00BB7620 /* CXExchangeBlueRoseRecordCell.xib in Resources */,
+				007680BB255D1BA4000C5DB5 /* CXNearbyRankViewController.xib in Resources */,
 				00614EF1250B94CE00BB7620 /* XYOwnerListCell.xib in Resources */,
+				007680C1255D1BA4000C5DB5 /* CXNearbyRankSongCell.xib in Resources */,
 				00615001250B94CF00BB7620 /* chat_audio_blue@3x.png in Resources */,
 				00614FED250B94CF00BB7620 /* icon_019_cover.png in Resources */,
 				00614E1A250B94CE00BB7620 /* CXHomeSearchCell.xib in Resources */,
@@ -4928,6 +5001,7 @@
 				00614FEB250B94CF00BB7620 /* icon_012_cover.png in Resources */,
 				00614FE0250B94CF00BB7620 /* icon_029.gif in Resources */,
 				00614FDF250B94CF00BB7620 /* icon_030_cover.png in Resources */,
+				007680C3255D1BA4000C5DB5 /* CXNearbyListCell.xib in Resources */,
 				00615004250B94CF00BB7620 /* chatbar_map_blue@2x.png in Resources */,
 				00614E1C250B94CE00BB7620 /* CXHomeSearchViewController.xib in Resources */,
 				00614E4F250B94CE00BB7620 /* ai_facelandmarks75.bundle in Resources */,
@@ -4970,6 +5044,7 @@
 				00614FDA250B94CF00BB7620 /* icon_010_cover.png in Resources */,
 				00614EB9250B94CE00BB7620 /* CXRedPacketAwardRecordCell.xib in Resources */,
 				00802AC4250CC55300F43A32 /* RPSDK.bundle in Resources */,
+				007680BA255D1BA4000C5DB5 /* CXNearbyViewController.xib in Resources */,
 				00614EAC250B94CE00BB7620 /* CXLiveRoomRecommendCell.xib in Resources */,
 				00614E5F250B94CE00BB7620 /* CXGameMusicAdjustView.xib in Resources */,
 				00614E2E250B94CE00BB7620 /* CXChatRoomPlayGiftView.xib in Resources */,
@@ -4993,6 +5068,7 @@
 				00614E70250B94CE00BB7620 /* CXGameMusicGuideView.xib in Resources */,
 				009A0CD425402902007C8B70 /* CXLiveRoomSetupViewController.xib in Resources */,
 				0061502C250B94D000BB7620 /* msg_location@2x.png in Resources */,
+				007680BC255D1BA4000C5DB5 /* CXNearbyRankHeaderView.xib in Resources */,
 				00615039250B94D000BB7620 /* msg_recv_audio01@3x.png in Resources */,
 				00614E4E250B94CE00BB7620 /* ai_gesture.bundle in Resources */,
 				00615068250B94D000BB7620 /* group_avatar@2x.png in Resources */,
@@ -5375,6 +5451,7 @@
 				00614F7E250B94CF00BB7620 /* CXMyWalletViewController.m in Sources */,
 				00614F36250B94CF00BB7620 /* SocketMessageJoinSeat.m in Sources */,
 				00614F2B250B94CF00BB7620 /* SocketMessageBuyHammers.m in Sources */,
+				007680BE255D1BA4000C5DB5 /* CXNearbyRankSongCell.m in Sources */,
 				006150B1250B94D000BB7620 /* LewPopupViewAnimationSpring.m in Sources */,
 				00614E12250B94CE00BB7620 /* CXHomeChildViewController.m in Sources */,
 				00614EC3250B94CE00BB7620 /* voiceGiftModel.m in Sources */,
@@ -5426,6 +5503,7 @@
 				006150AF250B94D000BB7620 /* LewPopupViewAnimationFade.m in Sources */,
 				00614E25250B94CE00BB7620 /* CXAddFriendViewController.m in Sources */,
 				00614EE4250B94CE00BB7620 /* CXLiveRoomSeatFansCell.m in Sources */,
+				007680BD255D1BA4000C5DB5 /* CXNearbyListCell.m in Sources */,
 				0061507F250B94D000BB7620 /* MWGridViewController.m in Sources */,
 				00614F51250B94CF00BB7620 /* SocketMessageGetRankList.m in Sources */,
 				00614F2A250B94CF00BB7620 /* SocketMessageRoomDescUpdate.m in Sources */,
@@ -5450,6 +5528,7 @@
 				00614E56250B94CE00BB7620 /* CXMusicDownloader.m in Sources */,
 				00614E30250B94CE00BB7620 /* CXChatRoomGIftView.m in Sources */,
 				00614EB2250B94CE00BB7620 /* CXRedPacketProgressView.m in Sources */,
+				007680C4255D1BA4000C5DB5 /* CXFindViewController.m in Sources */,
 				00614FBC250B94CF00BB7620 /* CXUserInfoIntrosCell.m in Sources */,
 				00614E5E250B94CE00BB7620 /* CXGameMusicLRCFullView.m in Sources */,
 				00615025250B94D000BB7620 /* EMMsgVideoBubbleView.m in Sources */,
@@ -5489,6 +5568,7 @@
 				00614F31250B94CF00BB7620 /* SocketMessageHeatValue.m in Sources */,
 				00614EDF250B94CE00BB7620 /* GameMessageListItemView+AttributeResult.m in Sources */,
 				00614FBF250B94CF00BB7620 /* CXUserInfoGiftCell.m in Sources */,
+				007680B8255D1BA4000C5DB5 /* CXNearbyViewController.m in Sources */,
 				006148EE250B791A00BB7620 /* FuncUtiles.m in Sources */,
 				00614F01250B94CF00BB7620 /* CXAllOnlineListCell.m in Sources */,
 				00614F26250B94CF00BB7620 /* SocketMessageLeaveRoom.m in Sources */,
@@ -5517,6 +5597,7 @@
 				00614FD9250B94CF00BB7620 /* EMReadReceiptMemberModel.m in Sources */,
 				00614F41250B94CF00BB7620 /* SocketMessageSetTagId.m in Sources */,
 				00615055250B94D000BB7620 /* EMNotificationHelper.m in Sources */,
+				007680BF255D1BA4000C5DB5 /* CXNearbyRankCell.m in Sources */,
 				00614F81250B94CF00BB7620 /* MuaExchangeResultTipView.m in Sources */,
 				0061508D250B94D000BB7620 /* PSTCollectionViewLayout.m in Sources */,
 				00614FA0250B94CF00BB7620 /* XYTableViewAlertCell.m in Sources */,
@@ -5556,6 +5637,7 @@
 				00615051250B94D000BB7620 /* EMAtGroupMembersViewController.m in Sources */,
 				00614EFF250B94CF00BB7620 /* CXLiveRoomShareHelpSuccessView.m in Sources */,
 				00614F1A250B94CF00BB7620 /* CXSocketMessageMusic.m in Sources */,
+				007680B9255D1BA4000C5DB5 /* CXNearbyRankViewController.m in Sources */,
 				00614E19250B94CE00BB7620 /* CXHomeRoomRecommendCell.m in Sources */,
 				00615024250B94D000BB7620 /* EMMsgAudioBubbleView.m in Sources */,
 				008588D12539860200649236 /* CXRefreshNormalTimeHeader.m in Sources */,
@@ -5565,6 +5647,7 @@
 				00614EF0250B94CE00BB7620 /* XYOwnerSortListView.m in Sources */,
 				00614F34250B94CF00BB7620 /* SocketMessageSetUserIsManager.m in Sources */,
 				00614F0D250B94CF00BB7620 /* CXSytemModel.m in Sources */,
+				007680C2255D1BA4000C5DB5 /* CXNearbyRankHeaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

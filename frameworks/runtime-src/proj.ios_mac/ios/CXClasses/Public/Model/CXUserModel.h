@@ -37,6 +37,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) NSString *online; // 用户状态 0离线 2/3相亲中 4/5热聊中 6开播中
 
+@property (nonatomic, strong) NSString *attention; //是否关注 1:已关注 0:未关注
+
 @property (nonatomic, strong) CXUserCurrentRoomModel *room_info; // 当前所在房间信息
 
 // 上麦卡

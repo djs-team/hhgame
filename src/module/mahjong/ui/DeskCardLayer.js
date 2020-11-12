@@ -693,21 +693,47 @@ load('module/mahjong/ui/DeskCardLayer', function () {
                     break
                 case 1:
                 case 3:
-                    let tmpSkewY = [
-                        0,
-                        0,
-                        0,
-                        0,
-                        0,
-                        0,
-                        0,
-                        0,
-                        0,
-                        0
-                    ]
-                    valueSkewY = tmpSkewY[lineIndex]
-                    valueSkewY = -3
-                    valuePos = cc.p(30,33)
+                    let tmpSkewY = {
+                        '1':  [
+                            3,
+                            3,
+                            30,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        '3':  [
+                            -3,
+                            -3,
+                            30,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ]
+                    }
+                    let tmpSkewYT = {
+                        '1': -5,
+                        '3': 5
+                    }
+
+                    let tmpSkewXT = {
+                        '1': -5,
+                        '3': 5
+                    }
+
+                    // valueSkewY = tmpSkewYT[uiSeat][lineIndex]
+                    // valueSkewY = tmpSkewYT[uiSeat]
+                    // valueSkewY = 5
+                    valueSkewX = 15
+                    valuePos = cc.p(28,33)
                     valueScaleX = 0.55
                     valueScaleY = 0.4
                     if (uiSeat === 1) {

@@ -1,0 +1,83 @@
+
+huangdi.png
+size: 2048,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+333
+  rotate: true
+  xy: 1317, 186
+  size: 323, 284
+  orig: 323, 284
+  offset: 0, 0
+  index: -1
+gebo
+  rotate: true
+  xy: 1317, 55
+  size: 129, 245
+  orig: 129, 245
+  offset: 0, 0
+  index: -1
+gebo1
+  rotate: false
+  xy: 1603, 255
+  size: 240, 254
+  orig: 240, 254
+  offset: 0, 0
+  index: -1
+hb
+  rotate: true
+  xy: 941, 31
+  size: 478, 374
+  orig: 478, 374
+  offset: 0, 0
+  index: -1
+qian
+  rotate: true
+  xy: 543, 36
+  size: 473, 396
+  orig: 473, 396
+  offset: 0, 0
+  index: -1
+tou
+  rotate: true
+  xy: 2, 39
+  size: 470, 539
+  orig: 470, 539
+  offset: 0, 0
+  index: -1
+yablei
+  rotate: false
+  xy: 1564, 43
+  size: 60, 65
+  orig: 60, 65
+  offset: 0, 0
+  index: -1
+yanjing
+  rotate: false
+  xy: 1317, 8
+  size: 230, 45
+  orig: 230, 45
+  offset: 0, 0
+  index: -1
+yanjing1
+  rotate: false
+  xy: 2, 2
+  size: 225, 35
+  orig: 225, 35
+  offset: 0, 0
+  index: -1
+yanjing2
+  rotate: false
+  xy: 229, 2
+  size: 225, 35
+  orig: 225, 35
+  offset: 0, 0
+  index: -1
+yanlei1
+  rotate: false
+  xy: 1564, 110
+  size: 68, 74
+  orig: 68, 74
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,41 @@
+
+dating_majiang.png
+size: 512,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+dtjm_f2
+  rotate: false
+  xy: 2, 2
+  size: 215, 189
+  orig: 215, 189
+  offset: 0, 0
+  index: -1
+majiang xin0001
+  rotate: false
+  xy: 219, 15
+  size: 95, 87
+  orig: 95, 87
+  offset: 0, 0
+  index: -1
+majiang xin0002
+  rotate: false
+  xy: 219, 104
+  size: 95, 87
+  orig: 95, 87
+  offset: 0, 0
+  index: -1
+majiang0001
+  rotate: false
+  xy: 316, 116
+  size: 82, 75
+  orig: 82, 75
+  offset: 0, 0
+  index: -1
+majiang0002
+  rotate: false
+  xy: 316, 39
+  size: 82, 75
+  orig: 82, 75
+  offset: 0, 0
+  index: -1

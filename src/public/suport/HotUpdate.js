@@ -269,7 +269,6 @@ load('public/suport/HotUpdate', function () {
          * @param {string} newUrl - 新的热更地址
          */
         setReplaceUrl: function (newUrl) {
-            cc.log('========setReplaceUrl=========' + newUrl)
             this.log('setReplaceUrl:' + newUrl)
             if (this._am) {
                 if (typeof (newUrl) !== 'undefined' && newUrl != null) {
@@ -285,14 +284,12 @@ load('public/suport/HotUpdate', function () {
          */
         loadDefaultDownloadUrls: function () {
             if (!gDownloadUrls) {
-                let urls = ['http://10.1.1.151:8000/main']
+                let urls = ['http://hot.harmonygames.cn/chot/web/main']
                 if (urls && urls.length > 0) {
-                    cc.log('==========loadDefaultDownloadUrls=======11111========')
                     gDownloadUrls = urls
                     // Switch to new download url when cdn urls loaded.
                     this.switchDownloadUrl()
                 } else {
-                    cc.log('==========loadDefaultDownloadUrls=======11111========')
                     this.setReplaceUrl('')
                 }
             }
@@ -303,7 +300,6 @@ load('public/suport/HotUpdate', function () {
          * @param {string[]} urls - url array
          */
         setGlobalDownloadUrls: function (urls) {
-            cc.log('======setGlobalDownloadUrls========' + JSON.stringify(urls))
             gDownloadUrls = urls
         },
 
@@ -315,7 +311,6 @@ load('public/suport/HotUpdate', function () {
                 curDownloadUrlIdx = (curDownloadUrlIdx + 1) % gDownloadUrls.length
                 let url = gDownloadUrls[curDownloadUrlIdx]
                 if (url && url.length > 0) {
-                    cc.log('===========switchDownloadUrl=================' + JSON.stringify(gDownloadUrls))
                     this.setReplaceUrl(url)
                 }
             }

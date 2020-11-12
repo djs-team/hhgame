@@ -117,7 +117,9 @@ public class AdManage {
 
                     @Override
                     public void onAdClose() {
-
+                        if (onLoadAdListener != null) {
+                            onLoadAdListener.onVidioPlayComplete("0");
+                        }
                     }
 
                     //视频播放完成回调

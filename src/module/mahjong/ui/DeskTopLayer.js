@@ -63,6 +63,7 @@ load('module/mahjong/ui/DeskTopLayer', function () {
                 'BmPnl/sayContentPnl/sayCell': {},
                 'BmPnl/sayPnl': {},
                 'BmPnl/expressionPnl': {},
+                'BmPnl/magicPnl': {},
 
                 'TopPnl/SetBtn': { onClicked: this.onSetBtnClick },
                 'TopPnl/BaoNd': {},
@@ -169,6 +170,11 @@ load('module/mahjong/ui/DeskTopLayer', function () {
             this.expressionPnl.getChildByName('expressionImg1').setVisible(false)
             this.expressionPnl.getChildByName('expressionImg2').setVisible(false)
             this.expressionPnl.getChildByName('expressionImg3').setVisible(false)
+            this.magicPnl.setVisible(false)
+            this.magicPnl.getChildByName('magicNode0').setVisible(false)
+            this.magicPnl.getChildByName('magicNode1').setVisible(false)
+            this.magicPnl.getChildByName('magicNode2').setVisible(false)
+            this.magicPnl.getChildByName('magicNode3').setVisible(false)
 
             this.HeadNd.setVisible(false)
 
@@ -404,6 +410,7 @@ load('module/mahjong/ui/DeskTopLayer', function () {
         },
 
         toExpressionView: function (data) {
+            console.log('============toExpressionView'+JSON.stringify(data));
             let fangyan = global.localStorage.getStringForKey(LocalSave.LocalLanguage)
             let type = data.type
             let num = data.num
@@ -419,14 +426,26 @@ load('module/mahjong/ui/DeskTopLayer', function () {
                 } else {
                     this.sayPnl.getChildByName('sayPnl'+uiSeatID).getChildByName('sayText').setString(TableConfig.experssion['say']['puSay'][num-1]['text']);
                 }
-                this.runAction(cc.sequence(cc.DelayTime(1), cc.CallFunc(function() {
+                this.runAction(cc.sequence(cc.DelayTime(2), cc.CallFunc(function() {
                     this.updateSayHide(uiSeatID);
                 }.bind(this))))
             } else if (type == TableConfig.ExpressionType[1]) {
                 this.updateExpressionShow(uiSeatID);
                 this.expressionPnl.getChildByName('expressionImg'+uiSeatID).loadTexture(TableConfig.experssion['express'][num-1]['res'])
-                this.runAction(cc.sequence(cc.DelayTime(1), cc.CallFunc(function() {
+                this.runAction(cc.sequence(cc.DelayTime(2), cc.CallFunc(function() {
                     this.updateExpressionHide(uiSeatID);
+                }.bind(this))))
+            } else if (type == TableConfig.ExpressionType[2]) {
+                let toSeatID = data.toSeatID
+                let toUiSeatID = appInstance.dataManager().getPlayData().seatId2UI(toSeatID)
+                console.log('============toSeatID'+toUiSeatID);
+                this.updateMagicShow(toUiSeatID)
+                let magicAnimation = appInstance.gameAgent().gameUtil().getAni(ResConfig.Magic[num-1])
+                magicAnimation.setAnimation(0, ResConfig.MagicAnimation[num-1], true)
+                this.magicPnl.getChildByName('magicNode'+toUiSeatID).removeAllChildren()
+                this.magicPnl.getChildByName('magicNode'+toUiSeatID).addChild(magicAnimation)
+                this.runAction(cc.sequence(cc.DelayTime(2), cc.CallFunc(function() {
+                    this.updateMagicHide(toUiSeatID);
                 }.bind(this))))
             }
             this.sayPnl.getChildByName('sayPnl'+uiSeatID)
@@ -450,6 +469,16 @@ load('module/mahjong/ui/DeskTopLayer', function () {
         updateExpressionHide: function (uiSeatID) {
             this.expressionPnl.setVisible(false)
             this.expressionPnl.getChildByName('expressionImg'+uiSeatID).setVisible(false)
+        },
+
+        updateMagicShow: function (uiSeatID) {
+            this.magicPnl.setVisible(true)
+            this.magicPnl.getChildByName('magicNode'+uiSeatID).setVisible(true)
+        },
+
+        updateMagicHide: function (uiSeatID) {
+            this.magicPnl.setVisible(false)
+            this.magicPnl.getChildByName('magicNode'+uiSeatID).setVisible(false)
         },
 
         hideSelectChi: function () {

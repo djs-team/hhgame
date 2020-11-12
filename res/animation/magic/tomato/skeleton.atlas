@@ -1,0 +1,69 @@
+
+skeleton.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+tomato0001
+  rotate: false
+  xy: 2, 314
+  size: 240, 310
+  orig: 240, 310
+  offset: 0, 0
+  index: -1
+tomato0002
+  rotate: false
+  xy: 244, 626
+  size: 240, 310
+  orig: 240, 310
+  offset: 0, 0
+  index: -1
+tomato0003
+  rotate: false
+  xy: 244, 626
+  size: 240, 310
+  orig: 240, 310
+  offset: 0, 0
+  index: -1
+tomato0004
+  rotate: false
+  xy: 2, 2
+  size: 240, 310
+  orig: 240, 310
+  offset: 0, 0
+  index: -1
+tomato0005
+  rotate: false
+  xy: 2, 2
+  size: 240, 310
+  orig: 240, 310
+  offset: 0, 0
+  index: -1
+tomato0006
+  rotate: false
+  xy: 244, 314
+  size: 240, 310
+  orig: 240, 310
+  offset: 0, 0
+  index: -1
+tomato0007
+  rotate: false
+  xy: 244, 314
+  size: 240, 310
+  orig: 240, 310
+  offset: 0, 0
+  index: -1
+tomato0009
+  rotate: false
+  xy: 2, 626
+  size: 240, 310
+  orig: 240, 310
+  offset: 0, 0
+  index: -1
+tomato0008
+  rotate: false
+  xy: 2, 626
+  size: 240, 310
+  orig: 240, 310
+  offset: 0, 0
+  index: -1

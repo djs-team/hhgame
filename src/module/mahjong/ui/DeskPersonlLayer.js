@@ -60,18 +60,18 @@ load('module/mahjong/ui/DeskPersonlLayer', function () {
             let magic = TableConfig.experssion['magic']
             let magicLength = Object.keys(magic).length;
             for (let i=0; i<magicLength; i++) {
-                this.onMagicView(magic[i], pData.pid)
+                this.onMagicView(magic[i], pData.pSeatID)
             }
         },
 
-        onMagicView: function (data, pid) {
+        onMagicView: function (data, pSeatID) {
             let cell = this.magicCell.clone()
             cell.setVisible(true)
             this.magicList.pushBackCustomItem(cell)
             cell._sendMsg = {
                 num: data.id,
                 type: 3,
-                toPid: pid,
+                toSeatID: pSeatID,
             }
             cell.setName('magicNum'+data.id)
             cell.getChildByName('magicImg').loadTexture(data.res)
@@ -82,12 +82,13 @@ load('module/mahjong/ui/DeskPersonlLayer', function () {
         },
 
         gameSendNews: function (sender) {
+            this.onCloseBtnClick();
             let data = sender._sendMsg
             let pData = appInstance.dataManager().getPlayData().tableData.pTableID
             let msg = {
                 'type': data.type,
                 'num': data.num,
-                'toPid': data.toPid,
+                'toSeatID': data.toSeatID,
                 'tableId':pData
             }
             appInstance.gameAgent().tcpGame().ToSendNewsProto(msg)

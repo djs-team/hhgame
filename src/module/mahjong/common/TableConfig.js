@@ -355,12 +355,12 @@ load('module/mahjong/common/TableConfig', function () {
             },
             '4':{
                 'id':5,
-                'res':'res/module/mahjong/magic/xx_1.png',
-            },
-            '5':{
-                'id':6,
                 'res':'res/module/mahjong/magic/z_1.png',
             },
+            // '5':{
+            //     'id':6,
+            //     'res':'res/module/mahjong/magic/xx_1.png',
+            // },
         },
     }
 

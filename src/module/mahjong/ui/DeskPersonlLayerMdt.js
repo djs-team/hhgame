@@ -53,7 +53,8 @@ load('module/mahjong/ui/DeskPersonlLayerMdt', function () {
                 pPhoto: tData.pPhoto,
                 winCnt: tData.win,
                 allCnt: tData.win + tData.lose,
-                isCanSend: isCanSend
+                isCanSend: isCanSend,
+                pSeatID: tData.pSeatID
             }
 
             this.view.initView(data)

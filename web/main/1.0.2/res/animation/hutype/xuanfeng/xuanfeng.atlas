@@ -1,0 +1,76 @@
+
+xuanfeng.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+xf0001
+  rotate: false
+  xy: 2, 947
+  size: 311, 303
+  orig: 311, 303
+  offset: 0, 0
+  index: -1
+xf0002
+  rotate: false
+  xy: 2, 642
+  size: 311, 303
+  orig: 311, 303
+  offset: 0, 0
+  index: -1
+xf0003
+  rotate: false
+  xy: 315, 947
+  size: 311, 303
+  orig: 311, 303
+  offset: 0, 0
+  index: -1
+xf0004
+  rotate: false
+  xy: 2, 337
+  size: 311, 303
+  orig: 311, 303
+  offset: 0, 0
+  index: -1
+xf0005
+  rotate: false
+  xy: 315, 642
+  size: 311, 303
+  orig: 311, 303
+  offset: 0, 0
+  index: -1
+xf0006
+  rotate: false
+  xy: 628, 947
+  size: 311, 303
+  orig: 311, 303
+  offset: 0, 0
+  index: -1
+xf0007
+  rotate: false
+  xy: 2, 32
+  size: 311, 303
+  orig: 311, 303
+  offset: 0, 0
+  index: -1
+xf0008
+  rotate: false
+  xy: 315, 337
+  size: 311, 303
+  orig: 311, 303
+  offset: 0, 0
+  index: -1
+xf0009
+  rotate: false
+  xy: 628, 642
+  size: 311, 303
+  orig: 311, 303
+  offset: 0, 0
+  index: -1
+xf0010
+  rotate: false
+  xy: 941, 947
+  size: 311, 303
+  orig: 311, 303
+  offset: 0, 0
+  index: -1

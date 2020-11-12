@@ -2,7 +2,6 @@
 load('public/http/HttpAgent', function () {
     let HttpType = include('public/http/HttpType')
     let HttpAgent  = cc.Class.extend({
-        // _url: 'http://118.190.33.105:8080/mj-hall-server/msgReceive/httpDecoder.do?',
          _url: 'http://10.66.66.111:8080/mj-hall-server/msgReceive/httpDecoder.do?',
         _cb: null,
         _commonData: {

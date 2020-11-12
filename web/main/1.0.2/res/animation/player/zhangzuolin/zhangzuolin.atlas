@@ -1,0 +1,111 @@
+
+zhangzuolin.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+geb
+  rotate: false
+  xy: 375, 35
+  size: 105, 147
+  orig: 105, 147
+  offset: 0, 0
+  index: -1
+gebo
+  rotate: true
+  xy: 2, 36
+  size: 146, 371
+  orig: 146, 371
+  offset: 0, 0
+  index: -1
+houbai
+  rotate: false
+  xy: 2, 184
+  size: 478, 406
+  orig: 478, 406
+  offset: 0, 0
+  index: -1
+mao
+  rotate: true
+  xy: 779, 90
+  size: 244, 113
+  orig: 244, 113
+  offset: 0, 0
+  index: -1
+qian
+  rotate: false
+  xy: 482, 53
+  size: 131, 127
+  orig: 131, 127
+  offset: 0, 0
+  index: -1
+qianbai
+  rotate: false
+  xy: 482, 182
+  size: 295, 408
+  orig: 295, 408
+  offset: 0, 0
+  index: -1
+st
+  rotate: false
+  xy: 2, 592
+  size: 565, 430
+  orig: 565, 430
+  offset: 0, 0
+  index: -1
+tou
+  rotate: false
+  xy: 569, 606
+  size: 388, 416
+  orig: 388, 416
+  offset: 0, 0
+  index: -1
+tui
+  rotate: false
+  xy: 779, 336
+  size: 125, 268
+  orig: 125, 268
+  offset: 0, 0
+  index: -1
+tui1
+  rotate: false
+  xy: 906, 354
+  size: 101, 250
+  orig: 101, 250
+  offset: 0, 0
+  index: -1
+yablei
+  rotate: false
+  xy: 615, 115
+  size: 60, 65
+  orig: 60, 65
+  offset: 0, 0
+  index: -1
+yan
+  rotate: true
+  xy: 959, 844
+  size: 178, 46
+  orig: 178, 46
+  offset: 0, 0
+  index: -1
+yanjing
+  rotate: true
+  xy: 959, 676
+  size: 166, 52
+  orig: 166, 52
+  offset: 0, 0
+  index: -1
+yanjing1
+  rotate: false
+  xy: 2, 2
+  size: 168, 32
+  orig: 168, 32
+  offset: 0, 0
+  index: -1
+yanlei1
+  rotate: false
+  xy: 615, 55
+  size: 53, 58
+  orig: 53, 58
+  offset: 0, 0
+  index: -1

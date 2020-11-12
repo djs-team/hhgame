@@ -1,0 +1,125 @@
+
+huxian.png
+size: 2048,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+11
+  rotate: true
+  xy: 1227, 431
+  size: 88, 190
+  orig: 88, 190
+  offset: 0, 0
+  index: -1
+erduo
+  rotate: false
+  xy: 877, 744
+  size: 528, 251
+  orig: 528, 251
+  offset: 0, 0
+  index: -1
+geb02
+  rotate: true
+  xy: 465, 289
+  size: 147, 233
+  orig: 147, 233
+  offset: 0, 0
+  index: -1
+gebo1
+  rotate: false
+  xy: 1407, 767
+  size: 220, 228
+  orig: 220, 228
+  offset: 0, 0
+  index: -1
+houbai
+  rotate: true
+  xy: 1227, 521
+  size: 221, 169
+  orig: 221, 169
+  offset: 0, 0
+  index: -1
+houfa1
+  rotate: false
+  xy: 2, 319
+  size: 461, 676
+  orig: 461, 676
+  offset: 0, 0
+  index: -1
+qianfa
+  rotate: false
+  xy: 877, 421
+  size: 348, 321
+  orig: 348, 321
+  offset: 0, 0
+  index: -1
+shenti
+  rotate: false
+  xy: 465, 438
+  size: 410, 557
+  orig: 410, 557
+  offset: 0, 0
+  index: -1
+tui1
+  rotate: true
+  xy: 462, 112
+  size: 86, 203
+  orig: 86, 203
+  offset: 0, 0
+  index: -1
+tui2
+  rotate: true
+  xy: 1629, 851
+  size: 144, 237
+  orig: 144, 237
+  offset: 0, 0
+  index: -1
+weiba
+  rotate: true
+  xy: 2, 2
+  size: 315, 385
+  orig: 315, 385
+  offset: 0, 0
+  index: -1
+yanjing1
+  rotate: true
+  xy: 389, 99
+  size: 218, 71
+  orig: 218, 71
+  offset: 0, 0
+  index: -1
+yanjing2
+  rotate: false
+  xy: 1629, 742
+  size: 231, 107
+  orig: 231, 107
+  offset: 0, 0
+  index: -1
+yanjingjs 444
+  rotate: false
+  xy: 462, 200
+  size: 214, 87
+  orig: 214, 87
+  offset: 0, 0
+  index: -1
+yanl
+  rotate: false
+  xy: 700, 343
+  size: 86, 93
+  orig: 86, 93
+  offset: 0, 0
+  index: -1
+yanl2
+  rotate: false
+  xy: 1868, 902
+  size: 86, 93
+  orig: 86, 93
+  offset: 0, 0
+  index: -1
+z
+  rotate: true
+  xy: 389, 16
+  size: 81, 67
+  orig: 81, 67
+  offset: 0, 0
+  index: -1

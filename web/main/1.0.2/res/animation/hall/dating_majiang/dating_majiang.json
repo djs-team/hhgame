@@ -1,0 +1,90 @@
+{
+"skeleton": { "hash": "oFVVCGQx5ShzvVZKGCubUtGkSY0", "spine": "3.7.94", "width": 215, "height": 189, "images": "", "audio": "" },
+"bones": [
+	{ "name": "root" },
+	{ "name": "majiang0001", "parent": "root", "length": 31.55, "rotation": 90, "x": -44.91, "y": -34.81 },
+	{ "name": "majiang xin0001", "parent": "root", "length": 18.76, "rotation": 89.53, "x": -42.87, "y": 38.24 }
+],
+"slots": [
+	{ "name": "dtjm_f2", "bone": "root", "attachment": "dtjm_f2" },
+	{ "name": "majiang0001", "bone": "majiang0001", "attachment": "majiang0002" },
+	{ "name": "majiang xin0001", "bone": "majiang xin0001", "attachment": "majiang xin0002" }
+],
+"skins": {
+	"default": {
+		"dtjm_f2": {
+			"dtjm_f2": { "x": 0.5, "y": 0.5, "width": 215, "height": 189 }
+		},
+		"majiang xin0001": {
+			"majiang xin0001": { "x": 5.58, "y": -9.38, "rotation": -89.53, "width": 95, "height": 87 },
+			"majiang xin0002": { "x": 5.58, "y": -9.38, "rotation": -89.53, "width": 95, "height": 87 }
+		},
+		"majiang0001": {
+			"majiang0001": { "x": 9.47, "y": 5.69, "rotation": -90, "width": 82, "height": 75 },
+			"majiang0002": { "x": 9.47, "y": 5.69, "rotation": -90, "width": 82, "height": 75 }
+		}
+	}
+},
+"animations": {
+	"animation": {
+		"slots": {
+			"majiang0001": {
+				"attachment": [
+					{ "time": 0.1667, "name": "majiang0001" },
+					{ "time": 0.3333, "name": "majiang0001" }
+				]
+			},
+			"majiang xin0001": {
+				"attachment": [
+					{ "time": 0.1333, "name": "majiang xin0001" },
+					{ "time": 0.3333, "name": "majiang xin0001" }
+				]
+			}
+		},
+		"bones": {
+			"root": {
+				"rotate": [
+					{ "time": 0, "angle": 0, "curve": "stepped" },
+					{ "time": 0.1667, "angle": 0 }
+				],
+				"translate": [
+					{ "time": 0, "x": 0, "y": 0, "curve": "stepped" },
+					{ "time": 0.1667, "x": 0, "y": 0 }
+				],
+				"scale": [
+					{ "time": 0, "x": 1, "y": 1, "curve": "stepped" },
+					{ "time": 0.1667, "x": 1, "y": 1 }
+				]
+			},
+			"majiang0001": {
+				"rotate": [
+					{ "time": 0, "angle": 0, "curve": "stepped" },
+					{ "time": 0.1667, "angle": 0 }
+				],
+				"translate": [
+					{ "time": 0, "x": 0, "y": 0, "curve": "stepped" },
+					{ "time": 0.1667, "x": 0, "y": 0 }
+				],
+				"scale": [
+					{ "time": 0, "x": 1, "y": 1, "curve": "stepped" },
+					{ "time": 0.1667, "x": 1, "y": 1 }
+				]
+			},
+			"majiang xin0001": {
+				"rotate": [
+					{ "time": 0, "angle": 0, "curve": "stepped" },
+					{ "time": 0.1333, "angle": 0 }
+				],
+				"translate": [
+					{ "time": 0, "x": 0, "y": 0, "curve": "stepped" },
+					{ "time": 0.1333, "x": 0, "y": 0 }
+				],
+				"scale": [
+					{ "time": 0, "x": 1, "y": 1, "curve": "stepped" },
+					{ "time": 0.1333, "x": 1, "y": 1 }
+				]
+			}
+		}
+	}
+}
+}

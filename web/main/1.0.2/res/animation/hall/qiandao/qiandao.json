@@ -1,0 +1,82 @@
+{
+"skeleton": { "hash": "eL5VtCrf4Ouldq5QtNIqqHCA9RI", "spine": "3.7.94", "width": 123, "height": 61, "images": "", "audio": "" },
+"bones": [
+	{ "name": "root" },
+	{ "name": "bone", "parent": "root", "length": 39.19 },
+	{ "name": "guang1_0001", "parent": "root", "length": 21.11, "rotation": 92.16, "x": 0.46, "y": 2.35 }
+],
+"slots": [
+	{ "name": "guang", "bone": "bone", "blend": "additive" },
+	{ "name": "guang1_0001", "bone": "guang1_0001", "attachment": "guang1_0007", "blend": "additive" }
+],
+"skins": {
+	"default": {
+		"guang": {
+			"guang": { "x": 0.5, "y": 0.5, "width": 87, "height": 87 }
+		},
+		"guang1_0001": {
+			"guang1_0001": { "x": 25.1, "y": -3.57, "rotation": -92.16, "width": 123, "height": 61 },
+			"guang1_0002": { "x": 25.1, "y": -3.57, "rotation": -92.16, "width": 123, "height": 61 },
+			"guang1_0003": { "x": 25.1, "y": -3.57, "rotation": -92.16, "width": 123, "height": 61 },
+			"guang1_0004": { "x": 25.1, "y": -3.57, "rotation": -92.16, "width": 123, "height": 61 },
+			"guang1_0005": { "x": 25.1, "y": -3.57, "rotation": -92.16, "width": 123, "height": 61 },
+			"guang1_0006": { "x": 25.1, "y": -3.57, "rotation": -92.16, "width": 123, "height": 61 },
+			"guang1_0007": { "x": 25.1, "y": -3.57, "rotation": -92.16, "width": 123, "height": 61 }
+		}
+	}
+},
+"animations": {
+	"animation": {
+		"slots": {
+			"guang": {
+				"attachment": [
+					{ "time": 0, "name": "guang" },
+					{ "time": 2.3333, "name": "guang" },
+					{ "time": 4.6667, "name": "guang" }
+				]
+			},
+			"guang1_0001": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			}
+		},
+		"bones": {
+			"bone": {
+				"rotate": [
+					{ "time": 0, "angle": 0 },
+					{ "time": 2.3333, "angle": -180 },
+					{ "time": 3.5, "angle": 90 },
+					{ "time": 4.6667, "angle": 0 }
+				],
+				"translate": [
+					{ "time": 0, "x": 0, "y": 0, "curve": "stepped" },
+					{ "time": 2.3333, "x": 0, "y": 0, "curve": "stepped" },
+					{ "time": 4.6667, "x": 0, "y": 0 }
+				],
+				"scale": [
+					{ "time": 0, "x": 1, "y": 1, "curve": "stepped" },
+					{ "time": 2.3333, "x": 1, "y": 1, "curve": "stepped" },
+					{ "time": 4.6667, "x": 1, "y": 1 }
+				]
+			}
+		}
+	},
+	"animation1": {
+		"slots": {
+			"guang1_0001": {
+				"attachment": [
+					{ "time": 0, "name": "guang1_0001" },
+					{ "time": 0.1, "name": "guang1_0002" },
+					{ "time": 0.2, "name": "guang1_0003" },
+					{ "time": 0.3, "name": "guang1_0004" },
+					{ "time": 0.4, "name": "guang1_0005" },
+					{ "time": 0.5, "name": "guang1_0006" },
+					{ "time": 0.6, "name": "guang1_0007" },
+					{ "time": 0.6667, "name": "guang1_0007" }
+				]
+			}
+		}
+	}
+}
+}

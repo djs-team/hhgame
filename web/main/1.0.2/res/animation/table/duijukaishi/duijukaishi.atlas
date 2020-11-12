@@ -1,0 +1,27 @@
+
+duijukaishi.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+pz_41
+  rotate: false
+  xy: 2, 386
+  size: 656, 544
+  orig: 656, 544
+  offset: 0, 0
+  index: -1
+pz_43
+  rotate: false
+  xy: 2, 2
+  size: 459, 129
+  orig: 459, 129
+  offset: 0, 0
+  index: -1
+pz_44
+  rotate: false
+  xy: 2, 133
+  size: 755, 251
+  orig: 755, 251
+  offset: 0, 0
+  index: -1

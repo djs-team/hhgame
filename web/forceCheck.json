@@ -1,0 +1,12 @@
+{
+    "android": {
+        "version": "1.0.0",
+        "isForceCheck": true,
+        "downUrl": "http://testapp.hehefun.cn/smfc"
+    },
+    "ios" : {
+        "version": "1.0.0",
+        "isForceCheck": true,
+        "downUrl": "http://testapp.hehefun.cn/smfc"
+    }
+}

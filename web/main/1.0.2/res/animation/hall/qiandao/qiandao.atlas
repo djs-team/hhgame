@@ -1,0 +1,62 @@
+
+qiandao.png
+size: 1024,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+guang
+  rotate: false
+  xy: 502, 39
+  size: 87, 87
+  orig: 87, 87
+  offset: 0, 0
+  index: -1
+guang1_0001
+  rotate: false
+  xy: 2, 2
+  size: 123, 61
+  orig: 123, 61
+  offset: 0, 0
+  index: -1
+guang1_0002
+  rotate: false
+  xy: 127, 65
+  size: 123, 61
+  orig: 123, 61
+  offset: 0, 0
+  index: -1
+guang1_0003
+  rotate: false
+  xy: 127, 2
+  size: 123, 61
+  orig: 123, 61
+  offset: 0, 0
+  index: -1
+guang1_0004
+  rotate: false
+  xy: 252, 65
+  size: 123, 61
+  orig: 123, 61
+  offset: 0, 0
+  index: -1
+guang1_0005
+  rotate: false
+  xy: 252, 2
+  size: 123, 61
+  orig: 123, 61
+  offset: 0, 0
+  index: -1
+guang1_0006
+  rotate: false
+  xy: 377, 65
+  size: 123, 61
+  orig: 123, 61
+  offset: 0, 0
+  index: -1
+guang1_0007
+  rotate: false
+  xy: 2, 65
+  size: 123, 61
+  orig: 123, 61
+  offset: 0, 0
+  index: -1

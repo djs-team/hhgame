@@ -48,6 +48,12 @@ load('module/mahjong/common/TableConfig', function () {
         }
     }
 
+    TableConfig.ExpressionType = {
+        '0':1, //常用语
+        '1':2, //普通表情
+        '2':3, //魔法表情
+    }
+
     TableConfig.TStatus = {
         'play': 1,//开始玩
         'drawCard': 2,//摸牌

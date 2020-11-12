@@ -140,6 +140,17 @@ load('module/mahjong/common/ResConfig', function () {
           'match_win_4'
         ],
       },
+      kuaijieyu: {
+        1: '1kuaidian',
+        2: '2hairang',
+        3: '3aiya',
+        4: '4woyou',
+        5: '5hengheng',
+        6: '6dajia',
+        7: '7shouwan',
+        8: '8ningai',
+        9: '9nida',
+      },
       cardtype: {
         feiji: PrefixPath.resPath + 'sound/card/special/feiji.mp3',
         liandui: PrefixPath.resPath + 'sound/card/special/liandui.mp3',

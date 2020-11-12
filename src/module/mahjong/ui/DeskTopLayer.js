@@ -10,6 +10,7 @@ load('module/mahjong/ui/DeskTopLayer', function () {
     let DeskTopLayerMdt = include('module/mahjong/ui/DeskTopLayerMdt')
     let TableConfig = include('module/mahjong/common/TableConfig')
     let LocalSave = include('game/public/LocalSave')
+    let Sound = ResConfig.Sound
     let SELECT = TableConfig.Select
     let Layer = BaseLayer.extend({
         _className: 'DeskTopLayer',
@@ -159,7 +160,15 @@ load('module/mahjong/ui/DeskTopLayer', function () {
             this.sayBtn.setVisible(true)
             this.sayContentPnl.setVisible(false)
             this.sayPnl.setVisible(false)
+            this.sayPnl.getChildByName('sayPnl0').setVisible(false)
+            this.sayPnl.getChildByName('sayPnl1').setVisible(false)
+            this.sayPnl.getChildByName('sayPnl2').setVisible(false)
+            this.sayPnl.getChildByName('sayPnl3').setVisible(false)
             this.expressionPnl.setVisible(false)
+            this.expressionPnl.getChildByName('expressionImg0').setVisible(false)
+            this.expressionPnl.getChildByName('expressionImg1').setVisible(false)
+            this.expressionPnl.getChildByName('expressionImg2').setVisible(false)
+            this.expressionPnl.getChildByName('expressionImg3').setVisible(false)
 
             this.HeadNd.setVisible(false)
 
@@ -356,7 +365,7 @@ load('module/mahjong/ui/DeskTopLayer', function () {
             cell.setVisible(true)
             cell._sendMsg = {
                 num: cellData.id,
-                type: 2,
+                type: TableConfig.ExpressionType[1],
             }
             cell.setName('num'+cellData.id)
             cell.getChildByName('expressionImg').loadTexture(cellData.res)
@@ -372,7 +381,7 @@ load('module/mahjong/ui/DeskTopLayer', function () {
             this.contentList.pushBackCustomItem(cell)
             cell._sendMsg = {
                 num: data.id,
-                type: 1,
+                type: TableConfig.ExpressionType[0],
             }
             cell.setName('num'+data.id)
             cell.getChildByName('sayText').setString(data.text)
@@ -388,18 +397,59 @@ load('module/mahjong/ui/DeskTopLayer', function () {
             let msg = {
                 'type': data.type,
                 'num': data.num,
-                'toPid': 0,
+                'toSeatID': 0,
                 'tableId':pData
             }
-            console.log('==============gameSendNews==='+JSON.stringify(msg));
             appInstance.gameAgent().tcpGame().ToSendNewsProto(msg)
         },
 
         toExpressionView: function (data) {
+            let fangyan = global.localStorage.getStringForKey(LocalSave.LocalLanguage)
             let type = data.type
             let num = data.num
-            let from = data.fromPid
-            console.log('==================toExpressionView==='+JSON.stringify(appInstance.dataManager().getPlayerByUid(from)));
+            let fromSeatID = data.fromSeatID
+            let uiSeatID = appInstance.dataManager().getPlayData().seatId2UI(fromSeatID)
+            if (type == TableConfig.ExpressionType[0]) {
+                //播放语音
+                appInstance.gameAgent().mjUtil().playKuaiJieYuSound(Sound.kuaijieyu[num])
+                this.updateSayShow(uiSeatID);
+                //展示语言
+                if (fangyan == 'dongbei') {
+                    this.sayPnl.getChildByName('sayPnl'+uiSeatID).getChildByName('sayText').setString(TableConfig.experssion['say']['dongSay'][num-1]['text']);
+                } else {
+                    this.sayPnl.getChildByName('sayPnl'+uiSeatID).getChildByName('sayText').setString(TableConfig.experssion['say']['puSay'][num-1]['text']);
+                }
+                this.runAction(cc.sequence(cc.DelayTime(1), cc.CallFunc(function() {
+                    this.updateSayHide(uiSeatID);
+                }.bind(this))))
+            } else if (type == TableConfig.ExpressionType[1]) {
+                this.updateExpressionShow(uiSeatID);
+                this.expressionPnl.getChildByName('expressionImg'+uiSeatID).loadTexture(TableConfig.experssion['express'][num-1]['res'])
+                this.runAction(cc.sequence(cc.DelayTime(1), cc.CallFunc(function() {
+                    this.updateExpressionHide(uiSeatID);
+                }.bind(this))))
+            }
+            this.sayPnl.getChildByName('sayPnl'+uiSeatID)
+        },
+
+        updateSayShow: function (uiSeatID) {
+            this.sayPnl.setVisible(true)
+            this.sayPnl.getChildByName('sayPnl'+uiSeatID).setVisible(true)
+        },
+
+        updateSayHide: function (uiSeatID) {
+            this.sayPnl.setVisible(false)
+            this.sayPnl.getChildByName('sayPnl'+uiSeatID).setVisible(false)
+        },
+
+        updateExpressionShow: function (uiSeatID) {
+            this.expressionPnl.setVisible(true)
+            this.expressionPnl.getChildByName('expressionImg'+uiSeatID).setVisible(true)
+        },
+
+        updateExpressionHide: function (uiSeatID) {
+            this.expressionPnl.setVisible(false)
+            this.expressionPnl.getChildByName('expressionImg'+uiSeatID).setVisible(false)
         },
 
         hideSelectChi: function () {

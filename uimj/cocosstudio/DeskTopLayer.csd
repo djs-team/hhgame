@@ -149,32 +149,6 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="HostingPnl" Visible="False" ActionTag="-1958923638" UserData="{&quot;layoutType&quot;:&quot;maxArea&quot;,&quot;screenAlign&quot;:&quot;mid&quot;}" Tag="63" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
-            <Size X="1280.0000" Y="720.0000" />
-            <Children>
-              <AbstractNodeData Name="Text_1" ActionTag="1161593378" Tag="389" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="430.0000" RightMargin="430.0000" TopMargin="330.0000" BottomMargin="330.0000" FontSize="60" LabelText=" 点击取消托管 " HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="420.0000" Y="60.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="640.0000" Y="360.0000" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="165" B="0" />
-                <PrePosition X="0.5000" Y="0.5000" />
-                <PreSize X="0.3281" Y="0.0833" />
-                <OutlineColor A="255" R="255" G="0" B="0" />
-                <ShadowColor A="255" R="110" G="110" B="110" />
-              </AbstractNodeData>
-            </Children>
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="640.0000" Y="360.0000" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5000" Y="0.5000" />
-            <PreSize X="1.0000" Y="1.0000" />
-            <SingleColor A="255" R="0" G="0" B="0" />
-            <FirstColor A="255" R="150" G="200" B="255" />
-            <EndColor A="255" R="255" G="255" B="255" />
-            <ColorVector ScaleY="1.0000" />
-          </AbstractNodeData>
           <AbstractNodeData Name="BmPnl" ActionTag="-1111814887" UserData="{&quot;layoutType&quot;:&quot;showAll&quot;,&quot;screenAlign&quot;:&quot;bottom&quot;}" Tag="400" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <Children>
@@ -392,7 +366,7 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="sayPnl" Visible="False" ActionTag="-736042181" Tag="1282" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+              <AbstractNodeData Name="sayPnl" Visible="False" ActionTag="-736042181" Tag="1282" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="1280.0000" Y="720.0000" />
                 <Children>
                   <AbstractNodeData Name="sayPnl0" ActionTag="-1629387882" Tag="739" IconVisible="False" LeftMargin="55.9080" RightMargin="774.0920" TopMargin="569.0661" BottomMargin="99.5553" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" LeftEage="55" RightEage="55" TopEage="25" BottomEage="25" Scale9OriginX="-55" Scale9OriginY="-25" Scale9Width="110" Scale9Height="50" ctype="PanelObjectData">
@@ -551,47 +525,47 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="expressionPnl" Visible="False" ActionTag="1015716369" Tag="1283" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+              <AbstractNodeData Name="expressionPnl" ActionTag="1015716369" Tag="1283" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="1280.0000" Y="720.0000" />
                 <Children>
-                  <AbstractNodeData Name="expressionImg0" ActionTag="-432771804" Tag="1284" IconVisible="False" LeftMargin="176.1136" RightMargin="1055.0823" TopMargin="562.3928" BottomMargin="111.6072" Scale9Width="46" Scale9Height="46" ctype="ImageViewObjectData">
-                    <Size X="48.8042" Y="46.0000" />
+                  <AbstractNodeData Name="expressionImg0" ActionTag="-432771804" Tag="1284" IconVisible="False" LeftMargin="165.5157" RightMargin="1044.4843" TopMargin="550.3928" BottomMargin="99.6072" Scale9Width="46" Scale9Height="46" ctype="ImageViewObjectData">
+                    <Size X="70.0000" Y="70.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="200.5157" Y="134.6072" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.1567" Y="0.1870" />
-                    <PreSize X="0.0381" Y="0.0639" />
+                    <PreSize X="0.0547" Y="0.0972" />
                     <FileData Type="Default" Path="Default/ImageFile.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="expressionImg1" ActionTag="-1050604040" Tag="1285" IconVisible="False" LeftMargin="1049.7905" RightMargin="184.2095" TopMargin="291.9799" BottomMargin="382.0201" Scale9Width="46" Scale9Height="46" ctype="ImageViewObjectData">
-                    <Size X="46.0000" Y="46.0000" />
+                  <AbstractNodeData Name="expressionImg1" ActionTag="-1050604040" Tag="1285" IconVisible="False" LeftMargin="1037.7905" RightMargin="172.2095" TopMargin="279.9799" BottomMargin="370.0201" Scale9Width="46" Scale9Height="46" ctype="ImageViewObjectData">
+                    <Size X="70.0000" Y="70.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="1072.7905" Y="405.0201" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.8381" Y="0.5625" />
-                    <PreSize X="0.0359" Y="0.0639" />
+                    <PreSize X="0.0547" Y="0.0972" />
                     <FileData Type="Default" Path="Default/ImageFile.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="expressionImg2" ActionTag="-648539768" Tag="1286" IconVisible="False" LeftMargin="747.1213" RightMargin="486.8787" TopMargin="156.1617" BottomMargin="517.8383" Scale9Width="46" Scale9Height="46" ctype="ImageViewObjectData">
-                    <Size X="46.0000" Y="46.0000" />
+                  <AbstractNodeData Name="expressionImg2" ActionTag="-648539768" Tag="1286" IconVisible="False" LeftMargin="735.1213" RightMargin="474.8787" TopMargin="144.1617" BottomMargin="505.8383" Scale9Width="46" Scale9Height="46" ctype="ImageViewObjectData">
+                    <Size X="70.0000" Y="70.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="770.1213" Y="540.8383" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.6017" Y="0.7512" />
-                    <PreSize X="0.0359" Y="0.0639" />
+                    <PreSize X="0.0547" Y="0.0972" />
                     <FileData Type="Default" Path="Default/ImageFile.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="expressionImg3" ActionTag="1097278147" Tag="1287" IconVisible="False" LeftMargin="158.4283" RightMargin="1075.5717" TopMargin="286.7415" BottomMargin="387.2585" Scale9Width="46" Scale9Height="46" ctype="ImageViewObjectData">
-                    <Size X="46.0000" Y="46.0000" />
+                  <AbstractNodeData Name="expressionImg3" ActionTag="1097278147" Tag="1287" IconVisible="False" LeftMargin="146.4283" RightMargin="1063.5717" TopMargin="274.7415" BottomMargin="375.2585" Scale9Width="46" Scale9Height="46" ctype="ImageViewObjectData">
+                    <Size X="70.0000" Y="70.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="181.4283" Y="410.2585" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.1417" Y="0.5698" />
-                    <PreSize X="0.0359" Y="0.0639" />
+                    <PreSize X="0.0547" Y="0.0972" />
                     <FileData Type="Default" Path="Default/ImageFile.png" Plist="" />
                   </AbstractNodeData>
                 </Children>
@@ -728,6 +702,32 @@
             <PrePosition X="0.5000" Y="1.0000" />
             <PreSize X="1.0000" Y="1.0000" />
             <SingleColor A="255" R="150" G="200" B="255" />
+            <FirstColor A="255" R="150" G="200" B="255" />
+            <EndColor A="255" R="255" G="255" B="255" />
+            <ColorVector ScaleY="1.0000" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="HostingPnl" Visible="False" ActionTag="-1958923638" UserData="{&quot;layoutType&quot;:&quot;maxArea&quot;,&quot;screenAlign&quot;:&quot;mid&quot;}" Tag="63" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+            <Size X="1280.0000" Y="720.0000" />
+            <Children>
+              <AbstractNodeData Name="Text_1" ActionTag="1161593378" Tag="389" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="430.0000" RightMargin="430.0000" TopMargin="330.0000" BottomMargin="330.0000" FontSize="60" LabelText=" 点击取消托管 " HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="420.0000" Y="60.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="640.0000" Y="360.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="165" B="0" />
+                <PrePosition X="0.5000" Y="0.5000" />
+                <PreSize X="0.3281" Y="0.0833" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+            </Children>
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="640.0000" Y="360.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.5000" Y="0.5000" />
+            <PreSize X="1.0000" Y="1.0000" />
+            <SingleColor A="255" R="0" G="0" B="0" />
             <FirstColor A="255" R="150" G="200" B="255" />
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />

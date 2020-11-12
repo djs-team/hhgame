@@ -9,7 +9,8 @@ load('game/public/AppConfig', function () {
     //   Appconfig.httpUrl = 'http://47.105.94.107:38080/mj-hall-server/msgReceive/httpDecoder.do?' //外网测试服
     // Appconfig.httpUrl = 'http://hf.test.hehemj.cn:8080/mj-hall-server/msgReceive/httpDecoder.do?' // 峰哥外网接口
 
-    Appconfig.webUrl = 'http://hot.harmonygames.cn/chot/'
+    // Appconfig.webUrl = 'http://hot.harmonygames.cn/chot/'
+    Appconfig.webUrl = 'http://10.1.1.151:8000/'
 
     /******* 苹果通用配置 *********/
     Appconfig.applePayType = 'Other' // 苹果支付方式控制: Apple:苹果内购 Other: 支付宝微信

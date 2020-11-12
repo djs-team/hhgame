@@ -106,7 +106,7 @@ load('public/App', function () {
             }
             this.clearTimer()
 
-            this.eventManager().dispatchEvent('restartGame')
+            this.eventManager().dispatchEvent('reStartGame')
         },
 
         clearTimer: function () {

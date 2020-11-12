@@ -75,9 +75,9 @@ def removetree(tgt):
 
 def getDefaultManifest():
     defaultManifest = collections.OrderedDict()
-    defaultManifest['packageUrl'] = 'http://10.1.1.151:8000/main'
-    defaultManifest['remoteManifestUrl'] =  'http://10.1.1.151:8000/main/project.manifest'
-    defaultManifest['remoteVersionUrl'] = 'http://10.1.1.151:8000/main/version.manifest'
+    defaultManifest['packageUrl'] = 'http://hot.harmonygames.cn/chot/web/main'
+    defaultManifest['remoteManifestUrl'] =  'http://hot.harmonygames.cn/chot/web/main/project.manifest'
+    defaultManifest['remoteVersionUrl'] = 'http://hot.harmonygames.cn/chot/web/main/version.manifest'
     defaultManifest['version'] = '1.0.0'
     return defaultManifest
 

@@ -336,16 +336,15 @@ load('game/ui/scene/LoginScene', function () {
         },
 
         onwxLoginClick: function () {
-
             GameUtil.delayBtns(this._delayBtns, 5)
             if (!this.onCheckeCanLogin())
-                return
+                 return
 
             if (cc.sys.OS_WINDOWS === cc.sys.os) {
-                this.debugLogin()
-            } else {
-                appInstance.nativeApi().wxLogin()
-            }
+                 this.debugLogin()
+             } else {
+                 appInstance.nativeApi().wxLogin()
+             }
 
         },
 

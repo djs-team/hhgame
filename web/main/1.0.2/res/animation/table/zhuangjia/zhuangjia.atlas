@@ -1,0 +1,160 @@
+
+zhuangjia.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+pz_45_00004
+  rotate: false
+  xy: 2, 804
+  size: 191, 207
+  orig: 191, 207
+  offset: 0, 0
+  index: -1
+pz_45_00005
+  rotate: false
+  xy: 2, 595
+  size: 191, 207
+  orig: 191, 207
+  offset: 0, 0
+  index: -1
+pz_45_00006
+  rotate: false
+  xy: 2, 386
+  size: 191, 207
+  orig: 191, 207
+  offset: 0, 0
+  index: -1
+pz_45_00007
+  rotate: false
+  xy: 2, 177
+  size: 191, 207
+  orig: 191, 207
+  offset: 0, 0
+  index: -1
+pz_45_00008
+  rotate: true
+  xy: 195, 820
+  size: 191, 207
+  orig: 191, 207
+  offset: 0, 0
+  index: -1
+pz_45_00009
+  rotate: true
+  xy: 404, 820
+  size: 191, 207
+  orig: 191, 207
+  offset: 0, 0
+  index: -1
+pz_45_00010
+  rotate: true
+  xy: 613, 820
+  size: 191, 207
+  orig: 191, 207
+  offset: 0, 0
+  index: -1
+pz_45_00011
+  rotate: false
+  xy: 822, 804
+  size: 191, 207
+  orig: 191, 207
+  offset: 0, 0
+  index: -1
+pz_45_00012
+  rotate: true
+  xy: 195, 627
+  size: 191, 207
+  orig: 191, 207
+  offset: 0, 0
+  index: -1
+pz_45_00013
+  rotate: true
+  xy: 404, 627
+  size: 191, 207
+  orig: 191, 207
+  offset: 0, 0
+  index: -1
+pz_45_00014
+  rotate: true
+  xy: 613, 627
+  size: 191, 207
+  orig: 191, 207
+  offset: 0, 0
+  index: -1
+pz_45_00015
+  rotate: false
+  xy: 822, 595
+  size: 191, 207
+  orig: 191, 207
+  offset: 0, 0
+  index: -1
+pz_45_00016
+  rotate: true
+  xy: 195, 434
+  size: 191, 207
+  orig: 191, 207
+  offset: 0, 0
+  index: -1
+pz_45_00017
+  rotate: true
+  xy: 404, 434
+  size: 191, 207
+  orig: 191, 207
+  offset: 0, 0
+  index: -1
+pz_45_00018
+  rotate: true
+  xy: 613, 434
+  size: 191, 207
+  orig: 191, 207
+  offset: 0, 0
+  index: -1
+pz_45_00019
+  rotate: false
+  xy: 822, 386
+  size: 191, 207
+  orig: 191, 207
+  offset: 0, 0
+  index: -1
+pz_45_00020
+  rotate: false
+  xy: 195, 225
+  size: 191, 207
+  orig: 191, 207
+  offset: 0, 0
+  index: -1
+pz_45_00021
+  rotate: true
+  xy: 388, 241
+  size: 191, 207
+  orig: 191, 207
+  offset: 0, 0
+  index: -1
+pz_45_00022
+  rotate: true
+  xy: 597, 241
+  size: 191, 207
+  orig: 191, 207
+  offset: 0, 0
+  index: -1
+pz_45_00023
+  rotate: true
+  xy: 806, 193
+  size: 191, 207
+  orig: 191, 207
+  offset: 0, 0
+  index: -1
+pz_45_00024
+  rotate: false
+  xy: 388, 32
+  size: 191, 207
+  orig: 191, 207
+  offset: 0, 0
+  index: -1
+xinguang
+  rotate: true
+  xy: 2, 26
+  size: 149, 126
+  orig: 151, 128
+  offset: 1, 1
+  index: -1

@@ -1,0 +1,104 @@
+
+zhizunbao.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+gebo
+  rotate: true
+  xy: 2, 2
+  size: 134, 188
+  orig: 134, 188
+  offset: 0, 0
+  index: -1
+gebo1
+  rotate: false
+  xy: 401, 494
+  size: 79, 223
+  orig: 79, 223
+  offset: 0, 0
+  index: -1
+shenti
+  rotate: false
+  xy: 2, 138
+  size: 190, 304
+  orig: 190, 304
+  offset: 0, 0
+  index: -1
+tou
+  rotate: false
+  xy: 2, 444
+  size: 397, 544
+  orig: 397, 544
+  offset: 0, 0
+  index: -1
+tui
+  rotate: false
+  xy: 401, 719
+  size: 122, 269
+  orig: 122, 269
+  offset: 0, 0
+  index: -1
+tui1
+  rotate: false
+  xy: 194, 178
+  size: 90, 264
+  orig: 90, 264
+  offset: 0, 0
+  index: -1
+yablei
+  rotate: false
+  xy: 286, 191
+  size: 60, 65
+  orig: 60, 65
+  offset: 0, 0
+  index: -1
+yanjing
+  rotate: false
+  xy: 525, 909
+  size: 182, 79
+  orig: 182, 79
+  offset: 0, 0
+  index: -1
+yanjing1
+  rotate: true
+  xy: 525, 723
+  size: 184, 53
+  orig: 184, 53
+  offset: 0, 0
+  index: -1
+yanjing2
+  rotate: true
+  xy: 286, 258
+  size: 184, 69
+  orig: 184, 69
+  offset: 0, 0
+  index: -1
+yanlei1
+  rotate: false
+  xy: 709, 914
+  size: 68, 74
+  orig: 68, 74
+  offset: 0, 0
+  index: -1
+zui
+  rotate: false
+  xy: 194, 145
+  size: 65, 31
+  orig: 65, 31
+  offset: 0, 0
+  index: -1
+zui1
+  rotate: true
+  xy: 482, 656
+  size: 61, 40
+  orig: 61, 40
+  offset: 0, 0
+  index: -1
+zui2
+  rotate: false
+  xy: 401, 450
+  size: 70, 42
+  orig: 70, 42
+  offset: 0, 0
+  index: -1

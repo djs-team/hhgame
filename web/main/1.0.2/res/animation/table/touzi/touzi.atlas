@@ -1,0 +1,139 @@
+
+touzi.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+guang0001
+  rotate: false
+  xy: 2, 286
+  size: 109, 110
+  orig: 109, 110
+  offset: 0, 0
+  index: -1
+guang0002
+  rotate: false
+  xy: 113, 398
+  size: 109, 110
+  orig: 109, 110
+  offset: 0, 0
+  index: -1
+guang0003
+  rotate: false
+  xy: 2, 174
+  size: 109, 110
+  orig: 109, 110
+  offset: 0, 0
+  index: -1
+guang0004
+  rotate: false
+  xy: 113, 286
+  size: 109, 110
+  orig: 109, 110
+  offset: 0, 0
+  index: -1
+guang0005
+  rotate: false
+  xy: 224, 398
+  size: 109, 110
+  orig: 109, 110
+  offset: 0, 0
+  index: -1
+guang0006
+  rotate: false
+  xy: 2, 62
+  size: 109, 110
+  orig: 109, 110
+  offset: 0, 0
+  index: -1
+guang0007
+  rotate: false
+  xy: 113, 174
+  size: 109, 110
+  orig: 109, 110
+  offset: 0, 0
+  index: -1
+guang0008
+  rotate: false
+  xy: 224, 286
+  size: 109, 110
+  orig: 109, 110
+  offset: 0, 0
+  index: -1
+guang0009
+  rotate: false
+  xy: 335, 398
+  size: 109, 110
+  orig: 109, 110
+  offset: 0, 0
+  index: -1
+guang0010
+  rotate: false
+  xy: 113, 62
+  size: 109, 110
+  orig: 109, 110
+  offset: 0, 0
+  index: -1
+guang0011
+  rotate: false
+  xy: 2, 398
+  size: 109, 110
+  orig: 109, 110
+  offset: 0, 0
+  index: -1
+touzi0001
+  rotate: false
+  xy: 224, 210
+  size: 94, 74
+  orig: 94, 74
+  offset: 0, 0
+  index: -1
+touzi0002
+  rotate: false
+  xy: 335, 322
+  size: 94, 74
+  orig: 94, 74
+  offset: 0, 0
+  index: -1
+touzi0003
+  rotate: false
+  xy: 224, 134
+  size: 94, 74
+  orig: 94, 74
+  offset: 0, 0
+  index: -1
+touzi0004
+  rotate: false
+  xy: 224, 58
+  size: 94, 74
+  orig: 94, 74
+  offset: 0, 0
+  index: -1
+touzi0005
+  rotate: false
+  xy: 335, 246
+  size: 94, 74
+  orig: 94, 74
+  offset: 0, 0
+  index: -1
+touzi0006
+  rotate: false
+  xy: 320, 170
+  size: 94, 74
+  orig: 94, 74
+  offset: 0, 0
+  index: -1
+touzi0007
+  rotate: false
+  xy: 320, 94
+  size: 94, 74
+  orig: 94, 74
+  offset: 0, 0
+  index: -1
+touzi0008
+  rotate: false
+  xy: 416, 170
+  size: 94, 74
+  orig: 94, 74
+  offset: 0, 0
+  index: -1

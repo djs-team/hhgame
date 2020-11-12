@@ -1,0 +1,20 @@
+
+dating_libao.png
+size: 256,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+dtjm_8
+  rotate: false
+  xy: 2, 2
+  size: 51, 59
+  orig: 51, 59
+  offset: 0, 0
+  index: -1
+xingxing
+  rotate: false
+  xy: 2, 63
+  size: 151, 128
+  orig: 151, 128
+  offset: 0, 0
+  index: -1

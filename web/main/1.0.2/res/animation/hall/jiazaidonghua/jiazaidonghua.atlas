@@ -1,0 +1,76 @@
+
+jiazaidonghua.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+jiazai0001
+  rotate: false
+  xy: 2, 322
+  size: 400, 38
+  orig: 400, 38
+  offset: 0, 0
+  index: -1
+jiazai0002
+  rotate: false
+  xy: 2, 282
+  size: 400, 38
+  orig: 400, 38
+  offset: 0, 0
+  index: -1
+jiazai0003
+  rotate: false
+  xy: 2, 242
+  size: 400, 38
+  orig: 400, 38
+  offset: 0, 0
+  index: -1
+jiazai0004
+  rotate: false
+  xy: 2, 202
+  size: 400, 38
+  orig: 400, 38
+  offset: 0, 0
+  index: -1
+jiazai0005
+  rotate: false
+  xy: 2, 162
+  size: 400, 38
+  orig: 400, 38
+  offset: 0, 0
+  index: -1
+jiazai0006
+  rotate: false
+  xy: 2, 122
+  size: 400, 38
+  orig: 400, 38
+  offset: 0, 0
+  index: -1
+jiazai0007
+  rotate: false
+  xy: 2, 82
+  size: 400, 38
+  orig: 400, 38
+  offset: 0, 0
+  index: -1
+jiazai0008
+  rotate: false
+  xy: 2, 42
+  size: 400, 38
+  orig: 400, 38
+  offset: 0, 0
+  index: -1
+jiazai0009
+  rotate: false
+  xy: 2, 2
+  size: 400, 38
+  orig: 400, 38
+  offset: 0, 0
+  index: -1
+jiazai0010
+  rotate: false
+  xy: 2, 362
+  size: 400, 38
+  orig: 400, 38
+  offset: 0, 0
+  index: -1

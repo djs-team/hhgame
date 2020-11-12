@@ -1,0 +1,132 @@
+
+nvchushi.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+chi
+  rotate: false
+  xy: 900, 791
+  size: 94, 80
+  orig: 94, 80
+  offset: 0, 0
+  index: -1
+chi1
+  rotate: true
+  xy: 900, 694
+  size: 95, 74
+  orig: 95, 74
+  offset: 0, 0
+  index: -1
+gebo
+  rotate: true
+  xy: 327, 135
+  size: 207, 164
+  orig: 207, 164
+  offset: 0, 0
+  index: -1
+ji
+  rotate: false
+  xy: 327, 344
+  size: 161, 240
+  orig: 161, 240
+  offset: 0, 0
+  index: -1
+jiyanjing
+  rotate: false
+  xy: 490, 361
+  size: 58, 33
+  orig: 58, 33
+  offset: 0, 0
+  index: -1
+jiyanjing1
+  rotate: false
+  xy: 251, 137
+  size: 62, 34
+  orig: 62, 34
+  offset: 0, 0
+  index: -1
+s
+  rotate: true
+  xy: 739, 424
+  size: 182, 98
+  orig: 182, 98
+  offset: 0, 0
+  index: -1
+s1
+  rotate: false
+  xy: 2, 173
+  size: 323, 411
+  orig: 323, 411
+  offset: 0, 0
+  index: -1
+sj
+  rotate: false
+  xy: 546, 615
+  size: 229, 254
+  orig: 229, 254
+  offset: 0, 0
+  index: -1
+t
+  rotate: false
+  xy: 602, 437
+  size: 135, 176
+  orig: 135, 176
+  offset: 0, 0
+  index: -1
+t1
+  rotate: false
+  xy: 777, 608
+  size: 121, 261
+  orig: 121, 261
+  offset: 0, 0
+  index: -1
+tou
+  rotate: false
+  xy: 2, 586
+  size: 542, 434
+  orig: 542, 434
+  offset: 0, 0
+  index: -1
+yanjing
+  rotate: false
+  xy: 251, 3
+  size: 246, 130
+  orig: 246, 130
+  offset: 0, 0
+  index: -1
+yanjing1
+  rotate: false
+  xy: 2, 2
+  size: 247, 169
+  orig: 247, 169
+  offset: 0, 0
+  index: -1
+yanjing2
+  rotate: true
+  xy: 490, 396
+  size: 188, 110
+  orig: 188, 110
+  offset: 0, 0
+  index: -1
+yanlei
+  rotate: false
+  xy: 546, 871
+  size: 342, 149
+  orig: 342, 149
+  offset: 0, 0
+  index: -1
+zui
+  rotate: false
+  xy: 890, 944
+  size: 126, 76
+  orig: 126, 76
+  offset: 0, 0
+  index: -1
+zzz
+  rotate: false
+  xy: 890, 873
+  size: 120, 69
+  orig: 120, 69
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,125 @@
+
+fage.png
+size: 2048,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+gb
+  rotate: false
+  xy: 1108, 298
+  size: 55, 89
+  orig: 55, 89
+  offset: 0, 0
+  index: -1
+gebo
+  rotate: false
+  xy: 1465, 387
+  size: 137, 117
+  orig: 137, 117
+  offset: 0, 0
+  index: -1
+maozi
+  rotate: false
+  xy: 333, 194
+  size: 384, 310
+  orig: 384, 310
+  offset: 0, 0
+  index: -1
+ss
+  rotate: true
+  xy: 927, 240
+  size: 147, 179
+  orig: 147, 179
+  offset: 0, 0
+  index: -1
+tou
+  rotate: false
+  xy: 2, 104
+  size: 329, 400
+  orig: 329, 400
+  offset: 0, 0
+  index: -1
+tui
+  rotate: true
+  xy: 927, 389
+  size: 115, 265
+  orig: 115, 265
+  offset: 0, 0
+  index: -1
+tui1
+  rotate: true
+  xy: 1194, 406
+  size: 98, 269
+  orig: 98, 269
+  offset: 0, 0
+  index: -1
+wt
+  rotate: true
+  xy: 2, 2
+  size: 100, 279
+  orig: 100, 279
+  offset: 0, 0
+  index: -1
+wt1
+  rotate: false
+  xy: 719, 240
+  size: 206, 264
+  orig: 206, 264
+  offset: 0, 0
+  index: -1
+yablei
+  rotate: false
+  xy: 1762, 439
+  size: 60, 65
+  orig: 60, 65
+  offset: 0, 0
+  index: -1
+yablei 1
+  rotate: true
+  xy: 548, 160
+  size: 32, 67
+  orig: 32, 67
+  offset: 0, 0
+  index: -1
+yan1
+  rotate: false
+  xy: 719, 204
+  size: 201, 34
+  orig: 201, 34
+  offset: 0, 0
+  index: -1
+yan2
+  rotate: false
+  xy: 333, 116
+  size: 202, 31
+  orig: 202, 31
+  offset: 0, 0
+  index: -1
+yan3
+  rotate: false
+  xy: 333, 149
+  size: 213, 43
+  orig: 213, 43
+  offset: 0, 0
+  index: -1
+yanjing
+  rotate: false
+  xy: 1604, 434
+  size: 156, 70
+  orig: 156, 70
+  offset: 0, 0
+  index: -1
+zui
+  rotate: true
+  xy: 283, 21
+  size: 81, 34
+  orig: 81, 34
+  offset: 0, 0
+  index: -1
+zui1
+  rotate: false
+  xy: 1604, 396
+  size: 61, 36
+  orig: 61, 36
+  offset: 0, 0
+  index: -1

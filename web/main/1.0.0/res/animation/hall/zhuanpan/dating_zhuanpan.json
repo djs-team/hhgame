@@ -1,0 +1,70 @@
+{
+"skeleton": { "hash": "8HlezjI5DKjiNIccLJ1qIuzCs5A", "spine": "3.7.94", "width": 62, "height": 63, "images": "", "audio": "" },
+"bones": [
+	{ "name": "root" },
+	{ "name": "12/dtjm_9_00011", "parent": "root", "length": 18.95, "rotation": 91.62, "x": 1.79, "y": 1.75 }
+],
+"slots": [
+	{ "name": "12/dtjm_9_00011", "bone": "12/dtjm_9_00011", "attachment": "12/dtjm_9_00028" }
+],
+"skins": {
+	"default": {
+		"12/dtjm_9_00011": {
+			"12/dtjm_9_00011": { "x": -1.2, "y": 1.83, "rotation": -91.62, "width": 62, "height": 63 },
+			"12/dtjm_9_00012": { "x": -1.2, "y": 1.83, "rotation": -91.62, "width": 62, "height": 63 },
+			"12/dtjm_9_00013": { "x": -1.2, "y": 1.83, "rotation": -91.62, "width": 62, "height": 63 },
+			"12/dtjm_9_00014": { "x": -1.2, "y": 1.83, "rotation": -91.62, "width": 62, "height": 63 },
+			"12/dtjm_9_00015": { "x": -1.2, "y": 1.83, "rotation": -91.62, "width": 62, "height": 63 },
+			"12/dtjm_9_00016": { "x": -1.2, "y": 1.83, "rotation": -91.62, "width": 62, "height": 63 },
+			"12/dtjm_9_00017": { "x": -1.2, "y": 1.83, "rotation": -91.62, "width": 62, "height": 63 },
+			"12/dtjm_9_00018": { "x": -1.2, "y": 1.83, "rotation": -91.62, "width": 62, "height": 63 },
+			"12/dtjm_9_00019": { "x": -1.2, "y": 1.83, "rotation": -91.62, "width": 62, "height": 63 },
+			"12/dtjm_9_00020": { "x": -1.2, "y": 1.83, "rotation": -91.62, "width": 62, "height": 63 },
+			"12/dtjm_9_00021": { "x": -1.2, "y": 1.83, "rotation": -91.62, "width": 62, "height": 63 },
+			"12/dtjm_9_00022": { "x": -1.2, "y": 1.83, "rotation": -91.62, "width": 62, "height": 63 },
+			"12/dtjm_9_00023": { "x": -1.2, "y": 1.83, "rotation": -91.62, "width": 62, "height": 63 },
+			"12/dtjm_9_00024": { "x": -1.2, "y": 1.83, "rotation": -91.62, "width": 62, "height": 63 },
+			"12/dtjm_9_00025": { "x": -1.2, "y": 1.83, "rotation": -91.62, "width": 62, "height": 63 },
+			"12/dtjm_9_00026": { "x": -1.2, "y": 1.83, "rotation": -91.62, "width": 62, "height": 63 },
+			"12/dtjm_9_00027": { "x": -1.2, "y": 1.83, "rotation": -91.62, "width": 62, "height": 63 },
+			"12/dtjm_9_00028": { "x": -1.2, "y": 1.83, "rotation": -91.62, "width": 62, "height": 63 }
+		}
+	}
+},
+"animations": {
+	"animation": {
+		"slots": {
+			"12/dtjm_9_00011": {
+				"attachment": [
+					{ "time": 0, "name": "12/dtjm_9_00011" },
+					{ "time": 0.1667, "name": "12/dtjm_9_00012" },
+					{ "time": 0.2333, "name": "12/dtjm_9_00013" },
+					{ "time": 0.3, "name": "12/dtjm_9_00014" },
+					{ "time": 0.3667, "name": "12/dtjm_9_00015" },
+					{ "time": 0.4333, "name": "12/dtjm_9_00016" },
+					{ "time": 0.5, "name": "12/dtjm_9_00017" },
+					{ "time": 0.5667, "name": "12/dtjm_9_00018" },
+					{ "time": 0.6333, "name": "12/dtjm_9_00019" },
+					{ "time": 0.7, "name": "12/dtjm_9_00020" },
+					{ "time": 0.7667, "name": "12/dtjm_9_00021" },
+					{ "time": 0.8333, "name": "12/dtjm_9_00022" },
+					{ "time": 0.9, "name": "12/dtjm_9_00023" },
+					{ "time": 0.9667, "name": "12/dtjm_9_00024" },
+					{ "time": 1.0333, "name": "12/dtjm_9_00025" },
+					{ "time": 1.1, "name": "12/dtjm_9_00026" },
+					{ "time": 1.1667, "name": "12/dtjm_9_00027" },
+					{ "time": 1.2333, "name": "12/dtjm_9_00028" },
+					{ "time": 2, "name": "12/dtjm_9_00028" }
+				]
+			}
+		},
+		"bones": {
+			"12/dtjm_9_00011": {
+				"translate": [
+					{ "time": 0, "x": 2, "y": 0 }
+				]
+			}
+		}
+	}
+}
+}

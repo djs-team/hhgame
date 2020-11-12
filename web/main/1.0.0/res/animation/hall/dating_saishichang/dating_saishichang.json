@@ -1,0 +1,98 @@
+{
+"skeleton": { "hash": "NIg34mWbaU5jsHEiI++z8w2RkKw", "spine": "3.7.94", "width": 194, "height": 222, "images": "", "audio": "" },
+"bones": [
+	{ "name": "root" },
+	{
+		"name": "11/JB1_00006",
+		"parent": "root",
+		"length": 17.34,
+		"rotation": 91.12,
+		"x": -12.91,
+		"y": 28.44,
+		"scaleX": 0.543,
+		"scaleY": 0.543
+	},
+	{ "name": "saishi0001", "parent": "root", "length": 24.21, "rotation": 100.34, "x": 26.83, "y": -37.65 }
+],
+"slots": [
+	{ "name": "dtjm_f3", "bone": "root", "attachment": "dtjm_f3" },
+	{ "name": "11/JB1_00006", "bone": "11/JB1_00006", "attachment": "11/JB1_00024" },
+	{ "name": "saishi0001", "bone": "saishi0001", "attachment": "saishi0002" }
+],
+"skins": {
+	"default": {
+		"11/JB1_00006": {
+			"11/JB1_00006": { "x": 5.1, "y": 5.13, "rotation": -91.12, "width": 60, "height": 60 },
+			"11/JB1_00007": { "x": 5.1, "y": 5.13, "rotation": -91.12, "width": 60, "height": 60 },
+			"11/JB1_00008": { "x": 5.1, "y": 5.13, "rotation": -91.12, "width": 60, "height": 60 },
+			"11/JB1_00009": { "x": 5.1, "y": 5.13, "rotation": -91.12, "width": 60, "height": 60 },
+			"11/JB1_00010": { "x": 5.1, "y": 5.13, "rotation": -91.12, "width": 60, "height": 60 },
+			"11/JB1_00011": { "x": 5.1, "y": 5.13, "rotation": -91.12, "width": 60, "height": 60 },
+			"11/JB1_00012": { "x": 5.1, "y": 5.13, "rotation": -91.12, "width": 60, "height": 60 },
+			"11/JB1_00013": { "x": 5.1, "y": 5.13, "rotation": -91.12, "width": 60, "height": 60 },
+			"11/JB1_00014": { "x": 5.1, "y": 5.13, "rotation": -91.12, "width": 60, "height": 60 },
+			"11/JB1_00015": { "x": 5.1, "y": 5.13, "rotation": -91.12, "width": 60, "height": 60 },
+			"11/JB1_00016": { "x": 5.1, "y": 5.13, "rotation": -91.12, "width": 60, "height": 60 },
+			"11/JB1_00017": { "x": 5.1, "y": 5.13, "rotation": -91.12, "width": 60, "height": 60 },
+			"11/JB1_00018": { "x": 5.1, "y": 5.13, "rotation": -91.12, "width": 60, "height": 60 },
+			"11/JB1_00019": { "x": 5.1, "y": 5.13, "rotation": -91.12, "width": 60, "height": 60 },
+			"11/JB1_00020": { "x": 5.1, "y": 5.13, "rotation": -91.12, "width": 60, "height": 60 },
+			"11/JB1_00021": { "x": 5.1, "y": 5.13, "rotation": -91.12, "width": 60, "height": 60 },
+			"11/JB1_00022": { "x": 5.1, "y": 5.13, "rotation": -91.12, "width": 60, "height": 60 },
+			"11/JB1_00023": { "x": 5.1, "y": 5.13, "rotation": -91.12, "width": 60, "height": 60 },
+			"11/JB1_00024": { "x": 5.1, "y": 5.13, "rotation": -91.12, "width": 60, "height": 60 }
+		},
+		"dtjm_f3": {
+			"dtjm_f3": { "width": 194, "height": 222 }
+		},
+		"saishi0001": {
+			"saishi0001": { "x": 11.24, "y": -10.9, "rotation": -100.34, "width": 102, "height": 95 },
+			"saishi0002": { "x": 11.24, "y": -10.9, "rotation": -100.34, "width": 102, "height": 95 }
+		}
+	}
+},
+"animations": {
+	"animation": {
+		"slots": {
+			"11/JB1_00006": {
+				"attachment": [
+					{ "time": 0, "name": "11/JB1_00006" },
+					{ "time": 0.0667, "name": "11/JB1_00007" },
+					{ "time": 0.1333, "name": "11/JB1_00008" },
+					{ "time": 0.2, "name": "11/JB1_00009" },
+					{ "time": 0.2667, "name": "11/JB1_00010" },
+					{ "time": 0.3333, "name": "11/JB1_00011" },
+					{ "time": 0.4, "name": "11/JB1_00012" },
+					{ "time": 0.4667, "name": "11/JB1_00013" },
+					{ "time": 0.5333, "name": "11/JB1_00014" },
+					{ "time": 0.6, "name": "11/JB1_00015" },
+					{ "time": 0.6667, "name": "11/JB1_00016" },
+					{ "time": 0.7333, "name": "11/JB1_00017" },
+					{ "time": 0.8, "name": "11/JB1_00018" },
+					{ "time": 0.8667, "name": "11/JB1_00019" },
+					{ "time": 0.9333, "name": "11/JB1_00020" },
+					{ "time": 1, "name": "11/JB1_00021" },
+					{ "time": 1.0667, "name": "11/JB1_00022" },
+					{ "time": 1.1333, "name": "11/JB1_00023" },
+					{ "time": 1.2, "name": "11/JB1_00024" },
+					{ "time": 1.6667, "name": "11/JB1_00024" }
+				]
+			},
+			"saishi0001": {
+				"attachment": [
+					{ "time": 0, "name": "saishi0002" },
+					{ "time": 0.1667, "name": "saishi0001" },
+					{ "time": 0.3333, "name": "saishi0002" },
+					{ "time": 0.5, "name": "saishi0001" },
+					{ "time": 0.6667, "name": "saishi0002" },
+					{ "time": 0.8333, "name": "saishi0001" },
+					{ "time": 1, "name": "saishi0002" },
+					{ "time": 1.1667, "name": "saishi0001" },
+					{ "time": 1.3333, "name": "saishi0002" },
+					{ "time": 1.5, "name": "saishi0001" }
+				]
+			}
+		}
+	}
+}
+}

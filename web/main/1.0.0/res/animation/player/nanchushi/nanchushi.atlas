@@ -1,0 +1,125 @@
+
+nanchushi.png
+size: 2048,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+gebo1
+  rotate: false
+  xy: 1165, 289
+  size: 316, 219
+  orig: 316, 219
+  offset: 0, 0
+  index: -1
+gebo2
+  rotate: true
+  xy: 2, 2
+  size: 159, 185
+  orig: 159, 185
+  offset: 0, 0
+  index: -1
+gebo3
+  rotate: false
+  xy: 1165, 104
+  size: 214, 92
+  orig: 214, 92
+  offset: 0, 0
+  index: -1
+ji
+  rotate: false
+  xy: 1407, 165
+  size: 108, 122
+  orig: 108, 122
+  offset: 0, 0
+  index: -1
+ji1
+  rotate: false
+  xy: 1517, 181
+  size: 84, 44
+  orig: 84, 44
+  offset: 0, 0
+  index: -1
+ji2
+  rotate: false
+  xy: 1636, 260
+  size: 77, 40
+  orig: 77, 40
+  offset: 0, 0
+  index: -1
+maisui
+  rotate: false
+  xy: 1517, 227
+  size: 117, 73
+  orig: 117, 73
+  offset: 0, 0
+  index: -1
+meimao
+  rotate: false
+  xy: 189, 100
+  size: 251, 61
+  orig: 251, 61
+  offset: 0, 0
+  index: -1
+meimao 1
+  rotate: false
+  xy: 189, 40
+  size: 236, 58
+  orig: 236, 58
+  offset: 0, 0
+  index: -1
+tou
+  rotate: false
+  xy: 710, 88
+  size: 453, 420
+  orig: 453, 420
+  offset: 0, 0
+  index: -1
+tui
+  rotate: false
+  xy: 1483, 302
+  size: 260, 206
+  orig: 260, 206
+  offset: 0, 0
+  index: -1
+yanjing
+  rotate: false
+  xy: 1745, 445
+  size: 250, 63
+  orig: 250, 63
+  offset: 0, 0
+  index: -1
+yanjing1
+  rotate: false
+  xy: 1165, 198
+  size: 240, 89
+  orig: 240, 89
+  offset: 0, 0
+  index: -1
+yanjing2
+  rotate: false
+  xy: 442, 102
+  size: 230, 59
+  orig: 230, 59
+  offset: 0, 0
+  index: -1
+yanjing3
+  rotate: false
+  xy: 1745, 310
+  size: 189, 50
+  orig: 189, 50
+  offset: 0, 0
+  index: -1
+yanlei
+  rotate: false
+  xy: 1745, 362
+  size: 224, 81
+  orig: 224, 81
+  offset: 0, 0
+  index: -1
+yifu
+  rotate: true
+  xy: 2, 163
+  size: 345, 706
+  orig: 345, 706
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,90 @@
+
+gongxihuode.png
+size: 4096,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+di_guang
+  rotate: false
+  xy: 2, 1056
+  size: 651, 651
+  orig: 651, 651
+  offset: 0, 0
+  index: -1
+ding_guang0001
+  rotate: false
+  xy: 655, 1182
+  size: 619, 525
+  orig: 619, 525
+  offset: 0, 0
+  index: -1
+ding_guang0003
+  rotate: false
+  xy: 2, 2
+  size: 619, 525
+  orig: 619, 525
+  offset: 0, 0
+  index: -1
+ding_guang0005
+  rotate: false
+  xy: 1276, 1182
+  size: 619, 525
+  orig: 619, 525
+  offset: 0, 0
+  index: -1
+ding_guang0007
+  rotate: false
+  xy: 1897, 1182
+  size: 619, 525
+  orig: 619, 525
+  offset: 0, 0
+  index: -1
+ding_guang0009
+  rotate: false
+  xy: 2518, 1182
+  size: 619, 525
+  orig: 619, 525
+  offset: 0, 0
+  index: -1
+ding_guang0011
+  rotate: false
+  xy: 3139, 1182
+  size: 619, 525
+  orig: 619, 525
+  offset: 0, 0
+  index: -1
+ding_guang0013
+  rotate: false
+  xy: 655, 655
+  size: 619, 525
+  orig: 619, 525
+  offset: 0, 0
+  index: -1
+ding_guang0015
+  rotate: false
+  xy: 1276, 655
+  size: 619, 525
+  orig: 619, 525
+  offset: 0, 0
+  index: -1
+ding_guang0017
+  rotate: false
+  xy: 1897, 655
+  size: 619, 525
+  orig: 619, 525
+  offset: 0, 0
+  index: -1
+ding_guang0019
+  rotate: false
+  xy: 2518, 655
+  size: 619, 525
+  orig: 619, 525
+  offset: 0, 0
+  index: -1
+ding_guang0021
+  rotate: false
+  xy: 2, 529
+  size: 619, 525
+  orig: 619, 525
+  offset: 0, 0
+  index: -1

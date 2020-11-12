@@ -1,0 +1,146 @@
+
+yanhua.png
+size: 4096,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+yanhua0001
+  rotate: false
+  xy: 2, 828
+  size: 469, 411
+  orig: 469, 411
+  offset: 0, 0
+  index: -1
+yanhua0002
+  rotate: false
+  xy: 473, 1241
+  size: 469, 411
+  orig: 469, 411
+  offset: 0, 0
+  index: -1
+yanhua0003
+  rotate: false
+  xy: 2, 415
+  size: 469, 411
+  orig: 469, 411
+  offset: 0, 0
+  index: -1
+yanhua0004
+  rotate: false
+  xy: 473, 828
+  size: 469, 411
+  orig: 469, 411
+  offset: 0, 0
+  index: -1
+yanhua0005
+  rotate: false
+  xy: 944, 1241
+  size: 469, 411
+  orig: 469, 411
+  offset: 0, 0
+  index: -1
+yanhua0006
+  rotate: false
+  xy: 2, 2
+  size: 469, 411
+  orig: 469, 411
+  offset: 0, 0
+  index: -1
+yanhua0007
+  rotate: false
+  xy: 473, 415
+  size: 469, 411
+  orig: 469, 411
+  offset: 0, 0
+  index: -1
+yanhua0008
+  rotate: false
+  xy: 944, 828
+  size: 469, 411
+  orig: 469, 411
+  offset: 0, 0
+  index: -1
+yanhua0009
+  rotate: false
+  xy: 1415, 1241
+  size: 469, 411
+  orig: 469, 411
+  offset: 0, 0
+  index: -1
+yanhua0010
+  rotate: false
+  xy: 473, 2
+  size: 469, 411
+  orig: 469, 411
+  offset: 0, 0
+  index: -1
+yanhua0011
+  rotate: false
+  xy: 944, 415
+  size: 469, 411
+  orig: 469, 411
+  offset: 0, 0
+  index: -1
+yanhua0012
+  rotate: false
+  xy: 1415, 828
+  size: 469, 411
+  orig: 469, 411
+  offset: 0, 0
+  index: -1
+yanhua0013
+  rotate: false
+  xy: 1886, 1241
+  size: 469, 411
+  orig: 469, 411
+  offset: 0, 0
+  index: -1
+yanhua0014
+  rotate: false
+  xy: 944, 2
+  size: 469, 411
+  orig: 469, 411
+  offset: 0, 0
+  index: -1
+yanhua0015
+  rotate: false
+  xy: 1415, 415
+  size: 469, 411
+  orig: 469, 411
+  offset: 0, 0
+  index: -1
+yanhua0016
+  rotate: false
+  xy: 1886, 828
+  size: 469, 411
+  orig: 469, 411
+  offset: 0, 0
+  index: -1
+yanhua0017
+  rotate: false
+  xy: 2357, 1241
+  size: 469, 411
+  orig: 469, 411
+  offset: 0, 0
+  index: -1
+yanhua0018
+  rotate: false
+  xy: 1415, 2
+  size: 469, 411
+  orig: 469, 411
+  offset: 0, 0
+  index: -1
+yanhua0019
+  rotate: false
+  xy: 1886, 415
+  size: 469, 411
+  orig: 469, 411
+  offset: 0, 0
+  index: -1
+yanhua0020
+  rotate: false
+  xy: 2, 1241
+  size: 469, 411
+  orig: 469, 411
+  offset: 0, 0
+  index: -1

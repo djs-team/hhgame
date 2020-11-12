@@ -246,11 +246,13 @@
         <Folder Name="dele">
           <Image Name="6.png" />
           <Image Name="desk_share.png" />
+          <Image Name="deskCard.jpg" />
           <Image Name="deskPersonal (1).png" />
           <Image Name="deskPersonal (2).png" />
           <Image Name="liangAction.png" />
           <Image Name="liangpai.jpg" />
           <Image Name="lipai.jpg" />
+          <Image Name="newLiang.jpg" />
           <Image Name="paidui.jpg" />
           <Image Name="paihai.jpg" />
         </Folder>

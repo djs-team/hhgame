@@ -74,6 +74,7 @@ import java.util.Set;
 
 import cn.jiguang.verifysdk.api.AuthPageEventListener;
 import cn.jiguang.verifysdk.api.JVerificationInterface;
+import cn.jiguang.verifysdk.api.PreLoginListener;
 import cn.jiguang.verifysdk.api.RequestCallback;
 import cn.jiguang.verifysdk.api.VerifyListener;
 import cn.jpush.android.api.JPushInterface;
@@ -102,11 +103,15 @@ public class AppActivity extends Cocos2dxActivity {
         ccActivity = this;
         try {
             OpenInstall.getWakeUp(getIntent(), wakeUpAdapter);
-
+            JVerificationInterface.preLogin(this, 1000, new PreLoginListener() {
+                @Override
+                public void onResult(final int code, final String content) {
+                    Log.d(TAG, "[" + code + "]message=" + content);
+                }
+            });
         } catch (Exception e) {
 
         }
-        Log.d(TAG, "onCreate");
 
     }
 

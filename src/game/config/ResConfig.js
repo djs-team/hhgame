@@ -149,6 +149,7 @@ load('game/config/ResConfig', function () {
         btnEffect: 'res/sound/btnClick.mp3',
         receive: 'res/sound/receive.mp3',
         cashCow: 'res/sound/cashCow.mp3',
+        begin: 'res/sound/begin.mp3',
         turnTableBegin: 'res/sound/turnTableBegin.mp3',
         turnTableEnd: 'res/sound/turnTableEnd.mp3',
         turnTableInd: 'res/sound/turnTableInd.mp3',

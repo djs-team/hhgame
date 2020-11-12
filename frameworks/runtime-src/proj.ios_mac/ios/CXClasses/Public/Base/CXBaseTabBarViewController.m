@@ -115,8 +115,8 @@
     
     self.homeController = [CXHomeViewController new];
     [self setChildViewController:self.homeController title:@"首页" imageName:@"home_tabbar"];
-    self.findController = [CXFindViewController new];
-    [self setChildViewController:self.findController title:@"发现" imageName:@"home_tabbar"];
+//    self.findController = [CXFindViewController new];
+//    [self setChildViewController:self.findController title:@"发现" imageName:@"home_tabbar"];
     self.friendController = [CXFriendViewController new];
     [self setChildViewController:self.friendController title:@"好友" imageName:@"friend_tabbar"];
     self.mineController = [CXMineViewController new];

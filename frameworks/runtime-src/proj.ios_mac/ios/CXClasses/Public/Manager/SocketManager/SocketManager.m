@@ -263,40 +263,43 @@ typedef enum : NSUInteger {
             }
         } else if ([joinRoom.response.Success isEqual:@-127]) {
             [wself joinRoom];
-        } else if([joinRoom.response.Success isEqual:@3]) {
-            [[CXTools currentViewController] toast:@"此房间已锁"];
-            [wself.socket close];
-        } else if([joinRoom.response.Success isEqual:@7]) {
-            [[CXTools currentViewController] toast:@"房间已解散，请刷新重试"];
-            [wself.socket close];
-        } else if ([joinRoom.response.Success isEqual:@9]) {
-            [[CXTools currentViewController] toast:@"玫瑰余额不足，你不能进入专属视频房"];
-            [wself.socket close];
-        } else if([joinRoom.response.Success isEqual:@10]) {
-            [[CXTools currentViewController] toast:joinRoom.response.Code];
-            [wself.socket close];
-        } else if([joinRoom.response.Success isEqual:@11]) {
-            // 处于封禁状态，暂时不能开播
-            NSString *timeStr = @"";
-            if (joinRoom.response.BanTime < 0) {
-                timeStr = @"永久";
-            } else {
-                timeStr = [wself getMMSSFromSS:joinRoom.response.BanTime];
-            }
-            
-            NSString *banStr = [NSString stringWithFormat:@"您由于%@被禁播，还有%@禁播结束",joinRoom.response.Code, timeStr];
-            [[CXTools currentViewController] toast:banStr];
-            [wself.socket close];
-        } else if([joinRoom.response.Success isEqual:@13]) {
-            [[CXTools currentViewController] toast:@"房间名不能为空"];
-            [wself.socket close];
-        } else if([joinRoom.response.Success isEqual:@14]) {
-            [[CXTools currentViewController] toast:@"房间名中包含敏感词"];
-            [wself.socket close];
-        } else if([joinRoom.response.Success isEqual:@20]) {
-            [[CXTools currentViewController] toast:@"服务器在维护"];
-            [wself.socket close];
-        } else {
+        }
+//        else if([joinRoom.response.Success isEqual:@11]) {
+//            // 处于封禁状态，暂时不能开播
+//            NSString *timeStr = @"";
+//            if (joinRoom.response.BanTime < 0) {
+//                timeStr = @"永久";
+//            } else {
+//                timeStr = [wself getMMSSFromSS:joinRoom.response.BanTime];
+//            }
+//            
+//            NSString *banStr = [NSString stringWithFormat:@"您由于%@被禁播，还有%@禁播结束",joinRoom.response.Code, timeStr];
+//            [[CXTools currentViewController] toast:banStr];
+//            [wself.socket close];
+//        }
+//        else if([joinRoom.response.Success isEqual:@3]) {
+//            [[CXTools currentViewController] toast:@"此房间已锁"];
+//            [wself.socket close];
+//        } else if([joinRoom.response.Success isEqual:@7]) {
+//            [[CXTools currentViewController] toast:@"房间已解散，请刷新重试"];
+//            [wself.socket close];
+//        } else if ([joinRoom.response.Success isEqual:@9]) {
+//            [[CXTools currentViewController] toast:@"玫瑰余额不足，你不能进入专属视频房"];
+//            [wself.socket close];
+//        } else if([joinRoom.response.Success isEqual:@10]) {
+//            [[CXTools currentViewController] toast:joinRoom.response.Code];
+//            [wself.socket close];
+//        } else if([joinRoom.response.Success isEqual:@13]) {
+//            [[CXTools currentViewController] toast:@"房间名不能为空"];
+//            [wself.socket close];
+//        } else if([joinRoom.response.Success isEqual:@14]) {
+//            [[CXTools currentViewController] toast:@"房间名中包含敏感词"];
+//            [wself.socket close];
+//        } else if([joinRoom.response.Success isEqual:@20]) {
+//            [[CXTools currentViewController] toast:@"服务器在维护"];
+//            [wself.socket close];
+//        }
+        else {
             [[CXTools currentViewController] toast:joinRoom.response.Code];
             [wself.socket close];
         }

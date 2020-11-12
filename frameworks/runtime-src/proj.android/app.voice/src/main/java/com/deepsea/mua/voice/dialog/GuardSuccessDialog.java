@@ -11,7 +11,9 @@ import com.deepsea.mua.stub.entity.socket.receive.UpdateGuardSignToClientParam;
 import com.deepsea.mua.stub.utils.ViewBindUtils;
 import com.deepsea.mua.voice.R;
 import com.deepsea.mua.voice.databinding.DialogGuardSuccessBinding;
+
 import java.util.concurrent.TimeUnit;
+
 import rx.Observable;
 import rx.Subscription;
 import rx.schedulers.Schedulers;
@@ -23,7 +25,7 @@ public class GuardSuccessDialog extends BaseDialog<DialogGuardSuccessBinding> {
 
 
     public GuardSuccessDialog(@NonNull Context context) {
-        super(context,android.R.style.Theme_Holo_Light_NoActionBar_Fullscreen);
+        super(context, android.R.style.Theme_Holo_Light_NoActionBar_Fullscreen);
     }
 
     @Override
@@ -53,10 +55,10 @@ public class GuardSuccessDialog extends BaseDialog<DialogGuardSuccessBinding> {
 
 
     public void setData(ShowGuardAnimationToClientParam bean) {
-        GlideUtils.loadGif(mBinding.ivBg,R.drawable. bg_guard_success);
-        GlideUtils.circleImage(mBinding.ivHeartUser,bean.getUserImage(),R.drawable.ic_place,R.drawable.ic_place);
-        GlideUtils.circleImage(mBinding.ivHostUser,bean.getTargetImage(),R.drawable.ic_place,R.drawable.ic_place);
-        ViewBindUtils.setText(mBinding.tvDesc,"恭喜“"+bean.getUserName()+"”成为“"+bean.getTargetName()+"”的守护");
+        GlideUtils.loadGif(mBinding.ivBg, R.drawable.bg_guard_success);
+        GlideUtils.circleImage(mBinding.ivHeartUser, bean.getUserImage(), R.drawable.ic_place, R.drawable.ic_place);
+        GlideUtils.circleImage(mBinding.ivHostUser, bean.getTargetImage(), R.drawable.ic_place, R.drawable.ic_place);
+        ViewBindUtils.setText(mBinding.tvDesc, "欢迎守护\"" + bean.getUserName() + "\"进入房间");
         startObservable();
     }
 
@@ -64,7 +66,7 @@ public class GuardSuccessDialog extends BaseDialog<DialogGuardSuccessBinding> {
     private Subscription mSubscription;
 
     private void startObservable() {
-        mSubscription = Observable.interval(5000, 5000, TimeUnit.MILLISECONDS)
+        mSubscription = Observable.interval(5000, 2000, TimeUnit.MILLISECONDS)
                 .subscribeOn(Schedulers.computation())
                 .subscribe(aLong -> closeDialog());
     }

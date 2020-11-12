@@ -209,9 +209,11 @@ typedef NS_ENUM(NSUInteger, SocketMessageID) {
 
 @interface SocketMessageResponse : SocketMessage
 
+@property (nonatomic, strong) NSString * Code; // 说明
 @property (nonatomic, strong) NSNumber * Success;
 - (BOOL)isSuccess;
 - (NSString*)desc;
+
 
 @end
 

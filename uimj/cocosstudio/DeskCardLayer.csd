@@ -6,7 +6,7 @@
       <ObjectData Name="Layer" Tag="5" ctype="GameLayerObjectData">
         <Size X="1280.0000" Y="720.0000" />
         <Children>
-          <AbstractNodeData Name="delete" ActionTag="-717260075" VisibleForFrame="False" Tag="703" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftEage="422" RightEage="422" TopEage="237" BottomEage="237" Scale9OriginX="422" Scale9OriginY="237" Scale9Width="436" Scale9Height="246" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="delete" ActionTag="-717260075" Tag="703" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftEage="422" RightEage="422" TopEage="237" BottomEage="237" Scale9OriginX="422" Scale9OriginY="237" Scale9Width="436" Scale9Height="246" ctype="ImageViewObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="640.0000" Y="360.0000" />
@@ -176,7 +176,7 @@
                     <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Card1" ActionTag="428517247" Tag="68" IconVisible="True" LeftMargin="-64.4000" RightMargin="64.4000" TopMargin="-93.0000" BottomMargin="93.0000" ctype="SingleNodeObjectData">
+                  <AbstractNodeData Name="Card1" ActionTag="428517247" Tag="68" IconVisible="True" LeftMargin="-63.1347" RightMargin="63.1347" TopMargin="-90.4677" BottomMargin="90.4677" ctype="SingleNodeObjectData">
                     <Size X="0.0000" Y="0.0000" />
                     <Children>
                       <AbstractNodeData Name="CardBg" ActionTag="920615444" Tag="69" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
@@ -191,13 +191,13 @@
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint />
-                    <Position X="-64.4000" Y="93.0000" />
+                    <Position X="-63.1347" Y="90.4677" />
                     <Scale ScaleX="0.7400" ScaleY="0.7400" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Card2" ActionTag="-1756552951" Tag="70" IconVisible="True" LeftMargin="-47.5786" RightMargin="47.5786" TopMargin="-72.1969" BottomMargin="72.1969" ctype="SingleNodeObjectData">
+                  <AbstractNodeData Name="Card2" ActionTag="-1756552951" Tag="70" IconVisible="True" LeftMargin="-48.2116" RightMargin="48.2116" TopMargin="-71.5629" BottomMargin="71.5629" ctype="SingleNodeObjectData">
                     <Size X="0.0000" Y="0.0000" />
                     <Children>
                       <AbstractNodeData Name="CardBg" ActionTag="155591562" Tag="71" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
@@ -212,13 +212,13 @@
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint />
-                    <Position X="-47.5786" Y="72.1969" />
+                    <Position X="-48.2116" Y="71.5629" />
                     <Scale ScaleX="0.7600" ScaleY="0.7600" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Card3" ActionTag="-1462469979" Tag="72" IconVisible="True" LeftMargin="-29.9193" RightMargin="29.9193" TopMargin="-50.1960" BottomMargin="50.1960" ctype="SingleNodeObjectData">
+                  <AbstractNodeData Name="Card3" ActionTag="-1462469979" Tag="72" IconVisible="True" LeftMargin="-31.8172" RightMargin="31.8172" TopMargin="-50.1958" BottomMargin="50.1958" ctype="SingleNodeObjectData">
                     <Size X="0.0000" Y="0.0000" />
                     <Children>
                       <AbstractNodeData Name="CardBg" ActionTag="-335722739" Tag="73" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
@@ -233,13 +233,13 @@
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint />
-                    <Position X="-29.9193" Y="50.1960" />
+                    <Position X="-31.8172" Y="50.1958" />
                     <Scale ScaleX="0.7800" ScaleY="0.7800" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Card4" ActionTag="-1881282848" Tag="74" IconVisible="True" LeftMargin="-13.6305" RightMargin="13.6305" TopMargin="-25.4137" BottomMargin="25.4137" ctype="SingleNodeObjectData">
+                  <AbstractNodeData Name="Card4" ActionTag="-1881282848" Tag="74" IconVisible="True" LeftMargin="-14.8965" RightMargin="14.8965" TopMargin="-29.2089" BottomMargin="29.2089" ctype="SingleNodeObjectData">
                     <Size X="0.0000" Y="0.0000" />
                     <Children>
                       <AbstractNodeData Name="CardBg" ActionTag="2078619433" Tag="75" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
@@ -254,13 +254,13 @@
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint />
-                    <Position X="-13.6305" Y="25.4137" />
+                    <Position X="-14.8965" Y="29.2089" />
                     <Scale ScaleX="0.8000" ScaleY="0.8000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Card5" ActionTag="-1113959008" Tag="76" IconVisible="True" LeftMargin="4.2886" RightMargin="-4.2886" TopMargin="-2.3164" BottomMargin="2.3164" ctype="SingleNodeObjectData">
+                  <AbstractNodeData Name="Card5" ActionTag="-1113959008" Tag="76" IconVisible="True" LeftMargin="1.7578" RightMargin="-1.7578" TopMargin="-8.0126" BottomMargin="8.0126" ctype="SingleNodeObjectData">
                     <Size X="0.0000" Y="0.0000" />
                     <Children>
                       <AbstractNodeData Name="CardBg" ActionTag="1140956584" Tag="77" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
@@ -275,13 +275,13 @@
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint />
-                    <Position X="4.2886" Y="2.3164" />
+                    <Position X="1.7578" Y="8.0126" />
                     <Scale ScaleX="0.8200" ScaleY="0.8200" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Card6" ActionTag="-1201857258" Tag="78" IconVisible="True" LeftMargin="23.6002" RightMargin="-23.6002" TopMargin="21.2000" BottomMargin="-21.2000" ctype="SingleNodeObjectData">
+                  <AbstractNodeData Name="Card6" ActionTag="-1201857258" Tag="78" IconVisible="True" LeftMargin="16.0068" RightMargin="-16.0068" TopMargin="10.4438" BottomMargin="-10.4438" ctype="SingleNodeObjectData">
                     <Size X="0.0000" Y="0.0000" />
                     <Children>
                       <AbstractNodeData Name="CardBg" ActionTag="483546018" Tag="79" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
@@ -296,13 +296,13 @@
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint />
-                    <Position X="23.6002" Y="-21.2000" />
+                    <Position X="16.0068" Y="-10.4438" />
                     <Scale ScaleX="0.8400" ScaleY="0.8400" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Card7" ActionTag="526310996" Tag="80" IconVisible="True" LeftMargin="41.2600" RightMargin="-41.2600" TopMargin="44.0400" BottomMargin="-44.0400" ctype="SingleNodeObjectData">
+                  <AbstractNodeData Name="Card7" ActionTag="526310996" Tag="80" IconVisible="True" LeftMargin="33.0339" RightMargin="-33.0339" TopMargin="32.6508" BottomMargin="-32.6508" ctype="SingleNodeObjectData">
                     <Size X="0.0000" Y="0.0000" />
                     <Children>
                       <AbstractNodeData Name="CardBg" ActionTag="-828929112" Tag="81" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
@@ -317,13 +317,13 @@
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint />
-                    <Position X="41.2600" Y="-44.0400" />
+                    <Position X="33.0339" Y="-32.6508" />
                     <Scale ScaleX="0.8600" ScaleY="0.8600" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Card8" ActionTag="-1430580632" Tag="82" IconVisible="True" LeftMargin="58.9200" RightMargin="-58.9200" TopMargin="66.8800" BottomMargin="-66.8800" ctype="SingleNodeObjectData">
+                  <AbstractNodeData Name="Card8" ActionTag="-1430580632" Tag="82" IconVisible="True" LeftMargin="50.0617" RightMargin="-50.0617" TopMargin="54.8570" BottomMargin="-54.8570" ctype="SingleNodeObjectData">
                     <Size X="0.0000" Y="0.0000" />
                     <Children>
                       <AbstractNodeData Name="CardBg" ActionTag="-682376178" Tag="83" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
@@ -338,13 +338,13 @@
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint />
-                    <Position X="58.9200" Y="-66.8800" />
+                    <Position X="50.0617" Y="-54.8570" />
                     <Scale ScaleX="0.8800" ScaleY="0.8800" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Card9" ActionTag="-1661882301" Tag="84" IconVisible="True" LeftMargin="76.5800" RightMargin="-76.5800" TopMargin="89.7200" BottomMargin="-89.7200" ctype="SingleNodeObjectData">
+                  <AbstractNodeData Name="Card9" ActionTag="-1661882301" Tag="84" IconVisible="True" LeftMargin="69.6197" RightMargin="-69.6197" TopMargin="78.9638" BottomMargin="-78.9638" ctype="SingleNodeObjectData">
                     <Size X="0.0000" Y="0.0000" />
                     <Children>
                       <AbstractNodeData Name="CardBg" ActionTag="2054069104" Tag="85" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
@@ -359,13 +359,13 @@
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint />
-                    <Position X="76.5800" Y="-89.7200" />
+                    <Position X="69.6197" Y="-78.9638" />
                     <Scale ScaleX="0.9000" ScaleY="0.9000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Card10" ActionTag="-1875817490" Tag="86" IconVisible="True" LeftMargin="94.2400" RightMargin="-94.2400" TopMargin="112.5600" BottomMargin="-112.5600" ctype="SingleNodeObjectData">
+                  <AbstractNodeData Name="Card10" ActionTag="-1875817490" Tag="86" IconVisible="True" LeftMargin="88.5452" RightMargin="-88.5452" TopMargin="103.0692" BottomMargin="-103.0692" ctype="SingleNodeObjectData">
                     <Size X="0.0000" Y="0.0000" />
                     <Children>
                       <AbstractNodeData Name="CardBg" ActionTag="-2039396276" Tag="87" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
@@ -380,13 +380,13 @@
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint />
-                    <Position X="94.2400" Y="-112.5600" />
+                    <Position X="88.5452" Y="-103.0692" />
                     <Scale ScaleX="0.9200" ScaleY="0.9200" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Card11" ActionTag="1323711873" Tag="88" IconVisible="True" LeftMargin="111.9000" RightMargin="-111.9000" TopMargin="135.4000" BottomMargin="-135.4000" ctype="SingleNodeObjectData">
+                  <AbstractNodeData Name="Card11" ActionTag="1323711873" Tag="88" IconVisible="True" LeftMargin="107.4706" RightMargin="-107.4706" TopMargin="129.0731" BottomMargin="-129.0731" ctype="SingleNodeObjectData">
                     <Size X="0.0000" Y="0.0000" />
                     <Children>
                       <AbstractNodeData Name="CardBg" ActionTag="-2020518514" Tag="89" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
@@ -401,13 +401,13 @@
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint />
-                    <Position X="111.9000" Y="-135.4000" />
+                    <Position X="107.4706" Y="-129.0731" />
                     <Scale ScaleX="0.9400" ScaleY="0.9400" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Card12" ActionTag="272959948" Tag="90" IconVisible="True" LeftMargin="129.5600" RightMargin="-129.5600" TopMargin="158.2400" BottomMargin="-158.2400" ctype="SingleNodeObjectData">
+                  <AbstractNodeData Name="Card12" ActionTag="272959948" Tag="90" IconVisible="True" LeftMargin="125.7634" RightMargin="-125.7634" TopMargin="153.8110" BottomMargin="-153.8110" ctype="SingleNodeObjectData">
                     <Size X="0.0000" Y="0.0000" />
                     <Children>
                       <AbstractNodeData Name="CardBg" ActionTag="-1613138318" Tag="91" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
@@ -422,13 +422,13 @@
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint />
-                    <Position X="129.5600" Y="-158.2400" />
+                    <Position X="125.7634" Y="-153.8110" />
                     <Scale ScaleX="0.9600" ScaleY="0.9600" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Card13" ActionTag="-1482216665" Tag="92" IconVisible="True" LeftMargin="147.2200" RightMargin="-147.2200" TopMargin="181.0800" BottomMargin="-181.0800" ctype="SingleNodeObjectData">
+                  <AbstractNodeData Name="Card13" ActionTag="-1482216665" Tag="92" IconVisible="True" LeftMargin="146.5869" RightMargin="-146.5869" TopMargin="180.4475" BottomMargin="-180.4475" ctype="SingleNodeObjectData">
                     <Size X="0.0000" Y="0.0000" />
                     <Children>
                       <AbstractNodeData Name="CardBg" ActionTag="-1986572954" Tag="93" RotationSkewY="180.0000" IconVisible="False" LeftMargin="-27.0000" RightMargin="-27.0000" TopMargin="-41.5000" BottomMargin="-41.5000" LeftEage="8" RightEage="8" TopEage="17" BottomEage="17" Scale9OriginX="8" Scale9OriginY="17" Scale9Width="38" Scale9Height="49" ctype="ImageViewObjectData">
@@ -443,13 +443,13 @@
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint />
-                    <Position X="147.2200" Y="-181.0800" />
+                    <Position X="146.5869" Y="-180.4475" />
                     <Scale ScaleX="0.9800" ScaleY="0.9800" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Group3" ActionTag="-1115084113" Tag="248" IconVisible="True" LeftMargin="-29.2836" RightMargin="29.2836" TopMargin="-46.2815" BottomMargin="46.2815" ctype="SingleNodeObjectData">
+                  <AbstractNodeData Name="Group3" Visible="False" ActionTag="-1115084113" Tag="248" IconVisible="True" LeftMargin="-29.2836" RightMargin="29.2836" TopMargin="-46.2815" BottomMargin="46.2815" ctype="SingleNodeObjectData">
                     <Size X="0.0000" Y="0.0000" />
                     <Children>
                       <AbstractNodeData Name="Card0" ActionTag="-1863363060" Tag="249" IconVisible="True" LeftMargin="-17.0889" RightMargin="17.0889" TopMargin="-20.4870" BottomMargin="20.4870" ctype="SingleNodeObjectData">
@@ -668,7 +668,7 @@
                     <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Group2" ActionTag="-1256309510" Tag="522" IconVisible="True" LeftMargin="23.0218" RightMargin="-23.0218" TopMargin="24.0861" BottomMargin="-24.0861" ctype="SingleNodeObjectData">
+                  <AbstractNodeData Name="Group2" Visible="False" ActionTag="-1256309510" Tag="522" IconVisible="True" LeftMargin="23.0218" RightMargin="-23.0218" TopMargin="24.0861" BottomMargin="-24.0861" ctype="SingleNodeObjectData">
                     <Size X="0.0000" Y="0.0000" />
                     <Children>
                       <AbstractNodeData Name="Card0" ActionTag="-1929800982" Tag="523" IconVisible="True" LeftMargin="-17.0889" RightMargin="17.0889" TopMargin="-20.4870" BottomMargin="20.4870" ctype="SingleNodeObjectData">
@@ -887,7 +887,7 @@
                     <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Group1" ActionTag="1585781222" Tag="543" IconVisible="True" LeftMargin="77.5731" RightMargin="-77.5731" TopMargin="95.7436" BottomMargin="-95.7436" ctype="SingleNodeObjectData">
+                  <AbstractNodeData Name="Group1" Visible="False" ActionTag="1585781222" Tag="543" IconVisible="True" LeftMargin="77.5731" RightMargin="-77.5731" TopMargin="95.7436" BottomMargin="-95.7436" ctype="SingleNodeObjectData">
                     <Size X="0.0000" Y="0.0000" />
                     <Children>
                       <AbstractNodeData Name="Card0" ActionTag="-660730092" Tag="544" IconVisible="True" LeftMargin="-17.0889" RightMargin="17.0889" TopMargin="-20.4870" BottomMargin="20.4870" ctype="SingleNodeObjectData">
@@ -1106,7 +1106,7 @@
                     <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Group0" ActionTag="-2034677697" Tag="564" IconVisible="True" LeftMargin="128.4749" RightMargin="-128.4749" TopMargin="166.8210" BottomMargin="-166.8210" ctype="SingleNodeObjectData">
+                  <AbstractNodeData Name="Group0" Visible="False" ActionTag="-2034677697" Tag="564" IconVisible="True" LeftMargin="128.4749" RightMargin="-128.4749" TopMargin="166.8210" BottomMargin="-166.8210" ctype="SingleNodeObjectData">
                     <Size X="0.0000" Y="0.0000" />
                     <Children>
                       <AbstractNodeData Name="Card0" ActionTag="1850481515" Tag="565" IconVisible="True" LeftMargin="-17.0889" RightMargin="17.0889" TopMargin="-20.4870" BottomMargin="20.4870" ctype="SingleNodeObjectData">

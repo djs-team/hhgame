@@ -54,7 +54,6 @@
               "X": 1280.0,
               "Y": 720.0
             },
-            "VisibleForFrame": false,
             "Name": "delete",
             "ctype": "ImageViewObjectData"
           },
@@ -763,8 +762,8 @@
                   {
                     "AnchorPoint": {},
                     "Position": {
-                      "X": -64.4,
-                      "Y": 93.0
+                      "X": -63.1347,
+                      "Y": 90.4677
                     },
                     "Scale": {
                       "ScaleX": 0.74,
@@ -780,10 +779,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": -64.4,
-                    "RightMargin": 64.4,
-                    "TopMargin": -93.0,
-                    "BottomMargin": 93.0,
+                    "LeftMargin": -63.1347,
+                    "RightMargin": 63.1347,
+                    "TopMargin": -90.4677,
+                    "BottomMargin": 90.4677,
                     "Tag": 68,
                     "Children": [
                       {
@@ -844,8 +843,8 @@
                   {
                     "AnchorPoint": {},
                     "Position": {
-                      "X": -47.5786,
-                      "Y": 72.1969
+                      "X": -48.2116,
+                      "Y": 71.5629
                     },
                     "Scale": {
                       "ScaleX": 0.76,
@@ -861,10 +860,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": -47.5786,
-                    "RightMargin": 47.5786,
-                    "TopMargin": -72.1969,
-                    "BottomMargin": 72.1969,
+                    "LeftMargin": -48.2116,
+                    "RightMargin": 48.2116,
+                    "TopMargin": -71.5629,
+                    "BottomMargin": 71.5629,
                     "Tag": 70,
                     "Children": [
                       {
@@ -925,8 +924,8 @@
                   {
                     "AnchorPoint": {},
                     "Position": {
-                      "X": -29.9193,
-                      "Y": 50.196
+                      "X": -31.8172,
+                      "Y": 50.1958
                     },
                     "Scale": {
                       "ScaleX": 0.78,
@@ -942,10 +941,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": -29.9193,
-                    "RightMargin": 29.9193,
-                    "TopMargin": -50.196,
-                    "BottomMargin": 50.196,
+                    "LeftMargin": -31.8172,
+                    "RightMargin": 31.8172,
+                    "TopMargin": -50.1958,
+                    "BottomMargin": 50.1958,
                     "Tag": 72,
                     "Children": [
                       {
@@ -1006,8 +1005,8 @@
                   {
                     "AnchorPoint": {},
                     "Position": {
-                      "X": -13.6305,
-                      "Y": 25.4137
+                      "X": -14.8965,
+                      "Y": 29.2089
                     },
                     "Scale": {
                       "ScaleX": 0.8,
@@ -1023,10 +1022,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": -13.6305,
-                    "RightMargin": 13.6305,
-                    "TopMargin": -25.4137,
-                    "BottomMargin": 25.4137,
+                    "LeftMargin": -14.8965,
+                    "RightMargin": 14.8965,
+                    "TopMargin": -29.2089,
+                    "BottomMargin": 29.2089,
                     "Tag": 74,
                     "Children": [
                       {
@@ -1087,8 +1086,8 @@
                   {
                     "AnchorPoint": {},
                     "Position": {
-                      "X": 4.2886,
-                      "Y": 2.3164
+                      "X": 1.7578,
+                      "Y": 8.0126
                     },
                     "Scale": {
                       "ScaleX": 0.82,
@@ -1104,10 +1103,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 4.2886,
-                    "RightMargin": -4.2886,
-                    "TopMargin": -2.3164,
-                    "BottomMargin": 2.3164,
+                    "LeftMargin": 1.7578,
+                    "RightMargin": -1.7578,
+                    "TopMargin": -8.0126,
+                    "BottomMargin": 8.0126,
                     "Tag": 76,
                     "Children": [
                       {
@@ -1168,8 +1167,8 @@
                   {
                     "AnchorPoint": {},
                     "Position": {
-                      "X": 23.6002,
-                      "Y": -21.2
+                      "X": 16.0068,
+                      "Y": -10.4438
                     },
                     "Scale": {
                       "ScaleX": 0.84,
@@ -1185,10 +1184,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 23.6002,
-                    "RightMargin": -23.6002,
-                    "TopMargin": 21.2,
-                    "BottomMargin": -21.2,
+                    "LeftMargin": 16.0068,
+                    "RightMargin": -16.0068,
+                    "TopMargin": 10.4438,
+                    "BottomMargin": -10.4438,
                     "Tag": 78,
                     "Children": [
                       {
@@ -1249,8 +1248,8 @@
                   {
                     "AnchorPoint": {},
                     "Position": {
-                      "X": 41.26,
-                      "Y": -44.04
+                      "X": 33.0339,
+                      "Y": -32.6508
                     },
                     "Scale": {
                       "ScaleX": 0.86,
@@ -1266,10 +1265,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 41.26,
-                    "RightMargin": -41.26,
-                    "TopMargin": 44.04,
-                    "BottomMargin": -44.04,
+                    "LeftMargin": 33.0339,
+                    "RightMargin": -33.0339,
+                    "TopMargin": 32.6508,
+                    "BottomMargin": -32.6508,
                     "Tag": 80,
                     "Children": [
                       {
@@ -1330,8 +1329,8 @@
                   {
                     "AnchorPoint": {},
                     "Position": {
-                      "X": 58.92,
-                      "Y": -66.88
+                      "X": 50.0617,
+                      "Y": -54.857
                     },
                     "Scale": {
                       "ScaleX": 0.88,
@@ -1347,10 +1346,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 58.92,
-                    "RightMargin": -58.92,
-                    "TopMargin": 66.88,
-                    "BottomMargin": -66.88,
+                    "LeftMargin": 50.0617,
+                    "RightMargin": -50.0617,
+                    "TopMargin": 54.857,
+                    "BottomMargin": -54.857,
                     "Tag": 82,
                     "Children": [
                       {
@@ -1411,8 +1410,8 @@
                   {
                     "AnchorPoint": {},
                     "Position": {
-                      "X": 76.58,
-                      "Y": -89.72
+                      "X": 69.6197,
+                      "Y": -78.9638
                     },
                     "Scale": {
                       "ScaleX": 0.9,
@@ -1428,10 +1427,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 76.58,
-                    "RightMargin": -76.58,
-                    "TopMargin": 89.72,
-                    "BottomMargin": -89.72,
+                    "LeftMargin": 69.6197,
+                    "RightMargin": -69.6197,
+                    "TopMargin": 78.9638,
+                    "BottomMargin": -78.9638,
                     "Tag": 84,
                     "Children": [
                       {
@@ -1492,8 +1491,8 @@
                   {
                     "AnchorPoint": {},
                     "Position": {
-                      "X": 94.24,
-                      "Y": -112.56
+                      "X": 88.5452,
+                      "Y": -103.0692
                     },
                     "Scale": {
                       "ScaleX": 0.92,
@@ -1509,10 +1508,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 94.24,
-                    "RightMargin": -94.24,
-                    "TopMargin": 112.56,
-                    "BottomMargin": -112.56,
+                    "LeftMargin": 88.5452,
+                    "RightMargin": -88.5452,
+                    "TopMargin": 103.0692,
+                    "BottomMargin": -103.0692,
                     "Tag": 86,
                     "Children": [
                       {
@@ -1573,8 +1572,8 @@
                   {
                     "AnchorPoint": {},
                     "Position": {
-                      "X": 111.9,
-                      "Y": -135.4
+                      "X": 107.4706,
+                      "Y": -129.0731
                     },
                     "Scale": {
                       "ScaleX": 0.94,
@@ -1590,10 +1589,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 111.9,
-                    "RightMargin": -111.9,
-                    "TopMargin": 135.4,
-                    "BottomMargin": -135.4,
+                    "LeftMargin": 107.4706,
+                    "RightMargin": -107.4706,
+                    "TopMargin": 129.0731,
+                    "BottomMargin": -129.0731,
                     "Tag": 88,
                     "Children": [
                       {
@@ -1654,8 +1653,8 @@
                   {
                     "AnchorPoint": {},
                     "Position": {
-                      "X": 129.56,
-                      "Y": -158.24
+                      "X": 125.7634,
+                      "Y": -153.811
                     },
                     "Scale": {
                       "ScaleX": 0.96,
@@ -1671,10 +1670,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 129.56,
-                    "RightMargin": -129.56,
-                    "TopMargin": 158.24,
-                    "BottomMargin": -158.24,
+                    "LeftMargin": 125.7634,
+                    "RightMargin": -125.7634,
+                    "TopMargin": 153.811,
+                    "BottomMargin": -153.811,
                     "Tag": 90,
                     "Children": [
                       {
@@ -1735,8 +1734,8 @@
                   {
                     "AnchorPoint": {},
                     "Position": {
-                      "X": 147.22,
-                      "Y": -181.08
+                      "X": 146.5869,
+                      "Y": -180.4475
                     },
                     "Scale": {
                       "ScaleX": 0.98,
@@ -1752,10 +1751,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 147.22,
-                    "RightMargin": -147.22,
-                    "TopMargin": 181.08,
-                    "BottomMargin": -181.08,
+                    "LeftMargin": 146.5869,
+                    "RightMargin": -146.5869,
+                    "TopMargin": 180.4475,
+                    "BottomMargin": -180.4475,
                     "Tag": 92,
                     "Children": [
                       {

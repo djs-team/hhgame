@@ -1,8 +1,8 @@
 {
-    "packageUrl": "http://hot.harmonygames.cn/chot/web/main/1.3.0/", 
-    "remoteManifestUrl": "http://hot.harmonygames.cn/chot/web/main/1.3.0/project.manifest", 
+    "packageUrl": "http://hot.harmonygames.cn/chot/web/main/1.3.1/", 
+    "remoteManifestUrl": "http://hot.harmonygames.cn/chot/web/main/1.3.1/project.manifest", 
     "remoteVersionUrl": "http://hot.harmonygames.cn/chot/web/main/version.manifest", 
-    "version": "1.3.0", 
+    "version": "1.3.1", 
     "assets": {
         "res/module/mahjong/card/value/selfhand/feng_hand_1.png": {
             "md5": "7b9746a60e9d741d9ca8e75d9471c7e1", 
@@ -4829,8 +4829,8 @@
             "size": 2650
         }, 
         "src/game/ui/scene/LoginScene.jsc": {
-            "md5": "d8a3be347b34662481274f2c7be8f6c2", 
-            "size": 28105
+            "md5": "d7f25606c18b1bb871929a4f2d344023", 
+            "size": 28115
         }, 
         "res/common/jinbi.png": {
             "md5": "ed484329bfef069a5b5a532fa5f7b04d", 

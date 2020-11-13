@@ -1,8 +1,8 @@
 {
-    "packageUrl": "http://hot.harmonygames.cn/chot/web/main/1.0.1/", 
-    "remoteManifestUrl": "http://hot.harmonygames.cn/chot/web/main/1.0.1/project.manifest", 
+    "packageUrl": "http://hot.harmonygames.cn/chot/web/main/1.1.0/", 
+    "remoteManifestUrl": "http://hot.harmonygames.cn/chot/web/main/1.1.0/project.manifest", 
     "remoteVersionUrl": "http://hot.harmonygames.cn/chot/web/main/version.manifest", 
-    "version": "1.0.1", 
+    "version": "1.1.0", 
     "assets": {
         "res/module/mahjong/card/value/selfhand/feng_hand_1.png": {
             "md5": "7b9746a60e9d741d9ca8e75d9471c7e1", 
@@ -1637,8 +1637,8 @@
             "size": 28156
         }, 
         "res/UpdateScene.json": {
-            "md5": "8a7c63c37cc51dfc861b3b113c146b3c", 
-            "size": 26689
+            "md5": "d1fc2f1c5efb99169aecf663ed4efda9", 
+            "size": 34675
         }, 
         "res/module/mahjong/sound/putong/man/gaming/chi_1.mp3": {
             "md5": "1281f46a7ab8a50131dde6e151aa88d8", 
@@ -1745,8 +1745,8 @@
             "size": 18924
         }, 
         "src/game/ui/scene/UpdateScene.jsc": {
-            "md5": "d75db10d599ca8633e9e327fd0903178", 
-            "size": 9468
+            "md5": "9c8d890f0bf84de930b599ce10c483b7", 
+            "size": 10018
         }, 
         "res/module/mahjong/sound/putong/woman/gaming/match_taotai.mp3": {
             "md5": "e2f53ed6f3c7cf33307d0745a76b3875", 

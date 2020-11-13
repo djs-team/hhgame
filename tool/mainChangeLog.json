@@ -1,7 +1,4 @@
 [
-    "src/game/ui/layer/member/MemberLayer.jsc", 
-    "src/game/ui/layer/personal/PersonalLayer.jsc", 
-    "src/game/ui/layer/role/RoleLayer.jsc", 
-    "src/game/ui/layer/sign/SignLayer.jsc", 
-    "src/game/ui/layer/turntable/TurnTableLayer.jsc"
+    "res/UpdateScene.json", 
+    "src/game/ui/scene/UpdateScene.jsc"
 ]

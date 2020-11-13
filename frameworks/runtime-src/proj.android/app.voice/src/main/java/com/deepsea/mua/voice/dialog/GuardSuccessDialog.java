@@ -40,7 +40,7 @@ public class GuardSuccessDialog extends BaseDialog<DialogGuardSuccessBinding> {
 
     @Override
     public boolean isHeightFullScree() {
-        return true;
+        return false;
     }
 
     @Override

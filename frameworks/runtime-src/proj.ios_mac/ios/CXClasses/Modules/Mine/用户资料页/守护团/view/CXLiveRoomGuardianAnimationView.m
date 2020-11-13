@@ -11,8 +11,6 @@
 
 @interface CXLiveRoomGuardianAnimationView()
 
-@property (weak, nonatomic) IBOutlet UIImageView *animation_bgImage;
-
 @property (weak, nonatomic) IBOutlet UIImageView *bgImage;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentView_topLayout;

@@ -60,16 +60,19 @@ static CXBUAdRewardViewController *instance;
 #pragma mark - BUNativeExpressRewardedVideoAdDelegate
 
 // 视频下载完成
-- (void)nativeExpressRewardedVideoAdDidDownLoadVideo:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd {
+//- (void)nativeExpressRewardedVideoAdDidDownLoadVideo:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd {
 //    [self pbud_logWithSEL:_cmd msg:@""];
 //    [self.rewardedAd showAdFromRootViewController:self];
-}
+//}
 
 // 视频结束的回调
 - (void)nativeExpressRewardedVideoAdDidClose:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd {
     self.view.hidden = YES;
-    [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].BUAdRewardMethod param:@"0"];
-//    [self pbud_logWithSEL:_cmd msg:@""];
+    if (_isPlaySuccess == YES) {
+        [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].BUAdRewardMethod param:@"0"];
+    } else {
+        [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].BUAdRewardMethod param:@"-1"];
+    }
     [self.rewardedAd loadAdData];
 }
 
@@ -82,10 +85,10 @@ static CXBUAdRewardViewController *instance;
     [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].BUAdRewardMethod param:@"-1"];
 }
 
-- (void)nativeExpressRewardedVideoAdServerRewardDidFail:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd {
-    self.view.hidden = YES;
-    [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].BUAdRewardMethod param:@"-1"];
-}
+//- (void)nativeExpressRewardedVideoAdServerRewardDidFail:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd {
+//    self.view.hidden = YES;
+//    [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].BUAdRewardMethod param:@"-1"];
+//}
 - (void)nativeExpressRewardedVideoAdViewRenderFail:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd error:(NSError *_Nullable)error {
     self.view.hidden = YES;
     [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].BUAdRewardMethod param:@"-1"];
@@ -94,11 +97,6 @@ static CXBUAdRewardViewController *instance;
 //- (void)nativeExpressRewardedVideoAdDidLoad:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd {
 //    [self pbud_logWithSEL:_cmd msg:@""];
 //}
-//
-//- (void)nativeExpressRewardedVideoAd:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd didFailWithError:(NSError *_Nullable)error {
-//    [self pbud_logWithSEL:_cmd msg:[NSString stringWithFormat:@"%@", error]];
-//}
-//
 //- (void)nativeExpressRewardedVideoAdCallback:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd withType:(BUNativeExpressRewardedVideoAdType)nativeExpressVideoType{
 //    [self pbud_logWithSEL:_cmd msg:@""];
 //}
@@ -106,8 +104,6 @@ static CXBUAdRewardViewController *instance;
 //- (void)nativeExpressRewardedVideoAdViewRenderSuccess:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd {
 //    [self pbud_logWithSEL:_cmd msg:@""];
 //}
-//
-
 //
 //- (void)nativeExpressRewardedVideoAdWillVisible:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd {
 //    [self pbud_logWithSEL:_cmd msg:@""];
@@ -121,21 +117,23 @@ static CXBUAdRewardViewController *instance;
 //    [self pbud_logWithSEL:_cmd msg:@""];
 //}
 //
-////- (void)nativeExpressRewardedVideoAdDidClose:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd {
-////    [self pbud_logWithSEL:_cmd msg:@""];
-////}
-//
 //- (void)nativeExpressRewardedVideoAdDidClick:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd {
 //    [self pbud_logWithSEL:_cmd msg:@""];
 //}
-//
-//- (void)nativeExpressRewardedVideoAdDidClickSkip:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd {
-//    [self pbud_logWithSEL:_cmd msg:@""];
-//}
-//
-//- (void)nativeExpressRewardedVideoAdDidPlayFinish:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd didFailWithError:(NSError *_Nullable)error {
-//    [self pbud_logWithSEL:_cmd msg:[NSString stringWithFormat:@"%@", error]];
-//}
+
+- (void)nativeExpressRewardedVideoAdDidClickSkip:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd {
+    [self pbud_logWithSEL:_cmd msg:@""];
+    self.view.hidden = YES;
+    [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].BUAdRewardMethod param:@"-1"];
+}
+
+- (void)nativeExpressRewardedVideoAdDidPlayFinish:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd didFailWithError:(NSError *_Nullable)error {
+    if (error == nil) {
+        self.isPlaySuccess = YES;
+    } else {
+        self.isPlaySuccess = NO;
+    }
+}
 //
 //- (void)nativeExpressRewardedVideoAdServerRewardDidSucceed:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd verify:(BOOL)verify {
 //    [self pbud_logWithSEL:_cmd msg:@""];
@@ -144,7 +142,7 @@ static CXBUAdRewardViewController *instance;
 //- (void)nativeExpressRewardedVideoAdServerRewardDidFail:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd error:(NSError * _Nullable)error {
 //    [self pbud_logWithSEL:_cmd msg:[NSString stringWithFormat:@"%@", error]];
 //}
-//
+
 //- (void)nativeExpressRewardedVideoAdDidCloseOtherController:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd interactionType:(BUInteractionType)interactionType {
 //    NSString *str = nil;
 //    if (interactionType == BUInteractionTypePage) {

@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (CXBUAdRewardViewController *)manager;
 
+@property (nonatomic, assign) BOOL isPlaySuccess;
+
 - (void)openAdWithUserId:(NSString *)userId;
 
 @end

@@ -25,6 +25,8 @@ load('game/ui/scene/UpdateScene', function () {
                 'pnl/VersionTxt': { },
                 'AniPnl': { },
                 'AniPnl/ArmatureNode': { },
+                'clearPnl': { },
+                'clearPnl/clearBtn': {onClicked : this.onClearClicked },
             }
         },
         ctor: function () {
@@ -39,6 +41,7 @@ load('game/ui/scene/UpdateScene', function () {
             this.Txtpnl.setVisible(false)
             this.middlePnl.setVisible(false)
             this.bottomPnl.setVisible(false)
+            this.clearPnl.setVisible(false)
 
             appInstance.audioManager().playEffect('res/sound/tg_logo.mp3')
             this.runAction(cc.sequence(cc.DelayTime(2.7), cc.CallFunc(function() {
@@ -46,6 +49,7 @@ load('game/ui/scene/UpdateScene', function () {
                 this.Txtpnl.setVisible(true)
                 this.middlePnl.setVisible(true)
                 this.bottomPnl.setVisible(true)
+                this.clearPnl.setVisible(false)
             }.bind(this)), cc.DelayTime(0.3), cc.CallFunc(function() {
                 this.bg.setVisible(true)
                 this.AniPnl.setVisible(false)
@@ -53,6 +57,7 @@ load('game/ui/scene/UpdateScene', function () {
                 this.middlePnl.setVisible(false)
                 this.bottomPnl.setVisible(false)
                 this.pnl.setVisible(true)
+                this.clearPnl.setVisible(true)
                 this.checkForce()
             }.bind(this))))
         },
@@ -183,6 +188,12 @@ load('game/ui/scene/UpdateScene', function () {
                 appInstance.gameAgent().Tips('===========热更失败======')
             })
             updater.update()
+        },
+
+        onClearClicked: function () {
+            let localPath = jsb.fileUtils.getWritablePath() + '/update/'
+            global.gameFile.removeDir(localPath)
+
         }
     })
 

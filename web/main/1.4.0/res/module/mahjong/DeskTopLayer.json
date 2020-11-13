@@ -1554,7 +1554,6 @@
                 },
                 "Scale9Width": 1,
                 "Scale9Height": 1,
-                "TouchEnable": true,
                 "AnchorPoint": {
                   "ScaleX": 0.5,
                   "ScaleY": 0.5
@@ -2251,7 +2250,6 @@
                 },
                 "Scale9Width": 1,
                 "Scale9Height": 1,
-                "TouchEnable": true,
                 "AnchorPoint": {
                   "ScaleX": 0.5,
                   "ScaleY": 0.5
@@ -2476,7 +2474,6 @@
                 },
                 "Scale9Width": 1,
                 "Scale9Height": 1,
-                "TouchEnable": true,
                 "AnchorPoint": {
                   "ScaleX": 0.5,
                   "ScaleY": 0.5
@@ -2623,7 +2620,7 @@
                       "Y": 0.0
                     },
                     "LeftMargin": 99.2863,
-                    "RightMargin": 1180.7136,
+                    "RightMargin": 1180.7137,
                     "TopMargin": 272.1127,
                     "BottomMargin": 447.8873,
                     "Tag": 3632,

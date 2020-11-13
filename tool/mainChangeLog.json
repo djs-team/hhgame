@@ -1,15 +1,1 @@
-[
-    "res/module/mahjong/ShareLayer.json", 
-    "res/module/mahjong/DeskResultLayer.json", 
-    "res/module/mahjong/DeskTopLayer.json", 
-    "src/module/mahjong/ui/DeskTopLayer.jsc", 
-    "src/module/mahjong/ui/DeskTopLayerMdt.jsc", 
-    "src/module/mahjong/ui/DeskPersonlLayerMdt.jsc", 
-    "src/game/ui/layer/set/SetLayer.jsc", 
-    "src/game/ui/layer/set/SetLayerMdt.jsc", 
-    "src/game/ui/layer/coinshop/CoinShopLayer.jsc", 
-    "src/game/ui/layer/coinshop/CoinShopMdt.jsc", 
-    "src/game/ui/scene/UpdateScene.jsc", 
-    "src/game/ui/scene/HallScene.jsc", 
-    "src/game/public/HttpGame.jsc"
-]
+[]

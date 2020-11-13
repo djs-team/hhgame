@@ -21,6 +21,8 @@
 
 @property (nonatomic, strong) NSString *BUAdRewardMethod; // 广告看完回调
 
+@property (nonatomic, strong) NSString *resumeAllMusicMethod; // 恢复麻将音乐播放
+
 - (void)clear;
 
 @end

@@ -107,6 +107,8 @@
 }
 
 - (void)backRoom {
+    [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].resumeAllMusicMethod param:@"1"];
+    
     [AppController setOrientation:@""];
     [self dismissViewControllerAnimated:YES completion:nil];
 }

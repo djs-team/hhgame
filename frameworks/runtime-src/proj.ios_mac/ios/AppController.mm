@@ -810,6 +810,7 @@ UIInterfaceOrientationMask oMask = UIInterfaceOrientationMaskLandscape;
             [CXClientModel instance].is_receive = user.is_receive;
             
             [[EMClient sharedClient] loginWithUsername:user.user_id password:user.user_id completion:^(NSString *aUsername, EMError *aError) {
+                [CXOCJSBrigeManager manager].resumeAllMusicMethod = @"resumeAllMusic";
                 [AppController setOrientation:@"V"];
                 CXBaseTabBarViewController *tabbarVC = [CXBaseTabBarViewController new];
                 tabbarVC.modalPresentationStyle = UIModalPresentationFullScreen;

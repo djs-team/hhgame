@@ -185,7 +185,7 @@ load('game/ui/scene/HallScene', function () {
                 return
             }
             //暂停所有音效
-            appInstance.audioManager().pauseAll()
+            appInstance.audioManager().pauseMusic()
             appInstance.nativeApi().jumpToBlindDate()
 
         },
@@ -249,7 +249,7 @@ load('game/ui/scene/HallScene', function () {
         },
 
         resumeAllMusic: function () {
-            appInstance.audioManager().resumeAll()
+            appInstance.audioManager().resumeMusic()
         },
 
         onEnter: function () {

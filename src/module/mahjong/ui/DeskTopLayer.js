@@ -84,9 +84,6 @@ load('module/mahjong/ui/DeskTopLayer', function () {
 
         onCloseChuang: function () {
             this.sayContentPnl.setVisible(false)
-            if (HallResConfig.Ui.SetLayer) {
-                appInstance.uiManager().removeUI(HallResConfig.Ui.SetLayer)
-            }
         },
 
         onHostingClick: function () {

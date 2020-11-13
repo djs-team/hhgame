@@ -24,6 +24,7 @@ static id _manager;
     _openInstallParamMethod = nil;
     _paySuccessMethod = nil;
     _BUAdRewardMethod = nil;
+    _resumeAllMusicMethod = nil;
 }
 
 - (void)setWxLoginMethod:(NSString *)wxLoginMethod {
@@ -45,6 +46,10 @@ static id _manager;
 - (void)setBUAdRewardMethod:(NSString *)BUAdRewardMethod {
     [self clear];
     _BUAdRewardMethod = BUAdRewardMethod;
+}
+- (void)setResumeAllMusicMethod:(NSString *)resumeAllMusicMethod {
+    [self clear];
+    _resumeAllMusicMethod = resumeAllMusicMethod;
 }
 
 @end

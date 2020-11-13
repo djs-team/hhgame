@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,19 +14,16 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="live_room_guardian_animation.gif" translatesAutoresizingMaskIntoConstraints="NO" id="s0y-MJ-zTF">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="live_room_guardian_animation.gif" translatesAutoresizingMaskIntoConstraints="NO" id="xay-LH-ukm">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="736.5"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="500"/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="xay-LH-ukm" secondAttribute="height" multiplier="375:667" id="ldO-zd-1mx"/>
+                        <constraint firstAttribute="height" constant="500" id="GVP-yi-qbb"/>
                     </constraints>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZsJ-Ls-ul7">
                     <rect key="frame" x="160.5" y="195" width="93" height="140"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mine_guardian_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="am9-ze-jf1">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="am9-ze-jf1">
                             <rect key="frame" x="3.5" y="34" width="86" height="86"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="86" id="UDX-z3-nB0"/>
@@ -36,7 +33,7 @@
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="live_room_guardian_animation_avata" translatesAutoresizingMaskIntoConstraints="NO" id="rdf-2K-Fzz">
                             <rect key="frame" x="0.0" y="0.0" width="93" height="140"/>
                         </imageView>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="live_room_guiardian_bg" translatesAutoresizingMaskIntoConstraints="NO" id="FTD-XN-O6B">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FTD-XN-O6B">
                             <rect key="frame" x="36" y="86" width="54" height="52"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="52" id="LMt-zK-ife"/>
@@ -58,7 +55,7 @@
                         <constraint firstItem="rdf-2K-Fzz" firstAttribute="leading" secondItem="ZsJ-Ls-ul7" secondAttribute="leading" id="yIs-S5-zv4"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1jg-ZT-mbo">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1jg-ZT-mbo">
                     <rect key="frame" x="0.0" y="355" width="414" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="rj4-r5-Y6e"/>
@@ -69,24 +66,19 @@
                     </state>
                 </button>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="s0y-MJ-zTF" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="1VS-DU-tuX"/>
                 <constraint firstItem="xay-LH-ukm" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="2gd-dr-fp4"/>
-                <constraint firstItem="s0y-MJ-zTF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ESE-ef-9jK"/>
                 <constraint firstItem="1jg-ZT-mbo" firstAttribute="top" secondItem="ZsJ-Ls-ul7" secondAttribute="bottom" constant="20" id="Eql-Aa-ZFp"/>
                 <constraint firstItem="xay-LH-ukm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="JWx-Pg-OMh"/>
-                <constraint firstAttribute="bottom" secondItem="s0y-MJ-zTF" secondAttribute="bottom" id="MQz-TH-hhZ"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="1jg-ZT-mbo" secondAttribute="trailing" id="SZ8-zE-ZOl"/>
                 <constraint firstItem="ZsJ-Ls-ul7" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="195" id="WKL-bR-Fa8"/>
-                <constraint firstItem="s0y-MJ-zTF" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="YQi-7F-zO6"/>
                 <constraint firstItem="1jg-ZT-mbo" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="cuJ-Ia-Udj"/>
                 <constraint firstItem="xay-LH-ukm" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="eJf-Vg-fJj"/>
                 <constraint firstItem="ZsJ-Ls-ul7" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="j8O-bY-Nie"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
-                <outlet property="animation_bgImage" destination="s0y-MJ-zTF" id="bRu-xR-Wg9"/>
                 <outlet property="bgImage" destination="xay-LH-ukm" id="Xtz-Fb-73D"/>
                 <outlet property="contentView_topLayout" destination="WKL-bR-Fa8" id="Ooy-al-egr"/>
                 <outlet property="guardian_avatar" destination="FTD-XN-O6B" id="Djo-cB-mOI"/>
@@ -97,10 +89,8 @@
         </view>
     </objects>
     <resources>
-        <image name="live_room_guardian_animation.gif" width="750" height="1334"/>
+        <image name="live_room_guardian_animation.gif" width="1500" height="1500"/>
         <image name="live_room_guardian_animation_avata" width="94" height="141.5"/>
-        <image name="live_room_guardian_animation_message" width="375" height="41"/>
-        <image name="live_room_guiardian_bg" width="375" height="365"/>
-        <image name="mine_guardian_placeholder" width="52" height="52"/>
+        <image name="live_room_guardian_animation_message" width="375" height="41.5"/>
     </resources>
 </document>

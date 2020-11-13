@@ -11,13 +11,11 @@ srcDir= curFilePath+'/../../../src'
 resDir= curFilePath+'/../../../res'
 projectJsonDir = curFilePath+'/../../../project.json'
 
-mainJS= curFilePath+'/../../../main.js'
 
 #modulesSrcDir = curFilePath+'/../../../modules/'
 #modulesDestDir = curFilePath+ '/Debug.win32/Resources/modules/'
 
 mainLinks =[
-    '/Debug.win32/Resources/main.js',
     '/Debug.win32/Resources/script',
     '/Debug.win32/Resources/src',
     '/Debug.win32/Resources/res',
@@ -54,8 +52,7 @@ def link():
     cmdPJ = 'mklink ' + '\"' + 'Debug.win32/Resources/project.json' + '\"' + '  ' + '\"' + projectJsonDir + '\"'
     os.system(cmdPJ)
 
-    cmdMAIN = 'mklink ' + '\"' + 'Debug.win32/Resources/main.js' + '\"' + '  ' + '\"' + mainJS + '\"'
-    os.system(cmdMAIN)
+
 '''
     fl = os.listdir(modulesSrcDir)
     for f in fl:

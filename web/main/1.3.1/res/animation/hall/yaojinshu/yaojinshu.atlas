@@ -1,0 +1,34 @@
+
+yaojinshu.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+jinbi
+  rotate: false
+  xy: 597, 441
+  size: 40, 40
+  orig: 40, 40
+  offset: 0, 0
+  index: -1
+yjs_3 (1)
+  rotate: true
+  xy: 2, 2
+  size: 479, 515
+  orig: 479, 515
+  offset: 0, 0
+  index: -1
+yjs_3_1
+  rotate: false
+  xy: 519, 415
+  size: 76, 66
+  orig: 76, 66
+  offset: 0, 0
+  index: -1
+yjs_3_2
+  rotate: false
+  xy: 519, 340
+  size: 64, 73
+  orig: 64, 73
+  offset: 0, 0
+  index: -1

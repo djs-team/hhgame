@@ -1,0 +1,20 @@
+
+dating_gengduowanfa.png
+size: 512,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+dtjm_f4
+  rotate: false
+  xy: 2, 2
+  size: 196, 201
+  orig: 196, 201
+  offset: 0, 0
+  index: -1
+xingxing
+  rotate: false
+  xy: 200, 75
+  size: 151, 128
+  orig: 151, 128
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,69 @@
+
+shangcheng.png
+size: 2048,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+dtjm_11_00000
+  rotate: false
+  xy: 173, 2
+  size: 169, 115
+  orig: 169, 115
+  offset: 0, 0
+  index: -1
+dtjm_11_00007
+  rotate: false
+  xy: 344, 2
+  size: 169, 115
+  orig: 169, 115
+  offset: 0, 0
+  index: -1
+dtjm_11_00009
+  rotate: false
+  xy: 515, 2
+  size: 169, 115
+  orig: 169, 115
+  offset: 0, 0
+  index: -1
+dtjm_11_00011
+  rotate: false
+  xy: 686, 2
+  size: 169, 115
+  orig: 169, 115
+  offset: 0, 0
+  index: -1
+dtjm_11_00013
+  rotate: false
+  xy: 857, 2
+  size: 169, 115
+  orig: 169, 115
+  offset: 0, 0
+  index: -1
+dtjm_11_00015
+  rotate: false
+  xy: 1028, 2
+  size: 169, 115
+  orig: 169, 115
+  offset: 0, 0
+  index: -1
+dtjm_11_00017
+  rotate: false
+  xy: 1199, 2
+  size: 169, 115
+  orig: 169, 115
+  offset: 0, 0
+  index: -1
+dtjm_11_00019
+  rotate: false
+  xy: 1370, 2
+  size: 169, 115
+  orig: 169, 115
+  offset: 0, 0
+  index: -1
+dtjm_11_00021
+  rotate: false
+  xy: 2, 2
+  size: 169, 115
+  orig: 169, 115
+  offset: 0, 0
+  index: -1

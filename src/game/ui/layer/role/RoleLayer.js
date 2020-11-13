@@ -68,6 +68,7 @@ load('game/ui/layer/role/RoleLayer', function () {
         },
         onClseClick: function () {
             appInstance.sendNotification(GameEvent.HALL_RED_GET)
+            appInstance.audioManager().resumeMusic()
             appInstance.uiManager().removeUI(this)
         },
 
@@ -97,6 +98,10 @@ load('game/ui/layer/role/RoleLayer', function () {
         onRoleTouchClick: function (sender) {
             let roleCode = sender._roleCode
             let roleInfo = AniPlayer[roleCode]
+            appInstance.audioManager().pauseMusic()
+            this.runAction(cc.sequence(cc.DelayTime(4), cc.CallFunc(function() {
+                appInstance.audioManager().resumeMusic()
+            }.bind(this))))
             if (roleInfo.dongbei && this._localLanguage === 'dongbei') {
                 this._roleEffectId = appInstance.audioManager().playEffect(roleInfo.dongbei,this._roleEffectId)
             } else {

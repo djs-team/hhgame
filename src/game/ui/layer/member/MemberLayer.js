@@ -118,6 +118,10 @@ load('game/ui/layer/member/MemberLayer', function () {
             let memberVipDate = global.localStorage.getStringForKey(LocalSave.MemberVipDate)
             let dateStr = global.getCurDayStr()
             if (!memberVipDate || memberVipDate !== dateStr) {
+                appInstance.audioManager().pauseMusic()
+                this.runAction(cc.sequence(cc.DelayTime(4), cc.CallFunc(function() {
+                    appInstance.audioManager().resumeMusic()
+                }.bind(this))))
                 appInstance.gameAgent().gameUtil().autoPlaySound(ResConfig.Sound.vip)
                 global.localStorage.setStringForKey(LocalSave.MemberVipDate, dateStr)
             }
@@ -131,6 +135,7 @@ load('game/ui/layer/member/MemberLayer', function () {
 
         onCloseClick: function () {
             appInstance.sendNotification(GameEvent.HALL_RED_GET)
+            appInstance.audioManager().resumeMusic()
             appInstance.uiManager().removeUI(this)
         },
 

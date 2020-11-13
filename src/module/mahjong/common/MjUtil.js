@@ -71,6 +71,23 @@ load('module/mahjong/common/MjUtil', function () {
             appInstance.audioManager().playEffect(soundPath)
         },
 
+        playKuaiJieYuSound: function ( soundFileName ) {
+            if (!soundFileName) {
+                return
+            }
+            let effectType = appInstance.gameAgent().gameUtil().getLocalLanguage()
+            let SEX = [
+                'man',
+                'woman'
+            ]
+            let sexStr = SEX[appInstance.dataManager().getPlayData().getSelfInfo().sex]
+            let soundPath = ResConfig.Sound.path + effectType + '/' + sexStr + '/kuaijieyu/'
+
+            soundPath += soundFileName
+            soundPath += '.mp3'
+            appInstance.audioManager().playEffect(soundPath)
+        },
+
         isCardInArray: function (cardArray, card) {
             for (let i = 0; i < cardArray.length; ++i) {
                 if (cardArray[i].nCardColor === card.nCardColor && cardArray[i].nCardNumber === card.nCardNumber) {

@@ -10,6 +10,7 @@
 #import "CXBaseNavigationController.h"
 
 #import "CXHomeViewController.h"
+#import "CXFindViewController.h"
 #import "CXFriendViewController.h"
 #import "CXMineViewController.h"
 
@@ -22,6 +23,7 @@
 //@property (nonatomic) BOOL isViewAppear;
 
 @property (nonatomic, strong) CXHomeViewController *homeController;
+@property (nonatomic, strong) CXFindViewController *findController;
 @property (nonatomic, strong) CXFriendViewController *friendController;
 @property (nonatomic, strong) CXMineViewController *mineController;
 
@@ -105,6 +107,8 @@
 }
 
 - (void)backRoom {
+    [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].resumeAllMusicMethod param:@"1"];
+    
     [AppController setOrientation:@""];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -113,6 +117,8 @@
     
     self.homeController = [CXHomeViewController new];
     [self setChildViewController:self.homeController title:@"首页" imageName:@"home_tabbar"];
+//    self.findController = [CXFindViewController new];
+//    [self setChildViewController:self.findController title:@"发现" imageName:@"home_tabbar"];
     self.friendController = [CXFriendViewController new];
     [self setChildViewController:self.friendController title:@"好友" imageName:@"friend_tabbar"];
     self.mineController = [CXMineViewController new];

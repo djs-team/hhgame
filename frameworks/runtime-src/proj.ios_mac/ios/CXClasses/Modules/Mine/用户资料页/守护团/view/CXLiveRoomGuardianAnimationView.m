@@ -11,8 +11,6 @@
 
 @interface CXLiveRoomGuardianAnimationView()
 
-@property (weak, nonatomic) IBOutlet UIImageView *animation_bgImage;
-
 @property (weak, nonatomic) IBOutlet UIImageView *bgImage;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentView_topLayout;
@@ -35,8 +33,9 @@
     [MMPopupWindow sharedWindow].touchWildToHide = NO;
     self.type = MMPopupTypeCustom;
     
-//    NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"live_room_guardian_animation" ofType:@"gif"];
-//    NSData *imageData = [NSData dataWithContentsOfFile:imagePath];
+    NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"live_room_guardian_animation" ofType:@"gif"];
+    NSData *imageData = [NSData dataWithContentsOfFile:imagePath];
+    _bgImage.image = [UIImage sd_imageWithGIFData:imageData];
 //    _bgImage.image = [UIImage sd_animatedGIFWithData:imageData];
 //    _animation_bgImage.image = [UIImage sd_animatedGIFWithData:imageData];
     
@@ -66,10 +65,12 @@
 - (void)setMessage:(SocketMessageUserJoinRoom *)message {
     _message = message;
     
-    [self.user_avatar sd_setImageWithURL:[NSURL URLWithString:message.TargetImage] placeholderImage:[UIImage imageNamed:@"mine_guardian_placeholder"]];
-    [self.guardian_avatar sd_setImageWithURL:[NSURL URLWithString:message.UserImage] placeholderImage:[UIImage imageNamed:@"mine_guardian_placeholder"]];
+    [self.user_avatar sd_setImageWithURL:[NSURL URLWithString:message.TargetImage]];
+    [self.guardian_avatar sd_setImageWithURL:[NSURL URLWithString:message.UserImage]];
     
-    [self.messageBtn setTitle:[NSString stringWithFormat:@"恭喜“%@”成为“%@”的守护", message.UserName, message.TargetName] forState:UIControlStateNormal];
+//    [self.messageBtn setTitle:[NSString stringWithFormat:@"恭喜“%@”成为“%@”的守护", message.UserName, message.TargetName] forState:UIControlStateNormal];
+    
+    [self.messageBtn setTitle:[NSString stringWithFormat:@"欢迎守护“%@”进入房间", message.UserName] forState:UIControlStateNormal];
 }
 
 

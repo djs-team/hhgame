@@ -16,6 +16,7 @@ load('module/mahjong/common/TableConfig', function () {
         'PutCardProto': 'PutCardProto',
         'TableChangeProto': 'TableChangeProto',
         'PlayerSelectProto': 'PlayerSelectProto',
+        'GamingProto': 'GamingProto',
         'GameResultProto': 'GameResultProto',
         'AutoPlayProto': 'AutoPlayProto',
         'TableHostingProto': 'TableHostingProto',
@@ -46,6 +47,12 @@ load('module/mahjong/common/TableConfig', function () {
             allCardNum: 112,
             deckCardLen: 14
         }
+    }
+
+    TableConfig.ExpressionType = {
+        '0':1, //常用语
+        '1':2, //普通表情
+        '2':3, //魔法表情
     }
 
     TableConfig.TStatus = {
@@ -348,12 +355,12 @@ load('module/mahjong/common/TableConfig', function () {
             },
             '4':{
                 'id':5,
-                'res':'res/module/mahjong/magic/xx_1.png',
-            },
-            '5':{
-                'id':6,
                 'res':'res/module/mahjong/magic/z_1.png',
             },
+            // '5':{
+            //     'id':6,
+            //     'res':'res/module/mahjong/magic/xx_1.png',
+            // },
         },
     }
 

@@ -25,6 +25,23 @@ load('module/mahjong/common/ResConfig', function () {
       ShareLayer: PrefixPath.codePath + 'ui/ShareLayer',
     },
 
+    Magic: {
+      0: { json: 'res/animation/magic/egg/skeleton.json', atlas: 'res/animation/magic/egg/skeleton.atlas', png: 'res/animation/magic/egg/skeleton.png' },
+      1: { json: 'res/animation/magic/flower/skeleton.json', atlas: 'res/animation/magic/flower/skeleton.atlas', png: 'res/animation/magic/flower/skeleton.png' },
+      2: { json: 'res/animation/magic/slipper/skeleton.json', atlas: 'res/animation/magic/slipper/skeleton.atlas', png: 'res/animation/magic/slipper/skeleton.png' },
+      3: { json: 'res/animation/magic/tomato/skeleton.json', atlas: 'res/animation/magic/tomato/skeleton.atlas', png: 'res/animation/magic/tomato/skeleton.png' },
+      4: { json: 'res/animation/magic/kiss/skeleton.json', atlas: 'res/animation/magic/kiss/skeleton.atlas', png: 'res/animation/magic/kiss/skeleton.png' },
+    },
+
+    MagicAnimation: {
+      0: 'eff1',
+      1: 'eff',
+      2: 'eff',
+      3: 'tomato2',
+      4: 'kiss',
+    },
+
+
     /**
      * 文件资源
      */
@@ -139,6 +156,17 @@ load('module/mahjong/common/ResConfig', function () {
         match_win_4: [
           'match_win_4'
         ],
+      },
+      kuaijieyu: {
+        1: '1kuaidian',
+        2: '2hairang',
+        3: '3aiya',
+        4: '4woyou',
+        5: '5hengheng',
+        6: '6dajia',
+        7: '7shouwan',
+        8: '8ningai',
+        9: '9nida',
       },
       cardtype: {
         feiji: PrefixPath.resPath + 'sound/card/special/feiji.mp3',

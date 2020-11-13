@@ -8,7 +8,8 @@ load('game/ui/scene/UpdateScene', function () {
     let HotUpdate = include('public/suport/HotUpdate')
     let HttpType = include('public/http/HttpType')
     let UpdateMdt =  include('game/ui/scene/UpdateMdt')
-    let isNeedUpdate = false
+    let AppConfig = include('game/public/AppConfig')
+
     let UpdateScene = BaseScene.extend({
         _className: 'UpdateScene',
         _allReadyOk: false,
@@ -24,6 +25,8 @@ load('game/ui/scene/UpdateScene', function () {
                 'pnl/VersionTxt': { },
                 'AniPnl': { },
                 'AniPnl/ArmatureNode': { },
+                'clearPnl': { },
+                'clearPnl/clearBtn': {onClicked : this.onClearClicked },
             }
         },
         ctor: function () {
@@ -38,6 +41,7 @@ load('game/ui/scene/UpdateScene', function () {
             this.Txtpnl.setVisible(false)
             this.middlePnl.setVisible(false)
             this.bottomPnl.setVisible(false)
+            this.clearPnl.setVisible(false)
 
             appInstance.audioManager().playEffect('res/sound/tg_logo.mp3')
             this.runAction(cc.sequence(cc.DelayTime(2.7), cc.CallFunc(function() {
@@ -45,6 +49,7 @@ load('game/ui/scene/UpdateScene', function () {
                 this.Txtpnl.setVisible(true)
                 this.middlePnl.setVisible(true)
                 this.bottomPnl.setVisible(true)
+                this.clearPnl.setVisible(false)
             }.bind(this)), cc.DelayTime(0.3), cc.CallFunc(function() {
                 this.bg.setVisible(true)
                 this.AniPnl.setVisible(false)
@@ -52,14 +57,56 @@ load('game/ui/scene/UpdateScene', function () {
                 this.middlePnl.setVisible(false)
                 this.bottomPnl.setVisible(false)
                 this.pnl.setVisible(true)
-                if (isNeedUpdate) {
-                    this.startUpdate()
+                this.clearPnl.setVisible(true)
+                if(cc.sys.os !== cc.sys.OS_WINDOWS)
+                    this.checkForce()
+                else
+                    this.goLoginScene()
+
+            }.bind(this))))
+        },
+
+
+        checkForce: function () {
+            appInstance.httpFactory().createHttpRequest('GET', AppConfig.webUrl + 'forceCheck.json', null, function (result) {
+                if (result.code === 0) {
+                    let info = result.data.android
+                    if (cc.sys.OS_IOS === cc.sys.os) {
+                        info = result.data.ios
+                    }
+                    if (info.isForceCheck) {
+                        cc.loader.loadJson('res/project.manifest', function (er, data) {
+                            if (er || !data.version) {
+                                this.goLoginScene()
+                            } else {
+                                let serverVersionArray = info.version.split('.')
+                                let localVersionArray = data.version.split('.')
+                                if (serverVersionArray[0] <= localVersionArray[0] && serverVersionArray[1] <= localVersionArray[1]) {
+                                    this.startUpdate()
+                                } else {
+                                    let dialogMsg = {
+                                        ViewType: 1,
+                                        SayText: '您的版本过低，请前往下载最新版本！',
+                                        MidBtnName: '前往'
+                                    }
+                                    dialogMsg.MidBtnClick = function () {
+                                        cc.sys.openURL(info.downUrl)
+                                        cc.director.end()
+                                        cc.game.end()
+                                    }
+                                    appInstance.gameAgent().addDialogUINoPop(dialogMsg)
+                                }
+                            }
+                        }.bind(this))
+                    } else {
+                        this.goLoginScene()
+                    }
+
                 } else {
                     this.goLoginScene()
                 }
-            }.bind(this))))
 
-
+            }.bind(this))
         },
 
         onEnter: function () {
@@ -145,6 +192,12 @@ load('game/ui/scene/UpdateScene', function () {
                 appInstance.gameAgent().Tips('===========热更失败======')
             })
             updater.update()
+        },
+
+        onClearClicked: function () {
+            let localPath = jsb.fileUtils.getWritablePath() + '/update/'
+            global.gameFile.removeDir(localPath)
+
         }
     })
 

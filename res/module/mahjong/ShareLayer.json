@@ -829,7 +829,7 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 1123.9041,
+                  "X": 1123.968,
                   "Y": 523.6447
                 },
                 "Scale": {
@@ -847,8 +847,8 @@
                   "X": 0.2438,
                   "Y": 0.0333
                 },
-                "LeftMargin": 967.9041,
-                "RightMargin": 0.0959,
+                "LeftMargin": 967.968,
+                "RightMargin": 0.032,
                 "TopMargin": 184.3553,
                 "BottomMargin": 511.6447,
                 "Tag": 784,
@@ -928,7 +928,7 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 1123.5042,
+                  "X": 1123.4559,
                   "Y": 411.8418
                 },
                 "Scale": {
@@ -946,8 +946,8 @@
                   "X": 0.2438,
                   "Y": 0.0333
                 },
-                "LeftMargin": 967.5042,
-                "RightMargin": 0.4958,
+                "LeftMargin": 967.4559,
+                "RightMargin": 0.5441,
                 "TopMargin": 296.1582,
                 "BottomMargin": 399.8418,
                 "Tag": 786,
@@ -1027,7 +1027,7 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 1126.3602,
+                  "X": 1126.4,
                   "Y": 298.873
                 },
                 "Scale": {
@@ -1045,8 +1045,8 @@
                   "X": 0.2438,
                   "Y": 0.0333
                 },
-                "LeftMargin": 970.3602,
-                "RightMargin": -2.3602,
+                "LeftMargin": 970.4,
+                "RightMargin": -2.4,
                 "TopMargin": 409.127,
                 "BottomMargin": 286.873,
                 "Tag": 788,
@@ -1290,7 +1290,7 @@
                   "Y": 0.5
                 },
                 "PreSize": {
-                  "X": 0.7813,
+                  "X": 0.7812,
                   "Y": 0.6944
                 },
                 "LeftMargin": 140.0,
@@ -1530,11 +1530,6 @@
                   "Path": "Default/Button_Disable.png",
                   "Plist": ""
                 },
-                "PressedFileData": {
-                  "Type": "Default",
-                  "Path": "Default/Button_Press.png",
-                  "Plist": ""
-                },
                 "NormalFileData": {
                   "Type": "Normal",
                   "Path": "result/share_channel_wx.png",
@@ -1603,11 +1598,6 @@
                 "DisabledFileData": {
                   "Type": "Default",
                   "Path": "Default/Button_Disable.png",
-                  "Plist": ""
-                },
-                "PressedFileData": {
-                  "Type": "Default",
-                  "Path": "Default/Button_Press.png",
                   "Plist": ""
                 },
                 "NormalFileData": {
@@ -1687,7 +1677,6 @@
       "UsedResources": [
         "common/gy_fh.png",
         "Default/Button_Disable.png",
-        "Default/Button_Press.png",
         "Default/ImageFile.png",
         "png/9.png",
         "result/1.png",

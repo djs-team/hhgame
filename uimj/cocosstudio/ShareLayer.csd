@@ -180,10 +180,10 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Text_16" ActionTag="-296900887" Tag="784" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="967.9041" RightMargin="0.0959" TopMargin="184.3553" BottomMargin="511.6447" FontSize="24" LabelText="特色竞技赛场，海量超值奖品" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="Text_16" ActionTag="-296900887" Tag="784" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="967.9680" RightMargin="0.0320" TopMargin="184.3553" BottomMargin="511.6447" FontSize="24" LabelText="特色竞技赛场，海量超值奖品" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="312.0000" Y="24.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="1123.9041" Y="523.6447" />
+                <Position X="1123.9680" Y="523.6447" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.8781" Y="0.7273" />
@@ -202,10 +202,10 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Text_16_0" ActionTag="1234840210" Tag="786" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="967.5042" RightMargin="0.4958" TopMargin="296.1582" BottomMargin="399.8418" FontSize="24" LabelText="邀请好友加入，永久佣金奖励" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="Text_16_0" ActionTag="1234840210" Tag="786" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="967.4559" RightMargin="0.5441" TopMargin="296.1582" BottomMargin="399.8418" FontSize="24" LabelText="邀请好友加入，永久佣金奖励" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="312.0000" Y="24.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="1123.5042" Y="411.8418" />
+                <Position X="1123.4559" Y="411.8418" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.8777" Y="0.5720" />
@@ -224,10 +224,10 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Text_16_0_0" ActionTag="1830990367" Tag="788" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="970.3602" RightMargin="-2.3602" TopMargin="409.1270" BottomMargin="286.8730" FontSize="24" LabelText="视频在线交友，真爱一线情牵" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="Text_16_0_0" ActionTag="1830990367" Tag="788" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="970.4000" RightMargin="-2.4000" TopMargin="409.1270" BottomMargin="286.8730" FontSize="24" LabelText="视频在线交友，真爱一线情牵" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="312.0000" Y="24.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="1126.3602" Y="298.8730" />
+                <Position X="1126.4000" Y="298.8730" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.8800" Y="0.4151" />
@@ -282,7 +282,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="shareClickLayout" Visible="False" ActionTag="-295165692" Tag="134" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+          <AbstractNodeData Name="shareClickLayout" ActionTag="-295165692" Tag="134" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <Children>
               <AbstractNodeData Name="Image_27" ActionTag="-166564237" Tag="135" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="140.0000" RightMargin="140.0000" TopMargin="110.0000" BottomMargin="110.0000" LeftEage="422" RightEage="422" TopEage="237" BottomEage="237" Scale9OriginX="422" Scale9OriginY="237" Scale9Width="436" Scale9Height="246" ctype="ImageViewObjectData">
@@ -351,7 +351,6 @@
                 <PreSize X="0.0461" Y="0.0833" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
                 <NormalFileData Type="Normal" Path="result/share_channel_wx.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
@@ -366,7 +365,6 @@
                 <PreSize X="0.0469" Y="0.0833" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
                 <NormalFileData Type="Normal" Path="result/share_channel_friend.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />

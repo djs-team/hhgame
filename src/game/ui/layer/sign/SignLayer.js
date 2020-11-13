@@ -115,6 +115,7 @@ load('game/ui/layer/sign/SignLayer', function () {
 
         onCloseClick: function () {
             appInstance.sendNotification(GameEvent.HALL_RED_GET)
+            appInstance.audioManager().resumeMusic()
             appInstance.uiManager().removeUI(this)
         },
 

@@ -135,6 +135,7 @@ load('game/ui/layer/member/MemberLayer', function () {
 
         onCloseClick: function () {
             appInstance.sendNotification(GameEvent.HALL_RED_GET)
+            appInstance.audioManager().resumeMusic()
             appInstance.uiManager().removeUI(this)
         },
 

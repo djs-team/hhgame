@@ -1,8 +1,8 @@
 {
-    "packageUrl": "http://hot.harmonygames.cn/chot/web/main/1.0.2/", 
-    "remoteManifestUrl": "http://hot.harmonygames.cn/chot/web/main/1.0.2/project.manifest", 
+    "packageUrl": "http://hot.harmonygames.cn/chot/web/main/1.1.1/", 
+    "remoteManifestUrl": "http://hot.harmonygames.cn/chot/web/main/1.1.1/project.manifest", 
     "remoteVersionUrl": "http://hot.harmonygames.cn/chot/web/main/version.manifest", 
-    "version": "1.0.2", 
+    "version": "1.1.1", 
     "assets": {
         "res/module/mahjong/card/value/selfhand/feng_hand_1.png": {
             "md5": "7b9746a60e9d741d9ca8e75d9471c7e1", 
@@ -36,6 +36,10 @@
             "md5": "cc9dc5dcad1fda7b77f666ebb7642a6a", 
             "size": 6271
         }, 
+        "res/module/mahjong/sound/dongbei/woman/kuaijieyu/8ningai.mp3": {
+            "md5": "a6fc9d8f1b38695b1e98af4ef282d492", 
+            "size": 39441
+        }, 
         "res/sound/dongbei/man/qiandao.mp3": {
             "md5": "419fce511d791772e8eb03df4ce107fd", 
             "size": 49472
@@ -48,9 +52,9 @@
             "md5": "79c89e6a0869c8f14761d926d7fa12f8", 
             "size": 924528
         }, 
-        "res/fukashop/fk_17.png": {
-            "md5": "142a7249f6888792236c52e6b0fe3184", 
-            "size": 2602
+        "res/animation/magic/kiss/skeleton.png": {
+            "md5": "55a1ce73973d6953c26badfdd6637ff0", 
+            "size": 2099005
         }, 
         "res/button/xin_anniu_18.png": {
             "md5": "89e51d8a48e1c055cb218fa2855c7f40", 
@@ -230,7 +234,7 @@
         }, 
         "res/animation/hall/dating_gengduowanfa/dating_gengduowanfa.json": {
             "md5": "c5675c75dc3347b99bd3dde82cf44575", 
-            "size": 2476
+            "size": 2562
         }, 
         "res/animation/player/zixia/zixia.png": {
             "md5": "039d3863baebe497ba98ae9fe47471d9", 
@@ -243,6 +247,10 @@
         "res/animation/hall/dating_fukashangcheng/shangcheng.atlas": {
             "md5": "d64b9e750ffd6b5d59452b7c85ae3eff", 
             "size": 1089
+        }, 
+        "res/fukashop/fk_17.png": {
+            "md5": "142a7249f6888792236c52e6b0fe3184", 
+            "size": 2602
         }, 
         "res/arena/ssc_5.png": {
             "md5": "8bd70185b4a5672fcb03624e3450c795", 
@@ -294,7 +302,7 @@
         }, 
         "res/animation/hall/yaojinshu/dating_yaojinshu.json": {
             "md5": "854c8b20e0d92966f770bd181dbccb0e", 
-            "size": 5302
+            "size": 5425
         }, 
         "res/module/mahjong/HeadLayer.json": {
             "md5": "75524dd9a5713401da89f28f68c38263", 
@@ -420,6 +428,10 @@
             "md5": "34fa7e9fe08435d034cf23781ee1d7da", 
             "size": 9693
         }, 
+        "res/animation/magic/slipper/skeleton.atlas": {
+            "md5": "8f676ed9d8242cddfb6dc8aa742b1d65", 
+            "size": 502
+        }, 
         "res/sign/qd_21.png": {
             "md5": "8f974df383dafbeea731b04611c249a6", 
             "size": 2110
@@ -454,7 +466,7 @@
         }, 
         "res/animation/hall/majiangche/majiangche.json": {
             "md5": "fb411fc757d88785465e7018cf024a49", 
-            "size": 3699
+            "size": 3813
         }, 
         "res/module/mahjong/magic/t.png": {
             "md5": "fc7c92486ad91fea1ff100e3ad23bc30", 
@@ -472,6 +484,10 @@
             "md5": "1613f8e05cabfa5424bafd958340c6d9", 
             "size": 24635
         }, 
+        "res/module/mahjong/sound/dongbei/woman/kuaijieyu/2hairang.mp3": {
+            "md5": "c5029e72cba30f0c1deb2e34fc57cdf2", 
+            "size": 26902
+        }, 
         "res/sign/qd_jl_10.png": {
             "md5": "ca148eb341504a753c04c02616069d9a", 
             "size": 491896
@@ -484,9 +500,9 @@
             "md5": "8fb3ce93d0147d167dbbac113f1c5733", 
             "size": 44974
         }, 
-        "res/animation/hall/zhuanpan/dating_zhuanpan.png": {
-            "md5": "cea31661c891ef547c2ebefa69748758", 
-            "size": 129159
+        "res/module/mahjong/sound/dongbei/woman/kuaijieyu/3aiya.mp3": {
+            "md5": "9dab67d912fda8823700a87248edcd41", 
+            "size": 33172
         }, 
         "res/module/mahjong/card/value/selfhand/tiao_hand_1.png": {
             "md5": "9b2287fbb8074c0a8d8bade693756c02", 
@@ -495,6 +511,10 @@
         "res/code/member/vip_2.png": {
             "md5": "408411e3e0d6a9442329a7702b9b4637", 
             "size": 3399
+        }, 
+        "res/animation/magic/egg/skeleton.json": {
+            "md5": "c0462a1dacb2531bb9a661ffb7ebac61", 
+            "size": 1584
         }, 
         "res/module/mahjong/card/value/topshow/tiao_top_3.png": {
             "md5": "0b446dbb26008d87190ac5c841793d86", 
@@ -596,13 +616,17 @@
             "md5": "f4b64a73c7877d67c97b6e7880ecad17", 
             "size": 11020
         }, 
-        "res/module/mahjong/match/ssc_18.png": {
-            "md5": "5eab872df00c5c1089d88790c41dd3b7", 
-            "size": 1027
+        "res/vip/vip_1.png": {
+            "md5": "d707e06155ce1b55b186a34f8ed5cbb7", 
+            "size": 3399
         }, 
         "res/set/sz_5.png": {
             "md5": "ce44a2a03b07706dfdf8d7ce96e75353", 
             "size": 11623
+        }, 
+        "res/module/mahjong/sound/dongbei/woman/kuaijieyu/9nida.mp3": {
+            "md5": "4adfa6e714cfdb970aeddde14d8366ca", 
+            "size": 30246
         }, 
         "res/module/mahjong/card/value/topshow/feng_top_4.png": {
             "md5": "f0a235e6776c0d5493515724b50e7f7d", 
@@ -611,6 +635,10 @@
         "src/game/msghandler/MatchResultSmallProto.jsc": {
             "md5": "e5aa09daa002eb85663969b8bfbd5a47", 
             "size": 5191
+        }, 
+        "res/module/mahjong/sound/dongbei/woman/kuaijieyu/1kuaidian.mp3": {
+            "md5": "55a7eb1db6cc6e8c65fdc190a0fe1827", 
+            "size": 34426
         }, 
         "res/animation/player/zixia/zixia.json": {
             "md5": "cb6a614eefeca2d68433959df499ef96", 
@@ -904,9 +932,9 @@
             "md5": "6922db1f44eb97e0f3c1eb550e151898", 
             "size": 89197
         }, 
-        "res/module/mahjong/sound/putong/woman/gaming/hu_biedong.mp3": {
-            "md5": "2eac3036b57795066465b4a407d01551", 
-            "size": 37769
+        "res/module/mahjong/sound/dongbei/man/kuaijieyu/9nida.mp3": {
+            "md5": "10a6901fa9fc3506f12702de72d59c51", 
+            "size": 31082
         }, 
         "res/turntable/zphd_26.png": {
             "md5": "5bf333bc24059707de6b42e9e2afa2e7", 
@@ -932,13 +960,13 @@
             "md5": "68371b3840b8563b16f64a482405d2f0", 
             "size": 22511
         }, 
-        "res/role/js_fg1.png": {
-            "md5": "a84752ae90f4deeeeee684bc5cb39086", 
-            "size": 32946
+        "src/game/msghandler/MatchResultProto.jsc": {
+            "md5": "5a13e8609b641b7e6a6e4215afe15ec3", 
+            "size": 2666
         }, 
         "res/animation/hall/dating_gengduowanfa/dating_gengduowanfa.atlas": {
             "md5": "d31898c76c8725ba64d18b08bc6a0065", 
-            "size": 287
+            "size": 307
         }, 
         "src/game/msghandler/MatchResultBigProto.jsc": {
             "md5": "b3ee8b1bd2f7cede863443a1c18efbaf", 
@@ -1053,8 +1081,8 @@
             "size": 195227
         }, 
         "res/module/mahjong/sound/dongbei/woman/card/tiao_1.mp3": {
-            "md5": "fa162b1e76ba917dc009516e719db35d", 
-            "size": 12274
+            "md5": "4becfe8aee10039cf7269ffb830cae91", 
+            "size": 25726
         }, 
         "res/module/mahjong/match/ssc_14.png": {
             "md5": "2d03e573d286c79fcce2fa1999c850c2", 
@@ -1079,6 +1107,10 @@
         "res/animation/player/nanchushi/nanchushi.json": {
             "md5": "b237947ba6d5f9e1b04e6ab816f83a81", 
             "size": 36931
+        }, 
+        "res/animation/magic/egg/skeleton.atlas": {
+            "md5": "e64b28cb42256106fc1496a5762b8825", 
+            "size": 500
         }, 
         "src/game/msghandler/PropSyncProto.jsc": {
             "md5": "1b6fd71966e050a647c813b6f1de4d60", 
@@ -1113,12 +1145,12 @@
             "size": 5012
         }, 
         "src/game/ui/layer/turntable/TurnTableLayer.jsc": {
-            "md5": "934cbeb91a0335e82a5bf16e56407061", 
-            "size": 20607
+            "md5": "ad7603b0a4e138495bad8845ec9b5d4a", 
+            "size": 20671
         }, 
-        "src/game/msghandler/MatchResultProto.jsc": {
-            "md5": "5a13e8609b641b7e6a6e4215afe15ec3", 
-            "size": 2666
+        "res/role/js_fg1.png": {
+            "md5": "a84752ae90f4deeeeee684bc5cb39086", 
+            "size": 32946
         }, 
         "res/module/mahjong/common/xin_anniu_10.png": {
             "md5": "dcf5863a8abb0153b82c08104da88f4c", 
@@ -1308,6 +1340,10 @@
             "md5": "4d44bc51b8780876f0917e31bdf1ee22", 
             "size": 8889
         }, 
+        "res/module/mahjong/sound/dongbei/woman/kuaijieyu/5hengheng.mp3": {
+            "md5": "4584c9f1534ddfb973fc11de7a9e476e", 
+            "size": 54488
+        }, 
         "src/module/mahjong/ui/DeskBgLayer.jsc": {
             "md5": "a5d8f7a4cb0559c54372ad0ec8e3bad2", 
             "size": 1468
@@ -1332,6 +1368,10 @@
             "md5": "27375dddd6a968fd62fd4d99cbe800c2", 
             "size": 3706
         }, 
+        "res/module/mahjong/sound/putong/woman/kuaijieyu/7shouwan.mp3": {
+            "md5": "55fa9008cca28c737e70894a25b4e0f9", 
+            "size": 67549
+        }, 
         "src/public/network/BaseProto.jsc": {
             "md5": "d04e16af3b6553b148d4f71f861a56e6", 
             "size": 2224
@@ -1345,8 +1385,8 @@
             "size": 617
         }, 
         "src/module/mahjong/ui/DeskPersonlLayerMdt.jsc": {
-            "md5": "d775b3f8c51c314707bb25c35882ccad", 
-            "size": 2855
+            "md5": "c39db81f956973545b3b0443c39b518c", 
+            "size": 2873
         }, 
         "res/code/props/xjhb_1.png": {
             "md5": "b9046aa12c9229b57702869a6404de54", 
@@ -1597,8 +1637,8 @@
             "size": 28156
         }, 
         "res/UpdateScene.json": {
-            "md5": "8a7c63c37cc51dfc861b3b113c146b3c", 
-            "size": 26689
+            "md5": "d1fc2f1c5efb99169aecf663ed4efda9", 
+            "size": 34675
         }, 
         "res/module/mahjong/sound/putong/man/gaming/chi_1.mp3": {
             "md5": "1281f46a7ab8a50131dde6e151aa88d8", 
@@ -1648,6 +1688,10 @@
             "md5": "15921331524a802fc432817bbd42eaee", 
             "size": 488964
         }, 
+        "res/module/mahjong/sound/putong/man/kuaijieyu/5hengheng.mp3": {
+            "md5": "2c452375861b223b9ab36a4d6837a57b", 
+            "size": 70370
+        }, 
         "res/module/mahjong/code/select/chiting.png": {
             "md5": "de227e6bf254ade667d4c8086498f4c9", 
             "size": 18666
@@ -1661,8 +1705,8 @@
             "size": 224360
         }, 
         "src/module/mahjong/ui/DeskTopLayer.jsc": {
-            "md5": "8c66b995267b1efcf9e69bf0eb66805b", 
-            "size": 17013
+            "md5": "dc73acaada5341ec488d58355e2aafae", 
+            "size": 22699
         }, 
         "res/fukashop/fk_37.png": {
             "md5": "c9b565cc8c4cdc404397aedcc12b01a2", 
@@ -1701,8 +1745,8 @@
             "size": 18924
         }, 
         "src/game/ui/scene/UpdateScene.jsc": {
-            "md5": "d75db10d599ca8633e9e327fd0903178", 
-            "size": 9468
+            "md5": "9c8d890f0bf84de930b599ce10c483b7", 
+            "size": 10018
         }, 
         "res/module/mahjong/sound/putong/woman/gaming/match_taotai.mp3": {
             "md5": "e2f53ed6f3c7cf33307d0745a76b3875", 
@@ -1715,6 +1759,10 @@
         "res/module/mahjong/sound/dongbei/woman/card/tiao_4.mp3": {
             "md5": "14f08e9b1ce9e8ba875633d927ed8721", 
             "size": 13110
+        }, 
+        "res/animation/magic/flower/skeleton.atlas": {
+            "md5": "9064a2ac53f32c9f9a3c3e52cf273734", 
+            "size": 811
         }, 
         "res/arena/ssc_3.png": {
             "md5": "b16925492822bc8095303459467cd732", 
@@ -1800,6 +1848,10 @@
             "md5": "86d302b72198fe370511de70e835f23c", 
             "size": 22458
         }, 
+        "res/animation/magic/tomato/skeleton.atlas": {
+            "md5": "cc8855cfda6fedead1a90e42fd1666ba", 
+            "size": 1064
+        }, 
         "res/arena/ssc_26.png": {
             "md5": "75c58e4d66b5edd98b28061e5c5446fc", 
             "size": 3280
@@ -1840,6 +1892,10 @@
             "md5": "45719f4230f1321f82d64ba34e000eb2", 
             "size": 482784
         }, 
+        "res/module/mahjong/sound/dongbei/man/kuaijieyu/1kuaidian.mp3": {
+            "md5": "4c57ab095cead96287241e1e10c36f24", 
+            "size": 33172
+        }, 
         "res/module/mahjong/card/value/topshow/feng_top_5.png": {
             "md5": "7fb9d7b098b5d5024c834efaa7d0eaed", 
             "size": 20032
@@ -1871,6 +1927,10 @@
         "res/module/mahjong/sound/dongbei/man/card/wan_7.mp3": {
             "md5": "f8dfc748de5bb1beaa76b663b427816d", 
             "size": 13528
+        }, 
+        "res/animation/magic/slipper/skeleton.png": {
+            "md5": "502f2bce816bdb8b0d1742f884adc5dc", 
+            "size": 62408
         }, 
         "res/module/mahjong/sound/putong/man/gaming/hu_wohule.mp3": {
             "md5": "bfc42dde139e228c4a936d5a8bdc937d", 
@@ -1930,11 +1990,15 @@
         }, 
         "res/animation/hall/yaojinshu/yaojinshu.atlas": {
             "md5": "acf967876e74073cbd39ceb59b8d9f83", 
-            "size": 465
+            "size": 499
         }, 
         "res/arena/ssc_21.png": {
             "md5": "9d4b851b2c5ce58218c573e34ea5354b", 
             "size": 17692
+        }, 
+        "res/module/mahjong/sound/dongbei/man/kuaijieyu/6dajia.mp3": {
+            "md5": "5095dfa12fefcf110937543cf4fa706f", 
+            "size": 26484
         }, 
         "res/code/goods/zphd_5.png": {
             "md5": "43a27f4ce51ac95216f7d3a5ca120230", 
@@ -2132,6 +2196,10 @@
             "md5": "7209c908e7e273f89552b5a5dc7e5bc5", 
             "size": 8564
         }, 
+        "res/module/mahjong/sound/putong/man/kuaijieyu/6dajia.mp3": {
+            "md5": "2f69811dbe7c0126e083c29087cbc74d", 
+            "size": 48427
+        }, 
         "res/animation/table/duijukaishi/duijukaishi.png": {
             "md5": "2a219b48a58260cb85fff9410f99ac86", 
             "size": 514157
@@ -2180,9 +2248,17 @@
             "md5": "a19f453176afcbdec8829cfda48b8160", 
             "size": 2006
         }, 
+        "res/animation/hall/zhuanpan/dating_zhuanpan.png": {
+            "md5": "cea31661c891ef547c2ebefa69748758", 
+            "size": 129159
+        }, 
         "res/module/mahjong/card/ground/hand/left_hand_1.png": {
             "md5": "94646da11fb849e5af362cee45827c92", 
             "size": 6364
+        }, 
+        "res/animation/magic/kiss/skeleton.atlas": {
+            "md5": "70ffecdb04baa1c3ec3f19e451af8919", 
+            "size": 1600
         }, 
         "res/module/mahjong/sound/putong/woman/gaming/chi_2.mp3": {
             "md5": "53c7029af085d923881122835d72a2b3", 
@@ -2207,6 +2283,10 @@
         "res/NobleLayer.json": {
             "md5": "5ce1283d3c953f5a6d6456239ec6b95a", 
             "size": 210568
+        }, 
+        "res/coinshop/scjb_7.png": {
+            "md5": "e1fb09e88f8bf2c7457409f46308d77c", 
+            "size": 77828
         }, 
         "res/module/mahjong/sound/dongbei/woman/gaming/peng_2.mp3": {
             "md5": "b073d570813e0fff4f304ab7c2ed7f81", 
@@ -2267,6 +2347,10 @@
         "res/button/xin_anniu_5.png": {
             "md5": "a44213472395b40ce134925123e26189", 
             "size": 5808
+        }, 
+        "res/module/mahjong/sound/dongbei/man/kuaijieyu/8ningai.mp3": {
+            "md5": "499ab812fd951b79477f231ceaf2d9ea", 
+            "size": 46964
         }, 
         "res/module/mahjong/card/value/leftshow/tiao_left_5.png": {
             "md5": "88a21fb7031f8eacdcb63f812eae8881", 
@@ -2368,9 +2452,9 @@
             "md5": "fb5b8e573755bc795955918256d54e7c", 
             "size": 1786
         }, 
-        "src/game/ui/layer/member/MemberLayer.jsc": {
-            "md5": "592dc03dbc485cd0c5dc264046dbc5bf", 
-            "size": 21038
+        "res/module/mahjong/sound/dongbei/woman/gaming/peng_1.mp3": {
+            "md5": "a7945d63effc9fdc4b17146dd1bf1236", 
+            "size": 10184
         }, 
         "res/module/mahjong/result/12.png": {
             "md5": "45bc102b56d1eb557450102717aceaa7", 
@@ -2383,6 +2467,10 @@
         "res/personal/gexx_8.png": {
             "md5": "0c2fff12d8b48c417e1d5268b9b7f2bd", 
             "size": 3651
+        }, 
+        "res/module/mahjong/sound/dongbei/woman/kuaijieyu/4woyou.mp3": {
+            "md5": "ebc343e010c42744638dbdbb64a4336a", 
+            "size": 56160
         }, 
         "res/module/mahjong/sound/putong/woman/card/wan_6.mp3": {
             "md5": "08e6551f3d0564a2e6eb1c7693f1d4d8", 
@@ -2431,6 +2519,10 @@
         "src/game/ui/layer/authentication/AuthenticationLayer.jsc": {
             "md5": "164f486dd80ffbc912727379fb8e4656", 
             "size": 3003
+        }, 
+        "res/animation/magic/tomato/skeleton.png": {
+            "md5": "a96b39736c5501827c4ceb69b6273087", 
+            "size": 76081
         }, 
         "res/module/mahjong/sound/dongbei/man/card/tiao_9.mp3": {
             "md5": "045caef411e25768f37c3a322222a0f1", 
@@ -2489,8 +2581,8 @@
             "size": 489092
         }, 
         "src/module/mahjong/common/ResConfig.jsc": {
-            "md5": "4fdbff209eb538cef40e0d50f283a929", 
-            "size": 3766
+            "md5": "554047f242a9e9dde6ff150e61057767", 
+            "size": 5064
         }, 
         "src/module/mahjong/ui/DeskHeadLayer.jsc": {
             "md5": "f4314907546679c4a73e421c83468fa4", 
@@ -2504,17 +2596,17 @@
             "md5": "cc4fc8ceae63a52b9d415e8ab0dfa9dd", 
             "size": 13110
         }, 
-        "res/coinshop/scjb_7.png": {
-            "md5": "e1fb09e88f8bf2c7457409f46308d77c", 
-            "size": 77828
+        "res/module/mahjong/sound/dongbei/man/kuaijieyu/5hengheng.mp3": {
+            "md5": "93b90acd8598798d26930687a87c5196", 
+            "size": 40277
         }, 
         "res/arena/ssc_16.png": {
             "md5": "0fef38294b5ccc458904bf99f99f0d60", 
             "size": 1398
         }, 
-        "res/module/mahjong/sound/putong/man/card/feng_6.mp3": {
-            "md5": "0a6a72ba804516d917c22827676384bc", 
-            "size": 12274
+        "res/module/mahjong/card/ground/deck/self_deck_6.png": {
+            "md5": "a0ee24e3016d47c9c19dc833e2d4008b", 
+            "size": 23398
         }, 
         "res/module/mahjong/card/value/selfshow/tong_show_7.png": {
             "md5": "2506495eacbc72563505a26c5fb5e43d", 
@@ -2523,6 +2615,10 @@
         "res/set/sz_1.png": {
             "md5": "4a1441b304b9d3af03bdeb318dee2fd5", 
             "size": 2527
+        }, 
+        "src/game/ui/layer/member/MemberLayer.jsc": {
+            "md5": "208f6df0459bf3fbda3248ad3acca7f0", 
+            "size": 21534
         }, 
         "res/code/goods/gy_fk.png": {
             "md5": "4d44bc51b8780876f0917e31bdf1ee22", 
@@ -2603,6 +2699,10 @@
         "res/hall/dtjm_f1_4.png": {
             "md5": "fda0bd40b9be539679a6020686b6a977", 
             "size": 13389
+        }, 
+        "res/module/mahjong/sound/putong/woman/gaming/hu_biedong.mp3": {
+            "md5": "2eac3036b57795066465b4a407d01551", 
+            "size": 37769
         }, 
         "res/module/mahjong/sound/putong/man/gaming/match_taotai.mp3": {
             "md5": "0c445c0c3d41cfb124c742ae565da664", 
@@ -2782,7 +2882,7 @@
         }, 
         "res/animation/player/caishen/caishen.atlas": {
             "md5": "f84a1f68110bdc0d7758feb80ff7c85f", 
-            "size": 1728
+            "size": 1853
         }, 
         "res/vip/vip_6.png": {
             "md5": "a609811ffa77f5255fcc191e78c655a4", 
@@ -2885,8 +2985,8 @@
             "size": 187915
         }, 
         "src/game/ui/layer/role/RoleLayer.jsc": {
-            "md5": "540d54d7cc3afcf4386a31259d1987d4", 
-            "size": 18730
+            "md5": "0fe108ef86a4b21562a3b92521c1e3c5", 
+            "size": 19219
         }, 
         "res/cashcow/yjs_3_1.png": {
             "md5": "acd88238be95a3e415c0b0bbfd964a67", 
@@ -2956,9 +3056,9 @@
             "md5": "8b8ddbe2391511ba6e05d975dd2d9dba", 
             "size": 1735
         }, 
-        "res/module/mahjong/sound/dongbei/woman/gaming/peng_1.mp3": {
-            "md5": "a7945d63effc9fdc4b17146dd1bf1236", 
-            "size": 10184
+        "res/module/mahjong/sound/putong/woman/card/wan_9.mp3": {
+            "md5": "03bbf1b699ea0d9fff4cc7d14c3ca7c1", 
+            "size": 14782
         }, 
         "res/module/mahjong/common/bt_1.png": {
             "md5": "dae70dc8e0bbfe7f14b059979a017501", 
@@ -3088,6 +3188,10 @@
             "md5": "e9d38561077d381143cae3cc813fd661", 
             "size": 29933
         }, 
+        "res/animation/magic/flower/skeleton.json": {
+            "md5": "c77366cf732743aca1e22651bde85db1", 
+            "size": 2169
+        }, 
         "res/code/props/js_cs1_1.png": {
             "md5": "a3c10e69456b71b3e8dc21f2817f1e7c", 
             "size": 19971
@@ -3146,11 +3250,15 @@
         }, 
         "res/animation/player/huangdi/huangdi.atlas": {
             "md5": "c6b75aa3d9ffd6af7017f467d45f4bff", 
-            "size": 1132
+            "size": 1215
         }, 
         "res/module/mahjong/card/value/leftshow/feng_left_11.png": {
             "md5": "e362fe35c34429fdcde38446a29d6291", 
             "size": 492521
+        }, 
+        "res/module/mahjong/sound/putong/woman/kuaijieyu/9nida.mp3": {
+            "md5": "7a0586d3a5b1d5336b1bc1052c4eaea6", 
+            "size": 40382
         }, 
         "res/module/mahjong/sound/putong/man/card/wan_8.mp3": {
             "md5": "8b921687437fae76ea85d8c99de00eda", 
@@ -3162,7 +3270,7 @@
         }, 
         "res/animation/hall/dating_libao/dating_libao.json": {
             "md5": "56bc43e4ed4820869fb47a79f6a42984", 
-            "size": 2511
+            "size": 2594
         }, 
         "res/module/mahjong/expression/bq_18.png": {
             "md5": "d3367a8d2db77cddc02251fd71e596a4", 
@@ -3171,6 +3279,10 @@
         "res/sign/qd_10.png": {
             "md5": "7ec3f5273e93e4cc8a443699a87c7020", 
             "size": 1488
+        }, 
+        "res/module/mahjong/sound/putong/man/kuaijieyu/7shouwan.mp3": {
+            "md5": "2798be141801caee4d108dd6e055a249", 
+            "size": 98582
         }, 
         "res/module/mahjong/sound/dongbei/man/gaming/ting_wotingle.mp3": {
             "md5": "5f77d4c6e2db039421df83c2dff6156a", 
@@ -3361,12 +3473,16 @@
             "size": 22305
         }, 
         "src/game/msghandler/GamingProto.jsc": {
-            "md5": "1c4414a92cfebfb0fde3f94b7650825d", 
-            "size": 1772
+            "md5": "3a19cac27b9cdc5e7df2320dd8b590d5", 
+            "size": 2186
         }, 
         "res/code/goods/zphd_11.png": {
             "md5": "96691bd7206a2b92d994bce493943620", 
             "size": 63557
+        }, 
+        "res/module/mahjong/sound/dongbei/man/kuaijieyu/7shouwan.mp3": {
+            "md5": "ce77050915e730965cb3fa595834fd38", 
+            "size": 63265
         }, 
         "src/public/init/Load.jsc": {
             "md5": "6677df025bd2d0c81700aff60429c102", 
@@ -3473,8 +3589,8 @@
             "size": 2481
         }, 
         "src/module/mahjong/ui/DeskPersonlLayer.jsc": {
-            "md5": "ca57651f478f97c490bf2fe704d6ffae", 
-            "size": 6745
+            "md5": "ab2185726192bdf2788fbe50b4516c15", 
+            "size": 6794
         }, 
         "res/testCard/left_out_num19.png": {
             "md5": "24b20481299222ff301343b816627f4a", 
@@ -3531,6 +3647,10 @@
         "res/common/sex_man.png": {
             "md5": "1a57493f374c9d5d93968c48e88234bb", 
             "size": 1567
+        }, 
+        "res/animation/magic/tomato/skeleton.json": {
+            "md5": "46688922d216598a51b2382710b245bf", 
+            "size": 1684
         }, 
         "res/sign/qd_14.png": {
             "md5": "862439007c58c17e88c5382d2dd331a3", 
@@ -3610,7 +3730,7 @@
         }, 
         "res/animation/hall/zhuanpan/dating_zhuanpan.json": {
             "md5": "128502dff6363922fa32b5c33d329114", 
-            "size": 3323
+            "size": 3392
         }, 
         "res/login/useragree_1.png": {
             "md5": "4a38fca8c6cf0bc2396b65c087fec9fd", 
@@ -3630,7 +3750,7 @@
         }, 
         "res/animation/hall/dating_saishichang/dating_saishichang.json": {
             "md5": "903e4914ffdbc98c25ad398339510dfe", 
-            "size": 4294
+            "size": 4391
         }, 
         "res/module/mahjong/sound/dongbei/man/gaming/lose_junzibaochou.mp3": {
             "md5": "be7011e8a03d1c8eeaccc207429db8df", 
@@ -3648,6 +3768,10 @@
             "md5": "a60a091c27804636a4398237a4e7977a", 
             "size": 2364
         }, 
+        "res/animation/magic/flower/skeleton.png": {
+            "md5": "3dfd80a58e8f746922ac492efcf90c18", 
+            "size": 76204
+        }, 
         "res/module/mahjong/card/value/topshow/wan_top_5.png": {
             "md5": "9b6bccbec805eb2c365860eb64aae11a", 
             "size": 22495
@@ -3655,6 +3779,10 @@
         "res/module/mahjong/code/select/pengting.png": {
             "md5": "322dfdf3125927d5b88b13f2571d2639", 
             "size": 18485
+        }, 
+        "res/module/mahjong/sound/dongbei/woman/kuaijieyu/7shouwan.mp3": {
+            "md5": "e5c901b195e92da17c7bd1383cd07a4b", 
+            "size": 51144
         }, 
         "res/module/mahjong/match/ssc_15.png": {
             "md5": "73454c8f599a2509414c0d53a6643401", 
@@ -3671,6 +3799,10 @@
         "res/module/mahjong/sound/dongbei/woman/gaming/lose_yibuxiaoxin.mp3": {
             "md5": "1b5bb8d2b099c0605a665e6324f6c9fc", 
             "size": 22723
+        }, 
+        "res/module/mahjong/sound/putong/woman/kuaijieyu/3aiya.mp3": {
+            "md5": "22b65d6c7d6c24dd1ec9bca990d3e180", 
+            "size": 55533
         }, 
         "res/sign/qd_11.png": {
             "md5": "20b6645813af5b6b135ecd82acc8aede", 
@@ -3757,12 +3889,16 @@
             "size": 13946
         }, 
         "src/module/mahjong/common/TableConfig.jsc": {
-            "md5": "40f4fe8dfce46d78eccd9e2c0c8be0e6", 
-            "size": 6598
+            "md5": "9367ccc7d7ea6329562e1427e29db449", 
+            "size": 6614
         }, 
         "res/module/mahjong/sound/putong/woman/card/tiao_7.mp3": {
             "md5": "c2832dbbbdcb778c40c29178df83eb16", 
             "size": 13528
+        }, 
+        "res/module/mahjong/sound/dongbei/man/kuaijieyu/3aiya.mp3": {
+            "md5": "1c6f3bc4eba49699e2dbad6ab421f813", 
+            "size": 29410
         }, 
         "res/module/mahjong/sound/putong/woman/card/tiao_3.mp3": {
             "md5": "4afaaf3ae7dc043916ebd8d6c34009b3", 
@@ -3800,9 +3936,9 @@
             "md5": "cc6d0aa2c2e7fc570635298629eeed2c", 
             "size": 2052
         }, 
-        "res/module/mahjong/card/ground/deck/self_deck_6.png": {
-            "md5": "a0ee24e3016d47c9c19dc833e2d4008b", 
-            "size": 23398
+        "res/module/mahjong/sound/putong/man/card/feng_6.mp3": {
+            "md5": "0a6a72ba804516d917c22827676384bc", 
+            "size": 12274
         }, 
         "src/game/msghandler/PlayerOnlineProto.jsc": {
             "md5": "f132785ee6f0b288013a0875da4a30f4", 
@@ -3829,8 +3965,8 @@
             "size": 606834
         }, 
         "src/game/ui/layer/sign/SignLayer.jsc": {
-            "md5": "8e45eeda9dd475bbf36538fedf9483bd", 
-            "size": 16529
+            "md5": "47ce2b075d490eeabbf069930a750d10", 
+            "size": 17024
         }, 
         "res/choosecity/dqxz_3.png": {
             "md5": "64734f4768b7f89ece86a5bc5de73f4e", 
@@ -3912,9 +4048,9 @@
             "md5": "58848218ef2f6713e340089098be6a40", 
             "size": 45507
         }, 
-        "res/vip/vip_1.png": {
-            "md5": "d707e06155ce1b55b186a34f8ed5cbb7", 
-            "size": 3399
+        "res/module/mahjong/match/ssc_18.png": {
+            "md5": "5eab872df00c5c1089d88790c41dd3b7", 
+            "size": 1027
         }, 
         "res/sign/qd_js_2.png": {
             "md5": "3e0a6cd2f7185cfd031da9e7004d5e6d", 
@@ -4057,8 +4193,8 @@
             "size": 45293
         }, 
         "src/game/ui/layer/personal/PersonalLayer.jsc": {
-            "md5": "3144ec9e6fb5469f47f409ba6b90a332", 
-            "size": 9510
+            "md5": "c316922a5264a82defb9a0b2eabd3a74", 
+            "size": 9569
         }, 
         "res/common/gx_1.png": {
             "md5": "1212162576f4cc39b4b7521fc3289f79", 
@@ -4180,9 +4316,17 @@
             "md5": "e229885b59afc20ffda6c48b2c5896b9", 
             "size": 42808
         }, 
+        "res/module/mahjong/sound/dongbei/man/kuaijieyu/4woyou.mp3": {
+            "md5": "8ee4ca1cbe0b483afe98904c0d52c377", 
+            "size": 50308
+        }, 
         "res/code/props/chushi1.png": {
             "md5": "c3292cfd860939ddc426112a2728d5ef", 
             "size": 178034
+        }, 
+        "res/module/mahjong/sound/putong/man/kuaijieyu/9nida.mp3": {
+            "md5": "23858f7d1f9740d1068b4476d8d0be2e", 
+            "size": 45293
         }, 
         "res/module/mahjong/sound/dongbei/woman/card/wan_7.mp3": {
             "md5": "73048939eca57983b045978bfef904ca", 
@@ -4208,9 +4352,9 @@
             "md5": "d335e8309e132a903fdb0c2add835b16", 
             "size": 47682
         }, 
-        "res/animation/player/zhangzuolin/zhangzuolin.atlas": {
-            "md5": "3786c47ee0efe504b24609bcc2a0e89d", 
-            "size": 1628
+        "res/animation/hall/dating_saishichang/dating_saishichang.atlas": {
+            "md5": "a29820248b86846fafcf004a979fd8b0", 
+            "size": 2461
         }, 
         "res/code/props/jinbi1.png": {
             "md5": "ed484329bfef069a5b5a532fa5f7b04d", 
@@ -4226,7 +4370,7 @@
         }, 
         "res/animation/hall/zhuanpan/dating_zhuanpan.atlas": {
             "md5": "67f14fec39910d35d5a8ea404466d868", 
-            "size": 1933
+            "size": 2065
         }, 
         "res/task/rwzx_13.png": {
             "md5": "350554d28b35691ab1af9e7e4d30c202", 
@@ -4236,9 +4380,17 @@
             "md5": "4f7bfa0128a24913699ece0fd8b2f558", 
             "size": 1762
         }, 
+        "res/animation/magic/kiss/skeleton.json": {
+            "md5": "3d60bb3cadf4f9423f359c3205e5a8e8", 
+            "size": 2280
+        }, 
         "res/animation/hutype/hua/hua.json": {
             "md5": "7abf0cc3920519477ab85b230d5f038a", 
             "size": 4246
+        }, 
+        "res/module/mahjong/sound/dongbei/woman/kuaijieyu/6dajia.mp3": {
+            "md5": "21d4726ee22b38d0dd5422c5039660ef", 
+            "size": 36933
         }, 
         "res/task/bg_1.png": {
             "md5": "1cb2cfed6bdbd4e7ab4479c8aa1c0e06", 
@@ -4600,6 +4752,10 @@
             "md5": "7230700e3bc6b09ace9055478f03f871", 
             "size": 37863
         }, 
+        "res/module/mahjong/sound/putong/man/kuaijieyu/2hairang.mp3": {
+            "md5": "b8527cc78a757271162f10150faf2cf6", 
+            "size": 34635
+        }, 
         "res/module/mahjong/card/value/topshow/tiao_top_4.png": {
             "md5": "b2ed5253a221b13def984486e1ff0df0", 
             "size": 21067
@@ -4628,9 +4784,9 @@
             "md5": "f7bbe98952d14e9e8f277c7908a0dd53", 
             "size": 4929
         }, 
-        "res/animation/hall/dating_saishichang/dating_saishichang.atlas": {
-            "md5": "a29820248b86846fafcf004a979fd8b0", 
-            "size": 2301
+        "res/animation/player/zhangzuolin/zhangzuolin.atlas": {
+            "md5": "3786c47ee0efe504b24609bcc2a0e89d", 
+            "size": 1628
         }, 
         "res/ShopLayer.json": {
             "md5": "75c67b71cf409f510b406103cf3fbad3", 
@@ -4647,6 +4803,10 @@
         "res/png/dqxz_bg.png": {
             "md5": "f7d431cd64e7c152bd69bda48e3ba157", 
             "size": 426312
+        }, 
+        "res/module/mahjong/sound/putong/woman/kuaijieyu/8ningai.mp3": {
+            "md5": "d5defc03b5dc454e2dfc43d0204d2630", 
+            "size": 53443
         }, 
         "res/animation/hall/dating_libao/dating_libao.png": {
             "md5": "5d2355dfbbe7689a006b022244be1124", 
@@ -4681,8 +4841,8 @@
             "size": 2650
         }, 
         "src/game/ui/scene/LoginScene.jsc": {
-            "md5": "e0b6b19885971b9ad7081bee6146aeb3", 
-            "size": 28090
+            "md5": "0d98ee4405ed4bb85845cc3e138a11c9", 
+            "size": 28105
         }, 
         "res/common/jinbi.png": {
             "md5": "ed484329bfef069a5b5a532fa5f7b04d", 
@@ -4724,9 +4884,9 @@
             "md5": "1608f541ff4bd13e1b064d37d8016c6c", 
             "size": 629
         }, 
-        "res/hall/dtjm_6.png": {
-            "md5": "6f687a6e7796ba9a941f45b1469a7450", 
-            "size": 4020
+        "res/module/mahjong/sound/putong/man/kuaijieyu/1kuaidian.mp3": {
+            "md5": "e8552400ca11d2fc4acf802511ef2c32", 
+            "size": 68489
         }, 
         "res/module/mahjong/desk/pz_35.png": {
             "md5": "9b17356414628c21a3d77151c506fa33", 
@@ -4734,7 +4894,7 @@
         }, 
         "res/animation/hall/majiangche/majiangche.atlas": {
             "md5": "a44eb800f026d126c43ccacacdcfd556", 
-            "size": 180
+            "size": 193
         }, 
         "res/module/mahjong/card/ground/hand/self_hand_0.png": {
             "md5": "d830f79e42de0125cc9eaba1284dee0c", 
@@ -4749,8 +4909,8 @@
             "size": 37550
         }, 
         "src/module/mahjong/ui/DeskTopLayerMdt.jsc": {
-            "md5": "7991c038aa41b894131c8124ed494362", 
-            "size": 3838
+            "md5": "368e6c632d6ae5498a274fe85c9e6a3c", 
+            "size": 3959
         }, 
         "res/login/useragree_3.png": {
             "md5": "a2b343d0f222877feffe11b06bddb897", 
@@ -4782,7 +4942,7 @@
         }, 
         "res/animation/hall/dating_libao/dating_libao.atlas": {
             "md5": "19ec682d2063a3f0ac7249840c4f205a", 
-            "size": 273
+            "size": 293
         }, 
         "res/module/mahjong/magic/j_1.png": {
             "md5": "28811cb96b4ba0defbb0025314f597a8", 
@@ -4912,6 +5072,10 @@
             "md5": "a01c588260f28ae0b2050662b0802363", 
             "size": 13110
         }, 
+        "res/hall/dtjm_6.png": {
+            "md5": "6f687a6e7796ba9a941f45b1469a7450", 
+            "size": 4020
+        }, 
         "res/code/sign/qd_2.png": {
             "md5": "9a6c25524800c2f2e3afac1688765916", 
             "size": 6824
@@ -5020,6 +5184,10 @@
             "md5": "84af4c564f1f01f4ef80916229f236f0", 
             "size": 437180
         }, 
+        "res/module/mahjong/sound/dongbei/man/kuaijieyu/2hairang.mp3": {
+            "md5": "7eee94785adfe69c1456ea232e997912", 
+            "size": 34426
+        }, 
         "res/vip/vip_7.png": {
             "md5": "5040f605c82bd778e993b3e3f7378c84", 
             "size": 1189
@@ -5104,6 +5272,10 @@
             "md5": "2425103df9e6337421c20013e24ca42e", 
             "size": 123983
         }, 
+        "res/module/mahjong/sound/putong/woman/kuaijieyu/6dajia.mp3": {
+            "md5": "ccb84e0545f3b5721ac30f9f3e683140", 
+            "size": 44039
+        }, 
         "src/game/ui/layer/cashcow/CashCowMdt.jsc": {
             "md5": "79d2e070b157603759d10853ab323092", 
             "size": 2970
@@ -5167,6 +5339,10 @@
         "res/cashcow/yjs_4.png": {
             "md5": "6da1ee150f03733e26543332118144b9", 
             "size": 3215
+        }, 
+        "res/module/mahjong/sound/putong/woman/kuaijieyu/4woyou.mp3": {
+            "md5": "cdbf8c1bd9d75e6364616002425a3aaa", 
+            "size": 87924
         }, 
         "res/code/props/js_ncs1_1.png": {
             "md5": "801c49cb36c54e32f77879436a6cc2cf", 
@@ -5290,7 +5466,7 @@
         }, 
         "res/animation/hall/yaojinshu/dating_yaojinshu.atlas": {
             "md5": "0438e093c7e1c174519416db1e8073e3", 
-            "size": 278
+            "size": 298
         }, 
         "res/fukashop/fk_11.png": {
             "md5": "8a44045ac292ba75fb3e1bd123467245", 
@@ -5359,6 +5535,10 @@
         "src/public/http/HttpFactory.jsc": {
             "md5": "dd59f329fa68a20dc6c01f62d8972131", 
             "size": 5507
+        }, 
+        "res/module/mahjong/sound/putong/man/kuaijieyu/4woyou.mp3": {
+            "md5": "892ea8af4459d08489ae9b13c0dd55ef", 
+            "size": 70997
         }, 
         "res/module/mahjong/sound/putong/woman/gaming/ting_kou.mp3": {
             "md5": "310c6000a4049ea31e1114f5889704ed", 
@@ -5532,6 +5712,10 @@
             "md5": "e47efff160fd1308f35d979ee46fde1a", 
             "size": 22393
         }, 
+        "res/module/mahjong/sound/putong/woman/kuaijieyu/2hairang.mp3": {
+            "md5": "0a7ad8569e57d88cb5b89611aebbd63d", 
+            "size": 37769
+        }, 
         "res/code/goods/zphd_14.png": {
             "md5": "dfac5e5346d634b9c35004c89310cfa2", 
             "size": 24419
@@ -5548,9 +5732,9 @@
             "md5": "50c12593604c2d1a763c56779435b885", 
             "size": 1110
         }, 
-        "res/module/mahjong/sound/putong/woman/card/wan_9.mp3": {
-            "md5": "03bbf1b699ea0d9fff4cc7d14c3ca7c1", 
-            "size": 14782
+        "res/module/mahjong/sound/putong/woman/kuaijieyu/5hengheng.mp3": {
+            "md5": "801573479710cb22929c3b2d7095e468", 
+            "size": 80088
         }, 
         "res/module/mahjong/card/value/selfshow/tiao_show_3.png": {
             "md5": "334314fecdeca2c9d012e359d9d83dc7", 
@@ -5587,6 +5771,10 @@
         "res/module/mahjong/sound/dongbei/man/card/feng_6.mp3": {
             "md5": "f099a205fcd635a7f81910f960eb971f", 
             "size": 13110
+        }, 
+        "res/module/mahjong/sound/putong/man/kuaijieyu/8ningai.mp3": {
+            "md5": "12d8eb58ade3cd46f43c3e191cd45cb5", 
+            "size": 50308
         }, 
         "res/module/mahjong/magic/.png": {
             "md5": "808ab2f2a700423365f8a3a7f956f47f", 
@@ -5631,6 +5819,10 @@
         "res/module/mahjong/common/dtjm_1.png": {
             "md5": "3c4294a39160e27f343947d19fbd596c", 
             "size": 9053
+        }, 
+        "res/module/mahjong/sound/putong/man/kuaijieyu/3aiya.mp3": {
+            "md5": "3152b205e996591a4ddac2fa11975b8a", 
+            "size": 48427
         }, 
         "res/module/mahjong/sound/putong/woman/card/tiao_9.mp3": {
             "md5": "53db3f8b91da4ed447c85fe31bac0f11", 
@@ -5681,8 +5873,8 @@
             "size": 4012
         }, 
         "src/module/mahjong/common/MjUtil.jsc": {
-            "md5": "8a452f6b2bffe1cd5e7186dbb0f7ae69", 
-            "size": 4548
+            "md5": "fee37c167b973d66bdb69a5c60185654", 
+            "size": 5275
         }, 
         "res/module/mahjong/desk/liuju.png": {
             "md5": "0a7510da56a3f7feb742dc8eba20d404", 
@@ -5733,8 +5925,12 @@
             "size": 482
         }, 
         "res/module/mahjong/DeskTopLayer.json": {
-            "md5": "ccf20baf261f74c8a94dbd21e8cbf059", 
-            "size": 75929
+            "md5": "26178932d275d3377fb925c84fd5fa0f", 
+            "size": 116696
+        }, 
+        "res/module/mahjong/sound/putong/woman/kuaijieyu/1kuaidian.mp3": {
+            "md5": "396041b8e5e187bb07c5b01f668117c4", 
+            "size": 61280
         }, 
         "res/module/mahjong/desk/pz_13.png": {
             "md5": "2c5773645188f8430802b5465a429a90", 
@@ -5828,6 +6024,10 @@
             "md5": "4d51fe095727a592fd1b31ad0b5d5a55", 
             "size": 42640
         }, 
+        "res/animation/magic/slipper/skeleton.json": {
+            "md5": "ccb42456bac05ad8f30df501c1a69f06", 
+            "size": 1412
+        }, 
         "res/sound/putong/woman/qiandao.mp3": {
             "md5": "480c398083610265dfd989f9007dafe8", 
             "size": 49263
@@ -5835,6 +6035,10 @@
         "res/module/mahjong/card/ground/out/self_out_4.png": {
             "md5": "8c0825350740a1ec285de5cb5c8eeb5e", 
             "size": 7042
+        }, 
+        "res/animation/magic/egg/skeleton.png": {
+            "md5": "c5ceeb6f0f89a504b93e3c9fcff00789", 
+            "size": 45180
         }, 
         "res/code/member/vip_2_1.png": {
             "md5": "806fbd971b0d9d96db453be2854524fb", 

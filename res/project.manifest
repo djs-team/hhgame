@@ -1,8 +1,8 @@
 {
-    "packageUrl": "http://hot.harmonygames.cn/chot/web/main/1.0.0/", 
-    "remoteManifestUrl": "http://hot.harmonygames.cn/chot/web/main/1.0.0/project.manifest", 
+    "packageUrl": "http://hot.harmonygames.cn/chot/web/main/1.1.1/", 
+    "remoteManifestUrl": "http://hot.harmonygames.cn/chot/web/main/1.1.1/project.manifest", 
     "remoteVersionUrl": "http://hot.harmonygames.cn/chot/web/main/version.manifest", 
-    "version": "1.0.0", 
+    "version": "1.1.1", 
     "assets": {
         "res/module/mahjong/card/value/selfhand/feng_hand_1.png": {
             "md5": "7b9746a60e9d741d9ca8e75d9471c7e1", 
@@ -1145,8 +1145,8 @@
             "size": 5012
         }, 
         "src/game/ui/layer/turntable/TurnTableLayer.jsc": {
-            "md5": "934cbeb91a0335e82a5bf16e56407061", 
-            "size": 20607
+            "md5": "ad7603b0a4e138495bad8845ec9b5d4a", 
+            "size": 20671
         }, 
         "res/role/js_fg1.png": {
             "md5": "a84752ae90f4deeeeee684bc5cb39086", 
@@ -1637,8 +1637,8 @@
             "size": 28156
         }, 
         "res/UpdateScene.json": {
-            "md5": "8a7c63c37cc51dfc861b3b113c146b3c", 
-            "size": 26689
+            "md5": "d1fc2f1c5efb99169aecf663ed4efda9", 
+            "size": 34675
         }, 
         "res/module/mahjong/sound/putong/man/gaming/chi_1.mp3": {
             "md5": "1281f46a7ab8a50131dde6e151aa88d8", 
@@ -1745,8 +1745,8 @@
             "size": 18924
         }, 
         "src/game/ui/scene/UpdateScene.jsc": {
-            "md5": "d75db10d599ca8633e9e327fd0903178", 
-            "size": 9468
+            "md5": "9c8d890f0bf84de930b599ce10c483b7", 
+            "size": 10018
         }, 
         "res/module/mahjong/sound/putong/woman/gaming/match_taotai.mp3": {
             "md5": "e2f53ed6f3c7cf33307d0745a76b3875", 
@@ -2617,8 +2617,8 @@
             "size": 2527
         }, 
         "src/game/ui/layer/member/MemberLayer.jsc": {
-            "md5": "7082f3503320965c84474a77f4f09638", 
-            "size": 21473
+            "md5": "208f6df0459bf3fbda3248ad3acca7f0", 
+            "size": 21534
         }, 
         "res/code/goods/gy_fk.png": {
             "md5": "4d44bc51b8780876f0917e31bdf1ee22", 
@@ -2882,7 +2882,7 @@
         }, 
         "res/animation/player/caishen/caishen.atlas": {
             "md5": "f84a1f68110bdc0d7758feb80ff7c85f", 
-            "size": 1728
+            "size": 1853
         }, 
         "res/vip/vip_6.png": {
             "md5": "a609811ffa77f5255fcc191e78c655a4", 
@@ -2985,8 +2985,8 @@
             "size": 187915
         }, 
         "src/game/ui/layer/role/RoleLayer.jsc": {
-            "md5": "eca20dbde348ba114a730ba43ee07f36", 
-            "size": 19158
+            "md5": "0fe108ef86a4b21562a3b92521c1e3c5", 
+            "size": 19219
         }, 
         "res/cashcow/yjs_3_1.png": {
             "md5": "acd88238be95a3e415c0b0bbfd964a67", 
@@ -3965,8 +3965,8 @@
             "size": 606834
         }, 
         "src/game/ui/layer/sign/SignLayer.jsc": {
-            "md5": "274544950bf63ceefece5d9377f974b1", 
-            "size": 16963
+            "md5": "47ce2b075d490eeabbf069930a750d10", 
+            "size": 17024
         }, 
         "res/choosecity/dqxz_3.png": {
             "md5": "64734f4768b7f89ece86a5bc5de73f4e", 
@@ -4193,8 +4193,8 @@
             "size": 45293
         }, 
         "src/game/ui/layer/personal/PersonalLayer.jsc": {
-            "md5": "f3022019cd4bdd159137cd85ca7bce8c", 
-            "size": 9573
+            "md5": "c316922a5264a82defb9a0b2eabd3a74", 
+            "size": 9569
         }, 
         "res/common/gx_1.png": {
             "md5": "1212162576f4cc39b4b7521fc3289f79", 
@@ -4841,8 +4841,8 @@
             "size": 2650
         }, 
         "src/game/ui/scene/LoginScene.jsc": {
-            "md5": "e0b6b19885971b9ad7081bee6146aeb3", 
-            "size": 28090
+            "md5": "0d98ee4405ed4bb85845cc3e138a11c9", 
+            "size": 28105
         }, 
         "res/common/jinbi.png": {
             "md5": "ed484329bfef069a5b5a532fa5f7b04d", 

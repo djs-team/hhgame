@@ -20,6 +20,7 @@ public class AdManage {
     private boolean mIsLoaded = false; //视频是否加载完成
     private Activity mContext;
     private static AdManage singleton = null;
+    private String result = "-1";
 
     public interface OnLoadAdListener {
         void onRewardVideoCached();
@@ -82,6 +83,7 @@ public class AdManage {
         if (adSlot == null) {
             initSlot(codeId, userId);
         }
+
         //step5:请求广告
         mTTAdNative.loadRewardVideoAd(adSlot, new TTAdNative.RewardVideoAdListener() {
             @Override
@@ -118,36 +120,31 @@ public class AdManage {
                     @Override
                     public void onAdClose() {
                         if (onLoadAdListener != null) {
-                            onLoadAdListener.onVidioPlayComplete("0");
+                            onLoadAdListener.onVidioPlayComplete(result);
                         }
                     }
 
                     //视频播放完成回调
                     @Override
                     public void onVideoComplete() {
+                        result = "0";
 
                     }
 
                     @Override
                     public void onVideoError() {
-                        if (onLoadAdListener != null) {
-                            onLoadAdListener.onVidioPlayComplete("-1");
-                        }
+                        result = "-1";
                     }
 
                     //视频播放完成后，奖励验证回调，rewardVerify：是否有效，rewardAmount：奖励梳理，rewardName：奖励名称
                     @Override
                     public void onRewardVerify(boolean rewardVerify, int rewardAmount, String rewardName) {
-                        if (onLoadAdListener != null) {
-                            onLoadAdListener.onVidioPlayComplete("0");
-                        }
+                        result = "0";
                     }
 
                     @Override
                     public void onSkippedVideo() {
-                        if (onLoadAdListener != null) {
-                            onLoadAdListener.onVidioPlayComplete("-1");
-                        }
+                        result = "-1";
                     }
                 });
             }

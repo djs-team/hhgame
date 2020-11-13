@@ -184,6 +184,8 @@ load('game/ui/scene/HallScene', function () {
                 appInstance.gameAgent().Tips('该功能只对会员开放')
                 return
             }
+            //暂停所有音效
+            appInstance.audioManager().pauseAll()
             appInstance.nativeApi().jumpToBlindDate()
 
         },
@@ -243,6 +245,11 @@ load('game/ui/scene/HallScene', function () {
         ctor: function () {
             this._super(ResConfig.View.HallScene)
             this.registerMediator(new HallMdt(this))
+            this.registerEventListener('resumeAllMusic', this.resumeAllMusic)
+        },
+
+        resumeAllMusic: function () {
+            appInstance.audioManager().resumeAll()
         },
 
         onEnter: function () {

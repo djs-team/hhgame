@@ -58,7 +58,11 @@ load('game/ui/scene/UpdateScene', function () {
                 this.bottomPnl.setVisible(false)
                 this.pnl.setVisible(true)
                 this.clearPnl.setVisible(true)
-                this.checkForce()
+                if(cc.sys.os !== cc.sys.OS_WINDOWS)
+                    this.checkForce()
+                else
+                    this.goLoginScene()
+
             }.bind(this))))
         },
 

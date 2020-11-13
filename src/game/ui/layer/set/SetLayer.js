@@ -4,11 +4,13 @@ load('game/ui/layer/set/SetLayer', function () {
     let BaseLayer = include('public/ui/BaseLayer')
     let GameEvent = include('game/config/GameEvent')
     let LocalSave = include('game/public/LocalSave')
+    let SetLayerMdt = include('game/ui/layer/set/SetLayerMdt')
     let GameUtil = include('game/public/GameUtil')
     let layer = BaseLayer.extend({
         _className: 'SetLayer',
         ctor: function (data) {
             this._super(ResConfig.View.SetLayer)
+            this.registerMediator(new SetLayerMdt(this))
             this._data = data
         },
         RES_BINDING: function () {
@@ -127,6 +129,9 @@ load('game/ui/layer/set/SetLayer', function () {
             GameUtil.delayBtn(sender);
             appInstance.audioManager().flush()
             appInstance.sendNotification(GameEvent.HALL_RED_GET)
+            appInstance.uiManager().removeUI(this)
+        },
+        onCloseLayer: function () {
             appInstance.uiManager().removeUI(this)
         }
     })

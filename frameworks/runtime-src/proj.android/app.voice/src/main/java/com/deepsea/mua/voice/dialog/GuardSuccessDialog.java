@@ -25,7 +25,7 @@ public class GuardSuccessDialog extends BaseDialog<DialogGuardSuccessBinding> {
 
 
     public GuardSuccessDialog(@NonNull Context context) {
-        super(context, android.R.style.Theme_Holo_Light_NoActionBar_Fullscreen);
+        super(context, R.style.TranslucentWindow);
     }
 
     @Override
@@ -40,7 +40,7 @@ public class GuardSuccessDialog extends BaseDialog<DialogGuardSuccessBinding> {
 
     @Override
     public boolean isHeightFullScree() {
-        return false;
+        return true;
     }
 
     @Override
@@ -55,7 +55,7 @@ public class GuardSuccessDialog extends BaseDialog<DialogGuardSuccessBinding> {
 
 
     public void setData(ShowGuardAnimationToClientParam bean) {
-        GlideUtils.loadGif(mBinding.ivBg, R.drawable.bg_guard_success);
+        GlideUtils.loadGif(mBinding.ivBg, R.drawable.bg_guard_success_new);
         GlideUtils.circleImage(mBinding.ivHeartUser, bean.getUserImage(), R.drawable.ic_place, R.drawable.ic_place);
         GlideUtils.circleImage(mBinding.ivHostUser, bean.getTargetImage(), R.drawable.ic_place, R.drawable.ic_place);
         ViewBindUtils.setText(mBinding.tvDesc, "欢迎守护\"" + bean.getUserName() + "\"进入房间");
@@ -66,7 +66,7 @@ public class GuardSuccessDialog extends BaseDialog<DialogGuardSuccessBinding> {
     private Subscription mSubscription;
 
     private void startObservable() {
-        mSubscription = Observable.interval(5000, 2000, TimeUnit.MILLISECONDS)
+        mSubscription = Observable.interval(3000, 2000, TimeUnit.MILLISECONDS)
                 .subscribeOn(Schedulers.computation())
                 .subscribe(aLong -> closeDialog());
     }

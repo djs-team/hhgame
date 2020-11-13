@@ -14,9 +14,9 @@
         <ImageView
             android:id="@+id/iv_bg"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:scaleType="fitXY"
-            android:src="@drawable/bg_guard_success" />
+            android:src="@drawable/bg_guard_success_new" />
 
         <RelativeLayout
             android:id="@+id/rl_user_info"

@@ -1,4 +1,3 @@
 [
-    "res/UpdateScene.json", 
-    "src/game/ui/scene/UpdateScene.jsc"
+    "src/game/ui/scene/LoginScene.jsc"
 ]

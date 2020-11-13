@@ -222,7 +222,6 @@ android.applicationVariants.all { variant ->
         }
 
         copy {
-            from "${buildDir}/../../../../../main.js"
             from "${buildDir}/../../../../../project.json"
             into "${buildDir}/intermediates/assets/${variant.dirName}"
         }

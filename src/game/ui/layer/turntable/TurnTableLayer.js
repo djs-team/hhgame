@@ -405,7 +405,10 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
                     msg.type = 1
                     appInstance.gameAgent().httpGame().ACCCPTAWARDSReq(msg)
                 }
+            }else{
+                this.pointPnl.setTouchEnabled(true)
             }
+
             tabState = -1;
 
         },

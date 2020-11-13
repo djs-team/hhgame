@@ -68,6 +68,7 @@ load('game/ui/layer/role/RoleLayer', function () {
         },
         onClseClick: function () {
             appInstance.sendNotification(GameEvent.HALL_RED_GET)
+            appInstance.audioManager().resumeMusic()
             appInstance.uiManager().removeUI(this)
         },
 

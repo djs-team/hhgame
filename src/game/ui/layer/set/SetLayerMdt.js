@@ -25,7 +25,6 @@ load('game/ui/layer/set/SetLayerMdt', function () {
             switch (name) {
                 case TableEvent.GameResultProto:
                 case TableEvent.MatchResultProto:
-                    console.log('===============================test')
                     this.view.onCloseLayer()
                     break
             }

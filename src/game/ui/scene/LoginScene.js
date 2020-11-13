@@ -467,7 +467,7 @@ load('game/ui/scene/LoginScene', function () {
             this._delayBtns = []
             let visionName = appInstance.nativeApi().getAppVersion()
             if (!!visionName) {
-                this.vision.setString(visionName)
+                this.vision.setString(visionName+":test")
             }
             appInstance.nativeApi().getInstallParam()
             this._delayBtns.push(this.phoneLogin)

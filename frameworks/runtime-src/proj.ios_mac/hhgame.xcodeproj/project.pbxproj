@@ -40,10 +40,12 @@
 		0020BB6B250BA1A300E2979B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0020BB6A250BA1A200E2979B /* CoreMotion.framework */; };
 		0020BB6D250BA1D200E2979B /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0020BB6C250BA1D200E2979B /* OpenGLES.framework */; };
 		0020BB6F250BA1DA00E2979B /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0020BB6E250BA1DA00E2979B /* OpenAL.framework */; };
-		00401BEE255E5449000E0D8F /* res in Resources */ = {isa = PBXBuildFile; fileRef = 00401BEC255E5449000E0D8F /* res */; };
-		00401BEF255E5449000E0D8F /* res in Resources */ = {isa = PBXBuildFile; fileRef = 00401BEC255E5449000E0D8F /* res */; };
-		00401BF0255E5449000E0D8F /* src in Resources */ = {isa = PBXBuildFile; fileRef = 00401BED255E5449000E0D8F /* src */; };
-		00401BF1255E5449000E0D8F /* src in Resources */ = {isa = PBXBuildFile; fileRef = 00401BED255E5449000E0D8F /* src */; };
+		00471A60255E5E970084C6FB /* res in Resources */ = {isa = PBXBuildFile; fileRef = 00471A5E255E5E970084C6FB /* res */; };
+		00471A61255E5E970084C6FB /* res in Resources */ = {isa = PBXBuildFile; fileRef = 00471A5E255E5E970084C6FB /* res */; };
+		00471A62255E5E970084C6FB /* src in Resources */ = {isa = PBXBuildFile; fileRef = 00471A5F255E5E970084C6FB /* src */; };
+		00471A63255E5E970084C6FB /* src in Resources */ = {isa = PBXBuildFile; fileRef = 00471A5F255E5E970084C6FB /* src */; };
+		00471A70255E68BD0084C6FB /* script in Resources */ = {isa = PBXBuildFile; fileRef = 00471A6F255E68BD0084C6FB /* script */; };
+		00471A71255E68BD0084C6FB /* script in Resources */ = {isa = PBXBuildFile; fileRef = 00471A6F255E68BD0084C6FB /* script */; };
 		00557A692512FB010056E685 /* CXOCJSBrigeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 00557A682512FB010056E685 /* CXOCJSBrigeManager.m */; };
 		005C3F8C2515E8E400DBCD02 /* AppController+Share.m in Sources */ = {isa = PBXBuildFile; fileRef = 005C3F8B2515E8E400DBCD02 /* AppController+Share.m */; };
 		006148B2250B27F200BB7620 /* CXIPAPurchaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 006148AC250B27F100BB7620 /* CXIPAPurchaseManager.m */; };
@@ -782,8 +784,6 @@
 		BA3A85EC1A724AE900924D24 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA3A85EB1A724AE900924D24 /* Security.framework */; };
 		BA4E718119EB6E3F00932425 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4E718019EB6E3E00932425 /* MediaPlayer.framework */; };
 		BAEE4D841AC40C11003BEB0F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAEE4D831AC40C11003BEB0F /* Security.framework */; };
-		BAF426FB19484B3E002B22EF /* script in Resources */ = {isa = PBXBuildFile; fileRef = BAF426FA19484B3E002B22EF /* script */; };
-		BAF426FC19484B3E002B22EF /* script in Resources */ = {isa = PBXBuildFile; fileRef = BAF426FA19484B3E002B22EF /* script */; };
 		C037820C18BF77C500FE4F13 /* libjscocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C037820918BF76AF00FE4F13 /* libjscocos2d iOS.a */; };
 		C037820F18BF77DE00FE4F13 /* libjscocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C037820718BF76AF00FE4F13 /* libjscocos2d Mac.a */; };
 		C06E23CC18CEFE680093C81A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C06E23CB18CEFE680093C81A /* main.cpp */; };
@@ -905,8 +905,9 @@
 		0020BB6A250BA1A200E2979B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.7.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
 		0020BB6C250BA1D200E2979B /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.7.sdk/System/Library/Frameworks/OpenGLES.framework; sourceTree = DEVELOPER_DIR; };
 		0020BB6E250BA1DA00E2979B /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.7.sdk/System/Library/Frameworks/OpenAL.framework; sourceTree = DEVELOPER_DIR; };
-		00401BEC255E5449000E0D8F /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; name = res; path = game/res; sourceTree = "<group>"; };
-		00401BED255E5449000E0D8F /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; name = src; path = game/src; sourceTree = "<group>"; };
+		00471A5E255E5E970084C6FB /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; name = res; path = game/res; sourceTree = "<group>"; };
+		00471A5F255E5E970084C6FB /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; name = src; path = game/src; sourceTree = "<group>"; };
+		00471A6F255E68BD0084C6FB /* script */ = {isa = PBXFileReference; lastKnownFileType = folder; name = script; path = game/script; sourceTree = "<group>"; };
 		00557A672512FB010056E685 /* CXOCJSBrigeManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXOCJSBrigeManager.h; sourceTree = "<group>"; };
 		00557A682512FB010056E685 /* CXOCJSBrigeManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXOCJSBrigeManager.m; sourceTree = "<group>"; };
 		005C3F8A2515E8E400DBCD02 /* AppController+Share.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppController+Share.h"; sourceTree = "<group>"; };
@@ -2051,7 +2052,6 @@
 		BA3A85EB1A724AE900924D24 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		BA4E718019EB6E3E00932425 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework; sourceTree = DEVELOPER_DIR; };
 		BAEE4D831AC40C11003BEB0F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		BAF426FA19484B3E002B22EF /* script */ = {isa = PBXFileReference; lastKnownFileType = folder; name = script; path = "../../cocos2d-x/cocos/scripting/js-bindings/script"; sourceTree = "<group>"; };
 		C037820118BF76AF00FE4F13 /* cocos2d_js_bindings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_js_bindings.xcodeproj; path = "../../cocos2d-x/cocos/scripting/js-bindings/proj.ios_mac/cocos2d_js_bindings.xcodeproj"; sourceTree = "<group>"; };
 		C06E23CB18CEFE680093C81A /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		D454520B156E22BD00887EB5 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -4471,9 +4471,9 @@
 		15628F5B15F0F5C2000CF24B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				00471A5E255E5E970084C6FB /* res */,
+				00471A5F255E5E970084C6FB /* src */,
 				1A1A081B18C9DF05005C6854 /* project.json */,
-				00401BEC255E5449000E0D8F /* res */,
-				00401BED255E5449000E0D8F /* src */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -4514,9 +4514,9 @@
 			isa = PBXGroup;
 			children = (
 				006148BB250B4F3A00BB7620 /* hhgame-mobile.entitlements */,
+				00471A6F255E68BD0084C6FB /* script */,
 				C037820118BF76AF00FE4F13 /* cocos2d_js_bindings.xcodeproj */,
 				1AC6FB34180E9ACB004C840B /* cocos2d_libs.xcodeproj */,
-				BAF426FA19484B3E002B22EF /* script */,
 				D4545214156E28EF00887EB5 /* Classes */,
 				A92275401517C094001B78AA /* Frameworks */,
 				D45446CC156DE73F00887EB5 /* ios */,
@@ -4789,11 +4789,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00471A71255E68BD0084C6FB /* script in Resources */,
 				1AC22EDE18CA0E11007112B9 /* project.json in Resources */,
-				00401BEF255E5449000E0D8F /* res in Resources */,
-				BAF426FC19484B3E002B22EF /* script in Resources */,
+				00471A61255E5E970084C6FB /* res in Resources */,
 				509D4ACF17EBB2BE00697056 /* Icon.icns in Resources */,
-				00401BF1255E5449000E0D8F /* src in Resources */,
+				00471A63255E5E970084C6FB /* src in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4836,7 +4836,7 @@
 				00614E4B250B94CE00BB7620 /* tongue.bundle in Resources */,
 				00614E14250B94CE00BB7620 /* CXHomeRoomCell.xib in Resources */,
 				0061505E250B94D000BB7620 /* uncheck@3x.png in Resources */,
-				00401BF0255E5449000E0D8F /* src in Resources */,
+				00471A62255E5E970084C6FB /* src in Resources */,
 				00614FDD250B94CF00BB7620 /* icon_029_cover.png in Resources */,
 				00614F06250B94CF00BB7620 /* CXAllOnlineListCell.xib in Resources */,
 				00768039255CD883000C5DB5 /* live_room_guardian_animation.gif in Resources */,
@@ -4858,7 +4858,6 @@
 				00614FF6250B94CF00BB7620 /* icon_007_cover.png in Resources */,
 				00615067250B94D000BB7620 /* close_white@3x.png in Resources */,
 				00614FF9250B94CF00BB7620 /* icon_020_cover.png in Resources */,
-				BAF426FB19484B3E002B22EF /* script in Resources */,
 				00614FF2250B94CF00BB7620 /* icon_027.gif in Resources */,
 				00614FEE250B94CF00BB7620 /* icon_018.gif in Resources */,
 				00614FDC250B94CF00BB7620 /* icon_002_cover.png in Resources */,
@@ -4981,7 +4980,7 @@
 				1AF87B9D1F6F7C80007BE51C /* LaunchScreen.storyboard in Resources */,
 				00615064250B94D000BB7620 /* uncheck@2x.png in Resources */,
 				00614ED2250B94CE00BB7620 /* CXLiveRoomUserProfileReportView.xib in Resources */,
-				00401BEE255E5449000E0D8F /* res in Resources */,
+				00471A60255E5E970084C6FB /* res in Resources */,
 				00614EA5250B94CE00BB7620 /* CXLiveRoomUIView.xib in Resources */,
 				0061505D250B94D000BB7620 /* close_gray@3x.png in Resources */,
 				00615031250B94D000BB7620 /* msg_bg_send@2x.png in Resources */,
@@ -5073,6 +5072,7 @@
 				00614FE1250B94CF00BB7620 /* icon_024_cover.png in Resources */,
 				00614F65250B94CF00BB7620 /* CXMineViewController.xib in Resources */,
 				00614E73250B94CE00BB7620 /* CXGameMusicReserveMusicCell.xib in Resources */,
+				00471A70255E68BD0084C6FB /* script in Resources */,
 				0061506E250B94D000BB7620 /* checked@3x.png in Resources */,
 				00615066250B94D000BB7620 /* close_white@2x.png in Resources */,
 				00614FD1250B94CF00BB7620 /* pin-red.png in Resources */,
@@ -5230,7 +5230,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-hhgame-mobile/Pods-hhgame-mobile-resources.sh\" \n\n\"${PODS_ROOT}/../beforBuild.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-hhgame-mobile/Pods-hhgame-mobile-resources.sh\" \n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

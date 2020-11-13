@@ -366,7 +366,7 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="sayPnl" Visible="False" ActionTag="-736042181" Tag="1282" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="sayPnl" Visible="False" ActionTag="-736042181" Tag="1282" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="1280.0000" Y="720.0000" />
                 <Children>
                   <AbstractNodeData Name="sayPnl0" ActionTag="-1629387882" Tag="739" IconVisible="False" LeftMargin="55.9080" RightMargin="774.0920" TopMargin="569.0661" BottomMargin="99.5553" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" LeftEage="55" RightEage="55" TopEage="25" BottomEage="25" Scale9OriginX="-55" Scale9OriginY="-25" Scale9Width="110" Scale9Height="50" ctype="PanelObjectData">
@@ -525,7 +525,7 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="expressionPnl" ActionTag="1015716369" Tag="1283" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="expressionPnl" ActionTag="1015716369" Tag="1283" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="1280.0000" Y="720.0000" />
                 <Children>
                   <AbstractNodeData Name="expressionImg0" ActionTag="-432771804" Tag="1284" IconVisible="False" LeftMargin="165.5157" RightMargin="1044.4843" TopMargin="550.3928" BottomMargin="99.6072" Scale9Width="46" Scale9Height="46" ctype="ImageViewObjectData">
@@ -580,7 +580,7 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="magicPnl" ActionTag="-365456820" Tag="3628" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="magicPnl" ActionTag="-365456820" Tag="3628" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="1280.0000" Y="720.0000" />
                 <Children>
                   <AbstractNodeData Name="magicNode0" ActionTag="-471445299" Tag="3629" IconVisible="True" LeftMargin="91.1364" RightMargin="1188.8636" TopMargin="655.9705" BottomMargin="64.0295" ctype="SingleNodeObjectData">
@@ -610,7 +610,7 @@
                     <PrePosition X="0.5072" Y="0.7595" />
                     <PreSize X="0.0000" Y="0.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="magicNode3" ActionTag="-1786615252" Tag="3632" IconVisible="True" LeftMargin="99.2863" RightMargin="1180.7136" TopMargin="272.1127" BottomMargin="447.8873" ctype="SingleNodeObjectData">
+                  <AbstractNodeData Name="magicNode3" ActionTag="-1786615252" Tag="3632" IconVisible="True" LeftMargin="99.2863" RightMargin="1180.7137" TopMargin="272.1127" BottomMargin="447.8873" ctype="SingleNodeObjectData">
                     <Size X="0.0000" Y="0.0000" />
                     <AnchorPoint />
                     <Position X="99.2863" Y="447.8873" />

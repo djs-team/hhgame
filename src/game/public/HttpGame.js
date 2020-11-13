@@ -379,7 +379,6 @@ load('game/public/HttpGame', function () {
             }
 
             msg.msgID = HttpEvent.MJ_HALL_CASH_COW
-            console.log('----------------- cashCowReq data : ' + JSON.stringify(msg));
             appInstance.httpAgent().sendPost(msg)
 
         },
@@ -434,7 +433,6 @@ load('game/public/HttpGame', function () {
                 return
             }
 
-            console.log('-------------------cashCowRecordBack data : ' + JSON.stringify(msg))
             appInstance.sendNotification(GameEvent.GET_CASHCOWRECORD, msg)
 
         },
@@ -515,7 +513,6 @@ load('game/public/HttpGame', function () {
                 return
             }
 
-            console.log('-------------------ACCCPTAWARDSBack data : ' + JSON.stringify(msg))
             appInstance.sendNotification(GameEvent.TURNTABLE_RECEIVE, msg)
 
         },
@@ -538,7 +535,6 @@ load('game/public/HttpGame', function () {
                 return
             }
 
-            console.log('-------------------AcceptAwardBack data : ' + JSON.stringify(msg))
             appInstance.sendNotification(GameEvent.TABLE_RESULT_RECEIVE, msg)
 
         },
@@ -583,7 +579,6 @@ load('game/public/HttpGame', function () {
                 return
             }
 
-            console.log('-------------------TURNTABLELOGBack data : ' + JSON.stringify(msg))
             appInstance.sendNotification(GameEvent.TURNTABLE_PLAYERLOG, msg)
 
         },
@@ -1454,7 +1449,6 @@ load('game/public/HttpGame', function () {
          * @param msg
          */
         emailInfoReq: function (msg) {
-            console.log('---msg1111'+JSON.stringify(msg));
             msg = msg || {}
             if (!this._requestBackCall[HttpEvent.MJ_HALL_MAIL_LIST]) {
                 this._requestBackCall[HttpEvent.MJ_HALL_MAIL_LIST] = this.emailInfoBack
@@ -1529,7 +1523,6 @@ load('game/public/HttpGame', function () {
          * @param msg
          */
         emailReceiveBack: function (msg) {
-            console.log('--------emailReceiveBack'+JSON.stringify(msg));
             if (msg.status !== 0) {
                 cc.log('------------->>>httpGame SIGNINDATASBack error happen')
                 return

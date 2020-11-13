@@ -28,6 +28,7 @@ load('module/mahjong/ui/DeskPersonlLayerMdt', function () {
             switch (name) {
                 case TableEvent.GameResultProto:
                 case TableEvent.MatchResultProto:
+                    console.log('=========onCloseBtnClick');
                     this.view.onCloseBtnClick()
                     break
                 default:

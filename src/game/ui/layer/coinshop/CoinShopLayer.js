@@ -269,7 +269,6 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
          */
         onAliPayClick: function (sender) {
             GameUtil.delayBtn(sender);
-            console.log("----------------------onAliPayClick")
             this.PayType.setVisible(false)
             //下单
             let _sendData = coinSender._sendMsg
@@ -285,7 +284,6 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
          */
         onWxClick: function (sender) {
             GameUtil.delayBtn(sender);
-            console.log("----------------------onWxClick")
             this.PayType.setVisible(false)
             //下单
             let _sendData = coinSender._sendMsg

@@ -58,7 +58,6 @@ load('game/ui/layer/coinshop/CoinShopMdt', function () {
                     } else if (payType == 3) {
                         // 苹果支付
                        let vipCode = body.goodsid;
-                       console.log('-------------goodsidgoodsidgoodsid'+vipCode);
                        var iosFlag = "";
                        if (parseInt(vipCode) < 5) {
                          // VIP

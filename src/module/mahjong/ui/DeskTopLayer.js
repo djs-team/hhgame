@@ -82,6 +82,13 @@ load('module/mahjong/ui/DeskTopLayer', function () {
             appInstance.gameAgent().addPopUI(HallResConfig.Ui.SetLayer, {isDesk: true})
         },
 
+        onCloseChuang: function () {
+            this.sayContentPnl.setVisible(false)
+            if (HallResConfig.Ui.SetLayer) {
+                appInstance.uiManager().removeUI(HallResConfig.Ui.SetLayer)
+            }
+        },
+
         onHostingClick: function () {
             let msg = {}
             msg.pHosting = 0
@@ -410,7 +417,6 @@ load('module/mahjong/ui/DeskTopLayer', function () {
         },
 
         toExpressionView: function (data) {
-            console.log('============toExpressionView'+JSON.stringify(data));
             let fangyan = global.localStorage.getStringForKey(LocalSave.LocalLanguage)
             let type = data.type
             let num = data.num
@@ -438,7 +444,6 @@ load('module/mahjong/ui/DeskTopLayer', function () {
             } else if (type == TableConfig.ExpressionType[2]) {
                 let toSeatID = data.toSeatID
                 let toUiSeatID = appInstance.dataManager().getPlayData().seatId2UI(toSeatID)
-                console.log('============toSeatID'+toUiSeatID);
                 this.updateMagicShow(toUiSeatID)
                 let magicAnimation = appInstance.gameAgent().gameUtil().getAni(ResConfig.Magic[num-1])
                 magicAnimation.setAnimation(0, ResConfig.MagicAnimation[num-1], true)

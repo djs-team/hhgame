@@ -45,6 +45,7 @@ load('module/mahjong/ui/DeskTopLayerMdt', function () {
                     break
                 case TableEvent.GameResultProto:
                     this.view.UpdateTableHosting(2)
+                    this.view.onCloseChuang()
                     break
                 case TableEvent.GamingProto:
                     this.view.toExpressionView(body);

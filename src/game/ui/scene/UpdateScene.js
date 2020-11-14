@@ -66,7 +66,6 @@ load('game/ui/scene/UpdateScene', function () {
             }.bind(this))))
         },
 
-
         checkForce: function () {
             appInstance.httpFactory().createHttpRequest('GET', AppConfig.webUrl + 'forceCheck.json', null, function (result) {
                 if (result.code === 0) {
@@ -81,7 +80,7 @@ load('game/ui/scene/UpdateScene', function () {
                             } else {
                                 let serverVersionArray = info.version.split('.')
                                 let localVersionArray = data.version.split('.')
-                                if (serverVersionArray[0] <= localVersionArray[0] && serverVersionArray[1] <= localVersionArray[1]) {
+                                if (serverVersionArray[0] == localVersionArray[0] && serverVersionArray[1] == localVersionArray[1]) {
                                     this.startUpdate()
                                 } else {
                                     let dialogMsg = {

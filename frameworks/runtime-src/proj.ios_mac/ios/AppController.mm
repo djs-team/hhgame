@@ -676,17 +676,28 @@ static AppDelegate s_sharedApplication;
 - (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring>> * _Nullable))restorationHandler {
     //判断是否通过OpenInstall Universal Link 唤起App
     if ([OpenInstallSDK continueUserActivity:userActivity]){//如果使用了Universal link ，此方法必写
-    
         return YES;
     }
     //其他第三方回调；
     return YES;
 }
 
+- (void)getWakeUpParams:(OpeninstallData *)appData {
+    if (appData.data) {
+        [CXClientModel instance].OpeninstallData = appData.data;
+    }
+}
+
 + (void)getOpenInstallParamWithMethod:(NSString *_Nonnull)method {
     [CXOCJSBrigeManager manager].openInstallParamMethod = method;
     [[OpenInstallSDK defaultManager] getInstallParmsCompleted:^(OpeninstallData * _Nullable appData) {
-        [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].openInstallParamMethod param:[appData.data jsonStringEncoded]];
+        if (appData.data && [appData.data.allKeys containsObject:@"installPid"]) {
+            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].openInstallParamMethod param:appData.data[@"installPid"]];
+        } else {
+            if ([CXClientModel instance].OpeninstallData && [[CXClientModel instance].OpeninstallData.allKeys containsObject:@"installPid"]) {
+                [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].openInstallParamMethod param:[CXClientModel instance].OpeninstallData[@"installPid"]];
+            }
+        }
     }];
 }
 
@@ -740,12 +751,16 @@ static AppDelegate s_sharedApplication;
         return;
     }
     
-    [AppController setOrientation:@""];
-    
-    std::string strParam = [param UTF8String];
     std::string strMethod = [method UTF8String];
-    std::string jsCallStr = cocos2d::StringUtils::format("cc.eventManager.dispatchCustomEvent(\"%s\",'%s');", strMethod.c_str(),strParam.c_str());
-    ScriptingCore::getInstance()->evalString(jsCallStr.c_str());
+    if (param.length > 0) {
+        std::string strParam = [param UTF8String];
+        std::string jsCallStr = cocos2d::StringUtils::format("cc.eventManager.dispatchCustomEvent(\"%s\",'%s');", strMethod.c_str(),strParam.c_str());
+        ScriptingCore::getInstance()->evalString(jsCallStr.c_str());
+    } else {
+        std::string jsCallStr = cocos2d::StringUtils::format("cc.eventManager.dispatchCustomEvent(\"%s\");", strMethod.c_str());
+        ScriptingCore::getInstance()->evalString(jsCallStr.c_str());
+    }
+    
 }
 
 + (void)JsCallBack:(NSString *)funcNameStr param:(NSString *)param {

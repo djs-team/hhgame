@@ -435,17 +435,7 @@ load('game/ui/scene/LoginScene', function () {
             }
         },
         onInstallParam: function (msg) {
-            cc.log('======onInstallParam=======' + JSON.stringify(msg))
-            if (cc.sys.OS_ANDROID === cc.sys.os) {
-                cc.sys.localStorage.setItem("installParam", msg);
-                let myParam = cc.sys.localStorage.getItem("installParam");
-                cc.log('======onInstallParam=======' + JSON.stringify(myParam))
-
-
-            }
-            if (cc.sys.OS_IOS === cc.sys.os) {
-
-            }
+            cc.sys.localStorage.setItem("installParam", msg);
         },
 
         onSizeWarning: function (msg) {

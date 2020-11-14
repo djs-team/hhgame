@@ -1,8 +1,8 @@
 {
-    "packageUrl": "http://hot.harmonygames.cn/chot/web/main/1.4.1/", 
-    "remoteManifestUrl": "http://hot.harmonygames.cn/chot/web/main/1.4.1/project.manifest", 
+    "packageUrl": "http://hot.harmonygames.cn/chot/web/main/1.5.0/", 
+    "remoteManifestUrl": "http://hot.harmonygames.cn/chot/web/main/1.5.0/project.manifest", 
     "remoteVersionUrl": "http://hot.harmonygames.cn/chot/web/main/version.manifest", 
-    "version": "1.4.1", 
+    "version": "1.5.0", 
     "assets": {
         "res/module/mahjong/card/value/selfhand/feng_hand_1.png": {
             "md5": "7b9746a60e9d741d9ca8e75d9471c7e1", 
@@ -21,8 +21,8 @@
             "size": 12735
         }, 
         "src/public/suport/NativeApi.jsc": {
-            "md5": "57839b99858ed73e2aafc6a6258c0082", 
-            "size": 32348
+            "md5": "d5414495205f17bb40215684755a9dfd", 
+            "size": 32456
         }, 
         "res/code/props/js_hx1_1.png": {
             "md5": "e5b39029363993d0989117297e74da1e", 
@@ -665,8 +665,8 @@
             "size": 13946
         }, 
         "res/module/mahjong/DeskCardLayer.json": {
-            "md5": "4d9d4c4f79aae55f04868b6eff6ac9f9", 
-            "size": 781405
+            "md5": "127762853acd70d388f9c273254b5c3d", 
+            "size": 781270
         }, 
         "res/module/mahjong/dele/liangAction.png": {
             "md5": "c7063c293e616f008eca2196f5032135", 
@@ -993,7 +993,7 @@
             "size": 42785
         }, 
         "res/module/mahjong/ShareLayer.json": {
-            "md5": "433217c8e66e5a1f7c2e6d33154c072f", 
+            "md5": "0559a7380a456993730475955e17db5c", 
             "size": 50618
         }, 
         "res/module/mahjong/sound/dongbei/woman/gaming/chi_1.mp3": {
@@ -1009,7 +1009,7 @@
             "size": 4062
         }, 
         "res/module/mahjong/DeskResultLayer.json": {
-            "md5": "841b5e5db4c998bf49b91d7c0e2e2640", 
+            "md5": "bcdbe3a7a14f28d06f7f5d56e3b8a7d8", 
             "size": 68100
         }, 
         "res/module/mahjong/card/value/selfhand/wan_hand_2.png": {
@@ -4577,7 +4577,7 @@
             "size": 29410
         }, 
         "src/module/mahjong/ui/DeskCardLayer.jsc": {
-            "md5": "36ef176e6d364192d9ebcd83f8670191", 
+            "md5": "98bdf02476460a294404950d393a9190", 
             "size": 26600
         }, 
         "res/hall/bs_Main_notice.png": {
@@ -4833,8 +4833,8 @@
             "size": 2650
         }, 
         "src/game/ui/scene/LoginScene.jsc": {
-            "md5": "d7f25606c18b1bb871929a4f2d344023", 
-            "size": 28115
+            "md5": "5e9fbfd8a48ae67ac0c2a0294857e498", 
+            "size": 27708
         }, 
         "res/common/jinbi.png": {
             "md5": "ed484329bfef069a5b5a532fa5f7b04d", 

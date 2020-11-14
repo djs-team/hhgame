@@ -200,6 +200,37 @@ global.cropStr = function (str, num, endstr) {
     return str.substring(0,num) + endstr
 }
 
+/**
+ *
+ * @param {version1} str like 1.0.1
+ * @param {version2} str like 1.0.1
+ * @returns {number} -1 小于  0 等于  1 大于
+ */
+global.checkVersion = function (version1, version2) {
+    let arr1 = version1.split('.')
+    let arr2 = version2.split('.')
+    if (arr1[0] > arr2[0]) {
+        return 1
+    } else if (arr1[0] === arr2[0]) {
+        if (arr1[1] > arr2[1]) {
+            return 1
+        } else if (arr1[1] === arr2[1]) {
+            if (arr1[2] > arr2[2]) {
+                return 1
+            } else if(arr1[2] === arr2[2]) {
+                return 0
+            } else {
+                return -1
+            }
+        } else {
+            return -1
+        }
+    } else {
+        return -1
+    }
+
+}
+
 global.getCurDayStr = function () {
     let now = new Date()
     return now.getFullYear().toString() + (now.getMonth() + 1).toString() + now.getDate().toString()

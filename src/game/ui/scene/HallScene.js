@@ -259,6 +259,11 @@ load('game/ui/scene/HallScene', function () {
                 this.showMatchJinjiLayer(appInstance.dataManager().getUserData().MatchJinjiGaming)
                 appInstance.dataManager().getUserData().MatchJinjiGaming = null
             }
+            let newFirstLogin = appInstance.dataManager().getUserData().newFirstLogin
+            if (newFirstLogin === 0) {
+                appInstance.dataManager().getUserData().newFirstLogin = 1
+                appInstance.gameAgent().addUI(ResConfig.Ui.FirstLoginLayer, appInstance.dataManager().getUserData().newReward)
+            }
         },
 
         onExit: function () {

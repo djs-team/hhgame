@@ -141,9 +141,9 @@ load('game/public/GameAgent', function () {
             appInstance.sceneManager().getCurScene().addChild(UI)
         },
 
-        addUI: function (resUi) {
+        addUI: function (resUi, data) {
             let layer = include(resUi)
-            let UI = appInstance.uiManager().createUI(layer)
+            let UI = appInstance.uiManager().createUI(layer, data)
             appInstance.sceneManager().getCurScene().addChild(UI)
         },
 

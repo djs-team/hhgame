@@ -925,6 +925,7 @@
         <Project Name="DialogLayer.csd" Type="Layer" />
         <Project Name="EmailLayer.csd" Type="Layer" />
         <Project Name="FanKuiLayer.csd" Type="Layer" />
+        <Project Name="FirstLoginLayer.csd" Type="Layer" />
         <Project Name="FukaShopLayer.csd" Type="Layer" />
         <Project Name="HallScene.csd" Type="Scene" />
         <Project Name="InvitationLayer.csd" Type="Layer" />

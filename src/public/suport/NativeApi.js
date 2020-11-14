@@ -479,7 +479,7 @@ load('public/suport/NativeApi', function () {
                 if (cc.sys.OS_ANDROID === cc.sys.os) {
                     jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'getInstallParam', '()V')
                 } else if (cc.sys.OS_IOS === cc.sys.os) {
-
+                    jsb.reflection.callStaticMethod('AppController', 'getOpenInstallParamWithMethod:', "installParam")
                 }
             } catch (e) {
                 NativeApi.HelloOC('getInvitationCode throw: ' + JSON.stringify(e))

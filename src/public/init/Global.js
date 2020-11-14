@@ -228,7 +228,30 @@ global.checkVersion = function (version1, version2) {
     } else {
         return -1
     }
+}
 
+/**
+ *
+ * @param {version1} str like 1.0.1
+ * @param {version2} str like 1.0.1
+ * @returns {boolean}
+ */
+global.isNeedForce = function (serverVersion, localVersion) {
+    let sArry = serverVersion.split('.')
+    let lArry = localVersion.split('.')
+    if (sArry[0] > lArry[0]) {
+        return true
+    } else if (sArry[0] === lArry[0]) {
+        if (sArry[1] > lArry[1]) {
+            return true
+        } else if (sArry[1] === lArry[1]) {
+            return false
+        } else {
+            return false
+        }
+    } else {
+        return false
+    }
 }
 
 global.getCurDayStr = function () {

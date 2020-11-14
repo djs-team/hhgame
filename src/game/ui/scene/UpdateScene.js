@@ -81,7 +81,7 @@ load('game/ui/scene/UpdateScene', function () {
                                 if (global.isNeedForce(info.version, data.version)) {
                                     let dialogMsg = {
                                         ViewType: 1,
-                                        SayText: '您的版本过低，请前往下载最新版本！',
+                                        SayText: '您的版本(' + data.version + ')过低，请前往下载最新版本！',
                                         MidBtnName: '前往'
                                     }
                                     dialogMsg.MidBtnClick = function () {

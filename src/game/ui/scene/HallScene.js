@@ -332,6 +332,9 @@ load('game/ui/scene/HallScene', function () {
             this.updatePlayerAni()
             this.morePnl.setVisible(false)
 
+            let MarqueeLayer = include('game/ui/layer/marquee/MarqueeLayer')
+            this._marqueeLayer = appInstance.uiManager().createUI(MarqueeLayer)
+            this.addChild(this._marqueeLayer)
         },
 
         updatePlayerAni: function (pRole) {

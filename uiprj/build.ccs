@@ -931,6 +931,7 @@
         <Project Name="InvitationLayer.csd" Type="Layer" />
         <Project Name="LoadingLayer.csd" Type="Layer" />
         <Project Name="LoginScene.csd" Type="Scene" />
+        <Project Name="MarqueeLayer.csd" Type="Layer" />
         <Project Name="MemberLayer.csd" Type="Layer" />
         <Project Name="PersonalLayer.csd" Type="Layer" />
         <Project Name="ReceivePropsLayer.csd" Type="Layer" />

@@ -6,13 +6,13 @@
       <ObjectData Name="Layer" Tag="35" ctype="GameLayerObjectData">
         <Size X="1280.0000" Y="720.0000" />
         <Children>
-          <AbstractNodeData Name="pnl" ActionTag="1069765390" UserData="{&quot;layoutType&quot;:&quot;maxArea&quot;,&quot;screenAlign&quot;:&quot;top&quot;}" Tag="37" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+          <AbstractNodeData Name="BgPnl" ActionTag="1069765390" UserData="{&quot;layoutType&quot;:&quot;maxArea&quot;,&quot;screenAlign&quot;:&quot;top&quot;}" Tag="37" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <Children>
-              <AbstractNodeData Name="SayPnl" ActionTag="726954080" Tag="234" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="190.0000" RightMargin="190.0000" TopMargin="90.0000" BottomMargin="570.0000" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+              <AbstractNodeData Name="SayPnl" ActionTag="726954080" Tag="234" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="190.0000" RightMargin="190.0000" TopMargin="90.0000" BottomMargin="570.0000" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="900.0000" Y="60.0000" />
                 <Children>
-                  <AbstractNodeData Name="SayTxt" ActionTag="735866484" Tag="38" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="-112.5000" RightMargin="-112.5000" TopMargin="17.5000" BottomMargin="17.5000" FontSize="25" LabelText="这是系统弹窗提示哈这是系统弹窗提示哈这是系统弹窗提示哈这是系统弹窗提示哈这是系统弹窗提示哈" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                  <AbstractNodeData Name="SayText" ActionTag="735866484" Tag="38" IconVisible="False" LeftMargin="-112.5000" RightMargin="-112.5000" TopMargin="17.5000" BottomMargin="17.5000" FontSize="25" LabelText="这是系统弹窗提示哈这是系统弹窗提示哈这是系统弹窗提示哈这是系统弹窗提示哈这是系统弹窗提示哈" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="1125.0000" Y="25.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="450.0000" Y="30.0000" />

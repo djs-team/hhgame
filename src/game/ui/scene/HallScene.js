@@ -334,6 +334,7 @@ load('game/ui/scene/HallScene', function () {
 
             let MarqueeLayer = include('game/ui/layer/marquee/MarqueeLayer')
             this._marqueeLayer = appInstance.uiManager().createUI(MarqueeLayer)
+            this._marqueeLayer.setLocalZOrder(100000)
             this.addChild(this._marqueeLayer)
         },
 

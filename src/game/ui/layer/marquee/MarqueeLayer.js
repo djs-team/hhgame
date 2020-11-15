@@ -8,38 +8,44 @@ load('game/ui/layer/marquee/MarqueeLayer', function () {
     let MarqueeLayerMdt = include('game/ui/layer/marquee/MarqueeLayerMdt')
     let MarqueeLayer = BaseLayer.extend({
         _className: 'MarqueeLayer',
+        _TxtLen: 26,
         RES_BINDING: function () {
             return {
-                'pnl/SayPnl': {  },
-                'pnl/SayPnl/SayTxt': { }
+                'BgPnl': {  },
+                'BgPnl/SayPnl': {  },
+                'BgPnl/SayPnl/SayText': { }
             }
         },
         ctor: function () {
             this._super(ResConfig.View.MarqueeLayer)
             this.registerMediator(new MarqueeLayerMdt(this))
+            this.initData()
         },
 
-        runTips: function (tips, isTurn) {
-            cc.log('--->>>' + tips)
-            this.TipsText.setString(tips)
+        initData: function () {
+            this._pnlSize = this.SayPnl.getContentSize()
+            this._pnlLen = this._pnlSize.width
+        },
 
-            this.TipsBg.setPosition(cc.p(global.View.size.halfWidth, 0))
+        ShowMsg: function () {
+            this.SayPnl.setVisible(true)
+            this.SayText.stopAllActions()
+            this.SayText.setString('这是一个跑马灯真的啊')
+            this.SayText.ignoreContentAdaptWithSize(true)
+            let txtSize = this.SayText.getContentSize()
+            let txtLen = txtSize.width
+            let moveLen = this._pnlLen + txtLen
+            this.SayText.setPositionX(-1 * txtLen)
+            let moveTime = moveLen / 900 * 5
 
-            let callBack = cc.callFunc(function () {
-                appInstance.uiManager().removeUI(this)
-            }.bind(this))
-
-            if (isTurn) {
-                this.setRotation(270)
-            }
-
-            let delayAction = cc.delayTime(0.3)
-            let fadeinAction = cc.fadeIn(0.3)
-            let fadeoutAction = cc.fadeOut(0.3)
-            this.TipsBg.runAction(cc.sequence(cc.spawn(fadeinAction,cc.moveTo(0.3, global.View.size.halfWidth, global.View.size.halfHeight)), delayAction, fadeoutAction, callBack))
+            this.SayText.runAction(cc.sequence(cc.moveTo( moveTime, cc.p( moveLen,30)), cc.CallFunc(function(){
+                cc.log('======action end')
+                this.SayPnl.setVisible(false)
+            }.bind(this))))
         },
         onEnter: function () {
             this._super()
+            this.ShowMsg()
         },
         onExit: function () {
             this._super()

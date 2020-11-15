@@ -26,6 +26,7 @@ load('game/ui/layer/set/SetLayer', function () {
             }
         },
 
+
         initView: function () {
             let musicNum = appInstance.audioManager().getMusicVolume()
             let effectNum = appInstance.audioManager().getEffectVolume()

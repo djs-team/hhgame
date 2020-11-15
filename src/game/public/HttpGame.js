@@ -152,6 +152,22 @@ load('game/public/HttpGame', function () {
         },
 
 
+        marqueeSe: function (msg) {
+            msg = msg || {}
+            if (!this._requestBackCall[HttpEvent.MJ_HALL_MARQUEE]) {
+                this._requestBackCall[HttpEvent.MJ_HALL_MARQUEE] = this.marqueeBack
+            }
+
+            msg.channel = appInstance.dataManager().getUserData().getMjChannelID()
+
+            msg.msgID = HttpEvent.MJ_HALL_MARQUEE
+            appInstance.httpAgent().sendPost(msg)
+        },
+
+        marqueeBack: function (msg) {
+            appInstance.sendNotification(GameEvent.MARQUEE_HTTP_BACK, msg)
+        },
+
         checkHallRed: function (msg) {
             msg = msg || {}
             if (!this._requestBackCall[HttpEvent.MJ_HALL_PLAYER_CHECK_HALL_FLAG]) {

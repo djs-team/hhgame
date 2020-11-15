@@ -13,29 +13,24 @@ load('game/ui/layer/marquee/MarqueeLayerMdt', function () {
         },
         getNotificationList: function () {
             return [
-                GameEvent.DIALOG_HIDE_ALL,
-                GameEvent.DIALOG_HIDE_ONE,
+                GameEvent.MARQUEE_HTTP_BACK,
+                GameEvent.MARQUEE_TCP_BACK,
             ]
         },
         handleNotification: function (notification) {
             let name = notification.getName()
             let body = notification.getBody()
             switch (name) {
-                case GameEvent.DIALOG_HIDE_ALL:
-                    this.view.hideView(body)
+                case GameEvent.MARQUEE_HTTP_BACK:
+                    this.view.httpMsgBack(body)
                     break
-                case GameEvent.DIALOG_HIDE_ONE:
-                    this.view.hideByName(body)
+                case GameEvent.MARQUEE_TCP_BACK:
+                    this.view.tcpMsgBack(body)
                     break
             }
         },
 
-        initView: function () {
-
-        },
-
         onRegister: function () {
-            this.initView()
 
         },
 

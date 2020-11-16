@@ -1,8 +1,8 @@
 {
-    "packageUrl": "http://hot.harmonygames.cn/chot/web/main/1.1.0/", 
-    "remoteManifestUrl": "http://hot.harmonygames.cn/chot/web/main/1.1.0/project.manifest", 
+    "packageUrl": "http://hot.harmonygames.cn/chot/web/main/1.1.1/", 
+    "remoteManifestUrl": "http://hot.harmonygames.cn/chot/web/main/1.1.1/project.manifest", 
     "remoteVersionUrl": "http://hot.harmonygames.cn/chot/web/main/version.manifest", 
-    "version": "1.1.0", 
+    "version": "1.1.1", 
     "assets": {
         "res/module/mahjong/card/value/selfhand/feng_hand_1.png": {
             "md5": "7b9746a60e9d741d9ca8e75d9471c7e1", 
@@ -1397,8 +1397,8 @@
             "size": 617
         }, 
         "src/module/mahjong/ui/DeskPersonlLayerMdt.jsc": {
-            "md5": "c49234a69354fe37273a4f1003304ea2", 
-            "size": 2944
+            "md5": "b2081bdc141d5221282858fb24d8a331", 
+            "size": 2996
         }, 
         "res/code/props/xjhb_1.png": {
             "md5": "b9046aa12c9229b57702869a6404de54", 
@@ -3605,8 +3605,8 @@
             "size": 2481
         }, 
         "src/module/mahjong/ui/DeskPersonlLayer.jsc": {
-            "md5": "c723089249546a07f5576b9ce7c3b180", 
-            "size": 6794
+            "md5": "8fce624ef986d10dac652b771fb96138", 
+            "size": 7275
         }, 
         "res/testCard/left_out_num19.png": {
             "md5": "24b20481299222ff301343b816627f4a", 
@@ -5841,8 +5841,8 @@
             "size": 2699
         }, 
         "res/FirstLoginLayer.json": {
-            "md5": "af782e81cf23b1cd8cb6dfa141cf2fc4", 
-            "size": 27815
+            "md5": "2b61d50e591aa8b95d861da000dfc91a", 
+            "size": 27803
         }, 
         "res/module/mahjong/sound/putong/man/kuaijieyu/3aiya.mp3": {
             "md5": "3152b205e996591a4ddac2fa11975b8a", 

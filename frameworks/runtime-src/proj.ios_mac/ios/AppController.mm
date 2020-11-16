@@ -763,6 +763,7 @@ static AppDelegate s_sharedApplication;
         ScriptingCore::getInstance()->evalString(jsCallStr.c_str());
     }
     
+    [AppController setOrientation:@""];
 }
 
 + (void)JsCallBack:(NSString *)funcNameStr param:(NSString *)param {

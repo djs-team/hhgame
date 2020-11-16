@@ -147,7 +147,10 @@
 }
 
 - (void)hideAllMMPopupView {
-    [_guardRankView hide];
+    if (_guardRankView) {
+        [_guardRankView show];
+        [_guardRankView hide];
+    }
 }
 
 - (void)deallocRoom {

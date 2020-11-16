@@ -93,7 +93,12 @@
         _guard_avatar.hidden = YES;
         _guard_bgImageView.hidden = YES;
     }
-    
+}
+
+- (void)setModel:(__kindof id)model {
+    _avatar_bgImageView.hidden = YES;
+    _guard_avatar.hidden = YES;
+    _guard_bgImageView.hidden = YES;
 }
 
 @end

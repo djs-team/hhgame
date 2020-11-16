@@ -78,7 +78,7 @@
         [_seat_bgImageView sd_setImageWithURL:[NSURL URLWithString:model.modelUser.HeadImageUrl]];
         [_seat_bottomImage sd_setImageWithURL:[NSURL URLWithString:model.modelUser.HeadImageUrl]];
         _seat_bottomName.text = model.modelUser.Name;
-        _seat_bottomDesc.text = [NSString stringWithFormat:@"%@ | %@ |%@", model.modelUser.Age ? [NSString stringWithFormat:@"%@岁" , model.modelUser.Age] : @"年龄" , model.modelUser.Stature ? model.modelUser.Stature : @"身高", model.modelUser.Sex == 1 ? @"男" : @"女"];
+        _seat_bottomDesc.text = [NSString stringWithFormat:@"%@ | %@cm |%@", model.modelUser.Age ? [NSString stringWithFormat:@"%@岁" , model.modelUser.Age] : @"年龄" , model.modelUser.Stature ? model.modelUser.Stature : @"180", model.modelUser.Sex == 1 ? @"男" : @"女"];
         
         if ([model.modelUser.UserId isEqualToString:[CXClientModel instance].userId]) {
             _seat_addFriendBtn.hidden = YES;

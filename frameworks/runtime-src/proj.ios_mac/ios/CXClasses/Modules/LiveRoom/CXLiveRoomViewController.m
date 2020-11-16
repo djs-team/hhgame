@@ -127,6 +127,9 @@
 @property (nonatomic, strong) CXRedPacketStartView *redpacketStartView;
 @property (nonatomic, strong) CXRedPacketProgressView *redpacketProgressView;
 
+// 守护
+@property (nonatomic, strong) CXLiveRoomGuardGroupView *guardRankView;
+
 @end
 
 @implementation CXLiveRoomViewController
@@ -143,7 +146,13 @@
     }];
 }
 
+- (void)hideAllMMPopupView {
+    [_guardRankView hide];
+}
+
 - (void)deallocRoom {
+    
+    [self hideAllMMPopupView];
     
     [CXClientModel instance].isJoinedRoom = NO;
     
@@ -1892,13 +1901,13 @@
 
 #pragma mark - ============================ 守护榜 ================================
 - (void)gotoGuardRankWithUserId:(NSString *)userId {
-    CXLiveRoomGuardGroupView *guardRankView = [[NSBundle mainBundle] loadNibNamed:@"CXLiveRoomGuardGroupView" owner:self options:nil].firstObject;
-    guardRankView.userId = userId;
+    _guardRankView = [[NSBundle mainBundle] loadNibNamed:@"CXLiveRoomGuardGroupView" owner:self options:nil].firstObject;
+    _guardRankView.userId = userId;
     kWeakSelf
-    guardRankView.guardGroupViewBlcok = ^(void) {
+    _guardRankView.guardGroupViewBlcok = ^(void) {
         [weakSelf guardRenew:userId];
     };
-    [guardRankView show];
+    [_guardRankView show];
 }
 
 - (void)guardRenew:(NSString *)userId {

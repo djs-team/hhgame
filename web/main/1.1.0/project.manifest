@@ -1,8 +1,8 @@
 {
-    "packageUrl": "http://hot.harmonygames.cn/chot/web/main/1.6.1/", 
-    "remoteManifestUrl": "http://hot.harmonygames.cn/chot/web/main/1.6.1/project.manifest", 
+    "packageUrl": "http://hot.harmonygames.cn/chot/web/main/1.1.0/", 
+    "remoteManifestUrl": "http://hot.harmonygames.cn/chot/web/main/1.1.0/project.manifest", 
     "remoteVersionUrl": "http://hot.harmonygames.cn/chot/web/main/version.manifest", 
-    "version": "1.6.1", 
+    "version": "1.1.0", 
     "assets": {
         "res/module/mahjong/card/value/selfhand/feng_hand_1.png": {
             "md5": "7b9746a60e9d741d9ca8e75d9471c7e1", 
@@ -4853,8 +4853,8 @@
             "size": 2650
         }, 
         "src/game/ui/scene/LoginScene.jsc": {
-            "md5": "5e9fbfd8a48ae67ac0c2a0294857e498", 
-            "size": 27708
+            "md5": "a78ae9cb106dd1417002796ce9bf6e83", 
+            "size": 27806
         }, 
         "res/common/jinbi.png": {
             "md5": "ed484329bfef069a5b5a532fa5f7b04d", 
@@ -5841,8 +5841,8 @@
             "size": 2699
         }, 
         "res/FirstLoginLayer.json": {
-            "md5": "a33454b41cac775c133d31e86416c600", 
-            "size": 27827
+            "md5": "af782e81cf23b1cd8cb6dfa141cf2fc4", 
+            "size": 27815
         }, 
         "res/module/mahjong/sound/putong/man/kuaijieyu/3aiya.mp3": {
             "md5": "3152b205e996591a4ddac2fa11975b8a", 
@@ -6053,8 +6053,8 @@
             "size": 3503
         }, 
         "res/CustomerLayer.json": {
-            "md5": "4d51fe095727a592fd1b31ad0b5d5a55", 
-            "size": 41367
+            "md5": "074505491c6643b15924fdacf03f6476", 
+            "size": 41364
         }, 
         "res/animation/magic/slipper/skeleton.json": {
             "md5": "ccb42456bac05ad8f30df501c1a69f06", 

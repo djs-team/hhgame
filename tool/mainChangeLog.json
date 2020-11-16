@@ -1,1 +1,5 @@
-[]
+[
+    "res/FirstLoginLayer.json", 
+    "res/CustomerLayer.json", 
+    "src/game/ui/scene/LoginScene.jsc"
+]

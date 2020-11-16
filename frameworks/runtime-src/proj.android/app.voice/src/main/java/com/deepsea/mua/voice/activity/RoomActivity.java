@@ -429,7 +429,7 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
     /**
      * 更新歌词的频率，每100ms更新一次
      */
-    private int mPlayerTimerDuration = 500;
+    private int mPlayerTimerDuration = 1000;
     /**
      * 更新歌词的定时器
      */
@@ -2250,6 +2250,10 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
         super.finish();
 
         try {
+            if (mViewModel == null) {
+                mViewModel = ViewModelProviders.of(this, mFactory).get(RoomViewModel.class);
+            }
+            mViewModel.exitRoom();
             if (aAlertDialog != null && aAlertDialog.isShowing()) {
                 aAlertDialog.dismiss();
                 aAlertDialog = null;

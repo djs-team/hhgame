@@ -157,7 +157,7 @@
                 },
                 "Scale9OriginX": 63,
                 "Scale9OriginY": 25,
-                "Scale9Width": 1154,
+                "Scale9Width": 1580,
                 "Scale9Height": 381,
                 "AnchorPoint": {
                   "ScaleX": 0.5,
@@ -178,14 +178,16 @@
                   "Y": 0.2993
                 },
                 "PreSize": {
-                  "X": 1.0,
+                  "X": 1.3328,
                   "Y": 0.5986
                 },
+                "LeftMargin": -213.0,
+                "RightMargin": -213.0,
                 "TopMargin": 289.0,
                 "Tag": 15,
                 "ActionTag": -1774375353,
                 "Size": {
-                  "X": 1280.0,
+                  "X": 1706.0,
                   "Y": 431.0
                 },
                 "Name": "DeskBg",
@@ -477,8 +479,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 95.0212,
-                      "Y": 43.1762
+                      "X": 95.0139,
+                      "Y": 43.1756
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -498,10 +500,10 @@
                       "X": 0.3627,
                       "Y": 0.3684
                     },
-                    "LeftMargin": 60.0212,
-                    "RightMargin": 62.9788,
-                    "TopMargin": 18.8238,
-                    "BottomMargin": 29.1762,
+                    "LeftMargin": 60.0139,
+                    "RightMargin": 62.9861,
+                    "TopMargin": 18.8244,
+                    "BottomMargin": 29.1756,
                     "Tag": 1067,
                     "ActionTag": -223001385,
                     "Size": {

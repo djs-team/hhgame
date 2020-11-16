@@ -56,7 +56,7 @@ public class ApplyMicroDialog extends BaseDialog<DialogApplyMicroBinding> {
 
     public void setMsg(String name, String url) {
         ViewBindUtils.setText(mBinding.tvTitle, String.format("%s申请上麦", name));
-        GlideUtils.roundImage(mBinding.ivHead, url, R.drawable.ic_place, R.drawable.ic_place);
+        GlideUtils.circleImage(mBinding.ivHead, url, R.drawable.ic_place, R.drawable.ic_place);
         ViewBindUtils.RxClicks(mBinding.tvOk, o -> {
             if (mOnClickListener != null) {
                 mOnClickListener.onClick();

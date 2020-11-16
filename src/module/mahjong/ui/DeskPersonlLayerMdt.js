@@ -20,6 +20,7 @@ load('module/mahjong/ui/DeskPersonlLayerMdt', function () {
             return [
                 TableEvent.GameResultProto,
                 TableEvent.MatchResultProto,
+                TableEvent.GamingProto,
             ]
         },
         handleNotification: function (notification) {
@@ -28,8 +29,10 @@ load('module/mahjong/ui/DeskPersonlLayerMdt', function () {
             switch (name) {
                 case TableEvent.GameResultProto:
                 case TableEvent.MatchResultProto:
-                    console.log('=========onCloseBtnClick');
                     this.view.onCloseBtnClick()
+                    break
+                case TableEvent.GamingProto:
+                    this.view.updatePersonalCoin(body);
                     break
                 default:
                     break

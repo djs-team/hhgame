@@ -1,11 +1,1 @@
-[
-    "res/FirstLoginLayer.json", 
-    "src/game/ui/layer/firstlogin/FirstLoginLayer.jsc", 
-    "src/game/ui/scene/UpdateScene.jsc", 
-    "src/game/ui/scene/HallScene.jsc", 
-    "src/game/config/ResConfig.jsc", 
-    "src/game/public/HttpGame.jsc", 
-    "src/game/public/GameAgent.jsc", 
-    "src/game/data/UserData.jsc", 
-    "src/public/init/Global.jsc"
-]
+[]

@@ -48,7 +48,7 @@ public class UpMicroCardReceiveDialog extends BaseDialog<DialogUpmicroCardReceiv
         ViewBindUtils.RxClicks(mBinding.closeIv, o -> {
             dismiss();
         });
-        ViewBindUtils.RxClicks(mBinding.tvOk, o -> {
+        ViewBindUtils.RxClicks(mBinding.ivMain, o -> {
             if (onClickListener != null) {
                 onClickListener.onConfirm();
             }

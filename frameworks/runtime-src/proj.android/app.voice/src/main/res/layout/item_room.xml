@@ -125,6 +125,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="19dp"
+            android:paddingRight="19dp"
             android:layout_marginBottom="15dp"
             android:text="欢迎来到可爱的直播间"
             android:textColor="@color/white"

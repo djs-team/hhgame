@@ -2250,6 +2250,10 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
         super.finish();
 
         try {
+            if (mViewModel == null) {
+                mViewModel = ViewModelProviders.of(this, mFactory).get(RoomViewModel.class);
+            }
+            mViewModel.exitRoom();
             if (aAlertDialog != null && aAlertDialog.isShowing()) {
                 aAlertDialog.dismiss();
                 aAlertDialog = null;

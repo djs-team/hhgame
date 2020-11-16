@@ -35,7 +35,7 @@ public class RoomsViewModel extends ViewModel {
         pageNumber++;
         return mRepository.getRooms(room_type, pageNumber, SignatureUtils.signWith(room_type),age,city,city_two,city_three);
     }
-    public LiveData<Resource<List<VoiceBanner.BannerListBean>>> getBanners() {
-        return mRepository.getBanners();
+    public LiveData<Resource<List<VoiceBanner.BannerListBean>>> getBanners(int type) {
+        return mRepository.getBanners( type);
     }
 }

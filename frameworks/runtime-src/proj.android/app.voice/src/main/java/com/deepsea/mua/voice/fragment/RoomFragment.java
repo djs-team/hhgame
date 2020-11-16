@@ -2,6 +2,7 @@ package com.deepsea.mua.voice.fragment;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
+import android.os.Environment;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
@@ -62,6 +63,8 @@ public class RoomFragment extends BaseFragment<FragmentRoomBinding> {
     RoomJoinController mRoomJump;
 
     private RoomAdapter mAdapter;
+    private RoomAdapter topAdapter;
+
     private RecyclerAdapterWithHF mAdapterWithHF;
 
     private String roomType;
@@ -127,6 +130,23 @@ public class RoomFragment extends BaseFragment<FragmentRoomBinding> {
                 }
             }
         });
+        topAdapter = new RoomAdapter(mContext);
+        topAdapter.setOnItemClickListener(new BaseBindingAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        boolean hasFaceBeauty = SharedPrefrencesUtil.getData(mContext, "hasFaceBeauty", "hasFaceBeauty", Constant.isBeautyOpen);
+                        if (!hasFaceBeauty || AppConstant.getInstance().isRtcEngineDestroy()) {
+                            AgoraClient.create().release();
+                            AgoraClient.create().setUpAgora(getContext().getApplicationContext(), "e0972168ff254d7aa05501cd85204692");
+                        }
+                    }
+                }).start();
+                mRoomJump.startJump(topAdapter.getItem(position).getRoom_id(), Integer.valueOf(roomType), mContext, null);
+            }
+        });
         mBinding.recyclerView.setLayoutManager(new WrapGridLayoutManager(mContext, 2));
         mBinding.recyclerView.addItemDecoration(new GridItemDecoration(2, ResUtils.dp2px(mContext, 16)));
         mAdapterWithHF = new RecyclerAdapterWithHF(mAdapter);
@@ -137,6 +157,15 @@ public class RoomFragment extends BaseFragment<FragmentRoomBinding> {
         mBinding.recyclerView.setHasFixedSize(true);
         //解决数据加载完成后, 没有停留在顶部的问题
         mBinding.recyclerView.setFocusable(false);
+
+        mBinding.recyclerTop.setLayoutManager(new WrapGridLayoutManager(mContext, 2));
+        mBinding.recyclerTop.addItemDecoration(new GridItemDecoration(2, ResUtils.dp2px(mContext, 16)));
+        mBinding.recyclerTop.setAdapter(topAdapter);
+//解决数据加载不完的问题
+        mBinding.recyclerTop.setNestedScrollingEnabled(false);
+        mBinding.recyclerTop.setHasFixedSize(true);
+//解决数据加载完成后, 没有停留在顶部的问题
+        mBinding.recyclerTop.setFocusable(false);
         addFooter();
     }
 
@@ -144,7 +173,7 @@ public class RoomFragment extends BaseFragment<FragmentRoomBinding> {
         mBinding.refreshLayout.setMaterialHeader();
         mBinding.refreshLayout.setOnRefreshListener(refreshLayout -> {
             refresh();
-//            getBanners();
+            getBanners();
         });
         mBinding.refreshLayout.setOnLoadMoreListener(refreshLayout -> loadMore());
         mBinding.refreshLayout.autoRefresh();
@@ -163,17 +192,29 @@ public class RoomFragment extends BaseFragment<FragmentRoomBinding> {
                 mBinding.refreshLayout.finishRefresh();
                 if (result != null) {
                     if (result.getRoom_list() != null && result.getRoom_list().size() > 0) {
+                        ViewBindUtils.setVisible(mBinding.banner, result.getRoom_list().size() > 1);
                         setRecommendRoom(result.getRoom_list().get(0));
                         RoomsBean.PageInfoBean pageInfo = result.getPageInfo();
                         if (result.getRoom_list().size() > 1) {
-                            mAdapter.setNewData(result.getRoom_list().subList(1, result.getRoom_list().size()));
+                            if (result.getRoom_list().size() <= 3) {
+                                topAdapter.setNewData(result.getRoom_list().subList(1, result.getRoom_list().size()));
+                                mAdapter.setNewData(null);
+                            } else {
+                                topAdapter.setNewData(result.getRoom_list().subList(1, 3));
+                                mAdapter.setNewData(result.getRoom_list().subList(3, result.getRoom_list().size()));
+                            }
+
                         } else {
+                            topAdapter.setNewData(null);
                             mAdapter.setNewData(null);
+
                         }
                         boolean enableLoadMore = pageInfo.getPage() < pageInfo.getTotalPage();
                         mBinding.refreshLayout.setEnableLoadMore(enableLoadMore);
                         mAdapterWithHF.showFooterView(!enableLoadMore);
                     } else {
+                        topAdapter.setNewData(null);
+                        ViewBindUtils.setVisible(mBinding.banner, false);
                         mAdapter.setNewData(null);
                         ViewBindUtils.setVisible(mBinding.tlTimeRecommend, false);
                     }
@@ -216,6 +257,56 @@ public class RoomFragment extends BaseFragment<FragmentRoomBinding> {
         });
     }
 
+    private void initBanner() {
+        ViewUtils.setViewSize(mBinding.banner, 334, 123);
+    }
+
+    public void getBanners() {
+        mViewModel.getBanners(3).observe(this, new BaseObserver<List<VoiceBanner.BannerListBean>>() {
+            @Override
+            public void onSuccess(List<VoiceBanner.BannerListBean> result) {
+                if (result != null) {
+                    setBanner(result);
+                }
+            }
+        });
+
+    }
+
+    private void setBanner(List<VoiceBanner.BannerListBean> list) {
+        List<View> views = new ArrayList<>();
+        mBinding.banner.initCoefficient(list.size());
+        for (int i = 0; i < list.size() * mBinding.banner.getCoefficient(); i++) {
+            ImageView imageView = new ImageView(getContext());
+            imageView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                    ViewGroup.LayoutParams.MATCH_PARENT));
+            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            int index = i % list.size();
+            GlideUtils.roundImage(imageView, list.get(index).getImage(), R.drawable.ic_place, R.drawable.ic_place, 10);
+            imageView.setOnClickListener(v -> {
+                VoiceBanner.BannerListBean bean = list.get(index);
+                if (bean.getLink_type().equals("3")) {
+                    switch (bean.getUi_type()) {
+                        case "2":
+                            EventBus.getDefault().post(new ShowRankStepOne(3));
+                            break;
+                        default:
+                            break;
+                    }
+
+                } else {
+                    PageJumpUtils.jumpToWeb(bean.getTitle(), bean.getLinkurl());
+                }
+
+            });
+            views.add(imageView);
+        }
+        mBinding.banner.addView(views);
+        mBinding.banner.setNavLayoutVisible(list.size() > 1);
+        if (list.size() > 1) {
+            mBinding.banner.startPlay(true);
+        }
+    }
 
     private void loadMore() {
         mViewModel.loadMore(roomType, age, city, city_two, city_three).observe(this, new BaseObserver<RoomsBean>() {

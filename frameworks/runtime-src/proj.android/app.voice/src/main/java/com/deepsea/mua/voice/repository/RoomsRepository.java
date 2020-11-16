@@ -42,11 +42,11 @@ public class RoomsRepository extends BaseRepository {
             }
         });
     }
-    public LiveData<Resource<List<VoiceBanner.BannerListBean>>> getBanners() {
+    public LiveData<Resource<List<VoiceBanner.BannerListBean>>> getBanners(int type) {
         return HttpUtils.requestNoCache(new HttpCallback.NoCacheCallback<List<VoiceBanner.BannerListBean>, BaseApiResult<VoiceBanner>>() {
             @Override
             public LiveData<ApiResponse<BaseApiResult<VoiceBanner>>> createCall() {
-                return mRetrofitApi.bannerlist("1");
+                return mRetrofitApi.bannerlist(String.valueOf(type));
             }
 
             @Override

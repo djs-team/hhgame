@@ -40,6 +40,7 @@ load('module/mahjong/ui/DeskTopLayerMdt', function () {
                 case TableEvent.DrawCardProto:
                 case TableEvent.JiaGangTableProto:
                     this.updateAction()
+                    this.updateRemainingCard()
                     break
                 case TableEvent.TableHostingProto:
                     this.TableHostingProto(body)
@@ -64,6 +65,12 @@ load('module/mahjong/ui/DeskTopLayerMdt', function () {
             if (pSeatID === selfInfo.pSeatID) {
                 this.view.UpdateTableHosting(info.pHosting)
             }
+        },
+
+        updateRemainingCard: function () {
+            let pData = appInstance.dataManager().getPlayData()
+            let tData = pData.tableData
+            this.view.updateRemainingCard(tData.nDeckCardNum)
         },
 
         UpdateView: function () {

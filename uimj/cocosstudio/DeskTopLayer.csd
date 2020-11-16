@@ -643,7 +643,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="TopPnl" Visible="False" ActionTag="793883908" UserData="{&quot;layoutType&quot;:&quot;showAll&quot;,&quot;screenAlign&quot;:&quot;top&quot;}" Tag="401" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+          <AbstractNodeData Name="TopPnl" ActionTag="793883908" UserData="{&quot;layoutType&quot;:&quot;showAll&quot;,&quot;screenAlign&quot;:&quot;top&quot;}" Tag="401" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <Children>
               <AbstractNodeData Name="BaoNd" ActionTag="2052168874" Tag="390" IconVisible="True" LeftMargin="97.8994" RightMargin="1182.1006" TopMargin="60.0000" BottomMargin="660.0000" ctype="SingleNodeObjectData">
@@ -659,7 +659,29 @@
                     <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="desk/pz_11.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="baotip" ActionTag="-291107781" Tag="392" IconVisible="False" LeftMargin="7.8095" RightMargin="-40.8095" TopMargin="-23.5000" BottomMargin="-23.5000" LeftEage="10" RightEage="10" TopEage="15" BottomEage="15" Scale9OriginX="10" Scale9OriginY="15" Scale9Width="13" Scale9Height="17" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="BaoCard" ActionTag="2054238952" Tag="551" IconVisible="False" LeftMargin="-13.5375" RightMargin="-60.4625" TopMargin="-52.9004" BottomMargin="-54.0996" TouchEnable="True" LeftEage="24" RightEage="24" TopEage="35" BottomEage="35" Scale9OriginX="24" Scale9OriginY="35" Scale9Width="26" Scale9Height="37" ctype="ImageViewObjectData">
+                    <Size X="74.0000" Y="107.0000" />
+                    <Children>
+                      <AbstractNodeData Name="BaoCardValue" ActionTag="-826974669" Tag="552" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="-1.0000" RightMargin="-1.0000" TopMargin="7.0000" LeftEage="24" RightEage="24" TopEage="35" BottomEage="35" Scale9OriginX="24" Scale9OriginY="35" Scale9Width="28" Scale9Height="30" ctype="ImageViewObjectData">
+                        <Size X="76.0000" Y="100.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="37.0000" Y="50.0000" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="0.5000" Y="0.4673" />
+                        <PreSize X="1.0270" Y="0.9346" />
+                        <FileData Type="Normal" Path="card/value/selfhand/tiao_hand_8.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="23.4625" Y="-0.5996" />
+                    <Scale ScaleX="0.4300" ScaleY="0.4300" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="card/ground/hand/self_hand_0.png" Plist="" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="NoBao" ActionTag="-291107781" Tag="392" IconVisible="False" LeftMargin="7.8095" RightMargin="-40.8095" TopMargin="-23.5000" BottomMargin="-23.5000" LeftEage="10" RightEage="10" TopEage="15" BottomEage="15" Scale9OriginX="10" Scale9OriginY="15" Scale9Width="13" Scale9Height="17" ctype="ImageViewObjectData">
                     <Size X="33.0000" Y="47.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="24.3095" />
@@ -669,18 +691,19 @@
                     <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="desk/pz_15.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="BaoCard" ActionTag="272836441" Tag="394" IconVisible="False" LeftMargin="-62.5870" RightMargin="-11.4130" TopMargin="-53.5000" BottomMargin="-53.5000" TouchEnable="True" LeftEage="24" RightEage="24" TopEage="35" BottomEage="35" Scale9OriginX="24" Scale9OriginY="35" Scale9Width="26" Scale9Height="37" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="RemainingCard" ActionTag="272836441" Tag="394" IconVisible="False" LeftMargin="-62.5870" RightMargin="-11.4130" TopMargin="-53.5000" BottomMargin="-53.5000" TouchEnable="True" LeftEage="24" RightEage="24" TopEage="35" BottomEage="35" Scale9OriginX="24" Scale9OriginY="35" Scale9Width="26" Scale9Height="37" ctype="ImageViewObjectData">
                     <Size X="74.0000" Y="107.0000" />
                     <Children>
-                      <AbstractNodeData Name="BaoCardValue" ActionTag="539671511" Tag="395" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="-1.0000" RightMargin="-1.0000" TopMargin="7.0000" LeftEage="24" RightEage="24" TopEage="35" BottomEage="35" Scale9OriginX="24" Scale9OriginY="35" Scale9Width="28" Scale9Height="30" ctype="ImageViewObjectData">
-                        <Size X="76.0000" Y="100.0000" />
+                      <AbstractNodeData Name="RemainingCardsTxt" ActionTag="1056806190" Tag="553" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="10.0000" RightMargin="10.0000" TopMargin="36.0000" BottomMargin="36.0000" FontSize="35" LabelText="120" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="54.0000" Y="35.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="37.0000" Y="50.0000" />
+                        <Position X="37.0000" Y="53.5000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.5000" Y="0.4673" />
-                        <PreSize X="1.0270" Y="0.9346" />
-                        <FileData Type="Normal" Path="card/value/selfhand/tiao_hand_8.png" Plist="" />
+                        <CColor A="255" R="26" G="26" B="26" />
+                        <PrePosition X="0.5000" Y="0.5000" />
+                        <PreSize X="0.7297" Y="0.3271" />
+                        <OutlineColor A="255" R="255" G="0" B="0" />
+                        <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />

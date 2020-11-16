@@ -10,9 +10,13 @@ load('module/mahjong/ui/DeskCardLayer', function () {
     let Event = TableConfig.Event
     let TStatus =  TableConfig.TStatus
     let CardConfig = TableConfig.CardConfig
+    let defaultCountDown = 21
     let Layer = BaseLayer.extend({
         _className: 'DeskCardLayer',
         _outCardLen: 10,
+        _countDown: defaultCountDown,
+        _updateTime: 0,
+        _lastUpdateTime: 0,
         RES_BINDING: function () {
             return {
                 'bgPnl/DirectionBg': {  },
@@ -20,6 +24,7 @@ load('module/mahjong/ui/DeskCardLayer', function () {
                 'bgPnl/DirectionBg/Direction1': {  },
                 'bgPnl/DirectionBg/Direction2': {  },
                 'bgPnl/DirectionBg/Direction3': {  },
+                'bgPnl/DirectionBg/CountDownTxt': {  },
                 'CardPnl': {  },
                 'liuJuBg': {  },
                 'fenZhangBg': {  },
@@ -196,8 +201,25 @@ load('module/mahjong/ui/DeskCardLayer', function () {
             if ( typeof seatUI !== 'number') {
                 return
             }
+            this._countDown = defaultCountDown
             this._directionNd[seatUI].setVisible(true)
             this._directionNd[seatUI].runAction(cc.repeatForever(cc.sequence(cc.fadeIn(0.8),cc.fadeOut(0.8))))
+        },
+        /**
+         * 游戏每帧更新的结构
+         * @param dt
+         */
+        onUpdate: function (dt) {
+            this._updateTime += dt
+
+            if (this._updateTime - this._lastUpdateTime > 1) {
+                this._lastUpdateTime = Math.floor(this._updateTime)
+                this._countDown -= 1
+                if (this._countDown < 0) {
+                    this._countDown = 0
+                }
+                this.CountDownTxt.setString(this._countDown)
+            }
         },
         stopDirection: function () {
             for (let i = 0; i < 4; ++i) {

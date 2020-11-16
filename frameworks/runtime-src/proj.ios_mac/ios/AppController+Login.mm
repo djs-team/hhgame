@@ -115,11 +115,15 @@
                 NSString *respStr = [param jsonStringEncoded];
                 [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].jpushLoginMethod param:respStr];
             } else {
-                NSDictionary *param = @{
-                    @"code":@0,
-                };
-                NSString *respStr = [param jsonStringEncoded];
-                [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].jpushLoginMethod param:respStr];
+                if ([showAlert isEqualToString:@"Show"]) {
+                    [self JPushLoginWithPhoneLogin];
+                } else {
+                    NSDictionary *param = @{
+                        @"code":@0,
+                    };
+                    NSString *respStr = [param jsonStringEncoded];
+                    [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].jpushLoginMethod param:respStr];
+                }
             }
             
             [JVERIFICATIONService dismissLoginControllerAnimated:YES completion:nil];

@@ -83,6 +83,8 @@ typedef void(^CXClientModelLeaveRoomCallBack)(NSString *roomId, BOOL success);
 @property (nonatomic, strong) NSString *currentMusicPlayingSongPath;
 
 @property (nonatomic, copy) NSString *registration_id;
+// OpeninstallData
+@property (nonatomic, strong) NSDictionary *OpeninstallData;
 
 // 房间相关
 @property (nonatomic, strong) CXLiveRoomModel *room;

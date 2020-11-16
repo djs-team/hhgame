@@ -22,8 +22,8 @@ android {
         applicationId "com.hehegame.chess"
         minSdkVersion PROP_MIN_SDK_VERSION
         targetSdkVersion PROP_TARGET_SDK_VERSION
-        versionCode 2037
-        versionName "2.0.37"
+        versionCode 2039
+        versionName "2.0.39"
         multiDexEnabled true
         javaCompileOptions {
             annotationProcessorOptions {

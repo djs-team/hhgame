@@ -66,7 +66,6 @@ load('game/ui/scene/UpdateScene', function () {
             }.bind(this))))
         },
 
-
         checkForce: function () {
             appInstance.httpFactory().createHttpRequest('GET', AppConfig.webUrl + 'forceCheck.json', null, function (result) {
                 if (result.code === 0) {
@@ -79,14 +78,10 @@ load('game/ui/scene/UpdateScene', function () {
                             if (er || !data.version) {
                                 this.goLoginScene()
                             } else {
-                                let serverVersionArray = info.version.split('.')
-                                let localVersionArray = data.version.split('.')
-                                if (serverVersionArray[0] <= localVersionArray[0] && serverVersionArray[1] <= localVersionArray[1]) {
-                                    this.startUpdate()
-                                } else {
+                                if (global.isNeedForce(info.version, data.version)) {
                                     let dialogMsg = {
                                         ViewType: 1,
-                                        SayText: '您的版本过低，请前往下载最新版本！',
+                                        SayText: '您的版本(' + data.version + ')过低，请前往下载最新版本！',
                                         MidBtnName: '前往'
                                     }
                                     dialogMsg.MidBtnClick = function () {
@@ -95,6 +90,8 @@ load('game/ui/scene/UpdateScene', function () {
                                         cc.game.end()
                                     }
                                     appInstance.gameAgent().addDialogUINoPop(dialogMsg)
+                                } else {
+                                    this.startUpdate()
                                 }
                             }
                         }.bind(this))
@@ -178,15 +175,12 @@ load('game/ui/scene/UpdateScene', function () {
             this.VersionTxt.setVisible(true)
             this.VersionTxt.setString(version)
             updater.setProgressCallback(function (percent) {
-                cc.log('==========热更过程中=====' + percent)
                 self._percent = percent
             })
             updater.setSuccessCallback(function (isUpdated, curVersion) {
-                cc.log('==========热更成功')
                 self.updateSuccess(isUpdated, curVersion)
             })
             updater.setFailureCallback(function (curVersion) {
-                cc.log('==========热更失败')
                 let ver = curVersion || '0'
                 appInstance.moduleManager().setMainLocalVer(ver)
                 appInstance.gameAgent().Tips('===========热更失败======')

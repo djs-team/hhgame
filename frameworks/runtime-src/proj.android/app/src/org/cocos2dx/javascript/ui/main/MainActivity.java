@@ -86,6 +86,7 @@ import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMMessage;
 
 import org.cocos2dx.javascript.ui.main.viewmodel.MainViewModel;
+import org.cocos2dx.lib.Cocos2dxHelper;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
@@ -679,4 +680,15 @@ public class MainActivity extends BaseActivity<ActivityMainBinding>
         }
     }
 
+    @Override
+    public void finish() {
+        super.finish();
+        Cocos2dxHelper.runOnGLThread(new Runnable() {
+            @Override
+            public void run() {
+                String command = "cc.eventManager.dispatchCustomEvent('" + "resumeAllMusic" + "')";
+                org.cocos2dx.lib.Cocos2dxJavascriptJavaBridge.evalString(command);
+            }
+        });
+    }
 }

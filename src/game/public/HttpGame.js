@@ -57,6 +57,8 @@ load('game/public/HttpGame', function () {
             if (msg.status !== 0) {
                 return
             }
+            msg.newFirstLogin = msg.fistLogin
+            msg.newReward = msg.rewardList
             let saveKey = [
                 'platform',
                 'account',
@@ -65,7 +67,8 @@ load('game/public/HttpGame', function () {
                 'sex',
                 'timetamp',
                 'lastChannel',
-                'fistLogin'
+                'newFirstLogin',
+                'newReward'
             ]
             appInstance.dataManager().getUserData().saveMsg(msg, saveKey)
 
@@ -127,10 +130,11 @@ load('game/public/HttpGame', function () {
             if (msg.status !== 0) {
                 return
             }
+            msg.dayFistLogin = msg.firstLogin
             let saveKey = [
                 'hostip',  //客户端需要连接哪个网关的IP
                 'hostport',  //端口号
-                'firstLogin',  //是否每天第一次登陆0是1不是
+                'dayFistLogin',  //是否每天第一次登陆0是1不是
                 'vipFlag',  //vip弹窗标记0：正常不弹窗1：弹vip界面 2：弹出vip不足三天提示
                 'channel', //城市编号
             ]
@@ -147,6 +151,22 @@ load('game/public/HttpGame', function () {
             appInstance.nativeApi().registerJPUSHTagsID(msg.channel)
         },
 
+
+        marqueeSe: function (msg) {
+            msg = msg || {}
+            if (!this._requestBackCall[HttpEvent.MJ_HALL_MARQUEE]) {
+                this._requestBackCall[HttpEvent.MJ_HALL_MARQUEE] = this.marqueeBack
+            }
+
+            msg.channel = appInstance.dataManager().getUserData().getMjChannelID()
+
+            msg.msgID = HttpEvent.MJ_HALL_MARQUEE
+            appInstance.httpAgent().sendPost(msg)
+        },
+
+        marqueeBack: function (msg) {
+            appInstance.sendNotification(GameEvent.MARQUEE_HTTP_BACK, msg)
+        },
 
         checkHallRed: function (msg) {
             msg = msg || {}

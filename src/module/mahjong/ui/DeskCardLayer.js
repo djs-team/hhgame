@@ -523,10 +523,10 @@ load('module/mahjong/ui/DeskCardLayer', function () {
                     }
                     if (isFirstLine) {
                         scale = 1.1
-                        pos.x = lineIndex * 40 * scale
+                        pos.x = lineIndex * 38 * scale
                     } else {
                         scale = 1.2
-                        pos.x = lineIndex * 40 * scale
+                        pos.x = lineIndex * 38 * scale
                         pos.x = pos.x - 13
                         pos.y -= 38
                         zorder += 100
@@ -550,13 +550,13 @@ load('module/mahjong/ui/DeskCardLayer', function () {
                     }
                     if (isFirstLine) {
                         scale = 1.08
-                        pos.x = -1 * lineIndex * 40 * scale
+                        pos.x = -1 * lineIndex * 38 * scale
                         zorder += 100
                     } else {
                         scale = 1
-                        pos.x = -1 * lineIndex * 40 * scale
+                        pos.x = -1 * lineIndex * 38 * scale
                         pos.x = pos.x - 13
-                        pos.y += 38
+                        pos.y += 35
                     }
 
                     if (isBm) {
@@ -734,8 +734,8 @@ load('module/mahjong/ui/DeskCardLayer', function () {
                     // valueSkewY = 5
                     valueSkewX = 15
                     valuePos = cc.p(28,33)
-                    valueScaleX = 0.58
-                    valueScaleY = 0.55
+                    valueScaleX = 0.60
+                    valueScaleY = 0.50
                     if (uiSeat === 1) {
                         cardValueSp.setRotationY(180)
                     }

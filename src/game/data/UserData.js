@@ -18,7 +18,9 @@ load('game/data/UserData', function () {
         phone:-1,// 手机号
         lastChannel: null,//玩家上次登录的城市
         channel: null, //玩家登录的城市
-        fistLogin: 0,//0是第一次1代表不是第一次
+        dayFistLogin: 1,//0是第一次1代表不是第一次
+        newFirstLogin: 1,//0是第一次1代表不是第一次
+        newReward: [],
         ctor: function () {},
 
         saveMsg: function (msg, key) {

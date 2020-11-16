@@ -925,11 +925,13 @@
         <Project Name="DialogLayer.csd" Type="Layer" />
         <Project Name="EmailLayer.csd" Type="Layer" />
         <Project Name="FanKuiLayer.csd" Type="Layer" />
+        <Project Name="FirstLoginLayer.csd" Type="Layer" />
         <Project Name="FukaShopLayer.csd" Type="Layer" />
         <Project Name="HallScene.csd" Type="Scene" />
         <Project Name="InvitationLayer.csd" Type="Layer" />
         <Project Name="LoadingLayer.csd" Type="Layer" />
         <Project Name="LoginScene.csd" Type="Scene" />
+        <Project Name="MarqueeLayer.csd" Type="Layer" />
         <Project Name="MemberLayer.csd" Type="Layer" />
         <Project Name="PersonalLayer.csd" Type="Layer" />
         <Project Name="ReceivePropsLayer.csd" Type="Layer" />

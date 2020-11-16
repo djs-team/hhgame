@@ -98,6 +98,18 @@ load('game/ui/scene/HallScene', function () {
             this.updateNamePnl.setVisible(true)
         },
 
+        /**
+         * 游戏每帧更新的结构
+         * @param dt
+         */
+        onUpdate: function (dt) {
+            if (this._marqueeLayer) {
+                //先在这进行刷新
+                this._marqueeLayer.onUpdate(dt)
+            }
+        },
+
+
         onHideUpdateNamePnlClick: function () {
             this.updateNamePnl.setVisible(false)
         },
@@ -259,6 +271,11 @@ load('game/ui/scene/HallScene', function () {
                 this.showMatchJinjiLayer(appInstance.dataManager().getUserData().MatchJinjiGaming)
                 appInstance.dataManager().getUserData().MatchJinjiGaming = null
             }
+            let newFirstLogin = appInstance.dataManager().getUserData().newFirstLogin
+            if (newFirstLogin === 0) {
+                appInstance.dataManager().getUserData().newFirstLogin = 1
+                appInstance.gameAgent().addUI(ResConfig.Ui.FirstLoginLayer, appInstance.dataManager().getUserData().newReward)
+            }
         },
 
         onExit: function () {
@@ -326,6 +343,11 @@ load('game/ui/scene/HallScene', function () {
 
             this.updatePlayerAni()
             this.morePnl.setVisible(false)
+
+            let MarqueeLayer = include('game/ui/layer/marquee/MarqueeLayer')
+            this._marqueeLayer = appInstance.uiManager().createUI(MarqueeLayer)
+            this._marqueeLayer.setLocalZOrder(100000)
+            this.addChild(this._marqueeLayer)
 
         },
 

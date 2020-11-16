@@ -338,6 +338,14 @@ load('public/network/MsgTool', function () {
             return this.GET_PACKET_RETID(this.MJ_ROOM_MATCHGAME_ID + num)
         },
 
+        msgId_MANAGER_ID: function (num) {
+            return this.G_MANAGER_ID + num
+        },
+
+        msgId_MANAGER_ID_Re: function (num) {
+            return this.GET_PACKET_RETID(this.G_MANAGER_ID + num)
+        },
+
         addMsgId: function (tb) {
             if (global.isArray(tb)) {
                 for (let i = 0; i < tb.length; ++i) {

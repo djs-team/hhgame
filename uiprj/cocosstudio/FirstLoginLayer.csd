@@ -99,13 +99,13 @@
                     <PreSize X="0.3793" Y="0.3761" />
                     <FileData Type="Normal" Path="common/jinbi.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="GoodsNum" ActionTag="-214882081" Tag="2034" IconVisible="False" LeftMargin="-14.2299" RightMargin="-34.7701" TopMargin="126.9848" BottomMargin="-39.9848" FontSize="30" LabelText="x5888888888" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                  <AbstractNodeData Name="GoodsNum" ActionTag="-214882081" Tag="2034" IconVisible="False" LeftMargin="-22.2300" RightMargin="-26.7700" TopMargin="126.9848" BottomMargin="-39.9848" FontSize="30" LabelText="x5888888888" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="165.0000" Y="30.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="68.2701" Y="-24.9848" />
+                    <Position X="60.2700" Y="-24.9848" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="26" G="26" B="26" />
-                    <PrePosition X="0.5885" Y="-0.2135" />
+                    <PrePosition X="0.5196" Y="-0.2135" />
                     <PreSize X="1.4224" Y="0.2564" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
@@ -132,13 +132,13 @@
                     <PreSize X="0.3793" Y="0.3761" />
                     <FileData Type="Normal" Path="common/jinbi.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="GoodsNum" ActionTag="-1939163088" Tag="2037" IconVisible="False" LeftMargin="-14.2299" RightMargin="-34.7701" TopMargin="126.9848" BottomMargin="-39.9848" FontSize="30" LabelText="x5888888888" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                  <AbstractNodeData Name="GoodsNum" ActionTag="-1939163088" Tag="2037" IconVisible="False" LeftMargin="-22.2300" RightMargin="-26.7700" TopMargin="126.9848" BottomMargin="-39.9848" FontSize="30" LabelText="x5888888888" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="165.0000" Y="30.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="68.2701" Y="-24.9848" />
+                    <Position X="60.2700" Y="-24.9848" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="26" G="26" B="26" />
-                    <PrePosition X="0.5885" Y="-0.2135" />
+                    <PrePosition X="0.5196" Y="-0.2135" />
                     <PreSize X="1.4224" Y="0.2564" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />

@@ -133,6 +133,16 @@ load('module/mahjong/ui/DeskPersonlLayer', function () {
             ani.setScale(0.4)
             ani.setAnimation(0, PlayerPlay.stand, true)
 
+        },
+
+        updatePersonalCoin: function (data) {
+            let pMinValue = appInstance.dataManager().getPlayData().tableData.pMinValue
+            let coin = data.coin
+            this.coinsValTxt.setString(coin)
+            if (coin>(pMinValue+100)) {
+            } else {
+                this.jinBiFreePnl.setVisible(true)
+            }
         }
     })
     return Layer

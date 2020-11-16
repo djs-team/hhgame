@@ -62,10 +62,10 @@
                 <PreSize X="0.7578" Y="0.8056" />
                 <FileData Type="Normal" Path="arena/ssc_20.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Text_1_0" ActionTag="1313171664" Tag="1845" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="444.9417" RightMargin="434.0583" TopMargin="133.2330" BottomMargin="536.7670" FontSize="50" LabelText="欢迎来到麻将情缘" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="Text_1_0" ActionTag="1313171664" Tag="1845" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="445.0040" RightMargin="433.9960" TopMargin="133.2560" BottomMargin="536.7440" FontSize="50" LabelText="欢迎来到麻将情缘" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="401.0000" Y="50.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="645.4417" Y="561.7670" />
+                <Position X="645.5040" Y="561.7440" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="192" G="153" B="56" />
                 <PrePosition X="0.5043" Y="0.7802" />
@@ -74,10 +74,10 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Text_1_0_0" ActionTag="1274534159" Tag="1846" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="325.5813" RightMargin="317.4187" TopMargin="465.5981" BottomMargin="214.4019" FontSize="38" LabelText="幸运奖励已到账，快来秀一下排技把！" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="Text_1_0_0" ActionTag="1274534159" Tag="1846" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="325.5960" RightMargin="317.4040" TopMargin="465.5680" BottomMargin="214.4320" FontSize="38" LabelText="幸运奖励已到账，快来秀一下牌技吧！" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="637.0000" Y="40.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="644.0813" Y="234.4019" />
+                <Position X="644.0960" Y="234.4320" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5032" Y="0.3256" />
@@ -152,7 +152,7 @@
                 <PreSize X="0.0906" Y="0.1625" />
                 <FileData Type="Normal" Path="common/gx_2.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="SureBtn" ActionTag="680145471" Tag="1842" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="545.6388" RightMargin="548.3612" TopMargin="547.2725" BottomMargin="101.7276" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="156" Scale9Height="49" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="SureBtn" ActionTag="680145471" Tag="1842" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="545.5920" RightMargin="548.4080" TopMargin="547.2724" BottomMargin="101.7276" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="156" Scale9Height="49" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="186.0000" Y="71.0000" />
                 <Children>
                   <AbstractNodeData Name="Text_1" ActionTag="1830633892" Tag="1843" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="62.5000" RightMargin="62.5000" TopMargin="20.5000" BottomMargin="20.5000" FontSize="30" LabelText="确定" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -169,7 +169,7 @@
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="638.6388" Y="137.2276" />
+                <Position X="638.5920" Y="137.2276" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.4989" Y="0.1906" />

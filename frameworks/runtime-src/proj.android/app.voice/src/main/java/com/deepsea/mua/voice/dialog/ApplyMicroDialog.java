@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.view.View;
 
 import com.deepsea.mua.core.dialog.BaseDialog;
+import com.deepsea.mua.core.utils.GlideUtils;
 import com.deepsea.mua.stub.utils.ViewBindUtils;
 import com.deepsea.mua.voice.R;
 import com.deepsea.mua.voice.databinding.DialogApplyMicroBinding;
@@ -53,9 +54,9 @@ public class ApplyMicroDialog extends BaseDialog<DialogApplyMicroBinding> {
         return 0F;
     }
 
-    public void setMsg(String name,String url) {
+    public void setMsg(String name, String url) {
         ViewBindUtils.setText(mBinding.tvTitle, String.format("%s申请上麦", name));
-        ViewBindUtils.setImageUrl(mContext,mBinding.ivHead,url);
+        GlideUtils.roundImage(mBinding.ivHead, url, R.drawable.ic_place, R.drawable.ic_place);
         ViewBindUtils.RxClicks(mBinding.tvOk, o -> {
             if (mOnClickListener != null) {
                 mOnClickListener.onClick();

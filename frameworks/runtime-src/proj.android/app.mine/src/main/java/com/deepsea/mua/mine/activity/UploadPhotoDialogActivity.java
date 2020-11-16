@@ -29,6 +29,7 @@ import com.deepsea.mua.stub.controller.RoomJoinController;
 import com.deepsea.mua.stub.data.BaseApiResult;
 import com.deepsea.mua.stub.dialog.GalleryDialog;
 import com.deepsea.mua.stub.dialog.InviteOutRoomDialog;
+import com.deepsea.mua.stub.dialog.PhotoChessDialog;
 import com.deepsea.mua.stub.dialog.PhotoDialog;
 import com.deepsea.mua.stub.entity.HeartBeatBean;
 import com.deepsea.mua.stub.entity.OSSConfigBean;
@@ -87,12 +88,12 @@ public class UploadPhotoDialogActivity extends FragmentActivity implements HasSu
     /*
     上传图片证据 ---------------------------------------------------
 */
-    PhotoDialog mPhotoDialog;
+    PhotoChessDialog mPhotoDialog;
 
     private void showPhotoDialog() {
         if (mPhotoDialog == null) {
-            mPhotoDialog = new PhotoDialog();
-            mPhotoDialog.setDismissListener(new PhotoDialog.OnPhotoDismissListener() {
+            mPhotoDialog = new PhotoChessDialog();
+            mPhotoDialog.setDismissListener(new PhotoChessDialog.OnPhotoDismissListener() {
                 @Override
                 public void onMyDismiss() {
                     Log.d("dismiss", "dismiss-e");

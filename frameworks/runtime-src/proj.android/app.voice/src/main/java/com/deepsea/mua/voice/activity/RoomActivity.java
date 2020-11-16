@@ -429,7 +429,7 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
     /**
      * 更新歌词的频率，每100ms更新一次
      */
-    private int mPlayerTimerDuration = 1000;
+    private int mPlayerTimerDuration = 500;
     /**
      * 更新歌词的定时器
      */

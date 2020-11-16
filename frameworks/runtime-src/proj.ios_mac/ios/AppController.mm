@@ -128,6 +128,9 @@ static AppDelegate s_sharedApplication;
     
     // 穿山甲
     [self setupBUAdSDK];
+    
+    // OpenInstall
+    [OpenInstallSDK initWithDelegate:self];
 
 //    [[UIApplication sharedApplication] setStatusBarHidden:true];
     
@@ -147,8 +150,7 @@ static AppDelegate s_sharedApplication;
     // Bugly
     [Bugly startWithAppId:@"b59315e4a7"];
     
-    // OpenInstall
-    [OpenInstallSDK initWithDelegate:self];
+
     
     // 苹果内购监听
 //    [[CXIPAPurchaseManager manager] startManager];
@@ -761,6 +763,7 @@ static AppDelegate s_sharedApplication;
         ScriptingCore::getInstance()->evalString(jsCallStr.c_str());
     }
     
+    [AppController setOrientation:@""];
 }
 
 + (void)JsCallBack:(NSString *)funcNameStr param:(NSString *)param {

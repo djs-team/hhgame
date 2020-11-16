@@ -44,6 +44,7 @@
 
 - (void)setModel:(GameMessageTextWelcomeModel *)model {
     [super setModel:model];
+    
     _modelView.text = model.text;
 }
 

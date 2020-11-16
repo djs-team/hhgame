@@ -36,7 +36,7 @@ PODS:
   - JVerification (2.6.4):
     - JCore (< 6.0.0, >= 2.1.6)
   - LEEAlert (1.4.0)
-  - libOpenInstallSDK (2.3.1)
+  - libOpenInstallSDK (2.5.0)
   - Masonry (1.1.0)
   - MBProgressHUD (1.2.0)
   - MJRefresh (3.4.3)
@@ -143,7 +143,7 @@ SPEC CHECKSUMS:
   JQCollectionViewAlignLayout: e026e9bbaf872b3c8003ff3f646f0d9f90f81d2b
   JVerification: 85c0b1ae2a55f167b97f9d831bb8c2e03d3da22d
   LEEAlert: 59d2af96812428844741f8290efdecbb90ffa79c
-  libOpenInstallSDK: a3b390cc1a514e33253a8eacf152661cfa94ce86
+  libOpenInstallSDK: 961cda04b7a85a8bb2c134aa2f5372cf7dcd016d
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MJRefresh: 53e3e3219f204425ee6d3e62e8733d3295944cd6

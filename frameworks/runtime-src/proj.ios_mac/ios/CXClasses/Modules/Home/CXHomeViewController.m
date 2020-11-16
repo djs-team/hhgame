@@ -65,12 +65,18 @@
     kWeakSelf
     [CXHTTPRequest POSTWithURL:@"/index.php/Api/Languageroom/jump_room" parameters:nil callback:^(id responseObject, BOOL isCache, NSError *error) {
         if (!error) {
-            NSString *roomId = responseObject[@"data"][@"id"];
-            if ([roomId integerValue] > 0) {
-                [AppController joinRoom:roomId];
+            NSDictionary *dic = responseObject[@"data"];
+            if ([dic.allKeys containsObject:@"id"]) {
+                NSString *roomId = dic[@"id"];
+                if ([roomId integerValue] > 0) {
+                    [AppController joinRoom:roomId];
+                } else {
+                    [weakSelf toast:@"暂时没有可体验房间，请稍后重试"];
+                }
             } else {
                 [weakSelf toast:@"暂时没有可体验房间，请稍后重试"];
             }
+            
         }
     }];
 }

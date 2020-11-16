@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,72 +11,58 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CXNewUserMicroSeatCardView">
-            <rect key="frame" x="0.0" y="0.0" width="300" height="354"/>
+            <rect key="frame" x="0.0" y="0.0" width="300" height="315"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="system_microSeat_bg" translatesAutoresizingMaskIntoConstraints="NO" id="nMX-6N-Jg2">
-                    <rect key="frame" x="0.0" y="0.0" width="300" height="354"/>
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="315"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="系统赠送您上麦卡一张" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B4W-nw-j2s">
-                    <rect key="frame" x="73.5" y="74" width="153" height="18"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <color key="textColor" red="0.7725490196" green="0.1843137255" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新人福利" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HU1-qO-zjk">
-                    <rect key="frame" x="101" y="16" width="98" height="29"/>
-                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
-                    <color key="textColor" red="0.77254901960784317" green="0.18431372549019609" blue="0.082352941176470587" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上麦卡有效期为24小时 新人前7天每日登录赠送一张" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xdu-85-r4V">
-                    <rect key="frame" x="43.5" y="337" width="213" height="11"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="9"/>
-                    <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="24k-Sa-zZB">
-                    <rect key="frame" x="57.5" y="282" width="185" height="42"/>
-                    <color key="backgroundColor" red="0.9137254901960784" green="0.78431372549019607" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="24k-Sa-zZB">
+                    <rect key="frame" x="57.5" y="243" width="185" height="42"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="42" id="5w8-1V-LYJ"/>
                         <constraint firstAttribute="width" constant="185" id="PZX-yk-Y1R"/>
                     </constraints>
-                    <state key="normal" title="抢先体验">
-                        <color key="titleColor" red="0.46666666666666667" green="0.27843137254901962" blue="0.18431372549019609" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
                     <connections>
                         <action selector="joinAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="E2L-yf-de8"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="系统赠送您上麦卡一张" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B4W-nw-j2s">
+                    <rect key="frame" x="30" y="88" width="240" height="40"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="BmI-TT-Ddu"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                    <color key="textColor" red="1" green="0.34994941950000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="nMX-6N-Jg2" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="3c7-aj-aer"/>
+                <constraint firstItem="B4W-nw-j2s" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" constant="-30" id="3nH-41-Lau"/>
                 <constraint firstItem="nMX-6N-Jg2" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="BH8-fK-r83"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Xdu-85-r4V" secondAttribute="bottom" constant="6" id="FHB-Xj-XcO"/>
+                <constraint firstItem="B4W-nw-j2s" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="88" id="BWY-op-8w0"/>
                 <constraint firstItem="24k-Sa-zZB" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Kn4-k7-BvW"/>
                 <constraint firstItem="nMX-6N-Jg2" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="YJP-fh-Evg"/>
-                <constraint firstItem="B4W-nw-j2s" firstAttribute="top" secondItem="HU1-qO-zjk" secondAttribute="bottom" constant="29" id="dFN-8m-mZ2"/>
+                <constraint firstItem="B4W-nw-j2s" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="ZXu-8F-ORc"/>
                 <constraint firstItem="nMX-6N-Jg2" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="p8d-tU-McG"/>
-                <constraint firstItem="Xdu-85-r4V" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="pEv-i9-il4"/>
-                <constraint firstItem="HU1-qO-zjk" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="qD9-LZ-J4S"/>
                 <constraint firstAttribute="bottom" secondItem="24k-Sa-zZB" secondAttribute="bottom" constant="30" id="y8l-xH-GrL"/>
-                <constraint firstItem="HU1-qO-zjk" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="yGL-C9-QWQ"/>
-                <constraint firstItem="B4W-nw-j2s" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ywa-eU-WYn"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="card_numLabel" destination="B4W-nw-j2s" id="XAc-iq-vzI"/>
                 <outlet property="joinBtn" destination="24k-Sa-zZB" id="6Ju-vf-adr"/>
             </connections>
-            <point key="canvasLocation" x="137.68115942028987" y="119.86607142857142"/>
+            <point key="canvasLocation" x="137.68115942028987" y="119.53125"/>
         </view>
     </objects>
     <resources>
-        <image name="system_microSeat_bg" width="300" height="355"/>
+        <image name="system_microSeat_bg" width="210.33332824707031" height="220.33332824707031"/>
     </resources>
 </document>

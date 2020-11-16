@@ -143,7 +143,7 @@
 
             [weakSelf toast:responseObject[@"desc"]];
         } else {
-            [weakSelf toast:@"添加失败，请重试"];
+            [weakSelf toast:responseObject[@"desc"]];
         }
     }];
 }

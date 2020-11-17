@@ -9935,8 +9935,9 @@
                 "ClipAble": false,
                 "BackColorAlpha": 102,
                 "SingleColor": {
-                  "R": 150,
-                  "G": 200
+                  "R": 26,
+                  "G": 26,
+                  "B": 26
                 },
                 "FirstColor": {
                   "R": 150,

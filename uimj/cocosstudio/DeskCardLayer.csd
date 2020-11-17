@@ -3901,7 +3901,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.1124" Y="-0.0004" />
                 <PreSize X="0.8203" Y="0.2083" />
-                <SingleColor A="255" R="150" G="200" B="255" />
+                <SingleColor A="255" R="26" G="26" B="26" />
                 <FirstColor A="255" R="150" G="200" B="255" />
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />

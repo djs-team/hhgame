@@ -1190,13 +1190,13 @@
               {
                 "FileData": {
                   "Type": "Normal",
-                  "Path": "card/ground/hand/self_hand_0.png",
+                  "Path": "card/ground/other/paimian.png",
                   "Plist": ""
                 },
-                "Scale9OriginX": 24,
-                "Scale9OriginY": 35,
-                "Scale9Width": 26,
-                "Scale9Height": 37,
+                "Scale9OriginX": 13,
+                "Scale9OriginY": 18,
+                "Scale9Width": 14,
+                "Scale9Height": 21,
                 "TouchEnable": true,
                 "AnchorPoint": {
                   "ScaleX": 0.5,
@@ -1207,8 +1207,8 @@
                   "Y": 133.4603
                 },
                 "Scale": {
-                  "ScaleX": 1.2,
-                  "ScaleY": 1.2
+                  "ScaleX": 2.0,
+                  "ScaleY": 2.0
                 },
                 "CColor": {},
                 "IconVisible": false,
@@ -1217,13 +1217,13 @@
                   "Y": 0.1854
                 },
                 "PreSize": {
-                  "X": 0.0578,
-                  "Y": 0.1486
+                  "X": 0.0312,
+                  "Y": 0.0792
                 },
-                "LeftMargin": 1060.0,
-                "RightMargin": 146.0,
-                "TopMargin": 533.0397,
-                "BottomMargin": 79.9603,
+                "LeftMargin": 1077.0,
+                "RightMargin": 163.0,
+                "TopMargin": 558.0397,
+                "BottomMargin": 104.9603,
                 "Tag": 462,
                 "Children": [
                   {
@@ -1241,12 +1241,12 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 37.0,
-                      "Y": 48.15
+                      "X": 20.0,
+                      "Y": 28.5
                     },
                     "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
+                      "ScaleX": 0.55,
+                      "ScaleY": 0.55
                     },
                     "CColor": {},
                     "IconVisible": false,
@@ -1254,16 +1254,16 @@
                     "PositionPercentYEnabled": true,
                     "PrePosition": {
                       "X": 0.5,
-                      "Y": 0.45
+                      "Y": 0.5
                     },
                     "PreSize": {
-                      "X": 1.027,
-                      "Y": 0.9346
+                      "X": 1.9,
+                      "Y": 1.7544
                     },
-                    "LeftMargin": -1.0,
-                    "RightMargin": -1.0,
-                    "TopMargin": 8.85,
-                    "BottomMargin": -1.85,
+                    "LeftMargin": -18.0,
+                    "RightMargin": -18.0,
+                    "TopMargin": -21.5,
+                    "BottomMargin": -21.5,
                     "Tag": 463,
                     "ActionTag": -1407692072,
                     "Size": {
@@ -1288,27 +1288,27 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 38.4345,
-                      "Y": 67.6511
+                      "X": 28.2078,
+                      "Y": 44.6873
                     },
                     "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
+                      "ScaleX": 0.3,
+                      "ScaleY": 0.3
                     },
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.5194,
-                      "Y": 0.6323
+                      "X": 0.7052,
+                      "Y": 0.784
                     },
                     "PreSize": {
-                      "X": 1.0405,
-                      "Y": 0.6916
+                      "X": 1.925,
+                      "Y": 1.2982
                     },
-                    "LeftMargin": -0.0655,
-                    "RightMargin": -2.9345,
-                    "TopMargin": 2.3489,
-                    "BottomMargin": 30.6511,
+                    "LeftMargin": -10.2922,
+                    "RightMargin": -26.7078,
+                    "TopMargin": -24.6873,
+                    "BottomMargin": 7.6873,
                     "Tag": 464,
                     "ActionTag": -733500371,
                     "Size": {
@@ -1321,8 +1321,8 @@
                 ],
                 "ActionTag": -961882062,
                 "Size": {
-                  "X": 74.0,
-                  "Y": 107.0
+                  "X": 40.0,
+                  "Y": 57.0
                 },
                 "Name": "BaoCard",
                 "ctype": "ImageViewObjectData"
@@ -1330,13 +1330,13 @@
               {
                 "FileData": {
                   "Type": "Normal",
-                  "Path": "card/ground/hand/self_hand_0.png",
+                  "Path": "card/ground/other/paimian.png",
                   "Plist": ""
                 },
-                "Scale9OriginX": 24,
-                "Scale9OriginY": 35,
-                "Scale9Width": 26,
-                "Scale9Height": 37,
+                "Scale9OriginX": 13,
+                "Scale9OriginY": 18,
+                "Scale9Width": 14,
+                "Scale9Height": 21,
                 "TouchEnable": true,
                 "AnchorPoint": {
                   "ScaleX": 0.5,
@@ -1347,8 +1347,8 @@
                   "Y": 133.46
                 },
                 "Scale": {
-                  "ScaleX": 1.2,
-                  "ScaleY": 1.2
+                  "ScaleX": 2.0,
+                  "ScaleY": 2.0
                 },
                 "CColor": {},
                 "IconVisible": false,
@@ -1357,13 +1357,13 @@
                   "Y": 0.1854
                 },
                 "PreSize": {
-                  "X": 0.0578,
-                  "Y": 0.1486
+                  "X": 0.0312,
+                  "Y": 0.0792
                 },
-                "LeftMargin": 1175.0,
-                "RightMargin": 31.0,
-                "TopMargin": 533.04,
-                "BottomMargin": 79.96,
+                "LeftMargin": 1192.0,
+                "RightMargin": 48.0,
+                "TopMargin": 558.04,
+                "BottomMargin": 104.96,
                 "Tag": 202,
                 "Children": [
                   {
@@ -1381,12 +1381,12 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 37.0,
-                      "Y": 48.15
+                      "X": 20.0,
+                      "Y": 28.5
                     },
                     "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
+                      "ScaleX": 0.55,
+                      "ScaleY": 0.55
                     },
                     "CColor": {},
                     "IconVisible": false,
@@ -1394,16 +1394,16 @@
                     "PositionPercentYEnabled": true,
                     "PrePosition": {
                       "X": 0.5,
-                      "Y": 0.45
+                      "Y": 0.5
                     },
                     "PreSize": {
-                      "X": 1.027,
-                      "Y": 0.9346
+                      "X": 1.9,
+                      "Y": 1.7544
                     },
-                    "LeftMargin": -1.0,
-                    "RightMargin": -1.0,
-                    "TopMargin": 8.85,
-                    "BottomMargin": -1.85,
+                    "LeftMargin": -18.0,
+                    "RightMargin": -18.0,
+                    "TopMargin": -21.5,
+                    "BottomMargin": -21.5,
                     "Tag": 203,
                     "ActionTag": -1875488399,
                     "Size": {
@@ -1416,8 +1416,8 @@
                 ],
                 "ActionTag": 360989162,
                 "Size": {
-                  "X": 74.0,
-                  "Y": 107.0
+                  "X": 40.0,
+                  "Y": 57.0
                 },
                 "Name": "HuCard",
                 "ctype": "ImageViewObjectData"
@@ -1476,7 +1476,7 @@
                   "Y": 0.0925
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.1236
                 },
                 "LeftMargin": 365.2795,
@@ -1610,7 +1610,7 @@
                   "Y": 0.0932
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.1222
                 },
                 "LeftMargin": 598.6682,
@@ -1739,7 +1739,7 @@
                   "Y": 0.0932
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.1222
                 },
                 "LeftMargin": 832.0568,
@@ -1920,13 +1920,13 @@
               {
                 "FileData": {
                   "Type": "Normal",
-                  "Path": "card/ground/hand/self_hand_0.png",
+                  "Path": "card/ground/other/paimian.png",
                   "Plist": ""
                 },
-                "Scale9OriginX": 24,
-                "Scale9OriginY": 35,
-                "Scale9Width": 26,
-                "Scale9Height": 37,
+                "Scale9OriginX": 13,
+                "Scale9OriginY": 18,
+                "Scale9Width": 14,
+                "Scale9Height": 21,
                 "TouchEnable": true,
                 "AnchorPoint": {
                   "ScaleX": 0.5,
@@ -1937,8 +1937,8 @@
                   "Y": -129.2611
                 },
                 "Scale": {
-                  "ScaleX": 0.6,
-                  "ScaleY": 0.6
+                  "ScaleX": 1.2,
+                  "ScaleY": 1.2
                 },
                 "CColor": {},
                 "IconVisible": false,
@@ -1947,13 +1947,13 @@
                   "Y": -0.1795
                 },
                 "PreSize": {
-                  "X": 0.0578,
-                  "Y": 0.1486
+                  "X": 0.0312,
+                  "Y": 0.0792
                 },
-                "LeftMargin": -52.2889,
-                "RightMargin": 1258.2889,
-                "TopMargin": 795.7611,
-                "BottomMargin": -182.7611,
+                "LeftMargin": -35.2889,
+                "RightMargin": 1275.2889,
+                "TopMargin": 820.7611,
+                "BottomMargin": -157.7611,
                 "Tag": 393,
                 "Children": [
                   {
@@ -1971,12 +1971,12 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 37.0,
-                      "Y": 48.15
+                      "X": 20.0,
+                      "Y": 28.5
                     },
                     "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
+                      "ScaleX": 0.55,
+                      "ScaleY": 0.55
                     },
                     "CColor": {},
                     "IconVisible": false,
@@ -1984,16 +1984,16 @@
                     "PositionPercentYEnabled": true,
                     "PrePosition": {
                       "X": 0.5,
-                      "Y": 0.45
+                      "Y": 0.5
                     },
                     "PreSize": {
-                      "X": 1.027,
-                      "Y": 0.9346
+                      "X": 1.9,
+                      "Y": 1.7544
                     },
-                    "LeftMargin": -1.0,
-                    "RightMargin": -1.0,
-                    "TopMargin": 8.85,
-                    "BottomMargin": -1.85,
+                    "LeftMargin": -18.0,
+                    "RightMargin": -18.0,
+                    "TopMargin": -21.5,
+                    "BottomMargin": -21.5,
                     "Tag": 394,
                     "ActionTag": -835913614,
                     "Size": {
@@ -2006,8 +2006,8 @@
                 ],
                 "ActionTag": 1930238960,
                 "Size": {
-                  "X": 74.0,
-                  "Y": 107.0
+                  "X": 40.0,
+                  "Y": 57.0
                 },
                 "Name": "CardCell",
                 "ctype": "ImageViewObjectData"
@@ -2030,7 +2030,7 @@
         "ctype": "LayerObjectData"
       },
       "UsedResources": [
-        "card/ground/hand/self_hand_0.png",
+        "card/ground/other/paimian.png",
         "card/value/selfhand/feng_hand_1.png",
         "common/bt_1.png",
         "common/bt_2.png",

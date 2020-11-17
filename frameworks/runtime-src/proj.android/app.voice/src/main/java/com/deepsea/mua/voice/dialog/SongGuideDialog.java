@@ -109,4 +109,8 @@ public class SongGuideDialog extends BaseDialog<DialogSongGuideBinding> {
         return 0.2F;
     }
 
+    @Override
+    public void dismiss() {
+        super.dismiss();
+    }
 }

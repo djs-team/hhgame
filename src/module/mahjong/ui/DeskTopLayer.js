@@ -64,11 +64,11 @@ load('module/mahjong/ui/DeskTopLayer', function () {
                 'BmPnl/sayPnl': {},
                 'BmPnl/expressionPnl': {},
                 'BmPnl/magicPnl': {},
-
                 'TopPnl/SetBtn': { onClicked: this.onSetBtnClick },
                 'TopPnl/BaoNd': {},
                 'TopPnl/BaoNd/BaoCard': {},
-                'TopPnl/BaoNd/BaoCard/BaoCardValue': {},
+                'TopPnl/BaoNd/NoBao': {},
+                'TopPnl/BaoNd/RemainingCard/RemainingCardsTxt': {},
                 'TopPnl/TableLevelNd': {},
                 'TopPnl/TableLevelNd/TableLevelTxt': {},
             }
@@ -117,6 +117,12 @@ load('module/mahjong/ui/DeskTopLayer', function () {
             appInstance.gameAgent().tcpGame().PlayerSelectProto(sendMsg)
         },
 
+        updateRemainingCard: function(num) {
+            this.BaoNd.setVisible(true)
+            num = num || 0
+            this.RemainingCardsTxt.setString(num)
+        },
+
         onActionCellClick: function(sender) {
             let pActionInfo = sender.pActionInfo
             let pAction = pActionInfo.pAction
@@ -159,8 +165,6 @@ load('module/mahjong/ui/DeskTopLayer', function () {
             this.ChiCell.setVisible(false)
 
             this.HostingPnl.setVisible(false)
-
-            this.BaoNd.setVisible(false)
 
             this.sayBtn.setVisible(true)
             this.sayContentPnl.setVisible(false)

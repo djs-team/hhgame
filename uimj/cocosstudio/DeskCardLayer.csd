@@ -26,17 +26,17 @@
             <PreSize X="1.0000" Y="1.0000" />
             <FileData Type="Normal" Path="dele/newLiang.jpg" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="bgPnl" Visible="False" ActionTag="1342302347" UserData="{&quot;layoutType&quot;:&quot;showAll&quot;,&quot;screenAlign&quot;:&quot;bottom&quot;}" Tag="12" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+          <AbstractNodeData Name="bgPnl" ActionTag="1342302347" UserData="{&quot;layoutType&quot;:&quot;showAll&quot;,&quot;screenAlign&quot;:&quot;bottom&quot;}" Tag="12" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <Children>
-              <AbstractNodeData Name="DeskBg" ActionTag="-1774375353" Tag="15" IconVisible="False" TopMargin="289.0000" LeftEage="63" RightEage="63" TopEage="25" BottomEage="25" Scale9OriginX="63" Scale9OriginY="25" Scale9Width="1154" Scale9Height="381" ctype="ImageViewObjectData">
-                <Size X="1280.0000" Y="431.0000" />
+              <AbstractNodeData Name="DeskBg" ActionTag="-1774375353" Tag="15" IconVisible="False" LeftMargin="-213.0000" RightMargin="-213.0000" TopMargin="289.0000" LeftEage="63" RightEage="63" TopEage="25" BottomEage="25" Scale9OriginX="63" Scale9OriginY="25" Scale9Width="1580" Scale9Height="381" ctype="ImageViewObjectData">
+                <Size X="1706.0000" Y="431.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="640.0000" Y="215.5000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5000" Y="0.2993" />
-                <PreSize X="1.0000" Y="0.5986" />
+                <PreSize X="1.3328" Y="0.5986" />
                 <FileData Type="Normal" Path="desk/pz_pz.png" Plist="" />
               </AbstractNodeData>
               <AbstractNodeData Name="DirectionBg" ActionTag="-956962470" Tag="14" IconVisible="False" LeftMargin="535.7300" RightMargin="551.2700" TopMargin="427.6900" BottomMargin="216.3100" LeftEage="63" RightEage="63" TopEage="25" BottomEage="25" Scale9OriginX="63" Scale9OriginY="25" Scale9Width="67" Scale9Height="26" ctype="ImageViewObjectData">
@@ -92,6 +92,17 @@
                     <PreSize X="0.7461" Y="0.7500" />
                     <FileData Type="Normal" Path="desk/pz_33.png" Plist="" />
                   </AbstractNodeData>
+                  <AbstractNodeData Name="CountDownTxt" ActionTag="-223001385" Tag="1067" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="60.0139" RightMargin="62.9861" TopMargin="18.8244" BottomMargin="29.1756" FontSize="28" LabelText="     " HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="70.0000" Y="28.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="95.0139" Y="43.1756" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="0" />
+                    <PrePosition X="0.4923" Y="0.5681" />
+                    <PreSize X="0.3627" Y="0.3684" />
+                    <OutlineColor A="255" R="255" G="0" B="0" />
+                    <ShadowColor A="255" R="110" G="110" B="110" />
+                  </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="632.2300" Y="254.3100" />
@@ -113,7 +124,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="CardPnl" ActionTag="-559160522" UserData="{&quot;layoutType&quot;:&quot;showAll&quot;,&quot;screenAlign&quot;:&quot;bottom&quot;}" Tag="16" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+          <AbstractNodeData Name="CardPnl" Visible="False" ActionTag="-559160522" UserData="{&quot;layoutType&quot;:&quot;showAll&quot;,&quot;screenAlign&quot;:&quot;bottom&quot;}" Tag="16" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <Children>
               <AbstractNodeData Name="OutNd1" ActionTag="1898389742" Tag="15" IconVisible="True" LeftMargin="925.0000" RightMargin="355.0000" TopMargin="570.0000" BottomMargin="150.0000" ctype="SingleNodeObjectData">

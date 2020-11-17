@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) NSString *userId;
 
-@property (nonatomic, copy) void (^guardGroupViewBlcok)(void);
+@property (nonatomic, copy) void (^guardGroupViewBlcok)(BOOL isClose);
 
 @end
 

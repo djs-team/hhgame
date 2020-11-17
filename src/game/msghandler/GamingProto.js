@@ -1,6 +1,6 @@
 
 /**
- * 出牌消息结构体
+ * 魔法表情消息
  */
 load('game/msghandler/GamingProto', function () {
     let baseProto = include('public/network/BaseProto')
@@ -18,6 +18,10 @@ load('game/msghandler/GamingProto', function () {
             if (msg.code != 0) {
                 appInstance.gameAgent().Tips(GameConfig.mjError[msg.code])
             }
+
+            let fromSeatID = msg.fromSeatID
+            let tDataInfo = appInstance.dataManager().getPlayData().getPlayer(fromSeatID)
+            tDataInfo.coins = msg.coin
             appInstance.sendNotification(Event.GamingProto, msg)
         },
 

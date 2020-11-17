@@ -1,11 +1,11 @@
 {
     "android": {
-        "version": "1.1.0",
+        "version": "1.2.0",
         "isForceCheck": true,
         "downUrl": "https://app.hehemj.com/rjdy"
     },
     "ios" : {
-        "version": "1.1.0",
+        "version": "1.2.0",
         "isForceCheck": true,
         "downUrl": "https://app.hehemj.com/rjdy"
     }

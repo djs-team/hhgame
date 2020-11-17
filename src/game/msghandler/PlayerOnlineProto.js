@@ -19,11 +19,11 @@ load('game/msghandler/PlayerOnlineProto', function () {
             this._seMsgId = appInstance.msgTool().msgId_ROOM_MATCHGAME(this._offMsgId)
             this._reMsgId = appInstance.msgTool().msgId_ROOM_MATCHGAME_Re(this._offMsgId)
             this._seData = [
-                { key: 'cStatus', type: this._byteType.Byte}, //0 代表上线。
+                { key: 'cStatus', type: this._byteType.Byte}, //0上线1下线
             ]
 
             this._reData = [
-                { key: 'cStatus', type: this._byteType.Byte},// 0 代表啥牌桌都没有。
+                { key: 'cStatus', type: this._byteType.Byte},//正常进入牌桌断线的时候不会返回这个消息，断线错误的时候会返回，code都是0
             ]
         }
     })

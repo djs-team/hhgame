@@ -13,6 +13,7 @@ load('game/public/TcpGame', function () {
     let TableHostingProto = include('game/msghandler/TableHostingProto')
     let GetArenaProto = include('game/msghandler/GetArenaProto')
     let GamingProto = include('game/msghandler/GamingProto')
+    let PlayerOnlineProto = include('game/msghandler/PlayerOnlineProto')
     let TcpGame  = cc.Class.extend({
         ctor: function () {
 
@@ -53,6 +54,14 @@ load('game/public/TcpGame', function () {
         cancelEnterTableMatch: function(msg) {
             msg = msg || {}
             let packetProto = new Packet(new MatchEnterTableCancelProto())
+            packetProto.setValue(msg)
+            appInstance.gameNet().send(packetProto)
+        },
+
+        playerOnline: function (msg) {
+            msg = msg || {}
+            msg.cStatus = msg.cStatus || 0
+            let packetProto = new Packet(new PlayerOnlineProto())
             packetProto.setValue(msg)
             appInstance.gameNet().send(packetProto)
         },

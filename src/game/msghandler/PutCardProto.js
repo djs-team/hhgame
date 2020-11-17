@@ -41,8 +41,8 @@ load('game/msghandler/PutCardProto', function () {
                 appInstance.sendNotification(Event.PutCardProto, tmpMsg)
             } else {
                 // appInstance.gameAgent().Tips('出牌异常！ code is ' + msg.pResult)
-
-                appInstance.gameNet().connect()
+                appInstance.gameAgent().tcpGame().playerOnline()
+                // appInstance.gameNet().connect()
                 // let card = {
                 //     nCardColor: msg.nCardColor,
                 //     nCardNumber: msg.nCardNumber

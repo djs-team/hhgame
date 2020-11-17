@@ -33,6 +33,7 @@ load('game/msghandler/index', function () {
     let GameFenZhangProto = include('game/msghandler/GameFenZhangProto')
     let GameBaoProto = include('game/msghandler/GameBaoProto')
     let RoomDissMissProto = include('game/msghandler/RoomDissMissProto')
+    let MarqueeProto = include('game/msghandler/MarqueeProto')
     let objArray = [
         new DrawCardProto(),
         new EnterTableCancelProto(),
@@ -64,6 +65,7 @@ load('game/msghandler/index', function () {
         new GameFenZhangProto(),
         new GameBaoProto(),
         new RoomDissMissProto(),
+        new MarqueeProto(),
     ]
 
     let index = {}

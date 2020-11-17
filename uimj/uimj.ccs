@@ -319,6 +319,7 @@
           <TTF Name="hkhbtW12.ttc" />
         </Folder>
         <Folder Name="match">
+          <Image Name="match_result_bg.png" />
           <Image Name="ssc_1.png" />
           <Image Name="ssc_10.png" />
           <Image Name="ssc_11.png" />

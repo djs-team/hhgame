@@ -116,7 +116,6 @@
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
-                        <action selector="open_guard_btnAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="jS6-Wd-HiE"/>
                         <action selector="renew_guard_btnAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="1Uw-lT-PvB"/>
                     </connections>
                 </button>

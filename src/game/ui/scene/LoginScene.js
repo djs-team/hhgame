@@ -421,7 +421,7 @@ load('game/ui/scene/LoginScene', function () {
                     msg.imei = appInstance.nativeApi().getImei()
                     appInstance.gameAgent().httpGame().httpLogin(msg)
                 } else {
-                    cc.log('======授权失败=======' + code)
+                    appInstance.gameAgent().Tips('获取授权失败')
                 }
 
             }
@@ -432,7 +432,7 @@ load('game/ui/scene/LoginScene', function () {
                     msg.imei = appInstance.nativeApi().getImei()
                     appInstance.gameAgent().httpGame().httpLogin(msg)
                 } else {
-                    cc.log('======授权失败=======' + msg.code)
+                    appInstance.gameAgent().Tips('获取授权失败')
                 }
             }
         },

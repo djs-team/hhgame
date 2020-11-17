@@ -22,7 +22,7 @@
     [super awakeFromNib];
     
     [self mas_makeConstraints:^(MASConstraintMaker *make) {
-          make.size.mas_equalTo(CGSizeMake(300, 315));
+          make.size.mas_equalTo(CGSizeMake(300, 360));
     }];
       
     [MMPopupWindow sharedWindow].touchWildToHide = YES;
@@ -41,6 +41,11 @@
         self.userMicroSeatCardJoinBlock();
     }
     
+    [self hide];
+    [MMPopupView hideAll];
+}
+
+- (IBAction)closeAction:(id)sender {
     [self hide];
     [MMPopupView hideAll];
 }

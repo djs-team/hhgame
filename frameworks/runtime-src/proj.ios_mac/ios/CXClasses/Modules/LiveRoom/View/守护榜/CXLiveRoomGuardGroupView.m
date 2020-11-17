@@ -160,21 +160,29 @@
 }
 
 - (IBAction)renew_guard_btnAction:(id)sender {
+    [self hide];
+    
     // 续费
     if (self.guardGroupViewBlcok) {
-        self.guardGroupViewBlcok();
+        self.guardGroupViewBlcok(NO);
     }
-    
-    [self hide];
 }
 
 - (IBAction)open_guard_btnAction:(id)sender {
+    [self hide];
+    
     // 成为守护
     if (self.guardGroupViewBlcok) {
-        self.guardGroupViewBlcok();
+        self.guardGroupViewBlcok(NO);
     }
+}
+
+- (void)hide {
+    [super hide];
     
-    [self hide];
+    if (self.guardGroupViewBlcok) {
+        self.guardGroupViewBlcok(YES);
+    }
 }
 
 @end

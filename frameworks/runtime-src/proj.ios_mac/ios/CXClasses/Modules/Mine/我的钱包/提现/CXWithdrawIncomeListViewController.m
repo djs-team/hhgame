@@ -333,7 +333,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (self.incomeType == income) {
         return 74;
-    } else if (self.incomeType == tixian) {
+    } else if (self.incomeType == tixian || self.incomeType == redpack_tixian) {
         return 116;
     } else {
         return 74;

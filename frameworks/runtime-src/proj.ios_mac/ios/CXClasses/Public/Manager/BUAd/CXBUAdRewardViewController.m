@@ -37,7 +37,7 @@ static CXBUAdRewardViewController *instance;
     
     instance = self;
     
-    self.view.backgroundColor = [UIColor blackColor];
+    self.view.backgroundColor = [UIColor clearColor];
     
     BURewardedVideoModel *model = [[BURewardedVideoModel alloc] init];
     model.userId = @"11111";

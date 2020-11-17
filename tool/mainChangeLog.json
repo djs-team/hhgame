@@ -1,1 +1,23 @@
-[]
+[
+    "res/module/mahjong/desk/pz_pz.png", 
+    "res/module/mahjong/match/match_result_bg.png", 
+    "res/module/mahjong/DeskBgLayer.json", 
+    "res/module/mahjong/MatchResultLayer.json", 
+    "res/module/mahjong/DeskCardLayer.json", 
+    "res/module/mahjong/DeskTopLayer.json", 
+    "res/CustomerLayer.json", 
+    "src/module/mahjong/ui/MatchResultLayer.jsc", 
+    "src/module/mahjong/ui/DeskHeadLayer.jsc", 
+    "src/module/mahjong/ui/DeskTopLayer.jsc", 
+    "src/module/mahjong/ui/DeskCardLayer.jsc", 
+    "src/module/mahjong/ui/DeskTopLayerMdt.jsc", 
+    "src/game/ui/layer/fukashop/FukaShopMdt.jsc", 
+    "src/game/ui/layer/task/TaskLayer.jsc", 
+    "src/game/ui/layer/coingame/CoinGameMdt.jsc", 
+    "src/game/ui/layer/coinshop/CoinShopMdt.jsc", 
+    "src/game/ui/scene/HallScene.jsc", 
+    "src/game/ui/scene/LoginScene.jsc", 
+    "src/game/msghandler/GamingProto.jsc", 
+    "src/game/msghandler/LoginProto.jsc", 
+    "src/game/config/HttpEvent.jsc"
+]

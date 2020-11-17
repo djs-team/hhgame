@@ -128,23 +128,34 @@
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 4;
+    return 3;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+//    if (section == 0) {
+//        return _roomList.count > 0 ? 1 : 0;
+//    } else if (section == 1) {
+//        return _roomList.count > 1 ? MIN(_roomList.count - 1, 2) : 0;
+//    } else if (section == 2) {
+//        return 1;
+//    } else {
+//        return _roomList.count > 3 ? _roomList.count - 3: 0;
+//    }
     if (section == 0) {
-        return _roomList.count > 0 ? 1 : 0;
-    } else if (section == 1) {
-        return _roomList.count > 1 ? MIN(_roomList.count, 2) : 0;
-    } else if (section == 2) {
         return 1;
+    } else if (section == 1) {
+        if (_roomList.count > 0) {
+            return 1;
+        } else {
+            return 0;
+        }
     } else {
-        return _roomList.count > 3 ? _roomList.count - 3: 0;
+        return _roomList.count - 1;
     }
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 2) {
+    if (indexPath.section == 0) {
         CXHomeRoomCrycleCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CXHomeRoomCrycleCellID" forIndexPath:indexPath];
         cell.bannerList = self.bannerData;
         kWeakSelf
@@ -152,20 +163,22 @@
             [weakSelf cycleScrollDidSecected:item];
         };
         return cell;
-    } else if (indexPath.section == 0) {
+    } else if (indexPath.section == 1) {
         CXHomeRoomRecommendCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CXHomeRoomRecommendCellID" forIndexPath:indexPath];
         cell.model = _roomList[0];
         return cell;
-    } else if (indexPath.section == 1) {
+    }
+//    else if (indexPath.section == 1) {
+//        CXHomeRoomCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CXHomeRoomCellID" forIndexPath:indexPath];
+//
+//        cell.model = _roomList[indexPath.row+1];
+//
+//        return cell;
+//    }
+    else {
         CXHomeRoomCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CXHomeRoomCellID" forIndexPath:indexPath];
         
         cell.model = _roomList[indexPath.row+1];
-        
-        return cell;
-    } else {
-        CXHomeRoomCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CXHomeRoomCellID" forIndexPath:indexPath];
-        
-        cell.model = _roomList[indexPath.row+3];
         
         return cell;
     }
@@ -197,23 +210,25 @@
 #pragma mark <UICollectionViewDelegate>
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section != 2) {
-        if (indexPath.section == 0) {
+    if (indexPath.section != 0) {
+        if (indexPath.section == 1) {
             CXHomeRoomModel *room = _roomList.firstObject;
             if ([room.room_lock integerValue] == 1) {
                 [self toast:@"房间已锁"];
             } else {
                 [AppController joinRoom:room.room_id];
             }
-        } else if (indexPath.section == 1) {
+        }
+//        if (indexPath.section == 1) {
+//            CXHomeRoomModel *room = _roomList[indexPath.row+1];
+//            if ([room.room_lock integerValue] == 1) {
+//                [self toast:@"房间已锁"];
+//            } else {
+//                [AppController joinRoom:room.room_id];
+//            }
+//        }
+        else {
             CXHomeRoomModel *room = _roomList[indexPath.row+1];
-            if ([room.room_lock integerValue] == 1) {
-                [self toast:@"房间已锁"];
-            } else {
-                [AppController joinRoom:room.room_id];
-            }
-        } else {
-            CXHomeRoomModel *room = _roomList[indexPath.row+3];
             if ([room.room_lock integerValue] == 1) {
                 [self toast:@"房间已锁"];
             } else {
@@ -225,7 +240,7 @@
 
 #pragma mark <UICollectionViewDelegateFlowLayout>
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 0 || indexPath.section == 2) {
+    if (indexPath.section == 0 || indexPath.section == 1) {
         return CGSizeMake(SCREEN_WIDTH - 28, 118*SCALE_W);
     } else {
         CGFloat w =(collectionView.bounds.size.width - 28 - 10) / 2;

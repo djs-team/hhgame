@@ -1,4 +1,3 @@
-
 /**
  * MatchResultLayer
  */
@@ -11,41 +10,55 @@ load('module/mahjong/ui/MatchResultLayer', function () {
         _className: 'MatchResultLayer',
         RES_BINDING: function () {
             return {
-                'dataPnl': {  },
-                'dataPnl/HeadNd': {  },
-                'dataPnl/HeadNd/HeadPhoto': {  },
-                'dataPnl/HeadNd/NameTxt': {  },
-                'dataPnl/HeadNd/MatchNameTxt': {  },
-                'dataPnl/HeadNd/RankTxt': {  },
-                'dataPnl/HeadNd/rewardTxt': {  },
+                'bg_share': {},
+                'bg_share/tv_achievement': {},
 
-                'dataPnl/ShareWxBtn': { onClicked: this.onShareWxBtnClick   },
-                'dataPnl/ShareFriendBtn': { onClicked: this.onShareFriendBtnClick  },
-                'dataPnl/CloseBtn': { onClicked: this.onCloseBtnClick  },
+                'dataPnl': {},
+                'dataPnl/HeadNd': {},
+                'dataPnl/HeadNd/HeadPhoto': {},
+                'dataPnl/HeadNd/NameTxt': {},
+                'dataPnl/HeadNd/MatchNameTxt': {},
+                'dataPnl/HeadNd/RankTxt': {},
+                'dataPnl/HeadNd/rewardTxt': {},
+
+                'dataPnl/ShareWxBtn': {onClicked: this.onShareWxBtnClick},
+                'dataPnl/ShareFriendBtn': {onClicked: this.onShareFriendBtnClick},
+                'dataPnl/CloseBtn': {onClicked: this.onCloseBtnClick},
 
 
             }
         },
+        beforeShareImg: function () {
+            this.bg_share.setVisible(true)
+
+        },
+        //屏幕截取后  重置界面
+        afterShareImg: function () {
+            this.bg_share.setVisible(false)
+
+        },
 
         onShareWxBtnClick: function () {
 
-            let size = cc.director.getWinSize();
-            let fileName = "result_share.jpg";
-            let fullPath = jsb.fileUtils.getWritablePath() + fileName; //拿到可写路径，将图片保存在本地，可以在ios端或者java端读取该文件
-            if (jsb.fileUtils.isFileExist(fullPath)) {
-                jsb.fileUtils.removeFile(fullPath);
-            }
-            this.onShareBegin()
-            let texture = new cc.RenderTexture(size.width, size.height);
-            
-            texture.begin();
-            
-            this.visit();
-            texture.end();
-            texture.saveToFile(fileName, cc.IMAGE_FORMAT_JPG);
-
-            this.onShareEnd()
-            
+            // let size = cc.director.getWinSize();
+            // let fileName = "result_share.jpg";
+            // let fullPath = jsb.fileUtils.getWritablePath() + fileName; //拿到可写路径，将图片保存在本地，可以在ios端或者java端读取该文件
+            // if (jsb.fileUtils.isFileExist(fullPath)) {
+            //     jsb.fileUtils.removeFile(fullPath);
+            // }
+            // this.onShareBegin()
+            // let texture = new cc.RenderTexture(size.width, size.height);
+            //
+            // texture.begin();
+            //
+            // this.visit();
+            // texture.end();
+            // texture.saveToFile(fileName, cc.IMAGE_FORMAT_JPG);
+            //
+            // this.onShareEnd()
+            this.beforeShareImg()
+            appInstance.gameAgent().saveCanvas()
+            this.afterShareImg()
             this.schedule(() => {
                 let fileName = "result_share.jpg";
                 appInstance.nativeApi().shareImage('WEIXIN', fileName)
@@ -53,35 +66,38 @@ load('module/mahjong/ui/MatchResultLayer', function () {
         },
 
         onShareFriendBtnClick: function () {
-            let size = cc.director.getWinSize();
-            let fileName = "result_share.jpg";
-            let fullPath = jsb.fileUtils.getWritablePath() + fileName; //拿到可写路径，将图片保存在本地，可以在ios端或者java端读取该文件
-            if (jsb.fileUtils.isFileExist(fullPath)) {
-                jsb.fileUtils.removeFile(fullPath);
-            }
-            
-            this.onShareBegin()
-            
-            let texture = new cc.RenderTexture(size.width, size.height);
-            texture.begin();
-            this.visit();
-            texture.end();
-            texture.saveToFile(fileName, cc.IMAGE_FORMAT_JPG);
-            
-            this.onShareEnd()
-            
+            // let size = cc.director.getWinSize();
+            // let fileName = "result_share.jpg";
+            // let fullPath = jsb.fileUtils.getWritablePath() + fileName; //拿到可写路径，将图片保存在本地，可以在ios端或者java端读取该文件
+            // if (jsb.fileUtils.isFileExist(fullPath)) {
+            //     jsb.fileUtils.removeFile(fullPath);
+            // }
+            //
+            // this.onShareBegin()
+            //
+            // let texture = new cc.RenderTexture(size.width, size.height);
+            // texture.begin();
+            // this.visit();
+            // texture.end();
+            // texture.saveToFile(fileName, cc.IMAGE_FORMAT_JPG);
+            //
+            // this.onShareEnd()
+            this.beforeShareImg()
+            appInstance.gameAgent().saveCanvas()
+            this.afterShareImg()
+
             this.schedule(() => {
                 let fileName = "result_share.jpg";
                 appInstance.nativeApi().shareImage('WEIXIN_CIRCLE', fileName)
             }, 1, 0);
         },
-        
+
         onShareBegin: function () {
             this.ShareWxBtn.setVisible(false)
             this.ShareFriendBtn.setVisible(false)
             this.CloseBtn.setVisible(false)
         },
-        
+
         onShareEnd: function () {
             this.ShareWxBtn.setVisible(true)
             this.ShareFriendBtn.setVisible(true)
@@ -101,28 +117,29 @@ load('module/mahjong/ui/MatchResultLayer', function () {
 
             GameUtil.loadUrlImg(msg.pPhoto, this.HeadPhoto)
             this.RankTxt.setString('第' + msg.ranking + '名')
+            this.tv_achievement.setString('第' + msg.ranking + '名')
             this.NameTxt.setString(global.cropStr(msg.playerName, 6, '...'))
             this.MatchNameTxt.setString(global.cropStr(msg.matchName, 6, '...'))
             let rewardList = msg.mcRewardList
-            if(rewardList && rewardList.length > 0){
+            if (rewardList && rewardList.length > 0) {
                 this.rewardTxt.setVisible(true)
                 let rewardStr = '比赛奖励：'
-                for (let i = 0; i< rewardList.length; ++i) {
+                for (let i = 0; i < rewardList.length; ++i) {
                     let rewardData = rewardList[i]
                     let propData = {
-                        propType:rewardData.propType,
-                        propCode:rewardData.propCode,
-                        propNum:rewardData.propNum,
+                        propType: rewardData.propType,
+                        propCode: rewardData.propCode,
+                        propNum: rewardData.propNum,
                     }
-                    GameUtil.getRoleData(propData,['name'],'propType','propCode')
+                    GameUtil.getRoleData(propData, ['name'], 'propType', 'propCode')
                     // rewardStr += cc.formatStr('(%s) x (%s) \n', propData.name, propData.propNum.toString())
-                    if(i > 0)
+                    if (i > 0)
                         rewardStr += '，'
                     rewardStr += cc.formatStr('%s x %s \n', propData.name, propData.propNum.toString())
 
                 }
                 this.rewardTxt.setString(rewardStr)
-            }else{
+            } else {
                 this.rewardTxt.setVisible(false)
             }
 
@@ -131,6 +148,8 @@ load('module/mahjong/ui/MatchResultLayer', function () {
 
         onEnter: function () {
             this._super()
+            this.bg_share.setVisible(false)
+
         },
         onExit: function () {
             this._super()

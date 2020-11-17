@@ -13,7 +13,8 @@ load('game/ui/layer/coingame/CoinGameMdt', function () {
         },
         getNotificationList: function () {
             return [
-                GameEvent.UPDATE_PROPSYNC
+                GameEvent.UPDATE_PROPSYNC,
+                GameEvent.USERDATA
             ]
         },
         handleNotification: function (notification) {
@@ -21,6 +22,9 @@ load('game/ui/layer/coingame/CoinGameMdt', function () {
             let body = notification.getBody()
             switch (name) {
                 case GameEvent.UPDATE_PROPSYNC:
+                    this.view.onUpdatePropsData(body)
+                    break
+                case GameEvent.USERDATA:
                     this.view.onUpdatePropsData(body)
                     break
                 default:

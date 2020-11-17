@@ -19,6 +19,8 @@ load('game/msghandler/LoginProto', function () {
             appInstance.gameAgent().setLoginOk(true)
             appInstance.gameNet().setReconnect(false)
             if (msg.status === 0) {
+
+                appInstance.gameAgent().httpGame().userDataReq()//TCP链接后，重新请求用户数据
                 let curSceneName = appInstance.sceneManager().getCurSceneName()
                 if (curSceneName === 'HallScene') {
                     cc.log('====当前已经在大厅， 重新刷新数据就可以')

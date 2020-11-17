@@ -28,6 +28,7 @@ load('game/ui/layer/fukashop/FukaShopMdt', function () {
                 GameEvent.FUKA_MATERIA_EXCHANGE,
                 GameEvent.UPDATE_PROPSYNC,
                 GameEvent.ADRESS_UPDATE,
+                GameEvent.USERDATA
 
             ]
         },
@@ -73,6 +74,9 @@ load('game/ui/layer/fukashop/FukaShopMdt', function () {
                     break
                 case GameEvent.ADRESS_UPDATE:
                     this.onUpdateAddressResult()
+                    break
+                case GameEvent.USERDATA:
+                    this.view.onUpdateUserData(body)
                     break
                 default:
                     break

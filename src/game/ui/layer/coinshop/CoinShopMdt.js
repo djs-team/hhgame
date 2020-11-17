@@ -21,6 +21,7 @@ load('game/ui/layer/coinshop/CoinShopMdt', function () {
                 GameEvent.ADRESS_UPDATE,
                 GameEvent.VIDEO_WATCH_DIAMONDS,
                 GameEvent.DIAMONDS_BUY,
+                GameEvent.USERDATA,
             ]
         },
         handleNotification: function (notification) {
@@ -67,6 +68,9 @@ load('game/ui/layer/coinshop/CoinShopMdt', function () {
                        }
                        appInstance.nativeApi().applyPay(iosFlag, body.orderId);
                     }
+                    break
+                case GameEvent.USERDATA:
+                    this.view.onUpdatePropsData(body)
                     break
                 default:
                     break

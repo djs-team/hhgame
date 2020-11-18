@@ -119,6 +119,8 @@ load('public/network/GameNet', function () {
                         appInstance.eventManager().dispatchEvent('RECONNECT_OVER_TIMES')
                     }
                 }
+            } else {
+                this.reConnectNum = 0
             }
         },
         /**

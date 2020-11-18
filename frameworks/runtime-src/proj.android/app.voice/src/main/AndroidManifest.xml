@@ -14,23 +14,36 @@
             android:name="com.deepsea.mua.voice.activity.RoomActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
-        <activity android:name="com.deepsea.mua.voice.activity.RoomSetActivity" />
-        <activity android:name="com.deepsea.mua.voice.activity.RoomModeSetActivity" />
-        <activity android:name="com.deepsea.mua.voice.activity.RoomWelSetActivity" />
+        <activity android:name="com.deepsea.mua.voice.activity.RoomSetActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name="com.deepsea.mua.voice.activity.RoomModeSetActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name="com.deepsea.mua.voice.activity.RoomWelSetActivity"
+            android:screenOrientation="portrait"
+            />
 
         <activity
             android:name="com.deepsea.mua.voice.activity.RoomReportActivity"
-            android:theme="@style/HalfTranslucentWindow" />
-        <activity android:name="com.deepsea.mua.voice.activity.RoomNameSetActivity" />
+            android:theme="@style/HalfTranslucentWindow"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.deepsea.mua.voice.activity.RoomNameSetActivity"
+            android:screenOrientation="portrait" />
 
         <activity
             android:name="com.deepsea.mua.voice.activity.RoomSearchActivity"
-            android:windowSoftInputMode="stateHidden|adjustNothing" />
-        <activity android:name="com.deepsea.mua.voice.activity.SearchMoreActivity" />
-        <activity android:name="com.deepsea.mua.voice.activity.RoomModelHelpActivity" />
+            android:windowSoftInputMode="stateHidden|adjustNothing"
+                    android:screenOrientation="portrait"
+        />
+        <activity android:name="com.deepsea.mua.voice.activity.SearchMoreActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.deepsea.mua.voice.activity.RoomModelHelpActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.deepsea.mua.voice.activity.RoomCreateNewActivity"
-            android:windowSoftInputMode="stateHidden|adjustNothing" />
+            android:windowSoftInputMode="stateHidden|adjustNothing"
+            android:screenOrientation="portrait"/>
 
         <service android:name=".MyNotifyService" />
     </application>

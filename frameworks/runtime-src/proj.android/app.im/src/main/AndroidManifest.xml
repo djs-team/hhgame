@@ -12,23 +12,30 @@
         java.lang.IllegalStateException: Only fullscreen opaque activities can request orientation -->
         <activity
             android:name="com.deepsea.mua.app.im.ui.ContextMenuActivity"
-            android:theme="@style/MyDialogStyle" />
+            android:theme="@style/MyDialogStyle"
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.deepsea.mua.app.im.ui.ImageGridActivity"
             android:screenOrientation="portrait" />
-        <activity android:name="com.deepsea.mua.app.im.mua.MsgSettingActivity" />
-        <activity android:name="com.deepsea.mua.app.im.mua.MessageActivity" />
-        <activity android:name="com.deepsea.mua.app.im.mua.SystemMsgActivity" />
-        <activity android:name="com.deepsea.mua.app.im.mua.MessageMainActivity" />
-        <activity android:name="com.deepsea.mua.app.im.mua.MyFriendActivity" />
-        <activity android:name="com.deepsea.mua.app.im.mua.ChatSettingActivity" />
+        <activity android:name="com.deepsea.mua.app.im.mua.MessageActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.deepsea.mua.app.im.mua.SystemMsgActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.deepsea.mua.app.im.mua.MessageMainActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.deepsea.mua.app.im.mua.MyFriendActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.deepsea.mua.app.im.mua.ChatSettingActivity"
+            android:screenOrientation="portrait"/>
 
         <activity
-            android:name=".mua.FriendAddActivity">
+            android:name=".mua.FriendAddActivity"
+            android:screenOrientation="portrait">
 
         </activity>
         <activity
             android:name=".mua.FriendRequestActivity"
+            android:screenOrientation="portrait"
            />
         <!-- 开机自启动服务 -->
         <receiver android:name="com.deepsea.mua.app.im.receiver.StartServiceReceiver">

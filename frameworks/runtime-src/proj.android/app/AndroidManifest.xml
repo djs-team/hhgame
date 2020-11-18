@@ -175,7 +175,8 @@
 
         <activity
             android:name="org.cocos2dx.javascript.ui.main.MainActivity"
-            android:launchMode="singleTop" />
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
 
         <!-- 适配Android 7.0, 需要将下方的com.hyphenate.chatuidemo替换为你的app包名 -->
         <provider

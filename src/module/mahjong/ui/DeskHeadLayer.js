@@ -106,9 +106,9 @@ load('module/mahjong/ui/DeskHeadLayer', function () {
         showDeskPersonlLayer: function (msg) {
 
             let mode = appInstance.dataManager().getPlayData().tableData.pMode
+            this.DeskPersonlLayer = appInstance.uiManager().createUI(DeskPersonlLayer,msg)
+            this.DeskPersonlLayer.setLocalZOrder(1000)
             if (mode != 9) {
-                this.DeskPersonlLayer = appInstance.uiManager().createUI(DeskPersonlLayer,msg)
-                this.DeskPersonlLayer.setLocalZOrder(1000)
                 this.parent.addChild(this.DeskPersonlLayer)
             }
         },

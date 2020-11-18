@@ -191,6 +191,12 @@ load('game/ui/scene/HallScene', function () {
         onLiveBroadcastClick: function (sender) {
             GameUtil.delayBtn(sender);
             //跳转直播界面
+            if (cc.sys.OS_IOS === cc.sys.os && AppConfig.isShowAppleLogin) {
+                //暂停所有音效
+                appInstance.audioManager().pauseMusic()
+                appInstance.nativeApi().jumpToBlindDate()
+                return
+            }
             let vipCode = appInstance.dataManager().getUserData().vipCode
             if(vipCode <= 0){
                 appInstance.gameAgent().Tips('该功能只对会员开放')

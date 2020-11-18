@@ -1993,6 +1993,218 @@
                 },
                 "Name": "cashCowPnl",
                 "ctype": "PanelObjectData"
+              },
+              {
+                "ClipAble": false,
+                "BackColorAlpha": 0,
+                "ComboBoxIndex": 1,
+                "SingleColor": {
+                  "R": 150,
+                  "G": 200
+                },
+                "FirstColor": {
+                  "R": 150,
+                  "G": 200
+                },
+                "EndColor": {},
+                "ColorVector": {
+                  "ScaleY": 1.0
+                },
+                "Scale9Width": 1,
+                "Scale9Height": 1,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 50.7,
+                  "Y": 180.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0396,
+                  "Y": 0.25
+                },
+                "PreSize": {
+                  "X": 0.0664,
+                  "Y": 0.1181
+                },
+                "LeftMargin": 8.2,
+                "RightMargin": 1186.7999,
+                "TopMargin": 497.5,
+                "BottomMargin": 137.5,
+                "Tag": 2874,
+                "Children": [
+                  {
+                    "ClipAble": false,
+                    "BackColorAlpha": 102,
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "hall/dtjm_10_1.png",
+                      "Plist": ""
+                    },
+                    "SingleColor": {
+                      "R": 150,
+                      "G": 200
+                    },
+                    "FirstColor": {
+                      "R": 150,
+                      "G": 200
+                    },
+                    "EndColor": {},
+                    "ColorVector": {
+                      "ScaleY": 1.0
+                    },
+                    "Scale9OriginX": 23,
+                    "Scale9OriginY": 18,
+                    "Scale9Width": 25,
+                    "Scale9Height": 20,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 48.0001,
+                      "Y": 48.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.5647,
+                      "Y": 0.5647
+                    },
+                    "PreSize": {
+                      "X": 1.1765,
+                      "Y": 1.1765
+                    },
+                    "LeftMargin": -1.9999,
+                    "RightMargin": -13.0001,
+                    "TopMargin": -13.0,
+                    "BottomMargin": -2.0,
+                    "Tag": 2876,
+                    "ActionTag": -1400668479,
+                    "Size": {
+                      "X": 100.0,
+                      "Y": 100.0
+                    },
+                    "Name": "vipMemberBtn",
+                    "ctype": "PanelObjectData"
+                  },
+                  {
+                    "IsCustomSize": true,
+                    "FontSize": 20,
+                    "LabelText": "VIP会员",
+                    "HorizontalAlignmentType": "HT_Center",
+                    "VerticalAlignmentType": "VT_Center",
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 48.75,
+                      "Y": 15.57
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.5735,
+                      "Y": 0.1832
+                    },
+                    "PreSize": {
+                      "X": 0.9882,
+                      "Y": 0.2353
+                    },
+                    "LeftMargin": 6.75,
+                    "RightMargin": -5.75,
+                    "TopMargin": 59.43,
+                    "BottomMargin": 5.57,
+                    "Tag": 2877,
+                    "ActionTag": 315963219,
+                    "Size": {
+                      "X": 84.0,
+                      "Y": 20.0
+                    },
+                    "Name": "vipMemberText",
+                    "ctype": "TextObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "hall/pz_31.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 7,
+                    "Scale9OriginY": 7,
+                    "Scale9Width": 9,
+                    "Scale9Height": 8,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 70.2757,
+                      "Y": 50.9
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.8268,
+                      "Y": 0.5988
+                    },
+                    "PreSize": {
+                      "X": 0.2706,
+                      "Y": 0.2588
+                    },
+                    "LeftMargin": 58.7757,
+                    "RightMargin": 3.2243,
+                    "TopMargin": 23.1,
+                    "BottomMargin": 39.9,
+                    "Tag": 2878,
+                    "ActionTag": 379226263,
+                    "Size": {
+                      "X": 23.0,
+                      "Y": 22.0
+                    },
+                    "Name": "redImg",
+                    "ctype": "ImageViewObjectData"
+                  }
+                ],
+                "ActionTag": -269619149,
+                "Size": {
+                  "X": 85.0,
+                  "Y": 85.0
+                },
+                "Name": "vipMemberPnl",
+                "ctype": "PanelObjectData"
               }
             ],
             "ActionTag": -2120639017,
@@ -2542,123 +2754,6 @@
                 "ctype": "PanelObjectData"
               },
               {
-                "FontSize": 18,
-                "ButtonText": "贵族",
-                "TextColor": {
-                  "R": 138,
-                  "G": 74,
-                  "B": 0
-                },
-                "DisabledFileData": {
-                  "Type": "Default",
-                  "Path": "Default/Button_Disable.png",
-                  "Plist": ""
-                },
-                "NormalFileData": {
-                  "Type": "Normal",
-                  "Path": "hall/dtjm_2.png",
-                  "Plist": ""
-                },
-                "Scale9Enable": true,
-                "Scale9OriginX": 15,
-                "Scale9OriginY": 11,
-                "Scale9Width": 21,
-                "Scale9Height": 15,
-                "OutlineColor": {
-                  "G": 0,
-                  "B": 0
-                },
-                "ShadowColor": {
-                  "R": 110,
-                  "G": 110,
-                  "B": 110
-                },
-                "ShadowOffsetX": 2.0,
-                "ShadowOffsetY": -2.0,
-                "TouchEnable": true,
-                "AnchorPoint": {
-                  "ScaleX": 0.5,
-                  "ScaleY": 0.5
-                },
-                "Position": {
-                  "X": 144.66,
-                  "Y": 665.92
-                },
-                "Scale": {
-                  "ScaleX": 1.0,
-                  "ScaleY": 1.0
-                },
-                "CColor": {},
-                "IconVisible": false,
-                "PrePosition": {
-                  "X": 0.113,
-                  "Y": 0.9249
-                },
-                "PreSize": {
-                  "X": 0.0406,
-                  "Y": 0.0462
-                },
-                "LeftMargin": 118.66,
-                "RightMargin": 1109.34,
-                "TopMargin": 37.45,
-                "BottomMargin": 649.29,
-                "Tag": 136,
-                "Children": [
-                  {
-                    "FileData": {
-                      "Type": "Normal",
-                      "Path": "hall/pz_31.png",
-                      "Plist": ""
-                    },
-                    "Scale9OriginX": 7,
-                    "Scale9OriginY": 7,
-                    "Scale9Width": 9,
-                    "Scale9Height": 8,
-                    "AnchorPoint": {
-                      "ScaleX": 0.5,
-                      "ScaleY": 0.5
-                    },
-                    "Position": {
-                      "X": 50.2758,
-                      "Y": 25.9009
-                    },
-                    "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
-                    },
-                    "CColor": {},
-                    "IconVisible": false,
-                    "PrePosition": {
-                      "X": 0.9668,
-                      "Y": 0.7787
-                    },
-                    "PreSize": {
-                      "X": 0.4423,
-                      "Y": 0.6615
-                    },
-                    "LeftMargin": 38.7758,
-                    "RightMargin": -9.7758,
-                    "TopMargin": -3.6409,
-                    "BottomMargin": 14.9009,
-                    "Tag": 298,
-                    "ActionTag": 1798066918,
-                    "Size": {
-                      "X": 23.0,
-                      "Y": 22.0
-                    },
-                    "Name": "redImg",
-                    "ctype": "ImageViewObjectData"
-                  }
-                ],
-                "ActionTag": 1379166341,
-                "Size": {
-                  "X": 52.0,
-                  "Y": 33.26
-                },
-                "Name": "guiZuBtn",
-                "ctype": "ButtonObjectData"
-              },
-              {
                 "ClipAble": false,
                 "BackColorAlpha": 184,
                 "SingleColor": {
@@ -2679,7 +2774,7 @@
                 "AnchorPoint": {},
                 "Position": {
                   "X": 117.04,
-                  "Y": 610.5823
+                  "Y": 640.58
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -2689,7 +2784,7 @@
                 "IconVisible": false,
                 "PrePosition": {
                   "X": 0.0914,
-                  "Y": 0.848
+                  "Y": 0.8897
                 },
                 "PreSize": {
                   "X": 0.1242,
@@ -2697,8 +2792,8 @@
                 },
                 "LeftMargin": 117.04,
                 "RightMargin": 1003.96,
-                "TopMargin": 75.4177,
-                "BottomMargin": 610.5823,
+                "TopMargin": 45.42,
+                "BottomMargin": 640.58,
                 "Tag": 138,
                 "Children": [
                   {
@@ -2848,7 +2943,7 @@
                   "Y": 0.9457
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.0625
                 },
                 "LeftMargin": 323.296,
@@ -3116,7 +3211,7 @@
                   "Y": 0.9458
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.0625
                 },
                 "LeftMargin": 558.08,
@@ -3384,7 +3479,7 @@
                   "Y": 0.9444
                 },
                 "PreSize": {
-                  "X": 0.1563,
+                  "X": 0.1562,
                   "Y": 0.0625
                 },
                 "LeftMargin": 780.08,
@@ -7836,13 +7931,13 @@
         "common/zuanshi.png",
         "Default/Button_Disable.png",
         "Default/Button_Press.png",
+        "hall/dtjm_10_1.png",
         "hall/dtjm_12.png",
         "hall/dtjm_13.png",
         "hall/dtjm_14.png",
         "hall/dtjm_15.png",
         "hall/dtjm_18.png",
         "hall/dtjm_19.png",
-        "hall/dtjm_2.png",
         "hall/dtjm_20.png",
         "hall/dtjm_21.png",
         "hall/dtjm_29.png",

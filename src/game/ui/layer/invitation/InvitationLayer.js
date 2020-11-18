@@ -398,6 +398,7 @@ load('game/ui/layer/invitation/InvitationLayer', function () {
                     cell.getChildByName('myInviteFinishedBtn').setVisible(false)
 
                     cell.getChildByName('myInviteUnfinishedBtn').addClickEventListener(function (sender, et) {
+                        appInstance.audioManager().playEffect(ResConfig.Sound.btnEffect)
                         GameUtil.delayBtn(sender);
                         this.onTaskCellClick(sender)
                     }.bind(this))
@@ -408,6 +409,7 @@ load('game/ui/layer/invitation/InvitationLayer', function () {
                     cell.getChildByName('myInviteFinishedBtn').setVisible(false)
 
                     cell.getChildByName('myInviteProcessingBtn').addClickEventListener(function (sender, et) {
+                        appInstance.audioManager().playEffect(ResConfig.Sound.btnEffect)
                         GameUtil.delayBtn(sender);
                         this.onTaskCellClick(sender)
                     }.bind(this))
@@ -423,6 +425,7 @@ load('game/ui/layer/invitation/InvitationLayer', function () {
                     cell.getChildByName('myInviteFinishedBtn').setVisible(false)
 
                     cell.getChildByName('myInviteUnfinishedBtn').addClickEventListener(function (sender, et) {
+                        appInstance.audioManager().playEffect(ResConfig.Sound.btnEffect)
                         GameUtil.delayBtn(sender);
                         this.onTaskCellClick(sender)
                     }.bind(this))

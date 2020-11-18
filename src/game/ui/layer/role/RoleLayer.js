@@ -263,6 +263,7 @@ load('game/ui/layer/role/RoleLayer', function () {
             }
 
             cell.addClickEventListener(function(sender, et) {
+                appInstance.audioManager().playEffect(ResConfig.Sound.btnEffect)
                 GameUtil.delayBtn(sender);
                 this.onRoleClick(cellData)
             }.bind(this))
@@ -303,6 +304,7 @@ load('game/ui/layer/role/RoleLayer', function () {
                     if(status == 1){
                         this.useMidBtn.setVisible(true)
                         this.useMidBtn.addClickEventListener(function (sender,et) {
+                            appInstance.audioManager().playEffect(ResConfig.Sound.btnEffect)
                             GameUtil.delayBtn(sender);
                             this.onUsedClicked(cellData)
                         }.bind(this))
@@ -371,6 +373,7 @@ load('game/ui/layer/role/RoleLayer', function () {
 
 
             buyBtn.addClickEventListener(function (sender,et) {
+                appInstance.audioManager().playEffect(ResConfig.Sound.btnEffect)
                 GameUtil.delayBtn(sender);
                 this.onBuyRoleClicked(cellData)
             }.bind(this))
@@ -419,10 +422,12 @@ load('game/ui/layer/role/RoleLayer', function () {
             }
 
             useBtn.addClickEventListener(function (sender,et) {
+                appInstance.audioManager().playEffect(ResConfig.Sound.btnEffect)
                 GameUtil.delayBtn(sender);
                 this.onUsedClicked(cellData)
             }.bind(this))
             buyBtn.addClickEventListener(function (sender,et) {
+                appInstance.audioManager().playEffect(ResConfig.Sound.btnEffect)
                 GameUtil.delayBtn(sender);
                 this.onBuyRoleClicked(cellData)
             }.bind(this))
@@ -452,17 +457,16 @@ load('game/ui/layer/role/RoleLayer', function () {
                     if(cellData.code == GameConfig.propType_currency_coin){
 
                         propName = '金币'
-                        propNum = this.coinPnl.getChildByName('coinsCnt').getString()
+                        propNum = appInstance.dataManager().getUserData().coin
 
                     }else if(cellData.code == GameConfig.propType_currency_diamonds){
 
                         propName = '钻石'
-                        propNum = this.diamondsPnl.getChildByName('diamondsCnt').getString()
+                        propNum = appInstance.dataManager().getUserData().diamonds
 
                     }else{
                         break
                     }
-
                     if(propNum < num) {
 
                         dialogMsg.TileName = '提 示'

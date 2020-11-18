@@ -25,6 +25,9 @@ load('game/msghandler/TableChangeProto', function () {
 
             appInstance.dataManager().setPlayData(msg)
 
+            let tableData = appInstance.dataManager().getTableData()
+            tableData.pGameType = msg.pGameType
+
             let curSceneName = appInstance.sceneManager().getCurSceneName()
             if (curSceneName === 'MjPlayScene') {
                 appInstance.sendNotification(TableEvent.clearTableView)

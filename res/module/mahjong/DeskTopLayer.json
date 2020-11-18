@@ -3025,7 +3025,6 @@
               {
                 "ClipAble": false,
                 "BackColorAlpha": 102,
-                "ComboBoxIndex": 1,
                 "SingleColor": {
                   "R": 150,
                   "G": 200
@@ -3073,7 +3072,6 @@
                   {
                     "ClipAble": false,
                     "BackColorAlpha": 102,
-                    "ComboBoxIndex": 1,
                     "SingleColor": {
                       "R": 150,
                       "G": 200
@@ -3086,6 +3084,8 @@
                     "ColorVector": {
                       "ScaleY": 1.0
                     },
+                    "Scale9Width": 1,
+                    "Scale9Height": 1,
                     "TouchEnable": true,
                     "AnchorPoint": {
                       "ScaleX": 0.5,
@@ -3150,7 +3150,7 @@
                           "Y": 0.7197
                         },
                         "LeftMargin": 14.4632,
-                        "RightMargin": 14.4631,
+                        "RightMargin": 14.4632,
                         "TopMargin": 1.2496,
                         "BottomMargin": 14.3296,
                         "Tag": 149,
@@ -3205,7 +3205,7 @@
                           "Y": 0.7197
                         },
                         "LeftMargin": 18.5152,
-                        "RightMargin": 340.4111,
+                        "RightMargin": 340.4112,
                         "TopMargin": 1.2496,
                         "BottomMargin": 14.3296,
                         "Tag": 150,
@@ -3220,7 +3220,7 @@
                       {
                         "IsCustomSize": true,
                         "FontSize": 20,
-                        "LabelText": "红中翻倍  通宝  刮大风  开牌炸",
+                        "LabelText": "红中翻倍通宝刮大风开牌炸开牌炸",
                         "VerticalAlignmentType": "VT_Center",
                         "OutlineColor": {
                           "G": 0,
@@ -3257,7 +3257,7 @@
                         },
                         "LeftMargin": 117.8554,
                         "RightMargin": 24.299,
-                        "TopMargin": 5.6041,
+                        "TopMargin": 5.6042,
                         "BottomMargin": 21.5868,
                         "Tag": 146,
                         "ActionTag": -1274820862,
@@ -3265,7 +3265,7 @@
                           "X": 306.7719,
                           "Y": 28.3883
                         },
-                        "Name": "choiceRuleText",
+                        "Name": "zhanKaiText0",
                         "ctype": "TextObjectData"
                       },
                       {
@@ -3309,7 +3309,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 224.4639,
+                          "X": 224.4632,
                           "Y": 12.8398
                         },
                         "Scale": {
@@ -3327,8 +3327,8 @@
                           "X": 0.0557,
                           "Y": 0.4498
                         },
-                        "LeftMargin": 211.9639,
-                        "RightMargin": 211.9625,
+                        "LeftMargin": 211.9632,
+                        "RightMargin": 211.9632,
                         "TopMargin": 30.2394,
                         "BottomMargin": 0.3398,
                         "Tag": 151,
@@ -3352,7 +3352,6 @@
                   {
                     "ClipAble": false,
                     "BackColorAlpha": 102,
-                    "ComboBoxIndex": 1,
                     "SingleColor": {
                       "R": 150,
                       "G": 200
@@ -3412,7 +3411,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 225.771,
+                          "X": 225.765,
                           "Y": 48.0
                         },
                         "Scale": {
@@ -3430,8 +3429,8 @@
                           "X": 0.9333,
                           "Y": 0.8989
                         },
-                        "LeftMargin": 15.771,
-                        "RightMargin": 14.229,
+                        "LeftMargin": 15.765,
+                        "RightMargin": 14.235,
                         "TopMargin": 1.0,
                         "BottomMargin": 8.0,
                         "Tag": 257,
@@ -3536,7 +3535,7 @@
                           "X": 0.6817,
                           "Y": 0.3371
                         },
-                        "LeftMargin": 124.404,
+                        "LeftMargin": 124.4041,
                         "RightMargin": 18.824,
                         "TopMargin": 42.41,
                         "BottomMargin": 16.59,
@@ -3552,7 +3551,7 @@
                       {
                         "IsCustomSize": true,
                         "FontSize": 20,
-                        "LabelText": "红中翻倍  通宝  刮大风  开牌炸  ",
+                        "LabelText": "红中翻倍通宝刮大风开牌炸开牌炸开牌炸开你",
                         "VerticalAlignmentType": "VT_Center",
                         "OutlineColor": {
                           "G": 0,
@@ -3641,7 +3640,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 225.0005,
+                          "X": 225.0,
                           "Y": 9.23
                         },
                         "Scale": {
@@ -3659,8 +3658,8 @@
                           "X": 0.0556,
                           "Y": 0.2809
                         },
-                        "LeftMargin": 212.5005,
-                        "RightMargin": 212.4995,
+                        "LeftMargin": 212.5,
+                        "RightMargin": 212.5,
                         "TopMargin": 67.27,
                         "BottomMargin": -3.27,
                         "Tag": 152,
@@ -3669,7 +3668,7 @@
                           "X": 25.0,
                           "Y": 25.0
                         },
-                        "Name": "heZheBtn",
+                        "Name": "heZheBtn1",
                         "ctype": "ButtonObjectData"
                       }
                     ],
@@ -3684,7 +3683,6 @@
                   {
                     "ClipAble": false,
                     "BackColorAlpha": 102,
-                    "ComboBoxIndex": 1,
                     "SingleColor": {
                       "R": 150,
                       "G": 200
@@ -3868,7 +3866,7 @@
                           "X": 0.6817,
                           "Y": 0.2308
                         },
-                        "LeftMargin": 124.404,
+                        "LeftMargin": 124.4041,
                         "RightMargin": 18.824,
                         "TopMargin": 83.41,
                         "BottomMargin": 16.59,
@@ -4025,7 +4023,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 225.0005,
+                          "X": 225.0,
                           "Y": 9.23
                         },
                         "Scale": {
@@ -4043,8 +4041,8 @@
                           "X": 0.0556,
                           "Y": 0.1923
                         },
-                        "LeftMargin": 212.5005,
-                        "RightMargin": 212.4995,
+                        "LeftMargin": 212.5,
+                        "RightMargin": 212.5,
                         "TopMargin": 108.27,
                         "BottomMargin": -3.27,
                         "Tag": 269,
@@ -4053,7 +4051,7 @@
                           "X": 25.0,
                           "Y": 25.0
                         },
-                        "Name": "heZheBtn",
+                        "Name": "heZheBtn2",
                         "ctype": "ButtonObjectData"
                       }
                     ],

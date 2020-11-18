@@ -4,6 +4,7 @@
  */
 load('module/mahjong/ui/DeskTopLayer', function () {
     let HallResConfig = include('game/config/ResConfig')
+    let HallGameConfig = include('game/config/GameConfig')
     let GameUtil = include('game/public/GameUtil')
     let ResConfig = include('module/mahjong/common/ResConfig')
     let BaseLayer = include('public/ui/BaseLayer')
@@ -41,6 +42,8 @@ load('module/mahjong/ui/DeskTopLayer', function () {
             'M3': '高级场 底分5000',
             'M4': '大师场 底分20000',
         },
+        _channelCity: '',
+        _ruleInfo: {},
         RES_BINDING: function () {
             return {
                 'pnl/ActionNd': {  },
@@ -71,11 +74,80 @@ load('module/mahjong/ui/DeskTopLayer', function () {
                 'TopPnl/BaoNd/RemainingCard/RemainingCardsTxt': {},
                 'TopPnl/TableLevelNd': {},
                 'TopPnl/TableLevelNd/TableLevelTxt': {},
+                'TopPnl/choiceRulePnl': {},
+                'TopPnl/choiceRulePnl/suoLvPnl': {},
+                'TopPnl/choiceRulePnl/suoLvPnl/zhanKaiBtn': {},
+                'TopPnl/choiceRulePnl/zhanKaiPnl1': {},
+                'TopPnl/choiceRulePnl/zhanKaiPnl1/heZheBtn1': {},
+                'TopPnl/choiceRulePnl/zhanKaiPnl2': {},
+                'TopPnl/choiceRulePnl/zhanKaiPnl2/heZheBtn2': {},
             }
         },
         ctor: function () {
             this._super(ResConfig.View.DeskTopLayer)
             this.registerMediator(new DeskTopLayerMdt(this))
+        },
+
+        abbreviationRule: function () {
+            this.suoLvPnl.setVisible(true)
+            this.zhanKaiPnl1.setVisible(false)
+            this.zhanKaiPnl2.setVisible(false)
+            this.suoLvPnl.getChildByName('cityText').setString(this._channelCity)
+            this.suoLvPnl.getChildByName('zhanKaiText0').setString(this._ruleInfo.strOne)
+            this.zhanKaiBtn.addClickEventListener(function (sender,et) {
+                if (this._ruleInfo.strThree != '') {
+                    this.detailRuleTwo()
+                } else if (this._ruleInfo.strTwo != '') {
+                    this.detailRuleOne()
+
+                }
+            }.bind(this))
+        },
+
+        detailRuleOne: function () {
+            this.suoLvPnl.setVisible(false)
+            this.zhanKaiPnl1.setVisible(true)
+            this.zhanKaiPnl2.setVisible(false)
+            this.zhanKaiPnl1.getChildByName('cityText').setString(this._channelCity)
+            this.zhanKaiPnl1.getChildByName('zhanKaiText0').setString(this._ruleInfo.strOne)
+            this.zhanKaiPnl1.getChildByName('zhanKaiText1').setString(this._ruleInfo.strTwo)
+            this.heZheBtn1.addClickEventListener(function (sender,et) {
+                this.abbreviationRule();
+            }.bind(this))
+        },
+
+        detailRuleTwo: function () {
+            this.suoLvPnl.setVisible(false)
+            this.zhanKaiPnl1.setVisible(false)
+            this.zhanKaiPnl2.setVisible(true)
+            this.zhanKaiPnl2.getChildByName('cityText').setString(this._channelCity)
+            this.zhanKaiPnl2.getChildByName('zhanKaiText0').setString(this._ruleInfo.strOne)
+            this.zhanKaiPnl2.getChildByName('zhanKaiText1').setString(this._ruleInfo.strTwo)
+            this.zhanKaiPnl2.getChildByName('zhanKaiText2').setString(this._ruleInfo.strThree)
+            this.heZheBtn2.addClickEventListener(function (sender,et) {
+                this.abbreviationRule();
+            }.bind(this))
+        },
+
+        dealChoiceRule: function (data) {
+            let strOne = '';
+            let strTwo = '';
+            let strThree = '';
+            for (let i=0; i<data.length; i++) {
+                if (strOne.length-2>15) {
+                    if (strTwo.length-2>20) {
+                        strThree = strThree+TableConfig.ChoiceRule[data[i]]+'  '
+                    } else {
+                        strTwo = strTwo+TableConfig.ChoiceRule[data[i]]+'  '
+                    }
+                } else {
+                    strOne = strOne+TableConfig.ChoiceRule[data[i]]+'  '
+                }
+            }
+            strOne = strOne.trim()
+            strTwo = strTwo.trim()
+            strThree = strThree.trim()
+            return {'strOne': strOne, 'strTwo': strTwo, 'strThree': strThree};
         },
 
         onSetBtnClick: function () {
@@ -151,11 +223,15 @@ load('module/mahjong/ui/DeskTopLayer', function () {
         },
 
         initData: function (pData) {
-            cc.log('=====================topLayer=========' + JSON.stringify(pData))
+            let channel = appInstance.dataManager().getUserData().channel
+            this._channelCity = HallGameConfig.channelToCity[channel]
             this._selfInfo = pData.getSelfInfo()
             this._tData = pData.tableData
             this._actionCell = {}
             this._chiCell = []
+            let pChoiceRule = pData.tableData.pChoiceRule
+            pChoiceRule = pChoiceRule.split(',')
+            this._ruleInfo = this.dealChoiceRule(pChoiceRule)
         },
 
         initView: function (pData) {
@@ -207,6 +283,13 @@ load('module/mahjong/ui/DeskTopLayer', function () {
             }
 
             // this.onDealPower()
+
+            this.abbreviationRule();
+        },
+
+        updateTableLevelTxt: function () {
+            let pGameType = appInstance.dataManager().getTableData().pGameType
+            this.TableLevelTxt.setString(this._tableLevel[pGameType])
         },
 
         // onDealPower: function () {

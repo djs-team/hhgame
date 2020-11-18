@@ -85,6 +85,12 @@ load('game/config/GameConfig', function () {
         'daqing': '大庆麻将'
     }
 
+    GameConfig.channelToCity = {
+        '10001': '大庆麻将',
+        '10037': '嫩江麻将',
+        '10047': '肇源麻将',
+    }
+
     GameConfig.jumping = {
         '2': 'CoinGameLayer',
         '3': 'CoinGameLayer',

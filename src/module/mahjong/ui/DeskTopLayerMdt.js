@@ -26,6 +26,7 @@ load('module/mahjong/ui/DeskTopLayerMdt', function () {
                 TableEvent.JiaGangTableProto,
                 TableEvent.GamingProto,
                 TableEvent.MatchResultProto,
+                TableEvent.TableChangeProto,
             ]
         },
         handleNotification: function (notification) {
@@ -54,6 +55,9 @@ load('module/mahjong/ui/DeskTopLayerMdt', function () {
                     break
                 case TableEvent.GamingProto:
                     this.view.toExpressionView(body);
+                    break
+                case TableEvent.TableChangeProto:
+                    this.view.updateTableLevelTxt()
                     break
             }
         },

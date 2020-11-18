@@ -323,6 +323,7 @@ load('game/ui/layer/arena/ArenaLayer', function () {
                 }
 
                 cell.addClickEventListener(function (sender,et) {
+                    appInstance.audioManager().playEffect(ResConfig.Sound.btnEffect)
                     GameUtil.delayBtn(sender);
                     this.onAreanBtnClick(sender)
                 }.bind(this))
@@ -414,11 +415,13 @@ load('game/ui/layer/arena/ArenaLayer', function () {
                 }
 
                 cell.getChildByName('explainBtn').addClickEventListener(function (sender,dt) {
+                    appInstance.audioManager().playEffect(ResConfig.Sound.btnEffect)
                     GameUtil.delayBtn(sender);
                     this.onShowPopupClick(sender)
                 }.bind(this))
 
                 cell.getChildByName('signBtn').addClickEventListener(function (sender,dt) {
+                    appInstance.audioManager().playEffect(ResConfig.Sound.btnEffect)
                     GameUtil.delayBtn(sender);
                     this.onSignMatchClick(sender)
                 }.bind(this))

@@ -70,6 +70,7 @@ load('game/ui/public/DialogLayer', function () {
             if (this._closebtn) {
                 closeBtn.setVisible(true)
                 closeBtn.addClickEventListener(function(sender, et) {
+                    appInstance.audioManager().playEffect(ResConfig.Sound.btnEffect)
                     if (typeof this._closebtn === 'function') {
                         this._closebtn()
                     }
@@ -84,6 +85,7 @@ load('game/ui/public/DialogLayer', function () {
                 leftBtn.setVisible(true)
                 leftBtn.getChildByName('name').setString(this._leftbtnname)
                 leftBtn.addClickEventListener(function(sender, et) {
+                    appInstance.audioManager().playEffect(ResConfig.Sound.btnEffect)
                     if (this._leftbtnclick) {
                         this._leftbtnclick()
                     }
@@ -98,6 +100,7 @@ load('game/ui/public/DialogLayer', function () {
                 midBtn.setVisible(true)
                 midBtn.getChildByName('name').setString(this._midbtnname)
                 midBtn.addClickEventListener(function(sender, et) {
+                    appInstance.audioManager().playEffect(ResConfig.Sound.btnEffect)
                     if (this._midbtnclick) {
                         this._midbtnclick()
                     }
@@ -112,6 +115,7 @@ load('game/ui/public/DialogLayer', function () {
                 rightBtn.setVisible(true)
                 rightBtn.getChildByName('name').setString(this._rightbtnname)
                 rightBtn.addClickEventListener(function(sender, et) {
+                    appInstance.audioManager().playEffect(ResConfig.Sound.btnEffect)
                     if (this._rightbtnclick) {
                         this._rightbtnclick()
                     }

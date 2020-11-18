@@ -83,6 +83,7 @@ load('game/ui/layer/choosecity/ChooseCityLayer', function () {
             nameNd.setString(data.name)
 
             cell.addClickEventListener(function(sender, et) {
+                appInstance.audioManager().playEffect(ResConfig.Sound.btnEffect)
                 GameUtil.delayBtn(sender);
                 this.onLeftBtnClick(sender)
             }.bind(this))

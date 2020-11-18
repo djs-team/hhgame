@@ -50,6 +50,13 @@
 /// 退出登录
 + (void)logout;
 
+/*
+ * apple登录
+ * 返回授权后的token，如果没有信息，则登录失败
+ */
++ (void)appleLoginWithMethod:(NSString *_Nonnull)method;
+- (void)appleLoginRequest;
+
 #pragma mark - 注册极光tagID
 /// 注册极光tagID
 /// @param tagID

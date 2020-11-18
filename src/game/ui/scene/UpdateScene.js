@@ -74,6 +74,10 @@ load('game/ui/scene/UpdateScene', function () {
                         info = result.data.ios
                     }
                     if (info.isForceCheck) {
+                        if (cc.sys.OS_IOS === cc.sys.os && !AppConfig.appleIsForceCheck) {
+                            this.goLoginScene()
+                            return
+                        }
                         cc.loader.loadJson('res/project.manifest', function (er, data) {
                             if (er || !data.version) {
                                 this.goLoginScene()

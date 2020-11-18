@@ -19,7 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" image="LaunchScreen_logo" translatesAutoresizingMaskIntoConstraints="NO" id="YCC-wj-Gww" userLabel="Background">
+                            <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" image="LaunchScreen_logo" translatesAutoresizingMaskIntoConstraints="NO" id="YCC-wj-Gww" userLabel="Background">
                                 <rect key="frame" x="256" y="116" width="300" height="143"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="YCC-wj-Gww" secondAttribute="height" multiplier="503:240" id="421-se-yj6"/>

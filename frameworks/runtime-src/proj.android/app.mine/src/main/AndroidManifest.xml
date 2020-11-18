@@ -3,53 +3,108 @@
 
     <application>
 
-        <activity android:name="com.deepsea.mua.mine.activity.ProfileActivity" />
-        <activity android:name="com.deepsea.mua.mine.activity.RechargeActivity" />
+        <activity
+            android:name="com.deepsea.mua.mine.activity.ProfileActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.deepsea.mua.mine.activity.RechargeActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.deepsea.mua.mine.activity.ProfileEditActivity"
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
-        <activity android:name="com.deepsea.mua.mine.activity.PresentWallActivity" />
-        <activity android:name="com.deepsea.mua.mine.activity.WalletActivity" />
-        <activity android:name="com.deepsea.mua.mine.activity.WalletRecordActivity" />
-        <activity android:name="com.deepsea.mua.mine.activity.IncomeRedpackageDetailsActivity" />
+        <activity
+            android:name="com.deepsea.mua.mine.activity.PresentWallActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.deepsea.mua.mine.activity.WalletActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.deepsea.mua.mine.activity.WalletRecordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.deepsea.mua.mine.activity.IncomeRedpackageDetailsActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.deepsea.mua.mine.activity.ExchangeMdActivity"
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="stateVisible" />
-        <activity android:name="com.deepsea.mua.mine.activity.FeedResultActivity" />
-        <activity android:name="com.deepsea.mua.mine.activity.FeedbackActivity" />
+        <activity
+            android:name="com.deepsea.mua.mine.activity.FeedResultActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.deepsea.mua.mine.activity.FeedbackActivity"
+            android:screenOrientation="portrait" />
 
-        <activity android:name="com.deepsea.mua.mine.activity.WebActivity" />
+        <activity
+            android:name="com.deepsea.mua.mine.activity.WebActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.UpdateActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/TranslucentWindow" />
         <activity
             android:name=".activity.InviteDialogActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/TranslucentWindow" />
         <activity
             android:name=".activity.UploadPhotoDialogActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
             android:theme="@style/HalfTranslucentWindow" />
         <activity
             android:name=".activity.RechargeDialogActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/TranslucentWindow" />
         <activity
             android:name=".activity.ScreenDialogActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/HalfTranslucentWindow" />
-        <activity android:name="com.deepsea.mua.mine.activity.AssistActivity" />
-        <activity android:name="com.deepsea.mua.mine.activity.MarriageSeekingActivity" />
-        <activity android:name="com.deepsea.mua.mine.activity.CrashWithdrawalActivity" />
-        <activity android:name="com.deepsea.mua.mine.activity.CollectionAccountSettingActivity" />
-        <activity android:name="com.deepsea.mua.mine.activity.CrashWithDrawalDetailsActivity" />
-        <activity android:name="com.deepsea.mua.mine.activity.IncomeDetailsActivity" />
-        <activity android:name="com.deepsea.mua.mine.activity.QueryDateDetailsActivity" />
-        <activity android:name="com.deepsea.mua.mine.activity.ExchangeMdDetailsActivity" />
-        <activity android:name="com.deepsea.mua.mine.activity.MyTagsActivity" />
-        <activity android:name="com.deepsea.mua.mine.activity.BindWechatActivity" />
-        <activity android:name="com.deepsea.mua.mine.activity.GuardActivity" />
-        <activity android:name="com.deepsea.mua.mine.activity.GuardRuleActivity" />
-        <activity android:name="com.deepsea.mua.mine.activity.MyGuardActivity" />
-        <activity android:name="com.deepsea.mua.mine.activity.BlockListActivity" />
-        <activity android:name="com.deepsea.mua.mine.activity.BindPhoneActivity" />
+        <activity
+            android:name="com.deepsea.mua.mine.activity.AssistActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.deepsea.mua.mine.activity.MarriageSeekingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.deepsea.mua.mine.activity.CrashWithdrawalActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.deepsea.mua.mine.activity.CollectionAccountSettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.deepsea.mua.mine.activity.CrashWithDrawalDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.deepsea.mua.mine.activity.IncomeDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.deepsea.mua.mine.activity.QueryDateDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.deepsea.mua.mine.activity.ExchangeMdDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.deepsea.mua.mine.activity.MyTagsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.deepsea.mua.mine.activity.BindWechatActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.deepsea.mua.mine.activity.GuardActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.deepsea.mua.mine.activity.GuardRuleActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.deepsea.mua.mine.activity.MyGuardActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.deepsea.mua.mine.activity.BlockListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.deepsea.mua.mine.activity.BindPhoneActivity"
+            android:screenOrientation="portrait" />
 
         <activity
             android:name="com.yalantis.ucrop.UCropActivity"

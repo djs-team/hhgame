@@ -49,6 +49,8 @@
 		00471A90255E8BA20084C6FB /* live_room_guardian_animation.gif in Resources */ = {isa = PBXBuildFile; fileRef = 00471A8F255E8BA20084C6FB /* live_room_guardian_animation.gif */; };
 		00557A692512FB010056E685 /* CXOCJSBrigeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 00557A682512FB010056E685 /* CXOCJSBrigeManager.m */; };
 		005C3F8C2515E8E400DBCD02 /* AppController+Share.m in Sources */ = {isa = PBXBuildFile; fileRef = 005C3F8B2515E8E400DBCD02 /* AppController+Share.m */; };
+		005F9C872564F35400FD9B2C /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 005F9C862564F35400FD9B2C /* AuthenticationServices.framework */; };
+		005F9C8C2564FA4100FD9B2C /* CXAppleLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 005F9C8B2564FA4100FD9B2C /* CXAppleLoginManager.m */; };
 		006148B2250B27F200BB7620 /* CXIPAPurchaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 006148AC250B27F100BB7620 /* CXIPAPurchaseManager.m */; };
 		006148B3250B27F200BB7620 /* SandBoxHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 006148AD250B27F100BB7620 /* SandBoxHelper.m */; };
 		006148B8250B4CA600BB7620 /* CXThirdPayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 006148B7250B4CA600BB7620 /* CXThirdPayManager.m */; };
@@ -913,6 +915,9 @@
 		00557A682512FB010056E685 /* CXOCJSBrigeManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXOCJSBrigeManager.m; sourceTree = "<group>"; };
 		005C3F8A2515E8E400DBCD02 /* AppController+Share.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppController+Share.h"; sourceTree = "<group>"; };
 		005C3F8B2515E8E400DBCD02 /* AppController+Share.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppController+Share.m"; sourceTree = "<group>"; };
+		005F9C862564F35400FD9B2C /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/AuthenticationServices.framework; sourceTree = DEVELOPER_DIR; };
+		005F9C8A2564FA4100FD9B2C /* CXAppleLoginManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXAppleLoginManager.h; sourceTree = "<group>"; };
+		005F9C8B2564FA4100FD9B2C /* CXAppleLoginManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXAppleLoginManager.m; sourceTree = "<group>"; };
 		006148A9250B27F100BB7620 /* SandBoxHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SandBoxHelper.h; sourceTree = "<group>"; };
 		006148AC250B27F100BB7620 /* CXIPAPurchaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXIPAPurchaseManager.m; sourceTree = "<group>"; };
 		006148AD250B27F100BB7620 /* SandBoxHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SandBoxHelper.m; sourceTree = "<group>"; };
@@ -2092,6 +2097,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				005F9C872564F35400FD9B2C /* AuthenticationServices.framework in Frameworks */,
 				0018058825188F0500A47927 /* AppTrackingTransparency.framework in Frameworks */,
 				0018054625187E5700A47927 /* AdSupport.framework in Frameworks */,
 				0020BB5B250BA14700E2979B /* ImageIO.framework in Frameworks */,
@@ -2173,6 +2179,15 @@
 			path = OC_JSBrigeManager;
 			sourceTree = "<group>";
 		};
+		005F9C8F2564FA5100FD9B2C /* AppleLogin */ = {
+			isa = PBXGroup;
+			children = (
+				005F9C8A2564FA4100FD9B2C /* CXAppleLoginManager.h */,
+				005F9C8B2564FA4100FD9B2C /* CXAppleLoginManager.m */,
+			);
+			path = AppleLogin;
+			sourceTree = "<group>";
+		};
 		0061488D250B1CCC00BB7620 /* CXClasses */ = {
 			isa = PBXGroup;
 			children = (
@@ -2231,6 +2246,7 @@
 		006148F2250B90A700BB7620 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				005F9C8F2564FA5100FD9B2C /* AppleLogin */,
 				00557A662512FACD0056E685 /* OC_JSBrigeManager */,
 				00802AB6250CAB7200F43A32 /* BUAd */,
 				00614AFB250B94C800BB7620 /* Aliyun */,
@@ -4539,6 +4555,7 @@
 		A92275401517C094001B78AA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				005F9C862564F35400FD9B2C /* AuthenticationServices.framework */,
 				0018058725188F0500A47927 /* AppTrackingTransparency.framework */,
 				0018054325187E5700A47927 /* AdSupport.framework */,
 				00802AA7250C6E0000F43A32 /* libxml2.tbd */,
@@ -5466,6 +5483,7 @@
 				00614E11250B94CE00BB7620 /* CXHomeSearchViewController.m in Sources */,
 				00614EE8250B94CE00BB7620 /* CXLiveRoomSeatView.m in Sources */,
 				00614F19250B94CF00BB7620 /* AgoraRtcEngineManager.m in Sources */,
+				005F9C8C2564FA4100FD9B2C /* CXAppleLoginManager.m in Sources */,
 				0061505C250B94D000BB7620 /* EMEmoticonGroup.m in Sources */,
 				00615072250B94D000BB7620 /* EMBadgeLabel.m in Sources */,
 				00614F37250B94CF00BB7620 /* SocketMessageMicModelChanged.m in Sources */,

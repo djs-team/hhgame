@@ -12,10 +12,11 @@ load('game/public/AppConfig', function () {
     Appconfig.webUrl = 'http://hot.harmonygames.cn/chot/web/'
 
     /******* 苹果通用配置 *********/
-    Appconfig.applePayType = 'Other' // 苹果支付方式控制: Apple:苹果内购 Other: 支付宝微信
-    Appconfig.loginShowPhoneAlert = 'Other' // 一键登录是否需要展示输入手机号弹框: Show:展示 Other:不展示
-    Appconfig.appleIsForceCheck = true // 苹果版本是否检测热更
-    Appconfig.isShowAppleLogin = false // 是否展示苹果登录
+    Appconfig.applePayType = 'Apple' // 苹果支付方式控制: Apple:苹果内购 Other: 支付宝微信
+    Appconfig.loginShowPhoneAlert = 'Show' // 一键登录是否需要展示输入手机号弹框: Show:展示 Other:不展示
+    Appconfig.appleIsForceCheck = false // 苹果版本是否检测热更
+    Appconfig.isShowAppleLogin = true // 是否展示苹果登录
+    Appconfig.isVipOnLiveBroadcast = true // 是否只有VIP进入直播间
 
     Appconfig.event = {
         'TCP_CLOSE': 'TCP_CLOSE',

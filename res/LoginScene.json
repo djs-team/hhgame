@@ -685,6 +685,188 @@
                 "ctype": "ButtonObjectData"
               },
               {
+                "FontSize": 35,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Default",
+                  "Path": "Default/Button_Disable.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "common/bt_1.png",
+                  "Plist": ""
+                },
+                "Scale9Enable": true,
+                "Scale9OriginX": 53,
+                "Scale9OriginY": 11,
+                "Scale9Width": 28,
+                "Scale9Height": 66,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 841.472,
+                  "Y": 157.3831
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PositionPercentXEnabled": true,
+                "PrePosition": {
+                  "X": 0.6574,
+                  "Y": 0.2186
+                },
+                "PreSize": {
+                  "X": 0.2374,
+                  "Y": 0.1222
+                },
+                "LeftMargin": 689.5071,
+                "RightMargin": 286.563,
+                "TopMargin": 518.6169,
+                "BottomMargin": 113.3831,
+                "Tag": 13,
+                "Children": [
+                  {
+                    "FontSize": 38,
+                    "LabelText": "Apple登录",
+                    "FontResource": {
+                      "Type": "Normal",
+                      "Path": "font/hkhbtW12.ttc",
+                      "Plist": ""
+                    },
+                    "HorizontalAlignmentType": "HT_Center",
+                    "VerticalAlignmentType": "VT_Center",
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 178.0726,
+                      "Y": 47.0008
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {
+                      "R": 138,
+                      "G": 74,
+                      "B": 0
+                    },
+                    "IconVisible": false,
+                    "PositionPercentXEnabled": true,
+                    "PositionPercentYEnabled": true,
+                    "PrePosition": {
+                      "X": 0.5859,
+                      "Y": 0.5341
+                    },
+                    "PreSize": {
+                      "X": 0.5034,
+                      "Y": 0.4318
+                    },
+                    "LeftMargin": 101.5726,
+                    "RightMargin": 49.3574,
+                    "TopMargin": 21.9992,
+                    "BottomMargin": 28.0008,
+                    "Tag": 21,
+                    "ActionTag": -1536177862,
+                    "Size": {
+                      "X": 153.0,
+                      "Y": 38.0
+                    },
+                    "Name": "Text_2",
+                    "ctype": "TextObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "login/denglu_8.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 15,
+                    "Scale9OriginY": 12,
+                    "Scale9Width": 17,
+                    "Scale9Height": 13,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 60.3301,
+                      "Y": 47.96
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PositionPercentXEnabled": true,
+                    "PositionPercentYEnabled": true,
+                    "PrePosition": {
+                      "X": 0.1985,
+                      "Y": 0.545
+                    },
+                    "PreSize": {
+                      "X": 0.1546,
+                      "Y": 0.4205
+                    },
+                    "LeftMargin": 36.8301,
+                    "RightMargin": 220.0999,
+                    "TopMargin": 21.54,
+                    "BottomMargin": 29.46,
+                    "Tag": 24,
+                    "ActionTag": 802995541,
+                    "Size": {
+                      "X": 48.0,
+                      "Y": 48.0
+                    },
+                    "Name": "Image_2",
+                    "ctype": "ImageViewObjectData"
+                  }
+                ],
+                "ActionTag": 1353822671,
+                "Size": {
+                  "X": 303.93,
+                  "Y": 88.0
+                },
+                "Name": "appleLogin",
+                "ctype": "ButtonObjectData"
+              },
+              {
                 "CheckedState": true,
                 "NormalBackFileData": {
                   "Type": "Normal",
@@ -1609,6 +1791,7 @@
         "login/denglu_3.png",
         "login/denglu_4.png",
         "login/denglu_5.png",
+        "login/denglu_8.png",
         "login/useragree_3.png",
         "png/denglu_bg.png"
       ],

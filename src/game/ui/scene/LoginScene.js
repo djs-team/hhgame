@@ -151,7 +151,8 @@ load('game/ui/scene/LoginScene', function () {
                 'topPnl': {},
                 'pnl': {},
                 'pnl/phoneLogin': {onClicked: this.onphoneLoginClick},
-                'pnl/wxLogin': {onClicked: this.onwxLoginClick},
+                'pnl/wxLogin': { onClicked: this.onwxLoginClick },
+                'pnl/appleLogin': {onClicked: this.onappleLoginClick},
                 'pnl/agreeBtn': {onClicked: this.onagreeBtnClick},
                 'pnl/userAgreeBtn': {onClicked: this.onUserAgreeClick},
                 'pnl/vision': {},
@@ -202,7 +203,11 @@ load('game/ui/scene/LoginScene', function () {
                 }
             }
 
-
+            if (Appconfig.isShowAppleLogin) {
+                this.appleLogin.setVisible(true)
+            } else {
+                this.appleLogin.setVisible(false)
+            }
             // this.goTest()
         },
 
@@ -350,6 +355,20 @@ load('game/ui/scene/LoginScene', function () {
 
         },
 
+        onappleLoginClick: function () {
+            GameUtil.delayBtns(this._delayBtns, 5)
+            if (!this.onCheckeCanLogin())
+                return
+
+            if (cc.sys.OS_WINDOWS === cc.sys.os) {
+                this.debugLogin()
+            } else {
+                appInstance.nativeApi().getInstallParam()
+                appInstance.nativeApi().appleLogin()
+             }
+
+        },
+
         doPhoto: function () {
             appInstance.nativeApi().getPictureFromPhoneAlbum('www.baidu.com', 'abc')
         },
@@ -464,6 +483,7 @@ load('game/ui/scene/LoginScene', function () {
             appInstance.nativeApi().getInstallParam()
             this._delayBtns.push(this.phoneLogin)
             this._delayBtns.push(this.wxLogin)
+            this._delayBtns.push(this.appleLogin)
 
         },
 

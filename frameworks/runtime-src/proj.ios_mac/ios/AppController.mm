@@ -81,6 +81,8 @@
 
 //#import <StoreKit/StoreKit.h>
 
+#import "CXAppleLoginManager.h"
+
 @interface AppController() <JPUSHRegisterDelegate, WXApiDelegate, BUSplashAdDelegate, OpenInstallDelegate>
 
 @end
@@ -170,6 +172,30 @@ static AppDelegate s_sharedApplication;
 //
 //    }
 //}
+
++ (void)appleLoginWithMethod:(NSString *)method {
+    [CXOCJSBrigeManager manager].wxLoginMethod = method;
+    [[CXAppleLoginManager manager] appleLoginComplete:^(NSInteger state, NSString * _Nonnull msg, id  _Nonnull data) {
+        if (state == AppleLoginTypeSuccessful) {
+            NSDictionary *resp = data;
+            NSDictionary *param = @{
+                @"platform": @3,
+                @"accounttype": @0,
+                @"unionId" : resp[@"user"],
+                @"account":resp[@"user"],
+                @"code":@1,
+            };
+            NSString *respStr = [param jsonStringEncoded];
+            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].wxLoginMethod param:respStr];
+        } else {
+            NSDictionary *param = @{
+                @"code":@0,
+            };
+            NSString *respStr = [param jsonStringEncoded];
+            [AppController dispatchCustomEventWithMethod:[CXOCJSBrigeManager manager].wxLoginMethod param:respStr];
+        }
+    }];
+}
 
 #pragma mark - ======================== JPush =============================
 #pragma mark - 注册极光tagID

@@ -10,6 +10,7 @@ load('game/ui/scene/HallScene', function () {
     let GameConfig = include('game/config/GameConfig')
     let AniPlayer = ResConfig.AniPlayer
     let PlayerPlay = ResConfig.PlayerPlay
+    let AppConfig = include('game/public/AppConfig')
     let HallScene = BaseScene.extend({
         _className: 'HallScene',
         RES_BINDING: function () {
@@ -191,7 +192,7 @@ load('game/ui/scene/HallScene', function () {
         onLiveBroadcastClick: function (sender) {
             GameUtil.delayBtn(sender);
             //跳转直播界面
-            if (cc.sys.OS_IOS === cc.sys.os && AppConfig.isShowAppleLogin) {
+            if (cc.sys.OS_IOS === cc.sys.os && !AppConfig.isVipOnLiveBroadcast) {
                 //暂停所有音效
                 appInstance.audioManager().pauseMusic()
                 appInstance.nativeApi().jumpToBlindDate()

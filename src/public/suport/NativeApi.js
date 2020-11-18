@@ -100,6 +100,18 @@ load('public/suport/NativeApi', function () {
                 this.HelloOC('wxLogin throw: ' + JSON.stringify(e))
             }
         },
+        // 苹果登录
+        appleLogin: function () {
+            try {
+                if (cc.sys.OS_ANDROID === cc.sys.os) {
+                    jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'login', '(Ljava/lang/String;)V', "wx")
+                } else if (cc.sys.OS_IOS === cc.sys.os) {
+                    jsb.reflection.callStaticMethod('AppController', 'appleLoginWithMethod:', "THIRD_LOGIN_RESULT")
+                }
+            } catch (e) {
+                this.HelloOC('appleLogin throw: ' + JSON.stringify(e))
+            }
+        },
         oneClickLogin: function () {
             try {
                 if (cc.sys.OS_ANDROID === cc.sys.os) {

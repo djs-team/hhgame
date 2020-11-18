@@ -9,7 +9,7 @@
           <AbstractNodeData Name="bgPnl" ActionTag="1877831000" UserData="{&quot;layoutType&quot;:&quot;showAll&quot;,&quot;screenAlign&quot;:&quot;bottom&quot;}" Tag="358" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <Children>
-              <AbstractNodeData Name="headNd3" ActionTag="1447338167" Tag="365" IconVisible="True" LeftMargin="130.0000" RightMargin="1150.0000" TopMargin="140.0000" BottomMargin="580.0000" ctype="SingleNodeObjectData">
+              <AbstractNodeData Name="headNd3" ActionTag="1447338167" Tag="365" IconVisible="True" LeftMargin="130.0000" RightMargin="1150.0000" TopMargin="170.0000" BottomMargin="550.0000" ctype="SingleNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <Children>
                   <AbstractNodeData Name="AniNd" ActionTag="-798516039" Tag="16" IconVisible="True" TopMargin="380.0000" BottomMargin="-380.0000" ctype="SingleNodeObjectData">
@@ -61,10 +61,10 @@
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint />
-                <Position X="130.0000" Y="580.0000" />
+                <Position X="130.0000" Y="550.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.1016" Y="0.8056" />
+                <PrePosition X="0.1016" Y="0.7639" />
                 <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
               <AbstractNodeData Name="headNd2" ActionTag="-8661288" Tag="368" IconVisible="True" LeftMargin="640.0000" RightMargin="640.0000" TopMargin="70.0000" BottomMargin="650.0000" ctype="SingleNodeObjectData">
@@ -125,7 +125,7 @@
                 <PrePosition X="0.5000" Y="0.9028" />
                 <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="headNd1" ActionTag="1064805300" Tag="371" IconVisible="True" LeftMargin="1196.9490" RightMargin="83.0510" TopMargin="220.0000" BottomMargin="500.0000" ctype="SingleNodeObjectData">
+              <AbstractNodeData Name="headNd1" ActionTag="1064805300" Tag="371" IconVisible="True" LeftMargin="1196.9490" RightMargin="83.0510" TopMargin="260.0000" BottomMargin="460.0000" ctype="SingleNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <Children>
                   <AbstractNodeData Name="AniNd" ActionTag="760250958" Tag="18" IconVisible="True" TopMargin="300.0000" BottomMargin="-300.0000" ctype="SingleNodeObjectData">
@@ -177,10 +177,10 @@
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint />
-                <Position X="1196.9490" Y="500.0000" />
+                <Position X="1196.9490" Y="460.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.9351" Y="0.6944" />
+                <PrePosition X="0.9351" Y="0.6389" />
                 <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
               <AbstractNodeData Name="headNd0" ActionTag="-1476786496" Tag="359" IconVisible="True" LeftMargin="-654.5312" RightMargin="1934.5313" TopMargin="939.4314" BottomMargin="-219.4314" ctype="SingleNodeObjectData">

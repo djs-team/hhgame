@@ -98,6 +98,17 @@ load('module/mahjong/common/TableConfig', function () {
         '95': '前后坎',
     }
 
+    TableConfig.ChoiceRule = {
+        '82': '开牌炸',
+        '96': '漏',
+        '97': '宝',
+        '37': '黑炮',
+        '337': '飘鱼',
+        '99': '红中算宝',
+        '98': '豪华七对',
+        '95': '前后砍',
+    }
+
     //0:明杠or1:暗杠or2:加杠or3:旋风杠or4:幺腰杠or5:幺九杠6：喜儿 7:甩幺
 
     TableConfig.Select = {

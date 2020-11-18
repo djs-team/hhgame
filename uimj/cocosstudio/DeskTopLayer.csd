@@ -722,6 +722,237 @@
                 <PrePosition X="0.0765" Y="0.9167" />
                 <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
+              <AbstractNodeData Name="choiceRulePnl" ActionTag="1478504514" Tag="147" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="335.0000" RightMargin="495.0000" TopMargin="-0.2000" BottomMargin="590.2000" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                <Size X="450.0000" Y="130.0000" />
+                <Children>
+                  <AbstractNodeData Name="suoLvPnl" Visible="False" ActionTag="-1378033913" Tag="255" IconVisible="False" LeftMargin="0.0006" RightMargin="1.0730" TopMargin="2.2104" BottomMargin="72.2104" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+                    <Size X="448.9264" Y="55.5792" />
+                    <Children>
+                      <AbstractNodeData Name="suoLvBg" ActionTag="-1906097925" Tag="149" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="14.4632" RightMargin="14.4631" TopMargin="1.2496" BottomMargin="14.3296" Scale9Enable="True" LeftEage="10" RightEage="10" TopEage="8" BottomEage="8" Scale9OriginX="10" Scale9OriginY="8" Scale9Width="13" Scale9Height="11" ctype="ImageViewObjectData">
+                        <Size X="420.0000" Y="40.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="224.4632" Y="34.3296" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="0.5000" Y="0.6177" />
+                        <PreSize X="0.9356" Y="0.7197" />
+                        <FileData Type="Normal" Path="desk/pz_12.png" Plist="" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="cityText" ActionTag="-1323529558" Tag="150" IconVisible="False" LeftMargin="18.5152" RightMargin="340.4111" TopMargin="1.2496" BottomMargin="14.3296" IsCustomSize="True" FontSize="20" LabelText="肇源麻将" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="90.0000" Y="40.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="63.5152" Y="34.3296" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="165" B="0" />
+                        <PrePosition X="0.1415" Y="0.6177" />
+                        <PreSize X="0.2005" Y="0.7197" />
+                        <OutlineColor A="255" R="255" G="0" B="0" />
+                        <ShadowColor A="255" R="110" G="110" B="110" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="choiceRuleText" ActionTag="-1274820862" Tag="146" IconVisible="False" LeftMargin="117.8554" RightMargin="24.2990" TopMargin="5.6041" BottomMargin="21.5868" IsCustomSize="True" FontSize="20" LabelText="红中翻倍  通宝  刮大风  开牌炸" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="306.7719" Y="28.3883" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="271.2414" Y="35.7809" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="0.6042" Y="0.6438" />
+                        <PreSize X="0.6833" Y="0.5108" />
+                        <OutlineColor A="255" R="255" G="0" B="0" />
+                        <ShadowColor A="255" R="110" G="110" B="110" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="zhanKaiBtn" ActionTag="460302491" Tag="151" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="211.9639" RightMargin="211.9625" TopMargin="30.2394" BottomMargin="0.3398" TouchEnable="True" FlipY="True" FontSize="14" Scale9Enable="True" LeftEage="8" RightEage="8" TopEage="11" BottomEage="11" Scale9OriginX="8" Scale9OriginY="11" Scale9Width="9" Scale9Height="3" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                        <Size X="25.0000" Y="25.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="224.4639" Y="12.8398" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="0.5000" Y="0.2310" />
+                        <PreSize X="0.0557" Y="0.4498" />
+                        <TextColor A="255" R="65" G="65" B="70" />
+                        <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+                        <NormalFileData Type="Normal" Path="desk/pz_32.png" Plist="" />
+                        <OutlineColor A="255" R="255" G="0" B="0" />
+                        <ShadowColor A="255" R="110" G="110" B="110" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="224.4638" Y="100.0000" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4988" Y="0.7692" />
+                    <PreSize X="0.9976" Y="0.4275" />
+                    <SingleColor A="255" R="150" G="200" B="255" />
+                    <FirstColor A="255" R="150" G="200" B="255" />
+                    <EndColor A="255" R="255" G="255" B="255" />
+                    <ColorVector ScaleY="1.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="zhanKaiPnl1" ActionTag="-1911867552" Tag="256" IconVisible="False" LeftMargin="-0.1597" RightMargin="0.1597" TopMargin="-0.3900" BottomMargin="41.3900" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                    <Size X="450.0000" Y="89.0000" />
+                    <Children>
+                      <AbstractNodeData Name="zhanKaiPg" ActionTag="1406142734" Tag="257" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="15.7710" RightMargin="14.2290" TopMargin="1.0000" BottomMargin="8.0000" Scale9Enable="True" LeftEage="10" RightEage="10" TopEage="8" BottomEage="8" Scale9OriginX="10" Scale9OriginY="8" Scale9Width="13" Scale9Height="11" ctype="ImageViewObjectData">
+                        <Size X="420.0000" Y="80.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="225.7710" Y="48.0000" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="0.5017" Y="0.5393" />
+                        <PreSize X="0.9333" Y="0.8989" />
+                        <FileData Type="Normal" Path="desk/pz_12.png" Plist="" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="cityText" ActionTag="-302667114" Tag="259" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="26.3250" RightMargin="333.6750" TopMargin="42.4100" BottomMargin="16.5900" IsCustomSize="True" FontSize="20" LabelText="肇源麻将" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="90.0000" Y="30.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="71.3250" Y="31.5900" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="165" B="0" />
+                        <PrePosition X="0.1585" Y="0.3549" />
+                        <PreSize X="0.2000" Y="0.3371" />
+                        <OutlineColor A="255" R="255" G="0" B="0" />
+                        <ShadowColor A="255" R="110" G="110" B="110" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="zhanKaiText0" ActionTag="1775337871" Tag="260" IconVisible="False" LeftMargin="124.4040" RightMargin="18.8240" TopMargin="42.4100" BottomMargin="16.5900" IsCustomSize="True" FontSize="20" LabelText="红中翻倍  通宝  刮大风  开牌炸" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="306.7719" Y="30.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="277.7900" Y="31.5900" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="0.6173" Y="0.3549" />
+                        <PreSize X="0.6817" Y="0.3371" />
+                        <OutlineColor A="255" R="255" G="0" B="0" />
+                        <ShadowColor A="255" R="110" G="110" B="110" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="zhanKaiText1" ActionTag="866038135" Tag="261" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="27.2500" RightMargin="22.7500" TopMargin="5.3400" BottomMargin="53.6600" IsCustomSize="True" FontSize="20" LabelText="红中翻倍  通宝  刮大风  开牌炸  " VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="400.0000" Y="30.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="227.2500" Y="68.6600" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="0.5050" Y="0.7715" />
+                        <PreSize X="0.8889" Y="0.3371" />
+                        <OutlineColor A="255" R="255" G="0" B="0" />
+                        <ShadowColor A="255" R="110" G="110" B="110" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="heZheBtn" ActionTag="2042791428" Tag="152" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="212.5005" RightMargin="212.4995" TopMargin="67.2700" BottomMargin="-3.2700" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="8" RightEage="8" TopEage="11" BottomEage="11" Scale9OriginX="8" Scale9OriginY="11" Scale9Width="9" Scale9Height="3" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                        <Size X="25.0000" Y="25.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="225.0005" Y="9.2300" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="0.5000" Y="0.1037" />
+                        <PreSize X="0.0556" Y="0.2809" />
+                        <TextColor A="255" R="65" G="65" B="70" />
+                        <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+                        <NormalFileData Type="Normal" Path="desk/pz_32.png" Plist="" />
+                        <OutlineColor A="255" R="255" G="0" B="0" />
+                        <ShadowColor A="255" R="110" G="110" B="110" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="224.8403" Y="85.8900" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4996" Y="0.6607" />
+                    <PreSize X="1.0000" Y="0.6846" />
+                    <SingleColor A="255" R="150" G="200" B="255" />
+                    <FirstColor A="255" R="150" G="200" B="255" />
+                    <EndColor A="255" R="255" G="255" B="255" />
+                    <ColorVector ScaleY="1.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="zhanKaiPnl2" Visible="False" ActionTag="-61523331" Tag="263" IconVisible="False" LeftMargin="-0.1871" RightMargin="0.1871" TopMargin="-0.8900" BottomMargin="0.8900" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                    <Size X="450.0000" Y="130.0000" />
+                    <Children>
+                      <AbstractNodeData Name="zhanKaiPg" ActionTag="1127017722" Tag="264" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="15.0000" RightMargin="15.0000" TopMargin="0.7500" BottomMargin="9.2500" Scale9Enable="True" LeftEage="10" RightEage="10" TopEage="8" BottomEage="8" Scale9OriginX="10" Scale9OriginY="8" Scale9Width="13" Scale9Height="11" ctype="ImageViewObjectData">
+                        <Size X="420.0000" Y="120.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="225.0000" Y="69.2500" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="0.5000" Y="0.5327" />
+                        <PreSize X="0.9333" Y="0.9231" />
+                        <FileData Type="Normal" Path="desk/pz_12.png" Plist="" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="cityText" ActionTag="1987394932" Tag="265" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="26.3250" RightMargin="333.6750" TopMargin="83.4100" BottomMargin="16.5900" IsCustomSize="True" FontSize="20" LabelText="肇源麻将" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="90.0000" Y="30.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="71.3250" Y="31.5900" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="165" B="0" />
+                        <PrePosition X="0.1585" Y="0.2430" />
+                        <PreSize X="0.2000" Y="0.2308" />
+                        <OutlineColor A="255" R="255" G="0" B="0" />
+                        <ShadowColor A="255" R="110" G="110" B="110" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="zhanKaiText0" ActionTag="206358042" Tag="266" IconVisible="False" LeftMargin="124.4040" RightMargin="18.8240" TopMargin="83.4100" BottomMargin="16.5900" IsCustomSize="True" FontSize="20" LabelText="红中翻倍  通宝  刮大风  开牌炸" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="306.7719" Y="30.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="277.7900" Y="31.5900" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="0.6173" Y="0.2430" />
+                        <PreSize X="0.6817" Y="0.2308" />
+                        <OutlineColor A="255" R="255" G="0" B="0" />
+                        <ShadowColor A="255" R="110" G="110" B="110" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="zhanKaiText1" ActionTag="1153946017" Tag="267" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="27.2500" RightMargin="22.7500" TopMargin="46.3400" BottomMargin="53.6600" IsCustomSize="True" FontSize="20" LabelText="红中翻倍  通宝  刮大风  开牌炸  " VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="400.0000" Y="30.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="227.2500" Y="68.6600" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="0.5050" Y="0.5282" />
+                        <PreSize X="0.8889" Y="0.2308" />
+                        <OutlineColor A="255" R="255" G="0" B="0" />
+                        <ShadowColor A="255" R="110" G="110" B="110" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="zhanKaiText2" ActionTag="699195879" Tag="268" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="27.2500" RightMargin="22.7500" TopMargin="11.2300" BottomMargin="88.7700" IsCustomSize="True" FontSize="20" LabelText="红中翻倍  通宝  刮大风  开牌炸  " VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                        <Size X="400.0000" Y="30.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="227.2500" Y="103.7700" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="0.5050" Y="0.7982" />
+                        <PreSize X="0.8889" Y="0.2308" />
+                        <OutlineColor A="255" R="255" G="0" B="0" />
+                        <ShadowColor A="255" R="110" G="110" B="110" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="heZheBtn" ActionTag="1914702762" Tag="269" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="212.5005" RightMargin="212.4995" TopMargin="108.2700" BottomMargin="-3.2700" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="8" RightEage="8" TopEage="11" BottomEage="11" Scale9OriginX="8" Scale9OriginY="11" Scale9Width="9" Scale9Height="3" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                        <Size X="25.0000" Y="25.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="225.0005" Y="9.2300" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="0.5000" Y="0.0710" />
+                        <PreSize X="0.0556" Y="0.1923" />
+                        <TextColor A="255" R="65" G="65" B="70" />
+                        <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+                        <NormalFileData Type="Normal" Path="desk/pz_32.png" Plist="" />
+                        <OutlineColor A="255" R="255" G="0" B="0" />
+                        <ShadowColor A="255" R="110" G="110" B="110" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="224.8129" Y="65.8900" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4996" Y="0.5068" />
+                    <PreSize X="1.0000" Y="1.0000" />
+                    <SingleColor A="255" R="150" G="200" B="255" />
+                    <FirstColor A="255" R="150" G="200" B="255" />
+                    <EndColor A="255" R="255" G="255" B="255" />
+                    <ColorVector ScaleY="1.0000" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="560.0000" Y="655.2000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.4375" Y="0.9100" />
+                <PreSize X="0.3516" Y="0.1806" />
+                <SingleColor A="255" R="150" G="200" B="255" />
+                <FirstColor A="255" R="150" G="200" B="255" />
+                <EndColor A="255" R="255" G="255" B="255" />
+                <ColorVector ScaleY="1.0000" />
+              </AbstractNodeData>
               <AbstractNodeData Name="SetBtn" ActionTag="455286399" Tag="405" IconVisible="False" LeftMargin="1159.8912" RightMargin="50.1088" TopMargin="73.5000" BottomMargin="573.5000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="40" Scale9Height="51" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="70.0000" Y="73.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />

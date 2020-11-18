@@ -15,7 +15,6 @@ load('game/ui/scene/HallScene', function () {
         RES_BINDING: function () {
             return {
                 'topPnl/photoBtn': {onClicked: this.onPhotoClick},
-                'topPnl/guiZuBtn': {onClicked: this.onMemberClick},
                 'topPnl/namePnl': {onClicked: this.onGonggaoClick},
                 'topPnl/coinPnl': {onClicked: this.onCoinShopClick},
                 'topPnl/diamondsPnl': {onClicked: this.onCoinShopClick},
@@ -47,6 +46,8 @@ load('game/ui/scene/HallScene', function () {
                 'leftPnl/turnTablePnl/turnTableNd/turnTableBtn': {onClicked: this.onTurnTableClick},
                 'leftPnl/cashCowPnl/cashCowNd': {},
                 'leftPnl/cashCowPnl/cashCowNd/cashCowBtn': {onClicked: this.onCashCowClick},
+                'leftPnl/vipMemberPnl': {},
+                'leftPnl/vipMemberPnl/vipMemberBtn': {onClicked: this.onMemberClick},
 
                 'rightPnl/aniNd': {},
                 'rightPnl/coinGameNd': {},
@@ -163,7 +164,7 @@ load('game/ui/scene/HallScene', function () {
 
         onMemberClick: function (sender) {
             GameUtil.delayBtn(sender);
-            this.guiZuBtn.getChildByName('redImg').setVisible(false)
+            this.vipMemberPnl.getChildByName('redImg').setVisible(false)
             appInstance.gameAgent().addUI(ResConfig.Ui.MemberLayer)
         },
 
@@ -460,9 +461,9 @@ load('game/ui/scene/HallScene', function () {
                 this.emailBtn.getChildByName('redImg').setVisible(false)
 
             if(data.hasOwnProperty('vipDailyFlag'))
-                this.guiZuBtn.getChildByName('redImg').setVisible(true)
+                this.vipMemberPnl.getChildByName('redImg').setVisible(true)
             else
-                this.guiZuBtn.getChildByName('redImg').setVisible(false)
+                this.vipMemberPnl.getChildByName('redImg').setVisible(false)
 
             if(data.hasOwnProperty('invitationFlag'))
                 this.invitationPnl.getChildByName('redImg').setVisible(true)

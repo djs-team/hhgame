@@ -924,17 +924,17 @@
                     },
                     "PreSize": {
                       "X": 0.2789,
-                      "Y": 0.39
+                      "Y": 0.4334
                     },
                     "LeftMargin": 154.69,
                     "RightMargin": 155.5873,
-                    "TopMargin": 17.3456,
-                    "BottomMargin": 24.8794,
+                    "TopMargin": 15.8456,
+                    "BottomMargin": 23.3794,
                     "Tag": 468,
                     "ActionTag": -763123707,
                     "Size": {
                       "X": 120.0,
-                      "Y": 27.0
+                      "Y": 30.0
                     },
                     "Name": "zxkfContent",
                     "ctype": "TextObjectData"

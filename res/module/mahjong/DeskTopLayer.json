@@ -3023,6 +3023,1056 @@
                 "ctype": "SingleNodeObjectData"
               },
               {
+                "ClipAble": false,
+                "BackColorAlpha": 102,
+                "SingleColor": {
+                  "R": 150,
+                  "G": 200
+                },
+                "FirstColor": {
+                  "R": 150,
+                  "G": 200
+                },
+                "EndColor": {},
+                "ColorVector": {
+                  "ScaleY": 1.0
+                },
+                "Scale9Width": 1,
+                "Scale9Height": 1,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 560.0,
+                  "Y": 655.2
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PositionPercentXEnabled": true,
+                "PositionPercentYEnabled": true,
+                "PrePosition": {
+                  "X": 0.4375,
+                  "Y": 0.91
+                },
+                "PreSize": {
+                  "X": 0.3516,
+                  "Y": 0.1806
+                },
+                "LeftMargin": 335.0,
+                "RightMargin": 495.0,
+                "TopMargin": -0.2,
+                "BottomMargin": 590.2,
+                "Tag": 147,
+                "Children": [
+                  {
+                    "ClipAble": false,
+                    "BackColorAlpha": 102,
+                    "SingleColor": {
+                      "R": 150,
+                      "G": 200
+                    },
+                    "FirstColor": {
+                      "R": 150,
+                      "G": 200
+                    },
+                    "EndColor": {},
+                    "ColorVector": {
+                      "ScaleY": 1.0
+                    },
+                    "Scale9Width": 1,
+                    "Scale9Height": 1,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 224.4638,
+                      "Y": 100.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.4988,
+                      "Y": 0.7692
+                    },
+                    "PreSize": {
+                      "X": 0.9976,
+                      "Y": 0.4275
+                    },
+                    "LeftMargin": 0.0006,
+                    "RightMargin": 1.073,
+                    "TopMargin": 2.2104,
+                    "BottomMargin": 72.2104,
+                    "Tag": 255,
+                    "Children": [
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "desk/pz_12.png",
+                          "Plist": ""
+                        },
+                        "Scale9Enable": true,
+                        "Scale9OriginX": 10,
+                        "Scale9OriginY": 8,
+                        "Scale9Width": 13,
+                        "Scale9Height": 11,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 224.4632,
+                          "Y": 34.3296
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PositionPercentXEnabled": true,
+                        "PrePosition": {
+                          "X": 0.5,
+                          "Y": 0.6177
+                        },
+                        "PreSize": {
+                          "X": 0.9356,
+                          "Y": 0.7197
+                        },
+                        "LeftMargin": 14.4632,
+                        "RightMargin": 14.4632,
+                        "TopMargin": 1.2496,
+                        "BottomMargin": 14.3296,
+                        "Tag": 149,
+                        "ActionTag": -1906097925,
+                        "Size": {
+                          "X": 420.0,
+                          "Y": 40.0
+                        },
+                        "Name": "suoLvBg",
+                        "ctype": "ImageViewObjectData"
+                      },
+                      {
+                        "IsCustomSize": true,
+                        "FontSize": 20,
+                        "LabelText": "肇源麻将",
+                        "HorizontalAlignmentType": "HT_Center",
+                        "VerticalAlignmentType": "VT_Center",
+                        "OutlineColor": {
+                          "G": 0,
+                          "B": 0
+                        },
+                        "ShadowColor": {
+                          "R": 110,
+                          "G": 110,
+                          "B": 110
+                        },
+                        "ShadowOffsetX": 2.0,
+                        "ShadowOffsetY": -2.0,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 63.5152,
+                          "Y": 34.3296
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {
+                          "G": 165,
+                          "B": 0
+                        },
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.1415,
+                          "Y": 0.6177
+                        },
+                        "PreSize": {
+                          "X": 0.2005,
+                          "Y": 0.7197
+                        },
+                        "LeftMargin": 18.5152,
+                        "RightMargin": 340.4112,
+                        "TopMargin": 1.2496,
+                        "BottomMargin": 14.3296,
+                        "Tag": 150,
+                        "ActionTag": -1323529558,
+                        "Size": {
+                          "X": 90.0,
+                          "Y": 40.0
+                        },
+                        "Name": "cityText",
+                        "ctype": "TextObjectData"
+                      },
+                      {
+                        "IsCustomSize": true,
+                        "FontSize": 20,
+                        "LabelText": "红中翻倍通宝刮大风开牌炸开牌炸",
+                        "VerticalAlignmentType": "VT_Center",
+                        "OutlineColor": {
+                          "G": 0,
+                          "B": 0
+                        },
+                        "ShadowColor": {
+                          "R": 110,
+                          "G": 110,
+                          "B": 110
+                        },
+                        "ShadowOffsetX": 2.0,
+                        "ShadowOffsetY": -2.0,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 271.2414,
+                          "Y": 35.7809
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.6042,
+                          "Y": 0.6438
+                        },
+                        "PreSize": {
+                          "X": 0.6833,
+                          "Y": 0.5108
+                        },
+                        "LeftMargin": 117.8554,
+                        "RightMargin": 24.299,
+                        "TopMargin": 5.6042,
+                        "BottomMargin": 21.5868,
+                        "Tag": 146,
+                        "ActionTag": -1274820862,
+                        "Size": {
+                          "X": 306.7719,
+                          "Y": 28.3883
+                        },
+                        "Name": "zhanKaiText0",
+                        "ctype": "TextObjectData"
+                      },
+                      {
+                        "FlipY": true,
+                        "FontSize": 14,
+                        "ButtonText": "",
+                        "TextColor": {
+                          "R": 65,
+                          "G": 65,
+                          "B": 70
+                        },
+                        "DisabledFileData": {
+                          "Type": "Default",
+                          "Path": "Default/Button_Disable.png",
+                          "Plist": ""
+                        },
+                        "NormalFileData": {
+                          "Type": "Normal",
+                          "Path": "desk/pz_32.png",
+                          "Plist": ""
+                        },
+                        "Scale9Enable": true,
+                        "Scale9OriginX": 8,
+                        "Scale9OriginY": 11,
+                        "Scale9Width": 9,
+                        "Scale9Height": 3,
+                        "OutlineColor": {
+                          "G": 0,
+                          "B": 0
+                        },
+                        "ShadowColor": {
+                          "R": 110,
+                          "G": 110,
+                          "B": 110
+                        },
+                        "ShadowOffsetX": 2.0,
+                        "ShadowOffsetY": -2.0,
+                        "TouchEnable": true,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 224.4632,
+                          "Y": 12.8398
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PositionPercentXEnabled": true,
+                        "PrePosition": {
+                          "X": 0.5,
+                          "Y": 0.231
+                        },
+                        "PreSize": {
+                          "X": 0.0557,
+                          "Y": 0.4498
+                        },
+                        "LeftMargin": 211.9632,
+                        "RightMargin": 211.9632,
+                        "TopMargin": 30.2394,
+                        "BottomMargin": 0.3398,
+                        "Tag": 151,
+                        "ActionTag": 460302491,
+                        "Size": {
+                          "X": 25.0,
+                          "Y": 25.0
+                        },
+                        "Name": "zhanKaiBtn",
+                        "ctype": "ButtonObjectData"
+                      }
+                    ],
+                    "ActionTag": -1378033913,
+                    "Size": {
+                      "X": 448.9264,
+                      "Y": 55.5792
+                    },
+                    "Name": "suoLvPnl",
+                    "ctype": "PanelObjectData"
+                  },
+                  {
+                    "ClipAble": false,
+                    "BackColorAlpha": 102,
+                    "SingleColor": {
+                      "R": 150,
+                      "G": 200
+                    },
+                    "FirstColor": {
+                      "R": 150,
+                      "G": 200
+                    },
+                    "EndColor": {},
+                    "ColorVector": {
+                      "ScaleY": 1.0
+                    },
+                    "Scale9Width": 1,
+                    "Scale9Height": 1,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 224.8403,
+                      "Y": 85.89
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.4996,
+                      "Y": 0.6607
+                    },
+                    "PreSize": {
+                      "X": 1.0,
+                      "Y": 0.6846
+                    },
+                    "LeftMargin": -0.1597,
+                    "RightMargin": 0.1597,
+                    "TopMargin": -0.39,
+                    "BottomMargin": 41.39,
+                    "Tag": 256,
+                    "Children": [
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "desk/pz_12.png",
+                          "Plist": ""
+                        },
+                        "Scale9Enable": true,
+                        "Scale9OriginX": 10,
+                        "Scale9OriginY": 8,
+                        "Scale9Width": 13,
+                        "Scale9Height": 11,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 225.765,
+                          "Y": 48.0
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PositionPercentXEnabled": true,
+                        "PrePosition": {
+                          "X": 0.5017,
+                          "Y": 0.5393
+                        },
+                        "PreSize": {
+                          "X": 0.9333,
+                          "Y": 0.8989
+                        },
+                        "LeftMargin": 15.765,
+                        "RightMargin": 14.235,
+                        "TopMargin": 1.0,
+                        "BottomMargin": 8.0,
+                        "Tag": 257,
+                        "ActionTag": 1406142734,
+                        "Size": {
+                          "X": 420.0,
+                          "Y": 80.0
+                        },
+                        "Name": "zhanKaiPg",
+                        "ctype": "ImageViewObjectData"
+                      },
+                      {
+                        "IsCustomSize": true,
+                        "FontSize": 20,
+                        "LabelText": "肇源麻将",
+                        "VerticalAlignmentType": "VT_Center",
+                        "OutlineColor": {
+                          "G": 0,
+                          "B": 0
+                        },
+                        "ShadowColor": {
+                          "R": 110,
+                          "G": 110,
+                          "B": 110
+                        },
+                        "ShadowOffsetX": 2.0,
+                        "ShadowOffsetY": -2.0,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 71.325,
+                          "Y": 31.59
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {
+                          "G": 165,
+                          "B": 0
+                        },
+                        "IconVisible": false,
+                        "PositionPercentXEnabled": true,
+                        "PrePosition": {
+                          "X": 0.1585,
+                          "Y": 0.3549
+                        },
+                        "PreSize": {
+                          "X": 0.2,
+                          "Y": 0.3371
+                        },
+                        "LeftMargin": 26.325,
+                        "RightMargin": 333.675,
+                        "TopMargin": 42.41,
+                        "BottomMargin": 16.59,
+                        "Tag": 259,
+                        "ActionTag": -302667114,
+                        "Size": {
+                          "X": 90.0,
+                          "Y": 30.0
+                        },
+                        "Name": "cityText",
+                        "ctype": "TextObjectData"
+                      },
+                      {
+                        "IsCustomSize": true,
+                        "FontSize": 20,
+                        "LabelText": "红中翻倍  通宝  刮大风  开牌炸",
+                        "VerticalAlignmentType": "VT_Center",
+                        "OutlineColor": {
+                          "G": 0,
+                          "B": 0
+                        },
+                        "ShadowColor": {
+                          "R": 110,
+                          "G": 110,
+                          "B": 110
+                        },
+                        "ShadowOffsetX": 2.0,
+                        "ShadowOffsetY": -2.0,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 277.79,
+                          "Y": 31.59
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.6173,
+                          "Y": 0.3549
+                        },
+                        "PreSize": {
+                          "X": 0.6817,
+                          "Y": 0.3371
+                        },
+                        "LeftMargin": 124.4041,
+                        "RightMargin": 18.824,
+                        "TopMargin": 42.41,
+                        "BottomMargin": 16.59,
+                        "Tag": 260,
+                        "ActionTag": 1775337871,
+                        "Size": {
+                          "X": 306.7719,
+                          "Y": 30.0
+                        },
+                        "Name": "zhanKaiText0",
+                        "ctype": "TextObjectData"
+                      },
+                      {
+                        "IsCustomSize": true,
+                        "FontSize": 20,
+                        "LabelText": "红中翻倍通宝刮大风开牌炸开牌炸开牌炸开你",
+                        "VerticalAlignmentType": "VT_Center",
+                        "OutlineColor": {
+                          "G": 0,
+                          "B": 0
+                        },
+                        "ShadowColor": {
+                          "R": 110,
+                          "G": 110,
+                          "B": 110
+                        },
+                        "ShadowOffsetX": 2.0,
+                        "ShadowOffsetY": -2.0,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 227.25,
+                          "Y": 68.66
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PositionPercentXEnabled": true,
+                        "PrePosition": {
+                          "X": 0.505,
+                          "Y": 0.7715
+                        },
+                        "PreSize": {
+                          "X": 0.8889,
+                          "Y": 0.3371
+                        },
+                        "LeftMargin": 27.25,
+                        "RightMargin": 22.75,
+                        "TopMargin": 5.34,
+                        "BottomMargin": 53.66,
+                        "Tag": 261,
+                        "ActionTag": 866038135,
+                        "Size": {
+                          "X": 400.0,
+                          "Y": 30.0
+                        },
+                        "Name": "zhanKaiText1",
+                        "ctype": "TextObjectData"
+                      },
+                      {
+                        "FontSize": 14,
+                        "ButtonText": "",
+                        "TextColor": {
+                          "R": 65,
+                          "G": 65,
+                          "B": 70
+                        },
+                        "DisabledFileData": {
+                          "Type": "Default",
+                          "Path": "Default/Button_Disable.png",
+                          "Plist": ""
+                        },
+                        "NormalFileData": {
+                          "Type": "Normal",
+                          "Path": "desk/pz_32.png",
+                          "Plist": ""
+                        },
+                        "Scale9Enable": true,
+                        "Scale9OriginX": 8,
+                        "Scale9OriginY": 11,
+                        "Scale9Width": 9,
+                        "Scale9Height": 3,
+                        "OutlineColor": {
+                          "G": 0,
+                          "B": 0
+                        },
+                        "ShadowColor": {
+                          "R": 110,
+                          "G": 110,
+                          "B": 110
+                        },
+                        "ShadowOffsetX": 2.0,
+                        "ShadowOffsetY": -2.0,
+                        "TouchEnable": true,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 225.0,
+                          "Y": 9.23
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PositionPercentXEnabled": true,
+                        "PrePosition": {
+                          "X": 0.5,
+                          "Y": 0.1037
+                        },
+                        "PreSize": {
+                          "X": 0.0556,
+                          "Y": 0.2809
+                        },
+                        "LeftMargin": 212.5,
+                        "RightMargin": 212.5,
+                        "TopMargin": 67.27,
+                        "BottomMargin": -3.27,
+                        "Tag": 152,
+                        "ActionTag": 2042791428,
+                        "Size": {
+                          "X": 25.0,
+                          "Y": 25.0
+                        },
+                        "Name": "heZheBtn1",
+                        "ctype": "ButtonObjectData"
+                      }
+                    ],
+                    "ActionTag": -1911867552,
+                    "Size": {
+                      "X": 450.0,
+                      "Y": 89.0
+                    },
+                    "Name": "zhanKaiPnl1",
+                    "ctype": "PanelObjectData"
+                  },
+                  {
+                    "ClipAble": false,
+                    "BackColorAlpha": 102,
+                    "SingleColor": {
+                      "R": 150,
+                      "G": 200
+                    },
+                    "FirstColor": {
+                      "R": 150,
+                      "G": 200
+                    },
+                    "EndColor": {},
+                    "ColorVector": {
+                      "ScaleY": 1.0
+                    },
+                    "Scale9Width": 1,
+                    "Scale9Height": 1,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 224.8129,
+                      "Y": 65.89
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.4996,
+                      "Y": 0.5068
+                    },
+                    "PreSize": {
+                      "X": 1.0,
+                      "Y": 1.0
+                    },
+                    "LeftMargin": -0.1871,
+                    "RightMargin": 0.1871,
+                    "TopMargin": -0.89,
+                    "BottomMargin": 0.89,
+                    "Tag": 263,
+                    "Children": [
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "desk/pz_12.png",
+                          "Plist": ""
+                        },
+                        "Scale9Enable": true,
+                        "Scale9OriginX": 10,
+                        "Scale9OriginY": 8,
+                        "Scale9Width": 13,
+                        "Scale9Height": 11,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 225.0,
+                          "Y": 69.25
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PositionPercentXEnabled": true,
+                        "PrePosition": {
+                          "X": 0.5,
+                          "Y": 0.5327
+                        },
+                        "PreSize": {
+                          "X": 0.9333,
+                          "Y": 0.9231
+                        },
+                        "LeftMargin": 15.0,
+                        "RightMargin": 15.0,
+                        "TopMargin": 0.75,
+                        "BottomMargin": 9.25,
+                        "Tag": 264,
+                        "ActionTag": 1127017722,
+                        "Size": {
+                          "X": 420.0,
+                          "Y": 120.0
+                        },
+                        "Name": "zhanKaiPg",
+                        "ctype": "ImageViewObjectData"
+                      },
+                      {
+                        "IsCustomSize": true,
+                        "FontSize": 20,
+                        "LabelText": "肇源麻将",
+                        "VerticalAlignmentType": "VT_Center",
+                        "OutlineColor": {
+                          "G": 0,
+                          "B": 0
+                        },
+                        "ShadowColor": {
+                          "R": 110,
+                          "G": 110,
+                          "B": 110
+                        },
+                        "ShadowOffsetX": 2.0,
+                        "ShadowOffsetY": -2.0,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 71.325,
+                          "Y": 31.59
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {
+                          "G": 165,
+                          "B": 0
+                        },
+                        "IconVisible": false,
+                        "PositionPercentXEnabled": true,
+                        "PrePosition": {
+                          "X": 0.1585,
+                          "Y": 0.243
+                        },
+                        "PreSize": {
+                          "X": 0.2,
+                          "Y": 0.2308
+                        },
+                        "LeftMargin": 26.325,
+                        "RightMargin": 333.675,
+                        "TopMargin": 83.41,
+                        "BottomMargin": 16.59,
+                        "Tag": 265,
+                        "ActionTag": 1987394932,
+                        "Size": {
+                          "X": 90.0,
+                          "Y": 30.0
+                        },
+                        "Name": "cityText",
+                        "ctype": "TextObjectData"
+                      },
+                      {
+                        "IsCustomSize": true,
+                        "FontSize": 20,
+                        "LabelText": "红中翻倍  通宝  刮大风  开牌炸",
+                        "VerticalAlignmentType": "VT_Center",
+                        "OutlineColor": {
+                          "G": 0,
+                          "B": 0
+                        },
+                        "ShadowColor": {
+                          "R": 110,
+                          "G": 110,
+                          "B": 110
+                        },
+                        "ShadowOffsetX": 2.0,
+                        "ShadowOffsetY": -2.0,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 277.79,
+                          "Y": 31.59
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.6173,
+                          "Y": 0.243
+                        },
+                        "PreSize": {
+                          "X": 0.6817,
+                          "Y": 0.2308
+                        },
+                        "LeftMargin": 124.4041,
+                        "RightMargin": 18.824,
+                        "TopMargin": 83.41,
+                        "BottomMargin": 16.59,
+                        "Tag": 266,
+                        "ActionTag": 206358042,
+                        "Size": {
+                          "X": 306.7719,
+                          "Y": 30.0
+                        },
+                        "Name": "zhanKaiText0",
+                        "ctype": "TextObjectData"
+                      },
+                      {
+                        "IsCustomSize": true,
+                        "FontSize": 20,
+                        "LabelText": "红中翻倍  通宝  刮大风  开牌炸  ",
+                        "VerticalAlignmentType": "VT_Center",
+                        "OutlineColor": {
+                          "G": 0,
+                          "B": 0
+                        },
+                        "ShadowColor": {
+                          "R": 110,
+                          "G": 110,
+                          "B": 110
+                        },
+                        "ShadowOffsetX": 2.0,
+                        "ShadowOffsetY": -2.0,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 227.25,
+                          "Y": 68.66
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PositionPercentXEnabled": true,
+                        "PrePosition": {
+                          "X": 0.505,
+                          "Y": 0.5282
+                        },
+                        "PreSize": {
+                          "X": 0.8889,
+                          "Y": 0.2308
+                        },
+                        "LeftMargin": 27.25,
+                        "RightMargin": 22.75,
+                        "TopMargin": 46.34,
+                        "BottomMargin": 53.66,
+                        "Tag": 267,
+                        "ActionTag": 1153946017,
+                        "Size": {
+                          "X": 400.0,
+                          "Y": 30.0
+                        },
+                        "Name": "zhanKaiText1",
+                        "ctype": "TextObjectData"
+                      },
+                      {
+                        "IsCustomSize": true,
+                        "FontSize": 20,
+                        "LabelText": "红中翻倍  通宝  刮大风  开牌炸  ",
+                        "VerticalAlignmentType": "VT_Center",
+                        "OutlineColor": {
+                          "G": 0,
+                          "B": 0
+                        },
+                        "ShadowColor": {
+                          "R": 110,
+                          "G": 110,
+                          "B": 110
+                        },
+                        "ShadowOffsetX": 2.0,
+                        "ShadowOffsetY": -2.0,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 227.25,
+                          "Y": 103.77
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PositionPercentXEnabled": true,
+                        "PrePosition": {
+                          "X": 0.505,
+                          "Y": 0.7982
+                        },
+                        "PreSize": {
+                          "X": 0.8889,
+                          "Y": 0.2308
+                        },
+                        "LeftMargin": 27.25,
+                        "RightMargin": 22.75,
+                        "TopMargin": 11.23,
+                        "BottomMargin": 88.77,
+                        "Tag": 268,
+                        "ActionTag": 699195879,
+                        "Size": {
+                          "X": 400.0,
+                          "Y": 30.0
+                        },
+                        "Name": "zhanKaiText2",
+                        "ctype": "TextObjectData"
+                      },
+                      {
+                        "FontSize": 14,
+                        "ButtonText": "",
+                        "TextColor": {
+                          "R": 65,
+                          "G": 65,
+                          "B": 70
+                        },
+                        "DisabledFileData": {
+                          "Type": "Default",
+                          "Path": "Default/Button_Disable.png",
+                          "Plist": ""
+                        },
+                        "NormalFileData": {
+                          "Type": "Normal",
+                          "Path": "desk/pz_32.png",
+                          "Plist": ""
+                        },
+                        "Scale9Enable": true,
+                        "Scale9OriginX": 8,
+                        "Scale9OriginY": 11,
+                        "Scale9Width": 9,
+                        "Scale9Height": 3,
+                        "OutlineColor": {
+                          "G": 0,
+                          "B": 0
+                        },
+                        "ShadowColor": {
+                          "R": 110,
+                          "G": 110,
+                          "B": 110
+                        },
+                        "ShadowOffsetX": 2.0,
+                        "ShadowOffsetY": -2.0,
+                        "TouchEnable": true,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 225.0,
+                          "Y": 9.23
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PositionPercentXEnabled": true,
+                        "PrePosition": {
+                          "X": 0.5,
+                          "Y": 0.071
+                        },
+                        "PreSize": {
+                          "X": 0.0556,
+                          "Y": 0.1923
+                        },
+                        "LeftMargin": 212.5,
+                        "RightMargin": 212.5,
+                        "TopMargin": 108.27,
+                        "BottomMargin": -3.27,
+                        "Tag": 269,
+                        "ActionTag": 1914702762,
+                        "Size": {
+                          "X": 25.0,
+                          "Y": 25.0
+                        },
+                        "Name": "heZheBtn2",
+                        "ctype": "ButtonObjectData"
+                      }
+                    ],
+                    "ActionTag": -61523331,
+                    "Size": {
+                      "X": 450.0,
+                      "Y": 130.0
+                    },
+                    "Name": "zhanKaiPnl2",
+                    "ctype": "PanelObjectData"
+                  }
+                ],
+                "ActionTag": 1478504514,
+                "Size": {
+                  "X": 450.0,
+                  "Y": 130.0
+                },
+                "Name": "choiceRulePnl",
+                "ctype": "PanelObjectData"
+              },
+              {
                 "FontSize": 14,
                 "ButtonText": "",
                 "TextColor": {
@@ -3375,6 +4425,7 @@
         "desk/pz_27.png",
         "desk/pz_29.png",
         "desk/pz_3.png",
+        "desk/pz_32.png",
         "desk/pz_4.png",
         "desk/pz_5.png",
         "desk/z_1.png",

@@ -38,6 +38,8 @@ load('module/mahjong/ui/DeskTopLayerMdt', function () {
                     break
                 case TableEvent.PlayerSelectProto:
                 case TableEvent.PutCardProto:
+                    this.updateAction()
+                    break
                 case TableEvent.DrawCardProto:
                 case TableEvent.JiaGangTableProto:
                     this.updateAction()
@@ -58,6 +60,9 @@ load('module/mahjong/ui/DeskTopLayerMdt', function () {
                     break
                 case TableEvent.TableChangeProto:
                     this.view.updateTableLevelTxt()
+                    break
+                case TableEvent.InitCardProto:
+                    this.updateRemainingCard()
                     break
             }
         },

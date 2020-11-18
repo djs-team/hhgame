@@ -16,7 +16,7 @@ load('game/public/AppConfig', function () {
     Appconfig.loginShowPhoneAlert = 'Show' // 一键登录是否需要展示输入手机号弹框: Show:展示 Other:不展示
     Appconfig.appleIsForceCheck = false // 苹果版本是否检测热更
     Appconfig.isShowAppleLogin = true // 是否展示苹果登录
-    Appconfig.isVipOnLiveBroadcast = true // 是否只有VIP进入直播间
+    Appconfig.isVipOnLiveBroadcast = false // 是否只有VIP进入直播间
 
     Appconfig.event = {
         'TCP_CLOSE': 'TCP_CLOSE',

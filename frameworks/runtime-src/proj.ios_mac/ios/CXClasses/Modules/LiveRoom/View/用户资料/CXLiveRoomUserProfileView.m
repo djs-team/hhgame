@@ -167,9 +167,6 @@
                 _laheiBtn_topLayout.constant = 27*2;
                 _jubaoBtn_topLayout.constant = 27;
                 
-                self.free_inviteBtn.hidden = NO;
-                self.buy_inviteBtn.hidden = NO;
-                
             } else {//不是红娘
                 _jinyanBtn.hidden = YES;
                 _bimaiBtn.hidden = NO;
@@ -190,6 +187,9 @@
                 _bimaiBtn_topLayout.constant = 27;
                 _laheiBtn_topLayout.constant = 27;
                 _jubaoBtn_topLayout.constant = 27;
+                
+                self.free_inviteBtn.hidden = NO;
+                self.buy_inviteBtn.hidden = NO;
             } else {
                 _jinyanBtn.hidden = YES;
                 _bimaiBtn.hidden = YES;

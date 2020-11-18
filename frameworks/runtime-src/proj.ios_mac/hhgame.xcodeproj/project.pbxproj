@@ -51,6 +51,8 @@
 		005C3F8C2515E8E400DBCD02 /* AppController+Share.m in Sources */ = {isa = PBXBuildFile; fileRef = 005C3F8B2515E8E400DBCD02 /* AppController+Share.m */; };
 		005F9C872564F35400FD9B2C /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 005F9C862564F35400FD9B2C /* AuthenticationServices.framework */; };
 		005F9C8C2564FA4100FD9B2C /* CXAppleLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 005F9C8B2564FA4100FD9B2C /* CXAppleLoginManager.m */; };
+		005F9CD12565143A00FD9B2C /* CXHomeJoinRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 005F9CCF2565143A00FD9B2C /* CXHomeJoinRoomViewController.m */; };
+		005F9CD22565143A00FD9B2C /* CXHomeJoinRoomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 005F9CD02565143A00FD9B2C /* CXHomeJoinRoomViewController.xib */; };
 		006148B2250B27F200BB7620 /* CXIPAPurchaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 006148AC250B27F100BB7620 /* CXIPAPurchaseManager.m */; };
 		006148B3250B27F200BB7620 /* SandBoxHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 006148AD250B27F100BB7620 /* SandBoxHelper.m */; };
 		006148B8250B4CA600BB7620 /* CXThirdPayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 006148B7250B4CA600BB7620 /* CXThirdPayManager.m */; };
@@ -918,6 +920,9 @@
 		005F9C862564F35400FD9B2C /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/AuthenticationServices.framework; sourceTree = DEVELOPER_DIR; };
 		005F9C8A2564FA4100FD9B2C /* CXAppleLoginManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXAppleLoginManager.h; sourceTree = "<group>"; };
 		005F9C8B2564FA4100FD9B2C /* CXAppleLoginManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXAppleLoginManager.m; sourceTree = "<group>"; };
+		005F9CCE2565143A00FD9B2C /* CXHomeJoinRoomViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXHomeJoinRoomViewController.h; sourceTree = "<group>"; };
+		005F9CCF2565143A00FD9B2C /* CXHomeJoinRoomViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXHomeJoinRoomViewController.m; sourceTree = "<group>"; };
+		005F9CD02565143A00FD9B2C /* CXHomeJoinRoomViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CXHomeJoinRoomViewController.xib; sourceTree = "<group>"; };
 		006148A9250B27F100BB7620 /* SandBoxHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SandBoxHelper.h; sourceTree = "<group>"; };
 		006148AC250B27F100BB7620 /* CXIPAPurchaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXIPAPurchaseManager.m; sourceTree = "<group>"; };
 		006148AD250B27F100BB7620 /* SandBoxHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SandBoxHelper.m; sourceTree = "<group>"; };
@@ -2291,6 +2296,9 @@
 				0061492E250B94C600BB7620 /* CXHomeSearchViewController.h */,
 				0061491A250B94C600BB7620 /* CXHomeSearchViewController.m */,
 				0061492D250B94C600BB7620 /* CXHomeSearchViewController.xib */,
+				005F9CCE2565143A00FD9B2C /* CXHomeJoinRoomViewController.h */,
+				005F9CCF2565143A00FD9B2C /* CXHomeJoinRoomViewController.m */,
+				005F9CD02565143A00FD9B2C /* CXHomeJoinRoomViewController.xib */,
 				006148FD250B94C500BB7620 /* 筛选 */,
 				00614903250B94C500BB7620 /* RoomSetup */,
 				0061491D250B94C600BB7620 /* Model */,
@@ -4892,6 +4900,7 @@
 				00615010250B94CF00BB7620 /* chatbar_audio@3x.png in Resources */,
 				0061501C250B94D000BB7620 /* chatbar_face_blue@3x.png in Resources */,
 				00614E67250B94CE00BB7620 /* CXGameMusicLRCFullView.xib in Resources */,
+				005F9CD22565143A00FD9B2C /* CXHomeJoinRoomViewController.xib in Resources */,
 				00614E1D250B94CE00BB7620 /* CXAddFriendViewController.xib in Resources */,
 				00614FFC250B94CF00BB7620 /* chat_audio_red@2x.png in Resources */,
 				00614E17250B94CE00BB7620 /* CXHomeRoomRecommendCell.xib in Resources */,
@@ -5579,6 +5588,7 @@
 				00615082250B94D000BB7620 /* PSTCollectionViewController.m in Sources */,
 				00614F31250B94CF00BB7620 /* SocketMessageHeatValue.m in Sources */,
 				00614EDF250B94CE00BB7620 /* GameMessageListItemView+AttributeResult.m in Sources */,
+				005F9CD12565143A00FD9B2C /* CXHomeJoinRoomViewController.m in Sources */,
 				00614FBF250B94CF00BB7620 /* CXUserInfoGiftCell.m in Sources */,
 				007680B8255D1BA4000C5DB5 /* CXNearbyViewController.m in Sources */,
 				006148EE250B791A00BB7620 /* FuncUtiles.m in Sources */,

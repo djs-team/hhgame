@@ -202,8 +202,7 @@ load('game/ui/scene/LoginScene', function () {
                     appInstance.gameAgent().Tips(this._viewData.sayTxt)
                 }
             }
-
-            if (Appconfig.isShowAppleLogin) {
+            if (cc.sys.OS_IOS === cc.sys.os && AppConfig.isShowAppleLogin) {
                 this.appleLogin.setVisible(true)
             } else {
                 this.appleLogin.setVisible(false)

@@ -1,5 +1,8 @@
-和以前一样
 /**
 	 * 玩家上下线消息
 	 */
 	int	MJ_ROOM_TABLE_PLAYER_ONLINE					= MJ_ROOM_MATCHGAME_ID + 10;
+请求消息:
+		private byte _bStatus_;//0上线1下线
+返回消息:
+		private byte code;//正常进入牌桌断线的时候不会返回这个消息，断线错误的时候会返回，code都是0

@@ -34,6 +34,10 @@
               <Image Name="self_hand_8.png" />
               <Image Name="top_hand.png" />
             </Folder>
+            <Folder Name="other">
+              <Image Name="paibei.png" />
+              <Image Name="paimian.png" />
+            </Folder>
             <Folder Name="out">
               <Image Name="left_out_bm.png" />
               <Image Name="left_out_top.png" />

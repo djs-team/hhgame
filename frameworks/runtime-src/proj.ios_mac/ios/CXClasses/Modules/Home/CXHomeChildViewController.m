@@ -132,12 +132,25 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+//    if (section == 0) {
+//        return _roomList.count > 0 ? 1 : 0;
+//    } else if (section == 1) {
+//        return _roomList.count > 1 ? MIN(_roomList.count - 1, 2) : 0;
+//    } else if (section == 2) {
+//        return 1;
+//    } else {
+//        return _roomList.count > 3 ? _roomList.count - 3: 0;
+//    }
     if (section == 0) {
         return 1;
     } else if (section == 1) {
-        return _roomList.count > 0 ? 1 : 0;
+        if (_roomList.count > 0) {
+            return 1;
+        } else {
+            return 0;
+        }
     } else {
-        return _roomList.count > 1 ? _roomList.count - 1: 0;
+        return _roomList.count - 1;
     }
 }
 
@@ -154,7 +167,15 @@
         CXHomeRoomRecommendCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CXHomeRoomRecommendCellID" forIndexPath:indexPath];
         cell.model = _roomList[0];
         return cell;
-    } else {
+    }
+//    else if (indexPath.section == 1) {
+//        CXHomeRoomCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CXHomeRoomCellID" forIndexPath:indexPath];
+//
+//        cell.model = _roomList[indexPath.row+1];
+//
+//        return cell;
+//    }
+    else {
         CXHomeRoomCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CXHomeRoomCellID" forIndexPath:indexPath];
         
         cell.model = _roomList[indexPath.row+1];
@@ -197,7 +218,16 @@
             } else {
                 [AppController joinRoom:room.room_id];
             }
-        } else {
+        }
+//        if (indexPath.section == 1) {
+//            CXHomeRoomModel *room = _roomList[indexPath.row+1];
+//            if ([room.room_lock integerValue] == 1) {
+//                [self toast:@"房间已锁"];
+//            } else {
+//                [AppController joinRoom:room.room_id];
+//            }
+//        }
+        else {
             CXHomeRoomModel *room = _roomList[indexPath.row+1];
             if ([room.room_lock integerValue] == 1) {
                 [self toast:@"房间已锁"];
@@ -205,19 +235,17 @@
                 [AppController joinRoom:room.room_id];
             }
         }
-
     }
-    
 }
 
 #pragma mark <UICollectionViewDelegateFlowLayout>
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 2) {
+    if (indexPath.section == 0 || indexPath.section == 1) {
+        return CGSizeMake(SCREEN_WIDTH - 28, 118*SCALE_W);
+    } else {
         CGFloat w =(collectionView.bounds.size.width - 28 - 10) / 2;
 
         return CGSizeMake(w, w*150/167+26);
-    } else {
-        return CGSizeMake(SCREEN_WIDTH - 28, 118*SCALE_W);
     }
 }
 

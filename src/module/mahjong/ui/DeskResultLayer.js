@@ -221,6 +221,7 @@ load('module/mahjong/ui/DeskResultLayer', function () {
 
             let isLiuJu = this._pData.tableData.pIsLiuJu == 1 ? true : false
             this.liuJuBg.setVisible(isLiuJu)
+            cc.log('=======this._players==============' + JSON.stringify(this._players))
 
             for (let i = 0; i < this._playerNum; ++i) {
                 this.initPlayerCell(i, this._players[i])
@@ -349,6 +350,7 @@ load('module/mahjong/ui/DeskResultLayer', function () {
                     }
                     let cardImg = appInstance.gameAgent().mjUtil().getCardValueImg(0, 'selfhand', cardInfo)
                     card.getChildByName('CardValue').loadTexture(cardImg)
+                    card.setColor(cc.color(200,200,200))
                     posX += cardLen
                 }
             }
@@ -363,6 +365,7 @@ load('module/mahjong/ui/DeskResultLayer', function () {
                     card.setPosition(cc.p(posX, 0))
                     let cardImg = appInstance.gameAgent().mjUtil().getCardValueImg(0, 'selfhand', pPengList[index])
                     card.getChildByName('CardValue').loadTexture(cardImg)
+                    card.setColor(cc.color(200,200,200))
                     posX += cardLen
                 }
             }
@@ -380,11 +383,14 @@ load('module/mahjong/ui/DeskResultLayer', function () {
                     CardNd.addChild(card)
                     let cardImg = appInstance.gameAgent().mjUtil().getCardValueImg(0, 'selfhand', cardInfo)
                     card.getChildByName('CardValue').loadTexture(cardImg)
-                    if (!i) {
-                        card.setPosition(cc.p(posX + cardLen, -10))
-                    } else {
+                    card.setColor(cc.color(200,200,200))
+                    if (i) {
                         card.setPosition(cc.p(posX, 0))
+                        card.setLocalZOrder(100)
                         posX += cardLen
+                    } else {
+                        card.setPosition(cc.p(posX + cardLen, 5))
+                        card.setLocalZOrder(200)
                     }
                 }
             }

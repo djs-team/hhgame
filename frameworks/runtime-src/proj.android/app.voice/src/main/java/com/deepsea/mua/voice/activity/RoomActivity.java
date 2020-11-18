@@ -1460,7 +1460,6 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
 
             @Override
             public void downMicro(String userId, int level, int number) {
-                Log.d("AG_EX_AV", "downMicro：" + userId + level + "," + number);
 
                 if (MatchMakerUtils.isRoomOwner() && !UserUtils.getUser().getUid().equals(userId)) {
                     //红娘强制别人下麦
@@ -3009,13 +3008,11 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
                         mHandler.sendEmptyMessage(msg_download_song_success);
 
                     }
-//                    Log.d("AG_EX_AV", "downLoadSong over：" + path);
                 }
             }
 
             @Override
             public void onFail(String error) {
-//                Log.d("AG_EX_AV", "downLoadSong error：" + error);
                 if (mHandler != null) {
                     mHandler.sendEmptyMessage(msg_download_song_fails);
                 }
@@ -3055,21 +3052,18 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
 
             @Override
             public void onFinish(String path) {
-//                Log.d("songDowload", "lrc-finish-" + path);
                 if (mHandler != null) {
 
                     Message message = Message.obtain();
                     message.obj = songInfo.getSongName();
                     message.what = msg_start_play_song_with_lrc;
                     mHandler.sendMessage(message);
-//                    Log.d("AG_EX_AV", "downLoadSong over：" + path);
                     mHandler.sendEmptyMessage(msg_download_song_success);
                 }
             }
 
             @Override
             public void onFail(String error) {
-//                Log.d("AG_EX_AV", "downLoadSong error：" + error);
                 if (mHandler != null) {
                     mHandler.sendEmptyMessage(msg_download_song_fails);
 
@@ -3147,7 +3141,6 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
         ILrcBuilder builder = new DefaultLrcBuilder();
         //解析歌词返回LrcRow集合
         List<LrcRow> rows = builder.getLrcRows(lrc);
-        Log.d("AG_EX_AV", "歌词：" + JsonConverter.toJson(rows));
 
         return rows;
     }
@@ -3182,7 +3175,6 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
                 ViewBindUtils.setImageRes(mBinding.ivDiscGif, R.drawable.icon_music_diange_gif_bg);
             }
             boolean isCloseMicro = (consertUserId != 0 && mRoomModel.isOnMp() && consertUserId != Integer.valueOf(uid) && isPause == 2);
-            Log.d("AG_EX_AV", "isCloseMicro:" + (consertUserId != 0) + ":" + mRoomModel.isOnMp() + ";" + (consertUserId != Integer.valueOf(uid)) + ";" + (isPause == 2) + ";" + "isPause:" + isPause);
             int result = AgoraClient.create().muteLocalAudioStream(isCloseMicro);
             if (result == 0) {
                 ForbiddenStateUtils.saveForbiddenMicState(uid, isCloseMicro);
@@ -3245,35 +3237,34 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
     @Override
     public void onReconnectSuccess() {
         int pos = SongStateUtils.getSingleton2().getCurrentPos();
-        Log.d("reconnect", pos + "");
         SongStateUtils.getSingleton2().setConnect(true);
         if (pos != 0) {
             mViewModel.sysnSongPause(true);
         }
 
         showAlert(1, "已重新连接聊天室");
-        mHandler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                if (mMpAdapter != null) {
-                    mMpAdapter.notifyDataSetChanged();
-                }
-                if (mJoinRoom.getRoomMode() == 9) {
-                    if (!TextUtils.isEmpty(SongStateUtils.getSingleton2().getConsertUserId())) {
-                        mBinding.mainSecondTwoMusicView.setMicroData(mainMpInfo);
-                    } else {
-                        mBinding.mainSecondOneView.setMicroData(mainMpInfo);
-                    }
-                } else {
-                    if (!TextUtils.isEmpty(SongStateUtils.getSingleton2().getConsertUserId())) {
-                        mainFaceMusicView.setMicroData(mainMpInfo);
-                    } else {
-                        mainFaceView.setMicroData(mainMpInfo);
-                    }
-                }
-
-            }
-        }, 1000);
+//        mHandler.postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                if (mMpAdapter != null) {
+//                    mMpAdapter.notifyDataSetChanged();
+//                }
+//                if (mJoinRoom.getRoomMode() == 9) {
+//                    if (!TextUtils.isEmpty(SongStateUtils.getSingleton2().getConsertUserId())) {
+//                        mBinding.mainSecondTwoMusicView.setMicroData(mainMpInfo);
+//                    } else {
+//                        mBinding.mainSecondOneView.setMicroData(mainMpInfo);
+//                    }
+//                } else {
+//                    if (!TextUtils.isEmpty(SongStateUtils.getSingleton2().getConsertUserId())) {
+//                        mainFaceMusicView.setMicroData(mainMpInfo);
+//                    } else {
+//                        mainFaceView.setMicroData(mainMpInfo);
+//                    }
+//                }
+//
+//            }
+//        }, 1000);
     }
 
     @Override
@@ -3303,6 +3294,14 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
 
     @Override
     public void changeMicroView(SongInfo songInfo) {
+        if (mTimer != null) {
+            mTimer.cancel();
+            mTimer = null;
+        }
+        if (mTask != null) {
+            mTask.cancel();
+            mTask = null;
+        }
         this.songInfo = songInfo;
         boolean isChangeForban = false;
 
@@ -3339,14 +3338,6 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
         }
 
         if (SongStateUtils.getSingleton2().isChangeView() != isChangeView || isChangeForban) {
-            List<RoomData.MicroInfosBean> data = mMpAdapter.getData();
-            if (mMpAdapter != null && data != null && data.size() > 0) {
-                for (int i = 0; i < data.size(); i++) {
-                    data.get(i).setRelease(true);
-                }
-                mMpAdapter.notifyDataSetChanged();
-            }
-
             mHandler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
@@ -3443,17 +3434,12 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
         int userNumber = syncMicroRose.getNumber();
 
         int pos = mMpAdapter.getItemPosForMany(userLevel, userNumber);
-        Log.d("AG_EX_AV", pos + ":pos");
 
         if (pos != -1) {
             mMpAdapter.getData().get(pos).setRolse(syncMicroRose.getRose());
             mMpAdapter.getData().get(pos).setRoseRanks(syncMicroRose.getRoseRanks());
             mMpAdapter.notifyItemChanged(pos, IMicroEvent.UpdateRanks);
         }
-        boolean flag = mainMpInfo != null && mainMpInfo.getType() == userLevel && mainMpInfo.getNumber() == userNumber;
-        Log.d("AG_EX_AV", flag + "");
-        Log.d("AG_EX_AV", "userLevel" + userLevel + "userNumber:" + userNumber);
-        Log.d("AG_EX_AV", "userLevel-mp" + mainMpInfo.getType() + "userNumber-mp:" + mainMpInfo.getNumber());
 
         if (mainMpInfo != null && mainMpInfo.getType() == userLevel && mainMpInfo.getNumber() == userNumber) {
             mainMpInfo.setRolse(syncMicroRose.getRose());
@@ -3467,7 +3453,6 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
                 }
             } else {
                 if (!isChangeView) {
-                    Log.d("AG_EX_AV", "设置heads");
                     mBinding.mainSecondOneView.updateRankHeads(syncMicroRose.getRoseRanks());
                 } else {
                     mBinding.mainSecondTwoMusicView.updateRankHeads(syncMicroRose.getRoseRanks());

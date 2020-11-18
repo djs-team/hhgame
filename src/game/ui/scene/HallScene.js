@@ -292,7 +292,8 @@ load('game/ui/scene/HallScene', function () {
                 this._peopleNum = 2
             }
 
-            this.onInitUserData();
+            //this.onInitUserData()
+            this.onUpdateUserData(selfInfo)
 
             this.registerEventListener('TCP_CLOSE', appInstance.gameAgent().onTcpClose)
             this.registerEventListener('RECONNECT_OVER_TIMES', appInstance.gameAgent().onReconnectError)
@@ -401,7 +402,7 @@ load('game/ui/scene/HallScene', function () {
             let coinsCnt = this.coinPnl.getChildByName('coinsCnt')
             let diamondsCnt = this.diamondsPnl.getChildByName('diamondsCnt')
             let fuKaCnt = this.fuKaPnl.getChildByName('fuKaCnt')
-            let photo = this.photoBtn;
+            let photo = this.photoBtn
 
             if (data.hasOwnProperty('pname')) {
                 nameNd.setString(data.pname)

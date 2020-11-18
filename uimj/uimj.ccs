@@ -34,6 +34,10 @@
               <Image Name="self_hand_8.png" />
               <Image Name="top_hand.png" />
             </Folder>
+            <Folder Name="other">
+              <Image Name="paibei.png" />
+              <Image Name="paimian.png" />
+            </Folder>
             <Folder Name="out">
               <Image Name="left_out_bm.png" />
               <Image Name="left_out_top.png" />
@@ -319,6 +323,7 @@
           <TTF Name="hkhbtW12.ttc" />
         </Folder>
         <Folder Name="match">
+          <Image Name="match_result_bg.png" />
           <Image Name="ssc_1.png" />
           <Image Name="ssc_10.png" />
           <Image Name="ssc_11.png" />

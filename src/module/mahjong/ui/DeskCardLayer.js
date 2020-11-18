@@ -129,12 +129,14 @@ load('module/mahjong/ui/DeskCardLayer', function () {
                         this._movingCard.setPosition(sender.convertToNodeSpace(sender.getTouchMovePosition()))
                     }
                     break;
-                case ccui.Widget.TOUCH_ENDED:
                 case ccui.Widget.TOUCH_CANCELED:
+                case ccui.Widget.TOUCH_ENDED:
                     if (this._movingCard && this._movingCard._isCanPut) {
                         let isTouchOut = false
-                        let endPos = sender.convertToNodeSpace(sender.getTouchEndPosition())
-                        if (endPos.y - 20 > this._movingCard._beginPos.y) {
+                        // let endPos = sender.convertToNodeSpace(sender.getTouchEndPosition())
+                        // if (endPos.y - 50 > this._movingCard._beginPos.y) {
+                        //根据点击区域，不根据移动距离了
+                        if (et === ccui.Widget.TOUCH_CANCELED) {
                             isTouchOut = true
                         }
 

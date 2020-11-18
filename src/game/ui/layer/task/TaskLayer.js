@@ -138,7 +138,7 @@ load('game/ui/layer/task/TaskLayer', function () {
 
 
         onActivityCellTouch: function (sender, et) {
-        
+
             switch (et) {
                 case 0:
                     break

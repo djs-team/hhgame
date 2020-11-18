@@ -1,6 +1,6 @@
 {
-    "packageUrl": "http://hot.harmonygames.cn/chot/web/main/1.1.1/", 
-    "remoteManifestUrl": "http://hot.harmonygames.cn/chot/web/main/1.1.1/project.manifest", 
+    "packageUrl": "http://hot.harmonygames.cn/chot/web/main/1.2.0/", 
+    "remoteManifestUrl": "http://hot.harmonygames.cn/chot/web/main/1.2.0/project.manifest", 
     "remoteVersionUrl": "http://hot.harmonygames.cn/chot/web/main/version.manifest", 
-    "version": "1.1.1"
+    "version": "1.2.0"
 }

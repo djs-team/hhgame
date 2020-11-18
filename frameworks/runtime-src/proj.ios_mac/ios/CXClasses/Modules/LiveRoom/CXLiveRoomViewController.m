@@ -128,7 +128,10 @@
 @property (nonatomic, strong) CXRedPacketProgressView *redpacketProgressView;
 
 // 守护
+@property (nonatomic, assign) BOOL showGuardRankView;
 @property (nonatomic, strong) CXLiveRoomGuardGroupView *guardRankView;
+@property (nonatomic, assign) BOOL showGuardRenewView;
+@property (nonatomic, strong) CXMineGuardRenewView *guardRenewView;
 
 @end
 
@@ -147,9 +150,13 @@
 }
 
 - (void)hideAllMMPopupView {
-    if (_guardRankView) {
-        [_guardRankView show];
-        [_guardRankView hide];
+    if (_showGuardRankView == YES) {
+        [self.guardRankView hide];
+        [MMPopupView hideAll];
+    }
+    if (_showGuardRenewView == YES) {
+        [self.guardRenewView hide];
+        [MMPopupView hideAll];
     }
 }
 
@@ -1903,21 +1910,44 @@
 }
 
 #pragma mark - ============================ 守护榜 ================================
+- (CXLiveRoomGuardGroupView *)guardRankView {
+    if (!_guardRankView) {
+        _guardRankView = [[NSBundle mainBundle] loadNibNamed:@"CXLiveRoomGuardGroupView" owner:self options:nil].firstObject;
+    }
+    
+    return _guardRankView;
+}
 - (void)gotoGuardRankWithUserId:(NSString *)userId {
-    _guardRankView = [[NSBundle mainBundle] loadNibNamed:@"CXLiveRoomGuardGroupView" owner:self options:nil].firstObject;
-    _guardRankView.userId = userId;
+    
+    self.guardRankView.userId = userId;
     kWeakSelf
-    _guardRankView.guardGroupViewBlcok = ^(void) {
-        [weakSelf guardRenew:userId];
+    self.guardRankView.guardGroupViewBlcok = ^(BOOL isClose) {
+        if (isClose) {
+            weakSelf.showGuardRankView = NO;
+        } else {
+            weakSelf.showGuardRankView = NO;
+            [weakSelf guardRenew:userId];
+        }
     };
-    [_guardRankView show];
+    self.showGuardRankView = YES;
+    [self.guardRankView show];
 }
 
-- (void)guardRenew:(NSString *)userId {
-    CXMineGuardRenewView *guardRankView = [[NSBundle mainBundle] loadNibNamed:@"CXMineGuardRenewView" owner:self options:nil].firstObject;
-    guardRankView.userId = userId;
-    [guardRankView show];
+- (CXMineGuardRenewView *)guardRenewView {
+    if (!_guardRenewView) {
+        _guardRenewView = [[NSBundle mainBundle] loadNibNamed:@"CXMineGuardRenewView" owner:self options:nil].firstObject;
+        kWeakSelf
+        _guardRenewView.guardRenewViewBlock = ^{
+            weakSelf.showGuardRenewView = NO;
+        };
+    }
     
+    return _guardRenewView;
+}
+- (void)guardRenew:(NSString *)userId {
+    self.guardRenewView.userId = userId;
+    self.showGuardRenewView = YES;
+    [self.guardRenewView show];
 }
 
 #pragma mark - ===================== 麦位管理 =====================

@@ -203,4 +203,12 @@
     
 }
 
+- (void)hide {
+    [super hide];
+    
+    if (self.guardRenewViewBlock) {
+        self.guardRenewViewBlock();
+    }
+}
+
 @end

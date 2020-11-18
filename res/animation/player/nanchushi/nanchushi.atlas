@@ -20,7 +20,7 @@ gebo2
   index: -1
 gebo3
   rotate: false
-  xy: 1165, 104
+  xy: 189, 69
   size: 214, 92
   orig: 214, 92
   offset: 0, 0
@@ -34,35 +34,28 @@ ji
   index: -1
 ji1
   rotate: false
-  xy: 1517, 181
+  xy: 405, 56
   size: 84, 44
   orig: 84, 44
   offset: 0, 0
   index: -1
 ji2
   rotate: false
-  xy: 1636, 260
+  xy: 491, 60
   size: 77, 40
   orig: 77, 40
   offset: 0, 0
   index: -1
-maisui
-  rotate: false
-  xy: 1517, 227
-  size: 117, 73
-  orig: 117, 73
-  offset: 0, 0
-  index: -1
 meimao
   rotate: false
-  xy: 189, 100
+  xy: 1745, 447
   size: 251, 61
   orig: 251, 61
   offset: 0, 0
   index: -1
 meimao 1
   rotate: false
-  xy: 189, 40
+  xy: 1745, 387
   size: 236, 58
   orig: 236, 58
   offset: 0, 0
@@ -83,9 +76,9 @@ tui
   index: -1
 yanjing
   rotate: false
-  xy: 1745, 445
-  size: 250, 63
-  orig: 250, 63
+  xy: 189, 6
+  size: 186, 61
+  orig: 186, 61
   offset: 0, 0
   index: -1
 yanjing1
@@ -97,21 +90,21 @@ yanjing1
   index: -1
 yanjing2
   rotate: false
-  xy: 442, 102
+  xy: 405, 102
   size: 230, 59
   orig: 230, 59
   offset: 0, 0
   index: -1
 yanjing3
   rotate: false
-  xy: 1745, 310
+  xy: 1745, 335
   size: 189, 50
   orig: 189, 50
   offset: 0, 0
   index: -1
 yanlei
   rotate: false
-  xy: 1745, 362
+  xy: 1165, 115
   size: 224, 81
   orig: 224, 81
   offset: 0, 0

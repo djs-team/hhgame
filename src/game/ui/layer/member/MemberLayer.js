@@ -180,6 +180,7 @@ load('game/ui/layer/member/MemberLayer', function () {
                 cell.setPositionY(0)
 
                 cell.addClickEventListener(function (sender, et) {
+                    appInstance.audioManager().playEffect(ResConfig.Sound.btnEffect)
                     GameUtil.delayBtn(sender);
                     this.onRechargeClicked(sender)
 

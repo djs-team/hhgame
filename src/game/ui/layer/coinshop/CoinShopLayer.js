@@ -227,6 +227,7 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
                 if (type == 1) {
                     goodsCell.getChildByName('pricePg').getChildByName('Image_79').setVisible(true)
                     goodsCell.addClickEventListener(function (sender, et) {
+                        appInstance.audioManager().playEffect(ResConfig.Sound.btnEffect)
                         this.onBuyCoinsFunction(sender)
 
                     }.bind(this))
@@ -234,6 +235,7 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
                     goodsCell.getChildByName('pricePg').getChildByName('priceText').setPosition(49.4, 14.94)
                     goodsCell.getChildByName('pricePg').getChildByName('Image_79').setVisible(false)
                     goodsCell.addClickEventListener(function (sender, et) {
+                        appInstance.audioManager().playEffect(ResConfig.Sound.btnEffect)
                         this.onBuyZuanFunction(sender)
 
                     }.bind(this))

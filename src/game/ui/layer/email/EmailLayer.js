@@ -124,10 +124,10 @@ load('game/ui/layer/email/EmailLayer', function () {
                 }
                 cell.setName(info.mailId)
                 cell.getChildByName('selectValue').setString(info.mailTitle)
-                cell.addTouchEventListener(function (sender, et) {
+                cell.addClickEventListener(function (sender, et) {
+                    appInstance.audioManager().playEffect(ResConfig.Sound.btnEffect)
                     this.updateLeftList()
                     this.onSubmitTouch(sender, et)
-
                 }.bind(this))
             }
         },

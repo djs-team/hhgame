@@ -675,6 +675,7 @@ static BOOL configured = FALSE;
 - (void) applicationWillResignActive:(NSNotification *) notification
 {
     [self applicationWillResignActive];
+    [self audioSessionInterrupted];
 }    
 
 - (void) applicationDidBecomeActive {
@@ -712,6 +713,7 @@ static BOOL configured = FALSE;
 //Called when application becomes active only if setResignBehavior has been called
 - (void) applicationDidBecomeActive:(NSNotification *) notification
 {
+    [self audioSessionResumed];
     [self applicationDidBecomeActive];
 }
 

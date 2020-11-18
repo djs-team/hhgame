@@ -289,6 +289,8 @@ static AppDelegate s_sharedApplication;
     /* cocos2d::Director::getInstance()->resume(); */
     
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
+    
+    cocos2d::Application::getInstance()->applicationWillEnterForeground();
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
@@ -303,7 +305,7 @@ static AppDelegate s_sharedApplication;
     /*
      Called as part of  transition from the background to the inactive state: here you can undo many of the changes made on entering the background.
      */
-    cocos2d::Application::getInstance()->applicationWillEnterForeground();
+//    cocos2d::Application::getInstance()->applicationWillEnterForeground();
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

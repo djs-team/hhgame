@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/bg_apply_host" />
+
+        <ImageView
+            android:id="@+id/iv_logo_hand"
+            android:layout_width="351dp"
+            android:layout_height="323dp"
+            android:layout_marginTop="40dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/bg_apply_host_hand"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_logo"
+            android:layout_width="337dp"
+            android:layout_height="310dp"
+            android:layout_marginTop="60dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/bg_apply_host_logo"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_index_one"
+            android:layout_width="29dp"
+            android:layout_height="29dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/icon_apply_host_index_one"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_logo" />
+
+        <TextView
+            android:id="@+id/tv_content_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:text="累计连麦时长>10小时"
+            android:textColor="#ffe1282a"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/iv_index_one"
+            app:layout_constraintLeft_toRightOf="@id/iv_index_one"
+            app:layout_constraintTop_toTopOf="@id/iv_index_one" />
+        <ImageView
+            android:id="@+id/iv_index_two"
+            android:layout_width="29dp"
+            android:layout_height="29dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/icon_apply_host_index_two"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_index_one" />
+
+        <TextView
+            android:id="@+id/tv_content_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:text="守护团人数5人"
+            android:textColor="#ffe1282a"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/iv_index_two"
+            app:layout_constraintLeft_toRightOf="@id/iv_index_two"
+            app:layout_constraintTop_toTopOf="@id/iv_index_two" />
+        <ImageView
+            android:id="@+id/iv_index_three"
+            android:layout_width="29dp"
+            android:layout_height="29dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/icon_apply_host_index_three"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_index_two" />
+
+        <TextView
+            android:id="@+id/tv_content_three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:text="成功邀请10人注册登录"
+            android:textColor="#ffe1282a"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/iv_index_three"
+            app:layout_constraintLeft_toRightOf="@id/iv_index_three"
+            app:layout_constraintTop_toTopOf="@id/iv_index_three" />
+
+
+        <com.deepsea.mua.stub.view.WithBackgroundTextView
+            android:id="@+id/tv_apply"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="申请成为红娘"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_index_three"
+            app:radius="15dp"
+            app:withBackgroundColor="#E1282A" />
+
+        <ImageView
+            android:layout_width="257dp"
+            android:layout_height="27dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/icon_applyhost_customer"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_apply" />
+
+        <RelativeLayout
+            android:id="@+id/rl_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="21dp"
+            android:paddingTop="24dp"
+            android:paddingRight="21dp"
+            android:paddingBottom="24dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="21dp"
+                android:layout_height="21dp"
+                android:src="@drawable/icon_apply_host_close" />
+        </RelativeLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

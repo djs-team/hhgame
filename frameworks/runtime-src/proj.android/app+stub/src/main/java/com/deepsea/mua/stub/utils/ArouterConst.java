@@ -35,6 +35,7 @@ public interface ArouterConst {
     String PAGE_ME_MINE_INVITOR = "/mine/myinvite";
     String PAGE_ME_MINE_REDROSE = "/mine/redRoseExchange";
     String PAGE_ME_MINE_GUARD = "/mine/guard";
+    String PAGE_ME_MINE_APPLYHOST = "/mine/applyHost";
   ;
 
 

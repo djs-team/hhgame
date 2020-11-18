@@ -4,6 +4,7 @@ import android.arch.lifecycle.LiveData;
 
 import com.deepsea.mua.core.network.response.ApiResponse;
 import com.deepsea.mua.stub.data.BaseApiResult;
+import com.deepsea.mua.stub.entity.ApplyHostVo;
 import com.deepsea.mua.stub.entity.BlockVo;
 import com.deepsea.mua.stub.entity.CheckBlackVo;
 import com.deepsea.mua.stub.entity.LookGuardUserVo;
@@ -1676,6 +1677,22 @@ public interface RetrofitApi {
      */
     @POST("index.php/Api/Member/share")
     LiveData<ApiResponse<BaseApiResult>> shareCallBack();
+
+    /**
+     * 申请红娘初始化
+     *
+     * @return
+     */
+    @POST("index.php/Api/Languageroom/init_apply")
+    LiveData<ApiResponse<BaseApiResult<ApplyHostVo>>> init_apply();
+
+    /**
+     * 申请红娘
+     *
+     * @return
+     */
+    @POST("index.php/Api/Languageroom/apply_info")
+    LiveData<ApiResponse<BaseApiResult>> apply_info();
 
     /**
      * 美艳参数

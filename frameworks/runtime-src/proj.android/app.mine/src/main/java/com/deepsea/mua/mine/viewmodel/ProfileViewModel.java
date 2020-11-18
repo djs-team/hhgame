@@ -14,6 +14,7 @@ import com.deepsea.mua.core.network.resource.Resource;
 import com.deepsea.mua.core.utils.JsonConverter;
 import com.deepsea.mua.mine.repository.ProfileRepository;
 import com.deepsea.mua.stub.data.BaseApiResult;
+import com.deepsea.mua.stub.entity.ApplyHostVo;
 import com.deepsea.mua.stub.entity.AreaVo;
 import com.deepsea.mua.stub.entity.AuditBean;
 import com.deepsea.mua.stub.entity.BindWx;
@@ -52,7 +53,6 @@ public class ProfileViewModel extends ViewModel {
     }
 
 
-
     public LiveData<Resource<BaseApiResult>> defriend(String uid) {
         return repository.defriend(uid, SignatureUtils.signWith(uid));
     }
@@ -71,8 +71,6 @@ public class ProfileViewModel extends ViewModel {
         String signature = SignatureUtils.signByToken();
         return repository.createapprove(signature);
     }
-
-
 
 
     /**
@@ -198,12 +196,15 @@ public class ProfileViewModel extends ViewModel {
 
         return result;
     }
+
     public LiveData<Resource<BaseApiResult>> bindPhone(String phone, String pcode) {
         return repository.bindPhone(phone, pcode);
     }
+
     private CountDownTimer mTimer;
     private static final int COUNT_DOWN_TOTAL_MILLIS = 60 * 1000;
     private static final int COUNT_DOWN_INTERVAL_MILLIS = 1000;
+
     public void initSendCaptchaTv(final TextView sendCaptchaTv) {
         if (mTimer == null) {
             ViewBindUtils.setEnable(sendCaptchaTv, false);
@@ -231,7 +232,17 @@ public class ProfileViewModel extends ViewModel {
             mTimer = null;
         }
     }
+
     public LiveData<Resource<BaseApiResult>> sendSMS(String phone, String type) {
         return repository.sendSMS(phone, type);
     }
+
+    public LiveData<Resource<BaseApiResult>> fetchApplyHost() {
+        return repository.fetchApplyHost();
+    }
+
+    public LiveData<Resource<ApplyHostVo>> init_apply() {
+        return repository.init_apply();
+    }
+
 }

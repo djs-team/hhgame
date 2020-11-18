@@ -134,6 +134,9 @@ public class VoiceFragment extends BaseFragment<FragmentVoiceBinding> {
         subscribeClick(mBinding.rlBack, o -> {
             ActivityCache.getInstance().getTopActivity().finish();
         });
+        subscribeClick(mBinding.llApplyHost, o -> {
+            PageJumpUtils.jumpToApplyHost();
+        });
     }
 
     XTabLayout.Tab lastTab = null;
@@ -249,10 +252,12 @@ public class VoiceFragment extends BaseFragment<FragmentVoiceBinding> {
         if (isShow == 1) {
             ViewBindUtils.setVisible(mBinding.llCreateRoom, true);
             ViewBindUtils.setVisible(mBinding.llFilter, false);
+            ViewBindUtils.setVisible(mBinding.llApplyHost, false);
 
         } else {
             ViewBindUtils.setVisible(mBinding.llCreateRoom, false);
             ViewBindUtils.setVisible(mBinding.llFilter, true);
+            ViewBindUtils.setVisible(mBinding.llApplyHost, true);
 
         }
 

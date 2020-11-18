@@ -35,6 +35,7 @@ load('game/public/GameAgent', function () {
         _sendHearBeat: 0,
         _loginOk: false,
         _reConectTimes: 0,
+        _pauseTime: 0,
         ctor: function () {
             this._httpGame = new HttpGame()
             this._tcpGame = new TcpGame()
@@ -47,6 +48,23 @@ load('game/public/GameAgent', function () {
             let LoadingLayer = include('game/ui/public/LoadingLayer')
             this._loadingLayer = appInstance.uiManager().createUI(LoadingLayer)
             this._loadingLayer.retain()
+
+            cc.eventManager.addCustomListener(cc.game.EVENT_HIDE, function(){
+                appInstance.gameAgent()._pauseTime = new Date().getTime()
+            })
+
+            cc.eventManager.addCustomListener(cc.game.EVENT_SHOW, function(){
+                let curScene = appInstance.sceneManager().getCurSceneName()
+                if (curScene === 'HallScene' || curScene === 'MjPlayScene'){
+                    let offLine = Math.ceil((new Date().getTime() - appInstance.gameAgent()._pauseTime) / 1000)
+                    if(offLine > 40) {
+                        cc.log('=====超时 需要重新登录======' + offLine)
+                    } else {
+                        appInstance.gameAgent().tcpGame().playerOnline()
+                    }
+                }
+            })
+
 
         },
 

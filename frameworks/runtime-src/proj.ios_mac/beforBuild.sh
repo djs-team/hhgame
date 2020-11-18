@@ -1,4 +1,5 @@
-!/bin/bash
+#!/usr/bin/env bash
+source ~/.bash_profile
 
 rm -rf game
 mkdir ./game

@@ -446,7 +446,6 @@ public class RoomActivity extends BaseActivity<ActivityVoiceRoomBinding>
 
     @Override
     protected void initView() {
-        Log.d("roomCh", "initView");
         vicePhoneMusicRv = mBinding.vicePhoneMusicRv;
         vicePhoneRv = mBinding.vicePhoneRv;
         rv_second_music_view = mBinding.rvSecondMusicView;

@@ -200,7 +200,7 @@ public class ProfileActivity extends BaseActivity<ActivityProfileBinding> {
         subscribeClick(mBinding.addFriendTv, o -> {
             if (isMyFriend) {
                 ViewBindUtils.setText(mBinding.addFriendTv, "私聊好友");
-                PageJumpUtils.jumpToChat(uid, nickName, onlineState);
+                PageJumpUtils.jumpToChat(uid, nickName, onlineStr);
             } else {
                 PageJumpUtils.jumpToFriendAdd(uid, photo, nickName);
                 ViewBindUtils.setText(mBinding.addFriendTv, "送礼物加好友");

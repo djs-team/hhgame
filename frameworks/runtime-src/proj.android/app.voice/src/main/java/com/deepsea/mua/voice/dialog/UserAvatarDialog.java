@@ -190,7 +190,7 @@ public class UserAvatarDialog extends BaseDialog<DialogUserAvatarBinding> {
 
         StringBuilder sb = new StringBuilder();
         if (!TextUtils.isEmpty(user.getAge())) {
-            sb.append(user.getAge()).append("岁");
+            sb.append(user.getAge());
         }
         if (user.getStature() > 0) {
             sb.append(sb.length() == 0 ? "" : "  ").append(user.getStature()).append("cm");

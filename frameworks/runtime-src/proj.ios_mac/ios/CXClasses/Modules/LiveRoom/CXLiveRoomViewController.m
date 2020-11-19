@@ -40,6 +40,8 @@
 #import <AGMBase/AGMBase.h>
 #import <AGMCapturer/AGMCapturer.h>
 #import "FUManager.h"
+#import "FUDateHandle.h"
+#import "FUBeautyParam.h"
 
 // Music
 #import "CXGameMusicView.h"
@@ -93,6 +95,8 @@
 @property (nonatomic, strong) AGMCameraCapturer *cameraCapturer;
 @property (nonatomic, strong) AGMCapturerVideoConfig *videoConfig;
 @property (nonatomic, strong) AGMVideoAdapterFilter *videoAdapterFilter;
+
+@property (nonatomic, strong) NSArray<FUBeautyParam *> *stickerParams;
 
 // 静音麦位userid列表
 @property (nonatomic, strong) NSMutableArray *muteArrays;
@@ -172,6 +176,10 @@
         [self.rechargeView hide];
         [MMPopupView hideAll];
     }
+    
+    [LEEAlert closeWithCompletionBlock:nil];
+    
+    [_musicView removeFromSuperview];
 }
 
 - (void)deallocRoom {
@@ -189,8 +197,6 @@
         dispatch_source_cancel(_music_timer);
     }
 
-    [_musicView removeFromSuperview];
-    
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     
     [[CXClientModel instance].agoraEngineManager.engine leaveChannel:nil];
@@ -363,6 +369,13 @@
 }
 
 #pragma mark - ==================== 美颜 ========================
+- (NSArray<FUBeautyParam *> *)stickerParams {
+    if (!_stickerParams) {
+        _stickerParams = [FUDateHandle setupSticker];
+    }
+    
+    return _stickerParams;
+}
 - (void)initCapturer {
     // Capturer
     self.videoConfig = [AGMCapturerVideoConfig defaultConfig];
@@ -378,13 +391,9 @@
     // push pixelBuffer
     __weak typeof(self) weakSelf = self;
     [self.cameraCapturer addVideoSink:self.videoAdapterFilter];
-//    [[FUManager shareManager] setBeautyDefaultParameters];
     [self.videoAdapterFilter setFrameProcessingCompletionBlock:^(AGMVideoSource * _Nonnull videoSource, CMTime time) {
         CVPixelBufferRef pixelBuffer = videoSource.framebufferForOutput.pixelBuffer;
         [[FUManager shareManager] renderItemsToPixelBuffer:pixelBuffer];
-//        if (weakSelf.model.type == FULiveModelTypeMusicFilter) {
-//            [[FUManager shareManager] musicFilterSetMusicTime];
-//        }
         [weakSelf.consumer consumePixelBuffer:pixelBuffer withTimestamp:time rotation:AgoraVideoRotationNone];
     }];
 }
@@ -2527,12 +2536,17 @@
             break;
         case 21: // 房间设置
         {
-            if ([CXClientModel instance].room.UserIdentity != GameUserIdentityNormal) {
-                [self showRoomInfoViewWithRoomInfo];
-            } else {
-                [self getUserInfoWith:[CXClientModel instance].room.RoomData.OwnerUserId];
-            }
+//            if ([CXClientModel instance].room.UserIdentity != GameUserIdentityNormal) {
+//                [self showRoomInfoViewWithRoomInfo];
+//            } else {
+//                [self getUserInfoWith:[CXClientModel instance].room.RoomData.OwnerUserId];
+//            }
             
+//            FUBeautyParam *param = self.stickerParams.firstObject;
+//            NSString *path = [[NSBundle mainBundle] pathForResource:param.mParam ofType:@"bundle"];
+            NSString *path = [[NSBundle mainBundle] pathForResource:@"sdlu" ofType:@"bundle"];
+            int itemHandle = [FURenderer itemWithContentsOfFile:path];
+            [FURenderer itemSetParam:itemHandle withName:@"isFlipTrack" value:@(1)];
         }
             break;
         case 23: // 守护团

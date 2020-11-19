@@ -53,6 +53,40 @@
 		005F9C8C2564FA4100FD9B2C /* CXAppleLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 005F9C8B2564FA4100FD9B2C /* CXAppleLoginManager.m */; };
 		005F9CD12565143A00FD9B2C /* CXHomeJoinRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 005F9CCF2565143A00FD9B2C /* CXHomeJoinRoomViewController.m */; };
 		005F9CD22565143A00FD9B2C /* CXHomeJoinRoomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 005F9CD02565143A00FD9B2C /* CXHomeJoinRoomViewController.xib */; };
+		005F9EC42566771400FD9B2C /* AGMBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 005F9E882566771300FD9B2C /* AGMBase.framework */; };
+		005F9EC52566771400FD9B2C /* linjia.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 005F9E8C2566771300FD9B2C /* linjia.bundle */; };
+		005F9EC62566771400FD9B2C /* gangfeng.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 005F9E8D2566771300FD9B2C /* gangfeng.bundle */; };
+		005F9EC72566771400FD9B2C /* xueqiu_lm_fu.png in Resources */ = {isa = PBXBuildFile; fileRef = 005F9E8F2566771300FD9B2C /* xueqiu_lm_fu.png */; };
+		005F9EC82566771400FD9B2C /* fashi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 005F9E902566771300FD9B2C /* fashi.bundle */; };
+		005F9EC92566771400FD9B2C /* sdlu.png in Resources */ = {isa = PBXBuildFile; fileRef = 005F9E912566771300FD9B2C /* sdlu.png */; };
+		005F9ECA2566771400FD9B2C /* sdlu.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 005F9E922566771300FD9B2C /* sdlu.bundle */; };
+		005F9ECB2566771400FD9B2C /* wobushi.png in Resources */ = {isa = PBXBuildFile; fileRef = 005F9E932566771300FD9B2C /* wobushi.png */; };
+		005F9ECC2566771400FD9B2C /* xueqiu_lm_fu.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 005F9E942566771300FD9B2C /* xueqiu_lm_fu.bundle */; };
+		005F9ECD2566771400FD9B2C /* fashi.png in Resources */ = {isa = PBXBuildFile; fileRef = 005F9E952566771300FD9B2C /* fashi.png */; };
+		005F9ECE2566771400FD9B2C /* CXFUBeautyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 005F9E972566771300FD9B2C /* CXFUBeautyModel.m */; };
+		005F9ECF2566771400FD9B2C /* FUMusicPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 005F9E982566771300FD9B2C /* FUMusicPlayer.m */; };
+		005F9ED02566771400FD9B2C /* FUBeautyParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 005F9E9A2566771300FD9B2C /* FUBeautyParam.m */; };
+		005F9ED32566771400FD9B2C /* FULiveModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 005F9EA22566771300FD9B2C /* FULiveModel.m */; };
+		005F9ED42566771400FD9B2C /* FUDateHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 005F9EA42566771300FD9B2C /* FUDateHandle.m */; };
+		005F9ED52566771400FD9B2C /* FUOpenGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 005F9EA62566771300FD9B2C /* FUOpenGLView.m */; };
+		005F9ED62566771400FD9B2C /* FUManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 005F9EAA2566771300FD9B2C /* FUManager.m */; };
+		005F9ED72566771400FD9B2C /* FUCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 005F9EAD2566771300FD9B2C /* FUCamera.m */; };
+		005F9ED82566771400FD9B2C /* AGMCapturer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 005F9EAE2566771300FD9B2C /* AGMCapturer.framework */; };
+		005F9ED92566771400FD9B2C /* release_note.txt in Resources */ = {isa = PBXBuildFile; fileRef = 005F9EB02566771300FD9B2C /* release_note.txt */; };
+		005F9EDA2566771400FD9B2C /* libnama.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 005F9EB12566771300FD9B2C /* libnama.a */; };
+		005F9EDB2566771400FD9B2C /* v3.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 005F9EB32566771300FD9B2C /* v3.bundle */; };
+		005F9EDC2566771400FD9B2C /* fxaa.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 005F9EB42566771300FD9B2C /* fxaa.bundle */; };
+		005F9EDD2566771400FD9B2C /* ai_facelandmarks239.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 005F9EB62566771300FD9B2C /* ai_facelandmarks239.bundle */; };
+		005F9EDE2566771400FD9B2C /* tongue.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 005F9EB72566771300FD9B2C /* tongue.bundle */; };
+		005F9EDF2566771400FD9B2C /* ai_bgseg.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 005F9EB82566771300FD9B2C /* ai_bgseg.bundle */; };
+		005F9EE02566771400FD9B2C /* ai_facelandmarks209.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 005F9EB92566771300FD9B2C /* ai_facelandmarks209.bundle */; };
+		005F9EE12566771400FD9B2C /* ai_gesture.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 005F9EBA2566771300FD9B2C /* ai_gesture.bundle */; };
+		005F9EE22566771400FD9B2C /* ai_facelandmarks75.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 005F9EBB2566771300FD9B2C /* ai_facelandmarks75.bundle */; };
+		005F9EE32566771400FD9B2C /* ai_face_processor.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 005F9EBC2566771300FD9B2C /* ai_face_processor.bundle */; };
+		005F9EE42566771400FD9B2C /* ai_hairseg.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 005F9EBD2566771300FD9B2C /* ai_hairseg.bundle */; };
+		005F9EE52566771400FD9B2C /* ai_humanpose.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 005F9EBE2566771300FD9B2C /* ai_humanpose.bundle */; };
+		005F9EE62566771400FD9B2C /* face_beautification.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 005F9EBF2566771300FD9B2C /* face_beautification.bundle */; };
+		005F9EE72566771400FD9B2C /* libfuai.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 005F9EC32566771300FD9B2C /* libfuai.a */; };
 		006148B2250B27F200BB7620 /* CXIPAPurchaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 006148AC250B27F100BB7620 /* CXIPAPurchaseManager.m */; };
 		006148B3250B27F200BB7620 /* SandBoxHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 006148AD250B27F100BB7620 /* SandBoxHelper.m */; };
 		006148B8250B4CA600BB7620 /* CXThirdPayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 006148B7250B4CA600BB7620 /* CXThirdPayManager.m */; };
@@ -118,29 +152,6 @@
 		00614E3B250B94CE00BB7620 /* CXSystemMessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00614968250B94C600BB7620 /* CXSystemMessageViewController.xib */; };
 		00614E3C250B94CE00BB7620 /* CXFriendInviteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0061496B250B94C600BB7620 /* CXFriendInviteModel.m */; };
 		00614E3D250B94CE00BB7620 /* CXFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0061496D250B94C600BB7620 /* CXFriendViewController.m */; };
-		00614E3E250B94CE00BB7620 /* AGMBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00614971250B94C600BB7620 /* AGMBase.framework */; };
-		00614E3F250B94CE00BB7620 /* CXFUBeautyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 00614974250B94C600BB7620 /* CXFUBeautyModel.m */; };
-		00614E40250B94CE00BB7620 /* FUMusicPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 00614975250B94C600BB7620 /* FUMusicPlayer.m */; };
-		00614E41250B94CE00BB7620 /* FULiveModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 00614977250B94C600BB7620 /* FULiveModel.m */; };
-		00614E42250B94CE00BB7620 /* FUOpenGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0061497A250B94C600BB7620 /* FUOpenGLView.m */; };
-		00614E43250B94CE00BB7620 /* FUManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0061497D250B94C600BB7620 /* FUManager.m */; };
-		00614E44250B94CE00BB7620 /* FUCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 0061497F250B94C600BB7620 /* FUCamera.m */; };
-		00614E45250B94CE00BB7620 /* AGMCapturer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00614980250B94C600BB7620 /* AGMCapturer.framework */; };
-		00614E46250B94CE00BB7620 /* release_note.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00614982250B94C600BB7620 /* release_note.txt */; };
-		00614E47250B94CE00BB7620 /* libnama.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00614983250B94C600BB7620 /* libnama.a */; };
-		00614E48250B94CE00BB7620 /* v3.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 00614985250B94C600BB7620 /* v3.bundle */; };
-		00614E49250B94CE00BB7620 /* fxaa.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 00614986250B94C600BB7620 /* fxaa.bundle */; };
-		00614E4A250B94CE00BB7620 /* ai_facelandmarks239.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 00614988250B94C600BB7620 /* ai_facelandmarks239.bundle */; };
-		00614E4B250B94CE00BB7620 /* tongue.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 00614989250B94C600BB7620 /* tongue.bundle */; };
-		00614E4C250B94CE00BB7620 /* ai_bgseg.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0061498A250B94C600BB7620 /* ai_bgseg.bundle */; };
-		00614E4D250B94CE00BB7620 /* ai_facelandmarks209.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0061498B250B94C600BB7620 /* ai_facelandmarks209.bundle */; };
-		00614E4E250B94CE00BB7620 /* ai_gesture.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0061498C250B94C600BB7620 /* ai_gesture.bundle */; };
-		00614E4F250B94CE00BB7620 /* ai_facelandmarks75.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0061498D250B94C600BB7620 /* ai_facelandmarks75.bundle */; };
-		00614E50250B94CE00BB7620 /* ai_face_processor.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0061498E250B94C600BB7620 /* ai_face_processor.bundle */; };
-		00614E51250B94CE00BB7620 /* ai_hairseg.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0061498F250B94C600BB7620 /* ai_hairseg.bundle */; };
-		00614E52250B94CE00BB7620 /* ai_humanpose.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 00614990250B94C600BB7620 /* ai_humanpose.bundle */; };
-		00614E53250B94CE00BB7620 /* face_beautification.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 00614991250B94C600BB7620 /* face_beautification.bundle */; };
-		00614E54250B94CE00BB7620 /* libfuai.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00614995250B94C600BB7620 /* libfuai.a */; };
 		00614E55250B94CE00BB7620 /* CXLiveRoomRedPacketModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 00614997250B94C600BB7620 /* CXLiveRoomRedPacketModel.m */; };
 		00614E56250B94CE00BB7620 /* CXMusicDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 00614998250B94C600BB7620 /* CXMusicDownloader.m */; };
 		00614E57250B94CE00BB7620 /* CXLiveRoomGiftModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0061499A250B94C600BB7620 /* CXLiveRoomGiftModel.m */; };
@@ -923,6 +934,51 @@
 		005F9CCE2565143A00FD9B2C /* CXHomeJoinRoomViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXHomeJoinRoomViewController.h; sourceTree = "<group>"; };
 		005F9CCF2565143A00FD9B2C /* CXHomeJoinRoomViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXHomeJoinRoomViewController.m; sourceTree = "<group>"; };
 		005F9CD02565143A00FD9B2C /* CXHomeJoinRoomViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CXHomeJoinRoomViewController.xib; sourceTree = "<group>"; };
+		005F9E882566771300FD9B2C /* AGMBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AGMBase.framework; sourceTree = "<group>"; };
+		005F9E892566771300FD9B2C /* authpack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = authpack.h; sourceTree = "<group>"; };
+		005F9E8C2566771300FD9B2C /* linjia.bundle */ = {isa = PBXFileReference; lastKnownFileType = file; path = linjia.bundle; sourceTree = "<group>"; };
+		005F9E8D2566771300FD9B2C /* gangfeng.bundle */ = {isa = PBXFileReference; lastKnownFileType = file; path = gangfeng.bundle; sourceTree = "<group>"; };
+		005F9E8F2566771300FD9B2C /* xueqiu_lm_fu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xueqiu_lm_fu.png; sourceTree = "<group>"; };
+		005F9E902566771300FD9B2C /* fashi.bundle */ = {isa = PBXFileReference; lastKnownFileType = file; path = fashi.bundle; sourceTree = "<group>"; };
+		005F9E912566771300FD9B2C /* sdlu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sdlu.png; sourceTree = "<group>"; };
+		005F9E922566771300FD9B2C /* sdlu.bundle */ = {isa = PBXFileReference; lastKnownFileType = file; path = sdlu.bundle; sourceTree = "<group>"; };
+		005F9E932566771300FD9B2C /* wobushi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wobushi.png; sourceTree = "<group>"; };
+		005F9E942566771300FD9B2C /* xueqiu_lm_fu.bundle */ = {isa = PBXFileReference; lastKnownFileType = file; path = xueqiu_lm_fu.bundle; sourceTree = "<group>"; };
+		005F9E952566771300FD9B2C /* fashi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fashi.png; sourceTree = "<group>"; };
+		005F9E972566771300FD9B2C /* CXFUBeautyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXFUBeautyModel.m; sourceTree = "<group>"; };
+		005F9E982566771300FD9B2C /* FUMusicPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FUMusicPlayer.m; sourceTree = "<group>"; };
+		005F9E992566771300FD9B2C /* FUOpenGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FUOpenGLView.h; sourceTree = "<group>"; };
+		005F9E9A2566771300FD9B2C /* FUBeautyParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FUBeautyParam.m; sourceTree = "<group>"; };
+		005F9EA22566771300FD9B2C /* FULiveModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FULiveModel.m; sourceTree = "<group>"; };
+		005F9EA32566771300FD9B2C /* FUCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FUCamera.h; sourceTree = "<group>"; };
+		005F9EA42566771300FD9B2C /* FUDateHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FUDateHandle.m; sourceTree = "<group>"; };
+		005F9EA52566771300FD9B2C /* FUManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FUManager.h; sourceTree = "<group>"; };
+		005F9EA62566771300FD9B2C /* FUOpenGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FUOpenGLView.m; sourceTree = "<group>"; };
+		005F9EA72566771300FD9B2C /* FUBeautyParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FUBeautyParam.h; sourceTree = "<group>"; };
+		005F9EA82566771300FD9B2C /* FUMusicPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FUMusicPlayer.h; sourceTree = "<group>"; };
+		005F9EA92566771300FD9B2C /* CXFUBeautyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXFUBeautyModel.h; sourceTree = "<group>"; };
+		005F9EAA2566771300FD9B2C /* FUManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FUManager.m; sourceTree = "<group>"; };
+		005F9EAB2566771300FD9B2C /* FUDateHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FUDateHandle.h; sourceTree = "<group>"; };
+		005F9EAC2566771300FD9B2C /* FULiveModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FULiveModel.h; sourceTree = "<group>"; };
+		005F9EAD2566771300FD9B2C /* FUCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FUCamera.m; sourceTree = "<group>"; };
+		005F9EAE2566771300FD9B2C /* AGMCapturer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AGMCapturer.framework; sourceTree = "<group>"; };
+		005F9EB02566771300FD9B2C /* release_note.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_note.txt; sourceTree = "<group>"; };
+		005F9EB12566771300FD9B2C /* libnama.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libnama.a; sourceTree = "<group>"; };
+		005F9EB32566771300FD9B2C /* v3.bundle */ = {isa = PBXFileReference; lastKnownFileType = file; path = v3.bundle; sourceTree = "<group>"; };
+		005F9EB42566771300FD9B2C /* fxaa.bundle */ = {isa = PBXFileReference; lastKnownFileType = file; path = fxaa.bundle; sourceTree = "<group>"; };
+		005F9EB62566771300FD9B2C /* ai_facelandmarks239.bundle */ = {isa = PBXFileReference; lastKnownFileType = file; path = ai_facelandmarks239.bundle; sourceTree = "<group>"; };
+		005F9EB72566771300FD9B2C /* tongue.bundle */ = {isa = PBXFileReference; lastKnownFileType = file; path = tongue.bundle; sourceTree = "<group>"; };
+		005F9EB82566771300FD9B2C /* ai_bgseg.bundle */ = {isa = PBXFileReference; lastKnownFileType = file; path = ai_bgseg.bundle; sourceTree = "<group>"; };
+		005F9EB92566771300FD9B2C /* ai_facelandmarks209.bundle */ = {isa = PBXFileReference; lastKnownFileType = file; path = ai_facelandmarks209.bundle; sourceTree = "<group>"; };
+		005F9EBA2566771300FD9B2C /* ai_gesture.bundle */ = {isa = PBXFileReference; lastKnownFileType = file; path = ai_gesture.bundle; sourceTree = "<group>"; };
+		005F9EBB2566771300FD9B2C /* ai_facelandmarks75.bundle */ = {isa = PBXFileReference; lastKnownFileType = file; path = ai_facelandmarks75.bundle; sourceTree = "<group>"; };
+		005F9EBC2566771300FD9B2C /* ai_face_processor.bundle */ = {isa = PBXFileReference; lastKnownFileType = file; path = ai_face_processor.bundle; sourceTree = "<group>"; };
+		005F9EBD2566771300FD9B2C /* ai_hairseg.bundle */ = {isa = PBXFileReference; lastKnownFileType = file; path = ai_hairseg.bundle; sourceTree = "<group>"; };
+		005F9EBE2566771300FD9B2C /* ai_humanpose.bundle */ = {isa = PBXFileReference; lastKnownFileType = file; path = ai_humanpose.bundle; sourceTree = "<group>"; };
+		005F9EBF2566771300FD9B2C /* face_beautification.bundle */ = {isa = PBXFileReference; lastKnownFileType = file; path = face_beautification.bundle; sourceTree = "<group>"; };
+		005F9EC12566771300FD9B2C /* funama.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = funama.h; sourceTree = "<group>"; };
+		005F9EC22566771300FD9B2C /* FURenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FURenderer.h; sourceTree = "<group>"; };
+		005F9EC32566771300FD9B2C /* libfuai.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libfuai.a; sourceTree = "<group>"; };
 		006148A9250B27F100BB7620 /* SandBoxHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SandBoxHelper.h; sourceTree = "<group>"; };
 		006148AC250B27F100BB7620 /* CXIPAPurchaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXIPAPurchaseManager.m; sourceTree = "<group>"; };
 		006148AD250B27F100BB7620 /* SandBoxHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SandBoxHelper.m; sourceTree = "<group>"; };
@@ -1028,38 +1084,6 @@
 		0061496C250B94C600BB7620 /* CXFriendInviteModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXFriendInviteModel.h; sourceTree = "<group>"; };
 		0061496D250B94C600BB7620 /* CXFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXFriendViewController.m; sourceTree = "<group>"; };
 		0061496F250B94C600BB7620 /* CXLiveRoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXLiveRoomViewController.h; sourceTree = "<group>"; };
-		00614971250B94C600BB7620 /* AGMBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AGMBase.framework; sourceTree = "<group>"; };
-		00614972250B94C600BB7620 /* authpack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = authpack.h; sourceTree = "<group>"; };
-		00614974250B94C600BB7620 /* CXFUBeautyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXFUBeautyModel.m; sourceTree = "<group>"; };
-		00614975250B94C600BB7620 /* FUMusicPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FUMusicPlayer.m; sourceTree = "<group>"; };
-		00614976250B94C600BB7620 /* FUOpenGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FUOpenGLView.h; sourceTree = "<group>"; };
-		00614977250B94C600BB7620 /* FULiveModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FULiveModel.m; sourceTree = "<group>"; };
-		00614978250B94C600BB7620 /* FUCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FUCamera.h; sourceTree = "<group>"; };
-		00614979250B94C600BB7620 /* FUManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FUManager.h; sourceTree = "<group>"; };
-		0061497A250B94C600BB7620 /* FUOpenGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FUOpenGLView.m; sourceTree = "<group>"; };
-		0061497B250B94C600BB7620 /* FUMusicPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FUMusicPlayer.h; sourceTree = "<group>"; };
-		0061497C250B94C600BB7620 /* CXFUBeautyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXFUBeautyModel.h; sourceTree = "<group>"; };
-		0061497D250B94C600BB7620 /* FUManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FUManager.m; sourceTree = "<group>"; };
-		0061497E250B94C600BB7620 /* FULiveModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FULiveModel.h; sourceTree = "<group>"; };
-		0061497F250B94C600BB7620 /* FUCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FUCamera.m; sourceTree = "<group>"; };
-		00614980250B94C600BB7620 /* AGMCapturer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AGMCapturer.framework; sourceTree = "<group>"; };
-		00614982250B94C600BB7620 /* release_note.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_note.txt; sourceTree = "<group>"; };
-		00614983250B94C600BB7620 /* libnama.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libnama.a; sourceTree = "<group>"; };
-		00614985250B94C600BB7620 /* v3.bundle */ = {isa = PBXFileReference; lastKnownFileType = file; path = v3.bundle; sourceTree = "<group>"; };
-		00614986250B94C600BB7620 /* fxaa.bundle */ = {isa = PBXFileReference; lastKnownFileType = file; path = fxaa.bundle; sourceTree = "<group>"; };
-		00614988250B94C600BB7620 /* ai_facelandmarks239.bundle */ = {isa = PBXFileReference; lastKnownFileType = file; path = ai_facelandmarks239.bundle; sourceTree = "<group>"; };
-		00614989250B94C600BB7620 /* tongue.bundle */ = {isa = PBXFileReference; lastKnownFileType = file; path = tongue.bundle; sourceTree = "<group>"; };
-		0061498A250B94C600BB7620 /* ai_bgseg.bundle */ = {isa = PBXFileReference; lastKnownFileType = file; path = ai_bgseg.bundle; sourceTree = "<group>"; };
-		0061498B250B94C600BB7620 /* ai_facelandmarks209.bundle */ = {isa = PBXFileReference; lastKnownFileType = file; path = ai_facelandmarks209.bundle; sourceTree = "<group>"; };
-		0061498C250B94C600BB7620 /* ai_gesture.bundle */ = {isa = PBXFileReference; lastKnownFileType = file; path = ai_gesture.bundle; sourceTree = "<group>"; };
-		0061498D250B94C600BB7620 /* ai_facelandmarks75.bundle */ = {isa = PBXFileReference; lastKnownFileType = file; path = ai_facelandmarks75.bundle; sourceTree = "<group>"; };
-		0061498E250B94C600BB7620 /* ai_face_processor.bundle */ = {isa = PBXFileReference; lastKnownFileType = file; path = ai_face_processor.bundle; sourceTree = "<group>"; };
-		0061498F250B94C600BB7620 /* ai_hairseg.bundle */ = {isa = PBXFileReference; lastKnownFileType = file; path = ai_hairseg.bundle; sourceTree = "<group>"; };
-		00614990250B94C600BB7620 /* ai_humanpose.bundle */ = {isa = PBXFileReference; lastKnownFileType = file; path = ai_humanpose.bundle; sourceTree = "<group>"; };
-		00614991250B94C600BB7620 /* face_beautification.bundle */ = {isa = PBXFileReference; lastKnownFileType = file; path = face_beautification.bundle; sourceTree = "<group>"; };
-		00614993250B94C600BB7620 /* funama.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = funama.h; sourceTree = "<group>"; };
-		00614994250B94C600BB7620 /* FURenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FURenderer.h; sourceTree = "<group>"; };
-		00614995250B94C600BB7620 /* libfuai.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libfuai.a; sourceTree = "<group>"; };
 		00614997250B94C600BB7620 /* CXLiveRoomRedPacketModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXLiveRoomRedPacketModel.m; sourceTree = "<group>"; };
 		00614998250B94C600BB7620 /* CXMusicDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMusicDownloader.m; sourceTree = "<group>"; };
 		00614999250B94C600BB7620 /* CXMineTaskModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMineTaskModel.h; sourceTree = "<group>"; };
@@ -2107,7 +2131,9 @@
 				0018054625187E5700A47927 /* AdSupport.framework in Frameworks */,
 				0020BB5B250BA14700E2979B /* ImageIO.framework in Frameworks */,
 				00802AA8250C6E0000F43A32 /* libxml2.tbd in Frameworks */,
+				005F9EE72566771400FD9B2C /* libfuai.a in Frameworks */,
 				00802AA6250C6DFA00F43A32 /* libbz2.tbd in Frameworks */,
+				005F9ED82566771400FD9B2C /* AGMCapturer.framework in Frameworks */,
 				00802AC5250CC55300F43A32 /* SGSecurityBody.framework in Frameworks */,
 				0020BB53250BA12500E2979B /* libsqlite3.tbd in Frameworks */,
 				0020BB3B250BA0A800E2979B /* libz.tbd in Frameworks */,
@@ -2131,6 +2157,7 @@
 				0020BB65250BA16E00E2979B /* GameController.framework in Frameworks */,
 				0020BB63250BA16800E2979B /* CoreText.framework in Frameworks */,
 				0020BB61250BA16100E2979B /* CoreGraphics.framework in Frameworks */,
+				005F9EC42566771400FD9B2C /* AGMBase.framework in Frameworks */,
 				0020BB5F250BA15700E2979B /* CoreImage.framework in Frameworks */,
 				0020BB59250BA13B00E2979B /* AssetsLibrary.framework in Frameworks */,
 				0020BB51250BA11B00E2979B /* WebKit.framework in Frameworks */,
@@ -2145,7 +2172,6 @@
 				00802AC6250CC55300F43A32 /* SecurityGuardSDK.framework in Frameworks */,
 				294D0D681D0D56F400F7F5D4 /* CoreText.framework in Frameworks */,
 				9FA3AE461BE9BBCA00FC9645 /* GameController.framework in Frameworks */,
-				00614E45250B94CE00BB7620 /* AGMCapturer.framework in Frameworks */,
 				ED545A821B68A21500C3958E /* libiconv.dylib in Frameworks */,
 				BA3A85EC1A724AE900924D24 /* Security.framework in Frameworks */,
 				00802AC2250CC55300F43A32 /* SGMain.framework in Frameworks */,
@@ -2157,15 +2183,13 @@
 				1A82F5FB169AC92500C4B13A /* libsqlite3.dylib in Frameworks */,
 				00615074250B94D000BB7620 /* libopencore-amrwb.a in Frameworks */,
 				D454520C156E22BD00887EB5 /* libz.dylib in Frameworks */,
+				005F9EDA2566771400FD9B2C /* libnama.a in Frameworks */,
 				A92275421517C094001B78AA /* QuartzCore.framework in Frameworks */,
 				A92275441517C094001B78AA /* OpenGLES.framework in Frameworks */,
-				00614E47250B94CE00BB7620 /* libnama.a in Frameworks */,
 				A92275461517C094001B78AA /* OpenAL.framework in Frameworks */,
 				A92275481517C094001B78AA /* AudioToolbox.framework in Frameworks */,
 				A922754A1517C094001B78AA /* AVFoundation.framework in Frameworks */,
-				00614E3E250B94CE00BB7620 /* AGMBase.framework in Frameworks */,
 				A922754C1517C094001B78AA /* UIKit.framework in Frameworks */,
-				00614E54250B94CE00BB7620 /* libfuai.a in Frameworks */,
 				A922754E1517C094001B78AA /* Foundation.framework in Frameworks */,
 				A92275501517C094001B78AA /* CoreGraphics.framework in Frameworks */,
 				C2499EFF1E9837D1D8E94AF5 /* Pods_hhgame_mobile.framework in Frameworks */,
@@ -2191,6 +2215,122 @@
 				005F9C8B2564FA4100FD9B2C /* CXAppleLoginManager.m */,
 			);
 			path = AppleLogin;
+			sourceTree = "<group>";
+		};
+		005F9E872566771300FD9B2C /* FaceUnity */ = {
+			isa = PBXGroup;
+			children = (
+				005F9E882566771300FD9B2C /* AGMBase.framework */,
+				005F9E892566771300FD9B2C /* authpack.h */,
+				005F9E8A2566771300FD9B2C /* items */,
+				005F9E962566771300FD9B2C /* Helpers */,
+				005F9EAE2566771300FD9B2C /* AGMCapturer.framework */,
+				005F9EAF2566771300FD9B2C /* FaceUnity-SDK-iOS */,
+			);
+			path = FaceUnity;
+			sourceTree = "<group>";
+		};
+		005F9E8A2566771300FD9B2C /* items */ = {
+			isa = PBXGroup;
+			children = (
+				005F9E8B2566771300FD9B2C /* 美妆 */,
+				005F9E8E2566771300FD9B2C /* 贴纸 */,
+			);
+			path = items;
+			sourceTree = "<group>";
+		};
+		005F9E8B2566771300FD9B2C /* 美妆 */ = {
+			isa = PBXGroup;
+			children = (
+				005F9E8C2566771300FD9B2C /* linjia.bundle */,
+				005F9E8D2566771300FD9B2C /* gangfeng.bundle */,
+			);
+			path = "美妆";
+			sourceTree = "<group>";
+		};
+		005F9E8E2566771300FD9B2C /* 贴纸 */ = {
+			isa = PBXGroup;
+			children = (
+				005F9E8F2566771300FD9B2C /* xueqiu_lm_fu.png */,
+				005F9E902566771300FD9B2C /* fashi.bundle */,
+				005F9E912566771300FD9B2C /* sdlu.png */,
+				005F9E922566771300FD9B2C /* sdlu.bundle */,
+				005F9E932566771300FD9B2C /* wobushi.png */,
+				005F9E942566771300FD9B2C /* xueqiu_lm_fu.bundle */,
+				005F9E952566771300FD9B2C /* fashi.png */,
+			);
+			path = "贴纸";
+			sourceTree = "<group>";
+		};
+		005F9E962566771300FD9B2C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				005F9E972566771300FD9B2C /* CXFUBeautyModel.m */,
+				005F9E982566771300FD9B2C /* FUMusicPlayer.m */,
+				005F9E992566771300FD9B2C /* FUOpenGLView.h */,
+				005F9E9A2566771300FD9B2C /* FUBeautyParam.m */,
+				005F9EA22566771300FD9B2C /* FULiveModel.m */,
+				005F9EA32566771300FD9B2C /* FUCamera.h */,
+				005F9EA42566771300FD9B2C /* FUDateHandle.m */,
+				005F9EA52566771300FD9B2C /* FUManager.h */,
+				005F9EA62566771300FD9B2C /* FUOpenGLView.m */,
+				005F9EA72566771300FD9B2C /* FUBeautyParam.h */,
+				005F9EA82566771300FD9B2C /* FUMusicPlayer.h */,
+				005F9EA92566771300FD9B2C /* CXFUBeautyModel.h */,
+				005F9EAA2566771300FD9B2C /* FUManager.m */,
+				005F9EAB2566771300FD9B2C /* FUDateHandle.h */,
+				005F9EAC2566771300FD9B2C /* FULiveModel.h */,
+				005F9EAD2566771300FD9B2C /* FUCamera.m */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		005F9EAF2566771300FD9B2C /* FaceUnity-SDK-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				005F9EB02566771300FD9B2C /* release_note.txt */,
+				005F9EB12566771300FD9B2C /* libnama.a */,
+				005F9EB22566771300FD9B2C /* Resources */,
+				005F9EC02566771300FD9B2C /* Headers */,
+				005F9EC32566771300FD9B2C /* libfuai.a */,
+			);
+			path = "FaceUnity-SDK-iOS";
+			sourceTree = "<group>";
+		};
+		005F9EB22566771300FD9B2C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				005F9EB32566771300FD9B2C /* v3.bundle */,
+				005F9EB42566771300FD9B2C /* fxaa.bundle */,
+				005F9EB52566771300FD9B2C /* AI_model */,
+				005F9EBF2566771300FD9B2C /* face_beautification.bundle */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		005F9EB52566771300FD9B2C /* AI_model */ = {
+			isa = PBXGroup;
+			children = (
+				005F9EB62566771300FD9B2C /* ai_facelandmarks239.bundle */,
+				005F9EB72566771300FD9B2C /* tongue.bundle */,
+				005F9EB82566771300FD9B2C /* ai_bgseg.bundle */,
+				005F9EB92566771300FD9B2C /* ai_facelandmarks209.bundle */,
+				005F9EBA2566771300FD9B2C /* ai_gesture.bundle */,
+				005F9EBB2566771300FD9B2C /* ai_facelandmarks75.bundle */,
+				005F9EBC2566771300FD9B2C /* ai_face_processor.bundle */,
+				005F9EBD2566771300FD9B2C /* ai_hairseg.bundle */,
+				005F9EBE2566771300FD9B2C /* ai_humanpose.bundle */,
+			);
+			path = AI_model;
+			sourceTree = "<group>";
+		};
+		005F9EC02566771300FD9B2C /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				005F9EC12566771300FD9B2C /* funama.h */,
+				005F9EC22566771300FD9B2C /* FURenderer.h */,
+			);
+			path = Headers;
 			sourceTree = "<group>";
 		};
 		0061488D250B1CCC00BB7620 /* CXClasses */ = {
@@ -2494,92 +2634,13 @@
 		0061496E250B94C600BB7620 /* LiveRoom */ = {
 			isa = PBXGroup;
 			children = (
+				005F9E872566771300FD9B2C /* FaceUnity */,
 				0061496F250B94C600BB7620 /* CXLiveRoomViewController.h */,
 				00614AD8250B94C800BB7620 /* CXLiveRoomViewController.m */,
-				00614970250B94C600BB7620 /* FaceUnity */,
 				00614996250B94C600BB7620 /* Model */,
 				006149A6250B94C600BB7620 /* View */,
 			);
 			path = LiveRoom;
-			sourceTree = "<group>";
-		};
-		00614970250B94C600BB7620 /* FaceUnity */ = {
-			isa = PBXGroup;
-			children = (
-				00614971250B94C600BB7620 /* AGMBase.framework */,
-				00614972250B94C600BB7620 /* authpack.h */,
-				00614973250B94C600BB7620 /* Helpers */,
-				00614980250B94C600BB7620 /* AGMCapturer.framework */,
-				00614981250B94C600BB7620 /* FaceUnity-SDK-iOS */,
-			);
-			path = FaceUnity;
-			sourceTree = "<group>";
-		};
-		00614973250B94C600BB7620 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				00614974250B94C600BB7620 /* CXFUBeautyModel.m */,
-				00614975250B94C600BB7620 /* FUMusicPlayer.m */,
-				00614976250B94C600BB7620 /* FUOpenGLView.h */,
-				00614977250B94C600BB7620 /* FULiveModel.m */,
-				00614978250B94C600BB7620 /* FUCamera.h */,
-				00614979250B94C600BB7620 /* FUManager.h */,
-				0061497A250B94C600BB7620 /* FUOpenGLView.m */,
-				0061497B250B94C600BB7620 /* FUMusicPlayer.h */,
-				0061497C250B94C600BB7620 /* CXFUBeautyModel.h */,
-				0061497D250B94C600BB7620 /* FUManager.m */,
-				0061497E250B94C600BB7620 /* FULiveModel.h */,
-				0061497F250B94C600BB7620 /* FUCamera.m */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
-		00614981250B94C600BB7620 /* FaceUnity-SDK-iOS */ = {
-			isa = PBXGroup;
-			children = (
-				00614982250B94C600BB7620 /* release_note.txt */,
-				00614983250B94C600BB7620 /* libnama.a */,
-				00614984250B94C600BB7620 /* Resources */,
-				00614992250B94C600BB7620 /* Headers */,
-				00614995250B94C600BB7620 /* libfuai.a */,
-			);
-			path = "FaceUnity-SDK-iOS";
-			sourceTree = "<group>";
-		};
-		00614984250B94C600BB7620 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				00614985250B94C600BB7620 /* v3.bundle */,
-				00614986250B94C600BB7620 /* fxaa.bundle */,
-				00614987250B94C600BB7620 /* AI_model */,
-				00614991250B94C600BB7620 /* face_beautification.bundle */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		00614987250B94C600BB7620 /* AI_model */ = {
-			isa = PBXGroup;
-			children = (
-				00614988250B94C600BB7620 /* ai_facelandmarks239.bundle */,
-				00614989250B94C600BB7620 /* tongue.bundle */,
-				0061498A250B94C600BB7620 /* ai_bgseg.bundle */,
-				0061498B250B94C600BB7620 /* ai_facelandmarks209.bundle */,
-				0061498C250B94C600BB7620 /* ai_gesture.bundle */,
-				0061498D250B94C600BB7620 /* ai_facelandmarks75.bundle */,
-				0061498E250B94C600BB7620 /* ai_face_processor.bundle */,
-				0061498F250B94C600BB7620 /* ai_hairseg.bundle */,
-				00614990250B94C600BB7620 /* ai_humanpose.bundle */,
-			);
-			path = AI_model;
-			sourceTree = "<group>";
-		};
-		00614992250B94C600BB7620 /* Headers */ = {
-			isa = PBXGroup;
-			children = (
-				00614993250B94C600BB7620 /* funama.h */,
-				00614994250B94C600BB7620 /* FURenderer.h */,
-			);
-			path = Headers;
 			sourceTree = "<group>";
 		};
 		00614996250B94C600BB7620 /* Model */ = {
@@ -4833,6 +4894,7 @@
 				00614EB4250B94CE00BB7620 /* CXRedPacketRegularView.xib in Resources */,
 				0061503E250B94D000BB7620 /* msg_file_white@2x.png in Resources */,
 				00614FF4250B94CF00BB7620 /* icon_035_cover.png in Resources */,
+				005F9EE32566771400FD9B2C /* ai_face_processor.bundle in Resources */,
 				00614FF8250B94CF00BB7620 /* icon_018_cover.png in Resources */,
 				00614F95250B94CF00BB7620 /* CXDateSelectedView.xib in Resources */,
 				0061500E250B94CF00BB7620 /* chatbar_extend@2x.png in Resources */,
@@ -4848,7 +4910,6 @@
 				00615062250B94D000BB7620 /* back_gary@2x.png in Resources */,
 				00615019250B94CF00BB7620 /* chatbar_map@3x.png in Resources */,
 				00615063250B94D000BB7620 /* close_gray@2x.png in Resources */,
-				00614E51250B94CE00BB7620 /* ai_hairseg.bundle in Resources */,
 				00614FF5250B94CF00BB7620 /* icon_040.gif in Resources */,
 				00614F07250B94CF00BB7620 /* CXNewUserMicroSeatCardView.xib in Resources */,
 				0061503C250B94D000BB7620 /* msg_send_audio@2x.png in Resources */,
@@ -4859,16 +4920,15 @@
 				00615012250B94CF00BB7620 /* chatbar_photo_blue@2x.png in Resources */,
 				0061509C250B94D000BB7620 /* alert_default@2x.png in Resources */,
 				0061500D250B94CF00BB7620 /* chatbar_audio_blue@2x.png in Resources */,
-				00614E4B250B94CE00BB7620 /* tongue.bundle in Resources */,
 				00614E14250B94CE00BB7620 /* CXHomeRoomCell.xib in Resources */,
 				0061505E250B94D000BB7620 /* uncheck@3x.png in Resources */,
 				00471A62255E5E970084C6FB /* src in Resources */,
 				00614FDD250B94CF00BB7620 /* icon_029_cover.png in Resources */,
 				00614F06250B94CF00BB7620 /* CXAllOnlineListCell.xib in Resources */,
+				005F9ED92566771400FD9B2C /* release_note.txt in Resources */,
 				00614FB4250B94CF00BB7620 /* CXLiveRoomGuardianAlertView.xib in Resources */,
 				00614F74250B94CF00BB7620 /* CXWithdrawInfoViewController.xib in Resources */,
 				00614E7D250B94CE00BB7620 /* CXGameMusicRankListCollectionCell.xib in Resources */,
-				00614E48250B94CE00BB7620 /* v3.bundle in Resources */,
 				00614EA8250B94CE00BB7620 /* CXLiveRoomRegularView.xib in Resources */,
 				00614EC6250B94CE00BB7620 /* CXMuaGiftSendBlueRoseView.xib in Resources */,
 				00614F67250B94CF00BB7620 /* CXContactUsViewController.xib in Resources */,
@@ -4884,8 +4944,10 @@
 				00615067250B94D000BB7620 /* close_white@3x.png in Resources */,
 				00614FF9250B94CF00BB7620 /* icon_020_cover.png in Resources */,
 				00614FF2250B94CF00BB7620 /* icon_027.gif in Resources */,
+				005F9EDE2566771400FD9B2C /* tongue.bundle in Resources */,
 				00614FEE250B94CF00BB7620 /* icon_018.gif in Resources */,
 				00614FDC250B94CF00BB7620 /* icon_002_cover.png in Resources */,
+				005F9EC72566771400FD9B2C /* xueqiu_lm_fu.png in Resources */,
 				00614EE3250B94CE00BB7620 /* CXLiveRoomSeatView.xib in Resources */,
 				00615013250B94CF00BB7620 /* chatbar_extend@3x.png in Resources */,
 				00614F0A250B94CF00BB7620 /* CXSystemAlertView.xib in Resources */,
@@ -4896,8 +4958,10 @@
 				00614E6F250B94CE00BB7620 /* CXGameMusicSongerTipView.xib in Resources */,
 				00614FF1250B94CF00BB7620 /* icon_019.gif in Resources */,
 				00615047250B94D000BB7620 /* msg_file_white@3x.png in Resources */,
+				005F9ECA2566771400FD9B2C /* sdlu.bundle in Resources */,
 				00615042250B94D000BB7620 /* msg_bg_recv@3x.png in Resources */,
 				00614EAA250B94CE00BB7620 /* CXLiveRoomRecommendView.xib in Resources */,
+				005F9EDB2566771400FD9B2C /* v3.bundle in Resources */,
 				00615010250B94CF00BB7620 /* chatbar_audio@3x.png in Resources */,
 				0061501C250B94D000BB7620 /* chatbar_face_blue@3x.png in Resources */,
 				00614E67250B94CE00BB7620 /* CXGameMusicLRCFullView.xib in Resources */,
@@ -4905,6 +4969,7 @@
 				00614E1D250B94CE00BB7620 /* CXAddFriendViewController.xib in Resources */,
 				00614FFC250B94CF00BB7620 /* chat_audio_red@2x.png in Resources */,
 				00614E17250B94CE00BB7620 /* CXHomeRoomRecommendCell.xib in Resources */,
+				005F9EE42566771400FD9B2C /* ai_hairseg.bundle in Resources */,
 				00614EF2250B94CE00BB7620 /* XYRoomAlreadApplyListView.xib in Resources */,
 				0061506B250B94D000BB7620 /* user_avatar_gray@2x.png in Resources */,
 				00614E60250B94CE00BB7620 /* CXGameMusicAdjustEffectsCell.xib in Resources */,
@@ -4914,6 +4979,7 @@
 				00614F82250B94CF00BB7620 /* MuaExchangeVC.xib in Resources */,
 				00614FE6250B94CF00BB7620 /* icon_007.gif in Resources */,
 				0061501A250B94D000BB7620 /* chatbar_map@2x.png in Resources */,
+				005F9EC62566771400FD9B2C /* gangfeng.bundle in Resources */,
 				00615018250B94CF00BB7620 /* chatbar_camera_blue@3x.png in Resources */,
 				00614FE5250B94CF00BB7620 /* icon_013.gif in Resources */,
 				0061503B250B94D000BB7620 /* msg_send_audio01@3x.png in Resources */,
@@ -4926,6 +4992,7 @@
 				007680BB255D1BA4000C5DB5 /* CXNearbyRankViewController.xib in Resources */,
 				00614EF1250B94CE00BB7620 /* XYOwnerListCell.xib in Resources */,
 				007680C1255D1BA4000C5DB5 /* CXNearbyRankSongCell.xib in Resources */,
+				005F9EE22566771400FD9B2C /* ai_facelandmarks75.bundle in Resources */,
 				00615001250B94CF00BB7620 /* chat_audio_blue@3x.png in Resources */,
 				00614FED250B94CF00BB7620 /* icon_019_cover.png in Resources */,
 				00614E1A250B94CE00BB7620 /* CXHomeSearchCell.xib in Resources */,
@@ -4933,7 +5000,6 @@
 				00614EFB250B94CF00BB7620 /* CXLiveRoomShareHelpSuccessView.xib in Resources */,
 				0061502F250B94D000BB7620 /* msg_send_audio02@3x.png in Resources */,
 				00614FE3250B94CF00BB7620 /* icon_012.gif in Resources */,
-				00614E50250B94CE00BB7620 /* ai_face_processor.bundle in Resources */,
 				00615038250B94D000BB7620 /* msg_send_audio01@2x.png in Resources */,
 				00615037250B94D000BB7620 /* msg_send_audio@3x.png in Resources */,
 				00615016250B94CF00BB7620 /* chatbar_call@3x.png in Resources */,
@@ -4949,9 +5015,9 @@
 				0061504C250B94D000BB7620 /* chat_info@2x.png in Resources */,
 				00614E71250B94CE00BB7620 /* CXGameMusicChooseSongerView.xib in Resources */,
 				00615014250B94CF00BB7620 /* chatbar_audio_blue@3x.png in Resources */,
+				005F9EDD2566771400FD9B2C /* ai_facelandmarks239.bundle in Resources */,
 				00614ECB250B94CE00BB7620 /* CXLiveRoomUserProfileView.xib in Resources */,
 				1AE159EC18C9DF3600FCA372 /* project.json in Resources */,
-				00614E46250B94CE00BB7620 /* release_note.txt in Resources */,
 				00614FB1250B94CF00BB7620 /* CXLiveRoomGuardianPrivilegeView.xib in Resources */,
 				00615065250B94D000BB7620 /* navbar_white@3x.png in Resources */,
 				00614F8C250B94CF00BB7620 /* CXExchangeBlueRoseRecordViewController.xib in Resources */,
@@ -4962,7 +5028,6 @@
 				00614E08250B94CE00BB7620 /* CXLiveRoomSetupTypeHelpCell.xib in Resources */,
 				00614E84250B94CE00BB7620 /* CXGameMusicView.xib in Resources */,
 				00615006250B94CF00BB7620 /* chatbar_call_blue@2x.png in Resources */,
-				00614E4C250B94CE00BB7620 /* ai_bgseg.bundle in Resources */,
 				00471A90255E8BA20084C6FB /* live_room_guardian_animation.gif in Resources */,
 				00614E80250B94CE00BB7620 /* home_game_music_download.gif in Resources */,
 				00614EF9250B94CF00BB7620 /* CXLiveRoomRechargeSheepView.xib in Resources */,
@@ -4972,6 +5037,7 @@
 				00614EBB250B94CE00BB7620 /* CXRedPacketAwardRecordView.xib in Resources */,
 				00614EC0250B94CE00BB7620 /* MuaGiftListSelectCountCell.xib in Resources */,
 				00615044250B94D000BB7620 /* msg_video_white@3x.png in Resources */,
+				005F9EDF2566771400FD9B2C /* ai_bgseg.bundle in Resources */,
 				00614F69250B94CF00BB7620 /* CXMineGuardAutomaticView.xib in Resources */,
 				0061504D250B94D000BB7620 /* chat_clear@3x.png in Resources */,
 				0061503D250B94D000BB7620 /* msg_recv_audio@3x.png in Resources */,
@@ -4985,13 +5051,13 @@
 				00614F05250B94CF00BB7620 /* XYRoomAlreadListCell.xib in Resources */,
 				00614E00250B94CE00BB7620 /* CXHomeFilterView.xib in Resources */,
 				00614FEC250B94CF00BB7620 /* icon_020.gif in Resources */,
-				00614E4D250B94CE00BB7620 /* ai_facelandmarks209.bundle in Resources */,
 				00614FA6250B94CF00BB7620 /* CXInfoTextViewCell.xib in Resources */,
 				00614E21250B94CE00BB7620 /* CXAddFriendGiftListCell.xib in Resources */,
 				00614E35250B94CE00BB7620 /* CXRechangeWechatView.xib in Resources */,
 				00614E0E250B94CE00BB7620 /* CXLIveRoomSetupRoomAudioStatusCell.xib in Resources */,
 				00614FB6250B94CF00BB7620 /* CXLiveRoomGuardianListCell.xib in Resources */,
 				00614FBA250B94CF00BB7620 /* CXUserInfoGiftCell.xib in Resources */,
+				005F9EC52566771400FD9B2C /* linjia.bundle in Resources */,
 				0061500C250B94CF00BB7620 /* chatbar_extend_blue@2x.png in Resources */,
 				00614E0B250B94CE00BB7620 /* CXLIveRoomSetupRoomTypeCell.xib in Resources */,
 				00614F6E250B94CF00BB7620 /* CXMineGuardListCell.xib in Resources */,
@@ -5005,6 +5071,7 @@
 				0061502E250B94D000BB7620 /* msg_bg_send@3x.png in Resources */,
 				00614FAE250B94CF00BB7620 /* CXLiveRoomGuardianRuleViewController.xib in Resources */,
 				1AF87B9D1F6F7C80007BE51C /* LaunchScreen.storyboard in Resources */,
+				005F9EE62566771400FD9B2C /* face_beautification.bundle in Resources */,
 				00615064250B94D000BB7620 /* uncheck@2x.png in Resources */,
 				00614ED2250B94CE00BB7620 /* CXLiveRoomUserProfileReportView.xib in Resources */,
 				00471A60255E5E970084C6FB /* res in Resources */,
@@ -5013,7 +5080,6 @@
 				00615031250B94D000BB7620 /* msg_bg_send@2x.png in Resources */,
 				00614FC5250B94CF00BB7620 /* CXMySettingWechatBindView.xib in Resources */,
 				00614FC2250B94CF00BB7620 /* CXMySettingWechatBindViewController.xib in Resources */,
-				00614E49250B94CE00BB7620 /* fxaa.bundle in Resources */,
 				00614FBE250B94CF00BB7620 /* CXUserInfoMainInfoCell.xib in Resources */,
 				0061502B250B94D000BB7620 /* msg_recv_audio02@2x.png in Resources */,
 				0061501B250B94D000BB7620 /* chatbar_camera_blue@2x.png in Resources */,
@@ -5025,11 +5091,11 @@
 				007680C3255D1BA4000C5DB5 /* CXNearbyListCell.xib in Resources */,
 				00615004250B94CF00BB7620 /* chatbar_map_blue@2x.png in Resources */,
 				00614E1C250B94CE00BB7620 /* CXHomeSearchViewController.xib in Resources */,
-				00614E4F250B94CE00BB7620 /* ai_facelandmarks75.bundle in Resources */,
 				00614E78250B94CE00BB7620 /* CXGameMusicRankListCell.xib in Resources */,
 				00614E64250B94CE00BB7620 /* CXGameMusicAdjustRateCell.xib in Resources */,
 				00614FB3250B94CF00BB7620 /* CXLiveRoomGuardianAnimationView.xib in Resources */,
 				00614E39250B94CE00BB7620 /* CXFriendMessageViewController.xib in Resources */,
+				005F9ECC2566771400FD9B2C /* xueqiu_lm_fu.bundle in Resources */,
 				00614F96250B94CF00BB7620 /* CXMineCell.xib in Resources */,
 				00614FF3250B94CF00BB7620 /* icon_021_cover.png in Resources */,
 				00614EE5250B94CE00BB7620 /* CXLiveRoomSeatsView.xib in Resources */,
@@ -5040,6 +5106,7 @@
 				00614F7C250B94CF00BB7620 /* CXWithdrawAccountViewController.xib in Resources */,
 				00615041250B94D000BB7620 /* msg_video_white@2x.png in Resources */,
 				00615070250B94D000BB7620 /* checked@2x.png in Resources */,
+				005F9EC82566771400FD9B2C /* fashi.bundle in Resources */,
 				00614F86250B94CF00BB7620 /* CXExchangeBlueRoseSelectedView.xib in Resources */,
 				00614F6D250B94CF00BB7620 /* CXMineGuardRenewItemCell.xib in Resources */,
 				00614FD3250B94CF00BB7620 /* pin-white.png in Resources */,
@@ -5047,7 +5114,6 @@
 				00615007250B94CF00BB7620 /* chatbar_map_blue@3x.png in Resources */,
 				00614F7D250B94CF00BB7620 /* CXMyWalletViewController.xib in Resources */,
 				00614E31250B94CE00BB7620 /* CXChatRoomGIftView.xib in Resources */,
-				00614E52250B94CE00BB7620 /* ai_humanpose.bundle in Resources */,
 				00614FE8250B94CF00BB7620 /* icon_027_cover.png in Resources */,
 				00614FAA250B94CF00BB7620 /* CXMineEditProfileViewController.xib in Resources */,
 				00615033250B94D000BB7620 /* msg_recv_audio02@3x.png in Resources */,
@@ -5057,14 +5123,16 @@
 				00615069250B94D000BB7620 /* user_avatar_gray@3x.png in Resources */,
 				00615034250B94D000BB7620 /* msg_location@3x.png in Resources */,
 				00614F7A250B94CF00BB7620 /* CXWithdrawIncomeListCell.xib in Resources */,
+				005F9ECB2566771400FD9B2C /* wobushi.png in Resources */,
 				00615048250B94D000BB7620 /* msg_recv_audio@2x.png in Resources */,
 				00614F8F250B94CF00BB7620 /* CXMineBlockViewController.xib in Resources */,
 				00614E82250B94CE00BB7620 /* home_game_music_downfail.gif in Resources */,
-				00614E53250B94CE00BB7620 /* face_beautification.bundle in Resources */,
 				0061509E250B94D000BB7620 /* alert_info@2x.png in Resources */,
+				005F9EE52566771400FD9B2C /* ai_humanpose.bundle in Resources */,
 				00614FDA250B94CF00BB7620 /* icon_010_cover.png in Resources */,
 				00614EB9250B94CE00BB7620 /* CXRedPacketAwardRecordCell.xib in Resources */,
 				00802AC4250CC55300F43A32 /* RPSDK.bundle in Resources */,
+				005F9EC92566771400FD9B2C /* sdlu.png in Resources */,
 				007680BA255D1BA4000C5DB5 /* CXNearbyViewController.xib in Resources */,
 				00614EAC250B94CE00BB7620 /* CXLiveRoomRecommendCell.xib in Resources */,
 				00614E5F250B94CE00BB7620 /* CXGameMusicAdjustView.xib in Resources */,
@@ -5073,11 +5141,13 @@
 				00615043250B94D000BB7620 /* msg_bg_recv@2x.png in Resources */,
 				00614EE9250B94CE00BB7620 /* CXLiveRoomSeatFansView.xib in Resources */,
 				00614E24250B94CE00BB7620 /* CXFriendInviteListViewController.xib in Resources */,
+				005F9EDC2566771400FD9B2C /* fxaa.bundle in Resources */,
 				00614EEA250B94CE00BB7620 /* CXLiveRoomSeatFansCell.xib in Resources */,
 				00615015250B94CF00BB7620 /* chatbar_extend_blue@3x.png in Resources */,
 				00614FEA250B94CF00BB7620 /* icon_021.gif in Resources */,
 				0061504E250B94D000BB7620 /* chat_clear@2x.png in Resources */,
 				00614F8B250B94CF00BB7620 /* CXExchangeBlueRoseCell.xib in Resources */,
+				005F9ECD2566771400FD9B2C /* fashi.png in Resources */,
 				00614E06250B94CE00BB7620 /* CXLiveRoomSetupTypeHelpViewController.xib in Resources */,
 				00614E81250B94CE00BB7620 /* home_game_music_new_tip.gif in Resources */,
 				00614EEF250B94CE00BB7620 /* XYOwnerSortListView.xib in Resources */,
@@ -5085,13 +5155,13 @@
 				00614FE7250B94CF00BB7620 /* icon_022.gif in Resources */,
 				00614ECA250B94CE00BB7620 /* CXLiveRoomGuardGroupView.xib in Resources */,
 				00614E2F250B94CE00BB7620 /* CXChatRoomGiftCell.xib in Resources */,
+				005F9EE12566771400FD9B2C /* ai_gesture.bundle in Resources */,
 				00615045250B94D000BB7620 /* msg_img_broken@3x.png in Resources */,
 				00614E70250B94CE00BB7620 /* CXGameMusicGuideView.xib in Resources */,
 				009A0CD425402902007C8B70 /* CXLiveRoomSetupViewController.xib in Resources */,
 				0061502C250B94D000BB7620 /* msg_location@2x.png in Resources */,
 				007680BC255D1BA4000C5DB5 /* CXNearbyRankHeaderView.xib in Resources */,
 				00615039250B94D000BB7620 /* msg_recv_audio01@3x.png in Resources */,
-				00614E4E250B94CE00BB7620 /* ai_gesture.bundle in Resources */,
 				00615068250B94D000BB7620 /* group_avatar@2x.png in Resources */,
 				0061506D250B94D000BB7620 /* group_avatar@3x.png in Resources */,
 				00614FB7250B94CF00BB7620 /* CXUserInfoViewController.xib in Resources */,
@@ -5117,8 +5187,8 @@
 				00614EC7250B94CE00BB7620 /* CXLiveRoomGuardRankView.xib in Resources */,
 				00614FDE250B94CF00BB7620 /* icon_002.gif in Resources */,
 				00614F71250B94CF00BB7620 /* CXMineGuardListViewController.xib in Resources */,
-				00614E4A250B94CE00BB7620 /* ai_facelandmarks239.bundle in Resources */,
 				00614E7C250B94CE00BB7620 /* CXGameMusicReserveListCollectionCell.xib in Resources */,
+				005F9EE02566771400FD9B2C /* ai_facelandmarks209.bundle in Resources */,
 				0061505F250B94D000BB7620 /* back_gary@3x.png in Resources */,
 				00614ED3250B94CE00BB7620 /* CXLiveRoomUserProfileJinyanDateCell.xib in Resources */,
 				00615003250B94CF00BB7620 /* chatbar_photo@3x.png in Resources */,
@@ -5323,6 +5393,7 @@
 				00802AB9250CAB9000F43A32 /* CXBUAdRewardViewController.m in Sources */,
 				00614E33250B94CE00BB7620 /* CXFriendMessageCell.m in Sources */,
 				00614EC5250B94CE00BB7620 /* MuaGiftUserIconView.m in Sources */,
+				005F9ED42566771400FD9B2C /* FUDateHandle.m in Sources */,
 				00614FBB250B94CF00BB7620 /* CXUserInfoMainInfoCell.m in Sources */,
 				00614F4C250B94CF00BB7620 /* SocketMessageLogin.m in Sources */,
 				00614F2E250B94CF00BB7620 /* SocketMessage22.m in Sources */,
@@ -5332,7 +5403,6 @@
 				00614F3F250B94CF00BB7620 /* CXSocketMessageOnlineMemberNumber.m in Sources */,
 				00615079250B94D000BB7620 /* MWCaptionView.m in Sources */,
 				00614E36250B94CE00BB7620 /* CXRechangeWechatView.m in Sources */,
-				00614E43250B94CE00BB7620 /* FUManager.m in Sources */,
 				0061507E250B94D000BB7620 /* MWTapDetectingView.m in Sources */,
 				00614F1B250B94CF00BB7620 /* SocketMessageSeatHeartValueUpdate.m in Sources */,
 				00614EC8250B94CE00BB7620 /* CXLiveRoomGuardRankView.m in Sources */,
@@ -5421,15 +5491,16 @@
 				00614ED9250B94CE00BB7620 /* GameMessageListItemGiftEventView.m in Sources */,
 				00614E5C250B94CE00BB7620 /* SVGAManager.m in Sources */,
 				00614F40250B94CF00BB7620 /* SocketMessageUnlockSeat.m in Sources */,
+				005F9ED32566771400FD9B2C /* FULiveModel.m in Sources */,
 				00614F1D250B94CF00BB7620 /* SocketMessageUserStandup.m in Sources */,
 				00614E04250B94CE00BB7620 /* CXLiveRoomCreateRoomViewController.m in Sources */,
 				00615020250B94D000BB7620 /* EMMessageStatusView.m in Sources */,
 				00614F0F250B94CF00BB7620 /* EasemobRoomMessage.m in Sources */,
 				00614E6C250B94CE00BB7620 /* CXGameMusicLRCLabel.m in Sources */,
 				00614E3D250B94CE00BB7620 /* CXFriendViewController.m in Sources */,
-				00614E40250B94CE00BB7620 /* FUMusicPlayer.m in Sources */,
 				00614F93250B94CF00BB7620 /* CXMineBlockActionView.m in Sources */,
 				00615050250B94D000BB7620 /* EMMessageModel.m in Sources */,
+				005F9ECF2566771400FD9B2C /* FUMusicPlayer.m in Sources */,
 				00614F49250B94CF00BB7620 /* SocketMessageSetDesc.m in Sources */,
 				00614E18250B94CE00BB7620 /* CXHomeRoomCell.m in Sources */,
 				00614E75250B94CE00BB7620 /* CXGameMusicRankListCell.m in Sources */,
@@ -5490,6 +5561,7 @@
 				00614F36250B94CF00BB7620 /* SocketMessageJoinSeat.m in Sources */,
 				00614F2B250B94CF00BB7620 /* SocketMessageBuyHammers.m in Sources */,
 				007680BE255D1BA4000C5DB5 /* CXNearbyRankSongCell.m in Sources */,
+				005F9ED52566771400FD9B2C /* FUOpenGLView.m in Sources */,
 				006150B1250B94D000BB7620 /* LewPopupViewAnimationSpring.m in Sources */,
 				00614E12250B94CE00BB7620 /* CXHomeChildViewController.m in Sources */,
 				00614EC3250B94CE00BB7620 /* voiceGiftModel.m in Sources */,
@@ -5528,6 +5600,7 @@
 				00614F25250B94CF00BB7620 /* SocketMessageGroupGift.m in Sources */,
 				00614FA7250B94CF00BB7620 /* CXMineEditProfileItemCell.m in Sources */,
 				0061502A250B94D000BB7620 /* EMMsgLocationBubbleView.m in Sources */,
+				005F9ECE2566771400FD9B2C /* CXFUBeautyModel.m in Sources */,
 				00615052250B94D000BB7620 /* EMImageBrowser.m in Sources */,
 				00614F56250B94CF00BB7620 /* SocketMessageGiftEvent.m in Sources */,
 				00614F42250B94CF00BB7620 /* SocketMessageRoomLockUpdate.m in Sources */,
@@ -5573,7 +5646,6 @@
 				00615025250B94D000BB7620 /* EMMsgVideoBubbleView.m in Sources */,
 				00614F46250B94CF00BB7620 /* SocketMessageDisableMic.m in Sources */,
 				00615021250B94D000BB7620 /* EMMessageTimeCell.m in Sources */,
-				00614E41250B94CE00BB7620 /* FULiveModel.m in Sources */,
 				00614FAD250B94CF00BB7620 /* CXLiveRoomGuardianRuleViewController.m in Sources */,
 				00615087250B94D000BB7620 /* NSIndexPath+PSTCollectionViewAdditions.m in Sources */,
 				00614F3B250B94CF00BB7620 /* SocketMessageHeadBeatChanged.m in Sources */,
@@ -5582,19 +5654,19 @@
 				006150B5250B94D000BB7620 /* CXBaseTabBarViewController.m in Sources */,
 				00614F63250B94CF00BB7620 /* CXUserModel.m in Sources */,
 				00614F27250B94CF00BB7620 /* SocketMessageUserDisableChatMessage.m in Sources */,
+				005F9ED02566771400FD9B2C /* FUBeautyParam.m in Sources */,
 				00614E3C250B94CE00BB7620 /* CXFriendInviteModel.m in Sources */,
 				00614F4A250B94CF00BB7620 /* SocketMessageSeatMicEnable.m in Sources */,
 				00614EF3250B94CE00BB7620 /* XYRoomAlreadApplyListView.m in Sources */,
 				006150A3250B94D000BB7620 /* EMTextViewController.m in Sources */,
 				009A0CD325402902007C8B70 /* CXLiveRoomSetupViewController.m in Sources */,
-				00614E44250B94CE00BB7620 /* FUCamera.m in Sources */,
 				00614F24250B94CF00BB7620 /* SocketMessageWelcomMsg.m in Sources */,
+				005F9ED62566771400FD9B2C /* FUManager.m in Sources */,
 				00614F68250B94CF00BB7620 /* CXMineGuardListViewController.m in Sources */,
 				00614E6A250B94CE00BB7620 /* CXGameMusicGuideView.m in Sources */,
 				001E6B802542E46200FC902A /* Reachability.m in Sources */,
 				00614FC0250B94CF00BB7620 /* CXUserInfoGroupTitleReusableView.m in Sources */,
 				00614F72250B94CF00BB7620 /* CXMineGuardViewController.m in Sources */,
-				00614E42250B94CE00BB7620 /* FUOpenGLView.m in Sources */,
 				00614F43250B94CF00BB7620 /* SocketMessageLuckyDrawResult.m in Sources */,
 				00614EB3250B94CE00BB7620 /* CXRedPacketAwardRecordView.m in Sources */,
 				0061505B250B94D000BB7620 /* EMDemoOptions.m in Sources */,
@@ -5647,6 +5719,7 @@
 				006150B7250B94D000BB7620 /* CXBaseViewController.m in Sources */,
 				00614F66250B94CF00BB7620 /* CXContactUsViewController.m in Sources */,
 				006150A2250B94D000BB7620 /* EMSearchViewController.m in Sources */,
+				005F9ED72566771400FD9B2C /* FUCamera.m in Sources */,
 				00614E1F250B94CE00BB7620 /* CXFriendApplyViewController.m in Sources */,
 				006148EB250B71F800BB7620 /* CXPhoneBasicTools.m in Sources */,
 				00614F39250B94CF00BB7620 /* SOcketMessageSendEmoticonResult.m in Sources */,
@@ -5658,7 +5731,6 @@
 				00614E32250B94CE00BB7620 /* CXChatRoomGiftCell.m in Sources */,
 				00614EA9250B94CE00BB7620 /* CXLiveRoomUIView.m in Sources */,
 				00615076250B94D000BB7620 /* wav.mm in Sources */,
-				00614E3F250B94CE00BB7620 /* CXFUBeautyModel.m in Sources */,
 				006150B0250B94D000BB7620 /* UIViewController+LewPopupViewController.m in Sources */,
 				00614FAB250B94CF00BB7620 /* CXLiveRoomGuardianListViewController.m in Sources */,
 				00614F75250B94CF00BB7620 /* CXWithdrawAccountViewController.m in Sources */,
@@ -5831,6 +5903,7 @@
 					"$(PROJECT_DIR)/ios/Frameworks",
 					"\"$(SRCROOT)/ios/Frameworks\"",
 					"$(PROJECT_DIR)/ios/Frameworks/Aliyun",
+					"$(PROJECT_DIR)/ios/CXClasses/Modules/LiveRoom/FaceUnity",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -5849,6 +5922,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/ios/CXClasses/Modules/LiveRoom/FaceUnity/FaceUnity-SDK-iOS\"",
 					"\"$(SRCROOT)/ios/CXClasses/lib/Ease/Helper/3rdParty/VoiceConvert\"",
+					"$(PROJECT_DIR)/ios/CXClasses/Modules/LiveRoom/FaceUnity/FaceUnity-SDK-iOS",
 				);
 				MARKETING_VERSION = 6.0.0;
 				OTHER_LDFLAGS = (
@@ -5886,6 +5960,7 @@
 					"$(PROJECT_DIR)/ios/Frameworks",
 					"\"$(SRCROOT)/ios/Frameworks\"",
 					"$(PROJECT_DIR)/ios/Frameworks/Aliyun",
+					"$(PROJECT_DIR)/ios/CXClasses/Modules/LiveRoom/FaceUnity",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
@@ -5903,6 +5978,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/ios/CXClasses/Modules/LiveRoom/FaceUnity/FaceUnity-SDK-iOS\"",
 					"\"$(SRCROOT)/ios/CXClasses/lib/Ease/Helper/3rdParty/VoiceConvert\"",
+					"$(PROJECT_DIR)/ios/CXClasses/Modules/LiveRoom/FaceUnity/FaceUnity-SDK-iOS",
 				);
 				MARKETING_VERSION = 6.0.0;
 				OTHER_LDFLAGS = (

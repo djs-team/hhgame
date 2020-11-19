@@ -61,6 +61,7 @@ load('module/mahjong/ui/DeskCardLayer', function () {
             this.liuJuBg.setVisible(false)
             this.fenZhangBg.setVisible(false)
             this.CountDownTxt.setVisible(false)
+            this.canShowCountDownTxt = false
             this.DirectionTxt.setVisible(false)
             let directionPg = 'res/module/mahjong/desk/direction_'
             if(this._pMySeatID == 0){
@@ -88,6 +89,7 @@ load('module/mahjong/ui/DeskCardLayer', function () {
             this.liuJuBg.setVisible(false)
             this.fenZhangBg.setVisible(false)
             this.CountDownTxt.setVisible(false)
+            this.canShowCountDownTxt = false
         },
 
         initView: function (pData) {
@@ -221,6 +223,7 @@ load('module/mahjong/ui/DeskCardLayer', function () {
             }
             this._countDown = defaultCountDown
             this.CountDownTxt.setVisible(true)
+            this.canShowCountDownTxt = true
             this._directionNd[seatUI].setVisible(true)
             this._directionNd[seatUI].runAction(cc.repeatForever(cc.sequence(cc.fadeIn(0.8),cc.fadeOut(0.8))))
         },
@@ -231,7 +234,7 @@ load('module/mahjong/ui/DeskCardLayer', function () {
         onUpdate: function (dt) {
             this._updateTime += dt
 
-            if (this._updateTime - this._lastUpdateTime > 1) {
+            if (this.canShowCountDownTxt && (this._updateTime - this._lastUpdateTime > 1)) {
                 this._lastUpdateTime = Math.floor(this._updateTime)
                 this._countDown -= 1
                 if (this._countDown < 0) {

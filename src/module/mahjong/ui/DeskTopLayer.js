@@ -46,6 +46,7 @@ load('module/mahjong/ui/DeskTopLayer', function () {
         _ruleInfo: {},
         RES_BINDING: function () {
             return {
+                'blockPnl': {  },
                 'pnl/ActionNd': {  },
                 'pnl/ActionNd/ActionCell': { onClicked: this.onActionCellClick },
                 'pnl/ChiNd': {  },
@@ -176,6 +177,11 @@ load('module/mahjong/ui/DeskTopLayer', function () {
             }
         },
 
+        onUpdateBlockPnl: function (flag) {
+            this.blockPnl.setVisible(flag)
+        },
+
+
         onChiCellClick: function (sender) {
             let chiInfo = sender._chiInfo
             let sendMsg = chiInfo.sendMsg
@@ -235,6 +241,8 @@ load('module/mahjong/ui/DeskTopLayer', function () {
             let pChoiceRule = pData.tableData.pChoiceRule
             pChoiceRule = pChoiceRule.split(',')
             this._ruleInfo = this.dealChoiceRule(pChoiceRule)
+
+            this.onUpdateBlockPnl(false)
         },
 
         initView: function (pData) {

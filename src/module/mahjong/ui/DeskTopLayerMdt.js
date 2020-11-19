@@ -49,10 +49,12 @@ load('module/mahjong/ui/DeskTopLayerMdt', function () {
                     this.TableHostingProto(body)
                     break
                 case TableEvent.GameResultProto:
+                    this.view.onUpdateBlockPnl(true)
                     this.view.UpdateTableHosting(2)
                     this.view.onCloseChuang()
                     break
                 case TableEvent.MatchResultProto:
+                    this.view.onUpdateBlockPnl(true)
                     this.view.onCloseChuang()
                     break
                 case TableEvent.GamingProto:
@@ -63,6 +65,7 @@ load('module/mahjong/ui/DeskTopLayerMdt', function () {
                     break
                 case TableEvent.InitCardProto:
                     this.updateRemainingCard()
+                    this.view.onUpdateBlockPnl(false)
                     break
             }
         },

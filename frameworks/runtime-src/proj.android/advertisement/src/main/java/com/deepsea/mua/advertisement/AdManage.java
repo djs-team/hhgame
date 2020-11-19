@@ -123,7 +123,7 @@ public class AdManage {
 
                     @Override
                     public void onAdShow() {
-
+                        result = "0";
                     }
 
                     @Override

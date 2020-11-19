@@ -22,6 +22,16 @@ public class AdManage {
     private static AdManage singleton = null;
     private String result = "-1";
 
+    private boolean reload = false;//关闭按钮时候再次加载
+
+    public boolean isReload() {
+        return reload;
+    }
+
+    public void setReload(boolean reload) {
+        this.reload = reload;
+    }
+
     public interface OnLoadAdListener {
         void onRewardVideoCached();
 
@@ -73,28 +83,32 @@ public class AdManage {
 
     private boolean mHasShowDownloadActive = false;
 
-    public void loadAd(final String codeId, String userId, OnLoadAdListener listener) {
-        this.onLoadAdListener = listener;
+
+    public void setOnLoadAdListener(OnLoadAdListener onLoadAdListener) {
+        this.onLoadAdListener = onLoadAdListener;
+    }
+
+    public void loadAd(final String codeId, String userId, boolean isReload) {
         //step4:创建广告请求参数AdSlot,具体参数含义参考文档
-
         //个性化模板广告需要传入期望广告view的宽、高，单位dp，
-
-
+        this.reload = isReload;
         if (adSlot == null) {
             initSlot(codeId, userId);
         }
+
 
         //step5:请求广告
         mTTAdNative.loadRewardVideoAd(adSlot, new TTAdNative.RewardVideoAdListener() {
             @Override
             public void onError(int code, String message) {
+
             }
 
             //视频广告加载后，视频资源缓存到本地的回调，在此回调后，播放本地视频，流畅不阻塞。
             @Override
             public void onRewardVideoCached() {
                 mIsLoaded = true;
-                if (onLoadAdListener != null) {
+                if (onLoadAdListener != null && !reload) {
                     onLoadAdListener.onRewardVideoCached();
                 }
             }
@@ -109,7 +123,7 @@ public class AdManage {
 
                     @Override
                     public void onAdShow() {
-
+                        result = "0";
                     }
 
                     @Override

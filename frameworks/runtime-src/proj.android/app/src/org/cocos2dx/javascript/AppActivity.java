@@ -14,6 +14,7 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
@@ -109,11 +110,20 @@ public class AppActivity extends Cocos2dxActivity {
                     Log.d(TAG, "[" + code + "]message=" + content);
                 }
             });
+            mHandler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    initRewardConfig();
+                }
+            }, 3000);
+
         } catch (Exception e) {
 
         }
 
     }
+
+    private Handler mHandler = new Handler();
 
 
     @Override
@@ -690,10 +700,13 @@ public class AppActivity extends Cocos2dxActivity {
                 if (ccActivity.adManage == null) {
                     ccActivity.initRewardConfig();
                 }
-                ccActivity.adManage.loadAd("945477184", userId, new AdManage.OnLoadAdListener() {
+                boolean isReload = ccActivity.adManage.isReload();
+
+                ccActivity.adManage.setOnLoadAdListener(new AdManage.OnLoadAdListener() {
                     @Override
                     public void onRewardVideoCached() {
                         ccActivity.adManage.playAd();
+                        ccActivity.adManage.loadAd("945477184", userId, true);
                     }
 
                     @Override
@@ -701,6 +714,13 @@ public class AppActivity extends Cocos2dxActivity {
                         ccActivity.RunJS("rewardVideoCallback", result);
                     }
                 });
+                if (!isReload) {
+                    ccActivity.adManage.loadAd("945477184", userId, false);
+                } else {
+                    ccActivity.adManage.setReload(false);
+                    ccActivity.adManage.playAd();
+                }
+
             }
         });
 

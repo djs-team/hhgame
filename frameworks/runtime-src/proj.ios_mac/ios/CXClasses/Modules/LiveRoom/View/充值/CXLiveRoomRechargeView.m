@@ -152,6 +152,13 @@
 
 #pragma mark - Action
 
+- (void)hide {
+    [super hide];
+    if (self.cancel) {
+        self.cancel();
+    }
+}
+
 - (IBAction)wechatPayAction:(id)sender {
     self.payMethod = 1;
     self.wechatPayBtn.layer.borderColor = UIColorHex(0x7F3EF0).CGColor;

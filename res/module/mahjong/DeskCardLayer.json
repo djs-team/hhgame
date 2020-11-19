@@ -414,13 +414,13 @@
                   {
                     "FileData": {
                       "Type": "Normal",
-                      "Path": "desk/pz_33.png",
+                      "Path": "desk/direction_west.png",
                       "Plist": ""
                     },
                     "Scale9OriginX": 47,
                     "Scale9OriginY": 18,
-                    "Scale9Width": 50,
-                    "Scale9Height": 21,
+                    "Scale9Width": 99,
+                    "Scale9Height": 40,
                     "AnchorPoint": {
                       "ScaleX": 0.5,
                       "ScaleY": 0.5
@@ -442,18 +442,14 @@
                       "Y": 0.5
                     },
                     "PreSize": {
-                      "X": 0.7461,
-                      "Y": 0.75
+                      "X": 1.0,
+                      "Y": 1.0
                     },
-                    "LeftMargin": 24.5,
-                    "RightMargin": 24.5,
-                    "TopMargin": 9.5,
-                    "BottomMargin": 9.5,
                     "Tag": 365,
                     "ActionTag": 623439,
                     "Size": {
-                      "X": 144.0,
-                      "Y": 57.0
+                      "X": 193.0,
+                      "Y": 76.0
                     },
                     "Name": "DirectionTxt",
                     "ctype": "ImageViewObjectData"
@@ -20131,9 +20127,9 @@
         "card/value/selfshow/wan_show_1.png",
         "dele/deskCard.jpg",
         "dele/newLiang.jpg",
+        "desk/direction_west.png",
         "desk/fenzhang.png",
         "desk/liuju.png",
-        "desk/pz_33.png",
         "desk/pz_34.png",
         "desk/pz_35.png",
         "desk/pz_36.png",

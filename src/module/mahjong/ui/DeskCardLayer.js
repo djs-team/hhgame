@@ -24,6 +24,7 @@ load('module/mahjong/ui/DeskCardLayer', function () {
                 'bgPnl/DirectionBg/Direction1': {  },
                 'bgPnl/DirectionBg/Direction2': {  },
                 'bgPnl/DirectionBg/Direction3': {  },
+                'bgPnl/DirectionBg/DirectionTxt': {  },
                 'bgPnl/DirectionBg/CountDownTxt': {  },
                 'CardPnl': {  },
                 'liuJuBg': {  },
@@ -60,7 +61,20 @@ load('module/mahjong/ui/DeskCardLayer', function () {
             this.liuJuBg.setVisible(false)
             this.fenZhangBg.setVisible(false)
             this.CountDownTxt.setVisible(false)
-
+            this.DirectionTxt.setVisible(false)
+            let directionPg = 'res/module/mahjong/desk/direction_'
+            if(this._pMySeatID == 0){
+                directionPg += 'east'
+            }else if(this._pMySeatID == 1){
+                directionPg += 'north'
+            }else if(this._pMySeatID == 2){
+                directionPg += 'west'
+            }else{
+                directionPg += 'south'
+            }
+            directionPg += '.png'
+            this.DirectionTxt.loadTexture(directionPg)
+            this.DirectionTxt.setVisible(true)
 
 
 

@@ -120,6 +120,12 @@
 @property (nonatomic, strong) NSArray <CXLiveRoomGiftModel *> *guardGiftArrays; // 送礼守护礼物列表
 @property (nonatomic, strong) NSArray <CXLiveRoomGiftModel *> *firendGiftArrays; // 送礼加好友礼物列表
 
+@property (nonatomic, assign) BOOL showRechargeSheepView;
+@property (nonatomic, strong) CXLiveRoomRechargeSheepView *rechargeSheepView;
+
+@property (nonatomic, assign) BOOL showRoomRechargeView;
+@property (nonatomic, strong) CXLiveRoomRechargeView *rechargeView;
+
 // 推荐
 @property (nonatomic, strong) CXLiveRoomRecommendView *recommendView;
 
@@ -156,6 +162,14 @@
     }
     if (_showGuardRenewView == YES) {
         [self.guardRenewView hide];
+        [MMPopupView hideAll];
+    }
+    if (_showRechargeSheepView == YES) {
+        [self.rechargeSheepView hide];
+        [MMPopupView hideAll];
+    }
+    if (_showRoomRechargeView == YES) {
+        [self.rechargeView hide];
         [MMPopupView hideAll];
     }
 }
@@ -1593,20 +1607,27 @@
 }
 
 // rechargeType: 0: 充值 1:送礼 2:麦位送礼
+- (CXLiveRoomRechargeSheepView *)rechargeSheepView {
+    if (!_rechargeSheepView) {
+        _rechargeSheepView = [[NSBundle mainBundle] loadNibNamed:@"CXLiveRoomRechargeSheepView" owner:self options:nil].firstObject;
+    }
+    
+    return _rechargeSheepView;
+}
 - (void)showRechargeSheetViewRMB:(NSString *)rmb diamond:(NSString *)diamond iosflag:(NSString *)iosflag chargeid:(NSString *)chargeid rechargeType:(NSInteger)rechargeType seatUser:(LiveRoomUser *)seatUser {
-    CXLiveRoomRechargeSheepView *sheetView = [[NSBundle mainBundle] loadNibNamed:@"CXLiveRoomRechargeSheepView" owner:self options:nil].firstObject;
-    [sheetView setupRoseNumber:diamond roseRMB:rmb];
+    [self.rechargeSheepView setupRoseNumber:diamond roseRMB:rmb];
     kWeakSelf
-    sheetView.rechargeSheetViewBlcok = ^(BOOL isRecharge, BOOL isCancel, NSString *payAction) {
+    self.rechargeSheepView.rechargeSheetViewBlcok = ^(BOOL isRecharge, BOOL isCancel, NSString *payAction) {
+        weakSelf.showRechargeSheepView = NO;
         if (isCancel) {
             if (rechargeType == 1) { // 送礼
                 [weakSelf sendGiftWithUser:nil status:@"0" isSeat:YES];
             } else if (rechargeType == 2) {
                 NSIndexPath *index = [[CXClientModel instance].room.userSeats objectForKey:seatUser.UserId];
                 if (index) {
-                    [self sendGiftWithUser:seatUser status:@"1" isSeat:YES];
+                    [weakSelf sendGiftWithUser:seatUser status:@"1" isSeat:YES];
                 } else {
-                    [self sendGiftWithUser:seatUser status:@"1" isSeat:NO];
+                    [weakSelf sendGiftWithUser:seatUser status:@"1" isSeat:NO];
                 }
             } else { // 充值
                 [weakSelf showRechargeView];
@@ -1647,7 +1668,8 @@
             }
         }
     };
-    [sheetView show];
+    self.showRechargeSheepView = YES;
+    [self.rechargeSheepView show];
 }
 
 - (void)rechargeWithProductId:(NSString *)productId {
@@ -1664,50 +1686,63 @@
     }];
 }
 
+- (CXLiveRoomRechargeView *)rechargeView {
+    if (!_rechargeView) {
+        _rechargeView = [[NSBundle mainBundle] loadNibNamed:@"CXLiveRoomRechargeView" owner:self options:nil].firstObject;
+        kWeakSelf
+        _rechargeView.gotoRechargeProtocol = ^(NSString * _Nonnull linkURL) {
+            weakSelf.showRoomRechargeView = NO;
+            NSURL *url = [NSURL URLWithString:linkURL];
+            CXBaseWebViewController *webVC = [[CXBaseWebViewController alloc] initWithURL:url];
+            webVC.title = @"麻将情缘充值协议";
+            [weakSelf.navigationController pushViewController:webVC animated:YES];
+        };
+        _rechargeView.rechargeBlock = ^(CXRechargeModel * _Nonnull model, NSInteger payAction) {
+            weakSelf.showRoomRechargeView = NO;
+            if (payAction == 1) {
+                NSDictionary *param = @{
+                    @"rmb":model.rmb,
+                    @"action" : @"weixin",
+                    @"uid" : [CXClientModel instance].userId,
+                    @"type" : @"1",
+                    @"is_active" : @"0",
+                    @"chargeid": model.charge_id,
+                };
+                [CXHTTPRequest POSTWithURL:@"/index.php/Api/Order/pay" parameters:param callback:^(id responseObject, BOOL isCache, NSError *error) {
+                    if (!error) {
+                        NSString *str = [responseObject[@"data"] jsonStringEncoded];
+                        [[CXThirdPayManager sharedApi] wxPayWithPayParam:str success:nil failure:nil];
+                    }
+                }];
+            } else if (payAction == 2) {
+                NSDictionary *param = @{
+                    @"rmb":model.rmb,
+                    @"action" : @"alipay",
+                    @"uid" : [CXClientModel instance].userId,
+                    @"type" : @"1",
+                    @"is_active" : @"0",
+                    @"chargeid": model.charge_id,
+                };
+                [CXHTTPRequest POSTWithURL:@"/index.php/Api/Order/pay" parameters:param callback:^(id responseObject, BOOL isCache, NSError *error) {
+                    if (!error) {
+                        [[CXThirdPayManager sharedApi] aliPayWithPayParam:responseObject[@"data"] success:nil failure:nil];
+                    }
+                }];
+            } else {
+                [weakSelf rechargeWithProductId:model.iosflag];
+            }
+        };
+        
+        _rechargeView.cancel = ^{
+            weakSelf.showRoomRechargeView = NO;
+        };
+    }
+    return _rechargeView;
+}
+
 - (void)showRechargeView {
-    CXLiveRoomRechargeView *rechargeView = [[NSBundle mainBundle] loadNibNamed:@"CXLiveRoomRechargeView" owner:self options:nil].firstObject;
-    kWeakSelf
-    rechargeView.gotoRechargeProtocol = ^(NSString * _Nonnull linkURL) {
-        NSURL *url = [NSURL URLWithString:linkURL];
-        CXBaseWebViewController *webVC = [[CXBaseWebViewController alloc] initWithURL:url];
-        webVC.title = @"麻将情缘充值协议";
-        [weakSelf.navigationController pushViewController:webVC animated:YES];
-    };
-    rechargeView.rechargeBlock = ^(CXRechargeModel * _Nonnull model, NSInteger payAction) {
-        if (payAction == 1) {
-            NSDictionary *param = @{
-                @"rmb":model.rmb,
-                @"action" : @"weixin",
-                @"uid" : [CXClientModel instance].userId,
-                @"type" : @"1",
-                @"is_active" : @"0",
-                @"chargeid": model.charge_id,
-            };
-            [CXHTTPRequest POSTWithURL:@"/index.php/Api/Order/pay" parameters:param callback:^(id responseObject, BOOL isCache, NSError *error) {
-                if (!error) {
-                    NSString *str = [responseObject[@"data"] jsonStringEncoded];
-                    [[CXThirdPayManager sharedApi] wxPayWithPayParam:str success:nil failure:nil];
-                }
-            }];
-        } else if (payAction == 2) {
-            NSDictionary *param = @{
-                @"rmb":model.rmb,
-                @"action" : @"alipay",
-                @"uid" : [CXClientModel instance].userId,
-                @"type" : @"1",
-                @"is_active" : @"0",
-                @"chargeid": model.charge_id,
-            };
-            [CXHTTPRequest POSTWithURL:@"/index.php/Api/Order/pay" parameters:param callback:^(id responseObject, BOOL isCache, NSError *error) {
-                if (!error) {
-                    [[CXThirdPayManager sharedApi] aliPayWithPayParam:responseObject[@"data"] success:nil failure:nil];
-                }
-            }];
-        } else {
-            [weakSelf rechargeWithProductId:model.iosflag];
-        }
-    };
-    [rechargeView show];
+    _showRoomRechargeView = YES;
+    [self.rechargeView show];
 }
 
 - (void)actionApplePayFinished {
@@ -1830,7 +1865,7 @@
             request.GiftId = info.gift_id;
             request.Count = [count numberValue];
             request.Id = [model.UserId numberValue];
-            request.IsUseBag = IsUseBug;
+            request.IsUseBag = false;
             [[CXClientModel instance] sendSocketRequest:request withCallback:^(__kindof SocketMessageGroupGift * _Nonnull request) {
                 if (request.noError && request.response.isSuccess) {
 //                    [CXClientModel instance].balance = request.response.Balance;
@@ -1842,6 +1877,13 @@
                     })
                     .LeeAction(@"充值", ^{
                         [wself roomRechargeRechargeType:0 seatUser:nil];
+                    })
+                    .LeeShow();
+                } else {
+                    [LEEAlert alert].config
+                    .LeeTitle(@"")
+                    .LeeContent(request.response.Code)
+                    .LeeCancelAction(@"确定", ^{
                     })
                     .LeeShow();
                 }
@@ -1862,7 +1904,7 @@
             request.GiftId = info.gift_id;
             request.Count = @([count integerValue]);
             request.Micros = seats;
-            request.IsUseBag = IsUseBug;
+            request.IsUseBag = false;
             [[CXClientModel instance] sendSocketRequest:request withCallback:^(__kindof SocketMessageGroupGift * _Nonnull request) {
                 if (request.noError && request.response.isSuccess) {
 //                    [CXClientModel instance].balance = request.response.Balance;
@@ -1874,6 +1916,13 @@
                     })
                     .LeeAction(@"充值", ^{
                         [wself roomRechargeRechargeType:0 seatUser:nil];
+                    })
+                    .LeeShow();
+                } else {
+                    [LEEAlert alert].config
+                    .LeeTitle(@"")
+                    .LeeContent(request.response.Code)
+                    .LeeCancelAction(@"确定", ^{
                     })
                     .LeeShow();
                 }

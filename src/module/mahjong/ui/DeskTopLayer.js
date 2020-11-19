@@ -442,7 +442,7 @@ load('module/mahjong/ui/DeskTopLayer', function () {
                 listPnl.setVisible(true)
                 this.contentList.pushBackCustomItem(listPnl)
                 let lineExpressionLength = 0;
-                if (i == ceil-1) {
+                if (i == ceil-1 && quYu != 0) {
                     lineExpressionLength = quYu
                 } else {
                     lineExpressionLength = this._lineExpressionNum
@@ -497,6 +497,7 @@ load('module/mahjong/ui/DeskTopLayer', function () {
                 'toSeatID': 0,
                 'tableId':pData
             }
+            this.onCloseChuang()
             appInstance.gameAgent().tcpGame().ToSendNewsProto(msg)
         },
 
@@ -516,9 +517,16 @@ load('module/mahjong/ui/DeskTopLayer', function () {
                 } else {
                     this.sayPnl.getChildByName('sayPnl'+uiSeatID).getChildByName('sayText').setString(TableConfig.experssion['say']['puSay'][num-1]['text']);
                 }
-                this.runAction(cc.sequence(cc.DelayTime(2), cc.CallFunc(function() {
-                    this.updateSayHide(uiSeatID);
-                }.bind(this))))
+                if (num == 7) {
+                    this.runAction(cc.sequence(cc.DelayTime(4), cc.CallFunc(function() {
+                        this.updateSayHide(uiSeatID);
+                    }.bind(this))))
+                } else {
+                    this.runAction(cc.sequence(cc.DelayTime(3), cc.CallFunc(function() {
+                        this.updateSayHide(uiSeatID);
+                    }.bind(this))))
+                }
+
             } else if (type == TableConfig.ExpressionType[1]) {
                 this.updateExpressionShow(uiSeatID);
                 this.expressionPnl.getChildByName('expressionImg'+uiSeatID).loadTexture(TableConfig.experssion['express'][num-1]['res'])

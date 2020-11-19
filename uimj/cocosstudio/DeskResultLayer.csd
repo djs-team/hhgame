@@ -250,13 +250,13 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="CardNd" ActionTag="-428900083" Tag="468" IconVisible="False" LeftMargin="402.3100" RightMargin="876.6900" TopMargin="537.1800" BottomMargin="181.8200" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                  <AbstractNodeData Name="CardNd" ActionTag="-428900083" Tag="468" IconVisible="False" LeftMargin="361.3100" RightMargin="917.6900" TopMargin="537.1800" BottomMargin="181.8200" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="1.0000" Y="1.0000" />
                     <AnchorPoint />
-                    <Position X="402.3100" Y="181.8200" />
+                    <Position X="361.3100" Y="181.8200" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.3143" Y="0.2525" />
+                    <PrePosition X="0.2823" Y="0.2525" />
                     <PreSize X="0.0008" Y="0.0014" />
                     <SingleColor A="255" R="150" G="200" B="255" />
                     <FirstColor A="255" R="150" G="200" B="255" />

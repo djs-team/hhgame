@@ -1148,7 +1148,7 @@
                     "TouchEnable": true,
                     "AnchorPoint": {},
                     "Position": {
-                      "X": 402.31,
+                      "X": 361.31,
                       "Y": 181.82
                     },
                     "Scale": {
@@ -1158,15 +1158,15 @@
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
-                      "X": 0.3143,
+                      "X": 0.2823,
                       "Y": 0.2525
                     },
                     "PreSize": {
                       "X": 0.0008,
                       "Y": 0.0014
                     },
-                    "LeftMargin": 402.31,
-                    "RightMargin": 876.69,
+                    "LeftMargin": 361.31,
+                    "RightMargin": 917.69,
                     "TopMargin": 537.18,
                     "BottomMargin": 181.82,
                     "Tag": 468,

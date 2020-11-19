@@ -353,6 +353,8 @@ load('module/mahjong/ui/DeskResultLayer', function () {
                     card.setColor(cc.color(200,200,200))
                     posX += cardLen
                 }
+                if(i < pChiList.length)
+                    posX += offLen
             }
 
             if (pPengList.length) {
@@ -368,6 +370,8 @@ load('module/mahjong/ui/DeskResultLayer', function () {
                     card.setColor(cc.color(200,200,200))
                     posX += cardLen
                 }
+                if(index < pPengList.length)
+                    posX += offLen
             }
 
             if (pGangList.length) {
@@ -393,6 +397,9 @@ load('module/mahjong/ui/DeskResultLayer', function () {
                         card.setLocalZOrder(200)
                     }
                 }
+
+                if(index < pGangList.length)
+                    posX += offLen
             }
 
             let HuList = pinfo.pDoubleList

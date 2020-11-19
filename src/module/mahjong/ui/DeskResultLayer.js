@@ -221,7 +221,6 @@ load('module/mahjong/ui/DeskResultLayer', function () {
 
             let isLiuJu = this._pData.tableData.pIsLiuJu == 1 ? true : false
             this.liuJuBg.setVisible(isLiuJu)
-            cc.log('=======this._players==============' + JSON.stringify(this._players))
 
             for (let i = 0; i < this._playerNum; ++i) {
                 this.initPlayerCell(i, this._players[i])
@@ -414,7 +413,6 @@ load('module/mahjong/ui/DeskResultLayer', function () {
 
         initPlayerCell: function (index, pinfo) {
             this.initPlayerInfo(index, pinfo)
-            cc.log("-----------pinfo" + JSON.stringify(pinfo))
 
             let cell = this.PlayerCell.clone()
             this._playerCell[index] = cell

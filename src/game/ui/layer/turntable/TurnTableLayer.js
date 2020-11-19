@@ -396,6 +396,7 @@ load('game/ui/layer/turntable/TurnTableLayer', function () {
 
         },
         onRewardVideoCallback: function (msg) {
+            appInstance.gameAgent().Tips('转盘接收到视频回调，msg ：' + msg)
             if (msg == "0") {
                 if (tabState == 0) {
                     this.onTurnPointFunction()

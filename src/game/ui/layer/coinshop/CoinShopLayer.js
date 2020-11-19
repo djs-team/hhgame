@@ -371,6 +371,7 @@ load('game/ui/layer/coinshop/CoinShopLayer', function () {
 
         },
         onRewardVideoCallback: function (msg) {
+            appInstance.gameAgent().Tips('金币商城接收到视频回调，msg ：' + msg)
             if (msg == "0") {
                 appInstance.gameAgent().httpGame().VIDEOFORDIAMONDSReq()
             } else {

@@ -121,6 +121,8 @@ load('game/ui/layer/cashcow/CashCowLayer', function () {
 
         },
         onRewardVideoCallback: function (msg) {
+
+            appInstance.gameAgent().Tips('摇钱树接收到视频回调，msg ：' + msg)
             if (msg == "0") {
                 this._coinTreeAni.setAnimation(0, 'animation2', false)
                 let deleAction = cc.DelayTime(10)

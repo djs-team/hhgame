@@ -159,6 +159,7 @@ load('module/mahjong/ui/DeskResultLayer', function () {
          * @param msg
          */
         onRewardVideoCallback: function (msg) {
+            appInstance.gameAgent().Tips('下一局接收到视频回调，msg ：' + msg)
             if (msg == "0") {
                 this._isWatch = true
                 appInstance.gameAgent().httpGame().AcceptAwardReq()

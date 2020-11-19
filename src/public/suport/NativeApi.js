@@ -449,6 +449,7 @@ load('public/suport/NativeApi', function () {
         //激励视频
         showRewardVideo: function () {
             try {
+                appInstance.gameAgent().Tips('--------已开始调用视频------')
                 if (cc.sys.OS_ANDROID === cc.sys.os) {
                     let uid = appInstance.dataManager().getUserData().pid
                     jsb.reflection.callStaticMethod('org.cocos2dx.javascript.AppActivity', 'showRewardVideo', '(Ljava/lang/String;)V', uid)
@@ -457,6 +458,7 @@ load('public/suport/NativeApi', function () {
                     jsb.reflection.callStaticMethod('AppController', 'openBUAdRewardWithUserId:method:', uid, "rewardVideoCallback")
                 }
             } catch (e) {
+                appInstance.gameAgent().Tips('--------调用视频异常------e: ' + JSON.stringify(e))
                 NativeApi.HelloOC('showRewardVideo throw: ' + JSON.stringify(e))
             }
         },

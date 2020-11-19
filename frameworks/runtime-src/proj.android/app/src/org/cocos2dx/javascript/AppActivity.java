@@ -690,10 +690,13 @@ public class AppActivity extends Cocos2dxActivity {
                 if (ccActivity.adManage == null) {
                     ccActivity.initRewardConfig();
                 }
-                ccActivity.adManage.loadAd("945477184", userId, new AdManage.OnLoadAdListener() {
+                boolean isReload = ccActivity.adManage.isReload();
+
+                ccActivity.adManage.setOnLoadAdListener(new AdManage.OnLoadAdListener() {
                     @Override
                     public void onRewardVideoCached() {
                         ccActivity.adManage.playAd();
+                        ccActivity.adManage.loadAd("945477184", userId, true);
                     }
 
                     @Override
@@ -701,6 +704,13 @@ public class AppActivity extends Cocos2dxActivity {
                         ccActivity.RunJS("rewardVideoCallback", result);
                     }
                 });
+                if (!isReload) {
+                    ccActivity.adManage.loadAd("945477184", userId, false);
+                } else {
+                    ccActivity.adManage.setReload(false);
+                    ccActivity.adManage.playAd();
+                }
+
             }
         });
 

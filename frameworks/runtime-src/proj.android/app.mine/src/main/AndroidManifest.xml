@@ -105,6 +105,9 @@
         <activity
             android:name="com.deepsea.mua.mine.activity.BindPhoneActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name="com.deepsea.mua.mine.activity.ApplyHostActivity"
+            android:screenOrientation="portrait" />
 
         <activity
             android:name="com.yalantis.ucrop.UCropActivity"

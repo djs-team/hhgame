@@ -59,6 +59,8 @@ load('module/mahjong/ui/DeskCardLayer', function () {
 
             this.liuJuBg.setVisible(false)
             this.fenZhangBg.setVisible(false)
+            this.CountDownTxt.setVisible(false)
+
 
 
 
@@ -69,9 +71,9 @@ load('module/mahjong/ui/DeskCardLayer', function () {
         },
 
         onHideLiuJu: function () {
-
             this.liuJuBg.setVisible(false)
             this.fenZhangBg.setVisible(false)
+            this.CountDownTxt.setVisible(false)
         },
 
         initView: function (pData) {
@@ -204,6 +206,7 @@ load('module/mahjong/ui/DeskCardLayer', function () {
                 return
             }
             this._countDown = defaultCountDown
+            this.CountDownTxt.setVisible(true)
             this._directionNd[seatUI].setVisible(true)
             this._directionNd[seatUI].runAction(cc.repeatForever(cc.sequence(cc.fadeIn(0.8),cc.fadeOut(0.8))))
         },

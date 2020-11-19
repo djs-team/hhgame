@@ -156,6 +156,7 @@ load('module/mahjong/ui/DeskTopLayer', function () {
 
         onCloseChuang: function () {
             this.sayContentPnl.setVisible(false)
+            this.updateRemainingCard(this._remainingCardCnt)
         },
 
         onHostingClick: function () {
@@ -192,6 +193,8 @@ load('module/mahjong/ui/DeskTopLayer', function () {
         updateRemainingCard: function(num) {
             this.BaoNd.setVisible(true)
             num = num || 0
+            if(!this._remainingCardCnt)
+                this._remainingCardCnt = num
             this.RemainingCardsTxt.setString(num)
         },
 

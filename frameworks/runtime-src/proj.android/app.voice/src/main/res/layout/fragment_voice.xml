@@ -76,27 +76,33 @@
                         android:id="@+id/title_layout"
                         android:layout_width="wrap_content"
 
-                        android:layout_height="wrap_content"
+                        android:layout_height="35dp"
                         android:layout_alignParentRight="true"
-                        android:layout_marginTop="4dp"
                         android:gravity="center_vertical"
                         android:orientation="horizontal"
                         android:visibility="visible">
 
-                        <ImageView
-                            android:id="@+id/iv_search"
-                            android:layout_width="22dp"
-                            android:layout_height="19dp"
-                            android:layout_marginRight="8dp"
-                            android:src="@drawable/ic_search_white" />
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="8dp">
+
+                            <ImageView
+                                android:id="@+id/iv_search"
+                                android:layout_width="22dp"
+                                android:layout_height="20dp"
+                                android:src="@drawable/ic_search_white" />
+                        </RelativeLayout>
 
                         <LinearLayout
                             android:id="@+id/ll_create_room"
-
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="15dp"
-                            android:orientation="horizontal">
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="8dp">
 
                             <com.deepsea.mua.stub.view.WithBackgroundTextView
                                 android:id="@+id/tv_apply_host"
@@ -120,10 +126,10 @@
                         <LinearLayout
                             android:id="@+id/ll_filter"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
-                            android:layout_marginRight="15dp"
+                            android:layout_height="match_parent"
                             android:orientation="horizontal"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="8dp"
                             android:visibility="visible">
 
                             <ImageView
@@ -131,6 +137,22 @@
                                 android:layout_height="20dp"
                                 android:layout_gravity="center_vertical"
                                 android:src="@drawable/ic_filter" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_apply_host"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="8dp"
+                            android:visibility="visible">
+
+                            <ImageView
+                                android:layout_width="22dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="center_vertical"
+                                android:src="@drawable/icon_apply_host" />
                         </LinearLayout>
                     </LinearLayout>
 

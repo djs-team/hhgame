@@ -651,6 +651,12 @@
           <Image Name="useragree_1.png" />
           <Image Name="useragree_3.png" />
         </Folder>
+        <Folder Name="marquee">
+          <Image Name="pmd_1.png" />
+          <Image Name="pmd_2.png" />
+          <Image Name="pmd_3.png" />
+          <Image Name="pmd_4.png" />
+        </Folder>
         <Folder Name="matching">
           <Image Name="ppc_1.png" />
           <Image Name="ppc_2.png" />

@@ -121,6 +121,14 @@ public class PageJumpUtils {
                 .withString("uid", uid)
                 .navigation();
     }
+    /**
+     * 跳转申请红娘
+     */
+
+    public static void jumpToApplyHost() {
+        ArouterUtils.build(ArouterConst.PAGE_ME_MINE_APPLYHOST)
+                .navigation();
+    }
 
 
 

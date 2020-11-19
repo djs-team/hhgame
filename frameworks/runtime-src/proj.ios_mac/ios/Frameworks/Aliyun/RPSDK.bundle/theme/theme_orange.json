@@ -1,0 +1,72 @@
+{
+  "name":"orange",
+  "v":1,
+  "files":[
+    {
+      "name": "face_nav_button",
+      "md5": "810b019567f09aa3e7708e1ef5a6e217",
+      "size": 3592,
+      "url": "https://gw.alicdn.com/tfs/TB1DDsAdQyWBuNjy0FpXXassXXa-716-114.png"
+    },
+    {
+      "name": "face_circle_inner_bg",
+      "md5": "d5a2263d3fb3d0ad61aea322a7c63a5e",
+      "size": 8895,
+      "url": "https://gw.alicdn.com/tfs/TB1P3IodSCWBuNjy0FhXXb6EVXa-604-604.png"
+    },
+    {
+      "name": "face_top_sound_on",
+      "md5": "3dbd5d696f97784c9df736bab013d9a8",
+      "size": 613,
+      "url": "https://gw.alicdn.com/tfs/TB1o.7jdHGYBuNjy0FoXXciBFXa-36-36.png"
+    },
+    {
+      "name": "face_top_sound_off",
+      "md5": "805d74679083ec6f62237e06bfa1adfc",
+      "size": 505,
+      "url": "https://gw.alicdn.com/tfs/TB111AYdNGYBuNjy0FnXXX5lpXa-36-36.png"
+    },
+    {
+      "name": "face_top_back",
+      "md5": "2d15c3e57e063b9bac2c1b32e4586e58",
+      "size": 397,
+      "url": "https://gw.alicdn.com/tfs/TB1oFZPdH9YBuNjy0FgXXcxcXXa-36-36.png"
+    },
+    {
+      "name": "face_warning_bg",
+      "md5": "5db9dc9096ae27ddf6eb209835aaa9d",
+      "size": 720,
+      "url": "https://img.alicdn.com/tfs/TB1nMNgfCBYBeNjy0FeXXbnmFXa-518-80.png"
+    },
+    {
+      "name": "face_start_icon",
+      "md5": "2c52992a2ca0bcffbca0d69cf2362178",
+      "size": 1210,
+      "url": "https://gw.alicdn.com/tfs/TB1m.7jdHGYBuNjy0FoXXciBFXa-100-115.png"
+    },
+    {
+      "name": "face_guide_bg",
+      "md5": "efe9cf879a8405f206e0b9a867720f96",
+      "size": 1075,
+      "url": "https://gw.alicdn.com/tfs/TB1QgIodSCWBuNjy0FhXXb6EVXa-130-130.png"
+    },
+    {
+      "name": "face_start_circle_half",
+      "md5": "fcd1bbae38d82756356c1ddcdb4dbd7f",
+      "size": 3913,
+      "url": "https://gw.alicdn.com/tfs/TB1Q3IodSCWBuNjy0FhXXb6EVXa-718-718.png"
+    },
+    {
+      "name": "face_start_circle_inner",
+      "md5": "4a6543c56cd6644adfe2c7989f99455b",
+      "size": 3201,
+      "url": "https://gw.alicdn.com/tfs/TB1C_sAdQyWBuNjy0FpXXassXXa-292-370.png"
+    },
+    {
+      "name": "face_start_circle_radius",
+      "md5": "a998acace9e1dc339e115dc90bc9a785",
+      "size": 6499,
+      "url": "https://gw.alicdn.com/tfs/TB1jU7jdHGYBuNjy0FoXXciBFXa-636-637.png"
+    }
+  ]
+}

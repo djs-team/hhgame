@@ -112,6 +112,54 @@
                 "Tag": 234,
                 "Children": [
                   {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "marquee/pmd_3.png",
+                      "Plist": ""
+                    },
+                    "Scale9Enable": true,
+                    "Scale9OriginX": 11,
+                    "Scale9OriginY": 13,
+                    "Scale9Width": 13,
+                    "Scale9Height": 16,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 450.0,
+                      "Y": 30.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PositionPercentXEnabled": true,
+                    "PositionPercentYEnabled": true,
+                    "PrePosition": {
+                      "X": 0.5,
+                      "Y": 0.5
+                    },
+                    "PercentWidthEnable": true,
+                    "PercentWidthEnabled": true,
+                    "PreSize": {
+                      "X": 1.0,
+                      "Y": 0.7
+                    },
+                    "TopMargin": 9.0,
+                    "BottomMargin": 9.0,
+                    "Tag": 5,
+                    "ActionTag": -675763461,
+                    "Size": {
+                      "X": 900.0,
+                      "Y": 42.0
+                    },
+                    "Name": "Image_1",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
                     "FontSize": 25,
                     "LabelText": "这是系统弹窗提示哈这是系统弹窗提示哈这是系统弹窗提示哈这是系统弹窗提示哈这是系统弹窗提示哈",
                     "HorizontalAlignmentType": "HT_Center",
@@ -188,7 +236,9 @@
         "Name": "Layer",
         "ctype": "LayerObjectData"
       },
-      "UsedResources": [],
+      "UsedResources": [
+        "marquee/pmd_3.png"
+      ],
       "ctype": "GameFileData"
     }
   },

@@ -14,10 +14,15 @@
 #import "CXHomeRoomModel.h"
 #import "CXChangeAgeAlertView.h"
 #import "CXNewUserMicroSeatCardView.h"
+#import "CXHomeJoinRoomViewController.h"
 
 @interface CXHomeViewController ()
 
 @property (nonatomic, strong) UIButton *createRoomBtn;
+
+@property (nonatomic, strong) UIButton *joinRoomBtn;
+
+@property (nonatomic, strong) UIButton *searchBtn;
 
 @end
 
@@ -138,7 +143,6 @@
              type 打开的类型1:主持我的房间 2:申请主持页
              */
             if ([responseObject[@"data"][@"is_show"] integerValue] == 1) {
-                
                 if ([responseObject[@"data"][@"type"] integerValue] == 1) {
                     [CXClientModel instance].user_isAnchor = YES;
                     [weakSelf.createRoomBtn setImage:[UIImage imageNamed:@"home_create"] forState:UIControlStateNormal];
@@ -154,12 +158,34 @@
             [CXClientModel instance].user_isAnchor = NO;
             [weakSelf.createRoomBtn setImage:[UIImage imageNamed:@"home_shaixuan"] forState:UIControlStateNormal];
         }
+        
+        [self reloadNavBtn];
     }];
+}
+
+- (void)reloadNavBtn {
+    if ([CXClientModel instance].user_isAnchor == YES) {
+        self.joinRoomBtn.hidden = YES;
+        [self.searchBtn mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(SCREEN_WIDTH - 70);
+        }];
+        [self.createRoomBtn mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(SCREEN_WIDTH - 35);
+        }];
+    } else {
+        self.joinRoomBtn.hidden = NO;
+        [self.searchBtn mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(SCREEN_WIDTH - 105);
+        }];
+        [self.createRoomBtn mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(SCREEN_WIDTH - 70);
+        }];
+    }
 }
 
 - (CGRect)pageController:(WMPageController *)pageController preferredFrameForMenuView:(WMMenuView *)menuView{
     
-    return CGRectMake(40, kStatusHeight, SCREEN_WIDTH-110, 44);
+    return CGRectMake(40, kStatusHeight, SCREEN_WIDTH-145, 44);
 }
 - (CGRect)pageController:(WMPageController *)pageController preferredFrameForContentView:(WMScrollView *)contentView{
     return  CGRectMake(0, kNavHeight, SCREEN_WIDTH, SCREEN_HEIGHT-kNavHeight-kBottomArea-49);
@@ -198,16 +224,39 @@
     [back addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:back];
     
-    UIButton *search = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 70, kStatusHeight, 35, 44)];
+    
+    UIButton *search = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 100, kStatusHeight, 35, 44)];
     [search setImage:[UIImage imageNamed:@"search_white"] forState:UIControlStateNormal];
     [search addTarget:self action:@selector(search) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:search];
+    [search mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(35, 44));
+        make.top.mas_equalTo(kStatusHeight);
+        make.left.mas_equalTo(SCREEN_WIDTH - 105);
+    }];
+    _searchBtn = search;
     
-    UIButton *shanxuan = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 35, kStatusHeight, 35, 44)];
+    UIButton *shanxuan = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 70, kStatusHeight, 35, 44)];
     [shanxuan setImage:[UIImage imageNamed:@"home_shaixuan"] forState:UIControlStateNormal];
     [shanxuan addTarget:self action:@selector(shaixuan) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:shanxuan];
+    [shanxuan mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(35, 44));
+        make.top.mas_equalTo(kStatusHeight);
+        make.left.mas_equalTo(SCREEN_WIDTH - 70);
+    }];
     _createRoomBtn = shanxuan;
+    
+    UIButton *joinRoom = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 35, kStatusHeight, 35, 44)];
+    [joinRoom setImage:[UIImage imageNamed:@"home_joinRoom"] forState:UIControlStateNormal];
+    [joinRoom addTarget:self action:@selector(joinRoom) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:joinRoom];
+    [joinRoom mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(35, 44));
+        make.top.mas_equalTo(kStatusHeight);
+        make.left.mas_equalTo(SCREEN_WIDTH - 35);
+    }];
+    _joinRoomBtn = joinRoom;
 }
 
 - (void)back {
@@ -220,6 +269,12 @@
 - (void)search {
     CXHomeSearchViewController *vc = [CXHomeSearchViewController new];
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)joinRoom {
+    CXHomeJoinRoomViewController *vc = [CXHomeJoinRoomViewController new];
+    vc.modalPresentationStyle = UIModalPresentationFullScreen;
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 - (void)shaixuan {

@@ -41,6 +41,7 @@
 #import <AGMCapturer/AGMCapturer.h>
 #import "FUManager.h"
 #import "FUDateHandle.h"
+#import "FUBeautyParam.h"
 
 // Music
 #import "CXGameMusicView.h"
@@ -2535,12 +2536,17 @@
             break;
         case 21: // 房间设置
         {
-            if ([CXClientModel instance].room.UserIdentity != GameUserIdentityNormal) {
-                [self showRoomInfoViewWithRoomInfo];
-            } else {
-                [self getUserInfoWith:[CXClientModel instance].room.RoomData.OwnerUserId];
-            }
+//            if ([CXClientModel instance].room.UserIdentity != GameUserIdentityNormal) {
+//                [self showRoomInfoViewWithRoomInfo];
+//            } else {
+//                [self getUserInfoWith:[CXClientModel instance].room.RoomData.OwnerUserId];
+//            }
             
+//            FUBeautyParam *param = self.stickerParams.firstObject;
+//            NSString *path = [[NSBundle mainBundle] pathForResource:param.mParam ofType:@"bundle"];
+            NSString *path = [[NSBundle mainBundle] pathForResource:@"sdlu" ofType:@"bundle"];
+            int itemHandle = [FURenderer itemWithContentsOfFile:path];
+            [FURenderer itemSetParam:itemHandle withName:@"isFlipTrack" value:@(1)];
         }
             break;
         case 23: // 守护团

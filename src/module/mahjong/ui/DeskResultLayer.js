@@ -221,7 +221,6 @@ load('module/mahjong/ui/DeskResultLayer', function () {
 
             let isLiuJu = this._pData.tableData.pIsLiuJu == 1 ? true : false
             this.liuJuBg.setVisible(isLiuJu)
-            cc.log('=======this._players==============' + JSON.stringify(this._players))
 
             for (let i = 0; i < this._playerNum; ++i) {
                 this.initPlayerCell(i, this._players[i])
@@ -323,7 +322,7 @@ load('module/mahjong/ui/DeskResultLayer', function () {
             let pPengList = pinfo.pPengList
             let pGangList = pinfo.pGangList
 
-            let cardLen = 45
+            let cardLen = 47
             let offLen = 20
 
             let posX = 0
@@ -353,6 +352,8 @@ load('module/mahjong/ui/DeskResultLayer', function () {
                     card.setColor(cc.color(200,200,200))
                     posX += cardLen
                 }
+                if(i < pChiList.length)
+                    posX += offLen
             }
 
             if (pPengList.length) {
@@ -368,6 +369,8 @@ load('module/mahjong/ui/DeskResultLayer', function () {
                     card.setColor(cc.color(200,200,200))
                     posX += cardLen
                 }
+                if(index < pPengList.length)
+                    posX += offLen
             }
 
             if (pGangList.length) {
@@ -393,6 +396,9 @@ load('module/mahjong/ui/DeskResultLayer', function () {
                         card.setLocalZOrder(200)
                     }
                 }
+
+                if(index < pGangList.length)
+                    posX += offLen
             }
 
             let HuList = pinfo.pDoubleList
@@ -407,7 +413,6 @@ load('module/mahjong/ui/DeskResultLayer', function () {
 
         initPlayerCell: function (index, pinfo) {
             this.initPlayerInfo(index, pinfo)
-            cc.log("-----------pinfo" + JSON.stringify(pinfo))
 
             let cell = this.PlayerCell.clone()
             this._playerCell[index] = cell

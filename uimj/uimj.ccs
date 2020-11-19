@@ -261,6 +261,10 @@
           <Image Name="paihai.jpg" />
         </Folder>
         <Folder Name="desk">
+          <Image Name="direction_east.png" />
+          <Image Name="direction_north.png" />
+          <Image Name="direction_south.png" />
+          <Image Name="direction_west.png" />
           <Image Name="fenzhang.png" />
           <Image Name="j.png" />
           <Image Name="j_1.png" />

@@ -82,15 +82,15 @@
                     <PreSize X="0.2746" Y="0.8158" />
                     <FileData Type="Normal" Path="desk/pz_38.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="DirectionTxt" ActionTag="623439" Tag="365" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="24.5000" RightMargin="24.5000" TopMargin="9.5000" BottomMargin="9.5000" LeftEage="47" RightEage="47" TopEage="18" BottomEage="18" Scale9OriginX="47" Scale9OriginY="18" Scale9Width="50" Scale9Height="21" ctype="ImageViewObjectData">
-                    <Size X="144.0000" Y="57.0000" />
+                  <AbstractNodeData Name="DirectionTxt" ActionTag="623439" Tag="365" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftEage="47" RightEage="47" TopEage="18" BottomEage="18" Scale9OriginX="47" Scale9OriginY="18" Scale9Width="99" Scale9Height="40" ctype="ImageViewObjectData">
+                    <Size X="193.0000" Y="76.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="96.5000" Y="38.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.5000" Y="0.5000" />
-                    <PreSize X="0.7461" Y="0.7500" />
-                    <FileData Type="Normal" Path="desk/pz_33.png" Plist="" />
+                    <PreSize X="1.0000" Y="1.0000" />
+                    <FileData Type="Normal" Path="desk/direction_west.png" Plist="" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="CountDownTxt" ActionTag="-223001385" Tag="1067" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="60.0139" RightMargin="62.9861" TopMargin="18.8244" BottomMargin="29.1756" FontSize="28" LabelText="     " HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="70.0000" Y="28.0000" />

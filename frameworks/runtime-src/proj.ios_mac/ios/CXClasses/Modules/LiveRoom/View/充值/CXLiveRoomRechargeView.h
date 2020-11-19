@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy) void (^rechargeBlock)(CXRechargeModel *model, NSInteger payAction);
 @property (nonatomic, copy) void (^gotoRechargeProtocol)(NSString *linkURL);
+@property (nonatomic, copy) void (^cancel)(void);
 
 @end
 

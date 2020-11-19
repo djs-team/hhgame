@@ -147,6 +147,44 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
+              <AbstractNodeData Name="appleLogin" ActionTag="-2059509878" Tag="564" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="689.5070" RightMargin="286.5631" TopMargin="518.6200" BottomMargin="113.3800" TouchEnable="True" FontSize="35" Scale9Enable="True" LeftEage="53" RightEage="49" TopEage="11" BottomEage="11" Scale9OriginX="53" Scale9OriginY="11" Scale9Width="28" Scale9Height="66" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                <Size X="303.9300" Y="88.0000" />
+                <Children>
+                  <AbstractNodeData Name="Text_2" ActionTag="-409603301" Tag="565" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="92.0726" RightMargin="39.8574" TopMargin="21.9992" BottomMargin="28.0008" FontSize="38" LabelText="Apple登录" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="172.0000" Y="38.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="178.0726" Y="47.0008" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="138" G="74" B="0" />
+                    <PrePosition X="0.5859" Y="0.5341" />
+                    <PreSize X="0.5659" Y="0.4318" />
+                    <FontResource Type="Normal" Path="font/hkhbtW12.ttc" Plist="" />
+                    <OutlineColor A="255" R="255" G="0" B="0" />
+                    <ShadowColor A="255" R="110" G="110" B="110" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Image_2" ActionTag="1328198559" Tag="566" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="36.3301" RightMargin="219.5999" TopMargin="16.0400" BottomMargin="23.9600" LeftEage="15" RightEage="15" TopEage="12" BottomEage="12" Scale9OriginX="15" Scale9OriginY="12" Scale9Width="18" Scale9Height="24" ctype="ImageViewObjectData">
+                    <Size X="48.0000" Y="48.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="60.3301" Y="47.9600" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.1985" Y="0.5450" />
+                    <PreSize X="0.1579" Y="0.5455" />
+                    <FileData Type="Normal" Path="login/denglu_8.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="841.4719" Y="157.3800" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.6574" Y="0.2186" />
+                <PreSize X="0.2374" Y="0.1222" />
+                <TextColor A="255" R="65" G="65" B="70" />
+                <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+                <NormalFileData Type="Normal" Path="common/bt_1.png" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
               <AbstractNodeData Name="agreeBtn" ActionTag="-1881070457" Tag="26" IconVisible="False" LeftMargin="511.7853" RightMargin="734.2147" TopMargin="660.8084" BottomMargin="20.1916" TouchEnable="True" CheckedState="True" ctype="CheckBoxObjectData">
                 <Size X="34.0000" Y="39.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />

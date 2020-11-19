@@ -24,6 +24,7 @@ load('module/mahjong/ui/DeskCardLayer', function () {
                 'bgPnl/DirectionBg/Direction1': {  },
                 'bgPnl/DirectionBg/Direction2': {  },
                 'bgPnl/DirectionBg/Direction3': {  },
+                'bgPnl/DirectionBg/DirectionTxt': {  },
                 'bgPnl/DirectionBg/CountDownTxt': {  },
                 'CardPnl': {  },
                 'liuJuBg': {  },
@@ -59,6 +60,22 @@ load('module/mahjong/ui/DeskCardLayer', function () {
 
             this.liuJuBg.setVisible(false)
             this.fenZhangBg.setVisible(false)
+            this.CountDownTxt.setVisible(false)
+            this.canShowCountDownTxt = false
+            this.DirectionTxt.setVisible(false)
+            let directionPg = 'res/module/mahjong/desk/direction_'
+            if(this._pMySeatID == 0){
+                directionPg += 'east'
+            }else if(this._pMySeatID == 1){
+                directionPg += 'north'
+            }else if(this._pMySeatID == 2){
+                directionPg += 'west'
+            }else{
+                directionPg += 'south'
+            }
+            directionPg += '.png'
+            this.DirectionTxt.loadTexture(directionPg)
+            this.DirectionTxt.setVisible(true)
 
 
 
@@ -69,9 +86,10 @@ load('module/mahjong/ui/DeskCardLayer', function () {
         },
 
         onHideLiuJu: function () {
-
             this.liuJuBg.setVisible(false)
             this.fenZhangBg.setVisible(false)
+            this.CountDownTxt.setVisible(false)
+            this.canShowCountDownTxt = false
         },
 
         initView: function (pData) {
@@ -204,6 +222,8 @@ load('module/mahjong/ui/DeskCardLayer', function () {
                 return
             }
             this._countDown = defaultCountDown
+            this.CountDownTxt.setVisible(true)
+            this.canShowCountDownTxt = true
             this._directionNd[seatUI].setVisible(true)
             this._directionNd[seatUI].runAction(cc.repeatForever(cc.sequence(cc.fadeIn(0.8),cc.fadeOut(0.8))))
         },
@@ -214,7 +234,7 @@ load('module/mahjong/ui/DeskCardLayer', function () {
         onUpdate: function (dt) {
             this._updateTime += dt
 
-            if (this._updateTime - this._lastUpdateTime > 1) {
+            if (this.canShowCountDownTxt && (this._updateTime - this._lastUpdateTime > 1)) {
                 this._lastUpdateTime = Math.floor(this._updateTime)
                 this._countDown -= 1
                 if (this._countDown < 0) {

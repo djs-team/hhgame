@@ -113,12 +113,27 @@ load('module/mahjong/ui/DeskHeadLayer', function () {
             }
         },
 
+        screenAdaptation: function () {
+            let size = cc.view.getFrameSize()
+            let w = size.width
+            let h = size.height
+            let oldRatio = 1280 / 720
+            let newRatio = w / h
+            if ( newRatio > oldRatio) {
+                let scale = oldRatio / newRatio
+                for (let i = 0; i < 4; ++i) {
+                    this['headNd' + i].setScale(scale)
+                }
+            }
+        },
+
         clearView: function () {
             this.hidePlayer()
         },
 
         onEnter: function () {
             this._super()
+            this.screenAdaptation()
         },
         onExit: function () {
             this._super()

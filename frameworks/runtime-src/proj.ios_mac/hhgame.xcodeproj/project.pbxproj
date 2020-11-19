@@ -4708,6 +4708,7 @@
 				A922753B1517C094001B78AA /* Resources */,
 				FC2A2D9FE063EF2D62D7A3D1 /* [CP] Copy Pods Resources */,
 				FB6553C1207ABB8BED736FF9 /* [CP] Embed Pods Frameworks */,
+				005F9CDB25652E1A00FD9B2C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -5135,6 +5136,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		005F9CDB25652E1A00FD9B2C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/../beforBuild.sh\"\n";
+		};
 		5CF027C430EA7D0ED12B5FB4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -5256,7 +5274,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-hhgame-mobile/Pods-hhgame-mobile-resources.sh\" \n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-hhgame-mobile/Pods-hhgame-mobile-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

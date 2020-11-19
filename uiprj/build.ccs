@@ -646,10 +646,17 @@
           <Image Name="denglu_5.png" />
           <Image Name="denglu_6.png" />
           <Image Name="denglu_7.png" />
+          <Image Name="denglu_8.png" />
           <Image Name="update_slider_bar.png" />
           <Image Name="update_slider_bg.png" />
           <Image Name="useragree_1.png" />
           <Image Name="useragree_3.png" />
+        </Folder>
+        <Folder Name="marquee">
+          <Image Name="pmd_1.png" />
+          <Image Name="pmd_2.png" />
+          <Image Name="pmd_3.png" />
+          <Image Name="pmd_4.png" />
         </Folder>
         <Folder Name="matching">
           <Image Name="ppc_1.png" />

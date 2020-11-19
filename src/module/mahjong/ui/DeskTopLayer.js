@@ -46,6 +46,7 @@ load('module/mahjong/ui/DeskTopLayer', function () {
         _ruleInfo: {},
         RES_BINDING: function () {
             return {
+                'blockPnl': {  },
                 'pnl/ActionNd': {  },
                 'pnl/ActionNd/ActionCell': { onClicked: this.onActionCellClick },
                 'pnl/ChiNd': {  },
@@ -156,6 +157,7 @@ load('module/mahjong/ui/DeskTopLayer', function () {
 
         onCloseChuang: function () {
             this.sayContentPnl.setVisible(false)
+            this.updateRemainingCard(this._remainingCardCnt)
         },
 
         onHostingClick: function () {
@@ -175,6 +177,11 @@ load('module/mahjong/ui/DeskTopLayer', function () {
             }
         },
 
+        onUpdateBlockPnl: function (flag) {
+            this.blockPnl.setVisible(flag)
+        },
+
+
         onChiCellClick: function (sender) {
             let chiInfo = sender._chiInfo
             let sendMsg = chiInfo.sendMsg
@@ -192,6 +199,8 @@ load('module/mahjong/ui/DeskTopLayer', function () {
         updateRemainingCard: function(num) {
             this.BaoNd.setVisible(true)
             num = num || 0
+            if(!this._remainingCardCnt)
+                this._remainingCardCnt = num
             this.RemainingCardsTxt.setString(num)
         },
 
@@ -232,6 +241,8 @@ load('module/mahjong/ui/DeskTopLayer', function () {
             let pChoiceRule = pData.tableData.pChoiceRule
             pChoiceRule = pChoiceRule.split(',')
             this._ruleInfo = this.dealChoiceRule(pChoiceRule)
+
+            this.onUpdateBlockPnl(false)
         },
 
         initView: function (pData) {
@@ -442,7 +453,7 @@ load('module/mahjong/ui/DeskTopLayer', function () {
                 listPnl.setVisible(true)
                 this.contentList.pushBackCustomItem(listPnl)
                 let lineExpressionLength = 0;
-                if (i == ceil-1) {
+                if (i == ceil-1 && quYu != 0) {
                     lineExpressionLength = quYu
                 } else {
                     lineExpressionLength = this._lineExpressionNum
@@ -497,6 +508,7 @@ load('module/mahjong/ui/DeskTopLayer', function () {
                 'toSeatID': 0,
                 'tableId':pData
             }
+            this.onCloseChuang()
             appInstance.gameAgent().tcpGame().ToSendNewsProto(msg)
         },
 
@@ -516,9 +528,16 @@ load('module/mahjong/ui/DeskTopLayer', function () {
                 } else {
                     this.sayPnl.getChildByName('sayPnl'+uiSeatID).getChildByName('sayText').setString(TableConfig.experssion['say']['puSay'][num-1]['text']);
                 }
-                this.runAction(cc.sequence(cc.DelayTime(2), cc.CallFunc(function() {
-                    this.updateSayHide(uiSeatID);
-                }.bind(this))))
+                if (num == 7) {
+                    this.runAction(cc.sequence(cc.DelayTime(4), cc.CallFunc(function() {
+                        this.updateSayHide(uiSeatID);
+                    }.bind(this))))
+                } else {
+                    this.runAction(cc.sequence(cc.DelayTime(3), cc.CallFunc(function() {
+                        this.updateSayHide(uiSeatID);
+                    }.bind(this))))
+                }
+
             } else if (type == TableConfig.ExpressionType[1]) {
                 this.updateExpressionShow(uiSeatID);
                 this.expressionPnl.getChildByName('expressionImg'+uiSeatID).loadTexture(TableConfig.experssion['express'][num-1]['res'])

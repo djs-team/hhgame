@@ -30,7 +30,7 @@
           make.size.mas_equalTo(CGSizeMake(kScreenWidth, 396*SCALE_W));
     }];
       
-    [MMPopupWindow sharedWindow].touchWildToHide = YES;
+    [MMPopupWindow sharedWindow].touchWildToHide = NO;
     self.type = MMPopupTypeSheet;
     
     _rose_numberLabel.layer.masksToBounds = YES;

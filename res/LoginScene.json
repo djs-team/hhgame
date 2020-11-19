@@ -724,8 +724,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 841.472,
-                  "Y": 157.3831
+                  "X": 841.4719,
+                  "Y": 157.38
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -742,11 +742,11 @@
                   "X": 0.2374,
                   "Y": 0.1222
                 },
-                "LeftMargin": 689.5071,
-                "RightMargin": 286.563,
-                "TopMargin": 518.6169,
-                "BottomMargin": 113.3831,
-                "Tag": 13,
+                "LeftMargin": 689.507,
+                "RightMargin": 286.5631,
+                "TopMargin": 518.62,
+                "BottomMargin": 113.38,
+                "Tag": 564,
                 "Children": [
                   {
                     "FontSize": 38,
@@ -794,17 +794,17 @@
                       "Y": 0.5341
                     },
                     "PreSize": {
-                      "X": 0.5034,
+                      "X": 0.5659,
                       "Y": 0.4318
                     },
-                    "LeftMargin": 101.5726,
-                    "RightMargin": 49.3574,
+                    "LeftMargin": 92.0726,
+                    "RightMargin": 39.8574,
                     "TopMargin": 21.9992,
                     "BottomMargin": 28.0008,
-                    "Tag": 21,
-                    "ActionTag": -1536177862,
+                    "Tag": 565,
+                    "ActionTag": -409603301,
                     "Size": {
-                      "X": 153.0,
+                      "X": 172.0,
                       "Y": 38.0
                     },
                     "Name": "Text_2",
@@ -818,8 +818,8 @@
                     },
                     "Scale9OriginX": 15,
                     "Scale9OriginY": 12,
-                    "Scale9Width": 17,
-                    "Scale9Height": 13,
+                    "Scale9Width": 18,
+                    "Scale9Height": 24,
                     "AnchorPoint": {
                       "ScaleX": 0.5,
                       "ScaleY": 0.5
@@ -841,15 +841,15 @@
                       "Y": 0.545
                     },
                     "PreSize": {
-                      "X": 0.1546,
-                      "Y": 0.4205
+                      "X": 0.1579,
+                      "Y": 0.5455
                     },
-                    "LeftMargin": 36.8301,
-                    "RightMargin": 220.0999,
-                    "TopMargin": 21.54,
-                    "BottomMargin": 29.46,
-                    "Tag": 24,
-                    "ActionTag": 802995541,
+                    "LeftMargin": 36.3301,
+                    "RightMargin": 219.5999,
+                    "TopMargin": 16.04,
+                    "BottomMargin": 23.96,
+                    "Tag": 566,
+                    "ActionTag": 1328198559,
                     "Size": {
                       "X": 48.0,
                       "Y": 48.0
@@ -858,7 +858,7 @@
                     "ctype": "ImageViewObjectData"
                   }
                 ],
-                "ActionTag": 1353822671,
+                "ActionTag": -2059509878,
                 "Size": {
                   "X": 303.93,
                   "Y": 88.0

@@ -2,6 +2,7 @@
  * Data Manager, Singleton
  **/
 load('public/manager/DataManager', function () {
+    let GameUtil = include('game/public/GameUtil')
     let DataManager = cc.Class.extend({
         _gameData: null, // 游戏基础数据
         _userData: null, // 登录用户数据
@@ -40,6 +41,20 @@ load('public/manager/DataManager', function () {
                 delete this._playData
             }
             this._playData = new this._playDataModel()
+            if(data.pPlayer){
+                for(let i = 0; i < data.pPlayer.length; i++){
+                    let pData = data.pPlayer[i]
+                    if(!pData)
+                        continue
+                    if(!pData.nickName)
+                        continue
+                    pData.nickName = GameUtil.onForMatTxtLength(pData.nickName,12,'...')
+
+                }
+            }
+
+
+
             this._playData.setData(data)
         },
 

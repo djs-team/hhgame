@@ -9,7 +9,6 @@ publish
 frameworks/runtime-src/proj.ios_mac/Pods
 frameworks/runtime-src/proj.ios_mac/ios/CXClasses/Modules/LiveRoom/FaceUnity
 frameworks/runtime-src/proj.ios_mac/ios/CXClasses/lib/Ease/Helper/3rdParty
-frameworks/runtime-src/proj.ios_mac/ios/Frameworks
 frameworks/runtime-src/proj.ios_mac/hhgame.xcworkspace/xcuserdata
 *.vcxproj
 frameworks/runtime-src/proj.ios_mac/game

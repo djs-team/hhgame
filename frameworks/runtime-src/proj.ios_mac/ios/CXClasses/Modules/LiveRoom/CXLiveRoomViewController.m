@@ -172,6 +172,10 @@
         [self.rechargeView hide];
         [MMPopupView hideAll];
     }
+    
+    [LEEAlert closeWithCompletionBlock:nil];
+    
+    [_musicView removeFromSuperview];
 }
 
 - (void)deallocRoom {
@@ -189,8 +193,6 @@
         dispatch_source_cancel(_music_timer);
     }
 
-    [_musicView removeFromSuperview];
-    
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     
     [[CXClientModel instance].agoraEngineManager.engine leaveChannel:nil];

@@ -12,6 +12,16 @@
               <AbstractNodeData Name="SayPnl" ActionTag="726954080" Tag="234" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="190.0000" RightMargin="190.0000" TopMargin="90.0000" BottomMargin="570.0000" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="900.0000" Y="60.0000" />
                 <Children>
+                  <AbstractNodeData Name="Image_1" ActionTag="-675763461" Tag="5" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentWidthEnabled="True" TopMargin="9.0000" BottomMargin="9.0000" Scale9Enable="True" LeftEage="11" RightEage="11" TopEage="13" BottomEage="13" Scale9OriginX="11" Scale9OriginY="13" Scale9Width="13" Scale9Height="16" ctype="ImageViewObjectData">
+                    <Size X="900.0000" Y="42.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="450.0000" Y="30.0000" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5000" Y="0.5000" />
+                    <PreSize X="1.0000" Y="0.7000" />
+                    <FileData Type="Normal" Path="marquee/pmd_3.png" Plist="" />
+                  </AbstractNodeData>
                   <AbstractNodeData Name="SayText" ActionTag="735866484" Tag="38" IconVisible="False" LeftMargin="-112.5000" RightMargin="-112.5000" TopMargin="17.5000" BottomMargin="17.5000" FontSize="25" LabelText="这是系统弹窗提示哈这是系统弹窗提示哈这是系统弹窗提示哈这是系统弹窗提示哈这是系统弹窗提示哈" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="1125.0000" Y="25.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />

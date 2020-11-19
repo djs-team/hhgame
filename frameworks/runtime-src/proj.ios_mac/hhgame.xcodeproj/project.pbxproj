@@ -53,6 +53,17 @@
 		005F9C8C2564FA4100FD9B2C /* CXAppleLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 005F9C8B2564FA4100FD9B2C /* CXAppleLoginManager.m */; };
 		005F9CD12565143A00FD9B2C /* CXHomeJoinRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 005F9CCF2565143A00FD9B2C /* CXHomeJoinRoomViewController.m */; };
 		005F9CD22565143A00FD9B2C /* CXHomeJoinRoomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 005F9CD02565143A00FD9B2C /* CXHomeJoinRoomViewController.xib */; };
+		005F9DDB25665C1300FD9B2C /* linjia.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 005F9DCF25665C1300FD9B2C /* linjia.bundle */; };
+		005F9DDC25665C1300FD9B2C /* gangfeng.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 005F9DD025665C1300FD9B2C /* gangfeng.bundle */; };
+		005F9DDD25665C1300FD9B2C /* xueqiu_lm_fu.png in Resources */ = {isa = PBXBuildFile; fileRef = 005F9DD225665C1300FD9B2C /* xueqiu_lm_fu.png */; };
+		005F9DDE25665C1300FD9B2C /* fashi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 005F9DD325665C1300FD9B2C /* fashi.bundle */; };
+		005F9DDF25665C1300FD9B2C /* sdlu.png in Resources */ = {isa = PBXBuildFile; fileRef = 005F9DD425665C1300FD9B2C /* sdlu.png */; };
+		005F9DE025665C1300FD9B2C /* sdlu.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 005F9DD525665C1300FD9B2C /* sdlu.bundle */; };
+		005F9DE125665C1300FD9B2C /* wobushi.png in Resources */ = {isa = PBXBuildFile; fileRef = 005F9DD625665C1300FD9B2C /* wobushi.png */; };
+		005F9DE225665C1300FD9B2C /* xueqiu_lm_fu.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 005F9DD725665C1300FD9B2C /* xueqiu_lm_fu.bundle */; };
+		005F9DE325665C1300FD9B2C /* fashi.png in Resources */ = {isa = PBXBuildFile; fileRef = 005F9DD825665C1300FD9B2C /* fashi.png */; };
+		005F9DEA25665E9400FD9B2C /* FUBeautyParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 005F9DE825665E9400FD9B2C /* FUBeautyParam.m */; };
+		005F9DEB25665E9400FD9B2C /* FUDateHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 005F9DE925665E9400FD9B2C /* FUDateHandle.m */; };
 		006148B2250B27F200BB7620 /* CXIPAPurchaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 006148AC250B27F100BB7620 /* CXIPAPurchaseManager.m */; };
 		006148B3250B27F200BB7620 /* SandBoxHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 006148AD250B27F100BB7620 /* SandBoxHelper.m */; };
 		006148B8250B4CA600BB7620 /* CXThirdPayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 006148B7250B4CA600BB7620 /* CXThirdPayManager.m */; };
@@ -923,6 +934,19 @@
 		005F9CCE2565143A00FD9B2C /* CXHomeJoinRoomViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXHomeJoinRoomViewController.h; sourceTree = "<group>"; };
 		005F9CCF2565143A00FD9B2C /* CXHomeJoinRoomViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXHomeJoinRoomViewController.m; sourceTree = "<group>"; };
 		005F9CD02565143A00FD9B2C /* CXHomeJoinRoomViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CXHomeJoinRoomViewController.xib; sourceTree = "<group>"; };
+		005F9DCF25665C1300FD9B2C /* linjia.bundle */ = {isa = PBXFileReference; lastKnownFileType = file; path = linjia.bundle; sourceTree = "<group>"; };
+		005F9DD025665C1300FD9B2C /* gangfeng.bundle */ = {isa = PBXFileReference; lastKnownFileType = file; path = gangfeng.bundle; sourceTree = "<group>"; };
+		005F9DD225665C1300FD9B2C /* xueqiu_lm_fu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xueqiu_lm_fu.png; sourceTree = "<group>"; };
+		005F9DD325665C1300FD9B2C /* fashi.bundle */ = {isa = PBXFileReference; lastKnownFileType = file; path = fashi.bundle; sourceTree = "<group>"; };
+		005F9DD425665C1300FD9B2C /* sdlu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sdlu.png; sourceTree = "<group>"; };
+		005F9DD525665C1300FD9B2C /* sdlu.bundle */ = {isa = PBXFileReference; lastKnownFileType = file; path = sdlu.bundle; sourceTree = "<group>"; };
+		005F9DD625665C1300FD9B2C /* wobushi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wobushi.png; sourceTree = "<group>"; };
+		005F9DD725665C1300FD9B2C /* xueqiu_lm_fu.bundle */ = {isa = PBXFileReference; lastKnownFileType = file; path = xueqiu_lm_fu.bundle; sourceTree = "<group>"; };
+		005F9DD825665C1300FD9B2C /* fashi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fashi.png; sourceTree = "<group>"; };
+		005F9DE625665E9400FD9B2C /* FUDateHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FUDateHandle.h; sourceTree = "<group>"; };
+		005F9DE725665E9400FD9B2C /* FUBeautyParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FUBeautyParam.h; sourceTree = "<group>"; };
+		005F9DE825665E9400FD9B2C /* FUBeautyParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FUBeautyParam.m; sourceTree = "<group>"; };
+		005F9DE925665E9400FD9B2C /* FUDateHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FUDateHandle.m; sourceTree = "<group>"; };
 		006148A9250B27F100BB7620 /* SandBoxHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SandBoxHelper.h; sourceTree = "<group>"; };
 		006148AC250B27F100BB7620 /* CXIPAPurchaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXIPAPurchaseManager.m; sourceTree = "<group>"; };
 		006148AD250B27F100BB7620 /* SandBoxHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SandBoxHelper.m; sourceTree = "<group>"; };
@@ -2193,6 +2217,38 @@
 			path = AppleLogin;
 			sourceTree = "<group>";
 		};
+		005F9DCD25665C1300FD9B2C /* items */ = {
+			isa = PBXGroup;
+			children = (
+				005F9DCE25665C1300FD9B2C /* 美妆 */,
+				005F9DD125665C1300FD9B2C /* 贴纸 */,
+			);
+			path = items;
+			sourceTree = "<group>";
+		};
+		005F9DCE25665C1300FD9B2C /* 美妆 */ = {
+			isa = PBXGroup;
+			children = (
+				005F9DCF25665C1300FD9B2C /* linjia.bundle */,
+				005F9DD025665C1300FD9B2C /* gangfeng.bundle */,
+			);
+			path = "美妆";
+			sourceTree = "<group>";
+		};
+		005F9DD125665C1300FD9B2C /* 贴纸 */ = {
+			isa = PBXGroup;
+			children = (
+				005F9DD325665C1300FD9B2C /* fashi.bundle */,
+				005F9DD825665C1300FD9B2C /* fashi.png */,
+				005F9DD525665C1300FD9B2C /* sdlu.bundle */,
+				005F9DD425665C1300FD9B2C /* sdlu.png */,
+				005F9DD625665C1300FD9B2C /* wobushi.png */,
+				005F9DD725665C1300FD9B2C /* xueqiu_lm_fu.bundle */,
+				005F9DD225665C1300FD9B2C /* xueqiu_lm_fu.png */,
+			);
+			path = "贴纸";
+			sourceTree = "<group>";
+		};
 		0061488D250B1CCC00BB7620 /* CXClasses */ = {
 			isa = PBXGroup;
 			children = (
@@ -2506,6 +2562,7 @@
 		00614970250B94C600BB7620 /* FaceUnity */ = {
 			isa = PBXGroup;
 			children = (
+				005F9DCD25665C1300FD9B2C /* items */,
 				00614971250B94C600BB7620 /* AGMBase.framework */,
 				00614972250B94C600BB7620 /* authpack.h */,
 				00614973250B94C600BB7620 /* Helpers */,
@@ -2518,18 +2575,22 @@
 		00614973250B94C600BB7620 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				00614979250B94C600BB7620 /* FUManager.h */,
+				0061497D250B94C600BB7620 /* FUManager.m */,
 				00614974250B94C600BB7620 /* CXFUBeautyModel.m */,
 				00614975250B94C600BB7620 /* FUMusicPlayer.m */,
 				00614976250B94C600BB7620 /* FUOpenGLView.h */,
 				00614977250B94C600BB7620 /* FULiveModel.m */,
 				00614978250B94C600BB7620 /* FUCamera.h */,
-				00614979250B94C600BB7620 /* FUManager.h */,
 				0061497A250B94C600BB7620 /* FUOpenGLView.m */,
 				0061497B250B94C600BB7620 /* FUMusicPlayer.h */,
 				0061497C250B94C600BB7620 /* CXFUBeautyModel.h */,
-				0061497D250B94C600BB7620 /* FUManager.m */,
 				0061497E250B94C600BB7620 /* FULiveModel.h */,
 				0061497F250B94C600BB7620 /* FUCamera.m */,
+				005F9DE725665E9400FD9B2C /* FUBeautyParam.h */,
+				005F9DE825665E9400FD9B2C /* FUBeautyParam.m */,
+				005F9DE625665E9400FD9B2C /* FUDateHandle.h */,
+				005F9DE925665E9400FD9B2C /* FUDateHandle.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -4853,6 +4914,7 @@
 				00614F07250B94CF00BB7620 /* CXNewUserMicroSeatCardView.xib in Resources */,
 				0061503C250B94D000BB7620 /* msg_send_audio@2x.png in Resources */,
 				00614FE4250B94CF00BB7620 /* icon_022_cover.png in Resources */,
+				005F9DE225665C1300FD9B2C /* xueqiu_lm_fu.bundle in Resources */,
 				00614FCE250B94CF00BB7620 /* CXRechargeViewController.xib in Resources */,
 				00614E6D250B94CE00BB7620 /* CXGameMusicSongerSeatView.xib in Resources */,
 				0061504A250B94D000BB7620 /* image@2x.png in Resources */,
@@ -4884,6 +4946,7 @@
 				00615067250B94D000BB7620 /* close_white@3x.png in Resources */,
 				00614FF9250B94CF00BB7620 /* icon_020_cover.png in Resources */,
 				00614FF2250B94CF00BB7620 /* icon_027.gif in Resources */,
+				005F9DE125665C1300FD9B2C /* wobushi.png in Resources */,
 				00614FEE250B94CF00BB7620 /* icon_018.gif in Resources */,
 				00614FDC250B94CF00BB7620 /* icon_002_cover.png in Resources */,
 				00614EE3250B94CE00BB7620 /* CXLiveRoomSeatView.xib in Resources */,
@@ -4934,6 +4997,7 @@
 				0061502F250B94D000BB7620 /* msg_send_audio02@3x.png in Resources */,
 				00614FE3250B94CF00BB7620 /* icon_012.gif in Resources */,
 				00614E50250B94CE00BB7620 /* ai_face_processor.bundle in Resources */,
+				005F9DE025665C1300FD9B2C /* sdlu.bundle in Resources */,
 				00615038250B94D000BB7620 /* msg_send_audio01@2x.png in Resources */,
 				00615037250B94D000BB7620 /* msg_send_audio@3x.png in Resources */,
 				00615016250B94CF00BB7620 /* chatbar_call@3x.png in Resources */,
@@ -5002,10 +5066,12 @@
 				008F0413251C4E1800F207D2 /* CXChangeAgeAlertView.xib in Resources */,
 				00614E20250B94CE00BB7620 /* CXFriendInviteCell.xib in Resources */,
 				00614FA5250B94CF00BB7620 /* XYTableViewAlertCell.xib in Resources */,
+				005F9DDE25665C1300FD9B2C /* fashi.bundle in Resources */,
 				0061502E250B94D000BB7620 /* msg_bg_send@3x.png in Resources */,
 				00614FAE250B94CF00BB7620 /* CXLiveRoomGuardianRuleViewController.xib in Resources */,
 				1AF87B9D1F6F7C80007BE51C /* LaunchScreen.storyboard in Resources */,
 				00615064250B94D000BB7620 /* uncheck@2x.png in Resources */,
+				005F9DE325665C1300FD9B2C /* fashi.png in Resources */,
 				00614ED2250B94CE00BB7620 /* CXLiveRoomUserProfileReportView.xib in Resources */,
 				00471A60255E5E970084C6FB /* res in Resources */,
 				00614EA5250B94CE00BB7620 /* CXLiveRoomUIView.xib in Resources */,
@@ -5047,9 +5113,11 @@
 				00615007250B94CF00BB7620 /* chatbar_map_blue@3x.png in Resources */,
 				00614F7D250B94CF00BB7620 /* CXMyWalletViewController.xib in Resources */,
 				00614E31250B94CE00BB7620 /* CXChatRoomGIftView.xib in Resources */,
+				005F9DDB25665C1300FD9B2C /* linjia.bundle in Resources */,
 				00614E52250B94CE00BB7620 /* ai_humanpose.bundle in Resources */,
 				00614FE8250B94CF00BB7620 /* icon_027_cover.png in Resources */,
 				00614FAA250B94CF00BB7620 /* CXMineEditProfileViewController.xib in Resources */,
+				005F9DDD25665C1300FD9B2C /* xueqiu_lm_fu.png in Resources */,
 				00615033250B94D000BB7620 /* msg_recv_audio02@3x.png in Resources */,
 				00614FF7250B94CF00BB7620 /* icon_013_cover.png in Resources */,
 				006150AA250B94D000BB7620 /* CXPageViewControllerTitleItemCell.xib in Resources */,
@@ -5063,6 +5131,7 @@
 				00614E53250B94CE00BB7620 /* face_beautification.bundle in Resources */,
 				0061509E250B94D000BB7620 /* alert_info@2x.png in Resources */,
 				00614FDA250B94CF00BB7620 /* icon_010_cover.png in Resources */,
+				005F9DDC25665C1300FD9B2C /* gangfeng.bundle in Resources */,
 				00614EB9250B94CE00BB7620 /* CXRedPacketAwardRecordCell.xib in Resources */,
 				00802AC4250CC55300F43A32 /* RPSDK.bundle in Resources */,
 				007680BA255D1BA4000C5DB5 /* CXNearbyViewController.xib in Resources */,
@@ -5118,6 +5187,7 @@
 				00614FDE250B94CF00BB7620 /* icon_002.gif in Resources */,
 				00614F71250B94CF00BB7620 /* CXMineGuardListViewController.xib in Resources */,
 				00614E4A250B94CE00BB7620 /* ai_facelandmarks239.bundle in Resources */,
+				005F9DDF25665C1300FD9B2C /* sdlu.png in Resources */,
 				00614E7C250B94CE00BB7620 /* CXGameMusicReserveListCollectionCell.xib in Resources */,
 				0061505F250B94D000BB7620 /* back_gary@3x.png in Resources */,
 				00614ED3250B94CE00BB7620 /* CXLiveRoomUserProfileJinyanDateCell.xib in Resources */,
@@ -5337,6 +5407,7 @@
 				00614F1B250B94CF00BB7620 /* SocketMessageSeatHeartValueUpdate.m in Sources */,
 				00614EC8250B94CE00BB7620 /* CXLiveRoomGuardRankView.m in Sources */,
 				006150AE250B94D000BB7620 /* HJNetwork.m in Sources */,
+				005F9DEB25665E9400FD9B2C /* FUDateHandle.m in Sources */,
 				00614F91250B94CF00BB7620 /* CXMineBlockCell.m in Sources */,
 				0061507B250B94D000BB7620 /* UIImage+MWPhotoBrowser.m in Sources */,
 				006150A0250B94D000BB7620 /* EMSearchResultController.m in Sources */,
@@ -5633,6 +5704,7 @@
 				00615058250B94D000BB7620 /* UIViewController+HUD.m in Sources */,
 				00614E16250B94CE00BB7620 /* CXHomeRoomCrycleCell.m in Sources */,
 				00614FD7250B94CF00BB7620 /* EMReadReceiptMsgViewController.m in Sources */,
+				005F9DEA25665E9400FD9B2C /* FUBeautyParam.m in Sources */,
 				00614F12250B94CF00BB7620 /* UIGestureRecognizer+CXCategory.m in Sources */,
 				00614FD9250B94CF00BB7620 /* EMReadReceiptMemberModel.m in Sources */,
 				00614F41250B94CF00BB7620 /* SocketMessageSetTagId.m in Sources */,

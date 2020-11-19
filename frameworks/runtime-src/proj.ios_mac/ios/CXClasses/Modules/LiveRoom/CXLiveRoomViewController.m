@@ -40,6 +40,7 @@
 #import <AGMBase/AGMBase.h>
 #import <AGMCapturer/AGMCapturer.h>
 #import "FUManager.h"
+#import "FUDateHandle.h"
 
 // Music
 #import "CXGameMusicView.h"
@@ -93,6 +94,8 @@
 @property (nonatomic, strong) AGMCameraCapturer *cameraCapturer;
 @property (nonatomic, strong) AGMCapturerVideoConfig *videoConfig;
 @property (nonatomic, strong) AGMVideoAdapterFilter *videoAdapterFilter;
+
+@property (nonatomic, strong) NSArray<FUBeautyParam *> *stickerParams;
 
 // 静音麦位userid列表
 @property (nonatomic, strong) NSMutableArray *muteArrays;
@@ -365,6 +368,13 @@
 }
 
 #pragma mark - ==================== 美颜 ========================
+- (NSArray<FUBeautyParam *> *)stickerParams {
+    if (!_stickerParams) {
+        _stickerParams = [FUDateHandle setupSticker];
+    }
+    
+    return _stickerParams;
+}
 - (void)initCapturer {
     // Capturer
     self.videoConfig = [AGMCapturerVideoConfig defaultConfig];
@@ -380,13 +390,9 @@
     // push pixelBuffer
     __weak typeof(self) weakSelf = self;
     [self.cameraCapturer addVideoSink:self.videoAdapterFilter];
-//    [[FUManager shareManager] setBeautyDefaultParameters];
     [self.videoAdapterFilter setFrameProcessingCompletionBlock:^(AGMVideoSource * _Nonnull videoSource, CMTime time) {
         CVPixelBufferRef pixelBuffer = videoSource.framebufferForOutput.pixelBuffer;
         [[FUManager shareManager] renderItemsToPixelBuffer:pixelBuffer];
-//        if (weakSelf.model.type == FULiveModelTypeMusicFilter) {
-//            [[FUManager shareManager] musicFilterSetMusicTime];
-//        }
         [weakSelf.consumer consumePixelBuffer:pixelBuffer withTimestamp:time rotation:AgoraVideoRotationNone];
     }];
 }

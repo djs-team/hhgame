@@ -436,13 +436,13 @@
               <AbstractNodeData Name="CardCell" ActionTag="1930238960" Tag="393" IconVisible="False" LeftMargin="-35.2889" RightMargin="1275.2889" TopMargin="820.7611" BottomMargin="-157.7611" TouchEnable="True" LeftEage="13" RightEage="13" TopEage="18" BottomEage="18" Scale9OriginX="13" Scale9OriginY="18" Scale9Width="14" Scale9Height="21" ctype="ImageViewObjectData">
                 <Size X="40.0000" Y="57.0000" />
                 <Children>
-                  <AbstractNodeData Name="CardValue" ActionTag="-835913614" Tag="394" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="-18.0000" RightMargin="-18.0000" TopMargin="-21.5000" BottomMargin="-21.5000" LeftEage="24" RightEage="24" TopEage="35" BottomEage="35" Scale9OriginX="24" Scale9OriginY="35" Scale9Width="28" Scale9Height="30" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="CardValue" ActionTag="-835913614" Tag="394" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="-19.2000" RightMargin="-16.8000" TopMargin="-23.2100" BottomMargin="-19.7900" LeftEage="24" RightEage="24" TopEage="35" BottomEage="35" Scale9OriginX="24" Scale9OriginY="35" Scale9Width="28" Scale9Height="30" ctype="ImageViewObjectData">
                     <Size X="76.0000" Y="100.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="20.0000" Y="28.5000" />
+                    <Position X="18.8000" Y="30.2100" />
                     <Scale ScaleX="0.5500" ScaleY="0.5500" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.5000" Y="0.5000" />
+                    <PrePosition X="0.4700" Y="0.5300" />
                     <PreSize X="1.9000" Y="1.7544" />
                     <FileData Type="Normal" Path="card/value/selfhand/feng_hand_1.png" Plist="" />
                   </AbstractNodeData>

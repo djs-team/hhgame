@@ -139,15 +139,13 @@ public class PresentView extends FrameLayout {
                 return;
             }
 
-            boolean IsUseBag = mBinding.viewPager.getCurrentItem() == 1;
-
             if (isSingleSend) {
                 MicroUser micro = mUserAdapter.getList().get(0);
                 SingleSend singleSend = new SingleSend();
                 singleSend.setGiftId(id);
                 singleSend.setId(micro.getUser().getUserId());
                 singleSend.setCount(mSendNum);
-                singleSend.setUseBag(IsUseBag);
+                singleSend.setUseBag(false);
                 mListener.onSingleSend(singleSend);
             } else {
                 MultiSend sendModel = new MultiSend();
@@ -155,7 +153,7 @@ public class PresentView extends FrameLayout {
                 sendModel.setGiftId(id);
                 sendModel.setWholeMicro(mUserAdapter.isWholeMicro());
                 sendModel.setMicros(getMicrosList());
-                sendModel.setUseBag(IsUseBag);
+                sendModel.setUseBag(false);
                 mListener.onMultiSend(sendModel);
             }
         }

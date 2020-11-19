@@ -62,6 +62,7 @@ load('module/mahjong/ui/DeskTopLayerMdt', function () {
                     break
                 case TableEvent.TableChangeProto:
                     this.view.updateTableLevelTxt()
+                    this.view.UpdateTableHosting(2)
                     break
                 case TableEvent.InitCardProto:
                     this.updateRemainingCard()

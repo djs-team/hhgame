@@ -322,7 +322,7 @@ load('module/mahjong/ui/DeskResultLayer', function () {
             let pPengList = pinfo.pPengList
             let pGangList = pinfo.pGangList
 
-            let cardLen = 45
+            let cardLen = 47
             let offLen = 20
 
             let posX = 0

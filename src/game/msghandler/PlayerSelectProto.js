@@ -84,9 +84,30 @@ load('game/msghandler/PlayerSelectProto', function () {
                     cardGroup.pActionID = pActionID
                     cardGroup.pChiCardColor = msg.nCardColor
                     cardGroup.pBeginIndex = Math.min(pCards[0].nCardNumber, pCards[1].nCardNumber)
-                    if (cardGroup.pBeginIndex > msg.nCardNumber) {
+
+                    cc.log('--------------PlayerSelectProto-------------------cardGroup.pBeginIndex : ' + cardGroup.pBeginIndex + ' msg.nCardNumber : ' + msg.nCardNumber)
+
+                    if(cardGroup.pBeginIndex >= msg.nCardNumber)
                         cardGroup.pBeginIndex = msg.nCardNumber
+
+                    if (cardGroup.pBeginIndex == msg.nCardNumber) {//吃的牌为最小
+                        cardGroup.pBeginIndex = msg.nCardNumber + 1
+                        cardGroup.pMidIndex = msg.nCardNumber
+                        cardGroup.pEndIndex = msg.nCardNumber + 2
+                    }else if (cardGroup.pBeginIndex == msg.nCardNumber - 1) {//吃的牌为第二
+                        cardGroup.pBeginIndex = msg.nCardNumber - 1
+                        cardGroup.pMidIndex = msg.nCardNumber
+                        cardGroup.pEndIndex = msg.nCardNumber + 1
+                    }else{//吃的牌为最大
+                        cardGroup.pBeginIndex = msg.nCardNumber - 2
+                        cardGroup.pMidIndex = msg.nCardNumber
+                        cardGroup.pEndIndex = msg.nCardNumber - 1
                     }
+
+            cc.log('----------PlayerSelectProto------------cardGroup : ' + JSON.stringify(cardGroup))
+
+
+
                     lastSelectPlayer.showCards.push(cardGroup)
 
                     if (lastSelectPlayer.handCards.length) {
@@ -173,8 +194,6 @@ load('game/msghandler/PlayerSelectProto', function () {
                     lastSelectPlayer.pIsTing = true
                     break
             }
-
-            cc.log('====================lastSelectPlayer==============' + JSON.stringify(lastSelectPlayer))
 
             if (updatePutCard.isNeed) {
                 appInstance.gameAgent().mjUtil().removeCard(lastOutPlayer.putCards, card)

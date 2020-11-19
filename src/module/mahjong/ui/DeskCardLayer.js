@@ -376,7 +376,19 @@ load('module/mahjong/ui/DeskCardLayer', function () {
                         if ( i >= 3) {
                             card.setVisible(false)
                         } else {
-                            let valueImg = this.getHandGroupCardImg(uiSeat, groupInfo.pChiCardColor, groupInfo.pBeginIndex + i)
+                            let cardValue = groupInfo.pBeginIndex
+                            if(groupInfo.hasOwnProperty('pMidIndex') && groupInfo.hasOwnProperty('pMidIndex')){
+                                if(i == 1)
+                                    cardValue = groupInfo.pMidIndex
+                                else if (i == 2)
+                                    cardValue = groupInfo.pEndIndex
+                            }else{
+                                cardValue = groupInfo.pBeginIndex + i
+                            }
+
+
+
+                            let valueImg = this.getHandGroupCardImg(uiSeat, groupInfo.pChiCardColor, cardValue)
                             card.getChildByName('CardValue').loadTexture(valueImg)
                             card.setVisible(true)
                         }
